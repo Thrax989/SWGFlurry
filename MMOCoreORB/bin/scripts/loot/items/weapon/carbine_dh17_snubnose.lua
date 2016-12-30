@@ -6,7 +6,7 @@ carbine_dh17_snubnose = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_dh17_snubnose.iff",
 	craftingValues = {
-		{"mindamage",58,72,0},
+		{"mindamage",28,52,0},
 		{"maxdamage",81,150,0},
 		{"attackspeed",4.5,3.1,1},
 		{"woundchance",6,12,0},

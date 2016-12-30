@@ -9,7 +9,7 @@ geo_power_cube_red = {
 		{"attackhealthcost",-4,-10,0},
 		{"attackactioncost",-4,-10,0},
 		{"attackmindcost",-4,-10,0},
-		{"useCount",3,12,0},
+		{"useCount",1,10,0},
 		{"armor_health_encumbrance",-4,-10,0},
 		{"armor_action_encumbrance",-4,-10,0},
 		{"armor_mind_encumbrance",-4,-10,0},

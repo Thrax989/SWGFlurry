@@ -5,7 +5,7 @@ one_handed_ryyk_blade = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/sword/sword_blade_ryyk.iff",
 	craftingValues = {
-		{"mindamage",48,63,0},
+		{"mindamage",18,33,0},
 		{"maxdamage",98,132,0},
 		{"attackspeed",4.3,3,1},
 		{"woundchance",15,29,0},
@@ -14,7 +14,7 @@ one_handed_ryyk_blade = {
 		{"maxrangemod",-20,-10,0},
 		{"midrange",3,3,0},
 		{"midrangemod",-20,-10,0},
-		{"maxrange",4,4,0},
+		{"maxrange",4,4,0},		
 		{"attackhealthcost",51,27,0},
 		{"attackactioncost",39,21,0},
 		{"attackmindcost",33,18,0},

@@ -4,8 +4,8 @@ grenade_thermal_detonator = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/grenade/grenade_thermal_detonator.iff",
 	craftingValues = {
-		{"mindamage",2500,5000,0},
-		{"maxdamage",2500,5000,0},
+		{"mindamage",570,870,0},
+		{"maxdamage",1334,1690,0},
 		{"attackspeed",5.4,2.4,1},
 		{"woundchance",7,13,0},
 		{"hitpoints",1000,1000,0},

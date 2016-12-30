@@ -6,7 +6,7 @@ pistol_power5 = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_power5.iff",
 	craftingValues = {
-		{"mindamage",45,59,0},
+		{"mindamage",15,29,0},
 		{"maxdamage",67,154,0},
 		{"attackspeed",5.2,3.4,0},
 		{"woundchance",6.2,12.4,0},

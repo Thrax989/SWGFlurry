@@ -6,7 +6,7 @@ polearm_staff_janta = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_staff_janta.iff",
 	craftingValues = {
-		{"mindamage",51,82,0},
+		{"mindamage",41,52,0},
 		{"maxdamage",86,111,0},
 		{"attackspeed",5.8,4,1},
 		{"woundchance",7,7,0},

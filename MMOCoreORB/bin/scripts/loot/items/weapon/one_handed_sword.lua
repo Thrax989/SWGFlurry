@@ -14,7 +14,7 @@ one_handed_sword = {
 		{"maxrangemod",5,15,0},
 		{"midrange",3,3,0},
 		{"midrangemod",5,15,0},
-		{"maxrange",4,4,0},
+		{"maxrange",4,4,0},		
 		{"attackhealthcost",27,15,0},
 		{"attackactioncost",29,15,0},
 		{"attackmindcost",29,15,0},

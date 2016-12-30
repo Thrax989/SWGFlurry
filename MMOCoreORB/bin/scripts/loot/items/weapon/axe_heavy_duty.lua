@@ -6,7 +6,7 @@ axe_heavy_duty = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/axe/axe_heavy_duty.iff",
 	craftingValues = {
-		{"mindamage",65,86,0},
+		{"mindamage",25,46,0},
 		{"maxdamage",98,182,0},
 		{"attackspeed",6.5,4.5,1},
 		{"woundchance",11,20,0},
@@ -27,7 +27,7 @@ axe_heavy_duty = {
 	randomDotChance = 1000,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
-	junkMaxValue = 45
+	junkMaxValue = 45 
 
 }
 

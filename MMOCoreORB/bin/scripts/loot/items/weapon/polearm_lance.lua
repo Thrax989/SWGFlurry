@@ -6,7 +6,7 @@ polearm_lance = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_controllerfp.iff",
 	craftingValues = {
-		{"mindamage",70,130,0},
+		{"mindamage",7,13,0},
 		{"maxdamage",133,247,0},
 		{"attackspeed",7,4,1},
 		{"woundchance",9,18,0},

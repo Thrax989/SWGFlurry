@@ -15,7 +15,7 @@ donkuwah_bone_armor_segment = {
 		{"armor_health_encumbrance",15,0,0},
 		{"armor_action_encumbrance",15,0,0},
 		{"armor_mind_encumbrance",15,0,0},
-		{"useCount",5,15,0},
+		{"useCount",1,10,0},
 	},
 	customizationStringNames = {},
 	customizationValues = {}

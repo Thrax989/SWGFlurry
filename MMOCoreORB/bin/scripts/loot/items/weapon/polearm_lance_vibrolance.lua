@@ -6,7 +6,7 @@ polearm_lance_vibrolance = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_vibrolance.iff",
 	craftingValues = {
-		{"mindamage",92,148,0},
+		{"mindamage",42,78,0},
 		{"maxdamage",154,286,0},
 		{"attackspeed",5.9,4,1},
 		{"woundchance",14,26,0},

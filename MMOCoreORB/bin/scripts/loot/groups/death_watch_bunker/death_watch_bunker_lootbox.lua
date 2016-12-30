@@ -5,16 +5,14 @@ death_watch_bunker_lootbox = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "alum_gel_packet", weight = 500000},
-		{itemTemplate = "art_crate", weight = 3500000},
+		{itemTemplate = "alum_gel_packet", weight = 1100000},
+		{itemTemplate = "art_crate", weight = 4400000},
 		{itemTemplate = "ducted_fan", weight = 500000},
 		{itemTemplate = "executioners_hack_schematic", weight = 1000000},
 		{itemTemplate = "fuel_dispersion_unit", weight = 500000},
 		{itemTemplate = "injector_tank", weight = 500000},
-		{itemTemplate = "mandalorian_rebreather", weight = 500000},
-		{itemTemplate = "pistol_de10_schematic", weight = 1000000},
-		{itemTemplate = "blacksun_razor_knuckler_schematic", weight = 1000000},
-		{itemTemplate = "berserker_rifle_schematic", weight = 1000000}
+		{itemTemplate = "mandalorian_rebreather", weight = 1200000},
+		{itemTemplate = "pistol_de10_schematic", weight = 800000}
 	}
 }
 
