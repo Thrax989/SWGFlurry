@@ -1,2 +1,2 @@
 # SWGFlurry
-Update.Bot.Support.Register
+Update.Bot.Support.Register.1
