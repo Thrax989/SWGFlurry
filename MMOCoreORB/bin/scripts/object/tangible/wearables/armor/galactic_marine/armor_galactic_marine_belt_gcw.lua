@@ -1,0 +1,5 @@
+object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_belt_gcw = object_tangible_wearables_armor_galactic_marine_shared_armor_galactic_marine_belt_gcw:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_belt_gcw, "object/tangible/wearables/armor/galactic/marine/armor_galactic_marine_belt_gcw.iff")

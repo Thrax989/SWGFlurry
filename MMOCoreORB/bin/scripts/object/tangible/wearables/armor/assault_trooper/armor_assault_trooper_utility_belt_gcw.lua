@@ -1,0 +1,5 @@
+object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_utility_belt_gcw = object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_utility_belt_gcw:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_utility_belt_gcw, "object/tangible/wearables/armor/assault/trooper/armor_assault_trooper_utility_belt_gcw.iff")

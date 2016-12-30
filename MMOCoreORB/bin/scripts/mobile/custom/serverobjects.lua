@@ -1,0 +1,7 @@
+includeFile("custom/ancient_yoda.lua")
+includeFile("custom/ancient_exar_kun.lua")
+includeFile("custom/ancient_varactyl.lua")
+includeFile("custom/ancient_bolotaur.lua")
+includeFile("custom/ancient_bolotaur_master.lua")
+includeFile("custom/ancient_varactyl_master.lua")
+includeFile("custom/ancient_outbreak_afflicted_blackwing_rancor_boss.lua")

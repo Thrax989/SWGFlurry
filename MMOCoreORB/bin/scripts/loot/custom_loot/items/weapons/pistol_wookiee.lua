@@ -1,0 +1,32 @@
+pistol_wookiee = {
+	minimumLevel = 0,
+	maximumLevel = -1,
+	customObjectName = "",
+	directObjectTemplate = "object/weapon/ranged/pistol/ep3/pistol_wookiee.iff",
+	craftingValues = {
+		{"mindamage",35,71,0},
+		{"maxdamage",73,173,0},
+		{"attackspeed",5.2,3.8,1},
+		{"woundchance",6.8,14.7,0},
+		{"hitpoints",750,1500,0},
+		{"attackhealthcost",32,17,0},
+		{"attackactioncost",51,29,0},
+		{"attackmindcost",22,12,0},
+		{"roundsused",15,60,0},
+		{"zerorangemod",18,33,0},
+		{"maxrangemod",-90,-90,0},
+		{"midrange",16,16,0},
+		{"midrangemod",14,30,0},
+	},
+	customizationStringNames = {},
+	customizationValues = {},
+
+	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
+	randomDotChance = 800,
+	junkDealerTypeNeeded = JUNKWEAPONS,
+	junkMinValue = 20,
+	junkMaxValue = 40
+
+}
+-- this is the ur-g8 pistol
+addLootItemTemplate("pistol_wookiee", pistol_wookiee)

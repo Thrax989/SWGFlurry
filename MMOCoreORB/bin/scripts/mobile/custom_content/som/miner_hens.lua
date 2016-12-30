@@ -1,0 +1,35 @@
+miner_hens = Creature:new {
+	customName = "Renlo Hens",
+	socialGroup = "",
+	faction = "",
+	level = 17,
+	chanceHit = 0.32,
+	damageMin = 180,
+	damageMax = 190,
+	baseXp = 1257,
+	baseHAM = 3500,
+	baseHAMmax = 4300,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
+	meatType = "",
+	meatAmount = 0,
+	hideType = "",
+	hideAmount = 0,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 0,
+	pvpBitmask = ATTACKABLE,
+	creatureBitmask = PACK + STALKER,
+	optionsBitmask = AIENABLED,
+	diet = HERBIVORE,
+
+	templates = {"object/mobile/som/miner_hens.iff"},
+	lootGroups = {},
+	weapons = {"pirate_weapons_light"},
+	conversationTemplate = "",
+	attacks = merge(marksmannovice,brawlernovice)
+}
+
+CreatureTemplates:addCreatureTemplate(miner_hens, "miner_hens")
