@@ -3,20 +3,20 @@ dragonet = Creature:new {
 	socialGroup = "lizard",
 	faction = "",
 	level = 29,
-	chanceHit = 1.37,
-	damageMin = 460,
-	damageMax = 470,
-	baseXp = 6914,
-	baseHAM = 10000,
-	baseHAMmax = 12000,
-	armor = 1,
-	resists = {155,155,155,155,155,155,155,155,125},
+	chanceHit = 0.37,
+	damageMin = 260,
+	damageMax = 270,
+	baseXp = 2914,
+	baseHAM = 8200,
+	baseHAMmax = 10000,
+	armor = 0,
+	resists = {125,140,15,15,15,-1,15,-1,-1},
 	meatType = "meat_carnivore",
-	meatAmount = 525,
+	meatAmount = 25,
 	hideType = "hide_bristley",
-	hideAmount = 525,
+	hideAmount = 25,
 	boneType = "bone_mammal",
-	boneAmount = 275,
+	boneAmount = 25,
 	milk = 0,
 	tamingChance = 0.25,
 	ferocity = 0,
@@ -32,8 +32,7 @@ dragonet = Creature:new {
 	weapons = {"creature_spit_small_yellow"},
 	conversationTemplate = "",
 	attacks = {
-		{"strongpoison",""},
-		{"knockdownattack",""}
+		{"dizzyattack",""}
 	}
 }
 
