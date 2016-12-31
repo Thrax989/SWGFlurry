@@ -183,8 +183,8 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			}else{
 				lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);//, playerName);
 			}
-			lootManager->createLoot(inventory, "clothing_attachments", 300);//, playerName);
-				lootManager->createLoot(inventory, "armor_attachments", 300);//, playerName);
+			//lootManager->createLoot(inventory, "clothing_attachments", 300);//, playerName);
+				//lootManager->createLoot(inventory, "armor_attachments", 300);//, playerName);
 			ghost->decreaseFactionStanding("imperial", 45);
 
 			killedGhost->decreaseFactionStanding("imperial", 45);
@@ -206,8 +206,8 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			}else{
 				lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);//, playerName);
 			}
-			lootManager->createLoot(inventory, "clothing_attachments", 300);//, playerName);
-				lootManager->createLoot(inventory, "armor_attachments", 300);//, playerName);
+			//lootManager->createLoot(inventory, "clothing_attachments", 300);//, playerName);
+				//lootManager->createLoot(inventory, "armor_attachments", 300);//, playerName);
 			ghost->decreaseFactionStanding("rebel", 45);
 
 			killedGhost->decreaseFactionStanding("rebel", 45);
