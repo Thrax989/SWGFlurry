@@ -43,7 +43,7 @@
 
 object_installation_generators_power_generator_photo_bio_style_1 = object_installation_generators_shared_power_generator_photo_bio_style_1:new {
 	lotSize = 1,
-	baseMaintenanceRate = 60*5,
+	baseMaintenanceRate = 60,
 	basePowerRate = 0,
 	width = 3,
 	length = 3,

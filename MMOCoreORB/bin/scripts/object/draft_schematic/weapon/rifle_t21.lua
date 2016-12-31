@@ -63,9 +63,9 @@ object_draft_schematic_weapon_rifle_t21 = object_draft_schematic_weapon_shared_r
    customizationDefaults = {},
 
    ingredientTemplateNames = {"craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n"},
-   ingredientTitleNames = {"frame_assembly", "receiver_assembly", "grip_assembly", "enhanced_cooling_mechanism", "powerhandler", "thermal_control_unit", "barrel", "cartridge_feed_unit"},
+   ingredientTitleNames = {"frame_assembly", "receiver_assembly", "grip_assembly", "enhanced_cooling_mechanism", "powerhandler", "thermal_control_unit", "barrel", "stock"},
    ingredientSlotType = {0, 0, 0, 0, 1, 0, 1, 3},
-   resourceTypes = {"steel_ditanium", "iron_polonium", "metal", "crystalline_gallinorian", "object/tangible/component/weapon/shared_blaster_power_handler.iff", "ore_carbonate_alantium", "object/tangible/component/weapon/shared_blaster_rifle_barrel.iff", "object/tangible/component/weapon/shared_projectile_feed_mechanism.iff"},
+   resourceTypes = {"steel_ditanium", "iron_polonium", "metal", "crystalline_gallinorian", "object/tangible/component/weapon/shared_blaster_power_handler.iff", "ore_carbonate_alantium", "object/tangible/component/weapon/shared_blaster_rifle_barrel.iff", "object/tangible/component/weapon/shared_stock.iff"},
    resourceQuantities = {150, 85, 20, 15, 10, 30, 1, 1},
    contribution = {100, 100, 100, 100, 100, 100, 100, 100},
    ingredientAppearance = {"", "", "", "", "", "", "muzzle", "stock"},
