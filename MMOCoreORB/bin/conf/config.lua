@@ -80,7 +80,7 @@ PingAllowedConnections = 3000
 ZoneProcessingThreads = 10
 ZoneAllowedConnections = 30000
 ZoneGalaxyID = 2 --The actual zone server's galaxyID. Should coordinate with your login server.
-ZoneOnlineCharactersPerAccount = 2 --How many characters are allowed online from a single account.
+ZoneOnlineCharactersPerAccount = 10 --How many characters are allowed online from a single account.
 
 --The following zones are enabled, and will be loaded with server start.
 --To save on RAM and CPU usage, you should only enable the zones you need.
@@ -138,12 +138,10 @@ ZonesEnabled = {
 TrePath = "/home/vagrant/Desktop/SWGEmu/"
 
 TreFiles = {
-	"phoenix_patch_2.tre",
 	"sytners_sat_maps_2.tre",
 	"phoenix_patch_1.tre",
-	"lasko_publish_06_01.tre",
-	"nw_001.tre",
 	"lasko_hotfix_01.tre",
+	"lasko_publish_06_01.tre",
 	"lasko_publish_05_01.tre",
 	"lasko_publish_04_02.tre",
 	"lasko_publish_04_01.tre",
