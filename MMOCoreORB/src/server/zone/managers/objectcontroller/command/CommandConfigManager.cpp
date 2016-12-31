@@ -4,8 +4,6 @@
 
 /*
  * PLEASE DO NOT STEAL OUR WORK
- * ASK BEFOR USING
- * Contact Me Here http://projectphoenix.com.shivtr.com/
  * Modified on: 9/21/2016
  * Authors: Kurdtkobain
  */
