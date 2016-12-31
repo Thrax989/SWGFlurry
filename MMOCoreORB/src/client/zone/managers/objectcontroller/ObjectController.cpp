@@ -88,3 +88,4 @@ void ObjectController::doSayCommand(const UnicodeString& msg) {
 
 	object->getClient()->sendMessage(message);
 }
+
