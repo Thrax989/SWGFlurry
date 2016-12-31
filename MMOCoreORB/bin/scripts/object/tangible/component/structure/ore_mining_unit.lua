@@ -49,8 +49,8 @@ object_tangible_component_structure_ore_mining_unit = object_tangible_component_
 	experimentalWeights = {1, 1, 1, 1, 1, 2},
 	experimentalGroupTitles = {"null", "null", "null", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "hitpoints", "extractrate"},
-	experimentalMin = {0, 0, 1000, 2*10},
-	experimentalMax = {0, 0, 5000, 7*10},
+	experimentalMin = {0, 0, 1000, 2*4},
+	experimentalMax = {0, 0, 5000, 7*4},
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1},
 }

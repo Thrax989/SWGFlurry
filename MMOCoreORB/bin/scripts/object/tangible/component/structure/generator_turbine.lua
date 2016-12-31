@@ -49,8 +49,8 @@ object_tangible_component_structure_generator_turbine = object_tangible_componen
 	experimentalWeights = {1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "exp_durability"},
 	experimentalSubGroupTitles = {"null", "null", "hitpoints"},
-	experimentalMin = {0, 0, 1000*10},
-	experimentalMax = {0, 0, 5000*10},
+	experimentalMin = {0, 0, 1000*4},
+	experimentalMax = {0, 0, 5000*4},
 	experimentalPrecision = {0, 0, 0},
 	experimentalCombineType = {0, 0, 4},
 }

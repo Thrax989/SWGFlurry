@@ -74,4 +74,5 @@ includeFile("tangible/wearables/underwear/serverobjects.lua")
 includeFile("tangible/wearables/utility/serverobjects.lua")
 includeFile("tangible/wearables/vest/serverobjects.lua")
 includeFile("tangible/wearables/wookiee/serverobjects.lua")
+
 -- Server Objects

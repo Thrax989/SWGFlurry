@@ -49,8 +49,8 @@ object_tangible_component_structure_light_ore_mining_unit = object_tangible_comp
 	experimentalWeights = {1, 1, 1, 1, 1, 2},
 	experimentalGroupTitles = {"null", "null", "null", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "hitpoints", "extractrate"},
-	experimentalMin = {0, 0, 1000, 1*10},
-	experimentalMax = {0, 0, 1000, 5*10},
+	experimentalMin = {0, 0, 1000, 1*4},
+	experimentalMax = {0, 0, 1000, 5*4},
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1},
 }

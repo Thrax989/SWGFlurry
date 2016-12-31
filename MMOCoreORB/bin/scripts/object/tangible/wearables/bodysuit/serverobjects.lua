@@ -61,5 +61,3 @@ includeFile("tangible/wearables/bodysuit/bodysuit_s16.lua")
 includeFile("tangible/wearables/bodysuit/bodysuit_sarlacc_coverall.lua")
 includeFile("tangible/wearables/bodysuit/bodysuit_tie_fighter.lua")
 includeFile("tangible/wearables/bodysuit/bodysuit_tie_fighter_quest.lua")
-
-includeFile("tangible/wearables/bodysuit/bodysuit_trando_slaver.lua")

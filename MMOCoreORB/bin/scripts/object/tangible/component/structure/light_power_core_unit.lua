@@ -49,8 +49,8 @@ object_tangible_component_structure_light_power_core_unit = object_tangible_comp
 	experimentalWeights = {1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "null"},
 	experimentalSubGroupTitles = {"null", "null", "hitpoints"},
-	experimentalMin = {0, 0, 1000*10},
-	experimentalMax = {0, 0, 5000*10},
+	experimentalMin = {0, 0, 1000*4},
+	experimentalMax = {0, 0, 5000*4},
 	experimentalPrecision = {0, 0, 0},
 	experimentalCombineType = {0, 0, 4},
 }

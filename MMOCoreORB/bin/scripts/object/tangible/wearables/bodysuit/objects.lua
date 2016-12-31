@@ -984,14 +984,3 @@ object_tangible_wearables_bodysuit_shared_bodysuit_tie_fighter_quest = SharedTan
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_bodysuit_shared_bodysuit_tie_fighter_quest, "object/tangible/wearables/bodysuit/shared_bodysuit_tie_fighter_quest.iff")
-
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_tangible_wearables_bodysuit_shared_bodysuit_trando_slaver = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/wearables/bodysuit/shared_bodysuit_trando_slaver.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_wearables_bodysuit_shared_bodysuit_trando_slaver, "object/tangible/wearables/bodysuit/shared_bodysuit_trando_slaver.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-

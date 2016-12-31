@@ -49,8 +49,8 @@ object_tangible_component_droid_medic_module_5 = object_tangible_component_droid
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "exp_durability", "null", "exp_effectiveness", "exp_effectiveness"},
 	experimentalSubGroupTitles = {"null", "null", "decayrate", "hitpoints", "mechanism_quality", "medical_module"},
-	experimentalMin = {0, 0, 5, 1000, 25, 25},
-	experimentalMax = {0, 0, 15, 1000, 30, 30},
+	experimentalMin = {0, 0, 5, 1000, -10, 9},
+	experimentalMax = {0, 0, 15, 1000, 15, 11},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 4, 1, 1},
 }
