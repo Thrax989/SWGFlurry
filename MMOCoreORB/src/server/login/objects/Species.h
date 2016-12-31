@@ -25,27 +25,7 @@ const static char* Race[] = {
     "object/creature/player/moncal_female.iff", // moncal female
     "object/creature/player/wookiee_female.iff", // wookiee female
     "object/creature/player/sullustan_female.iff", // sullustan female
-    "object/creature/player/ithorian_female.iff",  // DA E7   -   ithorian female
-	"object/creature/player/weequay_male.iff", // weequay male
-	"object/creature/player/aqualish_male.iff", // aqualish male
-	"object/creature/player/aqualish_female.iff", // aqualish female
-	"object/creature/player/bith_male.iff", // bith male
-	"object/creature/player/bith_female.iff", // bith female
-	"object/creature/player/chiss_male.iff", // chiss male
-	"object/creature/player/chiss_female.iff", // chiss female
-	"object/creature/player/hutt_male.iff", // hutt male
-	"object/creature/player/hutt_female.iff", // hutt female
-	"object/creature/player/devaronian_male.iff", // devaronian male
-	"object/creature/player/gotal_male.iff", // gotal male
-	"object/creature/player/gran_male.iff", // gran male
-	"object/creature/player/ishi_tib_male.iff", // ishi_tib male
-	"object/creature/player/nautolan_male.iff", // nautolan male
-	"object/creature/player/nightsister_female.iff", // nightsister female
-	"object/creature/player/nikto_male.iff", // nikto male
-	"object/creature/player/quarren_male.iff", // quarren male
-	"object/creature/player/smc_female.iff", // smc female
-	"object/creature/player/talz_male.iff", // talz male
-	"object/creature/player/togruta_female.iff" // togruta female
+    "object/creature/player/ithorian_female.iff"  // DA E7   -   ithorian female
 };
 
 #endif /*SPECIES_H_*/

@@ -282,3 +282,4 @@ int CampKitMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject,
 
 	return 0;
 }
+
