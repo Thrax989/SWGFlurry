@@ -643,6 +643,7 @@ void SlicingSessionImplementation::handleSliceDamage(uint8 percent) {
 		this->detachPowerUp(player, weap);
 
 	weap->setDamageSlice(percent / 100.f);
+	weap->setArmorPiercing(3);
 	weap->setSliced(true);
 
 	StringIdChatParameter params;
@@ -668,6 +669,7 @@ void SlicingSessionImplementation::handleSliceSpeed(uint8 percent) {
 		this->detachPowerUp(player, weap);
 
 	weap->setSpeedSlice(percent / 100.f);
+	weap->setArmorPiercing(3);
 	weap->setSliced(true);
 
 	StringIdChatParameter params;

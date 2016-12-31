@@ -261,6 +261,9 @@ class WeaponObject extends TangibleObject {
 	}
 	
 	@dirty
+	public void setArmorPiercing(int value) {
+                armorPiercing = value;
+        }
 	public int getArmorPiercing() {
 		return armorPiercing;
 	}
