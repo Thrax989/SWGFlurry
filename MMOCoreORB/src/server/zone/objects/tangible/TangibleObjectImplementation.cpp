@@ -128,7 +128,7 @@ void TangibleObjectImplementation::sendBaselinesTo(SceneObject* player) {
 
 void TangibleObjectImplementation::setFactionStatus(int status) {
 	factionStatus = status;
-	futureFactionStatus = 0;
+	futureFactionStatus = -1;
 
 	if (isPlayerCreature()) {
 		CreatureObject* creature = asCreatureObject();
@@ -820,7 +820,6 @@ Reference<FactoryCrate*> TangibleObjectImplementation::createFactoryCrate(bool i
 	//crate->setMaxCapacity(tanoData->getFactoryCrateSize());
  	crate->setMaxCapacity(1000000);
 
-
 	if (insertSelf) {
 		if (!crate->transferObject(asTangibleObject(), -1, false)) {
 			crate->destroyObjectFromDatabase(true);
@@ -1045,11 +1044,11 @@ bool TangibleObjectImplementation::isAttackableBy(CreatureObject* object) {
 	} else if (isRebel() && !(object->isImperial())) {
 		return false;
 	} else if (object->isPlayerCreature()) {
-		if (isImperial() && getFactionStatus() == 0) {
+		if (isImperial() && object->getFactionStatus() == 0) {
 			return false;
 		}
 
-		if (isRebel() && getFactionStatus() == 0) {
+		if (isRebel() && object->getFactionStatus() == 0) {
 			return false;
 		}
 

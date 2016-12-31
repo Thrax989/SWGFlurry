@@ -743,7 +743,7 @@ void WeaponObjectImplementation::decay(CreatureObject* user) {
 			SceneObject* inventory = user->getSlottedObject("inventory");
 
 			if (crystal != NULL) {
-				if (crystal->getMinimumDamage() > 100 || crystal->getMaximumDamage() < 0) {
+				if (crystal->getMinimumDamage() > 50 || crystal->getMaximumDamage() < 0) {
 					Locker locker(crystal);
 					crystal->setMinimumDamage(0);
 					crystal->setMaximumDamage(0);
@@ -781,7 +781,7 @@ void WeaponObjectImplementation::decay(CreatureObject* user) {
 
 				if (crystal != NULL) {
 					crystal->inflictDamage(crystal, 0, 1, true, true);
-					if (crystal->getMinimumDamage() > 100 || crystal->getMaximumDamage() < 0) {
+					if (crystal->getMinimumDamage() > 50 || crystal->getMaximumDamage() < 0) {
 						Locker locker(crystal);
 						crystal->setMinimumDamage(0);
 						crystal->setMaximumDamage(0);
