@@ -74,7 +74,7 @@ object_weapon_ranged_grenade_grenade_imperial_detonator = object_weapon_ranged_g
 	damageType = BLAST,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
-	armorPiercing = HEAVY,
+	armorPiercing = LIGHT,
 
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
@@ -114,8 +114,8 @@ object_weapon_ranged_grenade_grenade_imperial_detonator = object_weapon_ranged_g
 	maxRange = 64,
 	maxRangeAccuracy = -30,
 
-	minDamage = 5000,
-	maxDamage = 10000,
+	minDamage = 100,
+	maxDamage = 550,
 
 	attackSpeed = 6,
 
