@@ -41,20 +41,17 @@
 --which carries forward this exception.
 
 --Determines how often exceptional and legendary items can drop.
-yellowChance = 1000 -- 1 in 1,000
-exceptionalChance = 10000 --1 in 10000
-legendaryChance = 100000 --1 in 100000
---yellowChance = 50 --1 in 50 for testing
---exceptionalChance = 100 --1 in 100 for testing
---legendaryChance = 1000 --1 in 1000 for testing
+yellowChance = 100 -- 1 in 100
+exceptionalChance = 500 --1 in 500
+legendaryChance = 1000 --1 in 1000
 
 --Determines how much of an increase in the base stats will be applied to the object.
-yellowModifier = 1.5
-exceptionalModifier = 2.5
-legendaryModifier = 5.0
+yellowModifier = 1.15
+exceptionalModifier = 1.50
+legendaryModifier = 2.0
 
 --The chance for random skill mods to be on looted weapons/wearables
-skillModChance = 1000 -- 1 in 1,000
+skillModChance = 1 -- 1 in 1,000
 
 -- Value ranges for random dots on looted weapons (chance is set individually on the loot items)
 randomDotAttribute = {0, 8} -- See CreatureAttributes.h in src for numbers.
