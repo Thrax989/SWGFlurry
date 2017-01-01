@@ -188,8 +188,8 @@ CitySpecializations = {
 		name = "@city/city:city_spec_sample_rich",
 		cost = 7000,
 		skillMods = {
-			{"private_spec_samplesize", 500},
-			{"private_spec_samplerate", 500}
+			{"private_spec_samplesize", 250},
+			{"private_spec_samplerate", 250}
 		}
 	},
 	{--Manufacturing Center
