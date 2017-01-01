@@ -93,6 +93,4 @@ function EndorEwokTreeVillage01ScreenPlay:spawnMobiles()
 	spawnMobile("endor", "panshee_tribesman",300,99,29,40.6,-88,0)--OverPassGuard#2
 	spawnMobile("endor", "panshee_tribesman",300,105.5,29.3,29.1,-36,0)--OverLook#1
 	spawnMobile("endor", "panshee_shaman",300,110.1,29.1,37.2,126,0)--Hut#1
-
-	spawnMobile("endor", "ep3_clone_relics_leia",3600,85.133,9,38.8596,-15,0)
 end

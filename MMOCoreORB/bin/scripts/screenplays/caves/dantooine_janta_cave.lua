@@ -41,7 +41,6 @@ end
 
 function JantaCaveScreenPlay:spawnMobiles()
 	spawnMobile("dantooine", "janta_clan_leader",900,-91.6,-100.4,-93.6,-178,529333)
-	spawnMobile("dantooine", "janta_chieftain",1800,-90.7565,-100.897,-99.4075,-178,529333)
 
 	spawnMobile("dantooine", "janta_harvester",900,6.9,-40.8,-73.5,-3,529325)
 	spawnMobile("dantooine", "janta_harvester",900,-5.5,-64.9,-240.8,-83,529329)

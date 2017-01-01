@@ -97,8 +97,8 @@ function LizardCaveScreenPlay:spawnMobiles()
 	spawnMobile("dantooine", "grassland_voritor_tracker", 300, 135.646, -66.596, -99.549, 79.716, 8535545)
 	
 	-- Cell 8535546 (Final Alcove)
-	spawnMobile("dantooine", "som_dark_jedi_minion_7", 2700, 180.911, -66.0965, -97.5385, -97, 8535546)
-	spawnMobile("dantooine", "cinderclaw", 2700, 193.557, -66.871, -101.828, -105.995, 8535546)
+	spawnMobile("dantooine", "slinking_voritor_hunter", 300, 186.706, -65.422, -93.972, -105.512, 8535546)
+	spawnMobile("dantooine", "vexed_voritor_lizard", 300, 193.557, -66.871, -101.828, -105.995, 8535546)
 
 	-- Cell 8535547
 	spawnMobile("dantooine", "voritor_lizard", 300, 47.770, -51.878, -87.259, 5.884, 8535547)
@@ -112,9 +112,6 @@ function LizardCaveScreenPlay:spawnMobiles()
 	spawnMobile("dantooine", "voritor_dasher", 300, 91.130, -46.439, -101.309, -113.872, 8535542)
 	spawnMobile("dantooine", "voritor_lizard", 300, 91.027, -46.898, -95.322, -147.514, 8535542)
 	spawnMobile("dantooine", "voritor_lizard", 300, 80.541, -46.486, -109.031, -147.011, 8535542)
-
-	spawnMobile("dantooine", "som_dark_jedi_minion_5",900,-20.5417,-0.331524,3.11455,0,8535538)
-	spawnMobile("dantooine", "som_dark_jedi_minion_6",900,-14.1721,-0.271569,3.42663,-10,8535538)
 		
 
 end

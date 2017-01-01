@@ -8,8 +8,8 @@ BloodRazerTransportScreenPlay = ScreenPlay:new {
 		568951,	--magseal
 		568948  --magseal
 	},
-
-	lootLevel = 29,
+	
+	lootLevel = 29,	
 
 	lootGroups = {
 		{
@@ -25,9 +25,9 @@ BloodRazerTransportScreenPlay = ScreenPlay:new {
 				{group = "armor_attachments", chance = 500000}
 			},
 			lootChance = 8000000
-		}
+		}					
 	},
-
+	
 	lootContainerRespawn = 1200 -- 20 minutes
 }
 
@@ -91,27 +91,9 @@ function BloodRazerTransportScreenPlay:spawnMobiles()
 	spawnMobile("lok", "blood_razor_elite_pirate", 300, -5.1, 0, 1.7, 0, 568749)
 	spawnMobile("lok", "blood_razor_officer", 300, 4.6, 0, -3.8, 0, 568752)
 	spawnMobile("lok", "blood_razor_captain", 300, -4.8, 0, -3.9, -90, 568753)
-
+	
 	spawnMobile("lok", "blood_razor_elite_pirate", 300, 3.7, 0, 1.5, -90, 568758)
 	spawnMobile("lok", "blood_razor_officer", 300, 4.1, 0, 4.1, 0, 568758)
 	spawnMobile("lok", "blood_razor_captain", 300, -4.1, 0, -1.8, -180, 568760)
-
-	--Mandalorian Invasion
-	spawnMobile("lok", "booba_fett", 3600, 3641.66, 1, 2208.25, -167, 0)
-	spawnMobile("lok", "mandalorian_aliitalor", 1800, 3645.13, 1, 2198.08, -174, 0)
-	spawnMobile("lok", "mandalorian_aliitalor", 1800, 3633.67, 1, 2201.54, -171, 0)
-	spawnMobile("lok", "mandalorian_kandoalor", 1500, 3674.21, 1, 2204.8, 38, 0)
-	spawnMobile("lok", "mandalorian_kandoalor", 1500, 3618.55, 1, 2209.56, -21, 0)
-	spawnMobile("lok", "mandalorian_kandoalor", 1500, 3623.76, 1, 2142.19, -166, 0)
-	spawnMobile("lok", "mandalorian_ruusalor", 1200, 3605.59, 1, 2160.69, 93, 0)
-	spawnMobile("lok", "mandalorian_ruusalor", 1200, 3647.55, 1, 2146.78, -85, 0)
-	spawnMobile("lok", "mandalorian_ruusalor", 1200, 3627.01, 1, 2167.5, -168, 0)
-	spawnMobile("lok", "mandalorian_ruusalor", 1200, 3661.08, 1, 2170.57, -50, 0)
-	spawnMobile("lok", "mandalorian_aloruus", 900, 3627.56, 1, 2117.56, -173, 0)
-	spawnMobile("lok", "mandalorian_aloruus", 900, 3611.31, 1, 2120.98, -172, 0)
-	spawnMobile("lok", "mandalorian_aloruus", 900, 3605.53, 1, 2226.2, -25, 0)
-	spawnMobile("lok", "mandalorian_aloruus", 900, 3617.99, 1, 2231.33, -20, 0)
-	spawnMobile("lok", "mandalorian_aloruus", 900, 3682.01, 1, 2223.47, 9, 0)
-	spawnMobile("lok", "mandalorian_aloruus", 900, 3692.01, 1, 2223.47, 36, 0)
 
 end

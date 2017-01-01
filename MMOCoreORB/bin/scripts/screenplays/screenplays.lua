@@ -43,7 +43,9 @@ includeFile("themepark/nym/themeParkNym.lua")
 includeFile("themepark/rebel/themeParkRebel.lua")
 includeFile("themepark/jabba/themeParkJabba.lua")
 includeFile("themepark/valarian/themeParkValarian.lua")
-includeFile("themepark/marauder/themeParkMarauder.lua")
+includeFile("themepark/marauder/themeParkMarauderCharal.lua")
+includeFile("themepark/marauder/themeParkMarauderRaglithJorak.lua")
+includeFile("themepark/marauder/themeParkMarauderSzingoTerak.lua")
 includeFile("themepark/nightsister/themeParkNightsister.lua")
 includeFile("themepark/smc/themeParkSmcZideera.lua")
 includeFile("themepark/smc/themeParkSmcVhaundaIzaryx.lua")
@@ -199,9 +201,6 @@ includeFile("village/convos/phase4/med_droid_phase4_conv_handler.lua")
 includeFile("village/convos/phase4/sarguillo_phase4_conv_handler.lua")
 includeFile("village/convos/phase4/sivarra_phase4_conv_handler.lua")
 
--- Jedi
-includeFile("jedi/shrine/ForceShrineMenuComponent.lua")
-
 -- Jedi Trials (Padawan)
 includeFile("jedi/padawan/jedi_padawan_trial.lua")
 includeFile("jedi/padawan/convos/trials_padawan_architect_01.lua")
@@ -210,6 +209,9 @@ includeFile("jedi/padawan/convos/trials_padawan_artist_01.lua")
 includeFile("jedi/padawan/convos/trials_padawan_artist_02.lua")
 includeFile("jedi/padawan/trials/trial_architect.lua")
 includeFile("jedi/padawan/trials/trial_artist.lua")
+
+-- Jedi Objects
+includeFile("jedi/shrine/ForceShrineMenuComponent.lua")
 
 -- Events - Bestine Election
 includeFile("events/conversations/bestine_election/bestine_election_conv_handler.lua")
@@ -511,6 +513,7 @@ includeFile("poi/endor_ewok_lake_village_01.lua")
 includeFile("poi/endor_ewok_lake_village_02.lua")
 includeFile("poi/endor_ewok_tree_village_01.lua")
 includeFile("poi/endor_ewok_tree_village_02.lua")
+includeFile("poi/endor_marauder_stronghold.lua")
 includeFile("poi/lok_canyon_corsairs_stronghold.lua")
 includeFile("poi/lok_downed_blood_razer_transport.lua")
 includeFile("poi/lok_imperial_outpost.lua")
@@ -608,3 +611,4 @@ includeFile("poi/lok_rvboss.lua")
 --includeFile("dungeon/teleport_dantooine_pve.lua")
 --includeFile("dungeon/teleport_dathomir_pve.lua")
 --includeFile("dungeon/teleport_endor_pve.lua")
+

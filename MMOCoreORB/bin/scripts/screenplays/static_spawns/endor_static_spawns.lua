@@ -54,7 +54,7 @@ function EndorStaticSpawnsScreenPlay:spawnMobiles()
 	spawnMobile("endor", "ewok_outcast",300, -4784.1, 19.9, 1143.3, 94, 0)
 	spawnMobile("endor", "ewok_outcast",300, -4793.8, 9.9, 1150.3, 94, 0)
 	spawnMobile("endor", "ewok_outcast",300, -4802.6, 0.2, 1146.7, -71, 0)
-	spawnMobile("endor", "elliot",300, -4827.9, 0.7, 1160.6, 85, 0)
+	spawnMobile("endor", "ewok_outcast_raider",300, -4827.9, 0.7, 1160.6, 85, 0)
 
 	--Merek Spawns (3901, 5780)
 	spawnMobile("endor", "king_merek_harvester", 600, 3900, 199, 5750, getRandomNumber(360), 0)

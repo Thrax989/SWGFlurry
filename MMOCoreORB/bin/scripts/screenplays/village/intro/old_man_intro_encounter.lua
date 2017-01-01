@@ -11,7 +11,7 @@ OldManIntroEncounter = Encounter:new {
 	-- Task properties
 	taskName = "OldManIntroEncounter",
 	-- Encounter properties
-	encounterDespawnTime = 1 * 60 * 1000, -- 1 minutes
+	encounterDespawnTime = 5 * 60 * 1000, -- 5 minutes
 	despawnMessage = "@quest/force_sensitive/intro:leave",
 	spawnObjectList = {
 		{ template = "old_man", minimumDistance = 64, maximumDistance = 96, referencePoint = 0, followPlayer = true, setNotAttackable = true, runOnDespawn = true }

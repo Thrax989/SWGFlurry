@@ -95,7 +95,7 @@ function DathomirStaticSpawnsNwScreenPlay:spawnMobiles()
 	spawnMobile("dathomir", "singing_mountain_clan_sentry", 360, -854.8, 121.9, 4159.3, -90, 0)
 	spawnMobile("dathomir", "singing_mountain_clan_sentry", 360, -854.8, 121.0, 4178.2, -90, 0)
 
-	--spell weavers trees (-850,2195)
+	--spell weavers trees (-850,2795)
 	spawnMobile("dathomir", "nightsister_spell_weaver", 720, -860.8, 146.4, 2792.5, -170, 0)
 	spawnMobile("dathomir", "nightsister_spell_weaver", 720, -840.5, 146.6, 2788.0, 17, 0)
 
@@ -112,7 +112,7 @@ function DathomirStaticSpawnsNwScreenPlay:spawnMobiles()
 	spawnMobile("dathomir", "singing_mountain_clan_sentry", 360, -5289.7, 125.8, 1297.1, -140, 0)
 
 	--burial site (-7122,1175)
-	spawnMobile("dathomir", "nightsister_elder_2", 600, -7120.29, 460.67, 1179.38, 35, 0)
+	spawnMobile("dathomir", "nightsister_elder", 4200, -7120.29, 460.67, 1179.38, 35, 0)
 
 	--spiderclan floating rocks (-7121,2933)
 	spawnMobile("dathomir", "spiderclan_protector", 1220, -7121.9, 368.1, 2919.5, 0, 0)
