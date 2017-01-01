@@ -21,8 +21,8 @@ public:
 
 	int doQueueCommand(CreatureObject* player, const uint64& target, const UnicodeString& arguments) const {
 
-		int cooldownMilli = 240000; // 4 min
-		int durationSec =  210; // 3.5 min
+		int cooldownMilli = 300000; // 5 min
+		int durationSec =  60; // 1 min
 		int mindCost = player->calculateCostAdjustment(CreatureAttribute::FOCUS, 100 );
 		unsigned int buffCRC = STRING_HASHCODE("emboldenPet");
 
@@ -67,7 +67,7 @@ public:
 					continue;
 
 				// Check range
-				if( !checkDistance(player, pet, 75.0f) )
+				if( !checkDistance(player, pet, 50.0f) )
 					continue;
 
 				// Check if pet already has buff
@@ -85,9 +85,9 @@ public:
 
 				Locker locker(buff);
 
-				int healthBuff = pet->getBaseHAM(CreatureAttribute::HEALTH) * 0.75;
-				int actionBuff = pet->getBaseHAM(CreatureAttribute::ACTION) * 0.75;
-				int mindBuff = pet->getBaseHAM(CreatureAttribute::MIND) * 0.75;
+				int healthBuff = pet->getBaseHAM(CreatureAttribute::HEALTH) * 0.15;
+				int actionBuff = pet->getBaseHAM(CreatureAttribute::ACTION) * 0.15;
+				int mindBuff = pet->getBaseHAM(CreatureAttribute::MIND) * 0.15;
 				buff->setAttributeModifier(CreatureAttribute::HEALTH, healthBuff);
 				buff->setAttributeModifier(CreatureAttribute::ACTION, actionBuff);
 				buff->setAttributeModifier(CreatureAttribute::MIND, mindBuff);
@@ -111,4 +111,4 @@ public:
 
 };
 
-#endif //EMBOLDENPETSCOMMAND_H_
+#endif //EMBOLDENPETSCOMMAND_H_7777777

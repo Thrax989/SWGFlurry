@@ -42,7 +42,7 @@ public:
 		Locker locker(creature);
 		Locker crosslocker(player,creature);
 		player->removePendingTask("sampledna");
-		if (!creature->isInRange(player, 25.f) ) {
+		if (!creature->isInRange(player, 16.f) ) {
 			player->sendSystemMessage("@bio_engineer:harvest_dna_out_of_range");
 			resetCreatureStatus();
 			return;
@@ -62,7 +62,7 @@ public:
 			resetCreatureStatus();
 			return;
 		}
-		int mindCost = player->calculateCostAdjustment(CreatureAttribute::FOCUS, 50);
+		int mindCost = player->calculateCostAdjustment(CreatureAttribute::FOCUS, 200);
 		int skillMod = player->getSkillMod("dna_harvesting");
 		int cl = creature->getLevel();
 		switch(currentPhase) {
@@ -83,7 +83,7 @@ public:
 			}
 			break;
 		case SAMPLING:
-			if (waitCount == 5) {
+			if (waitCount == 9) {
 				currentPhase = END;
 			}else {
 				waitCount++;
@@ -119,8 +119,8 @@ public:
 			float rollMod = (((skillMod-cl)/cl))  + (skillMod-cl);
 			rollMod /= 2;
 			// We have the players roll. NOW to determine if success of failure;
-			if (sampleRoll > 25) { // adjust great success to 25% and above
-				int maxSamples = (int) ceil((float) skillMod / 15.f);
+			if (sampleRoll > 75) { // adjust great success ot 75% and above
+				int maxSamples = (int) ceil((float) skillMod / 25.f);
 				if (creature->getDnaSampleCount() > maxSamples ){
 					creature->setDnaState(CreatureManager::DNASAMPLED);
 					// We took the max samples the shock it too much and kils the creature.
@@ -133,7 +133,7 @@ public:
 			else if (sampleRoll < 5) {
 				// Critical failure, this can always occur
 				result = 1;
-			} else if ( (45 + rollMod) < sampleRoll) { // failure your roll < 45%
+			} else if ( (35 + rollMod) < sampleRoll) { // failure your roll < 50%
 				result = 2;
 			} else { // success
 				int maxSamples = (int)(ceil((double)skillMod / (double)25));
@@ -174,7 +174,7 @@ public:
 				default:
 					break;
 			}
-			if (success && cl <= 300) {
+			if (success && cl <= 75) {
 				player->sendSystemMessage("@bio_engineer:harvest_dna_succeed");
 				creature->incDnaSampleCount();
 				award(cl,rollMod,skillMod);
@@ -229,19 +229,19 @@ public:
 		int low = 7;
 		int mid = 6;
 		int high = 5;
-		if (skillMod <= 10) {
+		if (skillMod <= 15) {
 			low = 7;mid=6;high=5;
 		}
-		else if (skillMod <= 20 ) {
+		else if (skillMod <= 30 ) {
 			low = 7; mid = 6; high = 5;
 		}
-		else if (skillMod <= 30) {
+		else if (skillMod <= 45) {
 			low = 6; mid = 5; high = 4;
 		}
-		else if (skillMod <= 40) {
+		else if (skillMod <= 60) {
 			low = 5; mid = 4; high = 3;
 		}
-		else if (skillMod <= 50) {
+		else if (skillMod <= 75) {
 			low = 4; mid = 3; high = 2;
 		}
 		else {
@@ -253,9 +253,9 @@ public:
 		//60 	BAQ, AQ,AAQ
 		//75 	AQ,AAQ,HQ
 		//100 	AAQ,HQ, VHQ
-		if (qualityRoll < 25)
+		if (qualityRoll < 33)
 			quality = low;
-		else if (qualityRoll < 50)
+		else if (qualityRoll < 66)
 			quality = mid;
 		else
 			quality = high;
