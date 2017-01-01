@@ -7,7 +7,7 @@ object_building_player_musty_house = object_building_player_shared_musty_house:n
 	length = 1,
 	width = 1,
 	skillMods = {
-		{"private_safe_logout", 1}
+		{"private_safe_logout", 1},
 		{"advanced_assembly", 50},
 		{"armor_assembly", 50},
 		{"general_assembly", 50},
