@@ -38,54 +38,8 @@
 --it is their choice whether to do so. The GNU Lesser General Public License
 --gives permission to release a modified version without this exception;
 --this exception also makes it possible to release a modified version
---which carries forward this exception. 
+--which carries forward this exception.
 
-
-object_intangible_vehicle_shared_pod_racer_balta_podracer_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_pod_racer_balta_podracer_pcd.iff"
-
-}
-
-object_intangible_vehicle_shared_pod_racer_ipg_longtail_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_pod_racer_ipg_longtail_pcd.iff"
-
-}
-
-object_intangible_vehicle_shared_podracer_anakin_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_podracer_anakin_pcd.iff"
-
-}
-
-object_intangible_vehicle_shared_barc_speeder_imperial_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_barc_speeder_imperial_pcd.iff"
-
-}
-
-object_intangible_vehicle_shared_barc_speeder_rebel_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_barc_speeder_rebel_pcd.iff"
-
-}
-
-
-object_intangible_vehicle_shared_barc_speeder_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_barc_speeder_pcd.iff"
-
-}
-
-
-object_intangible_vehicle_shared_pod_racer_two_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_pod_racer_two_pcd.iff"
-
-}
-
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_pod_racer_two_pcd, "object/intangible/vehicle/shared_pod_racer_two_pcd.iff")
-
-object_intangible_vehicle_shared_pod_racer_one_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_pod_racer_one_pcd.iff"
-
-}
-
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_pod_racer_one_pcd, "object/intangible/vehicle/shared_pod_racer_one_pcd.iff")
 
 object_intangible_vehicle_shared_jetpack_pcd = SharedIntangibleObjectTemplate:new {
 	clientTemplateFileName = "object/intangible/vehicle/shared_jetpack_pcd.iff"
@@ -479,62 +433,33 @@ object_intangible_vehicle_shared_vehicle_pcd_base = SharedIntangibleObjectTempla
 
 ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_vehicle_pcd_base, "object/intangible/vehicle/shared_vehicle_pcd_base.iff")
 
-object_intangible_vehicle_shared_basilisk_war_droid_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_basilisk_war_droid_pcd.iff"
+object_intangible_vehicle_shared_barc_speeder_imperial_pcd = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/vehicle/shared_barc_speeder_imperial_pcd.iff"
 
 }
 
-object_intangible_vehicle_shared_hover_chair_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_hover_chair_pcd.iff"
+object_intangible_vehicle_shared_barc_speeder_rebel_pcd = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/vehicle/shared_barc_speeder_rebel_pcd.iff"
 
 }
 
-object_intangible_vehicle_shared_mechno_chair_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_mechno_chair_pcd.iff"
+
+object_intangible_vehicle_shared_barc_speeder_pcd = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/vehicle/shared_barc_speeder_pcd.iff"
 
 }
 
-object_intangible_vehicle_shared_senate_pod_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_senate_pod_pcd.iff"
+
+object_intangible_vehicle_shared_pod_racer_two_pcd = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/vehicle/shared_pod_racer_two_pcd.iff"
 
 }
 
-object_intangible_vehicle_shared_stap_speeder_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_stap_speeder_pcd.iff"
+ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_pod_racer_two_pcd, "object/intangible/vehicle/shared_pod_racer_two_pcd.iff")
+
+object_intangible_vehicle_shared_pod_racer_one_pcd = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/vehicle/shared_pod_racer_one_pcd.iff"
 
 }
 
-object_intangible_vehicle_shared_xj6_air_speeder_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_xj6_air_speeder_pcd.iff"
-
-}
-
-object_intangible_vehicle_shared_tcg_hk47_jetpack_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_tcg_hk47_jetpack_pcd.iff"
-
-}
-
-object_intangible_vehicle_shared_tcg_republic_gunship_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_tcg_republic_gunship_pcd.iff"
-
-}
-
-object_intangible_vehicle_shared_tcg_military_transport_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_tcg_military_transport_pcd.iff"
-
-}
-
-object_intangible_vehicle_shared_tcg_merr_sonn_jt12_jetpack_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_tcg_merr_sonn_jt12_jetpack_pcd.iff"
-
-}
-
-object_intangible_vehicle_shared_koro2_speeder_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_koro2_speeder_pcd.iff"
-
-}
-
-object_intangible_vehicle_shared_tcg_8_air_speeder_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_tcg_8_air_speeder_pcd.iff"
-
-}
+ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_pod_racer_one_pcd, "object/intangible/vehicle/shared_pod_racer_one_pcd.iff")
