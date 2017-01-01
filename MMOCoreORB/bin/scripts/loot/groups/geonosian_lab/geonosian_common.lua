@@ -7,7 +7,6 @@ geonosian_common = {
 	lootItems = {
 		{itemTemplate = "geo_power_cube_green", weight = 500000},
 		{itemTemplate = "geo_power_cube_red", weight = 500000},
-		{itemTemplate = "geo_power_cube_white", weight = 1000000},
 		{itemTemplate = "geo_power_cube_yellow", weight = 500000},
 		{itemTemplate = "geo_reinforcement_core", weight = 1900000},
 		{itemTemplate = "geo_reinforcement_core_schematic", weight = 1000000},

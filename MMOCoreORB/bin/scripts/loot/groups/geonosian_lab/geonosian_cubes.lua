@@ -7,7 +7,6 @@ geonosian_cubes = {
 	lootItems = {
 		{itemTemplate = "geo_power_cube_green", weight = 2000000},
 		{itemTemplate = "geo_power_cube_red", weight = 2000000},
-		{itemTemplate = "geo_power_cube_white", weight = 4000000},
 		{itemTemplate = "geo_power_cube_yellow", weight = 2000000}
 	}
 }
