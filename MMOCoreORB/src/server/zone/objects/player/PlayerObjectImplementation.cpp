@@ -2058,6 +2058,9 @@ void PlayerObjectImplementation::doForceRegen() {
 		if (medTask != NULL)
 			modifier = 3;
 	}
+	int enhSkills = numSpecificSkills(creature, "force_discipline_enhancements_");
+        float enhMod = enhSkills * .056;
+        modifier = modifier * (1 + enhMod);
 
 	uint32 forceTick = tick * modifier;
 
