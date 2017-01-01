@@ -7,7 +7,7 @@ object_building_player_jabbas_house = object_building_player_shared_jabbas_house
 	width = 2,
 	publicStructure = 0,
 	skillMods = {
-		{"private_safe_logout", 1}
+		{"private_safe_logout", 1},
 		{"advanced_assembly", 50},
 		{"armor_assembly", 50},
 		{"general_assembly", 50},
