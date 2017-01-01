@@ -45,6 +45,14 @@ includeFile("groups/armor/padded_armor.lua")
 includeFile("groups/armor/tantel_armor.lua")
 includeFile("groups/armor/ubese_armor.lua")
 
+-- bestine election sub-folder
+includeFile("groups/bestine_election/bestine_history_quest_reward.lua")
+includeFile("groups/bestine_election/bestine_election_sean_trenwell_rewards.lua")
+includeFile("groups/bestine_election/bestine_election_tusken_head.lua")
+includeFile("groups/bestine_election/bestine_election_tusken_loot.lua")
+includeFile("groups/bestine_election/bestine_election_tusken_quest.lua")
+includeFile("groups/bestine_election/bestine_election_victor_visalis_rewards.lua")
+
 -- creature sub-folder
 includeFile("groups/creature/brackaset_common.lua")
 includeFile("groups/creature/fambaa_common.lua")
@@ -146,7 +154,6 @@ includeFile("groups/npc/tusken_common.lua")
 includeFile("groups/npc/tutorial_pirate.lua")
 includeFile("groups/npc/valarian_common.lua")
 includeFile("groups/npc/weequay_common.lua")
-includeFile("groups/npc/janta_rare.lua")
 
 -- task_loot sub-folder
 includeFile("groups/task_loot/hedon_istee_treasure.lua")
@@ -162,11 +169,13 @@ includeFile("groups/task_loot/task_loot_bren_kingal_atst_pilots_helmet.lua")
 includeFile("groups/task_loot/task_loot_bren_kingal_farandans_datadisk.lua")
 includeFile("groups/task_loot/task_loot_bren_kingal_shield_generator.lua")
 includeFile("groups/task_loot/task_loot_bren_kingal_stamina_medpack.lua")
+includeFile("groups/task_loot/task_loot_briefcase_quest_jusani.lua")
 includeFile("groups/task_loot/task_loot_camera.lua")
 includeFile("groups/task_loot/task_loot_didina_lippinoss_correspondence.lua")
 includeFile("groups/task_loot/task_loot_draya_korbinari_art_holo.lua")
 includeFile("groups/task_loot/task_loot_electronic_key.lua")
 includeFile("groups/task_loot/task_loot_empty_cage.lua")
+includeFile("groups/task_loot/task_loot_eng_prototype_quest_jusani.lua")
 includeFile("groups/task_loot/task_loot_garm_datadisc.lua")
 includeFile("groups/task_loot/task_loot_gins_darone_special_forces_vibroknuckler.lua")
 includeFile("groups/task_loot/task_loot_gins_darone_stranded_rebels_weapon.lua")
@@ -317,6 +326,7 @@ includeFile("groups/theme_park_reward/theme_park_reward_rebel_mon_mothma.lua")
 includeFile("groups/theme_park_reward/theme_park_reward_rebel_nien_nunb.lua")
 includeFile("groups/theme_park_reward/theme_park_reward_rebel_qualdo_herm.lua")
 includeFile("groups/theme_park_reward/theme_park_reward_rebel_wedge_antilles.lua")
+
 --village sub-folder
 includeFile("groups/village/village_resources.lua")
 includeFile("groups/village/sivarra_reward_necklace.lua")
@@ -324,7 +334,6 @@ includeFile("groups/village/cs_datapad.lua")
 
 -- weapon sub-folder
 includeFile("groups/weapon/carbines.lua")
-includeFile("groups/weapon/g_lightsaber_vader.lua")
 includeFile("groups/weapon/grenades_looted.lua")
 includeFile("groups/weapon/heavy_weapons_consumable.lua")
 includeFile("groups/weapon/heavy_weapons_rifle.lua")
@@ -347,6 +356,7 @@ includeFile("groups/wearables/wearables_common.lua")
 includeFile("groups/wearables/wearables_rare.lua")
 includeFile("groups/wearables/wearables_scarce.lua")
 includeFile("groups/wearables/wearables_uncommon.lua")
+
 
 includeFile("groups/crystal_mauls_vengence.lua")
 includeFile("groups/crystal_qui_gons_devotion.lua")
@@ -463,3 +473,6 @@ includeFile("groups/bestine_election/bestine_election_victor_visalis_rewards.lua
 
 includeFile("groups/task_loot/task_loot_briefcase_quest_jusani.lua")
 includeFile("groups/task_loot/task_loot_eng_prototype_quest_jusani.lua")
+
+includeFile("groups/npc/janta_rare.lua")
+includeFile("groups/weapon/g_lightsaber_vader.lua")
