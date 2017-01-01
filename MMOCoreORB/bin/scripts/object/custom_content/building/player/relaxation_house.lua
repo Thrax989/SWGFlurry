@@ -1,5 +1,5 @@
 object_building_player_relaxation_house = object_building_player_shared_relaxation_house:new {
-	lotSize = 5,
+	lotSize = 2,
 	baseMaintenanceRate = 80,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "kaas", "endor"},
 	constructionMarker = "object/building/player/construction/construction_player_house_corellia_large_style_01.iff",
