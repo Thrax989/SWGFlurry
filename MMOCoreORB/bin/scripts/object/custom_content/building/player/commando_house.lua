@@ -1,5 +1,5 @@
 object_building_player_commando_house = object_building_player_shared_commando_house:new {
-	lotSize = 5,
+	lotSize = 2,
 	baseMaintenanceRate = 80,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "kaas", "endor"},
 	publicStructure = 0,
