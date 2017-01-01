@@ -43,7 +43,7 @@
 
 object_building_general_mun_all_hotel_s01 = object_building_general_shared_mun_all_hotel_s01:new {
 	skillMods = {
-		{"private_buff_mind", 175},
+		{"private_buff_mind", 100},
 		{"private_med_battle_fatigue", 5}
 	},
 	planetMapCategory = "hotel"
