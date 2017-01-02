@@ -7,7 +7,7 @@ object_building_player_rebel_house = object_building_player_shared_rebel_house:n
 	width = 1,
 	publicStructure = 0,
 	skillMods = {
-		{"private_medical_rating", 110},
+		{"private_medical_rating", 100},
 		{"private_buff_mind", 125},
 		{"private_med_battle_fatigue", 15},
 		{"private_med_wound_mind", 15},

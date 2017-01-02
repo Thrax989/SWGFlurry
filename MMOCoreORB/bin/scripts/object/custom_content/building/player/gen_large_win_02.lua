@@ -4,7 +4,7 @@ object_building_player_generic_large_window_s02 = object_building_player_shared_
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "kaas", "endor"},
 	constructionMarker = "object/building/player/construction/construction_player_house_corellia_large_style_01.iff",
 	skillMods = {
-		{"private_medical_rating", 110},
+		{"private_medical_rating", 100},
 		{"private_buff_mind", 125},
 		{"private_med_battle_fatigue", 15},
 		{"private_med_wound_mind", 15},
