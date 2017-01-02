@@ -10,6 +10,7 @@ object_building_player_yt1300_house = object_building_player_shared_yt1300_house
 		{"private_medical_rating", 110},
 		{"private_buff_mind", 125},
 		{"private_med_battle_fatigue", 15},
+		{"private_med_wound_mind", 15},
 		{"private_safe_logout", 1},
 		{"advanced_assembly", 20},
 		{"armor_assembly", 20},
