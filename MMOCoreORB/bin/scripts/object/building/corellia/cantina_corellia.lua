@@ -44,7 +44,7 @@
 object_building_corellia_cantina_corellia = object_building_corellia_shared_cantina_corellia:new {
 	skillMods = {
 		{"private_buff_mind", 125},
-		{"private_med_battle_fatigue", 15}
+		{"private_med_battle_fatigue", 15},
 		{"private_med_wound_mind", 15},
 		{"private_safe_logout", 1}
 	},
