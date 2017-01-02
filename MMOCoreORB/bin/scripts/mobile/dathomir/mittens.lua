@@ -10,7 +10,7 @@
 	baseXp = 500000,
 	baseHAM = 575000,
 	baseHAMmax = 585000,
-	armor = 3,
+	armor = 0,
 	resists = {195,195,195,195,195,195,195,195,195},
 	meatType = "meat_avian",
 	meatAmount = 5000,
