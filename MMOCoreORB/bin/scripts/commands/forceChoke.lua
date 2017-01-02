@@ -44,10 +44,10 @@
 ForceChokeCommand = {
   name = "forcechoke",
 
-  minDamage = 175,
-  maxDamage = 375,
-  speed = 6.0,
-  forceCost = 400,
+  minDamage = 600,
+  maxDamage = 1200,
+  speed = 1.0,
+  forceCost = 100,
   visMod = 25,
   forceAttack = true,
   accuracyBonus = 95,
@@ -57,7 +57,7 @@ ForceChokeCommand = {
 
   combatSpam = "forcechoke",
 
-  poolsToDamage = HEALTH_ATTRIBUTE,
+  poolsToDamage = HEALTH_ATTRIBUTE + ACTION_ATTRIBUTE + MIND_ATTRIBUTE,
   damageType = LIGHTSABER_DAMAGE,
 
   range = 32,
@@ -68,9 +68,9 @@ ForceChokeCommand = {
     { "", "" },
     HEALTH,
     true,
-    -1,
-    100,
-    350,
+    750,
+    150,
+    600,
     35,
     33.0,
     0.33
@@ -81,9 +81,9 @@ ForceChokeCommand = {
     { "", "" },
     ACTION,
     true,
-    -1,
-    100,
-    350,
+    750,
+    150,
+    600,
     35,
     33.0,
     0.33
@@ -94,9 +94,9 @@ ForceChokeCommand = {
     { "", "" },
     MIND,
     true,
-    -1,
-    100,
-    350,
+    750,
+    150,
+    600,
     35,
     33.0,
     0.33
