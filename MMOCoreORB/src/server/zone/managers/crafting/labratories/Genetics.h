@@ -367,7 +367,7 @@ public:
 			level = baseLevel;
 		int eff = armorBase/50;
 		if (armorBase > 500)
-			eff = (armorBase-500)/50;
+			eff = 0;
 		if (armorBase == 500)
 			eff = 0;
 		int resistanceLevel = 0;
@@ -416,7 +416,7 @@ public:
 		int armorLevel2 = calcArmorLevelByStats(armor,armorLevel,baseLevel,armorBase, kin,eng, bla,heat,cold,elec,acid,stun) * 2;
 		if (defenseLevel < baseLevel)
 			defenseLevel = baseLevel;
-		int level = round((((float)(statLevel + damageLevel + hitLevel + defenseLevel + armorLevel + regenerationLevel ))/22.0) + 0.5);
+		int level = round((((float)(statLevel + damageLevel + hitLevel + defenseLevel + armorLevel + regenerationLevel ))/11.0) + 0.5);
 		return level;
 	}
 	// Calculate the creatures overall level as a pet.
@@ -434,7 +434,7 @@ public:
 		int armorLevel2 = calculateArmorValue(pet, armorLevel, baseLevel, armorBase) * 2;
 		if (defenseLevel < baseLevel)
 			defenseLevel = baseLevel;
-		int level = round((((float)(statLevel + damageLevel + hitLevel + defenseLevel + armorLevel + regenerationLevel ))/22.0) + 0.5);
+		int level = round((((float)(statLevel + damageLevel + hitLevel + defenseLevel + armorLevel + regenerationLevel ))/11.0) + 0.5);
 		return level;
 	}
 
