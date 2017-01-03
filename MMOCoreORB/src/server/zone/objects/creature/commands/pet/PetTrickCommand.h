@@ -82,6 +82,7 @@ public:
 		int mindHeal = pet->getBaseHAM(CreatureAttribute::MIND) * 0.25 * trickNumber;
 		int focusHeal = pet->getBaseHAM(CreatureAttribute::FOCUS) * 0.25 * trickNumber;
 		int willHeal = pet->getBaseHAM(CreatureAttribute::WILLPOWER) * 0.25 * trickNumber;
+		int shockHeal = 250 * trickNumber;
 
 		// Heal wounds
 		pet->healWound(player, CreatureAttribute::MIND, mindHeal, true, false);
