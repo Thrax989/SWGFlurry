@@ -1,4 +1,5 @@
 # SWGFlurry
+http://www.swgflurry.com/
 http://www.swgflurry.com/forum/
 
 
