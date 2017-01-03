@@ -21,8 +21,8 @@ public:
 
 	int doQueueCommand(CreatureObject* player, const uint64& target, const UnicodeString& arguments) const {
 
-		int cooldownMilli = 300000; // 5 min
-		int durationSec =  60; // 1 min
+		int cooldownMilli = 240000; // 4 min
+		int durationSec =  210; // 3.5 min
 		int mindCost = player->calculateCostAdjustment(CreatureAttribute::FOCUS, 100 );
 		unsigned int buffCRC = STRING_HASHCODE("emboldenPet");
 
@@ -66,7 +66,7 @@ public:
 				if( pet->isIncapacitated() || pet->isDead() )
 					continue;
 
-				// Check range
+				// Check range, let's make sure the CH is somewhat up close and personal
 				if( !checkDistance(player, pet, 50.0f) )
 					continue;
 
@@ -80,14 +80,14 @@ public:
 				if( pet->getCooldownTimerMap() == NULL || !pet->getCooldownTimerMap()->isPast("emboldenPetsCooldown") )
 					continue;
 
-				// Build 15% Health, Action, Mind buff
+				// Build 50% Health, Action, Mind buff
 				ManagedReference<Buff*> buff = new Buff(pet, buffCRC, durationSec, BuffType::OTHER);
 
 				Locker locker(buff);
 
-				int healthBuff = pet->getBaseHAM(CreatureAttribute::HEALTH) * 0.15;
-				int actionBuff = pet->getBaseHAM(CreatureAttribute::ACTION) * 0.15;
-				int mindBuff = pet->getBaseHAM(CreatureAttribute::MIND) * 0.15;
+				int healthBuff = pet->getBaseHAM(CreatureAttribute::HEALTH) * 0.50;
+				int actionBuff = pet->getBaseHAM(CreatureAttribute::ACTION) * 0.50;
+				int mindBuff = pet->getBaseHAM(CreatureAttribute::MIND) * 0.50;
 				buff->setAttributeModifier(CreatureAttribute::HEALTH, healthBuff);
 				buff->setAttributeModifier(CreatureAttribute::ACTION, actionBuff);
 				buff->setAttributeModifier(CreatureAttribute::MIND, mindBuff);
@@ -111,4 +111,4 @@ public:
 
 };
 
-#endif //EMBOLDENPETSCOMMAND_H_7777777
+#endif //EMBOLDENPETSCOMMAND_H_

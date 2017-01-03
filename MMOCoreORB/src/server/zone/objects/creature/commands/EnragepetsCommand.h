@@ -21,8 +21,8 @@ public:
 
 	int doQueueCommand(CreatureObject* player, const uint64& target, const UnicodeString& arguments) const {
 
-		int cooldownMilli = 300000; // 5 min
-		int durationSec =  60; // 1 min
+		int cooldownMilli = 240000; // 4 min
+		int durationSec =  210; // 3.5 min
 		int mindCost = player->calculateCostAdjustment(CreatureAttribute::FOCUS, 100 );
 		unsigned int buffCRC = STRING_HASHCODE("enragePet");
 
@@ -66,7 +66,7 @@ public:
 				if( pet->isIncapacitated() || pet->isDead() )
 					continue;
 
-				// Check range
+				// Check range, make sure CH is fairly upclose and personal
 				if( !player->isInRange( pet, 50.0 ) )
 					continue;
 
@@ -78,11 +78,11 @@ public:
 				if( pet->getCooldownTimerMap() == NULL || !pet->getCooldownTimerMap()->isPast("enragePetsCooldown") )
 					continue;
 
-				// Determine damage bonus (15% of average damage)
-				int damageBonus = (int) ((((float)pet->getDamageMin() + (float)pet->getDamageMax())/2) * 0.15);
+				// Determine damage bonus (25% of average damage)
+				int damageBonus = (int) ((((float)pet->getDamageMin() + (float)pet->getDamageMax())/2) * 0.25);
 
-				// Determine damage susceptibility (half of damage bonus)
-				int damageSusceptibility = damageBonus / 2;
+				// Determine damage susceptibility (1/4 of damage bonus)
+				int damageSusceptibility = damageBonus / 4;
 
 				// Build buff
 				ManagedReference<Buff*> buff = new Buff(pet, buffCRC, durationSec, BuffType::OTHER);
