@@ -44,12 +44,13 @@
 MindBlast1Command = {
 	name = "mindblast1",
 
-	minDamage = 750,
-	maxDamage = 1000,
-	speed = 4.0,
-	forceCost = 68,
+	minDamage = 300,
+	maxDamage = 800,
+	speed = 2.0,
+	forceCost = 140,
 	visMod = 25,
 	accuracySkillMod = "mindblast_accuracy";
+	accuracyBonus = 95,
 
 	stateEffects = {
 	  StateEffect(
@@ -59,7 +60,7 @@ MindBlast1Command = {
 		{},
 		55,
 		0,
-		10
+		15
 	  ),
 
 	  StateEffect(
@@ -69,7 +70,7 @@ MindBlast1Command = {
 		{},
 		55,
 		0,
-		10
+		20
 	  ),
 
 	  StateEffect(
@@ -79,7 +80,7 @@ MindBlast1Command = {
 		{},
 		55,
 		0,
-		10
+		20
 	  )
 	},
 

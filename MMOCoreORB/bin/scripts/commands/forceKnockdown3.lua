@@ -45,10 +45,11 @@ ForceKnockdown3Command = {
 	name = "forceknockdown3",
 
     damageMultiplier = 0,
-	speed = 4.0,
-	forceCost = 200,
+	speed = 1.0,
+	forceCost = 240,
 	visMod = 25,
 	accuracySkillMod = "forceknockdown_accuracy",
+	accuracyBonus = 95,
 	areaAction = true,
 	areaRange = 15,
 
@@ -58,7 +59,7 @@ ForceKnockdown3Command = {
 		{ "knockdownRecovery", "lastKnockdown" },
 		{ "force_defense" },
 		{},
-		65,
+		100,
 		0,
 		0
 	  )
