@@ -547,19 +547,25 @@ bool PetDeedImplementation::adjustPetStats(CreatureObject* player, CreatureObjec
 	}
 
 	int ham = DnaManager::instance()->valueForLevel(DnaManager::HAM_LEVEL,oldLevel);
+	if (ham > 120000) {
+		ham = 120000;
+	}
 	health = ham;
 	action = ham;
 	mind = ham;
 	regen = DnaManager::instance()->valueForLevel(DnaManager::REG_LEVEL,oldLevel);
 	float dps = DnaManager::instance()->valueForLevel(DnaManager::DPS_LEVEL,oldLevel);
-	damageMin = round((dps * 2.25) * 1.5);
+	if (dps > 1000) {
+		dps = 1000;
+	}
+	damageMin = round(dps * 3.5);
 	attackSpeed = 2.0;
-	damageMax = round((dps * 2.25) * 1.75);
+	damageMax = round(dps * 4.0);
 	chanceHit = DnaManager::instance()->valueForLevel(DnaManager::HIT_LEVEL,oldLevel);
 
 	// Adjust Armor Now
 	fortitude = DnaManager::instance()->valueForLevel(DnaManager::ARM_LEVEL,oldLevel);
-	armor = fortitude/500;
+	armor = 0;
 	float effectiveness = (int)(((fortitude - (armor * 500)) / 50) * 5);
 	if (!isSpecialResist(SharedWeaponObjectTemplate::KINETIC) && kinResist > 0)
 		kinResist = effectiveness;

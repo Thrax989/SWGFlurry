@@ -203,9 +203,9 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	quickness = (dexterity * 15)    + (dependency * 10);
 	hit = 5.00 + (10.00 * ((float)cleverness/333.0));
 	// dps of pet use to determien min and max value.
-	int dps = ceil((ceil(15.0 + (1425.0 * ( ((float)power)/675.0))))/2.5);
+	int dps = ceil(10.0 * (float)power));
 	speed = 2.5-((ceil(((float)courage)/10)*10)/1000);
-	maxDam = round(((float)dps * speed) * 3.3);
+	maxDam = round(((float)dps * speed) * 2.0);
   	// round maxDam down to the closest multiple of 5
 	maxDam = maxDam - (maxDam % 5);
   	// subtract either 50 or 100 from maxDam to get the minDam
@@ -296,11 +296,6 @@ void GeneticComponentImplementation::setSpecialResist(int type) {
 	specialResists |= type;
 }
 int GeneticComponentImplementation::getEffectiveArmor() {
-	if (fortitude < 500)
-		return fortitude/50;
-	if (fortitude > 500)
-		return (fortitude-500)/50;
-	if (fortitude == 500)
-		return 0;
-	return fortitude/50;
+
+	return 0;
 }
