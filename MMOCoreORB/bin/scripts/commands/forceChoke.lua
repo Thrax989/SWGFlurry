@@ -49,7 +49,7 @@ ForceChokeCommand = {
   speed = 1.0,
   forceCost = 190,
   visMod = 25,
-  forceAttack = true,
+  forceAttack = false,
   accuracyBonus = 95,
 
   animation = "force_choke_1_particle_level_1",
