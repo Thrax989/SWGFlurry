@@ -80,14 +80,14 @@ public:
 				if( pet->getCooldownTimerMap() == NULL || !pet->getCooldownTimerMap()->isPast("emboldenPetsCooldown") )
 					continue;
 
-				// Build 50% Health, Action, Mind buff
+				// Build 25% Health, Action, Mind buff
 				ManagedReference<Buff*> buff = new Buff(pet, buffCRC, durationSec, BuffType::OTHER);
 
 				Locker locker(buff);
 
-				int healthBuff = pet->getBaseHAM(CreatureAttribute::HEALTH) * 0.50;
-				int actionBuff = pet->getBaseHAM(CreatureAttribute::ACTION) * 0.50;
-				int mindBuff = pet->getBaseHAM(CreatureAttribute::MIND) * 0.50;
+				int healthBuff = pet->getBaseHAM(CreatureAttribute::HEALTH) * 0.25;
+				int actionBuff = pet->getBaseHAM(CreatureAttribute::ACTION) * 0.25;
+				int mindBuff = pet->getBaseHAM(CreatureAttribute::MIND) * 0.25;
 				buff->setAttributeModifier(CreatureAttribute::HEALTH, healthBuff);
 				buff->setAttributeModifier(CreatureAttribute::ACTION, actionBuff);
 				buff->setAttributeModifier(CreatureAttribute::MIND, mindBuff);
