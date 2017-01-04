@@ -122,7 +122,7 @@ end
 function HologrindJediManager:awardJediStatusAndSkill(pCreatureObject)
 	ObjectManager.withCreaturePlayerObject(pCreatureObject, function(playerObject)
 		awardSkill(pCreatureObject, "force_title_jedi_novice")
-		playerObject:setJediState(1)
+		playerObject:setJediState(2)
 	end)
 end
 
