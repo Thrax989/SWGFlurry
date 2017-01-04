@@ -203,7 +203,7 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	quickness = (dexterity * 15)    + (dependency * 10);
 	hit = 5.00 + (10.00 * ((float)cleverness/333.0));
 	// dps of pet use to determien min and max value.
-	int dps = ceil(10.0 * (float)power));
+	int dps = ceil(10.0 * (float)power);
 	speed = 2.5-((ceil(((float)courage)/10)*10)/1000);
 	maxDam = round(((float)dps * speed) * 2.0);
   	// round maxDam down to the closest multiple of 5
