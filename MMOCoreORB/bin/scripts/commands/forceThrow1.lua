@@ -44,8 +44,8 @@
 ForceThrow1Command = {
 	name = "forcethrow1",
 
-	minDamage = 300,
-	maxDamage = 550,
+	minDamage = 600,
+	maxDamage = 900,
 	speed = 2.0,
 	forceCost = 35,
 	visMod = 25,
@@ -71,7 +71,7 @@ ForceThrow1Command = {
 
 	poolsToDamage = RANDOM_ATTRIBUTE,
 
-	forceAttack = true,
+	forceAttack = false,
 	damageType = LIGHTSABER_DAMAGE,
 
 	range = 32
