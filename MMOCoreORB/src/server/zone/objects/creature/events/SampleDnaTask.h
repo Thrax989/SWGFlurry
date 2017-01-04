@@ -119,35 +119,35 @@ public:
 			float rollMod = (((skillMod-cl)/cl))  + (skillMod-cl);
 			rollMod /= 2;
 			// We have the players roll. NOW to determine if success of failure;
-			if (sampleRoll > 25) { // adjust great success at 25% and above
+			if (sampleRoll > 75) { // adjust great success at 75% and above
 				int maxSamples = (int) ceil((float) skillMod / 15.f);
 				if (creature->getDnaSampleCount() > maxSamples ){
 					creature->setDnaState(CreatureManager::DNASAMPLED);
 					// We took the max samples the shock it too much and kils the creature.
 					result = 4;
 				} else {
-					// did we aggro?
+					// Success
 					result = 5;
 				}
 			}
 			else if (sampleRoll < 5) {
 				// Critical failure, this can always occur
 				result = 1;
-			} else if ( (45 + rollMod) < sampleRoll) { // failure your roll < 45%
+			} else if ((sampleRoll + rollMod) < 30) { // failure 10% of the time at 125 dna harvesting and level 85 creature
 				result = 2;
 			} else { // success
-				int maxSamples = (int)(ceil((double)skillMod / (double)25));
+				int maxSamples = (int) ceil((float) skillMod / 25.f);
 				if (creature->getDnaSampleCount() > maxSamples ){
 					creature->setDnaState(CreatureManager::DNASAMPLED);
 					// We took the max samples the shock it too much and kils the creature.
 					result = 4;
 				} else {
 					// did we aggro?
-					int aggroChance = System::random(100);
-					int aggroMod = (creature->getDnaSampleCount() * 5);
-					if ( (aggroChance+aggroMod) > (sampleRoll+rollMod) || aggroChance <= 5)  // aggro
+					int aggroChance = System::random(75); // 
+					int aggroMod = (creature->getDnaSampleCount() * 2);
+					if ( (aggroChance+aggroMod) > (sampleRoll+rollMod) || aggroChance <= 4) { // aggro
 						result = 3;
-					else { // it didnt care and we didnt kill it
+					} else { // it didnt care and we didnt kill it
 						result = 5;
 					}
 				}
