@@ -205,7 +205,7 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	// dps of pet use to determien min and max value.
 	int dps = ceil(1.0 * (float)power);
 	speed = 2.5-((ceil(((float)courage)/10)*10)/1000);
-	maxDam = round(((float)dps * speed) * 2.0);
+	maxDam = round(((float)dps * speed) * 1.5);
   	// round maxDam down to the closest multiple of 5
 	maxDam = maxDam - (maxDam % 5);
   	// subtract either 50 or 100 from maxDam to get the minDam

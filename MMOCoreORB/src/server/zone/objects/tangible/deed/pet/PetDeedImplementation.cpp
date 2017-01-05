@@ -554,13 +554,16 @@ bool PetDeedImplementation::adjustPetStats(CreatureObject* player, CreatureObjec
 	action = ham;
 	mind = ham;
 	regen = DnaManager::instance()->valueForLevel(DnaManager::REG_LEVEL,oldLevel);
+	if (regen > 12000) {
+		regen = 12000;
+	}
 	float dps = DnaManager::instance()->valueForLevel(DnaManager::DPS_LEVEL,oldLevel);
 	if (dps > 1000) {
 		dps = 1000;
 	}
-	damageMin = round(dps * 3.5);
+	damageMin = round(dps * 2.75);
 	attackSpeed = 2.0;
-	damageMax = round(dps * 4.0);
+	damageMax = round(dps * 3.0);
 	chanceHit = DnaManager::instance()->valueForLevel(DnaManager::HIT_LEVEL,oldLevel);
 
 	// Adjust Armor Now
