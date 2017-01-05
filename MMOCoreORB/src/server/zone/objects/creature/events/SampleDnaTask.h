@@ -143,7 +143,7 @@ public:
 					result = 4;
 				} else {
 					// did we aggro?
-					int aggroChance = System::random(75); // 
+					int aggroChance = System::random(50); // 
 					int aggroMod = (creature->getDnaSampleCount() * 2);
 					if ( (aggroChance+aggroMod) > (sampleRoll+rollMod) || aggroChance <= 4) { // aggro
 						result = 3;
