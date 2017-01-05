@@ -412,11 +412,11 @@ public:
 		int regenerationLevel =  generateRegenLevel(regen);
 		int armorLevel = generteArmorLevel(armor,effective);
 		int armorBase = DnaManager::instance()->valueForLevel(DnaManager::ARM_LEVEL,armorLevel);
-		int baseLevel = (((statLevel) + (damageLevel) + (regenerationLevel) + (hitLevel)) / 19.0) + 0.5;
+		int baseLevel = (((statLevel) + (damageLevel) + (regenerationLevel) + (hitLevel)) / 10.0) + 0.5;
 		int armorLevel2 = calcArmorLevelByStats(armor,armorLevel,baseLevel,armorBase, kin,eng, bla,heat,cold,elec,acid,stun) * 2;
 		if (defenseLevel < baseLevel)
 			defenseLevel = baseLevel;
-		int level = round(((float)(statLevel + damageLevel + (hitLevel / 3.0) + defenseLevel + armorLevel + regenerationLevel ))/8.0);
+		int level = round(((float)(statLevel + (damageLevel * 1.5) + (hitLevel / 3.0) + defenseLevel + armorLevel + regenerationLevel ))/7);
 		return level;
 	}
 	// Calculate the creatures overall level as a pet.
@@ -430,11 +430,11 @@ public:
 		int regenerationLevel =  (DnaManager::instance()->levelForScore(DnaManager::REG_LEVEL, avgHam / 10) + 1)* 2;
 		int armorLevel = DnaManager::instance()->levelForScore(DnaManager::ARM_LEVEL, (pet->getArmor() * 500) + (( pet->getEffectiveArmor()) * 10.0)  );
 		int armorBase = DnaManager::instance()->valueForLevel(DnaManager::ARM_LEVEL, armorLevel);
-		int baseLevel = (((statLevel) + (damageLevel) + (regenerationLevel) + (hitLevel)) / 19.0) + 0.5;
+		int baseLevel = (((statLevel) + (damageLevel) + (regenerationLevel) + (hitLevel)) / 10.0) + 0.5;
 		int armorLevel2 = calculateArmorValue(pet, armorLevel, baseLevel, armorBase) * 2;
 		if (defenseLevel < baseLevel)
 			defenseLevel = baseLevel;
-		int level = round(((float)(statLevel + damageLevel + (hitLevel / 3.0) + defenseLevel + armorLevel + regenerationLevel ))/8.0);
+		int level = round(((float)(statLevel + (damageLevel * 1.5) + (hitLevel / 3.0) + defenseLevel + armorLevel + regenerationLevel ))/7);
 		return level;
 	}
 

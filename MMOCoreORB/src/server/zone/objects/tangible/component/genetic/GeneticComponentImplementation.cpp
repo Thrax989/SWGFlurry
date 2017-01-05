@@ -192,24 +192,24 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	// Strength: har,dep
 	// Quickness: dex,dep
 
-	health = (hardiness * 100)    + (dexterity * 20);
-	action = (dexterity * 100)    + (intelligence * 20);
-	mind   = (intelligence * 100) + (hardiness * 20);
-	stamina = (dexterity*15)     + (endurance * 10);
-	willPower = (intelligence * 15) + (cleverness * 10);
-	constitution = (hardiness * 15)    + (fortitude * 10);
-	focus = (intelligence * 15) + (dependency * 10);
-	strength = (hardiness * 15)    + (dependency * 10);
-	quickness = (dexterity * 15)    + (dependency * 10);
-	hit = 5.00 + (10.00 * ((float)cleverness/333.0));
+	health = (hardiness * 85)    + (dexterity * 15);
+	action = (dexterity * 85)    + (intelligence * 15);
+	mind   = (intelligence * 85) + (hardiness * 15);
+	stamina = (dexterity * 10)     + (endurance * 5);
+	willPower = (intelligence * 10) + (cleverness * 5);
+	constitution = (hardiness * 10)    + (fortitude * 5);
+	focus = (intelligence * 10) + (dependency * 5);
+	strength = (hardiness * 10)    + (dependency * 5);
+	quickness = (dexterity * 10)    + (dependency * 5);
+	hit = 3.0 + (3.00 * ((float)cleverness/500.0));
 	// dps of pet use to determien min and max value.
 	int dps = ceil(1.0 * (float)power);
 	speed = 2.5-((ceil(((float)courage)/10)*10)/1000);
-	maxDam = round(((float)dps * speed) * 1.5);
+	maxDam = round(((float)dps * speed) * 0.65);
   	// round maxDam down to the closest multiple of 5
 	maxDam = maxDam - (maxDam % 5);
-  	// subtract either 50 or 100 from maxDam to get the minDam
-	minDam = maxDam - ((System::random(1) + 1) * 50);
+  	// subtract either 25 or 50 from maxDam to get the minDam
+	minDam = maxDam - ((System::random(1) + 1) * 25);
 }
 String GeneticComponentImplementation::convertSpecialAttack(String &attackName) {
 	if (attackName == "defaultattack" || attackName == "")
