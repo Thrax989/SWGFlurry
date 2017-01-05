@@ -83,6 +83,7 @@ veteranRewards = {
    {templateFile = "object/tangible/veteran_reward/data_terminal_s4.iff", milestone=0, oneTime=false, description="@veteran_new:dataterminal4"},
    {templateFile = "object/tangible/veteran_reward/frn_vet_protocol_droid_toy.iff", milestone=0, oneTime=false, description="@veteran_new:mini_protocoldroid"},
    {templateFile = "object/tangible/veteran_reward/frn_vet_r2_toy.iff", milestone=0, oneTime=false, description="@veteran_new:mini_r2"},
+   {templateFile = "object/tangible/deed/vehicle_deed/speederbike_deed.iff", milestone=0, oneTime=false, description="Speeder Bike"},
 
 
    -- 30 Day Rewards
