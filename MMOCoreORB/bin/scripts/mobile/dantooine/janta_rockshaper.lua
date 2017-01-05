@@ -4,7 +4,7 @@ janta_rockshaper = Creature:new {
 	randomNameTag = true,
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
-	level = 100,
+	level = 75,
 	chanceHit = 0.7,
 	damageMin = 495,
 	damageMax = 700,
@@ -30,13 +30,13 @@ janta_rockshaper = Creature:new {
 	templates = {
 		"object/mobile/dantari_male.iff",
 		"object/mobile/dantari_female.iff"},
-		lootGroups = {
-			{
-				groups = {
-					{group = "junk", chance = 2500000},
-					{group = "janta_common", chance = 2500000},
-					{group = "loot_kit_parts", chance = 2500000},
-					{group = "clothing_attachments", chance = 2500000}
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 5000000},
+				{group = "janta_common", chance = 1500000},
+				{group = "loot_kit_parts", chance = 3000000},
+				{group = "wearables_all", chance = 500000}
 			},
 			lootChance = 10000000
 		}

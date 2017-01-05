@@ -4,7 +4,7 @@ janta_primalist = Creature:new {
 	randomNameTag = true,
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
-	level = 65,
+	level = 42,
 	chanceHit = 0.47,
 	damageMin = 405,
 	damageMax = 520,
@@ -30,13 +30,12 @@ janta_primalist = Creature:new {
 	templates = {
 		"object/mobile/dantari_male.iff",
 		"object/mobile/dantari_female.iff"},
-		lootGroups = {
-			{
-				groups = {
-					{group = "junk", chance = 2500000},
-					{group = "janta_common", chance = 2500000},
-					{group = "loot_kit_parts", chance = 2500000},
-					{group = "clothing_attachments", chance = 2500000}
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 5500000},
+				{group = "janta_common", chance = 1500000},
+				{group = "loot_kit_parts", chance = 3000000}
 			},
 			lootChance = 10000000
 		}

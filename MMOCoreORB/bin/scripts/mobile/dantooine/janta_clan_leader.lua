@@ -4,7 +4,7 @@ janta_clan_leader = Creature:new {
 	randomNameTag = true,
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
-	level = 100,
+	level = 75,
 	chanceHit = 0.75,
 	damageMin = 520,
 	damageMax = 750,
@@ -31,10 +31,10 @@ janta_clan_leader = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "janta_common", chance = 2500000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "wearables_all", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
+				{group = "junk", chance = 5000000},
+				{group = "janta_common", chance = 1500000},
+				{group = "loot_kit_parts", chance = 3000000},
+				{group = "wearables_all", chance = 500000}
 			},
 			lootChance = 10000000
 		}

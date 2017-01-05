@@ -2,15 +2,15 @@ horned_voritor_lizard = Creature:new {
 	objectName = "@mob/creature_names:horned_voritor_jungle_lizard",
 	socialGroup = "voritor",
 	faction = "",
-	level = 54,
+	level = 53,
 	chanceHit = 0.5,
 	damageMin = 395,
 	damageMax = 500,
-	baseXp = 7099,
-	baseHAM = 22000,
-	baseHAMmax = 25000,
-	armor = 0,
-	resists = {180,180,180,180,180,180,180,180,140},
+	baseXp = 5099,
+	baseHAM = 10000,
+	baseHAMmax = 12000,
+	armor = 1,
+	resists = {140,140,5,5,180,180,180,-1,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 65,
 	hideType = "hide_leathery",
@@ -18,7 +18,7 @@ horned_voritor_lizard = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 50,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -32,16 +32,14 @@ horned_voritor_lizard = Creature:new {
 			groups = {
 				{group = "voritor_lizard_common", chance = 10000000}
 			},
-			lootChance = 10000000
+			lootChance = 2060000
 		}
 	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
 		{"strongpoison",""},
-		{"strongdisease",""},
 		{"creatureareapoison",""}
-
 	}
 }
 
