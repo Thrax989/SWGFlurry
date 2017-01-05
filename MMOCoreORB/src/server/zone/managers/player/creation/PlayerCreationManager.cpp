@@ -610,7 +610,7 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
 	box->setPromptTitle("Welcome To Flurry");
-	box->setPromptText("Welcome to the SWG Flurry Server!. You are limited to creating one character per hour. Attempting to create another character or deleting your character before the 1 hour timer expires will reset the timer.");
+	box->setPromptText("Welcome to the SWG Flurry Server!. You are limited to creating one character every 5 minutes. Attempting to create another character or deleting your character before the 5 minute timer expires will reset the timer.");
 	//Broadcast to Server
 	String playerName = playerCreature->getFirstName();
 	StringBuffer zBroadcast;
