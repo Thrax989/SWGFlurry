@@ -3,13 +3,13 @@ acklay = Creature:new {
 	customName = "Acklay",
 	socialGroup = "geonosian_creature",
 	faction = "",
-	level = 85,
+	level = 157,
 	chanceHit = 92.5,
 	damageMin = 935,
-	damageMax = 2180,
-	baseXp = 148840,
+	damageMax = 1580,
+	baseXp = 14884,
 	baseHAM = 96000,
-	baseHAMmax = 218000,
+	baseHAMmax = 118000,
 	armor = 0,
 	resists = {130,145,155,155,145,30,30,30,-1},
 	meatType = "",
@@ -35,7 +35,7 @@ acklay = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"creature_spit_large_yellow"},
+	weapons = {},
 	conversationTemplate = "",
 	attacks = {
 		{"posturedownattack","stateAccuracyBonus=50"},

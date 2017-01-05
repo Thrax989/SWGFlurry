@@ -1,19 +1,18 @@
-
 death_watch_ghost = Creature:new {
 	objectName = "@mob/creature_names:mand_bunker_dthwatch_grey",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "death_watch",
 	faction = "",
-	level = 300,
-	chanceHit = 71.5,
-	damageMin = 3500,
-	damageMax = 3600,
+	level = 152,
+	chanceHit = 8.5,
+	damageMin = 895,
+	damageMax = 1500,
 	baseXp = 14314,
-	baseHAM = 400000,
-	baseHAMmax = 410000,
+	baseHAM = 110000,
+	baseHAMmax = 110000,
 	armor = 0,
-	resists = {100,100,100,100,100,100,100,100,50},
+	resists = {65,65,70,60,35,35,100,50,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -33,13 +32,10 @@ death_watch_ghost = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "death_watch_bunker_lieutenants", chance = 5500000},
-				{group = "rifles", chance = 1000000},
-				{group = "pistols", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "death_watch_bunker_ingredient_binary", chance = 500000},
-				{group = "death_watch_bunker_ingredient_protective", chance = 500000}
+				{group = "death_watch_bunker_commoners",   chance = 6300000},
+				{group = "death_watch_bunker_lieutenants", chance = 3500000},
+				{group = "death_watch_bunker_ingredient_protective",  chance = 100000},
+				{group = "death_watch_bunker_ingredient_binary",  chance = 100000}
 			},
 			lootChance = 10000000
 		}

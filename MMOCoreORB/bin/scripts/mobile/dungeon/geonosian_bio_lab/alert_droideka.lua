@@ -29,14 +29,12 @@ alert_droideka = Creature:new {
 	lootGroups = {
          {
 			groups = {
-				{group = "geonosian_cubes", chance = 5000000},
-				{group = "geonosian_common", chance = 2500000},
-				{group = "geonosian_hard", chance =2500000}
+				{group = "geonosian_cubes", chance = 10000000}
 			},
 			lootChance = 10000000
-	    }
+	    }	
 	},
-	defaultAttack = "creaturerangedattack",
+	defaultAttack = "attack",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
 }
 

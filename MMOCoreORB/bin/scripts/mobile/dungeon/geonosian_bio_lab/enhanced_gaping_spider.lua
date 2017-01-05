@@ -5,13 +5,13 @@ enhanced_gaping_spider = Creature:new {
 	faction = "",
 	level = 85,
 	chanceHit = 2.5,
-	damageMin = 1715,
-	damageMax = 2540,
+	damageMin = 715,
+	damageMax = 1140,
 	baseXp = 10267,
-	baseHAM = 52000,
-	baseHAMmax = 82000,
+	baseHAM = 32000,
+	baseHAMmax = 39000,
 	armor = 0,
-	resists = {50,50,50,50,50,50,50,50,50},
+	resists = {150,10,-1,195,-1,10,10,10,-1},
 	meatType = "meat_insect",
 	meatAmount = 50,
 	hideType = "",
@@ -39,21 +39,8 @@ enhanced_gaping_spider = Creature:new {
 	weapons = {"creature_spit_heavy_flame"},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareacombo","StateAccuracyBonus=100"},
-		{"creatureareaknockdown","StateAccuracyBonus=100"},
-		{"knockdownattack","KnockdownChance=100"},
-		{"creatureareaknockdown","KnockdownChance=100"},
-		{"dizzyattack","DizzyChance=100"},
-		{"stunattack","StunChance=100"},
-		{"mildpoison","PoisonChance=100"},
-		{"intimidationattack","IntimidationChance=100"},
-		{"mediumpoison","PoisonChance=100"},
-		{"creatureareapoison","PoisonChance=100"},
-		{"mediumDisease","DiseaseChance=100"},
-		{"mildDisease","DiseaseChance=100"},
-		{"strongpoison","PoisonChance=100"},
-		{"strongDisease","DiseaseChance=100"},
-		{"creatureareaattack","StateAccuracyBonus=100"}
+		{"strongpoison",""},
+		{"stunattack",""}
 	}
 }
 

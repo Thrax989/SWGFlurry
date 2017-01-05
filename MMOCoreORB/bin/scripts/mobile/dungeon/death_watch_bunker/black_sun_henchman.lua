@@ -32,13 +32,14 @@ black_sun_henchman = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 6000000},
+				{group = "junk", chance = 6500000},
+				{group = "pistols", chance = 750000},
 				{group = "rifles", chance = 750000},
-				{group = "bounty_hunter_armor", chance = 1700000},
+				{group = "carbines", chance = 750000},
+				{group = "bounty_hunter_armor", chance = 200000},
 				{group = "jetpack_base", chance = 50000},
-				{group = "blacksunhelm1", chance = 500000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "blacksun_rare", chance = 500000}
+				{group = "wearables_common", chance = 500000},
+				{group = "wearables_uncommon", chance = 500000}
 			},
 			lootChance = 10000000
 		}
