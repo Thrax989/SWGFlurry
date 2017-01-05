@@ -208,6 +208,8 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	maxDam = round(((float)dps * speed) * 0.65);
   	// round maxDam down to the closest multiple of 5
 	maxDam = maxDam - (maxDam % 5);
+	if (maxDam <51)
+		maxDam = 51;
   	// subtract either 25 or 50 from maxDam to get the minDam
 	minDam = maxDam - ((System::random(1) + 1) * 25);
 }
