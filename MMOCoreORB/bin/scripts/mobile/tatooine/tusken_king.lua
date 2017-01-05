@@ -3,15 +3,14 @@ tusken_king = Creature:new {
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
 	level = 300,
-	chanceHit = 85,
-	damageMin = 5570,
-	damageMax = 10550,
-	specialDamageMult = 25,
-	baseXp = 3005409,
-	baseHAM = 8540000,
-	baseHAMmax = 10629000,
+	chanceHit = 1,
+	damageMin = 645,
+	damageMax = 1000,
+	baseXp = 9522,
+	baseHAM = 24000,
+	baseHAMmax = 30000,
 	armor = 0,
-	resists = {60,60,60,60,60,60,60,60,60},
+	resists = {45,35,5,80,-1,50,5,5,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -30,55 +29,22 @@ tusken_king = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "saberhand24", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
+				{group = "junk", chance = 1500000},
+				{group = "tusken_common", chance = 3000000},
+				{group = "wearables_all", chance = 2000000},
+				{group = "bone_armor", chance = 750000},
+				{group = "chitin_armor", chance = 750000},
+				{group = "armor_attachments", chance = 500000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "color_crystals", chance = 500000},
+				{group = "crystals_quality", chance = 500000}
 			},
 			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "saberhand25", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		 {
-			groups = {
-				{group = "saberhand1", chance = 1000000},
-				{group = "saberhand13", chance = 1000000},
-				{group = "saberhand14", chance = 1000000},
-				{group = "saberhand15", chance = 1000000},
-				{group = "saberhand16", chance = 1000000},
-				{group = "saberhand17", chance = 1000000},
-				{group = "saberhand18", chance = 1000000},
-				{group = "saberhand19", chance = 1000000},
-				{group = "saberhand20", chance = 1000000},
-				{group = "saberhand21", chance = 1000000}
-			},
-			lootChance = 10000000
-		},
-		},
+		}
+	},
 	weapons = {"tusken_weapons"},
-	reactionStf = "@npc_reaction/slang",
-	attacks = {
-		{"creatureareacombo","StateAccuracyBonus=100"},
-		{"creatureareaknockdown","StateAccuracyBonus=100"},
-		{"knockdownattack","KnockdownChance=100"},
-		{"creatureareaknockdown","KnockdownChance=100"},
-		{"dizzyattack","DizzyChance=100"},
-		{"stunattack","StunChance=100"},
-		{"mildpoison","PoisonChance=100"},
-		{"intimidationattack","IntimidationChance=100"},
-		{"mediumpoison","PoisonChance=100"},
-		{"creatureareapoison","PoisonChance=100"},
-		{"mediumDisease","DiseaseChance=100"},
-		{"mildDisease","DiseaseChance=100"},
-		{"strongpoison","PoisonChance=100"},
-		{"strongDisease","DiseaseChance=100"},
-		{"creatureareaattack",""}
-	}
+	conversationTemplate = "",
+	attacks = merge(marksmanmaster,brawlermaster,fencermaster,riflemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(tusken_king, "tusken_king")
