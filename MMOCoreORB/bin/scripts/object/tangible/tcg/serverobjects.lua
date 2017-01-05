@@ -45,7 +45,7 @@
 --Children folder includes
 
 -- Server Objects
-includeFile("tangible/tcg/series3/serverobjects.lua")
-includeFile("tangible/tcg/series7/serverobjects.lua")
-includeFile("tangible/tcg/series8/serverobjects.lua")
+--includeFile("tangible/tcg/series3/serverobjects.lua")
+--includeFile("tangible/tcg/series7/serverobjects.lua")
+--includeFile("tangible/tcg/series8/serverobjects.lua")
 
