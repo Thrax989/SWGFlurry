@@ -7,10 +7,6 @@ object_building_player_commando_house = object_building_player_shared_commando_h
 	length = 1,
 	width = 1,
 	skillMods = {
-		{"private_medical_rating", 100},
-		{"private_buff_mind", 125},
-		{"private_med_battle_fatigue", 15},
-		{"private_med_wound_mind", 15},
 		{"private_safe_logout", 1},
 		{"advanced_assembly", 20},
 		{"armor_assembly", 20},
