@@ -2,11 +2,11 @@ krayt_dragon_grand = Creature:new {
 	objectName = "@mob/creature_names:krayt_dragon_grand",
 	socialGroup = "krayt",
 	faction = "",
-	level = 85,
-  	chanceHit = 30.0,
- 	damageMin = 2270,
- 	damageMax = 4250,
-	baseXp = 251200,
+	level = 300,
+	chanceHit = 30,
+	damageMin = 2270,
+	damageMax = 4250,
+	baseXp = 28549,
 	baseHAM = 410000,
 	baseHAMmax = 501000,
 	armor = 0,
@@ -30,10 +30,11 @@ krayt_dragon_grand = Creature:new {
 	lootGroups = {
 		{
 	        groups = {
-					{group = "krayt_tissue_rare", chance = 3000000},
-					{group = "krayt_dragon_common2", chance = 3000000},
-					{group = "pearls_flawless", chance = 3000000},
-					{group = "clothing_attachments", chance = 1000000},
+				{group = "krayt_tissue_rare", chance = 2000000},
+				{group = "krayt_dragon_common", chance = 2500000},
+				{group = "pearls_flawless", chance = 1500000},
+				{group = "armor_all", chance = 2000000},
+				{group = "weapons_all", chance = 2000000},
 			},
 			lootChance = 10000000
 		}
