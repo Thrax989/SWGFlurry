@@ -828,14 +828,14 @@ void PlayerCreationManager::addHair(CreatureObject* creature,
 		return;
 	}
 
-	if (hairAssetData->getServerPlayerTemplate()
+	/* if (hairAssetData->getServerPlayerTemplate()
 			!= creature->getObjectTemplate()->getFullTemplateString()) {
 		error(
 				"hair " + hairTemplate
 						+ " is not compatible with this creature player "
 						+ creature->getObjectTemplate()->getFullTemplateString());
 		return;
-	}
+	} */
 
 	if (!hairAssetData->isAvailableAtCreation()) {
 		error("hair " + hairTemplate + " not available at creation");

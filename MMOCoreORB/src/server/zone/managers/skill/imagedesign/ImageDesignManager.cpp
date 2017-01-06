@@ -3,6 +3,7 @@
 		See file COPYING for copying conditions. */
 
 #include "ImageDesignManager.h"
+#include "server/zone/managers/player/PlayerManager.h"
 #include "templates/customization/CustomizationIdManager.h"
 #include "server/db/ServerDatabase.h"
 #include "server/zone/objects/scene/variables/CustomizationVariables.h"
@@ -360,10 +361,10 @@ TangibleObject* ImageDesignManager::createHairObject(CreatureObject* imageDesign
 	if (imageDesigner->getSkillMod("hair") < skillMod)
 		return oldHair;
 
-	if (hairAssetData->getServerPlayerTemplate() != targetObject->getObjectTemplate()->getFullTemplateString()) {
+/*	if (hairAssetData->getServerPlayerTemplate() != targetObject->getObjectTemplate()->getFullTemplateString()) {
 		error("hair " + hairTemplate + " is not compatible with this creature player " + targetObject->getObjectTemplate()->getFullTemplateString());
 		return oldHair;
-	}
+	} */
 
 	ManagedReference<SceneObject*> hair = imageDesigner->getZoneServer()->createObject(hairTemplate.hashCode(), 1);
 
