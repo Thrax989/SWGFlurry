@@ -47,7 +47,7 @@ mountSpeedData = {
 	{"appearance/bantha_hue.sat", 15, 1.5, 60, 120},
 	{"appearance/bol_hue.sat", 15, 1.5, 60, 120},
 	{"appearance/brackaset_hue.sat", 15, 1.5, 60, 120},
-	{"appearance/carrion_spat_hue.sat", 7.5, 1.5, 60, 120},
+	{"appearance/carrion_spat_hue.sat", 15, 1.5, 60, 120},
 	{"appearance/cu_pa_hue.sat", 15, 1.5, 60, 120},
 	{"appearance/dewback_hue.sat", 15, 1.5, 60, 120},
 	{"appearance/falumpaset_hue.sat", 15, 1.5, 60, 120},
