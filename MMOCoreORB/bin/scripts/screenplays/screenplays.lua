@@ -612,3 +612,5 @@ includeFile("custom_content/screenplays.lua")
 --includeFile("dungeon/teleport_dathomir_pve.lua")
 --includeFile("dungeon/teleport_endor_pve.lua")
 
+includeFile("tools/place_structure_menu.lua")
+
