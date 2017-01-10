@@ -1,8 +1,6 @@
 #ifndef GENETICS_H_
 #define GENETICS_H_
 
-#include "SharedLabratory.h"
-#include "engine/engine.h"
 #include "server/zone/managers/creature/DnaManager.h"
 #include "server/zone/objects/tangible/component/dna/DnaComponent.h"
 #include "server/zone/objects/tangible/component/genetic/GeneticComponent.h"

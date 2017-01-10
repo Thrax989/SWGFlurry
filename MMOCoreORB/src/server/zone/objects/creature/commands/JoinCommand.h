@@ -5,8 +5,7 @@
 #ifndef JOINCOMMAND_H_
 #define JOINCOMMAND_H_
 
-#include "server/zone/objects/scene/SceneObject.h"
-#include "../../../managers/group/GroupManager.h"
+#include "server/zone/managers/group/GroupManager.h"
 
 class JoinCommand : public QueueCommand {
 public:
@@ -26,7 +25,7 @@ public:
 
 		GroupManager* groupManager = GroupManager::instance();
 		groupManager->joinGroup(creature);
-       		creature->playEffect("clienteffect/player_clone_compile.cef", "");
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 
 		return SUCCESS;
 	}
@@ -34,3 +33,4 @@ public:
 };
 
 #endif //JOINCOMMAND_H_
+

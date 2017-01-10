@@ -131,21 +131,7 @@ public:
 		resourceManager->harvestResourceToPlayer(player, resourceSpawn, quantityExtracted);
 
 		updateMilkState(CreatureManager::ALREADYMILKED);
-		
-		// Grant Wilderness Survival XP
-		CreatureTemplate* creatureTemplate = creature->getCreatureTemplate();
-		
-		int xp = MIN(125, player->getSkillMod("foraging"));
-		
-		if (creatureTemplate != NULL)
-			xp += 3 * creatureTemplate->getLevel() + quantityExtracted;
-		else
-			xp += quantityExtracted;
-		
-		ZoneServer* zoneServer = player->getZoneServer();
-		PlayerManager* playerManager = zoneServer->getPlayerManager();
-		playerManager->awardExperience(player, "camp", xp);
-		
+			
 	}
 
 	void updateMilkState(const short milkState) {

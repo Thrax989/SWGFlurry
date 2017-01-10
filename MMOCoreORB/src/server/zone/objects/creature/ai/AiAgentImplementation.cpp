@@ -6,31 +6,20 @@
  */
 
 #include <engine/core/ManagedReference.h>
-#include <engine/core/ManagedWeakReference.h>
 #include <engine/util/u3d/CloseObjectsVector.h>
-#include <engine/util/u3d/Coordinate.h>
-#include <engine/util/u3d/Quaternion.h>
-#include <engine/util/u3d/Triangle.h>
 #include <engine/util/u3d/Vector3.h>
-#include <system/io/StringTokenizer.h>
 #include <system/lang/IllegalArgumentException.h>
 #include <system/lang/ref/Reference.h>
-#include <system/lang/ref/WeakReference.h>
 #include <system/lang/String.h>
 #include <system/lang/StringBuffer.h>
 #include <system/lang/System.h>
 #include <system/lang/Time.h>
-#include <system/lang/UnicodeString.h>
-#include <system/platform.h>
 #include <system/thread/Locker.h>
 #include <system/thread/Mutex.h>
 #include <system/thread/ReadLocker.h>
-#include <system/util/ArrayList.h>
 #include <system/util/SortedVector.h>
 #include <system/util/Vector.h>
 #include <system/util/VectorMap.h>
-#include <cmath>
-#include <cstdlib>
 
 #include "server/zone/managers/objectcontroller/ObjectController.h"
 #include "server/zone/managers/creature/CreatureManager.h"
@@ -40,13 +29,12 @@
 #include "server/zone/objects/cell/CellObject.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/objects/creature/ai/Creature.h"
-#include "server/zone/objects/creature/ai/DroidObject.h"
 #include "server/zone/objects/creature/conversation/ConversationObserver.h"
 #include "server/zone/objects/creature/commands/CombatQueueCommand.h"
+#include "server/zone/objects/intangible/PetControlDevice.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 #include "server/zone/Zone.h"
-#include "server/zone/ZoneProcessServer.h"
 #include "server/zone/ZoneServer.h"
 #include "server/zone/managers/collision/CollisionManager.h"
 #include "server/zone/managers/collision/PathFinderManager.h"
@@ -59,7 +47,6 @@
 #include "server/zone/managers/gcw/GCWManager.h"
 #include "server/zone/managers/name/NameManager.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
-#include "server/zone/packets/object/CombatAction.h"
 #include "server/zone/packets/object/StartNpcConversation.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
 #include "server/zone/packets/scene/LightUpdateTransformMessage.h"
@@ -67,16 +54,13 @@
 #include "server/zone/packets/scene/UpdateTransformMessage.h"
 #include "server/zone/packets/scene/UpdateTransformWithParentMessage.h"
 #include "templates/AiTemplate.h"
-#include "templates/creature/SharedCreatureObjectTemplate.h"
 #include "server/zone/objects/creature/ai/CreatureTemplate.h"
 #include "templates/mobile/MobileOutfit.h"
 #include "templates/mobile/MobileOutfitGroup.h"
 #include "templates/SharedObjectTemplate.h"
-#include "server/zone/ZoneReference.h"
 #include "server/zone/objects/player/FactionStatus.h"
 #include "templates/params/ObserverEventType.h"
 #include "server/zone/objects/scene/variables/DeltaVector.h"
-#include "server/zone/objects/scene/variables/StringId.h"
 #include "server/zone/objects/scene/WorldCoordinates.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
 #include "server/zone/objects/creature/ai/bt/CompositeBehavior.h"
@@ -98,10 +82,7 @@
 #include "server/zone/objects/creature/ai/PatrolPoint.h"
 #include "server/zone/objects/creature/ai/PatrolPointsVector.h"
 #include "server/zone/objects/creature/ai/variables/CreatureAttackMap.h"
-#include "server/zone/objects/creature/ai/variables/CreatureTemplateReference.h"
 #include "server/zone/objects/creature/ai/variables/CurrentFoundPath.h"
-
-#include "server/chat/ChatManager.h"
 #include "server/zone/managers/creature/SpawnObserver.h"
 #include "server/zone/managers/creature/DynamicSpawnObserver.h"
 #include "server/zone/packets/ui/CreateClientPathMessage.h"
