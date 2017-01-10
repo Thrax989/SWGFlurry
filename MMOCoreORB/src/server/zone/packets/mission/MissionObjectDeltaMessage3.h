@@ -5,7 +5,7 @@
 #ifndef MISSIONOBJECTDELTAMESSAGE3_H_
 #define MISSIONOBJECTDELTAMESSAGE3_H_
 
-#include "../DeltaMessage.h"
+#include "server/zone/packets/DeltaMessage.h"
 
 #include "server/zone/objects/mission/MissionObject.h"
 

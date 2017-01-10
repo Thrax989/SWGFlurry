@@ -5,13 +5,13 @@
 #ifndef TANGIBLEOBJECTMESSAGE3_H_
 #define TANGIBLEOBJECTMESSAGE3_H_
 
-#include "../BaseLineMessage.h"
+#include "server/zone/packets/BaseLineMessage.h"
 
 #include "server/zone/objects/tangible/TangibleObject.h"
-#include "../../objects/scene/variables/StringId.h"
+#include "server/zone/objects/scene/variables/StringId.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
-#include "../../managers/player/PermissionLevelList.h"
+#include "server/zone/managers/player/PermissionLevelList.h"
 
 class TangibleObjectMessage3 : public BaseLineMessage {
 public:
@@ -29,7 +29,7 @@ public:
 			if (ghost != NULL && ghost->hasGodMode()) {
 				UnicodeString name = tano->getCustomObjectName();
 				UnicodeString tag = PermissionLevelList::instance()->getPermissionTag(ghost->getAdminLevel());
-				insertUnicode(name + " \\#00ace6[" + tag + "]\\#.");
+				insertUnicode(name + " \\#ffff00[" + tag + "]\\#.");
 			} else {
 				insertUnicode(tano->getCustomObjectName());
 			}
