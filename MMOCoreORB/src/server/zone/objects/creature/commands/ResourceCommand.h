@@ -6,6 +6,7 @@
 #define RESOURCECOMMAND_H_
 
 #include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/managers/stringid/StringIdManager.h"
 
 class ResourceCommand : public QueueCommand {
 public:

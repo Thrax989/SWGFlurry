@@ -139,13 +139,12 @@ int SaberInventoryContainerComponent::notifyObjectRemoved(SceneObject* sceneObje
 
 bool SaberInventoryContainerComponent::checkContainerPermission(SceneObject* sceneObject, CreatureObject* creature, uint16 permission) const {
 	ManagedReference<WeaponObject*> saber = cast<WeaponObject*>( sceneObject->getParent().get().get());
-	ManagedReference<PlayerObject*> admin = creature->getPlayerObject();
 
 	if (saber == NULL)
 		return false;
 
 
-	if (saber->isJediWeapon() && saber->isEquipped() && admin->getAdminLevel() < 10) {
+	if (saber->isJediWeapon() && saber->isEquipped()) {
 		CreatureObject* player = saber->getParentRecursively(SceneObjectType::PLAYERCREATURE).get().castTo<CreatureObject*>();
 
 		if (player == NULL)
@@ -158,3 +157,4 @@ bool SaberInventoryContainerComponent::checkContainerPermission(SceneObject* sce
 
 	return ContainerComponent::checkContainerPermission(sceneObject, creature, permission);
 }
+
