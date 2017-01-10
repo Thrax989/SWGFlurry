@@ -7,7 +7,6 @@
 #include "server/zone/managers/creature/CreatureManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "engine/engine.h"
-#include "server/zone/managers/player/PlayerManager.h"
 
 class MilkCreatureTask : public Task {
 

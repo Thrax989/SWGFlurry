@@ -12,11 +12,11 @@
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/group/GroupObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
-#include "server/zone/objects/player/FactionStatus.h"
 #include "server/zone/objects/player/events/EntertainingSessionTask.h"
 #include "server/zone/objects/player/EntertainingObserver.h"
 #include "templates/params/creature/CreatureAttribute.h"
 #include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/objects/player/FactionStatus.h"
 #include "server/zone/objects/tangible/Instrument.h"
 #include "server/zone/packets/object/Flourish.h"
 #include "server/zone/packets/creature/CreatureObjectDeltaMessage6.h"
@@ -80,7 +80,6 @@ void EntertainingSessionImplementation::doEntertainerPatronEffects() {
 	if (building != NULL && factionPerkSkill > 0 && building->isPlayerRegisteredWithin(creo->getObjectID())) {
 		unsigned int buildingFaction = building->getFaction();
 		unsigned int healerFaction = creo->getFaction();
-		PlayerObject* ghost = creo->getPlayerObject();
 
 		if (healerFaction != 0 && healerFaction == buildingFaction && creo->getFactionStatus() == FactionStatus::OVERT) {
 			woundHealingSkill += factionPerkSkill;

@@ -703,24 +703,13 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
 		messageDifficulty = "_medium";
 	else
 		messageDifficulty = "_hard";
-	String groupSuffix;
 
-	if (lairTemplateObject->getMobType() == LairTemplate::NPC){
+	if (lairTemplateObject->getMobType() == LairTemplate::NPC)
 		missionType = "_npc";
-		groupSuffix = " camp.";
-	} else {
+	else
 		missionType = "_creature";
-		groupSuffix = " lair.";
-	}
-	VectorMap<String, int>* mobiles = lairTemplateObject->getMobiles();
-	String mobileName = "mysterious";
-	
-	if (mobiles->size() > 0) {
-		mobileName = mobiles->elementAt(0).getKey();
-	}
 
-
-	mission->setMissionTitle("CL" + String::valueOf(diffDisplay), " Destroy the " + mobileName.replaceAll("_", " ") + groupSuffix);
+	mission->setMissionTitle("mission/mission_destroy_neutral" + messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "t");
 	mission->setMissionDescription("mission/mission_destroy_neutral" +  messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "d");
 
 	switch (faction) {
@@ -1396,12 +1385,7 @@ void MissionManagerImplementation::randomizeGenericHuntingMission(CreatureObject
 	int baseReward = 500 + (difficulty * 100 * randomLairSpawn->getMinDifficulty());
 	mission->setRewardCredits(baseReward + System::random(100));
 	mission->setMissionDifficulty(difficulty);
-		// Format short desc text so output looks like [CL12]: Kill 45 nuna
-	UnicodeString mobName = StringIdManager::instance()->getStringId(String::hashCode(creatureTemplate->getObjectName()));
-	String details = " Kill " + String::valueOf(difficulty * 15) + " " + mobName.toString().replaceAll("a ", "");
-	
-	mission->setHuntingMissionTitle("CL" + String::valueOf(randomLairSpawn->getMaxDifficulty()), details);
-
+	mission->setMissionTitle("mission/mission_npc_hunting_neutral_" + diffString, "m" + String::valueOf(randTexts) + "t");
 	mission->setMissionDescription("mission/mission_npc_hunting_neutral_" + diffString, "m" + String::valueOf(randTexts) + "o");
 
 	mission->setTypeCRC(MissionTypes::HUNTING);
