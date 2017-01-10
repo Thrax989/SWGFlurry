@@ -9,16 +9,13 @@
 #include "server/zone/managers/auction/AuctionsMap.h"
 #include "server/zone/managers/object/ObjectManager.h"
 #include "templates/manager/TemplateManager.h"
-#include "server/zone/managers/planet/PlanetManager.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/auction/AuctionItem.h"
-#include "server/zone/packets/chat/ChatSystemMessage.h"
 #include "server/zone/packets/auction/ItemSoldMessage.h"
 #include "server/zone/packets/auction/CancelLiveAuctionResponseMessage.h"
 #include "server/zone/packets/auction/AuctionQueryHeadersResponseMessage.h"
 #include "server/zone/packets/auction/RetrieveAuctionItemResponseMessage.h"
 #include "server/zone/packets/auction/BidAuctionResponseMessage.h"
-#include "server/zone/packets/auction/IsVendorOwnerMessageCallback.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
 #include "server/chat/StringIdChatParameter.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -295,8 +292,9 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 	}
 
 	// add city tax to the price
-	if(vendor->getCityRegion() != NULL) {
-		price *= (1.0f + (vendor->getCityRegion().get()->getSalesTax() / 100.0f));
+	ManagedReference<CityRegion*> city = vendor->getCityRegion().get();
+	if (city != NULL) {
+		price *= (1.0f + (city->getSalesTax() / 100.0f));
 	}
 
 	ManagedReference<AuctionItem*> item = createVendorItem(player, objectToSell.get(), vendor, description, price, duration, auction, premium);
