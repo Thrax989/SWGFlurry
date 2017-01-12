@@ -1,3 +1,4 @@
+/*
 * ForceShrineMenuComponent1.cpp
 *
 * Created on: 01/23/2012
@@ -42,22 +43,23 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 			menuResponse->addRadialMenuItemToRadialID(215, 219, 3, "Leave Jedi Order"); // Leave Jedi
 		}
 	}
-	//if (ghost->getAdminLevel() >= 6) {
-	//	menuResponse->addRadialMenuItem(220, 3, "Admin Debug");
-	//	menuResponse->addRadialMenuItemToRadialID(220, 221, 3, "Find New Jedi Trainer"); // SWGemu Trainer Method
-	//	menuResponse->addRadialMenuItemToRadialID(220, 222, 3, "Leave FRS"); // Remove All FRS Skills and set Jedi Sate 1
-	//	menuResponse->addRadialMenuItemToRadialID(220, 223, 3, "Set Jedi State 1"); // Set Jedi State to 1
-	//	menuResponse->addRadialMenuItemToRadialID(220, 224, 3, "Show Total Jedi Skills"); // Show sum of jedi Skills
-	//	menuResponse->addRadialMenuItemToRadialID(220, 225, 3, "Show Visibility"); // Show Faction Status
-	//	menuResponse->addRadialMenuItemToRadialID(220, 226, 3, "Debug Screenplay State"); // Show Faction Status
-	//	menuResponse->addRadialMenuItemToRadialID(220, 227, 3, "Force Overt"); // Show Faction Status
-	//	menuResponse->addRadialMenuItemToRadialID(220, 228, 3, "Reset Jedi Screenplay State"); // Show Faction Status
-	//}
-//}
+	if (ghost->getAdminLevel() >= 6) {
+		menuResponse->addRadialMenuItem(220, 3, "Admin Debug");
+		menuResponse->addRadialMenuItemToRadialID(220, 221, 3, "Find New Jedi Trainer"); // SWGemu Trainer Method
+		menuResponse->addRadialMenuItemToRadialID(220, 222, 3, "Leave FRS"); // Remove All FRS Skills and set Jedi Sate 1
+		menuResponse->addRadialMenuItemToRadialID(220, 223, 3, "Set Jedi State 1"); // Set Jedi State to 1
+		menuResponse->addRadialMenuItemToRadialID(220, 224, 3, "Show Total Jedi Skills"); // Show sum of jedi Skills
+		menuResponse->addRadialMenuItemToRadialID(220, 225, 3, "Show Visibility"); // Show Faction Status
+		menuResponse->addRadialMenuItemToRadialID(220, 226, 3, "Debug Screenplay State"); // Show Faction Status
+		menuResponse->addRadialMenuItemToRadialID(220, 227, 3, "Force Overt"); // Show Faction Status
+		menuResponse->addRadialMenuItemToRadialID(220, 228, 3, "Reset Jedi Screenplay State"); // Show Faction Status
+	}
+}
 
 int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	/*if (selectedID != 213)
 	return 0;
+
 	if (!creature->hasSkill("force_title_jedi_novice"))
 	return 0;*/
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
@@ -83,7 +85,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 
 	if (zserv == NULL)
 		return 0;
-
+	
 	if (selectedID == 213) {
 		if (!creature->hasSkill("force_title_jedi_rank_02") && (ghost->getJediState() >= 1)) {
 			if (ghost->getJediState() > 2) {
@@ -352,6 +354,10 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			ghost->setJediState(2);
 		}
 	}
+	
+	if (ghost->getAdminLevel() < 6)
+		return 0;
+	
 	if (selectedID == 221) {
 		//findTrainerObject(creature);
 		//Vector3 coords(-169.45, -4712.58, 0); // Scout Trainer outside starport
