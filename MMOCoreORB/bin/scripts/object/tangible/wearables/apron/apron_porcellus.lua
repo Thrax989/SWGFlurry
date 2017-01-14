@@ -72,6 +72,8 @@ object_tangible_wearables_apron_apron_porcellus = object_tangible_wearables_apro
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
 				"object/mobile/vendor/ishi_tib_male.iff",
+				"object/mobile/vendor/ithorian_female.iff",
+				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
 				"object/mobile/vendor/nikto_male.iff",
@@ -88,7 +90,8 @@ object_tangible_wearables_apron_apron_porcellus = object_tangible_wearables_apro
 				"object/mobile/vendor/wookiee_female.iff",
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
-				"object/mobile/vendor/zabrak_male.iff",
+				"object/mobile/vendor/zabrak_male.iff" },
+
 				},
 }
 
