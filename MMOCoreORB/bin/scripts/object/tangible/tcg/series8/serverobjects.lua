@@ -47,13 +47,13 @@
 -- Server Objects
 includeFile("tangible/tcg/series8/vader_pod.lua")
 includeFile("tangible/tcg/series8/wearable_lando_cape.lua")
-includeFile("tangible/tcg/series8/wearable_alliance_cape.lua")
-includeFile("tangible/tcg/series8/wearable_bh_cape.lua")
-includeFile("tangible/tcg/series8/wearable_first_order_cape.lua")
-includeFile("tangible/tcg/series8/wearable_imp_cape.lua")
-includeFile("tangible/tcg/series8/wearable_light_jedi_cape.lua")
-includeFile("tangible/tcg/series8/wearable_revan_cape.lua")
-includeFile("tangible/tcg/series8/wearable_sith_cape.lua")
+--includeFile("tangible/tcg/series8/wearable_alliance_cape.lua")
+--includeFile("tangible/tcg/series8/wearable_bh_cape.lua")
+--includeFile("tangible/tcg/series8/wearable_first_order_cape.lua")
+--includeFile("tangible/tcg/series8/wearable_imp_cape.lua")
+--includeFile("tangible/tcg/series8/wearable_light_jedi_cape.lua")
+--includeFile("tangible/tcg/series8/wearable_revan_cape.lua")
+--includeFile("tangible/tcg/series8/wearable_sith_cape.lua")
 
 
 
