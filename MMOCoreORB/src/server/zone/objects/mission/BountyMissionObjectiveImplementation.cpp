@@ -650,7 +650,6 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 							message.setTO("exp_n", "force_rank_xp");
 							target->sendSystemMessage(message);
 						}
-						
 					}
 				}
 			}
