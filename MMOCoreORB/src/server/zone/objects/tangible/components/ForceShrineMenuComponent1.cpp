@@ -295,6 +295,15 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 					if (skill->getSkillName().indexOf("force_rank_") != -1){
 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
 					}
+					if (skill->getSkillName().indexOf("force_title_jedi_rank_03") != -1){
+ 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
+ 					}
+ 					if (skill->getSkillName().indexOf("force_title_jedi_rank_04") != -1){
+ 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
+ 					}
+ 					if (skill->getSkillName().indexOf("force_title_jedi_master") != -1){
+ 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
+ 					}
 				}
 			}
 			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
@@ -332,6 +341,15 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 					if (skill->getSkillName().indexOf("force_rank_") != -1){
 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
 					}
+					if (skill->getSkillName().indexOf("force_title_jedi_rank_03") != -1){
+ 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
+ 					}
+ 					if (skill->getSkillName().indexOf("force_title_jedi_rank_04") != -1){
+ 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
+ 					}
+ 					if (skill->getSkillName().indexOf("force_title_jedi_master") != -1){
+ 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
+ 					}
 				}
 			}
 			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
