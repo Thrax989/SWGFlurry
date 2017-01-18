@@ -34,7 +34,7 @@ void FsVillageAreaImplementation::notifyEnter(SceneObject* player) {
 	float newPosY = getPositionY() + (sin(angle) * rad);
 
 	// Those who aren't a valid player, do not currently have or have had the Village elder quest cannot enter.
-	if (ghost != NULL) {
+	/*if (ghost != NULL) {
 		if (ghost->hasGodMode())
 			return;
 
@@ -45,5 +45,5 @@ void FsVillageAreaImplementation::notifyEnter(SceneObject* player) {
 			playerCreature->teleport(newPosX, getZone()->getHeight(newPosX, newPosY), newPosY, 0);
 			playerCreature->sendSystemMessage("@base_player:fs_village_no_combat");
 		}
-	}
+	}*/
 }
