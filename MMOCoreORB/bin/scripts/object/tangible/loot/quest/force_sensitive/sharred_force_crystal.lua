@@ -43,7 +43,7 @@
 
 object_tangible_loot_quest_force_sensitive_force_crystal = object_tangible_loot_quest_force_sensitive_sharred_force_crystal:new {
 	objectMenuComponent = "ForceCrystalMenuComponent",
-	noTrade = 0,
+	noTrade = 1,
 
 }
 
