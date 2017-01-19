@@ -14,7 +14,7 @@ OldManIntroEncounter = Encounter:new {
 	encounterDespawnTime = 5 * 60 * 1000, -- 5 minutes
 	despawnMessage = "@quest/force_sensitive/intro:leave",
 	spawnObjectList = {
-		{ template = "old_man", minimumDistance = 64, maximumDistance = 96, referencePoint = 0, followPlayer = true, setNotAttackable = true, runOnDespawn = true }
+		{ template = "ancient_yoda", minimumDistance = 64, maximumDistance = 96, referencePoint = 0, followPlayer = true, setNotAttackable = true, runOnDespawn = true }
 	},
 	onEncounterSpawned = nil,
 	isEncounterFinished = nil,
