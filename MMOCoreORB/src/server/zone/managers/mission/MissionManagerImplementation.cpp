@@ -709,25 +709,7 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
 	else
 		missionType = "_creature";
 
-	// Get lair name and remove what we don't want
- 	String titleAsCreatureName = lairTemplateObject->getName().replaceAll("_", " ");
- 	titleAsCreatureName = titleAsCreatureName.replaceAll("^" + player->getZone()->getZoneName(), " ");
- 	titleAsCreatureName = titleAsCreatureName.replaceAll("small", "");
- 	titleAsCreatureName = titleAsCreatureName.replaceAll("medium", "");
- 	titleAsCreatureName = titleAsCreatureName.replaceAll("large", "");
- 	titleAsCreatureName = titleAsCreatureName.replaceAll("neutral", "");
- 	titleAsCreatureName = titleAsCreatureName.replaceAll("click", "lair");
- 	titleAsCreatureName = titleAsCreatureName.replaceAll("01", "");
- 	titleAsCreatureName = titleAsCreatureName.replaceAll("02", "");
- 	titleAsCreatureName = titleAsCreatureName.replaceAll("boss", "");
- 	// Add a space in front if there isn't one
- 	if (!titleAsCreatureName.beginsWith(" ")){
- 		Logger::console.info("titleAsCreatureName didn't start with a space", true); // Debug
- 		titleAsCreatureName = "  " + titleAsCreatureName;
- 	}
- 	// Set mission title as the creature difficulty and name rather than the roleplay data
- 	mission->setMissionTitleAsCreatureName("Difficulty " + String::valueOf(diffDisplay), titleAsCreatureName, true);
- 	//mission->setMissionTitle("mission/mission_destroy_neutral" + messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "t");
+	mission->setMissionTitle("mission/mission_destroy_neutral" + messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "t");
 	mission->setMissionDescription("mission/mission_destroy_neutral" +  messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "d");
 
 	switch (faction) {
@@ -1386,57 +1368,55 @@ void MissionManagerImplementation::randomizeGenericHuntingMission(CreatureObject
 	mission->setMissionTargetName(creatureTemplate->getObjectName());
 	mission->setTargetTemplate(sharedTemplate);
 
-	int numAnimals = 0;
- 	
- 	// 33% chance to list either an easy, medium, or hard mission
+	//50% easy missions, 33% medium missions, 17% hard missions.
 	int difficulty = System::random(5) + 1;
 	String diffString;
-	if (difficulty <= 2) {
+	if (difficulty <= 3) {
 		difficulty = 1;
 		diffString = "easy";
-		numAnimals = 15;
- 	} else if (difficulty <= 4) {
+	} else if (difficulty <= 5) {
 		difficulty = 2;
 		diffString = "medium";
-		numAnimals = 30;
 	} else {
 		difficulty = 3;
 		diffString = "hard";
-		numAnimals = 45;
  	}
+ 	
+ 	// Prevent every mission for same animal type from having almost exactly the same payout.
+ 	float diffRange = randomLairSpawn->getMaxDifficulty() - randomLairSpawn->getMinDifficulty() + 1.0f;
+ 	
+ 	float creatureLevelPart = 12900.0f * (MIN(90.0f + System::random(9.0f), (float)randomLairSpawn->getMinDifficulty() + System::random(diffRange)) / 99.0f);
+ 	float critterNumberPart = 100.0f; // 100 only used if randomLairSpawn->getMaxDifficulty() is null/broken
+ 	
+ 	// Throttle bonus for num of creatures based on how easy they are to kill
+ 	if (randomLairSpawn->getMaxDifficulty() < 12) {
+ 		critterNumberPart = 1000.0f * ((float)difficulty / 3.0f);
+ 	} else if (randomLairSpawn->getMaxDifficulty() < 45){
+ 		critterNumberPart = 5000.0f * ((float)difficulty / 3.0f);
+ 	} else if (randomLairSpawn->getMaxDifficulty() < 65){
+ 		critterNumberPart = 8000.0f * ((float)difficulty / 3.0f);
+ 	} else if (randomLairSpawn->getMaxDifficulty() > 64) {
+ 		critterNumberPart = 12000.0f * ((float)difficulty / 3.0f);
+ 	}
+ 	
+ 	float initialReward = creatureLevelPart + critterNumberPart + System::random(100.0f); // 12,900 + 12,000 + 100 = 25,000
+ 	
+ 	// Scout and Ranger bonuses
+ 	float forageBonus = initialReward * (MIN(125.0f, player->getSkillMod("foraging") + 1.0f) / 1250.0f); // Upto +10% = 2,500
+ 	float knowledgeBonus = initialReward * (MIN(125.0f, player->getSkillMod("creature_knowledge") + 1.0f) / 1250.0f); // Upto +10% = 2,500
+ 	
+ 	// Max possible payout: 30,000 Credits
+ 	float finalReward = initialReward + forageBonus + knowledgeBonus;
  
- 	int avgDifficulty = (randomLairSpawn->getMinDifficulty() + randomLairSpawn->getMaxDifficulty()) / 2;
+ 	mission->setRewardCredits((int)finalReward);
+	mission->setMissionDifficulty(difficulty);
+	mission->setMissionTitle("mission/mission_npc_hunting_neutral_" + diffString, "m" + String::valueOf(randTexts) + "t");
+
+	// Format short desc text so output looks like [CL12]: Kill 45 nuna
+ 	UnicodeString mobName = StringIdManager::instance()->getStringId(String::hashCode(creatureTemplate->getObjectName()));
+ 	String details = " Kill " + String::valueOf(difficulty * 15) + " " + mobName.toString().replaceAll("a ", "");
  	
- 	// Up to 25% payout bonus for Creature Knowledge skill level
- +	float creatureKnowledge = player->getSkillMod("creature_knowledge") / 500 + 1;
- +	
- 	// Throttle payout for easy animals
- 	float payThrottle = 1;
- 	if (avgDifficulty <= 10){
- 		creatureKnowledge = 1;
- 		payThrottle = 3;
- 	}
- 	// Bonus payout for hard animals
- 	if (avgDifficulty > 60){
- 		creatureKnowledge *= 1.25;
- 		payThrottle = 0.8; // divide by decimal results in bigger number
- 	}
- 	
- 	int baseReward = (avgDifficulty + numAnimals / payThrottle) * (75 + System::random(25)) * creatureKnowledge;
- 	        
- 	if (baseReward > 25000)
- 		baseReward = 24000 + System::random(1000); // Cap payout at 25,000cr
- 	
- 	// Reward range is approx 450cr to 25,000cr 
- 	
- 	mission->setRewardCredits(baseReward);
- 	mission->setMissionDifficulty(difficulty, avgDifficulty, 2, true);
- 	
- 	// Remove underscore from name
- 	String titleAsCreatureName = mobileName.replaceAll("_", " ");
- 	
- 	mission->setMissionTitleAsCreatureName("Kill " + String::valueOf(numAnimals), " " + titleAsCreatureName, true);
-	mission->setMissionDescription("mission/mission_npc_hunting_neutral_" + diffString, "m" + String::valueOf(randTexts) + "o");
+ 	mission->setHuntingMissionTitle("CL" + String::valueOf(randomLairSpawn->getMaxDifficulty()), details);
 
 	mission->setTypeCRC(MissionTypes::HUNTING);
 	mission->setFaction(faction);
@@ -1648,9 +1628,8 @@ LairSpawn* MissionManagerImplementation::getRandomLairSpawn(CreatureObject* play
 	Vector<Reference<LairSpawn*> >* availableLairList = NULL;
 	int minLevelCeiling = 20;
 
-	String missionGroup;
- 
- 	if (type == MissionObject::DESTROY) {	
+	if (type == MissionTypes::DESTROY) {
+		String missionGroup;
 
 		if (faction == Factions::FACTIONNEUTRAL) {
 			missionGroup = zone->getZoneName() + "_destroy_missions";
@@ -1682,38 +1661,24 @@ LairSpawn* MissionManagerImplementation::getRandomLairSpawn(CreatureObject* play
 		minLevelCeiling = destroyMissionGroup->getMinLevelCeiling();
 
 	} else if (type == MissionTypes::HUNTING) {
- 		
- 		missionGroup = zone->getZoneName() + "_hunting_missions";
- 		//Logger::console.info("Mission Group: " + missionGroup, true); // Debug
- 		SpawnGroup* destroyMissionGroup = CreatureTemplateManager::instance()->getDestroyMissionGroup(missionGroup.hashCode());
- 		
- 		if (destroyMissionGroup == NULL) {
- 			Logger::console.info("destroyMissionGroup was NULL", true); // Debug
+		CreatureManager* creatureManager = zone->getCreatureManager();
+		Vector<ManagedReference<SpawnArea* > >* worldAreas = creatureManager->getWorldSpawnAreas();
+
+		ManagedReference<SpawnArea*> spawnArea = NULL;
+
+		if (worldAreas == NULL || worldAreas->size() == 0) {
 			return NULL;
 		}
 
-		availableLairList = destroyMissionGroup->getSpawnList();
- 		
- 		if (availableLairList == NULL || availableLairList->size() == 0) {
- 			Logger::console.info("availableLairList was NULL or availableLairList size was 0", true); // Debug
+		int rand = System::random(worldAreas->size() - 1);
+
+		spawnArea = worldAreas->get(rand);
+
+		if (spawnArea == NULL) {
 			return NULL;
 		}
-		
-		// Pick a lair spawn as the target animal type, without regard for player or group level.
-		bool foundLair = false;
-		int counter = availableLairList->size();
-		LairSpawn* lairSpawn = NULL;
-		
-		while (counter > 0 && !foundLair) {
-		LairSpawn* randomLairSpawn = availableLairList->get(System::random(availableLairList->size() - 1));
-		if (randomLairSpawn != NULL) {
-			lairSpawn = randomLairSpawn;
-			foundLair = true;
-		}
-		--counter;
-		}
-		
-		return lairSpawn; // return here, because the rest of the function is for other mission types.
+
+		availableLairList = spawnArea->getSpawnList();
 	}
 
 	if (availableLairList == NULL || availableLairList->size() == 0) {
