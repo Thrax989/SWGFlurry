@@ -48,39 +48,6 @@ void MissionObjectImplementation::setRefreshCounter(int ctr, bool notifyClient) 
 	}
 }
 
-void MissionObjectImplementation::updateHuntingMissionDescription(const String& message, bool notifyClient) {
- 
- 	if (!notifyClient)
- 		return;
- 
- 	ManagedReference<SceneObject*> player = getParentRecursively(SceneObjectType::PLAYERCREATURE);
- 
- 	if (player != NULL) {
- 		MissionObjectDeltaMessage3* delta = new MissionObjectDeltaMessage3(_this.get());
- 		delta->updateHuntingMissionDescriptionStf(message);
- 		delta->close();
- 
- 		player->sendMessage(delta);
- 	}
- }
-
-void MissionObjectImplementation::setMissionTitleAsCreatureName(const String& heading, const String& message, bool notifyClient) {
- 	// [heading]: message
- 	// Hunting Mission example: [Kill 15]: crazed durni
- 	if (!notifyClient)
- 		return;
- 
- 	ManagedReference<SceneObject*> player = getParentRecursively(SceneObjectType::PLAYERCREATURE);
- 
- 	if (player != NULL) {
- 		MissionObjectDeltaMessage3* delta = new MissionObjectDeltaMessage3(_this.get());
- 		delta->updateTitleAsCreatureNameStf(heading, message);
- 		delta->close();
- 
- 		player->sendMessage(delta);
- 	}
- }
-
 void MissionObjectImplementation::setTypeCRC(uint32 crc, bool notifyClient) {
 	/*if (typeCRC == crc)
 		return;*/
@@ -141,9 +108,45 @@ void MissionObjectImplementation::setMissionTitle(const String& file, const Stri
 	}
 }
 
+void MissionObjectImplementation::setHuntingMissionTitle(const String& difficulty, const String& name, bool notifyClient) {
+ 	Locker clocker(waypointToMission, _this.getReferenceUnsafeStaticCast());
+ 
+ 	waypointToMission->setCustomObjectName(missionTitle.getFullPath(), false);
+ 
+ 	clocker.release();
+ 
+ 	if (!notifyClient)
+ 		return;
+ 
+ 	ManagedReference<SceneObject*> player = getParentRecursively(SceneObjectType::PLAYERCREATURE);
+ 
+ 	if (player != NULL) {
+ 		MissionObjectDeltaMessage3* delta = new MissionObjectDeltaMessage3(_this.getReferenceUnsafeStaticCast());
+ 		delta->updateHuntingMissionTitle(difficulty, name);
+ 		delta->close();
+ 
+ 		player->sendMessage(delta);
+	}
+}
+ 
+
+void MissionObjectImplementation::updateHuntingMissionDescription(const String& message, bool notifyClient) {
+ 
+ 	if (!notifyClient)
+ 		return;
+ 
+ 	ManagedReference<SceneObject*> player = getParentRecursively(SceneObjectType::PLAYERCREATURE);
+ 
+ 	if (player != NULL) {
+ 		MissionObjectDeltaMessage3* delta = new MissionObjectDeltaMessage3(_this.get());
+ 		delta->updateHuntingMissionDescription(message);
+ 		delta->close();
+ 
+ 		player->sendMessage(delta);
+ 	}
+ }
+ 
 void MissionObjectImplementation::setMissionTargetName(const String& target, bool notifyClient) {
-	// Usage example:
- 	// mission->setMissionTargetName("@lair_n:" + lairTemplateObject->getName());
 	targetName = target;
 
 	if (!notifyClient)
