@@ -32,7 +32,23 @@ public:
 		insertInt(0);
 		insertAscii(stringId->getStringID());
 	}
+	
+		void updateHuntingMissionDescriptionStf(const String& message) {
+ 		startUpdate(0x0B);
+ 
+ 		insertAscii("Current Mission Status");
+ 		insertInt(0);
+ 		insertAscii(message);
+ 	}
 
+		void updateTitleAsCreatureNameStf(const String& heading, const String& message) {
+ 		startUpdate(0x0C);
+ 
+ 		insertAscii(heading);
+ 		insertInt(0);
+ 		insertAscii(message);
+ 	}
+	
 	void updateTargetName(const String& name) {
 		startUpdate(0x0F);
 
