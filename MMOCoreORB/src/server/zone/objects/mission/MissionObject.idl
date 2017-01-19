@@ -156,6 +156,8 @@ class MissionObject extends IntangibleObject {
 	public native void setMissionTargetName(final string target, boolean notifyClient = true);
 	public native void setMissionDifficulty(int diffLevel, boolean notifyClient = true);
 	@preLocked
+	public native void setMissionDifficulty(int diffLevel, int display, int diff, boolean notifyClient = true); 
+	@preLocked 
 	public native void setRewardCredits(int creds, boolean notifyClient = true);
 	@local
 	@preLocked
