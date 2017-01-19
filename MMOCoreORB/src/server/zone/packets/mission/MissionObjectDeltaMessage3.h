@@ -25,15 +25,7 @@ public:
 		insertAscii(stringId->getStringID());
 	}
 
-	void updateTitleStf(StringId* stringId) {
-		startUpdate(0x0C);
-
-		insertAscii(stringId->getFile());
-		insertInt(0);
-		insertAscii(stringId->getStringID());
-	}
-	
-		void updateHuntingMissionDescriptionStf(const String& message) {
+	void updateHuntingMissionDescription(const String& message) {
  		startUpdate(0x0B);
  
  		insertAscii("Current Mission Status");
@@ -41,14 +33,23 @@ public:
  		insertAscii(message);
  	}
 
-		void updateTitleAsCreatureNameStf(const String& heading, const String& message) {
+	void updateTitleStf(StringId* stringId) {
+		startUpdate(0x0C);
+
+		insertAscii(stringId->getFile());
+		insertInt(0);
+		insertAscii(stringId->getStringID());
+	}
+
+	
+ 	void updateHuntingMissionTitle(const String& difficulty, const String& name) {
  		startUpdate(0x0C);
  
- 		insertAscii(heading);
+ 		insertAscii(difficulty);
  		insertInt(0);
- 		insertAscii(message);
+ 		insertAscii(name);
  	}
-	
+
 	void updateTargetName(const String& name) {
 		startUpdate(0x0F);
 
