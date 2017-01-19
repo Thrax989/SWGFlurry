@@ -92,6 +92,17 @@ object_tangible_wearables_jacket_jacket_ace_privateer = object_tangible_wearable
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+				"object/mobile/vendor/sullustan_female.iff",
+				"object/mobile/vendor/sullustan_male.iff",
+				"object/mobile/vendor/trandoshan_female.iff",
+				"object/mobile/vendor/trandoshan_male.iff",
+				"object/mobile/vendor/twilek_female.iff",
+				"object/mobile/vendor/twilek_male.iff",
+				"object/mobile/vendor/weequay_male.iff",
+				"object/mobile/vendor/wookiee_female.iff",
+				"object/mobile/vendor/wookiee_male.iff",
+				"object/mobile/vendor/zabrak_female.iff",
+				"object/mobile/vendor/zabrak_male.iff" },
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_jacket_jacket_ace_privateer, "object/tangible/wearables/jacket/jacket_ace_privateer.iff")

@@ -94,6 +94,7 @@ object_tangible_wearables_armor_marauder_armor_marauder_s01_belt = object_tangib
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+
 	
 	-- Damage types in WeaponObject
 	vulnerability = ELECTRICITY + ACID + STUN + LIGHTSABER,
