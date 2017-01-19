@@ -709,7 +709,25 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
 	else
 		missionType = "_creature";
 
-	mission->setMissionTitle("mission/mission_destroy_neutral" + messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "t");
+	// Get lair name and remove what we don't want
+ 	String titleAsCreatureName = lairTemplateObject->getName().replaceAll("_", " ");
+ 	titleAsCreatureName = titleAsCreatureName.replaceAll("^" + player->getZone()->getZoneName(), " ");
+ 	titleAsCreatureName = titleAsCreatureName.replaceAll("small", "");
+ 	titleAsCreatureName = titleAsCreatureName.replaceAll("medium", "");
+ 	titleAsCreatureName = titleAsCreatureName.replaceAll("large", "");
+ 	titleAsCreatureName = titleAsCreatureName.replaceAll("neutral", "");
+ 	titleAsCreatureName = titleAsCreatureName.replaceAll("click", "lair");
+ 	titleAsCreatureName = titleAsCreatureName.replaceAll("01", "");
+ 	titleAsCreatureName = titleAsCreatureName.replaceAll("02", "");
+ 	titleAsCreatureName = titleAsCreatureName.replaceAll("boss", "");
+ 	// Add a space in front if there isn't one
+ 	if (!titleAsCreatureName.beginsWith(" ")){
+ 		Logger::console.info("titleAsCreatureName didn't start with a space", true); // Debug
+ 		titleAsCreatureName = "  " + titleAsCreatureName;
+ 	}
+ 	// Set mission title as the creature difficulty and name rather than the roleplay data
+ 	mission->setMissionTitleAsCreatureName("Difficulty " + String::valueOf(diffDisplay), titleAsCreatureName, true);
+ 	//mission->setMissionTitle("mission/mission_destroy_neutral" + messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "t");
 	mission->setMissionDescription("mission/mission_destroy_neutral" +  messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "d");
 
 	switch (faction) {
