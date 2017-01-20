@@ -1380,43 +1380,13 @@ void MissionManagerImplementation::randomizeGenericHuntingMission(CreatureObject
 	} else {
 		difficulty = 3;
 		diffString = "hard";
- 	}
- 	
- 	// Prevent every mission for same animal type from having almost exactly the same payout.
- 	float diffRange = randomLairSpawn->getMaxDifficulty() - randomLairSpawn->getMinDifficulty() + 1.0f;
- 	
- 	float creatureLevelPart = 12900.0f * (MIN(90.0f + System::random(9.0f), (float)randomLairSpawn->getMinDifficulty() + System::random(diffRange)) / 99.0f);
- 	float critterNumberPart = 100.0f; // 100 only used if randomLairSpawn->getMaxDifficulty() is null/broken
- 	
- 	// Throttle bonus for num of creatures based on how easy they are to kill
- 	if (randomLairSpawn->getMaxDifficulty() < 12) {
- 		critterNumberPart = 1000.0f * ((float)difficulty / 3.0f);
- 	} else if (randomLairSpawn->getMaxDifficulty() < 45){
- 		critterNumberPart = 5000.0f * ((float)difficulty / 3.0f);
- 	} else if (randomLairSpawn->getMaxDifficulty() < 65){
- 		critterNumberPart = 8000.0f * ((float)difficulty / 3.0f);
- 	} else if (randomLairSpawn->getMaxDifficulty() > 64) {
- 		critterNumberPart = 12000.0f * ((float)difficulty / 3.0f);
- 	}
- 	
- 	float initialReward = creatureLevelPart + critterNumberPart + System::random(100.0f); // 12,900 + 12,000 + 100 = 25,000
- 	
- 	// Scout and Ranger bonuses
- 	float forageBonus = initialReward * (MIN(125.0f, player->getSkillMod("foraging") + 1.0f) / 1250.0f); // Upto +10% = 2,500
- 	float knowledgeBonus = initialReward * (MIN(125.0f, player->getSkillMod("creature_knowledge") + 1.0f) / 1250.0f); // Upto +10% = 2,500
- 	
- 	// Max possible payout: 30,000 Credits
- 	float finalReward = initialReward + forageBonus + knowledgeBonus;
- 
- 	mission->setRewardCredits((int)finalReward);
+	}
+
+	int baseReward = 500 + (difficulty * 100 * randomLairSpawn->getMinDifficulty());
+	mission->setRewardCredits(baseReward + System::random(100));
 	mission->setMissionDifficulty(difficulty);
 	mission->setMissionTitle("mission/mission_npc_hunting_neutral_" + diffString, "m" + String::valueOf(randTexts) + "t");
-
-	// Format short desc text so output looks like [CL12]: Kill 45 nuna
- 	UnicodeString mobName = StringIdManager::instance()->getStringId(String::hashCode(creatureTemplate->getObjectName()));
- 	String details = " Kill " + String::valueOf(difficulty * 15) + " " + mobName.toString().replaceAll("a ", "");
- 	
- 	mission->setHuntingMissionTitle("CL" + String::valueOf(randomLairSpawn->getMaxDifficulty()), details);
+	mission->setMissionDescription("mission/mission_npc_hunting_neutral_" + diffString, "m" + String::valueOf(randTexts) + "o");
 
 	mission->setTypeCRC(MissionTypes::HUNTING);
 	mission->setFaction(faction);

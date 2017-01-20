@@ -25,14 +25,6 @@ public:
 		insertAscii(stringId->getStringID());
 	}
 
-	void updateHuntingMissionDescription(const String& message) {
- 		startUpdate(0x0B);
- 
- 		insertAscii("Current Mission Status");
- 		insertInt(0);
- 		insertAscii(message);
- 	}
-
 	void updateTitleStf(StringId* stringId) {
 		startUpdate(0x0C);
 
@@ -40,15 +32,6 @@ public:
 		insertInt(0);
 		insertAscii(stringId->getStringID());
 	}
-
-	
- 	void updateHuntingMissionTitle(const String& difficulty, const String& name) {
- 		startUpdate(0x0C);
- 
- 		insertAscii(difficulty);
- 		insertInt(0);
- 		insertAscii(name);
- 	}
 
 	void updateTargetName(const String& name) {
 		startUpdate(0x0F);
