@@ -91,7 +91,7 @@ object_tangible_wearables_bracelet_bracelet_s03_r = object_tangible_wearables_br
 				"object/mobile/vendor/wookiee_female.iff",
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
-				"object/mobile/vendor/zabrak_male.iff" },
+				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/sullustan_female.iff",
 				"object/mobile/vendor/sullustan_male.iff",
 				"object/mobile/vendor/trandoshan_female.iff",
