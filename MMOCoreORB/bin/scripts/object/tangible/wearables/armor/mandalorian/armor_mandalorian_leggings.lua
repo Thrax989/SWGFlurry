@@ -98,8 +98,7 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_leggings = object_
 				"object/mobile/vendor/wookiee_female.iff",
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
-				"object/mobile/vendor/zabrak_male.iff" },
-
+				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/sullustan_female.iff",
 				"object/mobile/vendor/sullustan_male.iff",
 				"object/mobile/vendor/trandoshan_female.iff",
