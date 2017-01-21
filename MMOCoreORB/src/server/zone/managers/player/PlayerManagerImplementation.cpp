@@ -951,11 +951,6 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::MIND, 100, true, false);
 		player->addShockWounds(100, true);
 		VisibilityManager::instance()->clearVisibility(player);
-		//Broadcast to Server
- 		String playerName = player->getFirstName();
- 		StringBuffer zBroadcast;
- 		zBroadcast << "\\#00e604" << playerName << " \\#e60000 has suffered a death cloning in progress";
- 		player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	}
 
 	if (player->getFactionStatus() != FactionStatus::ONLEAVE && cbot->getFaction() == 0)
