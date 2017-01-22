@@ -30,19 +30,21 @@ coyn_commando = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 6000000},
-				{group = "pistols", chance = 750000},
-				{group = "rifles", chance = 750000},
-				{group = "carbines", chance = 750000},
-				{group = "bounty_hunter_armor", chance = 200000},
-				{group = "jetpack_base", chance = 50000},
-				{group = "blacksunhelm1", chance = 500000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "blacksun_rare", chance = 500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,swordsmanmaster,pistoleermaster)

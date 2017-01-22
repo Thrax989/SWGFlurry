@@ -31,40 +31,21 @@ som_dark_jedi_minion_7 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "g_carbine_alliance_needler", chance = 1000000},
-				{group = "crystals_premium", chance = 2500000},
-				{group = "armor_attachments", chance = 1500000},
-				{group = "clothing_attachments", chance = 1900000},
-				{group = "g_sword_rebel", chance = 1500000},
-				{group = "g_ep3_chiss_poacher_backpack", chance = 100000},
-				{group = "g_punch_dagger", chance = 1500000}
-			}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "g_lance_cryo", chance = 1000000},
-				{group = "crystal_banes_heart", chance = 500000},
-				{group = "crystal_bnars_sacrifice", chance = 500000},
-				{group = "crystal_bondaras_folly", chance = 500000},
-				{group = "crystal_dawn_of_dagobah", chance = 500000},
-				{group = "crystal_gallias_intuition", chance = 500000},
-				{group = "crystal_horns_future", chance = 500000},
-				{group = "crystal_kenobis_legacy", chance = 500000},
-				{group = "crystal_kits_ferocity", chance = 500000},
-				{group = "crystal_kuns_blood", chance = 500000},
-				{group = "crystal_mauls_vengence", chance = 500000},
-				{group = "crystal_mundis_response", chance = 500000},
-				{group = "crystal_prowess_of_plo_koon", chance = 500000},
-				{group = "crystal_qui_gons_devotion", chance = 500000},
-				{group = "crystal_quintessence_0f_the_force", chance = 500000},
-				{group = "crystal_strength_of_luminaria", chance = 500000},
-				{group = "crystal_sunriders_destiny", chance = 500000},
-				{group = "crystal_ulics_redemption", chance = 500000},
-				{group = "crystal_windus_guile", chance = 500000}
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		},
 	weapons = {"dark_jedi_weapons_gen3"},
 	conversationTemplate = "",
 	attacks = merge(lightsabermaster)

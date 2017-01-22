@@ -30,50 +30,21 @@ som_kenobi_historian_dark_jedi = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-					{group = "holocron_dark", chance = 3000000},
-					{group = "armor_attachments", chance = 3000000},
-					{group = "pearls_flawless", chance = 3000000},
-					{group = "clothing_attachments", chance = 1000000},
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-					{group = "holocron_dark", chance = 3000000},
-					{group = "armor_attachments", chance = 3000000},
-					{group = "pearls_flawless", chance = 3000000},
-					{group = "clothing_attachments", chance = 1000000},
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
-		{
-			groups = {
-					{group = "holocron_dark", chance = 3000000},
-					{group = "armor_attachments", chance = 3000000},
-					{group = "pearls_flawless", chance = 3000000},
-					{group = "clothing_attachments", chance = 1000000},
-			},
-			lootChance = 10000000
 		},
-		{
-			groups = {
-				{group = "saberhand24", chance = 10000000}
-			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "saberhand25", chance = 10000000}
-			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "saberhand26", chance = 10000000}
-			},
-			lootChance = 1000000
-		},
-	},
 	weapons = {"dark_jedi_weapons_gen3"},
 	conversationTemplate = "",
 	attacks = merge(lightsabermaster)
