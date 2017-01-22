@@ -30,22 +30,21 @@ ep3_slavemaster_klesk = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 2500000},
-				{group = "g_knife_trando_skinner", chance = 500000},
-				{group = "g_som_2h_sword_tulrus", chance = 500000},
-				{group = "g_sword_acid", chance = 500000},
-				{group = "g_sword_avatar_wke_spiritblade", chance = 500000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "g_sword_pvp_bf_01", chance = 500000},
-				{group = "g_sword_wookiee", chance = 500000},
-				{group = "g_two_handed_sword_avatar_wke_toothpick", chance = 500000},
-				{group = "g_two_handed_sword_kashyyk", chance = 500000},
-				{group = "g_two_handed_sword_pvp_bf", chance = 500000},
-				{group = "g_pistol_alliance_disruptor_generic", chance = 500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",

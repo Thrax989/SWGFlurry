@@ -30,21 +30,20 @@ ep3_harwakokok_mighty = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "g_pistol_wookiee", chance = 500000},
-	    	{group = "g_pistol_wookiee_bowcaster", chance = 500000},
-	    	{group = "g_lance_wod_twin_blade", chance = 500000},
-	    	{group = "g_lance_wookiee", chance = 500000},
-	    	{group = "g_lance_kashyyk", chance = 500000},
-	    	{group = "armor_attachments", chance = 2500000},
-	    	{group = "g_lance_avatar_wke_heartlance", chance = 500000},
-	    	{group = "g_carbine_wookiee_bowcaster", chance = 500000},
-				{group = "g_rifle_bowcaster_heavy", chance = 500000},
-				{group = "g_rifle_bowcaster_master", chance = 500000},
-				{group = "clothing_attachments", chance = 2500000},
-	    	{group = "g_wookiee_knuckler", chance = 500000}
-				},
-				lootChance = 10000000
-			}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
 		},
 	weapons = {"chewbacca_weapons"},
 	conversationTemplate = "",

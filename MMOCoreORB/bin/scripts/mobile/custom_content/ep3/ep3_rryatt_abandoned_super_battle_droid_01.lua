@@ -30,18 +30,21 @@ ep3_rryatt_abandoned_super_battle_droid_01 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000},
-				{group = "weapons_all", chance = 2500000},
-				{group = "g_rifle_pvp", chance = 500000},
-				{group = "g_rifle_rebel", chance = 500000},
-				{group = "g_rifle_naktra_crystal", chance = 500000},
-				{group = "g_rifle_tc22_blaster",  chance = 500000},
-				{group = "g_rifle_westar_m5",  chance = 500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
-			lootChance = 7500000
-		}
-	},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	conversationTemplate = "",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
 	defaultAttack = "creaturerangedattack"
