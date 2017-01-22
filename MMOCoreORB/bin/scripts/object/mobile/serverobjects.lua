@@ -2653,6 +2653,7 @@ includeFile("mobile/zabrak_male.lua")
 
 includeFile("mobile/outbreak_afflicted_blackwing_rancor_boss.lua")
 includeFile("mobile/yoda.lua")
+includeFile("mobile/meatlump_king_static.lua")
 includeFile("mobile/varactyl.lua")
 includeFile("mobile/bolotaur.lua")
 includeFile("mobile/exar_kun.lua")
