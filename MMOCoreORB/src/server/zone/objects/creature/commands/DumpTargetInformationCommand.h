@@ -56,6 +56,7 @@ public:
 		msg << "x = " << posX << ", z = " << posZ << ", y = " << posY << ", ow = " << direction->getW()
 				<< ", ox = " << direction->getX() << ", oz = " << direction->getZ() << ", oy = " << direction->getY()
 				<< ", cellid = " << cellid;
+		info(msg, true);
 
 		if (buildingTemplate != 0)
 			msg << endl << TemplateManager::instance()->getTemplateFile(buildingTemplate);
