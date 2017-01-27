@@ -18,7 +18,7 @@
 
 
 ForceHealQueueCommand::ForceHealQueueCommand(const String& name, ZoneProcessServer* server) : JediQueueCommand(name, server) {
-	speed = 0;
+	speed = 3;
 	allowedTarget = TARGET_AUTO;
 
 	forceCost = 0;
