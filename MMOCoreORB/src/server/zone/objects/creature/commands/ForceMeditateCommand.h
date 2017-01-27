@@ -40,6 +40,11 @@ public:
 			return GENERALERROR;
 		}
 
+		if (!creature->hasSkill("force_discipline_enhancements_synergy_04")){
+ 			creature->sendSystemMessage("You lack sufficient skill to use the Force Meditate Command");
+ 			return GENERALERROR;
+ 		}
+
 		// Play Client Effect once.
 
 		creature->playEffect("clienteffect/pl_force_meditate_self.cef", "");

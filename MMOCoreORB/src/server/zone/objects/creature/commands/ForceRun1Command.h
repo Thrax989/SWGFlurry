@@ -32,6 +32,12 @@ public:
 			creature->sendSystemMessage("@jedi_spam:already_force_running"); // You are already force running.
 			return GENERALERROR;
 		}
+
+		if (!creature->hasSkill("force_discipline_enhancements_movement_02")){
+ 			creature->sendSystemMessage("You lack sufficient skill to use the Force Run Command");
+ 			return GENERALERROR;
+ 		}
+
 		// Return if something is in error.
 		if (res != SUCCESS) {
 			return res;

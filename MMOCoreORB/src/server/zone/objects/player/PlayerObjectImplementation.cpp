@@ -1321,6 +1321,13 @@ void PlayerObjectImplementation::notifyOnline() {
 		amount -= curExp;
 		playerCreature->getZoneServer()->getPlayerManager()->awardExperience(playerCreature, "jedi_general", amount);
 	}
+
+  	if (!playerCreature->hasSkill("force_discipline_enhancements_synergy_04") && ghost->hasAbility("forceMeditate")) {
+  		SkillManager::instance()->removeAbility(ghost, "forceMeditate", true);
+  	}
+	if (!playerCreature->hasSkill("force_discipline_enhancements_movement_02") && ghost->hasAbility("forceRun1")) {
+  		SkillManager::instance()->removeAbility(ghost, "forceRun1", true);
+  	}
 }
 
 int PlayerObjectImplementation::numSpecificSkills(CreatureObject* creature, const String& reqSkillName) {
