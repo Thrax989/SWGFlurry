@@ -1,7 +1,7 @@
 sword_01_static = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_01_static.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

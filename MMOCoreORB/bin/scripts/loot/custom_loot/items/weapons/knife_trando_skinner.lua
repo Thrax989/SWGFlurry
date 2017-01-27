@@ -1,7 +1,7 @@
 knife_trando_skinner = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Trando skinner",
 	directObjectTemplate = "object/weapon/melee/knife/ep3/knife_trando_skinner.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

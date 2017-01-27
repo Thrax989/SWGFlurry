@@ -2,7 +2,7 @@
 punch_dagger = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Punch dagger",
 	directObjectTemplate = "object/weapon/melee/special/punch_dagger.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

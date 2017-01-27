@@ -1,7 +1,7 @@
 two_handed_sword_sith = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Sith sword",
 	directObjectTemplate = "object/weapon/melee/2h_sword/2h_sword_sith.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

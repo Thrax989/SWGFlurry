@@ -3,7 +3,7 @@
 axe_vibroaxe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Vibroaxe",
 	directObjectTemplate = "object/weapon/melee/axe/axe_vibroaxe.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

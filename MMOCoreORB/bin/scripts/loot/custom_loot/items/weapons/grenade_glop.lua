@@ -1,7 +1,7 @@
 grenade_glop = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Glop grenade",
 	directObjectTemplate = "object/weapon/ranged/grenade/grenade_glop.iff",
 	craftingValues = {
 		{"mindamage",200,340,0},

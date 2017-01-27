@@ -1,7 +1,7 @@
 two_handed_sword_avatar_wke_toothpick = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Toothpick sword",
 	directObjectTemplate = "object/weapon/melee/2h_sword/2h_sword_avatar_wke_toothpick.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

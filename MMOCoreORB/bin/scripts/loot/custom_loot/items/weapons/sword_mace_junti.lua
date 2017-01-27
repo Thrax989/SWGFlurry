@@ -1,7 +1,7 @@
 sword_mace_junti = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Junti mace",
 	directObjectTemplate = "object/weapon/melee/sword/sword_mace_junti.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

@@ -1,7 +1,7 @@
 two_handed_sword_blacksun_hack = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Blacksun hack",
 	directObjectTemplate = "object/weapon/melee/2h_sword/2h_sword_blacksun_hack.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

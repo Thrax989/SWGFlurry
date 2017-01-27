@@ -1,7 +1,7 @@
 sword_marauder = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Marauder sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_marauder.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

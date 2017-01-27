@@ -2,7 +2,7 @@
 knife_vibroblade = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = Vibro Blade"",
 	directObjectTemplate = "object/weapon/melee/knife/knife_vibroblade.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

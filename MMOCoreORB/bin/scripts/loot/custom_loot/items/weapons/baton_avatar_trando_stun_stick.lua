@@ -1,7 +1,7 @@
 baton_avatar_trando_stun_stick = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Trando stun stick",
 	directObjectTemplate = "object/weapon/melee/baton/baton_avatar_trando_stun_stick.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

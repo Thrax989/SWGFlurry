@@ -1,7 +1,7 @@
 ep3_loot_blackbane = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Blackbane knife",
 	directObjectTemplate = "object/weapon/melee/knife/ep3_loot_blackbane.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

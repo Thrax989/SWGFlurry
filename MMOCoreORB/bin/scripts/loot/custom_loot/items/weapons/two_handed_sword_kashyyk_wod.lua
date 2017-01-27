@@ -1,7 +1,7 @@
 two_handed_sword_kashyyk_wod = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Kashyyk sword",
 	directObjectTemplate = "object/weapon/melee/2h_sword/2h_sword_kashyyk_wod.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

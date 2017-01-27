@@ -3,7 +3,7 @@
 knife_janta = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Janta knife",
 	directObjectTemplate = "object/weapon/melee/knife/knife_janta.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

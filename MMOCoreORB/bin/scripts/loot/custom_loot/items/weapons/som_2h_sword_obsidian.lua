@@ -1,7 +1,7 @@
 som_2h_sword_obsidian = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Obsidian sword",
 	directObjectTemplate = "object/weapon/melee/2h_sword/som_2h_sword_obsidian.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

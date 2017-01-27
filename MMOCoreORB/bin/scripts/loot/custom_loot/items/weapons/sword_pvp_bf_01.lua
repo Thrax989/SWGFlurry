@@ -1,7 +1,7 @@
 sword_pvp_bf_01 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_pvp_bf_01.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

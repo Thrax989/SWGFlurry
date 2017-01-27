@@ -1,7 +1,7 @@
 grenade_thermal_detonator = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Thermal detonator grenade",
 	directObjectTemplate = "object/weapon/ranged/grenade/grenade_thermal_detonator.iff",
 	craftingValues = {
 		{"mindamage",570,870,0},

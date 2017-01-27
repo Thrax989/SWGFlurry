@@ -1,7 +1,7 @@
 sword_massassi = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Massassi sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_massassi.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

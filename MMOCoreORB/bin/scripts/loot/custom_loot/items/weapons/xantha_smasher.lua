@@ -1,7 +1,7 @@
 xantha_smasher = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Xantha smasher",
 	directObjectTemplate = "object/weapon/melee/baton/xantha_smasher.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

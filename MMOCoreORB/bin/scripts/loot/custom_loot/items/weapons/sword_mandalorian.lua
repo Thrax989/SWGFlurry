@@ -1,7 +1,7 @@
 sword_mandalorian = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Mandalorian sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_mandalorian.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

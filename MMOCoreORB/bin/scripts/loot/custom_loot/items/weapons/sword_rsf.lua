@@ -1,7 +1,7 @@
 sword_rsf = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "RSF sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_rsf.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

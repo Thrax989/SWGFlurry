@@ -1,7 +1,7 @@
 two_handed_sword_cleaver = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Cleaver sword",
 	directObjectTemplate = "object/weapon/melee/2h_sword/2h_sword_cleaver.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

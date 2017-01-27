@@ -1,7 +1,7 @@
 baton_gaderiffi_npe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Gaderiffi baton",
 	directObjectTemplate = "object/weapon/melee/baton/baton_gaderiffi_npe.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

@@ -1,7 +1,7 @@
 sword_lightsaber_umakk = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Umakk lightsaber",
 	directObjectTemplate = "object/weapon/melee/sword/sword_lightsaber_umakk.iff",
 	craftingValues = {
 		{"mindamage",61,170,0},

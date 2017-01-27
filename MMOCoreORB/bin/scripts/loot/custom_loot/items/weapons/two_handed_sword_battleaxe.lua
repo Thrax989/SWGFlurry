@@ -1,7 +1,7 @@
 two_handed_sword_battleaxe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Battleaxe",
 	directObjectTemplate = "object/weapon/melee/2h_sword/2h_sword_battleaxe.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

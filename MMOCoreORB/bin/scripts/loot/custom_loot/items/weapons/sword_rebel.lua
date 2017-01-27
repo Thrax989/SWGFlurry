@@ -1,7 +1,7 @@
 sword_rebel = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Rebel sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_rebel.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

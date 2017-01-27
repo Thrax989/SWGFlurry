@@ -1,7 +1,7 @@
 grenade_imperial_detonator = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Imperial detonator grenade",
 	directObjectTemplate = "object/weapon/ranged/grenade/grenade_imperial_detonator.iff",
 	craftingValues = {
 		{"mindamage",645,989,0},

@@ -3,7 +3,7 @@
 nyax_sword = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Curved nyax sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_curved_nyax.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

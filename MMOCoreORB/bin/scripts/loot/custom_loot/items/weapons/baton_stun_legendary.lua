@@ -1,7 +1,7 @@
 baton_stun_legendary = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Stun baton legendary",
 	directObjectTemplate = "object/weapon/melee/baton/baton_stun_legendary.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

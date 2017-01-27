@@ -2,7 +2,7 @@
 wod_war_fan = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "War fan",
 	directObjectTemplate = "object/weapon/melee/special/wod_war_fan.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

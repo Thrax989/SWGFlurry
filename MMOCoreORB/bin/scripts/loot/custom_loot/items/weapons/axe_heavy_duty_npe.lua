@@ -1,7 +1,7 @@
 axe_heavy_duty_npe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Heavy duty axe",
 	directObjectTemplate = "object/weapon/melee/axe/axe_heavy_duty_npe.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

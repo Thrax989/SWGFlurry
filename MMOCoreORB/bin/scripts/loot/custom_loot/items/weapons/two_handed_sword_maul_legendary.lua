@@ -1,7 +1,7 @@
 two_handed_sword_maul_legendary = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Legendary hammer",
 	directObjectTemplate = "object/weapon/melee/2h_sword/2h_sword_maul_legendary.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

@@ -1,7 +1,7 @@
 two_handed_sword_pvp_bf_01 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Pvp sword",
 	directObjectTemplate = "object/weapon/melee/2h_sword/2h_sword_pvp_bf_01.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

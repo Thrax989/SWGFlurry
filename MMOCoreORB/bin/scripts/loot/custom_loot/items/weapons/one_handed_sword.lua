@@ -2,7 +2,7 @@
 one_handed_sword = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "One handed sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_01.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

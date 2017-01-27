@@ -1,7 +1,7 @@
 sword_wookiee = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Wookie sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_wookiee.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

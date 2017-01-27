@@ -3,7 +3,7 @@
 knife_donkuwah = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Donkuwah knife",
 	directObjectTemplate = "object/weapon/melee/knife/knife_donkuwah.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

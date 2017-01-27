@@ -1,7 +1,7 @@
 sword_avatar_wke_spiritblade = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Spiritblade",
 	directObjectTemplate = "object/weapon/melee/sword/sword_avatar_wke_spiritblade.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

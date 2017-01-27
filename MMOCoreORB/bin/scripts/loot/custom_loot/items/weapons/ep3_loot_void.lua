@@ -1,7 +1,7 @@
 ep3_loot_void = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Heavy void",
 	directObjectTemplate = "object/weapon/ranged/heavy/ep3_loot_void.iff",
 	craftingValues = {
 		{"mindamage",47,96,0},

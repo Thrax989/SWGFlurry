@@ -1,7 +1,7 @@
 sword_wod_scyth = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Scyth sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_wod_scyth.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

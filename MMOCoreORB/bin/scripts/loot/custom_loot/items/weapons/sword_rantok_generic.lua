@@ -1,7 +1,7 @@
 sword_rantok_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Rantok sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_rantok_generic.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

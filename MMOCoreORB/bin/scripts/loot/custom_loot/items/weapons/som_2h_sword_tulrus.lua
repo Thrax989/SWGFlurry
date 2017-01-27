@@ -1,7 +1,7 @@
 som_2h_sword_tulrus = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Tulrus sword",
 	directObjectTemplate = "object/weapon/melee/2h_sword/som_2h_sword_tulrus.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

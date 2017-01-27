@@ -1,7 +1,7 @@
 sword_acid = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Acid sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_acid.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

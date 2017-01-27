@@ -2,7 +2,7 @@
 one_handed_curved_sword = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Curved sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_02.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

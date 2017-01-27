@@ -3,7 +3,7 @@
 knife_stone = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Stone knife",
 	directObjectTemplate = "object/weapon/melee/knife/knife_stone.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

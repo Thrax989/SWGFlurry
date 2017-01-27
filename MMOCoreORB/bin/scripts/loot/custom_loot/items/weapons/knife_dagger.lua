@@ -3,7 +3,7 @@
 knife_dagger = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Knife",
 	directObjectTemplate = "object/weapon/melee/knife/knife_dagger.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

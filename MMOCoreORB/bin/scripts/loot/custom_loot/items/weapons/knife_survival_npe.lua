@@ -1,7 +1,7 @@
 knife_survival_npe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Survival knife",
 	directObjectTemplate = "object/weapon/melee/knife/knife_survival_npe.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

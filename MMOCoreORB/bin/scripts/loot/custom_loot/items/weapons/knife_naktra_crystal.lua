@@ -1,7 +1,7 @@
 knife_naktra_crystal = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Naktra crystal knife",
 	directObjectTemplate = "object/weapon/melee/knife/ep3/knife_naktra_crystal.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},
