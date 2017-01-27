@@ -571,7 +571,7 @@ void SlicingSessionImplementation::handleWeaponSlice() {
 	uint8 min = 0;
 	uint8 max = 0;
 
-	switch (sliceSkill) {
+	switch (sliceSkill) {    // 20%-35% weapon slice at master smuggler
 	case 5:
 		min += 5;
 		max += 5;
@@ -704,12 +704,12 @@ void SlicingSessionImplementation::handleArmorSlice() {
 		}
 	}
 
-	switch (sliceSkill) {       // 20-45% max encumbrance slice, 11-35% max effectiveness slice
+	switch (sliceSkill) {       // 20-45% max encumbrance slice, 20-35% max effectiveness slice at master smuggler
 	case 5:
-		min += (sliceType == 0) ? 6 : 5;
+		min += 5;
 		max += 5;
 	case 4:
-		min += (sliceType == 0) ? 0 : 10;
+		min += 10;
 		max += 10;
 	case 3:
 		min += 5;
