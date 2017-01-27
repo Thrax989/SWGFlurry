@@ -2,15 +2,15 @@ monstrous_brute = Creature:new {
 	objectName = "@mob/creature_names:rancor_monstrous_brute",
 	socialGroup = "rancor",
 	faction = "",
-	level = 87,
-	chanceHit = 0.82,
-	damageMin = 595,
-	damageMax = 900,
-	baseXp = 8315,
-	baseHAM = 13000,
-	baseHAMmax = 16000,
+	level = 85,
+	chanceHit = 8.5,
+	damageMin = 945,
+	damageMax = 1600,
+	baseXp = 13367,
+	baseHAM = 105000,
+	baseHAMmax = 115000,
 	armor = 0,
-	resists = {35,160,35,200,200,200,35,35,-1},
+	resists = {180,185,180,175,180,165,165,180,150},
 	meatType = "meat_carnivore",
 	meatAmount = 950,
 	hideType = "hide_leathery",
@@ -41,8 +41,8 @@ monstrous_brute = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"knockdownattack",""},
-		{"creatureareaattack",""}
+		{"creatureareableeding",""},
+		{"creatureareadisease",""}
 	}
 }
 
