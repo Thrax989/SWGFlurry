@@ -60,7 +60,6 @@ includeFile("tools/firework_event.lua")
 
 -- GCW
 includeFile("gcw/newsnet.lua")
-includeFile("gcw/pvp.lua")
 includeFile("gcw/recruiters/recruiterConvoHandler.lua")
 includeFile("gcw/recruiters/recruiterScreenplay.lua")
 
