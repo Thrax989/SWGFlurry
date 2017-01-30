@@ -1080,8 +1080,6 @@ class CreatureObject extends TangibleObject {
 	 */
 	@dirty
 	public native boolean hasBountyMissionFor(CreatureObject target);
-	public native boolean isInBountyMission(CreatureObject bountyHunter, CreatureObject target);
-
 
 	/**
 	 * sends the conversation list

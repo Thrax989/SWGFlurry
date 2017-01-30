@@ -2858,10 +2858,6 @@ bool CreatureObjectImplementation::isAggressiveTo(CreatureObject* object) {
 		return true;
 	}
 
-	if (isInBountyMission(object, asCreatureObject())) {
-		return true;
-	}
-
 	ManagedReference<GuildObject*> guildObject = guild.get();
 	if (guildObject != NULL && guildObject->isInWaringGuild(object))
 		return true;
