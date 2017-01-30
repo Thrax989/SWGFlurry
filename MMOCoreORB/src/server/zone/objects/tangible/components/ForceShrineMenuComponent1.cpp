@@ -168,6 +168,42 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 				darkRobe1->destroyObjectFromDatabase(true);
 			}
 		}
+		if (creature->hasSkill("force_rank_dark_rank_01")) {
+			String DarkRobe2 = "object/tangible/wearables/robe/robe_jedi_dark_s02.iff";
+			ManagedReference<SceneObject*> darkRobe2 = zserv->createObject(DarkRobe2.hashCode(), 2);
+			if (inventory->transferObject(darkRobe2, -1)) {
+				inventory->broadcastObject(darkRobe2, true);
+				} else {
+				darkRobe2->destroyObjectFromDatabase(true);
+			}
+		}
+		if (creature->hasSkill("force_rank_dark_rank_05")) {
+			String DarkRobe3 = "object/tangible/wearables/robe/robe_jedi_dark_s03.iff";
+			ManagedReference<SceneObject*> darkRobe3 = zserv->createObject(DarkRobe3.hashCode(), 2);
+			if (inventory->transferObject(darkRobe3, -1)) {
+				inventory->broadcastObject(darkRobe3, true);
+				} else {
+				darkRobe3->destroyObjectFromDatabase(true);
+			}
+		}
+		if (creature->hasSkill("force_rank_dark_rank_08")) {
+			String DarkRobe4 = "object/tangible/wearables/robe/robe_jedi_dark_s04.iff";
+			ManagedReference<SceneObject*> darkRobe4 = zserv->createObject(DarkRobe4.hashCode(), 2);
+			if (inventory->transferObject(darkRobe4, -1)) {
+				inventory->broadcastObject(darkRobe4, true);
+				} else {
+				darkRobe4->destroyObjectFromDatabase(true);
+			}
+		}
+		if (creature->hasSkill("force_rank_dark_rank_10")) {
+			String DarkRobe5 = "object/tangible/wearables/robe/robe_jedi_dark_s05.iff";
+			ManagedReference<SceneObject*> darkRobe5 = zserv->createObject(DarkRobe5.hashCode(), 2);
+			if (inventory->transferObject(darkRobe5, -1)) {
+				inventory->broadcastObject(darkRobe5, true);
+				} else {
+				darkRobe5->destroyObjectFromDatabase(true);
+			}
+		}
 		if (creature->hasSkill("force_rank_light_novice")) {
 			String LightRobe1 = "object/tangible/wearables/robe/robe_jedi_light_s01.iff";
 			ManagedReference<SceneObject*> lightRobe1 = zserv->createObject(LightRobe1.hashCode(), 3);
@@ -175,6 +211,42 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 				inventory->broadcastObject(lightRobe1, true);
 				} else {
 				lightRobe1->destroyObjectFromDatabase(true);
+			}
+		}
+		if (creature->hasSkill("force_rank_light_rank_01")) {
+			String LightRobe2 = "object/tangible/wearables/robe/robe_jedi_light_s02.iff";
+			ManagedReference<SceneObject*> lightRobe2 = zserv->createObject(LightRobe2.hashCode(), 3);
+			if (inventory->transferObject(lightRobe2, -1)) {
+				inventory->broadcastObject(lightRobe2, true);
+				} else {
+				lightRobe2->destroyObjectFromDatabase(true);
+			}
+		}
+		if (creature->hasSkill("force_rank_light_rank_05")) {
+			String LightRobe3 = "object/tangible/wearables/robe/robe_jedi_light_s03.iff";
+			ManagedReference<SceneObject*> lightRobe3 = zserv->createObject(LightRobe3.hashCode(), 3);
+			if (inventory->transferObject(lightRobe3, -1)) {
+				inventory->broadcastObject(lightRobe3, true);
+				} else {
+				lightRobe3->destroyObjectFromDatabase(true);
+			}
+		}
+		if (creature->hasSkill("force_rank_light_rank_08")) {
+			String LightRobe4 = "object/tangible/wearables/robe/robe_jedi_light_s04.iff";
+			ManagedReference<SceneObject*> lightRobe4 = zserv->createObject(LightRobe4.hashCode(), 3);
+			if (inventory->transferObject(lightRobe4, -1)) {
+				inventory->broadcastObject(lightRobe4, true);
+				} else {
+				lightRobe4->destroyObjectFromDatabase(true);
+			}
+		}
+		if (creature->hasSkill("force_rank_light_rank_10")) {
+			String LightRobe5 = "object/tangible/wearables/robe/robe_jedi_light_s05.iff";
+			ManagedReference<SceneObject*> lightRobe5 = zserv->createObject(LightRobe5.hashCode(), 3);
+			if (inventory->transferObject(lightRobe5, -1)) {
+				inventory->broadcastObject(lightRobe5, true);
+				} else {
+				lightRobe5->destroyObjectFromDatabase(true);
 			}
 		}
 	}
