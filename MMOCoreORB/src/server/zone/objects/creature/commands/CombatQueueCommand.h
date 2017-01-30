@@ -239,6 +239,11 @@ public:
 		if (creature->isPlayerCreature() && targetObject->isPlayerCreature()) {
 			if (!combatManager->areInDuel(creature, targetObject.castTo<CreatureObject*>())) {
 				shouldTef = true;
+				ManagedReference<CreatureObject*> targetCreature = targetObject.castTo<CreatureObject*>();
+				if (creature->isInBountyMission(creature, targetCreature)){
+					PlayerObject* targetGhost = targetCreature->getPlayerObject();
+					targetGhost->updateLastPvpCombatActionTimestamp();
+				}
 			}
 		} else if (creature->isPet() && targetObject->isPlayerCreature()) {
 			ManagedReference<CreatureObject*> owner = creature->getLinkedCreature().get();
