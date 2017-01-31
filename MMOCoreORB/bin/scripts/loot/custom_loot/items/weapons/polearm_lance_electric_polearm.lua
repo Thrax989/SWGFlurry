@@ -2,7 +2,7 @@
 polearm_lance_electric_polearm = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Electric polearm",
 	directObjectTemplate = "object/weapon/melee/polearm/polearm_lance_electric_polearm.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

@@ -2,7 +2,7 @@
 ep3_loot_heartstriker = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Heartstriker",
 	directObjectTemplate = "object/weapon/melee/special/ep3_loot_heartstriker.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

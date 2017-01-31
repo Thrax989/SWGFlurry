@@ -3,7 +3,7 @@
 rifle_laser = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Laser rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_laser.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

@@ -1,7 +1,7 @@
 jinkins_j1_rifle = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Jinkins j1 rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/jinkins_j1_rifle.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

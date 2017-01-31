@@ -1,7 +1,7 @@
 pistol_ion_stunner = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Ion stunner pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3/pistol_ion_stunner.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

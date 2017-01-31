@@ -1,7 +1,7 @@
 pistol_heroic_exar = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Heroic exar pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_heroic_exar.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

@@ -1,7 +1,7 @@
 carbine_kun_massassi = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Kun massassi carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_kun_massassi.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

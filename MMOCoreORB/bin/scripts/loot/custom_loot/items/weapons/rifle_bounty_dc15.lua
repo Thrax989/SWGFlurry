@@ -1,7 +1,7 @@
 rifle_bounty_dc15 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Dc15 bounty rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_bounty_dc15.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

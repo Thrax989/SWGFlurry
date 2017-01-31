@@ -1,7 +1,7 @@
 carbine_charric = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Charric carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_charric.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

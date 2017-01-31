@@ -1,7 +1,7 @@
 ep3_loot_dawnsorrow = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Dawnsorrow rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/ep3_loot_dawnsorrow.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

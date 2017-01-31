@@ -1,7 +1,7 @@
 rifle_tc22_blaster = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Tc22 blaster rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_tc22_blaster.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

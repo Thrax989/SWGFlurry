@@ -1,7 +1,7 @@
 ep3_loot_retaliation = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Retaliation rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/ep3_loot_retaliation.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

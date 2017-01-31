@@ -1,7 +1,7 @@
 pistol_fwg5_legendary = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Fwg5 pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_fwg5_legendary.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

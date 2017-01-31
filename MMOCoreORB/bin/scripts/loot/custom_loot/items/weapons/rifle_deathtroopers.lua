@@ -1,7 +1,7 @@
 rifle_deathtroopers = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Deathtroopers rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_deathtroopers.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

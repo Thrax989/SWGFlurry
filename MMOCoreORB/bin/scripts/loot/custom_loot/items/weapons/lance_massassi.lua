@@ -2,7 +2,7 @@
 lance_massassi = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Massassi lance",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_massassi.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

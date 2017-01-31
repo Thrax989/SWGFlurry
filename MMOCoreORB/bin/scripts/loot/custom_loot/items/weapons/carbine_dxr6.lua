@@ -2,7 +2,7 @@
 carbine_dxr6 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Dxr6 carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_dxr6.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

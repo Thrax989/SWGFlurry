@@ -2,7 +2,7 @@
 lance_trando = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Trando lance",
 	directObjectTemplate = "object/weapon/melee/polearm/ep3/lance_trando.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

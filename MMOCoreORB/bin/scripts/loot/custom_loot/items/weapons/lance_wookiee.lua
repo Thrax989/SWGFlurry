@@ -2,7 +2,7 @@
 lance_wookiee = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Wookie lance",
 	directObjectTemplate = "object/weapon/melee/polearm/ep3/lance_wookiee.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

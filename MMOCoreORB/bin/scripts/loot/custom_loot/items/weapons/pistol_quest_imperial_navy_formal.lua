@@ -1,7 +1,7 @@
 pistol_quest_imperial_navy_formal = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Imperial navy formal pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_quest_imperial_navy_formal.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

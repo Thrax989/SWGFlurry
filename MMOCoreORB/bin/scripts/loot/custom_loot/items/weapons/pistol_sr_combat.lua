@@ -3,7 +3,7 @@
 pistol_sr_combat = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Sr combat pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_srcombat.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

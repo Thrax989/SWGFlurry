@@ -1,7 +1,7 @@
 pistol_flare = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Flare pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_flare.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

@@ -2,7 +2,7 @@
 ep3_loot_strike = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Strike",
 	directObjectTemplate = "object/weapon/melee/polearm/ep3_loot_strike.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

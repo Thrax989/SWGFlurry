@@ -1,7 +1,7 @@
 som_carbine_republic_sfor = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Republic carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/som_carbine_republic_sfor.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

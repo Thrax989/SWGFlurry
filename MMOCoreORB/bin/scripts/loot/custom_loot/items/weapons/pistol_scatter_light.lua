@@ -1,7 +1,7 @@
 pistol_scatter_light = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Scatter pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_scatter_light.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

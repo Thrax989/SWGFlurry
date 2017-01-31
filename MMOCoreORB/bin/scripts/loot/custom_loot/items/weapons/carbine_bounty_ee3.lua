@@ -1,7 +1,7 @@
 carbine_bounty_ee3 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Bounty ee3 carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_bounty_ee3.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

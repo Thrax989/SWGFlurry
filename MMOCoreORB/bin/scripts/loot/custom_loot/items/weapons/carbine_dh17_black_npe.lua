@@ -1,7 +1,7 @@
 carbine_dh17_black_npe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Dh17 black carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_dh17_black_npe.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

@@ -1,7 +1,7 @@
 ep3_loot_corellian = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Corellian carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3_loot_corellian.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

@@ -1,7 +1,7 @@
 carbine_laser_static = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Laser carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_laser_static.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

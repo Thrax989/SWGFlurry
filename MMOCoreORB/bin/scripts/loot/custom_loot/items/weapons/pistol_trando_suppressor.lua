@@ -1,7 +1,7 @@
 pistol_trando_suppressor = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Trando suppressor pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3/pistol_trando_suppressor.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

@@ -1,7 +1,7 @@
 rifle_acid_beam = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Acid beam",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_acid_beam.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

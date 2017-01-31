@@ -1,7 +1,7 @@
 mandoviol_smasher = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Mandoviol smasher",
 	directObjectTemplate = "object/weapon/melee/baton/mandoviol_smasher.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

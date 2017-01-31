@@ -2,7 +2,7 @@
 lance_gcw_gand_shockprod = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Shockprod lance",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_gcw_gand_shockprod.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

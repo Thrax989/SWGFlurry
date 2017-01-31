@@ -3,7 +3,7 @@
 pistol_striker = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Striker pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_striker.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

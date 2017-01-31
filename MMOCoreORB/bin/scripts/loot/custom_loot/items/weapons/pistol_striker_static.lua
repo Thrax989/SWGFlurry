@@ -1,7 +1,7 @@
 pistol_striker_static = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Striker pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_striker_static.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

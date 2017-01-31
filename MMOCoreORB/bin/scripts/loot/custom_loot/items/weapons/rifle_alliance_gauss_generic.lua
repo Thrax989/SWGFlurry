@@ -1,7 +1,7 @@
 rifle_alliance_gauss_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Alliance gauss rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_alliance_gauss_generic.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

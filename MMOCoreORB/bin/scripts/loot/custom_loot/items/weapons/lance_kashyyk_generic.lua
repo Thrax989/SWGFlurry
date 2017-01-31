@@ -2,7 +2,7 @@
 lance_kashyyk_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Kashyyk lance",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_kashyyk_generic.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

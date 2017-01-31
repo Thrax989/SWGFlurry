@@ -2,7 +2,7 @@
 lance_staff_wood_s1_npe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Wood staff",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_staff_wood_s1_npe.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

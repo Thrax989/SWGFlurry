@@ -1,7 +1,7 @@
 pistol_green_bolt = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Green bolt pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_green_bolt.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

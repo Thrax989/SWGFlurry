@@ -1,7 +1,7 @@
 ep3_loot_calibrated = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Calibrated pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_calibrated.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

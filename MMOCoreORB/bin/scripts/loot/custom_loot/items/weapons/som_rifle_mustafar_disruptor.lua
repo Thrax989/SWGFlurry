@@ -1,7 +1,7 @@
 som_rifle_mustafar_disruptor = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Mustafar distruptor rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/som_rifle_mustafar_disruptor.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

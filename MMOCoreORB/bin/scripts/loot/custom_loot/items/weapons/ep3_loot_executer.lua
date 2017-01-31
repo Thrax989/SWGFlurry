@@ -1,7 +1,7 @@
 ep3_loot_executer = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Executer sword",
 	directObjectTemplate = "object/weapon/melee/2h_sword/ep3_loot_executer.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

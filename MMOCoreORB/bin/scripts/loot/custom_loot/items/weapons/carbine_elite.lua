@@ -2,7 +2,7 @@
 carbine_elite = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Elite carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_elite.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

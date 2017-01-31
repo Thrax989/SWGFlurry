@@ -1,7 +1,7 @@
 carbine_pvp_ngant = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Ngrant carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_pvp_ngant.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

@@ -1,7 +1,7 @@
 som_disruptor_pistol = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Disruptor pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/som_disruptor_pistol.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

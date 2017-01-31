@@ -1,7 +1,7 @@
 pistol_scout_blaster_npe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Scout blaster pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_scout_blaster_npe.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

@@ -1,7 +1,7 @@
 ep3_loot_rhiss = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Rhiss pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_rhiss.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

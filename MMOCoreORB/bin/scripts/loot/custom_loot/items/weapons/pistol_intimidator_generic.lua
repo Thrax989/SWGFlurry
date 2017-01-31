@@ -1,7 +1,7 @@
 pistol_intimidator_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Intimidator pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_intimidator_generic.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

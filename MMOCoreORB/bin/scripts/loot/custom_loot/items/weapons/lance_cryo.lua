@@ -2,7 +2,7 @@
 lance_cryo = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Cryo lance",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_cryo.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

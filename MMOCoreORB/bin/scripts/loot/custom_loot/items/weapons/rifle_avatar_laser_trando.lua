@@ -1,7 +1,7 @@
 rifle_avatar_laser_trando = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Trando laser rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_avatar_laser_trando.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

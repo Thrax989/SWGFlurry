@@ -1,7 +1,7 @@
 carbine_slug = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Slug carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_slug.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

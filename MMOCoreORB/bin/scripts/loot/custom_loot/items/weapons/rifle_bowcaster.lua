@@ -3,7 +3,7 @@
 rifle_bowcaster = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Bowcaster",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_bowcaster.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

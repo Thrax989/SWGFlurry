@@ -1,7 +1,7 @@
 ep3_loot_ripper_wod = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Ripper",
 	directObjectTemplate = "object/weapon/melee/sword/ep3_loot_ripper_wod.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

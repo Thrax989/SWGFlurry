@@ -1,7 +1,7 @@
 som_sword_mustafar_bandit_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Mustafar sword",
 	directObjectTemplate = "object/weapon/melee/sword/som_sword_mustafar_bandit_generic.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

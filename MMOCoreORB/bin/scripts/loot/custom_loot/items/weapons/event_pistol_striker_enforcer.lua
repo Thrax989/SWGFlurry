@@ -1,7 +1,7 @@
 event_pistol_striker_enforcer = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Striker enforcer pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/event_pistol_striker_enforcer.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

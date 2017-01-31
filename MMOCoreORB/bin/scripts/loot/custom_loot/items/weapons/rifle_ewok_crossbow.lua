@@ -3,7 +3,7 @@
 rifle_ewok_crossbow = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Ewok crossbow",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_ewok_crossbow.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

@@ -1,7 +1,7 @@
 ep3_loot_firestar = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Firestar carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3_loot_firestar.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

@@ -1,7 +1,7 @@
 pistol_mandalorian = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Mandalorian pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_mandalorian.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

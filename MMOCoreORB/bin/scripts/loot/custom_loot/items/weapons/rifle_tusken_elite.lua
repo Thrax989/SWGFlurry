@@ -1,7 +1,7 @@
 rifle_tusken_elite = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Tusken elite rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_tusken_elite.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

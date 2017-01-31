@@ -2,7 +2,7 @@
 ep3_loot_pestilence_wod = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Pestilence",
 	directObjectTemplate = "object/weapon/melee/polearm/ep3_loot_pestilence_wod.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

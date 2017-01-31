@@ -1,7 +1,7 @@
 quest_rifle_lightning = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Lightning rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/quest_rifle_lightning.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

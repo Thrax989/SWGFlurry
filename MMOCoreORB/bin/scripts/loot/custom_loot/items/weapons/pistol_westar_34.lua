@@ -1,7 +1,7 @@
 pistol_westar_34 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Westar 34 pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_westar_34.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

@@ -1,7 +1,7 @@
 ep3_loot_dragoneye = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Dragoneye pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_dragoneye.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

@@ -2,7 +2,7 @@
 pvp_bf_knuckler = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Knuckler",
 	directObjectTemplate = "object/weapon/melee/special/pvp_bf_knuckler.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

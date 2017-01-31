@@ -1,7 +1,7 @@
 carbine_proton = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Proton carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_proton.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

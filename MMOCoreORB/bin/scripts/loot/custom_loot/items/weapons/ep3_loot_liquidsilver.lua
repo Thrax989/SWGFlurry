@@ -1,7 +1,7 @@
 ep3_loot_liquidsilver = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Liquidsilver pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_liquidsilver.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

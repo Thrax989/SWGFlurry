@@ -2,7 +2,7 @@
 fan_metal = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Metal fan",
 	directObjectTemplate = "object/weapon/melee/special/fan_metal.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

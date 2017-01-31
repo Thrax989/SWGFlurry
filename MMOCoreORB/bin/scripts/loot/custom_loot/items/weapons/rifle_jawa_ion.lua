@@ -3,7 +3,7 @@
 rifle_jawa_ion = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Jawa ion",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_jawa_ion.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

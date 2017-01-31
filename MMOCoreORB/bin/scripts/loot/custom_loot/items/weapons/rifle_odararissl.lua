@@ -1,7 +1,7 @@
 rifle_odararissl = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Odararissl rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_odararissl.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

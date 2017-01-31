@@ -1,7 +1,7 @@
 pistol_renegade = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Renegrade pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_renegade.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

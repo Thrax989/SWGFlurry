@@ -2,7 +2,7 @@
 massassiknuckler_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Massassi knuckler",
 	directObjectTemplate = "object/weapon/melee/special/massassiknuckler_generic.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

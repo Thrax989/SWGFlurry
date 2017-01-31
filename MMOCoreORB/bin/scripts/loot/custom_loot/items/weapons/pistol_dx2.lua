@@ -3,7 +3,7 @@
 pistol_dx2 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Dx2 pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_dx2.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

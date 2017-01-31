@@ -2,7 +2,7 @@
 vibroknuckler_static = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Vibro knuckler",
 	directObjectTemplate = "object/weapon/melee/special/vibroknuckler_static.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

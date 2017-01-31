@@ -2,7 +2,7 @@
 ep3_loot_poisonspike = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Poisonspike",
 	directObjectTemplate = "object/weapon/melee/polearm/ep3_loot_poisonspike.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

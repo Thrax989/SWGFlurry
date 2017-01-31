@@ -2,7 +2,7 @@
 pistol_tangle = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Tangle pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_tangle.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

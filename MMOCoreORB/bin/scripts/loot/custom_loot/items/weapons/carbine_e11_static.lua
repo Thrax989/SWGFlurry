@@ -1,7 +1,7 @@
 carbine_e11_static = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "E11 carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_e11_static.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

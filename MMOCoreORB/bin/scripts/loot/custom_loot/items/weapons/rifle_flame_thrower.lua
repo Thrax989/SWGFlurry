@@ -1,7 +1,7 @@
 rifle_flame_thrower = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Flame thrower",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_flame_thrower.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

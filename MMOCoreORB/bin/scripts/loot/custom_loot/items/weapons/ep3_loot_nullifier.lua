@@ -1,7 +1,7 @@
 ep3_loot_nullifier = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Nullifier rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/ep3_loot_nullifier.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

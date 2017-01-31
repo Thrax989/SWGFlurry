@@ -1,7 +1,7 @@
 carbine_heroic_sd = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Heroic SD carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_heroic_sd.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

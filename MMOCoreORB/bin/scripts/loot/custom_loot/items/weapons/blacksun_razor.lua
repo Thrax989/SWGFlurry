@@ -2,7 +2,7 @@
 blacksun_razor = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Blacksun razor",
 	directObjectTemplate = "object/weapon/melee/special/blacksun_razor.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

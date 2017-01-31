@@ -1,7 +1,7 @@
 rifle_love_day_crossbow = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Love day crossbow",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_love_day_crossbow.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

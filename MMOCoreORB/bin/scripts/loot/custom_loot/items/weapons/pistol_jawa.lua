@@ -1,7 +1,7 @@
 pistol_jawa = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Jawa pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_jawa.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

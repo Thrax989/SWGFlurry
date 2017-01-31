@@ -1,7 +1,7 @@
 pistol_flechette_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Flechette pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_flechette_generic.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

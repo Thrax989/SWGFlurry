@@ -1,7 +1,7 @@
 carbine_bothan_bola = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Bothan bola carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_bothan_bola.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

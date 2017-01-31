@@ -1,7 +1,7 @@
 pistol_deathhammer = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Deathhammer pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_deathhammer.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

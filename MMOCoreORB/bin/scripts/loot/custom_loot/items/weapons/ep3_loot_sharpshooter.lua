@@ -1,7 +1,7 @@
 ep3_loot_sharpshooter = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Sharpshooter rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/ep3_loot_sharpshooter.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

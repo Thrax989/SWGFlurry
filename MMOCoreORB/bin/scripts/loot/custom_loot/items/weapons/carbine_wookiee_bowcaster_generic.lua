@@ -1,7 +1,7 @@
 carbine_wookiee_bowcaster_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Wookie bowcaster carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3/carbine_wookiee_bowcaster_generic.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

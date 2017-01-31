@@ -2,7 +2,7 @@
 polearm_vibro_axe_npe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Vibro axe polearm",
 	directObjectTemplate = "object/weapon/melee/polearm/polearm_vibro_axe_npe.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

@@ -1,7 +1,7 @@
 ep3_loot_grievance = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Grievance carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3_loot_grievance.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

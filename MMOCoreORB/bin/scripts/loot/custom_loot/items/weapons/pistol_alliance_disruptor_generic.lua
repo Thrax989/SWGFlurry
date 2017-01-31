@@ -1,7 +1,7 @@
 pistol_alliance_disruptor_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Alliance disruptor pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_alliance_disruptor_generic.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

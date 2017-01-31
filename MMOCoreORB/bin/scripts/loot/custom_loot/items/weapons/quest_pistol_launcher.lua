@@ -1,7 +1,7 @@
 quest_pistol_launcher = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Launcher pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/quest_pistol_launcher.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

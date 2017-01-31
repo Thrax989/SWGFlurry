@@ -2,7 +2,7 @@
 blasterfist_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Blaster fist",
 	directObjectTemplate = "object/weapon/melee/special/blasterfist_generic.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

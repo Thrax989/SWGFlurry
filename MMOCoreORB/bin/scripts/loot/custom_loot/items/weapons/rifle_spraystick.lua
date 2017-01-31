@@ -3,7 +3,7 @@
 rifle_spraystick = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Spraystick rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_spraystick.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

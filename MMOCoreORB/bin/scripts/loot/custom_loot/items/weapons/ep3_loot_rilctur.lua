@@ -1,7 +1,7 @@
 ep3_loot_rilctur = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Rilctur carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3_loot_rilctur.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

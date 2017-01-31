@@ -1,7 +1,7 @@
 pistol_d18_npe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "D18 pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_d18_npe.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

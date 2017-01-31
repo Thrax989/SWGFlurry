@@ -1,7 +1,7 @@
 rifle_faux_bowcaster = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Faux bowcaster",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_faux_bowcaster.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

@@ -1,7 +1,7 @@
 quest_pistol_republic_blaster = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Republic blaster pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/quest_pistol_republic_blaster.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

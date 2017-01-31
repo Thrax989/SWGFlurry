@@ -2,7 +2,7 @@
 lance_nightsister_legendary = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Nightsister lance",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_nightsister_legendary.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

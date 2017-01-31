@@ -1,7 +1,7 @@
 pistol_avatar_trando_special = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Trando special pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_avatar_trando_special.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

@@ -1,7 +1,7 @@
 event_carbine_hairtrigger = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Hairtrigger carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/event_carbine_hairtrigger.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

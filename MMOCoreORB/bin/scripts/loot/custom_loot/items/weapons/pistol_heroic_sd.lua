@@ -1,7 +1,7 @@
 pistol_heroic_sd = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Heroic SD pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_heroic_sd.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

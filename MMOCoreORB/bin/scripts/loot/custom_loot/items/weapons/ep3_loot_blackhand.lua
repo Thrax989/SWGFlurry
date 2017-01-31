@@ -1,7 +1,7 @@
 ep3_loot_blackhand = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Blackhand pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_blackhand.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

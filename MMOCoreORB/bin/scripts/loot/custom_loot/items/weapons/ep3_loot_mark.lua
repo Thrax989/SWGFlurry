@@ -1,7 +1,7 @@
 ep3_loot_mark = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Mark carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3_loot_mark.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

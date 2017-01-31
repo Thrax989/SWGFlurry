@@ -1,7 +1,7 @@
 ep3_loot_deathrain = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Deathrain pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_deathrain.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

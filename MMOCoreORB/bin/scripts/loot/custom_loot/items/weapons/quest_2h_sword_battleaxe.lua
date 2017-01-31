@@ -1,7 +1,7 @@
 quest_2h_sword_battleaxe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Battle axe",
 	directObjectTemplate = "object/weapon/melee/2h_sword/quest_2h_sword_battleaxe.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

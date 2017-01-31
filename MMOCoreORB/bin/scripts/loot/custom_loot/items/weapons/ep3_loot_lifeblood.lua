@@ -1,7 +1,7 @@
 ep3_loot_lifeblood = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Lifeblood",
 	directObjectTemplate = "object/weapon/melee/2h_sword/ep3_loot_lifeblood.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

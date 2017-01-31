@@ -3,7 +3,7 @@
 pistol_cdef = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Cdef pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_cdef.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

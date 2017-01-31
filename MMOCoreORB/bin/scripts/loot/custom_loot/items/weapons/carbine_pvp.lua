@@ -1,7 +1,7 @@
 carbine_pvp = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Pvp carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_pvp.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

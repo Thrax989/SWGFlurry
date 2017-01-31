@@ -1,7 +1,7 @@
 rifle_geo_drill = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Geo drill",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_geo_drill.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

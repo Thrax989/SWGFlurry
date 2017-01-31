@@ -1,7 +1,7 @@
 event_rifle_tusken_berserker = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Tusken berserker rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/event_rifle_tusken_berserker.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

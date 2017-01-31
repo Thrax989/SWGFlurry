@@ -1,7 +1,7 @@
 rifle_trando_hunter = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Trando hunter rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/ep3/rifle_trando_hunter.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

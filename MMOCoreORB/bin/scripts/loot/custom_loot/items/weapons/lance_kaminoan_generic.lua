@@ -2,7 +2,7 @@
 lance_kaminoan_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Kaminoan lance",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_kaminoan_generic.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

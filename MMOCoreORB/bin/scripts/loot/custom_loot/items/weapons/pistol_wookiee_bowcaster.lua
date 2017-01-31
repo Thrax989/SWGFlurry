@@ -1,7 +1,7 @@
 pistol_wookiee_bowcaster = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Wookie bowcaster pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3/pistol_wookiee_bowcaster.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

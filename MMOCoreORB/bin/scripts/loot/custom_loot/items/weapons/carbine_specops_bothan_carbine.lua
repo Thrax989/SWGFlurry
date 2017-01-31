@@ -1,7 +1,7 @@
 carbine_specops_bothan_carbine = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Specops bothan carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_specops_bothan_carbine.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

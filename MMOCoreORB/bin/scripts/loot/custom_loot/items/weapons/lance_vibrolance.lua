@@ -2,7 +2,7 @@
 lance_vibrolance = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Vibro lance",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_vibrolance.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

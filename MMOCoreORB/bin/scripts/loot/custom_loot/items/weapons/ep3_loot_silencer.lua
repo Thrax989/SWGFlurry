@@ -1,7 +1,7 @@
 ep3_loot_silencer = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Silencer pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_silencer.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

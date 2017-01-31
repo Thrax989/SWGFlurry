@@ -3,7 +3,7 @@
 pistol_power5 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Power pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_power5.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

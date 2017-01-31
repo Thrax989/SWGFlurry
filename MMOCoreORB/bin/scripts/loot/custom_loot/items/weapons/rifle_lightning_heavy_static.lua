@@ -1,7 +1,7 @@
 rifle_lightning_heavy_static = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Lightning rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_lightning_heavy_static.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

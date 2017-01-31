@@ -1,7 +1,7 @@
 carbine_geo = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Geo carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_geo.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

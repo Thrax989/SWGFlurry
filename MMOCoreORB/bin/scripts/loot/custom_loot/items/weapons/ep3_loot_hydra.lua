@@ -1,7 +1,7 @@
 ep3_loot_hydra = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Hydra pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_hydra.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

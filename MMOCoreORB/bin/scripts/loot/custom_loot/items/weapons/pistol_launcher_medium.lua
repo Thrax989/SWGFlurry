@@ -1,7 +1,7 @@
 pistol_launcher_medium = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Launcher pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_launcher_medium.iff",
 	craftingValues = {
 		{"mindamage",11,100,0},

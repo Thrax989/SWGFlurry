@@ -2,7 +2,7 @@
 lance_wod_twin_blade = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Twin blade",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_wod_twin_blade.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

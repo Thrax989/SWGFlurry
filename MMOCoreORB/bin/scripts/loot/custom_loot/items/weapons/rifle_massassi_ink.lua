@@ -1,7 +1,7 @@
 rifle_massassi_ink = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Massassi rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_massassi_ink.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

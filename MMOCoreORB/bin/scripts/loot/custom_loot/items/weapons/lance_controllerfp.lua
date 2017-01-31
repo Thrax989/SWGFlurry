@@ -2,7 +2,7 @@
 lance_controllerfp = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Lance",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_controllerfp.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

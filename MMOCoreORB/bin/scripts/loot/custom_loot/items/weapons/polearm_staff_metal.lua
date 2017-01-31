@@ -3,7 +3,7 @@
 polearm_staff_metal = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Metal staff",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_staff_metal.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},
