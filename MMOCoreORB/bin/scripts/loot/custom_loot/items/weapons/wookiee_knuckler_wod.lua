@@ -2,7 +2,7 @@
 wookiee_knuckler_wod = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = Wookie knuckler"",
+	customObjectName = "Wookie knuckler",
 	directObjectTemplate = "object/weapon/melee/special/wookiee_knuckler_wod.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},
