@@ -1,5 +1,4 @@
 st_bombardier_weapons = {
-	"object/weapon/ranged/rifle/rifle_acid_beam.iff",
 	"object/weapon/ranged/rifle/rifle_flame_thrower.iff"	
 }
 
