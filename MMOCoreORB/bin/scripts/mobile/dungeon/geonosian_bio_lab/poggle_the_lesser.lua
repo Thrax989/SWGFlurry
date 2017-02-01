@@ -51,9 +51,9 @@ poggle_the_lesser = Creature:new {
 			lootChance = 10000000
 		},
 		},
-	weapons = {"geonosian_weapons"},
+	weapons = {"melee_weapons"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(brawlermaster,marksmanmaster,pistoleermaster,riflemanmaster)
+	attacks = merge(brawlermaster,tkamaster,fencermaster,swordsmanmaster,pikemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(poggle_the_lesser, "poggle_the_lesser")

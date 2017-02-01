@@ -6,8 +6,8 @@ gungi = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 30,
-	damageMin = 1645,
-	damageMax = 3000,
+	damageMin = 350,
+	damageMax = 1250,
 	specialDamageMult = 7.5,
 	baseXp = 28549,
 	baseHAM = 385000,
@@ -49,7 +49,7 @@ gungi = Creature:new {
 		},
 	weapons = {"dark_jedi_weapons_gen4"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(lightsabermaster,forcepowermaster)
+	attacks = merge(lightsabermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(gungi, "gungi")
