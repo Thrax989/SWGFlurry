@@ -45,9 +45,9 @@ volcano_cyborg_lt = Creature:new {
 			lootChance = 10000000
 		},
 		},
-	weapons = {"pirate_weapons_heavy"},
+	weapons = {"st_bombardier_weapons"},
 	conversationTemplate = "",
-	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,swordsmanmaster,pistoleermaster)
+	attacks = merge(commandomaster)
 }
 
 CreatureTemplates:addCreatureTemplate(volcano_cyborg_lt, "volcano_cyborg_lt")

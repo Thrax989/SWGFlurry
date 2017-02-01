@@ -48,9 +48,9 @@ outbreak_undead_deathtrooper_07_m = Creature:new {
 		},
 		},
 	--scale = 1.25,
-	weapons = {"deathtrooper_weapons"},
+	weapons = {"unarmed_weapons"},
 	conversationTemplate = "",
-	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster,riflemanmaster)
+	attacks = merge(brawlermaster,tkamaster,fencermaster,swordsmanmaster,pikemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(outbreak_undead_deathtrooper_07_m, "outbreak_undead_deathtrooper_07_m")
