@@ -14,6 +14,7 @@
 #include "templates/LootGroupTemplate.h"
 #include "server/zone/ZoneServer.h"
 #include "LootGroupMap.h"
+#include "server/zone/managers/stringid/StringIdManager.h"
 
 void LootManagerImplementation::initialize() {
 	info("Loading configuration.");
@@ -450,6 +451,35 @@ TangibleObject* LootManagerImplementation::createLootObject(LootItemTemplate* te
 		addConditionDamage(prototype, craftingValues);
 
 	delete craftingValues;
+
+	if(prototype->isAttachment()){
+		Attachment* attachment = cast<Attachment*>( prototype.get());
+		HashTable<String, int>* mods = attachment->getSkillMods();
+		HashTableIterator<String, int> iterator = mods->iterator();
+
+		StringIdManager* stringIdManager = StringIdManager::instance();
+
+		String key = "";
+		int value = 0;
+		int last = 0;
+
+		for(int i = 0; i < mods->size(); ++i) {
+			iterator.getNextKeyAndValue(key, value);
+		
+			if(value > last){
+				last = value;
+				String statName = "@stat_n:" + key;
+				
+				prototype->setCustomObjectName(stringIdManager->getStringId(statName.hashCode()),false);
+
+				if(attachment->isClothingAttachment()){
+					prototype->setCustomObjectName(prototype->getDisplayedName() + " (" + String::valueOf(value) + ") CA",false);
+				}else{
+					prototype->setCustomObjectName(prototype->getDisplayedName() + " (" + String::valueOf(value) + ") AA",false);
+				}
+			}
+		}
+	}
 
 	return prototype;
 }
