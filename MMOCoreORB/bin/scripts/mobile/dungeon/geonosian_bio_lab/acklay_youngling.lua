@@ -1,7 +1,7 @@
 acklay_youngling = Creature:new {
 	objectName = "@mob/creature_names:",
 	customName = "Acklay Youngling",
-	socialGroup = "geonosian_creature",
+	socialGroup = "geonosian",
 	pvpFaction = "",
 	faction = "",
 	level = 100,

@@ -1,7 +1,7 @@
 elder_enhanced_kliknik = Creature:new {
    objectName = "@mob/creature_names:",
    customName = "elder enhanced kliknik",
-	socialGroup = "geonosian_creature",
+	socialGroup = "geonosian",
 	faction = "",
 	level = 109,
 	chanceHit = 2.2,

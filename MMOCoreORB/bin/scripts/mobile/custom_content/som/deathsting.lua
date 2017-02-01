@@ -1,6 +1,6 @@
 deathsting = Creature:new {
 	customName = "Deathsting",
-	socialGroup = "mustafar",
+	socialGroup = "geonosian",
 	pvpFaction = "",
 	faction = "",
 	level = 300,

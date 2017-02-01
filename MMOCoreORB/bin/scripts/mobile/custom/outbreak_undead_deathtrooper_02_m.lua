@@ -1,7 +1,7 @@
 outbreak_undead_deathtrooper_02_m = Creature:new {
 	--objectName = "@mob/creature_names:outbreak_undead_deathtrooper_02_m",
 	customName = "Deathtrooper",
-	socialGroup = "",
+	socialGroup = "geonosian",
 	pvpFaction = "",
 	faction = "",
 	level = 150,
@@ -30,18 +30,23 @@ outbreak_undead_deathtrooper_02_m = Creature:new {
 	templates = {"object/mobile/outbreak_undead_deathtrooper_02_m.iff"},
 		
 	lootGroups = {
-	    {
+		{
 			groups = {
-				{group = "clothing_attachments", chance = 4500000},
-				{group = "armor_attachments", chance = 2000000},
-				{group = "nyms_common", chance = 1000000},
-				{group = "pistols", chance = 1000000},
-				{group = "carbines", chance = 1000000},
-				{group = "tailor_components", chance = 500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
-			lootChance = 9000000
-		}
-	},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	--scale = 1.25,
 	weapons = {"deathtrooper_weapons"},
 	conversationTemplate = "",

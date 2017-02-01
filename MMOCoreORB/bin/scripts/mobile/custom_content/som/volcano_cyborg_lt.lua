@@ -1,6 +1,6 @@
 volcano_cyborg_lt = Creature:new {
 	customName = "Volcano cyborg",
-	socialGroup = "self",
+	socialGroup = "geonosian",
 	pvpFaction = "",
 	faction = "",
 	level = 300,

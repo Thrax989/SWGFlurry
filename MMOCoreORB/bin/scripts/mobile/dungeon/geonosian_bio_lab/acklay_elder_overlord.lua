@@ -1,7 +1,7 @@
 acklay_elder_overlord = Creature:new {
 	objectName = "@mob/creature_names:",
 	customName = "Elder Acklay Overlord",
-	socialGroup = "geonosian_creature",
+	socialGroup = "geonosian",
 	pvpFaction = "",
 	faction = "",
 	level = 300,

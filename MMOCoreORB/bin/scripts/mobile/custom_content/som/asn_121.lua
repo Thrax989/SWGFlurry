@@ -1,6 +1,6 @@
 asn_121 = Creature:new {
 	customName = "ASN-121",
-	socialGroup = "",
+	socialGroup = "geonosian",
 	pvpFaction = "",
 	faction = "",
 	level = 300,
