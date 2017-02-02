@@ -24,7 +24,7 @@ kaasport = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = PACK + HEALER,
-	optionsBitmask = 264,
+	optionsBitmask = INVULNERABLE + JTLINTERESTING,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_patron_chiss_m_01.iff"},

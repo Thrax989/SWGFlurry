@@ -24,7 +24,7 @@ function teleport_corellia_pveScreenPlay:spawnMobiles()
 
 	local collector1 = LuaCreatureObject(pCollector1)
 	collector1:setOptionsBitmask(264)
-	collector1:setCustomObjectName("\\#FF0000Travel To Kaas PvP Zone")
+	collector1:setCustomObjectName("\\#00FF00Travel To Kaas PvP Zone")
 	createObserver(OBJECTRADIALUSED, "teleport_corellia_pveScreenPlay", "teleportCor", pCollector1)
 	if (pCollecter1~= nil) then 
 		return
