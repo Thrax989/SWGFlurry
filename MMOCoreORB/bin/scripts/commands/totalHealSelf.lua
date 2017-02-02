@@ -55,8 +55,7 @@ TotalHealSelfCommand = {
 	healStates = STUNNED_STATE + DIZZY_STATE + BLINDED_STATE + INTIMIDATED_STATE,
 	forceCost = 760,
 	forceCostDivisor = 9.5,
-	range = 0,
-	speed = 4
+	range = 0
 }
 
 AddCommand(TotalHealSelfCommand)
