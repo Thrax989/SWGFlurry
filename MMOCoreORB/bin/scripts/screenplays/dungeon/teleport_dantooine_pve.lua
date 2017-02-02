@@ -22,7 +22,7 @@ function teleport_dantooine_pveScreenPlay:spawnMobiles()
 
 	local pCollector1 = spawnMobile("dantooine", "dantooineport", 120, 3483.1, 5.0, -4838, 119, 0)
 	local collector1 = LuaCreatureObject(pCollector1)
-	collector1:setOptionsBitmask(264)
+	collector1:setOptionsBitmask(INTERESTING)
 	collector1:setCustomObjectName("\\#FF0000Travel To dantooine World Boss")
 	createObserver(OBJECTRADIALUSED, "teleport_dantooine_pveScreenPlay", "teleportCor", pCollector1)
 	if (pCollecter1~= nil) then 
