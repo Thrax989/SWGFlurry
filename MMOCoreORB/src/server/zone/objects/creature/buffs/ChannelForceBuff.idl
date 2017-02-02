@@ -12,7 +12,7 @@ import server.zone.objects.creature.buffs.ChannelForceBuffTickEvent;
 
 class ChannelForceBuff extends Buff {
 
-	public static final int FORCE_CHANNEL_TICK_SECONDS = 8;
+	public static final int FORCE_CHANNEL_TICK_SECONDS = 1;
 
 	protected transient ChannelForceBuffTickEvent cfBuffEvent;
 
