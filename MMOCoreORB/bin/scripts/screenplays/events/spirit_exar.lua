@@ -20,7 +20,6 @@ function spirit_exar:start()
 end
 
 function spirit_exar:spawnMobiles()
-
 --Boss 1 Trigger
 	local p1Padawan = spawnMobile("yavin4", "som_kenobi_historian_dark_jedi", 3600, 5181.38, 83.5944, 5529.54, 143, 0)
         	createObserver(OBJECTDESTRUCTION, "spirit_exar", "notify1PadawanDead", p1Padawan)
@@ -36,7 +35,6 @@ function spirit_exar:spawnMobiles()
 --Boss 5 Trigger
 	local p5Padawan = spawnMobile("yavin4", "som_kenobi_historian_dark_jedi", 3600, 5042.3, 86.9599, 5391.06, 336, 0)
         	createObserver(OBJECTDESTRUCTION, "spirit_exar", "notify5PadawanDead", p5Padawan)
-
 end
 --Phase 1 Of 5 Boss Instance
 function spirit_exar:notify1PadawanDead(p1Padawan, pKiller)
@@ -58,7 +56,6 @@ function spirit_exar:notify3PadawanDead(p3Padawan, pKiller)
         local pBoss = spawnMobile("yavin4", "master_kah", 0, 1378.33, 38.9991, -6421.11, 230, 0) print("spawned POTDS")
 			spatialChat(pBoss, "You Have Awoken The Ancient Spirit Of Master Kah")
 			spatialChat(pBoss, "To we who dwell in the Force, normal life is little more than pretense. Our only actions of significance are those we undertake in service to the dark side")
-
         return 0
 end
 --Phase 4 Of 5 Boss Instance
