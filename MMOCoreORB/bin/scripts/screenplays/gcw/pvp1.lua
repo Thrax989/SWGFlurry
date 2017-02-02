@@ -13,14 +13,14 @@ registerScreenPlay("pvp1", true)
 function pvp1:start()
     	self:spawnActiveAreas()
 end
-  
+
 function pvp1:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("kaas", "object/active_area.iff", -5067, 80, -2279, 0, 0, 0, 0, 0)
+	local pSpawnArea = spawnSceneObject("kaas", "object/active_area.iff", -5070, 80, -2279, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(5)
+	        activeArea:setRadius(4)
 	        createObserver(ENTEREDAREA, "pvp1", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "pvp1", "notifySpawnAreaLeave", pSpawnArea)
 	    end
