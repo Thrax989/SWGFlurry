@@ -27,7 +27,7 @@ kaasport = Creature:new {
 	optionsBitmask = 264,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/droideka.iff"},
+	templates = {"object/mobile/dressed_patron_chiss_m_01.iff"},
 	lootGroups = {
 	     {
 			groups = {
