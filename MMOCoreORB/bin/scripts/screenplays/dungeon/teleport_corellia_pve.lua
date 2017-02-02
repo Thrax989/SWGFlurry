@@ -20,10 +20,10 @@ end
 
 function teleport_corellia_pveScreenPlay:spawnMobiles()
 
-	local pCollector1 = spawnMobile("corellia", "corelliaport", 120, 3483.1, 5.0, -4838, 119, 0)
+	local pCollector1 = spawnMobile("corellia", "corelliaport", 1, -158.878, 28, -4705.96, 225, 0)
 	local collector1 = LuaCreatureObject(pCollector1)
 	collector1:setOptionsBitmask(264)
-	collector1:setCustomObjectName("\\#FF0000Travel To corellia World Boss")
+	collector1:setCustomObjectName("\\#FF0000Travel To Kaas PvP Zone")
 	createObserver(OBJECTRADIALUSED, "teleport_corellia_pveScreenPlay", "teleportCor", pCollector1)
 	if (pCollecter1~= nil) then 
 		return
@@ -31,6 +31,6 @@ function teleport_corellia_pveScreenPlay:spawnMobiles()
 end
 function teleport_corellia_pveScreenPlay:teleportCor(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("corellia", 3526, 5, -4803, 0)
+	player:switchZone("kaas", -5108, 81, -2106, 0)
 	return 0
 end
