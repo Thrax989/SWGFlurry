@@ -2,15 +2,15 @@ giant_canyon_krayt_dragon = Creature:new {
 	objectName = "@mob/creature_names:giant_canyon_krayt_dragon",
 	socialGroup = "krayt",
 	faction = "",
-	level = 300,
-	chanceHit = 30.0,
-	damageMin = 1645,
-	damageMax = 3000,
-	baseXp = 28549,
-	baseHAM = 385000,
-	baseHAMmax = 471000,
+	level = 85,
+	chanceHit = 8.5,
+	damageMin = 1245,
+	damageMax = 1900,
+	baseXp = 13367,
+	baseHAM = 110000,
+	baseHAMmax = 125000,
 	armor = 0,
-	resists = {170,170,170,170,130,170,170,170,-1},
+	resists = {185,185,185,185,185,165,185,185,125},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
 	hideType = "hide_bristley",
@@ -43,8 +43,8 @@ giant_canyon_krayt_dragon = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareaattack","stateAccuracyBonus=50"},
-		{"creatureareaknockdown","stateAccuracyBonus=50"}
+		{"creatureareaattack"},
+		{"creatureareaknockdown"}
 	}
 }
 

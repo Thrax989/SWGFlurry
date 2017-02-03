@@ -1,6 +1,6 @@
 gorax_ancient = Creature:new {
 	objectName = "@mob/creature_names:",
-	customName = "giant canyon krayt dragon elder",
+	customName = "gorax elder",
 	socialGroup = "gorax",
 	faction = "",
 	level = 300,
@@ -11,7 +11,7 @@ gorax_ancient = Creature:new {
 	baseHAM = 385000,
 	baseHAMmax = 471000,
 	armor = 0,
-	resists = {165,145,35,35,35,35,35,35,-1},
+	resists = {185,185,135,135,135,135,135,135,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -45,4 +45,4 @@ gorax_ancient = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(gorax_ancient, "gorax_ancient")
+CreatureTemplates:addCreatureTemplate(gorax_elder, "gorax_elder")
