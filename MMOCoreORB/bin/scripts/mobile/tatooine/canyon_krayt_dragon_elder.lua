@@ -1,6 +1,6 @@
 canyon_krayt_dragon_elder = Creature:new {
 	objectName = "@mob/creature_names:",
-	customName = "Canyon Krayt Dragon Elder",
+	customName = "canyon crayt dragon elder",
 	socialGroup = "krayt",
 	faction = "",
 	level = 275,
