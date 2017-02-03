@@ -1,0 +1,1 @@
+object_mobile_skeleton_bm_blistmok = object_mobile_skeleton_shared_bm_blistmok:new {}ObjectTemplates:addTemplate(object_mobile_skeleton_bm_blistmok, "object/mobile/skeleton/bm_blistmok.iff")

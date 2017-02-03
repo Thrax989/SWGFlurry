@@ -1,0 +1,3 @@
+object_mobile_skeleton_bm_insect_basic = object_mobile_skeleton_shared_bm_insect_basic:new {
+}
+ObjectTemplates:addTemplate(object_mobile_skeleton_bm_insect_basic, "object/mobile/skeleton/bm_insect_basic.iff")

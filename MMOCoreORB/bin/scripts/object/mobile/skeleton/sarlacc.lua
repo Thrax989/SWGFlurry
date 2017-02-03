@@ -1,0 +1,1 @@
+object_mobile_skeleton_sarlacc = object_mobile_skeleton_shared_sarlacc:new {}ObjectTemplates:addTemplate(object_mobile_skeleton_sarlacc, "object/mobile/skeleton/sarlacc.iff")
