@@ -1,18 +1,18 @@
 outbreak_undead_deathtrooper_01_m = Creature:new {
 	--customName = "@mob/creature_names:outbreak_undead_deathtrooper_01_m",
 	customName = "Deathtrooper",
-	socialGroup = "",
+	socialGroup = "geonosian",
 	pvpFaction = "",
 	faction = "",
 	level = 150,
-	chanceHit = 5.0,
-	damageMin = 400,
-	damageMax = 990,
-	baseXp = 11514,
-	baseHAM = 14000,
-	baseHAMmax = 15500,
-	armor = 1,
-	resists = {25,25,25,25,25,25,25,-1,-1},
+	chanceHit = 35.00,
+	damageMin = 520,
+	damageMax = 1750,
+	baseXp = 15000,
+	baseHAM = 150000,
+	baseHAMmax = 175000,
+	armor = 0,
+	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -23,29 +23,34 @@ outbreak_undead_deathtrooper_01_m = Creature:new {
 	tamingChance = 0,
 	ferocity = 1,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = KILLER,
-	optionsBitmask = 128,
+	creatureBitmask = PACK + KILLER + HEALER,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/outbreak_undead_deathtrooper_01_m.iff"},
 		
 	lootGroups = {
-	    {
+		{
 			groups = {
-				{group = "clothing_attachments", chance = 4500000},
-				{group = "armor_attachments", chance = 2000000},
-				{group = "nyms_common", chance = 1000000},
-				{group = "pistols", chance = 1000000},
-				{group = "carbines", chance = 1000000},
-				{group = "tailor_components", chance = 500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
-			lootChance = 9000000
-		}
-	},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	--scale = 1.25,
-	weapons = {},
+	weapons = {"unarmed_weapons"},
 	conversationTemplate = "",
-	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster,riflemanmaster)
+	attacks = merge(brawlermaster,tkamaster,fencermaster,swordsmanmaster,pikemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(outbreak_undead_deathtrooper_01_m, "outbreak_undead_deathtrooper_01_m")
