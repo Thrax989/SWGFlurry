@@ -37,7 +37,7 @@ function pvp1:notifySpawnArea(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-		if (player:isImperial() or player:isRebel()) then
+		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
 			player:sendSystemMessage("Teleporting you to saftey!")
 			player:teleport(-5108, 81, -2106, 0)
 		else
@@ -58,7 +58,7 @@ function pvp1:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-		if (player:isImperial() or player:isRebel()) then
+		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
 			player:sendSystemMessage("You are safe for now!")
 		end
 		return 0

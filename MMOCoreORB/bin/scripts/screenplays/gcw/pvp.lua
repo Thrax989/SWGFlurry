@@ -37,7 +37,7 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-		if (player:isImperial() or player:isRebel()) then
+		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
 			player:sendSystemMessage("You have entered the Restuss PvP zone!")
 			player:setFactionStatus(2)
 		else
@@ -59,7 +59,7 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-		if (player:isImperial() or player:isRebel()) then
+		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
 			player:sendSystemMessage("You have left the Restuss PvP zone!")
 			player:setFactionStatus(0)
 		end
