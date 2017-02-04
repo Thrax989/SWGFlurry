@@ -12,7 +12,7 @@ singing_mountain_clan_arch_witch = Creature:new {
 	baseHAM = 24000,
 	baseHAMmax = 30000,
 	armor = 0,
-	resists = {95,95,95,100,100,100,100,100,-1},
+	resists = {125,125,125,200,200,200,200,200,105},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -37,7 +37,7 @@ singing_mountain_clan_arch_witch = Creature:new {
 				{group = "armor_attachments", chance = 850000},
 				{group = "clothing_attachments", chance = 850000},
 				{group = "melee_weapons", chance = 2000000},
-				{group = "rifles", chance = 1000000},
+				{group = "rifles", chance = 800000},
 				{group = "pistols", chance = 500000},
 				{group = "axkva_min", chance = 500000},
 				{group = "carbines", chance = 1000000}

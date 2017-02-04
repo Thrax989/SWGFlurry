@@ -12,7 +12,7 @@ singing_mountain_clan_councilwoman = Creature:new {
 	baseHAM = 321000,
 	baseHAMmax = 392000,
 	armor = 0,
-	resists = {195,195,195,200,200,200,200,200,125},
+	resists = {135,135,135,200,200,200,200,200,115},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -33,14 +33,14 @@ singing_mountain_clan_councilwoman = Creature:new {
 			groups = {
 				{group = "crystals_premium",  chance = 1800000},
 				{group = "nightsister_common",  chance = 1200000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000},
+				{group = "armor_attachments", chance = 1200000},
+				{group = "clothing_attachments", chance = 1200000},
 				{group = "pistols",  chance = 800000},
 				{group = "rifles",  chance = 800000},
 				{group = "carbines",  chance = 900000},
 				{group = "melee_weapons",  chance = 1000000},
 				{group = "holocron_light",  chance = 500000},
-				{group = "axkva_min",  chance = 500000}
+				{group = "axkva_min",  chance = 600000}
 			},
 			lootChance = 10000000
 		}
