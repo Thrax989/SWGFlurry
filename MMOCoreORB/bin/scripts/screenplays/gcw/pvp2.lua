@@ -36,4 +36,7 @@ spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wa
 spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wall_strong.iff", -5132.96, 81.4393, -2094.04, 0, -0.998135, 0, -0.0610485, 0) 
 spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wall_strong.iff", -5125.15, 81.4393, -2094.94, 0, -0.998629, 0, -0.052336, 0) 
 spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wall_strong.iff", -5117.23, 81.4392, -2095.84, 0, 0.998135, 0, 0.0610485, 0) 
+spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wall_strong.iff", -5099.23, 81.3604, -2097.65, 0, 0.999391, 0, 0.0348995, 0)
+spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wall_strong.iff", -5104.18, 81.6712, -2097.21, 0, -0.0436194, 0, 0.999048, 0)
+spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wall_strong.iff", -5109.29, 81.5604, -2096.77, 0, 0.99863, 0, 0.052336, 0)
 end
