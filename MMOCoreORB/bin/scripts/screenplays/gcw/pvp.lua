@@ -38,7 +38,7 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-			player:sendSystemMessage("You have entered the Restuss PvP zone!")
+			player:sendSystemMessage("You have entered the Kaas PvP zone!")
 			player:setFactionStatus(2)
 		else
 			player:sendSystemMessage("You must be Rebel or Imperial to enter the PvP zone!")
@@ -60,7 +60,7 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-			player:sendSystemMessage("You have left the Restuss PvP zone!")
+			player:sendSystemMessage("You have left the Kaas PvP zone!")
 			player:setFactionStatus(0)
 		end
 		return 0
