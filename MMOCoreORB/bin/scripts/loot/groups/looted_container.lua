@@ -394,7 +394,7 @@ looted_container = {
 		{itemTemplate = "ngehouse12", weight = 25000},
 		{itemTemplate = "ngehouse11", weight = 25000},
 		{itemTemplate = "ngehouse10", weight = 25000},
-		{itemTemplate = "ngehous9", weight = 25000},
+		{itemTemplate = "ngehouse9", weight = 25000},
 		{itemTemplate = "ngehouse8", weight = 25000},
 		{itemTemplate = "ngehouse7", weight = 25000},
 		{itemTemplate = "ngehouse6", weight = 25000},
