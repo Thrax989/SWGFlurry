@@ -58,6 +58,7 @@ object_building_player_musty_house = object_building_player_shared_musty_house:n
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_bank.iff", x = -2.83054, z = 0.469543, y = 9.45055, ow = -4.37114e-08, ox = 0, oz = 0, oy = -1, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/terminal/terminal_mission.iff", x = -4.05691, z = 0.469543, y = 8.82943, ow = -0.382683, ox = 0, oz = 0, oy = -0.923879, cellid = 1, containmentType = -1},
+			{templateFile = "object/tangible/beta/beta_terminal_wound.iff", x = 4.54366, z = 0.469543, y = 9.46938, ow = -0.34202, ox = 0, oz = 0, oy = 0.939693, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/terminal/terminal_guild.iff", x = -0.0201342, z = -32.9999, y = 14.85, ow = -4.37114e-08, ox = 0, oz = 0, oy = -1, cellid = 8, containmentType = -1},
 			{templateFile = "object/tangible/terminal/terminal_elevator_up.iff", x = 0, z = -33, y = -1.29, ow = 0, ox = 0, oy = 0, oz = 0, cellid = 10, containmentType = -1}, --Floor 3
 			{templateFile = "object/tangible/terminal/terminal_elevator.iff", x = 0, z = -26.0005, y = -1.29, ow = 0, ox = 0, oy = 0, oz = 0, cellid = 10, containmentType = -1}, --Floor 2
