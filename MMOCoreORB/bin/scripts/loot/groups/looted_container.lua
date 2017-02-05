@@ -345,7 +345,7 @@ looted_container = {
 		{itemTemplate = "two_handed_sword_kashyyk", weight = 25000},
 		{itemTemplate = "two_handed_sword_kashyyk_wod", weight = 25000},
 		{itemTemplate = "two_handed_sword_katana", weight = 25000},
-		{itemTemplate = "two_handed_sword_katana_generic", weight = 25000},
+		{itemTemplate = "pistol_sr_combat", weight = 25000},
 		{itemTemplate = "two_handed_sword_katana_quest", weight = 25000},
 		{itemTemplate = "two_handed_sword_kun_massassi", weight = 25000},
 		{itemTemplate = "two_handed_sword_maul", weight = 25000},
