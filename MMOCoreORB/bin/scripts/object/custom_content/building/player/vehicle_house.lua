@@ -7,6 +7,9 @@ object_building_player_vehicle_house = object_building_player_shared_vehicle_hou
 	width = 1,
 	publicStructure = 0,
 	skillMods = {
+		{"private_medical_rating", 100},
+		{"private_buff_mind", 100},
+		{"private_med_battle_fatigue", 5},
 		{"private_safe_logout", 1},
 		{"advanced_assembly", 20},
 		{"armor_assembly", 20},
@@ -54,8 +57,7 @@ object_building_player_vehicle_house = object_building_player_shared_vehicle_hou
 	},
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_bank.iff", x = 16.8956, z = 0.529974, y = 11.5692, ow = 0.707107, ox = 0, oz = 0, oy = -0.707107, cellid = 1, containmentType = -1},
-			{templateFile = "object/tangible/terminal/terminal_mission.iff", x = -16.083, z = 0.529974, y = 8.12005, ow = -0.707107, ox = -0, oz = 0, oy = -0.707107, cellid = 1, containmentType = -1},
-			{templateFile = "object/tangible/beta/beta_terminal_wound.iff", x = -16.2392, z = 0.529974, y = 11.5202, ow = -0.707107, ox = -0, oz = 0, oy = -0.707107, cellid = 1, containmentType = -1},
+			{templateFile = "object/tangible/terminal/terminal_mission.iff", x = -16.2392, z = 0.529974, y = 11.5202, ow = -0.707107, ox = -0, oz = 0, oy = -0.707107, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = 14.5356, z = 0.629973, y = 12.9319, ow = -4.37114e-08, ox = 0, oz = 0, oy = 1, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/sign/player/house_address.iff", x = -14.3417, z = 5.52997, y = 15.5785, ow = -1.49012e-07, ox = 0, oz = 0, oy = -1, cellid = -1, containmentType = -1}
 	},
