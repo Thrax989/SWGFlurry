@@ -270,6 +270,8 @@ structures = {
 	},
 	{catName = "PvP World Build Tools",
 		 items = {
+			"Light 1","object/static/structure/general/streetlamp_small_style_01_on.iff",
+			"light 2","object/static/structure/general/streetlamp_small_style_02_on.iff",
 			"Wall column 1","object/installation/battlefield/destructible/bfield_wall_strong.iff",
 			"Wall column","object/installation/battlefield/destructible/bfield_column_impl_med.iff",
 			"Wall column strong","object/installation/battlefield/destructible/bfield_column_strong.iff",
