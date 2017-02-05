@@ -147,7 +147,7 @@ object_building_poi_scout_camp_s4 = object_building_poi_shared_scout_camp_s4:new
 			cellid = -1,
 			containmentType = -1},
 
-		{templateFile = "object/tangible/terminal/terminal_mission.iff",
+		{templateFile = "object/tangible/terminal/terminal_mission_bounty.iff",
 			x = 0, z = 0, y = 9,
 			ox = 0, oy = 0, oz = 0, ow = 1,
 			cellid = -1,
