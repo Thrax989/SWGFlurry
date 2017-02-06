@@ -28,17 +28,18 @@ krayt_dragon_adolescent_elder = Creature:new {
  
  	templates = {"object/mobile/krayt_dragon_hue.iff"},
  	scale = 0.7;
- 	lootGroups = {
- 		{
- 	        groups = {
- 					{group = "krayt_tissue_rare", chance = 4000000},
- 					{group = "krayt_tissue_uncommon", chance = 1000000},
- 					{group = "pearls_flawless", chance = 3000000},
- 					{group = "clothing_attachments", chance = 2000000},
- 			},
- 			lootChance = 10000000
- 		}
- 	},
+	lootGroups = {
+		{
+	        groups = {
+				{group = "krayt_tissue_rare", chance = 2000000},
+				{group = "krayt_dragon_common", chance = 2500000},
+				{group = "pearls_flawless", chance = 1500000},
+				{group = "armor_all", chance = 2000000},
+				{group = "weapons_all", chance = 2000000},
+			},
+			lootChance = 10000000
+		}
+	},
  	weapons = {},
  	conversationTemplate = "",
  	attacks = {
