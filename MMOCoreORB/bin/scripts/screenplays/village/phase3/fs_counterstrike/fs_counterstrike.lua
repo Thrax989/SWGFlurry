@@ -287,6 +287,10 @@ function FsCounterStrike:doPhaseChangeFail(pPlayer)
 end
 
 function FsCounterStrike:completeQuest(pPlayer, teamComplete)
+	if (not self:isOnEscort(pPlayer)) then
+		return
+	end
+	
 	if (QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ENSURE_CAPTURE)) then
 		QuestManager.completeQuest(pPlayer, QuestManager.quests.FS_CS_ENSURE_CAPTURE)
 	end
@@ -389,6 +393,17 @@ function FsCounterStrike:isOnQuest(pPlayer)
 	return QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_INTRO) or
 		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_KILL5_GUARDS) or
 		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ENSURE_CAPTURE) or
+		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_LAST_CHANCE) or
+		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ESCORT_COMMANDER_PRI) or
+		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ESCORT_COMMANDER_SEC)
+end
+
+function FsCounterStrike:isOnEscort(pPlayer)
+	if (pPlayer == nil) then
+		return false
+	end
+
+	return QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ENSURE_CAPTURE) or
 		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_LAST_CHANCE) or
 		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ESCORT_COMMANDER_PRI) or
 		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ESCORT_COMMANDER_SEC)
