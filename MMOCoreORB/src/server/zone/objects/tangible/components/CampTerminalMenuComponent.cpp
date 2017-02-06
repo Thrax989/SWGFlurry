@@ -202,11 +202,10 @@ void CampTerminalMenuComponent::assumeCampOwnership(SceneObject* sceneObject,
 
 		ManagedReference<CreatureObject*> play = player;
 
-		EXECUTE_TASK_2(campArea, play, {
-				Locker locker(campArea_p);
-				campArea_p->assumeOwnership(play_p);
-		});
-
+		Core::getTaskManager()->executeTask([=] () {
+			Locker locker(campArea);
+			campArea->assumeOwnership(play);
+		}, "AssumeOwnershipLambda");
 	}
 }
 
@@ -291,4 +290,3 @@ void CampTerminalMenuComponent::awardCampExperience(PlayerObject* ghost,
 		CampSiteActiveArea* campArea) const {
 
 }
-
