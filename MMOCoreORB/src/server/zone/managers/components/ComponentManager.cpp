@@ -8,6 +8,7 @@
 #include "ComponentManager.h"
 
 #include "server/zone/objects/player/components/PlayerContainerComponent.h"
+#include "server/zone/objects/scene/components/ContainerComponent.h"
 #include "server/zone/objects/tangible/components/LootContainerComponent.h"
 #include "server/zone/objects/scene/components/ZoneComponent.h"
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
@@ -320,6 +321,7 @@ ComponentManager::ComponentManager() {
 
 	components.put("FlagGameMenuComponent", new FlagGameMenuComponent() );
 	dataObjectFactory.registerObject<FlagGameDataComponent>("FlagGameDataComponent");
+
 	// Droid components
 	dataObjectFactory.registerObject<DroidMaintenanceModuleDataComponent>("DroidMaintenanceModuleDataComponent");
 	dataObjectFactory.registerObject<DroidEffectsModuleDataComponent>("DroidEffectsModuleDataComponent");

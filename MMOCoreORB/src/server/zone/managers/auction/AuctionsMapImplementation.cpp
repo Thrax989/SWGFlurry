@@ -329,3 +329,4 @@ void AuctionsMapImplementation::removeFromCommodityLimit(AuctionItem* item) {
 	if(items->isEmpty())
 		commoditiesLimit.drop(item->getOwnerID());
 }
+
