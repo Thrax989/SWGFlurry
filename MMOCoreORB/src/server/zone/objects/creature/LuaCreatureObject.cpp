@@ -12,7 +12,6 @@
 #include "server/zone/objects/player/sessions/ConversationSession.h"
 #include "server/zone/ZoneServer.h"
 #include "server/zone/objects/group/GroupObject.h"
-#include "server/zone/packets/chat/ChatSystemMessage.h"
 #include "server/zone/objects/player/sessions/EntertainingSession.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -128,6 +127,8 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "enhanceCharacter", &LuaCreatureObject::enhanceCharacter },
 		{ "setWounds", &LuaCreatureObject::setWounds },
 		{ "setShockWounds", &LuaCreatureObject::setShockWounds },
+		{ "getForceSensitiveSkillCount", &LuaCreatureObject::getForceSensitiveSkillCount },
+		{ "villageKnightPrereqsMet", &LuaCreatureObject::villageKnightPrereqsMet },
 		{ "isOnLeave", &LuaTangibleObject::isOnLeave },
 		{ "isOvert", &LuaTangibleObject::isOvert },
 		{ "isCovert", &LuaTangibleObject::isCovert },
@@ -963,6 +964,26 @@ int LuaCreatureObject::setShockWounds(lua_State* L) {
 	realObject->setShockWounds(amount, true);
 
 	return 0;
+}
+
+int LuaCreatureObject::getForceSensitiveSkillCount(lua_State* L) {
+	bool includeNoviceMasterBoxes = lua_toboolean(L, -1);
+
+	int result = SkillManager::instance()->getForceSensitiveSkillCount(realObject, includeNoviceMasterBoxes);
+
+	lua_pushnumber(L, result);
+
+	return 1;
+}
+
+int LuaCreatureObject::villageKnightPrereqsMet(lua_State* L) {
+	String skillToDrop = lua_tostring(L, -1);
+
+	bool result = SkillManager::instance()->villageKnightPrereqsMet(realObject, skillToDrop);
+
+	lua_pushboolean(L, result);
+
+	return 1;
 }
 
 int LuaCreatureObject::getDamageDealerList(lua_State* L) {
