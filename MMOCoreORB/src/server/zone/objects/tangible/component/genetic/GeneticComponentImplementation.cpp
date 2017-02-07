@@ -55,6 +55,7 @@ void GeneticComponentImplementation::resetResists(CraftingValues* values) {
 		values->setCurrentValue("dna_comp_armor_energy", 0);
 		values->setCurrentPercentage("dna_comp_armor_energy",0);
 	}
+
 }
 
 void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values, bool firstUpdate) {
@@ -98,7 +99,7 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 		setSpecialResist(SharedWeaponObjectTemplate::LIGHTSABER);
 
 	if (fortitude > 500) {
-		armorRating = 1;
+		armorRating = 0;
 	}
 	// min - max values
 	if (fortitude > 1000) {
@@ -159,24 +160,24 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	if (power < 0)
 		power = 1;
 	// max on resists
-	if (kinResist > 60)
-		kinResist = 60;
-	if (energyResist > 60)
-		energyResist = 60;
-	if (blastResist > 100)
-		blastResist = 100;
-	if (heatResist > 100)
-		heatResist = 100;
-	if (coldResist > 100)
-		coldResist = 100;
-	if (elecResist > 100)
-		elecResist = 100;
-	if (acidResist > 100)
-		acidResist = 100;
-	if (stunResist > 100)
-		stunResist = 100;
-	if (saberResist > 100)
-		saberResist = 100;
+	if (kinResist > 80)
+		kinResist = 80;
+	if (energyResist > 80)
+		energyResist = 80;
+	if (blastResist > 80)
+		blastResist = 80;
+	if (heatResist > 80)
+		heatResist = 80;
+	if (coldResist > 80)
+		coldResist = 80;
+	if (elecResist > 80)
+		elecResist = 80;
+	if (acidResist > 80)
+		acidResist = 80;
+	if (stunResist > 80)
+		stunResist = 80;
+	if (saberResist > 80)
+		saberResist = 80;
 	// Determine other factors
 	// HAM, attack speed, min/max damage toHit
 	// Health: har,dex
@@ -189,27 +190,27 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	// Strength: har,dep
 	// Quickness: dex,dep
 
-	health = (hardiness * 15)    + (dexterity * 3);
-	action = (dexterity * 15)    + (intelligence * 3);
-	mind   = (intelligence * 15) + (hardiness * 3);
-	stamina = (dexterity*15)     + (endurance * 3);
-	willPower = (intelligence * 15) + (cleverness * 3);
-	constitution = (hardiness * 15)    + (fortitude * 3);
-	focus = (intelligence * 15) + (dependency * 3);
-	strength = (hardiness * 15)    + (dependency * 3);
-	quickness = (dexterity * 15)    + (dependency * 3);
-	hit = 0.19 + (0.55 * ((float)cleverness/1000.0));
+	health = (hardiness * 85)    + (dexterity * 15);
+	action = (dexterity * 85)    + (intelligence * 15);
+	mind   = (intelligence * 85) + (hardiness * 15);
+	stamina = (dexterity * 10)     + (endurance * 5);
+	willPower = (intelligence * 10) + (cleverness * 5);
+	constitution = (hardiness * 10)    + (fortitude * 5);
+	focus = (intelligence * 10) + (dependency * 5);
+	strength = (hardiness * 10)    + (dependency * 5);
+	quickness = (dexterity * 10)    + (dependency * 5);
+	hit = 3.0 + (3.00 * ((float)cleverness/500.0));
 	// dps of pet use to determien min and max value.
-	int dps = ceil((ceil(15.0 + (775.0 * ( ((float)power)/1000.0))))/3.5);
+	int dps = ceil(1.0 * (float)power);
 	speed = 2.5-((ceil(((float)courage)/10)*10)/1000);
-	maxDam = round(((float)dps * speed) * 1.5);
-	//minDam = round(((float)dps * speed) * 0.5);
+	maxDam = round(((float)dps * speed) * 0.65);
   	// round maxDam down to the closest multiple of 5
 	maxDam = maxDam - (maxDam % 5);
-  	// subtract either 5 or 10 from maxDam to get the minDam
-	minDam = maxDam - ((System::random(1) + 1) * 5);
+	if (maxDam <51)
+		maxDam = 51;
+  	// subtract either 25 or 50 from maxDam to get the minDam
+	minDam = maxDam - ((System::random(1) + 1) * 25);
 }
-
 String GeneticComponentImplementation::convertSpecialAttack(String &attackName) {
 	if (attackName == "defaultattack" || attackName == "")
 		return "@combat_effects:none";
@@ -218,7 +219,6 @@ String GeneticComponentImplementation::convertSpecialAttack(String &attackName) 
 	else
 		return "@combat_effects:" + attackName;
 }
-
 String GeneticComponentImplementation::resistValue(float input){
 	if (input < 0) {
 		return "Vulnerable";
@@ -228,7 +228,6 @@ String GeneticComponentImplementation::resistValue(float input){
 		return displayvalue.toString();
 	}
 }
-
 void GeneticComponentImplementation::fillAttributeList(AttributeListMessage* alm, CreatureObject* object) {
 	TangibleObjectImplementation::fillAttributeList(alm, object);
 	switch (quality){
@@ -257,7 +256,6 @@ void GeneticComponentImplementation::fillAttributeList(AttributeListMessage* alm
 			alm->insertAttribute("dna_comp_quality","Unknown");
 			break;
 	}
-
 	alm->insertAttribute("dna_comp_hardiness",(int)hardiness);
 	alm->insertAttribute("dna_comp_fortitude",(int)fortitude);
 	alm->insertAttribute("dna_comp_endurance",(int)endurance);
@@ -277,7 +275,6 @@ void GeneticComponentImplementation::fillAttributeList(AttributeListMessage* alm
 		alm->insertAttribute("dna_comp_armor_rating","@obj_attr_n:armor_pierce_medium");
 	else if (armorRating == 3)
 		alm->insertAttribute("dna_comp_armor_rating","@obj_attr_n:armor_pierce_heavy");
-
 	// Add resists
 	alm->insertAttribute("dna_comp_armor_kinetic",resistValue(kinResist));
 	alm->insertAttribute("dna_comp_armor_energy",resistValue(energyResist));
@@ -292,21 +289,13 @@ void GeneticComponentImplementation::fillAttributeList(AttributeListMessage* alm
 	alm->insertAttribute("spec_atk_2",convertSpecialAttack(special2));
 	alm->insertAttribute("dna_comp_ranged_attack",ranged ? "Yes" : "No");
 }
-
 bool GeneticComponentImplementation::isSpecialResist(int type) {
 	return specialResists & type;
 }
-
 void GeneticComponentImplementation::setSpecialResist(int type) {
 	specialResists |= type;
 }
-
 int GeneticComponentImplementation::getEffectiveArmor() {
-	if (fortitude < 500)
-		return fortitude/50;
-	if (fortitude > 500)
-		return (fortitude-500)/50;
-	if (fortitude == 500)
-		return 0;
-	return fortitude/50;
+
+	return 0;
 }

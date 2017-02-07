@@ -30,6 +30,7 @@ public:
 				return INVALIDTARGET;
 
 			float checkRange = range;
+			//forceCost = 1;
 
 			if (creature->isProne())
 				return NOPRONE;
@@ -43,8 +44,17 @@ public:
 			}
 
 			ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
+			int forceReduced = forceCost;
+			if (playerObject != NULL) {
+				int powSkills = playerObject->numSpecificSkills(creature, "force_discipline_powers_");
+				float powMod = powSkills * 5;
+				forceReduced = forceCost - powMod;
+				if (forceReduced < 20) {
+					forceReduced = 20;
+				}
+			}
 
-			if (playerObject != NULL && playerObject->getForcePower() < forceCost) {
+			if (playerObject != NULL && playerObject->getForcePower() < forceReduced) {
 				creature->sendSystemMessage("@jedi_spam:no_force_power"); //"You do not have enough Force Power to peform that action.
 
 				return GENERALERROR;
@@ -61,9 +71,9 @@ public:
 				case -3:
 					return GENERALERROR;
 				}
-
+				
 				if (playerObject != NULL)
-					playerObject->setForcePower(playerObject->getForcePower() - forceCost);
+					playerObject->setForcePower(playerObject->getForcePower() - forceReduced);
 
 			} catch (Exception& e) {
 				error("unreported exception caught in ForcePowersQueueCommand::doCombatAction");

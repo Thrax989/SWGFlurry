@@ -30,7 +30,7 @@ public:
 	void deactivateWoundTreatment(CreatureObject* creature) const {
 		float modSkill = (float)creature->getSkillMod("healing_wound_speed");
 
-		int delay = (int)round((modSkill * -(2.0f / 25.0f)) + 20.0f);
+		int delay = (int)round((modSkill * -(2.0f / 25.0f)) + 20.0f)-30;
 
 		if (creature->hasBuff(BuffCRC::FOOD_HEAL_RECOVERY)) {
 			DelayedBuff* buff = cast<DelayedBuff*>( creature->getBuff(BuffCRC::FOOD_HEAL_RECOVERY));
@@ -42,8 +42,8 @@ public:
 			}
 		}
 
-		//Force the delay to be at least 3 seconds.
-		delay = (delay < 3) ? 3 : delay;
+		//Force the delay to be at least 1 seconds.
+		delay = (delay < 1) ? 1 : delay;
 
 		StringIdChatParameter message("healing_response", "healing_response_59"); //You are now ready to heal more wounds or apply more enhancements.
 		Reference<InjuryTreatmentTask*> task = new InjuryTreatmentTask(creature, message, "woundTreatment");

@@ -45,11 +45,11 @@ public:
 
 			if (player->isBleeding() || player->isPoisoned() || player->isDiseased()) {
 				if (player->isBleeding() && meditateMod >= 15)
-					player->healDot(CreatureState::BLEEDING, (15 + (meditateMod / 3)));
+					player->healDot(CreatureState::BLEEDING, (25 + (meditateMod * 2)));
 				else if (player->isPoisoned() && meditateMod >= 30)
-					player->healDot(CreatureState::POISONED, (15 + (meditateMod / 3)));
+					player->healDot(CreatureState::POISONED, (25 + (meditateMod * 2)));
 				else if (player->isDiseased() && meditateMod >= 45)
-					player->healDot(CreatureState::DISEASED, (15 + (meditateMod / 3)));
+					player->healDot(CreatureState::DISEASED, (25 + (meditateMod * 2)));
 
 			} else if (meditateMod >= 75) { // Meditate SkillMod +75 for wound Healing..
 
@@ -66,10 +66,10 @@ public:
 				if (woundedPools.size() <= 0)
 					return;
 
-				int heal = 20 + System::random(10);
+				int heal = 40 + System::random(20);
 
 				if (meditateMod >= 100)
-					heal = 30 + System::random(20);
+					heal = 60 + System::random(40);
 
 				// Select a random Attribute that has wounds...
 				uint8 pool = woundedPools.get(System::random(woundedPools.size() - 1));

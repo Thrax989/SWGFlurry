@@ -43,7 +43,7 @@ public:
 		int skillMod = player->getSkillMod("dna_harvesting");
 		int cl = deed->getLevel();
 
-		if (skillMod < 1 || cl > skillMod + 15){
+		if (skillMod < 1 || cl > skillMod + 50){
 			player->sendSystemMessage("@bio_engineer:harvest_dna_skill_too_low");
 			return;
 		}
@@ -61,7 +61,7 @@ public:
 				}
 				break;
 			case SAMPLING:
-				if (waitCount == 9) {
+				if (waitCount == 5) {
 					currentPhase = END;
 				}else {
 					waitCount++;
@@ -75,10 +75,10 @@ public:
 				float rollMod = (((skillMod-level)/level))  + (skillMod-level);
 				int sampleRoll = System::random(100);
 				sampleRoll += System::random(player->getSkillMod("luck") + player->getSkillMod("force_luck"));
-				// max samples 1/2 of real creatures
-				int maxSamples = (int) ceil((float)skillMod/25.f)/2.f;
+				// max samples 3/4 of real creatures, (4 samples total with master BE and +25 tapes)
+				int maxSamples = (int) ceil((float)skillMod/25.0*0.75);
 				deed->incrementSampleCount();
-				if ((30 + rollMod) < sampleRoll || cl > 75) {
+				if ((70 + rollMod) < sampleRoll || cl > 85) {
 					// failure but we increment the count
 					player->sendSystemMessage("@bio_engineer:harvest_dna_failed");
 				} else {

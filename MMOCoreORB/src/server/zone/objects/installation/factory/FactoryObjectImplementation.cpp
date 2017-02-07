@@ -414,7 +414,10 @@ bool FactoryObjectImplementation::startFactory() {
 			return false;
 	}
 
-	timer = ((int)schematic->getComplexity()) * 8;
+		// Customization
+ 	timer = ((int)schematic->getComplexity()) / 4; // Originally * 2
+ 	if (timer < 1)
+ 		timer = 1; // prevent negative run time
 
 	if(!populateSchematicBlueprint(schematic))
 		return false;

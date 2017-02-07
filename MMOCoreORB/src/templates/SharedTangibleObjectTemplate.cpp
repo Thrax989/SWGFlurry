@@ -35,7 +35,7 @@ SharedTangibleObjectTemplate::SharedTangibleObjectTemplate() {
 
 	useCount = 0;
 
-	factoryCrateSize = 25;
+	factoryCrateSize = 100;
 
 	sliceable = false;
 

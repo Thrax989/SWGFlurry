@@ -39,7 +39,7 @@ public:
 			return;
 		}
 
-		float failureChance = 5 + (5 * creature->getFerocity());
+		float failureChance = 3 + (3 * creature->getFerocity());
 		float skill = 100;
 		bool success = true;
 
@@ -62,7 +62,7 @@ public:
 			} else {
 				currentPhase = ONEFAILURE;
 			}
-			this->reschedule(10000);
+			this->reschedule(2000);
 			break;
 		case ONESUCCESS:
 			if (success) {
@@ -71,14 +71,14 @@ public:
 			} else {
 					player->sendSystemMessage("@skl_use:milk_continue"); // You continue to milk the creature.
 					currentPhase = FINAL;
-					this->reschedule(10000);
+					this->reschedule(2000);
 			}
 			break;
 		case ONEFAILURE:
 			if (success) {
 				player->sendSystemMessage("@skl_use:milk_continue"); // You continue to milk the creature.
 				currentPhase = FINAL;
-				this->reschedule(10000);
+				this->reschedule(2000);
 			} else {
 				updateMilkState(CreatureManager::NOTMILKED);
 				_clocker.release();
@@ -106,7 +106,7 @@ public:
 		String restype = creature->getMilkType();
 		int quantity = creature->getMilk();
 
-		int quantityExtracted = MAX(quantity, 3);
+		int quantityExtracted = MAX(quantity, 4)*15;
 
 		ManagedReference<ResourceSpawn*> resourceSpawn = resourceManager->getCurrentSpawn(restype, player->getZone()->getZoneName());
 
@@ -130,6 +130,7 @@ public:
 		resourceManager->harvestResourceToPlayer(player, resourceSpawn, quantityExtracted);
 
 		updateMilkState(CreatureManager::ALREADYMILKED);
+			
 	}
 
 	void updateMilkState(const short milkState) {
@@ -137,5 +138,4 @@ public:
 		creature->setMilkState(milkState);
 	}
 };
-
 #endif /* MILKCREATURETASK_H_ */

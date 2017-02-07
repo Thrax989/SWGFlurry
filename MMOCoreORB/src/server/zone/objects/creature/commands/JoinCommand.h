@@ -25,6 +25,7 @@ public:
 
 		GroupManager* groupManager = GroupManager::instance();
 		groupManager->joinGroup(creature);
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 
 		return SUCCESS;
 	}

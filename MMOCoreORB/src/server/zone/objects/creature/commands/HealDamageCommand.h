@@ -282,9 +282,9 @@ public:
 
 			if (atts.contains(CreatureAttribute::MIND)) {
 				if (notifyObservers) {
-					mindHealed = targetCreature->healDamage(creature, CreatureAttribute::MIND, stimPower);
+					mindHealed = targetCreature->healDamage(creature, CreatureAttribute::MIND, 250);
 				} else {
-					mindHealed = targetCreature->healDamage(creature, CreatureAttribute::MIND, stimPower, true, false);
+					mindHealed = targetCreature->healDamage(creature, CreatureAttribute::MIND, 250, true, false);
 				}
 			}
 
@@ -456,9 +456,9 @@ public:
 
 		if (atts.contains(CreatureAttribute::MIND)) {
 			if (notifyObservers) {
-				mindHealed = targetCreature->healDamage(creature, CreatureAttribute::MIND, stimPower);
+				mindHealed = targetCreature->healDamage(creature, CreatureAttribute::MIND, 250);
 			} else {
-				mindHealed = targetCreature->healDamage(creature, CreatureAttribute::MIND, stimPower, true, false);
+				mindHealed = targetCreature->healDamage(creature, CreatureAttribute::MIND, 250, true, false);
 			}
 		}
 

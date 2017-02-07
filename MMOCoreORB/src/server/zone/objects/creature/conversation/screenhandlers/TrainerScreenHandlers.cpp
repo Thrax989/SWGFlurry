@@ -7,6 +7,7 @@
 #include "server/zone/objects/player/sessions/TrainerConversationSession.h"
 #include "server/zone/Zone.h"
 #include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/managers/jedi/JediManager.h"
 
 const String TrainerScreenHandlers::STARTSCREENHANDLERID = "convoscreenstart";
 const String TrainerScreenHandlers::INFOSCREENHANDLERID = "convoscreentrainerinfo";
@@ -360,6 +361,14 @@ ConversationScreen* TrainerTrainSkillScreenHandler::handleScreen(CreatureObject*
 			nextScreenId = TrainerScreenHandlers::TRAINEDMASTERSCREENHANDLERID;
 			conversationScreen = NULL;
 		}
+
+		// Set the screen play state if they mastered a fourth-tier box.
+		if (skill->getSkillName().contains("force_sensitive")) {
+			if (skill->getSkillName().contains("_04")) {
+				JediManager::instance()->onFSTreeCompleted(conversingPlayer, skill->getSkillName());
+			}
+		}
+
 	} else {
 		//Return screen depending on what failed.
 		if (!enoughCredits) {
@@ -440,4 +449,3 @@ ConversationScreen* TrainerTrainedMasterScreenHandler::handleScreen(CreatureObje
 
 	return conversationScreen;
 }
-

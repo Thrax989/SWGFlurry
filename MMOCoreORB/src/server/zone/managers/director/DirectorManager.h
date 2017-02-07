@@ -186,7 +186,7 @@ namespace server {
 		static int getPlayerQuestID(lua_State* L);
 		static int getQuestVectorMap(lua_State* L);
 		static int removeQuestVectorMap(lua_State* L);
-		static int createQuestVectorMap(lua_State* L);
+		static int createQuestVectorMap(lua_State* L);		
 		static int createNavMesh(lua_State* L);
 		static int creatureTemplateExists(lua_State* L);
 		static int printLuaError(lua_State* L);

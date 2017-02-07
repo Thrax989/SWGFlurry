@@ -5,6 +5,7 @@
 #ifndef SABERSLASH2COMMAND_H_
 #define SABERSLASH2COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "JediCombatQueueCommand.h"
 
 class SaberSlash2Command : public JediCombatQueueCommand {
@@ -27,22 +28,22 @@ public:
 			return NOJEDIARMOR;
 		}
 
-		return doCombatAction(creature, target, "");
-	}
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
+		String animCRC = "";
 
-	String getAnimation(TangibleObject* attacker, TangibleObject* defender, WeaponObject* weapon, uint8 hitLocation, int damage) const {
-
-		String anim = "";
 		if (weapon->isJediOneHandedWeapon()) {
-			return "knockdown_1hmelee_1";
+			animCRC = "knockdown_1hmelee_1";
 		} else if (weapon->isJediTwoHandedWeapon()) {
-			return "knockdown_2hmelee_1";
+			animCRC = "knockdown_2hmelee_1";
 		} else if (weapon->isJediPolearmWeapon()) {
-			return "knockdown_polearm_1";
+			animCRC = "knockdown_polearm_1";
 		} else {
-			warning("Invalid weapon in saberSlash getAnimation");
-			return "";
+			return INVALIDWEAPON;
 		}
+
+		UnicodeString args = "animationCRC=" + String::valueOf(animCRC.hashCode()) + ";";
+
+		return doCombatAction(creature, target, args);
 	}
 
 };

@@ -120,6 +120,63 @@ public:
 						promptText << "Hunter #" << i << ": " << hunterList->get(i) << endl;
 					}
 				}
+			} else {
+				promptText << "Not currently hunted" << endl;
+			}
+
+			//NW Custom attributes
+			promptText << "\nPVP Rating: " << targetObject->getScreenPlayState("pvpRating") << endl;
+			promptText << "\nPlayer has " << targetObject->getScreenPlayState("deathBounty") << " people who want him dead" << endl;
+			int frsSkills = ghost->numSpecificSkills(targetObject, "force_rank_");
+			String frsSkillName = "";
+			if (frsSkills > 0) {
+				switch (frsSkills) {
+				case 1:
+					frsSkillName = "novice";
+					break;
+				case 2:
+					frsSkillName = "rank 01";
+					break;
+				case 3:
+					frsSkillName = "rank 02";
+					break;
+				case 4:
+					frsSkillName = "rank 03";
+					break;
+				case 5:
+					frsSkillName = "rank 04";
+					break;
+				case 6:
+					frsSkillName = "rank 05";
+					break;
+				case 7:
+					frsSkillName = "rank 06";
+					break;
+				case 8:
+					frsSkillName = "rank 07";
+					break;
+				case 9:
+					frsSkillName = "rank 08";
+					break;
+				case 10:
+					frsSkillName = "rank 09";
+					break;
+				case 11:
+					frsSkillName = "rank 10";
+					break;
+				case 12:
+					frsSkillName = "master";
+					break;
+				}
+				if (ghost->getJediState() == 4) {
+					//promptText << "\nFRS Rank: @skl_n:force_rank_light_" << frsSkillName << endl;
+					promptText << "\nFRS Rank: Lightside " << frsSkillName << endl;
+				} else if (ghost->getJediState() == 8) {
+					//promptText << "\nFRS Rank: @skl_n:force_rank_dark_" << frsSkillName << endl;
+					promptText << "\nFRS Rank: Darkside " << frsSkillName << endl;
+				} else {
+					promptText << "\nFRS Rank: Player is not currently in the FRS" << endl;
+				}
 
 				promptText << endl;
 			}

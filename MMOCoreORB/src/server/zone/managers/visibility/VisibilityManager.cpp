@@ -16,11 +16,13 @@ const unsigned int VisibilityManager::factionImperial = factionStringImperial.ha
 void VisibilityManager::addPlayerToBountyList(CreatureObject* creature, int reward) {
 	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
 	missionManager->addPlayerToBountyList(creature->getObjectID(), reward);
+	//info("Adding player " + String::valueOf(creature->getObjectID()) + " to bounty hunter list.", true);
 }
 
 void VisibilityManager::removePlayerFromBountyList(CreatureObject* creature) {
 	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
 	missionManager->removePlayerFromBountyList(creature->getObjectID());
+	//info("Dropping player " + creature->getFirstName() + " from bounty hunter list.", true);
 }
 
 int VisibilityManager::calculateReward(CreatureObject* creature) {
@@ -28,21 +30,42 @@ int VisibilityManager::calculateReward(CreatureObject* creature) {
 	int maxReward = 250000; // Maximum reward for a player bounty
 
 	int reward = minReward;
+	int skillPoints = 0;
+	int frsSkills = 0;
+	int frsValue = 0;
 
 	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
+	int bountyWorth = creature->getScreenPlayState("deathBounty") * 25000;
 
 	if (ghost != NULL) {
-		int skillPoints = ghost->getSpentJediSkillPoints();
+		skillPoints = ghost->getSpentJediSkillPoints() + ghost->numSpecificSkills(creature, "force_sensitive");
+		frsSkills = ghost->numSpecificSkills(creature, "force_rank_");
+		if (frsSkills >= 5 && frsSkills < 8) {
+			frsValue = frsSkills * 25000;
+		} else if (frsSkills >= 8) {
+			frsValue = frsSkills * 50000;
+		} else {
+			frsValue = frsSkills * 15000;
+		}
 
 		reward = skillPoints * 1000;
 
-		if (reward < minReward)
+		if (reward < minReward) {
 			reward = minReward;
-		else if (reward > maxReward)
+		}
+		else if (reward > maxReward) {
 			reward = maxReward;
+		}
 	}
-
-	return reward;
+	StringBuffer playerBountyInfo;
+	playerBountyInfo
+	<< creature->getFirstName()
+	<< " has been added to the Bounty Terminal with "
+	<< skillPoints << " Jedi Skill Points and "
+	<< frsSkills << " FRS Skills and "
+	<< bountyWorth << " Player Bounty Worth";
+	//info(playerBountyInfo, true);
+	return reward + bountyWorth + frsValue;
 }
 
 float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
@@ -63,16 +86,21 @@ float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
 			SceneObject* obj = cast<SceneObject*>(closeObjects.get(i));
 			if (obj != NULL && obj->isCreatureObject() && creature->isInRange(obj, 32)) {
 				ManagedReference<CreatureObject*> c = cast<CreatureObject*>(obj);
-				if (c->isNonPlayerCreatureObject() || c->isPlayerCreature()) {
+				if ((c->isNonPlayerCreatureObject() || c->isPlayerCreature()) && (creature != c)) {
 					if (creature->getFaction() == 0 || (c->getFaction() != factionImperial && c->getFaction() != factionRebel)) {
 						visibilityIncrease += 0.5;
+        					creature->playEffect("clienteffect/frs_dark_envy.cef");
 						//info(c->getCreatureName().toString() + " generating a 0.5 visibility modifier", true);
 					} else {
 						if (creature->getFaction() == c->getFaction()) {
-							visibilityIncrease += 0.25;
-							//info(c->getCreatureName().toString() + " generating a 0.25 visibility modifier", true);
+							if (!c->hasSkill("force_title_jedi_rank_01")) {
+								visibilityIncrease += 0.25;
+							        creature->playEffect("clienteffect/frs_dark_envy.cef");
+								//info(c->getCreatureName().toString() + " generating a 0.25 visibility modifier", true);
+							}
 						} else {
 							visibilityIncrease += 1;
+							creature->playEffect("clienteffect/frs_dark_envy.cef");
 							//info( c->getCreatureName().toString() + " generating a 1.0 visibility modifier", true);
 						}
 					}
@@ -125,10 +153,10 @@ void VisibilityManager::login(CreatureObject* creature) {
 	if (ghost != NULL) {
 
 		//You only gain visibility after completing the padawan trials
-		if(!creature->hasSkill("force_title_jedi_rank_02")) {
+		/*if(!creature->hasSkill("force_title_jedi_rank_02")) { //This check is disabled to enable PlayerBounties
 			//info("Player " + creature->getFirstName() + " does not qualify for visibility", true);
 			return;
-		}
+		}*/
 
 		decreaseVisibility(creature);
 
@@ -230,4 +258,3 @@ void VisibilityManager::loadConfiguration() {
 		error(e.getMessage());
 	}
 }
-

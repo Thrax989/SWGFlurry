@@ -19,6 +19,7 @@
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/sessions/survey/SurveySession.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
+#include "server/chat/ChatManager.h"
 
 ResourceSpawner::ResourceSpawner(ManagedReference<ZoneServer*> serv,
 		ZoneProcessServer* impl) {
@@ -59,6 +60,9 @@ ResourceSpawner::~ResourceSpawner() {
 	delete resourceMap;
 
 	activeResourceZones.removeAll();
+
+	server = NULL;
+ 	processor = NULL;
 }
 
 void ResourceSpawner::init() {
@@ -314,6 +318,20 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 
 			ManagedReference<ResourceSpawn*> spawn = resourceMap->get(i);
 
+			uint64 despawned = spawn->getDespawned();
+			uint64 currTime = System::getTime();
+
+			int diff = 0;
+			int inPhase = 0;
+			if(despawned > currTime) {
+				diff = despawned - currTime;
+			} else {
+				diff = currTime - despawned;
+			}
+			if(despawned > currTime) {
+				inPhase = 1;
+			}
+
 			writer->writeLine("	{");
 
 			writer->writeLine("		name = \"" + spawn->getName() + "\",");
@@ -340,6 +358,8 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 
 			writer->writeLine("		},");
 
+			writer->writeLine("		inSpawn = \"" + String::valueOf(inPhase) + "\",");
+			writer->writeLine("		deSpawnTime = \"" + String::valueOf(spawn->getDespawned()) + "\",");
 			writer->writeLine("		zoneRestriction = \"" + spawn->getZoneRestriction() + "\",");
 			writer->writeLine("		surveyToolType = " + String::valueOf(spawn->getSurveyToolType()) + ",");
 			writer->writeLine("		containerCRC = " + String::valueOf(spawn->getContainerCRC()) + ",");
@@ -1111,7 +1131,7 @@ bool ResourceSpawner::addResourceToPlayerInventory(CreatureObject* player, Resou
 		return true;
 	} else {
           	Locker resLocker(harvestedResource);
-          
+
 		harvestedResource->destroyObjectFromDatabase(true);
 		return false;
 	}
@@ -1260,6 +1280,8 @@ void ResourceSpawner::listResourcesForPlanetOnScreen(CreatureObject* creature, c
 	creature->sendSystemMessage("Resource spawns for " + planet);
 	ManagedReference<ResourceSpawn*> resourceSpawn;
 
+	StringBuffer mailPlanetResources;
+
 	for (int i = 0; i < zoneMap->size(); ++i) {
 		resourceSpawn = zoneMap->get(i);
 
@@ -1270,11 +1292,16 @@ void ResourceSpawner::listResourcesForPlanetOnScreen(CreatureObject* creature, c
 		int hours = (((resourceSpawn->getDespawned() - System::getTime()) / 60) / 60);
 		int minutes = (((resourceSpawn->getDespawned() - System::getTime()) / 60) % 60);
 
-		info << resourceSpawn->getFinalClass() << "   |   " << resourceSpawn->getName()
-			 << "   |   " << "Despawns in: " << hours << " hours " << minutes << " minutes.";
+		/*info << resourceSpawn->getFinalClass() << "   |   " << resourceSpawn->getName()
+			 << "   |   " << "Despawns in: " << hours << " hours " << minutes << " minutes.";*/
+			 info << resourceSpawn->getFinalClass() << "   |   " << resourceSpawn->getName();
+			 mailPlanetResources << resourceSpawn->getName() << ", ";
 
 		creature->sendSystemMessage(info.toString());
 	}
+
+	ManagedReference<ChatManager*> chatManager = creature->getZoneServer()->getChatManager();
+	chatManager->sendMail("System", "Resources on " + planet, mailPlanetResources.toString(), creature->getFirstName());
 }
 
 String ResourceSpawner::healthCheck() {
