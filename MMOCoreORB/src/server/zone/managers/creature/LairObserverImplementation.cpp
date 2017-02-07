@@ -340,3 +340,4 @@ bool LairObserverImplementation::checkForNewSpawns(TangibleObject* lair, Tangibl
 
 	return objectsToSpawn.size() > 0;
 }
+
