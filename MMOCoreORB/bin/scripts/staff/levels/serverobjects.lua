@@ -42,18 +42,20 @@
 --true = 1, false = 0
 
 -- Basilisk staff levels
-includeFile("levels/qa_basilisk.lua")
-includeFile("levels/dev_basilisk.lua")
+--includeFile("levels/qa_basilisk.lua")
+--includeFile("levels/dev_basilisk.lua")
+--includeFile("levels/intern.lua") --1
 
-includeFile("levels/admin.lua")
-includeFile("levels/dev.lua")
-includeFile("levels/qa.lua")
-includeFile("levels/csr.lua")
-includeFile("levels/ec.lua")
-includeFile("levels/intern.lua")
---includeFile("levels/tester.lua")
-includeFile("levels/player.lua")
-includeFile("levels/eci.lua")
-includeFile("levels/csi.lua")
-includeFile("levels/cc.lua")
-includeFile("levels/ct.lua")
+includeFile("levels/player.lua") --0
+includeFile("levels/surveyor.lua") --1
+includeFile("levels/qa.lua") --2
+includeFile("levels/QualityAssurance.lua") --5
+includeFile("levels/tester.lua") --6
+includeFile("levels/cc.lua") --7
+includeFile("levels/ct.lua") --8
+includeFile("levels/csi.lua") --9
+includeFile("levels/eci.lua") --10
+includeFile("levels/ec.lua") --11
+includeFile("levels/csr.lua") --12
+includeFile("levels/dev.lua") --14
+includeFile("levels/admin.lua") --15

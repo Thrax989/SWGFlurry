@@ -361,6 +361,7 @@ function CorelliaCoronetScreenPlay:spawnMobiles()
 	spawnMobile(self.planet, "informant_npc_lvl_1",0,-184,28,-4342,90,0)
 	spawnMobile(self.planet, "io_tsomcren",60,-140.701,28,-4719.16,44.0418,0)
 	spawnMobile(self.planet, "junk_dealer", 0, -118.06, 28, -4791.91, -120, 0)
+	spawnMobile("corellia", "informant_npc_lvl_3",60,-146.217,28,-4725.99,346.392,0)
 	pNpc = spawnMobile(self.planet, "junk_dealer", 0, -189.62, 28, -4371.06, 0, 0)
 	if pNpc ~= nil then
 		AiAgent(pNpc):setConvoTemplate("junkDealerFineryConvoTemplate")

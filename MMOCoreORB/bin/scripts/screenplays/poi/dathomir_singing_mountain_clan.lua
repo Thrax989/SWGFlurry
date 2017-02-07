@@ -90,7 +90,7 @@ function SingingMountainClanScreenPlay:spawnMobiles()
 	spawnMobile("dathomir", "singing_mountain_clan_initiate", 600, 626.7, 257.3, 4560.4, -20, 0)
 	spawnMobile("dathomir", "singing_mountain_clan_initiate", 600, 635.5, 256.1, 4485.3, -170, 0)
 
-	spawnMobile("dathomir", "singing_mountain_clan_guardian", 1800, 614.8, 260.0, 4520.2, -90, 0)
+	spawnMobile("dathomir", "singing_mountain_clan_guardian", 900, 614.8, 260.0, 4520.2, -90, 0)
 	spawnMobile("dathomir", "singing_mountain_clan_dragoon", 900, 599.3, 260.0, 4521.5, 172, 0)
 	spawnMobile("dathomir", "singing_mountain_clan_scout", 900, 591.5, 260.0, 4512.8, 51, 0)
 	spawnMobile("dathomir", "singing_mountain_clan_initiate", 600, 571.2, 260.0, 4520.3, 93, 0)
