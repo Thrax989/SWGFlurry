@@ -39,7 +39,7 @@ function pvp1:notifySpawnArea(pActiveArea, pMovingObject)
 		
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
 			player:sendSystemMessage("Teleporting you to saftey!")
-			player:teleport(-5108, 81, -2106, 0)
+			player:teleport(-5109, 81, -2118, 0)
 		else
 			player:sendSystemMessage("Teleporting you to saftey!")
 		end

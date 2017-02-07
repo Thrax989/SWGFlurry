@@ -20,7 +20,7 @@ end
 
 function teleport_kaas_pveScreenPlay:spawnMobiles()
 
-	local pCollector1 = spawnMobile("kaas", "kaasport", 1, -5109.91, 81.7683, -2104.78, 143, 0)
+	local pCollector1 = spawnMobile("kaas", "kaasport", 1, -5109.56, 81.7797, -2107.4, 166, 0)
 	local collector1 = LuaCreatureObject(pCollector1)
 	collector1:setOptionsBitmask(INTERESTING)
 	collector1:setCustomObjectName("\\#00FF00Travel To Corellia Planet")

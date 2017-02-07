@@ -622,10 +622,6 @@ function GeonosianLabScreenPlay:notifyEnteredLab(pBuilding, pPlayer)
 	CreatureObject(pPlayer):removeScreenPlayState(1, "geonosian_lab_tenloss")
 
 	CreatureObject(pPlayer):sendSystemMessage("@dungeon/geonosian_madbio:relock") --Security systems at this facility have been cycled and reset.
-	if (CreatureObject(pPlayer):hasSkill("force_title_jedi_novice")) then
-		CreatureObject(pPlayer):sendSystemMessage("Access Denied")
-		CreatureObject(pPlayer):teleport(-267, 35, 4896, 0)
-	end
 		
 	return 0
 end

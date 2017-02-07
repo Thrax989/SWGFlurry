@@ -3,14 +3,14 @@ krayt_dragon_grand = Creature:new {
 	socialGroup = "krayt",
 	faction = "",
 	level = 85,
-	chanceHit = 8.5,
-	damageMin = 1245,
-	damageMax = 1900,
-	baseXp = 13367,
-	baseHAM = 110000,
-	baseHAMmax = 125000,
-	armor = 0,
-	resists = {185,185,185,185,185,185,185,185,125},
+	chanceHit = 30,
+	damageMin = 2270,
+	damageMax = 4250,
+	baseXp = 28549,
+	baseHAM = 410000,
+	baseHAMmax = 501000,
+	armor = 3,
+	resists = {195,195,195,195,165,195,195,195,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
 	hideType = "hide_bristley",
@@ -32,7 +32,7 @@ krayt_dragon_grand = Creature:new {
 	        groups = {
 				{group = "krayt_tissue_rare", chance = 2000000},
 				{group = "krayt_dragon_common", chance = 2500000},
-				{group = "pearls_flawless", chance = 1500000},
+				{group = "junk", chance = 1500000},
 				{group = "armor_all", chance = 2000000},
 				{group = "weapons_all", chance = 2000000},
 			},
@@ -42,8 +42,8 @@ krayt_dragon_grand = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareacombo"},
-		{"creatureareaknockdown"},
+		{"creatureareacombo","stateAccuracyBonus=100"},
+		{"creatureareaknockdown","stateAccuracyBonus=100"},
 	}
 }
 

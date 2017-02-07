@@ -3,20 +3,20 @@ canyon_krayt_dragon = Creature:new {
 	socialGroup = "krayt",
 	faction = "",
 	level = 85,
-	chanceHit = 8.5,
-	damageMin = 1245,
-	damageMax = 1900,
-	baseXp = 13367,
-	baseHAM = 110000,
-	baseHAMmax = 125000,
-	armor = 0,
-	resists = {185,185,185,185,185,185,185,165,125},
+	chanceHit = 27.25,
+	damageMin = 1520,
+	damageMax = 2750,
+	baseXp = 26356,
+	baseHAM = 321000,
+	baseHAMmax = 392000,
+	armor = 3,
+	resists = {160,160,160,160,120,160,160,160,-1},
 	meatType = "meat_carnivore",
-	meatAmount = 100,
+	meatAmount = 1000,
 	hideType = "hide_bristley",
-	hideAmount = 75,
+	hideAmount = 750,
 	boneType = "bone_mammal",
-	boneAmount = 65,
+	boneAmount = 675,
 	milk = 0,
 	tamingChance = 0.25,
 	ferocity = 20,
@@ -41,8 +41,8 @@ canyon_krayt_dragon = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareaattack"},
-		{"stunattack"}
+		{"creatureareaattack","stateAccuracyBonus=50"},
+		{"stunattack","stateAccuracyBonus=50"}
 	}
 }
 

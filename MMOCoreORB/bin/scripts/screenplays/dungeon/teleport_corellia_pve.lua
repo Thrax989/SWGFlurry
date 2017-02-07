@@ -32,6 +32,6 @@ function teleport_corellia_pveScreenPlay:spawnMobiles()
 end
 function teleport_corellia_pveScreenPlay:teleportCor(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("kaas", -5108, 81, -2106, 0)
+	player:switchZone("kaas", -5109, 81, -2118, 0)
 	return 0
 end
