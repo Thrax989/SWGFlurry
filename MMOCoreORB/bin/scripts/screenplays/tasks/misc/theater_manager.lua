@@ -126,7 +126,7 @@ function TheaterManagerScreenPlay:completeCurrentStep(pPlayer)
 
 	local stateName
 	if (curSeries == 0) then
-		printLuaError("TheaterManagerScreenPlay:completeCurrentStep(), player is not currently participating in a Theater Manager series.")
+		printf("Error in TheaterManagerScreenPlay:completeCurrentStep(), player is not currently participating in a Theater Manager series.")
 		return
 	elseif (curSeries == 1) then
 		stateName = "theater_manager_dance_series"
@@ -163,7 +163,7 @@ function TheaterManagerScreenPlay:completeCurrentSeries(pPlayer)
 	local curSeries = self:getCurrentSeries(pPlayer)
 
 	if (curSeries == 0) then
-		printLuaError("TheaterManagerScreenPlay:completeCurrentSeries(), player is not currently participating in a Theater Manager series.")
+		printf("Error in TheaterManagerScreenPlay:completeCurrentSeries(), player is not currently participating in a Theater Manager series.")
 		return
 	end
 
@@ -216,7 +216,7 @@ function TheaterManagerScreenPlay:spawnControl(pPlayer)
 	local pTheater = self:getTheaterBuilding(pPlayer)
 
 	if (pTheater == nil) then
-		printLuaError("TheaterManagerScreenPlay:spawnControl(), unable to get theater building object.")
+		printf("Error in TheaterManagerScreenPlay:spawnControl(), unable to get theater building object.\n")
 		return nil
 	end
 
@@ -225,7 +225,7 @@ function TheaterManagerScreenPlay:spawnControl(pPlayer)
 	local pCell = BuildingObject(pTheater):getNamedCell("theater")
 
 	if (pCell == nil) then
-		printLuaError("TheaterManagerScreenPlay:spawnControl(), unable to find main theater cell.")
+		printf("Error in TheaterManagerScreenPlay:spawnControl(), unable to find main theater cell.\n")
 		return nil
 	end
 
@@ -284,14 +284,14 @@ function TheaterManagerScreenPlay:startAudition(pPlayer)
 	local pTheater = self:getTheaterBuilding(pPlayer)
 
 	if (pTheater == nil) then
-		printLuaError("TheaterManagerScreenPlay:startAudition(), unable to get theater building object.")
+		printf("Error in TheaterManagerScreenPlay:startAudition(), unable to get theater building object.\n")
 		return
 	end
 
 	local pCell = BuildingObject(pTheater):getNamedCell("theater")
 
 	if (pCell == nil) then
-		printLuaError("TheaterManagerScreenPlay:startAudition(), unable to find main theater cell.")
+		printf("Error in TheaterManagerScreenPlay:startAudition(), unable to find main theater cell.\n")
 		return
 	end
 
@@ -301,7 +301,7 @@ function TheaterManagerScreenPlay:startAudition(pPlayer)
 	local pControl = self:spawnControl(pPlayer)
 
 	if (pControl == nil) then
-		printLuaError("TheaterManagerScreenPlay:startAudition(), unable to create control object.")
+		printf("Error in TheaterManagerScreenPlay:startAudition(), unable to create control object.\n")
 		return
 	end
 
@@ -314,7 +314,7 @@ function TheaterManagerScreenPlay:startAudition(pPlayer)
 	local pAuditionArea = spawnActiveArea(SceneObject(pTheater):getZoneName(), "object/active_area.iff", SceneObject(pControl):getWorldPositionX(), SceneObject(pControl):getWorldPositionZ(), SceneObject(pControl):getWorldPositionY(), 10, SceneObject(pCell):getObjectID())
 
 	if (pAuditionArea == nil) then
-		printLuaError("TheaterManagerScreenPlay:startAudition, unable to create activeArea.")
+		printf("Error in TheaterManagerScreenPlay:startAudition, unable to create activeArea.\n")
 		return
 	end
 
@@ -335,7 +335,7 @@ function TheaterManagerScreenPlay:spawnJudges(pTheater)
 	local pCell = BuildingObject(pTheater):getNamedCell("theater")
 
 	if (pCell == nil) then
-		printLuaError("TheaterManagerScreenPlay:spawnJudges(), unable to find main theater cell.")
+		printf("Error in TheaterManagerScreenPlay:spawnJudges(), unable to find main theater cell.\n")
 		return
 	end
 
@@ -345,7 +345,7 @@ function TheaterManagerScreenPlay:spawnJudges(pTheater)
 	local pControl = self:getControl(pTheater)
 
 	if (pControl == nil) then
-		printLuaError("TheaterManagerScreenPlay:spawnJudges(), unable to find control object.")
+		printf("Error in TheaterManagerScreenPlay:spawnJudges(), unable to find control object.\n")
 		return
 	end
 
@@ -470,7 +470,7 @@ function TheaterManagerScreenPlay:runAuditionPhase(pControl)
 	local pJudge = getSceneObject(judgeID)
 
 	if (pJudge == nil) then
-		printLuaError("Error finding judge in TheaterManagerScreenPlay:runAuditionPhase().")
+		printf("Error finding judge in TheaterManagerScreenPlay:runAuditionPhase()\n")
 		return
 	end
 
@@ -481,7 +481,7 @@ function TheaterManagerScreenPlay:runAuditionPhase(pControl)
 		expectedPerformance = self:getExpectedPerformance(pPlayer, auditionType)
 
 		if expectedPerformance == nil then
-			printLuaError("No valid performance found in TheaterManagerScreenPlay:runAuditionPhase().")
+			printf("No valid performance found in TheaterManagerScreenPlay:runAuditionPhase()\n")
 			return
 		elseif auditionType == 1 then
 			performanceName = self.dances[expectedPerformance]
@@ -554,7 +554,7 @@ function TheaterManagerScreenPlay:getExpectedPerformance(pPlayer, type)
 	elseif (type == 3) then
 		return getRandomNumber(self.flourishes)
 	else
-		printLuaError("Invalid audition type in TheaterManagerScreenPlay:getExpectedPerformance().")
+		printf("Invalid audition type in TheaterManagerScreenPlay:getExpectedPerformance() \n")
 		return 0
 	end
 end
@@ -1002,7 +1002,7 @@ function TheaterManagerScreenPlay:beginPerformance(pPlayer)
 	local pControl = self:spawnControl(pPlayer)
 
 	if (pControl == nil) then
-		printLuaError("TheaterManagerScreenPlay:beginPerformance(), unable to create control object.")
+		printf("Error in TheaterManagerScreenPlay:beginPerformance(), unable to create control object.\n")
 		return
 	end
 
@@ -1013,14 +1013,14 @@ function TheaterManagerScreenPlay:beginPerformance(pPlayer)
 	local pTheater = getSceneObject(theaterID)
 
 	if (pTheater == nil) then
-		printLuaError("TheaterManagerScreenPlay:beginPerformance(), unable to get theater building object.")
+		printf("Error in TheaterManagerScreenPlay:beginPerformance(), unable to get theater building object.\n")
 		return
 	end
 
 	local pCell = BuildingObject(pTheater):getNamedCell("theater")
 
 	if (pCell == nil) then
-		printLuaError("TheaterManagerScreenPlay:beginPerformance(), unable to find main theater cell.")
+		printf("Error in TheaterManagerScreenPlay:beginPerformance(), unable to find main theater cell.\n")
 		return
 	end
 
@@ -1031,7 +1031,7 @@ function TheaterManagerScreenPlay:beginPerformance(pPlayer)
 	local pPerformanceArea = spawnActiveArea(SceneObject(pCell):getZoneName(), "object/active_area.iff", SceneObject(pControl):getWorldPositionX(), SceneObject(pControl):getWorldPositionZ(), SceneObject(pControl):getWorldPositionY(), 10, SceneObject(pCell):getObjectID())
 
 	if (pPerformanceArea == nil) then
-		printLuaError("TheaterManagerScreenPlay:beginPerformance, unable to create activeArea.")
+		printf("Error in TheaterManagerScreenPlay:beginPerformance, unable to create activeArea.\n")
 		return
 	end
 
@@ -1091,14 +1091,14 @@ function TheaterManagerScreenPlay:spawnAudienceWave(pControl)
 	local pTheater = self:getTheaterBuilding(pPlayer)
 
 	if (pTheater == nil) then
-		printLuaError("TheaterManagerScreenPlay:spawnAudienceWave(), unable to get theater building object.")
+		printf("Error in TheaterManagerScreenPlay:spawnAudienceWave(), unable to get theater building object.\n")
 		return
 	end
 
 	local pCell = BuildingObject(pTheater):getNamedCell("theater")
 
 	if (pCell == nil) then
-		printLuaError("TheaterManagerScreenPlay:spawnAudienceWave(), unable to find main theater cell.")
+		printf("Error in TheaterManagerScreenPlay:spawnAudienceWave(), unable to find main theater cell.\n")
 		return
 	end
 
@@ -1283,7 +1283,7 @@ function TheaterManagerScreenPlay:determineAudienceInterests(pPlayer)
 	local performTable
 
 	if (curSeries == 0) then
-		printLuaError("TheaterManagerScreenPlay:determineAudienceInterests(), invalid series type.")
+		printf("Error in TheaterManagerScreenPlay:determineAudienceInterests(), invalid series type.\n")
 		return
 	elseif (curSeries == 1)	then
 		performTable = self.dances
@@ -1314,7 +1314,7 @@ function TheaterManagerScreenPlay:getRandomInterest(type, pPlayer, controlID)
 	local performTable
 
 	if (curSeries == 0) then
-		printLuaError("TheaterManagerScreenPlay:getRandomInterest(), invalid series type.")
+		printf("Error in TheaterManagerScreenPlay:getRandomInterest(), invalid series type.\n")
 		return
 	elseif (curSeries == 1)	then
 		performTable = self.dances
@@ -1375,7 +1375,7 @@ function TheaterManagerScreenPlay:handleStartPerformance(pControl)
 	local pTheater = self:getTheaterBuilding(pPlayer)
 
 	if (pTheater == nil) then
-		printLuaError("TheaterManagerScreenPlay:handleStartPerformance(), unable to get theater building object.")
+		printf("Error in TheaterManagerScreenPlay:handleStartPerformance(), unable to get theater building object.\n")
 		return
 	end
 

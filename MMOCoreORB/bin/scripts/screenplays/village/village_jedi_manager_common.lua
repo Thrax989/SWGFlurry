@@ -157,7 +157,7 @@ function VillageJediManagerCommon.addToActiveQuestList(pPlayer)
 	if (not questMap:hasMapRow(playerID)) then
 		questMap:addMapRow(playerID, tostring(os.time()))
 	else
-		printLuaError("VillageJediManagerCommon.addToActiveQuestList, attempting to add existing player " .. SceneObject(pPlayer):getCustomObjectName() .. " to active quest list.")
+		printf("Error in VillageJediManagerCommon.addToActiveQuestList, attempting to add existing player " .. SceneObject(pPlayer):getCustomObjectName() .. " to active quest list.\n")
 	end
 end
 

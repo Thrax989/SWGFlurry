@@ -24,28 +24,28 @@ function QuestSpawner:createQuestSpawner(screenplayName, dataTableName, spawnLis
 	local sPlay = _G[screenplayName]
 
 	if (sPlay == nil) then
-		printLuaError("QuestSpawner:createQuestSpawner, invalid screenplay name.")
+		printf("Error in QuestSpawner:createQuestSpawner, invalid screenplay name. \n")
 		return
 	end
 
 	local dataTable = sPlay[dataTableName]
 
 	if (dataTable == nil) then
-		printLuaError("QuestSpawner:createQuestSpawner, unable to find data table " .. dataTableName .. " in screenplay " .. screenplayName)
+		printf("Error in QuestSpawner:createQuestSpawner, unable to find data table " .. dataTableName .. " in screenplay " .. screenplayName .. ".\n")
 		return
 	end
 
 	local spawnList = sPlay[spawnListName]
 
 	if (spawnList == nil) then
-		printLuaError("QuestSpawner:createQuestSpawner, unable to find spawn list table " .. spawnList .. " in screenplay " .. screenplayName)
+		printf("Error in QuestSpawner:createQuestSpawner, unable to find spawn list table " .. spawnList .. " in screenplay " .. screenplayName .. ".\n")
 		return
 	end
 
 	local pSpawner = spawnSceneObject(planet, "object/tangible/spawning/quest_spawner.iff", xLoc, zLoc, yLoc, cellID, 0)
 
 	if (pSpawner == nil) then
-		printLuaError("QuestSpawner:createQuestSpawner, unable to create spawner object.")
+		printf("Error in QuestSpawner:createQuestSpawner, unable to create spawner object.\n")
 		return
 	end
 
@@ -81,14 +81,14 @@ function QuestSpawner:doQuestSpawnerPulse(pSpawner)
 	local sPlay = _G[screenplayName]
 
 	if (sPlay == nil) then
-		printLuaError("QuestSpawner:doQuestSpawnerPulse, invalid screenplay name.")
+		printf("Error in QuestSpawner:doQuestSpawnerPulse, invalid screenplay name. \n")
 		return
 	end
 
 	local dataTable = sPlay[dataTableName]
 
 	if (dataTable == nil) then
-		printLuaError("QuestSpawner:doQuestSpawnerPulse, unable to find data table " .. dataTableName .. " in screenplay " .. screenplayName)
+		printf("Error in QuestSpawner:doQuestSpawnerPulse, unable to find data table " .. dataTableName .. " in screenplay " .. screenplayName .. ".\n")
 		return
 	end
 
@@ -130,21 +130,21 @@ function QuestSpawner:createSpawn(pSpawner)
 	local sPlay = _G[screenplayName]
 
 	if (sPlay == nil) then
-		printLuaError("QuestSpawner:createSpawn, invalid screenplay name.")
+		printf("Error in QuestSpawner:createSpawn, invalid screenplay name. \n")
 		return
 	end
 
 	local spawnList = sPlay[spawnListName]
 
 	if (spawnList == nil) then
-		printLuaError("QuestSpawner:createSpawn, unable to find spawn list table " .. spawnListName .. " in screenplay " .. screenplayName)
+		printf("Error in QuestSpawner:createSpawn, unable to find spawn list table " .. spawnListName .. " in screenplay " .. screenplayName .. ".\n")
 		return
 	end
 
 	local dataTable = sPlay[dataTableName]
 
 	if (dataTable == nil) then
-		printLuaError("QuestSpawner:createSpawn, unable to find data table " .. dataTableName .. " in screenplay " .. screenplayName)
+		printf("Error in QuestSpawner:createSpawn, unable to find data table " .. dataTableName .. " in screenplay " .. screenplayName .. ".\n")
 		return
 	end
 

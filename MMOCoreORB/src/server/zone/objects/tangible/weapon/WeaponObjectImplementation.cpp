@@ -20,6 +20,7 @@
 #include "server/zone/ZoneProcessServer.h"
 
 
+
 void WeaponObjectImplementation::initializeTransientMembers() {
 	TangibleObjectImplementation::initializeTransientMembers();
 
@@ -609,13 +610,13 @@ void WeaponObjectImplementation::updateCraftingValues(CraftingValues* values, bo
 	setMinDamage(MAX(values->getCurrentValue("mindamage"), 0));
 	setMaxDamage(MAX(values->getCurrentValue("maxdamage"), 0));
 
-	setAttackSpeed(values->getCurrentValue("attackspeed"));
-	setHealthAttackCost((int)values->getCurrentValue("attackhealthcost"));
-	setActionAttackCost((int)values->getCurrentValue("attackactioncost"));
-	setMindAttackCost((int)values->getCurrentValue("attackmindcost"));
+	setAttackSpeed(MAX(values->getCurrentValue("attackspeed"), 1));
+	setHealthAttackCost(MAX((int)values->getCurrentValue("attackhealthcost"), 0));
+	setActionAttackCost(MAX((int)values->getCurrentValue("attackactioncost"), 0));
+	setMindAttackCost(MAX((int)values->getCurrentValue("attackmindcost"), 0));
 
 	if (isJediWeapon()) {
-		setForceCost(Math::getPrecision(values->getCurrentValue("forcecost"), 1));
+		setForceCost((int)values->getCurrentValue("forcecost"));
 		setBladeColor(31);
 	}
 
@@ -727,6 +728,29 @@ String WeaponObjectImplementation::repairAttempt(int repairChance) {
 void WeaponObjectImplementation::decay(CreatureObject* user) {
 	if (_this.getReferenceUnsafeStaticCast() == user->getSlottedObject("default_weapon") || user->isAiAgent() || hasAntiDecayKit()) {
 		return;
+	} else if (isJediWeapon() && hasAntiDecayKit()) {
+		ManagedReference<SceneObject*> saberInv = getSlottedObject("saber_inv");
+		if (saberInv == NULL)
+			return;
+		for (int i = 0; i < saberInv->getContainerObjectsSize(); i++) {
+			ManagedReference<LightsaberCrystalComponent*> crystal = saberInv->getContainerObject(i).castTo<LightsaberCrystalComponent*>();
+			SceneObject* inventory = user->getSlottedObject("inventory");
+
+			if (crystal != NULL) {
+				if (crystal->getMinimumDamage() > 50 || crystal->getMaximumDamage() < 0) {
+					Locker locker(crystal);
+					crystal->setMinimumDamage(0);
+					crystal->setMaximumDamage(0);
+					crystal->setAttackSpeed(0);
+					crystal->setSacHealth(0);
+					crystal->setSacAction(0);
+					crystal->setSacMind(0);
+					crystal->setWoundChance(0);
+					crystal->setForceCost(0);
+				}
+			}
+		}
+		return;
 	}
 
 	int roll = System::random(100);
@@ -747,9 +771,21 @@ void WeaponObjectImplementation::decay(CreatureObject* user) {
 			// TODO: is this supposed to be every crystal, or random crystal(s)?
 			for (int i = 0; i < saberInv->getContainerObjectsSize(); i++) {
 				ManagedReference<LightsaberCrystalComponent*> crystal = saberInv->getContainerObject(i).castTo<LightsaberCrystalComponent*>();
+				SceneObject* inventory = user->getSlottedObject("inventory");
 
 				if (crystal != NULL) {
 					crystal->inflictDamage(crystal, 0, 1, true, true);
+					if (crystal->getMinimumDamage() > 50 || crystal->getMaximumDamage() < 0) {
+						Locker locker(crystal);
+						crystal->setMinimumDamage(0);
+						crystal->setMaximumDamage(0);
+						crystal->setAttackSpeed(0);
+						crystal->setSacHealth(0);
+						crystal->setSacAction(0);
+						crystal->setSacMind(0);
+						crystal->setWoundChance(0);
+						crystal->setForceCost(0);
+					}
 				}
 			}
 		} else {

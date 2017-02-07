@@ -699,7 +699,7 @@ function FsCrafting4:setConnectionCallback(pPlayer, pSui, eventIndex, args)
 	local pPageData = LuaSuiBoxPage(pSui):getSuiPageData()
 
 	if (pPageData == nil) then
-		printLuaError("FsCrafting4:setConnectionCallback, pageData is nil.")
+		printf("Error in FsCrafting4:setConnectionCallback, pageData is nil.\n")
 		return
 	end
 

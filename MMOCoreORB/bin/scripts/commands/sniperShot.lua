@@ -64,4 +64,3 @@ SniperShotCommand = {
 }
 
 AddCommand(SniperShotCommand)
-

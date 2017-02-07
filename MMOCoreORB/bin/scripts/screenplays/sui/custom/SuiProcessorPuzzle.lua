@@ -143,7 +143,7 @@ function SuiProcessorPuzzle:defaultCallback(pPlayer, pSui, eventIndex, ...)
 	local pPageData = LuaSuiBoxPage(pSui):getSuiPageData()
 
 	if (pPageData == nil) then
-		printLuaError("SuiProcessorPuzzle:defaultCallback, pageData is nil.")
+		printf("Error in SuiProcessorPuzzle:defaultCallback, pageData is nil.\n")
 		return
 	end
 
@@ -159,7 +159,7 @@ function SuiProcessorPuzzle:defaultCallback(pPlayer, pSui, eventIndex, ...)
 	local pPuzzle = getSceneObject(puzzleID)
 
 	if (pPuzzle == nil) then
-		printLuaError("SuiProcessorPuzzle:defaultCallback, pPuzzle nil.")
+		printf("Error in SuiProcessorPuzzle:defaultCallback, pPuzzle nil.\n")
 		return
 	end
 

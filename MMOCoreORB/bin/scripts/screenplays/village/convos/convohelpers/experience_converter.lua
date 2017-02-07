@@ -107,7 +107,7 @@ function ExperienceConverter:sendConversionSUI(pPlayer, pNpc, experienceType)
 	local conversionList = self.xpConversion[experienceType]
 
 	if (conversionList == nil) then
-		printLuaError("ExperienceConverter:sendConversionSUI, could not grab xp conversion table for type " .. experienceType)
+		printf("Error in ExperienceConverter:sendConversionSUI, could not grab xp conversion table for type " .. experienceType .. "\n")
 		return
 	end
 

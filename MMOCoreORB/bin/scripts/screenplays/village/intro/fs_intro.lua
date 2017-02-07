@@ -52,7 +52,7 @@ function FsIntro:startStepDelay(pPlayer, step)
 	local stepData = self.stepDelay[step]
 
 	if (stepData == nil) then
-		printLuaError("FsIntro:startStepDelay, invalid step data.")
+		printf("Error in FsIntro:startStepDelay, invalid step data.\n")
 		return
 	end
 

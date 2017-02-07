@@ -98,4 +98,3 @@ SaberPolearmDervish2Command = {
 }
 
 AddCommand(SaberPolearmDervish2Command)
-

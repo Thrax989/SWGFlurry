@@ -138,7 +138,7 @@ function FsCounterStrike:spawnCamps()
 		local pTheater = spawnSceneObject("dathomir", "object/static/structure/nobuild/nobuild_32.iff", campLoc[2], campLoc[3], campLoc[4], 0, 0)
 
 		if (pTheater == nil) then
-			printLuaError("Error creating theater in FsCounterStrike:spawnCamps().")
+			printf("Error creating theater in FsCounterStrike:spawnCamps()\n")
 			return
 		end
 
@@ -281,7 +281,7 @@ function FsCounterStrike:doPhaseChangeFail(pPlayer)
 	if (not self:isOnQuest(pPlayer)) then
 		return
 	end
-
+	
 	CreatureObject(pPlayer):sendSystemMessage("@fs_quest_village:combat_quest_failed_timeout")
 	self:resetPlayer(pPlayer)
 end
@@ -290,7 +290,7 @@ function FsCounterStrike:completeQuest(pPlayer, teamComplete)
 	if (not self:isOnEscort(pPlayer)) then
 		return
 	end
-
+	
 	if (QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ENSURE_CAPTURE)) then
 		QuestManager.completeQuest(pPlayer, QuestManager.quests.FS_CS_ENSURE_CAPTURE)
 	end
@@ -326,12 +326,6 @@ function FsCounterStrike:completeQuest(pPlayer, teamComplete)
 
 		if (pBuffItem == nil) then
 			CreatureObject(pPlayer):sendSystemMessage("Error: Unable to generate item.")
-		else
-			local buffItem = LuaFsBuffItem(pBuffItem)
-			buffItem:setBuffAttribute(6)
-			buffItem:setReuseTime(345600000)
-			buffItem:setBuffValue(900)
-			buffItem:setBuffDuration(5400000)
 		end
 
 		CreatureObject(pPlayer):sendSystemMessage("@fs_quest_village:teamwork_bonus")

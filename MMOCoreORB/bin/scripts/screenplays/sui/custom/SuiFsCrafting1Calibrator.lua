@@ -73,7 +73,7 @@ function SuiFsCrafting1Calibrator:calibratorCallback(pPlayer, pSui, eventIndex, 
 	local pTerminal = getSceneObject(terminalID)
 
 	if (pTerminal == nil) then
-		printLuaError("SuiFsCrafting1Calibrator:calibratorCallback, pTerminal nil.")
+		printf("Error in SuiFsCrafting1Calibrator:calibratorCallback, pTerminal nil.\n")
 		return
 	end
 

@@ -290,4 +290,3 @@ void CampTerminalMenuComponent::awardCampExperience(PlayerObject* ghost,
 		CampSiteActiveArea* campArea) const {
 
 }
-

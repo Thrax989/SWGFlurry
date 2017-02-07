@@ -266,7 +266,7 @@ function FsCsBaseControl:erectShield(pTheater)
 	local pActiveArea = getSceneObject(shieldID)
 
 	if (pActiveArea ~= nil) then
-		printLuaError("Error generating shield in FsCsBaseControl:erectShield, existing shield found.")
+		printf("Error generating shield in FsCsBaseControl:erectShield, existing shield found.\n")
 		return
 	end
 

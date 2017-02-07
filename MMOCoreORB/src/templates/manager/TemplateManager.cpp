@@ -93,6 +93,7 @@
 #include "templates/tangible/FireworkObjectTemplate.h"
 #include "templates/tangible/GamblingTerminalTemplate.h"
 #include "templates/tangible/InstrumentObjectTemplate.h"
+#include "templates/tangible/LightsaberCrystalObjectTemplate.h"
 #include "templates/tangible/LiveSampleTemplate.h"
 #include "templates/tangible/LootkitObjectTemplate.h"
 #include "templates/tangible/LootSchematicTemplate.h"
@@ -568,6 +569,7 @@ void TemplateManager::registerTemplateObjects() {
 	templateFactory.registerObject<RepairToolTemplate>(SharedObjectTemplate::REPAIRTOOL);
 	templateFactory.registerObject<VehicleCustomKitTemplate>(SharedObjectTemplate::VEHICLECUSTOMKIT);
 	templateFactory.registerObject<DroidCustomKitTemplate>(SharedObjectTemplate::DROIDCUSTOMKIT);
+	templateFactory.registerObject<LightsaberCrystalObjectTemplate>(SharedObjectTemplate::LIGHTSABERCRYSTAL);
 	templateFactory.registerObject<DnaSampleTemplate>(SharedObjectTemplate::DNASAMPLE);
 	templateFactory.registerObject<DroidComponentTemplate>(SharedObjectTemplate::DROIDCOMPONENT);
 	templateFactory.registerObject<DroidCraftingModuleTemplate>(SharedObjectTemplate::DROIDMODULECRAFTING);
@@ -714,6 +716,7 @@ void TemplateManager::registerGlobals() {
 	luaTemplatesInstance->setGlobalInt("CRAFTINGSTATION", SharedObjectTemplate::CRAFTINGSTATION);
 	luaTemplatesInstance->setGlobalInt("RESOURCESPAWN", SharedObjectTemplate::RESOURCESPAWN);
 	luaTemplatesInstance->setGlobalInt("ARMOROBJECT", SharedObjectTemplate::ARMOROBJECT);
+	luaTemplatesInstance->setGlobalInt("LIGHTSABERCRYSTAL", SharedObjectTemplate::LIGHTSABERCRYSTAL);
 	luaTemplatesInstance->setGlobalInt("DEED", SharedObjectTemplate::DEED);
 	luaTemplatesInstance->setGlobalInt("STRUCTUREDEED", SharedObjectTemplate::STRUCTUREDEED);
 	luaTemplatesInstance->setGlobalInt("VEHICLEDEED", SharedObjectTemplate::VEHICLEDEED);
