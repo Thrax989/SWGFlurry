@@ -15,6 +15,7 @@
 #include "server/zone/ZoneServer.h"
 #include "LootGroupMap.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
+#include "server/zone/objects/tangible/component/lightsaber/LightsaberCrystalComponent.h"
 
 void LootManagerImplementation::initialize() {
 	info("Loading configuration.");
@@ -158,6 +159,20 @@ bool LootManagerImplementation::loadConfigData() {
 	modsTable = lua->getGlobalObject("lootableHeavyWeaponStatMods");
 	loadLootableMods( &modsTable, &lootableHeavyWeaponMods );
 
+	LuaObject luaObject = lua->getGlobalObject("jediCrystalStats");
+	LuaObject crystalTable = luaObject.getObjectField("lightsaber_module_force_crystal");
+	CrystalData* crystal = new CrystalData();
+	crystal->readObject(&crystalTable);
+	crystalData.put("lightsaber_module_force_crystal", crystal);
+	crystalTable.pop();
+
+	crystalTable = luaObject.getObjectField("lightsaber_module_krayt_dragon_pearl");
+	crystal = new CrystalData();
+	crystal->readObject(&crystalTable);
+	crystalData.put("lightsaber_module_krayt_dragon_pearl", crystal);
+	crystalTable.pop();
+	luaObject.pop();
+
 	delete lua;
 
 	return true;
@@ -243,6 +258,7 @@ int LootManagerImplementation::calculateLootCredits(int level) {
 }
 
 TangibleObject* LootManagerImplementation::createLootObject(LootItemTemplate* templateObject, int level, bool maxCondition) {
+	int uncappedLevel = level;
 
 	if(level < 1)
 		level = 1;
@@ -305,6 +321,13 @@ TangibleObject* LootManagerImplementation::createLootObject(LootItemTemplate* te
 
 			exceptionalLooted.increment();
 		}
+	}
+
+	if (prototype->isLightsaberCrystalObject()) {
+		LightsaberCrystalComponent* crystal = cast<LightsaberCrystalComponent*> (prototype.get());
+
+		if (crystal != NULL)
+			crystal->setItemLevel(uncappedLevel * excMod);
 	}
 
 	String subtitle;
