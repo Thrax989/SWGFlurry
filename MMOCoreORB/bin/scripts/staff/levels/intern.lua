@@ -1,7 +1,7 @@
 intern = {
 	level = 1,
-	name = "Flurry",
-	tag = "Flurry",
+	name = "intern",
+	tag = "SWGEmu-Intern",
 	skills = {
 		"admin_base",
 		"admin_intern_01",

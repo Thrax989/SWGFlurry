@@ -7,7 +7,7 @@ GoToDathomir = GoToLocation:new {
 	taskName = "GoToDathomir",
 	-- GoToLocation properties
 	waypointDescription = "@quest/force_sensitive/intro:goto_dath_sum",
-	spawnPoint = { x = 5239, y = -4058 },
+	spawnPoint = { x = 5306, y = -4145 },
 	spawnPlanet = "dathomir",
 	spawnRadius = 128,
 	onFailedSpawn = nil,
@@ -46,7 +46,7 @@ function GoToDathomir:onSuccessfulSpawn(pPlayer)
 	CreatureObject(pPlayer):sendSystemMessage("@quest/force_sensitive/intro:force_sensitive")
 
 	if (not PlayerObject(pGhost):isJedi()) then
-		PlayerObject(pGhost):setJediState(2)
+		PlayerObject(pGhost):setJediState(1)
 	end
 
 	awardSkill(pPlayer, "force_title_jedi_novice")

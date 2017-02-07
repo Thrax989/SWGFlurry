@@ -50,13 +50,15 @@ object_tangible_medicine_crafted_medpack_enhance_constitution_d = object_tangibl
 	duration = 1800,
 	attribute = 2,
 
+	factoryCrateSize = 50,
+
 	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 1},
 	experimentalProperties = {"XX", "XX", "OQ", "PE", "OQ", "UT", "DR", "OQ", "OQ", "PE", "XX"},
 	experimentalWeights = {1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1},
 	experimentalGroupTitles = {"null", "null", "exp_effectiveness", "exp_charges", "exp_effectiveness", "expEaseOfUse", "null"},
 	experimentalSubGroupTitles = {"null", "null", "power", "charges", "duration", "skillmodmin", "hitpoints"},
-	experimentalMin = {0, 0, 300, 15, 8000, 100, 1000},
-	experimentalMax = {0, 0, 800, 40, 14200, 70, 1000},
+	experimentalMin = {0, 0, 40, 5, 1200, 100, 1000},
+	experimentalMax = {0, 0, 800, 25, 14200, 70, 1000},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 4},
 }

@@ -29,8 +29,7 @@ admin_player_management_01 = {
 		"setFactionStanding",
 		"setRank",
 		"setTEF",
-		"showFactionInformation",
-		"gmPlayClientEffect"
+		"showFactionInformation"
 	},
 	skillModifiers = {},
 	schematicsGranted = {},
