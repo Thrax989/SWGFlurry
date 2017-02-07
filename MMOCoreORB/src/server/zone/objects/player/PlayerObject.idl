@@ -927,9 +927,7 @@ class PlayerObject extends IntangibleObject {
 	 * @post { }
 	 */
 	public native void notifyOnline();
-
-	public native int numSpecificSkills(CreatureObject 	creature, final string reqSkillName);
-
+	
 	public native void doDigest(int fillingReduction);
 	
 	@dirty

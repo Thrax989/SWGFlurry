@@ -4,14 +4,6 @@
  *  Created on: 16/01/2010
  *      Author: victor
  */
- 
- /*
- * PLEASE DO NOT STEAL OUR WORK
- * ASK BEFOR USING
- * Contact Me Here http://projectphoenix.com.shivtr.com/
- * Modified on: 9/21/2016
- * Authors: Kurdtkobain
- */
 
 #ifndef COMMANDSNEW_H_
 #define COMMANDSNEW_H_
@@ -845,7 +837,6 @@
 #include "InspacereloadCommand.h"
 #include "InspacerrCommand.h"
 #include "RequestSpaceTrainerCommand.h"
-#include "setPvp.h"
 
 
 

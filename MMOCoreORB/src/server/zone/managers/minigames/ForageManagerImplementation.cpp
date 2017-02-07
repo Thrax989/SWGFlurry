@@ -20,8 +20,8 @@ void ForageManagerImplementation::startForaging(CreatureObject* player, int fora
 	Locker playerLocker(player);
 
 	int actionCostForage = 50;
-	int mindCostShellfish = 50;
-	int actionCostShellfish =  50;
+	int mindCostShellfish = 100;
+	int actionCostShellfish =  100;
 
 	//Check if already foraging.
 	Reference<Task*> pendingForage = player->getPendingTask("foraging");
@@ -178,14 +178,14 @@ void ForageManagerImplementation::finishForaging(CreatureObject* player, int for
 		chance = (int)(15 + (skillMod * 0.6));
 		break;
 	default:
-		skillMod = 40;
-		chance = (int)(16 + (skillMod * 0.6));
+		skillMod = 20;
+		chance = (int)(15 + (skillMod * 0.6));
 		break;
 	}
 
 	//Determine if player finds an item.
-	if (chance > 125) //There could possibly be +foraging skill tapes.
-		chance = 125;
+	if (chance > 100) //There could possibly be +foraging skill tapes.
+		chance = 100;
 
 	if (System::random(80) > chance) {
 		if (forageType == ForageManager::SHELLFISH)
@@ -392,7 +392,7 @@ bool ForageManagerImplementation::forageGiveResource(CreatureObject* player, flo
 		}
 	}
 
-	int quantity = System::random(30) + 300;
+	int quantity = System::random(30) + 10;
 	resourceManager->harvestResourceToPlayer(player, resource, quantity);
 	return true;
 }

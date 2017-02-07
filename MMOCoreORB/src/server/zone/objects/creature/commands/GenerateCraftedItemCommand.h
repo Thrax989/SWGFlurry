@@ -143,7 +143,7 @@ public:
 							//float newValue = fabs(maxValue-minValue)*((float)quality/100.f) + MAX(minValue, maxValue);
 							//craftingValues->setCurrentValue(subtitle, newValue);
 
-							craftingValues->setCurrentPercentage(subtitle, (float)quality/100.f, 50.f);
+							craftingValues->setCurrentPercentage(subtitle, (float)quality/100.f, 5.f);
 						}
 					}
 				}
@@ -156,26 +156,14 @@ public:
 
 			prototype->createChildObjects();
 
-			// Crafter Name
-			ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-			if (ghost->getAdminLevel() == 16) {
-				String name = player->getFirstName();
-				prototype->setCraftersName(name);
-			} else {
-				String name = "Generated with GenerateC Command";
-				prototype->setCraftersName(name);
-			}
+			// Set Crafter name and generate serial number
+			String name = "Generated with GenerateC Command";
+			prototype->setCraftersName(name);
 
-			// Object Name
 			StringBuffer customName;
-			if (ghost->getAdminLevel() >= 16) {
-				customName << prototype->getDisplayedName() << " \\#00CC00(" << player->getFirstName() << ")\\#FFFFFF";
-			} else {
-				customName << prototype->getDisplayedName() <<  " (System Generated)";
-			}
+			customName << prototype->getDisplayedName() <<  " (System Generated)";
 			prototype->setCustomObjectName(customName.toString(), false);
 
-			// Serial Number
 			String serial = craftingManager->generateSerial();
 			prototype->setSerialNumber(serial);
 

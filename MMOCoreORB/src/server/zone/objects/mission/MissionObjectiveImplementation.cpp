@@ -207,11 +207,11 @@ void MissionObjectiveImplementation::awardReward() {
 		players.add(owner);
 	}
 
-	int divisor = players.size();
+	int divisor = mission->getRewardCreditsDivisor();
 	bool expanded = false;
 
-	if (1 > divisor) {
-		divisor = 1;
+	if (playerCount > divisor) {
+		divisor = playerCount;
 		expanded = true;
 	}
 

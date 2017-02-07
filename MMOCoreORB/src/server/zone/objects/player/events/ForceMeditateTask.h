@@ -35,10 +35,9 @@ public:
 			if (!player->isMeditating())
 				return;
 
-			player->playEffect("clienteffect/pl_force_meditate_self.cef", "");
- 			player->playEffect("clienteffect/pl_force_absorb_hit.cef");
+
 			if (fmeditateTask != NULL)
-				fmeditateTask->reschedule(15000);
+				fmeditateTask->reschedule(5000);
 
 		} catch (Exception& e) {
 			player->error("unreported exception caught in ForceMeditateTask::activate");

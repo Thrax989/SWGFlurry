@@ -5,8 +5,6 @@
 #ifndef SETCURRENTSKILLTITLECOMMAND_H_
 #define SETCURRENTSKILLTITLECOMMAND_H_
 
-#include "server/zone/objects/scene/SceneObject.h"
-
 class SetCurrentSkillTitleCommand : public QueueCommand {
 public:
 
@@ -30,17 +28,10 @@ public:
 
 		String titleSkill = arguments.toString().toLowerCase();
 
-		if (ghost->getAdminLevel() >= 15) {
-			if (!titleSkill.isEmpty() && !creature->hasSkill(titleSkill))
-			creature->sendSystemMessage("Overriding Skill Title - God Only");
-		} else {
-			if (!titleSkill.isEmpty() && !creature->hasSkill(titleSkill))
+		if (!titleSkill.isEmpty() && !creature->hasSkill(titleSkill))
 			return GENERALERROR;
-		}
 
 		ghost->setTitle(titleSkill, true);
-		creature->sendSystemMessage("Your Title was set to: " + titleSkill);
-		//creature->playEffect("clienteffect/int_camshake_heavy.cef", "head"); no more of this nonsense plz. i will die
 
 		return SUCCESS;
 	}

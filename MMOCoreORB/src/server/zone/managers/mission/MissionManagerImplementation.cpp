@@ -139,19 +139,19 @@ void MissionManagerImplementation::handleMissionListRequest(MissionTerminal* mis
 	if (missionBag == NULL)
 		return;
 
-	int maximumNumberOfItemsInMissionBag = 20;
+	int maximumNumberOfItemsInMissionBag = 12;
 
 
 	if (enableFactionalCraftingMissions) {
-		maximumNumberOfItemsInMissionBag += 20;
+		maximumNumberOfItemsInMissionBag += 6;
 	}
 
 	if (enableFactionalReconMissions) {
-		maximumNumberOfItemsInMissionBag += 20;
+		maximumNumberOfItemsInMissionBag += 6;
 	}
 
 	if (enableFactionalEntertainerMissions) {
-		maximumNumberOfItemsInMissionBag += 20; //Both musician and dancer.
+		maximumNumberOfItemsInMissionBag += 12; //Both musician and dancer.
 	}
 
 	while (missionBag->getContainerObjectsSize() < maximumNumberOfItemsInMissionBag) {
@@ -201,7 +201,7 @@ void MissionManagerImplementation::handleMissionAccept(MissionTerminal* missionT
 	}
 
 	//Limit to two missions (only one of them can be a bounty mission)
-	if (missionCount >= 10 || (hasBountyMission && mission->getTypeCRC() == MissionTypes::BOUNTY)) {
+	if (missionCount >= 2 || (hasBountyMission && mission->getTypeCRC() == MissionTypes::BOUNTY)) {
 		StringIdChatParameter stringId("mission/mission_generic", "too_many_missions");
 		player->sendSystemMessage(stringId);
 		return;
@@ -704,24 +704,12 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
 	else
 		messageDifficulty = "_hard";
 
-	String groupSuffix;
-
-	if (lairTemplateObject->getMobType() == LairTemplate::NPC){
+	if (lairTemplateObject->getMobType() == LairTemplate::NPC)
 		missionType = "_npc";
-		groupSuffix = " camp.";
-	} else {
- 		missionType = "_creature";
-		groupSuffix = " lair.";
-	}
-		
-	VectorMap<String, int>* mobiles = lairTemplateObject->getMobiles();
-	String mobileName = "mysterious";
-	
-	if (mobiles->size() > 0) {
-		mobileName = mobiles->elementAt(0).getKey();
-	}
+	else
+		missionType = "_creature";
 
-	mission->setMissionTitle("CL" + String::valueOf(diffDisplay), " Destroy the " + mobileName.replaceAll("_", " ") + groupSuffix);
+	mission->setMissionTitle("mission/mission_destroy_neutral" + messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "t");
 	mission->setMissionDescription("mission/mission_destroy_neutral" +  messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "d");
 
 	switch (faction) {

@@ -10,11 +10,9 @@
 #include "server/zone/Zone.h"
 #include "server/zone/ZoneServer.h"
 #include "server/zone/managers/creature/CreatureManager.h"
-#include "server/zone/objects/tangible/TangibleObject.h"
 #include "templates/mobile/LairTemplate.h"
 #include "server/zone/managers/creature/CreatureTemplateManager.h"
 #include "server/zone/managers/structure/StructureManager.h"
-#include "server/zone/managers/objectcontroller/ObjectController.h"
 #include "templates/tangible/SharedStructureObjectTemplate.h"
 
 class CreateSpawningElementCommand : public QueueCommand {
@@ -51,9 +49,6 @@ public:
 			creature->sendSystemMessage("Spawn: /createSpawningElement spawn IffObjectPath [x z y heading]");
 			creature->sendSystemMessage("Spawn: /createSpawningElement lair lairTemplate [level]");
 			creature->sendSystemMessage("Delete: /createSpawningElement delete oid");
-			creature->sendSystemMessage("Move: /createSpawningElement move oid");
-			creature->sendSystemMessage("Datapad: /createSpawningElement datapad oid");
-			creature->sendSystemMessage("Inventory: /createSpawningElement inventory oid");
 			return INVALIDPARAMETERS;
 		}
 
@@ -165,142 +160,6 @@ public:
 
 				uint64 objectID = object->getObjectID();
 				creature->sendSystemMessage("oid: " + String::valueOf(objectID));
-
-			} else if (action.toLowerCase() == "move") {
-
-				float x = creature->getPositionX();
-				float y = creature->getPositionY();
-				float z = creature->getPositionZ();
-
-				String chatObjectID;
-				args.getStringToken(chatObjectID);
-				uint64 oid = UnsignedLong::valueOf(chatObjectID);
-
-				ManagedReference<SceneObject*> object = zserv->getObject(oid);
-				ManagedReference<SceneObject*> parent = creature->getParent();
-
-				if (object == NULL) {
-					creature->sendSystemMessage("Error: Trying to move invalid oid.");
-					return GENERALERROR;
-				}
-
-				Locker clocker(object, creature);
-
-				object->initializePosition(x, z, y);
-				object->setDirection(creature->getDirectionW(), creature->getDirectionX(), creature->getDirectionY(), creature->getDirectionZ());
-
-				if (parent != NULL && parent->isCellObject())
-					parent->transferObject(object, -1);
-				else
-					creature->getZone()->transferObject(object, -1, true);
-
-				creature->sendSystemMessage("Object " + chatObjectID + " moved.");
-
-			} else if (action.toLowerCase() == "datapad") {
-
-				float x = creature->getPositionX();
-				float y = creature->getPositionY();
-				float z = creature->getPositionZ();
-
-				String chatObjectID;
-				args.getStringToken(chatObjectID);
-				uint64 oid = UnsignedLong::valueOf(chatObjectID);
-
-				ManagedReference<SceneObject*> object = zserv->getObject(oid);
-				//ManagedReference<SceneObject*> parent = creature->getParent();
-
-				if (object == NULL) {
-					creature->sendSystemMessage("Error: Trying to move invalid oid.");
-					return GENERALERROR;
-				}
-
-				Locker clocker(object, creature);
-
-				SceneObject* playerDatapad = creature->getSlottedObject("datapad");
-
-				ManagedReference<ObjectController*> objectController = server->getObjectController();
-				objectController->transferObject(object, playerDatapad, -1, true);
-				//ManagedReference<SceneObject*> obj = server->getObject(targID);
-				//objectController->transferObject(item, receiverInventory, -1, true)
-				//objectController->transferObject(objectToTransfer, destinationObject, transferType, true)
-
-				/*object->initializePosition(x, z, y);
-				object->setDirection(creature->getDirectionW(), creature->getDirectionX(), creature->getDirectionY(), creature->getDirectionZ());
-
-				if (parent != NULL && parent->isCellObject())
-					parent->transferObject(object, -1);
-				else
-					creature->getZone()->transferObject(object, -1, true);*/
-
-				creature->sendSystemMessage("Object " + chatObjectID + " moved.");
-
-			}else if (action.toLowerCase() == "inventory") {
-
-				float x = creature->getPositionX();
-				float y = creature->getPositionY();
-				float z = creature->getPositionZ();
-
-				String chatObjectID;
-				args.getStringToken(chatObjectID);
-				uint64 oid = UnsignedLong::valueOf(chatObjectID);
-
-				ManagedReference<SceneObject*> object = zserv->getObject(oid);
-				ManagedReference<SceneObject*> parent = creature->getParent();
-
-				if (object == NULL) {
-					creature->sendSystemMessage("Error: Trying to move invalid oid.");
-					return GENERALERROR;
-				}
-
-				Locker clocker(object, creature);
-
-				//object->initializePosition(x, z, y);
-				//object->setDirection(creature->getDirectionW(), creature->getDirectionX(), creature->getDirectionY(), creature->getDirectionZ());
-
-				SceneObject* playerInventory = creature->getSlottedObject("inventory");
-
-				//creature->getZoneServer()->getObjectController()->transferObject(object, playerInventory, -1, true);
-				ManagedReference<ObjectController*> objectController = server->getObjectController();
-				objectController->transferObject(object, playerInventory, -1, true);
-
-				/*if (parent != NULL && parent->isCellObject())
-					parent->transferObject(object, -1);
-				else
-					creature->getZone()->transferObject(object, -1, true);*/
-
-				creature->sendSystemMessage("Object " + chatObjectID + " moved.");
-
-			} else if (action.toLowerCase() == "movecc") {
-
-				float x = creature->getPositionX();
-				float y = creature->getPositionY();
-				float z = creature->getPositionZ();
-
-				String chatObjectID;
-				args.getStringToken(chatObjectID);
-				uint64 oid = UnsignedLong::valueOf(chatObjectID);
-
-				ManagedReference<SceneObject*> object = zserv->getObject(oid);
-				ManagedReference<SceneObject*> parent = creature->getParent();
-
-				if (object == NULL) {
-					creature->sendSystemMessage("Error: Trying to move invalid oid.");
-					return GENERALERROR;
-				}
-
-				Locker clocker(object, creature);
-
-				object->initializePosition(x, z, y);
-				object->setDirection(creature->getDirectionW(), creature->getDirectionX(), creature->getDirectionY(), creature->getDirectionZ());
-
-				if (parent != NULL && parent->isCellObject())
-					parent->transferObject(object, -1);
-				else
-					creature->getZone()->transferObject(object, -1, true);
-
-				object->createChildObjects();
-
-				creature->sendSystemMessage("Object " + chatObjectID + " moved.");
 
 			} else if (action.toLowerCase() == "delete") {
 

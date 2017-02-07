@@ -30,7 +30,6 @@
 #include "server/zone/objects/creature/events/SampleDeedTask.h"
 #include "server/zone/managers/crafting/labratories/Genetics.h"
 
-
 void PetDeedImplementation::loadTemplateData(SharedObjectTemplate* templateData) {
 	DeedImplementation::loadTemplateData(templateData);
 	PetDeedTemplate* deedData = dynamic_cast<PetDeedTemplate*>(templateData);
@@ -292,8 +291,8 @@ void PetDeedImplementation::updateCraftingValues(CraftingValues* values, bool fi
 	if (petTemplate != NULL) {
 		// get min CL from the template
 		int skinFactor = petTemplate->getLevel();
-		if (level > 85) {
-			level = 85;
+		if (level > 75) {
+			level = 75;
 		}
 		if (level < skinFactor) {
 			level = skinFactor;
@@ -525,7 +524,7 @@ void PetDeedImplementation::setSpecialResist(int type) {
 void PetDeedImplementation::adjustPetLevel(CreatureObject* player, CreatureObject* pet) {
 	int newLevel = calculatePetLevel();
 
-	if (newLevel < 1 || newLevel > 85) {
+	if (newLevel < 1 || newLevel > 75) {
 		player->sendSystemMessage("@bio_engineer:pet_sui_fix_error");
 		return;
 	}
@@ -541,33 +540,24 @@ bool PetDeedImplementation::adjustPetStats(CreatureObject* player, CreatureObjec
 		return false;
 	}
 
-	if (oldLevel > 85) {
-		oldLevel = 85;
+	if (oldLevel > 75) {
+		oldLevel = 75;
 	}
 
 	int ham = DnaManager::instance()->valueForLevel(DnaManager::HAM_LEVEL,oldLevel);
-	if (ham > 120000) {
-		ham = 120000;
-	}
 	health = ham;
 	action = ham;
 	mind = ham;
 	regen = DnaManager::instance()->valueForLevel(DnaManager::REG_LEVEL,oldLevel);
-	if (regen > 12000) {
-		regen = 12000;
-	}
 	float dps = DnaManager::instance()->valueForLevel(DnaManager::DPS_LEVEL,oldLevel);
-	if (dps > 1000) {
-		dps = 1000;
-	}
-	damageMin = round(dps * 2.75);
+	damageMin = round((dps * 2.0) * 0.5);
 	attackSpeed = 2.0;
-	damageMax = round(dps * 3.0);
+	damageMax = round((dps * 2.0) * 1.5);
 	chanceHit = DnaManager::instance()->valueForLevel(DnaManager::HIT_LEVEL,oldLevel);
 
 	// Adjust Armor Now
 	fortitude = DnaManager::instance()->valueForLevel(DnaManager::ARM_LEVEL,oldLevel);
-	armor = 0;
+	armor = fortitude/500;
 	float effectiveness = (int)(((fortitude - (armor * 500)) / 50) * 5);
 	if (!isSpecialResist(SharedWeaponObjectTemplate::KINETIC) && kinResist > 0)
 		kinResist = effectiveness;

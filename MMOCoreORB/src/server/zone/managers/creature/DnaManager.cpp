@@ -286,7 +286,7 @@ int DnaManager::levelForScore(int type, float value) {
 	switch(type) {
 		case HIT_LEVEL:
 			for (int i=0;i<dnaHit.size();i++) {
-				float lvminus = 0, lvplus = 50;
+				float lvminus = 0, lvplus = 3;
 
 				if (i > 0)
 					lvminus = dnaHit.get(i - 1);
@@ -304,7 +304,7 @@ int DnaManager::levelForScore(int type, float value) {
 			break;
 		case DPS_LEVEL:
 			for (int i=0;i<dnaDPS.size();i++) {
-				float lvminus = 0, lvplus = 10000;
+				float lvminus = 0, lvplus = 1000;
 
 				if (i > 0)
 					lvminus = dnaDPS.get(i - 1);
@@ -340,7 +340,7 @@ int DnaManager::levelForScore(int type, float value) {
 			break;
 		case ARM_LEVEL:
 			for (int i=0;i<dnaArmor.size();i++) {
-				float lvminus = 0, lvplus = 20000;
+				float lvminus = 0, lvplus = 2000;
 
 				if (i > 0)
 					lvminus = dnaArmor.get(i - 1);

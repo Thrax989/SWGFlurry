@@ -5,7 +5,6 @@
 #ifndef SETSPEEDCOMMAND_H_
 #define SETSPEEDCOMMAND_H_
 
-
 class SetSpeedCommand : public QueueCommand {
 public:
 
@@ -35,13 +34,8 @@ public:
 			if (speed < 0.f)
 				throw Exception();
 
-			if (speed > 150.f)
-				speed = 150.f;
-
 			if (tokenizer.hasMoreTokens())
 				duration = tokenizer.getIntToken();
-			if (duration > 10000)
-				duration = 10000;
 
 		} catch (Exception& e) {
 			creature->sendSystemMessage("SYNTAX: /setSpeed <speed> [<duration>]");

@@ -9,8 +9,7 @@
 #include "server/zone/managers/loot/LootManager.h"
 #include "server/zone/managers/crafting/CraftingManager.h"
 #include "server/zone/managers/crafting/ComponentMap.h"
-#include "server/zone/managers/object/ObjectManager.h"
-#include "server/zone/managers/skill/SkillModManager.h"
+
 
 class ObjectCommand : public QueueCommand {
 public:
@@ -68,27 +67,13 @@ public:
 
 				object->createChildObjects();
 
-				ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
-				// Set Player as Crafter
-				ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
-				//if (ghost->getAdminLevel() >= 15) {
-					String name = player->getFirstName();
-					object->setCraftersName(name);
-				/*} else {
-					//StringBuffer name;
-					//name = player->getFirstName() + " Generated with Object Command"; //find a method for this
-					String name = player->getFirstName();
-					object->setCraftersName(name);
-				}*/
+				// Set Crafter name and generate serial number
+				String name = "Generated with Object Command";
+				object->setCraftersName(name);
 
-				// Object Name
 				StringBuffer customName;
-				if (ghost->getAdminLevel() >= 15) {
-					customName << object->getDisplayedName(); //<< " \\#00CC00(" << player->getFirstName() << ")\\#FFFFFF";
-				} else {
-					//customName << object->getDisplayedName() <<  " (System Generated)";
-					customName << object->getDisplayedName() << " \\#00CC00(" << player->getFirstName() << ")\\#FFFFFF";
-				}
+				customName << object->getDisplayedName() <<  " (System Generated)";
+
 				object->setCustomObjectName(customName.toString(), false);
 
 				String serial = craftingManager->generateSerial();
@@ -232,4 +217,3 @@ public:
 };
 
 #endif //OBJECTCOMMAND_H_
-

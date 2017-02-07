@@ -96,7 +96,7 @@ void AiAgentImplementation::loadTemplateData(SharedObjectTemplate* templateData)
 }
 
 int AiAgentImplementation::calculateAttackMinDamage(int level) {
-	int minDmg = MAX(getDamageMin(), 45 + (level * 13));
+	int minDmg = MAX(getDamageMin(), 20 + (level * 5));
 	if (petDeed != NULL) {
 		minDmg = petDeed->getMinDamage();
 		if (level < petDeed->getLevel()) {
@@ -112,7 +112,7 @@ int AiAgentImplementation::calculateAttackMinDamage(int level) {
 }
 
 int AiAgentImplementation::calculateAttackMaxDamage(int level) {
-	int dmg = MAX(getDamageMax(), (calculateAttackMinDamage(level) * 1.25) + 13);
+	int dmg = MAX(getDamageMax(), calculateAttackMinDamage(level) * 2);
 	if (petDeed != NULL) {
 		dmg = petDeed->getMaxDamage();
 		if (level < petDeed->getLevel()) {
@@ -126,7 +126,7 @@ int AiAgentImplementation::calculateAttackMaxDamage(int level) {
 	return dmg;
 }
 float AiAgentImplementation::calculateAttackSpeed(int level) {
-	float speed = 2.5f - ((float)level / 100.f);
+	float speed = 3.5f - ((float)level / 100.f);
 	return speed;
 }
 
@@ -1243,7 +1243,7 @@ void AiAgentImplementation::respawn(Zone* zone, int level) {
 	CreatureManager* creatureManager = zone->getCreatureManager();
 
 	if (npcTemplate != NULL && creatureManager != NULL && isCreature()) {
-		int chance = 1000;
+		int chance = 2000;
 		int babiesSpawned = 0;
 
 		ManagedReference<SceneObject*> home = homeObject.get();

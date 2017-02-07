@@ -99,13 +99,8 @@
 #include "server/zone/objects/creature/ai/DroidObject.h"
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackModuleDataComponent.h"
 #include "server/zone/objects/player/badges/Badge.h"
-#include "server/zone/objects/player/Races.h"
-/*  GOTO line 733 for next portion to uncomment:  NGE Player BH system*/
-#include "server/zone/managers/visibility/VisibilityManager.h"
-#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
-#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 
-int PlayerManagerImplementation::MAX_CHAR_ONLINE_COUNT = 4;
+int PlayerManagerImplementation::MAX_CHAR_ONLINE_COUNT = 2;
 
 PlayerManagerImplementation::PlayerManagerImplementation(ZoneServer* zoneServer, ZoneProcessServer* impl) :
 										Logger("PlayerManager") {
@@ -120,6 +115,7 @@ PlayerManagerImplementation::PlayerManagerImplementation(ZoneServer* zoneServer,
 	loadStartingLocations();
 	loadQuestInfo();
 	loadPermissionLevels();
+	loadXpBonusList();
 
 	setGlobalLogging(true);
 	setLogging(false);
@@ -236,6 +232,52 @@ void PlayerManagerImplementation::loadStartingLocations() {
 	delete iffStream;
 
 	info("Loaded " + String::valueOf(startingLocationList.getTotalLocations()) + " starting locations.", true);
+}
+
+void PlayerManagerImplementation::loadXpBonusList() {
+	IffStream* iffStream = TemplateManager::instance()->openIffFile("datatables/xp/species.iff");
+
+	if (iffStream == NULL) {
+		info("Couldn't load species xp bonuses.", true);
+		return;
+	}
+
+	DataTableIff dtiff;
+	dtiff.readObject(iffStream);
+
+	delete iffStream;
+
+	for (int i = 0; i < dtiff.getTotalColumns(); i++) {
+		VectorMap<String, int> bonusList;
+		String speciesName = dtiff.getColumnNameByIndex(i);
+
+		for (int j = 0; j < dtiff.getTotalRows(); j++) {
+			DataTableRow* row = dtiff.getRow(j);
+			String columnData = "";
+			row->getCell(i)->getValue(columnData);
+
+			if (columnData != "") {
+				StringTokenizer callbackString(columnData);
+				callbackString.setDelimeter(":");
+
+				String xpType = "";
+				int bonusMod = 0;
+
+				callbackString.getStringToken(xpType);
+				bonusMod = callbackString.getIntToken();
+
+				if (xpType == "" or bonusMod == 0)
+					continue;
+
+				bonusList.put(xpType, bonusMod);
+			}
+		}
+
+		if (bonusList.size() > 0)
+			xpBonusList.put(speciesName, bonusList);
+	}
+
+	info("Loaded xp bonuses for " + String::valueOf(xpBonusList.size()) + " species.", true);
 }
 
 void PlayerManagerImplementation::loadQuestInfo() {
@@ -722,44 +764,9 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->clearBuffs(true);
 
 	PlayerObject* ghost = player->getPlayerObject();
-	player->setFactionStatus(FactionStatus::ONLEAVE);
-	player->playEffect("clienteffect/holoemote_haunted.cef", "head");
-	PlayMusicMessage* pmm = new PlayMusicMessage("sound/mus_npe2_station_victory.snd");
- 	player->sendMessage(pmm);
 
 	if (ghost != NULL)
 		ghost->resetIncapacitationTimes();
-		//ghost->setFoodFilling(0);
-		//ghost->setDrinkFilling(0);
-	/* NGE BH SYSTEM */
-	if (attacker->isPlayerCreature() && attacker != player) {
-		/*ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
-		input->setPromptTitle("Bounty Hunter Request");
-		input->setPromptText("Place a bounty on your Killer. 25,000 Credits places your Killer on the bounty boards for any Bounty Hunter to hunt.");
-		input->setUsingObject(attacker);
-		input->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
-
-		player->getPlayerObject()->addSuiBox(input);
-		player->sendMessage(input->generateMessage());*/
-		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		box->setPromptTitle("You have been slain...");
-		box->setPromptText("Would you like to pay 25,000 credits to place a bounty on your killers head?");
-		box->setCancelButton(true, "@no");
-		box->setOkButton(true, "@yes");
-		box->setUsingObject(attacker);
-		box->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
-		player->getPlayerObject()->addSuiBox(box);
-		player->sendMessage(box->generateMessage());
-	}
-	if (attacker->isPlayerCreature()) {
-		CreatureObject* attackerCreature = cast<CreatureObject*>(attacker);
-		int attackerRating = attackerCreature->getScreenPlayState("pvpRating");
-		int playerRating = player->getScreenPlayState("pvpRating");
-		attackerCreature->setScreenPlayState("pvpRating", attackerRating + 1);
-		attackerCreature->sendSystemMessage("You have raised your PVP Rating");
-		player->setScreenPlayState("pvpRating", playerRating - 1);
-		player->sendSystemMessage("You have lowered your PVP Rating");
-	}
 
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
@@ -784,9 +791,10 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	CombatManager::instance()->freeDuelList(player, false);
 
 	threatMap->removeAll(true);
-	player->removeDefenders();
+
 	player->dropFromDefenderLists();
 	player->setTargetID(0, true);
+
 	player->notifyObjectKillObservers(attacker);
 }
 
@@ -867,6 +875,7 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 				closestCloning = location;
 			}
 		}
+
 	} else {
 		if (cr != NULL)
 			closestName = cr->getRegionDisplayedName();
@@ -888,133 +897,80 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 	if (preDesignatedFacility != NULL && preDesignatedFacility->getZone() == zone)
 		cloneMenu->addMenuItem("@base_player:revive_bind", preDesignatedFacility->getObjectID());
 
-	if (ghost->getJediState() >= 2) {
-		float range = zone->getMaxX() * 2;
-		StringBuffer results;
-		SortedVector<ManagedReference<QuadTreeEntry*> > objects(512, 512);
-		zone->getInRangeObjects(player->getPositionX(), player->getPositionY(), range, &objects, true);
-
-		for (int i = 0; i < objects.size(); ++i) {
-			ManagedReference<SceneObject*> object = cast<SceneObject*>(objects.get(i).get());
-
-			if (object == NULL)
-				continue;
-
-			if(object == player)
-				continue;
-
-			results.deleteAll();
-
-			Locker crlocker(object, player);
-
-			String name = object->getDisplayedName();
-
-			if (!name.toLowerCase().contains("shrine"))
-				continue;
-
-			results << name;
-			results << " (" << String::valueOf(object->getWorldPositionX());
-			results << ", " << String::valueOf(object->getWorldPositionY()) << ")";
-
-			cloneMenu->addMenuItem(results.toString(), object->getObjectID());
-		}
-	}
 	ghost->addSuiBox(cloneMenu);
 	player->sendMessage(cloneMenu->generateMessage());
 }
 
 void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uint64 clonerID, int typeofdeath) {
 	ManagedReference<SceneObject*> cloner = server->getObject(clonerID);
-	String name = cloner->getDisplayedName();
-	Coordinate* coordinate;
-	Quaternion* direction;
+
+	if (cloner == NULL) {
+		error("Cloning structure is null");
+		return;
+	}
+
 	PlayerObject* ghost = player->getPlayerObject();
 
-	if (name.toLowerCase().contains("shrine")) {
-		Zone* zone = player->getZone();
-		if (cloner->getParent().get() != NULL) {
-			player->switchZone(zone->getZoneName(), cloner->getPositionX(), cloner->getPositionZ(), cloner->getPositionY(), cloner->getParentID());
-		} else {
-			player->switchZone(zone->getZoneName(), cloner->getWorldPositionX(), cloner->getWorldPositionZ(), cloner->getWorldPositionY(), 0);
-		}
-		player->addWounds(CreatureAttribute::HEALTH, 50, true, false);
-		player->addWounds(CreatureAttribute::ACTION, 50, true, false);
-		player->addWounds(CreatureAttribute::MIND, 50, true, false);
-		player->addShockWounds(50, true);
-		VisibilityManager::instance()->clearVisibility(player);
-		//Broadcast to Server
-		String playerName = player->getFirstName();
-		StringBuffer zBroadcast;
-		zBroadcast << "\\#00e604" << playerName << " \\#e60000 Has Cloned At A Force Shrine!";
-		player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-	} else {
-		if (cloner == NULL) {
-			error("Cloning structure is null");
-			return;
-		}
-
-		if (ghost == NULL)	{
-			error("The player to be cloned is null");
-			return;
-		}
-
-
-		CloningBuildingObjectTemplate* cbot = cast<CloningBuildingObjectTemplate*>(cloner->getObjectTemplate());
-
-		if (cbot == NULL) {
-			error("Not a cloning building template.");
-			return;
-		}
-
-		BuildingObject* cloningBuilding = cloner.castTo<BuildingObject*>();
-
-		if (cloningBuilding == NULL)  {
-			error("Cloning building is null");
-			return;
-		}
-
-		CloneSpawnPoint* clonePoint = cbot->getRandomSpawnPoint();
-
-		if (clonePoint == NULL) {
-			error("clone point null");
-			return;
-		}
-
-		coordinate = clonePoint->getCoordinate();
-		direction = clonePoint->getDirection();
-
-		int cellID = clonePoint->getCellID();
-
-		SceneObject* cell = cloningBuilding->getCell(cellID);
-
-		if (cell == NULL) {
-			StringBuffer msg;
-			msg << "null cell for cellID " << cellID << " in building: " << cbot->getFullTemplateString();
-			error(msg.toString());
-			return;
-		}
-		Zone* zone = player->getZone();
-
-		player->switchZone(zone->getZoneName(), coordinate->getPositionX(), coordinate->getPositionZ(), coordinate->getPositionY(), cell->getObjectID());
-
-		uint64 preDesignatedFacilityOid = ghost->getCloningFacility();
-		ManagedReference<SceneObject*> preDesignatedFacility = server->getObject(preDesignatedFacilityOid);
-
-		if (preDesignatedFacility == NULL || preDesignatedFacility != cloningBuilding || name.toLowerCase().contains("shrine")) {
-			player->addWounds(CreatureAttribute::HEALTH, 100, true, false);
-			player->addWounds(CreatureAttribute::ACTION, 100, true, false);
-			player->addWounds(CreatureAttribute::MIND, 100, true, false);
-			player->addShockWounds(100, true);
-			VisibilityManager::instance()->clearVisibility(player);
-		}
+	if (ghost == NULL)	{
+		error("The player to be cloned is null");
+		return;
 	}
 
-	if (player->hasSkill("force_rank_dark_novice") || player->hasSkill("force_rank_light_novice")) {
-		player->setFactionStatus(2);
-	} else {
-		if (ghost->hasPvpTef())
-			ghost->schedulePvpTefRemovalTask(true);
+
+	CloningBuildingObjectTemplate* cbot = cast<CloningBuildingObjectTemplate*>(cloner->getObjectTemplate());
+
+	if (cbot == NULL) {
+		error("Not a cloning building template.");
+		return;
 	}
+
+	BuildingObject* cloningBuilding = cloner.castTo<BuildingObject*>();
+
+	if (cloningBuilding == NULL)  {
+		error("Cloning building is null");
+		return;
+	}
+
+	CloneSpawnPoint* clonePoint = cbot->getRandomSpawnPoint();
+
+	if (clonePoint == NULL) {
+		error("clone point null");
+		return;
+	}
+
+	Coordinate* coordinate = clonePoint->getCoordinate();
+	Quaternion* direction = clonePoint->getDirection();
+
+	int cellID = clonePoint->getCellID();
+
+	SceneObject* cell = cloningBuilding->getCell(cellID);
+
+	if (cell == NULL) {
+		StringBuffer msg;
+		msg << "null cell for cellID " << cellID << " in building: " << cbot->getFullTemplateString();
+		error(msg.toString());
+		return;
+	}
+
+	Zone* zone = player->getZone();
+
+	player->switchZone(zone->getZoneName(), coordinate->getPositionX(), coordinate->getPositionZ(), coordinate->getPositionY(), cell->getObjectID());
+
+	uint64 preDesignatedFacilityOid = ghost->getCloningFacility();
+	ManagedReference<SceneObject*> preDesignatedFacility = server->getObject(preDesignatedFacilityOid);
+
+	if (preDesignatedFacility == NULL || preDesignatedFacility != cloningBuilding) {
+		player->addWounds(CreatureAttribute::HEALTH, 100, true, false);
+		player->addWounds(CreatureAttribute::ACTION, 100, true, false);
+		player->addWounds(CreatureAttribute::MIND, 100, true, false);
+		player->addShockWounds(100, true);
+	}
+
+	if (player->getFactionStatus() != FactionStatus::ONLEAVE && cbot->getFaction() == 0)
+		player->setFactionStatus(FactionStatus::ONLEAVE);
+
+	if (ghost->hasPvpTef())
+		ghost->schedulePvpTefRemovalTask(true);
 
 
 	SortedVector<ManagedReference<SceneObject*> > insurableItems = getInsurableItems(player, false);
@@ -1242,12 +1198,10 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				String xpType = entry->elementAt(j).getKey();
 				float xpAmount = baseXp;
 
-				//xpAmount *= (float) damage / totalDamage;
-
-				xpAmount /= (float) entry->size() / 1;
+				xpAmount *= (float) damage / totalDamage;
 
 				//Cap xp based on level
-				//xpAmount = MIN(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
+				xpAmount = MIN(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
 
 				//Apply group bonus if in group
 				if (group != NULL)
@@ -1542,38 +1496,12 @@ void PlayerManagerImplementation::awardExperience(CreatureObject* player, const 
 	if (playerObject == NULL)
 		return;
 
-	int xp;
-	if (amount <= 0 || xpType == "force_rank_xp" || xpType == "jedi_general") {
-		xp = playerObject->addExperience(xpType, amount);
-	} else if (xpType == "imagedesigner" ||
-		xpType == "music" ||
-		xpType == "dance" ||
-		xpType == "entertainer_healing" ||
-		xpType == "scout" ||
-		xpType == "trapping" ||
-		xpType == "camp" ||
-		xpType == "crafting_medicine_general" ||
-		xpType == "crafting_general" ||
-		xpType == "resource_harvesting_inorganic" ||
-		xpType == "creaturehandler" ||
-		xpType == "crafting_bio_engineer_creature" ||
-		xpType == "bio_engineer_dna_harvesting" ||
-		xpType == "crafting_clothing_armor" ||
-		xpType == "crafting_weapons_general" ||
-		xpType == "crafting_food_general" ||
-		xpType == "crafting_clothing_general" ||
-		xpType == "crafting_structure_general" ||
-		xpType == "crafting_droid_general" ||
-		xpType == "merchant" ||
-		xpType == "slicing" ||
-		xpType == "crafting_spice" ||
-		xpType == "political" ||
-		xpType == "bountyhunter" ||
-		xpType == "shipwright") {
-		xp = playerObject->addExperience(xpType, (amount * 20));
-	} else {
-		xp = playerObject->addExperience(xpType, (int) (amount * localMultiplier * globalExpMultiplier));
-	}
+	float speciesModifier = 1.f;
+
+	if (amount > 0)
+		speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+
+	int xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * localMultiplier * globalExpMultiplier));
 
 	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
 
@@ -1591,120 +1519,7 @@ void PlayerManagerImplementation::awardExperience(CreatureObject* player, const 
 		}
 	}
 
-	if (xpType == "force_rank_xp") {
-		if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
-			PlayerObject* ghost = player->getPlayerObject();
-			SkillList* skillList = player->getSkillList();
-			int curExp = ghost->getExperience("force_rank_xp");
-			if (curExp < -37501) { //Allows up to 5 deaths without getting any XP
-				if (player->hasSkill("force_rank_light_novice")) {
-					while (player->hasSkill("force_rank_light_novice")) {
-						for (int i = 0; i < skillList->size(); ++i) {
-							Skill* skill = skillList->get(i);
-							if (skill->getSkillName().indexOf("force_rank_") != -1) {
-								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
-							}
-						}
-					}
-					if (player->getScreenPlayState("jedi_FRS") == 4) {
-						player->setScreenPlayState("jedi_FRS", 16);
-					}
-					if (ghost->getJediState() > 2) {
-						ghost->setJediState(2);
-					}
-					String playerName = player->getFirstName();
-					StringBuffer zBroadcast;
-					zBroadcast << "\\#ffb90f" << playerName << " has left the \\#22b7f6Jedi Order!";
-					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-				} else if (player->hasSkill("force_rank_dark_novice")) {
-					while (player->hasSkill("force_rank_dark_novice")) {
-						for (int i = 0; i < skillList->size(); ++i) {
-							Skill* skill = skillList->get(i);
-							if (skill->getSkillName().indexOf("force_rank_") != -1) {
-								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
-							}
-						}
-					}
-					if (player->getScreenPlayState("jedi_FRS") == 8) {
-						player->setScreenPlayState("jedi_FRS", 16);
-					}
-					if (ghost->getJediState() > 2) {
-						ghost->setJediState(2);
-					}
-					String playerName = player->getFirstName();
-					StringBuffer zBroadcast;
-					zBroadcast << "\\#ffb90f" << playerName << " has left the \\#e51b1bSith Order!";
-					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-				}
-			}
-			if (curExp < 10000) {
-				frsSkillCheck(player, "novice", "rank_01");
-			}
-			if (curExp >= 10000 && curExp < 20000) {
-				frsSkillCheck(player, "rank_01", "rank_02");
-			}
-			if (curExp >= 20000 && curExp < 30000) {
-				frsSkillCheck(player, "rank_02", "rank_03");
-			}
-			if (curExp >= 30000 && curExp < 40000) {
-				frsSkillCheck(player, "rank_03", "rank_04");
-			}
-			if (curExp >= 40000 && curExp < 60000) {
-				frsSkillCheck(player, "rank_04", "rank_05");
-			}
-			if (curExp >= 60000 && curExp < 80000) {
-				frsSkillCheck(player, "rank_05", "rank_06");
-			}
-			if (curExp >= 80000 && curExp < 100000) {
-				frsSkillCheck(player, "rank_06", "rank_07");
-			}
-			if (curExp >= 100000 && curExp < 150000) {
-				frsSkillCheck(player, "rank_07", "rank_08");
-			}
-			if (curExp >= 150000 && curExp < 200000) {
-				frsSkillCheck(player, "rank_08", "rank_09");
-				SkillManager::instance()->awardSkill("force_title_jedi_rank_04", player, true, true, true);
-			}
-			if (curExp >= 200000 && curExp < 300000) {
-				frsSkillCheck(player, "rank_09", "rank_10");
-			}
-			if (curExp >= 300000 && curExp < 500000) {
-				frsSkillCheck(player, "rank_10", "master");
-				SkillManager::instance()->awardSkill("force_title_jedi_master", player, true, true, true);
-			}
-			if (curExp >= 500000) {
-				frsSkillCheck(player, "master", "master");
-				SkillManager::instance()->awardSkill("force_title_jedi_master", player, true, true, true);
-			}
-		}
-	}
 
-
-}
-
-void PlayerManagerImplementation::frsSkillCheck(CreatureObject* player, const String& skill, const String& skillParent) {
-	SkillManager* skillManager = server->getSkillManager();
-	String skillStarter;
-	if (player->hasSkill("force_rank_light_novice")) {
-		skillStarter = "force_rank_light_";
-	} else {
-		skillStarter = "force_rank_dark_";
-	}
-	player->sendSystemMessage("You have been granted: " + skillStarter + skill);
-	skillManager->awardSkill(skillStarter + skill, player, true, true, true);
-	if (player->hasSkill(skillStarter + skillParent) && (skill != skillParent)) {
-		player->sendSystemMessage("You no longer meet the requirements for: " + skillStarter + skill);
-		//skillManager->surrenderSkill(skillStarter + skillParent, player, true);
-		SkillList* skillList = player->getSkillList();
-		while (player->hasSkill(skillStarter + skillParent)) {
-			for (int i = 0; i < skillList->size(); ++i) {
-				Skill* skill = skillList->get(i);
-				if (skill->getSkillName().indexOf(skillStarter) != -1){
-					SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
-				}
-			}
-		}
-	}
 }
 
 void PlayerManagerImplementation::sendLoginMessage(CreatureObject* creature) {
@@ -5479,4 +5294,16 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 
 		player->sendSystemMessage(toVictim);
 	}
+}
+
+float PlayerManagerImplementation::getSpeciesXpModifier(const String& species, const String& xpType) {
+	int bonus = xpBonusList.get(species).get(xpType);
+
+	if (bonus == -1)
+		bonus = xpBonusList.get(species).get("all");
+
+	if (bonus == -1)
+		return 1.f;
+
+	return (100.f + bonus) / 100.f;
 }

@@ -291,15 +291,6 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 }
 
 int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data) {
-	if (weapon->getMinDamage() < 1 ||
-			weapon->getMinDamage() > 50000 ||
-			weapon->getMaxDamage() < 1 ||
-			weapon->getMaxDamage() > 50000) {
-		Locker locker(weapon);
-		weapon->setMinDamage(5);
-		weapon->setMaxDamage(10);
-		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
-	}
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
 
@@ -1513,13 +1504,9 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 
 		// saber block is special because it's just a % chance to block based on the skillmod
 		if (def == "saber_block") {
-			int block_mod = targetCreature->getSkillMod(def);
-            if (targetCreature->isIntimidated()) {
-                block_mod = (block_mod / 2);
-            }
-            if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
-                return RICOCHET;
-            else return HIT;
+			if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < targetCreature->getSkillMod(def)))
+				return RICOCHET;
+			else return HIT;
 		}
 
 		targetDefense = getDefenderSecondaryDefenseModifier(targetCreature);
