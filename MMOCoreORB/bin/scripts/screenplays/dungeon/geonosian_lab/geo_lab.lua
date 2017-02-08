@@ -365,7 +365,7 @@ function GeonosianLabScreenPlay:spawnMobiles()
 	spawnMobile("yavin4", "crazed_geonosian_guard", 300, -19.4336, -22, -133.3, 263, 1627801)
 	spawnMobile("yavin4", "crazed_geonosian_guard", 300, -32.7007, -22, -137.02, 284, 1627801)
 --mini boss halway 2
-	spawnMobile("yavin4", "acklay_young", 1, -35.9168, -21.7989, -157.862, 236, 1627803)
+	spawnMobile("yavin4", "acklay_young", 3600, -35.9168, -21.7989, -157.862, 236, 1627803)
 	spawnMobile("yavin4", "crazed_geonosian_guard", 300, -17.0819, -22.4411, -153.011, 231, 1627803)
 	spawnMobile("yavin4", "crazed_geonosian_guard", 300, -22.6439, -22.4259, -150.518, 98, 1627803) 
 	spawnMobile("yavin4", "crazed_geonosian_guard", 300, -23.8802, -22.7803, -153.248, 254, 1627803)
