@@ -1,7 +1,6 @@
 Server is not running
 
-vagrant@swgemudev:~$ /home/vagrant/bin/swgemu runUnitTests
-+ cd /home/vagrant/workspace/Core3/MMOCoreORB/bin
+vagrant@swgemudev:~/workspace/Core3/MMOCoreORB/bin$ /home/vagrant/bin/swgemu runUnitTests+ cd /home/vagrant/workspace/Core3/MMOCoreORB/bin
 + ./core3 runUnitTests '--gtest_filter=*'
 Running unit tests...
 [==========] Running 43 tests from 11 test cases.
@@ -13,13 +12,13 @@ Running unit tests...
 [       OK ] CircularAreaShapeTest.CircularAreaShapeHasRadiusEqualToZeroAfterCreation (0 ms)
 [ RUN      ] CircularAreaShapeTest.CircularAreaShapeHasRadiusSquareEqualToZeroAfterCreation
 [       OK ] CircularAreaShapeTest.CircularAreaShapeHasRadiusSquareEqualToZeroAfterCreation (0 ms)
-[----------] 3 tests from CircularAreaShapeTest (1 ms total)
+[----------] 3 tests from CircularAreaShapeTest (0 ms total)
 
 [----------] 1 test from BasicScreenPlayTest
 [ RUN      ] BasicScreenPlayTest.ScreenPlayLuaInitialize
 (0 s) [BadgeList] Loaded 141 badges.
-[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (1007 ms)
-[----------] 1 test from BasicScreenPlayTest (1007 ms total)
+[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (1013 ms)
+[----------] 1 test from BasicScreenPlayTest (1013 ms total)
 
 [----------] 3 tests from LuaMobileTest
 [ RUN      ] LuaMobileTest.LuaMobileTemplatesTest
@@ -47,85 +46,65 @@ Running unit tests...
 	Loading templates: [13%]	(3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
 (3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
 (3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
-	Loading templates: [54%]	(12 s) [Console] WARNING - expecting SHOT got RCCT in file: object/resource_container/shared_simple.iff
-	Loading templates: [70%]	(15 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(15 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(15 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(15 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(15 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(15 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(15 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(15 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(15 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(15 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(15 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(15 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-	Loading templates: [74%]	(16 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 46
+	Loading templates: [54%]	(8 s) [Console] WARNING - expecting SHOT got RCCT in file: object/resource_container/shared_simple.iff
+	Loading templates: [70%]	(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+	Loading templates: [74%]	(10 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 46
 
-(16 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 43
+(10 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 43
 
-	Loading templates: [104%]	(21 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
-	Loading templates: [105%]	(21 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(21 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(21 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(21 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+	Loading templates: [104%]	(13 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
+	Loading templates: [105%]	(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
 	Loading templates: [114%]	
-(23 s) [TemplateManager] Finished loading object templates
-(23 s) [TemplateManager] 0 portal layouts loaded
-(23 s) [TemplateManager] 0 floor meshes loaded
-(23 s) [TemplateManager] 89 structure footprints.
-(23 s) [CommandConfigManager] ERROR - Could not create command counterAttack
-(23 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-(26 s) [FactionManager] Loading config file.
-(26 s) [FactionManager] loaded 22 ranks
-(26 s) [DnaManager] Loading DNA Information
-(26 s) [DnaManager] Loaded 201 dna stats.
+(14 s) [TemplateManager] Finished loading object templates
+(14 s) [TemplateManager] 0 portal layouts loaded
+(14 s) [TemplateManager] 0 floor meshes loaded
+(14 s) [TemplateManager] 89 structure footprints.
+(14 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(14 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+(15 s) [FactionManager] Loading config file.
+(15 s) [FactionManager] loaded 22 ranks
+(15 s) [DnaManager] Loading DNA Information
+(15 s) [DnaManager] Loaded 201 dna stats.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc som_ancient_guardian_droideka does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:249: Failure
-Value of: maxHam >= minHam
-  Actual: false
-Expected: true
-Base ham max is lower than base ham on mobile: pei_yi
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: legendary_graul
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: legendary_graul
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: legendary_graul
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -141,76 +120,6 @@ Value of: FactionManager::instance()->isFaction(faction)
   Actual: false
 Expected: true
 Faction, corsair, from mobile template corsair_thug does not exist.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile kimogila_hatchling_ancient has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: legendary_rancor
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: legendary_rancor
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: legendary_rancor
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile enraged_kimogila_ancient has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile elder_graul_marauder has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: legendary_razor_cat
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: legendary_razor_cat
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: legendary_razor_cat
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile elder_nightsister_enraged_bull_rancor has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile Mihpisto has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: krayt_king
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: krayt_king
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: krayt_king
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
 Value of: FactionManager::instance()->isFaction(faction)
   Actual: false
@@ -221,86 +130,26 @@ Value of: foundGroup != NULL
   Actual: false
 Expected: true
 Loot group weapons from derriphan was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: legendary_bearded_jax
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: legendary_bearded_jax
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: legendary_bearded_jax
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc ep3_blackscale_assault_m_02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile elder_ancient_bull_rancor has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
-Value of: socialGroup.isEmpty()
-  Actual: true
-Expected: false
-Social group is empty on pack mobile: elder_ancient_bull_rancor
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc hk77 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile mittens has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:408: Failure
 Value of: group.size() > 0
   Actual: false
 Expected: true
 Weapon group durge_weapons from ep3_clone_relics_durge_droid_02 was not found in weaponMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:243: Failure
-Value of: maxDamage >= minDamage
-  Actual: false
-Expected: true
-Max damage is lower than min damage on mobile: som_dark_jedi_minion_2
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile charon has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: charon
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:408: Failure
 Value of: group.size() > 0
   Actual: false
 Expected: true
 Weapon group durge_weapons from revan_quest1 was not found in weaponMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: revan_quest1
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: revan_quest1
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: revan_quest1
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -321,11 +170,6 @@ Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc som_ancient_guardian_ig does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 10500000
-Expected: 10000000
-Loot groups total chance is incorrect nightsister_protector
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
 Value of: FactionManager::instance()->isFaction(faction)
   Actual: false
@@ -336,71 +180,16 @@ Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc ep3_blackscale_assault_m_01 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: legendary_salacious_crumb
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: legendary_salacious_crumb
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: legendary_salacious_crumb
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile marvolo has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile Zamidirin has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile canyon_krayt_dragon_elder has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc must_mining_droid_mark_02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: sher_kar_youngling
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: sher_kar_youngling
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: sher_kar_youngling
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile enraged_dune_kimogila_ancient has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc must_mining_droid_mark_01 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile dune_kimogila_ancient has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -411,121 +200,21 @@ Value of: mobNames.contains(objName)
   Actual: false
 Expected: true
 Mobile imp_transitpilot has invalid objectName: @mob/creature_names:Transitpilot
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile tusken_warrior_quest has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: legendary_arachne_widow
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: legendary_arachne_widow
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: legendary_arachne_widow
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:408: Failure
 Value of: group.size() > 0
   Actual: false
 Expected: true
 Weapon group durge_weapons from ep3_clone_relics_durge_droid_01 was not found in weaponMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: legendary_crystal_snake
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: legendary_crystal_snake
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: legendary_crystal_snake
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: legendary_kwi
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: legendary_kwi
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: legendary_kwi
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile tusken_executioner_quest has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile giant_canyon_krayt_dragon_elder has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
 Value of: FactionManager::instance()->isFaction(faction)
   Actual: false
 Expected: true
 Faction, corsair, from mobile template corsair_thug_elite does not exist.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: legendary_kimogila
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: legendary_kimogila
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: legendary_kimogila
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 15400000
-Expected: 10000000
-Loot groups total chance is incorrect tusken_executioner
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: sher_kar
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: sher_kar
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: sher_kar
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
 Value of: FactionManager::instance()->isFaction(faction)
   Actual: false
 Expected: true
 Faction, self, from mobile template ep3_clone_relics_claw_bodyguard_01 does not exist.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile elliot has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -546,21 +235,6 @@ Value of: mobNames.contains(objName)
   Actual: false
 Expected: true
 Mobile aakuan_overlord has invalid objectName: @mob/creature_names:aakuan_overlord
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: legendary_krayt
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: legendary_krayt
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: legendary_krayt
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -571,26 +245,6 @@ Value of: convoTemp != NULL
   Actual: false
 Expected: true
 Conversation template from theme_park_marauder_ewok_juicy was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: elder_enhanced_gaping_spider
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: elder_enhanced_gaping_spider
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: elder_enhanced_gaping_spider
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile cave_dweller has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -616,11 +270,6 @@ Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc ep3_blackscale_pilot_s03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile death_watch_ghost_2 has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
 Value of: totalChance
   Actual: 10500000
@@ -635,22 +284,7 @@ Attackable npc asn_121 does not have attacks.
 Value of: mobNames.contains(objName)
   Actual: false
 Expected: true
-Mobile juvenile_canyon_krayt_dragon_elder has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
 Mobile giant_kimogila_ancient has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile giant_dune_kimogila_ancient has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile apocalypse has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -661,16 +295,6 @@ Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc ep3_blackscale_trooper_m_03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile som_dark_jedi_boss has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile mando_boss has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
 Value of: totalChance
   Actual: 6000000
@@ -701,31 +325,6 @@ Value of: foundGroup != NULL
   Actual: false
 Expected: true
 Loot group g_heavy_avatar_acid_beam from mando_boss was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: ancient_outbreak_afflicted_blackwing_rancor_boss
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: ancient_outbreak_afflicted_blackwing_rancor_boss
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: ancient_outbreak_afflicted_blackwing_rancor_boss
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile nightsister_elder_2 has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile hk_fu has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -741,41 +340,11 @@ Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc ep3_blackscale_guard_m_01 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mediumDisease is not a valid command in mobile template: legendary_peko_peko
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: mildDisease is not a valid command in mobile template: legendary_peko_peko
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
-Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
-  Actual: false
-Expected: true
-Attack: strongDisease is not a valid command in mobile template: legendary_peko_peko
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile darthvader_elder has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc ep3_blackscale_assault_m_03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile kimogila_dwarf_ancient has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile kimogila_ancient has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -801,11 +370,6 @@ Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc ep3_clone_relics_super_battle_droid_01 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile milliana has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -821,26 +385,11 @@ Value of: convoTemp != NULL
   Actual: false
 Expected: true
 Conversation template from theme_park_marauder_lizardman was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile omniveron has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile gorax_elder has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
 Value of: totalChance
   Actual: 1000000
 Expected: 10000000
 Loot groups total chance is incorrect booba_fett
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile palpatine_elder has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
 Value of: convoTemp != NULL
   Actual: false
@@ -851,11 +400,6 @@ Value of: convoTemp != NULL
   Actual: false
 Expected: true
 Conversation template from scholar_szingo was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 9500000
-Expected: 10000000
-Loot groups total chance is incorrect singing_mountain_clan_arch_witch
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
 Value of: mobNames.contains(objName)
   Actual: false
@@ -886,30 +430,20 @@ Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc must_mining_droid_mark_03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile elder_enraged_bull_rancor has invalid objectName: @mob/creature_names:
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
 Expected: true
 Attackable npc ep3_blackscale_scaleguard does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
-Value of: socialGroup.isEmpty()
-  Actual: true
-Expected: false
-Social group is empty on pack mobile: krayt_elder
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
 Value of: totalChance
   Actual: 10500000
 Expected: 10000000
 Loot groups total chance is incorrect death_watch_s_battle_droid_alt
-[  FAILED  ] LuaMobileTest.LuaMobileTemplatesTest (25956 ms)
+[  FAILED  ] LuaMobileTest.LuaMobileTemplatesTest (15028 ms)
 [ RUN      ] LuaMobileTest.LuaLootGroupsTest
-(26 s) [CommandConfigManager] ERROR - Could not create command counterAttack
-(26 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+(16 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(16 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:152: Failure
 Value of: itemTemplate != NULL
   Actual: false
@@ -928,12 +462,12 @@ Item template rifle_acid_launcher from commando_loot was not found in LootGroupM
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:646: Failure
 Expected: (lootGroupTemplate->getLootGroupEntryForRoll(10000000).length()) > (0), actual: 0 vs 0
 Item total chance is less than 10000000: looted_container
-[  FAILED  ] LuaMobileTest.LuaLootGroupsTest (132 ms)
+[  FAILED  ] LuaMobileTest.LuaLootGroupsTest (126 ms)
 [ RUN      ] LuaMobileTest.LuaSpawnManagerTest
-(27 s) [CommandConfigManager] ERROR - Could not create command counterAttack
-(27 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] LuaMobileTest.LuaSpawnManagerTest (127 ms)
-[----------] 3 tests from LuaMobileTest (26216 ms total)
+(16 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(16 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+[       OK ] LuaMobileTest.LuaSpawnManagerTest (117 ms)
+[----------] 3 tests from LuaMobileTest (15271 ms total)
 
 [----------] 12 tests from JediManagerTest
 [ RUN      ] JediManagerTest.ShouldRunFileJediManagerLuaAtLoadConfiguration
@@ -947,29 +481,29 @@ Item total chance is less than 10000000: looted_container
 [ RUN      ] JediManagerTest.ShouldReadTheCustomJediProgressionFileStringIfCustomJediProgressionIsConfigured
 [       OK ] JediManagerTest.ShouldReadTheCustomJediProgressionFileStringIfCustomJediProgressionIsConfigured (0 ms)
 [ RUN      ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured
-[       OK ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured (1 ms)
+[       OK ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured (0 ms)
 [ RUN      ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration
 [       OK ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration (0 ms)
 [ RUN      ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager
-[       OK ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager (3 ms)
+[       OK ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager (2 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager
-[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (1 ms)
+[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager
 [       OK ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager
 [       OK ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager
 [       OK ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager (0 ms)
-[----------] 12 tests from JediManagerTest (6 ms total)
+[----------] 12 tests from JediManagerTest (4 ms total)
 
 [----------] 3 tests from TerrainManagerTest
 [ RUN      ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea
-[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (0 ms)
+[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (1 ms)
 [ RUN      ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea
 [       OK ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea (0 ms)
 [ RUN      ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference
 [       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (1 ms)
-[----------] 3 tests from TerrainManagerTest (1 ms total)
+[----------] 3 tests from TerrainManagerTest (2 ms total)
 
 [----------] 4 tests from RectangularAreaShapeTest
 [ RUN      ] RectangularAreaShapeTest.RectangularAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation
@@ -993,55 +527,55 @@ Item total chance is less than 10000000: looted_container
 [       OK ] RingAreaShapeTest.RingAreaShapeHasInnerRadiusSquareEqualToZeroAfterCreation (0 ms)
 [ RUN      ] RingAreaShapeTest.RingAreaShapeHasOuterRadiusSquareEqualToZeroAfterCreation
 [       OK ] RingAreaShapeTest.RingAreaShapeHasOuterRadiusSquareEqualToZeroAfterCreation (0 ms)
-[----------] 5 tests from RingAreaShapeTest (1 ms total)
+[----------] 5 tests from RingAreaShapeTest (0 ms total)
 
 [----------] 4 tests from GeneralDeadlockTestBase
 [ RUN      ] GeneralDeadlockTestBase.CrossLockTest
-[       OK ] GeneralDeadlockTestBase.CrossLockTest (5 ms)
+[       OK ] GeneralDeadlockTestBase.CrossLockTest (0 ms)
 [ RUN      ] GeneralDeadlockTestBase.ThreeLocksTest
 [       OK ] GeneralDeadlockTestBase.ThreeLocksTest (0 ms)
 [ RUN      ] GeneralDeadlockTestBase.MonitorLockTest
-[       OK ] GeneralDeadlockTestBase.MonitorLockTest (0 ms)
+[       OK ] GeneralDeadlockTestBase.MonitorLockTest (1 ms)
 [ RUN      ] GeneralDeadlockTestBase.MultipleLocksTest
 [       OK ] GeneralDeadlockTestBase.MultipleLocksTest (0 ms)
-[----------] 4 tests from GeneralDeadlockTestBase (5 ms total)
+[----------] 4 tests from GeneralDeadlockTestBase (1 ms total)
 
 [----------] 2 tests from BasicTerrainTest
 [ RUN      ] BasicTerrainTest.LoadTestTerrainTest
-[       OK ] BasicTerrainTest.LoadTestTerrainTest (464 ms)
+[       OK ] BasicTerrainTest.LoadTestTerrainTest (439 ms)
 [ RUN      ] BasicTerrainTest.LoadTestSpaceTerrain
-[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (91 ms)
-[----------] 2 tests from BasicTerrainTest (555 ms total)
+[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (74 ms)
+[----------] 2 tests from BasicTerrainTest (513 ms total)
 
 [----------] 4 tests from ZoneTest
 [ RUN      ] ZoneTest.PlayerManager
-(27 s) [DirectorManager] Lua version: 503
-(27 s) [DirectorManager] Lua reads int64
-(27 s) [PlayerManager] Loaded 72 veteran rewards.
-(27 s) [PlayerManager] Loaded 18 starting locations.
-(27 s) [PlayerManager] Loaded 188 quests.
-(27 s) [PlayerManager] ERROR - No Server Database initiated
-(27 s) [PlayerManager] loaded 0 character names in memory
-[       OK ] ZoneTest.PlayerManager (23 ms)
+(16 s) [DirectorManager] Lua version: 503
+(16 s) [DirectorManager] Lua reads int64
+(16 s) [PlayerManager] Loaded 72 veteran rewards.
+(16 s) [PlayerManager] Loaded 18 starting locations.
+(16 s) [PlayerManager] Loaded 188 quests.
+(16 s) [PlayerManager] ERROR - No Server Database initiated
+(16 s) [PlayerManager] loaded 0 character names in memory
+[       OK ] ZoneTest.PlayerManager (6 ms)
 [ RUN      ] ZoneTest.TreLoad
-[       OK ] ZoneTest.TreLoad (1 ms)
+[       OK ] ZoneTest.TreLoad (0 ms)
 [ RUN      ] ZoneTest.ActiveAreaTest
-[       OK ] ZoneTest.ActiveAreaTest (0 ms)
+[       OK ] ZoneTest.ActiveAreaTest (1 ms)
 [ RUN      ] ZoneTest.InRangeTest
 [       OK ] ZoneTest.InRangeTest (0 ms)
-[----------] 4 tests from ZoneTest (25 ms total)
+[----------] 4 tests from ZoneTest (7 ms total)
 
 [----------] 2 tests from CommandLuaTest
 [ RUN      ] CommandLuaTest.LoadCommandLuas
-(27 s) [CommandConfigManager] ERROR - Could not create command counterAttack
-(27 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] CommandLuaTest.LoadCommandLuas (86 ms)
+(16 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(16 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+[       OK ] CommandLuaTest.LoadCommandLuas (76 ms)
 [ RUN      ] CommandLuaTest.CheckAnimationCRCS
-[       OK ] CommandLuaTest.CheckAnimationCRCS (46 ms)
-[----------] 2 tests from CommandLuaTest (132 ms total)
+[       OK ] CommandLuaTest.CheckAnimationCRCS (42 ms)
+[----------] 2 tests from CommandLuaTest (120 ms total)
 
 [----------] Global test environment tear-down
-[==========] 43 tests from 11 test cases ran. (27950 ms total)
+[==========] 43 tests from 11 test cases ran. (16932 ms total)
 [  PASSED  ] 41 tests.
 [  FAILED  ] 2 tests, listed below:
 [  FAILED  ] LuaMobileTest.LuaMobileTemplatesTest
@@ -1049,4 +583,4 @@ Item total chance is less than 10000000: looted_container
 
  2 FAILED TESTS
 
-vagrant@swgemudev:~$ 
+vagrant@swgemudev:~/workspace/Core3/MMOCoreORB/bin$ 
