@@ -248,7 +248,7 @@ legendary_salacious_crumb = Creature:new {
 		{"mediumDisease","DiseaseChance=100"},
 		{"mildDisease","DiseaseChance=100"},
 		{"strongpoison","PoisonChance=100"},
-		{"strongDisease","DiseaseChance=100"},
+		{"strongdisease","DiseaseChance=100"},
 		{"creatureareaattack","StateAccuracyBonus=100"}
 	}
 }

@@ -1,5 +1,5 @@
 elder_enraged_bull_rancor = Creature:new {
-   objectName = "@mob/creature_names:",
+   -- objectName = "@mob/creature_names:",
    customName = "elder enraged bull rancor",
 	socialGroup = "rancor",
 	faction = "",

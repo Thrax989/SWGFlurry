@@ -1,6 +1,7 @@
 elder_ancient_bull_rancor = Creature:new {
-   objectName = "@mob/creature_names:",
+   -- objectName = "@mob/creature_names:",
    customName = "elder ancient bull rancor",
+   	socialGroup = "rancor",
 	faction = "",
 	level = 98,
 	chanceHit = 0.95,

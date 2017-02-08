@@ -1,5 +1,5 @@
 marvolo = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "marvolo (Dark Jedi Consular)",
 	socialGroup = "dark_jedi",
 	pvpFaction = "",
