@@ -45,9 +45,8 @@ som_ancient_guardian_droideka = Creature:new {
 			lootChance = 10000000
 		},
 		},
-	conversationTemplate = "",
+	defaultAttack = "attack",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "creaturerangedattack"
 }
 
 CreatureTemplates:addCreatureTemplate(som_ancient_guardian_droideka, "som_ancient_guardian_droideka")
