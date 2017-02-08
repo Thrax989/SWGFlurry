@@ -1,0 +1,653 @@
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
+Value of: cam->size() > 0
+  Actual: false
+Expected: true
+Attackable npc som_ancient_guardian_droideka does not have attacks.
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: som_pann_protocol_droid
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile death_watch_s_battle_droid_2 has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
+Value of: totalChance
+  Actual: 10500000
+Expected: 10000000
+Loot groups total chance is incorrect death_watch_s_battle_droid_2
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningsingle2_npc is not a valid command in mobile template: luke_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningcone2_npc is not a valid command in mobile template: luke_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mindblast2_npc is not a valid command in mobile template: luke_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcethrow2_npc is not a valid command in mobile template: luke_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcechoke_npc is not a valid command in mobile template: luke_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningsingle2_npc is not a valid command in mobile template: dark_jedi_master
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningcone2_npc is not a valid command in mobile template: dark_jedi_master
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mindblast2_npc is not a valid command in mobile template: dark_jedi_master
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcethrow2_npc is not a valid command in mobile template: dark_jedi_master
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcechoke_npc is not a valid command in mobile template: dark_jedi_master
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: must_scout
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningsingle1_npc is not a valid command in mobile template: prophet_of_the_dark_side
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mindblast1_npc is not a valid command in mobile template: prophet_of_the_dark_side
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcechoke_npc is not a valid command in mobile template: prophet_of_the_dark_side
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningcone1_npc is not a valid command in mobile template: prophet_of_the_dark_side
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: cww8_battle_droid
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: droid_8t88
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningsingle1_npc is not a valid command in mobile template: nightsister_ranger_quest
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mindblast1_npc is not a valid command in mobile template: nightsister_ranger_quest
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcechoke_npc is not a valid command in mobile template: nightsister_ranger_quest
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningcone1_npc is not a valid command in mobile template: nightsister_ranger_quest
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningsingle2_npc is not a valid command in mobile template: chewbacca_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningcone2_npc is not a valid command in mobile template: chewbacca_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mindblast2_npc is not a valid command in mobile template: chewbacca_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcethrow2_npc is not a valid command in mobile template: chewbacca_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcechoke_npc is not a valid command in mobile template: chewbacca_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:249: Failure
+Value of: maxHam >= minHam
+  Actual: false
+Expected: true
+Base ham max is lower than base ham on mobile: pei_yi
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: pei_yi
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile legendary_graul has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mediumDisease is not a valid command in mobile template: legendary_graul
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mildDisease is not a valid command in mobile template: legendary_graul
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: strongDisease is not a valid command in mobile template: legendary_graul
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: npc_kweeta
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: storm_lord_prophet
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: thunter_arkona_m_01
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: must_salvage_bandit_01
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
+Value of: cam->size() > 0
+  Actual: false
+Expected: true
+Attackable npc ep3_blackscale_guard_m_04 does not have attacks.
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: thunter_nautolan_m_01
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: som_pwwoz_thug_2
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
+Value of: cam->size() > 0
+  Actual: false
+Expected: true
+Attackable npc ep3_rryatt_abandoned_super_battle_droid_02 does not have attacks.
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
+Value of: FactionManager::instance()->isFaction(faction)
+  Actual: false
+Expected: true
+Faction, corsair, from mobile template corsair_thug does not exist.
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile kimogila_hatchling_ancient has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile legendary_rancor has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mediumDisease is not a valid command in mobile template: legendary_rancor
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mildDisease is not a valid command in mobile template: legendary_rancor
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: strongDisease is not a valid command in mobile template: legendary_rancor
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: ruins_aqualish
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile enraged_kimogila_ancient has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: djedi_hum_m_01
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile elder_enhanced_force_kliknik has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile elder_graul_marauder has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: ruins_human
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile elder_enhanced_kwi has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile poggle_the_lesser has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile legendary_razor_cat has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mediumDisease is not a valid command in mobile template: legendary_razor_cat
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mildDisease is not a valid command in mobile template: legendary_razor_cat
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: strongDisease is not a valid command in mobile template: legendary_razor_cat
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile elder_nightsister_enraged_bull_rancor has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile Mihpisto has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile aged_kimogila_ancient has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile krayt_king has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mediumDisease is not a valid command in mobile template: krayt_king
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mildDisease is not a valid command in mobile template: krayt_king
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: strongDisease is not a valid command in mobile template: krayt_king
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
+Value of: FactionManager::instance()->isFaction(faction)
+  Actual: false
+Expected: true
+Faction, corsair, from mobile template derriphan does not exist.
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
+Value of: foundGroup != NULL
+  Actual: false
+Expected: true
+Loot group weapons from derriphan was not found in LootGroupMap
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile legendary_bearded_jax has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mediumDisease is not a valid command in mobile template: legendary_bearded_jax
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mildDisease is not a valid command in mobile template: legendary_bearded_jax
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: strongDisease is not a valid command in mobile template: legendary_bearded_jax
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: som_trinity_assassin_zabrak_female
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
+Value of: cam->size() > 0
+  Actual: false
+Expected: true
+Attackable npc ep3_blackscale_assault_m_02 does not have attacks.
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: som_kenobi_menth_paul
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile elder_ancient_bull_rancor has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: elder_ancient_bull_rancor
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
+Value of: cam->size() > 0
+  Actual: false
+Expected: true
+Attackable npc hk77 does not have attacks.
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile mittens has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: treasure_hunter_guard
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:408: Failure
+Value of: group.size() > 0
+  Actual: false
+Expected: true
+Weapon group durge_weapons from ep3_clone_relics_durge_droid_02 was not found in weaponMap
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:243: Failure
+Value of: maxDamage >= minDamage
+  Actual: false
+Expected: true
+Max damage is lower than min damage on mobile: som_dark_jedi_minion_2
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningsingle2_npc is not a valid command in mobile template: dark_jedi_knight
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningcone2_npc is not a valid command in mobile template: dark_jedi_knight
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mindblast2_npc is not a valid command in mobile template: dark_jedi_knight
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcethrow2_npc is not a valid command in mobile template: dark_jedi_knight
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcechoke_npc is not a valid command in mobile template: dark_jedi_knight
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile charon has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: strongDisease is not a valid command in mobile template: charon
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningsingle2_npc is not a valid command in mobile template: axkva_min
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningcone2_npc is not a valid command in mobile template: axkva_min
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mindblast2_npc is not a valid command in mobile template: axkva_min
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcethrow2_npc is not a valid command in mobile template: axkva_min
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcechoke_npc is not a valid command in mobile template: axkva_min
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: som_kenobi_treasure_hunter_corpse_02
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile revan_quest1 has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:408: Failure
+Value of: group.size() > 0
+  Actual: false
+Expected: true
+Weapon group durge_weapons from revan_quest1 was not found in weaponMap
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mediumDisease is not a valid command in mobile template: revan_quest1
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mildDisease is not a valid command in mobile template: revan_quest1
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: strongDisease is not a valid command in mobile template: revan_quest1
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningsingle2_npc is not a valid command in mobile template: master_prophet_of_the_dark_side
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningcone2_npc is not a valid command in mobile template: master_prophet_of_the_dark_side
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mindblast2_npc is not a valid command in mobile template: master_prophet_of_the_dark_side
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcethrow2_npc is not a valid command in mobile template: master_prophet_of_the_dark_side
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcechoke_npc is not a valid command in mobile template: master_prophet_of_the_dark_side
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningsingle2_npc is not a valid command in mobile template: dark_jedi_sentinel
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningcone2_npc is not a valid command in mobile template: dark_jedi_sentinel
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mindblast2_npc is not a valid command in mobile template: dark_jedi_sentinel
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcethrow2_npc is not a valid command in mobile template: dark_jedi_sentinel
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcechoke_npc is not a valid command in mobile template: dark_jedi_sentinel
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: thunter_aqualish_m_01
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningsingle2_npc is not a valid command in mobile template: c3p0_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcelightningcone2_npc is not a valid command in mobile template: c3p0_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: mindblast2_npc is not a valid command in mobile template: c3p0_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcethrow2_npc is not a valid command in mobile template: c3p0_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:436: Failure
+Value of: commandName.isEmpty() || commandConfigManager->contains(commandName)
+  Actual: false
+Expected: true
+Attack: forcechoke_npc is not a valid command in mobile template: c3p0_elder
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
+Value of: cam->size() > 0
+  Actual: false
+Expected: true
+Attackable npc ep3_rryatt_abandoned_super_battle_droid_03 does not have attacks.
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
+Value of: cam->size() > 0
+  Actual: false
+Expected: true
+Attackable npc ep3_blackscale_enforcer_m_02 does not have attacks.
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
+Value of: cam->size() > 0
+  Actual: false
+Expected: true
+Attackable npc ep3_blackscale_trooper_m_01 does not have attacks.
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile gungi has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: som_ancient_guardian_ig
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
+Value of: cam->size() > 0
+  Actual: false
+Expected: true
+Attackable npc som_ancient_guardian_ig does not have attacks.
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
+Value of: totalChance
+  Actual: 10500000
+Expected: 10000000
+Loot groups total chance is incorrect nightsister_protector
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile acklay_elder has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
+Value of: mobNames.contains(objName)
+  Actual: false
+Expected: true
+Mobile thrawn1 has invalid objectName: @mob/creature_names:
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:370: Failure
+Value of: socialGroup.isEmpty()
+  Actual: true
+Expected: false
+Social group is empty on pack mobile: coyn_captain
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:200: Failure
+Value of: templateData != NULL
+  Actual: false
+Expected: true
+Mobile corsair_slave has invalid template configured: object/mobile/dressed_dathomir_corsair_slave.iff
+/home/vagrant/bin/swgemu: line 760: 14699 Segmentation fault      ./core3 runUnitTests --gtest_filter="${filter}"
+
+vagrant@swgemudev:~/bin$ 
