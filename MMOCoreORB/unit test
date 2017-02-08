@@ -17,9 +17,9 @@ Running unit tests...
 
 [----------] 1 test from BasicScreenPlayTest
 [ RUN      ] BasicScreenPlayTest.ScreenPlayLuaInitialize
-(0 s) [BadgeList] Loaded 141 badges.
-[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (997 ms)
-[----------] 1 test from BasicScreenPlayTest (997 ms total)
+(1 s) [BadgeList] Loaded 141 badges.
+[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (1126 ms)
+[----------] 1 test from BasicScreenPlayTest (1126 ms total)
 
 [----------] 3 tests from LuaMobileTest
 [ RUN      ] LuaMobileTest.LuaMobileTemplatesTest
@@ -32,254 +32,121 @@ Running unit tests...
 (1 s) [CustomizationIdManager] loaded 37 hair assets
 (1 s) [CustomizationIdManager] loaded 16 allow bald species data
 (1 s) [TemplateManager] Loading object templates
-	Loading templates: [10%]	(2 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 43
+	Loading templates: [10%]	(3 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 43
 
-(2 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 46
+(3 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 46
 
-(2 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 16
+(3 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 16
 
-(2 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 14
+(3 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 14
 
-	Loading templates: [11%]	(2 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 23
+	Loading templates: [11%]	(3 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 23
 
 (3 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 14
 
 	Loading templates: [13%]	(3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
 (3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
 (3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
-	Loading templates: [54%]	(8 s) [Console] WARNING - expecting SHOT got RCCT in file: object/resource_container/shared_simple.iff
-	Loading templates: [70%]	(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-(9 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
-(9 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-	Loading templates: [74%]	(10 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 46
+	Loading templates: [54%]	(9 s) [Console] WARNING - expecting SHOT got RCCT in file: object/resource_container/shared_simple.iff
+	Loading templates: [70%]	(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+	Loading templates: [74%]	(11 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 46
 
-(10 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 43
+(11 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 43
 
-	Loading templates: [104%]	(12 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
-	Loading templates: [105%]	(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+	Loading templates: [104%]	(14 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
+	Loading templates: [105%]	(14 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(14 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(14 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(14 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
 	Loading templates: [114%]	
-(14 s) [TemplateManager] Finished loading object templates
-(14 s) [TemplateManager] 0 portal layouts loaded
-(14 s) [TemplateManager] 0 floor meshes loaded
-(14 s) [TemplateManager] 89 structure footprints.
-(14 s) [CommandConfigManager] ERROR - Could not create command counterAttack
-(14 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-(15 s) [FactionManager] Loading config file.
-(15 s) [FactionManager] loaded 22 ranks
-(15 s) [DnaManager] Loading DNA Information
-(15 s) [DnaManager] Loaded 201 dna stats.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_rryatt_abandoned_super_battle_droid_02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
-Value of: foundGroup != NULL
-  Actual: false
-Expected: true
-Loot group weapons from derriphan was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc hk77 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:408: Failure
-Value of: group.size() > 0
-  Actual: false
-Expected: true
-Weapon group durge_weapons from ep3_clone_relics_durge_droid_02 was not found in weaponMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:408: Failure
-Value of: group.size() > 0
-  Actual: false
-Expected: true
-Weapon group durge_weapons from revan_quest1 was not found in weaponMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc must_mining_droid_mark_02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_enforcer_m_03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile imp_transitpilot has invalid objectName: @mob/creature_names:Transitpilot
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:408: Failure
-Value of: group.size() > 0
-  Actual: false
-Expected: true
-Weapon group durge_weapons from ep3_clone_relics_durge_droid_01 was not found in weaponMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
-Value of: FactionManager::instance()->isFaction(faction)
-  Actual: false
-Expected: true
-Faction, self, from mobile template ep3_clone_relics_claw_bodyguard_01 does not exist.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
-Value of: convoTemp != NULL
-  Actual: false
-Expected: true
-Conversation template from raglith was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile aakuan_overlord has invalid objectName: @mob/creature_names:aakuan_overlord
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
-Value of: convoTemp != NULL
-  Actual: false
-Expected: true
-Conversation template from theme_park_marauder_ewok_juicy was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
-Value of: convoTemp != NULL
-  Actual: false
-Expected: true
-Conversation template from king_terak was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 10500000
-Expected: 10000000
-Loot groups total chance is incorrect death_watch_ghost_2
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc asn_121 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile giant_kimogila_ancient has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:408: Failure
-Value of: group.size() > 0
-  Actual: false
-Expected: true
-Weapon group durge_weapons from ep3_clone_relics_durge was not found in weaponMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
-Value of: convoTemp != NULL
-  Actual: false
-Expected: true
-Conversation template from fightmaster_jorak was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
-Value of: convoTemp != NULL
-  Actual: false
-Expected: true
-Conversation template from theme_park_marauder_lizardman was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 1000000
-Expected: 10000000
-Loot groups total chance is incorrect booba_fett
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
-Value of: convoTemp != NULL
-  Actual: false
-Expected: true
-Conversation template from charal was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
-Value of: convoTemp != NULL
-  Actual: false
-Expected: true
-Conversation template from scholar_szingo was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:190: Failure
-Value of: mobNames.contains(objName)
-  Actual: false
-Expected: true
-Mobile reb_transitpilot has invalid objectName: @mob/creature_names:Transitpilot
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc must_mining_droid_mark_03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 10500000
-Expected: 10000000
-Loot groups total chance is incorrect death_watch_s_battle_droid_alt
-[  FAILED  ] LuaMobileTest.LuaMobileTemplatesTest (14589 ms)
+(15 s) [TemplateManager] Finished loading object templates
+(15 s) [TemplateManager] 0 portal layouts loaded
+(15 s) [TemplateManager] 0 floor meshes loaded
+(15 s) [TemplateManager] 89 structure footprints.
+(15 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(15 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+(16 s) [FactionManager] Loading config file.
+(16 s) [FactionManager] loaded 22 ranks
+(16 s) [DnaManager] Loading DNA Information
+(16 s) [DnaManager] Loaded 201 dna stats.
+[       OK ] LuaMobileTest.LuaMobileTemplatesTest (15951 ms)
 [ RUN      ] LuaMobileTest.LuaLootGroupsTest
-(15 s) [CommandConfigManager] ERROR - Could not create command counterAttack
-(15 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:646: Failure
-Expected: (lootGroupTemplate->getLootGroupEntryForRoll(10000000).length()) > (0), actual: 0 vs 0
-Item total chance is less than 10000000: looted_container
-[  FAILED  ] LuaMobileTest.LuaLootGroupsTest (133 ms)
+(17 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(17 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+[       OK ] LuaMobileTest.LuaLootGroupsTest (141 ms)
 [ RUN      ] LuaMobileTest.LuaSpawnManagerTest
-(15 s) [CommandConfigManager] ERROR - Could not create command counterAttack
-(15 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] LuaMobileTest.LuaSpawnManagerTest (117 ms)
-[----------] 3 tests from LuaMobileTest (14840 ms total)
+(17 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(17 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+[       OK ] LuaMobileTest.LuaSpawnManagerTest (122 ms)
+[----------] 3 tests from LuaMobileTest (16214 ms total)
 
 [----------] 12 tests from JediManagerTest
 [ RUN      ] JediManagerTest.ShouldRunFileJediManagerLuaAtLoadConfiguration
-[       OK ] JediManagerTest.ShouldRunFileJediManagerLuaAtLoadConfiguration (0 ms)
+[       OK ] JediManagerTest.ShouldRunFileJediManagerLuaAtLoadConfiguration (1 ms)
 [ RUN      ] JediManagerTest.ShouldReadTheJediProgressionTypeVariableAtLoadConfigurations
 [       OK ] JediManagerTest.ShouldReadTheJediProgressionTypeVariableAtLoadConfigurations (0 ms)
 [ RUN      ] JediManagerTest.ShouldRunTheHolocronJediManagerLuaFileIfHolocronJediProgressionIsConfigured
 [       OK ] JediManagerTest.ShouldRunTheHolocronJediManagerLuaFileIfHolocronJediProgressionIsConfigured (0 ms)
 [ RUN      ] JediManagerTest.ShouldRunTheVillageJediManagerLuaFileIfVillageJediProgressionIsConfigured
-[       OK ] JediManagerTest.ShouldRunTheVillageJediManagerLuaFileIfVillageJediProgressionIsConfigured (1 ms)
+[       OK ] JediManagerTest.ShouldRunTheVillageJediManagerLuaFileIfVillageJediProgressionIsConfigured (0 ms)
 [ RUN      ] JediManagerTest.ShouldReadTheCustomJediProgressionFileStringIfCustomJediProgressionIsConfigured
 [       OK ] JediManagerTest.ShouldReadTheCustomJediProgressionFileStringIfCustomJediProgressionIsConfigured (0 ms)
 [ RUN      ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured
 [       OK ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured (0 ms)
 [ RUN      ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration
-[       OK ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration (0 ms)
+[       OK ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration (1 ms)
 [ RUN      ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager
-[       OK ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager (2 ms)
+[       OK ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager (12 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager
-[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (1 ms)
+[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (2 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager
 [       OK ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager
-[       OK ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager (1 ms)
+[       OK ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager
 [       OK ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager (0 ms)
-[----------] 12 tests from JediManagerTest (5 ms total)
+[----------] 12 tests from JediManagerTest (16 ms total)
 
 [----------] 3 tests from TerrainManagerTest
 [ RUN      ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea
-[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (0 ms)
+[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (1 ms)
 [ RUN      ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea
-[       OK ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea (1 ms)
+[       OK ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea (0 ms)
 [ RUN      ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference
-[       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (0 ms)
-[----------] 3 tests from TerrainManagerTest (1 ms total)
+[       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (1 ms)
+[----------] 3 tests from TerrainManagerTest (2 ms total)
 
 [----------] 4 tests from RectangularAreaShapeTest
 [ RUN      ] RectangularAreaShapeTest.RectangularAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation
@@ -290,7 +157,7 @@ Item total chance is less than 10000000: looted_container
 [       OK ] RectangularAreaShapeTest.RectangularAreaShapeShouldCallContainsPointOnTheAreaToCheckIntersectionWith (0 ms)
 [ RUN      ] RectangularAreaShapeTest.IntersectsWithShouldReturnTrueIfContainsPointReturnsTrueFromTheAreaShape
 [       OK ] RectangularAreaShapeTest.IntersectsWithShouldReturnTrueIfContainsPointReturnsTrueFromTheAreaShape (0 ms)
-[----------] 4 tests from RectangularAreaShapeTest (1 ms total)
+[----------] 4 tests from RectangularAreaShapeTest (0 ms total)
 
 [----------] 5 tests from RingAreaShapeTest
 [ RUN      ] RingAreaShapeTest.RingAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation
@@ -314,49 +181,44 @@ Item total chance is less than 10000000: looted_container
 [       OK ] GeneralDeadlockTestBase.MonitorLockTest (0 ms)
 [ RUN      ] GeneralDeadlockTestBase.MultipleLocksTest
 [       OK ] GeneralDeadlockTestBase.MultipleLocksTest (0 ms)
-[----------] 4 tests from GeneralDeadlockTestBase (0 ms total)
+[----------] 4 tests from GeneralDeadlockTestBase (1 ms total)
 
 [----------] 2 tests from BasicTerrainTest
 [ RUN      ] BasicTerrainTest.LoadTestTerrainTest
-[       OK ] BasicTerrainTest.LoadTestTerrainTest (377 ms)
+[       OK ] BasicTerrainTest.LoadTestTerrainTest (391 ms)
 [ RUN      ] BasicTerrainTest.LoadTestSpaceTerrain
-[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (79 ms)
-[----------] 2 tests from BasicTerrainTest (456 ms total)
+[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (96 ms)
+[----------] 2 tests from BasicTerrainTest (487 ms total)
 
 [----------] 4 tests from ZoneTest
 [ RUN      ] ZoneTest.PlayerManager
-(16 s) [DirectorManager] Lua version: 503
-(16 s) [DirectorManager] Lua reads int64
-(16 s) [PlayerManager] Loaded 72 veteran rewards.
-(16 s) [PlayerManager] Loaded 18 starting locations.
-(16 s) [PlayerManager] Loaded 188 quests.
-(16 s) [PlayerManager] ERROR - No Server Database initiated
-(16 s) [PlayerManager] loaded 0 character names in memory
-[       OK ] ZoneTest.PlayerManager (6 ms)
+(17 s) [DirectorManager] Lua version: 503
+(17 s) [DirectorManager] Lua reads int64
+(17 s) [PlayerManager] Loaded 72 veteran rewards.
+(17 s) [PlayerManager] Loaded 18 starting locations.
+(17 s) [PlayerManager] Loaded 188 quests.
+(17 s) [PlayerManager] ERROR - No Server Database initiated
+(17 s) [PlayerManager] loaded 0 character names in memory
+[       OK ] ZoneTest.PlayerManager (8 ms)
 [ RUN      ] ZoneTest.TreLoad
-[       OK ] ZoneTest.TreLoad (0 ms)
+[       OK ] ZoneTest.TreLoad (1 ms)
 [ RUN      ] ZoneTest.ActiveAreaTest
-[       OK ] ZoneTest.ActiveAreaTest (1 ms)
+[       OK ] ZoneTest.ActiveAreaTest (0 ms)
 [ RUN      ] ZoneTest.InRangeTest
-[       OK ] ZoneTest.InRangeTest (0 ms)
-[----------] 4 tests from ZoneTest (7 ms total)
+[       OK ] ZoneTest.InRangeTest (1 ms)
+[----------] 4 tests from ZoneTest (10 ms total)
 
 [----------] 2 tests from CommandLuaTest
 [ RUN      ] CommandLuaTest.LoadCommandLuas
-(16 s) [CommandConfigManager] ERROR - Could not create command counterAttack
-(16 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] CommandLuaTest.LoadCommandLuas (82 ms)
+(17 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(17 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+[       OK ] CommandLuaTest.LoadCommandLuas (113 ms)
 [ RUN      ] CommandLuaTest.CheckAnimationCRCS
-[       OK ] CommandLuaTest.CheckAnimationCRCS (43 ms)
-[----------] 2 tests from CommandLuaTest (125 ms total)
+[       OK ] CommandLuaTest.CheckAnimationCRCS (44 ms)
+[----------] 2 tests from CommandLuaTest (159 ms total)
 
 [----------] Global test environment tear-down
-[==========] 43 tests from 11 test cases ran. (16432 ms total)
-[  PASSED  ] 41 tests.
-[  FAILED  ] 2 tests, listed below:
-[  FAILED  ] LuaMobileTest.LuaMobileTemplatesTest
-[  FAILED  ] LuaMobileTest.LuaLootGroupsTest
-
- 2 FAILED TESTS
+[==========] 43 tests from 11 test cases ran. (18016 ms total)
+[  PASSED  ] 43 tests.
 
 vagrant@swgemudev:~/workspace/Core3/MMOCoreORB/bin$ 
