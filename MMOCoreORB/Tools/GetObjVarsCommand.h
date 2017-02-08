@@ -65,7 +65,7 @@ public:
                     CreatureTemplate* creatureTemplate = mob->getCreatureTemplate();
                     String mobileName = creatureTemplate->getTemplateName();
 
-                    text << "spawnMobile(\"" << planetName << "\", " <<  "\"" << mobileName << "\", 1, ";
+                    text << "spawnMobile(\"" << planetName << "\", " <<  "\"" << mobileName << "\", 3600, ";
                 
                     if (object->getParent() != NULL && object->getParent().get()->isCellObject()) {
                         // Inside
@@ -160,7 +160,7 @@ public:
                 
                 StringBuffer text;
                 
-                text << "spawnMobile(\"" << planetName << "\", " <<  "\"commoner" << "\", 1, ";
+                text << "spawnMobile(\"" << planetName << "\", " <<  "\"commoner" << "\", 3600, ";
                 
                 if (creature->getParent() != NULL && creature->getParent().get()->isCellObject()) {
                     // Inside
