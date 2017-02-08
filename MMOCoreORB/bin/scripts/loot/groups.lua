@@ -459,8 +459,6 @@ includeFile("groups/custom/av_21_scheme.lua")
 includeFile("groups/custom/droid_loot.lua")
 includeFile("groups/custom/mandalorian_schemes.lua")
 includeFile("groups/custom/bounty_hunter_schemes.lua")
-includeFile("groups/custom/commando_loot.lua")
-
 includeFile("groups/playerDatapad.lua")
 
 -- bestine election sub-folder
