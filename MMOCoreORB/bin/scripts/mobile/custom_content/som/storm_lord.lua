@@ -1,6 +1,6 @@
 storm_lord = Creature:new {
 	customName = "Storm Lord",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 300,

@@ -1,7 +1,7 @@
 ep3_clone_relics_imbrimi_gangster_boss = Creature:new {
 	customName = "Imbrimi Gangster Boss",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

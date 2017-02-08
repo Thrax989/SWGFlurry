@@ -1,7 +1,7 @@
 ep3_nautolan_hunter = Creature:new {
 	customName = "Nautolan Hunter",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 120,
 	chanceHit = 4.50,

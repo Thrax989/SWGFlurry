@@ -1,6 +1,6 @@
 cww8a_battle_droid = Creature:new {
 	customName = "CWW8A Battle Droid",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 200,

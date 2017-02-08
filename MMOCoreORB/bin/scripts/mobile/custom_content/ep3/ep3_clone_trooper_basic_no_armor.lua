@@ -1,7 +1,7 @@
 ep3_clone_trooper_basic_no_armor = Creature:new {
 	customName = "Clone Trooper",
 	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

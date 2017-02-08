@@ -1,6 +1,6 @@
 miner_hens = Creature:new {
 	customName = "Renlo Hens",
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 17,
 	chanceHit = 0.32,

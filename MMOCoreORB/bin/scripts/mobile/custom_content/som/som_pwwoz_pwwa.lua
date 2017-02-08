@@ -1,6 +1,6 @@
 som_pwwoz_pwwa = Creature:new {
 	customName = "Pwwa",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 129,

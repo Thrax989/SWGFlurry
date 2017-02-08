@@ -1,6 +1,6 @@
 pei_yi = Creature:new {
 	customName = "Pei Yi",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 90,

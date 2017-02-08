@@ -1,6 +1,6 @@
 ep3_wke_forest_stalker_03 = Creature:new {
 	customName = "Forest Stalker",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "wookiee",
 	faction = "",
 	level = 105,

@@ -1,7 +1,7 @@
 ep3_etyyy_ryoo_finn = Creature:new {
 	customName = "Ryoo Finn",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

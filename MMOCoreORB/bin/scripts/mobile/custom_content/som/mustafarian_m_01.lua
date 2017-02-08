@@ -1,6 +1,6 @@
 mustafarian_m_01 = Creature:new {
 	customName = "Mustafarian",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 129,

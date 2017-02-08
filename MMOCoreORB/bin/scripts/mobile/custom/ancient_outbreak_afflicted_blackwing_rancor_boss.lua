@@ -1,5 +1,5 @@
 ancient_outbreak_afflicted_blackwing_rancor_boss = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "OutBreak BlackWing Rancor Boss",
 	socialGroup = "",
 	pvpFaction = "",

@@ -1,7 +1,7 @@
 ep3_clone_relics_cww8 = Creature:new {
 	customName = "CWW-8",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 80,
 	chanceHit = 0.8,

@@ -1,7 +1,7 @@
 ep3_etyyy_pilot_to_bocctyyy = Creature:new {
 	customName = "Pilot To Bocctyyy",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

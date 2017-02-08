@@ -1,5 +1,5 @@
 ancient_meatlump_king_static = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Meatlump King",
 	socialGroup = "",
 	pvpFaction = "",

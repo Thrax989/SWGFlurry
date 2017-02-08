@@ -1,7 +1,7 @@
 ep3_commander_khrask = Creature:new {
 	customName = "Commander Khrask",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

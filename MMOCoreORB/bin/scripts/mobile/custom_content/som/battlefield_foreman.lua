@@ -1,6 +1,6 @@
 battlefield_foreman = Creature:new {
 	customName = "Battlefield Foreman",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 110,

@@ -1,6 +1,6 @@
 ep3_mad_wookiee_03 = Creature:new {
 	customName = "Mad Wookiee",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "wookiee",
 	faction = "",
 	level = 105,

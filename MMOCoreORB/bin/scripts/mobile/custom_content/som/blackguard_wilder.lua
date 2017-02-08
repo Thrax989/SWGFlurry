@@ -1,6 +1,6 @@
 blackguard_wilder = Creature:new {
 	customName = "Blackguard Wilder",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 110,

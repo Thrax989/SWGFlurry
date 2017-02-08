@@ -1,6 +1,6 @@
 som_trinity_assassin_zabrak_female = Creature:new {
 	customName = "Trinity Assassin",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 265,

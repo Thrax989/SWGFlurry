@@ -1,7 +1,7 @@
 ep3_pirus_gue = Creature:new {
 	customName = "Pirus Gue",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

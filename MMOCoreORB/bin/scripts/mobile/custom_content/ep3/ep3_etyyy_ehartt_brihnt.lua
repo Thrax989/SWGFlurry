@@ -1,7 +1,7 @@
 ep3_etyyy_ehartt_brihnt = Creature:new {
 	customName = "Ehartt Brihnt",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

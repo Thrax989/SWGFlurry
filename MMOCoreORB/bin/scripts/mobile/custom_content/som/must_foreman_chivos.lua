@@ -1,6 +1,6 @@
 must_foreman_chivos = Creature:new {
 	customName = "Foreman Chivos",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

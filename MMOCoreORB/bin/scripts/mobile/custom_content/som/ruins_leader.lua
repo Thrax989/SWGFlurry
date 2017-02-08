@@ -1,6 +1,6 @@
 ruins_leader = Creature:new {
 	customName = "Scavenger",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 57,

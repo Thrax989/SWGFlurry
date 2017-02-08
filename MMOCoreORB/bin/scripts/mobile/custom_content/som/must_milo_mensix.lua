@@ -1,6 +1,6 @@
 must_milo_mensix = Creature:new {
 	customName = "Milo Mensix",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

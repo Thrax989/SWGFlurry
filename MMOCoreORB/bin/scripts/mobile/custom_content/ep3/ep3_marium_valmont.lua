@@ -1,7 +1,7 @@
 ep3_marium_valmont = Creature:new {
 	customName = "Marium Valmont",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

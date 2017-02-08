@@ -1,7 +1,7 @@
 ep3_clone_relics_claw_grunt_04 = Creature:new {
 	customName = "Claw Grunt",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

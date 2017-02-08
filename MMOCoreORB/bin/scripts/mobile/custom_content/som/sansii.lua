@@ -1,6 +1,6 @@
 sansii = Creature:new {
 	customName = "Sansii",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 275,

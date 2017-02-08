@@ -1,7 +1,7 @@
 ep3_etyyy_kara_corlon = Creature:new {
 	customName = "Kara Corlon",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

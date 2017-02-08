@@ -1,6 +1,6 @@
 som_pwwoz_thug_1 = Creature:new {
 	customName = "Pwwoz Bodyguard",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 17,

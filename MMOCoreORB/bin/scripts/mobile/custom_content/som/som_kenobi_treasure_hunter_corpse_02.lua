@@ -1,6 +1,6 @@
 som_kenobi_treasure_hunter_corpse_02 = Creature:new {
 	customName = "som_kenobi_treasure_hunter_corpse_02",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

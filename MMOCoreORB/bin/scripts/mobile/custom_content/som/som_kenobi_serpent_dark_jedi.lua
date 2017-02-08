@@ -1,6 +1,6 @@
 som_kenobi_serpent_dark_jedi = Creature:new {
 	customName = "Serpent Dark Jedi",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 265,

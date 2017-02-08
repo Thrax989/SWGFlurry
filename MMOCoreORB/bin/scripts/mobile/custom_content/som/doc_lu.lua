@@ -1,6 +1,6 @@
 doc_lu = Creature:new {
 	customName = "doc_lu",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

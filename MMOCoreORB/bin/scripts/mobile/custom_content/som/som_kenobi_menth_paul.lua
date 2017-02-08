@@ -1,6 +1,6 @@
 som_kenobi_menth_paul = Creature:new {
 	customName = "Menth Paul",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

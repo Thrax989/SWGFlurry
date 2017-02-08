@@ -1,6 +1,6 @@
 ep3_wke_cerimonial_guard_03 = Creature:new {
 	customName = "Ceremonial Guard",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "wookiee",
 	faction = "",
 	level = 45,

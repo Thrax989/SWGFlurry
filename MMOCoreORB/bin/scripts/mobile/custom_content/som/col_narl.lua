@@ -1,6 +1,6 @@
 col_narl = Creature:new {
 	customName = "Col Narl",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

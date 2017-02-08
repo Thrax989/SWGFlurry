@@ -1,6 +1,6 @@
 ep3_wke_dead_guard_02 = Creature:new {
 	customName = "Dead Guard",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "wookiee",
 	faction = "",
 	level = 45,

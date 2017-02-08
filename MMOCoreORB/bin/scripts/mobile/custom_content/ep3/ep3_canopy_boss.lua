@@ -1,7 +1,7 @@
 ep3_canopy_boss = Creature:new {
 	customName = "Canopy Boss",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 130,
 	chanceHit = 1.33,

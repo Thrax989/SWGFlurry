@@ -1,6 +1,6 @@
 som_pann_protocol_droid = Creature:new {
 	customName = "Pann protocol droid",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

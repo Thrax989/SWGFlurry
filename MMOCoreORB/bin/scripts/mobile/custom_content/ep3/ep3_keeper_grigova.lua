@@ -1,7 +1,7 @@
 ep3_keeper_grigova = Creature:new {
 	customName = "Keeper Grigova",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

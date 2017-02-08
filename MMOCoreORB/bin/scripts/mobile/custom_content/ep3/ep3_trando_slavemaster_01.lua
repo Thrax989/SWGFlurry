@@ -1,6 +1,6 @@
 ep3_trando_slavemaster_01 = Creature:new {
 	customName = "Trandoshan Slavemaster",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "trandoshan",
 	faction = "",
 	level = 100,

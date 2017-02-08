@@ -1,6 +1,6 @@
 blackguard_elite = Creature:new {
 	customName = "Blackguard Elite",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 130,

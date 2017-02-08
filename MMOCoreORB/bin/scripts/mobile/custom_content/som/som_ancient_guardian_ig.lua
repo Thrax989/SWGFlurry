@@ -1,6 +1,6 @@
 som_ancient_guardian_ig = Creature:new {
 	customName = "Ancient Guardian IG",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 200,

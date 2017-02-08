@@ -1,6 +1,6 @@
 droid_8t88 = Creature:new {
 	customName = "8T-88",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

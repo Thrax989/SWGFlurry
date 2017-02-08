@@ -1,6 +1,6 @@
 vansk_blackguard = Creature:new {
 	customName = "Vansk Blackguard",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 117,

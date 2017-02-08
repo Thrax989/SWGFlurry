@@ -1,7 +1,7 @@
 ep3_kach_dead_rodian_02 = Creature:new {
 	customName = "Dead Rodian",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

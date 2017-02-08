@@ -1,7 +1,7 @@
 ep3_clone_relics_admiral_krieg = Creature:new {
 	customName = "Admiral Krieg",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

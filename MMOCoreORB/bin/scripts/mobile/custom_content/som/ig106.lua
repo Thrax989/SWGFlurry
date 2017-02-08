@@ -1,6 +1,6 @@
 ig106 = Creature:new {
 	customName = "IG-106",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 220,

@@ -1,7 +1,7 @@
 ep3_etyyy_laen_pieweto = Creature:new {
 	customName = "Laen Pieweto, Chiss Poacher Leader",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 47,
 	chanceHit = 0.47,

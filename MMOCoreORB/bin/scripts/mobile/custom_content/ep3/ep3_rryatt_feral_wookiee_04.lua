@@ -1,6 +1,6 @@
 ep3_rryatt_feral_wookiee_04 = Creature:new {
 	customName = "Feral Wookiee",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "wookiee",
 	faction = "",
 	level = 105,

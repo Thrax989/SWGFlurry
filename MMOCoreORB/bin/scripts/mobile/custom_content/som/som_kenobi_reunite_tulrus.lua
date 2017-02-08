@@ -1,6 +1,6 @@
 som_kenobi_reunite_tulrus = Creature:new {
 	customName = "Tulrus",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 60,

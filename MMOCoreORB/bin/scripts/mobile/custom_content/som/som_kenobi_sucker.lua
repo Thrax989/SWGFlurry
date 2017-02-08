@@ -1,6 +1,6 @@
 som_kenobi_sucker = Creature:new {
 	customName = "Sucker",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 90,

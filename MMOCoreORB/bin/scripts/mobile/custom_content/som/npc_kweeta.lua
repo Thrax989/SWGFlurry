@@ -1,6 +1,6 @@
 npc_kweeta = Creature:new {
 	customName = "Kweeta",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

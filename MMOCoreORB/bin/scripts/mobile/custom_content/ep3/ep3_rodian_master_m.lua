@@ -1,7 +1,7 @@
 ep3_rodian_master_m = Creature:new {
 	customName = "Rodian Master",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

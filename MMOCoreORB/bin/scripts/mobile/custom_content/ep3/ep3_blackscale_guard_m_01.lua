@@ -1,6 +1,6 @@
 ep3_blackscale_guard_m_01 = Creature:new {
 	customName = "Blackscale Guard",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "trandoshan",
 	faction = "",
 	level = 95,

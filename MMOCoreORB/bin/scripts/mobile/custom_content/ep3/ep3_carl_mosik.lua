@@ -1,7 +1,7 @@
 ep3_carl_mosik = Creature:new {
 	customName = "Carl Mosik",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

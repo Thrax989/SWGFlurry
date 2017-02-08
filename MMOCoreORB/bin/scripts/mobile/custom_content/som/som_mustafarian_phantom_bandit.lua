@@ -1,6 +1,6 @@
 som_mustafarian_phantom_bandit = Creature:new {
 	customName = "Mustafarian Phantom Bandit",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

@@ -1,6 +1,6 @@
 must_scout = Creature:new {
 	customName = "must_scout",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 129,

@@ -1,7 +1,7 @@
 cyborg_engineer_tatooine = Creature:new {
 	customName = "Cyborg Engineer",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

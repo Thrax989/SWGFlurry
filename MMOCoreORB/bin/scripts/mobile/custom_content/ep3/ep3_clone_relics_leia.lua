@@ -1,7 +1,7 @@
 ep3_clone_relics_leia = Creature:new {
 	customName = "Princess Leia",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 300,
 	chanceHit = 75.00,

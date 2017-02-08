@@ -1,6 +1,6 @@
 thunter_aqualish_m_01 = Creature:new {
 	customName = "Aqualish thunter",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

@@ -1,7 +1,7 @@
 ep3_rryatt_gotal_hunter_champion_02 = Creature:new {
 	customName = "Gotal Hunter Champion",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 115,
 	chanceHit = 3.85,

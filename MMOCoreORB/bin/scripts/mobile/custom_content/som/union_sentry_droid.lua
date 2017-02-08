@@ -1,6 +1,6 @@
 union_sentry_droid = Creature:new {
 	customName = "Union Sentry Droid",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

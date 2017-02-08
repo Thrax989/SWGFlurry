@@ -1,7 +1,7 @@
 ep3_etyyy_tripp_rar = Creature:new {
 	customName = "Tripp Rar",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

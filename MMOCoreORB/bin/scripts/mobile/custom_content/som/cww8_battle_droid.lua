@@ -1,6 +1,6 @@
 cww8_battle_droid = Creature:new {
 	customName = "World Boss",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 300,

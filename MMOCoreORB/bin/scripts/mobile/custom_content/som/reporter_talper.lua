@@ -1,6 +1,6 @@
 reporter_talper = Creature:new {
 	customName = "Reporter Talper",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

@@ -1,7 +1,7 @@
 ep3_mining_captain_koh = Creature:new {
 	customName = "Captain Koh",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

@@ -1,7 +1,7 @@
 dressed_ep3_clone_relics_jawl = Creature:new {
 	customName = "Jawl",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

@@ -1,7 +1,7 @@
 ep3_etyyy_chiss_poacher_hracca_04 = Creature:new {
 	customName = "Chiss Poacher Hracca",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 45,
 	chanceHit = 0.45,

@@ -1,6 +1,6 @@
 ep3_clone_relics_wookie_prisoner_04 = Creature:new {
 	customName = "Wookiee Prisoner",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "wookiee",
 	faction = "",
 	level = 45,

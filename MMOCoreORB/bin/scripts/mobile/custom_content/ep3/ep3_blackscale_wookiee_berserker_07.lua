@@ -1,6 +1,6 @@
 ep3_blackscale_wookiee_berserker_07 = Creature:new {
 	customName = "Wookiee Berserker",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "wookiee",
 	faction = "",
 	level = 105,

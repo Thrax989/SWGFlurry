@@ -1,6 +1,6 @@
 must_mining_droid_mark_02 = Creature:new {
 	customName = "Mark II Mining Droid",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 39,

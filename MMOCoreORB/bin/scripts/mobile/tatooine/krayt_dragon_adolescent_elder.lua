@@ -1,5 +1,5 @@
 krayt_dragon_adolescent_elder = Creature:new {
- 	objectName = "@mob/creature_names:",
+ 	--objectName = "@mob/creature_names:",
  	customName = "krayt dragon adolescent elder",
  	socialGroup = "krayt",
  	faction = "",

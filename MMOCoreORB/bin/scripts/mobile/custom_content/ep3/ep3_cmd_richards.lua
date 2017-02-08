@@ -1,7 +1,7 @@
 ep3_cmd_richards = Creature:new {
 	customName = "Commander Richards",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

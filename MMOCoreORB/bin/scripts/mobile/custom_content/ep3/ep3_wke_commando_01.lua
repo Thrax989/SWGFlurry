@@ -1,6 +1,6 @@
 ep3_wke_commando_01 = Creature:new {
 	customName = "Wookiee Commando",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "wookiee",
 	faction = "",
 	level = 105,

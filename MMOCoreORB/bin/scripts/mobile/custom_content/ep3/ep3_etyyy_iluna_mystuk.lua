@@ -1,7 +1,7 @@
 ep3_etyyy_iluna_mystuk = Creature:new {
 	customName = "Iluna Mystuk",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

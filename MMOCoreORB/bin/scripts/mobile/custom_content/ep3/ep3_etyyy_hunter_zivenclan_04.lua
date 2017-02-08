@@ -1,7 +1,7 @@
 ep3_etyyy_hunter_zivenclan_04 = Creature:new {
 	customName = "Zivenclan Hunter",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

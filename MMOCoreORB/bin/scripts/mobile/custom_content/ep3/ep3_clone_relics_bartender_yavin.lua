@@ -1,7 +1,7 @@
 ep3_clone_relics_bartender_yavin = Creature:new {
 	customName = "Bartender",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

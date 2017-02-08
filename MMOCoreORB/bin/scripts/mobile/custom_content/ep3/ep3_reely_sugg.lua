@@ -1,7 +1,7 @@
 ep3_reely_sugg = Creature:new {
 	customName = "Reely Sugg",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

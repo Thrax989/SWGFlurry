@@ -1,6 +1,6 @@
 cinderclaw = Creature:new {
 	customName = "Cinderclaw",
-	socialGroup = "darkside",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 300,

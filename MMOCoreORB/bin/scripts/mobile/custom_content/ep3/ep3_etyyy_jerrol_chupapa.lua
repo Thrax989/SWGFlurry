@@ -1,7 +1,7 @@
 ep3_etyyy_jerrol_chupapa = Creature:new {
 	customName = "Jerrol Chupapa",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

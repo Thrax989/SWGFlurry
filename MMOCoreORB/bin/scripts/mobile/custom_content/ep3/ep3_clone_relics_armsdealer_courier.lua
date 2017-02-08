@@ -1,7 +1,7 @@
 ep3_clone_relics_armsdealer_courier = Creature:new {
 	customName = "Armsdealer Courier",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

@@ -1,6 +1,6 @@
 ep3_blackscale_pilot_s03 = Creature:new {
 	customName = "Blackscale Pilot",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "trandoshan",
 	faction = "",
 	level = 60,

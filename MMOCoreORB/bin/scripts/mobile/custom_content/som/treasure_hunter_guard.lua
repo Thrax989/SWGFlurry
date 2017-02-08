@@ -1,6 +1,6 @@
 treasure_hunter_guard = Creature:new {
 	customName = "Treasure hunter guard",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 110,

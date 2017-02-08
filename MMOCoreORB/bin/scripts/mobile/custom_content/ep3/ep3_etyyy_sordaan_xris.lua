@@ -1,7 +1,7 @@
 ep3_etyyy_sordaan_xris = Creature:new {
 	customName = "Sordaan Xris",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

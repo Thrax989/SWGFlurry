@@ -1,7 +1,7 @@
 ep3_jessokk_scarhand = Creature:new {
 	customName = "Jessokk Scarhand",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

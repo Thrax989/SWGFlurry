@@ -1,7 +1,7 @@
 ep3_kachirho_qst_radio = Creature:new {
 	customName = "kachirho_qst_radio",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

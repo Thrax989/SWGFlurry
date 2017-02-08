@@ -1,6 +1,6 @@
 ep3_blackscale_scaleguard = Creature:new {
 	customName = "Blackscale Scaleguard",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "trandoshan",
 	faction = "",
 	level = 105,

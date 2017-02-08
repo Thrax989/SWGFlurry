@@ -1,7 +1,7 @@
 ep3_tempal_buncho = Creature:new {
 	customName = "Tempal Buncho",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

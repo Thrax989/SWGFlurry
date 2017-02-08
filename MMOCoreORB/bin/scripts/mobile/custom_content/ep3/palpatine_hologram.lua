@@ -1,7 +1,7 @@
 palpatine_hologram = Creature:new {
 	--objectName = "@mob/creature_names:ep3_palpatine_hologram",
 	customName = "Emperor Palpatine Hologram",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 300,

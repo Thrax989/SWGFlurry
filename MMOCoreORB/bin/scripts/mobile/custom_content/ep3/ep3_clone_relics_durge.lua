@@ -1,6 +1,6 @@
 ep3_clone_relics_durge = Creature:new {
 	customName = "Durge",
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 300,
 	chanceHit = 30.0,

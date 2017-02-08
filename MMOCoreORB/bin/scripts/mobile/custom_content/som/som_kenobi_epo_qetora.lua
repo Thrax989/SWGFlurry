@@ -1,6 +1,6 @@
 som_kenobi_epo_qetora = Creature:new {
 	customName = "Epo Qetora",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

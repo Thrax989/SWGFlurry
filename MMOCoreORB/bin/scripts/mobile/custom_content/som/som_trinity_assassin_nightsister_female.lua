@@ -1,6 +1,6 @@
 som_trinity_assassin_nightsister_female = Creature:new {
 	customName = "Trinity Assassin guard",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 265,

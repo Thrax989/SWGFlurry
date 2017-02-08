@@ -1,6 +1,6 @@
 ruins_ithorian = Creature:new {
 	customName = "Scavenger",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 17,

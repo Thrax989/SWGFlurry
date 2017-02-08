@@ -1,7 +1,7 @@
 ep3_rryatt_trail_guild_f_04 = Creature:new {
 	customName = "Rryatt Trail Guide",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

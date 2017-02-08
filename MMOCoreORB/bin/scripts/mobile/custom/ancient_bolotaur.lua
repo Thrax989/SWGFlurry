@@ -1,5 +1,5 @@
 ancient_bolotaur = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Bolotaur",
 	socialGroup = "",
 	pvpFaction = "",

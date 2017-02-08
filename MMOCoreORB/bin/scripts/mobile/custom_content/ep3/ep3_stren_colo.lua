@@ -1,7 +1,7 @@
 ep3_stren_colo = Creature:new {
 	customName = "Stren Colo",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

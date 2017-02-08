@@ -1,6 +1,6 @@
 som_trinity_assassin_ithorian_male = Creature:new {
 	customName = "Trinity Assassin Leader",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 275,

@@ -1,7 +1,7 @@
 ep3_clone_relics_ovarra = Creature:new {
 	customName = "Ovarra",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

@@ -1,6 +1,6 @@
 ep3_blackscale_dead_01 = Creature:new {
 	customName = "Blackscale Dead",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "trandoshan",
 	faction = "",
 	level = 30,

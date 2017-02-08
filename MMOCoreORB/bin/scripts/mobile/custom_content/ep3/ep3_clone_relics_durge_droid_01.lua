@@ -1,6 +1,6 @@
 ep3_clone_relics_durge_droid_01 = Creature:new {
 	customName = "Durge Droid",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "droids",
 	faction = "",
 	level = 150,

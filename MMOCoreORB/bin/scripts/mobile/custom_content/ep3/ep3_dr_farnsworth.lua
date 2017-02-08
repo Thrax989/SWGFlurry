@@ -1,7 +1,7 @@
 ep3_dr_farnsworth = Creature:new {
 	customName = "Dr Farnsworth",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

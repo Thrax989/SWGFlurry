@@ -1,6 +1,6 @@
 som_mustafarian_ikt = Creature:new {
 	customName = "Mustafarian Ikt",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

@@ -1,6 +1,6 @@
 ep3_wke_freedom_fighter_05 = Creature:new {
 	customName = "Freedom Fighter",
-	randomNameType = NAME_GENERIC_TAG,
+	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "wookiee",
 	faction = "",
 	level = 45,

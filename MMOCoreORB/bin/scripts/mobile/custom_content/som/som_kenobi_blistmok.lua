@@ -1,6 +1,6 @@
 som_kenobi_blistmok = Creature:new {
 	customName = "Blistmok",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 70,

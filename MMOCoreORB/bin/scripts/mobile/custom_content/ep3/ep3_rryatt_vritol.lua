@@ -1,7 +1,7 @@
 ep3_rryatt_vritol = Creature:new {
 	customName = "Vritol",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

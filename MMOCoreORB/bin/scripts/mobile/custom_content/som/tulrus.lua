@@ -1,7 +1,7 @@
 tulrus = Creature:new {
 	customName = "Tulrus",
 	socialGroup = "mustafar",
-	pvpFaction = "",
+	pvpFaction = "self",
 	faction = "",
 	level = 60,
 	chanceHit = 5,

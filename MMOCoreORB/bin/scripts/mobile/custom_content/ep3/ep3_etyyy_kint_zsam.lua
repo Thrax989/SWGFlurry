@@ -1,7 +1,7 @@
 ep3_etyyy_kint_zsam = Creature:new {
 	customName = "Kint Zsam",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

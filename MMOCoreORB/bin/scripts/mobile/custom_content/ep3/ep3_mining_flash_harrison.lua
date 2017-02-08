@@ -1,7 +1,7 @@
 ep3_mining_flash_harrison = Creature:new {
 	customName = "Flash Harrison",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

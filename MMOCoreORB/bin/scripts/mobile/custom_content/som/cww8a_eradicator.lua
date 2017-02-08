@@ -1,6 +1,6 @@
 cww8a_eradicator = Creature:new {
 	customName = "CWW8A Eradicator",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 200,

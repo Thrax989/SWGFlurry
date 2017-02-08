@@ -1,7 +1,7 @@
 arena_guard_inner = Creature:new {
 	customName = "Arena Guard",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

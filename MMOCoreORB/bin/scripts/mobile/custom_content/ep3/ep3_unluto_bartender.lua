@@ -1,7 +1,7 @@
 ep3_unluto_bartender = Creature:new {
 	customName = "Unluto Bartender",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

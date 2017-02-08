@@ -1,7 +1,7 @@
 ep3_etyyy_chiss_poacher_smuggler_03 = Creature:new {
 	customName = "Chiss Poacher Smuggler",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 45,
 	chanceHit = 0.45,

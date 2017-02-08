@@ -1,7 +1,7 @@
 ep3_rryatt_tressk = Creature:new {
 	customName = "Tressk",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

@@ -1,7 +1,7 @@
 ep3_mining_thom_steele = Creature:new {
 	customName = "Thom Steele",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

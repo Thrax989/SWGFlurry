@@ -1,5 +1,5 @@
 kaasport = Creature:new {
-	objectName = "",
+	--objectName = "",
 	customName = "kaas Travel Port",
 	socialGroup = "Townsperson",
 	pvpFaction = "Townsperson",

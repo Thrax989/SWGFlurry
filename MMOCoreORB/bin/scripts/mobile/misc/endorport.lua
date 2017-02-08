@@ -1,5 +1,5 @@
 endorport = Creature:new {
-	objectName = "",
+	--objectName = "",
 	customName = "Test Travel Port",
 	socialGroup = "Townsperson",
 	pvpFaction = "Townsperson",

@@ -1,7 +1,7 @@
 space_ep3_chassis_broker_05 = Creature:new {
 	customName = "Chassis Broker",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,

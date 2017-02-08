@@ -1,5 +1,5 @@
 world_exchange = Creature:new {
-	objectName = "",
+	--objectName = "",
 	customName = "World Exchange Dealer",
 	socialGroup = "townsperson",
 	pvpFaction = "townsperson",
