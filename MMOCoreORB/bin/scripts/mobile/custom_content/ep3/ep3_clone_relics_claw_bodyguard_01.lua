@@ -1,8 +1,8 @@
 ep3_clone_relics_claw_bodyguard_01 = Creature:new {
 	customName = "Claw Bodyguard",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
-	faction = "self",
+	socialGroup = "self",
+	faction = "",
 	level = 30,
 	chanceHit = 0.33,
 	damageMin = 180,
