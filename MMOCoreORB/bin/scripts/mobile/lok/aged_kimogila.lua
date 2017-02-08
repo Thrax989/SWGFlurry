@@ -1,5 +1,5 @@
 aged_kimogila = Creature:new {
-	objectName = "",
+	-- objectName = "",
 	customName = "an aged kimogila",
 	socialGroup = "kimogila",
 	faction = "",

@@ -1,5 +1,5 @@
 cave_dweller = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "meatlump",

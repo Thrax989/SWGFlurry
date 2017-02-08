@@ -1,5 +1,5 @@
 mando_boss = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "Mand'alor",
 	pvpFaction = "",
 	socialGroup = "",
