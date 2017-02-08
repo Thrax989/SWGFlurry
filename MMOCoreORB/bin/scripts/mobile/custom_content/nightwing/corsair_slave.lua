@@ -1,7 +1,7 @@
 corsair_slave = Creature:new {
 	customName = "Dune Corsair Slave",
-	socialGroup = "corsair",
-	faction = "corsair",
+	socialGroup = "self",
+	faction = "",
 	level = 15,
 	chanceHit = 0.31,
 	damageMin = 160,

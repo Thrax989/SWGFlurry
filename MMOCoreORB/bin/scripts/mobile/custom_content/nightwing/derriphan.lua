@@ -1,7 +1,7 @@
 derriphan= Creature:new {
 	customName = "Derriphan (Dune Corsair Leader)",
-	socialGroup = "corsair",
-	faction = "corsair",
+	socialGroup = "self",
+	faction = "",
 	level = 336,
 	chanceHit = 45.0,
 	damageMin = 2270,

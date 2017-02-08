@@ -48,7 +48,7 @@ ep3_blackscale_guard_m_04 = Creature:new {
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang"
-	--attacks = merge(brawlermaster,marksmanmaster)
+	attacks = merge(brawlermaster,marksmanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(ep3_blackscale_guard_m_04, "ep3_blackscale_guard_m_04")

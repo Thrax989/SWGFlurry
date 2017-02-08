@@ -1,7 +1,7 @@
 fishkid= Creature:new {
 	customName = "Imma D'ummy fo'Freddy",
-	socialGroup = "corsair",
-	faction = "corsair",
+	socialGroup = "self",
+	faction = "",
 	level = 336,
 	chanceHit = 45.0,
 	damageMin = 2270,
