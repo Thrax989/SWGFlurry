@@ -1,6 +1,6 @@
 rep_transitpilot = Creature:new {
-	objectName = "@mob/creature_names:Transitpilot",
-        customName = "Transitpilot",
+	--objectName = "@mob/creature_names:Transitpilot",
+     customName = "Transitpilot",
 	socialGroup = "rebel",
 	pvpFaction = "rebel",
 	faction = "rebel",

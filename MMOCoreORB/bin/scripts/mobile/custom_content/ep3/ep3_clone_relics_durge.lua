@@ -44,7 +44,7 @@ ep3_clone_relics_durge = Creature:new {
 			lootChance = 10000000
 		},
 		},
-	weapons = {"durge_weapons"},
+	weapons = {"unarmed_weapons"},
 	conversationTemplate = "",
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,pikemanmaster,fencermaster,swordsmanmaster,tkamaster,pistoleermaster,commandomaster)
 }

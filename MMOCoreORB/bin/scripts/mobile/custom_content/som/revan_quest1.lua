@@ -45,7 +45,7 @@ revan_quest1 = Creature:new {
 			lootChance = 10000000
 		},
 		},
-	weapons = {"durge_weapons"},
+	weapons = {"unarmed_weapons"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = {
 		{"creatureareacombo","StateAccuracyBonus=100"},
@@ -58,10 +58,7 @@ revan_quest1 = Creature:new {
 		{"intimidationattack","IntimidationChance=100"},
 		{"mediumpoison","PoisonChance=100"},
 		{"creatureareapoison","PoisonChance=100"},
-		{"mediumdisease","DiseaseChance=100"},
-		{"milddisease","DiseaseChance=100"},
 		{"strongpoison","PoisonChance=100"},
-		{"strongdisease","DiseaseChance=100"},
 		{"creatureareaattack","StateAccuracyBonus=100"}
 	}
 }

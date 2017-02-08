@@ -1,5 +1,5 @@
 imp_transitpilot = Creature:new {
-   objectName = "@mob/creature_names:Transitpilot",
+   --objectName = "@mob/creature_names:Transitpilot",
    customName = "Transitpilot",
    socialGroup = "imperial",
    pvpFaction = "imperial",
