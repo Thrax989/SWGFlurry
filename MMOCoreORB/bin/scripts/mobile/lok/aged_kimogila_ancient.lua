@@ -1,5 +1,5 @@
 aged_kimogila_ancient = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "aged kimogila ancient",
 	socialGroup = "kimogila",
 	faction = "",

@@ -1,5 +1,5 @@
 spirit_exar = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Reincarnated Possessed Spirit",
 	socialGroup = "dark_jedi",
 	pvpFaction = "",

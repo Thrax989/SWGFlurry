@@ -1,6 +1,6 @@
 coyn_captain = Creature:new {
 	customName = "Coyn Captain",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 125,

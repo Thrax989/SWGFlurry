@@ -1,5 +1,5 @@
 legendary_bearded_jax = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Legendary Bearded Jax",
 	socialGroup = "",
 	pvpFaction = "",

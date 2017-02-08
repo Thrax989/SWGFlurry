@@ -1,5 +1,5 @@
 hansoloboss = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Han Solo Boss",
 	socialGroup = "geonosian",
 	pvpFaction = "",

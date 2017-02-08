@@ -1,5 +1,5 @@
 legendary_graul = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Legendary Graul",
 	socialGroup = "",
 	pvpFaction = "",

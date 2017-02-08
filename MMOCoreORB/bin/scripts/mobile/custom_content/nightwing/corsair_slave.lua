@@ -25,7 +25,7 @@ corsair_slave = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/dressed_dathomir_corsair_slave.iff"},
+	templates = {"object/mobile/dressed_corsair_pirate_elite_nikto_m.iff"},
 	lootGroups = {
 		{
 			groups = {

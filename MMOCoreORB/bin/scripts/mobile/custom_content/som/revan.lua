@@ -1,5 +1,5 @@
 revan = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Revan (Boss)",
 	socialGroup = "dark_jedi",
 	pvpFaction = "",

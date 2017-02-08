@@ -1,5 +1,5 @@
 legendary_peko_peko = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Legendary Peko Peko",
 	socialGroup = "",
 	pvpFaction = "",

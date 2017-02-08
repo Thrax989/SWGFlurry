@@ -1,5 +1,5 @@
 poggle_the_lesser = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Poggle The Lesser",
 	socialGroup = "geonosian",
 	pvpFaction = "",

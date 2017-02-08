@@ -1,5 +1,5 @@
 revan_quest1 = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Revan Decoy",
 	socialGroup = "dark_jedi",
 	pvpFaction = "",

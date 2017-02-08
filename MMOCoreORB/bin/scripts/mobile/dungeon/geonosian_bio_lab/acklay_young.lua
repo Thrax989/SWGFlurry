@@ -1,5 +1,5 @@
 acklay_young = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Acklay Young",
 	socialGroup = "geonosian",
 	pvpFaction = "",

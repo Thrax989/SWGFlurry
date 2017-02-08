@@ -1,5 +1,5 @@
 elder_enhanced_kliknik = Creature:new {
-   objectName = "@mob/creature_names:",
+   --objectName = "@mob/creature_names:",
    customName = "elder enhanced kliknik",
 	socialGroup = "geonosian",
 	faction = "",

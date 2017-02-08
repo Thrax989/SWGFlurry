@@ -1,5 +1,5 @@
 legendary_arachne_widow = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Legendary Arachne Widow",
 	socialGroup = "",
 	pvpFaction = "",

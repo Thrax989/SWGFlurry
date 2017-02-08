@@ -1,5 +1,5 @@
 elder_enhanced_gaping_spider = Creature:new {
-   objectName = "@mob/creature_names:",
+   --objectName = "@mob/creature_names:",
    customName = "elder enhanced gaping spider",
 	socialGroup = "geonosian",
 	faction = "",

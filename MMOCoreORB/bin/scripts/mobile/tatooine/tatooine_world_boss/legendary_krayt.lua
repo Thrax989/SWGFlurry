@@ -1,5 +1,5 @@
 legendary_krayt = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Legendary Krayt Dragon",
 	socialGroup = "",
 	pvpFaction = "",

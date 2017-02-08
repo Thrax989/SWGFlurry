@@ -1,5 +1,5 @@
 legendary_salacious_crumb = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Legendary Salacious Crumb",
 	socialGroup = "",
 	pvpFaction = "",

@@ -1,5 +1,5 @@
   	krayt_king = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "krayt king",
 	socialGroup = "krayt",
 	faction = "",
