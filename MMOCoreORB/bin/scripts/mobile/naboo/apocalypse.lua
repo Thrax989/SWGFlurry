@@ -1,5 +1,5 @@
 apocalypse = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "Apocalypse (World Devourer)",
 	socialGroup = "self",
 	pvpFaction = "",

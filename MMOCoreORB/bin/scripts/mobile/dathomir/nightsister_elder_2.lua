@@ -1,5 +1,5 @@
 nightsister_elder_2 = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "Nightsister Elder 2",
 	randomNameTag = true,
 	socialGroup = "nightsister",

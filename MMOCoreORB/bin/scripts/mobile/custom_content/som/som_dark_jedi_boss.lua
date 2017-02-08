@@ -1,5 +1,5 @@
 som_dark_jedi_boss = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "Supreme Leader Snoke (Boss)",
 	socialGroup = "dark_jedi",
 	pvpFaction = "",

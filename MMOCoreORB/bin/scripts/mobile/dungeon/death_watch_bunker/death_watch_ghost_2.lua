@@ -1,6 +1,6 @@
 
 death_watch_ghost_2 = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "death watch ghost 2",
 	randomNameTag = true,
 	socialGroup = "death_watch",

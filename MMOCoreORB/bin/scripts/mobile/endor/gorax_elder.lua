@@ -1,5 +1,5 @@
 gorax_elder = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "gorax elder",
 	socialGroup = "gorax",
 	faction = "",

@@ -1,5 +1,5 @@
   	mittens = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "mittens",
 	socialGroup = "vir_vur",
 	faction = "",

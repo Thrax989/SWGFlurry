@@ -1,5 +1,5 @@
 elder_graul_marauder = Creature:new {
-   objectName = "@mob/creature_names:",
+   -- objectName = "@mob/creature_names:",
    customName = "elder graul marauder",
 	socialGroup = "graul",
 	faction = "",

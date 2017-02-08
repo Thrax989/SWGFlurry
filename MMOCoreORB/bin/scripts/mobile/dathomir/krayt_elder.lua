@@ -1,5 +1,6 @@
 krayt_elder = Creature:new {
 	customName = "krayt (Elder)",
+	socialGroup = "krayt",
 	level = 15,
 	chanceHit = 19.75,
 	damageMin = 1270,

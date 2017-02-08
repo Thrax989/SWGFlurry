@@ -1,5 +1,5 @@
 giant_canyon_krayt_dragon_elder = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "giant canyon krayt dragon elder",
 	socialGroup = "krayt",
 	faction = "",

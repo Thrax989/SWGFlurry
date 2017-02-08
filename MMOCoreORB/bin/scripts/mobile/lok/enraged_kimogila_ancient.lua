@@ -1,5 +1,5 @@
 enraged_kimogila_ancient = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "enraged kimogila ancient",
 	socialGroup = "kimogila",
 	faction = "",
