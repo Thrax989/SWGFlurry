@@ -1,6 +1,7 @@
 Server is not running
 
-vagrant@swgemudev:~/workspace/Core3/MMOCoreORB/bin$ /home/vagrant/bin/swgemu runUnitTests+ cd /home/vagrant/workspace/Core3/MMOCoreORB/bin
+vagrant@swgemudev:~/workspace/Core3/MMOCoreORB/bin$ /home/vagrant/bin/swgemu runUnitTests
++ cd /home/vagrant/workspace/Core3/MMOCoreORB/bin
 + ./core3 runUnitTests '--gtest_filter=*'
 Running unit tests...
 [==========] Running 43 tests from 11 test cases.
@@ -17,8 +18,8 @@ Running unit tests...
 [----------] 1 test from BasicScreenPlayTest
 [ RUN      ] BasicScreenPlayTest.ScreenPlayLuaInitialize
 (0 s) [BadgeList] Loaded 141 badges.
-[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (1013 ms)
-[----------] 1 test from BasicScreenPlayTest (1013 ms total)
+[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (997 ms)
+[----------] 1 test from BasicScreenPlayTest (997 ms total)
 
 [----------] 3 tests from LuaMobileTest
 [ RUN      ] LuaMobileTest.LuaMobileTemplatesTest
@@ -39,7 +40,7 @@ Running unit tests...
 
 (2 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 14
 
-	Loading templates: [11%]	(3 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 23
+	Loading templates: [11%]	(2 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 23
 
 (3 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 14
 
@@ -84,11 +85,11 @@ Running unit tests...
 
 (10 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 43
 
-	Loading templates: [104%]	(13 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
-	Loading templates: [105%]	(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+	Loading templates: [104%]	(12 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
+	Loading templates: [105%]	(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
 	Loading templates: [114%]	
 (14 s) [TemplateManager] Finished loading object templates
 (14 s) [TemplateManager] 0 portal layouts loaded
@@ -104,37 +105,12 @@ Running unit tests...
 Value of: cam->size() > 0
   Actual: false
 Expected: true
-Attackable npc som_ancient_guardian_droideka does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_guard_m_04 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
 Attackable npc ep3_rryatt_abandoned_super_battle_droid_02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
-Value of: FactionManager::instance()->isFaction(faction)
-  Actual: false
-Expected: true
-Faction, corsair, from mobile template corsair_thug does not exist.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
-Value of: FactionManager::instance()->isFaction(faction)
-  Actual: false
-Expected: true
-Faction, corsair, from mobile template derriphan does not exist.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
 Value of: foundGroup != NULL
   Actual: false
 Expected: true
 Loot group weapons from derriphan was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_assault_m_02 does not have attacks.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -154,42 +130,7 @@ Weapon group durge_weapons from revan_quest1 was not found in weaponMap
 Value of: cam->size() > 0
   Actual: false
 Expected: true
-Attackable npc ep3_rryatt_abandoned_super_battle_droid_03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_enforcer_m_02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_trooper_m_01 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc som_ancient_guardian_ig does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
-Value of: FactionManager::instance()->isFaction(faction)
-  Actual: false
-Expected: true
-Faction, corsair, from mobile template corsair_slave does not exist.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_assault_m_01 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
 Attackable npc must_mining_droid_mark_02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc must_mining_droid_mark_01 does not have attacks.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
 Value of: cam->size() > 0
   Actual: false
@@ -209,22 +150,7 @@ Weapon group durge_weapons from ep3_clone_relics_durge_droid_01 was not found in
 Value of: FactionManager::instance()->isFaction(faction)
   Actual: false
 Expected: true
-Faction, corsair, from mobile template corsair_thug_elite does not exist.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
-Value of: FactionManager::instance()->isFaction(faction)
-  Actual: false
-Expected: true
 Faction, self, from mobile template ep3_clone_relics_claw_bodyguard_01 does not exist.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_anguished_wookiee_02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_rryatt_abandoned_super_battle_droid_01 does not have attacks.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
 Value of: convoTemp != NULL
   Actual: false
@@ -235,41 +161,16 @@ Value of: mobNames.contains(objName)
   Actual: false
 Expected: true
 Mobile aakuan_overlord has invalid objectName: @mob/creature_names:aakuan_overlord
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_enforcer_m_01 does not have attacks.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
 Value of: convoTemp != NULL
   Actual: false
 Expected: true
 Conversation template from theme_park_marauder_ewok_juicy was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_trooper_m_02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ig106 does not have attacks.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
 Value of: convoTemp != NULL
   Actual: false
 Expected: true
 Conversation template from king_terak was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_anguished_wookiee_04 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_pilot_s03 does not have attacks.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
 Value of: totalChance
   Actual: 10500000
@@ -285,101 +186,16 @@ Value of: mobNames.contains(objName)
   Actual: false
 Expected: true
 Mobile giant_kimogila_ancient has invalid objectName: @mob/creature_names:
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_guard_m_02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_trooper_m_03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 6000000
-Expected: 10000000
-Loot groups total chance is incorrect mando_boss
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 1000000
-Expected: 10000000
-Loot groups total chance is incorrect mando_boss
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
-Value of: foundGroup != NULL
-  Actual: false
-Expected: true
-Loot group g_ep3_loot_blackbane from mando_boss was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 5500000
-Expected: 10000000
-Loot groups total chance is incorrect mando_boss
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 1000000
-Expected: 10000000
-Loot groups total chance is incorrect mando_boss
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
-Value of: foundGroup != NULL
-  Actual: false
-Expected: true
-Loot group g_heavy_avatar_acid_beam from mando_boss was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc hk_fu does not have attacks.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:408: Failure
 Value of: group.size() > 0
   Actual: false
 Expected: true
 Weapon group durge_weapons from ep3_clone_relics_durge was not found in weaponMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_guard_m_01 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_assault_m_03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_pilot_s01 does not have attacks.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
 Value of: convoTemp != NULL
   Actual: false
 Expected: true
 Conversation template from fightmaster_jorak was not found.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc hk47 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_enforcer_m_04 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_clone_relics_super_battle_droid_01 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_anguished_wookiee_03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_rryatt_abandoned_droideka_01 does not have attacks.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:416: Failure
 Value of: convoTemp != NULL
   Actual: false
@@ -409,65 +225,25 @@ Mobile reb_transitpilot has invalid objectName: @mob/creature_names:Transitpilot
 Value of: cam->size() > 0
   Actual: false
 Expected: true
-Attackable npc ep3_anguished_wookiee_01 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_guard_m_03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_rryatt_abandoned_droideka_02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_pilot_s02 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
 Attackable npc must_mining_droid_mark_03 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc ep3_blackscale_scaleguard does not have attacks.
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
 Value of: totalChance
   Actual: 10500000
 Expected: 10000000
 Loot groups total chance is incorrect death_watch_s_battle_droid_alt
-[  FAILED  ] LuaMobileTest.LuaMobileTemplatesTest (15028 ms)
+[  FAILED  ] LuaMobileTest.LuaMobileTemplatesTest (14589 ms)
 [ RUN      ] LuaMobileTest.LuaLootGroupsTest
-(16 s) [CommandConfigManager] ERROR - Could not create command counterAttack
-(16 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:152: Failure
-Value of: itemTemplate != NULL
-  Actual: false
-Expected: true
-Item template solohand1 from hansolohand1 was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:647: Failure
-Value of: 0
-Expected: lootGroupTemplate->getLootGroupEntryForRoll(10000001).length()
-Which is: 25
-Item total chance is greater than 10000000: commando_loot
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:152: Failure
-Value of: itemTemplate != NULL
-  Actual: false
-Expected: true
-Item template rifle_acid_launcher from commando_loot was not found in LootGroupMap
+(15 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(15 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
 ../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:646: Failure
 Expected: (lootGroupTemplate->getLootGroupEntryForRoll(10000000).length()) > (0), actual: 0 vs 0
 Item total chance is less than 10000000: looted_container
-[  FAILED  ] LuaMobileTest.LuaLootGroupsTest (126 ms)
+[  FAILED  ] LuaMobileTest.LuaLootGroupsTest (133 ms)
 [ RUN      ] LuaMobileTest.LuaSpawnManagerTest
-(16 s) [CommandConfigManager] ERROR - Could not create command counterAttack
-(16 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+(15 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(15 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
 [       OK ] LuaMobileTest.LuaSpawnManagerTest (117 ms)
-[----------] 3 tests from LuaMobileTest (15271 ms total)
+[----------] 3 tests from LuaMobileTest (14840 ms total)
 
 [----------] 12 tests from JediManagerTest
 [ RUN      ] JediManagerTest.ShouldRunFileJediManagerLuaAtLoadConfiguration
@@ -477,7 +253,7 @@ Item total chance is less than 10000000: looted_container
 [ RUN      ] JediManagerTest.ShouldRunTheHolocronJediManagerLuaFileIfHolocronJediProgressionIsConfigured
 [       OK ] JediManagerTest.ShouldRunTheHolocronJediManagerLuaFileIfHolocronJediProgressionIsConfigured (0 ms)
 [ RUN      ] JediManagerTest.ShouldRunTheVillageJediManagerLuaFileIfVillageJediProgressionIsConfigured
-[       OK ] JediManagerTest.ShouldRunTheVillageJediManagerLuaFileIfVillageJediProgressionIsConfigured (0 ms)
+[       OK ] JediManagerTest.ShouldRunTheVillageJediManagerLuaFileIfVillageJediProgressionIsConfigured (1 ms)
 [ RUN      ] JediManagerTest.ShouldReadTheCustomJediProgressionFileStringIfCustomJediProgressionIsConfigured
 [       OK ] JediManagerTest.ShouldReadTheCustomJediProgressionFileStringIfCustomJediProgressionIsConfigured (0 ms)
 [ RUN      ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured
@@ -487,23 +263,23 @@ Item total chance is less than 10000000: looted_container
 [ RUN      ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager
 [       OK ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager (2 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager
-[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (0 ms)
+[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (1 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager
 [       OK ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager
-[       OK ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager (0 ms)
+[       OK ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager (1 ms)
 [ RUN      ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager
 [       OK ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager (0 ms)
-[----------] 12 tests from JediManagerTest (4 ms total)
+[----------] 12 tests from JediManagerTest (5 ms total)
 
 [----------] 3 tests from TerrainManagerTest
 [ RUN      ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea
-[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (1 ms)
+[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (0 ms)
 [ RUN      ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea
-[       OK ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea (0 ms)
+[       OK ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea (1 ms)
 [ RUN      ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference
-[       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (1 ms)
-[----------] 3 tests from TerrainManagerTest (2 ms total)
+[       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (0 ms)
+[----------] 3 tests from TerrainManagerTest (1 ms total)
 
 [----------] 4 tests from RectangularAreaShapeTest
 [ RUN      ] RectangularAreaShapeTest.RectangularAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation
@@ -514,7 +290,7 @@ Item total chance is less than 10000000: looted_container
 [       OK ] RectangularAreaShapeTest.RectangularAreaShapeShouldCallContainsPointOnTheAreaToCheckIntersectionWith (0 ms)
 [ RUN      ] RectangularAreaShapeTest.IntersectsWithShouldReturnTrueIfContainsPointReturnsTrueFromTheAreaShape
 [       OK ] RectangularAreaShapeTest.IntersectsWithShouldReturnTrueIfContainsPointReturnsTrueFromTheAreaShape (0 ms)
-[----------] 4 tests from RectangularAreaShapeTest (0 ms total)
+[----------] 4 tests from RectangularAreaShapeTest (1 ms total)
 
 [----------] 5 tests from RingAreaShapeTest
 [ RUN      ] RingAreaShapeTest.RingAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation
@@ -535,17 +311,17 @@ Item total chance is less than 10000000: looted_container
 [ RUN      ] GeneralDeadlockTestBase.ThreeLocksTest
 [       OK ] GeneralDeadlockTestBase.ThreeLocksTest (0 ms)
 [ RUN      ] GeneralDeadlockTestBase.MonitorLockTest
-[       OK ] GeneralDeadlockTestBase.MonitorLockTest (1 ms)
+[       OK ] GeneralDeadlockTestBase.MonitorLockTest (0 ms)
 [ RUN      ] GeneralDeadlockTestBase.MultipleLocksTest
 [       OK ] GeneralDeadlockTestBase.MultipleLocksTest (0 ms)
-[----------] 4 tests from GeneralDeadlockTestBase (1 ms total)
+[----------] 4 tests from GeneralDeadlockTestBase (0 ms total)
 
 [----------] 2 tests from BasicTerrainTest
 [ RUN      ] BasicTerrainTest.LoadTestTerrainTest
-[       OK ] BasicTerrainTest.LoadTestTerrainTest (439 ms)
+[       OK ] BasicTerrainTest.LoadTestTerrainTest (377 ms)
 [ RUN      ] BasicTerrainTest.LoadTestSpaceTerrain
-[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (74 ms)
-[----------] 2 tests from BasicTerrainTest (513 ms total)
+[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (79 ms)
+[----------] 2 tests from BasicTerrainTest (456 ms total)
 
 [----------] 4 tests from ZoneTest
 [ RUN      ] ZoneTest.PlayerManager
@@ -569,13 +345,13 @@ Item total chance is less than 10000000: looted_container
 [ RUN      ] CommandLuaTest.LoadCommandLuas
 (16 s) [CommandConfigManager] ERROR - Could not create command counterAttack
 (16 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] CommandLuaTest.LoadCommandLuas (76 ms)
+[       OK ] CommandLuaTest.LoadCommandLuas (82 ms)
 [ RUN      ] CommandLuaTest.CheckAnimationCRCS
-[       OK ] CommandLuaTest.CheckAnimationCRCS (42 ms)
-[----------] 2 tests from CommandLuaTest (120 ms total)
+[       OK ] CommandLuaTest.CheckAnimationCRCS (43 ms)
+[----------] 2 tests from CommandLuaTest (125 ms total)
 
 [----------] Global test environment tear-down
-[==========] 43 tests from 11 test cases ran. (16932 ms total)
+[==========] 43 tests from 11 test cases ran. (16432 ms total)
 [  PASSED  ] 41 tests.
 [  FAILED  ] 2 tests, listed below:
 [  FAILED  ] LuaMobileTest.LuaMobileTemplatesTest
