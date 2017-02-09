@@ -2,11 +2,11 @@
 bestine_quest_sword = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Bestine sword",
 	directObjectTemplate = "object/weapon/melee/sword/bestine_quest_sword.iff",
 	craftingValues = {
-		{"mindamage",109,191,0},
-		{"maxdamage",198,282,0},
+		{"mindamage",49,91,0},
+		{"maxdamage",98,182,0},
 		{"attackspeed",5.9,4,1},
 		{"woundchance",11,21,0},
 		{"hitpoints",750,1500,0},

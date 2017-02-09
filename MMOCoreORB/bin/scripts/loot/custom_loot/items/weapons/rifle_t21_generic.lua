@@ -1,7 +1,7 @@
 rifle_t21_generic = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "T21 rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_t21_generic.iff",
 	craftingValues = {
 		{"mindamage",60,110,0},

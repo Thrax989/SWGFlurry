@@ -1,7 +1,7 @@
 som_republic_flamer = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Republic flamer",
 	directObjectTemplate = "object/weapon/ranged/heavy/som_republic_flamer.iff",
 	craftingValues = {
 		{"mindamage",240,476,0},

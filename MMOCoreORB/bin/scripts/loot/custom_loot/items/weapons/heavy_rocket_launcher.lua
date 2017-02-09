@@ -1,7 +1,7 @@
 heavy_rocket_launcher = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Heavy rocket launcher",
 	directObjectTemplate = "object/weapon/ranged/heavy/heavy_rocket_launcher.iff",
 	craftingValues = {
 		{"mindamage",900,1350,0},

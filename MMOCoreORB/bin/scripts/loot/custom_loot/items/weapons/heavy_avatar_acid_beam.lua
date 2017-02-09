@@ -1,7 +1,7 @@
 heavy_avatar_acid_beam = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Heavy acid beam",
 	directObjectTemplate = "object/weapon/ranged/heavy/heavy_avatar_acid_beam.iff",
   craftingValues = {
 		{"mindamage",150,500,0},

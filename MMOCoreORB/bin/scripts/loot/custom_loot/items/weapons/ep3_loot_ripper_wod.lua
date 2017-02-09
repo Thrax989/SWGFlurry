@@ -1,14 +1,14 @@
 ep3_loot_ripper_wod = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Ripper",
 	directObjectTemplate = "object/weapon/melee/sword/ep3_loot_ripper_wod.iff",
 	craftingValues = {
-		{"mindamage",99,191,0},
-		{"maxdamage",298,442,0},
+		{"mindamage",49,91,0},
+		{"maxdamage",98,182,0},
 		{"attackspeed",5.9,4,1},
 		{"woundchance",11,21,0},
-		{"hitpoints",1550,2500,0},
+		{"hitpoints",750,1500,0},
 		{"zerorangemod",-15,5,0},
 		{"maxrangemod",-15,5,0},
 		{"midrange",3,3,0},

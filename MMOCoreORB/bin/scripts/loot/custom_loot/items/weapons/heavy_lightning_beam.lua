@@ -1,7 +1,7 @@
 heavy_lightning_beam = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Heavy lightning beam",
 	directObjectTemplate = "object/weapon/ranged/heavy/heavy_lightning_beam.iff",
 	craftingValues = {
 		{"mindamage",936,1340,0},

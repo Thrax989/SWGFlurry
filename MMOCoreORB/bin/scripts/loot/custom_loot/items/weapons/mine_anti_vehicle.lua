@@ -1,7 +1,7 @@
 mine_anti_vehicle = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Anti vehicle mine",
 	directObjectTemplate = "object/weapon/mine/wp_mine_anti_vehicle.iff",
 	craftingValues = {
 		{"mindamage",70,130,0},

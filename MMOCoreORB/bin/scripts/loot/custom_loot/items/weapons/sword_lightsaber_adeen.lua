@@ -1,7 +1,7 @@
 sword_lightsaber_adeen = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Adeen lightsaber",
 	directObjectTemplate = "object/weapon/melee/sword/sword_lightsaber_adeen.iff",
 	craftingValues = {
 		{"mindamage",61,170,0},

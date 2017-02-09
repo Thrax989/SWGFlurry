@@ -1,7 +1,7 @@
 som_lava_cannon = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Lava cannon",
 	directObjectTemplate = "object/weapon/ranged/heavy/som_lava_cannon.iff",
 	craftingValues = {
 		{"mindamage",240,476,0},

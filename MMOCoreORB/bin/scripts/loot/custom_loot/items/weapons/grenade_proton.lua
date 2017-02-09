@@ -1,7 +1,7 @@
 grenade_proton = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Proton grenade",
 	directObjectTemplate = "object/weapon/ranged/grenade/grenade_proton.iff",
 	craftingValues = {
 		{"mindamage",923,1534,0},

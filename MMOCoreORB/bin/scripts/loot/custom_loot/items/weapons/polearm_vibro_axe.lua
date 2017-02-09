@@ -2,10 +2,10 @@
 polearm_vibro_axe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Vibro Axe Polearm",
 	directObjectTemplate = "object/weapon/melee/polearm/polearm_vibro_axe.iff",
 	craftingValues = {
-		{"mindamage",149,191,0},
+		{"mindamage",49,91,0},
 		{"maxdamage",196,364,0},
 		{"attackspeed",6.5,4.5,1},
 		{"woundchance",23,43,0},

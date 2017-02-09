@@ -1,7 +1,7 @@
 victor_baton_gaderiffi = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Victor gaderiffi baton",
 	directObjectTemplate = "object/weapon/melee/baton/victor_baton_gaderiffi.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

@@ -1,7 +1,7 @@
 grenade_cryoban = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Cryoban grenade",
 	directObjectTemplate = "object/weapon/ranged/grenade/grenade_cryoban.iff",
 	craftingValues = {
 		{"mindamage",190,270,0},
