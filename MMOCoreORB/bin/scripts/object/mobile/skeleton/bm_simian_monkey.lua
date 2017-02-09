@@ -1,0 +1,3 @@
+object_mobile_skeleton_bm_simian_monkey = object_mobile_skeleton_shared_bm_simian_monkey:new {
+}
+ObjectTemplates:addTemplate(object_mobile_skeleton_bm_simian_monkey, "object/mobile/skeleton/bm_simian_monkey.iff")
