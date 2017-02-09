@@ -1,5 +1,5 @@
 kimogila_hatchling_ancient = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "kimogila hatchling ancient",
 	socialGroup = "kimogila",
 	faction = "",

@@ -23,7 +23,7 @@ theme_park_marauder_lizardman = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = NONE,
-	optionsBitmask = INVULNERABLE + CONVERSABLE,
+	optionsBitmask = INVULNERABLE,
 	diet = HERBIVORE,
 
 	templates =
@@ -34,7 +34,7 @@ theme_park_marauder_lizardman = Creature:new {
 			},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "theme_park_marauder_mission_target_convotemplate",
+	conversationTemplate = "",
 	attacks = brawlernovice
 }
 

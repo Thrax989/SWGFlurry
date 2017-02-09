@@ -1,5 +1,5 @@
 omniveron = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "Omniveron (Destruction Incarnate)",
 	socialGroup = "self",
 	pvpFaction = "",

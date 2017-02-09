@@ -1,5 +1,5 @@
 droidekaport = Creature:new {
-	objectName = "",
+	--objectName = "",
 	customName = "Test Travel Port",
 	socialGroup = "Townsperson",
 	pvpFaction = "Townsperson",
@@ -24,10 +24,10 @@ droidekaport = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = PACK + HEALER,
-	optionsBitmask = 264,
+	optionsBitmask = INVULNERABLE + INTERESTING,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/droideka.iff"},
+	templates = {"object/mobile/dressed_patron_chiss_m_01.iff"},
 	lootGroups = {
 	     {
 			groups = {

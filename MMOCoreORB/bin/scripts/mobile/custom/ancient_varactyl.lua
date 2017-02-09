@@ -1,5 +1,5 @@
 ancient_varactyl = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Varactyl",
 	socialGroup = "",
 	pvpFaction = "",

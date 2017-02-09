@@ -1,5 +1,5 @@
   	charon = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "Charon (Envoy Of Darkness)",
 	socialGroup = "krayt",
 	faction = "",
@@ -173,7 +173,7 @@
 		{"intimidationattack","IntimidationChance=100"},
 		{"creatureareapoison","PoisonChance=100"},
 		{"strongpoison","PoisonChance=100"},
-		{"strongDisease","DiseaseChance=100"},
+		{"strongdisease","DiseaseChance=100"},
 		{"creatureareaattack",""}
  	}
 }

@@ -1,5 +1,5 @@
 ancient_outbreak_afflicted_blackwing_rancor_boss = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "OutBreak BlackWing Rancor Boss",
 	socialGroup = "",
 	pvpFaction = "",
@@ -251,10 +251,10 @@ ancient_outbreak_afflicted_blackwing_rancor_boss = Creature:new {
 		{"intimidationattack","IntimidationChance=100"},
 		{"mediumpoison","PoisonChance=100"},
 		{"creatureareapoison","PoisonChance=100"},
-		{"mediumDisease","DiseaseChance=100"},
-		{"mildDisease","DiseaseChance=100"},
+		{"mediumdisease","DiseaseChance=100"},
+		{"milddisease","DiseaseChance=100"},
 		{"strongpoison","PoisonChance=100"},
-		{"strongDisease","DiseaseChance=100"},
+		{"strongdisease","DiseaseChance=100"},
 		{"creatureareaattack","StateAccuracyBonus=100"}
 	}
 }

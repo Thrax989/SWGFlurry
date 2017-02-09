@@ -1,7 +1,7 @@
 enhanced_force_kliknik = Creature:new {
 	objectName = "",
 	customName = "Force Kliknik",
-	socialGroup = "geonosian_creature",
+	socialGroup = "geonosian",
 	faction = "",
 	level = 85,
 	chanceHit = 0.95,

@@ -1,6 +1,6 @@
 enhanced_kwi = Creature:new {
 	objectName = "@mob/creature_names:geonosian_enhanced_kwi",
-	socialGroup = "geonosian_creature",
+	socialGroup = "geonosian",
 	faction = "",
 	level = 85,
 	chanceHit = 1.75,

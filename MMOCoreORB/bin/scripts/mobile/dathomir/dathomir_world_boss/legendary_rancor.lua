@@ -1,5 +1,5 @@
 legendary_rancor = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Legendary Rancor",
 	socialGroup = "",
 	pvpFaction = "",
@@ -245,10 +245,7 @@ legendary_rancor = Creature:new {
 		{"intimidationattack","IntimidationChance=100"},
 		{"mediumpoison","PoisonChance=100"},
 		{"creatureareapoison","PoisonChance=100"},
-		{"mediumDisease","DiseaseChance=100"},
-		{"mildDisease","DiseaseChance=100"},
 		{"strongpoison","PoisonChance=100"},
-		{"strongDisease","DiseaseChance=100"},
 		{"creatureareaattack","StateAccuracyBonus=100"}
 	}
 }

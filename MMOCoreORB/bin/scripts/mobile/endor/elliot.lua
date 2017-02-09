@@ -1,5 +1,5 @@
 elliot = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "Elliot (Mad Scientist)",
 	socialGroup = "self",
 	pvpFaction = "",

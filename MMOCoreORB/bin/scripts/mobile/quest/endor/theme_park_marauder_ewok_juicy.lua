@@ -1,8 +1,7 @@
 theme_park_marauder_ewok_juicy = Creature:new {
 	objectName = "@npc_name:ewok_base_male",
 	customName = "Juicy Ewok",
-	socialGroup = "gondula_tribe",
-	faction = "gondula_tribe",
+	socialGroup = "gondula_tribe",	faction = "gondula_tribe",
 	level = 35,
 	chanceHit = 0.41,
 	damageMin = 325,
@@ -23,7 +22,7 @@ theme_park_marauder_ewok_juicy = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
-	optionsBitmask = INVULNERABLE + CONVERSABLE,
+	optionsBitmask = INVULNERABLE,
 	diet = HERBIVORE,
 
 	templates = {
@@ -32,7 +31,7 @@ theme_park_marauder_ewok_juicy = Creature:new {
 		"object/mobile/ewok_male.iff"},
 	lootGroups = {},
 	weapons = {"ewok_weapons"},
-	conversationTemplate = "theme_park_marauder_mission_target_convotemplate",
+	conversationTemplate = "",
 	attacks = merge(riflemanmaster,brawlermaster)
 }
 CreatureTemplates:addCreatureTemplate(theme_park_marauder_ewok_juicy, "theme_park_marauder_ewok_juicy")

@@ -1,7 +1,7 @@
 elder_enhanced_gaping_spider = Creature:new {
-   objectName = "@mob/creature_names:",
+   --objectName = "@mob/creature_names:",
    customName = "elder enhanced gaping spider",
-	socialGroup = "geonosian_creature",
+	socialGroup = "geonosian",
 	faction = "",
 	level = 300,
 	chanceHit = 2.5,
@@ -49,10 +49,10 @@ elder_enhanced_gaping_spider = Creature:new {
 		{"intimidationattack","IntimidationChance=100"},
 		{"mediumpoison","PoisonChance=100"},
 		{"creatureareapoison","PoisonChance=100"},
-		{"mediumDisease","DiseaseChance=100"},
-		{"mildDisease","DiseaseChance=100"},
+		{"mediumdisease","DiseaseChance=100"},
+		{"milddisease","DiseaseChance=100"},
 		{"strongpoison","PoisonChance=100"},
-		{"strongDisease","DiseaseChance=100"},
+		{"strongdisease","DiseaseChance=100"},
 		{"creatureareaattack","StateAccuracyBonus=100"}
 	}
 }

@@ -1,5 +1,5 @@
 tusken_executioner_quest = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "Tusken Executioner",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",

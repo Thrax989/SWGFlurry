@@ -22,14 +22,14 @@ fightmaster_jorak = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = INVULNERABLE + CONVERSABLE,
+	optionsBitmask = INVULNERABLE,
 	diet = HERBIVORE,
 	scale = 1.2,
 
 	templates = {"object/mobile/dressed_fightmaster_jorak.iff"},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "theme_park_marauder_mission_giver_convotemplate",
+	conversationTemplate = "",
 	attacks = {
 	}
 }

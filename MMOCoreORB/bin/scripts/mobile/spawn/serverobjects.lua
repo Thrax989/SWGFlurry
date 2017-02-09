@@ -41,4 +41,3 @@ includeFile("spawn/destroy_mission/yavin4_destroy_missions.lua")
 includeFile("spawn/destroy_mission/factional_imperial_destroy_missions.lua")
 includeFile("spawn/destroy_mission/factional_neutral_destroy_missions.lua")
 includeFile("spawn/destroy_mission/factional_rebel_destroy_missions.lua")
-

@@ -1,5 +1,5 @@
   	krayt_king = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "krayt king",
 	socialGroup = "krayt",
 	faction = "",
@@ -141,10 +141,10 @@ lootGroups = {
 		{"intimidationattack","IntimidationChance=50"},
 		{"mediumpoison","PoisonChance=50"},
 		{"creatureareapoison","PoisonChance=50"},
-		{"mediumDisease","DiseaseChance=50"},
-		{"mildDisease","DiseaseChance=50"},
+		{"mediumdisease","DiseaseChance=50"},
+		{"milddisease","DiseaseChance=50"},
 		{"strongpoison","PoisonChance=50"},
-		{"strongDisease","DiseaseChance=50"},
+		{"strongdisease","DiseaseChance=50"},
 		{"creatureareaattack",""}
  	}
 }
