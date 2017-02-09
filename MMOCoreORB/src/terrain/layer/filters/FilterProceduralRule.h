@@ -8,6 +8,8 @@
 #ifndef FILTERPROCEDURALRULE_H_
 #define FILTERPROCEDURALRULE_H_
 
+#include "../ProceduralRule.h"
+
 class TerrainGenerator;
 
 class FilterRectangle {

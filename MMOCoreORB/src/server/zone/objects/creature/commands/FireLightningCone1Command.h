@@ -5,6 +5,7 @@
 #ifndef FIRELIGHTNINGCONE1COMMAND_H_
 #define FIRELIGHTNINGCONE1COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class FireLightningCone1Command : public CombatQueueCommand {

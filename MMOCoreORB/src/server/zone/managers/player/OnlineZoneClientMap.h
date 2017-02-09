@@ -8,6 +8,7 @@
 #ifndef ONLINEZONECLIENTMAP_H_
 #define ONLINEZONECLIENTMAP_H_
 
+#include "engine/engine.h"
 #include "server/zone/ZoneClientSession.h"
 #include "server/db/ServerDatabase.h"
 
@@ -74,7 +75,11 @@ public:
   int getDistinctIps() {
     return ips.size();
   }
-
+  
+  
+  
+  
 };
+
 
 #endif /* ONLINEZONECLIENTMAP_H_ */

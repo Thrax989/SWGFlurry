@@ -5,6 +5,8 @@
 #ifndef SETRANKCOMMAND_H_
 #define SETRANKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SetRankCommand : public QueueCommand {
 public:
 

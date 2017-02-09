@@ -5,6 +5,8 @@
 #ifndef CREATUREFLAG_H_
 #define CREATUREFLAG_H_
 
+#include "engine/engine.h"
+
 class CreatureFlag {
 public:
 	enum {
@@ -37,5 +39,6 @@ public:
 		HERBIVORE               = 0x02
 	};
 };
+
 
 #endif /* CREATUREFLAG_H_ */

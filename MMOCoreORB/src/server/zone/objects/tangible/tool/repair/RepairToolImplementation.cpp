@@ -9,6 +9,10 @@
 
 #include "server/zone/objects/manufactureschematic/craftingvalues/CraftingValues.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
+#include "server/zone/packets/tangible/TangibleObjectDeltaMessage3.h"
+
+#include "templates/tangible/tool/RepairToolTemplate.h"
+#include "server/zone/objects/player/sessions/SlicingSession.h"
 
 void RepairToolImplementation::loadTemplateData(SharedObjectTemplate* templateData) {
 	TangibleObjectImplementation::loadTemplateData(templateData);

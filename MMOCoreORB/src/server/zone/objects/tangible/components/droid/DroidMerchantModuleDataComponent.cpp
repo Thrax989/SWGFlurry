@@ -4,6 +4,7 @@
 
 #include "DroidMerchantModuleDataComponent.h"
 #include "server/zone/ZoneServer.h"
+#include "server/zone/objects/tangible/component/droid/DroidComponent.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/PlayerObject.h"

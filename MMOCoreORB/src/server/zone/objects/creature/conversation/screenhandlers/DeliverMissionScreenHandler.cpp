@@ -4,6 +4,7 @@
 
 #include "DeliverMissionScreenHandler.h"
 #include "server/zone/objects/mission/DeliverMissionObjective.h"
+#include "server/zone/managers/mission/spawnmaps/NpcSpawnPoint.h"
 
 const String DeliverMissionScreenHandler::STARTSCREENHANDLERID = "convoscreenstart";
 

@@ -5,7 +5,7 @@
 #ifndef ZONEPACKETHANDLER_H_
 #define ZONEPACKETHANDLER_H_
 
-#include "engine/log/Logger.h"
+#include "engine/engine.h"
 
 class Zone;
 

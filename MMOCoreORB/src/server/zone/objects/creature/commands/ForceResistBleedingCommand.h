@@ -5,6 +5,8 @@
 #ifndef FORCERESISTBLEEDINGCOMMAND_H_
 #define FORCERESISTBLEEDINGCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ForceResistBleedingCommand : public JediQueueCommand {
 public:
 

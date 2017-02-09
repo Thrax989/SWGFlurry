@@ -5,6 +5,7 @@
 #ifndef ROLLSHOTCOMMAND_H_
 #define ROLLSHOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class RollShotCommand : public CombatQueueCommand {

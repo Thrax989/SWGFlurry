@@ -8,6 +8,8 @@
 #ifndef STRUCTUREDEEDTEMPLATE_H_
 #define STRUCTUREDEEDTEMPLATE_H_
 
+#include "engine/engine.h"
+
 #include "templates/tangible/DeedTemplate.h"
 
 class StructureDeedTemplate : public DeedTemplate {
@@ -28,5 +30,6 @@ public:
 		return placementComponent;
 	}
 };
+
 
 #endif /* STRUCTUREDEEDTEMPLATE_H_ */

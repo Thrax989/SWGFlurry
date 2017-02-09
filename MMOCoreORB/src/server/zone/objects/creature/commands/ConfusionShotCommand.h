@@ -5,6 +5,7 @@
 #ifndef CONFUSIONSHOTCOMMAND_H_
 #define CONFUSIONSHOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class ConfusionShotCommand : public CombatQueueCommand {

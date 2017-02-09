@@ -6,7 +6,6 @@
 #include "server/zone/managers/skill/SkillManager.h"
 #include "server/zone/objects/player/sessions/TrainerConversationSession.h"
 #include "server/zone/Zone.h"
-#include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/managers/jedi/JediManager.h"
 
 const String TrainerScreenHandlers::STARTSCREENHANDLERID = "convoscreenstart";
@@ -449,3 +448,4 @@ ConversationScreen* TrainerTrainedMasterScreenHandler::handleScreen(CreatureObje
 
 	return conversationScreen;
 }
+

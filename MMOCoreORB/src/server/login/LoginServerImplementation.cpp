@@ -11,6 +11,7 @@
 
 #include "conf/ConfigManager.h"
 #include "server/login/account/AccountManager.h"
+#include "server/login/account/Account.h"
 
 #include "LoginHandler.h"
 

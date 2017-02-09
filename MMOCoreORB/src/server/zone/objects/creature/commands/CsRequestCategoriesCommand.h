@@ -5,6 +5,8 @@
 #ifndef CSREQUESTCATEGORIESCOMMAND_H_
 #define CSREQUESTCATEGORIESCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CsRequestCategoriesCommand : public QueueCommand {
 public:
 

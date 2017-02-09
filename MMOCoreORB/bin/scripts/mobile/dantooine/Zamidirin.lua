@@ -1,5 +1,5 @@
 Zamidirin = Creature:new {
-	-- objectName = "@mob/creature_names:",
+	objectName = "@mob/creature_names:",
 	customName = "Zamidirin (Force Crystal Horder)",
 	socialGroup = "kun",
 	faction = "",

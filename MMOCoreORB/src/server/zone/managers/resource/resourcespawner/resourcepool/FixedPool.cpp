@@ -9,7 +9,7 @@
  */
 
 #include "FixedPool.h"
-#include "server/zone/managers/resource/resourcespawner/ResourceSpawner.h"
+#include "../ResourceSpawner.h"
 
 FixedPool::FixedPool(ResourceSpawner* spawner) : ResourcePool(spawner) {
 	setLoggingName("FixedPool");

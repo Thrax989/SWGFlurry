@@ -5,8 +5,11 @@
 #ifndef CREATUREOBJECTDELTAMESSAGE6_H_
 #define CREATUREOBJECTDELTAMESSAGE6_H_
 
-#include "server/zone/packets/tangible/TangibleObjectDeltaMessage6.h"
+#include "../tangible/TangibleObjectDeltaMessage6.h"
+
 #include "server/zone/objects/creature/CreatureObject.h"
+
+#include "templates/params/creature/CreatureAttribute.h"
 
 class CreatureObjectDeltaMessage6 : public TangibleObjectDeltaMessage6 {
 	CreatureObject* creo;

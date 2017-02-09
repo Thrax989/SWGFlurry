@@ -8,17 +8,24 @@
 #include "LuaAiAgent.h"
 
 #include <engine/core/ManagedReference.h>
+#include <engine/lua/Luna.h>
+#include <lua.h>
+#include <stddef.h>
 #include <system/lang/ref/Reference.h>
 #include <system/lang/String.h>
+#include <system/platform.h>
 
 #include "server/chat/ChatManager.h"
 #include "server/zone/ZoneServer.h"
 #include "server/chat/StringIdChatParameter.h"
 #include "server/ServerCore.h"
 
+#include "server/zone/managers/creature/AiMap.h"
 #include "server/zone/managers/collision/CollisionManager.h"
 #include "server/zone/managers/reaction/ReactionManager.h"
 #include "server/zone/objects/intangible/PetControlDevice.h"
+
+//#include "server/zone/objects/creature/ai/AiAgent.h"
 
 const char LuaAiAgent::className[] = "LuaAiAgent";
 
@@ -338,8 +345,6 @@ int LuaAiAgent::setLevel(lua_State* L) {
 int LuaAiAgent::setWait(lua_State* L) {
 	float seconds = lua_tonumber(L, -1);
 
-  	Locker locker(realObject);
-  
 	realObject->setWait((int)(seconds*1000));
 
 	return 0;
@@ -362,8 +367,6 @@ int LuaAiAgent::isWaiting(lua_State* L) {
 }
 
 int LuaAiAgent::stopWaiting(lua_State* L) {
-	Locker locker(realObject);
-
 	realObject->stopWaiting();
 
 	return 0;
@@ -525,13 +528,12 @@ int LuaAiAgent::runAway(lua_State* L) {
 	Reference<CreatureObject*> target = dynamic_cast<CreatureObject*>(scene);
 	float range = lua_tonumber(L, -1);
 	Reference<AiAgent*> agentObject = realObject;
-
 	if (target != NULL) {
-		Core::getTaskManager()->executeTask([=] () {
-			Locker locker(agentObject);
+		EXECUTE_TASK_3(target, range, agentObject, {
+				Locker locker(agentObject_p);
 
-			agentObject->runAway(target, range);
-		}, "RunAwayLambda");
+				agentObject_p->runAway(target_p, range_p);
+		});
 	}
 
 	return 0;

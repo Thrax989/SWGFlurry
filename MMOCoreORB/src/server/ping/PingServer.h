@@ -5,6 +5,8 @@
 #ifndef PINGSERVER_H_
 #define PINGSERVER_H_
 
+#include "engine/engine.h"
+
 #include "PingClient.h"
 
 class PingServer : public DatagramServiceThread, public ServiceHandler {

@@ -2,15 +2,15 @@ kusak_hunter = Creature:new {
 	objectName = "@mob/creature_names:kusak_hunter",
 	socialGroup = "kusak",
 	faction = "",
-	level = 85,
-	chanceHit = 8.5,
-	damageMin = 945,
-	damageMax = 1600,
-	baseXp = 13367,
-	baseHAM = 95000,
-	baseHAMmax = 105000,
-	armor = 0,
-	resists = {175,175,175,150,150,110,110,160,110},
+	level = 73,
+	chanceHit = 0.75,
+	damageMin = 570,
+	damageMax = 850,
+	baseXp = 7023,
+	baseHAM = 12000,
+	baseHAMmax = 15000,
+	armor = 1,
+	resists = {140,10,10,-1,-1,10,10,-1,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 20,
 	hideType = "hide_bristley",
@@ -31,8 +31,7 @@ kusak_hunter = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareacombo",""},
-		{"strongdisease",""}
+		{"dizzyattack",""}
 	}
 }
 

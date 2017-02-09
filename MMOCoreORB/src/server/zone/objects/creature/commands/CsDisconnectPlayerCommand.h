@@ -5,6 +5,8 @@
 #ifndef CSDISCONNECTPLAYERCOMMAND_H_
 #define CSDISCONNECTPLAYERCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CsDisconnectPlayerCommand : public QueueCommand {
 public:
 

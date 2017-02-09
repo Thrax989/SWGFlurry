@@ -8,6 +8,10 @@
 #ifndef INTERIORLAYOUTTEMPLATE_H_
 #define INTERIORLAYOUTTEMPLATE_H_
 
+#include "engine/engine.h"
+#include "templates/ChildObject.h"
+#include "templates/manager/TemplateManager.h"
+
 class InteriorNode : public Object {
 	Matrix4 transform;
 	String templateFile;
@@ -76,7 +80,7 @@ public:
 
 			iff->closeForm('0000');
 		} else {
-			//TemplateManager::instance()->error("Unknown interior layout type " + String::hexvalueOf((int64)type));
+			TemplateManager::instance()->error("Unknown interior layout type " + String::hexvalueOf((int64)type));
 		}
 
 		iff->closeForm('INLY');

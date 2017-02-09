@@ -5,6 +5,7 @@
 package server.zone.objects.area.areashapes;
 
 import server.zone.objects.area.areashapes.AreaShape;
+import server.zone.objects.area.areashapes.CircularAreaShape;
 
 class RectangularAreaShape extends AreaShape {
 

@@ -8,7 +8,7 @@
 #ifndef CLIENTCREATECHARACTERCALLBACK_H_
 #define CLIENTCREATECHARACTERCALLBACK_H_
 
-#include "server/zone/packets/MessageCallback.h"
+#include "../MessageCallback.h"
 
 class ClientCreateCharacterCallback : public MessageCallback {
 	String customization;
@@ -86,5 +86,6 @@ public:
 		return species;
 	}
 };
+
 
 #endif /* CLIENTCREATECHARACTERCALLBACK_H_ */

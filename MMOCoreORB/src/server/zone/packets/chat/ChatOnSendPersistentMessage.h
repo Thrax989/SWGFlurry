@@ -7,7 +7,7 @@
 
 //Mail
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ChatOnSendPersistentMessage : public BaseMessage {
 public:

@@ -1,7 +1,7 @@
 acklay = Creature:new {
 	objectName = "@mob/creature_names:geonosian_acklay_bunker_boss",
 	customName = "Acklay",
-	socialGroup = "geonosian",
+	socialGroup = "geonosian_creature",
 	faction = "",
 	level = 157,
 	chanceHit = 92.5,

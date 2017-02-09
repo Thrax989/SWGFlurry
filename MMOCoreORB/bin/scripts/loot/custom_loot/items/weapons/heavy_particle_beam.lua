@@ -1,7 +1,7 @@
 heavy_particle_beam = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Heavy particle beam",
+	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/heavy/heavy_particle_beam.iff",
 	craftingValues = {
 		{"mindamage",1860,2000,0},

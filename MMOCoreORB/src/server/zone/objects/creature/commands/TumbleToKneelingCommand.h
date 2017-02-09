@@ -5,7 +5,10 @@
 #ifndef TUMBLETOKNEELINGCOMMAND_H_
 #define TUMBLETOKNEELINGCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/creature/events/AnimationTask.h"
 #include "server/zone/objects/creature/buffs/StateBuff.h"
+#include "server/zone/packets/creature/CreatureObjectDeltaMessage3.h"
 
 class TumbleToKneelingCommand : public QueueCommand {
 public:

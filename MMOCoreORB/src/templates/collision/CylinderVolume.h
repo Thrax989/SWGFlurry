@@ -7,6 +7,7 @@
 #ifndef CYLINDERVOLUME_H_
 #define CYLINDERVOLUME_H_
 
+#include "engine/engine.h"
 #include "BaseBoundingVolume.h"
 
 class CylinderVolume : public BaseBoundingVolume {
@@ -25,5 +26,4 @@ public:
 	virtual osg::ref_ptr<osg::Node> draw() const;
 #endif
 };
-
 #endif /* CYLINDERVOLUME_H_ */

@@ -6,9 +6,12 @@
  */
 
 #include "server/zone/objects/tangible/fishing/FishObject.h"
+#include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
+
+#include "system/util/VectorMap.h"
 
 int FishObjectImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
 	if (selectedID == 245) {

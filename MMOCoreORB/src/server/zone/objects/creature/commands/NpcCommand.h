@@ -5,6 +5,8 @@
 #ifndef NPCCOMMAND_H_
 #define NPCCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class NpcCommand : public QueueCommand {
 public:
 

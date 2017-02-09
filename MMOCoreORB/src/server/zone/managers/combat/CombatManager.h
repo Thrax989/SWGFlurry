@@ -8,7 +8,9 @@
 #ifndef COMBATMANAGER_H_
 #define COMBATMANAGER_H_
 
+#include "engine/engine.h"
 #include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/creature/ai/NonPlayerCreatureObject.h"
 #include "server/zone/objects/creature/VehicleObject.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 #include "server/zone/objects/tangible/wearables/ArmorObject.h"
@@ -81,7 +83,7 @@ public:
 	 * @param lockDefender will crosslock with attacker if true
 	 * @return true on success
 	 */
-	bool startCombat(CreatureObject* attacker, TangibleObject* defender, bool lockDefender = true, bool allowIncapTarget = false);
+	bool startCombat(CreatureObject* attacker, TangibleObject* defender, bool lockDefender = true);
 
 	/**
 	 * Attempts to stop combat
@@ -226,5 +228,6 @@ protected:
 	 */
 	bool applySpecialAttackCost(CreatureObject* attacker, WeaponObject* weapon, const CreatureAttackData& data);
 };
+
 
 #endif /* COMBATMANAGER_H_ */

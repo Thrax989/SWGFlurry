@@ -5,6 +5,8 @@
 #ifndef HARVESTERTAKESURVEYCOMMAND_H_
 #define HARVESTERTAKESURVEYCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class HarvesterTakeSurveyCommand : public QueueCommand {
 public:
 

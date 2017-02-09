@@ -5,6 +5,7 @@
 #ifndef ITEMMOVEBACKCOMMAND_H_
 #define ITEMMOVEBACKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 
 class ItemmovebackCommand : public QueueCommand {
 public:

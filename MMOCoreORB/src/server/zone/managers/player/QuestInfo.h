@@ -1,6 +1,7 @@
 #ifndef QUESTINFO_H_
 #define QUESTINFO_H_
 
+#include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
 
 class QuestInfo : public Object {

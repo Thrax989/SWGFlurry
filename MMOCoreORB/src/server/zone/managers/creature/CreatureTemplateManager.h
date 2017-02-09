@@ -8,6 +8,7 @@
 #ifndef CREATURETEMPLATEMANAGER_H_
 #define CREATURETEMPLATEMANAGER_H_
 
+#include "engine/engine.h"
 #include "server/zone/objects/creature/ai/CreatureTemplate.h"
 #include "server/zone/objects/creature/conversation/ConversationTemplate.h"
 #include "templates/mobile/LairTemplate.h"

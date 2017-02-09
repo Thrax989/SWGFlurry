@@ -5,6 +5,8 @@
 #ifndef MAXSTATSCOMMAND_H_
 #define MAXSTATSCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class MaxStatsCommand : public QueueCommand {
 public:
 

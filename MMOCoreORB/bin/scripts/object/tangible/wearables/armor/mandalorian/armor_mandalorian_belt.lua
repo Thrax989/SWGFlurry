@@ -99,7 +99,6 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_belt = object_tang
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-
 	
 
 }

@@ -8,8 +8,6 @@
 #ifndef CREATEPROJECTICEMESSAGE_H_
 #define CREATEPROJECTICEMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
-
 class CreateProjectileMessage : public BaseMessage {
 public:
 	CreateProjectileMessage() : BaseMessage() {
@@ -27,8 +25,9 @@ public:
 		insertShort(0);
 		insertShort(0);
 		insertInt(0);
+
+
    }
 
 };
-
 #endif /* CREATEPROJECTICEMESSAGE_H_ */

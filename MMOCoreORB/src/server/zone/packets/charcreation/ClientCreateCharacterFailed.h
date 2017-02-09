@@ -5,7 +5,7 @@
 #ifndef CLIENTCREATECHARACTERFAILED_H_
 #define CLIENTCREATECHARACTERFAILED_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 //This packet is sent when we verify the data (namely the charname) when the client sends ClientCreateCharacter
 //If it fails we are sending the failure notice here:

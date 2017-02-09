@@ -5,6 +5,12 @@
 #ifndef PLAYERMAP_H_
 #define PLAYERMAP_H_
 
+#include "system/lang.h"
+
+//#include "PlayerMap.h"
+
+//#include "../../objects/creature/CreatureObject.h"
+
 namespace server {
 namespace zone {
 namespace managers {

@@ -85,7 +85,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 
 	if (zserv == NULL)
 		return 0;
-	
+
 	if (selectedID == 213) {
 		if (!creature->hasSkill("force_title_jedi_rank_02") && (ghost->getJediState() >= 1)) {
 			if (ghost->getJediState() > 2) {
@@ -295,15 +295,6 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 					if (skill->getSkillName().indexOf("force_rank_") != -1){
 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
 					}
-					if (skill->getSkillName().indexOf("force_title_jedi_rank_03") != -1){
- 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
- 					}
- 					if (skill->getSkillName().indexOf("force_title_jedi_rank_04") != -1){
- 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
- 					}
- 					if (skill->getSkillName().indexOf("force_title_jedi_master") != -1){
- 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
- 					}
 				}
 			}
 			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
@@ -341,15 +332,6 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 					if (skill->getSkillName().indexOf("force_rank_") != -1){
 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
 					}
-					if (skill->getSkillName().indexOf("force_title_jedi_rank_03") != -1){
- 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
- 					}
- 					if (skill->getSkillName().indexOf("force_title_jedi_rank_04") != -1){
- 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
- 					}
- 					if (skill->getSkillName().indexOf("force_title_jedi_master") != -1){
- 						SkillManager::instance()->surrenderSkill(skill->getSkillName(), creature, true);
- 					}
 				}
 			}
 			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
@@ -372,10 +354,6 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			ghost->setJediState(2);
 		}
 	}
-	
-	if (ghost->getAdminLevel() < 6)
-		return 0;
-	
 	if (selectedID == 221) {
 		//findTrainerObject(creature);
 		//Vector3 coords(-169.45, -4712.58, 0); // Scout Trainer outside starport

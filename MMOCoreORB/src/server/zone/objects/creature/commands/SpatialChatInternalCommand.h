@@ -5,6 +5,8 @@
 #ifndef SPATIALCHATINTERNALCOMMAND_H_
 #define SPATIALCHATINTERNALCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SpatialChatInternalCommand : public QueueCommand {
 public:
 

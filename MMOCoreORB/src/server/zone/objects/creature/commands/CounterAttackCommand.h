@@ -5,6 +5,7 @@
 #ifndef COUNTERATTACKCOMMAND_H_
 #define COUNTERATTACKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class CounterAttackCommand : public CombatQueueCommand {

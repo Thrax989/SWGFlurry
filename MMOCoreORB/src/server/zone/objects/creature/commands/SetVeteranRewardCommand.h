@@ -5,6 +5,8 @@
 #ifndef SETVETERANREWARDCOMMAND_H_
 #define SETVETERANREWARDCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SetVeteranRewardCommand : public QueueCommand {
 public:
 

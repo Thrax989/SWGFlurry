@@ -5,6 +5,8 @@
 #ifndef CSCANCELTICKETCOMMAND_H_
 #define CSCANCELTICKETCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CsCancelTicketCommand : public QueueCommand {
 public:
 

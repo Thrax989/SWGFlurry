@@ -1,6 +1,6 @@
 som_ancient_guardian_ig = Creature:new {
 	customName = "Ancient Guardian IG",
-	socialGroup = "self",
+	socialGroup = "",
 	pvpFaction = "",
 	faction = "",
 	level = 200,
@@ -30,21 +30,14 @@ som_ancient_guardian_ig = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
+				{group = "death_watch_bunker_commoners", chance = 6300000},
+				{group = "death_watch_bunker_lieutenants", chance = 3500000},
+				{group = "death_watch_bunker_ingredient_protective",  chance = 100000},
+				{group = "death_watch_bunker_ingredient_binary",  chance = 100000}
 			},
 			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+		}
+	},
 	conversationTemplate = "",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
 	defaultAttack = "creaturerangedattack"

@@ -5,6 +5,8 @@
 #ifndef CLIENTQUALIFIEDFORSKILLCOMMAND_H_
 #define CLIENTQUALIFIEDFORSKILLCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ClientQualifiedForSkillCommand : public QueueCommand {
 public:
 

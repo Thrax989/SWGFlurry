@@ -7,6 +7,7 @@
 
 #include "LuaTangibleObject.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
+#include "templates/params/creature/CreatureFlag.h"
 #include "templates/params/PaletteColorCustomizationVariable.h"
 #include "templates/customization/AssetCustomizationManagerTemplate.h"
 #include "templates/appearance/PaletteTemplate.h"
@@ -195,8 +196,6 @@ int LuaTangibleObject::isCovert(lua_State* L) {
 
 int LuaTangibleObject::setConditionDamage(lua_State* L) {
 	float damage = lua_tonumber(L, -1);
-
-	Locker locker(realObject);
 
 	realObject->setConditionDamage(damage, true);
 

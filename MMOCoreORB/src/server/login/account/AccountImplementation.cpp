@@ -5,11 +5,13 @@
 
 #include "../objects.h"
 #include "server/login/account/Account.h"
+#include "server/login/account/AccountManager.h"
 #include "../objects/GalaxyBanEntry.h"
 
 AccountImplementation::AccountImplementation() {
 	initializeTransientMembers();
 }
+
 
 void AccountImplementation::initializeTransientMembers() {
 	active = false;
@@ -20,6 +22,7 @@ void AccountImplementation::initializeTransientMembers() {
 	banExpires = 0;
 	banAdmin = 0;
 }
+
 
 void AccountImplementation::updateFromDatabase() {
 

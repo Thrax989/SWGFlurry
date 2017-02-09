@@ -5,6 +5,8 @@
 #ifndef INNATECOMMAND_H_
 #define INNATECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class InnateCommand : public QueueCommand {
 public:
 

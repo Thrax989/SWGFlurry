@@ -31,21 +31,24 @@ orf_torton = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
+				{group = "g_carbine_rotary_underslung",  chance = 5000000},
+				{group = "g_rifle_naktra_crystal", chance = 5000000}
+			}
 		},
 		{
 			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
+				{group = "g_ep3_loot_blackhand",  chance = 1500000},
+				{group = "g_ep3_loot_corestrike", chance = 1500000},
+				{group = "g_ep3_loot_dawnsorrow", chance = 1500000},
+				{group = "g_ep3_loot_ripper", chance = 1000000},
+				{group = "g_ep3_loot_sickle", chance = 1400000},
+				{group = "g_massassiknuckler", chance = 1500000},
+				{group = "g_lance_cryo",  chance = 1500000},
+				{group = "g_ep3_chiss_poacher_backpack", chance = 100000}
 			},
 			lootChance = 10000000
-		},
-		},
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

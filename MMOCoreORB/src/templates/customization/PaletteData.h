@@ -8,6 +8,7 @@
 #ifndef PALETTEDATA_H_
 #define PALETTEDATA_H_
 
+#include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
 
 class PaletteData : public Object {

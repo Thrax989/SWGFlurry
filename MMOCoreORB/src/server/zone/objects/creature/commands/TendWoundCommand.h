@@ -5,6 +5,7 @@
 #ifndef TENDWOUNDCOMMAND_H_
 #define TENDWOUNDCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "TendCommand.h"
 
 class TendWoundCommand : public TendCommand {

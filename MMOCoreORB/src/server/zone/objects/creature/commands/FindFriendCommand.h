@@ -11,6 +11,7 @@
 
 #include "server/zone/objects/waypoint/WaypointObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/objects/cell/CellObject.h"
 
 class FindFriendCommand : public QueueCommand {
 public:

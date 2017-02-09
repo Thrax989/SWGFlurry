@@ -5,8 +5,10 @@
 #ifndef STOPDANCECOMMAND_H_
 #define STOPDANCECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/sessions/EntertainingSession.h"
+
 
 class StopDanceCommand : public QueueCommand {
 public:

@@ -5,6 +5,8 @@
 #ifndef EATCOMMAND_H_
 #define EATCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class EatCommand : public QueueCommand {
 public:
 

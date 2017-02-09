@@ -5,6 +5,7 @@
 #ifndef SETPLAYERAPPEARANCECOMMAND_H_
 #define SETPLAYERAPPEARANCECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 
 class SetPlayerAppearanceCommand : public QueueCommand {
 public:

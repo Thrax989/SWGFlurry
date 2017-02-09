@@ -12,7 +12,6 @@
 #include "server/zone/managers/creature/CreatureManager.h"
 #include "server/zone/managers/structure/StructureManager.h"
 #include "server/zone/objects/structure/StructureObject.h"
-#include "server/zone/objects/creature/ai/AiAgent.h"
 
 namespace server {
 namespace zone {

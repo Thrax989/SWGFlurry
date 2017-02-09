@@ -6,6 +6,7 @@
  */
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class PlayerContainerComponent : public ContainerComponent {
 public:

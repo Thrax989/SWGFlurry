@@ -5,6 +5,8 @@
 #ifndef SECRETSPAWNSPAMCOMMAND_H_
 #define SECRETSPAWNSPAMCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SecretSpawnSpamCommand : public QueueCommand {
 public:
 

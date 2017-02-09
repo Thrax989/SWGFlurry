@@ -10,13 +10,20 @@
 
 #include "server/db/ServerDatabase.h"
 
+#include "ObjectMap.h"
+
+#include "server/zone/Zone.h"
 #include "server/zone/ZoneProcessServer.h"
 #include "templates/manager/TemplateManager.h"
+#include "templates/SharedObjectTemplate.h"
+#include "engine/db/berkley/BTransaction.h"
 #include "ObjectVersionUpdateManager.h"
 #include "server/ServerCore.h"
 #include "server/zone/objects/scene/SceneObjectType.h"
 #include "DeleteCharactersTask.h"
 #include "conf/ConfigManager.h"
+#include "server/zone/objects/tangible/wearables/WearableContainerObject.h"
+#include "server/zone/objects/tangible/deed/vetharvester/VetHarvesterDeed.h"
 #include "engine/orb/db/UpdateModifiedObjectsThread.h"
 #include "engine/orb/db/CommitMasterTransactionThread.h"
 
@@ -138,7 +145,6 @@ void ObjectManager::registerObjectTypes() {
 	objectFactory.registerObject<TangibleObject>(SceneObjectType::PLAYERLOOTCRATE);
 	objectFactory.registerObject<PlantObject>(SceneObjectType::GROWABLEPLANT);
 	objectFactory.registerObject<FsCsObject>(SceneObjectType::FSCSOBJECT);
-	objectFactory.registerObject<FsBuffItem>(SceneObjectType::FSBUFFITEM);
 
 	objectFactory.registerObject<SlicingTool>(SceneObjectType::SLICINGTOOL);
 	objectFactory.registerObject<SlicingTool>(SceneObjectType::FLOWANALYZER);

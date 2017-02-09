@@ -8,8 +8,7 @@
 #ifndef CUSTOMIZATIONIDMANAGER_H_
 #define CUSTOMIZATIONIDMANAGER_H_
 
-#include "engine/log/Logger.h"
-#include "engine/util/Singleton.h"
+#include "engine/engine.h"
 #include "templates/customization/PaletteData.h"
 #include "templates/customization/HairAssetData.h"
 
@@ -48,5 +47,6 @@ public:
 		return allowBald.get(speciesSubString);
 	}
 };
+
 
 #endif /* CUSTOMIZATIONIDMANAGER_H_ */

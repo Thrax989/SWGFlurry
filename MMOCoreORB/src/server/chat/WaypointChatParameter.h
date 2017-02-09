@@ -8,6 +8,9 @@
 #ifndef WAYPOINTCHATPARAMETER_H_
 #define WAYPOINTCHATPARAMETER_H_
 
+
+#include "engine/engine.h"
+
 #include "server/chat/ChatParameter.h"
 
 namespace server {

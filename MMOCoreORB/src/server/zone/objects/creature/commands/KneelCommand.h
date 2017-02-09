@@ -5,6 +5,10 @@
 #ifndef KNEELCOMMAND_H_
 #define KNEELCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/Zone.h"
+#include "server/zone/managers/creature/CreatureManager.h"
+
 class KneelCommand : public QueueCommand {
 public:
 

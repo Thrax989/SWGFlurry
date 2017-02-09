@@ -5,6 +5,8 @@
 #ifndef DISTRACTCOMMAND_H_
 #define DISTRACTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class DistractCommand : public QueueCommand {
 public:
 

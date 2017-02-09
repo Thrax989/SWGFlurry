@@ -5,7 +5,7 @@
 #ifndef UPDATECONTAINMENTMESSAGE_H_
 #define UPDATECONTAINMENTMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 #include "server/zone/objects/scene/SceneObject.h"
 

@@ -5,6 +5,8 @@
 #ifndef CSGETCOMMENTSCOMMAND_H_
 #define CSGETCOMMENTSCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CsGetCommentsCommand : public QueueCommand {
 public:
 

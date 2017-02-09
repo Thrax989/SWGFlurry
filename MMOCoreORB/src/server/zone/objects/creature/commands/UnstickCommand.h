@@ -5,6 +5,8 @@
 #ifndef UNSTICKCOMMAND_H_
 #define UNSTICKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class UnstickCommand : public QueueCommand {
 public:
 

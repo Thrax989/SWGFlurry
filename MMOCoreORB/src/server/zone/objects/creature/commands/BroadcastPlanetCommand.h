@@ -5,6 +5,7 @@
 #ifndef BROADCASTPLANETCOMMAND_H_
 #define BROADCASTPLANETCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/managers/player/PlayerMap.h"
 

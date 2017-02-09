@@ -5,6 +5,8 @@
 #ifndef OVERRIDEPADAWANTRIALSELIGIBILITYCOMMAND_H_
 #define OVERRIDEPADAWANTRIALSELIGIBILITYCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class OverridePadawanTrialsEligibilityCommand : public QueueCommand {
 public:
 

@@ -5,6 +5,7 @@
 #ifndef LASTDITCHCOMMAND_H_
 #define LASTDITCHCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class LastDitchCommand : public CombatQueueCommand {

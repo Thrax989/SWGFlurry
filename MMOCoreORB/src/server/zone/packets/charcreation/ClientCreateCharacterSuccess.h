@@ -5,7 +5,7 @@
 #ifndef CLIENTCREATECHARACTERSUCCESS_H_
 #define CLIENTCREATECHARACTERSUCCESS_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 //This packet is sent when we verify the data (namely the charname) when the client sends ClientCreateCharacter
 //We are assigning an object id here. after this packet, continue with the ZONELOGIN sequence as usual

@@ -5,6 +5,8 @@
 #ifndef GETIGNORELISTCOMMAND_H_
 #define GETIGNORELISTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class GetIgnoreListCommand : public QueueCommand {
 public:
 

@@ -5,8 +5,10 @@
 #ifndef INSTALLATIONOBJECTMESSAGE6_H_
 #define INSTALLATIONOBJECTMESSAGE6_H_
 
+#include "../BaseLineMessage.h"
+
 #include "server/zone/objects/installation/InstallationObject.h"
-#include "server/zone/packets/tangible/TangibleObjectMessage6.h"
+#include "../tangible/TangibleObjectMessage6.h"
 
 class InstallationObjectMessage6 : public TangibleObjectMessage6 {
 public:

@@ -5,6 +5,8 @@
 #ifndef RESOURCESETNAMECOMMAND_H_
 #define RESOURCESETNAMECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ResourceSetNameCommand : public QueueCommand {
 public:
 

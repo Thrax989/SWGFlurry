@@ -3,9 +3,12 @@
 		See file COPYING for copying conditions.
 */
 
+#include "server/zone/objects/scene/components/ContainerComponent.h"
 #include "SaberInventoryContainerComponent.h"
 #include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/Zone.h"
 #include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 #include "server/zone/objects/tangible/component/lightsaber/LightsaberCrystalComponent.h"
 
@@ -139,12 +142,13 @@ int SaberInventoryContainerComponent::notifyObjectRemoved(SceneObject* sceneObje
 
 bool SaberInventoryContainerComponent::checkContainerPermission(SceneObject* sceneObject, CreatureObject* creature, uint16 permission) const {
 	ManagedReference<WeaponObject*> saber = cast<WeaponObject*>( sceneObject->getParent().get().get());
+	ManagedReference<PlayerObject*> admin = creature->getPlayerObject();
 
 	if (saber == NULL)
 		return false;
 
 
-	if (saber->isJediWeapon() && saber->isEquipped()) {
+	if (saber->isJediWeapon() && saber->isEquipped() && admin->getAdminLevel() < 10) {
 		CreatureObject* player = saber->getParentRecursively(SceneObjectType::PLAYERCREATURE).get().castTo<CreatureObject*>();
 
 		if (player == NULL)
@@ -157,4 +161,3 @@ bool SaberInventoryContainerComponent::checkContainerPermission(SceneObject* sce
 
 	return ContainerComponent::checkContainerPermission(sceneObject, creature, permission);
 }
-

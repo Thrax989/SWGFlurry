@@ -9,6 +9,8 @@
 #ifndef PLANETTRAVELPOINT_H_
 #define PLANETTRAVELPOINT_H_
 
+#include "engine/engine.h"
+#include "engine/util/u3d/Coordinate.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
 using namespace server::zone::objects::creature;

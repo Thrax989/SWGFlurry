@@ -1,6 +1,7 @@
 #ifndef NAMEDATA_H_
 #define NAMEDATA_H_
 
+#include "engine/engine.h"
 #include "server/zone/managers/name/NameRules.h"
 #include "server/zone/managers/name/NameUnique.h"
 

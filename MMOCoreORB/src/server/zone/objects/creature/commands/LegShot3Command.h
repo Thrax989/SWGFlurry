@@ -5,6 +5,7 @@
 #ifndef LEGSHOT3COMMAND_H_
 #define LEGSHOT3COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class LegShot3Command : public CombatQueueCommand {

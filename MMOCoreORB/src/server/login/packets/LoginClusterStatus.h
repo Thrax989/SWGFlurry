@@ -5,7 +5,9 @@
 #ifndef LOGINCLUSTERSTATUS_H_
 #define LOGINCLUSTERSTATUS_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
+
+#include "../objects/GalaxyList.h"
 
 namespace server {
 namespace login {
@@ -62,5 +64,4 @@ public:
 }
 
 using namespace server::login::packets;
-
 #endif /*LOGINCLUSTERSTATUS_H_*/

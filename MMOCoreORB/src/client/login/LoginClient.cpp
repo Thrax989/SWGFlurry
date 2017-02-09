@@ -2,7 +2,11 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
+#include "engine/service/proto/packets/SessionIDRequestMessage.h"
+
 #include "LoginMessageProcessorTask.h"
+
+#include "LoginSession.h"
 
 #include "LoginPacketHandler.h"
 

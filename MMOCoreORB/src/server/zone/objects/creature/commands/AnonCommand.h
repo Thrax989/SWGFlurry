@@ -5,6 +5,7 @@
 #ifndef ANONCOMMAND_H_
 #define ANONCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
 
 class AnonCommand : public QueueCommand {

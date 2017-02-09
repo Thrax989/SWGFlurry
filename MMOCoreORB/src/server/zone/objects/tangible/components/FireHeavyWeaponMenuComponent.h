@@ -9,6 +9,7 @@
 #define FIREHEAVYWEAPONMENUCOMPONENT_H_
 
 #include "WeaponObjectMenuComponent.h"
+#include "engine/engine.h"
 
 class FireHeavyWeaponMenuComponent : public WeaponObjectMenuComponent {
 public:

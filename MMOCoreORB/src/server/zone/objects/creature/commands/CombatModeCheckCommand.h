@@ -5,6 +5,8 @@
 #ifndef COMBATMODECHECKCOMMAND_H_
 #define COMBATMODECHECKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CombatModeCheckCommand : public QueueCommand {
 public:
 

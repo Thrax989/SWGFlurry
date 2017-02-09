@@ -5,7 +5,8 @@
 #ifndef INTANGIBLEOBJECTDELTAMESSAGE3_H_
 #define INTANGIBLEOBJECTDELTAMESSAGE3_H_
 
-#include "server/zone/packets/DeltaMessage.h"
+#include "../../packets/DeltaMessage.h"
+
 #include "server/zone/objects/intangible/IntangibleObject.h"
 
 class IntangibleObjectDeltaMessage3 : public DeltaMessage {
@@ -25,5 +26,7 @@ public:
 		addUnicodeUpdate(2, name);
 	}
 };
+
+
 
 #endif /*INTANGIBLEOBJECTDELTAMESSAGE3_H_*/

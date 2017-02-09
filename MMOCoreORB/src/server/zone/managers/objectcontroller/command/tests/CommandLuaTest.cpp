@@ -8,6 +8,7 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 
+#include "templates/SharedObjectTemplate.h"
 #include "templates/manager/DataArchiveStore.h"
 #include "server/zone/managers/objectcontroller/command/CommandConfigManager.h"
 #include "server/zone/managers/objectcontroller/command/CommandList.h"

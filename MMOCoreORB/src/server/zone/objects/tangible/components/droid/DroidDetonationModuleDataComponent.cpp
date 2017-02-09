@@ -3,8 +3,10 @@
 		See file COPYING for copying conditions. */
 
 #include "DroidDetonationModuleDataComponent.h"
+#include "server/zone/ZoneServer.h"
 #include "server/zone/objects/tangible/component/droid/DroidComponent.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
+#include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/creature/events/DroidDetonationTask.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 

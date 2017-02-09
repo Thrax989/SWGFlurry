@@ -5,6 +5,8 @@
 #ifndef INSERTITEMINTOSHIPCOMPONENTSLOTCOMMAND_H_
 #define INSERTITEMINTOSHIPCOMPONENTSLOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class InsertItemIntoShipComponentSlotCommand : public QueueCommand {
 public:
 

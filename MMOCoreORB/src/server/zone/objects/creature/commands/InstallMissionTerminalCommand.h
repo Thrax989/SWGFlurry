@@ -5,6 +5,7 @@
 #ifndef INSTALLMISSIONTERMINALCOMMAND_H_
 #define INSTALLMISSIONTERMINALCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/creature/commands/sui/InstallMissionTerminalSuiCallback.h"
 

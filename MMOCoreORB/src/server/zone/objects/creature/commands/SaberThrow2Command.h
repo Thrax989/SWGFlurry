@@ -5,6 +5,7 @@
 #ifndef SABERTHROW2COMMAND_H_
 #define SABERTHROW2COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "JediCombatQueueCommand.h"
 
 class SaberThrow2Command : public JediCombatQueueCommand {

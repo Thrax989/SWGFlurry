@@ -6,7 +6,9 @@
  */
 
 #include "Behavior.h"
+#include "CompositeBehavior.h"
 #include "server/zone/managers/creature/AiMap.h"
+#include "LuaBehavior.h"
 
 Behavior::Behavior(AiAgent* _agent, const String& className) {
 	agent = _agent;

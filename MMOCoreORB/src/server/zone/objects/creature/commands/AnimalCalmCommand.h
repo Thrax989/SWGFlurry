@@ -5,6 +5,7 @@
 #ifndef ANIMALCALMCOMMAND_H_
 #define ANIMALCALMCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/commands/JediQueueCommand.h"
 
 class AnimalCalmCommand : public JediQueueCommand {

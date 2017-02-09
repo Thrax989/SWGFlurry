@@ -8,9 +8,11 @@
 #ifndef AFFECTORROAD_H_
 #define AFFECTORROAD_H_
 
+
 #include "../ProceduralRule.h"
 #include "../Road.h"
 #include "../Hdta.h"
+#include "AffectorRiver.h"
 
 class AffectorRoad : public ProceduralRule<'AROA'>, public AffectorProceduralRule {
 	Road road;

@@ -1,5 +1,5 @@
 death_watch_s_battle_droid_2 = Creature:new {
-	--objectName = "@mob/creature_names:",
+	objectName = "@mob/creature_names:",
 	customName = "Death Watch Super Battle Droid",
 	socialGroup = "death_watch",
 	faction = "",
@@ -34,7 +34,7 @@ death_watch_s_battle_droid_2 = Creature:new {
 		lootGroups = {
 			{
 				groups = {
-					{group = "death_watch_bunker_lieutenants", chance = 5000000},
+					{group = "death_watch_bunker_lieutenants", chance = 5500000},
 					{group = "rifles", chance = 1000000},
 					{group = "pistols", chance = 1000000},
 					{group = "clothing_attachments", chance = 1000000},

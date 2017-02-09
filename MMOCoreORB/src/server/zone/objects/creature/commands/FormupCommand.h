@@ -5,6 +5,7 @@
 #ifndef FORMUPCOMMAND_H_
 #define FORMUPCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "SquadLeaderCommand.h"
 
 class FormupCommand : public SquadLeaderCommand {

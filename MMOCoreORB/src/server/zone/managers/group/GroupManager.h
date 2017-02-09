@@ -9,6 +9,14 @@
 
 namespace server {
  namespace zone {
+  class ZoneServer;
+ }
+}
+
+using namespace server::zone;
+
+namespace server {
+ namespace zone {
   namespace objects {
    namespace scene {
 	   class SceneObject;
@@ -93,6 +101,8 @@ public:
 	void disbandGroup(ManagedReference<GroupObject*> group, CreatureObject* player);
 
 	GroupObject* createGroup(CreatureObject* leader);
+
+
 
 };
 

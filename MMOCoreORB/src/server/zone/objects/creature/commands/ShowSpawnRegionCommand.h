@@ -5,6 +5,8 @@
 #ifndef SHOWSPAWNREGIONCOMMAND_H_
 #define SHOWSPAWNREGIONCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ShowSpawnRegionCommand : public QueueCommand {
 public:
 

@@ -8,8 +8,6 @@
 #ifndef CLOSEHOLOCRONMESSAGE_H_
 #define CLOSEHOLOCRONMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
-
 class CloseHolocronMessage : public BaseMessage {
 public:
    CloseHolocronMessage() : BaseMessage() {

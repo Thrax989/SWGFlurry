@@ -5,6 +5,8 @@
 #ifndef DEPLOYTRAPCOMMAND_H_
 #define DEPLOYTRAPCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class DeployTrapCommand : public QueueCommand {
 public:
 

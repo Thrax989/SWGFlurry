@@ -8,6 +8,7 @@
 #ifndef VENDORSELECTIONNODE_H_
 #define VENDORSELECTIONNODE_H_
 
+#include "engine/engine.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 
 class VendorSelectionNode : public Object {

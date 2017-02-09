@@ -8,6 +8,7 @@
 #ifndef SIGNTEMPLATE_H_
 #define SIGNTEMPLATE_H_
 
+#include "engine/engine.h"
 #include "templates/ChildObject.h"
 
 class SignTemplate : public ChildObject {

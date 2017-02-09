@@ -5,6 +5,7 @@
 #ifndef CONCEALSHOTCOMMAND_H_
 #define CONCEALSHOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class ConcealShotCommand : public CombatQueueCommand {

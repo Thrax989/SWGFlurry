@@ -2,15 +2,15 @@ minor_gorax = Creature:new {
 	objectName = "@mob/creature_names:minor_gorax",
 	socialGroup = "gorax",
 	faction = "",
-	level = 85,
-	chanceHit = 8.5,
+	level = 131,
+	chanceHit = 4,
 	damageMin = 745,
 	damageMax = 1200,
 	baseXp = 12424,
 	baseHAM = 89000,
 	baseHAMmax = 109000,
 	armor = 0,
-	resists = {165,165,150,150,150,150,150,150,115},
+	resists = {165,165,150,150,150,0,150,150,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -40,8 +40,7 @@ minor_gorax = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareaattack",""},
-		{"creatureareaknockdown",""}
+		{"creatureareaattack",""}
 	}
 }
 

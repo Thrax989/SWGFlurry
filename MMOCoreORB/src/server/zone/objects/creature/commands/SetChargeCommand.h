@@ -5,6 +5,8 @@
 #ifndef SETCHARGECOMMAND_H_
 #define SETCHARGECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SetChargeCommand : public QueueCommand {
 public:
 

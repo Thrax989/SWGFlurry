@@ -5,6 +5,7 @@
 #ifndef STRUCTUREMANAGER_H_
 #define STRUCTUREMANAGER_H_
 
+#include "engine/engine.h"
 #include "templates/manager/TemplateManager.h"
 #include "templates/tangible/SharedStructureObjectTemplate.h"
 

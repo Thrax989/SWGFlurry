@@ -22,14 +22,14 @@ king_terak = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = PACK,
-	optionsBitmask = INVULNERABLE,
+	optionsBitmask = INVULNERABLE + CONVERSABLE,
 	diet = HERBIVORE,
 	scale = 1.2,
 
 	templates = {"object/mobile/king_terak.iff"},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "",
+	conversationTemplate = "theme_park_marauder_mission_giver_convotemplate",
 	attacks = {}
 }
 

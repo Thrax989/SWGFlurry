@@ -31,7 +31,7 @@ FsSad2Theater7 = GoToTheater:new {
 	activeAreaRadius = 16,
 }
 
-function FsSad2Theater7:onObjectsSpawned(pPlayer, spawnedMobileList)
+function FsSad2Theater7:onSuccessfulSpawn(pPlayer, spawnedMobileList)
 	if (pPlayer == nil) then
 		return
 	end
@@ -45,14 +45,9 @@ function FsSad2Theater7:onObjectsSpawned(pPlayer, spawnedMobileList)
 			createObserver(OBJECTDESTRUCTION, self.taskName, "notifyKilledMobile", spawnedMobileList[i])
 		end
 	end
-end
 
-function FsSad2Theater7:onTheaterCreated(pPlayer)
-	if (pPlayer == nil) then
-		return
-	end
-
-	local pTheater = self:getTheaterObject(pPlayer)
+	local theaterId = readData(playerID .. self.taskName .. "theaterId")
+	local pTheater = getSceneObject(theaterId)
 
 	if (pTheater ~= nil) then
 		SuiRadiationSensor:setLocation(pPlayer, SceneObject(pTheater):getWorldPositionX(), SceneObject(pTheater):getWorldPositionY(), SceneObject(pTheater):getZoneName())

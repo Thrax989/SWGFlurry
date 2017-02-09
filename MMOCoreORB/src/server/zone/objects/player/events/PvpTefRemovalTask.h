@@ -3,7 +3,6 @@
 #define PVPTEFREMOVALTASK_H_
 
 #include "server/zone/objects/player/PlayerObject.h"
-#include "templates/params/creature/CreatureFlag.h"
 
 namespace server {
 namespace zone {

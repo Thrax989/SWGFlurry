@@ -6,8 +6,10 @@
 #define NAMEMANAGER_H_
 
 #include "engine/lua/Lua.h"
+#include "engine/lua/LuaObject.h"
 #include "engine/core/ManagedReference.h"
 #include "server/zone/managers/name/NameData.h"
+#include "server/zone/managers/name/NameUnique.h"
 
 namespace server {
 	namespace zone {

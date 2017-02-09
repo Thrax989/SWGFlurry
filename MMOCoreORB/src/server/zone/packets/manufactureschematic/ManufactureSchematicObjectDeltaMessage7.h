@@ -5,7 +5,7 @@
 #ifndef MANUFACTURESCHEMATICOBJECTDELTAMESSAGE7_H_
 #define MANUFACTURESCHEMATICOBJECTDELTAMESSAGE7_H_
 
-#include "server/zone/packets/DeltaMessage.h"
+#include "../BaseLineMessage.h"
 #include "templates/params/RangedIntCustomizationVariable.h"
 
 class ManufactureSchematicObjectDeltaMessage7 : public DeltaMessage {
@@ -13,6 +13,7 @@ public:
 	ManufactureSchematicObjectDeltaMessage7(SceneObject* schematic) :
 		DeltaMessage(schematic->getObjectID(), 0x4D53434F, 7) {
 	}
+
 
 	void updateForAssembly(ManufactureSchematic* manufactureSchematic, float failureRate){
 		initialAssemblyUpdate(manufactureSchematic);

@@ -5,7 +5,9 @@
 #ifndef CHANGEMUSICCOMMAND_H_
 #define CHANGEMUSICCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "StartMusicCommand.h"
+
 
 class ChangeMusicCommand : public QueueCommand {
 public:

@@ -5,6 +5,8 @@
 #ifndef SETSPOKENLANGUAGECOMMAND_H_
 #define SETSPOKENLANGUAGECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SetSpokenLanguageCommand : public QueueCommand {
 public:
 

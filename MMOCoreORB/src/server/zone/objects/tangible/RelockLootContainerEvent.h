@@ -9,6 +9,7 @@
 #define RELOCKLOOTCONTAINEREVENT_H_
 
 #include "engine/engine.h"
+#include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/tangible/Container.h"
 
 class RelockLootContainerEvent: public Task {

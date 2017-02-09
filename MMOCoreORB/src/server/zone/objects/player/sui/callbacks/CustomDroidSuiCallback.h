@@ -11,7 +11,10 @@
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/sui/colorbox/SuiColorBox.h"
+#include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/callbacks/ColorWithKitSuiCallback.h"
+
+
 
 class CustomDroidSuiCallback : public SuiCallback {
 	int numPalette;

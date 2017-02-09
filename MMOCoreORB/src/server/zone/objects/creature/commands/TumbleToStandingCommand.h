@@ -5,6 +5,9 @@
 #ifndef TUMBLETOSTANDINGCOMMAND_H_
 #define TUMBLETOSTANDINGCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/creature/events/AnimationTask.h"
+
 class TumbleToStandingCommand : public QueueCommand {
 public:
 

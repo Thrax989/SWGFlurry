@@ -8,6 +8,7 @@
 #ifndef WORLDSNAPSHOTIFF_H_
 #define WORLDSNAPSHOTIFF_H_
 
+#include "engine/engine.h"
 #include "templates/IffTemplate.h"
 #include "templates/snapshot/WorldSnapshotNode.h"
 
@@ -32,5 +33,6 @@ public:
 		return objectTemplateNameList.get(idx);
 	}
 };
+
 
 #endif /* WORLDSNAPSHOTIFF_H_ */

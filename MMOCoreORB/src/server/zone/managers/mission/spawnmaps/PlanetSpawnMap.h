@@ -5,6 +5,7 @@
 #ifndef PLANETSPAWNMAP_H_
 #define PLANETSPAWNMAP_H_
 
+#include <limits.h>
 #include "CitySpawnMap.h"
 
 namespace server {

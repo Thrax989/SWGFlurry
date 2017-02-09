@@ -8,6 +8,7 @@
 #ifndef SHUTDOWNSEQUENCETASK_H_
 #define SHUTDOWNSEQUENCETASK_H_
 
+#include "engine/engine.h"
 #include "server/zone/managers/gcw/GCWManager.h"
 
 class ShutdownSequenceTask : public Task {

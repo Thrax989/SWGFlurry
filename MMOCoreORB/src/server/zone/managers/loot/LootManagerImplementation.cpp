@@ -5,16 +5,18 @@
  *      Author: Kyle
  */
 
+#include "engine/engine.h"
+
 #include "server/zone/managers/loot/LootManager.h"
 #include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
-#include "server/zone/objects/tangible/weapon//WeaponObject.h"
 #include "server/zone/managers/crafting/CraftingManager.h"
 #include "templates/LootItemTemplate.h"
 #include "templates/LootGroupTemplate.h"
 #include "server/zone/ZoneServer.h"
-#include "LootGroupMap.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
+#include "LootGroupMap.h"
 
 void LootManagerImplementation::initialize() {
 	info("Loading configuration.");
@@ -157,7 +159,7 @@ bool LootManagerImplementation::loadConfigData() {
 
 	modsTable = lua->getGlobalObject("lootableHeavyWeaponStatMods");
 	loadLootableMods( &modsTable, &lootableHeavyWeaponMods );
-
+	
 	delete lua;
 
 	return true;
@@ -192,8 +194,8 @@ void LootManagerImplementation::setInitialObjectStats(LootItemTemplate* template
 		Vector<short>* prec = tanoTemplate->getExperimentalPrecision();
 
 		for (int i = 0; i < props->size(); ++i) {
-			const String& title = titles->get(i);
-			const String& property = props->get(i);
+			String title = titles->get(i);
+			String property = props->get(i);
 
 			if (craftingValues->hasProperty(property))
 				continue;
@@ -208,7 +210,7 @@ void LootManagerImplementation::setInitialObjectStats(LootItemTemplate* template
 	Vector<Vector<int> >* customizationValues = templateObject->getCustomizationValues();
 
 	for (int i = 0; i < customizationData->size(); ++i) {
-		const String& customizationString = customizationData->get(i);
+		String customizationString = customizationData->get(i);
 		Vector<int>* values = &customizationValues->get(i);
 
 		if (values->size() > 0) {
@@ -220,7 +222,7 @@ void LootManagerImplementation::setInitialObjectStats(LootItemTemplate* template
 }
 
 void LootManagerImplementation::setCustomObjectName(TangibleObject* object, LootItemTemplate* templateObject) {
-	const String& customName = templateObject->getCustomObjectName();
+	String customName = templateObject->getCustomObjectName();
 
 	if (!customName.isEmpty()) {
 		if (customName.charAt(0) == '@') {
@@ -250,7 +252,7 @@ TangibleObject* LootManagerImplementation::createLootObject(LootItemTemplate* te
 	if(level > 300)
 		level = 300;
 
-	const String& directTemplateObject = templateObject->getDirectObjectTemplate();
+	String directTemplateObject = templateObject->getDirectObjectTemplate();
 
 	ManagedReference<TangibleObject*> prototype = zoneServer->createObject(directTemplateObject.hashCode(), 2).castTo<TangibleObject*>();
 
@@ -451,7 +453,7 @@ TangibleObject* LootManagerImplementation::createLootObject(LootItemTemplate* te
 		addConditionDamage(prototype, craftingValues);
 
 	delete craftingValues;
-
+	
 	if(prototype->isAttachment()){
 		Attachment* attachment = cast<Attachment*>( prototype.get());
 		HashTable<String, int>* mods = attachment->getSkillMods();
@@ -764,39 +766,40 @@ bool LootManagerImplementation::createNamedLoot(SceneObject* container, const St
 bool LootManagerImplementation::createLootSet(SceneObject* container, const String& lootGroup, int level, bool maxCondition, int setSize) {
 	Reference<LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
 
-	if (group == NULL) {
-		warning("Loot group template requested does not exist: " + lootGroup);
-		return false;
-	}
-	//Roll for the item out of the group.
-	int roll = System::random(10000000);
-
-	int lootGroupEntryIndex = group->getLootGroupIntEntryForRoll(roll);
-
-	for(int q = 0; q < setSize; q++) {
-		String selection = group->getLootGroupEntryAt(lootGroupEntryIndex+q);
-		Reference<LootItemTemplate*> itemTemplate = lootGroupMap->getLootItemTemplate(selection);
-
-		if (itemTemplate == NULL) {
-			warning("Loot item template requested does not exist: " + group->getLootGroupEntryForRoll(roll) + " for templateName: " + group->getTemplateName());
+		if (group == NULL) {
+			warning("Loot group template requested does not exist: " + lootGroup);
 			return false;
 		}
+		//Roll for the item out of the group.
+		int roll = System::random(10000000);
 
-		TangibleObject* obj = createLootObject(itemTemplate, level, maxCondition);
 
-		if (obj == NULL)
-			return false;
+		int lootGroupEntryIndex = group->getLootGroupIntEntryForRoll(roll);
 
-		if (container->transferObject(obj, -1, false, true)) {
-			container->broadcastObject(obj, true);
-		} else {
-			obj->destroyObjectFromDatabase(true);
-			return false;
+
+		for(int q = 0; q< setSize; q++) {
+			String selection = group->getLootGroupEntryAt(lootGroupEntryIndex+q);
+			Reference<LootItemTemplate*> itemTemplate = lootGroupMap->getLootItemTemplate(selection);
+
+			if (itemTemplate == NULL) {
+				warning("Loot item template requested does not exist: " + group->getLootGroupEntryForRoll(roll) + " for templateName: " + group->getTemplateName());
+				return false;
+			}
+
+			TangibleObject* obj = createLootObject(itemTemplate, level, maxCondition);
+
+			if (obj == NULL)
+				return false;
+
+			if (container->transferObject(obj, -1, false, true)) {
+				container->broadcastObject(obj, true);
+			} else {
+				obj->destroyObjectFromDatabase(true);
+				return false;
+			}
+
 		}
-
-	}
-
-	return true;
+		return true;
 }
 
 void LootManagerImplementation::addStaticDots(TangibleObject* object, LootItemTemplate* templateObject, int level) {
@@ -837,8 +840,8 @@ void LootManagerImplementation::addStaticDots(TangibleObject* object, LootItemTe
 
 			for (int i = 0; i < size; i++) {
 
-				const String& property = dotValues->elementAt(i).getKey();
-				const SortedVector<int>& theseValues = dotValues->elementAt(i).getValue();
+				String property = dotValues->elementAt(i).getKey();
+				SortedVector<int> theseValues = dotValues->elementAt(i).getValue();
 				int min = theseValues.elementAt(0);
 				int max = theseValues.elementAt(1);
 				float value = 0;
@@ -1005,8 +1008,7 @@ void LootManagerImplementation::addRandomDots(TangibleObject* object, LootItemTe
 }
 
 float LootManagerImplementation::calculateDotValue(float min, float max, float level) {
-	float randVal = (float)System::random(max - min);
-	float value = MAX(min, MIN(max, randVal * (1 + (level / 1000)))); // Used for Str, Pot, Dur, Uses.
+	float value = MAX(min, MIN(max, System::random(max - min) * (1 + (level / 1000)))); // Used for Str, Pot, Dur, Uses.
 
 	if (value < min) {
 		value = min;

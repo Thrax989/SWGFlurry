@@ -5,8 +5,9 @@
 #ifndef INTANGIBLEOBJECTDELTAMESSAGE3_H_
 #define INTANGIBLEOBJECTDELTAMESSAGE3_H_
 
-#include "server/zone/packets/DeltaMessage.h"
-#include "server/zone/objects/installation/harvester/HarvesterObject.h"
+#include "../../packets/DeltaMessage.h"
+
+#include "../../objects/installation/harvester/HarvesterObject.h"
 
 class HarvesterObjectDeltaMessage3 : public DeltaMessage {
 	HarvesterObject* haro;
@@ -23,6 +24,8 @@ public:
 	}	
 	
 };
+
+
 
 #endif /*INTANGIBLEOBJECTDELTAMESSAGE3_H_*/
 

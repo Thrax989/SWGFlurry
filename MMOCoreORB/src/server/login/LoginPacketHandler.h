@@ -5,6 +5,8 @@
 #ifndef LOGINPACKETHANDLER_H_
 #define LOGINPACKETHANDLER_H_
 
+#include "engine/engine.h"
+
 #include "LoginClient.h"
 
 namespace server {

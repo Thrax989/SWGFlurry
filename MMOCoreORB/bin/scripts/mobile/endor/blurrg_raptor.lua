@@ -2,15 +2,15 @@ blurrg_raptor = Creature:new {
 	objectName = "@mob/creature_names:blurrg_raptor",
 	socialGroup = "blurrg",
 	faction = "",
-	level = 85,
-	chanceHit = 8.5,
+	level = 141,
+	chanceHit = 6.25,
 	damageMin = 945,
 	damageMax = 1600,
 	baseXp = 13367,
-	baseHAM = 95000,
-	baseHAMmax = 105000,
+	baseHAM = 62000,
+	baseHAMmax = 75000,
 	armor = 0,
-	resists = {185,185,180,165,180,180,165,180,140},
+	resists = {20,20,20,20,20,20,20,20,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 50,
 	hideType = "hide_leathery",
@@ -31,8 +31,8 @@ blurrg_raptor = Creature:new {
 	weapons = {"creature_spit_small_yellow"},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareapoison",""},
-		{"creatureareaknockdown",""}
+		{"stunattack",""},
+		{"blindattack",""}
 	}
 }
 

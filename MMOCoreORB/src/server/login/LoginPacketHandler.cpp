@@ -6,6 +6,7 @@
 #include "objects.h"
 
 #include "LoginPacketHandler.h"
+#include "server/login/LoginClient.h"
 #include "server/login/LoginServer.h"
 #include "LoginProcessServerImplementation.h"
 

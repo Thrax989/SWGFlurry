@@ -8,6 +8,8 @@
 #ifndef TEMPLATEMANAGER_H_
 #define TEMPLATEMANAGER_H_
 
+#include "engine/engine.h"
+
 #include "engine/util/ObjectFactory.h"
 #include "system/util/SynchronizedVectorMap.h"
 
@@ -18,13 +20,22 @@
 #include "templates/slots/ArrangementDescriptor.h"
 #include "templates/manager/PlanetMapCategoryList.h"
 #include "templates/manager/PlanetMapCategory.h"
-#include "templates/manager/PortalLayoutMap.h"
+
+#include "tre3/TreeArchive.h"
 
 class TemplateCRCMap;
 class ClientTemplateCRCMap;
+class PortalLayoutMap;
+class FloorMeshMap;
+class AppearanceMap;
 
+class FloorMesh;
+class PortalLayout;
+class AppearanceTemplate;
 class TreeDirectory;
 class PaletteTemplate;
+class InteriorMap;
+class InteriorLayoutTemplate;
 
 class TemplateManager : public Singleton<TemplateManager>, public Logger, public Object {
 	TemplateCRCMap* templateCRCMap;
@@ -168,5 +179,6 @@ public:
 
 	friend class SharedObjectTemplate;
 };
+
 
 #endif /* TEMPLATEMANAGER_H_ */

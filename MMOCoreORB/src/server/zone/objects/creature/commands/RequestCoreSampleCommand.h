@@ -11,6 +11,8 @@
 #ifndef REQUESTCORESAMPLECOMMAND_H_
 #define REQUESTCORESAMPLECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/tangible/tool/SurveyTool.h"
 #include "server/zone/packets/chat/ChatSystemMessage.h"
 #include "server/zone/objects/player/sessions/survey/SurveySession.h"
 

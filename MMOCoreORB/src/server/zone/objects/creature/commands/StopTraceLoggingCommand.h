@@ -5,6 +5,8 @@
 #ifndef STOPTRACELOGGINGCOMMAND_H_
 #define STOPTRACELOGGINGCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class StopTraceLoggingCommand : public QueueCommand {
 public:
 

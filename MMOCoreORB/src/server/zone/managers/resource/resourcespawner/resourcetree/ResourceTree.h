@@ -13,6 +13,9 @@
 
 #include "ResourceTreeNode.h"
 #include "ResourceTreeEntry.h"
+#include "templates/datatables/DataTableIff.h"
+#include "templates/datatables/DataTableRow.h"
+#include "templates/datatables/DataTableCell.h"
 
 /**
  * The ResourceTree class is a representation of the
@@ -86,5 +89,6 @@ private:
 	void setRecycleToolType(ResourceTreeEntry* entry);
 
 };
+
 
 #endif /* RESOURCETREE_H_ */

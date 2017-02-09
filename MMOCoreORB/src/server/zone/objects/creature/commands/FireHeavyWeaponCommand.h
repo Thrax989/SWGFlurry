@@ -5,6 +5,8 @@
 #ifndef FIREHEAVYWEAPONCOMMAND_H_
 #define FIREHEAVYWEAPONCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class FireHeavyWeaponCommand : public CombatQueueCommand {
 public:
 

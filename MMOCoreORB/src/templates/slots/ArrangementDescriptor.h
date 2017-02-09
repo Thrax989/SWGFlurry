@@ -8,6 +8,7 @@
 #ifndef ARRANGEMENTDESCRIPTOR_H_
 #define ARRANGEMENTDESCRIPTOR_H_
 
+#include "engine/engine.h"
 #include "templates/IffTemplate.h"
 
 class ArrangementDescriptor : public IffTemplate {
@@ -57,5 +58,6 @@ public:
 		return arrangementSlots;
 	}
 };
+
 
 #endif /* ARRANGEMENTDESCRIPTOR_H_ */

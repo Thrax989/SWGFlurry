@@ -11,6 +11,7 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/guild/GuildMemberInfo.h"
+#include "server/zone/objects/guild/RenameGuildTask.h"
 #include "server/zone/objects/guild/GuildUpdateEvent.h"
 
 void GuildObjectImplementation::initializeTransientMembers() {

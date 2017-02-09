@@ -12,7 +12,6 @@
 #define SPAWNMAP_H_
 
 #include "engine/engine.h"
-#include "SpawnDensityMap.h"
 
 
 class SpawnMap : public VectorMap<String, SpawnDensityMap> {

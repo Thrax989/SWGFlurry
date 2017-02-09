@@ -5,6 +5,8 @@
 #ifndef FORCERESISTPOISONCOMMAND_H_
 #define FORCERESISTPOISONCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ForceResistPoisonCommand : public JediQueueCommand {
 public:
 

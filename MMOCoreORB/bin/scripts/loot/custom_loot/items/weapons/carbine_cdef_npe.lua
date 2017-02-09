@@ -1,7 +1,7 @@
 carbine_cdef_npe = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Cdef carbine",
+	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_cdef_npe.iff",
 	craftingValues = {
 		{"mindamage",56,90,0},

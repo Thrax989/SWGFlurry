@@ -5,6 +5,7 @@
  *      Author: victor
  */
 
+#include "ObjectControllerMessage.h"
 #include "ObjectMenuResponse.h"
 #include "server/zone/managers/radial/RadialManager.h"
 

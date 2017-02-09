@@ -5,6 +5,8 @@
 #ifndef CUICONSENTRESPONSECOMMAND_H_
 #define CUICONSENTRESPONSECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CuiConsentResponseCommand : public QueueCommand {
 public:
 

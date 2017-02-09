@@ -5,7 +5,7 @@
 #ifndef CREATUREATTRIBUTE_H_
 #define CREATUREATTRIBUTE_H_
 
-#include "system/lang.h"
+#include "engine/engine.h"
 
 class CreatureEncumbrance {
 public:
@@ -35,5 +35,6 @@ public:
 
 	static String getName(const uint8 attribute, bool initialCap = false);
 };
+
 
 #endif /* CREATUREATTRIBUTE_H_ */

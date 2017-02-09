@@ -11,6 +11,7 @@
 #ifndef RANDOMPOOL_H_
 #define RANDOMPOOL_H_
 
+#include "engine/engine.h"
 #include "ResourcePool.h"
 
 class ResourceSpawner;

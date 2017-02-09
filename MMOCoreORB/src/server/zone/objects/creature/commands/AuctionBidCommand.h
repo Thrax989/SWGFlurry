@@ -5,6 +5,8 @@
 #ifndef AUCTIONBIDCOMMAND_H_
 #define AUCTIONBIDCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class AuctionBidCommand : public QueueCommand {
 public:
 

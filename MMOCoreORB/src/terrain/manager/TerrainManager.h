@@ -8,7 +8,10 @@
 #ifndef TERRAINMANAGER_H_
 #define TERRAINMANAGER_H_
 
+
+#include "engine/engine.h"
 #include "terrain/TerrainAppearance.h"
+#include "engine/util/lru/SynchronizedLRUCache.h"
 #include "gmock/gmock.h"
 #include "TerrainCache.h"
 
@@ -105,5 +108,6 @@ class MockTerrainManager : public TerrainManager {
 public:
 	MOCK_METHOD2(getHeight,float(float x, float y));
 };
+
 
 #endif /* TERRAINMANAGER_H_ */

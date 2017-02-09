@@ -1,5 +1,5 @@
 /*
- * ImageDesignRejectMessageCallback.h
+ * ImageDesignMessageCallback.h
  *
  *  Created on: 02/02/2011
  *      Author: Polonel
@@ -9,6 +9,7 @@
 #define IMAGEDESIGNREJECTMESSAGECALLBACK_H_
 
 #include "ObjectControllerMessageCallback.h"
+#include "ImageDesignMessage.h"
 #include "server/zone/objects/player/sessions/ImageDesignSession.h"
 
 class ImageDesignRejectMessageCallback : public MessageCallback {

@@ -5,7 +5,8 @@
 #ifndef FACTORYCRATEOBJECTDELTAMESSAGE3_H_
 #define FACTORYCRATEOBJECTDELTAMESSAGE3_H_
 
-#include "server/zone/packets/DeltaMessage.h"
+#include "../../packets/DeltaMessage.h"
+
 #include "server/zone/objects/factorycrate/FactoryCrate.h"
 
 class FactoryCrateObjectDeltaMessage3 : public DeltaMessage {

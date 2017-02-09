@@ -8,6 +8,7 @@
 #ifndef SKILLINFO_H_
 #define SKILLINFO_H_
 
+#include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
 
 class SkillInfo : public Object {

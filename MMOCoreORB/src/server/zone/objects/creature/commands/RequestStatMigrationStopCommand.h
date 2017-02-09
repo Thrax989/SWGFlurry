@@ -5,6 +5,8 @@
 #ifndef REQUESTSTATMIGRATIONSTOPCOMMAND_H_
 #define REQUESTSTATMIGRATIONSTOPCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class RequestStatMigrationStopCommand : public QueueCommand {
 public:
 

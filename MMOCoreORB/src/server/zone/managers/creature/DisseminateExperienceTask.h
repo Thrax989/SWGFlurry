@@ -8,8 +8,11 @@
 #ifndef DISSEMINATEEXPERIENCETASK_H_
 #define DISSEMINATEEXPERIENCETASK_H_
 
+#include "engine/engine.h"
+#include "server/zone/managers/creature/LairObserver.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
+
 #include "system/util/SynchronizedVector.h"
 
 class DisseminateExperienceTask : public Task {
@@ -37,5 +40,6 @@ public:
 		playerManager->disseminateExperience(strongRef, &copyThreatMap, &spawnedCreatures);
 	}
 };
+
 
 #endif /* DISSEMINATEEXPERIENCETASK_H_ */

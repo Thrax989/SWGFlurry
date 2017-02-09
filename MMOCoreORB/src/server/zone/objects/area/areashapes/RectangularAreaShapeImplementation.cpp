@@ -1,5 +1,5 @@
 /*
- * RectangularAreaShapeImplementation.cpp
+ * CircularAreaShapeImplementation.cpp
  *
  *  Created on: 31/10/2012
  *      Author: loshult

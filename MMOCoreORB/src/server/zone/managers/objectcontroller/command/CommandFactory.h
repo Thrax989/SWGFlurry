@@ -8,6 +8,10 @@
 #ifndef COMMANDFACTORY_H_
 #define COMMANDFACTORY_H_
 
+#include "engine/engine.h"
+
+using namespace server::zone;
+
 namespace server {
 namespace zone {
 namespace managers {

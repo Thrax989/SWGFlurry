@@ -5,7 +5,7 @@
 #ifndef CHATONADDFRIEND_H_
 #define CHATONADDFRIEND_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ChatOnAddFriend : public BaseMessage {
 public:

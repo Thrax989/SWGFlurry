@@ -28,20 +28,50 @@ janta_chieftain = Creature:new {
 	scale = 2.0,
 
 	templates = {"object/mobile/dantari_male.iff"},
-	lootGroups = {
+		lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 8000000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000}
+				{group = "armor_all", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 4000000},
-				{group = "janta_common", chance = 1000000}
+				{group = "weapons_all", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "nge2", chance = 1000000}
+			},
+			lootChance = 1000000
+		 },
+		 {
+			groups = {
+				{group = "g_pistol_heroic_exar", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		 {
+			groups = {
+				{group = "g_som_2h_sword_obsidian", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		 {
+			groups = {
+				{group = "janta_rare", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		 {
+			groups = {
+				{group = "janta_rare", chance = 10000000}
 			},
 			lootChance = 10000000
 		},

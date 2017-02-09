@@ -1,4 +1,5 @@
 #include "ScavengerDroidContainerComponent.h"
+#include "server/zone/objects/tangible/Container.h"
 #include "server/zone/objects/tangible/eventperk/ScavengerDroid.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/tangible/components/EventPerkDataComponent.h"

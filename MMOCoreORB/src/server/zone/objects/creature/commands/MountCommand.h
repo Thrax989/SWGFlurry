@@ -6,6 +6,7 @@
 #define MOUNTCOMMAND_H_
 
 #include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/creature/VehicleObject.h"
 #include "server/zone/managers/objectcontroller/ObjectController.h"
 
 class MountCommand : public QueueCommand {
@@ -114,18 +115,19 @@ public:
 		//We released this crosslock before to remove player buffs
 		Locker vehicleLocker(vehicle, creature);
 
-		if (vehicle->hasBuff(gallopCRC)) {
-			Core::getTaskManager()->executeTask([=] () {
+		if(vehicle->hasBuff(gallopCRC)) {
+			EXECUTE_TASK_1(vehicle, {
+
 				uint32 gallopCRC = STRING_HASHCODE("gallop");
-				Locker lock(vehicle);
+				Locker lock(vehicle_p);
 
-				ManagedReference<Buff*> gallop = vehicle->getBuff(gallopCRC);
-				Locker blocker(gallop, vehicle);
+				ManagedReference<Buff*> gallop = vehicle_p->getBuff(gallopCRC);
+				Locker blocker(gallop, vehicle_p);
 
-				if (gallop != NULL) {
+				if(gallop != NULL) {
 					gallop->applyAllModifiers();
 				}
-			}, "AddGallopModsLambda");
+			});
 		}
 
 		// Speed hack buffer

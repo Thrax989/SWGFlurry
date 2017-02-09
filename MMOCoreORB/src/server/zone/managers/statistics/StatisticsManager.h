@@ -5,7 +5,8 @@
 #ifndef STATISTICSMANAGER_H_
 #define STATISTICSMANAGER_H_
 
-#include "server/zone/objects/mission/MissionTypes.h"
+#include "engine/engine.h"
+#include "server/zone/objects/mission/MissionObject.h"
 
 class StatisticsManager : public Singleton<StatisticsManager>, public Logger, public Object {
 	AtomicLong numberOfCompletedMissionsBounty;

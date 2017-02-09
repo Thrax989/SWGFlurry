@@ -5,6 +5,8 @@
 #ifndef REMOVEALLOWEDPLAYERCOMMAND_H_
 #define REMOVEALLOWEDPLAYERCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class RemoveAllowedPlayerCommand : public QueueCommand {
 public:
 

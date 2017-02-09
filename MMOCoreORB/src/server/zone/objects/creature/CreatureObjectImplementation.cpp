@@ -3,11 +3,11 @@
 		See file COPYING for copying conditions. */
 
 #include "server/zone/objects/creature/CreatureObject.h"
-#include "server/zone/objects/creature/ai/AiAgent.h"
 #include "templates/params/creature/CreatureState.h"
 #include "templates/params/creature/CreatureFlag.h"
 
 #include "server/zone/managers/objectcontroller/ObjectController.h"
+#include "server/zone/managers/skill/SkillModManager.h"
 #include "server/zone/managers/skill/SkillManager.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/managers/combat/CombatManager.h"
@@ -36,7 +36,6 @@
 #include "server/zone/packets/ui/NewbieTutorialEnableHudElement.h"
 #include "server/zone/packets/ui/OpenHolocronToPageMessage.h"
 #include "server/zone/packets/object/Animation.h"
-#include "templates/params/creature/CreatureAttribute.h"
 #include "templates/params/creature/CreaturePosture.h"
 #include "server/zone/objects/creature/commands/effect/CommandEffect.h"
 #include "server/zone/objects/creature/events/CommandQueueActionEvent.h"
@@ -44,23 +43,31 @@
 #include "server/zone/ZoneServer.h"
 #include "server/chat/ChatManager.h"
 #include "server/chat/StringIdChatParameter.h"
+#include "server/zone/objects/scene/variables/DeltaVectorMap.h"
 #include "server/zone/objects/creature/variables/CommandQueueAction.h"
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/group/GroupObject.h"
+#include "server/zone/packets/tangible/UpdatePVPStatusMessage.h"
 #include "server/zone/objects/player/FactionStatus.h"
 #include "server/zone/objects/area/ActiveArea.h"
 #include "server/zone/objects/mission/MissionObject.h"
 #include "server/zone/objects/area/CampSiteActiveArea.h"
+#include "server/zone/objects/tangible/wearables/WearableObject.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
+#include "server/zone/objects/intangible/VehicleControlDevice.h"
 #include "server/zone/objects/guild/GuildObject.h"
 #include "server/zone/objects/creature/events/DizzyFallDownEvent.h"
 #include "server/zone/packets/ui/ExecuteConsoleCommand.h"
 #include "server/zone/objects/creature/buffs/StateBuff.h"
+#include "server/zone/objects/creature/buffs/PrivateBuff.h"
 #include "server/zone/objects/creature/buffs/PrivateSkillMultiplierBuff.h"
 #include "server/zone/objects/creature/buffs/PlayerVehicleBuff.h"
-#include "server/zone/objects/intangible/PetControlDevice.h"
+
+#include "server/zone/packets/object/SitOnObject.h"
+
 #include "server/zone/managers/planet/PlanetManager.h"
 #include "terrain/manager/TerrainManager.h"
+#include "server/zone/managers/resource/resourcespawner/SampleTask.h"
 
 #include "templates/creature/SharedCreatureObjectTemplate.h"
 
@@ -71,6 +78,7 @@
 
 #include "server/zone/packets/zone/unkByteFlag.h"
 #include "server/zone/packets/zone/CmdStartScene.h"
+#include "server/zone/packets/zone/CmdSceneReady.h"
 #include "server/zone/packets/zone/ParametersMessage.h"
 
 #include "server/zone/managers/guild/GuildManager.h"
@@ -80,6 +88,7 @@
 
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
 
+#include "buffs/BuffDurationEvent.h"
 #include "engine/core/TaskManager.h"
 
 float CreatureObjectImplementation::DEFAULTRUNSPEED = 5.376;
@@ -615,62 +624,63 @@ void CreatureObjectImplementation::addMountedCombatSlow() {
 
 	ManagedReference<CreatureObject*> creo = asCreatureObject();
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(creo);
-		Locker clocker(parent, creo);
+	EXECUTE_TASK_2(creo, parent, {
+			Locker locker(creo_p);
+			Locker clocker(parent_p, creo_p);
 
-		float newSpeed = 1;
-		SharedObjectTemplate* templateData = creo->getObjectTemplate();
-		SharedCreatureObjectTemplate* playerTemplate = dynamic_cast<SharedCreatureObjectTemplate*> (templateData);
+			float newSpeed = 1;
+			SharedObjectTemplate* templateData = creo_p->getObjectTemplate();
+			SharedCreatureObjectTemplate* playerTemplate = dynamic_cast<SharedCreatureObjectTemplate*> (templateData);
 
-		if (playerTemplate != NULL) {
-			const Vector<FloatParam>& speedTempl = playerTemplate->getSpeed();
-			newSpeed = speedTempl.get(0);
-		}
+			if (playerTemplate != NULL) {
+				const Vector<FloatParam>& speedTempl = playerTemplate->getSpeed();
+				newSpeed = speedTempl.get(0);
+			}
 
-		float oldSpeed = 1;
-		PetManager* petManager = creo->getZoneServer()->getPetManager();
+			float oldSpeed = 1;
+			PetManager* petManager = creo_p->getZoneServer()->getPetManager();
 
-		if (petManager != NULL) {
-			oldSpeed = petManager->getMountedRunSpeed(parent);
-		}
+			if (petManager != NULL) {
+				oldSpeed = petManager->getMountedRunSpeed(parent_p);
+			}
 
-		float magnitude = newSpeed / oldSpeed;
+			float magnitude = newSpeed / oldSpeed;
 
-		uint32 crc = STRING_HASHCODE("mounted_combat_slow");
-		StringIdChatParameter startStringId("combat_effects", "mount_slow_for_combat"); // Your mount slows down to prepare for combat.
+			uint32 crc = STRING_HASHCODE("mounted_combat_slow");
+			StringIdChatParameter startStringId("combat_effects", "mount_slow_for_combat"); // Your mount slows down to prepare for combat.
 
-		ManagedReference<PlayerVehicleBuff*> buff = new PlayerVehicleBuff(parent, crc, 604800, BuffType::OTHER);
+			ManagedReference<PlayerVehicleBuff*> buff = new PlayerVehicleBuff(parent_p, crc, 604800, BuffType::OTHER);
 
-		Locker blocker(buff);
+			Locker blocker(buff);
 
-		buff->setSpeedMultiplierMod(magnitude);
-		buff->setAccelerationMultiplierMod(magnitude);
-		buff->setStartMessage(startStringId);
+			buff->setSpeedMultiplierMod(magnitude);
+			buff->setAccelerationMultiplierMod(magnitude);
+			buff->setStartMessage(startStringId);
 
-		parent->addBuff(buff);
-	}, "AddMountedCombatSlowLambda");
+			parent_p->addBuff(buff);
+	});
 }
+
 
 void CreatureObjectImplementation::removeMountedCombatSlow(bool showEndMessage) {
 	ManagedReference<CreatureObject*> creo = asCreatureObject();
 	ManagedReference<CreatureObject*> vehicle = getParent().get().castTo<CreatureObject*>();
-	if (vehicle == NULL)
+	if(vehicle == NULL)
 		return;
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(vehicle);
+	EXECUTE_TASK_3(vehicle, creo, showEndMessage, {
+		Locker locker(vehicle_p);
 		uint32 buffCRC = STRING_HASHCODE("mounted_combat_slow");
-		bool hasBuff = vehicle->hasBuff(buffCRC);
-		if (hasBuff) {
-			vehicle->removeBuff(buffCRC);
-			if (showEndMessage) {
+		bool hasBuff = vehicle_p->hasBuff(buffCRC);
+		if(hasBuff) {
+			vehicle_p->removeBuff(buffCRC);
+			if(showEndMessage_p) {
 				//I don't think we want to show this on dismount, or after a gallop
 				StringIdChatParameter endStringId("combat_effects", "mount_speed_after_combat"); // Your mount speeds up.
-				creo->sendSystemMessage(endStringId);
+				creo_p->sendSystemMessage(endStringId);
 			}
 		}
-	}, "RemoveMountedCombatSlowLambda");
+	});
 }
 
 void CreatureObjectImplementation::setCombatState() {

@@ -1,8 +1,10 @@
 #include "server/login/account/GalaxyAccountInfo.h"
+#include <system/thread/ReadLocker.h>
 
 GalaxyAccountInfo::GalaxyAccountInfo() {
 
 }
+
 
 void GalaxyAccountInfo::updateVetRewardsFromPlayer(const VectorMap<unsigned int, String>& newRewards) {
 
@@ -45,3 +47,5 @@ bool GalaxyAccountInfo::parseFromBinaryStream(ObjectInputStream* stream) {
 bool GalaxyAccountInfo::toBinaryStream(ObjectOutputStream* stream) {
 	return chosenVeteranRewards.toBinaryStream(stream);
 }
+
+

@@ -5,6 +5,8 @@
 #ifndef MULTITARGETSHOTCOMMAND_H_
 #define MULTITARGETSHOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class MultiTargetShotCommand : public CombatQueueCommand {
 public:
 

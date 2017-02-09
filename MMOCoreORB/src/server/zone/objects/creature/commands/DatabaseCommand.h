@@ -5,6 +5,8 @@
 #ifndef DATABASECOMMAND_H_
 #define DATABASECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class DatabaseCommand : public QueueCommand {
 public:
 

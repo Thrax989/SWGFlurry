@@ -8,7 +8,7 @@
 #ifndef CREATETICKETRESPONSEMESSAGE_H_
 #define CREATETICKETRESPONSEMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class CreateTicketResponseMessage : public BaseMessage {
 public:

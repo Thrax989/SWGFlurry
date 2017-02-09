@@ -5,6 +5,8 @@
 #ifndef SETLOGINTITLECOMMAND_H_
 #define SETLOGINTITLECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SetLoginTitleCommand : public QueueCommand {
 public:
 

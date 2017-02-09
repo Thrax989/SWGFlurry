@@ -16,8 +16,11 @@
 #include "server/zone/objects/manufactureschematic/craftingvalues/CraftingValues.h"
 #include "server/zone/objects/tangible/powerup/PowerupObject.h"
 #include "server/zone/objects/tangible/component/lightsaber/LightsaberCrystalComponent.h"
+#include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/packets/object/WeaponRanges.h"
-#include "server/zone/ZoneProcessServer.h"
+#include "server/zone/packets/tangible/TangibleObjectDeltaMessage3.h"
+#include "server/zone/objects/player/sessions/SlicingSession.h"
+#include "server/zone/Zone.h"
 
 
 
@@ -293,6 +296,9 @@ void WeaponObjectImplementation::fillAttributeList(AttributeListMessage* alm, Cr
 		break;
 	case SharedWeaponObjectTemplate::LIGHTSABER:
 		dmgtxt << "Lightsaber";
+		break;
+	case SharedWeaponObjectTemplate::FORCEPOWER:
+		dmgtxt << "Forcepower";
 		break;
 	default:
 		dmgtxt << "Unknown";

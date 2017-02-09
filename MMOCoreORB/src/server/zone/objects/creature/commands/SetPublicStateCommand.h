@@ -5,6 +5,8 @@
 #ifndef SETPUBLICSTATECOMMAND_H_
 #define SETPUBLICSTATECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SetPublicStateCommand : public QueueCommand {
 public:
 

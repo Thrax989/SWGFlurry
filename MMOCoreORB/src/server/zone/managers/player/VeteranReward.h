@@ -8,6 +8,8 @@
 #ifndef VETERANREWARD_H_
 #define VETERANREWARD_H_
 
+#include "engine/engine.h"
+
 class VeteranReward : public Object {
 
 protected:

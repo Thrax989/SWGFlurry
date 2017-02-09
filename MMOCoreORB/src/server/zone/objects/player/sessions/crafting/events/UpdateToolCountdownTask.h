@@ -6,6 +6,9 @@
 #ifndef UPDATETOOLCOUNTDOWNTASK_H_
 #define UPDATETOOLCOUNTDOWNTASK_H_
 
+
+#include "server/zone/packets/tangible/TangibleObjectDeltaMessage3.h"
+
 class UpdateToolCountdownTask : public Task {
 	ManagedWeakReference<TangibleObject* > craftTool;
 	ManagedWeakReference<CreatureObject* > player;

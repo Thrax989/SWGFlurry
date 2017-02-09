@@ -5,8 +5,9 @@
 #ifndef HARVESTEROBJECTMESSAGE3_H_
 #define HARVESTEROBJECTMESSAGE3_H_
 
-#include "server/zone/packets/BaseLineMessage.h"
-#include "server/zone/objects/installation/harvester/HarvesterObject.h"
+#include "../BaseLineMessage.h"
+
+#include "../../objects/installation/harvester/HarvesterObject.h"
 
 class HarvesterObjectMessage3 : public BaseLineMessage {
 public:
@@ -58,5 +59,4 @@ This could be short, int, int. I dont know.
 
 	}
 };
-
 #endif /*HARVESTEROBJECTMESSAGE3_H_*/

@@ -5,6 +5,8 @@
 #ifndef GRANTTITLECOMMAND_H_
 #define GRANTTITLECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class GrantTitleCommand : public QueueCommand {
 public:
 

@@ -5,6 +5,8 @@
 #ifndef REMOVEFRIENDCOMMAND_H_
 #define REMOVEFRIENDCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class RemoveFriendCommand : public QueueCommand {
 public:
 

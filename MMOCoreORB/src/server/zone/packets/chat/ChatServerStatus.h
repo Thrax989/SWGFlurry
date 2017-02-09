@@ -8,8 +8,6 @@
 #ifndef CHATSERVERSTATUS_H_
 #define CHATSERVERSTATUS_H_
 
-#include "engine/service/proto/BaseMessage.h"
-
 class ChatServerStatus : public BaseMessage {
 public:
    ChatServerStatus(byte flag) : BaseMessage() {
@@ -18,8 +16,9 @@ public:
 
 		insertByte(flag); //status. -0 offline  1 online
 
+
+
    }
 
 };
-
 #endif /* CHATSERVERSTATUS_H_ */

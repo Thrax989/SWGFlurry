@@ -5,6 +5,7 @@
 #ifndef WILDSHOT1COMMAND_H_
 #define WILDSHOT1COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class WildShot1Command : public CombatQueueCommand {

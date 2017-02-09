@@ -8,6 +8,7 @@
 #include "AbilityList.h"
 #include "Ability.h"
 
+#include "server/zone/objects/creature/variables/Skill.h"
 #include "server/zone/ZoneServer.h"
 #include "server/ServerCore.h"
 #include "server/zone/managers/skill/SkillManager.h"

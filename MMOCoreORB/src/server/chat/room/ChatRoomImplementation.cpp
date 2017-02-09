@@ -8,7 +8,6 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/ZoneServer.h"
-#include "server/zone/Zone.h"
 
 #include "server/zone/packets/chat/ChatRoomList.h"
 #include "server/zone/packets/chat/ChatOnDestroyRoom.h"

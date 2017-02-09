@@ -6,7 +6,9 @@
  */
 
 #include "server/zone/objects/area/ActiveArea.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 #include "events/ActiveAreaEvent.h"
+#include "server/zone/Zone.h"
 #include "server/zone/objects/area/areashapes/AreaShape.h"
 
 bool ActiveAreaImplementation::containsPoint(float px, float py, uint64 cellid) {
@@ -52,14 +54,14 @@ void ActiveAreaImplementation::notifyEnter(SceneObject* obj) {
 		ManagedReference<SceneObject*> sceno = obj;
 		Vector<ManagedReference<SceneObject* > > scene = attachedScenery;
 
-		Core::getTaskManager()->executeTask([=] () {
-			for (int i = 0; i < scene.size(); i++) {
-				SceneObject* scenery = scene.get(i);
+		EXECUTE_TASK_2(scene, sceno, {
+			for (int i = 0; i < scene_p.size(); i++) {
+				SceneObject* scenery = scene_p.get(i);
 				Locker locker(scenery);
 
-				scenery->sendTo(sceno, true);
+				scenery->sendTo(sceno_p, true);
 			}
-		}, "SendSceneryLambda");
+		});
 	}
 }
 
@@ -71,14 +73,14 @@ void ActiveAreaImplementation::notifyExit(SceneObject* obj) {
 		ManagedReference<SceneObject*> sceno = obj;
 		Vector<ManagedReference<SceneObject* > > scene = attachedScenery;
 
-		Core::getTaskManager()->executeTask([=] () {
-			for (int i = 0; i < scene.size(); i++) {
-				SceneObject* scenery = scene.get(i);
+		EXECUTE_TASK_2(scene, sceno, {
+			for (int i = 0; i < scene_p.size(); i++) {
+				SceneObject* scenery = scene_p.get(i);
 				Locker locker(scenery);
 
-				scenery->sendDestroyTo(sceno);
+				scenery->sendDestroyTo(sceno_p);
 			}
-		}, "SendDestroySceneryLambda");
+		});
 	}
 }
 

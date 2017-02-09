@@ -1,6 +1,7 @@
 aakuan_overlord = Creature:new {
-	--objectName = "@mob/creature_names:",
- 	customName = "Aakuan Overlord",
+	objectName = "@mob/creature_names:aakuan_overlord",
+	randomNameType = NAME_GENERIC,
+	randomNameTag = true,
 	socialGroup = "aakuans",
 	faction = "aakuans",
 	level = 225,

@@ -2,15 +2,15 @@ reptilian_life_stealer = Creature:new {
 	objectName = "@mob/creature_names:reptilian_life_stealer",
 	socialGroup = "reptilian_flier",
 	faction = "",
-	level = 85,
-	chanceHit = 8.5,
+	level = 125,
+	chanceHit = 3.25,
 	damageMin = 945,
 	damageMax = 1600,
-	baseXp = 13367,
-	baseHAM = 105000,
-	baseHAMmax = 115000,
+	baseXp = 11859,
+	baseHAM = 34000,
+	baseHAMmax = 42000,
 	armor = 0,
-	resists = {180,185,180,185,175,165,165,180,140},
+	resists = {0,125,105,200,200,-1,0,0,-1},
 	meatType = "meat_avian",
 	meatAmount = 135,
 	hideType = "hide_leathery",
@@ -32,7 +32,7 @@ reptilian_life_stealer = Creature:new {
 	conversationTemplate = "",
 	attacks = {
 		{"strongpoison",""},
-		{"creatureareadisease",""}
+		{"blindattack",""}
 	}
 }
 

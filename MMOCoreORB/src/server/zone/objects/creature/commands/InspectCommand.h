@@ -5,6 +5,8 @@
 #ifndef INSPECT_H_
 #define INSPECT_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/managers/combat/CombatManager.h"
 #include "CombatQueueCommand.h"
 
 class InspectCommand : public CombatQueueCommand {

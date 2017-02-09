@@ -5,7 +5,7 @@
 #ifndef CHATINSTANTMESSAGETOCLIENT_H_
 #define CHATINSTANTMESSAGETOCLIENT_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ChatInstantMessageToClient : public BaseMessage {
 public:

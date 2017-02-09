@@ -5,7 +5,8 @@
 #ifndef CREATUREOBJECTDELTAMESSAGE1_H_
 #define CREATUREOBJECTDELTAMESSAGE1_H_
 
-#include "server/zone/packets/DeltaMessage.h"
+#include "../../packets/DeltaMessage.h"
+#include "templates/params/creature/CreatureAttribute.h"
 
 class CreatureObjectDeltaMessage1 : public DeltaMessage {
 	CreatureObjectImplementation* creo;
@@ -25,6 +26,8 @@ public:
 		startUpdate(0x01);
 		insertInt(creo->getCashCredits());
 	}
+
+
 
 };
 

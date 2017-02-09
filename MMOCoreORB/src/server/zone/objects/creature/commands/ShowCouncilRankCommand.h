@@ -5,6 +5,8 @@
 #ifndef SHOWCOUNCILRANKCOMMAND_H_
 #define SHOWCOUNCILRANKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ShowCouncilRankCommand : public QueueCommand {
 public:
 

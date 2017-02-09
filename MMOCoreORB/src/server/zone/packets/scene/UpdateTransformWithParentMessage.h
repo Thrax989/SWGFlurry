@@ -5,7 +5,8 @@
 #ifndef UPDATETRANSFORMWITHPARENTMESSAGE_H_
 #define UPDATETRANSFORMWITHPARENTMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
+
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 

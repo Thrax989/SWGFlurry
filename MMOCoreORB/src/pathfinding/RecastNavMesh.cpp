@@ -6,6 +6,11 @@
  */
 
 #include "RecastNavMesh.h"
+#include "pathfinding/recast/Recast.h"
+
+#include "pathfinding/recast/DetourNavMesh.h"
+#include "pathfinding/recast/DetourNavMeshBuilder.h"
+
 
 RecastNavMesh::RecastNavMesh(const String& filename, bool forceRebuild) : Logger("RecastNavMesh"), header() {
 	navMesh = NULL;

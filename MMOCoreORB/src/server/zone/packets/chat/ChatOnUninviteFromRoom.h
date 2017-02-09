@@ -8,7 +8,7 @@
 #ifndef CHATONUNINVITEFROMROOM_H_
 #define CHATONUNINVITEFROMROOM_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ChatOnUninviteFromRoom : public BaseMessage {
 public:

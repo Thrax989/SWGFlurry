@@ -5,9 +5,10 @@
 package server.zone.objects.tangible.eventperk;
 
 import server.zone.objects.tangible.TangibleObject;
+import server.zone.objects.scene.SceneObject;
 import server.zone.objects.creature.CreatureObject;
 import server.zone.objects.tangible.tasks.RemoveEventPerkItemTask;
-include system.lang.ref.Reference;
+import server.zone.Zone;
 
 class ShuttleBeacon extends TangibleObject {
 	@weakReference

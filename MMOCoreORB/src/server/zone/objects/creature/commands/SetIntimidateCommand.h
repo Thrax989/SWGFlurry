@@ -5,6 +5,8 @@
 #ifndef SETINTIMIDATECOMMAND_H_
 #define SETINTIMIDATECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SetIntimidateCommand : public QueueCommand {
 public:
 

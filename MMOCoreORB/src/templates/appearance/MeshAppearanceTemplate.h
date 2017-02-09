@@ -8,6 +8,7 @@
 #ifndef MESHAPPEARANCETEMPLATE_H_
 #define MESHAPPEARANCETEMPLATE_H_
 
+#include "engine/engine.h"
 #include "templates/appearance/AppearanceTemplate.h"
 #include "templates/appearance/MeshData.h"
 

@@ -4,16 +4,23 @@
 
 #include "server/zone/objects/scene/SceneObject.h"
 
+#include "engine/util/Facade.h"
+
 #include "server/zone/packets/scene/SceneObjectCreateMessage.h"
 #include "server/zone/packets/scene/SceneObjectDestroyMessage.h"
 #include "server/zone/packets/scene/SceneObjectCloseMessage.h"
 #include "server/zone/packets/scene/UpdateContainmentMessage.h"
+#include "server/zone/packets/scene/UpdateTransformMessage.h"
+#include "server/zone/packets/scene/UpdateTransformWithParentMessage.h"
+#include "server/zone/packets/scene/LightUpdateTransformMessage.h"
+#include "server/zone/packets/scene/LightUpdateTransformWithParentMessage.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
 #include "server/zone/packets/scene/ClientOpenContainerMessage.h"
 #include "server/zone/packets/object/DataTransform.h"
 #include "server/zone/packets/object/DataTransformWithParent.h"
 #include "server/zone/packets/object/PlayClientEffectObjectMessage.h"
 #include "server/zone/managers/planet/PlanetManager.h"
+#include "terrain/manager/TerrainManager.h"
 #include "server/zone/managers/components/ComponentManager.h"
 #include "templates/manager/TemplateManager.h"
 #include "server/zone/managers/director/DirectorManager.h"
@@ -24,20 +31,25 @@
 #include "server/zone/ZoneClientSession.h"
 #include "server/zone/Zone.h"
 #include "server/zone/ZoneServer.h"
+#include "server/zone/ZoneProcessServer.h"
+#include "server/zone/ZoneReference.h"
 
 #include "variables/StringId.h"
 
 #include "server/zone/objects/cell/CellObject.h"
+#include "server/zone/objects/area/ActiveArea.h"
 #include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/creature/VehicleObject.h"
 #include "server/zone/objects/building/BuildingObject.h"
 #include "templates/ChildObject.h"
 #include "templates/appearance/MeshAppearanceTemplate.h"
+#include "server/zone/objects/tangible/terminal/Terminal.h"
 #include "server/zone/objects/scene/components/ZoneComponent.h"
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
-#include "server/zone/objects/scene/components/LuaObjectMenuComponent.h"
 #include "server/zone/objects/scene/components/ContainerComponent.h"
-#include "server/zone/objects/scene/components/LuaContainerComponent.h"
-//#include "PositionUpdateTask.h"
+#include "PositionUpdateTask.h"
+
+#include "server/zone/objects/tangible/sign/SignObject.h"
 
 #include "variables/ContainerPermissions.h"
 
@@ -508,7 +520,7 @@ void SceneObjectImplementation::broadcastObjectPrivate(SceneObject* object, Scen
 	if (zone == NULL)
 		return;
 
-	SortedVector<QuadTreeEntry*> closeSceneObjects;
+	SortedVector<ManagedReference<QuadTreeEntry*> > closeSceneObjects;
 
 	int maxInRangeObjectCount = 0;
 
@@ -523,13 +535,13 @@ void SceneObjectImplementation::broadcastObjectPrivate(SceneObject* object, Scen
 		CloseObjectsVector* vec = (CloseObjectsVector*) closeobjects;
 		closeSceneObjects.removeAll(vec->size(), 10);
 
-		vec->safeCopyReceiversTo(closeSceneObjects, 1);
+		vec->safeCopyTo(closeSceneObjects);
 
 		maxInRangeObjectCount = closeSceneObjects.size(); //closeobjects->size();
 	}
 
 	for (int i = 0; i < maxInRangeObjectCount; ++i) {
-		SceneObject* scno = static_cast<SceneObject*>(closeSceneObjects.get(i));
+		SceneObject* scno = static_cast<SceneObject*>(closeSceneObjects.get(i).get());
 
 		ManagedReference<ZoneClientSession*> client = scno->getClient();
 
@@ -565,7 +577,7 @@ void SceneObjectImplementation::broadcastDestroyPrivate(SceneObject* object, Sce
 	if (zone == NULL)
 		return;
 
-	SortedVector<QuadTreeEntry*> closeSceneObjects;
+	SortedVector<ManagedReference<QuadTreeEntry*> > closeSceneObjects;
 	int maxInRangeObjectCount = 0;
 
 	if (closeobjects == NULL) {
@@ -580,14 +592,14 @@ void SceneObjectImplementation::broadcastDestroyPrivate(SceneObject* object, Sce
 		CloseObjectsVector* vec = (CloseObjectsVector*) closeobjects;
 		closeSceneObjects.removeAll(vec->size(), 10);
 
-		vec->safeCopyReceiversTo(closeSceneObjects, 1);
+		vec->safeCopyTo(closeSceneObjects);
 
 		maxInRangeObjectCount = closeSceneObjects.size();
 
 	}
 
 	for (int i = 0; i < maxInRangeObjectCount; ++i) {
-		SceneObject* scno = static_cast<SceneObject*>(closeSceneObjects.get(i));
+		SceneObject* scno = static_cast<SceneObject*>(closeSceneObjects.get(i).get());
 
 		ManagedReference<ZoneClientSession*> client = scno->getClient();
 
@@ -649,7 +661,7 @@ void SceneObjectImplementation::broadcastMessagePrivate(BasePacket* message, Sce
 			maxInRangeObjectCount = closeobjects->size();
 			closeNoneReference = new SortedVector<QuadTreeEntry*>(maxInRangeObjectCount, 50);
 
-			closeobjects->safeCopyReceiversTo(*closeNoneReference, 1);
+			closeobjects->safeCopyTo(*closeNoneReference);
 			maxInRangeObjectCount = closeNoneReference->size();
 		}
 
@@ -731,7 +743,7 @@ void SceneObjectImplementation::broadcastMessagesPrivate(Vector<BasePacket*>* me
 
 	bool readlock = !zone->isLockedByCurrentThread();
 
-	SortedVector<QuadTreeEntry*> closeSceneObjects;
+	SortedVector<ManagedReference<QuadTreeEntry*> > closeSceneObjects;
 	int maxInRangeObjectCount = 0;
 
 	try {
@@ -748,7 +760,7 @@ void SceneObjectImplementation::broadcastMessagesPrivate(Vector<BasePacket*>* me
 
 			closeSceneObjects.removeAll(maxInRangeObjectCount, 10);
 
-			closeobjects->safeCopyReceiversTo(closeSceneObjects, 1);
+			closeobjects->safeCopyTo(closeSceneObjects);
 
 			maxInRangeObjectCount = closeSceneObjects.size();
 		}
@@ -759,7 +771,7 @@ void SceneObjectImplementation::broadcastMessagesPrivate(Vector<BasePacket*>* me
 	}
 
 	for (int i = 0; i < maxInRangeObjectCount; ++i) {
-		SceneObject* scno = static_cast<SceneObject*>(closeSceneObjects.get(i));
+		SceneObject* scno = static_cast<SceneObject*>(closeSceneObjects.get(i).get());
 
 		if (selfObject == scno)
 			continue;
@@ -828,7 +840,24 @@ void SceneObjectImplementation::updateVehiclePosition(bool sendPackets) {
 
 	if (parent == NULL || (!parent->isVehicleObject() && !parent->isMount()))
 		return;
+/*
+	Vector3 position = getPosition();
 
+	parent->setPosition(getPositionX(), getPositionZ(), getPositionY());
+	Quaternion dir = direction;
+	EXECUTE_TASK_4(parent, position, dir, sendPackets, {
+			Locker locker(parent_p);
+
+			parent_p->setDirection(dir_p.getW(),
+					dir_p.getX(), dir_p.getY(), dir_p.getZ());
+			parent_p->setPosition(position_p.getX(), position_p.getZ(), position_p.getY());
+
+			parent_p->incrementMovementCounter();
+
+			parent_p->updateZone(false, sendPackets_p);
+		}
+	);
+*/
 	Locker locker(parent);
 
 	parent->setDirection(direction.getW(), direction.getX(), direction.getY(), direction.getZ());
@@ -1700,7 +1729,3 @@ const BaseBoundingVolume* SceneObjectImplementation::getBoundingVolume() {
 	return NULL;
 }
 
-void SceneObjectImplementation::executeOrderedTask(const StdFunction& function, const String& name) {
-	auto taskObject = new LambdaTask(function, name.toCharArray());
-	executeOrderedTask(taskObject);
-}

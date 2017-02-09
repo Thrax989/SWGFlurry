@@ -5,6 +5,8 @@
 #ifndef SPOTLIGHTCOMMAND_H_
 #define SPOTLIGHTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SpotlightCommand : public QueueCommand {
 public:
 

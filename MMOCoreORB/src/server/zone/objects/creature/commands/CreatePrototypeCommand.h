@@ -5,6 +5,7 @@
 #ifndef CREATEPROTOTYPECOMMAND_H_
 #define CREATEPROTOTYPECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/player/sessions/TradeSession.h"
 

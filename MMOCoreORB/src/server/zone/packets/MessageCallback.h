@@ -1,5 +1,5 @@
 /*
- * MessageCallback.h
+ * MessageData.h
  *
  *  Created on: 21/07/2009
  *      Author: TheAnswer
@@ -8,9 +8,10 @@
 #ifndef MESSAGECALLBACK_H_
 #define MESSAGECALLBACK_H_
 
-#include "engine/core/Task.h"
-#include "engine/log/Logger.h"
+#include "engine/engine.h"
+
 #include "server/zone/ZoneClientSession.h"
+
 #include "server/zone/ZoneProcessServer.h"
 
 namespace server {

@@ -5,6 +5,8 @@
 #ifndef RESTARTCONVERSIONCOMMAND_H_
 #define RESTARTCONVERSIONCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class RestartConversionCommand : public QueueCommand {
 public:
 

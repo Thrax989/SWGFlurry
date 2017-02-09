@@ -5,6 +5,7 @@
 #ifndef CUREPOISONCOMMAND_H_
 #define CUREPOISONCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CurePackCommand.h"
 
 class CurePoisonCommand : public CurePackCommand {

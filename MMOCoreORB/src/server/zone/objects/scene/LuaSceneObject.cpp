@@ -8,7 +8,10 @@
 #include "server/zone/objects/scene/LuaSceneObject.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/cell/CellObject.h"
 #include "server/zone/Zone.h"
+#include "server/zone/objects/area/ActiveArea.h"
 #include "server/zone/managers/director/ScreenPlayTask.h"
 
 const char LuaSceneObject::className[] = "LuaSceneObject";
@@ -150,8 +153,6 @@ int LuaSceneObject::switchZone(lua_State* L) {
 	float z = lua_tonumber(L, -3);
 	float x = lua_tonumber(L, -4);
 	String planet = lua_tostring(L, -5);
-
-	Locker locker(realObject);
 
 	realObject->switchZone(planet, x, z, y, parentid);
 

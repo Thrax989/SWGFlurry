@@ -8,6 +8,7 @@
 #ifndef COLLISIONMESHVOLUME_H_
 #define COLLISIONMESHVOLUME_H_
 
+#include "engine/engine.h"
 #include "BaseBoundingVolume.h"
 
 class CollisionMeshVolume : public BaseBoundingVolume {

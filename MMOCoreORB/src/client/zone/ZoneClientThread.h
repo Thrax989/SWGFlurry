@@ -8,7 +8,7 @@
 #ifndef ZONECLIENTTHREAD_H_
 #define ZONECLIENTTHREAD_H_
 
-#include "system/lang.h"
+#include "engine/engine.h"
 
 class ZoneClient;
 
@@ -24,5 +24,6 @@ public:
 
 	void stop();
 };
+
 
 #endif /* ZONECLIENTTHREAD_H_ */

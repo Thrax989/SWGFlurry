@@ -9,6 +9,7 @@
 #define REGISTERVENDORSUICALLBACK_H_
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/managers/vendor/VendorManager.h"
 
 class RegisterVendorSuiCallback : public SuiCallback {

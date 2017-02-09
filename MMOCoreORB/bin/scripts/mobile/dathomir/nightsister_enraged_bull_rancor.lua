@@ -1,6 +1,5 @@
 nightsister_enraged_bull_rancor = Creature:new {
-   --objectName = "@mob/creature_names:",
-  	customName = "Nightsister Enraged Bull Rancor ",
+	objectName = "@mob/creature_names:nightsister_enraged_bull_rancor",
 	socialGroup = "nightsister",
 	faction = "nightsister",
 	level = 85,

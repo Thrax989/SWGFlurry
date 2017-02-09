@@ -7,7 +7,7 @@
 
 #ifndef PAYCITYTAXTASK_H_
 #define PAYCITYTAXTASK_H_
-
+#include "engine/engine.h"
 #include "server/zone/objects/region/CityRegion.h"
 
 class PayPropertyTaxTask : public Task {
@@ -29,7 +29,10 @@ public:
 
 		Locker lock(strongRefCity);
 		strongRefCity->addToCityTreasury(amount);
+
+
 	}
 };
+
 
 #endif /* PAYCITYTAXTASK_H_ */

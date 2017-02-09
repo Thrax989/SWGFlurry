@@ -8,6 +8,8 @@
 #ifndef MAKEMASTERLOOTERCOMMAND_H_
 #define MAKEMASTERLOOTERCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class MakeMasterLooterCommand : public QueueCommand {
 public:
 

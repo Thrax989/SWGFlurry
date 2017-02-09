@@ -45,7 +45,7 @@ object_tangible_event_perk_static_atst = object_mobile_shared_atst:new {
 	objectMenuComponent = "EventPerkMenuComponent",
 	dataObjectComponent = "EventPerkDataComponent",
 	attributeListComponent = "EventPerkAttributeListComponent",
-	objectName = "@event_perk:pro_atst_static"
+	customName = "AT-ST"
 }
 
 ObjectTemplates:addTemplate(object_tangible_event_perk_static_atst, "object/tangible/event_perk/static_atst.iff")

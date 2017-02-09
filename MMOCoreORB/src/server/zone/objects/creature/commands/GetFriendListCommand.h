@@ -5,6 +5,8 @@
 #ifndef GETFRIENDLISTCOMMAND_H_
 #define GETFRIENDLISTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class GetFriendListCommand : public QueueCommand {
 public:
 

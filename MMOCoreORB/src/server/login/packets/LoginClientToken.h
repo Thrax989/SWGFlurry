@@ -5,7 +5,7 @@
 #ifndef LOGINCLIENTTOKEN_H_
 #define LOGINCLIENTTOKEN_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 #include "server/login/account/Account.h"
 
 namespace server {

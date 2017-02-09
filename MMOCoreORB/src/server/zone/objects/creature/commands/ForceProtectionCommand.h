@@ -5,6 +5,8 @@
 #ifndef FORCEPROTECTIONCOMMAND_H_
 #define FORCEPROTECTIONCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ForceProtectionCommand : public QueueCommand {
 public:
 

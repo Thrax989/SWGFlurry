@@ -5,6 +5,8 @@
 #ifndef EDITAPPEARANCECOMMAND_H_
 #define EDITAPPEARANCECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class EditAppearanceCommand : public QueueCommand {
 public:
 

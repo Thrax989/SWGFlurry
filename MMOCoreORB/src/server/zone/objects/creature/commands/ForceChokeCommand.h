@@ -5,6 +5,7 @@
 #ifndef FORCECHOKECOMMAND_H_
 #define FORCECHOKECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "ForcePowersQueueCommand.h"
 
 class ForceChokeCommand : public ForcePowersQueueCommand {

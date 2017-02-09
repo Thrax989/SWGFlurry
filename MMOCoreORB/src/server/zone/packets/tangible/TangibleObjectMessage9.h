@@ -5,7 +5,7 @@
 #ifndef TANGIBLEOBJECTMESSAGE9_H_
 #define TANGIBLEOBJECTMESSAGE9_H_
 
-#include "server/zone/packets/BaseLineMessage.h"
+#include "../BaseLineMessage.h"
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 

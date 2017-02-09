@@ -5,6 +5,7 @@
 #ifndef BOOSTMORALECOMMAND_H_
 #define BOOSTMORALECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/group/GroupObject.h"
 #include "server/chat/ChatManager.h"
 #include "SquadLeaderCommand.h"

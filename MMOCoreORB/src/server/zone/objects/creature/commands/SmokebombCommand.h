@@ -5,6 +5,8 @@
 #ifndef SMOKEBOMBCOMMAND_H_
 #define SMOKEBOMBCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SmokebombCommand : public QueueCommand {
 public:
 

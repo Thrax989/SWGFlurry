@@ -5,6 +5,8 @@
 #ifndef MASKSCENTCOMMAND_H_
 #define MASKSCENTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class MaskscentCommand : public QueueCommand {
 public:
 

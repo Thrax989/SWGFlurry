@@ -5,6 +5,8 @@
 #ifndef SETBIOGRAPHYCOMMAND_H_
 #define SETBIOGRAPHYCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SetBiographyCommand : public QueueCommand {
 public:
 

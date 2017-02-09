@@ -28,8 +28,9 @@ herald_corellia_karin = Creature:new {
 	templates = {"object/mobile/dressed_herald_corellia_02.iff"},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "heraldCorellia2ConvoTemplate",
-	attacks = {}
+	conversationTemplate = "heraldConvoTemplate",
+	attacks = {
+	}
 }
 
 CreatureTemplates:addCreatureTemplate(herald_corellia_karin, "herald_corellia_karin")

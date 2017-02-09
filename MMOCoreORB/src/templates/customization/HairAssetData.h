@@ -8,7 +8,7 @@
 #ifndef HAIRASSETDATA_H_
 #define HAIRASSETDATA_H_
 
-#include "system/lang.h"
+#include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
 
 class HairAssetData : public Object {

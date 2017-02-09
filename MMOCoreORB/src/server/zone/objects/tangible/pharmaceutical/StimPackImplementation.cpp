@@ -3,7 +3,6 @@
 #include "templates/tangible/StimPackTemplate.h"
 #include "server/zone/managers/object/ObjectManager.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
-#include "templates/params/creature/CreatureAttribute.h"
 
 bool StimPackImplementation::isPetStimPack() {
 	return getObjectNameStringIdName().contains("pet_stimpack");

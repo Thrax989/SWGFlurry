@@ -5,6 +5,8 @@
 #ifndef LAUNCHFIREWORKCOMMAND_H_
 #define LAUNCHFIREWORKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class LaunchFireworkCommand : public QueueCommand {
 public:
 

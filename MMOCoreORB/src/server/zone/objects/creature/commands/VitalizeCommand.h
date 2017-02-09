@@ -5,6 +5,8 @@
 #ifndef VITALIZECOMMAND_H_
 #define VITALIZECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class VitalizeCommand : public QueueCommand {
 public:
 

@@ -38,6 +38,7 @@
 #include "server/zone/objects/creature/commands/pet/PetGetPatrolPointCommand.h"
 
 #include "templates/params/creature/CreatureState.h"
+#include "templates/params/creature/CreaturePosture.h"
 #include "templates/params/creature/CreatureLocomotion.h"
 #include "templates/datatables/DataTableIff.h"
 #include "templates/datatables/DataTableRow.h"
@@ -482,6 +483,7 @@ void CommandConfigManager::registerGlobals() {
 	setGlobalInt("BLAST_DAMAGE", SharedWeaponObjectTemplate::BLAST);
 	setGlobalInt("STUN_DAMAGE", SharedWeaponObjectTemplate::STUN);
 	setGlobalInt("LIGHTSABER_DAMAGE", SharedWeaponObjectTemplate::LIGHTSABER);
+	setGlobalInt("FORCEPOWER_DAMAGE", SharedWeaponObjectTemplate::FORCEPOWER);
 	setGlobalInt("HEAT_DAMAGE", SharedWeaponObjectTemplate::HEAT);
 	setGlobalInt("COLD_DAMAGE", SharedWeaponObjectTemplate::COLD);
 	setGlobalInt("ACID_DAMAGE", SharedWeaponObjectTemplate::ACID);

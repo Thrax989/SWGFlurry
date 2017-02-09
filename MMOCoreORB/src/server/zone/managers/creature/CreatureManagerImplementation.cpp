@@ -8,7 +8,9 @@
 #include "server/zone/managers/creature/CreatureManager.h"
 #include "server/zone/objects/creature/ai/CreatureTemplate.h"
 #include "CreatureTemplateManager.h"
+#include "DnaManager.h"
 #include "SpawnAreaMap.h"
+#include "AiMap.h"
 #include "server/zone/ZoneServer.h"
 #include "server/zone/Zone.h"
 #include "server/chat/ChatManager.h"
@@ -27,6 +29,7 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/objects/creature/events/DespawnCreatureTask.h"
+#include "server/zone/objects/tangible/weapon/WeaponObject.h"
 #include "server/zone/objects/area/SpawnArea.h"
 #include "server/zone/managers/resource/ResourceManager.h"
 #include "server/zone/packets/chat/ChatSystemMessage.h"
@@ -588,11 +591,11 @@ int CreatureManagerImplementation::notifyDestruction(TangibleObject* destructor,
 
 		Reference<AiAgent*> strongReferenceDestructedObject = destructedObject;
 
-		Core::getTaskManager()->executeTask([=] () {
-			Locker locker(strongReferenceDestructedObject);
+		EXECUTE_TASK_1(strongReferenceDestructedObject, {
+				Locker locker(strongReferenceDestructedObject_p);
 
-				CombatManager::instance()->attemptPeace(strongReferenceDestructedObject);
-		}, "AttemptPeaceLambda");
+				CombatManager::instance()->attemptPeace(strongReferenceDestructedObject_p);
+		});
 
 		// Check to see if we can expedite the despawn of this corpse
 		// We can expedite the despawn when corpse has no loot, no credits, player cannot harvest, and no group members in range can harvest

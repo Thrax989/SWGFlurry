@@ -11,10 +11,11 @@
 #include "templates/IffTemplate.h"
 #include "templates/appearance/CellProperty.h"
 #include "templates/appearance/MeshData.h"
-#include "templates/appearance/PathNode.h"
-#include "templates/appearance/FloorMesh.h"
-#include "templates/appearance/AppearanceTemplate.h"
-#include "templates/appearance/PathGraph.h"
+
+class AppearanceTemplate;
+class PathNode;
+class FloorMesh;
+class PathGraph;
 
 class PortalGeometry : public Object {
 	Reference<MeshData*> geometry;
@@ -38,7 +39,7 @@ public:
 class PortalLayout : public IffTemplate, public Logger {
 	PathGraph* pathGraph;
 	Vector<Reference<PortalGeometry*> > portalGeometry;
-	Vector<Reference<CellProperty*> > cellProperties;
+	Vector<CellProperty> cellProperties;
 public:
 	PortalLayout();
 	~PortalLayout();
@@ -76,18 +77,18 @@ public:
 	}
 
 	inline FloorMesh* getFloorMesh(int cellIndex) {
-		return cellProperties.get(cellIndex)->getFloorMesh();
+		return cellProperties.get(cellIndex).getFloorMesh();
 	}
 
 	inline AppearanceTemplate* getAppearanceTemplate(int cellIndex) {
-		return cellProperties.get(cellIndex)->getAppearanceTemplate();
+		return cellProperties.get(cellIndex).getAppearanceTemplate();
 	}
 
-	const Vector<Reference<CellProperty*> >& getCellProperties() {
+	const Vector<CellProperty>& getCellProperties() {
 		return cellProperties;
 	}
 
-	inline CellProperty* getCellProperty(int cellIndex) {
+	inline CellProperty& getCellProperty(int cellIndex) {
 		return cellProperties.get(cellIndex);
 	}
 

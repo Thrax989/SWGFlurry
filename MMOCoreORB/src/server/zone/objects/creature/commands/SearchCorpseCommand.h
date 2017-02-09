@@ -5,6 +5,8 @@
 #ifndef SEARCHCORPSECOMMAND_H_
 #define SEARCHCORPSECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SearchCorpseCommand : public QueueCommand {
 public:
 

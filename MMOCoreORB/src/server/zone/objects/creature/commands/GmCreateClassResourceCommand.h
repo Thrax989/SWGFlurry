@@ -5,6 +5,7 @@
 #ifndef GMCREATECLASSRESOURCECOMMAND_H_
 #define GMCREATECLASSRESOURCECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/resource/ResourceManager.h"
 
 class GmCreateClassResourceCommand : public QueueCommand {

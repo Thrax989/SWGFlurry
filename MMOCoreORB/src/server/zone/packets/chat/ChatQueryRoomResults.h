@@ -8,7 +8,8 @@
 #ifndef CHATQUERYROOMRESULTS_H_
 #define CHATQUERYROOMRESULTS_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
+
 #include "server/chat/room/ChatRoom.h"
 
 class ChatQueryRoomResults : public BaseMessage {
@@ -60,6 +61,7 @@ public:
 		insertInt(0); //Don't fill duplicate player list.
 
 		setCompression(true);
+
 	}
 
 	void fillPlayerList(ChatRoom* room) {

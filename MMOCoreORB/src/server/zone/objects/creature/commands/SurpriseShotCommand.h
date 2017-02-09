@@ -5,6 +5,8 @@
 #ifndef SURPRISESHOTCOMMAND_H_
 #define SURPRISESHOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SurpriseShotCommand : public CombatQueueCommand {
 public:
 

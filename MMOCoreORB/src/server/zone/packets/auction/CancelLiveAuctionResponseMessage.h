@@ -5,7 +5,7 @@
 #ifndef CANCELLIVEAUCTIONRESPONSEMESSAGE_H_
 #define CANCELLIVEAUCTIONRESPONSEMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 // Status:
 //  0 - Success

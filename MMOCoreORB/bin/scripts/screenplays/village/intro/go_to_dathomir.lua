@@ -42,7 +42,6 @@ function GoToDathomir:onSuccessfulSpawn(pPlayer)
 	end
 
 	QuestManager.activateQuest(pPlayer, QuestManager.quests.FS_VILLAGE_ELDER)
-	VillageJediManagerCommon.setJediProgressionScreenPlayState(pPlayer, VILLAGE_JEDI_PROGRESSION_HAS_VILLAGE_ACCESS)
 	CreatureObject(pPlayer):sendSystemMessage("@quest/force_sensitive/intro:force_sensitive")
 
 	if (not PlayerObject(pGhost):isJedi()) then

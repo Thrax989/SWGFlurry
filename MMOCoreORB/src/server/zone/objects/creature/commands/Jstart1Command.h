@@ -5,6 +5,8 @@
 #ifndef JSTART1_H_
 #define JSTART1_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/managers/combat/CombatManager.h"
 #include "CombatQueueCommand.h"
 
 class Jstart1Command : public CombatQueueCommand {

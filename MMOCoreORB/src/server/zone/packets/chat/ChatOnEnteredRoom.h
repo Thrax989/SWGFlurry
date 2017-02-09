@@ -5,7 +5,7 @@
 #ifndef CHATONENTEREDROOM_H_
 #define CHATONENTEREDROOM_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ChatOnEnteredRoom : public BaseMessage {
 public:

@@ -5,6 +5,8 @@
 #ifndef CSCONNECTPLAYERCOMMAND_H_
 #define CSCONNECTPLAYERCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CsConnectPlayerCommand : public QueueCommand {
 public:
 

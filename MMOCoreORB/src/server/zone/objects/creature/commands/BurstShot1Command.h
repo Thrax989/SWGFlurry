@@ -5,6 +5,7 @@
 #ifndef BURSTSHOT1COMMAND_H_
 #define BURSTSHOT1COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class BurstShot1Command : public CombatQueueCommand {

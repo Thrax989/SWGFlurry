@@ -11,6 +11,9 @@
 #ifndef SAMPLERESULTSTASK_H_
 #define SAMPLERESULTSTASK_H_
 
+#include "engine/engine.h"
+#include "server/zone/objects/player/PlayerObject.h"
+
 class ResourceSpawner;
 
 class SampleResultsTask : public Task {
@@ -35,6 +38,7 @@ public:
 		resourceSpawner->sendSampleResults(playerCreature, density, resname);
 		playerCreature->removePendingTask("sampleresults");
 	}
+
 
 };
 

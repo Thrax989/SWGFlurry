@@ -1,4 +1,6 @@
 #include "SceneObject.h"
+#include "client/zone/managers/object/ObjectManager.h"
+#include "client/zone/Zone.h"
 
 SceneObject::SceneObject(LuaObject* templateData) : Logger("SceneObject") {
 	parent = NULL;

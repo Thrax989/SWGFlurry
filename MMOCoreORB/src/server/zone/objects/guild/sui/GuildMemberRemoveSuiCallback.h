@@ -8,7 +8,9 @@
 #ifndef GUILDMEMBERREMOVESUICALLBACK_H_
 #define GUILDMEMBERREMOVESUICALLBACK_H_
 
+
 #include "server/zone/managers/guild/GuildManager.h"
+#include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
 class GuildMemberRemoveSuiCallback : public SuiCallback {

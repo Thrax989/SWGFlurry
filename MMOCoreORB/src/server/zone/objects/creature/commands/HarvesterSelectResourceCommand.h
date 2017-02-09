@@ -6,6 +6,9 @@
 #define HARVESTERSELECTRESOURCECOMMAND_H_
 
 #include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/installation/harvester/HarvesterObject.h"
+#include "server/zone/packets/harvester/HarvesterResourceDataMessage.h"
+
 
 class HarvesterSelectResourceCommand : public QueueCommand {
 public:
@@ -35,10 +38,15 @@ public:
 
 		InstallationObject* inso = cast<InstallationObject*>( object.get());
 
+		/*if (!inso->isHarvesterObject())
+			return GENERALERROR;*/
+
 		uint64 spawnId = Long::valueOf(arguments.toString());
 
 		try {
 			Locker clocker(object, player);
+
+		//	HarvesterObject* harvester = cast<HarvesterObject*>( inso);
 
 			if (inso->isOnAdminList(player) && inso->isInRange(player, 20))
 				inso->changeActiveResourceID(spawnId);

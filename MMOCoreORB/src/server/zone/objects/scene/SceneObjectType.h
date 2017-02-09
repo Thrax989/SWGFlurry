@@ -159,7 +159,6 @@ public:
 	const static int GROWABLEPLANT = 0x2037;
 	const static int FSCRAFTINGCOMPONENT = 0x2038;
 	const static int FSCSOBJECT = 0x2039;
-	const static int FSBUFFITEM = 0x203A;
 	/// End Not in client **************
 
 	const static int TERMINAL = 0x4000;

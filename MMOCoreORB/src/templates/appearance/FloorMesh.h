@@ -13,6 +13,8 @@
 #include "templates/appearance/PathNode.h"
 #include "templates/appearance/PathGraph.h"
 
+class PortalLayout;
+
 class EdgeID : public Object {
 	int triangleID;
 	int edgeID;
@@ -48,7 +50,6 @@ public:
 		}
 	}
 };
-
 class Vert : public Object {
 	float x, z, y;
 
@@ -143,6 +144,8 @@ public:
 	}
 
 };
+
+
 
 class FloorMeshTriangleNode : public TriangleNode {
 public:
@@ -281,5 +284,4 @@ public:
 
 	friend class FloorMeshTriangleNode;
 };
-
 #endif /* FLOORMESH_H_ */

@@ -3,7 +3,6 @@
 		See file COPYING for copying conditions.*/
 
 #include "Features.h"
-#include "engine/lua/Lua.h"
 
 Features::Features()
 	: HashTable<String, String>() {

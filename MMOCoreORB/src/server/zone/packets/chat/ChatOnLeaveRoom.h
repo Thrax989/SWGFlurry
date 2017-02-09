@@ -5,8 +5,10 @@
 #ifndef CHATONLEAVEROOM_H_
 #define CHATONLEAVEROOM_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
+
 #include "server/chat/room/ChatRoom.h"
+
 #include "server/zone/objects/creature/CreatureObject.h"
 
 class ChatOnLeaveRoom : public BaseMessage {

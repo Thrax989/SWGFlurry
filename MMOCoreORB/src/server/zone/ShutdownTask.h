@@ -8,7 +8,7 @@
 #ifndef SHUTDOWNTASK_H_
 #define SHUTDOWNTASK_H_
 
-#include "server/ServerCore.h"
+#include "engine/engine.h"
 #include "server/zone/ZoneServer.h"
 #include "server/chat/ChatManager.h"
 

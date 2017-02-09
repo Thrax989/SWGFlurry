@@ -5,7 +5,8 @@
 #ifndef INTANGIBLEOBJECTMESSAGE3_H_
 #define INTANGIBLEOBJECTMESSAGE3_H_
 
-#include "server/zone/packets/BaseLineMessage.h"
+#include "../BaseLineMessage.h"
+
 #include "server/zone/objects/intangible/IntangibleObject.h"
 
 class IntangibleObjectMessage3 : public BaseLineMessage {

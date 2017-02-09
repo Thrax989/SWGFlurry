@@ -5,6 +5,7 @@
 #ifndef SCATTERSHOT1COMMAND_H_
 #define SCATTERSHOT1COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class ScatterShot1Command : public CombatQueueCommand {

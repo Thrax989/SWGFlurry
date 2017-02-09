@@ -5,6 +5,8 @@
 #ifndef REPAIRSHIPCOMPONENTINSLOTCOMMAND_H_
 #define REPAIRSHIPCOMPONENTINSLOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class RepairShipComponentInSlotCommand : public QueueCommand {
 public:
 

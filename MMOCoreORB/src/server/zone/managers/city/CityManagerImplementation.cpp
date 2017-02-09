@@ -5,6 +5,7 @@
  *      Author: crush
  */
 
+#include "engine/engine.h"
 #include "server/zone/managers/city/CityManager.h"
 #include "server/chat/ChatManager.h"
 #include "server/zone/Zone.h"
@@ -37,6 +38,7 @@
 #include "TaxPayMailTask.h"
 #include "templates/tangible/SharedStructureObjectTemplate.h"
 #include "server/zone/objects/player/sui/callbacks/RenameCitySuiCallback.h"
+
 
 #ifndef CITY_DEBUG
 #define CITY_DEBUG

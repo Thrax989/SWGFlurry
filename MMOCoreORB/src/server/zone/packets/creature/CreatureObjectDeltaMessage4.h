@@ -5,7 +5,7 @@
 #ifndef CREATUREOBJECTDELTAMESSAGE4_H_
 #define CREATUREOBJECTDELTAMESSAGE4_H_
 
-#include "server/zone/packets/DeltaMessage.h"
+#include "../../packets/DeltaMessage.h"
 
 class CreatureObjectDeltaMessage4 : public DeltaMessage {
 	CreatureObject* creo;

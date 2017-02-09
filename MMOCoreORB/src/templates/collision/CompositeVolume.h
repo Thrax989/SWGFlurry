@@ -8,11 +8,12 @@
 #ifndef COMPOSITEVOLUME_H_
 #define COMPOSITEVOLUME_H_
 
+#include "engine/engine.h"
 #include "BaseBoundingVolume.h"
 
 class CompositeVolume : public BaseBoundingVolume {
 protected:
-	Vector<Reference<BaseBoundingVolume*> > volumes;
+	Vector<BaseBoundingVolume*> volumes;
 	AABB bbox;
 public:
 	bool isCompositeVolume() { return true; }

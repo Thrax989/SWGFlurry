@@ -5,6 +5,8 @@
 #ifndef SHOWPVPRATINGCOMMAND_H_
 #define SHOWPVPRATINGCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ShowPvPRatingCommand : public QueueCommand {
 public:
 

@@ -5,7 +5,7 @@
 #ifndef UPDATECELLPERMISSIONSMESSAGE_H_
 #define UPDATECELLPERMISSIONSMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class UpdateCellPermissionsMessage : public BaseMessage {
 public:
@@ -17,5 +17,4 @@ public:
         insertLong(coId);
 	}
 };
-
 #endif /*UPDATECELLPERMISSIONSMESSAGE_H_*/

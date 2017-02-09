@@ -1,7 +1,7 @@
 elder_enhanced_kwi = Creature:new {
-   --objectName = "@mob/creature_names:",
+   objectName = "@mob/creature_names:",
    customName = "elder enhanced kwi",
-	socialGroup = "geonosian",
+	socialGroup = "geonosian_creature",
 	faction = "",
 	level = 106,
 	chanceHit = 1.75,

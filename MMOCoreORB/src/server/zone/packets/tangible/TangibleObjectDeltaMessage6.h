@@ -5,7 +5,7 @@
 #ifndef TANGIBLEOBJECTDELTAMESSAGE6_H_
 #define TANGIBLEOBJECTDELTAMESSAGE6_H_
 
-#include "server/zone/packets/DeltaMessage.h"
+#include "../../packets/DeltaMessage.h"
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 

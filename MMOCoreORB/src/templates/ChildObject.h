@@ -8,8 +8,7 @@
 #ifndef CHILDOBJECT_H_
 #define CHILDOBJECT_H_
 
-#include "engine/util/u3d/Quaternion.h"
-#include "engine/lua/LuaObject.h"
+#include "engine/engine.h"
 
 class ChildObject : public Object {
 

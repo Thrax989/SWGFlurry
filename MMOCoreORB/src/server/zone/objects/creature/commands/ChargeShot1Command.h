@@ -5,6 +5,7 @@
 #ifndef CHARGESHOT1COMMAND_H_
 #define CHARGESHOT1COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class ChargeShot1Command : public CombatQueueCommand {

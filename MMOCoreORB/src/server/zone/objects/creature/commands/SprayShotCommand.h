@@ -5,6 +5,7 @@
 #ifndef SPRAYSHOTCOMMAND_H_
 #define SPRAYSHOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class SprayShotCommand : public CombatQueueCommand {

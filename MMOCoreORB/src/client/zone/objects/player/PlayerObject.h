@@ -8,6 +8,7 @@
 #ifndef PLAYEROBJECT_H_
 #define PLAYEROBJECT_H_
 
+#include "engine/engine.h"
 #include "client/zone/objects/intangible/IntangibleObject.h"
 
 class PlayerObject : public IntangibleObject {

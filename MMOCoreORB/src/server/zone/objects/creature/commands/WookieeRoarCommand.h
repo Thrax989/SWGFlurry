@@ -5,6 +5,7 @@
 #ifndef WOOKIEEROARCOMMAND_H_
 #define WOOKIEEROARCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/combat/CombatManager.h"
 #include "CombatQueueCommand.h"
 

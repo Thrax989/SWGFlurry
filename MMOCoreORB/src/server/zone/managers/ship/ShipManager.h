@@ -8,6 +8,7 @@
 #ifndef SHIPMANAGER_H_
 #define SHIPMANAGER_H_
 
+#include "engine/engine.h"
 #include "server/zone/objects/ship/ShipComponent.h"
 
 class ShipManager : public Singleton<ShipManager>, public Object, public Logger {
@@ -24,5 +25,7 @@ public:
 		return shipComponents.get(hash);
 	}
 };
+
+
 
 #endif /* SHIPMANAGER_H_ */

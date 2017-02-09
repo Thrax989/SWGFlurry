@@ -5,6 +5,7 @@
 #ifndef INTIMIDATIONATTACKCOMMAND_H_
 #define INTIMIDATIONATTACKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class IntimidationAttackCommand : public CombatQueueCommand {

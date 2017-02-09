@@ -8,7 +8,7 @@
 #ifndef CHARACTERBUILDERMENUNODE_H_
 #define CHARACTERBUILDERMENUNODE_H_
 
-#include "engine/lua/LuaObject.h"
+#include "engine/engine.h"
 
 class CharacterBuilderMenuNode : public Object {
 	WeakReference<CharacterBuilderMenuNode*> parentNode;

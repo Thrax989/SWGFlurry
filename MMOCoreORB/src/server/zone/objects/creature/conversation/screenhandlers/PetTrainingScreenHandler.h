@@ -6,6 +6,8 @@
 #define PETTRAININGSCREENHANDLER_H_
 
 #include "ScreenHandler.h"
+#include "server/zone/objects/mission/MissionObject.h"
+#include "server/zone/objects/mission/DeliverMissionObjective.h"
 #include "engine/log/Logger.h"
 
 namespace server {

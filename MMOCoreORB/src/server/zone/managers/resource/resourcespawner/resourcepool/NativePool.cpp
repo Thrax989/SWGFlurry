@@ -9,7 +9,7 @@
  */
 
 #include "NativePool.h"
-#include "server/zone/managers/resource/resourcespawner/ResourceSpawner.h"
+#include "../ResourceSpawner.h"
 
 NativePool::NativePool(ResourceSpawner* spawner) : ResourcePool(spawner) {
 	setLoggingName("NativePool");

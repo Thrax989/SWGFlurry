@@ -8,6 +8,7 @@
 #ifndef TAXPAYMAILTASK_H_
 #define TAXPAYMAILTASK_H_
 
+#include "engine/engine.h"
 #include "server/chat/ChatManager.h"
 #include "server/zone/objects/region/CityRegion.h"
 
@@ -76,5 +77,7 @@ public:
 	}
 
 };
+
+
 
 #endif /* TAXNOPAYMAILTASK_H_ */

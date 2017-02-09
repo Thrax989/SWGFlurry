@@ -5,6 +5,7 @@
 #ifndef REQUESTRESOURCEWEIGHTSBATCHCOMMAND_H_
 #define REQUESTRESOURCEWEIGHTSBATCHCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/crafting/CraftingManager.h"
 
 class RequestResourceWeightsBatchCommand : public QueueCommand {

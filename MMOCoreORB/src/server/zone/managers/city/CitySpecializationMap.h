@@ -8,6 +8,7 @@
 #ifndef CITYSPECIALIZATIONMAP_H_
 #define CITYSPECIALIZATIONMAP_H_
 
+#include "engine/engine.h"
 #include "CitySpecialization.h"
 
 class CitySpecializationMap : public HashTable<String, CitySpecialization> {

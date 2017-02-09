@@ -8,6 +8,7 @@
 #ifndef BOXVOLUME_H_
 #define BOXVOLUME_H_
 
+#include "engine/engine.h"
 #include "BaseBoundingVolume.h"
 
 class BoxVolume : public BaseBoundingVolume {

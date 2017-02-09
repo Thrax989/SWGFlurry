@@ -5,6 +5,8 @@
 #ifndef FORCERESISTDISEASECOMMAND_H_
 #define FORCERESISTDISEASECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ForceResistDiseaseCommand : public JediQueueCommand {
 public:
 

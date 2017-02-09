@@ -2,6 +2,8 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
+#include "engine/engine.h"
+
 #include "server/login/LoginServer.h"
 
 #include "LoginPacketHandler.h"

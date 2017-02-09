@@ -8,6 +8,7 @@
 #include "IngredientSlot.h"
 #include "server/zone/managers/object/ObjectManager.h"
 #include "server/zone/objects/factorycrate/FactoryCrate.h"
+#include "server/zone/packets/tangible/TangibleObjectDeltaMessage3.h"
 
 class ComponentSlot: public IngredientSlot {
 

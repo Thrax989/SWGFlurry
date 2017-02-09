@@ -5,6 +5,7 @@
 #ifndef STEADYAIMCOMMAND_H_
 #define STEADYAIMCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "SquadLeaderCommand.h"
 
 class SteadyaimCommand : public SquadLeaderCommand {

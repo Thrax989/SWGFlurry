@@ -6,10 +6,12 @@
 #ifndef SKILLMANAGER_H_
 #define SKILLMANAGER_H_
 
+#include "engine/engine.h"
 #include "server/zone/objects/player/variables/Ability.h"
 
 class Skill;
 class PerformanceManager;
+class ImageDesignManager;
 
 namespace server {
 namespace zone {

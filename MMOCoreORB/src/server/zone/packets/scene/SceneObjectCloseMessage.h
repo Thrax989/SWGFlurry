@@ -5,7 +5,7 @@
 #ifndef SCENEOBJECTCLOSEMESSAGE_H_
 #define SCENEOBJECTCLOSEMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 #include "server/zone/objects/scene/SceneObject.h"
 

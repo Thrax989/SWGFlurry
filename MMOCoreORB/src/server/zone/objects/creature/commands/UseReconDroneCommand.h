@@ -5,6 +5,8 @@
 #ifndef USERECONDRONECOMMAND_H_
 #define USERECONDRONECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class UseReconDroneCommand : public QueueCommand {
 public:
 

@@ -4,7 +4,9 @@
 
 package server.zone.objects.mission;
 
+import engine.util.Observer;
 import engine.util.Observable;
+import engine.core.Task;
 import server.zone.objects.mission.MissionObject;
 import server.zone.objects.mission.MissionObjective;
 import server.zone.objects.mission.MissionObserver;

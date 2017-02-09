@@ -8,6 +8,7 @@
 #ifndef CREATUREATTACKDATA_H_
 #define CREATUREATTACKDATA_H_
 
+#include "engine/engine.h"
 #include "server/zone/objects/creature/commands/effect/StateEffect.h"
 #include "server/zone/objects/creature/commands/effect/DotEffect.h"
 
@@ -39,7 +40,6 @@ protected:
     int areaRange;
 
     bool splashDamage;
-    bool hitIncapTarget;
 
     uint64 targetID;
 
@@ -119,10 +119,6 @@ public:
 
 	bool isSplashDamage() const {
 		return splashDamage;
-	}
-
-	bool getHitIncapTarget() const {
-		return hitIncapTarget;
 	}
 
 	int getAreaRange() const {

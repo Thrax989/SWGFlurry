@@ -5,6 +5,8 @@
 #ifndef EQUILIBRIUMCOMMAND_H_
 #define EQUILIBRIUMCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class EquilibriumCommand: public QueueCommand {
 public:
 

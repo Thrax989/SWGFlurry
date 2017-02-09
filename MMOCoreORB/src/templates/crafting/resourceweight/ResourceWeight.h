@@ -5,8 +5,7 @@
 #ifndef RESOURCEWEIGHT_H_
 #define RESOURCEWEIGHT_H_
 
-#include "system/lang.h"
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ResourceWeight : public Object {
 private:

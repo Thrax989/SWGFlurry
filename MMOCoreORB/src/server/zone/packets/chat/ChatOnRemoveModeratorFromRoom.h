@@ -8,7 +8,7 @@
 #ifndef CHATONREMOVEMODERATORFROMROOM_H_
 #define CHATONREMOVEMODERATORFROMROOM_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ChatOnRemoveModeratorFromRoom : public BaseMessage {
 public:

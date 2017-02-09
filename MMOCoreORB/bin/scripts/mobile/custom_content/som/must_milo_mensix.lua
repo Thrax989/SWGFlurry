@@ -1,6 +1,6 @@
 must_milo_mensix = Creature:new {
 	customName = "Milo Mensix",
-	socialGroup = "self",
+	socialGroup = "",
 	pvpFaction = "",
 	faction = "",
 	level = 70,
@@ -29,22 +29,10 @@ must_milo_mensix = Creature:new {
 	templates = {"object/mobile/som/must_milo_mensix.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,brawlernovice)

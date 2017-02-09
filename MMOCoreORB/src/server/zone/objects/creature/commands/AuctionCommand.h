@@ -5,6 +5,7 @@
 #ifndef AUCTIONCOMMAND_H_
 #define AUCTIONCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/chat/ChatManager.h"
 
 class AuctionCommand : public QueueCommand {

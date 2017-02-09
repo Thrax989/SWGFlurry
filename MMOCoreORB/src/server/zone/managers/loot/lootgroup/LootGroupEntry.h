@@ -8,6 +8,8 @@
 #ifndef LOOTGROUPENTRY_H_
 #define LOOTGROUPENTRY_H_
 
+#include "engine/engine.h"
+
 class LootGroupEntry : public Object {
 	String templateName;
 	int lootChance;

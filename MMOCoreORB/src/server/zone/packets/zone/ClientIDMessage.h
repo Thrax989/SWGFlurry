@@ -5,7 +5,7 @@
 #ifndef CLIENTIDMESSAGE_H_
 #define CLIENTIDMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ClientIDMessage : public BaseMessage {
 public:

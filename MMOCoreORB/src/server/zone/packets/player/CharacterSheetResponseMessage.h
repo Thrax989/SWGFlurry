@@ -5,7 +5,7 @@
 #ifndef CHARACTERSHEETRESPONSEMESSAGE_H_
 #define CHARACTERSHEETRESPONSEMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
 class CharacterSheetResponseMessage : public BaseMessage {

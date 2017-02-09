@@ -5,6 +5,8 @@
 #ifndef DECLAREOVERTCOMMAND_H_
 #define DECLAREOVERTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class DeclareOvertCommand : public QueueCommand {
 public:
 

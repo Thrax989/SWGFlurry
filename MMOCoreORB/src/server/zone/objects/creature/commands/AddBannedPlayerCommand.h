@@ -5,8 +5,9 @@
 #ifndef ADDBANNEDPLAYERCOMMAND_H_
 #define ADDBANNEDPLAYERCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
-#include "server/login/account/Account.h"
+#include "server/login/account/AccountManager.h"
 
 class AddBannedPlayerCommand: public QueueCommand {
 public:

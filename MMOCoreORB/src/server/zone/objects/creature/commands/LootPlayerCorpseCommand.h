@@ -5,6 +5,8 @@
 #ifndef LOOTPLAYERCORPSECOMMAND_H_
 #define LOOTPLAYERCORPSECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class LootPlayerCorpseCommand : public QueueCommand {
 public:
 

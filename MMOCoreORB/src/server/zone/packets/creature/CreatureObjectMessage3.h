@@ -5,7 +5,8 @@
 #ifndef CREATUREOBJECTMESSAGE3_H_
 #define CREATUREOBJECTMESSAGE3_H_
 
-#include "server/zone/packets/tangible/TangibleObjectMessage3.h"
+#include "../tangible/TangibleObjectMessage3.h"
+
 #include "server/zone/objects/creature/CreatureObject.h"
 
 class CreatureObjectMessage3 : public TangibleObjectMessage3 {

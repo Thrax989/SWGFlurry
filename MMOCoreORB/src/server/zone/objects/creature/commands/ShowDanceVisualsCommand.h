@@ -5,6 +5,8 @@
 #ifndef SHOWDANCEVISUALSCOMMAND_H_
 #define SHOWDANCEVISUALSCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ShowDanceVisualsCommand : public QueueCommand {
 public:
 

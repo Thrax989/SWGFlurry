@@ -5,6 +5,8 @@
 #ifndef ASSIGNDROIDCOMMAND_H_
 #define ASSIGNDROIDCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class AssignDroidCommand : public QueueCommand {
 public:
 

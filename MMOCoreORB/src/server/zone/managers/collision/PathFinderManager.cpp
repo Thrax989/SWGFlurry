@@ -13,11 +13,14 @@
 #include "templates/appearance/FloorMesh.h"
 #include "templates/appearance/PathGraph.h"
 #include "server/zone/Zone.h"
+#include "server/zone/managers/planet/PlanetManager.h"
 
 #include "CollisionManager.h"
 #include "engine/util/u3d/Funnel.h"
+#include "server/zone/objects/area/ActiveArea.h"
 #include "engine/util/u3d/Segment.h"
-#include "pathfinding/recast/DetourCommon.h"
+#include <limits>
+#include <float.h>
 
 PathFinderManager::PathFinderManager() : Logger("PathFinderManager") {
 	setFileLogger("log/pathfinder.log");

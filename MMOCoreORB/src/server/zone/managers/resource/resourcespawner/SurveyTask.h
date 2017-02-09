@@ -11,8 +11,12 @@
 #ifndef SURVEYTASK_H_
 #define SURVEYTASK_H_
 
+#include "engine/engine.h"
 #include "server/zone/packets/resource/SurveyMessage.h"
 #include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/packets/chat/ChatSystemMessage.h"
+
+class ResourceSpawner;
 
 class SurveyTask : public Task {
 	ManagedReference<CreatureObject* > playerCreature;

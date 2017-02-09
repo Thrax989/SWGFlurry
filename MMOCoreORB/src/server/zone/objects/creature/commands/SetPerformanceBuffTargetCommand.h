@@ -5,6 +5,9 @@
 #ifndef SETPERFORMANCEBUFFTARGETCOMMAND_H_
 #define SETPERFORMANCEBUFFTARGETCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/player/sessions/EntertainingSession.h"
+
 class SetPerformanceBuffTargetCommand : public QueueCommand {
 public:
 

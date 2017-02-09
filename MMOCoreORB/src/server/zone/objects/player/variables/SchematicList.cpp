@@ -7,6 +7,8 @@
 
 #include "SchematicList.h"
 
+#include "server/zone/ZoneServer.h"
+#include "server/ServerCore.h"
 #include "server/zone/objects/player/PlayerObject.h"
 
 bool SchematicList::toBinaryStream(ObjectOutputStream* stream) {

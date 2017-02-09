@@ -5,7 +5,9 @@
 #ifndef ISVENDOROWNERRESPONSEMESSAGE_H_
 #define ISVENDOROWNERRESPONSEMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
+
+#include "../BaseLineMessage.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"

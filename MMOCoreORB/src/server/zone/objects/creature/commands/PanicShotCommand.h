@@ -5,6 +5,7 @@
 #ifndef PANICSHOTCOMMAND_H_
 #define PANICSHOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class PanicShotCommand : public CombatQueueCommand {

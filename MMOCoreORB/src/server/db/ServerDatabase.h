@@ -5,6 +5,8 @@
 #ifndef SERVERDATABASE_H_
 #define SERVERDATABASE_H_
 
+#include "engine/engine.h"
+
 #include "../conf/ConfigManager.h"
 
 class ServerDatabase {

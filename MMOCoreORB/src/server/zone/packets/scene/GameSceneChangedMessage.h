@@ -5,7 +5,7 @@
 #ifndef GAMESCENECHANGEDMESSAGE_H_
 #define GAMESCENECHANGEDMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class GameSceneChangedMessage : public BaseMessage {
 public:

@@ -11,6 +11,7 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/area/ActiveArea.h"
+#include "server/zone/objects/staticobject/StaticObject.h"
 #include "server/zone/managers/planet/PlanetManager.h"
 #include "terrain/manager/TerrainManager.h"
 #include "templates/building/SharedBuildingObjectTemplate.h"

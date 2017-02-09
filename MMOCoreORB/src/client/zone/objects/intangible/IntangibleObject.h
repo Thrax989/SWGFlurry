@@ -8,6 +8,7 @@
 #ifndef INTANGIBLEOBJECT_H_
 #define INTANGIBLEOBJECT_H_
 
+#include "engine/engine.h"
 #include "client/zone/objects/scene/SceneObject.h"
 
 class IntangibleObject : public SceneObject {

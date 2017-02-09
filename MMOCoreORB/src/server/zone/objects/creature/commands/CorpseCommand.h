@@ -5,6 +5,8 @@
 #ifndef CORPSECOMMAND_H_
 #define CORPSECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CorpseCommand : public QueueCommand {
 public:
 

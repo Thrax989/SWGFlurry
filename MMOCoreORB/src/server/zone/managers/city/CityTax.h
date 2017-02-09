@@ -8,6 +8,8 @@
 #ifndef CITYTAX_H_
 #define CITYTAX_H_
 
+#include "engine/engine.h"
+
 class CityTax : public Object {
 	int minValue;
 	int maxValue;
@@ -101,5 +103,6 @@ public:
 		return emailBody;
 	}
 };
+
 
 #endif /* CITYTAX_H_ */

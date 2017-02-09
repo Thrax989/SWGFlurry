@@ -5,6 +5,7 @@
 #ifndef FORCETHROW1COMMAND_H_
 #define FORCETHROW1COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "ForcePowersQueueCommand.h"
 
 class ForceThrow1Command : public ForcePowersQueueCommand {

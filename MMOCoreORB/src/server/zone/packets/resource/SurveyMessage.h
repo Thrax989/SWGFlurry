@@ -5,7 +5,7 @@
 #ifndef SURVEY_H_
 #define SURVEY_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class SurveyMessage : public BaseMessage {
 public:

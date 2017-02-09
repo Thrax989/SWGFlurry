@@ -5,6 +5,7 @@
 #ifndef HEADSHOT1COMMAND_H_
 #define HEADSHOT1COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class HeadShot1Command : public CombatQueueCommand {

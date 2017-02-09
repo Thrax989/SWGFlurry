@@ -6,6 +6,8 @@
 #define CITYBANCOMMAND_H_
 
 #include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/area/ActiveArea.h"
+#include "server/zone/objects/region/Region.h"
 
 class CitybanCommand : public QueueCommand {
 public:

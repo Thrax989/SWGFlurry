@@ -8,7 +8,6 @@ import server.zone.objects.tangible.deed.Deed;
 import server.zone.objects.creature.CreatureObject;
 import server.zone.objects.tangible.TangibleObject;
 import server.zone.objects.tangible.tasks.RemoveEventPerkDeedTask;
-include system.lang.ref.Reference;
 
 class EventPerkDeed extends Deed {
 

@@ -5,6 +5,8 @@
 #ifndef SYSTEMMESSAGECOMMAND_H_
 #define SYSTEMMESSAGECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SystemMessageCommand : public QueueCommand {
 public:
 

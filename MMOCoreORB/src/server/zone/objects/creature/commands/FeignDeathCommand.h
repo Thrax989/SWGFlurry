@@ -6,6 +6,7 @@
 #define FEIGNDEATHCOMMAND_H_
 
 #include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/creature/buffs/PrivateSkillMultiplierBuff.h"
 
 class FeignDeathCommand : public QueueCommand {
 public:

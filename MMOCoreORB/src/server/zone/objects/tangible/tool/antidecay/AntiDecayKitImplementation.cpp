@@ -2,8 +2,11 @@
 
 #include "engine/engine.h"
 #include "server/zone/objects/tangible/tool/antidecay/AntiDecayKit.h"
+#include "server/zone/Zone.h"
+#include "server/zone/objects/tangible/Container.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 
 void AntiDecayKitImplementation::initializeTransientMembers() {

@@ -8,6 +8,7 @@
 #ifndef LOOTGROUPCOLLECTIONENTRY_H_
 #define LOOTGROUPCOLLECTIONENTRY_H_
 
+#include "engine/engine.h"
 #include "LootGroups.h"
 
 class LootGroupCollectionEntry : public Object {

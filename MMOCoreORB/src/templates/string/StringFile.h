@@ -8,8 +8,7 @@
 #ifndef STRINGFILE_H_
 #define STRINGFILE_H_
 
-#include "system/lang.h"
-#include "engine/log/Logger.h"
+#include "engine/engine.h"
 
 class StringFile : public Logger {
 	HashTable<String, UnicodeString> stringMap;
@@ -31,5 +30,6 @@ public:
 protected:
 	bool checkHeader(ObjectInputStream* inputFile);
 };
+
 
 #endif /* STRINGFILE_H_ */

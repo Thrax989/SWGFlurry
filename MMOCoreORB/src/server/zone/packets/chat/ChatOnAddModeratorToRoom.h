@@ -8,7 +8,7 @@
 #ifndef CHATONADDMODERATORTOROOM_H_
 #define CHATONADDMODERATORTOROOM_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ChatOnAddModeratorToRoom : public BaseMessage {
 public:

@@ -6,6 +6,7 @@
 #define DROIDITEMSTORAGEMODULEDATACOMPONENT_H_
 
 #include "BaseDroidModuleComponent.h"
+#include "engine/core/ManagedReference.h"
 
 namespace server {
 namespace zone {
@@ -13,6 +14,7 @@ namespace objects {
 namespace tangible {
 namespace components {
 namespace droid {
+
 
 class DroidItemStorageModuleDataComponent : public BaseDroidModuleComponent {
 
@@ -55,6 +57,7 @@ public:
 	void initialize(DroidObject* droid);
 };
 
+
 } // droid
 } // components
 } // tangible
@@ -62,5 +65,4 @@ public:
 } // zone
 } // server
 using namespace server::zone::objects::tangible::components::droid;
-
 #endif /* DROIDITEMSTORAGEMODULEDATACOMPONENT_H_ */

@@ -5,6 +5,8 @@
 #ifndef SERVERSYSGROUPCOMMAND_H_
 #define SERVERSYSGROUPCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ServerSysGroupCommand : public QueueCommand {
 public:
 

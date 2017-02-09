@@ -10,7 +10,7 @@ tusken_executioner = Creature:new {
 	baseHAM = 261000,
 	baseHAMmax = 320000,
 	armor = 0,
-	resists = {170,170,170,200,120,130,145,180,-1},
+	resists = {85,80,35,100,20,30,45,80,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,13 +29,13 @@ tusken_executioner = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 1400000},
+				{group = "junk", chance = 1500000},
 				{group = "tusken_common", chance = 3000000},
 				{group = "wearables_scarce", chance = 2000000},
-				{group = "bone_armor", chance = 300000},
-				{group = "chitin_armor", chance = 300000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000},
+				{group = "bone_armor", chance = 750000},
+				{group = "chitin_armor", chance = 750000},
+				{group = "armor_attachments", chance = 500000},
+				{group = "clothing_attachments", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "crystals_premium", chance = 500000}
 			},

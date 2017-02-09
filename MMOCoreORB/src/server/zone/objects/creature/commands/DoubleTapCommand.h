@@ -5,6 +5,7 @@
 #ifndef DOUBLETAPCOMMAND_H_
 #define DOUBLETAPCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class DoubleTapCommand : public CombatQueueCommand {

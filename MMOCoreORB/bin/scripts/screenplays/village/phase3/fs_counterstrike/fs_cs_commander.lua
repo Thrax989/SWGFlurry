@@ -203,7 +203,7 @@ function FsCsCommander:notifyEnteredCommanderTurninArea(pArea, pCreature)
 		return 1
 	end
 
-	if (shieldKillerID ~= escorterID and FsCounterStrike:isOnEscort(pShieldKiller)) then
+	if (shieldKillerID ~= escorterID) then
 		teamTurnin = true
 	end
 
@@ -276,7 +276,7 @@ function FsCsCommander:handleCommanderEscorterFailure(pPlayer, pCommander)
 		end
 
 		AiAgent(pCommander):setAiTemplate("manualescort")
-		createEvent(10, "FsCsCommander", "doRun", pCommander, "")
+		self:doRun(pCommander)
 		createEvent(self.runAwayTime * 1000, "FsCsCommander", "runAwaySuccessful", pCommander, "")
 		writeData(commanderID .. ":canBeRecaptured", 1)
 		CreatureObject(pShieldKiller):sendSystemMessage("@fs_quest_village:commander_is_free")
@@ -440,11 +440,10 @@ end
 
 function FsCsCommander:destroyCommanderWaypoint(pPlayer)
 	local waypointID = readData(SceneObject(pPlayer):getObjectID() .. ":village:csCommanderWaypoint")
+	local pWaypoint = getSceneObject(waypointID)
 
-	local pGhost = CreatureObject(pPlayer):getPlayerObject()
-
-	if (pGhost ~= nil) then
-		PlayerObject(pGhost):removeWaypoint(waypointID, true)
+	if (pWaypoint ~= nil) then
+		SceneObject(pWaypoint):destroyObjectFromWorld()
 	end
 
 	deleteData(SceneObject(pPlayer):getObjectID() .. ":village:csCommanderWaypoint")
@@ -463,7 +462,7 @@ function FsCsCommander:createCommanderWaypoint(pPlayer, theaterID)
 		end
 
 		local waypointID = PlayerObject(pGhost):addWaypoint("dathomir", wayDesc, "", wayX, wayY, WAYPOINTYELLOW, true, true, 0)
-		writeData(SceneObject(pPlayer):getObjectID() .. ":village:csCommanderWaypoint", waypointID)
+		writeData(SceneObject(pPlayer):getObjectID() .. ":village:csCommanderWaypoint")
 	end
 end
 
@@ -546,7 +545,7 @@ function FsCsCommander:setupRescueMob(pMobile)
 	createEvent(getRandomNumber(20, 60) * 1000, "FsCsCommander", "doRescuerSpatial", pMobile, "")
 end
 
-function FsCsCommander:doRescuerSpatial(pMobile)
+function FsCsBaseControl:doRescuerSpatial(pMobile)
 	if (pMobile == nil or getRandomNumber(100) < 75) then
 		return
 	end

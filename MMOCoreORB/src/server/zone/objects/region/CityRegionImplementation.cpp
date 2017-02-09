@@ -13,10 +13,13 @@
 #include "server/chat/ChatManager.h"
 #include "server/zone/managers/city/CityManager.h"
 #include "server/zone/managers/planet/PlanetManager.h"
+#include "server/zone/managers/planet/PlanetTravelPoint.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
 #include "server/zone/managers/structure/StructureManager.h"
+#include "server/zone/objects/area/ActiveArea.h"
 #include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/creature/commands/BoardShuttleCommand.h"
+#include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/region/Region.h"
@@ -25,8 +28,11 @@
 #include "server/zone/objects/tangible/components/vendor/AuctionTerminalDataComponent.h"
 #include "templates/tangible/SharedStructureObjectTemplate.h"
 #include "server/zone/Zone.h"
+#include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/managers/collision/NavMeshManager.h"
+#include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/creature/commands/TransferstructureCommand.h"
+#include "server/zone/managers/collision/NavMeshManager.h"
 #include "pathfinding/RecastNavMesh.h"
 #include "server/zone/objects/pathfinding/NavMeshRegion.h"
 
@@ -788,33 +794,34 @@ void CityRegionImplementation::applySpecializationModifiers(CreatureObject* crea
 	typedef VectorMap<String, int> SkillMods;
 	typedef VectorMapEntry<String, int> SkillModsEntry;
 
-	creature->executeOrderedTask([=] () {
-		Locker locker(creatureReference);
+	EXECUTE_ORDERED_TASK_3(creature, creatureReference, cityspec, city, {
+			Locker locker(creatureReference_p);
 
-		//Remove all current city skillmods
-		creatureReference->removeAllSkillModsOfType(SkillModManager::CITY);
+			//Remove all current city skillmods
+			creatureReference_p->removeAllSkillModsOfType(SkillModManager::CITY);
 
-		SkillMods* mods = cityspec->getSkillMods();
+			SkillMods* mods = cityspec_p->getSkillMods();
 
-		for (int i = 0; i < mods->size(); ++i) {
-			SkillModsEntry& entry = mods->elementAt(i);
+			for (int i = 0; i < mods->size(); ++i) {
+				SkillModsEntry& entry = mods->elementAt(i);
 
-			if (entry.getKey() == "private_defense" && !city->isMilitiaMember(creatureReference->getObjectID()))
-				continue;
+				if (entry.getKey() == "private_defense" && !city_p->isMilitiaMember(creatureReference_p->getObjectID()))
+					continue;
 
-			creatureReference->addSkillMod(SkillModManager::CITY, entry.getKey(), entry.getValue());
-		}
-	}, "ApplySpecializationModifiersLambda");
+				creatureReference_p->addSkillMod(SkillModManager::CITY, entry.getKey(), entry.getValue());
+			}
+	});
 }
 
 void CityRegionImplementation::removeSpecializationModifiers(CreatureObject* creature) {
 	Reference<CreatureObject*> creatureReference = creature;
 
-	creature->executeOrderedTask([=] () {
-		Locker locker(creatureReference);
+	EXECUTE_ORDERED_TASK_1(creature, creatureReference, {
+			Locker locker(creatureReference_p);
 
-		creatureReference->removeAllSkillModsOfType(SkillModManager::CITY);
-	}, "RemoveSpecializationModifiersLambda");
+			creatureReference_p->removeAllSkillModsOfType(SkillModManager::CITY);
+	});
+
 }
 
 void CityRegionImplementation::transferCivicStructuresToMayor() {
@@ -1267,3 +1274,4 @@ String CityRegionImplementation::getNavMeshName() {
 
 	return getRegionName();
 }
+

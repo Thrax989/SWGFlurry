@@ -6,6 +6,9 @@
  */
 
 #include "PortalLayout.h"
+#include "templates/appearance/MeshAppearanceTemplate.h"
+#include "templates/appearance/PathNode.h"
+#include "templates/appearance/FloorMesh.h"
 #include "engine/util/u3d/AStarAlgorithm.h"
 
 void PortalLayout::readPortalGeometry0003(IffStream *iff, int numPortals) {
@@ -77,6 +80,7 @@ void PortalLayout::readPortalGeometry0003(IffStream *iff, int numPortals) {
 	}
 }
 
+
 void PortalLayout::readPortalGeometry0004(IffStream *iff, int numPortals) {
 
 	for(int i=0; i<numPortals; i++) {
@@ -143,7 +147,6 @@ void PortalLayout::readPortalGeometry0004(IffStream *iff, int numPortals) {
 		portalGeometry.add(portal);
 	}
 }
-
 PortalLayout::PortalLayout() {
 	pathGraph = NULL;
 
@@ -213,9 +216,9 @@ void PortalLayout::parse(IffStream* iffStream) {
 
 int PortalLayout::getCellID(const String& cellName) {
 	for (int i = 0; i < cellProperties.size(); ++i) {
-		CellProperty* cell = cellProperties.get(i);
+		CellProperty& cell = cellProperties.get(i);
 
-		if (cell->getName() == cellName)
+		if (cell.getName() == cellName)
 			return i;
 	}
 
@@ -265,6 +268,7 @@ void PortalLayout::connectFloorMeshGraphs() {
 			}
 		}
 	}
+
 }
 
 int PortalLayout::getFloorMeshID(int globalNodeID, int floorMeshToExclude) {
@@ -289,8 +293,8 @@ void PortalLayout::parseCELSForm(IffStream* iffStream, int numCells) {
 		uint32 nextType;
 
 		for (int i=0; i<numCells; i++) {
-			Reference<CellProperty*> cell = new CellProperty(cellProperties.size());
-			cell->readObject(iffStream);
+			CellProperty cell(cellProperties.size());
+			cell.readObject(iffStream);
 			cellProperties.add(cell);
 		}
 

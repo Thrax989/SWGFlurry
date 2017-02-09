@@ -6,9 +6,6 @@
  */
 
 #include "ResourceLabratory.h"
-#include "server/zone/objects/draftschematic/DraftSchematic.h"
-#include "server/zone/objects/tangible/component/Component.h"
-#include "server/zone/objects/manufactureschematic/ingredientslots/ComponentSlot.h"
 
 ResourceLabratory::ResourceLabratory() {
 	setLoggingName("ResourceLabratory");

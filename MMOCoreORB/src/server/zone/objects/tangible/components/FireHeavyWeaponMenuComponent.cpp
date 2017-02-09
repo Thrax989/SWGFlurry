@@ -6,6 +6,7 @@
  */
 
 #include "FireHeavyWeaponMenuComponent.h"
+#include "WeaponObjectMenuComponent.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 

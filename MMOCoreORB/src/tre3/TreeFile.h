@@ -8,6 +8,7 @@
 #ifndef TREEFILE_H_
 #define TREEFILE_H_
 
+#include "engine/engine.h"
 #include "TreeFileRecord.h"
 #include "TreeDataBlock.h"
 

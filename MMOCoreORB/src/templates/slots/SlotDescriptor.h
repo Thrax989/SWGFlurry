@@ -8,6 +8,7 @@
 #ifndef SLOTDESCRIPTOR_H_
 #define SLOTDESCRIPTOR_H_
 
+#include "engine/engine.h"
 #include "templates/IffTemplate.h"
 
 class SlotDescriptor : public IffTemplate {

@@ -5,6 +5,8 @@
 #ifndef THREATENSHOTCOMMAND_H_
 #define THREATENSHOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ThreatenShotCommand : public CombatQueueCommand {
 public:
 

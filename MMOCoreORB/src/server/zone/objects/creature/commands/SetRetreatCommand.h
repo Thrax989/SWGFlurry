@@ -5,6 +5,7 @@
 #ifndef SETRETREATCOMMAND_H_
 #define SETRETREATCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "SquadLeaderCommand.h"
 
 class SetRetreatCommand : public SquadLeaderCommand {

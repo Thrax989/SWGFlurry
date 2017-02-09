@@ -13,6 +13,8 @@
 #ifndef AREATRACKTASK_H_
 #define AREATRACKTASK_H_
 
+#include "server/zone/packets/player/LogoutMessage.h"
+
 class AreaTrackTask: public Task {
 	ManagedReference<CreatureObject*> player;
 	int type;

@@ -5,7 +5,7 @@
 #ifndef VALUESCLASSES_H_
 #define VALUESCLASSES_H_
 
-#include "system/lang.h"
+#include "engine/engine.h"
 
 /*
  * The Values class is just a container for values calculated in crafting

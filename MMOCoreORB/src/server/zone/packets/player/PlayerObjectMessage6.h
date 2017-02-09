@@ -5,7 +5,8 @@
 #ifndef PLAYEROBJECTMESSAGE6_H_
 #define PLAYEROBJECTMESSAGE6_H_
 
-#include "server/zone/packets/BaseLineMessage.h"
+#include "../BaseLineMessage.h"
+
 #include "server/zone/objects/player/PlayerObject.h"
 
 class PlayerObjectMessage6 : public BaseLineMessage {

@@ -5,6 +5,8 @@
 #ifndef ITEMMOVEDOWNCOMMAND_H_
 #define ITEMMOVEDOWNCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ItemmovedownCommand : public QueueCommand {
 public:
 

@@ -8,6 +8,8 @@
 #ifndef CITYSPECIALIZATION_H_
 #define CITYSPECIALIZATION_H_
 
+#include "engine/engine.h"
+
 class CitySpecialization : public Object {
 	String name;
 	int cost;
@@ -76,5 +78,6 @@ public:
 		return &skillMods;
 	}
 };
+
 
 #endif /* CITYSPECIALIZATION_H_ */

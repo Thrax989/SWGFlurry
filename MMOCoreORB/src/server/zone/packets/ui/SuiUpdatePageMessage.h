@@ -1,7 +1,7 @@
 #ifndef SUIUPDATEPAGEMESSAGE_H_
 #define SUIUPDATEPAGEMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 #include "server/zone/objects/player/sui/SuiPageData.h"
 
 class SuiUpdatePageMessage : public BaseMessage {

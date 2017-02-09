@@ -11,6 +11,7 @@
 #ifndef NATIVEPOOL_H_
 #define NATIVEPOOL_H_
 
+#include "engine/engine.h"
 #include "ResourcePool.h"
 
 class ResourceSpawner;

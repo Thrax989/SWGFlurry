@@ -7,9 +7,6 @@
 
 #include "GCWBaseContainerComponent.h"
 #include "templates/params/creature/CreatureFlag.h"
-#include "server/zone/objects/player/PlayerObject.h"
-#include "server/zone/objects/player/FactionStatus.h"
-#include "server/zone/objects/building/components/DestructibleBuildingDataComponent.h"
 
 bool GCWBaseContainerComponent::checkContainerPermission(SceneObject* sceneObject, CreatureObject* creature, uint16 permission) const {
 
@@ -19,6 +16,8 @@ bool GCWBaseContainerComponent::checkContainerPermission(SceneObject* sceneObjec
 		return false;
 
 	return checkContainerPermission(building, creature, permission, false);
+
+
 }
 
 bool GCWBaseContainerComponent::checkContainerPermission(BuildingObject* building, CreatureObject* creature, uint16 permission, bool sendMessage) const {

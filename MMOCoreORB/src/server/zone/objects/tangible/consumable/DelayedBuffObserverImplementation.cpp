@@ -4,7 +4,10 @@
  */
 
 #include "server/zone/objects/tangible/consumable/DelayedBuffObserver.h"
+#include "templates/params/ObserverEventType.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/creature/buffs/DelayedBuff.h"
+
 
 int DelayedBuffObserverImplementation::notifyObserverEvent(unsigned int eventType, Observable* observable, ManagedObject* arg1, int64 arg2) {
 	ManagedReference<DelayedBuff*> buff = this->buff.get();
@@ -16,4 +19,5 @@ int DelayedBuffObserverImplementation::notifyObserverEvent(unsigned int eventTyp
 	}
 
 	return 0;
+
 }

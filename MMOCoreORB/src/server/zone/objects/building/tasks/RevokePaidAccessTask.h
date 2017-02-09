@@ -8,6 +8,7 @@
 #ifndef REVOKEPAIDACCESSTASK_H_
 #define REVOKEPAIDACCESSTASK_H_
 
+#include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/building/BuildingObject.h"
 #include "engine/engine.h"
 

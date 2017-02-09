@@ -10,8 +10,6 @@
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/vendor/VendorAdBarkingSession.h"
-#include "server/zone/objects/player/sui/listbox/SuiListBox.h"
-#include "server/zone/managers/name/NameManager.h"
 
 class AdBarkingPhraseSuiCallback : public SuiCallback {
 

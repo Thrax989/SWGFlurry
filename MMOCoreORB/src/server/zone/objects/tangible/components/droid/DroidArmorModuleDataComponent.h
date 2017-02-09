@@ -6,6 +6,7 @@
 #define DROIDARMORMODULEDATACOMPONENT_H_
 
 #include "BaseDroidModuleComponent.h"
+#include "engine/core/ManagedReference.h"
 
 namespace server {
 namespace zone {
@@ -13,6 +14,7 @@ namespace objects {
 namespace tangible {
 namespace components {
 namespace droid {
+
 
 class DroidArmorModuleDataComponent : public BaseDroidModuleComponent {
 
@@ -45,6 +47,7 @@ public:
 	void copy(BaseDroidModuleComponent* other);
 };
 
+
 } // droid
 } // components
 } // tangible
@@ -52,5 +55,4 @@ public:
 } // zone
 } // server
 using namespace server::zone::objects::tangible::components::droid;
-
 #endif /* DROIDARMORMODULEDATACOMPONENT_H_ */

@@ -4,6 +4,7 @@
 
 #include "server/zone/objects/tangible/wearables/RobeObject.h"
 #include "server/zone/objects/scene/components/AttributeListComponent.h"
+#include "server/zone/objects/tangible/TangibleObject.h"
 
 class JediRobeAttributeListComponent: public AttributeListComponent {
 public:

@@ -5,6 +5,8 @@
 #ifndef GETRANKCOMMAND_H_
 #define GETRANKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class GetRankCommand : public QueueCommand {
 public:
 

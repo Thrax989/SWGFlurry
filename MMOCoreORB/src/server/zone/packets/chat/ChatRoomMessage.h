@@ -5,7 +5,7 @@
 #ifndef CHATROOMMESSAGE_H_
 #define CHATROOMMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ChatRoomMessage : public BaseMessage {
 public:
@@ -23,8 +23,8 @@ public:
 		insertInt(0);
 		
 		setCompression(true);
+
 	} 
 
 };
-
 #endif /*CHATROOMMESSAGE_H_*/

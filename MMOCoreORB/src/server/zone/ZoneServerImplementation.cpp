@@ -8,7 +8,10 @@
 
 #include "server/zone/Zone.h"
 
-#include "server/db/ServerDatabase.h"
+#include "../db/ServerDatabase.h"
+
+#include "server/login/LoginServer.h"
+#include "server/login/account/Account.h"
 
 #include "conf/ConfigManager.h"
 
@@ -19,12 +22,17 @@
 #include "server/zone/managers/resource/ResourceManager.h"
 #include "server/zone/managers/crafting/CraftingManager.h"
 #include "server/zone/managers/loot/LootManager.h"
+#include "server/zone/managers/skill/SkillManager.h"
 #include "server/zone/managers/auction/AuctionManager.h"
+#include "server/zone/managers/minigames/FishingManager.h"
+#include "server/zone/managers/minigames/GamblingManager.h"
+#include "server/zone/managers/minigames/ForageManager.h"
 #include "server/zone/managers/mission/MissionManager.h"
 #include "server/zone/managers/creature/CreatureTemplateManager.h"
 #include "server/zone/managers/creature/DnaManager.h"
 #include "server/zone/managers/creature/PetManager.h"
 #include "server/zone/managers/guild/GuildManager.h"
+#include "server/zone/managers/creature/CreatureManager.h"
 #include "server/zone/managers/faction/FactionManager.h"
 #include "server/zone/managers/reaction/ReactionManager.h"
 #include "server/zone/managers/director/DirectorManager.h"
@@ -32,6 +40,10 @@
 #include "server/zone/managers/structure/StructureManager.h"
 
 #include "server/chat/ChatManager.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/creature/variables/Skill.h"
+
+#include "tre3/TreeDirectory.h"
 
 #include "server/zone/ZoneProcessServer.h"
 #include "ZonePacketHandler.h"
@@ -396,9 +408,9 @@ void ZoneServerImplementation::clearZones() {
 		ManagedReference<Zone*> zone = zones->get(i);
 
 		if (zone != NULL) {
-			Core::getTaskManager()->executeTask([=] () {
-				zone->clearZone();
-			}, "ClearZoneLambda");
+			EXECUTE_TASK_1(zone, {
+					zone_p->clearZone();
+			});
 		}
 	}
 
@@ -623,11 +635,8 @@ int ZoneServerImplementation::getConnectionCount() {
 void ZoneServerImplementation::printInfo() {
 	lock();
 
-	TaskManager* taskMgr = Core::getTaskManager();
 	StringBuffer msg;
-
-	if (taskMgr != NULL)
-		msg << taskMgr->getInfo(false) << endl;
+	msg << Core::getTaskManager()->getInfo(false) << endl;
 	//msg << "MessageQueue - size = " << processor->getMessageQueue()->size() << endl;
 
 	float packetloss;

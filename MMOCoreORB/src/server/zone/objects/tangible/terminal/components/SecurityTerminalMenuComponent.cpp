@@ -7,13 +7,16 @@
 
 #include "SecurityTerminalMenuComponent.h"
 #include "server/zone/Zone.h"
+#include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/FactionStatus.h"
 #include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/managers/gcw/GCWManager.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/player/sessions/SlicingSession.h"
+#include "server/zone/objects/tangible/tool/smuggler/PrecisionLaserKnife.h"
 
 void SecurityTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 	if (!sceneObject->isTangibleObject())
@@ -71,9 +74,9 @@ int SecurityTerminalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObje
 		return 1;
 
 	if (gcwMan->isTerminalDamaged(securityTerminal)) {
-		Core::getTaskManager()->executeTask([=] () {
-			gcwMan->repairTerminal(player, securityTerminal);
-		}, "RepairTerminalLambda");
+		EXECUTE_TASK_3(player, gcwMan, securityTerminal, {
+				gcwMan_p->repairTerminal(player_p, securityTerminal_p);
+		});
 
 	} else {
 		if (player->containsActiveSession(SessionFacadeType::SLICING)) {

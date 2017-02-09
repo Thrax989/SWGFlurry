@@ -1,6 +1,6 @@
 corelliaport = Creature:new {
 	objectName = "",
-	customName = "Corellia Travel Port",
+	customName = "Test Travel Port",
 	socialGroup = "Townsperson",
 	pvpFaction = "Townsperson",
 	faction = "",
@@ -24,10 +24,10 @@ corelliaport = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = PACK + HEALER,
-	optionsBitmask = INVULNERABLE + INTERESTING,
+	optionsBitmask = 264,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/dressed_patron_chiss_m_01.iff"},
+	templates = {"object/mobile/droideka.iff"},
 	lootGroups = {
 	     {
 			groups = {

@@ -1,6 +1,6 @@
 droid_8t88 = Creature:new {
 	customName = "8T-88",
-	socialGroup = "self",
+	socialGroup = "",
 	pvpFaction = "",
 	faction = "",
 	level = 70,
@@ -29,22 +29,10 @@ droid_8t88 = Creature:new {
 	templates = {"object/mobile/som/8t88.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,brawlernovice)

@@ -8,6 +8,7 @@
 #ifndef CITYTAXMAP_H_
 #define CITYTAXMAP_H_
 
+#include "engine/engine.h"
 #include "CityTax.h"
 
 class CityTaxMap : public Vector<CityTax> {
@@ -29,5 +30,6 @@ public:
 		}
 	}
 };
+
 
 #endif /* CITYTAXMAP_H_ */

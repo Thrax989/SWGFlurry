@@ -5,6 +5,9 @@
 #ifndef BURSTRUNCOMMAND_H_
 #define BURSTRUNCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/Zone.h"
+
 class BurstRunCommand : public QueueCommand {
 public:
 

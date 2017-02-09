@@ -5,6 +5,8 @@
 #ifndef RECONNECTTOTRANSFERSERVERCOMMAND_H_
 #define RECONNECTTOTRANSFERSERVERCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ReconnectToTransferServerCommand : public QueueCommand {
 public:
 

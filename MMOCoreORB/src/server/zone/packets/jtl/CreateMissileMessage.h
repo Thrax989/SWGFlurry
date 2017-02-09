@@ -8,8 +8,6 @@
 #ifndef CREATEMISSILEMESSAGE_H_
 #define CREATEMISSILEMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
-
 class CreateMissileMessage : public BaseMessage {
 public:
 	CreateMissileMessage() : BaseMessage() {
@@ -29,6 +27,9 @@ public:
 		insertInt(0);
 		insertInt(0);
 		insertInt(0);
+
+
+
    }
 
 };

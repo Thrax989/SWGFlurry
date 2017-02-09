@@ -10,6 +10,9 @@
 
 #include "templates/params/creature/CreatureAttribute.h"
 #include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/packets/tangible/UpdatePVPStatusMessage.h"
+#include "server/zone/packets/creature/CreatureObjectMessage6.h"
+#include "server/zone/packets/tangible/UpdatePVPStatusMessage.h"
 
 namespace server {
 namespace zone {

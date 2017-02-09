@@ -6,6 +6,7 @@
 #define DROIDREPAIRMODULEDATACOMPONENT_H_
 
 #include "BaseDroidModuleComponent.h"
+#include "engine/core/ManagedReference.h"
 
 namespace server {
 namespace zone {

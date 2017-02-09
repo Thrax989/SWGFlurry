@@ -5,6 +5,7 @@
 #ifndef GOTOCOMMAND_H_
 #define GOTOCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/waypoint/WaypointObject.h"
 #include "server/zone/Zone.h"
 #include "server/zone/objects/player/sui/callbacks/GotoSuiCallback.h"

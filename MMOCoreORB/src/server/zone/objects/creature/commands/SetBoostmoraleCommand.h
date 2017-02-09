@@ -5,6 +5,7 @@
 #ifndef SETBOOSTMORALECOMMAND_H_
 #define SETBOOSTMORALECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "SquadLeaderCommand.h"
 
 class SetBoostmoraleCommand : public SquadLeaderCommand {

@@ -1,7 +1,6 @@
 
 #include "server/zone/objects/tangible/pharmaceutical/RangedStimPack.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
-#include "templates/params/creature/CreatureAttribute.h"
 
 void RangedStimPackImplementation::fillAttributeList(AttributeListMessage* msg, CreatureObject* object) {
 	StimPackImplementation::fillAttributeList(msg, object);

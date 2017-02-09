@@ -5,7 +5,7 @@
 #ifndef LINKDEADMESSAGE_H_
 #define LINKDEADMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class LinkDeadMessage : public BaseMessage {
 public:

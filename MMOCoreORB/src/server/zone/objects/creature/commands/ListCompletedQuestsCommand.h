@@ -5,6 +5,8 @@
 #ifndef LISTCOMPLETEDQUESTSCOMMAND_H_
 #define LISTCOMPLETEDQUESTSCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ListCompletedQuestsCommand : public QueueCommand {
 public:
 

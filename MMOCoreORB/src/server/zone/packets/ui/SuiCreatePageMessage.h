@@ -11,7 +11,7 @@
 #ifndef SUICREATEPAGEMESSAGE_H_
 #define SUICREATEPAGEMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 #include "server/zone/objects/player/sui/SuiPageData.h"
 
 class SuiCreatePageMessage : public BaseMessage {

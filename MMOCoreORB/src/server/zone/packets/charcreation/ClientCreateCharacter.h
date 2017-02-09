@@ -5,7 +5,7 @@
 #ifndef CLIENTCREATECHARACTER_H_
 #define CLIENTCREATECHARACTER_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ClientCreateCharacter : public BaseMessage {
 public:
@@ -27,5 +27,7 @@ public:
 		insertByte(0); // char
 	}
 };
+
+
 
 #endif /*CLIENTCREATECHARACTER_H_*/

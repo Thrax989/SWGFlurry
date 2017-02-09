@@ -3,6 +3,7 @@
 #include "server/zone/ZoneServer.h"
 #include "server/zone/managers/creature/ValidMountScaleRange.h"
 #include "server/zone/managers/name/NameManager.h"
+#include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "templates/manager/TemplateManager.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
@@ -14,6 +15,7 @@
 #include "server/zone/objects/intangible/tasks/EnqueuePetCommand.h"
 #include "templates/datatables/DataTableIff.h"
 #include "templates/datatables/DataTableRow.h"
+#include "templates/params/primitives/StringParam.h"
 #include "server/chat/ChatManager.h"
 
 void PetManagerImplementation::loadLuaConfig() {
@@ -272,7 +274,9 @@ void PetManagerImplementation::handleChat(CreatureObject* speaker, AiAgent* pet,
 		if( droidObject != NULL ){
 			droidObject->handleChat(speaker, message);
 		}
+
 	}
+
 }
 
 bool PetManagerImplementation::isTrainedCommand( PetControlDevice* petControlDevice, unsigned int commandId, const String& msg ){
@@ -302,6 +306,7 @@ bool PetManagerImplementation::isTrainedCommand( PetControlDevice* petControlDev
 	}
 
 	return false;
+
 }
 
 bool PetManagerImplementation::handleCommandTraining(CreatureObject* speaker, AiAgent* pet, const String& message){
@@ -571,13 +576,13 @@ void PetManagerImplementation::killPet(TangibleObject* attacker, AiAgent* pet, b
 
 	pet->updateTimeOfDeath();
 
-	ManagedReference<AiAgent*> petAgent = pet;
+	Reference<AiAgent*> petAgent = pet;
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(petAgent);
-  
-		petAgent->clearBuffs(false);
-	}, "ClearPetBuffsLambda");
+	EXECUTE_TASK_1(petAgent, {
+			Locker locker(petAgent_p);
+
+			petAgent_p->clearBuffs(false);
+	});
 
 
 	ManagedReference<PetControlDevice*> petControlDevice = pet->getControlDevice().get().castTo<PetControlDevice*>();
@@ -611,4 +616,5 @@ void PetManagerImplementation::killPet(TangibleObject* attacker, AiAgent* pet, b
 	}
 
 	pet->notifyObjectKillObservers(attacker);
+
 }

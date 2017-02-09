@@ -5,7 +5,7 @@
 #ifndef ERRORMESSAGE_H_
 #define ERRORMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ErrorMessage : public BaseMessage {
 public:

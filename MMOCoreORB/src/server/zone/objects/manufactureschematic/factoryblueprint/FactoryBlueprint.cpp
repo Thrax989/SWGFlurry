@@ -6,6 +6,7 @@
  */
 
 #include "FactoryBlueprint.h"
+#include "server/zone/objects/resource/ResourceContainer.h"
 #include "server/zone/objects/installation/factory/FactoryObject.h"
 
 FactoryBlueprint::FactoryBlueprint() :  Serializable() {

@@ -5,6 +5,8 @@
 #ifndef LAGCOMMAND_H_
 #define LAGCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class LagCommand : public QueueCommand {
 public:
 

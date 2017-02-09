@@ -5,6 +5,8 @@
 #ifndef SOCIALCOMMAND_H_
 #define SOCIALCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SocialCommand : public QueueCommand {
 public:
 

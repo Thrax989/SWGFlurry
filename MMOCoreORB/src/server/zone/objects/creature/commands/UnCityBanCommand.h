@@ -5,6 +5,8 @@
 #ifndef UNCITYBANCOMMAND_H_
 #define UNCITYBANCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class UnCityBanCommand : public QueueCommand {
 public:
 

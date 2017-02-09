@@ -8,8 +8,9 @@
 #ifndef FACTIONREQUESTMESSAGECALLBACK_H_
 #define FACTIONREQUESTMESSAGECALLBACK_H_
 
-#include "server/zone/packets/MessageCallback.h"
+#include "engine/engine.h"
 #include "FactionResponseMessage.h"
+
 
 class FactionRequestMessageCallback : public MessageCallback {
 public:

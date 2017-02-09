@@ -5,6 +5,7 @@
 #ifndef GMFSVILLAGECOMMAND_H_
 #define GMFSVILLAGECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/director/DirectorManager.h"
 #include "server/zone/managers/jedi/JediManager.h"
 

@@ -5,8 +5,14 @@
 #ifndef CHATROOMLIST_H_
 #define CHATROOMLIST_H_
 
+#include "engine/engine.h"
+
 #include "server/chat/room/ChatRoom.h"
 #include "server/zone/packets/MessageCallback.h"
+
+#include "server/zone/ZoneServer.h"
+#include "server/zone/ZoneProcessServer.h"
+
 #include "server/chat/ChatManager.h"
 
 namespace server {
@@ -80,7 +86,8 @@ public:
 	}
 
 	void run() {
-		ChatManager* chatManager = server->getChatManager();
+		ZoneServer* zoneServer = server->getZoneServer();
+		ChatManager* chatManager = zoneServer->getChatManager();
 
 		ManagedReference<CreatureObject*> player = client->getPlayer();
 

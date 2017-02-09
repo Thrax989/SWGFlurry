@@ -13,6 +13,7 @@
 #include "server/zone/objects/creature/buffs/Buff.h"
 #include "server/zone/objects/creature/BuffAttribute.h"
 #include "server/zone/objects/creature/buffs/DelayedBuff.h"
+#include "server/zone/packets/object/CombatAction.h"
 #include "server/zone/managers/collision/CollisionManager.h"
 
 class HealEnhanceCommand : public QueueCommand {

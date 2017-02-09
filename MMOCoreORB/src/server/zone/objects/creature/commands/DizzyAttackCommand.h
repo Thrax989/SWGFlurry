@@ -5,6 +5,7 @@
 #ifndef DIZZYATTACKCOMMAND_H_
 #define DIZZYATTACKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class DizzyAttackCommand : public CombatQueueCommand {

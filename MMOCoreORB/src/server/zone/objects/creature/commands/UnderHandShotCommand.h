@@ -5,6 +5,7 @@
 #ifndef UNDERHANDSHOTCOMMAND_H_
 #define UNDERHANDSHOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class UnderHandShotCommand : public CombatQueueCommand {

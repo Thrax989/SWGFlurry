@@ -5,6 +5,8 @@
 #ifndef PTRAP2_H_
 #define PTRAP2_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/managers/combat/CombatManager.h"
 #include "CombatQueueCommand.h"
 
 class Ptrap2Command : public CombatQueueCommand {

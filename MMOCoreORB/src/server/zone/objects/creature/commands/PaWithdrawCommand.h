@@ -5,6 +5,8 @@
 #ifndef PAWITHDRAWCOMMAND_H_
 #define PAWITHDRAWCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class PaWithdrawCommand : public QueueCommand {
 public:
 

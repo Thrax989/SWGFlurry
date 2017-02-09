@@ -5,6 +5,7 @@
 #ifndef DISARMINGSHOT1COMMAND_H_
 #define DISARMINGSHOT1COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class DisarmingShot1Command : public CombatQueueCommand {

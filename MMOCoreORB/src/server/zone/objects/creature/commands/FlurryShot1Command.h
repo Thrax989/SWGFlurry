@@ -5,6 +5,7 @@
 #ifndef FLURRYSHOT1COMMAND_H_
 #define FLURRYSHOT1COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class FlurryShot1Command : public CombatQueueCommand {

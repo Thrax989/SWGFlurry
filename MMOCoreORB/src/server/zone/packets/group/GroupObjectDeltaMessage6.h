@@ -5,7 +5,8 @@
 #ifndef GROUPOBJECTDELTAMESSAGE6_H_
 #define GROUPOBJECTDELTAMESSAGE6_H_
 
-#include "server/zone/packets/DeltaMessage.h"
+#include "../DeltaMessage.h"
+
 #include "server/zone/objects/group/GroupObject.h"
 
 class GroupObjectDeltaMessage6 : public DeltaMessage {
@@ -16,6 +17,7 @@ public:
 			: DeltaMessage(gr->getObjectID(), 0x4352454F, 6) {
 		grup = gr;
 	}
+
 
 	/*void addMember(SceneObject* player, int idx) {
 		startUpdate(0x01);
@@ -63,6 +65,8 @@ public:
 		startUpdate(0x07);
 		insertInt(rule);
 	}
+
+
 
 };
 

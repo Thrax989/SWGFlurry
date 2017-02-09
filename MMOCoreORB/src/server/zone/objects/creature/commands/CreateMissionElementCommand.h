@@ -5,6 +5,7 @@
 #ifndef CREATEMISSIONELEMENTCOMMAND_H_
 #define CREATEMISSIONELEMENTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/mission/MissionManager.h"
 
 class CreateMissionElementCommand : public QueueCommand {

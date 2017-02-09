@@ -8,6 +8,7 @@
 #ifndef MISSIONTARGETMAP_H_
 #define MISSIONTARGETMAP_H_
 
+#include "engine/engine.h"
 #include "server/zone/Zone.h"
 #include "server/zone/objects/scene/SceneObject.h"
 

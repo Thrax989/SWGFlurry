@@ -5,6 +5,7 @@
 #ifndef SABER1HFLURRYCOMMAND_H_
 #define SABER1HFLURRYCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "JediCombatQueueCommand.h"
 
 class Saber1hFlurryCommand : public JediCombatQueueCommand {

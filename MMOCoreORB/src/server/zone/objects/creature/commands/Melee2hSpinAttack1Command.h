@@ -5,7 +5,10 @@
 #ifndef MELEE2HSPINATTACK1COMMAND_H_
 #define MELEE2HSPINATTACK1COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/managers/combat/CombatManager.h"
 #include "CombatQueueCommand.h"
+
 
 class Melee2hSpinAttack1Command : public CombatQueueCommand {
 public:

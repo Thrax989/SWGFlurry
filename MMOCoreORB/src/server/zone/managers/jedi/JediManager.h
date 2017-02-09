@@ -5,6 +5,7 @@
 #ifndef JEDIMANAGER_H_
 #define JEDIMANAGER_H_
 
+#include "engine/engine.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
 namespace server {

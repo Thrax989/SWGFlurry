@@ -5,6 +5,8 @@
 #ifndef SETOWNERCOMMAND_H_
 #define SETOWNERCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SetOwnerCommand : public QueueCommand {
 public:
 

@@ -9,6 +9,7 @@
 #define NAMEVENDORCALLBACK_H_
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 #include "server/zone/objects/player/sessions/vendor/CreateVendorSession.h"
 
 class NameVendorSuiCallback : public SuiCallback {

@@ -5,7 +5,7 @@
 #ifndef GUILDOBJECTMESSAGE3_H_
 #define GUILDOBJECTMESSAGE3_H_
 
-#include "server/zone/packets/BaseLineMessage.h"
+#include "../BaseLineMessage.h"
 #include "server/zone/objects/scene/variables/DeltaSet.h"
 
 class GuildObjectMessage3 : public BaseLineMessage {
@@ -25,5 +25,4 @@ public:
 		setSize();
 	}
 };
-
 #endif /*GUILDOBJECTMESSAGE3_H_*/

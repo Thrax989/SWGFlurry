@@ -5,8 +5,6 @@
 #ifndef POPULATEMISSIONBROWSERMESSAGE_H_
 #define POPULATEMISSIONBROWSERMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
-
 class PopulateMissionBrowserMessage : public BaseMessage {
 public:
 	PopulateMissionBrowserMessage() : BaseMessage() {

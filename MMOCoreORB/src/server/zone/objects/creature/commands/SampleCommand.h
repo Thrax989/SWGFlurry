@@ -5,6 +5,8 @@
 #ifndef SAMPLECOMMAND_H_
 #define SAMPLECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SampleCommand : public QueueCommand {
 public:
 

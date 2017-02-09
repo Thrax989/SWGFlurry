@@ -4,10 +4,12 @@
 
 package server.zone.managers.loot;
 
+import system.util.VectorMap;
 import system.util.SortedVector;
 import engine.core.ManagedService;
 import system.thread.atomic.AtomicInteger;
 import server.zone.objects.scene.SceneObject;
+import server.zone.objects.creature.CreatureObject;
 import server.zone.objects.creature.ai.AiAgent;
 import server.zone.managers.crafting.CraftingManager;
 import server.zone.managers.object.ObjectManager;
@@ -18,6 +20,7 @@ include server.zone.managers.loot.LootGroupMap;
 include server.zone.managers.loot.lootgroup.LootGroupCollection;
 include templates.LootItemTemplate;
 include server.zone.objects.manufactureschematic.craftingvalues.CraftingValues;
+include server.zone.objects.tangible.weapon.WeaponObject;
 
 class LootManager extends ManagedService implements Logger {
 	private transient CraftingManager craftingManager;
@@ -163,10 +166,8 @@ class LootManager extends ManagedService implements Logger {
 	public native boolean createLootFromCollection(SceneObject container, LootGroupCollection collection, int level);
 	
 	public native boolean createLoot(SceneObject container, final string lootGroup, int level = -1, boolean maxCondition = false);
-
+	
 	public native boolean createNamedLoot(SceneObject container, final string lootGroup, final string name, int level = -1, boolean maxCondition = false);
-
-	//public native boolean createNamedLoot(SceneObject container, final string lootGroup, final string name, int level = -1, boolean maxCondition = false);
 
 	public native boolean createLootSet(SceneObject container, final string lootGroup, int level, boolean maxCondition,int setSize);	
 	

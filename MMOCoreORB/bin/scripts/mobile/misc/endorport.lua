@@ -1,5 +1,5 @@
 endorport = Creature:new {
-	--objectName = "",
+	objectName = "",
 	customName = "Test Travel Port",
 	socialGroup = "Townsperson",
 	pvpFaction = "Townsperson",
@@ -24,7 +24,7 @@ endorport = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = PACK + HEALER,
-	optionsBitmask = INVULNERABLE + INTERESTING,
+	optionsBitmask = 264,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/droideka.iff"},

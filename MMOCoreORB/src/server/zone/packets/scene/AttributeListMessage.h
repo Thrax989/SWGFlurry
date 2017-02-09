@@ -5,14 +5,18 @@
 #ifndef ATTRIBUTELISTMESSAGE_H_
 #define ATTRIBUTELISTMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 #include "server/zone/objects/scene/SceneObject.h"
+
+//class SceneObject;
 
 namespace server {
  namespace zone {
   namespace packets {
    namespace scene {
+
+
 
 class AttributeListMessage : public BaseMessage {
 	int listcount;
@@ -133,6 +137,7 @@ public:
 	void updateListCount() {
 		insertInt(countLocation, ++listcount);
 	}
+
 
 };
 

@@ -8,6 +8,7 @@
 #ifndef RACIALCREATIONDATA_H_
 #define RACIALCREATIONDATA_H_
 
+#include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
 
 namespace server {

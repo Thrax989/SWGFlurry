@@ -5,6 +5,7 @@
 #ifndef STARTLESHOT2COMMAND_H_
 #define STARTLESHOT2COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class StartleShot2Command : public CombatQueueCommand {

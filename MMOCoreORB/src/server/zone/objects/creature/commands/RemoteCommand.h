@@ -5,6 +5,8 @@
 #ifndef REMOTECOMMAND_H_
 #define REMOTECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class RemoteCommand : public QueueCommand {
 public:
 

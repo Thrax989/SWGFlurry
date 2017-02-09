@@ -5,6 +5,7 @@
 #ifndef EYESHOTCOMMAND_H_
 #define EYESHOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class EyeShotCommand : public CombatQueueCommand {

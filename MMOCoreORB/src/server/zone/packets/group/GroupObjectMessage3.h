@@ -5,7 +5,8 @@
 #ifndef GROUPOBJECTMESSAGE3_H_
 #define GROUPOBJECTMESSAGE3_H_
 
-#include "server/zone/packets/BaseLineMessage.h"
+#include "../BaseLineMessage.h"
+
 #include "server/zone/objects/group/GroupObject.h"
 
 class GroupObjectMessage3 : public BaseLineMessage {

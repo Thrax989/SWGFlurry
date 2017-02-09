@@ -2,6 +2,7 @@
 #define SCAVENGERDROIDCONTAINERCOMPONENT_H_
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
+#include "server/zone/objects/tangible/eventperk/ScavengerDroid.h"
 
 class ScavengerDroidContainerComponent : public ContainerComponent {
 public:

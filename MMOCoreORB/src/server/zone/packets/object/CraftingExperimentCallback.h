@@ -8,8 +8,10 @@
 #ifndef CRAFTINGEXPERIMENTCALLBACK_H_
 #define CRAFTINGEXPERIMENTCALLBACK_H_
 
+
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "ObjectControllerMessageCallback.h"
+#include "server/zone/objects/tangible/tool/CraftingTool.h"
 #include "server/zone/objects/player/sessions/crafting/CraftingSession.h"
 
 class CraftingExperimentCallback : public MessageCallback {

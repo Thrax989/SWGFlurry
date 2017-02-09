@@ -6,22 +6,30 @@
  */
 
 #include "ObjectVersionUpdateManager.h"
+#include "ObjectManager.h"
+#include "server/zone/objects/player/Races.h"
+#include "server/db/ServerDatabase.h"
 #include "system/util/SortedVector.h"
 #include "server/zone/objects/structure/StructurePermissionList.h"
+#include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/player/variables/AbilityList.h"
 #include "templates/manager/TemplateManager.h"
 #include "templates/manager/TemplateCRCMap.h"
 #include "templates/SharedTangibleObjectTemplate.h"
 #include "templates/LootItemTemplate.h"
+#include "server/zone/objects/manufactureschematic/craftingvalues/CraftingValues.h"
 #include "templates/TemplateReference.h"
 #include "templates/tangible/LootSchematicTemplate.h"
+#include "templates/tangible/SharedFactoryObjectTemplate.h"
 #include "server/zone/managers/loot/LootGroupMap.h"
+#include "server/zone/managers/loot/LootManager.h"
 
 #define INITIAL_DATABASE_VERSION 0
 
 ObjectVersionUpdateManager::ObjectVersionUpdateManager() : Logger("ObjectVersionUpdateManager") {
 
 }
+
 
 int ObjectVersionUpdateManager::run() {
 	int version = ObjectDatabaseManager::instance()->getCurrentVersion();
@@ -68,6 +76,8 @@ int ObjectVersionUpdateManager::run() {
 	}
 }
 
+
+
 ObjectOutputStream* ObjectVersionUpdateManager::addVariable(String variableName, ObjectInputStream* object, Stream* newVariableData){
 	object->reset();
 
@@ -86,6 +96,8 @@ ObjectOutputStream* ObjectVersionUpdateManager::addVariable(String variableName,
 	newData->writeStream(newVariableData);
 
 	return newData;
+
+
 }
 
 int ObjectVersionUpdateManager::getVariableDataOffset(const uint32& variableHashCode, ObjectInputStream* stream) {
@@ -466,6 +478,7 @@ void ObjectVersionUpdateManager::updateTangibleObjectsVersion6() {
 	info("Finished migrating tangible object use counts\n", true);
 }
 
+
 void ObjectVersionUpdateManager::updateStructurePermissionLists() {
 	ObjectDatabase* database = ObjectDatabaseManager::instance()->loadObjectDatabase("playerstructures", true);
 
@@ -622,6 +635,8 @@ void ObjectVersionUpdateManager::setResidence(uint64 buildingID, bool isResidenc
 			info("ERROR couldn't get object " + String::valueOf(buildingID),true);
 
 		}
+
+
 	}
 }
 
@@ -734,6 +749,8 @@ void ObjectVersionUpdateManager::updateCityTreasuryToDouble(){
 			}
 
 			objectData.clear();
+
+
 		}
 
 	} catch (Exception& e) {

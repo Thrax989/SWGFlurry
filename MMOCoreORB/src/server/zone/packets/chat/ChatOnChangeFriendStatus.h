@@ -5,7 +5,7 @@
 #ifndef CHATONCHANGEFRIENDSTATUS_H_
 #define CHATONCHANGEFRIENDSTATUS_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ChatOnChangeFriendStatus : public BaseMessage {
 public:

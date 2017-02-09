@@ -5,6 +5,7 @@
 #ifndef CREATENPCCOMMAND_H_
 #define CREATENPCCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/director/DirectorManager.h"
 
 class CreateNPCCommand : public QueueCommand {

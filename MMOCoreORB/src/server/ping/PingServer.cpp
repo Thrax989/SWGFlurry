@@ -2,6 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
+#include "PingClient.h"
 #include "PingServer.h"
 
 PingServer::PingServer() : DatagramServiceThread("PingServer") {

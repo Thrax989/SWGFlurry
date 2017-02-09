@@ -11,6 +11,7 @@
 #ifndef RESOURCETREEENTRY_H_
 #define RESOURCETREEENTRY_H_
 
+#include "engine/engine.h"
 #include "ResourceAttribute.h"
 #include "ResourceTreeNode.h"
 

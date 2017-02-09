@@ -30,6 +30,7 @@ namespace server {
    	namespace threat {
 
    class ThreatMapEntry;
+   class ThreatMap;
 
 //#define DEBUG
 

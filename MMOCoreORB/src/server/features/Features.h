@@ -5,7 +5,7 @@
 #ifndef FEATURES_H_
 #define FEATURES_H_
 
-#include "system/lang.h"
+#include "engine/engine.h"
 
 class Features : public HashTable<String, String> {
 

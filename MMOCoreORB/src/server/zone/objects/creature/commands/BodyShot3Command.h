@@ -5,6 +5,7 @@
 #ifndef BODYSHOT3COMMAND_H_
 #define BODYSHOT3COMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class BodyShot3Command : public CombatQueueCommand {

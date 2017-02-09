@@ -1,7 +1,7 @@
 hansoloboss = Creature:new {
-	--objectName = "@mob/creature_names:",
+	objectName = "@mob/creature_names:",
 	customName = "Han Solo Boss",
-	socialGroup = "geonosian",
+	socialGroup = "geonosian_creature",
 	pvpFaction = "",
 	faction = "",
 	level = 300,
@@ -31,17 +31,32 @@ hansoloboss = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
+				{group = "saberhand24", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
+				{group = "saberhand25", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		 {
+			groups = {
+				{group = "saberhand1", chance = 1000000},
+				{group = "saberhand13", chance = 1000000},
+				{group = "saberhand14", chance = 1000000},
+				{group = "saberhand15", chance = 1000000},
+				{group = "saberhand16", chance = 1000000},
+				{group = "saberhand17", chance = 1000000},
+				{group = "saberhand18", chance = 1000000},
+				{group = "saberhand19", chance = 1000000},
+				{group = "saberhand20", chance = 1000000},
+				{group = "saberhand21", chance = 1000000}
 			},
 			lootChance = 10000000
 		},

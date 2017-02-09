@@ -7,10 +7,11 @@
 
 #ifndef MOCKCOMPOSITEBEHAVIOR_H_
 #define MOCKCOMPOSITEBEHAVIOR_H_
-
 #include "gmock/gmock.h"
+#include "server/zone/objects/creature/ai/bt/Behavior.h"
 #include "MockBehavior.h"
 #include "server/zone/objects/creature/ai/bt/CompositeBehavior.h"
+
 
 namespace server {
 namespace zone {

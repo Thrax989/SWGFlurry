@@ -5,6 +5,8 @@
 #ifndef STATCOMMAND_H_
 #define STATCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class StatCommand : public QueueCommand {
 public:
 

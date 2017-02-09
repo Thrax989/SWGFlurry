@@ -5,8 +5,10 @@
 #ifndef INSTALLATIONOBJECTDELTAMESSAGE7_H_
 #define INSTALLATIONOBJECTDELTAMESSAGE7_H_
 
-#include "server/zone/packets/DeltaMessage.h"
+#include "../../packets/DeltaMessage.h"
+
 #include "server/zone/objects/installation/InstallationObject.h"
+#include "server/zone/objects/installation/harvester/HarvesterObject.h"
 
 class InstallationObjectDeltaMessage7 : public DeltaMessage {
 	InstallationObject* inso;
@@ -74,6 +76,7 @@ public:
 		insertLong(rId); // ID
 		insertFloat(inso->getHopperItemQuantity(rId)); // size
 	}*/
+
 
 };
 

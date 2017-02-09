@@ -5,6 +5,8 @@
 #ifndef GETVETERANREWARDTIMECSCOMMAND_H_
 #define GETVETERANREWARDTIMECSCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class GetVeteranRewardTimeCsCommand : public QueueCommand {
 public:
 

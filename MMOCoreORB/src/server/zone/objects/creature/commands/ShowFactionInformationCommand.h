@@ -5,6 +5,8 @@
 #ifndef SHOWFACTIONINFORMATIONCOMMAND_H_
 #define SHOWFACTIONINFORMATIONCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class ShowFactionInformationCommand : public QueueCommand {
 public:
 

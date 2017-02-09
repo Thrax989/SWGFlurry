@@ -5,6 +5,8 @@
 #ifndef FIREJETCOMMAND_H_
 #define FIREJETCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class FirejetCommand : public QueueCommand {
 public:
 

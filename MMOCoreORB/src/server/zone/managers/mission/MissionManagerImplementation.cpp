@@ -18,6 +18,8 @@
 #include "server/zone/objects/mission/HuntingMissionObjective.h"
 #include "server/zone/objects/mission/ReconMissionObjective.h"
 #include "server/zone/objects/mission/BountyMissionObjective.h"
+#include "server/zone/objects/creature/ai/AiAgent.h"
+#include "server/zone/objects/region/Region.h"
 #include "server/zone/objects/area/SpawnArea.h"
 #include "server/zone/managers/resource/ResourceManager.h"
 #include "templates/manager/TemplateManager.h"
@@ -28,10 +30,12 @@
 #include "server/zone/managers/creature/CreatureManager.h"
 #include "server/zone/managers/creature/CreatureTemplateManager.h"
 #include "templates/mobile/LairTemplate.h"
+#include "server/zone/managers/planet/HuntingTargetEntry.h"
 #include "server/zone/objects/tangible/tool/SurveyTool.h"
+#include "server/zone/objects/area/MissionReconActiveArea.h"
 #include "server/zone/Zone.h"
+#include "server/db/ServerDatabase.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
-#include "server/zone/objects/player/FactionStatus.h"
 
 void MissionManagerImplementation::loadLuaSettings() {
 	try {
@@ -139,19 +143,19 @@ void MissionManagerImplementation::handleMissionListRequest(MissionTerminal* mis
 	if (missionBag == NULL)
 		return;
 
-	int maximumNumberOfItemsInMissionBag = 20;
+	int maximumNumberOfItemsInMissionBag = 12;
 
 
 	if (enableFactionalCraftingMissions) {
-		maximumNumberOfItemsInMissionBag += 20;
+		maximumNumberOfItemsInMissionBag += 6;
 	}
 
 	if (enableFactionalReconMissions) {
-		maximumNumberOfItemsInMissionBag += 20;
+		maximumNumberOfItemsInMissionBag += 6;
 	}
 
 	if (enableFactionalEntertainerMissions) {
-		maximumNumberOfItemsInMissionBag += 20; //Both musician and dancer.
+		maximumNumberOfItemsInMissionBag += 12; //Both musician and dancer.
 	}
 
 	while (missionBag->getContainerObjectsSize() < maximumNumberOfItemsInMissionBag) {
@@ -703,23 +707,22 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
 		messageDifficulty = "_medium";
 	else
 		messageDifficulty = "_hard";
-
 	String groupSuffix;
 
 	if (lairTemplateObject->getMobType() == LairTemplate::NPC){
 		missionType = "_npc";
 		groupSuffix = " camp.";
 	} else {
- 		missionType = "_creature";
+		missionType = "_creature";
 		groupSuffix = " lair.";
 	}
-		
 	VectorMap<String, int>* mobiles = lairTemplateObject->getMobiles();
 	String mobileName = "mysterious";
 	
 	if (mobiles->size() > 0) {
 		mobileName = mobiles->elementAt(0).getKey();
 	}
+
 
 	mission->setMissionTitle("CL" + String::valueOf(diffDisplay), " Destroy the " + mobileName.replaceAll("_", " ") + groupSuffix);
 	mission->setMissionDescription("mission/mission_destroy_neutral" +  messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "d");
@@ -1397,7 +1400,12 @@ void MissionManagerImplementation::randomizeGenericHuntingMission(CreatureObject
 	int baseReward = 500 + (difficulty * 100 * randomLairSpawn->getMinDifficulty());
 	mission->setRewardCredits(baseReward + System::random(100));
 	mission->setMissionDifficulty(difficulty);
-	mission->setMissionTitle("mission/mission_npc_hunting_neutral_" + diffString, "m" + String::valueOf(randTexts) + "t");
+		// Format short desc text so output looks like [CL12]: Kill 45 nuna
+	UnicodeString mobName = StringIdManager::instance()->getStringId(String::hashCode(creatureTemplate->getObjectName()));
+	String details = " Kill " + String::valueOf(difficulty * 15) + " " + mobName.toString().replaceAll("a ", "");
+	
+	mission->setHuntingMissionTitle("CL" + String::valueOf(randomLairSpawn->getMaxDifficulty()), details);
+
 	mission->setMissionDescription("mission/mission_npc_hunting_neutral_" + diffString, "m" + String::valueOf(randTexts) + "o");
 
 	mission->setTypeCRC(MissionTypes::HUNTING);

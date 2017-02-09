@@ -5,6 +5,7 @@
 
 package server.zone.objects.ship;
 
+import engine.core.ManagedObject;
 import server.zone.objects.ship.ShipObject;
 
 class FighterShipObject extends ShipObject {

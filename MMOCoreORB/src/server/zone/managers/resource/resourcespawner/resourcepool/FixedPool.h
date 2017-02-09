@@ -11,6 +11,7 @@
 #ifndef FIXEDPOOL_H_
 #define FIXEDPOOL_H_
 
+#include "engine/engine.h"
 #include "ResourcePool.h"
 
 class ResourceSpawner;

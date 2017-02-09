@@ -80,10 +80,6 @@ public:
 			return GENERALERROR;
 		}
 
-		StringIdChatParameter params("base_player", "prose_target_dead"); // %TT is no more.
-		params.setTT(targetObject->getDisplayedName());
-		creature->sendSystemMessage(params);
-
 		return SUCCESS;
 	}
 

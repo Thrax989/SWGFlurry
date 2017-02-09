@@ -5,6 +5,8 @@
 #ifndef DEFUSEMINEFIELDCOMMAND_H_
 #define DEFUSEMINEFIELDCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class DefuseMinefieldCommand : public QueueCommand {
 public:
 

@@ -10,6 +10,7 @@
 #include "TerrainMaps.h"
 #include "layer/boundaries/Boundary.h"
 #include "layer/affectors/AffectorHeightConstant.h"
+#include "PerlinNoise.h"
 
 ProceduralTerrainAppearance::ProceduralTerrainAppearance() : Logger("ProceduralTerrainAppearance") {
 	terrainGenerator = new TerrainGenerator(this);

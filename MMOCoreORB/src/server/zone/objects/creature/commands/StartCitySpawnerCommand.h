@@ -5,6 +5,8 @@
 #ifndef STARTCITYSPAWNERCOMMAND_H_
 #define STARTCITYSPAWNERCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class StartCitySpawnerCommand : public QueueCommand {
 public:
 

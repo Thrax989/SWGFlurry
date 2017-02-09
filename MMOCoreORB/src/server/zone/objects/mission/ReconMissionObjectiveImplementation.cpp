@@ -11,9 +11,13 @@
 #include "server/zone/objects/waypoint/WaypointObject.h"
 #include "server/zone/Zone.h"
 #include "server/zone/ZoneServer.h"
+#include "server/zone/managers/mission/MissionManager.h"
 #include "server/zone/managers/planet/PlanetManager.h"
 #include "terrain/manager/TerrainManager.h"
 #include "server/zone/objects/mission/MissionObject.h"
+#include "server/zone/objects/mission/MissionObserver.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/tangible/weapon/WeaponObject.h"
 
 void ReconMissionObjectiveImplementation::activate() {
 	MissionObjectiveImplementation::activate();
@@ -66,24 +70,24 @@ void ReconMissionObjectiveImplementation::abort() {
 	if (locationActiveArea != NULL) {
 		Reference<MissionReconActiveArea* > area = locationActiveArea;
 
-		Core::getTaskManager()->executeTask([=] () {
-			Locker locker(area);
+		EXECUTE_TASK_1(area, {
+				Locker locker(area_p);
 
-			area->destroyObjectFromWorld(true);
-			area->destroyObjectFromDatabase(true);
-		}, "DestroyReconMissionAreaLambda");
+				area_p->destroyObjectFromWorld(true);
+				area_p->destroyObjectFromDatabase(true);
+		});
 	}
 }
 
 void ReconMissionObjectiveImplementation::complete() {
 	Reference<MissionReconActiveArea* > area = locationActiveArea;
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(area);
+	EXECUTE_TASK_1(area, {
+			Locker locker(area_p);
 
-		area->destroyObjectFromWorld(true);
-		area->destroyObjectFromDatabase(true);
-	}, "DestroyReconMissionAreaLambda2");
+			area_p->destroyObjectFromWorld(true);
+			area_p->destroyObjectFromDatabase(true);
+	});
 
 	MissionObjectiveImplementation::complete();
 }

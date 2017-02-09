@@ -73,8 +73,6 @@ object_tangible_wearables_bandolier_double_bandolier = object_tangible_wearables
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
 				"object/mobile/vendor/ishi_tib_male.iff",
-				"object/mobile/vendor/ithorian_female.iff",
-				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
 				"object/mobile/vendor/nikto_male.iff",

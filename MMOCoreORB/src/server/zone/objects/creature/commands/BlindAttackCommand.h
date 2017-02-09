@@ -5,6 +5,7 @@
 #ifndef BLINDATTACKCOMMAND_H_
 #define BLINDATTACKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class BlindAttackCommand : public CombatQueueCommand {

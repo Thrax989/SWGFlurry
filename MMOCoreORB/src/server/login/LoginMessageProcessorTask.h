@@ -5,6 +5,8 @@
 #ifndef LOGINMESSAGEPROCESSORTASK_H_
 #define LOGINMESSAGEPROCESSORTASK_H_
 
+#include "engine/engine.h"
+
 #include "LoginPacketHandler.h"
 
 namespace server {

@@ -5,6 +5,8 @@
 #ifndef NPCCONVERSATIONSTOPCOMMAND_H_
 #define NPCCONVERSATIONSTOPCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class NpcConversationStopCommand : public QueueCommand {
 public:
 

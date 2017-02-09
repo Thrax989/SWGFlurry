@@ -5,6 +5,8 @@
 #ifndef COUPDEGRACECOMMAND_H_
 #define COUPDEGRACECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CoupDeGraceCommand : public QueueCommand {
 public:
 

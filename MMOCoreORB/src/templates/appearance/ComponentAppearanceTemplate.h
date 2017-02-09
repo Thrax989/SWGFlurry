@@ -8,6 +8,7 @@
 #ifndef COMPONENTAPPEARANCETEMPLATE_H_
 #define COMPONENTAPPEARANCETEMPLATE_H_
 
+#include "engine/engine.h"
 #include "templates/appearance/AppearanceTemplate.h"
 #include "templates/manager/TemplateManager.h"
 

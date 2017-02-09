@@ -5,6 +5,7 @@
 #ifndef SCREENHANDLER_H_
 #define SCREENHANDLER_H_
 
+#include "engine/core/Core.h"
 #include "server/zone/objects/creature/conversation/ConversationScreen.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 

@@ -2,6 +2,8 @@
 #ifndef EMOTEREACTIONFINE_H_
 #define EMOTEREACTIONFINE_H_
 
+#include "engine/engine.h"
+
 namespace server {
 namespace zone {
 namespace managers {

@@ -69,6 +69,7 @@ public:
 
 			targetPlayer->removeStateBuff(CreatureState::FROZEN);
 			targetPlayer->sendSystemMessage("You have been unfrozen and unmuted by \'" + player->getFirstName() + "\'");
+			targetPlayer->setPosture(CreaturePosture::UPRIGHT);
 
 			targetPlayer->setSpeedMultiplierBase(1.f, true);
 

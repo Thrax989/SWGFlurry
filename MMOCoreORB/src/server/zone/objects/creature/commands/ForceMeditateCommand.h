@@ -5,6 +5,7 @@
 #ifndef FORCEMEDITATECOMMAND_H_
 #define FORCEMEDITATECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/events/ForceMeditateTask.h"
 
 class ForceMeditateCommand : public QueueCommand {
@@ -39,11 +40,6 @@ public:
 			creature->sendSystemMessage("@jedi_spam:already_in_meditative_state");
 			return GENERALERROR;
 		}
-
-		if (!creature->hasSkill("force_discipline_enhancements_synergy_04")){
- 			creature->sendSystemMessage("You lack sufficient skill to use the Force Meditate Command");
- 			return GENERALERROR;
- 		}
 
 		// Play Client Effect once.
 

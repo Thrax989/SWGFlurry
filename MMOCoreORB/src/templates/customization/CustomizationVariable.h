@@ -8,7 +8,7 @@
 #ifndef CUSTOMIZATIONVARIABLE_H_
 #define CUSTOMIZATIONVARIABLE_H_
 
-#include "system/lang.h"
+#include "engine/engine.h"
 
 class CustomizationVariable : public Object {
 public:
@@ -20,5 +20,6 @@ public:
 
 	}
 };
+
 
 #endif /* CUSTOMIZATIONVARIABLE_H_ */

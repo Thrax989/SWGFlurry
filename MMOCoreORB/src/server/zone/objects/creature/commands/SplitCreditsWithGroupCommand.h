@@ -5,6 +5,8 @@
 #ifndef SPLITCREDITSWITHGROUPCOMMAND_H_
 #define SPLITCREDITSWITHGROUPCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class SplitCreditsWithGroupCommand : public QueueCommand {
 public:
 

@@ -6,6 +6,7 @@
 #define DROIDSTIMPACKMODULEDATACOMPONENT_H_
 
 #include "BaseDroidModuleComponent.h"
+#include "engine/core/ManagedReference.h"
 #include "server/zone/objects/tangible/pharmaceutical/StimPack.h"
 
 namespace server {

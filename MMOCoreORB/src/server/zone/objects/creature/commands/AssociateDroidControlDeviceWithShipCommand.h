@@ -5,6 +5,8 @@
 #ifndef ASSOCIATEDROIDCONTROLDEVICEWITHSHIPCOMMAND_H_
 #define ASSOCIATEDROIDCONTROLDEVICEWITHSHIPCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class AssociateDroidControlDeviceWithShipCommand : public QueueCommand {
 public:
 

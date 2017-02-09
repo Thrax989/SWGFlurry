@@ -10,15 +10,19 @@
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/objects/player/events/LogoutTask.h"
 #include "templates/params/creature/CreatureState.h"
 #include "server/zone/objects/creature/commands/CombatQueueCommand.h"
 #include "templates/params/creature/CreatureAttribute.h"
 #include "server/zone/packets/object/CombatSpam.h"
 #include "server/zone/packets/object/CombatAction.h"
+#include "server/zone/packets/chat/ChatSystemMessage.h"
 #include "server/zone/packets/tangible/UpdatePVPStatusMessage.h"
 #include "server/zone/Zone.h"
 #include "server/zone/managers/collision/CollisionManager.h"
+#include "server/zone/objects/creature/buffs/StateBuff.h"
 #include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/managers/creature/CreatureManager.h"
 #include "server/zone/managers/creature/LairObserver.h"
 #include "server/zone/managers/reaction/ReactionManager.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -29,7 +33,7 @@
 
 #define COMBAT_SPAM_RANGE 85
 
-bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defender, bool lockDefender, bool allowIncapTarget) {
+bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defender, bool lockDefender) {
 	if (attacker == defender)
 		return false;
 
@@ -52,18 +56,12 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
 	if (!defender->isAttackableBy(attacker))
 		return false;
 
+	CreatureObject *creo = defender->asCreatureObject();
+	if (creo != NULL && creo->isIncapacitated() && creo->isFeigningDeath() == false)
+		return false;
+
 	if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
 		return false;
-
-	CreatureObject *creo = defender->asCreatureObject();
-	if (creo != NULL && creo->isIncapacitated() && creo->isFeigningDeath() == false) {
-		if (allowIncapTarget) {
-			attacker->clearState(CreatureState::PEACE);
-			return true;
-		}
-
-		return false;
-	}
 
 	attacker->clearState(CreatureState::PEACE);
 
@@ -171,7 +169,7 @@ int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon
 	if(data.getCommand() == NULL)
 		return -3;
 
-	if (!startCombat(attacker, defenderObject, true, data.getHitIncapTarget()))
+	if (!startCombat(attacker, defenderObject))
 		return -1;
 
 	//info("past start combat", true);
@@ -2257,11 +2255,11 @@ void CombatManager::requestEndDuel(CreatureObject* player, CreatureObject* targe
 
 				ManagedReference<CreatureObject*> target = targetPlayer;
 
-				Core::getTaskManager()->executeTask([=] () {
-					Locker locker(pet);
+				EXECUTE_TASK_2(pet, target, {
+					Locker locker(pet_p);
 
-					pet->removeDefender(target);
-				}, "PetRemoveDefenderLambda");
+					pet_p->removeDefender(target_p);
+				});
 			}
 		}
 
@@ -2280,11 +2278,11 @@ void CombatManager::requestEndDuel(CreatureObject* player, CreatureObject* targe
 
 				ManagedReference<CreatureObject*> play = player;
 
-				Core::getTaskManager()->executeTask([=] () {
-					Locker locker(pet);
+				EXECUTE_TASK_2(pet, play, {
+					Locker locker(pet_p);
 
-					pet->removeDefender(play);
-				}, "PetRemoveDefenderLambda2");
+					pet_p->removeDefender(play_p);
+				});
 			}
 		}
 
@@ -2329,11 +2327,11 @@ void CombatManager::freeDuelList(CreatureObject* player, bool spam) {
 							targetPlayer->removeDefender(pet);
 							pet->sendPvpStatusTo(targetPlayer);
 
-							Core::getTaskManager()->executeTask([=] () {
-								Locker locker(pet);
+							EXECUTE_TASK_2(pet, targetPlayer, {
+								Locker locker(pet_p);
 
-								pet->removeDefender(targetPlayer);
-							}, "PetRemoveDefenderLambda3");
+								pet_p->removeDefender(targetPlayer_p);
+							});
 						}
 					}
 
@@ -2354,11 +2352,11 @@ void CombatManager::freeDuelList(CreatureObject* player, bool spam) {
 
 							ManagedReference<CreatureObject*> play = player;
 
-							Core::getTaskManager()->executeTask([=] () {
-								Locker locker(pet);
+							EXECUTE_TASK_2(pet, play, {
+								Locker locker(pet_p);
 
-								pet->removeDefender(play);
-							}, "PetRemoveDefenderLambda4");
+								pet_p->removeDefender(play_p);
+							});
 						}
 					}
 

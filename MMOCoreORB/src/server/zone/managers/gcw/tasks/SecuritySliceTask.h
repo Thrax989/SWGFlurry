@@ -8,6 +8,7 @@
 #ifndef SECURITYSLICETASK_H_
 #define SECURITYSLICETASK_H_
 
+#include "engine/engine.h"
 #include "server/zone/managers/gcw/GCWManager.h"
 
 class SecuritySliceTask : public Task {
@@ -33,5 +34,8 @@ public:
 
 	}
 };
+
+
+
 
 #endif /* SECURITYSLICETASK_H_ */

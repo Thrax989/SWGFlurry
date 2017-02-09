@@ -5,7 +5,7 @@
 #ifndef DRAFTSLOT_H_
 #define DRAFTSLOT_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class DraftSlot : public Object {
 private:

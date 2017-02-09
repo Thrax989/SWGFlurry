@@ -6,7 +6,8 @@
 #ifndef CELLOBJECTDELTAMESSAGE3_H_
 #define CELLOBJECTDELTAMESSAGE3_H_
 
-#include "server/zone/packets/DeltaMessage.h"
+#include "../../packets/DeltaMessage.h"
+
 #include "server/zone/objects/cell/CellObject.h"
 
 class CellObjectDeltaMessage3 : public DeltaMessage {
@@ -22,5 +23,6 @@ public:
 		addIntUpdate(5, cellNumber);
 	}
 };
+
 
 #endif /* CELLOBJECTDELTAMESSAGE3_H_ */

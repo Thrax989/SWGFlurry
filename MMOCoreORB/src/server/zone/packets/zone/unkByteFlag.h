@@ -5,7 +5,7 @@
 #ifndef UNKBYTEFLAG_H_
 #define UNKBYTEFLAG_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class unkByteFlag : public BaseMessage {
 public:

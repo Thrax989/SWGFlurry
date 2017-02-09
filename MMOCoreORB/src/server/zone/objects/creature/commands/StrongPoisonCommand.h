@@ -8,6 +8,7 @@
 #ifndef STRONGPOISONCOMMAND_H_
 #define STRONGPOISONCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class StrongPoisonCommand : public CombatQueueCommand {

@@ -8,6 +8,7 @@
 #ifndef SPHEREVOLUME_H_
 #define SPHEREVOLUME_H_
 
+#include "engine/engine.h"
 #include "BaseBoundingVolume.h"
 
 class SphereVolume : public BaseBoundingVolume {

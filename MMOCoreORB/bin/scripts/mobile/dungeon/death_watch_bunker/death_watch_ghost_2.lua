@@ -1,6 +1,6 @@
 
 death_watch_ghost_2 = Creature:new {
-	-- objectName = "@mob/creature_names:",
+	objectName = "@mob/creature_names:",
 	customName = "death watch ghost 2",
 	randomNameTag = true,
 	socialGroup = "death_watch",
@@ -33,7 +33,7 @@ death_watch_ghost_2 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "death_watch_bunker_lieutenants", chance = 5000000},
+				{group = "death_watch_bunker_lieutenants", chance = 5500000},
 				{group = "rifles", chance = 1000000},
 				{group = "pistols", chance = 1000000},
 				{group = "clothing_attachments", chance = 1000000},

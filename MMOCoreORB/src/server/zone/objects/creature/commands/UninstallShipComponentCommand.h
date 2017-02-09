@@ -5,6 +5,8 @@
 #ifndef UNINSTALLSHIPCOMPONENTCOMMAND_H_
 #define UNINSTALLSHIPCOMPONENTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class UninstallShipComponentCommand : public QueueCommand {
 public:
 

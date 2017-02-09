@@ -5,7 +5,7 @@
 #ifndef GALAXYLIST_H_
 #define GALAXYLIST_H_
 
-#include "server/db/ServerDatabase.h"
+#include "../../db/ServerDatabase.h"
 
 class GalaxyList {
 	ResultSet* galaxies;

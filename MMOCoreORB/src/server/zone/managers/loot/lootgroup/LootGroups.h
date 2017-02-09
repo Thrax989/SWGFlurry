@@ -8,6 +8,7 @@
 #ifndef LOOTGROUPS_H_
 #define LOOTGROUPS_H_
 
+#include "engine/engine.h"
 #include "LootGroupEntry.h"
 
 class LootGroups {
@@ -49,5 +50,6 @@ public:
 		return &entries.get(idx);
 	}
 };
+
 
 #endif /* LOOTGROUPS_H_ */

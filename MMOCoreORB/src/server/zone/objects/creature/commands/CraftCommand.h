@@ -5,6 +5,8 @@
 #ifndef CRAFTCOMMAND_H_
 #define CRAFTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CraftCommand : public QueueCommand {
 public:
 

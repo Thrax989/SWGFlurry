@@ -5,6 +5,8 @@
 #ifndef PURCHASEREINFORCEMENTCOMMAND_H_
 #define PURCHASEREINFORCEMENTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class PurchaseReinforcementCommand : public QueueCommand {
 public:
 

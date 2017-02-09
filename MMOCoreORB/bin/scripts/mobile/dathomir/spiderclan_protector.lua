@@ -12,7 +12,7 @@ spiderclan_protector = Creature:new {
 	baseHAM = 50000,
 	baseHAMmax = 61000,
 	armor = 0,
-	resists = {145,145,145,165,200,200,155,200,125},
+	resists = {45,95,100,65,100,100,55,100,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -34,13 +34,15 @@ spiderclan_protector = Creature:new {
 				{group = "axkva_min", chance = 100000},
 				{group = "crystals_select", chance = 1100000},
 				{group = "color_crystals", chance = 500000},
-				{group = "armor_attachments", chance = 900000},
-				{group = "clothing_attachments", chance = 900000},
-				{group = "melee_weapons", chance = 3000000},
+				{group = "armor_attachments", chance = 450000},
+				{group = "clothing_attachments", chance = 450000},
+				{group = "melee_weapons", chance = 3100000},
 				{group = "pistols", chance = 1000000},
 				{group = "rifles", chance = 1000000},
 				{group = "carbines", chance = 1000000},
-				{group = "wearables_all", chance = 500000}
+				{group = "wearables_all", chance = 500000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "clothing_attachments", chance = 300000}
 			},
 			lootChance = 10000000
 		}

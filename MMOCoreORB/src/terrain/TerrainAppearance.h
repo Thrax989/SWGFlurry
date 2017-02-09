@@ -8,8 +8,7 @@
 #ifndef TERRAINAPPEARANCE_H_
 #define TERRAINAPPEARANCE_H_
 
-#include "system/lang/Object.h"
-#include "engine/util/iffstream/IffStream.h"
+#include "engine/engine.h"
 
 class TerrainAppearance : public Object {
 public:
@@ -24,5 +23,6 @@ public:
 		return false;
 	}
 };
+
 
 #endif /* TERRAINAPPEARANCE_H_ */

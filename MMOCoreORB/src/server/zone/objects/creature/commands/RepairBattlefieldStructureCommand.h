@@ -5,6 +5,8 @@
 #ifndef REPAIRBATTLEFIELDSTRUCTURECOMMAND_H_
 #define REPAIRBATTLEFIELDSTRUCTURECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class RepairBattlefieldStructureCommand : public QueueCommand {
 public:
 

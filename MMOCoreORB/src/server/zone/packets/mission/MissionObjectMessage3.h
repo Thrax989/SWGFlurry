@@ -5,7 +5,8 @@
 #ifndef MISSIONOBJECTMESSAGE3_H_
 #define MISSIONOBJECTMESSAGE3_H_
 
-#include "server/zone/packets/BaseLineMessage.h"
+#include "../../packets/BaseLineMessage.h"
+
 #include "server/zone/objects/mission/MissionObject.h"
 #include "server/zone/objects/waypoint/WaypointObject.h"
 

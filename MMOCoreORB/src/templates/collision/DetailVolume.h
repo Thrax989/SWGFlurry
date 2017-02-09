@@ -8,6 +8,7 @@
 #ifndef DETAILVOLUME_H_
 #define DETAILVOLUME_H_
 
+#include "engine/engine.h"
 #include "CompositeVolume.h"
 
 class DetailVolume : public CompositeVolume {
@@ -20,5 +21,4 @@ public:
 	virtual osg::ref_ptr<osg::Node> draw() const;
 #endif
 };
-
 #endif /* DETAILVOLUME_H_ */

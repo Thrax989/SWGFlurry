@@ -5,6 +5,8 @@
 #ifndef EMPTYMAILTARGETCOMMAND_H_
 #define EMPTYMAILTARGETCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class EmptyMailTargetCommand : public QueueCommand {
 public:
 

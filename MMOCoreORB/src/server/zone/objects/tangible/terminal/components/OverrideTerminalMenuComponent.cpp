@@ -7,11 +7,16 @@
 
 #include "OverrideTerminalMenuComponent.h"
 #include "server/zone/Zone.h"
+#include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/FactionStatus.h"
+
 #include "server/zone/objects/building/BuildingObject.h"
+
 #include "server/zone/managers/gcw/GCWManager.h"
+
 
 void OverrideTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
@@ -89,12 +94,19 @@ int OverrideTerminalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObje
 
 	player->sendSystemMessage("\"Retrieving new DNA sample...\"");
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(player);
-		Locker clocker(building, player);
+	EXECUTE_TASK_4(player, gcwMan, overrideTerminal, building, {
+			Locker locker(player_p);
+			Locker clocker(building_p, player_p);
 
-		gcwMan->sendDNASampleMenu(player, building, overrideTerminal);
-	}, "SendDNASampleMenuLambda");
+			gcwMan_p->sendDNASampleMenu(player_p, building_p, overrideTerminal_p);
+	});
 
 	return 0;
 }
+
+
+
+
+
+
+

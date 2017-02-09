@@ -5,6 +5,7 @@
 #ifndef EXTINGUISHFIRECOMMAND_H_
 #define EXTINGUISHFIRECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CurePackCommand.h"
 
 class ExtinguishFireCommand : public CurePackCommand {

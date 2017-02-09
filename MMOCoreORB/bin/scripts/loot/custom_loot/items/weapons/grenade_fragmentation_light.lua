@@ -1,7 +1,7 @@
 grenade_fragmentation_light = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Fragmentation light grenade",
+	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/grenade/grenade_fragmentation_light.iff",
 	craftingValues = {
 		{"mindamage",130,170,0},

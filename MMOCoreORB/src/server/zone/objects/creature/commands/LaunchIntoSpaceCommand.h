@@ -5,6 +5,8 @@
 #ifndef LAUNCHINTOSPACECOMMAND_H_
 #define LAUNCHINTOSPACECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class LaunchIntoSpaceCommand : public QueueCommand {
 public:
 

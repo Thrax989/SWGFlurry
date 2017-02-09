@@ -5,6 +5,7 @@
 #ifndef GETSTATIONNAMECOMMAND_H_
 #define GETSTATIONNAMECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/login/account/Account.h"
 
 class GetStationNameCommand : public QueueCommand {

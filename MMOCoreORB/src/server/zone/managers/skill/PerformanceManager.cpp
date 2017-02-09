@@ -2,7 +2,11 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
+#include "engine/engine.h"
+#include "server/zone/ZoneProcessServer.h"
+
 #include "PerformanceManager.h"
+#include "server/db/ServerDatabase.h"
 #include "templates/datatables/DataTableIff.h"
 #include "templates/datatables/DataTableRow.h"
 #include "server/zone/objects/tangible/Instrument.h"

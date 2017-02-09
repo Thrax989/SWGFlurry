@@ -6,6 +6,7 @@
 #define STRINGLIST_H_
 
 #include "ObjectControllerMessage.h"
+#include "server/chat/StringIdChatParameter.h"
 
 class StringList : public ObjectControllerMessage {
 	uint8 optionCount;

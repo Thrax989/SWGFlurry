@@ -5,6 +5,8 @@
 #ifndef EDITSTATSCOMMAND_H_
 #define EDITSTATSCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class EditStatsCommand : public QueueCommand {
 public:
 

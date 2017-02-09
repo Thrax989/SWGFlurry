@@ -5,6 +5,8 @@
 #ifndef REMOVEIGNORECOMMAND_H_
 #define REMOVEIGNORECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class RemoveIgnoreCommand : public QueueCommand {
 public:
 

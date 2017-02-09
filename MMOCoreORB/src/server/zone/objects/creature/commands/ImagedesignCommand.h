@@ -6,6 +6,7 @@
 #define IMAGEDESIGNCOMMAND_H_
 
 #include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/packets/object/ImageDesignMessage.h"
 #include "server/zone/objects/player/sessions/ImageDesignSession.h"
 
 class ImagedesignCommand : public QueueCommand {

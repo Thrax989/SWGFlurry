@@ -61,6 +61,7 @@
 
 #include "server/zone/objects/building/BuildingObject.h"
 
+#include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/creature/commands/TransferstructureCommand.h"
 
@@ -1251,18 +1252,16 @@ void GuildManagerImplementation::kickMember(CreatureObject* player, CreatureObje
 
 		ManagedReference<ChatRoom*> guildChat = guild->getChatRoom();
 		if (guildChat != NULL) {
-			ManagedReference<CreatureObject*> targetCreo = target->asCreatureObject();
+			EXECUTE_TASK_2(guildChat, target, {
+				Locker locker(target_p);
+				Locker cLocker(guildChat_p, target_p);
+				guildChat_p->removePlayer(target_p);
+				guildChat_p->sendDestroyTo(target_p);
 
-			Core::getTaskManager()->executeTask([=] () {
-				Locker locker(targetCreo);
-				Locker cLocker(guildChat, targetCreo);
-				guildChat->removePlayer(targetCreo);
-				guildChat->sendDestroyTo(targetCreo);
-
-				ManagedReference<ChatRoom*> parentRoom = guildChat->getParent();
+				ManagedReference<ChatRoom*> parentRoom = guildChat_p->getParent();
 				if (parentRoom != NULL)
-					parentRoom->sendDestroyTo(targetCreo);
-			}, "RemovePlayerFromGuildChatLambda");
+					parentRoom->sendDestroyTo(target_p);
+			});
 		}
 
 		PlayerObject* targetGhost = target->getPlayerObject();

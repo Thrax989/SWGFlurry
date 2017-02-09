@@ -8,7 +8,7 @@
 #ifndef TEMPLATEDATA_H_
 #define TEMPLATEDATA_H_
 
-#include "system/lang/Object.h"
+#include "engine/engine.h"
 
 class TemplateData : public virtual Object {
 public:

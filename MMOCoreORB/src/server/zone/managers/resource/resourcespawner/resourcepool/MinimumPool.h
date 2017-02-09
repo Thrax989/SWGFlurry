@@ -11,6 +11,7 @@
 #ifndef MINIMUMPOOL_H_
 #define MINIMUMPOOL_H_
 
+#include "engine/engine.h"
 #include "ResourcePool.h"
 
 class ResourceSpawner;

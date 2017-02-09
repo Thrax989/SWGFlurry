@@ -4,6 +4,7 @@
 
 #include "server/zone/objects/building/tutorial/TutorialBuildingObject.h"
 #include "events/UnloadBuildingTask.h"
+#include "server/zone/objects/cell/CellObject.h"
 
 void TutorialBuildingObjectImplementation::enqueueUnloadEvent() {
 	unloadTask = new UnloadBuildingTask(_this.getReferenceUnsafeStaticCast());

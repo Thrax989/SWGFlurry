@@ -3,10 +3,6 @@
 		See file COPYING for copying conditions.*/
 
 #include "ForceHealQueueCommand.h"
-#include "server/zone/managers/combat/CombatManager.h"
-#include "templates/params/creature/CreatureAttribute.h"
-#include "server/zone/managers/stringid/StringIdManager.h"
-#include "server/zone/managers/collision/CollisionManager.h"
 
 //#define DEBUG_FORCE_HEALS
 

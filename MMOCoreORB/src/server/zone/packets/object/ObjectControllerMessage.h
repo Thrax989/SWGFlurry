@@ -5,7 +5,7 @@
 #ifndef OBJECTCONTROLLERMESSAGE_H_
 #define OBJECTCONTROLLERMESSAGE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ObjectControllerMessage : public BaseMessage {
 public:

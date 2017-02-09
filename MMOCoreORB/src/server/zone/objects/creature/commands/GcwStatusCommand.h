@@ -5,8 +5,10 @@
 #ifndef GCWSTATUSCOMMAND_H_
 #define GCWSTATUSCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/Zone.h"
 #include "server/zone/managers/gcw/GCWManager.h"
+#include "server/chat/StringIdChatParameter.h"
 
 class GcwStatusCommand : public QueueCommand {
 public:

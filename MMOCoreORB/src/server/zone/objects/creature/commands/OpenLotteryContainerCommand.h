@@ -8,6 +8,8 @@
 #ifndef OPENLOTTERYCONTAINERCOMMAND_H_
 #define OPENLOTTERYCONTAINERCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class OpenLotteryContainerCommand : public QueueCommand {
 public:
 

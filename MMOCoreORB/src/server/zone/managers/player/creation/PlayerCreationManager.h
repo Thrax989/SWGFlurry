@@ -6,8 +6,11 @@
 #ifndef PLAYERCREATIONMANAGER_H_
 #define PLAYERCREATIONMANAGER_H_
 
-#include "engine/lua/Lua.h"
+#include "engine/engine.h"
+#include "server/zone/objects/scene/variables/CustomizationVariables.h"
 #include "server/zone/packets/charcreation/ClientCreateCharacterCallback.h"
+
+class Skill;
 
 namespace server {
 namespace zone {
@@ -16,6 +19,16 @@ namespace zone {
 }
 
 using namespace server::zone;
+
+namespace server {
+namespace zone {
+namespace packets {
+	class MessageCallback;
+}
+}
+}
+
+using namespace server::zone::packets;
 
 namespace server {
 namespace zone {

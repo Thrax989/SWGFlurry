@@ -5,6 +5,8 @@
 #ifndef CITYINFOCOMMAND_H_
 #define CITYINFOCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CityInfoCommand : public QueueCommand {
 public:
 	CityInfoCommand(const String& name, ZoneProcessServer* server)

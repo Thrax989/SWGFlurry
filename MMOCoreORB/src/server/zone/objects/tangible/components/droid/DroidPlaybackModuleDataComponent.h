@@ -6,6 +6,9 @@
 #define DROIDPLAYBACKMODULEDATACOMPONENT_H_
 
 #include "BaseDroidModuleComponent.h"
+#include "engine/core/ManagedReference.h"
+#include "system/util/Vector.h"
+#include "system/util/VectorMap.h"
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackObserver.h"
 
 namespace server {
@@ -14,6 +17,7 @@ namespace objects {
 namespace tangible {
 namespace components {
 namespace droid {
+
 
 class DroidPlaybackModuleDataComponent : public BaseDroidModuleComponent {
 
@@ -75,6 +79,7 @@ private:
 	bool readObjectMember(ObjectInputStream* stream, const String& name);
 };
 
+
 } // droid
 } // components
 } // tangible
@@ -82,5 +87,4 @@ private:
 } // zone
 } // server
 using namespace server::zone::objects::tangible::components::droid;
-
 #endif /* DROIDPLAYBACKMODULEDATACOMPONENT_H_ */

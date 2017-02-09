@@ -8,6 +8,8 @@
 #ifndef CLOSELOTTERYCONTAINERCOMMAND_H_
 #define CLOSELOTTERYCONTAINERCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+
 class CloseLotteryContainerCommand : public QueueCommand {
 public:
 

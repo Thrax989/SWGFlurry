@@ -1,6 +1,6 @@
 tanray = Creature:new {
 	customName = "Tanray",
-	socialGroup = "self",
+	socialGroup = "",
 	faction = "",
 	level = 70,
 	chanceHit = 0.27,
@@ -26,24 +26,7 @@ tanray = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/som/tanray.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
 	scale = 0.18,
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",

@@ -5,7 +5,7 @@
 #ifndef CLIENTRANDOMNAMERESPONSE_H_
 #define CLIENTRANDOMNAMERESPONSE_H_
 
-#include "engine/service/proto/BaseMessage.h"
+#include "engine/engine.h"
 
 class ClientRandomNameResponse : public BaseMessage {
 public:

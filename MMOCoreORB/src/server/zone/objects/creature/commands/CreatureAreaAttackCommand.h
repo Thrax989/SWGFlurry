@@ -5,6 +5,7 @@
 #ifndef CREATUREAREAATTACKCOMMAND_H_
 #define CREATUREAREAATTACKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class CreatureAreaAttackCommand : public CombatQueueCommand {

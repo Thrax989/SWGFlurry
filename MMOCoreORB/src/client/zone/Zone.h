@@ -5,9 +5,14 @@
 #ifndef ZONE_H_
 #define ZONE_H_
 
-#include "ZoneClient.h"
-#include "client/zone/objects/player/PlayerCreature.h"
+#include "engine/engine.h"
 
+#include "ZoneClient.h"
+
+#include "client/zone/objects/player/PlayerCreature.h"
+#include "client/zone/objects/ObjectMap.h"
+
+class LoginSession;
 class ZoneClientThread;
 class ObjectController;
 class ObjectManager;
