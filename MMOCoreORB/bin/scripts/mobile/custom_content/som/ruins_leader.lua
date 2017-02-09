@@ -1,6 +1,6 @@
 ruins_leader = Creature:new {
 	customName = "Scavenger",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 57,
@@ -29,10 +29,22 @@ ruins_leader = Creature:new {
 	templates = {"object/mobile/som/ruins_leader.iff"},
 	lootGroups = {
 		{
-			groups = {},
-			lootChance = 2100000
-		}
-	},
+			groups = {
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,brawlernovice)

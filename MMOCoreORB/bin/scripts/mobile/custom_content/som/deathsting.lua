@@ -1,17 +1,17 @@
 deathsting = Creature:new {
 	customName = "Deathsting",
-	socialGroup = "mustafar",
+	socialGroup = "geonosian",
 	pvpFaction = "",
 	faction = "",
-	level = 300,
-	chanceHit = 30.0,
-	damageMin = 2570,
-	damageMax = 4550,
-	baseXp = 30549,
-	baseHAM = 440000,
-	baseHAMmax = 529000,
-	armor = 3,
-	resists = {195,195,195,195,165,195,195,195,-1},
+	level = 150,
+	chanceHit = 35.00,
+	damageMin = 520,
+	damageMax = 1750,
+	baseXp = 15000,
+	baseHAM = 150000,
+	baseHAMmax = 175000,
+	armor = 0,
+	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -20,9 +20,9 @@ deathsting = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0,
-	ferocity = 0,
+	ferocity = 1,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + STALKER,
+	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
@@ -30,17 +30,22 @@ deathsting = Creature:new {
 	scale = 3.0,
 	lootGroups = {
 		{
-	        groups = {
-					{group = "clothing_attachments",  chance = 3000000},
-					{group = "weapons_all", chance = 3000000},
-					{group = "holocron_dark",  chance = 1000000},
-					{group = "holocron_light",  chance = 1000000},
-					{group = "crystal_quintessence_of_the_force", chance = 1000000},
-					{group = "crystal_mauls_vengence", chance = 1000000},
+			groups = {
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

@@ -1,6 +1,6 @@
 storm_lord_guard = Creature:new {
 	customName = "Storm Lord guard",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 85,
@@ -30,19 +30,21 @@ storm_lord_guard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "crystals_quality", chance = 1500000},
-				{group = "color_crystals", chance = 1500000},
-				{group = "armor_attachments", chance = 250000},
-				{group = "clothing_attachments", chance = 250000},
-				{group = "melee_weapons", chance = 2500000},
-				{group = "rifles", chance = 1000000},
-				{group = "pistols", chance = 1000000},
-				{group = "carbines", chance = 1000000},
-				{group = "wearables_common", chance = 500000},
-				{group = "tailor_components", chance = 500000}
-			}
-		}
-	},
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
 	attacks = merge(fencermid,swordsmanmid,tkamid,pikemanmaster,brawlermaster)

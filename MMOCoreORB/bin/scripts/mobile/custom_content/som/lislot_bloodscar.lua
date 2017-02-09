@@ -1,6 +1,6 @@
 lislot_bloodscar = Creature:new {
 	customName = "Lislot Bloodscar",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 135,
@@ -29,15 +29,22 @@ lislot_bloodscar = Creature:new {
 	templates = {"object/mobile/som/lislot_bloodscar.iff"},
 	lootGroups = {
 		{
-		groups = {
-				{group = "junk", chance = 4000000},
-				{group = "nyax", chance = 3000000},
-				{group = "grenades_looted", chance = 1000000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000}
-			}
-		}
-	},
+			groups = {
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"nyaxs_weapons"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/fancy",

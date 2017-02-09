@@ -1,7 +1,7 @@
 dressed_ep3_clone_relics_jawl = Creature:new {
 	customName = "Jawl",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,
@@ -30,13 +30,21 @@ dressed_ep3_clone_relics_jawl = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 7000000},
-				{group = "skill_buffs", chance = 1000000},
-				{group = "loot_kit_parts", chance = 1000000},
-				{group = "wearables", chance = 1000000}
-			}
-		}
-	},
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",

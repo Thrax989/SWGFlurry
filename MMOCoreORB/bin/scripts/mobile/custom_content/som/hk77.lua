@@ -26,59 +26,22 @@ hk77 = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 	templates = {"object/mobile/som/hk77.iff"},
-		lootGroups = {
+	lootGroups = {
 		{
 			groups = {
-				{group = "saberhand3", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "nge1", chance = 10000000}
-			},
-			lootChance = 5000000
-		 },
-		{
-			groups = {
-				{group = "wearables_all", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "wearables_rare", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "weapons_all", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "melee_weapons", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "saberhand3", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
-		 {
+		{
 			groups = {
-				{group = "saberhand1", chance = 5000000},
-				{group = "saberhand2", chance = 5000000}
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		},	
 	reactionStf = "@npc_reaction/slang",

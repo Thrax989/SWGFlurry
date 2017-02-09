@@ -1,6 +1,6 @@
 pei_yi = Creature:new {
 	customName = "Pei Yi",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 90,
@@ -8,8 +8,8 @@ pei_yi = Creature:new {
 	damageMin = 650,
 	damageMax = 800,
 	baseXp = 2735,
-	baseHAM = 15000,
-	baseHAMmax = 14000,
+	baseHAM = 14000,
+	baseHAMmax = 15000,
 	armor = 0,
 	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
@@ -29,10 +29,22 @@ pei_yi = Creature:new {
 	templates = {"object/mobile/som/pei_yi.iff"},
 	lootGroups = {
 		{
-			groups = {},
-			lootChance = 2100000
-		}
-	},
+			groups = {
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,brawlernovice)

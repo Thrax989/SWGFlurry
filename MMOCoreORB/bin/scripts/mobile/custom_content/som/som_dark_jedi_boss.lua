@@ -1,5 +1,5 @@
 som_dark_jedi_boss = Creature:new {
-	objectName = "@mob/creature_names:",
+	-- objectName = "@mob/creature_names:",
 	customName = "Supreme Leader Snoke (Boss)",
 	socialGroup = "dark_jedi",
 	pvpFaction = "",
@@ -29,61 +29,24 @@ som_dark_jedi_boss = Creature:new {
 	scale = 2.0,
 
 	templates = {"object/mobile/som/som_dark_jedi_boss.iff"},
-		lootGroups = {
+	lootGroups = {
 		{
 			groups = {
-				{group = "saberhand3", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "nge1", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "nge2", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "nge3", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "weapons_all", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "melee_weapons", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "saberhand3", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
-		 {
-			groups = {
-				{group = "saberhand12", chance = 5000000},
-				{group = "saberhand13", chance = 5000000}
-			},
-			lootChance = 10000000
 		},
-		},	
 	weapons = {"dark_jedi_weapons_gen4"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(lightsabermaster)

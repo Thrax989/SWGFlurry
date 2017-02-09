@@ -30,15 +30,21 @@ ep3_clone_relics_super_battle_droid_01 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "armor_attachments", chance = 3000000},
-				{group = "clothing_attachments", chance = 3000000},
-				{group = "weapons_all", chance = 3000000},
-				{group = "g_fan_metal", chance = 500000},
-				{group = "g_pvp_bf_knuckler", chance = 500000},
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	conversationTemplate = "",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
 	defaultAttack = "creaturerangedattack"

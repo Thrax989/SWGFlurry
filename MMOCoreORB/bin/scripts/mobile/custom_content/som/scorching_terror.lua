@@ -1,6 +1,6 @@
 scorching_terror = Creature:new {
 	customName = "Scorching Terror",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 250,
@@ -30,15 +30,22 @@ scorching_terror = Creature:new {
 	scale = 5.0,
 	lootGroups = {
 		{
-	        groups = {
-					{group = "clothing_attachments",  chance = 4000000},
-					{group = "weapons_all", chance = 4000000},
-					{group = "holocron_dark",  chance = 1000000},
-					{group = "holocron_light",  chance = 1000000},
+			groups = {
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

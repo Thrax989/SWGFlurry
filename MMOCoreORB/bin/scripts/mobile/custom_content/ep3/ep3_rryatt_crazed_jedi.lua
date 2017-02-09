@@ -29,17 +29,21 @@ ep3_rryatt_crazed_jedi = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "holocron_dark", chance = 500000},
-				{group = "holocron_light", chance = 500000},
-				{group = "crystals_premium", chance = 500000},
-				{group = "g_named_crystals", chance = 500000},
-				{group = "weapons_all", chance = 3000000},
-				{group = "armor_attachments", chance = 2000000},
-				{group = "clothing_attachments", chance = 2000000},
-				{group = "dark_jedi_common", chance = 1000000}
-			}
-		}
-	},
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"light_jedi_weapons"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",

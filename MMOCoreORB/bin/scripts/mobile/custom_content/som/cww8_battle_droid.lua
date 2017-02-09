@@ -1,6 +1,6 @@
 cww8_battle_droid = Creature:new {
 	customName = "World Boss",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 300,
@@ -31,11 +31,21 @@ cww8_battle_droid = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "cardeed1", chance = 10000000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"rebel_weapons_heavy"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(commandomaster)

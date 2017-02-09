@@ -1,7 +1,7 @@
 corsair_slave = Creature:new {
 	customName = "Dune Corsair Slave",
-	socialGroup = "corsair",
-	faction = "corsair",
+	socialGroup = "self",
+	faction = "",
 	level = 15,
 	chanceHit = 0.31,
 	damageMin = 160,
@@ -25,17 +25,25 @@ corsair_slave = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/dressed_dathomir_corsair_slave.iff"},
+	templates = {"object/mobile/dressed_corsair_pirate_elite_nikto_m.iff"},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 4000000},
-				{group = "wearables_all", chance = 6000000}
-				--{group = "loot_kit_parts", chance = 2000000},
-				--{group = "tailor_components", chance = 1000000},
-			}
-		}
-	},
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = brawlermaster

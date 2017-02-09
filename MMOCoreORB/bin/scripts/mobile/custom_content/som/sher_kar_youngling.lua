@@ -32,30 +32,17 @@ sher_kar_youngling = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "saberhand24", chance = 4000000},
-				{group = "armor_attachments", chance = 2000000},
-				{group = "clothing_attachments", chance = 2000000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "av_21_pp", chance = 1000000}
-			},
-			lootChance = 500000
-		 },
-		{
-			groups = {
-				{group = "saberhand25", chance = 4000000},
-				{group = "armor_attachments", chance = 2000000},
-				{group = "clothing_attachments", chance = 2000000}
-			},
-			lootChance = 10000000
-		},
-		 {
-			groups = {
-				{group = "holocron_light", chance = 5000000},
-				{group = "holocron_dark", chance = 5000000}
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
@@ -73,10 +60,7 @@ sher_kar_youngling = Creature:new {
 		{"intimidationattack","IntimidationChance=100"},
 		{"mediumpoison","PoisonChance=100"},
 		{"creatureareapoison","PoisonChance=100"},
-		{"mediumDisease","DiseaseChance=100"},
-		{"mildDisease","DiseaseChance=100"},
 		{"strongpoison","PoisonChance=100"},
-		{"strongDisease","DiseaseChance=100"},
 		{"creatureareaattack","StateAccuracyBonus=100"}
 	}
 }

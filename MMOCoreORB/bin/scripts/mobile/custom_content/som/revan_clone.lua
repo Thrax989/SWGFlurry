@@ -1,5 +1,5 @@
 revan_clone = Creature:new {
-	objectName = "@mob/creature_names:",
+	--objectName = "@mob/creature_names:",
 	customName = "Revan (Clone)",
 	socialGroup = "dark_jedi",
 	pvpFaction = "",
@@ -30,33 +30,21 @@ revan_clone = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "g_carbine_heroic_sd", chance = 500000},
-				{group = "g_carbine_kun_massassi", chance = 500000},
-				{group = "g_polearm_heroic_sd", chance = 500000},
-				{group = "g_pvp_bf_knuckler", chance = 500000},
-				{group = "g_sword_pvp_bf_01", chance = 500000},
-				{group = "g_pistol_heroic_exar", chance = 500000},
-				{group = "g_pistol_heroic_sd", chance = 500000},
-				{group = "g_som_2h_sword_obsidian", chance = 500000},
-				{group = "g_som_2h_sword_tulrus", chance = 500000},
-				{group = "g_som_sword_obsidian", chance = 500000},
-				{group = "weapons_all", chance = 4300000},
-				{group = "holocron_light", chance = 100000},
-				{group = "g_ep3_loot_necrosis", chance = 600000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
-		  {
+		{
 			groups = {
-				{group = "crystals_premium", chance = 2500000},
-				{group = "clothing_attachments", chance = 2000000},
-				{group = "armor_attachments", chance = 2000000},
-				{group = "g_named_crystals", chance = 1000000},
-				{group = "weapons_all", chance = 2500000}
-		},
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
 			lootChance = 10000000
-		  },
-	},
+		},
+		},
 	weapons = {"dark_jedi_weapons_gen4"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(lightsabermaster)

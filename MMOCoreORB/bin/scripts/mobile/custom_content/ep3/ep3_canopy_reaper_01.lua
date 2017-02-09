@@ -1,7 +1,7 @@
 ep3_canopy_reaper_01 = Creature:new {
 	customName = "Canopy Reaper",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 130,
 	chanceHit = 1.33,
@@ -30,22 +30,21 @@ ep3_canopy_reaper_01 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 2250000},
-				{group = "pistols", chance = 1000000},
-				{group = "rifles", chance = 1000000},
-				{group = "carbines", chance = 1000000},
-				{group = "bounty_hunter_armor", chance = 250000},
-				{group = "armor_attachments", chance = 2250000},
-				{group = "melee_weapons", chance = 1000000},
-				{group = "kashyyykian_black_mtn_armor", chance = 250000},
-				{group = "kashyyykian_ceremonial_armor", chance = 250000},
-				{group = "kashyyykian_hunting_armor", chance = 250000},
-				{group = "g_ep3_chiss_poacher_backpack", chance = 250000},
-				{group = "g_lance_kaminoan", chance = 250000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",

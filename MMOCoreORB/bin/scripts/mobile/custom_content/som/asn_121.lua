@@ -1,17 +1,17 @@
 asn_121 = Creature:new {
 	customName = "ASN-121",
-	socialGroup = "",
+	socialGroup = "geonosian",
 	pvpFaction = "",
 	faction = "",
-	level = 300,
-	chanceHit = 50,
-	damageMin = 1550,
-	damageMax = 1800,
-	baseXp = 235000,
-	baseHAM = 160000,
-	baseHAMmax = 190000,
-	armor = 3,
-	resists = {85,95,100,60,100,25,40,85,-1},
+	level = 150,
+	chanceHit = 35.00,
+	damageMin = 520,
+	damageMax = 1750,
+	baseXp = 15000,
+	baseHAM = 150000,
+	baseHAMmax = 175000,
+	armor = 0,
+	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -20,9 +20,9 @@ asn_121 = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0,
-	ferocity = 0,
+	ferocity = 1,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + STALKER,
+	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
@@ -30,14 +30,21 @@ asn_121 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "death_watch_bunker_commoners", chance = 6300000},
-				{group = "death_watch_bunker_lieutenants", chance = 3500000},
-				{group = "death_watch_bunker_ingredient_protective",  chance = 100000},
-				{group = "death_watch_bunker_ingredient_binary",  chance = 100000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	conversationTemplate = "",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
 	defaultAttack = "creaturerangedattack"

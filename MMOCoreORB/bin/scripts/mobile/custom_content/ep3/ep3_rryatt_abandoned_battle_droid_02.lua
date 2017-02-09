@@ -30,15 +30,21 @@ ep3_rryatt_abandoned_battle_droid_02 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "g_carbine_e5", chance = 1000000},
-				{group = "rifles", chance = 2000000},
-				{group = "pistols", chance = 2000000},
-				{group = "clothing_attachments", chance = 2500000},
-				{group = "armor_attachments", chance = 2500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
-			lootChance = 6500000
-		}
-	},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",
 	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster)

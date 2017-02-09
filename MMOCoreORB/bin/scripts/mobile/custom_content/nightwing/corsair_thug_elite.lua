@@ -1,7 +1,7 @@
 corsair_thug_elite = Creature:new {
 	customName = "Mike (Dune Corsair Lt.)",
-	socialGroup = "corsair",
-	faction = "corsair",
+	socialGroup = "self",
+	faction = "",
 	level = 100,
 	chanceHit = 0.85,
 	damageMin = 570,
@@ -29,13 +29,21 @@ corsair_thug_elite = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				--{group = "g_carbine_bounty_ee3"", chance = 4000000},
-				--{group = "g_blasterfist", chance = 3000000},
-				{group = "composite_armor", chance = 6000000},
-				{group = "junk", chance = 4000000},
-			}
-		}
-	},
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"ranged_weapons"},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,brawlernovice)

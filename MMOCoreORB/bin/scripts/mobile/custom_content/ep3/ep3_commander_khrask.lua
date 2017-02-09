@@ -1,7 +1,7 @@
 ep3_commander_khrask = Creature:new {
 	customName = "Commander Khrask",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 30,
 	chanceHit = 0.33,
@@ -27,7 +27,24 @@ ep3_commander_khrask = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_commander_khrask.iff"},
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",

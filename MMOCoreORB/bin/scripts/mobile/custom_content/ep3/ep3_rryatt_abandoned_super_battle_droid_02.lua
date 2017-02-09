@@ -8,7 +8,7 @@ ep3_rryatt_abandoned_super_battle_droid_02 = Creature:new {
 	damageMin = 1200,
 	damageMax = 2300,
 	baseXp = 19000,
-	baseHAM = 230000,
+	baseHAM = 150000,
 	baseHAMmax = 230000,
 	armor = 2,
 	resists = {85,95,100,60,100,25,40,85,-1},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
@@ -30,21 +30,24 @@ ep3_rryatt_abandoned_super_battle_droid_02 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000},
-				{group = "weapons_all", chance = 2500000},
-				{group = "g_pistol_trando_suppressor", chance = 500000},
-				{group = "g_pistol_renegade", chance = 500000},
-				{group = "g_pistol_pvp", chance = 500000},
-				{group = "g_pistol_dd6",  chance = 500000},
-				{group = "g_avatar_trando_special",  chance = 500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
-			lootChance = 7500000
-		}
-	},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	conversationTemplate = "",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "creaturerangedattack"
+	defaultAttack = "creaturerangedattack",
 }
 
 CreatureTemplates:addCreatureTemplate(ep3_rryatt_abandoned_super_battle_droid_02, "ep3_rryatt_abandoned_super_battle_droid_02")

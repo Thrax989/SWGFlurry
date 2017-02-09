@@ -1,7 +1,7 @@
 ep3_nautolan_hunter = Creature:new {
 	customName = "Nautolan Hunter",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 120,
 	chanceHit = 4.50,
@@ -30,20 +30,21 @@ ep3_nautolan_hunter = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "holocron_dark", chance = 400000},
-				{group = "holocron_light", chance = 400000},
-				{group = "crystals_premium", chance = 400000},
-				{group = "color_crystals", chance = 1000000},
-				{group = "rifles", chance = 1300000},
-				{group = "pistols", chance = 1300000},
-				{group = "melee_weapons", chance = 1300000},
-				{group = "armor_attachments", chance = 900000},
-				{group = "clothing_attachments", chance = 900000},
-				{group = "carbines", chance = 1300000},
-				{group = "dark_jedi_common", chance = 800000}
-			}
-		}
-	},
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"light_jedi_weapons"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",

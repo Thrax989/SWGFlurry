@@ -1,6 +1,6 @@
 obi_wan_ghost = Creature:new {
 	customName = "Obi Wan",
-	socialGroup = "",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "rebel",
 	level = 300,
@@ -27,59 +27,22 @@ obi_wan_ghost = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/som/obi_wan_ghost.iff"},
-		lootGroups = {
+	lootGroups = {
 		{
 			groups = {
-				{group = "saberhand3", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "nge1", chance = 10000000}
-			},
-			lootChance = 5000000
-		 },
-		{
-			groups = {
-				{group = "wearables_all", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "wearables_rare", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "weapons_all", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "melee_weapons", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "saberhand3", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
-		 {
+		{
 			groups = {
-				{group = "saberhand1", chance = 5000000},
-				{group = "saberhand2", chance = 5000000}
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		},	
 	weapons = {"dark_jedi_weapons_gen4"},

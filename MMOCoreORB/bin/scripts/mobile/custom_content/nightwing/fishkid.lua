@@ -1,7 +1,7 @@
 fishkid= Creature:new {
 	customName = "Imma D'ummy fo'Freddy",
-	socialGroup = "corsair",
-	faction = "corsair",
+	socialGroup = "self",
+	faction = "",
 	level = 336,
 	chanceHit = 45.0,
 	damageMin = 2270,
@@ -28,24 +28,22 @@ fishkid= Creature:new {
 	templates = {"object/mobile/dressed_nym_guard_elite_hum_m.iff"},
 	lootGroups = {
 		{
-	        groups = {
-				{group = "weapons", chance = 3300000},
-				{group = "g_ep3_chiss_poacher_backpack", chance = 3300000},
-				{group = "redeed4", chance = 3400000}
+			groups = {
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
-			lootChance = 6500000
+			lootChance = 10000000
 		},
 		{
-	        groups = {
-				{group = "composite_armor", chance = 2000000},
-				{group = "ubese_armor", chance = 2000000},
-				{group = "melee_two_handed", chance = 2000000},
-				{group = "rifles", chance = 2000000},
-				{group = "wearables_all", chance = 2000000},
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
 			},
-			lootChance = 3500000
-		}
-	},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"ranged_weapons"},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,brawlernovice)

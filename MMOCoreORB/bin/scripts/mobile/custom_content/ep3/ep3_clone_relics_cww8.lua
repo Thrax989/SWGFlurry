@@ -1,7 +1,7 @@
 ep3_clone_relics_cww8 = Creature:new {
 	customName = "CWW-8",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 80,
 	chanceHit = 0.8,
@@ -30,12 +30,21 @@ ep3_clone_relics_cww8 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "coa_encoded_disk_fragments", chance = 3600000},
-				{group = "coa2_decoder_components", chance = 3600000},
-				{group = "coa2_rebel_message", chance = 2800000}
-			}
-		}
-	},
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",

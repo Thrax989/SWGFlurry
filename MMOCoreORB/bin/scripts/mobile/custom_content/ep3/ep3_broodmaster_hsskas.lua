@@ -30,22 +30,21 @@ ep3_broodmaster_hsskas = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 2500000},
-				{group = "g_baton_avatar_trando_stun_stick", chance = 500000},
-				{group = "g_lance_trando", chance = 500000},
-				{group = "g_carbine_avatar_trando_e5", chance = 500000},
-				{group = "g_carbine_avatar_trando", chance = 500000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "g_pistol_avatar_trando_special", chance = 500000},
-				{group = "g_pistol_trando_suppressor", chance = 500000},
-				{group = "g_rifle_avatar_laser_trando", chance = 500000},
-				{group = "g_carbine_slug", chance = 500000},
-				{group = "g_jinkins_j1_rifle", chance = 500000},
-				{group = "g_pistol_ion_stunner", chance = 500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",

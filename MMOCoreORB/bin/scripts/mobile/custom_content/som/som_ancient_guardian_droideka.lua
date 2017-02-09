@@ -8,7 +8,7 @@ som_ancient_guardian_droideka = Creature:new {
 	damageMin = 1200,
 	damageMax = 2300,
 	baseXp = 19000,
-	baseHAM = 230000,
+	baseHAM = 150000,
 	baseHAMmax = 230000,
 	armor = 3,
 	resists = {85,95,100,60,100,25,40,85,-1},
@@ -30,17 +30,23 @@ som_ancient_guardian_droideka = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "death_watch_bunker_commoners", chance = 6300000},
-				{group = "death_watch_bunker_lieutenants", chance = 3500000},
-				{group = "death_watch_bunker_ingredient_protective",  chance = 100000},
-				{group = "death_watch_bunker_ingredient_binary",  chance = 100000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
-	conversationTemplate = "",
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
+	defaultAttack = "attack",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "creaturerangedattack"
 }
 
 CreatureTemplates:addCreatureTemplate(som_ancient_guardian_droideka, "som_ancient_guardian_droideka")

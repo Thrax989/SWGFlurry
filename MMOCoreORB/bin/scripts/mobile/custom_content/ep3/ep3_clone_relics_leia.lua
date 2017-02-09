@@ -1,7 +1,7 @@
 ep3_clone_relics_leia = Creature:new {
 	customName = "Princess Leia",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 300,
 	chanceHit = 75.00,
@@ -27,65 +27,22 @@ ep3_clone_relics_leia = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_clone_relics_leia.iff"},
-		lootGroups = {
+	lootGroups = {
 		{
 			groups = {
-				{group = "saberhand3", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "nge1", chance = 10000000}
-			},
-			lootChance = 5000000
-		 },
-		 {
-			groups = {
-				{group = "barc_speeder_deed_group", chance = 10000000}
-			},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "wearables_rare", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "weapons_all", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "melee_weapons", chance = 10000000}
-			},
-			lootChance = 10000000
-		 },
-		{
-			groups = {
-				{group = "saberhand3", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
-		 {
+		{
 			groups = {
-				{group = "saberhand1", chance = 5000000},
-				{group = "saberhand2", chance = 5000000}
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		},	
 	weapons = {"luke_skywalker_weapons"},

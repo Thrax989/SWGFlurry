@@ -1,17 +1,17 @@
 volcano_cyborg_lt = Creature:new {
 	customName = "Volcano cyborg",
-	socialGroup = "self",
+	socialGroup = "geonosian",
 	pvpFaction = "",
 	faction = "",
-	level = 300,
-	chanceHit = 50,
-	damageMin = 1550,
-	damageMax = 2000,
-	baseXp = 5335,
-	baseHAM = 159000,
-	baseHAMmax = 183000,
-	armor = 3,
-	resists = {55,55,70,45,75,80,55,45,-1},
+	level = 150,
+	chanceHit = 35.00,
+	damageMin = 520,
+	damageMax = 1750,
+	baseXp = 15000,
+	baseHAM = 150000,
+	baseHAMmax = 175000,
+	armor = 0,
+	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -20,9 +20,9 @@ volcano_cyborg_lt = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0,
-	ferocity = 0,
-	pvpBitmask = ATTACKABLE,
-	creatureBitmask = PACK + STALKER,
+	ferocity = 1,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
@@ -30,21 +30,24 @@ volcano_cyborg_lt = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 65000000},
-				{group = "pistols", chance = 750000},
-				{group = "rifles", chance = 750000},
-				{group = "carbines", chance = 750000},
-				{group = "bounty_hunter_armor", chance = 200000},
-				{group = "blacksunhelm1", chance = 500000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "blacksun_rare", chance = 500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
-		}
-	},
-	weapons = {"pirate_weapons_heavy"},
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
+	weapons = {"st_bombardier_weapons"},
 	conversationTemplate = "",
-	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,swordsmanmaster,pistoleermaster)
+	attacks = merge(commandomaster)
 }
 
 CreatureTemplates:addCreatureTemplate(volcano_cyborg_lt, "volcano_cyborg_lt")

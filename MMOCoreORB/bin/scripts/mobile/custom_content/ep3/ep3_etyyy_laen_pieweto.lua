@@ -1,7 +1,7 @@
 ep3_etyyy_laen_pieweto = Creature:new {
 	customName = "Laen Pieweto, Chiss Poacher Leader",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 47,
 	chanceHit = 0.47,
@@ -30,16 +30,21 @@ ep3_etyyy_laen_pieweto = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 1000000},
-				{group = "pistols", chance = 2000000},
-				{group = "rifles", chance = 2000000},
-				{group = "carbines", chance = 2000000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "melee_weapons", chance = 1500000},
-				{group = "g_ep3_chiss_poacher_backpack", chance = 500000}
-			}
-		}
-	},
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",

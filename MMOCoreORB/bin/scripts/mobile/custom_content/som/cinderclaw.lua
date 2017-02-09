@@ -1,6 +1,6 @@
 cinderclaw = Creature:new {
 	customName = "Cinderclaw",
-	socialGroup = "darkside",
+	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
 	level = 300,
@@ -31,32 +31,21 @@ cinderclaw = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "g_ep3_loot_liquidsilver",  chance = 1500000},
-				{group = "g_ep3_loot_deathrain", chance = 1500000},
-				{group = "g_ep3_loot_dawnsorrow", chance = 1500000},
-				{group = "g_carbine_underslung", chance = 1500000},
-				{group = "g_carbine_rotary_underslung", chance = 1500000},
-				{group = "g_massassiknuckler", chance = 1500000},
-				{group = "g_lance_cryo",  chance = 1000000}
-			}
-		},
-		 {
-			groups = {
-				{group = "barc_speeder_deed_group", chance = 10000000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
-			lootChance = 100000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "g_lance_electric_polearm", chance = 2000000},
-				{group = "g_ep3_loot_hydra", chance = 2000000},
-				{group = "g_rifle_naktra_crystal", chance = 2000000},
-				{group = "g_som_carbine_republic_sfor", chance = 2000000},
-				{group = "g_sword_mace_junti", chance = 2000000}
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
 			},
-			lootChance = 5000000
-		}
-	},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"creature_spit_large_yellow"},
 	conversationTemplate = "",
 	attacks = {

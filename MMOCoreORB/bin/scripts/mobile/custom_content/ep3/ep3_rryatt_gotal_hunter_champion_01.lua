@@ -1,7 +1,7 @@
 ep3_rryatt_gotal_hunter_champion_01 = Creature:new {
 	customName = "Gotal Hunter Champion",
-	randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "",
+	--randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "self",
 	faction = "",
 	level = 115,
 	chanceHit = 3.85,
@@ -30,15 +30,21 @@ ep3_rryatt_gotal_hunter_champion_01 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 1000000},
-				{group = "pistols", chance = 2000000},
-				{group = "rifles", chance = 2000000},
-				{group = "carbines", chance = 2000000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "melee_weapons", chance = 2000000},
-			}
-		}
-	},
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",
