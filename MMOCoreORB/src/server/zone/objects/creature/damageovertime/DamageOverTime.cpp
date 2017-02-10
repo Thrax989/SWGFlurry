@@ -185,19 +185,21 @@ uint32 DamageOverTime::doBleedingTick(CreatureObject* victim, CreatureObject* at
 
 	Reference<CreatureObject*> attackerRef = attacker;
 	Reference<CreatureObject*> victimRef = victim;
+	uint8 attribute = this->attribute;
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(victimRef);
+	EXECUTE_TASK_4(attackerRef, victimRef, attribute, damage, {
+			Locker locker(victimRef_p);
 
-		Locker crossLocker(attackerRef, victimRef);
+			Locker crossLocker(attackerRef_p, victimRef_p);
 
-		victimRef->inflictDamage(attackerRef, attribute, damage, false);
+			victimRef_p->inflictDamage(attackerRef_p, attribute_p, damage_p, false);
 
-		if (victimRef->hasAttackDelay())
-			victimRef->removeAttackDelay();
+			if (victimRef_p->hasAttackDelay())
+				victimRef_p->removeAttackDelay();
 
-		victimRef->playEffect("clienteffect/dot_bleeding.cef","");
-	}, "BleedTickLambda");
+			victimRef_p->playEffect("clienteffect/dot_bleeding.cef","");
+	});
+
 
 	return damage;
 }
@@ -224,29 +226,34 @@ uint32 DamageOverTime::doFireTick(CreatureObject* victim, CreatureObject* attack
 
 	Reference<CreatureObject*> attackerRef = attacker;
 	Reference<CreatureObject*> victimRef = victim;
+	uint8 attribute = this->attribute;
+	uint32 strength = this->strength;
+	uint32 secondaryStrength = this->secondaryStrength;
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(victimRef);
+	EXECUTE_TASK_6(attackerRef, victimRef, attribute, damage, woundsToApply, secondaryStrength, {
+			Locker locker(victimRef_p);
 
-		Locker crossLocker(attackerRef, victimRef);
+			Locker crossLocker(attackerRef_p, victimRef_p);
 
-		if (woundsToApply > 0) {
-			// need to do damage to account for wounds first, or it will possibly get
-			// applied twice
-			if (attribute % 3 == 0)
-				victimRef->inflictDamage(attackerRef, attribute, woundsToApply, true);
+			if (woundsToApply_p > 0)
+			{
+				// need to do damage to account for wounds first, or it will possibly get
+				// applied twice
+				if (attribute_p % 3 == 0)
+					victimRef_p->inflictDamage(attackerRef_p, attribute_p, woundsToApply_p, true);
 
-			victimRef->addWounds(attribute, woundsToApply, true, false);
-		}
+				victimRef_p->addWounds(attribute_p, woundsToApply_p, true, false);
+			}
 
-		victimRef->addShockWounds((int)(secondaryStrength * 0.075f));
+			victimRef_p->addShockWounds((int)(secondaryStrength_p * 0.075f));
 
-		victimRef->inflictDamage(attackerRef, attribute - attribute % 3, damage, true);
-		if (victimRef->hasAttackDelay())
-			victimRef->removeAttackDelay();
+			victimRef_p->inflictDamage(attackerRef_p, attribute_p - attribute_p % 3, damage_p, true);
+			if (victimRef_p->hasAttackDelay())
+				victimRef_p->removeAttackDelay();
 
-		victimRef->playEffect("clienteffect/dot_fire.cef","");
-	}, "FireTickLambda");
+			victimRef_p->playEffect("clienteffect/dot_fire.cef","");
+	});
+
 
 	return damage;
 }
@@ -268,18 +275,19 @@ uint32 DamageOverTime::doPoisonTick(CreatureObject* victim, CreatureObject* atta
 
 	Reference<CreatureObject*> attackerRef = attacker;
 	Reference<CreatureObject*> victimRef = victim;
+	uint8 attribute = this->attribute;
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(victimRef);
+	EXECUTE_TASK_4(attackerRef, victimRef, attribute, damage, {
+			Locker locker(victimRef_p);
 
-		Locker crossLocker(attackerRef, victimRef);
+			Locker crossLocker(attackerRef_p, victimRef_p);
 
-		victimRef->inflictDamage(attackerRef, attribute, damage, false);
-		if (victimRef->hasAttackDelay())
-			victimRef->removeAttackDelay();
+			victimRef_p->inflictDamage(attackerRef_p, attribute_p, damage_p, false);
+			if (victimRef_p->hasAttackDelay())
+				victimRef_p->removeAttackDelay();
 
-		victimRef->playEffect("clienteffect/dot_poisoned.cef","");
-	}, "PoisonTickLambda");
+			victimRef_p->playEffect("clienteffect/dot_poisoned.cef","");
+	});
 
 	return damage;
 }
@@ -298,29 +306,31 @@ uint32 DamageOverTime::doDiseaseTick(CreatureObject* victim, CreatureObject* att
 
 	damage = MIN(damage, maxDamage);
 
+	uint8 attribute = this->attribute;
+	uint32 strength = this->strength;
 	Reference<CreatureObject*> attackerRef = attacker;
 	Reference<CreatureObject*> victimRef = victim;
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(victimRef);
-		Locker crossLocker(attackerRef, victimRef);
+	EXECUTE_TASK_5(attackerRef, victimRef, attribute, strength, damage, {
+			Locker locker(victimRef_p);
+			Locker crossLocker(attackerRef_p, victimRef_p);
 
-		if ((int)damage > 0) {
-			// need to do damage to account for wounds first, or it will possibly get
-			// applied twice
-			if (attribute % 3 == 0)
-				victimRef->inflictDamage(attackerRef, attribute, damage, true);
+			if ((int)damage_p > 0) {
+				// need to do damage to account for wounds first, or it will possibly get
+				// applied twice
+				if (attribute_p % 3 == 0)
+					victimRef_p->inflictDamage(attackerRef_p, attribute_p, damage_p, true);
 
-			victimRef->addWounds(attribute, damage, true, false);
-		}
+				victimRef_p->addWounds(attribute_p, damage_p, true, false);
+			}
 
-		victimRef->addShockWounds((int)(strength * 0.075f));
+			victimRef_p->addShockWounds((int)(strength_p * 0.075f));
 
-		if (victimRef->hasAttackDelay())
-			victimRef->removeAttackDelay();
+			if (victimRef_p->hasAttackDelay())
+				victimRef_p->removeAttackDelay();
 
-		victimRef->playEffect("clienteffect/dot_diseased.cef","");
-	}, "DiseaseTickLambda");
+			victimRef_p->playEffect("clienteffect/dot_diseased.cef","");
+	});
 
 	return damage;
 }
@@ -333,18 +343,18 @@ uint32 DamageOverTime::doForceChokeTick(CreatureObject* victim, CreatureObject* 
 	Reference<CreatureObject*> attackerRef = attacker;
 	Reference<CreatureObject*> victimRef = victim;
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(victimRef);
+	EXECUTE_TASK_4(victimRef, attackerRef, attribute, strength, {
+			Locker locker(victimRef_p);
 
-		Locker crossLocker(attackerRef, victimRef);
+			Locker crossLocker(attackerRef_p, victimRef_p);
 
-		victimRef->inflictDamage(attackerRef, attribute, strength, true);
-		if (victimRef->hasAttackDelay())
-			victimRef->removeAttackDelay();
+			victimRef_p->inflictDamage(attackerRef_p, attribute_p, strength_p, true);
+			if (victimRef_p->hasAttackDelay())
+				victimRef_p->removeAttackDelay();
 
-		victimRef->playEffect("clienteffect/pl_force_choke.cef", "");
-		victimRef->sendSystemMessage("@combat_effects:choke_single");
-	}, "ForceChokeTickLambda");
+			victimRef_p->playEffect("clienteffect/pl_force_choke.cef", "");
+			victimRef_p->sendSystemMessage("@combat_effects:choke_single");
+	});
 
 	return strength;
 

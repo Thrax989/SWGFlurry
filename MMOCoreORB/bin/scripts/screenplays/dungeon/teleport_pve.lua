@@ -6,7 +6,7 @@ teleport_pveScreenPlay = ScreenPlay:new {
 registerScreenPlay("teleport_pveScreenPlay", true)
 
 function teleport_pveScreenPlay:start()
-	if (isZoneEnabled("corellia")) then
+	if (isZoneEnabled("tatooine")) then
 		self:spawnMobiles()
 		self:spawnSceneObjects() 
 	end
@@ -20,10 +20,10 @@ end
 
 function teleport_pveScreenPlay:spawnMobiles()
 
-	local pCollector1 = spawnMobile("corellia", "droidekaport", 1, -167.354, 28, -4739.3, 45, 0)
+	local pCollector1 = spawnMobile("tatooine", "droidekaport", 120, 3483.1, 5.0, -4838, 119, 0)
 	local collector1 = LuaCreatureObject(pCollector1)
-	collector1:setOptionsBitmask(INTERESTING)
-	collector1:setCustomObjectName("\\#00FF00Travel To The Geo Cave")
+	collector1:setOptionsBitmask(264)
+	collector1:setCustomObjectName("\\#FF0000Travel To Test")
 	createObserver(OBJECTRADIALUSED, "teleport_pveScreenPlay", "teleportCor", pCollector1)
 	if (pCollecter1~= nil) then 
 		return
@@ -31,6 +31,6 @@ function teleport_pveScreenPlay:spawnMobiles()
 end
 function teleport_pveScreenPlay:teleportCor(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("yavin4", -6494, 83, -418, 0)
+	player:switchZone("tatooine", 3526, 5, -4803, 0)
 	return 0
 end

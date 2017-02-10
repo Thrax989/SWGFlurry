@@ -35,7 +35,7 @@ SharedTangibleObjectTemplate::SharedTangibleObjectTemplate() {
 
 	useCount = 0;
 
-	factoryCrateSize = 100;
+	factoryCrateSize = 0;
 
 	sliceable = false;
 
@@ -48,6 +48,8 @@ SharedTangibleObjectTemplate::SharedTangibleObjectTemplate() {
 
 	skillMods.setNoDuplicateInsertPlan();
 	skillMods.setNullValue(0);
+
+	factoryCrateSize = 100;
 }
 
 SharedTangibleObjectTemplate::~SharedTangibleObjectTemplate() {

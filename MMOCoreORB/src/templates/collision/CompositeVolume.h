@@ -12,7 +12,7 @@
 
 class CompositeVolume : public BaseBoundingVolume {
 protected:
-	Vector<Reference<BaseBoundingVolume*> > volumes;
+	Vector<BaseBoundingVolume*> volumes;
 	AABB bbox;
 public:
 	bool isCompositeVolume() { return true; }

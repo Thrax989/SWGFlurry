@@ -1,25 +1,6 @@
 local ObjectManager = require("managers.object.object_manager")
 
-VillageJediManagerCommon = ScreenPlay:new {
-	forceSensitiveBranches = {
-		"force_sensitive_combat_prowess_ranged_accuracy",
-		"force_sensitive_combat_prowess_ranged_speed",
-		"force_sensitive_combat_prowess_melee_accuracy",
-		"force_sensitive_combat_prowess_melee_speed",
-		"force_sensitive_enhanced_reflexes_ranged_defense",
-		"force_sensitive_enhanced_reflexes_melee_defense",
-		"force_sensitive_enhanced_reflexes_vehicle_control",
-		"force_sensitive_enhanced_reflexes_survival",
-		"force_sensitive_crafting_mastery_experimentation",
-		"force_sensitive_crafting_mastery_assembly",
-		"force_sensitive_crafting_mastery_repair",
-		"force_sensitive_crafting_mastery_technique",
-		"force_sensitive_heightened_senses_healing",
-		"force_sensitive_heightened_senses_surveying",
-		"force_sensitive_heightened_senses_persuasion",
-		"force_sensitive_heightened_senses_luck"
-	}
-}
+VillageJediManagerCommon = ScreenPlay:new {}
 
 VILLAGE_JEDI_PROGRESSION_SCREEN_PLAY_STATE_STRING = "VillageJediProgression"
 VILLAGE_JEDI_PROGRESSION_GLOWING = 1
@@ -39,14 +20,6 @@ function VillageJediManagerCommon.setJediProgressionScreenPlayState(pPlayer, sta
 	end
 
 	CreatureObject(pPlayer):setScreenPlayState(state, VILLAGE_JEDI_PROGRESSION_SCREEN_PLAY_STATE_STRING)
-end
-
-function VillageJediManagerCommon.isVillageEligible(pPlayer)
-	if (pPlayer == nil) then
-		return false
-	end
-
-	return VillageJediManagerCommon.hasJediProgressionScreenPlayState(pPlayer, VILLAGE_JEDI_PROGRESSION_HAS_VILLAGE_ACCESS)
 end
 
 -- Check if the player has the jedi progression screen play state.
@@ -105,7 +78,7 @@ function VillageJediManagerCommon.setActiveQuestThisPhase(pPlayer)
 	local phaseID = VillageJediManagerTownship:getCurrentPhaseID()
 	VillageJediManagerCommon.addToActiveQuestList(pPlayer)
 	setQuestStatus(SceneObject(pPlayer):getObjectID() .. ":village:lastActiveQuest", phaseID)
-
+	
 	CreatureObject(pPlayer):sendSystemMessage("@quest/force_sensitive/utils:quest_accepted")
 end
 
@@ -176,22 +149,6 @@ function VillageJediManagerCommon.removeFromActiveQuestList(pPlayer)
 	if (questMap:hasMapRow(playerID)) then
 		questMap:deleteMapRow(playerID)
 	end
-end
-
-function VillageJediManagerCommon.getLearnedForceSensitiveBranches(pPlayer)
-	if (pPlayer == nil) then
-		return 0
-	end
-
-	local branchesLearned = 0
-
-	for i = 1, #VillageJediManagerCommon.forceSensitiveBranches, 1 do
-		if (CreatureObject(pPlayer):hasSkill(VillageJediManagerCommon.forceSensitiveBranches[i] .. "_04")) then
-			branchesLearned = branchesLearned + 1
-		end
-	end
-
-	return branchesLearned
 end
 
 return VillageJediManagerCommon

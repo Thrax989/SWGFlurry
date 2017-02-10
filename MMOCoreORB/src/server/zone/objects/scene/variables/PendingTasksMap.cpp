@@ -67,7 +67,7 @@ bool PendingTasksMap::runMoreOrderedTasks(server::zone::objects::scene::SceneObj
 	orderedTasks.remove(0);
 
 	if (orderedTasks.size() > 0) {
-		Reference<OrderedTaskExecutioner*> task = new OrderedTaskExecutioner(sceneObject);
+		OrderedTaskExecutioner* task = new OrderedTaskExecutioner(sceneObject);
 		task->execute();
 
 		return true;

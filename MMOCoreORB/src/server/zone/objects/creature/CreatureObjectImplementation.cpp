@@ -615,62 +615,63 @@ void CreatureObjectImplementation::addMountedCombatSlow() {
 
 	ManagedReference<CreatureObject*> creo = asCreatureObject();
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(creo);
-		Locker clocker(parent, creo);
+	EXECUTE_TASK_2(creo, parent, {
+			Locker locker(creo_p);
+			Locker clocker(parent_p, creo_p);
 
-		float newSpeed = 1;
-		SharedObjectTemplate* templateData = creo->getObjectTemplate();
-		SharedCreatureObjectTemplate* playerTemplate = dynamic_cast<SharedCreatureObjectTemplate*> (templateData);
+			float newSpeed = 1;
+			SharedObjectTemplate* templateData = creo_p->getObjectTemplate();
+			SharedCreatureObjectTemplate* playerTemplate = dynamic_cast<SharedCreatureObjectTemplate*> (templateData);
 
-		if (playerTemplate != NULL) {
-			const Vector<FloatParam>& speedTempl = playerTemplate->getSpeed();
-			newSpeed = speedTempl.get(0);
-		}
+			if (playerTemplate != NULL) {
+				const Vector<FloatParam>& speedTempl = playerTemplate->getSpeed();
+				newSpeed = speedTempl.get(0);
+			}
 
-		float oldSpeed = 1;
-		PetManager* petManager = creo->getZoneServer()->getPetManager();
+			float oldSpeed = 1;
+			PetManager* petManager = creo_p->getZoneServer()->getPetManager();
 
-		if (petManager != NULL) {
-			oldSpeed = petManager->getMountedRunSpeed(parent);
-		}
+			if (petManager != NULL) {
+				oldSpeed = petManager->getMountedRunSpeed(parent_p);
+			}
 
-		float magnitude = newSpeed / oldSpeed;
+			float magnitude = newSpeed / oldSpeed;
 
-		uint32 crc = STRING_HASHCODE("mounted_combat_slow");
-		StringIdChatParameter startStringId("combat_effects", "mount_slow_for_combat"); // Your mount slows down to prepare for combat.
+			uint32 crc = STRING_HASHCODE("mounted_combat_slow");
+			StringIdChatParameter startStringId("combat_effects", "mount_slow_for_combat"); // Your mount slows down to prepare for combat.
 
-		ManagedReference<PlayerVehicleBuff*> buff = new PlayerVehicleBuff(parent, crc, 604800, BuffType::OTHER);
+			ManagedReference<PlayerVehicleBuff*> buff = new PlayerVehicleBuff(parent_p, crc, 604800, BuffType::OTHER);
 
-		Locker blocker(buff);
+			Locker blocker(buff);
 
-		buff->setSpeedMultiplierMod(magnitude);
-		buff->setAccelerationMultiplierMod(magnitude);
-		buff->setStartMessage(startStringId);
+			buff->setSpeedMultiplierMod(magnitude);
+			buff->setAccelerationMultiplierMod(magnitude);
+			buff->setStartMessage(startStringId);
 
-		parent->addBuff(buff);
-	}, "AddMountedCombatSlowLambda");
+			parent_p->addBuff(buff);
+	});
 }
+
 
 void CreatureObjectImplementation::removeMountedCombatSlow(bool showEndMessage) {
 	ManagedReference<CreatureObject*> creo = asCreatureObject();
 	ManagedReference<CreatureObject*> vehicle = getParent().get().castTo<CreatureObject*>();
-	if (vehicle == NULL)
+	if(vehicle == NULL)
 		return;
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(vehicle);
+	EXECUTE_TASK_3(vehicle, creo, showEndMessage, {
+		Locker locker(vehicle_p);
 		uint32 buffCRC = STRING_HASHCODE("mounted_combat_slow");
-		bool hasBuff = vehicle->hasBuff(buffCRC);
-		if (hasBuff) {
-			vehicle->removeBuff(buffCRC);
-			if (showEndMessage) {
+		bool hasBuff = vehicle_p->hasBuff(buffCRC);
+		if(hasBuff) {
+			vehicle_p->removeBuff(buffCRC);
+			if(showEndMessage_p) {
 				//I don't think we want to show this on dismount, or after a gallop
 				StringIdChatParameter endStringId("combat_effects", "mount_speed_after_combat"); // Your mount speeds up.
-				creo->sendSystemMessage(endStringId);
+				creo_p->sendSystemMessage(endStringId);
 			}
 		}
-	}, "RemoveMountedCombatSlowLambda");
+	});
 }
 
 void CreatureObjectImplementation::setCombatState() {

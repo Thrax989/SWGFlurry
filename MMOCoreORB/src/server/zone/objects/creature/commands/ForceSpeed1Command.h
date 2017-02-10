@@ -19,10 +19,6 @@ public:
 	}
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-		if (!creature->hasSkill("force_discipline_enhancements_movement_01")){
- 			creature->sendSystemMessage("You lack sufficient skill to use the Force Speed Command");
- 			return GENERALERROR;
- 		}
 		return doJediSelfBuffCommand(creature);
 	}
 

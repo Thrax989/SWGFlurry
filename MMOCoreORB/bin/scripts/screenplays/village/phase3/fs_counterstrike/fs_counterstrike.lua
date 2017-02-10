@@ -281,16 +281,12 @@ function FsCounterStrike:doPhaseChangeFail(pPlayer)
 	if (not self:isOnQuest(pPlayer)) then
 		return
 	end
-
+	
 	CreatureObject(pPlayer):sendSystemMessage("@fs_quest_village:combat_quest_failed_timeout")
 	self:resetPlayer(pPlayer)
 end
 
 function FsCounterStrike:completeQuest(pPlayer, teamComplete)
-	if (not self:isOnEscort(pPlayer)) then
-		return
-	end
-
 	if (QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ENSURE_CAPTURE)) then
 		QuestManager.completeQuest(pPlayer, QuestManager.quests.FS_CS_ENSURE_CAPTURE)
 	end
@@ -326,12 +322,6 @@ function FsCounterStrike:completeQuest(pPlayer, teamComplete)
 
 		if (pBuffItem == nil) then
 			CreatureObject(pPlayer):sendSystemMessage("Error: Unable to generate item.")
-		else
-			local buffItem = LuaFsBuffItem(pBuffItem)
-			buffItem:setBuffAttribute(6)
-			buffItem:setReuseTime(345600000)
-			buffItem:setBuffValue(900)
-			buffItem:setBuffDuration(5400000)
 		end
 
 		CreatureObject(pPlayer):sendSystemMessage("@fs_quest_village:teamwork_bonus")
@@ -399,17 +389,6 @@ function FsCounterStrike:isOnQuest(pPlayer)
 	return QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_INTRO) or
 		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_KILL5_GUARDS) or
 		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ENSURE_CAPTURE) or
-		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_LAST_CHANCE) or
-		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ESCORT_COMMANDER_PRI) or
-		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ESCORT_COMMANDER_SEC)
-end
-
-function FsCounterStrike:isOnEscort(pPlayer)
-	if (pPlayer == nil) then
-		return false
-	end
-
-	return QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ENSURE_CAPTURE) or
 		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_LAST_CHANCE) or
 		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ESCORT_COMMANDER_PRI) or
 		QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_CS_ESCORT_COMMANDER_SEC)

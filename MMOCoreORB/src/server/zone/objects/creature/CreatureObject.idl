@@ -2077,11 +2077,6 @@ class CreatureObject extends TangibleObject {
 
 	@dirty
 	public native boolean isPlayerCreature();
-	
-	@dirty
-	public int registerToCloseObjectsReceivers() {
-	    return isPlayerCreature();
-	}
 
 	@dirty
 	public abstract boolean isInformantCreature() {

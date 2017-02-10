@@ -71,9 +71,9 @@ int SecurityTerminalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObje
 		return 1;
 
 	if (gcwMan->isTerminalDamaged(securityTerminal)) {
-		Core::getTaskManager()->executeTask([=] () {
-			gcwMan->repairTerminal(player, securityTerminal);
-		}, "RepairTerminalLambda");
+		EXECUTE_TASK_3(player, gcwMan, securityTerminal, {
+				gcwMan_p->repairTerminal(player_p, securityTerminal_p);
+		});
 
 	} else {
 		if (player->containsActiveSession(SessionFacadeType::SLICING)) {

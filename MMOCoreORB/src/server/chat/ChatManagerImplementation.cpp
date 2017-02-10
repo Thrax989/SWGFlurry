@@ -589,42 +589,45 @@ void ChatManagerImplementation::destroyRoom(ChatRoom* roomArg) {
 	if (roomArg == NULL)
 		return;
 
+	ManagedReference<ChatManager*> chatManager = _this.getReferenceUnsafeStaticCast();
 	Reference<ChatRoom*> room = roomArg;
 
-	Core::getTaskManager()->executeTask([=] () {
+	EXECUTE_TASK_2(room, chatManager, {
 		//Notify all players to remove the room from their Channel Browser.
-		ChatOnDestroyRoom* msg = new ChatOnDestroyRoom("SWG", room->getGalaxyName(), room->getOwnerName(), room->getRoomID());
-		broadcastMessage(msg);
+		ChatOnDestroyRoom* msg = new ChatOnDestroyRoom("SWG", room_p->getGalaxyName(), room_p->getOwnerName(), room_p->getRoomID());
+		chatManager_p->broadcastMessage(msg);
 
 		//Clear everyone out of the room on the server side.
-		Locker locker(room);
-		room->removeAllPlayers();
+		Locker locker(room_p);
+		room_p->removeAllPlayers();
 
 		//Check if this room has existing sub rooms.
-		if (room->getSubRoomsSize() > 0) { //Disable the room but don't delete it.
-			disableRoom(room);
+		if (room_p->getSubRoomsSize() > 0) { //Disable the room but don't delete it.
+			chatManager_p->disableRoom(room_p);
 
 			locker.release();
 		} else { //Safe to delete the room.
 			locker.release();
 
-			deleteRoom(room);
+			chatManager_p->deleteRoom(room_p);
 		}
 
 		//Remove from the owner's list of created rooms.
-		ManagedReference<CreatureObject*> owner = room->getZoneServer()->getObject(room->getOwnerID()).castTo<CreatureObject*>();
+		ManagedReference<CreatureObject*> owner = room_p->getZoneServer()->getObject(room_p->getOwnerID()).castTo<CreatureObject*>();
 		if (owner != NULL) {
 			Locker olocker(owner);
 			PlayerObject* ghost = owner->getPlayerObject();
 			if (ghost != NULL)
-				ghost->removeOwnedChatRoom(room->getRoomID());
+				ghost->removeOwnedChatRoom(room_p->getRoomID());
 		}
-	}, "DestroyChatRoomLambda");
+	});
+
 }
 
 void ChatManagerImplementation::deleteRoom(ChatRoom* room) {
 	//room unlocked
 	ManagedReference<ChatRoom*> parent = room->getParent();
+	ManagedReference<ChatManager*> chatManager = _this.getReferenceUnsafeStaticCast();
 
 	if (parent != NULL) {
 		Locker locker(parent);
@@ -633,20 +636,21 @@ void ChatManagerImplementation::deleteRoom(ChatRoom* room) {
 
 		if (parent->isDisabled()) {
 			if (parent->getSubRoomsSize() < 1) {
-				Core::getTaskManager()->executeTask([=] () {
+				EXECUTE_TASK_2(parent, chatManager, {
 					//Locker locker(parent_p);
-					deleteRoom(parent);
-				}, "DeleteChatRoomLambda");
+					chatManager_p->deleteRoom(parent_p);
+				});
 			}
 		}
 	}
 
 	ManagedReference<ChatRoom*> strongRef = room;
 
-	Core::getTaskManager()->executeTask([=] () {
-		removeRoom(strongRef);
-		ObjectManager::instance()->destroyObjectFromDatabase(strongRef->_getObjectID());
-	}, "DeleteChatRoomLambda2");
+	EXECUTE_TASK_2(strongRef, chatManager, {
+		Locker roomLocker(chatManager_p);
+		chatManager_p->removeRoom(strongRef_p);
+		ObjectManager::instance()->destroyObjectFromDatabase(strongRef_p->_getObjectID());
+	});
 }
 
 void ChatManagerImplementation::disableRoom(ChatRoom* room) {
@@ -1007,25 +1011,24 @@ void ChatManagerImplementation::notifySpatialChatObservers(SceneObject* target, 
 	if (target->getObserverCount(ObserverEventType::SPATIALCHATRECEIVED)) {
 		ManagedReference<ChatMessage*> chatMessage = new ChatMessage();
 		chatMessage->setString(message.toString());
-		ManagedReference<SceneObject*> targetObj = target;
-		uint64 sourceOID = source->getObjectID();
 
-		Core::getTaskManager()->executeTask([=] () {
-			if (targetObj == NULL)
-				return;
+		EXECUTE_TASK_3(target, chatMessage, source, {
+				if (source_p == NULL ||target_p == NULL)
+					return;
 
-			Locker locker(targetObj);
+				Locker locker(target_p);
 
-			SortedVector<ManagedReference<Observer*> > observers = targetObj->getObservers(ObserverEventType::SPATIALCHATRECEIVED);
-			for (int oc = 0; oc < observers.size(); oc++) {
-				Observer* observer = observers.get(oc);
-				Locker clocker(observer, targetObj);
-				if (observer->notifyObserverEvent(ObserverEventType::SPATIALCHATRECEIVED, targetObj, chatMessage, sourceOID) == 1)
-					targetObj->dropObserver(ObserverEventType::SPATIALCHATRECEIVED, observer);
-			}
-		}, "NotifySpatialChatObserversLambda");
+				SortedVector<ManagedReference<Observer*> > observers = target_p->getObservers(ObserverEventType::SPATIALCHATRECEIVED);
+				for (int oc = 0; oc < observers.size(); oc++) {
+					Observer* observer = observers.get(oc);
+					Locker clocker(observer, target_p);
+					if (observer->notifyObserverEvent(ObserverEventType::SPATIALCHATRECEIVED, target_p, chatMessage_p, source_p->getObjectID()) == 1)
+						target_p->dropObserver(ObserverEventType::SPATIALCHATRECEIVED, observer);
+				}
+		});
 	}
 }
+
 
 void ChatManagerImplementation::broadcastChatMessage(CreatureObject* sourceCreature, const UnicodeString& message, uint64 chatTargetID, uint32 spatialChatType, uint32 moodType, uint32 chatFlags, int languageID) {
 	Zone* zone = sourceCreature->getZone();

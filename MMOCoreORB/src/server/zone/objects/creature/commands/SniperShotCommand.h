@@ -22,44 +22,43 @@ public:
 
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
-
+			
 		if (!creature->isPlayerCreature())
 			return GENERALERROR;
-
+		
 		ManagedReference<SceneObject*> targetObject = server->getZoneServer()->getObject(target);
-
+		
 		if (creature == targetObject || targetObject == NULL || !targetObject->isPlayerCreature())
 			return INVALIDTARGET;
 
 		CreatureObject* player = cast<CreatureObject*>( targetObject.get());
 
-		if (player->isDead()) {
-			StringIdChatParameter params("error_message", "prose_target_already_dead"); // But %TT is already dead!
-			params.setTT(player->getDisplayedName());
-			creature->sendSystemMessage(params);
+		Locker clocker(player, creature);
+
+		PlayerManager* playerManager = server->getPlayerManager();
+
+		if (!CollisionManager::checkLineOfSight(creature, player)) {
+			creature->sendSystemMessage("@container_error_message:container18"); //You can't see that object.  You may have to move closer to it.
 			return GENERALERROR;
 		}
 
-		UnicodeString arg = "hitIncapTarget=1;";
-		int ret = doCombatAction(creature, target, arg);
+		WeaponObject* weapon = creature->getWeapon();
 
-		if (ret != SUCCESS)
-			return ret;
+		int maxRange = weapon->getMaxRange();
 
-		if (player->isIncapacitated() && !player->isFeigningDeath()) {
-			Locker clocker(player, creature);
-
-			PlayerManager* playerManager = server->getPlayerManager();
-			playerManager->killPlayer(creature, player, 1, false);
-
-			StringIdChatParameter params("base_player", "prose_target_dead"); // %TT is no more.
-			params.setTT(player->getDisplayedName());
-			creature->sendSystemMessage(params);
-		} else if (!player->isDead()) {
-			creature->sendSystemMessage("@error_message:target_not_incapacitated");  // You cannot perform the death blow. Your target is not incapacitated.
+		if(!checkDistance(creature, player, maxRange))
+			return TOOFAR;
+				
+		if (player->isAttackableBy(creature) && (player->isIncapacitated() && player->isFeigningDeath() == false)) {
+			playerManager->killPlayer(creature, player, 1);			
+		}  else if (!player->isIncapacitated() || player->isFeigningDeath()) {
+			creature->sendSystemMessage("@error_message:target_not_incapacitated");  //You cannot perform the death blow. Your target is not incapacitated.
+		}  else if (player->isDead()) {
+			return GENERALERROR;
 		}
 
-		return ret;
+ 		return doCombatAction(creature, target);
+
 	}
 
 };

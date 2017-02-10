@@ -1070,14 +1070,14 @@ void PlayerObjectImplementation::removeAllFriends() {
 		ManagedReference<CreatureObject*> playerToRemove = zoneServer->getObject(objID).castTo<CreatureObject*>();
 
 		if (playerToRemove != NULL && playerToRemove->isPlayerCreature()) {
-			Core::getTaskManager()->executeTask([=] () {
-				Locker locker(playerToRemove);
+			EXECUTE_TASK_2(playerToRemove, playerName, {
+					Locker locker(playerToRemove_p);
 
-				PlayerObject* ghost = playerToRemove->getPlayerObject();
-				if (ghost != NULL) {
-					ghost->removeFriend(playerName, false);
-				}
-			}, "RemoveFriendLambda");
+					PlayerObject* ghost = playerToRemove_p->getPlayerObject();
+					if (ghost != NULL) {
+						ghost->removeFriend(playerName_p, false);
+					}
+			});
 		}
 
 		removeReverseFriend(name);
@@ -1095,14 +1095,14 @@ void PlayerObjectImplementation::removeAllReverseFriends(const String& oldName) 
 		ManagedReference<CreatureObject*> reverseFriend = zoneServer->getObject(objID).castTo<CreatureObject*>();
 
 		if (reverseFriend != NULL && reverseFriend->isPlayerCreature()) {
-			Core::getTaskManager()->executeTask([=] () {
-				Locker locker(reverseFriend);
+			EXECUTE_TASK_2(reverseFriend, oldName, {
+					Locker locker(reverseFriend_p);
 
-				PlayerObject* ghost = reverseFriend->getPlayerObject();
-				if (ghost != NULL) {
-					ghost->removeFriend(oldName, false);
-				}
-			}, "RemoveFriendLambda2");
+					PlayerObject* ghost = reverseFriend_p->getPlayerObject();
+					if (ghost != NULL) {
+						ghost->removeFriend(oldName_p, false);
+					}
+			});
 		}
 
 		removeReverseFriend(name);
@@ -1321,13 +1321,6 @@ void PlayerObjectImplementation::notifyOnline() {
 		amount -= curExp;
 		playerCreature->getZoneServer()->getPlayerManager()->awardExperience(playerCreature, "jedi_general", amount);
 	}
-
-  	if (!playerCreature->hasSkill("force_discipline_enhancements_synergy_04") && ghost->hasAbility("forceMeditate")) {
-  		SkillManager::instance()->removeAbility(ghost, "forceMeditate", true);
-  	}
-	if (!playerCreature->hasSkill("force_discipline_enhancements_movement_02") && ghost->hasAbility("forceRun1")) {
-  		SkillManager::instance()->removeAbility(ghost, "forceRun1", true);
-  	}
 }
 
 int PlayerObjectImplementation::numSpecificSkills(CreatureObject* creature, const String& reqSkillName) {
@@ -1765,9 +1758,9 @@ void PlayerObjectImplementation::checkForNewSpawns() {
 		return;
 	}
 
-	Core::getTaskManager()->executeTask([=] () {
-		finalArea->tryToSpawn(creature);
-	}, "TryToSpawnLambda");
+	EXECUTE_TASK_2(finalArea, creature, {
+			finalArea_p->tryToSpawn(creature_p);
+	});
 }
 
 void PlayerObjectImplementation::activateRecovery() {
@@ -2292,11 +2285,11 @@ void PlayerObjectImplementation::destroyObjectFromDatabase(bool destroyContained
 						ManagedReference<CityRegion*> city = structure->getCityRegion().get();
 
 						if (city != NULL) {
-							Core::getTaskManager()->executeTask([=] () {
-								Locker locker(city);
+							EXECUTE_TASK_1(city, {
+									Locker locker(city_p);
 
-								city->setMayorID(0);
-							}, "SetMayorIDLambda");
+									city_p->setMayorID(0);
+							});
 						}
 					}
 
@@ -2658,3 +2651,4 @@ void PlayerObjectImplementation::doFieldFactionChange(int newStatus) {
 bool PlayerObjectImplementation::isIgnoring(const String& name) {
 	return !name.isEmpty() && ignoreList.contains(name);
 }
+

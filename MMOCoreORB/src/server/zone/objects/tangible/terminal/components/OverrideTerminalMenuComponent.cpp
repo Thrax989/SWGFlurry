@@ -89,12 +89,19 @@ int OverrideTerminalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObje
 
 	player->sendSystemMessage("\"Retrieving new DNA sample...\"");
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(player);
-		Locker clocker(building, player);
+	EXECUTE_TASK_4(player, gcwMan, overrideTerminal, building, {
+			Locker locker(player_p);
+			Locker clocker(building_p, player_p);
 
-		gcwMan->sendDNASampleMenu(player, building, overrideTerminal);
-	}, "SendDNASampleMenuLambda");
+			gcwMan_p->sendDNASampleMenu(player_p, building_p, overrideTerminal_p);
+	});
 
 	return 0;
 }
+
+
+
+
+
+
+

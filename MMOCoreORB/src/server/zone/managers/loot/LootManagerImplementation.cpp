@@ -14,7 +14,6 @@
 #include "templates/LootGroupTemplate.h"
 #include "server/zone/ZoneServer.h"
 #include "LootGroupMap.h"
-#include "server/zone/managers/stringid/StringIdManager.h"
 
 void LootManagerImplementation::initialize() {
 	info("Loading configuration.");
@@ -452,35 +451,6 @@ TangibleObject* LootManagerImplementation::createLootObject(LootItemTemplate* te
 
 	delete craftingValues;
 
-	if(prototype->isAttachment()){
-		Attachment* attachment = cast<Attachment*>( prototype.get());
-		HashTable<String, int>* mods = attachment->getSkillMods();
-		HashTableIterator<String, int> iterator = mods->iterator();
-
-		StringIdManager* stringIdManager = StringIdManager::instance();
-
-		String key = "";
-		int value = 0;
-		int last = 0;
-
-		for(int i = 0; i < mods->size(); ++i) {
-			iterator.getNextKeyAndValue(key, value);
-		
-			if(value > last){
-				last = value;
-				String statName = "@stat_n:" + key;
-				
-				prototype->setCustomObjectName(stringIdManager->getStringId(statName.hashCode()),false);
-
-				if(attachment->isClothingAttachment()){
-					prototype->setCustomObjectName(prototype->getDisplayedName() + " (" + String::valueOf(value) + ") CA",false);
-				}else{
-					prototype->setCustomObjectName(prototype->getDisplayedName() + " (" + String::valueOf(value) + ") AA",false);
-				}
-			}
-		}
-	}
-
 	return prototype;
 }
 
@@ -704,48 +674,6 @@ bool LootManagerImplementation::createLoot(SceneObject* container, const String&
 	}
 
 	TangibleObject* obj = createLootObject(itemTemplate, level, maxCondition);
-
-	if (obj == NULL)
-		return false;
-
-	if (container->transferObject(obj, -1, false, true)) {
-		container->broadcastObject(obj, true);
-	} else {
-		obj->destroyObjectFromDatabase(true);
-		return false;
-	}
-
-
-	return true;
-}
-
-bool LootManagerImplementation::createNamedLoot(SceneObject* container, const String& lootGroup, const String& name, int level, bool maxCondition) {
-	Reference<LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
-
-	if (group == NULL) {
-		warning("Loot group template requested does not exist: " + lootGroup);
-		return false;
-	}
-
-	//Now we do the third roll for the item out of the group.
-	int roll = System::random(10000000);
-
-	String selection = group->getLootGroupEntryForRoll(roll);
-
-	//Check to see if the group entry is another group
-	if (lootGroupMap->lootGroupExists(selection))
-		return createLoot(container, selection, level, maxCondition);
-
-	//Entry wasn't another group, it should be a loot item
-	Reference<LootItemTemplate*> itemTemplate = lootGroupMap->getLootItemTemplate(selection);
-
-	if (itemTemplate == NULL) {
-		warning("Loot item template requested does not exist: " + group->getLootGroupEntryForRoll(roll) + " for templateName: " + group->getTemplateName());
-		return false;
-	}
-
-	TangibleObject* obj = createLootObject(itemTemplate, level, maxCondition);
-	obj->setCustomObjectName(name,false);
 
 	if (obj == NULL)
 		return false;
@@ -1005,8 +933,7 @@ void LootManagerImplementation::addRandomDots(TangibleObject* object, LootItemTe
 }
 
 float LootManagerImplementation::calculateDotValue(float min, float max, float level) {
-	float randVal = (float)System::random(max - min);
-	float value = MAX(min, MIN(max, randVal * (1 + (level / 1000)))); // Used for Str, Pot, Dur, Uses.
+	float value = MAX(min, MIN(max, System::random(max - min) * (1 + (level / 1000)))); // Used for Str, Pot, Dur, Uses.
 
 	if (value < min) {
 		value = min;

@@ -5,7 +5,7 @@ void CompositeVolume::read(IffStream *iff) {
 	iff->openForm('0000');
 	uint32 chunks = iff->getSubChunksNumber();
 	for(int i=0; i<chunks; i++) {
-			Reference<BaseBoundingVolume*> volume = BoundingVolumeFactory::getVolume(iff);
+			BaseBoundingVolume *volume = BoundingVolumeFactory::getVolume(iff);
 			volumes.add(volume);
 	}
 	iff->closeForm('0000');

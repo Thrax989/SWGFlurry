@@ -525,13 +525,12 @@ int LuaAiAgent::runAway(lua_State* L) {
 	Reference<CreatureObject*> target = dynamic_cast<CreatureObject*>(scene);
 	float range = lua_tonumber(L, -1);
 	Reference<AiAgent*> agentObject = realObject;
-
 	if (target != NULL) {
-		Core::getTaskManager()->executeTask([=] () {
-			Locker locker(agentObject);
+		EXECUTE_TASK_3(target, range, agentObject, {
+				Locker locker(agentObject_p);
 
-			agentObject->runAway(target, range);
-		}, "RunAwayLambda");
+				agentObject_p->runAway(target_p, range_p);
+		});
 	}
 
 	return 0;

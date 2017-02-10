@@ -39,7 +39,6 @@ protected:
     int areaRange;
 
     bool splashDamage;
-    bool hitIncapTarget;
 
     uint64 targetID;
 
@@ -119,10 +118,6 @@ public:
 
 	bool isSplashDamage() const {
 		return splashDamage;
-	}
-
-	bool getHitIncapTarget() const {
-		return hitIncapTarget;
 	}
 
 	int getAreaRange() const {

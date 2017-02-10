@@ -66,24 +66,24 @@ void ReconMissionObjectiveImplementation::abort() {
 	if (locationActiveArea != NULL) {
 		Reference<MissionReconActiveArea* > area = locationActiveArea;
 
-		Core::getTaskManager()->executeTask([=] () {
-			Locker locker(area);
+		EXECUTE_TASK_1(area, {
+				Locker locker(area_p);
 
-			area->destroyObjectFromWorld(true);
-			area->destroyObjectFromDatabase(true);
-		}, "DestroyReconMissionAreaLambda");
+				area_p->destroyObjectFromWorld(true);
+				area_p->destroyObjectFromDatabase(true);
+		});
 	}
 }
 
 void ReconMissionObjectiveImplementation::complete() {
 	Reference<MissionReconActiveArea* > area = locationActiveArea;
 
-	Core::getTaskManager()->executeTask([=] () {
-		Locker locker(area);
+	EXECUTE_TASK_1(area, {
+			Locker locker(area_p);
 
-		area->destroyObjectFromWorld(true);
-		area->destroyObjectFromDatabase(true);
-	}, "DestroyReconMissionAreaLambda2");
+			area_p->destroyObjectFromWorld(true);
+			area_p->destroyObjectFromDatabase(true);
+	});
 
 	MissionObjectiveImplementation::complete();
 }

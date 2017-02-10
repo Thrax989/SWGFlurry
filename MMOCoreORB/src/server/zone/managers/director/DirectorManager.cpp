@@ -73,7 +73,6 @@
 #include "server/zone/objects/tangible/misc/FsCsObject.h"
 #include "server/zone/objects/tangible/misc/CustomIngredient.h"
 #include "server/zone/objects/tangible/misc/FsCraftingComponentObject.h"
-#include "server/zone/objects/tangible/misc/FsBuffItem.h"
 #include "server/zone/objects/player/sui/LuaSuiPageData.h"
 #include "server/zone/objects/player/sui/SuiBoxPage.h"
 #include "server/zone/objects/tangible/powerup/PowerupObject.h"
@@ -526,7 +525,6 @@ void DirectorManager::initializeLuaEngine(Lua* luaEngine) {
 	Luna<LuaQuestInfo>::Register(luaEngine->getLuaState());
 	Luna<LuaFsPuzzlePack>::Register(luaEngine->getLuaState());
 	Luna<LuaFsCsObject>::Register(luaEngine->getLuaState());
-	Luna<LuaFsBuffItem>::Register(luaEngine->getLuaState());
 	Luna<LuaResourceSpawn>::Register(luaEngine->getLuaState());
 	Luna<LuaCustomIngredient>::Register(luaEngine->getLuaState());
 	Luna<LuaFsCraftingComponentObject>::Register(luaEngine->getLuaState());
@@ -1243,29 +1241,29 @@ int DirectorManager::spatialChat(lua_State* L) {
 	ZoneServer* zoneServer = ServerCore::getZoneServer();
 	ChatManager* chatManager = zoneServer->getChatManager();
 
-	ManagedReference<CreatureObject*> creature = (CreatureObject*)lua_touserdata(L, -2);
+	Reference<CreatureObject*> creature = (CreatureObject*)lua_touserdata(L, -2);
 
 	if (lua_islightuserdata(L, -1)) {
 		StringIdChatParameter* message = (StringIdChatParameter*)lua_touserdata(L, -1);
 
 		if (creature != NULL && message != NULL) {
-			Reference<StringIdChatParameter*> param = new StringIdChatParameter(*message);
-			
-			Core::getTaskManager()->executeTask([=] () {
-				Locker locker(creature);
+			StringIdChatParameter taskMessage = *message;
 
-			chatManager->broadcastChatMessage(creature, *param.get(), 0, 0, creature->getMoodID());
-			}, "BroadcastChatLambda");
+			EXECUTE_TASK_3(creature, chatManager, taskMessage, {
+					Locker locker(creature_p);
+
+					chatManager_p->broadcastChatMessage(creature_p, taskMessage_p, 0, 0, creature_p->getMoodID());
+			});
 		}
 	} else {
 		String message = lua_tostring(L, -1);
 
 		if (creature != NULL) {
-			Core::getTaskManager()->executeTask([=] () {
-				Locker locker(creature);
+			EXECUTE_TASK_3(creature, chatManager, message, {
+					Locker locker(creature_p);
 
-					chatManager->broadcastChatMessage(creature, message, 0, 0, creature->getMoodID());
-			}, "BroadcastChatLambda2");
+					chatManager_p->broadcastChatMessage(creature_p, message_p, 0, 0, creature_p->getMoodID());
+			});
 		}
 	}
 

@@ -116,7 +116,6 @@
 #include "server/zone/objects/resource/ResourceSpawn.h"
 #include "server/zone/objects/resource/ResourceContainer.h"
 #include "server/zone/objects/tangible/misc/CustomIngredient.h"
-#include "server/zone/objects/tangible/misc/FsBuffItem.h"
 #include "server/zone/objects/tangible/misc/FsCraftingComponentObject.h"
 #include "server/zone/objects/tangible/misc/FsCsObject.h"
 #include "server/zone/objects/pathfinding/NavMeshRegion.h"

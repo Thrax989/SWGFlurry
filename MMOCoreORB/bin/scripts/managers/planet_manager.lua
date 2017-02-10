@@ -49,8 +49,8 @@ shuttleportLandingTime = 11
 starportLandingTime = 14
 
 --Time, in seconds, that a shuttle is landed for
-shuttleportLandedTime = 604800
-starportLandedTime = 604800
+shuttleportLandedTime = 3600
+starportLandedTime = 3600
 
 
 corellia = {
@@ -95,7 +95,7 @@ corellia = {
 		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = -0.664289, oz = 0, ow = 0.747476, x = -133.192, z = 28, y = -4711.16, parentid = 0},
 		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = 0.346712, oz = 0, ow = 0.937972, x = -5049.64, z = 21, y = -2304.52, parentid = 0},
 		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = 0.290803, oz = 0, ow = 0.956783, x = 3330.38, z = 308, y = 5517.14, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_mission_bounty.iff", ox = 0, oy = -0.666281, oz = 0, ow = 0.745701, x = -136.437, z = 28, y = -4730.23, parentid = 0}
+		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = -0.666281, oz = 0, ow = 0.745701, x = -136.437, z = 28, y = -4730.23, parentid = 0}
 	}
 }
 
@@ -585,19 +585,6 @@ yavin4 = {
 		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = -6917.18, z = 73, y = -5732.25, parentid = 0},
 		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = 0.723339, oz = 0, ow = -0.690493, x = 4057.69, z = 37, y = -6217.54, parentid = 0},
 		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = 0.00721678, oz = 0, ow = 0.999974, x = -293.367, z = 35, y = 4854.52, parentid = 0}
-	}
-}
-
-kaas = {
-
-	weatherEnabled = 1,
-
-	planetTravelPoints = {
-		{name = "an Imperial Garrison", x = -5158.0, z = 80.0, y = -2239.0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
-	},
-	
-	planetObjects = {
-		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = 0.0, oz = 0, ow = 0.0, x = -1123.2, z = 129.0, y = -4768.8, parentid = 0}
 	}
 }
 

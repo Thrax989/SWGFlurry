@@ -285,7 +285,7 @@ void ServerCore::shutdown() {
 
 	orb->shutdown();
 
-	Core::shutdownTaskManager();
+	Core::getTaskManager()->shutdown();
 
 	if (zoneServer != NULL) {
 		zoneServer->stop();
