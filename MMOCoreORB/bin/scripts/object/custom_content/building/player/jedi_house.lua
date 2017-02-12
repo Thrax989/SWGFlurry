@@ -7,6 +7,9 @@ object_building_player_jedi_house = object_building_player_shared_jedi_house:new
 	width = 1,
 	publicStructure = 0,
 	skillMods = {
+		{"private_medical_rating", 100},
+		{"private_buff_mind", 100},
+		{"private_med_battle_fatigue", 5},
 		{"private_safe_logout", 1},
 		{"advanced_assembly", 20},
 		{"armor_assembly", 20},
