@@ -12,6 +12,7 @@ spiderclan_protector = Creature:new {
 	baseHAM = 50000,
 	baseHAMmax = 61000,
 	armor = 0,
+	resists = {150,150,150,165,200,200,155,200,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
