@@ -689,6 +689,48 @@ bool LootManagerImplementation::createLoot(SceneObject* container, const String&
 	return true;
 }
 
+bool LootManagerImplementation::createNamedLoot(SceneObject* container, const String& lootGroup, const String& name, int level, bool maxCondition) {
+	Reference<LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
+
+	if (group == NULL) {
+		warning("Loot group template requested does not exist: " + lootGroup);
+		return false;
+	}
+
+	//Now we do the third roll for the item out of the group.
+	int roll = System::random(10000000);
+
+	String selection = group->getLootGroupEntryForRoll(roll);
+
+	//Check to see if the group entry is another group
+	if (lootGroupMap->lootGroupExists(selection))
+		return createLoot(container, selection, level, maxCondition);
+
+	//Entry wasn't another group, it should be a loot item
+	Reference<LootItemTemplate*> itemTemplate = lootGroupMap->getLootItemTemplate(selection);
+
+	if (itemTemplate == NULL) {
+		warning("Loot item template requested does not exist: " + group->getLootGroupEntryForRoll(roll) + " for templateName: " + group->getTemplateName());
+		return false;
+	}
+
+	TangibleObject* obj = createLootObject(itemTemplate, level, maxCondition);
+	obj->setCustomObjectName(name,false);
+
+	if (obj == NULL)
+		return false;
+
+	if (container->transferObject(obj, -1, false, true)) {
+		container->broadcastObject(obj, true);
+	} else {
+		obj->destroyObjectFromDatabase(true);
+		return false;
+	}
+
+
+	return true;
+}
+
 bool LootManagerImplementation::createLootSet(SceneObject* container, const String& lootGroup, int level, bool maxCondition, int setSize) {
 	Reference<LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
 
