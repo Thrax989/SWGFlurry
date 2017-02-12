@@ -588,6 +588,19 @@ yavin4 = {
 	}
 }
 
+kaas = {
+
+	weatherEnabled = 1,
+
+	planetTravelPoints = {
+		{name = "an Imperial Garrison", x = -5158.0, z = 80.0, y = -2239.0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	},
+	
+	planetObjects = {
+		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = 0.0, oz = 0, ow = 0.0, x = -1123.2, z = 129.0, y = -4768.8, parentid = 0}
+	}
+}
+
 space_corellia = {
 
 	weatherEnabled = 0,
@@ -698,4 +711,3 @@ dungeon1 = {
 	weatherEnabled = 0,
 	gcwEnabled = 0,
 }
-
