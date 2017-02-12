@@ -70,7 +70,7 @@ MantisUser = "swgemu"
 MantisPass = "123456"
 MantisPrfx = "mantis_" -- The prefix for your mantis tables.
 
-AutoReg = 1
+AutoReg = 0
 
 ProgressMonitors = "true"
 
@@ -130,7 +130,8 @@ ZonesEnabled = {
 	"tutorial",
 	--"umbra",
 	--"watertabletest",
-	"yavin4"
+	"yavin4",
+	"kaas"
 }
 
 
