@@ -24,7 +24,7 @@ corelliaport = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = PACK + HEALER,
-	optionsBitmask = INVULNERABLE + INTERESTING,
+	optionsBitmask = 264,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_patron_chiss_m_01.iff"},
