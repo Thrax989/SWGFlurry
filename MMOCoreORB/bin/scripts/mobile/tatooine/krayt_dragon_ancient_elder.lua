@@ -26,18 +26,36 @@ krayt_dragon_ancient_elder = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 	scale = 1.5,
-
 	templates = {"object/mobile/krayt_dragon.iff"},
 	lootGroups = {
 		{
-	        groups = {
-				{group = "krayt_tissue_rare", chance = 2000000},
-				{group = "krayt_dragon_common", chance = 2500000},
-				{group = "pearls_flawless", chance = 1500000},
-				{group = "armor_all", chance = 2000000},
-				{group = "weapons_all", chance = 2000000},
+	        	groups = {
+				{group = "krayt_dragon_common", chance = 6000000},
+				{group = "krayt_tissue_uncommon", chance = 3000000},
+				{group = "armor_all", chance = 500000},
+				{group = "weapons_all", chance = 500000}
 			},
 			lootChance = 10000000
+		},
+		{
+	        groups = {
+				{group = "armor_attachments", chance = 5000000},
+				{group = "clothing_attachments", chance = 5000000}
+			},
+			lootChance = 5000000
+		},
+		{
+	        groups = {
+				{group = "junk", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		{
+	        groups = {
+				{group = "pearls_premium", chance = 4000000},
+				{group = "pearls_flawless", chance = 6000000}
+			},
+			lootChance = 4000000
 		}
 	},
 	weapons = {},
