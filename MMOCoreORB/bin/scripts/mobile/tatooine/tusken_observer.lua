@@ -24,20 +24,27 @@ tusken_observer = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/tusken_raider.iff"},
 	lootGroups = {
-		{
+	        {	
 			groups = {
-				{group = "junk", chance = 1500000},
-				{group = "tusken_common", chance = 3000000},
-				{group = "wearables_scarce", chance = 2000000},
-				{group = "bone_armor", chance = 350000},
-				{group = "chitin_armor", chance = 350000},
-				{group = "armor_attachments", chance = 900000},
-				{group = "clothing_attachments", chance = 900000},
+				{group = "tusken_common", chance = 5000000},
+				{group = "wearables_scarce", chance = 4000000},
 				{group = "color_crystals", chance = 500000},
 				{group = "crystals_premium", chance = 500000}
+			},
+			lootChance = 10000000
+		},
+		{
+	        	groups = {
+				{group = "armor_attachments", chance = 5000000},
+				{group = "clothing_attachments", chance = 5000000}
+			},
+			lootChance = 4000000
+		},
+		{
+	        	groups = {
+				{group = "junk", chance = 10000000}
 			},
 			lootChance = 10000000
 		}

@@ -25,20 +25,37 @@ giant_canyon_krayt_dragon_elder = Creature:new {
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/canyon_krayt_dragon.iff"},
-	scale = 1.2;
-
+	scale = 1.2,
 	lootGroups = {
 		{
-	        groups = {
-				{group = "krayt_dragon_common", chance = 2500000},
-				{group = "krayt_tissue_uncommon", chance = 2000000},
-				{group = "pearls_premium", chance = 1500000},
-				{group = "armor_all", chance = 2000000},
-				{group = "weapons_all", chance = 2000000},
+	        	groups = {
+				{group = "krayt_dragon_common", chance = 6000000},
+				{group = "krayt_tissue_uncommon", chance = 3000000},
+				{group = "armor_all", chance = 500000},
+				{group = "weapons_all", chance = 500000}
 			},
 			lootChance = 10000000
+		},
+		{
+	        groups = {
+				{group = "armor_attachments", chance = 5000000},
+				{group = "clothing_attachments", chance = 5000000}
+			},
+			lootChance = 5000000
+		},
+		{
+	        groups = {
+				{group = "junk", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		{
+	        groups = {
+				{group = "pearls_premium", chance = 6000000},
+				{group = "pearls_flawless", chance = 4000000}
+			},
+			lootChance = 4000000
 		}
 	},
 	weapons = {},
