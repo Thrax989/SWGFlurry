@@ -26,6 +26,7 @@
 #include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
+#include "server/zone/managers/loot/LootManager.h"
 
 void BountyMissionObjectiveImplementation::setNpcTemplateToSpawn(SharedObjectTemplate* sp) {
 	npcTemplateToSpawn = sp;
@@ -606,6 +607,8 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 
 	ManagedReference<MissionObject* > mission = this->mission.get();
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
+	ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
+	ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
 	
 
 	if(mission == NULL)
@@ -642,6 +645,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 						String victimName = target->getFirstName();
 						bBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
 						owner->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, bBroadcast.toString());
+						lootManager->createNamedLoot(inventory, "saberhand28", victimName, 300);//, victimName);
 						if (target->hasSkill("force_rank_light_novice") || target->hasSkill("force_rank_dark_novice"))
 						{
 							owner->getZoneServer()->getPlayerManager()->awardExperience(target, "force_rank_xp", -500, true);

@@ -78,7 +78,7 @@ function SpiderClanCaveScreenPlay:spawnMobiles()
 		spawnMobile("dathomir", "spiderclan_sentinel", 900, 56.1, -56.6, -170.0, -32, 3695706)
 		spawnMobile("dathomir", "spiderclan_sentry", 900, 45.7, -56.6, -165.7, 68, 3695706)
 		spawnMobile("dathomir", "spiderclan_protector", 900, 51.2, -56.2, -158.7, 134, 3695706)
-		spawnMobile("dathomir", "spiderclan_elder", 3600, -6.4, -46.6, -150.8, 9, 3695706)
+		spawnMobile("dathomir", "spiderclan_elder", 1800, -6.4, -46.6, -150.8, 9, 3695706)
 
 	--Cell[3695707]
 		spawnMobile("dathomir", "spiderclan_sentry", 900, -9.0, -64.3, -188.5, 1, 3695707)
@@ -87,7 +87,7 @@ function SpiderClanCaveScreenPlay:spawnMobiles()
 		spawnMobile("dathomir", "spiderclan_sentry", 900, -27.8, -64.4, -183.0, 85, 3695707)
 
 	--Cell[3695708]
-		spawnMobile("dathomir", "spiderclan_elder", 3600, -20.7, -62.8, -261.2, 18, 3695708)
+		spawnMobile("dathomir", "spiderclan_elder", 1800, -20.7, -62.8, -261.2, 18, 3695708)
 		spawnMobile("dathomir", "spiderclan_web_dancer", 900, -12.0, -63.7, -260.5, -74, 3695708)
 		spawnMobile("dathomir", "spiderclan_web_dancer", 900, 2.7, -63.4, -229.7, -99, 3695708)
 	--v Spiders Here v--

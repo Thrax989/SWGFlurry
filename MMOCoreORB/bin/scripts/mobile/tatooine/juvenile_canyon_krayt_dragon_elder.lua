@@ -11,7 +11,7 @@ juvenile_canyon_krayt_dragon_elder = Creature:new {
 	baseHAM = 54000,
 	baseHAMmax = 64000,
 	armor = 2,
-	resists = {170,170,15,15,110,15,15,15,-1},
+	resists = {170,170,170,15,110,15,15,15,135},
 	meatType = "meat_carnivore",
 	meatAmount = 750,
 	hideType = "hide_bristley",
@@ -32,12 +32,13 @@ juvenile_canyon_krayt_dragon_elder = Creature:new {
 	lootGroups = {
 		{
 	        groups = {
-				{group = "krayt_tissue_common", chance = 2500000},
-				{group = "krayt_dragon_common", chance = 3500000},
+				{group = "krayt_tissue_rare", chance = 2000000},
+				{group = "krayt_dragon_common", chance = 2500000},
+				{group = "pearls_flawless", chance = 1500000},
 				{group = "armor_all", chance = 2000000},
 				{group = "weapons_all", chance = 2000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		}
 	},
 	weapons = {},
