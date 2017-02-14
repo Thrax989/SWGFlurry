@@ -40,4 +40,6 @@ spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wa
 spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wall_strong.iff", -5104.18, 81.6712, -2097.21, 0, -0.0436194, 0, 0.999048, 0)
 spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wall_strong.iff", -5109.29, 81.5604, -2096.77, 0, 0.99863, 0, 0.052336, 0)
 spawnSceneObject("kaas", "object/building/general/mun_all_landing_pad_s01.iff", -5109.77, 81.75, -2119.95, 0, 0.0523359, 0, -0.99863, 0)
+spawnSceneObject("kaas", "object/tangible/beta/beta_terminal_wound.iff", -5127.86, 81.6384, -2133.43, 0, 0.999027, 0, 0.0440986, 0)
+spawnSceneObject("kaas", "object/tangible/beta/beta_terminal_wound.iff", -5101.65, 81.4893, -2136.18, 0, 0.999516, 0, 0.0311125, 0)
 end
