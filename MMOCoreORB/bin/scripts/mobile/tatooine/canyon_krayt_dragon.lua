@@ -26,7 +26,7 @@ canyon_krayt_dragon = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/canyon_krayt_dragon.iff"},
-	scale = 0.9;
+	scale = 0.9,
 	lootGroups = {
 		{
 	        groups = {

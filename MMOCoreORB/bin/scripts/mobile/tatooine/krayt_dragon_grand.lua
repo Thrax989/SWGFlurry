@@ -26,7 +26,7 @@ krayt_dragon_grand = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/krayt_dragon.iff"},
-	scale = 1.1;
+	scale = 1.1,
 	lootGroups = {
 		{
 	        groups = {
