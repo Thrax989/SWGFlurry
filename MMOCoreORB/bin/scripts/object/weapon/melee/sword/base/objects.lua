@@ -292,3 +292,10 @@ object_weapon_melee_sword_base_shared_sword_base = SharedWeaponObjectTemplate:ne
 }
 
 ObjectTemplates:addClientTemplate(object_weapon_melee_sword_base_shared_sword_base, "object/weapon/melee/sword/base/shared_sword_base.iff")
+
+object_weapon_melee_sword_base_shared_generic_lightsaber_base = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/base/shared_generic_lightsaber_base.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_base_shared_generic_lightsaber_base, "object/weapon/melee/sword/base/shared_generic_lightsaber_base.iff")
