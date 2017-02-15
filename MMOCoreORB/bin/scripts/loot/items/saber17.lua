@@ -7,7 +7,7 @@ saber17 = {
 	directObjectTemplate = "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gcw_s01_gen5.iff",
 	craftingValues = {
 		{"mindamage",103,198,0},
-		{"maxdamage",235,436,0},
+		{"maxdamage",235,250,0},
 		{"attackspeed",8.5,5.8,1},
 		{"woundchance",11,20,0},
 		{"hitpoints",750,1500,0},

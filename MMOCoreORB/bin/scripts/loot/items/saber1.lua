@@ -7,7 +7,7 @@ saber1 = {
 	directObjectTemplate = "object/weapon/melee/sword/crafted_saber/sword_lightsaber_mandalorian.iff",
 	craftingValues = {
 		{"mindamage",103,198,0},
-		{"maxdamage",235,436,0},
+		{"maxdamage",235,250,0},
 		{"attackspeed",8.5,5.8,1},
 		{"woundchance",11,20,0},
 		{"hitpoints",750,1500,0},
