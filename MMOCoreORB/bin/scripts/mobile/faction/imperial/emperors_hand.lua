@@ -1,16 +1,17 @@
 emperors_hand = Creature:new {
 	objectName = "@mob/creature_names:emperors_hand",
-	socialGroup = "imperial",
-	faction = "imperial",
-	level = 252,
-	chanceHit = 23.5,
-	damageMin = 1395,
-	damageMax = 2500,
-	baseXp = 24081,
-	baseHAM = 261000,
-	baseHAMmax = 320000,
-	armor = 0,
-	resists = {90,90,90,90,90,90,90,90,-1},
+	socialGroup = "self",
+	faction = "",
+	level = 300,
+	chanceHit = 75.0,
+	damageMin = 1645,
+	damageMax = 3000,
+	specialDamageMult = 7.5,
+	baseXp = 28549,
+	baseHAM = 475000,
+	baseHAMmax = 500000,
+	armor = 3,
+	resists = {90,90,90,90,90,90,90,90,90},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -26,12 +27,9 @@ emperors_hand = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {
-		"object/mobile/dressed_emperors_hand_human_male_01.iff",
-		"object/mobile/dressed_emperors_hand_human_male_02.iff",
-		"object/mobile/dressed_emperors_hand_human_female_01.iff",
-		"object/mobile/dressed_emperors_hand_zabrak_male_01.iff"},
+		"object/mobile/dressed_emperors_hand_human_female_01.iff"},
 	lootGroups = {
-     	{
+		{
 			groups = {
 				{group = "holocron_dark", chance = 850000},
 				{group = "holocron_light", chance = 850000},
@@ -42,11 +40,18 @@ emperors_hand = Creature:new {
 				{group = "armor_attachments", chance = 1100000},
 				{group = "clothing_attachments", chance = 1100000},
 				{group = "carbines", chance = 1000000}
-			}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "5thgen", chance = 10000000},
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"dark_jedi_weapons_gen3"},
-	conversationTemplate = "",
+	reactionStf = "@npc_reaction/slang",
 	attacks = merge(lightsabermaster)
 }
 
