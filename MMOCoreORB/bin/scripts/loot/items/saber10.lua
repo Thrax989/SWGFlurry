@@ -7,7 +7,7 @@ saber10 = {
 	directObjectTemplate = "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen4_heroic_s02.iff",
 	craftingValues = {
 		{"mindamage",103,198,0},
-		{"maxdamage",235,436,0},
+		{"maxdamage",235,250,0},
 		{"attackspeed",8.5,5.8,1},
 		{"woundchance",11,20,0},
 		{"hitpoints",750,1500,0},
