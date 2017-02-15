@@ -76,7 +76,7 @@ function DathomirStaticSpawnsSeScreenPlay:spawnMobiles()
 	spawnMobile("dathomir", "singing_mountain_clan_rancor", 360, 5214.4, 437.9, -6931.9, -24, 0)
 
 	--spiderclan stone arch (7070,-6440)
-	spawnMobile("dathomir", "spiderclan_elder", 7200, 7076.7, 568.5, -6433.6, -136, 0)
+	spawnMobile("dathomir", "spiderclan_elder", 7200, 7076.7, 568.5, -6433.6, -136, 0,true)
 	spawnMobile("dathomir", "rancor_pygmy", 3400, getRandomNumber(5) + 7099.4, 576.2, getRandomNumber(5) + -6449.9, getRandomNumber(360), 0)
 	spawnMobile("dathomir", "rancor_pygmy", 3400, getRandomNumber(5) + 7099.4, 576.2, getRandomNumber(5) + -6449.9, getRandomNumber(360), 0)
 
@@ -94,7 +94,7 @@ function DathomirStaticSpawnsSeScreenPlay:spawnMobiles()
 	spawnMobile("dathomir", "nightsister_slave", 360, 1064.5, 100.9, -4483.3, 95, 0)
 	spawnMobile("dathomir", "nightsister_slave", 360, 1068.0, 99.1, -4497.1, 35, 0)
 	spawnMobile("dathomir", "nightsister_slave", 360, 1075.5, 100.8, -4493.8, -5, 0)
-	spawnMobile("dathomir", "nightsister_elder", 3600, 1085.0, 103.0, -4485.2, -95, 0)
+	spawnMobile("dathomir", "nightsister_elder", 3600, 1085.0, 103.0, -4485.2, -95, 0,true)
 	spawnMobile("dathomir", "rancor_pygmy", 3400, 1105.8, 82.1, -4549.8, -42, 0)
 
 	--giant bolma skeleton (1377,-3192)
