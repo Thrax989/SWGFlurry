@@ -61,7 +61,6 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		
 		if (player:isImperial() or player:isRebel()) then
 			player:sendSystemMessage("You have left the Kaas PvP zone!")
-			player:setFactionStatus(0)
 		end
 		return 0
 	end)
