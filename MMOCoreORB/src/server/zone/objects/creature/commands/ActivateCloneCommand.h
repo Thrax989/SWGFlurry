@@ -33,7 +33,7 @@ public:
 			return GENERALERROR;
 
 		PlayerManager* playerManager = server->getZoneServer()->getPlayerManager();
-		playerManager->sendActivateCloneRequest(player);
+		server->getPlayerManager()->sendActivateCloneRequest(player);
 
 		return SUCCESS;
 	}
