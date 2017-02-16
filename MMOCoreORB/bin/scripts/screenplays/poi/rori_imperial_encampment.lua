@@ -135,7 +135,20 @@ end
 --Phase 7 Of 10 Instance
 function RoriImperialEncampmentScreenPlay:notify7DroidDead(T7Droid, pKiller)
 	local player = LuaCreatureObject(pKiller)
-        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5626.45, 75.9471, -5661.81, 12, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.14, 76, -5646.17, 225, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.31, 76, -5648.38, 203, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.31, 76, -5651.13, 85, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.31, 76, -5653.65, 38, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.31, 76, -5656.39, 158, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.31, 76, -5659, 87, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.24, 76, -5661.63, 168, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.31, 76, -5664.48, 97, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.26, 76, -5667.1, 85, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.29, 75.9998, -5669.7, 92, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.31, 75.999, -5672.44, 206, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.27, 75.9973, -5675.05, 83, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.24, 75.9946, -5677.69, 168, 0) print("Phase 7 Started")
+        local pBoss = spawnMobile("rori", "death_watch_s_battle_droid", 0, -5518.16, 75.9914, -5679.62, 56, 0) print("Phase 7 Started")
         return 0
 end
 --Phase 8 Of 10 Instance
