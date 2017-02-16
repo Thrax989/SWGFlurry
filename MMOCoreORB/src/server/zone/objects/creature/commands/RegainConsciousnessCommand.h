@@ -46,6 +46,8 @@ public:
 			// Add buffs to creature
 			creature->addBuff(groggyDebuff);
 			creature->addBuff(regenDebuff);
+			creature->clearBuffs(true);
+			creature->setFactionStatus(2);
 
 			ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
 
