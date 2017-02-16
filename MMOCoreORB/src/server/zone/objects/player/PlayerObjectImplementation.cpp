@@ -1240,6 +1240,12 @@ void PlayerObjectImplementation::notifyOnline() {
 	JediManager::instance()->onPlayerLoggedIn(playerCreature);
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
+	//Broadcast to Server
+	Zone* zone = playerCreature->getZone();
+	String playerName = playerCreature->getFirstName();
+	StringBuffer zBroadcast;
+	zBroadcast << "\\#00E604" << playerName << "Has Logged In";
+	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 
 	if (getForcePowerMax() > 0 && getForcePower() < getForcePowerMax())
 		activateForcePowerRegen();
@@ -1363,6 +1369,12 @@ void PlayerObjectImplementation::notifyOffline() {
 	VisibilityManager::instance()->logout(playerCreature);
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDOUT);
+	//Broadcast to Server
+	Zone* zone = playerCreature->getZone();
+	String playerName = playerCreature->getFirstName();
+	StringBuffer zBroadcast;
+	zBroadcast << "\\#ff0000" << playerName << "Has Logged Out";
+	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 
 	//Logout from jedi manager
 	JediManager::instance()->onPlayerLoggedOut(playerCreature);
@@ -2651,4 +2663,3 @@ void PlayerObjectImplementation::doFieldFactionChange(int newStatus) {
 bool PlayerObjectImplementation::isIgnoring(const String& name) {
 	return !name.isEmpty() && ignoreList.contains(name);
 }
-
