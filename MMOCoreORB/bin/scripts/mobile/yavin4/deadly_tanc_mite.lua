@@ -28,7 +28,22 @@ deadly_tanc_mite = Creature:new {
 	templates = {"object/mobile/tanc_mite_hue.iff"},
 	controlDeviceTemplate = "object/intangible/pet/tanc_mite_hue.iff",
 	scale = 1.1,
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

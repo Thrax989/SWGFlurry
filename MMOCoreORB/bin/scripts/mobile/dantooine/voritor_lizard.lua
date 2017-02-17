@@ -30,11 +30,25 @@ voritor_lizard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "voritor_lizard_common", chance = 10000000}
+				{group = "junk", chance = 10000000},
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "voritor_lizard_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"creature_spit_small_yellow"},
 	conversationTemplate = "",
 	attacks = {

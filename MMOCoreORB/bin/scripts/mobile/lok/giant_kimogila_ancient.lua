@@ -28,14 +28,28 @@ giant_kimogila_ancient = Creature:new {
 
 	templates = {"object/mobile/giant_kimogila.iff"},
 	scale = 1.15,
-	lootGroups = {
-	    {
-	        groups = {
-				{group = "kimogila_common", chance = 10000000}
+			lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000},
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "kimogila_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

@@ -30,15 +30,28 @@ eerie_donkuwah_spiritmaster = Creature:new {
 	templates = {
 		"object/mobile/dulok_male.iff",
 		"object/mobile/dulok_female.iff"},
-	lootGroups = {
+			lootGroups = {
 		{
 			groups = {
-				{group = "donkuwah_common", chance = 9000000},
-				{group = "wearables_uncommon", chance = 1000000},
+				{group = "junk", chance = 10000000},
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "donkuwah_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"donkuwah_weapons"},
 	conversationTemplate = "",
 	attacks = merge(fencermaster,brawlermaster)

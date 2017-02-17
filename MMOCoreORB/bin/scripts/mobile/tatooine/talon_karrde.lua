@@ -26,7 +26,22 @@ talon_karrde = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_talon_karrde.iff"},
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {},
 	conversationTemplate = "",--TODO: convert to a JTL 'Smuggler Alliance' PILOT TRAINER for 'Tier 2' missions
 	attacks = {}

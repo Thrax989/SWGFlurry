@@ -30,7 +30,22 @@ warren_agro_droid = Creature:new {
 					"object/mobile/warren_agro_droid_s03.iff", --ig assassin
 					"object/mobile/warren_agro_droid_s04.iff"  --dz70 fugitive tracker droid
 				},
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	conversationTemplate = "",
 	defaultAttack = "creaturerangedattack",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff"

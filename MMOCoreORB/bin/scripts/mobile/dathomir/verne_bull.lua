@@ -29,7 +29,22 @@ verne_bull = Creature:new {
 	templates = {"object/mobile/verne_bull.iff"},
 	controlDeviceTemplate = "object/intangible/pet/verne_hue.iff",
 	scale = 1.15,
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

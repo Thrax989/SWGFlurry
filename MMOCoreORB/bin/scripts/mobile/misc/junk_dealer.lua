@@ -34,7 +34,22 @@ junk_dealer = Creature:new {
 			"object/mobile/junk_reggi.iff",
 			"object/mobile/junk_sheani.iff",
 			"object/mobile/junk_sneg.iff"},
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {},
 	conversationTemplate = "junkDealerGenericConvoTemplate",
 	attacks = {}

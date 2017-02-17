@@ -28,7 +28,22 @@ giant_spined_puc = Creature:new {
 	templates = {"object/mobile/giant_spined_puc.iff"},
 	controlDeviceTemplate = "object/intangible/pet/spined_puc_hue.iff",
 	scale = 1.4,
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
