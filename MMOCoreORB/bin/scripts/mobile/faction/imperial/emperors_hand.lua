@@ -45,7 +45,7 @@ emperors_hand = Creature:new {
 		},
 		{
 			groups = {
-				{group = "5thgen", chance = 10000000},
+				{group = "fifthgen", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
