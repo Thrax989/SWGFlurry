@@ -41,42 +41,28 @@
 --which carries forward this exception.
 --true = 1, false = 0
 
-ForceLightningCone2Command = {
-	name = "forcelightningcone2",
+ForceLightningSingle1Command = {
+	name = "forcelightningsingle1_npc",
 
-    minDamage = 2200,
-    maxDamage = 2650,
-	speed = 1.0,
-	forceCost = 130,
-	accuracySkillMod = "forcelightning_accuracy",
-	accuracyBonus = 95,
-	coneAngle = 60,
-	coneAction = true,
+	minDamage = 950,
+	maxDamage = 1250,
+	speed = 4.0,
+	forceCost = 75,
 	visMod = 25,
+	
+	accuracySkillMod = "forcelightning_accuracy",
 
-	stateEffects = {
-	  StateEffect(
-		DIZZY_EFFECT,
-		{},
-		{},
-		{ "jedi_state_defense" },
-		65,
-		0,
-		15
-	  )
-	},
-
-	animation = "force_lightning_1_arc_particle_level_3",
+	animation = "force_lightning_1_particle_level_1",
 	animType = GENERATE_INTENSITY,
 
-	combatSpam = "forcelightningcone2",
+	combatSpam = "forcelightningsingle1",
 
 	poolsToDamage = RANDOM_ATTRIBUTE,
 
-	forceAttack = false,
-	damageType = LIGHTSABER_DAMAGE,
+	forceAttack = true,
+	damageType = ELECTRICITY_DAMAGE,
 
-	range = 45
+	range = 32
 }
 
-AddCommand(ForceLightningCone2Command)
+AddCommand(ForceLightningSingle1Command)
