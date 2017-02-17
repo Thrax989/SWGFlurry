@@ -152,7 +152,7 @@ lootableArmorAttachmentStatMods = {
 	"twohandmelee_speed",
 	"unarmed_accuracy",
 	"unarmed_damage",
-	"unarmed_speed",
+	"unarmed_speed"
 	-- "volley"
 }
 
@@ -245,7 +245,7 @@ lootableClothingAttachmentStatMods = {
 	"twohandmelee_speed",
 	"unarmed_accuracy",
 	"unarmed_damage",
-	"unarmed_speed",
+	"unarmed_speed"
 	-- "volley"
 }
 
@@ -338,7 +338,7 @@ lootableArmorStatMods = {
 	"twohandmelee_speed",
 	"unarmed_accuracy",
 	"unarmed_damage",
-	"unarmed_speed",
+	"unarmed_speed"
 	-- "volley"
 }
 
@@ -431,7 +431,7 @@ lootableClothingStatMods = {
 	"twohandmelee_speed",
 	"unarmed_accuracy",
 	"unarmed_damage",
-	"unarmed_speed",
+	"unarmed_speed"
 	-- "volley"
 }
 
@@ -556,7 +556,7 @@ lootablePistolStatMods = {
 	--"steadyaim",
 	"stun_defense",
 	"tame_aggro",
-	"tame_non_aggro",
+	"tame_non_aggro"
 	--"volley"
 }
 
@@ -620,7 +620,7 @@ lootableCarbineStatMods = {
 	"steadyaim",
 	"stun_defense",
 	"tame_aggro",
-	"tame_non_aggro",
+	"tame_non_aggro"
 	-- "volley"
 }
 
