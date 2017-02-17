@@ -589,8 +589,8 @@ lootableRifleStatMods = {
 	"stun_defense",
 	-- "take_cover",
 	"tame_aggro",
-	"tame_non_aggro",
-	"volley"
+	"tame_non_aggro"
+	-- "volley"
 }
 
 lootableCarbineStatMods = {
