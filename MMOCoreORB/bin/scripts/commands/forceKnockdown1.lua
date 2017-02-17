@@ -71,7 +71,7 @@ ForceKnockdown1Command = {
 
 	forceAttack = true,
 
-	range = 32
+	range = 45
 }
 
 AddCommand(ForceKnockdown1Command)

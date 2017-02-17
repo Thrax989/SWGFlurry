@@ -41,42 +41,67 @@
 --which carries forward this exception.
 --true = 1, false = 0
 
-ForceLightningCone2Command = {
-	name = "forcelightningcone2",
+ForceChokeCommand = {
+  name = "forcechoke_npc",
 
-    minDamage = 2200,
-    maxDamage = 2650,
-	speed = 1.0,
-	forceCost = 130,
-	accuracySkillMod = "forcelightning_accuracy",
-	accuracyBonus = 95,
-	coneAngle = 60,
-	coneAction = true,
-	visMod = 25,
+  minDamage = 175,
+  maxDamage = 375,
+  speed = 6.0,
+  forceCost = 100,
+  visMod = 25,
+  forceAttack = true,
+  accuracyBonus = 95,
 
-	stateEffects = {
-	  StateEffect(
-		DIZZY_EFFECT,
-		{},
-		{},
-		{ "jedi_state_defense" },
-		65,
-		0,
-		15
-	  )
-	},
+  animation = "force_choke_1_particle_level_1",
+  animType = GENERATE_INTENSITY,
 
-	animation = "force_lightning_1_arc_particle_level_3",
-	animType = GENERATE_INTENSITY,
+  combatSpam = "forcechoke",
 
-	combatSpam = "forcelightningcone2",
+  poolsToDamage = HEALTH_ATTRIBUTE,
+  damageType = LIGHTSABER_DAMAGE,
 
-	poolsToDamage = RANDOM_ATTRIBUTE,
+  range = 32,
 
-	forceAttack = false,
-	damageType = LIGHTSABER_DAMAGE,
+  dotEffects = {
+    DotEffect(
+    FORCECHOKE,
+    { "", "" },
+    HEALTH,
+    true,
+    -1,
+    100,
+    350,
+    35,
+    33.0,
+    0.33
+    ),
 
-	range = 45
+    DotEffect(
+    FORCECHOKE,
+    { "", "" },
+    ACTION,
+    true,
+    -1,
+    100,
+    350,
+    35,
+    33.0,
+    0.33
+    ),
+
+    DotEffect(
+    FORCECHOKE,
+    { "", "" },
+    MIND,
+    true,
+    -1,
+    100,
+    350,
+    35,
+    33.0,
+    0.33
+    )
+  },
 }
 
-AddCommand(ForceLightningCone2Command)
+AddCommand(ForceChokeCommand)

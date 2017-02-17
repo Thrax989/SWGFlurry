@@ -74,7 +74,7 @@ ForceThrow1Command = {
 	forceAttack = false,
 	damageType = LIGHTSABER_DAMAGE,
 
-	range = 32
+	range = 45
 }
 
 AddCommand(ForceThrow1Command)

@@ -41,42 +41,59 @@
 --which carries forward this exception.
 --true = 1, false = 0
 
-ForceLightningCone2Command = {
-	name = "forcelightningcone2",
+MindBlast1Command = {
+	name = "mindblast1_npc",
 
-    minDamage = 2200,
-    maxDamage = 2650,
-	speed = 1.0,
-	forceCost = 130,
-	accuracySkillMod = "forcelightning_accuracy",
-	accuracyBonus = 95,
-	coneAngle = 60,
-	coneAction = true,
+	minDamage = 750,
+	maxDamage = 1000,
+	speed = 4.0,
+	forceCost = 50,
 	visMod = 25,
+	accuracySkillMod = "mindblast_accuracy";
 
 	stateEffects = {
 	  StateEffect(
-		DIZZY_EFFECT,
-		{},
+		STUN_EFFECT,
 		{},
 		{ "jedi_state_defense" },
-		65,
+		{},
+		55,
 		0,
-		15
+		10
+	  ),
+
+	  StateEffect(
+		BLIND_EFFECT,
+		{},
+		{ "jedi_state_defense" },
+		{},
+		55,
+		0,
+		10
+	  ),
+
+	  StateEffect(
+		DIZZY_EFFECT,
+		{},
+		{ "jedi_state_defense" },
+		{},
+		55,
+		0,
+		10
 	  )
 	},
 
-	animation = "force_lightning_1_arc_particle_level_3",
+	animation = "force_mind_blast_1_particle_level_1", 
 	animType = GENERATE_INTENSITY,
 
-	combatSpam = "forcelightningcone2",
+	combatSpam = "mindblast1",
 
 	poolsToDamage = RANDOM_ATTRIBUTE,
 
-	forceAttack = false,
+	forceAttack = true,
 	damageType = LIGHTSABER_DAMAGE,
 
-	range = 45
+	range = 32
 }
 
-AddCommand(ForceLightningCone2Command)
+AddCommand(MindBlast1Command)
