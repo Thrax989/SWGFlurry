@@ -44,7 +44,6 @@ bounty_hunter = Creature:new {
 			lootChance = 10000000
 		},
 		},
-= {},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	attacks = {

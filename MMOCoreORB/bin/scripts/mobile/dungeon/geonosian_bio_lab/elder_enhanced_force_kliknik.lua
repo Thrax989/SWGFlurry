@@ -28,16 +28,22 @@ elder_enhanced_force_kliknik = Creature:new {
 
 	templates = {"object/mobile/kliknik_hue.iff"},
 	scale = 1.45,
-	lootGroups = {
-	 {
-	        groups = {
-				{group = "geo_kliknik", chance = 5000000},
-				{group = "geonosian_common", chance = 2500000},
-				{group = "geonosian_hard", chance = 2500000}
+		lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000},
 			},
 			lootChance = 10000000
-		}
-	},
+		},
+		{
+			groups = {
+				{group = "geonosian_relic", chance = 5000000},
+				{group = "geonosian_common", chance = 2500000},
+				{group = "geo_kliknik", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"creature_spit_heavy_flame"},
 	conversationTemplate = "",
 	attacks = {
