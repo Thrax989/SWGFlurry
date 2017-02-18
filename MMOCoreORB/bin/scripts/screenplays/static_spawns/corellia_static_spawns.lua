@@ -136,4 +136,8 @@ function CorelliaStaticSpawnsScreenPlay:spawnMobiles()
 	spawnMobile("corellia", "vicious_slice_hound", 300, getRandomNumber(5) + -7482, 236.8, getRandomNumber(5) + -3955, getRandomNumber(360), 0)
 	spawnMobile("corellia", "vicious_slice_hound", 300, getRandomNumber(5) + -7482, 236.8, getRandomNumber(5) + -3955, getRandomNumber(360), 0)
 
+	--Corellian Haven (-283, -5884)
+	spawnMobile("corellia", "rebel_recruiter", 60, -182.789, 23.4504, -5840.58, 2, 0) 
+	spawnMobile("corellia", "imperial_recruiter", 60, -224.85, 22.937, -5840.58, 357, 0) 
+	
 end
