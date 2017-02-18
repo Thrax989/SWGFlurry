@@ -43,9 +43,15 @@ janta_soothsayer = Creature:new {
 			groups = {
 				{group = "wearables_all", chance = 5000000},
 				{group = "loot_kit_parts", chance = 4000000},
-				{group = "janta_common", chance = 1000000}
+				{group = "janta_rare", chance = 1000000}
 			},
 			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "janta_common", chance = 10000000},
+			},
+			lootChance = 7500000
 		},
 		},
 	weapons = {"primitive_weapons"},
