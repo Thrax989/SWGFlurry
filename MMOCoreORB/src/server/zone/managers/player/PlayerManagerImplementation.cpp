@@ -720,7 +720,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->sendSystemMessage(stringId);
 
 	player->updateTimeOfDeath();
-	//player->clearBuffs(true);
+	player->clearBuffs(true);
 
 	PlayerObject* ghost = player->getPlayerObject();
 	player->setFactionStatus(FactionStatus::ONLEAVE);
@@ -730,8 +730,8 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	if (ghost != NULL)
 		ghost->resetIncapacitationTimes();
-		//ghost->setFoodFilling(0);
-		//ghost->setDrinkFilling(0);
+		ghost->setFoodFilling(0);
+		ghost->setDrinkFilling(0);
 	/* NGE BH SYSTEM */
 	if (attacker->isPlayerCreature() && attacker != player) {
 		/*ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
@@ -943,11 +943,6 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::MIND, 50, true, false);
 		player->addShockWounds(50, true);
 		VisibilityManager::instance()->clearVisibility(player);
-		//Broadcast to Server
-		String playerName = player->getFirstName();
-		StringBuffer zBroadcast;
-		zBroadcast << "\\#00e604" << playerName << " \\#e60000 Has Cloned At A Force Shrine!";
-		player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	} else {
 		if (cloner == NULL) {
 			error("Cloning structure is null");
