@@ -28,7 +28,7 @@ kaadu = Creature:new {
 
 	templates = {"object/mobile/kaadu_hue.iff"},
 	controlDeviceTemplate = "object/intangible/pet/kaadu_hue.iff",
-	lootGroups = {},
+
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

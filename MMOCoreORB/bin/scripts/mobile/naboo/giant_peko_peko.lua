@@ -27,7 +27,7 @@ giant_peko_peko = Creature:new {
 
 	templates = {"object/mobile/giant_peko_peko.iff"},
 	scale = 1.5,
-	lootGroups = {},
+
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
