@@ -98,7 +98,7 @@ object_tangible_wearables_robe_robe_jedi_padawan = object_tangible_wearables_rob
 				    {"jedi_force_power_regen", 5}
 				},
 
-				noTrade = 1,
+				noTrade = 0,
 
 				objectMenuComponent = "RobeObjectMenuComponent",
 				certificationsRequired = {"force_title_jedi_rank_02"},
