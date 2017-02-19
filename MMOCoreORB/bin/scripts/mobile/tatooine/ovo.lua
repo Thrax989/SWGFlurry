@@ -27,22 +27,7 @@ ovo = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_rebel_trooper_bith_m_01.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
 	weapons = {"pirate_weapons_medium"},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,brawlernovice)

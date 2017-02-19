@@ -26,22 +26,7 @@ planet_record_keeper_dantooine = Creature:new {
 	optionsBitmask = INVULNERABLE + CONVERSABLE,
 	diet = HERBIVORE,
 	templates = {"object/mobile/dressed_stranded_imperial_soldier.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "planet_record_keeper_dantooine_convConversationTemplate",
 	attacks = {}

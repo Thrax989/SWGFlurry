@@ -27,22 +27,7 @@ reptilian_flier = Creature:new {
 
 	templates = {"object/mobile/reptilian_flier.iff"},
 	controlDeviceTemplate = "object/intangible/pet/pet_control.iff",
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

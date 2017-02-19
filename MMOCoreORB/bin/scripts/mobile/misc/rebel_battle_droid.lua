@@ -26,22 +26,7 @@ rebel_battle_droid = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/battle_droid.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
 	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",
 	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster)

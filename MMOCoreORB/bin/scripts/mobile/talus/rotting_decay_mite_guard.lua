@@ -28,22 +28,7 @@ rotting_decay_mite_guard = Creature:new {
 	templates = {"object/mobile/decay_mite.iff"},
 	controlDeviceTemplate = "object/intangible/pet/bark_mite_hue.iff",
 	scale = 1.05,
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
