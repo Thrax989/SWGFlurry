@@ -31,17 +31,31 @@ crazed_geonosian_guard = Creature:new {
 		"object/mobile/dressed_geonosian_warrior_01.iff",
 		"object/mobile/dressed_geonosian_warrior_02.iff",
 		"object/mobile/dressed_geonosian_warrior_03.iff"},
-		lootGroups = {
+			lootGroups = {
 		{
 			groups = {
 				{group = "junk", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
+		lootGroups = {
 		{
 			groups = {
-				{group = "geonosian_relic", chance = 5000000},
-				{group = "geonosian_common", chance = 2500000},
+				{group = "geonosian_relic", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		lootGroups = {
+		{
+			groups = {
+				{group = "geonosian_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
 				{group = "tailor_components", chance = 2500000}
 			},
 			lootChance = 10000000
