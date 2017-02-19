@@ -12,5 +12,4 @@ function EndorgoraxScreenPlay:start()
 end
 
 function EndorgoraxScreenPlay:spawnMobiles()
-
 end
