@@ -45,15 +45,21 @@ emperors_hand = Creature:new {
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "fifthgen", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "capes ", chance = 10000000},
+			},
+			lootChance = 100000
 		},
 		{
 			groups = {
 				{group = "g_named_crystals", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 100000
 		}
 	},
 	weapons = {"dark_jedi_weapons_gen3"},

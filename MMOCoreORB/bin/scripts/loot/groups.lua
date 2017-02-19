@@ -474,4 +474,5 @@ includeFile("groups/task_loot/task_loot_briefcase_quest_jusani.lua")
 includeFile("groups/task_loot/task_loot_eng_prototype_quest_jusani.lua")
 
 includeFile("groups/npc/janta_rare.lua")
+includeFile("groups/capes.lua")
 includeFile("groups/weapon/g_lightsaber_vader.lua")
