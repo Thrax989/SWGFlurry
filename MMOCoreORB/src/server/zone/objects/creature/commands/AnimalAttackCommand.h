@@ -79,17 +79,16 @@ public:
 		if (creature->getDistanceTo(creatureTarget) > 42.f){
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
-		
 
 		if (creatureTarget->isRidingMount()) {
-			creature->sendSystemMessage("you cant attack players on mounts");
+			creature->sendSystemMessage("you cannot knockdown a player while they are mounted");
 			return GENERALERROR;
 		}
 
 		if (object->isCreatureObject() && creatureTarget->isAttackableBy(creature)) {
 			creatureTarget->setDizziedState(3);
 			creatureTarget->playEffect("clienteffect/droid_effect_dry_ice.cef", "");
-			creatureTarget->sendSystemMessage("An animal sized force wave hits your legs");
+			creatureTarget->sendSystemMessage("The Force Has Knocked You Down");
 			creatureTarget->setPosture(CreaturePosture::KNOCKEDDOWN);
 		creature->addCooldown("animal", 60 * 1000);
 
