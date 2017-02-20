@@ -59,11 +59,11 @@ function TatooineStaticSpawnsSouthScreenPlay:spawnMobiles()
 	spawnMobile("tatooine", "tusken_berserker", 300, -5350, 40, -4463.3, -25, 0)--exit
 	
 	--Great Pit of Carkoon 
-	spawnMobile("tatooine", "krayt_dragon_ancient_elder", 450, -6022.68, 25.4881, -3236.22, 228, 0, true)
-	spawnMobile("tatooine", "giant_canyon_krayt_dragon", 450, -6100.63, 28.8057, -3183.37, 216, 0, true)
-	spawnMobile("tatooine", "giant_canyon_krayt_dragon_elder", 450, -6335.55, 26.2715, -3235.8, 146, 0, true)
-	spawnMobile("tatooine", "krayt_dragon_grand_elder", 450, -6237.43, 22.1486, -3211.56, 184, 0, true)
-	spawnMobile("tatooine", "krayt_dragon_adolescent_elder", 450, -6281.84, 38.97, -3135.5, 115, 0, true) 
+	spawnMobile("tatooine", "krayt_dragon_ancient_elder", 450, -6022.68, 25.4881, -3236.22, 228, 0)
+	spawnMobile("tatooine", "giant_canyon_krayt_dragon", 450, -6100.63, 28.8057, -3183.37, 216, 0)
+	spawnMobile("tatooine", "giant_canyon_krayt_dragon_elder", 450, -6335.55, 26.2715, -3235.8, 146, 0)
+	spawnMobile("tatooine", "krayt_dragon_grand_elder", 450, -6237.43, 22.1486, -3211.56, 184, 0)
+	spawnMobile("tatooine", "krayt_dragon_adolescent_elder", 450, -6281.84, 38.97, -3135.5, 115, 0) 
 
 end
 
