@@ -81,7 +81,11 @@ public:
 			return GENERALERROR;}
 		
 			// Check target mounted
-		if (targetGhost->isVehicleObject() || targetGhost->isMount()) {
+		if (creatureTarget->isVehicleObject() || creatureTarget->hasRidingCreature || creatureTarget->isMount()) {
+			return GENERALERROR;
+		}
+			// Check for dead target or incapacitated 
+		if (creatureTarget->isDead() || (creatureTarget->isIncapacitated()) {
 			return GENERALERROR;
 		}
 
