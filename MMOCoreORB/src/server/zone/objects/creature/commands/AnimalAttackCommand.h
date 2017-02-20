@@ -80,12 +80,9 @@ public:
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
 		
-			// Check target mounted
-		if (creatureTarget->isVehicleObject() || creatureTarget->hasRidingCreature || creatureTarget->isMount()) {
-			return GENERALERROR;
-		}
-			// Check for dead target or incapacitated 
-		if (creatureTarget->isDead() || (creatureTarget->isIncapacitated()) {
+
+		if (creatureTarget->isRidingMount()) {
+			creature->sendSystemMessage("you cant attack players on mounts");
 			return GENERALERROR;
 		}
 
