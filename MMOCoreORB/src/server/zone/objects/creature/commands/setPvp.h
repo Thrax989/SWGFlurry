@@ -5,6 +5,7 @@
  * Created on: 9/21/2016
  * Authors: Kurdtkobain
  */
+ 
 #ifndef SETPVPCOMMAND_H_
 
 #define SETPVPCOMMAND_H_
@@ -55,14 +56,16 @@ public:
 		if(creature->getFactionStatus() == FactionStatus::ONLEAVE || creature->getFactionStatus() == FactionStatus::COVERT){
 			creature->setFactionStatus(FactionStatus::OVERT);
 		}
-			//Broadcast to Server
- 			String playerName = creature->getFirstName();
- 			StringBuffer zBroadcast;
- 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Now Overt";
-			if(creature->getFactionStatus() == FactionStatus::ONLEAVE){
-		}
-			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-		
+		//Broadcast to Server
+ 		String playerName = creature->getFirstName();
+ 		StringBuffer zBroadcast;
+ 		zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Now Overt";
+		creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		//Sound + Effect
+		creature->playEffect("clienteffect/lair_med_damage_smoke.cef");
+		PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd");
+  		creature->sendMessage(pmm);
+
 		return SUCCESS;
 	}
 
