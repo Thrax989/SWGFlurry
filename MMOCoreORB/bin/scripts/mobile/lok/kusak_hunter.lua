@@ -31,8 +31,8 @@ kusak_hunter = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareacombo",""},
-		{"strongdisease",""}
+		{"strongdisease",""},
+		{"creatureareacombo",""}
 	}
 }
 
