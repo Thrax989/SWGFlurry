@@ -34,11 +34,21 @@ nk_s_battle_droid_02 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 10000000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
-	},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	conversationTemplate = "",
 	scale = 1.25,
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
