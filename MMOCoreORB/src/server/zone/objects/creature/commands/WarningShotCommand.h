@@ -75,16 +75,14 @@ public:
 				return INVALIDTARGET;
 		}
 
-		const bool hasFr1 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_1);
 		const bool hasFr2 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_2);
 		const bool hasFr3 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_3);
 
-		if(hasFr1 || hasFr2 || hasFr3) {
+		if(hasFr2 || hasFr3) {
 			creature->sendSystemMessage(creatureTarget->getFirstName() + "'s Force Run has been disrupted by your attack and you have taken wound damage!");
 			creatureTarget->sendSystemMessage("Your Force Run has been disrupted by" + creature->getFirstName() + ".");
 
 			Locker lock(creatureTarget);
-			if (hasFr1) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_1); }
 			if (hasFr2) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_2); }
 			if (hasFr3) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_3); }
 
