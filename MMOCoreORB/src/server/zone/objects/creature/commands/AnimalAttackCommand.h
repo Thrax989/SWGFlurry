@@ -79,6 +79,11 @@ public:
 		if (creature->getDistanceTo(creatureTarget) > 42.f){
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
+		
+			// Check target mounted
+		if (targetGhost->isVehicleObject() || targetGhost->isMount()) {
+			return GENERALERROR;
+		}
 
 		if (object->isCreatureObject() && creatureTarget->isAttackableBy(creature)) {
 			creatureTarget->setDizziedState(3);
