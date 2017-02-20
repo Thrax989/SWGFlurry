@@ -51,7 +51,7 @@ emperors_hand = Creature:new {
 		},
 		{
 			groups = {
-				{group = "capes ", chance = 10000000},
+				{group = "capes", chance = 10000000},
 			},
 			lootChance = 100000
 		},

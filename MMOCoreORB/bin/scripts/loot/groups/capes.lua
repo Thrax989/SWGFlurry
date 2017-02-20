@@ -5,8 +5,8 @@ capes = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "capes1", weight = 10000000},
-		{itemTemplate = "capes2", weight = 10000000}
+		{itemTemplate = "capes1", weight = 5000000},
+		{itemTemplate = "capes2", weight = 5000000}
 	}
 }
 
