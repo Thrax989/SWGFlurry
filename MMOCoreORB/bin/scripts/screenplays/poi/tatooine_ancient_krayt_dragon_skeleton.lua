@@ -14,12 +14,11 @@ end
 function AncientKraytSkeletonScreenPlay:spawnMobiles()
 
 	spawnMobile("tatooine", "krayt_dragon_grand", 450, -4555.0, 49.3, -4459.2, -116, 0)
-	spawnMobile("tatooine", "krayt_dragon_ancient", 450, -4713.1, 46.5, -4288.3, 50, 0)
+
 	spawnMobile("tatooine", "giant_canyon_krayt_dragon", 450, -4669.8, 30.1, -4477.7, 5, 0)
 	spawnMobile("tatooine", "canyon_krayt_dragon", 450, -4528.8, 28.3, -4302.4, 144, 0)
 	spawnMobile("tatooine", "juvenile_canyon_krayt_dragon", 450, -4521.3, 27.2, -4298.2, 144, 0)
 	spawnMobile("tatooine", "krayt_dragon_adolescent", 450, -4747.2, 32.5, -4424.8, -91, 0)
-	spawnMobile("tatooine", "krayt_dragon_ancient_elder", 450, -4686.79, 50.7051, -4338, 55, 0)
 
 	spawnMobile("tatooine", "krayt_dragon_adolescent_elder", 450, -4613.84, 53.2907, -4388.88, 26, 0) 
 	spawnMobile("tatooine", "krayt_dragon_grand_elder", 450, -4497.65, 55.0428, -4499.77, 78, 0)
@@ -32,5 +31,8 @@ function AncientKraytSkeletonScreenPlay:spawnMobiles()
 	spawnMobile("tatooine", "juvenile_canyon_krayt_dragon_elder", 450, -4622.97, 33.2227, -4285.55, 44, 0) 
 	spawnMobile("tatooine", "juvenile_canyon_krayt_dragon_elder", 450, 7154.24, 42.5546, 4367.21, 286, 0)
 	spawnMobile("tatooine", "canyon_krayt_dragon_elder", 450, 7147.78, 45.0426, 4358.72, 299, 0)
+
+	spawnMobile("tatooine", "krayt_dragon_ancient", 450, -4734.78, 41.9816, -4251.47, 0, 0) 
+	spawnMobile("tatooine", "krayt_dragon_ancient_elder", 450, -4704.83, 47.9804, -4362.1, 16, 0) 
 
 end
