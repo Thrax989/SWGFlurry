@@ -88,10 +88,10 @@ function DathomirStaticSpawnsSwScreenPlay:spawnMobiles()
 	spawnMobile("dathomir", "mutant_rancor", 360, -4766.7, 92.3, -4738.5, 55, 0)
 
 	--empty hut (-6894,-4854)
-	spawnMobile("dathomir", "singing_mountain_clan_councilwoman", 7200, -6894.9, 461.8, -4853.8, 109, 0,true)
+	spawnMobile("dathomir", "singing_mountain_clan_councilwoman", 900, -6894.9, 461.8, -4853.8, 109, 0,true)
 
 	--worship stone (-6953,-3032)
-	spawnMobile("dathomir", "nightsister_elder", 1800, -6953.8, 551.6, -3032.1, -45, 0,true)
+	spawnMobile("dathomir", "nightsister_elder", 900, -6953.8, 551.6, -3032.1, -45, 0,true)
 	spawnMobile("dathomir", "nightsister_protector", 720, -6946.5, 550.5, -3041.9, 135, 0)
 	spawnMobile("dathomir", "rancor_pygmy", 1200, -6995.6, 570.0, -3058.8, 93, 0)
 
@@ -123,7 +123,7 @@ function DathomirStaticSpawnsSwScreenPlay:spawnMobiles()
 	spawnMobile("dathomir", "nightsister_ranger", 360, -4165.2, 24.4, -844.2, 45, 0)
 
 	--floating rocks (-6628,-772)
-	spawnMobile("dathomir", "singing_mountain_clan_councilwoman", 1800, -6628.9, 327.5, -772.8, -22, 0,true)
+	spawnMobile("dathomir", "singing_mountain_clan_councilwoman", 900, -6628.9, 327.5, -772.8, -22, 0,true)
 	spawnMobile("dathomir", "singing_mountain_clan_guardian", 900, -6635.4, 323.5, -755.7, 22, 0)
 	spawnMobile("dathomir", "singing_mountain_clan_huntress", 360, -6624.7, 314.5, -740.3, 72, 0)
 	spawnMobile("dathomir", "singing_mountain_clan_huntress", 360, -6593.1, 281.5, -740.3, 90, 0)
