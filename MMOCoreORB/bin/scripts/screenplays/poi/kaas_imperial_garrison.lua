@@ -16,6 +16,6 @@ end
 
 function kaas_imperial_garison:spawnMobiles()
 
-	spawnMobile("kaas", "emperors_hand", 3600, -5121.29, 81.2529, -2399.79, 352, 0)
+	spawnMobile("kaas", "emperors_hand", 900, -5121.29, 81.2529, -2399.79, 352, 0)
 
 end
