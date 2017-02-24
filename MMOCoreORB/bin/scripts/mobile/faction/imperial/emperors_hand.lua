@@ -64,7 +64,7 @@ emperors_hand = Creature:new {
 	},
 	weapons = {"dark_jedi_weapons_gen3"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(lightsabermaster)
+	attacks = merge(lightsabermaster,forcepowermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(emperors_hand, "emperors_hand")
