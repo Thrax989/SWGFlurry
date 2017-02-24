@@ -3,7 +3,7 @@ emperors_hand = Creature:new {
 	socialGroup = "self",
 	faction = "",
 	level = 300,
-	chanceHit = 75.0,
+	chanceHit = 85.0,
 	damageMin = 1645,
 	damageMax = 3000,
 	specialDamageMult = 7.5,
@@ -11,7 +11,7 @@ emperors_hand = Creature:new {
 	baseHAM = 475000,
 	baseHAMmax = 500000,
 	armor = 3,
-	resists = {90,90,90,90,90,90,90,90,90},
+	resists = {95,95,95,95,95,95,95,95,95},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -47,19 +47,19 @@ emperors_hand = Creature:new {
 			groups = {
 				{group = "fifthgen", chance = 10000000},
 			},
-			lootChance = 100000
+			lootChance = 250000
 		},
 		{
 			groups = {
 				{group = "capes", chance = 10000000},
 			},
-			lootChance = 100000
+			lootChance = 250000
 		},
 		{
 			groups = {
 				{group = "g_named_crystals", chance = 10000000},
 			},
-			lootChance = 100000
+			lootChance = 250000
 		}
 	},
 	weapons = {"dark_jedi_weapons_gen3"},
