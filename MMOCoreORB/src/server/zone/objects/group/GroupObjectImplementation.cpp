@@ -408,8 +408,12 @@ void GroupObjectImplementation::calcGroupLevel() {
 		Reference<CreatureObject*> member = getGroupMember(i);
 
 		if (member->isPet()) {
+			// If there is a level 77+ pet in group, we will assume they want max level missions
+			if (member->getLevel() >= 77)
+				groupLevel = 200;
+			else
 			groupLevel += member->getLevel() / 5;
-
+			
 		} else if (member->isPlayerCreature()) {
 			int memberLevel = member->getLevel();
 
