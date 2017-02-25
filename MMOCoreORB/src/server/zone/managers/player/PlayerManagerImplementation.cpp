@@ -942,7 +942,6 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::ACTION, 50, true, false);
 		player->addWounds(CreatureAttribute::MIND, 50, true, false);
 		player->addShockWounds(50, true);
-		VisibilityManager::instance()->clearVisibility(player);
 	} else {
 		if (cloner == NULL) {
 			error("Cloning structure is null");
@@ -1001,7 +1000,6 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 			player->addWounds(CreatureAttribute::ACTION, 100, true, false);
 			player->addWounds(CreatureAttribute::MIND, 100, true, false);
 			player->addShockWounds(100, true);
-			VisibilityManager::instance()->clearVisibility(player);
 		}
 	}
 
