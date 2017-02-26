@@ -6,6 +6,7 @@ geo_solidifying_agent = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/component/weapon/geonosian_solidifying_agent.iff",
 	craftingValues = {
+		{"mindamage",5,18,0},
 		{"maxdamage",5,18,0},
 		{"hitpoints",500,850,0},
 		{"useCount",1,7,0},

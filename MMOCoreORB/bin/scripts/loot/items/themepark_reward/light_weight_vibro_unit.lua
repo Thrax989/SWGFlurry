@@ -6,7 +6,7 @@ light_weight_vibro_unit = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/component/weapon/vibro_unit_quest.iff",
 	craftingValues = {
-		{"mindamage",25,25,0},
+		{"mindamage",30,30,0},
 		{"maxdamage",30,30,0},
 		{"attackspeed",-0.5,-0.5,1},
 		{"woundchance",8,8,0},

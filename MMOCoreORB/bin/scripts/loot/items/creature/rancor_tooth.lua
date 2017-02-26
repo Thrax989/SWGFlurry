@@ -6,7 +6,7 @@ rancor_tooth = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/component/weapon/rancor_tooth.iff",
 	craftingValues = {
-		{"mindamage",4,160,0},
+		{"mindamage",40,160,0},
 		{"maxdamage",40,160,0},
 		{"attackspeed",0.5,0,1},
 		{"woundchance",12,20,0},
