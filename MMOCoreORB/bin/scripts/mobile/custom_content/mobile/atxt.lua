@@ -1,5 +1,5 @@
-at_xt = Creature:new {
-	objectName = "@mob/creature_names:at_xt",
+atxt = Creature:new {
+	objectName = "@mob/creature_names:at_st",
 	socialGroup = "rebel",
 	faction = "rebel",
 	level = 125,
@@ -32,4 +32,4 @@ at_xt = Creature:new {
 	defaultWeapon = "object/weapon/ranged/vehicle/vehicle_atst_ranged.iff",
 }
 
-CreatureTemplates:addCreatureTemplate(at_xt, "at_xt")
+CreatureTemplates:addCreatureTemplate(atxt, "atxt")
