@@ -52,6 +52,12 @@ krayt_dragon_grand_elder = Creature:new {
 		},
 		{
 	        groups = {
+				{group = "krayt_tissue_rare", chance = 10000000}
+			},
+			lootChance = 15000000
+		},
+		{
+	        groups = {
 				{group = "pearls_premium", chance = 4000000},
 				{group = "pearls_flawless", chance = 6000000}
 			},
