@@ -5,7 +5,7 @@ acklays = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "acklay_bones_rare", weight = 1000000000},
+		{itemTemplate = "acklay_bones_rare", weight = 10000000},
 	}
 }
 
