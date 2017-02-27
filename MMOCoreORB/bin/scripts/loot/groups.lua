@@ -96,6 +96,7 @@ includeFile("groups/forage/forage_rare.lua")
 
 -- geonosian_lab sub-folder
 includeFile("groups/geonosian_lab/acklay.lua")
+includeFile("groups/geonosian_lab/acklays.lua")
 includeFile("groups/geonosian_lab/enhanced_kwi.lua")
 includeFile("groups/geonosian_lab/fire_breathing_spider.lua")
 includeFile("groups/geonosian_lab/geo_kliknik.lua")
