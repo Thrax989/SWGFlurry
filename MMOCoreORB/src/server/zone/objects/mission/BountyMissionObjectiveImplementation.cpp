@@ -27,6 +27,7 @@
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/managers/loot/LootManager.h"
+#include "templates/params/creature/CreatureState.h"
 
 void BountyMissionObjectiveImplementation::setNpcTemplateToSpawn(SharedObjectTemplate* sp) {
 	npcTemplateToSpawn = sp;
@@ -494,6 +495,7 @@ bool BountyMissionObjectiveImplementation::addPlayerTargetObservers() {
 
 	ManagedReference<MissionObject* > mission = this->mission.get();
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
+	ManagedReference<CreatureObject*> ownerPet = getLinkedCreature().get();
 
 	if(mission == NULL || owner == NULL)
 		return false;
@@ -511,11 +513,16 @@ bool BountyMissionObjectiveImplementation::addPlayerTargetObservers() {
 			addObserverToCreature(ObserverEventType::PLAYERKILLED, owner);
 			addObserverToCreature(ObserverEventType::DEFENDERADDED, owner);
 			addObserverToCreature(ObserverEventType::DEFENDERDROPPED, owner);
+			
+			addObserverToCreature(ObserverEventType::PLAYERKILLED, ownerPet);
+			addObserverToCreature(ObserverEventType::DEFENDERADDED, ownerPet);
+			addObserverToCreature(ObserverEventType::DEFENDERDROPPED, ownerPet);
 
 			owner->getZoneServer()->getMissionManager()->addBountyHunterToPlayerBounty(mission->getTargetObjectId(), owner->getObjectID());
 
-			//Update aggressive status on target for bh.
+			//Update aggressive status on target for bh and pet.
 			target->sendPvpStatusTo(owner);
+			target->sendPvpStatusTo(ownerPet);
 
 			return true;
 		}
