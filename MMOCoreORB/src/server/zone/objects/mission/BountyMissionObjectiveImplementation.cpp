@@ -39,7 +39,14 @@ void BountyMissionObjectiveImplementation::activate() {
 	MissionObjectiveImplementation::activate();
 
 	bool failMission = false;
-
+	
+	ManagedReference<MissionObject* > mission = this->mission.get();
+	ManagedReference<CreatureObject*> target = PlayerManager::getPlayer(mission->getTargetObjectId);
+	
+	if(isPlayerTarget() && target == NULL){
+		failMission = true;
+	}
+		
 	//Start NPC task or add observers to player target.
 	if (getObserverCount() == 2) {
 		removeNpcTargetObservers();
