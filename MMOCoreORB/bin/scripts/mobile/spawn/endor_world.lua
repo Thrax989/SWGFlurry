@@ -1597,10 +1597,10 @@ endor_world = {
 		{
 			lairTemplateName = "endor_gorax_neutral_none",
 			spawnLimit = 5,
-			minDifficulty = 131,
+			minDifficulty = 85,
 			maxDifficulty = 300,
 			numberToSpawn = 0,
-			weighting = 1,
+			weighting = 10,
 			size = 35
 		},
 		{
