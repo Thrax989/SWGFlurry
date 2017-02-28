@@ -60,7 +60,7 @@ FireAcidSingle1Command = {
 	
 	weaponType = SPECIALHEAVYWEAPON,
 	
-	range = 16
+	range = 32
 }
 
 AddCommand(FireAcidSingle1Command)
