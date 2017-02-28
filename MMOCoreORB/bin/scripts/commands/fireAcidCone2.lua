@@ -63,7 +63,7 @@ FireAcidCone2Command = {
 	
 	weaponType = SPECIALHEAVYWEAPON,
 	
-	range = 16
+	range = 32
 }
 
 AddCommand(FireAcidCone2Command)

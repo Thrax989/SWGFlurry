@@ -57,7 +57,7 @@ FireLightningSingle2Command = {
 	
 	weaponType = SPECIALHEAVYWEAPON,
 
-	range = 16
+	range = 32
 }
 
 AddCommand(FireLightningSingle2Command)
