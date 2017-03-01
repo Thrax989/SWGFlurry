@@ -1245,6 +1245,9 @@ void PlayerObjectImplementation::notifyOnline() {
 	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
 	box->setPromptTitle("Welcome To Flurry");
 	box->setPromptText("Server Rules.");
+	box->setCancelButton(true, "@no");
+	box->setOkButton(true, "@yes");
+	box->setUsingObject(player);
 	player->addSuiBox(box);
 	playerCreature->sendMessage(box->generateMessage());
 
