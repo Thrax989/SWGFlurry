@@ -63,7 +63,7 @@
 #include "server/zone/managers/jedi/JediManager.h"
 #include "server/zone/objects/player/events/ForceRegenerationEvent.h"
 #include "server/login/account/AccountManager.h"
-
+#include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/objects/tangible/deed/eventperk/EventPerkDeed.h"
 #include "server/zone/managers/player/QuestInfo.h"
 #include "server/zone/objects/player/events/ForceMeditateTask.h"
@@ -1240,6 +1240,13 @@ void PlayerObjectImplementation::notifyOnline() {
 	JediManager::instance()->onPlayerLoggedIn(playerCreature);
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
+
+	ManagedReference<PlayerObject*> player = playerCreature->getPlayerObject();
+	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
+	box->setPromptTitle("Welcome To Flurry");
+	box->setPromptText("Server Rules.");
+	player->addSuiBox(box);
+	playerCreature->sendMessage(box->generateMessage());
 
 	if (getForcePowerMax() > 0 && getForcePower() < getForcePowerMax())
 		activateForcePowerRegen();
