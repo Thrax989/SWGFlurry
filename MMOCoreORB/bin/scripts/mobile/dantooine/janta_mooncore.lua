@@ -27,28 +27,15 @@ janta_mooncore = Creature:new {
   diet = HERBIVORE,
 
   templates = {"object/mobile/dressed_dathomir_nightsister_elder.iff"},
-  lootGroups = {
-    {
-      groups = {
-        {group = "nightsister_common", chance = 9000000},
-      },
-    },
-    {
-     groups = {
-     {group = "crystals_premium", chance = 9000000},
-     },
-     },
-     {
-     groups = {
-     {group = "clothing_attachments", chance = 9000000},
-      },
-      },
-     {
-     groups = {
-     {group = "armor_attachments", chance = 9000000},
-      },
-      },
-  },
+	lootGroups = {
+		{
+			groups = {
+				{group = "pearls_flawless", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
   weapons = {"mixed_force_weapons"},
   conversationTemplate = "",
   attacks = merge(pikemanmaster,brawlermaster)

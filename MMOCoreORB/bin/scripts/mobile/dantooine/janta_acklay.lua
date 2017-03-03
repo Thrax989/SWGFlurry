@@ -28,24 +28,47 @@ janta_acklay = Creature:new {
 	  Scale = 0.50,
 
 	  templates = {"object/mobile/acklay_hue.iff"},
-  lootGroups = {
-    {
-      groups = {
-        {group = "acklay", chance = 6000000},
-      },
-    },
-     {
-     groups = {
-     {group = "clothing_attachments", chance = 9000000},
-      },
-      },
-     {
-     groups = {
-     {group = "armor_attachments", chance = 9000000},
-      },
-      },
-  },
-	  weapons = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "acklay", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "acklay", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "acklay", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "acklay", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "acklay", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "nge1", chance = 1000000},
+				{group = "clothing_attachments", chance = 4500000},
+				{group = "armor_attachments", chance = 4500000}
+			},
+			lootChance = 10000000
+		},
+	},
+	  weapons = {"creature_spit_large_yellow"},
 	  conversationTemplate = "",
 	  attacks = {
 	    {"posturedownattack","stateAccuracyBonus=50"},
