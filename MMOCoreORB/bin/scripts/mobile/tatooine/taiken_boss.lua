@@ -54,4 +54,4 @@ taiken_count_doku = Creature:new {
   attacks = merge(lightsabermaster,forcewielder)
 }
 
-CreatureTemplates:addCreatureTemplate(taiken_count_doku, "taiken_count_doku")
+CreatureTemplates:addCreatureTemplate(taiken_boss, "taiken_boss")
