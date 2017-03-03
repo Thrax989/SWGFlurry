@@ -1,7 +1,7 @@
 taiken_count_doku = Creature:new {
   customName = "Darth Savage",
   socialGroup = "",
-  level = 400,
+  level = 300,
   chanceHit = 1.5,
   damageMin = 295,
   damageMax = 595,
