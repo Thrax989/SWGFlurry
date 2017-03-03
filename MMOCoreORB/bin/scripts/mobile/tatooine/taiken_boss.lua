@@ -1,6 +1,6 @@
 taiken_count_doku = Creature:new {
   customName = "Darth Savage",
-  socialGroup = "imperial",
+  socialGroup = "",
   level = 400,
   chanceHit = 1.5,
   damageMin = 295,
@@ -37,7 +37,7 @@ taiken_count_doku = Creature:new {
      {group = "pearls_flawless", chance = 6000000},
      },
      },
-     {
+	 {
      groups = {
      {group = "clothing_attachments", chance = 10000000},
       },

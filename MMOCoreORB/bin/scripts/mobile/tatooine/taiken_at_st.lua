@@ -1,6 +1,6 @@
 taiken_at_st = Creature:new {
   objectName = "@mob/creature_names:fbase_at_st",
-  socialGroup = "imperial",
+  socialGroup = "",
   level = 200,
   chanceHit = 11.5,
   damageMin = 170,

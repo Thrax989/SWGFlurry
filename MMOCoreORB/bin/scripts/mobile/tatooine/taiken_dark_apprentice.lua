@@ -1,6 +1,6 @@
 taiken_dark_apprentice = Creature:new {
   customName = "Dark Apprentice",
-  socialGroup = "imperial",
+  socialGroup = "",
   level = 300,
   chanceHit = 0.95,
   damageMin = 26,

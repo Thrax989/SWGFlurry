@@ -1,6 +1,6 @@
 taiken_nova = Creature:new {
 customName = "Nova Trooper",
-  socialGroup = "imperial",
+  socialGroup = "",
   level = 200,
   chanceHit =0.50,
   damageMin = 55,

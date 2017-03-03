@@ -1,7 +1,7 @@
 taiken_moff = Creature:new {
   objectName = "",
   customName = "Moff Cody",
-  socialGroup = "imperial",
+  socialGroup = "",
   level = 200,
   chanceHit = 0.37,
   damageMin = 270,
