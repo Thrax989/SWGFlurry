@@ -1,18 +1,17 @@
 janta_soothsayer = Creature:new {
 	objectName = "@mob/creature_names:janta_soothsayer",
 	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
-	level = 60,
-	chanceHit = 0.65,
-	damageMin = 500,
-	damageMax = 710,
-	baseXp = 5738,
-	baseHAM = 12000,
-	baseHAMmax = 14000,
+	level = 100,
+	chanceHit = 0.75,
+	damageMin = 10,
+	damageMax = 40,
+	baseXp = 0,
+	baseHAM = 11000,
+	baseHAMmax = 18000,
 	armor = 0,
-	resists = {-1,40,-1,0,0,70,0,-1,-1},
+	resists = {50,-1,-1,25,-1,-1,-1,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -24,7 +23,7 @@ janta_soothsayer = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = 128,
 	diet = HERBIVORE,
 
 	templates = {
@@ -56,7 +55,7 @@ janta_soothsayer = Creature:new {
 		},
 	weapons = {"primitive_weapons"},
 	conversationTemplate = "",
-	attacks = merge(pikemanmaster,fencermaster,brawlermaster)
+	attacks = merge(brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(janta_soothsayer, "janta_soothsayer")

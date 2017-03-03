@@ -1,16 +1,15 @@
 janta_primalist = Creature:new {
 	objectName = "@mob/creature_names:janta_primalist",
 	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
-	level = 42,
+	level = 100,
 	chanceHit = 0.47,
-	damageMin = 405,
-	damageMax = 520,
-	baseXp = 4097,
-	baseHAM = 9700,
-	baseHAMmax = 11900,
+	damageMin = 15,
+	damageMax = 22,
+	baseXp = 0,
+	baseHAM = 10700,
+	baseHAMmax = 18900,
 	armor = 0,
 	resists = {-1,0,-1,0,0,60,0,-1,-1},
 	meatType = "",
@@ -24,7 +23,7 @@ janta_primalist = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = 128,
 	diet = HERBIVORE,
 
 	templates = {
@@ -56,7 +55,7 @@ janta_primalist = Creature:new {
 		},
 	weapons = {"primitive_weapons"},
 	conversationTemplate = "",
-	attacks = merge(pikemanmaster,fencermaster,brawlermaster)
+	attacks = merge(brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(janta_primalist, "janta_primalist")

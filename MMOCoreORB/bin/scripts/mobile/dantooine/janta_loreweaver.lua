@@ -1,18 +1,17 @@
 janta_loreweaver = Creature:new {
 	objectName = "@mob/creature_names:janta_loreweaver",
 	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
-	level = 55,
-	chanceHit = 0.6,
-	damageMin = 445,
-	damageMax = 600,
-	baseXp = 5373,
-	baseHAM = 11000,
-	baseHAMmax = 14000,
+	level = 100,
+	chanceHit = 0.60,
+	damageMin = 45,
+	damageMax = 50,
+	baseXp = 0,
+	baseHAM = 15000,
+	baseHAMmax = 18000,
 	armor = 0,
-	resists = {-1,45,-1,0,0,70,0,-1,-1},
+	resists = {-1,15,-1,0,0,15,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -24,7 +23,7 @@ janta_loreweaver = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD + KILLER,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = 128,
 	diet = HERBIVORE,
 
 	templates = {
@@ -56,7 +55,7 @@ janta_loreweaver = Creature:new {
 		},
 	weapons = {"primitive_weapons"},
 	conversationTemplate = "",
-	attacks = merge(pikemanmaster,fencermaster,brawlermaster)
+	attacks = merge(brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(janta_loreweaver, "janta_loreweaver")

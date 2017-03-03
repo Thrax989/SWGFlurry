@@ -1,18 +1,17 @@
 janta_herbalist = Creature:new {
 	objectName = "@mob/creature_names:janta_herbalist",
 	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
-	level = 27,
-	chanceHit = 0.39,
-	damageMin = 305,
-	damageMax = 320,
-	baseXp = 2730,
-	baseHAM = 8200,
-	baseHAMmax = 10000,
+	level = 100,
+	chanceHit = 0.20,
+	damageMin = 20,
+	damageMax = 80,
+	baseXp = 0,
+	baseHAM = 5200,
+	baseHAMmax = 12000,
 	armor = 0,
-	resists = {-1,25,-1,25,25,25,25,-1,-1},
+	resists = {55,-1,-1,5,-1,-1,-1,15,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -24,7 +23,7 @@ janta_herbalist = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = 128,
 	diet = HERBIVORE,
 
 	templates = {
@@ -56,7 +55,7 @@ janta_herbalist = Creature:new {
 		},
 	weapons = {"primitive_weapons"},
 	conversationTemplate = "",
-	attacks = merge(pikemanmaster,fencermaster,brawlermaster)
+	attacks = merge(brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(janta_herbalist, "janta_herbalist")
