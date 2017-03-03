@@ -1,18 +1,17 @@
 janta_harvester = Creature:new {
 	objectName = "@mob/creature_names:janta_harvester",
 	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
-	level = 40,
-	chanceHit = 0.44,
-	damageMin = 345,
-	damageMax = 400,
-	baseXp = 3915,
-	baseHAM = 9300,
-	baseHAMmax = 11300,
+	level = 100,
+	chanceHit = 0.87,
+	damageMin = 20,
+	damageMax = 80,
+	baseXp = 0,
+	baseHAM = 15300,
+	baseHAMmax = 18300,
 	armor = 0,
-	resists = {0,0,-1,0,0,60,0,0,-1},
+	resists = {50,-1,-1,20,-1,-1,-1,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -24,39 +23,32 @@ janta_harvester = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = 128,
 	diet = HERBIVORE,
 
 	templates = {
 		"object/mobile/dantari_male.iff",
 		"object/mobile/dantari_female.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 8000000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 4000000},
-				{group = "janta_rare", chance = 1000000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "janta_common", chance = 10000000},
-			},
-			lootChance = 7500000
-		},
-		},
+  lootGroups = {
+    {
+      groups = {
+        {group = "janta_common", chance = 6000000},
+      },
+    },
+     {
+     groups = {
+     {group = "clothing_attachments", chance = 5000000},
+      },
+      },
+     {
+     groups = {
+     {group = "armor_attachments", chance = 5000000},
+      },
+      },
+  },
 	weapons = {"primitive_weapons"},
 	conversationTemplate = "",
-	attacks = merge(pikemanmaster,fencermaster,brawlermaster)
+	attacks = merge(brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(janta_harvester, "janta_harvester")
