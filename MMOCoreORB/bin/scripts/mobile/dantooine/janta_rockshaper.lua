@@ -1,18 +1,17 @@
 janta_rockshaper = Creature:new {
 	objectName = "@mob/creature_names:janta_rockshaper",
 	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
-	level = 75,
-	chanceHit = 0.7,
-	damageMin = 495,
-	damageMax = 700,
-	baseXp = 7115,
-	baseHAM = 13000,
+	level = 100,
+	chanceHit = 0.70,
+	damageMin = 25,
+	damageMax = 50,
+	baseXp = 0,
+	baseHAM = 5000,
 	baseHAMmax = 15000,
 	armor = 0,
-	resists = {100,25,-1,25,25,100,25,-1,-1},
+	resists = {80,-1,-1,15,25,-1,25,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -24,39 +23,31 @@ janta_rockshaper = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = 128,
 	diet = HERBIVORE,
 
 	templates = {
 		"object/mobile/dantari_male.iff",
 		"object/mobile/dantari_female.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 8000000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 4000000},
-				{group = "janta_rare", chance = 1000000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "janta_common", chance = 10000000},
-			},
-			lootChance = 7500000
-		},
-		},
-	weapons = {"primitive_weapons"},
+  lootGroups = {
+    {
+      groups = {
+        {group = "janta_common", chance = 6000000},
+      },
+    },
+     {
+     groups = {
+     {group = "clothing_attachments", chance = 4000000},
+      },
+      },
+     {
+     groups = {
+     {group = "armor_attachments", chance = 4000000},
+      },
+      },
+  },ns = {"primitive_weapons"},
 	conversationTemplate = "",
-	attacks = merge(pikemanmaster,fencermaster,brawlermaster)
+	attacks = merge(brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(janta_rockshaper, "janta_rockshaper")
