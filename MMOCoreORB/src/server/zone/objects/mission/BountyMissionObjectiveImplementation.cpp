@@ -41,7 +41,9 @@ void BountyMissionObjectiveImplementation::activate() {
 	bool failMission = false;
 	
 	ManagedReference<MissionObject* > mission = this->mission.get();
-	ManagedReference<CreatureObject*> target = PlayerManager::getPlayer(mission->getTargetObjectId());
+	ManagedReference<CreatureObject*> target = NULL;
+	
+	target = getPlayerOwner()->getZoneServer()->getObject(mission->getTargetObjectId()).castTo<CreatureObject*>();
 	
 	if(isPlayerTarget() && target == NULL){
 		failMission = true;
