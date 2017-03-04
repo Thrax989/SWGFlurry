@@ -41,7 +41,7 @@ void BountyMissionObjectiveImplementation::activate() {
 	bool failMission = false;
 	
 	ManagedReference<MissionObject* > mission = this->mission.get();
-	ManagedReference<CreatureObject*> target = PlayerManager::getPlayer(mission->getTargetObjectId);
+	ManagedReference<CreatureObject*> target = PlayerManager::getPlayer(mission->getTargetObjectId());
 	
 	if(isPlayerTarget() && target == NULL){
 		failMission = true;
@@ -502,7 +502,7 @@ bool BountyMissionObjectiveImplementation::addPlayerTargetObservers() {
 
 	ManagedReference<MissionObject* > mission = this->mission.get();
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
-	ManagedReference<CreatureObject*> ownerPet = getLinkedCreature().get();
+	ManagedReference<CreatureObject*> ownerPet = owner->getLinkedCreature().get();
 
 	if(mission == NULL || owner == NULL)
 		return false;
