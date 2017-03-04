@@ -502,7 +502,9 @@ bool BountyMissionObjectiveImplementation::addPlayerTargetObservers() {
 
 	ManagedReference<MissionObject* > mission = this->mission.get();
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
-	ManagedReference<CreatureObject*> ownerPet = owner->getLinkedCreature().get();
+	ManagedReference<CreatureObject*> ownerPet = NULL;
+	
+	ownerPet = owner->getLinkedCreature().get();
 
 	if(mission == NULL || owner == NULL)
 		return false;
@@ -521,10 +523,12 @@ bool BountyMissionObjectiveImplementation::addPlayerTargetObservers() {
 			addObserverToCreature(ObserverEventType::DEFENDERADDED, owner);
 			addObserverToCreature(ObserverEventType::DEFENDERDROPPED, owner);
 			
+			if(ownerPet != NULL){
 			addObserverToCreature(ObserverEventType::PLAYERKILLED, ownerPet);
 			addObserverToCreature(ObserverEventType::DEFENDERADDED, ownerPet);
 			addObserverToCreature(ObserverEventType::DEFENDERDROPPED, ownerPet);
-
+			}
+			
 			owner->getZoneServer()->getMissionManager()->addBountyHunterToPlayerBounty(mission->getTargetObjectId(), owner->getObjectID());
 
 			//Update aggressive status on target for bh and pet.
