@@ -17,6 +17,7 @@
 #include "server/zone/packets/object/CombatAction.h"
 #include "server/zone/packets/tangible/UpdatePVPStatusMessage.h"
 #include "server/zone/Zone.h"
+#include "server/zone/objects/intangible/PetControlDevice.h"
 #include "server/zone/managers/collision/CollisionManager.h"
 #include "server/zone/managers/visibility/VisibilityManager.h"
 #include "server/zone/managers/creature/LairObserver.h"
@@ -60,6 +61,16 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
 		return false;
 
 	attacker->clearState(CreatureState::PEACE);
+
+	if(attacker->isPet()){
+		ManagedReference<CreatureObject*> owner = attacker->getLinkedCreature().get();
+		if(owner->hasBountyMissionFor(defender->asCreatureObject())){
+		uint64 playerId = owner->getObjectID();
+		ManagedReference<CreatureObject*> playerObj = defender->asCreatureObject();
+		ManagedReference<PlayerObject*> defenderId = playerObj->getPlayerObject();
+		defenderId->addToBountyLockList(playerId);
+		}
+	}
 
 	Locker clocker(defender, attacker);
 
