@@ -1,16 +1,16 @@
 taiken_moff = Creature:new {
   objectName = "",
   customName = "Moff Cody",
-  socialGroup = "",
-  level = 200,
-  chanceHit = 0.37,
-  damageMin = 270,
-  damageMax = 480,
+  socialGroup = "geonosian",
+  level = 300,
+  chanceHit = 4.37,
+  damageMin = 370,
+  damageMax = 580,
   baseXp = 0,
   baseHAM = 55000,
   baseHAMmax = 100000,
-  armor = 1,
-  resists = {100,50,50,50,50,50,50,50,30},
+  armor = 2,
+  resists = {100,60,20,60,10,10,50,10,0},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -20,26 +20,34 @@ taiken_moff = Creature:new {
   milk = 0,
   tamingChance = 0,
   ferocity = 0,
-  pvpBitmask = ATTACKABLE + ENEMY,
-  creatureBitmask = PACK + KILLER,
-  optionsBitmask = 128,
+  pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+  creatureBitmask = KILLER + STALKER,
+  optionsBitmask = AIENABLED,
   diet = HERBIVORE,
 
-  templates = {"object/mobile/dressed_imperial_moff_m.iff"},
+  templates = {"object/mobile/dressed_death_watch_gold.iff"},
   lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000},
+				{group = "color_crystals", chance = 25000002500000},
+				{group = "power_crystals", chance = 2500000}
+
+			},
+      lootChance = 10000000
+		},
     {
       groups = {
-        {group = "color_crystals", chance = 100000},
-        {group = "junk", chance = 6650000},
-        {group = "rifles", chance = 550000},
-        {group = "pistols", chance = 550000},
-        {group = "melee_weapons", chance = 550000},
-        {group = "carbines", chance = 550000},
-        {group = "clothing_attachments", chance = 25000},
-        {group = "armor_attachments", chance = 25000},
-        {group = "wearables_common", chance = 1000000}
-      }
-    }
+        {group = "junk", chance = 5000000},
+				{group = "pearls_flawless", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
+
+			},
+			lootChance = 10000000
+	   },
   },
   weapons = {"imperial_weapons_heavy"},
   conversationTemplate = "",
