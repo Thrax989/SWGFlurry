@@ -39,16 +39,7 @@ void BountyMissionObjectiveImplementation::activate() {
 	MissionObjectiveImplementation::activate();
 
 	bool failMission = false;
-	
-	ManagedReference<MissionObject* > mission = this->mission.get();
-	ManagedReference<CreatureObject*> target = NULL;
-	
-	target = getPlayerOwner()->getZoneServer()->getObject(mission->getTargetObjectId()).castTo<CreatureObject*>();
-	
-	if(isPlayerTarget() && target == NULL){
-		failMission = true;
-	}
-		
+
 	//Start NPC task or add observers to player target.
 	if (getObserverCount() == 2) {
 		removeNpcTargetObservers();
@@ -60,7 +51,7 @@ void BountyMissionObjectiveImplementation::activate() {
 			startNpcTargetTask();
 		}
 	}
-  
+
 	if (failMission) {
 		getPlayerOwner().get()->sendSystemMessage("@mission/mission_generic:failed"); // Mission failed
 		abort();
@@ -503,9 +494,9 @@ bool BountyMissionObjectiveImplementation::addPlayerTargetObservers() {
 	Locker locker(&syncMutex);
 
 	ManagedReference<MissionObject* > mission = this->mission.get();
-	ManagedReference<CreatureObject*> owner = getPlayerOwner();
+	ManagedReference<CreatureObject*> owner = this->getPlayerOwner();
 	ManagedReference<CreatureObject*> ownerPet = NULL;
-	
+
 	ownerPet = owner->getLinkedCreature().get();
 
 	if(mission == NULL || owner == NULL)
@@ -524,13 +515,13 @@ bool BountyMissionObjectiveImplementation::addPlayerTargetObservers() {
 			addObserverToCreature(ObserverEventType::PLAYERKILLED, owner);
 			addObserverToCreature(ObserverEventType::DEFENDERADDED, owner);
 			addObserverToCreature(ObserverEventType::DEFENDERDROPPED, owner);
-			
+
 			if(ownerPet != NULL){
 			addObserverToCreature(ObserverEventType::PLAYERKILLED, ownerPet);
 			addObserverToCreature(ObserverEventType::DEFENDERADDED, ownerPet);
 			addObserverToCreature(ObserverEventType::DEFENDERDROPPED, ownerPet);
 			}
-			
+
 			owner->getZoneServer()->getMissionManager()->addBountyHunterToPlayerBounty(mission->getTargetObjectId(), owner->getObjectID());
 
 			//Update aggressive status on target for bh and pet.
@@ -629,7 +620,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
 	ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
 	ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
-	
+
 
 	if(mission == NULL)
 		return;
@@ -692,7 +683,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 				else{
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Dark Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 				}
-				
+
 				killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 				PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
 				killer->sendMessage(pmm);
