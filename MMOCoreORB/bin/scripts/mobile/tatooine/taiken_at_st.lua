@@ -1,15 +1,15 @@
 taiken_at_st = Creature:new {
   objectName = "@mob/creature_names:fbase_at_st",
-  socialGroup = "",
+  socialGroup = "geonosian",
   level = 200,
-  chanceHit = 11.5,
-  damageMin = 170,
-  damageMax = 452,
+  chanceHit = 9.5,
+  damageMin = 470,
+  damageMax = 652,
   baseXp = 0,
   baseHAM = 90000,
   baseHAMmax = 130000,
   armor = 3,
-  resists = {200,200,-1,200,200,200,200,200,25},
+  resists = {200,200,-1,200,-1,200,200,-1,50},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -19,25 +19,23 @@ taiken_at_st = Creature:new {
   milk = 0,
   tamingChance = 0,
   ferocity = 0,
-  pvpBitmask = ATTACKABLE + ENEMY,
-  creatureBitmask = PACK + KILLER,
-  optionsBitmask = 128,
+  pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+  creatureBitmask = KILLER + STALKER,
+  optionsBitmask = AIENABLED,
   diet = NONE,
 
   templates = {"object/mobile/atst.iff"},
-    lootGroups = {
-     {
-     groups = {
-     {group = "clothing_attachments", chance = 9000000},
+  lootGroups = {
+    {
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+        
       },
-      },
-     {
-     groups = {
-     {group = "armor_attachments", chance = 9000000},
-      },
-      },
+      lootChance = 10000000
+    },
   },
-  lootGroups = {},
   conversationTemplate = "",
   defaultAttack = "defaultdroidattack",
   defaultWeapon = "object/weapon/ranged/vehicle/vehicle_atst_ranged.iff",

@@ -1,15 +1,15 @@
 taiken_scout = Creature:new {
   customName = "Scout Trooper",
-  socialGroup = "",
-  level = 200,
-  chanceHit = 0.35,
+  socialGroup = "geonosian",
+  level = 100,
+  chanceHit = 1.35,
   damageMin = 120,
   damageMax = 330,
   baseXp = 0,
   baseHAM = 25000,
   baseHAMmax = 44700,
   armor = 2,
-  resists = {80,80,80,80,80,80,80,-1,25},
+  resists = {80,80,80,80,-1,80,80,-1,25},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -19,29 +19,28 @@ taiken_scout = Creature:new {
   milk = 0,
   tamingChance = 0,
   ferocity = 0,
-  pvpBitmask = ATTACKABLE + ENEMY,
-  creatureBitmask = NONE,
-  optionsBitmask = 128,
+  pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+  creatureBitmask = KILLER + STALKER,
+  optionsBitmask = AIENABLED,
   diet = HERBIVORE,
 
 
   templates = {"object/mobile/dressed_scout_trooper_white_white.iff"},
   lootGroups = {
-     {
-     groups = {
-     {group = "clothing_attachments", chance = 9000000},
+    {
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+        
       },
-      },
-     {
-     groups = {
-     {group = "armor_attachments", chance = 9000000},
-      },
-      },
+      lootChance = 10000000
+    },
   },
   weapons = {"imperial_weapons_heavy"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/stormtrooper",
-  personalityStf = "@hireling/hireling_stormtrooper", 
+  personalityStf = "@hireling/hireling_stormtrooper",
   attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster)
 }
 

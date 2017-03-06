@@ -40,8 +40,12 @@ public:
 
 		// TODO: Force Rank modifiers.
 		int enhSkills = playerObject->numSpecificSkills(creo, "force_discipline_enhancements_");
-                float enhMod = enhSkills * .025;
-                int forceCost = param * (0.475 - enhMod);
+		float enhMod = 0.0;
+		if (enhSkills == 18) enhMod = .15;
+		else
+			if (enhSkills >= 13) enhMod = .10;
+		int forceCost = param * (0.40 - enhMod);
+		
 		if (playerObject->getForcePower() <= forceCost) { // Remove buff if not enough force.
 			Buff* buff = creo->getBuff(BuffCRC::JEDI_FORCE_ARMOR_1);
 			if (buff != NULL) {

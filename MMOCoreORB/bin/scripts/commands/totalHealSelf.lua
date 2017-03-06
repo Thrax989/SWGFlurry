@@ -53,7 +53,7 @@ TotalHealSelfCommand = {
 	healBleeding = 600,
 	healFire = 600,
 	healStates = STUNNED_STATE + DIZZY_STATE + BLINDED_STATE + INTIMIDATED_STATE,
-	forceCost = 760,
+	forceCost = 600,
 	forceCostDivisor = 9.5,
 	range = 0
 }
