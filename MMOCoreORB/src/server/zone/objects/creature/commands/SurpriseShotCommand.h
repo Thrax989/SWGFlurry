@@ -4,6 +4,7 @@
 
 #ifndef SURPRISESHOTCOMMAND_H_
 #define SURPRISESHOTCOMMAND_H_
+#include "CombatQueueCommand.h"
 
 class SurpriseShotCommand : public CombatQueueCommand {
 public:
