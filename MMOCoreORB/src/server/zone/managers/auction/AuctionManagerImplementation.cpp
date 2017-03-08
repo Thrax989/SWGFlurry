@@ -102,6 +102,8 @@ void AuctionManagerImplementation::initialize() {
 
 			String vuid = getVendorUID(defaultBazaar);
 			auctionMap->addItem(NULL, defaultBazaar, auctionItem);
+
+			Locker alocker(auctionItem);
 			auctionItem->setVendorID(defaultBazaar->getObjectID());
 
 			if(auctionItem->isAuction()) {
@@ -1010,12 +1012,12 @@ void AuctionManagerImplementation::refundAuction(AuctionItem* item) {
 	if (bidder != NULL) {
 		int itemPrice = item->getPrice();
 
-		EXECUTE_TASK_3(bidder, itemPrice, buyerBody, {
-				Locker locker(bidder_p);
+		Core::getTaskManager()->executeTask([=] () {
+			Locker locker(bidder);
 
-				bidder_p->addBankCredits(itemPrice_p);
-				bidder_p->sendSystemMessage(*(buyerBody_p.get()));
-		});
+			bidder->addBankCredits(itemPrice);
+			bidder->sendSystemMessage(*(buyerBody.get()));
+		}, "RefundAuctionLambda");
 	}
 
 	String sender = "auctioner";
@@ -1136,10 +1138,10 @@ AuctionQueryHeadersResponseMessage* AuctionManagerImplementation::fillAuctionQue
 					continue;
 
 				if(!item->isAuction() && item->getExpireTime() <= now) {
-					auto chatManager = _this.getReferenceUnsafeStaticCast();
-					EXECUTE_TASK_2(chatManager, item, {
-							chatManager_p->expireSale(item_p);
-					});
+					Core::getTaskManager()->executeTask([=] () {
+						expireSale(item);
+					}, "ExpireSaleLambda");
+
 					continue;
 				}
 

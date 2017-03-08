@@ -17,6 +17,7 @@ include server.zone.objects.manufactureschematic.craftingvalues.CraftingValues;
 include system.util.HashTable;
 include system.lang.ref.Reference;
 
+@dirty
 class CraftingManager extends ZoneManager {
 	private transient SchematicMap schematicMap;
 
@@ -89,6 +90,5 @@ class CraftingManager extends ZoneManager {
 	private native void configureLabratories();
 	
 	public native void setInitialCraftingValues(TangibleObject prototype, ManufactureSchematic manufactureSchematic, int assemblySuccess);
-	public native boolean allowManufactureSchematic(ManufactureSchematic manufactureSchematic);
 	public native int getCreationCount(ManufactureSchematic manufactureSchematic);
 }

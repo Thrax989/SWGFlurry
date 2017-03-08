@@ -357,7 +357,7 @@ bool PetManagerImplementation::handleCommandTraining(CreatureObject* speaker, Ai
 
 			int skill = speaker->getSkillMod("tame_level");
 			int level = petCreature->getAdultLevel();
-			int roll = 0;    // Training always successful  System::random(skill + level);
+			int roll = System::random(skill + level);
 
 			if (skill > roll)
 				success = true;
@@ -571,14 +571,13 @@ void PetManagerImplementation::killPet(TangibleObject* attacker, AiAgent* pet, b
 
 	pet->updateTimeOfDeath();
 
-	Reference<AiAgent*> petAgent = pet;
+	ManagedReference<AiAgent*> petAgent = pet;
 
-	EXECUTE_TASK_1(petAgent, {
-			Locker locker(petAgent_p);
+	Core::getTaskManager()->executeTask([=] () {
+		Locker locker(petAgent);
 
-			petAgent_p->clearBuffs(false);
-	});
-
+		petAgent->clearBuffs(false);
+	}, "ClearPetBuffsLambda");
 
 	ManagedReference<PetControlDevice*> petControlDevice = pet->getControlDevice().get().castTo<PetControlDevice*>();
 
