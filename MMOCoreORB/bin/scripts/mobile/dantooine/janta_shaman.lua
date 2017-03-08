@@ -1,17 +1,18 @@
 janta_shaman = Creature:new {
 	objectName = "@mob/creature_names:janta_shaman",
 	randomNameType = NAME_GENERIC,
+	randomNameTag = true,
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
-	level = 100,
+	level = 60,
 	chanceHit = 0.65,
-	damageMin = 12,
-	damageMax = 70,
-	baseXp = 0,
-	baseHAM = 15000,
-	baseHAMmax = 24000,
+	damageMin = 470,
+	damageMax = 650,
+	baseXp = 5830,
+	baseHAM = 12000,
+	baseHAMmax = 14000,
 	armor = 0,
-	resists = {100,-1,-1,35,-1,-1,-1,-1,-1},
+	resists = {-1,40,-1,20,100,100,20,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -23,7 +24,7 @@ janta_shaman = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD + KILLER + HEALER,
-	optionsBitmask = 128,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {
@@ -55,7 +56,7 @@ janta_shaman = Creature:new {
 		},
 	weapons = {"primitive_weapons"},
 	conversationTemplate = "",
-	attacks = merge(brawlermaster)
+	attacks = merge(pikemanmaster,fencermaster,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(janta_shaman, "janta_shaman")

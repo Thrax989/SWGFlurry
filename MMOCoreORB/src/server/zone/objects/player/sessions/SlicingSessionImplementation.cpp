@@ -704,16 +704,16 @@ void SlicingSessionImplementation::handleArmorSlice() {
 		}
 	}
 
-	switch (sliceSkill) {       // 20-45% max encumbrance slice, 11-35% max effectiveness slice
+	switch (sliceSkill) {       // 25-45% max encumbrance slice, 20-40% max effectiveness slice
 	case 5:
-		min += (sliceType == 0) ? 6 : 5;
+		min += (sliceType == 0) ? 5 : 10;
 		max += 5;
 	case 4:
-		min += (sliceType == 0) ? 0 : 10;
+		min += (sliceType == 0) ? 10 : 10;
 		max += 10;
 	case 3:
 		min += 5;
-		max += (sliceType == 0) ? 20 : 30;
+		max += (sliceType == 0) ? 25 : 30;
 		break;
 	default:
 		return;
@@ -816,8 +816,7 @@ void SlicingSessionImplementation::handleContainerSlice() {
 			return;
 		}
 
-		if (System::random(10) != 4)
-			lootManager->createLoot(container, "looted_container");
+		lootManager->createLoot(container, "looted_container");
 
 		inventory->transferObject(container, -1);
 		container->sendTo(player, true);

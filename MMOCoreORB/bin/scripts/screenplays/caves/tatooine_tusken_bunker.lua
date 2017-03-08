@@ -5,12 +5,12 @@ TuskenBunkerScreenPlay = ScreenPlay:new {
 
  	lootContainers = {
 			5995601,
-      5995605,
-      5995608,
+        	5995605,
+        	5995608,
 			5995609
 	},
 
-	lootLevel = 300,
+	lootLevel = 26,
 
 	lootGroups = {
 		{
@@ -39,51 +39,33 @@ function TuskenBunkerScreenPlay:start()
 end
 
 function TuskenBunkerScreenPlay:spawnMobiles()
-	spawnMobile("tatooine", "taiken_bunker_boss",600, 1.6,-20,30,173,4235606)
-	spawnMobile("tatooine", "taiken_moff", 600, -1485, 41, -188, -63,0)
+	spawnMobile("tatooine", "tusken_elite_guard",300,-2.92495,-20.75,29.469,166.951,4235606)
+	spawnMobile("tatooine", "tusken_elite_guard",300,-0.204799,-20.75,17.7372,0,4235606)
+	spawnMobile("tatooine", "tusken_elite_guard",300,-1.60381,-20.75,17.5898,72.7847,4235606)
+	spawnMobile("tatooine", "tusken_elite_guard",300,-0.719627,-20.75,17.8638,0,4235606)
+	spawnMobile("tatooine", "tusken_elite_guard",300,6.07437,-20.75,29.8174,295.947,4235606)
 
-	spawnMobile("tatooine", "taiken_dark_apprentice",400,-2.8,-20,29,175,4235606)
-	spawnMobile("tatooine", "taiken_dark_apprentice",400, 5,-20,29,179,4235606)
-	spawnMobile("tatooine", "taiken_dark_apprentice",400, -10,-13,7,91,4235603)
-	spawnMobile("tatooine", "taiken_dark_apprentice",400, 4,0,-4,-90,4235599)
-	spawnMobile("tatooine", "taiken_dark_apprentice",400, 4,-20,13,2,4235606)
-	spawnMobile("tatooine", "taiken_dark_apprentice",400, -1,-20,13,0,4235606)
-	spawnMobile("tatooine", "taiken_dark_apprentice",400, -7,-17,-4,46,4235604)
-	spawnMobile("tatooine", "taiken_dark_apprentice",400, 4,-13,-6,-45,4235601)
-	spawnMobile("tatooine", "taiken_dark_apprentice",400, -4,-6,0,-1,4235601)
-	spawnMobile("tatooine", "taiken_dark_apprentice",400, -0,0,2,0,4235598)
+	spawnMobile("tatooine", "tusken_guard",300,-5.50469,-6.75,3.83646,78.615,4235600)
+	spawnMobile("tatooine", "tusken_guard",300,-4.72547,-6.75,2.91168,331.956,4235600)
+	spawnMobile("tatooine", "tusken_guard",300,4.11507,-20.7332,17.43,344.353,4235606)
+	spawnMobile("tatooine", "tusken_guard",300,1.92794,-20.7332,4.5864,0,4235605)
+	spawnMobile("tatooine", "tusken_guard",300,1.22038,-20.7332,4.1939,290.603,4235605)
+	spawnMobile("tatooine", "tusken_guard",300,-0.26899,-20.7332,4.75359,0,4235605)
 
-	spawnMobile("tatooine", "taiken_at_st", 600, -1475, 41, -206, -110,0)
-	spawnMobile("tatooine", "taiken_at_st", 600, -1497, 40, -195, 154,0)
-	spawnMobile("tatooine", "taiken_at_st", 600, -1473, 41, -194, -107,0)
+	spawnMobile("tatooine", "tusken_king",300,1.5864,-20.75,32.0004,0,4235606)
 
-	spawnMobile("tatooine", "taiken_nova", 300, -1480, 41, -202, -166,0)
-	spawnMobile("tatooine", "taiken_nova", 300, -1492, 41, -196, -151,0)
-	spawnMobile("tatooine", "taiken_nova", 300, -1473, 41, -190, -112,0)
-	spawnMobile("tatooine", "taiken_nova", 300, -1488, 41, -185, 122,0)
-	spawnMobile("tatooine", "taiken_nova", 300, -1489, 41, -188, 116,0)
-	spawnMobile("tatooine", "taiken_nova", 300, -1487, 41, -184, 121,0)
-	spawnMobile("tatooine", "taiken_nova", 300, -1478, 41, -186, -156,0)
-	spawnMobile("tatooine", "taiken_nova", 300, -1481, 41, -185, -156,0)
-	spawnMobile("tatooine", "taiken_nova", 300, 6, -13, 8, -91,4235603)
-	spawnMobile("tatooine", "taiken_nova", 300, 6, -13, 7, -91,4235603)
-	spawnMobile("tatooine", "taiken_nova", 300, 7, -13, 6, -91,4235603)
-	spawnMobile("tatooine", "taiken_nova", 300, -9, -13, 4, 89,4235603)
-	spawnMobile("tatooine", "taiken_nova", 300, -9, -13, 9, 91,4235603)
-	spawnMobile("tatooine", "taiken_nova", 300, 3, -20, 1, 0,4235605)
-	spawnMobile("tatooine", "taiken_nova", 300, -0, -20, 1, -1,4235605)
-	spawnMobile("tatooine", "taiken_nova", 300, -3, -20, 4, 90,4235605)
-	spawnMobile("tatooine", "taiken_nova", 300, -3, -20, 6, 89,4235605)
-	spawnMobile("tatooine", "taiken_nova", 300, 6, -20, 6, -90,4235605)
-	spawnMobile("tatooine", "taiken_nova", 300, 6, -20, 4, -90,4235605)
+	spawnMobile("tatooine", "tusken_savage",300,3.74075,0.25,-4.07544,318.495,4235599)
+	spawnMobile("tatooine", "tusken_savage",300,-8,-13.8,7,7.99216,4235603)
+	spawnMobile("tatooine", "tusken_savage",300,-8,-13.8,8,304.313,4235603)
+	spawnMobile("tatooine", "tusken_savage",300,4.35912,-13.75,7.04643,0,4235603)
+	spawnMobile("tatooine", "tusken_savage",300,3.61216,-13.75,6.31851,68.5105,4235603)
+	spawnMobile("tatooine", "tusken_savage",300,4.47368,-20.75,17.4,0,4235606)
 
+	spawnMobile("tatooine", "tusken_sniper",300,-1488.54,41,-193.359,1.44349,0)
+	spawnMobile("tatooine", "tusken_sniper",300,-1482.7,41.0005,-198.492,135.409,0)
+	spawnMobile("tatooine", "tusken_sniper",300,3.2,-13.8,8.263,135.004,4235603)
 
-	spawnMobile("tatooine", "taiken_scout", 300, -1486, 41, -185, 111,0)
-	spawnMobile("tatooine", "taiken_scout", 300, -1487, 41, -186, 112,0)
-	spawnMobile("tatooine", "taiken_scout", 300, -1488, 41, -187, 110,0)
-	spawnMobile("tatooine", "taiken_scout", 300, -1488, 41, -188, 114,0)
-	spawnMobile("tatooine", "taiken_scout", 300, -1489, 41, -189, 120,0)
-	spawnMobile("tatooine", "taiken_scout", 300, -1488, 41, -185, 114,0)
-	spawnMobile("tatooine", "taiken_scout", 300, -1489, 41, -187, 112,0)
-
+	spawnMobile("tatooine", "tusken_warrior",300,-5.2,-20.7,17.23,184.378,4235606)
+	spawnMobile("tatooine", "tusken_warrior",300,-1482.53,41,-193.195,148.977,0)
+	spawnMobile("tatooine", "tusken_warrior",300,-1478.25,41,-199.32,315.009,0)
 end

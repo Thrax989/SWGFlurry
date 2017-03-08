@@ -280,13 +280,6 @@ public:
 		creature->removeStateBuff(CreatureState::AIMING);
 		creature->removeBuff(STRING_HASHCODE("steadyaim"));
 
-		if (creature->isPet() || creature->isInCombat()) {
-			shouldTef = true;	
-		}
-		else{
-			shouldTef = false;
-		}
-
 		// Update PvP TEF Duration
 		if (shouldTef && creature->isPlayerCreature()) {
 			PlayerObject* ghost = creature->getPlayerObject().get();
