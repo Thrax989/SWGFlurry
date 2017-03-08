@@ -48,8 +48,6 @@ object_tangible_wearables_armor_zam_armor_zam_wesell_helmet_quest = object_tangi
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
-				"object/creature/player/ithorian_male.iff",
-				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -60,27 +58,14 @@ object_tangible_wearables_armor_zam_armor_zam_wesell_helmet_quest = object_tangi
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
-				"object/creature/player/wookiee_male.iff",
-				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff",
-				"object/mobile/vendor/aqualish_female.iff",
-				"object/mobile/vendor/aqualish_male.iff",
-				"object/mobile/vendor/bith_female.iff",
-				"object/mobile/vendor/bith_male.iff",
 				"object/mobile/vendor/bothan_female.iff",
 				"object/mobile/vendor/bothan_male.iff",
-				"object/mobile/vendor/devaronian_male.iff",
-				"object/mobile/vendor/gran_male.iff",
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
-				"object/mobile/vendor/ishi_tib_male.iff",
-				"object/mobile/vendor/ithorian_female.iff",
-				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
-				"object/mobile/vendor/nikto_male.iff",
-				"object/mobile/vendor/quarren_male.iff",
 				"object/mobile/vendor/rodian_female.iff",
 				"object/mobile/vendor/rodian_male.iff",
 				"object/mobile/vendor/sullustan_female.iff",
@@ -89,34 +74,34 @@ object_tangible_wearables_armor_zam_armor_zam_wesell_helmet_quest = object_tangi
 				"object/mobile/vendor/trandoshan_male.iff",
 				"object/mobile/vendor/twilek_female.iff",
 				"object/mobile/vendor/twilek_male.iff",
-				"object/mobile/vendor/weequay_male.iff",
-				"object/mobile/vendor/wookiee_female.iff",
-				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 	
-	-- Damage types in WeaponObject
-	vulnerability = ACID + ENERGY + STUN + LIGHTSABER,
+	objectMenuComponent = "ArmorObjectMenuComponent",
+	
+	vulnerability = COLD + BLAST + HEAT + ELECTRICITY + ACID + LIGHTSABER,
+
+	specialResists = STUN,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 6,
-	actionEncumbrance = 3,
-	mindEncumbrance = 54,
+	healthEncumbrance = 45,
+	actionEncumbrance = 45,
+	mindEncumbrance = 175,
+
+	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	maxCondition = 15000,
-
-	kinetic = 10,
-	energy = 0,
-	electricity = 10,
-	stun = 0,
-	blast = 5,
-	heat = 20,
-	cold = 10,
+	kinetic = 25,
+	energy = 25,
+	electricity = 0,
+	stun = 35,
+	blast = 0,
+	heat = 0,
+	cold = 0,
 	acid = 0,
-	lightSaber = 0
+	lightSaber = 0,
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_zam_armor_zam_wesell_helmet_quest, "object/tangible/wearables/armor/zam/armor_zam_wesell_helmet_quest.iff")
