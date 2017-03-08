@@ -1,11 +1,11 @@
 taiken_moff = Creature:new {
   objectName = "",
-  customName = "Moff Cody",
+  customName = "Moff Fort",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 4.37,
-  damageMin = 370,
-  damageMax = 580,
+  chanceHit = 50.00,
+  damageMin = 800,
+  damageMax = 1900,
   baseXp = 0,
   baseHAM = 55000,
   baseHAMmax = 100000,
@@ -25,35 +25,53 @@ taiken_moff = Creature:new {
   optionsBitmask = AIENABLED,
   diet = HERBIVORE,
 
-  templates = {"object/mobile/dressed_death_watch_gold.iff"},
+  templates = {"object/mobile/dressed_imperial_moff_m.iff"},
   lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000},
-				{group = "color_crystals", chance = 25000002500000},
-				{group = "power_crystals", chance = 2500000}
-
-			},
-      lootChance = 10000000
-		},
     {
       groups = {
-        {group = "junk", chance = 5000000},
-				{group = "pearls_flawless", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
+        {group = "armor_attachments", chance = 1500000},
+        {group = "clothing_attachments", chance = 1500000},
+        {group = "crystals_premium", chance = 5000000},
+        {group = "pearls_flawless", chance = 5000000}
+      },
+      lootChance = 10000000
+    },
+    {
+      groups = {
+        {group = "wearables_rare", chance = 10000000},
+        {group = "aakuan_common", chance = 10000000},
+        {group = "g_named_crystals", chance = 10000000}
 
-			},
-			lootChance = 10000000
-	   },
+      },
+      lootChance = 7500000
   },
-  weapons = {"imperial_weapons_heavy"},
-  conversationTemplate = "",
-  reactionStf = "@npc_reaction/military",
-  personalityStf = "@hireling/hireling_military",
-  attacks = merge(riflemanmaster,carbineermaster,brawlermaster)
-}
+  {
+    groups = {
+      {group = "axkva_min", chance = 10000000},
+      {group = "armor_attachments", chance = 10000000},
+      {group = "clothing_attachments", chance = 10000000}
 
-CreatureTemplates:addCreatureTemplate(taiken_moff, "taiken_moff")
+    },
+    lootChance = 5000000
+    },
+    {
+      groups = {
+      {group = "krayt_tissue_rare", chance = 10000000}
+    },
+    lootChance = 5000000
+    },
+    {
+    groups = {
+      {group = "looted_container", chance = 10000000},
+        },
+        lootChance = 5000000
+      },
+  },
+    weapons = {"imperial_weapons_heavy"},
+    conversationTemplate = "",
+    reactionStf = "@npc_reaction/military",
+    personalityStf = "@hireling/hireling_military",
+    attacks = merge(riflemanmaster,carbineermaster,brawlermaster,fencermaster)
+  }
+
+  CreatureTemplates:addCreatureTemplate(taiken_moff, "taiken_moff")

@@ -1,8 +1,8 @@
 taiken_at_st = Creature:new {
   objectName = "@mob/creature_names:fbase_at_st",
   socialGroup = "geonosian",
-  level = 200,
-  chanceHit = 9.5,
+  level = 100,
+  chanceHit = 10.5,
   damageMin = 470,
   damageMax = 652,
   baseXp = 0,
@@ -31,7 +31,6 @@ taiken_at_st = Creature:new {
         {group = "junk", chance = 5000000},
         {group = "armor_attachments", chance = 2500000},
         {group = "clothing_attachments", chance = 2500000}
-        
       },
       lootChance = 10000000
     },

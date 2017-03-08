@@ -1,15 +1,15 @@
 taiken_bunker_boss = Creature:new {
-  customName = "Darth Savage",
+  customName = "Lord Niax",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 4.5,
-  damageMin = 395,
-  damageMax = 695,
+  chanceHit = 30.00,
+  damageMin = 1300,
+  damageMax = 2100,
   baseXp = 0,
-  baseHAM = 222000,
-  baseHAMmax = 230000,
+  baseHAM = 400000,
+  baseHAMmax = 500000,
   armor = 3,
-  resists = {90,90,90,90,90,90,90,90,-1},
+  resists = {100,90,20,90,20,90,90,90,50},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -29,39 +29,54 @@ taiken_bunker_boss = Creature:new {
     lootGroups = {
   		{
   			groups = {
-  				{group = "armor_attachments", chance = 1500000},
-  				{group = "clothing_attachments", chance = 1500000},
-  				{group = "color_crystals", chance = 2000000},
-  				{group = "power_crystals", chance = 5000000}
-
+  				{group = "armor_attachments", chance = 1000000},
+  				{group = "clothing_attachments", chance = 1000000},
+  				{group = "crystals_premium", chance = 4000000},
+  				{group = "pearls_flawless", chance = 4000000}
   			},
         lootChance = 10000000
   		},
       {
         groups = {
-  				{group = "krayt_pearls", chance = 3000000},
-  				{group = "armor_attachments", chance = 1500000},
-  				{group = "clothing_attachments", chance = 1500000},
-          {group = "g_named_crystals", chance = 2000000}
+  				{group = "wearables_rare", chance = 10000000},
+  				{group = "aakuan_common", chance = 10000000},
+          {group = "g_named_crystals", chance = 10000000}
 
   			},
-  			lootChance = 8000000
+  			lootChance = 7500000
   	},
     {
       groups = {
-        {group = "armor_all", chance = 3000000},
-				{group = "weapons_all", chance = 3000000},
-        {group = "armor_attachments", chance = 1000000},
-        {group = "clothing_attachments", chance = 1000000}
+        {group = "axkva_min", chance = 10000000},
+        {group = "armor_attachments", chance = 10000000},
+        {group = "clothing_attachments", chance = 10000000}
 
       },
-      lootChance = 8000000
+      lootChance = 4000000
+      },
+      {
+        groups = {
+        {group = "krayt_tissue_rare", chance = 10000000}
+      },
+      lootChance = 4000000
+      },
+      {
+      groups = {
+        {group = "looted_container", chance = 10000000},
+          },
+          lootChance = 4000000
         },
+        {
+        groups = {
+          {group = "pearls_flawless", chance = 10000000},
+            },
+            lootChance = 5000000
+          },
     },
   weapons = {"dark_jedi_weapons_gen4"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/fancy",
-  attacks = merge(lightsabermaster,forcewielder)
+  attacks = merge(lightsabermaster,forcewielder,"knockdownattack","KnockdownChance=100")
 }
 
 CreatureTemplates:addCreatureTemplate(taiken_bunker_boss, "taiken_bunker_boss")
