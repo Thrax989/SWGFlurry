@@ -94,9 +94,6 @@ void SuiManager::handleSuiEventNotification(uint32 boxID, CreatureObject* player
 	//info(msg, true);
 
 	switch (windowType) {
-	case SuiWindowType::MEDIC_CONSENT:
-		handleConsentBox(player, suiBox, eventIndex, args);
-		break;
 	case SuiWindowType::DANCING_START:
 		handleStartDancing(player, suiBox, eventIndex, args);
 		break;
@@ -494,7 +491,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "language") {
 				bluefrog->giveLanguages(player);
 
-			} else if (templatePath == "apply_dots") {
+			} else if (templatePath == "apply_all_dots") {
 				player->addDotState(player, CreatureState::POISONED, scob->getObjectID(), 100, CreatureAttribute::UNKNOWN, 60, -1, 0);
 				player->addDotState(player, CreatureState::BLEEDING, scob->getObjectID(), 100, CreatureAttribute::UNKNOWN, 60, -1, 0);
 				player->addDotState(player, CreatureState::DISEASED, scob->getObjectID(), 100, CreatureAttribute::UNKNOWN, 60, -1, 0);
@@ -607,24 +604,6 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			player->sendMessage(cbSui->generateMessage());
 		}
 	}
-}
-
-void SuiManager::handleConsentBox(CreatureObject* player, SuiBox* suiBox, uint32 cancel, Vector<UnicodeString>* args) {
-	if (!suiBox->isListBox() || cancel != 0)
-		return;
-
-	if (args->size() < 1)
-		return;
-
-	int index = Integer::valueOf(args->get(0).toString());
-
-	if (index == -1)
-		return;
-
-	SuiListBox* suiList = cast<SuiListBox*>(suiBox);
-
-	String name = suiList->getMenuItemName(index);
-	UnconsentCommand::unconscent(player, name);
 }
 
 void SuiManager::sendKeypadSui(SceneObject* keypad, SceneObject* creatureSceneObject, const String& play, const String& callback) {
@@ -837,7 +816,7 @@ void SuiManager::sendTransferBox(SceneObject* usingObject, SceneObject* player, 
 	}
 }
 
-int32 SuiManager::sendSuiPage(CreatureObject* creature, SuiPageData* pageData, const String& play, const String& callback) {
+int32 SuiManager::sendSuiPage(CreatureObject* creature, SuiPageData* pageData, const String& play, const String& callback, unsigned int windowType) {
 
 	if (pageData == NULL)
 		return 0;
@@ -848,7 +827,7 @@ int32 SuiManager::sendSuiPage(CreatureObject* creature, SuiPageData* pageData, c
 	PlayerObject* playerObject = creature->getPlayerObject();
 
 	if (playerObject != NULL) {
-		ManagedReference<SuiBoxPage*> boxPage = new SuiBoxPage(creature, pageData, 0x00);
+		ManagedReference<SuiBoxPage*> boxPage = new SuiBoxPage(creature, pageData, windowType);
 		boxPage->setCallback(new LuaSuiCallback(creature->getZoneServer(), play, callback));
 		creature->sendMessage(boxPage->generateMessage());
 		playerObject->addSuiBox(boxPage);
