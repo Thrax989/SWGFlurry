@@ -1883,8 +1883,8 @@ BountyTargetListElement* MissionManagerImplementation::getRandomPlayerBounty(Cre
 			ManagedReference<CreatureObject*> creo = server->getObject(randomTarget->getTargetId()).castTo<CreatureObject*>();
 
 			if (creo != NULL) {
-				ZoneClientSession* targetClient = creo->getClient();
-				ZoneClientSession* playerClient = player->getClient();
+				auto targetClient = creo->getClient();
+				auto playerClient = player->getClient();
 
 				if (targetClient != NULL && playerClient != NULL) {
 					if (targetClient->getAccountID() == playerClient->getAccountID()) {
@@ -1908,8 +1908,8 @@ BountyTargetListElement* MissionManagerImplementation::getRandomPlayerBounty(Cre
 			ManagedReference<CreatureObject*> creo = server->getObject(randomTarget->getTargetId()).castTo<CreatureObject*>();
 
 			if (creo != NULL) {
-				ZoneClientSession* targetClient = creo->getClient();
-				ZoneClientSession* playerClient = player->getClient();
+				auto targetClient = creo->getClient();
+				auto playerClient = player->getClient();
 
 				if (targetClient != NULL && playerClient != NULL) {
 					if (targetClient->getAccountID() == playerClient->getAccountID()) {

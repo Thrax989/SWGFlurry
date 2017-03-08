@@ -15,12 +15,14 @@
 #include "server/zone/objects/intangible/PetControlDevice.h"
 #include "server/zone/objects/player/LuaPlayerObject.h"
 #include "server/zone/objects/tangible/LuaTangibleObject.h"
+#include "server/zone/objects/region/LuaCityRegion.h"
 #include "server/zone/packets/cell/UpdateCellPermissionsMessage.h"
 #include "server/zone/managers/structure/tasks/DestroyStructureTask.h"
 #include "server/zone/managers/object/ObjectManager.h"
 #include "server/zone/managers/structure/StructureManager.h"
 #include "server/zone/managers/faction/FactionManager.h"
 #include "server/zone/managers/combat/CombatManager.h"
+#include "server/zone/managers/collision/PathFinderManager.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
 #include "templates/manager/TemplateManager.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
@@ -73,6 +75,7 @@
 #include "server/zone/objects/tangible/misc/FsCsObject.h"
 #include "server/zone/objects/tangible/misc/CustomIngredient.h"
 #include "server/zone/objects/tangible/misc/FsCraftingComponentObject.h"
+#include "server/zone/objects/tangible/misc/FsBuffItem.h"
 #include "server/zone/objects/player/sui/LuaSuiPageData.h"
 #include "server/zone/objects/player/sui/SuiBoxPage.h"
 #include "server/zone/objects/tangible/powerup/PowerupObject.h"
@@ -81,6 +84,7 @@
 #include "server/zone/objects/pathfinding/NavMeshRegion.h"
 #include "server/zone/objects/player/sui/listbox/LuaSuiListBox.h"
 #include "server/zone/objects/tangible/component/lightsaber/LightsaberCrystalComponent.h"
+#include "server/zone/objects/creature/variables/LuaSkill.h"
 
 int DirectorManager::DEBUG_MODE = 0;
 int DirectorManager::ERROR_CODE = NO_ERROR;
@@ -219,6 +223,12 @@ void DirectorManager::removeQuestStatus(const String& key) {
 		ObjectManager::instance()->destroyObjectFromDatabase(status->_getObjectID());
 }
 
+void DirectorManager::printTraceError(lua_State* L, const String& error) {
+	luaL_traceback(L, L, error.toCharArray(), 0);
+	String trace = lua_tostring(L, -1);
+	instance()->error(trace);
+}
+
 String DirectorManager::getStringSharedMemory(const String& key) {
 	return sharedMemory->getString(key);
 }
@@ -330,6 +340,7 @@ void DirectorManager::initializeLuaEngine(Lua* luaEngine) {
 	lua_register(luaEngine->getLuaState(), "getTimestampMilli", getTimestampMilli);
 	lua_register(luaEngine->getLuaState(), "getFormattedTime", getFormattedTime);
 	lua_register(luaEngine->getLuaState(), "getSpawnPoint", getSpawnPoint);
+	lua_register(luaEngine->getLuaState(), "getSpawnPointInArea", getSpawnPointInArea);
 	lua_register(luaEngine->getLuaState(), "getSpawnArea", getSpawnArea);
 	lua_register(luaEngine->getLuaState(), "makeCreatureName", makeCreatureName);
 	lua_register(luaEngine->getLuaState(), "getGCWDiscount", getGCWDiscount);
@@ -348,8 +359,8 @@ void DirectorManager::initializeLuaEngine(Lua* luaEngine) {
 	lua_register(luaEngine->getLuaState(), "getQuestVectorMap", getQuestVectorMap);
 	lua_register(luaEngine->getLuaState(), "createQuestVectorMap", createQuestVectorMap);
 	lua_register(luaEngine->getLuaState(), "removeQuestVectorMap", removeQuestVectorMap);
-	lua_register(luaEngine->getLuaState(), "adminPlaceStructure", adminPlaceStructure);
 	lua_register(luaEngine->getLuaState(), "creatureTemplateExists", creatureTemplateExists);
+	lua_register(luaEngine->getLuaState(), "printLuaError", printLuaError);
 
 	//Navigation Mesh Management
 	lua_register(luaEngine->getLuaState(), "createNavMesh", createNavMesh);
@@ -525,6 +536,7 @@ void DirectorManager::initializeLuaEngine(Lua* luaEngine) {
 	Luna<LuaQuestInfo>::Register(luaEngine->getLuaState());
 	Luna<LuaFsPuzzlePack>::Register(luaEngine->getLuaState());
 	Luna<LuaFsCsObject>::Register(luaEngine->getLuaState());
+	Luna<LuaFsBuffItem>::Register(luaEngine->getLuaState());
 	Luna<LuaResourceSpawn>::Register(luaEngine->getLuaState());
 	Luna<LuaCustomIngredient>::Register(luaEngine->getLuaState());
 	Luna<LuaFsCraftingComponentObject>::Register(luaEngine->getLuaState());
@@ -536,6 +548,7 @@ void DirectorManager::initializeLuaEngine(Lua* luaEngine) {
 	Luna<LuaComponent>::Register(luaEngine->getLuaState());
 	Luna<LuaSuiListBox>::Register(luaEngine->getLuaState());
 	Luna<LuaLightsaberCrystalComponent>::Register(luaEngine->getLuaState());
+	Luna<LuaSkill>::Register(luaEngine->getLuaState());
 }
 
 int DirectorManager::loadScreenPlays(Lua* luaEngine) {
@@ -568,14 +581,16 @@ int DirectorManager::writeScreenPlayData(lua_State* L) {
 	SceneObject* player = (SceneObject*) lua_touserdata(L, -4);
 
 	if (player == NULL || !player->isPlayerCreature()) {
-		DirectorManager::instance()->error("Attempted to write screen play data to a non-player Scene Object in screen play: " + screenPlay + ".");
+		String err = "Attempted to write screen play data to a non-player Scene Object using screenplay " + screenPlay + " and variable " + variable;
+		printTraceError(L, err);
 		return 0;
 	}
 
 	Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
 
 	if (ghost == NULL) {
-		DirectorManager::instance()->error("Attempted to write screen play data for a null ghost in screen play: " + screenPlay + ".");
+		String err = "Attempted to write screen play data for a null ghost using screenplay " + screenPlay + " and variable " + variable;
+		printTraceError(L, err);
 		return 0;
 	}
 
@@ -688,7 +703,8 @@ int DirectorManager::readScreenPlayData(lua_State* L) {
 	SceneObject* player = (SceneObject*) lua_touserdata(L, -3);
 
 	if (player == NULL || !player->isPlayerCreature()) {
-		DirectorManager::instance()->error("Attempted to read screen play data from a non-player Scene Object in screen play: " + screenPlay + ".");
+		String err = "Attempted to read screen play data from a non-player Scene Object using screenplay " + screenPlay + " and variable " + variable;
+		printTraceError(L, err);
 
 		lua_pushstring(L, "");
 
@@ -698,7 +714,8 @@ int DirectorManager::readScreenPlayData(lua_State* L) {
 	Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
 
 	if (ghost == NULL) {
-		DirectorManager::instance()->error("Attempted to read screen play data for a null ghost in screen play: " + screenPlay + ".");
+		String err = "Attempted to read screen play data for a null ghost using screenplay " + screenPlay + " and variable " + variable;
+		printTraceError(L, err);
 
 		lua_pushstring(L, "");
 
@@ -724,14 +741,16 @@ int DirectorManager::deleteScreenPlayData(lua_State* L) {
 	SceneObject* player = (SceneObject*) lua_touserdata(L, -3);
 
 	if (player == NULL || !player->isPlayerCreature()) {
-		DirectorManager::instance()->error("Attempted to delete screen play data from a non-player Scene Object in screen play: " + screenPlay + ".");
+		String err = "Attempted to delete screen play data for a non-player Scene Object using screenplay " + screenPlay + " and variable " + variable;
+		printTraceError(L, err);
 		return 0;
 	}
 
 	Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
 
 	if (ghost == NULL) {
-		DirectorManager::instance()->error("Attempted to delete screen play data for a null ghost in screen play: " + screenPlay + ".");
+		String err = "Attempted to delete screen play data for a null ghost using screenplay " + screenPlay + " and variable " + variable;
+		printTraceError(L, err);
 		return 0;
 	}
 
@@ -751,14 +770,16 @@ int DirectorManager::clearScreenPlayData(lua_State* L) {
 	SceneObject* player = (SceneObject*) lua_touserdata(L, -2);
 
 	if (player == NULL || !player->isPlayerCreature()) {
-		DirectorManager::instance()->error("Attempted to clear screen play data from a non-player Scene Object in screen play: " + screenPlay + ".");
+		String err = "Attempted to clear screen play data for a non-player Scene Object using screenplay " + screenPlay;
+		printTraceError(L, err);
 		return 0;
 	}
 
 	Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
 
 	if (ghost == NULL) {
-		DirectorManager::instance()->error("Attempted to clear screen play data for a null ghost in screen play: " + screenPlay + ".");
+		String err = "Attempted to clear screen play data for a null ghost using screenplay " + screenPlay;
+		printTraceError(L, err);
 		return 0;
 	}
 
@@ -1241,29 +1262,29 @@ int DirectorManager::spatialChat(lua_State* L) {
 	ZoneServer* zoneServer = ServerCore::getZoneServer();
 	ChatManager* chatManager = zoneServer->getChatManager();
 
-	Reference<CreatureObject*> creature = (CreatureObject*)lua_touserdata(L, -2);
+	ManagedReference<CreatureObject*> creature = (CreatureObject*)lua_touserdata(L, -2);
 
 	if (lua_islightuserdata(L, -1)) {
 		StringIdChatParameter* message = (StringIdChatParameter*)lua_touserdata(L, -1);
 
 		if (creature != NULL && message != NULL) {
-			StringIdChatParameter taskMessage = *message;
+			Reference<StringIdChatParameter*> param = new StringIdChatParameter(*message);
 
-			EXECUTE_TASK_3(creature, chatManager, taskMessage, {
-					Locker locker(creature_p);
+			Core::getTaskManager()->executeTask([=] () {
+				Locker locker(creature);
 
-					chatManager_p->broadcastChatMessage(creature_p, taskMessage_p, 0, 0, creature_p->getMoodID());
-			});
+				chatManager->broadcastChatMessage(creature, *param.get(), 0, 0, creature->getMoodID());
+			}, "BroadcastChatLambda");
 		}
 	} else {
 		String message = lua_tostring(L, -1);
 
 		if (creature != NULL) {
-			EXECUTE_TASK_3(creature, chatManager, message, {
-					Locker locker(creature_p);
+			Core::getTaskManager()->executeTask([=] () {
+				Locker locker(creature);
 
-					chatManager_p->broadcastChatMessage(creature_p, message_p, 0, 0, creature_p->getMoodID());
-			});
+				chatManager->broadcastChatMessage(creature, message, 0, 0, creature->getMoodID());
+			}, "BroadcastChatLambda2");
 		}
 	}
 
@@ -2623,6 +2644,13 @@ Vector3 DirectorManager::generateSpawnPoint(String zoneName, float x, float y, f
 
 		float newX = x + (cos(newAngle) * distance); // client has x/y inverted
 		float newY = y + (sin(newAngle) * distance);
+
+		newX = (newX < -8192) ? -8192 : newX;
+		newX = (newX > 8192) ? 8192 : newX;
+
+		newY = (newY < -8192) ? -8192 : newY;
+		newY = (newY > 8192) ? 8192 : newY;
+
 		float newZ = zone->getHeight(newX, newY);
 
 		position = Vector3(newX, newY, newZ);
@@ -2672,9 +2700,7 @@ int DirectorManager::getSpawnPoint(lua_State* L) {
 
 	if (zone == NULL) {
 		String err = "Zone is NULL in DirectorManager::getSpawnPoint. zoneName = " + zoneName;
-		luaL_traceback(L, L, err.toCharArray(), 0);
-		String trace = lua_tostring(L, -1);
-		instance()->error(trace);
+		printTraceError(L, err);
 		return 0;
 	}
 
@@ -3262,8 +3288,6 @@ int DirectorManager::createNavMesh(lua_State *L) {
     return 1;
 }
 
-
-
 int DirectorManager::creatureTemplateExists(lua_State* L) {
 	if (checkArgumentCount(L, 1) == 1) {
 		instance()->error("incorrect number of arguments passed to DirectorManager::creatureTemplateExists");
@@ -3280,34 +3304,55 @@ int DirectorManager::creatureTemplateExists(lua_State* L) {
 	return 1;
 }
 
-int DirectorManager::adminPlaceStructure(lua_State* L) {
-	Reference<CreatureObject*> creature = (CreatureObject*)lua_touserdata(L, -2);
-	String templateString = lua_tostring(L, -1);
-
-	ManagedReference<Zone*> zone = creature->getZone();
-
-	if (zone == NULL)
+int DirectorManager::printLuaError(lua_State* L) {
+	if (checkArgumentCount(L, 1) == 1) {
+		instance()->error("incorrect number of arguments passed to DirectorManager::printLuaError");
+		ERROR_CODE = INCORRECT_ARGUMENTS;
 		return 0;
-
-	if (creature->getParent() != NULL) {
-			DirectorManager::instance()->error("adminPlaceStructure - You were not outside.");
-			return 0;
 	}
 
-	int angle = creature->getDirectionAngle();
+	String error = lua_tostring(L, -1);
 
-	if (templateString.contains("housing_tatt_style02_med") || templateString.contains("player/city/cloning") || templateString.contains("player/city/hospital"))
-		angle -= 90; // Correct unusual default POB rotation
-
-	if (templateString.contains("guild_theater"))
-		angle -= 180; // Correct unusual default POB rotation
-
-	float x = creature->getPositionX();
-	float y = creature->getPositionY();
-	int persistenceLevel = 1;
-
-	// Create Structure
-	StructureObject* structureObject = StructureManager::instance()->placeStructure(creature, templateString, x, y, angle, persistenceLevel);
+	printTraceError(L, error);
 
 	return 0;
 }
+
+int DirectorManager::getSpawnPointInArea(lua_State* L) {
+	if (checkArgumentCount(L, 4) == 1) {
+		instance()->error("incorrect number of arguments passed to DirectorManager::getSpawnPointInArea");
+		ERROR_CODE = INCORRECT_ARGUMENTS;
+		return 0;
+	}
+
+	String zoneName  = lua_tostring(L, -4);
+	Zone* zone = ServerCore::getZoneServer()->getZone(zoneName);
+	if (zone == NULL) {
+		instance()-> error("Zone == NULL in DirectorManager::getSpawnPointInArea (" + zoneName + ")");
+		ERROR_CODE = INCORRECT_ARGUMENTS;
+		return 0;
+	}
+
+	float x = lua_tonumber(L, -3);
+	float y = lua_tonumber(L, -2);
+	float radius = lua_tonumber(L, -1);
+
+	Sphere sphere(Vector3(x, y, zone->getHeightNoCache(x, y)), radius);
+	Vector3 result;
+
+	if (PathFinderManager::instance()->getSpawnPointInArea(sphere, zone, result)) {
+		lua_newtable(L);
+		lua_pushnumber(L, result.getX());
+		lua_pushnumber(L, result.getZ());
+		lua_pushnumber(L, result.getY());
+		lua_rawseti(L, -4, 3);
+		lua_rawseti(L, -3, 2);
+		lua_rawseti(L, -2, 1);
+		return 1;
+	} else {
+		instance()->error("Unable to generate spawn point in DirectorManager::getSpawnPointInArea");
+		return 0;
+	}
+
+}
+

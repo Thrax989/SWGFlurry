@@ -25,6 +25,7 @@ include system.util.Vector;
 include system.util.HashTable;
 include system.lang.ref.Reference;
 
+@dirty
 class GCWManager extends ManagedService implements Logger {
 
 	public static final int NOTAFACTIONBASE = 0;
@@ -70,7 +71,7 @@ class GCWManager extends ManagedService implements Logger {
 	private transient int winningFaction;
 	private transient int winnerDifficultyScaling;
 
-	public transient int gcwCheckTimer;
+	public transient unsigned long gcwCheckTimer;
 	public transient int vulnerabilityDuration;
 	public transient int vulnerabilityFrequency;
 	public transient int resetTimer;

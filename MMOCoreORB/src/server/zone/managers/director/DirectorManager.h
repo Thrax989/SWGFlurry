@@ -187,12 +187,14 @@ namespace server {
 		static int getQuestVectorMap(lua_State* L);
 		static int removeQuestVectorMap(lua_State* L);
 		static int createQuestVectorMap(lua_State* L);
-		static int adminPlaceStructure(lua_State* L);
 		static int createNavMesh(lua_State* L);
 		static int creatureTemplateExists(lua_State* L);
+		static int printLuaError(lua_State* L);
+		static int getSpawnPointInArea(lua_State* L);
 
 	private:
 		void setupLuaPackagePath(Lua* luaEngine);
+		static void printTraceError(lua_State* L, const String& error);
 		void initializeLuaEngine(Lua* luaEngine);
 		int loadScreenPlays(Lua* luaEngine);
 		void loadJediManager(Lua* luaEngine);
