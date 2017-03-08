@@ -45,13 +45,15 @@ Table of Contents<br>
 4.1	Code Formatting	7<br>
 4.2	Concurrency	7<br>
 4.2.1	Locking System	7<br>
+
 4.2.2	Practices	7<br><br>
-
-2.0	Code Formatting<br>
-
-2.1	K&R Coding Style<br>
-
-2.2	Coding Techniques<br>
+In the works..<br>
+2.0	Code Formatting<br><br>
+In the works..<br>
+2.1	K&R Coding Style<br><br>
+In the works..<br>
+2.2	Coding Techniques<br><br>
+In the works..<br>
 
 2.2.1	Global Variables and Functions<br>
 No global variable or functions, use static members and methods in a proper class.<br><br>
@@ -71,7 +73,7 @@ Do not create method blocsk longer then 100 lines, it makes code very hard to se
 Avoid having more then 3 sub blocks in cycles and conditional cases. This also makes the code very very unclean.<br><br>
 2.2.9	File Structuring<br>
 For each class create their own header and source (if it is needed) files. Do not mix classes into different sources.<br><br>
-2.2.10	Method Reusability<br>
+2.2.10	Method Reusability<br><br>
 
 
 
@@ -93,14 +95,17 @@ A dead lock happens when all tasks are waiting for a lock to be acquired hence t
 Lets say we have two threads and two locks. Thread 1 is going to try to acqure lock A then lock B while thread 2 is going to try to acquire lock B then lock A. In the worst case the two threads are going to be executed same time when thread 1 acquired lock A  and thread 2 acquired lock B in the fisrt step. Now thread 1 cannot get lock A since thread 2 holds it and thread 2 cannot acquire lock A cause of the same reason.<br><br>
 To solve this in the first round one have to be very careful ordering the locks. There has to be certain levels of objects that you lock in order.  One issue comes when you have to lock two of the same type of object during one task.  We introduced a method called cross locks over these 2 objects that will automaticly solve the situation for you.<br><br>
 
-4	SWG Flurry Contribute<br>
+4	SWG Flurry Contribute<br><br>
 4.1	Code Formatting<br>
 Please follow all the instructions from the Coding Techniques section. In some cases the format source option can assist you by the Eclipse IDE.<br><br>
 4.2	Code Submission<br>
 Commiting to the Git repository please always mark your activities with one of the following tags: [fixed], [added], [deleted], [modified], [updated]<br><br>
-4.3	Concurrency<br>
-4.3.1	Locking System<br>
-In the works..<br>
+4.3	Concurrency<br><br>
+
+4.3.1	Locking System<br><br>
+
+In the works..<br><br>
+
 4.3.2	Practices<br>
 •	During a thread release the locks exactly in the opposite order then you locked them.  Unlocking them would not really cause any technical problems but it is lot more clean to manage them this way.<br><br>
 •	Exceptions can happen anywhere in the code that will skip the rest of the block throughout many functions as long as it is not catched. This is why you should always put a catch try block around a lock-unlock block.<br><br>
