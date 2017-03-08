@@ -76,7 +76,7 @@ taiken_bunker_boss = Creature:new {
   weapons = {"dark_jedi_weapons_gen4"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/fancy",
-  attacks = merge(lightsabermaster,forcewielder,"knockdownattack","KnockdownChance=100")
+  attacks = merge(lightsabermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(taiken_bunker_boss, "taiken_bunker_boss")
