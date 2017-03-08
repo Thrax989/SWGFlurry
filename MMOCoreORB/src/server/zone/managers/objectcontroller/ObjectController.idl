@@ -13,7 +13,6 @@ import server.zone.ZoneProcessServer;
 import server.zone.objects.scene.SceneObject;
 import server.zone.objects.creature.CreatureObject;
 
-@dirty
 class ObjectController extends ManagedService implements Logger {
 	private transient ZoneProcessServer server;
 	
