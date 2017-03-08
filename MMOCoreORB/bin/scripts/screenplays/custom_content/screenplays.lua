@@ -5,6 +5,9 @@
 --Cities
 --includeFile("custom_content/cities/ghomrassen_mos_rassen.lua")
 
+--Cave
+includeFile("custom_content/cave/tatooine_tusken_bunker_boss.lua")
+
 --Dungeons
 includeFile("custom_content/dungeon/generals_bunker.lua")
 
