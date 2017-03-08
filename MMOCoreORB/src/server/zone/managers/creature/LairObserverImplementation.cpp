@@ -43,10 +43,10 @@ int LairObserverImplementation::notifyObserverEvent(unsigned int eventType, Obse
 			task->execute();
 		}
 
-		Core::getTaskManager()->executeTask([=] () {
-			Locker locker(lair);
-			lairObserver->checkForNewSpawns(lair, attacker);
-		}, "CheckForNewSpawnsLambda");
+		EXECUTE_TASK_3(lairObserver, lair, attacker, {
+				Locker locker(lair_p);
+				lairObserver_p->checkForNewSpawns(lair_p, attacker_p);
+		});
 
 		checkForHeal(lair, attacker);
 

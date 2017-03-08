@@ -15,7 +15,6 @@ include server.zone.managers.creature.MountSpeedData;
 include system.util.Vector;
 include system.lang.ref.Reference;
 
-@dirty
 class PetManager extends ManagedService implements Logger {
 	private transient ZoneServer zoneServer;
 
