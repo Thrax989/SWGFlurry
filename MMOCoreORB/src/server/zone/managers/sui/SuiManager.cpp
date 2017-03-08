@@ -518,6 +518,9 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "max_xp") {
 				ghost->maximizeExperience();
 				player->sendSystemMessage("You have maximized all xp types.");
+				
+			} else if (templatePath == "set_jedi_state") {
+				player->setJediState(2);
 
 			} else if (templatePath == "become_glowy") {
 				bluefrog->grantGlowyBadges(player);
