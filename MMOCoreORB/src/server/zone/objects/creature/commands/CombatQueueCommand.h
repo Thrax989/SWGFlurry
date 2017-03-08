@@ -158,6 +158,13 @@ public:
 		if (creature->isDead() || (creature->isPet() && creature->isIncapacitated()))
 			return INVALIDLOCOMOTION;
 
+		if (!creature->hasSkill("combat_bountyhunter_investigation_03") || creature->isPet() || creature->isInCombat()) {
+			creature->setFaction(2);
+		}
+		else{
+			creature->setFaction(0);
+		}
+
 		if (creature->isPlayerCreature()){
 			PlayerObject* ghost = creature->getPlayerObject();
 
@@ -279,13 +286,6 @@ public:
 		// only clear aiming states if command was successful
 		creature->removeStateBuff(CreatureState::AIMING);
 		creature->removeBuff(STRING_HASHCODE("steadyaim"));
-
-		if (creature->isPet() || creature->isInCombat()) {
-			shouldTef = true;	
-		}
-		else{
-			shouldTef = false;
-		}
 
 		// Update PvP TEF Duration
 		if (shouldTef && creature->isPlayerCreature()) {
