@@ -45,12 +45,7 @@ Table of Contents<br>
 4.1	Code Formatting	7<br>
 4.2	Concurrency	7<br>
 4.2.1	Locking System	7<br>
-4.2.2	Practices	7<br>
-
-
-
-
-
+4.2.2	Practices	7<br><br>
 
 2.0	Code Formatting<br>
 
@@ -59,23 +54,23 @@ Table of Contents<br>
 2.2	Coding Techniques<br>
 
 2.2.1	Global Variables and Functions<br>
-No global variable or functions, use static members and methods in a proper class.<br>
+No global variable or functions, use static members and methods in a proper class.<br><br>
 2.2.2	Abbrevations and Special Characters<br>
-Do not use any abbrevations or any special marks (like _) in names and use the following four naming conventions.<br>
+Do not use any abbrevations or any special marks (like _) in names and use the following four naming conventions.<br><br>
 2.2.3	Class Naming Conventions<br>
-All tags of the classnames, including the first, must start with a capital letter (e.g. ZoneServerPacketHandler).<br>
+All tags of the classnames, including the first, must start with a capital letter (e.g. ZoneServerPacketHandler).<br><br>
 2.2.4	Class Member and Method Naming Conventions<br>
-Class member and methods must not start with a capital but their other tags must start with one (e.g handlePositionUpdatePacket()).<br>
+Class member and methods must not start with a capital but their other tags must start with one (e.g handlePositionUpdatePacket()).<br><br>
 2.2.5	Class Method Parameter Naming Conventions<br>
-Method parameters cannot contain capital letters altough they might use some kind of abbreavtion if needed.<br>
+Method parameters cannot contain capital letters altough they might use some kind of abbreavtion if needed.<br><br>
 2.2.6	Local Variable Naming Conventions<br>
-Local variables cannot contain capital letters as well.<br>
+Local variables cannot contain capital letters as well.<br><br>
 2.2.7	Method Blocks<br>
-Do not create method blocsk longer then 100 lines, it makes code very hard to see through. Divide the functionality into more subfunctions. This is a very common mistake along with the next one!<br>
+Do not create method blocsk longer then 100 lines, it makes code very hard to see through. Divide the functionality into more subfunctions. This is a very common mistake along with the next one!<br><br>
 2.2.8	Block Structuring<br>
-Avoid having more then 3 sub blocks in cycles and conditional cases. This also makes the code very very unclean.<br>
+Avoid having more then 3 sub blocks in cycles and conditional cases. This also makes the code very very unclean.<br><br>
 2.2.9	File Structuring<br>
-For each class create their own header and source (if it is needed) files. Do not mix classes into different sources.<br>
+For each class create their own header and source (if it is needed) files. Do not mix classes into different sources.<br><br>
 2.2.10	Method Reusability<br>
 
 
