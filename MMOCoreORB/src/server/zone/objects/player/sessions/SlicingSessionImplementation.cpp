@@ -816,8 +816,7 @@ void SlicingSessionImplementation::handleContainerSlice() {
 			return;
 		}
 
-		if (System::random(10) != 4)
-			lootManager->createLoot(container, "looted_container");
+		lootManager->createLoot(container, "looted_container");
 
 		inventory->transferObject(container, -1);
 		container->sendTo(player, true);
