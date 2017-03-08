@@ -16,22 +16,10 @@ public:
 	static int executeCommand(CreatureObject* creature, uint64 target, const UnicodeString& arguments) {
 		PlayerObject* ghost = creature->getPlayerObject();
 
-		if (ghost == NULL || ghost->getAdminLevel() < 15)
+		if (ghost == NULL)
 			return 1;
 
-		StringTokenizer args(arguments.toString());
-
-		if (args.hasMoreTokens()) {
-			String command;
-			args.getStringToken(command);
-
-			if (command.toLowerCase() == "reset") {
-				StatisticsManager::instance()->reset();
-				creature->sendSystemMessage("Statistics have been reset.");
-			}
-		} else {
-			creature->sendSystemMessage(StatisticsManager::instance()->getStatistics());
-		}
+		creature->sendSystemMessage(StatisticsManager::instance()->getStatistics());
 
 		return 0;
 	}
