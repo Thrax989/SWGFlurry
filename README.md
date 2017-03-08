@@ -20,11 +20,11 @@ Run Unit Integrity Test
 
 
 
-Table of Contents
-1	Preface	3
-2	Code Formatting	4
-2.1	K&R Coding Style	4
-2.2	Coding Techniques	4
+Table of Contents<br>
+1	Preface	3<br>
+2	Code Formatting	4<br>
+2.1	K&R Coding Style	4<br>
+2.2	Coding Techniques	4<br>
 2.2.1	Global Variables and Functions	4
 2.2.2	Abbrevations and Special Characters	4
 2.2.3	Class Naming Conventions	4
