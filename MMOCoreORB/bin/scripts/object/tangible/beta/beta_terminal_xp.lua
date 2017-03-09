@@ -12,10 +12,6 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 	itemList = {
 		"Items",
 		{
-			"Krayt Dragon Pearl", "pearls_flawless",
-			"Power Crystal", "crystals_premium",
-			"Color Crystal", "color_crystals",
-			"Dawn Of Dagobah", "crystal_dawn_of_dagobah",
 			"Crystal Pack", "object/tangible/component/weapon/lightsaber/lightsaber_refined_crystal_pack.iff",
 			"Jedi Apron", "crafting_apron_jedi_saber",
 			"pearls_flawless", "pearls_flawless",
@@ -43,6 +39,8 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 			"saberhand20", "saberhand20",
 			"saberhand21", "saberhand21",
 			"saberhand22", "saberhand22",
+			"saberhand23", "saberhand23",
+			"saberhand24", "saberhand24",
 		},
 		"Force Sensitive",
 		{
