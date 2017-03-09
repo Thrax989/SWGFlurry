@@ -5,7 +5,7 @@ ring_s01_LST = {
     customObjectName = "Ring of Master Kit Fisto",
     directObjectTemplate = "object/tangible/wearables/ring/ring_s01.iff",
     craftingValues = {},
- 	skillMods = {{"lightsaber_toughness", 5}},
+ 	  skillMods = {{"lightsaber_toughness", 5}},
     customizationStringNames = {},
     customizationValues = {}
 }
