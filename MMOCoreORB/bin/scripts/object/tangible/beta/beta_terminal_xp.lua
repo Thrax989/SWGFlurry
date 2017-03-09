@@ -14,6 +14,10 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 		{
 			"Crystal Pack", "object/tangible/component/weapon/lightsaber/lightsaber_refined_crystal_pack.iff",
 			"Jedi Apron", "crafting_apron_jedi_saber",
+			"jedi_rings", "jedi_rings",
+			"Jedi_necklaces", "Jedi_necklaces",
+			"jedi_earings", "jedi_earings",
+			"jedi_bracelets", "jedi_bracelets",
 			"pearls_flawless", "pearls_flawless",
 			"color_crystals", "color_crystals",
 			"g_named_crystals", "g_named_crystals",
