@@ -40,6 +40,8 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 			"saberhand20", "saberhand20",
 			"saberhand21", "saberhand21",
 			"saberhand22", "saberhand22",
+	                "saberhand23", "saberhand23",
+			"saberhand24", "saberhand24",
 		},
 		"Force Sensitive",
 		{
