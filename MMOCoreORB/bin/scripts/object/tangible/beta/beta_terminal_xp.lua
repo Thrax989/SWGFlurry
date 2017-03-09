@@ -17,6 +17,8 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 			"pearls_flawless", "pearls_flawless",
 			"color_crystals", "color_crystals",
 			"g_named_crystals", "g_named_crystals",
+			"armor_attachments", "armor_attachments",
+			"clothing_attachments", "clothing_attachments",
 			"saberhand1", "saberhand1",
 			"saberhand2", "saberhand2",
 			"saberhand3", "saberhand3",
