@@ -18,7 +18,7 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 			"Dawn Of Dagobah", "crystal_dawn_of_dagobah",
 			"Crystal Pack", "object/tangible/component/weapon/lightsaber/lightsaber_refined_crystal_pack.iff",
 			"Jedi Apron", "crafting_apron_jedi_saber",
-			"saber1", "saberhand1",
+			"Light Saber 1", "saberhand1",
 			"Light Saber 2", "saberhand2",
 			"Light Saber 3", "saberhand3",
 			"Light Saber 4", "saberhand4",
