@@ -18,6 +18,9 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 			"Dawn Of Dagobah", "crystal_dawn_of_dagobah",
 			"Crystal Pack", "object/tangible/component/weapon/lightsaber/lightsaber_refined_crystal_pack.iff",
 			"Jedi Apron", "crafting_apron_jedi_saber",
+			"pearls_flawless", "pearls_flawless",
+			"color_crystals", "color_crystals",
+			"g_named_crystals", "g_named_crystals",
 			"saberhand1", "saberhand1",
 			"saberhand2", "saberhand2",
 			"saberhand3", "saberhand3",
@@ -40,8 +43,6 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 			"saberhand20", "saberhand20",
 			"saberhand21", "saberhand21",
 			"saberhand22", "saberhand22",
-	                "saberhand23", "saberhand23",
-			"saberhand24", "saberhand24",
 		},
 		"Force Sensitive",
 		{
