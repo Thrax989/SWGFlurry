@@ -402,6 +402,8 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 
 				ManagedReference<WearableObject*> apron = zserv->createObject(itemCrc, 2).castTo<WearableObject*>();
                                 ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
+				ManagedReference<SceneObject*> inventory = ghost->getSlottedObject("inventory");
+				ManagedReference<LootManager*> lootManager = ghost->getZoneServer()->getLootManager();
 
 				if (apron == NULL) {
 					player->sendSystemMessage("There was an error creating the requested item. Please report this issue.");
@@ -520,6 +522,9 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "max_xp") {
 				ghost->maximizeExperience();
 				player->sendSystemMessage("You have maximized all xp types.");
+				
+			} else if (templatePath == "saber1") {
+				lootManager->createLoot(inventory, "saberhand1", 300);
 				
 			} else if (templatePath == "set_jedi_state") {
 				ghost->setJediState(2);
