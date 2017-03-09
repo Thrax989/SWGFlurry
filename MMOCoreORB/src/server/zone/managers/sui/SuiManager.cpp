@@ -26,7 +26,7 @@
 #include "server/zone/objects/tangible/eventperk/Jukebox.h"
 #include "server/zone/objects/tangible/eventperk/ShuttleBeacon.h"
 #include "server/zone/objects/player/sui/SuiBoxPage.h"
-
+#include "server/zone/managers/loot/LootManager.h"
 
 SuiManager::SuiManager() : Logger("SuiManager") {
 	server = NULL;
@@ -45,6 +45,7 @@ void SuiManager::handleSuiEventNotification(uint32 boxID, CreatureObject* player
 		return;
 
 	ManagedReference<SuiBox*> suiBox = ghost->getSuiBox(boxID);
+
 
 	if (suiBox == NULL)
 		return;
@@ -401,9 +402,6 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				uint32 itemCrc = ( player->getSpecies() != CreatureObject::ITHORIAN ) ? 0x5DDC4E5D : 0x6C191FBB;
 
 				ManagedReference<WearableObject*> apron = zserv->createObject(itemCrc, 2).castTo<WearableObject*>();
-                                ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-				ManagedReference<SceneObject*> inventory = ghost->getSlottedObject("inventory");
-				ManagedReference<LootManager*> lootManager = ghost->getZoneServer()->getLootManager();
 
 				if (apron == NULL) {
 					player->sendSystemMessage("There was an error creating the requested item. Please report this issue.");
@@ -523,8 +521,185 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				ghost->maximizeExperience();
 				player->sendSystemMessage("You have maximized all xp types.");
 				
-			} else if (templatePath == "saber1") {
-				lootManager->createLoot(inventory, "saberhand1", 300);
+			} else if (templatePath == "saberhand1") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand1", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand2") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand2", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand3") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand3", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand4") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand4", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand5") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand5", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand6") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand6", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand7") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand7", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand8") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand8", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand9") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand9", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand10") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand10", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand11") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand11", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand12") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand12", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand13") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand13", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand14") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand14", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand15") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand15", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand16") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand16", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand17") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand17", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand18") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand18", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand19") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand19", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand20") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand20", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand21") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand21", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand22") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand22", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand23") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand23", playerName, 300);//, playerName);
+
+			} else if (templatePath == "saberhand24") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "saberhand24", playerName, 300);//, playerName);
+				
+			} else if (templatePath == "armor_attachments") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "armor_attachments", playerName, 300);//, playerName);
+				
+			} else if (templatePath == "clothing_attachments") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "clothing_attachments", playerName, 300);//, playerName);
+				
+			} else if (templatePath == "jedi_rings") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "jedi_rings", playerName, 300);//, playerName);
+				
+			} else if (templatePath == "Jedi_necklaces") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "Jedi_necklaces", playerName, 300);//, playerName);
+				
+			} else if (templatePath == "jedi_earings") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "jedi_earings", playerName, 300);//, playerName);
+				
+			} else if (templatePath == "jedi_bracelets") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "jedi_bracelets", playerName, 300);//, playerName);
 				
 			} else if (templatePath == "set_jedi_state") {
 				ghost->setJediState(2);
