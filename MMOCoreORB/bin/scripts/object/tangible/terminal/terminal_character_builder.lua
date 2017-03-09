@@ -1536,6 +1536,8 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 			"saberhand20", "saberhand20",
 			"saberhand21", "saberhand21",
 			"saberhand22", "saberhand22",
+			"saberhand23", "saberhand23",
+			"saberhand24", "saberhand24",
 			"Set Jedi State", "set_jedi_state",
 			"Become Glowy", "become_glowy",
 			"Faction Points",
