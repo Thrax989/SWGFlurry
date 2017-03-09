@@ -27,6 +27,114 @@
 #include "server/zone/objects/tangible/eventperk/ShuttleBeacon.h"
 #include "server/zone/objects/player/sui/SuiBoxPage.h"
 
+
+
+
+
+
+#include "server/zone/managers/player/PlayerManager.h"
+
+#include "server/zone/packets/charcreation/ClientCreateCharacterCallback.h"
+#include "server/zone/packets/charcreation/ClientCreateCharacterFailed.h"
+#include "server/zone/ZoneServer.h"
+#include "server/zone/ZoneProcessServer.h"
+#include "server/zone/managers/name/NameManager.h"
+#include "templates/manager/TemplateManager.h"
+#include "server/zone/managers/object/ObjectManager.h"
+#include "server/zone/managers/faction/FactionManager.h"
+#include "server/db/ServerDatabase.h"
+#include "server/chat/ChatManager.h"
+#include "server/zone/managers/objectcontroller/ObjectController.h"
+#include "server/zone/managers/combat/CombatManager.h"
+#include "server/zone/managers/skill/Performance.h"
+#include "server/zone/managers/collision/CollisionManager.h"
+#include "server/zone/objects/intangible/VehicleControlDevice.h"
+#include "server/zone/objects/tangible/threat/ThreatMap.h"
+#include "server/zone/objects/creature/VehicleObject.h"
+#include "server/login/packets/ErrorMessage.h"
+#include "server/zone/packets/player/LogoutMessage.h"
+#include "server/zone/objects/player/sessions/TradeSession.h"
+#include "server/zone/objects/player/sessions/ProposeUnitySession.h"
+#include "server/zone/objects/player/sessions/VeteranRewardSession.h"
+#include "templates/params/OptionBitmask.h"
+#include "server/zone/managers/player/JukeboxSong.h"
+#include "server/zone/managers/player/QuestInfo.h"
+
+#include "server/zone/objects/intangible/ShipControlDevice.h"
+#include "server/zone/objects/group/GroupObject.h"
+#include "server/zone/objects/building/BuildingObject.h"
+#include "templates/building/CloningBuildingObjectTemplate.h"
+#include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/objects/tangible/wearables/ArmorObject.h"
+#include "server/zone/objects/tangible/weapon/WeaponObject.h"
+#include "server/zone/objects/tangible/wearables/WearableObject.h"
+
+#include "server/zone/objects/player/events/PlayerIncapacitationRecoverTask.h"
+#include "server/zone/objects/creature/events/ProposeUnityExpiredTask.h"
+#include "server/zone/objects/player/events/ForceMeditateTask.h"
+#include "server/zone/objects/player/events/MeditateTask.h"
+#include "server/zone/objects/player/events/LogoutTask.h"
+#include "server/zone/objects/player/sessions/EntertainingSession.h"
+#include "templates/building/CloneSpawnPoint.h"
+#include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
+#include "server/zone/objects/player/sui/listbox/SuiListBox.h"
+#include "server/zone/objects/cell/CellObject.h"
+#include "server/zone/managers/skill/SkillManager.h"
+#include "server/zone/objects/player/FactionStatus.h"
+#include "server/zone/managers/planet/PlanetManager.h"
+
+#include "server/zone/packets/trade/AbortTradeMessage.h"
+#include "server/zone/packets/trade/AcceptTransactionMessage.h"
+#include "server/zone/packets/trade/UnAcceptTransactionMessage.h"
+#include "server/zone/packets/trade/AddItemMessage.h"
+#include "server/zone/packets/trade/TradeCompleteMessage.h"
+#include "server/zone/packets/trade/GiveMoneyMessage.h"
+#include "server/zone/packets/chat/ChatSystemMessage.h"
+#include "server/zone/packets/tangible/TangibleObjectDeltaMessage3.h"
+#include "server/zone/packets/player/PlayMusicMessage.h"
+#include "server/zone/packets/object/StartingLocationListMessage.h"
+
+#include "server/zone/objects/region/CityRegion.h"
+#include "server/zone/managers/director/DirectorManager.h"
+#include "server/zone/objects/player/sui/callbacks/CloningRequestSuiCallback.h"
+#include "server/zone/objects/tangible/tool/CraftingStation.h"
+#include "server/zone/objects/tangible/tool/CraftingTool.h"
+
+#include "server/zone/Zone.h"
+#include "server/zone/managers/player/creation/PlayerCreationManager.h"
+#include "server/ServerCore.h"
+#include "server/login/account/Account.h"
+
+#include "server/zone/objects/player/sui/callbacks/PlayerTeachSuiCallback.h"
+#include "server/zone/objects/player/sui/callbacks/PlayerTeachConfirmSuiCallback.h"
+#include "server/zone/objects/player/sui/callbacks/ProposeUnitySuiCallback.h"
+#include "server/zone/objects/player/sui/callbacks/SelectUnityRingSuiCallback.h"
+#include "server/zone/objects/player/sui/callbacks/SelectVeteranRewardSuiCallback.h"
+#include "server/zone/objects/player/sui/callbacks/ConfirmVeteranRewardSuiCallback.h"
+#include "server/zone/objects/player/sui/callbacks/ConfirmDivorceSuiCallback.h"
+
+#include "server/zone/managers/stringid/StringIdManager.h"
+#include "server/zone/objects/creature/buffs/PowerBoostBuff.h"
+#include "server/zone/objects/creature/ai/Creature.h"
+#include "server/zone/objects/creature/ai/NonPlayerCreatureObject.h"
+#include "server/zone/objects/creature/events/DespawnCreatureTask.h"
+#include "server/zone/objects/creature/ai/AiAgent.h"
+#include "server/zone/managers/gcw/GCWManager.h"
+#include "server/zone/objects/intangible/PetControlDevice.h"
+#include "server/zone/managers/creature/PetManager.h"
+#include "server/zone/objects/creature/events/BurstRunNotifyAvailableEvent.h"
+#include "server/zone/objects/creature/ai/DroidObject.h"
+#include "server/zone/objects/tangible/components/droid/DroidPlaybackModuleDataComponent.h"
+#include "server/zone/objects/player/badges/Badge.h"
+#include "server/zone/objects/player/Races.h"
+/*  GOTO line 733 for next portion to uncomment:  NGE Player BH system*/
+#include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
+#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
+
+
+
+
 SuiManager::SuiManager() : Logger("SuiManager") {
 	server = NULL;
 	setGlobalLogging(true);
@@ -400,6 +508,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				uint32 itemCrc = ( player->getSpecies() != CreatureObject::ITHORIAN ) ? 0x5DDC4E5D : 0x6C191FBB;
 
 				ManagedReference<WearableObject*> apron = zserv->createObject(itemCrc, 2).castTo<WearableObject*>();
+                                ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
 				if (apron == NULL) {
 					player->sendSystemMessage("There was an error creating the requested item. Please report this issue.");
@@ -520,7 +629,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				player->sendSystemMessage("You have maximized all xp types.");
 				
 			} else if (templatePath == "set_jedi_state") {
-				player->setJediState(2);
+				ghost->setJediState(2);
 
 			} else if (templatePath == "become_glowy") {
 				bluefrog->grantGlowyBadges(player);
