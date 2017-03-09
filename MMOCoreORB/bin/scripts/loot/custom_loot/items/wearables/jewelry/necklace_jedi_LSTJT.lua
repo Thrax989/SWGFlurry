@@ -6,10 +6,10 @@ necklace_jedi_LSTJT = {
 	craftingValues = {},
 	customizationStringNames = {},
 	customizationValues = {},
-	skillMods = {{"jedi_toughness", 10},
-	skillMods = {{"lightsaber_toughness", 10},
-	customizationStringNames = {},
-        customizationValues = {}
-	}
+	skillMods = {
+	{"jedi_toughness", 10},
+	{"lightsaber_toughness", 10}
+  }
+}
 
 addLootItemTemplate("necklace_jedi_LSTJT", necklace_jedi_LSTJT)
