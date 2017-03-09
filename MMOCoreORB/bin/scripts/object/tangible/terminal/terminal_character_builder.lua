@@ -1514,6 +1514,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 			"Apply DOTs", "apply_dots",
 			"Clear DOTs", "clear_dots",
 			"Max XP", "max_xp",
+			"Set Jedi State", "set_jedi_state",
 			"Become Glowy", "become_glowy",
 			"Faction Points",
 			{

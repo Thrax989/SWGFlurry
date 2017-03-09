@@ -27,6 +27,7 @@
 #include "server/zone/objects/tangible/eventperk/ShuttleBeacon.h"
 #include "server/zone/objects/player/sui/SuiBoxPage.h"
 
+
 SuiManager::SuiManager() : Logger("SuiManager") {
 	server = NULL;
 	setGlobalLogging(true);
@@ -400,6 +401,9 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				uint32 itemCrc = ( player->getSpecies() != CreatureObject::ITHORIAN ) ? 0x5DDC4E5D : 0x6C191FBB;
 
 				ManagedReference<WearableObject*> apron = zserv->createObject(itemCrc, 2).castTo<WearableObject*>();
+                                ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
+				ManagedReference<SceneObject*> inventory = ghost->getSlottedObject("inventory");
+				ManagedReference<LootManager*> lootManager = ghost->getZoneServer()->getLootManager();
 
 				if (apron == NULL) {
 					player->sendSystemMessage("There was an error creating the requested item. Please report this issue.");
@@ -518,6 +522,12 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "max_xp") {
 				ghost->maximizeExperience();
 				player->sendSystemMessage("You have maximized all xp types.");
+				
+			} else if (templatePath == "saber1") {
+				lootManager->createLoot(inventory, "saberhand1", 300);
+				
+			} else if (templatePath == "set_jedi_state") {
+				ghost->setJediState(2);
 
 			} else if (templatePath == "become_glowy") {
 				bluefrog->grantGlowyBadges(player);
