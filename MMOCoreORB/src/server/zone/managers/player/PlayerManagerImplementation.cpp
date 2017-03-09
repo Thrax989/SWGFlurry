@@ -720,7 +720,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->sendSystemMessage(stringId);
 
 	player->updateTimeOfDeath();
-	player->clearBuffs(true);
+	//player->clearBuffs(true);
 
 	PlayerObject* ghost = player->getPlayerObject();
 	player->setFactionStatus(FactionStatus::ONLEAVE);
