@@ -439,6 +439,10 @@ includeFile("custom_loot/items/wearables/jewelry/bracelet_s06_r_JT.lua")
 includeFile("custom_loot/items/wearables/jewelry/ring_s01_LST.lua")
 includeFile("custom_loot/items/wearables/jewelry/ring_s02_JT.lua")
 
+includeFile("custom_loot/items/wearables/jewelry/jedi_neck_1.lua")
+includeFile("custom_loot/items/wearables/jewelry/jedi_neck_2.lua")
+includeFile("custom_loot/items/wearables/jewelry/jedi_neck_3.lua")
+
 includeFile("custom_loot/items/wearables/jewelry/earingLST.lua")
 includeFile("custom_loot/items/wearables/jewelry/earingJT.lua")
 

@@ -683,11 +683,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
 				lootManager->createNamedLoot(inventory, "jedi_rings", playerName, 300);//, playerName);
 				
-			} else if (templatePath == "Jedi_necklaces") {
+			} else if (templatePath == "jedi_neck") {
                                 String playerName = player->getFirstName();
 	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
 	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
-				lootManager->createNamedLoot(inventory, "Jedi_necklaces", playerName, 300);//, playerName);
+				lootManager->createNamedLoot(inventory, "jedi_neck", playerName, 300);//, playerName);
 				
 			} else if (templatePath == "jedi_earings") {
                                 String playerName = player->getFirstName();
