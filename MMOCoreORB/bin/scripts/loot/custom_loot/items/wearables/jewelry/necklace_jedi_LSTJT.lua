@@ -6,7 +6,7 @@ necklace_jedi_LSTJT = {
 	craftingValues = {},
 	customizationStringNames = {},
 	customizationValues = {},
-	skillMods = {{"jedi_toughness", 15},
+	skillMods = {{"jedi_toughness", 5},
 	customizationStringNames = {},
         customizationValues = {}
 	}
