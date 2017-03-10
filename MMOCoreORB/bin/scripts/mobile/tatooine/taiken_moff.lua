@@ -4,13 +4,13 @@ taiken_moff = Creature:new {
   socialGroup = "geonosian",
   level = 300,
   chanceHit = 50.00,
-  damageMin = 800,
-  damageMax = 1900,
+  damageMin = 1200,
+  damageMax = 2000,
   baseXp = 0,
   baseHAM = 55000,
   baseHAMmax = 100000,
   armor = 2,
-  resists = {100,60,20,60,10,10,50,10,0},
+  resists = {100,60,60,60,60,60,60,60,20},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -71,7 +71,7 @@ taiken_moff = Creature:new {
     conversationTemplate = "",
     reactionStf = "@npc_reaction/military",
     personalityStf = "@hireling/hireling_military",
-    attacks = merge(riflemanmaster,carbineermaster,brawlermaster,fencermaster)
+    attacks = merge(riflemanmaster,carbineermaster,brawlermaster,fencermaster,commandomaster)
   }
 
   CreatureTemplates:addCreatureTemplate(taiken_moff, "taiken_moff")
