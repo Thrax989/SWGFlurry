@@ -7,6 +7,7 @@
 
 --Cave
 includeFile("custom_content/cave/tatooine_tusken_bunker_boss.lua")
+includeFile("custom_content/cave/dantooine_janta_cave_boss.lua")
 
 --Dungeons
 includeFile("custom_content/dungeon/generals_bunker.lua")
