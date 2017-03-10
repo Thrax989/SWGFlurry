@@ -700,6 +700,24 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
 	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
 				lootManager->createNamedLoot(inventory, "jedi_bracelets", playerName, 300);//, playerName);
+
+			} else if (templatePath == "color_crystals") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "color_crystals", playerName, 300);//, playerName);
+
+			} else if (templatePath == "g_named_crystals") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "g_named_crystals", playerName, 300);//, playerName);
+				
+			} else if (templatePath == "pearls_flawless") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "pearls_flawless", playerName, 300);//, playerName);
 				
 			} else if (templatePath == "set_jedi_state") {
 				ghost->setJediState(2);
