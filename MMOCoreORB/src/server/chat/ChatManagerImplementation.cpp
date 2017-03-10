@@ -756,13 +756,13 @@ void ChatManagerImplementation::handleChatRoomMessage(CreatureObject* sender, co
 		channel->broadcastMessageCheckIgnore(msg, name);
 	} else if (generalRoom != NULL && generalRoom->getRoomID() == roomID) {
  		channel->broadcastMessageCheckIgnore(msg, name);
-	} else if (galaxyRoom != NULL && generalRoom->getRoomID() == roomID) {
+	} else if (galaxyRoom != NULL && galaxyRoom->getRoomID() == roomID) {
  		channel->broadcastMessageCheckIgnore(msg, name);
-	} else if (systemRoom != NULL && generalRoom->getRoomID() == roomID) {
+	} else if (systemRoom != NULL && systemRoom->getRoomID() == roomID) {
  		channel->broadcastMessageCheckIgnore(msg, name);
-	} else if (groupRoom != NULL && generalRoom->getRoomID() == roomID) {
+	} else if (groupRoom != NULL && groupRoom->getRoomID() == roomID) {
  		channel->broadcastMessageCheckIgnore(msg, name);
-	} else if (guildRoom != NULL && generalRoom->getRoomID() == roomID) {
+	} else if (guildRoom != NULL && guildRoom->getRoomID() == roomID) {
  		channel->broadcastMessageCheckIgnore(msg, name);
 	} else {
 		channel->broadcastMessage(msg);
