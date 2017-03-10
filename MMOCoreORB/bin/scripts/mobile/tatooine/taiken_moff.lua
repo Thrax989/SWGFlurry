@@ -67,7 +67,7 @@ taiken_moff = Creature:new {
         lootChance = 5000000
       },
   },
-    weapons = {"imperial_weapons_heavy"},
+    weapons = {"imperial_weapons_heavy,dark_trooper_weapons"},
     conversationTemplate = "",
     reactionStf = "@npc_reaction/military",
     personalityStf = "@hireling/hireling_military",
