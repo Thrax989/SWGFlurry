@@ -1515,7 +1515,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 			"Clear DOTs", "clear_dots",
 			"Max XP", "max_xp",
 			"jedi_rings", "jedi_rings",
-			"Jedi_necklaces", "Jedi_necklaces",
+			"jedi_neck", "jedi_neck",
 			"jedi_earings", "jedi_earings",
 			"jedi_bracelets", "jedi_bracelets",
 			"pearls_flawless", "pearls_flawless",
