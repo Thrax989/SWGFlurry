@@ -50,7 +50,7 @@ taiken_dark_apprentice = Creature:new {
         lootChance = 3000000
         },
     },
-  weapons = {"dark_jedi_weapons_gen2"},
+  weapons = {"dark_jedi_weapons_gen4"},
   reactionStf = "@npc_reaction/slang",
   attacks = merge(lightsabermaster)
 }
