@@ -2,14 +2,14 @@ taiken_dark_apprentice = Creature:new {
   customName = "Dark Apprentice",
   socialGroup = "geonosian",
   level = 200,
-  chanceHit = 15.00,
-  damageMin = 600,
-  damageMax = 1200,
+  chanceHit = 20.00,
+  damageMin = 800,
+  damageMax = 1400,
   baseXp = 0,
   baseHAM = 90000,
   baseHAMmax = 100000,
-  armor = 1,
-  resists = {60,60,20,60,20,60,60,60,15},
+  armor = 2,
+  resists = {60,60,20,60,20,60,60,60,25},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -47,7 +47,7 @@ taiken_dark_apprentice = Creature:new {
          groups = {
           {group = "looted_container", chance = 10000000},
         },
-        lootChance = 2000000
+        lootChance = 3000000
         },
     },
   weapons = {"dark_jedi_weapons_gen2"},
