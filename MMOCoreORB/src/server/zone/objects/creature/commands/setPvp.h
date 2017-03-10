@@ -37,8 +37,8 @@ public:
 			return GENERALERROR;
 		}
 		
-		if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice")){
-			creature->sendSystemMessage("Jedi in the FRS may not use this command.");
+		if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice") || playerCreature->hasSkill("force_title_jedi_novice") || playerCreature->hasSkill("combat_bountyhunter_investigation_03")){
+			creature->sendSystemMessage("You may not use this command.");
 			return GENERALERROR;
 		}
 		

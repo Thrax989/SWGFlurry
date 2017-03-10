@@ -43,16 +43,15 @@ function TuskenBunkerScreenPlay:spawnMobiles()
 		spawnMobile("tatooine", "taiken_dark_apprentice",600, 5,-20,29,179,4235606)
 		spawnMobile("tatooine", "taiken_dark_apprentice",600, -10,-13,7,91,4235603)
 		spawnMobile("tatooine", "taiken_dark_apprentice",600, 4,0,-4,-90,4235599)
-		spawnMobile("tatooine", "taiken_dark_apprentice",600, 4,-20,13,2,4235606)
-		spawnMobile("tatooine", "taiken_dark_apprentice",600, -1,-20,13,0,4235606)
 		spawnMobile("tatooine", "taiken_dark_apprentice",600, -7,-17,-4,46,4235604)
 		spawnMobile("tatooine", "taiken_dark_apprentice",600, 4,-13,-6,-45,4235601)
 		spawnMobile("tatooine", "taiken_dark_apprentice",600, -4,-6,0,-1,4235601)
 		spawnMobile("tatooine", "taiken_dark_apprentice",600, -0,0,2,0,4235598)
+		spawnMobile("tatooine", "taiken_dark_apprentice",600, -1472,41,-193,-104,0)
 
 		spawnMobile("tatooine", "taiken_at_st", 600, -1475, 41, -206, -110,0)
 		spawnMobile("tatooine", "taiken_at_st", 600, -1497, 40, -195, 154,0)
-		spawnMobile("tatooine", "taiken_at_st", 600, -1473, 41, -194, -107,0)
+
 
 		spawnMobile("tatooine", "taiken_nova", 300, -1480, 41, -202, -166,0)
 		spawnMobile("tatooine", "taiken_nova", 300, -1492, 41, -196, -151,0)

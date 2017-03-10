@@ -119,7 +119,7 @@ object_tangible_wearables_armor_bone_armor_bone_s01_leggings = object_tangible_w
 	heat = 0,
 	cold = 25,
 	acid = 25,
-	lightSaber = 0,,
+	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
