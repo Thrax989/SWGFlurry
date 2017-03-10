@@ -2,14 +2,14 @@ taiken_scout = Creature:new {
   customName = "Scout Trooper",
   socialGroup = "geonosian",
   level = 100,
-  chanceHit = 10.35,
-  damageMin = 220,
-  damageMax = 430,
+  chanceHit = 15.00,
+  damageMin = 400,
+  damageMax = 800,
   baseXp = 0,
   baseHAM = 25000,
   baseHAMmax = 44700,
   armor = 2,
-  resists = {80,80,20,20,-1,20,20,-1,25},
+  resists = {80,80,20,20,-1,20,20,-1,10},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -40,7 +40,7 @@ taiken_scout = Creature:new {
   conversationTemplate = "",
   reactionStf = "@npc_reaction/stormtrooper",
   personalityStf = "@hireling/hireling_stormtrooper",
-  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster)
+  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,riflemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(taiken_scout, "taiken_scout")
