@@ -1,4 +1,4 @@
-jedi_necklace_3 = {
+jedi_neck_3 = {
     minimumLevel = 0,
     maximumLevel = -1,
     customObjectName = "",
@@ -10,4 +10,4 @@ jedi_necklace_3 = {
   }
 }
 
-addLootItemTemplate("jedi_necklace_3", jedi_necklace_3)
+addLootItemTemplate("jedi_neck_3", jedi_neck_3)

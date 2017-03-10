@@ -439,12 +439,12 @@ includeFile("custom_loot/items/wearables/jewelry/bracelet_s06_r_JT.lua")
 includeFile("custom_loot/items/wearables/jewelry/ring_s01_LST.lua")
 includeFile("custom_loot/items/wearables/jewelry/ring_s02_JT.lua")
 
-includeFile("custom_loot/items/wearables/jewelry/jedi_necklace_1.lua")
-includeFile("custom_loot/items/wearables/jewelry/jedi_necklace_2.lua")
-includeFile("custom_loot/items/wearables/jewelry/jedi_necklace_3.lua")
+includeFile("custom_loot/items/wearables/jewelry/jedi_neck_1.lua")
+includeFile("custom_loot/items/wearables/jewelry/jedi_neck_2.lua")
+includeFile("custom_loot/items/wearables/jewelry/jedi_neck_3.lua")
 
-includeFile("custom_loot/items/wearables/jewelry/earringLST.lua")
-includeFile("custom_loot/items/wearables/jewelry/earringJT.lua")
+includeFile("custom_loot/items/wearables/jewelry/earingLST.lua")
+includeFile("custom_loot/items/wearables/jewelry/earingJT.lua")
 
 --includeFile("custom_loot/items/wearables/necklace_ornamental_ratchet.lua")
 --includeFile("custom_loot/items/wearables/necklace_pawl_chain.lua")

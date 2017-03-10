@@ -1,4 +1,4 @@
-earringJT = {
+earingJT = {
  -- Band
     minimumLevel = 0,
     maximumLevel = -1,
@@ -10,4 +10,4 @@ earringJT = {
     customizationValues = {}
 }
 
-addLootItemTemplate("earringJT", earringJT)
+addLootItemTemplate("earingJT", earingJT)
