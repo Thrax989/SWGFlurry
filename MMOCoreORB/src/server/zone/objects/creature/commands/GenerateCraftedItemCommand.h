@@ -158,7 +158,7 @@ public:
 
 			// Crafter Name
 			ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-			if (ghost->getAdminLevel() == 16) {
+			if (ghost->getAdminLevel() == 15) {
 				String name = player->getFirstName();
 				prototype->setCraftersName(name);
 			} else {
@@ -168,7 +168,7 @@ public:
 
 			// Object Name
 			StringBuffer customName;
-			if (ghost->getAdminLevel() >= 16) {
+			if (ghost->getAdminLevel() >= 15) {
 				customName << prototype->getDisplayedName() << " \\#00CC00(" << player->getFirstName() << ")\\#FFFFFF";
 			} else {
 				customName << prototype->getDisplayedName() <<  " (System Generated)";
