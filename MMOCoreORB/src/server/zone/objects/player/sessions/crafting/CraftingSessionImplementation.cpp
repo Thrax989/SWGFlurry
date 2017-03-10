@@ -1066,7 +1066,7 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 	String customizationname = "";
 
 	//Database::escapeString(name);
-
+	String newName = name;
 	UnicodeString customName(newName);
 	prototype->setCustomObjectName(customName, false);
 
