@@ -4,13 +4,13 @@ taiken_moff = Creature:new {
   socialGroup = "geonosian",
   level = 300,
   chanceHit = 50.00,
-  damageMin = 1200,
-  damageMax = 2500,
+  damageMin = 800,
+  damageMax = 1900,
   baseXp = 0,
   baseHAM = 55000,
   baseHAMmax = 100000,
-  armor = 3,
-  resists = {100,60,60,60,60,60,60,60,20},
+  armor = 2,
+  resists = {100,60,20,60,10,10,50,10,0},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -29,28 +29,30 @@ taiken_moff = Creature:new {
   lootGroups = {
     {
       groups = {
-        {group = "armor_attachments", chance = 1500000},
-        {group = "clothing_attachments", chance = 1500000},
-        {group = "crystals_premium", chance = 5000000},
-        {group = "pearls_flawless", chance = 5000000}
+        {group = "armor_attachments", chance = 1000000},
+        {group = "clothing_attachments", chance = 1000000},
+        {group = "crystals_premium", chance = 4000000},
+        {group = "pearls_flawless", chance = 4000000}
       },
       lootChance = 10000000
     },
     {
       groups = {
-        {group = "wearables_rare", chance = 10000000},
-        {group = "aakuan_common", chance = 10000000},
-        {group = "g_named_crystals", chance = 10000000}
+        {group = "wearables_rare", chance = 4000000},
+        {group = "aakuan_common", chance = 2000000},
+        {group = "g_named_crystals", chance = 2000000}
+
       },
       lootChance = 8000000
   },
   {
     groups = {
-      {group = "axkva_min", chance = 10000000},
-      {group = "armor_attachments", chance = 10000000},
-      {group = "clothing_attachments", chance = 10000000}
+      {group = "axkva_min", chance = 4000000},
+      {group = "armor_attachments", chance = 2000000},
+      {group = "clothing_attachments", chance = 2000000}
+
     },
-    lootChance = 5000000
+    lootChance = 8000000
     },
     {
       groups = {
@@ -69,7 +71,7 @@ taiken_moff = Creature:new {
     conversationTemplate = "",
     reactionStf = "@npc_reaction/military",
     personalityStf = "@hireling/hireling_military",
-    attacks = merge(riflemanmaster,carbineermaster,brawlermaster,fencermaster,commandomaster)
+    attacks = merge(riflemanmaster,carbineermaster,brawlermaster,fencermaster)
   }
 
   CreatureTemplates:addCreatureTemplate(taiken_moff, "taiken_moff")
