@@ -859,8 +859,7 @@ bool CreatureObjectImplementation::setState(uint64 state, bool notifyClient) {
 				sendStateCombatSpam("cbt_spam", "cover_success", 0);
 				break;
 			case CreatureState::PEACE:
-				playEffect("clienteffect/holoemote_hearts.cef");
-				playEffect("clienteffect/combat_hit.cef");
+				playEffect("clienteffect/droid_effect_electric_floor.cef");
 				sendSystemMessage("@cbt_spam:peace_single");
 				sendStateCombatSpam("cbt_spam", "peace", 0);
 				break;
