@@ -71,6 +71,7 @@ public:
 			return GENERALERROR;
 
 		ManagedReference<GroupObject*> group = player->getGroup();
+		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 		if (!checkGroupLeader(player, group))
 			return GENERALERROR;
@@ -149,6 +150,7 @@ public:
 		player->addBuff(buff);
 
 		player->updateCooldownTimer("retreat", 30000);
+		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 	}
 
