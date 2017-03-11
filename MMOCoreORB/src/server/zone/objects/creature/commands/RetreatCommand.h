@@ -89,6 +89,9 @@ public:
 
 			if (member == NULL || !member->isPlayerCreature() || member->getZone() != creature->getZone())
 				continue;
+			
+			if(member->getDistanceTo(player) > 10)
+				continue;
 
 			if (!isValidGroupAbilityTarget(creature, member, false))
 				continue;
