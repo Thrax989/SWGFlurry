@@ -1180,20 +1180,10 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 			sendMitigationCombatSpam(defender, armor, (int)dmgAbsorbed, ARMOR);
 		}
 
- 		// inflict condition damage
- 		StringBuffer damageInfo;
- 		damageInfo
- 		<< "Damage Type is: "
- 		<< damageType
- 		<< " | Your Armor Resistance to LS is: "
- 		<< getArmorObjectReduction(armor, 16);
- 		info(damageInfo);
- 		Locker alocker(armor);
- 		if (getArmorObjectReduction(armor, 16) > 0 && damageType == 16) {
- 			armor->inflictDamage(armor, 0, damage * 1.0, true, true);
- 		} else {
-  			armor->inflictDamage(armor, 0, damage * 0.1, true, true);
- 		}
+		// inflict condition damage
+		Locker alocker(armor);
+
+		armor->inflictDamage(armor, 0, damage * 0.1, true, true);
 	}
 
 	return damage;
@@ -1517,9 +1507,13 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 
 		// saber block is special because it's just a % chance to block based on the skillmod
 		if (def == "saber_block") {
-			if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < targetCreature->getSkillMod(def)))
-				return RICOCHET;
-			else return HIT;
+			int block_mod = targetCreature->getSkillMod(def);
+            if (targetCreature->isIntimidated()) {
+                block_mod = (block_mod / 1.7);
+            }
+            if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
+                return RICOCHET;
+            else return HIT;
 		}
 
 		targetDefense = getDefenderSecondaryDefenseModifier(targetCreature);
