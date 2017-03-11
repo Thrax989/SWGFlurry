@@ -56,7 +56,7 @@ public:
 		if (res == SUCCESS) {
 			Locker clocker(targetCreature, creature);
 
-			targetCreature->playEffect("clienteffect/ui_missile_aquiring.cef", "");
+			targetCreature->playEffect("playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
 
 			if (creature->isPlayerCreature())
 				creature->sendSystemMessage("Attack has successfully landed");
