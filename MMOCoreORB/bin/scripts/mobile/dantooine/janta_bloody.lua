@@ -39,18 +39,18 @@ janta_bloody = Creature:new {
       },
       {
         groups = {
-          {group = "wearables_rare", chance = 10000000},
-          {group = "aakuan_common", chance = 10000000},
-          {group = "nightsister_common", chance = 10000000}
+          {group = "wearables_rare", chance = 5000000},
+          {group = "aakuan_common", chance = 3000000},
+          {group = "nightsister_common", chance = 2000000}
 
         },
-        lootChance = 7500000
+        lootChance = 10000000
     },
     {
       groups = {
-        {group = "axkva_min", chance = 10000000},
-        {group = "armor_attachments", chance = 10000000},
-        {group = "clothing_attachments", chance = 10000000}
+        {group = "axkva_min", chance = 3000000},
+        {group = "armor_attachments", chance = 1500000},
+        {group = "clothing_attachments", chance = 1500000}
 
       },
       lootChance = 6000000
@@ -79,5 +79,4 @@ janta_bloody = Creature:new {
   conversationTemplate = "",
   attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster)
 }
-
 CreatureTemplates:addCreatureTemplate(janta_bloody, "janta_bloody")
