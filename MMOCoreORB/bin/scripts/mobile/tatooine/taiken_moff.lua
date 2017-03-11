@@ -5,7 +5,7 @@ taiken_moff = Creature:new {
   level = 300,
   chanceHit = 50.00,
   damageMin = 1200,
-  damageMax = 2000,
+  damageMax = 2500,
   baseXp = 0,
   baseHAM = 55000,
   baseHAMmax = 100000,
@@ -41,16 +41,14 @@ taiken_moff = Creature:new {
         {group = "wearables_rare", chance = 10000000},
         {group = "aakuan_common", chance = 10000000},
         {group = "g_named_crystals", chance = 10000000}
-
       },
-      lootChance = 7500000
+      lootChance = 8000000
   },
   {
     groups = {
       {group = "axkva_min", chance = 10000000},
       {group = "armor_attachments", chance = 10000000},
       {group = "clothing_attachments", chance = 10000000}
-
     },
     lootChance = 5000000
     },
@@ -67,7 +65,7 @@ taiken_moff = Creature:new {
         lootChance = 5000000
       },
   },
-    weapons = {"imperial_weapons_heavy,dark_trooper_weapons"},
+    weapons = {"imperial_weapons_heavy"},
     conversationTemplate = "",
     reactionStf = "@npc_reaction/military",
     personalityStf = "@hireling/hireling_military",
