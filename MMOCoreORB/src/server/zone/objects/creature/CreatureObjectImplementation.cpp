@@ -824,12 +824,16 @@ bool CreatureObjectImplementation::setState(uint64 state, bool notifyClient) {
 				break;
 			}
 			case CreatureState::POISONED:
+				playEffect("clienteffect/dot_poisoned.cef");
 				break;
 			case CreatureState::DISEASED:
+				playEffect("clienteffect/dot_diseased.cef");
 				break;
 			case CreatureState::ONFIRE:
+				playEffect("clienteffect/dot_fire.cef");
 				break;
 			case CreatureState::BLEEDING:
+				playEffect("clienteffect/dot_bleeding.cef");
 				break;
 			case CreatureState::INTIMIDATED:
 				playEffect("clienteffect/combat_special_defender_intimidate.cef");
@@ -855,6 +859,8 @@ bool CreatureObjectImplementation::setState(uint64 state, bool notifyClient) {
 				sendStateCombatSpam("cbt_spam", "cover_success", 0);
 				break;
 			case CreatureState::PEACE:
+				playEffect("clienteffect/holoemote_hearts.cef");
+				playEffect("clienteffect/combat_hit.cef");
 				sendSystemMessage("@cbt_spam:peace_single");
 				sendStateCombatSpam("cbt_spam", "peace", 0);
 				break;
