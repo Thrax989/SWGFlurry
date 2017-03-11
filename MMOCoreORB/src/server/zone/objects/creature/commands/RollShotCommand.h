@@ -46,7 +46,7 @@ public:
  			return GENERALERROR;
  		}
 
- 		player->addCooldown("roll_shot", 10 1000); // 10 second cooldown
+ 		player->addCooldown("roll_shot", 10 * 1000); // 10 second cooldown
 		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
 
 		int res = doCombatAction(creature, target);
