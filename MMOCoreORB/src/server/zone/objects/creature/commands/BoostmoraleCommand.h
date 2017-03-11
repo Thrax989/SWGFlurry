@@ -84,6 +84,9 @@ public:
 
 			if (!member->isPlayerCreature())
 				continue;
+			
+			if(member->getDistanceTo(player) > 100)
+ 				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, false))
 				continue;
