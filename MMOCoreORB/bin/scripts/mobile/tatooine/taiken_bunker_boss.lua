@@ -2,14 +2,14 @@ taiken_bunker_boss = Creature:new {
   customName = "Lord Niax",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 50.00,
-  damageMin = 1600,
-  damageMax = 2300,
+  chanceHit = 30.00,
+  damageMin = 1300,
+  damageMax = 2100,
   baseXp = 0,
   baseHAM = 400000,
   baseHAMmax = 500000,
   armor = 3,
-  resists = {200,80,80,80,20,80,80,80,40},
+  resists = {100,90,20,90,20,90,90,90,50},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -38,33 +38,33 @@ taiken_bunker_boss = Creature:new {
   		},
       {
         groups = {
-  				{group = "wearables_rare", chance = 10000000},
-  				{group = "aakuan_common", chance = 10000000},
-          {group = "g_named_crystals", chance = 10000000}
+  				{group = "wearables_rare", chance = 4000000},
+  				{group = "aakuan_common", chance = 2000000},
+          {group = "g_named_crystals", chance = 2000000}
 
   			},
   			lootChance = 8000000
   	},
     {
       groups = {
-        {group = "axkva_min", chance = 10000000},
-        {group = "armor_attachments", chance = 10000000},
-        {group = "clothing_attachments", chance = 10000000}
+        {group = "axkva_min", chance = 2000000},
+        {group = "armor_attachments", chance = 2000000},
+        {group = "clothing_attachments", chance = 2000000}
 
       },
-      lootChance = 5000000
+      lootChance = 6000000
       },
       {
         groups = {
         {group = "krayt_tissue_rare", chance = 10000000}
       },
-      lootChance = 5000000
+      lootChance = 4000000
       },
       {
       groups = {
         {group = "looted_container", chance = 10000000},
           },
-          lootChance = 5000000
+          lootChance = 4000000
         },
         {
         groups = {
