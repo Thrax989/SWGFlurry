@@ -68,6 +68,10 @@ public:
 
 			if (member == NULL || member->getZone() != leader->getZone())
 				continue;
+			
+			if(member->getDistanceTo(player) > 100)
+				continue;
+
 
 			if (!isValidGroupAbilityTarget(leader, member, true))
 				continue;
