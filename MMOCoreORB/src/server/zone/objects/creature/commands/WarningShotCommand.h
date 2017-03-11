@@ -70,7 +70,7 @@ public:
 		}
 		if (creature->isAttackableBy(creatureTarget) && creature->isInRange(creatureTarget, 62)) {
 
-			creature->addCooldown("used_warning", 5);
+			creature->addCooldown("used_warning", 10);
 		}else{
 				return INVALIDTARGET;
 		}
