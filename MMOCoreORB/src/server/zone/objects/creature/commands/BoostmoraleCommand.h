@@ -85,7 +85,7 @@ public:
 			if (!member->isPlayerCreature())
 				continue;
 			
-			if(member->getDistanceTo(player) > 100)
+			if(member->getDistanceTo(member) > 100)
  				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, false))
@@ -121,7 +121,7 @@ public:
 			if (!member->isPlayerCreature())
 				continue;
 
-			if(member->getDistanceTo(player) > 100)
+			if(member->getDistanceTo(member) > 100)
 				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, false))
