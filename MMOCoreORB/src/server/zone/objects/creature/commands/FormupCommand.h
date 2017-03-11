@@ -26,6 +26,7 @@ public:
 			return GENERALERROR;
 
 		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
+		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 		if (player == NULL)
 			return GENERALERROR;
@@ -70,10 +71,11 @@ public:
 		for (int i = 0; i < group->getGroupSize(); i++) {
 
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
+			member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 			if (member == NULL || !member->isPlayerCreature() || member->getZone() != leader->getZone())
 				continue;
-			
+
 			if(member->getDistanceTo(player) > 100)
 				continue;
 
@@ -86,9 +88,11 @@ public:
 
 			if (member->isDizzied())
 				member->removeStateBuff(CreatureState::DIZZY);
+				member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 					
 			if (member->isStunned())
 				member->removeStateBuff(CreatureState::STUNNED);
+				member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 			checkForTef(leader, member);
 		}
