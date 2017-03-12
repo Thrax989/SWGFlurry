@@ -39,8 +39,8 @@ janta_moon = Creature:new {
         {
           groups = {
             {group = "wearables_rare", chance = 4000000},
-            {group = "aakuan_common", chance = 1500000},
-            {group = "nightsister_common", chance = 1500000}
+            {group = "aakuan_common", chance = 3000000},
+            {group = "nightsister_common", chance = 3000000}
 
           },
           lootChance = 7000000
@@ -48,8 +48,8 @@ janta_moon = Creature:new {
       {
         groups = {
           {group = "axkva_min", chance = 4000000},
-          {group = "armor_attachments", chance = 1500000},
-          {group = "clothing_attachments", chance = 1500000}
+          {group = "armor_attachments", chance = 3000000},
+          {group = "clothing_attachments", chance = 3000000}
 
         },
         lootChance = 7000000
