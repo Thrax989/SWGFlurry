@@ -2155,7 +2155,7 @@ void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp() {
 	bool alreadyHasTef = hasPvpTef();
 
 	lastPvpCombatActionTimestamp.updateToCurrentTime();
-	lastPvpCombatActionTimestamp.addMiliTime(300000); // 5 minutes
+	lastPvpCombatActionTimestamp.addMiliTime(60000); // 1 minutes
 
 	schedulePvpTefRemovalTask();
 
