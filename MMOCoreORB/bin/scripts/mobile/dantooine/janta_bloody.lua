@@ -47,9 +47,9 @@ janta_bloody = Creature:new {
     },
     {
       groups = {
-        {group = "axkva_min", chance = 3000000},
-        {group = "armor_attachments", chance = 1500000},
-        {group = "clothing_attachments", chance = 1500000}
+        {group = "axkva_min", chance = 4000000},
+        {group = "armor_attachments", chance = 3000000},
+        {group = "clothing_attachments", chance = 3000000}
 
       },
       lootChance = 6000000
