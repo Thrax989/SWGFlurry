@@ -41,7 +41,7 @@ janta_chieftain = Creature:new {
 			groups = {
 				{group = "wearables_rare", chance = 4000000},
 				{group = "aakuan_common", chance = 4000000},
-				{group = "g_named_crystals", chance = 1000000}
+				{group = "g_named_crystals", chance = 2000000}
 
 			},
 			lootChance = 8000000
