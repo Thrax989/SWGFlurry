@@ -1312,7 +1312,7 @@ void PlayerObjectImplementation::notifyOnline() {
 		ghost->setJediState(2);
 	}
 	//Check for FRS Jedi without overt
-	if ((playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice") || playerCreature->hasSkill("force_title_jedi_novice") || playerCreature->hasSkill("combat_bountyhunter_investigation_03")) && !ghost->isPrivileged()) {
+	if ((playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice") || playerCreature->hasSkill("force_title_jedi_novice") || playerCreature->hasSkill("combat_bountyhunter_master")) && !ghost->isPrivileged()) {
 		playerCreature->setFactionStatus(2);
 	}
 
