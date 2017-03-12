@@ -71,6 +71,7 @@ public:
 			return GENERALERROR;
 
 		ManagedReference<GroupObject*> group = player->getGroup();
+		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 		if (!checkGroupLeader(player, group))
 			return GENERALERROR;
@@ -88,6 +89,9 @@ public:
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
 			if (member == NULL || !member->isPlayerCreature() || member->getZone() != creature->getZone())
+				continue;
+			
+			if(member->getDistanceTo(member) > 100)
 				continue;
 
 			if (!isValidGroupAbilityTarget(creature, member, false))
@@ -146,6 +150,7 @@ public:
 		player->addBuff(buff);
 
 		player->updateCooldownTimer("retreat", 30000);
+		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 	}
 

@@ -5,6 +5,7 @@
 #ifndef ROLLSHOTCOMMAND_H_
 #define ROLLSHOTCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
 
 class RollShotCommand : public CombatQueueCommand {
@@ -22,16 +23,51 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		int ret = doCombatAction(creature, target);
+		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
 
-		if (ret != SUCCESS)
-			return ret;
+		if (targetObject == NULL || !targetObject->isCreatureObject() || targetObject->isPlayerCreature())
+			return INVALIDTARGET;
 
-		if (creature->isDizzied() && System::random(100) < 85) {
-			creature->queueDizzyFallEvent();
+		CreatureObject* targetCreature = cast<CreatureObject*>(targetObject.get());
+
+		if (targetCreature == NULL)
+			return INVALIDTARGET;
+
+		if (!targetCreature->isAttackableBy(creature))
+			return INVALIDTARGET;
+
+		CreatureObject* player = cast<CreatureObject*>(creature);
+
+ 		if (!player->checkCooldownRecovery("roll_shot")){
+ 			Time* cdTime = player->getCooldownTime("roll_shot");
+ 			int timeleft = floor((float)cdTime->miliDifference() /1000) * -1;
+ 
+ 			player->sendSystemMessage("Roll shot to is on Cooldown");
+ 			return GENERALERROR;
+ 		}
+
+ 		player->addCooldown("roll_shot", 10 * 1000); // 10 second cooldown
+		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
+
+		int res = doCombatAction(creature, target);
+
+		CombatManager* combatManager = CombatManager::instance();
+
+		if (res == SUCCESS) {
+			Locker clocker(targetCreature, creature);
+
+			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
+
+			if (creature->isPlayerCreature())
+				creature->sendSystemMessage("Attack has successfully landed");
+
+		} else {
+
+			if (creature->isPlayerCreature())
+				creature->sendSystemMessage("Attack has failed to land");
 		}
 
-		return SUCCESS;
+		return res;
 	}
 
 };

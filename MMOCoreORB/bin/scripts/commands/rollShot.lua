@@ -44,12 +44,12 @@
 RollShotCommand = {
 	name = "rollshot",
 
-	damageMultiplier = 2.5,
+	damageMultiplier = 5.0,
 	speedMultiplier = 1.5,
-	healthCostMultiplier = 0.5,
-	actionCostMultiplier = 0.75,
-	mindCostMultiplier = 0.5,
-	accuracyBonus = 50,
+	healthCostMultiplier = 1.0,
+	actionCostMultiplier = 1.0,
+	mindCostMultiplier = 1.0,
+	accuracyBonus = 60,
 
 	animation = "fire_acrobatic",
 
