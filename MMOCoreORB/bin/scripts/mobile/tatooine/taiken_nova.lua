@@ -36,7 +36,7 @@ taiken_nova = Creature:new {
       lootChance = 10000000
     },
   },
-  weapons = {"imperial_weapons_heavy,dark_trooper_weapons"},
+  weapons = {"imperial_weapons_heavy"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/stormtrooper",
   personalityStf = "@hireling/hireling_stormtrooper",
