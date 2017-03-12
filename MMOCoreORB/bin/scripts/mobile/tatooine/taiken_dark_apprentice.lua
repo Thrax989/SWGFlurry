@@ -30,16 +30,15 @@ taiken_dark_apprentice = Creature:new {
     lootGroups = {
   		{
   			groups = {
-          {group = "wearables_rare", chance = 4000000},
-  				{group = "weapons_all", chance = 4000000},
-  				{group = "Junk", chance = 2000000},
+          {group = "wearables_rare", chance = 5000000},
+  				{group = "weapons_all", chance = 5000000}
   			},
         lootChance = 10000000
   		},
       {
         groups = {
-  				{group = "armor_attachments", chance = 10000000},
-  				{group = "clothing_attachments", chance = 10000000}
+  				{group = "armor_attachments", chance = 5000000},
+  				{group = "clothing_attachments", chance = 5000000}
   			},
   			lootChance = 6000000
        },
