@@ -1,0 +1,221 @@
+Clean unit Test PASS
+3/12/2017
+
+vagrant@ns510434:~/workspace/Core3/MMOCoreORB$ /home/vagrant/bin/swgemu runUnitTests
++ cd /home/vagrant/workspace/Core3/MMOCoreORB/bin
++ ./core3 runUnitTests '--gtest_filter=*'
+Running unit tests...
+[==========] Running 43 tests from 11 test cases.
+[----------] Global test environment set-up.
+[----------] 3 tests from CircularAreaShapeTest
+[ RUN      ] CircularAreaShapeTest.CircularAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation
+[       OK ] CircularAreaShapeTest.CircularAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation (0 ms)
+[ RUN      ] CircularAreaShapeTest.CircularAreaShapeHasRadiusEqualToZeroAfterCreation
+[       OK ] CircularAreaShapeTest.CircularAreaShapeHasRadiusEqualToZeroAfterCreation (0 ms)
+[ RUN      ] CircularAreaShapeTest.CircularAreaShapeHasRadiusSquareEqualToZeroAfterCreation
+[       OK ] CircularAreaShapeTest.CircularAreaShapeHasRadiusSquareEqualToZeroAfterCreation (0 ms)
+[----------] 3 tests from CircularAreaShapeTest (0 ms total)
+
+[----------] 1 test from BasicScreenPlayTest
+[ RUN      ] BasicScreenPlayTest.ScreenPlayLuaInitialize
+(0 s) [BadgeList] Loaded 141 badges.
+[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (765 ms)
+[----------] 1 test from BasicScreenPlayTest (765 ms total)
+
+[----------] 3 tests from LuaMobileTest
+[ RUN      ] LuaMobileTest.LuaMobileTemplatesTest
+(0 s) [TemplateManager] Loaded 85 slot definitions.
+(0 s) [TemplateManager] Loaded 74 planet map categories.
+(0 s) [TemplateManager] loading asset customization manager
+(0 s) [TemplateManager] loading customization id manager
+(0 s) [CustomizationIdManager] loaded 115 customization ids
+(0 s) [CustomizationIdManager] loaded 56 palette columns
+(0 s) [CustomizationIdManager] loaded 56 hair assets
+(0 s) [CustomizationIdManager] loaded 24 allow bald species data
+(0 s) [TemplateManager] Loading object templates
+	Loading templates: [10%]	(2 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 43
+
+(2 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 46
+
+	Loading templates: [11%]	(2 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 23
+
+(2 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 14
+
+	Loading templates: [13%]	(2 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
+(2 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
+(2 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
+	Loading templates: [54%]	(6 s) [Console] WARNING - expecting SHOT got RCCT in file: object/resource_container/shared_simple.iff
+	Loading templates: [70%]	(7 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(7 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(7 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(7 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(7 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(7 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(7 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(7 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(7 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(7 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+(7 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
+(7 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
+	Loading templates: [74%]	(7 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 46
+
+(7 s) [Console] ERROR - exception caught parsing file data ->StreamIndexOutOfBoundsException at 43
+
+	Loading templates: [104%]	(9 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
+	Loading templates: [105%]	(9 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(9 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(9 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(9 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+	Loading templates: [114%]	
+(10 s) [TemplateManager] Finished loading object templates
+(10 s) [TemplateManager] 0 portal layouts loaded
+(10 s) [TemplateManager] 0 floor meshes loaded
+(10 s) [TemplateManager] 89 structure footprints.
+(10 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(10 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+(11 s) [FactionManager] Loading config file.
+(11 s) [FactionManager] loaded 22 ranks
+(11 s) [DnaManager] Loading DNA Information
+(11 s) [DnaManager] Loaded 201 dna stats.
+[       OK ] LuaMobileTest.LuaMobileTemplatesTest (10863 ms)
+[ RUN      ] LuaMobileTest.LuaLootGroupsTest
+(11 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(11 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+[       OK ] LuaMobileTest.LuaLootGroupsTest (85 ms)
+[ RUN      ] LuaMobileTest.LuaSpawnManagerTest
+(11 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(11 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+[       OK ] LuaMobileTest.LuaSpawnManagerTest (74 ms)
+[----------] 3 tests from LuaMobileTest (11022 ms total)
+
+[----------] 12 tests from JediManagerTest
+[ RUN      ] JediManagerTest.ShouldRunFileJediManagerLuaAtLoadConfiguration
+[       OK ] JediManagerTest.ShouldRunFileJediManagerLuaAtLoadConfiguration (0 ms)
+[ RUN      ] JediManagerTest.ShouldReadTheJediProgressionTypeVariableAtLoadConfigurations
+[       OK ] JediManagerTest.ShouldReadTheJediProgressionTypeVariableAtLoadConfigurations (0 ms)
+[ RUN      ] JediManagerTest.ShouldRunTheHolocronJediManagerLuaFileIfHolocronJediProgressionIsConfigured
+[       OK ] JediManagerTest.ShouldRunTheHolocronJediManagerLuaFileIfHolocronJediProgressionIsConfigured (1 ms)
+[ RUN      ] JediManagerTest.ShouldRunTheVillageJediManagerLuaFileIfVillageJediProgressionIsConfigured
+[       OK ] JediManagerTest.ShouldRunTheVillageJediManagerLuaFileIfVillageJediProgressionIsConfigured (0 ms)
+[ RUN      ] JediManagerTest.ShouldReadTheCustomJediProgressionFileStringIfCustomJediProgressionIsConfigured
+[       OK ] JediManagerTest.ShouldReadTheCustomJediProgressionFileStringIfCustomJediProgressionIsConfigured (0 ms)
+[ RUN      ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured
+[       OK ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured (0 ms)
+[ RUN      ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration
+[       OK ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration (0 ms)
+[ RUN      ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager
+[       OK ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager (1 ms)
+[ RUN      ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager
+[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (0 ms)
+[ RUN      ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager
+[       OK ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager (1 ms)
+[ RUN      ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager
+[       OK ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager (0 ms)
+[ RUN      ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager
+[       OK ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager (0 ms)
+[----------] 12 tests from JediManagerTest (3 ms total)
+
+[----------] 3 tests from TerrainManagerTest
+[ RUN      ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea
+[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (0 ms)
+[ RUN      ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea
+[       OK ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea (0 ms)
+[ RUN      ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference
+[       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (0 ms)
+[----------] 3 tests from TerrainManagerTest (1 ms total)
+
+[----------] 4 tests from RectangularAreaShapeTest
+[ RUN      ] RectangularAreaShapeTest.RectangularAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation
+[       OK ] RectangularAreaShapeTest.RectangularAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation (0 ms)
+[ RUN      ] RectangularAreaShapeTest.RectangularAreaShapeHasRadiusEqualToZeroAfterCreation
+[       OK ] RectangularAreaShapeTest.RectangularAreaShapeHasRadiusEqualToZeroAfterCreation (0 ms)
+[ RUN      ] RectangularAreaShapeTest.RectangularAreaShapeShouldCallContainsPointOnTheAreaToCheckIntersectionWith
+[       OK ] RectangularAreaShapeTest.RectangularAreaShapeShouldCallContainsPointOnTheAreaToCheckIntersectionWith (0 ms)
+[ RUN      ] RectangularAreaShapeTest.IntersectsWithShouldReturnTrueIfContainsPointReturnsTrueFromTheAreaShape
+[       OK ] RectangularAreaShapeTest.IntersectsWithShouldReturnTrueIfContainsPointReturnsTrueFromTheAreaShape (0 ms)
+[----------] 4 tests from RectangularAreaShapeTest (0 ms total)
+
+[----------] 5 tests from RingAreaShapeTest
+[ RUN      ] RingAreaShapeTest.RingAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation
+[       OK ] RingAreaShapeTest.RingAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation (0 ms)
+[ RUN      ] RingAreaShapeTest.RingAreaShapeHasInnerRadiusEqualToZeroAfterCreation
+[       OK ] RingAreaShapeTest.RingAreaShapeHasInnerRadiusEqualToZeroAfterCreation (0 ms)
+[ RUN      ] RingAreaShapeTest.RingAreaShapeHasOuterRadiusEqualToZeroAfterCreation
+[       OK ] RingAreaShapeTest.RingAreaShapeHasOuterRadiusEqualToZeroAfterCreation (0 ms)
+[ RUN      ] RingAreaShapeTest.RingAreaShapeHasInnerRadiusSquareEqualToZeroAfterCreation
+[       OK ] RingAreaShapeTest.RingAreaShapeHasInnerRadiusSquareEqualToZeroAfterCreation (0 ms)
+[ RUN      ] RingAreaShapeTest.RingAreaShapeHasOuterRadiusSquareEqualToZeroAfterCreation
+[       OK ] RingAreaShapeTest.RingAreaShapeHasOuterRadiusSquareEqualToZeroAfterCreation (0 ms)
+[----------] 5 tests from RingAreaShapeTest (0 ms total)
+
+[----------] 4 tests from GeneralDeadlockTestBase
+[ RUN      ] GeneralDeadlockTestBase.CrossLockTest
+[       OK ] GeneralDeadlockTestBase.CrossLockTest (0 ms)
+[ RUN      ] GeneralDeadlockTestBase.ThreeLocksTest
+[       OK ] GeneralDeadlockTestBase.ThreeLocksTest (0 ms)
+[ RUN      ] GeneralDeadlockTestBase.MonitorLockTest
+[       OK ] GeneralDeadlockTestBase.MonitorLockTest (0 ms)
+[ RUN      ] GeneralDeadlockTestBase.MultipleLocksTest
+[       OK ] GeneralDeadlockTestBase.MultipleLocksTest (0 ms)
+[----------] 4 tests from GeneralDeadlockTestBase (1 ms total)
+
+[----------] 2 tests from BasicTerrainTest
+[ RUN      ] BasicTerrainTest.LoadTestTerrainTest
+[       OK ] BasicTerrainTest.LoadTestTerrainTest (322 ms)
+[ RUN      ] BasicTerrainTest.LoadTestSpaceTerrain
+[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (54 ms)
+[----------] 2 tests from BasicTerrainTest (376 ms total)
+
+[----------] 4 tests from ZoneTest
+[ RUN      ] ZoneTest.PlayerManager
+(12 s) [DirectorManager] Lua version: 503
+(12 s) [DirectorManager] Lua reads int64
+(12 s) [PlayerManager] Loaded 72 veteran rewards.
+(12 s) [PlayerManager] Loaded 18 starting locations.
+(12 s) [PlayerManager] Loaded 188 quests.
+(12 s) [PlayerManager] ERROR - No Server Database initiated
+(12 s) [PlayerManager] loaded 0 character names in memory
+[       OK ] ZoneTest.PlayerManager (4 ms)
+[ RUN      ] ZoneTest.TreLoad
+[       OK ] ZoneTest.TreLoad (0 ms)
+[ RUN      ] ZoneTest.ActiveAreaTest
+[       OK ] ZoneTest.ActiveAreaTest (3 ms)
+[ RUN      ] ZoneTest.InRangeTest
+[       OK ] ZoneTest.InRangeTest (1 ms)
+[----------] 4 tests from ZoneTest (8 ms total)
+
+[----------] 2 tests from CommandLuaTest
+[ RUN      ] CommandLuaTest.LoadCommandLuas
+(12 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(12 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+[       OK ] CommandLuaTest.LoadCommandLuas (50 ms)
+[ RUN      ] CommandLuaTest.CheckAnimationCRCS
+[       OK ] CommandLuaTest.CheckAnimationCRCS (26 ms)
+[----------] 2 tests from CommandLuaTest (77 ms total)
+
+[----------] Global test environment tear-down
+[==========] 43 tests from 11 test cases ran. (12254 ms total)
+[  PASSED  ] 43 tests.
+
+vagrant@ns510434:~/workspace/Core3/MMOCoreORB$ 

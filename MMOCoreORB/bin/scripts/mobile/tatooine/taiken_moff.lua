@@ -39,8 +39,8 @@ taiken_moff = Creature:new {
     {
       groups = {
         {group = "wearables_rare", chance = 4000000},
-        {group = "aakuan_common", chance = 2000000},
-        {group = "g_named_crystals", chance = 2000000}
+        {group = "aakuan_common", chance = 3000000},
+        {group = "g_named_crystals", chance = 3000000}
 
       },
       lootChance = 8000000
@@ -48,8 +48,8 @@ taiken_moff = Creature:new {
   {
     groups = {
       {group = "axkva_min", chance = 4000000},
-      {group = "armor_attachments", chance = 2000000},
-      {group = "clothing_attachments", chance = 2000000}
+      {group = "armor_attachments", chance = 3000000},
+      {group = "clothing_attachments", chance = 3000000}
 
     },
     lootChance = 8000000

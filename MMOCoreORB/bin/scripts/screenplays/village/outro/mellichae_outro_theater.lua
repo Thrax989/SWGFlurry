@@ -46,7 +46,7 @@ MellichaeOutroTheater = GoToTheater:new {
 		{ template = "sith_shadow_thug", minimumDistance = 32, maximumDistance = 64, referencePoint = 0 },
 		{ template = "sith_shadow_thug", minimumDistance = 32, maximumDistance = 64, referencePoint = 0 }
 	},
-	despawnTime =  60* 60* 1000, -- 1 hour
+	despawnTime =  60* 60* 4000, -- 4 hours
 	activeAreaRadius = 72 -- Make sure we grab the entering of radius.
 }
 
