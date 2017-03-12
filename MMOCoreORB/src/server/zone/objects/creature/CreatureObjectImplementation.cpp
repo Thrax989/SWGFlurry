@@ -2863,7 +2863,7 @@ bool CreatureObjectImplementation::isAggressiveTo(CreatureObject* object) {
 		return true;
 	}
 
-	if (isRidingMount() || isInCombat())
+	if (isInvisible() || isInCombat())
 		return true;
 
 	return false;
@@ -2986,7 +2986,7 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 		return true;
 	}
 
-	if (isRidingMount() || isInCombat())
+	if (isInvisible() || isInCombat())
 		return true;
 
 	return false;
