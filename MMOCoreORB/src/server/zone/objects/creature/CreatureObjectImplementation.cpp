@@ -2851,7 +2851,7 @@ bool CreatureObjectImplementation::isAggressiveTo(CreatureObject* object) {
 		return false;
 
 	if (ghost->isOnLoadScreen())
-		return false;
+		return true;
 
 	if (CombatManager::instance()->areInDuel(object, asCreatureObject()))
 		return true;
@@ -2862,6 +2862,11 @@ bool CreatureObjectImplementation::isAggressiveTo(CreatureObject* object) {
 	if (ghost->isInBountyLockList(object->getObjectID()) || targetGhost->isInBountyLockList(asCreatureObject()->getObjectID())) {
 		return true;
 	}
+
+	if (isRidingMount() || isInCombat())
+		return true;
+
+	return false;
 
 	ManagedReference<GuildObject*> guildObject = guild.get();
 	if (guildObject != NULL && guildObject->isInWaringGuild(object))
@@ -2972,7 +2977,7 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 		return true;
 
 	if (getGroupID() != 0 && getGroupID() == object->getGroupID())
-		return false;
+		return true;
 
 	if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
 		return true;
@@ -2980,6 +2985,11 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 	if (ghost->isInBountyLockList(object->getObjectID()) || targetGhost->isInBountyLockList(asCreatureObject()->getObjectID())) {
 		return true;
 	}
+
+	if (isRidingMount() || isInCombat())
+		return true;
+
+	return false;
 
 	if (object->hasBountyMissionFor(asCreatureObject())) {
 		return true;
