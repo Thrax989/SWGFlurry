@@ -588,19 +588,6 @@ yavin4 = {
 	}
 }
 
-kaas = {
-
-	weatherEnabled = 1,
-
-	planetTravelPoints = {
-		{name = "an Imperial Garrison", x = -5158.0, z = 80.0, y = -2239.0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
-	},
-	
-	planetObjects = {
-		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = 0.0, oz = 0, ow = 0.0, x = -1123.2, z = 129.0, y = -4768.8, parentid = 0}
-	}
-}
-
 space_corellia = {
 
 	weatherEnabled = 0,
@@ -710,4 +697,79 @@ tutorial = {
 dungeon1 = {
 	weatherEnabled = 0,
 	gcwEnabled = 0,
+}
+
+jakku = {
+  weatherEnabled = 1,
+  gcwEnabled = 0,
+  
+  badgeAreas = {
+    {"jakku_arena",4447,-5166,10,143},
+  },
+}
+
+chandrila = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Hanna City Spaceport", x = 164, z = 6, y = -2937, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    {name = "Nayli Outpost", x = -5272, z = 18, y = 264, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {
+    {"chandrila_mon_mothma_house",2469,2307,30,140},
+    {"chandrila_jedi_tomb",4339,-4287,30,141},
+    {"chandrila_state_park",-5013,4089,30,142},
+  },
+}
+
+kaas = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "an Imperial Garrison", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    {name = "a Smuggler Outpost", x = 2852, z = 125, y = 3896, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {   
+  },
+}
+hutta = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Bilbousa Starport", x = -789, z = 80, y = 1769, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {   
+  },
+}
+coruscant = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Collective Commerce District", x = -1851, z = 40, y = -175, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
+    {name = "Monument Square", x = 1538, z = 40, y = 779, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
+    {name = "Entertainment District", x = 2248, z = 0, y = -4546, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
+    {name = "Spaceport District Shuttle", x = -28, z = 40, y = 3202, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
+    {name = "Coruscant Spaceport", x = -96, z = 40, y = 3149, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {   
+  },
+}
+moraband = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Archaeological Outpost", x = -1696, z = 91, y = -624, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {   
+  },
 }
