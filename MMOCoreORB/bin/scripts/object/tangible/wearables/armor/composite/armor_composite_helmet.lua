@@ -122,7 +122,7 @@ object_tangible_wearables_armor_composite_armor_composite_helmet = object_tangib
 	heat = 65,
 	cold = 65,
 	acid = 65,
-	lightSaber = 75,
+	lightSaber = 50,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
