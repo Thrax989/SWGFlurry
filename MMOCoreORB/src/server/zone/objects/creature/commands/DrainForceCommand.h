@@ -93,7 +93,7 @@ public:
 
 			uint32 animCRC = getAnimationString().hashCode();
 			creature->doCombatAnimation(targetCreature, animCRC, 0x1, 0xFF);
-			creature->addCooldown("channel", 5 * 1000);
+			creature->addCooldown("drain", 5 * 1000);
 			manager->broadcastCombatSpam(creature, targetCreature, NULL, forceDrain, "cbt_spam", combatSpam, 1);
 
 			return SUCCESS;
