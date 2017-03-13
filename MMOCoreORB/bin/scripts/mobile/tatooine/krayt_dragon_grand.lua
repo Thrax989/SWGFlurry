@@ -26,23 +26,26 @@ krayt_dragon_grand = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/krayt_dragon.iff"},
-	scale = 1.1;
+	scale = 1.1,
 	lootGroups = {
 		{
 	        groups = {
-				{group = "krayt_dragon_common", chance = 3500000},
-				{group = "krayt_tissue_uncommon", chance = 2500000},
+				{group = "krayt_dragon_common", chance = 3000000},
+				{group = "krayt_tissue_uncommon", chance = 1000000},
 				{group = "armor_all", chance = 2000000},
 				{group = "weapons_all", chance = 2000000},
+				{group = "armor_attachments", chance = 1000000},
+				{group = "clothing_attachments", chance = 1000000}
+				
 			},
-			lootChance = 2500000
+			lootChance = 7500000
 		}
 	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareacombo"},
-		{"creatureareaknockdown"},
+		{"creatureareacombo",""},
+		{"creatureareaknockdown",""},
 	}
 }
 

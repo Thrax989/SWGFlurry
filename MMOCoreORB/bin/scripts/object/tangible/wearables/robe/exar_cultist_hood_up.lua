@@ -52,8 +52,8 @@ object_tangible_wearables_robe_exar_cultist_hood_up = object_tangible_wearables_
 				"object/mobile/vendor/zabrak_male.iff" },
 				
 				skillMods = {
-				    {"jedi_force_power_max", 250},
-				    {"jedi_force_power_regen", 10}
+				    {"jedi_force_power_max", 100},
+				    {"jedi_force_power_regen", 5}
 				},
 
 				noTrade = 0,

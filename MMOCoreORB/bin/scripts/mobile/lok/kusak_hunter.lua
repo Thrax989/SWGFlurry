@@ -10,7 +10,7 @@ kusak_hunter = Creature:new {
 	baseHAM = 95000,
 	baseHAMmax = 105000,
 	armor = 0,
-	resists = {175,175,175,150,150,110,110,160,155},
+	resists = {185,185,185,175,175,175,175,185,155},
 	meatType = "meat_carnivore",
 	meatAmount = 20,
 	hideType = "hide_bristley",
@@ -31,8 +31,8 @@ kusak_hunter = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareacombo",""},
-		{"strongdisease",""}
+		{"strongdisease",""},
+		{"creatureareacombo",""}
 	}
 }
 

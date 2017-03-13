@@ -31,7 +31,6 @@ void run(CreatureObject* creature, SuiBox* suiBox, uint32 eventIndex, Vector<Uni
 			ManagedReference<SceneObject*> suiObject = suiBox->getUsingObject();
 			CreatureObject* player = cast<CreatureObject*>(suiObject.get());
 			if (creature->getBankCredits() + creature->getCashCredits() >= value) {
-				VisibilityManager::instance()->clearVisibility(player);
 				if (creature->getBankCredits() > value) {
 					creature->subtractBankCredits(value);
 				} else {

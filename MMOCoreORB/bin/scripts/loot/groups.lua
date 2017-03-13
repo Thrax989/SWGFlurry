@@ -96,6 +96,7 @@ includeFile("groups/forage/forage_rare.lua")
 
 -- geonosian_lab sub-folder
 includeFile("groups/geonosian_lab/acklay.lua")
+includeFile("groups/geonosian_lab/acklays.lua")
 includeFile("groups/geonosian_lab/enhanced_kwi.lua")
 includeFile("groups/geonosian_lab/fire_breathing_spider.lua")
 includeFile("groups/geonosian_lab/geo_kliknik.lua")
@@ -474,4 +475,6 @@ includeFile("groups/task_loot/task_loot_briefcase_quest_jusani.lua")
 includeFile("groups/task_loot/task_loot_eng_prototype_quest_jusani.lua")
 
 includeFile("groups/npc/janta_rare.lua")
+includeFile("groups/capes.lua")
+includeFile("groups/frsrobes.lua")
 includeFile("groups/weapon/g_lightsaber_vader.lua")

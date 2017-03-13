@@ -34,13 +34,21 @@ nk_battle_droid_01 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "armor_attachments", chance = 4500000},
-				{group = "death_watch_bunker_commoners", chance = 1000000},
-				{group = "clothing_attachments", chance = 4500000}
+				{group = "junk", chance = 5000000},
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
 		},
-	},
+		{
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 2500000},
+				{group = "tailor_components", chance = 2500000}
+			},
+			lootChance = 10000000
+		},
+		},
 	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",
 	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster)

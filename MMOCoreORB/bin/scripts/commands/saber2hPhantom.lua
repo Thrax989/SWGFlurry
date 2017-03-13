@@ -49,8 +49,10 @@ Saber2hPhantomCommand = {
 	healthCostMultiplier = 0,
 	actionCostMultiplier = 0,
 	mindCostMultiplier = 0,
-	areaAction = true,
-	areaRange = 20,
+	coneAngle = 75,
+	coneAction = true,
+	coneRange = 24,
+
 	forceCostMultiplier = 3.0,
 	visMod = 25,
 

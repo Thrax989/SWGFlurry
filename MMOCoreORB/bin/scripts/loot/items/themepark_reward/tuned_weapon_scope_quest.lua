@@ -6,6 +6,8 @@ tuned_weapon_scope_quest = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/component/weapon/scope_weapon_advanced_quest.iff",
 	craftingValues = {
+		{"mindamage",5,10,0},
+		{"maxdamage",5,10,0},
 		{"woundchance",20,20,0},
 		{"midrangemod",25,25,0},
 		{"attackhealthcost",25,25,0},

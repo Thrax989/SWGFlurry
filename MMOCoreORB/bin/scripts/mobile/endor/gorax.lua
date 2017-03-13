@@ -18,7 +18,7 @@ gorax = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 20,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -27,20 +27,26 @@ gorax = Creature:new {
 
 	templates = {"object/mobile/gorax.iff"},
 	lootGroups = {
-	 {
-	        groups = {
+		{
+			groups = {
 				{group = "gorax_common", chance = 6000000},
 				{group = "armor_attachments", chance = 2000000},
 				{group = "clothing_attachments", chance = 2000000}
 			},
-			lootChance = 7000000
-		}
-	},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "gorax_common", chance = 10000000},
+			},
+			lootChance = 8500000
+		},
+		},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareaattack",""},
-		{"creatureareaknockdown",""}
+		{"creatureareaknockdown",""},
+		{"creatureareaattack",""}
 	}
 }
 

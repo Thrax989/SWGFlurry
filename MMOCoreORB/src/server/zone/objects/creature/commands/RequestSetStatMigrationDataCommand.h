@@ -82,13 +82,27 @@ public:
 			return GENERALERROR;
 		}
 
+		//Player is in the tutorial zone and is allowed to migrate stats.
+		//Zone* zone = creature->getZone();
+
+		//if (zone != NULL && zone->getZoneName() == "tutorial")
 		
-		Zone* zone = creature->getZone();
-
-		if (zone != NULL && (zone->getZoneName() == "tutorial" or "tatooine" or "corellia" or "dantooine" or "dathomir" or "endor" or "lok" or "naboo" or "rori" or "talus" or "yavin4"))
-			session->migrateStats();
-
-
+		if (creature->isInCombat()){
+			creature->sendSystemMessage("You can not migrate your stats while in combat.");
+			return GENERALERROR;
+		}
+		
+		BuffList* bList = creature->getBuffList();
+		
+		if (bList != NULL) {
+			if (bList->getBuffListSize() > 0){
+				creature->sendSystemMessage("You must remove your buffs before migrating your stats.");
+				return GENERALERROR;
+			}
+		}
+		
+		session->migrateStats();
+		
 		return SUCCESS;
 	}
 

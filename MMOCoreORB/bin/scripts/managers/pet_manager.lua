@@ -44,14 +44,14 @@ which carries forward this exception.
 
 --appearance filename, run speed, gallop speed multiplier, gallop duration (in seconds), gallop cooldown (in seconds)
 mountSpeedData = {
-	{"appearance/bantha_hue.sat", 15, 1.5, 60, 120},
-	{"appearance/bol_hue.sat", 15, 1.5, 60, 120},
-	{"appearance/brackaset_hue.sat", 15, 1.5, 60, 120},
-	{"appearance/carrion_spat_hue.sat", 15, 1.5, 60, 120},
-	{"appearance/cu_pa_hue.sat", 15, 1.5, 60, 120},
-	{"appearance/dewback_hue.sat", 15, 1.5, 60, 120},
-	{"appearance/falumpaset_hue.sat", 15, 1.5, 60, 120},
-	{"appearance/kaadu_hue.sat", 15, 1.5, 60, 120},
-	{"appearance/varactyl.sat", 15, 1.5, 60, 10},
-	{"appearance/bolotaur.sat", 15, 1.5, 60, 10},
+	{"appearance/bantha_hue.sat", 7, 1.286, 300, 30},
+	{"appearance/bol_hue.sat", 7.5, 1.3, 300, 30},
+	{"appearance/brackaset_hue.sat", 7.5, 1.133, 300, 30},
+	{"appearance/carrion_spat_hue.sat", 7.5, 1.533, 300, 30},
+	{"appearance/cu_pa_hue.sat", 6.8, 1.544, 300, 30},
+	{"appearance/dewback_hue.sat", 7.5, 1.3, 300, 30},
+	{"appearance/falumpaset_hue.sat", 7.5, 1.133, 300, 30},
+	{"appearance/kaadu_hue.sat", 7.5, 1.533, 300, 30},
+	{"appearance/varactyl.sat", 7.5, 1.533, 300, 30},
+	{"appearance/bolotaur.sat", 7.5, 1.533, 300, 30},
 }

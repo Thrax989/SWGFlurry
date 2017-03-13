@@ -56,8 +56,8 @@ object_tangible_wearables_robe_robe_s32_h1 = object_tangible_wearables_robe_shar
 				customName = "Cloak of Hate (Hood)",
 
 				skillMods = {
- 				    {"jedi_force_power_max", 250},
-				    {"jedi_force_power_regen", 10}
+				    {"jedi_force_power_max", 100},
+				    {"jedi_force_power_regen", 5}
 				},
 
 				objectMenuComponent = "RobeObjectMenuComponent",

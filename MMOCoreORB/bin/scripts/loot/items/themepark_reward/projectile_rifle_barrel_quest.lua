@@ -6,7 +6,7 @@ projectile_rifle_barrel_quest = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/component/weapon/projectile_rifle_barrel_advanced_quest.iff",
 	craftingValues = {
-		{"mindamage",25,25,0},
+		{"mindamage",30,30,0},
 		{"maxdamage",30,30,0},
 		{"attackspeed",-0.4,-0.4,1},
 		{"woundchance",20,20,0},

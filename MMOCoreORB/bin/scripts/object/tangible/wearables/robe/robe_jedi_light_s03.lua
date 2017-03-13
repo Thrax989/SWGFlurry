@@ -94,11 +94,11 @@ object_tangible_wearables_robe_robe_jedi_light_s03 = object_tangible_wearables_r
 				"object/mobile/vendor/zabrak_male.iff" },
 				
 				skillMods = {
-				    {"jedi_force_power_max", 250},
-				    {"jedi_force_power_regen", 10}
+				    {"jedi_force_power_max", 200},
+				    {"jedi_force_power_regen", 5}
 				},
 
-				noTrade = 1,
+				noTrade = 0,
 
 				objectMenuComponent = "RobeObjectMenuComponent",
 				certificationsRequired = {"force_rank_light_rank_05"},

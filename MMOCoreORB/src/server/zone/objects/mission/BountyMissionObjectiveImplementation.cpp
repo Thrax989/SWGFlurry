@@ -648,9 +648,9 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 						lootManager->createNamedLoot(inventory, "saberhand28", victimName, 300);//, victimName);
 						if (target->hasSkill("force_rank_light_novice") || target->hasSkill("force_rank_dark_novice"))
 						{
-							owner->getZoneServer()->getPlayerManager()->awardExperience(target, "force_rank_xp", -500, true);
+							owner->getZoneServer()->getPlayerManager()->awardExperience(target, "force_rank_xp", -5000, true);
 							StringIdChatParameter message("base_player","prose_revoke_xp");
-							message.setDI(500);
+							message.setDI(5000);
 							message.setTO("exp_n", "force_rank_xp");
 							target->sendSystemMessage(message);
 						}
@@ -676,7 +676,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 				killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 				PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
 				killer->sendMessage(pmm);
-				killer->getZoneServer()->getPlayerManager()->awardExperience(killer, "force_rank_xp", 5000, true);
+				killer->getZoneServer()->getPlayerManager()->awardExperience(killer, "force_rank_xp", 500, true);
 			}
 			fail();
 		}

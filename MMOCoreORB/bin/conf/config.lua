@@ -86,7 +86,7 @@ ZoneOnlineCharactersPerAccount = 4 --How many characters are allowed online from
 --To save on RAM and CPU usage, you should only enable the zones you need.
 --In order to disable a zone, all you have to do is comment it out.
 ZonesEnabled = {
-	--"09",
+	"09",
 	--"10",
 	--"11",
 	--"character_farm",

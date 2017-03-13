@@ -6,7 +6,7 @@ geo_sonic_blaster = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_geonosian_sonic_blaster_loot.iff",
 	craftingValues = {
-		{"mindamage",11,100,0},
+		{"mindamage",11,100,0}, 
 		{"maxdamage",63,224,0},
 		{"attackspeed",5.3,3.4,0},
 		{"woundchance",4.2,8.6,0},

@@ -49,8 +49,10 @@ Saber1hFlurry2Command = {
 	healthCostMultiplier = 0,
 	actionCostMultiplier = 0,
 	mindCostMultiplier = 0,
-	areaRange = 20,
-	areaAction = true,
+	coneAngle = 75,
+	coneAction = true,
+	coneRange = 24,
+
 	forceCostMultiplier = 3.0,
 	visMod = 25,
 

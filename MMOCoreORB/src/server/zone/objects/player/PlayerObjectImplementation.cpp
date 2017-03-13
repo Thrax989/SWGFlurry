@@ -2651,4 +2651,3 @@ void PlayerObjectImplementation::doFieldFactionChange(int newStatus) {
 bool PlayerObjectImplementation::isIgnoring(const String& name) {
 	return !name.isEmpty() && ignoreList.contains(name);
 }
-
