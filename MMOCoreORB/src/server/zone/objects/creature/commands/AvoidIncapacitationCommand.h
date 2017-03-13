@@ -39,7 +39,11 @@ public:
 			return doJediSelfBuffCommand(creature);
 		}
 	}
-
+	
+	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
+		return defaultTime * 30.0;
+	}
+	
 };
 
 #endif //AVOIDINCAPACITATIONCOMMAND_H_
