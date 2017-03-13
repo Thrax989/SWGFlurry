@@ -48,15 +48,18 @@ public:
 			return GENERALERROR;
 		}
 		
-	     	CreatureObject* player = cast<CreatureObject*>(creature);
-  		if (!player->checkCooldownRecovery("drain_force")){
- 		Time* cdTime = player->getCooldownTime("drain_force");
-  		int timeleft = floor((float)cdTime->miliDifference() /1000) * -1;
+		if (!creature->checkCooldownRecovery("drain")) {
+  			StringIdChatParameter stringId;
   
-  		player->sendSystemMessage("Drain Force is on Cooldown");
-  			return GENERALERROR;
-		}
- 		player->addCooldown("drain_force", 5 * 1000); //5 second cooldown
+  			Time* cdTime = creature->getCooldownTime("drain");
+  
+  			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+  
+  			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+  			stringId.setDI(timeLeft);
+  			creature->sendSystemMessage(stringId);
+  			        return GENERALERROR;
+  		       }
 
 		Locker clocker(targetCreature, creature);
 
@@ -90,6 +93,7 @@ public:
 
 			uint32 animCRC = getAnimationString().hashCode();
 			creature->doCombatAnimation(targetCreature, animCRC, 0x1, 0xFF);
+			creature->addCooldown("drain", 5 * 1000);
 			manager->broadcastCombatSpam(creature, targetCreature, NULL, forceDrain, "cbt_spam", combatSpam, 1);
 
 			return SUCCESS;
