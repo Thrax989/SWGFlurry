@@ -30,6 +30,16 @@ public:
 		if (isWearingArmor(creature)) {
 			return NOJEDIARMOR;
 		}
+		
+	     	CreatureObject* player = cast<CreatureObject*>(creature);
+  		if (!player->checkCooldownRecovery("channel_force")){
+ 		Time* cdTime = player->getCooldownTime("channel_force");
+  		int timeleft = floor((float)cdTime->miliDifference() /1000) * -1;
+  
+  		player->sendSystemMessage("Channel Force is on Cooldown");
+  		         return GENERALERROR;
+		}
+ 		player->addCooldown("channel_force", 5 * 1000); //5 second cooldown
 
 		// Bonus is in between 200-300.
 		int rand = System::random(10);
