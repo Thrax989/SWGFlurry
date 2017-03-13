@@ -718,6 +718,24 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
 	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
 				lootManager->createNamedLoot(inventory, "pearls_flawless", playerName, 300);//, playerName);
+
+			} else if (templatePath == "nightsister_rare") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "nightsister_rare", playerName, 300);//, playerName);
+
+			} else if (templatePath == "krayt_tissue_rare") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "krayt_tissue_rare", playerName, 300);//, playerName);
+
+			} else if (templatePath == "gorax_rare") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "gorax_rare", playerName, 300);//, playerName);
 				
 			} else if (templatePath == "set_jedi_state") {
 				ghost->setJediState(2);
