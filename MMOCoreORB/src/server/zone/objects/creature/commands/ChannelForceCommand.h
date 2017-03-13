@@ -113,10 +113,6 @@ public:
 		return SUCCESS;
 	}
 
-	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
-		return defaultTime * 3.0;
-	}
-
 };
 
 #endif //CHANNELFORCECOMMAND_H_
