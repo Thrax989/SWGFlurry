@@ -21,6 +21,16 @@ public:
 		// PLUS: There is no concrete evidence for what's stated in 'SPECIAL' sentence above, beyond the existence of 6 CRCs themselves.
 
 		if (creature->hasBuff(BuffCRC::JEDI_AVOID_INCAPACITATION)) {
+			
+	     	        CreatureObject* player = cast<CreatureObject*>(creature);
+  		        if (!player->checkCooldownRecovery("avoid_ncapacitation")){
+ 			Time* cdTime = player->getCooldownTime("avoid_ncapacitation");
+  			int timeleft = floor((float)cdTime->miliDifference() /1000) * -1;
+  
+  			player->sendSystemMessage("Avoid Incapacitation is on Cooldown");
+  			return GENERALERROR;
+		        }
+ 		        player->addCooldown("avoid_ncapacitation", 30 * 1000); //30 second cooldown
 
 			int res = doCommonJediSelfChecks(creature);
 
@@ -38,10 +48,6 @@ public:
 		} else {
 			return doJediSelfBuffCommand(creature);
 		}
-	}
-	
-	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
-		return defaultTime * 30.0;
 	}
 	
 };
