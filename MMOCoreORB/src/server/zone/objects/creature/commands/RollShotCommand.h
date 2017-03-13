@@ -42,11 +42,11 @@ public:
  			Time* cdTime = player->getCooldownTime("roll_shot");
  			int timeleft = floor((float)cdTime->miliDifference() /1000) * -1;
  
- 			player->sendSystemMessage("Roll shot to is on Cooldown");
+ 			player->sendSystemMessage("Roll shot is on Cooldown");
  			return GENERALERROR;
  		}
 
- 		player->addCooldown("roll_shot", 10 * 1000); // 10 second cooldown
+ 		player->addCooldown("roll_shot", 1 * 1000); // 1 second cooldown
 		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
 
 		int res = doCombatAction(creature, target);

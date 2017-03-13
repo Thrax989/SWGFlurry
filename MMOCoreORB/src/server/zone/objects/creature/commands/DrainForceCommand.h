@@ -47,6 +47,16 @@ public:
 			creature->sendSystemMessage("@combat_effects:cansee_fail");//You cannot see your target.
 			return GENERALERROR;
 		}
+		
+	     	CreatureObject* player = cast<CreatureObject*>(creature);
+  		if (!player->checkCooldownRecovery("drain_force")){
+ 		Time* cdTime = player->getCooldownTime("drain_force");
+  		int timeleft = floor((float)cdTime->miliDifference() /1000) * -1;
+  
+  		player->sendSystemMessage("Drain Force is on Cooldown");
+  			return GENERALERROR;
+		}
+ 		player->addCooldown("drain_force", 5 * 1000); //5 second cooldown
 
 		Locker clocker(targetCreature, creature);
 
@@ -87,10 +97,6 @@ public:
 
 		return GENERALERROR;
 
-	}
-
-	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
-		return defaultTime * 3.0;
 	}
 
 };
