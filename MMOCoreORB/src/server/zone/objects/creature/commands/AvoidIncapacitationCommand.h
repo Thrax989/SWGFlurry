@@ -22,16 +22,19 @@ public:
 
 		if (creature->hasBuff(BuffCRC::JEDI_AVOID_INCAPACITATION)) {
 			
-	     	        CreatureObject* player = cast<CreatureObject*>(creature);
-  		        if (!player->checkCooldownRecovery("avoid_ncapacitation")){
- 			Time* cdTime = player->getCooldownTime("avoid_ncapacitation");
-  			int timeleft = floor((float)cdTime->miliDifference() /1000) * -1;
-  
-  			player->sendSystemMessage("Avoid Incapacitation is on Cooldown");
-  			return GENERALERROR;
-		        }
- 		        player->addCooldown("avoid_ncapacitation", 30 * 1000); //30 second cooldown
-
+		if (!creature->checkCooldownRecovery("avoid")) {
+ 			StringIdChatParameter stringId;
+ 
+ 			Time* cdTime = creature->getCooldownTime("avoid");
+ 
+ 			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+ 
+ 			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+ 			stringId.setDI(timeLeft);
+ 			creature->sendSystemMessage(stringId);
+ 			        return GENERALERROR;
+ 		       }
+			
 			int res = doCommonJediSelfChecks(creature);
 
 			if (res != SUCCESS)
@@ -43,6 +46,7 @@ public:
 
 			if (!clientEffect.isEmpty())
 				creature->playEffect(clientEffect, "");
+				creature->addCooldown("avoid", 20 * 1000);
 
 			return SUCCESS;
 		} else {
