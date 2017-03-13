@@ -2862,6 +2862,9 @@ bool CreatureObjectImplementation::isAggressiveTo(CreatureObject* object) {
 	if (ghost->isInBountyLockList(object->getObjectID()) || targetGhost->isInBountyLockList(asCreatureObject()->getObjectID())) {
 		return true;
 	}
+	
+	if (isInBountyMission(object, _this))
+  		return true;
 
 	ManagedReference<GuildObject*> guildObject = guild.get();
 	if (guildObject != NULL && guildObject->isInWaringGuild(object))
@@ -2980,6 +2983,9 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 	if (ghost->isInBountyLockList(object->getObjectID()) || targetGhost->isInBountyLockList(asCreatureObject()->getObjectID())) {
 		return true;
 	}
+	
+	if (isInBountyMission(object, _this))
+  		return true;
 
 	if (object->hasBountyMissionFor(asCreatureObject())) {
 		return true;
