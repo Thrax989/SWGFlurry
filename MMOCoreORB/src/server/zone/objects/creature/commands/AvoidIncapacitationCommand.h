@@ -21,20 +21,7 @@ public:
 		// PLUS: There is no concrete evidence for what's stated in 'SPECIAL' sentence above, beyond the existence of 6 CRCs themselves.
 
 		if (creature->hasBuff(BuffCRC::JEDI_AVOID_INCAPACITATION)) {
-			
-		if (!creature->checkCooldownRecovery("avoid")) {
- 			StringIdChatParameter stringId;
- 
- 			Time* cdTime = creature->getCooldownTime("avoid");
- 
- 			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
- 
- 			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
- 			stringId.setDI(timeLeft);
- 			creature->sendSystemMessage(stringId);
- 			        return GENERALERROR;
- 		       }
-			
+
 			int res = doCommonJediSelfChecks(creature);
 
 			if (res != SUCCESS)
@@ -46,7 +33,6 @@ public:
 
 			if (!clientEffect.isEmpty())
 				creature->playEffect(clientEffect, "");
-				creature->addCooldown("avoid", 20 * 1000);
 
 			return SUCCESS;
 		} else {
