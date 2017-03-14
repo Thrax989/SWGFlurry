@@ -728,11 +728,30 @@ taanab = {
 		{name = "South Starport", x = -3213, z = 53, y = -5689, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
 	}
 }
+
 ghomrassen = {
 	weatherEnabled = 1,
 
 		planetTravelPoints = {
 		{name = "Mos Rassen", x = -3407, z = 0, y = -5199, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Mos Rassen Shuttleport", x = -3198, z = 0, y = -5294, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	}
+}
+
+mustafar = {
+	weatherEnabled = 1,
+
+		planetTravelPoints = {
+		--{name = "0", x = 0, z = 0, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		--{name = "0", x = 0, z = 0, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	}
+}
+
+mandalore = {
+	weatherEnabled = 1,
+
+		planetTravelPoints = {
+		--{name = "0", x = 0, z = 0, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		--{name = "0", x = 0, z = 0, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
 	}
 }
