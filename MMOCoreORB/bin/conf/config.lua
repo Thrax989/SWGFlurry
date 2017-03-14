@@ -95,17 +95,12 @@ ZonesEnabled = {
 	--"creature_test",
 	"dantooine",
 	"dathomir",
-	--"ghomrassen",
-	"hoth",
 	--"dungeon1",
 	"endor",
-        "kashyyyk",
 	--"endor_asommers",
 	--"floratest",
 	--"godclient_test",
 	"lok",
-	"mandalore",
-	"mustafar",
 	"naboo",
 	--"otoh_gunga",
 	--"rivertest",
@@ -128,7 +123,7 @@ ZonesEnabled = {
 	--"space_tatooine",
 	--"space_tatooine_2",
 	--"space_yavin4",
-	"taanab",
+	--"taanab",
 	"talus",
 	"tatooine",
 	--"test_wearables",
@@ -141,12 +136,10 @@ ZonesEnabled = {
 
 
 -- directory of tres with live.cfg
-TrePath = "/home/vagrant/workspace/tre/"
+TrePath = "/home/vagrant/Desktop/SWGEmu/"
 
 TreFiles = {
-        "mtg_planets.tre",
-        "armor.tre",
-        "skill_patch.tre",
+	"sytners_sat_maps_2.tre",
 	"phoenix_patch_1.tre",
 	"lasko_hotfix_01.tre",
 	"lasko_publish_06_01.tre",
