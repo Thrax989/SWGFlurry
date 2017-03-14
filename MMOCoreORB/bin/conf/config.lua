@@ -99,6 +99,7 @@ ZonesEnabled = {
 	"hoth",
 	--"dungeon1",
 	"endor",
+        "kashyyyk",
 	--"endor_asommers",
 	--"floratest",
 	--"godclient_test",
@@ -143,6 +144,8 @@ ZonesEnabled = {
 TrePath = "/home/vagrant/workspace/tre/"
 
 TreFiles = {
+        "mtg_planets.tre",
+        "armor.tre",
         "skill_patch.tre",
 	"phoenix_patch_1.tre",
 	"lasko_hotfix_01.tre",
