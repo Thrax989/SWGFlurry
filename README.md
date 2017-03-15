@@ -20,8 +20,9 @@ If your server segfaults it will promt you "segmentation fault"
 type "bt" to do a back trace to find your error
 
 ## -Run Unit Integrity Test-
-cd /home/vagrant/bin/swgemu
-runUnitTests
+cd /home/vagrant/bin/<br>
+swgemu<br>
+runUnitTests<br>
 
 ## Coding Legend
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
@@ -34,7 +35,8 @@ This server is specifically for new post 14.1 content and server modifications c
 
 It's purpose is to add all of the NGE assets and anything released by the kind contributors to the MTG website.
 
-The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to the above address
+The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to the below address.
+https://github.com/Thrax989/SWGFlurry/issues
 
 ## -Everything that has been added so far-
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * All standard Pre-CU assets
