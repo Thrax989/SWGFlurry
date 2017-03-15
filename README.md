@@ -179,6 +179,7 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 * https://github.com/mhutcherson - Additional game balances 
 * https://github.com/Madvector - Additional game balances 
 * https://github.com/mikeface - Additional game balances Jedi Master Powers Revamp Enhancer Revamp
+* https://github.com/gyrantol - Mandalore , Taanab  world assest
 * https://github.com/washu - Droid functionality
 * https://github.com/Skyyyr - Additional Game Tweaks CPP / Lua script Writer
 * https://github.com/Yakone - Random NGE Item Additons
