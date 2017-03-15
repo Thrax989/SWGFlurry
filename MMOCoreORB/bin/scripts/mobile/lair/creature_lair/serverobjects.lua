@@ -583,3 +583,7 @@ includeFile("lair/creature_lair/yavin4_whisper_bird_lair2_neutral_medium.lua")
 includeFile("lair/creature_lair/yavin4_whisper_bird_lair_neutral_medium.lua")
 includeFile("lair/creature_lair/yavin4_whisper_bird_male_neutral_medium_boss_01.lua")
 
+includeFile("lair/creature_lair/taanab_nerf_lair.lua")
+includeFile("lair/creature_lair/taanab_nerf_grassland_lair.lua")
+includeFile("lair/creature_lair/taanab_ambrian_staga_lair.lua")
+

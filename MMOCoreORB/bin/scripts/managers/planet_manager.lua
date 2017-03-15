@@ -588,6 +588,64 @@ yavin4 = {
 	}
 }
 
+taanab = {
+
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	planetTravelPoints = {
+		{name = "Pandath", x = 2100, z = 45, y = 5400, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+
+		{name = "Starhunter Station", x = 3610, z = 31.7, y = -5425, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+
+	},
+
+	badgeAreas = {
+		{"exp_tan_pan",2000,5400,30,140},
+		{"exp_tan_downed_ship",3293,-1324,30,141},
+		{"exp_tan_mine",-2609,-1305,30,142},
+		{"exp_tan_hexfarms",-3002,-103,30,143},
+		{"exp_tan_great_herd",5537,-4958,30,144},
+		{"exp_tan_canyonlands",-2590,3705,30,145},
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 2020, z = 45.0, y = 5400, parentid = 0}
+	}
+}
+
+mandalore = {
+
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	planetTravelPoints = {
+		{name = "Bralsin", x = -5689, z = 0, y = -5034, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Keldabe", x = 1575, z = 4, y = -6408, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Sundari", x = 6303, z = 1, y = -6230, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Norg Bral", x = -6648, z = 30, y = 5583, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Enceri", x = 4713, z = 2, y = 7154, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Shuror", x = 1068, z = 1, y = 2733, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+		{"bdg_exp_man_mythosaur_graveyard",1800,-1175,30,146},
+		{"bdg_exp_man_keldabe_skybridge",1592,-6360,30,147},
+		{"bdg_exp_man_mandalmotors",6625,-6301,30,148},
+		{"bdg_exp_man_taung_warrior_bunker",-6354,288,30,149},
+		{"bdg_exp_man_cave_of_darth_caedus",7374,256,30,150},
+		{"bdg_exp_man_peace_park",6148,-6111,30,151},
+		{"bdg_exp_man_vizsla_hideout",441,7489,30,152},
+		{"bdg_exp_man_shadow_collective_hideout",-6998,3118,30,153},
+		{"bdg_exp_man_bralor_clan_headquarters",-6655,5567,30,154},
+		{"bdg_exp_man_mandalore_imperial_garrison",6498,-4721,30,155},
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 1589, z = 4, y = -6391, parentid = 0}
+	}
+}
+
 space_corellia = {
 
 	weatherEnabled = 0,
@@ -725,12 +783,6 @@ taanab = {
 
 
 mustafar = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-}
-
-
-mandalore = {
 	weatherEnabled = 1,
 	gcwEnabled = 0,
 }
