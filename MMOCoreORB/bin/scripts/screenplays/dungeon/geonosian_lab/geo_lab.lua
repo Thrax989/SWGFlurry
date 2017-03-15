@@ -114,8 +114,7 @@ function GeonosianLabScreenPlay:spawnSceneObjects()
 
 		if (pSceneObject ~= nil) then
 			writeData(SceneObject(pSceneObject):getObjectID() .. ":geonosian_lab:keypad_index", i)
-			createObserver(OBJECTRADIALUSED, "GeonosianLabScreenPlay", "notifyKeypadUsed", pSceneObject)
-		end
+			createObserver(OBJECTRADIALUSED, "GeonosianLabScreenPlay", "notifyKeypadUsed", pSceneObject)		end
 
 		local aa = self.doorActiveAreas[i]
 		local pActiveArea = spawnActiveArea("yavin4", "object/active_area.iff", aa.worldX, aa.worldZ, aa.worldY, 4, aa.cell)
@@ -125,8 +124,7 @@ function GeonosianLabScreenPlay:spawnSceneObjects()
 		end
 	end
 
-	for i = 1, 15, 1 do
-		local debrisData = self.debris[i]
+	for i = 1, 15, 1 do		local debrisData = self.debris[i]
 		local pDebris = spawnSceneObject("yavin4", debrisData.template, debrisData.x, debrisData.z, debrisData.y, debrisData.cell, 1, 0, 0, 0)
 		if (pDebris ~= nil) then
 			writeData(SceneObject(pDebris):getObjectID() .. ":geonosian_lab:debris_index", i)
@@ -155,8 +153,8 @@ function GeonosianLabScreenPlay:spawnMobiles()
 
 	spawnMobile("yavin4", "herald_biogenic_gardo", 60, -3.8, 0.1, -3.8, 88, 1713374)
 
-	spawnMobile("yavin4", "acklay",900,101.1,-34.3,-321.6,-136,1627823, true) --Randomized respawn
-	spawnMobile("yavin4", "enhanced_gaping_spider",3600,-130,-22.1,-85,-180,1627794, true) -- Randomized respawn
+	spawnMobile("yavin4", "acklay",800,101.1,-34.3,-321.6,-136,1627823, true) --Randomized respawn
+	spawnMobile("yavin4", "enhanced_gaping_spider",600,-130,-22.1,-85,-180,1627794, true) -- Randomized respawn
 
 	spawnMobile("yavin4", "imperial_observer",300,-23,-22,-116,-90,1627802)
 	spawnMobile("yavin4", "imperial_observer",300,-16.4,-22,-114.5,-150,1627802)
