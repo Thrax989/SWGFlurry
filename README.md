@@ -6,7 +6,7 @@ http://www.swgflurry.com/
 - Main Forums
 http://www.swgflurry.com/forum/
 - Core 3 Base Server Code/Engine
-Core3 http://review.swgemu.com
+http://review.swgemu.com
 - Main Servers Voice Chat 
 https://discord.gg/eN82pdc
 
