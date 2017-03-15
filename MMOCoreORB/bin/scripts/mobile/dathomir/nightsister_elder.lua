@@ -13,7 +13,7 @@ nightsister_elder = Creature:new {
 	baseHAMmax = 392000,
 	armor = 2,
 	resists = {150,150,150,200,200,200,200,200,135},
-	meatType = "",
+5	meatType = "",
 	meatAmount = 0,
 	hideType = "",
 	hideAmount = 0,
@@ -23,8 +23,7 @@ nightsister_elder = Creature:new {
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + KILLER + HEALER,
-	optionsBitmask = AIENABLED,
+	creatureBitmask = PACK + KILLER + HEALER,	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_dathomir_nightsister_elder.iff"},
@@ -59,7 +58,7 @@ nightsister_elder = Creature:new {
 			groups = {
 				{group = "nightsister_rare", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 5000000
 		},
 		{
 	        groups = {
