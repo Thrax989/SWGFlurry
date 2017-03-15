@@ -4,16 +4,9 @@
 -- That means that it is not possible to have both a spawn area and a no spawn area in the same region, but
 -- a spawn area that is also a no build zone is possible.
 
-
-UNDEFINEDAREA       = 0x0000
-SPAWNAREA           = 0x0001
-NOSPAWNAREA         = 0x0002
-WORLDSPAWNAREA      = 0x0010
-NOBUILDZONEAREA     = 0x0100
-
 mandalore_regions = {
 	{"world_spawner",0,0,{1,-1},SPAWNAREA + WORLDSPAWNAREA,1,"mandalore_world",2048},
-    {"keldabe",1589,-6385,{1,1000},NOSPAWNAREA + NOBUILDZONEAREA,1},
+        {"keldabe",1589,-6385,{1,1000},NOSPAWNAREA + NOBUILDZONEAREA,1},
 	{"an_imperial_outpost",6498,-4719,{1,200},NOSPAWNAREA + NOBUILDZONEAREA,1},
 	{"sundari",6306,-6231,{1,1000},NOSPAWNAREA + NOBUILDZONEAREA,1},
 	{"mandal_motors",6621,-6300,{1,200},NOSPAWNAREA + NOBUILDZONEAREA,1},
