@@ -4,6 +4,8 @@
 -- That means that it is not possible to have both a spawn area and a no spawn area in the same region, but
 -- a spawn area that is also a no build zone is possible.
 
+require("scripts.managers.spawn_manager.regions")
+
 mandalore_regions = {
 	{"world_spawner",0,0,{1,-1},SPAWNAREA + WORLDSPAWNAREA,1,"mandalore_world",2048},
         {"keldabe",1589,-6385,{1,1000},NOSPAWNAREA + NOBUILDZONEAREA,1},
