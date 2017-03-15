@@ -1,5 +1,4 @@
 language: cpp
-script: scons
 compiler: clang
 compiler:
   - clang
