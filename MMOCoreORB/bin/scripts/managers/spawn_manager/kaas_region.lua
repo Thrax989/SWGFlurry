@@ -4,6 +4,8 @@
 -- That means that it is not possible to have both a spawn area and a no spawn area in the same region, but
 -- a spawn area that is also a no build zone is possible.
 
+require("scripts.managers.spawn_manager.regions")
+
 kaas_regions = {
   {"a_rebel_outpost",-6131,2705,{1,700},NOSPAWNAREA + NOBUILDZONEAREA},  -- kaas city
 
