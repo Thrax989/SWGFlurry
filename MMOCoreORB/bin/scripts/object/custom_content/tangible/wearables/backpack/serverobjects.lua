@@ -25,6 +25,6 @@ includeFile("custom_content/tangible/wearables/backpack/empireday_sandtrooper_ba
 
 
 --These were Implemented correctly they just seem not to work.
-includeFile("custom_content/tangible/wearables/backpack/backpack_c3po.lua")
+includeFile("custom_content/tangible/wearables/backpack/backpack_c3p0.lua")
 includeFile("custom_content/tangible/wearables/backpack/fannypack_s01.lua")
 includeFile("custom_content/tangible/wearables/backpack/padawan_pouch.lua")
