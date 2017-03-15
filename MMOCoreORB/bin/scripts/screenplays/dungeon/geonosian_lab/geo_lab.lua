@@ -114,7 +114,8 @@ function GeonosianLabScreenPlay:spawnSceneObjects()
 
 		if (pSceneObject ~= nil) then
 			writeData(SceneObject(pSceneObject):getObjectID() .. ":geonosian_lab:keypad_index", i)
-			createObserver(OBJECTRADIALUSED, "GeonosianLabScreenPlay", "notifyKeypadUsed", pSceneObject)		end
+			createObserver(OBJECTRADIALUSED, "GeonosianLabScreenPlay", "notifyKeypadUsed", pSceneObject)
+		end
 
 		local aa = self.doorActiveAreas[i]
 		local pActiveArea = spawnActiveArea("yavin4", "object/active_area.iff", aa.worldX, aa.worldZ, aa.worldY, 4, aa.cell)
@@ -124,7 +125,8 @@ function GeonosianLabScreenPlay:spawnSceneObjects()
 		end
 	end
 
-	for i = 1, 15, 1 do		local debrisData = self.debris[i]
+	for i = 1, 15, 1 do
+		local debrisData = self.debris[i]
 		local pDebris = spawnSceneObject("yavin4", debrisData.template, debrisData.x, debrisData.z, debrisData.y, debrisData.cell, 1, 0, 0, 0)
 		if (pDebris ~= nil) then
 			writeData(SceneObject(pDebris):getObjectID() .. ":geonosian_lab:debris_index", i)
