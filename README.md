@@ -62,7 +62,6 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 
 ## -Armor crafting Balance-
 Complete so far ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) 24.24% out of ![#008000](https://placehold.it/15/008000/000000?text=+) 100%<br>
-33 tasks<br>
 ![#008000](https://placehold.it/15/008000/000000?text=+) 8 Complete<br>
 ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) 25 Incomplete
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) assault_trooper	
