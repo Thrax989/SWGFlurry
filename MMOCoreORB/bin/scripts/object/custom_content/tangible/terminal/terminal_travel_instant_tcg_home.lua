@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_travel_instant_tcg_home = object_tangible_terminal_shared_terminal_travel_instant_tcg_home:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_travel_instant_tcg_home, "object/tangible/terminal/terminal_travel_instant_tcg_home.iff")

@@ -1,0 +1,1 @@
+object_tangible_droid_droid_space_memory_module_base = object_tangible_droid_shared_droid_space_memory_module_base:new {}ObjectTemplates:addTemplate(object_tangible_droid_droid_space_memory_module_base, "object/tangible/droid/droid_space_memory_module_base.iff")

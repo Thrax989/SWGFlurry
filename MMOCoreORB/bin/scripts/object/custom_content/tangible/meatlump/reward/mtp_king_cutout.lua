@@ -1,0 +1,3 @@
+object_tangible_meatlump_reward_mtp_king_cutout = object_tangible_meatlump_reward_shared_mtp_king_cutout:new {
+}
+ObjectTemplates:addTemplate(object_tangible_meatlump_reward_mtp_king_cutout, "object/tangible/meatlump/reward/mtp_king_cutout.iff")

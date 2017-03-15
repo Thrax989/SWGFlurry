@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_city_junk_dealer = object_tangible_terminal_shared_terminal_city_junk_dealer:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_city_junk_dealer, "object/tangible/terminal/terminal_city_junk_dealer.iff")

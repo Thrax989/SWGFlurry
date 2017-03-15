@@ -1,0 +1,3 @@
+object_tangible_destructible_shield_generator_4point = object_tangible_destructible_shared_shield_generator_4point:new {
+}
+ObjectTemplates:addTemplate(object_tangible_destructible_shield_generator_4point, "object/tangible/destructible/shield_generator_4point.iff")

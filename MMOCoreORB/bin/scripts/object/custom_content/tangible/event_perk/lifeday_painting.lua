@@ -1,0 +1,3 @@
+object_tangible_event_perk_lifeday_painting = object_tangible_event_perk_shared_lifeday_painting:new {
+}
+ObjectTemplates:addTemplate(object_tangible_event_perk_lifeday_painting, "object/tangible/event_perk/lifeday_painting.iff")

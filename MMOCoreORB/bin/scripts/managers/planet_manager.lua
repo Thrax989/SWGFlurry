@@ -588,19 +588,6 @@ yavin4 = {
 	}
 }
 
-kaas = {
-
-	weatherEnabled = 1,
-
-	planetTravelPoints = {
-		{name = "an Imperial Garrison", x = -5158.0, z = 80.0, y = -2239.0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
-	},
-	
-	planetObjects = {
-		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = 0.0, oz = 0, ow = 0.0, x = -1123.2, z = 129.0, y = -4768.8, parentid = 0}
-	}
-}
-
 space_corellia = {
 
 	weatherEnabled = 0,
@@ -712,13 +699,20 @@ dungeon1 = {
 	gcwEnabled = 0,
 }
 
-hoth = {
+
+kaas = {
+
 	weatherEnabled = 1,
+
+	planetTravelPoints = {
+		{name = "an Imperial Garrison", x = -5158.0, z = 80.0, y = -2239.0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	},
 	
-		planetTravelPoints = {
-		{name = "Starport", x = -2226.0, z = 120, y = 737.0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	planetObjects = {
+		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = 0.0, oz = 0, ow = 0.0, x = -1123.2, z = 129.0, y = -4768.8, parentid = 0}
 	}
 }
+
 
 taanab = {
 	weatherEnabled = 1,
@@ -729,29 +723,14 @@ taanab = {
 	}
 }
 
-ghomrassen = {
-	weatherEnabled = 1,
-
-		planetTravelPoints = {
-		{name = "Mos Rassen", x = -3407, z = 0, y = -5199, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		{name = "Mos Rassen Shuttleport", x = -3198, z = 0, y = -5294, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
-	}
-}
 
 mustafar = {
 	weatherEnabled = 1,
-
-		planetTravelPoints = {
-		--{name = "0", x = 0, z = 0, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		--{name = "0", x = 0, z = 0, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
-	}
+	gcwEnabled = 0,
 }
+
 
 mandalore = {
 	weatherEnabled = 1,
-
-		planetTravelPoints = {
-		--{name = "0", x = 0, z = 0, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		--{name = "0", x = 0, z = 0, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
-	}
+	gcwEnabled = 0,
 }
