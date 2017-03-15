@@ -23,7 +23,8 @@ nightsister_elder = Creature:new {
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + KILLER + HEALER,	optionsBitmask = AIENABLED,
+	creatureBitmask = PACK + KILLER + HEALER,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_dathomir_nightsister_elder.iff"},
