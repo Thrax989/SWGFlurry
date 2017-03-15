@@ -41,45 +41,45 @@ This server is specifically for new post 14.1 content and server modifications c
 * NGE Housing
 
 ## Coding Legend
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Complete`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Incomplete`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Testing`
 ## Things still left to Test / Balance For Live Server
 
 ## -Armor crafting Balance-
-- ![#008000](https://placehold.it/15/008000/000000?text=+)assault_trooper	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+)bone
-- ![#008000](https://placehold.it/15/008000/000000?text=+)bounty_hunter
-- ![#008000](https://placehold.it/15/008000/000000?text=+)chitin
-- ![#008000](https://placehold.it/15/008000/000000?text=+)clone_trooper
-- ![#008000](https://placehold.it/15/008000/000000?text=+)composite	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)deathtrooper	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)galactic_marine	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)infiltrator	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)ithorian_defender	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)ithorian_guardian	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)ithorian_sentinel	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)kashyyykian_black_mtn	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)kashyyykian_ceremonial	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)kashyyykian_hunting	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)mandalorian	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)mandalorian_imperial	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)mandalorian_rebel	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)marauder	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)marine	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)nightsister	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)padded	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)rebel_assault	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)rebel_battle	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)rebel_snow	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)rebel_spec_force	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)ris	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)singing_mountain_clan	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)snowtrooper	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)stormtrooper
-- ![#008000](https://placehold.it/15/008000/000000?text=+)tantel	
-- ![#008000](https://placehold.it/15/008000/000000?text=+)ubese
-- ![#008000](https://placehold.it/15/008000/000000?text=+)zam
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) assault_trooper	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) bone
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) bounty_hunter
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) chitin
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) clone_trooper
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) composite	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) deathtrooper	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) galactic_marine	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) infiltrator	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) ithorian_defender	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) ithorian_guardian	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) ithorian_sentinel	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) kashyyykian_black_mtn	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) kashyyykian_ceremonial	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) kashyyykian_hunting	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) mandalorian	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) mandalorian_imperial	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) mandalorian_rebel	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) marauder	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) marine	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) nightsister	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) padded	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_assault	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_battle	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_snow	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_spec_force	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) ris	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) singing_mountain_clan	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) snowtrooper	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) stormtrooper
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) tantel	
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) ubese
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) zam
 
 
 It's purpose is to add all of the NGE assets and anything released by the kind contributors to the MTG website.
