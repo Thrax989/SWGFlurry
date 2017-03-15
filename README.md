@@ -48,9 +48,9 @@ This server is specifically for new post 14.1 content and server modifications c
 
 ## -Armor crafting Balance-
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) assault_trooper	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) bone
+- ![#008000](https://placehold.it/15/008000/000000?text=+) bone
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) bounty_hunter
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) chitin
+- ![#008000](https://placehold.it/15/008000/000000?text=+) chitin
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) clone_trooper
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) composite	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) deathtrooper	
@@ -65,21 +65,21 @@ This server is specifically for new post 14.1 content and server modifications c
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) mandalorian	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) mandalorian_imperial	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) mandalorian_rebel	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) marauder	
+- ![#008000](https://placehold.it/15/008000/000000?text=+) marauder	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) marine	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) nightsister	
+- ![#008000](https://placehold.it/15/008000/000000?text=+) nightsister	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) padded	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_assault	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_battle	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_snow	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_spec_force	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) ris	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) singing_mountain_clan	
+- ![#008000](https://placehold.it/15/008000/000000?text=+) singing_mountain_clan	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) snowtrooper	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) stormtrooper
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) tantel	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) ubese
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) zam
+- ![#008000](https://placehold.it/15/008000/000000?text=+) tantel	
+- ![#008000](https://placehold.it/15/008000/000000?text=+) ubese
+- ![#008000](https://placehold.it/15/008000/000000?text=+) zam
 
 
 It's purpose is to add all of the NGE assets and anything released by the kind contributors to the MTG website.
