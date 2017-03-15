@@ -81,7 +81,7 @@ janta_chieftain = Creature:new {
 					},
 					},
 
-	weapons = {"tusken_weapons"},
+	weapons = {"unarmed_weapons"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster)
 }
