@@ -7,7 +7,7 @@ http://www.swgflurry.com/
 http://www.swgflurry.com/forum/
 - Core 3 Base Server Code/Engine
 Core3 http://review.swgemu.com
--Main Servers Voice Chat 
+- Main Servers Voice Chat 
 https://discord.gg/eN82pdc
 
 ## -Run Server in gdb debug mode-
