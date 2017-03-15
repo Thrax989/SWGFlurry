@@ -43,8 +43,8 @@ This server is specifically for new post 14.1 content and server modifications c
 ## Things still left to Test / Balance For Live Server
 
 ## -Armor crafting Balance-
-- ![#FF0000](https://placehold.it/15/f03c15/000000?text=+) `Pass`
-- ![#008000](https://placehold.it/15/c5f015/000000?text=+) `Fail`
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Pass`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Fail`
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Testing`
 
 Complete
