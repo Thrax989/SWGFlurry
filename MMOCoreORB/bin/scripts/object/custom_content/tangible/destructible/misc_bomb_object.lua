@@ -1,0 +1,3 @@
+object_tangible_destructible_misc_bomb_object = object_tangible_destructible_shared_misc_bomb_object:new {
+}
+ObjectTemplates:addTemplate(object_tangible_destructible_misc_bomb_object, "object/tangible/destructible/misc_bomb_object.iff")

@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_travel_instant = object_tangible_terminal_shared_terminal_travel_instant:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_travel_instant, "object/tangible/terminal/terminal_travel_instant.iff")

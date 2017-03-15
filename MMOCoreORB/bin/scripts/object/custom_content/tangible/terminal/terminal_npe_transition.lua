@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_npe_transition = object_tangible_terminal_shared_terminal_npe_transition:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_npe_transition, "object/tangible/terminal/terminal_npe_transition.iff")
