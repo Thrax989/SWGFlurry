@@ -1,13 +1,13 @@
 ## -Star Wars Galaxies Flurry Server-
 <img src="http://i.imgur.com/OB4Pa6a.png">
 
-## - Main Web site
+- Main Web site
 http://www.swgflurry.com/
-## - Main Forums
+- Main Forums
 http://www.swgflurry.com/forum/
-## - Core 3 Base Server Code/Engine
+- Core 3 Base Server Code/Engine
 Core3 http://review.swgemu.com
-## -Main Servers Voice Chat 
+-Main Servers Voice Chat 
 https://discord.gg/eN82pdc
 
 ## -Run Server in gdb debug mode-
