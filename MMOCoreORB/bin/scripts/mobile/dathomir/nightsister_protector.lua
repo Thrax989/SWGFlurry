@@ -50,7 +50,7 @@ nightsister_protector = Creature:new {
 			groups = {
 				{group = "nightsister_rare", chance = 10000000},
 			},
-			lootChance = 1500000
+			lootChance = 3000000
 		},
 		{
 	           groups = {
