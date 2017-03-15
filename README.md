@@ -21,6 +21,9 @@ cd /home/vagrant/bin/<br>
 swgemu<br>
 runUnitTests<br>
 
+# Servers Required Custom Mod The Galaxy TRE Files
+https://www.mediafire.com/?jav61872qwg7qav
+
 ## Coding Legend
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
