@@ -21,8 +21,10 @@ cd /home/vagrant/bin/<br>
 swgemu<br>
 runUnitTests<br>
 
-# Servers Required Custom Mod The Galaxy TRE Files
-https://www.mediafire.com/?jav61872qwg7qav
+# Required Mod The Galaxy TRE Files
+https://www.mediafire.com/?jav61872qwg7qav <br>
+
+"armor.tre","skill_patch.tre","phoenix_patch_1.tre","mtg_planets.tre","mtg_patch_019.tre","mtg_patch_018.tre","mtg_patch_017.tre","mtg_patch_016.tre","mtg_patch_015.tre","mtg_patch_014.tre","mtg_patch_013_configurable_02.tre","mtg_patch_013_configurable_02.tre","mtg_patch_012_configurable_01.tre","mtg_patch_011_files_01.tre","mtg_patch_010_object_01.tre","mtg_patch_009_Shader_01.tre","mtg_patch_008_texture_04.tre","mtg_patch_007_texture_03.tre","mtg_patch_006_texture_02.tre","mtg_patch_005_texture_01.tre","mtg_patch_004_appearance_04.tre","mtg_patch_003_appearance_03.tre","mtg_patch_002_appearance_02.tre","mtg_patch_001_appearance_01.tre"<br>
 
 ## Coding Legend
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
