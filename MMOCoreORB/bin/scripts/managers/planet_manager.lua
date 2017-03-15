@@ -772,16 +772,6 @@ kaas = {
 }
 
 
-taanab = {
-	weatherEnabled = 1,
-
-		planetTravelPoints = {
-		{name = "North Starport", x = -450, z = 58, y = 5868, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		{name = "South Starport", x = -3213, z = 53, y = -5689, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
-	}
-}
-
-
 mustafar = {
 	weatherEnabled = 1,
 	gcwEnabled = 0,
