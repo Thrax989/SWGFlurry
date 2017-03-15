@@ -36,9 +36,6 @@ It's purpose is to add all of the NGE assets and anything released by the kind c
 
 The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to the above address
 
-## -Lasko
-## -Toxic
-
 ## -Everything that has been added so far-
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * All standard Pre-CU assets
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * All post 14.1 Weapons
@@ -103,3 +100,29 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 ## -Dungeons / Encounters-
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) tatooine tusken bunker
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) dantooine janta cave 
+
+
+
+## -Server Code Contributors-
+* https://github.com/Thrax989 - Project Lead Creator
+* https://github.com/lasko-2112 - TRE File Creator All NGE Weapons Cu Weapons / Ghomrassen Planet Creator
+* https://github.com/kurdtkobain - Additional Command Support / Game Tweaks
+* https://github.com/Xela-TheCreation - FRS system Creator
+* https://github.com/bobvious - Additional Game Balances Lua game Tweaks
+* https://github.com/TheAnswer - Engine Developer 
+* https://github.com/Tatwi - Admin Tool Creator , Scripts Creator , Quest Logic Creator
+* https://github.com/Levarrishawk/ - Dromund Kaas Planet Creator
+* https://github.com/dannuic - Ai Functionalit World Implamentations lua / CPP functions
+* https://github.com/Ivojedi Enviroment Stability lua / CPP functionality additional game balance / tweaks
+* https://github.com/loswut - Enviroment Functionalit lua / CPP World Edditions
+* https://github.com/Miztah - Quest Logic Additional CPP functionality Village Implamentation for jedi
+* https://github.com/Neetoo - world / enviroment balance quest functionality 
+* https://github.com/Hellucard - Dungeons / Screen play creator 
+* https://github.com/Gungy - Additional game balances 
+* https://github.com/Bommbur - Additional game balances 
+* https://github.com/mhutcherson - Additional game balances 
+* https://github.com/Madvector - Additional game balances 
+* https://github.com/mikeface - Additional game balances Jedi Master Powers Revamp Enhancer Revamp
+* https://github.com/washu - Droid functionality
+* https://github.com/Skyyyr - Additional Game Tweaks CPP / Lua script Writer
+* https://github.com/Yakone - Random NGE Item Additons
