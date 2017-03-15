@@ -28,9 +28,6 @@ Run Unit Integrity Test
 
 This server is specifically for new post 14.1 content and server modifications compatible with Core3. They have been created and submitted by the SWG community. The new content is available for any server to use with just one restriction: We ask that you give full credit to the creator for their work on your server's website and not claim it as your own work. Thank you.
 
-
-## Things still left to Test / Balance For Live Server / Test Server
-
 ## -Everything that has been added so far-
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * All standard Pre-CU assets
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * All post 14.1 Weapons
@@ -42,6 +39,8 @@ This server is specifically for new post 14.1 content and server modifications c
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * Chiss Backpack
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * BARC Speeder
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Housing
+
+## Things still left to Test / Balance For Live Server / Test Server
 
 ## -Everything that needs to be added-
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) All TCG Items
