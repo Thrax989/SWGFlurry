@@ -1,3 +1,5 @@
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/Thrax989/SWGFlurry.svg)](http://isitmaintained.com/project/Thrax989/SWGFlurry "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/Thrax989/SWGFlurry.svg)](http://isitmaintained.com/project/Thrax989/SWGFlurry "Percentage of issues still open")
 ## -Star Wars Galaxies Flurry Server-
 <img src="http://i.imgur.com/OB4Pa6a.png">
 
