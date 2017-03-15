@@ -11,9 +11,7 @@ http://review.swgemu.com
 https://discord.gg/eN82pdc
 
 ## -Run Server in gdb debug mode-
-Open Terminal "Type" <br>
-cd /home/vagrant/workspace/Core3/MMOCoreORB/bin<br>
-Then "type" gdb ./core3 <br>
+Open Terminal "Type" cd /home/vagrant/workspace/Core3/MMOCoreORB/bin Then "type" gdb ./core3 <br>
 This will run your core3 in GDB mode so you can debug with"bt" <br>
 If your server segfaults it will promt you "segmentation fault"
 type "bt" to do a back trace to find your error
