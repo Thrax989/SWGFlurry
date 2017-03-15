@@ -22,9 +22,34 @@ swgemu<br>
 runUnitTests<br>
 
 # Required Mod The Galaxy TRE Files
-https://www.mediafire.com/?jav61872qwg7qav <br>
-
-"armor.tre","skill_patch.tre","phoenix_patch_1.tre","mtg_planets.tre","mtg_patch_019.tre","mtg_patch_018.tre","mtg_patch_017.tre","mtg_patch_016.tre","mtg_patch_015.tre","mtg_patch_014.tre","mtg_patch_013_configurable_02.tre","mtg_patch_013_configurable_02.tre","mtg_patch_012_configurable_01.tre","mtg_patch_011_files_01.tre","mtg_patch_010_object_01.tre","mtg_patch_009_Shader_01.tre","mtg_patch_008_texture_04.tre","mtg_patch_007_texture_03.tre","mtg_patch_006_texture_02.tre","mtg_patch_005_texture_01.tre","mtg_patch_004_appearance_04.tre","mtg_patch_003_appearance_03.tre","mtg_patch_002_appearance_02.tre","mtg_patch_001_appearance_01.tre"<br>
+https://www.mediafire.com/?jav61872qwg7qav 
+<br>
+	maxSearchPriority=25
+	searchTree_00_23=flurryui.tre
+	searchTree_00_22=armor.tre
+	searchTree_00_21=phoenix_patch_1.tre
+	searchTree_00_20=skill_patch.tre
+	searchTree_00_19=mtg_planets.tre
+	searchTree_00_18=mtg_patch_019.tre
+	searchTree_00_17=mtg_patch_018.tre
+	searchTree_00_16=mtg_patch_017.tre
+	searchTree_00_15=mtg_patch_016.tre
+	searchTree_00_14=mtg_patch_015.tre
+	searchTree_00_13=mtg_patch_014.tre
+	searchTree_00_12=mtg_patch_013_configurable_02.tre
+	searchTree_00_11=mtg_patch_012_configurable_01.tre
+	searchTree_00_10=mtg_patch_011_files_01.tre
+	searchTree_00_9=mtg_patch_010_object_01.tre
+	searchTree_00_8=mtg_patch_009_Shader_01.tre
+	searchTree_00_7=mtg_patch_008_texture_04.tre
+	searchTree_00_6=mtg_patch_007_texture_03.tre
+	searchTree_00_5=mtg_patch_006_texture_02.tre
+	searchTree_00_4=mtg_patch_005_texture_01.tre
+	searchTree_00_3=mtg_patch_004_appearance_04.tre
+	searchTree_00_2=mtg_patch_003_appearance_03.tre
+	searchTree_00_1=mtg_patch_002_appearance_02.tre
+	searchTree_00_0=mtg_patch_001_appearance_01.tre
+  <br>
 
 ## Coding Legend
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
