@@ -20,13 +20,13 @@ janta_cave_boss = Creature:new {
 	  milk = 0,
 	  tamingChance = 0,
 	  ferocity = 0,
-	  pvpBitmask = AGGRESSIVE + ATTACKABLE,
-	  creatureBitmask = PACK + HERD,
-	  optionsBitmask = 128,
+	  pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	  creatureBitmask = KILLER + STALKER,
+	  optionsBitmask = AIENABLED,
 	  diet = HERBIVORE,
 		Scale = 2.0,
 
-	templates = {"object/mobile/exar_kun.iff"},
+	templates = {"object/mobile/tusken_raider.iff"},
 	lootGroups = {
 		{
 			groups = {
