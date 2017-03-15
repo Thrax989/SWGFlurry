@@ -3,12 +3,12 @@ janta_chieftain = Creature:new {
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
 	level = 300,
-	chanceHit = 50.00,
-	damageMin = 1800,
-	damageMax = 3310,
+	chanceHit = 60.00,
+	damageMin = 2000,
+	damageMax = 3400,
 	baseXp = 27849,
-	baseHAM = 321000,
-	baseHAMmax = 392000,
+	baseHAM = 521000,
+	baseHAMmax = 892000,
 	armor = 0,
 	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
@@ -81,7 +81,7 @@ janta_chieftain = Creature:new {
 					},
 					},
 
-	weapons = {"tusken_weapons"},
+	weapons = {"unarmed_weapons"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster)
 }
