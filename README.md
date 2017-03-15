@@ -75,7 +75,7 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * BARC Speeder
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Housing
 
-## Things still left to Test / Balance For Live Server / Test Server
+## -Things still left to Test / Balance For Live Server / Test Server-
 
 ## -Everything that needs to be added-
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) All TCG Items
@@ -179,7 +179,7 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 * https://github.com/mhutcherson - Additional game balances 
 * https://github.com/Madvector - Additional game balances 
 * https://github.com/mikeface - Additional game balances Jedi Master Powers Revamp Enhancer Revamp
-* https://github.com/gyrantol - Mandalore , Taanab  world assest
+* https://github.com/gyrantol - Mandalore , Taanab  world assets
 * https://github.com/washu - Droid functionality
 * https://github.com/Skyyyr - Additional Game Tweaks CPP / Lua script Writer
 * https://github.com/Yakone - Random NGE Item Additons
