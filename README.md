@@ -40,6 +40,49 @@ This server is specifically for new post 14.1 content and server modifications c
 * BARC Speeder
 * NGE Housing
 
+## Things still left to Test / Balance For Live Server
+
+## -Armor crafting Balance-
+
+<p style='color:green'>Complete 
+|
+<p style='color:red'>Incomplete
+
+
+assault_trooper	
+bone
+bounty_hunter
+chitin
+clone_trooper
+composite	
+deathtrooper	
+galactic_marine	
+infiltrator	
+ithorian_defender	
+ithorian_guardian	
+ithorian_sentinel	
+kashyyykian_black_mtn	
+kashyyykian_ceremonial	
+kashyyykian_hunting	
+mandalorian	
+mandalorian_imperial	
+mandalorian_rebel	
+marauder	
+marine	
+nightsister	
+padded	
+rebel_assault	
+rebel_battle	
+rebel_snow	
+rebel_spec_force	
+ris	
+singing_mountain_clan	
+snowtrooper	
+stormtrooper
+tantel	
+ubese
+zam
+
 It's purpose is to add all of the NGE assets and anything released by the kind contributors to the MTG website.
 
 The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to the above address
