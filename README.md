@@ -44,9 +44,9 @@ This server is specifically for new post 14.1 content and server modifications c
 
 ## -Armor crafting Balance-
 
-<p style='color:green'>Complete 
+<font color="green">Complete</font>
 |
-<p style='color:red'>Incomplete
+<font color="red">Incomplete</font>
 
 
 assault_trooper	
