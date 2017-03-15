@@ -23,8 +23,6 @@ type "bt" to do a back trace to find your error
 cd /home/vagrant/bin/swgemu
 runUnitTests
 
-## -Toxic
-
 ## Coding Legend
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
@@ -39,6 +37,7 @@ It's purpose is to add all of the NGE assets and anything released by the kind c
 The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to the above address
 
 ## -Lasko
+## -Toxic
 
 ## -Everything that has been added so far-
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * All standard Pre-CU assets
