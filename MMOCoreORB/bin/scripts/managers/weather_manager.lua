@@ -251,29 +251,6 @@ taanab = {
 
 	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
 }
------------------
---    Ghomrassen
------------------
-ghomrassen = {
-
-	defaultWeather = 0, -- Sunny
-
-	averageWeatherDuration = 3600, -- In seconds
-
-	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
-}
-
------------------
---    hoth
------------------
-hoth = {
-
-	defaultWeather = 0, -- Sunny
-
-	averageWeatherDuration = 3600, -- In seconds
-
-	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
-}
 
 -----------------
 --    mustafar
@@ -298,4 +275,3 @@ mandalore = {
 
 	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
 }
-
