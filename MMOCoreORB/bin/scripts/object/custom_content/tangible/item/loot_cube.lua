@@ -5,7 +5,7 @@ object_tangible_item_loot_cube = object_tangible_item_shared_loot_cube:new {
 	gameObjectType = 8233,
 	
 	--These are used to determine which components are necessary in the loot kit to finish the item
-	collectibleComponents = {"object/tangible/loot/misc/datadisk_corrupt.iff", "object/tangible/loot/simple_kit/magnetic_reader.iff", "object/tangible/loot/simple_kit/magnetic_burner.iff", "object/tangible/loot/simple_kit/recovery_software.iff", "object/tangible/loot/simple_kit/wiring.iff"},
+	collectibleComponents = {"object/tangible/loot/misc/datadisk_corrupt.iff", "object/tangible/loot/misc/datadisk_corrupt.iff", "object/tangible/loot/misc/datadisk_corrupt.iff"},
 	
 	collectibleReward = {"object/tangible/loot/simple_kit/datadisk.iff"},
 
