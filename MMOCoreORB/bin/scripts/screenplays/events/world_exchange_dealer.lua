@@ -12,7 +12,7 @@ world_exchange = ScreenPlay:new {
 registerScreenPlay("world_exchange", true)
 
 function world_exchange:start() 
-   local pMerchant = spawnMobile("corellia", "world_exchange", 1, -159.006, 28, -4705.44, 88, 0 )
+   local pMerchant = spawnMobile("corellia", "world_exchange", 1, -166.718, 28, -4743.92, 88, 0 )
 
 end
 
