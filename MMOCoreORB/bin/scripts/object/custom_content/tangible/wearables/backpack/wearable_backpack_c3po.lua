@@ -40,7 +40,6 @@
 --gives permission to release a modified version without this exception; 
 --this exception also makes it possible to release a modified version 
 
-
 object_tangible_wearables_backpack_wearable_backpack_c3po = object_tangible_wearables_backpack_shared_wearable_backpack_c3po:new {
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
