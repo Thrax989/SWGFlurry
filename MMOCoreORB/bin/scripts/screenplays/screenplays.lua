@@ -602,7 +602,7 @@ includeFile("tests/tests.lua")
 
 -- Custom Content
 includeFile("custom_content/screenplays.lua")
---includeFile("events/world_exchange_dealer.lua")
+includeFile("events/world_exchange_dealer.lua")
 --includeFile("events/black_sun.lua")
 --includeFile("poi/lok_rvboss.lua")
 --includeFile("dungeon/teleport_pve.lua")
