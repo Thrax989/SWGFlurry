@@ -10,7 +10,7 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 	templateType = CHARACTERBUILDERTERMINAL,
 
 	itemList = {
-		"Items",
+		"Jedi Items",
 		{
 			"jedi_rings", "jedi_rings",
  			"jedi_neck", "jedi_neck",
@@ -48,6 +48,10 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 			"Light Saber 20", "saberhand20",
 			"Light Saber 21", "saberhand21",
 			"Light Saber 22", "saberhand22",
+		},
+			"Backpacks",
+		{
+			"Test", "Test",
 		},
 		"Force Sensitive",
 		{
