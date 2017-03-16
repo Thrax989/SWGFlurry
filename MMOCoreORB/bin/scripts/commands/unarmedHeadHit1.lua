@@ -44,7 +44,7 @@
 UnarmedHeadHit1Command = {
         name = "unarmedheadhit1",
 
-	damageMultiplier = 2.5,
+	damageMultiplier = 1.0,
 	speedMultiplier = 2.0,
 	healthCostMultiplier = 1.75,
 	actionCostMultiplier = 1.75,

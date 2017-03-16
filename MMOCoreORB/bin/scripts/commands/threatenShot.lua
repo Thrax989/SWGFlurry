@@ -44,7 +44,7 @@
 ThreatenShotCommand = {
         name = "threatenshot",
 
-	damageMultiplier = 0.25,
+	damageMultiplier = 1.0,
 	speedMultiplier = 2,
 	healthCostMultiplier = 1,
 	actionCostMultiplier = 1,

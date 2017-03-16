@@ -44,7 +44,7 @@
 Saber2hFrenzyCommand = {
         name = "saber2hfrenzy",
         
-    damageMultiplier = 3.5,
+	damageMultiplier = 1.0,
 	speedMultiplier = 3.5,
 	healthCostMultiplier = 0,
 	actionCostMultiplier = 0,

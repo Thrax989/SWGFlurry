@@ -43,7 +43,7 @@
 
 CreatureAreaAttackCommand = {
         name = "creatureareaattack",
-	damageMultiplier = 1.5,
+	damageMultiplier = 1.0,
 	speedMultiplier = 1,
 
 	combatSpam = "attack",

@@ -44,7 +44,7 @@
 LegShot2Command = {
 	name = "legshot2",
 
-	damageMultiplier = 2,
+	damageMultiplier = 1.0,
 	speedMultiplier = 2,
 	healthCostMultiplier = 0.5,
 	actionCostMultiplier = 1.5,

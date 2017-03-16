@@ -44,7 +44,7 @@
 WildShot1Command = {
         name = "wildshot1",
 
-	damageMultiplier = 2.25,
+	damageMultiplier = 1.0,
 	speedMultiplier = 2.0,
 	healthCostMultiplier = 1.75,
 	actionCostMultiplier = 1.25,
