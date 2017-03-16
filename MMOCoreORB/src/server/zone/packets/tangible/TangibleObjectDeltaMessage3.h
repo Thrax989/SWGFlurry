@@ -41,12 +41,12 @@ public:
 
 			if (player->getPlayerObject()->hasGodMode() && tag != "") {
 				UnicodeString customName = name + " \\#ffff00[" + tag + "]\\#.";
-				addUnicodeUpdate(2, (customName + " \\#ffff00[Flurry]\\#."));
+				addUnicodeUpdate(2, customName);
 				return;
 			}
 		}
 
-		addUnicodeUpdate(2, (name + " \\#ffff00[Flurry]\\#."));
+		addUnicodeUpdate(2, name);
 	}
 
 	void updateCountdownTimer() {
