@@ -4,6 +4,8 @@
 -- That means that it is not possible to have both a spawn area and a no spawn area in the same region, but
 -- a spawn area that is also a no build zone is possible.
 
+ require("scripts.managers.spawn_manager.regions")
+
 kaas_regions = {
         {"mysterious_shrine",-6374,6400,{1,30},NOSPAWNAREA + NOBUILDZONEAREA,1},
         {"northern_islands_1",-70,6370,{1,100},NOSPAWNAREA + NOBUILDZONEAREA,1},
