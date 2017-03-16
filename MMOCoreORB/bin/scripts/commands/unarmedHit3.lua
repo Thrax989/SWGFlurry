@@ -44,7 +44,7 @@
 UnarmedHit3Command = {
         name = "unarmedhit3",
 
-	damageMultiplier = 1.0,
+	damageMultiplier = 4.0,
 	speedMultiplier = 3.0,
 	healthCostMultiplier = 2,
 	actionCostMultiplier = 2,

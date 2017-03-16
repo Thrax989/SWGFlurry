@@ -44,7 +44,7 @@
 UnarmedStun1Command = {
 	name = "unarmedstun1",
 
-	damageMultiplier = 1.0,
+	damageMultiplier = 1.25,
 	speedMultiplier = 2.0,
 	accuracyBonus = 15,
 	

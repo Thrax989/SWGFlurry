@@ -44,7 +44,7 @@
 SprayShotCommand = {
         name = "sprayshot",
 
-	damageMultiplier = 1.0,
+	damageMultiplier = 4.0,
 	speedMultiplier = 3.5,
 	healthCostMultiplier = 1,
 	actionCostMultiplier = 1,
