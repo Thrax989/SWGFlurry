@@ -2,6 +2,7 @@ package.path = package.path .. ";scripts/screenplays/themepark/?.lua;scripts/scr
 require("screenplay")
 require("conv_handler")
 require("themeParkLogic")
+require("screenplayHelper")
 require("corvetteTicketGiverLogic")
 require("corvetteTicketTakerLogic")
 
