@@ -33,7 +33,6 @@ registerScreenPlay("TaanabMineScreenPlay", true)
 function TaanabMineScreenPlay:start()
 	if (isZoneEnabled("taanab")) then
 		self:spawnMobiles()
-		self:spawnSceneObjects()
 		self:initializeLootContainers()
 	end
 end
@@ -41,20 +40,20 @@ end
 function TaanabMineScreenPlay:spawnMobiles()
 	
 	-- Droids
-	pNpc = 	spawnMobile("taanab", "cll8_binary_load_lifter",600,-2596,90,-1335,0,0)
-		AiAgent(pNpc):setAiTemplate("idlewander")
-	pNpc = 	spawnMobile("taanab", "r5",600,-2676,90,-1316.8,-153,0)
-		AiAgent(pNpc):setAiTemplate("idlewander")
-	pNpc = 	spawnMobile("taanab", "cll8_binary_load_lifter",600,-2459.1,110,-1215.4,28,0)
-		AiAgent(pNpc):setAiTemplate("idlewander")
-	pNpc = 	spawnMobile("taanab", "cll8_binary_load_lifter",600,-2524.4,11,-1247.2,-20,0)
-		AiAgent(pNpc):setAiTemplate("idlewander")
-	pNpc = 	spawnMobile("taanab", "cll8_binary_load_lifter",600,-2689.9,80,-1267.1,9,0)
-		AiAgent(pNpc):setAiTemplate("idlewander")
-	pNpc = 	spawnMobile("taanab", "cll8_binary_load_lifter",600,-2476.7,110,-1320.6,38,0)
-		AiAgent(pNpc):setAiTemplate("idlewander")
-	pNpc = 	spawnMobile("taanab", "cll8_binary_load_lifter",600-2627.3,90,-1340.7,28,0)
-		AiAgent(pNpc):setAiTemplate("idlewander")
+	spawnMobile("taanab", "cll8_binary_load_lifter",600,-2596,90,-1335,0,0)
+
+	spawnMobile("taanab", "r5",600,-2676,90,-1316.8,-153,0)
+
+	spawnMobile("taanab", "cll8_binary_load_lifter",600,-2459.1,110,-1215.4,28,0)
+
+	spawnMobile("taanab", "cll8_binary_load_lifter",600,-2524.4,11,-1247.2,-20,0)
+
+	spawnMobile("taanab", "cll8_binary_load_lifter",600,-2689.9,80,-1267.1,9,0)
+
+	spawnMobile("taanab", "cll8_binary_load_lifter",600,-2476.7,110,-1320.6,38,0)
+
+	spawnMobile("taanab", "cll8_binary_load_lifter",600-2627.3,90,-1340.7,28,0)
+
 
 	--miners
 	pNpc = 	spawnMobile("taanab", "contractor",600,-2659.7,94,-1293.5,148,0)
@@ -125,6 +124,4 @@ function TaanabMineScreenPlay:spawnMobiles()
 	AiAgent(pNpc):setAiTemplate("idlewander")	
 	pNpc = 	spawnMobile("taanab", "miner",600,-2558.3,80,-1220.1,118,0)
 	AiAgent(pNpc):setAiTemplate("idlewander")	
-
-	
 end
