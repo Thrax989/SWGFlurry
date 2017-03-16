@@ -31,11 +31,11 @@ public:
 				UnicodeString tag = PermissionLevelList::instance()->getPermissionTag(ghost->getAdminLevel());
 				insertUnicode(name + " \\#ffff00[" + tag + "]\\#.");
 			} else {
-				insertUnicode(tano->getCustomObjectName());
+				insertUnicode(tano->getCustomObjectName()(" \\#ffff00[Flurry]\\#."));
 			}
 
 		} else {
-			insertUnicode(tano->getCustomObjectName());
+			insertUnicode(tano->getCustomObjectName()(" \\#ffff00[Flurry]\\#."));
 		}
 
 		insertInt(tano->getVolume());
