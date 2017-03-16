@@ -53,6 +53,26 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 		{
 			"Test", "Test",
 		},
+			"Capes",
+		{
+			"Test", "Test",
+		},
+			"Wings",
+		{
+			"Test", "Test",
+		},
+			"NGE Armors",
+		{
+			"Test", "Test",
+		},
+			"Tokens",
+		{
+			"Test", "Test",
+		},
+			"Legendary Loot boxs",
+		{
+			"Test", "Test",
+		},
 		"Force Sensitive",
 		{
 			"Crafting Mastery",
