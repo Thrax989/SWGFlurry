@@ -52,10 +52,14 @@ function TaanabGreatHerdScreenPlay:spawnMobiles()
 
 
 	--in the hut
-	spawnMobile("taanab", "rancher",600,5534.3,68.3,-4950.5,-34,0)
-	spawnMobile("taanab", "farmer_rancher",600,5534.6,68.4,-4948.7,-162,0)
-	spawnMobile("taanab", "rancher",600,5538.9,69,-4957.3,-100,0)
-	spawnMobile("taanab", "businessman",600,5535.7,69,-4959.5,37,0)
+	pNpc = 	spawnMobile("taanab", "rancher",600,5534.3,68.3,-4950.5,-34,0)
+	AiAgent(pNpc):setAiTemplate("idlewander")
+	pNpc = 	spawnMobile("taanab", "farmer_rancher",600,5534.6,68.4,-4948.7,-162,0)
+	AiAgent(pNpc):setAiTemplate("idlewander")
+	pNpc = 	spawnMobile("taanab", "rancher",600,5538.9,69,-4957.3,-100,0)
+	AiAgent(pNpc):setAiTemplate("idlewander")
+	pNpc = 	spawnMobile("taanab", "businessman",600,5535.7,69,-4959.5,37,0)
+	AiAgent(pNpc):setAiTemplate("idlewander")
 	
 		
 end

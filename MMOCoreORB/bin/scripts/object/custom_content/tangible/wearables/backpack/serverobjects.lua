@@ -21,10 +21,9 @@ includeFile("custom_content/tangible/wearables/backpack/backpack_snowtrooper.lua
 includeFile("custom_content/tangible/wearables/backpack/backpack_tauntaun_skull.lua")
 includeFile("custom_content/tangible/wearables/backpack/empireday_rebel_endor_backpack.lua")
 includeFile("custom_content/tangible/wearables/backpack/empireday_sandtrooper_backpack.lua")
-
+includeFile("custom_content/tangible/wearables/backpack/fannypack_s01.lua")
+includeFile("custom_content/tangible/wearables/backpack/padawan_pouch.lua")
 
 
 --These were Implemented correctly they just seem not to work.
-includeFile("custom_content/tangible/wearables/backpack/backpack_c3p0.lua")
-includeFile("custom_content/tangible/wearables/backpack/fannypack_s01.lua")
-includeFile("custom_content/tangible/wearables/backpack/padawan_pouch.lua")
+--includeFile("custom_content/tangible/wearables/backpack/wearable_backpack_c3po.lua")

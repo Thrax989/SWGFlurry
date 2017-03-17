@@ -2,6 +2,7 @@ package.path = package.path .. ";scripts/screenplays/themepark/?.lua;scripts/scr
 require("screenplay")
 require("conv_handler")
 require("themeParkLogic")
+require("screenplayHelper")
 require("corvetteTicketGiverLogic")
 require("corvetteTicketTakerLogic")
 
@@ -601,7 +602,7 @@ includeFile("tests/tests.lua")
 
 -- Custom Content
 includeFile("custom_content/screenplays.lua")
---includeFile("events/world_exchange_dealer.lua")
+includeFile("events/world_exchange_dealer.lua")
 --includeFile("events/black_sun.lua")
 --includeFile("poi/lok_rvboss.lua")
 --includeFile("dungeon/teleport_pve.lua")
