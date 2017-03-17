@@ -46,7 +46,7 @@ https://www.mediafire.com/?jav61872qwg7qav
 	searchTree_00_5=mtg_patch_006_texture_02.tre<br>
 	searchTree_00_4=mtg_patch_005_texture_01.tre<br>
 	searchTree_00_3=mtg_patch_004_appearance_04.tre<br>
-	searchTree_00_2=mtg_patch_003_appearance_03.tre
+	searchTree_00_2=mtg_patch_003_appearance_03.tre<br>
 	searchTree_00_1=mtg_patch_002_appearance_02.tre<br>
 	searchTree_00_0=mtg_patch_001_appearance_01.tre<br>
 
