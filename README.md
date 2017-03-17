@@ -10,8 +10,6 @@ http://review.swgemu.com
 - Main Servers Voice Chat 
 https://discord.gg/eN82pdc
 
-<img src="https://camo.githubusercontent.com/d5b74a6ac7e23270fb39582195a377b13cf10f3d/687474703a2f2f6f63746f6465782e6769746875622e636f6d2f696d616765732f6461667470756e6b746f6361742d74686f6d61732e676966">
-
 ## -Run Server in gdb debug mode-
 Open Terminal "Type" cd /home/vagrant/workspace/Core3/MMOCoreORB/bin Then "type" gdb ./core3 <br>
 This will run your core3 in GDB mode so you can debug with "bt" <br>
@@ -27,10 +25,10 @@ runUnitTests<br>
 https://www.mediafire.com/?jav61872qwg7qav 
 <br>
 	maxSearchPriority=25<br>
-	searchTree_00_23=armor.tre<br>
+	searchTree_00_23=skill_patch.tre<br>
 	searchTree_00_22=flurryui.tre<br>
-	searchTree_00_21=phoenix_patch_1.tre<br>
-	searchTree_00_20=skill_patch.tre<br>
+	searchTree_00_21=kaas.tre<br>
+	searchTree_00_20=armor.tre<br>
 	searchTree_00_19=mtg_planets.tre<br>
 	searchTree_00_18=mtg_patch_019.tre<br>
 	searchTree_00_17=mtg_patch_018.tre<br>
@@ -48,7 +46,7 @@ https://www.mediafire.com/?jav61872qwg7qav
 	searchTree_00_5=mtg_patch_006_texture_02.tre<br>
 	searchTree_00_4=mtg_patch_005_texture_01.tre<br>
 	searchTree_00_3=mtg_patch_004_appearance_04.tre<br>
-	searchTree_00_2=mtg_patch_003_appearance_03.tre<br>
+	searchTree_00_2=mtg_patch_003_appearance_03.tre
 	searchTree_00_1=mtg_patch_002_appearance_02.tre<br>
 	searchTree_00_0=mtg_patch_001_appearance_01.tre<br>
 
