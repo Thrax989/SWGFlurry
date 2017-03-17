@@ -201,7 +201,3 @@ mandalore_static_spawns = {
 	{"carid_clan_explorer",120,1113.7,2.5,2680.7,-42,0, "conversation", "", "stationary"},
 	
 }
-
-mandalore_badges = {
-	
-}
