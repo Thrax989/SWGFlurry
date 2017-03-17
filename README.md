@@ -22,7 +22,7 @@ swgemu<br>
 runUnitTests<br>
 
 # Required Mod The Galaxy TRE Files
-https://www.mediafire.com/?jav61872qwg7qav 
+https://www.mediafire.com/?7cfr6o8m58fr6u7
 <br>
 	maxSearchPriority=25<br>
 	searchTree_00_23=skill_patch.tre<br>
