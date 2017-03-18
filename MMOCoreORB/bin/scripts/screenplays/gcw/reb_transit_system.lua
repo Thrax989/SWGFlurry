@@ -8,7 +8,7 @@ registerScreenPlay("reb_transit_system", true)
 local ObjectManager = require("managers.object.object_manager")
  
 function reb_transit_system:start() 
-   --local pImpPilotCorellia = spawnMobile("corellia", "reb_transitpilot", 60, -155.7, 28.0, -4704.1, 83, 0 )
+   local pImpPilotCorellia = spawnMobile("corellia", "reb_transitpilot", 60, -155.7, 28.0, -4704.1, 83, 0 )
 
 --   local pImpPilotNaboo = spawnMobile("Naboo", "imp_transitpilot", 60, 2445, 292, -3888, 35, 0 )
 --   local pImpPilotYavin4 = spawnMobile("Yavin4", "imp_transitpilot", 60, 4044, 37.0, -6250, 35, 0 )
