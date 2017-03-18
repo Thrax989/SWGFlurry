@@ -20,7 +20,7 @@ end
 
 function teleport_mandalore_4ScreenPlay:spawnMobiles()
 
-	local pCollector1 = spawnMobile("corellia", "mandaloreport4", 1, -176.959, 28, -4686.83, 360, 0 )
+	local pCollector1 = spawnMobile("corellia", "mandaloreport4", 1, -181.017, 28, -4686.86, 355, 0 )
 
 	local collector1 = LuaCreatureObject(pCollector1)
 	collector1:setOptionsBitmask(264)
