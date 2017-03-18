@@ -20,7 +20,7 @@ end
 
 function teleport_taanab_4ScreenPlay:spawnMobiles()
 
-	local pCollector1 = spawnMobile("corellia", "taanabport3", 1, -158.97, 28, -4705.32, 175, 0 )
+	local pCollector1 = spawnMobile("corellia", "taanabport3", 1, -169.059, 28, -4686.87, 355, 0 )
 
 	local collector1 = LuaCreatureObject(pCollector1)
 	collector1:setOptionsBitmask(264)
