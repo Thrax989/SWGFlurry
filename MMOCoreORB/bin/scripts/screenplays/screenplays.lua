@@ -596,9 +596,9 @@ includeFile("record_keepers/record_keepers.lua")
 includeFile("tests/tests.lua")
 
 -- GCW Transit
---includeFile("gcw/gcw_transit_system.lua")
---includeFile("gcw/reb_transit_system.lua")
---includeFile("gcw/gcw_transit_deco.lua")
+includeFile("gcw/gcw_transit_system.lua")
+includeFile("gcw/reb_transit_system.lua")
+includeFile("gcw/gcw_transit_deco.lua")
 
 -- Custom Content
 includeFile("custom_content/screenplays.lua")
