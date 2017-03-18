@@ -20,7 +20,7 @@ end
 
 function teleport_mustafarScreenPlay:spawnMobiles()
 
-	local pCollector1 = spawnMobile("corellia", "mustafarport", 1, -158.97, 28, -4705.32, 175, 0 )
+	local pCollector1 = spawnMobile("corellia", "mustafarport", 1, -157.668, 28, -4687.98, 87, 0 )
 
 	local collector1 = LuaCreatureObject(pCollector1)
 	collector1:setOptionsBitmask(264)
