@@ -5,7 +5,7 @@ teleport_taanab_4ScreenPlay = ScreenPlay:new {
 
 registerScreenPlay("teleport_taanab_4ScreenPlay", true)
 
-function teleport_corellia_pveScreenPlay:start()
+function teleport_taanab_4ScreenPlay:start()
 	if (isZoneEnabled("corellia")) then
 		self:spawnMobiles()
 		self:spawnSceneObjects() 
