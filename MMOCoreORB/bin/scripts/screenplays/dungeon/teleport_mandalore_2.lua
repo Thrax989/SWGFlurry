@@ -5,7 +5,7 @@ teleport_mandalore_2ScreenPlay = ScreenPlay:new {
 
 registerScreenPlay("teleport_mandalore_2ScreenPlay", true)
 
-function teleport_corellia_pveScreenPlay:start()
+function teleport_mandalore_2ScreenPlay:start()
 	if (isZoneEnabled("corellia")) then
 		self:spawnMobiles()
 		self:spawnSceneObjects() 
