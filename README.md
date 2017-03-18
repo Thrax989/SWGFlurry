@@ -98,7 +98,7 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Mustafar
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Mandalore
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Taanab
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) Hoth
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Hoth
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kaas
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) jakku
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) chandrila
