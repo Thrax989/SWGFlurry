@@ -20,7 +20,7 @@ end
 
 function teleport_hothScreenPlay:spawnMobiles()
 
-	local pCollector1 = spawnMobile("corellia", "hothport", 1, -158.97, 28, -4705.32, 175, 0 )
+	local pCollector1 = spawnMobile("corellia", "hothport", 1, -157.62, 28, -4704.32, 90, 0 )
 
 	local collector1 = LuaCreatureObject(pCollector1)
 	collector1:setOptionsBitmask(264)
