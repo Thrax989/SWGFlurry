@@ -25,9 +25,9 @@ runUnitTests<br>
 https://www.mediafire.com/?cmmbkmbzf02bs97
 <br>
 	maxSearchPriority=25<br>
-	searchTree_00_23=skill_patch.tre<br>
-	searchTree_00_22=flurryui.tre<br>
-	searchTree_00_21=kaas.tre<br>
+	searchTree_00_23=hoth.tre<br>
+	searchTree_00_22=skill_patch.tre<br>
+	searchTree_00_21=flurryui.tre<br>
 	searchTree_00_20=armor.tre<br>
 	searchTree_00_19=mtg_planets.tre<br>
 	searchTree_00_18=mtg_patch_019.tre<br>
