@@ -4,11 +4,11 @@ janta_cave_boss = Creature:new {
 	  faction = "janta_tribe",
 	  level = 300,
 	  chanceHit = 80.00,
-	  damageMin = 2800,
-	  damageMax = 3800,
+	  damageMin = 3200,
+	  damageMax = 4000,
 	  baseXp = 0,
-	  baseHAM = 400000,
-	  baseHAMmax = 800000,
+	  baseHAM = 1000000,
+	  baseHAMmax = 1000000,
 	  armor = 3,
 	  resists = {200,100,100,100,100,100,100,100,80},
 	  meatType = "",
@@ -68,9 +68,9 @@ janta_cave_boss = Creature:new {
 				lootChance = 6000000
 			},
 			},
-		weapons = {"dark_jedi_weapons_gen4"},
-	  reactionStf = "@npc_reaction/fancy",
-	  attacks = merge(lightsabermaster,forcewielder)
+weapons = {"dark_jedi_weapons_gen4"},
+reactionStf = "@npc_reaction/fancy",
+attacks = merge(lightsabermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(janta_cave_boss, "janta_cave_boss")
