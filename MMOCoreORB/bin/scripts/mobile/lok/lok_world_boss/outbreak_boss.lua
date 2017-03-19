@@ -98,8 +98,7 @@ outbreak_boss = Creature:new {
 		},
   		{
    			groups = {
-      				{group = "g_ep3_chiss_poacher_backpack", chance = 10000000},
-      				{group = "barc_speeder_deed_group", chance = 10000000}
+      				{group = "g_ep3_chiss_poacher_backpack", chance = 10000000}
     		},
     			lootChance = 10000000
   		},
@@ -133,18 +132,6 @@ outbreak_boss = Creature:new {
 		},
 			lootChance = 10000000
 		},
-      		{
-     	 	 	groups = {
-        			{group = "nyms_rare", chance = 10000000}
-          	},
-          		lootChance = 10000000
-        	},
-        	{
-        		groups = {
-          			{group = "gorax_common", chance = 10000000}
-            	},
-            		lootChance = 10000000
-          	},
 		{
 			groups = {
 				{group = "weapons_all", chance = 10000000}
@@ -152,35 +139,11 @@ outbreak_boss = Creature:new {
 			lootChance = 10000000
 		},
         	{
-          		groups = {
-           			 {group = "blacksunhelm1", chance = 10000000}
-              	},
-              		lootChance = 10000000
-            	},
-          	{
-          		groups = {
-            			{group = "skill_buffs", chance = 10000000}
-              	},
-              		lootChance = 10000000
-            	},
-        	{
         		groups = {
           			{group = "wearables_rare", chance = 10000000}
             	},
            		 lootChance = 10000000
           	},
-          	{
-          		groups = {
-            			{group = "death_watch_bunker_art", chance = 10000000}
-            	},
-            		lootChance = 10000000
-        	},
-        	{
-        		groups = {
-          			{group = "bounty_hunter_armor", chance = 10000000}
-          	},
-          		lootChance = 10000000
-        	},
         	{
           		groups = {
             			{group = "acklay", chance = 10000000}
