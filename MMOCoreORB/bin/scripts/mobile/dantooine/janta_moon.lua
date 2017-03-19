@@ -4,13 +4,13 @@ janta_moon = Creature:new {
   faction = "janta_tribe",
   level = 300,
   chanceHit = 40,
-  damageMin = 2600,
-  damageMax = 3200,
+  damageMin = 2800,
+  damageMax = 3500,
   baseXp = 0,
-  baseHAM = 200000,
-  baseHAMmax = 500000,
+  baseHAM = 600000,
+  baseHAMmax = 600000,
   armor = 2,
-  resists = {50,50,50,50,50,50,50,50,50},
+  resists = {80,80,80,80,80,80,80,80,80},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -34,46 +34,40 @@ janta_moon = Creature:new {
             {group = "clothing_attachments", chance = 1000000},
             {group = "crystals_premium", chance = 4000000},
             {group = "pearls_flawless", chance = 4000000}
-          },
+},
           lootChance = 10000000
-        },
-        {
+},
+{
           groups = {
             {group = "wearables_rare", chance = 4000000},
             {group = "aakuan_common", chance = 3000000},
             {group = "nightsister_common", chance = 3000000}
 
-          },
+},
           lootChance = 7000000
-      },
-      {
-        groups = {
-          {group = "axkva_min", chance = 4000000},
-          {group = "armor_attachments", chance = 3000000},
-          {group = "clothing_attachments", chance = 3000000}
+},
+{
+           groups = {
+                {group = "axkva_min", chance = 4000000},
+                {group = "armor_attachments", chance = 3000000},
+                {group = "clothing_attachments", chance = 3000000}
 
-        },
-        lootChance = 7000000
-        },
-        {
+},
+          lootChance = 7000000
+},
+{
           groups = {
-          {group = "axkva_min", chance = 10000000}
-        },
-        lootChance = 4000000
-        },
-        {
-        groups = {
-          {group = "looted_container", chance = 10000000},
-            },
+                {group = "axkva_min", chance = 10000000}
+},
+          lootChance = 4000000
+},
+{
+           groups = {
+               {group = "looted_container", chance = 10000000},
+},
             lootChance = 2000000
-          },
-          {
-          groups = {
-            {group = "pearls_flawless", chance = 10000000},
-              },
-              lootChance = 5000000
-            },
-  },
+},
+},
 
   weapons = {"mixed_force_weapons"},
   conversationTemplate = "",
