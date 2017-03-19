@@ -96,7 +96,7 @@ ZonesEnabled = {
 	"dantooine",
 	"dathomir",
 	--"ghomrassen",
-	--"hoth",
+	"hoth",
 	--"dungeon1",
 	"endor",
         --"kashyyyk",

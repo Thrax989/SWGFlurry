@@ -596,9 +596,9 @@ includeFile("record_keepers/record_keepers.lua")
 includeFile("tests/tests.lua")
 
 -- GCW Transit
---includeFile("gcw/gcw_transit_system.lua")
---includeFile("gcw/reb_transit_system.lua")
---includeFile("gcw/gcw_transit_deco.lua")
+includeFile("gcw/gcw_transit_system.lua")
+includeFile("gcw/reb_transit_system.lua")
+includeFile("gcw/gcw_transit_deco.lua")
 
 -- Custom Content
 includeFile("custom_content/screenplays.lua")
@@ -617,6 +617,19 @@ includeFile("dungeon/teleport_kaas_pve.lua")
 --includeFile("dungeon/teleport_dantooine_pve.lua")
 --includeFile("dungeon/teleport_dathomir_pve.lua")
 --includeFile("dungeon/teleport_endor_pve.lua")
+
+includeFile("dungeon/teleport_hoth.lua")
+includeFile("dungeon/teleport_mustafar.lua")
+includeFile("dungeon/teleport_mandalore_1.lua")
+includeFile("dungeon/teleport_mandalore_2.lua")
+includeFile("dungeon/teleport_mandalore_3.lua")
+includeFile("dungeon/teleport_mandalore_4.lua")
+includeFile("dungeon/teleport_mandalore_5.lua")
+includeFile("dungeon/teleport_taanab_1.lua")
+includeFile("dungeon/teleport_taanab_2.lua")
+includeFile("dungeon/teleport_taanab_3.lua")
+includeFile("dungeon/teleport_taanab_4.lua")
+includeFile("dungeon/teleport_taanab_5.lua")
 
 includeFile("caves/taanab_cave.lua")
 includeFile("cities/taanab_pandath.lua")
