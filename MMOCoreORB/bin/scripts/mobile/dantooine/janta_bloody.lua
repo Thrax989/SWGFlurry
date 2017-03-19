@@ -4,13 +4,13 @@ janta_bloody = Creature:new {
   faction = "janta_tribe",
   level = 300,
   chanceHit = 50.00,
-  damageMin = 2600,
-  damageMax = 3200,
+  damageMin = 2800,
+  damageMax = 3500,
   baseXp = 0,
-  baseHAM = 200000,
+  baseHAM = 300000,
   baseHAMmax = 500000,
   armor = 2,
-  resists = {50,50,50,50,50,50,50,50,50},
+  resists = {80,80,80,80,80,80,80,80,80},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -66,13 +66,7 @@ janta_bloody = Creature:new {
         {group = "looted_container", chance = 10000000},
           },
           lootChance = 2000000
-        },
-        {
-        groups = {
-          {group = "pearls_flawless", chance = 10000000},
-            },
-            lootChance = 5000000
-          },
+       },
   },
 
   weapons = {"mixed_force_weapons"},
