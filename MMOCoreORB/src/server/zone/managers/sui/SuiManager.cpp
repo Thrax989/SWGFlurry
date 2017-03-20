@@ -737,6 +737,18 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
 				lootManager->createNamedLoot(inventory, "gorax_rare", playerName, 300);//, playerName);
 				
+			} else if (templatePath == "armor_attachments") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "armor_attachments", playerName, 300);//, playerName);
+				
+			} else if (templatePath == "clothing_attachments") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "clothing_attachments", playerName, 300);//, playerName);
+				
 			} else if (templatePath == "set_jedi_state") {
 				ghost->setJediState(2);
 

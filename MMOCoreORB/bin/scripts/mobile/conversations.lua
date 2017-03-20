@@ -282,5 +282,5 @@ includeFile("conversations/gcw_transitsystem/reb_transitconvo.lua")
 
 -- World Boss Exchange System
 includeFile("conversations/events/world_exchange.lua")
-includeFile("conversations/events/imperial_token_exchange.lua")
-includeFile("conversations/events/rebel_token_exchange.lua")
+includeFile("conversations/events/imperial_exchange.lua")
+includeFile("conversations/events/rebel_exchange.lua")

@@ -3,24 +3,24 @@ local Logger = require("utils.logger")
 require("utils.helpers")
 spHelper = require("screenplayHelper")
 
-imperial_token_exchange = ScreenPlay:new {
+imperial_exchange = ScreenPlay:new {
    numberOfActs = 1, 
-   questString = "imperial_token_exchange_task",
+   questString = "imperial_exchange_task",
    states = {}, 
 }
 
-registerScreenPlay("imperial_token_exchange", true)
+registerScreenPlay("imperial_exchange", true)
 
-function imperial_token_exchange:start() 
-   local pMerchant = spawnMobile("corellia", "imperial_token_exchange", 1, -166.718, 28, -4743.92, 88, 0 )
+function imperial_exchange:start() 
+   local pMerchant = spawnMobile("corellia", "imperial_exchange", 1, -135.732, 28, -4728.42, 273, 0 )
 
 end
 
-imperial_token_exchange_convo_handler = Object:new {
+imperial_exchange_convo_handler = Object:new {
    tstring = "conversation_exchange_dealer"
  }
 
-function imperial_token_exchange_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
+function imperial_exchange_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
    local creature = LuaCreatureObject(conversingPlayer)
    local convosession = creature:getConversationSession()
    lastConversation = nil
@@ -54,7 +54,7 @@ function imperial_token_exchange_convo_handler:getNextConversationScreen(convers
          for i = 0, containerSize - 1, 1 do
         	 local pInvObj = inventory:getContainerObject(i)
 	         local InvObj = LuaSceneObject(pInvObj)
-	         	if (InvObj:getObjectName() == "imperial_token")   then
+	         	if (InvObj:getObjectName() == "mt_pie")   then
 	         		itemCounter = itemCounter + 1
 	         	end
 	     end
@@ -158,7 +158,7 @@ function imperial_token_exchange_convo_handler:getNextConversationScreen(convers
           for i = containerSize - 1 , 0 , -1 do
           	pInvObj = inventory:getContainerObject(i)
         	invObj = LuaSceneObject(pInvObj)
-		     	if (invObj:getObjectName() == "imperial_token" and DeleteItems > 0 ) then
+		     	if (invObj:getObjectName() == "mt_pie" and DeleteItems > 0 ) then
 		     		DeleteItems = DeleteItems - 1
 		     		invObj:destroyObjectFromWorld()
 					invObj:destroyObjectFromDatabase()
@@ -173,6 +173,6 @@ function imperial_token_exchange_convo_handler:getNextConversationScreen(convers
 end
 
 
-function imperial_token_exchange_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
+function imperial_exchange_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
    return conversationScreen
 end

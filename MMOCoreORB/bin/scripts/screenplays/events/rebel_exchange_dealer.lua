@@ -3,24 +3,24 @@ local Logger = require("utils.logger")
 require("utils.helpers")
 spHelper = require("screenplayHelper")
 
-rebel_token_exchange = ScreenPlay:new {
+rebel_exchange = ScreenPlay:new {
    numberOfActs = 1, 
-   questString = "rebel_token_exchange_task",
+   questString = "rebel_exchange_task",
    states = {}, 
 }
 
-registerScreenPlay("rebel_token_exchange", true)
+registerScreenPlay("rebel_exchange", true)
 
-function rebel_token_exchange:start() 
-   local pMerchant = spawnMobile("corellia", "rebel_token_exchange", 1, -166.718, 28, -4743.92, 88, 0 )
+function rebel_exchange:start() 
+   local pMerchant = spawnMobile("corellia", "rebel_exchange", 1, -134.156, 28, -4717.36, 271, 0 )
 
 end
 
-rebel_token_exchange_convo_handler = Object:new {
+rebel_exchange_convo_handler = Object:new {
    tstring = "conversation_exchange_dealer"
  }
 
-function rebel_token_exchange_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
+function rebel_exchange_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
    local creature = LuaCreatureObject(conversingPlayer)
    local convosession = creature:getConversationSession()
    lastConversation = nil
@@ -54,7 +54,7 @@ function rebel_token_exchange_convo_handler:getNextConversationScreen(conversati
          for i = 0, containerSize - 1, 1 do
         	 local pInvObj = inventory:getContainerObject(i)
 	         local InvObj = LuaSceneObject(pInvObj)
-	         	if (InvObj:getObjectName() == "rebel_token")   then
+	         	if (InvObj:getObjectName() == "mt_soup")   then
 	         		itemCounter = itemCounter + 1
 	         	end
 	     end
@@ -158,7 +158,7 @@ function rebel_token_exchange_convo_handler:getNextConversationScreen(conversati
           for i = containerSize - 1 , 0 , -1 do
           	pInvObj = inventory:getContainerObject(i)
         	invObj = LuaSceneObject(pInvObj)
-		     	if (invObj:getObjectName() == "rebel_token" and DeleteItems > 0 ) then
+		     	if (invObj:getObjectName() == "mt_soup" and DeleteItems > 0 ) then
 		     		DeleteItems = DeleteItems - 1
 		     		invObj:destroyObjectFromWorld()
 					invObj:destroyObjectFromDatabase()
@@ -173,6 +173,6 @@ function rebel_token_exchange_convo_handler:getNextConversationScreen(conversati
 end
 
 
-function rebel_token_exchange_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
+function rebel_exchange_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
    return conversationScreen
 end
