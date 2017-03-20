@@ -9,8 +9,8 @@ outbreak_boss = Creature:new {
 	damageMax = 10000,
 	specialDamageMult = 10.0,
 	baseXp = 0,
-	baseHAM = 1000000,
-	baseHAMmax = 1000000,
+	baseHAM = 2000000,
+	baseHAMmax = 2000000,
 	armor = 3,
 	resists = {200,200,200,200,200,200,200,200,200},
 	meatType = "",
@@ -28,7 +28,22 @@ outbreak_boss = Creature:new {
 	diet = HERBIVORE,
 	scale = 5.0,
 
-	templates = {"object/mobile/outbreak_undead_deathtrooper_19_m.iff"},
+	templates = {
+				"object/mobile/outbreak_undead_deathtrooper_01_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_02_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_03_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_04_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_05_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_06_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_07_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_08_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_09_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_10_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_11_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_12_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_13_m.iff",
+				"object/mobile/outbreak_undead_deathtrooper_14_m.iff"
+				},
   lootGroups = {
 		{
 			groups = {
