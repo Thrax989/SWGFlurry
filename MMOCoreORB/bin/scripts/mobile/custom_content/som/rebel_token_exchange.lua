@@ -1,4 +1,4 @@
-rebel_exchange = Creature:new {
+rebel_token_exchange = Creature:new {
 	--objectName = "",
 	customName = "Rebel Exchange Dealer",
 	socialGroup = "rebel",
@@ -52,4 +52,4 @@ rebel_exchange = Creature:new {
         attacks = {}
 }
 
-CreatureTemplates:addCreatureTemplate(rebel_exchange, "rebel_exchange")
+CreatureTemplates:addCreatureTemplate(rebel_token_exchange, "rebel_token_exchange")

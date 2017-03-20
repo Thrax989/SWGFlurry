@@ -1,4 +1,4 @@
-imperial_exchange = Creature:new {
+imperial_token_exchange = Creature:new {
 	--objectName = "",
 	customName = "Imperial Exchange Dealer",
 	socialGroup = "imperial",
@@ -52,4 +52,4 @@ imperial_exchange = Creature:new {
         attacks = {}
 }
 
-CreatureTemplates:addCreatureTemplate(imperial_exchange, "imperial_exchange")
+CreatureTemplates:addCreatureTemplate(imperial_token_exchange, "imperial_token_exchange")
