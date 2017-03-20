@@ -49,6 +49,11 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 			"Light Saber 21", "saberhand21",
 			"Light Saber 22", "saberhand22",
 		},
+			"Attachments ca/aa",
+		{
+			"armor_attachments", "armor_attachments",
+			"clothing_attachments", "clothing_attachments",
+		},
 			"Backpacks",
 		{
 			"Test", "Test",
