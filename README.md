@@ -135,7 +135,7 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_battle	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_snow	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_spec_force	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) ris	
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ris	
 - ![#008000](https://placehold.it/15/008000/000000?text=+) singing_mountain_clan	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) snowtrooper	
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) stormtrooper
