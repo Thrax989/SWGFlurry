@@ -187,4 +187,4 @@ outbreak_boss_two = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(outbreak_boss, "outbreak_boss")
+CreatureTemplates:addCreatureTemplate(outbreak_boss_two, "outbreak_boss_two")
