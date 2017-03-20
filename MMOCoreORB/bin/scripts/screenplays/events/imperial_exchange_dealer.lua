@@ -12,7 +12,7 @@ imperial_exchange = ScreenPlay:new {
 registerScreenPlay("imperial_exchange", true)
 
 function imperial_exchange:start() 
-   local pMerchant = spawnMobile("corellia", "imperial_exchange", 1, -166.718, 28, -4743.92, 88, 0 )
+   local pMerchant = spawnMobile("corellia", "imperial_exchange", 1, -135.732, 28, -4728.42, 273, 0 )
 
 end
 
