@@ -3,24 +3,24 @@ local Logger = require("utils.logger")
 require("utils.helpers")
 spHelper = require("screenplayHelper")
 
-imperial_token_exchange = ScreenPlay:new {
+imperial_exchange = ScreenPlay:new {
    numberOfActs = 1, 
-   questString = "imperial_token_exchange_task",
+   questString = "imperial_exchange_task",
    states = {}, 
 }
 
-registerScreenPlay("imperial_token_exchange", true)
+registerScreenPlay("imperial_exchange", true)
 
-function imperial_token_exchange:start() 
-   local pMerchant = spawnMobile("corellia", "imperial_token_exchange", 1, -166.718, 28, -4743.92, 88, 0 )
+function imperial_exchange:start() 
+   local pMerchant = spawnMobile("corellia", "imperial_exchange", 1, -166.718, 28, -4743.92, 88, 0 )
 
 end
 
-imperial_token_exchange_convo_handler = Object:new {
+imperial_exchange_convo_handler = Object:new {
    tstring = "conversation_exchange_dealer"
  }
 
-function imperial_token_exchange_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
+function imperial_exchange_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
    local creature = LuaCreatureObject(conversingPlayer)
    local convosession = creature:getConversationSession()
    lastConversation = nil
@@ -173,6 +173,6 @@ function imperial_token_exchange_convo_handler:getNextConversationScreen(convers
 end
 
 
-function imperial_token_exchange_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
+function imperial_exchange_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
    return conversationScreen
 end

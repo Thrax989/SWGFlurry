@@ -1,9 +1,9 @@
-imperial_token_exchange = Creature:new {
+rebel_exchange = Creature:new {
 	--objectName = "",
-	customName = "Imperial Exchange Dealer",
-	socialGroup = "imperial",
-	pvpFaction = "imperial",
-	faction = "imperial",
+	customName = "World Exchange Dealer",
+	socialGroup = "townsperson",
+	pvpFaction = "townsperson",
+	faction = "rebel",
 	level = 300,
 	chanceHit = 300,
 	damageMin = 1245,
@@ -48,8 +48,8 @@ imperial_token_exchange = Creature:new {
 			lootChance = 10000000
 		},
 		},
-        conversationTemplate = "imperial_exchange_template",
+        conversationTemplate = "rebel_exchange_template",
         attacks = {}
 }
 
-CreatureTemplates:addCreatureTemplate(imperial_token_exchange, "imperial_token_exchange")
+CreatureTemplates:addCreatureTemplate(rebel_exchange, "rebel_exchange")
