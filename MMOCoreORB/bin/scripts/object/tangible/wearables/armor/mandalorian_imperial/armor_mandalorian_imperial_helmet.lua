@@ -44,6 +44,8 @@
 object_tangible_wearables_armor_mandalorian_imperial_armor_mandalorian_imperial_helmet = object_tangible_wearables_armor_mandalorian_imperial_shared_armor_mandalorian_imperial_helmet:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 
 
 	playerRaces = { "object/creature/player/bothan_male.iff",

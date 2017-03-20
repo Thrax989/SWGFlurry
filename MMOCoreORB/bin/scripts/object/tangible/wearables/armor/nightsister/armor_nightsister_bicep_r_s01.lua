@@ -42,6 +42,9 @@
 object_tangible_wearables_armor_nightsister_armor_nightsister_bicep_r_s01 = object_tangible_wearables_armor_nightsister_shared_armor_nightsister_bicep_r_s01:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
