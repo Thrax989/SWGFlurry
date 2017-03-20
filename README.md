@@ -107,41 +107,8 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) moraband
 
 ## -Armor crafting Balance-
-![#008000](https://placehold.it/15/008000/000000?text=+) 8 Complete 24.24%<br>
-![#FF0000](https://placehold.it/15/FF0000/000000?text=+) 25 Incomplete 75.76%
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) assault_trooper	
-- ![#008000](https://placehold.it/15/008000/000000?text=+) bone
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) bounty_hunter
-- ![#008000](https://placehold.it/15/008000/000000?text=+) chitin
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) clone_trooper
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) composite	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) deathtrooper	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) galactic_marine	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) infiltrator	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) ithorian_defender	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) ithorian_guardian	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) ithorian_sentinel	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) kashyyykian_black_mtn	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) kashyyykian_ceremonial	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) kashyyykian_hunting	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) mandalorian	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) mandalorian_imperial	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) mandalorian_rebel	
-- ![#008000](https://placehold.it/15/008000/000000?text=+) marauder	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) marine	
-- ![#008000](https://placehold.it/15/008000/000000?text=+) nightsister	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) padded	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_assault	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_battle	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_snow	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) rebel_spec_force	
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ris	
-- ![#008000](https://placehold.it/15/008000/000000?text=+) singing_mountain_clan	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) snowtrooper	
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) stormtrooper
-- ![#008000](https://placehold.it/15/008000/000000?text=+) tantel	
-- ![#008000](https://placehold.it/15/008000/000000?text=+) ubese
-- ![#008000](https://placehold.it/15/008000/000000?text=+) zam
+Currently Testing Crafted RIS armor. Testing Special protections . Should be able to craft up to 50%LS resist max. Report any bugs if you find any 
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Crafted RIS Armor	
 
 ## -Dungeons / Encounters-
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) tatooine tusken bunker
