@@ -495,6 +495,7 @@ includeFile("cities/tatooine_mos_taike.lua")
 includeFile("cities/tatooine_wayfar.lua")
 includeFile("cities/yavin4_labor_outpost.lua")
 includeFile("cities/yavin4_mining_outpost.lua")
+includeFile("cities/mandalore.lua")
 
 -- POIs
 includeFile("poi/corellia_rogue_corsec_base.lua")
