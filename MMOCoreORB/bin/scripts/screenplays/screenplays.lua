@@ -603,6 +603,8 @@ includeFile("gcw/gcw_transit_deco.lua")
 -- Custom Content
 includeFile("custom_content/screenplays.lua")
 includeFile("events/world_exchange_dealer.lua")
+includeFile("events/rebel_token_exchange_dealer.lua")
+includeFile("events/imperial_token_exchange_dealer.lua")
 --includeFile("events/black_sun.lua")
 --includeFile("poi/lok_rvboss.lua")
 --includeFile("dungeon/teleport_pve.lua")
