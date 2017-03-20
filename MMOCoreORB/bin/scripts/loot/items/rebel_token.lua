@@ -2,7 +2,7 @@ rebel_token= {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Rebel Token",
-	directObjectTemplate = "object/tangible/event_perk/lifeday_rebel_token.iff",
+	directObjectTemplate = "object/tangible/loot/misc/mt_soup.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
