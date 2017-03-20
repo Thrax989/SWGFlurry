@@ -6,6 +6,7 @@ janta_chieftain = Creature:new {
 	chanceHit = 80.00,
 	damageMin = 2800,
 	damageMax = 3500,
+	specialDamageMult = 5.0,
 	baseXp = 27849,
 	baseHAM = 900000,
 	baseHAMmax = 900000,
