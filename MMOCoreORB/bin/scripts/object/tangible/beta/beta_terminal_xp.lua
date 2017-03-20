@@ -99,7 +99,7 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 		},
 			"Legendary Loot boxs",
 		{
-			"Test", "Test",
+			"Jedi Rare Loot Box", "object/tangible/item/loot_cube.iff",
 		},
 		"Force Sensitive",
 		{
