@@ -480,3 +480,6 @@ includeFile("groups/npc/janta_rare.lua")
 includeFile("groups/capes.lua")
 includeFile("groups/frsrobes.lua")
 includeFile("groups/weapon/g_lightsaber_vader.lua")
+
+includeFile("groups/imperial_token1.lua")
+includeFile("groups/rebel_token1.lua")
