@@ -54,7 +54,7 @@ function rebel_exchange_convo_handler:getNextConversationScreen(conversationTemp
          for i = 0, containerSize - 1, 1 do
         	 local pInvObj = inventory:getContainerObject(i)
 	         local InvObj = LuaSceneObject(pInvObj)
-	         	if (InvObj:getObjectName() == "rebel_token")   then
+	         	if (InvObj:getObjectName() == "Rebel Token")   then
 	         		itemCounter = itemCounter + 1
 	         	end
 	     end
@@ -158,7 +158,7 @@ function rebel_exchange_convo_handler:getNextConversationScreen(conversationTemp
           for i = containerSize - 1 , 0 , -1 do
           	pInvObj = inventory:getContainerObject(i)
         	invObj = LuaSceneObject(pInvObj)
-		     	if (invObj:getObjectName() == "rebel_token" and DeleteItems > 0 ) then
+		     	if (invObj:getObjectName() == "Rebel Token" and DeleteItems > 0 ) then
 		     		DeleteItems = DeleteItems - 1
 		     		invObj:destroyObjectFromWorld()
 					invObj:destroyObjectFromDatabase()
