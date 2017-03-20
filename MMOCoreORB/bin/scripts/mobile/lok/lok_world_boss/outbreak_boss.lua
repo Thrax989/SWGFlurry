@@ -109,7 +109,7 @@ outbreak_boss = Creature:new {
 			groups = {
 				{group = "g_named_crystals", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
   		{
    			groups = {
@@ -119,15 +119,9 @@ outbreak_boss = Creature:new {
   		},
   		{
     			groups = {
-      				{group = "av_21_pp", chance = 10000000}
-    		},
-    			lootChance = 10000000
-  		},
-  		{
-    			groups = {
       				{group = "av_21_scheme", chance = 10000000}
     		},
-    			lootChance = 10000000
+    			lootChance = 5000000
   		},
 		{
 			groups = {
