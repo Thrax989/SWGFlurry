@@ -40,19 +40,28 @@ janta_cave_boss = Creature:new {
 		},
 		{
 			groups = {
-			{group = "wearables_rare", chance = 4000000},
-			{group = "aakuan_common", chance = 3000000},
-			{group = "g_named_crystals", chance = 3000000}
+			{group = "wearables_rare", chance = 1000000},
+			{group = "aakuan_common", chance = 1000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+			{group = "g_named_crystals", chance = 1000000}
 
 		},
-			lootChance = 8000000
+			lootChance = 5000000
+		},
+		{
+			groups = {
+			{group = "armor_attachments", chance = 1000000},
+			{group = "clothing_attachments", chance = 1000000}
+		},
+			lootChance = 1000000
 		},
 		{
 			groups = {
 			{group = "axkva_min", chance = 1000000},
-			{group = "armor_attachments", chance = 1000000},
-			{group = "clothing_attachments", chance = 1000000}
-
 		},
 			lootChance = 8000000
 		},
