@@ -24,7 +24,7 @@ woolamander_boss = Creature:new {
 	creatureBitmask = PACK + HERD,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-  Scale 1.5,
+  	Scale 1.5,
 
 	templates = {"object/mobile/woolamander.iff"},
 		lootGroups = {
@@ -64,10 +64,29 @@ woolamander_boss = Creature:new {
 },
               				lootChance = 10000000
 },
+		{
+          			groups = {
+            				{group = "weapons_all", chance = 10000000}
+},
+              				lootChance = 10000000
+},
+{
+      				groups = {
+        				{group = "armor_attachments", chance = 10000000},
+        				{group = "clothing_attachments", chance = 10000000}
+},
+      					lootChance = 10000000
+},
+{
+      				groups = {
+        				{group = "armor_attachments", chance = 10000000},
+        				{group = "clothing_attachments", chance = 10000000}
+},
+      					lootChance = 10000000
+},
 },
 	weapons = {"creature_spit_heavy_flame"},
 	attacks = {
-			attacks = {
 		{"creatureareacombo","StateAccuracyBonus=100"},
 		{"creatureareaknockdown","StateAccuracyBonus=100"},
 		{"knockdownattack","KnockdownChance=100"},
