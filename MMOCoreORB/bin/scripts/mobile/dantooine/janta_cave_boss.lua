@@ -6,6 +6,7 @@ janta_cave_boss = Creature:new {
 	  chanceHit = 80.00,
 	  damageMin = 3200,
 	  damageMax = 4000,
+		specialDamageMult = 5.0,
 	  baseXp = 0,
 	  baseHAM = 1000000,
 	  baseHAMmax = 1000000,
@@ -70,7 +71,7 @@ janta_cave_boss = Creature:new {
 			},
 weapons = {"dark_jedi_weapons_gen4"},
 reactionStf = "@npc_reaction/fancy",
-attacks = merge(lightsabermaster,forcewielder)
+attacks = merge(lightsabermaster,forcewielder,forcepowermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(janta_cave_boss, "janta_cave_boss")
