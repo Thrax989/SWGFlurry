@@ -4,14 +4,14 @@ janta_cave_boss = Creature:new {
 	  faction = "janta_tribe",
 	  level = 300,
 	  chanceHit = 80.00,
-	  damageMin = 3200,
-	  damageMax = 4000,
-		specialDamageMult = 5.0,
+	  damageMin = 5000,
+	  damageMax = 6000,
+	  specialDamageMult = 5.0,
 	  baseXp = 0,
 	  baseHAM = 1000000,
 	  baseHAMmax = 1000000,
 	  armor = 3,
-	  resists = {200,100,100,100,100,100,100,100,80},
+	  resists = {200,100,100,100,100,100,100,100,100},
 	  meatType = "",
 	  meatAmount = 0,
 	  hideType = "",
@@ -48,27 +48,33 @@ janta_cave_boss = Creature:new {
 			lootChance = 8000000
 		},
 		{
-		groups = {
-			{group = "axkva_min", chance = 4000000},
-			{group = "armor_attachments", chance = 3000000},
-			{group = "clothing_attachments", chance = 3000000}
+			groups = {
+			{group = "axkva_min", chance = 1000000},
+			{group = "armor_attachments", chance = 1000000},
+			{group = "clothing_attachments", chance = 1000000}
 
 		},
-		lootChance = 6000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 			{group = "krayt_tissue_rare", chance = 10000000}
 		},
-		lootChance = 6000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
-			{group = "looted_container", chance = 10000000},
-				},
-				lootChance = 6000000
-			},
-			},
+			{group = "looted_container", chance = 10000000}
+		},
+			lootChance = 6000000
+		},
+		{
+			groups = {
+			{group = "apocalypse", chance = 10000000}
+		},
+			lootChance = 10000000
+		},
+		},
 weapons = {"dark_jedi_weapons_gen4"},
 reactionStf = "@npc_reaction/fancy",
 attacks = merge(lightsabermaster,forcewielder,forcepowermaster)
