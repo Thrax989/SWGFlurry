@@ -30,39 +30,39 @@ woolamander_boss = Creature:new {
 		lootGroups = {
 {
 			        groups = {
-				              {group = "harrower_bone", chance = 10000000}
+				        {group = "harrower_bone", chance = 10000000}
 },
 			                lootChance = 10000000
 }
 {
 			        groups = {
-				              {group = "harrower_bone", chance = 10000000}
+				        {group = "harrower_bone", chance = 10000000}
 },
 			                lootChance = 10000000
 }
 {
 			        groups = {
-				              {group = "harrower_bone", chance = 10000000}
+				        {group = "harrower_bone", chance = 10000000}
 },
 			                lootChance = 10000000
 }
 {
 			        groups = {
-				              {group = "acklay", chance = 10000000}
+				        {group = "acklay", chance = 10000000}
 },
 			                lootChance = 10000000
 }
 {
-          		groups = {
-            			{group = "fire_breathing_spider", chance = 10000000}
+          			groups = {
+            				{group = "fire_breathing_spider", chance = 10000000}
 },
-              		lootChance = 10000000
+              				lootChance = 10000000
 },
 {
-          		groups = {
-            			{group = "wearables_rare", chance = 10000000}
+          			groups = {
+            				{group = "wearables_rare", chance = 10000000}
 },
-              		lootChance = 10000000
+              				lootChance = 10000000
 },
 },
 	weapons = {"creature_spit_heavy_flame"},
@@ -77,10 +77,10 @@ woolamander_boss = Creature:new {
 		{"intimidationattack","IntimidationChance=100"},
 		{"creatureareapoison","PoisonChance=100"},
 		{"strongpoison","PoisonChance=100"},
-    {"strongdisease","DiseaseChance=100"},
+    		{"strongdisease","DiseaseChance=100"},
 		{"creatureareaattack","StateAccuracyBonus=100"},
-    {"creatureareadisease","DiseaseChance=100"},
-    {"creatureareableeding","BleedChance=100"}
+	    	{"creatureareadisease","DiseaseChance=100"},
+    		{"creatureareableeding","BleedChance=100"}
 	}
 }
 
