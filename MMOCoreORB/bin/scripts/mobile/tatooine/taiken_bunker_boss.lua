@@ -7,10 +7,10 @@ taiken_bunker_boss = Creature:new {
   damageMax = 4000,
   specialDamageMult = 5.0,
   baseXp = 0,
-  baseHAM = 1000000,
-  baseHAMmax = 1000000,
+  baseHAM = 1500000,
+  baseHAMmax = 1500000,
   armor = 3,
-  resists = {100,90,90,90,90,90,90,90,90},
+  resists = {100,100,100,100,100,100,100,100,100},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -39,21 +39,21 @@ taiken_bunker_boss = Creature:new {
 },
 {
         groups = {
-  				{group = "wearables_rare", chance = 4000000},
-  				{group = "aakuan_common", chance = 3000000},
-          {group = "g_named_crystals", chance = 3000000}
+  				{group = "wearables_rare", chance = 10000000},
+  				{group = "aakuan_common", chance = 10000000},
+          {group = "g_named_crystals", chance = 10000000}
 
 },
   			lootChance = 8000000
 },
 {
       groups = {
-        {group = "axkva_min", chance = 4000000},
-        {group = "armor_attachments", chance = 3000000},
-        {group = "clothing_attachments", chance = 3000000}
+        {group = "axkva_min", chance = 10000000},
+        {group = "armor_attachments", chance = 10000000},
+        {group = "clothing_attachments", chance = 10000000}
 
 },
-        lootChance = 6000000
+        lootChance = 8000000
 },
 {
         groups = {
@@ -63,7 +63,19 @@ taiken_bunker_boss = Creature:new {
 },
 {
         groups = {
-        {group = "looted_container", chance = 10000000},
+        {group = "looted_container", chance = 10000000}
+},
+          lootChance = 10000000
+},
+{
+        groups = {
+        {group = "apocalypse", chance = 10000000}
+},
+          lootChance = 10000000
+},
+{
+        groups = {
+        {group = "theme_park_reward_imperial_kaja", chance = 10000000}
 },
           lootChance = 10000000
 },
