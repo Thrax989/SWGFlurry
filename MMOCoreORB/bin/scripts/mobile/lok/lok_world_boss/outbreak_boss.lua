@@ -6,11 +6,11 @@ outbreak_boss = Creature:new {
 	level = 300,
 	chanceHit = 100.00,
 	damageMin = 5000,
-	damageMax = 6,
+	damageMax = 6000,
 	specialDamageMult = 5.0,
 	baseXp = 0,
-	baseHAM = 2000000,
-	baseHAMmax = 2000000,
+	baseHAM = 1500000,
+	baseHAMmax = 1500000,
 	armor = 3,
 	resists = {200,200,200,200,200,200,200,200,200},
 	meatType = "",
@@ -188,16 +188,14 @@ outbreak_boss = Creature:new {
 		{"dizzyattack","DizzyChance=100"},
 		{"stunattack","StunChance=100"},
 		{"mildpoison","PoisonChance=100"},
-		{"milddisease","DiseaseChance=100"},
 		{"intimidationattack","IntimidationChance=100"},
 		{"mediumpoison","PoisonChance=100"},
-    {"mediumdisease","DiseaseChance=100"},
+    		{"mediumdisease","DiseaseChance=100"},
 		{"creatureareapoison","PoisonChance=100"},
 		{"strongpoison","PoisonChance=100"},
-    {"strongdisease","DiseaseChance=100"},
 		{"creatureareaattack","StateAccuracyBonus=100"},
-    {"creatureareadisease","DiseaseChance=100"},
-    {"creatureareableeding","BleedChance=100"}
+    		{"creatureareadisease","DiseaseChance=100"},
+    		{"creatureareableeding","BleedChance=100"}
 	}
 }
 

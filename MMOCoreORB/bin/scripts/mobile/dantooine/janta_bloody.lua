@@ -26,7 +26,7 @@ janta_bloody = Creature:new {
   diet = HERBIVORE,
   Scale = 2.0,
 
-  templates = {"object/mobile/dressed_dathomir_nightsister_axkva.iff"},
+  templates = {"object/mobile/dantari_female.iff"},
     lootGroups = {
       {
         groups = {
