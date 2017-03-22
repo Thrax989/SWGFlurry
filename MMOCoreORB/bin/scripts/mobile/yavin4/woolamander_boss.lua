@@ -10,7 +10,7 @@ woolamander_boss = Creature:new {
 	baseHAM = 1000000,
 	baseHAMmax = 1000000,
 	armor = 0,
-	resists = {150,150,-150,150,150,150,150,150,150},
+	resists = {150,150,150,150,150,150,150,150,150},
 	meatType = "meat_carnivore",
 	meatAmount = 20,
 	hideType = "hide_wooly",
@@ -24,34 +24,34 @@ woolamander_boss = Creature:new {
 	creatureBitmask = PACK + HERD,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-  	Scale 1.5,
+  	Scale = 1.5,
 
 	templates = {"object/mobile/woolamander.iff"},
-		lootGroups = {
+	lootGroups = {
 {
 			        groups = {
 				        {group = "harrower_bone", chance = 10000000}
 },
 			                lootChance = 10000000
-}
+},
 {
 			        groups = {
 				        {group = "harrower_bone", chance = 10000000}
 },
 			                lootChance = 10000000
-}
+},
 {
 			        groups = {
 				        {group = "harrower_bone", chance = 10000000}
 },
 			                lootChance = 10000000
-}
+},
 {
 			        groups = {
 				        {group = "acklay", chance = 10000000}
 },
 			                lootChance = 10000000
-}
+},
 {
           			groups = {
             				{group = "fire_breathing_spider", chance = 10000000}
@@ -64,7 +64,7 @@ woolamander_boss = Creature:new {
 },
               				lootChance = 10000000
 },
-		{
+{
           			groups = {
             				{group = "weapons_all", chance = 10000000}
 },

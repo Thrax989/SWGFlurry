@@ -49,7 +49,7 @@ janta_chieftain = Creature:new {
 		},
 		{
 			groups = {
-				{group = "janta_common", chance = 3000000},
+				{group = "janta_common", chance = 10000000},
 				{group = "armor_attachments", chance = 3000000},
 				{group = "clothing_attachments", chance = 4000000}
 
@@ -60,25 +60,25 @@ janta_chieftain = Creature:new {
 			groups = {
 				{group = "krayt_tissue_rare", chance = 10000000}
 		},
-			lootChance = 6000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "looted_container", chance = 10000000},
+				{group = "looted_container", chance = 10000000}
 				},
 			lootChance = 6000000
 		},
 		{
 			groups = {
-				{group = "pearls_flawless", chance = 10000000},
+				{group = "pearls_flawless", chance = 10000000}
 		},
 			lootChance = 6000000
 		},
 		{
 			groups = {
-				{group = "janta_rare", chance = 10000000},
+				{group = "geonosian_common", chance = 10000000}
 		},
-			lootChance = 2000000
+			lootChance = 10000000
 		},
 		},
 
