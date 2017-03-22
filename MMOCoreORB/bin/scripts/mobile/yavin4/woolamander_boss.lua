@@ -33,25 +33,25 @@ woolamander_boss = Creature:new {
 				        {group = "harrower_bone", chance = 10000000}
 },
 			                lootChance = 10000000
-}
+},
 {
 			        groups = {
 				        {group = "harrower_bone", chance = 10000000}
 },
 			                lootChance = 10000000
-}
+},
 {
 			        groups = {
 				        {group = "harrower_bone", chance = 10000000}
 },
 			                lootChance = 10000000
-}
+},
 {
 			        groups = {
 				        {group = "acklay", chance = 10000000}
 },
 			                lootChance = 10000000
-}
+},
 {
           			groups = {
             				{group = "fire_breathing_spider", chance = 10000000}
@@ -64,7 +64,7 @@ woolamander_boss = Creature:new {
 },
               				lootChance = 10000000
 },
-		{
+{
           			groups = {
             				{group = "weapons_all", chance = 10000000}
 },
