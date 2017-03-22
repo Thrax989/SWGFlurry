@@ -64,21 +64,21 @@ janta_chieftain = Creature:new {
 		},
 		{
 			groups = {
-				{group = "looted_container", chance = 10000000},
+				{group = "looted_container", chance = 10000000}
 				},
 			lootChance = 6000000
 		},
 		{
 			groups = {
-				{group = "pearls_flawless", chance = 10000000},
-		},
+				{group = "pearls_flawless", chance = 10000000}
+		}
 			lootChance = 6000000
 		},
 		{
 			groups = {
-				{group = "janta_rare", chance = 10000000},
+				{group = "geonosian_common", chance = 10000000}
 		},
-			lootChance = 2000000
+			lootChance = 10000000
 		},
 		},
 
