@@ -83,7 +83,7 @@ taiken_moff = Creature:new {
              {group = "nyms_rare", chance = 10000000},
 },
              lootChance = 10000000
-},
+}
 },
     weapons = {"imperial_weapons_heavy"},
     conversationTemplate = "",
