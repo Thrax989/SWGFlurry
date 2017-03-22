@@ -83,7 +83,7 @@ reclusive_gurk_king = Creature:new {
         		{group = "clothing_attachments", chance = 10000000}
 },
       			lootChance = 10000000
-}
+},
 },
 	weapons = {"creature_spit_heavy_flame"},
 	reactionStf = "@npc_reaction/slang",
