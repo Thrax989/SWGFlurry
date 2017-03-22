@@ -33,57 +33,57 @@ reclusive_gurk_king = Creature:new {
 			{group = "gurk_king_common", chance = 10000000}
 },
 			lootChance = 10000000
-}
+},
 {
 	        groups = {
 			{group = "gurk_king_common", chance = 10000000}
 },
 			lootChance = 10000000
-}
+},
 {
 	        groups = {
 			{group = "rancor_common", chance = 10000000}
 },
 			lootChance = 10000000
-}
+},
 {
 	        groups = {
 			{group = "rancor_common", chance = 10000000}
 },
 			lootChance = 10000000
-}
+},
 {
 	        groups = {
 			{group = "giant_dune_kimo_common", chance = 10000000}
 },
 			lootChance = 10000000
-}
+},
 {
 	        groups = {
 			{group = "giant_dune_kimo_common", chance = 10000000}
 },
 			lootChance = 10000000
-}
+},
 {
 	        groups = {
 			{group = "krayt_dragon_common2", chance = 10000000}
 },
 			lootChance = 10000000
+},
+{
+      		groups = {
+        		{group = "armor_attachments", chance = 10000000},
+        		{group = "clothing_attachments", chance = 10000000}
+},
+      			lootChance = 10000000
+},
+{
+      		groups = {
+        		{group = "armor_attachments", chance = 10000000},
+        		{group = "clothing_attachments", chance = 10000000}
+},
+      			lootChance = 10000000
 }
-{
-      		groups = {
-        		{group = "armor_attachments", chance = 10000000},
-        		{group = "clothing_attachments", chance = 10000000}
-},
-      			lootChance = 10000000
-},
-{
-      		groups = {
-        		{group = "armor_attachments", chance = 10000000},
-        		{group = "clothing_attachments", chance = 10000000}
-},
-      			lootChance = 10000000
-},
 },
 	weapons = {"creature_spit_heavy_flame"},
 	reactionStf = "@npc_reaction/slang",
