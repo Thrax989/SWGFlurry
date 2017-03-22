@@ -24,11 +24,13 @@ runUnitTests<br>
 # Required Mod The Galaxy TRE Files
 https://www.mediafire.com/?cmmbkmbzf02bs97
 <br>
-	maxSearchPriority=25<br>
+	maxSearchPriority=27<br>
+	searchTree_00_25=capes.tre<br>
+	searchTree_00_24=pods.tre<br>
 	searchTree_00_23=hoth.tre<br>
 	searchTree_00_22=skill_patch.tre<br>
-	searchTree_00_21=flurryui.tre<br>
-	searchTree_00_20=armor.tre<br>
+	searchTree_00_21=armor.tre<br>
+	searchTree_00_20=phoenix_patch_1.tre<br>
 	searchTree_00_19=mtg_planets.tre<br>
 	searchTree_00_18=mtg_patch_019.tre<br>
 	searchTree_00_17=mtg_patch_018.tre<br>
