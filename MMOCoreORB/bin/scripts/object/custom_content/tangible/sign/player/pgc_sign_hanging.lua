@@ -1,0 +1,3 @@
+object_tangible_sign_player_pgc_sign_hanging = object_tangible_sign_player_shared_pgc_sign_hanging:new {
+}
+ObjectTemplates:addTemplate(object_tangible_sign_player_pgc_sign_hanging, "object/tangible/sign/player/pgc_sign_hanging.iff")

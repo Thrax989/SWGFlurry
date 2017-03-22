@@ -97,7 +97,7 @@ public:
 		if (player != NULL) {
 			player->sendSystemMessage("Syntax: /server playermanager [setxpmodifier] [value]");
 			player->sendSystemMessage("Syntax: /server playermanager [listjedi]");
-			player->sendSystemMessage("Syntax: /server playermanager [list_frsjedi]");
+			player->sendSystemMessage("Syntax: /server playermanager [listfrs]");
 			player->sendSystemMessage("Syntax: /server playermanager [listadmins]");
 		}
 	}

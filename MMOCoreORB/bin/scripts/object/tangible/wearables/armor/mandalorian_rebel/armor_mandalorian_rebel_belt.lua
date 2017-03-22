@@ -44,6 +44,8 @@
 object_tangible_wearables_armor_mandalorian_rebel_armor_mandalorian_rebel_belt = object_tangible_wearables_armor_mandalorian_rebel_shared_armor_mandalorian_rebel_belt:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 
 
 	playerRaces = { "object/creature/player/bothan_male.iff",

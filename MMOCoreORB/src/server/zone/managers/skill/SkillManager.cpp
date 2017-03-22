@@ -358,7 +358,7 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 	creature->sendMessage(msg4);
 
 	SkillModManager::instance()->verifySkillBoxSkillMods(creature);
-	creature->playEffect("clienteffect/cbt_ship_capital_destruction_split_00_02.cef", "");
+	creature->playEffect("clienteffect/entertainer_spot_light_level_3.cef", "");
 
 	return true;
 }

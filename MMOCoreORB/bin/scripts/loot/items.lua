@@ -1354,3 +1354,6 @@ includeFile("items/berserker_rifle_schematic.lua")
 includeFile("items/capes1.lua")
 includeFile("items/capes2.lua")
 
+includeFile("items/imperial_token.lua")
+includeFile("items/rebel_token.lua")
+

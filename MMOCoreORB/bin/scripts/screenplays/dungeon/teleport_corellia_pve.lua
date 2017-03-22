@@ -20,7 +20,7 @@ end
 
 function teleport_corellia_pveScreenPlay:spawnMobiles()
 
-	local pCollector1 = spawnMobile("corellia", "corelliaport", 1, -159.006, 28, -4705.44, 88, 0 )
+	local pCollector1 = spawnMobile("corellia", "corelliaport", 1, -158.97, 28, -4705.32, 175, 0 )
 
 	local collector1 = LuaCreatureObject(pCollector1)
 	collector1:setOptionsBitmask(264)

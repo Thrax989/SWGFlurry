@@ -1,0 +1,3 @@
+object_tangible_destructible_4point_power_generator = object_tangible_destructible_shared_4point_power_generator:new {
+}
+ObjectTemplates:addTemplate(object_tangible_destructible_4point_power_generator, "object/tangible/destructible/4point_power_generator.iff")

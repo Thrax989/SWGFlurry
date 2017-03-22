@@ -910,7 +910,7 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 
 			String name = object->getDisplayedName();
 
-			if (!name.toLowerCase().contains("shrine"))
+			if (!name.toLowerCase().contains("mysterious_shrine"))
 				continue;
 
 			results << name;
@@ -931,7 +931,7 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 	Quaternion* direction;
 	PlayerObject* ghost = player->getPlayerObject();
 
-	if (name.toLowerCase().contains("shrine")) {
+	if (name.toLowerCase().contains("mysterious_shrine")) {
 		Zone* zone = player->getZone();
 		if (cloner->getParent().get() != NULL) {
 			player->switchZone(zone->getZoneName(), cloner->getPositionX(), cloner->getPositionZ(), cloner->getPositionY(), cloner->getParentID());
@@ -995,7 +995,7 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		uint64 preDesignatedFacilityOid = ghost->getCloningFacility();
 		ManagedReference<SceneObject*> preDesignatedFacility = server->getObject(preDesignatedFacilityOid);
 
-		if (preDesignatedFacility == NULL || preDesignatedFacility != cloningBuilding || name.toLowerCase().contains("shrine")) {
+		if (preDesignatedFacility == NULL || preDesignatedFacility != cloningBuilding || name.toLowerCase().contains("mysterious_shrine")) {
 			player->addWounds(CreatureAttribute::HEALTH, 100, true, false);
 			player->addWounds(CreatureAttribute::ACTION, 100, true, false);
 			player->addWounds(CreatureAttribute::MIND, 100, true, false);
@@ -3232,9 +3232,9 @@ void PlayerManagerImplementation::addInsurableItemsRecursive(SceneObject* obj, S
 		if(item == NULL || item->hasAntiDecayKit())
 			continue;
 
-		if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isArmorObject() || item->isWearableObject())) {
+		if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || item->isArmorObject() || item->isWearableObject())) {
 			items->put(item);
-		} else if ((item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isArmorObject() || item->isWearableObject()) && !onlyInsurable) {
+		} else if ((item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || item->isArmorObject() || item->isWearableObject()) && !onlyInsurable) {
 			items->put(item);
 		}
 
@@ -3266,9 +3266,9 @@ SortedVector<ManagedReference<SceneObject*> > PlayerManagerImplementation::getIn
 			if(item == NULL || item->hasAntiDecayKit())
 				continue;
 
-			if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isArmorObject() || item->isWearableObject())) {
+			if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || item->isArmorObject() || item->isWearableObject())) {
 				insurableItems.put(item);
-			} else if ((item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isArmorObject() || item->isWearableObject()) && !onlyInsurable) {
+			} else if ((item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || item->isArmorObject() || item->isWearableObject()) && !onlyInsurable) {
 				insurableItems.put(item);
 			}
 		}

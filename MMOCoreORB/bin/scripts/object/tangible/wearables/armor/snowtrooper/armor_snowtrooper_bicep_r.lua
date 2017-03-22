@@ -42,7 +42,9 @@
 
 
 object_tangible_wearables_armor_snowtrooper_armor_snowtrooper_bicep_r = object_tangible_wearables_armor_snowtrooper_shared_armor_snowtrooper_bicep_r:new {
-	templateType = ARMOROBJECT,	
+	templateType = ARMOROBJECT,
+
+	objectMenuComponent = "ArmorObjectMenuComponent",
 
 	faction = "Imperial",
 

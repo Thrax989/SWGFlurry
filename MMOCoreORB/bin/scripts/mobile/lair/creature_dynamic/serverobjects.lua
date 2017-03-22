@@ -420,3 +420,8 @@ includeFile("lair/creature_dynamic/yavin4_tanc_mite_pack_neutral_none.lua")
 includeFile("lair/creature_dynamic/yavin4_tybis_herd_neutral_none.lua")
 includeFile("lair/creature_dynamic/yavin4_tybis_pack_neutral_none.lua")
 includeFile("lair/creature_dynamic/yavin4_whisper_bird_pack_neutral_none.lua")
+
+includeFile("lair/creature_dynamic/taanab_nerf_herd.lua")
+includeFile("lair/creature_dynamic/taanab_great_nerf_herd.lua")
+includeFile("lair/creature_dynamic/taanab_ambrian_staga_pack.lua")
+includeFile("lair/creature_dynamic/taanab_grassland_nerf_herd.lua")

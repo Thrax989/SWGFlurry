@@ -1066,15 +1066,7 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 	String customizationname = "";
 
 	//Database::escapeString(name);
-
-	//Remove color codes
 	String newName = name;
-	while (newName.contains("\\#")) {
-		int index = newName.indexOf("\\#");
-		String sub = "\\" + newName.subString(index, index + 2);
-		newName = newName.replaceFirst(sub,"");
-	}
-
 	UnicodeString customName(newName);
 	prototype->setCustomObjectName(customName, false);
 

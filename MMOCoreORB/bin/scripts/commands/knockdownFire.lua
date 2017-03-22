@@ -70,6 +70,21 @@ KnockdownFireCommand = {
 		0 
 	  )
 	},
+	
+	dotEffects = {
+	  DotEffect( 
+		ONFIRE, 
+		{"resistance_fire", "fire_resist"},
+		HEALTH,
+		true,
+		0,
+		100,
+		100, 
+		60,
+		10,
+		2
+	  )
+	},
 
 	animation = "fire_3_single", 
 	animType = GENERATE_RANGED,

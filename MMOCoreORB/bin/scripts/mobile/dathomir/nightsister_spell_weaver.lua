@@ -43,6 +43,18 @@ nightsister_spell_weaver = Creature:new {
 				{group = "carbines", chance = 1000000}
 			},
 			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "nightsister_rare", chance = 10000000},
+			},
+			lootChance = 1500000
+		},
+		{
+	           groups = {
+				{group = "junk", chance = 10000000},
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"mixed_force_weapons"},

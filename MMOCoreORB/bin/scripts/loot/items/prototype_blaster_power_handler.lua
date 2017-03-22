@@ -6,8 +6,8 @@ prototype_blaster_power_handler = {
 	customObjectName = "prototype blaster power handler",
 	directObjectTemplate = "object/tangible/component/weapon/blaster_power_handler_advanced.iff",
 	craftingValues = {
-		{"mindamage",300,325,0},
-		{"maxdamage",400,425,0},
+		{"mindamage",40,80,0},
+		{"maxdamage",40,80,0},
 		{"attackspeed",-0.5,-1.0,1},
 		{"woundchance",12,15,5},
 		{"useCount",5,15,0},

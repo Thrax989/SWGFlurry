@@ -718,6 +718,54 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
 	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
 				lootManager->createNamedLoot(inventory, "jedi_bracelets", playerName, 300);//, playerName);
+
+			} else if (templatePath == "color_crystals") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "color_crystals", playerName, 300);//, playerName);
+
+			} else if (templatePath == "g_named_crystals") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "g_named_crystals", playerName, 300);//, playerName);
+				
+			} else if (templatePath == "pearls_flawless") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "pearls_flawless", playerName, 300);//, playerName);
+
+			} else if (templatePath == "nightsister_rare") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "nightsister_rare", playerName, 300);//, playerName);
+
+			} else if (templatePath == "krayt_tissue_rare") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "krayt_tissue_rare", playerName, 300);//, playerName);
+
+			} else if (templatePath == "gorax_rare") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "gorax_rare", playerName, 300);//, playerName);
+				
+			} else if (templatePath == "armor_attachments") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "armor_attachments", playerName, 300);//, playerName);
+				
+			} else if (templatePath == "clothing_attachments") {
+                                String playerName = player->getFirstName();
+	                        ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+	                        ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+				lootManager->createNamedLoot(inventory, "clothing_attachments", playerName, 300);//, playerName);
 				
 			} else if (templatePath == "set_jedi_state") {
 				ghost->setJediState(2);

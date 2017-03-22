@@ -42,7 +42,9 @@
 
 
 object_tangible_wearables_armor_snowtrooper_armor_snowtrooper_boots = object_tangible_wearables_armor_snowtrooper_shared_armor_snowtrooper_boots:new {
-	templateType = ARMOROBJECT,	
+	templateType = ARMOROBJECT,
+
+	objectMenuComponent = "ArmorObjectMenuComponent",
 
 	faction = "Imperial",
 

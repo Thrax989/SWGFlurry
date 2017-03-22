@@ -1,17 +1,17 @@
 janta_chieftain = Creature:new {
 	customName = "Janta Chieftain",
 	socialGroup = "janta_tribe",
-	pvpFaction = "",
 	faction = "janta_tribe",
 	level = 300,
-	chanceHit = 50.00,
-	damageMin = 1800,
-	damageMax = 3310,
+	chanceHit = 80.00,
+	damageMin = 2800,
+	damageMax = 3500,
+	specialDamageMult = 5.0,
 	baseXp = 27849,
-	baseHAM = 321000,
-	baseHAMmax = 392000,
+	baseHAM = 900000,
+	baseHAMmax = 900000,
 	armor = 0,
-	resists = {50,50,50,50,50,50,50,50,50},
+	resists = {80,80,80,80,80,80,80,80,80},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -31,30 +31,60 @@ janta_chieftain = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 8000000},
 				{group = "armor_attachments", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000}
-			},
+				{group = "clothing_attachments", chance = 1000000},
+				{group = "crystals_premium", chance = 4000000},
+				{group = "pearls_flawless", chance = 4000000}
+		},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 4000000},
-				{group = "janta_rare", chance = 1000000}
-			},
-			lootChance = 10000000
+				{group = "wearables_rare", chance = 4000000},
+				{group = "aakuan_common", chance = 4000000},
+				{group = "g_named_crystals", chance = 2000000}
+
+		},
+			lootChance = 8000000
 		},
 		{
 			groups = {
 				{group = "janta_common", chance = 10000000},
-			},
-			lootChance = 7500000
+				{group = "armor_attachments", chance = 3000000},
+				{group = "clothing_attachments", chance = 4000000}
+
+		},
+			lootChance = 6000000
+		},
+		{
+			groups = {
+				{group = "krayt_tissue_rare", chance = 10000000}
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "looted_container", chance = 10000000}
+				},
+			lootChance = 6000000
+		},
+		{
+			groups = {
+				{group = "pearls_flawless", chance = 10000000}
+		},
+			lootChance = 6000000
+		},
+		{
+			groups = {
+				{group = "geonosian_common", chance = 10000000}
+		},
+			lootChance = 10000000
 		},
 		},
-	weapons = {"primitive_weapons"},
+
+	weapons = {"unarmed_weapons"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(pikemanmaster,fencermaster,brawlermaster)
+	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(janta_chieftain, "janta_chieftain")

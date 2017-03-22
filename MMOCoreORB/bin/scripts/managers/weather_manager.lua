@@ -239,3 +239,56 @@ kaas = {
 
 	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
 }
+
+-----------------
+--    Taanab
+-----------------
+taanab = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    mustafar
+-----------------
+mustafar = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    mandalore
+-----------------
+mandalore = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Hoth
+-----------------
+hoth = {
+
+	defaultWeather = 5, -- Random
+
+	averageWeatherDuration = 600, -- In seconds
+
+	weatherStability = 50, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+	hasDamagingSandstorms = 1,
+
+	sandstormDamage = 40, -- 30 = Annoying, 50 = deadly
+
+}

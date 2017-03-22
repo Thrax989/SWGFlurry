@@ -2,14 +2,14 @@ taiken_at_st = Creature:new {
   objectName = "@mob/creature_names:fbase_at_st",
   socialGroup = "geonosian",
   level = 100,
-  chanceHit = 10.5,
-  damageMin = 470,
-  damageMax = 652,
+  chanceHit = 100.00,
+  damageMin = 1000,
+  damageMax = 1800,
   baseXp = 0,
-  baseHAM = 90000,
-  baseHAMmax = 130000,
-  armor = 3,
-  resists = {200,200,-1,200,-1,200,200,-1,50},
+  baseHAM = 100000,
+  baseHAMmax = 100000,
+  armor = 2,
+  resists = {200,200,-1,200,-1,200,200,-1,20},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -26,15 +26,15 @@ taiken_at_st = Creature:new {
 
   templates = {"object/mobile/atst.iff"},
   lootGroups = {
-    {
-      groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-      },
-      lootChance = 10000000
-    },
-  },
+{
+                groups = {
+                {group = "junk", chance = 5000000},
+                {group = "armor_attachments", chance = 2500000},
+                {group = "clothing_attachments", chance = 2500000}
+},
+                lootChance = 10000000
+},
+},
   conversationTemplate = "",
   defaultAttack = "defaultdroidattack",
   defaultWeapon = "object/weapon/ranged/vehicle/vehicle_atst_ranged.iff",

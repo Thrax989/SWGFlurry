@@ -44,6 +44,8 @@
 object_tangible_wearables_armor_zam_armor_zam_wesell_chest_plate = object_tangible_wearables_armor_zam_shared_armor_zam_wesell_chest_plate:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
@@ -94,39 +96,35 @@ object_tangible_wearables_armor_zam_armor_zam_wesell_chest_plate = object_tangib
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-	objectMenuComponent = "ArmorObjectMenuComponent",
-	
-	vulnerability = STUN + BLAST + LIGHTSABER,
 
-	specialResists = COLD + HEAT + ELECTRICITY + ACID,
+	-- Damage types in WeaponObject
+	vulnerability = ACID + ENERGY + STUN + LIGHTSABER,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 25,
-	actionEncumbrance = 45,
-	mindEncumbrance = 15,
-
-	maxCondition = 30000,
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 45,
-	energy = 45,
-	electricity = 40,
-	stun = 45,
-	blast = 0,
-	heat = 40,
-	cold = 0,
-	acid = 40,
+	kinetic = 15,
+	energy = 15,
+	electricity = 15,
+	stun = 15,
+	blast = 15,
+	heat = 15,
+	cold = 15,
+	acid = 15,
 	lightSaber = 0,
 
-	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
-	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
-	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_resistance", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
+	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
+	experimentalProperties = {"XX", "XX", "XX", "OQ", "SR", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
+	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+	experimentalGroupTitles = {"null", "null", "null", "null", "exp_quality", "exp_durability", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
 	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
-	experimentalMin = {0, 0, 0, 1000, 5, 30000, 80, 150, 80, 1, 0, 5, 0},
-	experimentalMax = {0, 0, 0, 1000, 50, 50000, 30, 50, 30, 1, 0, 50, 0},
+	experimentalMin = {0, 0, 0, 1000, 1, 11250, 8, 8, 6, 1, 4, 1, 18750},
+	experimentalMax = {0, 0, 0, 1000, 35, 18750, 5, 5, 3, 1, 4, 30, 31250},
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }

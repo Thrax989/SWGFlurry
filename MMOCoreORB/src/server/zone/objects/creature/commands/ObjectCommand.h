@@ -84,7 +84,7 @@ public:
 				// Object Name
 				StringBuffer customName;
 				if (ghost->getAdminLevel() >= 15) {
-					customName << object->getDisplayedName(); //<< " \\#00CC00(" << player->getFirstName() << ")\\#FFFFFF";
+					customName << object->getDisplayedName() << " \\#00CC00(" << player->getFirstName() << ")\\#FFFFFF";
 				} else {
 					//customName << object->getDisplayedName() <<  " (System Generated)";
 					customName << object->getDisplayedName() << " \\#00CC00(" << player->getFirstName() << ")\\#FFFFFF";
@@ -228,6 +228,60 @@ public:
 
 				adminPlaceStructure->callFunction();
 			 }
+			 else if (commandType.beginsWith("modify"))
+			 {
+				String objID;
+				args.getStringToken(objID);
+				uint64 oid = UnsignedLong::valueOf(objID);
+
+				if(server->getZoneServer()->getObject(oid) == NULL)
+				{
+					creature->sendSystemMessage("Object couldn't be found, are you sure you entered the correct object ID?");
+					return INVALIDPARAMETERS;
+				}
+
+				ManagedReference<TangibleObject*> object = server->getZoneServer()->getObject(oid).castTo<TangibleObject*>();
+				creature->sendSystemMessage("Found: " + String::valueOf(object->getObjectName()) + " with object id: " + String::valueOf(object->getObjectID()));
+				creature->sendSystemMessage("Template: " + object->getObjectTemplate()->getTemplateFileName());
+
+				String subCommand;
+				args.getStringToken(subCommand);
+
+				if(subCommand == "attributes")
+				{
+					String attributeName;
+					args.getStringToken(attributeName);
+					int attributeAmount = args.getIntToken();
+
+					object->addSkillMod(SkillModManager::TEMPLATE, attributeName, attributeAmount);
+				}
+				else if(subCommand == "uses")
+				{
+					int amount = args.getIntToken();
+					object->setUseCount(amount, true);
+					creature->sendSystemMessage("Set amount to" + amount);
+				}
+				else if(subCommand == "clone")
+				{
+					ManagedReference<TangibleObject*> clonedObject = cast<TangibleObject*>(ObjectManager::instance()->cloneObject(object));
+					ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
+
+					inventory->broadcastObject(clonedObject, true);
+					inventory->transferObject(clonedObject, -1, true);
+				}
+				else if (subCommand == "template")
+				{
+					String newTemplate;
+					args.getStringToken(newTemplate);
+
+					object->setClientObjectCRC(newTemplate.hashCode());
+				}
+				else
+				{
+					creature->sendSystemMessage("Unknown Command");
+					return INVALIDPARAMETERS;
+				}
+			}
 		} catch (Exception& e) {
 			creature->sendSystemMessage("SYNTAX: /object createitem <objectTemplatePath> [<quantity>]");
 			creature->sendSystemMessage("SYNTAX: /object createresource <resourceName> [<quantity>]");
@@ -235,6 +289,10 @@ public:
 			creature->sendSystemMessage("SYNTAX: /object createarealoot <loottemplate> [<range>] [<level>]");
 			creature->sendSystemMessage("SYNTAX: /object checklooted");
 			creature->sendSystemMessage("SYNTAX: /object addstructure");
+			creature->sendSystemMessage("SYNTAX: /object modify <oid> attributes <attribute name> <amount>");
+			creature->sendSystemMessage("SYNTAX: /object modify <oid> uses <amount>");
+			creature->sendSystemMessage("SYNTAX: /object modify <oid> clone");
+			creature->sendSystemMessage("SYNTAX: /object modify <oid> template <newTemplate>");
 
 			return INVALIDPARAMETERS;
 		}

@@ -1,0 +1,12 @@
+-- Server Objects
+includeFile("custom_content/tangible/furniture/all/frn_all_bed_lg_hue_s2.lua")
+includeFile("custom_content/tangible/furniture/all/frn_all_bed_sm_hue_s1.lua")
+includeFile("custom_content/tangible/furniture/all/frn_all_couch_futon_hue_s1.lua")
+includeFile("custom_content/tangible/furniture/all/frn_all_trophy_bane_back_spider.lua")
+includeFile("custom_content/tangible/furniture/all/frn_all_trophy_finned_blaggart.lua")
+includeFile("custom_content/tangible/furniture/all/frn_all_trophy_murra_blanca.lua")
+includeFile("custom_content/tangible/furniture/all/frn_all_trophy_painted_spat.lua")
+includeFile("custom_content/tangible/furniture/all/frn_all_trophy_scorpion_kliknik.lua")
+includeFile("custom_content/tangible/furniture/all/frn_all_trophy_spiketail_blurrg.lua")
+includeFile("custom_content/tangible/furniture/all/frn_chair_control.lua")
+includeFile("custom_content/tangible/furniture/all/table_work_bench.lua")

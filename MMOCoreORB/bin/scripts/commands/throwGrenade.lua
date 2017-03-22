@@ -44,20 +44,39 @@
 ThrowGrenadeCommand = {
         name = "throwgrenade",
 
-	damageMultiplier = 1.0,
+	damageMultiplier = 5.0,
 	speedMultiplier = 1.0,
 	healthCostMultiplier = 1.0,
 	actionCostMultiplier = 1.0,
 	mindCostMultiplier = 1.0,
 
-	range = 64,
-	areaAction = true,
-	areaRange = 10,
-
-	poolsToDamage = RANDOM_ATTRIBUTE,
-
 	animation = "throw_grenade",
+
+	stateEffects = {
+	  StateEffect(
+		DIZZY_EFFECT,
+		{},
+		{ "dizzy_defense", "resistance_states" },
+		{ "jedi_state_defense" },
+		75,
+		0,
+		10
+	  ),
+	  StateEffect(
+		KNOCKDOWN_EFFECT, 
+		{ "knockdownRecovery", "lastKnockdown" }, 
+		{ "knockdown_defense" }, 
+		{}, 
+		75, 
+		0, 
+		0 
+	  )
+	},
+
+	range = 64,
+	areaRange = 25,
+	poolsToDamage = RANDOM_ATTRIBUTE,
+	areaAction = true
 }
 
 AddCommand(ThrowGrenadeCommand)
-

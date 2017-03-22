@@ -1,0 +1,3 @@
+object_tangible_destructible_gcw_kit_medic = object_tangible_destructible_shared_gcw_kit_medic:new {
+}
+ObjectTemplates:addTemplate(object_tangible_destructible_gcw_kit_medic, "object/tangible/destructible/gcw_kit_medic.iff")

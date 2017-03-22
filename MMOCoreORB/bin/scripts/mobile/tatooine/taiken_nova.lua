@@ -2,14 +2,14 @@ taiken_nova = Creature:new {
   customName = "Nova Trooper",
   socialGroup = "geonosian",
   level = 100,
-  chanceHit = 10.50,
-  damageMin = 225,
-  damageMax = 445,
+  chanceHit = 15.00,
+  damageMin = 800,
+  damageMax = 1000,
   baseXp = 0,
   baseHAM = 50000,
   baseHAMmax = 80000,
-  armor = 2,
-  resists = {80,80,80,80,80,80,80,-1,25},
+  armor = 1,
+  resists = {80,80,80,80,80,80,80,-1,15},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -40,7 +40,7 @@ taiken_nova = Creature:new {
   conversationTemplate = "",
   reactionStf = "@npc_reaction/stormtrooper",
   personalityStf = "@hireling/hireling_stormtrooper",
-  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster)
+  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,brawlermaster,riflemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(taiken_nova, "taiken_nova")

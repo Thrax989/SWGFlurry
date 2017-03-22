@@ -1,0 +1,3 @@
+object_tangible_furniture_elegant_chest_hue_s01 = object_tangible_furniture_elegant_shared_chest_hue_s01:new {
+}
+ObjectTemplates:addTemplate(object_tangible_furniture_elegant_chest_hue_s01, "object/tangible/furniture/elegant/chest_hue_s01.iff")
