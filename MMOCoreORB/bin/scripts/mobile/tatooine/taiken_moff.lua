@@ -91,5 +91,6 @@ taiken_moff = Creature:new {
     personalityStf = "@hireling/hireling_military",
     attacks = merge(riflemanmaster,carbineermaster,brawlermaster,fencermaster)
   }
+  }
 
   CreatureTemplates:addCreatureTemplate(taiken_moff, "taiken_moff")
