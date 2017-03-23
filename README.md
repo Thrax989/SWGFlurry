@@ -22,7 +22,7 @@ swgemu<br>
 runUnitTests<br>
 
 # Required Mod The Galaxy TRE Files
-https://www.mediafire.com/?cmmbkmbzf02bs97
+http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
 <br>
 	maxSearchPriority=27<br>
 	searchTree_00_25=capes.tre<br>
