@@ -42,7 +42,7 @@ darth_caedus = Creature:new {
 		{
 	        	groups = 
 			{
-				{group = "kaas_rare", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
 			lootChance = 7500000,
 		},
@@ -70,7 +70,7 @@ darth_caedus = Creature:new {
 		{
 	        	groups = 
 			{
-				{group = "dev", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
 			lootChance = 7500000,
 		},
