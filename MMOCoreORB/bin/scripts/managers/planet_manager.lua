@@ -642,6 +642,19 @@ mandalore = {
 		{"exp_man_mandalore_imperial_garrison",6498,-4721,30,155},
 	},
 
+	navAreas = {
+		{"exp_man_mythosaur_graveyard",1800,-1175,30},
+		{"exp_man_keldabe_skybridge",1592,-6360,30},
+		{"exp_man_mandalmotors",6625,-6301,30},
+		{"exp_man_taung_warrior_bunker",-6354,288,30},
+		{"exp_man_cave_of_darth_caedus",7374,256,30},
+		{"exp_man_peace_park",6148,-6111,30},
+		{"exp_man_vizsla_hideout",441,7489,30},
+		{"exp_man_shadow_collective_hideout",-6998,3118,30},
+		{"exp_man_bralor_clan_headquarters",-6655,5567,30},
+		{"exp_man_mandalore_imperial_garrison",6498,-4721,30},
+	},
+
 
 	planetObjects = {
 		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 1589, z = 4, y = -6391, parentid = 0}
@@ -772,6 +785,28 @@ kaas = {
 		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = 0.0, oz = 0, ow = 0.0, x = -1123.2, z = 129.0, y = -4768.8, parentid = 0}
 	}
 }
+
+
+hoth = {
+ 
+ 	weatherEnabled = 1,
+ 	gcwEnabled = 1,
+ 
+ 	planetTravelPoints = {
+ 		{name = "Scavenger Outpost", x = 0, z = 0, y = -2000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+ 	},
+ 
+ 	badgeAreas = {
+ 			
+ 	},
+ 
+ 	navAreas = {
+ 	},
+ 
+ 	planetObjects = {
+ 		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 0, z = 0, y = -2020, parentid = 0},
+ 	}
+ }
 
 
 mustafar = {
