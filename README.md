@@ -72,13 +72,13 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * Mustafar Mobs & NPC's
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * Kashyyyk Mobs and worldbuilding assets
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * Many NGE Mobs
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Houses
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * Chiss Backpack
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * BARC Speeder
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * Pod racers Speeder
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Housing
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE capes
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Decorations
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * All NGE Backpack
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Wings / Halos
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * BARC Speeder Neutral / Rebel Imperial / Pod Racers 1 an 2 / Sith Sppeder
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * All NGE Housing Deeds With Appropriate signs / Halloween signs
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Houses schematics 
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE capes Rebel / Imperial
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Decorations / Hologram Decorations / 1 year - 10 year vet rewards 
 
 ## -Things still left to Test / Balance For Live Server / Test Server-
 
