@@ -49,7 +49,7 @@ janta_chieftain = Creature:new {
 		},
 		{
 			groups = {
-				{group = "janta_common", chance = 10000000},
+				{group = "janta_common", chance = 3000000},
 				{group = "armor_attachments", chance = 3000000},
 				{group = "clothing_attachments", chance = 4000000}
 
