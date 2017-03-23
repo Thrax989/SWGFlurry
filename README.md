@@ -75,7 +75,10 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Houses
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * Chiss Backpack
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * BARC Speeder
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * Pod racers Speeder
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Housing
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE capes
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Decorations
 
 ## -Things still left to Test / Balance For Live Server / Test Server-
 
@@ -84,8 +87,6 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) Remaining NGE Wearable,Vehicles,Deeds,Assets
 
 ## -Planets That Need Testing-
-![#008000](https://placehold.it/15/008000/000000?text=+) 10 Complete 47.61%<br>
-![#FF0000](https://placehold.it/15/FF0000/000000?text=+) 11 Incomplete 52.39%
 - ![#008000](https://placehold.it/15/008000/000000?text=+) corellia
 - ![#008000](https://placehold.it/15/008000/000000?text=+) dantooine
 - ![#008000](https://placehold.it/15/008000/000000?text=+) dathomir
@@ -102,31 +103,10 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Taanab
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Hoth
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kaas
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) jakku
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) chandrila
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) hutta
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) coruscant
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) moraband
 
 ## -Armor crafting Balance-
 Currently Testing Crafted RIS armor. Testing Special protections . Should be able to craft up to 50%LS resist max. Report any bugs if you find any 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Crafted RIS Armor	
-
-## -Dungeons / Encounters-
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) tatooine tusken bunker
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) dantooine janta cave 
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) taanab cave
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) taanab pandath
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) taanab starhunterstation
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) taanab downed ship
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) taanab mine
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) taanab hex farms
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) taanab great herd
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Darth Caedus Cave
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Mandal Motors
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Shadow Collective Cave
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Taung Warrior Bunker
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Vizsla Hideout
 
 ## -Server Code Contributors-
 * https://github.com/Thrax989 - Project Lead Creator
