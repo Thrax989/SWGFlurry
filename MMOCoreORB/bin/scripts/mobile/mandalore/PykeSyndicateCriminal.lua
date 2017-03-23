@@ -35,9 +35,9 @@ pyke_syndicate_criminal = Creature:new {
 				{group = "pistols", chance = 750000},
 				{group = "rifles", chance = 750000},
 				{group = "carbines", chance = 750000},
-				{group = "jetpack_parts", chance = 500000},				
-				{group = "bounty_hunter_armor_looted", chance = 700000},
-				{group = "jetpack_base", chance = 50000},
+				{group = "armor_attachments", chance = 500000},				
+				{group = "junk", chance = 700000},
+				{group = "clothing_attachments", chance = 50000},
 			},
 			lootChance = 3500000
 		}	
