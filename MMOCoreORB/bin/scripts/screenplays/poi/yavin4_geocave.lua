@@ -33,7 +33,8 @@ end
 
 function yavin4geocaveScreenPlay:notify1DroidDead(T1Droid, pKiller)
 	local player = LuaCreatureObject(pKiller)
-        local pBoss = spawnMobile("yavin4", "alert_droideka", 0, -5622.48, 75.9636, -5673.65, 97, 0) print("Phase 1 Started")
+        local pBoss = spawnMobile("yavin4", "alert_droideka_mini", 0, 6.55337, 8.51371, 18.6161, 359, 1627781) print("Phase 1 Started")
+	spatialChat(pBoss, "You have entered a restricted area.")
         return 0
 end
 
@@ -41,6 +42,7 @@ end
 
 function yavin4geocaveScreenPlay:notify2DroidDead(T2Droid, pKiller)
 	local player = LuaCreatureObject(pKiller)
-        local pBoss = spawnMobile("yavin4", "alert_droideka", 0, -5611.96, 75.99, -5645.66, 283, 0) print("Phase 2 Started")
+        local pBoss = spawnMobile("yavin4", "alert_droideka_boss", 1, 6.55337, 8.51371, 18.6161, 359, 1627781) print("Phase 2 Started")
+	spatialChat(pBoss, "Support has arrived!")
         return 0
 end
