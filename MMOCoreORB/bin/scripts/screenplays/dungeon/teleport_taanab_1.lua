@@ -24,7 +24,7 @@ function teleport_taanab_1ScreenPlay:spawnMobiles()
 
 	local collector1 = LuaCreatureObject(pCollector1)
 	collector1:setOptionsBitmask(264)
-	collector1:setCustomObjectName("\\#00FF00Travel To Taanab Zone")
+	collector1:setCustomObjectName("\\#00FF00Travel To Taanab Starhunter Station")
 	createObserver(OBJECTRADIALUSED, "teleport_taanab_1ScreenPlay", "teleportCor", pCollector1)
 	if (pCollecter1~= nil) then 
 		return
@@ -32,6 +32,6 @@ function teleport_taanab_1ScreenPlay:spawnMobiles()
 end
 function teleport_taanab_1ScreenPlay:teleportCor(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("taanab", 0, 0, 0, 0)
+	player:switchZone("taanab", 3609, 31, -5419, 0)
 	return 0
 end
