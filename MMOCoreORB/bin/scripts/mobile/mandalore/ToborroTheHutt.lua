@@ -32,9 +32,9 @@ toborro_the_hutt = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "podracer_loot", chance = 10000000},
+				{group = "barc_speeder_deed_group", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 25000000
 		},
 		
 	},
