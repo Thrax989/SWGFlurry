@@ -80,8 +80,6 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE capes Rebel / Imperial
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Decorations / Hologram Decorations / 1 year - 10 year vet rewards 
 
-## -Things still left to Test / Balance For Live Server / Test Server-
-
 ## -Everything that needs to be added-
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) All TCG Items
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) Remaining NGE Wearable,Vehicles,Deeds,Assets
