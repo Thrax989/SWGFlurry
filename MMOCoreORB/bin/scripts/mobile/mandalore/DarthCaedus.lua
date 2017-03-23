@@ -89,7 +89,7 @@ darth_caedus = Creature:new {
 				
 	},
 	weapons = {"dark_jedi_weapons_gen2"},
-	attacks = {lightsabermaster,forcepowermaster,raidmaster}
+	attacks = {lightsabermaster,forcepowermaster}
 }
 
 CreatureTemplates:addCreatureTemplate(darth_caedus, "darth_caedus")
