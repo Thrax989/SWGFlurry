@@ -97,7 +97,7 @@ ZonesEnabled = {
 	"dathomir",
 	--"ghomrassen",
 	"hoth",
-	--"dungeon1",
+	"dungeon1",
 	"endor",
      --"kashyyyk",
 	--"endor_asommers",

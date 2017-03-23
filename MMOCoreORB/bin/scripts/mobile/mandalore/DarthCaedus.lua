@@ -42,7 +42,7 @@ darth_caedus = Creature:new {
 		{
 	        	groups = 
 			{
-				{group = "kaas_rare", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
 			lootChance = 7500000,
 		},
@@ -70,7 +70,7 @@ darth_caedus = Creature:new {
 		{
 	        	groups = 
 			{
-				{group = "dev", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
 			lootChance = 7500000,
 		},
@@ -88,8 +88,9 @@ darth_caedus = Creature:new {
 		},
 				
 	},
-	weapons = {"dark_jedi_weapons_gen2"},
-	attacks = {lightsabermaster,forcepowermaster,raidmaster}
+	weapons = {"dark_jedi_weapons_gen3"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(lightsabermaster,forcepowermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(darth_caedus, "darth_caedus")

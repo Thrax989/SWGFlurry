@@ -24,7 +24,7 @@ function teleport_mandalore_5ScreenPlay:spawnMobiles()
 
 	local collector1 = LuaCreatureObject(pCollector1)
 	collector1:setOptionsBitmask(264)
-	collector1:setCustomObjectName("\\#00FF00Travel To Mandalore Zone")
+	collector1:setCustomObjectName("\\#00FF00Travel To Mandalore Shuror")
 	createObserver(OBJECTRADIALUSED, "teleport_mandalore_5ScreenPlay", "teleportCor", pCollector1)
 	if (pCollecter1~= nil) then 
 		return
@@ -32,6 +32,6 @@ function teleport_mandalore_5ScreenPlay:spawnMobiles()
 end
 function teleport_mandalore_5ScreenPlay:teleportCor(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("mandalore", 0, 0, 0, 0)
+	player:switchZone("mandalore", 1065, 1, 2735, 0)
 	return 0
 end

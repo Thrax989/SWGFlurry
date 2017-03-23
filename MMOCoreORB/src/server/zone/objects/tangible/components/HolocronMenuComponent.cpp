@@ -99,7 +99,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		}
 	} else {
 		//You're not a jedi yet
-		creature->sendSystemMessage("@jedi_spam:holocron_no_effect");
+		JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
 		if (test == 1) {
 			creature->sendSystemMessage("You're not a jedi");
 		}

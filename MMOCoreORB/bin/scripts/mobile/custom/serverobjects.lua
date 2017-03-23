@@ -1,3 +1,5 @@
+includeFile("custom/alert_droideka_boss.lua")
+includeFile("custom/alert_droideka_mini.lua")
 includeFile("custom/ancient_yoda.lua")
 includeFile("custom/ancient_meatlump_king_static.lua")
 includeFile("custom/ancient_exar_kun.lua")

@@ -34,12 +34,12 @@ shadow_collective_sc87 = Creature:new {
 			groups = {
 				{group = "death_watch_bunker_commoners", chance = 10000000}
 			},
-			lootChance = 500000
+			lootChance = 10000000
 		}
 	},
-	conversationTemplate = "",
-	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "creaturerangedattack"
+	weapons = {"dark_jedi_weapons_gen3"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(lightsabermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(shadow_collective_sc87, "shadow_collective_sc87")
