@@ -1,4 +1,4 @@
-vagrant@ns510434:~/bin$ swgemu rununittests
+vagrant@ns510434:~/workspace/Core3/MMOCoreORB/bin$ swgemu runUnitTests
 + cd /home/vagrant/workspace/Core3/MMOCoreORB/bin
 + ./core3 runUnitTests '--gtest_filter=*'
 Running unit tests...
@@ -16,8 +16,8 @@ Running unit tests...
 [----------] 1 test from BasicScreenPlayTest
 [ RUN      ] BasicScreenPlayTest.ScreenPlayLuaInitialize
 (0 s) [BadgeList] Loaded 140 badges.
-[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (1077 ms)
-[----------] 1 test from BasicScreenPlayTest (1077 ms total)
+[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (1024 ms)
+[----------] 1 test from BasicScreenPlayTest (1024 ms total)
 
 [----------] 3 tests from LuaMobileTest
 [ RUN      ] LuaMobileTest.LuaMobileTemplatesTest
@@ -32,46 +32,22 @@ Running unit tests...
 (1 s) [TemplateManager] Loading object templates
 (1 s) [Console] WARNING - could not open lua derv: object/static/base/static_flagpole_base.iff
 (1 s) [Console] WARNING - could not open lua derv: object/static/base/static_flagpole_base.iff
-	Loading templates: [4%]	(1 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_desert_skiff_pcd.iff
-(1 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_lava_skiff_pcd.iff
-(1 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_tantive4_pcd.iff
-(1 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_usv5_pcd.iff
-(1 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_v35_pcd.iff
-(1 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_xp38_pcd.iff
-(1 s) [TreeArchive] ERROR - Did not find fileName: shared_pod_racer_one_pcd.iff
-(1 s) [TreeArchive] ERROR - Did not find fileName: shared_pod_racer_two_pcd.iff
-(1 s) [TreeArchive] ERROR - Did not find fileName: shared_barc_speeder_imperial_pcd.iff
-(1 s) [TreeArchive] ERROR - Did not find fileName: shared_barc_speeder_rebel_pcd.iff
-	Loading templates: [7%]	(2 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_desert_skiff.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_lava_skiff.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_tantive4.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_usv5.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_pod_racer_one.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_pod_racer_two.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_barc_speeder_rebel.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_barc_speeder_imperial.iff
 	Loading templates: [13%]	(2 s) [Console] WARNING - expecting SHOT got STAT in file: object/static/particle/shared_pt_campfire_smokeless_s01.iff
 (2 s) [Console] WARNING - expecting SHOT got STAT in file: object/static/particle/shared_pt_fire_huge_smokeless.iff
 	Loading templates: [14%]	(2 s) [Console] WARNING - could not open lua derv: object/static/structure/nobuild/base/noflora_base.iff
 (2 s) [Console] WARNING - could not open lua derv: object/static/structure/nobuild/base/noflora_base.iff
 (2 s) [Console] WARNING - could not open lua derv: object/static/structure/nobuild/base/noflora_base.iff
-	Loading templates: [17%]	(2 s) [TreeArchive] ERROR - Did not find fileName: shared_barc_speeder_rebel_deed.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_barc_speeder_imperial_deed.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_desert_skiff_deed.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_lava_skiff_deed.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_tantive4_deed.iff
-(2 s) [TreeArchive] ERROR - Did not find fileName: shared_landspeeder_usv5_deed.iff
-	Loading templates: [19%]	(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
-(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
-(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
-(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
-(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
-(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
-(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
-(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
-(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
-(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
-(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+	Loading templates: [19%]	(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
@@ -81,19 +57,11 @@ Running unit tests...
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
 	Loading templates: [20%]	(3 s) [Console] WARNING - could not open lua derv: object/tangible/wearables/base/base_fannypack.iff
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/wearables/base/base_fannypack.iff
-(3 s) [TreeArchive] ERROR - Did not find fileName: shared_robe_chronicle_master.iff
-(3 s) [TreeArchive] ERROR - Did not find fileName: shared_robe_jedi_padawan_generic.iff
-(3 s) [TreeArchive] ERROR - Did not find fileName: shared_exar_cultist_hood_up.iff
-(3 s) [TreeArchive] ERROR - Did not find fileName: shared_exar_cultist_hood_up_f.iff
 (3 s) [TreeArchive] ERROR - Did not find fileName: shared_exar_cultist_hood_down.iff
 (3 s) [TreeArchive] ERROR - Did not find fileName: shared_exar_cultist_hood_down_f.iff
 	Loading templates: [23%]	(3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
 (3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
 (3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
-	Loading templates: [46%]	(5 s) [TreeArchive] ERROR - Did not find fileName: shared_barc_speeder_imperial_pcd.iff
-(5 s) [TreeArchive] ERROR - Did not find fileName: shared_barc_speeder_rebel_pcd.iff
-(5 s) [TreeArchive] ERROR - Did not find fileName: shared_pod_racer_one_pcd.iff
-(5 s) [TreeArchive] ERROR - Did not find fileName: shared_pod_racer_two_pcd.iff
 	Loading templates: [64%]	(7 s) [Console] WARNING - expecting SHOT got RCCT in file: object/resource_container/shared_simple.iff
 	Loading templates: [80%]	(8 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
 (8 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
@@ -128,10 +96,6 @@ Running unit tests...
 (8 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
 (8 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
 (8 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-	Loading templates: [84%]	(8 s) [TreeArchive] ERROR - Did not find fileName: shared_pod_racer_two_deed.iff
-(8 s) [TreeArchive] ERROR - Did not find fileName: shared_pod_racer_one_deed.iff
-(8 s) [TreeArchive] ERROR - Did not find fileName: shared_barc_speeder_imperial_deed.iff
-(8 s) [TreeArchive] ERROR - Did not find fileName: shared_barc_speeder_rebel_deed.iff
 	Loading templates: [114%]	(10 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
 	Loading templates: [115%]	(10 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
 (10 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
@@ -149,111 +113,16 @@ Running unit tests...
 (12 s) [FactionManager] loaded 22 ranks
 (12 s) [DnaManager] Loading DNA Information
 (12 s) [DnaManager] Loaded 201 dna stats.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
-Value of: foundGroup != NULL
-  Actual: false
-Expected: true
-Loot group bounty_hunter_armor_looted from lom_pyke was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
-Value of: foundGroup != NULL
-  Actual: false
-Expected: true
-Loot group podracer_loot from toborro_the_hutt was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc shadow_collective_sc87 does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
-Value of: foundGroup != NULL
-  Actual: false
-Expected: true
-Loot group bounty_hunter_armor_looted from shadow_collective_criminal was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
-Value of: foundGroup != NULL
-  Actual: false
-Expected: true
-Loot group bounty_hunter_armor_looted from pyke_syndicate_criminal was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
-Value of: foundGroup != NULL
-  Actual: false
-Expected: true
-Loot group kaas_rare from darth_caedus was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
-Value of: foundGroup != NULL
-  Actual: false
-Expected: true
-Loot group dev from darth_caedus was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:443: Failure
-Value of: cam->size() > 0
-  Actual: false
-Expected: true
-Attackable npc darth_caedus does not have attacks.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
-Value of: FactionManager::instance()->isFaction(faction)
-  Actual: false
-Expected: true
-Faction, norulac_raiders, from mobile template norulac_raider_commando does not exist.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 9750000
-Expected: 10000000
-Loot groups total chance is incorrect norulac_raider_commando
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
-Value of: FactionManager::instance()->isFaction(faction)
-  Actual: false
-Expected: true
-Faction, norulac_raiders, from mobile template norulac_raider does not exist.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 9750000
-Expected: 10000000
-Loot groups total chance is incorrect norulac_raider
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:224: Failure
-Value of: FactionManager::instance()->isFaction(faction)
-  Actual: false
-Expected: true
-Faction, norulac_raiders, from mobile template norulac_raider_captain does not exist.
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:397: Failure
-Value of: totalChance
-  Actual: 9450000
-Expected: 10000000
-Loot groups total chance is incorrect norulac_raider_captain
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:393: Failure
-Value of: foundGroup != NULL
-  Actual: false
-Expected: true
-Loot group podracer_loot from boorka_the_hutt was not found in LootGroupMap
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:585: Failure
-Value of: lairTemplates.contains(lairTemplateName)
-  Actual: true
-Expected: false
-Lair template talus_rot_mite_lair_neutral_boss_04 is duplicated in destroy mission spawn group mandalore_destroy_missions
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:597: Failure
-Value of: lairTemplate->getBuildingType() == LairTemplate::LAIR
-  Actual: false
-Expected: true
-Lair template global_dark_jedi_camp_dark_jedi_theater, part of destroy mission group mandalore_destroy_missions is not of type LAIR
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:597: Failure
-Value of: lairTemplate->getBuildingType() == LairTemplate::LAIR
-  Actual: false
-Expected: true
-Lair template naboo_swamp_rat_lair_neutral_small, part of destroy mission group mandalore_destroy_missions is not of type LAIR
-../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:597: Failure
-Value of: lairTemplate->getBuildingType() == LairTemplate::LAIR
-  Actual: false
-Expected: true
-Lair template tatooine_outcast_camp_neutral_small_theater, part of destroy mission group mandalore_destroy_missions is not of type LAIR
-[  FAILED  ] LuaMobileTest.LuaMobileTemplatesTest (11903 ms)
+[       OK ] LuaMobileTest.LuaMobileTemplatesTest (12055 ms)
 [ RUN      ] LuaMobileTest.LuaLootGroupsTest
-(12 s) [CommandConfigManager] ERROR - Could not create command counterAttack
-(12 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] LuaMobileTest.LuaLootGroupsTest (85 ms)
+(13 s) [CommandConfigManager] ERROR - Could not create command counterAttack
+(13 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
+[       OK ] LuaMobileTest.LuaLootGroupsTest (83 ms)
 [ RUN      ] LuaMobileTest.LuaSpawnManagerTest
 (13 s) [CommandConfigManager] ERROR - Could not create command counterAttack
 (13 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] LuaMobileTest.LuaSpawnManagerTest (73 ms)
-[----------] 3 tests from LuaMobileTest (12061 ms total)
+[       OK ] LuaMobileTest.LuaSpawnManagerTest (75 ms)
+[----------] 3 tests from LuaMobileTest (12213 ms total)
 
 [----------] 12 tests from JediManagerTest
 [ RUN      ] JediManagerTest.ShouldRunFileJediManagerLuaAtLoadConfiguration
@@ -269,26 +138,26 @@ Lair template tatooine_outcast_camp_neutral_small_theater, part of destroy missi
 [ RUN      ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured
 [       OK ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured (0 ms)
 [ RUN      ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration
-[       OK ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration (0 ms)
+[       OK ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration (1 ms)
 [ RUN      ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager
 [       OK ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager (1 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager
-[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (1 ms)
+[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager
 [       OK ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager
-[       OK ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager (0 ms)
+[       OK ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager (1 ms)
 [ RUN      ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager
 [       OK ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager (0 ms)
 [----------] 12 tests from JediManagerTest (3 ms total)
 
 [----------] 3 tests from TerrainManagerTest
 [ RUN      ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea
-[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (1 ms)
+[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (0 ms)
 [ RUN      ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea
 [       OK ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea (0 ms)
 [ RUN      ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference
-[       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (0 ms)
+[       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (1 ms)
 [----------] 3 tests from TerrainManagerTest (1 ms total)
 
 [----------] 4 tests from RectangularAreaShapeTest
@@ -313,25 +182,25 @@ Lair template tatooine_outcast_camp_neutral_small_theater, part of destroy missi
 [       OK ] RingAreaShapeTest.RingAreaShapeHasInnerRadiusSquareEqualToZeroAfterCreation (0 ms)
 [ RUN      ] RingAreaShapeTest.RingAreaShapeHasOuterRadiusSquareEqualToZeroAfterCreation
 [       OK ] RingAreaShapeTest.RingAreaShapeHasOuterRadiusSquareEqualToZeroAfterCreation (0 ms)
-[----------] 5 tests from RingAreaShapeTest (1 ms total)
+[----------] 5 tests from RingAreaShapeTest (0 ms total)
 
 [----------] 4 tests from GeneralDeadlockTestBase
 [ RUN      ] GeneralDeadlockTestBase.CrossLockTest
 [       OK ] GeneralDeadlockTestBase.CrossLockTest (0 ms)
 [ RUN      ] GeneralDeadlockTestBase.ThreeLocksTest
-[       OK ] GeneralDeadlockTestBase.ThreeLocksTest (0 ms)
+[       OK ] GeneralDeadlockTestBase.ThreeLocksTest (1 ms)
 [ RUN      ] GeneralDeadlockTestBase.MonitorLockTest
 [       OK ] GeneralDeadlockTestBase.MonitorLockTest (0 ms)
 [ RUN      ] GeneralDeadlockTestBase.MultipleLocksTest
 [       OK ] GeneralDeadlockTestBase.MultipleLocksTest (0 ms)
-[----------] 4 tests from GeneralDeadlockTestBase (0 ms total)
+[----------] 4 tests from GeneralDeadlockTestBase (1 ms total)
 
 [----------] 2 tests from BasicTerrainTest
 [ RUN      ] BasicTerrainTest.LoadTestTerrainTest
-[       OK ] BasicTerrainTest.LoadTestTerrainTest (322 ms)
+[       OK ] BasicTerrainTest.LoadTestTerrainTest (329 ms)
 [ RUN      ] BasicTerrainTest.LoadTestSpaceTerrain
-[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (56 ms)
-[----------] 2 tests from BasicTerrainTest (379 ms total)
+[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (55 ms)
+[----------] 2 tests from BasicTerrainTest (384 ms total)
 
 [----------] 4 tests from ZoneTest
 [ RUN      ] ZoneTest.PlayerManager
@@ -344,7 +213,7 @@ Lair template tatooine_outcast_camp_neutral_small_theater, part of destroy missi
 (13 s) [PlayerManager] loaded 0 character names in memory
 [       OK ] ZoneTest.PlayerManager (4 ms)
 [ RUN      ] ZoneTest.TreLoad
-[       OK ] ZoneTest.TreLoad (1 ms)
+[       OK ] ZoneTest.TreLoad (0 ms)
 [ RUN      ] ZoneTest.ActiveAreaTest
 [       OK ] ZoneTest.ActiveAreaTest (0 ms)
 [ RUN      ] ZoneTest.InRangeTest
@@ -355,17 +224,11 @@ Lair template tatooine_outcast_camp_neutral_small_theater, part of destroy missi
 [ RUN      ] CommandLuaTest.LoadCommandLuas
 (13 s) [CommandConfigManager] ERROR - Could not create command counterAttack
 (13 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] CommandLuaTest.LoadCommandLuas (47 ms)
+[       OK ] CommandLuaTest.LoadCommandLuas (49 ms)
 [ RUN      ] CommandLuaTest.CheckAnimationCRCS
 [       OK ] CommandLuaTest.CheckAnimationCRCS (26 ms)
-[----------] 2 tests from CommandLuaTest (73 ms total)
+[----------] 2 tests from CommandLuaTest (75 ms total)
 
 [----------] Global test environment tear-down
-[==========] 43 tests from 11 test cases ran. (13601 ms total)
-[  PASSED  ] 42 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] LuaMobileTest.LuaMobileTemplatesTest
-
- 1 FAILED TEST
-
-vagrant@ns510434:~/bin$ 
+[==========] 43 tests from 11 test cases ran. (13707 ms total)
+[  PASSED  ] 43 tests.
