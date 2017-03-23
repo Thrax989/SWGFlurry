@@ -1,7 +1,7 @@
 alert_droideka_boss = Creature:new {
 	--objectName = "@mob/creature_names:geonosian_droideka_crazed",
-	socialGroup = "geonosian",
 	customName = "Alert Droideka Boss",
+	socialGroup = "geonosian",
 	faction = "",
 	level = 300,
 	chanceHit = 75.00,
