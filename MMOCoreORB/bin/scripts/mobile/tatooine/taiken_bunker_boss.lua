@@ -39,8 +39,8 @@ taiken_bunker_boss = Creature:new {
 },
 {
             groups = {
-  				          {group = "wearables_rare", chance = 10000000},
-  				          {group = "aakuan_common", chance = 10000000}
+  				          {group = "wearables_rare", chance = 5000000},
+  				          {group = "aakuan_common", chance = 5000000}
 
 },
   			            lootChance = 10000000
@@ -54,8 +54,8 @@ taiken_bunker_boss = Creature:new {
 },
 {
             groups = {
-                    {group = "armor_attachments", chance = 10000000},
-                    {group = "clothing_attachments", chance = 10000000}
+                    {group = "armor_attachments", chance = 5000000},
+                    {group = "clothing_attachments", chance = 5000000}
 },
                     lootChance = 10000000
 },
