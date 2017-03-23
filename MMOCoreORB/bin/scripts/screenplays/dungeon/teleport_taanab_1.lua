@@ -32,6 +32,6 @@ function teleport_taanab_1ScreenPlay:spawnMobiles()
 end
 function teleport_taanab_1ScreenPlay:teleportCor(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("taanab", 3609, 31, -5419, 0)
+	player:switchZone("taanab", 3612, 31, -5420, 0)
 	return 0
 end
