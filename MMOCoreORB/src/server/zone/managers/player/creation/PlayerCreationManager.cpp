@@ -598,7 +598,7 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	JediManager::instance()->onPlayerCreated(playerCreature);
 
 	chatManager->sendMail("system", "@newbie_tutorial/newbie_mail:welcome_subject", "@newbie_tutorial/newbie_mail:welcome_body", playerCreature->getFirstName());
-	chatManager->sendMail("Admin", "Welcome", "The SWG FLurry Community welcomes you to the server.\n\nJoin the community voice chat today.\n\nhttps://discord.gg/eN82pdc", playerCreature->getFirstName());
+	chatManager->sendMail("Admin", "Welcome", "The SWG Flurry Community welcomes you to the server.\n\nJoin the community voice chat today.\n\nhttps://discord.gg/eN82pdc", playerCreature->getFirstName());
 
 	//Join auction chat room
 	ghost->addChatRoom(chatManager->getAuctionRoom()->getRoomID());
