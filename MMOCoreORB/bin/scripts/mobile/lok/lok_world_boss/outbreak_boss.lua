@@ -47,25 +47,25 @@ outbreak_boss = Creature:new {
   lootGroups = {
 		{
 			groups = {
-        			{group = "pearls_flawless", chance = 10000000},
-				{group = "armor_attachments", chance = 10000000},
-				{group = "clothing_attachments", chance = 10000000}
+        			{group = "pearls_flawless", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
 		},
 			lootChance = 10000000
 		},
    		{
 			groups = {
-        			{group = "pearls_flawless", chance = 10000000},
-        			{group = "armor_attachments", chance = 10000000},
-        			{group = "clothing_attachments", chance = 10000000}
+        			{group = "pearls_flawless", chance = 5000000},
+        			{group = "armor_attachments", chance = 2500000},
+        			{group = "clothing_attachments", chance = 2500000}
       		},
       			lootChance = 10000000
     		},
     		{
       			groups = {
-        			{group = "pearls_flawless", chance = 10000000},
-				{group = "armor_attachments", chance = 10000000},
-				{group = "clothing_attachments", chance = 10000000}
+        			{group = "pearls_flawless", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
       		},
       			lootChance = 10000000
     		},
@@ -79,29 +79,29 @@ outbreak_boss = Creature:new {
     		},
     		{
       			groups = {
-        			{group = "armor_attachments", chance = 10000000},
-        			{group = "clothing_attachments", chance = 10000000}
+        			{group = "armor_attachments", chance = 5000000},
+        			{group = "clothing_attachments", chance = 5000000}
       		},
       			lootChance = 10000000
     		},
     		{
      	 		groups = {
-        			{group = "armor_attachments", chance = 10000000},
-        			{group = "clothing_attachments", chance = 10000000}
+        			{group = "armor_attachments", chance = 5000000},
+        			{group = "clothing_attachments", chance = 5000000}
       		},
       			lootChance = 10000000
     		},
     		{
       			groups = {
-        			{group = "armor_attachments", chance = 10000000},
-       	 			{group = "clothing_attachments", chance = 10000000}
+        			{group = "armor_attachments", chance = 5000000},
+       	 			{group = "clothing_attachments", chance = 5000000}
       		},
      			 lootChance = 10000000
     		},
     		{
      			groups = {
-        			{group = "armor_attachments", chance = 10000000},
-        			{group = "clothing_attachments", chance = 10000000}
+        			{group = "armor_attachments", chance = 5000000},
+        			{group = "clothing_attachments", chance = 5000000}
       		},
       			lootChance = 10000000
     		},

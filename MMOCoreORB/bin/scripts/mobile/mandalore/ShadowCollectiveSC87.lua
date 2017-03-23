@@ -37,9 +37,8 @@ shadow_collective_sc87 = Creature:new {
 			lootChance = 500000
 		}
 	},
-	conversationTemplate = "",
+	defaultAttack = "attack",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "creaturerangedattack"
 }
 
 CreatureTemplates:addCreatureTemplate(shadow_collective_sc87, "shadow_collective_sc87")

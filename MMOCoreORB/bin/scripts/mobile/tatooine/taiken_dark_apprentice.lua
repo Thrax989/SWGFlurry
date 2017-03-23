@@ -50,7 +50,7 @@ taiken_dark_apprentice = Creature:new {
 },
 {
             groups = {
-            {group = "skill_buff", chance = 10000000}
+            {group = "junk", chance = 10000000}
 },
             lootChance = 10000000
 },

@@ -135,7 +135,7 @@ function CorellianCorvetteScreenPlay:onEnterCorvette(pCorvette, pPlayer)
 	if SceneObject(pPlayer):isPlayerCreature() then
 		local active = readData("corvetteActive:" .. SceneObject(pCorvette):getObjectID())
 		if active ~= 1 then
-			createEvent(10 * 1000, "CorellianCorvetteScreenPlay", "handleNotAuthorized", pPlayer, "")
+			createEvent(10 * 1000, "CorellianCorvetteScreenPlay", pPlayer, "")
 			return 0
 		end
 
