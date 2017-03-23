@@ -11,7 +11,7 @@ if _TEST then
 	ITEMTHEATERDATAPAD = 2
 end
 
-jediProgressionType = VILLAGEJEDIPROGRESSION
+jediProgressionType = HOLOGRINDJEDIPROGRESSION
 
 jediManagerName = "JediManager"
 
@@ -22,7 +22,7 @@ function printf(...) io.write(string.format(table.unpack({...}))) end
 JediManager = ScreenPlay:new {
 	screenplayName = jediManagerName,
 	jediManagerName = jediManagerName,
-	jediProgressionType = NOJEDIPROGRESSION,
+	jediProgressionType = HOLOGRINDJEDIPROGRESSION,
 }
 
 -- Default handling of the start event.
@@ -65,7 +65,7 @@ end
 --Check for force skill prerequisites
 function JediManager:canLearnSkill(pPlayer, skillName)
 	-- Default behaviour for the canLearnSkill check, return false.
-	return false
+	return true
 end
 
 --Check to ensure force skill prerequisites are maintained
@@ -79,4 +79,3 @@ function JediManager:onFSTreeCompleted(pCreatureObject, branch)
 end
 
 return JediManager
-
