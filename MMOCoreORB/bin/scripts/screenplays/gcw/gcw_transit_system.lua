@@ -73,7 +73,7 @@ function gcw_transit_system_convo_handler:getNextConversationScreen(conversation
 				-- xxxxxxxxxx Planet Taanab Pandath Port xxxxxxxxxxxx	 	
 				if (optionLink == "planet1" and playerObj:getFactionStanding("imperial") >= 70) then
 	        		        playerObj:decreaseFactionStanding("imperial",50)
-            				player:switchZone("taanab", 1, 2104.1, 45, 5396.27, 259, 0) 
+            				player:switchZone("taanab", 2104.1, 45, 5396.27, 0) 
 				elseif (optionLink == "planet1" and playerObj:getFactionStanding("imperial") < 70) then
 					nextConversationScreen = conversation:getScreen("notenough_faction")
 					creature:sendSystemMessage("You dont have enough FP")
@@ -81,32 +81,72 @@ function gcw_transit_system_convo_handler:getNextConversationScreen(conversation
 				-- xxxxxxxxxx Planet Taanab Starhunter Station xxxxxxxxxxxx	 	
 				if (optionLink == "planet2" and playerObj:getFactionStanding("imperial") >= 70) then
 	        		        playerObj:decreaseFactionStanding("imperial",50)
-            				player:switchZone("taanab", 1, 3606.65, 31.7, -5420.95, 60, 0) 
+            				player:switchZone("taanab", 3606.65, 31.7, -5420.95, 0) 
 				elseif (optionLink == "planet2" and playerObj:getFactionStanding("imperial") < 70) then
 					nextConversationScreen = conversation:getScreen("notenough_faction")
 					creature:sendSystemMessage("You dont have enough FP")
 				end
-				-- xxxxxxxxxx Planet Mandalore xxxxxxxxxxxx	 	
-				if (optionLink == "planet2" and playerObj:getFactionStanding("imperial") >= 70) then
+				-- xxxxxxxxxx Planet Mandalore Sundari Port xxxxxxxxxxxx	 	
+				if (optionLink == "planet3" and playerObj:getFactionStanding("imperial") >= 70) then
 	        		        playerObj:decreaseFactionStanding("imperial",50)
-            				player:switchZone("mandalore", 0.0, 0.0, 0.0, 0)
-				elseif (optionLink == "planet2" and playerObj:getFactionStanding("imperial") < 70) then
+            				player:switchZone("mandalore", 6283.81, 2.06554, -6207.74, 0) 
+				elseif (optionLink == "planet3" and playerObj:getFactionStanding("imperial") < 70) then
+					nextConversationScreen = conversation:getScreen("notenough_faction")
+					creature:sendSystemMessage("You dont have enough FP")
+				end
+				-- xxxxxxxxxx Planet Mandalore Keldabe Port xxxxxxxxxxxx	 	
+				if (optionLink == "planet4" and playerObj:getFactionStanding("imperial") >= 70) then
+	        		        playerObj:decreaseFactionStanding("imperial",50)
+            				player:switchZone("mandalore", 1561.03, 2.13226, -6522.97, 0) 
+				elseif (optionLink == "planet4" and playerObj:getFactionStanding("imperial") < 70) then
+					nextConversationScreen = conversation:getScreen("notenough_faction")
+					creature:sendSystemMessage("You dont have enough FP")
+				end	
+				-- xxxxxxxxxx Planet Mandalore Bralsin Port xxxxxxxxxxxx	 	
+				if (optionLink == "planet5" and playerObj:getFactionStanding("imperial") >= 70) then
+	        		        playerObj:decreaseFactionStanding("imperial",50)
+            				player:switchZone("mandalore", -5684.57, 0.230593, -5031.84, 0) 
+				elseif (optionLink == "planet5" and playerObj:getFactionStanding("imperial") < 70) then
+					nextConversationScreen = conversation:getScreen("notenough_faction")
+					creature:sendSystemMessage("You dont have enough FP")
+				end	
+				-- xxxxxxxxxx Planet Mandalore Norg Bral Port xxxxxxxxxxxx	 	
+				if (optionLink == "planet6" and playerObj:getFactionStanding("imperial") >= 70) then
+	        		        playerObj:decreaseFactionStanding("imperial",50)
+            				player:switchZone("mandalore", -6656.73, 30, 5584.73, 0) 
+				elseif (optionLink == "planet6" and playerObj:getFactionStanding("imperial") < 70) then
+					nextConversationScreen = conversation:getScreen("notenough_faction")
+					creature:sendSystemMessage("You dont have enough FP")
+				end	
+				-- xxxxxxxxxx Planet Mandalore Shuror Port xxxxxxxxxxxx	 	
+				if (optionLink == "planet7" and playerObj:getFactionStanding("imperial") >= 70) then
+	        		        playerObj:decreaseFactionStanding("imperial",50)
+            				player:switchZone("mandalore", 1062.25, 2.01906, 2736.09, 0) 
+				elseif (optionLink == "planet7" and playerObj:getFactionStanding("imperial") < 70) then
+					nextConversationScreen = conversation:getScreen("notenough_faction")
+					creature:sendSystemMessage("You dont have enough FP")
+				end	
+				-- xxxxxxxxxx Planet Mandalore Enceri Port xxxxxxxxxxxx	 	
+				if (optionLink == "planet8" and playerObj:getFactionStanding("imperial") >= 70) then
+	        		        playerObj:decreaseFactionStanding("imperial",50)
+            				player:switchZone("mandalore", 4708.91, 2.83306, 7156.67, 0)
+				elseif (optionLink == "planet8" and playerObj:getFactionStanding("imperial") < 70) then
 					nextConversationScreen = conversation:getScreen("notenough_faction")
 					creature:sendSystemMessage("You dont have enough FP")
 				end	
 				-- xxxxxxxxxx Planet Hoth xxxxxxxxxxxx	 	
-				if (optionLink == "planet3" and playerObj:getFactionStanding("imperial") >= 70) then
+				if (optionLink == "planet9" and playerObj:getFactionStanding("imperial") >= 70) then
 	        		        playerObj:decreaseFactionStanding("imperial",50)
             				player:switchZone("hoth", 0.0, 0.0, 0.0, 0)
-				elseif (optionLink == "planet3" and playerObj:getFactionStanding("imperial") < 70) then
+				elseif (optionLink == "planet9" and playerObj:getFactionStanding("imperial") < 70) then
 					nextConversationScreen = conversation:getScreen("notenough_faction")
 					creature:sendSystemMessage("You dont have enough FP")
 				end	
 				-- xxxxxxxxxx Planet Kaas xxxxxxxxxxxx	 	
-				if (optionLink == "planet4" and playerObj:getFactionStanding("imperial") >= 70) then
+				if (optionLink == "planet10" and playerObj:getFactionStanding("imperial") >= 70) then
 	        		        playerObj:decreaseFactionStanding("imperial",50)
             				player:switchZone("kaas", 0.0, 0.0, 0.0, 0)
-				elseif (optionLink == "planet4" and playerObj:getFactionStanding("imperial") < 70) then
+				elseif (optionLink == "planet10" and playerObj:getFactionStanding("imperial") < 70) then
 					nextConversationScreen = conversation:getScreen("notenough_faction")
 					creature:sendSystemMessage("You dont have enough FP")
 				end	
