@@ -57,8 +57,9 @@ transit_convo_cPvP = ConvoScreen:new {
    customDialogText = "Shuttle transport to the New Planets:",
    stopConversation = "false",
       options = {
-      {"Taanab Port 50FP", "planet1"},
-      {"Mandalore Port 50FP", "planet2"},
+      {"Taanab Pandath Port 50FP", "planet1"},
+      {"Taanab Starhunter Station 50FP", "planet2"},
+      {"Mandalore Port 50FP", "planet3"},
       {"Hoth Port 50FP", "planet3"},
       {"Kaas Port 50FP", "planet4"},
       {"No thank you.", "deny_quest"}
