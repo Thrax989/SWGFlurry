@@ -88,8 +88,9 @@ darth_caedus = Creature:new {
 		},
 				
 	},
-	weapons = {"dark_jedi_weapons_gen2"},
-	attacks = {lightsabermaster,forcepowermaster}
+	weapons = {"dark_jedi_weapons_gen3"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(lightsabermaster,forcepowermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(darth_caedus, "darth_caedus")

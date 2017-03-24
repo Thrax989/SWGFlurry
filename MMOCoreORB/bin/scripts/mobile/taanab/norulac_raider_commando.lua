@@ -2,7 +2,7 @@ norulac_raider_commando = Creature:new {
 	objectName = "@mob/creature_names:norulac_raider_commando",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
-	socialGroup = "",
+	socialGroup = "self",
 	faction = "",
 	level = 96,
 	chanceHit = 0.95,
@@ -33,12 +33,12 @@ norulac_raider_commando = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 6500000},
-				{group = "pistols", chance = 750000},
-				{group = "rifles", chance = 750000},
-				{group = "carbines", chance = 750000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "wearables_uncommon", chance = 500000}
+				{group = "junk", chance = 2000000},
+				{group = "pistols", chance = 1000000},
+				{group = "rifles", chance = 1000000},
+				{group = "carbines", chance = 1000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "wearables_uncommon", chance = 2500000}
 			}
 		}
 	},

@@ -125,7 +125,7 @@ outbreak_boss = Creature:new {
   		},
 		{
 			groups = {
-				{group = "nightsister_rare", chance = 5000000}
+				{group = "nightsister_rare", chance = 10000000}
 		},
 			lootChance = 10000000
 		},
