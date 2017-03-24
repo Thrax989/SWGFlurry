@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_mt_pie = object_tangible_loot_misc_shared_mt_pie:new {
-
+useCount = 1,
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_mt_pie, "object/tangible/loot/misc/mt_pie.iff")
