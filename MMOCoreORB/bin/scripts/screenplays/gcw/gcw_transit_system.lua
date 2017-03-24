@@ -18,6 +18,7 @@ function gcw_transit_system:start()
    local pImpPilotCorellia = spawnMobile("mandalore", "imp_transitpilot", 60, 1062.25, 2.01906, 2736.09, 83, 0 )
    local pImpPilotCorellia = spawnMobile("mandalore", "imp_transitpilot", 60, 4708.91, 2.83306, 7156.67, 83, 0 )
    local pImpPilotCorellia = spawnMobile("hoth", "imp_transitpilot", 60, 10.6808, 0, -1994.3, 83, 0 )
+   local pImpPilotCorellia = spawnMobile("kaas", "imp_transitpilot", 60, -5109, 81.6667, -2118, 83, 0 )
 
 --   local pImpPilotNaboo = spawnMobile("Naboo", "imp_transitpilot", 60, 2445, 292, -3888, 35, 0 )
 --   local pImpPilotYavin4 = spawnMobile("Yavin4", "imp_transitpilot", 60, 4044, 37.0, -6250, 35, 0 )
@@ -154,7 +155,7 @@ function gcw_transit_system_convo_handler:getNextConversationScreen(conversation
 				-- xxxxxxxxxx Planet Kaas xxxxxxxxxxxx	 	
 				if (optionLink == "planet10" and playerObj:getFactionStanding("imperial") >= 70) then
 	        		        playerObj:decreaseFactionStanding("imperial",50)
-            				player:switchZone("kaas", 0.0, 0.0, 0.0, 0)
+            				player:switchZone("kaas", -5109, 81.6667, -2118, 0) 
 				elseif (optionLink == "planet10" and playerObj:getFactionStanding("imperial") < 70) then
 					nextConversationScreen = conversation:getScreen("notenough_faction")
 					creature:sendSystemMessage("You dont have enough FP")
