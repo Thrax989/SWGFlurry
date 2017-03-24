@@ -79,7 +79,7 @@ function gcw_transit_system_convo_handler:getNextConversationScreen(conversation
 					creature:sendSystemMessage("You dont have enough FP")
 				end				
 				-- xxxxxxxxxx Planet Mandalore xxxxxxxxxxxx	 	
-				if (optionLink == "planet1" and playerObj:getFactionStanding("imperial") >= 70) then
+				if (optionLink == "planet2" and playerObj:getFactionStanding("imperial") >= 70) then
 	        		        playerObj:decreaseFactionStanding("imperial",50)
             				player:switchZone("mandalore", 0.0, 0.0, 0.0, 0)
 				elseif (optionLink == "planet2" and playerObj:getFactionStanding("imperial") < 70) then
