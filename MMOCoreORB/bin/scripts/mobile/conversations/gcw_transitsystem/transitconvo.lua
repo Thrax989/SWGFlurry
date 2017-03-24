@@ -11,7 +11,7 @@ transit_convo_first_screen = ConvoScreen:new {
    customDialogText = "You need a military Transport ?",
    stopConversation = "false",
    options = {
-      {"PvP Battleground", "cPvP"},   
+      {"New Planets", "cPvP"},   
       {"Corellia", "cCorellia"},
       {"Dantooine", "cDantooine"},
       {"Dathomir", "cDathomir"},
@@ -54,11 +54,13 @@ transitconvo_template:addScreen(transit_convo_cDantooine);
 transit_convo_cPvP = ConvoScreen:new {
    id = "cPvP",
    leftDialog = "",
-   customDialogText = "Shuttle transport to the Battleground:",
+   customDialogText = "Shuttle transport to the New Planets:",
    stopConversation = "false",
       options = {
-      {"PvP Battleground Area 50FP", "sPvP"},
-      {"PvP Kaas Planet Area 50FP", "sPvPPlanet"},
+      {"Taanab Port 50FP", "planet1"},
+      {"Mandalore Port 50FP", "planet2"},
+      {"Hoth Port 50FP", "planet3"},
+      {"Kaas Port 50FP", "planet4"},
       {"No thank you.", "deny_quest"}
   }
 }
