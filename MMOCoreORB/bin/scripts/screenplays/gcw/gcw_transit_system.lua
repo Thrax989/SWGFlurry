@@ -70,14 +70,22 @@ function gcw_transit_system_convo_handler:getNextConversationScreen(conversation
 					nextConversationScreen = conversation:getScreen("notenough_faction")
 					creature:sendSystemMessage("You dont have enough FP")
 				end
-				-- xxxxxxxxxx Planet Taanab xxxxxxxxxxxx	 	
+				-- xxxxxxxxxx Planet Taanab Pandath Port xxxxxxxxxxxx	 	
 				if (optionLink == "planet1" and playerObj:getFactionStanding("imperial") >= 70) then
 	        		        playerObj:decreaseFactionStanding("imperial",50)
-            				player:switchZone("taanab", 0.0, 0.0, 0.0, 0)
+            				player:switchZone("taanab", 1, 2104.1, 45, 5396.27, 259, 0) 
 				elseif (optionLink == "planet1" and playerObj:getFactionStanding("imperial") < 70) then
 					nextConversationScreen = conversation:getScreen("notenough_faction")
 					creature:sendSystemMessage("You dont have enough FP")
-				end				
+				end
+				-- xxxxxxxxxx Planet Taanab Starhunter Station xxxxxxxxxxxx	 	
+				if (optionLink == "planet2" and playerObj:getFactionStanding("imperial") >= 70) then
+	        		        playerObj:decreaseFactionStanding("imperial",50)
+            				player:switchZone("taanab", 1, 3606.65, 31.7, -5420.95, 60, 0) 
+				elseif (optionLink == "planet2" and playerObj:getFactionStanding("imperial") < 70) then
+					nextConversationScreen = conversation:getScreen("notenough_faction")
+					creature:sendSystemMessage("You dont have enough FP")
+				end
 				-- xxxxxxxxxx Planet Mandalore xxxxxxxxxxxx	 	
 				if (optionLink == "planet2" and playerObj:getFactionStanding("imperial") >= 70) then
 	        		        playerObj:decreaseFactionStanding("imperial",50)
