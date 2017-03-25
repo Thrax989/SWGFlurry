@@ -73,6 +73,9 @@ object_draft_schematic_clothing_clothing_armor_ris_helmet = object_draft_schemat
    targetTemplate = "object/tangible/wearables/armor/ris/armor_ris_helmet.iff",
 
    additionalTemplates = {
+"object/tangible/wearables/armor/mandalorian/armor_mandalorian_helmet.iff",
+"object/tangible/wearables/armor/mandalorian/armor_mandalorian_rebel_helmet.iff",
+"object/tangible/wearables/armor/mandalorian/armor_mandalorian_imperial_helmet.iff",
              }
 
 }
