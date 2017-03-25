@@ -73,8 +73,8 @@ object_draft_schematic_clothing_clothing_armor_ris_boots = object_draft_schemati
    targetTemplate = "object/tangible/wearables/armor/ris/armor_ris_boots.iff",
 
    additionalTemplates = {
-"object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_shoes.iff",
-"object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_rebel_boots.iff",
+"object/tangible/wearables/armor/mandalorian/armor_mandalorian_shoes.iff",
+"object/tangible/wearables/armor/mandalorian_rebel/armor_mandalorian_rebel_boots.iff",
 "object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_imperial_boots.iff",
              }
 

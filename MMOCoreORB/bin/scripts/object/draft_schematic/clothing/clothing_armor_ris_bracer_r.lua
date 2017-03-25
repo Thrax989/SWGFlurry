@@ -73,8 +73,8 @@ object_draft_schematic_clothing_clothing_armor_ris_bracer_r = object_draft_schem
    targetTemplate = "object/tangible/wearables/armor/ris/armor_ris_bracer_r.iff",
 
    additionalTemplates = {
-"object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_bracer_r.iff",
-"object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_rebel_bracer_r.iff",
+"object/tangible/wearables/armor/mandalorian/armor_mandalorian_bracer_r.iff",
+"object/tangible/wearables/armor/mandalorian_rebel/armor_mandalorian_rebel_bracer_r.iff",
 "object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_imperial_bracer_r.iff",
              }
 
