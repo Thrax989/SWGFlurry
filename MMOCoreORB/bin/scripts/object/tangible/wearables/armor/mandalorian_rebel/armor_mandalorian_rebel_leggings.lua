@@ -103,27 +103,26 @@ object_tangible_wearables_armor_mandalorian_rebel_armor_mandalorian_rebel_leggin
 				"object/creature/player/zabrak_female.iff" },
 	
 	-- Damage types in WeaponObject
-	vulnerability = NONE,
+	vulnerability = ACID + STUN,
+	specialResists = LIGHTSABER + KINETIC,
 
-	specialResists = LIGHTSABER,
+	-- These are default Blue Frog stats
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
 
-	-- These are default Blue Frog stats, These are also used as temporary DWB crafting stats. Needs to be adjusted to random color, and Blast should be a Special Resist. Encumberance on boots and all arm/hand armor are estimated. Helm/Chest/Leggings are correct. 
-	healthEncumbrance = 94,
-	actionEncumbrance = 180,
-	mindEncumbrance = 56,
+	-- LIGHT, MEDIUM, HEAVY
+	rating = LIGHT,
 
-	rating = HEAVY,
-	maxCondition = 150000,
-
-	kinetic = 65,
-	energy = 65,
-	electricity = 65,
-	stun = 65,
-	blast = 65,
-	heat = 65,
-	cold = 65,
-	acid = 65,
-	lightSaber = 65
+	kinetic = 15,
+	energy = 15,
+	electricity = 15,
+	stun = 0,
+	blast = 15,
+	heat = 15,
+	cold = 15,
+	acid = 0,
+	lightSaber = 10,
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_mandalorian_rebel_armor_mandalorian_rebel_leggings, "object/tangible/wearables/armor/mandalorian_rebel/armor_mandalorian_rebel_leggings.iff")
