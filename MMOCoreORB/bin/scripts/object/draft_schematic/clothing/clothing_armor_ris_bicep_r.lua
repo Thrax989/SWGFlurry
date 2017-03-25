@@ -73,8 +73,8 @@ object_draft_schematic_clothing_clothing_armor_ris_bicep_r = object_draft_schema
    targetTemplate = "object/tangible/wearables/armor/ris/armor_ris_bicep_r.iff",
 
    additionalTemplates = {
-"object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_bicep_r.iff",
-"object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_rebel_bicep_r.iff",
+"object/tangible/wearables/armor/mandalorian/armor_mandalorian_bicep_r.iff",
+"object/tangible/wearables/armor/mandalorian_rebel/armor_mandalorian_rebel_bicep_r.iff",
 "object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_imperial_bicep_r.iff",
              }
 
