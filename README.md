@@ -102,10 +102,6 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Hoth
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kaas
 
-## -Armor crafting Balance-
-Currently Testing Crafted RIS armor. Testing Special protections . Should be able to craft up to 50%LS resist max. Report any bugs if you find any 
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Crafted RIS Armor	
-
 ## -Server Code Contributors-
 * https://github.com/Thrax989 - Project Lead Creator
 * https://github.com/lasko-2112 - TRE File Creator All NGE Weapons Cu Weapons / Ghomrassen Planet Creator
