@@ -73,6 +73,9 @@ object_draft_schematic_clothing_clothing_armor_composite_leggings = object_draft
    targetTemplate = "object/tangible/wearables/armor/composite/armor_composite_leggings.iff",
 
    additionalTemplates = {
+"object/tangible/wearables/armor/infiltrator/armor_infiltrator_s01_leggings.iff",
+"object/tangible/wearables/armor/marine/armor_marine_leggings.iff",
+"object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings.iff",
              }
 
 }
