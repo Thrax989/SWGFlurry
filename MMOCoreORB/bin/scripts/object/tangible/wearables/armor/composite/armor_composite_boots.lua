@@ -100,13 +100,13 @@ object_tangible_wearables_armor_composite_armor_composite_boots = object_tangibl
 
 
 	-- Damage types in WeaponObject
-	vulnerability = STUN,
+	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY + LIGHTSABER,
+	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
-	actionEncumbrance = 100,
+	actionEncumbrance = 80,
 	mindEncumbrance = 80,
 
 	maxCondition = 30000,
@@ -122,7 +122,7 @@ object_tangible_wearables_armor_composite_armor_composite_boots = object_tangibl
 	heat = 65,
 	cold = 65,
 	acid = 65,
-	lightSaber = 50,
+	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
