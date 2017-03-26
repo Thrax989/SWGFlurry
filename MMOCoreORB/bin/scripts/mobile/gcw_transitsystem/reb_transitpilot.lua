@@ -24,7 +24,7 @@ reb_transitpilot = Creature:new {
 	ferocity = 0,
         pvpBitmask = NONE,
         creatureBitmask = NONE,
-        optionsBitmask = INVULNERABLE + INTERESTING,
+        optionsBitmask = INVULNERABLE + INTERESTING + 264,
         diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_rebel_pilot_human_male_01.iff"},
