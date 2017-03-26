@@ -32,6 +32,7 @@ function reb_transit_system_convo_handler:getNextConversationScreen(conversation
 	   
    -- Assign the player to variable creature for use inside this function.
    local creature = LuaCreatureObject(conversingPlayer)
+   creature:setCustomObjectName("\\#CD0000Rebel Travel Portal")
    -- Get the last conversation to determine whetehr or not we're  on the first screen
    local convosession = creature:getConversationSession()
    lastConversation = nil
