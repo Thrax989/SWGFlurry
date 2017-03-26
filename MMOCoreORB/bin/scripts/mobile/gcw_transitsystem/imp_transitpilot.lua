@@ -24,7 +24,7 @@ imp_transitpilot = Creature:new {
    ferocity = 0,
    pvpBitmask = NONE,
    creatureBitmask = NONE,
-   optionsBitmask = INVULNERABLE + INTERESTING,
+   optionsBitmask = INVULNERABLE + INTERESTING + 264,
    diet = HERBIVORE,
 
    templates = {"object/mobile/dressed_imperial_lieutenant_m.iff"},
