@@ -610,7 +610,7 @@ taanab = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 2020, z = 45.0, y = 5400, parentid = 0}
+		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 2020, z = 45.0, y = 5400, parentid = 0}
 	}
 }
 
@@ -657,7 +657,7 @@ mandalore = {
 
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 1589, z = 4, y = -6391, parentid = 0}
+		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 1589, z = 4, y = -6391, parentid = 0}
 	}
 }
 
@@ -804,7 +804,7 @@ hoth = {
  	},
  
  	planetObjects = {
- 		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 0, z = 0, y = -2020, parentid = 0},
+ 		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 0, z = 0, y = -2020, parentid = 0},
  	}
  }
 

@@ -33,8 +33,8 @@ dolac_dark_jedi_master = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "holocron_dark", chance = 600000},
-				{group = "holocron_light", chance = 600000},
+				{group = "junk", chance = 600000},
+				{group = "junk", chance = 600000},
 				{group = "crystals_premium", chance = 600000},
 				{group = "rifles", chance = 1300000},
 				{group = "pistols", chance = 1300000},

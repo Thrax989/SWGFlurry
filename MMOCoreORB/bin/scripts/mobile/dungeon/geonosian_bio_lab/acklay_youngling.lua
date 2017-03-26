@@ -32,7 +32,7 @@ acklay_youngling = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "holocron_light", chance = 2500000},
+				{group = "junk", chance = 2500000},
 				{group = "acklay", chance = 2500000},
 				{group = "treasure_map_group", chance = 2500000},
 				{group = "skill_buffs", chance = 2500000}

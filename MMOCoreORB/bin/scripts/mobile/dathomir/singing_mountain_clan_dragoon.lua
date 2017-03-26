@@ -42,7 +42,7 @@ singing_mountain_clan_dragoon = Creature:new {
 				{group = "carbines",  chance = 1000000},
 				{group = "wearables_uncommon",  chance = 500000},
 				{group = "tailor_components",  chance = 500000},
-				{group = "holocron_light",  chance = 500000},
+				{group = "junk",  chance = 500000},
 				{group = "axkva_min",  chance = 200000}
 			},
 			lootChance = 10000000
