@@ -11,7 +11,7 @@ transit_convo_first_screen = ConvoScreen:new {
    customDialogText = "You need a military Transport ?",
    stopConversation = "false",
    options = {
-      {"PvP Battleground", "cPvP"},   
+      {"New Planets", "cPlanet"},   
       {"Corellia", "cCorellia"},
       {"Dantooine", "cDantooine"},
       {"Dathomir", "cDathomir"},
@@ -51,18 +51,26 @@ transit_convo_cDantooine = ConvoScreen:new {
 }
 transitconvo_template:addScreen(transit_convo_cDantooine);
 
-transit_convo_cPvP = ConvoScreen:new {
-   id = "cPvP",
+transit_convo_cPlanet = ConvoScreen:new {
+   id = "cPlanet",
    leftDialog = "",
-   customDialogText = "Shuttle transport to the Battleground:",
+   customDialogText = "Shuttle transport to the New Planets:",
    stopConversation = "false",
       options = {
-      {"PvP Battleground Area 50FP", "sPvP"},
-      {"PvP Kaas Planet Area 50FP", "sPvPPlanet"},
+      {"Taanab Pandath Port 50FP", "planet1"},
+      {"Taanab Starhunter Station 50FP", "planet2"},
+      {"Mandalore Sundari Port 50FP", "planet3"},
+      {"Mandalore Keldabe Port 50FP", "planet4"},
+      {"Mandalore Bralsin Port 50FP", "planet5"},
+      {"Mandalore Norg Bral Port 50FP", "planet6"},
+      {"Mandalore Shuror Port 50FP", "planet7"},
+      {"Mandalore Enceri Port 50FP", "planet8"},
+      {"Hoth Port 50FP", "planet9"},
+      {"Kaas Port 50FP", "planet10"},
       {"No thank you.", "deny_quest"}
   }
 }
-transitconvo_template:addScreen(transit_convo_cPvP);
+transitconvo_template:addScreen(transit_convo_cPlanet);
 
 transit_convo_cDathomir = ConvoScreen:new {
    id = "cDathomir",

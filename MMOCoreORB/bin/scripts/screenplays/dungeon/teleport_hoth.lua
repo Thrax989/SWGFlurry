@@ -32,6 +32,6 @@ function teleport_hothScreenPlay:spawnMobiles()
 end
 function teleport_hothScreenPlay:teleportCor(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("hoth", 0, 0, 0, 0)
+	player:switchZone("hoth", 4, 0, -2008, 0)
 	return 0
 end

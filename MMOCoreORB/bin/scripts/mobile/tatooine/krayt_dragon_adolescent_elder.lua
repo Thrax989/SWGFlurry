@@ -54,7 +54,7 @@ krayt_dragon_adolescent_elder = Creature:new {
 	        groups = {
 				{group = "krayt_tissue_rare", chance = 10000000}
 			},
-			lootChance = 10000000
+			lootChance = 1500000
 		},
 		{
 	        groups = {
