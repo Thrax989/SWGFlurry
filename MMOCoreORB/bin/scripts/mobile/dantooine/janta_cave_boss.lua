@@ -25,7 +25,7 @@ janta_cave_boss = Creature:new {
 	  creatureBitmask = KILLER + STALKER,
 	  optionsBitmask = AIENABLED,
 	  diet = HERBIVORE,
-		Scale = 2.0,
+	  Scale = 2.0,	
 
 	templates = {"object/mobile/tusken_raider.iff"},
 	lootGroups = {
@@ -68,6 +68,13 @@ janta_cave_boss = Creature:new {
 		{
 			groups = {
 			{group = "krayt_tissue_rare", chance = 10000000}
+		},
+			lootChance = 8000000
+		},
+		{
+			groups = {
+			{group = "Junk", chance = 10000000}
+
 		},
 			lootChance = 8000000
 		},
