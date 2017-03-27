@@ -5,6 +5,7 @@
 #ifndef BOOSTMORALECOMMAND_H_
 #define BOOSTMORALECOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/group/GroupObject.h"
 #include "server/chat/ChatManager.h"
 #include "SquadLeaderCommand.h"
@@ -38,7 +39,6 @@ public:
 			return GENERALERROR;
 
 		ManagedReference<GroupObject*> group = player->getGroup();
-		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 		if (!checkGroupLeader(player, group))
 			return GENERALERROR;
@@ -84,9 +84,6 @@ public:
 
 			if (!member->isPlayerCreature())
 				continue;
-			
-			if(member->getDistanceTo(member) > 100)
- 				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, false))
 				continue;
@@ -113,15 +110,11 @@ public:
 		for (int i = 0; i < group->getGroupSize(); i++) {
 
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
-			member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 			if (member == NULL)
 				continue;
 
 			if (!member->isPlayerCreature())
-				continue;
-
-			if(member->getDistanceTo(member) > 100)
 				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, false))
