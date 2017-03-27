@@ -14,8 +14,6 @@ function outbreak_screenplay:start()
 end
 
 function outbreak_screenplay:spawnMobiles()
-  	spawnMobile("corellia", "outbreak_boss", 300, -218,36,-5010,5, 0)
-	spawnMobile("corellia", "outbreak_boss_two", 300, -92,31,-5005,-27, 0)
-	spawnMobile("corellia", "woolamander_boss", 300, -91,28,-4858,-96, 0)
-	spawnMobile("corellia", "reclusive_gurk_king", 300, -269,28,-4834,101, 0)
+  	spawnMobile("lok", "outbreak_boss", 3000, 3473,73,2417,15, 0)
+	spawnMobile("dathomir", "outbreak_boss_two", 3000, 2540,100,-6480,3, 0)
 end
