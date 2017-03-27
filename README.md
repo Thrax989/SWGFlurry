@@ -1,112 +1,128 @@
-# SWGFlurry
+## -Star Wars Galaxies Flurry Server-
+<img src="http://i.imgur.com/OB4Pa6a.png">
+
+- Main Web site
 http://www.swgflurry.com/
-
+- Main Forums
 http://www.swgflurry.com/forum/
-
-Core3 http://review.swgemu.com
-
-Discord Voice Chat
+- Core 3 Base Server Code/Engine
+http://review.swgemu.com
+- Main Servers Voice Chat 
 https://discord.gg/eN82pdc
 
-Run in gdb debug mode
-when you get to the (gdb) prompt type r (or run) then enter 
-gdb core3
-(gdb) r or run
+## -Run Server in gdb debug mode-
+Open Terminal "Type" cd /home/vagrant/workspace/Core3/MMOCoreORB/bin Then "type" gdb ./core3 <br>
+This will run your core3 in GDB mode so you can debug with "bt" <br>
+If your server segfaults it will promt you "segmentation fault"
+type "bt" to do a back trace to find your error
 
-Run Unit Integrity Test
-/home/vagrant/bin/swgemu runUnitTests
+## -Run Unit Integrity Test-
+cd /home/vagrant/bin/<br>
+swgemu<br>
+runUnitTests<br>
 
+# Required Mod The Galaxy TRE Files
+http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
+<br>
+	maxSearchPriority=27<br>
+	searchTree_00_25=capes.tre<br>
+	searchTree_00_24=pods.tre<br>
+	searchTree_00_23=hoth.tre<br>
+	searchTree_00_22=skill_patch.tre<br>
+	searchTree_00_21=armor.tre<br>
+	searchTree_00_20=phoenix_patch_1.tre<br>
+	searchTree_00_19=mtg_planets.tre<br>
+	searchTree_00_18=mtg_patch_019.tre<br>
+	searchTree_00_17=mtg_patch_018.tre<br>
+	searchTree_00_16=mtg_patch_017.tre<br>
+	searchTree_00_15=mtg_patch_016.tre<br>
+	searchTree_00_14=mtg_patch_015.tre<br>
+	searchTree_00_13=mtg_patch_014.tre<br>
+	searchTree_00_12=mtg_patch_013_configurable_02.tre<br>
+	searchTree_00_11=mtg_patch_012_configurable_01.tre<br>
+	searchTree_00_10=mtg_patch_011_files_01.tre<br>
+	searchTree_00_9=mtg_patch_010_object_01.tre<br>
+	searchTree_00_8=mtg_patch_009_Shader_01.tre<br>
+	searchTree_00_7=mtg_patch_008_texture_04.tre<br>
+	searchTree_00_6=mtg_patch_007_texture_03.tre<br>
+	searchTree_00_5=mtg_patch_006_texture_02.tre<br>
+	searchTree_00_4=mtg_patch_005_texture_01.tre<br>
+	searchTree_00_3=mtg_patch_004_appearance_04.tre<br>
+	searchTree_00_2=mtg_patch_003_appearance_03.tre<br>
+	searchTree_00_1=mtg_patch_002_appearance_02.tre<br>
+	searchTree_00_0=mtg_patch_001_appearance_01.tre<br>
 
+## Coding Legend
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Testing`
 
+### This Server Is A Branch From The MTGserver.
 
+This server is specifically for new post 14.1 content and server modifications compatible with Core3. They have been created and submitted by the SWG community. The new content is available for any server to use with just one restriction: We ask that you give full credit to the creator for their work on your server's website and not claim it as your own work. Thank you.
 
-Table of Contents<br>
-1	Preface	3<br>
-2	Code Formatting	4<br>
-2.1	K&R Coding Style	4<br>
-2.2	Coding Techniques	4<br>
-2.2.1	Global Variables and Functions	4<br>
-2.2.2	Abbrevations and Special Characters	4<br>
-2.2.3	Class Naming Conventions	4<br>
-2.2.4	Class Member and Method Naming Conventions	4<br>
-2.2.5	Class Method Parameter Naming Conventions	4<br>
-2.2.6	Local Variable Naming Conventions	4<br>
-2.2.7	Method Blocks	4<br>
-2.2.8	Block Structuring	4<br>
-2.2.9	File Structuring	4<br>
-2.2.10	Method Reusability	4<br>
-2.2.11	Macros	5<br>
-3	Concurrent Programming	6<br>
-3.1	Overview	6<br>
-3.2	Race Conditions	6<br>
-3.3	Locks	6<br>
-3.4	Dead Locks	6<br>
-4	Project SWG Emu	7<br>
-4.1	Code Formatting	7<br>
-4.2	Concurrency	7<br>
-4.2.1	Locking System	7<br>
+It's purpose is to add all of the NGE assets and anything released by the kind contributors to the MTG website.
 
-4.2.2	Practices	7<br><br>
-In the works..<br>
-2.0	Code Formatting<br><br>
-In the works..<br>
-2.1	K&R Coding Style<br><br>
-In the works..<br>
-2.2	Coding Techniques<br><br>
-In the works..<br>
+The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to this address. https://github.com/Thrax989/SWGFlurry/issues
 
-2.2.1	Global Variables and Functions<br>
-No global variable or functions, use static members and methods in a proper class.<br><br>
-2.2.2	Abbrevations and Special Characters<br>
-Do not use any abbrevations or any special marks (like _) in names and use the following four naming conventions.<br><br>
-2.2.3	Class Naming Conventions<br>
-All tags of the classnames, including the first, must start with a capital letter (e.g. ZoneServerPacketHandler).<br><br>
-2.2.4	Class Member and Method Naming Conventions<br>
-Class member and methods must not start with a capital but their other tags must start with one (e.g handlePositionUpdatePacket()).<br><br>
-2.2.5	Class Method Parameter Naming Conventions<br>
-Method parameters cannot contain capital letters altough they might use some kind of abbreavtion if needed.<br><br>
-2.2.6	Local Variable Naming Conventions<br>
-Local variables cannot contain capital letters as well.<br><br>
-2.2.7	Method Blocks<br>
-Do not create method blocsk longer then 100 lines, it makes code very hard to see through. Divide the functionality into more subfunctions. This is a very common mistake along with the next one!<br><br>
-2.2.8	Block Structuring<br>
-Avoid having more then 3 sub blocks in cycles and conditional cases. This also makes the code very very unclean.<br><br>
-2.2.9	File Structuring<br>
-For each class create their own header and source (if it is needed) files. Do not mix classes into different sources.<br><br>
-2.2.10	Method Reusability<br><br>
+## -Everything that has been added so far-
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * All standard Pre-CU assets
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * All post 14.1 Weapons
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * CU Armor - Katarn, Rebel Assault/Battle, Imperial Assualt & Scout Troopers
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * Mustafar Mobs & NPC's
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * Kashyyyk Mobs and worldbuilding assets
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * Many NGE Mobs
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * All NGE Backpack
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Wings / Halos
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * BARC Speeder Neutral / Rebel Imperial / Pod Racers 1 an 2 / Sith Sppeder
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * All NGE Housing Deeds With Appropriate signs / Halloween signs
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE House schematics 
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE capes Rebel / Imperial
+- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Decorations / Hologram Decorations / 1 year - 10 year vet rewards 
 
+## -Everything that needs to be added-
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) All TCG Items
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) Remaining NGE Wearable,Vehicles,Deeds,Assets
 
+## -Planets That Need Testing-
+- ![#008000](https://placehold.it/15/008000/000000?text=+) corellia
+- ![#008000](https://placehold.it/15/008000/000000?text=+) dantooine
+- ![#008000](https://placehold.it/15/008000/000000?text=+) dathomir
+- ![#008000](https://placehold.it/15/008000/000000?text=+) endor
+- ![#008000](https://placehold.it/15/008000/000000?text=+) lok
+- ![#008000](https://placehold.it/15/008000/000000?text=+) naboo
+- ![#008000](https://placehold.it/15/008000/000000?text=+) rori
+- ![#008000](https://placehold.it/15/008000/000000?text=+) talus
+- ![#008000](https://placehold.it/15/008000/000000?text=+) tatooine
+- ![#008000](https://placehold.it/15/008000/000000?text=+) yavin4
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) Kashyyyk
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Mustafar
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Mandalore
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Taanab
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Hoth
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kaas
 
-
-
-3	Concurrent Programming<br>
-Concurrent programming is among the most difficult thing to do thus not only need deep knowledge of the problem but a lot of experience as well. We cannot give you the later but we are going to discuss some of the basic aspects.<br><br>
-3.1	Overview<br>
-Concurrent programming is executing multiple tasks in parallel which means two task can not only be executed in any order but even at the same time. Note that true parallelism does not exists on single core machine since it simply switches between tasks but systems with multi cores does achieve real parallelism.<br> <br>
-Since tasks can be interrupted any time by the processor, concurrency can lead to many nasty problems such as race conditions.  <br>
-3.2	Race Conditions<br>
-Tasks in one process share the same memory so there is a good chance that two task can access and overwrite the same memory location same time. Another issue can happen when a task does not finish before being interrupted so other tasks can change the memory locations it used to compute one result. <br><br>
-3.3	Locks<br>
-The most typical solution for synchronization issues is done by locks to block threads from altering state while a single thread makes changes.  Locks can be logically assigned to objects or even simple portions of memory to protect tasks from manipulating them at the same time.<br><br>
-One of the most difficult problem with locks is to determine when and how a task should acqure or release a lock of series of locks.  This puts a lot of pressure on the programmers because it is very hard to test and debug if a system is going to work properly in any and all scenarios.<br><br>
-The naive method of locking objects is to lock everything on use. In practice this would lead to serious overhead so one should understand the scenarios how objects interact and eliminate unnecessary locks.<br><br>
-3.4	Dead Locks<br>
-A dead lock happens when all tasks are waiting for a lock to be acquired hence there are no threads that can release some of them. The following example is going to illustrate  what can lead to a situation like this.<br><br>
-Lets say we have two threads and two locks. Thread 1 is going to try to acqure lock A then lock B while thread 2 is going to try to acquire lock B then lock A. In the worst case the two threads are going to be executed same time when thread 1 acquired lock A  and thread 2 acquired lock B in the fisrt step. Now thread 1 cannot get lock A since thread 2 holds it and thread 2 cannot acquire lock A cause of the same reason.<br><br>
-To solve this in the first round one have to be very careful ordering the locks. There has to be certain levels of objects that you lock in order.  One issue comes when you have to lock two of the same type of object during one task.  We introduced a method called cross locks over these 2 objects that will automaticly solve the situation for you.<br><br>
-
-4	SWG Flurry Contribute<br><br>
-4.1	Code Formatting<br>
-Please follow all the instructions from the Coding Techniques section. In some cases the format source option can assist you by the Eclipse IDE.<br><br>
-4.2	Code Submission<br>
-Commiting to the Git repository please always mark your activities with one of the following tags: [fixed], [added], [deleted], [modified], [updated]<br><br>
-4.3	Concurrency<br><br>
-
-4.3.1	Locking System<br><br>
-
-In the works..<br><br>
-
-4.3.2	Practices<br>
-•	During a thread release the locks exactly in the opposite order then you locked them.  Unlocking them would not really cause any technical problems but it is lot more clean to manage them this way.<br><br>
-•	Exceptions can happen anywhere in the code that will skip the rest of the block throughout many functions as long as it is not catched. This is why you should always put a catch try block around a lock-unlock block.<br><br>
-•	Locking two of the same type of objects in one thread should always be made with cross locks { object1->lock(object2) }. This will prevent any deadlocks among this type of objects.  For example we cross lock creatures when one is interacting with the other. During the cross lock the object in the parameter must be locked previously.<br><br>
+## -Server Code Contributors-
+* https://github.com/Thrax989 - Project Lead Creator
+* https://github.com/lasko-2112 - TRE File Creator All NGE Weapons Cu Weapons / Ghomrassen Planet Creator
+* https://github.com/kurdtkobain - Additional Command Support / Game Tweaks
+* https://github.com/Xela-TheCreation - FRS system Creator
+* https://github.com/bobvious - Additional Game Balances Lua game Tweaks
+* https://github.com/TheAnswer - Engine Developer 
+* https://github.com/Tatwi - Admin Tool Creator , Scripts Creator , Quest Logic Creator
+* https://github.com/Levarrishawk/ - Dromund Kaas Planet Creator
+* https://github.com/dannuic - Ai Functionalit World Implamentations lua / CPP functions
+* https://github.com/Ivojedi Enviroment Stability lua / CPP functionality additional game balance / tweaks
+* https://github.com/loswut - Enviroment Functionalit lua / CPP World Edditions
+* https://github.com/Miztah - Quest Logic Additional CPP functionality Village Implamentation for jedi
+* https://github.com/Neetoo - world / enviroment balance quest functionality 
+* https://github.com/Hellucard - Dungeons / Screen play creator 
+* https://github.com/Gungy - Additional game balances 
+* https://github.com/Bommbur - Additional game balances 
+* https://github.com/mhutcherson - Additional game balances 
+* https://github.com/Madvector - Additional game balances 
+* https://github.com/mikeface - Additional game balances Jedi Master Powers Revamp Enhancer Revamp
+* https://github.com/gyrantol - Mandalore , Taanab  world assets
+* https://github.com/washu - Droid functionality
+* https://github.com/Skyyyr - Additional Game Tweaks CPP / Lua script Writer
+* https://github.com/Yakone - Random NGE Item Additons

@@ -357,6 +357,24 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			return;
 
 		String templatePath = node->getTemplatePath();
+		
+		int galaxyid = zserv->getGalaxyID();
+ 
+ 		if (galaxyid == 2) {
+ 			if ((templatePath == "unlearn_all_skills"
+ 			|| templatePath == "cleanse_character"
+ 			|| templatePath == "reset_buffs"
+ 			|| templatePath == "enhance_character"
+ 			|| templatePath == "apply_dots"
+ 			|| templatePath == "clear_dots"
+ 			|| templatePath == "language"
+ 			|| templatePath == "social_politician_master") && ghost->getAdminLevel() < 15) {
+ 			} else if (ghost->getAdminLevel() < 15) {
+ 				info("WARNING! " + player->getFirstName() + " attempted to use a character builder", true);
+ 				player->sendSystemMessage("You Do Not Have Permission To Do That!");
+ 				return;
+ 			}
+ 		}
 
 		if (templatePath.indexOf(".iff") < 0) { // Non-item selections
 

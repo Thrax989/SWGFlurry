@@ -45,8 +45,8 @@
 -----------------------------------
 
 --Blue frog / GM buff values
-performanceBuff = 3800
-medicalBuff = 3800
+performanceBuff = 750
+medicalBuff = 750
 performanceDuration = 7200 -- in seconds
 medicalDuration = 7200 -- in seconds
 
@@ -67,7 +67,7 @@ baseStoredShips = 5
 -----------------------------------
 --VETERAN REWARDS CONFIG
 -----------------------------------
-veteranRewardMilestones = {0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330} --days, must be sorted low to high
+veteranRewardMilestones = {1, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330} --days, must be sorted low to high
 
 
 veteranRewardAdditionalMilestones = 360 --frequency, in days, of additional milestones (beyond the established ones)
@@ -75,15 +75,15 @@ veteranRewardAdditionalMilestones = 360 --frequency, in days, of additional mile
 
 veteranRewards = {
 
-   -- 0 Day Rewards
+   -- 1 Day Rewards
    -- Disabled until harvester is functional {templateFile = "object/tangible/veteran_reward/harvester.iff", milestone=90, oneTime=true, description="@veteran_new:poweredharvester"},
-   {templateFile = "object/tangible/veteran_reward/data_terminal_s1.iff", milestone=0, oneTime=false, description="@veteran_new:dataterminal1"},
-   {templateFile = "object/tangible/veteran_reward/data_terminal_s2.iff", milestone=0, oneTime=false, description="@veteran_new:dataterminal2"},
-   {templateFile = "object/tangible/veteran_reward/data_terminal_s3.iff", milestone=0, oneTime=false, description="@veteran_new:dataterminal3"},
-   {templateFile = "object/tangible/veteran_reward/data_terminal_s4.iff", milestone=0, oneTime=false, description="@veteran_new:dataterminal4"},
-   {templateFile = "object/tangible/veteran_reward/frn_vet_protocol_droid_toy.iff", milestone=0, oneTime=false, description="@veteran_new:mini_protocoldroid"},
-   {templateFile = "object/tangible/veteran_reward/frn_vet_r2_toy.iff", milestone=0, oneTime=false, description="@veteran_new:mini_r2"},
-   {templateFile = "object/tangible/deed/vehicle_deed/speederbike_deed.iff", milestone=0, oneTime=false, description="Speeder Bike"},
+   {templateFile = "object/tangible/veteran_reward/data_terminal_s1.iff", milestone=1, oneTime=false, description="@veteran_new:dataterminal1"},
+   {templateFile = "object/tangible/veteran_reward/data_terminal_s2.iff", milestone=1, oneTime=false, description="@veteran_new:dataterminal2"},
+   {templateFile = "object/tangible/veteran_reward/data_terminal_s3.iff", milestone=1, oneTime=false, description="@veteran_new:dataterminal3"},
+   {templateFile = "object/tangible/veteran_reward/data_terminal_s4.iff", milestone=1, oneTime=false, description="@veteran_new:dataterminal4"},
+   {templateFile = "object/tangible/veteran_reward/frn_vet_protocol_droid_toy.iff", milestone=1, oneTime=false, description="@veteran_new:mini_protocoldroid"},
+   {templateFile = "object/tangible/veteran_reward/frn_vet_r2_toy.iff", milestone=1, oneTime=false, description="@veteran_new:mini_r2"},
+   {templateFile = "object/tangible/deed/vehicle_deed/speederbike_deed.iff", milestone=1, oneTime=false, description="Speeder Bike"},
 
 
    -- 30 Day Rewards
