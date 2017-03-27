@@ -73,7 +73,7 @@ janta_cave_boss = Creature:new {
 		},
 		{
 			groups = {
-			{group = "Junk", chance = 10000000}
+			{group = "junk", chance = 10000000}
 
 		},
 			lootChance = 8000000
