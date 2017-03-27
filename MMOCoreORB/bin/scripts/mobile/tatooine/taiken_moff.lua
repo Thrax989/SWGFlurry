@@ -75,7 +75,7 @@ taiken_moff = Creature:new {
 },
 {
              groups = {
-             {group = "apocalypse", chance = 10000000}
+             {group = "nge1", chance = 10000000}
 },
              lootChance = 10000000
 },

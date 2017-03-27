@@ -41,7 +41,7 @@ nightsister_protector = Creature:new {
 				{group = "rifles",  chance = 400000},
 				{group = "pistols",  chance = 400000},
 				{group = "carbines",  chance = 400000},
-				{group = "holocron_light",  chance = 500000},
+				{group = "junk",  chance = 500000},
 				{group = "axkva_min",  chance = 2000000}
 			},
 			lootChance = 10000000

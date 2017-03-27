@@ -38,7 +38,7 @@ acklay_elder_overlord = Creature:new {
 		},
 		{
 			groups = {
-				{group = "holocron_light", chance = 1000000},
+				{group = "junk", chance = 1000000},
 				{group = "clothing_attachments", chance = 4500000},
 				{group = "armor_attachments", chance = 4500000}
 			},

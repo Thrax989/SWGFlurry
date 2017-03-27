@@ -28,7 +28,6 @@ public:
 
 		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
 		ManagedReference<GroupObject*> group = player->getGroup();
-		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 		if (!checkGroupLeader(player, group))
 			return GENERALERROR;
@@ -62,16 +61,12 @@ public:
 		int duration = 30;
 
 		leader->sendSystemMessage("@cbt_spam:rally_success_single"); //"You rally the group!"
-		leader->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 		sendRallyCombatSpam(leader, group, true);
 
 		for (int i = 0; i < group->getGroupSize(); i++) {
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
 			if (member == NULL || member->getZone() != leader->getZone())
-				continue;
-
-			if(member->getDistanceTo(member) > 100)
 				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, true))
@@ -81,7 +76,6 @@ public:
 
 			if (member != leader)
 				member->sendSystemMessage("@cbt_spam:rally_success_group_msg"); //"Your group rallies to the attack!"
-				member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
 

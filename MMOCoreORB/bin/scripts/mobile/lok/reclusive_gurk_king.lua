@@ -9,8 +9,8 @@ reclusive_gurk_king = Creature:new {
 	baseXp = 0,
 	baseHAM = 1000000,
 	baseHAMmax = 1000000,
-	armor = 2,
-	resists = {100,100,100,100,100,100,100,100,90},
+	armor = 3,
+	resists = {95,95,95,95,95,95,95,95,100},
 	meatType = "meat_herbivore",
 	meatAmount = 300,
 	hideType = "hide_leathery",
@@ -24,9 +24,9 @@ reclusive_gurk_king = Creature:new {
 	creatureBitmask = PACK + HERD + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
+	scale = 1.5,
 
 	templates = {"object/mobile/recluse_gurk_king.iff"},
-	scale = 1.4,
 	lootGroups = {
 {
 	        groups = {

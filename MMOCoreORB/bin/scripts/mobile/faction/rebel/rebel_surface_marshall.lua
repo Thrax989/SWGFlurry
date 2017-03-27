@@ -38,8 +38,8 @@ rebel_surface_marshall = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 3200000},
-				{group = "holocron_dark", chance = 450000},
-				{group = "holocron_light", chance = 450000},
+				{group = "junk", chance = 450000},
+				{group = "junk", chance = 450000},
 				{group = "rifles", chance = 1180000},
 				{group = "pistols", chance = 1180000},
 				{group = "carbines", chance = 1180000},
