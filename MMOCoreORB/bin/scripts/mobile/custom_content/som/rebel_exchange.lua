@@ -1,6 +1,6 @@
 rebel_exchange = Creature:new {
 	--objectName = "",
-	customName = "World Exchange Dealer",
+	customName = "Rebel Exchange Dealer",
 	socialGroup = "townsperson",
 	pvpFaction = "townsperson",
 	faction = "rebel",
