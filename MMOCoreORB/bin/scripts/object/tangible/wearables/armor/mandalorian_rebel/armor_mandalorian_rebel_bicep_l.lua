@@ -104,7 +104,7 @@ object_tangible_wearables_armor_mandalorian_rebel_armor_mandalorian_rebel_bicep_
 	
 	-- Damage types in WeaponObject
 	vulnerability = ACID + STUN,
-	specialResists = LIGHTSABER + KINETIC,
+	specialResists = LIGHTSABER,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 1,
