@@ -1357,3 +1357,4 @@ includeFile("items/capes2.lua")
 includeFile("items/imperial_token.lua")
 includeFile("items/rebel_token.lua")
 
+includeFile("items/holo_token.lua")
