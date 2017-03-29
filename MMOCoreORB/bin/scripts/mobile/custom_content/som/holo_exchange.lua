@@ -27,7 +27,7 @@ holo_exchange = Creature:new {
 	optionsBitmask = 264,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/som/master_kah.iff"},
+	templates = {"object/mobile/som/obi_wan_ghost.iff"},
 	scale = 1.1,		
         lootGroups = {},
 	lootGroups = {
