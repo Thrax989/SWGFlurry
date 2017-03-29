@@ -294,6 +294,13 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		weapon->setMaxDamage(10);
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
 	}
+	if (weapon->maxCondition() < 0 ||
+			weapon->maxCondition() > 5000000 ||
+			weapon->maxCondition() < 0 ||
+			weapon->maxCondition() > 5000000) {
+			weapon->destroyObjectFromWorld(true);
+		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+	}
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
 
