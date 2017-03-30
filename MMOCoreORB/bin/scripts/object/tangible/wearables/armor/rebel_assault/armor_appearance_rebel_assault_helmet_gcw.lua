@@ -91,4 +91,4 @@ object_tangible_wearables_armor_rebel_assault_armor_appearance_rebel_assault_hel
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_assault_armor_appearance_rebel_assault_helmet_gcw, "object/tangible/wearables/armor/rebel/assault/armor_appearance_rebel_assault_helmet_gcw.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_assault_armor_appearance_rebel_assault_helmet_gcw, "object/tangible/wearables/armor/rebel_assault/armor_appearance_rebel_assault_helmet_gcw.iff")

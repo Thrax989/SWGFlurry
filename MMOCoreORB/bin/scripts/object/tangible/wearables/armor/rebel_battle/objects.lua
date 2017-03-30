@@ -98,7 +98,7 @@ object_tangible_wearables_armor_rebel_battle_shared_armor_rebel_battle_chest_pla
 	clientTemplateFileName = "object/tangible/wearables/armor/rebel_battle/shared_armor_rebel_battle_chest_plate.iff"
 }
 
-ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_rebel_battle_shared_armor_rebel_battle_chest_plate, "object/tangible/wearables/armor/rebel/battle/shared_armor_rebel_battle_chest_plate.iff")
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_rebel_battle_shared_armor_rebel_battle_chest_plate, "object/tangible/wearables/armor/rebel_battle/shared_armor_rebel_battle_chest_plate.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -111,7 +111,7 @@ ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_rebel_battle_s
 
 
 object_tangible_wearables_armor_rebel_battle_shared_armor_rebel_battle_gloves = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/wearables/armor/rebel/battle/shared_armor_rebel_battle_gloves.iff"
+	clientTemplateFileName = "object/tangible/wearables/armor/rebel_battle/shared_armor_rebel_battle_gloves.iff"
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_rebel_battle_shared_armor_rebel_battle_gloves, "object/tangible/wearables/armor/rebel_battle/shared_armor_rebel_battle_gloves.iff")
