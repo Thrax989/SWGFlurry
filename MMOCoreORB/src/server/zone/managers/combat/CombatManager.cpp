@@ -297,9 +297,11 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
 	}
 
-	if (weapon->getMaxCondition() < 0 ||
-			weapon->getMaxCondition() > 50000) {
-                        weapon->destroyObjectFromWorld(true);
+	if (weapon->getConditionDamage() < 0 ||
+			weapon->getConditionDamage() > 500000) {
+		Locker locker(weapon);
+		weapon->setMinDamage(5);
+		weapon->setMaxDamage(10);
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
 	}
 
