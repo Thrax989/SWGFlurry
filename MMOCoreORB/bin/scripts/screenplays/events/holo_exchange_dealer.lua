@@ -12,7 +12,7 @@ holo_exchange = ScreenPlay:new {
 registerScreenPlay("holo_exchange", true)
 
 function holo_exchange:start() 
-   local pMerchant = spawnMobile("dantooine", "holo_exchange", 1, -134.156, 28, -4717.36, 271, 0 )
+   local pMerchant = spawnMobile("dantooine", "holo_exchange", 1, 4202.07, 9, 5215.26, 358, 0) 
 
 end
 

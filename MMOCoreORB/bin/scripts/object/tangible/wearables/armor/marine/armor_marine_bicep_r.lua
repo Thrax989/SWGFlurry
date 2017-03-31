@@ -114,14 +114,8 @@ object_tangible_wearables_armor_marine_armor_marine_bicep_r = object_tangible_we
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 65,
-	energy = 65,
 	electricity = 80,
-	stun = 25,
-	blast = 65,
-	heat = 65,
-	cold = 65,
-	acid = 65,
+	stun = 0,
 	lightSaber = 0,
 }
 

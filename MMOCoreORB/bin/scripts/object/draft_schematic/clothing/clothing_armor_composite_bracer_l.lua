@@ -73,6 +73,9 @@ object_draft_schematic_clothing_clothing_armor_composite_bracer_l = object_draft
    targetTemplate = "object/tangible/wearables/armor/composite/armor_composite_bracer_l.iff",
 
    additionalTemplates = {
+"object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bracer_l.iff",
+"object/tangible/wearables/armor/infiltrator/shared_armor_infiltrator_s01_bracer_l.iff",
+"object/tangible/wearables/armor/marine/shared_armor_marine_bracer_l.iff",
              }
 
 }

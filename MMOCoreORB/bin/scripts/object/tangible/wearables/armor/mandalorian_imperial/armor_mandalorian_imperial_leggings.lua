@@ -114,15 +114,9 @@ object_tangible_wearables_armor_mandalorian_imperial_armor_mandalorian_imperial_
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 15,
-	energy = 15,
-	electricity = 15,
 	stun = 0,
-	blast = 15,
-	heat = 15,
-	cold = 15,
 	acid = 0,
-	lightSaber = 10,
+	lightSaber = 12,
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_mandalorian_imperial_armor_mandalorian_imperial_leggings, "object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_imperial_leggings.iff")

@@ -73,6 +73,9 @@ object_draft_schematic_clothing_clothing_armor_composite_gloves = object_draft_s
    targetTemplate = "object/tangible/wearables/armor/composite/armor_composite_gloves.iff",
 
    additionalTemplates = {
+"object/tangible/wearables/armor/infiltrator/shared_armor_infiltrator_s01_gloves.iff",
+"object/tangible/wearables/armor/marine/shared_armor_marine_gloves.iff",
+"object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_gloves.iff",
              }
 
 }
