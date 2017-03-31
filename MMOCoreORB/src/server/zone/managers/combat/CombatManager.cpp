@@ -5,6 +5,8 @@
  *      Author: victor
  */
 
+
+
 #include "CombatManager.h"
 #include "CreatureAttackData.h"
 #include "server/zone/objects/scene/variables/DeltaVector.h"
@@ -294,6 +296,15 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		weapon->setMaxDamage(10);
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
 	}
+
+	if (weapon->getConditionDamage() < 0 ||
+			weapon->getConditionDamage() > 5000000) {
+		Locker locker(weapon);
+		weapon->setMinDamage(5);
+		weapon->setMaxDamage(10);
+		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+	}
+
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
 

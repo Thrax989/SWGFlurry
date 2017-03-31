@@ -43,6 +43,8 @@
 
 
 --Children folder includes
+includeFile("tangible/wearables/armor/assault_trooper/serverobjects.lua")
+includeFile("tangible/wearables/armor/clone_trooper/serverobjects.lua")
 includeFile("tangible/wearables/armor/bone/serverobjects.lua")
 includeFile("tangible/wearables/armor/bounty_hunter/serverobjects.lua")
 includeFile("tangible/wearables/armor/chitin/serverobjects.lua")

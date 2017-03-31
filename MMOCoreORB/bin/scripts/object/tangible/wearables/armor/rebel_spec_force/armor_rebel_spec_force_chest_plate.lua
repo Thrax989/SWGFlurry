@@ -91,4 +91,4 @@ object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_chest_pl
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_chest_plate, "object/tangible/wearables/armor/rebel/spec/force/armor_rebel_spec_force_chest_plate.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_chest_plate, "object/tangible/wearables/armor/rebel_spec_force/armor_rebel_spec_force_chest_plate.iff")
