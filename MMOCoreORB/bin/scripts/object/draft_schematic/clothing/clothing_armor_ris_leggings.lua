@@ -73,6 +73,9 @@ object_draft_schematic_clothing_clothing_armor_ris_leggings = object_draft_schem
    targetTemplate = "object/tangible/wearables/armor/ris/armor_ris_leggings.iff",
 
    additionalTemplates = {
+"object/tangible/wearables/armor/mandalorian/armor_mandalorian_leggings.iff",
+"object/tangible/wearables/armor/mandalorian_rebel/armor_mandalorian_rebel_leggings.iff",
+"object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_imperial_leggings.iff",
              }
 
 }
