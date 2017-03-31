@@ -298,7 +298,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 	}
 
 	if (weapon->getConditionDamage() < 0 ||
-			weapon->getConditionDamage() > 500000) {
+			weapon->getConditionDamage() > 5000000) {
 		Locker locker(weapon);
 		weapon->setMinDamage(5);
 		weapon->setMaxDamage(10);
