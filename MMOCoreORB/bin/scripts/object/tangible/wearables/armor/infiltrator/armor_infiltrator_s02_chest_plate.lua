@@ -59,26 +59,23 @@ object_tangible_wearables_armor_infiltrator_armor_infiltrator_s02_chest_plate = 
 				"object/creature/player/zabrak_female.iff" },
 
 	-- Damage types in WeaponObject
-	vulnerability = NONE,
+	vulnerability = STUN + LIGHTSABER,
+
+	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
-	maxCondition = 300000,
+	healthEncumbrance = 80,
+	actionEncumbrance = 80,
+	mindEncumbrance = 80,
+
+	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
-	rating = HEAVY,
+	rating = LIGHT,
 
-	kinetic = 80,
-	energy = 80,
 	electricity = 80,
-	stun = 80,
-	blast = 80,
-	heat = 80,
-	cold = 80,
-	acid = 80,
-	lightSaber = 80,
+	stun = 0,
+	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "OQ", "SR", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},

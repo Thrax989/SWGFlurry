@@ -112,14 +112,8 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_helmet = object_
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 65,
-	energy = 65,
 	electricity = 80,
-	stun = 25,
-	blast = 65,
-	heat = 65,
-	cold = 65,
-	acid = 65,
+	stun = 0,
 	lightSaber = 0,
 }
 
