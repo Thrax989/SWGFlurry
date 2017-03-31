@@ -73,9 +73,9 @@ object_draft_schematic_clothing_clothing_armor_ris_chest_plate = object_draft_sc
    targetTemplate = "object/tangible/wearables/armor/ris/armor_ris_chest_plate.iff",
 
    additionalTemplates = {
-   "object/tangible/wearables/armor/mandalorian/armor_mandalorian_chest_plate.iff",
-   "object/tangible/wearables/armor/mandalorian_rebel/armor_mandalorian_rebel_chest_plate.iff",
-   "object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_imperial_chest_plate.iff",
+   "object/tangible/wearables/armor/mandalorian/shared_armor_mandalorian_chest_plate.iff",
+   "object/tangible/wearables/armor/mandalorian_rebel/shared_armor_mandalorian_rebel_chest_plate.iff",
+   "object/tangible/wearables/armor/mandalorian_imperial/shared_armor_mandalorian_imperial_chest_plate.iff",
              }
 
 }

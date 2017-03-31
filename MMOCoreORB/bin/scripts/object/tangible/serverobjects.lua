@@ -122,3 +122,6 @@ includeFile("tangible/weather_object/serverobjects.lua")
 
 -- Server Objects
 includeFile("tangible/tcg/serverobjects.lua")
+includeFile("tangible/tcg/series3/serverobjects.lua")
+includeFile("tangible/tcg/series7/serverobjects.lua")
+includeFile("tangible/tcg/series8/serverobjects.lua")
