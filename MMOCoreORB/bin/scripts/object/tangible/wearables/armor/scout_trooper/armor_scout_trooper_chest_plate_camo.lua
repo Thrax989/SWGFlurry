@@ -91,4 +91,4 @@ object_tangible_wearables_armor_scout_trooper_armor_scout_trooper_chest_plate_ca
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_scout_trooper_armor_scout_trooper_chest_plate_camo, "object/tangible/wearables/armor/scout/trooper/armor_scout_trooper_chest_plate_camo.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_scout_trooper_armor_scout_trooper_chest_plate_camo, "object/tangible/wearables/armor/scout_trooper/armor_scout_trooper_chest_plate_camo.iff")

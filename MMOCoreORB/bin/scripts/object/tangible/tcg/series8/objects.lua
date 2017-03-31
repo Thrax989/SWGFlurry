@@ -41,56 +41,9 @@
 --which carries forward this exception.
 
 
-object_tangible_tcg_series8_shared_vader_pod = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_vader_pod.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_vader_pod, "object/tangible/tcg/series8/shared_vader_pod.iff")
 
 object_tangible_tcg_series8_shared_wearable_lando_cape = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_lando_cape.iff"
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_lando_cape, "object/tangible/tcg/series8/shared_wearable_lando_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_alliance_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_alliance_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_alliance_cape, "object/tangible/tcg/series8/shared_wearable_alliance_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_bh_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_bh_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_bh_cape, "object/tangible/tcg/series8/shared_wearable_bh_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_first_order_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_first_order_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_first_order_cape, "object/tangible/tcg/series8/shared_wearable_first_order_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_imp_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_imp_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_imp_cape, "object/tangible/tcg/series8/shared_wearable_imp_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_light_jedi_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_light_jedi_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_light_jedi_cape, "object/tangible/tcg/series8/shared_wearable_light_jedi_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_revan_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_revan_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_revan_cape, "object/tangible/tcg/series8/shared_wearable_revan_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_sith_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_sith_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_sith_cape, "object/tangible/tcg/series8/shared_wearable_sith_cape.iff")

@@ -73,9 +73,6 @@ object_draft_schematic_clothing_clothing_armor_ris_gloves = object_draft_schemat
    targetTemplate = "object/tangible/wearables/armor/ris/armor_ris_gloves.iff",
 
    additionalTemplates = {
-"object/tangible/wearables/armor/mandalorian/armor_mandalorian_gloves.iff",
-"object/tangible/wearables/armor/mandalorian_rebel/armor_mandalorian_rebel_gloves.iff",
-"object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_imperial_gloves.iff",
              }
 
 }

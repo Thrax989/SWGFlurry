@@ -91,4 +91,4 @@ object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_chest_plat
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_chest_plate, "object/tangible/wearables/armor/galactic/marine/armor_galactic_marine_chest_plate.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_chest_plate, "object/tangible/wearables/armor/galactic_marine/armor_galactic_marine_chest_plate.iff")

@@ -73,9 +73,6 @@ object_draft_schematic_clothing_clothing_armor_composite_chest = object_draft_sc
    targetTemplate = "object/tangible/wearables/armor/composite/armor_composite_chest_plate.iff",
 
    additionalTemplates = {
-"object/tangible/wearables/armor/infiltrator/armor_infiltrator_s01_chest_plate.iff",
-"object/tangible/wearables/armor/marine/armor_marine_chest_plate.iff",
-"object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_chest_plate.iff",
              }
 
 }
