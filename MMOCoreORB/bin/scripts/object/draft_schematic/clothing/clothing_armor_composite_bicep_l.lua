@@ -74,33 +74,8 @@ object_draft_schematic_clothing_clothing_armor_composite_bicep_l = object_draft_
 
    additionalTemplates = {
 "object/tangible/wearables/armor/infiltrator/shared_armor_infiltrator_s01_bicep_l.iff",
-"object/tangible/wearables/armor/infiltrator/shared_armor_infiltrator_s02_bicep_l.iff",
 "object/tangible/wearables/armor/marine/shared_armor_marine_bicep_l.iff",
-"object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_bicep_l.iff",
-"object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_bicep_l_gcw.iff",
-"object/tangible/wearables/armor/bounty_hunter/shared_armor_bounty_hunter_bicep_l.iff",
-"object/tangible/wearables/armor/clone_trooper/shared_armor_clone_trooper_imperial_s01_bicep_l.iff",
-"object/tangible/wearables/armor/clone_trooper/shared_armor_clone_trooper_neutral_s01_bicep_l.iff",
-"object/tangible/wearables/armor/clone_trooper/shared_armor_clone_trooper_rebel_s01_bicep_l.iff",
-"object/tangible/wearables/armor/deathtrooper/shared_armor_deathtrooper_advanced_bicep_l.iff",
-"object/tangible/wearables/armor/deathtrooper/shared_armor_deathtrooper_standard_bicep_l.iff",
-"object/tangible/wearables/armor/deathtrooper/shared_armor_deathtrooper_bicep_l.iff",
-"object/tangible/wearables/armor/galactic_marine/shared_armor_galactic_marine_bicep_l.iff",
-"object/tangible/wearables/armor/galactic_marine/shared_armor_galactic_marine_bicep_l_gcw.iff",
 "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_l.iff",
-"object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_l_camo.iff",
-"object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_l_gcw.iff",
-"object/tangible/wearables/armor/snowtrooper/shared_armor_snowtrooper_bicep_l.iff",
-"object/tangible/wearables/armor/scout_trooper/shared_armor_scout_trooper_bicep_l_camo.iff",
-"object/tangible/wearables/armor/scout_trooper/shared_armor_scout_trooper_bicep_l_gcw.iff",
-"object/tangible/wearables/armor/scout_trooper/shared_armor_scout_trooper_bicep_l.iff",
-"object/tangible/wearables/armor/rebel_spec_force/shared_armor_rebel_spec_force_bicep_l.iff",
-"object/tangible/wearables/armor/rebel_snow/shared_armor_rebel_snow_bicep_l.iff",
-"object/tangible/wearables/armor/rebel_battle/shared_armor_rebel_battle_bicep_l.iff",
-"object/tangible/wearables/armor/rebel_battle/shared_armor_rebel_battle_bicep_l_gcw.iff",
-"object/tangible/wearables/armor/rebel_assault/shared_armor_rebel_assault_bicep_l_camo.iff",
-"object/tangible/wearables/armor/rebel_assault/shared_armor_rebel_assault_bicep_l_gcw.iff",
-"object/tangible/wearables/armor/rebel_assault/shared_armor_rebel_assault_bicep_l.iff",
              }
 
 }
