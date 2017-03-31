@@ -1,6 +1,6 @@
 imperial_exchange = Creature:new {
 	--objectName = "",
-	customName = "World Exchange Dealer",
+	customName = "Imperial Exchange Dealer",
 	socialGroup = "townsperson",
 	pvpFaction = "townsperson",
 	faction = "imperial",

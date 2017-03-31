@@ -46,11 +46,6 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_bicep_r = object_t
 
 	objectMenuComponent = "ArmorObjectMenuComponent",
 
-	certificationsRequired = { "combat_bountyhunter_master",
-					"combat_commando_master",
-					"outdoors_squadleader_master",
-					"outdoors_ranger_master" },
-
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
