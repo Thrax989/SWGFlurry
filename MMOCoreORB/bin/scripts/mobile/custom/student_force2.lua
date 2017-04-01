@@ -28,7 +28,7 @@ student_force2 = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 	scale = 0.9,
-	templates = {"lesser_prophet_of_the_light_side"},
+	templates = {"object/mobile/dressed_jedi_trainer_old_human_male_01.iff"},
 	lootGroups = {
 		{
 			groups = {
