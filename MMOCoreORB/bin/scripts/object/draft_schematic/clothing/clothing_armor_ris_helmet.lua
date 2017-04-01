@@ -84,6 +84,12 @@ object_draft_schematic_clothing_clothing_armor_ris_helmet = object_draft_schemat
 "object/tangible/wearables/helmet/shared_helmet_s06.iff",
 "object/tangible/wearables/helmet/shared_helmet_tusken_raider_s01.iff",
 "object/tangible/wearables/helmet/shared_helmet_atat.iff",
+"object/tangible/wearables/hat/shared_nightsister_hat_s01.iff",
+"object/tangible/wearables/hat/shared_nightsister_hat_s02.iff",
+"object/tangible/wearables/hat/shared_nightsister_hat_s03.iff",
+"object/tangible/wearables/hat/shared_singing_mountain_clan_hat_s01.iff",
+"object/tangible/wearables/hat/shared_singing_mountain_clan_hat_s02.iff",
+"object/tangible/wearables/hat/shared_singing_mountain_clan_mask_s01.iff",
              }
 
 }
