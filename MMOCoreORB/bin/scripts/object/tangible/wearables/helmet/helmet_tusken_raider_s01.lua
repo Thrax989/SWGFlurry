@@ -95,6 +95,22 @@ object_tangible_wearables_helmet_helmet_tusken_raider_s01 = object_tangible_wear
 				gameObjectType = 16777226,
 				clientGameObjectType = 16777226
 				
+	-- Damage types in WeaponObject
+	vulnerability = ACID + STUN,
+	specialResists = LIGHTSABER,
+
+	-- These are default Blue Frog stats
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
+
+	-- LIGHT, MEDIUM, HEAVY
+	rating = LIGHT,
+
+	stun = 0,
+	acid = 0,
+	lightSaber = 12,
 }
+
 
 ObjectTemplates:addTemplate(object_tangible_wearables_helmet_helmet_tusken_raider_s01, "object/tangible/wearables/helmet/helmet_tusken_raider_s01.iff")
