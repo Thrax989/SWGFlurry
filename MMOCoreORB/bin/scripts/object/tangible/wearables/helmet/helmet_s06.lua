@@ -92,8 +92,6 @@ object_tangible_wearables_helmet_helmet_s06 = object_tangible_wearables_helmet_s
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-				gameObjectType = 16777226,
-        clientGameObjectType = 16777226
 
 	-- Damage types in WeaponObject
 	vulnerability = ACID + STUN,
