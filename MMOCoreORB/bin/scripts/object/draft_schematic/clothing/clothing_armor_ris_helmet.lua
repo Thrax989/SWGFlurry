@@ -82,7 +82,6 @@ object_draft_schematic_clothing_clothing_armor_ris_helmet = object_draft_schemat
 "object/tangible/wearables/helmet/shared_helmet_tie_fighter.iff",
 "object/tangible/wearables/helmet/shared_helmet_fighter_imperial_ace.iff",
 "object/tangible/wearables/helmet/shared_helmet_s06.iff",
-"object/tangible/wearables/helmet/shared_helmet_tusken_raider_s02.iff",
 "object/tangible/wearables/helmet/shared_helmet_tusken_raider_s01.iff",
 "object/tangible/wearables/helmet/shared_helmet_atat.iff",
              }
