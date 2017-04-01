@@ -92,8 +92,23 @@ object_tangible_wearables_helmet_helmet_fighter_imperial_ace = object_tangible_w
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-				gameObjectType = 16777226,
-        clientGameObjectType = 16777226
+
+	-- Damage types in WeaponObject
+	vulnerability = ACID + STUN,
+	specialResists = LIGHTSABER,
+
+	-- These are default Blue Frog stats
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
+
+	-- LIGHT, MEDIUM, HEAVY
+	rating = LIGHT,
+
+	stun = 0,
+	acid = 0,
+	lightSaber = 12,
 }
+
 
 ObjectTemplates:addTemplate(object_tangible_wearables_helmet_helmet_fighter_imperial_ace, "object/tangible/wearables/helmet/helmet_fighter_imperial_ace.iff")
