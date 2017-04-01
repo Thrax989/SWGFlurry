@@ -27,8 +27,8 @@ student_force1 = Creature:new {
 	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 0.5,
-	templates = {"object/mobile/chewbacca.iff"},
+	scale = 0.6,
+	templates = {"lesser_prophet_of_the_light_side"},
 	lootGroups = {
 		{
 			groups = {

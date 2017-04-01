@@ -26,8 +26,8 @@ student_force = Creature:new {
 	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 0.5,
-	templates = {"object/mobile/ep3/palpatine_hologram.iff"},
+	scale = 0.3,
+	templates = {"lesser_prophet_of_the_light_side"},
 	lootGroups = {
 		{
 			groups = {

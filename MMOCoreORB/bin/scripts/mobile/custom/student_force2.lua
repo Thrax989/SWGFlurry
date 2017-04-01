@@ -27,8 +27,8 @@ student_force2 = Creature:new {
 	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 0.5,
-	templates = {"object/mobile/som/obi_wan_ghost.iff"},
+	scale = 0.9,
+	templates = {"lesser_prophet_of_the_light_side"},
 	lootGroups = {
 		{
 			groups = {
