@@ -73,8 +73,6 @@ object_draft_schematic_vehicle_civilian_speeder_bike = object_draft_schematic_ve
    targetTemplate = "object/tangible/deed/vehicle_deed/speederbike_deed.iff",
 
    additionalTemplates = {
-"object/tangible/deed/vehicle_deed/shared_barc_speeder_rebel_deed.iff",
-"object/tangible/deed/vehicle_deed/shared_barc_speeder_imperial_deed.iff",
              }
 
 }
