@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_melee_bloodshot_ripper = object_tangible_collection_shared_rare_melee_bloodshot_ripper:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_melee_bloodshot_ripper, "object/tangible/collection/rare_melee_bloodshot_ripper.iff")

@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_pistol_deathrain = object_tangible_collection_shared_rare_pistol_deathrain:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_pistol_deathrain, "object/tangible/collection/rare_pistol_deathrain.iff")

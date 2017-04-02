@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_pistol_d18_liquidator = object_tangible_collection_shared_rare_pistol_d18_liquidator:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_pistol_d18_liquidator, "object/tangible/collection/rare_pistol_d18_liquidator.iff")

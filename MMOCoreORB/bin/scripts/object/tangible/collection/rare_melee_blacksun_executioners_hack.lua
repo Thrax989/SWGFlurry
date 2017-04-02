@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_melee_blacksun_executioners_hack = object_tangible_collection_shared_rare_melee_blacksun_executioners_hack:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_melee_blacksun_executioners_hack, "object/tangible/collection/rare_melee_blacksun_executioners_hack.iff")

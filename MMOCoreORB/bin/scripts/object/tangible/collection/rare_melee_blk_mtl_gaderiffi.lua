@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_melee_blk_mtl_gaderiffi = object_tangible_collection_shared_rare_melee_blk_mtl_gaderiffi:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_melee_blk_mtl_gaderiffi, "object/tangible/collection/rare_melee_blk_mtl_gaderiffi.iff")

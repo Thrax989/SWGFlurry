@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_pistol_jawa_ion = object_tangible_collection_shared_rare_pistol_jawa_ion:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_pistol_jawa_ion, "object/tangible/collection/rare_pistol_jawa_ion.iff")
