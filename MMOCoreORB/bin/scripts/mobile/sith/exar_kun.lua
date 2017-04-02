@@ -1,6 +1,6 @@
 NPC = Creature:new {
 	--objectName = "@mob/creature_names:",
-	customName = NPC"",
+	customName = "Exar Kun",
 	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",

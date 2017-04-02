@@ -1,6 +1,6 @@
 NPC = Creature:new {
 	--objectName = "@mob/creature_names:",
-	customName = NPC"",
+	customName = "Darth Krayt",
 	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
