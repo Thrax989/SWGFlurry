@@ -34,13 +34,13 @@ void ForceCrystalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject,
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 
-	menuResponse->addRadialMenuItem(20, 3, "Jedi Resurrection");
+	menuResponse->addRadialMenuItem(20, 3, "Resurrection");
 }
 
 int ForceCrystalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID != 20)
 		return 0;
-	creature->sendExecuteConsoleCommand("/ui action questJournal");
+	//creature->sendExecuteConsoleCommand("/ui action questJournal");
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 	if (ghost == NULL)
 	return 0;
