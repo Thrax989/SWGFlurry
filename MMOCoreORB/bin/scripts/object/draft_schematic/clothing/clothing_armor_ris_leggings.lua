@@ -76,9 +76,6 @@ object_draft_schematic_clothing_clothing_armor_ris_leggings = object_draft_schem
 "object/tangible/wearables/armor/mandalorian/shared_armor_mandalorian_leggings.iff",
 "object/tangible/wearables/armor/mandalorian_rebel/shared_armor_mandalorian_rebel_leggings.iff",
 "object/tangible/wearables/armor/mandalorian_imperial/shared_armor_mandalorian_imperial_leggings.iff",
-
-"object/tangible/wearables/pants/shared_nightsister_pants_s01.iff",
-
 "object/tangible/wearables/pants/shared_nightsister_pants_s01.iff",
              }
 
