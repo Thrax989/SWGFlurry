@@ -42,6 +42,8 @@
 
 
 object_tangible_wearables_wookiee_wke_gloves_s02 = object_tangible_wearables_wookiee_shared_wke_gloves_s02:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",

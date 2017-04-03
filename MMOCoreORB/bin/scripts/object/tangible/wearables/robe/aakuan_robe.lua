@@ -42,6 +42,8 @@
 
 
 object_tangible_wearables_robe_aakuan_robe = object_tangible_wearables_robe_shared_aakuan_robe:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",

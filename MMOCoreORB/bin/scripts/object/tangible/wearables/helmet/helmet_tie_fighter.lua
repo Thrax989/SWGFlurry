@@ -42,6 +42,8 @@
 
 
 object_tangible_wearables_helmet_helmet_tie_fighter = object_tangible_wearables_helmet_shared_helmet_tie_fighter:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
+
 	faction = "Imperial",
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
