@@ -42,6 +42,8 @@
 
 
 object_tangible_wearables_bodysuit_bodysuit_tie_fighter_quest = object_tangible_wearables_bodysuit_shared_bodysuit_tie_fighter_quest:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
+
 	faction = "Imperial",
 
 	playerRaces = { "object/creature/player/bothan_male.iff",

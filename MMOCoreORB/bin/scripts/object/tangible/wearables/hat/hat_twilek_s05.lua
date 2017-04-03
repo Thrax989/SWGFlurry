@@ -42,6 +42,8 @@
 
 
 object_tangible_wearables_hat_hat_twilek_s05 = object_tangible_wearables_hat_shared_hat_twilek_s05:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",

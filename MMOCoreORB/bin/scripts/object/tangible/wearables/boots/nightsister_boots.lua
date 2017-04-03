@@ -42,6 +42,8 @@
 
 
 object_tangible_wearables_boots_nightsister_boots = object_tangible_wearables_boots_shared_nightsister_boots:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
