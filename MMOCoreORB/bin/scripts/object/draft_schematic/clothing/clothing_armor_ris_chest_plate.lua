@@ -76,6 +76,18 @@ object_draft_schematic_clothing_clothing_armor_ris_chest_plate = object_draft_sc
    "object/tangible/wearables/armor/mandalorian/shared_armor_mandalorian_chest_plate.iff",
    "object/tangible/wearables/armor/mandalorian_rebel/shared_armor_mandalorian_rebel_chest_plate.iff",
    "object/tangible/wearables/armor/mandalorian_imperial/shared_armor_mandalorian_imperial_chest_plate.iff",
+
+"object/tangible/wearables/shirt/shared_nightsister_shirt_s01.iff"
+
+"object/tangible/wearables/shirt/shared_nightsister_shirt_s02.iff",
+
+"object/tangible/wearables/shirt/shared_nightsister_shirt_s03.iff",
+
+"object/tangible/wearables/shirt/shared_singing_mountain_clan_shirt_s01.iff",
+
+"object/tangible/wearables/shirt/shared_singing_mountain_clan_shirt_s02.iff",
+
+"object/tangible/wearables/shirt/shared_singing_mountain_clan_shirt_s03.iff",
              }
 
 }

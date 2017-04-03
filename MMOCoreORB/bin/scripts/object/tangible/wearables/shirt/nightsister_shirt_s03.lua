@@ -94,6 +94,23 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+
+	-- Damage types in WeaponObject
+	vulnerability = ACID + STUN,
+	specialResists = LIGHTSABER,
+
+	-- These are default Blue Frog stats
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
+
+	-- LIGHT, MEDIUM, HEAVY
+	rating = LIGHT,
+
+	stun = 0,
+	acid = 0,
+	lightSaber = 12,
 }
+
 
 ObjectTemplates:addTemplate(object_tangible_wearables_shirt_nightsister_shirt_s03, "object/tangible/wearables/shirt/nightsister_shirt_s03.iff")
