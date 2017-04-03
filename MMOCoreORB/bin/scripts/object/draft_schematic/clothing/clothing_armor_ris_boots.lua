@@ -76,6 +76,10 @@ object_draft_schematic_clothing_clothing_armor_ris_boots = object_draft_schemati
 "object/tangible/wearables/armor/mandalorian/shared_armor_mandalorian_shoes.iff",
 "object/tangible/wearables/armor/mandalorian_rebel/shared_armor_mandalorian_rebel_boots.iff",
 "object/tangible/wearables/armor/mandalorian_imperial/shared_armor_mandalorian_imperial_boots.iff",
+
+"object/tangible/wearables/boots/shared_nightsister_boots.iff",
+
+"object/tangible/wearables/boots/shared_singing_mountain_clan_boots.iff",
              }
 
 }
