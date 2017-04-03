@@ -1,0 +1,5 @@
+
+object_tangible_collection_rebel_marine_right_bicep = object_tangible_collection_shared_rebel_marine_right_bicep:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rebel_marine_right_bicep, "object/tangible/collection/rebel_marine_right_bicep.iff")

@@ -34,13 +34,13 @@ void ForceCrystalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject,
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 
-	menuResponse->addRadialMenuItem(20, 3, "Jedi Resurrection");
+	menuResponse->addRadialMenuItem(20, 3, "Resurrection");
 }
 
 int ForceCrystalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID != 20)
 		return 0;
-	creature->sendExecuteConsoleCommand("/ui action questJournal");
+	//creature->sendExecuteConsoleCommand("/ui action questJournal");
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 	if (ghost == NULL)
 	return 0;
@@ -60,7 +60,7 @@ int ForceCrystalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, 
 			//Broadcast to Server
  			String playerName = creature->getFirstName();
  			StringBuffer zBroadcast;
- 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Used A Force Crystal To Resurrect Themselves";
+ 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Resurrect Themselves";
  			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			StringBuffer messageVis;
 			messageVis << "\\#00CC00 Your Visibility is at: " << jediVis1;

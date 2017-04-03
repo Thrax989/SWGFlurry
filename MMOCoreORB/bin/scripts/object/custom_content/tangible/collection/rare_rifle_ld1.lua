@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_rifle_ld1 = object_tangible_collection_shared_rare_rifle_ld1:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_rifle_ld1, "object/tangible/collection/rare_rifle_ld1.iff")

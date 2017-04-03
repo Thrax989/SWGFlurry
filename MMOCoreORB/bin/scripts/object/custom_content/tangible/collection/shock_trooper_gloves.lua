@@ -1,0 +1,5 @@
+
+object_tangible_collection_shock_trooper_gloves = object_tangible_collection_shared_shock_trooper_gloves:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_shock_trooper_gloves, "object/tangible/collection/shock_trooper_gloves.iff")
