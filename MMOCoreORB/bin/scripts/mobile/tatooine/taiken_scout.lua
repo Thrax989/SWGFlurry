@@ -1,7 +1,7 @@
 taiken_scout = Creature:new {
   customName = "Scout Trooper",
   socialGroup = "geonosian",
-  level = 100,
+  level = 200,
   chanceHit = 15.00,
   damageMin = 400,
   damageMax = 800,
