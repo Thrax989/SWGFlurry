@@ -24,16 +24,17 @@ runUnitTests<br>
 # Required Mod The Galaxy TRE Files
 http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
 <br>
-	maxSearchPriority=27<br>
-	searchTree_00_25=capes.tre<br>
-	searchTree_00_24=pods.tre<br>
-	searchTree_00_23=hoth.tre<br>
-	searchTree_00_22=skill_patch.tre<br>
-	searchTree_00_21=armor.tre<br>
-	searchTree_00_20=phoenix_patch_1.tre<br>
-	searchTree_00_19=mtg_planets.tre<br>
-	searchTree_00_18=mtg_patch_019.tre<br>
-	searchTree_00_17=mtg_patch_018.tre<br>
+	maxSearchPriority=29<br>
+	searchTree_00_27=mtg_patch_020.tre<br>
+	searchTree_00_26=pallet.tre<br>
+	searchTree_00_25=pods.tre<br>
+	searchTree_00_24=hoth.tre<br>
+	searchTree_00_23=skill_patch.tre<br>
+	searchTree_00_22=armor.tre<br>
+	searchTree_00_21=phoenix_patch_1.tre<br>
+	searchTree_00_20=mtg_planets.tre<br>
+	searchTree_00_19=mtg_patch_019.tre<br>
+	searchTree_00_18=mtg_patch_018.tre<br>
 	searchTree_00_16=mtg_patch_017.tre<br>
 	searchTree_00_15=mtg_patch_016.tre<br>
 	searchTree_00_14=mtg_patch_015.tre<br>
@@ -51,6 +52,7 @@ http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
 	searchTree_00_2=mtg_patch_003_appearance_03.tre<br>
 	searchTree_00_1=mtg_patch_002_appearance_02.tre<br>
 	searchTree_00_0=mtg_patch_001_appearance_01.tre<br>
+	
 
 ## Coding Legend
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
