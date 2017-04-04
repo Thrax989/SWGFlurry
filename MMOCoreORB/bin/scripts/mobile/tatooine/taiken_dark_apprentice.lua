@@ -1,7 +1,7 @@
 taiken_dark_apprentice = Creature:new {
   customName = "Dark Apprentice",
   socialGroup = "geonosian",
-  level = 200,
+  level = 275,
   chanceHit = 30.00,
   damageMin = 1000,
   damageMax = 2400,
