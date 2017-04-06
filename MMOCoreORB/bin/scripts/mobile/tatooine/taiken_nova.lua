@@ -1,8 +1,8 @@
 taiken_nova = Creature:new {
   customName = "Nova Trooper",
   socialGroup = "geonosian",
-  level = 100,
-  chanceHit = 15.00,
+  level = 200,
+  chanceHit = 10.00,
   damageMin = 800,
   damageMax = 1000,
   baseXp = 0,

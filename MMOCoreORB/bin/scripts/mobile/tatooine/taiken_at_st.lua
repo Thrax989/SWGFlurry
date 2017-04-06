@@ -1,7 +1,7 @@
 taiken_at_st = Creature:new {
   objectName = "@mob/creature_names:fbase_at_st",
   socialGroup = "geonosian",
-  level = 100,
+  level = 300,
   chanceHit = 100.00,
   damageMin = 1000,
   damageMax = 1800,
@@ -26,6 +26,14 @@ taiken_at_st = Creature:new {
 
   templates = {"object/mobile/atst.iff"},
   lootGroups = {
+{
+                groups = {
+                {group = "junk", chance = 5000000},
+                {group = "armor_attachments", chance = 2500000},
+                {group = "clothing_attachments", chance = 2500000}
+},
+                lootChance = 10000000
+},
 {
                 groups = {
                 {group = "junk", chance = 5000000},

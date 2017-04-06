@@ -15,7 +15,7 @@ end
 function tatooine_tusken_bunker_boss:spawnMobiles()
 
 
-	local pMoff = spawnMobile("tatooine", "taiken_moff", 900, 1, -20, 33, -2, 4235606)
+	local pMoff = spawnMobile("tatooine", "taiken_moff", 1200, 1, -20, 33, -2, 4235606)
         	createObserver(OBJECTDESTRUCTION, "tatooine_tusken_bunker_boss", "notifyMoffDead", pMoff)
 end
 

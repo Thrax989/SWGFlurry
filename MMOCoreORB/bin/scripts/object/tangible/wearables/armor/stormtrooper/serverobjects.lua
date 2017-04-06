@@ -75,7 +75,7 @@ includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_helmet_que
 includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings.lua")
 includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings_camo.lua")
 includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings_gcw.lua")
-includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings_quest.lua")
+--includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings_quest.lua")
 includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_pvp_officer_chest_plate.lua")
 includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_utility_belt.lua")
 includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_utility_belt_camo.lua")

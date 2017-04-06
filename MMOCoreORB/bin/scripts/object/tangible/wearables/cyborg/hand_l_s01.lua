@@ -42,6 +42,7 @@
 
 
 object_tangible_wearables_cyborg_hand_l_s01 = object_tangible_wearables_cyborg_shared_hand_l_s01:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
