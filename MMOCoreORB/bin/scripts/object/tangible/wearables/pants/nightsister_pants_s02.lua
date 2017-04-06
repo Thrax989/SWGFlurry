@@ -42,6 +42,7 @@
 
 
 object_tangible_wearables_pants_nightsister_pants_s02 = object_tangible_wearables_pants_shared_nightsister_pants_s02:new {
+templateType = ARMOROBJECT,
 objectMenuComponent = "ArmorObjectMenuComponent",
 
 	playerRaces = { "object/creature/player/bothan_male.iff",

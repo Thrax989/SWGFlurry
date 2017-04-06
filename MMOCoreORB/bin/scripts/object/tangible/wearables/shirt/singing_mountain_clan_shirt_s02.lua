@@ -42,6 +42,7 @@
 
 
 object_tangible_wearables_shirt_singing_mountain_clan_shirt_s02 = object_tangible_wearables_shirt_shared_singing_mountain_clan_shirt_s02:new {
+templateType = ARMOROBJECT,
 objectMenuComponent = "ArmorObjectMenuComponent",
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
