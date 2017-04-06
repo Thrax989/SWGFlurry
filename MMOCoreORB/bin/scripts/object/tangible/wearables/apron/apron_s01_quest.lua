@@ -42,6 +42,8 @@
 
 
 object_tangible_wearables_apron_apron_s01_quest = object_tangible_wearables_apron_shared_apron_s01_quest:new {
+objectMenuComponent = "ArmorObjectMenuComponent", 
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",

@@ -1,4 +1,5 @@
 object_tangible_wearables_bodysuit_bodysuit_trando_slaver = object_tangible_wearables_bodysuit_shared_bodysuit_trando_slaver:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
 	objectMenuComponent = "ArmorObjectMenuComponent",
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",

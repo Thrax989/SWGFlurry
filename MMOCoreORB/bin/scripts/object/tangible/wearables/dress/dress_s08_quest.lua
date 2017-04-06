@@ -42,6 +42,8 @@
 
 
 object_tangible_wearables_dress_dress_s08_quest = object_tangible_wearables_dress_shared_dress_s08_quest:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",

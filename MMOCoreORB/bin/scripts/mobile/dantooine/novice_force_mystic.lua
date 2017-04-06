@@ -42,6 +42,7 @@ novice_force_mystic = Creature:new {
 		}
 	},
 	weapons = {"mixed_force_weapons"},
+	outfit = "student_of_the_force_outfit",
 	conversationTemplate = "",
 	attacks = merge(pikemanmaster,brawlermaster,fencermaster)
 }

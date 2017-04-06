@@ -42,6 +42,8 @@
 
 
 object_tangible_wearables_helmet_helmet_tusken_raider_s02 = object_tangible_wearables_helmet_shared_helmet_tusken_raider_s02:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
@@ -92,8 +94,23 @@ object_tangible_wearables_helmet_helmet_tusken_raider_s02 = object_tangible_wear
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-				gameObjectType = 16777226,
-        clientGameObjectType = 16777226
+
+	-- Damage types in WeaponObject
+	vulnerability = ACID + STUN,
+	specialResists = LIGHTSABER,
+
+	-- These are default Blue Frog stats
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
+
+	-- LIGHT, MEDIUM, HEAVY
+	rating = LIGHT,
+
+	stun = 0,
+	acid = 0,
+	lightSaber = 12,
 }
+
 
 ObjectTemplates:addTemplate(object_tangible_wearables_helmet_helmet_tusken_raider_s02, "object/tangible/wearables/helmet/helmet_tusken_raider_s02.iff")

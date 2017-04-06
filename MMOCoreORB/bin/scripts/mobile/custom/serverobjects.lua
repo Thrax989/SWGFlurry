@@ -1,3 +1,6 @@
+includeFile("custom/student_force.lua")
+includeFile("custom/student_force1.lua")
+includeFile("custom/student_force2.lua")
 includeFile("custom/alert_droideka_boss.lua")
 includeFile("custom/alert_droideka_mini.lua")
 includeFile("custom/ancient_yoda.lua")

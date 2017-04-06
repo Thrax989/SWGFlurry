@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_rifle_nullifier = object_tangible_collection_shared_rare_rifle_nullifier:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_rifle_nullifier, "object/tangible/collection/rare_rifle_nullifier.iff")
