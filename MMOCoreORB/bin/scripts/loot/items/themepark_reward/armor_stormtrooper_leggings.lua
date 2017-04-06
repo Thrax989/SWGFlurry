@@ -4,7 +4,7 @@ armor_stormtrooper_leggings = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "",
-	directObjectTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings_quest.iff",
+	directObjectTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings.iff",
 	craftingValues = {
 		{"armor_rating",1,1,0},
 	        {"armor_effectiveness",30,30,10},
