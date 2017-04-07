@@ -17,6 +17,14 @@ function TalusBossScreenPlay:start()
 end
 
 function TalusBossScreenPlay:spawnMobiles()
+
+spawnMobile("talus", "rancor_baby", 300, 5539.01, 101.191, -4075.84, 135, 0) 
+spawnMobile("talus", "rancor_baby", 300, 5548.28, 101.889, -4082.42, 99, 0) 
+spawnMobile("talus", "rancor_baby", 300, 5549.41, 101.869, -4087.42, 42, 0) 
+spawnMobile("talus", "rancor_baby", 300, 5539.38, 100.762, -4091.85, 52, 0) 
+spawnMobile("talus", "rancor_baby", 300, 5512.51, 98.6838, -4089.58, 213, 0) 
+spawnMobile("talus", "rancor_baby", 300, 5524.46, 99.8528, -4073, 102, 0) 
+
 --Rancor 1 Trigger
 	local T1Rancor = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Trigger 1 Loaded TALUS")
         	createObserver(OBJECTDESTRUCTION, "TalusBossScreenPlay", "notify1RancorDead", T1Rancor)

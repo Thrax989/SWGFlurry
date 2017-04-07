@@ -1,3 +1,4 @@
+includeFile("custom/rancor_baby.lua")
 includeFile("custom/student_force.lua")
 includeFile("custom/student_force1.lua")
 includeFile("custom/student_force2.lua")
