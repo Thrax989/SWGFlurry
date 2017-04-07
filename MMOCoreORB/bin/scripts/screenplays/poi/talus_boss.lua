@@ -26,22 +26,22 @@ spawnMobile("talus", "rancor_baby", 300, 5512.51, 98.6838, -4089.58, 213, 0)
 spawnMobile("talus", "rancor_baby", 300, 5524.46, 99.8528, -4073, 102, 0) 
 
 --Rancor 1 Trigger
-	local T1Rancor = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Trigger 1 Loaded TALUS")
+	local T1Rancor = spawnMobile("talus", "rancor_baby", 3600, 5546.65, 101.888, -4080.59, 265, 0) print("Trigger 1 Loaded TALUS")
         	createObserver(OBJECTDESTRUCTION, "TalusBossScreenPlay", "notify1RancorDead", T1Rancor)
 --Rancor 2 Trigger
-	local T2Rancor = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Trigger 2 Loaded TALUS")
+	local T2Rancor = spawnMobile("talus", "rancor_baby", 3600, 5530.8, 99.4566, -4081.67, 265, 0) print("Trigger 2 Loaded TALUS")
         	createObserver(OBJECTDESTRUCTION, "TalusBossScreenPlay", "notify2RancorDead", T2Rancor)
 end
 
 --Phase 1 Of 2 Instance
 function TalusBossScreenPlay:notify1RancorDead(T1Rancor, pKiller)
 	local player = LuaCreatureObject(pKiller)
-        local pBoss = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Phase 1 Started TALUS")
+        local pBoss = spawnMobile("talus", "rancor_sub_boss", 0, 5530.8, 99.4566, -4081.67, 265, 0) print("Phase 1 Started TALUS")
         return 0
 end
 --Phase 2 Of 2 Instance
 function TalusBossScreenPlay:notify2RancorDead(T2Rancor, pKiller)
 	local player = LuaCreatureObject(pKiller)
-        local pBoss = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Phase 2 Started TALUS")
+        local pBoss = spawnMobile("talus", "wod_mutant_rancor_boss", 0, 5530.8, 99.4566, -4081.67, 265, 0) print("Phase 2 Started TALUS")
         return 0
 end
