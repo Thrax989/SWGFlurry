@@ -1,42 +1,39 @@
-local ObjectManager = require("managers.object.object_manager") --print("Object manager loaded for Talus Boss")
+  --*--    Created on: 4/6/2017    --*--
+  --*--      Author: TOXIC	    --*--
+local ObjectManager = require("managers.object.object_manager") --print("Object manager loaded for TALUS")
 
-talus_boss = ScreenPlay:new {
+TalusBossScreenPlay = ScreenPlay:new {
 	numberOfActs = 1,
 
 }
 
-registerScreenPlay("talus_boss", true) --print("registered Talus Boss")
+registerScreenPlay("TalusBossScreenPlay", true)--print("registered TALUSBOSS")
 
-function talus_boss:start()
-	if (isZoneEnabled("talus")) then
-		print("Talus Enabled: Spawning Triggers")
+function TalusBossScreenPlay:start()
+	if isZoneEnabled("talus") then
+	print("talus Enabled: Spawning TALUS")
 		self:spawnMobiles()
 	end
 end
 
-function talus_boss:spawnMobiles()
-
---talus  1 Trigger
-	local T1Talus = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Trigger 1 Loaded sub Boss Spawned")
-        	createObserver(OBJECTDESTRUCTION, "talus_bossScreenPlay", "notify1TalusDead", T1Talus)
-
---Talus 2 Trigger
-	local T2Talus = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Trigger 2 Loaded Boss")
-        	createObserver(OBJECTDESTRUCTION, "talus_bossScreenPlay", "notify2TalusDead", T2Talus)
+function TalusBossScreenPlay:spawnMobiles()
+--Rancor 1 Trigger
+	local T1Rancor = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Trigger 1 Loaded TALUS")
+        	createObserver(OBJECTDESTRUCTION, "TalusBossScreenPlay", "notify1RancorDead", T1Rancor)
+--Rancor 2 Trigger
+	local T2Rancor = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Trigger 2 Loaded TALUS")
+        	createObserver(OBJECTDESTRUCTION, "TalusBossScreenPlay", "notify2RancorDead", T2Rancor)
 end
 
 --Phase 1 Of 2 Instance
-function talus_bossScreenPlay:notify1TalusDead(T1Talus, pKiller)
+function TalusBossScreenPlay:notify1RancorDead(T1Rancor, pKiller)
 	local player = LuaCreatureObject(pKiller)
-        local pBoss = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Phase 1 Started")
-spatialChat(pBoss, "Trigger 1 test")
+        local pBoss = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Phase 1 Started TALUS")
         return 0
 end
-
 --Phase 2 Of 2 Instance
-function talus_bossScreenPlay:notify2TalusDead(T2Talus, pKiller)
+function TalusBossScreenPlay:notify2RancorDead(T2Rancor, pKiller)
 	local player = LuaCreatureObject(pKiller)
-        local pBoss = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Phase 2 Started")
-spatialChat(pBoss, "Trigger 2 test")
+        local pBoss = spawnMobile("talus", "wod_mutant_rancor_boss", 1, 5530.8, 99.4566, -4081.67, 265, 0) print("Phase 2 Started TALUS")
         return 0
 end
