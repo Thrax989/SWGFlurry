@@ -23,15 +23,15 @@ function TalusBossScreenPlay:spawnMobiles()
 --spawnMobile("talus", "rancor_baby", 1, 5569.53, 102, -4080.21, 266, 0) 
 
 --Rancor 1 Trigger
-	local T1Rancor = spawnMobile("talus", "rancor_baby", 3600, 5556.57, 102, -4076.57, 264, 0) print("Trigger 1 Loaded TALUS")
+	local T1Rancor = spawnMobile("talus", "rancor_baby", 1, 5556.57, 102, -4076.57, 264, 0) print("Trigger 1 Loaded TALUS")
         	createObserver(OBJECTDESTRUCTION, "TalusBossScreenPlay", "notify1RancorDead", T1Rancor)
 
 --Rancor 2 Trigger
-	local T2Rancor = spawnMobile("talus", "rancor_baby", 3600, 5557.19, 102, -4083.48, 264, 0) print("Trigger 2 Loaded TALUS")
+	local T2Rancor = spawnMobile("talus", "rancor_baby", 1, 5557.19, 102, -4083.48, 264, 0) print("Trigger 2 Loaded TALUS")
         	createObserver(OBJECTDESTRUCTION, "TalusBossScreenPlay", "notify2RancorDead", T2Rancor)
 
 --Rancor 3 Trigger
-	local T3Rancor = spawnMobile("talus", "rancor_baby", 3600, 5569.53, 102, -4080.21, 266, 0) print("Trigger 3 Loaded TALUS")
+	local T3Rancor = spawnMobile("talus", "rancor_baby", 1, 5569.53, 102, -4080.21, 266, 0) print("Trigger 3 Loaded TALUS")
         	createObserver(OBJECTDESTRUCTION, "TalusBossScreenPlay", "notify3RancorDead", T3Rancor)
 end
 
