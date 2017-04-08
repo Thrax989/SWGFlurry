@@ -21,11 +21,14 @@ cd /home/vagrant/bin/<br>
 swgemu<br>
 runUnitTests<br>
 
+## -Servers Engine Build-
+https://github.com/TheAnswer/PublicEngine/commit/c26e7ab0b140e61e63ee853e872ee91b78b6a8c4<br>
+Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
+
 # Required Mod The Galaxy TRE Files
 http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
 <br>
-	maxSearchPriority=29<br>
-	searchTree_00_27=mtg_patch_020.tre<br>
+	maxSearchPriority=28<br>
 	searchTree_00_26=pallet.tre<br>
 	searchTree_00_25=pods.tre<br>
 	searchTree_00_24=hoth.tre<br>
@@ -33,8 +36,9 @@ http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
 	searchTree_00_22=armor.tre<br>
 	searchTree_00_21=phoenix_patch_1.tre<br>
 	searchTree_00_20=mtg_planets.tre<br>
-	searchTree_00_19=mtg_patch_019.tre<br>
-	searchTree_00_18=mtg_patch_018.tre<br>
+	searchTree_00_19=mtg_patch_020.tre<br>
+	searchTree_00_18=mtg_patch_019.tre<br>
+	searchTree_00_17=mtg_patch_018.tre<br>
 	searchTree_00_16=mtg_patch_017.tre<br>
 	searchTree_00_15=mtg_patch_016.tre<br>
 	searchTree_00_14=mtg_patch_015.tre<br>
