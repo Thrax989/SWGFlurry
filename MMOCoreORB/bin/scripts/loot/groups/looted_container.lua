@@ -4,8 +4,9 @@ looted_container = {
 	maximumLevel = 0,
 	lootItems = {
 		{groupTemplate = "junk", weight = 7500000},
-		{groupTemplate = "wearables_all", weight = 1200000},
+		{groupTemplate = "wearables_all", weight = 1100000},
 		{groupTemplate = "g_named_crystals", weight = 100000},
+		{groupTemplate = "holo_token1", weight = 100000},
 		{groupTemplate = "jedi_bracelets", weight = 100000},
 		{groupTemplate = "jedi_earings", weight = 100000},
 		{groupTemplate = "jedi_neck", weight = 100000},

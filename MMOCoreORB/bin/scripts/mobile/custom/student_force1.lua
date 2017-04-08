@@ -40,7 +40,31 @@ student_force1 = Creature:new {
 			groups = {
 				{group = "redeed1", chance = 10000000}
 			},
-			lootChance = 500000
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "jedi_bracelets", chance = 10000000}
+			},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "jedi_earings", chance = 10000000}
+			},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "jedi_neck", chance = 10000000}
+			},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "jedi_rings", chance = 10000000}
+			},
+			lootChance = 100000
 		},
 		{
 			groups = {
