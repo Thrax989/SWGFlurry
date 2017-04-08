@@ -41,7 +41,7 @@ student_force2 = Creature:new {
 		{
 			groups = {
 				{group = "holo_token1", chance = 10000000}			},
-			lootChance = 1000000
+			lootChance = 100000
 		},
 		},
 	weapons = {"dark_jedi_weapons_gen4"},
