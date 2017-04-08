@@ -1,8 +1,7 @@
 student_force = Creature:new {
 	--objectName = "@mob/creature_names:",
 	customName = "Student of the force",
-	socialGroup = "self",
-	pvpFaction = "",
+	socialGroup = "dark_jedi",
 	faction = "",
 	level = 300,
 	chanceHit = 100.00,
