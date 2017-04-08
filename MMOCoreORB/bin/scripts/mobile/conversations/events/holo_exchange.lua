@@ -13,8 +13,8 @@ holo_exchange_items_screen = ConvoScreen:new {
    customDialogText = "The following items require 10 force bread each. Head to the water fall, deep inside the force cave you will find what you are looking for.",
    stopConversation = "false",
    options = {
-      {"Item 1", "1"},
-      {"Item 2", "2"},
+      {"Light Holocron", "1"},
+      {"Dark Holocron", "2"},
       {"Back", "first_screen"},
       {"No thank you.", "deny_quest"},
       }
