@@ -1,76 +1,35 @@
-wod_mutant_rancor_boss = Creature:new {
-	customName = "Mutant Rancor Boss",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
+rancor_sub_boss = Creature:new {
+	--objectName = "@mob/creature_names:",
+	customName = "Infected Mutant Rancor",
 	socialGroup = "rancor",
 	faction = "",
-	level = 300,
-	chanceHit = 65.00,
-	damageMin = 1250,
-	damageMax = 2800,
-	baseXp = 2500000,
-	baseHAM = 3400000,
-	baseHAMmax = 3600000,
+	level = 225,
+	chanceHit = 25.0,
+	damageMin = 1400,
+	damageMax = 1600,
+	baseXp = 450000,
+	baseHAM = 250000,
+	baseHAMmax = 300000,
 	armor = 3,
-	resists = {95,95,95,95,95,95,95,95,95},
+	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "meat_carnivore",
-	meatAmount = 2500,
+	meatAmount = 950,
 	hideType = "hide_leathery",
-	hideAmount = 2500,
+	hideAmount = 877,
 	boneType = "bone_mammal",
-	boneAmount = 2500,
+	boneAmount = 777,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 10,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-	scale = 5.0,
+	scale = 1.5,
 
 	templates = {"object/mobile/wod_mutant_rancor_boss.iff"},
-
+	controlDeviceTemplate = "object/intangible/pet/rancor_hue.iff",
 	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
 		{
 			groups = {
 				{group = "junk", chance = 5000000},
@@ -113,7 +72,7 @@ wod_mutant_rancor_boss = Creature:new {
 		},
 		},
 	weapons = {"creature_spit_heavy_flame"},
-	conversationTemplate = "",
+	reactionStf = "@npc_reaction/slang",
 	attacks = {
 		{"creatureareacombo","StateAccuracyBonus=100"},
 		{"creatureareaknockdown","StateAccuracyBonus=100"},
@@ -129,4 +88,5 @@ wod_mutant_rancor_boss = Creature:new {
 		{"creatureareaattack","StateAccuracyBonus=100"}
 	}
 }
-CreatureTemplates:addCreatureTemplate(wod_mutant_rancor_boss, "wod_mutant_rancor_boss")
+
+CreatureTemplates:addCreatureTemplate(rancor_sub_boss, "rancor_sub_boss")

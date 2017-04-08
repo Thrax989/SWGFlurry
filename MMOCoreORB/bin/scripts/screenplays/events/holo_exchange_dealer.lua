@@ -76,7 +76,7 @@ function holo_exchange_convo_handler:getNextConversationScreen(conversationTempl
 	            local pItem = giveItem(pInventory, "object/tangible/jedi/jedi_holocron_light.iff", -1)
 	            DeleteItems = 10
 		    nextConversationScreen = conversation:getScreen("end")
-		    creature:sendSystemMessage("Item 1.")
+		    creature:sendSystemMessage("Light Holocron.")
 
 	     elseif (optionLink == "2" and itemCounter < 10) then            
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
@@ -85,7 +85,7 @@ function holo_exchange_convo_handler:getNextConversationScreen(conversationTempl
 	            local pItem = giveItem(pInventory, "object/tangible/jedi/jedi_holocron_dark.iff", -1)
 	            DeleteItems = 10
 		    nextConversationScreen = conversation:getScreen("end")
-		    creature:sendSystemMessage("Item 2.")
+		    creature:sendSystemMessage("Dark Holocron.")
 
 
           	end
