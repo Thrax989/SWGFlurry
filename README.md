@@ -23,7 +23,7 @@ runUnitTests<br>
 
 ## -Servers Engine Build-
 https://github.com/TheAnswer/PublicEngine/commit/c26e7ab0b140e61e63ee853e872ee91b78b6a8c4<br>
-Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+) Core3
+Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 
 # Required Mod The Galaxy TRE Files
 http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
