@@ -38,6 +38,12 @@ student_force2 = Creature:new {
 		},
 		{
 			groups = {
+				{group = "redeed1", chance = 10000000}
+			},
+			lootChance = 500000
+		},
+		{
+			groups = {
 				{group = "holo_token1", chance = 10000000}			},
 			lootChance = 100000
 		},
