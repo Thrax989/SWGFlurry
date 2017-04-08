@@ -10,11 +10,11 @@ holo_exchange_template = ConvoTemplate:new {
 holo_exchange_items_screen = ConvoScreen:new {
    id = "items_screen",
    leftDialog = "",
-   customDialogText = "Please Select From The Following List Of Items On The Right Hand Side. Some Items May Require Multiple holo Tokens To Echange.",
+   customDialogText = "The following items require 10 force bread each. Head to the water fall, deep inside the force cave you will find what you are looking for.",
    stopConversation = "false",
    options = {
-      {"Item 1", "1"},
-      {"Item 2", "2"},
+      {"Light Holocron", "1"},
+      {"Dark Holocron", "2"},
       {"Back", "first_screen"},
       {"No thank you.", "deny_quest"},
       }
