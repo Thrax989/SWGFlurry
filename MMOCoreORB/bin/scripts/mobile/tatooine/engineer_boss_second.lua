@@ -4,7 +4,7 @@ engineer_boss_second = Creature:new {
 	pvpFaction = "",
 	faction = "",
 	level = 300,
-	chanceHit = 50.00,
+	chanceHit = 60.00,
 	damageMin = 2000,
 	damageMax = 4000,
 	baseXp = 0,
@@ -30,20 +30,27 @@ engineer_boss_second = Creature:new {
 	templates = {"object/mobile/som/must_milo_mensix.iff"},
   lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 5000000}
-			},
-			lootChance = 10000000
-		},
+	groups = {
+		 {group = "junk", chance = 5000000},
+		 {group = "armor_all", chance = 2500000},
+                 {group = "weapons_all", chance = 2500000}
+    },
+	lootChance = 10000000
+    },
+    {
+    groups = {
+	{group = "wearables_all", chance = 5000000},
+	{group = "loot_kit_parts", chance = 5000000}
+    },
+	lootChance = 10000000
+    },
+    {
+      groups = {
+        {group = "clothing_attachments", chance = 5000000},
+        {group = "armor_attachments", chance = 5000000}
+      },
+      lootChance = 10000000
+    },
     {
       groups = {
         {group = "clothing_attachments", chance = 5000000},
@@ -59,10 +66,10 @@ engineer_boss_second = Creature:new {
       lootChance = 10000000
     },
     {
-      groups = {
-        {group = "blacksunhelm1", chance = 10000000}
-      },
-      lootChance = 8000000
+    groups = {
+	{group = "g_named_crystals", chance = 10000000}
+    },
+    lootChance = 5000000
     },
     {
       groups = {
