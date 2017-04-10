@@ -646,6 +646,17 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 						bBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
 						owner->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, bBroadcast.toString());
 						lootManager->createNamedLoot(inventory, "saberhand28", victimName, 300);//, victimName);
+
+						if (target->hasSkill("force_rank_light_novice") || target->hasSkill("force_rank_light_master"))
+						{
+						lootManager->createNamedLoot(inventory, "holocron_light", victimName, 300);//, victimName);
+						}
+
+						if (target->hasSkill("force_rank_dark_novice") || target->hasSkill("force_rank_dark_master"))
+						{
+						lootManager->createNamedLoot(inventory, "holocron_dark", victimName, 300);//, victimName);
+						}
+
 						if (target->hasSkill("force_rank_light_novice") || target->hasSkill("force_rank_dark_novice"))
 						{
 							owner->getZoneServer()->getPlayerManager()->awardExperience(target, "force_rank_xp", -5000, true);

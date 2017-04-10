@@ -5,6 +5,9 @@
 --Cities
 --includeFile("custom_content/cities/ghomrassen_mos_rassen.lua")
 
+--Ramdom
+includeFile("custom_content/random/engineer_screenplay.lua")
+
 --Cave
 includeFile("custom_content/cave/tatooine_tusken_bunker_boss.lua")
 includeFile("custom_content/cave/dantooine_janta_cave_boss.lua")
