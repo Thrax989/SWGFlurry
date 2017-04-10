@@ -4,9 +4,9 @@ engineer_boss_second = Creature:new {
 	pvpFaction = "",
 	faction = "",
 	level = 300,
-	chanceHit = 60.00,
+	chanceHit = 80.00,
 	damageMin = 2000,
-	damageMax = 4000,
+	damageMax = 3000,
 	baseXp = 0,
 	baseHAM = 1000000,
 	baseHAMmax = 1000000,
@@ -25,15 +25,15 @@ engineer_boss_second = Creature:new {
 	creatureBitmask = PACK + STALKER + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-  scale = 1.5,
+  	scale = 1.5,
 
 	templates = {"object/mobile/som/must_milo_mensix.iff"},
+	
   lootGroups = {
 		{
 	groups = {
-		 {group = "junk", chance = 5000000},
-		 {group = "armor_all", chance = 2500000},
-                 {group = "weapons_all", chance = 2500000}
+		 {group = "Armor_attachments", chance = 5000000},
+                 {group = "clothing_attachments", chance = 5000000}
     },
 	lootChance = 10000000
     },
@@ -79,13 +79,6 @@ engineer_boss_second = Creature:new {
     },
     {
       groups = {
-        {group = "fire_breathing_spider", chance = 5000000},
-        {group = "geonosian_hard", chance = 5000000}
-      },
-      lootChance = 10000000
-    },
-    {
-      groups = {
         {group = "geonosian_common", chance = 5000000},
         {group = "apocalypse", chance = 5000000}
       },
@@ -94,12 +87,6 @@ engineer_boss_second = Creature:new {
     {
       groups = {
         {group = "krayt_dragon_common2", chance = 10000000},
-      },
-      lootChance = 10000000
-    },
-    {
-      groups = {
-        {group = "peko_albatross", chance = 10000000}
       },
       lootChance = 10000000
     },
