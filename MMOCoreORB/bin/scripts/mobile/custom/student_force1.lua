@@ -5,14 +5,13 @@ student_force1 = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 30,
-	damageMin = 350,
-	damageMax = 1250,
-	specialDamageMult = 7.5,
+	damageMin = 1500,
+	damageMax = 2100,
 	baseXp = 28549,
-	baseHAM = 385000,
-	baseHAMmax = 471000,
-	armor = 3,
-	resists = {90,90,90,90,90,90,90,90,90},
+	baseHAM = 350000,
+	baseHAMmax = 400000,
+	armor = 2,
+	resists = {75,75,75,75,75,75,75,75,75},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -36,6 +35,36 @@ student_force1 = Creature:new {
 				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "redeed1", chance = 10000000}
+			},
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "jedi_bracelets", chance = 10000000}
+			},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "jedi_earings", chance = 10000000}
+			},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "jedi_neck", chance = 10000000}
+			},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "jedi_rings", chance = 10000000}
+			},
+			lootChance = 100000
 		},
 		{
 			groups = {
