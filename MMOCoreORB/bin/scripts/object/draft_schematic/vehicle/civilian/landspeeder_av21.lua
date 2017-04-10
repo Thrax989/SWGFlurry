@@ -64,10 +64,10 @@ object_draft_schematic_vehicle_civilian_landspeeder_av21 = object_draft_schemati
    customizationDefaults = {},
 
    ingredientTemplateNames = {"craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n"},
-   ingredientTitleNames = {"vehicle_body", "structural_frame"},
-   ingredientSlotType = {0, 0},
-   resourceTypes = {"metal_nonferrous", "metal_ferrous"},
-   resourceQuantities = {1125, 3125, 1},
+   ingredientTitleNames = {"vehicle_body", "structural_frame", "power_plant_av21"},
+   ingredientSlotType = {0, 0, 1},
+   resourceTypes = {"metal_nonferrous", "metal_ferrous", "object/tangible/component/vehicle/veh_power_plant_av21.iff"},
+   resourceQuantities = {500, 3000, 1},
    contribution = {100, 100, 100},
 
 
