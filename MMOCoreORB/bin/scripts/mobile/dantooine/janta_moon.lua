@@ -63,13 +63,13 @@ janta_moon = Creature:new {
 },
 {
            groups = {
-               {group = "junk", chance = 10000000},
+               {group = "junk", chance = 10000000}
 },
             lootChance = 10000000
 },
 {
            groups = {
-               {group = "junk", chance = 10000000},
+               {group = "junk", chance = 10000000}
 },
             lootChance = 10000000
 },
