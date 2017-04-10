@@ -38,7 +38,7 @@ function WoolamanderTempleScreenPlay:start()
 end
 
 function WoolamanderTempleScreenPlay:spawnMobiles()
-	spawnMobile("yavin4", "woolamander_boss",3000,1,2,2,0,3705355)
+	spawnMobile("yavin4", "woolamander_boss",900,1,2,2,0,3705355)
 	
 	spawnMobile("yavin4", "woolamander_gatherer",300,-19,2,1.4,79,3705355)
 	spawnMobile("yavin4", "woolamander_gatherer",300,-13.5,2,-4.7,30,3705355)

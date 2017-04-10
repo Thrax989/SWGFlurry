@@ -34,12 +34,12 @@ function LokStaticSpawnsScreenPlay:spawnMobiles()
 	spawnMobile("lok", "gurk",300,708,12,-3397,131,0)
 	spawnMobile("lok", "gurk",300,699,12,-3384,-97,0)
 	spawnMobile("lok", "gurk",300,704.1,12.1,-3359,16,0)
-	spawnMobile("lok", "reclusive_gurk_king",3000,720.3,11.9,-3396.6,130,0)
+	spawnMobile("lok", "reclusive_gurk_king",900,720.3,11.9,-3396.6,130,0)
 
 	--Gurk camp -3763 -3477
 	spawnMobile("lok", "gurk",300,-3754.7,63.2,-3477.6,150,0)
 	spawnMobile("lok", "gurk",300,-3763.7,62,-3485.9,170,0)
-	spawnMobile("lok", "reclusive_gurk_king",600,-3763.4,62.5,-3477.2,160,0)
+	spawnMobile("lok", "reclusive_gurk_king",900,-3763.4,62.5,-3477.2,160,0)
 
 	--Tribal Stone Claws Site (-6000, 6400)
 	spawnMobile("lok", "kimogila_dwarf", 300, -6014.5, 56.2, 6429.9, 131, 0)
