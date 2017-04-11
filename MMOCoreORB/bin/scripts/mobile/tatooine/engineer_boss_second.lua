@@ -32,7 +32,7 @@ engineer_boss_second = Creature:new {
   lootGroups = {
 		{
 	groups = {
-		 {group = "Armor_attachments", chance = 5000000},
+		 {group = "armor_attachments", chance = 5000000},
                  {group = "clothing_attachments", chance = 5000000}
     },
 	lootChance = 10000000
