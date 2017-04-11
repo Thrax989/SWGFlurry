@@ -69,6 +69,7 @@ end
 
 function FortTuskenScreenPlay:spawnMobiles()
 	--On top of Tusken Pool
+	spawnMobile("tatooine", "tusken_king",300,-5,37,-3,91,1189188)
 	spawnMobile("tatooine", "tusken_berserker",300,-3996.8,60,6285.7,74,0)
 	spawnMobile("tatooine", "tusken_war_master",300,-3963.7,60.0,6234.6,-42,0)
 	spawnMobile("tatooine", "tusken_avenger",300,-3969.1,60,6282.8,-73,0)
