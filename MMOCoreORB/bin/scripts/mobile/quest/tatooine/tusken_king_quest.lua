@@ -75,13 +75,13 @@ tusken_king_quest = Creature:new {
 				{group = "nge2", chance = 10000000}
 		},
 			lootChance = 5000000
-		}
+		},
 		{
 	        	groups = {
 				{group = "apocalypse", chance = 10000000}
 		},
 			lootChance = 10000000
-		}
+		},
 		{
 	        	groups = {
 				{group = "skill_buffs", chance = 10000000}
