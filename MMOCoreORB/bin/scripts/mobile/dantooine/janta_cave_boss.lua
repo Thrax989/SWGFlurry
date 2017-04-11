@@ -73,7 +73,7 @@ janta_cave_boss = Creature:new {
 		},
 		{
 			groups = {
-			{group = "nightsister_rare.lua", chance = 10000000}
+			{group = "nightsister_rare", chance = 10000000}
 		},
 			lootChance = 8000000
 		},
