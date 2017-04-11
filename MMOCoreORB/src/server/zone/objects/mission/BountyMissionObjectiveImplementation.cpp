@@ -647,12 +647,12 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 						owner->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, bBroadcast.toString());
 						lootManager->createNamedLoot(inventory, "saberhand28", victimName, 300);//, victimName);
 
-						if (target->hasSkill("force_rank_light_novice") || target->hasSkill("force_rank_light_master"))
+						if (target->hasSkill("force_rank_light_novice"))
 						{
 						lootManager->createNamedLoot(inventory, "holocron_light", victimName, 300);//, victimName);
 						}
 
-						if (target->hasSkill("force_rank_dark_novice") || target->hasSkill("force_rank_dark_master"))
+						if (target->hasSkill("force_rank_dark_novice"))
 						{
 						lootManager->createNamedLoot(inventory, "holocron_dark", victimName, 300);//, victimName);
 						}
