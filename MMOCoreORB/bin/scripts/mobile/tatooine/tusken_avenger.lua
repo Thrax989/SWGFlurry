@@ -2,9 +2,9 @@ tusken_avenger = Creature:new {
 	objectName = "@mob/creature_names:tusken_avenger",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
-	level = 48,
+	level = 100,
 	chanceHit = 0.49,
-	damageMin = 385,
+	damageMin = 285,
 	damageMax = 480,
 	baseXp = 4734,
 	baseHAM = 10000,
@@ -28,20 +28,25 @@ tusken_avenger = Creature:new {
 	templates = {"object/mobile/tusken_raider.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 1000000},
-				{group = "tusken_common", chance = 4000000},
-				{group = "wearables_common", chance = 1000000},
-				{group = "wearables_uncommon", chance = 500000},
-				{group = "bone_armor", chance = 750000},
-				{group = "chitin_armor", chance = 750000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "color_crystals", chance = 500000},
-				{group = "crystals_okay", chance = 500000}
-			},
+		groups = {
+			{group = "junk", chance = 1000000},
+			{group = "tusken_common", chance = 4000000},
+			{group = "wearables_common", chance = 1000000},
+			{group = "wearables_uncommon", chance = 500000},
+			{group = "armor_attachments", chance = 500000},
+			{group = "clothing_attachments", chance = 500000},
+			{group = "color_crystals", chance = 500000}
+	},
 			lootChance = 10000000
-		}
+	},
+	{
+                groups = {
+                	{group = "junk", chance = 5000000},
+                	{group = "armor_attachments", chance = 2500000},
+                	{group = "clothing_attachments", chance = 2500000}
+	},
+                	lootChance = 10000000
+	},
 	},
 	weapons = {"tusken_weapons"},
 	conversationTemplate = "",
