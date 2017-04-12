@@ -11,7 +11,7 @@ JantaCaveScreenPlay = ScreenPlay:new {
         	529368
 	},
 
-	lootLevel = 26,
+	lootLevel = 300,
 
 	lootGroups = {
 		{
