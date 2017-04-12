@@ -63,7 +63,7 @@ int ForceFrsLMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 	}
 
 	creature->playEffect("clienteffect/trap_electric_01.cef", "");
-	creature->teleport(-5575, 87, 4905);
+	creature->switchZone("yavin4", -5575, 87, 4905);
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
 }
