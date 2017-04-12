@@ -1,10 +1,10 @@
 /*
- * ForceFrsLMenuComponent.cpp
+ * ForceFrsDMenuComponent.cpp
  * Authors TOXIC
- * Created on: 4/11/2017
+ * Created on: 4/12/2017
  */
 
-#include "ForceFrsLMenuComponent.h"
+#include "ForceFrsDMenuComponent.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -23,16 +23,16 @@
 #include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 
-void ForceFrsLMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
+void ForceFrsDMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 
 
-if (player->hasSkill("force_rank_light_novice"))
+if (player->hasSkill("force_rank_dark_novice"))
 	menuResponse->addRadialMenuItem(20, 3, "Teleport Light Enclave");
 }
 
-int ForceFrsLMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
+int ForceFrsDMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID != 20)
 		return 0;
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
@@ -54,7 +54,7 @@ int ForceFrsLMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 			//Broadcast to Server
  			String playerName = creature->getFirstName();
  			StringBuffer zBroadcast;
- 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Teleported To The Light Force Ranking Enclave";
+ 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Teleported To The Dark Force Ranking Enclave";
  			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			StringBuffer messageVis;
 			messageVis << "\\#00CC00 Your Visibility is at: " << jediVis1;
@@ -63,7 +63,7 @@ int ForceFrsLMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 	}
 
 	creature->playEffect("clienteffect/trap_electric_01.cef", "");
-	creature->switchZone("yavin4", -5575, 87, 4905);
+	creature->switchZone("yavin4", 5079, 87, 305);
 	creature->setPosture(CreaturePosture::UPRIGHT);
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
