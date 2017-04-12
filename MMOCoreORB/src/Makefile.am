@@ -491,6 +491,7 @@ core3_SOURCES =	$(core3_IDLS) \
 		server/zone/objects/tangible/components/HolocronMenuComponent.cpp \
 		server/zone/objects/tangible/components/WaypointDatapadMenuComponent.cpp \
 		server/zone/objects/tangible/components/ForceCrystalMenuComponent.cpp \
+		server/zone/objects/tangible/components/ForceFrsLMenuComponent.cpp \
 		server/zone/objects/tangible/components/ForceShrineMenuComponent1.cpp \
 		server/zone/objects/tangible/components/CloningTerminalMenuComponent.cpp \
 		server/zone/objects/tangible/components/generic/ArtCrateMenuComponent.cpp \
