@@ -27,7 +27,8 @@ void ForceFrsLMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Ob
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 
-if (player->hasSkill("force_rank_light_master"))						{
+
+if (player->hasSkill("force_rank_light_novice"))
 	menuResponse->addRadialMenuItem(20, 3, "Teleport Light Enclave");
 }
 
@@ -62,7 +63,7 @@ int ForceFrsLMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 	}
 
 	creature->playEffect("clienteffect/trap_electric_01.cef", "");
-	creature->switchZone(yavin4, 0.0627547, -19.25, 40.0604, 343, 8525439);
+	creature->teleport(-5575, 87, 4905);
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
 }
