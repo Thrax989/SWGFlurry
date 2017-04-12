@@ -44,6 +44,7 @@
 object_tangible_wearables_shirt_nightsister_shirt_s01 = object_tangible_wearables_shirt_shared_nightsister_shirt_s01:new {
 templateType = ARMOROBJECT,
 objectMenuComponent = "ArmorObjectMenuComponent",
+	templateType = ARMOROBJECT,
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",

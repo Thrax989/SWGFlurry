@@ -43,6 +43,7 @@
 
 object_tangible_wearables_hat_nightsister_hat_s02 = object_tangible_wearables_hat_shared_nightsister_hat_s02:new {
 objectMenuComponent = "ArmorObjectMenuComponent",
+	templateType = ARMOROBJECT,
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
