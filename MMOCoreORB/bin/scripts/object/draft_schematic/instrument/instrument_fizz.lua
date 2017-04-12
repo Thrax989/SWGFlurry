@@ -73,6 +73,7 @@ object_draft_schematic_instrument_instrument_fizz = object_draft_schematic_instr
    targetTemplate = "object/tangible/instrument/fizz.iff",
 
    additionalTemplates = {
+"object/weapon/melee/baton/shared_xantha_smasher.iff",
              }
 
 }
