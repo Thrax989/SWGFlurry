@@ -2,10 +2,10 @@ tusken_torture_lord = Creature:new {
 	objectName = "@mob/creature_names:tusken_torture_lord",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
-	level = 57,
+	level = 180,
 	chanceHit = 0.57,
-	damageMin = 430,
-	damageMax = 570,
+	damageMin = 130,
+	damageMax = 270,
 	baseXp = 5555,
 	baseHAM = 11000,
 	baseHAMmax = 13000,
@@ -28,20 +28,29 @@ tusken_torture_lord = Creature:new {
 	templates = {"object/mobile/tusken_raider.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 1500000},
-				{group = "tusken_common", chance = 3500000},
-				{group = "wearables_common", chance = 1000000},
-				{group = "wearables_uncommon", chance = 500000},
-				{group = "bone_armor", chance = 750000},
-				{group = "chitin_armor", chance = 750000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "color_crystals", chance = 500000},
-				{group = "crystals_good", chance = 500000}
-			},
-			lootChance = 10000000
-		}
+								groups = {
+									{group = "junk", chance = 5000000},
+									{group = "armor_attachments", chance = 2500000},
+									{group = "clothing_attachments", chance = 2500000}
+	},
+									lootChance = 10000000
+	},
+	{
+                groups = {
+                	{group = "junk", chance = 5000000},
+                	{group = "armor_attachments", chance = 2500000},
+                	{group = "clothing_attachments", chance = 2500000}
+	},
+                	lootChance = 10000000
+	},
+	{
+								groups = {
+									{group = "tusken_common", chance = 5000000},
+									{group = "wearables_common", chance = 2500000},
+									{group = "wearables_uncommon", chance = 2500000}
+	},
+									lootChance = 10000000
+	},
 	},
 	weapons = {"tusken_weapons"},
 	conversationTemplate = "",
