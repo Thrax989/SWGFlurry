@@ -42,8 +42,8 @@
 
 
 object_tangible_wearables_boots_singing_mountain_clan_boots = object_tangible_wearables_boots_shared_singing_mountain_clan_boots:new {
-templateType = ARMOROBJECT,
 objectMenuComponent = "ArmorObjectMenuComponent",
+	templateType = ARMOROBJECT,
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",

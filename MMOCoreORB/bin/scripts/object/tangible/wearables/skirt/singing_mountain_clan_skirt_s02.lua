@@ -43,6 +43,7 @@
 
 object_tangible_wearables_skirt_singing_mountain_clan_skirt_s02 = object_tangible_wearables_skirt_shared_singing_mountain_clan_skirt_s02:new {
 objectMenuComponent = "ArmorObjectMenuComponent",
+	templateType = ARMOROBJECT,
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
