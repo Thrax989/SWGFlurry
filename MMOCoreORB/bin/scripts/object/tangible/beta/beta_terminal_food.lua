@@ -42,21 +42,21 @@
 
 
 object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_terminal_food:new {
+	gameObjectType = 16400,
 
 	maxCondition = 0,
 
 
 	templateType = CHARACTERBUILDERTERMINAL,
 
-     suiBoxTitle = "World Boss Teleporter", 
-     suiBoxText = "Welcome Citizen! Please enjoy this helpful service.",
+     suiBoxTitle = "World Boss Teleport Service", 
+     suiBoxText = "Welcome Citizen! Please enjoy these helpful services.",
 
 
 	itemList = {
-		"World Boss Port 1 (100,000 Credits)", "world_boss_1",
-		"World Boss Port 2 (100,000 Credits)", "world_boss_2",
+		        "World Boss Port 1 (100,000 Credits)", "world_boss_1",
+		        "World Boss Port 2 (100,000 Credits)", "world_boss_2",
 	}
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_beta_beta_terminal_food, "object/tangible/beta/beta_terminal_food.iff")
