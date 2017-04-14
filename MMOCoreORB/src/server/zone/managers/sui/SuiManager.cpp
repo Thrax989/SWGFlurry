@@ -771,17 +771,17 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				ghost->setJediState(2);
 
 			} else if (templatePath == "world_boss_1") {
-				if (ghost->getCashCredits() < 100000{
-				ghost->sendSystemMessage("Sorry, you don't have enough cash on hand to travel.");
-				return;
-			} else if (ghost->getCashCredits() >= 100000{
-				// Charge player to travel
-				ghost->subtractCashCredits(100000);
-				ghost->switchZone("yavin4", -5575, 87, 4905);
-
+				if (player->getCashCredits() > 100000) {
+					player->sendSystemMessage("Thank you for your travels.");
+				        player->switchZone("yavin4", -5575, 87, 4905);
+					player->subtractCashCredits(100000);
+			        }
 			} else if (templatePath == "world_boss_2") {
-				ghost->switchZone("yavin4", 5079, 87, 305);
-
+				if (player->getCashCredits() > 100000) {
+					player->sendSystemMessage("Thank you for your travels.");
+				        player->switchZone("yavin4", 5079, 87, 305);
+					player->subtractCashCredits(100000);
+			        }
 			} else if (templatePath == "become_glowy") {
 				bluefrog->grantGlowyBadges(player);
 
