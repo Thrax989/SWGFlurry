@@ -774,7 +774,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (player->getCashCredits() < 99999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("World Travels");
-		                box->setPromptText("Travel Coast 100,000 credits");
+		                box->setPromptText("Travel Coast 100,000 credits. (Cash)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -783,10 +783,19 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (player->getCashCredits() > 99999) {
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("yavin4", -5575, 87, 4905);
- 					player->subtractCashCredits(100000);
+ 					player->subtractCashCredits(99999);
 			        }
 			} else if (templatePath == "world_boss_2") {
-				if (player->getCashCredits() > 100000) {
+				if (player->getCashCredits() < 99999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("World Travels");
+		                box->setPromptText("Travel Coast 100,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 99999) {
 					player->sendSystemMessage("Thank you for your travels.");
 				        player->switchZone("yavin4", 5079, 87, 305);
 					player->subtractCashCredits(100000);
