@@ -771,18 +771,19 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				ghost->setJediState(2);
 
 			} else if (templatePath == "world_boss_1") {
+				if (player->getCashCredits() < 100000) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("World Travels");
+		                box->setPromptText("Travel Coast 100,000 credits");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
 				if (player->getCashCredits() > 100000) {
- 	                            ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
-	                            box->setPromptTitle("Welcome To SWG Flurry");
-	                            box->setPromptText("Welcome to the World Boss Teleporter. Would you like to travel? (Travel Fee 100,000 Credits)\n\n");
-	                            box->setCancelButton(true, "@no");
-	                            box->setOkButton(true, "@yes");
-	                            player->sendMessage(box->generateMessage());
-				    player->sendSystemMessage("Thank you for your travels.");
-				    player->switchZone("yavin4", -5575, 87, 4905);
-				    player->subtractCashCredits(100000);
-	                            box->setUsingObject(ghost);
-	                            ghost->addSuiBox(box);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("yavin4", -5575, 87, 4905);
+ 					player->subtractCashCredits(100000);
 			        }
 			} else if (templatePath == "world_boss_2") {
 				if (player->getCashCredits() > 100000) {
