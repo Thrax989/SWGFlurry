@@ -17,6 +17,9 @@ void CharacterBuilderTerminalImplementation::loadTemplateData(SharedObjectTempla
 
 	rootNode = terminalData->getItemList();
 
+     suiBoxTitle = terminalData->getSuiBoxTitle();
+     suiBoxText = terminalData->getSuiBoxText();
+
 	//info("loaded " + String::valueOf(itemList.size()));
 }
 
@@ -47,6 +50,11 @@ void CharacterBuilderTerminalImplementation::sendInitialChoices(CreatureObject* 
 
 	ManagedReference<SuiCharacterBuilderBox*> sui = new SuiCharacterBuilderBox(player, rootNode);
 	sui->setUsingObject(_this.getReferenceUnsafeStaticCast());
+
+     if (suiBoxTitle != "") {
+          sui->setPromptTitle(suiBoxTitle);
+          sui->setPromptText(suiBoxText);
+     }
 
 	player->sendMessage(sui->generateMessage());
 	player->getPlayerObject()->addSuiBox(sui);
