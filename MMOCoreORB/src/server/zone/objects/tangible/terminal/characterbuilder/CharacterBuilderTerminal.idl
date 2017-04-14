@@ -11,8 +11,6 @@ include templates.tangible.CharacterBuilderMenuNode;
 
 class CharacterBuilderTerminal extends Terminal {
 	public transient CharacterBuilderMenuNode rootNode;
-	public string suiBoxTitle;
-     public string suiBoxText;
 	
 	public CharacterBuilderTerminal() {
 		Logger.setLoggingName("CharacterBuilderTerminal");
