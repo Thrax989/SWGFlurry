@@ -772,9 +772,17 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 
 			} else if (templatePath == "world_boss_1") {
 				if (player->getCashCredits() > 100000) {
-					player->sendSystemMessage("Thank you for your travels.");
-				        player->switchZone("yavin4", -5575, 87, 4905);
-					player->subtractCashCredits(100000);
+ 	                            ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+	                            box->setPromptTitle("Welcome To SWG Flurry");
+	                            box->setPromptText("Welcome to the World Boss Teleporter. Would you like to travel? (Travel Fee 100,000 Credits)\n\n");
+	                            box->setCancelButton(true, "@no");
+	                            box->setOkButton(true, "@yes");
+	                            player->sendMessage(box->generateMessage());
+				    player->sendSystemMessage("Thank you for your travels.");
+				    player->switchZone("yavin4", -5575, 87, 4905);
+				    player->subtractCashCredits(100000);
+	                            box->setUsingObject(ghost);
+	                            ghost->addSuiBox(box);
 			        }
 			} else if (templatePath == "world_boss_2") {
 				if (player->getCashCredits() > 100000) {
