@@ -785,6 +785,21 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        player->switchZone("corellia", 6648, 330, -5926);
  					player->subtractCashCredits(5000);
 			        }
+			} else if (templatePath == "corellia_bela_vistal_b_shuttleport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Bela Vistal Shuttleport B");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("corellia", 6929, 330, -5529);
+ 					player->subtractCashCredits(5000);
+			        }
 			} else if (templatePath == "world_boss_1") {
 				if (player->getCashCredits() < 99999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
