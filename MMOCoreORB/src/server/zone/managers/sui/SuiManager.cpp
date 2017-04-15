@@ -782,7 +782,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (player->getCashCredits() > 4999) {
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corilla", 6648, 330, -5926);
+ 				        player->switchZone("corillia", 6648, 330, -5926);
  					player->subtractCashCredits(5000);
 			        }
 			} else if (templatePath == "world_boss_1") {
