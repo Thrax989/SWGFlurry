@@ -359,6 +359,35 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		String templatePath = node->getTemplatePath();
 		
 		int galaxyid = zserv->getGalaxyID();
+ 
+ 		if (galaxyid == 2) {
+ 			if ((templatePath == "unlearn_all_skills"
+ 			|| templatePath == "cleanse_character"
+ 			|| templatePath == "reset_buffs"
+ 			|| templatePath == "enhance_character"
+ 			|| templatePath == "apply_dots"
+ 			|| templatePath == "clear_dots"
+ 			|| templatePath == "language"
+			|| templatePath == "corellia_bela_vistal_a_shuttleport_travel"
+			|| templatePath == "corellia_bela_vistal_b_shuttleport_travel"
+			|| templatePath == "corellia_coronet_starport_travel"
+			|| templatePath == "corellia_coronet_a_shuttle_travel"
+			|| templatePath == "corellia_coronet_b_shuttle_travel"
+			|| templatePath == "doaba_guerfel_shuttleport_travel"
+			|| templatePath == "doaba_guerfel_starport_travel"
+			|| templatePath == "kor_vella_shuttleport_travel"
+			|| templatePath == "kor_vella_starport_travel"
+			|| templatePath == "tyrena_a_shuttle_travel"
+			|| templatePath == "tyrena_b_shuttle_travel"
+			|| templatePath == "tyrena_starport_travel"
+			|| templatePath == "vreni_island_shuttle_travel"
+ 			|| templatePath == "social_politician_master") && ghost->getAdminLevel() < 15) {
+ 			} else if (ghost->getAdminLevel() < 15) {
+ 				info("WARNING! " + player->getFirstName() + " attempted to use a character builder", true);
+ 				player->sendSystemMessage("You Do Not Have Permission To Do That!");
+ 				return;
+ 			}
+ 		}
 
 		if (templatePath.indexOf(".iff") < 0) { // Non-item selections
 
