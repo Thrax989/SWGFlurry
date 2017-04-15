@@ -18,9 +18,9 @@ class SuiCharacterBuilderBox extends SuiListBox {
 		
 		Logger.setLoggingName("SuiCharacterBuilderBox");
 		
-		setPromptTitle("Character Builder");
+		setPromptTitle("Terminal");
 		
-		setPromptText("Provided below are items which the developers feel are necessary to complete the current testing objectives. Please select only the items which you require.");
+		setPromptText("Welome To Flurry.");
 		
 		rootNode = root;
 		
