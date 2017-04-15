@@ -784,6 +784,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 6648, 330, -5926);
  					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "corellia_bela_vistal_b_shuttleport_travel") {
 				if (player->getCashCredits() < 4999) {
