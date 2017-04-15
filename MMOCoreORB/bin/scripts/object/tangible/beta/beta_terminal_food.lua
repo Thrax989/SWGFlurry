@@ -46,16 +46,63 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 
 	maxCondition = 0,
 
+	customName = "Galactic Travel Service",
 
 	templateType = CHARACTERBUILDERTERMINAL,
 
-     suiBoxTitle = "World Boss Teleport Service", 
-     suiBoxText = "Welcome Citizen! Please enjoy these helpful services.",
-
-
 	itemList = {
-		        "World Boss Port 1 (100,000 Credits)", "world_boss_1",
-		        "World Boss Port 2 (100,000 Credits)", "world_boss_2",
+		        "corellia",
+		   {
+			"Test", "Test",
+		   },
+			"dantooine",
+		   {
+			"Test", "Test",
+		   },
+			"dathomir",
+		   {
+			"Test", "Test",
+		   },
+			"hoth",
+		   {
+			"Test", "Test",
+		   },
+		  	"lok",
+		   {
+			"Test", "Test",
+		   },
+			"mandalore",
+		   {
+			"Test", "Test",
+		   },
+			"naboo",
+		   {
+			"Test", "Test",
+		   },
+		 	"rori",
+		   {
+			"Test", "Test",
+		   },
+		 	"taanab",
+		   {
+			"Test", "Test",
+		   },
+		 	"talus",
+		   {
+			"Test", "Test",
+		   },
+		 	"tatooine",
+		   {
+			"Test", "Test",
+		   },
+		 	"yavin4",
+		   {
+			"Test", "Test",
+		   },
+		 	"kaas",
+		   {
+			"Test", "Test",
+		   },
 	}
 }
 
