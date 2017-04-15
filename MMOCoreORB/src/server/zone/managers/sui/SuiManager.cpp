@@ -875,6 +875,91 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        player->switchZone("corellia", 3352, 308, 5600);
  					player->subtractCashCredits(5000);
 			        }
+			} else if (templatePath == "kor_vella_shuttleport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Kor Vella Shuttleport");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("corellia", 3352, 308, 5600);
+ 					player->subtractCashCredits(5000);
+			        }
+			} else if (templatePath == "kor_vella_starport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Kor Vella Stareport");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("corellia", 3352, 308, 5600);
+ 					player->subtractCashCredits(5000);
+			        }
+			} else if (templatePath == "tyrena_a_shuttle_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Tyrena Shuttle A");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("corellia", 3352, 308, 5600);
+ 					player->subtractCashCredits(5000);
+			        }
+			} else if (templatePath == "tyrena_b_shuttle_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Tyrena Shuttle B");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+			} else if (templatePath == "tyrena_starport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Tyrena Starport");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+			} else if (templatePath == "vreni_island_shuttle_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Vreni Island Shuttle");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("corellia", 3352, 308, 5600);
+ 					player->subtractCashCredits(5000);
+			        }
+				if (player->getCashCredits() > 4999) {
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("corellia", 3352, 308, 5600);
+ 					player->subtractCashCredits(5000);
+			        }
 			} else if (templatePath == "world_boss_1") {
 				if (player->getCashCredits() < 99999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
