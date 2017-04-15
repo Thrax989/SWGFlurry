@@ -42,7 +42,80 @@
 
 
 object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_terminal_food:new {
+	gameObjectType = 16400,
 
+	maxCondition = 0,
+
+	customName = "Galactic Travel Service",
+
+	templateType = CHARACTERBUILDERTERMINAL,
+
+	itemList = {
+		        "corellia",
+		   {
+			"Bela Vistal Shuttleport A (5,000 Credits)", "corellia_bela_vistal_a_shuttleport_travel",
+			"Bela Vistal Shuttleport B (5,000 Credits)", "corellia_bela_vistal_b_shuttleport_travel",
+			"Coronet Starport (5,000 Credits)", "corellia_coronet_starport_travel",
+			"Coronet Shuttle A (5,000 Credits)", "corellia_coronet_a_shuttle_travel",
+			"Coronet Shuttle B (5,000 Credits)", "corellia_coronet_b_shuttle_travel",
+			"Doaba Guerfel Shuttleport (5,000 Credits)", "doaba_guerfel_shuttleport_travel",
+			"Doaba Guerfel Starport (5,000 Credits)", "doaba_guerfel_starport_travel",
+			"Kor Vella Shuttleport (5,000 Credits)", "kor_vella_shuttleport_travel",
+			"Kor Vella Stareport (5,000 Credits)", "kor_vella_starport_travel",
+			"Tyrena Shuttle A (5,000 Credits)", "tyrena_a_shuttle_travel",
+			"Tyrena Shuttle B (5,000 Credits)", "tyrena_b_shuttle_travel",
+			"Tyrena Starport (5,000 Credits)", "tyrena_starport_travel",
+			"Vreni Island Shuttle (5,000 Credits)", "vreni_island_shuttle_travel",
+		   },
+			"dantooine",
+		   {
+			"Test", "Test",
+		   },
+			"dathomir",
+		   {
+			"Test", "Test",
+		   },
+			"hoth",
+		   {
+			"Test", "Test",
+		   },
+		  	"lok",
+		   {
+			"Test", "Test",
+		   },
+			"mandalore",
+		   {
+			"Test", "Test",
+		   },
+			"naboo",
+		   {
+			"Test", "Test",
+		   },
+		 	"rori",
+		   {
+			"Test", "Test",
+		   },
+		 	"taanab",
+		   {
+			"Test", "Test",
+		   },
+		 	"talus",
+		   {
+			"Test", "Test",
+		   },
+		 	"tatooine",
+		   {
+			"Test", "Test",
+		   },
+		 	"yavin4",
+		   {
+			"Test", "Test",
+		   },
+		 	"kaas",
+		   {
+			"Test", "Test",
+		   },
+	}
 }
 
 ObjectTemplates:addTemplate(object_tangible_beta_beta_terminal_food, "object/tangible/beta/beta_terminal_food.iff")

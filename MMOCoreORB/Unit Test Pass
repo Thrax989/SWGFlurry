@@ -1,3 +1,16 @@
+error: process ID list syntax error
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+WARNING: Server state is , it is not running or sleeping, something is wrong!
+
+vagrant@ns510434:~$ cd /home/vagrant/workspace/Core3/MMOCoreORB/bin
 vagrant@ns510434:~/workspace/Core3/MMOCoreORB/bin$ swgemu runUnitTests
 + cd /home/vagrant/workspace/Core3/MMOCoreORB/bin
 + ./core3 runUnitTests '--gtest_filter=*'
@@ -16,8 +29,9 @@ Running unit tests...
 [----------] 1 test from BasicScreenPlayTest
 [ RUN      ] BasicScreenPlayTest.ScreenPlayLuaInitialize
 (0 s) [BadgeList] Loaded 140 badges.
-[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (1024 ms)
-[----------] 1 test from BasicScreenPlayTest (1024 ms total)
+Object manager loaded for KIG
+[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (1011 ms)
+[----------] 1 test from BasicScreenPlayTest (1011 ms total)
 
 [----------] 3 tests from LuaMobileTest
 [ RUN      ] LuaMobileTest.LuaMobileTemplatesTest
@@ -37,6 +51,308 @@ Running unit tests...
 	Loading templates: [14%]	(2 s) [Console] WARNING - could not open lua derv: object/static/structure/nobuild/base/noflora_base.iff
 (2 s) [Console] WARNING - could not open lua derv: object/static/structure/nobuild/base/noflora_base.iff
 (2 s) [Console] WARNING - could not open lua derv: object/static/structure/nobuild/base/noflora_base.iff
+	Loading templates: [16%]	(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+	Loading templates: [17%]	(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+	Loading templates: [18%]	(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
 	Loading templates: [19%]	(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
 (2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
 (2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
@@ -48,22 +364,227 @@ Running unit tests...
 (2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
 (2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
 (2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(2 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+	Loading templates: [20%]	(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+	Loading templates: [22%]	(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
+(3 s) [Console] WARNING - could not open lua derv: object/tangible/base/retrieve_quest_base.iff
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
+	Loading templates: [23%]	(3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
-(3 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
-	Loading templates: [20%]	(3 s) [Console] WARNING - could not open lua derv: object/tangible/wearables/base/base_fannypack.iff
+	Loading templates: [24%]	(3 s) [Console] WARNING - could not open lua derv: object/tangible/wearables/base/base_fannypack.iff
 (3 s) [Console] WARNING - could not open lua derv: object/tangible/wearables/base/base_fannypack.iff
 (3 s) [TreeArchive] ERROR - Did not find fileName: shared_exar_cultist_hood_down.iff
 (3 s) [TreeArchive] ERROR - Did not find fileName: shared_exar_cultist_hood_down_f.iff
-	Loading templates: [23%]	(3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
+	Loading templates: [26%]	(3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
 (3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
 (3 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
-	Loading templates: [64%]	(7 s) [Console] WARNING - expecting SHOT got RCCT in file: object/resource_container/shared_simple.iff
-	Loading templates: [80%]	(8 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+	Loading templates: [67%]	(7 s) [Console] WARNING - expecting SHOT got RCCT in file: object/resource_container/shared_simple.iff
+	Loading templates: [83%]	(8 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
 (8 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
 (8 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
 (8 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
@@ -96,33 +617,33 @@ Running unit tests...
 (8 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
 (8 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
 (8 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-	Loading templates: [114%]	(10 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
-	Loading templates: [115%]	(10 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(10 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(10 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(10 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-	Loading templates: [118%]	(11 s) [Console] WARNING - expecting SHOT got SDSC in file: object/tangible/wearables/armor/rebel_assault/shared_armor_appearance_rebel_assault_helmet_gcw.iff
-	Loading templates: [125%]	
+	Loading templates: [118%]	(11 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
+(11 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(11 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(11 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(11 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+	Loading templates: [122%]	(11 s) [Console] WARNING - expecting SHOT got SDSC in file: object/tangible/wearables/armor/rebel_assault/shared_armor_appearance_rebel_assault_helmet_gcw.iff
+	Loading templates: [129%]	
 (12 s) [TemplateManager] Finished loading object templates
 (12 s) [TemplateManager] 0 portal layouts loaded
 (12 s) [TemplateManager] 0 floor meshes loaded
 (12 s) [TemplateManager] 89 structure footprints.
 (12 s) [CommandConfigManager] ERROR - Could not create command counterAttack
 (12 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-(12 s) [FactionManager] Loading config file.
-(12 s) [FactionManager] loaded 22 ranks
-(12 s) [DnaManager] Loading DNA Information
-(12 s) [DnaManager] Loaded 201 dna stats.
-[       OK ] LuaMobileTest.LuaMobileTemplatesTest (12055 ms)
+(13 s) [FactionManager] Loading config file.
+(13 s) [FactionManager] loaded 22 ranks
+(13 s) [DnaManager] Loading DNA Information
+(13 s) [DnaManager] Loaded 201 dna stats.
+[       OK ] LuaMobileTest.LuaMobileTemplatesTest (12329 ms)
 [ RUN      ] LuaMobileTest.LuaLootGroupsTest
 (13 s) [CommandConfigManager] ERROR - Could not create command counterAttack
 (13 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] LuaMobileTest.LuaLootGroupsTest (83 ms)
+[       OK ] LuaMobileTest.LuaLootGroupsTest (85 ms)
 [ RUN      ] LuaMobileTest.LuaSpawnManagerTest
 (13 s) [CommandConfigManager] ERROR - Could not create command counterAttack
 (13 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
 [       OK ] LuaMobileTest.LuaSpawnManagerTest (75 ms)
-[----------] 3 tests from LuaMobileTest (12213 ms total)
+[----------] 3 tests from LuaMobileTest (12489 ms total)
 
 [----------] 12 tests from JediManagerTest
 [ RUN      ] JediManagerTest.ShouldRunFileJediManagerLuaAtLoadConfiguration
@@ -138,38 +659,38 @@ Running unit tests...
 [ RUN      ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured
 [       OK ] JediManagerTest.ShouldLoadTheCustomJediProgressionFileIfCustomJediProgressionIsConfigured (0 ms)
 [ RUN      ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration
-[       OK ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration (1 ms)
+[       OK ] JediManagerTest.ShouldReadTheJediProgressionSystemNameAtLoadConfiguration (0 ms)
 [ RUN      ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager
 [       OK ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager (1 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager
-[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (0 ms)
+[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (1 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager
 [       OK ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager
-[       OK ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager (1 ms)
+[       OK ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager
 [       OK ] JediManagerTest.UseItemShouldCallTheUseItemMethodInTheLuaJediManager (0 ms)
 [----------] 12 tests from JediManagerTest (3 ms total)
 
 [----------] 3 tests from TerrainManagerTest
 [ RUN      ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea
-[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (0 ms)
+[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (1 ms)
 [ RUN      ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea
 [       OK ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea (0 ms)
 [ RUN      ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference
-[       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (1 ms)
+[       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (0 ms)
 [----------] 3 tests from TerrainManagerTest (1 ms total)
 
 [----------] 4 tests from RectangularAreaShapeTest
 [ RUN      ] RectangularAreaShapeTest.RectangularAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation
 [       OK ] RectangularAreaShapeTest.RectangularAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation (0 ms)
 [ RUN      ] RectangularAreaShapeTest.RectangularAreaShapeHasRadiusEqualToZeroAfterCreation
-[       OK ] RectangularAreaShapeTest.RectangularAreaShapeHasRadiusEqualToZeroAfterCreation (0 ms)
+[       OK ] RectangularAreaShapeTest.RectangularAreaShapeHasRadiusEqualToZeroAfterCreation (1 ms)
 [ RUN      ] RectangularAreaShapeTest.RectangularAreaShapeShouldCallContainsPointOnTheAreaToCheckIntersectionWith
 [       OK ] RectangularAreaShapeTest.RectangularAreaShapeShouldCallContainsPointOnTheAreaToCheckIntersectionWith (0 ms)
 [ RUN      ] RectangularAreaShapeTest.IntersectsWithShouldReturnTrueIfContainsPointReturnsTrueFromTheAreaShape
 [       OK ] RectangularAreaShapeTest.IntersectsWithShouldReturnTrueIfContainsPointReturnsTrueFromTheAreaShape (0 ms)
-[----------] 4 tests from RectangularAreaShapeTest (0 ms total)
+[----------] 4 tests from RectangularAreaShapeTest (1 ms total)
 
 [----------] 5 tests from RingAreaShapeTest
 [ RUN      ] RingAreaShapeTest.RingAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation
@@ -188,19 +709,19 @@ Running unit tests...
 [ RUN      ] GeneralDeadlockTestBase.CrossLockTest
 [       OK ] GeneralDeadlockTestBase.CrossLockTest (0 ms)
 [ RUN      ] GeneralDeadlockTestBase.ThreeLocksTest
-[       OK ] GeneralDeadlockTestBase.ThreeLocksTest (1 ms)
+[       OK ] GeneralDeadlockTestBase.ThreeLocksTest (0 ms)
 [ RUN      ] GeneralDeadlockTestBase.MonitorLockTest
 [       OK ] GeneralDeadlockTestBase.MonitorLockTest (0 ms)
 [ RUN      ] GeneralDeadlockTestBase.MultipleLocksTest
 [       OK ] GeneralDeadlockTestBase.MultipleLocksTest (0 ms)
-[----------] 4 tests from GeneralDeadlockTestBase (1 ms total)
+[----------] 4 tests from GeneralDeadlockTestBase (0 ms total)
 
 [----------] 2 tests from BasicTerrainTest
 [ RUN      ] BasicTerrainTest.LoadTestTerrainTest
-[       OK ] BasicTerrainTest.LoadTestTerrainTest (329 ms)
+[       OK ] BasicTerrainTest.LoadTestTerrainTest (331 ms)
 [ RUN      ] BasicTerrainTest.LoadTestSpaceTerrain
-[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (55 ms)
-[----------] 2 tests from BasicTerrainTest (384 ms total)
+[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (58 ms)
+[----------] 2 tests from BasicTerrainTest (389 ms total)
 
 [----------] 4 tests from ZoneTest
 [ RUN      ] ZoneTest.PlayerManager
@@ -215,7 +736,7 @@ Running unit tests...
 [ RUN      ] ZoneTest.TreLoad
 [       OK ] ZoneTest.TreLoad (0 ms)
 [ RUN      ] ZoneTest.ActiveAreaTest
-[       OK ] ZoneTest.ActiveAreaTest (0 ms)
+[       OK ] ZoneTest.ActiveAreaTest (1 ms)
 [ RUN      ] ZoneTest.InRangeTest
 [       OK ] ZoneTest.InRangeTest (0 ms)
 [----------] 4 tests from ZoneTest (5 ms total)
@@ -224,11 +745,13 @@ Running unit tests...
 [ RUN      ] CommandLuaTest.LoadCommandLuas
 (13 s) [CommandConfigManager] ERROR - Could not create command counterAttack
 (13 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] CommandLuaTest.LoadCommandLuas (49 ms)
+[       OK ] CommandLuaTest.LoadCommandLuas (51 ms)
 [ RUN      ] CommandLuaTest.CheckAnimationCRCS
 [       OK ] CommandLuaTest.CheckAnimationCRCS (26 ms)
-[----------] 2 tests from CommandLuaTest (75 ms total)
+[----------] 2 tests from CommandLuaTest (77 ms total)
 
 [----------] Global test environment tear-down
-[==========] 43 tests from 11 test cases ran. (13707 ms total)
+[==========] 43 tests from 11 test cases ran. (13978 ms total)
 [  PASSED  ] 43 tests.
+
+vagrant@ns510434:~/workspace/Core3/MMOCoreORB/bin$ 
