@@ -781,6 +781,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->sendMessage(box->generateMessage());
 			        }
 				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 6648, 330, -5926);
  					player->subtractCashCredits(5000);
@@ -797,9 +798,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->sendMessage(box->generateMessage());
 			        }
 				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 6929, 330, -5529);
  					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "corellia_coronet_starport_travel") {
 				if (player->getCashCredits() < 4999) {
@@ -812,9 +815,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->sendMessage(box->generateMessage());
 			        }
 				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
  					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "corellia_coronet_a_shuttle_travel") {
 				if (player->getCashCredits() < 4999) {
@@ -827,9 +832,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->sendMessage(box->generateMessage());
 			        }
 				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -22, 28, -4414);
+ 				        player->switchZone("corellia", -67, 28, -4714);
  					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "corellia_coronet_b_shuttle_travel") {
 				if (player->getCashCredits() < 4999) {
@@ -842,9 +849,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->sendMessage(box->generateMessage());
 			        }
 				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -335, 28, -4639);
+ 				        player->switchZone("corellia", -67, 28, -4714);
  					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "doaba_guerfel_shuttleport_travel") {
 				if (player->getCashCredits() < 4999) {
@@ -857,9 +866,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->sendMessage(box->generateMessage());
 			        }
 				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 3007, 280, 4996);
+ 				        player->switchZone("corellia", -67, 28, -4714);
  					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "doaba_guerfel_starport_travel") {
 				if (player->getCashCredits() < 4999) {
@@ -872,9 +883,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->sendMessage(box->generateMessage());
 			        }
 				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 3352, 308, 5600);
+ 				        player->switchZone("corellia", -67, 28, -4714);
  					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "kor_vella_shuttleport_travel") {
 				if (player->getCashCredits() < 4999) {
@@ -887,9 +900,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->sendMessage(box->generateMessage());
 			        }
 				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 3352, 308, 5600);
+ 				        player->switchZone("corellia", -67, 28, -4714);
  					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "kor_vella_starport_travel") {
 				if (player->getCashCredits() < 4999) {
@@ -902,9 +917,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->sendMessage(box->generateMessage());
 			        }
 				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 3352, 308, 5600);
+ 				        player->switchZone("corellia", -67, 28, -4714);
  					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "tyrena_a_shuttle_travel") {
 				if (player->getCashCredits() < 4999) {
@@ -917,9 +934,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->sendMessage(box->generateMessage());
 			        }
 				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 3352, 308, 5600);
+ 				        player->switchZone("corellia", -67, 28, -4714);
  					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "tyrena_b_shuttle_travel") {
 				if (player->getCashCredits() < 4999) {
@@ -931,6 +950,13 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
+				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("corellia", -67, 28, -4714);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
 			} else if (templatePath == "tyrena_starport_travel") {
 				if (player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
@@ -940,6 +966,13 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("corellia", -67, 28, -4714);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "vreni_island_shuttle_travel") {
 				if (player->getCashCredits() < 4999) {
@@ -952,14 +985,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->sendMessage(box->generateMessage());
 			        }
 				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 3352, 308, 5600);
+ 				        player->switchZone("corellia", -67, 28, -4714);
  					player->subtractCashCredits(5000);
-			        }
-				if (player->getCashCredits() > 4999) {
-					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 3352, 308, 5600);
- 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "world_boss_1") {
 				if (player->getCashCredits() < 99999) {
