@@ -770,6 +770,21 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "set_jedi_state") {
 				ghost->setJediState(2);
 
+			} else if (templatePath == "corellia_bela_vistal_a_shuttleport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Bela Vistal Shuttleport A");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("corilla", 6648, 330, -5926);
+ 					player->subtractCashCredits(5000);
+			        }
 			} else if (templatePath == "world_boss_1") {
 				if (player->getCashCredits() < 99999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
@@ -783,7 +798,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (player->getCashCredits() > 99999) {
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("yavin4", -5575, 87, 4905);
- 					player->subtractCashCredits(99999);
+ 					player->subtractCashCredits(100000);
 			        }
 			} else if (templatePath == "world_boss_2") {
 				if (player->getCashCredits() < 99999) {
