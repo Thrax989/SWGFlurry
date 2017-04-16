@@ -269,7 +269,8 @@ public:
 		JUKEBOX_SELECTION				   = 1038,
 		SHUTTLE_BEACON					   = 1039,
 		FIELD_FACTION_CHANGE			   = 1040,
-		GOTO_LIST			   = 1041
+		GOTO_LIST			   = 1041,
+		XP_SELECT						   = 1042
 	};
 };
 
