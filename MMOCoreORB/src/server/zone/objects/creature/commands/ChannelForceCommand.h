@@ -30,6 +30,19 @@ public:
 		if (isWearingArmor(creature)) {
 			return NOJEDIARMOR;
 		}
+		
+		if (!creature->checkCooldownRecovery("channel")) {
+  			StringIdChatParameter stringId;
+  
+  			Time* cdTime = creature->getCooldownTime("channel");
+  
+  			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+  
+  			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+  			stringId.setDI(timeLeft);
+  			creature->sendSystemMessage(stringId);
+  			        return GENERALERROR;
+  		       }
 
 		// Bonus is in between 200-300.
 		int rand = System::random(10);
@@ -105,16 +118,13 @@ public:
 			creature->addMaxHAM(CreatureAttribute::MIND, -forceBonus);
 			
 			creature->renewBuff(buffCRC, duration + buff->getTimeLeft());
+			creature->addCooldown("channel", 20 * 1000);
 			Reference<ChannelForceBuff*> channelBuff = buff.castTo<ChannelForceBuff*>();
 			if (channelBuff != NULL)
 				channelBuff->activateRegenTick();
 		}
 
 		return SUCCESS;
-	}
-
-	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
-		return defaultTime * 3.0;
 	}
 
 };
