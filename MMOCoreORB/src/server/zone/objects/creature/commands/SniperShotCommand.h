@@ -35,13 +35,18 @@ public:
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
- 		if (!player->checkCooldownRecovery("sniper_shot")){
- 			Time* cdTime = player->getCooldownTime("sniper_shot");
- 			int timeleft = floor((float)cdTime->miliDifference() /1000) * -1;
- 
- 			player->sendSystemMessage("sniper Shot is on Cooldown");
- 			return GENERALERROR;
- 		}
+		if (!creature->checkCooldownRecovery("sniper_shot")) {
+   			StringIdChatParameter stringId;
+   
+   			Time* cdTime = creature->getCooldownTime("sniper_shot");
+   
+   			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+   
+   			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+   			stringId.setDI(timeLeft);
+   			creature->sendSystemMessage(stringId);
+   			        return GENERALERROR;
+   		       }
 
  		player->addCooldown("sniper_shot", 20 * 1000); // 20 second cooldown
 		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
