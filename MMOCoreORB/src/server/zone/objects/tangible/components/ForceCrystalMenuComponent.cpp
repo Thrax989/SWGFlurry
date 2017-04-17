@@ -45,10 +45,6 @@ int ForceCrystalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, 
 	if (ghost == NULL)
 	return 0;
 	
-	if(creature->getFactionStatus() == FactionStatus::ONLEAVE || creature->getFactionStatus() == FactionStatus::COVERT){
-		creature->setFactionStatus(FactionStatus::OVERT);
-	}
-	
 	if (creature->getPosture() != CreaturePosture::DEAD){
 		creature->sendSystemMessage("@jedi_trials:show_respect");
 		return 0;
