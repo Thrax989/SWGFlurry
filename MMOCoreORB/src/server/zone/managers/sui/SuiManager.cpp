@@ -1121,7 +1121,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (player->getCashCredits() > 99999) {
 					player->sendSystemMessage("Thank you for your travels.");
-				        player->spawnMobile("corellia", "rancor",60,-146.217,28,-4725.99,346.392,0);
+				        player->switchZone("yavin4", 5079, 87, 305);
 					player->subtractCashCredits(100000);
 			        }
 			} else if (templatePath == "become_glowy") {
