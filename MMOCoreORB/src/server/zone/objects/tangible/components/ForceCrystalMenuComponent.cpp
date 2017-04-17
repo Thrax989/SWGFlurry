@@ -44,6 +44,11 @@ int ForceCrystalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, 
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 	if (ghost == NULL)
 	return 0;
+	
+	if(creature->getFactionStatus() == FactionStatus::ONLEAVE || creature->getFactionStatus() == FactionStatus::COVERT){
+		creature->setFactionStatus(FactionStatus::OVERT);
+	}
+	
 	if (creature->getPosture() != CreaturePosture::DEAD){
 		creature->sendSystemMessage("@jedi_trials:show_respect");
 		return 0;
@@ -70,6 +75,7 @@ int ForceCrystalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, 
 
 	creature->playEffect("clienteffect/trap_electric_01.cef", "");
 	creature->setPosture(CreaturePosture::UPRIGHT);
+	creature->setFactionStatus(2);
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
 }
