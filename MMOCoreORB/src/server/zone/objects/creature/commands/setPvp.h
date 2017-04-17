@@ -37,11 +37,6 @@ public:
 			return GENERALERROR;
 		}
 		
-		if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice") || creature->hasSkill("force_title_jedi_novice") || creature->hasSkill("combat_bountyhunter_master")){
-			creature->sendSystemMessage("You may not use this command.");
-			return GENERALERROR;
-		}
-		
 		PlayerObject* targetGhost = creature->getPlayerObject();
 		Zone* zone = creature->getZone();
 		
