@@ -25,9 +25,6 @@ public:
 
 		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
 
-		if (targetObject == NULL || !targetObject->isCreatureObject() || targetObject->isPlayerCreature())
-			return INVALIDTARGET;
-
 		CreatureObject* targetCreature = cast<CreatureObject*>(targetObject.get());
 
 		if (targetCreature == NULL)
