@@ -723,8 +723,8 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	//player->clearBuffs(true);
 
 	//Check for FRS Jedi without overt
-	if ((playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice") {
-		playerCreature->setFactionStatus(2);
+	if (player->hasSkill("force_rank_dark_novice") || player->hasSkill("force_rank_light_novice")) {
+		player->setFactionStatus(2);
 	}
 
 	PlayerObject* ghost = player->getPlayerObject();
