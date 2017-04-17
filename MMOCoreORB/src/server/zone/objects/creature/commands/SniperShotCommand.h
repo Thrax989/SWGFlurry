@@ -43,14 +43,13 @@ public:
  			return GENERALERROR;
  		}
 
- 		player->addCooldown("sniper_shot", 30 * 1000); // 30 second cooldown
+ 		player->addCooldown("sniper_shot", 20 * 1000); // 20 second cooldown
 		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
 
 		int res = doCombatAction(creature, target);
-
+		int chance = 50;
 		CombatManager* combatManager = CombatManager::instance();
-
-		if (res == SUCCESS) {
+		if (res == SUCCESS && System::random(100) > chance) {
 			Locker clocker(targetCreature, creature);
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
