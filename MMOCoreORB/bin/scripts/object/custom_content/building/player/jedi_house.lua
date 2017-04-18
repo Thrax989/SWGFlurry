@@ -60,11 +60,27 @@ object_building_player_jedi_house = object_building_player_shared_jedi_house:new
 			{templateFile = "object/tangible/sign/player/house_address.iff", x = 2.05, z = 3.73, y = 6.46, ow = 0, ox = 0, oz = 0, oy = 1, cellid = -1, containmentType = -1}
 	},
 	shopSigns = {
+
 			{templateFile = "object/tangible/sign/player/house_address.iff", x = 2.05, z = 3.73, y = 6.46, ow = 0, ox = 0, oz = 0, oy = 1, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:house_address"},
-			{templateFile = "object/tangible/sign/player/shop_sign_s01.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_01", suiItem = "@player_structure:shop_sign1"},
-			{templateFile = "object/tangible/sign/player/shop_sign_s02.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_02", suiItem = "@player_structure:shop_sign2"},
-			{templateFile = "object/tangible/sign/player/shop_sign_s03.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_03", suiItem = "@player_structure:shop_sign3"},
-			{templateFile = "object/tangible/sign/player/shop_sign_s04.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_04", suiItem = "@player_structure:shop_sign4"}			
+			{templateFile = "object/tangible/sign/player/shop_sign_s01.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign1"},
+			{templateFile = "object/tangible/sign/player/shop_sign_s02.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign2"},
+			{templateFile = "object/tangible/sign/player/shop_sign_s03.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign3"},
+			{templateFile = "object/tangible/sign/player/shop_sign_s04.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign4"}	
+			{templateFile = "object/tangible/sign/player/efol_hanging_sign_01.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign5"}
+			{templateFile = "object/tangible/sign/player/efol_standing_sign_01.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign6"}
+			{templateFile = "object/tangible/sign/player/house_address_halloween_sign.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign7"}
+			{templateFile = "object/tangible/sign/player/imperial_empire_day_2009_sign_hanging.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign8"}
+			{templateFile = "object/tangible/sign/player/imperial_empire_day_2009_sign_standing.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign9"}
+			{templateFile = "object/tangible/sign/player/pgc_sign_hanging.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign10"}
+			{templateFile = "object/tangible/sign/player/pgc_sign_standing.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign11"}
+			{templateFile = "object/tangible/sign/player/rebel_remembrance_day_2009_sign_hanging.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign12"}
+			{templateFile = "object/tangible/sign/player/rebel_remembrance_day_2009_sign_standing.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign13"}
+			{templateFile = "object/tangible/sign/player/shop_sign_halloween_sign.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign14"}
+			{templateFile = "object/tangible/sign/player/wod_sm_banner_sign_01.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign15"}
+			{templateFile = "object/tangible/sign/player/wod_sm_banner_sign_02.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign16"}
+			{templateFile = "object/tangible/sign/player/wod_sm_banner_sign_03.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign17"}
+			{templateFile = "object/tangible/sign/player/wod_sm_hanging_sign_01.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign18"}
+			{templateFile = "object/tangible/sign/player/wod_sm_standing_sign_01.iff", x = 3.22, z = 1, y = 6.21, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "@player_structure:shop_sign19"}		
 	}
 }
 ObjectTemplates:addTemplate(object_building_player_jedi_house, "object/building/player/jedi_house.iff")
