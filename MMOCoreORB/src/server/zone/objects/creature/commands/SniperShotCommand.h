@@ -22,43 +22,54 @@ public:
 
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
-			
-		if (!creature->isPlayerCreature())
-			return GENERALERROR;
-		
-		ManagedReference<SceneObject*> targetObject = server->getZoneServer()->getObject(target);
-		
-		if (creature == targetObject || targetObject == NULL || !targetObject->isPlayerCreature())
+
+		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
+
+		CreatureObject* targetCreature = cast<CreatureObject*>(targetObject.get());
+
+		if (targetCreature == NULL)
 			return INVALIDTARGET;
 
-		CreatureObject* player = cast<CreatureObject*>( targetObject.get());
+		if (!targetCreature->isAttackableBy(creature))
+			return INVALIDTARGET;
 
-		Locker clocker(player, creature);
+		CreatureObject* player = cast<CreatureObject*>(creature);
 
-		PlayerManager* playerManager = server->getPlayerManager();
+		if (!creature->checkCooldownRecovery("sniper_shot")) {
+   			StringIdChatParameter stringId;
+   
+   			Time* cdTime = creature->getCooldownTime("sniper_shot");
+   
+   			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+   
+   			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+   			stringId.setDI(timeLeft);
+   			creature->sendSystemMessage(stringId);
+   			        return GENERALERROR;
+   		       }
 
-		if (!CollisionManager::checkLineOfSight(creature, player)) {
-			creature->sendSystemMessage("@container_error_message:container18"); //You can't see that object.  You may have to move closer to it.
-			return GENERALERROR;
+ 		player->addCooldown("sniper_shot", 20 * 1000); // 20 second cooldown
+		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
+
+		int res = doCombatAction(creature, target);
+		int chance = 50;
+		CombatManager* combatManager = CombatManager::instance();
+		if (res == SUCCESS && System::random(100) > chance) {
+			Locker clocker(targetCreature, creature);
+
+			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
+                        targetCreature->setPosture(CreaturePosture::KNOCKEDDOWN);
+
+			if (creature->isPlayerCreature())
+				creature->sendSystemMessage("Attack has successfully landed");
+
+		} else {
+
+			if (creature->isPlayerCreature())
+				creature->sendSystemMessage("Attack has failed to land");
 		}
 
-		WeaponObject* weapon = creature->getWeapon();
-
-		int maxRange = weapon->getMaxRange();
-
-		if(!checkDistance(creature, player, maxRange))
-			return TOOFAR;
-				
-		if (player->isAttackableBy(creature) && (player->isIncapacitated() && player->isFeigningDeath() == false)) {
-			playerManager->killPlayer(creature, player, 1);			
-		}  else if (!player->isIncapacitated() || player->isFeigningDeath()) {
-			creature->sendSystemMessage("@error_message:target_not_incapacitated");  //You cannot perform the death blow. Your target is not incapacitated.
-		}  else if (player->isDead()) {
-			return GENERALERROR;
-		}
-
- 		return doCombatAction(creature, target);
-
+		return res;
 	}
 
 };

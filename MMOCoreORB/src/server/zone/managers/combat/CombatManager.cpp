@@ -197,7 +197,7 @@ int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon
 	if (damage > 0) {
 		attacker->updateLastSuccessfulCombatAction();
 
-		if (attacker->isPlayerCreature())
+		if (attacker->isPlayerCreature() && data.getCommandCRC() != STRING_HASHCODE("attack"))
 			weapon->decay(attacker);
 
 		// This method can be called multiple times for area attacks. Let the calling method decrease the powerup once
@@ -1528,11 +1528,15 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 
 		// saber block is special because it's just a % chance to block based on the skillmod
 		if (def == "saber_block") {
-			if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < targetCreature->getSkillMod(def)))
-				return RICOCHET;
-			else return HIT;
+			int block_mod = targetCreature->getSkillMod(def);
+            if (targetCreature->isBlind() || targetCreature->isStunned() || targetCreature->isDizzied()) {
+                block_mod = (block_mod / 1.7);
+            }
+            if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
+                return RICOCHET;
+            else return HIT;
 		}
-
+		
 		targetDefense = getDefenderSecondaryDefenseModifier(targetCreature);
 
 		//info("Secondary defenses are " + String::valueOf(targetDefense), true);
