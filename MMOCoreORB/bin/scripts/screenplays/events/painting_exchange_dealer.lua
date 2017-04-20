@@ -12,7 +12,7 @@ painting_exchange = ScreenPlay:new {
 registerScreenPlay("painting_exchange", true)
 
 function painting_exchange:start() 
-   local pMerchant = spawnMobile("dantooine", "painting_exchange", 1, 4202.07, 9, 5215.26, 358, 0) 
+   local pMerchant = spawnMobile("corellia", "painting_exchange",60,-146.217,28,-4738.99,346.392,0)
 
 end
 
