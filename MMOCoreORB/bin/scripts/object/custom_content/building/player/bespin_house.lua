@@ -69,7 +69,7 @@ object_building_player_bespin_house = object_building_player_shared_bespin_house
 			{templateFile = "object/tangible/sign/player/shop_sign_s01.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_01", suiItem = "@player_structure:shop_sign1"},
 			{templateFile = "object/tangible/sign/player/shop_sign_s02.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_02", suiItem = "@player_structure:shop_sign2"},
 			{templateFile = "object/tangible/sign/player/shop_sign_s03.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_03", suiItem = "@player_structure:shop_sign3"},
-			{templateFile = "object/tangible/sign/player/shop_sign_s04.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_04", suiItem = "@player_structure:shop_sign4"}
+			{templateFile = "object/tangible/sign/player/shop_sign_s04.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_04", suiItem = "@player_structure:shop_sign4"},
 			{templateFile = "object/tangible/sign/player/efol_hanging_sign_01.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1 requiredSkill = "", suiItem = "Heart Sign 1"},
 			{templateFile = "object/tangible/sign/player/efol_standing_sign_01.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1 requiredSkill = "", suiItem = "Heart  Sign 2"},
 			{templateFile = "object/tangible/sign/player/house_address_halloween_sign.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1 requiredSkill = "", suiItem = "Halloween Sign 3"},
@@ -84,7 +84,7 @@ object_building_player_bespin_house = object_building_player_shared_bespin_house
 			{templateFile = "object/tangible/sign/player/wod_sm_banner_sign_02.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1 requiredSkill = "", suiItem = "Nightsister Banner Sign 12"},
 			{templateFile = "object/tangible/sign/player/wod_sm_banner_sign_03.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1 requiredSkill = "", suiItem = "Nightsister Banner Sign 13"},
 			{templateFile = "object/tangible/sign/player/wod_sm_hanging_sign_01.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1 requiredSkill = "", suiItem = "Stone Sign 14"},
-			{templateFile = "object/tangible/sign/player/wod_sm_standing_sign_01.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1 requiredSkill = "", suiItem = "Stone Sign 15"}
+			{templateFile = "object/tangible/sign/player/wod_sm_standing_sign_01.iff", x = -0.532527, z = 0.531912, y = -5.45694, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1 requiredSkill = "", suiItem = "Stone Sign 15"},
 	}
 }
 
