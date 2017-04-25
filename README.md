@@ -28,15 +28,14 @@ Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 # Required Mod The Galaxy TRE Files
 http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
 <br>
-	maxSearchPriority=28<br>
-	searchTree_00_26=pallet.tre<br>
-	searchTree_00_25=pods.tre<br>
-	searchTree_00_24=hoth.tre<br>
+	maxSearchPriority=27<br>
+	searchTree_00_25=pallet.tre<br>
+	searchTree_00_24=pods.tre<br>
 	searchTree_00_23=skill_patch.tre<br>
 	searchTree_00_22=armor.tre<br>
 	searchTree_00_21=phoenix_patch_1.tre<br>
 	searchTree_00_20=mtg_planets.tre<br>
-	searchTree_00_19=mtg_patch_020.tre<br>
+	searchTree_00_19=mtg_patch_021.tre<br>
 	searchTree_00_18=mtg_patch_019.tre<br>
 	searchTree_00_17=mtg_patch_018.tre<br>
 	searchTree_00_16=mtg_patch_017.tre<br>
@@ -107,6 +106,10 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Taanab
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Hoth
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kaas
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) jakku
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) chandrila
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) nal hutta
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) moraband
 
 ## -Server Code Contributors-
 * https://github.com/Thrax989 - Project Lead Creator
