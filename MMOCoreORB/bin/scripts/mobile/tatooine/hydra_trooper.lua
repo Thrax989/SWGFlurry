@@ -2,14 +2,14 @@ hydra_trooper = Creature:new {
   customName = "Hydra Trooper",
   socialGroup = "geonosian",
   level = 250,
-  chanceHit = 5.00,
+  chanceHit = 3.00,
   damageMin = 200,
-  damageMax = 400,
+  damageMax = 300,
   baseXp = 0,
   baseHAM = 20000,
   baseHAMmax = 60000,
   armor = 1,
-  resists = {50,50,50,50,50,50,50,-1,-1},
+  resists = {35,30,30,30,30,30,30,-1,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -27,8 +27,7 @@ hydra_trooper = Creature:new {
   templates = {
               "object/mobile/dressed_black_sun_assassin.iff",
               "object/mobile/dressed_black_sun_guard.iff",
-              "object/mobile/dressed_black_sun_henchman.iff",
-              "object/mobile/dressed_black_sun_thug.iff"
+              "object/mobile/dressed_black_sun_henchman.iff"
               },
   lootGroups = {
     {
@@ -55,6 +54,13 @@ hydra_trooper = Creature:new {
         {group = "armor_attachments", chance = 2500000},
         {group = "clothing_attachments", chance = 2500000}
 
+  },
+      lootChance = 10000000
+  },
+  {
+      groups = {
+        {group = "wearables_rare", chance = 5000000},
+  		  {group = "aakuan_common", chance = 5000000}
   },
       lootChance = 10000000
   },
