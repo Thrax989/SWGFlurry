@@ -97,15 +97,23 @@ ZonesEnabled = {
 	"dathomir",
 	--"ghomrassen",
 	"hoth",
-	"dungeon1",
+	--"dungeon1",
 	"endor",
-     --"kashyyyk",
+        --"kashyyyk",
 	--"endor_asommers",
 	--"floratest",
 	--"godclient_test",
+	"kashyyyk",
+	"kashyyyk_hunting",
+	"kashyyyk_rryatt_trail",
+	"kashyyyk_main",
+	"kashyyyk_south_dungeons",
+	"kashyyyk_north_dungeons",
+	"kashyyyk_pob_dungeons",
+	"kashyyyk_dead_forest",
 	"lok",
 	"mandalore",
-	"mustafar",
+	--"mustafar",
 	"naboo",
 	--"otoh_gunga",
 	--"rivertest",
@@ -136,7 +144,13 @@ ZonesEnabled = {
 	--"umbra",
 	--"watertabletest",
 	"yavin4",
-	"kaas"
+	--"kaas",
+        "moraband",
+        --"coruscant",
+        "hutta",
+        "chandrila",
+        "jakku"
+
 }
 
 
@@ -144,13 +158,13 @@ ZonesEnabled = {
 TrePath = "/home/vagrant/workspace/tre/"
 
 TreFiles = {
-	"pallet.tre",
-	"pods.tre",	
-	"hoth.tre",	
-	"skill_patch.tre",
-    	"armor.tre",
+        "pallet.tre",
+        "pods.tre",
+        "armor.tre",
+        "skill_patch.tre",
 	"phoenix_patch_1.tre",
 	"mtg_planets.tre",
+        "mtg_patch_021.tre",
 	"mtg_patch_019.tre",
 	"mtg_patch_018.tre",
 	"mtg_patch_017.tre",
