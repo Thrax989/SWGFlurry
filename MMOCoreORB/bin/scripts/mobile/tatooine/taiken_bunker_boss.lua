@@ -3,9 +3,9 @@ taiken_bunker_boss = Creature:new {
   socialGroup = "geonosian",
   level = 300,
   chanceHit = 100.00,
-  damageMin = 500,
+  damageMin = 3000,
   damageMax = 6000,
-  specialDamageMult = 5.0,
+  specialDamageMult = 2.0,
   baseXp = 0,
   baseHAM = 1500000,
   baseHAMmax = 1500000,
@@ -51,6 +51,13 @@ taiken_bunker_boss = Creature:new {
 
 },
   			            lootChance = 8000000
+},
+{
+            groups = {
+                    {group = "armor_attachments", chance = 5000000},
+                    {group = "clothing_attachments", chance = 5000000}
+},
+                    lootChance = 10000000
 },
 {
             groups = {

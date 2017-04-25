@@ -9,7 +9,7 @@
 includeFile("custom_content/random/engineer_screenplay.lua")
 
 --Cave
-includeFile("custom_content/cave/tatooine_tusken_bunker_boss.lua")
+--includeFile("custom_content/cave/tatooine_tusken_bunker_boss.lua")
 includeFile("custom_content/world_boss/outbreak_screenplay.lua")
 --includeFile("custom_content/cave/dantooine_janta_cave_boss.lua")
 
