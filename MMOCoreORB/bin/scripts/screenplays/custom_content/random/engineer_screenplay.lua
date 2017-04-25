@@ -17,6 +17,6 @@ function engineer_screenplay:spawnMobiles()
   spawnSceneObject("tatooine","object/static/vehicle/player_shuttle.iff", 7255.1, 11.2, -2889.5, 0, 0, 0, 0, 0)
   spawnSceneObject("tatooine","object/static/vehicle/static_speeder_bike.iff", 7246.9, 11.5, -2888.2, 0, 0, 0, 0, 0)
 
-  spawnMobile("tatooine", "engineer_boss", 3000, 7249, 11, -2892, 86, 0)
-  spawnMobile("tatooine", "engineer_boss_second", 3000, 7259.8, 11, -2880, -93, 0)
+  spawnMobile("tatooine", "engineer_boss", 1200, 7249, 11, -2892, 86, 0)
+  spawnMobile("tatooine", "engineer_boss_second", 900, 7259.8, 11, -2880, -93, 0)
 end
