@@ -1884,22 +1884,17 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 
 	// from screenshots, it appears that food mitigation and armor mitigation were independently calculated
 	// and then added together.
-	int totalFoodMit = 0;
+	int foodBonus = defender->getSkillMod("mitigate_damage");
+	int foodMitigation = 0;
+	if (foodBonus > 0)
+		foodMitigation = (int)(damage * foodBonus / 100.f);
 
 	if (healthDamaged) {
 		static uint8 bodyLocations[] = {HIT_BODY, HIT_BODY, HIT_LARM, HIT_RARM};
 		hitLocation = bodyLocations[System::random(3)];
 
 		healthDamage = getArmorReduction(attacker, weapon, defender, damage * data.getHealthDamageMultiplier(), hitLocation, data) * damageMultiplier;
-		               int foodMitigation = 0;
-
-               if (foodBonus > 0) {
-                       foodMitigation = (int)(healthDamage * foodBonus / 100.f);
-                       foodMitigation = Math::min(healthDamage, foodMitigation * data.getHealthDamageMultiplier());
-               }
-
-               healthDamage -= foodMitigation;
-               totalFoodMit += foodMitigation;
+		healthDamage -= MIN(healthDamage, foodMitigation * data.getHealthDamageMultiplier());
 
 		int spilledDamage = (int)(healthDamage*spillMultPerPool); // Cut our damage by the spill percentage
 		healthDamage -= spilledDamage; // subtract spill damage from total damage
@@ -1915,16 +1910,7 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 		hitLocation = legLocations[System::random(1)];
 
 		actionDamage = getArmorReduction(attacker, weapon, defender, damage * data.getActionDamageMultiplier(), hitLocation, data) * damageMultiplier;
-		int foodMitigation = 0;
-
-               if (foodBonus > 0) {
-                       foodMitigation = (int)(actionDamage * foodBonus / 100.f);
-                       foodMitigation = Math::min(actionDamage, foodMitigation * data.getActionDamageMultiplier());
-               }
-
-               actionDamage -= foodMitigation;
-               totalFoodMit += foodMitigation;
- 
+		actionDamage -= MIN(actionDamage, foodMitigation * data.getActionDamageMultiplier());
 
 		int spilledDamage = (int)(actionDamage*spillMultPerPool);
 		actionDamage -= spilledDamage;
@@ -1938,15 +1924,7 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 	if (mindDamaged) {
 		hitLocation = HIT_HEAD;
 		mindDamage = getArmorReduction(attacker, weapon, defender, damage * data.getMindDamageMultiplier(), hitLocation, data) * damageMultiplier;
-		int foodMitigation = 0;
-
-               if (foodBonus > 0) {
-                       foodMitigation = (int)(mindDamage * foodBonus / 100.f);
-                       foodMitigation = Math::min(mindDamage, foodMitigation * data.getMindDamageMultiplier());
-               }
-
-               mindDamage -= foodMitigation;
-               totalFoodMit += foodMitigation;
+		mindDamage -= MIN(mindDamage, foodMitigation * data.getMindDamageMultiplier());
 
 		int spilledDamage = (int)(mindDamage*spillMultPerPool);
 		mindDamage -= spilledDamage;
@@ -1984,8 +1962,8 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 		showHitLocationFlyText(attacker->asCreatureObject(), defender, hitLocation);
 
 	//Send defensive buff combat spam last.
-	if (totalFoodMit > 0)
-               sendMitigationCombatSpam(defender, weapon, totalFoodMit, FOOD);
+	if (foodMitigation > 0)
+		sendMitigationCombatSpam(defender, weapon, foodMitigation, FOOD);
 
 	return totalDamage;
 }
