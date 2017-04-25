@@ -46,3 +46,4 @@
 includeFile("custom_content/tangible/wearables/armor/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/backpack/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/cybernetic/serverobjects.lua")
+includeFile("custom_content/tangible/wearables/robe/serverobjects.lua")
