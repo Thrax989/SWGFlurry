@@ -546,7 +546,7 @@ includeFile("poi/tatooine_ben_kenobis_house.lua")
 includeFile("poi/tatooine_darklighters_estate.lua")
 includeFile("poi/tatooine_fort_tusken.lua")
 includeFile("poi/tatooine_imperial_detachment_hq.lua")
---includeFile("poi/tatooine_imperial_oasis_base.lua") --Disabled duo to Invisible NPCS FIX SOON
+includeFile("poi/tatooine_imperial_oasis_base.lua")
 includeFile("poi/tatooine_jabbas_palace_mobs.lua")
 includeFile("poi/tatooine_jawa_traders.lua")
 includeFile("poi/tatooine_krayt_graveyard.lua")
