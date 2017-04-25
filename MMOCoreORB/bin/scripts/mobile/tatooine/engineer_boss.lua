@@ -39,7 +39,7 @@ engineer_boss = Creature:new {
     },
     {
         groups = {
-		{group = "wearables_all", chance = 5000000},
+		{group = "wearables_rare", chance = 5000000},
 		{group = "loot_kit_parts", chance = 5000000}
     },
     		lootChance = 10000000
@@ -109,6 +109,12 @@ engineer_boss = Creature:new {
         	{group = "nge2", chance = 10000000}
     },
       		lootChance = 5000000
+    },
+    {
+          groups = {
+                  {group = "theme_park_reward_imperial_kaja", chance = 10000000}
+    },
+                 lootChance = 10000000
     },
     },
 	weapons = {"mixed_force_weapons"},
