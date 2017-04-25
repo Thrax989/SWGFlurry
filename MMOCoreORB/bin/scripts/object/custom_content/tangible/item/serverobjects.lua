@@ -1,5 +1,6 @@
 --Child Folders
 includeFile("custom_content/tangible/item/beast/serverobjects.lua")
+includeFile("custom_content/tangible/item/ep3/serverobjects.lua")
 includeFile("custom_content/tangible/item/som/serverobjects.lua")
 
 -- Server Objects
