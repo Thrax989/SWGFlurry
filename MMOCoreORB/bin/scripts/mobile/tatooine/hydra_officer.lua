@@ -1,10 +1,10 @@
 hydra_officer = Creature:new {
   customName = "Hydra Officer",
   socialGroup = "geonosian",
-  level = 250,
-  chanceHit = 10.00,
-  damageMin = 400,
-  damageMax = 800,
+  level = 275,
+  chanceHit = 8.00,
+  damageMin = 200,
+  damageMax = 500,
   baseXp = 0,
   baseHAM = 50000,
   baseHAMmax = 80000,
@@ -50,6 +50,13 @@ hydra_officer = Creature:new {
         {group = "armor_attachments", chance = 2500000},
         {group = "clothing_attachments", chance = 2500000}
 
+  },
+      lootChance = 10000000
+  },
+  {
+      groups = {
+        {group = "wearables_rare", chance = 5000000},
+  		  {group = "aakuan_common", chance = 5000000}
   },
       lootChance = 10000000
   },
