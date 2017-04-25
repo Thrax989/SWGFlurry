@@ -1,15 +1,15 @@
 taiken_nova = Creature:new {
   customName = "Nova Trooper",
   socialGroup = "geonosian",
-  level = 200,
-  chanceHit = 10.00,
-  damageMin = 800,
-  damageMax = 1000,
+  level = 250,
+  chanceHit = 5.00,
+  damageMin = 400,
+  damageMax = 800,
   baseXp = 0,
-  baseHAM = 50000,
-  baseHAMmax = 80000,
+  baseHAM = 20000,
+  baseHAMmax = 60000,
   armor = 1,
-  resists = {80,80,80,80,80,80,80,-1,15},
+  resists = {45,45,45,45,45,45,45,-1,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -32,9 +32,18 @@ taiken_nova = Creature:new {
         {group = "armor_attachments", chance = 2500000},
         {group = "clothing_attachments", chance = 2500000}
 
-      },
+  },
       lootChance = 10000000
-    },
+  },
+  {
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+
+  },
+      lootChance = 10000000
+  },
   },
   weapons = {"imperial_weapons_heavy"},
   conversationTemplate = "",
