@@ -39,6 +39,9 @@ function TuskenBunkerScreenPlay:start()
 end
 
 function TuskenBunkerScreenPlay:spawnMobiles()
+		spawnMobile("tatooine", "taiken_bunker_boss",1500,-1.6,-20.8,-33.3,0,0)
+		spawnMobile("tatooine", "taiken_moff",1200,-1485,41,-188,-60,0)
+		
 		spawnMobile("tatooine", "taiken_dark_apprentice",600,-2.8,-20,29,175,4235606)
 		spawnMobile("tatooine", "taiken_dark_apprentice",600, 5,-20,29,179,4235606)
 		spawnMobile("tatooine", "taiken_dark_apprentice",600, -10,-13,7,91,4235603)
