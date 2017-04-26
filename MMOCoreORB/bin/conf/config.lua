@@ -144,12 +144,12 @@ ZonesEnabled = {
 	--"umbra",
 	--"watertabletest",
 	"yavin4",
-	--"kaas",
-        "moraband",
-        --"coruscant",
-        "hutta",
-        "chandrila",
-        "jakku"
+	"kaas",
+      "moraband",
+      "coruscant",
+      "hutta",
+      "chandrila",
+      "jakku"
 
 }
 
