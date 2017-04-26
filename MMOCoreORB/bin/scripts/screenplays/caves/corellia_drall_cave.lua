@@ -2,7 +2,7 @@ DrallCaveScreenPlay = ScreenPlay:new {
 	numberOfActs = 1,
 
 	screenplayName = "DrallCaveScreenPlay",
-	
+
 	lootContainers = {
 		6036047,
 		6036048,
@@ -10,8 +10,8 @@ DrallCaveScreenPlay = ScreenPlay:new {
 		6036050,
 		6036051
 	},
-	
-	lootLevel = 26,	
+
+	lootLevel = 26,
 
 	lootGroups = {
 		{
@@ -26,9 +26,9 @@ DrallCaveScreenPlay = ScreenPlay:new {
 				{group = "armor_attachments", chance = 100000}
 			},
 			lootChance = 8000000
-		}					
+		}
 	},
-	
+
 	lootContainerRespawn = 1800 -- 30 minutes
 }
 
@@ -42,39 +42,60 @@ function DrallCaveScreenPlay:start()
 end
 
 function DrallCaveScreenPlay:spawnMobiles()
-	spawnMobile("corellia", "drall_patriot",360,14.2,-22.5,-7.6,-87,4275365)
-	spawnMobile("corellia", "drall_patriot",360,23.4,-27.8,-9,175,4275365)
-	spawnMobile("corellia", "drall_patriot",360,91.6,-46.5,-107,-94,4275369)
-	spawnMobile("corellia", "drall_patriot",360,89.9,-46.3,-117.6,-63,4275369)
-	spawnMobile("corellia", "drall_patriot",360,88.7,-62.1,-17.3,162,4275367)
-	spawnMobile("corellia", "drall_patriot",360,93.1,-62.6,-19.8,-108,4275367)
-	spawnMobile("corellia", "drall_patriot",360,90.6,-63.3,-23.8,10,4275367)
-	spawnMobile("corellia", "drall_patriot",360,96.9,-65.8,-111,-7,4275369)
-	spawnMobile("corellia", "drall_patriot",360,95.8,-66.6,-107.1,172,4275369)
-	spawnMobile("corellia", "drall_patriot",360,146.5,-67.3,-122.4,-40,4275372)
-	spawnMobile("corellia", "drall_patriot",360,149.9,-67.1,-122.7,12,4275372)
-	
-	spawnMobile("corellia", "drall_patriot_conqueror",360,52,-48.7,-103.6,-1,4275374)
-	spawnMobile("corellia", "drall_patriot_conqueror",360,91.5,-46.7,-143.1,-5,4275375)
-	spawnMobile("corellia", "drall_patriot_conqueror",360,53.8,-68.2,-41.9,52,4275366)
-	spawnMobile("corellia", "drall_patriot_conqueror",360,181.8,-66,-95.2,-111,4275373)
-	
-	spawnMobile("corellia", "drall_patriot_foot_soldier",360,112.9,-66.8,-101.7,7,4275372)
-	spawnMobile("corellia", "drall_patriot_foot_soldier",360,113.9,-66.8,-98.2,-162,4275372)
-	spawnMobile("corellia", "drall_patriot_foot_soldier",360,92.7,-75.8,-67.9,-58,4275368)
-	spawnMobile("corellia", "drall_patriot_foot_soldier",360,86.2,-76.7,-64.9,111,4275368)
-	spawnMobile("corellia", "drall_patriot_foot_soldier",360,49.7,-48.5,-57.3,178,4275366)
-	spawnMobile("corellia", "drall_patriot_foot_soldier",360,49.9,-48.4,-66,-8,4275366)
-	spawnMobile("corellia", "drall_patriot_foot_soldier",360,30.9,-44.3,-69,88,4275366)
-	
-	spawnMobile("corellia", "drall_patriot_legionnaire",360,182.3,-65.8,-100.5,-82,4275373)
-	spawnMobile("corellia", "drall_patriot_legionnaire",360,86.1,-66.7,-139.5,-103,4275371)
-	spawnMobile("corellia", "drall_patriot_legionnaire",360,71.4,-66.2,-139.6,92,4275371)
-	spawnMobile("corellia", "drall_patriot_legionnaire",360,57.9,-68.3,-35.9,90,4275366)
-	spawnMobile("corellia", "drall_patriot_legionnaire",360,46.8,-47.2,-12.5,-173,4275366)
-	spawnMobile("corellia", "drall_patriot_legionnaire",360,48,-47,-7.2,98,4275366)
-	spawnMobile("corellia", "drall_patriot_legionnaire",360,94.9,-46.7,-136.7,-47,4275375)
-	spawnMobile("corellia", "drall_patriot_legionnaire",360,86.5,-46.8,-138.9,65,4275375)
-	spawnMobile("corellia", "drall_patriot_legionnaire",360,23,-42.3,-65.4,0,4275366)
-	spawnMobile("corellia", "drall_patriot_legionnaire",360,23.7,-38.5,-33.6,-179,4275366)
+	spawnMobile("corellia", "meatlump_king",1200,186,-65,-106,-18,4275373)
+
+	spawnMobile("corellia", "meatlump_trooper",600,157,-66,-102,-91,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,157,-66,-94,-128,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,145,-66,-90,174,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,142,-66,-89,-177,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,157,-65,-114,-105,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,181,-65,-94,-103,4275373)
+	spawnMobile("corellia", "meatlump_trooper",600,156,-66,-107,-96,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,131,-66,-87,-163,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,143,-66,-125,-162,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,137,-65,-112,155,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,130,-66,-115,148,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,118,-66,-91,-150,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,118,-65,-104,-99,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,119,-66,-110,-89,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,118,-65,-106,-97,4275372)
+	spawnMobile("corellia", "meatlump_trooper",600,92,-66,-103,-176,4275369)
+	spawnMobile("corellia", "meatlump_trooper",600,59,-76,-90,52,4275368)
+	spawnMobile("corellia", "meatlump_trooper",600,64,-76,-80,-134,4275368)
+	spawnMobile("corellia", "meatlump_trooper",600,66,-76,-82,-134,4275368)
+	spawnMobile("corellia", "meatlump_trooper",600,64,-76,-74,-47,4275368)
+	spawnMobile("corellia", "meatlump_trooper",600,66,-76,-72,-49,4275368)
+	spawnMobile("corellia", "meatlump_trooper",600,88,-76,-82,124,4275368)
+	spawnMobile("corellia", "meatlump_trooper",600,90,-76,-80,115,4275368)
+	spawnMobile("corellia", "meatlump_trooper",600,89,-76,-74,47,4275368)
+	spawnMobile("corellia", "meatlump_trooper",600,88,-76,-72,46,4275368)
+	spawnMobile("corellia", "meatlump_trooper",600,57,-68,-34,91,4275366)
+	spawnMobile("corellia", "meatlump_trooper",600,44,-46,-6,172,4275366)
+	spawnMobile("corellia", "meatlump_trooper",600,47,-47,-8,-168,4275366)
+	spawnMobile("corellia", "meatlump_trooper",600,48,-49,-53,-156,4275366)
+	spawnMobile("corellia", "meatlump_trooper",600,21,-41,-58,-2,4275366)
+	spawnMobile("corellia", "meatlump_trooper",600,26,-41,-57,-4,4275366)
+	spawnMobile("corellia", "meatlump_trooper",600,55,-46,-72,-69,4275366)
+	spawnMobile("corellia", "meatlump_trooper",600,47,-51,-88,9,4275374)
+	spawnMobile("corellia", "meatlump_trooper",600,55,-48,-101,-20,4275374)
+	spawnMobile("corellia", "meatlump_trooper",600,50,-48,-107,0,4275374)
+	spawnMobile("corellia", "meatlump_trooper",600,83,-47,-105,-88,4275369)
+	spawnMobile("corellia", "meatlump_trooper",600,95,-46,-109,-90,4275369)
+	spawnMobile("corellia", "meatlump_trooper",600,96,-46,-136,-15,4275375)
+
+
+	spawnMobile("corellia", "meatlump_chief",600,189,-66,-99,-93,4275373)
+	spawnMobile("corellia", "meatlump_chief",600,151,-66,-128,-23,4275372)
+	spawnMobile("corellia", "meatlump_chief",600,136,-67,-87,29,4275372)
+	spawnMobile("corellia", "meatlump_chief",600,111,-65,-129,11,4275372)
+	spawnMobile("corellia", "meatlump_chief",600,53,-71,-115,-2,4275370)
+	spawnMobile("corellia", "meatlump_chief",600,69,-77,-95,23,4275369)
+	spawnMobile("corellia", "meatlump_chief",600,79,-77,-69,-5,4275368)
+	spawnMobile("corellia", "meatlump_chief",600,75,-77,-69,-1,4275368)
+	spawnMobile("corellia", "meatlump_chief",600,53,-68,-44,-145,4275366)
+	spawnMobile("corellia", "meatlump_chief",600,52,-48,-60,-98,4275366)
+	spawnMobile("corellia", "meatlump_chief",600,24,-42,-63,-2,4275366)
+	spawnMobile("corellia", "meatlump_chief",600,87,-46,-143,-176,4275375)
+
+
 end
