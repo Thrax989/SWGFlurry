@@ -47,7 +47,7 @@ object_tangible_skill_buff_skill_buff_carbine_speed = object_tangible_skill_buff
 	attributeListComponent = "SkillBuffObjectAttributeListComponent",
 	
 	duration = 900,
-	useCount = 5,
+	useCount = 15,
 	modifiers = { "carbine_speed", 25 },
 	buffName = "carbine_speed",
 	buffCRC = 0xC6148607
