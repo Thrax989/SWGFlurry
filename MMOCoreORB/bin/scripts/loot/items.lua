@@ -438,6 +438,7 @@ includeFile("items/loot_schematic/throw_pillow_schematic.lua")
 
 --npc sub-folder
 includeFile("items/npc/aakuan_belt.lua")
+includeFile("items/npc/aakuan_necklace.lua")
 includeFile("items/npc/aakuan_ring.lua")
 includeFile("items/npc/aakuan_robe.lua")
 includeFile("items/npc/aakuan_shirt.lua")
@@ -1356,5 +1357,5 @@ includeFile("items/capes2.lua")
 
 includeFile("items/imperial_token.lua")
 includeFile("items/rebel_token.lua")
-
 includeFile("items/holo_token.lua")
+includeFile("items/nectar_buff.lua")
