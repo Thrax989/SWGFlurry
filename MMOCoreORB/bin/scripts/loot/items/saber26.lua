@@ -6,8 +6,8 @@ saber26 = {
 	customObjectName = "Blackwing Crystal",
 	directObjectTemplate = "object/tangible/component/weapon/lightsaber/lightsaber_module_force_crystal.iff",
 	craftingValues = {
-		{"mindamage",50,50,0},
-		{"maxdamage",50,50,0},
+		{"mindamage",75,75,0},
+		{"maxdamage",75,75,0},
 		{"attackspeed",-1,-1,-1},
 		{"woundchance",10,10,10},
 		{"hitpoints",2000,2500,0},
@@ -20,9 +20,6 @@ saber26 = {
 	},
 	customizationStringNames = {},
 	customizationValues = {},
-
-	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 0,
 	junkDealerTypeNeeded = JUNKWEAPONS,
 	junkMinValue = 30,
 	junkMaxValue = 55
