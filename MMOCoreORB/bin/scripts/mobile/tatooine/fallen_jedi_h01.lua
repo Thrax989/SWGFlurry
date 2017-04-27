@@ -148,7 +148,7 @@ fallen_jedi_h01 = Creature:new {
 
 	weapons = {"dark_jedi_weapons_gen4"},
 	reactionStf = "@npc_reaction/military",
-	attacks = merge(lightsabermaster,forcepowermaster,fencermaster,forcewielder,brawlermaster)
+	attacks = merge(lightsabermaster,forcepowermaster,forcewielder)
 
 }
 
