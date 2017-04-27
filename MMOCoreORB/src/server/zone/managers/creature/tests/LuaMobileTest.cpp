@@ -672,6 +672,15 @@ TEST_F(LuaMobileTest, LuaSpawnManagerTest) {
 	zoneNames.add("rori");
 	zoneNames.add("talus");
 	zoneNames.add("tatooine");
+	zoneNames.add("jakku");
+	zoneNames.add("chandrila");
+	zoneNames.add("hutta");
+	zoneNames.add("coruscant");
+	zoneNames.add("moraband");
+	zoneNames.add("kaas");
+	zoneNames.add("taanab");
+	zoneNames.add("mandalore");
+	zoneNames.add("hoth");
 	zoneNames.add("yavin4");
 
 	Lua* lua = new Lua();
