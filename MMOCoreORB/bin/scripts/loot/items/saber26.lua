@@ -20,9 +20,6 @@ saber26 = {
 	},
 	customizationStringNames = {},
 	customizationValues = {},
-
-	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 0,
 	junkDealerTypeNeeded = JUNKWEAPONS,
 	junkMinValue = 30,
 	junkMaxValue = 55
