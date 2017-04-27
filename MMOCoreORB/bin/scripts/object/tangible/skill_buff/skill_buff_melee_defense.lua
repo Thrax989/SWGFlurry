@@ -48,7 +48,7 @@ object_tangible_skill_buff_skill_buff_melee_defense = object_tangible_skill_buff
 	
 	duration = 900,
 	useCount = 15,
-	modifiers = { "melee_defense", 50,"dizzy_defense", 50 },
+	modifiers = { "melee_defense", 50 },
 	buffName = "melee_defense",
 	buffCRC = 0xC78FA3B7
 }

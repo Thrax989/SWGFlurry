@@ -6,8 +6,8 @@ saber27 = {
 	customObjectName = "Old Republic Crystal Pack",
 	directObjectTemplate = "object/tangible/component/weapon/lightsaber/lightsaber_refined_crystal_pack.iff",
 	craftingValues = {
-		{"mindamage",15,20,0},
-		{"maxdamage",15,30,0},
+		{"mindamage",15,30,0},
+		{"maxdamage",15,35,0},
 		{"attackspeed",-1,-1,-1},
 		{"woundchance",5,15,30},
 		{"hitpoints",1000,1600,0},
@@ -20,9 +20,6 @@ saber27 = {
 	},
 	customizationStringNames = {},
 	customizationValues = {},
-
-	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 1,
 	junkDealerTypeNeeded = JUNKWEAPONS,
 	junkMinValue = 30,
 	junkMaxValue = 55
