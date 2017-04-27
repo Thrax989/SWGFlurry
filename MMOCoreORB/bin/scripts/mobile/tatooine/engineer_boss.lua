@@ -10,7 +10,7 @@ engineer_boss = Creature:new {
 	baseXp = 0,
 	baseHAM = 600000,
 	baseHAMmax = 600000,
-	armor = 3,
+	armor = 2,
 	resists = {95,95,95,95,95,95,95,95,90},
 	meatType = "",
 	meatAmount = 0,
@@ -100,9 +100,9 @@ engineer_boss = Creature:new {
     },
     {
       	groups = {
-        	{group = "gurk_king_common", chance = 10000000}
+        	{group = "skill_buffs", chance = 10000000}
     },
-      		lootChance = 8000000
+      		lootChance = 10000000
     },
     {
       	groups = {

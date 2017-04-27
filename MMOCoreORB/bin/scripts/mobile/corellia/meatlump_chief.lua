@@ -71,7 +71,7 @@ meatlump_chief = Creature:new {
   },
   {
       groups = {
-        {group = "nge2", chance = 10000000}
+        {group = "skill_buffs", chance = 10000000}
   },
       lootChance = 10000000
   },
