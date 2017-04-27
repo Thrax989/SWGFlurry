@@ -6,8 +6,8 @@ saber26 = {
 	customObjectName = "Blackwing Crystal",
 	directObjectTemplate = "object/tangible/component/weapon/lightsaber/lightsaber_module_force_crystal.iff",
 	craftingValues = {
-		{"mindamage",50,50,0},
-		{"maxdamage",50,50,0},
+		{"mindamage",75,75,0},
+		{"maxdamage",75,75,0},
 		{"attackspeed",-1,-1,-1},
 		{"woundchance",10,10,10},
 		{"hitpoints",2000,2500,0},
