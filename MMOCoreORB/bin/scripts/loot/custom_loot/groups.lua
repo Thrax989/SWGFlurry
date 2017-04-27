@@ -283,6 +283,13 @@ includeFile("custom_loot/groups/wearables/jewelry/jedi_rings.lua")
 includeFile("custom_loot/groups/wearables/jewelry/jedi_neck.lua")
 includeFile("custom_loot/groups/wearables/jewelry/jedi_bracelets.lua")
 includeFile("custom_loot/groups/wearables/jewelry/jedi_earings.lua")
+includeFile("custom_loot/groups/wearables/jewelry/non_jedi_rings.lua")
+includeFile("custom_loot/groups/wearables/jewelry/non_jedi_rings_ranged.lua")
+includeFile("custom_loot/groups/wearables/jewelry/non_jedi_ring_crafter.lua")
+includeFile("custom_loot/groups/wearables/jewelry/non_jedi_ring_crafter_second.lua")
+includeFile("custom_loot/groups/wearables/jewelry/neck_crafter.lua")
+
+
 includeFile("custom_loot/groups/weapons/melee/g_2h_sword_avatar_wke_toothpick.lua")
 includeFile("custom_loot/groups/weapons/melee/g_2h_sword_kashyyk.lua")
 includeFile("custom_loot/groups/weapons/melee/g_2h_sword_pvp_bf_01.lua")

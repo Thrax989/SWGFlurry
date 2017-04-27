@@ -2,9 +2,9 @@ hydra_commander = Creature:new {
   customName = "Hydra Commander",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 60.00,
+  chanceHit = 50.00,
   damageMin = 2000,
-  damageMax = 4000,
+  damageMax = 3500,
   specialDamageMult = 2.0,
   baseXp = 0,
   baseHAM = 1000000,
@@ -51,6 +51,13 @@ hydra_commander = Creature:new {
 },
                     lootChance = 10000000
 },
+{
+            groups = {
+                    {group = "wearables_rare", chance = 5000000},
+  		              {group = "aakuan_common", chance = 5000000}
+},
+                    lootChance = 10000000
+},    
 {
             groups = {
                     {group = "krayt_tissue_rare", chance = 10000000}

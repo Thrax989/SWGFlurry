@@ -1,10 +1,3 @@
---New
-object_building_heroic_shared_del = SharedBuildingObjectTemplate:new {
-	clientTemplateFileName = "object/building/heroic/shared_del.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_heroic_shared_del, "object/building/heroic/shared_del.iff")
---**********************************************************************************************************************************
-
 object_tangible_collection_shared_beetle_borer = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/collection/shared_beetle_borer.iff"
 }
@@ -3810,5 +3803,3 @@ object_tangible_collection_shared_storm_trooper_right_bracer = SharedTangibleObj
 	clientTemplateFileName = "object/tangible/collection/shared_storm_trooper_right_bracer.iff"
 }
 ObjectTemplates:addClientTemplate(object_tangible_collection_shared_storm_trooper_right_bracer, "object/tangible/collection/shared_storm_trooper_right_bracer.iff")
-
-

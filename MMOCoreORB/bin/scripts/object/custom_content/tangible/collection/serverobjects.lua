@@ -546,4 +546,3 @@ includeFile("custom_content/tangible/collection/storm_trooper_left_bracer.lua")
 includeFile("custom_content/tangible/collection/storm_trooper_leggings.lua")
 includeFile("custom_content/tangible/collection/storm_trooper_right_bicep.lua")
 includeFile("custom_content/tangible/collection/storm_trooper_right_bracer.lua")
-

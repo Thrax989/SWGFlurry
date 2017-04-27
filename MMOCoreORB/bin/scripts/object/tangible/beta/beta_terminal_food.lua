@@ -120,6 +120,58 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   {
 			"Test", "Test",
 		   },
+			"kashyyyk",
+		   {
+			"Test", "Test",
+		   },
+			"Kashyyyk hunting",
+		   {
+			"Test", "Test",
+		   },
+			"Kashyyyk rryatt trail",
+		   {
+			"Test", "Test",
+		   },
+			"Kashyyyk main",
+		   {
+			"Test", "Test",
+		   },
+			"Kashyyyk south dungeons",
+		   {
+			"Test", "Test",
+		   },
+			"Kashyyyk north dungeons",
+		   {
+			"Test", "Test",
+		   },
+			"Kashyyyk pob dungeons",
+		   {
+			"Test", "Test",
+		   },
+			"Kashyyyk dead forest",
+		   {
+			"Test", "Test",
+		   },
+			"coruscant",
+		   {
+			"test", "Test",
+		   },
+			"jakku",
+		   {
+			"Test", "Test",
+		   },
+			"chandrila",
+		   {
+			"Test", "Test",
+		   },
+			"nal hutta",
+		   {
+			"Test", "Test",
+		   },
+			"moraband",
+		   {
+			"Test", "Test",
+		   },
 	}
 }
 
