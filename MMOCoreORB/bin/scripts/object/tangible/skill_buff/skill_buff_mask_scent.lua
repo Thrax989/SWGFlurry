@@ -46,9 +46,12 @@ object_tangible_skill_buff_skill_buff_mask_scent = object_tangible_skill_buff_sh
 	objectMenuComponent = "SkillBuffObjectMenuComponent",
 	attributeListComponent = "SkillBuffObjectAttributeListComponent",
 	
-	duration = 300,
-	useCount = 5,
-	modifiers = { "mask_scent", 10 },
+	duration = 900,
+	useCount = 10,
+	modifiers = { "jedi_state_defense", 25,
+	"jedi_toughness", 25,
+	"jedi_force_power_regen", 25,
+	"lightsaber_toughness", 25,},
 	buffName = "mask_scent",
 	buffCRC = 0x30EB839E
 }

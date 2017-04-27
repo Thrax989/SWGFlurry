@@ -483,7 +483,5 @@ includeFile("groups/weapon/g_lightsaber_vader.lua")
 
 includeFile("groups/imperial_token1.lua")
 includeFile("groups/rebel_token1.lua")
-
 includeFile("groups/holo_token1.lua")
-includeFile("groups/new_robe.lua")
 includeFile("groups/nectar_buff_f01.lua")
