@@ -7,6 +7,7 @@
 
 --Ramdom
 includeFile("custom_content/random/engineer_screenplay.lua")
+includeFile("custom_content/random/hellucard_screenplay.lua")
 
 --Cave
 --includeFile("custom_content/cave/tatooine_tusken_bunker_boss.lua")

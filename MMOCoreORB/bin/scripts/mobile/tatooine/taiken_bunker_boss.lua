@@ -2,9 +2,9 @@ taiken_bunker_boss = Creature:new {
   customName = "Supreme Leader Gnox",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 100.00,
-  damageMin = 3000,
-  damageMax = 6000,
+  chanceHit = 80.00,
+  damageMin = 2000,
+  damageMax = 4000,
   specialDamageMult = 2.0,
   baseXp = 0,
   baseHAM = 1500000,
@@ -98,7 +98,7 @@ taiken_bunker_boss = Creature:new {
 },
 {
           		groups = {
-            			{group = "fire_breathing_spider", chance = 10000000}
+            			{group = "skill_buffs", chance = 10000000}
 },
               		        lootChance = 10000000
 },
