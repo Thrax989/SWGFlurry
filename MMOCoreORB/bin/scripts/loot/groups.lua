@@ -463,6 +463,8 @@ includeFile("groups/custom/av_21_scheme.lua")
 includeFile("groups/custom/droid_loot.lua")
 includeFile("groups/custom/mandalorian_schemes.lua")
 includeFile("groups/custom/bounty_hunter_schemes.lua")
+includeFile("groups/custom/skill_buff_jedi.lua")
+includeFile("groups/custom/hellucard_neck.lua")
 includeFile("groups/playerDatapad.lua")
 
 -- bestine election sub-folder
@@ -483,6 +485,7 @@ includeFile("groups/weapon/g_lightsaber_vader.lua")
 
 includeFile("groups/imperial_token1.lua")
 includeFile("groups/rebel_token1.lua")
+
 includeFile("groups/holo_token1.lua")
+includeFile("groups/new_robe.lua")
 includeFile("groups/nectar_buff_f01.lua")
-includeFile("groups/aakuan_neck.lua")
