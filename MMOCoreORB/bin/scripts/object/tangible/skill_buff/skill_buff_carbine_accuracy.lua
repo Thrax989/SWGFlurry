@@ -47,7 +47,7 @@ object_tangible_skill_buff_skill_buff_carbine_accuracy = object_tangible_skill_b
 	attributeListComponent = "SkillBuffObjectAttributeListComponent",
 	
 	duration = 900,
-	useCount = 5,
+	useCount = 15,
 	modifiers = { "carbine_accuracy", 25 },
 	buffName = "carbine_accuracy",
 	buffCRC = 0xA996D07E
