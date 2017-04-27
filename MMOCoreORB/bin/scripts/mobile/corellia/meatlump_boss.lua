@@ -3,7 +3,7 @@ meatlump_king = Creature:new {
   socialGroup = "geonosian",
   level = 300,
   chanceHit = 100.00,
-  damageMin = 4000,
+  damageMin = 5000,
   damageMax = 6000,
   baseXp = 0,
   baseHAM = 1500000,
@@ -76,6 +76,18 @@ meatlump_king = Creature:new {
   {
       groups = {
         {group = "saberhand27", chance = 10000000}
+  },
+      lootChance = 10000000
+  },
+  {
+      groups = {
+        {group = "nectar_buff_f01", chance = 10000000}
+  },
+      lootChance = 10000000
+  },
+  {
+      groups = {
+        {group = "skill_buffs", chance = 10000000}
   },
       lootChance = 10000000
   },
