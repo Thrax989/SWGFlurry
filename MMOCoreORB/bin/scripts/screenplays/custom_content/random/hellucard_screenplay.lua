@@ -22,7 +22,7 @@ function hellucard_screenplay:spawnMobiles()
   spawnMobile("tatooine", "fallen_jedi_h01", 3000, -677, 8, -6735, 86, 0)
   spawnMobile("tatooine", "fallen_jedi_h01", 3000, -677, 8, -6721, 85, 0)
 
-  spawnMobile("tatooine", "fallen_jedi_h01", 3000, -659, 5, -6685, 129, 0)
+  spawnMobile("tatooine", "fallen_jedi_h01", 3000, -660, 5, -6684, 40, 0)
   spawnMobile("tatooine", "fallen_jedi_h01", 3000, -656, 5, -6688, -45, 0)
   spawnMobile("tatooine", "fallen_jedi_h01", 3000, -684, 5, -6645, 30, 0)
   spawnMobile("tatooine", "fallen_jedi_h01", 3000, -683, 5, -6643, -150, 0)
