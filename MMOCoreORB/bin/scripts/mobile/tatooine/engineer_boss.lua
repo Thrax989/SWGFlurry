@@ -116,6 +116,12 @@ engineer_boss = Creature:new {
     },
                  lootChance = 10000000
     },
+    {
+      	 groups = {
+        	{group = "saberhand27", chance = 10000000}
+    },
+      		lootChance = 5000000
+    },
     },
 	weapons = {"mixed_force_weapons"},
 	reactionStf = "@npc_reaction/fancy",
