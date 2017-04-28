@@ -1,5 +1,5 @@
 engineer_boss_second = Creature:new {
-	customName = "Hansgar",
+	customName = "<<< Hansgar >>>",
 	socialGroup = "mustafar",
 	pvpFaction = "",
 	faction = "",
@@ -93,6 +93,12 @@ engineer_boss_second = Creature:new {
     {
       	 groups = {
         	{group = "nge2", chance = 10000000}
+    },
+      		lootChance = 5000000
+    },
+    {
+      	 groups = {
+        	{group = "saberhand27", chance = 10000000}
     },
       		lootChance = 5000000
     },
