@@ -4,13 +4,13 @@ taiken_bunker_boss = Creature:new {
   level = 300,
   chanceHit = 100.00,
   damageMin = 3000,
-  damageMax = 6000,
+  damageMax = 4000,
   specialDamageMult = 2.0,
   baseXp = 0,
   baseHAM = 1500000,
   baseHAMmax = 1500000,
   armor = 3,
-  resists = {100,100,100,100,100,100,100,100,100},
+  resists = {95,95,95,95,95,95,95,95,95},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -98,7 +98,7 @@ taiken_bunker_boss = Creature:new {
 },
 {
           		groups = {
-            			{group = "fire_breathing_spider", chance = 10000000}
+            			{group = "saberhand27", chance = 10000000}
 },
               		        lootChance = 10000000
 },
