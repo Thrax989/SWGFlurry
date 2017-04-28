@@ -1,5 +1,5 @@
 engineer_boss = Creature:new {
-	customName = "Franzog",
+	customName = "<<< Franzog >>>",
 	socialGroup = "mustafar",
 	pvpFaction = "",
 	faction = "",
