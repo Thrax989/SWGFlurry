@@ -2,8 +2,8 @@ taiken_bunker_boss = Creature:new {
   customName = "<<< Crazy Josh >>>",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 100.00,
-  damageMin = 3000,
+  chanceHit = 80.00,
+  damageMin = 2000,
   damageMax = 4000,
   specialDamageMult = 2.0,
   baseXp = 0,
@@ -98,7 +98,7 @@ taiken_bunker_boss = Creature:new {
 },
 {
           		groups = {
-            			{group = "saberhand27", chance = 10000000}
+            			{group = "skill_buffs", chance = 10000000}
 },
               		        lootChance = 10000000
 },
