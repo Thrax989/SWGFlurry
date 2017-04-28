@@ -1,5 +1,5 @@
 taiken_bunker_boss = Creature:new {
-  customName = "Supreme Leader Gnox",
+  customName = "<<< Crazy Josh >>>",
   socialGroup = "geonosian",
   level = 300,
   chanceHit = 100.00,
