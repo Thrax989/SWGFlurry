@@ -1,17 +1,17 @@
 janta_cave_boss = Creature:new {
-	  customName = "Janta King",
+	  customName = "<<< Janta King >>>",
 	  socialGroup = "janta_tribe",
 	  faction = "janta_tribe",
 	  level = 300,
-	  chanceHit = 80.00,
+	  chanceHit = 100.00,
 	  damageMin = 5000,
 	  damageMax = 6000,
 	  specialDamageMult = 5.0,
 	  baseXp = 0,
-	  baseHAM = 1000000,
-	  baseHAMmax = 1000000,
+	  baseHAM = 1500000,
+	  baseHAMmax = 1500000,
 	  armor = 3,
-	  resists = {100,100,100,100,100,100,100,100,90},
+	  resists = {95,95,95,95,95,95,95,95,90},
 	  meatType = "",
 	  meatAmount = 0,
 	  hideType = "",
@@ -50,7 +50,7 @@ janta_cave_boss = Creature:new {
 			{group = "g_named_crystals", chance = 10000000}
 
 		},
-			lootChance = 5000000
+			lootChance = 1000000
 		},
 		{
 			groups = {
@@ -75,13 +75,6 @@ janta_cave_boss = Creature:new {
 			groups = {
 			{group = "nightsister_rare", chance = 10000000}
 		},
-			lootChance = 8000000
-		},
-		{
-			groups = {
-			{group = "junk", chance = 10000000}
-
-		},
 			lootChance = 10000000
 		},
 		{
@@ -93,7 +86,14 @@ janta_cave_boss = Creature:new {
 		},
 		{
 			groups = {
-			{group = "looted_container", chance = 10000000}
+			{group = "junk", chance = 10000000}
+
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+			{group = "nge1", chance = 10000000}
 		},
 			lootChance = 10000000
 		},
@@ -101,7 +101,19 @@ janta_cave_boss = Creature:new {
 			groups = {
 			{group = "nge2", chance = 10000000}
 		},
-			lootChance = 8000000
+			lootChance = 10000000
+		},
+		{
+			groups = {
+			{group = "saberhand26", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+			{group = "saberhand27", chance = 10000000}
+		},
+			lootChance = 10000000
 		},
 		},
 weapons = {"dark_jedi_weapons_gen4"},
