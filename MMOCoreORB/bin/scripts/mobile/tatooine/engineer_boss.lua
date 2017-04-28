@@ -1,5 +1,5 @@
 engineer_boss = Creature:new {
-	customName = "Franzog",
+	customName = "<<< Franzog >>>",
 	socialGroup = "mustafar",
 	pvpFaction = "",
 	faction = "",
@@ -115,6 +115,12 @@ engineer_boss = Creature:new {
                   {group = "theme_park_reward_imperial_kaja", chance = 10000000}
     },
                  lootChance = 10000000
+    },
+    {
+      	 groups = {
+        	{group = "saberhand27", chance = 10000000}
+    },
+      		lootChance = 5000000
     },
     },
 	weapons = {"mixed_force_weapons"},

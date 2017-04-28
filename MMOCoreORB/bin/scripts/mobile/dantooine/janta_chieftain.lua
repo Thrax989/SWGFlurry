@@ -1,17 +1,17 @@
 janta_chieftain = Creature:new {
-	customName = "Janta Chieftain",
+	customName = "<<< Janta Chieftain >>>",
 	socialGroup = "janta_tribe",
 	faction = "janta_tribe",
 	level = 300,
 	chanceHit = 80.00,
-	damageMin = 2000,
-	damageMax = 3000,
-	specialDamageMult = 4.0,
+	damageMin = 1500,
+	damageMax = 2500,
+	specialDamageMult = 2.0,
 	baseXp = 27849,
 	baseHAM = 800000,
 	baseHAMmax = 800000,
 	armor = 1,
-	resists = {80,80,80,80,80,80,80,80,80},
+	resists = {70,70,70,70,70,70,70,70,80,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -77,6 +77,12 @@ janta_chieftain = Creature:new {
 		{
 			groups = {
 				{group = "geonosian_common", chance = 10000000}
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "nectar_buff_f01", chance = 10000000}
 		},
 			lootChance = 10000000
 		},

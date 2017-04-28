@@ -1,5 +1,5 @@
 hydra_boss = Creature:new {
-  customName = "Hydra Leader",
+  customName = "<<< Hydra Leader >>>",
   socialGroup = "geonosian",
   level = 300,
   chanceHit = 80.00,
@@ -100,6 +100,12 @@ hydra_boss = Creature:new {
 {
              groups = {
                      {group = "theme_park_reward_imperial_kaja", chance = 10000000}
+},
+                     lootChance = 10000000
+},
+{
+             groups = {
+                     {group = "saberhand27", chance = 10000000}
 },
                      lootChance = 10000000
 },
