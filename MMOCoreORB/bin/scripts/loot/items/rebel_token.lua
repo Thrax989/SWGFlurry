@@ -2,7 +2,7 @@ rebel_token= {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Rebel Token",
-	directObjectTemplate = "object/tangible/loot/misc/mt_soup.iff",
+	directObjectTemplate = "object/tangible/wearables/ring/ring_s03_quest.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
