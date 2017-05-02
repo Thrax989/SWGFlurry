@@ -33,8 +33,8 @@ droid_pvp = Creature:new {
 	lootGroups = {
 		{
 		groups = {
-				{group = "junk", chance = 9000000},
-				{group = "pvp_foods_lg", chance = 1000000},
+				{group = "junk", chance = 9500000},
+				{group = "pvp_foods_lg", chance = 500000},
 
 			},
 			lootChance = 10000000
