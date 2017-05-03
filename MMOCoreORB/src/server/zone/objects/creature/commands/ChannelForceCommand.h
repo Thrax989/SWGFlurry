@@ -118,7 +118,7 @@ public:
 			creature->addMaxHAM(CreatureAttribute::MIND, -forceBonus);
 			
 			creature->renewBuff(buffCRC, duration + buff->getTimeLeft());
-			creature->addCooldown("channel", 10 * 1000);
+			creature->addCooldown("channel", 20 * 1000);
 			Reference<ChannelForceBuff*> channelBuff = buff.castTo<ChannelForceBuff*>();
 			if (channelBuff != NULL)
 				channelBuff->activateRegenTick();
