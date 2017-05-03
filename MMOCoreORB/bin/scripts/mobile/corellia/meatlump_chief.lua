@@ -4,7 +4,7 @@ meatlump_chief = Creature:new {
   level = 300,
   chanceHit = 20.00,
   damageMin = 1000,
-  damageMax = 2000,
+  damageMax = 1500,
   specialDamageMult = 2.0,
   baseXp = 0,
   baseHAM = 100000,
@@ -71,7 +71,7 @@ meatlump_chief = Creature:new {
   },
   {
       groups = {
-        {group = "nge2", chance = 10000000}
+        {group = "skill_buffs", chance = 10000000}
   },
       lootChance = 10000000
   },

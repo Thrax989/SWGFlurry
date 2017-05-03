@@ -1,18 +1,18 @@
-outbreak_boss_two = Creature:new {
-	customName = "<<< Subject Two >>>",
-	socialGroup = "self",
+hellucard_boss = Creature:new {
+	customName = "<<< Hellucard >>>",
+	socialGroup = "kun",
 	pvpFaction = "",
 	faction = "",
 	level = 300,
 	chanceHit = 100.00,
-	damageMin = 5000,
+	damageMin = 4000,
 	damageMax = 6000,
-	specialDamageMult = 5.0,
+	specialDamageMult = 10.0,
 	baseXp = 0,
-	baseHAM = 1500000,
-	baseHAMmax = 1500000,
+	baseHAM = 2000000,
+	baseHAMmax = 2000000,
 	armor = 3,
-	resists = {200,200,200,200,200,200,200,200,200},
+	resists = {95,95,95,95,95,95,95,95,95},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -26,15 +26,16 @@ outbreak_boss_two = Creature:new {
 	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 5.0,
+	scale = 1.2,
 
-	templates = {"object/mobile/outbreak_undead_boss_f_nightsister_03.iff"},
+	templates = {"object/mobile/mos_taike_guard_old.iff"},
+  outfit = "custom_armor_c08_outfit",
   lootGroups = {
 	{
 			groups = {
         			{group = "pearls_flawless", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
+				      {group = "armor_attachments", chance = 2500000},
+				      {group = "clothing_attachments", chance = 2500000}
    },
 			        lootChance = 10000000
    },
@@ -47,10 +48,10 @@ outbreak_boss_two = Creature:new {
       			        lootChance = 10000000
    },
    {
-      			groups = {
+      	 groups = {
         			{group = "pearls_flawless", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
+				      {group = "armor_attachments", chance = 2500000},
+				      {group = "clothing_attachments", chance = 2500000}
    },
       			        lootChance = 10000000
    },
@@ -58,7 +59,7 @@ outbreak_boss_two = Creature:new {
       			groups = {
         			{group = "pearls_flawless", chance = 5000000},
        	 			{group = "armor_attachments", chance = 2500000},
-        			 {group = "clothing_attachments", chance = 2500000}
+        			{group = "clothing_attachments", chance = 2500000}
    },
       			        lootChance = 10000000
    },
@@ -91,23 +92,18 @@ outbreak_boss_two = Creature:new {
       			       	 lootChance = 10000000
    },
    {
+           groups = {
+             {group = "armor_attachments", chance = 5000000},
+             {group = "clothing_attachments", chance = 5000000}
+   },
+                    lootChance = 10000000
+   },
+   {
 			groups = {
 				{group = "g_named_crystals", chance = 10000000}
    },
-			        lootChance = 5000000
+			        lootChance = 10000000
    },
-   {
-   			groups = {
-      				{group = "g_ep3_chiss_poacher_backpack", chance = 10000000}
-    },
-    			         lootChance = 10000000
-    },
-    {
-    			groups = {
-      				{group = "av_21_pp", chance = 10000000}
-    },
-    			        lootChance = 5000000
-    },
     {
 			groups = {
 				{group = "nightsister_rare", chance = 10000000}
@@ -122,79 +118,59 @@ outbreak_boss_two = Creature:new {
      },
      {
 		         groups = {
-				{group = "looted_container", chance = 10000000}
+				{group = "saberhand26", chance = 10000000}
      },
 			         lootChance = 10000000
      },
      {
 			 groups = {
-				 {group = "weapons_all", chance = 10000000}
+				 {group = "skill_buff_jedi", chance = 10000000}
      },
 			          lootChance = 10000000
      },
      {
         		 groups = {
-          			 {group = "wearables_rare", chance = 10000000}
+          			 {group = "saberhand27", chance = 10000000}
      },
            		         lootChance = 10000000
      },
      {
           		 groups = {
-            			 {group = "acklay", chance = 10000000}
+            			 {group = "nge1", chance = 5000000},
+                   {group = "nge2", chance = 5000000}
      },
           		          lootChance = 10000000
      },
      {
+             groups = {
+                 {group = "nge3", chance = 10000000}
+     },
+                     lootChance = 10000000
+     },
+     {
           		groups = {
-            			{group = "acklay", chance = 10000000}
+            			{group = "acklays", chance = 10000000}
      },
           		        lootChance = 10000000
      },
      {
         		 groups = {
-          			 {group = "fire_breathing_spider", chance = 10000000}
+          			 {group = "nectar_buff_f01", chance = 10000000}
     },
             		         lootChance = 10000000
     },
     {
           		groups = {
-            			{group = "fire_breathing_spider", chance = 10000000}
+            			{group = "hellucard_neck", chance = 10000000}
     },
-              		        lootChance = 10000000
-    },
-    {
-          		groups = {
-            			{group = "sanerhand26", chance = 10000000}
-    },
-              		        lootChance = 10000000
-    },
-    {
-          		groups = {
-            			{group = "sanerhand27", chance = 10000000}
-    },
-              		        lootChance = 10000000
+              		        lootChance = 5000000
     },
     },
-    
-	weapons = {"creature_spit_heavy_flame"},
+
+	weapons = {"dark_jedi_weapons_gen4"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = {
-		{"creatureareacombo","StateAccuracyBonus=100"},
-		{"creatureareaknockdown","StateAccuracyBonus=100"},
-		{"knockdownattack","KnockdownChance=100"},
-		{"creatureareaknockdown","KnockdownChance=100"},
-		{"dizzyattack","DizzyChance=100"},
-		{"stunattack","StunChance=100"},
-		{"mildpoison","PoisonChance=100"},
-		{"intimidationattack","IntimidationChance=100"},
-		{"mediumpoison","PoisonChance=100"},
-    		{"mediumdisease","DiseaseChance=100"},
-		{"creatureareapoison","PoisonChance=100"},
-		{"strongpoison","PoisonChance=100"},
-		{"creatureareaattack","StateAccuracyBonus=100"},
-    		{"creatureareadisease","DiseaseChance=100"},
-    		{"creatureareableeding","BleedChance=100"}
-	}
+	attacks = merge(lightsabermaster,forcepowermaster,forcewielder)
+
 }
 
-CreatureTemplates:addCreatureTemplate(outbreak_boss_two, "outbreak_boss_two")
+CreatureTemplates:addCreatureTemplate(hellucard_boss, "hellucard_boss")

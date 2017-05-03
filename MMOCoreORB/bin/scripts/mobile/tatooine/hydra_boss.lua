@@ -1,11 +1,11 @@
 hydra_boss = Creature:new {
-  customName = "Hydra Leader",
+  customName = "<<< Hydra Leader >>>",
   socialGroup = "geonosian",
   level = 300,
   chanceHit = 80.00,
   damageMin = 2000,
-  damageMax = 5000,
-  specialDamageMult = 2.0,
+  damageMax = 4000,
+  specialDamageMult = 3.0,
   baseXp = 0,
   baseHAM = 1500000,
   baseHAMmax = 1500000,
@@ -80,7 +80,7 @@ hydra_boss = Creature:new {
 },
 {
             groups = {
-                    {group = "looted_container", chance = 10000000}
+                    {group = "saberhand27", chance = 10000000}
 },
                     lootChance = 10000000
 },
@@ -92,7 +92,7 @@ hydra_boss = Creature:new {
 },
 {
           		groups = {
-            			{group = "acklay", chance = 5000000},
+            			{group = "skill_buffs", chance = 5000000},
                   {group = "acklays", chance = 5000000}
 },
               		  lootChance = 10000000
@@ -100,6 +100,12 @@ hydra_boss = Creature:new {
 {
              groups = {
                      {group = "theme_park_reward_imperial_kaja", chance = 10000000}
+},
+                     lootChance = 10000000
+},
+{
+             groups = {
+                     {group = "saberhand27", chance = 10000000}
 },
                      lootChance = 10000000
 },
