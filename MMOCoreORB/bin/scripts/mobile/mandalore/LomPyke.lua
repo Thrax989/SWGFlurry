@@ -4,15 +4,15 @@ lom_pyke = Creature:new {
 	socialGroup = "death_watch",
 	pvpFaction = "death_watch",
 	faction = "",
-	level = 225,
-	chanceHit = 5,
-	damageMin = 520,
-	damageMax = 1750,
+	level = 300,
+	chanceHit = 75.00,
+	damageMin = 2000,
+	damageMax = 4000,
 	baseXp = 10000,
-	baseHAM = 1500000,
-	baseHAMmax = 1500000,
+	baseHAM = 1000000,
+	baseHAMmax = 1300000,
 	armor = 3,
-	resists = {80,80,90,80,75,75,90,70,97},
+	resists = {75,75,75,75,75,75,75,75,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,22 +29,57 @@ lom_pyke = Creature:new {
 
 	templates = {"object/mobile/dressed_black_sun_henchman.iff"},
 	lootGroups = {
-         {
-			groups = {
-				{group = "junk", chance = 6500000},
-				{group = "pistols", chance = 750000},
-				{group = "rifles", chance = 750000},
-				{group = "carbines", chance = 750000},
-				{group = "jetpack_parts", chance = 500000},				
-				{group = "junk", chance = 700000},
-				{group = "jetpack_base", chance = 50000},
-			},
-			lootChance = 3500000
-		}	
-	},
+  		{
+  			      groups = {
+  				            {group = "armor_attachments", chance = 1000000},
+  				            {group = "clothing_attachments", chance = 1000000},
+  				            {group = "crystals_premium", chance = 4000000},
+  				            {group = "pearls_flawless", chance = 4000000}
+},
+                      lootChance = 10000000
+},
+{
+            groups = {
+                    {group = "armor_attachments", chance = 5000000},
+                    {group = "clothing_attachments", chance = 5000000}
+},
+                    lootChance = 10000000
+},
+{
+            groups = {
+                    {group = "armor_attachments", chance = 5000000},
+                    {group = "clothing_attachments", chance = 5000000}
+},
+                    lootChance = 10000000
+},    
+{
+            groups = {
+                    {group = "krayt_tissue_rare", chance = 10000000}
+},
+                    lootChance = 10000000
+},
+{
+            groups = {
+                    {group = "looted_container", chance = 10000000}
+},
+                    lootChance = 10000000
+},
+{
+             groups = {
+                    {group = "nge2", chance = 10000000}
+},
+                    lootChance = 5000000
+},
+{
+          		groups = {
+            			{group = "apocalypse", chance = 10000000}
+},
+              		        lootChance = 10000000
+},
+},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
-	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster)
+	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster,commandomaster)
 }
 
 CreatureTemplates:addCreatureTemplate(lom_pyke, "lom_pyke")
