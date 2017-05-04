@@ -28,6 +28,7 @@ lom_pyke = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_black_sun_henchman.iff"},
+	scale = 2.5,
 	lootGroups = {
   		{
   			      groups = {
