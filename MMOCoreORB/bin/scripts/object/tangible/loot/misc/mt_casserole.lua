@@ -61,7 +61,7 @@ object_tangible_loot_misc_mt_casserole = object_tangible_loot_misc_shared_mt_cas
 	quantityMin = 0,
 	quantityMax = 0,
 	
-	modifiers = { "mind", 1000, "focus", 1000, "willpower", 1000, },
+	modifiers = { "mind", 1000, "focus", 500, "willpower", 500, },
 
 	buffName = "Chewbaccas_casserole",
 	buffCRC = 0,
