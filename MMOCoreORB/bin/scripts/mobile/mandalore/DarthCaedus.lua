@@ -63,7 +63,7 @@ darth_caedus = Creature:new {
             groups = {
                     {group = "axkva_min", chance = 10000000}
 },
-                    lootChance = 8000000
+                    lootChance = 10000000
 },
 {
             groups = {
