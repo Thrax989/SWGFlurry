@@ -327,7 +327,7 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 
 		SkillList* list = creature->getSkillList();
 
-		int totalSkillPointsWasted = 250;
+		int totalSkillPointsWasted = 300;
 
 		for (int i = 0; i < list->size(); ++i) {
 			Skill* skill = list->get(i);
@@ -466,7 +466,7 @@ bool SkillManager::surrenderSkill(const String& skillName, CreatureObject* creat
 
 		SkillList* list = creature->getSkillList();
 
-		int totalSkillPointsWasted = 250;
+		int totalSkillPointsWasted = 300;
 
 		for (int i = 0; i < list->size(); ++i) {
 			Skill* skill = list->get(i);
