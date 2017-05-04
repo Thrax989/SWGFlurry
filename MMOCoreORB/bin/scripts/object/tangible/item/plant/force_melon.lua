@@ -46,23 +46,23 @@ object_tangible_item_plant_force_melon = object_tangible_item_plant_shared_force
 	consumableType = 1,
 
 	duration = 0,
-	filling = 10,
-	nutrition = 1000,
+	filling = 0,
+	nutrition = 1500,
 
 	effectType = 6,
 
-	fillingMin = 10,
-	fillingMax = 10,
+	fillingMin = 0,
+	fillingMax = 0,
 	flavorMin = 0,
 	flavorMax = 0,
-	nutritionMin = 1000,
-	nutritionMax = 1000,
+	nutritionMin = 1500,
+	nutritionMax = 1500,
 	quantityMin = 0,
 	quantityMax = 0,
 
 	modifiers = { "health", 0, "action", 0, "mind", 0 },
 
-	buffName = "",
+	buffName = "Fetts_fruit",
 	buffCRC = 0,
 	speciesRestriction = "",
 }
