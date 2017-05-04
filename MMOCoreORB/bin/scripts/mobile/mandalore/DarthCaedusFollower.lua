@@ -1,18 +1,19 @@
 darth_caedus_follower = Creature:new {
 	objectName = "",
-	customName = "Darth Caedus Follower",
+	randomNameType = NAME_GENERIC,
+	randomNameTag = true,
 	socialGroup = "Dark Jedi",
 	pvpFaction = "",
 	faction = "",
-	level = 265,
-	chanceHit = 235,
-	damageMin = 1645,
-	damageMax = 3000,
-	baseXp = 25266,
-	baseHAM = 500000,
-	baseHAMmax = 500000,
-	armor = 3,
-	resists = {90,90,90,90,90,90,90,90,55},
+	level = 250,
+	chanceHit = 40,
+	damageMin = 750,
+	damageMax = 1250,
+	baseXp = 15000,
+	baseHAM = 95000,
+	baseHAMmax = 125000,
+	armor = 1,
+	resists = {70,70,70,70,70,70,70,70,35},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -31,12 +32,33 @@ darth_caedus_follower = Creature:new {
 		"object/mobile/dressed_dark_jedi_human_male_01.iff",
 		"object/mobile/dressed_dark_jedi_human_female_01.iff"},
 	lootGroups = {
-		{
-			groups = {
-				{group = "task_loot_sith_altar", chance = 10000000}
-			},
-			lootChance = 10000000
-		}
+    {
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+
+  },
+      lootChance = 10000000
+  },
+  {
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+
+  },
+      lootChance = 10000000
+  },
+  {
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+
+  },
+      lootChance = 10000000
+  },
 	},
 	weapons = {"dark_jedi_weapons_gen3"},
 	conversationTemplate = "",
