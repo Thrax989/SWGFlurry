@@ -32,35 +32,37 @@ darth_caedus_follower = Creature:new {
 		"object/mobile/dressed_dark_jedi_human_male_01.iff",
 		"object/mobile/dressed_dark_jedi_human_female_01.iff"},
 	lootGroups = {
-    {
-      groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
-  },
-      lootChance = 10000000
-  },
-  {
-      groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
-  },
-      lootChance = 10000000
-  },
-  {
-      groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
-  },
-      lootChance = 10000000
-  },
+		{
+			groups = {
+				{group = "crystals_premium",  chance = 700000},
+				{group = "crystals_select",  chance = 1500000},
+				{group = "color_crystals",  chance = 500000},
+				{group = "nightsister_common",  chance = 1200000},
+				{group = "armor_attachments",  chance = 1000000},
+				{group = "clothing_attachments",  chance = 1000000},
+				{group = "melee_weapons",  chance = 400000},
+				{group = "rifles",  chance = 400000},
+				{group = "pistols",  chance = 400000},
+				{group = "carbines",  chance = 400000},
+				{group = "junk",  chance = 500000},
+				{group = "axkva_min",  chance = 2000000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "nightsister_rare", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+	           groups = {
+				{group = "junk", chance = 10000000},
+			},
+			lootChance = 10000000
+		}
 	},
-	weapons = {"dark_jedi_weapons_gen3"},
+	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
 	attacks = merge(lightsabermaster)
 }
