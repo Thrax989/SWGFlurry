@@ -161,7 +161,7 @@ outbreak_boss = Creature:new {
         	},
         	{
           		groups = {
-            			{group = "acklay", chance = 10000000}
+            			{group = "acklays", chance = 10000000}
           	},
           		lootChance = 10000000
         	},
@@ -177,18 +177,23 @@ outbreak_boss = Creature:new {
               	},
               		lootChance = 10000000
             	},
-		{
-          		groups = {
-            			{group = "saberhand27", chance = 10000000}
-              	},
-              		lootChance = 10000000
-            	},
-		{
+    		{
           		groups = {
             			{group = "saberhand26", chance = 10000000}
-              	},
-              		lootChance = 10000000
-            	},
+    		},
+              		        lootChance = 10000000
+    		},
+    		{
+          		groups = {
+            			{group = "saberhand27", chance = 10000000}
+    		},
+              		        lootChance = 10000000
+    		},
+              		groups = {
+            			{group = "skill_buffs", chance = 10000000}
+    		},
+              		        lootChance = 10000000
+    		},
 		},
 	weapons = {"creature_spit_heavy_flame"},
 	reactionStf = "@npc_reaction/slang",
