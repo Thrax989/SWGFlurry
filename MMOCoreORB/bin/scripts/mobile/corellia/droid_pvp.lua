@@ -6,11 +6,11 @@ droid_pvp = Creature:new {
 	level = 150,
 	chanceHit = 50.00,
 	damageMin = 1000,
-	damageMax = 2000,
+	damageMax = 1750,
 	baseXp = 10000,
 	baseHAM = 100000,
 	baseHAMmax = 125000,
-	armor = 0,
+	armor = 1,
 	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
 	meatAmount = 0,
@@ -25,10 +25,9 @@ droid_pvp = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
+        scale = 1.5
 	templates = {
 	"object/mobile/battle_droid.iff",
-	"object/mobile/super_battle_droid.iff"
 	},
 	lootGroups = {
 		{

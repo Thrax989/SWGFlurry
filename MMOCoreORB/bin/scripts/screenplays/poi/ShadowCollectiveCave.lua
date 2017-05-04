@@ -51,6 +51,6 @@ function ShadowCollectiveCave:spawnMobiles()
 	spawnMobile("mandalore", "shadow_collective_criminal", 120, 154.2, -66.2, -123.7, -65, 8566288)
 	spawnMobile("mandalore", "shadow_collective_criminal", 120, 142.9, -66.5, -88.3, -140, 8566288)
 	spawnMobile("mandalore", "shadow_collective_criminal", 120, 164.1, -66.8, -97.5, -96, 8566289)
-	spawnMobile("mandalore", "shadow_collective_sc87", 3600, 190.1, -66.5, -102.8, -83, 8566289)
+	spawnMobile("mandalore", "shadow_collective_sc87", 1800, 190.1, -66.5, -102.8, -83, 8566289)
 		
 end
