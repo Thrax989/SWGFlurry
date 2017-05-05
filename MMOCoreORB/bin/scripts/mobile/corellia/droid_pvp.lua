@@ -2,7 +2,7 @@ droid_pvp = Creature:new {
 	customName = "A Force Fuelled Droid",
 	socialGroup = "self",
 	pvpFaction = "",
-	faction = "",,
+	faction = "",
 	level = 150,
 	chanceHit = 50.00,
 	damageMin = 1000,
@@ -25,19 +25,18 @@ droid_pvp = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-        scale = 1.5
-	templates = {
-	"object/mobile/battle_droid.iff",
-	},
+        scale = 2.0,
+	
+	templates = {"object/mobile/battle_droid.iff",},
 	lootGroups = {
 		{
 		groups = {
 				{group = "junk", chance = 9500000},
-				{group = "pvp_foods_lg", chance = 500000},
+				{group = "pvp_foods_lg", chance = 500000}
 
 			},
 			lootChance = 10000000
-		}
+		},
 	},
 	weapons = {"nyaxs_weapons", "dark_jedi_weapons_gen4},
 	conversationTemplate = "",
