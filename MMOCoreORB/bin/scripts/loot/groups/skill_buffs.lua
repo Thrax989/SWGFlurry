@@ -25,7 +25,7 @@ skill_buffs = {
 		{itemTemplate = "skill_buff_twohandmelee_speed", weight = 434782},
 		{itemTemplate = "skill_buff_unarmed_accuracy", weight = 434782},
 		{itemTemplate = "skill_buff_unarmed_speed", weight = 434782},
-		{itemTemplate = "nectar_buff_f01", weight = 434783}
+		{itemTemplate = "skill_buff_mask_scent", weight = 434783}
 	}
 }
 
