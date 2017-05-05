@@ -42,33 +42,7 @@
 
 
 object_tangible_loot_misc_mt_casserole = object_tangible_loot_misc_shared_mt_casserole:new {
- useCount = 1,
- templateType = CONSUMABLE,
- 
-  duration = 90,
-	filling = 0,
-	nutrition = 0,
 
-	effectType = 1,
-
-	fillingMin = 0,
-	fillingMax = 0,
-
-	flavorMin = 0,
-	flavorMax = 0,
-	nutritionMin = 0,
-	nutritionMax = 0,
-	quantityMin = 0,
-	quantityMax = 0,
-	
-	modifiers = { "mind", 1000, "focus", 500, "willpower", 500, },
-
-	buffName = "Chewbaccas_casserole",
-	buffCRC = 0,
-	speciesRestriction = "",
-	
-	consumableType = 5,
-	
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_mt_casserole, "object/tangible/loot/misc/mt_casserole.iff")
