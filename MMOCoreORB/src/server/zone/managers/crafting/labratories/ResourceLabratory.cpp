@@ -148,6 +148,8 @@ bool ResourceLabratory::applyComponentStats(TangibleObject* prototype, Manufactu
 	CraftingValues* craftingValues = manufactureSchematic->getCraftingValues();
 	ManagedReference<DraftSchematic* > draftSchematic = manufactureSchematic->getDraftSchematic();
 
+bool isYellow = false;
+
 	for (int i = 0; i < manufactureSchematic->getSlotCount(); ++i) {
 
 		Reference<IngredientSlot* > ingredientSlot = manufactureSchematic->getSlot(i);
@@ -198,6 +200,7 @@ bool ResourceLabratory::applyComponentStats(TangibleObject* prototype, Manufactu
 						if (preciseValue > 25)
 							preciseValue = 25;
 						clothing->addSkillMod(SkillModManager::WEARABLE, key, preciseValue);
+						isYellow = true;
 					}
 				}
 			}
@@ -277,6 +280,12 @@ bool ResourceLabratory::applyComponentStats(TangibleObject* prototype, Manufactu
 			}
 		}
 	}
+
+	if(isYellow) {
+		prototype->setIsCraftedEnhancedItem(true);
+		prototype->addMagicBit(false);
+	}
+
 	return modified;
 }
 String ResourceLabratory::checkBioSkillMods(const String& property) {
