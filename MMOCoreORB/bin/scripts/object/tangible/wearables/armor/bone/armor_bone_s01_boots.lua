@@ -127,8 +127,6 @@ object_tangible_wearables_armor_bone_armor_bone_s01_boots = object_tangible_wear
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-			"object/creature/player/zabrak_female.iff" },
-
 
 	-- kineticeffectiveness, energyeffectiveness, electricaleffectiveness, stuneffectiveness, blasteffectiveness, heateffectiveness, coldeffectiveness, acideffectiveness, restraineffectiveness
 	vulnerability = BLAST + STUN + HEAT + ELECTRICITY + LIGHTSABER,

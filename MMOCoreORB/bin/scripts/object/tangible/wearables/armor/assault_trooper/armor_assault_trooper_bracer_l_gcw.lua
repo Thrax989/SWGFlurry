@@ -87,7 +87,6 @@ object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_bracer_l_g
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-			"object/creature/player/zabrak_female.iff" },
 
 
 	-- Damage types in WeaponObject
