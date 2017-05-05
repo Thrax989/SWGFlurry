@@ -91,7 +91,7 @@ gorax_pvp = Creature:new {
 			lootChance = 10000000
 		},
     },
-	weapons = {""creature_spit_heavy_flame""},
+	weapons = {"creature_spit_heavy_flame"},
 	reactionStf = "@npc_reaction/fancy",
 	attacks = {
 	    {"creatureareaknockdown","KnockdownChance=100"},
