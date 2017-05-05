@@ -91,7 +91,19 @@ tusken_king = Creature:new {
 				{group = "skill_buffs", chance = 10000000}
 		},
 			lootChance = 10000000
-		}
+		},
+		{
+             		groups = {
+                     		{group = "saberhand27", chance = 10000000}
+		},
+                     	lootChance = 10000000
+		},
+		{
+             		groups = {
+                     		{group = "saberhand27", chance = 10000000}
+		},
+                     	lootChance = 10000000
+		},
 		},
 	weapons = {"tusken_weapons"},
 	conversationTemplate = "",
