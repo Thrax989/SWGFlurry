@@ -1,18 +1,19 @@
 pyke_syndicate_criminal = Creature:new {
 	objectName = "",
-	customName = "Pyke Syndicate Criminal",
+	randomNameType = NAME_GENERIC,
+	randomNameTag = true,
 	socialGroup = "death_watch",
 	pvpFaction = "death_watch",
 	faction = "",
-	level = 150,
-	chanceHit = 30,
-	damageMin = 500,
-	damageMax = 1000,
-	baseXp = 10000,
+	level = 250,
+	chanceHit = 40,
+	damageMin = 750,
+	damageMax = 1250,
+	baseXp = 15000,
 	baseHAM = 95000,
-	baseHAMmax = 95000,
-	armor = 3,
-	resists = {65,65,75,65,50,40,95,50,75},
+	baseHAMmax = 125000,
+	armor = 1,
+	resists = {70,70,70,70,70,70,70,70,35},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,18 +30,24 @@ pyke_syndicate_criminal = Creature:new {
 
 	templates = {"object/mobile/dressed_black_sun_assassin.iff"},
 	lootGroups = {
-         {
-			groups = {
-				{group = "junk", chance = 6500000},
-				{group = "pistols", chance = 750000},
-				{group = "rifles", chance = 750000},
-				{group = "carbines", chance = 750000},
-				{group = "clothing_attachments", chance = 500000},				
-				{group = "junk", chance = 700000},
-				{group = "armor_attachments", chance = 50000},
-			},
-			lootChance = 10000000
-		}	
+{
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+
+  },
+      lootChance = 10000000
+  },
+  {
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+
+  },
+      lootChance = 10000000
+  },
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",

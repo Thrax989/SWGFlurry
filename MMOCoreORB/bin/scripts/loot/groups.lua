@@ -488,3 +488,5 @@ includeFile("groups/rebel_token1.lua")
 
 includeFile("groups/holo_token1.lua")
 includeFile("groups/nectar_buff_f01.lua")
+
+includeFile("groups/pvp_food_lg.lua")

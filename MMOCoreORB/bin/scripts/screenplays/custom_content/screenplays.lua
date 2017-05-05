@@ -5,9 +5,10 @@
 --Cities
 --includeFile("custom_content/cities/ghomrassen_mos_rassen.lua")
 
---Ramdom
+--Random
 includeFile("custom_content/random/engineer_screenplay.lua")
 includeFile("custom_content/random/hellucard_screenplay.lua")
+includeFile("custom_content/random/droid_pvp_screenplay.lua")
 
 --Cave
 --includeFile("custom_content/cave/tatooine_tusken_bunker_boss.lua")

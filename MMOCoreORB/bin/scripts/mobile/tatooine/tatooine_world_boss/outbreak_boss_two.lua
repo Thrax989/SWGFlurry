@@ -174,8 +174,12 @@ outbreak_boss_two = Creature:new {
     },
               		        lootChance = 10000000
     },
+
     {
               		groups = {
+
+              groups = {
+
             			{group = "skill_buffs", chance = 10000000}
     },
               		        lootChance = 10000000
@@ -194,7 +198,7 @@ outbreak_boss_two = Creature:new {
 		{"mildpoison","PoisonChance=100"},
 		{"intimidationattack","IntimidationChance=100"},
 		{"mediumpoison","PoisonChance=100"},
-    		{"mediumdisease","DiseaseChance=100"},
+    {"mediumdisease","DiseaseChance=100"},
 		{"creatureareapoison","PoisonChance=100"},
 		{"strongpoison","PoisonChance=100"},
 		{"creatureareaattack","StateAccuracyBonus=100"},

@@ -1,18 +1,19 @@
 darth_caedus_follower = Creature:new {
 	objectName = "",
-	customName = "Darth Caedus Follower",
+	randomNameType = NAME_GENERIC,
+	randomNameTag = true,
 	socialGroup = "Dark Jedi",
 	pvpFaction = "",
 	faction = "",
-	level = 265,
-	chanceHit = 235,
-	damageMin = 1645,
-	damageMax = 3000,
-	baseXp = 25266,
-	baseHAM = 500000,
-	baseHAMmax = 500000,
-	armor = 3,
-	resists = {90,90,90,90,90,90,90,90,55},
+	level = 250,
+	chanceHit = 40,
+	damageMin = 750,
+	damageMax = 1250,
+	baseXp = 15000,
+	baseHAM = 95000,
+	baseHAMmax = 125000,
+	armor = 1,
+	resists = {70,70,70,70,70,70,70,70,35},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -33,12 +34,35 @@ darth_caedus_follower = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "task_loot_sith_altar", chance = 10000000}
+				{group = "crystals_premium",  chance = 700000},
+				{group = "crystals_select",  chance = 1500000},
+				{group = "color_crystals",  chance = 500000},
+				{group = "nightsister_common",  chance = 1200000},
+				{group = "armor_attachments",  chance = 1000000},
+				{group = "clothing_attachments",  chance = 1000000},
+				{group = "melee_weapons",  chance = 400000},
+				{group = "rifles",  chance = 400000},
+				{group = "pistols",  chance = 400000},
+				{group = "carbines",  chance = 400000},
+				{group = "junk",  chance = 500000},
+				{group = "axkva_min",  chance = 2000000}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "nightsister_rare", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+	           groups = {
+				{group = "junk", chance = 10000000},
 			},
 			lootChance = 10000000
 		}
 	},
-	weapons = {"dark_jedi_weapons_gen3"},
+	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
 	attacks = merge(lightsabermaster)
 }

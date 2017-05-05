@@ -1,18 +1,19 @@
 taung_warrior = Creature:new {
 	objectName = "",
-	customName = "Taung Warrior",
+	randomNameType = NAME_GENERIC,
+	randomNameTag = true,
 	socialGroup = "death_watch",
 	pvpFaction = "death_watch",
 	faction = "",
-	level = 150,
+	level = 250,
 	chanceHit = 40,
-	damageMin = 800,
-	damageMax = 1500,
+	damageMin = 750,
+	damageMax = 1250,
 	baseXp = 15000,
-	baseHAM = 100000,
-	baseHAMmax = 100000,
-	armor = 3,
-	resists = {65,65,75,65,50,40,95,50,75},
+	baseHAM = 95000,
+	baseHAMmax = 125000,
+	armor = 1,
+	resists = {70,70,70,70,70,70,70,70,35},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,21 +30,28 @@ taung_warrior = Creature:new {
 
 	templates = {"object/mobile/dressed_death_watch_red.iff"},
 	lootGroups = {
-		{
-			groups = {
-				{group = "death_watch_bunker_commoners", chance = 6000000},
-				{group = "death_watch_bunker_lieutenants", chance = 4000000}
-			},
-			lootChance = 1000000
-		}
+    {
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+
+  },
+      lootChance = 10000000
+  },
+  {
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+
+  },
+      lootChance = 10000000
+  },
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
-	attacks = {
-		{"defaultattack", ""},
-		{"intimidationattack","intimidationChance=50"},
-		{"knockdownattack","knockdownChance=50"}
-	}
+	attacks = merge(brawlermaster,marksmanmaster,fencermaster,commandomaster,riflemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(taung_warrior, "taung_warrior")
