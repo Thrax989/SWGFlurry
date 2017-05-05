@@ -4,12 +4,12 @@ taiken_dark_apprentice = Creature:new {
   level = 275,
   chanceHit = 20.00,
   damageMin = 600,
-  damageMax = 1200,
+  damageMax = 800,
   baseXp = 0,
-  baseHAM = 100000,
-  baseHAMmax = 100000,
-  armor = 1,
-  resists = {50,50,50,50,50,50,50,-1},
+  baseHAM = 20000,
+  baseHAMmax = 50000,
+  armor = 0,
+  resists = {20,20,20,20,20,20,20,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -57,7 +57,19 @@ taiken_dark_apprentice = Creature:new {
 },
 {
             groups = {
-            {group = "junk", chance = 10000000}
+            {group = "saberhand27", chance = 10000000}
+},
+            lootChance = 10000000
+},
+{
+            groups = {
+            {group = "saberhand27", chance = 10000000}
+},
+            lootChance = 10000000
+},
+{
+            groups = {
+            {group = "saberhand27", chance = 10000000}
 },
             lootChance = 10000000
 },
