@@ -66,7 +66,7 @@ meatlump_trooper = Creature:new {
       groups = {
         {group = "neck_crafter", chance = 10000000}
   },
-      lootChance = 10000000
+      lootChance = 1000000
   },
   {
       groups = {
