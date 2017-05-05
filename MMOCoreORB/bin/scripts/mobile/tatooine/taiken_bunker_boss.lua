@@ -10,7 +10,7 @@ taiken_bunker_boss = Creature:new {
   baseHAM = 1500000,
   baseHAMmax = 1500000,
   armor = 3,
-  resists = {95,95,95,95,95,95,95,95,95},
+  resists = {90,90,90,90,90,90,90,90,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -121,10 +121,10 @@ taiken_bunker_boss = Creature:new {
                      lootChance = 10000000
 },
 },
-  weapons = {"dark_jedi_weapons_gen4"},
+  weapons = {"dark_trooper_weapons"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/fancy",
-  attacks = merge(lightsabermaster,forcewielder,forcepowermaster)
+  attacks = merge(fencermaster,riflemanmaster,brawlermaster,marksmanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(taiken_bunker_boss, "taiken_bunker_boss")
