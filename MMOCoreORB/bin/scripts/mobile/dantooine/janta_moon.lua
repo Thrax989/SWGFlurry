@@ -73,6 +73,18 @@ janta_moon = Creature:new {
 },
             lootChance = 10000000
 },
+{
+          groups = {
+                   {group = "saberhand27", chance = 10000000}
+},
+          lootChance = 10000000
+},
+{
+          groups = {
+                   {group = "saberhand27", chance = 10000000}
+},
+          lootChance = 10000000
+},
 },
 
   weapons = {"mixed_force_weapons"},
