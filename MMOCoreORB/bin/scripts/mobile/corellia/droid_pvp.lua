@@ -38,7 +38,7 @@ droid_pvp = Creature:new {
 			lootChance = 10000000
 		},
 	},
-	weapons = {"nyaxs_weapons", "dark_jedi_weapons_gen4},
+	weapons = {"nyaxs_weapons", "dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(marksmanmaster,riflemanmaster,carbineermaster,lightsabermaster)
