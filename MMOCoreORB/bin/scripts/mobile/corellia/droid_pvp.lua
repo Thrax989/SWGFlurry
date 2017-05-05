@@ -27,9 +27,7 @@ droid_pvp = Creature:new {
 	diet = HERBIVORE,
         scale = 2.0,
 	
-		templates = {"object/mobile/battle_droid.iff"
-		     "object/mobile/c_3po.iff"
-	},
+		templates = {"object/mobile/c_3po.iff"},
 	lootGroups = {
 		{
 		groups = {
