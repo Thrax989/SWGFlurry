@@ -4,15 +4,15 @@ shadow_collective_sc87 = Creature:new {
 	socialGroup = "death_watch",
 	pvpFaction = "death_watch",
 	faction = "",
-	level = 225,
-	chanceHit = 15,
-	damageMin = 1200,
-	damageMax = 2300,
+	level = 300,
+	chanceHit = 75.00,
+	damageMin = 1750,
+	damageMax = 3750,
 	baseXp = 19000,
-	baseHAM = 1500000,
-	baseHAMmax = 1500000,
-	armor = 2,
-	resists = {85,95,100,60,100,25,40,85,-1},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
+	baseHAM = 1000000,
+	baseHAMmax = 1250000,
+	armor = 3,
+	resists = {50,50,50,50,50,50,50,50,35},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -31,12 +31,65 @@ shadow_collective_sc87 = Creature:new {
 	scale = 1.5,
 	lootGroups = {
 		{
-			groups = {
-				{group = "death_watch_bunker_commoners", chance = 10000000}
-			},
-			lootChance = 10000000
-		}
-	},
+	groups = {
+		{group = "armor_attachments", chance = 5000000},
+                {group = "clothing_attachments", chance = 5000000}
+    },
+		lootChance = 10000000
+    },
+    {
+      	 groups = {
+        	{group = "clothing_attachments", chance = 5000000},
+        	{group = "armor_attachments", chance = 5000000}
+    },
+      		lootChance = 10000000
+    },
+    {
+      	 groups = {
+        	{group = "clothing_attachments", chance = 5000000},
+        	{group = "armor_attachments", chance = 5000000}
+    },
+      		lootChance = 10000000
+    },
+    {
+      	 groups = {
+        	{group = "clothing_attachments", chance = 5000000},
+        	{group = "armor_attachments", chance = 5000000}
+    },
+      		lootChance = 10000000
+    },
+    {
+    	 groups = {
+		{group = "g_named_crystals", chance = 10000000}
+    },
+    		lootChance = 5000000
+    },
+    {
+      	 groups = {
+        	{group = "geonosian_common", chance = 5000000},
+        	{group = "apocalypse", chance = 5000000}
+    },
+      		lootChance = 10000000
+    },
+    {
+      	 groups = {
+        	{group = "krayt_dragon_common2", chance = 10000000},
+    },
+      		lootChance = 10000000
+    },
+    {
+      	 groups = {
+        	{group = "nge2", chance = 10000000}
+    },
+      		lootChance = 5000000
+    },
+    {
+      	 groups = {
+        	{group = "saberhand27", chance = 10000000}
+    },
+      		lootChance = 5000000
+    },
+    },
 	weapons = {"dark_jedi_weapons_gen3"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(lightsabermaster)

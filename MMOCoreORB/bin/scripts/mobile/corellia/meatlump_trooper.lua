@@ -79,7 +79,7 @@ meatlump_trooper = Creature:new {
   },
   {
       groups = {
-        {group = "skill_buffs", chance = 5000000}
+        {group = "skill_buffs", chance = 10000000}
   },
       lootChance = 10000000
   },

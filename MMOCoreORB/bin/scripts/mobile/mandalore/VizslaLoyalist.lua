@@ -1,18 +1,19 @@
 vizsla_loyalist = Creature:new {
 	objectName = "",
-	customName = "Vizsla Loyalist",
+	randomNameType = NAME_GENERIC,
+	randomNameTag = true,
 	socialGroup = "death_watch",
 	pvpFaction = "death_watch",
 	faction = "",
-	level = 150,
+	level = 250,
 	chanceHit = 40,
-	damageMin = 800,
-	damageMax = 1500,
+	damageMin = 750,
+	damageMax = 1250,
 	baseXp = 15000,
-	baseHAM = 100000,
-	baseHAMmax = 100000,
-	armor = 3,
-	resists = {65,65,75,65,50,40,95,50,75},
+	baseHAM = 95000,
+	baseHAMmax = 125000,
+	armor = 1,
+	resists = {70,70,70,70,70,70,70,70,35},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,19 +30,24 @@ vizsla_loyalist = Creature:new {
 
 	templates = {"object/mobile/dressed_death_watch_gold.iff"},
 	lootGroups = {
-		{
-			groups = {
-				{group = "death_watch_bunker_overlord_shared", chance =  10000000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "death_watch_bunker_overlord_shared", chance =  500000},
-				{group = "death_watch_bunker_overlord_quest", chance  = 9500000}
-			},
-			lootChance = 5000000
-		}
+    {
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+
+  },
+      lootChance = 10000000
+  },
+  {
+      groups = {
+        {group = "junk", chance = 5000000},
+        {group = "armor_attachments", chance = 2500000},
+        {group = "clothing_attachments", chance = 2500000}
+
+  },
+      lootChance = 10000000
+  },
 	},
 	weapons = {"dark_trooper_weapons"},
 	conversationTemplate = "",

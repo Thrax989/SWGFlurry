@@ -186,6 +186,22 @@ class CreatureObject extends TangibleObject {
 	public static final int ZABRAK = 7;
 	public static final int ITHORIAN = 0x21;
 	public static final int SULLUSTAN = 0x31;
+	public static final int HUTT = 31;
+	public static final int NAUTOLAN = 0xE6;
+	public static final int TOGRUTA = 0xE7;
+	public static final int CHISS = 0xE8;
+	public static final int DEVARONIAN = 17;
+	public static final int GRAN = 28;
+	public static final int ISHITIB = 0xE9;
+	public static final int NIKTO = 42;
+	public static final int QUARREN = 46;
+	public static final int SMC = 0xEA;
+	public static final int WEEQUAY = 55;
+	public static final int AQUALISH = 9;
+	public static final int BITH = 12;
+	public static final int GOTAL = 27;
+	public static final int TALZ = 50;
+
 
 	public static final int MALE = 0;
 	public static final int FEMALE = 1;
@@ -1832,6 +1848,38 @@ class CreatureObject extends TangibleObject {
 			return "ithorian";
 		else if(species == 0x31)
 			return "sullustan";
+		else if(species == 31)
+			return "hutt";
+		else if(species == 0xE6)
+			return "nautolan";
+		else if(species == 0xE7)
+			return "togruta";
+		else if(species == 0xE8)
+			return "chiss";
+		else if(species == 17)
+			return "devaronian";
+		else if(species == 28)
+			return "gran";
+		else if(species == 32)
+			return "ishitib";
+		else if(species == 0xE9)
+			return "nightsister";
+		else if(species == 42)
+			return "nikto";
+		else if(species == 46)
+			return "quarren";
+		else if(species == 0xEA)
+			return "smc";
+		else if(species == 55)
+			return "weequay";
+		else if(species == 9)
+			return "aqualish";
+		else if(species == 12)
+			return "bith";
+		else if(species == 27)
+			return "gotal";
+		else if(species == 50)
+			return "talz";
 		else
 			return "";
 	}

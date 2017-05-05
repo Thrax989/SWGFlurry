@@ -2,18 +2,17 @@ droid_pvp_screenplay = ScreenPlay:new {
 	numberOfActs = 1,
 
 	screenplayName = "droid_pvp_screenplay ",
-
 }
 
 registerScreenPlay("droid_pvp_screenplay", true)
 
 function droid_pvp_screenplay:start()
-	if (isZoneEnabled("corellia")) then
+	if (isZoneEnabled("kaas")) then
 		self:spawnMobiles()
 	end
 end
 
-functiondroid_pvp_screenplay:spawnMobiles()
+function droid_pvp_screenplay:spawnMobiles()
   	spawnMobile("kaas", "droid_pvp", 300, -5186,80,-2190,15, 0)
 	spawnMobile("kaas", "droid_pvp", 300, -5183,80,-2193,15, 0)
 	spawnMobile("kaas", "droid_pvp", 300, -5181,80,-2195,15, 0)
@@ -48,5 +47,4 @@ functiondroid_pvp_screenplay:spawnMobiles()
 	spawnMobile("kaas", "droid_pvp", 300, -5075,80,-2287,15, 0)
 	spawnMobile("kaas", "droid_pvp", 300, -5072,80,-2287,15, 0)
 	spawnMobile("kaas", "droid_pvp", 300, -5069,80,-2287,15, 0)
-	
 end
