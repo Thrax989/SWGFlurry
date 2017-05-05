@@ -42,33 +42,7 @@
 
 
 object_tangible_loot_misc_mt_soup = object_tangible_loot_misc_shared_mt_soup:new {
- useCount = 1,
- templateType = CONSUMABLE,
- 
-  duration = 180,
-	filling = 0,
-	nutrition = 0,
 
-	effectType = 1,
-
-	fillingMin = 0,
-	fillingMax = 0,
-
-	flavorMin = 0,
-	flavorMax = 0,
-	nutritionMin = 0,
-	nutritionMax = 0,
-	quantityMin = 0,
-	quantityMax = 0,
-	
-	modifiers = { "health", 1500, "mind", 1500, "action", 1500, },
-
-	buffName = "Skywalkers_soup",
-	buffCRC = 0,
-	speciesRestriction = "",
-	
-	consumableType = 5,
-	
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_mt_soup, "object/tangible/loot/misc/mt_soup.iff")

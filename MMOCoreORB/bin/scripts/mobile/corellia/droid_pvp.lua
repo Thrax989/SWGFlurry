@@ -3,7 +3,7 @@ droid_pvp = Creature:new {
 	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
-	level = 150,
+	level = 300,
 	chanceHit = 50.00,
 	damageMin = 1000,
 	damageMax = 1750,
@@ -27,21 +27,35 @@ droid_pvp = Creature:new {
 	diet = HERBIVORE,
         scale = 2.0,
 	
-	templates = {"object/mobile/battle_droid.iff",},
+		templates = {"object/mobile/battle_droid.iff"
+		     "object/mobile/c_3po.iff"
+	},
 	lootGroups = {
 		{
 		groups = {
-				{group = "junk", chance = 9500000},
-				{group = "pvp_foods_lg", chance = 500000}
+				{group = "armor_attachments", chance = 4500000},
+				{group = "clothing_attachments", chance = 4500000},
+				{group = "looted_container", chance = 750000},
+				{group = "tokens_lg", chance = 250000}
+
+			},
+			lootChance = 10000000
+		},
+		{
+		groups = {
+				{group = "armor_attachments", chance = 4500000},
+				{group = "clothing_attachments", chance = 4500000},
+				{group = "looted_container", chance = 750000},
+				{group = "tokens_lg", chance = 250000}
 
 			},
 			lootChance = 10000000
 		},
 	},
-	weapons = {"nyaxs_weapons", "dark_jedi_weapons_gen4"},
+	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(marksmanmaster,riflemanmaster,carbineermaster,lightsabermaster)
+	attacks = merge(fencermaster,brawlermaster,swordsmanmaster,lightsabermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(droid_pvp, "droid_pvp")
