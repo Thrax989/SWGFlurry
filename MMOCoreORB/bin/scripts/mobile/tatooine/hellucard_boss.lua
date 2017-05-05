@@ -124,7 +124,7 @@ hellucard_boss = Creature:new {
      },
      {
 			 groups = {
-				 {group = "skill_buff_jedi", chance = 10000000}
+				 {group = "nectar_buff_f01", chance = 10000000}
      },
 			          lootChance = 10000000
      },
