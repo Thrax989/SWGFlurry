@@ -109,7 +109,7 @@ fallen_jedi_h01 = Creature:new {
      },
      {
 			 groups = {
-				 {group = "skill_buff_jedi", chance = 10000000}
+				 {group = "saberhand26", chance = 10000000}
      },
 			          lootChance = 2000000
      },
@@ -122,15 +122,15 @@ fallen_jedi_h01 = Creature:new {
      {
           		 groups = {
             			 {group = "nge1", chance = 5000000},
-                   {group = "nge2", chance = 5000000}
+                   		 {group = "nge2", chance = 5000000}
      },
           		          lootChance = 2000000
      },
      {
-             groups = {
-                 {group = "nge3", chance = 10000000}
+             		groups = {
+                 		{group = "nge3", chance = 10000000}
      },
-                     lootChance = 2000000
+                     		lootChance = 2000000
      },
      {
         		 groups = {
