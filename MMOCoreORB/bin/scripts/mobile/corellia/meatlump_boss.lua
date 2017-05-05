@@ -98,9 +98,9 @@ meatlump_king = Creature:new {
      lootChance = 10000000
   },
   },
-  weapons = {"dark_jedi_weapons_gen4"},
+  weapons = {"dark_trooper_weapons"},
 reactionStf = "@npc_reaction/slang",
-attacks = merge(lightsabermaster,forcewielder,forcepowermaster)
+attacks = merge(fencermaster,riflemanmaster,brawlermaster,marksmanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(meatlump_king, "meatlump_king")

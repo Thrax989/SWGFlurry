@@ -73,7 +73,7 @@ engineer_boss = Creature:new {
     },
     {
       	groups = {
-        	{group = "av_21_pp", chance = 10000000},
+        	{group = "nectar_buff_f01", chance = 10000000},
     },
       		lootChance = 8000000
     },

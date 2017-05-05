@@ -29,13 +29,13 @@ hellucard_boss = Creature:new {
 	scale = 1.2,
 
 	templates = {"object/mobile/mos_taike_guard_old.iff"},
-  outfit = "custom_armor_c08_outfit",
+  	outfit = "custom_armor_c08_outfit",
   lootGroups = {
 	{
 			groups = {
         			{group = "pearls_flawless", chance = 5000000},
-				      {group = "armor_attachments", chance = 2500000},
-				      {group = "clothing_attachments", chance = 2500000}
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
    },
 			        lootChance = 10000000
    },
@@ -48,10 +48,10 @@ hellucard_boss = Creature:new {
       			        lootChance = 10000000
    },
    {
-      	 groups = {
+      	 		groups = {
         			{group = "pearls_flawless", chance = 5000000},
-				      {group = "armor_attachments", chance = 2500000},
-				      {group = "clothing_attachments", chance = 2500000}
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
    },
       			        lootChance = 10000000
    },
@@ -92,11 +92,11 @@ hellucard_boss = Creature:new {
       			       	 lootChance = 10000000
    },
    {
-           groups = {
-             {group = "armor_attachments", chance = 5000000},
-             {group = "clothing_attachments", chance = 5000000}
+          		 groups = {
+             			{group = "armor_attachments", chance = 5000000},
+             			{group = "clothing_attachments", chance = 5000000}
    },
-                    lootChance = 10000000
+                    		lootChance = 10000000
    },
    {
 			groups = {
@@ -137,15 +137,15 @@ hellucard_boss = Creature:new {
      {
           		 groups = {
             			 {group = "nge1", chance = 5000000},
-                   {group = "nge2", chance = 5000000}
+                   		 {group = "nge2", chance = 5000000}
      },
           		          lootChance = 10000000
      },
      {
-             groups = {
-                 {group = "nge3", chance = 10000000}
+             		groups = {
+                 		{group = "nge3", chance = 10000000}
      },
-                     lootChance = 10000000
+                     		lootChance = 10000000
      },
      {
           		groups = {
@@ -163,7 +163,19 @@ hellucard_boss = Creature:new {
           		groups = {
             			{group = "hellucard_neck", chance = 10000000}
     },
-              		        lootChance = 5000000
+              		        lootChance = 2000000
+    },
+    {
+          		groups = {
+            			{group = "nectar_buff_f01", chance = 10000000}
+    },
+              		        lootChance = 2000000
+    },
+    {
+        		 groups = {
+          			 {group = "saberhand27", chance = 10000000}
+    },
+           		         lootChance = 10000000
     },
     },
 
