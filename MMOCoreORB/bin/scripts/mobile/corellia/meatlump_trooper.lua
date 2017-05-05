@@ -3,8 +3,8 @@ meatlump_trooper = Creature:new {
   socialGroup = "geonosian",
   level = 250,
   chanceHit = 10.00,
-  damageMin = 200,
-  damageMax = 400,
+  damageMin = 100,
+  damageMax = 300,
   baseXp = 0,
   baseHAM = 20000,
   baseHAMmax = 60000,
@@ -66,7 +66,7 @@ meatlump_trooper = Creature:new {
       groups = {
         {group = "neck_crafter", chance = 10000000}
   },
-      lootChance = 10000000
+      lootChance = 1000000
   },
   {
       groups = {

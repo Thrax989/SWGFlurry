@@ -3,15 +3,15 @@ janta_cave_boss = Creature:new {
 	  socialGroup = "janta_tribe",
 	  faction = "janta_tribe",
 	  level = 300,
-	  chanceHit = 100.00,
-	  damageMin = 5000,
-	  damageMax = 6000,
+	  chanceHit = 80.00,
+	  damageMin = 3000,
+	  damageMax = 4000,
 	  specialDamageMult = 5.0,
 	  baseXp = 0,
 	  baseHAM = 1500000,
 	  baseHAMmax = 1500000,
 	  armor = 3,
-	  resists = {95,95,95,95,95,95,95,95,90},
+	  resists = {95,95,95,95,95,95,95,95,-1},
 	  meatType = "",
 	  meatAmount = 0,
 	  hideType = "",
@@ -114,6 +114,12 @@ janta_cave_boss = Creature:new {
 			{group = "saberhand27", chance = 10000000}
 		},
 			lootChance = 10000000
+		},
+		{
+             		groups = {
+                     		{group = "saberhand27", chance = 10000000}
+		},
+                     	lootChance = 10000000
 		},
 		},
 weapons = {"dark_jedi_weapons_gen4"},

@@ -11,7 +11,7 @@ tusken_king = Creature:new {
 	baseHAM = 500000,
 	baseHAMmax = 500000,
 	armor = 3,
-	resists = {95,95,95,95,95,95,95,95,90},
+	resists = {90,90,90,90,90,90,90,90,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -91,7 +91,19 @@ tusken_king = Creature:new {
 				{group = "skill_buffs", chance = 10000000}
 		},
 			lootChance = 10000000
-		}
+		},
+		{
+             		groups = {
+                     		{group = "saberhand27", chance = 10000000}
+		},
+                     	lootChance = 10000000
+		},
+		{
+             		groups = {
+                     		{group = "saberhand27", chance = 10000000}
+		},
+                     	lootChance = 10000000
+		},
 		},
 	weapons = {"tusken_weapons"},
 	conversationTemplate = "",

@@ -3,14 +3,14 @@ meatlump_king = Creature:new {
   socialGroup = "geonosian",
   level = 300,
   chanceHit = 100.00,
-  damageMin = 4000,
-  damageMax = 6000,
+  damageMin = 2500,
+  damageMax = 4000,
   baseXp = 0,
   baseHAM = 1500000,
   baseHAMmax = 1500000,
   specialDamageMult = 5.0,
   armor = 3,
-  resists = {95,95,95,95,95,95,95,95,90},
+  resists = {95,95,95,95,95,95,95,95,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -98,9 +98,9 @@ meatlump_king = Creature:new {
      lootChance = 10000000
   },
   },
-  weapons = {"dark_jedi_weapons_gen4"},
+  weapons = {"dark_trooper_weapons"},
 reactionStf = "@npc_reaction/slang",
-attacks = merge(lightsabermaster,forcewielder,forcepowermaster)
+attacks = merge(fencermaster,riflemanmaster,brawlermaster,marksmanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(meatlump_king, "meatlump_king")

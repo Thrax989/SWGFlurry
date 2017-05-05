@@ -11,7 +11,7 @@ engineer_boss = Creature:new {
 	baseHAM = 600000,
 	baseHAMmax = 600000,
 	armor = 2,
-	resists = {95,95,95,95,95,95,95,95,90},
+	resists = {95,95,95,95,95,95,95,95,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -73,7 +73,7 @@ engineer_boss = Creature:new {
     },
     {
       	groups = {
-        	{group = "av_21_pp", chance = 10000000},
+        	{group = "nectar_buff_f01", chance = 10000000},
     },
       		lootChance = 8000000
     },

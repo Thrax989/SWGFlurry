@@ -4,13 +4,13 @@ taiken_bunker_boss = Creature:new {
   level = 300,
   chanceHit = 80.00,
   damageMin = 2000,
-  damageMax = 4000,
+  damageMax = 3000,
   specialDamageMult = 2.0,
   baseXp = 0,
   baseHAM = 1500000,
   baseHAMmax = 1500000,
   armor = 3,
-  resists = {95,95,95,95,95,95,95,95,95},
+  resists = {90,90,90,90,90,90,90,90,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -108,11 +108,23 @@ taiken_bunker_boss = Creature:new {
 },
                      lootChance = 10000000
 },
+{
+             groups = {
+                     {group = "saberhand27", chance = 10000000}
 },
-  weapons = {"dark_jedi_weapons_gen4"},
+                     lootChance = 10000000
+},
+{
+             groups = {
+                     {group = "saberhand27", chance = 10000000}
+},
+                     lootChance = 10000000
+},
+},
+  weapons = {"dark_trooper_weapons"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/fancy",
-  attacks = merge(lightsabermaster,forcewielder,forcepowermaster)
+  attacks = merge(fencermaster,riflemanmaster,brawlermaster,marksmanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(taiken_bunker_boss, "taiken_bunker_boss")
