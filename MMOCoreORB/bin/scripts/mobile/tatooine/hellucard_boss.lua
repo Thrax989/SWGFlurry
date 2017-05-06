@@ -26,7 +26,7 @@ hellucard_boss = Creature:new {
 	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 1.2,
+	scale = 1.0,
 
 	templates = {"object/mobile/mos_taike_guard_old.iff"},
   	outfit = "custom_armor_c08_outfit",
