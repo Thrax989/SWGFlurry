@@ -53,37 +53,31 @@ meatlump_king = Creature:new {
       groups = {
         {group = "non_jedi_ring_crafter", chance = 10000000}
   },
-      lootChance = 8000000
+      lootChance = 5000000
   },
   {
       groups = {
         {group = "neck_crafter", chance = 10000000}
   },
-      lootChance = 5000000
+      lootChance = 100000
   },
   {
       groups = {
         {group = "non_jedi_ring_crafter_second", chance = 10000000}
   },
-      lootChance = 8000000
+      lootChance = 5000000
   },
   {
       groups = {
         {group = "g_named_crystals", chance = 10000000}
   },
-      lootChance = 10000000
+      lootChance = 5000000
   },
   {
       groups = {
         {group = "saberhand27", chance = 10000000}
   },
       lootChance = 5000000
-  },
-  {
-      groups = {
-        {group = "nectar_buff_f01", chance = 10000000}
-  },
-      lootChance = 10000000
   },
   {
       groups = {
