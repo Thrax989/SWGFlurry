@@ -142,7 +142,7 @@ fallen_jedi_h01 = Creature:new {
           		groups = {
             			{group = "hellucard_neck", chance = 10000000}
     },
-              		        lootChance = 1000000
+              		        lootChance = 100000
     },
     },
 
