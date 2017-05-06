@@ -84,25 +84,25 @@ fallen_jedi_h01 = Creature:new {
 			groups = {
 				{group = "g_named_crystals", chance = 10000000}
    },
-			        lootChance = 10000000
+			        lootChance = 5000000
    },
      {
 		         groups = {
 				{group = "saberhand26", chance = 10000000}
      },
-			         lootChance = 2000000
+			         lootChance = 100000
      },
      {
 			 groups = {
 				 {group = "saberhand26", chance = 10000000}
      },
-			          lootChance = 2000000
+			          lootChance = 100000
      },
      {
         		 groups = {
           			 {group = "saberhand27", chance = 10000000}
      },
-           		         lootChance = 5000000
+           		         lootChance = 2000000
      },
      {
           		 groups = {
