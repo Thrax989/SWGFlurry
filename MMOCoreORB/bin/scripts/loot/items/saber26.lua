@@ -14,7 +14,7 @@ saber26 = {
 		{"attackhealthcost",9,9,9},
 		{"attackactioncost",9,9,9},
 		{"attackmindcost",9,9,9},
-		{"forcecost",10,10,0},
+		{"forcecost",9,10,0},
 		{"color",31,31,0},
 		{"quality",6,6,0},
 	},
