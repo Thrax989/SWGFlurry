@@ -4,7 +4,7 @@ fallen_jedi_h01 = Creature:new {
 	pvpFaction = "",
 	faction = "",
 	level = 300,
-	chanceHit = 40.00,
+	chanceHit = 100.00,
 	damageMin = 800,
 	damageMax = 1000,
 	specialDamageMult = 2.0,
@@ -117,7 +117,7 @@ fallen_jedi_h01 = Creature:new {
         		 groups = {
           			 {group = "saberhand27", chance = 10000000}
      },
-           		         lootChance = 10000000
+           		         lootChance = 5000000
      },
      {
           		 groups = {

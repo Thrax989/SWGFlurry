@@ -2,7 +2,7 @@ taiken_bunker_boss = Creature:new {
   customName = "<<< Crazy Josh >>>",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 80.00,
+  chanceHit = 100.00,
   damageMin = 2000,
   damageMax = 3000,
   specialDamageMult = 2.0,
@@ -112,13 +112,13 @@ taiken_bunker_boss = Creature:new {
              groups = {
                      {group = "saberhand27", chance = 10000000}
 },
-                     lootChance = 10000000
+                     lootChance = 5000000
 },
 {
              groups = {
                      {group = "saberhand27", chance = 10000000}
 },
-                     lootChance = 10000000
+                     lootChance = 5000000
 },
 },
   weapons = {"dark_trooper_weapons"},

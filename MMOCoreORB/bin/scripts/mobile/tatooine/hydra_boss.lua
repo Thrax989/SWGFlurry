@@ -2,7 +2,7 @@ hydra_boss = Creature:new {
   customName = "<<< Hydra Leader >>>",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 80.00,
+  chanceHit = 100.00,
   damageMin = 2000,
   damageMax = 4000,
   specialDamageMult = 3.0,
@@ -82,7 +82,7 @@ hydra_boss = Creature:new {
             groups = {
                     {group = "saberhand27", chance = 10000000}
 },
-                    lootChance = 10000000
+                    lootChance = 5000000
 },
 {
              groups = {
@@ -107,7 +107,7 @@ hydra_boss = Creature:new {
              groups = {
                      {group = "saberhand27", chance = 10000000}
 },
-                     lootChance = 10000000
+                     lootChance = 5000000
 },
 },
   weapons = {"imperial_weapons_heavy"},

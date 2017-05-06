@@ -107,19 +107,19 @@ janta_cave_boss = Creature:new {
 			groups = {
 			{group = "saberhand26", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 			{group = "saberhand27", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
              		groups = {
                      		{group = "saberhand27", chance = 10000000}
 		},
-                     	lootChance = 10000000
+                     	lootChance = 5000000
 		},
 		},
 weapons = {"dark_jedi_weapons_gen4"},
