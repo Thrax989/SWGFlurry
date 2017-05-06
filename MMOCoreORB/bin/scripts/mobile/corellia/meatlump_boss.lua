@@ -53,7 +53,7 @@ meatlump_king = Creature:new {
       groups = {
         {group = "non_jedi_ring_crafter", chance = 10000000}
   },
-      lootChance = 8000000
+      lootChance = 5000000
   },
   {
       groups = {
@@ -65,7 +65,7 @@ meatlump_king = Creature:new {
       groups = {
         {group = "non_jedi_ring_crafter_second", chance = 10000000}
   },
-      lootChance = 8000000
+      lootChance = 5000000
   },
   {
       groups = {
