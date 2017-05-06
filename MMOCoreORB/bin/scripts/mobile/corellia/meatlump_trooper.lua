@@ -55,30 +55,6 @@ meatlump_trooper = Creature:new {
   },
   {
       groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
-  },
-      lootChance = 10000000
-  },
-  {
-      groups = {
-        {group = "neck_crafter", chance = 10000000}
-  },
-      lootChance = 100000
-  },
-  {
-      groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
-  },
-      lootChance = 10000000
-  },
-  {
-      groups = {
         {group = "skill_buffs", chance = 10000000}
   },
       lootChance = 10000000
