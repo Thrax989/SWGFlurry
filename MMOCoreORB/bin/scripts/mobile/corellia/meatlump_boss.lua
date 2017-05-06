@@ -77,7 +77,7 @@ meatlump_king = Creature:new {
       groups = {
         {group = "saberhand27", chance = 10000000}
   },
-      lootChance = 5000000
+      lootChance = 100000
   },
   {
       groups = {
