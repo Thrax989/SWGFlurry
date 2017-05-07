@@ -26,10 +26,24 @@ ns_pvp = Creature:new {
 	creatureBitmask = PACK + STALKER + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-  	scale = 1.5,
+  	scale = 2.0,
 
     templates = {"object/mobile/dressed_dathomir_nightsister_axkva.iff"},
     lootGroups = {
+		{
+		groups = {
+				{group = "foods_lg", chance = 10000000}
+
+			},
+			lootChance = 10000000
+		},
+		{
+		groups = {
+				{group = "foods_lg", chance = 10000000}
+
+			},
+			lootChance = 10000000
+		},
 		{
      	groups = {
 				{group = "crystals_premium", chance = 2500000},
