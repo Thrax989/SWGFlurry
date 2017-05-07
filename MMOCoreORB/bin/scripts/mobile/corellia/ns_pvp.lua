@@ -1,5 +1,5 @@
 ns_pvp = Creature:new {
-	customName = "A Vengeful Night Sister",
+	customName = "A Vengeful Nightsister",
 	socialGroup = "nightsister",
 	pvpFaction = "",
 	faction = "nightsister",
