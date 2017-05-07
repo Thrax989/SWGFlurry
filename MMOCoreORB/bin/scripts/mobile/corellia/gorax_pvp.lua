@@ -1,5 +1,5 @@
 gorax_pvp = Creature:new {
-	customName = "A Deranged Gorax",
+	customName = "A Gorax Outcast",
 	socialGroup = "gorax",
 	pvpFaction = "",
 	faction = "",
@@ -26,10 +26,24 @@ gorax_pvp = Creature:new {
 	creatureBitmask = PACK + STALKER + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-  	scale = 1.5,
+  	scale = 0.5,
 
     templates = {"object/mobile/gorax.iff"},
     lootGroups = {
+		{
+		groups = {
+				{group = "foods_lg", chance = 10000000}
+
+			},
+			lootChance = 10000000
+		},
+		{
+		groups = {
+				{group = "foods_lg", chance = 10000000}
+
+			},
+			lootChance = 10000000
+		},
 	{
 			groups = {
 				{group = "gorax_common", chance = 6000000},
