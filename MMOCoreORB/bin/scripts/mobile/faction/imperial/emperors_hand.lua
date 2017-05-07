@@ -25,10 +25,24 @@ emperors_hand = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
+        scale = 2.0,
 	templates = {
 		"object/mobile/dressed_emperors_hand_human_female_01.iff"},
 	lootGroups = {
+		{
+		groups = {
+				{group = "foods_lg", chance = 10000000}
+
+			},
+			lootChance = 10000000
+		},
+		{
+		groups = {
+				{group = "foods_lg", chance = 10000000}
+
+			},
+			lootChance = 10000000
+		},
 		{
 			groups = {
 				{group = "holocron_dark", chance = 850000},
