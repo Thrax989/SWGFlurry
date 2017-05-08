@@ -76,7 +76,6 @@ object_draft_schematic_clothing_clothing_armor_composite_bracer_r = object_draft
 "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bracer_r.iff",
 "object/tangible/wearables/armor/infiltrator/shared_armor_infiltrator_s01_bracer_r.iff",
 "object/tangible/wearables/armor/marine/shared_armor_marine_bracer_r.iff",
-"object/tangible/wearables/armor/bounty_hunter/shared_armor_bounty_hunter_bracer_r.iff",
              }
 
 }
