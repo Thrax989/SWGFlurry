@@ -165,6 +165,19 @@ hellucard_boss = Creature:new {
     },
            		         lootChance = 10000000
     },
+        {
+        		 groups = {
+          			 {group = "saberhand26", chance = 10000000}
+    },
+           		         lootChance = 500000
+    },
+    {
+          		groups = {
+                   		{group = "backpacks_b01", chance = 5000000},
+                   		{group = "backpacks_b02", chance = 5000000}
+    },
+          			lootChance = 10000000
+    },
     },
 
 	weapons = {"weapons_h01"},
