@@ -9,8 +9,8 @@ fallen_jedi_h01 = Creature:new {
 	damageMax = 1500,
 	specialDamageMult = 2.0,
 	baseXp = 0,
-	baseHAM = 300000,
-	baseHAMmax = 300000,
+	baseHAM = 200000,
+	baseHAMmax = 200000,
 	armor = 2,
 	resists = {65,65,65,65,65,65,65,65,-1},
 	meatType = "",
@@ -116,6 +116,12 @@ fallen_jedi_h01 = Creature:new {
             			{group = "hellucard_neck", chance = 10000000}
     },
               		        lootChance = 100000
+    },
+    {
+        		 groups = {
+          			 {group = "saberhand26", chance = 10000000}
+    },
+           		         lootChance = 100000
     },
     },
 
