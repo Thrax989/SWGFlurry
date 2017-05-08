@@ -41,20 +41,20 @@ droid_pvp = Creature:new {
 		},
 		{
 		groups = {
-				{group = "armor_attachments", chance = 4500000},
-				{group = "clothing_attachments", chance = 4500000},
-				{group = "looted_container", chance = 500000},
-				{group = "tokens_lg", chance = 500000}
+				{group = "armor_attachments", chance = 4750000},
+				{group = "clothing_attachments", chance = 4750000},
+				{group = "looted_container", chance = 250000},
+				{group = "tokens_lg", chance = 250000}
 
 			},
 			lootChance = 10000000
 		},
 		{
 		groups = {
-				{group = "armor_attachments", chance = 4500000},
-				{group = "clothing_attachments", chance = 4500000},
-				{group = "looted_container", chance = 500000},
-				{group = "tokens_lg", chance = 500000}
+				{group = "armor_attachments", chance = 4750000},
+				{group = "clothing_attachments", chance = 4750000},
+				{group = "looted_container", chance = 250000},
+				{group = "tokens_lg", chance = 250000}
 
 			},
 			lootChance = 10000000
