@@ -293,6 +293,8 @@ includeFile("custom_loot/groups/wearables/jewelry/non_jedi_ring_crafter.lua")
 includeFile("custom_loot/groups/wearables/jewelry/non_jedi_ring_crafter_second.lua")
 includeFile("custom_loot/groups/wearables/jewelry/neck_crafter.lua")
 
+includeFile("custom_loot/groups/wearables/goggles_all.lua")
+
 
 includeFile("custom_loot/groups/weapons/melee/g_2h_sword_avatar_wke_toothpick.lua")
 includeFile("custom_loot/groups/weapons/melee/g_2h_sword_kashyyk.lua")

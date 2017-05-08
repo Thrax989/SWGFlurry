@@ -477,6 +477,14 @@ includeFile("custom_loot/items/wearables/jewelry/ring_medic_second.lua")
 includeFile("custom_loot/items/wearables/jewelry/ring_entertainer.lua")
 includeFile("custom_loot/items/wearables/jewelry/necklace_crafter.lua")
 
+includeFile("custom_loot/items/goggles/goggles_g01.lua")
+includeFile("custom_loot/items/goggles/goggles_g02.lua")
+includeFile("custom_loot/items/goggles/goggles_g03.lua")
+includeFile("custom_loot/items/goggles/goggles_g04.lua")
+includeFile("custom_loot/items/goggles/goggles_g05.lua")
+includeFile("custom_loot/items/goggles/goggles_g06.lua")
+
+
 
 
 --includeFile("custom_loot/items/wearables/necklace_ornamental_ratchet.lua")
