@@ -1,7 +1,7 @@
-pvp_food_four={
+pvp_food3= {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Fett's Fruit",
+	customObjectName = "Fetts Fruit",
 	directObjectTemplate = "object/tangible/item/plant/force_melon.iff",
 	craftingValues = {
 	},
@@ -9,4 +9,4 @@ pvp_food_four={
 	customizationValues = {}
 }
 
-addLootItemTemplate("pvp_food_four", pvp_food_four)
+addLootItemTemplate("pvp_food3", pvp_food3)

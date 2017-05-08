@@ -39,16 +39,6 @@ function kaas_imperial_garison:spawnMobiles()
 
 	spawnMobile("kaas", "stormtrooper", 300, 14.5, 1.0, -21.2, 0, 35791432)
 
-	-- Temple Entrance Guards
-
-	spawnMobile("kaas", "stormtrooper", 300, -5097.8, 80.0, -2362.2, -134, 0)
-	spawnMobile("kaas", "stormtrooper", 300, -5073.8, 80.0, -2346.1, -90, 0)
-	spawnMobile("kaas", "stormtrooper", 300, -5136.6, 80.0, -2358.5, 107, 0)
-	spawnMobile("kaas", "stormtrooper", 300, -5160.7, 80.0, -2340.2, 131, 0)
-	spawnMobile("kaas", "stormtrooper", 300, -5136.6, 80.0, -2376.7, 0, 0)
-	spawnMobile("kaas", "stormtrooper", 300, -5126.2, 80.0, -2376.7, 0, 0)
-	spawnMobile("kaas", "stormtrooper", 300, -5105.2, 80.0, -2376.7, 0, 0)
-
 -- Det HQ
 	spawnMobile("kaas", "stormtrooper", 200, -1.8, -6.8, -5.1, 90, 35791451)
 	spawnMobile("kaas", "stormtrooper", 200, 6.9, -6.8, -4.9, -90, 35791451)

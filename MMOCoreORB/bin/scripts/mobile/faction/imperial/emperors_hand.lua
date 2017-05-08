@@ -25,10 +25,24 @@ emperors_hand = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
+        scale = 2.0,
 	templates = {
 		"object/mobile/dressed_emperors_hand_human_female_01.iff"},
 	lootGroups = {
+		{
+		groups = {
+				{group = "foods_lg", chance = 10000000}
+
+			},
+			lootChance = 10000000
+		},
+		{
+		groups = {
+				{group = "foods_lg", chance = 10000000}
+
+			},
+			lootChance = 10000000
+		},
 		{
 			groups = {
 				{group = "holocron_dark", chance = 850000},
@@ -44,23 +58,55 @@ emperors_hand = Creature:new {
 			lootChance = 10000000
 		},
 		{
+          		groups = {
+            			{group = "acklay", chance = 10000000}
+          	},
+          		lootChance = 10000000
+        	},
+		{
 			groups = {
-				{group = "fifthgen", chance = 10000000},
+				{group = "nightsister_rare", chance = 10000000}
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "krayt_tissue_rare", chance = 10000000}
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "looted_container", chance = 10000000}
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+        			{group = "pearls_flawless", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "fifthgen", chance = 10000000}
 			},
 			lootChance = 250000
 		},
 		{
 			groups = {
-				{group = "capes", chance = 10000000},
+				{group = "capes", chance = 10000000}
 			},
 			lootChance = 250000
 		},
 		{
 			groups = {
-				{group = "g_named_crystals", chance = 10000000},
+				{group = "g_named_crystals", chance = 10000000}
 			},
-			lootChance = 250000
-		}
+			lootChance = 10000000
+		},
 	},
 	weapons = {"dark_jedi_weapons_gen3"},
 	reactionStf = "@npc_reaction/slang",

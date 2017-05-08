@@ -50,5 +50,6 @@ function KraytGraveyardScreenPlay:spawnMobiles()
 	spawnMobile("tatooine", "krayt_dragon_ancient_elder", 450, 7425.98, 6.75522, 4642.4, 341, 0) 
 	spawnMobile("tatooine", "krayt_dragon_adolescent_elder", 450, 7536.8, 25.227, 4401.88, 336, 0)
 	spawnMobile("tatooine", "krayt_dragon_ancient_elder", 450, 7535.86, 10.1094, 4730.96, 1, 0)
+	spawnMobile("tatooine", "krayt_king", 1800, 6626, 22, 4297, 259, 0)
 
 end

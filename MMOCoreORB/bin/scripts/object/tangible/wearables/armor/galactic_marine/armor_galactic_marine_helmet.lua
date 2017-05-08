@@ -89,6 +89,7 @@ object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_helmet = o
 				"object/mobile/vendor/zabrak_male.iff" },
 
 
+
 	-- Damage types in WeaponObject
 	vulnerability = NONE,
 

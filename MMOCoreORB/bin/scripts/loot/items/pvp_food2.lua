@@ -1,7 +1,7 @@
-pvp_food_three={
+pvp_food2= {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Palpatine's Pie",
+	customObjectName = "Palpatines Pie",
 	directObjectTemplate = "object/tangible/loot/misc/mt_pie.iff",
 	craftingValues = {
 	},
@@ -9,4 +9,4 @@ pvp_food_three={
 	customizationValues = {}
 }
 
-addLootItemTemplate("pvp_food_three", pvp_food_three)
+addLootItemTemplate("pvp_food2", pvp_food2)

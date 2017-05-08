@@ -1,7 +1,7 @@
-pvp_food_one={
+pvp_food1= {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Chewbacca's Casserole",
+	customObjectName = "Chewbaccas Casserole",
 	directObjectTemplate = "object/tangible/loot/misc/mt_casserole.iff",
 	craftingValues = {
 	},
@@ -9,4 +9,4 @@ pvp_food_one={
 	customizationValues = {}
 }
 
-addLootItemTemplate("pvp_food_one", pvp_food_one)
+addLootItemTemplate("pvp_food1", pvp_food1)
