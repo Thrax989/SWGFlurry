@@ -12,7 +12,7 @@ hellucard_boss = Creature:new {
 	baseHAM = 2000000,
 	baseHAMmax = 2000000,
 	armor = 3,
-	resists = {90,90,90,90,90,90,90,90,-1},
+	resists = {95,95,95,95,95,95,95,95,95},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -165,24 +165,11 @@ hellucard_boss = Creature:new {
     },
            		         lootChance = 10000000
     },
-    {
-        		 groups = {
-          			 {group = "saberhand26", chance = 10000000}
-    },
-           		         lootChance = 500000
-    },
-    {
-          		groups = {
-                   		{group = "backpacks_b01", chance = 5000000},
-                   		{group = "backpacks_b02", chance = 5000000}
-    },
-          			lootChance = 10000000
-    },
     },
 
-	weapons = {"dark_jedi_weapons_gen4"},
+	weapons = {"weapons_h01"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(lightsabermaster,forcepowermaster,forcewielder)
+	attacks = merge(brawlermaster,fencermaster)
 
 }
 
