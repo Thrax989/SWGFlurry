@@ -112,11 +112,12 @@ outbreak_boss = Creature:new {
 			lootChance = 5000000
 		},
   		{
-   			groups = {
-      				{group = "g_ep3_chiss_poacher_backpack", chance = 10000000}
-    		},
-    			lootChance = 10000000
-  		},
+          		groups = {
+                   		{group = "backpacks_b01", chance = 5000000},
+                   		{group = "backpacks_b02", chance = 5000000}
+		},
+          		lootChance = 10000000
+		},
   		{
     			groups = {
       				{group = "av_21_scheme", chance = 10000000}
