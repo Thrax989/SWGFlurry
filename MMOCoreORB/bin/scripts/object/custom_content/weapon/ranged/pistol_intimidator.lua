@@ -102,7 +102,7 @@ object_weapon_ranged_pistol_pistol_intimidator = object_weapon_ranged_pistol_sha
 	attackType = RANGEDATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
-	damageType = KINETIC,
+	damageType = STUN,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = HEAVY,
