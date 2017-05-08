@@ -10,7 +10,7 @@ tusken_witch_doctor = Creature:new {
 	baseHAM = 100000,
 	baseHAMmax = 150000,
 	armor = 1,
-	resists = {40,40,40,40,40,40,40,40,20},
+	resists = {40,40,40,40,40,40,40,40,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -63,6 +63,13 @@ tusken_witch_doctor = Creature:new {
                 	{group = "clothing_attachments", chance = 2500000}
 	},
                 	lootChance = 10000000
+	},
+	{
+          	groups = {
+                   	{group = "backpacks_b01", chance = 5000000},
+                   	{group = "backpacks_b02", chance = 5000000}
+	},
+          		lootChance = 10000000
 	},
 	},
 	weapons = {"tusken_weapons"},
