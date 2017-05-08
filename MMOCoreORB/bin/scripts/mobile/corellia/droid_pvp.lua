@@ -10,7 +10,7 @@ droid_pvp = Creature:new {
 	baseXp = 10000,
 	baseHAM = 100000,
 	baseHAMmax = 125000,
-	armor = 1,
+	armor = 0,
 	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
 	meatAmount = 0,
@@ -32,7 +32,15 @@ droid_pvp = Creature:new {
 		"object/mobile/super_battle_droid.iff"
 		},
 	lootGroups = {
-				{
+		{
+		groups = {
+				{group = "backpacks_b01", chance = 5000000},
+				{group = "backpacks_b02", chance = 5000000}
+
+			},
+			lootChance = 500000
+		},		
+		{
 		groups = {
 				{group = "foods_lg", chance = 10000000}
 
