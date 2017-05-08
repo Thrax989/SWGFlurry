@@ -26,7 +26,7 @@ hellucard_boss = Creature:new {
 	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 1.2,
+	scale = 1.0,
 
 	templates = {"object/mobile/mos_taike_guard_old.iff"},
   	outfit = "custom_armor_c08_outfit",
@@ -117,18 +117,6 @@ hellucard_boss = Creature:new {
 			        lootChance = 10000000
      },
      {
-		         groups = {
-				{group = "saberhand26", chance = 10000000}
-     },
-			         lootChance = 10000000
-     },
-     {
-			 groups = {
-				 {group = "saberhand26", chance = 10000000}
-     },
-			          lootChance = 10000000
-     },
-     {
         		 groups = {
           			 {group = "saberhand27", chance = 10000000}
      },
@@ -163,19 +151,25 @@ hellucard_boss = Creature:new {
           		groups = {
             			{group = "hellucard_neck", chance = 10000000}
     },
-              		        lootChance = 2000000
+              		        lootChance = 100000
     },
     {
           		groups = {
-            			{group = "nectar_buff_f01", chance = 10000000}
+            			{group = "skill_buffs", chance = 10000000}
     },
-              		        lootChance = 2000000
+              		        lootChance = 10000000
     },
     {
         		 groups = {
           			 {group = "saberhand27", chance = 10000000}
     },
            		         lootChance = 10000000
+    },
+    {
+        		 groups = {
+          			 {group = "saberhand26", chance = 10000000}
+    },
+           		         lootChance = 500000
     },
     },
 

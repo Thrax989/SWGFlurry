@@ -4,9 +4,9 @@ fallen_jedi_h01 = Creature:new {
 	pvpFaction = "",
 	faction = "",
 	level = 300,
-	chanceHit = 40.00,
+	chanceHit = 100.00,
 	damageMin = 800,
-	damageMax = 1000,
+	damageMax = 1500,
 	specialDamageMult = 2.0,
 	baseXp = 0,
 	baseHAM = 300000,
@@ -26,7 +26,7 @@ fallen_jedi_h01 = Creature:new {
 	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 1.2,
+	scale = 1.0,
 
 	templates = {"object/mobile/mos_taike_guard_old.iff"},
   outfit = "custom_armor_c09_outfit",
@@ -67,13 +67,6 @@ fallen_jedi_h01 = Creature:new {
       			        lootChance = 10000000
    },
    {
-     	 		 groups = {
-        			 {group = "armor_attachments", chance = 5000000},
-        			 {group = "clothing_attachments", chance = 5000000}
-   },
-      			          lootChance = 10000000
-   },
-   {
       			groups = {
         			{group = "armor_attachments", chance = 5000000},
        	 			{group = "clothing_attachments", chance = 5000000}
@@ -88,36 +81,16 @@ fallen_jedi_h01 = Creature:new {
       			       	 lootChance = 10000000
    },
    {
-           groups = {
-             {group = "armor_attachments", chance = 5000000},
-             {group = "clothing_attachments", chance = 5000000}
-   },
-                    lootChance = 10000000
-   },
-   {
 			groups = {
 				{group = "g_named_crystals", chance = 10000000}
    },
-			        lootChance = 10000000
+			        lootChance = 5000000
    },
-
-     {
-		         groups = {
-				{group = "saberhand26", chance = 10000000}
-     },
-			         lootChance = 2000000
-     },
-     {
-			 groups = {
-				 {group = "saberhand26", chance = 10000000}
-     },
-			          lootChance = 2000000
-     },
      {
         		 groups = {
           			 {group = "saberhand27", chance = 10000000}
      },
-           		         lootChance = 10000000
+           		         lootChance = 2000000
      },
      {
           		 groups = {
@@ -142,7 +115,13 @@ fallen_jedi_h01 = Creature:new {
           		groups = {
             			{group = "hellucard_neck", chance = 10000000}
     },
-              		        lootChance = 1000000
+              		        lootChance = 100000
+    },
+    {
+        		 groups = {
+          			 {group = "saberhand26", chance = 10000000}
+    },
+           		         lootChance = 500000
     },
     },
 

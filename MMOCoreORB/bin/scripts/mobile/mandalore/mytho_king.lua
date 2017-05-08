@@ -101,14 +101,7 @@ lootGroups = {
 		{"creatureareaknockdown","KnockdownChance=50"},
 		{"dizzyattack","DizzyChance=50"},
 		{"stunattack","StunChance=50"},
-		{"mildpoison","PoisonChance=50"},
 		{"intimidationattack","IntimidationChance=50"},
-		{"mediumpoison","PoisonChance=50"},
-		{"creatureareapoison","PoisonChance=50"},
-		{"mediumdisease","DiseaseChance=50"},
-		{"milddisease","DiseaseChance=50"},
-		{"strongpoison","PoisonChance=50"},
-		{"strongdisease","DiseaseChance=50"},
 		{"creatureareaattack",""}
  	}
 }

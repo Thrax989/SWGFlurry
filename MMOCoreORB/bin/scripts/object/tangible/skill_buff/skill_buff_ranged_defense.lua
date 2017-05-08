@@ -48,7 +48,7 @@ object_tangible_skill_buff_skill_buff_ranged_defense = object_tangible_skill_buf
 	
 	duration = 900,
 	useCount = 15,
-	modifiers = { "ranged_defense", 50 },
+	modifiers = { "ranged_defense", 25 },
 	buffName = "ranged_defense",
 	buffCRC = 0xA6407812
 }

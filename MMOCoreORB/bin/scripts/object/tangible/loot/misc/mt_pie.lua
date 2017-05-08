@@ -42,7 +42,33 @@
 
 
 object_tangible_loot_misc_mt_pie = object_tangible_loot_misc_shared_mt_pie:new {
+  templateType = CONSUMABLE,
 
+    useCount = 3,
+  	duration = 120,
+  	filling = 0,
+  	nutrition = 0,
+
+  	effectType = 1,
+
+  	fillingMin = 0,
+  	fillingMax = 0,
+
+  	flavorMin = 0,
+  	flavorMax = 0,
+  	nutritionMin = 0,
+  	nutritionMax = 0,
+  	quantityMin = 0,
+  	quantityMax = 0,
+
+  	modifiers = { "mind", 1000, "focus", 500, "willpower", 500 },
+
+  	buffName = "Palps_Pie",
+  	buffCRC = 0,
+  	speciesRestriction = "",
+
+  	consumableType = 1,
+  	foragedFood = 1
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_mt_pie, "object/tangible/loot/misc/mt_pie.iff")
