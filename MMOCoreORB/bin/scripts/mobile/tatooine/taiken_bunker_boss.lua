@@ -1,11 +1,11 @@
 taiken_bunker_boss = Creature:new {
-  customName = "<<< Crazy Josh >>>",
+  customName = "<<< Battle Master Helix >>>",
   socialGroup = "geonosian",
   level = 300,
   chanceHit = 100.00,
   damageMin = 2000,
   damageMax = 3000,
-  specialDamageMult = 2.0,
+  specialDamageMult = 3.0,
   baseXp = 0,
   baseHAM = 1500000,
   baseHAMmax = 1500000,
@@ -119,6 +119,13 @@ taiken_bunker_boss = Creature:new {
                      {group = "saberhand27", chance = 10000000}
 },
                      lootChance = 5000000
+},
+{
+              groups = {
+                      {group = "backpacks_b01", chance = 5000000},
+                      {group = "backpacks_b02", chance = 5000000}
+},
+                       lootChance = 10000000
 },
 },
   weapons = {"dark_trooper_weapons"},
