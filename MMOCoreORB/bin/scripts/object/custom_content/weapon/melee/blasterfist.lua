@@ -102,7 +102,7 @@ object_weapon_melee_special_blasterfist = object_weapon_melee_special_shared_bla
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
-	damageType = BLAST,
+	damageType = STUN,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = HEAVY,
@@ -147,10 +147,10 @@ object_weapon_melee_special_blasterfist = object_weapon_melee_special_shared_bla
 	maxRange = 3,
 	maxRangeAccuracy = 10,
 
-	minDamage = 900,
-	maxDamage = 1200,
+	minDamage = 700,
+	maxDamage = 850,
 
-	attackSpeed = 1,
+	attackSpeed = 2,
 
 	woundsRatio = 8,
 
