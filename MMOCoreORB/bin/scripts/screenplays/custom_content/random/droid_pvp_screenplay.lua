@@ -47,5 +47,5 @@ function droid_pvp_screenplay:spawnMobiles()
        spawnMobile("kaas", "droid_pvp", 300, -5089,80,-2141,15, 0)
        spawnMobile("kaas", "droid_pvp", 300, -5086,80,-2141,15, 0)
        spawnMobile("kaas", "ns_pvp", 1800, -5050,80,-2417,15, 0)
-       spawnMobile("kaas", "gorax_pvp", 1800, -5191,81,-2417,15, 0)
+       spawnMobile("kaas", "gorax_pvp", 1800, -5191,80,-2417,15, 0)
 end
