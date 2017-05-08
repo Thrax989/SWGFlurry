@@ -76,7 +76,6 @@ object_draft_schematic_clothing_clothing_armor_composite_helmet = object_draft_s
 "object/tangible/wearables/armor/infiltrator/shared_armor_infiltrator_s01_helmet.iff",
 "object/tangible/wearables/armor/marine/shared_armor_marine_helmet.iff",
 "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_helmet.iff",
-"object/tangible/wearables/armor/bounty_hunter/shared_armor_bounty_hunter_helmet.iff",
              }
 
 }

@@ -76,7 +76,6 @@ object_draft_schematic_clothing_clothing_armor_composite_boots = object_draft_sc
 "object/tangible/wearables/armor/marine/shared_armor_marine_boots.iff",
 "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_boots.iff",
 "object/tangible/wearables/armor/infiltrator/shared_armor_infiltrator_s01_boots.iff",
-"object/tangible/wearables/armor/bounty_hunter/shared_armor_bounty_hunter_boots.iff",
              }
 
 }

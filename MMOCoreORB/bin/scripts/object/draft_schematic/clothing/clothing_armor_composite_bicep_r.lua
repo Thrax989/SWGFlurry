@@ -76,7 +76,6 @@ object_draft_schematic_clothing_clothing_armor_composite_bicep_r = object_draft_
 "object/tangible/wearables/armor/marine/shared_armor_marine_bicep_r.iff",
 "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_r.iff",
 "object/tangible/wearables/armor/infiltrator/shared_armor_infiltrator_s01_bicep_r.iff",
-"object/tangible/wearables/armor/bounty_hunter/shared_armor_bounty_hunter_bicep_r.iff",
              }
 
 }
