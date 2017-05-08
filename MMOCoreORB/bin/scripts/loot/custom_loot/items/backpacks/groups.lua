@@ -1,6 +1,7 @@
 includeFile("custom_loot/groups/backpacks/g_ep3_chiss_poacher_backpack.lua")
 includeFile("custom_loot/groups/backpacks/backpacks_b01.lua")
 includeFile("custom_loot/groups/backpacks/backpacks_b02.lua")
+includeFile("custom_loot/groups/weapons/melee/stun_weapons.lua")
 
 includeFile("custom_loot/groups/crystals/g_named_crystals.lua")
 
