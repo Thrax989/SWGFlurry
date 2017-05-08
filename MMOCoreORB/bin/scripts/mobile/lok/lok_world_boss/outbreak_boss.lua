@@ -5,7 +5,7 @@ outbreak_boss = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 100.00,
-	damageMin = 5000,
+	damageMin = 6000,
 	damageMax = 6000,
 	specialDamageMult = 5.0,
 	baseXp = 0,
@@ -187,6 +187,20 @@ outbreak_boss = Creature:new {
 		{
               		groups = {
             			{group = "skill_buffs", chance = 10000000}
+    		},
+              		lootChance = 10000000
+		},
+		{
+              		groups = {
+            			{group = "stun_weapons", chance = 5000000}
+				{group = "stun_ranged", chance = 5000000}
+    		},
+              		lootChance = 10000000
+    		},
+		{
+              		groups = {
+            			{group = "stun_weapons", chance = 5000000}
+				{group = "stun_ranged", chance = 5000000}
     		},
               		lootChance = 10000000
     		},
