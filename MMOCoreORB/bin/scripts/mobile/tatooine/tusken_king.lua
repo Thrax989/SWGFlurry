@@ -6,10 +6,10 @@ tusken_king = Creature:new {
 	chanceHit = 30.00,
 	damageMin = 2000,
 	damageMax = 4000,
-	specialDamageMult = 3.0,
+	specialDamageMult = 2.0,
 	baseXp = 0,
-	baseHAM = 500000,
-	baseHAMmax = 500000,
+	baseHAM = 400000,
+	baseHAMmax = 400000,
 	armor = 3,
 	resists = {90,90,90,90,90,90,90,90,-1},
 	meatType = "",
@@ -103,6 +103,13 @@ tusken_king = Creature:new {
                      		{group = "saberhand27", chance = 10000000}
 		},
                      	lootChance = 10000000
+		},
+		{
+          		groups = {
+                   		{group = "backpacks_b01", chance = 5000000},
+                   		{group = "backpacks_b02", chance = 5000000}
+		},
+          		lootChance = 10000000
 		},
 		},
 	weapons = {"tusken_weapons"},

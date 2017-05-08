@@ -85,6 +85,13 @@ taiken_moff = Creature:new {
 },
              lootChance = 10000000
 },
+{
+              groups = {
+              {group = "backpacks_b01", chance = 5000000},
+              {group = "backpacks_b02", chance = 5000000}
+},
+               lootChance = 10000000
+},
 },
     weapons = {"imperial_weapons_heavy"},
     conversationTemplate = "",
