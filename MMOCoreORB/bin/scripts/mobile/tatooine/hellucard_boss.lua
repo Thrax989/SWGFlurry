@@ -165,7 +165,7 @@ hellucard_boss = Creature:new {
     },
            		         lootChance = 10000000
     },
-    {
+        {
         		 groups = {
           			 {group = "saberhand26", chance = 10000000}
     },
@@ -180,9 +180,9 @@ hellucard_boss = Creature:new {
     },
     },
 
-	weapons = {"dark_jedi_weapons_gen4"},
+	weapons = {"weapons_h01"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(lightsabermaster,forcepowermaster,forcewielder)
+	attacks = merge(brawlermaster,fencermaster)
 
 }
 
