@@ -32,8 +32,8 @@ ns_pvp = Creature:new {
     lootGroups = {
 		{
 		groups = {
-				{group = "backpacks_b01, chance = 5000000},
-			        {group = "backpacks_b02, chance = 5000000}
+				{group = "backpacks_b01", chance = 5000000},
+			        {group = "backpacks_b02", chance = 5000000}
 
 			},
 			lootChance = 10000000
