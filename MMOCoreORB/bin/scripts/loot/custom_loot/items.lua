@@ -10,6 +10,21 @@ JUNKGUNGAN = 128
 JUNKCORSEC = 256
 
 includeFile("custom_loot/items/backpacks/ep3_chiss_poacher_backpack.lua")
+includeFile("custom_loot/items/backpacks/tauntaun_skull.lua")
+includeFile("custom_loot/items/backpacks/galactic_marine.lua")
+includeFile("custom_loot/items/backpacks/gmf_01.lua")
+includeFile("custom_loot/items/backpacks/krayt_skull.lua")
+includeFile("custom_loot/items/backpacks/rebel_snow.lua")
+includeFile("custom_loot/items/backpacks/rebel_ace.lua")
+includeFile("custom_loot/items/backpacks/imperial_ace.lua")
+includeFile("custom_loot/items/backpacks/neutral_ace.lua")
+includeFile("custom_loot/items/backpacks/snowtrooper.lua")
+includeFile("custom_loot/items/backpacks/nym_backpack.lua")
+includeFile("custom_loot/items/backpacks/rebel_endor_backpack.lua")
+includeFile("custom_loot/items/backpacks/imperial_endor_backpack.lua")
+includeFile("custom_loot/items/backpacks/armored_backpack.lua")
+includeFile("custom_loot/items/backpacks/recon_backpack.lua")
+includeFile("custom_loot/items/backpacks/yoda_backpack.lua")
 
 includeFile("custom_loot/items/player_house_deeds/atat_house_loot_deed.lua")
 includeFile("custom_loot/items/player_house_deeds/bespin_house_loot_deed.lua")
