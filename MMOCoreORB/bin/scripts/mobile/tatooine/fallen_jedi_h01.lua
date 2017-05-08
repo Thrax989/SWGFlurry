@@ -109,7 +109,7 @@ fallen_jedi_h01 = Creature:new {
         		 groups = {
           			 {group = "nectar_buff_f01", chance = 10000000}
     },
-            		         lootChance = 10000000
+            		         lootChance = 5000000
     },
     {
           		groups = {
