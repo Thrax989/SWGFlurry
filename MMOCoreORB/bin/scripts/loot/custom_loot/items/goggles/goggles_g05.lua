@@ -6,13 +6,7 @@ goggles_g05 = {
   craftingValues = {},
   customizationStringNames = {},
   customizationValues = {},
-  skillMods = {
-    {"onehandlightsaber_accuracy", 25},
-    {"polearmlightsaber_accuracy", 25},
-    {"twohandlightsaber_accuracy", 25},
-    {"jedi_force_power_regen", 25},
-    {"group_slope_move", 25},
-  }
+  skillMods = {},
 }
 
 addLootItemTemplate("goggles_g05", goggles_g05)
