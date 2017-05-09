@@ -271,7 +271,7 @@ ComponentManager::ComponentManager() {
 	components.put("ForceCrystalMenuComponent", new ForceCrystalMenuComponent());
 	components.put("ForceFrsLMenuComponent", new ForceFrsLMenuComponent());
 	components.put("ForceFrsDMenuComponent", new ForceFrsDMenuComponent());
-	components.put("ForceBuffMenuComponent", new ForceFrsDMenuComponent());
+	components.put("ForceBuffMenuComponent", new ForceBuffMenuComponent());
 	components.put("ForceShrineMenuComponent1", new ForceShrineMenuComponent1());
 	components.put("SaberInventoryContainerComponent", new SaberInventoryContainerComponent());
 
