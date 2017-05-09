@@ -79,7 +79,7 @@ object_draft_schematic_clothing_clothing_armor_ris_boots = object_draft_schemati
 "object/tangible/wearables/boots/shared_nightsister_boots.iff",
 "object/tangible/wearables/boots/shared_singing_mountain_clan_boots.iff",
 "object/tangible/wearables/armor/bounty_hunter/shared_armor_bounty_hunter_boots.iff",
-"object/tangible/wearables/armor/rebel/spec/force/shared_armor_rebel_spec_force_boots.iff",
+"object/tangible/wearables/armor/rebel_spec_force/shared_armor_rebel_spec_force_boots.iff",
 "object/tangible/wearables/armor/rebel_assault/shared_armor_rebel_assault_boots.iff",
 
              }
