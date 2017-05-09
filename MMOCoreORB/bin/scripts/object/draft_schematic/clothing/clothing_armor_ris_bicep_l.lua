@@ -77,7 +77,7 @@ object_draft_schematic_clothing_clothing_armor_ris_bicep_l = object_draft_schema
 "object/tangible/wearables/armor/mandalorian_rebel/shared_armor_mandalorian_rebel_bicep_l.iff",
 "object/tangible/wearables/armor/mandalorian_imperial/shared_armor_mandalorian_imperial_bicep_l.iff",
 "object/tangible/wearables/armor/bounty_hunter/shared_armor_bounty_hunter_bicep_l.iff",
-"object/tangible/wearables/armor/rebel/spec/force/shared_armor_rebel_spec_force_bicep_l.iff",
+"object/tangible/wearables/armor/rebel_spec_force/shared_armor_rebel_spec_force_bicep_l.iff",
 "object/tangible/wearables/armor/rebel_assault/shared_armor_rebel_assault_bicep_l.iff",
              }
 
