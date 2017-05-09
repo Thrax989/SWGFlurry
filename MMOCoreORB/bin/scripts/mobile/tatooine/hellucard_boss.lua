@@ -178,6 +178,13 @@ hellucard_boss = Creature:new {
     },
           			lootChance = 10000000
     },
+    {
+          		groups = {
+                   		{group = "stun_weapons", chance = 5000000},
+                   		{group = "stun_ranged", chance = 5000000}
+    },
+          			lootChance = 5000000
+    },
     },
 
 	weapons = {"weapons_h01"},
