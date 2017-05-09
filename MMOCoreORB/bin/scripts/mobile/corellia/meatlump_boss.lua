@@ -10,7 +10,7 @@ meatlump_king = Creature:new {
   baseHAMmax = 1500000,
   specialDamageMult = 5.0,
   armor = 3,
-  resists = {95,95,95,95,95,95,95,95,-1},
+  resists = {90,90,90,90,90,90,90,90,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -53,19 +53,19 @@ meatlump_king = Creature:new {
       groups = {
         {group = "non_jedi_ring_crafter", chance = 10000000}
   },
-      lootChance = 100000
+      lootChance = 1000000
   },
   {
       groups = {
         {group = "neck_crafter", chance = 10000000}
   },
-      lootChance = 100000
+      lootChance = 1000000
   },
   {
       groups = {
         {group = "non_jedi_ring_crafter_second", chance = 10000000}
   },
-      lootChance = 100000
+      lootChance = 1000000
   },
   {
       groups = {
@@ -77,7 +77,7 @@ meatlump_king = Creature:new {
       groups = {
         {group = "saberhand27", chance = 10000000}
   },
-      lootChance = 100000
+      lootChance = 10000000
   },
   {
       groups = {
@@ -89,7 +89,7 @@ meatlump_king = Creature:new {
       groups = {
         {group = "nectar_buff_f01", chance = 10000000}
   },
-     lootChance = 10000000
+     lootChance = 5000000
   },
   {
       groups = {
@@ -97,6 +97,13 @@ meatlump_king = Creature:new {
         {group = "backpacks_b02", chance = 5000000}
   },
       lootChance = 10000000
+  },
+  {
+      groups = {
+        {group = "stun_weapons", chance = 5000000},
+        {group = "stun_ranged", chance = 5000000}
+  },
+      lootChance = 5000000
   },
   },
 weapons = {"weapons_h02"},
