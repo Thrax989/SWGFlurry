@@ -62,8 +62,10 @@ int ForceBuffMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 		}
 	}
 
-	creature->playEffect("clienteffect/trap_electric_01.cef", "");
-	creature->enhanceCharacter(player);
+	creature->playEffect("clienteffect/bacta_bomb.cef", "");
+	creature->healDamage(creature, CreatureAttribute::HEALTH, 5000);
+	creature->healDamage(creature, CreatureAttribute::ACTION, 5000);
+	creature->healDamage(creature, CreatureAttribute::MIND, 5000);
 	creature->setPosture(CreaturePosture::UPRIGHT);
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
