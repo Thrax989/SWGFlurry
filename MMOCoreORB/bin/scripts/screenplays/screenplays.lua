@@ -561,7 +561,7 @@ includeFile("poi/kaas_abandon_separ_facility.lua")
 includeFile("poi/kaas_rebel_cave.lua")
 includeFile("poi/kaas_sith_facility.lua")
 includeFile("poi/kaas_vitiate_tomb.lua")
-includeFile("poi/talus_boss.lua")
+--includeFile("poi/talus_boss.lua")
 
 --Static Spawns
 includeFile("static_spawns/corellia_static_spawns.lua")
