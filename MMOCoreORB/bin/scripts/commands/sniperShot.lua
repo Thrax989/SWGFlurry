@@ -60,7 +60,7 @@ SniperShotCommand = {
 	
 	weaponType = RIFLEWEAPON,
 
-	range = -1
+	range = 64
 }
 
 AddCommand(SniperShotCommand)

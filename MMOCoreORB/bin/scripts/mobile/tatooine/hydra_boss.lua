@@ -10,7 +10,7 @@ hydra_boss = Creature:new {
   baseHAM = 1500000,
   baseHAMmax = 1500000,
   armor = 3,
-  resists = {95,95,95,95,95,95,95,95,-1},
+  resists = {90,90,90,90,90,90,90,90,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -110,11 +110,24 @@ hydra_boss = Creature:new {
                      lootChance = 5000000
 },
 {
+             groups = {
+                     {group = "saberhand26", chance = 10000000}
+},
+                     lootChance = 1000000
+},
+{
               groups = {
                       {group = "backpacks_b01", chance = 5000000},
                        {group = "backpacks_b02", chance = 5000000}
 },
                     lootChance = 10000000
+},
+{
+          		groups = {
+                   		{group = "stun_weapons", chance = 5000000},
+                   		{group = "stun_ranged", chance = 5000000}
+},
+          			lootChance = 5000000
 },
 },
   weapons = {"imperial_weapons_heavy"},

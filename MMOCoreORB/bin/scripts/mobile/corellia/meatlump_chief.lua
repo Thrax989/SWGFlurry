@@ -67,11 +67,11 @@ meatlump_chief = Creature:new {
       lootChance = 10000000
   },
   },
-  weapons = {"imperial_weapons_heavy"},
+  weapons = {"weapons_h02"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/stormtrooper",
   personalityStf = "@hireling/hireling_stormtrooper",
-  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,brawlermaster,riflemanmaster)
+  attacks = merge(marksmanmaster,fencermaster,brawlermaster,riflemanmaster,pikemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(meatlump_chief, "meatlump_chief")

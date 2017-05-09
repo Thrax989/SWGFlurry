@@ -8,7 +8,7 @@ taiken_moff = Creature:new {
   damageMax = 2500,
   specialDamageMult = 2.0,
   baseXp = 0,
-  baseHAM = 1000000,
+  baseHAM = 500000,
   baseHAMmax = 1000000,
   armor = 2,
   resists = {65,65,65,65,65,65,65,65,-1},
@@ -91,6 +91,13 @@ taiken_moff = Creature:new {
               {group = "backpacks_b02", chance = 5000000}
 },
                lootChance = 10000000
+},
+{
+          		groups = {
+                   		{group = "stun_weapons", chance = 5000000},
+                   		{group = "stun_ranged", chance = 5000000}
+},
+          			lootChance = 5000000
 },
 },
     weapons = {"imperial_weapons_heavy"},

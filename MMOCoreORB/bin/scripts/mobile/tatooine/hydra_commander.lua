@@ -7,10 +7,10 @@ hydra_commander = Creature:new {
   damageMax = 3500,
   specialDamageMult = 2.0,
   baseXp = 0,
-  baseHAM = 1000000,
+  baseHAM = 500000,
   baseHAMmax = 1000000,
   armor = 3,
-  resists = {95,95,95,95,95,95,95,95,90},
+  resists = {90,90,90,90,90,90,90,90,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -88,6 +88,13 @@ hydra_commander = Creature:new {
                     {group = "backpacks_b02", chance = 5000000}
 },
                     lootChance = 10000000
+},
+{
+          		groups = {
+                   		{group = "stun_weapons", chance = 5000000},
+                   		{group = "stun_ranged", chance = 5000000}
+},
+          			lootChance = 5000000
 },
 },
   weapons = {"imperial_weapons_heavy"},

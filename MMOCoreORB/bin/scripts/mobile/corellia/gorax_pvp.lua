@@ -30,6 +30,22 @@ gorax_pvp = Creature:new {
 
     templates = {"object/mobile/gorax.iff"},
     lootGroups = {
+				{
+		groups = {
+				{group = "stun_weapons", chance = 5000000},
+			        {group = "stun_ranged", chance = 5000000}
+
+			},
+			lootChance = 2500000
+		},
+		{
+		groups = {
+				{group = "backpacks_b01", chance = 5000000},
+			        {group = "backpacks_b02", chance = 5000000}
+
+			},
+			lootChance = 10000000
+		},
 		{
 		groups = {
 				{group = "foods_lg", chance = 10000000}
@@ -114,8 +130,6 @@ gorax_pvp = Creature:new {
 		{"dizzyattack","DizzyChance=100"},
 		{"stunattack","StunChance=100"},
 		{"intimidationattack","IntimidationChance=100"},
-		{"mediumpoison","PoisonChance=100"},
-    	{"mediumdisease","DiseaseChance=100"},
     	{"creatureareableeding","BleedChance=100"}
 	}
 }

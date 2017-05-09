@@ -1,6 +1,8 @@
 includeFile("custom_loot/groups/backpacks/g_ep3_chiss_poacher_backpack.lua")
 includeFile("custom_loot/groups/backpacks/backpacks_b01.lua")
 includeFile("custom_loot/groups/backpacks/backpacks_b02.lua")
+includeFile("custom_loot/groups/weapons/melee/stun_weapons.lua")
+includeFile("custom_loot/groups/weapons/ranged/stun_ranged.lua")
 
 includeFile("custom_loot/groups/crystals/g_named_crystals.lua")
 
@@ -290,6 +292,8 @@ includeFile("custom_loot/groups/wearables/jewelry/non_jedi_rings_ranged.lua")
 includeFile("custom_loot/groups/wearables/jewelry/non_jedi_ring_crafter.lua")
 includeFile("custom_loot/groups/wearables/jewelry/non_jedi_ring_crafter_second.lua")
 includeFile("custom_loot/groups/wearables/jewelry/neck_crafter.lua")
+
+includeFile("custom_loot/groups/wearables/goggles_all.lua")
 
 
 includeFile("custom_loot/groups/weapons/melee/g_2h_sword_avatar_wke_toothpick.lua")

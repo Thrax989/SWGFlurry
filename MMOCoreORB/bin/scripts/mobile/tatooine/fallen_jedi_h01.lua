@@ -5,14 +5,14 @@ fallen_jedi_h01 = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 100.00,
-	damageMin = 800,
-	damageMax = 1500,
+	damageMin = 600,
+	damageMax = 1200,
 	specialDamageMult = 2.0,
 	baseXp = 0,
-	baseHAM = 300000,
-	baseHAMmax = 300000,
+	baseHAM = 100000,
+	baseHAMmax = 200000,
 	armor = 2,
-	resists = {65,65,65,65,65,65,65,65,-1},
+	resists = {60,60,60,60,60,60,60,60,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -121,13 +121,13 @@ fallen_jedi_h01 = Creature:new {
         		 groups = {
           			 {group = "saberhand26", chance = 10000000}
     },
-           		         lootChance = 500000
+           		         lootChance = 1000000
     },
     },
 
-	weapons = {"dark_jedi_weapons_gen4"},
+	weapons = {"fallen_weapons"},
 	reactionStf = "@npc_reaction/military",
-	attacks = merge(lightsabermaster,forcepowermaster,forcewielder)
+	attacks = merge(brawlermaster,pikemanmaster)
 
 }
 
