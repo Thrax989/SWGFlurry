@@ -77,7 +77,7 @@ object_draft_schematic_clothing_clothing_armor_ris_gloves = object_draft_schemat
 "object/tangible/wearables/armor/mandalorian_rebel/shared_armor_mandalorian_rebel_gloves.iff",
 "object/tangible/wearables/armor/mandalorian_imperial/shared_armor_mandalorian_imperial_gloves.iff",
 "object/tangible/wearables/armor/bounty_hunter/shared_armor_bounty_hunter_gloves.iff",
-"object/tangible/wearables/armor/rebel/spec/force/shared_armor_rebel_spec_force_gloves.iff",
+"object/tangible/wearables/armor/rebel_spec_force/shared_armor_rebel_spec_force_gloves.iff",
 "object/tangible/wearables/armor/rebel_assault/shared_armor_rebel_assault_gloves.iff",
              }
 
