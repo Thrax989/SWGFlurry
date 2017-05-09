@@ -90,7 +90,7 @@ public:
 		Reference<Buff*> buff = creature->getBuff(buffCRC);
 		int duration = ChannelForceBuff::FORCE_CHANNEL_TICK_SECONDS * 10;
 		if (playerObject->hasPvpTef()) {
-			duration = duration * 3;
+			duration = duration * 1;
 			forceBonus = forceBonus * 2;
 		}
 		if (buff == NULL) {
