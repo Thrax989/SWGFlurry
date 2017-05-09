@@ -91,7 +91,7 @@ object_draft_schematic_clothing_clothing_armor_ris_helmet = object_draft_schemat
 "object/tangible/wearables/hat/shared_singing_mountain_clan_hat_s02.iff",
 "object/tangible/wearables/hat/shared_singing_mountain_clan_mask_s01.iff",
 "object/tangible/wearables/armor/bounty_hunter/shared_armor_bounty_hunter_helmet.iff",
-"object/tangible/wearables/armor/rebel/spec/force/shared_armor_rebel_spec_force_helmet.iff",
+"object/tangible/wearables/armor/rebel_spec_force/shared_armor_rebel_spec_force_helmet.iff",
 "object/tangible/wearables/armor/rebel_assault/shared_armor_rebel_assault_helmet.iff",
              }
 
