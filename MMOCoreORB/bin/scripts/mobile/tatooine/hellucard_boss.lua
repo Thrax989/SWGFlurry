@@ -169,7 +169,7 @@ hellucard_boss = Creature:new {
         		 groups = {
           			 {group = "saberhand26", chance = 10000000}
     },
-           		         lootChance = 500000
+           		         lootChance = 1000000
     },
     {
           		groups = {
