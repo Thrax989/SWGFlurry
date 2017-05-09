@@ -70,7 +70,6 @@ int VisibilityManager::calculateReward(CreatureObject* creature) {
 }
 
 float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
-	ManagedReference<Zone*> zone = creature->getZone();
 	Zone* zone = creature->getZone();
 
 	float visibilityIncrease = 0;
