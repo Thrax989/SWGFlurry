@@ -30,10 +30,18 @@ gorax_pvp = Creature:new {
 
     templates = {"object/mobile/gorax.iff"},
     lootGroups = {
+				{
+		groups = {
+				{group = "stun_weapons", chance = 5000000},
+			        {group = "stun_ranged", chance = 5000000}
+
+			},
+			lootChance = 2500000
+		},
 		{
 		groups = {
-				{group = "backpacks_b01, chance = 5000000},
-			        {group = "backpacks_b02, chance = 5000000}
+				{group = "backpacks_b01", chance = 5000000},
+			        {group = "backpacks_b02", chance = 5000000}
 
 			},
 			lootChance = 10000000
