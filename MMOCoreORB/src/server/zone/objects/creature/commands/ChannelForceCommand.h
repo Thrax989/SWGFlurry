@@ -44,9 +44,9 @@ public:
   			        return GENERALERROR;
   		       }
 
-		// Bonus is in between 200-300.
+		// Bonus is in between 250-300.
 		int rand = System::random(10);
-		int forceBonus = 200 + (rand * 10); // Needs to be divisible by amount of ticks.
+		int forceBonus = 250 + (rand * 10); // Needs to be divisible by amount of ticks.
 
 		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
 
@@ -88,7 +88,7 @@ public:
 		// Setup buffs.
 		uint32 buffCRC = STRING_HASHCODE("channelforcebuff");
 		Reference<Buff*> buff = creature->getBuff(buffCRC);
-		int duration = ChannelForceBuff::FORCE_CHANNEL_TICK_SECONDS * 20;
+		int duration = ChannelForceBuff::FORCE_CHANNEL_TICK_SECONDS * 10;
 		if (playerObject->hasPvpTef()) {
 			duration = duration * 3;
 			forceBonus = forceBonus * 2;
