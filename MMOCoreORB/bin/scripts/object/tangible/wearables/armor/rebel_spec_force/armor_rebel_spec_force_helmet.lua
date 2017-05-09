@@ -107,4 +107,4 @@ object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_helmet =
 				lightSaber = 12,
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_helmet, "object/tangible/wearables/armor/rebel/spec/force/armor_rebel_spec_force_helmet.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_helmet, "object/tangible/wearables/armor/rebel_spec_force/armor_rebel_spec_force_helmet.iff")

@@ -76,4 +76,4 @@ object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_leggings
 				lightSaber = 12,
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_leggings, "object/tangible/wearables/armor/rebel/spec/force/armor_rebel_spec_force_leggings.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_leggings, "object/tangible/wearables/armor/rebel_spec_force/armor_rebel_spec_force_leggings.iff")
