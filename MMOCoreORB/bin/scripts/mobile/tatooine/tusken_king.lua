@@ -111,10 +111,17 @@ tusken_king = Creature:new {
 		},
           		lootChance = 10000000
 		},
+		{
+          		groups = {
+                   		{group = "stun_weapons", chance = 5000000},
+                   		{group = "stun_ranged", chance = 5000000}
 		},
-	weapons = {"tusken_weapons"},
+          		lootChance = 5000000
+		},
+		},
+	weapons = {"weapons_h01"},
 	conversationTemplate = "",
-	attacks = merge(marksmanmaster,brawlermaster,fencermaster,riflemanmaster)
+	attacks = merge(brawlermaster,fencermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(tusken_king, "tusken_king")
