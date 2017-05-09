@@ -22,20 +22,15 @@
 #include "server/zone/managers/visibility/VisibilityManager.h"
 #include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
-
-#include "HeroRingMenuComponent.h"
-
 #include "templates/params/creature/CreatureAttribute.h"
-#include "server/zone/objects/tangible/wearables/WearableObject.h"
-#include "server/zone/objects/tangible/components/HeroRingDataComponent.h"
-#include "server/zone/packets/object/PlayClientEffectObjectMessage.h"
+
 
 void ForceBuffMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 
 
-if (player->hasSkill("force_rank_dark_novice"))
+if (player->hasSkill("force_title_jedi_novice"))
 	menuResponse->addRadialMenuItem(20, 3, "Force Buff");
 }
 
