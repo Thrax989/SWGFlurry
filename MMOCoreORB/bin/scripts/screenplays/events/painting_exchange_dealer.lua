@@ -73,7 +73,7 @@ function painting_exchange_convo_handler:getNextConversationScreen(conversationT
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
 	     elseif (optionLink == "1" and itemCounter >= 25) then
-	            local pItem = giveItem(pInventory, "QUESTITEM", -1)
+	            local pItem = giveItem(pInventory, "object/tangible/veteran_reward/yr7_painting_2010.iff", -1)
 	            DeleteItems = 25
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Painting 1")
@@ -82,11 +82,101 @@ function painting_exchange_convo_handler:getNextConversationScreen(conversationT
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
 	     elseif (optionLink == "2" and itemCounter >= 25) then
-	            local pItem = giveItem(pInventory, "QUESTITEM", -1)
+	            local pItem = giveItem(pInventory, "object/tangible/veteran_reward/frn_vet_painting_s011.iff", -1)
 	            DeleteItems = 25
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Painting 2")
+				
+	     elseif (optionLink == "3" and itemCounter < 25) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "3" and itemCounter >= 25) then
+	            local pItem = giveItem(pInventory, "object/tangible/veteran_reward/frn_vet_painting_community_summit_s02.iff", -1)
+	            DeleteItems = 25
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Painting 3")
 
+	     elseif (optionLink == "4" and itemCounter < 25) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "4" and itemCounter >= 25) then
+	            local pItem = giveItem(pInventory, "object/tangible/veteran_reward/frn_vet_painting_april_07.iff", -1)
+	            DeleteItems = 25
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Painting 4")
+				
+	     elseif (optionLink == "5" and itemCounter < 25) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "5" and itemCounter >= 25) then
+	            local pItem = giveItem(pInventory, "object/tangible/veteran_reward/frn_vet_painting_anniversary_s30.iff", -1)
+	            DeleteItems = 25
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Painting 5")
+				
+	     elseif (optionLink == "6" and itemCounter < 25) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "6" and itemCounter >= 25) then
+	            local pItem = giveItem(pInventory, "object/tangible/veteran_reward/frn_vet_6_year_painting.iff", -1)
+	            DeleteItems = 25
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Painting 6")
+
+	     elseif (optionLink == "7" and itemCounter < 25) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "7" and itemCounter >= 25) then
+	            local pItem = giveItem(pInventory, "object/tangible/veteran_reward/frn_vet_5_year_painting.iff", -1)
+	            DeleteItems = 25
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Painting 7")
+				
+	     elseif (optionLink == "8" and itemCounter < 25) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "8" and itemCounter >= 25) then
+	            local pItem = giveItem(pInventory, "object/tangible/veteran_reward/frn_galactic_gathering_2008_painting.iff", -1)
+	            DeleteItems = 25
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Painting 8")
+				
+	     elseif (optionLink == "9" and itemCounter < 25) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "9" and itemCounter >= 25) then
+	            local pItem = giveItem(pInventory, "object/tangible/loot/mustafar/must_painting_01.iff", -1)
+	            DeleteItems = 25
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Painting 9")
+				
+	     elseif (optionLink == "10" and itemCounter < 25) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "10" and itemCounter >= 25) then
+	            local pItem = giveItem(pInventory, "object/tangible/loot/mustafar/must_painting_02.iff", -1)
+	            DeleteItems = 25
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Painting 10")
+				
+	     elseif (optionLink == "11" and itemCounter < 25) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "11" and itemCounter >= 25) then
+	            local pItem = giveItem(pInventory, "object/tangible/loot/mustafar/must_painting_03.iff", -1)
+	            DeleteItems = 25
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Painting 11")
+				
+	     elseif (optionLink == "12" and itemCounter < 25) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "12" and itemCounter >= 25) then
+	            local pItem = giveItem(pInventory, "object/tangible/loot/mustafar/must_painting_04.iff", -1)
+	            DeleteItems = 25
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Painting 12")
+		
 
           	end
           for i = containerSize - 1 , 0 , -1 do
