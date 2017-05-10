@@ -8,4 +8,3 @@ function runScript(creatureObject)
   	--creature:setHAM(0, getRandomNumber(99))
   	credits = creature:getBankCredits()  
 end
-
