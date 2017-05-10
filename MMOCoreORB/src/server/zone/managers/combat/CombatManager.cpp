@@ -1884,6 +1884,7 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 
 	// from screenshots, it appears that food mitigation and armor mitigation were independently calculated
 	// and then added together.
+	int foodBonus = defender->getSkillMod("mitigate_damage");
 	int totalFoodMit = 0;
 
 	if (healthDamaged) {
