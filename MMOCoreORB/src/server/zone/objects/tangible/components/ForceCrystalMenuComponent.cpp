@@ -71,7 +71,6 @@ int ForceCrystalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, 
 
 	creature->playEffect("clienteffect/trap_electric_01.cef", "");
 	creature->setPosture(CreaturePosture::UPRIGHT);
-	creature->setFactionStatus(2);
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
 }

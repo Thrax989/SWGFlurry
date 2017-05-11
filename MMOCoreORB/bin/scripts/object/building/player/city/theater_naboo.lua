@@ -52,7 +52,7 @@ object_building_player_city_theater_naboo = object_building_player_city_shared_t
 	abilityRequired = "place_theater",
 	skillMods = {
 		{"private_medical_rating", 100},
-		{"private_buff_mind", 125},
+		{"private_buff_mind", 100},
 		{"private_med_battle_fatigue", 15},
 		{"private_med_wound_mind", 15},
 		{"private_safe_logout", 1}
