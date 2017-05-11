@@ -35,18 +35,6 @@ void ForceBuffMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Ob
 int ForceBuffMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID != 20)
 		return 0;
-	
-	int range = 32;
-	
-	if (range > 50) // We don't want the range to get crazy, so hard caps of 5-50
-		range = 50;
-	else if (range < 5)
-		range = 5;
-
-	if (creature->isInRange(creature, 10.f)) {
-		creature->sendSystemMessage("You have been restored");
-		return SUCCESS;
-	}
 
 	creature->playEffect("clienteffect/bacta_bomb.cef", "");
 	creature->healDamage(creature, CreatureAttribute::HEALTH, 5000);
