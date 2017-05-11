@@ -652,12 +652,10 @@ void EntertainingSessionImplementation::addEntertainerBuffStrength(CreatureObjec
 		maxBuffStrength = (float) entertainer->getSkillMod("healing_music_mind");
 	}
 
-	if(maxBuffStrength > 100.0f) {
-		float wearableBuff = (maxBuffStrength - 100.0f) * 2;
-		maxBuffStrength = 100.0f + wearableBuff;	//cap at 200%, default is 125% power
-	}
+	if(maxBuffStrength > 125.0f)
+		maxBuffStrength = 125.0f;	//cap at 125% power
 
-	float factionPerkStrength = entertainer->getSkillMod("private_faction_buff_mind") + 25.0f;
+	float factionPerkStrength = entertainer->getSkillMod("private_faction_buff_mind");
 
 	ManagedReference<BuildingObject*> building = entertainer->getRootParent().get().castTo<BuildingObject*>();
 
