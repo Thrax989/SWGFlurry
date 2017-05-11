@@ -1892,7 +1892,7 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 		hitLocation = bodyLocations[System::random(3)];
 
 		healthDamage = getArmorReduction(attacker, weapon, defender, damage * data.getHealthDamageMultiplier(), hitLocation, data) * damageMultiplier;
-		               int foodMitigation = 0;
+		int foodMitigation = 0;
 
                if (foodBonus > 0) {
                        foodMitigation = (int)(healthDamage * foodBonus / 100.f);
