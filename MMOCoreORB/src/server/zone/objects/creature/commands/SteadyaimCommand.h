@@ -5,6 +5,7 @@
 #ifndef STEADYAIMCOMMAND_H_
 #define STEADYAIMCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
 #include "SquadLeaderCommand.h"
 
 class SteadyaimCommand : public SquadLeaderCommand {
@@ -71,36 +72,42 @@ public:
 			return false;
 
 		for (int i = 0; i < group->getGroupSize(); i++) {
-			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
-			if (member == NULL || !member->isPlayerCreature() || member->getZone() != leader->getZone())
+			ManagedReference<SceneObject*> member = group->getGroupMember(i);
+
+			if (!member->isPlayerCreature() || member == NULL || member->getZone() != leader->getZone())
 				continue;
 
-			if (!isValidGroupAbilityTarget(leader, member, false))
+			if(member->getDistanceTo(leader) > 120)
 				continue;
 
-			Locker clocker(member, leader);
+			ManagedReference<CreatureObject*> memberPlayer = cast<CreatureObject*>( member.get());
 
-			sendCombatSpam(member);
+			if (!isValidGroupAbilityTarget(leader, memberPlayer, false))
+				continue;
 
-			ManagedReference<WeaponObject*> weapon = member->getWeapon();
+			Locker clocker(memberPlayer, leader);
+
+			sendCombatSpam(memberPlayer);
+
+			ManagedReference<WeaponObject*> weapon = memberPlayer->getWeapon();
 
 			if (!weapon->isRangedWeapon())
 				continue;
 
 			int duration = 300;
 
-			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
+			ManagedReference<Buff*> buff = new Buff(memberPlayer, actionCRC, duration, BuffType::SKILL);
 
 			Locker locker(buff);
 
 			buff->setSkillModifier("private_aim", amount);
 			buff->setStartFlyText("combat_effects", "go_steady", 0, 0xFF, 0); // there is no corresponding no_steady fly text
 
-			member->addBuff(buff);
+			memberPlayer->addBuff(buff);
 			//			memberPlayer->showFlyText("combat_effects", "go_steadied", 0, 0xFF, 0); // there is no corresponding no_steady fly text
 
-			checkForTef(leader, member);
+			checkForTef(leader, memberPlayer);
 		}
 
 		return true;
