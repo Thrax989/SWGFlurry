@@ -56,7 +56,6 @@ http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
 	searchTree_00_1=mtg_patch_002_appearance_02.tre<br>
 	searchTree_00_0=mtg_patch_001_appearance_01.tre<br>
 	
-
 ## Coding Legend
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
