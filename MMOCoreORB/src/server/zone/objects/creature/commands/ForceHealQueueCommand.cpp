@@ -536,7 +536,7 @@ int ForceHealQueueCommand::runCommandWithTarget(CreatureObject* creature, Creatu
 	Locker crossLocker(targetCreature, creature);
 
 	if (creature->isKnockedDown()) {
-		return GENERALERROR;
+		//return GENERALERROR;
 	}
 
 	if(!checkDistance(creature, targetCreature, range))
