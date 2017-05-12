@@ -46,13 +46,13 @@ object_tangible_item_plant_force_melon = object_tangible_item_plant_shared_force
 	consumableType = 1,
 
 	duration = 0,
-	filling = 0,
+	filling = 30,
 	nutrition = 1500,
 
 	effectType = 6,
 
-	fillingMin = 0,
-	fillingMax = 0,
+	fillingMin = 30,
+	fillingMax = 30,
 	flavorMin = 0,
 	flavorMax = 0,
 	nutritionMin = 1500,
