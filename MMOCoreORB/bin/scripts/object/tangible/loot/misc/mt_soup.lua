@@ -45,14 +45,14 @@ object_tangible_loot_misc_mt_soup = object_tangible_loot_misc_shared_mt_soup:new
   templateType = CONSUMABLE,
 
     useCount = 3,
-  	duration = 180,
-  	filling = 0,
+  	duration = 120,
+  	filling = 30,
   	nutrition = 0,
 
   	effectType = 1,
 
-  	fillingMin = 0,
-  	fillingMax = 0,
+  	fillingMin = 30,
+  	fillingMax = 30,
 
   	flavorMin = 0,
   	flavorMax = 0,
