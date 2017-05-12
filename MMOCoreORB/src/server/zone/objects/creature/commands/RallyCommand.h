@@ -65,7 +65,7 @@ public:
 
 		for (int i = 0; i < group->getGroupSize(); i++) {
 
-			ManagedReference<SceneObject*> member = group->getGroupMember(i);
+			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
 			if (member == NULL || member->getZone() != leader->getZone())
 				continue;
@@ -138,7 +138,7 @@ public:
 
 		//Send to group members if they are on the same planet.
 		for (int i = 0; i < group->getGroupSize(); i++) {
-			ManagedReference<SceneObject*> member = group->getGroupMember(i);
+			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 			if (member == NULL || !member->isPlayerCreature() || member->getZone() != leader->getZone())
 								continue;
 			CreatureObject* memberPlayer = cast<CreatureObject*>( member.get());
@@ -158,7 +158,7 @@ public:
 		}
 
 		for (int i = 0; i < closeObjects.size(); ++i) {
-			SceneObject* object = cast<SceneObject*>( closeObjects.get(i));
+			CreatureObject* object = cast<CreatureObject*>( closeObjects.get(i));
 			if (object == NULL || !object->isPlayerCreature() || !leader->isInRange(object, 70) || group->hasMember(object))
 				continue;
 
