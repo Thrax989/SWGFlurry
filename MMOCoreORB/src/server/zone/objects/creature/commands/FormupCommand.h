@@ -27,6 +27,8 @@ public:
 			return GENERALERROR;
 
 		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
+		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
+		player->playEffect("clienteffect/bacta_bomb.cef");
 
 		if (player == NULL)
 			return GENERALERROR;
@@ -71,24 +73,37 @@ public:
 		for (int i = 0; i < group->getGroupSize(); i++) {
 
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
+			member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
+			member->playEffect("clienteffect/bacta_bomb.cef");
 
 			if (member == NULL || !member->isPlayerCreature() || member->getZone() != leader->getZone())
 				continue;
 
-			if (!isValidGroupAbilityTarget(leader, member, false))
+			if(member->getDistanceTo(leader) > 120)
 				continue;
 
-			Locker clocker(member, leader);
+			CreatureObject* memberPlayer = cast<CreatureObject*>( member.get());
 
-			sendCombatSpam(member);
+			if (!isValidGroupAbilityTarget(leader, memberPlayer, false))
+				continue;
 
-			if (member->isDizzied())
-				member->removeStateBuff(CreatureState::DIZZY);
+			Locker clocker(memberPlayer, leader);
+
+			sendCombatSpam(memberPlayer);
+
+			if (memberPlayer->isDizzied())
+
+					memberPlayer->removeStateBuff(CreatureState::DIZZY);
+					member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
+					member->playEffect("clienteffect/bacta_bomb.cef");
 					
-			if (member->isStunned())
-				member->removeStateBuff(CreatureState::STUNNED);
 
-			checkForTef(leader, member);
+			if (memberPlayer->isStunned())
+					memberPlayer->removeStateBuff(CreatureState::STUNNED);
+					member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
+					member->playEffect("clienteffect/bacta_bomb.cef");
+
+			checkForTef(leader, memberPlayer);
 		}
 
 		return true;

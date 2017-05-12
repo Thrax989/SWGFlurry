@@ -46,13 +46,13 @@ object_tangible_loot_misc_mt_pie = object_tangible_loot_misc_shared_mt_pie:new {
 
     useCount = 3,
   	duration = 120,
-  	filling = 0,
+  	filling = 30,
   	nutrition = 0,
 
   	effectType = 1,
 
-  	fillingMin = 0,
-  	fillingMax = 0,
+  	fillingMin = 30,
+  	fillingMax = 30,
 
   	flavorMin = 0,
   	flavorMax = 0,
