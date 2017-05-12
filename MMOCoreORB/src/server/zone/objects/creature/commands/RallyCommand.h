@@ -86,8 +86,8 @@ public:
 
 			if (memberPlayer != leader)
 				memberPlayer->sendSystemMessage("@cbt_spam:rally_success_group_msg"); //"Your group rallies to the attack!"
-				memberplayer->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-				memberplayer->playEffect("clienteffect/bacta_bomb.cef");
+				memberPlayer->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
+				memberPlayer->playEffect("clienteffect/bacta_bomb.cef");
 			
 			ManagedReference<Buff*> buff = new Buff(memberPlayer, actionCRC, duration, BuffType::SKILL);
 
