@@ -1,5 +1,5 @@
 droid_pvp = Creature:new {
-	customName = "A Force Fuelled Droid",
+	customName = "Emperor's Security Droid",
 	socialGroup = "self",
 	pvpFaction = "",
 	faction = "",
