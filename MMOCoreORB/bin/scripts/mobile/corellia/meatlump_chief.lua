@@ -34,7 +34,7 @@ meatlump_chief = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
@@ -43,7 +43,7 @@ meatlump_chief = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
@@ -52,7 +52,7 @@ meatlump_chief = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
@@ -64,7 +64,7 @@ meatlump_chief = Creature:new {
       groups = {
         {group = "skill_buffs", chance = 10000000}
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   },
   weapons = {"weapons_h02"},
