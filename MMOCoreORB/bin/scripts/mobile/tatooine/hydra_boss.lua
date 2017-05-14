@@ -130,10 +130,10 @@ hydra_boss = Creature:new {
           			lootChance = 5000000
 },
 },
-  weapons = {"imperial_weapons_heavy"},
+  weapons = {"weapons_h02"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/fancy",
-  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,brawlermaster,riflemanmaster)
+  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,riflemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(hydra_boss, "hydra_boss")
