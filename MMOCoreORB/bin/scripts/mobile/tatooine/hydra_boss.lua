@@ -35,7 +35,7 @@ hydra_boss = Creature:new {
   				            {group = "nectar_buff_f01", chance = 4000000},
   				            {group = "pearls_flawless", chance = 4000000}
 },
-                      lootChance = 10000000
+                      lootChance = 8000000
 },
 {
             groups = {
@@ -43,7 +43,7 @@ hydra_boss = Creature:new {
   				          {group = "aakuan_common", chance = 5000000}
 
 },
-  			            lootChance = 10000000
+  			            lootChance = 8000000
 },
 {
             groups = {
@@ -57,14 +57,14 @@ hydra_boss = Creature:new {
                     {group = "armor_attachments", chance = 5000000},
                     {group = "clothing_attachments", chance = 5000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
             groups = {
                     {group = "armor_attachments", chance = 5000000},
                     {group = "clothing_attachments", chance = 5000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
             groups = {
@@ -76,7 +76,7 @@ hydra_boss = Creature:new {
             groups = {
                     {group = "krayt_tissue_rare", chance = 10000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
             groups = {
@@ -88,14 +88,14 @@ hydra_boss = Creature:new {
              groups = {
                     {group = "nge2", chance = 10000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
           		groups = {
             			{group = "skill_buffs", chance = 5000000},
                   {group = "acklays", chance = 5000000}
 },
-              		  lootChance = 10000000
+              		  lootChance = 8000000
 },
 {
              groups = {
