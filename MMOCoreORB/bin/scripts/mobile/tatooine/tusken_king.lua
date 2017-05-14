@@ -118,7 +118,7 @@ tusken_king = Creature:new {
           		lootChance = 5000000
 		},
 		},
-	weapons = {"weapons_h01"},
+	weapons = {"tusken_weapons"},
 	conversationTemplate = "",
 	attacks = merge(brawlermaster,fencermaster)
 }
