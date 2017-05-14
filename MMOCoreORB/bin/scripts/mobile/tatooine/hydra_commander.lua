@@ -2,7 +2,7 @@ hydra_commander = Creature:new {
   customName = "Hydra Commander",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 50.00,
+  chanceHit = 60.00,
   damageMin = 2000,
   damageMax = 3500,
   specialDamageMult = 2.0,
@@ -35,40 +35,40 @@ hydra_commander = Creature:new {
   				            {group = "crystals_premium", chance = 4000000},
   				            {group = "pearls_flawless", chance = 4000000}
 },
-                      lootChance = 10000000
+                      lootChance = 8000000
 },
 {
             groups = {
                     {group = "armor_attachments", chance = 5000000},
                     {group = "clothing_attachments", chance = 5000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
             groups = {
                     {group = "armor_attachments", chance = 5000000},
                     {group = "clothing_attachments", chance = 5000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
             groups = {
                     {group = "wearables_rare", chance = 5000000},
   		              {group = "aakuan_common", chance = 5000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },    
 {
             groups = {
                     {group = "krayt_tissue_rare", chance = 10000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
             groups = {
                     {group = "looted_container", chance = 10000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
              groups = {
@@ -80,7 +80,7 @@ hydra_commander = Creature:new {
           		groups = {
             			  {group = "apocalypse", chance = 10000000}
 },
-              		  lootChance = 10000000
+              		  lootChance = 8000000
 },
 {
               groups = {
