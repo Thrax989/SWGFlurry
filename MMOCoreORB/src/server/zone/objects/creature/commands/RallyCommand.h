@@ -29,10 +29,13 @@ public:
 		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
 		ManagedReference<GroupObject*> group = player->getGroup();
 		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-		player->playEffect("clienteffect/bacta_bomb.cef");
 
 		if (!checkGroupLeader(player, group))
 			return GENERALERROR;
+
+	        if (player->hasSkill("outdoors_squadleader_novice")) {
+		         player->setFactionStatus(2);
+	        }
 
 		int hamCost = (int) (100.0f * calculateGroupModifier(group));
 
@@ -64,7 +67,6 @@ public:
 
 		leader->sendSystemMessage("@cbt_spam:rally_success_single"); //"You rally the group!"
 		leader->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-		leader->playEffect("clienteffect/bacta_bomb.cef");
 		sendRallyCombatSpam(leader, group, true);
 
 		for (int i = 0; i < group->getGroupSize(); i++) {
@@ -87,7 +89,6 @@ public:
 			if (memberPlayer != leader)
 				memberPlayer->sendSystemMessage("@cbt_spam:rally_success_group_msg"); //"Your group rallies to the attack!"
 				memberPlayer->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-				memberPlayer->playEffect("clienteffect/bacta_bomb.cef");
 			
 			ManagedReference<Buff*> buff = new Buff(memberPlayer, actionCRC, duration, BuffType::SKILL);
 
