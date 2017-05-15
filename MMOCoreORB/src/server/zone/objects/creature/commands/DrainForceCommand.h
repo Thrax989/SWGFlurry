@@ -84,8 +84,7 @@ public:
 				return GENERALERROR;
 			}
 
-			int rand = System::random(5);
-			int forceDrain = targetForce >= maxDrain ? maxDrain : targetForce + (rand * 10); //Drain whatever Force the target has, up to max.
+			int forceDrain = targetForce >= maxDrain ? maxDrain : targetForce; //Drain whatever Force the target has, up to max.
 			if (forceDrain > forceSpace)
 				forceDrain = forceSpace; //Drain only what attacker can hold in their own Force pool.
 
