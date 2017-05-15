@@ -50,7 +50,7 @@ DrainForceCommand = {
 	
 	poolsToDamage = NO_ATTRIBUTE,
 
-	minDamage = 150, --Force drained
+	minDamage = 50, --50 Force drained max every 5 seconds
 
 	range = 32
 	
