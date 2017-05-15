@@ -24,6 +24,9 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
+		if (creature->hasAttackDelay() || !creature->checkPostureChangeDelay())
+			return GENERALERROR;
+
 		if (isWearingArmor(creature)) {
 			return NOJEDIARMOR;
 		}
@@ -47,19 +50,6 @@ public:
 			creature->sendSystemMessage("@combat_effects:cansee_fail");//You cannot see your target.
 			return GENERALERROR;
 		}
-		
-		if (!creature->checkCooldownRecovery("drain")) {
-  			StringIdChatParameter stringId;
-  
-  			Time* cdTime = creature->getCooldownTime("drain");
-  
-  			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
-  
-  			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
-  			stringId.setDI(timeLeft);
-  			creature->sendSystemMessage(stringId);
-  			        return GENERALERROR;
-  		       }
 
 		Locker clocker(targetCreature, creature);
 
@@ -84,8 +74,7 @@ public:
 				return GENERALERROR;
 			}
 
-			int rand = System::random(5);
-			int forceDrain = targetForce >= maxDrain ? maxDrain : targetForce + (rand * 10); //Drain whatever Force the target has, up to max.
+			int forceDrain = targetForce >= maxDrain ? maxDrain : targetForce; //Drain whatever Force the target has, up to max.
 			if (forceDrain > forceSpace)
 				forceDrain = forceSpace; //Drain only what attacker can hold in their own Force pool.
 
@@ -94,7 +83,6 @@ public:
 
 			uint32 animCRC = getAnimationString().hashCode();
 			creature->doCombatAnimation(targetCreature, animCRC, 0x1, 0xFF);
-			creature->addCooldown("drain", 5 * 1000);
 			manager->broadcastCombatSpam(creature, targetCreature, NULL, forceDrain, "cbt_spam", combatSpam, 1);
 
 			return SUCCESS;
@@ -102,6 +90,10 @@ public:
 
 		return GENERALERROR;
 
+	}
+
+	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
+		return defaultTime * 3.0;
 	}
 
 };
