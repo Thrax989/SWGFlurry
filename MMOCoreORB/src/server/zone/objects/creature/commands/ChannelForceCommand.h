@@ -43,6 +43,7 @@ public:
 		// Do not execute if the player's force bar is full.
 		if (playerObject->getForcePower() >= playerObject->getForcePowerMax())
 			return GENERALERROR;
+		
 		int enhSkills = playerObject->numSpecificSkills(creature, "force_discipline_enhancements_");
                 float enhMod = enhSkills * .056;
                 int modforceBonus = forceBonus * (1 + enhMod);
