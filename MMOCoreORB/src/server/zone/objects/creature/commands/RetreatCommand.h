@@ -73,10 +73,13 @@ public:
 
 		ManagedReference<GroupObject*> group = player->getGroup();
 		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-		player->playEffect("clienteffect/bacta_bomb.cef");
 
 		if (!checkGroupLeader(player, group))
 			return GENERALERROR;
+
+	        if (player->hasSkill("outdoors_squadleader_novice")) {
+		         player->setFactionStatus(2);
+	        }
 
 		float groupBurstRunMod = (float) player->getSkillMod("group_burst_run");
 		int hamCost = (int) (100.0f * (1.0f - (groupBurstRunMod / 100.0f))) * calculateGroupModifier(group);
@@ -154,7 +157,6 @@ public:
 
 		player->updateCooldownTimer("retreat", 30000);
 		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-		player->playEffect("clienteffect/bacta_bomb.cef");
 
 	}
 
