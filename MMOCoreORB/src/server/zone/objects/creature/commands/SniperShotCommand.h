@@ -82,7 +82,6 @@ public:
                         targetCreature->setPosture(CreaturePosture::DEAD);
 
 			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Attack has successfully landed");
 				//Broadcast to Server
 				String playerName = creature->getFirstName();
 				StringBuffer zBroadcast;
