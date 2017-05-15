@@ -38,7 +38,7 @@ public:
 		}
 		
 		if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice") || creature->hasSkill("outdoors_squadleader_novice")){
-			creature->sendSystemMessage("Jedi in the FRS may not use this command.");
+			creature->sendSystemMessage("You may not use this command.");
 			return GENERALERROR;
 		}
 		
