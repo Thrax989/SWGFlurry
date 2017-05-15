@@ -7,6 +7,10 @@
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
+#include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
+#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 
 class SniperShotCommand : public CombatQueueCommand {
 public:
@@ -53,6 +57,8 @@ public:
 
 		int res = doCombatAction(creature, target);
 		int chance = 50;
+		int headshot = 1;
+
 		CombatManager* combatManager = CombatManager::instance();
 		if (res == SUCCESS && System::random(100) > chance) {
 			Locker clocker(targetCreature, creature);
@@ -68,6 +74,27 @@ public:
 			if (creature->isPlayerCreature())
 				creature->sendSystemMessage("Attack has failed to land");
 		}
+
+		if (res == SUCCESS && System::random(100) < headshot) {
+			Locker clocker(targetCreature, creature);
+
+			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
+                        targetCreature->setPosture(CreaturePosture::DEAD);
+
+			if (creature->isPlayerCreature())
+				creature->sendSystemMessage("Attack has successfully landed");
+				//Broadcast to Server
+				String playerName = creature->getFirstName();
+				StringBuffer zBroadcast;
+				zBroadcast << "\\#ffb90f" << playerName << " Has Successfully Assassinated His Target With A \\#e51b1bHeadshot!";
+				creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+
+		} else {
+
+			if (creature->isPlayerCreature())
+				creature->sendSystemMessage("Assassinated Attempt Has Failed To Land");
+		}
+
 
 		return res;
 	}
