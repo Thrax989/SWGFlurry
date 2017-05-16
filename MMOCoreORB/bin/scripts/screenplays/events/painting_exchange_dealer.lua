@@ -1,7 +1,4 @@
 local ObjectManager = require("managers.object.object_manager")
-local Logger = require("utils.logger")
-require("utils.helpers")
-spHelper = require("screenplayHelper")
 
 painting_exchange = ScreenPlay:new {
    numberOfActs = 1, 
@@ -12,6 +9,7 @@ painting_exchange = ScreenPlay:new {
 registerScreenPlay("painting_exchange", true)
 
 function painting_exchange:start() 
+   -- Spawn our character into the world, setting pLarry a pointer variable we can use to check or change his state.
    local pMerchant = spawnMobile("corellia", "painting_exchange",60,-146.217,28,-4738.99,346.392,0)
 
 end
@@ -21,13 +19,17 @@ painting_exchange_convo_handler = Object:new {
  }
 
 function painting_exchange_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
+   -- Assign the player to variable creature for use inside this function.
    local creature = LuaCreatureObject(conversingPlayer)
+   -- Get the last conversation to determine whetehr or not we're  on the first screen
    local convosession = creature:getConversationSession()
    lastConversation = nil
    local conversation = LuaConversationTemplate(conversationTemplate)
    local nextConversationScreen 
    
+   -- If there is a conversation open, do stuff with it
    if ( conversation ~= nil ) then
+      -- check to see if we have a next screen
       if ( convosession ~= nil ) then
           local session = LuaConversationSession(convosession)
           if ( session ~= nil ) then
@@ -35,15 +37,22 @@ function painting_exchange_convo_handler:getNextConversationScreen(conversationT
           end
       end
       
+      -- Last conversation was nil, so get the first screen
       if ( lastConversationScreen == nil ) then
          nextConversationScreen = conversation:getInitialScreen()
       else
+         -- Start playing the rest of the conversation based on user input
          local luaLastConversationScreen = LuaConversationScreen(lastConversationScreen)
          
+         -- Set variable to track what option the player picked and get the option picked
          local optionLink = luaLastConversationScreen:getOptionLink(selectedOption)
          nextConversationScreen = conversation:getScreen(optionLink)
          
+         -- Get some information about the player.
          local credits = creature:getCashCredits()
+	 ObjectManager.withCreatureObject(conversingPlayer, function(creature )
+
+	 --local creature = LuaCreatureObject(conversingPlayer)	 
          local pInventory = creature:getSlottedObject("inventory")
          local inventory = LuaSceneObject(pInventory)
          local containerSize = inventory:getContainerObjectsSize()
@@ -54,20 +63,41 @@ function painting_exchange_convo_handler:getNextConversationScreen(conversationT
          for i = 0, containerSize - 1, 1 do
         	 local pInvObj = inventory:getContainerObject(i)
 	         local InvObj = LuaSceneObject(pInvObj)
-	         	if (InvObj:getObjectName() == "QUESTITEM")   then
+	        	 -- Get Objectnames from Each Item and check if its the choosen Item. (This is your token for the vendor)
+	         	if (InvObj:getObjectName() == "socket_gem_clothing")   then
 	         		itemCounter = itemCounter + 1
+	         else	if (InvObj:getObjectName() == "socket_gem_armor")   then
+	         		itemCounter = itemCounter + 1
+				
 	         	end
 	     end
-	  
+end
+         -- Insufficent Space
          if (SceneObject(pInventory):isContainerFullRecursive()) then
+	            -- Bail if the player doesn't have enough space in their inventory.
+	            -- Plays a chat box message from the NPC as well as a system message.
 	            nextConversationScreen = conversation:getScreen("insufficient_space")
 	            creature:sendSystemMessage("You do not have enough inventory space")  
+	            -- check if player have the item in the inventory
 
+	-- Main screen selects
 
+		-- Five Token Screen
 
-	elseif (optionLink == "items") then
-		nextConversationScreen = conversation:getScreen("items_screen")
+	elseif (optionLink == "five") then
+		nextConversationScreen = conversation:getScreen("five_screen")
 
+		-- Ten Token Screen
+
+	elseif (optionLink == "ten") then
+		nextConversationScreen = conversation:getScreen("ten_screen")
+
+		-- Seventy Token Screen
+
+	elseif (optionLink == "seventy") then
+		nextConversationScreen = conversation:getScreen("seventy_screen")
+
+	-- 5 SEA Options
 
 	     elseif (optionLink == "1" and itemCounter < 25) then            
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
@@ -185,7 +215,9 @@ function painting_exchange_convo_handler:getNextConversationScreen(conversationT
 	            DeleteItems = 25
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Painting 13")
-				
+
+	-- 10 SEA Options
+
 	     elseif (optionLink == "14" and itemCounter < 25) then            
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
@@ -302,7 +334,9 @@ function painting_exchange_convo_handler:getNextConversationScreen(conversationT
 	            DeleteItems = 25
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Painting 26")
-				
+
+	-- 70 SEA Options
+
 	     elseif (optionLink == "27" and itemCounter < 25) then            
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
@@ -418,27 +452,35 @@ function painting_exchange_convo_handler:getNextConversationScreen(conversationT
 	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_wod_sm_02.iff", -1)
 	            DeleteItems = 25
 		    nextConversationScreen = conversation:getScreen("end")
-		    creature:sendSystemMessage("Painting 39")	
-				
+		    creature:sendSystemMessage("Painting 39")
+
           	end
+	
           for i = containerSize - 1 , 0 , -1 do
           	pInvObj = inventory:getContainerObject(i)
         	invObj = LuaSceneObject(pInvObj)
-		     	if (invObj:getObjectName() == "QUESTITEM" and DeleteItems > 0 ) then
+     	    -- Get Objectnames from Each Item and check if its the choosen Item.
+		     	if (invObj:getObjectName() == "socket_gem_clothing" and DeleteItems > 0 ) then
 		     		DeleteItems = DeleteItems - 1
 		     		invObj:destroyObjectFromWorld()
 					invObj:destroyObjectFromDatabase()
+
+		  else   	if (invObj:getObjectName() == "socket_gem_armor" and DeleteItems > 0 ) then
+		     		DeleteItems = DeleteItems - 1
+		     		invObj:destroyObjectFromWorld()
+					invObj:destroyObjectFromDatabase()
+		       	end					
 		       	end
-   		  end
-   		  
- 	
-      end
-   end
+   	  end
+   end)		  
+ end	
+  end    
+      -- end of the conversation logic.
    return nextConversationScreen
    
 end
 
-
 function painting_exchange_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
+   -- Plays the screens of the conversation.
    return conversationScreen
 end
