@@ -44,9 +44,9 @@ public:
   			        return GENERALERROR;
   		       }
 
-		// Bonus is in between 250-300.
+		// Bonus is in between 200-300.
 		int rand = System::random(10);
-		int forceBonus = 250 + (rand * 10); // Needs to be divisible by amount of ticks.
+		int forceBonus = 200 + (rand * 10); // Needs to be divisible by amount of ticks.
 
 		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
 
@@ -118,7 +118,7 @@ public:
 			creature->addMaxHAM(CreatureAttribute::MIND, -forceBonus);
 			
 			creature->renewBuff(buffCRC, duration + buff->getTimeLeft());
-			creature->addCooldown("channel", 10 * 1000);
+			creature->addCooldown("channel", 5 * 1000);
 			Reference<ChannelForceBuff*> channelBuff = buff.castTo<ChannelForceBuff*>();
 			if (channelBuff != NULL)
 				channelBuff->activateRegenTick();
