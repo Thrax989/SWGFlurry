@@ -103,7 +103,7 @@ end
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
 	     elseif (optionLink == "1" and itemCounter >= 5) then
-	            local pItem = giveItem(pInventory, "object/tangible/veteran_reward/yr7_painting_2010.iff", -1)
+	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_outbreak_biohazard_02.iff", -1)
 	            DeleteItems = 5
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Painting 1")
@@ -294,7 +294,7 @@ end
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
 	     elseif (optionLink == "22" and itemCounter >= 10) then
-	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_heroic_exar_kun_ultra_rare.iff", -1)
+	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_wod_sm_02.iff", -1)
 	            DeleteItems = 10
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Painting 22")
@@ -341,7 +341,7 @@ end
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
 	     elseif (optionLink == "27" and itemCounter >= 70) then
-	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_outbreak_biohazard_02.iff", -1)
+	            local pItem = giveItem(pInventory, "object/tangible/veteran_reward/yr7_painting_2010.iff", -1)
 	            DeleteItems = 70
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Painting 27")
@@ -449,7 +449,7 @@ end
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
 	     elseif (optionLink == "39" and itemCounter >= 70) then
-	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_wod_sm_02.iff", -1)
+	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_heroic_exar_kun_ultra_rare.iff", -1)
 	            DeleteItems = 70
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Painting 39")
