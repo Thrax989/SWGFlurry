@@ -10,7 +10,7 @@ painting_exchange_template = ConvoTemplate:new {
 painting_exchange_five_screen = ConvoScreen:new {
    id = "five_screen",
    leftDialog = "",
-   customDialogText = "Keep it quiet, look here. You give me 5 of them tapes, Ill give you credits.  Straight up",
+   customDialogText = "Welcome here you can Exchange 5 Clothing Attachments or 5 Armor Attachments for paintings.",
    stopConversation = "false",
    options = {
       {"painting 1", "1"},
@@ -38,7 +38,7 @@ painting_exchange_template:addScreen(painting_exchange_five_screen);
 painting_exchange_ten_screen = ConvoScreen:new {
    id = "ten_screen",
    leftDialog = "",
-   customDialogText = "Welcome",
+   customDialogText = "Welcome here you can Exchange 10 Clothing Attachments or 10 Armor Attachments for paintings.",
    stopConversation = "false",
    options = {
       {"Painting 14", "14"},
@@ -54,7 +54,7 @@ painting_exchange_ten_screen = ConvoScreen:new {
       {"Painting 24", "24"},
       {"Painting 25", "25"},
       {"Painting 26", "26"},
-       {"Back", "first_screen"}, 
+      {"Back", "first_screen"}, 
       {"No thank you.", "deny_quest"},
       }
 }
@@ -66,7 +66,7 @@ painting_exchange_template:addScreen(painting_exchange_ten_screen);
 painting_exchange_seventy_screen = ConvoScreen:new {
    id = "seventy_screen",
    leftDialog = "",
-   customDialogText = "Welcome",
+   customDialogText = "Welcome here you can Exchange 70 Clothing Attachments or 70 Armor Attachments for paintings.",
    stopConversation = "false",
    options = {
       {"Painting 27", "27"},
@@ -97,9 +97,9 @@ painting_exchange_first_screen = ConvoScreen:new {
    customDialogText = "Welcome",
    stopConversation = "false",
    options = {
-      {"5 attachments", "five"},
-      {"10 attachments", "ten"},
-      {"70 attachments", "seventy"},
+      {"Exchange 5 CA/AA attachments", "five"},
+      {"Exchange 10 CA/AA attachments", "ten"},
+      {"Exchange 70 CA/AA attachments", "seventy"},
       {"No thank you.", "deny_quest"},
       }
 }
