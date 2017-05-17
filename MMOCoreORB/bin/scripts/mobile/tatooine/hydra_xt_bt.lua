@@ -8,8 +8,8 @@ hydra_xt_bt = Creature:new {
   baseXp = 0,
   baseHAM = 100000,
   baseHAMmax = 100000,
-  armor = 2,
-  resists = {65,65,-1,65,-1,65,65,-1,-1},
+  armor = 1,
+  resists = {30,30,-1,30,-1,30,30,-1,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -32,7 +32,7 @@ hydra_xt_bt = Creature:new {
                 {group = "armor_attachments", chance = 2500000},
                 {group = "clothing_attachments", chance = 2500000}
 },
-                lootChance = 10000000
+                lootChance = 8000000
 },
 {
                 groups = {
@@ -40,7 +40,7 @@ hydra_xt_bt = Creature:new {
                 {group = "armor_attachments", chance = 2500000},
                 {group = "clothing_attachments", chance = 2500000}
 },
-                lootChance = 10000000
+                lootChance = 8000000
 },
 {
                 groups = {
@@ -48,7 +48,7 @@ hydra_xt_bt = Creature:new {
                 {group = "armor_attachments", chance = 2500000},
                 {group = "clothing_attachments", chance = 2500000}
 },
-                lootChance = 10000000
+                lootChance = 8000000
 },
 },
   conversationTemplate = "",

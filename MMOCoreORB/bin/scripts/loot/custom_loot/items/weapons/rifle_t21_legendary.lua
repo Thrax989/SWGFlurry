@@ -1,7 +1,7 @@
 rifle_t21_legendary = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "T21 rifle",
+	customObjectName = "T21 Scoped",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_t21_legendary.iff",
 	craftingValues = {
 		{"mindamage",150,200,0},

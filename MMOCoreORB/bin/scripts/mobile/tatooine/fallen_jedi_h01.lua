@@ -36,49 +36,49 @@ fallen_jedi_h01 = Creature:new {
 				      {group = "armor_attachments", chance = 5000000},
 				      {group = "clothing_attachments", chance = 5000000}
    },
-			        lootChance = 10000000
+			        lootChance = 8000000
    },
    {
 			groups = {
         			{group = "armor_attachments", chance = 5000000},
         			{group = "clothing_attachments", chance = 5000000}
    },
-      			        lootChance = 10000000
+      			        lootChance = 8000000
    },
    {
-      	 groups = {
+      	 			groups = {
 				      {group = "armor_attachments", chance = 5000000},
 				      {group = "clothing_attachments", chance = 5000000}
    },
-      			        lootChance = 10000000
+      			        lootChance = 8000000
    },
    {
       			groups = {
        	 			{group = "armor_attachments", chance = 5000000},
         			{group = "clothing_attachments", chance = 5000000}
    },
-      			        lootChance = 10000000
+      			        lootChance = 8000000
    },
    {
       			groups = {
         			{group = "armor_attachments", chance = 5000000},
         			{group = "clothing_attachments", chance = 5000000}
    },
-      			        lootChance = 10000000
+      			        lootChance = 8000000
    },
    {
       			groups = {
         			{group = "armor_attachments", chance = 5000000},
        	 			{group = "clothing_attachments", chance = 5000000}
    },
-     			        lootChance = 10000000
+     			        lootChance = 8000000
    },
    {
      			groups = {
         			{group = "armor_attachments", chance = 5000000},
         			{group = "clothing_attachments", chance = 5000000}
    },
-      			       	 lootChance = 10000000
+      			       	 lootChance = 8000000
    },
    {
 			groups = {
@@ -109,7 +109,7 @@ fallen_jedi_h01 = Creature:new {
         		 groups = {
           			 {group = "nectar_buff_f01", chance = 10000000}
     },
-            		         lootChance = 10000000
+            		         lootChance = 8000000
     },
     {
           		groups = {

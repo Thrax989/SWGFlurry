@@ -1,4 +1,3 @@
-
 painting_exchange_template = ConvoTemplate:new {
    initialScreen = "first_screen",
    templateType = "Lua",
@@ -6,11 +5,12 @@ painting_exchange_template = ConvoTemplate:new {
    screens = {}
 }
 
+-- 5 SEA Exchange Screen
 
-painting_exchange_items_screen = ConvoScreen:new {
-   id = "items_screen",
+painting_exchange_five_screen = ConvoScreen:new {
+   id = "five_screen",
    leftDialog = "",
-   customDialogText = "The following items require 25 tokens.",
+   customDialogText = "Welcome here you can Exchange 5 Clothing Attachments or 5 Armor Attachments for paintings.",
    stopConversation = "false",
    options = {
       {"painting 1", "1"},
@@ -26,6 +26,21 @@ painting_exchange_items_screen = ConvoScreen:new {
       {"Painting 11", "11"},
       {"Painting 12", "12"},
       {"Painting 13", "13"},
+      {"Back", "first_screen"},
+      {"No thank you.", "deny_quest"},
+      }
+}
+painting_exchange_template:addScreen(painting_exchange_five_screen);
+
+
+-- 10 SEA Exchange Screen
+
+painting_exchange_ten_screen = ConvoScreen:new {
+   id = "ten_screen",
+   leftDialog = "",
+   customDialogText = "Welcome here you can Exchange 10 Clothing Attachments or 10 Armor Attachments for paintings.",
+   stopConversation = "false",
+   options = {
       {"Painting 14", "14"},
       {"Painting 15", "15"},
       {"Painting 16", "16"},
@@ -39,6 +54,21 @@ painting_exchange_items_screen = ConvoScreen:new {
       {"Painting 24", "24"},
       {"Painting 25", "25"},
       {"Painting 26", "26"},
+      {"Back", "first_screen"}, 
+      {"No thank you.", "deny_quest"},
+      }
+}
+painting_exchange_template:addScreen(painting_exchange_ten_screen);
+
+
+-- 70 SEA Exchange Screen
+
+painting_exchange_seventy_screen = ConvoScreen:new {
+   id = "seventy_screen",
+   leftDialog = "",
+   customDialogText = "Welcome here you can Exchange 70 Clothing Attachments or 70 Armor Attachments for paintings.",
+   stopConversation = "false",
+   options = {
       {"Painting 27", "27"},
       {"Painting 28", "28"},
       {"Painting 29", "29"},
@@ -51,82 +81,90 @@ painting_exchange_items_screen = ConvoScreen:new {
       {"Painting 36", "36"},
       {"Painting 37", "37"},
       {"Painting 38", "38"},
-      {"Painting 39", "39"},
+      {"Painting 39", "39"},  
       {"Back", "first_screen"},
       {"No thank you.", "deny_quest"},
       }
 }
-painting_exchange_template:addScreen(painting_exchange_items_screen);
+painting_exchange_template:addScreen(painting_exchange_seventy_screen);
 
 
-
+-- Main Screen
 
 painting_exchange_first_screen = ConvoScreen:new {
    id = "first_screen",
    leftDialog = "",
-   customDialogText = "Welcome to the Painting Exchange Shop.",
+   customDialogText = "Welcome",
    stopConversation = "false",
    options = {
-      {"Items", "items"},
+      {"Exchange 5 CA/AA attachments", "five"},
+      {"Exchange 10 CA/AA attachments", "ten"},
+      {"Exchange 70 CA/AA attachments", "seventy"},
       {"No thank you.", "deny_quest"},
       }
 }
 painting_exchange_template:addScreen(painting_exchange_first_screen);
 
+-- Purchase Completion
 
 painting_exchange_end_quest = ConvoScreen:new {
    id = "end",
    leftDialog = "",
-   customDialogText = "A good choice, Thank you Hero for using the painting Exchange Shop!",
+   customDialogText = "Nicely done, bring me more!",
    stopConversation = "true",
    options = {   
    }
 }
 painting_exchange_template:addScreen(painting_exchange_end_quest);
 
+-- Deny Option Convo
 
 painting_exchange_deny_quest = ConvoScreen:new {
    id = "deny_quest",
    leftDialog = "",
-   customDialogText = "See you next time.",
+   customDialogText = "Well, get outa here kid. Stop wasting my time!",
    stopConversation = "true",
    options = {   
    }
 }
 painting_exchange_template:addScreen(painting_exchange_deny_quest);
 
+-- Insufficient funds (used for credit purchases. not used for GMF)
 
 painting_exchange_insufficient_funds = ConvoScreen:new {
    id = "insufficient_funds",
    leftDialog = "",
-   customDialogText = "Sorry, but you do not have enough of the required item with you to purchase that.",
+   customDialogText = "Hey, you tryin to pull a fast one on me? Get lost till you have enough attachments!",
    stopConversation = "true",
    options = {   
    }
 }
 painting_exchange_template:addScreen(painting_exchange_insufficient_funds);
 
+-- Insufficient Space (get more inventory room!)
 
 painting_exchange_insufficient_space = ConvoScreen:new {
    id = "insufficient_space",
    leftDialog = "",
-   customDialogText = "Sorry, but you don't have enough space in your inventory to accept the item. Please make some space and try again.",
+   customDialogText = "Not enough space in your inventory, dunski. Make some space before I change my mind to sell to you!",
    stopConversation = "true",
    options = {   
    }
 }
 painting_exchange_template:addScreen(painting_exchange_insufficient_space);
 
+-- Insufficent SEA. (need to loot more SEA)
 
 painting_exchange_insufficient_item = ConvoScreen:new {
    id = "insufficient_item",
    leftDialog = "",
-   customDialogText = "I am sorry my friend you will need more items in order to obtain the painting.",
+   customDialogText = "Hey, you tryin to pull a fast one on me? Get lost till you have enough attachments!",
    stopConversation = "true",
    options = {   
    }
 }
 painting_exchange_template:addScreen(painting_exchange_insufficient_item);
 
+-- Finalize template
 
 addConversationTemplate("painting_exchange_template", painting_exchange_template);

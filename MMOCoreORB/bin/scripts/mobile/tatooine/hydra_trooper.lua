@@ -37,7 +37,7 @@ hydra_trooper = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
@@ -46,7 +46,7 @@ hydra_trooper = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
@@ -55,21 +55,21 @@ hydra_trooper = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
         {group = "wearables_rare", chance = 5000000},
   		  {group = "aakuan_common", chance = 5000000}
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   },
-  weapons = {"imperial_weapons_heavy"},
+  weapons = {"weapons_h02"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/stormtrooper",
   personalityStf = "@hireling/hireling_stormtrooper",
-  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,brawlermaster,riflemanmaster)
+  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,riflemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(hydra_trooper, "hydra_trooper")

@@ -28,10 +28,13 @@ public:
 
 		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
 		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-		player->playEffect("clienteffect/bacta_bomb.cef");
 
 		if (player == NULL)
 			return GENERALERROR;
+
+	        if (player->hasSkill("outdoors_squadleader_novice")) {
+		         player->setFactionStatus(2);
+	        }
 
 		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
@@ -74,7 +77,6 @@ public:
 
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 			member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-			member->playEffect("clienteffect/bacta_bomb.cef");
 
 			if (member == NULL || !member->isPlayerCreature() || member->getZone() != leader->getZone())
 				continue;
@@ -95,13 +97,11 @@ public:
 
 					memberPlayer->removeStateBuff(CreatureState::DIZZY);
 					member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-					member->playEffect("clienteffect/bacta_bomb.cef");
 					
 
 			if (memberPlayer->isStunned())
 					memberPlayer->removeStateBuff(CreatureState::STUNNED);
 					member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-					member->playEffect("clienteffect/bacta_bomb.cef");
 
 			checkForTef(leader, memberPlayer);
 		}
