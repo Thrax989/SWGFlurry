@@ -4,14 +4,14 @@ student_force1 = Creature:new {
 	socialGroup = "dark_jedi",
 	faction = "",
 	level = 300,
-	chanceHit = 30,
-	damageMin = 1500,
-	damageMax = 2100,
-	baseXp = 28549,
-	baseHAM = 350000,
-	baseHAMmax = 400000,
-	armor = 2,
-	resists = {75,75,75,75,75,75,75,75,75},
+	chanceHit = 75.00,
+	damageMin = 1200,
+	damageMax = 1800,
+	baseXp = 27849,
+	baseHAM = 150000,
+	baseHAMmax = 250000,
+	armor = 0,
+	resists = {25,25,25,25,25,25,25,25,25},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -25,7 +25,7 @@ student_force1 = Creature:new {
 	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 0.6,
+	scale = 0.8,
 	templates = {"object/mobile/dressed_jedi_trainer_old_human_male_01.iff"},
 	lootGroups = {
 		{
@@ -69,7 +69,7 @@ student_force1 = Creature:new {
 		{
 			groups = {
 				{group = "holo_token1", chance = 10000000}			},
-			lootChance = 100000
+			lootChance = 1000000
 		},
 		},
 	weapons = {"dark_jedi_weapons_gen4"},
