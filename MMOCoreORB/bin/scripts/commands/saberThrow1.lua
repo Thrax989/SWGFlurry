@@ -50,7 +50,6 @@ SaberThrow1Command = {
 	actionCostMultiplier = 0,
 	mindCostMultiplier = 0,
 	forceCostMultiplier = 1.5,
-	forceCost = 5,
 	visMod = 25,
 
 	animation = "saberthrow", 

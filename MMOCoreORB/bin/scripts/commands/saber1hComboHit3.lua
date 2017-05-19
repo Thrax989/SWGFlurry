@@ -50,7 +50,6 @@ Saber1hComboHit3Command = {
 	actionCostMultiplier = 0,
 	mindCostMultiplier = 0,
 	forceCostMultiplier = 2.25,
-	forceCost = 5,
 	visMod = 25,
 
 	animation = "showoff_1", 
