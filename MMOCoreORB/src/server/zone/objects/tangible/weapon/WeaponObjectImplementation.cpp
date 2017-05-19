@@ -349,13 +349,6 @@ void WeaponObjectImplementation::fillAttributeList(AttributeListMessage* alm, Cr
 	if(hasAntiDecayKit()){
 		alm->insertAttribute("@veteran_new:antidecay_examine_title", "@veteran_new:antidecay_examine_text");
 	}
-	
-		if (weapon->getForceCost() < 0) {
-		Locker locker(weapon);
-		weapon->setMinDamage(5);
-		weapon->setMaxDamage(10);
-		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
-	}
 
 	// Force Cost
 	if (getForceCost() > 0)
