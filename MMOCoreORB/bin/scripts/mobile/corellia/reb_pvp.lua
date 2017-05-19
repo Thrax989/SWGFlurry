@@ -28,7 +28,7 @@ reb_pvp = Creature:new {
 	diet = HERBIVORE,
   	scale = 1.5,
 
-    templates = {"object/mobile/luke_skywalker_static.iff"},
+    templates = {"object/mobile/luke_skywalker.iff"},
     lootGroups = {
 		{
 			groups = {
