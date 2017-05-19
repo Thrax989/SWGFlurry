@@ -307,8 +307,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 
 	if (weapon->getForceCost() < 0) {
  		Locker locker(weapon);
- 		weapon->setMinDamage(5);
- 		weapon->setMaxDamage(10);
+ 		weapon->setForceCost(5);
  		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
  	}
 
