@@ -595,6 +595,7 @@ includeFile("racetracks/racetracks.lua")
 
 --Space
 includeFile("space/space_chassis_dealer_conv_handler.lua")
+includeFile("space/space_tatooine.lua")
 
 --Record Keepers
 includeFile("record_keepers/record_keepers.lua")
