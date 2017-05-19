@@ -52,7 +52,7 @@ public:
    			        return GENERALERROR;
    		       }
 
- 		player->addCooldown("sniper_shot", 10 * 1000); // 10 second cooldown
+ 		player->addCooldown("sniper_shot", 1 * 1000); // 10 second cooldown
 		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
 
 		int res = doCombatAction(creature, target);
@@ -82,6 +82,7 @@ public:
                         targetCreature->setPosture(CreaturePosture::DEAD);
 
 			if (creature->isPlayerCreature())
+				creature->sendSystemMessage("Attack has successfully landed");
 				//Broadcast to Server
 				String playerName = creature->getFirstName();
 				StringBuffer zBroadcast;
