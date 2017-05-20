@@ -13,10 +13,7 @@ FlurryBuffTerminal = ScreenPlay:new {
 	termModel = "object/tangible/terminal/terminal_light_enclave_voting.iff",
 	termName = "Medical Services Terminal",
 	terminals = {
-		{planetName = "tatooine", x = 1256.39, z = 7, y = 2949.38, ow = 0.707107, oy = 0.707107}, -- Mos Entha starport
-		{planetName = "tatooine", x = 1330.80, z = 7, y = 3465.63, ow = -0.707107, oy = 0.707107}, -- Mos Entha cloning facility
-		{planetName = "tatooine", x = 1475.0, z = 7, y = 3230.81, ow = 0.707107, oy = 0.707107}, -- Mos Entha NPC style cantina
-		{planetName = "tatooine", x = 1529.19, z = 15, y = 3478.26, ow = 0.0, oy = 0.0}, -- Mos Entha player style cantina
+		{planetName = "corellia", x = -136.437, z = 28, y = -4730.23, ow = 0.745701, oy = -0.666281},
 	}
 }
 
