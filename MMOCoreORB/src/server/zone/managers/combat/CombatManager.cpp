@@ -29,6 +29,10 @@
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/packets/object/ShowFlyText.h"
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/managers/visibility/VisibilityManager.h"
+
+
 #define COMBAT_SPAM_RANGE 85
 
 bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defender, bool lockDefender) {
@@ -295,6 +299,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		weapon->setMinDamage(5);
 		weapon->setMaxDamage(10);
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+                attacker->sendSystemMessage("You were caught using a bugged weapon!!");
 	}
 
 	if (weapon->getConditionDamage() < 0 ||
@@ -303,12 +308,14 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		weapon->setMinDamage(5);
 		weapon->setMaxDamage(10);
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+                attacker->sendSystemMessage("You were caught using a bugged weapon!!");
 	}
 
-	if (weapon->getForceCost() < 0) {
+	if (weapon->getForceCost() < 1) {
  		Locker locker(weapon);
  		weapon->setForceCost(5);
  		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+                attacker->sendSystemMessage("You were caught using a bugged weapon!!");
  	}
 
 	if (defender->isEntertaining())
