@@ -29,9 +29,6 @@
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/packets/object/ShowFlyText.h"
 
-#include "server/zone/objects/scene/SceneObject.h"
-#include "server/zone/managers/visibility/VisibilityManager.h"
-
 
 #define COMBAT_SPAM_RANGE 85
 
