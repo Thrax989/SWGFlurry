@@ -728,6 +728,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	}
 
 	PlayerObject* ghost = player->getPlayerObject();
+	player->playEffect("clienteffect/holoemote_haunted.cef", "head"); 
 
 	if (ghost != NULL)
 		ghost->resetIncapacitationTimes();
