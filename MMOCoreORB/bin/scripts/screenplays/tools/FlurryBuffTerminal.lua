@@ -122,12 +122,12 @@ function FlurryBuffTerminal:removePetBuffs(pPlayer)
 	if (numberOfPets > 0) then
 		for i = 1, numberOfPets, 1 do
 			local pPet = CreatureObject(pPlayer):getActivePet(i - 1)
-			CreatureObject(pPet):removeBuffs()
+			--CreatureObject(pPet):removeBuffs()
 		end
 		
-		CreatureObject(pPlayer):sendSystemMessage("Your pet's buffs have been removed.")
+		CreatureObject(pPlayer):sendSystemMessage("This Feature Is Currently Turrned Off")
 	else
-		CreatureObject(pPlayer):sendSystemMessage("You didn't have any pets out, so no buffs were removed. Please call a pet and try again.")
+		CreatureObject(pPlayer):sendSystemMessage("You didn't have any pets out, so no buffs were removed. Please call a pet and try again. This Feature Is Currently Turrned Off")
 	end
 end
 
@@ -186,23 +186,23 @@ function FlurryBuffTerminal:applyBuff(pPlayer, buffSelected)
 			for i = 1, numberOfPets, 1 do
 				local pPet = CreatureObject(pPlayer):getActivePet(i - 1)
 				
-				CreatureObject(pPet):removeBuffs()
+				--CreatureObject(pPet):removeBuffs()
 		
-				CreatureObject(pPet):buffSingleStat("health", self.buffs[buffSelected][4], duration)
-				CreatureObject(pPet):buffSingleStat("action", self.buffs[buffSelected][7], duration)
-				CreatureObject(pPet):buffSingleStat("mind", self.buffs[buffSelected][10], duration)
+				--CreatureObject(pPet):buffSingleStat("health", self.buffs[buffSelected][4], duration)
+				--CreatureObject(pPet):buffSingleStat("action", self.buffs[buffSelected][7], duration)
+				--CreatureObject(pPet):buffSingleStat("mind", self.buffs[buffSelected][10], duration)
 				
 				if (self.buffPetSecondaryStats == 1) then
-					CreatureObject(pPet):buffSingleStat("strength", self.buffs[buffSelected][5], duration)
-					CreatureObject(pPet):buffSingleStat("constitution", self.buffs[buffSelected][6], duration)
-					CreatureObject(pPet):buffSingleStat("quickness", self.buffs[buffSelected][8], duration)
-					CreatureObject(pPet):buffSingleStat("stamina", self.buffs[buffSelected][9], duration)
-					CreatureObject(pPet):buffSingleStat("focus", self.buffs[buffSelected][11], duration)
-					CreatureObject(pPet):buffSingleStat("willpower", self.buffs[buffSelected][12], duration)
+					--CreatureObject(pPet):buffSingleStat("strength", self.buffs[buffSelected][5], duration)
+					--CreatureObject(pPet):buffSingleStat("constitution", self.buffs[buffSelected][6], duration)
+					--CreatureObject(pPet):buffSingleStat("quickness", self.buffs[buffSelected][8], duration)
+					--CreatureObject(pPet):buffSingleStat("stamina", self.buffs[buffSelected][9], duration)
+					--CreatureObject(pPet):buffSingleStat("focus", self.buffs[buffSelected][11], duration)
+					--CreatureObject(pPet):buffSingleStat("willpower", self.buffs[buffSelected][12], duration)
 				end
 			end
 			
-			CreatureObject(pPlayer):sendSystemMessage("Your active pets have also been buffed.")
+			CreatureObject(pPlayer):sendSystemMessage("Your active pets have also been buffed. This Feature Is Currently Turrned Off")
 		end
 	end
 end
