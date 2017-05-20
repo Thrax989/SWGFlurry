@@ -29,6 +29,7 @@
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/packets/object/ShowFlyText.h"
 
+
 #define COMBAT_SPAM_RANGE 85
 
 bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defender, bool lockDefender) {
@@ -288,22 +289,31 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 
 int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data) {
 	if (weapon->getMinDamage() < 1 ||
-			weapon->getMinDamage() > 50000 ||
-			weapon->getMaxDamage() < 1 ||
-			weapon->getMaxDamage() > 50000) {
+		weapon->getMinDamage() > 50000 ||
+		weapon->getMaxDamage() < 1 ||
+		weapon->getMaxDamage() > 50000) {
 		Locker locker(weapon);
 		weapon->setMinDamage(5);
 		weapon->setMaxDamage(10);
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+                attacker->sendSystemMessage("You were caught using a bugged weapon!!");
 	}
 
 	if (weapon->getConditionDamage() < 0 ||
-			weapon->getConditionDamage() > 5000000) {
+		weapon->getConditionDamage() > 5000000) {
 		Locker locker(weapon);
 		weapon->setMinDamage(5);
 		weapon->setMaxDamage(10);
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+                attacker->sendSystemMessage("You were caught using a bugged weapon!!");
 	}
+
+	if (weapon->getForceCost() < 1) {
+ 		Locker locker(weapon);
+ 		weapon->setForceCost(5);
+ 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+                attacker->sendSystemMessage("You were caught using a bugged weapon!!");
+ 	}
 
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
