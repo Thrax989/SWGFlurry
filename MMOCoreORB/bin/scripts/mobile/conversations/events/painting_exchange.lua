@@ -88,6 +88,21 @@ painting_exchange_seventy_screen = ConvoScreen:new {
 }
 painting_exchange_template:addScreen(painting_exchange_seventy_screen);
 
+-- CREDIT Exchange Screen
+
+painting_exchange_credit_screen = ConvoScreen:new {
+   id = "credit_screen",
+   leftDialog = "",
+   customDialogText = "Welcome here you can Exchange Credits for Rare paintings.",
+   stopConversation = "false",
+   options = {
+      {"Painting 40", "40"},
+      {"Back", "first_screen"},
+      {"No thank you.", "deny_quest"},
+      }
+}
+painting_exchange_template:addScreen(painting_exchange_credit_screen);
+
 
 -- Main Screen
 
@@ -100,6 +115,7 @@ painting_exchange_first_screen = ConvoScreen:new {
       {"Exchange 5 CA/AA attachments", "five"},
       {"Exchange 10 CA/AA attachments", "ten"},
       {"Exchange 70 CA/AA attachments", "seventy"},
+      {"Exchange Credits", "credit"},
       {"No thank you.", "deny_quest"},
       }
 }

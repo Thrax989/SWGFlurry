@@ -1,22 +1,19 @@
 FlurryBuffTerminal = ScreenPlay:new {
 	numberOfActs = 1,
-	healingFee = 0, -- Optional fee (in Credits) for healing wounds and battle fatigue
-	buffPets = 0, -- 0 = No, 1 = Yes. Will buff all the player's active pets Health/Action/Mind with the same boost as the player.
-	buffPetSecondaryStats = 0, -- 0 = No, 1 = Yes. Will also buff the pet's secondary stats.
+	healingFee = 1000, -- Optional fee (in Credits) for healing wounds and battle fatigue
+	buffPets = 1, -- 0 = No, 1 = Yes. Will buff all the player's active pets Health/Action/Mind with the same boost as the player.
+	buffPetSecondaryStats = 1, -- 0 = No, 1 = Yes. Will also buff the pet's secondary stats.
 	buffs = {
 		-- Legend: {name, price, duration in hours, health, strength, constitution, action, quickness, stamina, mind, focus, willpower},
-		{"Starter Buff", 0, 2, 500, 250, 250, 500, 250, 250, 500, 250, 250}, -- Free!
-		{"Basic Buff", 5000, 2, 650, 500, 400, 650, 500, 400, 650, 500, 400},
-		{"Advanced Buff", 10000, 3, 800, 600, 600, 800, 600, 600, 800, 600, 600},
+		{"Starter Buff", 0, 0.5, 500, 250, 250, 500, 250, 250, 500, 250, 250}, -- Free!
+		{"Advanced Buff", 50000, 1, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750},
+		{"PvP/PvE Buff", 100000, 1.5, 2200, 1750, 1750, 2200, 1750, 1750, 2200, 1750, 1750},
 		--{"Apply Uber Buff", 25000, 4, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750}, -- commented out for example
 	},
 	termModel = "object/tangible/terminal/terminal_light_enclave_voting.iff",
 	termName = "Medical Services Terminal",
 	terminals = {
-		{planetName = "tatooine", x = 1256.39, z = 7, y = 2949.38, ow = 0.707107, oy = 0.707107}, -- Mos Entha starport
-		{planetName = "tatooine", x = 1330.80, z = 7, y = 3465.63, ow = -0.707107, oy = 0.707107}, -- Mos Entha cloning facility
-		{planetName = "tatooine", x = 1475.0, z = 7, y = 3230.81, ow = 0.707107, oy = 0.707107}, -- Mos Entha NPC style cantina
-		{planetName = "tatooine", x = 1529.19, z = 15, y = 3478.26, ow = 0.0, oy = 0.0}, -- Mos Entha player style cantina
+		{planetName = "corellia", x = -136.437, z = 28, y = -4730.23, ow = 0.745701, oy = -0.666281},
 	}
 }
 
@@ -125,12 +122,12 @@ function FlurryBuffTerminal:removePetBuffs(pPlayer)
 	if (numberOfPets > 0) then
 		for i = 1, numberOfPets, 1 do
 			local pPet = CreatureObject(pPlayer):getActivePet(i - 1)
-			CreatureObject(pPet):removeBuffs()
+			--CreatureObject(pPet):removeBuffs()
 		end
 		
-		CreatureObject(pPlayer):sendSystemMessage("Your pet's buffs have been removed.")
+		CreatureObject(pPlayer):sendSystemMessage("This Feature Is Currently Turrned Off")
 	else
-		CreatureObject(pPlayer):sendSystemMessage("You didn't have any pets out, so no buffs were removed. Please call a pet and try again.")
+		CreatureObject(pPlayer):sendSystemMessage("You didn't have any pets out, so no buffs were removed. Please call a pet and try again. This Feature Is Currently Turrned Off")
 	end
 end
 
@@ -189,23 +186,23 @@ function FlurryBuffTerminal:applyBuff(pPlayer, buffSelected)
 			for i = 1, numberOfPets, 1 do
 				local pPet = CreatureObject(pPlayer):getActivePet(i - 1)
 				
-				CreatureObject(pPet):removeBuffs()
+				--CreatureObject(pPet):removeBuffs()
 		
-				CreatureObject(pPet):buffSingleStat("health", self.buffs[buffSelected][4], duration)
-				CreatureObject(pPet):buffSingleStat("action", self.buffs[buffSelected][7], duration)
-				CreatureObject(pPet):buffSingleStat("mind", self.buffs[buffSelected][10], duration)
+				--CreatureObject(pPet):buffSingleStat("health", self.buffs[buffSelected][4], duration)
+				--CreatureObject(pPet):buffSingleStat("action", self.buffs[buffSelected][7], duration)
+				--CreatureObject(pPet):buffSingleStat("mind", self.buffs[buffSelected][10], duration)
 				
 				if (self.buffPetSecondaryStats == 1) then
-					CreatureObject(pPet):buffSingleStat("strength", self.buffs[buffSelected][5], duration)
-					CreatureObject(pPet):buffSingleStat("constitution", self.buffs[buffSelected][6], duration)
-					CreatureObject(pPet):buffSingleStat("quickness", self.buffs[buffSelected][8], duration)
-					CreatureObject(pPet):buffSingleStat("stamina", self.buffs[buffSelected][9], duration)
-					CreatureObject(pPet):buffSingleStat("focus", self.buffs[buffSelected][11], duration)
-					CreatureObject(pPet):buffSingleStat("willpower", self.buffs[buffSelected][12], duration)
+					--CreatureObject(pPet):buffSingleStat("strength", self.buffs[buffSelected][5], duration)
+					--CreatureObject(pPet):buffSingleStat("constitution", self.buffs[buffSelected][6], duration)
+					--CreatureObject(pPet):buffSingleStat("quickness", self.buffs[buffSelected][8], duration)
+					--CreatureObject(pPet):buffSingleStat("stamina", self.buffs[buffSelected][9], duration)
+					--CreatureObject(pPet):buffSingleStat("focus", self.buffs[buffSelected][11], duration)
+					--CreatureObject(pPet):buffSingleStat("willpower", self.buffs[buffSelected][12], duration)
 				end
 			end
 			
-			CreatureObject(pPlayer):sendSystemMessage("Your active pets have also been buffed.")
+			CreatureObject(pPlayer):sendSystemMessage("Your active pets have also been buffed. This Feature Is Currently Turrned Off")
 		end
 	end
 end

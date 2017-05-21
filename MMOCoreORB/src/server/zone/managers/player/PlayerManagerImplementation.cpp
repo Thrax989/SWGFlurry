@@ -728,10 +728,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	}
 
 	PlayerObject* ghost = player->getPlayerObject();
-	player->setFactionStatus(FactionStatus::ONLEAVE);
-	player->playEffect("clienteffect/holoemote_haunted.cef", "head");
-	PlayMusicMessage* pmm = new PlayMusicMessage("sound/mus_npe2_station_victory.snd");
- 	player->sendMessage(pmm);
+	player->playEffect("clienteffect/holoemote_haunted.cef", "head"); 
 
 	if (ghost != NULL)
 		ghost->resetIncapacitationTimes();
@@ -1542,7 +1539,7 @@ void PlayerManagerImplementation::awardExperience(CreatureObject* player, const 
 		return;
 
 	int xp;
-	if (amount <= 0 || xpType == "force_rank_xp" || xpType == "shipwright") {
+	if (amount <= 0 || xpType == "force_rank_xp") {
 		xp = playerObject->addExperience(xpType, amount);
 	} else if (xpType == "imagedesigner" ||
 		xpType == "music" ||
@@ -1568,6 +1565,7 @@ void PlayerManagerImplementation::awardExperience(CreatureObject* player, const 
 		xpType == "crafting_spice" ||
 		xpType == "political" ||
 		xpType == "bountyhunter" ||
+		xpType == "shipwright" ||
 		xpType == "jedi_general") {
 		xp = playerObject->addExperience(xpType, (amount * 20));
 	} else {

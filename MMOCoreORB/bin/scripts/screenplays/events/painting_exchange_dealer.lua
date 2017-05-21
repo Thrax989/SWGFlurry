@@ -97,6 +97,11 @@ end
 	elseif (optionLink == "seventy") then
 		nextConversationScreen = conversation:getScreen("seventy_screen")
 
+		-- Credit Screen
+
+	elseif (optionLink == "credit") then
+		nextConversationScreen = conversation:getScreen("credit_screen")
+
 	-- 5 SEA Options
 
 	     elseif (optionLink == "1" and itemCounter < 5) then            
@@ -321,7 +326,7 @@ end
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
 	     elseif (optionLink == "25" and itemCounter >= 10) then
-	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_loot_heroic_exar_kun.iff", -1)
+	            local pItem = giveItem(pInventory, "object/tangible/painting/bestine_history_quest_painting.iff", -1)
 	            DeleteItems = 10
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Painting 25")
@@ -449,10 +454,21 @@ end
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
 	     elseif (optionLink == "39" and itemCounter >= 70) then
-	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_heroic_exar_kun_ultra_rare.iff", -1)
+	            local pItem = giveItem(pInventory, "object/tangible/painting/bestine_quest_painting.iff", -1)
 	            DeleteItems = 70
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Painting 39")
+
+	-- Credit Options
+
+		elseif (optionLink == "40" and credits < 10000000) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "40" and credits >= 10000000) then
+	            creature:subtractCashCredits(10000000)
+	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_heroic_exar_kun_ultra_rare.iff", -1)
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Painting 40")
 
           	end
 	

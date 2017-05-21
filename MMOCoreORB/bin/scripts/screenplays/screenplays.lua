@@ -58,6 +58,7 @@ includeFile("utils/quest_spawner.lua")
 includeFile("tools/tools.lua")
 includeFile("tools/shuttle_dropoff.lua")
 includeFile("tools/firework_event.lua")
+includeFile("tools/FlurryBuffTerminal.lua")
 
 -- GCW
 includeFile("gcw/newsnet.lua")
