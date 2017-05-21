@@ -5,7 +5,7 @@ FlurryBuffTerminal = ScreenPlay:new {
 	buffPetSecondaryStats = 1, -- 0 = No, 1 = Yes. Will also buff the pet's secondary stats.
 	buffs = {
 		-- Legend: {name, price, duration in hours, health, strength, constitution, action, quickness, stamina, mind, focus, willpower},
-		{"Starter Buff", 0, 0.5, 500, 250, 250, 500, 250, 250, 500, 250, 250}, -- Free!
+		{"Starter Buff", 1000, 0.5, 500, 250, 250, 500, 250, 250, 500, 250, 250}, -- Free!
 		{"Advanced Buff", 50000, 1, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750},
 		{"PvP/PvE Buff", 100000, 1.5, 2200, 1750, 1750, 2200, 1750, 1750, 2200, 1750, 1750},
 		--{"Apply Uber Buff", 25000, 4, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750}, -- commented out for example
