@@ -466,7 +466,7 @@ end
 	            creature:sendSystemMessage("You have insufficient items")
 	     elseif (optionLink == "40" and credits >= 10000000) then
 	            creature:subtractCashCredits(10000000)
-	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_loot_heroic_exar_kun.iff", -1)
+	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_heroic_exar_kun_ultra_rare.iff", -1)
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Painting 40")
 
