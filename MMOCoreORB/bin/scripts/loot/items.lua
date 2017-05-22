@@ -1383,3 +1383,5 @@ includeFile("items/starfighter_hologram.lua")
 includeFile("items/tiefighter_hologram.lua")
 includeFile("items/yoda_hologram.lua")
 includeFile("items/yt1300_hologram.lua")
+
+includeFile("items/freedom_mandoviol.lua")
