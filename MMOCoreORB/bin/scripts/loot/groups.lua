@@ -492,5 +492,5 @@ includeFile("groups/nectar_buff_f01.lua")
 includeFile("groups/tokens_lg.lua")
 includeFile("groups/foods_lg.lua")
 
-includeFile("groups/hologram_lg.lua")
+includeFile("groups/hologram_lg1.lua")
 includeFile("groups/hologram_lg2.lua")
