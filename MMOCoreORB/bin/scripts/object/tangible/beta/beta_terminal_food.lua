@@ -80,7 +80,9 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 			"dathomir",
 		   {
-			"Test", "Test",
+			"Dathomir Trade Outpost", "dathomir_trade_outpost_starport_travel",
+			"Dathomir Science Outpost", "dathomir_science_outpost_starport_travel",
+			"Dathomir Village", "dathomir_village_shuttleport_travel",
 		   },
 			"hoth",
 		   {
