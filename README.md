@@ -18,8 +18,7 @@ type "bt" to do a back trace to find your error<br>
 
 ## -Run Unit Integrity Test-
 cd /home/vagrant/bin/<br>
-swgemu<br>
-runUnitTests<br>
+swgemu runUnitTests<br>
 
 ## -Servers Engine Build-
 https://github.com/TheAnswer/PublicEngine/commit/b6bd1202d1f4770daa51a13fb5afab131e1c23f2<br>
