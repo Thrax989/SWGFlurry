@@ -80,13 +80,13 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 			"dathomir",
 		   {
-			"Dathomir Trade Outpost", "dathomir_trade_outpost_starport_travel",
-			"Dathomir Science Outpost", "dathomir_science_outpost_starport_travel",
-			"Dathomir Village", "dathomir_village_shuttleport_travel",
+			"Dathomir Trade Outpost Stareport (5,000 Credits)", "dathomir_trade_outpost_starport_travel",
+			"Dathomir Science Outpost Stareport (5,000 Credits)", "dathomir_science_outpost_starport_travel",
+			"Dathomir Village Shuttleport (5,000 Credits)", "dathomir_village_shuttleport_travel",
 		   },
 			"hoth",
 		   {
-			"Test", "Test",
+			"Scavenger Stareport (5,000 Credits)", "scavenger_starport_travel",
 		   },
 		  	"lok",
 		   {
