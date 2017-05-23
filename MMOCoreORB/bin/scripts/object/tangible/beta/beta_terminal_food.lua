@@ -94,7 +94,12 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 			"mandalore",
 		   {
-			"Test", "Test",
+			"Sundari Stareport (5,000 Credits)", "sundari_starport_travel",
+			"Keldabe Stareport (5,000 Credits)", "keldabe_starport_travel",
+			"Bralsin Stareport (5,000 Credits)", "bralsin_starport_travel",
+			"Norg Bral Stareport (5,000 Credits)", "norg_bral_starport_travel",
+			"Shuror Stareport (5,000 Credits)", "shuror_starport_travel",
+			"Enceri Stareport (5,000 Credits)", "enceri_starport_travel",
 		   },
 			"naboo",
 		   {
