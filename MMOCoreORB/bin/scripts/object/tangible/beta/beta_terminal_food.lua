@@ -118,7 +118,11 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 		 	"rori",
 		   {
-			"Test", "Test",
+			"Narmle Shuttleport (5,000 Credits)", "narmel_shuttleport_travel",
+			"Narmle Starport (5,000 Credits)", "narmel_starport_travel",
+			"Rebel Outpost Shuttleport (5,000 Credits)", "rebel_outpost_shuttleport_travel",
+			"Restuss Shuttleport (5,000 Credits)", "restuss_shuttleport_travel",
+			"Restuss Starport (5,000 Credits)", "restuss_starport_travel",
 		   },
 		 	"taanab",
 		   {
