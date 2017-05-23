@@ -12,6 +12,7 @@ https://discord.gg/eN82pdc
 
 ## -Run Server in gdb debug mode-
 Open Terminal "Type" cd /home/vagrant/workspace/Core3/MMOCoreORB/bin Then "type" gdb ./core3 <br>
+This will promt a Black Blank Screen. Type "r" to Run the GDB<br>
 This will run your core3 in GDB mode so you can debug with "bt" <br>
 If your server segfaults it will promt you "segmentation fault"
 type "bt" to do a back trace to find your error
@@ -29,7 +30,7 @@ Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 www.swgflurry.com/TRE/
 <br>
 	maxSearchPriority=27<br>
-	searchTree_00_26=species.tre
+	searchTree_00_26=species.tre<br>
 	searchTree_00_25=pallet.tre<br>
 	searchTree_00_24=pods.tre<br>
 	searchTree_00_23=skill_patch.tre<br>
