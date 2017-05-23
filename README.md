@@ -13,9 +13,8 @@ https://discord.gg/eN82pdc
 ## -Run Server in gdb debug mode-
 Open Terminal "Type" cd /home/vagrant/workspace/Core3/MMOCoreORB/bin Then "type" gdb ./core3 <br>
 This will promt a Black Blank Screen. Type "r" to Run the GDB<br>
-This will run your core3 in GDB mode so you can debug with "bt" <br>
-If your server segfaults it will promt you "segmentation fault"
-type "bt" to do a back trace to find your error
+If your server segfaults it will promt you "segmentation fault"<br>
+type "bt" to do a back trace to find your error<br>
 
 ## -Run Unit Integrity Test-
 cd /home/vagrant/bin/<br>
