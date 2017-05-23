@@ -74,7 +74,9 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 			"dantooine",
 		   {
-			"Test", "Test",
+			"Dantooine Agro Outpost Stareport (5,000 Credits)", "dantooine_agro_outpost_starport_travel",
+			"Dantooine Imperial Outpost Stareport (5,000 Credits)", "dantooine_imperial_outpost_starport_travel",
+			"Dantooine Mining Outpost Stareport (5,000 Credits)", "dantooine_mining_outpost_startport_travel",
 		   },
 			"dathomir",
 		   {
@@ -117,38 +119,6 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 			"Test", "Test",
 		   },
 		 	"kaas",
-		   {
-			"Test", "Test",
-		   },
-			"kashyyyk",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk hunting",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk rryatt trail",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk main",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk south dungeons",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk north dungeons",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk pob dungeons",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk dead forest",
 		   {
 			"Test", "Test",
 		   },
