@@ -99,6 +99,14 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#008000](https://placehold.it/15/008000/000000?text=+) talus
 - ![#008000](https://placehold.it/15/008000/000000?text=+) tatooine
 - ![#008000](https://placehold.it/15/008000/000000?text=+) yavin4
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Mandalore
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Taanab
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Hoth
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Kaas
+- ![#008000](https://placehold.it/15/008000/000000?text=+) coruscant
+- ![#008000](https://placehold.it/15/008000/000000?text=+) chandrila
+- ![#008000](https://placehold.it/15/008000/000000?text=+) nal hutta
+- ![#008000](https://placehold.it/15/008000/000000?text=+) moraband
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk hunting
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk rryatt trail
@@ -108,15 +116,8 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk pob dungeons
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk dead forest
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Mustafar
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Mandalore
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Taanab
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Hoth
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kaas
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) coruscant
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) jakku
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) chandrila
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) nal hutta
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) moraband
+
 
 ## -Server Code Contributors-
 * https://github.com/Thrax989 - Project Lead Creator
