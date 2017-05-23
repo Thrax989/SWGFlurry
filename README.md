@@ -26,9 +26,10 @@ https://github.com/TheAnswer/PublicEngine/commit/c26e7ab0b140e61e63ee853e872ee91
 Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 
 # Required Mod The Galaxy TRE Files
-http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
+www.swgflurry.com/TRE/
 <br>
 	maxSearchPriority=27<br>
+	searchTree_00_26=species.tre
 	searchTree_00_25=pallet.tre<br>
 	searchTree_00_24=pods.tre<br>
 	searchTree_00_23=skill_patch.tre<br>
