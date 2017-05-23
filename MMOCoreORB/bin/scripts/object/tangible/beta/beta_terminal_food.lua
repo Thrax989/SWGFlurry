@@ -90,7 +90,7 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 		  	"lok",
 		   {
-			"Test", "Test",
+			"Nym's Stronghold Stareport (5,000 Credits)", "nyms_stronghold_starport_travel",
 		   },
 			"mandalore",
 		   {
