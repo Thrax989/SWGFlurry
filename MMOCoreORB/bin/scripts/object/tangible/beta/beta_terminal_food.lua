@@ -126,7 +126,8 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 		 	"taanab",
 		   {
-			"Test", "Test",
+			"Taanab Pandath Port", "taanab_pandath_port_travel",
+			"Taanab Starhunter Station", "taanab_star_hunter_station_travel",
 		   },
 		 	"talus",
 		   {
@@ -142,15 +143,11 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 		 	"kaas",
 		   {
-			"Test", "Test",
+			"Kaas PvP Zone", "kaas_pvp_zone",
 		   },
 			"coruscant",
 		   {
 			"test", "Test",
-		   },
-			"jakku",
-		   {
-			"Test", "Test",
 		   },
 			"chandrila",
 		   {
