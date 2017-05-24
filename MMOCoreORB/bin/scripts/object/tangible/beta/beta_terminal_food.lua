@@ -74,35 +74,60 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 			"dantooine",
 		   {
-			"Test", "Test",
+			"Dantooine Agro Outpost Stareport (5,000 Credits)", "dantooine_agro_outpost_starport_travel",
+			"Dantooine Imperial Outpost Stareport (5,000 Credits)", "dantooine_imperial_outpost_starport_travel",
+			"Dantooine Mining Outpost Stareport (5,000 Credits)", "dantooine_mining_outpost_startport_travel",
 		   },
 			"dathomir",
 		   {
-			"Test", "Test",
+			"Dathomir Trade Outpost Stareport (5,000 Credits)", "dathomir_trade_outpost_starport_travel",
+			"Dathomir Science Outpost Stareport (5,000 Credits)", "dathomir_science_outpost_starport_travel",
+			"Dathomir Village Shuttleport (5,000 Credits)", "dathomir_village_shuttleport_travel",
 		   },
 			"hoth",
 		   {
-			"Test", "Test",
+			"Scavenger Stareport (5,000 Credits)", "scavenger_starport_travel",
 		   },
 		  	"lok",
 		   {
-			"Test", "Test",
+			"Nym's Stronghold Stareport (5,000 Credits)", "nyms_stronghold_starport_travel",
 		   },
 			"mandalore",
 		   {
-			"Test", "Test",
+			"Sundari Stareport (5,000 Credits)", "sundari_starport_travel",
+			"Keldabe Stareport (5,000 Credits)", "keldabe_starport_travel",
+			"Bralsin Stareport (5,000 Credits)", "bralsin_starport_travel",
+			"Norg Bral Stareport (5,000 Credits)", "norg_bral_starport_travel",
+			"Shuror Stareport (5,000 Credits)", "shuror_starport_travel",
+			"Enceri Stareport (5,000 Credits)", "enceri_starport_travel",
 		   },
 			"naboo",
 		   {
-			"Test", "Test",
+			"Dee'ja Peak ShuttlePort (5,000 Credits)", "Test",
+			"Kaadara ShuttlePort (5,000 Credits)", "Test",
+			"Kaadara StarPort (5,000 Credits)", "Test",
+			"Keren ShuttlePort (5,000 Credits)", "Test",
+			"Karen ShuttlePort South (5,000 Credits)", "Test",
+			"Keren Starport (5,000 Credits)", "Test",
+			"Moenia StarPort (5,000 Credits)", "moemia_",
+			"The Lake Retreat ShuttlePort (5,000 Credits)", "the_lake_retreat_shuttleport_travel",
+			"Theed ShuttlePort A (5,000 Credits)", "theed_shuttleport_a_travel",
+			"Theed ShuttlePort B (5,000 Credits)", "theed_shuttleport_b_travel",
+			"Theed ShuttlePort C (5,000 Credits)", "theed_shuttleport_c_travel",
+			"Theed Starport (5,000 Credits)", "theed_starport_travel",
 		   },
 		 	"rori",
 		   {
-			"Test", "Test",
+			"Narmle Shuttleport (5,000 Credits)", "narmel_shuttleport_travel",
+			"Narmle Starport (5,000 Credits)", "narmel_starport_travel",
+			"Rebel Outpost Shuttleport (5,000 Credits)", "rebel_outpost_shuttleport_travel",
+			"Restuss Shuttleport (5,000 Credits)", "restuss_shuttleport_travel",
+			"Restuss Starport (5,000 Credits)", "restuss_starport_travel",
 		   },
 		 	"taanab",
 		   {
-			"Test", "Test",
+			"Taanab Pandath Port", "taanab_pandath_port_travel",
+			"Taanab Starhunter Station", "taanab_star_hunter_station_travel",
 		   },
 		 	"talus",
 		   {
@@ -118,47 +143,11 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 		 	"kaas",
 		   {
-			"Test", "Test",
-		   },
-			"kashyyyk",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk hunting",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk rryatt trail",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk main",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk south dungeons",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk north dungeons",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk pob dungeons",
-		   {
-			"Test", "Test",
-		   },
-			"Kashyyyk dead forest",
-		   {
-			"Test", "Test",
+			"Kaas PvP Zone", "kaas_pvp_zone",
 		   },
 			"coruscant",
 		   {
 			"test", "Test",
-		   },
-			"jakku",
-		   {
-			"Test", "Test",
 		   },
 			"chandrila",
 		   {
