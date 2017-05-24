@@ -9,7 +9,7 @@ function createTrainerConversationTemplate(trainer, masterskill, templatename)
 		id = "convoscreentrainerinfo",
 		leftDialog = "@skill_teacher:" .. trainer, -- Storage for the trainer master skill.
 		stopConversation = "false",
-		options = { 
+		options = {
 			{"masterskill", masterskill }
 		}
 	}
@@ -19,7 +19,7 @@ function createTrainerConversationTemplate(trainer, masterskill, templatename)
 		id = "convoscreenstart",
 		leftDialog = "@skill_teacher:" .. trainer, -- Building, crafting, creating.  It's all in your hands.  How can I help move you along in this profession?
 		stopConversation = "false",
-		options = { 
+		options = {
 			{"@skill_teacher:opt1_1", "convoscreentrainableskills"}, -- I'm interested in learning a skill.
 			{"@skill_teacher:opt1_2", "convoscreennextskills"} -- What skills will I be able to learn next?
 		}
@@ -104,7 +104,7 @@ function createTrainerConversationTemplate(trainer, masterskill, templatename)
 		id = "convoscreenskillinfo",
 		leftDialog = "@skill_teacher:msg3_3", -- Let me give you some information about this skill...
 		stopConversation = "false",
-		options = { 
+		options = {
 			{"@skill_teacher:back", "convoscreenstart" }
 		}
 	}
@@ -115,7 +115,7 @@ function createTrainerConversationTemplate(trainer, masterskill, templatename)
 		id = "convoscreennotenoughxp",
 		leftDialog = "@skill_teacher:error_empty_category", -- Sorry, you aren't quite up to the point where I can teach you anything else.
 		stopConversation = "false",
-		options = { 
+		options = {
 			{"@skill_teacher:back", "convoscreenstart" }
 		}
 	}
@@ -125,7 +125,7 @@ function createTrainerConversationTemplate(trainer, masterskill, templatename)
 		id = "convoscreennotenoughskillpoints",
 		leftDialog = "@skill_teacher:nsf_skill_pts", -- You must first make %DI skill points available before I can teach you %TO.
 		stopConversation = "false",
-		options = { 
+		options = {
 			{"@skill_teacher:back", "convoscreenstart" }
 		}
 	}
@@ -135,7 +135,7 @@ function createTrainerConversationTemplate(trainer, masterskill, templatename)
 		id = "convoscreennotenoughcredits",
 		leftDialog = "@skill_teacher:prose_nsf", -- You lack the %DI credits required for training in %TO.
 		stopConversation = "false",
-		options = { 
+		options = {
 			{"@skill_teacher:back", "convoscreenstart" }
 		}
 	}
@@ -145,7 +145,7 @@ function createTrainerConversationTemplate(trainer, masterskill, templatename)
 		id = "convoscreennotenoughskillpoints",
 		leftDialog = "@skill_teacher:no_skill_pts", -- How can I teach you when you do not have any available skill points.
 		stopConversation = "false",
-		options = { 
+		options = {
 			{"@skill_teacher:back", "convoscreenstart" }
 		}
 	}
@@ -155,7 +155,7 @@ function createTrainerConversationTemplate(trainer, masterskill, templatename)
 		id = "convoscreenerror",
 		leftDialog = "@skill_teacher:error_grant_skill", -- Hrmm... seems that I cant teach you that skill due to an internal error. TestTrac?
 		stopConversation = "true",
-		options = { 
+		options = {
 			{"@skill_teacher:back", "convoscreenstart" }
 		}
 	}
@@ -253,10 +253,9 @@ createTrainerConversationTemplate("trainer_jmt", "force_title_jedi_master", "tra
 createTrainerConversationTemplate("trainer_rebel_navy", "pilot_rebel_navy_master", "trainer_rebel_navy_convotemplate")
 createTrainerConversationTemplate("trainer_imperial_navy", "pilot_imperial_navy_master", "trainer_imperial_navy_convotemplate")
 createTrainerConversationTemplate("trainer_neutral", "pilot_neutral_master", "trainer_neutral_convotemplate")
+createTrainerConversationTemplate("trainer_miner", "miner_survey_master", "trainer_miner_convotemplate")
+createTrainerConversationTemplate("trainer_elite_polearm", "elite_polearm_master", "trainer_elite_polearm_convotemplate")
 
 -- ****** Create force sensitive conversation templates ******
 -- Need a non-valid master skill...
 createTrainerConversationTemplate("trainer_fs", "trainer_fs", "trainer_fs_convotemplate")
-
-
-
