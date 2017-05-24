@@ -462,7 +462,12 @@ includeFile("custom_loot/items/wearables/jewelry/ring_medic_second.lua")
 includeFile("custom_loot/items/wearables/jewelry/ring_entertainer.lua")
 includeFile("custom_loot/items/wearables/jewelry/necklace_crafter.lua")
 
-
+includeFile("custom_loot/items/backpacks/backpack_smc.lua")
+includeFile("custom_loot/items/backpacks/wings_angel.lua")
+includeFile("custom_loot/items/backpacks/wings_bat.lua")
+includeFile("custom_loot/items/backpacks/wings_blue.lua")
+includeFile("custom_loot/items/backpacks/wings_golden.lua")
+includeFile("custom_loot/items/backpacks/wings_pink.lua")
 
 --includeFile("custom_loot/items/wearables/necklace_ornamental_ratchet.lua")
 --includeFile("custom_loot/items/wearables/necklace_pawl_chain.lua")
