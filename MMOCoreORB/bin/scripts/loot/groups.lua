@@ -496,4 +496,5 @@ includeFile("groups/hologram_lg1.lua")
 includeFile("groups/hologram_lg2.lua")
 includeFile("groups/freedom_lg.lua")
 includeFile("groups/wings_lg.lua")
-
+includeFile("groups/cyberhand_lg.lua")
+includeFile("groups/carbonite_lg.lua")
