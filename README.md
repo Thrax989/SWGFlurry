@@ -12,23 +12,23 @@ https://discord.gg/eN82pdc
 
 ## -Run Server in gdb debug mode-
 Open Terminal "Type" cd /home/vagrant/workspace/Core3/MMOCoreORB/bin Then "type" gdb ./core3 <br>
-This will run your core3 in GDB mode so you can debug with "bt" <br>
-If your server segfaults it will promt you "segmentation fault"
-type "bt" to do a back trace to find your error
+This will promt a Black Blank Screen. Type "r" to Run the GDB<br>
+If your server segfaults it will promt you "segmentation fault"<br>
+type "bt" to do a back trace to find your error<br>
 
 ## -Run Unit Integrity Test-
 cd /home/vagrant/bin/<br>
-swgemu<br>
-runUnitTests<br>
+swgemu runUnitTests<br>
 
 ## -Servers Engine Build-
-https://github.com/TheAnswer/PublicEngine/commit/c26e7ab0b140e61e63ee853e872ee91b78b6a8c4<br>
+https://github.com/TheAnswer/PublicEngine/commit/b6bd1202d1f4770daa51a13fb5afab131e1c23f2<br>
 Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 
 # Required Mod The Galaxy TRE Files
-http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
+www.swgflurry.com/TRE/
 <br>
 	maxSearchPriority=27<br>
+	searchTree_00_26=species.tre<br>
 	searchTree_00_25=pallet.tre<br>
 	searchTree_00_24=pods.tre<br>
 	searchTree_00_23=skill_patch.tre<br>
@@ -56,7 +56,6 @@ http://www.mediafire.com/file/tzub5o8ae7ix58z/MTG.7z
 	searchTree_00_1=mtg_patch_002_appearance_02.tre<br>
 	searchTree_00_0=mtg_patch_001_appearance_01.tre<br>
 	
-
 ## Coding Legend
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
@@ -100,6 +99,14 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#008000](https://placehold.it/15/008000/000000?text=+) talus
 - ![#008000](https://placehold.it/15/008000/000000?text=+) tatooine
 - ![#008000](https://placehold.it/15/008000/000000?text=+) yavin4
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Mandalore
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Taanab
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Hoth
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Kaas
+- ![#008000](https://placehold.it/15/008000/000000?text=+) coruscant
+- ![#008000](https://placehold.it/15/008000/000000?text=+) chandrila
+- ![#008000](https://placehold.it/15/008000/000000?text=+) nal hutta
+- ![#008000](https://placehold.it/15/008000/000000?text=+) moraband
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk hunting
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk rryatt trail
@@ -109,15 +116,8 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk pob dungeons
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk dead forest
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Mustafar
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Mandalore
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Taanab
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Hoth
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kaas
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) coruscant
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) jakku
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) chandrila
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) nal hutta
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) moraband
+
 
 ## -Server Code Contributors-
 * https://github.com/Thrax989 - Project Lead Creator
