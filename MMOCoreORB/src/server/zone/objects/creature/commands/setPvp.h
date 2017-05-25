@@ -32,6 +32,10 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 		
+		if(creature->getZone()->getZoneName() == "kass")
+			creature->sendSystemMessage("Can not use /setpvp on Kass");
+			return GENERALERROR;
+		
 		if (creature->isInCombat()) {
 			creature->sendSystemMessage("@jedi_spam:not_while_in_combat");
 			return GENERALERROR;
