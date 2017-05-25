@@ -36,10 +36,23 @@ oola_boss = Creature:new {
   },
   {
       groups = {
+        {group = "backpacks_b01", chance = 5000000},
+        {group = "backpacks_b02", chance = 5000000}
+  },
+      lootChance = 5000000
+  },
+  {
+      groups = {
+        {group = "wings_lg", chance = 10000000}
+  },
+      lootChance = 5000000
+  },
+  {
+      groups = {
         {group = "hologram_lg1", chance = 5000000},
         {group = "hologram_lg2", chance = 5000000}
   },
-      lootChance = 10000000
+      lootChance = 5000000
   },
   },
 weapons = {"nyaxs_weapons"},
