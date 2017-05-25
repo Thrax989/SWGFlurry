@@ -32,7 +32,7 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 		
-		if(creature->getZone()->getZoneName() == "kass")
+		if(creature->getZone()->getZoneName() == "kaas")
 			creature->sendSystemMessage("Can not use /setpvp on Kass");
 			return GENERALERROR;
 		
