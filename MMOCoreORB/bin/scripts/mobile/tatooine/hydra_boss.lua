@@ -7,8 +7,8 @@ hydra_boss = Creature:new {
   damageMax = 4000,
   specialDamageMult = 3.0,
   baseXp = 0,
-  baseHAM = 1500000,
-  baseHAMmax = 1500000,
+  baseHAM = 1000000,
+  baseHAMmax = 1000000,
   armor = 3,
   resists = {90,90,90,90,90,90,90,90,-1},
   meatType = "",
@@ -50,7 +50,7 @@ hydra_boss = Creature:new {
                     {group = "g_named_crystals", chance = 10000000}
 
 },
-  			            lootChance = 8000000
+  			            lootChance = 6000000
 },
 {
             groups = {
