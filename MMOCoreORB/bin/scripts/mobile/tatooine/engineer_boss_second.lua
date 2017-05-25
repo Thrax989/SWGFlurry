@@ -6,12 +6,12 @@ engineer_boss_second = Creature:new {
 	level = 300,
 	chanceHit = 80.00,
 	damageMin = 1000,
-	damageMax = 3000,
+	damageMax = 2000,
 	baseXp = 0,
 	baseHAM = 800000,
 	baseHAMmax = 800000,
 	armor = 3,
-	resists = {95,95,95,95,95,95,95,95,90},
+	resists = {95,95,95,95,95,95,95,95,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -101,6 +101,19 @@ engineer_boss_second = Creature:new {
         	{group = "saberhand27", chance = 10000000}
     },
       		lootChance = 5000000
+    },
+    {
+      	 groups = {
+        	{group = "saberhand26", chance = 10000000}
+    },
+      		lootChance = 100000
+    },
+    {
+          groups = {
+                   {group = "backpacks_b01", chance = 5000000},
+                   {group = "backpacks_b02", chance = 5000000}
+    },
+          lootChance = 10000000
     },
     },
 	weapons = {"mixed_force_weapons"},

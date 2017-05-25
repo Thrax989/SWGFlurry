@@ -3,8 +3,8 @@ meatlump_chief = Creature:new {
   socialGroup = "geonosian",
   level = 300,
   chanceHit = 20.00,
-  damageMin = 1000,
-  damageMax = 1500,
+  damageMin = 300,
+  damageMax = 600,
   specialDamageMult = 2.0,
   baseXp = 0,
   baseHAM = 100000,
@@ -34,7 +34,7 @@ meatlump_chief = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
@@ -43,7 +43,7 @@ meatlump_chief = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
@@ -52,35 +52,26 @@ meatlump_chief = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
-  },
-  {
-      groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
-  },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
         {group = "saberhand27", chance = 10000000}
   },
-      lootChance = 10000000
+      lootChance = 5000000
   },
   {
       groups = {
         {group = "skill_buffs", chance = 10000000}
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   },
-  weapons = {"imperial_weapons_heavy"},
+  weapons = {"weapons_h02"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/stormtrooper",
   personalityStf = "@hireling/hireling_stormtrooper",
-  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,brawlermaster,riflemanmaster)
+  attacks = merge(marksmanmaster,fencermaster,brawlermaster,riflemanmaster,pikemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(meatlump_chief, "meatlump_chief")

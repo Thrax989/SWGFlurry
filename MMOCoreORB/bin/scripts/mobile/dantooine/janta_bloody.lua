@@ -3,8 +3,8 @@ janta_bloody = Creature:new {
   socialGroup = "janta_tribe",
   faction = "janta_tribe",
   level = 300,
-  chanceHit = 50.00,
-  damageMin = 2000,
+  chanceHit = 30.00,
+  damageMin = 1000,
   damageMax = 2500,
   baseXp = 0,
   baseHAM = 750000,
@@ -76,6 +76,25 @@ janta_bloody = Creature:new {
 {
           groups = {
                    {group = "skill_buffs", chance = 10000000}
+},
+          lootChance = 10000000
+},
+{
+          groups = {
+                   {group = "saberhand27", chance = 10000000}
+},
+          lootChance = 5000000
+},
+{
+          groups = {
+                   {group = "saberhand27", chance = 10000000}
+},
+          lootChance = 5000000
+},
+{
+          groups = {
+                   {group = "backpacks_b01", chance = 5000000},
+                   {group = "backpacks_b02", chance = 5000000}
 },
           lootChance = 10000000
 },

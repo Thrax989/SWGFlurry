@@ -102,7 +102,7 @@ object_weapon_ranged_rifle_ep3_rifle_naktra_crystal = object_weapon_ranged_rifle
 	attackType = RANGEDATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
-	damageType = ENERGY,
+	damageType = STUN,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = HEAVY,

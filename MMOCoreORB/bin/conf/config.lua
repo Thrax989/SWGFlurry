@@ -46,7 +46,7 @@ MakeLogin = 1
 MakeZone = 1
 MakePing = 1
 MakeStatus = 1
-MakeWeb = 1
+MakeWeb = 0
 
 ORB = ""
 ORBPort = 44419
@@ -103,14 +103,14 @@ ZonesEnabled = {
 	--"endor_asommers",
 	--"floratest",
 	--"godclient_test",
-	"kashyyyk",
-	"kashyyyk_hunting",
-	"kashyyyk_rryatt_trail",
-	"kashyyyk_main",
-	"kashyyyk_south_dungeons",
-	"kashyyyk_north_dungeons",
-	"kashyyyk_pob_dungeons",
-	"kashyyyk_dead_forest",
+	--"kashyyyk",
+	--"kashyyyk_hunting",
+	--"kashyyyk_rryatt_trail",
+	--"kashyyyk_main",
+	--"kashyyyk_south_dungeons",
+	--"kashyyyk_north_dungeons",
+	--"kashyyyk_pob_dungeons",
+	--"kashyyyk_dead_forest",
 	"lok",
 	"mandalore",
 	--"mustafar",
@@ -145,11 +145,11 @@ ZonesEnabled = {
 	--"watertabletest",
 	"yavin4",
 	"kaas",
-      "moraband",
-      "coruscant",
-      "hutta",
-      "chandrila",
-      "jakku"
+        "moraband",
+        "coruscant",
+        "hutta",
+        "chandrila"
+        --"jakku"
 
 }
 
@@ -158,6 +158,7 @@ ZonesEnabled = {
 TrePath = "/home/vagrant/workspace/tre/"
 
 TreFiles = {
+        "species.tre",
         "pallet.tre",
         "pods.tre",
         "armor.tre",

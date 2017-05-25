@@ -11,7 +11,7 @@ engineer_boss = Creature:new {
 	baseHAM = 600000,
 	baseHAMmax = 600000,
 	armor = 2,
-	resists = {95,95,95,95,95,95,95,95,90},
+	resists = {95,95,95,95,95,95,95,95,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -73,7 +73,7 @@ engineer_boss = Creature:new {
     },
     {
       	groups = {
-        	{group = "av_21_pp", chance = 10000000},
+        	{group = "nectar_buff_f01", chance = 10000000},
     },
       		lootChance = 8000000
     },
@@ -121,6 +121,19 @@ engineer_boss = Creature:new {
         	{group = "saberhand27", chance = 10000000}
     },
       		lootChance = 5000000
+    },
+    {
+      	 groups = {
+        	{group = "saberhand26", chance = 10000000}
+    },
+      		lootChance = 100000
+    },
+    {
+          groups = {
+                   {group = "backpacks_b01", chance = 5000000},
+                   {group = "backpacks_b02", chance = 5000000}
+    },
+          lootChance = 10000000
     },
     },
 	weapons = {"mixed_force_weapons"},

@@ -2,7 +2,7 @@ hydra_boss = Creature:new {
   customName = "<<< Hydra Leader >>>",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 80.00,
+  chanceHit = 100.00,
   damageMin = 2000,
   damageMax = 4000,
   specialDamageMult = 3.0,
@@ -10,7 +10,7 @@ hydra_boss = Creature:new {
   baseHAM = 1500000,
   baseHAMmax = 1500000,
   armor = 3,
-  resists = {95,95,95,95,95,95,95,95,90},
+  resists = {90,90,90,90,90,90,90,90,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -32,10 +32,10 @@ hydra_boss = Creature:new {
   			      groups = {
   				            {group = "armor_attachments", chance = 1000000},
   				            {group = "clothing_attachments", chance = 1000000},
-  				            {group = "crystals_premium", chance = 4000000},
+  				            {group = "nectar_buff_f01", chance = 4000000},
   				            {group = "pearls_flawless", chance = 4000000}
 },
-                      lootChance = 10000000
+                      lootChance = 8000000
 },
 {
             groups = {
@@ -43,7 +43,7 @@ hydra_boss = Creature:new {
   				          {group = "aakuan_common", chance = 5000000}
 
 },
-  			            lootChance = 10000000
+  			            lootChance = 8000000
 },
 {
             groups = {
@@ -57,14 +57,14 @@ hydra_boss = Creature:new {
                     {group = "armor_attachments", chance = 5000000},
                     {group = "clothing_attachments", chance = 5000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
             groups = {
                     {group = "armor_attachments", chance = 5000000},
                     {group = "clothing_attachments", chance = 5000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
             groups = {
@@ -76,26 +76,26 @@ hydra_boss = Creature:new {
             groups = {
                     {group = "krayt_tissue_rare", chance = 10000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
             groups = {
                     {group = "saberhand27", chance = 10000000}
 },
-                    lootChance = 10000000
+                    lootChance = 5000000
 },
 {
              groups = {
                     {group = "nge2", chance = 10000000}
 },
-                    lootChance = 10000000
+                    lootChance = 8000000
 },
 {
           		groups = {
             			{group = "skill_buffs", chance = 5000000},
                   {group = "acklays", chance = 5000000}
 },
-              		  lootChance = 10000000
+              		  lootChance = 8000000
 },
 {
              groups = {
@@ -107,13 +107,33 @@ hydra_boss = Creature:new {
              groups = {
                      {group = "saberhand27", chance = 10000000}
 },
-                     lootChance = 10000000
+                     lootChance = 5000000
+},
+{
+             groups = {
+                     {group = "saberhand26", chance = 10000000}
+},
+                     lootChance = 1000000
+},
+{
+              groups = {
+                      {group = "backpacks_b01", chance = 5000000},
+                       {group = "backpacks_b02", chance = 5000000}
+},
+                    lootChance = 10000000
+},
+{
+          		groups = {
+                   		{group = "stun_weapons", chance = 5000000},
+                   		{group = "stun_ranged", chance = 5000000}
+},
+          			lootChance = 5000000
 },
 },
-  weapons = {"imperial_weapons_heavy"},
+  weapons = {"weapons_h02"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/fancy",
-  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,brawlermaster,riflemanmaster)
+  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,riflemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(hydra_boss, "hydra_boss")

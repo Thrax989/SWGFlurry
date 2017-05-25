@@ -37,30 +37,47 @@ public:
 			return GENERALERROR;
 		}
 		
+		if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice"))){
+			creature->sendSystemMessage("You may not use this command.");
+			return GENERALERROR;
+		}
+		
+		if (!creature->checkCooldownRecovery("setpvp")) {
+  			StringIdChatParameter stringId;
+  
+  			Time* cdTime = creature->getCooldownTime("setpvp");
+  
+  			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+  
+  			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+  			stringId.setDI(timeLeft);
+  			creature->sendSystemMessage(stringId);
+  			        return GENERALERROR;
+  		       }
+		
 		PlayerObject* targetGhost = creature->getPlayerObject();
 		Zone* zone = creature->getZone();
 		
 		if (targetGhost == NULL)
 			return GENERALERROR;
 
-		if(creature->getFactionStatus() == FactionStatus::OVERT){
-			creature->sendSystemMessage("You are already Overt");
-			return GENERALERROR;
-		}
-
 		if(creature->getFactionStatus() == FactionStatus::ONLEAVE || creature->getFactionStatus() == FactionStatus::COVERT){
 			creature->setFactionStatus(FactionStatus::OVERT);
+		}else{
+			creature->setFactionStatus(FactionStatus::ONLEAVE);
 		}
-		//Broadcast to Server
- 		String playerName = creature->getFirstName();
- 		StringBuffer zBroadcast;
- 		zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Now Overt";
-		creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-		//Sound + Effect
-		creature->playEffect("clienteffect/lair_med_damage_smoke.cef");
-		PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd");
-  		creature->sendMessage(pmm);
-
+			//Broadcast to Server
+ 			String playerName = creature->getFirstName();
+ 			StringBuffer zBroadcast;
+ 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Now ";
+		        creature->addCooldown("setpvp", 30 * 1000);
+			if(creature->getFactionStatus() == FactionStatus::ONLEAVE){
+				zBroadcast << "Onleave";
+			}else{
+				zBroadcast << "Overt";
+			}
+			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		
 		return SUCCESS;
 	}
 

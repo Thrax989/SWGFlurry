@@ -29,6 +29,7 @@
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/packets/object/ShowFlyText.h"
 
+
 #define COMBAT_SPAM_RANGE 85
 
 bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defender, bool lockDefender) {
@@ -288,21 +289,23 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 
 int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data) {
 	if (weapon->getMinDamage() < 1 ||
-			weapon->getMinDamage() > 50000 ||
-			weapon->getMaxDamage() < 1 ||
-			weapon->getMaxDamage() > 50000) {
+		weapon->getMinDamage() > 50000 ||
+		weapon->getMaxDamage() < 1 ||
+		weapon->getMaxDamage() > 50000) {
 		Locker locker(weapon);
 		weapon->setMinDamage(5);
 		weapon->setMaxDamage(10);
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+                attacker->sendSystemMessage("You were caught using a bugged weapon!!");
 	}
 
 	if (weapon->getConditionDamage() < 0 ||
-			weapon->getConditionDamage() > 5000000) {
+		weapon->getConditionDamage() > 5000000) {
 		Locker locker(weapon);
 		weapon->setMinDamage(5);
 		weapon->setMaxDamage(10);
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+                attacker->sendSystemMessage("You were caught using a bugged weapon!!");
 	}
 
 	if (defender->isEntertaining())
@@ -1529,8 +1532,8 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		// saber block is special because it's just a % chance to block based on the skillmod
 		if (def == "saber_block") {
 			int block_mod = targetCreature->getSkillMod(def);
-            if (targetCreature->isBlind() || targetCreature->isStunned() || targetCreature->isDizzied()) {
-                block_mod = (block_mod / 1.3); //drops saber block by 20% when a target is blinded, dizzyed, or stuned.
+            if (targetCreature->isIntimidated() || targetCreature->isStunned() || targetCreature->isDizzied()) {
+                block_mod = (block_mod / 1.5); //drops saber block by 20% when a target is blinded, dizzyed, or stuned.
             }
             if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
                 return RICOCHET;
@@ -1885,16 +1888,22 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 	// from screenshots, it appears that food mitigation and armor mitigation were independently calculated
 	// and then added together.
 	int foodBonus = defender->getSkillMod("mitigate_damage");
-	int foodMitigation = 0;
-	if (foodBonus > 0)
-		foodMitigation = (int)(damage * foodBonus / 100.f);
+	int totalFoodMit = 0;
 
 	if (healthDamaged) {
 		static uint8 bodyLocations[] = {HIT_BODY, HIT_BODY, HIT_LARM, HIT_RARM};
 		hitLocation = bodyLocations[System::random(3)];
 
 		healthDamage = getArmorReduction(attacker, weapon, defender, damage * data.getHealthDamageMultiplier(), hitLocation, data) * damageMultiplier;
-		healthDamage -= MIN(healthDamage, foodMitigation * data.getHealthDamageMultiplier());
+		int foodMitigation = 0;
+
+               if (foodBonus > 0) {
+                       foodMitigation = (int)(healthDamage * foodBonus / 100.f);
+                       foodMitigation = MIN(healthDamage, foodMitigation * data.getHealthDamageMultiplier());
+               }
+
+               healthDamage -= foodMitigation;
+               totalFoodMit += foodMitigation;
 
 		int spilledDamage = (int)(healthDamage*spillMultPerPool); // Cut our damage by the spill percentage
 		healthDamage -= spilledDamage; // subtract spill damage from total damage
@@ -1910,7 +1919,16 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 		hitLocation = legLocations[System::random(1)];
 
 		actionDamage = getArmorReduction(attacker, weapon, defender, damage * data.getActionDamageMultiplier(), hitLocation, data) * damageMultiplier;
-		actionDamage -= MIN(actionDamage, foodMitigation * data.getActionDamageMultiplier());
+		int foodMitigation = 0;
+
+               if (foodBonus > 0) {
+                       foodMitigation = (int)(actionDamage * foodBonus / 100.f);
+                       foodMitigation = MIN(actionDamage, foodMitigation * data.getActionDamageMultiplier());
+               }
+
+               actionDamage -= foodMitigation;
+               totalFoodMit += foodMitigation;
+ 
 
 		int spilledDamage = (int)(actionDamage*spillMultPerPool);
 		actionDamage -= spilledDamage;
@@ -1924,7 +1942,15 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 	if (mindDamaged) {
 		hitLocation = HIT_HEAD;
 		mindDamage = getArmorReduction(attacker, weapon, defender, damage * data.getMindDamageMultiplier(), hitLocation, data) * damageMultiplier;
-		mindDamage -= MIN(mindDamage, foodMitigation * data.getMindDamageMultiplier());
+		int foodMitigation = 0;
+
+               if (foodBonus > 0) {
+                       foodMitigation = (int)(mindDamage * foodBonus / 100.f);
+                       foodMitigation = MIN(mindDamage, foodMitigation * data.getMindDamageMultiplier());
+               }
+
+               mindDamage -= foodMitigation;
+               totalFoodMit += foodMitigation;
 
 		int spilledDamage = (int)(mindDamage*spillMultPerPool);
 		mindDamage -= spilledDamage;
@@ -1962,8 +1988,8 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 		showHitLocationFlyText(attacker->asCreatureObject(), defender, hitLocation);
 
 	//Send defensive buff combat spam last.
-	if (foodMitigation > 0)
-		sendMitigationCombatSpam(defender, weapon, foodMitigation, FOOD);
+	if (totalFoodMit > 0)
+               sendMitigationCombatSpam(defender, weapon, totalFoodMit, FOOD);
 
 	return totalDamage;
 }
@@ -2181,7 +2207,7 @@ void CombatManager::requestDuel(CreatureObject* player, CreatureObject* targetPl
 	ghost->addToDuelList(targetPlayer);
 
 	if (targetGhost->requestedDuelTo(player)) {
-		BaseMessage* pvpstat = new UpdatePVPStatusMessage(targetPlayer,
+		BaseMessage* pvpstat = new UpdatePVPStatusMessage(targetPlayer, player,
 				targetPlayer->getPvpStatusBitmask()
 				| CreatureFlag::ATTACKABLE
 				| CreatureFlag::AGGRESSIVE);
@@ -2191,7 +2217,7 @@ void CombatManager::requestDuel(CreatureObject* player, CreatureObject* targetPl
 			ManagedReference<AiAgent*> pet = targetGhost->getActivePet(i);
 
 			if (pet != NULL) {
-				BaseMessage* petpvpstat = new UpdatePVPStatusMessage(pet,
+				BaseMessage* petpvpstat = new UpdatePVPStatusMessage(pet, player,
 						pet->getPvpStatusBitmask()
 						| CreatureFlag::ATTACKABLE
 						| CreatureFlag::AGGRESSIVE);
@@ -2203,7 +2229,7 @@ void CombatManager::requestDuel(CreatureObject* player, CreatureObject* targetPl
 		stringId.setTT(targetPlayer->getObjectID());
 		player->sendSystemMessage(stringId);
 
-		BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(player,
+		BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(player, targetPlayer,
 				player->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE
 				| CreatureFlag::AGGRESSIVE);
 		targetPlayer->sendMessage(pvpstat2);
@@ -2212,7 +2238,7 @@ void CombatManager::requestDuel(CreatureObject* player, CreatureObject* targetPl
 			ManagedReference<AiAgent*> pet = ghost->getActivePet(i);
 
 			if (pet != NULL) {
-				BaseMessage* petpvpstat = new UpdatePVPStatusMessage(pet,
+				BaseMessage* petpvpstat = new UpdatePVPStatusMessage(pet, targetPlayer,
 						pet->getPvpStatusBitmask()
 						| CreatureFlag::ATTACKABLE
 						| CreatureFlag::AGGRESSIVE);

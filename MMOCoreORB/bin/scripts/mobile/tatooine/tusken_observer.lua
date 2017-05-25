@@ -10,7 +10,7 @@ tusken_observer = Creature:new {
 	baseHAM = 100000,
 	baseHAMmax = 150000,
 	armor = 1,
-	resists = {60,60,60,60,60,60,60,60,30},
+	resists = {60,60,60,60,60,60,60,60,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -55,6 +55,18 @@ tusken_observer = Creature:new {
                 	{group = "clothing_attachments", chance = 2500000}
 	},
                 	lootChance = 10000000
+	},
+	{
+	        groups = {
+			{group = "saberhand27", chance = 10000000}
+	},
+			lootChance = 10000000
+	},
+	{
+	        groups = {
+			{group = "saberhand27", chance = 10000000}
+	},
+			lootChance = 10000000
 	},
 	},
 	weapons = {"tusken_weapons"},

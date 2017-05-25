@@ -4,14 +4,14 @@ janta_cave_boss = Creature:new {
 	  faction = "janta_tribe",
 	  level = 300,
 	  chanceHit = 100.00,
-	  damageMin = 5000,
-	  damageMax = 6000,
+	  damageMin = 3000,
+	  damageMax = 4000,
 	  specialDamageMult = 5.0,
 	  baseXp = 0,
 	  baseHAM = 1500000,
 	  baseHAMmax = 1500000,
 	  armor = 3,
-	  resists = {95,95,95,95,95,95,95,95,90},
+	  resists = {95,95,95,95,95,95,95,95,-1},
 	  meatType = "",
 	  meatAmount = 0,
 	  hideType = "",
@@ -57,13 +57,13 @@ janta_cave_boss = Creature:new {
 			{group = "armor_attachments", chance = 5000000},
 			{group = "clothing_attachments", chance = 5000000}
 		},
-			lootChance = 1000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 			{group = "axkva_min", chance = 10000000},
 		},
-			lootChance = 10000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
@@ -75,46 +75,59 @@ janta_cave_boss = Creature:new {
 			groups = {
 			{group = "nightsister_rare", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 			{group = "junk", chance = 10000000}
 
 		},
-			lootChance = 10000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 			{group = "junk", chance = 10000000}
 
 		},
-			lootChance = 10000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 			{group = "nge1", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 			{group = "nge2", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 			{group = "saberhand26", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 500000
 		},
 		{
 			groups = {
 			{group = "saberhand27", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
+		{
+             		groups = {
+                     		{group = "saberhand27", chance = 10000000}
+		},
+                     	lootChance = 5000000
+		},
+		{
+      			groups = {
+        			{group = "backpacks_b01", chance = 5000000},
+        			{group = "backpacks_b02", chance = 5000000}
+  		},
+      			lootChance = 10000000
+  		},
 		},
 weapons = {"dark_jedi_weapons_gen4"},
 reactionStf = "@npc_reaction/fancy",

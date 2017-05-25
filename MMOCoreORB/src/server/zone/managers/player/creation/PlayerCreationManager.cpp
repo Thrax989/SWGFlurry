@@ -4,6 +4,7 @@
 */
 
 #include "server/db/ServerDatabase.h"
+#include "server/db/MantisDatabase.h"
 #include "PlayerCreationManager.h"
 #include "ProfessionDefaultsInfo.h"
 #include "RacialCreationData.h"
@@ -15,6 +16,7 @@
 #include "server/login/account/Account.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/packets/MessageCallback.h"
 #include "server/zone/packets/charcreation/ClientCreateCharacterCallback.h"
 #include "server/zone/packets/charcreation/ClientCreateCharacterSuccess.h"
 #include "templates/manager/TemplateManager.h"
@@ -27,6 +29,9 @@
 #include "server/zone/objects/ship/ShipObject.h"
 #include "templates/customization/CustomizationIdManager.h"
 #include "server/zone/managers/skill/imagedesign/ImageDesignManager.h"
+#include "templates/customization/AssetCustomizationManagerTemplate.h"
+#include "templates/params/PaletteColorCustomizationVariable.h"
+#include "templates/customization/BasicRangedIntCustomizationVariable.h"
 #include "server/zone/managers/jedi/JediManager.h"
 
 PlayerCreationManager::PlayerCreationManager() :

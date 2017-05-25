@@ -600,10 +600,17 @@ int BountyMissionObjectiveImplementation::handleNpcTargetReceivesDamage(ManagedO
 }
 
 void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg1) {
-	CreatureObject* killer = NULL;
+       CreatureObject* creo = cast<CreatureObject*>(arg1);
 
-	killer = cast<CreatureObject*>(arg1);
+       if (creo == NULL)
+               return;
 
+        CreatureObject* killer = NULL;
+ 
+       if (creo->isPet())
+               killer = creo->getLinkedCreature().get();
+       else
+               killer = creo;
 
 	ManagedReference<MissionObject* > mission = this->mission.get();
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
@@ -687,7 +694,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 				killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 				PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
 				killer->sendMessage(pmm);
-				killer->getZoneServer()->getPlayerManager()->awardExperience(killer, "force_rank_xp", 500, true);
+				killer->getZoneServer()->getPlayerManager()->awardExperience(killer, "force_rank_xp", 5000, true);
 			}
 			fail();
 		}

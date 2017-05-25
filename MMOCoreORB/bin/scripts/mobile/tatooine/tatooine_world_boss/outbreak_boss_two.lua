@@ -5,8 +5,8 @@ outbreak_boss_two = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 100.00,
-	damageMin = 5000,
-	damageMax = 6000,
+	damageMin = 6000,
+	damageMax = 8000,
 	specialDamageMult = 5.0,
 	baseXp = 0,
 	baseHAM = 1500000,
@@ -97,10 +97,11 @@ outbreak_boss_two = Creature:new {
 			        lootChance = 5000000
    },
    {
-   			groups = {
-      				{group = "g_ep3_chiss_poacher_backpack", chance = 10000000}
+          		groups = {
+                   		{group = "backpacks_b01", chance = 5000000},
+                   		{group = "backpacks_b02", chance = 5000000}
     },
-    			         lootChance = 10000000
+          			lootChance = 10000000
     },
     {
     			groups = {
@@ -164,15 +165,35 @@ outbreak_boss_two = Creature:new {
     },
     {
           		groups = {
-            			{group = "sanerhand26", chance = 10000000}
+            			{group = "saberhand27", chance = 10000000}
     },
               		        lootChance = 10000000
     },
     {
           		groups = {
-            			{group = "sanerhand27", chance = 10000000}
+            			{group = "saberhand26", chance = 10000000}
+    },
+              			lootChance = 10000000
+    },
+    {
+              		groups = {
+            			{group = "skill_buffs", chance = 10000000}
     },
               		        lootChance = 10000000
+    },
+    {
+              		groups = {
+            			{group = "stun_weapons", chance = 5000000},
+				{group = "stun_ranged", chance = 5000000}
+    },
+              		lootChance = 10000000
+    },
+    {
+              		groups = {
+            			{group = "stun_weapons", chance = 5000000},
+				{group = "stun_ranged", chance = 5000000}
+    },
+              		lootChance = 10000000
     },
     },
     

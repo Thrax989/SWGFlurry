@@ -10,7 +10,7 @@ janta_moon = Creature:new {
   baseHAM = 750000,
   baseHAMmax = 750000,
   armor = 2,
-  resists = {70,70,70,70,70,70,70,70,-1},
+  resists = {65,65,65,65,65,65,65,65,-1},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -72,6 +72,25 @@ janta_moon = Creature:new {
                {group = "junk", chance = 10000000}
 },
             lootChance = 10000000
+},
+{
+          groups = {
+                   {group = "saberhand27", chance = 10000000}
+},
+          lootChance = 5000000
+},
+{
+          groups = {
+                   {group = "saberhand27", chance = 10000000}
+},
+          lootChance = 5000000
+},
+{
+          groups = {
+                   {group = "backpacks_b01", chance = 5000000},
+                   {group = "backpacks_b02", chance = 5000000}
+},
+          lootChance = 10000000
 },
 },
 

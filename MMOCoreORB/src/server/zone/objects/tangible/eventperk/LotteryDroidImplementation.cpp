@@ -102,7 +102,7 @@ int LotteryDroidImplementation::handleObjectMenuSelect(CreatureObject* player, b
 		if (winner != NULL) {
 			StringIdManager* sMan = StringIdManager::instance();
 
-			String resultMsg = sMan->getStringId(String("@event_perk:lottery_complete_show_winner").hashCode()).toString() + " " + winner->getCustomObjectName().toString() + ".";
+			String resultMsg = sMan->getStringId(STRING_HASHCODE("@event_perk:lottery_complete_show_winner")).toString() + " " + winner->getCustomObjectName().toString() + ".";
 			player->sendSystemMessage(resultMsg);
 		}
 	}
@@ -226,9 +226,9 @@ void LotteryDroidImplementation::sendRegistrationSUI(CreatureObject* player) {
 
 	StringIdManager* sMan = StringIdManager::instance();
 
-	String part1 = sMan->getStringId(String("@event_perk:lottery_reg_purchase_desc1").hashCode()).toString();
-	String part2 = sMan->getStringId(String("@event_perk:lottery_reg_purchase_desc2").hashCode()).toString();
-	String part3 = sMan->getStringId(String("@event_perk:lottery_reg_purchase_desc3").hashCode()).toString();
+	String part1 = sMan->getStringId(STRING_HASHCODE("@event_perk:lottery_reg_purchase_desc1")).toString();
+	String part2 = sMan->getStringId(STRING_HASHCODE("@event_perk:lottery_reg_purchase_desc2")).toString();
+	String part3 = sMan->getStringId(STRING_HASHCODE("@event_perk:lottery_reg_purchase_desc3")).toString();
 
 	String finalMsg = part1 + String::valueOf(ticketPrice) + part2 + String::valueOf(ticketPrice) + part3;
 
@@ -260,11 +260,11 @@ void LotteryDroidImplementation::sendLotteryInfoSUI(CreatureObject* player) {
 
 	StringIdManager* sMan = StringIdManager::instance();
 
-	String parse1 = sMan->getStringId(String("@event_perk:lottery_info_parse1").hashCode()).toString();
-	String parse2 = sMan->getStringId(String("@event_perk:lottery_info_parse2").hashCode()).toString();
-	String parse3 = sMan->getStringId(String("@event_perk:lottery_info_parse3").hashCode()).toString();
-	String parse4 = sMan->getStringId(String("@event_perk:lottery_info_parse4").hashCode()).toString();
-	String parse5 = sMan->getStringId(String("@event_perk:lottery_info_parse5").hashCode()).toString();
+	String parse1 = sMan->getStringId(STRING_HASHCODE("@event_perk:lottery_info_parse1")).toString();
+	String parse2 = sMan->getStringId(STRING_HASHCODE("@event_perk:lottery_info_parse2")).toString();
+	String parse3 = sMan->getStringId(STRING_HASHCODE("@event_perk:lottery_info_parse3")).toString();
+	String parse4 = sMan->getStringId(STRING_HASHCODE("@event_perk:lottery_info_parse4")).toString();
+	String parse5 = sMan->getStringId(STRING_HASHCODE("@event_perk:lottery_info_parse5")).toString();
 
 	String finalString = parse1 + String::valueOf(getNumPlayers()) + parse2 + String::valueOf(payout) + parse3 + getTimeLeft(timeRemaining) + parse4 + String::valueOf(ticketPrice) + parse5;
 
@@ -293,15 +293,23 @@ void LotteryDroidImplementation::startLottery(CreatureObject* player) {
 }
 
 void LotteryDroidImplementation::activateGamePulse() {
+	Time currentTime;
+	uint64 timeDelta = currentTime.getMiliTime() - gameStartTime.getMiliTime();
+	uint64 duration = (uint64)gameDuration * 60 * 60 * 1000;
+
 	if (gamePulse == NULL) {
 		gamePulse = new LotteryDroidPulseTask(_this.getReferenceUnsafeStaticCast());
-		gamePulse->schedule(gameDuration * 60 * 60 * 1000);
-	} else {
-		gamePulse->reschedule(gameDuration * 60 * 60 * 1000);
+
+		if (duration <= timeDelta)
+			gamePulse->execute();
+		else
+			gamePulse->schedule(duration - timeDelta);
 	}
 }
 
 void LotteryDroidImplementation::endGame() {
+	gameStatus = GAMEENDED;
+
 	if (getNumPlayers() <= 0) {
 		winnerID = -1;
 	} else {
@@ -341,8 +349,6 @@ void LotteryDroidImplementation::endGame() {
 			chatManager->sendMail("@event_perk:pro_lottery_droid_game", "@event_perk:lottery_mail_owner_sub", params, perkOwner->getFirstName(), NULL);
 		}
 	}
-
-	gameStatus = GAMEENDED;
 }
 
 CreatureObject* LotteryDroidImplementation::getDeedOwner() {
@@ -364,29 +370,27 @@ CreatureObject* LotteryDroidImplementation::getDeedOwner() {
 }
 
 String LotteryDroidImplementation::getTimeLeft(uint64 timeLeft) {
-
-	float hours = (float)timeLeft / (3600.f * 1000.f);
 	int minHours = 0;
 
-	if (hours < 1)
+	if (timeLeft < (1 * 3600000))
 		minHours = 1;
-	else if (hours < 2)
+	else if (timeLeft < (2 * 3600000))
 		minHours = 2;
-	else if (hours < 4)
+	else if (timeLeft < (4 * 3600000))
 		minHours = 4;
-	else if (hours < 8)
+	else if (timeLeft < (8 * 3600000))
 		minHours = 8;
-	else if (hours < 24)
+	else if (timeLeft < (24 * 3600000))
 		minHours = 24;
-	else if (hours < 48)
+	else if (timeLeft < (48 * 3600000))
 		minHours = 48;
-	else if (hours < 72)
+	else if (timeLeft < (72 * 3600000))
 		minHours = 72;
-	else if (hours < 96)
+	else if (timeLeft < (96 * 3600000))
 		minHours = 96;
-	else if (hours < 120)
+	else if (timeLeft < (120 * 3600000))
 		minHours = 120;
-	else if (hours < 144)
+	else if (timeLeft < (144 * 3600000))
 		minHours = 144;
 	else
 		minHours = 168;

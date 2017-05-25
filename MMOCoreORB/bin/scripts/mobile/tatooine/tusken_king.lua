@@ -5,13 +5,12 @@ tusken_king = Creature:new {
 	level = 300,
 	chanceHit = 30.00,
 	damageMin = 2000,
-	damageMax = 4000,
-	specialDamageMult = 3.0,
+	damageMax = 3000,
 	baseXp = 0,
-	baseHAM = 500000,
-	baseHAMmax = 500000,
+	baseHAM = 400000,
+	baseHAMmax = 400000,
 	armor = 3,
-	resists = {95,95,95,95,95,95,95,95,90},
+	resists = {90,90,90,90,90,90,90,90,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -91,11 +90,37 @@ tusken_king = Creature:new {
 				{group = "skill_buffs", chance = 10000000}
 		},
 			lootChance = 10000000
-		}
+		},
+		{
+             		groups = {
+                     		{group = "saberhand27", chance = 10000000}
+		},
+                     	lootChance = 10000000
+		},
+		{
+             		groups = {
+                     		{group = "saberhand27", chance = 10000000}
+		},
+                     	lootChance = 10000000
+		},
+		{
+          		groups = {
+                   		{group = "backpacks_b01", chance = 5000000},
+                   		{group = "backpacks_b02", chance = 5000000}
+		},
+          		lootChance = 10000000
+		},
+		{
+          		groups = {
+                   		{group = "stun_weapons", chance = 5000000},
+                   		{group = "stun_ranged", chance = 5000000}
+		},
+          		lootChance = 5000000
+		},
 		},
 	weapons = {"tusken_weapons"},
 	conversationTemplate = "",
-	attacks = merge(marksmanmaster,brawlermaster,fencermaster,riflemanmaster)
+	attacks = merge(brawlermaster,fencermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(tusken_king, "tusken_king")

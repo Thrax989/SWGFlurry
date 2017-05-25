@@ -3,8 +3,8 @@ meatlump_trooper = Creature:new {
   socialGroup = "geonosian",
   level = 250,
   chanceHit = 10.00,
-  damageMin = 200,
-  damageMax = 400,
+  damageMin = 100,
+  damageMax = 300,
   baseXp = 0,
   baseHAM = 20000,
   baseHAMmax = 60000,
@@ -33,7 +33,7 @@ meatlump_trooper = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
@@ -42,7 +42,7 @@ meatlump_trooper = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
@@ -51,44 +51,20 @@ meatlump_trooper = Creature:new {
         {group = "clothing_attachments", chance = 2500000}
 
   },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   {
       groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
+        {group = "skill_buffs", chance = 10000000}
   },
-      lootChance = 10000000
-  },
-  {
-      groups = {
-        {group = "neck_crafter", chance = 10000000}
-  },
-      lootChance = 10000000
-  },
-  {
-      groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
-  },
-      lootChance = 10000000
-  },
-  {
-      groups = {
-        {group = "skill_buffs", chance = 5000000}
-  },
-      lootChance = 10000000
+      lootChance = 8000000
   },
   },
-  weapons = {"imperial_weapons_heavy"},
+  weapons = {"weapons_h02"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/stormtrooper",
   personalityStf = "@hireling/hireling_stormtrooper",
-  attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,brawlermaster,riflemanmaster)
+  attacks = merge(marksmanmaster,fencermaster,brawlermaster,riflemanmaster,pikemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(meatlump_trooper, "meatlump_trooper")

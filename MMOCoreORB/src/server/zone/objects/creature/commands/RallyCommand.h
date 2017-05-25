@@ -28,9 +28,14 @@ public:
 
 		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
 		ManagedReference<GroupObject*> group = player->getGroup();
+		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 		if (!checkGroupLeader(player, group))
 			return GENERALERROR;
+
+	        if (player->hasSkill("outdoors_squadleader_novice")) {
+		         player->setFactionStatus(2);
+	        }
 
 		int hamCost = (int) (100.0f * calculateGroupModifier(group));
 
@@ -61,27 +66,35 @@ public:
 		int duration = 30;
 
 		leader->sendSystemMessage("@cbt_spam:rally_success_single"); //"You rally the group!"
+		leader->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 		sendRallyCombatSpam(leader, group, true);
 
 		for (int i = 0; i < group->getGroupSize(); i++) {
+
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
 			if (member == NULL || member->getZone() != leader->getZone())
 				continue;
 
-			if (!isValidGroupAbilityTarget(leader, member, true))
+			if(member->getDistanceTo(leader) > 120)
 				continue;
 
-			Locker clocker(member, leader);
+			ManagedReference<CreatureObject*> memberPlayer = cast<CreatureObject*>( member.get());
 
-			if (member != leader)
-				member->sendSystemMessage("@cbt_spam:rally_success_group_msg"); //"Your group rallies to the attack!"
+			if (!isValidGroupAbilityTarget(leader, memberPlayer, true))
+				continue;
 
-			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
+			Locker clocker(memberPlayer, leader);
+
+			if (memberPlayer != leader)
+				memberPlayer->sendSystemMessage("@cbt_spam:rally_success_group_msg"); //"Your group rallies to the attack!"
+				memberPlayer->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
+			
+			ManagedReference<Buff*> buff = new Buff(memberPlayer, actionCRC, duration, BuffType::SKILL);
 
 			Locker locker(buff);
 
-			ManagedReference<WeaponObject*> weapon = member->getWeapon();
+			ManagedReference<WeaponObject*> weapon = memberPlayer->getWeapon();
 
 			if (weapon != NULL) {
 				if (!weapon->getCreatureAccuracyModifiers()->isEmpty()) {
@@ -94,11 +107,11 @@ public:
 			buff->setSkillModifier("private_group_ranged_defense", 30);
 			buff->setSkillModifier("private_group_melee_defense", 30);
 
-			member->addBuff(buff);
+			memberPlayer->addBuff(buff);
 
-			member->setRalliedState(duration);
+			memberPlayer->setRalliedState(duration);
 
-			checkForTef(leader, member);
+			checkForTef(leader, memberPlayer);
 		}
 
 //		What is this used for?
@@ -123,19 +136,21 @@ public:
 		else
 			stringName += "_fail";
 
+
 		/*To get this spam to come out properly:
 		  For all, attacker in packet is squad leader.
 		  For leader or group member, defender has to be any third party object.
 		  For bystanders, the defender is themselves.*/
 
+
 		//Send to group members if they are on the same planet.
 		for (int i = 0; i < group->getGroupSize(); i++) {
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 			if (member == NULL || !member->isPlayerCreature() || member->getZone() != leader->getZone())
-				continue;
-
-			CombatSpam* spam = new CombatSpam(leader, leader->getWeapon(), member, NULL, 0, "cbt_spam", stringName, color);
-			member->sendMessage(spam);
+								continue;
+			CreatureObject* memberPlayer = cast<CreatureObject*>( member.get());
+			CombatSpam* spam = new CombatSpam(leader, leader->getWeapon(), memberPlayer, NULL, 0, "cbt_spam", stringName, color);
+			memberPlayer->sendMessage(spam);
 		}
 
 		//Send to players near the leader and not in group.
@@ -145,15 +160,13 @@ public:
 			closeObjects.removeAll(vec->size(), 10);
 			vec->safeCopyTo(closeObjects);
 		} else {
-#ifdef COV_DEBUG
 			info("Null closeobjects vector in RallyCommand::sendRallyCombatSpam", true);
-#endif
 			zone->getInRangeObjects(leader->getWorldPositionX(), leader->getWorldPositionY(), 70, &closeObjects, true);
 		}
 
 		for (int i = 0; i < closeObjects.size(); ++i) {
-			SceneObject* object = cast<SceneObject*>( closeObjects.get(i));
-			if (object == NULL || !object->isPlayerCreature() || !checkDistance(leader, object, 70) || group->hasMember(object->getObjectID()))
+			CreatureObject* object = cast<CreatureObject*>( closeObjects.get(i));
+			if (object == NULL || !object->isPlayerCreature() || !leader->isInRange(object, 70) || group->hasMember(object))
 				continue;
 
 			CreatureObject* receiver = cast<CreatureObject*>( object); //in range player who isn't in group.

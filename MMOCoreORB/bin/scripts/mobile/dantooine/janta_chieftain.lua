@@ -60,32 +60,57 @@ janta_chieftain = Creature:new {
 			groups = {
 				{group = "krayt_tissue_rare", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 				{group = "junk", chance = 10000000}
 				},
-			lootChance = 6000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 				{group = "pearls_flawless", chance = 10000000}
 		},
-			lootChance = 6000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 				{group = "geonosian_common", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 				{group = "nectar_buff_f01", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 8000000
 		},
+		{
+			groups = {
+				{group = "saberhand27", chance = 10000000}
+		},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "saberhand27", chance = 10000000}
+		},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "skill_buffs", chance = 10000000}
+		},
+			lootChance = 8000000
+		},
+		{
+      			groups = {
+        			{group = "backpacks_b01", chance = 5000000},
+        			{group = "backpacks_b02", chance = 5000000}
+  		},
+      			lootChance = 8000000
+  		},
 		},
 
 	weapons = {"unarmed_weapons"},

@@ -59,7 +59,7 @@ object_weapon_melee_sword_sword_acid = object_weapon_melee_sword_shared_sword_ac
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
-	damageType = ACID,
+	damageType = STUN,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = HEAVY,
