@@ -9,8 +9,8 @@ fallen_jedi_h01 = Creature:new {
 	damageMax = 1200,
 	specialDamageMult = 2.0,
 	baseXp = 0,
-	baseHAM = 100000,
-	baseHAMmax = 200000,
+	baseHAM = 150000,
+	baseHAMmax = 300000,
 	armor = 2,
 	resists = {60,60,60,60,60,60,60,60,-1},
 	meatType = "",
@@ -36,49 +36,49 @@ fallen_jedi_h01 = Creature:new {
 				      {group = "armor_attachments", chance = 5000000},
 				      {group = "clothing_attachments", chance = 5000000}
    },
-			        lootChance = 8000000
+			        lootChance = 6000000
    },
    {
 			groups = {
         			{group = "armor_attachments", chance = 5000000},
         			{group = "clothing_attachments", chance = 5000000}
    },
-      			        lootChance = 8000000
+      			        lootChance = 6000000
    },
    {
       	 			groups = {
 				      {group = "armor_attachments", chance = 5000000},
 				      {group = "clothing_attachments", chance = 5000000}
    },
-      			        lootChance = 8000000
+      			        lootChance = 6000000
    },
    {
       			groups = {
        	 			{group = "armor_attachments", chance = 5000000},
         			{group = "clothing_attachments", chance = 5000000}
    },
-      			        lootChance = 8000000
+      			        lootChance = 6000000
    },
    {
       			groups = {
         			{group = "armor_attachments", chance = 5000000},
         			{group = "clothing_attachments", chance = 5000000}
    },
-      			        lootChance = 8000000
+      			        lootChance = 6000000
    },
    {
       			groups = {
         			{group = "armor_attachments", chance = 5000000},
        	 			{group = "clothing_attachments", chance = 5000000}
    },
-     			        lootChance = 8000000
+     			        lootChance = 6000000
    },
    {
      			groups = {
         			{group = "armor_attachments", chance = 5000000},
         			{group = "clothing_attachments", chance = 5000000}
    },
-      			       	 lootChance = 8000000
+      			       	 lootChance = 6000000
    },
    {
 			groups = {
@@ -109,7 +109,7 @@ fallen_jedi_h01 = Creature:new {
         		 groups = {
           			 {group = "nectar_buff_f01", chance = 10000000}
     },
-            		         lootChance = 8000000
+            		         lootChance = 6000000
     },
     {
           		groups = {
@@ -122,6 +122,12 @@ fallen_jedi_h01 = Creature:new {
           			 {group = "saberhand26", chance = 10000000}
     },
            		         lootChance = 1000000
+    },
+    {
+        		 groups = {
+          			 {group = "junk", chance = 10000000}
+    },
+           		         lootChance = 10000000
     },
     },
 
