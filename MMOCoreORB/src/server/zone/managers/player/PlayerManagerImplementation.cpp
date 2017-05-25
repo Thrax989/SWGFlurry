@@ -1566,6 +1566,10 @@ void PlayerManagerImplementation::awardExperience(CreatureObject* player, const 
 		xpType == "political" ||
 		xpType == "bountyhunter" ||
 		xpType == "shipwright" ||
+		xpType == "fs_reflex" ||
+		xpType == "fs_senses" ||
+		xpType == "fs_combat" ||
+		xpType == "fs_crafting" ||
 		xpType == "jedi_general") {
 		xp = playerObject->addExperience(xpType, (amount * 20));
 	} else {

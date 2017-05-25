@@ -1094,35 +1094,141 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
-			} else if (templatePath == "world_boss_1") {
-				if (player->getCashCredits() < 99999) {
+			} else if (templatePath == "dantooine_agro_outpost_starport_travel") {
+				if (player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		                box->setPromptTitle("World Travels");
-		                box->setPromptText("Travel Coast 100,000 credits. (Cash)");
+		                box->setPromptTitle("Dantooine Agro Outpost Stareport");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 99999) {
-					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("yavin4", -5575, 87, 4905);
- 					player->subtractCashCredits(100000);
-			        }
-			} else if (templatePath == "world_boss_2") {
-				if (player->getCashCredits() < 99999) {
+				if (player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		                box->setPromptTitle("World Travels");
-		                box->setPromptText("Travel Coast 100,000 credits. (Cash)");
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("dantooine", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "dantooine_imperial_outpost_starport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Dantooine Imperial Outpost Stareport");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 99999) {
+				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
-				        player->switchZone("yavin4", 5079, 87, 305);
-					player->subtractCashCredits(100000);
+ 				        player->switchZone("dantooine", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "dantooine_mining_outpost_startport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Dantooine Mining Outpost Stareport");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("dantooine", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "dathomir_trade_outpost_starport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Dathomir Trade Outpost Stareport ");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("dathomir", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "dathomir_science_outpost_starport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Dathomir Science Outpost Stareport ");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("dathomir", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "dathomir_village_shuttleport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Dathomir Village Shuttleport");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("dathomir", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "nyms_stronghold_starport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Nym's Stronghold Stareport");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("lok", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "scavenger_starport_travel") {
+				if (player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Scavenger Stareport");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("hoth", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "become_glowy") {
 				bluefrog->grantGlowyBadges(player);
