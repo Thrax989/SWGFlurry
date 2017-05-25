@@ -3,7 +3,7 @@ freedom_lg = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "freedom_mandoviol", weight = 10000000}
+		{itemTemplate = "freedom_cyberhand_enti", weight = 10000000}
 	}
 }
 
