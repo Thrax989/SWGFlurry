@@ -1,5 +1,5 @@
 fallen_jedi_h01 = Creature:new {
-	customName = "Fallen Jedi of Corusant",
+	customName = "Battle Master Novice",
 	socialGroup = "kun",
 	pvpFaction = "",
 	faction = "",
