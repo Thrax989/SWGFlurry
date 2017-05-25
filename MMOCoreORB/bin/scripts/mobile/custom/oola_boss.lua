@@ -43,6 +43,12 @@ oola_boss = Creature:new {
   },
   {
       groups = {
+        {group = "carbonite_lg", chance = 10000000}
+  },
+      lootChance = 1000000
+  },
+  {
+      groups = {
         {group = "wings_lg", chance = 10000000}
   },
       lootChance = 5000000
