@@ -33,7 +33,7 @@ public:
 			return INVALIDLOCOMOTION;
 		
 		if(creature->getZone()->getZoneName() == "kaas")
-			creature->sendSystemMessage("Can not use /setpvp on Kass");
+			creature->sendSystemMessage("Can not use /setpvp on Kaas");
 			return GENERALERROR;
 		
 		if (creature->isInCombat()) {
