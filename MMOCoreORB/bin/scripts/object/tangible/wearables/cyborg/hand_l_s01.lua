@@ -126,6 +126,12 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+				
+	skillMods = {
+		{"private_med_wound_mind", 20},
+		{"private_buff_mind", 50},
+		{"private_med_battle_fatigue", 35}
+	},
 
 }
 
