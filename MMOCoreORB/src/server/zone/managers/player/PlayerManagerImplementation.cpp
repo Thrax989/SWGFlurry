@@ -912,7 +912,7 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 
 			String name = object->getDisplayedName();
 
-			if (!name.toLowerCase().contains("mysterious_shrine"))
+			if (!name.toLowerCase().contains("shrine"))
 				continue;
 
 			results << name;
@@ -933,7 +933,7 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 	Quaternion* direction;
 	PlayerObject* ghost = player->getPlayerObject();
 
-	if (name.toLowerCase().contains("mysterious_shrine")) {
+	if (name.toLowerCase().contains("shrine")) {
 		Zone* zone = player->getZone();
 		if (cloner->getParent().get() != NULL) {
 			player->switchZone(zone->getZoneName(), cloner->getPositionX(), cloner->getPositionZ(), cloner->getPositionY(), cloner->getParentID());
@@ -997,7 +997,7 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		uint64 preDesignatedFacilityOid = ghost->getCloningFacility();
 		ManagedReference<SceneObject*> preDesignatedFacility = server->getObject(preDesignatedFacilityOid);
 
-		if (preDesignatedFacility == NULL || preDesignatedFacility != cloningBuilding || name.toLowerCase().contains("mysterious_shrine")) {
+		if (preDesignatedFacility == NULL || preDesignatedFacility != cloningBuilding || name.toLowerCase().contains("shrine")) {
 			player->addWounds(CreatureAttribute::HEALTH, 100, true, false);
 			player->addWounds(CreatureAttribute::ACTION, 100, true, false);
 			player->addWounds(CreatureAttribute::MIND, 100, true, false);
@@ -1566,10 +1566,6 @@ void PlayerManagerImplementation::awardExperience(CreatureObject* player, const 
 		xpType == "political" ||
 		xpType == "bountyhunter" ||
 		xpType == "shipwright" ||
-		xpType == "fs_reflex" ||
-		xpType == "fs_senses" ||
-		xpType == "fs_combat" ||
-		xpType == "fs_crafting" ||
 		xpType == "jedi_general") {
 		xp = playerObject->addExperience(xpType, (amount * 20));
 	} else {
