@@ -3016,13 +3016,15 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
                return false;
 	
+	ManagedReference<TangibleObject*> tano = cast<TangibleObject*>(targetGhost);
+	CreatureObject* defender =tano->getMainDefender()->asCreatureObject();
+
+	defender->addDefender(object);
+	object->addDefender(defender);
 
 	//if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
 
 	CreatureObject* targetCreo = asCreatureObject();
-
-	targetCreo->addDefender(object);
-	object->addDefender(targetCreo);
 
 	if (isPet())
 		targetCreo = getLinkedCreature().get();
