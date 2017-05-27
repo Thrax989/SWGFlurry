@@ -3048,13 +3048,15 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	if (!(targetFactionStatus == FactionStatus::ONLEAVE) && (currentFactionStatus == FactionStatus::ONLEAVE))
 		return false;
 	
-	StringBuffer text;
+        StringBuffer msg;
 
 	if(!defender->isAggressiveTo(object) && !object->isAggressiveTo(defender)){
 		object->sendPvpStatusTo(defender);
 		defender->sendPvpStatusTo(object);
-		text << "defender(\\"" << object << "\", 1, ";
-		info(text, true);
+
+	 msg << "isAggressiveTo " << object << " to " << defender;
+	 info(msg.toString(), true);
+
 	}
 
 	return true;
