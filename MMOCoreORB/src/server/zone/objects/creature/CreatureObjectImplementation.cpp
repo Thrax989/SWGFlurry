@@ -3015,11 +3015,12 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
                return false;
-
-	//if(targetCreature->getMainDefender() == NULL)
-		
-	uint64 defenderPlayerId = asCreatureObject()->getMainDefender()->getObjectID();
-	ManagedReference<CreatureObject* > defender = server->getZoneServer()->getObject(defenderPlayerId).castTo<CreatureObject*>();
+	
+	ManagedReference<CreatureObject* > defender = NULL;
+	if(targetCreature->getMainDefender() != NULL){
+		uint64 defenderPlayerId = asCreatureObject()->getMainDefender()->getObjectID();
+		defender = server->getZoneServer()->getObject(defenderPlayerId).castTo<CreatureObject*>();
+	}
 
 	//if (defender == NULL)
 		//return false;
