@@ -1533,7 +1533,7 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		if (def == "saber_block") {
 			int block_mod = targetCreature->getSkillMod(def);
             if (targetCreature->isIntimidated() || targetCreature->isStunned() || targetCreature->isDizzied()) {
-                block_mod = (block_mod / 1.5); //drops saber block by 20% when a target is blinded, dizzyed, or stuned.
+                block_mod = (block_mod / 1.7); //drops saber block by 20% when a target is blinded, dizzyed, or stuned.
             }
             if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
                 return RICOCHET;
