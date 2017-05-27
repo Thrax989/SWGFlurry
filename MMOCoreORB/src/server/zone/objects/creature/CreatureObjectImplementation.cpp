@@ -3021,10 +3021,12 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	uint64 defenderPlayerId = asCreatureObject()->getMainDefender()->getObjectID();
 	ManagedReference<CreatureObject* > defender = server->getZoneServer()->getObject(defenderPlayerId).castTo<CreatureObject*>();
 
-	if (defender == NULL)
-		return false;
+	//if (defender == NULL)
+		//return false;
+		
 
-	if(object->getMainDefender()->getObjectID() == asCreatureObject()->getObjectID() || defenderPlayerId == object->getObjectID())
+	//possibly add check for (object->getMainDefender()->getObjectID() == asCreatureObject()->getObjectID())
+	if(defenderPlayerId == object->getObjectID())
 		return false;
 
 	//if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
