@@ -3017,8 +3017,9 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
                return false;
 	
 	ManagedReference<CreatureObject* > defender = NULL;
+	uint64 defenderPlayerId = 0;
 	if(asCreatureObject()->getMainDefender() != NULL){
-		uint64 defenderPlayerId = asCreatureObject()->getMainDefender()->getObjectID();
+	    defenderPlayerId = asCreatureObject()->getMainDefender()->getObjectID();
 		defender = server->getZoneServer()->getObject(defenderPlayerId).castTo<CreatureObject*>();
 	}
 
@@ -3027,7 +3028,7 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 		
 
 	//possibly add check for (object->getMainDefender()->getObjectID() == asCreatureObject()->getObjectID())
-	if (defender != NULL){
+	if (defender != NULL && defenderPlayerId != 0){
 		if(defenderPlayerId == object->getObjectID())
 			return false;
 	}
