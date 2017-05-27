@@ -3016,8 +3016,8 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
                return false;
 
-	//Locker clocker(asCreatureObject(), object);
-	
+	//if(targetCreature->getMainDefender() == NULL)
+		
 	uint64 defenderPlayerId = asCreatureObject()->getMainDefender()->getObjectID();
 	ManagedReference<CreatureObject* > defender = server->getZoneServer()->getObject(defenderPlayerId).castTo<CreatureObject*>();
 
@@ -3026,9 +3026,10 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 		
 
 	//possibly add check for (object->getMainDefender()->getObjectID() == asCreatureObject()->getObjectID())
-	if(defenderPlayerId == object->getObjectID())
-		return false;
-
+	if (defender != NULL){
+		if(defenderPlayerId == object->getObjectID())
+			return false;
+	}
 	//if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
 
 	CreatureObject* targetCreo = asCreatureObject();
@@ -3048,12 +3049,21 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	if (!(targetFactionStatus == FactionStatus::ONLEAVE) && (currentFactionStatus == FactionStatus::ONLEAVE))
 		return false;
 	
-	info("Before aggression check\n",true);
+	
+	if (defender != NULL){
+		if(!defender->isAggressiveTo(object) && !object->isAggressiveTo(defender)){
+			ManagedReference<SceneObject*> defScene = asCreatureObject()->getMainDefender();
+			TangibleObject* defenderTano = cast<TangibleObject*>( defScene.get());
 
-	if(!defender->isAggressiveTo(object) && !object->isAggressiveTo(defender)){
-		info("Aggression check passed sending sendPvpStatusTo()\n",true);
-		object->sendPvpStatusTo(defender);
-		defender->sendPvpStatusTo(object);
+			Locker clocker(defenderTano, object);
+
+			object->addDefender(defenderTano);
+			defenderTano->addDefender(object);
+	
+			//object->sendPvpStatusTo(defender);
+			//defender->sendPvpStatusTo(object);
+			clocker.release();
+		}
 	}
 
 	return true;
