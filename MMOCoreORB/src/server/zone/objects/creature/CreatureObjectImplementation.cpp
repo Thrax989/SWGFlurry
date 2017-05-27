@@ -3017,7 +3017,7 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 	Locker clocker(asCreatureObject(), object);
 	
-	uint64 defenderPlayerId = targetGhost->getMainDefender()->getObjectID();
+	uint64 defenderPlayerId = asCreatureObject()->getMainDefender()->getObjectID();
 	ManagedReference<CreatureObject* > defender = server->getZoneServer()->getObject(defenderPlayerId).castTo<CreatureObject*>();
 
 	defender->addDefender(object);
