@@ -154,8 +154,8 @@ object_tangible_component_armor_shield_generator_personal_imperial_test = object
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "exp_durability", "exp_quality", "exp_durability", "null", "null", "null", "null", "null", "exp_resistance", "null"},
 	experimentalSubGroupTitles = {"null", "null", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
-	experimentalMin = {0, 0, 1000, 10, 12500, 0, 0, 0, 1, 2, 10, 12500},
-	experimentalMax = {0, 0, 1000, 50, 15000, 0, 0, 0, 1, 2, 70, 15000},
+	experimentalMin = {0, 0, 1000, 10, 15000, 0, 0, 0, 1, 2, 10, 15000},
+	experimentalMax = {0, 0, 1000, 50, 25000, 0, 0, 0, 1, 2, 70, 25000},
 	experimentalPrecision = {0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
