@@ -3014,9 +3014,8 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
                return false;
-
-	
-	CreatureObject* defender =targetGhost->getMainDefender()->asCreatureObject();
+	ManagedReference<TangibleObject*> tano = cast<TangibleObject*>(targetGhost);
+	CreatureObject* defender =tano->getMainDefender()->asCreatureObject();
 	PlayerObject* defenderGhost = defender->getPlayerObject();
 
 	BaseMessage* pvpstat = new UpdatePVPStatusMessage(targetGhost, ghost, targetGhost->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE);
