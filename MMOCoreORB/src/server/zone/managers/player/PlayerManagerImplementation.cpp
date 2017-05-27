@@ -944,6 +944,11 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::ACTION, 50, true, false);
 		player->addWounds(CreatureAttribute::MIND, 50, true, false);
 		player->addShockWounds(50, true);
+		//Broadcast to Server
+		String playerName = player->getFirstName();
+		StringBuffer zBroadcast;
+		zBroadcast << "\\#00e604" << playerName << " \\#e60000 Has Cloned At The Nearest Force Shrine!";
+		player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	} else {
 		if (cloner == NULL) {
 			error("Cloning structure is null");
