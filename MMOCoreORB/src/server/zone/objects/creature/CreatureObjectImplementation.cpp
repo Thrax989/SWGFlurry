@@ -3053,7 +3053,7 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	
 	if (defender != NULL){
 		if(!defender->isAggressiveTo(object) && !object->isAggressiveTo(defender)){
-			ManagedReference<SceneObject*> defScene = asCreatureObject()->getMainDefender();
+			/*ManagedReference<SceneObject*> defScene = asCreatureObject()->getMainDefender();
 			TangibleObject* defenderTano = cast<TangibleObject*>( defScene.get());
 
 			Locker clocker(defenderTano, object);
@@ -3063,13 +3063,15 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	
 			//object->sendPvpStatusTo(defender);
 			//defender->sendPvpStatusTo(object);
-			clocker.release();
+			clocker.release();*/
 
 			BaseMessage* pvpstat = new UpdatePVPStatusMessage(defender, object, defender->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE | CreatureFlag::TEF);
 			object->sendMessage(pvpstat);
 
 			BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(object, defender, object->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE | CreatureFlag::TEF);
 			defender->sendMessage(pvpstat2);
+
+			CombatManager::instance()->startCombat(player, target);
 
 	 //msg << "isAggressiveTo " << object << " to " << defender;
 	 //info(msg.toString(), true);
