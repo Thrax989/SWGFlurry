@@ -2993,8 +2993,8 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 }
 
 bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
-	if (object == asCreatureObject())
-		return true;
+	//if (object == asCreatureObject())
+		//return true;
 
 	if (isInvisible())
 		return false;
@@ -3007,8 +3007,24 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	if (ghost == NULL)
 		return false;
 
-	if (ghost->isBountyLocked())
+	PlayerObject* targetGhost = asCreatureObject()->getPlayerObject(); // ghost is the target
+	
+	if (targetGhost == NULL)
 		return false;
+
+	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
+               return false;
+
+	
+	CreatureObject* defender =targetGhost->getMainDefender()->asCreatureObject();
+	PlayerObject* defenderGhost = defender->getPlayerObject();
+
+	BaseMessage* pvpstat = new UpdatePVPStatusMessage(targetGhost, ghost, targetGhost->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE);
+	ghost->sendMessage(pvpstat);
+	
+	BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(ghost, targetGhost, ghost->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE);
+	targetGhost->sendMessage(pvpstat2);
+	
 
 	//if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
 
