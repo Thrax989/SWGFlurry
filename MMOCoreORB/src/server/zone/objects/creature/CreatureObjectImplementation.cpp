@@ -3058,7 +3058,7 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 			Locker clocker(defenderTano, object);
 
-			object->addDefender(defenderTano);
+			object->setDefender(defenderTano);
 			defenderTano->addDefender(object);
 	
 			//object->sendPvpStatusTo(defender);
