@@ -3048,10 +3048,10 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	if (!(targetFactionStatus == FactionStatus::ONLEAVE) && (currentFactionStatus == FactionStatus::ONLEAVE))
 		return false;
 	
-	info("Before aggression check\n");
+	info("Before aggression check\n",true);
 
 	if(!defender->isAggressiveTo(object) && !object->isAggressiveTo(defender)){
-		info("Aggression check passed sending sendPvpStatusTo()\n");
+		info("Aggression check passed sending sendPvpStatusTo()\n",true);
 		object->sendPvpStatusTo(defender);
 		defender->sendPvpStatusTo(object);
 	}
