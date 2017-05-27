@@ -96,7 +96,7 @@ painting_exchange_credit_screen = ConvoScreen:new {
    customDialogText = "Welcome here you can Exchange Credits for Rare paintings.",
    stopConversation = "false",
    options = {
-      {"Painting 40", "40"},
+      {"Painting 40 (10,000,000 Credits)", "40"},
       {"Back", "first_screen"},
       {"No thank you.", "deny_quest"},
       }
