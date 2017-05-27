@@ -3016,13 +3016,12 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
                return false;
 	ManagedReference<TangibleObject*> tano = cast<TangibleObject*>(targetGhost);
 	CreatureObject* defender =tano->getMainDefender()->asCreatureObject();
-	PlayerObject* defenderGhost = defender->getPlayerObject();
 
-	BaseMessage* pvpstat = new UpdatePVPStatusMessage(asCreatureObject(), object, asCreatureObject()->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE);
+	BaseMessage* pvpstat = new UpdatePVPStatusMessage(defender, object, defender->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE);
     object->sendMessage(pvpstat);
 
-    BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(object, asCreatureObject(), object->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE);
-    asCreatureObject()->sendMessage(pvpstat2);
+    BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(object, defender, object->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE);
+    defender->sendMessage(pvpstat2);
 	
 
 	//if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
