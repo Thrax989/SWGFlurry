@@ -3021,11 +3021,11 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	uint64 defenderPlayerId = asCreatureObject()->getMainDefender()->getObjectID();
 	ManagedReference<CreatureObject* > defender = server->getZoneServer()->getObject(defenderPlayerId).castTo<CreatureObject*>();
 
-	BaseMessage* pvpstat = new UpdatePVPStatusMessage(defender, object, defender->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE);
-    object->sendMessage(pvpstat);
+	if (defender == NULL)
+		return false;
 
-    BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(object, defender, object->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE);
-	defender->sendMessage(pvpstat2);
+	if(object->getMainDefender()->getObjectID() == asCreatureObject()->getObjectID() || defenderPlayerId == object->getObjectID())
+		return false;
 
 	//if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
 
@@ -3045,6 +3045,11 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 	if (!(targetFactionStatus == FactionStatus::ONLEAVE) && (currentFactionStatus == FactionStatus::ONLEAVE))
 		return false;
+
+	if(!defender->isAggressiveTo(object) && !object->isAggressiveTo(defender)){
+		object->sendPvpStatusTo(defender);
+		defender->sendPvpStatusTo(object);
+	}
 
 	return true;
 }
