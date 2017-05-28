@@ -2996,7 +2996,7 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 	if (guildObject != NULL && guildObject->isInWaringGuild(object))
 		return true;
 
-	if ((object->getPvpStatusBitmask() & CreatureFlag::TEF) )
+	if ((object->getPvpStatusBitmask() & CreatureFlag::TEF) && (getPvpStatusBitmask & CreatureFlag::TEF))
 		return true;
 	
 	return false;
