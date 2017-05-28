@@ -163,33 +163,25 @@ void CombatManager::forcePeace(CreatureObject* attacker) {
 }
 
 int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* defenderObject, const CreatureAttackData& data) {
-	StringBuffer msg;
-	msg << attacker->getFirstName() << " entering doCombat action with data Defender:" << defenderObject->asCreatureObject()->getFirstName();
-	info(msg, true);
+	//info("entering doCombat action with data ", true);
 
 	if(data.getCommand() == NULL)
 		return -3;
-	StringBuffer msg2;
-	msg2 << attacker->getFirstName() << " past data.getCommand Defender:" << defenderObject->asCreatureObject()->getFirstName();
-	info(msg2, true);
 
 	if (!startCombat(attacker, defenderObject))
 		return -1;
-	StringBuffer msg3;
-	msg3 << attacker->getFirstName() << " past start combat Defender:"<< defenderObject->asCreatureObject()->getFirstName();
-	info(msg3, true);
+
+	//info("past start combat", true);
 
 	if (attacker->hasAttackDelay() || !attacker->checkPostureChangeDelay())
 		return -3;
-	StringBuffer msg4;
-	msg4 << attacker->getFirstName() << " past delay Defender:" << defenderObject->asCreatureObject()->getFirstName();
-	info(msg4, true);
+
+	//info("past delay", true);
 
 	if (!applySpecialAttackCost(attacker, weapon, data))
 		return -2;
-	StringBuffer msg5;
-	msg5 << attacker->getFirstName() << " past special attack cost Defender:" << defenderObject->asCreatureObject()->getFirstName();
-	info(msg5, true);
+
+	//info("past special attack cost", true);
 
 	int damage = 0;
 	damage = doTargetCombatAction(attacker, weapon, defenderObject, data);
