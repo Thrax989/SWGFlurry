@@ -170,7 +170,7 @@ int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon
 	if(data.getCommand() == NULL)
 		return -3;
 	StringBuffer msg2;
-	msg2 << attacker->getFirstName() << " past start combat Defender:" << defenderObject->asCreatureObject()->getFirstName();
+	msg2 << attacker->getFirstName() << " past data.getCommand Defender:" << defenderObject->asCreatureObject()->getFirstName();
 	info(msg2, true);
 
 	if (!startCombat(attacker, defenderObject))
