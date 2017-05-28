@@ -10,7 +10,7 @@ hologram_lg1 = {
 		{itemTemplate = "hk47_hologram", weight = 1000000},
 		{itemTemplate = "imp_hologram", weight = 1000000},
 		{itemTemplate = "imperialguard_hologram", weight = 1000000},
-		{itemTemplate = "jawa__hologram", weight = 1000000},
+		{itemTemplate = "jawa_hologram", weight = 1000000},
 		{itemTemplate = "leia_hologram", weight = 1000000},
 		{itemTemplate = "luke_hologram", weight = 1000000}
 		

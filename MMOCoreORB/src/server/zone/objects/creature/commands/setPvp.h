@@ -41,7 +41,7 @@ public:
 			return GENERALERROR;
 		}
 		
-		if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice"))){
+		if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice")){
 			creature->sendSystemMessage("You may not use this command.");
 			return GENERALERROR;
 		}
