@@ -3061,7 +3061,7 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	
 	if (defender != NULL){
 		if(!(asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::AGGRESSIVE)){
-			/*ManagedReference<SceneObject*> defScene = asCreatureObject()->getMainDefender();
+			ManagedReference<SceneObject*> defScene = asCreatureObject()->getMainDefender();
 			TangibleObject* defenderTano = cast<TangibleObject*>( defScene.get());
 
 			Locker clocker(defenderTano, object);
@@ -3069,20 +3069,15 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 			object->setDefender(defenderTano);
 			defenderTano->addDefender(object);
 	
-			//object->sendPvpStatusTo(defender);
-			//defender->sendPvpStatusTo(object);
-			clocker.release();*/
+			clocker.release();
 
-			CombatManager::instance()->startCombat(object, defender, true);
+			//CombatManager::instance()->startCombat(object, defender, true);
 
-			/*BaseMessage* pvpstat = new UpdatePVPStatusMessage(defender, object, defender->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE | CreatureFlag::TEF);
+			BaseMessage* pvpstat = new UpdatePVPStatusMessage(defender, object, defender->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE | CreatureFlag::TEF);
 			object->sendMessage(pvpstat);
 
 			BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(object, defender, object->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE | CreatureFlag::TEF);
-			defender->sendMessage(pvpstat2);*/
-			
-			object->sendPvpStatusTo(defender);
-			defender->sendPvpStatusTo(object);
+			defender->sendMessage(pvpstat2);
 
 
 	 //msg << "isAggressiveTo " << object << " to " << defender;
