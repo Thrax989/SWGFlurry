@@ -3068,9 +3068,6 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 			object->setDefender(defenderTano);
 			defenderTano->addDefender(object);
-
-			object->sendPvpStatusTo(defender);
-			defender->sendPvpStatusTo(object);
 	
 			clocker.release();
 
@@ -3083,6 +3080,9 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 			defender->sendMessage(pvpstat2);
 
 			object->setCombatState();
+
+			object->sendPvpStatusTo(defender);
+			defender->sendPvpStatusTo(object);
 			
 			
 
