@@ -3079,6 +3079,9 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 			BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(object, defender, object->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE | CreatureFlag::TEF);
 			defender->sendMessage(pvpstat2);
 
+			object->setCombatState()
+			
+			
 
 	 //msg << "isAggressiveTo " << object << " to " << defender;
 	 //info(msg.toString(), true);
@@ -3089,7 +3092,7 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	}
 
 	//RE-ENABLE FOR TEF CHECK!!!!!!
-	//if((asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::TEF)){
+	//if((asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::TEF) && !(currentFactionStatus == FactionStatus::OVERT)){
 	//	return false;
 	//}
 
