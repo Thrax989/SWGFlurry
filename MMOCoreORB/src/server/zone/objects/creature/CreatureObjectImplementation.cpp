@@ -2864,6 +2864,14 @@ bool CreatureObjectImplementation::isAggressiveTo(CreatureObject* object) {
 		return true;
 	}
 
+        if (object->getPvpStatusBitmask() & CreatureFlag::TEF){
+		return true;
+        } else {
+
+	return false;
+
+        }
+
 	ManagedReference<GuildObject*> guildObject = guild.get();
 	if (guildObject != NULL && guildObject->isInWaringGuild(object))
 		return true;
