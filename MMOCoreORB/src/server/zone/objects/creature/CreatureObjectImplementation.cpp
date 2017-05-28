@@ -3076,10 +3076,10 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 			//CombatManager::instance()->startCombat(object, defender, false);
 
-			BaseMessage* pvpstat = new UpdatePVPStatusMessage(defender, object, defender->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE);
+			BaseMessage* pvpstat = new UpdatePVPStatusMessage(defender, object, defender->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE | CreatureFlag::TEF);
 			object->sendMessage(pvpstat);
 
-			BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(object, defender, object->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE);
+			BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(object, defender, object->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE | CreatureFlag::TEF);
 			defender->sendMessage(pvpstat2);
 
 			//object->setCombatState();
