@@ -7,10 +7,10 @@ hellucard_boss = Creature:new {
 	chanceHit = 100.00,
 	damageMin = 4000,
 	damageMax = 6000,
-	specialDamageMult = 10.0,
+	specialDamageMult = 5.0,
 	baseXp = 0,
-	baseHAM = 2000000,
-	baseHAMmax = 2000000,
+	baseHAM = 1000000,
+	baseHAMmax = 1000000,
 	armor = 3,
 	resists = {90,90,90,90,90,90,90,90,-1},
 	meatType = "",
@@ -30,7 +30,7 @@ hellucard_boss = Creature:new {
 
 	templates = {"object/mobile/mos_taike_guard_old.iff"},
   	outfit = "custom_armor_c08_outfit",
-  lootGroups = {
+  	lootGroups = {
 	{
 			groups = {
         			{group = "pearls_flawless", chance = 5000000},
@@ -183,7 +183,7 @@ hellucard_boss = Creature:new {
                    		{group = "stun_weapons", chance = 5000000},
                    		{group = "stun_ranged", chance = 5000000}
     },
-          			lootChance = 5000000
+          			lootChance = 8000000
     },
     },
 

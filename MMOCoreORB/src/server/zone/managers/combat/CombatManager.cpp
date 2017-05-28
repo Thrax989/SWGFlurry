@@ -1204,7 +1204,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
   		info(damageInfo);
   		Locker alocker(armor);
   		if (getArmorObjectReduction(armor, 16) > 0 && damageType == 16) {
-  			armor->inflictDamage(armor, 0, damage * 0.3, true, true);
+  			armor->inflictDamage(armor, 0, damage * 0.2, true, true);
   		} else {
   			armor->inflictDamage(armor, 0, damage * 0.1, true, true);
   		}
@@ -1533,7 +1533,7 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		if (def == "saber_block") {
 			int block_mod = targetCreature->getSkillMod(def);
             if (targetCreature->isIntimidated() || targetCreature->isStunned() || targetCreature->isDizzied()) {
-                block_mod = (block_mod / 1.5); //drops saber block by 20% when a target is blinded, dizzyed, or stuned.
+                block_mod = (block_mod / 1.7); //drops saber block to 50 if target is MLS saber block is divided by 1/7 when intimidated, stunded, dizzied
             }
             if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
                 return RICOCHET;

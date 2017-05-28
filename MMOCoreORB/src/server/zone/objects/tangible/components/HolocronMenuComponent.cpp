@@ -87,6 +87,12 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 			creature->playEffect("clienteffect/pl_force_absorb_hit.cef");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd");
   			playerObject->sendMessage(pmm);
+			//Broadcast to Server
+ 			Zone* zone = creature->getZone();
+ 			String playerName = creature->getFirstName();
+  			StringBuffer zBroadcast;
+  			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Used A Holocron";
+ 			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			if (test == 1) {
 				creature->sendSystemMessage("your force has been refilled");
 			}
