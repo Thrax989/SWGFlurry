@@ -2996,7 +2996,7 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 	if (guildObject != NULL && guildObject->isInWaringGuild(object))
 		return true;
 
-	if ((object->getPvpStatusBitmask() & CreatureFlag::TEF) && (pvpStatusBitmask & CreatureFlag::TEF))
+	if ((object->getPvpStatusBitmask() & CreatureFlag::TEF))
 		return true;
 	
 	return false;
@@ -3076,16 +3076,16 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 			//CombatManager::instance()->startCombat(object, defender, false);
 
-			BaseMessage* pvpstat = new UpdatePVPStatusMessage(defender, object, defender->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE | CreatureFlag::TEF);
-			object->sendMessage(pvpstat);
+			//BaseMessage* pvpstat = new UpdatePVPStatusMessage(defender, object, defender->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE );
+			//object->sendMessage(pvpstat);
 
-			BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(object, defender, object->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE | CreatureFlag::TEF);
-			defender->sendMessage(pvpstat2);
+			//BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(object, defender, object->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE );
+			//defender->sendMessage(pvpstat2);
 
 			//object->setCombatState();
 
-			//object->sendPvpStatusTo(defender);
-			//defender->sendPvpStatusTo(object);
+			object->sendPvpStatusTo(defender);
+			defender->sendPvpStatusTo(object);
 			
 			
 
@@ -3096,9 +3096,9 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	}
 
 	//RE-ENABLE FOR TEF CHECK!!!!!!
-	//if((asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::TEF) && !(currentFactionStatus == FactionStatus::OVERT)){
-	//	return false;
-	//}
+	if((asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::TEF) && !(currentFactionStatus == FactionStatus::OVERT)){
+		return false;
+	}
 
 	return true;
 }
