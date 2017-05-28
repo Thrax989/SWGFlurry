@@ -3003,8 +3003,8 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 }
 
 bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
-	//if (object == asCreatureObject())
-		//return true;
+	if (object == asCreatureObject())
+		return true;
 
 	if (isInvisible())
 		return false;
