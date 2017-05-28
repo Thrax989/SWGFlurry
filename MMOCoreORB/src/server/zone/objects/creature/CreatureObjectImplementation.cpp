@@ -3063,7 +3063,7 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
         //StringBuffer msg;
 	
 	if (defender != NULL){
-		if(!(asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::AGGRESSIVE)){
+		if(!(asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::AGGRESSIVE) && !(asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::ATTACKABLE)){
 			//ManagedReference<SceneObject*> defScene = asCreatureObject()->getMainDefender();
 			//TangibleObject* defenderTano = cast<TangibleObject*>( defScene.get());
 
@@ -3092,8 +3092,6 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	 //msg << "isAggressiveTo " << object << " to " << defender;
 	 //info(msg.toString(), true);
 
-		}else{
-			return false;
 		}
 	}
 
