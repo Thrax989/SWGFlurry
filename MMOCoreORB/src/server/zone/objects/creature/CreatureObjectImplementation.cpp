@@ -2863,15 +2863,13 @@ bool CreatureObjectImplementation::isAggressiveTo(CreatureObject* object) {
 	if (ghost->isInBountyLockList(object->getObjectID()) || targetGhost->isInBountyLockList(asCreatureObject()->getObjectID())) {
 		return true;
 	}
-
-        if (object->getPvpStatusBitmask() & CreatureFlag::TEF){
+	/*
+    if (object->getPvpStatusBitmask() & CreatureFlag::TEF){
 		return true;
-        } else {
-
-	return false;
-
-        }
-
+    } else {
+		return false;
+    }
+	*/
 	ManagedReference<GuildObject*> guildObject = guild.get();
 	if (guildObject != NULL && guildObject->isInWaringGuild(object))
 		return true;
@@ -3022,7 +3020,7 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 		return false;
 
 	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
-               return false;
+        return false;
 	
 	ManagedReference<CreatureObject* > defender = NULL;
 	uint64 defenderPlayerId = 0;
@@ -3062,7 +3060,7 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
         //StringBuffer msg;
 	
 	if (defender != NULL){
-		if(!defender->isAggressiveTo(object) && !object->isAggressiveTo(defender)){
+		if(!(asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::AGGRESSIVE)){
 			/*ManagedReference<SceneObject*> defScene = asCreatureObject()->getMainDefender();
 			TangibleObject* defenderTano = cast<TangibleObject*>( defScene.get());
 
