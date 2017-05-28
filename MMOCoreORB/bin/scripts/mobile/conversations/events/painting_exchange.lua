@@ -20,7 +20,7 @@ painting_exchange_five_screen = ConvoScreen:new {
       {"New Hope Painting", "5"},
       {"Saga Continues Painting", "6"},
       {"Saga Continues Painting", "7"},
-      {"Galactic Gathering", "8"},
+      {"Galactic Gathering Painting", "8"},
       {"Cataclysm Painting", "9"},
       {"Might Painting", "10"},
       {"Progress Painting", "11"},
