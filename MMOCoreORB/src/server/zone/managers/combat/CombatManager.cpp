@@ -163,7 +163,7 @@ void CombatManager::forcePeace(CreatureObject* attacker) {
 }
 
 int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* defenderObject, const CreatureAttackData& data) {
-	//info("entering doCombat action with data ", true);
+	info(attacker->getFirstName()+" entering doCombat action with data ", true);
 
 	if(data.getCommand() == NULL)
 		return -3;
@@ -171,17 +171,17 @@ int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon
 	if (!startCombat(attacker, defenderObject))
 		return -1;
 
-	//info("past start combat", true);
+	info(attacker->getFirstName()+" past start combat", true);
 
 	if (attacker->hasAttackDelay() || !attacker->checkPostureChangeDelay())
 		return -3;
 
-	//info("past delay", true);
+	info(attacker->getFirstName()+" past delay", true);
 
 	if (!applySpecialAttackCost(attacker, weapon, data))
 		return -2;
 
-	//info("past special attack cost", true);
+	info(attacker->getFirstName()+" past special attack cost", true);
 
 	int damage = 0;
 	damage = doTargetCombatAction(attacker, weapon, defenderObject, data);
