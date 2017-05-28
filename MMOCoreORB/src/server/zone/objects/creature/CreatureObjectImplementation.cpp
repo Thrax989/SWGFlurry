@@ -3093,10 +3093,10 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 		}
 	}
 
-
-	if((asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::TEF)){
-		return false;
-	}
+	//RE-ENABLE FOR TEF CHECK!!!!!!
+	//if((asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::TEF)){
+	//	return false;
+	//}
 
 	return true;
 }
