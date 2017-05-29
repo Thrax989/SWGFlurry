@@ -1,120 +1,67 @@
-/*
-				Copyright <SWGEmu>
-		See file COPYING for copying conditions.*/
+--Copyright (C) 2007 <SWGEmu>
 
-#ifndef SNIPERSHOTCOMMAND_H_
-#define SNIPERSHOTCOMMAND_H_
+--This File is part of Core3.
 
-#include "server/zone/objects/scene/SceneObject.h"
-#include "CombatQueueCommand.h"
-#include "server/zone/objects/player/sui/SuiCallback.h"
-#include "server/zone/managers/visibility/VisibilityManager.h"
-#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
-#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
+--This program is free software; you can redistribute
+--it and/or modify it under the terms of the GNU Lesser
+--General Public License as published by the Free Software
+--Foundation; either version 2 of the License,
+--or (at your option) any later version.
 
-class SniperShotCommand : public CombatQueueCommand {
-public:
+--This program is distributed in the hope that it will be useful,
+--but WITHOUT ANY WARRANTY; without even the implied warranty of
+--MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+--See the GNU Lesser General Public License for
+--more details.
 
-	SniperShotCommand(const String& name, ZoneProcessServer* server)
-		: CombatQueueCommand(name, server) {
-	}
+--You should have received a copy of the GNU Lesser General
+--Public License along with this program; if not, write to
+--the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
+--Linking Engine3 statically or dynamically with other modules
+--is making a combined work based on Engine3.
+--Thus, the terms and conditions of the GNU Lesser General Public License
+--cover the whole combination.
 
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
+--In addition, as a special exception, the copyright holders of Engine3
+--give you permission to combine Engine3 program with free software
+--programs or libraries that are released under the GNU LGPL and with
+--code included in the standard release of Core3 under the GNU LGPL
+--license (or modified versions of such code, with unchanged license).
+--You may copy and distribute such a system following the terms of the
+--GNU LGPL for Engine3 and the licenses of the other code concerned,
+--provided that you include the source code of that other code when
+--and as the GNU LGPL requires distribution of source code.
 
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
+--Note that people who make modified versions of Engine3 are not obligated
+--to grant this special exception for their modified versions;
+--it is their choice whether to do so. The GNU Lesser General Public License
+--gives permission to release a modified version without this exception;
+--this exception also makes it possible to release a modified version
+--which carries forward this exception.
+--true = 1, false = 0
 
-		if (!creature->isKneeling() ) {
-			creature->sendSystemMessage("You Must Be Kneeling Inorder To Use Sniper Shot");
-	              return GENERALERROR;
-		}
+SniperShotCommand = {
+	name = "snipershot",
 
-		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
+	minDamage = 350,
+	speed = 1.0,
+	healthCostMultiplier = 1.0,
+	actionCostMultiplier = 1.0,
+	mindCostMultiplier = 2.0,
+	accuracyBonus = 15,
 
-		CreatureObject* targetCreature = cast<CreatureObject*>(targetObject.get());
+	poolsToDamage = RANDOM_ATTRIBUTE,
 
-		if (targetCreature == NULL)
-			return INVALIDTARGET;
+	animation = "fire_1_special_single", 
+	animType = GENERATE_RANGED,
 
-		if (!targetCreature->isAttackableBy(creature))
-			return INVALIDTARGET;
+	combatSpam = "snipershot",
+	
+	weaponType = RANGEDWEAPON,
 
-		CreatureObject* player = cast<CreatureObject*>(creature);
+	range = 64
+}
 
-		if (!creature->checkCooldownRecovery("sniper_shot")) {
-   			StringIdChatParameter stringId;
+AddCommand(SniperShotCommand)
 
-   			Time* cdTime = creature->getCooldownTime("sniper_shot");
-
-   			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
-
-   			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
-   			stringId.setDI(timeLeft);
-   			creature->sendSystemMessage(stringId);
-   			        return GENERALERROR;
-   		       }
-
- 		player->addCooldown("sniper_shot", 10 * 1000); // 10 second cooldown
-		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
-
-		int res = doCombatAction(creature, target);
-		int knockdown = 50;
-		int dizzystun = 25;
-		int intimidate = 15;
-
-		CombatManager* combatManager = CombatManager::instance();
-		if (res == SUCCESS && System::random(100) > knockdown) {
-			Locker clocker(targetCreature, creature);
-
-			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-    		  	targetCreature->setPosture(CreaturePosture::KNOCKEDDOWN);
-
-			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Knockdown Attempt  Has Successfully Landed");
-
-		} else {
-
-			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Knockdwon Attempt Has Failed To Land");
-		}
-
-		if (res == SUCCESS && System::random(100) < dizzystun) {
-			Locker clocker(targetCreature, creature);
-
-			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-			targetCreature->setState(CreatureState::DIZZY);
-			targetCreature->setState(CreatureState::STUNNED);
-
-			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Dizzy Stun Attempt  Has Successfully Landed");
-
-		} else {
-
-			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Dizzy Stun Attempt Has Failed To Land");
-		}
-
-		if (res == SUCCESS && System::random(100) < intimidate) {
-			Locker clocker(targetCreature, creature);
-
-			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-			targetCreature->setState(CreatureState::INTIMIDATED);
-
-			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Intimidate Attempt  Has Successfully Landed");
-
-		} else {
-
-			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Intimidate Attempt Has Failed To Land");
-		}
-
-		return res;
-	}
-
-};
-
-#endif //SNIPERSHOTCOMMAND_H_
