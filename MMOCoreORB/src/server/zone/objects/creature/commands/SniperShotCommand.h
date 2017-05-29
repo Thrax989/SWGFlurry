@@ -28,9 +28,9 @@ public:
 			return INVALIDLOCOMOTION;
 
 		if (!creature->isKneeling() ) {
-							creature->sendSystemMessage("You Must Be Kneeling Inorder To Use Sniper Shot");
-   	 return GENERALERROR;
-	 }
+				 creature->sendSystemMessage("You Must Be Kneeling Inorder To Use Sniper Shot");
+	   return GENERALERROR;
+	}
 
 		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
 
@@ -61,53 +61,55 @@ public:
 		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
 
 		int res = doCombatAction(creature, target);
-		int chance = 50;
-		int headshot = 25;
+		int knockdown = 50;
+		int dizzystun = 25;
+		int intimidate = 15;
 
 		CombatManager* combatManager = CombatManager::instance();
-		if (res == SUCCESS && System::random(100) > chance) {
+		if (res == SUCCESS && System::random(100) > knockdown) {
 			Locker clocker(targetCreature, creature);
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
       targetCreature->setPosture(CreaturePosture::KNOCKEDDOWN);
 
 			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Attack has successfully landed");
+				  creature->sendSystemMessage("Knockdown Attempt  Has Successfully Landed");
 
 		} else {
 
 			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Attack has failed to land");
+				  creature->sendSystemMessage("Knockdwon Attempt Has Failed To Land");
 		}
 
-		if (res == SUCCESS && System::random(100) < headshot) {
+		if (res == SUCCESS && System::random(100) < dizzystun) {
 			Locker clocker(targetCreature, creature);
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
 			targetCreature->addState(CreatureState::DIZZY);
-			targetCreature->addState(CreatureState::STUNNED);
+      targetCreature->addState(CreatureState::STUNNED);
 
 			if (creature->isPlayerCreature())
+					creature->sendSystemMessage("Dizzy Stun Attempt  Has Successfully Landed");
 
 		} else {
 
 			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Dizzy Knockdown Attempt Has Failed To Land");
+			   creature->sendSystemMessage("Dizzy Stun Attempt Has Failed To Land");
 		}
 
-		if (res == SUCCESS && System::random(100) < headshot) {
+		if (res == SUCCESS && System::random(100) < intimidate) {
 			Locker clocker(targetCreature, creature);
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-			targetCreature->addState(CreatureState::DIZZY);
-			targetCreature->addState(CreatureState::STUNNED);
+      targetCreature->setPosture(CreaturePosture::INTIMIDATE);
 
 			if (creature->isPlayerCreature())
+					creature->sendSystemMessage("Intimidate Attempt  Has Successfully Landed");
 
 		} else {
 
 			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Dizzy Knockdown Attempt Has Failed To Land");
+			   creature->sendSystemMessage("Intimidate Attempt Has Failed To Land");
 		}
 
 		return res;
