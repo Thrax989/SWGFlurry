@@ -85,8 +85,8 @@ public:
 			Locker clocker(targetCreature, creature);
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-			targetCreature->addState(CreatureState::DIZZY);
-			targetCreature->addState(CreatureState::STUNNED);
+			targetCreature->setState(CreatureState::DIZZY);
+			targetCreature->setState(CreatureState::STUNNED);
 
 			if (creature->isPlayerCreature())
 				creature->sendSystemMessage("Dizzy Stun Attempt  Has Successfully Landed");
@@ -101,7 +101,7 @@ public:
 			Locker clocker(targetCreature, creature);
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-			targetCreature->setPosture(CreaturePosture::INTIMIDATE);
+			targetCreature->setState(CreatureState::INTIMIDATED);
 
 			if (creature->isPlayerCreature())
 				creature->sendSystemMessage("Intimidate Attempt  Has Successfully Landed");
