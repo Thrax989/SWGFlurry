@@ -30,6 +30,19 @@ public:
 		if (isWearingArmor(creature)) {
 			return NOJEDIARMOR;
 		}
+		
+		if (!creature->checkCooldownRecovery("channel")) {
+  			StringIdChatParameter stringId;
+  
+  			Time* cdTime = creature->getCooldownTime("channel");
+  
+  			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+  
+  			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+  			stringId.setDI(timeLeft);
+  			creature->sendSystemMessage(stringId);
+  			        return GENERALERROR;
+  		       }
 
 		// Bonus is in between 200-300.
 		int rand = System::random(10);
@@ -75,7 +88,7 @@ public:
 		// Setup buffs.
 		uint32 buffCRC = STRING_HASHCODE("channelforcebuff");
 		Reference<Buff*> buff = creature->getBuff(buffCRC);
-		int duration = ChannelForceBuff::FORCE_CHANNEL_DURATION_SECONDS;
+		int duration = ChannelForceBuff::FORCE_CHANNEL_TICK_SECONDS * 20;
 		if (playerObject->hasPvpTef()) {
 			duration = duration * 3;
 			forceBonus = forceBonus * 2;
@@ -104,7 +117,8 @@ public:
 			creature->addMaxHAM(CreatureAttribute::ACTION, -forceBonus);
 			creature->addMaxHAM(CreatureAttribute::MIND, -forceBonus);
 			
-			creature->renewBuff(buffCRC, duration);
+			creature->renewBuff(buffCRC, duration + buff->getTimeLeft());
+			creature->addCooldown("channel", 5 * 1000);
 			Reference<ChannelForceBuff*> channelBuff = buff.castTo<ChannelForceBuff*>();
 			if (channelBuff != NULL)
 				channelBuff->activateRegenTick();

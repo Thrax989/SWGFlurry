@@ -61,7 +61,7 @@ int ForceCrystalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, 
 			//Broadcast to Server
  			String playerName = creature->getFirstName();
  			StringBuffer zBroadcast;
- 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Used A Force Crystal To Resurrect Their Body";
+ 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Resurrect Themselves";
  			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			StringBuffer messageVis;
 			messageVis << "\\#00CC00 Your Visibility is at: " << jediVis1;
