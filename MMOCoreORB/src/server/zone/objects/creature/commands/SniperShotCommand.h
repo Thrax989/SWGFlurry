@@ -28,9 +28,9 @@ public:
 			return INVALIDLOCOMOTION;
 
 		if (!creature->isKneeling() ) {
-				 creature->sendSystemMessage("You Must Be Kneeling Inorder To Use Sniper Shot");
-	   return GENERALERROR;
-	}
+			creature->sendSystemMessage("You Must Be Kneeling Inorder To Use Sniper Shot");
+	              return GENERALERROR;
+		}
 
 		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
 
@@ -70,15 +70,15 @@ public:
 			Locker clocker(targetCreature, creature);
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-      targetCreature->setPosture(CreaturePosture::KNOCKEDDOWN);
+    		  	targetCreature->setPosture(CreaturePosture::KNOCKEDDOWN);
 
 			if (creature->isPlayerCreature())
-				  creature->sendSystemMessage("Knockdown Attempt  Has Successfully Landed");
+				creature->sendSystemMessage("Knockdown Attempt  Has Successfully Landed");
 
 		} else {
 
 			if (creature->isPlayerCreature())
-				  creature->sendSystemMessage("Knockdwon Attempt Has Failed To Land");
+				creature->sendSystemMessage("Knockdwon Attempt Has Failed To Land");
 		}
 
 		if (res == SUCCESS && System::random(100) < dizzystun) {
@@ -86,15 +86,15 @@ public:
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
 			targetCreature->addState(CreatureState::DIZZY);
-      targetCreature->addState(CreatureState::STUNNED);
+			targetCreature->addState(CreatureState::STUNNED);
 
 			if (creature->isPlayerCreature())
-					creature->sendSystemMessage("Dizzy Stun Attempt  Has Successfully Landed");
+				creature->sendSystemMessage("Dizzy Stun Attempt  Has Successfully Landed");
 
 		} else {
 
 			if (creature->isPlayerCreature())
-			   creature->sendSystemMessage("Dizzy Stun Attempt Has Failed To Land");
+				creature->sendSystemMessage("Dizzy Stun Attempt Has Failed To Land");
 		}
 
 		if (res == SUCCESS && System::random(100) < intimidate) {
@@ -104,12 +104,12 @@ public:
       targetCreature->setPosture(CreaturePosture::INTIMIDATE);
 
 			if (creature->isPlayerCreature())
-					creature->sendSystemMessage("Intimidate Attempt  Has Successfully Landed");
+				creature->sendSystemMessage("Intimidate Attempt  Has Successfully Landed");
 
 		} else {
 
 			if (creature->isPlayerCreature())
-			   creature->sendSystemMessage("Intimidate Attempt Has Failed To Land");
+				creature->sendSystemMessage("Intimidate Attempt Has Failed To Land");
 		}
 
 		return res;
