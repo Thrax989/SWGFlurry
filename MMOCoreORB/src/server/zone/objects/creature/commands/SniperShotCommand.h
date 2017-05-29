@@ -7,10 +7,6 @@
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
-#include "server/zone/objects/player/sui/SuiCallback.h"
-#include "server/zone/managers/visibility/VisibilityManager.h"
-#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
-#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 
 class SniperShotCommand : public CombatQueueCommand {
 public:
@@ -27,75 +23,43 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
+		if (!creature->isPlayerCreature())
+			return GENERALERROR;
 
-		CreatureObject* targetCreature = cast<CreatureObject*>(targetObject.get());
+		ManagedReference<SceneObject*> targetObject = server->getZoneServer()->getObject(target);
 
-		if (targetCreature == NULL)
+		if (creature == targetObject || targetObject == NULL || !targetObject->isPlayerCreature())
 			return INVALIDTARGET;
 
-		if (!targetCreature->isAttackableBy(creature))
-			return INVALIDTARGET;
+		CreatureObject* player = cast<CreatureObject*>( targetObject.get());
 
-		CreatureObject* player = cast<CreatureObject*>(creature);
-
-		if (!creature->checkCooldownRecovery("sniper_shot")) {
-   			StringIdChatParameter stringId;
-   
-   			Time* cdTime = creature->getCooldownTime("sniper_shot");
-   
-   			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
-   
-   			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
-   			stringId.setDI(timeLeft);
-   			creature->sendSystemMessage(stringId);
-   			        return GENERALERROR;
-   		       }
-
- 		player->addCooldown("sniper_shot", 10 * 1000); // 10 second cooldown
-		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
-
-		int res = doCombatAction(creature, target);
-		int chance = 50;
-		int headshot = 1;
-
-		CombatManager* combatManager = CombatManager::instance();
-		if (res == SUCCESS && System::random(100) > chance) {
-			Locker clocker(targetCreature, creature);
-
-			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-                        targetCreature->setPosture(CreaturePosture::KNOCKEDDOWN);
-
-			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Attack has successfully landed");
-
-		} else {
-
-			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Attack has failed to land");
+		if (player->isDead()) {
+			StringIdChatParameter params("error_message", "prose_target_already_dead"); // But %TT is already dead!
+			params.setTT(player->getDisplayedName());
+			creature->sendSystemMessage(params);
+			return GENERALERROR;
 		}
 
-		if (res == SUCCESS && System::random(100) < headshot) {
-			Locker clocker(targetCreature, creature);
+		UnicodeString arg = "hitIncapTarget=1;";
+		int ret = doCombatAction(creature, target, arg);
 
-			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-                        targetCreature->setPosture(CreaturePosture::DEAD);
+		if (ret != SUCCESS)
+			return ret;
 
-			if (creature->isPlayerCreature())
-				//Broadcast to Server
-				String playerName = creature->getFirstName();
-				StringBuffer zBroadcast;
-				zBroadcast << "\\#ffb90f" << playerName << " Has Successfully Assassinated His Target With A \\#e51b1bHeadshot!";
-				creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		if (player->isIncapacitated() && !player->isFeigningDeath()) {
+			Locker clocker(player, creature);
 
-		} else {
+			PlayerManager* playerManager = server->getPlayerManager();
+			playerManager->killPlayer(creature, player, 1, false);
 
-			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Assassinated Attempt Has Failed To Land");
+			StringIdChatParameter params("base_player", "prose_target_dead"); // %TT is no more.
+			params.setTT(player->getDisplayedName());
+			creature->sendSystemMessage(params);
+		} else if (!player->isDead()) {
+			creature->sendSystemMessage("@error_message:target_not_incapacitated");  // You cannot perform the death blow. Your target is not incapacitated.
 		}
 
-
-		return res;
+		return ret;
 	}
 
 };
