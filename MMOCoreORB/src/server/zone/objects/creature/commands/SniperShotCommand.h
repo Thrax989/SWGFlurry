@@ -101,7 +101,7 @@ public:
 			Locker clocker(targetCreature, creature);
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-      targetCreature->setPosture(CreaturePosture::INTIMIDATE);
+			targetCreature->setPosture(CreaturePosture::INTIMIDATE);
 
 			if (creature->isPlayerCreature())
 				creature->sendSystemMessage("Intimidate Attempt  Has Successfully Landed");
