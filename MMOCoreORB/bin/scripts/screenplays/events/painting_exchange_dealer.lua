@@ -412,7 +412,7 @@ end
 	            local pItem = giveItem(pInventory, "object/tangible/painting/painting_wod_scene_01.iff", -1)
 	            DeleteItems = 70
 		    nextConversationScreen = conversation:getScreen("end")
-		    creature:sendSystemMessage("Congratulations on your purchase! 70 Attachments have been deducted from your Inventory)
+		    creature:sendSystemMessage("Congratulations on your purchase! 70 Attachments have been deducted from your Inventory")
 				
 	     elseif (optionLink == "35" and itemCounter < 70) then            
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
