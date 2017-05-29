@@ -32,12 +32,16 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 		
+		if(creature->getZone()->getZoneName() == "kaas")
+			creature->sendSystemMessage("Can not use /setpvp on Kaas");
+			return GENERALERROR;
+		
 		if (creature->isInCombat()) {
 			creature->sendSystemMessage("@jedi_spam:not_while_in_combat");
 			return GENERALERROR;
 		}
 		
-		if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice") || creature->hasSkill("outdoors_squadleader_novice")){
+		if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice")){
 			creature->sendSystemMessage("You may not use this command.");
 			return GENERALERROR;
 		}
