@@ -75,7 +75,6 @@ public:
 	int addSuiBox(lua_State* L);
 	int removeSuiBox(lua_State* L);
 	int findJediTrainer(lua_State* L);
-	int broadcastToServer(lua_State* L);
 
 private:
 	// The pointer to the 'real object' defined in object.cc
