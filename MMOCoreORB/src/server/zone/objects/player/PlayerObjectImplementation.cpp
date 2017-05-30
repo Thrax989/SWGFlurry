@@ -2073,7 +2073,7 @@ void PlayerObjectImplementation::addToBountyLockList(uint64 playerId) {
 }
 
 void PlayerObjectImplementation::removeFromBountyLockList(uint64 playerId, bool immediately) {
-	int tefTime = 15 * 60 * 1000;
+	int tefTime = 1 * 60 * 1000;
 	if (immediately) {
 		//Schedule tef removal to happen soon but delay it enough for any bh mission to be dropped correctly.
 		tefTime = 100;
