@@ -71,6 +71,7 @@ Luna<LuaPlayerObject>::RegType LuaPlayerObject::Register[] = {
 		{ "addSuiBox", &LuaPlayerObject::addSuiBox },
 		{ "removeSuiBox", &LuaPlayerObject::removeSuiBox },
 		{ "findJediTrainer", &LuaPlayerObject::findJediTrainer },
+		{ "broadcastToServer", &LuaPlayerObject::broadcastToServer },
 		{ 0, 0 }
 };
 
@@ -693,4 +694,11 @@ int LuaPlayerObject::findJediTrainer(lua_State* L) {
 	realObject->setTrainerZoneName(zoneName); // For the waypoint.
 
 	return 0;
+}
+
+int LuaPlayerObject::broadcastToServer(lua_State* L) {
+	String message = lua_tostring(L, -1);
+	ZoneServer* zServ = realObject->getZoneServer();
+	zServ->getChatManager()->broadcastGalaxy(NULL, message);
+	return 1;
 }
