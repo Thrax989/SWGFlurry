@@ -846,6 +846,7 @@
 #include "InspacerrCommand.h"
 #include "RequestSpaceTrainerCommand.h"
 #include "setPvp.h"
+#include "BhShieldCommand.h"
 
 
 

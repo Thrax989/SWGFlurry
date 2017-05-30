@@ -56,6 +56,7 @@ public:
 		// Do not execute if the player's force bar is full.
 		if (playerObject->getForcePower() >= playerObject->getForcePowerMax())
 			return GENERALERROR;
+
 		int enhSkills = playerObject->numSpecificSkills(creature, "force_discipline_enhancements_");
                 float enhMod = enhSkills * .056;
                 int modforceBonus = forceBonus * (1 + enhMod);
@@ -88,7 +89,7 @@ public:
 		// Setup buffs.
 		uint32 buffCRC = STRING_HASHCODE("channelforcebuff");
 		Reference<Buff*> buff = creature->getBuff(buffCRC);
-		int duration = ChannelForceBuff::FORCE_CHANNEL_TICK_SECONDS * 20;
+		int duration = ChannelForceBuff::FORCE_CHANNEL_TICK_SECONDS * 5;
 		if (playerObject->hasPvpTef()) {
 			duration = duration * 3;
 			forceBonus = forceBonus * 2;

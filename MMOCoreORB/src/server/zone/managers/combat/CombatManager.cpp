@@ -1105,6 +1105,15 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		return damage;
 	}
+	
+			// BH SHIELD
+	float rawDamage = damage;
+	int swordArmor = defender->getSkillMod("ability_armor");
+	if (swordArmor > 0) {
+		float dmgAbsorbed = rawDamage - (damage *= 1.f - (swordArmor / 100.f));
+		defender->notifyObservers(ObserverEventType::DAMAGERECEIVED, attacker, dmgAbsorbed);
+		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, FORCEARMOR);
+	}
 
 	if (!data.isForceAttack()) {
 		// Force Armor

@@ -36,7 +36,7 @@ int ForceBuffMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 	//Broadcast to Server
  	String playerName = creature->getFirstName();
  	StringBuffer zBroadcast;
- 	zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Used A Event Pack To Revive Their Body;
+ 	zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Used A Event Pack To Revive Their Body";
  	creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	return 0;
 }
