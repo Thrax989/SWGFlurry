@@ -13,7 +13,8 @@ function oola_screenplay:start()
 end
 
 function oola_screenplay:spawnMobiles()
-       spawnMobile("corellia", "oola_boss", 1800, -391,28,-4487,15, 0)
-       spawnMobile("tatooine", "oola_boss", 1800, 3515,5,-4858,15, 0)
-       spawnMobile("naboo", "oola_boss", 1800, -5173,6,4139,15, 0)
+       spawnMobile("corellia", "oola_boss", 900, -391,28,-4487,15, 0)
+       spawnMobile("tatooine", "oola_boss", 900, 3515,5,-4858,15, 0)
+       spawnMobile("naboo", "oola_boss", 900, -5173,6,4139,15, 0)
+       spawnMobile("tatooine", "watto_boss", 450, -2931,5,2447,15, 0)
 end
