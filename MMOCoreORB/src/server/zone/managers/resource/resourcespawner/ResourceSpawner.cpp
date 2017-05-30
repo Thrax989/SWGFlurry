@@ -445,8 +445,12 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 				}
 			}
 			writer2->writeLine("		},");
-
+			String tmpname = spawn->getSpawnMapZone(0);
+			if(tmpname=="" && spawn->getZoneRestriction() != ""){
+				tmpname=spawn->getZoneRestriction();
+			}
 			writer2->writeLine("\"deSpawnTime\" : \"" + String::valueOf(spawn->getDespawned()) + "\",");
+			writer2->writeLine("\"planet\" : \"" + tmpname+"\",");
 			writer2->writeLine("\"zoneRestriction\": \"" + spawn->getZoneRestriction() + "\"");
 			writer2->writeLine("	}");
 			}
