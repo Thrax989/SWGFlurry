@@ -803,6 +803,7 @@ void CommandConfigManager::registerCommands() {
 	commandFactory.registerCommand<Berserk1Command>(String("berserk1").toLowerCase());
 	commandFactory.registerCommand<Berserk2Command>(String("berserk2").toLowerCase());
 	commandFactory.registerCommand<BetCommand>(String("bet").toLowerCase());
+	commandFactory.registerCommand<BhShieldCommand>(String("bhshield").toLowerCase());
 	commandFactory.registerCommand<BleedingShotCommand>(String("bleedingShot").toLowerCase());
 	commandFactory.registerCommand<BlindAttackCommand>(String("blindAttack").toLowerCase());
 	commandFactory.registerCommand<BoardShuttleCommand>(String("boardShuttle").toLowerCase());
