@@ -14,6 +14,7 @@
 #include "server/zone/managers/skill/SkillManager.h"
 #include "server/zone/Zone.h"
 #include "server/zone/objects/region/CityRegion.h"
+#include "server/chat/ChatManager.h"
 
 const char LuaPlayerObject::className[] = "LuaPlayerObject";
 
