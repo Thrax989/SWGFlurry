@@ -64,6 +64,7 @@ public:
 		int knockdown = 50;
 		int dizzystun = 25;
 		int intimidate = 15;
+                int duration = 5;
 
 		CombatManager* combatManager = CombatManager::instance();
 		if (res == SUCCESS && System::random(100) > knockdown) {
@@ -85,8 +86,9 @@ public:
 			Locker clocker(targetCreature, creature);
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-			targetCreature->setState(CreatureState::DIZZY);
-			targetCreature->setState(CreatureState::STUNNED);
+			targetCreature->setDizziedState(duration);
+			targetCreature->setStunnedState(duration);
+
 
 			if (creature->isPlayerCreature())
 				creature->sendSystemMessage("Dizzy Stun Attempt  Has Successfully Landed");
@@ -101,7 +103,7 @@ public:
 			Locker clocker(targetCreature, creature);
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-			targetCreature->setState(CreatureState::INTIMIDATED);
+			targetCreature->setIntimidatedState(duration);
 
 			if (creature->isPlayerCreature())
 				creature->sendSystemMessage("Intimidate Attempt  Has Successfully Landed");
