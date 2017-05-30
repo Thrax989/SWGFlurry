@@ -38,7 +38,7 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-			player:broadcastToServer("\\#00E604" .. CreatureObject(player):getFirstName() .. "\\#63C8F9 Has entered Kaas PVP Zone!")
+			PlayerObject(player):broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered Kaas PVP Zone!")
 			player:sendSystemMessage("You have entered the Kaas PvP zone!")
 			player:setFactionStatus(2)
 		else
