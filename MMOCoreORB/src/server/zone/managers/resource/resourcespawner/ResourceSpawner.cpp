@@ -404,12 +404,14 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 			if(despawned > currTime) {
 				inPhase = 1;
 			}
-			if(!first)
+			if(i != 0 && !first && inPhase==1){
 				writer2->writeLine(",");
+			}
 			
-			if(i != 0 && inPhase==1 && first)
+			if(inPhase==1 && first){
 				first = false;
-			
+			}
+			if(inPhase==1){
 			writer2->writeLine("	{");
 
 			writer2->writeLine("\"name\": \"" + spawn->getName() + "\",");
@@ -420,9 +422,9 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 				
 				String spawnClass = spawn->getClass(i);
 				if(spawnClass != "") {
-					if(i != 0)
+					if(i != 0){
 						writer2->writeLine(",");
-
+					}
 					String spawnClass2 = spawn->getStfClass(i);
 					writer2->writeLine("\"" + spawnClass + "\": \"" + spawnClass2 + "\"");
 				}
@@ -435,18 +437,17 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 				String attribute = "";
 				int value = spawn->getAttributeAndValue(attribute, i);
 				if(attribute != "") {
-					if(i != 0)
+					if(i != 0){
 						writer2->writeLine(",");
+					}
 
 					writer2->writeLine("\"" + attribute + "\": \"" + String::valueOf(value) + "\"");
 				}
+			}
 			writer2->writeLine("		},");
 
-			//writer2->writeLine("\"inSpawn\" : \"" + String::valueOf(inPhase) + "\",");
 			writer2->writeLine("\"deSpawnTime\" : \"" + String::valueOf(spawn->getDespawned()) + "\",");
-			writer2->writeLine("\"zoneRestriction\": \"" + spawn->getZoneRestriction() + "\",");
-			writer2->writeLine("\"surveyToolType\":\"" + String::valueOf(spawn->getSurveyToolType()) + "\",");
-			writer2->writeLine("\"containerCRC\": \"" + String::valueOf(spawn->getContainerCRC()) +"\"" );
+			writer2->writeLine("\"zoneRestriction\": \"" + spawn->getZoneRestriction() + "\"");
 			writer2->writeLine("	}");
 			}
 		}
