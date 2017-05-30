@@ -373,10 +373,10 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 		writer->close();
 
 		delete file;
-delete writer;
+		delete writer;
 		
 		
-		File* file = new File("scripts/managers/Current_spawns_Dump.json");
+		File* file2 = new File("scripts/managers/Current_spawns_Dump.json");
 		//if(!file->exists()) {
 		//	delete file;
 		//	return;
