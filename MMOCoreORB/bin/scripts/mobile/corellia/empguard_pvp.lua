@@ -116,12 +116,6 @@ empguard_pvp = Creature:new {
         },
       		lootChance = 10000000
         },
-        {
-	    	groups = {
-				{group = "looted_container", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
         },
 	weapons = {"mixed_force_weapons"},
 	reactionStf = "@npc_reaction/fancy",
