@@ -64,12 +64,6 @@ hydra_commander = Creature:new {
                     lootChance = 8000000
 },
 {
-            groups = {
-                    {group = "looted_container", chance = 10000000}
-},
-                    lootChance = 5000000
-},
-{
              groups = {
                     {group = "nge2", chance = 10000000}
 },
