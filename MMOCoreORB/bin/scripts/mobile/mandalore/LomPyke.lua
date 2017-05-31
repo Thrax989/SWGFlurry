@@ -60,12 +60,6 @@ lom_pyke = Creature:new {
                     lootChance = 10000000
 },
 {
-            groups = {
-                    {group = "looted_container", chance = 10000000}
-},
-                    lootChance = 10000000
-},
-{
              groups = {
                     {group = "nge2", chance = 10000000}
 },
