@@ -86,7 +86,7 @@ ZoneOnlineCharactersPerAccount = 4 --How many characters are allowed online from
 --To save on RAM and CPU usage, you should only enable the zones you need.
 --In order to disable a zone, all you have to do is comment it out.
 ZonesEnabled = {
-	"09",
+	--"09",
 	--"10",
 	--"11",
 	--"character_farm",
@@ -133,7 +133,7 @@ ZonesEnabled = {
 	--"space_lok",
 	--"space_naboo",
 	--"space_naboo_2",
-	--"space_tatooine",
+	"space_tatooine",
 	--"space_tatooine_2",
 	--"space_yavin4",
 	"taanab",
@@ -144,11 +144,11 @@ ZonesEnabled = {
 	--"umbra",
 	--"watertabletest",
 	"yavin4",
-	"kaas",
-        "moraband",
-        "coruscant",
-        "hutta",
-        "chandrila"
+	"kaas"
+        --"moraband",
+        --"coruscant",
+        --"hutta",
+        --"chandrila"
         --"jakku"
 
 }
@@ -160,10 +160,9 @@ TrePath = "/home/vagrant/workspace/tre/"
 TreFiles = {
         "species.tre",
         "pallet.tre",
-        "pods.tre",
+        "pod.tre",
         "armor.tre",
         "skill_patch.tre",
-	"phoenix_patch_1.tre",
 	"mtg_planets.tre",
         "mtg_patch_021.tre",
 	"mtg_patch_019.tre",
