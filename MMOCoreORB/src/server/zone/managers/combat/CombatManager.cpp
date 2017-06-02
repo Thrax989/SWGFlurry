@@ -307,13 +307,14 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
                 attacker->sendSystemMessage("You were caught using a bugged weapon!!");
 	}
-
+	
 	if (weapon->getForceCost() < 1 && attacker->isPlayerObject()) {
- 		Locker locker(weapon);
+  		Locker locker(weapon);
  		weapon->setForceCost(5);
- 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+  		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
                 attacker->sendSystemMessage("You were caught using a bugged weapon. 0 FC sabers are not allowed");
- 	}
+  	}
+
 
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
@@ -1112,15 +1113,16 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		return damage;
 	}
-	
-			// BH SHIELD
+ 	if (!data.isForceAttack()){
+		// BH SHIELD
 	float rawDamage = damage;
-	int swordArmor = defender->getSkillMod("ability_armor");
-	if (swordArmor > 0) {
-		float dmgAbsorbed = rawDamage - (damage *= 1.f - (swordArmor / 100.f));
-		defender->notifyObservers(ObserverEventType::DAMAGERECEIVED, attacker, dmgAbsorbed);
-		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, FORCEARMOR);
+	int abilityArmor = defender->getSkillMod("ability_armor");
+	if (abilityArmor > 0) {
+		float dmgAbsorbed = rawDamage - (damage *= 1.f - (abilityArmor / 100.f));
+		defender->notifyObservers(ObserverEventType::FORCEBUFFHIT, attacker, dmgAbsorbed);
+		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, ABILITYARMOR);
 	}
+}
 
 	if (!data.isForceAttack()) {
 		// Force Armor
@@ -1168,6 +1170,8 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		defender->notifyObservers(ObserverEventType::FORCEBUFFHIT, attacker, jediBuffDamage);
 	}
+
+
 
 	// PSG
 	ManagedReference<ArmorObject*> psg = getPSGArmor(defender);
@@ -1549,7 +1553,7 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		if (def == "saber_block") {
 			int block_mod = targetCreature->getSkillMod(def);
             if (targetCreature->isIntimidated() || targetCreature->isStunned() || targetCreature->isDizzied()) {
-                block_mod = (block_mod / 1.7); //drops saber block to 50 if target is MLS saber block is divided by 1/7 when intimidated, stunded, dizzied
+                block_mod = (block_mod / 1.7); //drops saber block to 50% if the player target is blinded, dizzyed, or stuned.
             }
             if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
                 return RICOCHET;

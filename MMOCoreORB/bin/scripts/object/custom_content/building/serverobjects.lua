@@ -1,6 +1,7 @@
 --Children folder includes
 includeFile("custom_content/building/content/serverobjects.lua")
 includeFile("custom_content/building/dathomir/serverobjects.lua")
+includeFile("custom_content/building/endor/serverobjects.lua")
 includeFile("custom_content/building/general/serverobjects.lua")
 includeFile("custom_content/building/heroic/serverobjects.lua")
 includeFile("custom_content/building/kashyyyk/serverobjects.lua")

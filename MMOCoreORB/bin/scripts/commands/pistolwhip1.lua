@@ -1,4 +1,4 @@
---Copyright (C) 2009 <SWGEmu>
+--Copyright (C) 2007 <SWGEmu>
 
 --This File is part of Core3.
 
@@ -39,61 +39,29 @@
 --gives permission to release a modified version without this exception;
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
+--true = 1, false = 0
 
-object_static_structure_nobuild_base_shared_noflora_base = SharedStaticObjectTemplate:new {
-	clientTemplateFileName = "object/static/structure/nobuild/base/shared_noflora_base.iff"
+PistolWhip1Command = {
+        name = "pistolwhip1",
 
+	damageMultiplier = 2.0,
+	speedMultiplier = 1.0,
+	healthCostMultiplier = 0.5,
+	actionCostMultiplier = 2.0,
+	mindCostMultiplier = 2.0,
+	accuracyBonus = 25,
+
+ 	clientEffect = "clienteffect/sm_pistol_whip.cef.cef",
+	poolsToDamage = MIND_ATTRIBUTE,
+
+
+
+	combatSpam = "pistolwhip",
+	
+	weaponType = PISTOLWEAPON,
+
+	range = -1
 }
 
-ObjectTemplates:addClientTemplate(object_static_structure_nobuild_base_shared_noflora_base, "object/static/structure/nobuild/base/shared_noflora_base.iff")
+AddCommand(PistolWhip1Command)
 
-
-
-object_static_structure_nobuild_base_shared_nobuild_base = SharedStaticObjectTemplate:new {
-	clientTemplateFileName = "object/static/structure/nobuild/base/shared_nobuild_base.iff"
-	--Data below here is deprecated and loaded from the tres, keeping for easy lookups
---[[
-	appearanceFilename = "appearance/godclient_cylinder_15.apt",
-	arrangementDescriptorFilename = "",
-
-	clearFloraRadius = 0,
-	clientDataFile = "",
-	clientGameObjectType = 5,
-	collisionActionBlockFlags = 255,
-	collisionActionFlags = 1,
-	collisionActionPassFlags = 0,
-	collisionMaterialBlockFlags = 1,
-	collisionMaterialFlags = 1,
-	collisionMaterialPassFlags = 0,
-	containerType = 0,
-	containerVolumeLimit = 0,
-
-	detailedDescription = "string_id_table",
-
-	gameObjectType = 5,
-
-	locationReservationRadius = 0,
-	lookAtText = "string_id_table",
-
-	noBuildRadius = 16,
-
-	objectName = "@obj_n:unknown_object",
-	onlyVisibleInTools = 1,
-
-	portalLayoutFilename = "",
-
-	scale = 1,
-	scaleThresholdBeforeExtentTest = 0.5,
-	sendToClient = 1,
-	slotDescriptorFilename = "",
-	snapToTerrain = 1,
-	surfaceType = 1,
-
-	totalCellNumber = 0,
-
-	clientObjectCRC = 2977184644,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/static/base/shared_static_base.iff", "object/static/structure/base/shared_static_structure_base.iff"}
-]]
-}
-
-ObjectTemplates:addClientTemplate(object_static_structure_nobuild_base_shared_nobuild_base, "object/static/structure/nobuild/base/shared_nobuild_base.iff")
