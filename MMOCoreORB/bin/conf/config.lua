@@ -70,7 +70,7 @@ MantisUser = "swgemu"
 MantisPass = "123456"
 MantisPrfx = "mantis_" -- The prefix for your mantis tables.
 
-AutoReg = 0
+AutoReg = 1
 
 ProgressMonitors = "true"
 
@@ -133,18 +133,18 @@ ZonesEnabled = {
 	--"space_lok",
 	--"space_naboo",
 	--"space_naboo_2",
-	"space_tatooine",
+	--"space_tatooine",
 	--"space_tatooine_2",
 	--"space_yavin4",
 	"taanab",
 	"talus",
 	"tatooine",
 	--"test_wearables",
-	"tutorial",
+	--"tutorial",
 	--"umbra",
 	--"watertabletest",
-	"yavin4",
-	"kaas"
+	"yavin4"
+	--"kaas"
         --"moraband",
         --"coruscant",
         --"hutta",
@@ -160,7 +160,7 @@ TrePath = "/home/vagrant/workspace/tre/"
 TreFiles = {
         "species.tre",
         "pallet.tre",
-        "pod.tre",
+        "pods.tre",
         "armor.tre",
         "skill_patch.tre",
 	"mtg_planets.tre",
@@ -171,7 +171,6 @@ TreFiles = {
 	"mtg_patch_016.tre",
 	"mtg_patch_015.tre",
 	"mtg_patch_014.tre",
-	"mtg_patch_013_configurable_02.tre",
 	"mtg_patch_013_configurable_02.tre",
 	"mtg_patch_012_configurable_01.tre",
 	"mtg_patch_011_files_01.tre",
