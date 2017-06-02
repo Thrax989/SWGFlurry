@@ -1241,7 +1241,7 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
 		
-	if (player->isPrivileged()) {
+	if (playerCreature->getPlayerObject()->isPrivileged()) {
 	//Broadcast to Server
  	Zone* zone = playerCreature->getZone();
  	String playerName = playerCreature->getFirstName();
