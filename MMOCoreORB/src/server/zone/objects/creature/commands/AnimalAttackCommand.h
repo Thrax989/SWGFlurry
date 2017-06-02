@@ -31,9 +31,6 @@ public:
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
-		if (!creature->hasSkill("force_discipline_powers_master"))
-			return GENERALERROR;
-
 		ZoneServer* zserv = creature->getZoneServer();
 		PlayerObject* jedi = creature->getPlayerObject();
 
@@ -76,7 +73,7 @@ public:
 		if (targetGhost == NULL || playerObject == NULL)
 			return GENERALERROR;
 
-		if (creature->getDistanceTo(creatureTarget) > 42.f){
+		if (creature->getDistanceTo(creatureTarget) > 44.f){
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
 

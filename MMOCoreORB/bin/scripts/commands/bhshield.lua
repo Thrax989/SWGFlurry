@@ -41,27 +41,14 @@
 --which carries forward this exception.
 --true = 1, false = 0
 
-SniperShotCommand = {
-	name = "snipershot",
-
-	minDamage = 350,
-	speed = 1.0,
-	healthCostMultiplier = 1.0,
-	actionCostMultiplier = 1.0,
-	mindCostMultiplier = 2.0,
-	accuracyBonus = 15,
-
-	poolsToDamage = RANDOM_ATTRIBUTE,
-
-	animation = "fire_1_special_single", 
-	animType = GENERATE_RANGED,
-
-	combatSpam = "snipershot",
-	
-	weaponType = RANGEDWEAPON,
-
-	range = 64
+BhShieldCommand = {
+    name = "bhshield",
+    --actionCost = 150,
+    --duration = 1800,
+    --animationCRC = hashCode()
+    --clientEffect = "clienteffect/bh_shields_effect.cef",
+    --buffClass = SINGLE_USE_BUFF
 }
 
-AddCommand(SniperShotCommand)
+AddCommand(BhSheildCommand)
 

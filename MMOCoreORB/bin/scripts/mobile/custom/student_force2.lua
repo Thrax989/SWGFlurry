@@ -1,6 +1,6 @@
 student_force2 = Creature:new {
 	--objectName = "@mob/creature_names:",
-	customName = "Student of the force",
+	customName = "Wandering Apprentice",
 	socialGroup = "dark_jedi",
 	faction = "",
 	level = 300,

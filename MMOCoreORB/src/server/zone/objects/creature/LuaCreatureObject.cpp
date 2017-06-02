@@ -18,6 +18,7 @@
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/managers/skill/SkillManager.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
+#include "server/chat/ChatManager.h"
 
 const char LuaCreatureObject::className[] = "LuaCreatureObject";
 
@@ -139,6 +140,7 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "setFactionStatus", &LuaTangibleObject::setFactionStatus },
 		{ "getDamageDealerList", &LuaCreatureObject::getDamageDealerList },
 		{ "getHealingThreatList", &LuaCreatureObject::getHealingThreatList},
+		{ "broadcastToServer", &LuaCreatureObject::broadcastToServer },
 		{ 0, 0 }
 };
 
@@ -1100,4 +1102,11 @@ int LuaCreatureObject::getActivePet(lua_State* L) {
 	lua_pushlightuserdata(L, pet);
 
 	return 1;	
+}
+
+int LuaCreatureObject::broadcastToServer(lua_State* L) {
+	String message = lua_tostring(L, -1);
+	ZoneServer* zServ = realObject->getZoneServer();
+	zServ->getChatManager()->broadcastGalaxy(NULL, message);
+	return 1;
 }

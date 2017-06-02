@@ -4,7 +4,7 @@ outbreak_boss = Creature:new {
 	pvpFaction = "",
 	faction = "",
 	level = 300,
-	chanceHit = 100.00,
+	chanceHit = 35.00,
 	damageMin = 5000,
 	damageMax = 8000,
 	specialDamageMult = 5.0,
@@ -133,12 +133,6 @@ outbreak_boss = Creature:new {
 		{
 			groups = {
 				{group = "krayt_tissue_rare", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "looted_container", chance = 10000000}
 		},
 			lootChance = 10000000
 		},

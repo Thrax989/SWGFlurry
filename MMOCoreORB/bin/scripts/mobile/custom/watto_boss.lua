@@ -1,17 +1,17 @@
-oola_boss = Creature:new {
-  customName = "Slave Girl Oola",
+watto_boss = Creature:new {
+  customName = "Watto The Junk Dealer",
   socialGroup = "self",
   pvpFaction = "",
   faction = "",
   level = 300,
-  chanceHit = 35.00,
-  damageMin = 750,
-  damageMax = 1500,
-  baseXp = 10000,
-  baseHAM = 225000,
-  baseHAMmax = 275000,
-  armor = 1,
-  resists = {50,50,50,50,50,50,50,50,25},
+  chanceHit = 50.00,
+  damageMin = 625,
+  damageMax = 1250,
+  baseXp = 12000,
+  baseHAM = 300000,
+  baseHAMmax = 400000,
+  armor = 2,
+  resists = {70,70,70,70,70,70,70,70,35},
   meatType = "",
   meatAmount = 0,
   hideType = "",
@@ -26,11 +26,11 @@ oola_boss = Creature:new {
   optionsBitmask = AIENABLED,
   diet = HERBIVORE,
 
-  templates = {"object/mobile/oola.iff"},
+  templates = {"object/mobile/watto.iff"},
   lootGroups = {
   {
       groups = {
-        {group = "freedom_lg", chance = 10000000}
+        {group = "cyberhand_lg", chance = 10000000}
   },
       lootChance = 5000000
   },
@@ -48,6 +48,14 @@ oola_boss = Creature:new {
       lootChance = 5000000
   },
   {
+	  groups = {
+		{group = "stun_weapons", chance = 5000000},
+		{group = "stun_ranged", chance = 5000000}
+
+  },
+			lootChance = 2500000
+  },
+  {
       groups = {
         {group = "hologram_lg1", chance = 5000000},
         {group = "hologram_lg2", chance = 5000000}
@@ -55,9 +63,9 @@ oola_boss = Creature:new {
       lootChance = 2500000
   },
   },
-weapons = {"nyaxs_weapons"},
+weapons = {"dark_trooper_weapons"},
 reactionStf = "@npc_reaction/fancy",
-attacks = merge(marksmanmaster,riflemanmaster,carbineermaster,brawlermaster,swordsmanmaster)
+attacks = merge(riflemanmaster,marksmanmaster,fencermaster,brawlermaster)
 }
 
-CreatureTemplates:addCreatureTemplate(oola_boss, "oola_boss")
+CreatureTemplates:addCreatureTemplate(watto_boss, "watto_boss")

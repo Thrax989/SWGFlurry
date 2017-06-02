@@ -77,6 +77,11 @@ public:
 		if (vehicle->getPosture() == CreaturePosture::LYINGDOWN || vehicle->getPosture() == CreaturePosture::SITTING) {
 			vehicle->setPosture(CreaturePosture::UPRIGHT);
 		}
+		
+		if(creature->getZone()->getZoneName() == "kaas"){
+			creature->sendSystemMessage("Can not use mount on Kaas");
+			return GENERALERROR;
+		}
 
 		vehicle->setState(CreatureState::MOUNTEDCREATURE);
 

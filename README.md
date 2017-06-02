@@ -1,5 +1,5 @@
 ## -Star Wars Galaxies Flurry Server-
-<img src="http://i.imgur.com/OB4Pa6a.png">
+<img src="http://i.imgur.com/OB4Pa6a.png"> 
 
 - Main Web Site
 http://www.swgflurry.com/

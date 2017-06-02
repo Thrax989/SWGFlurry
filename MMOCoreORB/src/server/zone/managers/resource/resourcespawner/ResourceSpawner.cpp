@@ -303,8 +303,8 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 		return false;
 
 	try {
-
-		File* file = new File("scripts/managers/Current_spawns_Dump.json");
+		
+		File* file = new File("scripts/managers/resource_manager_spawns.lua");
 		//if(!file->exists()) {
 		//	delete file;
 		//	return;
@@ -312,8 +312,7 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 
 		FileWriter* writer = new FileWriter(file);
 
-		writer->writeLine("{");
-		writer->writeLine("\"resources\":[");
+		writer->writeLine("resources = {");
 
 		for(int i = 0; i < resourceMap->size(); ++i) {
 
@@ -331,58 +330,139 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 			}
 			if(despawned > currTime) {
 				inPhase = 1;
-			//}
-			if(i != 0)
-				writer->writeLine(",");
+			}
+
 			writer->writeLine("	{");
 
-			writer->writeLine("\"name\": \"" + spawn->getName() + "\",");
-			writer->writeLine("\"type\": \"" + spawn->getType() + "\",");
+			writer->writeLine("		name = \"" + spawn->getName() + "\",");
+			writer->writeLine("		type = \"" + spawn->getType() + "\",");
 
-			writer->writeLine("\"classes\": {");
+			writer->writeLine("		classes = {");
 			for(int i = 0; i < 8; ++i) {
-				
 				String spawnClass = spawn->getClass(i);
 				if(spawnClass != "") {
-					if(i != 0)
-						writer->writeLine(",");
-
 					String spawnClass2 = spawn->getStfClass(i);
-					writer->writeLine("\"" + spawnClass + "\": \"" + spawnClass2 + "\"");
+					writer->writeLine("			{\"" + spawnClass + "\", \"" + spawnClass2 + "\"},");
 				}
 			}
 			writer->writeLine("		},");
 
-			writer->writeLine("\"attributes\": {");
+			writer->writeLine("		attributes = {");
 			for(int i = 0; i < 12; ++i) {
-				
 				String attribute = "";
 				int value = spawn->getAttributeAndValue(attribute, i);
 				if(attribute != "") {
-					if(i != 0)
-						writer->writeLine(",");
-
-					writer->writeLine("\"" + attribute + "\": \"" + String::valueOf(value) + "\"");
+					writer->writeLine("			{\"" + attribute + "\", " + String::valueOf(value) + "},");
 				}
 			}
+
 			writer->writeLine("		},");
 
-			//writer->writeLine("\"inSpawn\" : \"" + String::valueOf(inPhase) + "\",");
-			writer->writeLine("\"deSpawnTime\" : \"" + String::valueOf(spawn->getDespawned()) + "\",");
-			writer->writeLine("\"zoneRestriction\": \"" + spawn->getZoneRestriction() + "\",");
-			writer->writeLine("\"surveyToolType\":\"" + String::valueOf(spawn->getSurveyToolType()) + "\",");
-			writer->writeLine("\"containerCRC\": \"" + String::valueOf(spawn->getContainerCRC()) +"\"" );
-			writer->writeLine("	}");
-			}
+			writer->writeLine("		inSpawn = \"" + String::valueOf(inPhase) + "\",");
+			writer->writeLine("		deSpawnTime = \"" + String::valueOf(spawn->getDespawned()) + "\",");
+			writer->writeLine("		zoneRestriction = \"" + spawn->getZoneRestriction() + "\",");
+			writer->writeLine("		surveyToolType = " + String::valueOf(spawn->getSurveyToolType()) + ",");
+			writer->writeLine("		containerCRC = " + String::valueOf(spawn->getContainerCRC()) + ",");
+
+			writer->writeLine("	},");
+			writer->writeLine("");
 		}
 
-		writer->writeLine("]");
 		writer->writeLine("}");
 
 		writer->close();
 
 		delete file;
 		delete writer;
+		
+		
+		File* file2 = new File("scripts/managers/Current_spawns_Dump.json");
+		//if(!file->exists()) {
+		//	delete file;
+		//	return;
+		//}
+
+		FileWriter* writer2 = new FileWriter(file2);
+
+		writer2->writeLine("{");
+		writer2->writeLine("\"resources\":[");
+		bool first = true;
+		for(int i = 0; i < resourceMap->size(); ++i) {
+
+			ManagedReference<ResourceSpawn*> spawn = resourceMap->get(i);
+
+			uint64 despawned = spawn->getDespawned();
+			uint64 currTime = System::getTime();
+
+			int diff = 0;
+			int inPhase = 0;
+			if(despawned > currTime) {
+				diff = despawned - currTime;
+			} else {
+				diff = currTime - despawned;
+			}
+			if(despawned > currTime) {
+				inPhase = 1;
+			}
+			if(i != 0 && !first && inPhase==1){
+				writer2->writeLine(",");
+			}
+			
+			if(inPhase==1 && first){
+				first = false;
+			}
+			if(inPhase==1){
+			writer2->writeLine("	{");
+
+			writer2->writeLine("\"name\": \"" + spawn->getName() + "\",");
+			writer2->writeLine("\"type\": \"" + spawn->getType() + "\",");
+
+			writer2->writeLine("\"classes\": {");
+			for(int i = 0; i < 8; ++i) {
+				
+				String spawnClass = spawn->getClass(i);
+				if(spawnClass != "") {
+					if(i != 0){
+						writer2->writeLine(",");
+					}
+					String spawnClass2 = spawn->getStfClass(i);
+					writer2->writeLine("\"" + spawnClass + "\": \"" + spawnClass2 + "\"");
+				}
+			}
+			writer2->writeLine("		},");
+
+			writer2->writeLine("\"attributes\": {");
+			for(int i = 0; i < 12; ++i) {
+				
+				String attribute = "";
+				int value = spawn->getAttributeAndValue(attribute, i);
+				if(attribute != "") {
+					if(i != 0){
+						writer2->writeLine(",");
+					}
+
+					writer2->writeLine("\"" + attribute + "\": \"" + String::valueOf(value) + "\"");
+				}
+			}
+			writer2->writeLine("		},");
+			String tmpname = spawn->getSpawnMapZone(0);
+			if(tmpname=="" && spawn->getZoneRestriction() != ""){
+				tmpname=spawn->getZoneRestriction();
+			}
+			writer2->writeLine("\"deSpawnTime\" : \"" + String::valueOf(spawn->getDespawned()) + "\",");
+			writer2->writeLine("\"planet\" : \"" + tmpname+"\",");
+			writer2->writeLine("\"zoneRestriction\": \"" + spawn->getZoneRestriction() + "\"");
+			writer2->writeLine("	}");
+			}
+		}
+
+		writer2->writeLine("]");
+		writer2->writeLine("}");
+
+		writer2->close();
+
+		delete file2;
+		delete writer2;
 
 		return true;
 	} catch (Exception& e) {
@@ -390,7 +470,7 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 		return false;
 	}
 
-	return true;
+return true;
 }
 
 void ResourceSpawner::shiftResources() {

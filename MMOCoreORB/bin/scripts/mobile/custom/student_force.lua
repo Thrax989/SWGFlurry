@@ -1,6 +1,6 @@
 student_force = Creature:new {
 	--objectName = "@mob/creature_names:",
-	customName = "Student of the force",
+	customName = "Wandering Apprentice",
 	socialGroup = "dark_jedi",
 	faction = "",
 	level = 300,
@@ -25,7 +25,7 @@ student_force = Creature:new {
 	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 0.6,
+	scale = 1.0,
 	templates = {"object/mobile/dressed_jedi_trainer_old_human_male_01.iff"},
 	lootGroups = {
 		{

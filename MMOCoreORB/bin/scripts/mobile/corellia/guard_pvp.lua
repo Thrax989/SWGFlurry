@@ -56,6 +56,13 @@ guard_pvp = Creature:new {
 		},
 			lootChance = 10000000
 		},
+	        {
+                        groups = {
+                                {group = "hologram_lg1", chance = 5000000},
+                                {group = "hologram_lg2", chance = 5000000}
+                },
+                        lootChance = 2500000
+                },
 		{
 	    	groups = {
 				{group = "stun_weapons", chance = 5000000},
@@ -116,12 +123,6 @@ guard_pvp = Creature:new {
         },
       		lootChance = 10000000
         },
-        {
-	    	groups = {
-				{group = "looted_container", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
         },
 	weapons = {},
 	reactionStf = "",

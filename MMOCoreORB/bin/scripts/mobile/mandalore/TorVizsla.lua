@@ -109,12 +109,6 @@ tor_vizsla = Creature:new {
 		},
 		{
 			groups = {
-				{group = "looted_container", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
 				{group = "weapons_all", chance = 10000000}
 		},
 			lootChance = 10000000

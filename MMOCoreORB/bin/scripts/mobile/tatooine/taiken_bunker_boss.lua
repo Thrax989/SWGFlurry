@@ -2,7 +2,7 @@ taiken_bunker_boss = Creature:new {
   customName = "<<< Battle Master Helix >>>",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 100.00,
+  chanceHit = 35.00,
   damageMin = 1000,
   damageMax = 3000,
   specialDamageMult = 2.0,
@@ -81,12 +81,6 @@ taiken_bunker_boss = Creature:new {
 {
             groups = {
                     {group = "krayt_tissue_rare", chance = 10000000}
-},
-                    lootChance = 10000000
-},
-{
-            groups = {
-                    {group = "looted_container", chance = 10000000}
 },
                     lootChance = 10000000
 },

@@ -308,6 +308,13 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
                 attacker->sendSystemMessage("You were caught using a bugged weapon!!");
 	}
 
+	if (weapon->getForceCost() < 1 && attacker->isPlayerObject()) {
+ 		Locker locker(weapon);
+ 		weapon->setForceCost(5);
+ 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+                attacker->sendSystemMessage("You were caught using a bugged weapon. 0 FC sabers are not allowed");
+ 	}
+
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
 
@@ -1104,6 +1111,15 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		if (armorReduction > 0) damage *= (1.f - (armorReduction / 100.f));
 
 		return damage;
+	}
+	
+			// BH SHIELD
+	float rawDamage = damage;
+	int swordArmor = defender->getSkillMod("ability_armor");
+	if (swordArmor > 0) {
+		float dmgAbsorbed = rawDamage - (damage *= 1.f - (swordArmor / 100.f));
+		defender->notifyObservers(ObserverEventType::DAMAGERECEIVED, attacker, dmgAbsorbed);
+		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, FORCEARMOR);
 	}
 
 	if (!data.isForceAttack()) {

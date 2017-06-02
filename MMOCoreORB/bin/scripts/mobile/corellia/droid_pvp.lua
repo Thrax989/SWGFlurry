@@ -5,11 +5,11 @@ droid_pvp = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 50.00,
-	damageMin = 750,
-	damageMax = 1250,
-	baseXp = 10000,
-	baseHAM = 100000,
-	baseHAMmax = 125000,
+	damageMin = 500,
+	damageMax = 750,
+	baseXp = 5000,
+	baseHAM = 50000,
+	baseHAMmax = 100000,
 	armor = 0,
 	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
@@ -49,29 +49,29 @@ droid_pvp = Creature:new {
 		},
 		{
 		groups = {
-				{group = "armor_attachments", chance = 4750000},
-				{group = "clothing_attachments", chance = 4750000},
-				{group = "looted_container", chance = 250000},
-				{group = "tokens_lg", chance = 250000}
+				{group = "armor_attachments", chance = 4850000},
+				{group = "clothing_attachments", chance = 4850000},
+				{group = "hologram_lg1", chance = 200000},
+				{group = "tokens_lg", chance = 100000}
 
 			},
 			lootChance = 10000000
 		},
 		{
 		groups = {
-				{group = "armor_attachments", chance = 4750000},
-				{group = "clothing_attachments", chance = 4750000},
-				{group = "looted_container", chance = 250000},
-				{group = "tokens_lg", chance = 250000}
+				{group = "armor_attachments", chance = 4850000},
+				{group = "clothing_attachments", chance = 4850000},
+				{group = "hologram_lg2", chance = 200000},
+				{group = "tokens_lg", chance = 100000}
 
 			},
 			lootChance = 10000000
 		},
 	},
-	weapons = {"dark_jedi_weapons_gen2"},
+	weapons = {"primitive_weapons"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(lightsabermaster,forcepowermaster)
+	attacks = merge(pikemanmaster,fencermaster,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(droid_pvp, "droid_pvp")
