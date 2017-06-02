@@ -178,6 +178,10 @@ void CommandConfigManager::loadCommandData(const String& filename) {
 			if (!state) stateMask |= CreatureState::BLINDED;
 			row->getValue(CommandConfigManager::DIZZY, state);
 			if (!state) stateMask |= CreatureState::DIZZY;
+			//row->getValue(CommandConfigManager::SNARE, state);
+			//if (!state) stateMask |= CreatureState::IMMOBILIZED;
+			//row->getValue(CommandConfigManager::ROOT, state);
+			//if (!state) stateMask |= CreatureState::FROZEN;
 			row->getValue(CommandConfigManager::INTIMIDATED, state);
 			if (!state) stateMask |= CreatureState::INTIMIDATED;
 			row->getValue(CommandConfigManager::IMMOBILIZED, state);
@@ -369,6 +373,8 @@ void CommandConfigManager::registerGlobals() {
 	setGlobalLong("FEIGNDEATH_STATE", CreatureState::FEIGNDEATH);
 	setGlobalLong("BLINDED_STATE", CreatureState::BLINDED);
 	setGlobalLong("DIZZY_STATE", CreatureState::DIZZY);
+	setGlobalLong("SNARE_STATE", CreatureState::SNARE);
+	setGlobalLong("ROOT_STATE", CreatureState::ROOT);
 	setGlobalLong("INTIMIDATED_STATE", CreatureState::INTIMIDATED);
 	setGlobalLong("IMMOBILIZED_STATE", CreatureState::IMMOBILIZED);
 	setGlobalLong("FROZEN_STATE", CreatureState::FROZEN);
@@ -452,6 +458,8 @@ void CommandConfigManager::registerGlobals() {
 	setGlobalInt("INVALID_EFFECT", CommandEffect::INVALID);
 	setGlobalInt("BLIND_EFFECT", CommandEffect::BLIND);
 	setGlobalInt("DIZZY_EFFECT", CommandEffect::DIZZY);
+	setGlobalInt("ROOT_EFFECT", CommandEffect::ROOT);
+	setGlobalInt("SNARE_EFFECT", CommandEffect::SNARE);
 	setGlobalInt("INTIMIDATE_EFFECT", CommandEffect::INTIMIDATE);
 	setGlobalInt("STUN_EFFECT", CommandEffect::STUN);
 	setGlobalInt("KNOCKDOWN_EFFECT", CommandEffect::KNOCKDOWN);
@@ -490,7 +498,7 @@ void CommandConfigManager::registerGlobals() {
 	// JediQueueCommand buff types
 	setGlobalInt("BASE_BUFF", JediQueueCommand::BASE_BUFF);
 	setGlobalInt("SINGLE_USE_BUFF", JediQueueCommand::SINGLE_USE_BUFF);
-    
+
 	// force heal targets
 	setGlobalInt("FORCE_HEAL_TARGET_SELF", ForceHealQueueCommand::TARGET_SELF);
 	setGlobalInt("FORCE_HEAL_TARGET_OTHER", ForceHealQueueCommand::TARGET_OTHER);
@@ -1607,7 +1615,15 @@ void CommandConfigManager::registerCommands() {
 	commandFactory.registerCommand<RequestSpaceTrainerCommand>(String("requestSpaceTrainer").toLowerCase());
 	
 	//Custom
+	commandFactory.registerCommand<InvisibleCommand>(String("invisible").toLowerCase());
 	commandFactory.registerCommand<setPvpCommand>(String("setPvp").toLowerCase());
+	commandFactory.registerCommand<PistolWhip1Command>(String("pistolwhip1").toLowerCase());
+	commandFactory.registerCommand<PistolWhip2Command>(String("pistolwhip2").toLowerCase());
+	commandFactory.registerCommand<PoisonGasCloud1Command>(String("poisongascloud1").toLowerCase());
+	commandFactory.registerCommand<PoisonGasCloud2Command>(String("poisongascloud2").toLowerCase());
+	commandFactory.registerCommand<UndergroundExplosion1Command>(String("undergroundexplosion1").toLowerCase());
+	commandFactory.registerCommand<UndergroundExplosion2Command>(String("undergroundexplosion2").toLowerCase());
+	commandFactory.registerCommand<ExtractionCommand>(String("extraction").toLowerCase());
 
 	//pet commands
 	commandFactory.registerCommand<PetAttackCommand>(String("petAttack").toLowerCase());

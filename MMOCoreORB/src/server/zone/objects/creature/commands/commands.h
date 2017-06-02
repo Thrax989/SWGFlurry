@@ -847,6 +847,14 @@
 #include "RequestSpaceTrainerCommand.h"
 #include "setPvp.h"
 #include "BhShieldCommand.h"
+#include "InvisibleCommand.h"
+#include "PistolWhip1Command.h"
+#include "PistolWhip2Command.h"
+#include "PoisonGasCloud1Command.h"
+#include "PoisonGasCloud2Command.h"
+#include "UndergroundExplosion1Command.h"
+#include "UndergroundExplosion2Command.h"
+#include "ExtractionCommand.h"
 
 
 

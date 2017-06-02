@@ -113,7 +113,7 @@ object_weapon_ranged_pistol_pistol_intimidator = object_weapon_ranged_pistol_sha
 	xpType = "combat_rangedspecialize_pistol",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_pistol_fwg5" },
+	certificationsRequired = { "cert_group_c" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "pistol_accuracy" },
 
