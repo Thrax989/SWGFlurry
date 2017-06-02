@@ -727,22 +727,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		player->setFactionStatus(2);
 	}
 
-	if(player->getZone()->getZoneName() == "kaas") {
-		player->sendSystemMessage("You Have Entered The Pvp Zone.");
-	}else{
-		player->sendSystemMessage("You Have Left The Pvp Zone.");
-	}
-
- 	String playerName = player->getFirstName();
- 	StringBuffer zBroadcast;
- 	zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has ";
-	if(player->getZone()->getZoneName() == "kaas"){
-		zBroadcast << "Entered The Kaas PvP Zone";
-	}else{
-		zBroadcast << "Left The Kaas PvP Zone";
-	}
-	player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-
 	PlayerObject* ghost = player->getPlayerObject();
 	player->playEffect("clienteffect/holoemote_haunted.cef", "head"); 
 
