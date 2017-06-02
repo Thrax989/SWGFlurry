@@ -134,3 +134,5 @@ includeFile("tangible/wearables/base/base_wrist_l.lua")
 includeFile("tangible/wearables/base/base_wrist_r.lua")
 includeFile("tangible/wearables/base/cybernetic_base.lua")
 includeFile("tangible/wearables/base/wearables_base.lua")
+includeFile("tangible/wearables/base/base_fannypack.lua")
+
