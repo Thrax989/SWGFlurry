@@ -44,14 +44,14 @@ public:
 		if (player->isRidingMount())
 			return GENERALERROR;
 				
-			creature->playEffect("clienteffect/invisible_effect.cef");
+		creature->playEffect("clienteffect/lair_med_damage_smoke.cef");
 
 		if (creature->isPlayerCreature()) {
 		Reference<Task*> task = creature->getPendingTask("invisibleevent");
 
 				if (task != NULL) {
 					if (!task->isScheduled()) {
-				//creature->playEffect("clienteffect/invisible_effect.cef");
+						creature->playEffect("clienteffect/lair_med_damage_smoke.cef");
 						task->schedule(1600);
 						return SUCCESS;
 					} else {
@@ -62,7 +62,7 @@ public:
 
 				Reference<InvisibleEvent*> invisTask = new InvisibleEvent(player);
 
-				//creature->playEffect("clienteffect/invisible_effect.cef");
+				creature->playEffect("clienteffect/lair_med_damage_smoke.cef");
 				creature->addPendingTask("invisibleevent", invisTask, 1600);
 			
 
