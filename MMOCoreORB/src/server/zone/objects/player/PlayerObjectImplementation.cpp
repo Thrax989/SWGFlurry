@@ -1240,6 +1240,16 @@ void PlayerObjectImplementation::notifyOnline() {
 	JediManager::instance()->onPlayerLoggedIn(playerCreature);
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
+		
+	if (player->isPrivileged()) {
+	//Broadcast to Server
+ 	Zone* zone = playerCreature->getZone();
+ 	String playerName = playerCreature->getFirstName();
+ 	StringBuffer zBroadcast;
+ 	zBroadcast << "\\#00E604" << playerName << "Has Logged In";
+ 	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			return;
+	}
 
 	if (getForcePowerMax() > 0 && getForcePower() < getForcePowerMax())
 		activateForcePowerRegen();
