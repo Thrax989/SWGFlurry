@@ -39,6 +39,11 @@
 --gives permission to release a modified version without this exception;
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
+object_static_base_shared_static_flagpole_base = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/base/shared_static_flagpole_base.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_base_shared_static_flagpole_base, "object/static/base/shared_static_flagpole_base.iff")
+--**********************************************************************************************************************************
 
 
 object_static_base_shared_static_base = SharedStaticObjectTemplate:new {
