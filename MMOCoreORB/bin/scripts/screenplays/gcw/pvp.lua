@@ -20,7 +20,7 @@ function pvp:spawnActiveAreas()
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(225)
+	        activeArea:setRadius(220)
 	        createObserver(ENTEREDAREA, "pvp", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "pvp", "notifySpawnAreaLeave", pSpawnArea)
 	    end
