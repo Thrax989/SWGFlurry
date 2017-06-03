@@ -39,7 +39,7 @@ function RecruiterConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, s
 		writeData(CreatureObject(pPlayer):getObjectID() .. ":changingFactionStatus", 1)
 		createEvent(1, "recruiterScreenplay", "handleGoOvert", pPlayer, "")
 	elseif (screenID == "accepted_go_covert") then
-		if (CreatureObject(pPlayer):hasSkill("force_title_jedi_rank_03")) then
+		if (CreatureObject(pPlayer):hasSkill("force_rank_light_novice") or CreatureObject(pPlayer):hasSkill("force_rank_dark_novice")) then
 			return
 		end
 		
@@ -47,7 +47,7 @@ function RecruiterConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, s
 		writeData(CreatureObject(pPlayer):getObjectID() .. ":changingFactionStatus", 1)
 		createEvent(1, "recruiterScreenplay", "handleGoCovert", pPlayer, "")
 	elseif (screenID == "accepted_go_on_leave") then
-		if (CreatureObject(pPlayer):hasSkill("force_title_jedi_rank_03")) then
+		if (CreatureObject(pPlayer):hasSkill("force_rank_light_novice") or CreatureObject(pPlayer):hasSkill("force_rank_dark_novice")) then
 			return
 		end
 		CreatureObject(pPlayer):setFutureFactionStatus(0)
@@ -55,7 +55,7 @@ function RecruiterConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, s
 		createEvent(1, "recruiterScreenplay", "handleGoOnLeave", pPlayer, "")
 
 	elseif (screenID == "accepted_resign") then
-		if (CreatureObject(pPlayer):hasSkill("force_title_jedi_rank_03")) then
+		if (CreatureObject(pPlayer):hasSkill("force_rank_light_novice") or CreatureObject(pPlayer):hasSkill("force_rank_dark_novice")) then
 			return
 		end
 
