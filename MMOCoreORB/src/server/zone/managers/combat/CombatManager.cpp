@@ -308,13 +308,12 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
                 attacker->sendSystemMessage("You were caught using a bugged weapon!!");
 	}
 	
-	if (weapon->getForceCost() < 1 && attacker->isPlayerObject()) {
+	if (attacker->isPlayerCreature() && weapon->getForceCost() < 1) {
   		Locker locker(weapon);
  		weapon->setForceCost(5);
   		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
                 attacker->sendSystemMessage("You were caught using a bugged weapon. 0 FC sabers are not allowed");
-  	}
-
+	}
 
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
