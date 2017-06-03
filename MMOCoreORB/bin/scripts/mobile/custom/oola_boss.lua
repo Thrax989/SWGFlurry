@@ -32,7 +32,7 @@ oola_boss = Creature:new {
       groups = {
         {group = "freedom_lg", chance = 10000000}
   },
-      lootChance = 5000000
+      lootChance = 1000000
   },
   {
       groups = {
