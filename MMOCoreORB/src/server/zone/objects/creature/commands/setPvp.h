@@ -45,6 +45,11 @@ public:
 			creature->sendSystemMessage("Jedi in the FRS may not use this command.");
 			return GENERALERROR;
 		}
+
+		if(creature->getFactionStatus() == FactionStatus::OVERT){
+ 			creature->sendSystemMessage("You are already Overt");
+ 			return GENERALERROR;
+ 		}
 		
 		PlayerObject* targetGhost = creature->getPlayerObject();
 		Zone* zone = creature->getZone();
@@ -53,12 +58,10 @@ public:
 			return GENERALERROR;
 
 
-		if(creature->getFactionStatus() == FactionStatus::ONLEAVE || creature->getFactionStatus() == FactionStatus::COVERT){
+		if(creature->getFactionStatus() == FactionStatus::ONLEAVE){
 			targetGhost->doFieldFactionChange(FactionStatus::OVERT);
-			targetGhost->sendSystemMessage("Please Type YES In The Box To Change Status."); 
 		}else{
-			targetGhost->doFieldFactionChange(FactionStatus::ONLEAVE)
-			targetGhost->sendSystemMessage("Please Type YES In The Box To Change Status."); ; 
+			targetGhost->doFieldFactionChange(FactionStatus::ONLEAVE);
 		}
 			//Broadcast to Server
  			String playerName = creature->getFirstName();
