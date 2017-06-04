@@ -6,6 +6,7 @@
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "templates/params/creature/CreatureState.h"
 #include "templates/params/creature/CreatureFlag.h"
+#include "server/zone/packets/tangible/UpdatePVPStatusMessage.h"
 
 #include "server/zone/managers/objectcontroller/ObjectController.h"
 #include "server/zone/managers/skill/SkillManager.h"
@@ -2862,7 +2863,13 @@ bool CreatureObjectImplementation::isAggressiveTo(CreatureObject* object) {
 	if (ghost->isInBountyLockList(object->getObjectID()) || targetGhost->isInBountyLockList(asCreatureObject()->getObjectID())) {
 		return true;
 	}
-
+	/*
+    if (object->getPvpStatusBitmask() & CreatureFlag::TEF){
+		return true;
+    } else {
+		return false;
+    }
+	*/
 	ManagedReference<GuildObject*> guildObject = guild.get();
 	if (guildObject != NULL && guildObject->isInWaringGuild(object))
 		return true;
@@ -2993,6 +3000,9 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 	if (guildObject != NULL && guildObject->isInWaringGuild(object))
 		return true;
 
+	if ((object->getPvpStatusBitmask() & CreatureFlag::TEF))
+		return true;
+	
 	return false;
 }
 
@@ -3014,11 +3024,31 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	PlayerObject* targetGhost = asCreatureObject()->getPlayerObject(); // ghost is the target
 	
   	if (targetGhost == NULL)
+
 		return false;
 	
  	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
                 return false;
 
+	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
+        return false;
+	
+	ManagedReference<CreatureObject* > defender = NULL;
+	uint64 defenderPlayerId = 0;
+	if(asCreatureObject()->getMainDefender() != NULL){
+	    defenderPlayerId = asCreatureObject()->getMainDefender()->getObjectID();
+		defender = server->getZoneServer()->getObject(defenderPlayerId).castTo<CreatureObject*>();
+	}
+
+	//if (defender == NULL)
+		//return false;
+		
+
+	//possibly add check for (object->getMainDefender()->getObjectID() == asCreatureObject()->getObjectID())
+	if (defender != NULL && defenderPlayerId != 0){
+		if(defenderPlayerId == object->getObjectID())
+			return false;
+	}
 	//if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
 
 	CreatureObject* targetCreo = asCreatureObject();
@@ -3037,6 +3067,46 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 	if (!(targetFactionStatus == FactionStatus::ONLEAVE) && (currentFactionStatus == FactionStatus::ONLEAVE))
 		return false;
+	
+        //StringBuffer msg;
+	
+	if (defender != NULL){
+		if(!(asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::AGGRESSIVE) && !(asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::ATTACKABLE)){
+			//ManagedReference<SceneObject*> defScene = asCreatureObject()->getMainDefender();
+			//TangibleObject* defenderTano = cast<TangibleObject*>( defScene.get());
+
+			//Locker clocker(defenderTano, object);
+
+			//object->setDefender(defenderTano);
+			//defenderTano->addDefender(object);
+	
+			//clocker.release();
+
+			//CombatManager::instance()->startCombat(object, defender, false);
+
+			//BaseMessage* pvpstat = new UpdatePVPStatusMessage(defender, object, defender->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE );
+			//object->sendMessage(pvpstat);
+
+			//BaseMessage* pvpstat2 = new UpdatePVPStatusMessage(object, defender, object->getPvpStatusBitmask() | CreatureFlag::ATTACKABLE | CreatureFlag::AGGRESSIVE );
+			//defender->sendMessage(pvpstat2);
+
+			//object->setCombatState();
+
+			object->sendPvpStatusTo(defender);
+			defender->sendPvpStatusTo(object);
+			
+			
+
+	 //msg << "isAggressiveTo " << object << " to " << defender;
+	 //info(msg.toString(), true);
+
+		}
+	}
+
+	//RE-ENABLE FOR TEF CHECK!!!!!!
+	if((asCreatureObject()->getPvpStatusBitmask() & CreatureFlag::TEF) && !(currentFactionStatus == FactionStatus::OVERT)){
+		return false;
+	}
 
 	return true;
 }
