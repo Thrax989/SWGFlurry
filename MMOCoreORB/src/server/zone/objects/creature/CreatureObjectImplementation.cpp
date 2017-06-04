@@ -3011,8 +3011,10 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	if (ghost == NULL)
 		return false;
 
-	if (ghost->isBountyLocked())
-		return false;
+	PlayerObject* targetGhost = asCreatureObject()->getPlayerObject(); // ghost is the target
+  
+ 	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
+                return false;
 
 	//if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
 
