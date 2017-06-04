@@ -56,7 +56,7 @@ PistolWhip1Command = {
 
 
 
-	combatSpam = "pistolwhip",
+	combatSpam = "pistolwhip1",
 	
 	weaponType = PISTOLWEAPON,
 

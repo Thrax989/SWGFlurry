@@ -52,7 +52,7 @@ PoisonGasCloud2Command = {
 	areaRange = 10,
  	areaAction = true,
 
-	combatSpam = "saberpolearmdervish",
+	combatSpam = "poisongascloud2",
   	clientEffect = "clienteffect/poisoncloud_effect.cef",
 
 stateEffects = {
