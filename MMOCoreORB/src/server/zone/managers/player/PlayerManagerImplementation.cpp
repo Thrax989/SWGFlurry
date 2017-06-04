@@ -721,6 +721,8 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	player->updateTimeOfDeath();
 	//player->clearBuffs(true);
+	player->setFactionStatus(FactionStatus::ONLEAVE);
+ -	player->playEffect("clienteffect/holoemote_haunted.cef", "head");
 
 	//Check for FRS Jedi without overt
 	if (player->hasSkill("force_rank_dark_novice") || player->hasSkill("force_rank_light_novice")) {
