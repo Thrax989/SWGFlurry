@@ -3012,7 +3012,10 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 		return false;
 
 	PlayerObject* targetGhost = asCreatureObject()->getPlayerObject(); // ghost is the target
-  
+	
+  	if (targetGhost == NULL)
+		return false;
+	
  	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
                 return false;
 
