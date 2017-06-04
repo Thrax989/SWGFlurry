@@ -54,9 +54,11 @@ public:
 
 
 		if(creature->getFactionStatus() == FactionStatus::ONLEAVE || creature->getFactionStatus() == FactionStatus::COVERT){
-			targetGhost->doFieldFactionChange(FactionStatus::OVERT); 
+			targetGhost->doFieldFactionChange(FactionStatus::OVERT);
+			targetGhost->sendSystemMessage("Please Type YES In The Box To Change Status."); 
 		}else{
-			targetGhost->doFieldFactionChange(FactionStatus::ONLEAVE); 
+			targetGhost->doFieldFactionChange(FactionStatus::ONLEAVE)
+			targetGhost->sendSystemMessage("Please Type YES In The Box To Change Status."); ; 
 		}
 			//Broadcast to Server
  			String playerName = creature->getFirstName();
