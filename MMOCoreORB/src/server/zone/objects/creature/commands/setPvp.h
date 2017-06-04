@@ -52,10 +52,6 @@ public:
 		if (targetGhost == NULL)
 			return GENERALERROR;
 
-		if(creature->getFactionStatus() == FactionStatus::OVERT){
-			creature->sendSystemMessage("You are already Overt");
-			return GENERALERROR;
-		}
 
 		if(creature->getFactionStatus() == FactionStatus::ONLEAVE || creature->getFactionStatus() == FactionStatus::COVERT){
 			targetGhost->doFieldFactionChange(FactionStatus::OVERT); 
