@@ -2970,7 +2970,7 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 
 	if (areInDuel)
 		return true;
-	
+	//ONLY BH IN GROUPS WITH OTHER BH Are Effected ONCE A BH IN A GROUP ENGADGES HIS MARK THE ENTIRE GROUP AROUND HIM CAN HELP. EFFECTS ONLY BH IN THE GROUP
 	if(object->hasBountyMissionFor(asCreatureObject()) || (ghost->isBountyLocked() && ghost->isInBountyLockList(object->getObjectID())))
 		return true;
 
