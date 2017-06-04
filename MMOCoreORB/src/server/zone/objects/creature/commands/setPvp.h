@@ -30,7 +30,7 @@ public:
 
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
-		
+
 		if(creature->getZone()->getZoneName() == "kaas") {
 			creature->sendSystemMessage("Can not use /setpvp on Kaas");
 			return GENERALERROR;
@@ -45,11 +45,6 @@ public:
 			creature->sendSystemMessage("Jedi in the FRS may not use this command.");
 			return GENERALERROR;
 		}
-
-		if(creature->getFactionStatus() == FactionStatus::OVERT){
- 			creature->sendSystemMessage("You are already Overt");
- 			return GENERALERROR;
- 		}
 		
 		PlayerObject* targetGhost = creature->getPlayerObject();
 		Zone* zone = creature->getZone();
@@ -57,22 +52,20 @@ public:
 		if (targetGhost == NULL)
 			return GENERALERROR;
 
+		if(creature->getFactionStatus() == FactionStatus::OVERT){
+			creature->sendSystemMessage("You are already Overt");
+			return GENERALERROR;
+		}
 
-		if(creature->getFactionStatus() == FactionStatus::ONLEAVE){
+		if(creature->getFactionStatus() == FactionStatus::ONLEAVE || creature->getFactionStatus() == FactionStatus::COVERT){
 			targetGhost->doFieldFactionChange(FactionStatus::OVERT);
-		}else{
-			targetGhost->doFieldFactionChange(FactionStatus::ONLEAVE);
 		}
 			//Broadcast to Server
  			String playerName = creature->getFirstName();
  			StringBuffer zBroadcast;
- 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9";
-		        creature->addCooldown("setpvp", 30 * 1000);
+ 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Overt Faction Status Is In Progress.";
 			if(creature->getFactionStatus() == FactionStatus::ONLEAVE){
-				zBroadcast << "Onleave Faction Status Is In Progress";
-			}else{
-				zBroadcast << "Overt Faction Status Is In Progress";
-			}
+		}
 			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		
 		return SUCCESS;
