@@ -58,14 +58,20 @@ public:
 		}
 
 		if(creature->getFactionStatus() == FactionStatus::ONLEAVE || creature->getFactionStatus() == FactionStatus::COVERT){
-			creature->setFactionStatus(FactionStatus::OVERT);
+			targetGhost->doFieldFactionChange(FactionStatus::OVERT); 
+		}else{
+			targetGhost->doFieldFactionChange(FactionStatus::ONLEAVE); 
 		}
 			//Broadcast to Server
  			String playerName = creature->getFirstName();
  			StringBuffer zBroadcast;
- 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Now Overt";
+ 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9";
+		        creature->addCooldown("setpvp", 30 * 1000);
 			if(creature->getFactionStatus() == FactionStatus::ONLEAVE){
-		}
+				zBroadcast << "Onleave Faction Status Is In Progress";
+			}else{
+				zBroadcast << "Overt Faction Status Is In Progress";
+			}
 			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		
 		return SUCCESS;

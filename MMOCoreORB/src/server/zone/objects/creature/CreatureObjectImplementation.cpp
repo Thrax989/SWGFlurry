@@ -1317,15 +1317,6 @@ void CreatureObjectImplementation::addSkill(Skill* skill, bool notifyClient) {
 void CreatureObjectImplementation::removeSkill(Skill* skill, bool notifyClient) {
 	if (!skillList.contains(skill))
 		return;
-	if(skill->getSkillName() == "combat_bountyhunter_investigation_03") {
-		ManagedReference<ZoneServer*> zoneServer = getZoneServer();
-		if(zoneServer != NULL) {
-			ManagedReference<MissionManager*> missionManager = zoneServer->getMissionManager();
-			if(missionManager != NULL) {
-				missionManager->failPlayerBountyMission(getObjectID());
-			}
-		}
-	}
 
 	if (notifyClient) {
 		CreatureObjectDeltaMessage1* msg =
@@ -3032,8 +3023,12 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 	PlayerObject* targetGhost = asCreatureObject()->getPlayerObject(); // ghost is the target
 	
-	if (targetGhost == NULL)
+  	if (targetGhost == NULL)
+
 		return false;
+	
+ 	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
+                return false;
 
 	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
         return false;
