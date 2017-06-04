@@ -308,7 +308,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
                 attacker->sendSystemMessage("You were caught using a bugged weapon!!");
 	}
 	
-	if (attacker->isPlayerCreature() && weapon->getForceCost() < 1) {
+	if (attacker->isPlayerCreature() && weapon->isJediWeapon() && weapon->getForceCost() < 1) {
   		Locker locker(weapon);
  		weapon->setForceCost(5);
   		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
