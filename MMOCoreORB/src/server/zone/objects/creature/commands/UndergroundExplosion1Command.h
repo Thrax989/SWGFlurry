@@ -22,6 +22,9 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
+		if (!creature->isInCombat())
+			return false;
+
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
 

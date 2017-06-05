@@ -52,7 +52,7 @@ ExtractionCommand = {
 	areaRange = 10,
  	areaAction = true,
 
-	combatSpam = "saberpolearmdervish",
+	combatSpam = "extraction",
    	clientEffect = "clienteffect/extraction_effect.cef",
 
 	  StateEffect(

@@ -364,6 +364,10 @@ public:
 	void setAllowedTarget(unsigned int t) {
 		allowedTarget = t;
 	}
+
+	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
+		return defaultTime * 0.0;
+	}
 };
 
 #endif /* FORCEHEALQUEUECOMMAND_H_ */
