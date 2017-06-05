@@ -2970,10 +2970,6 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 
 	if (areInDuel)
 		return true;
-	
-	if(object->hasBountyMissionFor(asCreatureObject()) || (ghost->isBountyLocked() && ghost->isInBountyLockList(object->getObjectID())))
-		return true;
-
 
 	if (getGroupID() != 0 && getGroupID() == object->getGroupID())
 		return false;
@@ -3002,10 +2998,7 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 	if (isInvisible())
 		return false;
-	
-	if (isNeutral())
-		return false;
-	
+
 	if (isAttackableBy(object))
 		return false;
 
@@ -3014,13 +3007,8 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	if (ghost == NULL)
 		return false;
 
-	PlayerObject* targetGhost = asCreatureObject()->getPlayerObject(); // ghost is the target
-	
-  	if (targetGhost == NULL)
+	if (ghost->isBountyLocked())
 		return false;
-	
- 	if (ghost->isInBountyLockList(targetGhost->getObjectID()) || targetGhost->isInBountyLockList(ghost->getObjectID()))
-                return false;
 
 	//if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
 
