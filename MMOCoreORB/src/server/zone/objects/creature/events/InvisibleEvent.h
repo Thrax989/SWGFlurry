@@ -1,95 +1,155 @@
-/*
- 				Copyright <SWGEmu>
-		See file COPYING for copying conditions. */
-
 /**
- * file InvisibleDelayEvent.h
- * author Polonel
- * date 10.01.2010
- */
+* file invisibleEvent.h
+* author Castiel
+* date 18.02.2017
+*/
 
-#ifndef InvisibleEvent_H_
-#define InvisibleEvent_H_
+#ifndef INVISIBLEEVENT_H_
+#define INVISIBLEEVENT_H_
 
 #include "engine/engine.h"
-#include "server/zone/managers/objectcontroller/ObjectController.h"
-#include "server/zone/packets/chat/ChatSystemMessage.h"
-#include "server/zone/objects/creature/CreatureObject.h"
-#include "server/zone/packets/tangible/UpdatePVPStatusMessage.h"
 
-class InvisibleEvent: public Task {
-	ManagedReference<CreatureObject*> player;
+#include "server/zone/Zone.h"
+#include "server/zone/managers/objectcontroller/ObjectController.h"
+//#include "server/zone/objects/creature/CreatureAttribute.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+//#include "server/zone/objects/creature/events/InvisibleEventObserver.h"
+#include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/packets/chat/ChatSystemMessage.h"
+#include "server/zone/packets/scene/PlayClientEffectLocMessage.h"
+#include "server/zone/packets/scene/UpdateTransformMessage.h"
+
+class InvisibleEvent : public Task {
+protected:
+    ManagedReference<CreatureObject*> player;
+
+    bool invisibleApplied;
+
 
 public:
-	InvisibleEvent(CreatureObject* pl) {
-		player = pl;
-	}
+    InvisibleEvent(CreatureObject* pl) : Task() {
+        player = pl;
+        invisibleApplied = false;
 
-	void run() {
-		Locker playerLocker(player);
+    }
 
-		PlayerObject* targetGhost = player->getPlayerObject();
+    virtual ~InvisibleEvent() {
+        if (player != NULL) {
+        }
+    }
 
-		try {
-			if (player->isOnline() && !targetGhost->isLoggingOut()) {
-				player->removePendingTask("InvisibleEvent");
+    void run() {
+        if (player == NULL)
+            return;
 
-				ManagedReference<Zone*> zone = player->getZone();
+        Locker playerLocker(player);
 
-				if (zone == NULL)
-					return;
+        if (!player->isOnline() || player->isIncapacitated()) {
+            removeInvisible();
+            return;
+        }
 
-				Locker zoneLocker(zone);
+        if (!invisibleApplied) {
+            if (!canApplyInvisible()) {
+                player->sendSystemMessage("Your invisiblity could not be applied!");
+                return;
+            }
 
-				if (!player->isInvisible()) {
+            applyInvisible();
 
-				SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = player->getCloseObjects();
+            return;
+        }
 
-				for (int i = 0; i < closeObjects->size(); ++i) {
-						SceneObject* scno = cast<SceneObject*>( closeObjects->get(i).get());
+        if (player->getParent() != NULL) {
+            player->sendSystemMessage("You cannot maintain your invisiblility here.");
 
-				if (scno != player && !scno->isBuildingObject())
-								scno->notifyDissapear(player);
+            removeInvisible();
+            return;
+        }
 
-					}
-				player->sendSystemMessage("You are now invisible to other players and creatures.");
-				player->setInvisible(true);
-			
-				} else {
-				player->sendSystemMessage("You are now visible to all players and creatures.");
-				player->setInvisible(false);
-				
-					SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = player->getCloseObjects();
 
-					for (int i = 0; i < closeObjects->size(); ++i) {
-						SceneObject* scno = cast<SceneObject*>( closeObjects->get(i).get());
+        if (!canApplyInvisible()) {
+            if (player->getParent() != NULL) {
+                player->sendSystemMessage("You cannot maintain your cloak here.");
+            } else if (player->isInCombat()) {
+                player->sendSystemMessage("You cannot maintain your cloak in combat!");
+            }
 
-						if (scno != player && !scno->isBuildingObject())
-								scno->notifyInsert(player);
+            removeInvisible();
+            return;
+        }
 
-					} /*if (creature->isInCombat()) {
-			player->sendSystemMessage("You are now visible to all players and creatures.");
-				player->setInvisible(false);
-				
-					SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = player->getCloseObjects();
+        if (invisibleApplied && player->isInvisible()) {
+        }
+    }
 
-					for (int i = 0; i < closeObjects->size(); ++i) {
-						SceneObject* scno = cast<SceneObject*>( closeObjects->get(i).get());
+    bool getInvisibleApplied() const { return invisibleApplied; }
 
-						if (scno != player && !scno->isBuildingObject())
-								scno->notifyInsert(player);
+    void applyInvisible() {
+        if (invisibleApplied) {
+            return;
+        }
 
-					}
-					}*/
-				}
+        player->setInvisible(true);
 
-			}
+        SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = player->getCloseObjects();
 
-		} catch (Exception& e) {
-			player->error("unreported exception caught in InvisibleEvent::run");
-		}
+        for (int i = 0; i < closeObjects->size(); ++i) {
+            SceneObject* scno = cast<SceneObject*>(closeObjects->get(i).get());
 
-	}
+            if (scno != player && !scno->isBuildingObject()) {
+                scno->notifyDissapear(player);
+            }
+        }
+
+        PlayClientEffectLoc* invisibleLoc = new PlayClientEffectLoc(getClientEffect(), player->getZone()->getZoneName(), player->getPositionX(), player->getPositionZ(), player->getPositionY());
+        player->broadcastMessage(invisibleLoc, true);
+
+        player->sendSystemMessage("You invisiblility has been applied.  You vanish from sight.");
+
+        invisibleApplied = true;
+    }
+
+    void removeInvisible() {
+        if (isScheduled()) {
+            cancel();
+        }
+
+        player->removePendingTask("invisibleevent");
+
+        if (!invisibleApplied) {
+            return;
+        }
+
+        player->setInvisible(false);
+
+        SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = player->getCloseObjects();
+
+        for (int i = 0; i < closeObjects->size(); ++i) {
+            SceneObject* scno = cast<SceneObject*>(closeObjects->get(i).get());
+
+            if (scno != player && !scno->isBuildingObject()) {
+                scno->notifyInsert(player);
+            }
+        }
+
+        PlayClientEffectLoc* invisibledropLoc = new PlayClientEffectLoc(getClientEffect(), player->getZone()->getZoneName(), player->getPositionX(), player->getPositionZ(), player->getPositionY());
+        player->broadcastMessage(invisibledropLoc, true);
+
+        UpdateTransformMessage* msg = new UpdateTransformMessage(player);
+        player->broadcastMessage(msg, true);
+
+        player->sendSystemMessage("You invisiblility has been removed.  You are revealed to all.");
+
+        invisibleApplied = false;
+    }
+
+    bool canApplyInvisible() {
+        return (player->getParent() == NULL) /*&& !player->isInCombat()*/;
+    }
+
+protected:
+    virtual const char* getClientEffect() const { return "clienteffect/lair_med_damage_smoke.cef.cef"; }
 
 };
 

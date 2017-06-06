@@ -41,41 +41,9 @@
 --which carries forward this exception.
 --true = 1, false = 0
 
-ExtractionCommand = {
-        name = "extraction",
-
-	damageMultiplier = 4.0,
-	speedMultiplier = 3.0,
-	healthCostMultiplier = 1.0,
-	actionCostMultiplier = 1.0,
-	mindCostMultiplier = 1.0,
-	areaRange = 10,
- 	areaAction = true,
-
-	combatSpam = "extraction",
-   	clientEffect = "clienteffect/extraction_effect.cef",
-
-stateEffects = {
-	  StateEffect(
-		KNOCKDOWN_EFFECT, 
-		{ "knockdownRecovery", "lastKnockdown" }, 
-		{ "knockdown_defense" }, 
-		{}, 
-		75, 
-		0, 
-		0 
-	     )
-	},
-
-	poolsToDamage = RANDOM_ATTRIBUTE,
-
-	weaponType = PISTOLWEAPON,
-
-	range = -1
+InvisibleCommand = {
+        name = "invisible",
 }
 
+AddCommand(InvisibleCommand)
 
-
-
-
-AddCommand(ExtractionCommand)
