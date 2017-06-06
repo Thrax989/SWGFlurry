@@ -132,7 +132,7 @@ object_tangible_wearables_armor_ris_armor_ris_bracer_l = object_tangible_wearabl
 
 	
 	-- Damage types in WeaponObject
-	vulnerability = ACID + STUN,
+	vulnerability = STUN,
 	specialResists = LIGHTSABER,
 
 	-- These are default Blue Frog stats
@@ -151,15 +151,15 @@ object_tangible_wearables_armor_ris_armor_ris_bracer_l = object_tangible_wearabl
 	heat = 15,
 	cold = 15,
 	acid = 15,
-	lightSaber = 15,
+	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_resistance", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
 	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
-	experimentalMin = {0, 0, 0, 1000, 5, 30000, 22, 22, 13, 1, 16, 5, 0},
-	experimentalMax = {0, 0, 0, 1000, 50, 50000, 13, 13, 9, 1, 16, 50, 0},
+	experimentalMin = {0, 0, 0, 1000, 5, 30000, 22, 22, 13, 1, 1, 5, 0},
+	experimentalMax = {0, 0, 0, 1000, 50, 50000, 13, 13, 9, 1, 1, 70, 0},
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 10, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
