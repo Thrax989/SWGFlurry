@@ -134,7 +134,7 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_chest_plate = obje
 
 
 	-- Damage types in WeaponObject
-	vulnerability = ACID + STUN,
+	vulnerability = STUN,
 	specialResists = LIGHTSABER,
 
 	-- These are default Blue Frog stats
@@ -145,10 +145,15 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_chest_plate = obje
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	stun = 0,
-	acid = 0,
-	lightSaber = 12,
-
+	kinetic = 15,
+	energy = 15,
+	electricity = 15,
+	stun = 60,
+	blast = 15,
+	heat = 15,
+	cold = 15,
+	acid = 15,
+	lightSaber = 25,
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_mandalorian_armor_mandalorian_chest_plate, "object/tangible/wearables/armor/mandalorian/armor_mandalorian_chest_plate.iff")
