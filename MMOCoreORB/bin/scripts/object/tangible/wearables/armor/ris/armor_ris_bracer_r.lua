@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_tangible_wearables_armor_ris_armor_ris_bicep_r = object_tangible_wearables_armor_ris_shared_armor_ris_bicep_r:new {
+object_tangible_wearables_armor_ris_armor_ris_bracer_r = object_tangible_wearables_armor_ris_shared_armor_ris_bracer_r:new {
 	templateType = ARMOROBJECT,
 
 	objectMenuComponent = "ArmorObjectMenuComponent",
@@ -129,7 +129,6 @@ object_tangible_wearables_armor_ris_armor_ris_bicep_r = object_tangible_wearable
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-
 	
 	-- Damage types in WeaponObject
 	vulnerability = STUN,
@@ -164,4 +163,4 @@ object_tangible_wearables_armor_ris_armor_ris_bicep_r = object_tangible_wearable
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_ris_armor_ris_bicep_r, "object/tangible/wearables/armor/ris/armor_ris_bicep_r.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_ris_armor_ris_bracer_r, "object/tangible/wearables/armor/ris/armor_ris_bracer_r.iff")
