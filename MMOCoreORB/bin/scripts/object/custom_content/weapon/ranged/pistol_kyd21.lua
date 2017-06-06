@@ -113,7 +113,7 @@ object_weapon_ranged_pistol_ep3_pistol_kyd21 = object_weapon_ranged_pistol_ep3_s
 	xpType = "combat_rangedspecialize_pistol",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "multiTargetPistolShot" },
+	certificationsRequired = { "cert_group_a" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "pistol_accuracy" },
 
