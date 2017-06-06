@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_tangible_wearables_armor_ris_armor_ris_bracer_r = object_tangible_wearables_armor_ris_shared_armor_ris_bracer_r:new {
+object_tangible_wearables_armor_ris_armor_ris_bicep_r = object_tangible_wearables_armor_ris_shared_armor_ris_bicep_r:new {
 	templateType = ARMOROBJECT,
 
 	objectMenuComponent = "ArmorObjectMenuComponent",
@@ -129,6 +129,7 @@ object_tangible_wearables_armor_ris_armor_ris_bracer_r = object_tangible_wearabl
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+
 	
 	-- Damage types in WeaponObject
 	vulnerability = STUN,
@@ -150,17 +151,17 @@ object_tangible_wearables_armor_ris_armor_ris_bracer_r = object_tangible_wearabl
 	heat = 15,
 	cold = 15,
 	acid = 15,
-	lightSaber = 0,
+	lightSaber = 15,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_resistance", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
 	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
-	experimentalMin = {0, 0, 0, 1000, 5, 30000, 22, 22, 13, 1, 1, 5, 0},
-	experimentalMax = {0, 0, 0, 1000, 50, 50000, 13, 13, 9, 1, 1, 70, 0},
+	experimentalMin = {0, 0, 0, 1000, 5, 30000, 22, 22, 188, 1, 16, 5, 0},
+	experimentalMax = {0, 0, 0, 1000, 50, 50000, 13, 13, 113, 1, 16, 50, 0},
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 10, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_ris_armor_ris_bracer_r, "object/tangible/wearables/armor/ris/armor_ris_bracer_r.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_ris_armor_ris_bicep_r, "object/tangible/wearables/armor/ris/armor_ris_bicep_r.iff")
