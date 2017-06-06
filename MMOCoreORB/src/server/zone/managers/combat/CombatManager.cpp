@@ -1571,14 +1571,6 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
             if (targetCreature->isIntimidated() || targetCreature->isStunned() || targetCreature->isDizzied()) {
                 block_mod = (block_mod / 1.7); //drops saber block to 50% if the player target is blinded, dizzyed, or stuned.
             }
-
-		// Lightsaber Toughness Reduction Fromula
-		if (tough == "lightsaber_toughness") {
-			int toughness_mod = targetCreature->getSkillMod(tough);
-            if (targetCreature->isIntimidated() || targetCreature->isStunned() || targetCreature->isDizzied()) {
-                toughness_mod = (toughness_mod / 1.7); //drops lightsaber toughness when stated.
-            }
-
             if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
                 return RICOCHET;
             else return HIT;
