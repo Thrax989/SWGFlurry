@@ -107,7 +107,7 @@ object_tangible_wearables_armor_marine_armor_marine_gloves = object_tangible_wea
 	rating = LIGHT,
 
 	electricity = 80,
-	stun = 0,
+	stun = 60,
 	lightSaber = 0,
 }
 
