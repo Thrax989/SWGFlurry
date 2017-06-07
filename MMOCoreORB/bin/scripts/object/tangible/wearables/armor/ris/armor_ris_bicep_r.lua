@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_tangible_wearables_armor_ris_armor_ris_bicep_l = object_tangible_wearables_armor_ris_shared_armor_ris_bicep_l:new {
+object_tangible_wearables_armor_ris_armor_ris_bicep_r = object_tangible_wearables_armor_ris_shared_armor_ris_bicep_r:new {
 	templateType = ARMOROBJECT,
 
 	objectMenuComponent = "ArmorObjectMenuComponent",
@@ -164,4 +164,4 @@ object_tangible_wearables_armor_ris_armor_ris_bicep_l = object_tangible_wearable
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_ris_armor_ris_bicep_l, "object/tangible/wearables/armor/ris/armor_ris_bicep_l.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_ris_armor_ris_bicep_r, "object/tangible/wearables/armor/ris/armor_ris_bicep_r.iff")
