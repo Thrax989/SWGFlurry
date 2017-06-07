@@ -113,7 +113,7 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_bicep_r = object
 	rating = LIGHT,
 
 	electricity = 80,
-	stun = 0,
+	stun = 60,
 	lightSaber = 0,
 }
 
