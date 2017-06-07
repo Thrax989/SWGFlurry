@@ -148,7 +148,7 @@ playerRaces = { "object/creature/player/bothan_male.iff",
 	rating = LIGHT,
 
 	electricity = 80,
-	stun = 0,
+	stun = 60,
 	lightSaber = 0,
 }
 
