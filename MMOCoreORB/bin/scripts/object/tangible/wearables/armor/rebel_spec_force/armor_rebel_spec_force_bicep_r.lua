@@ -59,21 +59,27 @@ object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_bicep_r 
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 
-				-- Damage types in WeaponObject
-				vulnerability = ACID + STUN,
-				specialResists = LIGHTSABER,
+	-- Damage types in WeaponObject
+	vulnerability = STUN,
+	specialResists = LIGHTSABER,
 
-				-- These are default Blue Frog stats
-				healthEncumbrance = 1,
-				actionEncumbrance = 1,
-				mindEncumbrance = 1,
+	-- These are default Blue Frog stats
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
 
-				-- LIGHT, MEDIUM, HEAVY
-				rating = LIGHT,
+	-- LIGHT, MEDIUM, HEAVY
+	rating = LIGHT,
 
-				stun = 0,
-				acid = 0,
-				lightSaber = 12,
+	kinetic = 15,
+	energy = 15,
+	electricity = 15,
+	stun = 60,
+	blast = 15,
+	heat = 15,
+	cold = 15,
+	acid = 15,
+	lightSaber = 25,
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_bicep_r, "object/tangible/wearables/armor/rebel_spec_force/armor_rebel_spec_force_bicep_r.iff")
