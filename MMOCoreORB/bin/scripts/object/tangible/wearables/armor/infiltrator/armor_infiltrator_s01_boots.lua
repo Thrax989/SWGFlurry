@@ -104,7 +104,7 @@ object_tangible_wearables_armor_infiltrator_armor_infiltrator_s01_boots = object
 	rating = LIGHT,
 
 	electricity = 80,
-	stun = 0,
+	stun = 60,
 	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
