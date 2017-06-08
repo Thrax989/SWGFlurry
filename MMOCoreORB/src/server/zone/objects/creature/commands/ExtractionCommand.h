@@ -22,6 +22,9 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
+		creature->playEffect("clienteffect/extraction_effect.cef", "");
+
+
 		return doCombatAction(creature, target);
 	}
 

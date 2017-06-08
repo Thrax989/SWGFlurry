@@ -53,7 +53,7 @@ UndergroundExplosion1Command = {
  	areaAction = true,
 
 	combatSpam = "undergroundexplosion1",
-  	clientEffect = "clienteffect/underground_explosion.cef",
+  	--clientEffect = "clienteffect/underground_explosion.cef",
 
 	poolsToDamage = RANDOM_ATTRIBUTE,
 

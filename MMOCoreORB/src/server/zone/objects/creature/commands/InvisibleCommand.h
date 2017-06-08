@@ -62,7 +62,7 @@ ManagedReference<PlayerObject*> playerObject = player->getPlayerObject();
             return GENERALERROR;
         }
 
-
+		creature->playEffect("clienteffect/invisible_effect.cef", "");
 
         Reference<InvisibleEvent*> invisibleTask = new InvisibleEvent(player);
 

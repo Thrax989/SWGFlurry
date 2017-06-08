@@ -149,7 +149,7 @@ public:
     }
 
 protected:
-    virtual const char* getClientEffect() const { return "clienteffect/lair_med_damage_smoke.cef.cef"; }
+    virtual const char* getClientEffect() const { return "clienteffect/lair_med_damage_smoke.cef"; }
 
 };
 

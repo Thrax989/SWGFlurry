@@ -53,7 +53,7 @@ ExtractionCommand = {
  	areaAction = true,
 
 	combatSpam = "extraction",
-   	clientEffect = "clienteffect/extraction_effect.cef",
+   	--clientEffect = "clienteffect/extraction_effect.cef",
 
 stateEffects = {
 	  StateEffect(
