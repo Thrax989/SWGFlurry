@@ -7,8 +7,8 @@ magur_torigai_missions =
 		missionType = "assassinate",
 		primarySpawns = 
 		{ 
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" }
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" }
 		}, 
 		secondarySpawns =
 		{
@@ -28,9 +28,9 @@ magur_torigai_missions =
 		missionType = "assassinate",
 		primarySpawns = 
 		{ 
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" }
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" }
 		}, 
 		secondarySpawns =
 		{
@@ -50,10 +50,10 @@ magur_torigai_missions =
 		missionType = "assassinate",
 		primarySpawns = 
 		{ 
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" }
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" }
 		}, 
 		secondarySpawns =
 		{
@@ -73,11 +73,11 @@ magur_torigai_missions =
 		missionType = "assassinate",
 		primarySpawns = 
 		{ 
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" }
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" }
 		}, 
 		secondarySpawns =
 		{
@@ -97,12 +97,12 @@ magur_torigai_missions =
 		missionType = "assassinate", 
 		primarySpawns = 
 		{ 
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" },
-			{ npcTemplate = "stormtrooper", npcName = "" }
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" }
 		}, 
 		secondarySpawns =
 		{
