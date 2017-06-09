@@ -1,7 +1,7 @@
 --includeFile("custom_content/draft_schematic/weapon/2h_sword_maul_legendary.lua")
 --includeFile("custom_content/draft_schematic/weapon/2h_sword_sith.lua")
 --includeFile("custom_content/draft_schematic/weapon/2h_sword_vibrosword.lua")
-includeFile("custom_content/draft_schematic/weapon/pistol_kyd21_generic.lua")
+includeFile("custom_content/draft_schematic/weapon/pistol_kyd21.lua")
 includeFile("custom_content/draft_schematic/weapon/pistol_dh18a_gcw.lua")
 includeFile("custom_content/draft_schematic/weapon/pistol_d66.lua")
 includeFile("custom_content/draft_schematic/weapon/pistol_westar_34.lua")

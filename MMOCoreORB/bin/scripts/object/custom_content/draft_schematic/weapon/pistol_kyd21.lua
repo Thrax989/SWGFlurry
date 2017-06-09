@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_draft_schematic_weapon_pistol_kyd21_generic = object_draft_schematic_weapon_shared_pistol_kyd21_generic:new {
+object_draft_schematic_weapon_pistol_kyd21 = object_draft_schematic_weapon_shared_pistol_kyd21:new {
 
    templateType = DRAFTSCHEMATIC,
 
@@ -70,10 +70,10 @@ object_draft_schematic_weapon_pistol_kyd21_generic = object_draft_schematic_weap
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/ranged/pistol/pistol_kyd21_generic.iff",
+   targetTemplate = "object/weapon/ranged/pistol/pistol_kyd21.iff",
 
    additionalTemplates = {
              }
 
 }
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_pistol_kyd21_generic, "object/draft_schematic/weapon/pistol_kyd21_generic.iff")
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_pistol_kyd21, "object/draft_schematic/weapon/pistol_kyd21.iff")

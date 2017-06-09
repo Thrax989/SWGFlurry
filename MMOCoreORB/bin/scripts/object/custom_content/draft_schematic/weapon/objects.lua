@@ -23,10 +23,10 @@ object_draft_schematic_weapon_shared_pistol_dh18a_gcw = SharedDraftSchematicObje
 }
 ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_shared_pistol_dh18a_gcw, "object/draft_schematic/weapon/shared_pistol_dh18a_gcw.iff")
 
-object_draft_schematic_weapon_shared_pistol_kyd21_generic = SharedDraftSchematicObjectTemplate:new {
-	clientTemplateFileName = "object/draft_schematic/weapon/shared_pistol_kyd21_generic.iff"
+object_draft_schematic_weapon_shared_pistol_kyd21 = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/weapon/shared_pistol_kyd21.iff"
 }
-ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_shared_pistol_kyd21_generic, "object/draft_schematic/weapon/shared_pistol_kyd21_generic.iff")
+ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_shared_pistol_kyd21, "object/draft_schematic/weapon/shared_pistol_kyd21.iff")
 
 object_draft_schematic_weapon_shared_pistol_westar_34 = SharedDraftSchematicObjectTemplate:new {
 	clientTemplateFileName = "object/draft_schematic/weapon/shared_pistol_westar_34.iff"

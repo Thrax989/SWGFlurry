@@ -1845,4 +1845,12 @@ schematics = {
 	{path="object/draft_schematic/structure/yoda_house_schem.iff"},
 	{path="object/draft_schematic/structure/yt1300_house_schem.iff"},
 	{path="object/draft_schematic/structure/vipbunker_house_schem.iff"},
+	{path="object/draft_schematic/weapon/pistol_kyd21.iff"},
+	{path="object/draft_schematic/weapon/pistol_d66.iff"},
+	{path="object/draft_schematic/weapon/pistol_de_10_generic.iff"},
+	{path="object/draft_schematic/weapon/pistol_dh18a_gcw.iff"},
+	{path="object/draft_schematic/weapon/pistol_intimidator.iff"},
+	{path="object/draft_schematic/weapon/pistol_pvp.iff"},
+	{path="object/draft_schematic/weapon/pistol_rebel.iff"},
+	{path="object/draft_schematic/weapon/pistol_westar_34.iff"},
 };
