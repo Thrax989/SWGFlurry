@@ -22,7 +22,23 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		creature->playEffect("clienteffect/poisoncloud_effect.cef", "");
+		if (!creature->isInCombat())
+			return false;
+
+		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
+
+		CreatureObject* targetCreature = cast<CreatureObject*>(targetObject.get());
+
+		if (targetCreature == NULL)
+			return INVALIDTARGET;
+
+		if (!targetCreature->isAttackableBy(creature))
+			return INVALIDTARGET;
+
+		CreatureObject* player = cast<CreatureObject*>(creature);
+		Locker clocker(targetCreature, creature);
+
+		targetCreature->playEffect("clienteffect/poisoncloud_effect.cef", "");
 
 
 
