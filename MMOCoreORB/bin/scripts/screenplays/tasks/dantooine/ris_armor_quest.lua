@@ -32,7 +32,8 @@ risArmorQuest = ScreenPlay:new {
 			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_chest_plate.iff", displayName = "@wearables_name:armor_mandalorian_chest_plate" },
 			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_gloves.iff", displayName = "@wearables_name:armor_mandalorian_gloves" },
 			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_helmet.iff", displayName = "@wearables_name:armor_mandalorian_helmet" },
-			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_leggings.iff", displayName = "@wearables_name:armor_mandalorian_leggings" }
+			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_leggings.iff", displayName = "@wearables_name:armor_mandalorian_leggings" },
+		        { template = "object/draft_schematic/clothing/clothing_armor_mandalorian_boots.iff", displayName = "@wearables_name:armor_mandalorian_boots" }
 		}
 
 }
