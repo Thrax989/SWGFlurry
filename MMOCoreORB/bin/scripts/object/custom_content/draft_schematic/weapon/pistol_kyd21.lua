@@ -45,7 +45,7 @@ object_draft_schematic_weapon_pistol_kyd21 = object_draft_schematic_weapon_share
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "kyd21_generic Pistol Schematic",
+   customObjectName = "kyd21 Pistol Schematic",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 32, 
@@ -70,7 +70,7 @@ object_draft_schematic_weapon_pistol_kyd21 = object_draft_schematic_weapon_share
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/ranged/pistol/pistol_kyd21.iff",
+   targetTemplate = "object/weapon/ranged/pistol/pistol_kyd21_generic.iff",
 
    additionalTemplates = {
              }

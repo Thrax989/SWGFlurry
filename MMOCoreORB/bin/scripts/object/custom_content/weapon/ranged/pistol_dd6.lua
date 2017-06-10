@@ -114,7 +114,7 @@ object_weapon_ranged_pistol_pistol_dd6 = object_weapon_ranged_pistol_shared_pist
 	xpType = "combat_rangedspecialize_pistol",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_group_a" },
+	certificationsRequired = { "cert_pistol_fwg5" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "pistol_accuracy" },
 
