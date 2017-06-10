@@ -53,7 +53,7 @@ PoisonGasCloud1Command = {
  	areaAction = true,
 
 	combatSpam = "poisongascloud1",
-  	clientEffect = "clienteffect/poisoncloud_effect.cef",
+  	--clientEffect = "clienteffect/poisoncloud_effect.cef",
 
 stateEffects = {
 	  StateEffect(

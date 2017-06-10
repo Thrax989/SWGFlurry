@@ -51,7 +51,7 @@ PistolWhip2Command = {
 	mindCostMultiplier = 2.0,
 	accuracyBonus = 25,
 
-  	clientEffect = "clienteffect/sm_pistol_whip.cef.cef",
+  	--clientEffect = "clienteffect/sm_pistol_whip.cef.cef",
 
 	dotEffects = {
 	  DotEffect( 

@@ -45,7 +45,7 @@ object_draft_schematic_weapon_pistol_d66 = object_draft_schematic_weapon_shared_
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "D66 Pistol Schematic",
+   customObjectName = "Heroic SD Pistol Schematic",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 32, 
@@ -70,7 +70,7 @@ object_draft_schematic_weapon_pistol_d66 = object_draft_schematic_weapon_shared_
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/ranged/pistol/pistol_d66.iff",
+   targetTemplate = "object/weapon/ranged/pistol/pistol_heroic_sd.iff",
 
    additionalTemplates = {
              }

@@ -160,7 +160,7 @@ VisibilityManager::VisibilityManager() : Logger("VisibilityManager") {
 	decayTask->schedule(visDecayTickRate * 1000);
 }
 
-void VisibilityManager::login(CreatureObject* creature) {
+void VisibilityManager::addToVisibilityList(CreatureObject* creature) {
 	//info("Logging in " + creature->getFirstName(), true);
 	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
 
@@ -185,7 +185,7 @@ void VisibilityManager::login(CreatureObject* creature) {
 	}
 }
 
-void VisibilityManager::logout(CreatureObject* creature) {
+void VisibilityManager::removeFromVisibilityList(CreatureObject* creature) {
 	//info("Logging out " + creature->getFirstName(), true);
 	Locker locker(&visibilityListLock);
 
@@ -195,6 +195,9 @@ void VisibilityManager::logout(CreatureObject* creature) {
 
 		removePlayerFromBountyList(creature);
 	}
+	
+		if(!creature->isOnline())
+		removePlayerFromBountyList(creature);
 }
 
 void VisibilityManager::increaseVisibility(CreatureObject* creature, int visibilityMultiplier) {
@@ -213,7 +216,7 @@ void VisibilityManager::increaseVisibility(CreatureObject* creature, int visibil
 		//info("New visibility for " + creature->getFirstName() + " is " + String::valueOf(ghost->getVisibility()), true);
 		locker.release();
 
-		login(creature);
+		addToVisibilityList(creature);
 	}
 }
 
@@ -227,7 +230,7 @@ void VisibilityManager::clearVisibility(CreatureObject* creature) {
 		ghost->setVisibility(0);
 		locker.release();
 
-		logout(creature);
+		removeFromVisibilityList(creature);
 	}
 }
 

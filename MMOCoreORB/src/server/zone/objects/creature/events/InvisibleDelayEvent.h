@@ -8,14 +8,12 @@
  * date 10.01.2010
  */
 
-#ifndef InvisibleDelayEvent_H_
-#define InvisibleDelayEvent_H_
+#ifndef INVISIBLEDELAYEVENT_H_
+#define INVISIBLEDELAYEVENT_H_
 
 #include "engine/engine.h"
-#include "server/zone/managers/objectcontroller/ObjectController.h"
-#include "server/zone/packets/chat/ChatSystemMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
-#include "server/zone/packets/tangible/UpdatePVPStatusMessage.h"
+#include "templates/creature/PlayerCreatureTemplate.h"
 
 class InvisibleDelayEvent: public Task {
 	ManagedReference<CreatureObject*> player;
@@ -32,45 +30,42 @@ public:
 
 		try {
 			if (player->isOnline() && !targetGhost->isLoggingOut()) {
-				player->removePendingTask("InvisibleDelayEvent");
+				player->removePendingTask("invisibledelayevent");
 
 				ManagedReference<Zone*> zone = player->getZone();
 
 				if (zone == NULL)
 					return;
 
-				Locker zoneLocker(zone);
+				PlayerCreatureTemplate* playerTemplate = dynamic_cast<PlayerCreatureTemplate*>(player->getObjectTemplate());
 
-				if (!player->isInvisible()) {
+				if (playerTemplate == NULL)
+					return;
 
-				SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = player->getCloseObjects();
+				ManagedReference<ImageDesignSession*> session = player->getActiveSession(SessionFacadeType::IMAGEDESIGN).castTo<ImageDesignSession*>();
 
-				for (int i = 0; i < closeObjects->size(); ++i) {
-						SceneObject* scno = cast<SceneObject*>( closeObjects->get(i).get());
-
-				if (scno != player && !scno->isBuildingObject())
-								scno->notifyDissapear(player);
-
-					}
-				player->sendSystemMessage("You are now invisible to other players and creatures.");
-				player->setInvisible(true);
-			
-				} else {
-				player->sendSystemMessage("You are now visible to all players and creatures.");
-				player->setInvisible(false);
-				
-					SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = player->getCloseObjects();
-
-					for (int i = 0; i < closeObjects->size(); ++i) {
-						SceneObject* scno = cast<SceneObject*>( closeObjects->get(i).get());
-
-						if (scno != player && !scno->isBuildingObject())
-								scno->notifyInsert(player);
-
-					}
-
+				if (session != NULL) {
+					session->sessionTimeout();
 				}
 
+				float height = player->getHeight();
+
+				if (!player->isInvisible()) {
+					if (playerTemplate->getMinScale() <= height) {
+						player->setHeight(height * 0.25f);
+					}
+
+					player->sendSystemMessage("You are now invisible to other players and creatures.");
+
+				} else {
+					if (playerTemplate->getMinScale() > height) {
+						player->setHeight(height * 4.0f);
+					}
+
+					player->sendSystemMessage("You are now visible to all players and creatures.");
+				}
+
+				player->switchZone(zone->getZoneName(), player->getPositionX(), player->getPositionZ(), player->getPositionY(), player->getParentID(), true);
 			}
 
 		} catch (Exception& e) {
@@ -81,4 +76,4 @@ public:
 
 };
 
-#endif /* InvisibleDelayEvent_H_ */
+#endif /* INVISIBLEDELAYEVENT_H_ */

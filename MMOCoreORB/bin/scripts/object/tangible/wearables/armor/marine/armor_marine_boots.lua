@@ -149,7 +149,7 @@ object_tangible_wearables_armor_marine_armor_marine_boots = object_tangible_wear
 	rating = LIGHT,
 
 	electricity = 80,
-	stun = 0,
+	stun = 60,
 	lightSaber = 0,
 }
 

@@ -41,11 +41,11 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_draft_schematic_weapon_pistol_kyd21_generic = object_draft_schematic_weapon_shared_pistol_kyd21_generic:new {
+object_draft_schematic_weapon_pistol_kyd21 = object_draft_schematic_weapon_shared_pistol_kyd21:new {
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "kyd21_generic Pistol Schematic",
+   customObjectName = "kyd21 Pistol Schematic",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 32, 
@@ -76,4 +76,4 @@ object_draft_schematic_weapon_pistol_kyd21_generic = object_draft_schematic_weap
              }
 
 }
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_pistol_kyd21_generic, "object/draft_schematic/weapon/pistol_kyd21_generic.iff")
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_pistol_kyd21, "object/draft_schematic/weapon/pistol_kyd21.iff")

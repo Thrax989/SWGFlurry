@@ -22,7 +22,7 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-
+		creature->playEffect("clienteffect/poisoncloud_effect.cef", "");
 
 		return doCombatAction(creature, target);
 	}

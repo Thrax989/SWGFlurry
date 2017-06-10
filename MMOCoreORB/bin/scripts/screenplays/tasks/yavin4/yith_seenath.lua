@@ -18,8 +18,9 @@ yith_seenath_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 50 },
-				{ rewardType = "faction", faction = "rebel", amount = 15 },
+			{ rewardType = "faction", faction = "rebel", amount = 2000 },
+			{ rewardType = "loot", lootGroup = "rebel_com" },
+			{ rewardType = "credits", amount = 5000 },
 			}
 		},
 		{
@@ -40,8 +41,9 @@ yith_seenath_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 100 },
-				{ rewardType = "faction", faction = "rebel", amount = 20 },
+			{ rewardType = "faction", faction = "rebel", amount = 2000 },
+			{ rewardType = "loot", lootGroup = "rebel_com" },
+			{ rewardType = "credits", amount = 5000 },
 			}
 		},
 		{
@@ -62,8 +64,9 @@ yith_seenath_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 150 },
-				{ rewardType = "faction", faction = "rebel", amount = 30 },
+			{ rewardType = "faction", faction = "rebel", amount = 2000 },
+			{ rewardType = "loot", lootGroup = "rebel_com" },
+			{ rewardType = "credits", amount = 5000 },
 			}
 		}
 	}
@@ -71,7 +74,7 @@ yith_seenath_missions =
 npcMapYithSeenath =
 	{
 		{
-			spawnData = { npcTemplate = "yith_seenath", x = 1590.0, z = 101.0, y = 1536.1, direction = 162, cellID = 0, position = STAND },
+			spawnData = { npcTemplate = "yith_seenath", x = 5340.93, z = 80, y = 5670.17, direction = 0, cellID = 0, position = STAND },
 			npcNumber = 1,
 			stfFile = "@static_npc/yavin/yavin_rebelcamp_yith_seenath",
 			missions = yith_seenath_missions
@@ -82,8 +85,8 @@ YithSeenath = ThemeParkLogic:new {
 	npcMap = npcMapYithSeenath,
 	className = "YithSeenath",
 	screenPlayState = "yith_seenath_quest",
-	planetName = "yavin4",
-	distance = 700,
+	planetName = "rori",
+	distance = 200,
 	faction = FACTIONREBEL
 }
 

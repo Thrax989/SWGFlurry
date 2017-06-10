@@ -187,9 +187,9 @@ hellucard_boss = Creature:new {
     },
     },
 
-	weapons = {"weapons_h01"},
+	weapons = {"dark_jedi_weapons_gen3"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(brawlermaster,fencermaster)
+	attacks = merge(lightsabermaster,forcepowermaster)
 
 }
 

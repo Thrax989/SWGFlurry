@@ -41,25 +41,9 @@
 --which carries forward this exception.
 --true = 1, false = 0
 
-UndergroundExplosion2Command = {
-        name = "undergroundexplosion2",
-
-  	damageMultiplier = 3.5,
-	speedMultiplier = 3.0,
-	healthCostMultiplier = 1.0,
-	actionCostMultiplier = 1.0,
-	mindCostMultiplier = 1.0,
-	areaRange = 10,
- 	areaAction = true,
-
-	combatSpam = "undergroundexplosion2",
-  	--clientEffect = "clienteffect/underground_explosion.cef",
-
-	poolsToDamage = RANDOM_ATTRIBUTE,
-
-	weaponType = PISTOLWEAPON,
-
-	range = -1
+InvisibleCommand = {
+        name = "invisible",
 }
 
-AddCommand(UndergroundExplosion2Command)
+AddCommand(InvisibleCommand)
+

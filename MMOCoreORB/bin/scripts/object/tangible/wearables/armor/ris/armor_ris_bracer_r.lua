@@ -131,7 +131,7 @@ object_tangible_wearables_armor_ris_armor_ris_bracer_r = object_tangible_wearabl
 				"object/mobile/vendor/zabrak_male.iff" },
 	
 	-- Damage types in WeaponObject
-	vulnerability = ACID + STUN,
+	vulnerability = STUN,
 	specialResists = LIGHTSABER,
 
 	-- These are default Blue Frog stats
