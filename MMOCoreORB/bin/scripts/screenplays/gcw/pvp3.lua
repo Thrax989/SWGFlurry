@@ -42,7 +42,7 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 			player:sendSystemMessage("You have entered the Rori PvP zone!")
 			player:setFactionStatus(2)
 		else
-			player:sendSystemMessage("You must be Rebel or Imperial or Neutral to enter the PvP zone!")
+			player:sendSystemMessage("You must be Rebel or Imperial to enter the PvP zone!")
 			player:teleport(-5108, 81, -2106, 0)
 		end
 		return 0
@@ -60,7 +60,7 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
+		if (player:isImperial() or player:isRebel()) then
 			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Rori PVP Zone!")
 			player:sendSystemMessage("You have left the Rori PvP zone!")
 		end
