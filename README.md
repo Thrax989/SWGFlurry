@@ -28,12 +28,11 @@ Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 www.swgflurry.com/TRE/
 <br>
 	maxSearchPriority=27<br>
-	searchTree_00_26=species.tre<br>
-	searchTree_00_25=pallet.tre<br>
-	searchTree_00_24=pods.tre<br>
-	searchTree_00_23=skill_patch.tre<br>
-	searchTree_00_22=armor.tre<br>
-	searchTree_00_21=phoenix_patch_1.tre<br>
+	searchTree_00_25=species.tre<br>
+	searchTree_00_24=pallet.tre<br>
+	searchTree_00_23=pods.tre<br>
+	searchTree_00_22=skill_patch.tre<br>
+	searchTree_00_21=armor.tre<br>
 	searchTree_00_20=mtg_planets.tre<br>
 	searchTree_00_19=mtg_patch_021.tre<br>
 	searchTree_00_18=mtg_patch_019.tre<br>
