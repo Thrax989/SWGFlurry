@@ -28,39 +28,56 @@
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/packets/object/ShowFlyText.h"
-
-
+ 
+ 
 #define COMBAT_SPAM_RANGE 85
-
+ 
 bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defender, bool lockDefender) {
-	if (attacker == defender)
-		return false;
-
-	if (attacker->getZone() == NULL || defender->getZone() == NULL)
-		return false;
-
-	if (attacker->isRidingMount()) {
-		ManagedReference<CreatureObject*> parent = attacker->getParent().get().castTo<CreatureObject*>();
-
-		if (parent == NULL || !parent->isMount())
-			return false;
-
-		if (parent->hasBuff(STRING_HASHCODE("gallop")))
-			return false;
-	}
-
-	if (attacker->hasRidingCreature())
-		return false;
-
-	if (!defender->isAttackableBy(attacker))
-		return false;
-
-	CreatureObject *creo = defender->asCreatureObject();
-	if (creo != NULL && creo->isIncapacitated() && creo->isFeigningDeath() == false)
-		return false;
-
-	if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
-		return false;
+    if (attacker == defender)
+        return false;
+ 
+    if (attacker->getZone() == NULL || defender->getZone() == NULL)
+        return false;
+ 
+    if (attacker->isRidingMount()) {
+        ManagedReference<CreatureObject*> parent = attacker->getParent().get().castTo<CreatureObject*>();
+ 
+        if (parent == NULL || !parent->isMount())
+            return false;
+ 
+        if (parent->hasBuff(STRING_HASHCODE("gallop")))
+            return false;
+    }
+ 
+    if (attacker->hasRidingCreature())
+        return false;
+ 
+    if (!defender->isAttackableBy(attacker))
+        return false;
+ 
+    CreatureObject *creo = defender->asCreatureObject();
+    if (creo != NULL && creo->isIncapacitated() && creo->isFeigningDeath() == false)
+        return false;
+ 
+    if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
+        return false;
+ 
+    //PlayerObject* player = attacker->getPlayerObject();
+    if (attacker != NULL && attacker->isInvisible()) {
+            attacker->removePendingTask("invisibleevent");
+                attacker->sendSystemMessage("You are now visible to all players and creatures.");
+                attacker->setInvisible(false);
+               
+                SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = attacker->getCloseObjects();
+ 
+        for (int i = 0; i < closeObjects->size(); ++i) {
+            SceneObject* scno = cast<SceneObject*>( closeObjects->get(i).get());
+            if (scno != attacker && !scno->isBuildingObject())
+             scno->notifyInsert(attacker);
+ 
+        }
+    }
+ 
 
 	attacker->clearState(CreatureState::PEACE);
 
@@ -306,6 +323,13 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		weapon->setMaxDamage(10);
 		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
                 attacker->sendSystemMessage("You were caught using a bugged weapon!!");
+	}
+	
+	if (attacker->isPlayerCreature() && weapon->isJediWeapon() && weapon->getForceCost() < 1) {
+  		Locker locker(weapon);
+ 		weapon->setForceCost(5);
+  		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+                attacker->sendSystemMessage("You were caught using a bugged weapon. 0 FC sabers are not allowed");
 	}
 
 	if (defender->isEntertaining())
@@ -1105,15 +1129,16 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		return damage;
 	}
-	
-			// BH SHIELD
+ 	if (!data.isForceAttack()){
+		// BH SHIELD
 	float rawDamage = damage;
-	int swordArmor = defender->getSkillMod("ability_armor");
-	if (swordArmor > 0) {
-		float dmgAbsorbed = rawDamage - (damage *= 1.f - (swordArmor / 100.f));
-		defender->notifyObservers(ObserverEventType::DAMAGERECEIVED, attacker, dmgAbsorbed);
-		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, FORCEARMOR);
+	int abilityArmor = defender->getSkillMod("ability_armor");
+	if (abilityArmor > 0) {
+		float dmgAbsorbed = rawDamage - (damage *= 1.f - (abilityArmor / 100.f));
+		defender->notifyObservers(ObserverEventType::FORCEBUFFHIT, attacker, dmgAbsorbed);
+		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, ABILITYARMOR);
 	}
+}
 
 	if (!data.isForceAttack()) {
 		// Force Armor
@@ -1161,6 +1186,8 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		defender->notifyObservers(ObserverEventType::FORCEBUFFHIT, attacker, jediBuffDamage);
 	}
+
+
 
 	// PSG
 	ManagedReference<ArmorObject*> psg = getPSGArmor(defender);
@@ -1542,7 +1569,7 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		if (def == "saber_block") {
 			int block_mod = targetCreature->getSkillMod(def);
             if (targetCreature->isIntimidated() || targetCreature->isStunned() || targetCreature->isDizzied()) {
-                block_mod = (block_mod / 1.7); //drops saber block to 50 if target is MLS saber block is divided by 1/7 when intimidated, stunded, dizzied
+                block_mod = (block_mod / 1.7); //drops saber block to 50% if the player target is blinded, dizzyed, or stuned.
             }
             if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
                 return RICOCHET;

@@ -132,7 +132,7 @@ object_tangible_wearables_armor_ris_armor_ris_bicep_r = object_tangible_wearable
 
 	
 	-- Damage types in WeaponObject
-	vulnerability = ACID + STUN,
+	vulnerability = STUN,
 	specialResists = LIGHTSABER,
 
 	-- These are default Blue Frog stats

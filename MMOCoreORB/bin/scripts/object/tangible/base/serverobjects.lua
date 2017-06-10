@@ -48,3 +48,4 @@
 includeFile("tangible/base/tangible_base.lua")
 includeFile("tangible/base/tangible_craftable.lua")
 includeFile("tangible/base/tangible_default.lua")
+includeFile("tangible/base/retrieve_quest_base.lua")

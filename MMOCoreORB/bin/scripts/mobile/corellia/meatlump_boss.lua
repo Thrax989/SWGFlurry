@@ -2,7 +2,7 @@ meatlump_king = Creature:new {
   customName = "<<<< Meatlump King >>>>",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 100.00,
+  chanceHit = 35.00,
   damageMin = 2000,
   damageMax = 4000,
   baseXp = 0,
@@ -106,9 +106,9 @@ meatlump_king = Creature:new {
       lootChance = 5000000
   },
   },
-weapons = {"weapons_h02"},
+weapons = {"dark_jedi_weapons_gen3"},
 reactionStf = "@npc_reaction/slang",
-attacks = merge(fencermaster,riflemanmaster,brawlermaster,marksmanmaster,pikemanmaster)
+attacks = merge(lightsabermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(meatlump_king, "meatlump_king")

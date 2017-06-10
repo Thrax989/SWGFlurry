@@ -132,8 +132,8 @@ object_tangible_wearables_armor_ris_armor_ris_chest_plate = object_tangible_wear
 
 	
 	-- Damage types in WeaponObject
-	vulnerability = ACID + STUN,
-	specialResists = LIGHTSABER + KINETIC,
+	vulnerability = STUN,
+	specialResists = LIGHTSABER,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 1,
@@ -143,14 +143,14 @@ object_tangible_wearables_armor_ris_armor_ris_chest_plate = object_tangible_wear
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 50,
+	kinetic = 15,
 	energy = 15,
 	electricity = 15,
-	stun = 0,
+	stun = 15,
 	blast = 15,
 	heat = 15,
 	cold = 15,
-	acid = 0,
+	acid = 15,
 	lightSaber = 15,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},

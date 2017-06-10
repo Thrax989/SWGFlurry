@@ -74,7 +74,7 @@ public:
 		int actionCost = 650;
 
 		if (creature->getHAM(CreatureAttribute::ACTION) < actionCost) {
-			creature->sendSystemMessage("@healing_response:not_enough_action"); //You do not have enough action to do that.
+			creature->sendSystemMessage("not_enough_action"); //You do not have enough action to do that.
 			return false;
 		}
 		
@@ -99,7 +99,7 @@ public:
 			Locker locker(buff);
 			Locker locker2(buff2);
 			creature->sendSystemMessage("You apply a shield around yourself!");
-			buff->setSkillModifier("ability_armor", 60);
+			buff->setSkillModifier("force_armor", 60);
 			//buff->setSpeedMultiplierMod(0.01f);
 			creature->addBuff(buff);
 			creature->addBuff(buff2);

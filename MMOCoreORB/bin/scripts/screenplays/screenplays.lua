@@ -63,7 +63,7 @@ includeFile("tools/FlurryBuffTerminal.lua")
 -- GCW
 includeFile("gcw/newsnet.lua")
 includeFile("gcw/pvp.lua")
-includeFile("gcw/pvp1.lua")
+--includeFile("gcw/pvp1.lua")
 includeFile("gcw/pvp2.lua")
 includeFile("gcw/recruiters/recruiterConvoHandler.lua")
 includeFile("gcw/recruiters/recruiterScreenplay.lua")

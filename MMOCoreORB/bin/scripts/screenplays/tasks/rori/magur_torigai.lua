@@ -1,10 +1,14 @@
+--Testing Coms
+
+
 magur_torigai_missions =
 {
 	{ 
 		missionType = "assassinate",
 		primarySpawns = 
 		{ 
-			{ npcTemplate = "giant_gubbur", npcName = "" }
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" }
 		}, 
 		secondarySpawns =
 		{
@@ -16,14 +20,89 @@ magur_torigai_missions =
 		}, 
 		rewards = 
 		{ 
-			{ rewardType = "credits", amount = 40 },
+			{ rewardType = "credits", amount = 500 },
+			{ rewardType = "faction", faction = "rebel", amount = 10 },
+		}
+	},
+	{ 
+		missionType = "assassinate",
+		primarySpawns = 
+		{ 
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" }
+		}, 
+		secondarySpawns =
+		{
+
+		},
+		itemSpawns =
+		{
+
+		}, 
+		rewards = 
+		{ 
+			{ rewardType = "credits", amount = 1000 },
+			{ rewardType = "faction", faction = "rebel", amount = 20 },
+		}
+	},
+	{ 
+		missionType = "assassinate",
+		primarySpawns = 
+		{ 
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" }
+		}, 
+		secondarySpawns =
+		{
+
+		},
+		itemSpawns =
+		{
+
+		}, 
+		rewards = 
+		{ 
+			{ rewardType = "credits", amount = 1500 },
+			{ rewardType = "faction", faction = "rebel", amount = 30 },
+		}
+	},
+	{ 
+		missionType = "assassinate",
+		primarySpawns = 
+		{ 
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" }
+		}, 
+		secondarySpawns =
+		{
+
+		},
+		itemSpawns =
+		{
+
+		}, 
+		rewards = 
+		{ 
+			{ rewardType = "credits", amount = 2000 },
+			{ rewardType = "faction", faction = "rebel", amount = 40 },
 		}
 	},
 	{
 		missionType = "assassinate", 
 		primarySpawns = 
 		{ 
-			{ npcTemplate = "guf_drolg", npcName = "" }	
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" },
+			{ npcTemplate = "stormtrooper", npcName = "stormtrooper" }
 		}, 
 		secondarySpawns =
 		{
@@ -35,7 +114,8 @@ magur_torigai_missions =
 		}, 
 		rewards = 
 		{
-			{ rewardType = "credits", amount = 75 },
+			{ rewardType = "credits", amount = 2500 },
+			{ rewardType = "faction", faction = "rebel", amount = 50 },
 		}
 	},
 }
@@ -55,7 +135,7 @@ MagurTorigai = ThemeParkLogic:new {
 	className = "MagurTorigai",
 	screenPlayState = "magur_torigai_quest",
 	planetName = "rori",
-	distance = 800
+	distance = 150
 }
 
 registerScreenPlay("MagurTorigai", true)

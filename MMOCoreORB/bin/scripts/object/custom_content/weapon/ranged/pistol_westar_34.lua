@@ -113,7 +113,7 @@ object_weapon_ranged_pistol_pistol_westar_34 = object_weapon_ranged_pistol_share
 	xpType = "combat_rangedspecialize_pistol",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "multiTargetPistolShot" },
+	certificationsRequired = { "cert_group_a" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "pistol_accuracy" },
 

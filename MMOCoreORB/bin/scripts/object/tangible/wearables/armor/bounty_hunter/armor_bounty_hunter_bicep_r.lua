@@ -143,9 +143,15 @@ object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_bicep_r = obje
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	stun = 0,
-	acid = 0,
-	lightSaber = 12,
+	kinetic = 15,
+	energy = 15,
+	electricity = 15,
+	stun = 60,
+	blast = 15,
+	heat = 15,
+	cold = 15,
+	acid = 15,
+	lightSaber = 25,
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_bicep_r, "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bicep_r.iff")
