@@ -24,7 +24,15 @@ risArmorQuest = ScreenPlay:new {
 			{ template = "object/draft_schematic/clothing/clothing_armor_ris_chest_plate.iff", displayName = "@wearables_name:armor_ris_chest_plate" },
 			{ template = "object/draft_schematic/clothing/clothing_armor_ris_gloves.iff", displayName = "@wearables_name:armor_ris_gloves" },
 			{ template = "object/draft_schematic/clothing/clothing_armor_ris_helmet.iff", displayName = "@wearables_name:armor_ris_helmet" },
-			{ template = "object/draft_schematic/clothing/clothing_armor_ris_leggings.iff", displayName = "@wearables_name:armor_ris_leggings" }
+			{ template = "object/draft_schematic/clothing/clothing_armor_ris_leggings.iff", displayName = "@wearables_name:armor_ris_leggings" },
+			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_bicep_l.iff", displayName = "@wearables_name:armor_mandalorian_bicep_l" },
+			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_bicep_r.iff", displayName = "@wearables_name:armor_mandalorian_bicep_r" },
+			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_bracer_l.iff", displayName = "@wearables_name:armor_mandalorian_bracer_l" },
+			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_bracer_r.iff", displayName = "@wearables_name:armor_mandalorian_bracer_r" },
+			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_chest_plate.iff", displayName = "@wearables_name:armor_mandalorian_chest_plate" },
+			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_gloves.iff", displayName = "@wearables_name:armor_mandalorian_gloves" },
+			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_helmet.iff", displayName = "@wearables_name:armor_mandalorian_helmet" },
+			{ template = "object/draft_schematic/clothing/clothing_armor_mandalorian_leggings.iff", displayName = "@wearables_name:armor_mandalorian_leggings" }
 		}
 
 }
