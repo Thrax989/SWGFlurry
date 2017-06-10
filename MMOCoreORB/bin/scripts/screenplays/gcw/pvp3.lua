@@ -15,6 +15,7 @@ function pvp:start()
 end
   
 function pvp:spawnActiveAreas()
+	local pSpawnArea = spawnSceneObject("rori", "object/active_area.iff", -5115, 80, -2339, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
@@ -37,6 +38,8 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
+			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the Rori  PVP Zone!")
+			player:sendSystemMessage("You have entered the Rori PvP zone!")
 			player:setFactionStatus(2)
 		else
 			player:sendSystemMessage("You must be Rebel or Imperial or Neutral to enter the PvP zone!")
@@ -58,6 +61,8 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
+			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Rori PVP Zone!")
+			player:sendSystemMessage("You have left the Rori PvP zone!")
 		end
 		return 0
 	end)
