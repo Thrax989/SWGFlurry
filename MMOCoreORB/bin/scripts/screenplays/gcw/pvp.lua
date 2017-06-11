@@ -20,7 +20,7 @@ function pvp:spawnActiveAreas()
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(220)
+	        activeArea:setRadius(205)
 	        createObserver(ENTEREDAREA, "pvp", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "pvp", "notifySpawnAreaLeave", pSpawnArea)
 	    end
@@ -43,7 +43,7 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 			player:setFactionStatus(2)
 		else
 			player:sendSystemMessage("You must be Rebel or Imperial to enter the PvP zone!")
-			player:teleport(-5108, 81, -2106, 0)
+			player:teleport(-5106, 81, -2108, 0)
 		end
 		return 0
 	end)
