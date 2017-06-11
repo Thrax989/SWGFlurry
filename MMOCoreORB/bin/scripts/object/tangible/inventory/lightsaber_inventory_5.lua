@@ -41,23 +41,8 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_tangible_inventory_lightsaber_inventory_5 = object_tangible_inventory_shared_lightsaber_inventory_5:new {
 
---Children folder includes
+}
 
--- Server Objects
-includeFile("tangible/inventory/character_inventory.lua")
-includeFile("tangible/inventory/creature_inventory.lua")
-includeFile("tangible/inventory/creature_inventory_1.lua")
-includeFile("tangible/inventory/creature_inventory_2.lua")
-includeFile("tangible/inventory/creature_inventory_3.lua")
-includeFile("tangible/inventory/creature_inventory_4.lua")
-includeFile("tangible/inventory/creature_inventory_5.lua")
-includeFile("tangible/inventory/creature_inventory_6.lua")
-includeFile("tangible/inventory/lightsaber_inventory_1.lua")
-includeFile("tangible/inventory/lightsaber_inventory_2.lua")
-includeFile("tangible/inventory/lightsaber_inventory_3.lua")
-includeFile("tangible/inventory/lightsaber_inventory_4.lua")
-includeFile("tangible/inventory/lightsaber_inventory_5.lua")
-includeFile("tangible/inventory/lightsaber_inventory_base.lua")
-includeFile("tangible/inventory/lightsaber_inventory_training.lua")
-includeFile("tangible/inventory/vendor_inventory.lua")
+ObjectTemplates:addTemplate(object_tangible_inventory_lightsaber_inventory_5, "object/tangible/inventory/lightsaber_inventory_5.iff")
