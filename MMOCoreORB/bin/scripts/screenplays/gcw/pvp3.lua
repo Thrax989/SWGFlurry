@@ -1,32 +1,32 @@
 local ObjectManager = require("managers.object.object_manager")
 
-pvp = ScreenPlay:new {
+pvp3 = ScreenPlay:new {
 	numberOfActs = 1,
-  	questString = "pvp",
+  	questString = "pvp3",
   	questdata = Object:new {
     	activePlayerName = "initial",
     	}
 }
   
-registerScreenPlay("pvp", true)
+registerScreenPlay("pvp3", true)
   
-function pvp:start()
+function pvp3:start()
     	self:spawnActiveAreas()
 end
   
-function pvp:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("rori", "object/active_area.iff", -5115, 80, -2339, 0, 0, 0, 0, 0)
+function pvp3:spawnActiveAreas()
+	local pSpawnArea = spawnSceneObject("rori", "object/active_area.iff", 5283, 80, 5744, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(220)
-	        createObserver(ENTEREDAREA, "pvp", "notifySpawnArea", pSpawnArea)
-	        createObserver(EXITEDAREA, "pvp", "notifySpawnAreaLeave", pSpawnArea)
+	        activeArea:setRadius(250)
+	        createObserver(ENTEREDAREA, "pvp3", "notifySpawnArea", pSpawnArea)
+	        createObserver(EXITEDAREA, "pvp3", "notifySpawnAreaLeave", pSpawnArea)
 	    end
 end
  
-function pvp:notifySpawnArea(pActiveArea, pMovingObject)
+function pvp3:notifySpawnArea(pActiveArea, pMovingObject)
 	
 	if (not SceneObject(pMovingObject):isCreatureObject()) then
 		return 0
@@ -38,18 +38,18 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isRebel()) then
-			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the Rori  PVP Zone!")
-			player:sendSystemMessage("You have entered the Rori PvP zone!")
+			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the Rori Pvp Zone!")
+			player:sendSystemMessage("You have entered the Rori Pvp zone!")
 			player:setFactionStatus(2)
 		else
-			player:sendSystemMessage("You must be Rebel or Imperial to enter the PvP zone!")
+			player:sendSystemMessage("You must be Rebel or Imperial to enter the Pvp zone!")
 			player:teleport(-5108, 81, -2106, 0)
 		end
 		return 0
 	end)
 end
 
-function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
+function pvp3:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 	
 	if (not SceneObject(pMovingObject):isCreatureObject()) then
 		return 0
@@ -61,8 +61,8 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isRebel()) then
-			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Rori PVP Zone!")
-			player:sendSystemMessage("You have left the Rori PvP zone!")
+			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Rori Pvp Zone!")
+			player:sendSystemMessage("You have left the Rori Pvp zone!")
 		end
 		return 0
 	end)
