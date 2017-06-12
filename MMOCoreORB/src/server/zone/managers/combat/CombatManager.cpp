@@ -1567,13 +1567,9 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 
 		// saber block is special because it's just a % chance to block based on the skillmod
 		if (def == "saber_block") {
-			int block_mod = targetCreature->getSkillMod(def);
-            if (targetCreature->isIntimidated() || targetCreature->isStunned() || targetCreature->isDizzied()) {
-                block_mod = (block_mod / 1.7); //drops saber block to 50% if the player target is blinded, dizzyed, or stuned.
-            }
-            if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
-                return RICOCHET;
-            else return HIT;
+			if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < targetCreature->getSkillMod(def)))
+				return RICOCHET;
+			else return HIT;
 		}
 		
 		targetDefense = getDefenderSecondaryDefenseModifier(targetCreature);
