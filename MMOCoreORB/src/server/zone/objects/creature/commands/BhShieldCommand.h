@@ -106,11 +106,12 @@ public:
 			creature->inflictDamage(creature, CreatureAttribute::ACTION, actionCost, false);
 			
 			creature->playEffect("clienteffect/bh_shields_effect.cef", "");
+			creature->playEffect("clienteffect/pl_force_absorb_self.cef", "");
 			
 			Reference<Task*> shieldsAnimationTask = new ShieldsAnimationTask(creature, loopCount); //crc,
 			creature->addPendingTask("shields_animation", shieldsAnimationTask, 9000);
 			
-			}else {
+			} else {
 				creature->sendSystemMessage("You are already protected by a Shield.");
 			}
 
