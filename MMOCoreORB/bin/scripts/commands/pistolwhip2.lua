@@ -68,7 +68,8 @@ PistolWhip2Command = {
 
 	poolsToDamage = MIND_ATTRIBUTE,
 
-
+	animation = "ranged_melee", 
+	animType = GENERATE_INTENSITY,
 
 	combatSpam = "pistolwhip2",
 	
