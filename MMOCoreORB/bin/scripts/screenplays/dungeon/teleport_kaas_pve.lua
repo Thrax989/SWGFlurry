@@ -1,4 +1,3 @@
-local ObjectManager = require("managers.object.object_manager")
 teleport_kaas_pveScreenPlay = ScreenPlay:new {
 	numberOfActs = 1,
 
@@ -33,10 +32,5 @@ end
 function teleport_kaas_pveScreenPlay:teleportCor(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
 	player:switchZone("corellia", -142, 28, -4722, 0)
-	return 0
-end
-
-if CreatureObject(pPlayer):isInCombat() then
-	CreatureObject(pPlayer):sendSystemMessage("Terminal services are not available while you are in combat.")
 	return 0
 end
