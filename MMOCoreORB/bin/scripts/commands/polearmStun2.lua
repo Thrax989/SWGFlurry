@@ -51,7 +51,7 @@ PolearmStun2Command = {
 	mindCostMultiplier = 1.0,
 	accuracyBonus = 10,
 
-	areaRange = 16,
+	areaRange = 10,
 	areaAction = true,
 
 	stateEffects = {

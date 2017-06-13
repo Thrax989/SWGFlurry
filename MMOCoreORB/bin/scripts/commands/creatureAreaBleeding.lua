@@ -59,7 +59,7 @@ CreatureAreaBleedingCommand = {
 	  )
 	},
 
-	areaRange = 25,
+	areaRange = 10,
 	areaAction = true
 }
 

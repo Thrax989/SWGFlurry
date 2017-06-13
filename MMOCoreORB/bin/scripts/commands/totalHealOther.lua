@@ -53,8 +53,7 @@ TotalHealOtherCommand = {
 	healBleeding = 450,
 	healFire = 450,
 	healStates = STUNNED_STATE + DIZZY_STATE + BLINDED_STATE + INTIMIDATED_STATE + FEIGNDEATH_STATE,
-	forceCost = 575,
-	forceCostDivisor = 9.5,
+	forceCost = 500,
 	range = 32	
 }
 

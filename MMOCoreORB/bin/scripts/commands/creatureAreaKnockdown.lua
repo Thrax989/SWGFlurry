@@ -43,7 +43,7 @@
 
 CreatureAreaKnockdownCommand = {
 	name = "creatureareaknockdown",
-	damageMultiplier = 0.5,
+	damageMultiplier = 1.0,
 	speedMultiplier = 1,
 	
 	combatSpam = "attack",
@@ -75,7 +75,7 @@ CreatureAreaKnockdownCommand = {
 	  )
 	},
 
-	areaRange = 25,
+	areaRange = 10,
 	poolsToDamage = RANDOM_ATTRIBUTE,
 	areaAction = true
 }

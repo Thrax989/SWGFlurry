@@ -47,7 +47,7 @@ UnarmedSpinAttack1Command = {
 	damageMultiplier = 2.0,
 	speedMultiplier = 2,
 	areaAction = true,
-	areaRange = 16,
+	areaRange = 10,
 	accuracyBonus = 15,
 	
 	healthCostMultiplier = 1.5,

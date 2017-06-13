@@ -56,7 +56,7 @@ UnarmedLunge1Command = {
 
 	combatSpam = "ridingbantha",
 
-	range = 20,
+	range = 10,
 	
 	weaponType = UNARMEDWEAPON,
 

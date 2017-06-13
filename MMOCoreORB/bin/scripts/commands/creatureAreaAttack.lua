@@ -43,7 +43,7 @@
 
 CreatureAreaAttackCommand = {
         name = "creatureareaattack",
-	damageMultiplier = 1.5,
+	damageMultiplier = 1.0,
 	speedMultiplier = 1,
 
 	combatSpam = "attack",
@@ -54,7 +54,7 @@ CreatureAreaAttackCommand = {
 	actionCostMultiplier = 0,
 	mindCostMultiplier = 0,
 
-	areaRange = 25,
+	areaRange = 10,
 	areaAction = true,
 	poolsToDamage = RANDOM_ATTRIBUTE
 }

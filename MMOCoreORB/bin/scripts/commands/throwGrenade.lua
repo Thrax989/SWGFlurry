@@ -58,11 +58,11 @@ ThrowGrenadeCommand = {
 		{},
 		{ "dizzy_defense", "resistance_states" },
 		{ "jedi_state_defense" },
-		75,
+		100,
 		0,
 		10
 	  ),
-	  StateEffect( 
+	  StateEffect(
 		STUN_EFFECT, 
 		{}, 
 		{ "stun_defense", "resistance_states" }, 
@@ -74,7 +74,7 @@ ThrowGrenadeCommand = {
 	},
 
 	range = 64,
-	areaRange = 25,
+	areaRange = 10,
 	poolsToDamage = RANDOM_ATTRIBUTE,
 	areaAction = true
 }
