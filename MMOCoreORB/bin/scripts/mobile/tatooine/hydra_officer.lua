@@ -61,7 +61,7 @@ hydra_officer = Creature:new {
       lootChance = 8000000
   },
   },
-  weapons = {"weapons_h02"},
+  weapons = {"imperial_weapons_heavy"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/stormtrooper",
   personalityStf = "@hireling/hireling_stormtrooper",

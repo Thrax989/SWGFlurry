@@ -93,12 +93,6 @@ emperors_hand = Creature:new {
 		},
 		{
 			groups = {
-				{group = "looted_container", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
         			{group = "pearls_flawless", chance = 5000000},
 				{group = "armor_attachments", chance = 2500000},
 				{group = "clothing_attachments", chance = 2500000}

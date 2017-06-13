@@ -113,7 +113,7 @@ object_weapon_ranged_pistol_pistol_kyd21_generic = object_weapon_ranged_pistol_s
 	xpType = "combat_rangedspecialize_pistol",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_pistol_fwg5" },
+	certificationsRequired = { "cert_group_a" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "pistol_accuracy" },
 

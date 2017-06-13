@@ -1,4 +1,4 @@
-geonosian_carbonite = {
+gungan_carbonite = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	customObjectName = "A Gungan trapped in Carbonite",

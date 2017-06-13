@@ -4,7 +4,7 @@ fallen_jedi_h01 = Creature:new {
 	pvpFaction = "",
 	faction = "",
 	level = 300,
-	chanceHit = 100.00,
+	chanceHit = 35.00,
 	damageMin = 600,
 	damageMax = 1200,
 	specialDamageMult = 2.0,
@@ -131,9 +131,9 @@ fallen_jedi_h01 = Creature:new {
     },
     },
 
-	weapons = {"fallen_weapons"},
+	weapons = {"dark_jedi_weapons_gen3"},
 	reactionStf = "@npc_reaction/military",
-	attacks = merge(brawlermaster,pikemanmaster)
+	attacks = merge(lightsabermaster,forcepowermaster)
 
 }
 

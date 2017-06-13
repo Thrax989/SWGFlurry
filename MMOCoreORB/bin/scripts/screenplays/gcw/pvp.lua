@@ -20,7 +20,7 @@ function pvp:spawnActiveAreas()
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(200)
+	        activeArea:setRadius(205)
 	        createObserver(ENTEREDAREA, "pvp", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "pvp", "notifySpawnAreaLeave", pSpawnArea)
 	    end
@@ -37,12 +37,13 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
+		if (player:isImperial() or player:isRebel()) then
+			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the Kaas PVP Zone!")
 			player:sendSystemMessage("You have entered the Kaas PvP zone!")
 			player:setFactionStatus(2)
 		else
-			player:sendSystemMessage("You must be Rebel or Imperial or Neutral to enter the PvP zone!")
-			player:teleport(-5108, 81, -2106, 0)
+			player:sendSystemMessage("You must be Rebel or Imperial to enter the PvP zone!")
+			player:teleport(-5106, 81, -2108, 0)
 		end
 		return 0
 	end)
@@ -59,7 +60,8 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
+		if (player:isImperial() or player:isRebel()) then
+			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Kaas PVP Zone!")
 			player:sendSystemMessage("You have left the Kaas PvP zone!")
 		end
 		return 0

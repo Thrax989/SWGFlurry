@@ -47,7 +47,7 @@ painting_exchange_ten_screen = ConvoScreen:new {
       {"Bounty Hunter Painting", "17"},
       {"Clone Wars Painting", "18"},
       {"Corellian Painting", "19"},
-      {"Corellian Painting", "20"},
+      {"Wookie Lifeday Painting", "20"},
       {"Grievous Painting", "21"},
       {"SMC Painting", "22"},
       {"Death Star Painting", "23"},
@@ -97,6 +97,10 @@ painting_exchange_credit_screen = ConvoScreen:new {
    stopConversation = "false",
    options = {
       {"Exar Kun Backdrop (10,000,000 Credits)", "40"},
+      {"Halloween Backdrop (7,500,000 Credits)", "41"},
+      {"Gungan Carbonite (5,000,000 Credits)", "42"},
+      {"Ugnaught Carbonite (5,000,000 Credits)", "43"},
+      {"Geonosian Carbonite (5,000,000 Credits)", "44"},
       {"Back", "first_screen"},
       {"No thank you.", "deny_quest"},
       }

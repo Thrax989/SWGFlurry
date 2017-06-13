@@ -41,6 +41,42 @@
 --which carries forward this exception.
 
 
+object_tangible_wearables_base_shared_base_cybernetic_arm_l = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_arm_l.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_arm_l, "object/tangible/wearables/base/shared_base_cybernetic_arm_l.iff")
+
+
+object_tangible_wearables_base_shared_base_cybernetic_arm_r = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_arm_r.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_arm_r, "object/tangible/wearables/base/shared_base_cybernetic_arm_r.iff")
+
+
+object_tangible_wearables_base_shared_base_cybernetic_legs = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_legs.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_legs, "object/tangible/wearables/base/shared_base_cybernetic_legs.iff")
+
+
+object_tangible_wearables_base_shared_base_cybernetic_torso = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_torso.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_torso, "object/tangible/wearables/base/shared_base_cybernetic_torso.iff")
+
+
+
+object_tangible_wearables_base_shared_cybernetic_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_cybernetic_base.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_cybernetic_base, "object/tangible/wearables/base/shared_cybernetic_base.iff")
+
+
+
+
+
+
+
 object_tangible_wearables_base_shared_armor_base = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/wearables/base/shared_armor_base.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups

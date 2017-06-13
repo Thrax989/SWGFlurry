@@ -336,8 +336,8 @@ rori = {
 	gcwEnabled = 1,
 
 	planetTravelPoints = {
-		{name = "Restuss Starport", x = 5340, z = 80, y = 5734, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		{name = "Restuss Shuttleport", x = 5211, z = 80, y = 5791, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Refugee Camp Starport", x = 5304, z = 79, y = 6127, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		--{name = "Restuss Shuttleport", x = 5211, z = 80, y = 5791, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Narmle Starport", x = -5374.0718, z = 80, y = -2188.6143, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Narmle Shuttleport", x = -5255.4116, z = 80.664185, y = -2161.6274, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Rebel Outpost", x = 3691.9023, z = 96, y = -6403.4404, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
@@ -545,10 +545,10 @@ tatooine = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = 0.768226, oz = 0, ow = -0.640178, x = 3533.04, z = 5, y = -4796, parentid = 0},
-		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = -0.486657, oz = 0, ow = 0.873593, x = -1271.07, z = 12, y = -3590.22, parentid = 0},
-		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = -0.514176, oz = 0, ow = 0.857684, x = -2896.35, z = 5, y = 2130.87, parentid = 0},
-		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = 0.989124, oz = 0, ow = -0.147086, x = 1299.08, z = 7, y = 3145.21, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = 0.768226, oz = 0, ow = -0.640178, x = 3533.04, z = 5, y = -4796, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = -0.486657, oz = 0, ow = 0.873593, x = -1271.07, z = 12, y = -3590.22, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = -0.514176, oz = 0, ow = 0.857684, x = -2896.35, z = 5, y = 2130.87, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = 0.989124, oz = 0, ow = -0.147086, x = 1299.08, z = 7, y = 3145.21, parentid = 0}
 	}
 }
 
@@ -761,23 +761,12 @@ space_yavin4 = {
 	}
 }
 
-tutorial = {
-	weatherEnabled = 0,
-	gcwEnabled = 0,
-}
-
-dungeon1 = {
-	weatherEnabled = 0,
-	gcwEnabled = 0,
-}
-
-
 kaas = {
 
 	weatherEnabled = 1,
 
 	planetTravelPoints = {
-		{name = "an Imperial Garrison", x = -5158.0, z = 80.0, y = -2239.0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+		--{name = "an Imperial Garrison", x = -5158.0, z = 80.0, y = -2239.0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
 	},
 	
 	planetObjects = {
@@ -805,73 +794,15 @@ hoth = {
  	planetObjects = {
  		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 0, z = 0, y = -2020, parentid = 0},
  	}
- }
+}
 
 
-mustafar = {
-	weatherEnabled = 1,
+tutorial = {
+	weatherEnabled = 0,
 	gcwEnabled = 0,
 }
 
-jakku = {
-  weatherEnabled = 1,
-  gcwEnabled = 0,
-  
-  badgeAreas = {
-    {"jakku_arena",4447,-5166,10,143},
-  },
-}
-
-chandrila = {
-  weatherEnabled = 1,
-  gcwEnabled = 1,
-  
-  planetTravelPoints = {
-    {name = "Hanna City Spaceport", x = 164, z = 6, y = -2937, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-    {name = "Nayli Outpost", x = -5272, z = 18, y = 264, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-    },
-    
-    badgeAreas = {
-    {"chandrila_mon_mothma_house",2469,2307,30,140},
-    {"chandrila_jedi_tomb",4339,-4287,30,141},
-    {"chandrila_state_park",-5013,4089,30,142},
-  },
-}
-
-hutta = {
-  weatherEnabled = 1,
-  gcwEnabled = 1,
-  
-  planetTravelPoints = {
-    {name = "Bilbousa Starport", x = -789, z = 80, y = 1769, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-    },
-    
-    badgeAreas = {   
-  },
-}
-coruscant = {
-  weatherEnabled = 1,
-  gcwEnabled = 1,
-  
-  planetTravelPoints = {
-    {name = "Collective Commerce District", x = -1851, z = 40, y = -175, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
-    {name = "Monument Square", x = 1538, z = 40, y = 779, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
-    {name = "Entertainment District", x = 2248, z = 0, y = -4546, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
-    {name = "Spaceport District Shuttle", x = -28, z = 40, y = 3202, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
-    {name = "Coruscant Spaceport", x = -96, z = 40, y = 3149, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-    },
-    
-    badgeAreas = {   
-  },
-}
-moraband = {
-  weatherEnabled = 1,
-  gcwEnabled = 1,
-  
-  planetTravelPoints = {
-    {name = "Archaeological Outpost", x = -1696, z = 91, y = -624, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-    },
-    
-    badgeAreas = {   
-  },
+dungeon1 = {
+	weatherEnabled = 0,
+	gcwEnabled = 0,
 }

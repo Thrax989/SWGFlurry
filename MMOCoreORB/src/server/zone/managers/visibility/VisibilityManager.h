@@ -146,10 +146,16 @@ public:
 	void login(CreatureObject* creature);
 
 	/**
-	 * Logout a player and remove him/her from the visibility list.
-	 * @param creature the player to logout.
+	 * Add player to the visibility list if he/she still has visibility.
+	 * @param creature the player to add.
 	 */
-	void logout(CreatureObject* creature);
+	void addToVisibilityList(CreatureObject* creature);
+
+	/**
+	 * Remove player from the visibility list.
+	 * @param creature the player to remove.
+	 */
+	void removeFromVisibilityList(CreatureObject* creature);
 
 	/**
 	 * Increase visibility for a player. The player is added to the visibility list

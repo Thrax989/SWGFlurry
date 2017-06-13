@@ -4,7 +4,7 @@ hellucard_boss = Creature:new {
 	pvpFaction = "",
 	faction = "",
 	level = 300,
-	chanceHit = 100.00,
+	chanceHit = 35.00,
 	damageMin = 4000,
 	damageMax = 6000,
 	specialDamageMult = 5.0,
@@ -187,9 +187,9 @@ hellucard_boss = Creature:new {
     },
     },
 
-	weapons = {"weapons_h01"},
+	weapons = {"dark_jedi_weapons_gen3"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(brawlermaster,fencermaster)
+	attacks = merge(lightsabermaster,forcepowermaster)
 
 }
 

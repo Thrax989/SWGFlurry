@@ -2,7 +2,7 @@ hydra_boss = Creature:new {
   customName = "<<< Hydra Leader >>>",
   socialGroup = "geonosian",
   level = 300,
-  chanceHit = 100.00,
+  chanceHit = 35.00,
   damageMin = 2000,
   damageMax = 4000,
   specialDamageMult = 3.0,
@@ -130,7 +130,7 @@ hydra_boss = Creature:new {
           			lootChance = 5000000
 },
 },
-  weapons = {"weapons_h02"},
+  weapons = {"imperial_weapons_heavy"},
   conversationTemplate = "",
   reactionStf = "@npc_reaction/fancy",
   attacks = merge(commandomaster,marksmanmaster,fencermaster,brawlermaster,riflemanmaster)

@@ -1233,13 +1233,23 @@ void PlayerObjectImplementation::notifyOnline() {
 		parent->sendMessage(sui->generateMessage());
 	}
 
-	//Login to visibility manager
-	VisibilityManager::instance()->login(playerCreature);
+	//Add player to visibility list
+	VisibilityManager::instance()->addToVisibilityList(playerCreature);
 
 	//Login to jedi manager
 	JediManager::instance()->onPlayerLoggedIn(playerCreature);
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
+		
+	if (playerCreature->getPlayerObject()->isPrivileged()) {
+	//Broadcast to Server when a admin has logged in.
+ 	Zone* zone = playerCreature->getZone();
+ 	String playerName = playerCreature->getFirstName();
+ 	StringBuffer zBroadcast;
+ 	zBroadcast << "\\#00E604" << playerName << " Flurry Staff Member Has Logged Into The Server";
+ 	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			return;
+	}
 
 	if (getForcePowerMax() > 0 && getForcePower() < getForcePowerMax())
 		activateForcePowerRegen();
@@ -1359,8 +1369,8 @@ void PlayerObjectImplementation::notifyOffline() {
 		}
 	}
 
-	//Logout from visibility manager
-	VisibilityManager::instance()->logout(playerCreature);
+	//Remove player from visibility list
+	VisibilityManager::instance()->removeFromVisibilityList(playerCreature);
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDOUT);
 
@@ -2039,7 +2049,7 @@ void PlayerObjectImplementation::doForceRegen() {
 		Reference<ForceMeditateTask*> medTask = creature->getPendingTask("forcemeditate").castTo<ForceMeditateTask*>();
 
 		if (medTask != NULL)
-			modifier = 3;
+			modifier = 6;
 	}
 	int enhSkills = numSpecificSkills(creature, "force_discipline_enhancements_");
         float enhMod = enhSkills * .056;

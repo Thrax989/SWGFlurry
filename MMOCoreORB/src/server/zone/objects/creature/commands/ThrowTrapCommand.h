@@ -25,12 +25,6 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		int skillLevel = creature->getSkillMod("trapping");
-		if (skillLevel < 1 || !creature->hasSkill("outdoors_scout_novice")) {
-			creature->sendSystemMessage("@trap/trap:trap_no_skill");
-			return GENERALERROR;
-		}
-
 		StringTokenizer tokenizer(arguments.toString());
 
 		if (!tokenizer.hasMoreTokens())
@@ -54,13 +48,8 @@ public:
 			ManagedReference<CreatureObject*> targetCreature =
 					server->getZoneServer()->getObject(target).castTo<CreatureObject*>();
 
-			if (targetCreature == NULL || !targetCreature->isCreature()) {
-				creature->sendSystemMessage("@trap/trap:sys_creatures_only");
-				return GENERALERROR;
-			}
-
-			if (!targetCreature->isAttackableBy(creature) || targetCreature->isPet()) {
-				creature->sendSystemMessage("@trap/trap:sys_no_pets");
+			if (targetCreature == NULL) {
+				creature->sendSystemMessage("Please Select A Target.");
 				return GENERALERROR;
 			}
 

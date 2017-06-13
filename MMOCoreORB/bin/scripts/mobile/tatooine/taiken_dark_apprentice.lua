@@ -51,12 +51,6 @@ taiken_dark_apprentice = Creature:new {
 },
 {
             groups = {
-            {group = "looted_container", chance = 10000000}
-},
-             lootChance = 3000000
-},
-{
-            groups = {
             {group = "saberhand27", chance = 10000000}
 },
             lootChance = 10000000
