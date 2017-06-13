@@ -44,7 +44,7 @@
 ThrowGrenadeCommand = {
         name = "throwgrenade",
 
-	damageMultiplier = 5.0,
+	damageMultiplier = 2.5,
 	speedMultiplier = 1.0,
 	healthCostMultiplier = 1.0,
 	actionCostMultiplier = 1.0,
@@ -62,14 +62,14 @@ ThrowGrenadeCommand = {
 		0,
 		10
 	  ),
-	  StateEffect(
-		KNOCKDOWN_EFFECT, 
-		{ "knockdownRecovery", "lastKnockdown" }, 
-		{ "knockdown_defense" }, 
+	  StateEffect( 
+		STUN_EFFECT, 
 		{}, 
-		75, 
+		{ "stun_defense", "resistance_states" }, 
+		{ "jedi_state_defense" }, 
+		100, 
 		0, 
-		0 
+		10 
 	  )
 	},
 
