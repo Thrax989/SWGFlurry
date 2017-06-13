@@ -445,6 +445,7 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 				}
 			}
 			writer2->writeLine("		},");
+			writer2->writeLine("\"spawnTime\" : \"" + String::valueOf(spawn->getSpawned()) + "\",");
 			writer2->writeLine("\"deSpawnTime\" : \"" + String::valueOf(spawn->getDespawned()) + "\",");
 			writer2->writeLine("\"planet\" : [" );
 				for(int i = 0; i < 9; ++i) {

@@ -230,6 +230,11 @@ class ResourceSpawn extends SceneObject {
 	public unsigned long getDespawned() {
 		return despawned;
 	}
+	
+	@dirty
+	public unsigned long getSpawned() {
+		return spawned;
+	}
 
 	@preLocked
 	public void setContainerCRC(unsigned int crc) {
