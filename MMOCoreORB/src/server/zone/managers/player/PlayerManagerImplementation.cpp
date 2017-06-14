@@ -2981,24 +2981,6 @@ void PlayerManagerImplementation::updateSwimmingState(CreatureObject* player, fl
 	player->setAccelerationMultiplierMod(1.0f);
 }
 
-/// Check for water
-if (player->isInCombat() || player->isSwimming() || player->isInWater()) {
-	player->sendSystemMessage("@camp:error_in_water");
-	
-	ManagedReference<Buff*> buff = new Buff(player, crc, duration, BuffType::SKILL);
-
-	Locker locker(buff);
-
-	buff->setSpeedMultiplierMod(0.01f);
-	buff->setAccelerationMultiplierMod(0.01f);
-
-	player->addBuff(buff);
-
-
-	return true;
-}
-
-
 int PlayerManagerImplementation::checkSpeedHackFirstTest(CreatureObject* player, float parsedSpeed, ValidatedPosition& teleportPosition, float errorMultiplier) {
 	float allowedSpeedMod = player->getSpeedMultiplierMod();
 	float allowedSpeedBase = player->getRunSpeed();
