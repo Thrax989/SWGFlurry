@@ -176,12 +176,7 @@ public:
 		}
 
 		sendHealMessage(creature, creatureTarget, healedHealth, healedAction);
-		creature->inflictDamage(creature, CreatureAttribute::HEALTH, healthCostNew, false);
-		creature->inflictDamage(creature, CreatureAttribute::ACTION, actionCostNew, false);
-		creature->inflictDamage(creature, CreatureAttribute::MIND, mindCostNew, false);
-		creature->addWounds(CreatureAttribute::FOCUS, mindWoundCost, true);
-		creature->addWounds(CreatureAttribute::WILLPOWER, mindWoundCost, true);
-		creature->inflictDamage(creature, CreatureAttribute::HEALTH, healthCostNew, false);
+
 		creature->inflictDamage(creature, CreatureAttribute::ACTION, actionCostNew, false);
 
 
