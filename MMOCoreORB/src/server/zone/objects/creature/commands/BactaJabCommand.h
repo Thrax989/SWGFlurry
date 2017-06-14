@@ -29,8 +29,8 @@ public:
 
 		actionCost = 0;
 
-		speed = 0;
-		range = 0;
+		speed = 1;
+		range = 6;
 	}
 
 	void doAnimations(CreatureObject* creature, CreatureObject* creatureTarget) const {
