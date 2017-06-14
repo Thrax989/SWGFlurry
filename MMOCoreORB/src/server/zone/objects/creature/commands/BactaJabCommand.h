@@ -11,9 +11,15 @@
 
 class BactaJabCommand : public QueueCommand {
 	int actionCost;
-
-	int healthHealed;
+        int actionundCost;
 	int actionHealed;
+
+        int healthCost;
+        int healthWoundcoast;
+	int healthHealed;
+
+        int mindCost;
+        int mindWoundcost;
 	int mindHealed;
 
 	float speed;
@@ -46,24 +52,6 @@ public:
 		else
 			creatureTarget->playEffect("clienteffect/bacta_jab.cef", "");
 	}
-	
-		CreatureObject* player = cast<CreatureObject*>(creature);
-
-		if (!creature->checkCooldownRecovery("bacta_jab")) {
-   			StringIdChatParameter stringId;
-
-   			Time* cdTime = creature->getCooldownTime("bacta_jab");
-
-   			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
-
-   			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
-   			stringId.setDI(timeLeft);
-   			creature->sendSystemMessage(stringId);
-   			        return GENERALERROR;
-   		       }
-
- 		player->addCooldown("bacta_jab", 15 * 1000); // 15 second cooldown
-		player->playEffect("clienteffect/player_clone_compile.cef");
 	
 	void sendHealMessage(CreatureObject* creature, CreatureObject* creatureTarget, int healthDamage, int actionDamage) const {
 		if (!creature->isPlayerCreature())
@@ -134,6 +122,23 @@ public:
 			creature->sendSystemMessage("@healing:pvp_no_help");  //It would be unwise to help such a patient.
 			return GENERALERROR;
 		}
+		CreatureObject* player = cast<CreatureObject*>(creature);
+
+		if (!creature->checkCooldownRecovery("bacta_jab")) {
+   			StringIdChatParameter stringId;
+
+   			Time* cdTime = creature->getCooldownTime("bacta_jab");
+
+   			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+
+   			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+   			stringId.setDI(timeLeft);
+   			creature->sendSystemMessage(stringId);
+   			        return GENERALERROR;
+   		       }
+
+ 		player->addCooldown("bacta_jab", 15 * 1000); // 15 second cooldown
+		player->playEffect("clienteffect/player_clone_compile.cef");
 
 		int actionCostNew = creature->calculateCostAdjustment(CreatureAttribute::ACTION, actionCost);
 
