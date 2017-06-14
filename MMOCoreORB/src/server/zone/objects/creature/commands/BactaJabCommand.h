@@ -139,8 +139,7 @@ public:
    		       }
 
  		player->addCooldown("bacta_jab", 15 * 1000); // 15 second cooldown
-		player->playEffect("clienteffect/player_clone_compile.cef");
-
+		
 		int actionCostNew = creature->calculateCostAdjustment(CreatureAttribute::ACTION, actionCost);
 
 		if (creature->getHAM(CreatureAttribute::ACTION) < abs(actionCostNew)) {
