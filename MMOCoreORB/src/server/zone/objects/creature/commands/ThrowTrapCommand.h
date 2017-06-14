@@ -182,7 +182,7 @@ public:
 	}
 
 	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
-		return defaultTime;
+		return defaultTime * 5.0;
 	}
 
 };
