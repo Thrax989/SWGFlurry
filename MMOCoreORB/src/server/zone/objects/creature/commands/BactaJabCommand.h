@@ -29,8 +29,8 @@ public:
 
 		actionCost = 0;
 
-		speed = 15;
-		range = 6;
+		speed = 0;
+		range = 0;
 	}
 
 	void doAnimations(CreatureObject* creature, CreatureObject* creatureTarget) const {
@@ -40,7 +40,25 @@ public:
 		else
 			creatureTarget->playEffect("clienteffect/bacta_jab.cef", "");
 	}
+	
+		CreatureObject* player = cast<CreatureObject*>(creature);
 
+		if (!creature->checkCooldownRecovery("bacta_jab")) {
+   			StringIdChatParameter stringId;
+
+   			Time* cdTime = creature->getCooldownTime("bacta_jab");
+
+   			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+
+   			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+   			stringId.setDI(timeLeft);
+   			creature->sendSystemMessage(stringId);
+   			        return GENERALERROR;
+   		       }
+
+ 		player->addCooldown("bacta_jab", 15 * 1000); // 15 second cooldown
+		player->playEffect("clienteffect/player_clone_compile.cef");
+	
 	void sendHealMessage(CreatureObject* creature, CreatureObject* creatureTarget, int healthDamage, int actionDamage) const {
 		if (!creature->isPlayerCreature())
 			return;
