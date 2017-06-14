@@ -44,6 +44,10 @@ public:
 			creature->sendSystemMessage("You do not have a clear line of sight to the target.");
 			return INVALIDTARGET;
 		}
+		
+		if (!creature->isPlayerCreature())
+		
+			return GENERALERROR;
 
 		if (!creature->checkCooldownRecovery("explosion")) {
 			StringIdChatParameter stringId;
@@ -83,7 +87,7 @@ public:
 			creatureTarget->setSnaredState(8);
 			//creatureTarget->playEffect("clienteffect/carbine_snare.cef", "");
 			creatureTarget->sendSystemMessage("You have been snared");
-			creature->addCooldown("explosion", 60 * 1000);
+			creature->addCooldown("explosion", 30 * 1000);
 
 		}
 

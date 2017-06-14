@@ -88,6 +88,10 @@ public:
 			return INVALIDTARGET;
 		}
 
+		if (!creature->isPlayerCreature())
+		
+			return GENERALERROR;
+			
 		if (!creature->checkCooldownRecovery("pistolwhip")) {
 			StringIdChatParameter stringId;
 
@@ -126,7 +130,7 @@ public:
 			creatureTarget->setRootedState(4);
 			//creatureTarget->playEffect("clienteffect/carbine_snare.cef", "");
 			creatureTarget->sendSystemMessage("You have been rooted");
-			creature->addCooldown("pistolwhip", 60 * 1000);
+			creature->addCooldown("pistolwhip", 30 * 1000);
 
 		}
 

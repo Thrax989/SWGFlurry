@@ -45,6 +45,10 @@ public:
 			return INVALIDTARGET;
 		}
 
+		if (!creature->isPlayerCreature())
+		
+			return GENERALERROR;
+			
 		if (!creature->checkCooldownRecovery("explosion")) {
 			StringIdChatParameter stringId;
 
@@ -84,7 +88,7 @@ public:
 			creatureTarget->setSnaredState(16);
 			//creatureTarget->playEffect("clienteffect/carbine_snare.cef", "");
 			creatureTarget->sendSystemMessage("You have been snared");
-			creature->addCooldown("explosion", 60 * 1000);
+			creature->addCooldown("explosion", 30 * 1000);
 
 		}
 
