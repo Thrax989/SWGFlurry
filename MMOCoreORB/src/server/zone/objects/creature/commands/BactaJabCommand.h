@@ -27,7 +27,13 @@ public:
 		actionHealed = 0;
 		mindHealed = 0;
 
-		actionCost = 0;
+		healthCost = 5;
+		actionCost = 5;
+		mindCost = 5;
+		healthWoundCost = 2;
+		actionundCost = 2;
+		mindWoundCost = 2;
+
 
 		speed = 1;
 		range = 6;
@@ -164,8 +170,11 @@ public:
 		}
 
 		sendHealMessage(creature, creatureTarget, healedHealth, healedAction);
-
+		creature->inflictDamage(creature, CreatureAttribute::HEALTH, healthCostNew, false);
 		creature->inflictDamage(creature, CreatureAttribute::ACTION, actionCostNew, false);
+		creature->inflictDamage(creature, CreatureAttribute::MIND, mindCostNew, false);
+		creature->addWounds(CreatureAttribute::FOCUS, mindWoundCost, true);
+		creature->addWounds(CreatureAttribute::WILLPOWER, mindWoundCost, true);
 
 
 		doAnimations(creature, creatureTarget);
