@@ -11,16 +11,9 @@
 
 class BactaJabCommand : public QueueCommand {
 	int actionCost;
-        int actionundCost;
-	int actionHealed;
-
-        int healthCost;
-        int healthWoundcoast;
-	int healthHealed;
-
-        int mindCost;
-        int mindWoundcost;
-	int mindHealed;
+	int actionWoundCost;
+	int mindCost;
+	int mindWoundCost;
 
 	float speed;
 	float range;
@@ -33,12 +26,11 @@ public:
 		actionHealed = 0;
 		mindHealed = 0;
 
-		healthCost = 5;
-		actionCost = 5;
 		mindCost = 5;
-		healthWoundCost = 2;
-		actionundCost = 2;
-		mindWoundCost = 2;
+		mindWoundCost = 5;
+
+		actionCost = 5;
+		actionWoundCost = 5;
 
 
 		speed = 1;
@@ -92,6 +84,11 @@ public:
 
 
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
+
+		int result = doCommonMedicalCommandChecks(creature);
+
+		if (result != SUCCESS)
+			return result;
 
 		if (object != NULL) {
 			if (!object->isCreatureObject()) {
@@ -180,6 +177,8 @@ public:
 		creature->inflictDamage(creature, CreatureAttribute::MIND, mindCostNew, false);
 		creature->addWounds(CreatureAttribute::FOCUS, mindWoundCost, true);
 		creature->addWounds(CreatureAttribute::WILLPOWER, mindWoundCost, true);
+		creature->inflictDamage(creature, CreatureAttribute::HEALTH, healthCostNew, false);
+		creature->inflictDamage(creature, CreatureAttribute::ACTION, actionCostNew, false);
 
 
 		doAnimations(creature, creatureTarget);
