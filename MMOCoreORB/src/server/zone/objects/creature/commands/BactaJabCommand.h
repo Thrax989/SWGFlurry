@@ -14,6 +14,10 @@ class BactaJabCommand : public QueueCommand {
 	int actionWoundCost;
 	int mindCost;
 	int mindWoundCost;
+	int healthHealed;
+	int actionHealed;
+	int mindHealed;
+
 
 	float speed;
 	float range;
