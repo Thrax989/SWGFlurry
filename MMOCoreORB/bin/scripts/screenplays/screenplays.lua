@@ -657,3 +657,6 @@ includeFile("poi/ShadowCollectiveCave.lua")
 includeFile("poi/TaungWarriorBunker.lua")
 includeFile("poi/VizslaHideout.lua")
 includeFile("static_spawns/taanab_static_spawns.lua")
+
+--Restuss Cloner
+includeFile("gcw/restuss_cloner.lua")
