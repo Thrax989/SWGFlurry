@@ -27,9 +27,9 @@ public:
 		actionHealed = 0;
 		mindHealed = 0;
 
-		actionCost = 250;
+		actionCost = 0;
 
-		speed = 1;
+		speed = 15;
 		range = 6;
 	}
 
