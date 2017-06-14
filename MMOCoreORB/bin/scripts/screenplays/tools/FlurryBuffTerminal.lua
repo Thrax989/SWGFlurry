@@ -8,12 +8,14 @@ FlurryBuffTerminal = ScreenPlay:new {
 		{"Starter Buff", 1000, 0.5, 500, 250, 250, 500, 250, 250, 500, 250, 250}, -- Free!
 		{"Advanced Buff", 50000, 1, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750},
 		{"PvP/PvE Buff", 100000, 1.5, 2200, 1750, 1750, 2200, 1750, 1750, 2200, 1750, 1750},
-		--{"Apply Uber Buff", 25000, 4, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750}, -- commented out for example
+		{"Apply Uber Buff TEST PvP Zone", 3500, 4, 3500, 3500, 3500, 3500, 3500, 3500, 3500, 3500, 3500}, -- commented out for example
 	},
 	termModel = "object/tangible/terminal/terminal_light_enclave_voting.iff",
 	termName = "Medical Services Terminal",
 	terminals = {
 		{planetName = "corellia", x = -136.437, z = 28, y = -4730.23, ow = 0.745701, oy = -0.666281},
+		{planetName = "rori", x = 5303.04, z = 78.3096, y = 6100.57, ow = 0.999996, oy = -0.0028295},
+		{planetName = "rori", x = 5286.06, z = 78.8429, y = 6100.58, ow = 0.999998, oy = -0.00188644},
 	}
 }
 
