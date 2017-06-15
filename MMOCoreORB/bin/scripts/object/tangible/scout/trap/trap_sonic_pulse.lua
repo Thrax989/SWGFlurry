@@ -51,17 +51,17 @@ object_tangible_scout_trap_trap_sonic_pulse = object_tangible_scout_trap_shared_
 
 	skillMods = {},
 
-	healthCost = 17,
-	actionCost = 30, 
-	mindCost = 17,
+	healthCost = 200,
+	actionCost = 200, 
+	mindCost = 200,
 
-	maxRange = 32,
+	maxRange = 20,
 
 	poolToDamage = HEALTH,
 	minDamage = 200,
 	maxDamage = 450,
 
-	duration = 10,
+	duration = 5,
 	state = STUNNED + DIZZY,
 	defenseMod = "dizzy_defense",
 
