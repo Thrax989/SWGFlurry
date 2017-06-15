@@ -1,4 +1,3 @@
-RoriGcwScreenPlay = RoriPvpScreenPlay:new {
 	numberOfActs = 1,
 
 	screenplayName = "RoriGcwScreenPlay",
@@ -14,8 +13,6 @@ registerScreenPlay("RoriGcwScreenPlay", true)
 
 function RoriGcwScreenPlay:start()
 	if (isZoneEnabled(self.planet)) then
-		self:spawnMobiles()
-		self:spawnSceneObjects()
-		self:spawnGcwMobiles()
+		self:spawnPvpGcwMobiles()
 	end
 end
