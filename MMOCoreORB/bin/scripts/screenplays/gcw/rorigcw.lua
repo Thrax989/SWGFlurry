@@ -5,7 +5,7 @@ RoriGcwScreenPlay = RoriPvpScreenPlay:new {
 
 	planet = "rori",
 
-	gcwMobs = {
+	pvpgcwMobs = {
 		{"stormtrooper", "rebel_trooper", 0, 0, 0, 0, 0, "", ""},
 	},
 }
