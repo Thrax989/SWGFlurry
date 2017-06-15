@@ -70,6 +70,7 @@ includeFile("gcw/recruiters/recruiterConvoHandler.lua")
 includeFile("gcw/recruiters/recruiterScreenplay.lua")
 includeFile("gcw/rorifaction.lua")
 includeFile("gcw/roripvp.lua")
+includeFile("gcw/rorigcw.lua")
 
 -- Quest Tasks
 includeFile("quest_tasks/task.lua")
