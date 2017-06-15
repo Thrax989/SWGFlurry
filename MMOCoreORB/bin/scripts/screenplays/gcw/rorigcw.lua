@@ -1,4 +1,5 @@
-	numberOfActs = 1,
+RoriGcwScreenPlay = RoriPvpScreenPlay:new {	
+        numberOfActs = 1,
 
 	screenplayName = "RoriGcwScreenPlay",
 
