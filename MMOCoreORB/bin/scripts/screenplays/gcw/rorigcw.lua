@@ -10,6 +10,7 @@ RoriGcwScreenPlay = RoriPvpScreenPlay:new {
 	},
 }
 
+registerScreenPlay("RoriGcwScreenPlay", true)
 
 function RoriGcwScreenPlay:start()
 	if (isZoneEnabled(self.planet)) then
