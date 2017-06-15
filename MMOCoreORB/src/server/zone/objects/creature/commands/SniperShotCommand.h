@@ -27,6 +27,12 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
+
+		if (!weapon->isRangedWeapon()) {
+			return INVALIDWEAPON;
+		}
+
 		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
 
 		CreatureObject* targetCreature = cast<CreatureObject*>(targetObject.get());
