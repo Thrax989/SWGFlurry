@@ -57,3 +57,38 @@ function RoriPvpScreenPlay:spawnMob(num, controllingFaction)
 		writeData(SceneObject(pNpc):getObjectID(), num)
 	end
 end
+
+function RoriPvpScreenPlay:onDespawn(pAiAgent)
+	if pAiAgent == nil or not SceneObject(pAiAgent):isAiAgent() then
+		printf("pAiAgent is nil or not an AiAgent")
+		return
+	end
+
+	local oid = SceneObject(pAiAgent):getObjectID()
+	local mobNumber = readData(oid)
+	deleteData(oid)
+
+	local controllingFaction = getControllingFaction(self.planet)
+
+	if controllingFaction == FACTIONNEUTRAL then
+		controllingFaction = TangibleObject(pAiAgent):getFaction()
+	end
+
+	local args = mobNumber .. "," .. controllingFaction
+	createEvent(300000, self.screenplayName, "respawn", nil, args)
+
+	return 1
+end
+
+function RoriPvpScreenPlay:respawn(pAiAgent, args)
+	local mobNumber = 0
+	local controllingFaction = 0
+	local comma = string.find(args, ",")
+
+	if comma ~= nil then
+		mobNumber = tonumber(string.sub(args, 1, comma - 1))
+		controllingFaction = tonumber(string.sub(args, comma + 1))
+	end
+
+	self:spawnMob(mobNumber, controllingFaction)
+end
