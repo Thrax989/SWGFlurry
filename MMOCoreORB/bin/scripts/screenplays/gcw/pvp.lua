@@ -81,7 +81,7 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		if (player:isImperial() or player:isRebel()) then
 			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Kaas PVP Zone!")
 			player:sendSystemMessage("You have left the Kaas PvP zone!")
-			dropObserver(CREATUREREVIVED, player)
+			dropObserver(OBJECTDESTRUCTION, "pvp", "notifyCreatureRevived", player)
 		end
 		return 0
 	end)
