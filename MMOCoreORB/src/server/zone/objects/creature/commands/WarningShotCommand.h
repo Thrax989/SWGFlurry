@@ -84,7 +84,7 @@ public:
 		const bool hasFr3 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_3);
 
 		CombatManager* combatManager = CombatManager::instance();
-		if (res == SUCCESS && System::random(100) > chance || hasFr1 || hasFr2 || hasFr3) {
+		if (res == SUCCESS || System::random(100) > chance || hasFr1 || hasFr2 || hasFr3) {
 			Locker lock(creatureTarget);
 			if (hasFr1) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_1); }
 			if (hasFr2) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_2); }
