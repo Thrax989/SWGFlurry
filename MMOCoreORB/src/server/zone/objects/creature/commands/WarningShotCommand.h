@@ -68,27 +68,36 @@ public:
 					creature->sendSystemMessage(stringId);
 					return 0;
 		}
+		
 		if (creature->isAttackableBy(creatureTarget) && creature->isInRange(creatureTarget, 62)) {
 
 			creature->addCooldown("used_warning", 5);
 		}else{
 				return INVALIDTARGET;
 		}
-
+		
+		int res = doCombatAction(creature, target);
+		int chance = 50;
+		
 		const bool hasFr1 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_1);
 		const bool hasFr2 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_2);
 		const bool hasFr3 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_3);
 
-		if(hasFr1 || hasFr2 || hasFr3) {
-			creature->sendSystemMessage(creatureTarget->getFirstName() + "'s Force Run has been disrupted by your attack and you have taken wound damage!");
-			creatureTarget->sendSystemMessage("Your Force Run has been disrupted by" + creature->getFirstName() + ".");
-
+		CombatManager* combatManager = CombatManager::instance();
+		if (res == SUCCESS && System::random(100) > chance || hasFr1 || hasFr2 || hasFr3) {
 			Locker lock(creatureTarget);
 			if (hasFr1) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_1); }
 			if (hasFr2) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_2); }
 			if (hasFr3) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_3); }
+			
+			if (creature->isPlayerCreature())
+				creature->sendSystemMessage("Warning Shot Has Successfully Landed");
+				creature->addWounds(CreatureAttribute::QUICKNESS, 200, true);
+		} else {
 
-			creature->addWounds(CreatureAttribute::QUICKNESS, 200, true);
+			if (creature->isPlayerCreature())
+				creature->sendSystemMessage("Warning Shot Attempt Has Failed To Land");
+				creatureTarget->sendSystemMessage("Your Force Run has been disrupted by" + creature->getFirstName() + ".");
 		}
 
 
