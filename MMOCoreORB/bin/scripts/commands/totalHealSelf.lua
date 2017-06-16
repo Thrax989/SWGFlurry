@@ -43,9 +43,9 @@
 
 TotalHealSelfCommand = {
         name = "totalhealself",
-	healAmount = 6000,
+	healAmount = 5000,
 	healAttributes = HEALTH_ATTRIBUTE + MIND_ATTRIBUTE + ACTION_ATTRIBUTE,
-	healWoundAmount = 6000,
+	healWoundAmount = 1000,
 	healWoundAttributes = HEALTH_ATTRIBUTE + MIND_ATTRIBUTE + ACTION_ATTRIBUTE,
 	healBattleFatigue = 1000,
 	healDisease = 600,
