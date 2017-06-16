@@ -1,3 +1,7 @@
+--Children folder includes
+includeFile("custom_content/building/player/city/serverobjects.lua")
+
+-- Server Objects
 includeFile("custom_content/building/player/atat_house.lua")
 includeFile("custom_content/building/player/bespin_house.lua")
 includeFile("custom_content/building/player/commando_house.lua")
