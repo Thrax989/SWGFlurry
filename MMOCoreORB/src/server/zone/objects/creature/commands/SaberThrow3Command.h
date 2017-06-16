@@ -24,10 +24,6 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		if (creature->isInvisible()) {
-			return GENERALERROR;
-		}
-
 		if (isWearingArmor(creature)) {
 			return NOJEDIARMOR;
 		}
