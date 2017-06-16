@@ -43,17 +43,17 @@
 
 TotalHealOtherCommand = {
         name = "totalhealother",
-	healAmount = 2500,
+	healAmount = 1000,
 	healAttributes = HEALTH_ATTRIBUTE + MIND_ATTRIBUTE + ACTION_ATTRIBUTE,
-	healWoundAmount = 500,
+	healWoundAmount = 250,
 	healWoundAttributes = HEALTH_ATTRIBUTE + MIND_ATTRIBUTE + ACTION_ATTRIBUTE,
-	healBattleFatigue = 500,
-	healDisease = 450,
-	healPoison = 450,
-	healBleeding = 450,
-	healFire = 450,
+	healBattleFatigue = 250,
+	healDisease = 250,
+	healPoison = 250,
+	healBleeding = 250,
+	healFire = 250,
 	healStates = STUNNED_STATE + DIZZY_STATE + BLINDED_STATE + INTIMIDATED_STATE + FEIGNDEATH_STATE,
-	forceCost = 500,
+	forceCost = 350,
 	range = 32	
 }
 
