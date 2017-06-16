@@ -1,3 +1,8 @@
+includeFile("custom_content/mobile/ep3/ep3_lord_cyssc.lua")
+includeFile("custom_content/mobile/ep3/ep3_omwaan.lua")
+includeFile("custom_content/mobile/ep3/ep3_trando_kressik.lua")
+includeFile("custom_content/mobile/ep3/ep3_wke_lolo.lua")
+includeFile("custom_content/mobile/ep3/ep3_wke_vryyyr.lua")
 includeFile("custom_content/mobile/ep3/arena_guard_inner.lua")
 includeFile("custom_content/mobile/ep3/arena_guard_outer.lua")
 includeFile("custom_content/mobile/ep3/cyborg_engineer_corellia.lua")
