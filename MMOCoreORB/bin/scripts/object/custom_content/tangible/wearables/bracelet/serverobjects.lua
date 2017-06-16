@@ -1,0 +1,8 @@
+includeFile("custom_content/tangible/wearables/bracelet/appearance_invisible_l_s01.lua")
+includeFile("custom_content/tangible/wearables/bracelet/appearance_invisible_r_s01.lua")
+includeFile("custom_content/tangible/wearables/bracelet/bracelet_gcw_imperial_l.lua")
+includeFile("custom_content/tangible/wearables/bracelet/bracelet_gcw_imperial_r.lua")
+includeFile("custom_content/tangible/wearables/bracelet/bracelet_gcw_rebel_l.lua")
+includeFile("custom_content/tangible/wearables/bracelet/bracelet_gcw_rebel_r.lua")
+includeFile("custom_content/tangible/wearables/bracelet/bracelet_wod_crafting_l.lua")
+includeFile("custom_content/tangible/wearables/bracelet/primitive_bracelet.lua")

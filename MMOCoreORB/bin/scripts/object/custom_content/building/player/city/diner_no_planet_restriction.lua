@@ -1,0 +1,5 @@
+
+object_building_player_city_diner_no_planet_restriction = object_building_player_city_shared_diner_no_planet_restriction:new {
+
+}
+ObjectTemplates:addTemplate(object_building_player_city_diner_no_planet_restriction, "object/building/player/city/diner_no_planet_restriction.iff")
