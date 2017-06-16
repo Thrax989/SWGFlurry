@@ -1,7 +1,14 @@
 -- Server Objects
-
-includeFile("custom_content/static/particle/pt_campfire_smokeless_s01.lua");
-includeFile("custom_content/static/particle/pt_fire_huge_smokeless.lua");
+includeFile("custom_content/static/particle/pt_waterfall_kashyyyk_5x30.lua")
+includeFile("custom_content/static/particle/pt_waterfall_kashyyyk_5x50.lua")
+includeFile("custom_content/static/particle/pt_waterfall_kashyyyk_10x4.lua")
+includeFile("custom_content/static/particle/pt_waterfall_kashyyyk_20x20.lua")
+includeFile("custom_content/static/particle/pt_waterfall_kashyyyk_20x33.lua")
+includeFile("custom_content/static/particle/pt_waterfall_kashyyyk_20x43.lua")
+includeFile("custom_content/static/particle/pt_waterfall_kashyyyk_20x50.lua")
+includeFile("custom_content/static/particle/pt_waterfall_kashyyyk_all_s01.lua")
+includeFile("custom_content/static/particle/pt_campfire_smokeless_s01.lua")
+includeFile("custom_content/static/particle/pt_fire_huge_smokeless.lua")
 
 includeFile("custom_content/static/particle/holo_planet_hoth.lua")
 includeFile("custom_content/static/particle/particle_effect_machine_imp.lua")
