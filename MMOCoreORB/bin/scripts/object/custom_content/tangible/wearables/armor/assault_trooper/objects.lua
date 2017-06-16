@@ -127,3 +127,91 @@ object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_uti
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_utility_belt, "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_utility_belt.iff")
+
+--****************************************************************************************************************************************************************************
+object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_bicep_l_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_bicep_l_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_bicep_l_gcw, "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_bicep_l_gcw.iff")
+
+--****************************************************************************************************************************************************************************
+
+object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_bicep_r_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_bicep_r_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_bicep_r_gcw, "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_bicep_r_gcw.iff")
+
+--****************************************************************************************************************************************************************************
+object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_boots_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_boots_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_boots_gcw, "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_boots_gcw.iff")
+
+--****************************************************************************************************************************************************************************
+
+object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_bracer_l_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_bracer_l_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_bracer_l_gcw, "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_bracer_l_gcw.iff")
+
+--****************************************************************************************************************************************************************************
+
+object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_bracer_r_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_bracer_r_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_bracer_r_gcw, "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_bracer_r_gcw.iff")
+
+--****************************************************************************************************************************************************************************
+
+object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_chest_plate_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_chest_plate_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_chest_plate_gcw, "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_chest_plate_gcw.iff")
+
+--****************************************************************************************************************************************************************************
+
+object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_gloves_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_gloves_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_gloves_gcw, "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_gloves_gcw.iff")
+
+--****************************************************************************************************************************************************************************
+
+object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_helmet_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_helmet_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_helmet_gcw, "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_helmet_gcw.iff")
+
+--****************************************************************************************************************************************************************************
+
+object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_leggings_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_leggings_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_leggings_gcw, "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_leggings_gcw.iff")
+
+--****************************************************************************************************************************************************************************
+
+object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_utility_belt_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_utility_belt_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_utility_belt_gcw, "object/tangible/wearables/armor/assault_trooper/shared_armor_assault_trooper_utility_belt_gcw.iff")

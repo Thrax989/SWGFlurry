@@ -45,6 +45,16 @@
 --Children folder includes
 
 -- Server Objects
+includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_bicep_l_gcw.lua")
+includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_bicep_r_gcw.lua")
+includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_boots_gcw.lua")
+includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_bracer_l_gcw.lua")
+includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_bracer_r_gcw.lua")
+includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_chest_plate_gcw.lua")
+includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_gloves_gcw.lua")
+includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_helmet_gcw.lua")
+includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_leggings_gcw.lua")
+includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_utility_belt_gcw.lua")
 includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_bicep_l.lua")
 includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_bicep_r.lua")
 includeFile("custom_content/tangible/wearables/armor/assault_trooper/armor_assault_trooper_boots.lua")

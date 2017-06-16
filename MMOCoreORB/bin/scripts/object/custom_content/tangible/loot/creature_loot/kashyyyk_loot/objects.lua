@@ -1,3 +1,9 @@
+object_tangible_loot_creature_loot_kashyyyk_loot_shared_adventurers_remains_03 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/creature_loot/kashyyyk/loot/shared_adventurers_remains_03.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_creature_loot_kashyyyk_loot_shared_adventurers_remains_03, "object/tangible/loot/creature_loot/kashyyyk/loot/shared_adventurers_remains_03.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 object_tangible_loot_creature_loot_kashyyyk_loot_shared_adventurers_remains_01 = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/loot/creature_loot/kashyyyk_loot/shared_adventurers_remains_01.iff"
 }

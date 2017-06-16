@@ -39,3 +39,17 @@ object_tangible_furniture_terminal_shared_terminal_bank_wall_on_02 = SharedBuild
 }
 ObjectTemplates:addClientTemplate(object_tangible_furniture_terminal_shared_terminal_bank_wall_on_02, "object/tangible/furniture/terminal/shared_terminal_bank_wall_on_02.iff")
 --**********************************************************************************************************************************
+object_tangible_furniture_terminal_shared_terminal_mini_vehicle = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/terminal/shared_terminal_mini_vehicle.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_terminal_shared_terminal_mini_vehicle, "object/tangible/furniture/terminal/shared_terminal_mini_vehicle.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_furniture_terminal_shared_terminal_serving_droid = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/terminal/shared_terminal_serving_droid.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_terminal_shared_terminal_serving_droid, "object/tangible/furniture/terminal/shared_terminal_serving_droid.iff")
+------------------------------------------------------------------------------------------------------------------------------------
