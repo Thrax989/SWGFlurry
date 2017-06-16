@@ -44,7 +44,7 @@ public:
 			return GENERALERROR;
 
 
-		if (creature->getDistanceTo(object) > 62.f){
+		if (creature->getDistanceTo(object) > 64.f){
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;
 		}
@@ -70,7 +70,7 @@ public:
 		}
 		if (creature->isAttackableBy(creatureTarget) && creature->isInRange(creatureTarget, 62)) {
 
-			creature->addCooldown("used_warning", 10);
+			creature->addCooldown("used_warning", 5);
 		}else{
 				return INVALIDTARGET;
 		}
@@ -79,7 +79,7 @@ public:
 		const bool hasFr2 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_2);
 		const bool hasFr3 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_3);
 
-		if(hasFr2 || hasFr3) {
+		if(hasFr1 || hasFr2 || hasFr3) {
 			creature->sendSystemMessage(creatureTarget->getFirstName() + "'s Force Run has been disrupted by your attack and you have taken wound damage!");
 			creatureTarget->sendSystemMessage("Your Force Run has been disrupted by" + creature->getFirstName() + ".");
 
