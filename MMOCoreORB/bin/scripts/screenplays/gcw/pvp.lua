@@ -23,11 +23,11 @@ function pvp:spawnActiveAreas()
 	        activeArea:setRadius(205)
 	        createObserver(ENTEREDAREA, "pvp", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "pvp", "notifySpawnAreaLeave", pSpawnArea)
-		createObserver(PLAYERKILLED, "pvp", "notifyPlayerKilled", pSpawnArea)
+		createObserver(CREATUREREVIVED, "pvp", "notifyCreatureRevived", pSpawnArea)
 	    end
 end
 
-function pvp:notifyPlayerKilled(pActiveArea, pMovingObject)
+function pvp:notifyCreatureRevived(pActiveArea, pMovingObject)
 	if (not SceneObject(pMovingObject):isCreatureObject()) then
 		return 0
 	end
@@ -37,9 +37,8 @@ function pvp:notifyPlayerKilled(pActiveArea, pMovingObject)
 			return 0
 		end
 
-		if (player:isDead()) then
-			player:sendSystemMessage("Dead players are moved out of the active pvp zone")
-			player:teleport(-5106, 81, -2108, 0)
+		if (player:isImperial() or player:isRebel()) then
+			player:setFactionStatus(2)
 		end
 			
 		return 0
@@ -55,11 +54,6 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 	return ObjectManager.withCreatureObject(pMovingObject, function(player)
 		if (player:isAiAgent()) then
 			return 0
-		end
-
-		if (player:isDead()) then
-			player:sendSystemMessage("Dead players are moved out of the active pvp zone")
-			player:teleport(-5106, 81, -2108, 0)
 		end
 			
 		if (player:isImperial() or player:isRebel()) then
