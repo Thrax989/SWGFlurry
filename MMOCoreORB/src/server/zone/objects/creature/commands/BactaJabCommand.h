@@ -177,7 +177,10 @@ public:
 		sendHealMessage(creature, creatureTarget, healedHealth, healedAction);
 
 		creature->inflictDamage(creature, CreatureAttribute::ACTION, actionCostNew, false);
-
+		creature->clearState(CreatureState::BLEEDING);
+        	creature->clearState(CreatureState::POISONED);
+        	creature->clearState(CreatureState::DISEASED);
+        	creature->clearState(CreatureState::ONFIRE);
 
 		doAnimations(creature, creatureTarget);
 
