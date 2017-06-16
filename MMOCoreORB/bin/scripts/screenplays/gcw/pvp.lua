@@ -36,7 +36,12 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 		if (player:isAiAgent()) then
 			return 0
 		end
-		
+
+		if (player:isDead()) then
+			player:sendSystemMessage("Dead players are moved out of the active pvp zone")
+			player:teleport(-5106, 81, -2108, 0)
+		end
+			
 		if (player:isImperial() or player:isRebel()) then
 			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the Kaas PVP Zone!")
 			player:sendSystemMessage("You have entered the Kaas PvP zone!")
