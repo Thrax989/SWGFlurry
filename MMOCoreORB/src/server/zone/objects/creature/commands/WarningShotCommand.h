@@ -69,7 +69,7 @@ public:
 		int chance = 50;
 
 		CombatManager* combatManager = CombatManager::instance();
-		if (res == SUCCESS || System::random(100) > chance || hasFr1 || hasFr2 || hasFr3) {
+		if (res == SUCCESS && System::random(100) > chance && (hasFr1 || hasFr2 || hasFr3))
 			Locker clocker(targetCreature, creature);
 			if (hasFr1) { targetCreature->removeBuff(BuffCRC::JEDI_FORCE_RUN_1); }
 			if (hasFr2) { targetCreature->removeBuff(BuffCRC::JEDI_FORCE_RUN_2); }
