@@ -5,10 +5,10 @@ FlurryBuffTerminal = ScreenPlay:new {
 	buffPetSecondaryStats = 1, -- 0 = No, 1 = Yes. Will also buff the pet's secondary stats.
 	buffs = {
 		-- Legend: {name, price, duration in hours, health, strength, constitution, action, quickness, stamina, mind, focus, willpower},
-		{"Starter Buff", 1000, 0.5, 500, 250, 250, 500, 250, 250, 500, 250, 250}, -- Free!
-		{"Advanced Buff", 50000, 1, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750},
-		{"PvP/PvE Buff", 100000, 1.5, 2200, 1750, 1750, 2200, 1750, 1750, 2200, 1750, 1750},
-		{"Apply Uber Buff TEST PvP Zone", 3500, 4, 3500, 3500, 3500, 3500, 3500, 3500, 3500, 3500, 3500}, -- commented out for example
+		{"Starter Buff", 100, 0.5, 500, 250, 250, 500, 250, 250, 500, 250, 250}, -- Free!
+		{"Advanced Buff", 25000, 1, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750},
+		{"PvP/PvE Buff", 50000, 1.5, 2200, 1750, 1750, 2200, 1750, 1750, 2200, 1750, 1750},
+		{"Apply Uber Buff TEST PvP Zone", 100000, 4, 3500, 3500, 3500, 3500, 3500, 3500, 3500, 3500, 3500}, -- commented out for example
 	},
 	termModel = "object/tangible/terminal/terminal_light_enclave_voting.iff",
 	termName = "Medical Services Terminal",
