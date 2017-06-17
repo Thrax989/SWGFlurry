@@ -64,6 +64,10 @@ public:
 
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
+		
+		if (!weapon->isRangedWeapon()) {
+		return INVALIDWEAPON;
+		}
 
 		//if (!creature->isInCombat())
 		//	return false;

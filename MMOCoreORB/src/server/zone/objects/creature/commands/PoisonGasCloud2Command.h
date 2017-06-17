@@ -25,6 +25,9 @@ public:
 		//if (!creature->isInCombat())
 		//	return false;
 
+		if (!weapon->isRangedWeapon()) {
+			return INVALIDWEAPON;
+		}
 
 		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
 

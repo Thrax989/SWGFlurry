@@ -69,6 +69,10 @@ public:
 
 		//if (!creature->isInCombat())
 		//	return false;
+	
+			if (!weapon->isRangedWeapon()) {
+			return INVALIDWEAPON;
+		}
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
