@@ -141,6 +141,8 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "getDamageDealerList", &LuaCreatureObject::getDamageDealerList },
 		{ "getHealingThreatList", &LuaCreatureObject::getHealingThreatList},
 		{ "broadcastToServer", &LuaCreatureObject::broadcastToServer },
+		{ "addSkillMod", &LuaCreatureObject::addSkillMod },
+		{ "removeSkillMod", &LuaCreatureObject::removeSkillMod },
 		{ 0, 0 }
 };
 
@@ -1108,5 +1110,27 @@ int LuaCreatureObject::broadcastToServer(lua_State* L) {
 	String message = lua_tostring(L, -1);
 	ZoneServer* zServ = realObject->getZoneServer();
 	zServ->getChatManager()->broadcastGalaxy(NULL, message);
+	return 1;
+}
+
+int LuaCreatureObject::addSkillMod(lua_State* L) {
+	String skillMod = lua_tostring(L, -2);
+	int modType = lua_tointeger(L, -1);
+	int value = lua_tointeger(L, -3);
+	bool notifyClient = lua_toboolean(L, -4);
+	Locker locker(realObject);
+
+	realObject->addSkillMod(modType, skillMod, value, notifyClient);
+	return 1;
+}
+
+int LuaCreatureObject::removeSkillMod(lua_State* L) {
+	String skillMod = lua_tostring(L, -2);
+	int modType = lua_tointeger(L, -1);
+	int value = lua_tointeger(L, -3);
+	bool notifyClient = lua_toboolean(L, -4);
+	Locker locker(realObject);
+
+	realObject->removeSkillMod(modType, skillMod, value, notifyClient);
 	return 1;
 }
