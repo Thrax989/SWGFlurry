@@ -176,7 +176,7 @@ public:
 		sendHealMessage(creature, creatureTarget, healedHealth, healedAction);
 
 		creature->inflictDamage(creature, CreatureAttribute::ACTION, actionCostNew, false);
-		creature->clearDots()
+		creature->clearDots();
 		doAnimations(creature, creatureTarget);
 
 		checkForTef(creature, creatureTarget);
