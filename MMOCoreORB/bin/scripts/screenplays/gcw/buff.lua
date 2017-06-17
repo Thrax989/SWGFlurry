@@ -40,9 +40,7 @@ function buff:notifySpawnArea(pActiveArea, pMovingObject)
 		if (player:isInCombat() ~= true) then
 			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the buff Zone!")
 			player:sendSystemMessage("You have entered the buff zone!")
-			player:addSkillMod(0x10001,"private_medical_rating",125,true)
-			player:addSkillMod(0x10001,"private_buff_mind",125,true)
-			player:addSkillMod(0x10001,"private_med_battle_fatigue",125,true)
+			player:addSkillMod(0x1002,"general_assembly",125,true)
 
 		else
 			player:sendSystemMessage("You must be out of combat to enter the buff zone!")
@@ -66,9 +64,7 @@ function buff:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		if (player:isImperial() or player:isRebel() or player:isNeutral()) then
 			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the buff Zone!")
 			player:sendSystemMessage("You have left the buff zone!")
-			player:removeSkillMod(0x10001,"private_medical_rating",125,true)
-			player:removeSkillMod(0x10001,"private_buff_mind",125,true)
-			player:removeSkillMod(0x10001,"private_med_battle_fatigue",125,true)
+			player:removeSkillMod(0x1002,"general_assembly",125,true)
 		end
 		return 0
 	end)
