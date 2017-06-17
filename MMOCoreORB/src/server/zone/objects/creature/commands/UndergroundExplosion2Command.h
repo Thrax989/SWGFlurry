@@ -22,8 +22,8 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		if (!creature->isInCombat())
-			return false;
+		//if (!creature->isInCombat())
+		//	return false;
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
@@ -35,6 +35,7 @@ public:
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
 		if (object == NULL || !object->isCreatureObject())
+			creature->sendSystemMessage("You can not use on NPC's");	
 			return INVALIDTARGET;
 
 		CreatureObject* creatureTarget = cast<CreatureObject*>( object.get());
@@ -45,10 +46,6 @@ public:
 			return INVALIDTARGET;
 		}
 
-		if (!creature->isPlayerCreature())
-		
-			return GENERALERROR;
-			
 		if (!creature->checkCooldownRecovery("explosion")) {
 			StringIdChatParameter stringId;
 
@@ -75,7 +72,7 @@ public:
 		if (targetGhost == NULL || playerObject == NULL)
 			return GENERALERROR;
 
-		if (creature->getDistanceTo(creatureTarget) > 45.f){
+		if (creature->getDistanceTo(creatureTarget) > 10.f){
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
 
@@ -104,8 +101,26 @@ public:
 			creatureTarget->addBuff(buff);
 			creatureTarget->playEffect("clienteffect/underground_explosion.cef", "");
 			}
-		//return doCombatAction(creature, target);
-		return SUCCESS;
+
+		if (creature->hasBuff(STRING_HASHCODE("burstrun")) || creature->hasBuff(STRING_HASHCODE("retreat"))) {
+			creature->removeBuff(STRING_HASHCODE("burstrun"));
+			creature->removeBuff(STRING_HASHCODE("retreat"));
+		}
+		const bool hasFr1 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_1);
+		const bool hasFr2 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_2);
+		const bool hasFr3 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_3);
+		int res = doCombatAction(creature, target);
+
+		CombatManager* combatManager = CombatManager::instance();
+		if (res == SUCCESS && (hasFr1 || hasFr2 || hasFr3)) {
+			Locker clocker(creatureTarget, creature);
+			if (hasFr1) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_1); }
+			if (hasFr2) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_2); }
+			if (hasFr3) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_3); }
+			}
+
+		return doCombatAction(creature, target, arguments);
+		//return SUCCESS;
 	}
 		
 };

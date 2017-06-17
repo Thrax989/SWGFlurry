@@ -65,8 +65,8 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		if (!creature->isInCombat())
-			return false;
+		//if (!creature->isInCombat())
+		//	return false;
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
@@ -78,6 +78,7 @@ public:
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
 		if (object == NULL || !object->isCreatureObject())
+			creature->sendSystemMessage("You can not use on NPC's");	
 			return INVALIDTARGET;
 
 		CreatureObject* creatureTarget = cast<CreatureObject*>( object.get());
@@ -88,10 +89,6 @@ public:
 			return INVALIDTARGET;
 		}
 
-		if (!creature->isPlayerCreature())
-		
-			return GENERALERROR;
-			
 		if (!creature->checkCooldownRecovery("pistolwhip")) {
 			StringIdChatParameter stringId;
 
@@ -145,6 +142,24 @@ public:
 			buff->setSpeedMultiplierMod(0.01f);
 			creatureTarget->addBuff(buff);
 			creatureTarget->playEffect("clienteffect/sm_pistol_whip.cef", "");
+			}
+
+		if (creature->hasBuff(STRING_HASHCODE("burstrun")) || creature->hasBuff(STRING_HASHCODE("retreat"))) {
+			creature->removeBuff(STRING_HASHCODE("burstrun"));
+			creature->removeBuff(STRING_HASHCODE("retreat"));
+		}
+
+		const bool hasFr1 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_1);
+		const bool hasFr2 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_2);
+		const bool hasFr3 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_3);
+		int res = doCombatAction(creature, target);
+
+		CombatManager* combatManager = CombatManager::instance();
+		if (res == SUCCESS && (hasFr1 || hasFr2 || hasFr3)) {
+			Locker clocker(creatureTarget, creature);
+			if (hasFr1) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_1); }
+			if (hasFr2) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_2); }
+			if (hasFr3) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_3); }
 			}
 		return doCombatAction(creature, target);
 	}

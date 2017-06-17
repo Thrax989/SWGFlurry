@@ -22,8 +22,9 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		if (!creature->isInCombat())
-			return false;
+		//if (!creature->isInCombat())
+		//	return false;
+
 
 		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
 
@@ -32,11 +33,21 @@ public:
 		if (targetCreature == NULL)
 			return INVALIDTARGET;
 
+		if (creature != targetCreature && !CollisionManager::checkLineOfSight(creature, targetCreature)) {
+			creature->sendSystemMessage("You do not have a clear line of sight to the target.");
+			return INVALIDTARGET;
+		}
+
+
 		if (!targetCreature->isAttackableBy(creature))
 			return INVALIDTARGET;
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 		Locker clocker(targetCreature, creature);
+
+		if (creature->getDistanceTo(targetCreature) > 20.f){
+			creature->sendSystemMessage("You are out of range.");
+			return GENERALERROR;}
 
 		targetCreature->playEffect("clienteffect/poisoncloud_effect.cef", "");
 

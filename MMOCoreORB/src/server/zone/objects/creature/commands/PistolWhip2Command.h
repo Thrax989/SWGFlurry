@@ -49,12 +49,14 @@ which carries forward this exception.
 #include "CombatQueueCommand.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/objects/creature/buffs/SingleUseBuff.h"
+#include "JediQueueCommand.h"
 
 class PistolWhip2Command : public CombatQueueCommand {
 public:
 
 	PistolWhip2Command(const String& name, ZoneProcessServer* server)
-		: CombatQueueCommand(name, server) {
+		: CombatQueueCommand(name, server) { 
+
 	}
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
@@ -65,8 +67,8 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		if (!creature->isInCombat())
-			return false;
+		//if (!creature->isInCombat())
+		//	return false;
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
@@ -78,6 +80,7 @@ public:
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
 		if (object == NULL || !object->isCreatureObject())
+			creature->sendSystemMessage("You can not use on NPC's");	
 			return INVALIDTARGET;
 
 		CreatureObject* creatureTarget = cast<CreatureObject*>( object.get());
@@ -87,10 +90,6 @@ public:
 			creature->sendSystemMessage("You do not have a clear line of sight to the target.");
 			return INVALIDTARGET;
 		}
-		
-		if (!creature->isPlayerCreature())
-		
-			return GENERALERROR;
 
 		if (!creature->checkCooldownRecovery("pistolwhip")) {
 			StringIdChatParameter stringId;
@@ -126,6 +125,7 @@ public:
 			return GENERALERROR;
 		}
 
+		
 		if (object->isCreatureObject() && creatureTarget->isAttackableBy(creature)) {
 			creatureTarget->setRootedState(10);
 			//creatureTarget->playEffect("clienteffect/carbine_snare.cef", "");
@@ -145,6 +145,23 @@ public:
 			buff->setSpeedMultiplierMod(0.01f);
 			creatureTarget->addBuff(buff);
 			creatureTarget->playEffect("clienteffect/sm_pistol_whip.cef", "");
+			}
+
+		if (creature->hasBuff(STRING_HASHCODE("burstrun")) || creature->hasBuff(STRING_HASHCODE("retreat"))) {
+			creature->removeBuff(STRING_HASHCODE("burstrun"));
+			creature->removeBuff(STRING_HASHCODE("retreat"));
+		}
+		const bool hasFr1 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_1);
+		const bool hasFr2 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_2);
+		const bool hasFr3 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_3);
+		int res = doCombatAction(creature, target);
+
+		CombatManager* combatManager = CombatManager::instance();
+		if (res == SUCCESS && (hasFr1 || hasFr2 || hasFr3)) {
+			Locker clocker(creatureTarget, creature);
+			if (hasFr1) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_1); }
+			if (hasFr2) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_2); }
+			if (hasFr3) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_3); }
 			}
 		return doCombatAction(creature, target);
 	}
