@@ -17,6 +17,7 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/managers/skill/SkillManager.h"
+#include "server/zone/managers/skill/SkillModManager.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
 #include "server/chat/ChatManager.h"
 
@@ -1114,23 +1115,22 @@ int LuaCreatureObject::broadcastToServer(lua_State* L) {
 }
 
 int LuaCreatureObject::addSkillMod(lua_State* L) {
-	String skillMod = lua_tostring(L, -2);
-	int modType = lua_tointeger(L, -1);
-	int value = lua_tointeger(L, -3);
-	bool notifyClient = lua_toboolean(L, -4);
+	String skillMod = lua_tostring(L, -1);
+	int value = lua_tointeger(L, -2);
+
 	Locker locker(realObject);
 
-	realObject->addSkillMod(modType, skillMod, value, notifyClient);
+	realObject->addSkillMod(SkillModManager::STRUCTURE, skillMod, value, true);
 	return 1;
 }
 
 int LuaCreatureObject::removeSkillMod(lua_State* L) {
-	String skillMod = lua_tostring(L, -2);
-	int modType = lua_tointeger(L, -1);
-	int value = lua_tointeger(L, -3);
-	bool notifyClient = lua_toboolean(L, -4);
+	String skillMod = lua_tostring(L, -1);
+	int value = lua_tointeger(L, -2);
+
+	Locker locker(realObject);
 	Locker locker(realObject);
 
-	realObject->removeSkillMod(modType, skillMod, value, notifyClient);
+	realObject->removeSkillMod(SkillModManager::STRUCTURE, skillMod, value, true);
 	return 1;
 }
