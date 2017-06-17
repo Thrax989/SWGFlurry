@@ -71,8 +71,6 @@ public:
 			return INVALIDWEAPON;
 		}
 
-		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
-
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
 
