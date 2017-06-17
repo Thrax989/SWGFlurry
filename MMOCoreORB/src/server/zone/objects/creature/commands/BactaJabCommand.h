@@ -164,7 +164,6 @@ public:
 		}
 
 		int healPower = (int) round(150 + System::random(600));
-
 		int healedHealth = creatureTarget->healDamage(creature, CreatureAttribute::HEALTH, healPower);
 		int healedAction = creatureTarget->healDamage(creature, CreatureAttribute::ACTION, healPower);
 		int healedMind = creatureTarget->healDamage(creature, CreatureAttribute::MIND, healPower);
@@ -177,14 +176,7 @@ public:
 		sendHealMessage(creature, creatureTarget, healedHealth, healedAction);
 
 		creature->inflictDamage(creature, CreatureAttribute::ACTION, actionCostNew, false);
-		creature->clearState(CreatureState::BLEEDING);
-        	creature->clearState(CreatureState::POISONED);
-        	creature->clearState(CreatureState::DISEASED);
-        	creature->clearState(CreatureState::ONFIRE);
-
-		doAnimations(creature, creatureTarget);
-
-		checkForTef(creature, creatureTarget);
+		creature->clearDots();
 
 		return SUCCESS;
 	}
