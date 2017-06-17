@@ -65,12 +65,13 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 		
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
+	
 		if (!weapon->isRangedWeapon()) {
-		return INVALIDWEAPON;
+			return INVALIDWEAPON;
 		}
 
-		//if (!creature->isInCombat())
-		//	return false;
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 

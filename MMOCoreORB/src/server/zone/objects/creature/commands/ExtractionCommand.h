@@ -22,8 +22,7 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		//if (!creature->isInCombat())
-		//	return false;
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
 	
 		if (!weapon->isRangedWeapon()) {
 			return INVALIDWEAPON;
