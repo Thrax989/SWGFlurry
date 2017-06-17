@@ -1129,7 +1129,6 @@ int LuaCreatureObject::removeSkillMod(lua_State* L) {
 	int value = lua_tointeger(L, -2);
 
 	Locker locker(realObject);
-	Locker locker(realObject);
 
 	realObject->removeSkillMod(SkillModManager::STRUCTURE, skillMod, value, true);
 	return 1;
