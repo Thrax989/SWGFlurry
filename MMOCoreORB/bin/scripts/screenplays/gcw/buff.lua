@@ -37,7 +37,7 @@ function buff:notifySpawnArea(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-		if (player:isImperial() or player:isRebel or player:isNeutral()) then
+		if (player:isInCombat() ~= true) then
 			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the buff Zone!")
 			player:sendSystemMessage("You have entered the buff zone!")
 			player:addSkillMod(0x10001,"private_medical_rating",125,true)
