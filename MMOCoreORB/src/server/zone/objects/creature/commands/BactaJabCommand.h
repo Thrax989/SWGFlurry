@@ -176,10 +176,10 @@ public:
 		sendHealMessage(creature, creatureTarget, healedHealth, healedAction);
 
 		creature->inflictDamage(creature, CreatureAttribute::ACTION, actionCostNew, false);
+		creature->clearDots()
 		doAnimations(creature, creatureTarget);
 
 		checkForTef(creature, creatureTarget);
-		creature->clearDots()
 
 		return SUCCESS;
 	}
