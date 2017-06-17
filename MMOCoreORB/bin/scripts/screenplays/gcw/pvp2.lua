@@ -94,8 +94,7 @@ spawnSceneObject("kaas", "object/tangible/beta/beta_terminal_wound.iff", -5101.6
 	
 	--elevator01 done
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", -54.4198, 173.835, 20.1647, 4336904, 0.7, 0, 0.7, 0)
-	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", -54.4908, 181.335, 20.1559, 4336904, 0.7, 0, 0.7, 0)
-	
+        spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", -54.3557, 181.335, 20.0478, 4336904, -0.707107, 0, -0.707107, 0)	
 	--elevator02 done
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", 48.9851, 173.835, 205.601, 4336905, -0.7, 0, 0.7, 0)
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 48.9717, 192.335, 205.611, 4336905, -0.7, 0, 0.7, 0)
