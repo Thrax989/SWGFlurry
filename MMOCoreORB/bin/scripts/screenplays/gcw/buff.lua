@@ -66,7 +66,7 @@ function buff:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-		if (player:isImperial() or player:isRebel()) then
+		if (player:isPeaced()) then
 			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the buff Zone!")
 			player:sendSystemMessage("You have left the buff zone!")
 		end
