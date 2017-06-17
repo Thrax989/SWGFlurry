@@ -32,11 +32,25 @@ death_watch_battle_droid = Creature:new {
 		"object/mobile/death_watch_battle_droid_03.iff"},
 	lootGroups = {
 		{
-			groups = {
+		groups = {
 				{group = "death_watch_bunker_commoners", chance = 10000000}
-			},
+		},
 			lootChance = 10000000
-		}
+		},
+		{
+	    	groups = {
+				{group = "death_watch_bunker_ingredient_binary", chance = 10000000}
+
+		},
+			lootChance = 1500000
+		},
+		{
+	    	groups = {
+				{group = "death_watch_bunker_ingredient_protective", chance = 10000000}
+
+		},
+			lootChance = 1500000
+		},
 	},
 	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",
