@@ -51,8 +51,6 @@ object_building_general_space_dungeon_star_destroyer = object_building_general_s
 	templateType = CLONINGBUILDING,
 
 	childObjects = {
- spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", -54.419, 181.335, 20.0769, 4336904, -0.707107, 0, -0.707107, 0)
- spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", -54.4193, 173.835, 20.0002, 4336904, -0.707107, 0, -0.707107, 0)	
 	}
 }
 
