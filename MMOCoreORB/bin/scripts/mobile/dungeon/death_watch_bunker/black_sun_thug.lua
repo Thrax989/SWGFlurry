@@ -40,9 +40,23 @@ black_sun_thug = Creature:new {
 				{group = "jetpack_base", chance = 50000},
 				{group = "wearables_common", chance = 500000},
 				{group = "wearables_uncommon", chance = 500000}
-			},
+		},
 			lootChance = 10000000
-		}
+		},
+		{
+	    	groups = {
+				{group = "bounty_hunter_schematics", chance = 10000000}
+
+		},
+			lootChance = 1000000
+		},
+		{
+	    	groups = {
+				{group = "mandalorian_schematics", chance = 10000000}
+
+		},
+			lootChance = 1000000
+		},
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
