@@ -164,7 +164,7 @@ public:
 			if (hasFr2) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_2); }
 			if (hasFr3) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_3); }
 			}
-		return doCombatAction(creature, target);
+		return res;
 	}
 
 };
