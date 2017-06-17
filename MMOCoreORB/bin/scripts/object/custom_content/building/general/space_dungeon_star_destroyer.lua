@@ -51,67 +51,34 @@ object_building_general_space_dungeon_star_destroyer = object_building_general_s
 	templateType = CLONINGBUILDING,
 
 	childObjects = {
-		--elevator00
-		{templateFile = "object/tangible/terminal/terminal_elevator_up.iff", x = 54.42, z = 20.6, y = 173.8, ow = 0.7, ox = 0, oy = -0.7, oz = 0, cellid = 37, containmentType = -1},
-		{templateFile = "object/tangible/terminal/terminal_elevator_down.iff", x = 54.2, z = 20.6, y = 181.334, ow = 0.7, ox = 0, oy = -0.7, oz = 0, cellid = 37, containmentType = -1},
-		
-		--elevator01
-		{templateFile = "object/tangible/terminal/terminal_elevator_up.iff", x = -54.367, z = 20.03, y = 173.8349, ow = 0.7, ox = 0, oy = 0.7, oz = 0, cellid = 38, containmentType = -1},
-		{templateFile = "object/tangible/terminal/terminal_elevator_down.iff", x = -54.438, z = 20, y = 181.33, ow = 0.7, ox = 0, oy = -0.7, oz = 0, cellid = 38, containmentType = -1},
-		
-		--elevator02
-		{templateFile = "object/tangible/terminal/terminal_elevator_up.iff", x = 48.98, z = 205.63, y = 173.83, ow = 0.7, ox = 0, oy = -0.7, oz = 0, cellid = 39, containmentType = -1},
-		{templateFile = "object/tangible/terminal/terminal_elevator_down.iff", x = 48.98, z = 205.61, y = 183.33, ow = 0.7, ox = 0, oy = -0.7, oz = 0, cellid = 39, containmentType = -1},
-
-		--elevator03
-		{templateFile = "object/tangible/terminal/terminal_elevator_up.iff", x = 19.99, z = 430.5768, y = 170.58, ow = 0.7, ox = 0, oy = -0.7, oz = 0, cellid = 48, containmentType = -1},
-		{templateFile = "object/tangible/terminal/terminal_elevator_down.iff", x = 48.98, z = 205.61, y = 183.33, ow = 0.7, ox = 0, oy = -0.7, oz = 0, cellid = 48, containmentType = -1},	
-
-		--elevator04
-		{templateFile = "object/tangible/terminal/terminal_elevator_up.iff", x = 21.39, z = 341.89, y = 448.6, ow = 0.7, ox = 0, oy = -0.7, oz = 0, cellid = 55, containmentType = -1},
-		{templateFile = "object/tangible/terminal/terminal_elevator_down.iff", x = 21.44, z = 341.89, y = 453.6, ow = 0.7, ox = 0, oy = -0.7, oz = 0, cellid = 55, containmentType = -1},
-
-		--elevator05
-		{templateFile = "object/tangible/terminal/terminal_elevator_up.iff", x = -21.29, z = 341.87, y = 448.6, ow = 0.7, ox = 0, oy = 0.7, oz = 0, cellid = 56, containmentType = -1},
-		{templateFile = "object/tangible/terminal/terminal_elevator_down.iff", x = -21.29, z = 341.87, y = 453.6, ow = 0.7, ox = 0, oy = 0.7, oz = 0, cellid = 56, containmentType = -1},
-
-		--reactorlift
-		{templateFile = "object/tangible/terminal/terminal_elevator_up.iff", x = 19.76, z = 347.586, y = 170.58, ow = 1, ox = 0, oy = 0, oz = 0, cellid = 40, containmentType = -1},
-		{templateFile = "object/tangible/terminal/terminal_elevator_down.iff", x = 19.76, z = 347.586, y = 140.58, ow = 1, ox = 0, oy = 0, oz = 0, cellid = 40, containmentType = -1},			
+	--elevator00 done
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", 54.44, 173.835, 20.1186, 4336903, -0.7, 0, 0.7, 0)
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 54.4198, 181.335, 20.1185, 4336903, -0.7, 0, 0.7, 0)
+	
+	--elevator01 done
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", -54.4198, 173.835, 20.1647, 4336904, 0.7, 0, 0.7, 0)
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", -54.4908, 181.335, 20.1559, 4336904, 0.7, 0, 0.7, 0)
+	
+	--elevator02 done
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", 48.9851, 173.835, 205.601, 4336905, -0.7, 0, 0.7, 0)
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 48.9717, 192.335, 205.611, 4336905, -0.7, 0, 0.7, 0)
+	
+	--elevator03 done
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", 19.9851, 170.585, 430.571, 4336914, 0, 0, -1, 0)
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 20.0174, 453.359, 430.567, 4336914, 0, 0, -1, 0)
+	
+	--elevator04
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", 21.41, 448.607, 341.828, 4336921, -0.7, 0, 0.7, 0)
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 21.41, 453.609, 341.828, 4336921, -0.7, 0, 0.7, 0)
+	
+	--elevator05 done
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", -21.42, 448.609, 341.822, 4336922, 0.7, 0, 0.7, 0)
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", -21.42, 453.609, 341.916, 4336922, 0.7, 0, 0.7, 0)
+	
+	--reactorlift done
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", 19.9601, 140.585, 347.612, 4336906, 1, 0, 0, 0)
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 19.9884, 170.585, 347.603, 4336906, 1, 0, 0, 0)			
 	}
 }
 
 ObjectTemplates:addTemplate(object_building_general_space_dungeon_star_destroyer, "object/building/general/space_dungeon_star_destroyer.iff")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
