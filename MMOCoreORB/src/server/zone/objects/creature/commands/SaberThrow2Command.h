@@ -51,24 +51,9 @@ public:
 		if (creature != creatureTarget && !CollisionManager::checkLineOfSight(creature, creatureTarget)) {
 			return GENERALERROR;
 		}
-
-		if (!creature->checkCooldownRecovery("used_Saber_Throw")) {
-					StringIdChatParameter stringId;
-
-					Time* cdTime = creature->getCooldownTime("used_Saber_Throw");
-
-
-					int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
-
-					stringId.setStringId("You must waiting....");
-					stringId.setDI(timeLeft);
-					creature->sendSystemMessage(stringId);
-					return 0;
-		}
 		
 		if (creature->isAttackableBy(creatureTarget) && creature->isInRange(creatureTarget, 32)) {
 
-			creature->addCooldown("used_Saber_Throw", 5);
 		}else{
 				return INVALIDTARGET;
 		}
