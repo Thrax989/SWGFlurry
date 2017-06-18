@@ -188,10 +188,10 @@ CityTaxes = {
 CitySpecializations = {
 	{--Sample Rich
 		name = "@city/city:city_spec_sample_rich",
-		cost = 7000,
+		cost = 200000,
 		skillMods = {
-			{"private_spec_samplesize", 250},
-			{"private_spec_samplerate", 250}
+			{"private_spec_samplesize", 100},
+			{"private_spec_samplerate", 100}
 		}
 	},
 	{--Manufacturing Center
@@ -230,10 +230,18 @@ CitySpecializations = {
 		}
 	},
 	{--Entertainment District
-		name = "@city/city:city_spec_entertainer",
-		cost = 80000,
+		name = "Headquarters",
+		cost = 2000000,
 		skillMods = {
-			{"private_spec_entertainer", 10}
+			{"private_spec_entertainer", 10},
+			{"private_spec_missions", 15},
+			{"private_defense", 90},
+			{"private_spec_experimentation", 15},
+			{"private_spec_cloning", 20},
+			{"private_medical_rating", 10},
+			{"private_spec_assembly", 10},
+			{"private_spec_samplesize", 20},
+			{"private_spec_samplerate", 10}
 		}
 	},
 	{--Stronghold
