@@ -49,7 +49,7 @@ which carries forward this exception.
 #include "CombatQueueCommand.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/objects/creature/buffs/SingleUseBuff.h"
-#include "JediQueueCommand.h"
+
 
 class PistolWhip2Command : public CombatQueueCommand {
 public:
@@ -150,23 +150,7 @@ public:
 			creatureTarget->playEffect("clienteffect/sm_pistol_whip.cef", "");
 			}
 
-		if (creature->hasBuff(STRING_HASHCODE("burstrun")) || creature->hasBuff(STRING_HASHCODE("retreat"))) {
-			creature->removeBuff(STRING_HASHCODE("burstrun"));
-			creature->removeBuff(STRING_HASHCODE("retreat"));
-		}
-		const bool hasFr1 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_1);
-		const bool hasFr2 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_2);
-		const bool hasFr3 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_3);
-		int res = doCombatAction(creature, target);
-
-		CombatManager* combatManager = CombatManager::instance();
-		if (res == SUCCESS && (hasFr1 || hasFr2 || hasFr3)) {
-			Locker clocker(creatureTarget, creature);
-			if (hasFr1) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_1); }
-			if (hasFr2) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_2); }
-			if (hasFr3) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_3); }
-			}
-		return res;
+		return doCombatAction(creature, target);
 	}
 
 };

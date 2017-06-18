@@ -51,7 +51,7 @@ public:
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
 
-		targetCreature->playEffect("clienteffect/cbt_explode_asteroid_gas_large.cef.cef.cef", "");
+		targetCreature->playEffect("clienteffect/cbt_explode_asteroid_gas_large.cef", "");
 
 		return doCombatAction(creature, target);
 	}
