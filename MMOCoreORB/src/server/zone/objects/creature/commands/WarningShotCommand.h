@@ -79,12 +79,12 @@ public:
     		  	targetCreature->setPosture(CreaturePosture::KNOCKEDDOWN);
 
 			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Knockdown Attempt  Has Successfully Landed");
+				creature->sendSystemMessage("Force Run Strip An Knockdwon Attempt Has Successfully Landed");
 
 		} else {
 
 			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Knockdwon Attempt Has Failed To Land");
+				creature->sendSystemMessage("Force Run Strip An Knockdwon Attempt Has Failed To Land");
 		}
 
 		return res;
