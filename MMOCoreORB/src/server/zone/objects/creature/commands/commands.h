@@ -857,6 +857,7 @@
 #include "UndergroundExplosion2Command.h"
 #include "ExtractionCommand.h"
 #include "BactaJabCommand.h"
+#include "StrangulationCommand.h"
 
 
 
