@@ -512,6 +512,7 @@ bool PlayerManagerImplementation::checkPlayerName(ClientCreateCharacterCallback*
 }
 
 void PlayerManagerImplementation::createTutorialBuilding(CreatureObject* player) {
+	Zone* zone = server->getZone("tutorial");
 	Reference<BuildingObject*> tutorial = server->createObject(STRING_HASHCODE("object/building/general/newbie_hall_skipped.iff"), 1).castTo<BuildingObject*>();
 
 	Locker locker(tutorial);
@@ -570,6 +571,7 @@ void PlayerManagerImplementation::createTutorialBuilding(CreatureObject* player)
 }
 
 void PlayerManagerImplementation::createSkippedTutorialBuilding(CreatureObject* player) {
+	Zone* zone = server->getZone("tutorial");
 	Reference<BuildingObject*> tutorial = server->createObject(STRING_HASHCODE("object/building/general/newbie_hall_skipped.iff"), 1).castTo<BuildingObject*>();
 
 	Locker locker(tutorial);
