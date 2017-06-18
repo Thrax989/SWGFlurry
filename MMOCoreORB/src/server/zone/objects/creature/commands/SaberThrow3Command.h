@@ -68,7 +68,7 @@ public:
 		
 		if (creature->isAttackableBy(creatureTarget) && creature->isInRange(creatureTarget, 32)) {
 
-			creature->addCooldown("used_Saber_Throw", 1);
+			creature->addCooldown("used_Saber_Throw", 5);
 		}else{
 				return INVALIDTARGET;
 		}
