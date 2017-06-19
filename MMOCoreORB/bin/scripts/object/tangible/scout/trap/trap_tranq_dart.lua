@@ -51,19 +51,19 @@ object_tangible_scout_trap_trap_tranq_dart = object_tangible_scout_trap_shared_t
 
 	skillMods = {},
 
-	healthCost = 200,
-	actionCost = 200, 
-	mindCost = 200,
+	healthCost = 500,
+	actionCost = 500, 
+	mindCost = 500,
 
 	maxRange = 20,
 
 	poolToDamage = HEALTH,
-	minDamage = 150,
-	maxDamage = 200,
+	minDamage = 250,
+	maxDamage = 500,
 
 	duration = 5,
-	state = IMMOBILIZED,
-	defenseMod = "",
+	state = STUNNED + DIZZY,
+	defenseMod = "dizzy_defense",
 
 	successMessage = "trap_tranq_dart_effect",
 	failMessage = "trap_tranq_dart_effect_no",

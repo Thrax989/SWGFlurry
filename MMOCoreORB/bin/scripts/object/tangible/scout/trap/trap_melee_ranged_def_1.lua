@@ -51,19 +51,19 @@ object_tangible_scout_trap_trap_melee_ranged_def_1 = object_tangible_scout_trap_
 
 	skillMods = {{"ranged_defense", -60}, {"melee_defense", -60}},
 
-	healthCost = 200,
-	actionCost = 200, 
-	mindCost = 200,
+	healthCost = 500,
+	actionCost = 500, 
+	mindCost = 500,
 
 	maxRange = 20,
 
 	poolToDamage = HEALTH,
-	minDamage = 90,
-	maxDamage = 170,
+	minDamage = 250,
+	maxDamage = 500,
 
 	duration = 5,
-	state = IMMOBILIZED,
-	defenseMod = "",
+	state = STUNNED + DIZZY,
+	defenseMod = "dizzy_defense",
 
 	successMessage = "trap_melee_ranged_def_1_effect",
 	failMessage = "sys_miss",
