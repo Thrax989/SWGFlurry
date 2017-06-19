@@ -32,11 +32,11 @@ function ISDScreenPlay:spawnMobiles()
 --spawnMobile("dungeon1", "stormtrooper", 1, -40.5371, 172.335, 341.542, 180, 4336867)
 
   
---Droid 1 Trigger
+-- 1 Trigger Stromtrooper
 	local T1Unit = spawnMobile("dungeon1", "stormtrooper", 1, -44.8084, 172.335, 318.598, 80, 4336867)print("ISD Trigger 1 Loaded")
-        	createObserver(OBJECTDESTRUCTION, "RoriImperialEncampmentScreenPlay", "notify1UnitDead", T1Unit)
+        	createObserver(OBJECTDESTRUCTION, "ISDScreenPlay", "notify1UnitDead", T1Unit)
 
---Phase 1 Of 10 Instance
+--Phase 1 IStarts Once Stromtrooper dies
 function ISDScreenPlay:notify1UnitDead(T1Unit, pKiller)
 	local player = LuaCreatureObject(pKiller)
         local pBoss = spawnMobile("dungeon1", "janta_warrior", 0, -44.8084, 172.335, 318.598, 80, 4336867) print("ISD Phase 1 Started")
