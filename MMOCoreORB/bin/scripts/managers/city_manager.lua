@@ -73,7 +73,7 @@ OldCityGracePeriod = 4320
 EnableCityWarn = true
 
 --The number of citizens required to achieve each city rank. (Outpost, Village, Township, City, Metropolis)
-CitizensPerRank = {1, 1, 1, 1, 1}
+CitizensPerRank = {2, 4, 6, 8, 10}
 --CitizensPerRank = {10, 20, 35, 55, 85}
 
 --The radius in meters of the city at each city rank. (Outpost, Village, Township, City, Metropolis)
@@ -105,15 +105,8 @@ CitiesAllowed = {
 	{"talus", {50, 50, 30, 20, 20}},
 	{"tatooine", {50, 50, 30, 20, 20}},
 	{"yavin4", {50, 50, 30, 20, 20}},
-	{"hoth", {50, 50, 30, 20, 20}},
 	{"mandalore", {50, 50, 30, 20, 20}},
-	{"taanab", {50, 50, 30, 20, 20}},
-	{"kaas", {50, 50, 30, 20, 20}},
-	{"moraband", {50, 50, 30, 20, 20}},
-	{"coruscant", {50, 50, 30, 20, 20}},
-	{"hutta", {50, 50, 30, 20, 20}},
-	{"chandrila", {50, 50, 30, 20, 20}},
-	{"jakku", {50, 50, 30, 20, 20}}
+	{"taanab", {50, 50, 30, 20, 20}}
 }
 
 

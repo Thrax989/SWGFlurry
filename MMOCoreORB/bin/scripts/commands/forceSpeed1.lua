@@ -43,7 +43,7 @@
 
 ForceSpeed1Command = {
         name = "forcespeed1",
-        forceCost = 150,
+        forceCost = 500,
         duration = 180,
         --animationCRC = hashCode()
         clientEffect = "clienteffect/pl_force_speed_self.cef"

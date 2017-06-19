@@ -17,7 +17,7 @@ professions = {
 	"outdoors_scout",
 	"science_medic",
 	"social_entertainer"
-	--"combat_spy"
+	---"combat_spy"
 }
 
 marksmanPistol = "object/weapon/ranged/pistol/pistol_cdef.iff"
@@ -56,7 +56,7 @@ professionSpecificItems = {
 	outdoors_scout = { genericTool },
 	science_medic = { foodTool },
 	social_entertainer = { slitherhorn }
-	--combat_spy = { marksmanPistol }
+	---combat_spy = { marksmanPistol }
 }
 
 commonStartingItems = { marojMelon, survivalKnife, x31Speeder }

@@ -22,8 +22,11 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		if (!creature->isInCombat())
-			return false;
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
+	
+		if (!weapon->isRangedWeapon()) {
+			return INVALIDWEAPON;
+		};
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
@@ -35,6 +38,7 @@ public:
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
 		if (object == NULL || !object->isCreatureObject())
+			creature->sendSystemMessage("You can not use on NPC's");	
 			return INVALIDTARGET;
 
 		CreatureObject* creatureTarget = cast<CreatureObject*>( object.get());
@@ -70,7 +74,7 @@ public:
 		if (targetGhost == NULL || playerObject == NULL)
 			return GENERALERROR;
 
-		if (creature->getDistanceTo(creatureTarget) > 45.f){
+		if (creature->getDistanceTo(creatureTarget) > 10.f){
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
 
@@ -83,7 +87,7 @@ public:
 			creatureTarget->setSnaredState(8);
 			//creatureTarget->playEffect("clienteffect/carbine_snare.cef", "");
 			creatureTarget->sendSystemMessage("You have been snared");
-			creature->addCooldown("explosion", 60 * 1000);
+			creature->addCooldown("explosion", 30 * 1000);
 
 		}
 
@@ -98,7 +102,13 @@ public:
 			buff->setSpeedMultiplierMod(0.01f);
 			creatureTarget->addBuff(buff);
 			creatureTarget->playEffect("clienteffect/underground_explosion.cef", "");
-			}
+}
+
+		if (creature->hasBuff(STRING_HASHCODE("burstrun")) || creature->hasBuff(STRING_HASHCODE("retreat"))) {
+			creature->removeBuff(STRING_HASHCODE("burstrun"));
+			creature->removeBuff(STRING_HASHCODE("retreat"));
+		}
+
 		return doCombatAction(creature, target);
 	}
 

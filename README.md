@@ -27,7 +27,8 @@ Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 # Required Mod The Galaxy TRE Files
 www.swgflurry.com/TRE/
 <br>
-	maxSearchPriority=27<br>
+	maxSearchPriority=28<br>
+	searchTree_00_26=mtg22.tre<br>
 	searchTree_00_25=species.tre<br>
 	searchTree_00_24=pallet.tre<br>
 	searchTree_00_23=pods.tre<br>

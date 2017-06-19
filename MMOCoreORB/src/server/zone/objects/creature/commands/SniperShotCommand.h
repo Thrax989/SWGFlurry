@@ -27,9 +27,10 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		if (!creature->isKneeling() ) {
-			creature->sendSystemMessage("You Must Be Kneeling Inorder To Use Sniper Shot");
-	              return GENERALERROR;
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
+
+		if (!weapon->isRangedWeapon()) {
+			return INVALIDWEAPON;
 		}
 
 		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);

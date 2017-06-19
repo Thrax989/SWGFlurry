@@ -60,6 +60,18 @@ FireAcidCone2Command = {
 	animType = GENERATE_INTENSITY,
 
 	combatSpam = "fireacidcone2",
+	dotEffects = {
+	  DotEffect( 
+		BLEEDING, 
+		{ "resistance_bleeding", "bleed_resist" },
+		ACTION,
+		true,
+		0,
+		100,
+		60, 
+		60
+	  )
+	},
 	
 	weaponType = SPECIALHEAVYWEAPON,
 	

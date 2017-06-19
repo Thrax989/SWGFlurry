@@ -53,7 +53,7 @@ Melee2hSpinAttack1Command = {
 	mindCostMultiplier = 1.0,
 
 	areaAction = true,
-	areaRange = 16,
+	areaRange = 10,
 	
 	weaponType = TWOHANDMELEEWEAPON,
 

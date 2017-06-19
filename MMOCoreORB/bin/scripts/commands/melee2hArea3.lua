@@ -57,7 +57,7 @@ Melee2hArea3Command = {
 		{}, 
 		{ "dizzy_defense", "resistance_states" }, 
 		{ "jedi_state_defense" }, 
-		30, 
+		85, 
 		0, 
 		30
 	  ),
@@ -72,7 +72,7 @@ Melee2hArea3Command = {
 	  )
 	},
 
-	areaRange = 16,
+	areaRange = 10,
 	areaAction = true,
 
 	animation = "lower_posture_2hmelee_5",

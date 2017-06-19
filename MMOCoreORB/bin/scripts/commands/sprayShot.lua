@@ -49,6 +49,7 @@ SprayShotCommand = {
 	healthCostMultiplier = 1,
 	actionCostMultiplier = 1,
 	mindCostMultiplier = 1,
+	accuracyBonus = 50,
 
 	stateEffects = {
 	  StateEffect(
@@ -56,7 +57,7 @@ SprayShotCommand = {
 		{},
 		{ "dizzy_defense", "resistance_states" },
 		{ "jedi_state_defense" },
-		60,
+		85,
 		0,
 		30
 	  ),

@@ -498,3 +498,6 @@ includeFile("groups/freedom_lg.lua")
 includeFile("groups/wings_lg.lua")
 includeFile("groups/cyberhand_lg.lua")
 includeFile("groups/carbonite_lg.lua")
+
+includeFile("groups/loot_schematic/bounty_hunter/bounty_hunter_schematics.lua")
+includeFile("groups/loot_schematic/mandalorian/mandalorian_schematics.lua")

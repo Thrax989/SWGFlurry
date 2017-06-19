@@ -21,15 +21,12 @@ public:
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
 
+
 		if (!checkStateMask(creature))
 			return INVALIDSTATE;
 
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
-
-		if (creature->isInvisible()) {
-			return GENERALERROR;
-		}
 
 		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
 
@@ -37,65 +34,62 @@ public:
 			return INVALIDWEAPON;
 		}
 
-		Reference<SceneObject*> object = server->getZoneServer()->getObject(target);
-		ManagedReference<CreatureObject*> creatureTarget = cast<CreatureObject*>( object.get());
+		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
 
-		if (creatureTarget == NULL)
-			return GENERALERROR;
+		CreatureObject* targetCreature = cast<CreatureObject*>(targetObject.get());
 
+		if (targetCreature == NULL)
+			return INVALIDTARGET;
 
-		if (creature->getDistanceTo(object) > 62.f){
-			creature->sendSystemMessage("You are out of range.");
-			return GENERALERROR;
+		if (!targetCreature->isAttackableBy(creature))
+			return INVALIDTARGET;
+
+		CreatureObject* player = cast<CreatureObject*>(creature);
+
+		if (!creature->checkCooldownRecovery("warning_shot")) {
+   			StringIdChatParameter stringId;
+
+   			Time* cdTime = creature->getCooldownTime("warning_shot");
+
+   			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+
+   			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+   			stringId.setDI(timeLeft);
+   			creature->sendSystemMessage(stringId);
+   			        return GENERALERROR;
+   		       }
+
+ 		player->addCooldown("warning_shot", 10 * 1000); // 10 second cooldown
+		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
+
+		const bool hasFr1 = targetCreature->hasBuff(BuffCRC::JEDI_FORCE_RUN_1);
+		const bool hasFr2 = targetCreature->hasBuff(BuffCRC::JEDI_FORCE_RUN_2);
+		const bool hasFr3 = targetCreature->hasBuff(BuffCRC::JEDI_FORCE_RUN_3);
+		int res = doCombatAction(creature, target);
+		int chance = 50;
+
+		CombatManager* combatManager = CombatManager::instance();
+		if (res == SUCCESS && System::random(100) > chance && (hasFr1 || hasFr2 || hasFr3)) {
+			Locker clocker(targetCreature, creature);
+			if (hasFr1) { targetCreature->removeBuff(BuffCRC::JEDI_FORCE_RUN_1); }
+			if (hasFr2) { targetCreature->removeBuff(BuffCRC::JEDI_FORCE_RUN_2); }
+			if (hasFr3) { targetCreature->removeBuff(BuffCRC::JEDI_FORCE_RUN_3); }
+
+			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
+    		  	targetCreature->setPosture(CreaturePosture::KNOCKEDDOWN);
+
+			if (creature->isPlayerCreature())
+				creature->sendSystemMessage("Force Run Strip An Knockdwon Attempt Has Successfully Landed");
+
+		} else {
+
+			if (creature->isPlayerCreature())
+				creature->sendSystemMessage("Force Run Strip An Knockdwon Attempt Has Failed To Land");
 		}
 
-		PlayerManager* playerManager = server->getPlayerManager();
-
-		if (creature != creatureTarget && !CollisionManager::checkLineOfSight(creature, creatureTarget)) {
-			return GENERALERROR;
-		}
-
-		if (!creature->checkCooldownRecovery("used_warning")) {
-					StringIdChatParameter stringId;
-
-					Time* cdTime = creature->getCooldownTime("used_warning");
-
-
-					int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
-
-					stringId.setStringId("You must waiting....");
-					stringId.setDI(timeLeft);
-					creature->sendSystemMessage(stringId);
-					return 0;
-		}
-		if (creature->isAttackableBy(creatureTarget) && creature->isInRange(creatureTarget, 62)) {
-
-			creature->addCooldown("used_warning", 10);
-		}else{
-				return INVALIDTARGET;
-		}
-
-		const bool hasFr1 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_1);
-		const bool hasFr2 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_2);
-		const bool hasFr3 = creatureTarget->hasBuff(BuffCRC::JEDI_FORCE_RUN_3);
-
-		if(hasFr2 || hasFr3) {
-			creature->sendSystemMessage(creatureTarget->getFirstName() + "'s Force Run has been disrupted by your attack and you have taken wound damage!");
-			creatureTarget->sendSystemMessage("Your Force Run has been disrupted by" + creature->getFirstName() + ".");
-
-			Locker lock(creatureTarget);
-			if (hasFr1) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_1); }
-			if (hasFr2) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_2); }
-			if (hasFr3) { creatureTarget->removeBuff(BuffCRC::JEDI_FORCE_RUN_3); }
-
-			creature->addWounds(CreatureAttribute::QUICKNESS, 200, true);
-		}
-
-
-
-		return doCombatAction(creature, target);
+		return res;
 	}
 
 };
 
-#endif //WARNINGSHOTCOMMAND_H_
+#endif //SNIPERSHOTCOMMAND_H_

@@ -53,7 +53,7 @@ PolearmSpinAttack1Command = {
 	mindCostMultiplier = 1.0,
 
 	areaAction = true,
-	areaRange = 16,
+	areaRange = 10,
 
 	animation = "attack_high_left_light_2",
 

@@ -51,17 +51,17 @@ object_tangible_scout_trap_trap_enraging_spur = object_tangible_scout_trap_share
 
 	skillMods = {},
 
-	healthCost = 17,
-	actionCost = 30, 
-	mindCost = 17,
+	healthCost = 200,
+	actionCost = 200, 
+	mindCost = 200,
 
-	maxRange = 32,
+	maxRange = 20,
 
 	poolToDamage = MIND,
 	minDamage = 40,
 	maxDamage = 60,
 
-	duration = 10,
+	duration = 5,
 	state = BLINDED,
 	defenseMod = "blind_defense",
 

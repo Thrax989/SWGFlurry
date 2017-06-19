@@ -253,8 +253,7 @@ createTrainerConversationTemplate("trainer_jmt", "force_title_jedi_master", "tra
 createTrainerConversationTemplate("trainer_rebel_navy", "pilot_rebel_navy_master", "trainer_rebel_navy_convotemplate")
 createTrainerConversationTemplate("trainer_imperial_navy", "pilot_imperial_navy_master", "trainer_imperial_navy_convotemplate")
 createTrainerConversationTemplate("trainer_neutral", "pilot_neutral_master", "trainer_neutral_convotemplate")
-createTrainerConversationTemplate("trainer_miner", "miner_survey_master", "trainer_miner_convotemplate")
-createTrainerConversationTemplate("trainer_elite_polearm", "elite_polearm_master", "trainer_elite_polearm_convotemplate")
+createTrainerConversationTemplate("trainer_spy", "combat_spy_master", "trainer_spy_convotemplate")
 
 -- ****** Create force sensitive conversation templates ******
 -- Need a non-valid master skill...

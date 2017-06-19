@@ -1853,4 +1853,13 @@ schematics = {
 	{path="object/draft_schematic/weapon/pistol_pvp.iff"},
 	{path="object/draft_schematic/weapon/pistol_rebel.iff"},
 	{path="object/draft_schematic/weapon/pistol_westar_34.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_bracer_l.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_bracer_r.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_bicep_l.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_bicep_r.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_boots.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_chest_plate.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_leggings.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_gloves.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_helmet.iff"},
 };

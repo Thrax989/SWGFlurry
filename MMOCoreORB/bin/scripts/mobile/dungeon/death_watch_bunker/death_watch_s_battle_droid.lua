@@ -34,9 +34,23 @@ death_watch_s_battle_droid = Creature:new {
 		{
 			groups = {
 				{group = "death_watch_bunker_commoners", chance = 10000000}
-			},
+		},
 			lootChance = 10000000
-		}
+		},
+		{
+	    	groups = {
+				{group = "death_watch_bunker_ingredient_binary", chance = 10000000}
+
+		},
+			lootChance = 2500000
+		},
+		{
+	    	groups = {
+				{group = "death_watch_bunker_ingredient_protective", chance = 10000000}
+
+		},
+			lootChance = 2500000
+		},
 	},
 	conversationTemplate = "",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",

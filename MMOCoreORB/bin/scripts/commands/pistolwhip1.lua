@@ -54,7 +54,8 @@ PistolWhip1Command = {
  	--clientEffect = "clienteffect/sm_pistol_whip.cef.cef",
 	poolsToDamage = MIND_ATTRIBUTE,
 
-
+	animation = "ranged_melee", 
+	animType = GENERATE_INTENSITY,
 
 	combatSpam = "pistolwhip1",
 	

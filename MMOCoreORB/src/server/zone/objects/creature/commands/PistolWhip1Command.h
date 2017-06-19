@@ -64,9 +64,12 @@ public:
 
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
-
-		if (!creature->isInCombat())
-			return false;
+		
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
+	
+		if (!weapon->isRangedWeapon()) {
+			return INVALIDWEAPON;
+		}
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
@@ -78,6 +81,7 @@ public:
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
 		if (object == NULL || !object->isCreatureObject())
+			creature->sendSystemMessage("You can not use on NPC's");	
 			return INVALIDTARGET;
 
 		CreatureObject* creatureTarget = cast<CreatureObject*>( object.get());
@@ -126,7 +130,7 @@ public:
 			creatureTarget->setRootedState(4);
 			//creatureTarget->playEffect("clienteffect/carbine_snare.cef", "");
 			creatureTarget->sendSystemMessage("You have been rooted");
-			creature->addCooldown("pistolwhip", 60 * 1000);
+			creature->addCooldown("pistolwhip", 30 * 1000);
 
 		}
 
@@ -142,6 +146,12 @@ public:
 			creatureTarget->addBuff(buff);
 			creatureTarget->playEffect("clienteffect/sm_pistol_whip.cef", "");
 			}
+
+		if (creature->hasBuff(STRING_HASHCODE("burstrun")) || creature->hasBuff(STRING_HASHCODE("retreat"))) {
+			creature->removeBuff(STRING_HASHCODE("burstrun"));
+			creature->removeBuff(STRING_HASHCODE("retreat"));
+		}
+
 		return doCombatAction(creature, target);
 	}
 

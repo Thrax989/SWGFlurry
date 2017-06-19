@@ -65,8 +65,13 @@ includeFile("gcw/newsnet.lua")
 includeFile("gcw/pvp.lua")
 --includeFile("gcw/pvp1.lua")
 includeFile("gcw/pvp2.lua")
+includeFile("gcw/pvp3.lua")
 includeFile("gcw/recruiters/recruiterConvoHandler.lua")
 includeFile("gcw/recruiters/recruiterScreenplay.lua")
+includeFile("gcw/rorifaction.lua")
+includeFile("gcw/roripvp.lua")
+includeFile("gcw/rorigcw.lua")
+--includeFile("gcw/buff.lua")
 
 -- Quest Tasks
 includeFile("quest_tasks/task.lua")
@@ -118,6 +123,7 @@ includeFile("dungeon/corellian_corvette/bronell.lua")
 includeFile("dungeon/corellian_corvette/ds_297.lua")
 includeFile("dungeon/corellian_corvette/klaatu.lua")
 includeFile("dungeon/corellian_corvette/lt_lance.lua")
+--includeFile("dungeon/isd/isd.lua")
 
 -- Village
 includeFile("village/village_community_crafting.lua")
@@ -656,3 +662,6 @@ includeFile("poi/ShadowCollectiveCave.lua")
 includeFile("poi/TaungWarriorBunker.lua")
 includeFile("poi/VizslaHideout.lua")
 includeFile("static_spawns/taanab_static_spawns.lua")
+
+--Restuss Cloner
+includeFile("gcw/restuss_cloner.lua")

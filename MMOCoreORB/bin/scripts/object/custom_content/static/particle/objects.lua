@@ -1,14 +1,67 @@
 --New
-object_static_particle_shared_pt_fire_huge_smokeless = SharedTangibleObjectTemplate:new {
+object_static_particle_shared_pt_fire_huge_smokeless = SharedStaticObjectTemplate:new {
 	clientTemplateFileName = "object/static/particle/shared_pt_fire_huge_smokeless.iff"
 }
 ObjectTemplates:addClientTemplate(object_static_particle_shared_pt_fire_huge_smokeless, "object/static/particle/shared_pt_fire_huge_smokeless.iff")
 
-object_static_particle_shared_pt_campfire_smokeless_s01 = SharedTangibleObjectTemplate:new {
+object_static_particle_shared_pt_campfire_smokeless_s01 = SharedStaticObjectTemplate:new {
 	clientTemplateFileName = "object/static/particle/shared_pt_campfire_smokeless_s01.iff"
 }
 ObjectTemplates:addClientTemplate(object_static_particle_shared_pt_campfire_smokeless_s01, "object/static/particle/shared_pt_campfire_smokeless_s01.iff")
+--****************************************************************************************************************************************
+object_static_particle_shared_pt_waterfall_kashyyyk_5x30 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/particle/shared_pt_waterfall_kashyyyk_5x30.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_particle_shared_pt_waterfall_kashyyyk_5x30, "object/static/particle/shared_pt_waterfall_kashyyyk_5x30.iff")
 
+--**************************************************
+
+object_static_particle_shared_pt_waterfall_kashyyyk_5x50 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/particle/shared_pt_waterfall_kashyyyk_5x50.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_particle_shared_pt_waterfall_kashyyyk_5x50, "object/static/particle/shared_pt_waterfall_kashyyyk_5x50.iff")
+
+--**************************************************
+
+object_static_particle_shared_pt_waterfall_kashyyyk_10x4 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/particle/shared_pt_waterfall_kashyyyk_10x4.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_particle_shared_pt_waterfall_kashyyyk_10x4, "object/static/particle/shared_pt_waterfall_kashyyyk_10x4.iff")
+
+--**************************************************
+
+object_static_particle_shared_pt_waterfall_kashyyyk_20x20 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/particle/shared_pt_waterfall_kashyyyk_20x20.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_particle_shared_pt_waterfall_kashyyyk_20x20, "object/static/particle/shared_pt_waterfall_kashyyyk_20x20.iff")
+
+--**************************************************
+
+object_static_particle_shared_pt_waterfall_kashyyyk_20x33 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/particle/shared_pt_waterfall_kashyyyk_20x33.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_particle_shared_pt_waterfall_kashyyyk_20x33, "object/static/particle/shared_pt_waterfall_kashyyyk_20x33.iff")
+
+--**************************************************
+
+object_static_particle_shared_pt_waterfall_kashyyyk_20x43 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/particle/shared_pt_waterfall_kashyyyk_20x43.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_particle_shared_pt_waterfall_kashyyyk_20x43, "object/static/particle/shared_pt_waterfall_kashyyyk_20x43.iff")
+
+--**************************************************
+
+object_static_particle_shared_pt_waterfall_kashyyyk_20x50 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/particle/shared_pt_waterfall_kashyyyk_20x50.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_particle_shared_pt_waterfall_kashyyyk_20x50, "object/static/particle/shared_pt_waterfall_kashyyyk_20x50.iff")
+
+--**************************************************
+
+object_static_particle_shared_pt_waterfall_kashyyyk_all_s01 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/particle/shared_pt_waterfall_kashyyyk_all_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_particle_shared_pt_waterfall_kashyyyk_all_s01, "object/static/particle/shared_pt_waterfall_kashyyyk_all_s01.iff")
 
 
 

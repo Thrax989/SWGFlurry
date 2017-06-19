@@ -51,7 +51,37 @@ FastBlastCommand = {
 	mindCostMultiplier = 1,
 	accuracyBonus = 95,
 
-	poolsToDamage = HEALTH_ATTRIBUTE + ACTION_ATTRIBUTE + MIND_ATTRIBUTE,
+	stateEffects = {
+	  StateEffect(
+		DIZZY_EFFECT,
+		{},
+		{ "dizzy_defense", "resistance_states" },
+		{ "jedi_state_defense" },
+		85,
+		0,
+		30
+	  ),	
+  	StateEffect(
+		BLIND_EFFECT,
+		{},
+		{ "blind_defense", "resistance_states" },
+		{ "jedi_state_defense" },
+		100,
+		0,
+		30
+	  ),
+	  StateEffect(
+		STUN_EFFECT,
+		{},
+		{ "stun_defense", "resistance_states" },
+		{ "jedi_state_defense" },
+		30,
+		0,
+		10
+	    )
+ 	},
+
+	poolsToDamage = HEALTH_ATTRIBUTE,
 
 	animation = "fire_5_special_single", 
 	animType = GENERATE_RANGED,

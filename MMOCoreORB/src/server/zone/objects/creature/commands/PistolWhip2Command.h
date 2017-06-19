@@ -50,11 +50,13 @@ which carries forward this exception.
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/objects/creature/buffs/SingleUseBuff.h"
 
+
 class PistolWhip2Command : public CombatQueueCommand {
 public:
 
 	PistolWhip2Command(const String& name, ZoneProcessServer* server)
-		: CombatQueueCommand(name, server) {
+		: CombatQueueCommand(name, server) { 
+
 	}
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
@@ -65,8 +67,11 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		if (!creature->isInCombat())
-			return false;
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
+	
+		if (!weapon->isRangedWeapon()) {
+		return INVALIDWEAPON;
+		}
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
@@ -78,6 +83,7 @@ public:
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
 		if (object == NULL || !object->isCreatureObject())
+			creature->sendSystemMessage("You can not use on NPC's");	
 			return INVALIDTARGET;
 
 		CreatureObject* creatureTarget = cast<CreatureObject*>( object.get());
@@ -122,11 +128,12 @@ public:
 			return GENERALERROR;
 		}
 
+		
 		if (object->isCreatureObject() && creatureTarget->isAttackableBy(creature)) {
 			creatureTarget->setRootedState(10);
 			//creatureTarget->playEffect("clienteffect/carbine_snare.cef", "");
 			creatureTarget->sendSystemMessage("You have been rooted");
-			creature->addCooldown("pistolwhip", 60 * 1000);
+			creature->addCooldown("pistolwhip", 30 * 1000);
 
 		}
 
@@ -142,6 +149,7 @@ public:
 			creatureTarget->addBuff(buff);
 			creatureTarget->playEffect("clienteffect/sm_pistol_whip.cef", "");
 			}
+
 		return doCombatAction(creature, target);
 	}
 

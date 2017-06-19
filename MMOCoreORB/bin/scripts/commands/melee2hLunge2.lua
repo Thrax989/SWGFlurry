@@ -56,7 +56,7 @@ Melee2hLunge2Command = {
 
 	combatSpam = "lungeslam",
 
-	range = 20,
+	range = 10,
 
 	weaponType = TWOHANDMELEEWEAPON,
 

@@ -50,7 +50,7 @@ Melee2hArea1Command = {
 	mindCostMultiplier = 0.50,
         accuracyBonus = 10,
 
-	areaRange = 16,
+	areaRange = 10,
 	areaAction = true,
 	stateEffects = {
 	  StateEffect( 

@@ -41,6 +41,13 @@
 --Children folder includes
 
 -- Server Objects
+includeFile("custom_content/building/kashyyyk/frn_sordaan_armory_static.lua")
+includeFile("custom_content/building/kashyyyk/thm_kash_rodian_bannerpole_s01.lua")
+includeFile("custom_content/building/kashyyyk/thm_kash_rodian_flagpole_s01.lua")
+includeFile("custom_content/building/kashyyyk/uber_animal_hide_rack.lua")
+includeFile("custom_content/building/kashyyyk/uber_animal_hide_rack_s02.lua")
+includeFile("custom_content/building/kashyyyk/uber_animal_hide_rack_s03.lua")
+includeFile("custom_content/building/kashyyyk/uber_animal_hide_rack_s04.lua")
 includeFile("custom_content/building/kashyyyk/cave_dead_grass_s01.lua")
 includeFile("custom_content/building/kashyyyk/cave_driftwood.lua")
 includeFile("custom_content/building/kashyyyk/cave_leaf_mound.lua")
@@ -68,6 +75,8 @@ includeFile("custom_content/building/kashyyyk/decd_wroshyr_root_s01.lua")
 includeFile("custom_content/building/kashyyyk/decd_wroshyr_root_s02.lua")
 includeFile("custom_content/building/kashyyyk/decd_wroshyr_stump_dead01.lua")
 includeFile("custom_content/building/kashyyyk/decd_wroshyr_stump_dead02.lua")
+includeFile("custom_content/building/kashyyyk/decd_wroshyr_stump_dry_01.lua")
+includeFile("custom_content/building/kashyyyk/decd_wroshyr_stump_dry_02.lua")
 includeFile("custom_content/building/kashyyyk/decd_wroshyr_tree_branches_dead01.lua")
 includeFile("custom_content/building/kashyyyk/decd_wroshyr_tree_branches_dead02.lua")
 includeFile("custom_content/building/kashyyyk/decd_wroshyr_tree_broken_dead.lua")

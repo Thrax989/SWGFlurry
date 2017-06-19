@@ -62,7 +62,7 @@ PolearmSweep2Command = {
 		0 
 	  )
 	},
-	areaRange = 16,
+	areaRange = 10,
 	areaAction = true,
 
 	animation = "knockdown_polearm_2",

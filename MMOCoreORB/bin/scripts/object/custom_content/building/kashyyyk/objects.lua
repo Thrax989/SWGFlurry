@@ -42,18 +42,56 @@
 
 -- STOT = SharedTangibleObjectTemplate
 --
---
---
---
---
---
---
 
+object_building_kashyyyk_shared_decd_wroshyr_stump_dry_01 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_decd_wroshyr_stump_dry_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_decd_wroshyr_stump_dry_01, "object/building/kashyyyk/shared_decd_wroshyr_stump_dry_01.iff")
 
+--*************************************************************
 
+object_building_kashyyyk_shared_decd_wroshyr_stump_dry_02 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_decd_wroshyr_stump_dry_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_decd_wroshyr_stump_dry_02, "object/building/kashyyyk/shared_decd_wroshyr_stump_dry_02.iff")
 
+--*************************************************************
 
-
+object_building_kashyyyk_shared_frn_sordaan_armory_static = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_frn_sordaan_armory_static.iff"
+}
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_frn_sordaan_armory_static, "object/building/kashyyyk/shared_frn_sordaan_armory_static.iff")
+--***********************************************************************************************************
+object_building_kashyyyk_shared_thm_kash_rodian_bannerpole_s01 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_thm_kash_rodian_bannerpole_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_thm_kash_rodian_bannerpole_s01, "object/building/kashyyyk/shared_thm_kash_rodian_bannerpole_s01.iff")
+--***********************************************************************************************************
+object_building_kashyyyk_shared_thm_kash_rodian_flagpole_s01 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_thm_kash_rodian_flagpole_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_thm_kash_rodian_flagpole_s01, "object/building/kashyyyk/shared_thm_kash_rodian_flagpole_s01.iff")
+--***********************************************************************************************************
+object_building_kashyyyk_shared_uber_animal_hide_rack = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_uber_animal_hide_rack.iff"
+}
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_uber_animal_hide_rack, "object/building/kashyyyk/shared_uber_animal_hide_rack.iff")
+--***********************************************************************************************************
+object_building_kashyyyk_shared_uber_animal_hide_rack_s02 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_uber_animal_hide_rack_s02.iff"
+}
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_uber_animal_hide_rack_s02, "object/building/kashyyyk/shared_uber_animal_hide_rack_s02.iff")
+--***********************************************************************************************************
+object_building_kashyyyk_shared_uber_animal_hide_rack_s03 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_uber_animal_hide_rack_s03.iff"
+}
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_uber_animal_hide_rack_s03, "object/building/kashyyyk/shared_uber_animal_hide_rack_s03.iff")
+--***********************************************************************************************************
+object_building_kashyyyk_shared_uber_animal_hide_rack_s04 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_uber_animal_hide_rack_s04.iff"
+}
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_uber_animal_hide_rack_s04, "object/building/kashyyyk/shared_uber_animal_hide_rack_s04.iff")
+--***********************************************************************************************************
 object_building_kashyyyk_shared_cave_dead_grass_s01 = SharedStaticObjectTemplate:new {
 	clientTemplateFileName = "object/building/kashyyyk/shared_cave_dead_grass_s01.iff"
 }

@@ -191,7 +191,7 @@ outbreak_boss_two = Creature:new {
     },
     },
     
-	weapons = {"creature_spit_heavy_flame"},
+	weapons = {"unarmed_weapons"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = {
 		{"creatureareacombo","StateAccuracyBonus=100"},

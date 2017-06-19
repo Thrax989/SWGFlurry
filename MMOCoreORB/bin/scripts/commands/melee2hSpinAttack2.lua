@@ -51,7 +51,7 @@ Melee2hSpinAttack2Command = {
         accuracyBonus = 10,
 
 	areaAction = true,
-	areaRange = 16,
+	areaRange = 10,
 
 	animation = "combo_4b", 
 	animType = GENERATE_INTENSITY,

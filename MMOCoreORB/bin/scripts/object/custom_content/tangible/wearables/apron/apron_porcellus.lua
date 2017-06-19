@@ -1,0 +1,5 @@
+
+object_tangible_wearables_apron_apron_porcellus = object_tangible_wearables_apron_shared_apron_porcellus:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_apron_apron_porcellus, "object/tangible/wearables/apron/apron_porcellus.iff")

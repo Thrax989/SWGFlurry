@@ -56,7 +56,7 @@ PolearmLunge1Command = {
 
 	combatSpam = "lungestrike",
 
-	range = 20,
+	range = 10,
 	
 	weaponType = POLEARMWEAPON,
 

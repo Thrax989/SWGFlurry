@@ -41,6 +41,9 @@ class CreatureObject extends TangibleObject {
 
 	protected int bankCredits;
 	protected int cashCredits;
+	
+	protected int selectedExpMode;
+	protected float personalExpMultiplier;
 
 	@dereferenced
 	protected DeltaVector<int> baseHAM;
@@ -806,6 +809,15 @@ class CreatureObject extends TangibleObject {
 		int newCredits = cashCredits + credits;
 		setCashCredits(newCredits);
 	}
+	
+		
+	public void setSelectedExpMode(int mode){
+		selectedExpMode = mode;
+	}
+	
+	public void setPersonalExpMultiplier(float multi){
+		personalExpMultiplier = multi;
+	}
 
 	@preLocked
 	public native void subtractBankCredits(int credits);
@@ -1489,6 +1501,16 @@ class CreatureObject extends TangibleObject {
 	@read
 	public int getCashCredits() {
 		return cashCredits;
+	}
+	
+		@read
+	public int getSelectedExpMode(){
+		return selectedExpMode;
+	}
+	
+	@read
+	public float getPersonalExpMultiplier(){
+		return personalExpMultiplier;
 	}
 
 	@dirty

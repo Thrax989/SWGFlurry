@@ -58,7 +58,7 @@ Melee1hSpinAttack1Command = {
 	weaponType = ONEHANDMELEEWEAPON,
 
 	areaAction = true,
-	areaRange = 16,
+	areaRange = 10,
 
 	range = -1
 }

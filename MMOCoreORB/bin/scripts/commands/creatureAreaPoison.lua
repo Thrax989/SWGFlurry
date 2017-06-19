@@ -55,11 +55,11 @@ CreatureAreaPoisonCommand = {
 		0,
 		50,
 		50, 
-		300
+		120
 	  )
 	},
 
-	areaRange = 25,
+	areaRange = 10,
 	areaAction = true
 }
 

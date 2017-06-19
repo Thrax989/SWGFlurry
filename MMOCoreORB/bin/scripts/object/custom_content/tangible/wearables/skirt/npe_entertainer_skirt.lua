@@ -1,0 +1,5 @@
+
+object_tangible_wearables_skirt_npe_entertainer_skirt = object_tangible_wearables_skirt_shared_npe_entertainer_skirt:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_skirt_npe_entertainer_skirt, "object/tangible/wearables/skirt/npe_entertainer_skirt.iff")

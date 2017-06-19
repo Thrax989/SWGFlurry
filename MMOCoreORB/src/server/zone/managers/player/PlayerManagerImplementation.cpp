@@ -513,12 +513,39 @@ bool PlayerManagerImplementation::checkPlayerName(ClientCreateCharacterCallback*
 
 void PlayerManagerImplementation::createTutorialBuilding(CreatureObject* player) {
 	Zone* zone = server->getZone("tutorial");
+	Reference<BuildingObject*> tutorial = server->createObject(STRING_HASHCODE("object/building/general/newbie_hall_skipped.iff"), 1).castTo<BuildingObject*>();
 
+	Locker locker(tutorial);
+
+	tutorial->createCellObjects();
+	tutorial->initializePosition(System::random(5000), 0, System::random(5000));
+	zone->transferObject(tutorial, -1, true);
+
+	locker.release();
+
+	Reference<SceneObject*> travelTutorialTerminal = server->createObject(STRING_HASHCODE("object/tangible/terminal/terminal_travel_tutorial.iff"), 1);
+
+	SceneObject* cellTut = tutorial->getCell(1);
+
+	Locker locker2(travelTutorialTerminal);
+
+	cellTut->transferObject(travelTutorialTerminal, -1);
+
+	travelTutorialTerminal->initializePosition(27.0f, -3.5f, -168.0f);
+
+	player->initializePosition(27.0f, -3.5f, -165.0f);
+	cellTut->transferObject(player, -1);
+	PlayerObject* ghost = player->getPlayerObject();
+	ghost->setSavedTerrainName(zone->getZoneName());
+	ghost->setSavedParentID(cellTut->getObjectID());
+
+	tutorial->updateToDatabase();
+/*------------------OLD TUTORIAL CODE----------------------
 //	const static String cell = "object/cell/cell.iff";
 
 	Reference<BuildingObject*> tutorial = server->createObject(STRING_HASHCODE("object/building/general/newbie_hall.iff"), 1).castTo<BuildingObject*>();
 
-	Locker locker(tutorial);
+//	Locker locker(tutorial);
 
 	tutorial->createCellObjects();
 	tutorial->setPublicStructure(true);
@@ -532,19 +559,19 @@ void PlayerManagerImplementation::createTutorialBuilding(CreatureObject* player)
 
 	SceneObject* cellTutPlayer = tutorial->getCell(1);
 
-	player->initializePosition(0, 0, -3);
+	player->initializePosition(3528, 5, -4802);
 
-	cellTutPlayer->transferObject(player, -1);
+	cellTutPlayer->transferObject(player, -1, true);
 	PlayerObject* ghost = player->getPlayerObject();
 	ghost->setSavedTerrainName(zone->getZoneName());
 	ghost->setSavedParentID(cellTutPlayer->getObjectID());
 
 	tutorial->updateToDatabase();
+	*/
 }
 
 void PlayerManagerImplementation::createSkippedTutorialBuilding(CreatureObject* player) {
 	Zone* zone = server->getZone("tutorial");
-
 	Reference<BuildingObject*> tutorial = server->createObject(STRING_HASHCODE("object/building/general/newbie_hall_skipped.iff"), 1).castTo<BuildingObject*>();
 
 	Locker locker(tutorial);
@@ -1546,46 +1573,17 @@ void PlayerManagerImplementation::awardExperience(CreatureObject* player, const 
 		int amount, bool sendSystemMessage, float localMultiplier) {
 
 	PlayerObject* playerObject = player->getPlayerObject();
+	
+	float perExpMulti = player->getPersonalExpMultiplier();
 
 	if (playerObject == NULL)
 		return;
-
+	
 	int xp;
 	if (amount <= 0 || xpType == "force_rank_xp") {
 		xp = playerObject->addExperience(xpType, amount);
-	} else if (xpType == "imagedesigner" ||
-		xpType == "music" ||
-		xpType == "dance" ||
-		xpType == "entertainer_healing" ||
-		xpType == "scout" ||
-		xpType == "trapping" ||
-		xpType == "camp" ||
-		xpType == "crafting_medicine_general" ||
-		xpType == "crafting_general" ||
-		xpType == "resource_harvesting_inorganic" ||
-		xpType == "creaturehandler" ||
-		xpType == "crafting_bio_engineer_creature" ||
-		xpType == "bio_engineer_dna_harvesting" ||
-		xpType == "crafting_clothing_armor" ||
-		xpType == "crafting_weapons_general" ||
-		xpType == "crafting_food_general" ||
-		xpType == "crafting_clothing_general" ||
-		xpType == "crafting_structure_general" ||
-		xpType == "crafting_droid_general" ||
-		xpType == "merchant" ||
-		xpType == "slicing" ||
-		xpType == "crafting_spice" ||
-		xpType == "political" ||
-		xpType == "bountyhunter" ||
-		xpType == "shipwright" ||
-		xpType == "fs_reflex" ||
- 		xpType == "fs_senses" ||
- 		xpType == "fs_combat" ||
- 		xpType == "fs_crafting" ||
-		xpType == "jedi_general") {
-		xp = playerObject->addExperience(xpType, (amount * 20));
-	} else {
-		xp = playerObject->addExperience(xpType, (int) (amount * localMultiplier * globalExpMultiplier));
+	}else{
+		xp = playerObject->addExperience(xpType, (int) (((amount * localMultiplier) * perExpMulti) * globalExpMultiplier));
 	}
 
 	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
@@ -2962,17 +2960,23 @@ void PlayerManagerImplementation::updateSwimmingState(CreatureObject* player, fl
 			if (fabs(16384 - intersections->get(i).getIntersectionDistance() - newZ) < 0.2) {
 				//Player is on terrain above the water.
 				player->clearState(CreatureState::SWIMMING, true);
+			      player->setSpeedMultiplierMod(1.0f);
+			      player->setAccelerationMultiplierMod(1.0f);
 				return;
 			}
 		}
 
-		//Player is in the water.
-		player->setState(CreatureState::SWIMMING, true);
+			//Player is in the water.
+			player->setState(CreatureState::SWIMMING, true);
+			player->setSpeedMultiplierMod(0.30f);
+			player->setAccelerationMultiplierMod(0.10f);
 		return;
 	}
 
 	//Terrain is above water level.
 	player->clearState(CreatureState::SWIMMING, true);
+	player->setSpeedMultiplierMod(1.0f);
+	player->setAccelerationMultiplierMod(1.0f);
 }
 
 int PlayerManagerImplementation::checkSpeedHackFirstTest(CreatureObject* player, float parsedSpeed, ValidatedPosition& teleportPosition, float errorMultiplier) {

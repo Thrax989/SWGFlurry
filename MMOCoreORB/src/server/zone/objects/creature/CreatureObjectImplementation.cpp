@@ -108,6 +108,9 @@ void CreatureObjectImplementation::initializeMembers() {
 
 	bankCredits = 0;
 	cashCredits = 0;
+	
+	selectedExpMode = 0;
+	personalExpMultiplier = 20;
 
 	pvpStatusBitmask = 0;
 
@@ -2025,6 +2028,9 @@ void CreatureObjectImplementation::notifyLoadFromDatabase() {
 
 	if (bankCredits < 0)
 		bankCredits = 0;
+	
+	selectedExpMode = getSelectedExpMode();
+	personalExpMultiplier = getPersonalExpMultiplier();
 
 	if (isIncapacitated()) {
 

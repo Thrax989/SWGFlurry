@@ -44,7 +44,7 @@
 HealStatesOtherCommand = {
         name = "healstatesother",
 	healStates = STUNNED_STATE + DIZZY_STATE + BLINDED_STATE + INTIMIDATED_STATE + FEIGNDEATH_STATE,
-	forceCost = 100,
+	forceCost = 500,
 	range = 32
 }
 

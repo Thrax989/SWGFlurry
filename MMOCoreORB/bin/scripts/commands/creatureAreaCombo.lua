@@ -43,7 +43,7 @@
 
 CreatureAreaComboCommand = {
 	name = "creatureareacombo",
-	damageMultiplier = 1.75,
+	damageMultiplier = 1.0,
 	speedMultiplier = 1,
 
 	poolsToDamage = RANDOM_ATTRIBUTE,
@@ -56,7 +56,7 @@ CreatureAreaComboCommand = {
 	actionCostMultiplier = 0,
 	mindCostMultiplier = 0,
 
-	areaRange = 25,
+	areaRange = 10,
 	areaAction = true,
 
 	stateEffects = {

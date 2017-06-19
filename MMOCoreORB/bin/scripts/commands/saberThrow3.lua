@@ -44,7 +44,7 @@
 SaberThrow3Command = {
         name = "saberthrow3",
 
-	damageMultiplier = 2.0,
+	damageMultiplier = 3.0,
 	speedMultiplier = 4.5,
 	healthCostMultiplier = 0,
 	actionCostMultiplier = 0,
@@ -55,17 +55,25 @@ SaberThrow3Command = {
 	visMod = 25,
 
 	stateEffects = {
-	   StateEffect( 
+	  StateEffect(
+		DIZZY_EFFECT,
+		{},
+		{ "dizzy_defense", "resistance_states" },
+		{ "jedi_state_defense" },
+		75,
+		0,
+		10
+	  ),
+	  StateEffect(
 		KNOCKDOWN_EFFECT, 
 		{ "knockdownRecovery", "lastKnockdown" }, 
 		{ "knockdown_defense" }, 
 		{}, 
-		100, 
+		75, 
 		0, 
-		0
+		0 
 	  )
 	},
-
 	animation = "saberthrow_posture_change",
 
 	combatSpam = "saberthrow3",
@@ -78,4 +86,3 @@ SaberThrow3Command = {
 }
 
 AddCommand(SaberThrow3Command)
-

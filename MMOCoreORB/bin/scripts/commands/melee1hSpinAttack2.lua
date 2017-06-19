@@ -56,7 +56,7 @@ Melee1hSpinAttack2Command = {
 	combatSpam = "blindspin",
 
 	areaAction = true,
-	areaRange = 16,
+	areaRange = 10,
 
 	stateEffects = {
 	  StateEffect( 

@@ -3,6 +3,7 @@
  *
  *  Created on: 16/01/2010
  *      Author: victor
+ 
  */
  
  /*
@@ -855,6 +856,8 @@
 #include "UndergroundExplosion1Command.h"
 #include "UndergroundExplosion2Command.h"
 #include "ExtractionCommand.h"
+#include "BactaJabCommand.h"
+#include "StrangulationCommand.h"
 
 
 

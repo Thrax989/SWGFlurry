@@ -22,10 +22,40 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		creature->playEffect("clienteffect/extraction_effect.cef", "");
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
+	
+		if (!weapon->isRangedWeapon()) {
+			return INVALIDWEAPON;
+		}
 
 
-		return doCombatAction(creature, target);
+
+		ManagedReference<SceneObject*> targetObject = creature->getZoneServer()->getObject(target);
+
+		CreatureObject* targetCreature = cast<CreatureObject*>(targetObject.get());
+
+		if (targetCreature == NULL)
+			return INVALIDTARGET;
+
+		if (creature != targetCreature && !CollisionManager::checkLineOfSight(creature, targetCreature)) {
+			creature->sendSystemMessage("You do not have a clear line of sight to the target.");
+			return INVALIDTARGET;
+		}
+
+		if (!targetCreature->isAttackableBy(creature))
+			return INVALIDTARGET;
+
+		CreatureObject* player = cast<CreatureObject*>(creature);
+		Locker clocker(targetCreature, creature);
+
+		if (creature->getDistanceTo(targetCreature) > 25.f){
+			creature->sendSystemMessage("You are out of range.");
+			return GENERALERROR;}
+
+		targetCreature->playEffect("clienteffect/extraction_effect.cef", "");
+
+
+		return doCombatAction(creature, target, arguments);
 	}
 
 };

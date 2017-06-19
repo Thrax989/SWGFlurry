@@ -51,17 +51,17 @@ object_tangible_scout_trap_trap_webber = object_tangible_scout_trap_shared_trap_
 
 	skillMods = {},
 
-	healthCost = 17,
-	actionCost = 30, 
-	mindCost = 17,
+	healthCost = 200,
+	actionCost = 200, 
+	mindCost = 200,
 
-	maxRange = 32,
+	maxRange = 20,
 
 	poolToDamage = ACTION,
 	minDamage = 120,
 	maxDamage = 200,
 
-	duration = 10,
+	duration = 5,
 	state = FROZEN,
 	defenseMod = "",
 

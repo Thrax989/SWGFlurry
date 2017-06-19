@@ -101,6 +101,10 @@ object_tangible_beta_beta_terminal_xp = object_tangible_beta_shared_beta_termina
 		{
 			"Jedi Rare Loot Box", "object/tangible/item/loot_cube.iff",
 		},
+			"Spy Profession",
+		{
+		"Master Spy",  "combat_spy_master",
+		},
 		"Force Sensitive",
 		{
 			"Crafting Mastery",
