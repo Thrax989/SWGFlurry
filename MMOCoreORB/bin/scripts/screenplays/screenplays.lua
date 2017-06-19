@@ -123,7 +123,7 @@ includeFile("dungeon/corellian_corvette/bronell.lua")
 includeFile("dungeon/corellian_corvette/ds_297.lua")
 includeFile("dungeon/corellian_corvette/klaatu.lua")
 includeFile("dungeon/corellian_corvette/lt_lance.lua")
-includeFile("dungeon/isd/isd.lua")
+--includeFile("dungeon/isd/isd.lua")
 
 -- Village
 includeFile("village/village_community_crafting.lua")
