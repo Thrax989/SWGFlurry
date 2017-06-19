@@ -1,3 +1,4 @@
+local ObjectManager = require("managers.object.object_manager")print("Object manager loaded for ISD")
 ISDScreenPlay = ScreenPlay:new 
 {
   numberOfActs = 1,
@@ -5,34 +6,52 @@ ISDScreenPlay = ScreenPlay:new
   screenplayName = "ISDScreenPlay",
 }
 
-registerScreenPlay("ISDScreenPlay", true)
+registerScreenPlay("ISDScreenPlay", true)print("Registered ISD")
 
 function ISDScreenPlay:start()
   if (isZoneEnabled("dungeon1")) then
+print("Dungeon 1 Enabled Spawning ISD")
     self:spawnMobiles()
   end
 end
 
 function ISDScreenPlay:spawnMobiles()
-spawnMobile("dungeon1", "stormtrooper", 1, -44.8084, 172.335, 318.598, 80, 4336867)
-spawnMobile("dungeon1", "stormtrooper", 1, -44.411, 172.335, 325.657, 87, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -44.8084, 172.335, 318.598, 80, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -44.411, 172.335, 325.657, 87, 4336867)
   
-spawnMobile("dungeon1", "stormtrooper", 1, -40.7455, 172.335, 300.109, 88, 4336867)
-spawnMobile("dungeon1", "stormtrooper", 1, -41.1799, 172.335, 303.206, 88, 4336867)
-spawnMobile("dungeon1", "stormtrooper", 1, -41.5556, 172.335, 305.905, 117, 4336867)
-spawnMobile("dungeon1", "stormtrooper", 1, -40.9211, 172.335, 309.215, 90, 4336867)
-spawnMobile("dungeon1", "stormtrooper", 1, -40.8416, 172.335, 311.901, 75, 4336867)
-spawnMobile("dungeon1", "stormtrooper", 1, -41.1683, 172.335, 315.132, 87, 4336867)
-spawnMobile("dungeon1", "stormtrooper", 1, -40.6558, 172.335, 329.741, 152, 4336867)
-spawnMobile("dungeon1", "stormtrooper", 1, -41.4177, 172.335, 332.599, 179, 4336867)
-spawnMobile("dungeon1", "stormtrooper", 1, -40.7813, 172.335, 335.3, 180, 4336867)
-spawnMobile("dungeon1", "stormtrooper", 1, -40.6849, 172.335, 338.582, 181, 4336867)
-spawnMobile("dungeon1", "stormtrooper", 1, -40.5371, 172.335, 341.542, 180, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -40.7455, 172.335, 300.109, 88, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -41.1799, 172.335, 303.206, 88, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -41.5556, 172.335, 305.905, 117, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -40.9211, 172.335, 309.215, 90, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -40.8416, 172.335, 311.901, 75, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -41.1683, 172.335, 315.132, 87, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -40.6558, 172.335, 329.741, 152, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -41.4177, 172.335, 332.599, 179, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -40.7813, 172.335, 335.3, 180, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -40.6849, 172.335, 338.582, 181, 4336867)
+--spawnMobile("dungeon1", "stormtrooper", 1, -40.5371, 172.335, 341.542, 180, 4336867)
+
+
+
+--Trigger set 1
+
+    local TBoss = spawnMobile("dungeon1", "stormtrooper", 1, -44.8084, 172.335, 318.598, 80, 4336867)print("trigger 1 Loaded Quest Insane Star Destroyer")
+          createObserver(OBJECTDESTRUCTION, "ISDScreenPlay", "notifyTBoss", TBoss)
+
+--Trigger Starts Once first stormtrooper dies
+function ISDScreenPlay:notifyTBoss(TBoss, pKiller)
+    local player = LuaCreatureObject(pKiller)
+    local pBoss = spawnMobile("dungeon1", "janta_warrior", 0, -44.8084, 172.335, 318.598, 80, 4336867)print("trigger 1 Loaded Quest Boss Insane Star Destroyer")
+    return 0
+end
+
+
+
 
   
 
   --Main Room First Fight:  Continued on Line 184
-    local pDroid = spawnMobile("dungeon1", "blackguard_mouse_droid", 10800, -0.2, 173.8, 27.0, 0, 34673093)
+    local pDroid = spawnMobile("dungeon1", "stormtrooper", 10800, -0.2, 173.8, 27.0, 0, 34673093)
           createObserver(OBJECTDESTRUCTION, "ISDScreenPlay", "notifyDroidDead", pDroid)
 
 
