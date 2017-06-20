@@ -63,7 +63,22 @@ spawnMobile("dungeon1", "stormtrooper", 1, 59.809, 173.835, 34.086, 175, 4336891
 spawnMobile("dungeon1", "stormtrooper", 1, 57.691, 173.835, 29.086, 356, 4336891)
 spawnMobile("dungeon1", "stormtrooper", 1, 59.809, 173.835, 29.086, 355, 4336891)
 
-
+--Right Hallway Troopers -- 50% complete ---2937 137 -2969
+spawnMobile("dungeon1", "isd_mouse_droid", 1, -66.4228, 173.835, 31.2338, 91, 4336901)
+spawnMobile("dungeon1", "stormtrooper", 1, -59.809, 173.835, 29.086, 352, 4336901)
+spawnMobile("dungeon1", "stormtrooper", 1, -57.691, 173.835, 29.086, 358, 4336901)
+spawnMobile("dungeon1", "stormtrooper", 1, -52.809, 173.835, 29.086, 352, 4336901)
+spawnMobile("dungeon1", "stormtrooper", 1, -50.691, 173.835, 29.086, 348, 4336901)
+spawnMobile("dungeon1", "stormtrooper", 1, -49.309, 173.835, 29.086, 351, 4336902)
+spawnMobile("dungeon1", "stormtrooper", 1, -47.191, 173.835, 29.086, 359, 4336902)
+spawnMobile("dungeon1", "stormtrooper", 1, -44.309, 173.835, 29.086, 0, 4336902)
+spawnMobile("dungeon1", "stormtrooper", 1, -44.309, 173.835, 34.086, 170, 4336902)
+spawnMobile("dungeon1", "stormtrooper", 1, -47.191, 173.835, 34.086, 177, 4336902)
+spawnMobile("dungeon1", "stormtrooper", 1, -49.309, 173.835, 34.086, 179, 4336902)
+spawnMobile("dungeon1", "stormtrooper", 1, -50.691, 173.835, 34.086, 175, 4336901)
+spawnMobile("dungeon1", "stormtrooper", 1, -52.809, 173.835, 34.0861, 178, 4336901)
+spawnMobile("dungeon1", "stormtrooper", 1, -57.691, 173.835, 34.086, 179, 4336901)
+spawnMobile("dungeon1", "stormtrooper", 1, -59.809, 173.835, 34.086, 181, 4336901)
 
 
 
