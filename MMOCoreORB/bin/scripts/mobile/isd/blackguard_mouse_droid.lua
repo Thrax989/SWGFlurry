@@ -1,7 +1,7 @@
 blackguard_mouse_droid = Creature:new {
 	--objectName = "",
 	customName = "a Mouse Droid",
-	socialGroup = "",
+	socialGroup = "mercenary",
 	pvpFaction = "",
 	faction = "",
 	level = 1,

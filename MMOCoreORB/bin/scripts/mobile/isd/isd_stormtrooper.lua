@@ -1,7 +1,7 @@
 isd_stormtrooper = Creature:new {
 	objectName = "@mob/creature_names:stormtrooper",
 	randomNameType = NAME_STORMTROOPER,
-	socialGroup = "self",
+	socialGroup = "mercenary",
 	faction = "",
 	level = 150,
 	chanceHit = 15.00,
