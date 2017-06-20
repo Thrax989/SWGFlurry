@@ -43,7 +43,7 @@ spawnSceneObject("kaas", "object/building/general/mun_all_landing_pad_s01.iff", 
 spawnSceneObject("kaas", "object/tangible/beta/beta_terminal_wound.iff", -5127.86, 81.6384, -2133.43, 0, 0.999027, 0, 0.0440986, 0)
 spawnSceneObject("kaas", "object/tangible/beta/beta_terminal_wound.iff", -5101.65, 81.4893, -2136.18, 0, 0.999516, 0, 0.0311125, 0)
 
-	--elevator00 done
+	--[[--elevator00 done
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", 54.44, 173.835, 20.1186, 4336903, -0.7, 0, 0.7, 0)
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 54.4198, 181.335, 20.1185, 4336903, -0.7, 0, 0.7, 0)
 	
@@ -68,5 +68,5 @@ spawnSceneObject("kaas", "object/tangible/beta/beta_terminal_wound.iff", -5101.6
 	
 	--reactorlift done
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", 19.9601, 140.585, 347.612, 4336906, 1, 0, 0, 0)
-	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 19.9884, 170.585, 347.603, 4336906, 1, 0, 0, 0)	
+	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 19.9884, 170.585, 347.603, 4336906, 1, 0, 0, 0)]]--	
 end
