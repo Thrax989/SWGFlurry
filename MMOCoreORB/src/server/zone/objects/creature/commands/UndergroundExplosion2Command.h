@@ -48,7 +48,7 @@ public:
 			return INVALIDTARGET;
 		}
 
-		if (!creature->checkCooldownRecovery("strangulation")) {
+		if (!creature->checkCooldownRecovery("explosion")) {
 			StringIdChatParameter stringId;
 
 			Time* cdTime = creature->getCooldownTime("explosion");
