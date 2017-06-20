@@ -336,7 +336,7 @@ rori = {
 	gcwEnabled = 1,
 
 	planetTravelPoints = {
-		{name = "Refugee Camp Starport", x = 5304, z = 79, y = 6127, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Refugee Camp Starport", x = 5303.81, z = 80, y = 6138.09, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		--{name = "Restuss Shuttleport", x = 5211, z = 80, y = 5791, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Narmle Starport", x = -5374.0718, z = 80, y = -2188.6143, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Narmle Shuttleport", x = -5255.4116, z = 80.664185, y = -2161.6274, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
