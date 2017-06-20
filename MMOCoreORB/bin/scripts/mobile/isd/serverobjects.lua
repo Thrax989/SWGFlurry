@@ -10,3 +10,4 @@
 --includeFile("isd/blackguard_stormtrooper.lua")
 --includeFile("isd/blackguard_mouse_droid.lua")
 includeFile("isd/isd_mouse_droid.lua")
+includeFile("isd/isd_stormtrooper.lua")
