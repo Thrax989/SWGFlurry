@@ -47,7 +47,7 @@ spawnMobile("dungeon1", "stormtrooper", 1, -40.75, 181.335, 24.1963, 87, 4336902
 
 
 
--- Left Hallway Troopers --way 3045 173 -2968
+-- Left Hallway Troopers --way 3045 173 -2968 50% complete 
 spawnMobile("dungeon1", "stormtrooper", 1, 44.309, 173.835, 29.086, 0, 4336902)
 spawnMobile("dungeon1", "stormtrooper", 1, 44.309, 173.835, 34.086, 179, 4336902)
 spawnMobile("dungeon1", "stormtrooper", 1, 47.191, 173.835, 34.086, 178, 4336902)
@@ -56,6 +56,16 @@ spawnMobile("dungeon1", "stormtrooper", 1, 50.691, 173.835, 34.086, 178, 4336891
 spawnMobile("dungeon1", "stormtrooper", 1, 50.691, 173.835, 29.086, 354, 4336891)
 spawnMobile("dungeon1", "stormtrooper", 1, 49.309, 173.835, 29.086, 350, 4336902)
 spawnMobile("dungeon1", "stormtrooper", 1, 47.191, 173.835, 29.086, 359, 4336902)
+spawnMobile("dungeon1", "stormtrooper", 1, 52.809, 173.835, 29.086, 0, 4336891)
+spawnMobile("dungeon1", "stormtrooper", 1, 52.809, 173.835, 34.086, 176, 4336891)
+spawnMobile("dungeon1", "stormtrooper", 1, 57.691, 173.835, 34.086, 177, 4336891)
+spawnMobile("dungeon1", "stormtrooper", 1, 59.809, 173.835, 34.086, 175, 4336891)
+spawnMobile("dungeon1", "stormtrooper", 1, 57.691, 173.835, 29.086, 356, 4336891)
+spawnMobile("dungeon1", "stormtrooper", 1, 59.809, 173.835, 29.086, 355, 4336891)
+
+
+
+
 
 --set up captin of the ISD -- NPC Tempalte will need to be changed Stromtroopers are BASE testing NPC
 spawnMobile("dungeon1", "stormtrooper", 1, -0.641077, 181.335, -2.51546, 355, 4336902)
