@@ -30,7 +30,7 @@ includeFile("mandalore/serverobjects.lua")
 includeFile("taanab/serverobjects.lua")
 includeFile("faction/serverobjects.lua")
 includeFile("dungeon/serverobjects.lua")
---includeFile("isd/serverobjects.lua")  
+includeFile("isd/serverobjects.lua")  
 
 -- Weapons
 includeFile("weapon/serverobjects.lua") 

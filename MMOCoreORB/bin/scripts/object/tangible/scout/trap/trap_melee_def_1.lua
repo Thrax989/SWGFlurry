@@ -51,19 +51,19 @@ object_tangible_scout_trap_trap_melee_def_1 = object_tangible_scout_trap_shared_
 
 	skillMods = {{"melee_defense", -40}},
 
-	healthCost = 200,
-	actionCost = 200, 
-	mindCost = 200,
+	healthCost = 500,
+	actionCost = 500, 
+	mindCost = 500,
 
 	maxRange = 20,
 
 	poolToDamage = HEALTH,
-	minDamage = 20,
-	maxDamage = 60,
+	minDamage = 250,
+	maxDamage = 500,
 
 	duration = 5,
-	state = IMMOBILIZED,
-	defenseMod = "",
+	state = STUNNED + DIZZY,
+	defenseMod = "dizzy_defense",
 
 	successMessage = "trap_melee_def_1_effect",
 	failMessage = "sys_miss",

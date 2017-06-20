@@ -336,7 +336,7 @@ rori = {
 	gcwEnabled = 1,
 
 	planetTravelPoints = {
-		{name = "Refugee Camp Starport", x = 5304, z = 79, y = 6127, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Refugee Camp Starport", x = 5303.81, z = 80, y = 6138.09, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		--{name = "Restuss Shuttleport", x = 5211, z = 80, y = 5791, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Narmle Starport", x = -5374.0718, z = 80, y = -2188.6143, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Narmle Shuttleport", x = -5255.4116, z = 80.664185, y = -2161.6274, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
@@ -401,7 +401,7 @@ rori = {
 
 	planetObjects = {
 		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = -0.100263, oz = 0, ow = 0.994961, x = -5307.37, z = 80.1274, y = -2216.91, parentid = 0},
-		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = -0.69192, oz = 0, ow = 0.721974, x = 5370.22, z = 80, y = 5666.04, parentid = 0},
+		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = -0.69192, oz = 0, ow = 0.721974, x = 5370.22, z = 80, y = 5666.04, parentid = 0},
 		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", ox = 0, oy = -0.0274543, oz = 0, ow = 0.999623, x = 3672.91, z = 96, y = -6441.07, parentid = 0}
 	}
 }

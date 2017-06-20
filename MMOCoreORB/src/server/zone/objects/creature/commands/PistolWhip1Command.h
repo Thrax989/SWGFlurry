@@ -71,8 +71,8 @@ public:
 			return INVALIDWEAPON;
 		}
 
-		CreatureObject* player = cast<CreatureObject*>(creature);
 
+		CreatureObject* player = cast<CreatureObject*>(creature);
 
 		ZoneServer* zserv = creature->getZoneServer();
 		PlayerObject* jedi = creature->getPlayerObject();
@@ -81,7 +81,6 @@ public:
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
 		if (object == NULL || !object->isCreatureObject())
-			creature->sendSystemMessage("You can not use on NPC's");	
 			return INVALIDTARGET;
 
 		CreatureObject* creatureTarget = cast<CreatureObject*>( object.get());
@@ -100,7 +99,7 @@ public:
 			// Returns -time. Multiple by -1 to return positive.
 			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
 
-			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last snare. Command available in %DI seconds.
+			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last equilization. Command available in %DI seconds.
 			stringId.setDI(timeLeft);
 			creature->sendSystemMessage(stringId);
 			return GENERALERROR;
@@ -117,12 +116,12 @@ public:
 		if (targetGhost == NULL || playerObject == NULL)
 			return GENERALERROR;
 
-		if (creature->getDistanceTo(creatureTarget) > 5.f){
+		if (creature->getDistanceTo(creatureTarget) > 10.f){
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
 
 		if (creatureTarget->isRidingMount()) {
-			creature->sendSystemMessage("you cannot root a player while they are mounted");
+			creature->sendSystemMessage("you cannot knockdown a player while they are mounted");
 			return GENERALERROR;
 		}
 

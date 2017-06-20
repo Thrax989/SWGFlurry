@@ -51,19 +51,19 @@ object_tangible_scout_trap_trap_webber = object_tangible_scout_trap_shared_trap_
 
 	skillMods = {},
 
-	healthCost = 200,
-	actionCost = 200, 
-	mindCost = 200,
+	healthCost = 500,
+	actionCost = 500, 
+	mindCost = 500,
 
 	maxRange = 20,
 
 	poolToDamage = ACTION,
-	minDamage = 120,
-	maxDamage = 200,
+	minDamage = 250,
+	maxDamage = 500,
 
 	duration = 5,
-	state = FROZEN,
-	defenseMod = "",
+	state = STUNNED + DIZZY,
+	defenseMod = "dizzy_defense",
 
 	successMessage = "trap_webber_effect",
 	failMessage = "trap_webber_effect_no",

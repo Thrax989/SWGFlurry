@@ -51,15 +51,15 @@ object_tangible_scout_trap_trap_state_def_1 = object_tangible_scout_trap_shared_
 
 	skillMods = {{"blind_defense", -40},{"dizzy_defense", -40},{"intimidate_defense", -40},{"knockdown_defense", -40},{"stun_defense", -40}},
 
-	healthCost = 200,
-	actionCost = 200, 
-	mindCost = 200,
+	healthCost = 500,
+	actionCost = 500, 
+	mindCost = 500,
 
 	maxRange = 20,
 
 	poolToDamage = HEALTH,
-	minDamage = 110,
-	maxDamage = 170,
+	minDamage = 250,
+	maxDamage = 500,
 
 	duration = 5,
 	state = DIZZY,

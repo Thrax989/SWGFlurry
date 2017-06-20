@@ -55,6 +55,20 @@ UndergroundExplosion1Command = {
 	combatSpam = "undergroundexplosion1",
   	--clientEffect = "clienteffect/underground_explosion.cef",
 
+	dotEffects = {
+	  DotEffect( 
+		DISEASED, 
+		{ "resistance_disease", "poison_disease_resist" },
+		ATTACK_POOL,
+		true,
+		0,
+		20,
+		30, 
+		125,
+		15
+	  )
+	},
+
 	poolsToDamage = RANDOM_ATTRIBUTE,
 
 	weaponType = PISTOLWEAPON,

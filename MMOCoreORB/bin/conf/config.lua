@@ -80,7 +80,7 @@ PingAllowedConnections = 3000
 ZoneProcessingThreads = 10
 ZoneAllowedConnections = 30000
 ZoneGalaxyID = 2 --The actual zone server's galaxyID. Should coordinate with your login server.
-ZoneOnlineCharactersPerAccount = 4 --How many characters are allowed online from a single account.
+ZoneOnlineCharactersPerAccount = 2 --How many characters are allowed online from a single account.
 
 --The following zones are enabled, and will be loaded with server start.
 --To save on RAM and CPU usage, you should only enable the zones you need.
@@ -158,11 +158,12 @@ ZonesEnabled = {
 TrePath = "/home/vagrant/workspace/tre/"
 
 TreFiles = {
+        "mtg22.tre",
         "species.tre",
         "pallet.tre",
         "pods.tre",
-        "armor.tre",
         "skill_patch.tre",
+        "armor.tre",
 	"mtg_planets.tre",
         "mtg_patch_021.tre",
 	"mtg_patch_019.tre",
