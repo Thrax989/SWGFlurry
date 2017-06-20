@@ -1,4 +1,100 @@
 /*
+2
+ * CombatQueueCommand.h
+3
+ *
+4
+ *  Created on: 24/05/2010
+5
+ *      Author: victor
+6
+ */
+7
+​
+8
+#ifndef COMBATQUEUECOMMAND_H_
+9
+#define COMBATQUEUECOMMAND_H_
+10
+​
+11
+#include"server/zone/ZoneServer.h"
+12
+#include "server/zone/objects/scene/SceneObject.h"
+13
+#include "server/zone/managers/combat/CombatManager.h"
+14
+#include "server/zone/objects/player/PlayerObject.h"
+15
+#include "server/zone/objects/cell/CellObject.h"
+16
+#include "server/zone/managers/combat/CreatureAttackData.h"
+17
+#include "server/zone/managers/collision/CollisionManager.h"
+18
+#include "templates/params/creature/CreatureAttribute.h"
+19
+#include "templates/params/creature/CreatureState.h"
+20
+#include "templates/params/creature/CreatureFlag.h"
+21
+#include "server/zone/objects/creature/commands/effect/StateEffect.h"
+22
+#include "server/zone/objects/creature/commands/effect/DotEffect.h"
+23
+#include "server/zone/objects/creature/commands/effect/CommandEffect.h"
+24
+#include "server/zone/packets/object/CombatSpam.h"
+25
+#include "QueueCommand.h"
+26
+#include "server/zone/objects/player/FactionStatus.h"
+27
+​
+28
+class CombatQueueCommand : public QueueCommand {
+29
+protected:
+30
+        float minDamage;
+31
+        float maxDamage;
+32
+        int damageType;
+33
+        float damageMultiplier;
+34
+        int accuracyBonus;
+35
+        float speedMultiplier;
+36
+        float speed;
+37
+        int poolsToDamage;
+38
+​
+39
+        float healthCostMultiplier;
+40
+        float actionCostMultiplier;
+41
+        float mindCostMultiplier;
+42
+        float forceCostMultiplier;
+43
+        float forceCost;
+44
+        int visMod;
+45
+​
+46
+        int coneRange;
+47
+        int range;
+48
+​
+49
+        String accuracySkillMod;/*
  * CombatQueueCommand.h
  *
  *  Created on: 24/05/2010
@@ -176,13 +272,12 @@ public:
 
 						if (targetCreature != NULL) {
 							if (targetCreature->isPlayerCreature()) {
-								if (!CombatManager::instance()->areInDuel(creature, targetCreature) && targetCreature->getFactionStatus() == FactionStatus::OVERT) {
-										ghost->doFieldFactionChange(FactionStatus::OVERT);
-								}
-							} else if (targetCreature->isPet() && !targetCreature->isAttackableBy(creature)) {
+								if (!CombatManager::instance()->areInDuel(creature, targetCreature) && !targetCreature->hasBountyMissionFor(creature) && !creature->hasBountyMissionFor(targetCreature) && targetCreature->getFactionStatus() == FactionStatus::OVERT)
+									ghost->doFieldFactionChange(FactionStatus::OVERT);
+							} else if (targetCreature->isPet()) {
 								ManagedReference<CreatureObject*> targetOwner = targetCreature->getLinkedCreature().get();
 
-								if (targetOwner != NULL && !CombatManager::instance()->areInDuel(creature, targetOwner) && targetOwner->getFactionStatus() == FactionStatus::OVERT) {
+								if (targetOwner != NULL && !creature->hasBountyMissionFor(targetOwner) && !targetOwner->hasBountyMissionFor(creature) && !CombatManager::instance()->areInDuel(creature, targetOwner) && targetOwner->getFactionStatus() == FactionStatus::OVERT) {
 										ghost->doFieldFactionChange(FactionStatus::OVERT);
 								}
 							} else {
