@@ -188,10 +188,10 @@ CityTaxes = {
 CitySpecializations = {
 	{--Sample Rich
 		name = "@city/city:city_spec_sample_rich",
-		cost = 7000,
+		cost = 80000,
 		skillMods = {
-			{"private_spec_samplesize", 250},
-			{"private_spec_samplerate", 250}
+			{"private_spec_samplesize", 100},
+			{"private_spec_samplerate", 100}
 		}
 	},
 	{--Manufacturing Center
@@ -231,7 +231,7 @@ CitySpecializations = {
 	},
 	{--Entertainment District
 		name = "@city/city:city_spec_entertainer",
-		cost = 80000,
+		cost = 10000,
 		skillMods = {
 			{"private_spec_entertainer", 10}
 		}
