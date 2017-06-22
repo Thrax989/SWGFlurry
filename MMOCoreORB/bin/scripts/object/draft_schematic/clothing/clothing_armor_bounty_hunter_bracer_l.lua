@@ -1,4 +1,6 @@
 object_draft_schematic_clothing_clothing_armor_bounty_hunter_bracer_l = object_draft_schematic_clothing_shared_clothing_armor_bounty_hunter_bracer_l:new {
+   templateType = DRAFTSCHEMATIC,
+   
    customObjectName = "Bounty Hunter Armor Left Bracer",
 
    craftingToolTab = 2, -- (See DraftSchemticImplementation.h)
