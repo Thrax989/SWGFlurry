@@ -53,7 +53,7 @@ function buff:notifySpawnArea(pActiveArea, pMovingObject)
 
 		else
 			player:sendSystemMessage("You must be out of combat to enter the buff zone!")
-			player:teleport(3469, 5 , -4883, 0)
+			player:teleport(3469, 5, -4883, 0)
 		end
 		return 0
 	end)
