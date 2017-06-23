@@ -42,7 +42,7 @@ spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wa
 spawnSceneObject("kaas", "object/building/general/mun_all_landing_pad_s01.iff", -5109.77, 81.75, -2119.95, 0, 0.0523359, 0, -0.99863, 0)
 spawnSceneObject("kaas", "object/tangible/beta/beta_terminal_wound.iff", -5127.86, 81.6384, -2133.43, 0, 0.999027, 0, 0.0440986, 0)
 spawnSceneObject("kaas", "object/tangible/beta/beta_terminal_wound.iff", -5101.65, 81.4893, -2136.18, 0, 0.999516, 0, 0.0311125, 0)
-
+spawnSceneObject("tatooine", "object/tangible/terminal/terminal_mission_bounty.iff", 3470.85, 5, -4851.38, 0, 0.0398828, 0, 0.999204, 0)
 	--[[--elevator00 done
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", 54.44, 173.835, 20.1186, 4336903, -0.7, 0, 0.7, 0)
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 54.4198, 181.335, 20.1185, 4336903, -0.7, 0, 0.7, 0)
