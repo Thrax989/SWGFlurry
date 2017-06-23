@@ -858,6 +858,7 @@
 #include "ExtractionCommand.h"
 #include "BactaJabCommand.h"
 #include "StrangulationCommand.h"
+#include "DragFromShadowsCommand.h"
 
 
 

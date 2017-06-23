@@ -89,7 +89,7 @@ public:
 			creatureTarget->playEffect("clienteffect/npe_smoke_bomb.cef", "");
 			creatureTarget->sendSystemMessage("You have been choked into submission.");
 			creature->setState(CreatureState::PEACE);
-		creature->addCooldown("strangulation", 420 * 1000);
+		creature->addCooldown("strangulation", 300 * 1000);
 
 		}
 
