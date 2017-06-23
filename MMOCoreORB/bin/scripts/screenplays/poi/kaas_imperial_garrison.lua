@@ -16,8 +16,6 @@ end
 
 function kaas_imperial_garison:spawnMobiles()
 
-	spawnMobile("kaas", "emperors_hand", 900, -5121.29, 81.2529, -2399.79, 352, 0)
-
 	-- Inside Police Station
 	spawnMobile("kaas", "stormtrooper", 300, -0.0, 2.0, 3.9, 0, 35791428)
 	spawnMobile("kaas", "stormtrooper", 300, -0.0, 1.0, -21.7, 0, 35791433)
