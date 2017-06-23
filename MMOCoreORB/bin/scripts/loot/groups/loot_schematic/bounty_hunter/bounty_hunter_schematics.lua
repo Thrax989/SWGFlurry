@@ -8,7 +8,7 @@ bounty_hunter_schematics = {
 		{itemTemplate = "bounty_hunter_boots_schematic", weight = 2000000},
 		{itemTemplate = "bounty_hunter_bracer_l_schematic", weight = 1000000},
 		{itemTemplate = "bounty_hunter_bracer_r_schematic", weight = 1000000},
-		{itemTemplate = "bounty_hunter_chest_schematic", weight = 50000},
+		{itemTemplate = "bounty_hunter_chest_schematic", weight = 500000},
 		{itemTemplate = "bounty_hunter_gloves_schematic", weight = 2000000},
 		{itemTemplate = "bounty_hunter_leggings_schematic", weight = 1000000},
 		{itemTemplate = "bounty_hunter_helmet_schematic", weight = 500000}
