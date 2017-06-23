@@ -1122,8 +1122,6 @@ int LuaCreatureObject::addSkillMod(lua_State* L) {
 	String skillMod = lua_tostring(L, -2);
 	int value = lua_tointeger(L, -1);
 	Locker locker(realObject);
-	realObject->removeAllSkillModsOfType(SkillModManager::STRUCTURE,true);
-	realObject->removeAllSkillModsOfType(SkillModManager::DROID,true);
 	realObject->addSkillMod(SkillModManager::STRUCTURE, skillMod, value, true);
 	return 1;
 }
@@ -1133,11 +1131,8 @@ int LuaCreatureObject::removeSkillMod(lua_State* L) {
 	if (!realObject->isPlayerCreature())
 		return 0;
 
-	String skillMod = lua_tostring(L, -2);
-	int value = lua_tointeger(L, -1);
 	Locker locker(realObject);
 	realObject->removeAllSkillModsOfType(SkillModManager::STRUCTURE,true);
-	realObject->removeAllSkillModsOfType(SkillModManager::DROID,true);
 	//realObject->removeSkillMod(SkillModManager::STRUCTURE, skillMod, value, true);
 	return 1;
 }
