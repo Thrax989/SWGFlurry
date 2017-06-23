@@ -20,7 +20,7 @@ function buff:spawnActiveAreas()
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(50)
+	        activeArea:setRadius(25)
 	        createObserver(ENTEREDAREA, "buff", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "buff", "notifySpawnAreaLeave", pSpawnArea)
 	    end
@@ -53,7 +53,7 @@ function buff:notifySpawnArea(pActiveArea, pMovingObject)
 
 		else
 			player:sendSystemMessage("You must be out of combat to enter the buff zone!")
-			player:teleport(1, 1, 1, 0)
+			player:teleport(3469, 5 , -4883, 0)
 		end
 		return 0
 	end)
