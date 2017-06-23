@@ -163,7 +163,6 @@ TreFiles = {
         "pallet.tre",
         "pods.tre",
         "skill_patch.tre",
-        "armor.tre",
 	"mtg_planets.tre",
         "mtg_patch_021.tre",
 	"mtg_patch_019.tre",
