@@ -23,7 +23,7 @@ trainer_creaturehandler = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = INVULNERABLE + CONVERSABLE,
+	optionsBitmask = INVULNERABLE + CONVERSABLE + JTLINTERESTING,
 	diet = HERBIVORE,
 
 	templates = {
