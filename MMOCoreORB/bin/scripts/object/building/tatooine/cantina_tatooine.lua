@@ -41,12 +41,76 @@
 --this exception also makes it possible to release a modified version
 
 object_building_tatooine_cantina_tatooine = object_building_tatooine_shared_cantina_tatooine:new {
+	templateType = CAMPSTRUCTURE,
+	lotSize = 0,
+	baseMaintenanceRate = 0,
+	basePowerRate = 0,
+
 	skillMods = {
-		{"private_buff_mind", 100},
-		{"private_med_battle_fatigue", 15},
-		{"private_med_wound_mind", 15},
-		{"private_safe_logout", 1}
+		{"private_safe_logout", 1},
+		{"private_medical_rating", 125},
+		{"private_med_wound_health", 125},
+		{"private_med_wound_action", 125},
+		{"private_aggro_mod", 20},
+		{"private_buff_mind", 125}
 	},
+
+	aggroMod = 20,
+	duration = 3600,
+	radius = 20,
+	experience = 0,
+	skillRequired = 0,
+
+	childObjects = {
+		{templateFile = "object/tangible/camp/camp_control_panel.iff",
+			x = -1, z = 0, y = 3.73,
+			ox = 0, oy = 1, oz = 0, ow = 0,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/campfire_logs_ash.iff",
+			x = .50611, z = 0, y = -.596347,
+			ox = 0, oy = 0, oz = 0, ow = 0,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/static/particle/particle_campfire_style_1.iff",
+			x = .50611, z = 0, y = -.596347,
+			ox = 0, oy = 0, oz = 0, ow = 0,
+			cellid = -1,
+			containmentType = -1},
+
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = -2.2, z = 0, y = -.41,
+			ox = 0, oy = .66, oz = .0, ow = .75,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = 2.59, z = 0, y = -1.3,
+			ox = 0, oy = .575, oz = 0, ow = -.82,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = 1.91, z = 0, y = -2.43,
+			ox = 0, oy = -.38, oz = 0, ow = .92,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = .66, z = 0, y = -2.9,
+			ox = 0, oy = -.13, oz = 0, ow = .99,
+			cellid = -1,
+			containmentType = -1},
+			
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", 
+			x = 0.1, z = -0.5, y = 6, 
+			ox = 0, oy = -0, oz = 0, ow = 0, 
+			cellid = -1, 
+			containmentType = -1},
+	}
 	planetMapCategory = "cantina"
 }
 
