@@ -44,9 +44,8 @@
 HealStatesSelfCommand = {
         name = "healstatesself",
 	healStates = STUNNED_STATE + DIZZY_STATE + BLINDED_STATE + INTIMIDATED_STATE,
-	forceCost = 500,
+	forceCost = 50,
 	range = 0
 }
 
 AddCommand(HealStatesSelfCommand)
-
