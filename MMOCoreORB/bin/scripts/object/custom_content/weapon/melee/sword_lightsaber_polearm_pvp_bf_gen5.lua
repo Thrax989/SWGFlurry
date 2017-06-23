@@ -90,7 +90,7 @@ object_weapon_melee_polearm_crafted_saber_sword_lightsaber_polearm_pvp_bf_gen5 =
 	healthAttackCost = 60,
 	actionAttackCost = 95,
 	mindAttackCost = 45,
-	forceCost = 50,
+	forceCost = 55,
 
 	pointBlankRange = 0,
 	pointBlankAccuracy = 20,
