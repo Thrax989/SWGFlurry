@@ -40,17 +40,17 @@ function buff:notifySpawnArea(pActiveArea, pMovingObject)
 		if (player:isInCombat() ~= true) then
 			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the buff Zone!")
 			player:sendSystemMessage("You have entered the buff zone!")
-			player:removeSkillMod()
-			player:addSkillMod("private_buff_mind", 150)
-			player:addSkillMod("private_med_battle_fatigue", 15)
-			player:addSkillMod("private_med_wound_mind", 15)
-			player:addSkillMod("private_medical_rating", 150)
-			player:addSkillMod("private_med_wound_mind", 20)
-			player:addSkillMod("private_buff_mind", 150)
-			player:addSkillMod("private_med_battle_fatigue", 5)
-			player:addSkillMod("private_med_wound_health", 150)
-			player:addSkillMod("private_med_wound_action", 150)
-			player:addSkillMod("private_safe_logout", 1)
+			player:removeAllStructureSkillMod()
+			player:addStructureSkillMod("private_buff_mind", 150)
+			player:addStructureSkillMod("private_med_battle_fatigue", 15)
+			player:addStructureSkillMod("private_med_wound_mind", 15)
+			player:addStructureSkillMod("private_medical_rating", 150)
+			player:addStructureSkillMod("private_med_wound_mind", 20)
+			player:addStructureSkillMod("private_buff_mind", 150)
+			player:addStructureSkillMod("private_med_battle_fatigue", 5)
+			player:addStructureSkillMod("private_med_wound_health", 150)
+			player:addStructureSkillMod("private_med_wound_action", 150)
+			player:addStructureSkillMod("private_safe_logout", 1)
 
 		else
 			player:sendSystemMessage("You must be out of combat to enter the buff zone!")
@@ -73,7 +73,7 @@ function buff:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		
 		if (player:isImperial() or player:isRebel() or player:isNeutral()) then
 			player:sendSystemMessage("You have left the buff zone!")
-			player:removeSkillMod()
+			player:removeAllStructureSkillMod()
 		end
 		return 0
 	end)
