@@ -669,4 +669,7 @@ function TatooineMosEisleyScreenPlay:spawnMobiles()
 	spawnMobile("tatooine", "trainer_architect", 1, 3456.38, 5, -4870.74, 115, 0)
 	spawnMobile("tatooine", "trainer_2hsword", 1, 3455.84, 5, -4871.41, 125, 0)
 	spawnMobile("tatooine", "trainer_1hsword", 1, 3455.3, 5, -4872.09, 128, 0)
+	spawnMobile("tatooine", "junk_dealer", 1, 3472.44, 5, -4851.05, 108, 0)
+	spawnMobile("tatooine", "informant_npc_lvl_3", 1, 3473.55, 5, -4850.59, 139, 0)
+
 end

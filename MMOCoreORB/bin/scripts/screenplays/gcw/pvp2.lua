@@ -43,6 +43,12 @@ spawnSceneObject("kaas", "object/building/general/mun_all_landing_pad_s01.iff", 
 spawnSceneObject("kaas", "object/tangible/beta/beta_terminal_wound.iff", -5127.86, 81.6384, -2133.43, 0, 0.999027, 0, 0.0440986, 0)
 spawnSceneObject("kaas", "object/tangible/beta/beta_terminal_wound.iff", -5101.65, 81.4893, -2136.18, 0, 0.999516, 0, 0.0311125, 0)
 spawnSceneObject("tatooine", "object/tangible/terminal/terminal_mission_bounty.iff", 3470.85, 5, -4851.38, 0, 0.0398828, 0, 0.999204, 0)
+spawnSceneObject("tatooine", "object/tangible/terminal/terminal_mission_rebel.iff", 3481.96, 5, -4863.64, 0, 0.921229, 0, -0.389022, 0)
+spawnSceneObject("tatooine", "object/tangible/terminal/terminal_mission_rebel.iff", 3483.12, 5, -4864.69, 0, -0.372665, 0, -0.927966, 0)
+spawnSceneObject("tatooine", "object/tangible/terminal/terminal_mission.iff", 3485.66, 5, -4861.97, 0, -0.339595, 0, -0.940571, 0)
+spawnSceneObject("tatooine", "object/tangible/terminal/terminal_mission.iff", 3483.21, 5, -4860.19, 0, 0.902962, 0, -0.429719, 0)
+spawnSceneObject("tatooine", "object/tangible/terminal/terminal_mission_imperial.iff", 3487.89, 5, -4860.06, 0, 0.934876, 0, -0.354976, 0)
+spawnSceneObject("tatooine", "object/tangible/terminal/terminal_mission_imperial.iff", 3488.32, 5, -4860.71, 0, -0.33106, 0, -0.94361, 0)
 	--[[--elevator00 done
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", 54.44, 173.835, 20.1186, 4336903, -0.7, 0, 0.7, 0)
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 54.4198, 181.335, 20.1185, 4336903, -0.7, 0, 0.7, 0)
