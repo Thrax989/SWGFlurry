@@ -50,6 +50,20 @@ public:
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
 
+		if (!creature->checkCooldownRecovery("poison")) {
+   			StringIdChatParameter stringId;
+
+   			Time* cdTime = creature->getCooldownTime("poison");
+
+   			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+
+   			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+   			stringId.setDI(timeLeft);
+   			creature->sendSystemMessage(stringId);
+   			        return GENERALERROR;
+   		       }
+
+ 		player->addCooldown("poison", 5 * 1000); // 10 second cooldown
 		targetCreature->playEffect("clienteffect/cbt_explode_asteroid_gas_large.cef", "");
 
 

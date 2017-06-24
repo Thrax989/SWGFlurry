@@ -120,8 +120,8 @@ namespace creature {
 		int getDamageDealerList(lua_State* L);
 		int getHealingThreatList(lua_State* L);
 		int broadcastToServer(lua_State* L);
-		int addSkillMod(lua_State* L);
-		int removeSkillMod(lua_State* L);
+		int addStructureSkillMod(lua_State* L);
+		int removeAllStructureSkillMod (lua_State* L);
 	private:
 		// The pointer to the 'real object' defined in object.cc
 		CreatureObject* realObject;

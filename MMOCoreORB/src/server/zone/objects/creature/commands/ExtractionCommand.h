@@ -52,6 +52,20 @@ public:
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
 
+		if (!creature->checkCooldownRecovery("extraction")) {
+   			StringIdChatParameter stringId;
+
+   			Time* cdTime = creature->getCooldownTime("extraction");
+
+   			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+
+   			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+   			stringId.setDI(timeLeft);
+   			creature->sendSystemMessage(stringId);
+   			        return GENERALERROR;
+   		       }
+
+ 		player->addCooldown("extraction", 20 * 1000); // 10 second cooldown
 		targetCreature->playEffect("clienteffect/extraction_effect.cef", "");
 
 

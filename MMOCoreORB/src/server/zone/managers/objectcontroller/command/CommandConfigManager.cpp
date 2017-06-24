@@ -1619,6 +1619,8 @@ void CommandConfigManager::registerCommands() {
  	commandFactory.registerCommand<ExtractionCommand>(String("extraction").toLowerCase());
  	commandFactory.registerCommand<BactaJabCommand>(String("bactajab").toLowerCase());
  	commandFactory.registerCommand<StrangulationCommand>(String("strangulation").toLowerCase());
+ 	commandFactory.registerCommand<DragFromShadowsCommand>(String("dragfromshadows").toLowerCase());
+
 
 	//pet commands
 	commandFactory.registerCommand<PetAttackCommand>(String("petAttack").toLowerCase());

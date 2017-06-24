@@ -20,7 +20,7 @@ function buff:spawnActiveAreas()
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(50)
+	        activeArea:setRadius(25)
 	        createObserver(ENTEREDAREA, "buff", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "buff", "notifySpawnAreaLeave", pSpawnArea)
 	    end
@@ -40,11 +40,21 @@ function buff:notifySpawnArea(pActiveArea, pMovingObject)
 		if (player:isInCombat() ~= true) then
 			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the buff Zone!")
 			player:sendSystemMessage("You have entered the buff zone!")
-			player:addSkillMod("general_assembly",125)
+			player:removeAllStructureSkillMod()
+			player:addStructureSkillMod("private_buff_mind", 150)
+			player:addStructureSkillMod("private_med_battle_fatigue", 15)
+			player:addStructureSkillMod("private_med_wound_mind", 15)
+			player:addStructureSkillMod("private_medical_rating", 150)
+			player:addStructureSkillMod("private_med_wound_mind", 20)
+			player:addStructureSkillMod("private_buff_mind", 150)
+			player:addStructureSkillMod("private_med_battle_fatigue", 5)
+			player:addStructureSkillMod("private_med_wound_health", 150)
+			player:addStructureSkillMod("private_med_wound_action", 150)
+			player:addStructureSkillMod("private_safe_logout", 1)
 
 		else
 			player:sendSystemMessage("You must be out of combat to enter the buff zone!")
-			player:teleport(1, 1, 1, 0)
+			player:teleport(3469, 5, -4883, 0)
 		end
 		return 0
 	end)
@@ -62,9 +72,8 @@ function buff:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isRebel() or player:isNeutral()) then
-			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the buff Zone!")
 			player:sendSystemMessage("You have left the buff zone!")
-			player:removeSkillMod("general_assembly",125)
+			player:removeAllStructureSkillMod()
 		end
 		return 0
 	end)
