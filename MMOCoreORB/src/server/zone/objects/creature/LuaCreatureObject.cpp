@@ -142,8 +142,8 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "getDamageDealerList", &LuaCreatureObject::getDamageDealerList },
 		{ "getHealingThreatList", &LuaCreatureObject::getHealingThreatList},
 		{ "broadcastToServer", &LuaCreatureObject::broadcastToServer },
-		{ "addSkillMod", &LuaCreatureObject::addSkillMod },
-		{ "removeSkillMod", &LuaCreatureObject::removeSkillMod },
+		{ "addStructureSkillMod", &LuaCreatureObject::addStructureSkillMod },
+		{ "removeAllStructureSkillMod", &LuaCreatureObject::removeAllStructureSkillMod },
 		{ 0, 0 }
 };
 
@@ -1114,7 +1114,7 @@ int LuaCreatureObject::broadcastToServer(lua_State* L) {
 	return 1;
 }
 
-int LuaCreatureObject::addSkillMod(lua_State* L) {
+int LuaCreatureObject::addStructureSkillMod(lua_State* L) {
 
 	if (!realObject->isPlayerCreature())
 		return 0;
@@ -1126,7 +1126,7 @@ int LuaCreatureObject::addSkillMod(lua_State* L) {
 	return 1;
 }
 
-int LuaCreatureObject::removeSkillMod(lua_State* L) {
+int LuaCreatureObject::removeAllStructureSkillMod(lua_State* L) {
 
 	if (!realObject->isPlayerCreature())
 		return 0;
