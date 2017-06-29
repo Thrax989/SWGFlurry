@@ -38,7 +38,7 @@ function buff:notifySpawnArea(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isInCombat() ~= true) then
-			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the buff Zone!")
+			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the buff Zone!")
 			player:sendSystemMessage("You have entered the buff zone!")
 			player:removeAllStructureSkillMod()
 			player:addStructureSkillMod("private_buff_mind", 150)
