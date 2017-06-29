@@ -135,31 +135,26 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 		 	"tatooine",
 		   {
-			"Test", "Test",
+			"Anchorhead Shuttleport", "anchorhead_shuttle_travel",
+			"Bestine Shuttleport", "bestine_shuttle_travel",
+			"Bestine Starport", "bestine_starport_travel",
+			"Mos Eisley Shuttleport", "mos_eisley_shuttleport_travel",
+			"Mos Entha Shuttle A", "mos_entha_shuttle_a_travel",
+			"Mos Entha Shuttle B", "mos_entha_shuttle_b_travel",
+			"Mos Entha Spaceport", "mos_entha_spaceport_travel",
+			"Mos Espa Shuttleport East", "mos_espa_shuttleport_east_travel",
+			"Mos Espa Shuttleport South", "mos_espa_shuttleport_south_travel",
+			"Mos Espa Shuttleport West", "mos_espa_shuttleport_west_travel",
+			"Mos Espa Starport", "mos_espa_starport_travel",
 		   },
 		 	"yavin4",
 		   {
-			"Test", "Test",
+			"Yavin IV Imperial Outpost", "yavin_iv_imperial_outpost_travel",
+			"Yavin IV Labor Outpost", "yavin_iv_labor_outpost_travel",
 		   },
 		 	"kaas",
 		   {
 			"Kaas PvP Zone", "kaas_pvp_zone",
-		   },
-			"coruscant",
-		   {
-			"test", "Test",
-		   },
-			"chandrila",
-		   {
-			"Test", "Test",
-		   },
-			"nal hutta",
-		   {
-			"Test", "Test",
-		   },
-			"moraband",
-		   {
-			"Test", "Test",
 		   },
 	}
 }
