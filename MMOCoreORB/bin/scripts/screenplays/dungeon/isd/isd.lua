@@ -25,12 +25,12 @@ spawnMobile("dungeon1", "isd_stormtrooper", 1, -29.9486, 173.835, 0.12338, 35, 4
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -33.501, 173.835, 3.61753, 53, 4336902)
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -40.6873, 173.835, 34.0851, 95, 4336902)
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -40.6764, 173.835, 29.0936, 71, 4336902)
+  
 --Elevator Control Shaft Guards  10% complete
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -48.4635, 173.835, 21.3722, 78, 4336902)
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -47.9885, 173.835, 17.3455, 89, 4336902)
 spawnMobile("dungeon1", "isd_stormtrooper", 1, 47.691, 173.835, 22.586, 260, 4336902)
 spawnMobile("dungeon1", "isd_stormtrooper", 1, 47.9413, 173.835, 17.3783, 269, 4336902)
-
 
 --Upper Floor Room Guards will patrol Elevator Points 50% complete
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -47.941, 181.335, 17.5886, 80, 4336902)
@@ -41,11 +41,6 @@ spawnMobile("dungeon1", "isd_stormtrooper", 1, 40.7362, 181.335, 24.163, 262, 43
 spawnMobile("dungeon1", "isd_stormtrooper", 1, 40.7167, 181.335, 15.9608, 270, 4336902)
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -40.7103, 181.335, 16.0802, 87, 4336902)
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -40.75, 181.335, 24.1963, 87, 4336902)
-
-
-
-
-
 
 -- Left Hallway Troopers --way 3045 173 -2968 50% complete 
 spawnMobile("dungeon1", "isd_stormtrooper", 1, 44.309, 173.835, 29.086, 0, 4336902)
@@ -79,8 +74,6 @@ spawnMobile("dungeon1", "isd_stormtrooper", 1, -50.691, 173.835, 34.086, 175, 43
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -52.809, 173.835, 34.0861, 178, 4336901)
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -57.691, 173.835, 34.086, 179, 4336901)
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -59.809, 173.835, 34.086, 181, 4336901)
-
-
 
 --set up captin of the ISD -- NPC Tempalte will need to be changed Stromtroopers are BASE testing NPC
 spawnMobile("dungeon1", "isd_stormtrooper", 1, -0.641077, 181.335, -2.51546, 355, 4336902)
