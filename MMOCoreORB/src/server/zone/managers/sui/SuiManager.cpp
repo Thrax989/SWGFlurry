@@ -1,7 +1,6 @@
 /*
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
-
 #include "SuiManager.h"
 
 #include "server/zone/ZoneProcessServer.h"
