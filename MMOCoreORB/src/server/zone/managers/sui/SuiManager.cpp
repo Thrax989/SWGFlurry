@@ -1,6 +1,7 @@
 /*
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
+
 #include "SuiManager.h"
 
 #include "server/zone/ZoneProcessServer.h"
@@ -1541,6 +1542,211 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("talus", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+//Naboo Travels
+			} else if (templatePath == "deeja_peak_shuttleport_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Dee'ja Peak ShuttlePort");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "kaadar_shuttleport_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Kaadara ShuttlePort");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "kaadara_starport_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Kaadara StarPort");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "keren_shuttleport_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Keren ShuttlePort");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "karen_shuttleport_south_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Karen ShuttlePort South");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "keren_starport_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Keren Starport");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "moemia_starport_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Moenia StarPort");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "the_lake_retreat_shuttleport_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("The Lake Retreat ShuttlePort");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "theed_shuttleport_a_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Theed ShuttlePort A");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "theed_shuttleport_b_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Theed ShuttlePort B");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "theed_shuttleport_c_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Theed ShuttlePort C");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "theed_starport_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Theed Starport");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", 0, 0, 0);
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
