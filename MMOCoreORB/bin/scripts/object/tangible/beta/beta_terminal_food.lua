@@ -42,6 +42,7 @@
 
 
 object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_terminal_food:new {
+	
 	gameObjectType = 16400,
 
 	maxCondition = 0,
