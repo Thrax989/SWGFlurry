@@ -131,7 +131,11 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 		 	"talus",
 		   {
-			"Test", "Test",
+			"Talus Dearic Shuttleport", "talus_dearic_shuttleport_travel",
+			"Talus Dearic Starport", "talus_dearic_starport_travel",
+			"Talus Nashal Shuttleport", "talus_nashal_shuttleport_travel",
+			"Talus Imperial Outpost", "talus_imperial_outpost_travel",
+			
 		   },
 		 	"tatooine",
 		   {
