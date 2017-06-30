@@ -1528,7 +1528,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
-			} else if (templatePath == "talus_imperial_outpost_travel"") {
+			} else if (templatePath == "talus_imperial_outpost_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Talus Imprial Outpost");
