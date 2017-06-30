@@ -787,8 +787,12 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				
 			} else if (templatePath == "set_jedi_state") {
 				ghost->setJediState(2);
+//GALACTIC TRAVEL SYSTEM
 
 			} else if (templatePath == "corellia_bela_vistal_a_shuttleport_travel") {
+				if (!player->isInCombat()) {
+					player->sendSystemMessage("You May Not Travel When In Combat.");
+					}
 				if (player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Bela Vistal Shuttleport A");
