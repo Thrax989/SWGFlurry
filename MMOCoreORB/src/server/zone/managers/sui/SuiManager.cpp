@@ -806,7 +806,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "corellia_bela_vistal_b_shuttleport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Bela Vistal Shuttleport B");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -815,7 +815,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 6929, 330, -5529);
@@ -823,7 +823,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "corellia_coronet_starport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Coronet Starport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -832,7 +832,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
@@ -840,7 +840,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "corellia_coronet_a_shuttle_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Coronet Shuttle A");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -849,7 +849,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
@@ -857,7 +857,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "corellia_coronet_b_shuttle_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Coronet Shuttle B");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -866,7 +866,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
@@ -874,7 +874,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "doaba_guerfel_shuttleport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Doaba Guerfel Shuttleport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -883,7 +883,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
@@ -891,7 +891,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "doaba_guerfel_starport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Doaba Guerfel Starport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -900,7 +900,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
@@ -908,7 +908,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "kor_vella_shuttleport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Kor Vella Shuttleport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -917,7 +917,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
@@ -925,7 +925,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "kor_vella_starport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Kor Vella Stareport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -934,7 +934,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
@@ -942,7 +942,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "tyrena_a_shuttle_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Tyrena Shuttle A");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -951,7 +951,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
@@ -959,7 +959,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "tyrena_b_shuttle_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Tyrena Shuttle B");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -968,7 +968,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
@@ -976,7 +976,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "tyrena_starport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Tyrena Starport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -985,7 +985,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
@@ -993,7 +993,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "vreni_island_shuttle_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Vreni Island Shuttle");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1002,7 +1002,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -67, 28, -4714);
@@ -1010,7 +1010,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "argilat_swamp_badge") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("POI Argilat Swamp Badge");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1019,7 +1019,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 1387, 30, 3749);
@@ -1027,7 +1027,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "bela_vistal_fountain_badge") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("POI Bela Vistal Fountain Badge");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1036,7 +1036,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 6767, 30, -5617);
@@ -1044,7 +1044,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "rebel_hideout_badge") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("POI Rebel Hideout");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1053,7 +1053,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -6530, 30, 5967);
@@ -1061,7 +1061,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "rogue_corsec_base_badge") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("POI Rogue Corsec Base Badge");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1070,7 +1070,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 5291, 30, 1494);
@@ -1078,7 +1078,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "tyrena_theater_badge") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("POI Tyrena Theater Badge");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1087,7 +1087,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -5418, 30, -6248);
@@ -1095,7 +1095,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "dantooine_agro_outpost_starport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dantooine Agro Outpost Stareport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1104,7 +1104,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dantooine", 0, 0, 0);
@@ -1112,7 +1112,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "dantooine_imperial_outpost_starport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dantooine Imperial Outpost Stareport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1121,7 +1121,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dantooine", 0, 0, 0);
@@ -1129,7 +1129,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "dantooine_mining_outpost_startport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dantooine Mining Outpost Stareport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1138,7 +1138,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dantooine", 0, 0, 0);
@@ -1146,7 +1146,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "dathomir_trade_outpost_starport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dathomir Trade Outpost Stareport ");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1155,7 +1155,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dathomir", 0, 0, 0);
@@ -1163,7 +1163,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "dathomir_science_outpost_starport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dathomir Science Outpost Stareport ");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1172,7 +1172,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dathomir", 0, 0, 0);
@@ -1180,7 +1180,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "dathomir_village_shuttleport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dathomir Village Shuttleport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1189,7 +1189,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dathomir", 0, 0, 0);
@@ -1197,7 +1197,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "nyms_stronghold_starport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Nym's Stronghold Stareport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1206,7 +1206,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("lok", 0, 0, 0);
@@ -1214,7 +1214,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "scavenger_starport_travel") {
-				if (player->getCashCredits() < 4999) {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Scavenger Stareport");
 		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
@@ -1223,7 +1223,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (player->getCashCredits() > 4999) {
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("hoth", 0, 0, 0);
