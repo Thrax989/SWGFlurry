@@ -79,9 +79,50 @@ spawnMobile("dungeon1", "isd_stormtrooper", 0, -57.691, 173.835, 34.086, 179, 43
 spawnMobile("dungeon1", "isd_stormtrooper", 0, -59.809, 173.835, 34.086, 181, 4336901)
 
 
-
-
-
+--Main Strech too 2nd instance area
+spawnMobile("dungeon1", "stormtrooper", 0, 69.5, 173.835, 37.0327, 233, 4336891)
+spawnMobile("dungeon1", "stormtrooper", 0, 67.7099, 173.835, 75.5727, 12, 4336892)
+spawnMobile("dungeon1", "stormtrooper", 0, 66.0803, 173.835, 75.5168, 351, 4336892)
+spawnMobile("dungeon1", "stormtrooper", 0, 59.5532, 173.835, 70.0976, 64, 4336892)
+spawnMobile("dungeon1", "stormtrooper", 0, 59.4742, 173.835, 73.9164, 125, 4336892)
+spawnMobile("dungeon1", "stormtrooper", 0, 50.3973, 173.835, 69.722, 258, 4336890)
+spawnMobile("dungeon1", "stormtrooper", 0, 49.5, 173.835, 71.9717, 79, 4336890)
+spawnMobile("dungeon1", "stormtrooper", 0, 50.4035, 173.835, 74.8044, 250, 4336890)
+spawnMobile("dungeon1", "stormtrooper", 0, 53.9988, 173.835, 85.586, 169, 4336889)
+spawnMobile("dungeon1", "stormtrooper", 0, 66.1162, 173.835, 81.5044, 76, 4336889)
+spawnMobile("dungeon1", "stormtrooper", 0, 66.3651, 173.835, 84.086, 111, 4336889)
+spawnMobile("dungeon1", "stormtrooper", 0, 59.4009, 173.835, 92.9488, 222, 4336888)
+spawnMobile("dungeon1", "stormtrooper", 0, 58.3923, 173.835, 93.9701, 230, 4336888)
+spawnMobile("dungeon1", "stormtrooper", 0, 56.9955, 173.835, 95.3667, 226, 4336888)
+spawnMobile("dungeon1", "stormtrooper", 0, 72.9082, 173.835, 103.918, 46, 4336888)
+spawnMobile("dungeon1", "stormtrooper", 0, 71.5221, 173.835, 105.311, 46, 4336888)
+spawnMobile("dungeon1", "stormtrooper", 0, 70.2656, 173.835, 106.594, 49, 4336888)
+spawnMobile("dungeon1", "stormtrooper", 0, 69.75, 173.835, 117.071, 273, 4336887)
+spawnMobile("dungeon1", "stormtrooper", 0, 51.4393, 173.835, 114.098, 159, 4336887)
+spawnMobile("dungeon1", "stormtrooper", 0, 51.0128, 173.835, 118.314, 241, 4336887)
+spawnMobile("dungeon1", "stormtrooper", 0, 50.5, 173.837, 125.44, 81, 4336887)
+spawnMobile("dungeon1", "stormtrooper", 0, 55.5, 173.837, 125.454, 268, 4336887)
+spawnMobile("dungeon1", "stormtrooper", 0, 50.1889, 173.835, 137.588, 266, 4336886)
+spawnMobile("dungeon1", "stormtrooper", 0, 51.3225, 173.835, 140.523, 358, 4336886)
+spawnMobile("dungeon1", "stormtrooper", 0, 54.4909, 173.835, 140.813, 14, 4336886)
+spawnMobile("dungeon1", "stormtrooper", 0, 59.5, 173.835, 139.87, 113, 4336879)
+spawnMobile("dungeon1", "stormtrooper", 0, 59.2581, 173.835, 136.188, 59, 4336879)
+spawnMobile("dungeon1", "stormtrooper", 0, 65.0243, 173.835, 133.094, 359, 4336879)
+spawnMobile("dungeon1", "stormtrooper", 0, 70.579, 173.835, 138.873, 355, 4336879)
+spawnMobile("dungeon1", "stormtrooper", 0, 82.5, 173.835, 137.611, 184, 4336881)
+spawnMobile("dungeon1", "stormtrooper", 0, 78.8584, 173.835, 148.336, 344, 4336882)
+spawnMobile("dungeon1", "stormtrooper", 0, 81.0336, 173.835, 148.336, 351, 4336882)
+spawnMobile("dungeon1", "stormtrooper", 0, 77.5, 173.835, 123.946, 174, 4336881)
+spawnMobile("dungeon1", "stormtrooper", 0, 82.5, 173.835, 123.946, 183, 4336881)
+spawnMobile("dungeon1", "stormtrooper", 0, 77.5, 173.835, 114.568, 175, 4336881)
+spawnMobile("dungeon1", "stormtrooper", 0, 82.5, 173.835, 103.946, 352, 4336881)
+spawnMobile("dungeon1", "stormtrooper", 0, 77.5, 173.835, 103.946, 177, 4336881)
+spawnMobile("dungeon1", "stormtrooper", 0, 77.5, 173.835, 94.7323, 2, 4336881)
+spawnMobile("dungeon1", "stormtrooper", 0, 88.8528, 173.835, 92.0207, 179, 4336884)
+spawnMobile("dungeon1", "stormtrooper", 0, 88.7512, 173.835, 97.1677, 348, 4336884)
+spawnMobile("dungeon1", "stormtrooper", 0, 77.5, 173.835, 80.2241, 8, 4336881)
+spawnMobile("dungeon1", "stormtrooper", 0, 82.5, 173.835, 80.0384, 357, 4336881)
+spawnMobile("dungeon1", "stormtrooper", 0, 84, 173.835, 63.8969, 266, 4336885)
 
 
 
