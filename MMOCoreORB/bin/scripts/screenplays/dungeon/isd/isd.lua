@@ -245,6 +245,27 @@ spawnMobile("dungeon1", "at_at", 0, -2.99155, 172.335, 302.711, 177, 4336867)
 spawnMobile("dungeon1", "at_st", 0, -1.45511, 172.335, 316.803, 353, 4336867)
 --Boss for main room
 spawnMobile("dungeon1", "stormtrooper", 0, -2.72086, 172.335, 340.14, 159, 4336867)
+	
+	
+	
+--Commander watch captin thrat
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -60.4748, 172.335, 235.654, 354, 4336876)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -60.4954, 172.335, 239.477, 169, 4336876)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -74.25, 172.335, 237.476, 77, 4336876)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -72.7842, 172.335, 248.336, 2, 4336876)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -64.7903, 172.335, 243.491, 175, 4336876)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -63.5, 172.335, 256.336, 216, 4336877)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -72.4645, 172.335, 253.836, 87, 4336877)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -68.782, 172.335, 251.336, 351, 4336877)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -68.9372, 172.335, 256.336, 171, 4336877)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -84.0053, 172.21, 252.34, 191, 4336877)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -86.8844, 172.21, 253.279, 195, 4336877)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -89.3248, 172.21, 255.064, 229, 4336877)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -91.0889, 172.21, 257.515, 253, 4336877)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -91.9761, 172.21, 260.206, 251, 4336877)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -92.2499, 172.21, 264.552, 279, 4336877)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -86.3092, 172.086, 266.035, 180, 4336877)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -76.8794, 172.335, 261.836, 90, 4336877)
 
 --Droid 1 Trigger 1st DROIDEKA
 	local T1Droid = spawnMobile("dungeon1", "droideka", 0, -6.32669, 173.835, 12.5935, 304, 4336902)print("Trigger 1 Loaded")
