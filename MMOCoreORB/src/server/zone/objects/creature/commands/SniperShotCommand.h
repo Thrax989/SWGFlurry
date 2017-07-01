@@ -62,13 +62,13 @@ public:
 		player->playEffect("clienteffect/lair_med_damage_smoke.cef");
 
 		int res = doCombatAction(creature, target);
-		int knockdown = 50;
+		int knockdown = 25;
 		int dizzystun = 25;
 		int intimidate = 15;
                 int duration = 5;
 
 		CombatManager* combatManager = CombatManager::instance();
-		if (res == SUCCESS && System::random(100) > knockdown) {
+		if (res == SUCCESS && System::random(100) < knockdown) {
 			Locker clocker(targetCreature, creature);
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
