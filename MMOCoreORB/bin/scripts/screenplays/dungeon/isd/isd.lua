@@ -87,37 +87,54 @@ spawnMobile("dungeon1", "isd_stormtrooper", 0, -59.809, 173.835, 34.086, 181, 43
 
 
 --Hall WAy Tech Befor Mini boss
-spawnMobile("dungeon1", "stormtrooper", 0, 0.0153364, 175.335, -13.2076, 177, 4336896)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 0.0153364, 175.335, -13.2076, 177, 4336896)
 
 --Mini Boss In main Hatch note change NPC TEMPLATE
-spawnMobile("dungeon1", "stormtrooper", 0, -0.039244, 177.335, -58.358, 359, 4336897)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -0.039244, 177.335, -58.358, 359, 4336897)
 --Guards Guarding Mini Boss Change Templates When Ready
-spawnMobile("dungeon1", "stormtrooper", 0, 2.04692, 175.835, -43.3428, 337, 4336896)
-spawnMobile("dungeon1", "stormtrooper", 0, -2.04691, 175.835, -43.3428, 15, 4336896)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 2.04692, 175.835, -43.3428, 337, 4336896)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -2.04691, 175.835, -43.3428, 15, 4336896)
 
 
 --Hallway Techs
-spawnMobile("dungeon1", "stormtrooper", 0, -3.25, 175.71, -35.5379, 263, 4336896)
-spawnMobile("dungeon1", "stormtrooper", 0, 3.25, 175.71, -35.87, 89, 4336896)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -3.25, 175.71, -35.5379, 263, 4336896)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 3.25, 175.71, -35.87, 89, 4336896)
 
 
 
 
 
 --Right door way right side of KRIX
-spawnMobile("dungeon1", "stormtrooper", 0, -16.6519, 175.335, -19.414, 163, 4336898)
-spawnMobile("dungeon1", "stormtrooper", 0, -16.6823, 175.335, -25.414, 345, 4336898)
-spawnMobile("dungeon1", "stormtrooper", 0, -32.0267, 175.335, -19.914, 185, 4336900)
-spawnMobile("dungeon1", "stormtrooper", 0, -32.0744, 175.335, -24.914, 333, 4336900)
-spawnMobile("dungeon1", "stormtrooper", 0, -52.3691, 175.085, -16.0054, 251, 4336900)
-spawnMobile("dungeon1", "stormtrooper", 0, -55.0353, 175.085, -20.049, 334, 4336900)
-spawnMobile("dungeon1", "stormtrooper", 0, -59.1815, 174.585, -9.64514, 321, 4336900)
-spawnMobile("dungeon1", "stormtrooper", 0, -63.033, 174.585, -12.6892, 320, 4336900)
-spawnMobile("dungeon1", "stormtrooper", 0, -68.7092, 173.835, 27.603, 263, 4336901)
-spawnMobile("dungeon1", "stormtrooper", 0, -64.5176, 173.835, 20.1768, 357, 4336901)
-spawnMobile("dungeon1", "stormtrooper", 0, -69.2962, 173.835, 9.6136, 25, 4336900)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -16.6519, 175.335, -19.414, 163, 4336898)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -16.6823, 175.335, -25.414, 345, 4336898)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -32.0267, 175.335, -19.914, 185, 4336900)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -32.0744, 175.335, -24.914, 333, 4336900)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -52.3691, 175.085, -16.0054, 251, 4336900)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -55.0353, 175.085, -20.049, 334, 4336900)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -59.1815, 174.585, -9.64514, 321, 4336900)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -63.033, 174.585, -12.6892, 320, 4336900)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -68.7092, 173.835, 27.603, 263, 4336901)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -64.5176, 173.835, 20.1768, 357, 4336901)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -69.2962, 173.835, 9.6136, 25, 4336900)
 
-
+--Left side of Krix Hallway
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 8.95032, 175.335, -13.414, 171, 4336894)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 6, 175.335, -21.881, 100, 4336894)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 16.6051, 175.335, -25.414, 345, 4336894)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 16.5237, 175.335, -19.414, 165, 4336894)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 32.2088, 175.335, -23.7555, 173, 4336893)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 32.2285, 175.335, -21.0168, 347, 4336893)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 43.2261, 175.335, -19.7326, 60, 4336893)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 46.1172, 175.335, -19.0861, 76, 4336893)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 57.3558, 174.96, -18.5117, 18, 4336893)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 54.3681, 174.96, -14.6551, 74, 4336893)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 64.6047, 174.46, -10.1261, 14, 4336893)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 59.3461, 174.585, -9.37018, 41, 4336893)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 63.7118, 173.96, 1.30909, 27, 4336893)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 68.5249, 173.96, 0.539704, 352, 4336893)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 64.5, 173.835, 13.6481, 9, 4336893)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 69.447, 173.835, 14.1914, 321, 4336891)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, 69.5, 173.835, 26.0028, 310, 4336891)
 
 --Droid 1 Trigger 1st DROIDEKA
 	local T1Droid = spawnMobile("dungeon1", "droideka", 0, -6.32669, 173.835, 12.5935, 304, 4336902)print("Trigger 1 Loaded")
