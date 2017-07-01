@@ -101,7 +101,8 @@ spawnMobile("dungeon1", "isd_stormtrooper", 0, -3.25, 175.71, -35.5379, 263, 433
 spawnMobile("dungeon1", "isd_stormtrooper", 0, 3.25, 175.71, -35.87, 89, 4336896)
 
 
-
+--Mini Boss Officer Room
+spawnMobile("dungeon1", "stormtrooper", 0, 8.90682, 175.335, -34.1395, 351, 4336895)
 
 
 --Right door way right side of KRIX
