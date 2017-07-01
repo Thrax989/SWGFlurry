@@ -138,7 +138,16 @@ end
 --Phase 2 Of 10 Instance
 function ISDScreenPlay:notify2DroidDead(T2Droid, pKiller)
 	local player = LuaCreatureObject(pKiller)
-        local pBoss = spawnMobile("dungeon1", "stormtrooper", 1, 0.188488, 173.835, 27.0266, 338, 4336902) print("Phase 2 Started")
+        local pBoss = spawnMobile("dungeon1", "stormtrooper", 1, 11.5961, 173.835, 21.7531, 224, 4336902)
+        local pBoss = spawnMobile("dungeon1", "stormtrooper", 1, 10.3578, 173.835, 26.7773, 296, 4336902)
+        local pBoss = spawnMobile("dungeon1", "stormtrooper", 1, 12.9387, 173.835, 34.8748, 227, 4336902)
+        local pBoss = spawnMobile("dungeon1", "stormtrooper", 1, 8.23861, 173.835, 36.1331, 207, 4336902)
+        local pBoss = spawnMobile("dungeon1", "stormtrooper", 1, 5.4772, 173.835, 40.0623, 205, 4336902)
+        local pBoss = spawnMobile("dungeon1", "stormtrooper", 1, -1.77409, 173.835, 36.3142, 173, 4336902)
+        local pBoss = spawnMobile("dungeon1", "stormtrooper", 1, -6.74336, 173.835, 41.23, 156, 4336902)
+        local pBoss = spawnMobile("dungeon1", "stormtrooper", 1, -10.5487, 173.835, 35.5427, 99, 4336902)
+        local pBoss = spawnMobile("dungeon1", "stormtrooper", 1, -17.0569, 173.835, 36.5125, 112, 4336902)
+        local pBoss = spawnMobile("dungeon1", "stormtrooper", 1, -19.2227, 173.835, 28.7735, 97, 4336902)
         return 0
 end
 --Phase 3 Of 10 Instance
