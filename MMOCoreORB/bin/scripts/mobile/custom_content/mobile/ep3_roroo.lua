@@ -1,7 +1,5 @@
 ep3_roroo = Creature:new {
-	customName = "ep3_roroo",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
+	customName = "a ro-roo",
 	socialGroup = "townsperson",
 	faction = "townsperson",
 	level = 4,

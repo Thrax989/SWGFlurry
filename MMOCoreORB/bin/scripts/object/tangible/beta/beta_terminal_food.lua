@@ -42,6 +42,7 @@
 
 
 object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_terminal_food:new {
+	
 	gameObjectType = 16400,
 
 	maxCondition = 0,
@@ -103,13 +104,13 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 			"naboo",
 		   {
-			"Dee'ja Peak ShuttlePort (5,000 Credits)", "Test",
-			"Kaadara ShuttlePort (5,000 Credits)", "Test",
-			"Kaadara StarPort (5,000 Credits)", "Test",
-			"Keren ShuttlePort (5,000 Credits)", "Test",
-			"Karen ShuttlePort South (5,000 Credits)", "Test",
-			"Keren Starport (5,000 Credits)", "Test",
-			"Moenia StarPort (5,000 Credits)", "moemia_",
+			"Dee'ja Peak ShuttlePort (5,000 Credits)", "deeja_peak_shuttleport_travel",
+			"Kaadara ShuttlePort (5,000 Credits)", "kaadar_shuttleport_travel",
+			"Kaadara StarPort (5,000 Credits)", "kaadara_starport_travel",
+			"Keren ShuttlePort (5,000 Credits)", "keren_shuttleport_travel",
+			"Karen ShuttlePort South (5,000 Credits)", "karen_shuttleport_south_travel",
+			"Keren Starport (5,000 Credits)", "keren_starport_travel",
+			"Moenia StarPort (5,000 Credits)", "moemia_starport_travel",
 			"The Lake Retreat ShuttlePort (5,000 Credits)", "the_lake_retreat_shuttleport_travel",
 			"Theed ShuttlePort A (5,000 Credits)", "theed_shuttleport_a_travel",
 			"Theed ShuttlePort B (5,000 Credits)", "theed_shuttleport_b_travel",
@@ -126,40 +127,39 @@ object_tangible_beta_beta_terminal_food = object_tangible_beta_shared_beta_termi
 		   },
 		 	"taanab",
 		   {
-			"Taanab Pandath Port", "taanab_pandath_port_travel",
-			"Taanab Starhunter Station", "taanab_star_hunter_station_travel",
+			"Taanab Pandath Port (5,000 Credits)", "taanab_pandath_port_travel",
+			"Taanab Starhunter Station (5,000 Credits)", "taanab_star_hunter_station_travel",
 		   },
 		 	"talus",
 		   {
-			"Test", "Test",
+			"Talus Dearic Shuttleport (5,000 Credits)", "talus_dearic_shuttleport_travel",
+			"Talus Dearic Starport (5,000 Credits)", "talus_dearic_starport_travel",
+			"Talus Nashal Shuttleport (5,000 Credits)", "talus_nashal_shuttleport_travel",
+			"Talus Imperial Outpost (5,000 Credits)", "talus_imperial_outpost_travel",
+			
 		   },
 		 	"tatooine",
 		   {
-			"Test", "Test",
+			"Anchorhead Shuttleport (5,000 Credits)", "anchorhead_shuttle_travel",
+			"Bestine Shuttleport (5,000 Credits)", "bestine_shuttle_travel",
+			"Bestine Starport (5,000 Credits)", "bestine_starport_travel",
+			"Mos Eisley Shuttleport (5,000 Credits)", "mos_eisley_shuttleport_travel",
+			"Mos Entha Shuttle A (5,000 Credits)", "mos_entha_shuttle_a_travel",
+			"Mos Entha Shuttle B (5,000 Credits)", "mos_entha_shuttle_b_travel",
+			"Mos Entha Spaceport (5,000 Credits)", "mos_entha_spaceport_travel",
+			"Mos Espa Shuttleport East (5,000 Credits)", "mos_espa_shuttleport_east_travel",
+			"Mos Espa Shuttleport South (5,000 Credits)", "mos_espa_shuttleport_south_travel",
+			"Mos Espa Shuttleport West (5,000 Credits)", "mos_espa_shuttleport_west_travel",
+			"Mos Espa Starport (5,000 Credits)", "mos_espa_starport_travel",
 		   },
 		 	"yavin4",
 		   {
-			"Test", "Test",
+			"Yavin IV Imperial Outpost (5,000 Credits)", "yavin_iv_imperial_outpost_travel",
+			"Yavin IV Labor Outpost (5,000 Credits)", "yavin_iv_labor_outpost_travel",
 		   },
 		 	"kaas",
 		   {
-			"Kaas PvP Zone", "kaas_pvp_zone",
-		   },
-			"coruscant",
-		   {
-			"test", "Test",
-		   },
-			"chandrila",
-		   {
-			"Test", "Test",
-		   },
-			"nal hutta",
-		   {
-			"Test", "Test",
-		   },
-			"moraband",
-		   {
-			"Test", "Test",
+			"Kaas PvP Zone (5,000 Credits)", "kaas_pvp_zone",
 		   },
 	}
 }

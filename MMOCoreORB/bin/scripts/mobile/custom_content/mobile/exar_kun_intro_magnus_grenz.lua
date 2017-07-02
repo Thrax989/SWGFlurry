@@ -1,6 +1,5 @@
 exar_kun_intro_magnus_grenz = Creature:new {
 	customName = "exar_kun_intro_magnus_grenz",
-	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",

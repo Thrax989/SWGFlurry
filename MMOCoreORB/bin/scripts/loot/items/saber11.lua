@@ -3,7 +3,7 @@
 saber11 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "5th Gen Saber",
 	directObjectTemplate = "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_pvp_bf.iff",
 	craftingValues = {
 		{"mindamage",103,198,0},

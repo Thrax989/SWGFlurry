@@ -2,13 +2,13 @@ varactyl = Creature:new {
 	customName = "Varactyl",
 	socialGroup = "townsperson",
 	faction = "townsperson",
-	level = 4,
+	level = 50,
 	chanceHit = 0.24,
 	damageMin = 40,
 	damageMax = 45,
-	baseXp = 62,
-	baseHAM = 113,
-	baseHAMmax = 118,
+	baseXp = 3500,
+	baseHAM = 12500,
+	baseHAMmax = 18500,
 	armor = 0,
 	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
@@ -30,6 +30,7 @@ varactyl = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
+				{"stunattack",""}
 	}
 }
 
