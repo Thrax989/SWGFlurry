@@ -1,6 +1,5 @@
 exar_kun_tomb_guardian = Creature:new {
 	customName = "exar_kun_tomb_guardian",
-	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",

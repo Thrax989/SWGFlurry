@@ -1,6 +1,5 @@
 exar_kun_intro_giver = Creature:new {
 	customName = "exar_kun_intro_giver",
-	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",

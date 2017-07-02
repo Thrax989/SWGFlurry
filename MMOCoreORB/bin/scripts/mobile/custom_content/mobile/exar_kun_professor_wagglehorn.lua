@@ -1,6 +1,5 @@
 exar_kun_professor_wagglehorn = Creature:new {
 	customName = "exar_kun_professor_wagglehorn",
-	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",

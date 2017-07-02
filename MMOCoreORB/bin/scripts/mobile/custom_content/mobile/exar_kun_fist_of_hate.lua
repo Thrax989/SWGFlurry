@@ -1,6 +1,5 @@
 exar_kun_fist_of_hate = Creature:new {
 	customName = "exar_kun_fist_of_hate",
-	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",
