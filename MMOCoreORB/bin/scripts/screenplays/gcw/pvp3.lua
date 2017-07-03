@@ -38,7 +38,7 @@ function pvp3:notifySpawnArea(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isRebel()) then
-			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the Rori Pvp Zone!")
+			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the Rori Pvp Zone!")
 			player:sendSystemMessage("You have entered the Rori Pvp zone!")
 			player:setFactionStatus(2)
 		else
@@ -61,7 +61,7 @@ function pvp3:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isRebel()) then
-			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Rori Pvp Zone!")
+			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Rori Pvp Zone!")
 			player:sendSystemMessage("You have left the Rori Pvp zone!")
 		end
 		return 0
