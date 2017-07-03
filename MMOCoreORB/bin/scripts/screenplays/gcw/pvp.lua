@@ -38,7 +38,7 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isRebel()) then
-			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the Kaas PVP Zone!")
+			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the Kaas PVP Zone!")
 			player:sendSystemMessage("You have entered the Kaas PvP zone!")
 			player:setFactionStatus(2)
 		else
@@ -61,7 +61,7 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isRebel()) then
-			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Kaas PVP Zone!")
+			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Kaas PVP Zone!")
 			player:sendSystemMessage("You have left the Kaas PvP zone!")
 		end
 		return 0
