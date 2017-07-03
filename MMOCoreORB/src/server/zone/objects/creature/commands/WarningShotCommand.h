@@ -76,10 +76,9 @@ public:
 			if (hasFr3) { targetCreature->removeBuff(BuffCRC::JEDI_FORCE_RUN_3); }
 
 			targetCreature->playEffect("clienteffect/combat_special_attacker_aim.cef", "head");
-    		  	targetCreature->setPosture(CreaturePosture::KNOCKEDDOWN);
 
 			if (creature->isPlayerCreature())
-				creature->sendSystemMessage("Force Run Strip An Knockdwon Attempt Has Successfully Landed");
+				creature->sendSystemMessage("Force Run Strip Attempt Has Successfully Landed");
 
 		} else {
 
