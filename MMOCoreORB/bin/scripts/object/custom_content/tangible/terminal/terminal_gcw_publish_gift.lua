@@ -23,11 +23,11 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Tyrena Shuttle B (5,000 Credits)", "tyrena_b_shuttle_travel",
 			"Tyrena Starport (5,000 Credits)", "tyrena_starport_travel",
 			"Vreni Island Shuttle (5,000 Credits)", "vreni_island_shuttle_travel",
-			"POI Argilat Swamp Badge (5,000 Credits)", "argilat_swamp_badge",
+			--[["POI Argilat Swamp Badge (5,000 Credits)", "argilat_swamp_badge",
 			"POI Bela Vistal Fountain Badge (5,000 Credits)", "bela_vistal_fountain_badge",
 			"POI Rebel Hideout (5,000 Credits)", "rebel_hideout_badge",
 			"POI Rogue Corsec Base Badge (5,000 Credits)", "rogue_corsec_base_badge",
-			"POI Tyrena Theater Badge (5,000 Credits)", "tyrena_theater_badge",
+			"POI Tyrena Theater Badge (5,000 Credits)", "tyrena_theater_badge",]]--
 		   },
 			"dantooine",
 		   {
