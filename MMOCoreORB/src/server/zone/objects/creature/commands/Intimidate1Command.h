@@ -46,10 +46,6 @@ public:
 		}
 		return res;
 	}
-	
-	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
-		return defaultTime * 0.0;
-	}
 
 };
 
