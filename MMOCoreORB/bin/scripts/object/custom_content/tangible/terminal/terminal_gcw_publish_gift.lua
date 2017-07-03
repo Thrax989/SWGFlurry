@@ -117,6 +117,11 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Kaas PvP Zone (5,000 Credits)", "kaas_pvp_zone",
 		   },
+		 	"endor",
+		   {
+			"Smuggler Outpost (5,000 Credits)", "smuggler_outpost_travel",
+			"Research Outpost (5,000 Credits)", "research_outpost_travel",
+		   },
 	}
 }
 ObjectTemplates:addTemplate(object_tangible_terminal_terminal_gcw_publish_gift, "object/tangible/terminal/terminal_gcw_publish_gift.iff")
