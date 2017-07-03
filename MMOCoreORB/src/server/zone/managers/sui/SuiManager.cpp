@@ -802,7 +802,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 3349.8933, 308, -5598.1362);
+ 				        player->switchZone("corellia", 6644.269, 330, -5922.5225);
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
@@ -972,7 +972,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -5600.6367, 21, -2386.9819);
+ 				        player->switchZone("corellia", -5600.6367, 21, -2790.7429);
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
@@ -1178,7 +1178,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("dathomir", 49.021923, 18, -1584.7278);
+ 				        player->switchZone("dathomir", -49.021923, 18, -1584.7278);
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
@@ -1421,7 +1421,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", 2803.511, 5, 2182.9648);
+ 				        player->switchZone("tatooine", -2803.511, 5, 2182.9648);
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
@@ -1541,7 +1541,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("talus", 2226, 20, 2319);
+ 				        player->switchZone("talus", -2226, 20, 2319);
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
@@ -1678,7 +1678,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", 5494.4224, -150, -21.837162);
+ 				        player->switchZone("naboo", -5494.4224, -150, -21.837162);
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
@@ -1988,7 +1988,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("endor", 950.59241, 73, 1553.4125);
+ 				        player->switchZone("endor", -950.59241, 73, 1553.4125);
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
