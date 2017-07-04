@@ -42,7 +42,7 @@ function DrallCaveScreenPlay:start()
 end
 
 function DrallCaveScreenPlay:spawnMobiles()
-	spawnMobile("corellia", "meatlump_king",1200,186,-65,-106,-18,4275373)
+	spawnMobile("corellia", "meatlump_king_other",1200,186,-65,-106,-18,4275373)
 
 	spawnMobile("corellia", "meatlump_trooper",600,157,-66,-102,-91,4275372)
 	spawnMobile("corellia", "meatlump_trooper",600,157,-66,-94,-128,4275372)
