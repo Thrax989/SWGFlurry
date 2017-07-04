@@ -158,7 +158,6 @@ public:
 				break;
 				
 		case 33: trainerTemplatePath = "trainer_spy";
-				break;
 
 		}
 
