@@ -25,8 +25,8 @@ meatlump_king_other = Creature:new {
   optionsBitmask = AIENABLED,
   diet = HERBIVORE,
 
-  templates = {"object/mobile/mos_taike_guard_old.iff"},
-  outfit = "custom_armor_meatlump_outfit",
+  templates = {"object/mobile/meatlump_king.iff"},
+  
   lootGroups = {
     {
       groups = {
