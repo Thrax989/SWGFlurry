@@ -42,7 +42,7 @@
 
 
 object_mobile_dressed_assassin_mission_giver_02 = object_mobile_shared_dressed_assassin_mission_giver_02:new {
-
+	objectMenuComponent = "TrainerMenuComponent"
 }
 
 ObjectTemplates:addTemplate(object_mobile_dressed_assassin_mission_giver_02, "object/mobile/dressed_assassin_mission_giver_02.iff")
