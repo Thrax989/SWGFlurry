@@ -1,4 +1,4 @@
-meatlump_king_other = Creature:new {
+meatlump_boss_other = Creature:new {
   customName = "<<<< Meatlump King >>>>",
   socialGroup = "geonosian",
   level = 300,
@@ -111,4 +111,4 @@ reactionStf = "@npc_reaction/slang",
 attacks = merge(lightsabermaster)
 }
 
-CreatureTemplates:addCreatureTemplate(meatlump_king_other, "meatlump_king_other")
+CreatureTemplates:addCreatureTemplate(meatlump_boss_other, "meatlump_boss_other")
