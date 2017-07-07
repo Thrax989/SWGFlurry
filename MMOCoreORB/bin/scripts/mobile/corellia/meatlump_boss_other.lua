@@ -1,4 +1,4 @@
-meatlump_king_other = Creature:new {
+meatlump_boss_other = Creature:new {
   customName = "<<<< Meatlump King >>>>",
   socialGroup = "geonosian",
   level = 300,
@@ -25,8 +25,8 @@ meatlump_king_other = Creature:new {
   optionsBitmask = AIENABLED,
   diet = HERBIVORE,
 
-  templates = {"object/mobile/mos_taike_guard_old.iff"},
-  outfit = "custom_armor_meatlump_outfit",
+  templates = {"object/mobile/meatlump_king.iff"},
+  
   lootGroups = {
     {
       groups = {
@@ -111,4 +111,4 @@ reactionStf = "@npc_reaction/slang",
 attacks = merge(lightsabermaster)
 }
 
-CreatureTemplates:addCreatureTemplate(meatlump_king_other, "meatlump_king_other")
+CreatureTemplates:addCreatureTemplate(meatlump_boss_other, "meatlump_boss_other")

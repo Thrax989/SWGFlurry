@@ -96,7 +96,7 @@ float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
 
 		ManagedReference<CreatureObject*> c = cast<CreatureObject*>(obj);
 
-		if (c == NULL || (!c->isNonPlayerCreatureObject() && !c->isPlayerCreature()))
+		if (c == NULL || (!c->isPlayerCreature()))
 			continue;
 
 		if (c->isDead() || c->isIncapacitated() || (c->isPlayerCreature() && c->getPlayerObject()->hasGodMode()))
