@@ -47,14 +47,14 @@ void SurveyMissionObjectiveImplementation::abort() {
 	}
 }
 
-void SurveyMissionObjectiveImplementation::complete(ManagedObject* spawn, int64 sampledDensity) {
+void SurveyMissionObjectiveImplementation::complete(ManagedObject* spawn) {
 	MissionObjectiveImplementation::complete();
 	
 	// Award some of the resources surveyed
 	ManagedReference<MissionObject* > mission = this->mission.get();
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
 	
-	int quantity = (mission->getRewardCredits() + 500) * float(sampledDensity / 100.0f);
+	int quantity = mission->getRewardCredits() + owner->getSkillMod("surveying") + System::random(100);
 	
 	ResourceSpawn* sampledSpawn = cast<ResourceSpawn*>( spawn);
 	
@@ -64,7 +64,7 @@ void SurveyMissionObjectiveImplementation::complete(ManagedObject* spawn, int64 
 	ResourceManager* resourceManager = owner->getZoneServer()->getResourceManager();
 	resourceManager->givePlayerResource(owner, sampledSpawn->getName(), quantity);
 	
-	owner->sendSystemMessage("You also recieved " + String::valueOf(quantity) + " units of " + sampledSpawn->getName() + " for completing this mission at a " + String::valueOf(sampledDensity) + "% density location.");
+	owner->sendSystemMessage("You also recieved " + String::valueOf(quantity) + " units of " + sampledSpawn->getName() + " for completing this mission.");
 }
 
 int SurveyMissionObjectiveImplementation::notifyObserverEvent(MissionObserver* observer, uint32 eventType, Observable* observable, ManagedObject* arg1, int64 arg2) {
@@ -86,10 +86,10 @@ int SurveyMissionObjectiveImplementation::notifyObserverEvent(MissionObserver* o
 		String familyName = sampledSpawn->getSurveyMissionSpawnFamilyName();
 		
 		if (familyName.isEmpty())
-			familyName = "Water"; // Water is the only type that doesn't have a family name. The spawnFamily name returned when surveying water is "Water", so make familyName that as well.
+			familyName = "Water"; // Water is the only type that doesn't have a family name.
 		
 		if (familyName.contains("Renewable Energy"))
-			familyName = "Solar or Wind Energy"; // I renamed it because "Non Site-Restricted Renewable Energy" sucked
+			familyName = "Solar or Wind Energy"; // solor or wind
 		
 		if (familyName == spawnFamily && (sampledDensity >= efficiency)) {
 			Vector3 startPosition;
@@ -97,7 +97,7 @@ int SurveyMissionObjectiveImplementation::notifyObserverEvent(MissionObserver* o
 			startPosition.setY(mission->getStartPositionY());
 			float distance = startPosition.distanceTo(player->getWorldPosition());
 			if (distance > 1024.0f) {
-				complete(arg1, sampledDensity); // Send the spawn and survey density so we can grant some resources as a reward
+				complete(arg1); // Send the spawn so we can grant some resources as a reward
 
 				return 1;
 			} else {
