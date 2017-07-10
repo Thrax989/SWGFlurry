@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version
 
 
-object_draft_schematic_clothing_clothing_armor_stormtrooper_helmet = object_draft_schematic_clothing_clothing_armor_stormtrooper_helmet:new {
+object_draft_schematic_clothing_clothing_armor_stormtrooper_helmet = object_draft_schematic_clothing_shared_clothing_armor_stormtrooper_helmet:new {
 
    templateType = DRAFTSCHEMATIC,
 
@@ -52,7 +52,7 @@ object_draft_schematic_clothing_clothing_armor_stormtrooper_helmet = object_draf
    size = 4,
 
    xpType = "crafting_clothing_armor",
-   xp = 420,
+   xp = 550,
 
    assemblySkill = "armor_assembly",
    experimentingSkill = "armor_experimentation",
@@ -66,7 +66,7 @@ object_draft_schematic_clothing_clothing_armor_stormtrooper_helmet = object_draf
    ingredientTitleNames = {"auxilary_coverage", "body", "liner", "hardware_and_attachments", "binding_and_reinforcement", "padding", "armor", "load_bearing_harness", "reinforcement"},
    ingredientSlotType = {0, 0, 0, 0, 0, 0, 1, 1, 1},
    resourceTypes = {"ore_intrusive", "fuel_petrochem_solid_known", "fiberplast_naboo", "aluminum", "copper_beyrllius", "hide_wooly", "object/tangible/component/armor/shared_armor_segment_composite.iff", "object/tangible/component/clothing/shared_synthetic_cloth.iff", "object/tangible/component/clothing/shared_reinforced_fiber_panels.iff"},
-   resourceQuantities = {50, 50, 25, 30, 20, 20, 3, 1, 1},
+   resourceQuantities = {70, 70, 35, 40, 30, 30, 3, 1, 1},
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
