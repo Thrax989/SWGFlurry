@@ -5086,7 +5086,7 @@ ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_nab
 object_tangible_loot_loot_schematic_shared_tat_sm_win_01_house_loot_schem = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_tat_sm_win_01_house_loot_schem.iff"
 }
-ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_tat_sm_win_01_house_loot_schem, "object/tangible/loot/loot_schematic/tat_sm_win_01_house_loot_schem.iff")
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_tat_sm_win_01_house_loot_schem, "object/tangible/loot/loot_schematic/shared_tat_sm_win_01_house_loot_schem.iff")
 
 --ST Bicep l
 object_tangible_loot_loot_schematic_shared_stormtrooper_bicep_l_schematic = SharedTangibleObjectTemplate:new {
@@ -5139,61 +5139,5 @@ ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_sto
 --ST chest plate
 object_tangible_loot_loot_schematic_shared_stormtrooper_chest_plate_schematic = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_stormtrooper_chest_plate_schematic.iff"
-	--Data below here is deprecated and loaded from the tres, keeping for easy lookups
---[[
-	appearanceFilename = "appearance/eqp_tool_handheld_viewscreen_s1.apt",
-	arrangementDescriptorFilename = "",
-
-	certificationsRequired = {},
-	clearFloraRadius = 0,
-	clientDataFile = "",
-	clientGameObjectType = 8211,
-	collisionActionBlockFlags = 0,
-	collisionActionFlags = 51,
-	collisionActionPassFlags = 1,
-	collisionMaterialBlockFlags = 0,
-	collisionMaterialFlags = 1,
-	collisionMaterialPassFlags = 0,
-	containerType = 0,
-	containerVolumeLimit = 1,
-	customizationVariableMapping = {},
-
-	detailedDescription = "@craft_item_ingredients_d:armor_stormtrooper_chest_plate",
-
-	gameObjectType = 8211,
-
-	locationReservationRadius = 0,
-	lookAtText = "string_id_table",
-
-	noBuildRadius = 0,
-
-	objectName = "@craft_item_ingredients_n:armor_stormtrooper_chest_plate",
-	onlyVisibleInTools = 0,
-
-	paletteColorCustomizationVariables = {},
-	portalLayoutFilename = "",
-
-	rangedIntCustomizationVariables = {},
-
-	scale = 1,
-	scaleThresholdBeforeExtentTest = 0.5,
-	sendToClient = 1,
-	slotDescriptorFilename = "",
-	snapToTerrain = 1,
-	socketDestinations = {},
-	structureFootprintFileName = "",
-	surfaceType = 0,
-
-	targetable = 1,
-	totalCellNumber = 0,
-
-	useStructureFootprintOutline = 0,
-
-	clientObjectCRC = 0xDC3F30F0
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"}
-]]
 }
-
 ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_stormtrooper_chest_plate_schematic, "object/tangible/loot/loot_schematic/shared_stormtrooper_chest_plate_schematic.iff")
-
-
