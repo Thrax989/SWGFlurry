@@ -1862,4 +1862,5 @@ schematics = {
 	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_leggings.iff"},
 	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_gloves.iff"},
 	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_helmet.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_helmet.iff"},
 };
