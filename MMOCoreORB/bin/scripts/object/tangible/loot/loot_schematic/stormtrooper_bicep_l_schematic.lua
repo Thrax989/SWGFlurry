@@ -41,13 +41,15 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_tangible_loot_loot_schematic_shared_stormtrooper_bicep_l_schematic = object_tangible_loot_loot_schematic_shared_stormtrooper_bicep_l_schematic:new {
+object_tangible_loot_loot_schematic_stormtrooper_bicep_l_schematic = object_tangible_loot_loot_schematic_shared_stormtrooper_bicep_l_schematic:new {
 	templateType = LOOTSCHEMATIC,
 	customName = "Stormtrooper Armor Left Bicep Schematic",
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_armorsmith_master",
 	targetDraftSchematic = "object/draft_schematic/clothing/shared_clothing_armor_stormtrooper_bicep_l.iff",
+	targetUseCount = 5,
+	noTrade = 1
 }
 
-ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_shared_stormtrooper_bicep_l_schematic, "object/tangible/loot/loot_schematic/shared_stormtrooper_bicep_l_schematic.iff")
+ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_stormtrooper_bicep_l_schematic, "object/tangible/loot/loot_schematic/stormtrooper_bicep_l_schematic.iff")

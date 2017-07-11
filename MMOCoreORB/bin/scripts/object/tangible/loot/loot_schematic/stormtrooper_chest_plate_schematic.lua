@@ -48,8 +48,8 @@ object_tangible_loot_loot_schematic_stormtrooper_chest_plate_schematic = object_
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_armorsmith_master",
 	targetDraftSchematic = "object/draft_schematic/clothing/shared_clothing_armor_stormtrooper_chest_plate.iff",
-	targetUseCount = 0,
+	targetUseCount = 5,
 	noTrade = 1
 }
 
-ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_stormtrooper_chest_plate_schematic, "object/tangible/loot/loot_schematic/shared_stormtrooper_chest_plate_schematic.iff")
+ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_stormtrooper_chest_plate_schematic, "object/tangible/loot/loot_schematic/stormtrooper_chest_plate_schematic.iff")
