@@ -69,11 +69,9 @@ object_draft_schematic_clothing_clothing_armor_stormtrooper_helmet = object_draf
    resourceQuantities = {70, 70, 35, 40, 30, 30, 3, 1, 1},
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
-
    targetTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_helmet.iff",
 
-   additionalTemplates = {
-             }
+   additionalTemplates = {}
 
 }
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_armor_stormtrooper_helmet, "object/draft_schematic/clothing/shared_clothing_armor_stormtrooper_helmet.iff")
+ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_armor_stormtrooper_helmet, "object/draft_schematic/clothing/clothing_armor_stormtrooper_helmet.iff")
