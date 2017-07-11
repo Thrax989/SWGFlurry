@@ -1863,4 +1863,13 @@ schematics = {
 	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_gloves.iff"},
 	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_helmet.iff"},
 	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_helmet.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_chest_plate.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_leggings.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_boots.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_gloves.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_bicep_l.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_bicep_r.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_bracer_l.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_bracer_r.iff"},
 };
+
