@@ -55,9 +55,9 @@ oola_boss = Creature:new {
       lootChance = 2500000
   },
   },
-weapons = {"nyaxs_weapons"},
+weapons = {"dark_trooper_weapons"},
 reactionStf = "@npc_reaction/fancy",
-attacks = merge(marksmanmaster,riflemanmaster,carbineermaster,brawlermaster,swordsmanmaster)
+attacks = merge(riflemanmaster,marksmanmaster,fencermaster,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(oola_boss, "oola_boss")
