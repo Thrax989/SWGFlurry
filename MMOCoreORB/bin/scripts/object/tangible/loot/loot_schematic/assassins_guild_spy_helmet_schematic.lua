@@ -41,21 +41,14 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_tangible_loot_loot_schematic_assassins_guild_spy_helmet_schematic = object_tangible_loot_loot_schematic_shared_assassins_guild_spy_helmet_schematic:new {
+	templateType = LOOTSCHEMATIC,
+	customName = "Spy Armor Helmet Schematic",
+	objectMenuComponent = "LootSchematicMenuComponent",
+	attributeListComponent = "LootSchematicAttributeListComponent",
+	requiredSkill = "crafting_armorsmith_master",
+	targetDraftSchematic = "object/draft_schematic/clothing/clothing_armor_spy_helmet.iff",
+	targetUseCount = 1
+}
 
---Children folder includes
-
--- Server Objects
-includeFile("tangible/loot/dungeon/death_watch_bunker/art_crate.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/binary_liquid.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/blood_vial.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/ducted_fan.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/emulsion_protection.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/fuel_dispersion_unit.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/fuel_injector_tank.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/jetpack_base.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/jetpack_stabilizer.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/mining_drill_reward.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/pistol_de10_barrel.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/pistol_jinkins_barrel.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/viewscreen_s1.lua")
-includeFile("tangible/loot/dungeon/death_watch_bunker/viewscreen_s2.lua")
+ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_assassins_guild_spy_helmet_schematic, "object/tangible/loot/loot_schematic/assassins_guild_spy_helmet_schematic.iff")

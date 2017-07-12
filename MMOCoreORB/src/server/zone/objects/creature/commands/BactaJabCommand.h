@@ -163,7 +163,7 @@ public:
 			return GENERALERROR;
 		}
 
-		int healPower = (int) round(150 + System::random(600));
+		int healPower = (int) round(1000 + System::random(1000));
 		int healedHealth = creatureTarget->healDamage(creature, CreatureAttribute::HEALTH, healPower);
 		int healedAction = creatureTarget->healDamage(creature, CreatureAttribute::ACTION, healPower);
 		int healedMind = creatureTarget->healDamage(creature, CreatureAttribute::MIND, healPower);
