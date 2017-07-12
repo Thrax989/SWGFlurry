@@ -256,6 +256,7 @@ createTrainerConversationTemplate("trainer_neutral", "pilot_neutral_master", "tr
 createTrainerConversationTemplate("trainer_miner", "miner_survey_master", "trainer_miner_convotemplate")
 createTrainerConversationTemplate("trainer_elite_polearm", "elite_polearm_master", "trainer_elite_polearm_convotemplate")
 createTrainerConversationTemplate("trainer_spy", "combat_spy_master", "trainer_spy_convotemplate")
+createTrainerConversationTemplate("trainer_meleebountyhunter", "combat_meleebountyhunter_master", "trainer_meleebountyhunter_convotemplate")
 
 -- ****** Create force sensitive conversation templates ******
 -- Need a non-valid master skill...
