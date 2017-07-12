@@ -1419,3 +1419,10 @@ includeFile("items/loot_schematic/bounty_hunter/bounty_hunter_chest_schematic.lu
 includeFile("items/loot_schematic/bounty_hunter/bounty_hunter_gloves_schematic.lua")
 includeFile("items/loot_schematic/bounty_hunter/bounty_hunter_helmet_schematic.lua")
 includeFile("items/loot_schematic/bounty_hunter/bounty_hunter_leggings_schematic.lua")
+
+includeFile("items/wearables/helmets/bh_bounty.lua")
+includeFile("items/wearables/helmets/bh_bounty_ran.lua")
+includeFile("items/wearables/helmets/bh_mando.lua")
+includeFile("items/wearables/helmets/bh_mando_ran.lua")
+includeFile("items/wearables/helmets/bh_ris.lua")
+includeFile("items/wearables/helmets/bh_ris_ran.lua")
