@@ -12,8 +12,14 @@ public:
 		: JediQueueCommand(name, server) {
 
 		buffCRC = BuffCRC::JEDI_RESIST_STATES;
+                int jedistatedef = skillMods.get("jedi_state_defense");
+                if ( jedistatedef > 25 )
+                        skillMods.put("resistance_states", 25);
+                else
+                        skillMods.put("resistance_states", 60);
+        }
 
-		skillMods.put("resistance_states", 25);
+
 
 	}
 
