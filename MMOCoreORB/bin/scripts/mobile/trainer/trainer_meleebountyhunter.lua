@@ -1,5 +1,5 @@
 trainer_meleebountyhunter = Creature:new {
-	objectName = "@mob/creature_names:trainer_meleebountyhunter",
+	customName = "Melee Bounty Hunter Trainer",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	faction = "",
