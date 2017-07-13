@@ -26,7 +26,7 @@ object_draft_schematic_clothing_clothing_armor_spy_boots = object_draft_schemati
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/armor/spy/armor_spy_shoes.iff",
+   targetTemplate = "object/tangible/wearables/armor/spy/armor_spy_boots.iff",
 
    additionalTemplates = {
              }
