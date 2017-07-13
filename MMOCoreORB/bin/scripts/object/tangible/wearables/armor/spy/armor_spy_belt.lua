@@ -161,6 +161,4 @@ object_tangible_wearables_armor_spy_armor_spy_belt = object_tangible_wearables_a
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
-}
-
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_spy_armor_spy_belt, "object/tangible/wearables/armor/spy/armor_spy_belt.iff")
