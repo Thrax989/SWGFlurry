@@ -47,7 +47,7 @@ object_tangible_loot_loot_schematic_assassins_guild_spy_bicep_l_schematic = obje
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_armorsmith_master",
-	targetDraftSchematic = "object/draft_schematic/clothing/clothing_armor_Spy_bicep_l.iff",
+	targetDraftSchematic = "object/draft_schematic/clothing/clothing_armor_spy_bicep_l.iff",
 	targetUseCount = 1
 }
 
