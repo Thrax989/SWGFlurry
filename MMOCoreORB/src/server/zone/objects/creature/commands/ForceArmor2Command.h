@@ -42,7 +42,7 @@ public:
 		// TODO: Force Rank modifiers.
 	        int enhSkills = playerObject->numSpecificSkills(creo, "force_discipline_enhancements_");
 	        int defSkills = playerObject->numSpecificSkills(creo, "force_discipline_defender_");
-		float enhMod = enhSkills * .01875;
+		float enhMod = enhSkills * .021;
 		if (defSkills > 1)
 			enhMod = 0;
 		int forceCost = param * (0.4 - enhMod);	
