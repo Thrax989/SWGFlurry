@@ -122,7 +122,6 @@ if (missionTerminal->isBountyTerminal() && (!player->hasSkill("combat_bountyhunt
             player->sendSystemMessage("@mission/mission_generic:not_bounty_hunter_terminal");
             return;
         }
-	}
 
 	ManagedReference<CityRegion*> terminalCity = missionTerminal->getCityRegion();
 
