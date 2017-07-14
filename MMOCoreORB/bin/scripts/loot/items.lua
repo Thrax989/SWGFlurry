@@ -1426,3 +1426,5 @@ includeFile("items/wearables/helmets/bh_mando.lua")
 includeFile("items/wearables/helmets/bh_mando_ran.lua")
 includeFile("items/wearables/helmets/bh_ris.lua")
 includeFile("items/wearables/helmets/bh_ris_ran.lua")
+
+includeFile("items/geo_power_cube_saber.lua")
