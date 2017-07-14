@@ -503,5 +503,4 @@ includeFile("groups/loot_schematic/bounty_hunter/bounty_hunter_schematics.lua")
 includeFile("groups/loot_schematic/mandalorian/mandalorian_schematics.lua")
 
 includeFile("groups/armor/helmet_lg.lua")
-includeFile("groups/sabercube_lg.lua")
 
