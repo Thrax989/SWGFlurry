@@ -19,10 +19,6 @@ public:
                         skillMods.put("resistance_states", 60);
         }
 
-
-
-	}
-
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
 		return doJediSelfBuffCommand(creature);
 	}
