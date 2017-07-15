@@ -4,6 +4,8 @@
 
 #include "ServerCore.h"
 
+#include <type_traits>
+
 #include "db/ServerDatabase.h"
 #include "db/MantisDatabase.h"
 
@@ -116,17 +118,17 @@ void ServerCore::initialize() {
 			webServer = WebServer::instance();
 		}
 
-		NavMeshManager::instance()->initialize(configManager->getMaxNavMeshJobs());
-
 		ZoneServer* zoneServer = zoneServerRef.get();
+
+		NavMeshManager::instance()->initialize(configManager->getMaxNavMeshJobs(), zoneServer);
 
 		if (zoneServer != NULL) {
 			int zonePort = 44463;
 			int zoneAllowedConnections =
 					configManager->getZoneAllowedConnections();
 
-			if (arguments.contains("deleteNavRegions") && zoneServer != NULL) {
-				zoneServer->setShouldDeleteNavRegions(true);
+			if (arguments.contains("deleteNavMeshes") && zoneServer != NULL) {
+				zoneServer->setShouldDeleteNavAreas(true);
 			}
 
 			ObjectDatabaseManager* dbManager =
@@ -266,6 +268,8 @@ void ServerCore::shutdown() {
 		statusServer = NULL;
 	}
 
+	NavMeshManager::instance()->stop();
+
 	Thread::sleep(5000);
 
 	objectManager->createBackup();
@@ -277,15 +281,13 @@ void ServerCore::shutdown() {
 
 	objectManager->cancelUpdateModifiedObjectsTask();
 
-	NavMeshManager::instance()->stop();
-
 	if (zoneServer != NULL) {
 		zoneServer->clearZones();
 	}
 
 	orb->shutdown();
 
-	Core::getTaskManager()->shutdown();
+	Core::shutdownTaskManager();
 
 	if (zoneServer != NULL) {
 		zoneServer->stop();
@@ -295,7 +297,18 @@ void ServerCore::shutdown() {
 	DistributedObjectDirectory* dir = objectManager->getLocalObjectDirectory();
 
 	HashTable<uint64, Reference<DistributedObject*> > tbl;
-	tbl.copyFrom(dir->getDistributedObjectMap());
+	auto objects = dir->getDistributedObjectMap();
+	auto objectsIterator = objects->iterator();
+	typedef std::remove_reference<decltype(*objects)>::type ObjectsMapType;
+
+	while (objectsIterator.hasNext()) {
+		ObjectsMapType::key_type key;
+		ObjectsMapType::value_type value;
+
+		objectsIterator.getNextKeyAndValue(key, value);
+
+		tbl.put(key, value);
+	}
 
 	objectManager->finalizeInstance();
 
@@ -345,7 +358,10 @@ void ServerCore::handleCommands() {
 			System::out << "> ";
 
 			char line[256];
-			fgets(line, sizeof(line), stdin);
+			auto res = fgets(line, sizeof(line), stdin);
+
+			if (!res)
+				continue;
 
 			fullCommand = line;
 			fullCommand = fullCommand.replaceFirst("\n", "");
