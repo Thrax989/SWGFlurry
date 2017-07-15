@@ -54,7 +54,7 @@ class BuildingObject extends StructureObject {
 
 	public boolean publicStructure;
 	
-	public static final int MAXPLAYERITEMS = 1000;
+	public static final int MAXPLAYERITEMS = 400;
 
 	protected unicode signName;
 		
@@ -116,7 +116,7 @@ class BuildingObject extends StructureObject {
 	 * @param player SceneObject that will receive the objects 
 	 */
 	@dirty
-	public native void sendContainerObjectsTo(SceneObject player);
+	public native void sendContainerObjectsTo(SceneObject player, boolean forceLoad);
 
 	/**
 	 * Updates the cell permissions to the player based on the players permission in the StructurePermissionList.
@@ -189,21 +189,12 @@ class BuildingObject extends StructureObject {
 
 	public native void notifyRemoveFromZone();
 
-	/**
-	 * Gets called when this objects is loaded from database
-	 * @pre { this locked }
-	 * @post { this locked }
-	 */
-	public native void notifyLoadFromDatabase();
-
 	@local
-	@dirty
 	public native void notifyInsert(QuadTreeEntry obj);
 
 	public native void notifyInsertToZone(Zone zone);
 
 	@local
-	@dirty
 	public native void notifyDissapear(QuadTreeEntry obj);
 
 	public native void notifyObjectInsertedToZone(SceneObject object);
@@ -221,7 +212,7 @@ class BuildingObject extends StructureObject {
 	public native void inRange(QuadTreeEntry obj, float range);
 
 	@dirty
-	public native void sendTo(SceneObject player, boolean doClose);
+	public native void sendTo(SceneObject player, boolean doClose, boolean forceLoadContainer = true);
 	@dirty
 	public native void sendBaselinesTo(SceneObject player);
 	@dirty
@@ -292,9 +283,9 @@ class BuildingObject extends StructureObject {
 	public native abstract void onExit(CreatureObject player, unsigned long parentid);
 
 	@dirty
-	public boolean isBuildingObject() {
-		return true;
-	}
+	@local
+	@nativeStub
+	public native boolean isBuildingObject();
 
 	@preLocked
 	public void setSignObject(SignObject sign) {
