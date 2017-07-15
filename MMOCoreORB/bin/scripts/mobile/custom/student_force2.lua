@@ -33,7 +33,7 @@ student_force2 = Creature:new {
 				{group = "junk", chance = 5000000},
 				{group = "armor_all", chance = 2500000},
 				{group = "weapons_all", chance = 2500000}
-			},
+		},
 			lootChance = 10000000
 		},
 		{
@@ -44,32 +44,14 @@ student_force2 = Creature:new {
 		},
 		{
 			groups = {
-				{group = "jedi_bracelets", chance = 10000000}
-			},
-			lootChance = 100000
+				{group = "holo_token1", chance = 10000000}			},
+			lootChance = 1500000
 		},
-		{
-			groups = {
-				{group = "jedi_earings", chance = 10000000}
-			},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "jedi_neck", chance = 10000000}
-			},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "jedi_rings", chance = 10000000}
-			},
-			lootChance = 100000
 		},
 		{
 			groups = {
 				{group = "holo_token1", chance = 10000000}			},
-			lootChance = 1000000
+			lootChance = 1500000
 		},
 		},
 	weapons = {"dark_jedi_weapons_gen4"},
