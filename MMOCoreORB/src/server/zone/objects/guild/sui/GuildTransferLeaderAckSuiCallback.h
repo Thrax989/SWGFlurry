@@ -7,11 +7,11 @@
 
 #ifndef GUILDTRANSFERLEADERACKSUICALLBACK_H_
 #define GUILDTRANSFERLEADERACKSUICALLBACK_H_
+
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
-
 
 class GuildTransferLeaderAckSuiCallback : public SuiCallback {
 public:
@@ -34,7 +34,7 @@ public:
 		if (guildTerminal == NULL)
 			return;
 
-		ManagedReference<BuildingObject*> buildingObject = cast<BuildingObject*>( guildTerminal->getParentRecursively(SceneObjectType::BUILDING).get().get());
+		ManagedReference<BuildingObject*> buildingObject = guildTerminal->getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
 		if (buildingObject == NULL)
 			return;
 
@@ -65,16 +65,14 @@ public:
 		if ( guildManager != NULL ) {
 			ManagedReference<CreatureObject*> newOwner = newLeader;
 
-			EXECUTE_TASK_4(newOwner, owner, sceoTerminal, guildManager, {
+			Core::getTaskManager()->executeTask([=] () {
 				// transfer structure to new leader
-				if (guildManager_p->transferGuildHall(newOwner_p, sceoTerminal_p)) {
+				if (guildManager->transferGuildHall(newOwner, sceoTerminal)) {
 					// change leadership of guild
-					guildManager_p->transferLeadership(newOwner_p, owner_p, false);
+					guildManager->transferLeadership(newOwner, owner, false);
 				}
-			});
-
+			}, "TransferGuildLambda");
 		}
-
 	}
 };
 

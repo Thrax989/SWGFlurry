@@ -27,7 +27,7 @@ public:
 
 		ManagedReference<GuildManager*> guildManager = server->getGuildManager();
 
-		ManagedReference<SceneObject*> usingObject = suiBox->getUsingObject();
+		ManagedReference<SceneObject*> usingObject = suiBox->getUsingObject().get();
 		if (usingObject == NULL)
 			return;
 
@@ -39,7 +39,7 @@ public:
 		if (guildTerminal == NULL)
 			return;
 
-		ManagedReference<BuildingObject*> buildingObject = cast<BuildingObject*>( guildTerminal->getParentRecursively(SceneObjectType::BUILDING).get().get());
+		ManagedReference<BuildingObject*> buildingObject = guildTerminal->getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
 		if (buildingObject == NULL)
 			return;
 
