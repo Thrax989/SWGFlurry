@@ -1,1 +1,0 @@
-object_mobile_skeleton_vr_bat = object_mobile_skeleton_shared_vr_bat:new {}ObjectTemplates:addTemplate(object_mobile_skeleton_vr_bat, "object/mobile/skeleton/vr_bat.iff")

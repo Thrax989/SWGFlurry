@@ -1,3 +1,0 @@
-object_tangible_terminal_terminal_elevator_down_click = object_tangible_terminal_shared_terminal_elevator_down_click:new {
-}
-ObjectTemplates:addTemplate(object_tangible_terminal_terminal_elevator_down_click, "object/tangible/terminal/terminal_elevator_down_click.iff")

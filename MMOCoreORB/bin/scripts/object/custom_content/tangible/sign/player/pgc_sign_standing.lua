@@ -1,3 +1,0 @@
-object_tangible_sign_player_pgc_sign_standing = object_tangible_sign_player_shared_pgc_sign_standing:new {
-}
-ObjectTemplates:addTemplate(object_tangible_sign_player_pgc_sign_standing, "object/tangible/sign/player/pgc_sign_standing.iff")

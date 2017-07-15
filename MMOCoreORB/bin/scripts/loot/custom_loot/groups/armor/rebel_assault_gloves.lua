@@ -1,1 +1,0 @@
-rebel_assault_gloves = {	description = "",	minimumLevel = 0,	maximumLevel = 0,	lootItems = {		{itemTemplate = "armor_rebel_assault_gloves", weight = 10000000}	}}addLootGroupTemplate("rebel_assault_gloves", rebel_assault_gloves)
