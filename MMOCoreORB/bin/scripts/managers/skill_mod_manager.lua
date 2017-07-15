@@ -63,5 +63,6 @@ skillModLimits = {
 }
 
 disabledWearableSkillMods = {
-
+	"jedi_toughness",
+	"lightsaber_toughness",
 }
