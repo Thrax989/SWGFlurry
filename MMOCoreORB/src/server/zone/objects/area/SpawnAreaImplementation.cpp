@@ -40,8 +40,10 @@ Vector3 SpawnAreaImplementation::getRandomPosition(SceneObject* player) {
 	bool positionFound = false;
 	int retries = 10;
 
+	const auto worldPosition = player->getWorldPosition();
+
 	while (!positionFound && retries-- > 0) {
-		position = areaShape->getRandomPosition(player->getWorldPosition(), 64.0f, 256.0f);
+		position = areaShape->getRandomPosition(worldPosition, 64.0f, 256.0f);
 
 		positionFound = true;
 
@@ -109,7 +111,7 @@ int SpawnAreaImplementation::notifyObserverEvent(unsigned int eventType, Observa
 }
 
 void SpawnAreaImplementation::tryToSpawn(SceneObject* object) {
-	Locker _locker(_this.getReferenceUnsafeStaticCast());
+	ReadLocker _readlocker(_this.getReferenceUnsafeStaticCast());
 
 	Zone* zone = getZone();
 
@@ -166,8 +168,6 @@ void SpawnAreaImplementation::tryToSpawn(SceneObject* object) {
 
 	int spawnLimit = finalSpawn->getSpawnLimit();
 
-	lastSpawn.updateToCurrentTime();
-
 	String lairTemplate = finalSpawn->getLairTemplateName();
 	uint32 lairHashCode = lairTemplate.hashCode();
 
@@ -186,7 +186,7 @@ void SpawnAreaImplementation::tryToSpawn(SceneObject* object) {
 	if (difficulty >= 5)
 		difficulty = 4;
 
-	_locker.release();
+	_readlocker.release();
 
 	CreatureManager* creatureManager = zone->getCreatureManager();
 
@@ -203,6 +203,8 @@ void SpawnAreaImplementation::tryToSpawn(SceneObject* object) {
 	}
 
 	Locker _locker2(_this.getReferenceUnsafeStaticCast());
+
+	lastSpawn.updateToCurrentTime();
 
 	if (exitObserver == NULL) {
 		exitObserver = new SpawnAreaObserver(_this.getReferenceUnsafeStaticCast());

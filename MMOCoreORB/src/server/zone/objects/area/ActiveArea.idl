@@ -6,8 +6,9 @@ package server.zone.objects.area;
 
 import server.zone.objects.scene.SceneObject;
 import server.zone.objects.area.areashapes.AreaShape;
-import server.zone.objects.pathfinding.NavMeshRegion;
+import server.zone.objects.pathfinding.NavArea;
 include system.util.Vector;
+import server.zone.Zone;
 
 @mock
 class ActiveArea extends SceneObject {
@@ -51,18 +52,25 @@ class ActiveArea extends SceneObject {
 	 * @param doClose if true a SceneObjectCloseMessage is sent to finish the object
 	 */
 	@dirty
-	public native void sendTo(SceneObject player, boolean doClose) {
+	public native void sendTo(SceneObject player, boolean doClose, boolean forceLoadContainer = true) {
 		
 	}
 
 	@mock
+	@dirty
 	public native abstract void enqueueEnterEvent(SceneObject obj);
 
 	@mock
+	@dirty
 	public native abstract void enqueueExitEvent(SceneObject obj);
 
+	@dirty
 	public native abstract void notifyEnter(SceneObject object);
+
+	@dirty
 	public native abstract void notifyExit(SceneObject object);
+
+	public native void setZone(Zone zone);
 
 	@dirty
 	public boolean isActiveArea() {
@@ -80,13 +88,13 @@ class ActiveArea extends SceneObject {
 	}
 
 	@dirty
-	public abstract boolean isNavRegion() {
+	public abstract boolean isNavArea() {
 		return false;
 	}
 
 	@dirty
 	@local
-	public abstract NavMeshRegion asNavRegion() {
+	public abstract NavArea asNavArea() {
 		return null;
 	}
 
