@@ -13,9 +13,9 @@ registerScreenPlay("buff1", true)
 function buff1:start()
     	self:spawnActiveAreas()
 end
-  
+
 function buff1:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("corellia", "object/active_area.iff", 3441, 4, -4825, 0, 0, 0, 0, 0)
+	local pSpawnArea = spawnSceneObject("corellia", "object/active_area.iff", -342, 27, -4505, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
