@@ -47,6 +47,7 @@ public:
 		Reference<SceneObject*> object = new SceneObject();
 		setDefaultComponents(object);
 		object->_setObjectID(nextObjectId.increment());
+		object->initializeContainerObjectsMap();
 
 		return object;
 	}
@@ -55,6 +56,7 @@ public:
 		Reference<TangibleObject*> object = new TangibleObject();
 		setDefaultComponents(object);
 		object->_setObjectID(nextObjectId.increment());
+		object->initializeContainerObjectsMap();
 
 		return object;
 	}
@@ -69,6 +71,7 @@ public:
 		}
 		setDefaultComponents(activeArea);
 		activeArea->_setObjectID(nextObjectId.increment());
+		activeArea->initializeContainerObjectsMap();
 
 		return activeArea;
 	}

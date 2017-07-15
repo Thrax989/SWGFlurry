@@ -127,7 +127,7 @@ public:
 
 			uint64 savedParentID = ghost->getSavedParentID();
 			ManagedReference<SceneObject*> playerParent = zoneServer->getObject(savedParentID, true);
-			ManagedReference<SceneObject*> currentParent = player->getParent();
+			ManagedReference<SceneObject*> currentParent = player->getParent().get();
 
 			if ((playerParent != NULL && currentParent == NULL) || (currentParent != NULL && currentParent->isCellObject())) {
 				playerParent = playerParent == NULL ? currentParent : playerParent;
@@ -162,7 +162,7 @@ public:
 				zone->transferObject(player, -1, true);
 			} else {
 				if (player->getZone() == NULL) {
-					ManagedReference<SceneObject*> objectToInsert = currentParent != NULL ? player->getRootParent().get() : player;
+					ManagedReference<SceneObject*> objectToInsert = currentParent != NULL ? player->getRootParent() : player;
 
 					if (objectToInsert == NULL)
 						objectToInsert = player;

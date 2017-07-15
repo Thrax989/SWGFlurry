@@ -146,7 +146,7 @@ public:
 			if (currentPos.squaredDistanceTo(newPos) > 0.01) {
 				bounceBack(object, pos);
 			} else {
-				ManagedReference<SceneObject*> currentParent = object->getParent();
+				ManagedReference<SceneObject*> currentParent = object->getParent().get();
 				bool light = objectControllerMain->getPriority() != 0x23;
 
 				if (currentParent != NULL)
@@ -188,9 +188,9 @@ public:
 
 		if (object->isRidingMount()) {
 			ZoneServer* zoneServer = server->getZoneServer();
-
 			ObjectController* objectController = zoneServer->getObjectController();
 			objectController->activateCommand(object, STRING_HASHCODE("dismount"), 0, 0, "");
+			object->sendSystemMessage("@base_player:no_entry_while_mounted"); // "You cannot enter a structure while on your mount."
 			return; // don't allow a dismount and parent update in the same frame, this looks better than bouncing their position
 		}
 
@@ -211,7 +211,7 @@ public:
 		if (!newParent->isCellObject())
 			return;
 
-		ManagedReference<SceneObject*> parentSceneObject = newParent->getParent();
+		ManagedReference<SceneObject*> parentSceneObject = newParent->getParent().get();
 
 		if (parentSceneObject == NULL)
 			return;
@@ -221,7 +221,7 @@ public:
 		if (building == NULL)
 			return;
 
-		ManagedReference<SceneObject*> par = object->getParent();
+		ManagedReference<SceneObject*> par = object->getParent().get();
 
 		if (par != NULL && par->isShipObject())
 			return;
