@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version
 
 
-object_draft_schematic_clothing_clothing_armor_stormtrooper_chest_plate = object_draft_schematic_clothing_clothing_armor_stormtrooper_chest_plate:new {
+object_draft_schematic_clothing_clothing_armor_stormtrooper_chest_plate = object_draft_schematic_clothing_shared_clothing_armor_stormtrooper_chest_plate:new {
 
    templateType = DRAFTSCHEMATIC,
 
@@ -76,4 +76,4 @@ object_draft_schematic_clothing_clothing_armor_stormtrooper_chest_plate = object
              }
 
 }
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_armor_stormtrooper_chest_plate, "object/draft_schematic/clothing/shared_clothing_armor_stormtrooper_chest_plate.iff")
+ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_armor_stormtrooper_chest_plate, "object/draft_schematic/clothing/clothing_armor_stormtrooper_chest_plate.iff")

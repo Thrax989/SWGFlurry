@@ -41,11 +41,11 @@
 --this exception also makes it possible to release a modified version
 
 
-object_draft_schematic_clothing_clothing_armor_stormtrooper_bracer_r = object_draft_schematic_clothing_shared_clothing_armor_stormtrooper_bracer_r:new {
+object_draft_schematic_clothing_clothing_armor_stormtrooper_leggings_camo = object_draft_schematic_clothing_shared_clothing_armor_stormtrooper_leggings_camo:new {
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Stormtrooper Armor Bracer Right",
+   customObjectName = "Camo Stormtrooper Armor Leg Plates",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45,
@@ -64,14 +64,14 @@ object_draft_schematic_clothing_clothing_armor_stormtrooper_bracer_r = object_dr
 
    ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
    ingredientTitleNames = {"auxilary_coverage", "body", "liner", "hardware_and_attachments", "binding_and_reinforcement", "padding", "armor", "load_bearing_harness", "reinforcement"},
-   ingredientSlotType = {0, 0, 0, 0, 0, 0, 1, 1, 1},
+   ingredientSlotType = {0, 0, 0, 0, 0, 0, 3, 1, 1},
    resourceTypes = {"ore_intrusive", "fuel_petrochem_solid_known", "fiberplast_naboo", "aluminum", "copper_beyrllius", "hide_wooly", "object/tangible/component/armor/shared_armor_segment_composite.iff", "object/tangible/component/clothing/shared_synthetic_cloth.iff", "object/tangible/component/clothing/shared_reinforced_fiber_panels.iff"},
-   resourceQuantities = {70, 70, 35, 40, 30, 30, 2, 1, 1},
+   resourceQuantities = {70, 70, 35, 40, 30, 30, 3, 1, 1},
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
-   targetTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_bracer_r.iff",
+   targetTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings_camo.iff",
 
    additionalTemplates = {}
 
 }
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_armor_stormtrooper_bracer_r, "object/draft_schematic/clothing/clothing_armor_stormtrooper_bracer_r.iff")
+ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_armor_stormtrooper_leggings_camo, "object/draft_schematic/clothing/clothing_armor_stormtrooper_leggings_camo.iff")

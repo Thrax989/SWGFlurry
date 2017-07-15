@@ -41,15 +41,15 @@
 --this exception also makes it possible to release a modified version
 
 
-object_draft_schematic_clothing_clothing_armor_stormtrooper_bracer_r = object_draft_schematic_clothing_shared_clothing_armor_stormtrooper_bracer_r:new {
+object_draft_schematic_clothing_clothing_armor_stormtrooper_bicep_r_camo = object_draft_schematic_clothing_shared_clothing_armor_stormtrooper_bicep_r_camo:new {
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Stormtrooper Armor Bracer Right",
+   customObjectName = "Camo Stormtrooper Armor Bicep Right",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45,
-   size = 4,
+   size = 1,
 
    xpType = "crafting_clothing_armor",
    xp = 550,
@@ -69,9 +69,9 @@ object_draft_schematic_clothing_clothing_armor_stormtrooper_bracer_r = object_dr
    resourceQuantities = {70, 70, 35, 40, 30, 30, 2, 1, 1},
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
-   targetTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_bracer_r.iff",
+   targetTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_bicep_r_camo.iff",
 
    additionalTemplates = {}
 
 }
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_armor_stormtrooper_bracer_r, "object/draft_schematic/clothing/clothing_armor_stormtrooper_bracer_r.iff")
+ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_armor_stormtrooper_bicep_r_camo, "object/draft_schematic/clothing/clothing_armor_stormtrooper_bicep_r_camo.iff")
