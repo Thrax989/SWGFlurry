@@ -3,10 +3,10 @@ janta_cave_boss = Creature:new {
 	  socialGroup = "janta_tribe",
 	  faction = "janta_tribe",
 	  level = 300,
-	  chanceHit = 80.00,
+	  chanceHit = 60.00,
 	  damageMin = 2000,
-	  damageMax = 3500,
-	  specialDamageMult = 5.0,
+	  damageMax = 3000,
+	  specialDamageMult = 3.0,
 	  baseXp = 0,
 	  baseHAM = 1500000,
 	  baseHAMmax = 1500000,
@@ -38,13 +38,14 @@ janta_cave_boss = Creature:new {
 		},
 			lootChance = 10000000
 		},
-		{
+{
 			groups = {
-			{group = "wearables_rare", chance = 5000000},
-			{group = "aakuan_common", chance = 5000000}
-		},
-			lootChance = 1000000
-		},
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 4500000},
+				{group = "janta_rare", chance = 500000}
+},
+			lootChance = 10000000
+},
 		{
 			groups = {
 			{group = "g_named_crystals", chance = 10000000}
