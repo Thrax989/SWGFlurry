@@ -13,9 +13,9 @@ registerScreenPlay("buff2", true)
 function buff2:start()
     	self:spawnActiveAreas()
 end
-  
+
 function buff2:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("naboo", "object/active_area.iff", 3441, 4, -4825, 0, 0, 0, 0, 0)
+	local pSpawnArea = spawnSceneObject("naboo", "object/active_area.iff", -5183, 5, 4266, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
