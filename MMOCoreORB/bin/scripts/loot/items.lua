@@ -1420,8 +1420,3 @@ includeFile("items/loot_schematic/bounty_hunter/bounty_hunter_gloves_schematic.l
 includeFile("items/loot_schematic/bounty_hunter/bounty_hunter_helmet_schematic.lua")
 includeFile("items/loot_schematic/bounty_hunter/bounty_hunter_leggings_schematic.lua")
 
-includeFile("items/wearables/helmets/bh_bounty_ran.lua")
-includeFile("items/wearables/helmets/bh_mando_ran.lua")
-includeFile("items/wearables/helmets/bh_ris_ran.lua")
-
-includeFile("items/geo_power_cube_saber.lua")
