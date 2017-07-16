@@ -16,7 +16,7 @@ public:
                 if ( jedistatedef > 25 )
                         skillMods.put("resistance_states", 25);
                 else
-                        skillMods.put("resistance_states", 75);
+                        skillMods.put("resistance_states", 60);
         }
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
