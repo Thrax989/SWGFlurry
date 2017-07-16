@@ -27,33 +27,34 @@ student_force = Creature:new {
 	diet = HERBIVORE,
 	scale = 1.0,
 	templates = {"object/mobile/dressed_jedi_trainer_old_human_male_01.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "redeed1", chance = 10000000}
-			},
-			lootChance = 1500000
-		},
-		{
-			groups = {
-				{group = "holo_token1", chance = 10000000}			},
-			lootChance = 1500000
-		},
-		},
-		{
-			groups = {
-				{group = "holo_token1", chance = 10000000}			},
-			lootChance = 1500000
-		},
-		},
+  lootGroups = {
+  {
+      groups = {
+        {group = "holo_token1", chance = 10000000}
+  },
+       lootChance = 1500000
+  },
+  {
+      groups = {
+	{group = "junk", chance = 5000000},
+	{group = "armor_all", chance = 2500000},
+	{group = "weapons_all", chance = 2500000}
+ },
+       lootChance = 10000000
+ },
+ {
+      groups = {
+        {group = "holo_token1", chance = 10000000}
+ },
+       lootChance = 1500000
+ },
+ {
+      groups = {
+        {group = "redeed1", chance = 10000000}
+ },
+       lootChance = 1500000
+ },
+ },
 	weapons = {"dark_jedi_weapons_gen4"},
 	outfit = "student_of_the_force_outfit",
 	reactionStf = "@npc_reaction/slang",
