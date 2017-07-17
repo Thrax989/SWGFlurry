@@ -4,8 +4,8 @@ janta_bloody = Creature:new {
   faction = "janta_tribe",
   level = 300,
   chanceHit = 30.00,
-  damageMin = 1000,
-  damageMax = 2000,
+  damageMin = 750,
+  damageMax = 1750,
   baseXp = 0,
   baseHAM = 750000,
   baseHAMmax = 750000,
@@ -38,13 +38,12 @@ janta_bloody = Creature:new {
         lootChance = 10000000
 },
 {
-        groups = {
-          {group = "wearables_rare", chance = 5000000},
-          {group = "aakuan_common", chance = 3000000},
-          {group = "nightsister_common", chance = 2000000}
-
+			groups = {
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 4750000},
+				{group = "janta_rare", chance = 250000}
 },
-        lootChance = 10000000
+			lootChance = 10000000
 },
 {
       groups = {

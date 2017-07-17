@@ -4,8 +4,8 @@ janta_chieftain = Creature:new {
 	faction = "janta_tribe",
 	level = 300,
 	chanceHit = 60.00,
-	damageMin = 1500,
-	damageMax = 2000,
+	damageMin = 1250,
+	damageMax = 1750,
 	specialDamageMult = 2.0,
 	baseXp = 27849,
 	baseHAM = 800000,
@@ -47,15 +47,14 @@ janta_chieftain = Creature:new {
 		},
 			lootChance = 8000000
 		},
-		{
+{
 			groups = {
-				{group = "janta_common", chance = 3000000},
-				{group = "armor_attachments", chance = 3000000},
-				{group = "clothing_attachments", chance = 4000000}
-
-		},
-			lootChance = 6000000
-		},
+				{group = "wearables_all", chance = 5000000},
+				{group = "loot_kit_parts", chance = 4750000},
+				{group = "janta_rare", chance = 250000}
+},
+			lootChance = 10000000
+},
 		{
 			groups = {
 				{group = "krayt_tissue_rare", chance = 10000000}

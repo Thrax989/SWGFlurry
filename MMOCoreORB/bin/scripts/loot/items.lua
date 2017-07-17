@@ -1419,3 +1419,4 @@ includeFile("items/loot_schematic/bounty_hunter/bounty_hunter_chest_schematic.lu
 includeFile("items/loot_schematic/bounty_hunter/bounty_hunter_gloves_schematic.lua")
 includeFile("items/loot_schematic/bounty_hunter/bounty_hunter_helmet_schematic.lua")
 includeFile("items/loot_schematic/bounty_hunter/bounty_hunter_leggings_schematic.lua")
+

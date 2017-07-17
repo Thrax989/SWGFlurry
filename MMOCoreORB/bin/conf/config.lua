@@ -158,6 +158,7 @@ ZonesEnabled = {
 TrePath = "/home/vagrant/workspace/tre/"
 
 TreFiles = {
+		"pistol.tre",
         "mtg22.tre",
         "species.tre",
         "pallet.tre",

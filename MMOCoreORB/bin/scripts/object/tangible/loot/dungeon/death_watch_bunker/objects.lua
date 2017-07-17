@@ -807,3 +807,62 @@ object_tangible_loot_dungeon_death_watch_bunker_shared_viewscreen_s2 = SharedTan
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_loot_dungeon_death_watch_bunker_shared_viewscreen_s2, "object/tangible/loot/dungeon/death_watch_bunker/shared_viewscreen_s2.iff")
+
+object_tangible_loot_dungeon_death_watch_bunker_shared_pistol_jinkins_barrel = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/dungeon/death_watch_bunker/shared_pistol_jinkins_barrel.iff"
+	--Data below here is deprecated and loaded from the tres, keeping for easy lookups
+--[[
+	appearanceFilename = "appearance/wp_muzzle_m_s01.apt",
+	arrangementDescriptorFilename = "",
+
+	certificationsRequired = {},
+	clearFloraRadius = 0,
+	clientDataFile = "",
+	clientGameObjectType = 262153,
+	collisionActionBlockFlags = 0,
+	collisionActionFlags = 51,
+	collisionActionPassFlags = 1,
+	collisionMaterialBlockFlags = 0,
+	collisionMaterialFlags = 1,
+	collisionMaterialPassFlags = 0,
+	containerType = 0,
+	containerVolumeLimit = 1,
+	customizationVariableMapping = {},
+
+	detailedDescription = "@item_d:jinkins_barrel",
+
+	gameObjectType = 262153,
+
+	locationReservationRadius = 0,
+	lookAtText = "string_id_table",
+
+	noBuildRadius = 0,
+
+	objectName = "@item_n:jinkins_barrel",
+	onlyVisibleInTools = 0,
+
+	paletteColorCustomizationVariables = {},
+	portalLayoutFilename = "",
+
+	rangedIntCustomizationVariables = {},
+
+	scale = 1,
+	scaleThresholdBeforeExtentTest = 0.5,
+	sendToClient = 1,
+	slotDescriptorFilename = "",
+	snapToTerrain = 1,
+	socketDestinations = {},
+	structureFootprintFileName = "",
+	surfaceType = 0,
+
+	targetable = 1,
+	totalCellNumber = 0,
+
+	useStructureFootprintOutline = 0,
+
+	clientObjectCRC = 431650444,
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"}
+]]
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_dungeon_death_watch_bunker_shared_pistol_jinkins_barrel, "object/tangible/loot/dungeon/death_watch_bunker/shared_pistol_jinkins_barrel.iff")

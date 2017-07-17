@@ -4,7 +4,7 @@ datapad_broken = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "",
-	directObjectTemplate = "object/tangible/loot/tool/datapad_broken.iff",
+	directObjectTemplate = "object/tangible/loot/misc/loot_skull_human.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
