@@ -5310,9 +5310,89 @@ object_tangible_loot_loot_schematic_shared_rebel_assault_chest_plate_camo_schema
 }
 ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_rebel_assault_chest_plate_camo_schematic, "object/tangible/loot/loot_schematic/shared_rebel_assault_chest_plate_camo_schematic.iff")
 
-
+--gen 5 crafted sabers
 --1 Handed Jinzu
 object_tangible_loot_loot_schematic_shared_sword_lightsaber_onehanded_gen5_jinzu_schematic = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_sword_lightsaber_onehanded_gen5_jinzu_schematic.iff"
 }
 ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_sword_lightsaber_onehanded_gen5_jinzu_schematic, "object/tangible/loot/loot_schematic/shared_sword_lightsaber_onehanded_gen5_jinzu_schematic.iff")
+
+
+--spy armor
+--spy belt
+object_tangible_loot_loot_schematic_shared_assassins_guild_spy_belt_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_belt_schematic.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_assassins_guild_spy_belt_schematic, "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_belt_schematic.iff")
+
+--spy bicep l
+object_tangible_loot_loot_schematic_shared_assassins_guild_spy_bicep_l_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_bicep_l_schematic.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_assassins_guild_spy_bicep_l_schematic, "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_bicep_l_schematic.iff")
+
+--spy bicep r
+object_tangible_loot_loot_schematic_shared_assassins_guild_spy_bicep_r_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_bicep_r_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_assassins_guild_spy_bicep_r_schematic, "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_bicep_r_schematic.iff")
+
+--spy boots
+object_tangible_loot_loot_schematic_shared_assassins_guild_spy_boots_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_boots_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_assassins_guild_spy_boots_schematic, "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_boots_schematic.iff")
+
+--spy bracer l
+object_tangible_loot_loot_schematic_shared_assassins_guild_spy_bracer_l_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_bracer_l_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_assassins_guild_spy_bracer_l_schematic, "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_bracer_l_schematic.iff")
+
+--spy bracer r
+object_tangible_loot_loot_schematic_shared_assassins_guild_spy_bracer_r_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_bracer_r_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_assassins_guild_spy_bracer_r_schematic, "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_bracer_r_schematic.iff")
+
+--spy chest
+object_tangible_loot_loot_schematic_shared_assassins_guild_spy_chest_plate_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_chest_plate_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_assassins_guild_spy_chest_plate_schematic, "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_chest_plate_schematic.iff")
+
+--spy gloves
+object_tangible_loot_loot_schematic_shared_assassins_guild_spy_gloves_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_gloves_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_assassins_guild_spy_gloves_schematic, "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_gloves_schematic.iff")
+
+--spy helmet
+object_tangible_loot_loot_schematic_shared_assassins_guild_spy_helmet_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_helmet_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_assassins_guild_spy_helmet_schematic, "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_helmet_schematic.iff")
+
+--spy armor legs
+object_tangible_loot_loot_schematic_shared_assassins_guild_spy_leggings_schematic = SharedTangibleObjectTemplate:new {
+ 	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_leggings_schematic.iff"
+ }
+ 
+ ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_assassins_guild_spy_leggings_schematic, "object/tangible/loot/loot_schematic/shared_assassins_guild_spy_leggings_schematic.iff")
+ 
+--jinkins pistol
+object_tangible_loot_loot_schematic_shared_pistol_jinkins_j1_schematic = SharedTangibleObjectTemplate:new {
+ 	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_pistol_jinkins_j1_schematic.iff"
+ }
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_pistol_jinkins_j1_schematic, "object/tangible/loot/loot_schematic/shared_pistol_jinkins_j1_schematic.iff")
