@@ -1900,5 +1900,17 @@ schematics = {
 	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_bracer_l_camo.iff"},
 	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_bracer_r_camo.iff"},
 	{path="object/draft_schematic/weapon/lightsaber/lightsaber_onehanded_gen5_jinzu.iff"},
+	{path="object/draft_schematic/furniture/city/furniture_jedi_statue.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_spy_belt.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_spy_bracer_l.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_spy_bracer_r.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_spy_bicep_l.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_spy_bicep_r.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_spy_boots.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_spy_chest_plate.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_spy_leggings.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_spy_gloves.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_spy_helmet.iff"},
+	{path="object/draft_schematic/weapon/pistol_jinkins_j1.iff"},
 };
 
