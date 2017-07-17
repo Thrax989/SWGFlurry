@@ -41,25 +41,48 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_draft_schematic_weapon_lightsaber_lightsaber_onehanded_gen5_jinzu = object_draft_schematic_weapon_lightsaber_shared_lightsaber_onehanded_gen5_jinzu:new {
 
---Children folder includes
+templateType = DRAFTSCHEMATIC,
 
--- Server Objects
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen1.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen2.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen3.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen4.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen5.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_polearm_gen1.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_polearm_gen2.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_polearm_gen3.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_polearm_gen4.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_polearm_gen5.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_refined_crystal_pack.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_training.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen1.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen2.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen3.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen4.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen5.lua")
-includeFile("draft_schematic/weapon/lightsaber/lightsaber_onehanded_gen5_jinzu.lua")
+   customObjectName = "Jinzu Razor",
+
+   craftingToolTab = 2048, -- (See DraftSchematicObjectTemplate.h)
+   complexity = 19, 
+   size = 1, 
+
+   xpType = "jedi_general", 
+   xp = 0, 
+
+   assemblySkill = "jedi_saber_assembly", 
+   experimentingSkill = "jedi_saber_experimentation", 
+   customizationSkill = "jedi_customization", 
+   disableFactoryRun = true,   
+
+   customizationOptions = {},
+   customizationStringNames = {},
+   customizationDefaults = {},
+
+   ingredientTemplateNames = {"craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n"},
+   ingredientTitleNames = {"emitter_shroud", "primary_crystal", "activator", "handgrip", "focusing_crystals", "power_field_insulator", "energizers"},
+   ingredientSlotType = {0, 1, 0, 0, 1, 0, 0},
+   resourceTypes = {"steel_arveshian", "object/tangible/component/weapon/lightsaber/shared_lightsaber_refined_crystal_pack.iff", "aluminum_perovskitic", "petrochem_inert_polymer", "object/tangible/component/weapon/lightsaber/shared_lightsaber_refined_crystal_pack.iff", "gas_reactive_organometallic", "copper_borocarbitic"},
+   resourceQuantities = {40, 1, 22, 28, 1, 28, 28},
+   contribution = {100, 100, 100, 100, 100, 100, 100},
+
+
+   targetTemplate = "object/weapon/melee/sword/crafted_saber/sword_lightsaber_onehanded_gen5_jinzu.iff",
+
+   additionalTemplates = {
+		},
+
+	
+	skillMods = {
+       	 	{"onehandlightsaber_accuracy", 25},
+        	{"jedi_force_power_max", 100},
+      		},
+ 	        
+}
+
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_lightsaber_lightsaber_onehanded_gen5_jinzu, "object/draft_schematic/weapon/lightsaber/lightsaber_onehanded_gen5_jinzu.iff")
