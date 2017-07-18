@@ -69,7 +69,6 @@
 #include "server/zone/objects/player/events/ForceMeditateTask.h"
 #include "server/zone/objects/player/sui/callbacks/FieldFactionChangeSuiCallback.h"
 #include "server/zone/packets/ui/DestroyClientPathMessage.h"
-#include "templates/params/creature/CreatureAttribute.h"
 
 void PlayerObjectImplementation::initializeTransientMembers() {
 	IntangibleObjectImplementation::initializeTransientMembers();
@@ -745,130 +744,6 @@ void PlayerObjectImplementation::removeAbilities(Vector<Ability*>& abilities, bo
 		for (int i = 0; i < abilities.size(); ++i)
 			abilityList.remove(abilityList.find(abilities.get(i)));
 	}
-}
-void PlayerObjectImplementation::addMasterLevelAttributes(CreatureObject* creature)
-{
-	String skillType = "";
-	SkillList* skillList = creature->getSkillList();
-	
-	int additionalHealth = 0;
-	int additionalAction = 0;
-	//int additionalMind = 0;
-		
-	for( int i=0 ; i < skillList->size(); ++i )
-	{
-		Reference<Skill*> skill = skillList->get(i);
-		skillType = skill->getSkillName();
-	
-		if (skillType.contains("brawler_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("marksman_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("medic_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("scout_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("rifleman_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("pistol_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("carbine_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("unarmed_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("1hsword_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("2hsword_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("polearm_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("ranger_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("creaturehandler_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("bountyhunter_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("commando_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("combatmedic_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("doctor_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("squadleader_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}		
-		if (skillType.contains("smuggler_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("powers_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("saber_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("healing_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("combat_spy_master")){
-			additionalHealth = additionalHealth + 990;
-			additionalAction = additionalAction + 990;
-			//additionalMind = additionalMind + 100;
-		}
-		if (skillType.contains("defender_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("enhancements_master")){
-			additionalHealth = additionalHealth + 330;
-			additionalAction = additionalAction + 330;
-		}
-	}
-
-	//creature->setHAM(CreatureAttribute::HEALTH, additionalHealth, true);
-	creature->setMaxHAM(CreatureAttribute::HEALTH, creature->getBaseHAM(CreatureAttribute::HEALTH) + additionalHealth, true);
-	//creature->setHAM(CreatureAttribute::ACTION, additionalAction, true);
-	creature->setMaxHAM(CreatureAttribute::ACTION, creature->getBaseHAM(CreatureAttribute::ACTION) + additionalAction, true);
-	//creature->setHAM(CreatureAttribute::MIND, additionalMind, true);
-	//creature->setMaxHAM(CreatureAttribute::MIND, creature->getBaseHAM(CreatureAttribute::MIND) + additionalMind, true);
 }
 
 bool PlayerObjectImplementation::addSchematics(Vector<ManagedReference<DraftSchematic* > >& schematics, bool notifyClient) {

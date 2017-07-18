@@ -569,8 +569,6 @@ class PlayerObject extends IntangibleObject {
 	@local
 	public native void removeAbilities(@dereferenced Vector<Ability> abilities, boolean notifyClient = true);
 
-	public native void addMasterLevelAttributes(CreatureObject creature);
-
 	@local
 	public native void removeAbility(Ability ability, boolean notifyClient = true);
 	
