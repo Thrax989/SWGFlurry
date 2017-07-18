@@ -5,8 +5,8 @@ oola_boss = Creature:new {
   faction = "",
   level = 300,
   chanceHit = 35.00,
-  damageMin = 750,
-  damageMax = 1500,
+  damageMin = 500,
+  damageMax = 1000,
   baseXp = 10000,
   baseHAM = 225000,
   baseHAMmax = 275000,
@@ -55,9 +55,9 @@ oola_boss = Creature:new {
       lootChance = 2500000
   },
   },
-weapons = {"nyaxs_weapons"},
+weapons = {"dark_trooper_weapons"},
 reactionStf = "@npc_reaction/fancy",
-attacks = merge(marksmanmaster,riflemanmaster,carbineermaster,brawlermaster,swordsmanmaster)
+attacks = merge(riflemanmaster,marksmanmaster,fencermaster,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(oola_boss, "oola_boss")
