@@ -848,7 +848,7 @@ void PlayerObjectImplementation::addMasterLevelAttributes(CreatureObject* creatu
 			additionalHealth = additionalHealth + 330;
 			additionalAction = additionalAction + 330;
 		}
-		if (skillType.contains("spy_master")){
+		if (skillType.contains("combat_spy_master")){
 			additionalHealth = additionalHealth + 990;
 			additionalAction = additionalAction + 990;
 			//additionalMind = additionalMind + 100;
@@ -856,82 +856,6 @@ void PlayerObjectImplementation::addMasterLevelAttributes(CreatureObject* creatu
 		if (skillType.contains("defender_master")){
 			additionalHealth = additionalHealth + 330;
 			additionalAction = additionalAction + 330;
-		}
-		if (skillType.contains("weaponsmith_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("armorsmith_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("engineer_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("shipwright_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("tailor_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("droidengineer_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("chef_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("dancer_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("musician_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("artisan_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("merchant_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("imagedesigner_master")){
-			additionalHealth = additionalHealth + 50;
-			additionalAction = additionalAction + 100;
-		}
-		if (skillType.contains("prowess_master")){
-			additionalHealth = additionalHealth + 25;
-			additionalAction = additionalAction + 25;
-		}
-		if (skillType.contains("reflexes_master")){
-			additionalHealth = additionalHealth + 25;
-			additionalAction = additionalAction + 25;
-		}
-		if (skillType.contains("mastery_master")){
-			additionalHealth = additionalHealth + 25;
-			additionalAction = additionalAction + 25;
-		}
-		if (skillType.contains("senses_master")){
-			additionalHealth = additionalHealth + 25;
-			additionalAction = additionalAction + 25;
-		}
-		if (skillType.contains("light_master")){
-			additionalHealth = additionalHealth + 400;
-			additionalAction = additionalAction + 400;
-		}
-		if (skillType.contains("dark_master")){
-			additionalHealth = additionalHealth + 400;
-			additionalAction = additionalAction + 400;
-		}
-		if (skillType.contains("politician_master")){
-			additionalHealth = additionalHealth + 5;
-			additionalAction = additionalAction + 5;
 		}
 		if (skillType.contains("enhancements_master")){
 			additionalHealth = additionalHealth + 330;
