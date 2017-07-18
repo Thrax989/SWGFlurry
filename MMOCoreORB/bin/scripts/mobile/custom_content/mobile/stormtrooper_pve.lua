@@ -36,7 +36,7 @@ stormtrooper_pve = Creature:new {
 		{
 			groups = {
 				{group = "holocron_light", chance = 1250000},
-				{group = "krayt_pearls", chance = 1250000},
+				{group = "pearls_flawless", chance = 1250000},
 				{group = "rifles", chance = 1250000},
 				{group = "pistols", chance = 1250000},
 				{group = "melee_weapons", chance = 1250000},
