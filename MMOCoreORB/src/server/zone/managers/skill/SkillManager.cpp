@@ -322,7 +322,6 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 				if (badge != NULL) {
 					playerManager->awardBadge(ghost, badge);
 				}
-				ghost->addMasterLevelAttributes( creature );
 			}
 		}
 
@@ -465,10 +464,6 @@ bool SkillManager::surrenderSkill(const String& skillName, CreatureObject* creat
 		/// Update Force Power Max
 		ghost->setForcePowerMax(creature->getSkillMod("jedi_force_power_max"), true);
 
-				if (skill->getSkillName().contains("master")) {
-			ghost->addMasterLevelAttributes( creature );
-		}
-
 		SkillList* list = creature->getSkillList();
 
 		int totalSkillPointsWasted = 250;
@@ -549,7 +544,6 @@ void SkillManager::surrenderAllSkills(CreatureObject* creature, bool notifyClien
 
 				/// update force
 				ghost->setForcePowerMax(creature->getSkillMod("jedi_force_power_max"), true);
-				ghost->addMasterLevelAttributes( creature );
 			}
 		}
 	}

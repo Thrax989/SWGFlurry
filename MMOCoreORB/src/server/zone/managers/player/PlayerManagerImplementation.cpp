@@ -3802,8 +3802,6 @@ void PlayerManagerImplementation::fixHAM(CreatureObject* player) {
 				player->setMaxHAM(i, calculated, false);
 			}
 		}
-	PlayerObject* ghost = player->getPlayerObject();
-	ghost->addMasterLevelAttributes(player);
 	} catch (Exception& e) {
 		error(e.getMessage());
 	}
