@@ -4144,12 +4144,13 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 			}
 			"Crafted Saber Testing",
 			{
-				"Jinzu Razor Loot Schem", "sword_lightsaber_onehanded_gen5_jinzu_schematic.iff",
-				"Weapon Crafting Station", "object/tangible/crafting/station/weapon_station.iff"
+				"Jinzu Razor Loot Schem", "object/tangible/loot/loot_schematic/sword_lightsaber_onehanded_gen5_jinzu_schematic.iff",
+				"Weapon Crafting Station", "object/tangible/crafting/station/weapon_station.iff",
 				"Lightsaber Crafting Toolkit", "object/tangible/crafting/station/jedi_tool.iff",
-				"Resource Crate","object/tangible/veteran_reward/resource.iff",
+				"Resource Crate","object/tangible/veteran_reward/resource.iff"
 				
-			}
+			},
+			
 				
 		}
 	}
