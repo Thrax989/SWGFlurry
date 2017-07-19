@@ -1,4 +1,4 @@
-vagrant@ns510434:~/workspace/Core3/MMOCoreORB/bin$ swgemu runUnitTests
+vagrant@ns510434:~/workspace/Core3/MMOCoreORB/bin$ swgemu RunUnitTests
 + cd /home/vagrant/workspace/Core3/MMOCoreORB/bin
 + ./core3 runUnitTests '--gtest_filter=*'
 Running unit tests...
@@ -15,10 +15,10 @@ Running unit tests...
 
 [----------] 1 test from BasicScreenPlayTest
 [ RUN      ] BasicScreenPlayTest.ScreenPlayLuaInitialize
-(0 s) [BadgeList] Loaded 150 badges.
+(0 s) [BadgeList] Loaded 152 badges.
 Object manager loaded for KIG
-[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (1026 ms)
-[----------] 1 test from BasicScreenPlayTest (1026 ms total)
+[       OK ] BasicScreenPlayTest.ScreenPlayLuaInitialize (1016 ms)
+[----------] 1 test from BasicScreenPlayTest (1016 ms total)
 
 [----------] 3 tests from LuaMobileTest
 [ RUN      ] LuaMobileTest.LuaMobileTemplatesTest
@@ -92,20 +92,20 @@ Object manager loaded for KIG
 	Loading templates: [44%]	(4 s) [Console] WARNING - could not open lua derv: object/tangible/wearables/base/base_dress_longsleeve.iff
 (4 s) [Console] WARNING - could not open lua derv: object/tangible/wearables/base/base_dress_longsleeve.iff
 	Loading templates: [45%]	(4 s) [Console] WARNING - could not open lua derv: object/tangible/wearables/base/base_cybernetic_forearm_r.iff
-	Loading templates: [46%]	(4 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
-(4 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
-(4 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
-(4 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
-(4 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
-(4 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
-(4 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
-	Loading templates: [49%]	(5 s) [Console] WARNING - could not open lua derv: object/tangible/wearables/base/base_fannypack.iff
+	Loading templates: [46%]	(5 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
+(5 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
+(5 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
+(5 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
+(5 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
+(5 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
+(5 s) [Console] WARNING - could not open lua derv: object/tangible/terminal/base/base_portable_terminal.iff
+	Loading templates: [47%]	(5 s) [Console] WARNING - could not open lua derv: object/tangible/wearables/base/base_fannypack.iff
 (5 s) [Console] WARNING - could not open lua derv: object/tangible/wearables/base/base_fannypack.iff
-	Loading templates: [52%]	(5 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
+	Loading templates: [50%]	(5 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
 (5 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
 (5 s) [Console] WARNING - expecting SHOT got SBOT in file: object/building/base/shared_base_filler_building.iff
-	Loading templates: [93%]	(9 s) [Console] WARNING - expecting SHOT got RCCT in file: object/resource_container/shared_simple.iff
-	Loading templates: [109%]	(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
+	Loading templates: [92%]	(9 s) [Console] WARNING - expecting SHOT got RCCT in file: object/resource_container/shared_simple.iff
+	Loading templates: [108%]	(10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
 (10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
 (10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
 (10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
@@ -138,33 +138,33 @@ Object manager loaded for KIG
 (10 s) [TreeArchive] ERROR - Did not find fileName: shared_base_vehicle.iff
 (10 s) [Console] WARNING - could not open derv: object/tangible/component/vehicle/base/shared_base_vehicle.iff
 (10 s) [Console] WARNING - could not open lua derv: object/tangible/component/vehicle/base/base_vehicle.iff
-	Loading templates: [144%]	(12 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
-(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-(12 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
-	Loading templates: [148%]	(13 s) [Console] WARNING - expecting SHOT got SDSC in file: object/tangible/wearables/armor/rebel_assault/shared_armor_appearance_rebel_assault_helmet_gcw.iff
-	Loading templates: [155%]	
+	Loading templates: [142%]	(13 s) [TreeArchive] ERROR - Did not find fileName: shipcontrol_pob.iff
+	Loading templates: [143%]	(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+(13 s) [Console] WARNING - expecting SHOT got SSHP in file: object/ship/base/shared_ship_base.iff
+	Loading templates: [146%]	(13 s) [Console] WARNING - expecting SHOT got SDSC in file: object/tangible/wearables/armor/rebel_assault/shared_armor_appearance_rebel_assault_helmet_gcw.iff
+	Loading templates: [154%]	
 (14 s) [TemplateManager] Finished loading object templates
 (14 s) [TemplateManager] 0 portal layouts loaded
 (14 s) [TemplateManager] 0 floor meshes loaded
 (14 s) [TemplateManager] 91 structure footprints.
 (14 s) [CommandConfigManager] ERROR - Could not create command counterAttack
 (14 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-(14 s) [FactionManager] Loading config file.
-(14 s) [FactionManager] loaded 22 ranks
-(14 s) [DnaManager] Loading DNA Information
-(14 s) [DnaManager] Loaded 201 dna stats.
-[       OK ] LuaMobileTest.LuaMobileTemplatesTest (14022 ms)
+(15 s) [FactionManager] Loading config file.
+(15 s) [FactionManager] loaded 22 ranks
+(15 s) [DnaManager] Loading DNA Information
+(15 s) [DnaManager] Loaded 201 dna stats.
+[       OK ] LuaMobileTest.LuaMobileTemplatesTest (14346 ms)
 [ RUN      ] LuaMobileTest.LuaLootGroupsTest
 (15 s) [CommandConfigManager] ERROR - Could not create command counterAttack
 (15 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] LuaMobileTest.LuaLootGroupsTest (86 ms)
+[       OK ] LuaMobileTest.LuaLootGroupsTest (83 ms)
 [ RUN      ] LuaMobileTest.LuaSpawnManagerTest
 (15 s) [CommandConfigManager] ERROR - Could not create command counterAttack
 (15 s) [CommandConfigManager] ERROR - Could not create command gmPlayClientEffect
-[       OK ] LuaMobileTest.LuaSpawnManagerTest (79 ms)
-[----------] 3 tests from LuaMobileTest (14187 ms total)
+[       OK ] LuaMobileTest.LuaSpawnManagerTest (72 ms)
+[----------] 3 tests from LuaMobileTest (14501 ms total)
 
 [----------] 12 tests from JediManagerTest
 [ RUN      ] JediManagerTest.ShouldRunFileJediManagerLuaAtLoadConfiguration
@@ -184,7 +184,7 @@ Object manager loaded for KIG
 [ RUN      ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager
 [       OK ] JediManagerTest.OnPlayerCreatedShouldCallTheOnPlayerCreatedMethodInTheLuaJediManager (1 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager
-[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (1 ms)
+[       OK ] JediManagerTest.OnPlayerLoggedInShouldCallTheOnPlayerLoggedInMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager
 [       OK ] JediManagerTest.OnPlayerLoggedOutShouldCallTheOnPlayerLoggedOutMethodInTheLuaJediManager (0 ms)
 [ RUN      ] JediManagerTest.CheckForceStatusCommandShouldCallTheCheckForceStatusCommandMethodInTheLuaJediManager
@@ -195,11 +195,11 @@ Object manager loaded for KIG
 
 [----------] 3 tests from TerrainManagerTest
 [ RUN      ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea
-[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (1 ms)
+[       OK ] TerrainManagerTest.GetHighestHeightShouldReturnTheHeighestPointInTheArea (0 ms)
 [ RUN      ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea
 [       OK ] TerrainManagerTest.GetLowestHeightShouldReturnTheLowestPointInTheArea (0 ms)
 [ RUN      ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference
-[       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (0 ms)
+[       OK ] TerrainManagerTest.GetHighestHeightDifferenceShouldReturnTheHeightDifference (1 ms)
 [----------] 3 tests from TerrainManagerTest (1 ms total)
 
 [----------] 4 tests from RectangularAreaShapeTest
@@ -211,7 +211,7 @@ Object manager loaded for KIG
 [       OK ] RectangularAreaShapeTest.RectangularAreaShapeShouldCallContainsPointOnTheAreaToCheckIntersectionWith (0 ms)
 [ RUN      ] RectangularAreaShapeTest.IntersectsWithShouldReturnTrueIfContainsPointReturnsTrueFromTheAreaShape
 [       OK ] RectangularAreaShapeTest.IntersectsWithShouldReturnTrueIfContainsPointReturnsTrueFromTheAreaShape (0 ms)
-[----------] 4 tests from RectangularAreaShapeTest (1 ms total)
+[----------] 4 tests from RectangularAreaShapeTest (0 ms total)
 
 [----------] 5 tests from RingAreaShapeTest
 [ RUN      ] RingAreaShapeTest.RingAreaShapeHasItsCenterAtZeroZeroZeroAfterCreation
@@ -239,10 +239,10 @@ Object manager loaded for KIG
 
 [----------] 2 tests from BasicTerrainTest
 [ RUN      ] BasicTerrainTest.LoadTestTerrainTest
-[       OK ] BasicTerrainTest.LoadTestTerrainTest (334 ms)
+[       OK ] BasicTerrainTest.LoadTestTerrainTest (329 ms)
 [ RUN      ] BasicTerrainTest.LoadTestSpaceTerrain
-[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (63 ms)
-[----------] 2 tests from BasicTerrainTest (397 ms total)
+[       OK ] BasicTerrainTest.LoadTestSpaceTerrain (61 ms)
+[----------] 2 tests from BasicTerrainTest (390 ms total)
 
 [----------] 4 tests from ZoneTest
 [ RUN      ] ZoneTest.PlayerManager
@@ -253,14 +253,14 @@ Object manager loaded for KIG
 (15 s) [PlayerManager] Loaded 188 quests.
 (15 s) [PlayerManager] ERROR - No Server Database initiated
 (15 s) [PlayerManager] loaded 0 character names in memory
-[       OK ] ZoneTest.PlayerManager (5 ms)
+[       OK ] ZoneTest.PlayerManager (4 ms)
 [ RUN      ] ZoneTest.TreLoad
 [       OK ] ZoneTest.TreLoad (0 ms)
 [ RUN      ] ZoneTest.ActiveAreaTest
 [       OK ] ZoneTest.ActiveAreaTest (0 ms)
 [ RUN      ] ZoneTest.InRangeTest
-[       OK ] ZoneTest.InRangeTest (1 ms)
-[----------] 4 tests from ZoneTest (6 ms total)
+[       OK ] ZoneTest.InRangeTest (0 ms)
+[----------] 4 tests from ZoneTest (4 ms total)
 
 [----------] 2 tests from CommandLuaTest
 [ RUN      ] CommandLuaTest.LoadCommandLuas
@@ -272,7 +272,7 @@ Object manager loaded for KIG
 [----------] 2 tests from CommandLuaTest (76 ms total)
 
 [----------] Global test environment tear-down
-[==========] 43 tests from 11 test cases ran. (15697 ms total)
+[==========] 43 tests from 11 test cases ran. (15991 ms total)
 [  PASSED  ] 43 tests.
 
 vagrant@ns510434:~/workspace/Core3/MMOCoreORB/bin$ 
