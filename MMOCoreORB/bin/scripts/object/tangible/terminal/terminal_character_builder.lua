@@ -4142,6 +4142,15 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 				"Proton Grenade", "object/weapon/ranged/grenade/grenade_proton.iff",
 				"Thermal Detonator", "object/weapon/ranged/grenade/grenade_thermal_detonator.iff"
 			}
+			"Crafted Saber Testing",
+			{
+				"Jinzu Razor Loot Schem", "sword_lightsaber_onehanded_gen5_jinzu_schematic.iff",
+				"Weapon Crafting Station", "object/tangible/crafting/station/weapon_station.iff"
+				"Lightsaber Crafting Toolkit", "object/tangible/crafting/station/jedi_tool.iff",
+				"Resource Crate","object/tangible/veteran_reward/resource.iff",
+				
+			}
+				
 		}
 	}
 }
