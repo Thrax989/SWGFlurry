@@ -125,7 +125,18 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		 	"Player Citys",
 		   {
 			"Braxis Player City(5,000 Credits)", "braxis_player_city",
-			"Slugopolis Player City(5,000 Credits)", "Slugopolis_player_city",
+			"Slugopolis Player City(5,000 Credits)", "slugopolis_player_city",
+			"Fort CMN  Player City(5,000 Credits)", "fortcmn_player_city",
+			"BSP Hideout Player City(5,000 Credits)", "bsphideout_player_city",
+			"Little China Player City(5,000 Credits)", "littlechina_player_city",
+			"Rising Moon Player City(5,000 Credits)", "risingmoon_player_city",
+			"Mos Minion Player City(5,000 Credits)", "mosminion_player_city",
+			"Merk Player City(5,000 Credits)", "merk_player_city",
+			"Kessel Player City(5,000 Credits)", "kessel_player_city",
+			"Den Player City(5,000 Credits)", "den_player_city",
+			"Wraith Player City(5,000 Credits)", "wraith_player_city",
+			"Tortuga Player City(5,000 Credits)", "tortuga_player_city",
+			"Rogue Hills Player City(5,000 Credits)", "roguehills_player_city",
 		   },
 	}
 }
