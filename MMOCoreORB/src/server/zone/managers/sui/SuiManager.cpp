@@ -2009,6 +2009,24 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
+//Player City Travels Travels Braxis Player City
+			} else if (templatePath == "braxis_player_city") {
+				if (!player->isInCombat() && player->getCashCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Braxis Player City");
+		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("corellia", 2027 , 31, 4264);
+ 					player->subtractCashCredits(5000);
+					box->setForceCloseDistance(5.f);
+			        }
 			} else if (templatePath == "become_glowy") {
 				bluefrog->grantGlowyBadges(player);
 
