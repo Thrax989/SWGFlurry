@@ -13,6 +13,10 @@ function pvp2ScreenPlay:start()
 end
 
 function pvp2ScreenPlay:spawnSceneObjects()
+
+--Added teleport system
+spawnSceneObject("kaas", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -5096.62, 81.7005, -2109.66, 0, 0.992833, 0, 0.119509, 0) 
+
 spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wall_strong.iff", -5091.28, 81.2486, -2098.31, 0, 0.999048, 0, 0.0436194, 0) 
 spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wall_strong.iff", -5083.45, 81.2486, -2099.26, 0, 0.996917, 0, 0.0784591, 0) 
 spawnSceneObject("kaas", "object/installation/battlefield/destructible/bfield_wall_strong.iff", -5075.54, 81.2486, -2100.51, 0, 0.996917, 0, 0.0784591, 0) 
