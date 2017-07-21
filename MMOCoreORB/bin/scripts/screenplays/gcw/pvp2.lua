@@ -98,4 +98,12 @@ spawnSceneObject("mandalore", "object/tangible/terminal/terminal_gcw_publish_gif
  
 spawnSceneObject("mandalore", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 4713.71, 2.03845, 7169.93, 0, -0.0409269, 0, 0.999162, 0) 
 
+
+--taanab Travel points
+
+spawnSceneObject("taanab", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 2111.59, 45, 5388.41, 0, 0.502409, 0, 0.86463, 0) 
+
+spawnSceneObject("taanab", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 3598.48, 31.7, -5412.49, 0, 0.982051, 0, -0.188617, 0) 
+
+
 end
