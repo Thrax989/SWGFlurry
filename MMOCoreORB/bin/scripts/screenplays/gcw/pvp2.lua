@@ -106,4 +106,8 @@ spawnSceneObject("taanab", "object/tangible/terminal/terminal_gcw_publish_gift.i
 spawnSceneObject("taanab", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 3598.48, 31.7, -5412.49, 0, 0.982051, 0, -0.188617, 0) 
 
 
+--Hoth travel points
+
+spawnSceneObject("hoth", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 12.6363, 0, -1987.88, 0, 0.0315294, 0, 0.999503, 0) 
+
 end
