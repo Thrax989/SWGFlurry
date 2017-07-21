@@ -122,9 +122,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Smuggler Outpost (5,000 Credits)", "smuggler_outpost_travel",
 			"Research Outpost (5,000 Credits)", "research_outpost_travel",
 		   },
-		 	"Braxis Player City",
+		 	"Player Citys",
 		   {
 			"Braxis Player City(5,000 Credits)", "braxis_player_city",
+			"Slugopolis Player City(5,000 Credits)", "Slugopolis_player_city",
 		   },
 	}
 }
