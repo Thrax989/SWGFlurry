@@ -115,4 +115,10 @@ spawnSceneObject("hoth", "object/tangible/terminal/terminal_gcw_publish_gift.iff
 spawnSceneObject("rori", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 5340, 80, 5734, 0, 0.312808, 0, 0.949816, 0) 
 
 
+
+-Braxis, Travel points PLAYER CITY
+spawnSceneObject("corellia", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 2027, 31.3662, 4264, 0, 1, 0, 0, 0)
+
+ 
+
 end
