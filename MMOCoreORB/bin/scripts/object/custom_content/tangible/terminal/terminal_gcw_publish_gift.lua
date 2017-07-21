@@ -135,8 +135,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Kessel Player City(5,000 Credits)", "kessel_player_city",
 			"Den Player City(5,000 Credits)", "den_player_city",
 			"Wraith Player City(5,000 Credits)", "wraith_player_city",
-			"Tortuga Player City(5,000 Credits)", "tortuga_player_city",
-			"Rogue Hills Player City(5,000 Credits)", "roguehills_player_city",
+			--"Tortuga Player City(5,000 Credits)", "tortuga_player_city",
+			--"Rogue Hills Player City(5,000 Credits)", "roguehills_player_city",
 		   },
 	}
 }
