@@ -122,5 +122,35 @@ spawnSceneObject("corellia", "object/tangible/terminal/terminal_gcw_publish_gift
 --Slugopolis Travel Points PLAYER CITY
 spawnSceneObject("naboo", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -1317.27, -192.154, 6488.87, 0, 0.742044, 0, 0.670351, 0) 
 
+--Fort CMN
+spawnSceneObject("corellia", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 1164.61, 31.1718, -1597.46, 0, 0.0622064, 0, 0.998063, 0) 
+
+--BSP Hideout
+spawnSceneObject("dantooine", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -318, 16.7435, -3716, 0, 1, 0, 0, 0) 
+
+--Little China
+spawnSceneObject("tatooine", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -394.4, 0, 3730.06, 0, 0.713439, 0, -0.700718, 0)
+
+--Rising Moon
+spawnSceneObject("naboo", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 1116, -196.889, 6296, 0, 1, 0, 0, 0) 
+
+--Mos Minion
+spawnSceneObject("tatooine", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -3345.38, 0, -5574.68, 0, 0.778963, -0, 0.627069, 0) 
+
+--Merk
+spawnSceneObject("naboo", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -4467, -197.471, 5460, 0, 1, 0, 0, 0) 
+
+--Kessel
+spawnSceneObject("naboo", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 7250.96, -192.981, 6727.25, 0, 0.998066, 0, -0.0621597, 0)
+
+--Den
+spawnSceneObject("corellia", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 7302.03, 2.28043, 4684.74, 0, -0.629884, 0, 0.776689, 0) 
+
+--Wraith
+spawnSceneObject("dathomir", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -3561.39, 125.617, 3566.92, 0, 0.743492, 0, 0.668745, 0) 
+
+--Tortuga
+
+--Rogue Hills
 
 end
