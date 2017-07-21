@@ -110,4 +110,9 @@ spawnSceneObject("taanab", "object/tangible/terminal/terminal_gcw_publish_gift.i
 
 spawnSceneObject("hoth", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 12.6363, 0, -1987.88, 0, 0.0315294, 0, 0.999503, 0) 
 
+
+--rori PVP zone Travel points
+spawnSceneObject("rori", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 5340, 80, 5734, 0, 0.312808, 0, 0.949816, 0) 
+
+
 end
