@@ -79,4 +79,23 @@ spawnSceneObject("tatooine", "object/tangible/terminal/terminal_mission_imperial
 	--reactorlift done
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_up.iff", 19.9601, 140.585, 347.612, 4336906, 1, 0, 0, 0)
 	spawnSceneObject("dungeon1", "object/tangible/terminal/terminal_elevator_down.iff", 19.9884, 170.585, 347.603, 4336906, 1, 0, 0, 0)]]--	
+
+
+
+
+
+--Mandalore Galacitc Travel system
+
+spawnSceneObject("mandalore", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 6297.01, 1.75803, -6223.27, 0, -0.0908972, 0, 0.99586, 0)
+
+spawnSceneObject("mandalore", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 1577.03, 4, -6409.68, 0, 0.25294, 0, 0.967482, 0) 
+
+spawnSceneObject("mandalore", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -5677.32, 0.149077, -5016.6, 0, 0.433096, 0, 0.901348, 0)
+
+spawnSceneObject("mandalore", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -6649.92, 30, 5596.3, 0, 0.798931, 0, -0.601423, 0) 
+
+spawnSceneObject("mandalore", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 1075.33, 2.82873, 2755.1, 0, 0.494831, 0, 0.86899, 0) 
+ 
+spawnSceneObject("mandalore", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 4713.71, 2.03845, 7169.93, 0, -0.0409269, 0, 0.999162, 0) 
+
 end
