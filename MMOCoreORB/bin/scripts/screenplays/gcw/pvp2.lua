@@ -119,6 +119,8 @@ spawnSceneObject("rori", "object/tangible/terminal/terminal_gcw_publish_gift.iff
 -Braxis, Travel points PLAYER CITY
 spawnSceneObject("corellia", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 2027, 31.3662, 4264, 0, 1, 0, 0, 0)
 
- 
+--Slugopolis Travel Points PLAYER CITY
+spawnSceneObject("naboo", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -1317.27, -192.154, 6488.87, 0, 0.742044, 0, 0.670351, 0) 
+
 
 end
