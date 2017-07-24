@@ -5205,4 +5205,10 @@ object_weapon_melee_sword_crafted_saber_shared_sword_lightsaber_training = Share
 ]]
 }
 
-ObjectTemplates:addClientTemplate(object_weapon_melee_sword_crafted_saber_shared_sword_lightsaber_training, "object/weapon/melee/sword/crafted_saber/shared_sword_lightsaber_training.iff")
+----------------------------------------------------------------------------------------------------------------------------------------------------
+object_weapon_melee_sword_crafted_saber_shared_sword_lightsaber_onehanded_gen5_jinzu = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/crafted_saber/shared_sword_lightsaber_onehanded_gen5_jinzu.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_crafted_saber_shared_sword_lightsaber_onehanded_gen5_jinzu, "object/weapon/melee/sword/crafted_saber/shared_sword_lightsaber_onehanded_gen5_jinzu.iff")
+----------------------------------------------------------------------------------------------------------------------------------------------------
