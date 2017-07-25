@@ -93,7 +93,6 @@
 #include "templates/tangible/FireworkObjectTemplate.h"
 #include "templates/tangible/GamblingTerminalTemplate.h"
 #include "templates/tangible/InstrumentObjectTemplate.h"
-#include "templates/tangible/LightsaberCrystalObjectTemplate.h"
 #include "templates/tangible/LiveSampleTemplate.h"
 #include "templates/tangible/LootkitObjectTemplate.h"
 #include "templates/tangible/LootSchematicTemplate.h"
@@ -569,7 +568,6 @@ void TemplateManager::registerTemplateObjects() {
 	templateFactory.registerObject<RepairToolTemplate>(SharedObjectTemplate::REPAIRTOOL);
 	templateFactory.registerObject<VehicleCustomKitTemplate>(SharedObjectTemplate::VEHICLECUSTOMKIT);
 	templateFactory.registerObject<DroidCustomKitTemplate>(SharedObjectTemplate::DROIDCUSTOMKIT);
-	templateFactory.registerObject<LightsaberCrystalObjectTemplate>(SharedObjectTemplate::LIGHTSABERCRYSTAL);
 	templateFactory.registerObject<DnaSampleTemplate>(SharedObjectTemplate::DNASAMPLE);
 	templateFactory.registerObject<DroidComponentTemplate>(SharedObjectTemplate::DROIDCOMPONENT);
 	templateFactory.registerObject<DroidCraftingModuleTemplate>(SharedObjectTemplate::DROIDMODULECRAFTING);
@@ -716,7 +714,6 @@ void TemplateManager::registerGlobals() {
 	luaTemplatesInstance->setGlobalInt("CRAFTINGSTATION", SharedObjectTemplate::CRAFTINGSTATION);
 	luaTemplatesInstance->setGlobalInt("RESOURCESPAWN", SharedObjectTemplate::RESOURCESPAWN);
 	luaTemplatesInstance->setGlobalInt("ARMOROBJECT", SharedObjectTemplate::ARMOROBJECT);
-	luaTemplatesInstance->setGlobalInt("LIGHTSABERCRYSTAL", SharedObjectTemplate::LIGHTSABERCRYSTAL);
 	luaTemplatesInstance->setGlobalInt("DEED", SharedObjectTemplate::DEED);
 	luaTemplatesInstance->setGlobalInt("STRUCTUREDEED", SharedObjectTemplate::STRUCTUREDEED);
 	luaTemplatesInstance->setGlobalInt("VEHICLEDEED", SharedObjectTemplate::VEHICLEDEED);
@@ -786,6 +783,13 @@ void TemplateManager::registerGlobals() {
 	luaTemplatesInstance->setGlobalInt("STIM_D", StimPackTemplate::STIM_D);
 	luaTemplatesInstance->setGlobalInt("STIM_E", StimPackTemplate::STIM_E);
 
+	luaTemplatesInstance->setGlobalInt("CLONER_STANDARD", CloningBuildingObjectTemplate::STANDARD);
+	luaTemplatesInstance->setGlobalInt("CLONER_PLAYER_CITY", CloningBuildingObjectTemplate::PLAYER_CITY);
+	luaTemplatesInstance->setGlobalInt("CLONER_JEDI_ONLY", CloningBuildingObjectTemplate::JEDI_ONLY);
+	luaTemplatesInstance->setGlobalInt("CLONER_LIGHT_JEDI_ONLY", CloningBuildingObjectTemplate::LIGHT_JEDI_ONLY);
+	luaTemplatesInstance->setGlobalInt("CLONER_DARK_JEDI_ONLY", CloningBuildingObjectTemplate::DARK_JEDI_ONLY);
+	luaTemplatesInstance->setGlobalInt("CLONER_FACTION_REBEL", CloningBuildingObjectTemplate::FACTION_REBEL);
+	luaTemplatesInstance->setGlobalInt("CLONER_FACTION_IMPERIAL", CloningBuildingObjectTemplate::FACTION_IMPERIAL);
 }
 
 String TemplateManager::getTemplateFile(uint32 key) {

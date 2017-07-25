@@ -57,7 +57,6 @@
 #include "templates/intangible/SharedPlayerObjectTemplate.h"
 #include "server/zone/objects/player/sessions/TradeSession.h"
 #include "server/zone/objects/player/events/StoreSpawnedChildrenTask.h"
-#include "server/zone/objects/player/events/BountyHunterTefRemovalTask.h"
 #include "server/zone/objects/player/events/RemoveSpouseTask.h"
 #include "server/zone/objects/player/events/PvpTefRemovalTask.h"
 #include "server/zone/managers/visibility/VisibilityManager.h"
@@ -274,7 +273,7 @@ int PlayerObjectImplementation::calculateBhReward() {
 }
 
 void PlayerObjectImplementation::sendBaselinesTo(SceneObject* player) {
-	info("sending player object baselines");
+	debug("sending player object baselines");
 
 	BaseMessage* play3 = new PlayerObjectMessage3(_this.getReferenceUnsafeStaticCast());
 	player->sendMessage(play3);
@@ -393,25 +392,27 @@ void PlayerObjectImplementation::notifySceneReady() {
 }
 
 void PlayerObjectImplementation::sendFriendLists() {
-	info("sending friendslist message  size " + String::valueOf(friendList.size()));
+	debug("sending friendslist message  size " + String::valueOf(friendList.size()));
 
 	ChatManager* chatManager = server->getChatManager();
 
 	friendList.resetUpdateCounter();
 	ignoreList.resetUpdateCounter();
 
+	auto parent = getParent().get();
+
 	ChatOnGetFriendsList* flist = new ChatOnGetFriendsList(_this.getReferenceUnsafeStaticCast());
-	getParent().get()->sendMessage(flist);
+	parent->sendMessage(flist);
 
 	ChatOnGetIgnoreList* ilist = new ChatOnGetIgnoreList(_this.getReferenceUnsafeStaticCast());
-	getParent().get()->sendMessage(ilist);
+	parent->sendMessage(ilist);
 
 	DeltaMessage* delta = new PlayerObjectDeltaMessage9(_this.getReferenceUnsafeStaticCast());
 	friendList.insertToDeltaMessage(delta);
 	ignoreList.insertToDeltaMessage(delta);
 	delta->close();
 
-	getParent().get()->sendMessage(delta);
+	parent->sendMessage(delta);
 }
 
 void PlayerObjectImplementation::sendMessage(BasePacket* msg) {
@@ -2019,73 +2020,6 @@ void PlayerObjectImplementation::clearScreenPlayData(const String& screenPlay) {
 	}
 }
 
-void PlayerObjectImplementation::addToBountyLockList(uint64 playerId) {
-	if (bountyLockList.contains(playerId)) {
-		if (bountyLockList.get(playerId)->isScheduled()) {
-			bountyLockList.get(playerId)->cancel();
-		}
-	} else {
-		bountyLockList.put(playerId, new BountyHunterTefRemovalTask(_this.getReferenceUnsafeStaticCast(), playerId));
-		updateBountyPvpStatus(playerId);
-	}
-}
-
-void PlayerObjectImplementation::removeFromBountyLockList(uint64 playerId, bool immediately) {
-	int tefTime = FactionManager::TEFTIMER;
-	if (immediately) {
-		//Schedule tef removal to happen soon but delay it enough for any bh mission to be dropped correctly.
-		tefTime = 100;
-	}
-	if (bountyLockList.contains(playerId)) {
-		if (bountyLockList.get(playerId)->isScheduled()) {
-			//Reschedule for another 15 minutes tef.
-			bountyLockList.get(playerId)->reschedule(tefTime);
-		} else {
-			bountyLockList.get(playerId)->schedule(tefTime);
-		}
-	}
-}
-
-void PlayerObjectImplementation::removeFromBountyLockListDirectly(uint64 playerId) {
-	if (bountyLockList.contains(playerId)) {
-		if (bountyLockList.get(playerId)->isScheduled()) {
-			bountyLockList.get(playerId)->cancel();
-		}
-	}
-	bountyLockList.drop(playerId);
-	updateBountyPvpStatus(playerId);
-}
-
-void PlayerObjectImplementation::updateBountyPvpStatus(uint64 playerId) {
-	ManagedReference<CreatureObject*> creature = cast<CreatureObject*>(getParent().get().get());
-
-	if (creature == NULL) {
-		return;
-	}
-
-	ZoneServer* zoneServer = creature->getZoneServer();
-	if (zoneServer == NULL) {
-		return;
-	}
-
-	ManagedReference<CreatureObject*> target = zoneServer->getObject(playerId).castTo<CreatureObject*>();
-
-	if (target == NULL) {
-		return;
-	}
-
-	creature->sendPvpStatusTo(target);
-	target->sendPvpStatusTo(creature);
-}
-
-bool PlayerObjectImplementation::isBountyLocked() {
-	return bountyLockList.size() > 0;
-}
-
-bool PlayerObjectImplementation::isInBountyLockList(uint64 playerId) {
-	return bountyLockList.contains(playerId);
-}
-
 Time PlayerObjectImplementation::getLastVisibilityUpdateTimestamp() {
 	return lastVisibilityUpdateTimestamp;
 }
@@ -2106,12 +2040,16 @@ void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateG
 
 	bool alreadyHasTef = hasPvpTef();
 
-	if(updateBhAction) {
+	if (updateBhAction) {
+		bool alreadyHasBhTef = hasBhTef();
 		lastBhPvpCombatActionTimestamp.updateToCurrentTime();
 		lastBhPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
+
+		if (!alreadyHasBhTef)
+			parent->notifyObservers(ObserverEventType::BHTEFCHANGED);
 	}
 
-	if(updateGcwAction) {
+	if (updateGcwAction) {
 		lastGcwPvpCombatActionTimestamp.updateToCurrentTime();
 		lastGcwPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
 	}
@@ -2151,10 +2089,13 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 	}
 
 	if (removeGcwTefNow || removeBhTefNow) {
-		if(removeGcwTefNow)
+		if (removeGcwTefNow)
 			lastGcwPvpCombatActionTimestamp.updateToCurrentTime();
-		if(removeBhTefNow)
+
+		if (removeBhTefNow) {
 			lastBhPvpCombatActionTimestamp.updateToCurrentTime();
+			parent->notifyObservers(ObserverEventType::BHTEFCHANGED);
+		}
 
 		if (pvpTefTask->isScheduled()) {
 			pvpTefTask->cancel();

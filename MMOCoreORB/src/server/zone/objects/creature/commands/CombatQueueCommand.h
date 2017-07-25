@@ -158,7 +158,7 @@ public:
 		if (creature->isDead() || (creature->isPet() && creature->isIncapacitated()))
 			return INVALIDLOCOMOTION;
 
-		if (creature->isPlayerCreature()){
+		if (creature->isPlayerCreature()) {
 			PlayerObject* ghost = creature->getPlayerObject();
 
 			if (ghost != NULL) {
@@ -205,7 +205,7 @@ public:
 		if (creature->isProne() && (weapon->isMeleeWeapon() || poolsToDamage == 0))
 			return NOPRONE;
 
-		if(!checkDistance(creature, targetObject, rangeToCheck))
+		if (!checkDistance(creature, targetObject, rangeToCheck))
 			return TOOFAR;
 
 		if (weapon->isRangedWeapon() && creature->isProne() && checkDistance(targetObject, creature, 7))
@@ -233,29 +233,6 @@ public:
 
 		CombatManager* combatManager = CombatManager::instance();
 
-		bool shouldGcwTef = false;
-		bool shouldBhTef = false;
-
-		ManagedReference<CreatureObject*> attackingCreature = creature->isPet() ? creature->getLinkedCreature() : creature;
-
-		ManagedReference<CreatureObject*> targetCreature = targetObject.castTo<CreatureObject*>();
-		ManagedReference<CreatureObject*> targetOwningCreature = targetCreature != NULL && (targetObject->isPet() || targetObject->isVehicleObject())
-				? targetCreature->getLinkedCreature() : targetCreature;
-
-		if(
-			attackingCreature != NULL &&
-			targetOwningCreature != NULL &&
-			attackingCreature->isPlayerCreature() &&
-			targetOwningCreature->isPlayerCreature() &&
-			!combatManager->areInDuel(attackingCreature, targetOwningCreature)
-		) {
-			if(attackingCreature->getFaction() != targetOwningCreature->getFaction() && attackingCreature->getFactionStatus() & FactionStatus::OVERT && targetOwningCreature->getFactionStatus() & FactionStatus::OVERT)
-				shouldGcwTef = true;
-
-			if(attackingCreature->hasBountyMissionFor(targetOwningCreature) || targetOwningCreature->hasBountyMissionFor(attackingCreature))
-				shouldBhTef = true;
-		}
-
 		try {
 			int res = combatManager->doCombatAction(creature, weapon, cast<TangibleObject*>(targetObject.get()), CreatureAttackData(arguments, this, target));
 
@@ -277,16 +254,6 @@ public:
 		// only clear aiming states if command was successful
 		creature->removeStateBuff(CreatureState::AIMING);
 		creature->removeBuff(STRING_HASHCODE("steadyaim"));
-
-		// Update PvP TEF Duration
-		if(shouldGcwTef || shouldBhTef) {
-			PlayerObject* ghost = attackingCreature->getPlayerObject();
-
-			if(ghost != NULL) {
-				Locker olocker(attackingCreature, creature);
-				ghost->updateLastPvpCombatActionTimestamp(shouldGcwTef, shouldBhTef);
-			}
-		}
 
 		return SUCCESS;
 	}

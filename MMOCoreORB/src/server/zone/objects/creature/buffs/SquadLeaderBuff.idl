@@ -5,9 +5,10 @@
 package server.zone.objects.creature.buffs;
 
 import server.zone.objects.creature.CreatureObject;
-
+import server.zone.objects.player.PlayerObject;
 import server.zone.objects.creature.buffs.Buff;
 import server.zone.objects.creature.buffs.SquadLeaderBuffObserver;
+include server.zone.objects.creature.commands.SquadLeaderCommand;
 include server.zone.managers.object.ObjectManager;
 include server.zone.objects.creature.buffs.BuffType;
 include templates.params.ObserverEventType;
@@ -24,26 +25,22 @@ class SquadLeaderBuff extends Buff {
 
 		player = creo;
 		leader = lead;
-
-		playerObserver = new SquadLeaderBuffObserver(this);
-		ObjectManager.instance().persistObject(playerObserver, 1, "buffs");
-
-		leaderObserver = new SquadLeaderBuffObserver(this);
-		ObjectManager.instance().persistObject(leaderObserver, 1, "buffs");
-
-		player.registerObserver(ObserverEventType.PARENTCHANGED, playerObserver);
-		leader.registerObserver(ObserverEventType.PARENTCHANGED, leaderObserver);
 	}
 
 	public void finalize() {
 		player.dropObserver(ObserverEventType.PARENTCHANGED, playerObserver);
+		player.dropObserver(ObserverEventType.BHTEFCHANGED, playerObserver);
+		player.dropObserver(ObserverEventType.FACTIONCHANGED, playerObserver);
 		leader.dropObserver(ObserverEventType.PARENTCHANGED, leaderObserver);
+		leader.dropObserver(ObserverEventType.FACTIONCHANGED, leaderObserver);
 	}
 
+	@dirty
 	public CreatureObject getPlayer() {
 		return player;
 	}
 
+	@dirty
 	public CreatureObject getLeader() {
 		return leader;
 	}
@@ -58,15 +55,48 @@ class SquadLeaderBuff extends Buff {
 			return;
 		}
 
-		if (player.getParentRecursively(SceneObjectType.BUILDING) == leader.getParentRecursively(SceneObjectType.BUILDING)) {
-			super.activate();
-			player.updateTerrainNegotiation();
-		}
+		doActivate(true);
 	}
 
 	@preLocked
-	public void deactivate() {
-		super.deactivate();
-		player.updateTerrainNegotiation();
+	public void doActivate(boolean doCheck) {
+		if (doCheck && !qualifiesForActivation())
+			return;
+
+		super.activate();
+	}
+
+	@dirty
+	public boolean qualifiesForActivation() {
+		if (player == null || leader == null)
+			return false;
+
+		return SquadLeaderCommand.isValidGroupAbilityTarget(leader, player, false);
+	}
+
+	@dirty
+	public boolean checkRenew() {
+		if (leader == null || player == null || player.getGroupID() != leader.getGroupID()) {
+			return false;
+		}
+
+		return true;
+	}
+
+	@preLocked
+	public void addObservers() {
+		SquadLeaderBuffObserver playObserver = new SquadLeaderBuffObserver(this);
+		ObjectManager.instance().persistObject(playObserver, 1, "buffs");
+		playerObserver = playObserver;
+
+		SquadLeaderBuffObserver leadObserver = new SquadLeaderBuffObserver(this);
+		ObjectManager.instance().persistObject(leadObserver, 1, "buffs");
+		leaderObserver = leadObserver;
+
+		player.registerObserver(ObserverEventType.PARENTCHANGED, playerObserver);
+		player.registerObserver(ObserverEventType.BHTEFCHANGED, playerObserver);
+		player.registerObserver(ObserverEventType.FACTIONCHANGED, playerObserver);
+		leader.registerObserver(ObserverEventType.PARENTCHANGED, leaderObserver);
+		leader.registerObserver(ObserverEventType.FACTIONCHANGED, leaderObserver);
 	}
 }

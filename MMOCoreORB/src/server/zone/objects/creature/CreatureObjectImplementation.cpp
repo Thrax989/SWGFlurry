@@ -2813,7 +2813,7 @@ void CreatureObjectImplementation::sendMessage(BasePacket* msg) {
 }
 
 Reference<ZoneClientSession*> CreatureObjectImplementation::getClient() {
-	return owner.get();
+	return owner.WeakReference::get();
 }
 
 void CreatureObjectImplementation::sendStateCombatSpam(const String& fileName, const String& stringName, byte color, int damage, bool broadcast) {
@@ -2824,7 +2824,7 @@ void CreatureObjectImplementation::sendStateCombatSpam(const String& fileName, c
 	if (isDead()) //We don't need to know when a corpse can see clearly again!
 		return;
 
-	ManagedReference<CreatureObject*> creature = asCreatureObject();
+	auto creature = asCreatureObject();
 
 	if (broadcast) { //Send spam to all nearby players.
 		CombatManager::instance()->broadcastCombatSpam(creature, NULL, NULL, 0, fileName, stringName, color);
@@ -2898,7 +2898,7 @@ bool CreatureObjectImplementation::isAggressiveTo(CreatureObject* object) {
 	if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
 		return true;
 
-	if (ghost->isInBountyLockList(object->getObjectID()) || targetGhost->isInBountyLockList(asCreatureObject()->getObjectID())) {
+	if (ghost->hasBhTef() && (hasBountyMissionFor(object) || object->hasBountyMissionFor(asCreatureObject()))) {
 		return true;
 	}
 
@@ -2910,8 +2910,10 @@ bool CreatureObjectImplementation::isAggressiveTo(CreatureObject* object) {
 }
 
 bool CreatureObjectImplementation::isAttackableBy(TangibleObject* object) {
-	if(object->isCreatureObject())
-		return isAttackableBy(object->asCreatureObject());
+	auto creo = object->asCreatureObject();
+
+	if (creo != nullptr)
+		return isAttackableBy(creo);
 
 	return isAttackableBy(object, false);
 }
@@ -3010,7 +3012,7 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 	if (areInDuel)
 		return true;
 
-	if(object->hasBountyMissionFor(asCreatureObject()) || (ghost->isBountyLocked() && ghost->isInBountyLockList(object->getObjectID())))
+	if (object->hasBountyMissionFor(asCreatureObject()) || (ghost->hasBhTef() && hasBountyMissionFor(object)))
 		return true;
 
 	if (getGroupID() != 0 && getGroupID() == object->getGroupID())
@@ -3041,7 +3043,7 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	if (ghost == NULL)
 		return false;
 
-	if (ghost->isBountyLocked())
+	if (ghost->hasBhTef())
 		return false;
 
 	//if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
@@ -3284,6 +3286,8 @@ void CreatureObjectImplementation::setFaction(unsigned int crc) {
 		StoreSpawnedChildrenTask* task = new StoreSpawnedChildrenTask(player, petsToStore);
 		task->execute();
 	}
+
+	notifyObservers(ObserverEventType::FACTIONCHANGED);
 }
 
 void CreatureObjectImplementation::destroyPlayerCreatureFromDatabase(bool destroyContainedObjects) {

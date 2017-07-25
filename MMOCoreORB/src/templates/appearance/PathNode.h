@@ -13,7 +13,7 @@
 
 class PathGraph;
 
-class PathNode : public Object {
+class PathNode {
 public:
 	enum PathNodeType
 	{
@@ -73,6 +73,14 @@ public:
 			radius = 0.5f;
 	}
 
+	bool toBinaryStream(ObjectOutputStream* stream) {
+		return false;
+	}
+
+	bool parseFromBinaryStream(ObjectInputStream* stream) {
+		return false;
+	}
+
 	inline float getX() const {
 		return x;
 	}
@@ -107,7 +115,7 @@ public:
 		return &children;
 	}
 
-	inline int getGlobalGraphNodeID() {
+	inline int getGlobalGraphNodeID() const {
 		return globalGraphNodeID;
 	}
 

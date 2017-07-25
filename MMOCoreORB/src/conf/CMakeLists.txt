@@ -5,7 +5,7 @@
 file(GLOB_RECURSE conf3_sources "*.cpp") 
 
 # Add conf includes
-include_directories(../..)
+include_directories(../)
 
 # Create conf library
-add_library(conf3 SHARED ${conf3_sources})
+add_library(conf3 STATIC ${conf3_sources})

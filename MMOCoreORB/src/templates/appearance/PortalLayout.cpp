@@ -9,6 +9,7 @@
 #include "engine/util/u3d/AStarAlgorithm.h"
 
 void PortalLayout::readPortalGeometry0003(IffStream *iff, int numPortals) {
+	portalGeometry.removeAll(numPortals);
 
 	for(int i=0; i<numPortals; i++) {
 		iff->openChunk('PRTL');
@@ -21,6 +22,8 @@ void PortalLayout::readPortalGeometry0003(IffStream *iff, int numPortals) {
 
 		Vector3 min(50000, 50000, 50000);
 		Vector3 max(-50000, -50000, -50000);
+
+		verts->removeAll(size);
 
 		for (int i=0; i<size; i++) {
 			float x = iff->getFloat();
@@ -53,6 +56,8 @@ void PortalLayout::readPortalGeometry0003(IffStream *iff, int numPortals) {
 		portal->setBoundingBox(AABB(min, max));
 		Vector3 center = portal->getBoundingBox().center();
 
+		tris->removeAll(size * 2, 2);
+
 		for (int i=0; i<size; i++) {
 			Vector3 &vert = verts->get(i);
 
@@ -78,6 +83,7 @@ void PortalLayout::readPortalGeometry0003(IffStream *iff, int numPortals) {
 }
 
 void PortalLayout::readPortalGeometry0004(IffStream *iff, int numPortals) {
+	portalGeometry.removeAll(numPortals);
 
 	for(int i=0; i<numPortals; i++) {
 		iff->openForm('IDTL');
@@ -92,6 +98,8 @@ void PortalLayout::readPortalGeometry0004(IffStream *iff, int numPortals) {
 
 		Vector3 min(50000, 50000, 50000);
 		Vector3 max(-50000, -50000, -50000);
+
+		verts->removeAll(size);
 
 		for (int i=0; i<size; i++) {
 			float x = iff->getFloat();
@@ -128,6 +136,8 @@ void PortalLayout::readPortalGeometry0004(IffStream *iff, int numPortals) {
 		Chunk *indxChunk = iff->openChunk('INDX');
 
 		uint32 numIdx = indxChunk->getChunkSize() / 12;
+
+		tris->removeAll(numIdx);
 
 		for (int i=0; i<numIdx; i++) {
 			int a = iff->getInt();
@@ -213,9 +223,9 @@ void PortalLayout::parse(IffStream* iffStream) {
 
 int PortalLayout::getCellID(const String& cellName) {
 	for (int i = 0; i < cellProperties.size(); ++i) {
-		CellProperty& cell = cellProperties.get(i);
+		CellProperty* cell = cellProperties.get(i);
 
-		if (cell.getName() == cellName)
+		if (cell->getName() == cellName)
 			return i;
 	}
 
@@ -289,8 +299,8 @@ void PortalLayout::parseCELSForm(IffStream* iffStream, int numCells) {
 		uint32 nextType;
 
 		for (int i=0; i<numCells; i++) {
-			CellProperty cell(cellProperties.size());
-			cell.readObject(iffStream);
+			Reference<CellProperty*> cell = new CellProperty(cellProperties.size());
+			cell->readObject(iffStream);
 			cellProperties.add(cell);
 		}
 

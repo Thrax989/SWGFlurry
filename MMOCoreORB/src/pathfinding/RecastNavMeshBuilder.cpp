@@ -114,58 +114,40 @@ void RecastNavMeshBuilder::cleanup() {
 	m_dmesh = 0;
 }
 
+void RecastNavMeshBuilder::rebuildAreas(const Vector<AABB>& buildAreas, NavArea* navArea) {
+	ReadLocker rLocker(navArea);
 
-void RecastNavMeshBuilder::saveAll(const String& path) {
-	const dtNavMesh* mesh = m_navMesh;
-	if (!mesh) return;
+	RecastNavMesh* existingMesh = navArea->getNavMesh();
+	dtNavMesh* oldMesh = existingMesh->getNavMesh();
 
-	String newPath = "navmeshes/" + path;
-
-	FILE* fp = fopen(newPath.toCharArray(), "wb");
-	if (!fp)
+	if (!oldMesh) {
+		error("old mesh is null in RecastNavMeshBuilder::rebuildAreas for " + navArea->getMeshName());
 		return;
-
-	// Store header.
-	header.magic = NAVMESHSET_MAGIC;
-	header.version = NAVMESHSET_VERSION;
-	header.numTiles = 0;
-	for (int i = 0; i < mesh->getMaxTiles(); ++i) {
-		const dtMeshTile* tile = mesh->getTile(i);
-		if (!tile || !tile->header || !tile->dataSize) continue;
-		header.numTiles++;
-	}
-	memcpy(&header.params, mesh->getParams(), sizeof(dtNavMeshParams));
-	fwrite(&header, sizeof(NavMeshSetHeader), 1, fp);
-
-	// Store tiles.
-	for (int i = 0; i < mesh->getMaxTiles(); ++i) {
-		const dtMeshTile* tile = mesh->getTile(i);
-		if (!tile || !tile->header || !tile->dataSize) continue;
-
-		NavMeshTileHeader tileHeader;
-		tileHeader.tileRef = mesh->getTileRef(tile);
-		tileHeader.dataSize = tile->dataSize;
-		fwrite(&tileHeader, sizeof(tileHeader), 1, fp);
-
-		fwrite(tile->data, tile->dataSize, 1, fp);
 	}
 
-	fclose(fp);
+	m_navMesh = dtAllocNavMesh();
+	if (!m_navMesh) {
+		error("Failed to allocate m_navMesh in RecastNavMeshBuilder::rebuildAreas for " + navArea->getMeshName());
+		return;
+	}
+
+	existingMesh->copyMeshTo(m_navMesh);
+	rLocker.release();
+
+    for (int i = buildAreas.size() - 1; i >= 0; i--) {
+        const AABB &aabb = buildAreas.get(i);
+        rebuildArea(aabb);
+    }
 }
 
-bool RecastNavMeshBuilder::rebuildArea(const AABB& buildArea, RecastNavMesh* existingMesh) {
-	destroyMesh = false;
+void RecastNavMeshBuilder::rebuildArea(const AABB& buildArea) {
 	float longest = buildArea.extents()[buildArea.longestAxis()];
-	longest = MAX(settings.m_tileSize * settings.m_cellSize * 2.25, longest);
+	longest = Math::max(settings.m_tileSize * settings.m_cellSize * 2.25f, longest);
 
 	Vector3 center = buildArea.midPoint();
 	//un-fucking (or re-fucking) our coordinate system
 	AABB area = AABB(Vector3(center.getX() - longest, -100000, -center.getY() - longest),
 				Vector3(center.getX() + longest, 100000, -center.getY() + longest));
-
-	m_navMesh = existingMesh->getNavMesh();
-	if (!m_navMesh)
-		return false;
 
 	int gw = 0, gh = 0;
 
@@ -189,22 +171,17 @@ bool RecastNavMeshBuilder::rebuildArea(const AABB& buildArea, RecastNavMesh* exi
 	// Max tiles and max polys affect how the tile IDs are caculated.
 	// There are 22 bits available for identifying a tile and a polygon.
 	int tileBits = rcMin((int) ilog2(nextPow2(tw * th)), 14);
-	if (tileBits > 14) tileBits = 14;
 	int polyBits = 22 - tileBits;
 	m_maxTiles = 1<<tileBits;
 	m_maxPolysPerTile = 1<<polyBits;
 
-	if (!m_geom) return false;
-	if (!m_navMesh) return false;
+	if (!m_geom) return;
+	if (!m_navMesh) return;
 
-	buildAllTiles(existingMesh, area);
-	return true;
+	buildAllTiles(area);
 }
 
 bool RecastNavMeshBuilder::build() {
-
-	dtFreeNavMesh(m_navMesh);
-
 	if (m_navMesh) {
 		dtFreeNavMesh(m_navMesh);
 	}
@@ -238,7 +215,6 @@ bool RecastNavMeshBuilder::build() {
 	// Max tiles and max polys affect how the tile IDs are caculated.
 	// There are 22 bits available for identifying a tile and a polygon.
 	int tileBits = rcMin((int) ilog2(nextPow2(tw * th)), 14);
-	if (tileBits > 14) tileBits = 14;
 	int polyBits = 22 - tileBits;
 	m_maxTiles = 1<<tileBits;
 	m_maxPolysPerTile = 1<<polyBits;
@@ -268,7 +244,7 @@ bool RecastNavMeshBuilder::build() {
 	return true;
 }
 
-void RecastNavMeshBuilder::buildAllTiles(RecastNavMesh* recastNavMesh, const AABB& area) {
+void RecastNavMeshBuilder::buildAllTiles(const AABB& area) {
 	if (!m_geom) return;
 	if (!m_navMesh) return;
 
@@ -331,8 +307,6 @@ void RecastNavMeshBuilder::buildAllTiles(RecastNavMesh* recastNavMesh, const AAB
 	th = ceil((fabs(bounds.getZMin() - area.getZMax()) / tcs) + 1.0f);
 	tw = ceil((fabs(bounds.getXMin() - area.getXMax()) / tcs) + 1.0f);
 
-	ReadWriteLock* rwLock = recastNavMesh->getLock();
-
 	if (zStart < 0 || xStart < 0)
 		return;
 
@@ -367,12 +341,9 @@ void RecastNavMeshBuilder::buildAllTiles(RecastNavMesh* recastNavMesh, const AAB
 #endif
 			int dataSize = 0;
 
-			ReadLocker rLocker(rwLock);
 			unsigned char* data = builder.build(x, y, lastTileBounds, dataSize);
-			rLocker.release();
 
 			if (data) {
-				Locker wLocker(rwLock);
 				// Remove any previous data (navmesh owns and deletes the data).
 				m_navMesh->removeTile(m_navMesh->getTileRefAt(x, y, 0), 0, 0);
 				// Let the navmesh own the data.
