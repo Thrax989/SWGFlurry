@@ -1,0 +1,3 @@
+object_tangible_event_perk_remembrance_day_resistance_sign = object_tangible_event_perk_shared_remembrance_day_resistance_sign:new {
+}
+ObjectTemplates:addTemplate(object_tangible_event_perk_remembrance_day_resistance_sign, "object/tangible/event_perk/remembrance_day_resistance_sign.iff")

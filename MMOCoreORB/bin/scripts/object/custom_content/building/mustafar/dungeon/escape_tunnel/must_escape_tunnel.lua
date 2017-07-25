@@ -1,0 +1,1 @@
+object_building_mustafar_dungeon_escape_tunnel_must_escape_tunnel = object_building_mustafar_dungeon_escape_tunnel_shared_must_escape_tunnel:new {}ObjectTemplates:addTemplate(object_building_mustafar_dungeon_escape_tunnel_must_escape_tunnel, "object/building/mustafar/dungeon/escape_tunnel/must_escape_tunnel.iff")

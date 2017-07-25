@@ -1,0 +1,5 @@
+
+object_tangible_wearables_bracelet_bracelet_gcw_imperial_l = object_tangible_wearables_bracelet_shared_bracelet_gcw_imperial_l:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_bracelet_bracelet_gcw_imperial_l, "object/tangible/wearables/bracelet/bracelet_gcw_imperial_l.iff")

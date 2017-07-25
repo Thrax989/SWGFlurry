@@ -1,0 +1,1 @@
+object_building_mustafar_dungeon_obiwan_finale_lair_of_the_crystal = object_building_mustafar_dungeon_obiwan_finale_shared_lair_of_the_crystal:new {}ObjectTemplates:addTemplate(object_building_mustafar_dungeon_obiwan_finale_lair_of_the_crystal, "object/building/mustafar/dungeon/obiwan_finale/lair_of_the_crystal.iff")

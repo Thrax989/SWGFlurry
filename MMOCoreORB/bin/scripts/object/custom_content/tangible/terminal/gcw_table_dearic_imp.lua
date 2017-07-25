@@ -1,0 +1,3 @@
+object_tangible_terminal_gcw_table_dearic_imp = object_tangible_terminal_shared_gcw_table_dearic_imp:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_gcw_table_dearic_imp, "object/tangible/terminal/gcw_table_dearic_imp.iff")

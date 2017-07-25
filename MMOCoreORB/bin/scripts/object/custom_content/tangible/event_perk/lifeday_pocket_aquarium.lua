@@ -1,0 +1,3 @@
+object_tangible_event_perk_lifeday_pocket_aquarium = object_tangible_event_perk_shared_lifeday_pocket_aquarium:new {
+}
+ObjectTemplates:addTemplate(object_tangible_event_perk_lifeday_pocket_aquarium, "object/tangible/event_perk/lifeday_pocket_aquarium.iff")

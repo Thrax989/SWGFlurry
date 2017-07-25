@@ -1,0 +1,10 @@
+-- Server Objects
+includeFile("custom_content/tangible/food/generic/drink_mandalorian_wine.lua")
+includeFile("custom_content/tangible/food/generic/drink_ruby_bliel.lua")
+includeFile("custom_content/tangible/food/generic/drink_skannbult_likker.lua")
+includeFile("custom_content/tangible/food/generic/drink_starshine_surprise.lua")
+includeFile("custom_content/tangible/food/generic/drink_tatooine_sunburn.lua")
+includeFile("custom_content/tangible/food/generic/drink_tilla_tiil.lua")
+includeFile("custom_content/tangible/food/generic/drink_tssolok.lua")
+includeFile("custom_content/tangible/food/generic/drink_vasarian_brandy.lua")
+includeFile("custom_content/tangible/food/generic/drink_veronian_berry_wine.lua")

@@ -1,0 +1,3 @@
+object_tangible_theme_park_nym_dungeon_boss_terminal_02 = object_tangible_theme_park_nym_shared_dungeon_boss_terminal_02:new {
+}
+ObjectTemplates:addTemplate(object_tangible_theme_park_nym_dungeon_boss_terminal_02, "object/tangible/theme_park/nym/dungeon_boss_terminal_02.iff")
