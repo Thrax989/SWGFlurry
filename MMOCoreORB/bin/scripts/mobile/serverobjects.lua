@@ -1,3 +1,6 @@
+--New Content
+includeFile("custom_content/serverobjects.lua")
+
 -- Conversations
 includeFile("conversations.lua")
 
