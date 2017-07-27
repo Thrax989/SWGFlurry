@@ -4,8 +4,8 @@ force_crystal_sunriders_destiny = {
 	customObjectName = "Sunrider's Destiny",
 	directObjectTemplate = "object/tangible/component/weapon/lightsaber/lightsaber_module_force_crystal.iff",
 	craftingValues = {
-		{"mindamage",0,0,0},
-		{"maxdamage",0,0,0},
+		{"mindamage",0,50,0},
+		{"maxdamage",10,50,0},
 		{"attackspeed",1,-1,5},
 		{"woundchance",4,8,5},
 		{"hitpoints",2500,10000,0},

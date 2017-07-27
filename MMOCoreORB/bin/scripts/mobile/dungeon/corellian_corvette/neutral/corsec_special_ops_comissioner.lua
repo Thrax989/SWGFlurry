@@ -32,11 +32,14 @@ corsec_special_ops_comissioner = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 750000},
-				{group = "junk", chance = 7250000},
-				{group = "clothing_attachments", chance = 750000},
-				{group = "armor_attachments", chance = 750000},
-				{group = "rebel_officer_common", chance = 500000},
+				{group = "color_crystals", chance = 100000},
+				{group = "junk", chance = 6000000},
+				{group = "weapons_all", chance = 1100000},
+				{group = "armor_all", chance = 1100000},
+				{group = "clothing_attachments", chance = 150000},
+				{group = "armor_attachments", chance = 150000},
+				{group = "rebel_officer_common", chance = 400000},
+				{group = "wearables_all", chance = 1000000}
 			}
 		}
 	},

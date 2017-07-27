@@ -39,8 +39,8 @@ hidden_daggers_leader = Creature:new {
 				{group = "junk", chance = 3300000},
 				{group = "loot_kit_parts", chance = 2000000},
 				{group = "tailor_components", chance = 1000000},
-				{group = "hidden_dagger_common", chance = 3700000}
-			
+				{group = "hidden_dagger_common", chance = 2700000},
+				{group = "wearables_all", chance = 1000000},
 
 			}
 		}
