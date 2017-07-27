@@ -31,16 +31,12 @@ nightsister_elder = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "power_crystals", chance = 800000},
-				{group = "nightsister_common", chance = 2200000},
-				{group = "junk", chance = 1000000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "pistols", chance = 800000},
-				{group = "rifles", chance = 800000},
-				{group = "carbines", chance = 900000},
-				{group = "melee_weapons", chance = 2000000},
-				{group = "wearables_scarce", chance = 500000}
+				{group = "power_crystals", chance = 1000000},
+				{group = "nightsister_common", chance = 3000000},
+				{group = "junk", chance = 4000000},
+				{group = "armor_attachments", chance = 1000000},
+				{group = "clothing_attachments", chance = 1000000},
+				
 			}
 		}
 	},

@@ -127,15 +127,6 @@ void GroupObjectImplementation::addMember(CreatureObject* newMember) {
 }
 
 void GroupObjectImplementation::removeMember(CreatureObject* member) {
-	bool wasLeader = getLeader() == member;
-
-	if (hasSquadLeader()) {
-		if (wasLeader)
-			removeGroupModifiers();
-		else
-			removeGroupModifiers(member);
-	}
-
 	for (int i = 0; i < groupMembers.size(); i++) {
 		CreatureObject* scno = groupMembers.get(i).get().get();
 
@@ -170,8 +161,8 @@ void GroupObjectImplementation::removeMember(CreatureObject* member) {
 			GroupManager::instance()->changeMasterLooter(_this.getReferenceUnsafeStaticCast(), groupLeader, false);
 		}
 
-		if (wasLeader && hasSquadLeader()) {
-			addGroupModifiers();
+		if (hasSquadLeader()) {
+			removeGroupModifiers(member);
 		}
 
 		Zone* zone = member->getZone();

@@ -165,20 +165,20 @@ int BuffList::findBuff(Buff* buff) {
 	return -1;
 }
 
-void BuffList::clearBuffs(bool updateclient, bool removeAll) {
+void BuffList::clearBuffs(bool updateclient) {
 	Locker guard(&mutex);
 
-	for (int i = buffList.size() -1; i >= 0; i--) {
-		ManagedReference<Buff*> buff = buffList.get(i);
-
-		if (!removeAll && !buff->removeOnClearBuffs())
-			continue;
+	while (buffList.size() > 0) {
+		ManagedReference<Buff*> buff = buffList.get(0);
 
 		Locker locker(buff);
 
+		if (buff->isActive())
+			buff->clearBuffEvent();
+
 		buff->clearBuffEvent();
 
-		buffList.remove(i);
+		buffList.remove(0);
 
 		mutex.unlock();
 

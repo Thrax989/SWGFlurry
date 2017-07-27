@@ -430,7 +430,7 @@ void CreatureImplementation::setPetLevel(int newLevel) {
 		return;
 	}
 
-	clearBuffs(false, false);
+	clearBuffs(false);
 
 	int baseLevel = getTemplateLevel();
 

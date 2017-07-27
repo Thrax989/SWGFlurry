@@ -29,11 +29,9 @@ mind_of_solitude = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 5000000},
-				{group = "rifles", chance = 1000000},
-				{group = "pistols", chance = 1000000},
-				{group = "melee_weapons", chance = 1000000},
-				{group = "carbines", chance = 1000000},
-				{group = "wearables_common", chance = 1000000}
+				{group = "loot_kit_parts", chance = 4000000},
+				{group = "tailor_components", chance = 1000000},
+				
 			}
 		}
 	},
