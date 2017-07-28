@@ -35,19 +35,11 @@ mercenary_warlord = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 2600000},
-				{group = "wearables_common", chance = 1500000},
-				{group = "wearables_uncommon", chance = 500000},
+				{group = "junk", chance = 7500000},
 				{group = "tailor_components", chance = 1000000},
-				{group = "color_crystals", chance = 400000},
-				{group = "power_crystals", chance = 400000},
-				{group = "melee_unarmed", chance = 600000},
-				{group = "melee_polearm", chance = 600000},
-				{group = "pistols", chance = 600000},
-				{group = "carbines", chance = 600000},
-				{group = "rifles", chance = 600000},
-				{group = "clothing_attachments", chance = 300000},
-				{group = "armor_attachments", chance = 300000}
+				{group = "color_crystals", chance = 500000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "armor_attachments", chance = 500000}
 			}
 		}
 	},

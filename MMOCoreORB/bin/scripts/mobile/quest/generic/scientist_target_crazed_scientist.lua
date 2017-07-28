@@ -40,9 +40,8 @@ scientist_target_crazed_scientist = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 6000000},
-				{group = "wearables_common", chance = 2000000},
-				{group = "pistols", chance = 1000000},
-				{group = "melee_weapons", chance = 1000000},
+				{group = "tailor_components", chance = 2000000},
+				{group = "loot_kit_parts", chance = 2000000}
 			}
 		}
 	},

@@ -33,10 +33,9 @@ prisoner_quest_vinzel_riot = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
+				{group = "junk", chance = 6000000},
 				{group = "tailor_components", chance = 2000000},
-				{group = "loot_kit_parts", chance = 1500000},
-				{group = "wearables_common", chance = 1500000}
+				{group = "loot_kit_parts", chance = 2000000}
 			}
 		}
 	},

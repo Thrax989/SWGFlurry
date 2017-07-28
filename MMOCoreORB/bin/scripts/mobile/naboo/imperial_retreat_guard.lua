@@ -28,13 +28,10 @@ imperial_retreat_guard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 2000000},
-				{group = "wearables_common", chance = 2000000},
-				{group = "wearables_uncommon", chance = 2000000},
-				{group = "tailor_components", chance = 1500000},
-				{group = "loot_kit_parts", chance = 2000000},
-				{group = "clothing_attachments", chance = 250000},
-				{group = "armor_attachments", chance = 250000}
+				{group = "junk", chance = 7800000},
+				{group = "color_crystals", chance = 200000},
+				{group = "tailor_components", chance = 1000000},
+				{group = "loot_kit_parts", chance = 1000000}
 			}
 		}
 	},
