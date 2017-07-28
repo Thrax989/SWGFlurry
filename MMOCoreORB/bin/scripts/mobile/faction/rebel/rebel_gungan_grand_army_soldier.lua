@@ -32,9 +32,11 @@ rebel_gungan_grand_army_soldier = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 4000000},
-				{group = "gungan_common", chance = 2000000},
-				{group = "tailor_components", chance = 2000000},
-				{group = "loot_kit_parts", chance = 2000000}
+				{group = "gungan_common", chance = 2500000},
+				{group = "color_crystals", chance = 500000},
+				{group = "loot_kit_parts", chance = 2000000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "armor_attachments", chance = 500000}
 			}
 		}
 	},

@@ -32,13 +32,10 @@ alliance_intelligence_case = Creature:new {
 		{
 			groups = {
 				{group = "color_crystals", chance = 200000},
-				{group = "junk", chance = 3600000},
-				{group = "rifles", chance = 1600000},
-				{group = "pistols", chance = 1600000},
-				{group = "melee_weapons", chance = 1500000},
-				{group = "clothing_attachments", chance = 250000},
-				{group = "armor_attachments", chance = 250000},
-				{group = "wearables_common", chance = 1000000}
+				{group = "junk", chance = 8800000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "armor_attachments", chance = 500000}
+				
 			}
 		}
 	},

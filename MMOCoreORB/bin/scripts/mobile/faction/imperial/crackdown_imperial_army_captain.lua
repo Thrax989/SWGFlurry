@@ -33,15 +33,11 @@ crackdown_imperial_army_captain = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 100000},
-				{group = "junk", chance = 7200000},
-				{group = "rifles", chance = 550000},
-				{group = "pistols", chance = 550000},
-				{group = "melee_weapons", chance = 550000},
-				{group = "carbines", chance = 550000},
-				{group = "clothing_attachments", chance = 25000},
-				{group = "armor_attachments", chance = 25000},
-				{group = "imperial_officer_common", chance = 450000}
+				{group = "color_crystals", chance = 200000},
+				{group = "junk", chance = 8300000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "armor_attachments", chance = 500000},
+				{group = "imperial_officer_common", chance = 500000}
 			},
 			lootChance = 2800000
 		}
