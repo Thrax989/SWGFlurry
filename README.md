@@ -143,4 +143,3 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 * https://github.com/washu - Droid functionality
 * https://github.com/Skyyyr - Additional Game Tweaks CPP / Lua script Writer
 * https://github.com/Yakone - Random NGE Item Additons
-
