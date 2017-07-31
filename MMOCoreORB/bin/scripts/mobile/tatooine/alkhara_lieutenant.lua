@@ -31,12 +31,10 @@ alkhara_lieutenant = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 2550000},
-				{group = "wearables_common", chance = 2000000},
-				{group = "pistols", chance = 2000000},
-				{group = "tailor_components", chance = 1500000},
+				{group = "junk", chance = 7500000},
 				{group = "loot_kit_parts", chance = 1500000},
-				{group = "alkhara_common", chance = 450000}
+				{group = "alkhara_common", chance = 500000},
+				{group = "color_crystals", chance = 500000}
 			}
 		}
 	},

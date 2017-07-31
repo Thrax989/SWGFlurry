@@ -32,8 +32,8 @@ masterful_panshee_warrior = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "ewok", chance = 9000000},
-				{group = "wearables_uncommon", chance = 1000000},
+				{group = "ewok", chance = 10000000},
+
 			},
 			lootChance = 1840000
 		}

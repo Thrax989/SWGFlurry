@@ -33,15 +33,11 @@ kunn_kuroosh = Creature:new {
 		{
 			groups = {
 				{group = "color_crystals", chance = 300000},
-				{group = "junk", chance = 6300000},
-				{group = "rifles", chance = 600000},
 				{group = "holocron_dark", chance = 150000},
 				{group = "holocron_light", chance = 150000},
-				{group = "carbines", chance = 600000},
-				{group = "pistols", chance = 600000},
-				{group = "clothing_attachments", chance = 150000},
-				{group = "armor_attachments", chance = 150000},
-				{group = "wearables_common", chance = 1000000}
+				{group = "junk", chance = 6400000},
+				{group = "loot_kit_parts", chance = 2000000},
+				{group = "tailor_components", chance = 1000000}
 			}
 		}
 	},

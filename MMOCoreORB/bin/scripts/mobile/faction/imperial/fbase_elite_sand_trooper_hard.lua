@@ -32,14 +32,11 @@ fbase_elite_sand_trooper_hard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 100000},
-				{group = "junk", chance = 6000000},
-				{group = "weapons_all", chance = 1200000},
-				{group = "armor_all", chance = 1200000},
-				{group = "clothing_attachments", chance = 150000},
-				{group = "armor_attachments", chance = 150000},
-				{group = "stormtrooper_common", chance = 200000},
-				{group = "wearables_all", chance = 1000000}
+				{group = "color_crystals", chance = 200000},
+				{group = "junk", chance = 8300000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "armor_attachments", chance = 500000},
+				{group = "stormtrooper_common", chance = 500000}
 			}
 		}
 	},

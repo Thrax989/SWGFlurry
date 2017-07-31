@@ -30,18 +30,9 @@ theme_park_marauder_indar = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "pistols", chance = 1000000},
-				{group = "carbines", chance = 1000000},
-				{group = "rifles", chance = 1000000},
-				{group = "melee_baton", chance = 1000000},
-				{group = "loot_kit_parts", chance = 1000000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "bone_armor", chance = 800000},
-				{group = "chitin_armor", chance = 800000},
-				{group = "mabari_armor", chance = 800000},
-				{group = "tantel_armor", chance = 800000},
-				{group = "ubese_armor", chance = 800000},
+				{group = "junk", chance = 6000000},
+				{group = "tailor_components", chance = 2000000},
+				{group = "loot_kit_parts", chance = 2000000}
 			}
 		}
 	},

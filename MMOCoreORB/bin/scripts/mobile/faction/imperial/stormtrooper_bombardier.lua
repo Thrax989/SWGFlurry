@@ -32,16 +32,11 @@ stormtrooper_bombardier = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 100000},
-				{group = "junk", chance = 3400000},
-				{group = "rifles", chance = 1200000},
-				{group = "pistols", chance = 1200000},
-				{group = "melee_weapons", chance = 1200000},
-				{group = "carbines", chance = 1200000},
-				{group = "clothing_attachments", chance = 250000},
-				{group = "armor_attachments", chance = 250000},
-				{group = "stormtrooper_common", chance = 700000},
-				{group = "wearables_common", chance = 500000}
+				{group = "color_crystals", chance = 200000},
+				{group = "junk", chance = 8300000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "armor_attachments", chance = 500000},
+				{group = "stormtrooper_common", chance = 500000}
 			}
 		}
 	},

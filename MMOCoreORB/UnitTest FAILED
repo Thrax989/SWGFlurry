@@ -1,0 +1,25 @@
+file:scripts/mobile/naboo/swamp_trooper.lua ERROR scripts/mobile/naboo/swamp_trooper.lua:37: '}' expected (to close '{' at line 33) near '{'
+(9 s) [CreatureTemplateManager] ERROR - running file scripts/mobile/naboo/swamp_trooper.lua
+(9 s) [CreatureTemplateManager] ERROR - running file scripts/mobile/naboo/serverobjects.lua
+file:scripts/mobile/quest/corellia/theme_park_imperial_general_graise.lua ERROR ...le/quest/corellia/theme_park_imperial_general_graise.lua:35: '}' expected (to close '{' at line 31) near '{'
+(9 s) [CreatureTemplateManager] ERROR - running file scripts/mobile/quest/corellia/theme_park_imperial_general_graise.lua
+file:scripts/mobile/quest/dathomir/dolac_dark_jedi_master.lua ERROR scripts/mobile/quest/dathomir/dolac_dark_jedi_master.lua:42: '}' expected (to close '{' at line 35) near '{'
+(9 s) [CreatureTemplateManager] ERROR - running file scripts/mobile/quest/dathomir/dolac_dark_jedi_master.lua
+file:scripts/mobile/quest/naboo/melloc_fitzal.lua ERROR scripts/mobile/quest/naboo/melloc_fitzal.lua:37: '}' expected (to close '{' at line 33) near '{'
+(9 s) [CreatureTemplateManager] ERROR - running file scripts/mobile/quest/naboo/melloc_fitzal.lua
+file:scripts/mobile/quest/talus/igbi_hutt_operative.lua ERROR scripts/mobile/quest/talus/igbi_hutt_operative.lua:35: '}' expected (to close '{' at line 31) near '{'
+(9 s) [CreatureTemplateManager] ERROR - running file scripts/mobile/quest/talus/igbi_hutt_operative.lua
+file:scripts/mobile/quest/tatooine/harbo_linn.lua ERROR scripts/mobile/quest/tatooine/harbo_linn.lua:34: '}' expected (to close '{' at line 30) near '{'
+(9 s) [CreatureTemplateManager] ERROR - running file scripts/mobile/quest/tatooine/harbo_linn.lua
+file:scripts/mobile/quest/tatooine/nwilla_tharlyat.lua ERROR scripts/mobile/quest/tatooine/nwilla_tharlyat.lua:33: unfinished string near '''
+(9 s) [CreatureTemplateManager] ERROR - running file scripts/mobile/quest/tatooine/nwilla_tharlyat.lua
+file:scripts/mobile/faction/imperial/crackdown_stormtrooper_captain.lua ERROR ...bile/faction/imperial/crackdown_stormtrooper_captain.lua:42: '}' expected (to close '{' at line 36) near '{'
+(9 s) [CreatureTemplateManager] ERROR - running file scripts/mobile/faction/imperial/crackdown_stormtrooper_captain.lua
+file:scripts/mobile/mission/bh_feral_force_wielder.lua ERROR scripts/mobile/mission/bh_feral_force_wielder.lua:63: unexpected symbol near '='
+(9 s) [CreatureTemplateManager] ERROR - running file scripts/mobile/mission/bh_feral_force_wielder.lua
+(9 s) [CreatureTemplateManager] ERROR - running file scripts/mobile/serverobjects.lua
+../../../src/server/zone/managers/creature/tests/LuaMobileTest.cpp:161: Failure
+Value of: 0
+Expected: CreatureTemplateManager::instance()->loadTemplates()
+Which is: 1
+[  FAILED  ] LuaMobileTest.LuaMobileTemplatesTest (9018 ms)

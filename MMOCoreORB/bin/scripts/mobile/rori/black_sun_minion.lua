@@ -32,12 +32,9 @@ black_sun_minion = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 6500000},
-				{group = "pistols", chance = 800000},
-				{group = "rifles", chance = 800000},
-				{group = "carbines", chance = 800000},
-				{group = "wearables_common", chance = 550000},
-				{group = "wearables_uncommon", chance = 550000}
+				{group = "junk", chance = 7000000},
+				{group = "loot_kit_parts", chance = 2000000},
+				{group = "tailor_components", chance = 1000000}
 			}
 		}
 	},

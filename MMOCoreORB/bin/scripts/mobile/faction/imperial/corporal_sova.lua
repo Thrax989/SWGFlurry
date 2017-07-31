@@ -30,13 +30,9 @@ corporal_sova = Creature:new {
 		{
 			groups = {
 				{group = "color_crystals", chance = 200000},
-				{group = "junk", chance = 5900000},
-				{group = "rifles", chance = 800000},
-				{group = "pistols", chance = 800000},
-				{group = "carbines", chance = 800000},
-				{group = "melee_weapons", chance = 1200000},
-				{group = "clothing_attachments", chance = 150000},
-				{group = "armor_attachments", chance = 150000}
+				{group = "junk", chance = 8800000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "armor_attachments", chance = 500000},
 			}
 		}
 	},

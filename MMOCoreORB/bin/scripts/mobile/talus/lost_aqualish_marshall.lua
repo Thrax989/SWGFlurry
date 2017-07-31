@@ -33,9 +33,7 @@ lost_aqualish_marshall = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "wearables_common", chance = 2000000},
-				{group = "heavy_weapons", chance = 2000000},
+				{group = "junk", chance = 6500000},
 				{group = "tailor_components", chance = 1500000},
 				{group = "loot_kit_parts", chance = 1500000},
 				{group = "color_crystals", chance = 500000}
