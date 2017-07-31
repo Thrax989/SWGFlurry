@@ -16,7 +16,9 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/managers/skill/SkillManager.h"
+#include "server/zone/managers/skill/SkillModManager.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
+#include "server/chat/ChatManager.h"
 
 const char LuaCreatureObject::className[] = "LuaCreatureObject";
 
@@ -136,6 +138,9 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "getDamageDealerList", &LuaCreatureObject::getDamageDealerList },
 		{ "getHealingThreatList", &LuaCreatureObject::getHealingThreatList},
 		{ "getSkillMod", &LuaCreatureObject::getSkillMod},
+		{ "broadcastToServer", &LuaCreatureObject::broadcastToServer },
+		{ "addStructureSkillMod", &LuaCreatureObject::addStructureSkillMod },
+		{ "removeAllStructureSkillMod", &LuaCreatureObject::removeAllStructureSkillMod },
 		{ 0, 0 }
 };
 
@@ -1044,5 +1049,35 @@ int LuaCreatureObject::getSkillMod(lua_State* L) {
 
 	lua_pushnumber(L, result);
 
+	return 1;
+}
+
+int LuaCreatureObject::broadcastToServer(lua_State* L) {
+	String message = lua_tostring(L, -1);
+	ZoneServer* zServ = realObject->getZoneServer();
+	zServ->getChatManager()->broadcastGalaxy(NULL, message);
+	return 1;
+}
+
+int LuaCreatureObject::addStructureSkillMod(lua_State* L) {
+
+	if (!realObject->isPlayerCreature())
+		return 0;
+
+	String skillMod = lua_tostring(L, -2);
+	int value = lua_tointeger(L, -1);
+	Locker locker(realObject);
+	realObject->addSkillMod(SkillModManager::STRUCTURE, skillMod, value, true);
+	return 1;
+}
+
+int LuaCreatureObject::removeAllStructureSkillMod(lua_State* L) {
+
+	if (!realObject->isPlayerCreature())
+		return 0;
+
+	Locker locker(realObject);
+	realObject->removeAllSkillModsOfType(SkillModManager::STRUCTURE,true);
+	//realObject->removeSkillMod(SkillModManager::STRUCTURE, skillMod, value, true);
 	return 1;
 }
