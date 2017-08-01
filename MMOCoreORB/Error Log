@@ -1,0 +1,97 @@
+vagrant@ns510434:~/workspace/Core3/MMOCoreORB$ make build
+/usr/local/bin/idlc -makefile src/Makefile.am -outdir autogen -cp ../MMOEngine/include -sd src anyadEclipse
+#done
+cd utils/gtest-1.6.0 && make all
+make[1]: Entering directory '/home/vagrant/workspace/Core3/MMOCoreORB/utils/gtest-1.6.0'
+mkdir -p lib
+make compile
+make[2]: Entering directory '/home/vagrant/workspace/Core3/MMOCoreORB/utils/gtest-1.6.0'
+g++   -I./include -I. -I../gmock-1.6.0/include -I../gmock-1.6.0 -c ./src/gtest-all.cc -o lib/gtest-all.o
+g++   -I./include -I. -I../gmock-1.6.0/include -I../gmock-1.6.0 -c ../gmock-1.6.0/src/gmock-all.cc -o lib/gmock-all.o
+make[2]: Leaving directory '/home/vagrant/workspace/Core3/MMOCoreORB/utils/gtest-1.6.0'
+cd lib && ar -rv libgtest.a gtest-all.o gmock-all.o
+r - gtest-all.o
+r - gmock-all.o
+make[1]: Leaving directory '/home/vagrant/workspace/Core3/MMOCoreORB/utils/gtest-1.6.0'
+cd build/unix && make -j4 UNITTEST_DIRECTIVES="" #CC=clang CXX=clang++
+make[1]: Entering directory '/home/vagrant/workspace/Core3/MMOCoreORB/build/unix'
+make  all-recursive
+make[2]: Entering directory '/home/vagrant/workspace/Core3/MMOCoreORB/build/unix'
+Making all in src
+make[3]: Entering directory '/home/vagrant/workspace/Core3/MMOCoreORB/build/unix/src'
+rm -f libcore3templates.a
+ar cru libcore3templates.a templates/SharedObjectTemplate.o templates/SharedTangibleObjectTemplate.o templates/appearance/FloorMesh.o templates/appearance/CellProperty.o templates/appearance/MeshAppearanceTemplate.o templates/appearance/MeshData.o templates/appearance/DetailAppearanceTemplate.o templates/appearance/PortalLayout.o templates/appearance/PathGraph.o templates/building/CampStructureTemplate.o templates/building/SharedBuildingObjectTemplate.o templates/crafting/ValuesMap.o templates/creature/PlayerCreatureTemplate.o templates/creature/SharedCreatureObjectTemplate.o templates/customization/AssetCustomizationManagerTemplate.o templates/customization/CustomizationIdManager.o templates/collision/BoundingVolumeFactory.o templates/collision/BaseBoundingVolume.o templates/collision/SphereVolume.o templates/collision/BoxVolume.o templates/collision/CylinderVolume.o templates/collision/CompositeVolume.o templates/collision/ComponentVolume.o templates/collision/DetailVolume.o templates/collision/CollisionMeshVolume.o templates/datatables/DataTableIff.o templates/datatables/DataTableCell.o templates/faction/FactionRanks.o templates/intangible/DraftSchematicObjectTemplate.o templates/manager/DataArchiveStore.o templates/manager/TemplateManager.o templates/params/PaletteColorCustomizationVariables.o templates/params/RangedIntCustomizationVariables.o templates/params/creature/CreatureAttribute.o templates/string/StringFile.o templates/snapshot/WorldSnapshotIff.o templates/tangible/SharedStructureObjectTemplate.o templates/tangible/SharedWeaponObjectTemplate.o 
+rm -f libcore3terrain.a
+ar cru libcore3terrain.a terrain/ProceduralTerrainAppearance.o terrain/SpaceTerrainAppearance.o terrain/MapFractal.o terrain/TargaBitmap.o terrain/TerrainGenerator.o terrain/layer/Layer.o terrain/layer/affectors/AffectorHeightFractal.o terrain/layer/filters/FilterFractal.o terrain/layer/filters/FilterBitmap.o terrain/manager/TerrainManager.o terrain/manager/TerrainCache.o 
+rm -f libcore3pathfinding.a
+ranlib libcore3terrain.a
+ar cru libcore3pathfinding.a pathfinding/recast/libcore3pathfinding_a-Recast.o pathfinding/recast/libcore3pathfinding_a-RecastAlloc.o pathfinding/recast/libcore3pathfinding_a-RecastArea.o pathfinding/recast/libcore3pathfinding_a-RecastContour.o pathfinding/recast/libcore3pathfinding_a-RecastFilter.o pathfinding/recast/libcore3pathfinding_a-RecastLayers.o pathfinding/recast/libcore3pathfinding_a-RecastMesh.o pathfinding/recast/libcore3pathfinding_a-RecastMeshDetail.o pathfinding/recast/libcore3pathfinding_a-RecastRasterization.o pathfinding/recast/libcore3pathfinding_a-RecastRegion.o pathfinding/recast/libcore3pathfinding_a-DetourCommon.o pathfinding/recast/libcore3pathfinding_a-DetourNavMesh.o pathfinding/recast/libcore3pathfinding_a-DetourNavMeshBuilder.o pathfinding/recast/libcore3pathfinding_a-DetourNavMeshQuery.o pathfinding/recast/libcore3pathfinding_a-DetourNode.o pathfinding/recast/libcore3pathfinding_a-DetourAlloc.o pathfinding/libcore3pathfinding_a-ChunkyTriMesh.o pathfinding/libcore3pathfinding_a-RecastNavMesh.o pathfinding/libcore3pathfinding_a-RecastNavMeshBuilder.o pathfinding/libcore3pathfinding_a-RecastTileBuilder.o 
+depbase=`echo server/zone/managers/loot/LootManagerImplementation.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -DHAVE_CONFIG_H -I. -I../../../src -I..  -I/usr/local/include -I/usr/local/include/mysql -I../../../../MMOEngine/include -I../../../../MMOEngine/src -I../../../utils -I/usr/local/include -I/usr/include/mysql -I/usr/local/BerkeleyDB.5.3/include -I/usr/include/db5.3 -I../../../utils/gtest-1.6.0/include -I../../../utils/gmock-1.6.0/include -I../../../src/autogen    -ggdb -Wall -Wextra -Wno-unused -Wno-sign-compare -Wno-multichar -DDEFAULT_DYNAMIC_CAST -Wno-unused-parameter -Wno-overloaded-virtual -Wno-missing-declarations -Werror -std=c++11 -march=native -O0  -MT server/zone/managers/loot/LootManagerImplementation.o -MD -MP -MF $depbase.Tpo -c -o server/zone/managers/loot/LootManagerImplementation.o ../../../src/server/zone/managers/loot/LootManagerImplementation.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+ranlib libcore3pathfinding.a
+depbase=`echo server/zone/managers/faction/FactionManager.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -DHAVE_CONFIG_H -I. -I../../../src -I..  -I/usr/local/include -I/usr/local/include/mysql -I../../../../MMOEngine/include -I../../../../MMOEngine/src -I../../../utils -I/usr/local/include -I/usr/include/mysql -I/usr/local/BerkeleyDB.5.3/include -I/usr/include/db5.3 -I../../../utils/gtest-1.6.0/include -I../../../utils/gmock-1.6.0/include -I../../../src/autogen    -ggdb -Wall -Wextra -Wno-unused -Wno-sign-compare -Wno-multichar -DDEFAULT_DYNAMIC_CAST -Wno-unused-parameter -Wno-overloaded-virtual -Wno-missing-declarations -Werror -std=c++11 -march=native -O0  -MT server/zone/managers/faction/FactionManager.o -MD -MP -MF $depbase.Tpo -c -o server/zone/managers/faction/FactionManager.o ../../../src/server/zone/managers/faction/FactionManager.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+ranlib libcore3templates.a
+depbase=`echo server/zone/managers/gcw/GCWManagerImplementation.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -DHAVE_CONFIG_H -I. -I../../../src -I..  -I/usr/local/include -I/usr/local/include/mysql -I../../../../MMOEngine/include -I../../../../MMOEngine/src -I../../../utils -I/usr/local/include -I/usr/include/mysql -I/usr/local/BerkeleyDB.5.3/include -I/usr/include/db5.3 -I../../../utils/gtest-1.6.0/include -I../../../utils/gmock-1.6.0/include -I../../../src/autogen    -ggdb -Wall -Wextra -Wno-unused -Wno-sign-compare -Wno-multichar -DDEFAULT_DYNAMIC_CAST -Wno-unused-parameter -Wno-overloaded-virtual -Wno-missing-declarations -Werror -std=c++11 -march=native -O0  -MT server/zone/managers/gcw/GCWManagerImplementation.o -MD -MP -MF $depbase.Tpo -c -o server/zone/managers/gcw/GCWManagerImplementation.o ../../../src/server/zone/managers/gcw/GCWManagerImplementation.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo server/zone/managers/gcw/sessions/ContrabandScanSessionImplementation.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -DHAVE_CONFIG_H -I. -I../../../src -I..  -I/usr/local/include -I/usr/local/include/mysql -I../../../../MMOEngine/include -I../../../../MMOEngine/src -I../../../utils -I/usr/local/include -I/usr/include/mysql -I/usr/local/BerkeleyDB.5.3/include -I/usr/include/db5.3 -I../../../utils/gtest-1.6.0/include -I../../../utils/gmock-1.6.0/include -I../../../src/autogen    -ggdb -Wall -Wextra -Wno-unused -Wno-sign-compare -Wno-multichar -DDEFAULT_DYNAMIC_CAST -Wno-unused-parameter -Wno-overloaded-virtual -Wno-missing-declarations -Werror -std=c++11 -march=native -O0  -MT server/zone/managers/gcw/sessions/ContrabandScanSessionImplementation.o -MD -MP -MF $depbase.Tpo -c -o server/zone/managers/gcw/sessions/ContrabandScanSessionImplementation.o ../../../src/server/zone/managers/gcw/sessions/ContrabandScanSessionImplementation.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+../../../src/server/zone/managers/faction/FactionManager.cpp: In member function ‘void FactionManager::awardPvpFactionPoints(server::zone::objects::tangible::TangibleObject*, server::zone::objects::creature::CreatureObject*)’:
+../../../src/server/zone/managers/faction/FactionManager.cpp:182:86: error: no matching function for call to ‘server::zone::managers::loot::LootManager::createNamedLoot(engine::core::ManagedReference<server::zone::objects::scene::SceneObject*>&, const char [24], sys::lang::String&, int)’
+    lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
+                                                                                      ^
+../../../src/server/zone/managers/faction/FactionManager.cpp:182:86: note: candidate is:
+In file included from ../../../src/server/zone/managers/faction/FactionManager.cpp:12:0:
+../../../src/autogen/server/zone/managers/loot/LootManager.h:150:7: note: bool server::zone::managers::loot::LootManager::createNamedLoot(server::zone::objects::scene::SceneObject*, const sys::lang::String&, int, bool)
+  bool createNamedLoot(SceneObject* container, const String& lootGroup, int level = -1, bool maxCondition = false);
+       ^
+../../../src/autogen/server/zone/managers/loot/LootManager.h:150:7: note:   no known conversion for argument 3 from ‘sys::lang::String’ to ‘int’
+../../../src/server/zone/managers/faction/FactionManager.cpp:184:74: error: no matching function for call to ‘server::zone::managers::loot::LootManager::createNamedLoot(engine::core::ManagedReference<server::zone::objects::scene::SceneObject*>&, const char [12], sys::lang::String&, int)’
+    lootManager->createNamedLoot(inventory, "playerSkull", playerName, 300);//, playerName);
+                                                                          ^
+../../../src/server/zone/managers/faction/FactionManager.cpp:184:74: note: candidate is:
+In file included from ../../../src/server/zone/managers/faction/FactionManager.cpp:12:0:
+../../../src/autogen/server/zone/managers/loot/LootManager.h:150:7: note: bool server::zone::managers::loot::LootManager::createNamedLoot(server::zone::objects::scene::SceneObject*, const sys::lang::String&, int, bool)
+  bool createNamedLoot(SceneObject* container, const String& lootGroup, int level = -1, bool maxCondition = false);
+       ^
+../../../src/autogen/server/zone/managers/loot/LootManager.h:150:7: note:   no known conversion for argument 3 from ‘sys::lang::String’ to ‘int’
+../../../src/server/zone/managers/loot/LootManagerImplementation.cpp: In member function ‘server::zone::objects::tangible::TangibleObject* server::zone::managers::loot::LootManagerImplementation::createLootObject(LootItemTemplate*, int, bool)’:
+../../../src/server/zone/managers/loot/LootManagerImplementation.cpp:480:38: error: incomplete type ‘server::zone::managers::stringid::StringIdManager’ used in nested name specifier
+   StringIdManager* stringIdManager = StringIdManager::instance();
+                                      ^
+../../../src/server/zone/managers/loot/LootManagerImplementation.cpp:493:51: error: invalid use of incomplete type ‘class server::zone::managers::stringid::StringIdManager’
+     prototype->setCustomObjectName(stringIdManager->getStringId(statName.hashCode()),false);
+                                                   ^
+In file included from ../../../src/server/zone/managers/crafting/schematicmap/SchematicMap.h:14:0,
+                 from ../../../src/autogen/server/zone/managers/crafting/CraftingManager.h:109,
+                 from ../../../src/server/zone/managers/loot/LootManagerImplementation.cpp:12:
+../../../src/autogen/server/zone/ZoneServer.h:268:7: error: forward declaration of ‘class server::zone::managers::stringid::StringIdManager’
+ class StringIdManager;
+       ^
+../../../src/server/zone/managers/loot/LootManagerImplementation.cpp: At global scope:
+../../../src/server/zone/managers/loot/LootManagerImplementation.cpp:736:6: error: prototype for ‘bool server::zone::managers::loot::LootManagerImplementation::createNamedLoot(server::zone::objects::scene::SceneObject*, const sys::lang::String&, const sys::lang::String&, int, bool)’ does not match any in class ‘server::zone::managers::loot::LootManagerImplementation’
+ bool LootManagerImplementation::createNamedLoot(SceneObject* container, const String& lootGroup, const String& name, int level, bool maxCondition) {
+      ^
+In file included from ../../../src/server/zone/managers/loot/LootManagerImplementation.cpp:8:0:
+../../../src/autogen/server/zone/managers/loot/LootManager.h:301:7: error: candidate is: bool server::zone::managers::loot::LootManagerImplementation::createNamedLoot(server::zone::objects::scene::SceneObject*, const sys::lang::String&, int, bool)
+  bool createNamedLoot(SceneObject* container, const String& lootGroup, int level = -1, bool maxCondition = false);
+       ^
+Makefile:8051: recipe for target 'server/zone/managers/loot/LootManagerImplementation.o' failed
+make[3]: *** [server/zone/managers/loot/LootManagerImplementation.o] Error 1
+make[3]: *** Waiting for unfinished jobs....
+Makefile:8051: recipe for target 'server/zone/managers/faction/FactionManager.o' failed
+make[3]: *** [server/zone/managers/faction/FactionManager.o] Error 1
+make[3]: Leaving directory '/home/vagrant/workspace/Core3/MMOCoreORB/build/unix/src'
+Makefile:417: recipe for target 'all-recursive' failed
+make[2]: *** [all-recursive] Error 1
+make[2]: Leaving directory '/home/vagrant/workspace/Core3/MMOCoreORB/build/unix'
+Makefile:357: recipe for target 'all' failed
+make[1]: *** [all] Error 2
+make[1]: Leaving directory '/home/vagrant/workspace/Core3/MMOCoreORB/build/unix'
+Makefile:57: recipe for target 'build' failed
+make: *** [build] Error 2
+vagrant@ns510434:~/workspace/Core3/MMOCoreORB$ 
