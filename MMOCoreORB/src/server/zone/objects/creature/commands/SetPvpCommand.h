@@ -12,7 +12,7 @@
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/terminal/characterbuilder/CharacterBuilderTerminal.h"
-#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
+//#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
 
@@ -41,7 +41,7 @@ public:
 			return GENERALERROR;
 		}
 		
-		if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice"))){
+		if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice")){
 			creature->sendSystemMessage("You may not use this command.");
 			return GENERALERROR;
 		}
