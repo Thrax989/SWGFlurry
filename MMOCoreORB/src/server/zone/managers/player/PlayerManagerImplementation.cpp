@@ -1550,6 +1550,9 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 
 	PlayerObject* playerObject = player->getPlayerObject();
 
+	
+	float perExpMulti = player->getPersonalExpMultiplier();
+
 	if (playerObject == NULL)
 		return 0;
 
@@ -1558,7 +1561,7 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 	if (amount > 0)
 		speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
 
-	int xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * localMultiplier * globalExpMultiplier));
+	int xp = playerObject->addExperience(xpType, (int) ((((amount * speciesModifier) * localMultiplier) * perExpMulti) * globalExpMultiplier));
 
 	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
 

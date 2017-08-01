@@ -145,6 +145,7 @@ public:
 
 		return "Error Dumping resources";
 	}
+	void dumpToJSON();
 	String getPlanetByIndex(int index);
 private:
 

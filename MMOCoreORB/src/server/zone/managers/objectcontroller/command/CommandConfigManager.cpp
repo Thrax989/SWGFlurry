@@ -1624,4 +1624,9 @@ void CommandConfigManager::registerCommands() {
 	commandFactory.registerCommand<PetPatrolCommand>(String("petPatrol").toLowerCase());
 	commandFactory.registerCommand<PetClearPatrolPointsCommand>(String("petClearPatrolPoints").toLowerCase());
 	commandFactory.registerCommand<PetGetPatrolPointCommand>(String("petGetPatrolPoint").toLowerCase());
+	
+	
+	//Custom
+	
+	commandFactory.registerCommand<SetPvpCommand>(String("setPvp").toLowerCase());
 }
