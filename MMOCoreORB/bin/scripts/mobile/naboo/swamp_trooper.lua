@@ -33,7 +33,7 @@ swamp_trooper = Creature:new {
 			groups = {
 				{group = "junk", chance = 6000000},
 				{group = "tailor_components", chance = 2000000},
-				{group = "loot_kit_parts", chance = 1000000}
+				{group = "loot_kit_parts", chance = 1000000},
 				{group = "stormtrooper_common", chance = 1000000}
 			}
 		}

@@ -31,8 +31,8 @@ theme_park_imperial_general_graise = Creature:new {
 			groups = {
 				{group = "junk", chance = 6000000},
 				{group = "tailor_components", chance = 2000000},
-				{group = "loot_kit_parts", chance = 1000000}
-				{group = "imperial_officer_common", chance = 1000000},
+				{group = "loot_kit_parts", chance = 1000000},
+				{group = "imperial_officer_common", chance = 1000000}
 				
 			}
 		}

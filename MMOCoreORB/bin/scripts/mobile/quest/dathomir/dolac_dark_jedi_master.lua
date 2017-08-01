@@ -38,7 +38,7 @@ dolac_dark_jedi_master = Creature:new {
 				{group = "power_crystals", chance = 1000000},
 				{group = "junk", chance = 3000000},
 				{group = "tailor_components", chance = 1000000},
-				{group = "loot_kit_parts", chance = 2000000}
+				{group = "loot_kit_parts", chance = 2000000},
 				{group = "dark_jedi_common", chance = 1000000}
 			}
 		}
