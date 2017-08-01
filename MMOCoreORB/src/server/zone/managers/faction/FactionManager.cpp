@@ -9,6 +9,8 @@
 #include "FactionMap.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "templates/manager/TemplateManager.h"
+#include "server/zone/managers/loot/LootManager.h"
+#include "server/zone/managers/player/PlayerManager.h"
 
 FactionManager::FactionManager() {
 	setLoggingName("FactionManager");
@@ -158,6 +160,11 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 		ManagedReference<PlayerObject*> ghost = killerCreature->getPlayerObject();
 
 		ManagedReference<PlayerObject*> killedGhost = destructedObject->getPlayerObject();
+		
+		ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
+		ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
+		
+		String playerName = destructedObject->getFirstName();
 
 		if (killer->isRebel() && destructedObject->isImperial()) {
 			ghost->increaseFactionStanding("rebel", 30);
@@ -169,6 +176,12 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			ghost->decreaseFactionStanding("rebel", 45);
 
 			killedGhost->decreaseFactionStanding("rebel", 45);
+		}
+		
+		if(ghost->getJediState() >= 2){
+			lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
+		}else{
+			lootManager->createNamedLoot(inventory, "playerSkull", playerName, 300);//, playerName);
 		}
 	}
 }

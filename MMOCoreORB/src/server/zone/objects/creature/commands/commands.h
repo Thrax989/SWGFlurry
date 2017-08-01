@@ -839,6 +839,10 @@
 #include "RequestSpaceTrainerCommand.h"
 
 
+//Custom
+
+#include "SetPvpCommand.h"
+
 
 
 #endif /* COMMANDSNEW_H_ */
