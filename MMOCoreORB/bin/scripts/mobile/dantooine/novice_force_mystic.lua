@@ -29,7 +29,7 @@ novice_force_mystic = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 70000000},
+				{group = "junk", chance = 7000000},
 				{group = "power_crystals", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "armor_attachments", chance = 1000000},

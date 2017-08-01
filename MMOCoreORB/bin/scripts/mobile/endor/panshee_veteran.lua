@@ -35,7 +35,7 @@ panshee_veteran = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "ewok", chance = 9000000},
+				{group = "ewok", chance = 10000000},
 
 			},
 			lootChance = 1700000
