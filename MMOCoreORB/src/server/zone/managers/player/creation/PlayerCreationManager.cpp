@@ -604,9 +604,16 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	ghost->addChatRoom(chatManager->getAuctionRoom()->getRoomID());
 
 	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
-	box->setPromptTitle("PLEASE NOTE");
-	box->setPromptText("You are limited to creating one character per hour. Attempting to create another character or deleting your character before the 1 hour timer expires will reset the timer.");
-
+	box->setPromptTitle("Welcome To SWG Flurry");
+	box->setPromptText("Welcome to the SWG Flurry Server!.\n\n You are limited to creating one character every 5 minutes. Attempting to create another character or deleting your character before the 5 minute timer expires will reset the timer.\n\nServer Rules\n\n1.)\n1 Account Per Person 4 Characters May be logged in at any given time per account 8 Characters created per account (at present) 1 Account Per Person and Per IP (unless authorised by admin to have more than 1 account per IP) If multiple people in a ...(line truncated)...
+	box->setCancelButton(true, "@no");
+	box->setOkButton(true, "@yes");
+	box->setUsingObject(ghost);
+	//Broadcast to Server
+	String playerName = playerCreature->getFirstName();
+	StringBuffer zBroadcast;
+	zBroadcast << "\\#00ace6" << playerName << " \\#ffb90f Has Joined The Flurry Server!";
+	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	ghost->addSuiBox(box);
 	playerCreature->sendMessage(box->generateMessage());
 
