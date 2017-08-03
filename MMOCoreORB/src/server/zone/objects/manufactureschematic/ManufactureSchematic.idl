@@ -100,7 +100,7 @@ class ManufactureSchematic extends IntangibleObject {
 
 		possibleSyncIssue = false;
 
-		manufactureLimit = 1000;
+		manufactureLimit = 1000000;
 
 		super.getContainerPermissions().setInheritPermissionsFromParent(true);
 
