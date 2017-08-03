@@ -728,6 +728,7 @@ void SlicingSessionImplementation::handleSliceEncumbrance(uint8 percent) {
 	Locker locker(armor);
 
 	armor->setEncumbranceSlice(percent / 100.f);
+	armor->setMaxSockets(4);
 	armor->setSliced(true);
 
 	StringIdChatParameter params;
@@ -749,6 +750,7 @@ void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 	Locker locker(armor);
 
 	armor->setEffectivenessSlice(percent / 100.f);
+	armor->setMaxSockets(4);
 	armor->setSliced(true);
 
 	StringIdChatParameter params;
