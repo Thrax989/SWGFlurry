@@ -19,7 +19,7 @@ class FactoryCrate extends TangibleObject {
 	public FactoryCrate() {
 		Logger.setLoggingName("FactoryCrate");
 
-		maxCapacity = 100;
+		maxCapacity = 1000000;
 
 		super.setContainerInheritPermissionsFromParent(false);
 		super.setContainerDefaultDenyPermission(ContainerPermissions.OPEN);
@@ -80,6 +80,7 @@ class FactoryCrate extends TangibleObject {
 
 	@preLocked
 	public void setMaxCapacity(int value) {
+		value = 1000000;
 		maxCapacity = value;
 	}
 

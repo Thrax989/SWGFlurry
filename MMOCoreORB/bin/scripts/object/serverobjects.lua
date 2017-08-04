@@ -40,9 +40,6 @@
 --gives permission to release a modified version without this exception; 
 --this exception also makes it possible to release a modified version 
 
---New Content
-includeFile("custom_content/serverobjects.lua")
-
 --Children folder includes
 includeFile("battlefield_marker/serverobjects.lua")
 includeFile("building/serverobjects.lua")
@@ -83,3 +80,6 @@ includeFile("mission_recon_area.lua")
 includeFile("sarlacc_area.lua")
 includeFile("spawn_area.lua")
 includeFile("fs_village_area.lua")
+
+--New Content
+includeFile("custom_content/serverobjects.lua")

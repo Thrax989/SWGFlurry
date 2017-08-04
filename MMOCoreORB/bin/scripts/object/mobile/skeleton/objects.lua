@@ -41,6 +41,272 @@
 --which carries forward this exception.
 
 
+--New Content
+
+--***********************************************************************************************************************************************
+
+object_mobile_skeleton_shared_blistmok = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_blistmok.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_blistmok, "object/mobile/skeleton/shared_blistmok.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_sher_kar = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_sher_kar.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_sher_kar, "object/mobile/skeleton/shared_sher_kar.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_tanray = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_tanray.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_tanray, "object/mobile/skeleton/shared_tanray.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_tulrus = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_tulrus.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_tulrus, "object/mobile/skeleton/shared_tulrus.iff")
+--***********************************************************************************************************************************************
+
+object_mobile_skeleton_shared_bm_acklay = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_acklay.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_acklay, "object/mobile/skeleton/shared_bm_acklay.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_bat = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_bat.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_bat, "object/mobile/skeleton/shared_bm_bat.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_bird_finch = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_bird_finch.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_bird_finch, "object/mobile/skeleton/shared_bm_bird_finch.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_bird_giant = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_bird_giant.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_bird_giant, "object/mobile/skeleton/shared_bm_bird_giant.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_bird_turkey = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_bird_turkey.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_bird_turkey, "object/mobile/skeleton/shared_bm_bird_turkey.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_blistmok = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_blistmok.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_blistmok, "object/mobile/skeleton/shared_bm_blistmok.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_camel = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_camel.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_camel, "object/mobile/skeleton/shared_bm_camel.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_canine = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_canine.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_canine, "object/mobile/skeleton/shared_bm_canine.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_cat_domestic = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_cat_domestic.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_cat_domestic, "object/mobile/skeleton/shared_bm_cat_domestic.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_cat_predatory = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_cat_predatory.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_cat_predatory, "object/mobile/skeleton/shared_bm_cat_predatory.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_dewback = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_dewback.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_dewback, "object/mobile/skeleton/shared_bm_dewback.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_elephant = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_elephant.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_elephant, "object/mobile/skeleton/shared_bm_elephant.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_elephant_bantha = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_elephant_bantha.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_elephant_bantha, "object/mobile/skeleton/shared_bm_elephant_bantha.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_fambaa = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_fambaa.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_fambaa, "object/mobile/skeleton/shared_bm_fambaa.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_frog = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_frog.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_frog, "object/mobile/skeleton/shared_bm_frog.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_giraffe = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_giraffe.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_giraffe, "object/mobile/skeleton/shared_bm_giraffe.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_goat = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_goat.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_goat, "object/mobile/skeleton/shared_bm_goat.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_griffon = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_griffon.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_griffon, "object/mobile/skeleton/shared_bm_griffon.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_horse = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_horse.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_horse, "object/mobile/skeleton/shared_bm_horse.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_insect_basic = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_insect_basic.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_insect_basic, "object/mobile/skeleton/shared_bm_insect_basic.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_insect_mantis = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_insect_mantis.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_insect_mantis, "object/mobile/skeleton/shared_bm_insect_mantis.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_insect_moth = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_insect_moth.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_insect_moth, "object/mobile/skeleton/shared_bm_insect_moth.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_kaadu = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_kaadu.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_kaadu, "object/mobile/skeleton/shared_bm_kaadu.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_lizard_basic = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_lizard_basic.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_lizard_basic, "object/mobile/skeleton/shared_bm_lizard_basic.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_lizard_giant = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_lizard_giant.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_lizard_giant, "object/mobile/skeleton/shared_bm_lizard_giant.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_mynock = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_mynock.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_mynock, "object/mobile/skeleton/shared_bm_mynock.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_pig = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_pig.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_pig, "object/mobile/skeleton/shared_bm_pig.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_rabbit = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_rabbit.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_rabbit, "object/mobile/skeleton/shared_bm_rabbit.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_rancor = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_rancor.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_rancor, "object/mobile/skeleton/shared_bm_rancor.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_rat = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_rat.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_rat, "object/mobile/skeleton/shared_bm_rat.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_simian_ape = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_simian_ape.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_simian_ape, "object/mobile/skeleton/shared_bm_simian_ape.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_simian_monkey = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_simian_monkey.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_simian_monkey, "object/mobile/skeleton/shared_bm_simian_monkey.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_snake = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_snake.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_snake, "object/mobile/skeleton/shared_bm_snake.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_spider = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_spider.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_spider, "object/mobile/skeleton/shared_bm_spider.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_tanray = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_tanray.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_tanray, "object/mobile/skeleton/shared_bm_tanray.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_tauntaun = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_tauntaun.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_tauntaun, "object/mobile/skeleton/shared_bm_tauntaun.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_tulrus = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_tulrus.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_tulrus, "object/mobile/skeleton/shared_bm_tulrus.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_bm_varactyl = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_bm_varactyl.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_bm_varactyl, "object/mobile/skeleton/shared_bm_varactyl.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_dug = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_dug.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_dug, "object/mobile/skeleton/shared_dug.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_hawk_bat = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_hawk_bat.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_hawk_bat, "object/mobile/skeleton/shared_hawk_bat.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_killer_worm = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_killer_worm.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_killer_worm, "object/mobile/skeleton/shared_killer_worm.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_massiff = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_massiff.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_massiff, "object/mobile/skeleton/shared_massiff.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_sarlacc = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_sarlacc.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_sarlacc, "object/mobile/skeleton/shared_sarlacc.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_undead_humanoid = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_undead_humanoid.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_undead_humanoid, "object/mobile/skeleton/shared_undead_humanoid.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_varactyl = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_varactyl.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_varactyl, "object/mobile/skeleton/shared_varactyl.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_vr_bat = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_vr_bat.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_vr_bat, "object/mobile/skeleton/shared_vr_bat.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_vr_mouse_droid = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_vr_mouse_droid.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_vr_mouse_droid, "object/mobile/skeleton/shared_vr_mouse_droid.iff")
+--***********************************************************************************************************************************************
+object_mobile_skeleton_shared_vr_mynock = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_vr_mynock.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_vr_mynock, "object/mobile/skeleton/shared_vr_mynock.iff")
+--***********************************************************************************************************************************************
+
 object_mobile_skeleton_shared_acklay = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/skeleton/shared_acklay.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups
@@ -83,7 +349,7 @@ object_mobile_skeleton_shared_acklay = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -166,7 +432,7 @@ object_mobile_skeleton_shared_astromech = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -249,7 +515,7 @@ object_mobile_skeleton_shared_base_insect_moth = SharedCreatureObjectTemplate:ne
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -332,7 +598,7 @@ object_mobile_skeleton_shared_bat = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@monster_name:base_monster",
+	customName = "@monster_name:base_monster",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -415,7 +681,7 @@ object_mobile_skeleton_shared_bird_finch = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -498,7 +764,7 @@ object_mobile_skeleton_shared_bird_giant = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -581,7 +847,7 @@ object_mobile_skeleton_shared_bird_turkey = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -664,7 +930,7 @@ object_mobile_skeleton_shared_camel = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -747,7 +1013,7 @@ object_mobile_skeleton_shared_canine = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -830,7 +1096,7 @@ object_mobile_skeleton_shared_cat_domestic = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -913,7 +1179,7 @@ object_mobile_skeleton_shared_cat_predatory = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -996,7 +1262,7 @@ object_mobile_skeleton_shared_cll8 = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1079,7 +1345,7 @@ object_mobile_skeleton_shared_dewback = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1162,7 +1428,7 @@ object_mobile_skeleton_shared_droid_2 = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1245,7 +1511,7 @@ object_mobile_skeleton_shared_droideka = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1328,7 +1594,7 @@ object_mobile_skeleton_shared_dz70 = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1411,7 +1677,7 @@ object_mobile_skeleton_shared_eg6 = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1494,7 +1760,7 @@ object_mobile_skeleton_shared_elephant = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1577,7 +1843,7 @@ object_mobile_skeleton_shared_elephant_bantha = SharedCreatureObjectTemplate:new
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1660,7 +1926,7 @@ object_mobile_skeleton_shared_fambaa = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1671,6 +1937,7 @@ object_mobile_skeleton_shared_fambaa = SharedCreatureObjectTemplate:new {
 	rangedIntCustomizationVariables = {},
 
 	scale = 1,
+
 	scaleThresholdBeforeExtentTest = 0.5,
 	sendToClient = 1,
 	slopeModAngle = 26,
@@ -1743,7 +2010,7 @@ object_mobile_skeleton_shared_frog = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1826,7 +2093,7 @@ object_mobile_skeleton_shared_giraffe = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1909,7 +2176,7 @@ object_mobile_skeleton_shared_goat = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -1992,7 +2259,7 @@ object_mobile_skeleton_shared_griffon = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2075,7 +2342,7 @@ object_mobile_skeleton_shared_horse = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2158,7 +2425,7 @@ object_mobile_skeleton_shared_humanoid = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2241,7 +2508,7 @@ object_mobile_skeleton_shared_insect_basic = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2324,7 +2591,7 @@ object_mobile_skeleton_shared_insect_mantis = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2407,7 +2674,7 @@ object_mobile_skeleton_shared_insect_moth = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2490,7 +2757,7 @@ object_mobile_skeleton_shared_ito = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2573,7 +2840,7 @@ object_mobile_skeleton_shared_kaadu = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2656,7 +2923,7 @@ object_mobile_skeleton_shared_lin_demolition = SharedCreatureObjectTemplate:new 
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2739,7 +3006,7 @@ object_mobile_skeleton_shared_lizard_basic = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2822,7 +3089,7 @@ object_mobile_skeleton_shared_lizard_giant = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2905,7 +3172,7 @@ object_mobile_skeleton_shared_mouse_droid = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -2988,7 +3255,7 @@ object_mobile_skeleton_shared_mynock = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3071,7 +3338,7 @@ object_mobile_skeleton_shared_orb = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3154,7 +3421,7 @@ object_mobile_skeleton_shared_pig = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3237,7 +3504,7 @@ object_mobile_skeleton_shared_probe_droid = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3320,7 +3587,7 @@ object_mobile_skeleton_shared_protocol_droid = SharedCreatureObjectTemplate:new 
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3403,7 +3670,7 @@ object_mobile_skeleton_shared_rabbit = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3486,7 +3753,7 @@ object_mobile_skeleton_shared_rancor = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3569,7 +3836,7 @@ object_mobile_skeleton_shared_rat = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3652,7 +3919,7 @@ object_mobile_skeleton_shared_robo_bartender = SharedCreatureObjectTemplate:new 
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3735,7 +4002,7 @@ object_mobile_skeleton_shared_simian_ape = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3818,7 +4085,7 @@ object_mobile_skeleton_shared_simian_monkey = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3901,7 +4168,7 @@ object_mobile_skeleton_shared_snake = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -3984,7 +4251,7 @@ object_mobile_skeleton_shared_spider = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -4067,7 +4334,7 @@ object_mobile_skeleton_shared_spider_droid = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -4150,7 +4417,7 @@ object_mobile_skeleton_shared_tauntaun = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -4233,7 +4500,7 @@ object_mobile_skeleton_shared_tt8l = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -4316,7 +4583,7 @@ object_mobile_skeleton_shared_tt8l_y7 = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
@@ -4399,7 +4666,7 @@ object_mobile_skeleton_shared_wed_treadwell = SharedCreatureObjectTemplate:new {
 	niche = 0,
 	noBuildRadius = 0,
 
-	objectName = "@obj_n:unknown_creature",
+	customName = "@obj_n:unknown_creature",
 	onlyVisibleInTools = 0,
 
 	paletteColorCustomizationVariables = {},
