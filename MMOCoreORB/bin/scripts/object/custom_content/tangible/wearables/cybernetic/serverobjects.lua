@@ -43,48 +43,5 @@
 
 
 --Children folder includes
---includeFile("custom_content/tangible/wearables/cybernetic/s05/serverobjects.lua")
---includeFile("custom_content/tangible/wearables/cybernetic/s04/serverobjects.lua")
---includeFile("custom_content/tangible/wearables/cybernetic/s03/serverobjects.lua")
---includeFile("custom_content/tangible/wearables/cybernetic/s02/serverobjects.lua")
---includeFile("custom_content/tangible/wearables/cybernetic/s01/serverobjects.lua")
-
- --Server Objects
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s05_legs.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s02_legs.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s01_legs.lua")
-
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s05_torso.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s02_torso.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s01_torso.lua")
-
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s02_arm_l.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s02_arm_r.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s05_arm_l.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s05_arm_r.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s01_arm_l.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s01_arm_r.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s03_arm_l.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s03_arm_r.lua")
-
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_anakin_forearm.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_forearm_l_01.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_forearm_r_01.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s02_forearm_l.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s02_forearm_r.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s03_forearm_l.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s03_forearm_r.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s05_forearm_l.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s05_forearm_r.lua")
-
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_hand_l_01.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_hand_r_01.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s02_hand_l.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s02_hand_r.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s03_hand_l.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s03_hand_r.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s05_hand_l.lua")
-includeFile("custom_content/tangible/wearables/cybernetic/cybernetic_crafted_s05_hand_r.lua")
-
-includeFile("custom_content/tangible/wearables/cybernetic/cyborg_crafting_headband_s01.lua")
+includeFile("custom_content/tangible/wearables/cybernetic/s01/serverobjects.lua")
 

@@ -43,7 +43,7 @@
 
 object_weapon_ranged_grenade_grenade_cryoban = object_weapon_ranged_grenade_shared_grenade_cryoban:new {
 
-	objectMenuComponent = {"ThrowGrenadeMenuComponent"},
+	objectMenuComponent = {"cpp", "ThrowGrenadeMenuComponent"},
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 			"object/creature/player/bothan_female.iff",
@@ -96,7 +96,7 @@ object_weapon_ranged_grenade_grenade_cryoban = object_weapon_ranged_grenade_shar
 	-- Leave blank for now
 	damageModifiers = { },
 
-	useCount = 100,
+	useCount = 5,
 
 	combatSpam = "grenade_cryoban",
 
@@ -113,10 +113,10 @@ object_weapon_ranged_grenade_grenade_cryoban = object_weapon_ranged_grenade_shar
 	maxRange = 64,
 	maxRangeAccuracy = -30,
 
-	minDamage = 900,
-	maxDamage = 1200,
+	minDamage = 20,
+	maxDamage = 250,
 
-	attackSpeed = 1,
+	attackSpeed = 7,
 
 	woundsRatio = 10,
 

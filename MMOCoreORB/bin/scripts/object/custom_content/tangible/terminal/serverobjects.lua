@@ -1,5 +1,4 @@
 -- Server Objects
-includeFile("custom_content/tangible/terminal/terminal_myyydril_door.lua")
 includeFile("custom_content/tangible/terminal/crafting_assembly_terminal.lua")
 includeFile("custom_content/tangible/terminal/gcw_imp_defense_table.lua")
 includeFile("custom_content/tangible/terminal/gcw_imp_offense_table.lua")
