@@ -2853,8 +2853,15 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 			--	"Dark Jedi Holocron (gift)", "object/tangible/jedi/no_drop_jedi_holocron_dark.iff",
 			--	"Light Jedi Holocron (gift)", "object/tangible/jedi/no_drop_jedi_holocron_light.iff"
 			--}
-			"Village Testing (Temporary)",
+			"Village Testing - Jedi Testing(Temporary)",
 			{
+				"Crafted Saber Schematics",
+				{
+					"Exar Kun Relic Saber Schematic", "object/tangible/loot/loot_schematic/sword_lightsaber_onehanded_gen5_exar_kun_schematic.iff",
+					"Jinzu Razor Schematic", "object/tangible/loot/loot_schematic/sword_lightsaber_onehanded_gen5_jinzu_schematic.iff",
+					"Exar Kun Relic Double Blade Saber Schematic", "object/tangible/loot/loot_schematic/sword_lightsaber_polearm_gen5_exar_kun_schematic.iff",
+				},
+				
 				"Resources",
 				{
 					"Ardanium II", "object/tangible/loot/quest/ardanium_ii.iff",
