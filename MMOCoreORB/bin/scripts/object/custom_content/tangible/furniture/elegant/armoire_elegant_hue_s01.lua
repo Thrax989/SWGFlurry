@@ -1,0 +1,5 @@
+object_tangible_furniture_elegant_armoire_elegant_hue_s01 = object_tangible_furniture_elegant_shared_armoire_elegant_hue_s01:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_furniture_elegant_armoire_elegant_hue_s01, "object/tangible/furniture/elegant/armoire_elegant_hue_s01.iff")

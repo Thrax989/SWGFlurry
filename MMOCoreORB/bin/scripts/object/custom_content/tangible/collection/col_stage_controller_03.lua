@@ -1,0 +1,5 @@
+
+object_tangible_collection_col_stage_controller_03 = object_tangible_collection_shared_col_stage_controller_03:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_col_stage_controller_03, "object/tangible/collection/col_stage_controller_03.iff")

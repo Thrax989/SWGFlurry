@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_pistol_oppressor = object_tangible_collection_shared_rare_pistol_oppressor:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_pistol_oppressor, "object/tangible/collection/rare_pistol_oppressor.iff")

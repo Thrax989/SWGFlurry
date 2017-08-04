@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_pistol_mustafarian_modified_disruptor = object_tangible_collection_shared_rare_pistol_mustafarian_modified_disruptor:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_pistol_mustafarian_modified_disruptor, "object/tangible/collection/rare_pistol_mustafarian_modified_disruptor.iff")

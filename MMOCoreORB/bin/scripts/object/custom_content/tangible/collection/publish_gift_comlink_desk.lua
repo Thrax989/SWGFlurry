@@ -1,0 +1,5 @@
+
+object_tangible_collection_publish_gift_comlink_desk = object_tangible_collection_shared_publish_gift_comlink_desk:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_publish_gift_comlink_desk, "object/tangible/collection/publish_gift_comlink_desk.iff")

@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_melee_gamorrean_axe = object_tangible_collection_shared_rare_melee_gamorrean_axe:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_melee_gamorrean_axe, "object/tangible/collection/rare_melee_gamorrean_axe.iff")

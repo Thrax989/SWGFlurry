@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_melee_blade_betrayer = object_tangible_collection_shared_rare_melee_blade_betrayer:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_melee_blade_betrayer, "object/tangible/collection/rare_melee_blade_betrayer.iff")

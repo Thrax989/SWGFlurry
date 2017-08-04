@@ -1,0 +1,10 @@
+-- Server Objects
+includeFile("custom_content/tangible/wearables/armor/rebel_assault/armor_rebel_assault_bicep_l.lua")
+includeFile("custom_content/tangible/wearables/armor/rebel_assault/armor_rebel_assault_bicep_r.lua")
+includeFile("custom_content/tangible/wearables/armor/rebel_assault/armor_rebel_assault_boots.lua")
+includeFile("custom_content/tangible/wearables/armor/rebel_assault/armor_rebel_assault_bracer_l.lua")
+includeFile("custom_content/tangible/wearables/armor/rebel_assault/armor_rebel_assault_bracer_r.lua")
+includeFile("custom_content/tangible/wearables/armor/rebel_assault/armor_rebel_assault_chest_plate.lua")
+includeFile("custom_content/tangible/wearables/armor/rebel_assault/armor_rebel_assault_gloves.lua")
+includeFile("custom_content/tangible/wearables/armor/rebel_assault/armor_rebel_assault_helmet.lua")
+includeFile("custom_content/tangible/wearables/armor/rebel_assault/armor_rebel_assault_leggings.lua")

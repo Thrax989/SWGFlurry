@@ -1,0 +1,5 @@
+
+object_tangible_collection_col_tatooine_vistas_marker_04 = object_tangible_collection_shared_col_tatooine_vistas_marker_04:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_col_tatooine_vistas_marker_04, "object/tangible/collection/col_tatooine_vistas_marker_04.iff")

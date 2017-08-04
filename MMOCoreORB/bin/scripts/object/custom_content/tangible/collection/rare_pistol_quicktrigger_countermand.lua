@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_pistol_quicktrigger_countermand = object_tangible_collection_shared_rare_pistol_quicktrigger_countermand:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_pistol_quicktrigger_countermand, "object/tangible/collection/rare_pistol_quicktrigger_countermand.iff")

@@ -1,0 +1,5 @@
+
+object_tangible_collection_meatlump_listening_device = object_tangible_collection_shared_meatlump_listening_device:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_meatlump_listening_device, "object/tangible/collection/meatlump_listening_device.iff")

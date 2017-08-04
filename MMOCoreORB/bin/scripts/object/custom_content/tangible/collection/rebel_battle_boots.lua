@@ -1,0 +1,5 @@
+
+object_tangible_collection_rebel_battle_boots = object_tangible_collection_shared_rebel_battle_boots:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rebel_battle_boots, "object/tangible/collection/rebel_battle_boots.iff")

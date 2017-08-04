@@ -1,0 +1,5 @@
+
+object_tangible_collection_col_hoth_meteorite_01 = object_tangible_collection_shared_col_hoth_meteorite_01:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_col_hoth_meteorite_01, "object/tangible/collection/col_hoth_meteorite_01.iff")

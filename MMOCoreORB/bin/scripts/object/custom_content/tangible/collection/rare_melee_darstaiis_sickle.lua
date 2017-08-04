@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_melee_darstaiis_sickle = object_tangible_collection_shared_rare_melee_darstaiis_sickle:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_melee_darstaiis_sickle, "object/tangible/collection/rare_melee_darstaiis_sickle.iff")

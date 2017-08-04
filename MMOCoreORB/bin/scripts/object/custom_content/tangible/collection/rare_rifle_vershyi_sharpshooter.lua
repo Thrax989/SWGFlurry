@@ -1,0 +1,5 @@
+
+object_tangible_collection_rare_rifle_vershyi_sharpshooter = object_tangible_collection_shared_rare_rifle_vershyi_sharpshooter:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_rare_rifle_vershyi_sharpshooter, "object/tangible/collection/rare_rifle_vershyi_sharpshooter.iff")

@@ -1,0 +1,5 @@
+
+object_tangible_collection_dwartii_statue_faya = object_tangible_collection_shared_dwartii_statue_faya:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_dwartii_statue_faya, "object/tangible/collection/dwartii_statue_faya.iff")

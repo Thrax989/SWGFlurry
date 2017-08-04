@@ -1,0 +1,3 @@
+object_tangible_event_perk_lifeday_imperial_token = object_tangible_event_perk_shared_lifeday_imperial_token:new {
+}
+ObjectTemplates:addTemplate(object_tangible_event_perk_lifeday_imperial_token, "object/tangible/event_perk/lifeday_imperial_token.iff")

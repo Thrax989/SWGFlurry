@@ -1,0 +1,5 @@
+
+object_tangible_collection_col_jalopy_crate_05 = object_tangible_collection_shared_col_jalopy_crate_05:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_col_jalopy_crate_05, "object/tangible/collection/col_jalopy_crate_05.iff")

@@ -1,0 +1,5 @@
+
+object_tangible_collection_ore_collectible = object_tangible_collection_shared_ore_collectible:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_collection_ore_collectible, "object/tangible/collection/ore_collectible.iff")
