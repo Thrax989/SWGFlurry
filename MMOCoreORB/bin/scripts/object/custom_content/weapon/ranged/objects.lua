@@ -1205,6 +1205,3 @@ object_weapon_ranged_heavy_shared_ep3_loot_void = SharedWeaponObjectTemplate:new
 
 ObjectTemplates:addClientTemplate(object_weapon_ranged_heavy_shared_ep3_loot_void, "object/weapon/ranged/heavy/shared_ep3_loot_void.iff")
 --****************************************************************************************************************************************************************************
-
-
-
