@@ -10,7 +10,7 @@ borvos_common = {
 		{itemTemplate = "plain_bowl_schematic", weight = 1250000},
 		{itemTemplate = "tall_bottle_schematic", weight = 1250000},
 		{itemTemplate = "throw_pillow_schematic", weight = 1250000},
-		{groupTemplate = "wearables_common", weight = 1250000},
+		{groupTemplate = "junk", weight = 1250000},
 	}
 }
 

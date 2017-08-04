@@ -9,7 +9,7 @@ donkuwah_common = {
 		{itemTemplate = "donkuwah_poison", weight = 3500000},
 		{itemTemplate = "rifle_ewok_crossbow", weight = 10000},
 		{itemTemplate = "knife_donkuwah", weight = 990000},
-		{groupTemplate = "wearables_common", weight = 2000000},
+		{groupTemplate = "junk", weight = 2000000},
 	}
 }
 

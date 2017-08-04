@@ -9,7 +9,7 @@ nyax = {
 		{itemTemplate = "attachment_clothing", weight = 1666667},
 		{itemTemplate = "nyax_necklace", weight = 2033333},
 		{itemTemplate = "nyax_sword", weight = 3033333},
-		{itemTemplate = "rifle_lightning", weight = 1600000}
+		{itemTemplate = "junk", weight = 1600000}
 	}
 }
 
