@@ -41,8 +41,8 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_tangible_inventory_lightsaber_inventory_4 = object_tangible_inventory_shared_lightsaber_inventory_4:new {
+object_tangible_inventory_lightsaber_inventory_5 = object_tangible_inventory_shared_lightsaber_inventory_5:new {
 
 }
 
-ObjectTemplates:addTemplate(object_tangible_inventory_lightsaber_inventory_4, "object/tangible/inventory/lightsaber_inventory_4.iff")
+ObjectTemplates:addTemplate(object_tangible_inventory_lightsaber_inventory_5, "object/tangible/inventory/lightsaber_inventory_5.iff")
