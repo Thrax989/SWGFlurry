@@ -115,6 +115,11 @@ includeFile("creature/npc/objects.lua")
 includeFile("creature/player/base/objects.lua")
 includeFile("creature/player/objects.lua")
 includeFile("creature/objects.lua")
+
+--Custom Content
+
+--Custom Buildings
+includeFile("custom_content/tangible/collection/objects.lua")
 includeFile("custom_content/building/content/objects.lua")
 includeFile("custom_content/building/content/aurilia/objects.lua")
 includeFile("custom_content/building/content/aurilia/loot/objects.lua")
@@ -149,17 +154,29 @@ includeFile("custom_content/building/restuss/objects.lua")
 includeFile("custom_content/building/tatooine/objects.lua")
 --includeFile("custom_content/building/test/objects.lua")
 --includeFile("custom_content/creature/player/objects.lua")
+
+--Custom Content Draft Schematics
 includeFile("custom_content/draft_schematic/structure/objects.lua")
+
+--Custom Content Vehicles
 includeFile("custom_content/intangible/vehicle/objects.lua")
+
+--Custom Content NPC / Creatures
 includeFile("custom_content/mobile/objects.lua")
 includeFile("custom_content/mobile/ep3/objects.lua")
 includeFile("custom_content/mobile/npe/objects.lua")
 includeFile("custom_content/mobile/som/objects.lua")
 includeFile("custom_content/mobile/vehicle/objects.lua")
+
+--Custom Content Ships
 includeFile("custom_content/ship/objects.lua")
 includeFile("custom_content/ship/dungeon/objects.lua")
 includeFile("custom_content/ship/player/objects.lua")
+
+--Custom Content sound objects
 includeFile("custom_content/soundobject/objects.lua")
+
+--Custom Content Static Objects
 includeFile("custom_content/static/christmas/objects.lua")
 includeFile("custom_content/static/creature/objects.lua")
 includeFile("custom_content/static/firework/objects.lua")
@@ -192,6 +209,8 @@ includeFile("custom_content/static/worldbuilding/structures/objects.lua")
 includeFile("custom_content/static/worldbuilding/terminal/objects.lua")
 includeFile("custom_content/static/worldbuilding/vegitation/objects.lua")
 includeFile("custom_content/static/worldbuilding/vehicles/objects.lua")
+
+--Custom Content Tangible Objects
 includeFile("custom_content/tangible/buildout/event/objects.lua")
 includeFile("custom_content/tangible/camp/objects.lua")
 includeFile("custom_content/tangible/collection/objects.lua")
@@ -336,9 +355,13 @@ includeFile("custom_content/tangible/wearables/shirt/objects.lua")
 includeFile("custom_content/tangible/wearables/skirt/objects.lua")
 includeFile("custom_content/tangible/wearables/vest/objects.lua")
 includeFile("custom_content/tangible/wearables/wookiee/objects.lua")
+
+--Custom Content Weapons
 includeFile("custom_content/weapon/melee/objects.lua")
 includeFile("custom_content/weapon/ranged/objects.lua")
 includeFile("custom_content/weapon/ranged/creature/objects.lua")
+
+--Regular Content objects
 includeFile("draft_schematic/armor/component/objects.lua")
 includeFile("draft_schematic/armor/objects.lua")
 includeFile("draft_schematic/base/objects.lua")
@@ -1065,14 +1088,9 @@ includeFile("weapon/ranged/vehicle/objects.lua")
 includeFile("weapon/ranged/objects.lua")
 includeFile("weapon/trap/objects.lua")
 includeFile("weapon/objects.lua")
-includeFile("custom_content/draft_schematic/weapon/objects.lua")
-includeFile("custom_content/tangible/collection/objects.lua")
-includeFile("tangible/deed/ep3_pet_deed/objects.lua")
 
-includeFile("tangible/tcg/objects.lua")
-includeFile("tangible/tcg/series3/objects.lua")
-includeFile("tangible/tcg/series7/objects.lua")
-includeFile("tangible/tcg/series8/objects.lua")
+--Custom Armor
+
 includeFile("tangible/wearables/armor/infiltrator/objects.lua")
 includeFile("tangible/wearables/armor/clone_trooper/objects.lua")
 includeFile("tangible/wearables/armor/assault_trooper/objects.lua")
