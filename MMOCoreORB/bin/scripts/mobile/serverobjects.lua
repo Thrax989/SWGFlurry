@@ -42,3 +42,6 @@ includeFile("lair/serverobjects.lua")
 
 -- Outfits
 includeFile("outfits/serverobjects.lua")
+
+--ISD
+includeFile("isd/serverobjects.lua")
