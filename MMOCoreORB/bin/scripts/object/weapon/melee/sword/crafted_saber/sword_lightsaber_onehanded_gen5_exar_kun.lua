@@ -92,4 +92,4 @@ playerRaces = { "object/creature/player/bothan_male.iff",
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
 
 }
-ObjectTemplates: addTemplate(object_weapon_melee_sword_crafted_saber_sword_lightsaber_onehanded_gen5_exar_kun, "object/weapon/melee/sword/crafted_saber/sword_lightsaber_onehanded_gen5_exar_kun.iff")
+ObjectTemplates:addTemplate(object_weapon_melee_sword_crafted_saber_sword_lightsaber_onehanded_gen5_exar_kun, "object/weapon/melee/sword/crafted_saber/sword_lightsaber_onehanded_gen5_exar_kun.iff")
