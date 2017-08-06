@@ -38,7 +38,25 @@ public:
 
 		GroupManager* groupManager = GroupManager::instance();
 
-		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
+		ManagedReference<SceneObject*> object = NULL;
+		if (target != 0 && target != creature->getObjectID())
+			object = server->getZoneServer()->getObject(target);
+		else if (!arguments.isEmpty()) {
+			StringTokenizer tokenizer(arguments.toString());
+			if (tokenizer.hasMoreTokens()) {
+				String name;
+				tokenizer.getStringToken(name);
+				name = name.toLowerCase();
+				if (name != "self" && name != "this") {
+					try {
+						object = server->getPlayerManager()->getPlayer(name);
+					} catch (ArrayIndexOutOfBoundsException& ex) {
+						// this happens if the player wasn't found
+					}
+				}
+			}
+		}
+
 
 		if (object == NULL)
 			return GENERALERROR;
@@ -57,4 +75,3 @@ public:
 };
 
 #endif //INVITECOMMAND_H_
-
