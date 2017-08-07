@@ -58,9 +58,6 @@ public:
 				promptText << "OFFLINE. Last On: " << ghost->getLastLogout()->getFormattedTime() << endl;
 			}
 		}
-		
-		promptText << endl << "Xp Rate:" << endl;
-		promptText << targetObject->getPersonalExpMultiplier() << endl;
 
 		promptText << endl << "SkillMods:" << endl;
 		promptText << skillModList->getPrintableSkillModList() << endl;

@@ -3,7 +3,7 @@ mummer_common = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{groupTemplate = "wearables_common", weight = 4500000},
+		{groupTemplate = "junk", weight = 4500000},
 		{itemTemplate = "valley_view_painting", weight = 500000},
 		{itemTemplate = "skill_buff_heavy_weapon_accuracy", weight = 500000},
 		{itemTemplate = "skill_buff_heavy_weapon_speed", weight = 500000},

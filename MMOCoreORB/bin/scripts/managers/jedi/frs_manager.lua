@@ -4,20 +4,21 @@ frsEnabled = 1
 lightEnclaveID = 8525417
 darkEnclaveID = 3435626
 
-petitionInterval = 86400000
-votingInterval = 86400000
-acceptanceInterval = 86400000
-maintenanceInterval = 900000
+petitionInterval = 86400000 -- 1 day
+votingInterval = 86400000 -- 1 day
+acceptanceInterval = 86400000 -- 1 day
+maintenanceInterval = 86400000 -- 1 day
 
-requestDemotionDuration = 604800
-voteChallengeDuration = 604800
+requestDemotionDuration = 604800000 -- 7 days
+voteChallengeDuration = 604800000 -- 7 days
 
+-- Costs are in FRS experience
 baseMaintCost = 100
 requestDemotionCost = 2500
 voteChallengeCost = 2000
 
 maxPetitioners = 11
-missedVotePenalty = 100
+missedVotePenalty = 100 -- FRS XP
 
 darkFrsSkills = {}
 lightFrsSkills = {}
@@ -55,6 +56,7 @@ darkRankingData = {
 
 enclaveRoomRequirements = {
 	-- Light enclave
+	{ 8525444, -1 }, -- entrancehall1
 	{ 8525421, 1 }, -- tier1hall1
 	{ 8525420, 1 }, -- tier1room
 	{ 8525419, 1 }, -- tier1hall2
@@ -71,6 +73,7 @@ enclaveRoomRequirements = {
 	{ 8525426, 11 }, -- tier5room
 	{ 8525425, 11 }, -- tier5hall2
 	-- Dark enclave
+	{ 3435626, -1 }, -- ramp1
 	{ 3435644, 1 }, -- hallwayb1
 	{ 3435650, 1 }, -- council1
 	{ 3435637, 5 }, -- hallwaya1

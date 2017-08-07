@@ -830,8 +830,3 @@ RunSlashCommandsFile("waypoint.lua")
 RunSlashCommandsFile("unstick.lua")
 RunSlashCommandsFile("launchIntoSpace.lua")
 RunSlashCommandsFile("createVendor.lua")
-
-
---Custom
-
-RunSlashCommandsFile("setPvp.lua")
