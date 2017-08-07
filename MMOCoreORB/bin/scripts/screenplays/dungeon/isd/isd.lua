@@ -436,7 +436,7 @@ spawnMobile("dungeon1", "isd_stormtrooper", 0, -2.63204, 453.609, 354.469, 187, 
 spawnMobile("dungeon1", "isd_stormtrooper", 0, -5.92851, 453.609, 354.464, 177, 4336918)
 spawnMobile("dungeon1", "isd_stormtrooper", 0, -4.5, 453.609, 369.086, 201, 4336918)
 spawnMobile("dungeon1", "isd_stormtrooper", 0, -13.1238, 453.734, 370.973, 22, 4336918)
-spawnMobile("dungeon1", "isd_isd_stormtrooper", 0, -14.2503, 453.734, 372.043, 267, 4336918)
+spawnMobile("dungeon1", "isd_stormtrooper", 0, -14.2503, 453.734, 372.043, 267, 4336918)
 spawnMobile("dungeon1", "isd_stormtrooper", 0, -17.8924, 453.734, 370.957, 313, 4336918)
 spawnMobile("dungeon1", "isd_stormtrooper", 0, -11.5, 453.609, 360.55, 81, 4336918)
 spawnMobile("dungeon1", "isd_stormtrooper", 0, -11.5, 453.609, 354.88, 79, 4336918)
