@@ -109,7 +109,7 @@ public:
 
 				targetedInstrument = true;
 				instrument = cast<Instrument*> (nala.get());
-				ManagedReference<SceneObject*> creatureParent = creature->getParent().get();
+				ManagedReference<SceneObject*> creatureParent = creature->getParent();
 
 				if (creature->getDistanceTo(nala) >= 3 || nala->getZone()
 						== NULL || (creatureParent == NULL && NULL
@@ -119,8 +119,8 @@ public:
 					return GENERALERROR;
 				}
 
-				ManagedReference<CreatureObject*> spawnerPlayer = instrument->getSpawnerPlayer().get();
-				if (spawnerPlayer != NULL && spawnerPlayer != creature) {
+				if (instrument->getSpawnerPlayer() != NULL
+						&& instrument->getSpawnerPlayer() != creature) {
 					creature->sendSystemMessage("You must be the owner of the instrument");
 
 					return GENERALERROR;
@@ -132,7 +132,7 @@ public:
 					return GENERALERROR;
 				}
 
-				if (instrument->getParent() != NULL || spawnerPlayer != NULL) {
+				if (instrument->getParent() != NULL || instrument->getSpawnerPlayer() != NULL) {
 					instrument->setDirection(*creature->getDirection());
 					instrument->teleport(creature->getPositionX(), creature->getPositionZ(), creature->getPositionY(), creature->getParentID());
 				}

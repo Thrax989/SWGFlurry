@@ -2,17 +2,17 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ANIMALATTACKCOMMAND_H_
-#define ANIMALATTACKCOMMAND_H_
+#ifndef STRANGULATIONCOMMAND_H_
+#define STRANGULATIONCOMMAND_H_
 
 #include "server/zone/objects/scene/SceneObject.h"
-#include "server/zone/objects/creature/commands/JediQueueCommand.h"
+#include "server/zone/objects/creature/commands/CombatQueueCommand.h"
 
-class AnimalAttackCommand : public JediQueueCommand {
+class StrangulationCommand : public CombatQueueCommand {
 public:
 
-	AnimalAttackCommand(const String& name, ZoneProcessServer* server)
-		: JediQueueCommand(name, server) {
+	StrangulationCommand(const String& name, ZoneProcessServer* server)
+		: CombatQueueCommand(name, server) {
 
 	}
 
@@ -23,11 +23,13 @@ public:
 
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
-
-		if (creature->isInvisible()) {
-			return GENERALERROR;
-
+		
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
+	
+		if (!weapon->isRangedWeapon()) {
+			return INVALIDWEAPON;
 		}
+
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
@@ -48,10 +50,10 @@ public:
 			return INVALIDTARGET;
 		}
 
-		if (!creature->checkCooldownRecovery("animal")) {
+		if (!creature->checkCooldownRecovery("strangulation")) {
 			StringIdChatParameter stringId;
 
-			Time* cdTime = creature->getCooldownTime("animal");
+			Time* cdTime = creature->getCooldownTime("strangulation");
 
 			// Returns -time. Multiple by -1 to return positive.
 			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
@@ -73,7 +75,7 @@ public:
 		if (targetGhost == NULL || playerObject == NULL)
 			return GENERALERROR;
 
-		if (creature->getDistanceTo(creatureTarget) > 44.f){
+		if (creature->getDistanceTo(creatureTarget) > 10.f){
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
 
@@ -83,17 +85,21 @@ public:
 		}
 
 		if (object->isCreatureObject() && creatureTarget->isAttackableBy(creature)) {
-			creatureTarget->setDizziedState(3);
-			creatureTarget->playEffect("clienteffect/droid_effect_dry_ice.cef", "");
-			creatureTarget->sendSystemMessage("The Force Has Knocked You Down");
-			creatureTarget->setPosture(CreaturePosture::KNOCKEDDOWN);
-		creature->addCooldown("animal", 60 * 1000);
+			creatureTarget->setState(CreatureState::PEACE);
+			creatureTarget->playEffect("clienteffect/npe_smoke_bomb.cef", "");
+			creatureTarget->sendSystemMessage("You have been choked into submission.");
+			creature->setState(CreatureState::PEACE);
+		creature->addCooldown("strangulation", 300 * 1000);
 
 		}
+
+		creature->clearQueueActions();
+
+		CombatManager::instance()->attemptPeace(creature);
 
 		return SUCCESS;
 	}
 
 };
 
-#endif //ANIMALATTACKCOMMAND_H_
+#endif //STRANGULATIONCOMMAND_H_

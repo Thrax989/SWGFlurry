@@ -2,18 +2,16 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ANIMALATTACKCOMMAND_H_
-#define ANIMALATTACKCOMMAND_H_
+#ifndef UNDERGROUNDEXPLOSION1COMMAND_H_
+#define UNDERGROUNDEXPLOSION1COMMAND_H_
 
-#include "server/zone/objects/scene/SceneObject.h"
-#include "server/zone/objects/creature/commands/JediQueueCommand.h"
+#include "CombatQueueCommand.h"
 
-class AnimalAttackCommand : public JediQueueCommand {
+class UndergroundExplosion1Command : public CombatQueueCommand {
 public:
 
-	AnimalAttackCommand(const String& name, ZoneProcessServer* server)
-		: JediQueueCommand(name, server) {
-
+	UndergroundExplosion1Command(const String& name, ZoneProcessServer* server)
+		: CombatQueueCommand(name, server) {
 	}
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
@@ -23,11 +21,13 @@ public:
 
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
-
-		if (creature->isInvisible()) {
-			return GENERALERROR;
-
+		
+		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
+	
+		if (!weapon->isRangedWeapon()) {
+			return INVALIDWEAPON;
 		}
+
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
 
@@ -48,10 +48,10 @@ public:
 			return INVALIDTARGET;
 		}
 
-		if (!creature->checkCooldownRecovery("animal")) {
+		if (!creature->checkCooldownRecovery("explosion")) {
 			StringIdChatParameter stringId;
 
-			Time* cdTime = creature->getCooldownTime("animal");
+			Time* cdTime = creature->getCooldownTime("explosion");
 
 			// Returns -time. Multiple by -1 to return positive.
 			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
@@ -73,7 +73,7 @@ public:
 		if (targetGhost == NULL || playerObject == NULL)
 			return GENERALERROR;
 
-		if (creature->getDistanceTo(creatureTarget) > 44.f){
+		if (creature->getDistanceTo(creatureTarget) > 10.f){
 			creature->sendSystemMessage("You are out of range.");
 			return GENERALERROR;}
 
@@ -81,19 +81,36 @@ public:
 			creature->sendSystemMessage("you cannot knockdown a player while they are mounted");
 			return GENERALERROR;
 		}
-
 		if (object->isCreatureObject() && creatureTarget->isAttackableBy(creature)) {
-			creatureTarget->setDizziedState(3);
-			creatureTarget->playEffect("clienteffect/droid_effect_dry_ice.cef", "");
-			creatureTarget->sendSystemMessage("The Force Has Knocked You Down");
-			creatureTarget->setPosture(CreaturePosture::KNOCKEDDOWN);
-		creature->addCooldown("animal", 60 * 1000);
+			creatureTarget->setSnaredState(8);
+			//creatureTarget->playEffect("clienteffect/carbine_snare.cef", "");
+			creatureTarget->sendSystemMessage("You have been snared");
+			creature->addCooldown("explosion", 30 * 1000);
 
 		}
 
-		return SUCCESS;
+		
+		uint32 buffCRC = BuffCRC::FORCE_RANK_SUFFERING; //DURATION
+		int duration = 8;
+		int loopCount = ((duration/9)-1);
+		ManagedReference<SingleUseBuff*> buff = new SingleUseBuff(creatureTarget, buffCRC, duration, BuffType::JEDI, getNameCRC());
+		
+		 if (!creature->hasBuff(buffCRC)) {
+			Locker locker(buff);
+			buff->setSpeedMultiplierMod(0.01f);
+			creatureTarget->addBuff(buff);
+			creatureTarget->playEffect("clienteffect/underground_explosion.cef", "");
+}
+
+		if (creature->hasBuff(STRING_HASHCODE("burstrun")) || creature->hasBuff(STRING_HASHCODE("retreat"))) {
+			creature->removeBuff(STRING_HASHCODE("burstrun"));
+			creature->removeBuff(STRING_HASHCODE("retreat"));
+		}
+
+		return doCombatAction(creature, target);
 	}
+
 
 };
 
-#endif //ANIMALATTACKCOMMAND_H_
+#endif //UNDERGROUNDEXPLOSION1COMMAND_H_
