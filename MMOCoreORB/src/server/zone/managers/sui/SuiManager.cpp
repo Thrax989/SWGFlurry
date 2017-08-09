@@ -525,6 +525,24 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				ghost->maximizeExperience();
 				player->sendSystemMessage("You have maximized all xp types.");
 				
+			} else if (templatePath == "citypolitician") {
+				if (!player->isInCombat() && player->getCashCredits() < 9999999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Master Politician");
+		                box->setPromptText("Master Politician 10,000,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 9999999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your credits.");
+ 				        SkillManager::instance()->awardSkill("social_politician_master", player, true, true, true);
+ 					player->subtractCashCredits(10000000);
+					box->setForceCloseDistance(5.f);
+			        }
+				
 //GALACTIC TRAVEL SYSTEM
 //Corellia Travel
 			} else if (templatePath == "corellia_bela_vistal_a_shuttleport_travel") {
