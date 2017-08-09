@@ -122,9 +122,9 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Smuggler Outpost (5,000 Credits)", "smuggler_outpost_travel",
 			"Research Outpost (5,000 Credits)", "research_outpost_travel",
 		   },
-		 	"politician",
+		 	"Master Politician",
 		   {
-			"Master Politician (10,000,000 Credits)", "citypolitician",
+			"Master Politician Requires (10,000,000 Credits)", "citypolitician",
 		   },
 	}
 }
