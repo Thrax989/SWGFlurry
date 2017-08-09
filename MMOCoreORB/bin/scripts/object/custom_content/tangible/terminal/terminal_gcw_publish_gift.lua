@@ -41,10 +41,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Dathomir Science Outpost Stareport (5,000 Credits)", "dathomir_science_outpost_starport_travel",
 			"Dathomir Village Shuttleport (5,000 Credits)", "dathomir_village_shuttleport_travel",
 		   },
-			"hoth",
+			--[["hoth",
 		   {
 			"Scavenger Stareport (5,000 Credits)", "scavenger_starport_travel",
-		   },
+		   },]]--
 		  	"lok",
 		   {
 			"Nym's Stronghold Stareport (5,000 Credits)", "nyms_stronghold_starport_travel",
