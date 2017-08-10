@@ -31,10 +31,10 @@ dark_adept = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "holocron_dark", chance = 500000},
-				{group = "holocron_light", chance = 500000},
-				{group = "power_crystals", chance = 500000},
-				{group = "color_crystals", chance = 1000000},
+				{group = "junk", chance = 500000},
+				{group = "junk", chance = 500000},
+				{group = "junk", chance = 500000},
+				{group = "junk", chance = 1000000},
 				{group = "junk", chance = 4500000},
 				{group = "loot_kit_parts", chance = 2000000},
 				{group = "tailor_components", chance = 1000000},
