@@ -32,13 +32,13 @@ fbase_elite_dark_trooper_extreme = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "holocron_dark", chance = 150000},
-				{group = "holocron_light", chance = 150000},
-				{group = "color_crystals", chance = 200000},
+				{group = "junk", chance = 150000},
+				{group = "junk", chance = 150000},
+				{group = "junk", chance = 200000},
 				{group = "junk", chance = 8000000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},
-				{group = "stormtrooper_common", chance = 500000}
+				{group = "junk", chance = 500000}
 			}
 		}
 	},

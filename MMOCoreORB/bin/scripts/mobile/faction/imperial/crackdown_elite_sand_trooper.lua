@@ -31,7 +31,7 @@ crackdown_elite_sand_trooper = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 200000},
+				{group = "junk", chance = 200000},
 				{group = "junk", chance = 8800000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},

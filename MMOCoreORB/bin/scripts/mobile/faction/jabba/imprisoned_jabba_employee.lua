@@ -32,9 +32,9 @@ imprisoned_jabba_employee = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 7800000},
-				{group = "color_crystals", chance = 600000},
-				{group = "power_crystals", chance = 400000},
-				{group = "color_crystals", chance = 200000},
+				{group = "junk", chance = 600000},
+				{group = "junk", chance = 400000},
+				{group = "junk", chance = 200000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},
 				

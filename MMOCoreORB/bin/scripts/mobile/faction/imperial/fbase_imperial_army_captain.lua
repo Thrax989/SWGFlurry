@@ -31,11 +31,11 @@ fbase_imperial_army_captain = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 200000},
+				{group = "junk", chance = 200000},
 				{group = "junk", chance = 8300000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},
-				{group = "imperial_officer_common", chance = 500000}
+				{group = "junk", chance = 500000}
 				
 			}
 		}
