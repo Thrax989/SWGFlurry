@@ -290,13 +290,11 @@ class ManufactureSchematic extends IntangibleObject {
 
 	@preLocked
 	public void setManufactureLimit(int limit) {
-		manufactureLimit = limit;
+		manufactureLimit = 10000;
 	}
 
 	@read
 	public int getManufactureLimit() {
-		if (manufactureLimit == 1000)
- 		return 10000;
 			
 		return manufactureLimit;
 	}
