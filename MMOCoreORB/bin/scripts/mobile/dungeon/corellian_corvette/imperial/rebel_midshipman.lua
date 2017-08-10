@@ -38,8 +38,7 @@ rebel_midshipman = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "
-", chance = 100000},
+				{group = "junk", chance = 100000},
 				{group = "junk", chance = 4700000},
 				{group = "junk", chance = 1000000},
 				{group = "junk", chance = 1000000},
