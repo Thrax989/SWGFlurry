@@ -30,11 +30,11 @@ warren_stormtrooper = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 100000},
+				{group = "junk", chance = 100000},
 				{group = "junk", chance = 8400000},
 				{group = "clothing_attachments", chance = 250000},
 				{group = "armor_attachments", chance = 250000},
-				{group = "stormtrooper_common", chance = 1000000},
+				{group = "junk", chance = 1000000},
 				
 			}
 		}
