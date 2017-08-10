@@ -33,9 +33,9 @@ lesser_prophet_of_the_dark_side = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "holocron_dark", chance = 500000},
-				{group = "power_crystals", chance = 500000},
-				{group = "color_crystals", chance = 200000},
+				{group = "junk", chance = 500000},
+				{group = "junk", chance = 500000},
+				{group = "junk", chance = 200000},
 				{group = "junk", chance = 7800000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},
