@@ -48,7 +48,7 @@ object_building_player_city_hospital_tatooine = object_building_player_city_shar
 	},
 	lotSize = 3,
 	baseMaintenanceRate = 50,
-	allowedZones = {"dantooine", "lok", "tatooine"},
+	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "kaas", "endor"},
 	length = 5,
 	width = 5,
 	planetMapCategory = "medicalcenter",
