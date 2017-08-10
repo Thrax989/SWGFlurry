@@ -33,7 +33,7 @@ bh_dune_stalker_brawler = Creature:new {
 			groups = {
 				{group = "junk", chance = 7500000},
 				{group = "tailor_components", chance = 1000000},
-				{group = "color_crystals", chance = 500000},
+				{group = "junk", chance = 500000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000}
 			},
