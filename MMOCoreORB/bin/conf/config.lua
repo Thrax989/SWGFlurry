@@ -135,10 +135,11 @@ ZonesEnabled = {
 
 
 -- directory of tres with live.cfg
-TrePath = "/home/vagrant/workspace/tre/"
+TrePath = "/home/vagrant/Desktop/SWGEmu/"
 
 TreFiles = {
         "pallet.tre",
+        "weapon.tre",
         "mtg22.tre",
         "collection.tre",
         "pods.tre",
