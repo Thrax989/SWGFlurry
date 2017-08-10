@@ -1056,7 +1056,7 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 			prototype->getObjectNameStringIdName());
 
 	/// Set Manufacture Schematic Custom name
-	if (!newName.isEmpty())
+	if (!name.isEmpty())
 		manufactureSchematic->setCustomObjectName(customName, false);
 
 	while (tokenizer.hasMoreTokens()) {
