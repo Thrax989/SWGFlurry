@@ -126,6 +126,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Master Politician Requires (10,000,000 Credits)", "citypolitician",
 		   },
+		 	"Performance Doctor Buffs (Ends 8/13/2017)",
+		   {
+			"Performance Doctor Buffs (Ends 8/13/2017)", "enhance_character",
+		   },
 	}
 }
 ObjectTemplates:addTemplate(object_tangible_terminal_terminal_gcw_publish_gift, "object/tangible/terminal/terminal_gcw_publish_gift.iff")
