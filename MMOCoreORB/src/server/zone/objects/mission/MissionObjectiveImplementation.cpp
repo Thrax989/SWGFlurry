@@ -220,7 +220,7 @@ void MissionObjectiveImplementation::awardReward() {
 		players.add(owner);
 	}
 
-	int divisor = player.size();
+	int divisor = players.size();
 	bool expanded = false;
 
 	if (1 > divisor) {
