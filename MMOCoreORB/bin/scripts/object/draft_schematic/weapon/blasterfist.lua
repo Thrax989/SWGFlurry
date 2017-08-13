@@ -20,7 +20,7 @@ templateType = DRAFTSCHEMATIC,
 
    ingredientTemplateNames = {"craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n"},
    ingredientTitleNames = {"grip_unit", "strike_face", "power_feed_module", "power_cell_socket", "vibration_generator"},
-   ingredientSlotType = {0, 0, 1, 0, 1},
+   ingredientSlotType = {0, 0, 0, 0, 1},
    resourceTypes = {"metal_ferrous", "steel", "metal", "copper", "object/tangible/component/weapon/shared_vibro_unit.iff"},
    resourceQuantities = {12, 8, 1, 4, 1},
    contribution = {100, 100, 100, 100, 100},
