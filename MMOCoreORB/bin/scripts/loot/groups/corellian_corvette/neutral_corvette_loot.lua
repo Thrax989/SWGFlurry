@@ -5,12 +5,12 @@ neutral_corvette_loot = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "baton_stun", weight = 1000000},
-		{itemTemplate = "rifle_lightning", weight = 1000000},
-		{itemTemplate = "pistol_fwg5", weight = 1000000},
+		{itemTemplate = "bantha_doll", weight = 1000000},
+		{itemTemplate = "veh_power_plant_av21", weight = 1000000},
+		{itemTemplate = "bantha_doll", weight = 1000000},
 		{itemTemplate = "veh_power_plant_av21", weight = 500000},
-		{itemTemplate = "rifle_e11", weight = 1000000},
-		{itemTemplate = "one_handed_ryyk_blade", weight = 1000000},
+		{itemTemplate = "spice_giggledust", weight = 1000000},
+		{itemTemplate = "spice_crash_n_burn", weight = 1000000},
 		{itemTemplate = "spice_crash_n_burn", weight = 1500000},
 		{itemTemplate = "spice_giggledust", weight = 1500000},
 		{itemTemplate = "bantha_doll", weight = 1500000}
