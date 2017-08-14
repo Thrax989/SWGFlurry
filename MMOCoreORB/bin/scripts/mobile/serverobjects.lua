@@ -45,3 +45,6 @@ includeFile("outfits/serverobjects.lua")
 
 --ISD
 includeFile("isd/serverobjects.lua")
+
+---New Content
+includeFile("custom_content/serverobjects.lua")
