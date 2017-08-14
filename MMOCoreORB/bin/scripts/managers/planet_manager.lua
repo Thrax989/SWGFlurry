@@ -701,6 +701,42 @@ space_yavin4 = {
 	}
 }
 
+kaas = {
+
+	weatherEnabled = 1,
+
+	planetTravelPoints = {
+		--{name = "an Imperial Garrison", x = -5158.0, z = 80.0, y = -2239.0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	},
+	
+	planetObjects = {
+		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = 0.0, oz = 0, ow = 0.0, x = -1123.2, z = 129.0, y = -4768.8, parentid = 0}
+	}
+}
+
+
+hoth = {
+ 
+ 	weatherEnabled = 1,
+ 	gcwEnabled = 1,
+ 
+ 	planetTravelPoints = {
+ 		{name = "Scavenger Outpost", x = 0, z = 0, y = -2000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+ 	},
+ 
+ 	badgeAreas = {
+ 			
+ 	},
+ 
+ 	navAreas = {
+ 	},
+ 
+ 	planetObjects = {
+ 		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 0, z = 0, y = -2020, parentid = 0},
+ 	}
+}
+
+
 tutorial = {
 	weatherEnabled = 0,
 	gcwEnabled = 0,
@@ -709,29 +745,4 @@ tutorial = {
 dungeon1 = {
 	weatherEnabled = 0,
 	gcwEnabled = 0,
-}
-
-hoth = {
-	weatherEnabled = 1,
-	gcwEnabled = 1,
-
-	outpostRegionNames = { },
-
-	planetTravelPoints = {
-		{name = "Scavenger Outpost", x = 0, z = 0, y = -2000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-	},
-
-	badgeAreas = {
-		--{"exp_hoth_echobase",-5100,5100,30,146},
-		--{"exp_hoth_lake",0,-4000,30,147},
-		--{"exp_hoth_starport",0,-2000,30,148},
-		--{"exp_hoth_wampacave",0,4000,30,149},		
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 0, z = 0, y = -2020, parentid = 0},
-	}
 }
