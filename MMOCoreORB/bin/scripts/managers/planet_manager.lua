@@ -701,28 +701,6 @@ space_yavin4 = {
 	}
 }
 
-hoth = {
- 
- 	weatherEnabled = 1,
- 	gcwEnabled = 1,
- 
- 	planetTravelPoints = {
- 		{name = "Scavenger Outpost", x = 0, z = 0, y = -2000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
- 	},
- 
- 	badgeAreas = {
- 			
- 	},
- 
- 	navAreas = {
- 	},
- 
- 	planetObjects = {
- 		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 0, z = 0, y = -2020, parentid = 0},
- 	}
-}
-
-
 tutorial = {
 	weatherEnabled = 0,
 	gcwEnabled = 0,
@@ -731,4 +709,25 @@ tutorial = {
 dungeon1 = {
 	weatherEnabled = 0,
 	gcwEnabled = 0,
+}
+
+hoth = {
+
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+
+	planetTravelPoints = {
+		{name = "Scavenger Outpost", x = 0, z = 0, y = -2000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+			
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_character_builder.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 0, z = 0, y = -2020, parentid = 0},
+	}
 }
