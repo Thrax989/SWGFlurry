@@ -6,6 +6,7 @@
 #define RESOURCECOMMAND_H_
 
 #include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/managers/stringid/StringIdManager.h"
 
 class ResourceCommand : public QueueCommand {
 public:
@@ -168,6 +169,7 @@ public:
 			creature->sendSystemMessage("Expired: " + String::valueOf(days) + " days, " + String::valueOf(hours) + " hours, " + String::valueOf(minutes) + " minutes ago");
 		}
 
+		creature->sendSystemMessage(spawn->getFinalClass());
 
 		for(int i = 0; i < 12; ++i) {
 			String attribute = "";
