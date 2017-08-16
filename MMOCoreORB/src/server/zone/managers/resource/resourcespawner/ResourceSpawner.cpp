@@ -1380,6 +1380,86 @@ void ResourceSpawner::listResourcesForPlanetOnScreen(CreatureObject* creature, c
 	}
 }
 
+void ResourceSpawner::dumpResources(CreatureObject* creature, const String& planet) {
+	ZoneResourceMap* zoneMap = resourceMap->getZoneResourceList(planet);
+
+	if (zoneMap == NULL) {
+		creature->sendSystemMessage("Invalid planet specified");
+		return;
+	}
+
+	creature->sendSystemMessage("-------- RESOURCE SPAWNS FOR " + planet + " --------");
+	creature->sendSystemMessage("swgcraft_start");
+	ManagedReference<ResourceSpawn*> resourceSpawn;
+
+	for (int i = 0; i < zoneMap->size(); ++i) {
+		resourceSpawn = zoneMap->get(i);
+
+		if(resourceSpawn == NULL)
+			continue;
+
+		StringBuffer info;
+		int hours = (((resourceSpawn->getDespawned() - System::getTime()) / 60) / 60);
+		int minutes = (((resourceSpawn->getDespawned() - System::getTime()) / 60) % 60);
+		
+		//Prepare the output
+		info << resourceSpawn->getName() << "," << resourceSpawn->getFinalClass();
+
+		//Uncomment below if ER is added into game
+		//if (resourceSpawn->getValueOf(CraftingManager::ER) != 0) {
+			//info << "," << resourceSpawn->getValueOf(CraftingManager::ER);
+		//}
+
+
+		//Check and see if the value exists for the resource, output it if true
+		if (resourceSpawn->getValueOf(CraftingManager::CR) != 0) {
+			info << "," << resourceSpawn->getValueOf(CraftingManager::CR);
+		}
+
+		if (resourceSpawn->getValueOf(CraftingManager::CD) != 0) {
+			info << "," << resourceSpawn->getValueOf(CraftingManager::CD);
+		}
+
+		if (resourceSpawn->getValueOf(CraftingManager::DR) != 0) {
+			info << "," << resourceSpawn->getValueOf(CraftingManager::DR);
+		}
+
+		if (resourceSpawn->getValueOf(CraftingManager::FL) != 0) {
+			info << "," << resourceSpawn->getValueOf(CraftingManager::FL);
+		}
+
+		if (resourceSpawn->getValueOf(CraftingManager::HR) != 0) {
+			info << "," << resourceSpawn->getValueOf(CraftingManager::HR);
+		}
+
+		if (resourceSpawn->getValueOf(CraftingManager::MA) != 0) {
+			info << "," << resourceSpawn->getValueOf(CraftingManager::MA);
+		}
+
+		if (resourceSpawn->getValueOf(CraftingManager::PE) != 0) {
+			info << "," << resourceSpawn->getValueOf(CraftingManager::PE);
+		}
+
+		if (resourceSpawn->getValueOf(CraftingManager::OQ) != 0) {
+			info << "," << resourceSpawn->getValueOf(CraftingManager::OQ);
+		}
+
+		if (resourceSpawn->getValueOf(CraftingManager::SR) != 0) {
+			info << "," << resourceSpawn->getValueOf(CraftingManager::SR);
+		}
+
+		if (resourceSpawn->getValueOf(CraftingManager::UT) != 0) {
+			info << "," << resourceSpawn->getValueOf(CraftingManager::UT);
+		}
+
+		creature->sendSystemMessage(info.toString());
+		
+	}
+
+	//Send final message
+	creature->sendSystemMessage("swgcraft_end");
+}
+
 String ResourceSpawner::healthCheck() {
 	StringBuffer health;
 	health << minimumPool->healthCheck() << endl;

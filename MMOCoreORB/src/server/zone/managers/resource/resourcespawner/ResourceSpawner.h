@@ -137,6 +137,8 @@ public:
 
 	void listResourcesForPlanetOnScreen(CreatureObject* creature, const String& planet);
 
+	void dumpResources(CreatureObject* creature, const String& planet);
+
 	String healthCheck();
 
 	String dumpResources() {
