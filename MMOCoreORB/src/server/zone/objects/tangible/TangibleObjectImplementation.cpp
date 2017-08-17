@@ -826,7 +826,7 @@ Reference<FactoryCrate*> TangibleObjectImplementation::createFactoryCrate(int ma
 
 	Locker locker(crate);
 
-	crate->setMaxCapacity(1000000);
+	crate->setMaxCapacity(maxSize);
 
 
 	if (insertSelf) {

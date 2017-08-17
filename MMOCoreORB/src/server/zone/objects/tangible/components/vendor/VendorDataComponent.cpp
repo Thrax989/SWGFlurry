@@ -395,7 +395,7 @@ void VendorDataComponent::scheduleVendorCheckTask(int delay) {
 	if (vendorCheckTask == NULL)
 		vendorCheckTask = new UpdateVendorTask(strongParent);
 
-	vendorCheckTask->schedule(1000 * 60 * delay);
+	vendorCheckTask->reschedule(1000 * 60 * delay);
 }
 
 void VendorDataComponent::cancelVendorCheckTask() {

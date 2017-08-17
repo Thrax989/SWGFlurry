@@ -243,7 +243,16 @@ void CityRegionImplementation::notifyEnter(SceneObject* object) {
 			ManagedReference<CreatureObject*> owner = zone->getZoneServer()->getObject(ownerID).castTo<CreatureObject*>();
 
 			if(owner != NULL && owner->isPlayerCreature() && building->isResidence() && !isCitizen(ownerID)) {
-				cityManager->registerCitizen(_this.getReferenceUnsafeStaticCast(), owner);
+				Reference<CityRegion*> thisRegion = _this.getReferenceUnsafeStaticCast();
+				Reference<SceneObject*> objectRef = object;
+
+				Core::getTaskManager()->executeTask([this, thisRegion, cityManager, owner] () {
+					Locker lockerObject(owner);
+
+					Locker locker(thisRegion, owner);
+
+					cityManager->registerCitizen(_this.getReferenceUnsafeStaticCast(), owner);
+				}, "CityRegionNotifyEnterLambda");
 			}
 		 }
 
@@ -294,6 +303,9 @@ void CityRegionImplementation::notifyExit(SceneObject* object) {
 		object->setCityRegion(NULL);
 	}
 
+	if (object->isPlayerCreature())
+		currentPlayers.decrement();
+
 
 	if (object->isBazaarTerminal() || object->isVendor()) {
 		if (object->isBazaarTerminal())
@@ -308,15 +320,11 @@ void CityRegionImplementation::notifyExit(SceneObject* object) {
 			terminalData->updateUID();
 	}
 
-	if (object->isPlayerCreature())
-		currentPlayers.decrement();
-
 	if (isClientRegion()) {
 		return;
 	}
 
 	if (object->isCreatureObject()) {
-
 		CreatureObject* creature = cast<CreatureObject*>(object);
 
 		StringIdChatParameter params("city/city", "city_leave_city"); //You have left %TO.
@@ -347,7 +355,18 @@ void CityRegionImplementation::notifyExit(SceneObject* object) {
 
 				if(owner != NULL && owner->isPlayerCreature() && building->isResidence() && isCitizen(ownerID)) {
 					CityManager* cityManager = zoneServer->getCityManager();
-					cityManager->unregisterCitizen(_this.getReferenceUnsafeStaticCast(), owner);
+
+					Reference<CityRegion*> thisRegion = _this.getReferenceUnsafeStaticCast();
+					Reference<SceneObject*> objectRef = object;
+
+					Core::getTaskManager()->executeTask([this, thisRegion, objectRef, cityManager, owner] () {
+						Locker lockerObject(owner);
+
+						Locker locker(thisRegion, owner);
+
+						cityManager->unregisterCitizen(_this.getReferenceUnsafeStaticCast(), owner);
+					}, "CityRegionNotifyExitLambda");
+
 				}
 			}
 		}
