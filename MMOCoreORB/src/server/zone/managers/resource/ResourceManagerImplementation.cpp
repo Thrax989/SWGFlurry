@@ -427,10 +427,10 @@ String ResourceManagerImplementation::healthCheck() {
 	return resourceSpawner->healthCheck();
 }
 
-void ResourceManagerImplementation::dumpResources(CreatureObject* creature, const String& planet) {
+String ResourceManagerImplementation::dumpResources() {
 	Locker locker(_this.getReferenceUnsafeStaticCast());
 
-	resourceSpawner->dumpResources(creature, planet);
+	return resourceSpawner->dumpResources();
 }
 
 String ResourceManagerImplementation::despawnResource(String& resourceName) {

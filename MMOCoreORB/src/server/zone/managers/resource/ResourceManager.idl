@@ -92,7 +92,7 @@ class ResourceManager extends Observer implements Logger {
 
 	public native string healthCheck(); 
 	
-	public native void dumpResources(CreatureObject creature, final string planet);
+	public native string dumpResources();
 	
 	public native string despawnResource(string resourceName);
 	
