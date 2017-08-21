@@ -96,11 +96,23 @@ ZonesEnabled = {
 	"dantooine",
 	"dathomir",
 	"dungeon1",
+	--"hoth",
 	"endor",
+        --"kashyyyk",
 	--"endor_asommers",
 	--"floratest",
 	--"godclient_test",
+	--"kashyyyk",
+	--"kashyyyk_hunting",
+	--"kashyyyk_rryatt_trail",
+	--"kashyyyk_main",
+	--"kashyyyk_south_dungeons",
+	--"kashyyyk_north_dungeons",
+	--"kashyyyk_pob_dungeons",
+	--"kashyyyk_dead_forest",
 	"lok",
+	--"mandalore",
+	--"mustafar",
 	"naboo",
 	--"otoh_gunga",
 	--"rivertest",
@@ -131,11 +143,17 @@ ZonesEnabled = {
 	--"umbra",
 	--"watertabletest",
 	"yavin4"
+	--"kaas",
+        --"moraband",
+        --"coruscant",
+        --"hutta",
+        --"chandrila",
+        --"jakku"
 }
 
 
 -- directory of tres with live.cfg
-TrePath = "/home/vagrant/Desktop/SWGEmu/"
+TrePath = "/home/vagrant/workspace/tre/"
 
 TreFiles = {
         "pallet.tre",

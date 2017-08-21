@@ -641,3 +641,17 @@ includeFile("record_keepers/record_keepers.lua")
 --Tests
 includeFile("tests/tests.lua")
 
+--custom planets
+includeFile("caves/taanab_cave.lua")
+includeFile("cities/taanab_pandath.lua")
+includeFile("cities/taanab_starhunterstation.lua")
+includeFile("poi/taanab_downed_ship.lua")
+includeFile("poi/taanab_mine.lua")
+includeFile("poi/taanab_hex_farms.lua")
+includeFile("poi/taanab_great_herd.lua")
+includeFile("poi/DarthCaedusCave.lua")
+includeFile("poi/MandalMotors.lua")
+includeFile("poi/ShadowCollectiveCave.lua")
+includeFile("poi/TaungWarriorBunker.lua")
+includeFile("poi/VizslaHideout.lua")
+includeFile("static_spawns/taanab_static_spawns.lua")
