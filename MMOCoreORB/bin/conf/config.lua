@@ -70,7 +70,7 @@ MantisUser = "swgemu"
 MantisPass = "123456"
 MantisPrfx = "mantis_" -- The prefix for your mantis tables.
 
-AutoReg = 0
+AutoReg = 1
 
 ProgressMonitors = "true"
 
@@ -80,7 +80,7 @@ PingAllowedConnections = 3000
 ZoneProcessingThreads = 10
 ZoneAllowedConnections = 30000
 ZoneGalaxyID = 2 --The actual zone server's galaxyID. Should coordinate with your login server.
-ZoneOnlineCharactersPerAccount = 3 --How many characters are allowed online from a single account.
+ZoneOnlineCharactersPerAccount = 2 --How many characters are allowed online from a single account.
 
 --The following zones are enabled, and will be loaded with server start.
 --To save on RAM and CPU usage, you should only enable the zones you need.
@@ -96,11 +96,23 @@ ZonesEnabled = {
 	"dantooine",
 	"dathomir",
 	"dungeon1",
+	--"hoth",
 	"endor",
+        --"kashyyyk",
 	--"endor_asommers",
 	--"floratest",
 	--"godclient_test",
+	--"kashyyyk",
+	--"kashyyyk_hunting",
+	--"kashyyyk_rryatt_trail",
+	--"kashyyyk_main",
+	--"kashyyyk_south_dungeons",
+	--"kashyyyk_north_dungeons",
+	--"kashyyyk_pob_dungeons",
+	--"kashyyyk_dead_forest",
 	"lok",
+	--"mandalore",
+	--"mustafar",
 	"naboo",
 	--"otoh_gunga",
 	--"rivertest",
@@ -131,11 +143,17 @@ ZonesEnabled = {
 	--"umbra",
 	--"watertabletest",
 	"yavin4"
+	--"kaas",
+        --"moraband",
+        --"coruscant",
+        --"hutta",
+        --"chandrila",
+        --"jakku"
 }
 
 
 -- directory of tres with live.cfg
-TrePath = "/home/vagrant/Desktop/SWGEmu/"
+TrePath = "/home/vagrant/workspace/tre/"
 
 TreFiles = {
         "pallet.tre",
