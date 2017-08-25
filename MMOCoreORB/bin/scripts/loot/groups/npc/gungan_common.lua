@@ -3,8 +3,8 @@ gungan_common = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	lootItems = {
-		{itemTemplate = "gungan_signet", weight = 3333333},
-		{itemTemplate = "gungan_lance", weight =  3333333},
+		{itemTemplate = "junk", weight = 3333333},
+		{itemTemplate = "junk", weight =  3333333},
 		{groupTemplate = "junk", weight = 3333334},
 	}
 }

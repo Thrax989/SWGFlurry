@@ -5,7 +5,7 @@ tutorial_pirate = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "pistol_d18", weight = 10000000}
+		{itemTemplate = "junk", weight = 10000000}
 	}
 }
 
