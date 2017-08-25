@@ -291,3 +291,10 @@ includeFile("conversations/junk_dealer/junk_dealer_quich_conv.lua")
 includeFile("conversations/junk_dealer/junk_dealer_reggi_conv.lua")
 includeFile("conversations/junk_dealer/junk_dealer_sheani_conv.lua")
 includeFile("conversations/junk_dealer/junk_dealer_sneg_conv.lua")
+
+-- World Boss Exchange System
+includeFile("conversations/events/world_exchange.lua")
+includeFile("conversations/events/imperial_exchange.lua")
+includeFile("conversations/events/rebel_exchange.lua")
+includeFile("conversations/events/holo_exchange.lua")
+includeFile("conversations/events/painting_exchange.lua")
