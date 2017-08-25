@@ -657,7 +657,6 @@ includeFile("poi/VizslaHideout.lua")
 includeFile("static_spawns/taanab_static_spawns.lua")
 
 -- Custom Content
-includeFile("custom_content/screenplays.lua")
 includeFile("events/world_exchange_dealer.lua")
 includeFile("events/imperial_exchange_dealer.lua")
 includeFile("events/rebel_exchange_dealer.lua")
