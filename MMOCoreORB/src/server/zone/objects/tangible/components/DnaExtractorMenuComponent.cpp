@@ -112,11 +112,11 @@ int DnaExtractorMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, 
 		if (skillMod > 90){
 			dnaQuality = 1;
 		} else if (skillMod > 39){
-			dnaQuality = MIN(3, dnaQuality);
+			dnaQuality = Math::min(3, dnaQuality);
 		} else if (skillMod > 14){
-			dnaQuality = MIN(4, dnaQuality);
+			dnaQuality = Math::min(4, dnaQuality);
 		} else if (skillMod > 0){
-			dnaQuality = MIN(5, dnaQuality);
+			dnaQuality = Math::min(5, dnaQuality);
 		}
 		
 		DnaManager::instance()->generateSample(critter, player, dnaQuality);
