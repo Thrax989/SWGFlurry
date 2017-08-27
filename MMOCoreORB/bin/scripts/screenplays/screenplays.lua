@@ -662,7 +662,3 @@ includeFile("events/imperial_exchange_dealer.lua")
 includeFile("events/rebel_exchange_dealer.lua")
 includeFile("events/holo_exchange_dealer.lua")
 includeFile("events/painting_exchange_dealer.lua")
-
-
---Custom Screenplays
-includeFile("custom_screenplays/screenplays.lua")
