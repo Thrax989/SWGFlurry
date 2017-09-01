@@ -701,6 +701,54 @@ space_yavin4 = {
 	}
 }
 
+taanab = {
+
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+}
+
+mandalore = {
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+}
+
+
+coruscant = {
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+}
+
+hutta = {
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+}
+
+kaas = {
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+}
+
+chandrila = {
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+}
+
+jakku = {
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+}
+
+moraband = {
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+}
+
+hoth = {
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+}
+
+
 tutorial = {
 	weatherEnabled = 0,
 	gcwEnabled = 0,
@@ -708,5 +756,5 @@ tutorial = {
 
 dungeon1 = {
 	weatherEnabled = 0,
-	gcwEnabled = 0,
+	gcwEnabled = 1,
 }

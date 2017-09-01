@@ -528,6 +528,7 @@ void DirectorManager::initializeLuaEngine(Lua* luaEngine) {
 	luaEngine->setGlobalInt("WILLBEDECLARED", CreatureFlag::WILLBEDECLARED);
 	luaEngine->setGlobalInt("WASDECLARED", CreatureFlag::WASDECLARED);
 	luaEngine->setGlobalInt("SCANNING_FOR_CONTRABAND", CreatureFlag::SCANNING_FOR_CONTRABAND);
+	luaEngine->setGlobalInt("IGNORE_FACTION_STANDING", CreatureFlag::IGNORE_FACTION_STANDING);
 
 	luaEngine->setGlobalInt("CONVERSABLE", OptionBitmask::CONVERSE);
 	luaEngine->setGlobalInt("AIENABLED", OptionBitmask::AIENABLED);
@@ -2174,7 +2175,7 @@ int DirectorManager::spawnSceneObject(lua_State* L) {
 		}
 
 		if (cellParent != NULL) {
-			cellParent->transferObject(object, -1);
+			cellParent->transferObject(object, -1, true);
 		} else {
 			zone->transferObject(object, -1, true);
 		}
@@ -2961,12 +2962,18 @@ int DirectorManager::getCityRegionAt(lua_State* L) {
 	float x = lua_tonumber(L, -2);
 	float y = lua_tonumber(L, -1);
 
-	PlanetManager* planetManager = ServerCore::getZoneServer()->getZone(zoneid)->getPlanetManager();
+	auto zone =  ServerCore::getZoneServer()->getZone(zoneid);
 
-	CityRegion* cityRegion = planetManager->getRegionAt(x, y);
+	if (zone != nullptr) {
+		PlanetManager* planetManager = zone->getPlanetManager();
 
-	if (cityRegion != NULL) {
-		lua_pushlightuserdata(L, cityRegion);
+		CityRegion* cityRegion = planetManager->getRegionAt(x, y);
+
+		if (cityRegion != NULL) {
+			lua_pushlightuserdata(L, cityRegion);
+		} else {
+			lua_pushnil(L);
+		}
 	} else {
 		lua_pushnil(L);
 	}

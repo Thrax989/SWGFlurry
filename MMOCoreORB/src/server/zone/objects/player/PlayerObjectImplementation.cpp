@@ -69,6 +69,7 @@
 #include "server/zone/objects/player/events/ForceMeditateTask.h"
 #include "server/zone/objects/player/sui/callbacks/FieldFactionChangeSuiCallback.h"
 #include "server/zone/packets/ui/DestroyClientPathMessage.h"
+#include "server/chat/PendingMessageList.h"
 
 void PlayerObjectImplementation::initializeTransientMembers() {
 	IntangibleObjectImplementation::initializeTransientMembers();
@@ -82,6 +83,27 @@ void PlayerObjectImplementation::initializeTransientMembers() {
 	setLoggingName("PlayerObject");
 
 	initializeAccount();
+}
+
+void PlayerObjectImplementation::checkPendingMessages() {
+    ObjectManager *objectManager = ObjectManager::instance();
+    ManagedReference<PendingMessageList*> messageList = getZoneServer()->getChatManager()->getPendingMessages(parent.getSavedObjectID());
+
+    if (messageList != NULL) {
+        Locker locker(messageList);
+        Vector<uint64>& pendingMessages = *messageList->getPendingMessages();
+        
+        for (uint64 messageID : pendingMessages) {
+            ManagedReference<PersistentMessage*> mail = Core::getObjectBroker()->lookUp(messageID).castTo<PersistentMessage*>();
+
+            if (isIgnoring(mail->getSenderName())) {
+                objectManager->destroyObjectFromDatabase(mail->getObjectID());
+                continue;
+            }
+            persistentMessages.put(messageID);
+        }
+        messageList->clearPendingMessages();
+    }
 }
 
 void PlayerObjectImplementation::initializeAccount() {
@@ -108,7 +130,7 @@ void PlayerObjectImplementation::initializeAccount() {
 		galaxyAccountInfo = account->getGalaxyAccountInfo(getZoneServer()->getGalaxyName());
 		
 		if (chosenVeteranRewards.size() > 0) {
-			galaxyAccountInfo->updateVetRewardsFromPlayer(chosenVeteranRewards);
+			//galaxyAccountInfo->updateVetRewardsFromPlayer(chosenVeteranRewards);
 			chosenVeteranRewards.removeAll();
 		}
 	} else {
@@ -1219,6 +1241,7 @@ void PlayerObjectImplementation::setTitle(const String& characterTitle, bool not
 }
 
 void PlayerObjectImplementation::notifyOnline() {
+    
 	ManagedReference<SceneObject*> parent = getParent().get();
 
 	if (parent == NULL)
@@ -1664,7 +1687,7 @@ void PlayerObjectImplementation::checkForNewSpawns() {
 	Vector<SpawnArea*> worldSpawnAreas;
 
 	for (int i = 0; i < areas.size(); ++i) {
-		ManagedReference<ActiveArea*> area = areas.get(i);
+		ManagedReference<ActiveArea*>& area = areas.get(i);
 
 		if (area->isNoSpawnArea()) {
 			return;
@@ -1722,9 +1745,16 @@ void PlayerObjectImplementation::checkForNewSpawns() {
 		return;
 	}
 
+	String zoneName;
+	auto zone = creature->getZone();
+
+	if (zone != nullptr) {
+		zoneName = zone->getZoneName();
+	}
+
 	Core::getTaskManager()->executeTask([=] () {
 		finalArea->tryToSpawn(creature);
-	}, "TryToSpawnLambda");
+	}, "TryToSpawnLambda", zoneName.toCharArray());
 }
 
 void PlayerObjectImplementation::activateRecovery() {

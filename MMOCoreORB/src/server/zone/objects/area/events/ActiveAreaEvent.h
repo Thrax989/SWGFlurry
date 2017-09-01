@@ -15,6 +15,7 @@
  */
 
 #include "server/zone/objects/area/ActiveArea.h"
+#include "server/zone/Zone.h"
 
 namespace server {
  namespace zone {

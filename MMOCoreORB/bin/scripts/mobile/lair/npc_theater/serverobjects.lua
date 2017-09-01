@@ -201,6 +201,8 @@ includeFile("lair/npc_theater/rori_rorgungan_warcamp_neutral_large_theater.lua")
 includeFile("lair/npc_theater/rori_spice_collective_miner_base_neutral_large_theater.lua")
 includeFile("lair/npc_theater/rori_trade_federation_camp_neutral_large_theater.lua")
 
+includeFile("lair/npc_theater/taanab_norulac_raider_camp.lua")
+
 includeFile("lair/npc_theater/talus_aakuan_champion_camp_neutral_large_theater.lua")
 includeFile("lair/npc_theater/talus_aakuan_steward_camp_neutral_small_theater.lua")
 includeFile("lair/npc_theater/talus_beldonna_base_neutral_large_theater.lua")

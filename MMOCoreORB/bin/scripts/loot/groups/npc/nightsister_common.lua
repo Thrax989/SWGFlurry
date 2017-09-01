@@ -5,7 +5,7 @@ nightsister_common = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "nightsister_controllerfp_lance", weight = 4500000},
+		{itemTemplate = "junk", weight = 4500000},
 		{itemTemplate = "nightsister_layer", weight = 2450000},
 		{itemTemplate = "nightsister_shards", weight = 3000000},
 		{itemTemplate = "nightsister_vibro_unit", weight = 50000},
