@@ -31,10 +31,7 @@ function VillageGmSui:showMainPage(pPlayer)
 	sui.add("Lookup player by oid", "playerLookupByOID")
 	sui.add("List players in village", "listOnlineVillagePlayers")
 	sui.add("Output LUA os.time() (Debugging)", "getOSTime")
-
-	if (not self.productionServer) then
-		sui.add("Change to next phase", "changePhase")
-	end
+        sui.add("Change to next phase", "changePhase")
 
 	sui.sendTo(pPlayer)
 end
