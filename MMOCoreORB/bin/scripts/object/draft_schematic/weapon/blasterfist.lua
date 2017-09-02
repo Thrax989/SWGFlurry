@@ -18,17 +18,10 @@ templateType = DRAFTSCHEMATIC,
    customizationDefaults = {},
 
    ingredientTemplateNames = {"craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n"},
-<<<<<<< HEAD
    ingredientTitleNames = {"grip_unit", "strike_face", "vibro_unit_and_power_cell_brackets", "power_cell_socket", "vibration_generator"},
    ingredientSlotType = {0, 0, 0, 0, 1},
    resourceTypes = {"metal_ferrous", "steel", "metal", "copper", "object/tangible/component/weapon/shared_vibro_unit.iff"},
    resourceQuantities = {12, 8, 8, 4, 1},
-=======
-   ingredientTitleNames = {"grip_unit", "strike_face", "power_feed_module", "power_cell_socket", "vibration_generator"},
-   ingredientSlotType = {0, 0, 1, 0, 1},
-   resourceTypes = {"metal_ferrous", "steel", "object/tangible/component/weapon/shared_blaster_power_handler.iff", "copper", "object/tangible/component/weapon/shared_vibro_unit.iff"},
-   resourceQuantities = {12, 8, 1, 4, 1},
->>>>>>> parent of 4ec9268f1... Blasterfist reversion
    contribution = {100, 100, 100, 100, 100},
 
 
