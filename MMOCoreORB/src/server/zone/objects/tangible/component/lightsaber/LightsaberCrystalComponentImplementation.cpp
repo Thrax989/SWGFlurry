@@ -319,7 +319,7 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 }
 
 void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
-	if (ownerID == 0 && player->hasSkill("force_title_jedi_rank_01") && hasPlayerAsParent(player)) {
+	//if (ownerID == 0 && player->hasSkill("force_title_jedi_rank_01") && hasPlayerAsParent(player)) {
 		String text = "@jedi_spam:tune_crystal";
 		menuResponse->addRadialMenuItem(128, 3, text);
 	}
@@ -339,7 +339,7 @@ void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenu
 }
 
 int LightsaberCrystalComponentImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
-	if (selectedID == 128 && player->hasSkill("force_title_jedi_rank_01") && hasPlayerAsParent(player) && ownerID == 0) {
+	//if (selectedID == 128 && player->hasSkill("force_title_jedi_rank_01") && hasPlayerAsParent(player) && ownerID == 0) {
 		ManagedReference<SuiMessageBox*> suiMessageBox = new SuiMessageBox(player, SuiWindowType::TUNE_CRYSTAL);
 
 		suiMessageBox->setPromptTitle("@jedi_spam:confirm_tune_title");
@@ -366,7 +366,7 @@ int LightsaberCrystalComponentImplementation::handleObjectMenuSelect(CreatureObj
 				tuneName = tuneName + " (Legendary)\\#.";
 			else
 				tuneName = tuneName + "\\#.";
-		}
+		//}
 	}
 
 	return 0;
@@ -418,7 +418,7 @@ void LightsaberCrystalComponentImplementation::tuneCrystal(CreatureObject* playe
 		ghost->setForcePower(ghost->getForcePower() - tuningCost);
 	}
 
-	if (ownerID == 0) {
+	//if (ownerID == 0) {
 		validateCrystalStats();
 
 		ownerID = player->getObjectID();
@@ -436,7 +436,7 @@ void LightsaberCrystalComponentImplementation::tuneCrystal(CreatureObject* playe
 		setCustomObjectName(tuneName, true);
 		player->notifyObservers(ObserverEventType::TUNEDCRYSTAL, _this.getReferenceUnsafeStaticCast(), 0);
 		player->sendSystemMessage("@jedi_spam:crystal_tune_success");
-	}
+	//}
 }
 
 void LightsaberCrystalComponentImplementation::updateCrystal(int value){
