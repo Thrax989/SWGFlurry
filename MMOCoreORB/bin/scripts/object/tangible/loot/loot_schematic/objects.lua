@@ -4955,3 +4955,145 @@ clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_sword_light
 }
 
 ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_sword_lightsaber_polearm_gen5_exar_kun_schematic, "object/tangible/loot/loot_schematic/shared_sword_lightsaber_polearm_gen5_exar_kun_schematic.iff")
+
+
+object_tangible_loot_loot_schematic_shared_potted_plants_sml02_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_potted_plants_sml02_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_potted_plants_sml02_schematic, "object/tangible/loot/loot_schematic/shared_potted_plants_sml02_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_potted_plants_sml03_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_potted_plants_sml03_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_potted_plants_sml03_schematic, "object/tangible/loot/loot_schematic/shared_potted_plants_sml03_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_potted_plants_sml04_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_potted_plants_sml04_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_potted_plants_sml04_schematic, "object/tangible/loot/loot_schematic/shared_potted_plants_sml04_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_potted_plants_sml05_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_potted_plants_sml05_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_potted_plants_sml05_schematic, "object/tangible/loot/loot_schematic/shared_potted_plants_sml05_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_potted_plants_lrg02_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_potted_plants_lrg02_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_potted_plants_lrg02_schematic, "object/tangible/loot/loot_schematic/shared_potted_plants_lrg02_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_potted_plants_lrg03_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_potted_plants_lrg03_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_potted_plants_lrg03_schematic, "object/tangible/loot/loot_schematic/shared_potted_plants_lrg03_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_potted_plants_lrg04_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_potted_plants_lrg04_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_potted_plants_lrg04_schematic, "object/tangible/loot/loot_schematic/shared_potted_plants_lrg04_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_rug_rectangle_large_modern_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rug_rectangle_large_modern_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_rug_rectangle_large_modern_schematic, "object/tangible/loot/loot_schematic/shared_rug_rectangle_large_modern_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_rug_rectangle_large_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rug_rectangle_large_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_rug_rectangle_large_schematic, "object/tangible/loot/loot_schematic/shared_rug_rectangle_large_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_rug_rectangle_medium_modern_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rug_rectangle_medium_modern_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_rug_rectangle_medium_modern_schematic, "object/tangible/loot/loot_schematic/shared_rug_rectangle_medium_modern_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_rug_rectangle_small_modern_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rug_rectangle_small_modern_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_rug_rectangle_small_modern_schematic, "object/tangible/loot/loot_schematic/shared_rug_rectangle_small_modern_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_rug_round_large_modern_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rug_round_large_modern_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_rug_round_large_modern_schematic, "object/tangible/loot/loot_schematic/shared_rug_round_large_modern_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_rug_round_medium_modern_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rug_round_medium_modern_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_rug_round_medium_modern_schematic, "object/tangible/loot/loot_schematic/shared_rug_round_medium_modern_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_rug_round_small_modern_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rug_round_small_modern_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_rug_round_small_modern_schematic, "object/tangible/loot/loot_schematic/shared_rug_round_small_modern_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_banner_imperial_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_banner_imperial_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_banner_imperial_schematic, "object/tangible/loot/loot_schematic/shared_banner_imperial_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_banner_imperial02_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_banner_imperial02_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_banner_imperial02_schematic, "object/tangible/loot/loot_schematic/shared_banner_imperial02_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_banner_rebel_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_banner_rebel_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_banner_rebel_schematic, "object/tangible/loot/loot_schematic/shared_banner_rebel_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_banner_rebel02_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_banner_rebel02_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_banner_rebel02_schematic, "object/tangible/loot/loot_schematic/shared_banner_rebel02_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_command_console_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_command_console_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_command_console_schematic, "object/tangible/loot/loot_schematic/shared_command_console_schematic.iff")
+--**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_potted_tree02_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_potted_tree02_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_potted_tree02_schematic, "object/tangible/loot/loot_schematic/shared_potted_tree02_schematic.iff")
+--**************************************************************************************************************************************************
+
