@@ -6165,3 +6165,143 @@ object_draft_schematic_furniture_shared_tanning_hide_2 = SharedDraftSchematicObj
 }
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_furniture_shared_tanning_hide_2, "object/draft_schematic/furniture/shared_tanning_hide_2.iff")
+
+object_draft_schematic_furniture_shared_potted_plants_sml02 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_potted_plants_sml02.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_potted_plants_sml02, "object/draft_schematic/furniture/shared_potted_plants_sml02.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_potted_plants_sml03 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_potted_plants_sml03.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_potted_plants_sml03, "object/draft_schematic/furniture/shared_potted_plants_sml03.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_potted_plants_sml04 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_potted_plants_sml04.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_potted_plants_sml04, "object/draft_schematic/furniture/shared_potted_plants_sml04.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_potted_plants_sml05 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_potted_plants_sml05.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_potted_plants_sml05, "object/draft_schematic/furniture/shared_potted_plants_sml05.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_potted_plants_lrg02 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_potted_plants_lrg02.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_potted_plants_lrg02, "object/draft_schematic/furniture/shared_potted_plants_lrg02.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_potted_plants_lrg03 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_potted_plants_lrg03.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_potted_plants_lrg03, "object/draft_schematic/furniture/shared_potted_plants_lrg03.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_potted_plants_lrg04 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_potted_plants_lrg04.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_potted_plants_lrg04, "object/draft_schematic/furniture/shared_potted_plants_lrg04.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_furniture_rug_rectangle_large = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_furniture_rug_rectangle_large.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_furniture_rug_rectangle_large, "object/draft_schematic/furniture/shared_furniture_rug_rectangle_large.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_furniture_rug_rectangle_large_modern = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_furniture_rug_rectangle_large_modern.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_furniture_rug_rectangle_large_modern, "object/draft_schematic/furniture/shared_furniture_rug_rectangle_large_modern.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_furniture_rug_rectangle_medium_modern = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_furniture_rug_rectangle_medium_modern.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_furniture_rug_rectangle_medium_modern, "object/draft_schematic/furniture/shared_furniture_rug_rectangle_medium_modern.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_furniture_rug_rectangle_small_modern = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_furniture_rug_rectangle_small_modern.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_furniture_rug_rectangle_small_modern, "object/draft_schematic/furniture/shared_furniture_rug_rectangle_small_modern.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_furniture_rug_round_large_modern = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_furniture_rug_round_large_modern.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_furniture_rug_round_large_modern, "object/draft_schematic/furniture/shared_furniture_rug_round_large_modern.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_furniture_rug_round_medium_modern = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_furniture_rug_round_medium_modern.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_furniture_rug_round_medium_modern, "object/draft_schematic/furniture/shared_furniture_rug_round_medium_modern.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_furniture_rug_round_small_modern = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_furniture_rug_round_small_modern.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_furniture_rug_round_small_modern, "object/draft_schematic/furniture/shared_furniture_rug_round_small_modern.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_command_console = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_command_console.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_command_console, "object/draft_schematic/furniture/shared_command_console.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_banner_imperial = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_banner_imperial.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_banner_imperial, "object/draft_schematic/furniture/shared_banner_imperial.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_banner_imperial02 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_banner_imperial02.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_banner_imperial02, "object/draft_schematic/furniture/shared_banner_imperial02.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_banner_rebel02 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_banner_rebel02.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_banner_rebel02, "object/draft_schematic/furniture/shared_banner_rebel02.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_banner_rebel = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_banner_rebel.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_banner_rebel, "object/draft_schematic/furniture/shared_banner_rebel.iff")
+--***************************************************************************************************************************************************************
+
+object_draft_schematic_furniture_shared_potted_tree02 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/furniture/shared_potted_tree02.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_furniture_shared_potted_tree02, "object/draft_schematic/furniture/shared_potted_tree02.iff")
+--***************************************************************************************************************************************************************
