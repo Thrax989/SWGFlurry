@@ -1,5 +1,5 @@
 g_gen_small_win_s01_loot_deed = {
-	description = "",
+	description = "Small Generic House Style 1 (Windowed) Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

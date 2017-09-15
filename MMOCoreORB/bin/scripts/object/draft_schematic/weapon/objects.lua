@@ -4111,6 +4111,7 @@ ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_shared_turbo_las
 object_draft_schematic_weapon_shared_blasterfist = SharedDraftSchematicObjectTemplate:new {
 clientTemplateFileName = "object/draft_schematic/weapon/shared_blasterfist.iff"
 }
+
 ObjectTemplates: addClientTemplate(object_draft_schematic_weapon_shared_blasterfist, "object/draft_schematic/weapon/shared_blasterfist.iff")
 
 object_draft_schematic_weapon_shared_carbine_underslung_blast = SharedDraftSchematicObjectTemplate:new {
@@ -4135,10 +4136,10 @@ object_draft_schematic_weapon_shared_sword_blast = SharedDraftSchematicObjectTem
 clientTemplateFileName = "object/draft_schematic/weapon/shared_sword_blast.iff"
 }
 
-ObjectTemplates: addClientTemplate(object_draft_schematic_weapon_shared_sword_blast, "object/draft_schematic/weapon/shared_sword_blast.iff")
+ObjectTemplates: addClientTemplate(object_draft_schematic_weapon_shared_sword_blast, "object/draft_schematic/weapon/shared_2h_sword_battleaxe_stun.iff")
 
 object_draft_schematic_weapon_shared_2h_sword_battleaxe_stun = SharedDraftSchematicObjectTemplate:new {
 clientTemplateFileName = "object/draft_schematic/weapon/shared_2h_sword_battleaxe_stun.iff"
 }
 
-ObjectTemplates: addClientTemplate(object_draft_schematic_weapon_shared_2h_sword_battleaxe_stun, "object/draft_schematic/weapon/shared_2h_sword_battleaxe_stun.iff")
+ObjectTemplates: addClientTemplate(object_draft_schematic_weapon_shared_sword_blast, "object/draft_schematic/weapon/shared_2h_sword_battleaxe_stun.iff")

@@ -90,7 +90,7 @@ object_tangible_wearables_apron_apron_porcellus = object_tangible_wearables_apro
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff",
 				},
-	
+
 	numberExperimentalProperties = {1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX"},
 	experimentalWeights = {1, 1, 1, 1},
@@ -100,6 +100,7 @@ object_tangible_wearables_apron_apron_porcellus = object_tangible_wearables_apro
 	experimentalMax = {0, 0, 0, 1000},
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 4},
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_apron_apron_porcellus, "object/tangible/wearables/apron/apron_porcellus.iff")

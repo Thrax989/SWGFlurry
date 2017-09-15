@@ -1,5 +1,5 @@
 g_commando_house_loot_deed = {
-	description = "",
+	description = "Command Bunker Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

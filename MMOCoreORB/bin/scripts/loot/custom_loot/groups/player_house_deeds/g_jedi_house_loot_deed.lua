@@ -1,5 +1,5 @@
 g_jedi_house_loot_deed = {
-	description = "",
+	description = "Jedi Meditation Room Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

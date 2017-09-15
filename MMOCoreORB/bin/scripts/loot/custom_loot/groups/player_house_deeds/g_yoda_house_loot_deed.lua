@@ -1,5 +1,5 @@
 g_yoda_house_loot_deed = {
-	description = "",
+	description = "Yoda's Hut House Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

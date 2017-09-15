@@ -1,5 +1,5 @@
 g_emperors_house_loot_deed = {
-	description = "",
+	description = "Emperors Spire Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

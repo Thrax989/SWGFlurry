@@ -662,3 +662,6 @@ includeFile("events/imperial_exchange_dealer.lua")
 includeFile("events/rebel_exchange_dealer.lua")
 includeFile("events/holo_exchange_dealer.lua")
 includeFile("events/painting_exchange_dealer.lua")
+
+--Custom World Bosses
+includeFile("custom_world_bosses/custom_jawa_boss.lua")

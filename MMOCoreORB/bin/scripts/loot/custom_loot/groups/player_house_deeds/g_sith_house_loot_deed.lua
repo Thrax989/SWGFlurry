@@ -1,5 +1,5 @@
 g_sith_house_loot_deed = {
-	description = "",
+	description = "Sith Meditation Room Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

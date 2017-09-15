@@ -1,8 +1,8 @@
 hangar_house_loot_deed = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Hanger House Deed",
-	directObjectTemplate = "object/tangible/deed/player_house_deed/hangar_house_deed.iff",
+	customObjectName = "Spacecraft Hangar House Blueprint",
+	directObjectTemplate = "object/tangible/loot/loot_schematic/hangar_house_loot_schem.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},

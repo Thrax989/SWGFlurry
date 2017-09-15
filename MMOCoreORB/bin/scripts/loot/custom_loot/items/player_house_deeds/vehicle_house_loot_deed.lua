@@ -1,8 +1,8 @@
 vehicle_house_loot_deed = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Vehicle House Deed",
-	directObjectTemplate = "object/tangible/deed/player_house_deed/vehicle_house_deed.iff",
+	customObjectName = "Vehicle Garage House Blueprint",
+	directObjectTemplate = "object/tangible/loot/loot_schematic/vehicle_house_loot_schem.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},

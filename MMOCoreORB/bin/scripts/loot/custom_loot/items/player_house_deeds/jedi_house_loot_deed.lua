@@ -1,8 +1,8 @@
 jedi_house_loot_deed = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Jedi House Deed",
-	directObjectTemplate = "object/tangible/deed/player_house_deed/jedi_house_deed.iff",
+	customObjectName = "Jedi Meditation Room House Blueprint",
+	directObjectTemplate = "object/tangible/loot/loot_schematic/jedi_house_loot_schem.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},

@@ -1,8 +1,8 @@
 gen_large_win_s02_loot_deed = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Generic Lrg Win 02 House Deed",
-	directObjectTemplate = "object/tangible/deed/player_house_deed/generic_large_window_s02_deed.iff",
+	customObjectName = "Large Generic House, Style 2 (Windowed) Blueprint",
+	directObjectTemplate = "object/tangible/loot/loot_schematic/gen_lg_win_02_loot_schem.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
