@@ -63,7 +63,7 @@ INCLUDES =  $(SYSTEM_INCLUDES) \
 	    -I$(GTEST_PATH)/include \
 	    -I$(GMOCK_PATH)/include \
 	    -I$(AUTOGEN_PATH)
-			
+
 LIBS =	$(SYSTEM_LIBS)  \
 	$(USER_LD_FLAGS) \
 	-L../../../build/unix/src/client \
@@ -464,6 +464,7 @@ core3_SOURCES =	$(core3_IDLS) \
 		server/zone/objects/ship/ShipObjectImplementation.cpp \
 		server/zone/objects/intangible/ShipControlDeviceImplementation.cpp \
 		server/zone/objects/tangible/terminal/spaceship/SpaceshipTerminalImplementation.cpp \
+		server/zone/objects/tangible/components/ArtifactMenuComponent.cpp \
 		server/zone/objects/tangible/deed/components/PlaceStructureComponent.cpp \
 		server/zone/objects/tangible/deed/components/PlaceCityHallComponent.cpp \
 		server/zone/objects/tangible/deed/components/PlaceGCWBaseComponent.cpp \
