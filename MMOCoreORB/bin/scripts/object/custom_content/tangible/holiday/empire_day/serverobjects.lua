@@ -1,0 +1,5 @@
+includeFile("custom_content/tangible/holiday/empire_day/painting_empire_day_2010_imperial.lua")
+includeFile("custom_content/tangible/holiday/empire_day/painting_empire_day_2010_rebel.lua")
+includeFile("custom_content/tangible/holiday/empire_day/painting_empire_day_2011_imperial.lua")
+includeFile("custom_content/tangible/holiday/empire_day/painting_empire_day_2011_rebel.lua")
+includeFile("custom_content/tangible/holiday/empire_day/return_of_the_jedi_painting.lua")
