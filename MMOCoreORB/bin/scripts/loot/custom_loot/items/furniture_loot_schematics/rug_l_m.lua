@@ -8,4 +8,4 @@ rug_l_m = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("rub_l_m", rug_l_m)
+addLootItemTemplate("rug_l_m", rug_l_m)
