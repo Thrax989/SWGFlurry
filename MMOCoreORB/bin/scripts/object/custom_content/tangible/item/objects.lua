@@ -1,4 +1,109 @@
 --New
+object_tangible_item_shared_publish_gift_chapter_7_painting_01 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_chapter_7_painting_01.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_chapter_7_painting_01, "object/tangible/item/shared_publish_gift_chapter_7_painting_01.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_chapter_7_painting_02 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_chapter_7_painting_02.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_chapter_7_painting_02, "object/tangible/item/shared_publish_gift_chapter_7_painting_02.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_magic_painting_1 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_magic_painting_1.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_magic_painting_1, "object/tangible/item/shared_publish_gift_magic_painting_1.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_magic_painting_10 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_magic_painting_10.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_magic_painting_10, "object/tangible/item/shared_publish_gift_magic_painting_10.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_magic_painting_2 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_magic_painting_2.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_magic_painting_2, "object/tangible/item/shared_publish_gift_magic_painting_2.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_magic_painting_3 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_magic_painting_3.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_magic_painting_3, "object/tangible/item/shared_publish_gift_magic_painting_3.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_magic_painting_4 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_magic_painting_4.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_magic_painting_4, "object/tangible/item/shared_publish_gift_magic_painting_4.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_magic_painting_5 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_magic_painting_5.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_magic_painting_5, "object/tangible/item/shared_publish_gift_magic_painting_5.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_magic_painting_6 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_magic_painting_6.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_magic_painting_6, "object/tangible/item/shared_publish_gift_magic_painting_6.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_magic_painting_7 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_magic_painting_7.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_magic_painting_7, "object/tangible/item/shared_publish_gift_magic_painting_7.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_magic_painting_8 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_magic_painting_8.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_magic_painting_8, "object/tangible/item/shared_publish_gift_magic_painting_8.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_magic_painting_9 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_magic_painting_9.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_magic_painting_9, "object/tangible/item/shared_publish_gift_magic_painting_9.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_item_shared_publish_gift_magic_painting_ctrl_obj = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/shared_publish_gift_magic_painting_ctrl_obj.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_item_shared_publish_gift_magic_painting_ctrl_obj, "object/tangible/item/shared_publish_gift_magic_painting_ctrl_obj.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 object_tangible_item_shared_data_cube = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/item/shared_data_cube.iff"
 }
