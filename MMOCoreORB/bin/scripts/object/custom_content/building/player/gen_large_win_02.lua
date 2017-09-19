@@ -3,7 +3,7 @@ object_building_player_generic_large_window_s02 = object_building_player_shared_
 	baseMaintenanceRate = 80,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "kaas", "endor"},
 	constructionMarker = "object/building/player/construction/construction_player_house_corellia_large_style_01.iff",
-	skillMods = {
+	--[[ skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
 		{"private_med_battle_fatigue", 5},
@@ -51,7 +51,7 @@ object_building_player_generic_large_window_s02 = object_building_player_shared_
 		{"force_repair_bonus", 20},
 		{"crafting_repair", 20},
 		{"weapon_repair", 20}
-	},
+	}, ]]
 	childObjects = {
 		{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = -0.0654517, z = 0.518523, y = 8.82539, ow = -0.707107, ox = 0, oz = 0, oy = 0.707107, cellid = 2, containmentType = -1},
 		{templateFile = "object/tangible/sign/player/house_address.iff", x = 1, z = 3, y = -11.26, ox = 0, oy = 0, oz = 0, ow = 1, cellid = -1, containmentType = -1}

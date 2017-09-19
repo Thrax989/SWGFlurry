@@ -313,3 +313,7 @@ includeFile("custom_loot/groups/wearables/goggles_all.lua")
 
 includeFile("custom_loot/groups/furniture_loot_schematics/potted_plants_small.lua")
 includeFile("custom_loot/groups/furniture_loot_schematics/potted_plants_large.lua")
+includeFile("custom_loot/groups/furniture_loot_schematics/command_console.lua")
+includeFile("custom_loot/groups/furniture_loot_schematics/banner_imperial.lua")
+includeFile("custom_loot/groups/furniture_loot_schematics/banner_rebel.lua")
+includeFile("custom_loot/groups/furniture_loot_schematics/crafted_rugs.lua")

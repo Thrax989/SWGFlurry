@@ -6,7 +6,7 @@ object_building_player_jedi_house = object_building_player_shared_jedi_house:new
 	length = 1,
 	width = 1,
 	publicStructure = 0,
-	skillMods = {
+	--[[ skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
 		{"private_med_battle_fatigue", 5},
@@ -54,7 +54,7 @@ object_building_player_jedi_house = object_building_player_shared_jedi_house:new
 		{"force_repair_bonus", 20},
 		{"crafting_repair", 20},
 		{"weapon_repair", 20}
-	},
+	},]]
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = 3.66726, z = 1.0082, y = 5.34343, ow = -4.2222e-08, ox = 1.13133e-08, oz = -0.258819, oy = 0.965926, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/sign/player/house_address.iff", x = 2.05, z = 3.73, y = 6.46, ow = 0, ox = 0, oz = 0, oy = 1, cellid = -1, containmentType = -1}

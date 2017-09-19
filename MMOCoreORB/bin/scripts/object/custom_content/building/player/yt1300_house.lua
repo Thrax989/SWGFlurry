@@ -6,7 +6,7 @@ object_building_player_yt1300_house = object_building_player_shared_yt1300_house
 	publicStructure = 0,
 	length = 1,
 	width = 1,
-	skillMods = {
+	--[[skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
 		{"private_med_battle_fatigue", 5},
@@ -54,7 +54,7 @@ object_building_player_yt1300_house = object_building_player_shared_yt1300_house
 		{"force_repair_bonus", 20},
 		{"crafting_repair", 20},
 		{"weapon_repair", 20}
-	},
+	},]]
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = 13.7399, z = 4.85844, y = 0.0375382, ow = -0.707107, ox = 0, oz = 0, oy = 0.707107, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/terminal/terminal_elevator_up.iff", x = -2.57692, z = -0.963074, y = 0.00377454, ow = -0.707107, ox = 0, oz = 0, oy = 0.707107, cellid = 7, containmentType = -1}, --Floor 1

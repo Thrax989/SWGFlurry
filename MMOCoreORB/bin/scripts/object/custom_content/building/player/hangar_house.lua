@@ -6,7 +6,7 @@ object_building_player_hangar_house = object_building_player_shared_hangar_house
 	length = 2,
 	width = 2,
 	publicStructure = 0,
-	skillMods = {
+	--[[ skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
 		{"private_med_battle_fatigue", 5},
@@ -54,7 +54,7 @@ object_building_player_hangar_house = object_building_player_shared_hangar_house
 		{"force_repair_bonus", 20},
 		{"crafting_repair", 20},
 		{"weapon_repair", 20}
-	},
+	},]]
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = -9.233, z = 0.749969, y = -12.4163, ow = 0.707107, ox = 0, oz = 0, oy = 0.707107, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/sign/player/house_address.iff", x = -9.46, z = 3.75, y = 1.12, ow = 0, ox = 0, oz = 0, oy = 1, cellid = -1, containmentType = -1}

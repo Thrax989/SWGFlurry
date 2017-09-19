@@ -6,7 +6,7 @@ object_building_player_relaxation_house = object_building_player_shared_relaxati
 	length = 1,
 	width = 1,
 	publicStructure = 0,
-	skillMods = {
+	--[[skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
 		{"private_med_battle_fatigue", 5},
@@ -54,7 +54,7 @@ object_building_player_relaxation_house = object_building_player_shared_relaxati
 		{"force_repair_bonus", 20},
 		{"crafting_repair", 20},
 		{"weapon_repair", 20}
-	},
+	},]]
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = -4.0826, z = 1.22656, y = 9.68978, ow = -1.03316e-07, ox = 0, oz = 0, oy = 1, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/sign/player/house_address.iff", x = -3.41172, z = 4.22656, y = 10.5745, ow = -4.37114e-08, ox = 0, oz = 0, oy = 1, cellid = -1, containmentType = -1}

@@ -6,7 +6,7 @@ object_building_player_naboo_small_window_s01 = object_building_player_shared_na
 	length = 1,
 	width = 1,
 	publicStructure = 0,
-	skillMods = {
+	--[[ skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
 		{"private_med_battle_fatigue", 5},
@@ -54,7 +54,7 @@ object_building_player_naboo_small_window_s01 = object_building_player_shared_na
 		{"force_repair_bonus", 20},
 		{"crafting_repair", 20},
 		{"weapon_repair", 20}
-	},
+	},]]
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = 3.46896, z = 0.7, y = 5.45466, ow = -0.707107, ox = 0, oz = 0, oy = 0.707107, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/sign/player/house_address_naboo.iff", x = 1.55, z = 2, y = -8.36, ox = 0, oy = 0, oz = 0, ow = 1, cellid = -1, containmentType = -1}
