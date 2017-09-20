@@ -1,16 +1,16 @@
 /*
- * RebelMenuComponent.h
+ * ImperialMenuComponent.h
  *
  *  Created on: 09/19/2017
  *      Author: TOXIC
  */
 
-#ifndef REBELMENUCOMPONENT_H_
-#define REBELMENUCOMPONENT_H_
+#ifndef IMPERIALMENUCOMPONENT_H_
+#define IMPERIALMENUCOMPONENT_H_
 
 #include "TangibleObjectMenuComponent.h"
 
-class RebelMenuComponent : public TangibleObjectMenuComponent {
+class ImperialMenuComponent : public TangibleObjectMenuComponent {
 public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
@@ -18,4 +18,4 @@ public:
 
 };
 
-#endif /* REBELMENUCOMPONENT_H_ */
+#endif /* IMPERIALMENUCOMPONENT_H_ */
