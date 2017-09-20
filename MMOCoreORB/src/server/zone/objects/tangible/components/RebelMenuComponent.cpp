@@ -25,7 +25,7 @@ void RebelMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Object
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 
-	menuResponse->addRadialMenuItem(20, 3, "Increase Imperial Faction");
+	menuResponse->addRadialMenuItem(20, 3, "Increase Rebel Faction");
 
 }
 
