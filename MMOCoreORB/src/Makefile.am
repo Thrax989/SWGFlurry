@@ -466,6 +466,8 @@ core3_SOURCES =	$(core3_IDLS) \
 		server/zone/objects/tangible/terminal/spaceship/SpaceshipTerminalImplementation.cpp \
 		server/zone/objects/tangible/components/ArtifactMenuComponent.cpp \
 		server/zone/objects/tangible/components/XpMenuComponent.cpp \
+		server/zone/objects/tangible/components/ImperialMenuComponent.cpp \
+		server/zone/objects/tangible/components/RebelMenuComponent.cpp \
 		server/zone/objects/tangible/deed/components/PlaceStructureComponent.cpp \
 		server/zone/objects/tangible/deed/components/PlaceCityHallComponent.cpp \
 		server/zone/objects/tangible/deed/components/PlaceGCWBaseComponent.cpp \

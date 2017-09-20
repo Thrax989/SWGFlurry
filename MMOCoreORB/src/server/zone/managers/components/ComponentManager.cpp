@@ -52,6 +52,8 @@
 #include "server/zone/objects/tangible/components/HolocronMenuComponent.h"
 #include "server/zone/objects/tangible/components/ArtifactMenuComponent.h"
 #include "server/zone/objects/tangible/components/XpMenuComponent.h"
+#include "server/zone/objects/tangible/components/ImperialMenuComponent.h"
+#include "server/zone/objects/tangible/components/RebelMenuComponent.h"
 #include "server/zone/objects/tangible/components/WaypointDatapadMenuComponent.h"
 #include "server/zone/objects/tangible/components/ForceCrystalMenuComponent.h"
 #include "server/zone/objects/tangible/components/RobeObjectMenuComponent.h"
@@ -190,6 +192,8 @@ ComponentManager::ComponentManager() {
 
 	components.put("ZoneContainerComponent", new ZoneContainerComponent());
 
+     components.put("ImperialMenuComponent", new ImperialMenuComponent());
+	components.put("RebelMenuComponent", new RebelMenuComponent());
 	components.put("XpMenuComponent", new XpMenuComponent());
 	components.put("ArtifactMenuComponent", new ArtifactMenuComponent());
 	components.put("HolocronMenuComponent", new HolocronMenuComponent());
