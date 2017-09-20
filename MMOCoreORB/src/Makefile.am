@@ -465,6 +465,9 @@ core3_SOURCES =	$(core3_IDLS) \
 		server/zone/objects/intangible/ShipControlDeviceImplementation.cpp \
 		server/zone/objects/tangible/terminal/spaceship/SpaceshipTerminalImplementation.cpp \
 		server/zone/objects/tangible/components/ArtifactMenuComponent.cpp \
+		server/zone/objects/tangible/components/CollectionsilverMenuComponent.cpp \
+		server/zone/objects/tangible/components/CollectiongoldMenuComponent.cpp \
+		server/zone/objects/tangible/components/CollectionplatinumMenuComponent.cpp \
 		server/zone/objects/tangible/components/XpMenuComponent.cpp \
 		server/zone/objects/tangible/components/ImperialMenuComponent.cpp \
 		server/zone/objects/tangible/components/RebelMenuComponent.cpp \

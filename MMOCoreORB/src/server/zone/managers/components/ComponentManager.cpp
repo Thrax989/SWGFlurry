@@ -51,6 +51,9 @@
 #include "server/zone/objects/tangible/components/CloningTerminalMenuComponent.h"
 #include "server/zone/objects/tangible/components/HolocronMenuComponent.h"
 #include "server/zone/objects/tangible/components/ArtifactMenuComponent.h"
+#include "server/zone/objects/tangible/components/CollectionsilverMenuComponent.h"
+#include "server/zone/objects/tangible/components/CollectiongoldMenuComponent.h"
+#include "server/zone/objects/tangible/components/CollectionplatinumMenuComponent.h"
 #include "server/zone/objects/tangible/components/XpMenuComponent.h"
 #include "server/zone/objects/tangible/components/ImperialMenuComponent.h"
 #include "server/zone/objects/tangible/components/RebelMenuComponent.h"
@@ -194,6 +197,9 @@ ComponentManager::ComponentManager() {
 
      components.put("ImperialMenuComponent", new ImperialMenuComponent());
 	components.put("RebelMenuComponent", new RebelMenuComponent());
+	components.put("CollectionsilverMenuComponent", new CollectionsilverMenuComponent());
+	components.put("CollectiongoldMenuComponent", new CollectiongoldMenuComponent());
+	components.put("CollectionplatinumMenuComponent", new CollectionplatinumMenuComponent());
 	components.put("XpMenuComponent", new XpMenuComponent());
 	components.put("ArtifactMenuComponent", new ArtifactMenuComponent());
 	components.put("HolocronMenuComponent", new HolocronMenuComponent());
