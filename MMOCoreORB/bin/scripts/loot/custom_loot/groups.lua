@@ -4,7 +4,13 @@ includeFile("custom_loot/groups/backpacks/backpacks_b02.lua")
 --includeFile("custom_loot/groups/weapons/melee/stun_weapons.lua")
 --includeFile("custom_loot/groups/weapons/ranged/stun_ranged.lua")
 
+--Custom Jedi Crystal Boss Loots
 --includeFile("custom_loot/groups/crystals/g_named_crystals.lua")
+includeFile("custom_loot/groups/crystals/crystal_kuns_blood.lua")
+
+--Custom Jedi Lightsaber Groups
+includeFile("custom_loot/groups/lightsabers/exar_kun_ls_group.lua")
+includeFile("custom_loot/groups/lightsabers/g_jinzu_razor_loot_deed.lua")
 
 --NGE House Groups Multiple
 includeFile("custom_loot/groups/player_house_deeds/nge_house_loot_deed_01.lua")
@@ -41,6 +47,7 @@ includeFile("custom_loot/groups/player_house_deeds/g_yt1300_house_loot_deed.lua"
 
 --includeFile("custom_loot/groups/vehicle_loot_deeds/barc_speeder_deed_group.lua")
 
+--Weapons
 --includeFile("custom_loot/groups/weapons/melee/g_2h_sword_battleaxe.lua")
 --includeFile("custom_loot/groups/weapons/melee/g_2h_sword_blacksun_hack.lua")
 --includeFile("custom_loot/groups/weapons/melee/g_2h_sword_cleaver.lua")
@@ -119,7 +126,6 @@ includeFile("custom_loot/groups/player_house_deeds/g_yt1300_house_loot_deed.lua"
 --includeFile("custom_loot/groups/weapons/melee/g_wookiee_knuckler.lua")
 --includeFile("custom_loot/groups/weapons/melee/g_wookiee_knuckler_wod.lua")
 --includeFile("custom_loot/groups/weapons/melee/g_xantha_smasher.lua")
-
 --includeFile("custom_loot/groups/weapons/ranged/g_carbine_alliance_needler.lua")
 --includeFile("custom_loot/groups/weapons/ranged/g_carbine_avatar_trando.lua")
 --includeFile("custom_loot/groups/weapons/ranged/g_carbine_avatar_trando_e5.lua")
@@ -300,20 +306,22 @@ includeFile("custom_loot/groups/player_house_deeds/g_yt1300_house_loot_deed.lua"
 
 includeFile("custom_loot/groups/wearables/goggles_all.lua")
 
-
---includeFile("custom_loot/groups/weapons/melee/g_2h_sword_avatar_wke_toothpick.lua")
---includeFile("custom_loot/groups/weapons/melee/g_2h_sword_kashyyk.lua")
---includeFile("custom_loot/groups/weapons/melee/g_2h_sword_pvp_bf_01.lua")
---includeFile("custom_loot/groups/weapons/melee/g_knife_trando_skinner.lua")
---includeFile("custom_loot/groups/weapons/melee/g_som_2h_sword_tulrus.lua")
---includeFile("custom_loot/groups/weapons/melee/g_sword_acid.lua")
---includeFile("custom_loot/groups/weapons/melee/g_sword_avatar_wke_spiritblade.lua")
---includeFile("custom_loot/groups/weapons/melee/g_sword_pvp_bf_01.lua")
---includeFile("custom_loot/groups/weapons/melee/g_sword_wookiee.lua")
-
+--Weapons
+--[[
+includeFile("custom_loot/groups/weapons/melee/g_2h_sword_avatar_wke_toothpick.lua")
+includeFile("custom_loot/groups/weapons/melee/g_2h_sword_kashyyk.lua")
+includeFile("custom_loot/groups/weapons/melee/g_2h_sword_pvp_bf_01.lua")
+includeFile("custom_loot/groups/weapons/melee/g_knife_trando_skinner.lua")
+includeFile("custom_loot/groups/weapons/melee/g_som_2h_sword_tulrus.lua")
+includeFile("custom_loot/groups/weapons/melee/g_sword_acid.lua")
+includeFile("custom_loot/groups/weapons/melee/g_sword_avatar_wke_spiritblade.lua")
+includeFile("custom_loot/groups/weapons/melee/g_sword_pvp_bf_01.lua")
+includeFile("custom_loot/groups/weapons/melee/g_sword_wookiee.lua")
+]]
+--Custom Furniture Schems
 includeFile("custom_loot/groups/furniture_loot_schematics/potted_plants_small.lua")
 includeFile("custom_loot/groups/furniture_loot_schematics/potted_plants_large.lua")
-includeFile("custom_loot/groups/furniture_loot_schematics/command_console.lua")
-includeFile("custom_loot/groups/furniture_loot_schematics/banner_imperial.lua")
-includeFile("custom_loot/groups/furniture_loot_schematics/banner_rebel.lua")
+includeFile("custom_loot/groups/furniture_loot_schematics/g_command_console.lua")
+includeFile("custom_loot/groups/furniture_loot_schematics/g_banner_imperial.lua")
+includeFile("custom_loot/groups/furniture_loot_schematics/g_banner_rebel.lua")
 includeFile("custom_loot/groups/furniture_loot_schematics/crafted_rugs.lua")

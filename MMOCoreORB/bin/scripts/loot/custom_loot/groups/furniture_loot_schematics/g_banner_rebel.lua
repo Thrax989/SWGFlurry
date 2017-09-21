@@ -1,4 +1,4 @@
-banner_rebel = {
+g_banner_rebel = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -10,4 +10,4 @@ banner_rebel = {
 	}
 }
 
-addLootGroupTemplate("banner_rebel", banner_rebel)
+addLootGroupTemplate("g_banner_rebel", g_banner_rebel)

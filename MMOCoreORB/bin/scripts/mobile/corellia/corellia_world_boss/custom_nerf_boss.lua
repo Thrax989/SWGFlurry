@@ -77,7 +77,7 @@ custom_nerf_boss = Creature:new {
    },
    {
      	 		 groups = {
-        			 {group = "armor_attachements", chance = 5000000},
+        			 {group = "armor_attachments", chance = 5000000},
         			 {group = "clothing_attachments", chance = 5000000}
    },
       			          lootChance = 10000000
@@ -101,12 +101,18 @@ custom_nerf_boss = Creature:new {
     			
     },
     
-	weapons = {""},
+	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareacombo","stateAccuracyBonus=100"},
-		{"creatureareaknockdown","stateAccuracyBonus=100"}
-}
+		{"creatureareacombo","stateAccuracyBonus=50"},
+ 		{"creatureareaknockdown","stateAccuracyBonus=50"},
+		{"knockdownattack","KnockdownChance=50"},
+		{"creatureareaknockdown","KnockdownChance=50"},
+		{"dizzyattack","DizzyChance=50"},
+		{"stunattack","StunChance=50"},
+		{"intimidationattack","IntimidationChance=50"},
+		{"creatureareaattack",""}
+ 	}
 }
 
 CreatureTemplates:addCreatureTemplate(custom_nerf_boss, "custom_nerf_boss")

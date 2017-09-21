@@ -31,7 +31,7 @@ mandalore_the_resurrector = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-        			{group = "pearls_flawless", chance = 5000000},
+        			{group = "power_crystals", chance = 5000000},
 				{group = "armor_attachments", chance = 2500000},
 				{group = "clothing_attachments", chance = 2500000}
 		},
@@ -39,7 +39,7 @@ mandalore_the_resurrector = Creature:new {
 		},
    		{
 			groups = {
-        			{group = "pearls_flawless", chance = 5000000},
+        			{group = "power_crystals", chance = 5000000},
         			{group = "armor_attachments", chance = 2500000},
         			{group = "clothing_attachments", chance = 2500000}
       		},
@@ -47,7 +47,7 @@ mandalore_the_resurrector = Creature:new {
     		},
     		{
       			groups = {
-        			{group = "pearls_flawless", chance = 5000000},
+        			{group = "power_crystals", chance = 5000000},
 				{group = "armor_attachments", chance = 2500000},
 				{group = "clothing_attachments", chance = 2500000}
       		},
@@ -55,7 +55,7 @@ mandalore_the_resurrector = Creature:new {
     		},
    		{
       			groups = {
-        			{group = "pearls_flawless", chance = 5000000},
+        			{group = "power_crystals", chance = 5000000},
        	 			{group = "armor_attachments", chance = 2500000},
         			{group = "clothing_attachments", chance = 2500000}
       		},
@@ -89,72 +89,7 @@ mandalore_the_resurrector = Creature:new {
       		},
       			lootChance = 10000000
     		},
-		{
-			groups = {
-				{group = "g_named_crystals", chance = 10000000}
-		},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "nightsister_rare", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "krayt_tissue_rare", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "weapons_all", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-        	{
-        		groups = {
-          			{group = "wearables_rare", chance = 10000000}
-            	},
-           		 lootChance = 10000000
-          	},
-        	{
-          		groups = {
-            			{group = "acklay", chance = 10000000}
-          	},
-          		lootChance = 10000000
-        	},
-        	{
-          		groups = {
-            			{group = "acklay", chance = 10000000}
-          	},
-          		lootChance = 10000000
-        	},
-        	{
-        		groups = {
-          			{group = "fire_breathing_spider", chance = 10000000}
-            	},
-            		lootChance = 10000000
-          	},
-          	{
-          		groups = {
-            			{group = "fire_breathing_spider", chance = 10000000}
-              	},
-              		lootChance = 10000000
-            	},
-		{
-          		groups = {
-            			{group = "saberhand27", chance = 10000000}
-              	},
-              		lootChance = 10000000
-            	},
-		{
-          		groups = {
-            			{group = "saberhand26", chance = 10000000}
-              	},
-              		lootChance = 10000000
-            	},
+		
 		},
 	weapons = {"creature_spit_heavy_flame"},
 	reactionStf = "@npc_reaction/slang",

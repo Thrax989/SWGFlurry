@@ -1,4 +1,4 @@
-banner_imperial = {
+g_banner_imperial = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -10,4 +10,4 @@ banner_imperial = {
 	}
 }
 
-addLootGroupTemplate("banner_imperial", banner_imperial)
+addLootGroupTemplate("g_banner_imperial", g_banner_imperial)

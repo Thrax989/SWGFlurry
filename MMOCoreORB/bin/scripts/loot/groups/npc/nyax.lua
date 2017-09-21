@@ -5,11 +5,10 @@ nyax = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "attachment_armor", weight = 1666667},
-		{itemTemplate = "attachment_clothing", weight = 1666667},
-		{itemTemplate = "nyax_necklace", weight = 2033333},
-		{itemTemplate = "junk", weight = 3033333},
-		{itemTemplate = "junk", weight = 1600000}
+		{itemTemplate = "attachment_armor", weight = 2000000},
+		{itemTemplate = "attachment_clothing", weight = 2000000},
+		{itemTemplate = "nyax_necklace", weight = 2000000},
+		{groupTemplate = "junk", weight = 4000000}
 	}
 }
 

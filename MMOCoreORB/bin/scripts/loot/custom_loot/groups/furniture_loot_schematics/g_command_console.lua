@@ -1,4 +1,4 @@
-command_console = {
+g_command_console = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -9,4 +9,4 @@ command_console = {
 	}
 }
 
-addLootGroupTemplate("command_console", command_console)
+addLootGroupTemplate("g_command_console", g_command_console)

@@ -32,7 +32,7 @@ jaajaabinks = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "pearls_flawless", chance = 10000000},
+				{group = "power_crystals", chance = 10000000},
 				
 			},
 			lootChance = 10000000

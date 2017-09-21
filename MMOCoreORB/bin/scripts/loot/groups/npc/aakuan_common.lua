@@ -5,12 +5,9 @@ aakuan_common = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "junk", weight = 1666667},
-		{itemTemplate = "junk", weight = 1666667},
-		{itemTemplate = "junk", weight = 1666667},
-		{itemTemplate = "junk", weight = 1666667},
-		{itemTemplate = "chemical_recycler_schematic", weight = 1666666},
-		{groupTemplate = "junk", weight = 1666666},
+		
+		{itemTemplate = "chemical_recycler_schematic", weight = 2000000},
+		{groupTemplate = "junk", weight = 8000000},
 	}
 }
 

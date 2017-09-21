@@ -5,9 +5,8 @@ geonosian_hard = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "mandalorian_rebreather", weight = 1500000},
 		{itemTemplate = "geo_sonic_blaster_schematic", weight = 6000000},
-		{itemTemplate = "mandalorian_rebreather", weight = 2500000}
+		{itemTemplate = "mandalorian_rebreather", weight = 4000000}
 	}
 }
 

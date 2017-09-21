@@ -32,9 +32,8 @@ mythosaur = Creature:new {
 		{
 	        	groups = {
 				{group = "krayt_dragon_common", chance = 6000000},
-				{group = "krayt_tissue_uncommon", chance = 3000000},
-				{group = "armor_all", chance = 500000},
-				{group = "weapons_all", chance = 500000}
+				{group = "krayt_tissue_uncommon", chance = 4000000},
+				
 			},
 			lootChance = 10000000
 		},
@@ -57,13 +56,7 @@ mythosaur = Creature:new {
 			},
 			lootChance = 2500000
 		},
-		{
-	        groups = {
-				{group = "pearls_premium", chance = 4000000},
-				{group = "pearls_flawless", chance = 6000000}
-			},
-			lootChance = 4000000
-		}
+		
 	},
 	weapons = {},
 	conversationTemplate = "",

@@ -57,39 +57,8 @@ shadow_collective_sc87 = Creature:new {
         	{group = "armor_attachments", chance = 5000000}
     },
       		lootChance = 10000000
-    },
-    {
-    	 groups = {
-		{group = "g_named_crystals", chance = 10000000}
-    },
-    		lootChance = 5000000
-    },
-    {
-      	 groups = {
-        	{group = "geonosian_common", chance = 5000000},
-        	{group = "apocalypse", chance = 5000000}
-    },
-      		lootChance = 10000000
-    },
-    {
-      	 groups = {
-        	{group = "krayt_dragon_common2", chance = 10000000},
-    },
-      		lootChance = 10000000
-    },
-    {
-      	 groups = {
-        	{group = "nge2", chance = 10000000}
-    },
-      		lootChance = 5000000
-    },
-    {
-      	 groups = {
-        	{group = "saberhand27", chance = 10000000}
-    },
-      		lootChance = 5000000
-    },
-    },
+      },
+},
 	weapons = {"dark_jedi_weapons_gen3"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(lightsabermaster)
