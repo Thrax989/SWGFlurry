@@ -27,6 +27,9 @@ includeFile("custom_loot/items/backpacks/armored_backpack.lua")
 includeFile("custom_loot/items/backpacks/recon_backpack.lua")
 includeFile("custom_loot/items/backpacks/yoda_backpack.lua")
 
+--Human Skull
+includeFile("custom_loot/items/human_skull.lua")
+
 
 --House Deeds
 includeFile("custom_loot/items/player_house_deeds/atat_house_loot_deed.lua")

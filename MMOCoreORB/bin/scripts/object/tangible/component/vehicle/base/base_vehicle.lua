@@ -42,12 +42,10 @@
 
 
 
---Children folder includes
+--DUMMY FILE TO CLEAR LOAD ERROR
 
--- Server Objects
-includeFile("tangible/component/vehicle/base/base_armor_panel.lua")
-includeFile("tangible/component/vehicle/base/base_veh_hull.lua")
-includeFile("tangible/component/vehicle/base/base_veh_hull_hvy.lua")
-includeFile("tangible/component/vehicle/base/base_veh_weapon.lua")
-includeFile("tangible/component/vehicle/base/base_veh_weapon_hvy.lua")
-includeFile("tangible/component/vehicle/base/base_vehicle.lua")
+object_tangible_component_vehicle_base_base_armor_vehicle = object_tangible_component_vehicle_base_shared_base_vehicle:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_vehicle_base_base_vehicle, "object/tangible/component/vehicle/base/base_vehicle.iff")
