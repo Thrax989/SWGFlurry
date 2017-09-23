@@ -42,17 +42,20 @@ afarathu_cult_bodyguard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				},
+				{group = "junk", chance = 10000000}				
+		},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "artifact", chance = 10000000}			},
+				{group = "artifact", chance = 10000000}			
+		},
 			lootChance = 1500000
 		},
 		{
 			groups = {
-				{group = "tierone", chance = 10000000}			},
+				{group = "tierone", chance = 10000000}
+		},
 			lootChance = 1500000
 		},
 		{
@@ -63,7 +66,8 @@ afarathu_cult_bodyguard = Creature:new {
 		},
 		{
 			groups = {
-				{group = "tierthree", chance = 10000000}			},
+				{group = "tierthree", chance = 10000000}
+		},
 			lootChance = 500000
 		}
 	},
