@@ -1162,3 +1162,9 @@ includeFile("items/wearables/wookiee/wke_skirt_s01.lua")
 includeFile("items/wearables/wookiee/wke_skirt_s02.lua")
 includeFile("items/wearables/wookiee/wke_skirt_s03.lua")
 includeFile("items/wearables/wookiee/wke_skirt_s04.lua")
+
+
+--Collections Tier 1, Tier 2, Tier 3 crate loot box's
+includeFile("items/collection/collectiontierone.lua")
+includeFile("items/collection/collectiontiertwo.lua")
+includeFile("items/collection/collectiontierthree.lua")

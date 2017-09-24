@@ -361,3 +361,9 @@ includeFile("groups/wearables/wearables_uncommon.lua")
 
 includeFile("groups/playerDatapad.lua")
 includeFile("groups/playerSkull.lua")
+
+
+--Collection system
+includeFile("groups/tierone.lua")
+includeFile("groups/tiertwo.lua")
+includeFile("groups/tierthree.lua")
