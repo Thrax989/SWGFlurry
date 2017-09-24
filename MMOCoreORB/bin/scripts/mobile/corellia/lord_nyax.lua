@@ -28,12 +28,31 @@ lord_nyax = Creature:new {
 	templates = {"object/mobile/dressed_lord_nyax.iff"},
 	lootGroups = {
 		{
-		groups = {
-				{group = "junk", chance = 4500000},
-				{group = "nyax", chance = 3500000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000}
-			}
+			groups = {
+				{group = "junk", chance = 10000000}				},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			},
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}			},
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 500000
 		}
 	},
 	weapons = {"nyaxs_weapons"},

@@ -28,7 +28,38 @@ swamp_gurrcat = Creature:new {
 	templates = {"object/mobile/gurrcat.iff"},
 	controlDeviceTemplate = "object/intangible/pet/tusk_cat_hue.iff",
 	scale = 1.1,
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 500000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
