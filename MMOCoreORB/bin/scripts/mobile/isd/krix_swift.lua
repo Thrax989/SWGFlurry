@@ -22,10 +22,12 @@ krix_swift = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
+	pvpBitmask = NONE,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = KILLER,
-	optionsBitmask = 136,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+	scale = 1.0,
+
 
 	templates = {"object/mobile/dressed_imperial_colonel_m.iff"},
 	lootGroups = {
@@ -46,7 +48,7 @@ krix_swift = Creature:new {
 		}
 	},
 	weapons = {"imperial_weapons_heavy"},
-	reactionStf = "@npc_reaction/military",
+	conversationTemplate = "",
 	attacks = merge(riflemanmaster,carbineermaster,brawlermaster)
 }
 
