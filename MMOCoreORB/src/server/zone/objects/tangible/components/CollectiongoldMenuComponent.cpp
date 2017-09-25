@@ -35,7 +35,8 @@ int CollectiongoldMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject
 
  	ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
  	ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
-	lootManager->createLoot(inventory, "collectiongold", 200);
+	lootManager->createLoot(inventory, "collectiontiertwo", 200);
+	lootManager->createLoot(inventory, "collectiontiertwo", 200);
 	sceneObject->destroyObjectFromWorld(true);
 	sceneObject->destroyObjectFromDatabase(true);
 	return 0;
