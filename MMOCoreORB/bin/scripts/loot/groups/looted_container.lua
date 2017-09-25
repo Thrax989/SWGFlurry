@@ -50,10 +50,8 @@ looted_container = {
 		{groupTemplate = "command_console", weight = 500000},
 
 		-- Housing (25% chance)
-		{groupTemplate = "potted_plants_large", weight = 500000},
-		{groupTemplate = "potted_plants_small", weight = 500000},
-		{groupTemplate = "nge_house_loot_deed_01", weight = 750000},
-		{groupTemplate = "nge_house_loot_deed_windowed", weight = 750000},
+		{groupTemplate = "potted_plants_large", weight = 1250000},
+		{groupTemplate = "potted_plants_small", weight = 1250000},
 	}
 }
 

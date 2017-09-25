@@ -5,7 +5,11 @@ tierthree  = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "collectiontierthree", weight = 10000000}
+		{itemTemplate = "attachment_armor", weight = 2000000},
+		{itemTemplate = "attachment_clothing", weight = 2000000},
+		{itemTemplate = "collectiontierthree", weight = 2000000},
+		{itemTemplate = "nge_house_loot_deed_01", weight = 2000000},
+		{itemTemplate = "nge_house_loot_deed_windowed", weight = 2000000},
 	}
 }
 
