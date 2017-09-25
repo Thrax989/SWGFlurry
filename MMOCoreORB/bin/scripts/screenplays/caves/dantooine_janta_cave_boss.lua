@@ -7,7 +7,6 @@ registerScreenPlay("dantooine_janta_cave_boss", true)
 
 function dantooine_janta_cave_boss:start()
 	if (isZoneEnabled("dantooine")) then
-		print("dantooine Enabled: Spawning dantooine_janta_cave_boss")
 		self:spawnMobiles()
 	end
 end

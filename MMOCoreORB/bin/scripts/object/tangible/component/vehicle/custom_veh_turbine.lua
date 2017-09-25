@@ -41,30 +41,8 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_tangible_component_vehicle_custom_veh_turbine = object_tangible_component_vehicle_shared_custom_veh_turbine:new {
 
---Children folder includes
+}
 
--- Server Objects
-includeFile("draft_schematic/vehicle/civilian/civilian_a.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_aa.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_b.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_c.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_d.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_e.lua")
-includeFile("draft_schematic/vehicle/civilian/jetpack.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_av21.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_x34.lua")
-includeFile("draft_schematic/vehicle/civilian/speeder_bike.lua")
-includeFile("draft_schematic/vehicle/civilian/speeder_bike_swoop.lua")
-includeFile("draft_schematic/vehicle/civilian/ab1_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/barc_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/flare_s_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/imperial_barc_speeder.lua")
---includeFile("draft_schematic/vehicle/civilian/koro2_speeder_a.lua")
---includeFile("draft_schematic/vehicle/civilian/koro2_speeder_b.lua")
---includeFile("draft_schematic/vehicle/civilian/koro2_speeder_.lua")
---includeFile("draft_schematic/vehicle/civilian/pod_racer_one_speeder.lua")
---includeFile("draft_schematic/vehicle/civilian/pod_racer_two_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/rebel_barc_speeder.lua")
---includeFile("draft_schematic/vehicle/civilian/sith_speeder.lua")
---includeFile("draft_schematic/vehicle/civilian/stap_speeder.lua")
+ObjectTemplates:addTemplate(object_tangible_component_vehicle_custom_veh_turbine, "object/tangible/component/vehicle/custom_veh_turbine.iff")

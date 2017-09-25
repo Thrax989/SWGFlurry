@@ -63,7 +63,7 @@ globalExpMultiplier = 1.0
 baseStoredCreaturePets = 2
 baseStoredFactionPets = 3
 baseStoredDroids = 5
-baseStoredVehicles = 3
+baseStoredVehicles = 10
 baseStoredShips = 3
 
 -----------------------------------
@@ -119,7 +119,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/furniture/all/frn_bench_generic.iff", milestone=120, oneTime=false, description="Park Bench"},
 
 		-- 150 Day Rewards
-		{templateFile = "object/tangible/furniture/decorative/professor_desk.iff", milestone=125, oneTime=false, description="Professor Desk"},
+		{templateFile = "object/tangible/furniture/decorative/professor_desk.iff", milestone=150, oneTime=false, description="Professor Desk"},
 		{templateFile = "object/tangible/furniture/decorative/diagnostic_screen.iff", milestone=150, oneTime=false, description="@frn_n:diagnostic_screen"},
 		--{templateFile = "object/tangible/furniture/all/frn_all_plant_potted_lg_s2.iff", milestone=540, oneTime=false, description="Large Potted Plant (Style 2)"},
 		--{templateFile = "object/tangible/furniture/all/frn_all_plant_potted_lg_s3.iff", milestone=540, oneTime=false, description="Large Potted Plant (Style 3)"},
@@ -142,7 +142,7 @@ veteranRewards = {
 
 		-- 240 Day Rewards
 		{templateFile = "object/tangible/veteran_reward/frn_plush_tauntaun.iff", milestone=240, oneTime=false, description="Push Tauntaun"},
-		{templateFile = "object/tangible/veteran_reward/frn_vet_atat_toy.iff"", milestone=240, oneTime=false, description="AT-AT Toy"},
+		{templateFile = "object/tangible/veteran_reward/frn_vet_atat_toy.iff", milestone=240, oneTime=false, description="AT-AT Toy"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_boba_toy.iff", milestone=240, oneTime=false, description="Boba Fett Toy"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_carbonite_ugnaught.iff", milestone=240, oneTime=false, description="Ugnaught in Carbonite"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_carbonite_gungan.iff", milestone=240, oneTime=false, description="Gungan in Carbonite"},

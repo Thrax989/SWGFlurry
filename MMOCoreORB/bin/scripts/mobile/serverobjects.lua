@@ -49,3 +49,4 @@ includeFile("isd/serverobjects.lua")
 
 ---New Content
 includeFile("custom_content/serverobjects.lua")
+includeFile("custom_vendors/serverobjects.lua")

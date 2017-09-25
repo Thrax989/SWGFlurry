@@ -3724,3 +3724,27 @@ object_tangible_component_vehicle_shared_weapon_link = SharedTangibleObjectTempl
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_component_vehicle_shared_weapon_link, "object/tangible/component/vehicle/shared_weapon_link.iff")
+
+object_tangible_component_vehicle_shared_custom_veh_chassis_brace = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/component/vehicle/shared_custom_veh_chassis_brace.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_component_vehicle_shared_custom_veh_chassis_brace, "object/tangible/component/vehicle/shared_custom_veh_chassis_brace.iff")
+
+object_tangible_component_vehicle_shared_custom_veh_grav_motor = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/component/vehicle/shared_custom_veh_grav_motor.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_component_vehicle_shared_custom_veh_grav_motor, "object/tangible/component/vehicle/shared_custom_veh_grav_motor.iff")
+
+object_tangible_component_vehicle_shared_custom_veh_steering_mech = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/component/vehicle/shared_custom_veh_steering_mech.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_component_vehicle_shared_custom_veh_steering_mech, "object/tangible/component/vehicle/shared_custom_veh_steering_mech.iff")
+
+object_tangible_component_vehicle_shared_custom_veh_turbine = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/component/vehicle/shared_custom_veh_turbine..iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_component_vehicle_shared_custom_veh_turbine, "object/tangible/component/vehicle/shared_custom_veh_turbine..iff")

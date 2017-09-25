@@ -5271,3 +5271,45 @@ object_tangible_loot_loot_schematic_shared_tat_sm_win_01_loot_schem = SharedTang
 }
 ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_tat_sm_win_01_loot_schem, "object/tangible/loot/loot_schematic/shared_tat_sm_win_01_loot_schem.iff")
 --**************************************************************************************************************************************************
+
+--AB-1 Schematic
+object_tangible_loot_loot_schematic_shared_ab_1_speeder_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_ab_1_speeder_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_ab_1_speeder_schematic, "object/tangible/loot/loot_schematic/shared_ab_1_speeder_schematic.iff")
+--**************************************************************************************************************************************************
+
+--BARC Speeder
+object_tangible_loot_loot_schematic_shared_barc_speeder_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_barc_speeder_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_barc_speeder_schematic, "object/tangible/loot/loot_schematic/shared_barc_speeder_schematic.iff")
+--**************************************************************************************************************************************************
+
+--Imperial BARC
+object_tangible_loot_loot_schematic_shared_imperial_barc_speeder_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_imperial_barc_speeder_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_imperial_barc_speeder_schematic, "object/tangible/loot/loot_schematic/shared_imperial_barc_speeder_schematic.iff")
+--**************************************************************************************************************************************************
+
+
+--Rebel BARC
+object_tangible_loot_loot_schematic_shared_rebel_barc_speeder_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rebel_barc_speeder_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_rebel_barc_speeder_schematic, "object/tangible/loot/loot_schematic/shared_rebel_barc_speeder_schematic.iff")
+--**************************************************************************************************************************************************
+
+--Flare_S
+object_tangible_loot_loot_schematic_shared_flare_s_speeder_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_flare_s_speeder_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_flare_s_speeder_schematic, "object/tangible/loot/loot_schematic/shared_flare_s_speeder_schematic.iff")
+--*************************************************************************************************************************************************
+

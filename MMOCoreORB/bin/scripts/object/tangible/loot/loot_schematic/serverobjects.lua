@@ -128,9 +128,11 @@ includeFile("tangible/loot/loot_schematic/technical_console_s02_schematic.lua")
 includeFile("tangible/loot/loot_schematic/throwpillow_schematic.lua")
 includeFile("tangible/loot/loot_schematic/tumble_blender_schematic.lua")
 includeFile("tangible/loot/loot_schematic/utensils_schematic.lua")
+--Lightsabers
 includeFile("tangible/loot/loot_schematic/sword_lightsaber_onehanded_gen5_exar_kun_schematic.lua")
 includeFile("tangible/loot/loot_schematic/sword_lightsaber_polearm_gen5_exar_kun_schematic.lua")
 includeFile("tangible/loot/loot_schematic/sword_lightsaber_onehanded_gen5_jinzu_schematic.lua")
+--Furniture
 includeFile("tangible/loot/loot_schematic/custom_potted_plants_sml02_schematic.lua")
 includeFile("tangible/loot/loot_schematic/custom_potted_plants_sml03_schematic.lua")
 includeFile("tangible/loot/loot_schematic/custom_potted_plants_sml04_schematic.lua")
@@ -151,6 +153,7 @@ includeFile("tangible/loot/loot_schematic/custom_banner_rebel_schematic.lua")
 includeFile("tangible/loot/loot_schematic/custom_banner_rebel02_schematic.lua")
 includeFile("tangible/loot/loot_schematic/custom_potted_tree02_schematic.lua")
 includeFile("tangible/loot/loot_schematic/custom_command_console_schematic.lua")
+--NGE Houses
 includeFile("tangible/loot/loot_schematic/gen_lg_win_01_house_loot_schem.lua")
 includeFile("tangible/loot/loot_schematic/gen_lg_win_02_house_loot_schem.lua")
 includeFile("tangible/loot/loot_schematic/gen_md_win_01_house_loot_schem.lua")
@@ -176,5 +179,9 @@ includeFile("tangible/loot/loot_schematic/vehicle_house_loot_schem.lua")
 includeFile("tangible/loot/loot_schematic/vipbunker_house_loot_schem.lua")
 includeFile("tangible/loot/loot_schematic/yoda_house_loot_schem.lua")
 includeFile("tangible/loot/loot_schematic/yt1300_house_loot_schem.lua")
-
-
+--Vehicles
+includeFile("tangible/loot/loot_schematic/ab_1_speeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/barc_speeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/imperial_barc_speeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/rebel_barc_speeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/flare_s_speeder_schematic.lua")
