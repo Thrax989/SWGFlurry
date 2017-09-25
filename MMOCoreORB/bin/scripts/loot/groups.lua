@@ -370,3 +370,5 @@ includeFile("groups/tierthree.lua")
 includeFile("groups/collectiontierone.lua")
 includeFile("groups/collectiontiertwo.lua")
 includeFile("groups/collectiontierthree.lua")
+includeFile("groups/artifact.lua")
+
