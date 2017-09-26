@@ -28,34 +28,36 @@ enraged_tabage_mother = Creature:new {
 	templates = {"object/mobile/tabage.iff"},
 	controlDeviceTemplate = "object/intangible/pet/langlatch_hue.iff",
 	scale = 1.25,
-	lootGroups = {},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				},
+				{group = "junk", chance = 10000000}				
+		},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "artifact", chance = 10000000}			},
+				{group = "artifact", chance = 10000000}			
+		},
 			lootChance = 1500000
 		},
 		{
 			groups = {
-				{group = "tierone", chance = 10000000}			},
-			lootChance = 1500000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
+				{group = "tierone", chance = 10000000}
 		},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "tierthree", chance = 10000000}
+				{group = "tiertwo", chance = 10000000}
 		},
 			lootChance = 500000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 100000
 		}
 	},
 	conversationTemplate = "",
