@@ -51,6 +51,7 @@
 #include "server/zone/objects/tangible/components/CloningTerminalMenuComponent.h"
 #include "server/zone/objects/tangible/components/HolocronMenuComponent.h"
 #include "server/zone/objects/tangible/components/ArtifactMenuComponent.h"
+#include "server/zone/objects/tangible/components/ScrapMenuComponent.h"
 #include "server/zone/objects/tangible/components/CollectionsilverMenuComponent.h"
 #include "server/zone/objects/tangible/components/CollectiongoldMenuComponent.h"
 #include "server/zone/objects/tangible/components/CollectionplatinumMenuComponent.h"
@@ -202,6 +203,7 @@ ComponentManager::ComponentManager() {
 	components.put("CollectionplatinumMenuComponent", new CollectionplatinumMenuComponent());
 	components.put("XpMenuComponent", new XpMenuComponent());
 	components.put("ArtifactMenuComponent", new ArtifactMenuComponent());
+	components.put("ScrapMenuComponent", new ScrapMenuComponent());
 	components.put("HolocronMenuComponent", new HolocronMenuComponent());
 	components.put("WaypointDatapadMenuComponent", new WaypointDatapadMenuComponent());
 
