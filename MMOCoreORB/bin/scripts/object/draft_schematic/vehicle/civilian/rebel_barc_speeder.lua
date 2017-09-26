@@ -50,6 +50,7 @@ object_draft_schematic_vehicle_civilian_rebel_barc_speeder = object_draft_schema
 	craftingToolTab = 16, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 45,
 	size = 1,
+	factoryCrateSize = 0,
 	disableFactoryRun = true,
 
 	xpType = "crafting_general",
@@ -64,13 +65,13 @@ object_draft_schematic_vehicle_civilian_rebel_barc_speeder = object_draft_schema
 	customizationDefaults = {},
 
 	ingredientTemplateNames = {"craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n"},
-	ingredientTitleNames = {"vehicle_body", "structural_frame", "steering_mech", "custom_turbine"},
+	ingredientTitleNames = {"vehicle_body", "structural_frame", "chassis_brace", "steering_mech"},
 	ingredientSlotType = {0, 0, 1, 1},
-	resourceTypes = {"metal_nonferrous", "metal_ferrous", "object/tangible/component/vehicle/shared_custom_veh_steering_mech.iff", "object/tangible/component/vehicle/shared_custom_veh_turbine.iff"},
-	resourceQuantities = {1125, 3125, 1, 1},
+	resourceTypes = {"steel_duralloy", "metal_ferrous", "object/tangible/component/vehicle/shared_custom_veh_chassis_brace.iff", "object/tangible/component/vehicle/shared_custom_veh_steering_mech.iff"},
+	resourceQuantities = {6125, 3125, 1, 1},
 	contribution = {100, 100, 100, 100},
 
-	targetTemplate = "object/tangible/deed/vehicle_deed/flare_s_speeder_deed.iff",
+	
 
 	targetTemplate = "object/tangible/deed/vehicle_deed/barc_speeder_rebel_deed.iff",
 

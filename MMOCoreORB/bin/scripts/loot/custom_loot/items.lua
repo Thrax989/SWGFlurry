@@ -540,3 +540,9 @@ includeFile("custom_loot/items/furniture_loot_schematics/rug_r_l_m.lua")
 includeFile("custom_loot/items/furniture_loot_schematics/rug_r_m_m.lua")
 includeFile("custom_loot/items/furniture_loot_schematics/rug_r_s_m.lua")
 includeFile("custom_loot/items/furniture_loot_schematics/rug_s_m.lua")
+
+--Custom Vehicle Components
+includeFile("custom_loot/items/vehicle_comps/custom_veh_chassis_brace.lua")
+includeFile("custom_loot/items/vehicle_comps/custom_veh_grav_motor.lua")
+includeFile("custom_loot/items/vehicle_comps/custom_veh_steering_mech.lua")
+includeFile("custom_loot/items/vehicle_comps/custom_veh_turbine.lua")

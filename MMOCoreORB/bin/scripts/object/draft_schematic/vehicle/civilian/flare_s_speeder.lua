@@ -51,6 +51,7 @@ object_draft_schematic_vehicle_civilian_flare_s_speeder = object_draft_schematic
 	complexity = 45,
 	size = 1,
 	factoryCrateSize = 0,
+	disableFactoryRun = true,
 
 	xpType = "crafting_general",
 	xp = 1800,

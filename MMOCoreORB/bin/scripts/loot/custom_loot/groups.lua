@@ -325,3 +325,8 @@ includeFile("custom_loot/groups/furniture_loot_schematics/g_command_console.lua"
 includeFile("custom_loot/groups/furniture_loot_schematics/g_banner_imperial.lua")
 includeFile("custom_loot/groups/furniture_loot_schematics/g_banner_rebel.lua")
 includeFile("custom_loot/groups/furniture_loot_schematics/crafted_rugs.lua")
+
+--Custom Vehicle Components
+includeFile("custom_loot/groups/vehicle_components/custom_vehicle_rare.lua")
+includeFile("custom_loot/groups/vehicle_components/custom_vehicle_uncommon.lua")
+includeFile("custom_loot/groups/vehicle_components/custom_vehicle_common.lua")

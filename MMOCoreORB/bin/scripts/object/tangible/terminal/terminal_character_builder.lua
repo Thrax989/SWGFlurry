@@ -2887,10 +2887,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Imp Barc Speeder", "object/tangible/loot/loot_schematic/imperial_barc_speeder_schematic.iff",
 					"Reb Barc Speeder", "object/tangible/loot/loot_schematic/rebel_barc_speeder_schematic.iff",
 					"Flare S Swoop", "object/tangible/loot/loot_schematic/flare_s_speeder_schematic.iff",
-					"Rare Loot - Chassis Brace", "object/tangible/component/vehicle/custom_veh_chassis_brace.iff",
-					"Uncommon Loot - Grav Motor", "object/tangible/component/vehicle/custom_veh_grav_motor.iff",
-					"Uncommon Loot - Steering Mech", "object/tangible/component/vehicle/custom_veh_steering_mech.iff",
-					"Common Loot - Turbine", "object/tangible/component/vehicle/custom_veh_turbine.iff",
+					
 					
 				},
 
