@@ -37,7 +37,7 @@ playerRaces = { "object/creature/player/bothan_male.iff",
 	xpType = "jedi_general",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_onehandlightsaber_master" },
+	certificationsRequired = { "cert_onehandlightsaber_gen4" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "onehandlightsaber_accuracy" },
 
