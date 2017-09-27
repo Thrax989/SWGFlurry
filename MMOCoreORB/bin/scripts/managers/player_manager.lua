@@ -90,17 +90,19 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/frn_couch_falcon_section_s01.iff", milestone=30, oneTime=false, description="@veteran_new:falconchair"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_tie_fighter_toy.iff", milestone=30, oneTime=false, description="@veteran_new:mini_tiefighter"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_x_wing_toy.iff", milestone=30, oneTime=false, description="@veteran_new:mini_xwing"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=30, oneTime=true, description="Instant full xp token"},
 
-		-- 45 Day Rewards
-		{templateFile = "object/tangible/deed/vehicle_deed/speederbike_flash_deed.iff", milestone=45, oneTime=true},
-		{templateFile = "object/tangible/wearables/goggles/goggles_s01.iff", milestone=45, oneTime=true, description="Special Edition Goggles Style 1"},
-		{templateFile = "object/tangible/wearables/goggles/goggles_s02.iff", milestone=45, oneTime=true, description="Special Edition Goggles Style 2"},
-		{templateFile = "object/tangible/wearables/goggles/goggles_s03.iff", milestone=45, oneTime=true, description="Special Edition Goggles Style 3"},
-		{templateFile = "object/tangible/wearables/goggles/goggles_s04.iff", milestone=45, oneTime=true, description="Special Edition Goggles Style 4"},
-		{templateFile = "object/tangible/wearables/goggles/goggles_s05.iff", milestone=45, oneTime=true, description="Special Edition Goggles Style 5"},
-		{templateFile = "object/tangible/wearables/goggles/goggles_s06.iff", milestone=45, oneTime=true, description="Special Edition Goggles Style 6"},
-		{templateFile = "object/tangible/veteran_reward/frn_vet_darth_vader_toy.iff", milestone=45, oneTime=false, description="@veteran_new:mini_darthvader"},
-		
+		-- 60 Day Rewards
+		{templateFile = "object/tangible/deed/vehicle_deed/speederbike_flash_deed.iff", milestone=60, oneTime=true},
+		{templateFile = "object/tangible/wearables/goggles/goggles_s01.iff", milestone=60, oneTime=true, description="Special Edition Goggles Style 1"},
+		{templateFile = "object/tangible/wearables/goggles/goggles_s02.iff", milestone=60, oneTime=true, description="Special Edition Goggles Style 2"},
+		{templateFile = "object/tangible/wearables/goggles/goggles_s03.iff", milestone=60, oneTime=true, description="Special Edition Goggles Style 3"},
+		{templateFile = "object/tangible/wearables/goggles/goggles_s04.iff", milestone=60, oneTime=true, description="Special Edition Goggles Style 4"},
+		{templateFile = "object/tangible/wearables/goggles/goggles_s05.iff", milestone=60, oneTime=true, description="Special Edition Goggles Style 5"},
+		{templateFile = "object/tangible/wearables/goggles/goggles_s06.iff", milestone=60, oneTime=true, description="Special Edition Goggles Style 6"},
+		{templateFile = "object/tangible/veteran_reward/frn_vet_darth_vader_toy.iff", milestone=60, oneTime=false, description="@veteran_new:mini_darthvader"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=60, oneTime=true, description="Instant full xp token"},
+
 		-- 90 Day Rewards
 		{templateFile = "object/tangible/veteran_reward/frn_tech_console_sectional_a.iff", milestone=90, oneTime=false, description="@veteran_new:techconsole_a"},
 		{templateFile = "object/tangible/veteran_reward/frn_tech_console_sectional_b.iff", milestone=90, oneTime=false, description="@veteran_new:techconsole_b"},
@@ -108,6 +110,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/frn_tech_console_sectional_d.iff", milestone=90, oneTime=false, description="@veteran_new:techconsole_d"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_jabba_toy.iff", milestone=90, oneTime=false, description="@veteran_new:mini_jabba"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_stormtrooper_toy.iff", milestone=90, oneTime=false, description="@veteran_new:mini_stormtrooper"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=90, oneTime=true, description="Instant full xp token"},
 		--{templateFile = "object/tangible/veteran_reward/antidecay.iff", milestone=360, oneTime=true, description="@veteran_new:antidecay"},
 
 		-- 120 Day Rewards
@@ -117,6 +120,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/furniture/tatooine/frn_tato_vase_style_02.iff", milestone=120, oneTime=false, description="Gold Ornamental Vase (Style 2)"},
 		{templateFile = "object/tangible/furniture/decorative/foodcart.iff", milestone=120, oneTime=false, description="Foodcart"},
 		{templateFile = "object/tangible/furniture/all/frn_bench_generic.iff", milestone=120, oneTime=false, description="Park Bench"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=120, oneTime=true, description="Instant full xp token"},
 
 		-- 150 Day Rewards
 		{templateFile = "object/tangible/furniture/decorative/professor_desk.iff", milestone=150, oneTime=false, description="Professor Desk"},
@@ -125,6 +129,7 @@ veteranRewards = {
 		--{templateFile = "object/tangible/furniture/all/frn_all_plant_potted_lg_s3.iff", milestone=540, oneTime=false, description="Large Potted Plant (Style 3)"},
 		--{templateFile = "object/tangible/furniture/all/frn_all_plant_potted_lg_s4.iff", milestone=540, oneTime=false, description="Large Potted Plant (Style 4)"},
 		{templateFile = "object/tangible/veteran_reward/harvester.iff", milestone=150, oneTime=true, description="@veteran_new:poweredharvester"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=150, oneTime=true, description="Instant full xp token"},
 	
 		-- 180 Day Rewards
 		{templateFile = "object/tangible/furniture/modern/bar_counter_s1.iff", milestone=180, oneTime=false, description="Bar Countertop"},
@@ -132,6 +137,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/furniture/modern/bar_piece_curve_s2.iff", milestone=180, oneTime=false, description="Bar Countertop (Curved, Style 2)"},
 		{templateFile = "object/tangible/furniture/modern/bar_piece_straight_s1.iff", milestone=180, oneTime=false, description="Bar Countertop (Straight, Style 1)"},
 		{templateFile = "object/tangible/furniture/modern/bar_piece_straight_s2.iff", milestone=180, oneTime=false, description="Bar Countertop (Straight, Style 2)"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=180, oneTime=true, description="Instant full xp token"},
 
 		-- 210 Day Rewards
 		{templateFile = "object/tangible/furniture/all/frn_all_table_s01.iff", milestone=210, oneTime=false, description="Round Cantina Table (Style 1)"},
@@ -139,6 +145,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/furniture/all/frn_all_table_s03.iff", milestone=210, oneTime=false, description="Round Cantina Table (Style 3)"},
 		{templateFile = "object/tangible/furniture/tatooine/frn_tatt_chair_cantina_seat_2.iff", milestone=210, oneTime=false, description="Large Cantina Sofa"},
 		{templateFile = "object/tangible/furniture/tatooine/frn_tato_cafe_parasol.iff", milestone=210, oneTime=false, description="@frn_n:frn_tato_cafe_parasol"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=210, oneTime=true, description="Instant full xp token"},
 
 		-- 240 Day Rewards
 		{templateFile = "object/tangible/veteran_reward/frn_plush_tauntaun.iff", milestone=240, oneTime=false, description="Push Tauntaun"},
@@ -147,6 +154,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/frn_vet_carbonite_ugnaught.iff", milestone=240, oneTime=false, description="Ugnaught in Carbonite"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_carbonite_gungan.iff", milestone=240, oneTime=false, description="Gungan in Carbonite"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_carbonite_geonosian.iff", milestone=240, oneTime=false, description="Geonosian in Carbonite"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=240, oneTime=true, description="Instant full xp token"},
 
 		-- 270 Day Rewards
 		{templateFile = "object/tangible/loot/misc/loot_skull_bith.iff", milestone=270, oneTime=false, description="A Bith Skull"},
@@ -155,6 +163,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/loot/misc/loot_skull_thune.iff", milestone=270, oneTime=false, description="A Thune Skull"},
 		{templateFile = "object/tangible/loot/misc/loot_skull_voritor.iff", milestone=270, oneTime=false, description="A Voritor Lizard Skull"},
 		{templateFile = "object/tangible/wearables/helmet/helmet_s06.iff", milestone=270, oneTime=true, description="Rebel Endor Helmet"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=270, oneTime=true, description="Instant full xp token"},
 
 		-- 300 Day Rewards
 		{templateFile = "object/tangible/hologram/hologram_hk47.iff", milestone=300, oneTime=false, description="Hologram HK47"},
@@ -163,6 +172,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/loot/misc/trader_experimentation_buff.iff", milestone=300, oneTime=true, description="Trader Experience Buff"},
 		{templateFile = "object/tangible/furniture/all/frn_all_desk_map_table.iff", milestone=300, oneTime=false, description="Round Data Terminal"},
 		{templateFile = "object/tangible/wearables/armor/nightsister/armor_nightsister_bicep_r_s01.iff", milestone=300, oneTime=true, description="Nightsister Melee Armguard"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=300, oneTime=true, description="Instant full xp token"},
 
 		-- 365 Day Rewards
 		{templateFile = "object/tangible/veteran_reward/one_year_anniversary/painting_01.iff", milestone=365, oneTime=false, description="Painting: Cast Wing in Flight"},
@@ -174,6 +184,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/one_year_anniversary/painting_07.iff", milestone=365, oneTime=false, description="Painting: Smuggler's Run"},
 		{templateFile = "object/tangible/veteran_reward/one_year_anniversary/painting_08.iff", milestone=365, oneTime=false, description="Painting: Imperial Oppression (TIE Oppressor)"},
 		{templateFile = "object/tangible/veteran_reward/one_year_anniversary/painting_09.iff", milestone=365, oneTime=false, description="Painting: Emperor's Eyes (TIE Sentinel)"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=365, oneTime=true, description="Instant full xp token"},
 
 }
 
