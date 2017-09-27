@@ -69,26 +69,12 @@ baseStoredShips = 3
 -----------------------------------
 --VETERAN REWARDS CONFIG
 -----------------------------------
-veteranRewardMilestones = {10, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300, 315, 365} --days, must be sorted low to high
+veteranRewardMilestones = {10, 30, 45, 90, 120, 150, 180, 210, 240, 270, 300, 365} --days, must be sorted low to high
 
 veteranRewardAdditionalMilestones = 35 --frequency, in days, of additional milestones (beyond the established ones)
 
 veteranRewards = {
 
-	
---custom instant xp items
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=15, oneTime=true, description="Instant full xp token"},
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=45, oneTime=true, description="Instant full xp token"},
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=75, oneTime=true, description="Instant full xp token"},
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=105, oneTime=true, description="Instant full xp token"},
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=135, oneTime=true, description="Instant full xp token"},
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=165, oneTime=true, description="Instant full xp token"},
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=195, oneTime=true, description="Instant full xp token"},
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=225, oneTime=true, description="Instant full xp token"},
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=255, oneTime=true, description="Instant full xp token"},
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=285, oneTime=true, description="Instant full xp token"},
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=315, oneTime=true, description="Instant full xp token"},
-	
 		-- 10 Day Rewards
 		
 		{templateFile = "object/tangible/veteran_reward/data_terminal_s1.iff", milestone=10, oneTime=false, description="@veteran_new:dataterminal1"},
@@ -97,7 +83,6 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/data_terminal_s4.iff", milestone=10, oneTime=false, description="@veteran_new:dataterminal4"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_protocol_droid_toy.iff", milestone=10, oneTime=false, description="@veteran_new:mini_protocoldroid"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_r2_toy.iff", milestone=10, oneTime=false, description="@veteran_new:mini_r2"},
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=10, oneTime=true, description="Instant full xp token"},
 
 		-- 30 Day Rewards
 		{templateFile = "object/tangible/veteran_reward/resource.iff", milestone=30, oneTime=true, description="@veteran_new:resourcecrate"},
