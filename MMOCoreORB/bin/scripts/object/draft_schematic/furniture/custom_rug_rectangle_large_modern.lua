@@ -50,13 +50,12 @@ templateType = DRAFTSCHEMATIC,
    	craftingToolTab = 512, -- (See DraftSchematicObjectTemplate.h)
    	complexity = 15, 
    	size = 2,
+	factoryCrateSize = 0, 
 	disableFactoryRun = true,
 
    	xpType = "crafting_clothing_general", 
    	xp = 340, 
    
-   	factoryCrateSize = 0,
-
    	assemblySkill = "clothing_assembly", 
    	experimentingSkill = "clothing_experimentation", 
    	customizationSkill = "clothing_customization", 
@@ -75,8 +74,7 @@ templateType = DRAFTSCHEMATIC,
 
    	targetTemplate = "object/tangible/furniture/modern/rug_rect_lg_s01.iff",
 
-   	additionalTemplates = {
-   		   }
+   	additionalTemplates = {}
 
 
 }

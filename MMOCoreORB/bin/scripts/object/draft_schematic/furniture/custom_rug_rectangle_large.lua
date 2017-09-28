@@ -51,13 +51,12 @@ object_draft_schematic_furniture_furniture_rug_rectangle_large = object_draft_sc
    	craftingToolTab = 512, -- (See DraftSchematicObjectTemplate.h)
    	complexity = 15, 
    	size = 2,
-  	disableFactoryRun = true,
+	factoryCrateSize = 0, 
+	disableFactoryRun = true,
 
    	xpType = "crafting_clothing_general", 
    	xp = 340, 
-   
- 
-
+  
    	assemblySkill = "clothing_assembly", 
    	experimentingSkill = "clothing_experimentation", 
    	customizationSkill = "clothing_customization", 

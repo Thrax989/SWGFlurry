@@ -47,7 +47,7 @@ object_tangible_loot_loot_schematic_atat_house_loot_schem = object_tangible_loot
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_architect_master",
 	targetDraftSchematic = "object/draft_schematic/structure/atat_house_schem.iff",
-	targetUseCount = 1,
+	targetUseCount = 1
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_atat_house_loot_schem, "object/tangible/loot/loot_schematic/atat_house_loot_schem.iff")

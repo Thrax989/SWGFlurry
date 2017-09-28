@@ -51,6 +51,7 @@ object_draft_schematic_furniture_potted_plants_sml03 = object_draft_schematic_fu
 	craftingToolTab = 512, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 15,
 	size = 2,
+	factoryCrateSize = 0, 
 	disableFactoryRun = true,
 
 	xpType = "crafting_structure_general",
@@ -73,8 +74,7 @@ object_draft_schematic_furniture_potted_plants_sml03 = object_draft_schematic_fu
 
 	targetTemplate = "object/tangible/furniture/all/frn_all_potted_plants_sml_s03.iff",
 
-	additionalTemplates = {
-				}
+	additionalTemplates = {}
 
 }
 ObjectTemplates:addTemplate(object_draft_schematic_furniture_potted_plants_sml03, "object/draft_schematic/furniture/potted_plants_sml03.iff")

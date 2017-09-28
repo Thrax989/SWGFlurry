@@ -51,7 +51,8 @@ object_draft_schematic_furniture_banner_imperial02 = object_draft_schematic_furn
    	craftingToolTab = 512, -- (See DraftSchematicObjectTemplate.h)
    	complexity = 15, 
    	size = 2,
-  	disableFactoryRun = true,
+ 	factoryCrateSize = 0, 
+	disableFactoryRun = true,
 
    	xpType = "crafting_clothing_general", 
    	xp = 340, 

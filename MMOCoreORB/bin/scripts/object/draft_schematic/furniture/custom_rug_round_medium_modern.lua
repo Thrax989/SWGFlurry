@@ -50,6 +50,7 @@ object_draft_schematic_furniture_furniture_rug_round_medium_modern = object_draf
    	craftingToolTab = 512, -- (See DraftSchematicObjectTemplate.h)
    	complexity = 15, 
    	size = 2, 
+	factoryCrateSize = 0, 
 	disableFactoryRun = true,
 
    	xpType = "crafting_clothing_general", 

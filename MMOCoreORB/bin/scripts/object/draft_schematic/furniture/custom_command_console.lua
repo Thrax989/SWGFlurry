@@ -51,7 +51,8 @@ object_draft_schematic_furniture_command_console = object_draft_schematic_furnit
    	craftingToolTab = 512, -- (See DraftSchematicObjectTemplate.h)
    	complexity = 15, 
    	size = 2,
-  	disableFactoryRun = true,
+	factoryCrateSize = 0, 
+	disableFactoryRun = true,
 
    	xpType = "crafting_structure_general",
 	xp = 500,
@@ -59,7 +60,7 @@ object_draft_schematic_furniture_command_console = object_draft_schematic_furnit
 	assemblySkill = "structure_assembly",
 	experimentingSkill = "structure_experimentation",
 	customizationSkill = "structure_customization",
-
+	
    	customizationOptions = {},
    	customizationStringNames = {},
    	customizationDefaults = {},
