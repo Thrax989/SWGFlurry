@@ -73,6 +73,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Theed ShuttlePort C (5,000 Credits)", "theed_shuttleport_c_travel",
 			"Theed Starport (5,000 Credits)", "theed_starport_travel",
 			"Player City - Kessel (5,000 Credits)", "pc_kessel_travel",
+			"Player City - Gallo Valley (5,000 Credits)", "pc_gallo_valley_travel",
 		   },
 		 	"rori",
 		   {
@@ -108,6 +109,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Mos Espa Shuttleport South (5,000 Credits)", "mos_espa_shuttleport_south_travel",
 			"Mos Espa Shuttleport West (5,000 Credits)", "mos_espa_shuttleport_west_travel",
 			"Mos Espa Starport (5,000 Credits)", "mos_espa_starport_travel",
+			"Player City - Decatur (5,000 Credits)", "pc_decatur_travel",
 		   },
 		 	"yavin4",
 		   {
