@@ -44,7 +44,7 @@
 
 --DUMMY FILE TO CLEAR LOAD ERROR
 
-object_tangible_component_vehicle_base_base_armor_vehicle = object_tangible_component_vehicle_base_shared_base_vehicle:new {
+object_tangible_component_vehicle_base_base_vehicle = object_tangible_component_vehicle_base_shared_base_vehicle:new {
 
 }
 
