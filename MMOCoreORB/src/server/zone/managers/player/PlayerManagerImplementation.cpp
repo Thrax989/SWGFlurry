@@ -1088,21 +1088,11 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 
 
 	// Jedi experience loss.
+	//jedi who chose 1x will loose 40,000 xp jedi who choose 2x will lose 80,000 xp jedi who choose 2.5x will loose 100,000 k xp These values Double on Doulbe xp Weeknd , 80x, 160x,200x 
 	if(ghost->getJediState() >= 2) {
-		int jediXpCap = ghost->getXpCap("jedi_general");
-		int xpLoss = (int)(jediXpCap * -0.025);
-		int curExp = ghost->getExperience("jedi_general");
-
+		awardExperience(player, "jedi_general", -40000, true);
+		player->sendSystemMessage("You have lost  Jedi XP");
 		int negXpCap = -10000000; // Cap on negative jedi experience
-
-		if ((curExp + xpLoss) < negXpCap)
-			xpLoss = negXpCap - curExp;
-
-		awardExperience(player, "jedi_general", xpLoss, true);
-		StringIdChatParameter message("base_player","prose_revoke_xp");
-		message.setDI(xpLoss * -1);
-		message.setTO("exp_n", "jedi_general");
-		player->sendSystemMessage(message);
 	}
 }
 
@@ -1278,11 +1268,9 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				if (winningFaction == attacker->getFaction())
 					xpAmount *= gcwBonus;
 
-				//Jedi experience doesn't count towards combat experience, and is earned at 40% the rate of normal experience
+				//Jedi experience doesn't count towards combat experience
 				if (xpType != "jedi_general")
 					combatXp += xpAmount;
-				else
-					xpAmount *= 0.4f;
 
 				//Award individual expType
 				awardExperience(attacker, xpType, xpAmount);
