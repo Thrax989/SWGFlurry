@@ -41,8 +41,8 @@ looted_container = {
 
 		-- Rugs (25% chance)
 		{groupTemplate = "crafted_rugs", weight = 500000},
-		{groupTemplate = "neg_house_loot_deed_01", weight = 1000000},
-		{groupTemplate = "neg_house_loot_deed_windowed", weight = 1000000},
+		{groupTemplate = "nge_house_loot_deed_01", weight = 1000000},
+		{groupTemplate = "nge_house_loot_deed_windowed", weight = 1000000},
 
 		-- Misc (25% chance)
 		{groupTemplate = "banner_imperial", weight = 500000},
