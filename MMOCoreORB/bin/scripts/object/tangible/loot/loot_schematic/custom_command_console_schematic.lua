@@ -46,7 +46,7 @@ object_tangible_loot_loot_schematic_command_console_schematic = object_tangible_
 	templateType = LOOTSCHEMATIC,
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
-	requiredSkill = "crafting_architech_master",
+	requiredSkill = "crafting_architect_master",
 	targetDraftSchematic = "object/draft_schematic/furniture/command_console.iff",
 	targetUseCount = 1,
 
