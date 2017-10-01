@@ -40,6 +40,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Dathomir Trade Outpost Stareport (5,000 Credits)", "dathomir_trade_outpost_starport_travel",
 			"Dathomir Science Outpost Stareport (5,000 Credits)", "dathomir_science_outpost_starport_travel",
 			"Dathomir Village Shuttleport (5,000 Credits)", "dathomir_village_shuttleport_travel",
+			"Player City - Tosh (5,000 Credits)", "PC_tosh_travel",
 		   },
 			--[["hoth",
 		   {
@@ -64,7 +65,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Kaadara ShuttlePort (5,000 Credits)", "kaadar_shuttleport_travel",
 			"Kaadara StarPort (5,000 Credits)", "kaadara_starport_travel",
 			"Keren ShuttlePort (5,000 Credits)", "keren_shuttleport_travel",
-			"Karen ShuttlePort South (5,000 Credits)", "karen_shuttleport_south_travel",
+			"Keren ShuttlePort South (5,000 Credits)", "karen_shuttleport_south_travel",
 			"Keren Starport (5,000 Credits)", "keren_starport_travel",
 			"Moenia StarPort (5,000 Credits)", "moemia_starport_travel",
 			"The Lake Retreat ShuttlePort (5,000 Credits)", "the_lake_retreat_shuttleport_travel",
@@ -72,6 +73,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Theed ShuttlePort B (5,000 Credits)", "theed_shuttleport_b_travel",
 			"Theed ShuttlePort C (5,000 Credits)", "theed_shuttleport_c_travel",
 			"Theed Starport (5,000 Credits)", "theed_starport_travel",
+			"Player City - Kessel (5,000 Credits)", "pc_kessel_travel",
+			"Player City - Gallo Valley (5,000 Credits)", "pc_gallo_valley_travel",
 		   },
 		 	"rori",
 		   {
@@ -107,6 +110,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Mos Espa Shuttleport South (5,000 Credits)", "mos_espa_shuttleport_south_travel",
 			"Mos Espa Shuttleport West (5,000 Credits)", "mos_espa_shuttleport_west_travel",
 			"Mos Espa Starport (5,000 Credits)", "mos_espa_starport_travel",
+			"Player City - Decatur (5,000 Credits)", "pc_decatur_travel",
 		   },
 		 	"yavin4",
 		   {

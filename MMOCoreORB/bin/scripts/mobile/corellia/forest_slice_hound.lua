@@ -28,7 +28,38 @@ forest_slice_hound = Creature:new {
 	templates = {"object/mobile/forest_slice_hound.iff"},
 	controlDeviceTemplate = "object/intangible/pet/corellian_slice_hound_hue.iff",
 	scale = 1.2,
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 500000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 100000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

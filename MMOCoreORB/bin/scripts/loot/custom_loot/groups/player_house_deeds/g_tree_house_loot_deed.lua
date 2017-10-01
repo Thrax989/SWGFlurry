@@ -1,5 +1,5 @@
 g_tree_house_loot_deed = {
-	description = "",
+	description = "Wookiee Tree House Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

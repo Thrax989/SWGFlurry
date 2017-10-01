@@ -6,7 +6,7 @@ object_building_player_jabbas_house = object_building_player_shared_jabbas_house
 	length = 4,
 	width = 2,
 	publicStructure = 0,
-	skillMods = {
+	--[[ skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
 		{"private_med_battle_fatigue", 5},
@@ -54,7 +54,7 @@ object_building_player_jabbas_house = object_building_player_shared_jabbas_house
 		{"force_repair_bonus", 20},
 		{"crafting_repair", 20},
 		{"weapon_repair", 20}
-	},
+	},]]
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = -2.73692, z = 14.666, y = 4.05877, ow = -1, ox = 0, oz = 0, oy = -8.74228e-08, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/terminal/terminal_elevator_up.iff", x = 0, z = 0.40893, y = -0.349841, ow = -4.37114e-08, ox = 0, oz = 0, oy = 1, cellid = 1, containmentType = -1},

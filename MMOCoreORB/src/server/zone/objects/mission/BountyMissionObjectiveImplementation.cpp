@@ -585,8 +585,8 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			if (zoneServer != NULL) {
 				ManagedReference<CreatureObject*> target = zoneServer->getObject(mission->getTargetObjectId()).castTo<CreatureObject*>();
 				if (target != NULL) {
-					int minXpLoss = -50000;
-					int maxXpLoss = -500000;
+					int minXpLoss = -20000;//bh kill adds 50,000 xp loss for jedi on top of cloning xp loss
+					int maxXpLoss = -40000;//bh kill adds 100,000 xp loss for jedi on top of cloning xp loss
 
 					VisibilityManager::instance()->clearVisibility(target);
 					int xpLoss = mission->getRewardCredits() * -2;

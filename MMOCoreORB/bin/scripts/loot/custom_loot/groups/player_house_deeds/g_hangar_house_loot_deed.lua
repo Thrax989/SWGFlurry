@@ -1,5 +1,5 @@
 g_hangar_house_loot_deed = {
-	description = "",
+	description = "Spacecraft Hanger House Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

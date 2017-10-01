@@ -1,5 +1,5 @@
 g_yt1300_house_loot_deed = {
-	description = "",
+	description = "YT1300 Freighter House Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

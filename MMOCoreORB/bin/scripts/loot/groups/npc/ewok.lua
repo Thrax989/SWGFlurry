@@ -5,10 +5,8 @@ ewok = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "junk", weight = 3000000},
-		{itemTemplate = "junk", weight = 10000},
-		{itemTemplate = "junk", weight = 4990000},
-		{groupTemplate = "junk", weight = 1500000},
+		
+		{groupTemplate = "junk", weight = 9500000},
 		{groupTemplate = "power_crystals", weight = 500000},
 	}
 }

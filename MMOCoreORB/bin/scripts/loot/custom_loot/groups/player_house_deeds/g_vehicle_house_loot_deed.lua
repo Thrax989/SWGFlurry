@@ -1,5 +1,5 @@
 g_vehicle_house_loot_deed = {
-	description = "",
+	description = "Vehicle Garage House Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

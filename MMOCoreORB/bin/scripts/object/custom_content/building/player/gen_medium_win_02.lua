@@ -6,7 +6,7 @@ object_building_player_generic_medium_window_s02 = object_building_player_shared
 	length = 3,
 	width = 4,
 	publicStructure = 0,
-	skillMods = {
+	--[[ skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
 		{"private_med_battle_fatigue", 5},
@@ -54,7 +54,7 @@ object_building_player_generic_medium_window_s02 = object_building_player_shared
 		{"force_repair_bonus", 20},
 		{"crafting_repair", 20},
 		{"weapon_repair", 20}
-	},
+	}, ]]
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = -7.17153, z = 0.875, y = 6.18961, ow = 0, ox = 0, oz = 0, oy = 1, cellid = 2, containmentType = -1},
 			{templateFile = "object/tangible/sign/player/house_address.iff", x = 5.72, z = 2, y = 7.70, ox = 0, oy = 1, oz = 0, ow = 0, cellid = -1, containmentType = -1}

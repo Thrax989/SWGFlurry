@@ -2,7 +2,7 @@ object_draft_schematic_weapon_lightsaber_lightsaber_polearm_gen5_exar_kun = obje
 
  templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Exar Kun's Saberstaff 5 Generation",
+   customObjectName = "Exar Kun's Saberstaff 5th Generation",
 
    craftingToolTab = 2048, -- (See DraftSchematicObjectTemplate.h)
    complexity = 19, 

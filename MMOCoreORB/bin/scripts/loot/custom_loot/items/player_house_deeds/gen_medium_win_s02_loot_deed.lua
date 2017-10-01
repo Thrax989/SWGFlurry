@@ -1,8 +1,8 @@
 gen_medium_win_s02_loot_deed = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Generic Med Win 02 House Deed",
-	directObjectTemplate = "object/tangible/deed/player_house_deed/generic_medium_window_s02_deed.iff",
+	customObjectName = "Medium Generic House, Style 2 (Windowed) Blueprint",
+	directObjectTemplate = "object/tangible/loot/loot_schematic/gen_md_win_02_loot_schem.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},

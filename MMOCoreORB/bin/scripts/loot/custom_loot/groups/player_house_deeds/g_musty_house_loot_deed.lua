@@ -1,5 +1,5 @@
 g_musty_house_loot_deed = {
-	description = "",
+	description = "Mustafar Bunker Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

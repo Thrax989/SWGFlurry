@@ -39,14 +39,21 @@ looted_container = {
 		{itemTemplate = "attachment_clothing", weight = 43860},
 		{itemTemplate = "attachment_armor", weight = 43860},
 
-		-- Weapons (25% chance)
-		{groupTemplate = "attachment_clothing", weight = 2500000},
+		-- Rugs (25% chance)
+		{groupTemplate = "crafted_rugs", weight = 500000},
+		{groupTemplate = "nge_house_loot_deed_01", weight = 1000000},
+		{groupTemplate = "nge_house_loot_deed_windowed", weight = 1000000},
 
-		-- Armors (25% chance)
-		{groupTemplate = "attachment_armor", weight = 2500000},
+		-- Misc (25% chance)
+		{groupTemplate = "banner_imperial", weight = 500000},
+		{groupTemplate = "banner_imperial02", weight = 500000},
+		{groupTemplate = "banner_rebel", weight = 500000},
+		{groupTemplate = "banner_rebel02", weight = 500000},
+		{groupTemplate = "command_console", weight = 500000},
 
-		-- Clothing (25% chance)
-		{groupTemplate = "locked_container", weight = 2500000},
+		-- Housing (25% chance)
+		{groupTemplate = "potted_plants_large", weight = 1250000},
+		{groupTemplate = "potted_plants_small", weight = 1250000},
 	}
 }
 

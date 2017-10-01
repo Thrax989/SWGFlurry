@@ -34,8 +34,8 @@ boorka_the_hutt = Creature:new {
   			      groups = {
   				            {group = "armor_attachments", chance = 1000000},
   				            {group = "clothing_attachments", chance = 1000000},
-  				            {group = "crystals_premium", chance = 4000000},
-  				            {group = "pearls_flawless", chance = 4000000}
+  				            {group = "power_crystals", chance = 8000000},
+  				         
 },
                       lootChance = 10000000
 },
@@ -58,18 +58,6 @@ boorka_the_hutt = Creature:new {
                     {group = "krayt_tissue_rare", chance = 10000000}
 },
                     lootChance = 10000000
-},
-{
-             groups = {
-                    {group = "nge2", chance = 10000000}
-},
-                    lootChance = 5000000
-},
-{
-          		groups = {
-            			{group = "apocalypse", chance = 10000000}
-},
-              		        lootChance = 10000000
 },
 },
 	weapons = {"melee_weapons"},

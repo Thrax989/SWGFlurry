@@ -1,5 +1,5 @@
 g_rebel_house_loot_deed = {
-	description = "",
+	description = "Rebel House Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

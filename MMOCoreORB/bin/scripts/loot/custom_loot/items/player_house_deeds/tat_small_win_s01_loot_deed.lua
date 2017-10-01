@@ -1,8 +1,8 @@
 tat_small_win_s01_loot_deed = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Tatooine Sml Win 01 House Deed",
-	directObjectTemplate = "object/tangible/deed/player_house_deed/tatooine_small_window_s01_deed.iff",
+	customObjectName = "Small Tatooine House, Style 1 (Windowed) Blueprint",
+	directObjectTemplate = "object/tangible/loot/loot_schematic/tat_sm_win_01_loot_schem.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},

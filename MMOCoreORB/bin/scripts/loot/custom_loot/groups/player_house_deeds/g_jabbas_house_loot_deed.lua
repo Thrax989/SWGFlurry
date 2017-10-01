@@ -1,5 +1,5 @@
 g_jabbas_house_loot_deed = {
-	description = "",
+	description = "Jabba's Sailbarge House Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

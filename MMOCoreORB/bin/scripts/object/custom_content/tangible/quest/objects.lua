@@ -1,5 +1,18 @@
 --New
+object_tangible_quest_shared_speeder_junk_barc_chassis = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/quest/shared_speeder_junk_barc_chassis.iff"
+}
 
+ObjectTemplates:addClientTemplate(object_tangible_quest_shared_speeder_junk_barc_chassis, "object/tangible/quest/shared_speeder_junk_barc_chassis.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_quest_shared_speeder_junk_steering_array = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/quest/shared_speeder_junk_steering_array.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_quest_shared_speeder_junk_steering_array, "object/tangible/quest/shared_speeder_junk_steering_array.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 object_tangible_quest_shared_ac_quest_loc3_bacta_tank = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/quest/shared_ac_quest_loc3_bacta_tank.iff"
 }

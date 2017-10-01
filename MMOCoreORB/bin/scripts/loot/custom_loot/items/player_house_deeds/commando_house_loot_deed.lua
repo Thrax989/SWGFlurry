@@ -1,8 +1,8 @@
 commando_house_loot_deed = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Commando House Deed",
-	directObjectTemplate = "object/tangible/deed/player_house_deed/commando_house_deed.iff",
+	customObjectName = "Commando Bunker Blueprint",
+	directObjectTemplate = "object/tangible/loot/loot_schematic/commando_house_loot_schem.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},

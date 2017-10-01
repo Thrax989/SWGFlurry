@@ -1,5 +1,5 @@
 g_relaxation_house_loot_deed = {
-	description = "",
+	description = "Relaxation House Blueprint",
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {

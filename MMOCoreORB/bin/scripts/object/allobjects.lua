@@ -1082,3 +1082,11 @@ includeFile("tangible/wearables/armor/mandalorian_imperial/objects.lua")
 includeFile("tangible/wearables/armor/mandalorian_rebel/objects.lua")
 includeFile("tangible/wearables/cape/objects.lua")
 includeFile("custom_content/tangible/wearables/robe/objects.lua")
+
+
+includeFile("custom_content/tangible/holiday/empire_day/objects.lua")
+includeFile("custom_content/tangible/holiday/life_day/rewards_09/objects.lua")
+includeFile("custom_content/tangible/holiday/love_day/objects.lua")
+includeFile("custom_content/tangible/holiday/love_day/rewards_10/objects.lua")
+includeFile("custom_content/tangible/holiday/love_day/rewards_11/objects.lua")
+

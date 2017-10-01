@@ -31,7 +31,7 @@ mytho_king = Creature:new {
 lootGroups = {
 		 {
 			groups = {
-        			{group = "pearls_flawless", chance = 5000000},
+        			{group = "power_crystals", chance = 5000000},
         			{group = "armor_attachments", chance = 2500000},
         			{group = "clothing_attachments", chance = 2500000}
    	},
@@ -39,7 +39,7 @@ lootGroups = {
    	},
 		 {
 			groups = {
-        			{group = "pearls_flawless", chance = 5000000},
+        			{group = "power_crystals", chance = 5000000},
         			{group = "armor_attachments", chance = 2500000},
         			{group = "clothing_attachments", chance = 2500000}
    	},
@@ -47,7 +47,7 @@ lootGroups = {
    	},
 		 {
 			groups = {
-        			{group = "pearls_flawless", chance = 5000000},
+        			{group = "power_crystals", chance = 5000000},
         			{group = "armor_attachments", chance = 2500000},
         			{group = "clothing_attachments", chance = 2500000}
    	},
@@ -55,7 +55,7 @@ lootGroups = {
    	},
    	 {
 			groups = {
-        			{group = "pearls_flawless", chance = 5000000},
+        			{group = "power_crystals", chance = 5000000},
         			{group = "armor_attachments", chance = 2500000},
         			{group = "clothing_attachments", chance = 2500000}
    	},
@@ -85,12 +85,7 @@ lootGroups = {
 			},
 			lootChance = 10000000
 		},
-		 {
-			groups = {
-				{group = "g_named_crystals", chance = 10000000}
-			},
-			lootChance = 10000000
-		},			
+		 		
 		},
 	weapons = {},
 	conversationTemplate = "",

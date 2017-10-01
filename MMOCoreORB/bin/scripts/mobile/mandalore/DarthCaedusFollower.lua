@@ -34,33 +34,17 @@ darth_caedus_follower = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "crystals_premium",  chance = 700000},
-				{group = "crystals_select",  chance = 1500000},
+				{group = "power_crystals",  chance = 2200000},
 				{group = "color_crystals",  chance = 500000},
 				{group = "nightsister_common",  chance = 1200000},
-				{group = "armor_attachments",  chance = 1000000},
-				{group = "clothing_attachments",  chance = 1000000},
-				{group = "melee_weapons",  chance = 400000},
-				{group = "rifles",  chance = 400000},
-				{group = "pistols",  chance = 400000},
-				{group = "carbines",  chance = 400000},
+				{group = "armor_attachments",  chance = 2000000},
+				{group = "clothing_attachments",  chance = 1600000},
 				{group = "junk",  chance = 500000},
 				{group = "axkva_min",  chance = 2000000}
 			},
 			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "nightsister_rare", chance = 10000000},
-			},
-			lootChance = 3000000
-		},
-		{
-	           groups = {
-				{group = "junk", chance = 10000000},
-			},
-			lootChance = 10000000
 		}
+		
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
