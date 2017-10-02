@@ -99,7 +99,7 @@ ZonesEnabled = {
 	"dantooine",
 	"dathomir",
 	"dungeon1",
-	--"hoth",
+	"hoth",
 	"endor",
         --"kashyyyk",
 	--"endor_asommers",
@@ -159,7 +159,7 @@ ZonesEnabled = {
 TrePath = "/home/vagrant/workspace/tre/"
 
 TreFiles = {
-	"FlurryPatch92.tre",
+	"flurrypatch1.tre",
         "pallet.tre",
         "weapon.tre",
         "mtg22.tre",
