@@ -10,7 +10,7 @@ custom_jawa_bodyguard = Creature:new {
 	baseXp = 0,
 	baseHAM = 35000,
 	baseHAMmax = 49000,
-	armor = 0,
+	armor = 1,
 	resists = {80,80,80,80,80,80,80,80,-1},
 	meatType = "",
 	meatAmount = 0,
@@ -43,7 +43,7 @@ custom_jawa_bodyguard = Creature:new {
         			{group = "armor_attachments", chance = 5000000},
        	 			{group = "clothing_attachments", chance = 5000000}
    	},
-     			        lootChance = 10000000
+     			        lootChance = 5000000
    	},
 	},
 	weapons = {"jawa_warlord_weapons"},
