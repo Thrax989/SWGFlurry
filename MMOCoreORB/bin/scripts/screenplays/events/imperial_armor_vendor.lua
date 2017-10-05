@@ -12,7 +12,7 @@ imperial_armor = ScreenPlay:new {
 registerScreenPlay("imperial_armor", true)
 
 function imperial_armor:start() 
-   local pMerchant = spawnMobile("corellia", "imperial_armor_vendor", 1, -140, 28, -4732, 273, 0 )
+   local pMerchant = spawnMobile("naboo", "imperial_armor_vendor", 1, -4932.18, 6, 4229.73, 273, 0 )
 
 end
 

@@ -5,7 +5,11 @@ lootcollectiontiertwo  = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "junk", weight = 10000000},
+		{itemTemplate = "junk", weight = 9800000},
+		{itemTemplate = "custom_vehicle_uncommon", weight = 125000},
+		{itemTemplate = "custom_vehicle_rare", weight = 25000},
+		{itemTemplate = "g_imperial_credit", weight = 25000}, --Keep Rare Please
+		{itemTemplate = "g_rebel_credit", weight = 25000},
 	}
 }
 

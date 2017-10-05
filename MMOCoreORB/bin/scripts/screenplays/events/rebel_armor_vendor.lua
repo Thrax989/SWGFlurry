@@ -12,7 +12,7 @@ rebel_armor = ScreenPlay:new {
 registerScreenPlay("rebel_armor", true)
 
 function rebel_armor:start() 
-   local pMerchant = spawnMobile("corellia", "rebel_armor_vendor", 1, -145, 28, -4737, 273, 0 )
+   local pMerchant = spawnMobile("naboo", "rebel_armor_vendor", 1, -4867.11, 6, 4047.67, 273, 0 )
 
 end
 
