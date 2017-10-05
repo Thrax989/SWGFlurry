@@ -35,9 +35,15 @@ imperial_cadet_squadleader = Creature:new {
 				{group = "junk", chance = 8800000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},
-				
-			}
-		}
+	
+			},
+		},
+			{
+			groups = {
+				{group = "g_rebel_credit", chance = 10000000},
+				},
+			lootChance = 20000 
+			},
 	},
 	weapons = {"ranged_weapons"},
 	conversationTemplate = "",

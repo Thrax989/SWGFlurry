@@ -68,7 +68,7 @@ object_draft_schematic_vehicle_civilian_rebel_barc_speeder = object_draft_schema
 	ingredientTitleNames = {"vehicle_body", "structural_frame", "chassis_brace", "steering_mech"},
 	ingredientSlotType = {0, 0, 1, 1},
 	resourceTypes = {"steel_duralloy", "metal_ferrous", "object/tangible/component/vehicle/shared_custom_veh_chassis_brace.iff", "object/tangible/component/vehicle/shared_custom_veh_steering_mech.iff"},
-	resourceQuantities = {6125, 3125, 1, 1},
+	resourceQuantities = {6125, 3125, 2, 1},
 	contribution = {100, 100, 100, 100},
 
 	

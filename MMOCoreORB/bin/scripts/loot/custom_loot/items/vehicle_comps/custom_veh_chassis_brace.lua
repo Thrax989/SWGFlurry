@@ -5,8 +5,7 @@ custom_veh_chassis_brace = {
 	maximumLevel = -1,
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/component/vehicle/custom_veh_chassis_brace.iff",
-	craftingValues = {
-	},
+	craftingValues = {"useCount",1,3,0},
 	customizationStringNames = {},
 	customizationValues = {}
 }

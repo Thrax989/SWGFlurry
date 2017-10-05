@@ -34,17 +34,22 @@ imperial_sergeant = Creature:new {
 		"object/mobile/dressed_imperial_officer_m_3.iff",
 		"object/mobile/dressed_imperial_officer_m_4.iff",
 		"object/mobile/dressed_imperial_officer_m_5.iff",
-		"object/mobile/dressed_imperial_officer_m_6.iff"},
+		},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 200000},
-				{group = "junk", chance = 8800000},
+				{group = "junk", chance = 9000000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},
-				
-			}
-		}
+					
+			},
+		},
+			{
+			groups = {
+				{group = "g_rebel_credit", chance = 10000000},
+				},
+			lootChance = 20000 
+			},
 	},
 	weapons = {"imperial_weapons_medium"},
 	conversationTemplate = "",

@@ -298,3 +298,7 @@ includeFile("conversations/events/imperial_exchange.lua")
 includeFile("conversations/events/rebel_exchange.lua")
 includeFile("conversations/events/holo_exchange.lua")
 includeFile("conversations/events/painting_exchange.lua")
+
+--Custom Vendor
+includeFile("conversations/events/imperial_armor_vendor.lua")
+includeFile("conversations/events/rebel_armor_vendor.lua")

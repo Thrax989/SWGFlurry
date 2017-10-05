@@ -36,8 +36,15 @@ imperial_first_lieutenant = Creature:new {
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},
 				{group = "junk", chance = 500000},
-			}
-		}
+				
+			},
+		},
+			{
+			groups = {
+				{group = "g_rebel_credit", chance = 10000000},
+				},
+			lootChance = 20000 
+			},
 	},
 	weapons = {"imperial_weapons_medium"},
 	conversationTemplate = "",
