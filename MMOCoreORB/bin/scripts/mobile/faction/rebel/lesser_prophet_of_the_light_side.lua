@@ -31,14 +31,19 @@ lesser_prophet_of_the_light_side = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 500000},
-				{group = "junk", chance = 500000},
-				{group = "junk", chance = 1000000},
-				{group = "junk", chance = 7000000},
+				{group = "junk", chance = 9000000},
 				{group = "clothing_attachments", chance = 500000},
-				{group = "armor_attachments", chance = 500000}
-			}
-		}
+				{group = "armor_attachments", chance = 500000},
+				
+					
+			},
+		},
+			{
+			groups = {
+				{group = "g_imperial_credit", chance = 10000000},
+				},
+			lootChance = 20000 
+			},
 	},
 	weapons = {"light_jedi_weapons"},
 	conversationTemplate = "",
