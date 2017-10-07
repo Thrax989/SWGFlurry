@@ -70,8 +70,8 @@ custom_jawa_boss = Creature:new {
    },
    {
       			groups = {
-        			{group = "nge_house_loot_deed_01", chance = 2500000},
-        			{group = "nge_house_loot_deed_windowed", chance = 7500000}
+        			{group = "nge_house_loot_deed_01", chance = 7500000},
+        			{group = "nge_house_loot_deed_windowed", chance = 2500000}
    },
       			        lootChance = 10000000
    },
