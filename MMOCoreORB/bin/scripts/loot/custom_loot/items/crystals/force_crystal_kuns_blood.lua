@@ -13,7 +13,7 @@ force_crystal_kuns_blood = {
 		{"attackactioncost",0,0,0},
 		{"attackmindcost",0,0,0},
 		{"forcecost",0,0,0},
-		{"color",12,12,0},
+		{"color",0,0,0},
 		{"quality",7,7,0},
 	},
 	customizationStringNames = {},

@@ -1,9 +1,9 @@
-object_tangible_wearables_armor_rebel_assault_shared_armor_appearance_rebel_assault_helmet_gcw = SharedTangibleObjectTemplate:new {
+--[[object_tangible_wearables_armor_rebel_assault_shared_armor_appearance_rebel_assault_helmet_gcw = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/wearables/armor/rebel_assault/shared_armor_appearance_rebel_assault_helmet_gcw.iff"
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_rebel_assault_shared_armor_appearance_rebel_assault_helmet_gcw, "object/tangible/wearables/armor/rebel_assault/shared_armor_appearance_rebel_assault_helmet_gcw.iff")
-------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------]]
 
 
 object_tangible_wearables_armor_rebel_assault_shared_armor_rebel_assault_belt = SharedTangibleObjectTemplate:new {

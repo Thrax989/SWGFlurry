@@ -44,6 +44,9 @@ includeFile("custom_loot/groups/player_house_deeds/g_vehicle_house_loot_deed.lua
 includeFile("custom_loot/groups/player_house_deeds/g_vipbunker_house_loot_deed.lua")
 includeFile("custom_loot/groups/player_house_deeds/g_yoda_house_loot_deed.lua")
 includeFile("custom_loot/groups/player_house_deeds/g_yt1300_house_loot_deed.lua")
+--Token
+includeFile("custom_loot/groups/tokens/g_imperial_credit.lua")
+includeFile("custom_loot/groups/tokens/g_rebel_credit.lua")
 
 --includeFile("custom_loot/groups/vehicle_loot_deeds/barc_speeder_deed_group.lua")
 

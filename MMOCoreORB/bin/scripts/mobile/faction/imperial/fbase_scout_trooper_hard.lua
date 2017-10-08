@@ -32,13 +32,19 @@ fbase_scout_trooper_hard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 200000},
-				{group = "junk", chance = 8300000},
+				{group = "junk", chance = 8500000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},
-				{group = "stormtrooper_common", chance = 500000}
-			}
-		}
+				{group = "stormtrooper_common", chance = 500000},
+					
+			},
+		},
+			{
+			groups = {
+				{group = "g_rebel_credit", chance = 10000000},
+				},
+			lootChance = 20000 
+			},
 	},
 	weapons = {"imperial_weapons_light"},
 	conversationTemplate = "",

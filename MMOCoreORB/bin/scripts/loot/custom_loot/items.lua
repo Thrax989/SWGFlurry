@@ -29,6 +29,9 @@ includeFile("custom_loot/items/backpacks/yoda_backpack.lua")
 
 --Human Skull
 includeFile("custom_loot/items/human_skull.lua")
+--Token
+includeFile("custom_loot/items/tokens/imperial_credit.lua")
+includeFile("custom_loot/items/tokens/rebel_credit.lua")
 
 
 --House Deeds

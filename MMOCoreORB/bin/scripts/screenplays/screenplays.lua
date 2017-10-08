@@ -657,11 +657,13 @@ includeFile("poi/VizslaHideout.lua")
 includeFile("static_spawns/taanab_static_spawns.lua")
 
 -- Custom Content
-includeFile("events/world_exchange_dealer.lua")
-includeFile("events/imperial_exchange_dealer.lua")
-includeFile("events/rebel_exchange_dealer.lua")
-includeFile("events/holo_exchange_dealer.lua")
+--includeFile("events/world_exchange_dealer.lua")
+--includeFile("events/imperial_exchange_dealer.lua")
+--includeFile("events/rebel_exchange_dealer.lua")
+--includeFile("events/holo_exchange_dealer.lua")
 includeFile("events/painting_exchange_dealer.lua")
+includeFile("events/imperial_armor_vendor.lua")
+includeFile("events/rebel_armor_vendor.lua")
 
 --Custom World Bosses
 includeFile("custom_world_bosses/custom_jawa_boss.lua")
