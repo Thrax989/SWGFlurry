@@ -5533,3 +5533,19 @@ object_tangible_loot_loot_schematic_shared_rebel_assault_chest_plate_camo_schema
 	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rebel_assault_chest_plate_camo_schematic.iff"
 }
 ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_rebel_assault_chest_plate_camo_schematic, "object/tangible/loot/loot_schematic/shared_rebel_assault_chest_plate_camo_schematic.iff")
+
+--Jedi Robe Black 01
+
+object_tangible_loot_loot_schematic_shared_jedi_robe_black_01_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_jedi_robe_black_01_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_jedi_robe_black_01_schematic, "object/tangible/loot/loot_schematic/shared_jedi_robe_black_01_schematic.iff")
+
+--Jedi Robe Black 02
+
+object_tangible_loot_loot_schematic_shared_jedi_robe_black_02_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_jedi_robe_black_02_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_jedi_robe_black_02_schematic, "object/tangible/loot/loot_schematic/shared_jedi_robe_black_02_schematic.iff")

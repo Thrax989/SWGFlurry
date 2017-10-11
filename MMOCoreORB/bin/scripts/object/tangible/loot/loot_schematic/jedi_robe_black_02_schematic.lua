@@ -40,22 +40,13 @@
 --gives permission to release a modified version without this exception; 
 --this exception also makes it possible to release a modified version 
 
+object_tangible_loot_loot_schematic_jedi_robe_black_02_schematic = object_tangible_loot_loot_schematic_shared_jedi_robe_black_02_schematic:new {
+templateType = LOOTSCHEMATIC,
+	objectMenuComponent = "LootSchematicMenuComponent",
+	attributeListComponent = "LootSchematicAttributeListComponent",
+	requiredSkill = "crafting_tailor_master",
+	targetDraftSchematic = "object/draft_schematic/clothing/clothing_robe_jedi_black_02.iff",
+	targetUseCount = 1
+}
 
-
---Children folder includes
-
--- Server Objects
-includeFile("tangible/component/clothing/cargo_pocket.lua")
-includeFile("tangible/component/clothing/clasp_heavy_duty.lua")
-includeFile("tangible/component/clothing/clothing_treatment_crystalline.lua")
-includeFile("tangible/component/clothing/component_base.lua")
-includeFile("tangible/component/clothing/fiberplast_panel.lua")
-includeFile("tangible/component/clothing/jewelry_setting.lua")
-includeFile("tangible/component/clothing/leather_heavy_duty.lua")
-includeFile("tangible/component/clothing/metal_fasteners.lua")
-includeFile("tangible/component/clothing/padding_segment.lua")
-includeFile("tangible/component/clothing/reinforced_fiber_panels.lua")
-includeFile("tangible/component/clothing/shoe_sole.lua")
-includeFile("tangible/component/clothing/synthetic_cloth.lua")
-includeFile("tangible/component/clothing/trim.lua")
-includeFile("tangible/component/clothing/clothing_jedi_treatment_01.lua")
+ObjectTemplates: addTemplate(object_tangible_loot_loot_schematic_jedi_robe_black_02_schematic, "object/tangible/loot/loot_schematic/jedi_robe_black_02_schematic.iff")

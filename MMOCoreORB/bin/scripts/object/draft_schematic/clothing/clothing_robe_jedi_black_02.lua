@@ -41,21 +41,42 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_draft_schematic_clothing_clothing_robe_jedi_black_02 = object_draft_schematic_clothing_shared_clothing_robe_jedi_black_02:new {
 
---Children folder includes
+   	templateType = DRAFTSCHEMATIC,
 
--- Server Objects
-includeFile("tangible/component/clothing/cargo_pocket.lua")
-includeFile("tangible/component/clothing/clasp_heavy_duty.lua")
-includeFile("tangible/component/clothing/clothing_treatment_crystalline.lua")
-includeFile("tangible/component/clothing/component_base.lua")
-includeFile("tangible/component/clothing/fiberplast_panel.lua")
-includeFile("tangible/component/clothing/jewelry_setting.lua")
-includeFile("tangible/component/clothing/leather_heavy_duty.lua")
-includeFile("tangible/component/clothing/metal_fasteners.lua")
-includeFile("tangible/component/clothing/padding_segment.lua")
-includeFile("tangible/component/clothing/reinforced_fiber_panels.lua")
-includeFile("tangible/component/clothing/shoe_sole.lua")
-includeFile("tangible/component/clothing/synthetic_cloth.lua")
-includeFile("tangible/component/clothing/trim.lua")
-includeFile("tangible/component/clothing/clothing_jedi_treatment_01.lua")
+   	customObjectName = "Qel-Droma Battle Robe",
+
+   	craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
+   	complexity = 20, 
+   	size = 3, 
+	factoryCrateSize = 0, 
+	disableFactoryRun = true,
+
+   	xpType = "crafting_clothing_general", 
+   	xp = 950, 
+
+   	assemblySkill = "clothing_assembly", 
+   	experimentingSkill = "clothing_experimentation", 
+   	customizationSkill = "clothing_customization", 
+
+   	customizationOptions = {},
+   	customizationStringNames = {},
+   	customizationDefaults = {},
+
+   	ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_item_ingredients_n"},
+  	 ingredientTitleNames = {"trim_and_binding", "extra_trim", "jewelry_setting", "hardware", "inner_gown", "outer_gown", "jedi_treatment_1"},
+  	 ingredientSlotType = {1, 1, 1, 0, 1, 0, 1},
+   	resourceTypes = {"object/tangible/component/clothing/shared_fiberplast_panel.iff", "object/tangible/component/clothing/shared_trim.iff", "object/tangible/component/clothing/shared_jewelry_setting.iff", "metal", "object/tangible/component/clothing/shared_synthetic_cloth.iff", "hide", "object/tangible/component/clothing/shared_clothing_jedi_treatment_01.iff"},
+   	resourceQuantities = {4, 4, 2, 160, 2, 120, 1},
+   	contribution = {100, 100, 100, 100, 100, 100, 1},
+
+
+
+   	targetTemplate = "object/tangible/wearables/robe/robe_jedi_black_02.iff",
+
+   	additionalTemplates = {
+             },
+
+}
+ObjectTemplates: addTemplate(object_draft_schematic_clothing_clothing_robe_jedi_black_02, "object/draft_schematic/clothing/clothing_robe_jedi_black_02.iff")

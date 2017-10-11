@@ -222,3 +222,7 @@ includeFile("tangible/loot/loot_schematic/rebel_assault_chest_plate_camo_schemat
 includeFile("tangible/loot/loot_schematic/rebel_assault_helmet_camo_schematic.lua")
 includeFile("tangible/loot/loot_schematic/rebel_assault_leggings_camo_schematic.lua")
 includeFile("tangible/loot/loot_schematic/rebel_assault_gloves_camo_schematic.lua")
+
+--Jedi Robe
+includeFile("tangible/loot/loot_schematic/jedi_robe_black_01_schematic.lua")
+includeFile("tangible/loot/loot_schematic/jedi_robe_black_02_schematic.lua")

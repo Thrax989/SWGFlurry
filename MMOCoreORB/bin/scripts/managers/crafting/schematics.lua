@@ -1921,4 +1921,8 @@ schematics = {
 	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_bicep_r_camo.iff"},
 	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_bracer_l_camo.iff"},
 	{path="object/draft_schematic/clothing/clothing_armor_stormtrooper_bracer_r_camo.iff"},
+	--Jedi Robes
+	{path="object/draft_schematic/clothing/clothing_robe_jedi_black_01.iff"},
+	{path="object/draft_schematic/clothing/clothing_robe_jedi_black_02.iff"},
+
 };
