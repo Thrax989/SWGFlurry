@@ -5,11 +5,26 @@ lootcollectiontiertwo  = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "junk", weight = 9800000},
-		{itemTemplate = "custom_vehicle_uncommon", weight = 125000},
-		{itemTemplate = "custom_vehicle_rare", weight = 25000},
-		{itemTemplate = "g_imperial_credit", weight = 25000}, --Keep Rare Please
-		{itemTemplate = "g_rebel_credit", weight = 25000},
+		--Fill to 25%
+		{itemTemplate = "junk", weight = 1250000},
+		{itemTemplate = "jedi_treatment_group", weight = 1250000},
+		
+
+		--Fill to 25%
+		{groupTemplate = "holocron_dark", weight = 1250000},
+		{groupTemplate = "holocron_light", weight = 1250000},
+		
+
+		--Fill to 25%
+		{groupTemplate = "g_rebel_credit", weight = 1250000},
+		{groupTemplate = "g_imperial_credit", weight = 1250000},
+
+		--Fill to 25%
+		{groupTemplate = "crafted_rugs", weight = 500000},
+		{groupTemplate = "g_banner_rebel", weight = 500000},
+		{groupTemplate = "g_banner_imperial", weight = 500000},
+		{groupTemplate = "g_command_console", weight = 500000},
+		{groupTemplate = "custom_vehicle_rare", weight = 500000},
 	}
 }
 

@@ -5,7 +5,28 @@ lootcollectiontierthree  = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "junk", weight = 10000000},
+
+		--Fill to 25%
+		{itemTemplate = "junk", weight = 1250000},
+		{itemTemplate = "goggles_all", weight = 1250000},
+		
+
+		--Fill to 25%
+		{groupTemplate = "backpacks_b01", weight = 1250000},
+		{groupTemplate = "backpacks_b02", weight = 1250000},
+		
+
+		--Fill to 25%
+		{groupTemplate = "crystal_kuns_blood", weight = 1250000},
+		{groupTemplate = "ref_crate", weight = 1250000},
+
+		--Fill to 25%
+		{groupTemplate = "exar_kun_ls_group", weight = 500000},
+		{groupTemplate = "g_jinzu_razor_loot_deed", weight = 500000},
+		{groupTemplate = "jedi_robe_black_01_group", weight = 500000},
+		{groupTemplate = "jedi_robe_black_02_group", weight = 500000},
+		{groupTemplate = "custom_vehicle_rare", weight = 500000},
+	
 	}
 }
 
