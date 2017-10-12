@@ -35,7 +35,7 @@ int FriendcrateMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, C
 
  	ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
  	ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
-	lootManager->createLoot(inventory, "friendcrate", 300);
+	lootManager->createLoot(inventory, "ref_crate", 300);
 	sceneObject->destroyObjectFromWorld(true);
 	sceneObject->destroyObjectFromDatabase(true);
 	return 0;
