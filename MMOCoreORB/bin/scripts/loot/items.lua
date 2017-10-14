@@ -9,7 +9,8 @@ JUNKJAWA = 64
 JUNKGUNGAN = 128
 JUNKCORSEC = 256
 
-
+includeFile("items/imppointsitem.lua")
+includeFile("items/rebpointsitem.lua")
 includeFile("items/attachment_armor.lua")
 includeFile("items/attachment_clothing.lua")
 includeFile("items/balanced_feed_mechanism.lua")
