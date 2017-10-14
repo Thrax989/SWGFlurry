@@ -22,9 +22,9 @@ trainer_1hsword = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = NONE,
-	creatureBitmask = NONE,
-	optionsBitmask = INVULNERABLE + CONVERSABLE,
+	pvpBitmask = ATTACKABLE,
+	creatureBitmask = PACK,
+	optionsBitmask = INVULNERABLE + CONVERSABLE + JTLINTERESTING,
 	diet = HERBIVORE,
 
 	templates = {

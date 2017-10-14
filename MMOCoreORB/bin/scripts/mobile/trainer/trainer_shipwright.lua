@@ -21,8 +21,8 @@ trainer_shipwright = Creature:new {
 	milk = 0,
 	tamingChance = 0.000000,
 	ferocity = 0,
-	pvpBitmask = NONE,
-	creatureBitmask = NONE,
+	pvpBitmask = ATTACKABLE,
+	creatureBitmask = PACK,
 	optionsBitmask = INVULNERABLE + CONVERSABLE + JTLINTERESTING,
 	diet = HERBIVORE,
 

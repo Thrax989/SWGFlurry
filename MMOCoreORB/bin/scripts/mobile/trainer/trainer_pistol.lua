@@ -21,9 +21,9 @@ trainer_pistol = Creature:new {
 	milk = 0,
 	tamingChance = 0.000000,
 	ferocity = 0,
-	pvpBitmask = NONE,
-	creatureBitmask = NONE,
-	optionsBitmask = INVULNERABLE + CONVERSABLE,
+	pvpBitmask = ATTACKABLE,
+	creatureBitmask = PACK,
+	optionsBitmask = INVULNERABLE + CONVERSABLE + JTLINTERESTING,
 	diet = HERBIVORE,
 
 	templates = {
