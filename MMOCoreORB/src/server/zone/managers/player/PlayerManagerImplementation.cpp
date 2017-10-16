@@ -1575,6 +1575,8 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 		}
 	}
 
+	return xp;
+
 	if (xpType == "force_rank_xp") {
 		if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
 			PlayerObject* ghost = player->getPlayerObject();
