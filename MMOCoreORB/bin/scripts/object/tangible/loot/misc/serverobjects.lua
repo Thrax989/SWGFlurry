@@ -119,3 +119,4 @@ includeFile("tangible/loot/misc/worklight.lua")
 --Custom
 includeFile("tangible/loot/misc/imperial_credit.lua")
 includeFile("tangible/loot/misc/rebel_credit.lua")
+includeFile("tangible/loot/misc/new_player_pack.lua")

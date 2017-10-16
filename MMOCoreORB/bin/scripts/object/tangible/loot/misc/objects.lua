@@ -4248,3 +4248,9 @@ object_tangible_loot_misc_shared_rebel_credit = SharedTangibleObjectTemplate:new
 
 ObjectTemplates:addClientTemplate(object_tangible_loot_misc_shared_rebel_credit, "object/tangible/loot/misc/shared_rebel_credit.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_loot_misc_shared_new_player_pack = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/misc/shared_new_player_pack.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_misc_shared_new_player_pack, "object/tangible/loot/misc/shared_new_player_pack.iff")

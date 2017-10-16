@@ -42,7 +42,32 @@
 
 
 object_tangible_food_fruit_melon = object_tangible_food_shared_fruit_melon:new {
+	templateType = CONSUMABLE,
+	
+		duration = 150,
+		filling = 0,
+		nutrition = 0,
 
+		effectType = 1,
+
+		fillingMin = 0,
+		fillingMax = 0,
+
+		flavorMin = 0,
+		flavorMax = 0,
+		nutritionMin = 0,
+		nutritionMax = 0,
+		quantityMin = 0,
+		quantityMax = 0,
+	
+		modifiers = { "health", 50, "mind", 50 },
+
+		buffName = "maroj_melon",
+		buffCRC = 0,
+		speciesRestriction = "",
+	
+		consumableType = 1,
+		foragedFood = 1
 }
 
 ObjectTemplates:addTemplate(object_tangible_food_fruit_melon, "object/tangible/food/fruit_melon.iff")
