@@ -69,7 +69,7 @@ baseStoredShips = 3
 -----------------------------------
 --VETERAN REWARDS CONFIG
 -----------------------------------
-veteranRewardMilestones = {0, 1, 10, 15, 30, 45, 90, 120, 150, 180, 210, 240, 270, 300, 365} --days, must be sorted low to high
+veteranRewardMilestones = {0, 1, 10, 30, 45, 90, 120, 150, 180, 210, 240, 270, 300, 365} --days, must be sorted low to high
 
 veteranRewardAdditionalMilestones = 35 --frequency, in days, of additional milestones (beyond the established ones)
 
@@ -79,7 +79,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/loot/misc/new_player_pack.iff", milestone=0, oneTime=true, description="New Player Resource Pack"},
 	
 		-- 1 Day Rewards
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=1, oneTime=true, description="Instant Full XP Token"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=1, oneTime=false, description="Instant Full XP Token"},
 
 		-- 10 Day Rewards
 		
@@ -90,9 +90,6 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/frn_vet_protocol_droid_toy.iff", milestone=10, oneTime=false, description="@veteran_new:mini_protocoldroid"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_r2_toy.iff", milestone=10, oneTime=false, description="@veteran_new:mini_r2"},
 
-		-- 15 day Rewards
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=15, oneTime=true, description="Instant Full XP Token"},
-	
 		-- 30 Day Rewards
 		{templateFile = "object/tangible/veteran_reward/resource.iff", milestone=30, oneTime=true, description="@veteran_new:resourcecrate"},
 		{templateFile = "object/tangible/veteran_reward/frn_couch_falcon_corner_s01.iff", milestone=30, oneTime=false, description="@veteran_new:falconcouch"},
