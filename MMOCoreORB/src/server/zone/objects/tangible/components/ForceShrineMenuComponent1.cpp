@@ -26,13 +26,13 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-	/*menuResponse->addRadialMenuItem(213, 3, "@jedi_trials:meditate"); // Meditate*/
+	menuResponse->addRadialMenuItem(213, 3, "@jedi_trials:meditate"); // Meditate
 	if (player->hasSkill("force_title_jedi_rank_02")) {
 		menuResponse->addRadialMenuItem(214, 3, "Robe Replacement"); // Get Robes
 	}
-	if ((ghost->getJediState() >= 1 && ghost->getSpentJediSkillPoints() > 235) || ghost->getJediState() >=1) {
+	if ((ghost->getJediState() >= 2 && ghost->getSpentJediSkillPoints() > 235) || ghost->getJediState() >=4) {
 		menuResponse->addRadialMenuItem(215, 3, "Force Ranking");
-		if (ghost->getJediState() == 1 && ghost->getSpentJediSkillPoints() > 235) {
+		if (ghost->getJediState() == 2 && ghost->getSpentJediSkillPoints() > 235) {
 			menuResponse->addRadialMenuItemToRadialID(215, 216, 3, "Join Sith Order"); // Join Sith
 			menuResponse->addRadialMenuItemToRadialID(215, 217, 3, "Join Jedi Order"); // Join Jedi
 		}
@@ -46,7 +46,7 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 	if (ghost->getAdminLevel() >= 6) {
 		menuResponse->addRadialMenuItem(220, 3, "Admin Debug");
 		menuResponse->addRadialMenuItemToRadialID(220, 221, 3, "Find New Jedi Trainer"); // SWGemu Trainer Method
-		menuResponse->addRadialMenuItemToRadialID(220, 222, 3, "Leave FRS"); // Remove All FRS Skills and set Jedi State 1
+		menuResponse->addRadialMenuItemToRadialID(220, 222, 3, "Leave FRS"); // Remove All FRS Skills and set Jedi Sate 1
 		menuResponse->addRadialMenuItemToRadialID(220, 223, 3, "Set Jedi State 1"); // Set Jedi State to 1
 		menuResponse->addRadialMenuItemToRadialID(220, 224, 3, "Show Total Jedi Skills"); // Show sum of jedi Skills
 		menuResponse->addRadialMenuItemToRadialID(220, 225, 3, "Show Visibility"); // Show Faction Status
@@ -73,7 +73,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 		StringBuffer sysmsg;
 		sysmsg << "@jedi_trials:force_shrine_wisdom_" << rand;
 		creature->sendSystemMessage(sysmsg.toString());
-		if (ghost->getJediState() >= 1) {
+		if (ghost->getJediState() >= 2) {
 			int jediVis1 = ghost->getVisibility();
 			StringBuffer messageVis;
 			messageVis << "\\#00CC00 Your Visibility is at: " << jediVis1;
@@ -88,7 +88,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 	
 	if (selectedID == 213) {
 		if (!creature->hasSkill("force_title_jedi_rank_02") && (ghost->getJediState() >= 1)) {
-			if (ghost->getJediState() > 1) {
+			if (ghost->getJediState() > 2) {
 				ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
 				box->setPromptTitle("Abandon FRS"); // You feel a tingle in the Force.
 				box->setPromptText("Before Regaining Padawan you must leave the FRS");
@@ -178,7 +178,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			}
 		}
 	}
-	if (selectedID == 216 && (ghost->getJediState() == 1)) {
+	if (selectedID == 216 && (ghost->getJediState() == 2)) {
 		if (creature->getFaction() == 3679112276) {
 			creature->setScreenPlayState("jedi_FRS", 8);
 			SkillManager::instance()->awardSkill("force_title_jedi_rank_03", creature, true, true, true);
@@ -229,7 +229,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			creature->sendMessage(box->generateMessage());
 		}
 	}
-	if (selectedID == 217 && (ghost->getJediState() == 1)) {
+	if (selectedID == 217 && (ghost->getJediState() == 2)) {
 		if (creature->getFaction() == 370444368) {
 			creature->setScreenPlayState("jedi_FRS", 4);
 			SkillManager::instance()->awardSkill("force_title_jedi_rank_03", creature, true, true, true);
@@ -322,8 +322,8 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 		if (creature->getScreenPlayState("jedi_FRS") == 8) {
 			creature->setScreenPlayState("jedi_FRS", 16);
 		}
-		if (ghost->getJediState() > 1) {
-			ghost->setJediState(1);
+		if (ghost->getJediState() > 2) {
+			ghost->setJediState(2);
 		}
 	}
 	if (selectedID == 219) {
@@ -368,8 +368,8 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 		if (creature->getScreenPlayState("jedi_FRS") == 4) {
 			creature->setScreenPlayState("jedi_FRS", 16);
 		}
-		if (ghost->getJediState() > 1) {
-			ghost->setJediState(1);
+		if (ghost->getJediState() > 2) {
+			ghost->setJediState(2);
 		}
 	}
 	
@@ -380,8 +380,8 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 		//findTrainerObject(creature);
 		//Vector3 coords(-169.45, -4712.58, 0); // Scout Trainer outside starport
 		//String zoneName = "corellia"; // Scout Trainer outside starport
-		Vector3 coords(5294.95, -4123.03, 0); // Jedi Master Trainer
-		String zoneName = "dathomir"; // Jedi Master Trainer
+		Vector3 coords(5294.95, -4123.03, 0); // Alex Jedi Master Trainer
+		String zoneName = "dathomir"; // Alex Jedi Master Trainer
 		ghost->setTrainerCoordinates(coords);
 		ghost->setTrainerZoneName(zoneName); // For the Waypoint.
 		creature->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
@@ -396,8 +396,8 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 				}
 			}
 		}
-		if (ghost->getJediState() > 1) {
-			ghost->setJediState(1);
+		if (ghost->getJediState() > 2) {
+			ghost->setJediState(2);
 		}
 	}
 	if (selectedID == 223) {
