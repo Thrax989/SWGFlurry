@@ -26,13 +26,13 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-	menuResponse->addRadialMenuItem(213, 3, "@jedi_trials:meditate"); // Meditate
+	menuResponse->addRadialMenuItem(213, 3, "Visibility"); // Visibility
 	if (player->hasSkill("force_title_jedi_rank_02")) {
 		menuResponse->addRadialMenuItem(214, 3, "Robe Replacement"); // Get Robes
 	}
-	if ((ghost->getJediState() >= 2 && ghost->getSpentJediSkillPoints() > 235) || ghost->getJediState() >=4) {
+	if ((ghost->getJediState() >= 1 && ghost->getSpentJediSkillPoints() > 235) || ghost->getJediState() >=4) {
 		menuResponse->addRadialMenuItem(215, 3, "Force Ranking");
-		if (ghost->getJediState() == 2 && ghost->getSpentJediSkillPoints() > 235) {
+		if (ghost->getJediState() == 1 && ghost->getSpentJediSkillPoints() > 235) {
 			menuResponse->addRadialMenuItemToRadialID(215, 216, 3, "Join Sith Order"); // Join Sith
 			menuResponse->addRadialMenuItemToRadialID(215, 217, 3, "Join Jedi Order"); // Join Jedi
 		}
@@ -46,7 +46,7 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 	if (ghost->getAdminLevel() >= 6) {
 		menuResponse->addRadialMenuItem(220, 3, "Admin Debug");
 		menuResponse->addRadialMenuItemToRadialID(220, 221, 3, "Find New Jedi Trainer"); // SWGemu Trainer Method
-		menuResponse->addRadialMenuItemToRadialID(220, 222, 3, "Leave FRS"); // Remove All FRS Skills and set Jedi State 1
+		menuResponse->addRadialMenuItemToRadialID(220, 222, 3, "Leave FRS"); // Remove All FRS Skills and set Jedi Sate 1
 		menuResponse->addRadialMenuItemToRadialID(220, 223, 3, "Set Jedi State 1"); // Set Jedi State to 1
 		menuResponse->addRadialMenuItemToRadialID(220, 224, 3, "Show Total Jedi Skills"); // Show sum of jedi Skills
 		menuResponse->addRadialMenuItemToRadialID(220, 225, 3, "Show Visibility"); // Show Faction Status
@@ -57,11 +57,11 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 }
 
 int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
-	/*if (selectedID != 213)
+	if (selectedID != 213)
 	return 0;
 
 	if (!creature->hasSkill("force_title_jedi_novice"))
-	return 0;*/
+	return 0;
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 	if (ghost == NULL)
 	return 0;
@@ -78,70 +78,9 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			StringBuffer messageVis;
 			messageVis << "\\#00CC00 Your Visibility is at: " << jediVis1;
 			creature->sendSystemMessage(messageVis.toString());
-		}
-	}
 
-	ZoneServer* zserv = creature->getZoneServer();
-
-	if (zserv == NULL)
-		return 0;
-	
-	if (selectedID == 213) {
-		if (!creature->hasSkill("force_title_jedi_rank_02") && (ghost->getJediState() >= 1)) {
-			if (ghost->getJediState() > 2) {
-				ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
-				box->setPromptTitle("Abandon FRS"); // You feel a tingle in the Force.
-				box->setPromptText("Before Regaining Padawan you must leave the FRS");
-				ghost->addSuiBox(box);
-				creature->sendMessage(box->generateMessage());
-				return 0;
-				} else {
-					//getChatManager()->broadcastGalaxy(NULL, "disturbance in the force")
-					//ManagedReference<ZoneServer*> zoneServer;
-				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, "\\#00ff00IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.");
-				ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
-				box->setPromptTitle("@jedi_trials:padawan_trials_title"); // Jedi Trials
-				box->setPromptText("@jedi_trials:padawan_trials_completed");
-
-				ghost->addSuiBox(box);
-				creature->sendMessage(box->generateMessage());
-
-				SkillManager::instance()->awardSkill("force_title_jedi_rank_02", creature, true, true, true);
-
-				creature->playEffect("clienteffect/trap_electric_01.cef", "");
-
-				PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_jedi.snd");
-				//PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_jedi.snd");
-				creature->sendMessage(pmm);
-
-				ghost->setJediState(2);
-
-				ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
-				//Check if inventory is full.
-				if (inventory->isContainerFullRecursive()) {
-					creature->sendSystemMessage("@jedi_spam:inventory_full_jedi_robe"); // You have too many items in your inventory. In order to get your Padawan Robe you must clear out at least one free slot.
-					return 0;
-				}
-				ZoneServer* zserv = creature->getZoneServer();
-
-				String PadawanRobe = "object/tangible/wearables/robe/robe_jedi_padawan.iff";
-				ManagedReference<SceneObject*> padawanRobe = zserv->createObject(PadawanRobe.hashCode(), 1);
-				if (inventory->transferObject(padawanRobe, -1)) {
-					inventory->broadcastObject(padawanRobe, true);
-					} else {
-					padawanRobe->destroyObjectFromDatabase(true);
-				}
-				//findTrainerObject(creature);
-				//Vector3 coords(-169.45, -4712.58, 0); // Scout Trainer outside starport
-				//String zoneName = "corellia"; // Scout Trainer outside starport
-				Vector3 coords(5294.95, -4123.03, 0); // Alex Jedi Master Trainer
-				String zoneName = "dathomir"; // Alex Jedi Master Trainer
-				ghost->setTrainerCoordinates(coords);
-				ghost->setTrainerZoneName(zoneName); // For the Waypoint.
-				creature->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
 			}
 		}
-	}
 	if (selectedID == 214) {
 		ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
 		//Check if inventory is full.
@@ -193,8 +132,10 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			box->setPromptText("Welcome to the Sith Order!");
 			ghost->addSuiBox(box);
 			creature->sendMessage(box->generateMessage());
-			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", "");
+			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", ""); // Not sure if it's the right one for this.
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_dark_jedi.snd");
+			//PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_dark_jedi.snd"); //Alex: this is SOE Version, I'm not a fan
+			//PlayMusicMessage* pmm = new PlayMusicMessage("music/mus_baroque_recital_lp.mp3");
 			creature->sendMessage(pmm);
 			//Broadcast to Server
 			String playerName = creature->getFirstName();
@@ -242,8 +183,10 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			box->setPromptText("Welcome to the Jedi Order!");
 			ghost->addSuiBox(box);
 			creature->sendMessage(box->generateMessage());
-			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", "");
+			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", ""); // Not sure if it's the right one for this.
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd");
+			//PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd"); //Alex: this is SOE Version, I'm not a fan
+			//PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_jungle_amb_b.snd");
 			creature->sendMessage(pmm);
 			//Broadcast to Server
 			String playerName = creature->getFirstName();
@@ -358,6 +301,8 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#ffb90f" << playerName << " has left the \\#22b7f6Jedi Order!";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			//Set Jedi State
+			//ghost->setJediState(2);
 		}
 		if (creature->getScreenPlayState("jedi_FRS") == 4) {
 			creature->setScreenPlayState("jedi_FRS", 16);
@@ -374,8 +319,8 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 		//findTrainerObject(creature);
 		//Vector3 coords(-169.45, -4712.58, 0); // Scout Trainer outside starport
 		//String zoneName = "corellia"; // Scout Trainer outside starport
-		Vector3 coords(5294.95, -4123.03, 0); // Jedi Master Trainer
-		String zoneName = "dathomir"; // Jedi Master Trainer
+		Vector3 coords(5294.95, -4123.03, 0); // Alex Jedi Master Trainer
+		String zoneName = "dathomir"; // Alex Jedi Master Trainer
 		ghost->setTrainerCoordinates(coords);
 		ghost->setTrainerZoneName(zoneName); // For the Waypoint.
 		creature->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
