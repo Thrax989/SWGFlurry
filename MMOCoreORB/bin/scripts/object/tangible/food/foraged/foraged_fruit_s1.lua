@@ -42,32 +42,32 @@
 
 -- Maroj Melon
 object_tangible_food_foraged_foraged_fruit_s1 = object_tangible_food_foraged_shared_foraged_fruit_s1:new {
-	templateType = CONSUMABLE,
+		templateType = CONSUMABLE,
 	
-	duration = 150,
-	filling = 0,
-	nutrition = 0,
+		duration = 150,
+		filling = 0,
+		nutrition = 0,
 
-	effectType = 1,
+		effectType = 1,
 
-	fillingMin = 0,
-	fillingMax = 0,
+		fillingMin = 0,
+		fillingMax = 0,
 
-	flavorMin = 0,
-	flavorMax = 0,
-	nutritionMin = 0,
-	nutritionMax = 0,
-	quantityMin = 0,
-	quantityMax = 0,
+		flavorMin = 0,
+		flavorMax = 0,
+		nutritionMin = 0,
+		nutritionMax = 0,
+		quantityMin = 0,
+		quantityMax = 0,
 	
-	modifiers = { "health", 50, "mind", 50 },
+		modifiers = { "health", 50, "mind", 50 },
 
-	buffName = "maroj_melon",
-	buffCRC = 0,
-	speciesRestriction = "",
+		buffName = "maroj_melon",
+		buffCRC = 0,
+		speciesRestriction = "",
 	
-	consumableType = 1,
-	foragedFood = 1
+		consumableType = 1,
+		foragedFood = 1
 }
 
 ObjectTemplates:addTemplate(object_tangible_food_foraged_foraged_fruit_s1, "object/tangible/food/foraged/foraged_fruit_s1.iff")

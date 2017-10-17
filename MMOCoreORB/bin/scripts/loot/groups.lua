@@ -1,4 +1,4 @@
-includeFile("groups/impoints.lua")
+includeFile("groups/imppoints.lua")
 includeFile("groups/rebpoints.lua")
 includeFile("groups/armor_attachments.lua")
 includeFile("groups/clothing_attachments.lua")

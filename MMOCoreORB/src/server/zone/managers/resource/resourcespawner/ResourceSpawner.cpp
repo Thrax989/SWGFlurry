@@ -761,6 +761,20 @@ bool ResourceSpawner::isRecycledResource(ResourceSpawn* resource) {
 	return entry->isRecycled();
 }
 
+ResourceSpawn* ResourceSpawner::getRecycledResourceSpawnByType(const String& resourceType) {
+
+	ResourceTreeEntry* recycledEntry = NULL;
+	ManagedReference<ResourceSpawn*> recycledVersion = NULL;
+	recycledEntry = resourceTree->getEntry(resourceType);
+	if (resourceMap->containsType(recycledEntry->getFinalClass())) {
+		recycledVersion = resourceMap->get(recycledEntry->getFinalClass().toLowerCase());
+	} else {
+		recycledVersion = createRecycledResourceSpawn(recycledEntry);
+	}
+
+	return recycledVersion;
+}
+
 ResourceSpawn* ResourceSpawner::getRecycledVersion(ResourceSpawn* resource) {
 	ResourceTreeEntry* startingEntry = resourceTree->getEntry(resource->getType());
 

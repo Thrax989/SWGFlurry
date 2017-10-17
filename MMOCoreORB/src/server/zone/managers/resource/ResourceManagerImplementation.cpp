@@ -402,6 +402,11 @@ ResourceSpawn* ResourceManagerImplementation::getRecycledVersion(ResourceSpawn* 
 	return resourceSpawner->getRecycledVersion(resource);
 }
 
+ResourceSpawn* ResourceManagerImplementation::getRecycledVersionByType(const String& resourceType) {
+	return resourceSpawner->getRecycledResourceSpawnByType(resourceType);
+}
+
+
 /// Resource Deed Methods
 void ResourceManagerImplementation::addNodeToListBox(SuiListBox* sui, const String& nodeName) {
 	resourceSpawner->addNodeToListBox(sui, nodeName);

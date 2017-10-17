@@ -53,6 +53,7 @@
 #include "server/zone/objects/tangible/components/ArtifactMenuComponent.h"
 #include "server/zone/objects/tangible/components/ForceShrineMenuComponent1.h"
 #include "server/zone/objects/tangible/components/FriendcrateMenuComponent.h"
+#include "server/zone/objects/tangible/components/NewMemberMenuComponent.h"
 #include "server/zone/objects/tangible/components/ScrapMenuComponent.h"
 #include "server/zone/objects/tangible/components/CollectionsilverMenuComponent.h"
 #include "server/zone/objects/tangible/components/CollectiongoldMenuComponent.h"
@@ -207,6 +208,7 @@ ComponentManager::ComponentManager() {
 	components.put("ArtifactMenuComponent", new ArtifactMenuComponent());
 	components.put("ForceShrineMenuComponent1", new ForceShrineMenuComponent1());
 	components.put("FriendcrateMenuComponent", new FriendcrateMenuComponent());
+	components.put("NewMemberMenuComponent", new NewMemberMenuComponent());
 	components.put("ScrapMenuComponent", new ScrapMenuComponent());
 	components.put("HolocronMenuComponent", new HolocronMenuComponent());
 	components.put("WaypointDatapadMenuComponent", new WaypointDatapadMenuComponent());
