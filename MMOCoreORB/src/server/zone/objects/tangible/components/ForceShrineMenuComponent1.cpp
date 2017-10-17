@@ -46,7 +46,7 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 	if (ghost->getAdminLevel() >= 6) {
 		menuResponse->addRadialMenuItem(220, 3, "Admin Debug");
 		menuResponse->addRadialMenuItemToRadialID(220, 221, 3, "Find New Jedi Trainer"); // SWGemu Trainer Method
-		menuResponse->addRadialMenuItemToRadialID(220, 222, 3, "Leave FRS"); // Remove All FRS Skills and set Jedi Sate 1
+		menuResponse->addRadialMenuItemToRadialID(220, 222, 3, "Leave FRS"); // Remove All FRS Skills and set Jedi State 1
 		menuResponse->addRadialMenuItemToRadialID(220, 223, 3, "Set Jedi State 1"); // Set Jedi State to 1
 		menuResponse->addRadialMenuItemToRadialID(220, 224, 3, "Show Total Jedi Skills"); // Show sum of jedi Skills
 		menuResponse->addRadialMenuItemToRadialID(220, 225, 3, "Show Visibility"); // Show Faction Status
@@ -193,10 +193,8 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			box->setPromptText("Welcome to the Sith Order!");
 			ghost->addSuiBox(box);
 			creature->sendMessage(box->generateMessage());
-			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", ""); // Not sure if it's the right one for this.
+			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", "");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_dark_jedi.snd");
-			//PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_dark_jedi.snd"); //Alex: this is SOE Version, I'm not a fan
-			//PlayMusicMessage* pmm = new PlayMusicMessage("music/mus_baroque_recital_lp.mp3");
 			creature->sendMessage(pmm);
 			//Broadcast to Server
 			String playerName = creature->getFirstName();
@@ -244,10 +242,8 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			box->setPromptText("Welcome to the Jedi Order!");
 			ghost->addSuiBox(box);
 			creature->sendMessage(box->generateMessage());
-			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", ""); // Not sure if it's the right one for this.
+			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", "");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd");
-			//PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd"); //Alex: this is SOE Version, I'm not a fan
-			//PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_jungle_amb_b.snd");
 			creature->sendMessage(pmm);
 			//Broadcast to Server
 			String playerName = creature->getFirstName();
@@ -362,8 +358,6 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#ffb90f" << playerName << " has left the \\#22b7f6Jedi Order!";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-			//Set Jedi State
-			//ghost->setJediState(2);
 		}
 		if (creature->getScreenPlayState("jedi_FRS") == 4) {
 			creature->setScreenPlayState("jedi_FRS", 16);
@@ -380,8 +374,8 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 		//findTrainerObject(creature);
 		//Vector3 coords(-169.45, -4712.58, 0); // Scout Trainer outside starport
 		//String zoneName = "corellia"; // Scout Trainer outside starport
-		Vector3 coords(5294.95, -4123.03, 0); // Alex Jedi Master Trainer
-		String zoneName = "dathomir"; // Alex Jedi Master Trainer
+		Vector3 coords(5294.95, -4123.03, 0); // Jedi Master Trainer
+		String zoneName = "dathomir"; // Jedi Master Trainer
 		ghost->setTrainerCoordinates(coords);
 		ghost->setTrainerZoneName(zoneName); // For the Waypoint.
 		creature->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
