@@ -46,7 +46,7 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 	if (ghost->getAdminLevel() >= 6) {
 		menuResponse->addRadialMenuItem(220, 3, "Admin Debug");
 		menuResponse->addRadialMenuItemToRadialID(220, 221, 3, "Find New Jedi Trainer"); // SWGemu Trainer Method
-		menuResponse->addRadialMenuItemToRadialID(220, 222, 3, "Leave FRS"); // Remove All FRS Skills and set Jedi Sate 1
+		menuResponse->addRadialMenuItemToRadialID(220, 222, 3, "Leave FRS"); // Remove All FRS Skills and set Jedi State 1
 		menuResponse->addRadialMenuItemToRadialID(220, 223, 3, "Set Jedi State 1"); // Set Jedi State to 1
 		menuResponse->addRadialMenuItemToRadialID(220, 224, 3, "Show Total Jedi Skills"); // Show sum of jedi Skills
 		menuResponse->addRadialMenuItemToRadialID(220, 225, 3, "Show Visibility"); // Show Faction Status
@@ -55,7 +55,6 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 		menuResponse->addRadialMenuItemToRadialID(220, 228, 3, "Reset Jedi Screenplay State"); // Show Faction Status
 	}
 }
-
 int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID != 213)
 	return 0;
@@ -78,7 +77,6 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			StringBuffer messageVis;
 			messageVis << "\\#00CC00 Your Visibility is at: " << jediVis1;
 			creature->sendSystemMessage(messageVis.toString());
-
 			}
 		}
 	if (selectedID == 214) {
@@ -132,10 +130,8 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			box->setPromptText("Welcome to the Sith Order!");
 			ghost->addSuiBox(box);
 			creature->sendMessage(box->generateMessage());
-			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", ""); // Not sure if it's the right one for this.
+			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", "");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_dark_jedi.snd");
-			//PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_dark_jedi.snd"); //Alex: this is SOE Version, I'm not a fan
-			//PlayMusicMessage* pmm = new PlayMusicMessage("music/mus_baroque_recital_lp.mp3");
 			creature->sendMessage(pmm);
 			//Broadcast to Server
 			String playerName = creature->getFirstName();
@@ -183,10 +179,8 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			box->setPromptText("Welcome to the Jedi Order!");
 			ghost->addSuiBox(box);
 			creature->sendMessage(box->generateMessage());
-			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", ""); // Not sure if it's the right one for this.
+			creature->playEffect("clienteffect/entertainer_dazzle_level_3.cef", "");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd");
-			//PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd"); //Alex: this is SOE Version, I'm not a fan
-			//PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_jungle_amb_b.snd");
 			creature->sendMessage(pmm);
 			//Broadcast to Server
 			String playerName = creature->getFirstName();
@@ -221,12 +215,6 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 	}
 	if (selectedID == 218) {
 		if (creature->hasSkill("force_rank_dark_novice")) {
-			/*ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
-			box->setPromptTitle("Sith Order");
-			box->setPromptText("You must abandon your knowledge prior to leaving the Sith Order!");
-			ghost->addSuiBox(box);
-			creature->sendMessage(box->generateMessage());
-			} else {*/
 			SkillList* skillList = creature->getSkillList();
 			while (creature->hasSkill("force_rank_dark_novice")) {
 				for (int i = 0; i < skillList->size(); ++i) {
@@ -267,12 +255,6 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 	}
 	if (selectedID == 219) {
 		if (creature->hasSkill("force_rank_light_novice")) {
-			/*ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
-			box->setPromptTitle("Jedi Order");
-			box->setPromptText("You must abandon your knowledge prior to leaving the Jedi Order!");
-			ghost->addSuiBox(box);
-			creature->sendMessage(box->generateMessage());
-			} else {*/
 			SkillList* skillList = creature->getSkillList();
 			while (creature->hasSkill("force_rank_light_novice")) {
 				for (int i = 0; i < skillList->size(); ++i) {
@@ -311,7 +293,6 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			ghost->setJediState(2);
 		}
 	}
-	
 	if (ghost->getAdminLevel() < 6)
 		return 0;
 	
