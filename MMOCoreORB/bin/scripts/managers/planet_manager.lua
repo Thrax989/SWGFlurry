@@ -137,7 +137,8 @@ dantooine = {
 
 	planetObjects = {
 		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.695864, oz = 0, ow = 0.718174, x = 1585.68, z = 4, y = -6368.95, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.725999, oz = 0, ow = -0.687696, x = -629.417, z = 3, y = 2481.24, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.725999, oz = 0, ow = -0.687696, x = -629.417, z = 3, y = 2481.24, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.692641, oz = 0, ow = 0.721282, x = -4223, z = 3, y = -2357, parentid = 0}
 	}
 }
 
