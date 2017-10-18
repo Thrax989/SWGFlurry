@@ -10,3 +10,5 @@ includeFile("custom_loot/groups/vehicle_components/custom_vehicle_uncommon.lua")
 --Token
 includeFile("custom_loot/groups/tokens/g_imperial_credit.lua")
 includeFile("custom_loot/groups/tokens/g_rebel_credit.lua")
+--AB1 Schematic
+includeFile("custom_loot/groups/vehicle_schematics/uncommon_vehicles.lua")

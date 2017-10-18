@@ -40,7 +40,7 @@ selonian_captain = Creature:new {
 		"object/mobile/dressed_selonian_m_10.iff",
 		"object/mobile/dressed_selonian_m_11.iff",
 		"object/mobile/dressed_selonian_m_12.iff"},
-	lootGroups = {
+lootGroups = {
 		{
 			groups = {
 				{group = "junk", chance = 10000000}				
@@ -51,25 +51,31 @@ selonian_captain = Creature:new {
 			groups = {
 				{group = "artifact", chance = 10000000}			
 		},
-			lootChance = 1500000
+			lootChance = 1000000
 		},
 		{
 			groups = {
 				{group = "tierone", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 750000
 		},
 		{
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 		},
-			lootChance = 500000
+			lootChance = 100000
 		},
 		{
 			groups = {
 				{group = "tierthree", chance = 10000000}
 		},
-			lootChance = 100000
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "loot_kit_parts", chance = 10000000}
+		},
+			lootChance = 1000000
 		}
 	},
 	weapons = {"rebel_weapons_heavy"},

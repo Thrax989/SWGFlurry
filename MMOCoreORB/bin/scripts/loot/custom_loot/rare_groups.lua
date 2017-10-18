@@ -10,6 +10,8 @@ includeFile("custom_loot/groups/clothing/jedi_robe_black_02_group.lua")
 includeFile("custom_loot/groups/ref_crate/ref_crate.lua")
 --Custom Vehicle Components
 includeFile("custom_loot/groups/vehicle_components/custom_vehicle_rare.lua")
+--Vehicle Schematics
+includeFile("custom_loot/groups/vehicle_schematics/rare_vehicles.lua")
 --Default
 includeFile("custom_loot/groups/backpacks/backpacks_b01.lua")
 includeFile("custom_loot/groups/backpacks/backpacks_b02.lua")

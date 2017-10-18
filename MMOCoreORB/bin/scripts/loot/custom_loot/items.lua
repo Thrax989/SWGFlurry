@@ -590,3 +590,7 @@ includeFile("custom_loot/items/vehicle_comps/custom_veh_chassis_brace.lua")
 includeFile("custom_loot/items/vehicle_comps/custom_veh_grav_motor.lua")
 includeFile("custom_loot/items/vehicle_comps/custom_veh_steering_mech.lua")
 includeFile("custom_loot/items/vehicle_comps/custom_veh_turbine.lua")
+--Custom Vehicle Schematic
+includeFile("custom_loot/items/vehicle_schematics/ab_1_vehicle_schematic.lua")
+includeFile("custom_loot/items/vehicle_schematics/barc_vehicle_schematic.lua")
+

@@ -35,7 +35,7 @@ hidden_daggers_extremist = Creature:new {
 		"object/mobile/dressed_robber_human_male_01.iff",
 		"object/mobile/dressed_robber_twk_female_01.iff",
 		"object/mobile/dressed_robber_twk_male_01.iff"},
-	lootGroups = {
+lootGroups = {
 		{
 			groups = {
 				{group = "junk", chance = 10000000}				
@@ -46,25 +46,37 @@ hidden_daggers_extremist = Creature:new {
 			groups = {
 				{group = "artifact", chance = 10000000}			
 		},
-			lootChance = 1500000
+			lootChance = 1000000
 		},
 		{
 			groups = {
 				{group = "tierone", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 750000
 		},
 		{
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 		},
-			lootChance = 500000
+			lootChance = 100000
 		},
 		{
 			groups = {
 				{group = "tierthree", chance = 10000000}
 		},
-			lootChance = 100000
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "hidden_dagger_common", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "loot_kit_parts", chance = 10000000}
+		},
+			lootChance = 2000000
 		}
 	},
 	weapons = {"pirate_weapons_medium"},
