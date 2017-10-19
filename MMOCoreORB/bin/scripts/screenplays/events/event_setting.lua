@@ -220,11 +220,11 @@ function event_setting:spawnMobiles()
 	spawnMobile("naboo","fbase_stormtrooper_squad_leader_extreme", 1, 4792.72, 4.17, -4697.94, 90, 0) 
 
 --Trigger Place Holder
-	local T1Naboo = spawnMobile("naboo", "NPC", 1, -5628.4, 75.9027, -5666.37, 170, 0) print("Halloween Trigger 1 Loaded")
+	local T1Naboo = spawnMobile("naboo", "rancor", 1, 4849.01, 3.81524, -4727.87, 357, 0) print("Halloween Trigger 1 Loaded")
         	createObserver(OBJECTDESTRUCTION, "event_settingScreenPlay", "notify1NabooDead", T1Naboo)
 
 --Trigger Place Holder
-	local T2Naboo = spawnMobile("naboo", "NPC", 1, -5622.79, 75.9766, -5666.37, 168, 0) print("Halloween Trigger 2 Loaded")
+	local T2Naboo = spawnMobile("naboo", "rancor", 1, 4822.71, 3.95551, -4738.77, 256, 0) print("Halloween Trigger 2 Loaded")
         	createObserver(OBJECTDESTRUCTION, "event_settingScreenPlay", "notify2NabooDead", T2Naboo)
 end
 
@@ -244,13 +244,13 @@ end
 --Trigger Place Holder Activated
 function event_settingScreenPlay:notify1NabooDead(T1Naboo, pKiller)
 	local player = LuaCreatureObject(pKiller)
-        local pBoss = spawnMobile("naboo", "NPC", 0, -5622.48, 75.9636, -5673.65, 97, 0) print("Phase 1 Started")
+        local pBoss = spawnMobile("naboo", "rancor", 1, 4849.01, 3.81524, -4727.87, 357, 0)  print("Phase 1 Started")
         return 0
 end
 
 --Trigger Place Holder Activated
 function event_settingScreenPlay:notify2NabooDead(T2Naboo, pKiller)
 	local player = LuaCreatureObject(pKiller)
-        local pBoss = spawnMobile("naboo", "NPC", 0, -5611.96, 75.99, -5645.66, 283, 0) print("Phase 2 Started")
+        local pBoss = spawnMobile("naboo", "rancor", 1, 4822.71, 3.95551, -4738.77, 256, 0) print("Phase 2 Started")
         return 0
 end
