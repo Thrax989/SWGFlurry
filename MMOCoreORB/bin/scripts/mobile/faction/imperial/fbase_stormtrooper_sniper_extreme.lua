@@ -37,13 +37,20 @@ fbase_stormtrooper_sniper_extreme = Creature:new {
 				{group = "stormtrooper_common", chance = 500000},
 					
 			},
-		},
+			lootChance = 10000000 
+			},
 			{
 			groups = {
 				{group = "g_rebel_credit", chance = 10000000},
 				},
 			lootChance = 20000 
 			},
+			{
+			groups = {
+				{group = "rebpoints", chance = 10000000},
+				},
+			lootChance = 100000 
+			}
 	},
 	weapons = {"st_sniper_weapons"},
 	reactionStf = "@npc_reaction/stormtrooper",

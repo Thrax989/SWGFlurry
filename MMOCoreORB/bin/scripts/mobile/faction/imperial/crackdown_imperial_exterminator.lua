@@ -28,7 +28,30 @@ crackdown_imperial_exterminator = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_imperial_officer_m_5.iff"},
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 8500000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "armor_attachments", chance = 500000},
+				{group = "stormtrooper_common", chance = 500000},
+					
+			},
+			lootChance = 10000000 
+			},
+			{
+			groups = {
+				{group = "g_rebel_credit", chance = 10000000},
+				},
+			lootChance = 20000 
+			},
+			{
+			groups = {
+				{group = "rebpoints", chance = 10000000},
+				},
+			lootChance = 100000 
+			}
+	},
 	weapons = {"imperial_weapons_heavy"},
 	conversationTemplate = "",
 	attacks = merge(brawlernovice,marksmannovice)
