@@ -5,7 +5,21 @@ halloween1 = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "halloweenitems1", weight = 10000000}
+		{itemTemplate = "halloweenitems1", weight = 10000000},
+		{itemTemplate = "halloweenitems2", weight = 10000000},
+		{itemTemplate = "halloweenitems3", weight = 10000000},
+		{itemTemplate = "halloweenitems4", weight = 10000000},
+		{itemTemplate = "halloweenitems5", weight = 10000000},
+		{itemTemplate = "halloweenitems6", weight = 10000000},
+		{itemTemplate = "halloweenitems7", weight = 10000000},
+		{itemTemplate = "halloweenitems8", weight = 10000000},
+		{itemTemplate = "halloweenitems9", weight = 10000000},
+		{itemTemplate = "halloweenitems10", weight = 10000000},	
+		{itemTemplate = "halloweenitems11", weight = 10000000},
+		{itemTemplate = "halloweenitems12", weight = 10000000},
+		{itemTemplate = "halloweenitems13", weight = 10000000},
+		{itemTemplate = "halloweenitems14", weight = 10000000},
+		{itemTemplate = "halloweenitems15", weight = 10000000},
 	}
 }
 
