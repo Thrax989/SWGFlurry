@@ -47,6 +47,9 @@ includeFile("outfits/serverobjects.lua")
 --ISD
 includeFile("isd/serverobjects.lua")
 
+--Outbreak Halloween Event
+includeFile("outbreak/serverobjects.lua")
+
 ---New Content
 includeFile("custom_content/serverobjects.lua")
 includeFile("custom_vendors/serverobjects.lua")

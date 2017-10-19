@@ -16,3 +16,5 @@ includeFile("custom_loot/groups/vehicle_schematics/rare_vehicles.lua")
 includeFile("custom_loot/groups/backpacks/backpacks_b01.lua")
 includeFile("custom_loot/groups/backpacks/backpacks_b02.lua")
 includeFile("custom_loot/groups/wearables/goggles_all.lua")
+--Halloween
+includeFile("custom_loot/groups/outbreak/outbreak.lua")
