@@ -242,14 +242,14 @@ function event_setting:notifyMiniDead(pMini, pKiller)
 end
 
 --Trigger Place Holder Activated
-function event_settingScreenPlay:notify1NabooDead(T1Naboo, pKiller)
+function event_setting:notify1NabooDead(T1Naboo, pKiller)
 	local player = LuaCreatureObject(pKiller)
         local pBoss = spawnMobile("naboo", "rancor", 1, 4849.01, 3.81524, -4727.87, 357, 0)  print("Phase 1 Started")
         return 0
 end
 
 --Trigger Place Holder Activated
-function event_settingScreenPlay:notify2NabooDead(T2Naboo, pKiller)
+function event_setting:notify2NabooDead(T2Naboo, pKiller)
 	local player = LuaCreatureObject(pKiller)
         local pBoss = spawnMobile("naboo", "rancor", 1, 4822.71, 3.95551, -4738.77, 256, 0) print("Phase 2 Started")
         return 0
