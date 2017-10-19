@@ -218,11 +218,17 @@ function event_setting:spawnMobiles()
 --Door Guards
 	spawnMobile("naboo","fbase_stormtrooper_squad_leader_extreme", 1, 4797.52, 4.17, -4692.64, 138, 0) 
 	spawnMobile("naboo","fbase_stormtrooper_squad_leader_extreme", 1, 4792.72, 4.17, -4697.94, 90, 0) 
+
+--Trigger Place Holder
+	local T1Naboo = spawnMobile("naboo", "NPC", 1, -5628.4, 75.9027, -5666.37, 170, 0) print("Halloween Trigger 1 Loaded")
+        	createObserver(OBJECTDESTRUCTION, "event_settingScreenPlay", "notify1NabooDead", T1Naboo)
+
+--Trigger Place Holder
+	local T2Naboo = spawnMobile("naboo", "NPC", 1, -5622.79, 75.9766, -5666.37, 168, 0) print("Halloween Trigger 2 Loaded")
+        	createObserver(OBJECTDESTRUCTION, "event_settingScreenPlay", "notify2NabooDead", T2Naboo)
 end
 
-
 function event_setting:spawnBoss()
-
 
 	local pMini = spawnMobile("naboo", "outbreak_mini_boss", 2400, 4756.34, 3.90096, -4872.23, 15, 0)
         	createObserver(OBJECTDESTRUCTION, "event_setting", "notifyMiniDead", pMini)
@@ -230,9 +236,21 @@ end
 
 function event_setting:notifyMiniDead(pMini, pKiller)
 	local player = LuaCreatureObject(pKiller)
-  local pBoss = spawnMobile("naboo","outbreak_rancor_boss", 0, 4736.11, 3.75, -4921.59, 21, 0)  print("Spawned Mutant Rancor")
-			spatialChat(pMini, "Avenge me my pet!!")
+  	local pBoss = spawnMobile("naboo","outbreak_rancor_boss", 0, 4736.11, 3.75, -4921.59, 21, 0)  print("Spawned Mutant Rancor")
+	spatialChat(pMini, "Avenge me my pet!!")
         return 0
 end
-	
 
+--Trigger Place Holder Activated
+function event_settingScreenPlay:notify1NabooDead(T1Naboo, pKiller)
+	local player = LuaCreatureObject(pKiller)
+        local pBoss = spawnMobile("naboo", "NPC", 0, -5622.48, 75.9636, -5673.65, 97, 0) print("Phase 1 Started")
+        return 0
+end
+
+--Trigger Place Holder Activated
+function event_settingScreenPlay:notify2NabooDead(T2Naboo, pKiller)
+	local player = LuaCreatureObject(pKiller)
+        local pBoss = spawnMobile("naboo", "NPC", 0, -5611.96, 75.99, -5645.66, 283, 0) print("Phase 2 Started")
+        return 0
+end
