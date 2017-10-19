@@ -1,5 +1,5 @@
 nerf = Creature:new {
-	objectName = "@mob/creature_names:nerf",
+	customName = "Nerf",
 	socialGroup = "nerf",
 	faction = "",
 	level = 29,
