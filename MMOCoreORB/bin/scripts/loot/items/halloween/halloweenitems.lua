@@ -4,7 +4,7 @@ halloweenitems = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	customObjectName = "Halloween Crate",
-	directObjectTemplate = "",
+	directObjectTemplate = "object/tangible/loot/npc/loot/metal_case_generic.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
