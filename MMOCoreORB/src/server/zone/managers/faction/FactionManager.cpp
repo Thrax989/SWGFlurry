@@ -179,6 +179,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
 			lootManager->createLoot(inventory, "rebel_token1", 300);
+			lootManager->createLoot(inventory, "rebpoints", 300);
 			if(ghost->getJediState() >= 2){
 				lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
 			}else{
@@ -208,6 +209,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
 			lootManager->createLoot(inventory, "imperial_token1", 300);
+			lootManager->createLoot(inventory, "imppoints", 300);
 			if(ghost->getJediState() >= 2){
 				lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
 			}else{
