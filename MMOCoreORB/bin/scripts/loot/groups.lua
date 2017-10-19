@@ -374,3 +374,6 @@ includeFile("groups/lootcollectiontiertwo.lua")
 includeFile("groups/lootcollectiontierthree.lua")
 includeFile("groups/artifact.lua")
 
+--Halloween
+includeFile("groups/halloween.lua")
+includeFile("groups/halloween1.lua")

@@ -1172,3 +1172,7 @@ includeFile("items/collection/collectiontierthree.lua")
 
 --Artifact system
 includeFile("items/artifact/artifactone.lua")
+
+--Halloween
+includeFile("items/halloween/halloweenitems.lua")
+includeFile("items/halloween/halloweenitems1.lua")
