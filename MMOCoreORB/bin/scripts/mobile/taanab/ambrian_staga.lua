@@ -1,5 +1,5 @@
 ambrian_staga = Creature:new {
-	objectName = "@mob/creature_names:ambrian_staga",
+	customName = "Ambrian Staga",
 	socialGroup = "ambrian_staga",
 	faction = "",
 	level = 17,
