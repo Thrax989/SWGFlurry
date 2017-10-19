@@ -3,8 +3,8 @@
 halloweenitems1 = {
 	minimumLevel = 0,
 	maximumLevel = 0,
-	customObjectName = "Halloween",
-	directObjectTemplate = "",
+	customObjectName = "Halloween Coin",
+	directObjectTemplate = "object/tangible/event_perk/halloween_coin.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
