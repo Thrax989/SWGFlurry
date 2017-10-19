@@ -45,7 +45,14 @@ crackdown_imperial_corporal = Creature:new {
 				},
 			lootChance = 20000 
 			},
-	},
+		},
+			{
+			groups = {
+				{group = "rebpoints", chance = 10000000},
+				},
+			lootChance = 100000
+			},
+		},
 	weapons = {"imperial_weapons_medium"},
 	conversationTemplate = "",
 	attacks = merge(riflemanmaster,carbineermaster)

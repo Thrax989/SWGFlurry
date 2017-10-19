@@ -44,7 +44,14 @@ crackdown_specialist_noncom = Creature:new {
 				},
 			lootChance = 20000 
 			},
-	},
+		},
+			{
+			groups = {
+				{group = "rebpoints", chance = 10000000},
+				},
+			lootChance = 100000
+			},
+		},
 	weapons = {"imperial_weapons_light"},
 	attacks = merge(riflemanmaster,carbineermaster)
 }

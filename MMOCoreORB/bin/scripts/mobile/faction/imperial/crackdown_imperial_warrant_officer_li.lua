@@ -43,7 +43,14 @@ crackdown_imperial_warrant_officer_li = Creature:new {
 				},
 			lootChance = 20000 
 			},
-	},
+		},
+			{
+			groups = {
+				{group = "rebpoints", chance = 10000000},
+				},
+			lootChance = 100000
+			},
+		},
 	weapons = {"imperial_weapons_medium"},
 	conversationTemplate = "imperialRecruiterConvoTemplate",
 	attacks = merge(riflemanmaster,carbineermaster)
