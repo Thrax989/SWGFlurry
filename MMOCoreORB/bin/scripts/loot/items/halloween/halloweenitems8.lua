@@ -4,7 +4,7 @@ halloweenitems8 = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	customObjectName = "Pumpkin",
-	directObjectTemplate = "object/tangible/event_perk/halloween_sith_o_lantern_02.iff",
+	directObjectTemplate = "object/tangible/event_perk/halloween_sith_o_lantern_05.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
