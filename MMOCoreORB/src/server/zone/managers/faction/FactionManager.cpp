@@ -175,7 +175,6 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 
 		if (killer->isRebel() && destructedObject->isImperial()) {
 			ghost->increaseFactionStanding("rebel", 30);
-			ghost->playEffect("clienteffect/holoemote_rebel.cef", "head");
 			killer->playEffect("clienteffect/holoemote_rebel.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
@@ -186,6 +185,8 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			}else{
 				lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);//, playerName);
 			}
+			//lootManager->createLoot(inventory, "clothing_attachments", 300);//, playerName);
+			//lootManager->createLoot(inventory, "armor_attachments", 300);//, playerName);
 			ghost->decreaseFactionStanding("imperial", 45);
 			killedGhost->decreaseFactionStanding("imperial", 45);
 			
@@ -203,7 +204,6 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		} else if (killer->isImperial() && destructedObject->isRebel()) {
 			ghost->increaseFactionStanding("imperial", 30);
-			ghost->playEffect("clienteffect/holoemote_imperial.cef", "head");
 			killer->playEffect("clienteffect/holoemote_imperial.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
@@ -214,6 +214,8 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			}else{
 				lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);//, playerName);
 			}
+			//lootManager->createLoot(inventory, "clothing_attachments", 300);//, playerName);
+			//lootManager->createLoot(inventory, "armor_attachments", 300);//, playerName);
 			ghost->decreaseFactionStanding("rebel", 45);
 			killedGhost->decreaseFactionStanding("rebel", 45);
 			if (killerCreature->hasSkill("force_rank_dark_novice") && destructedObject->hasSkill("force_rank_light_novice")) {
