@@ -35,7 +35,7 @@ int HalloweenMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 
  	ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
  	ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
-	lootManager->createLoot(inventory, "halloween", 300);
+	lootManager->createLoot(inventory, "halloween1", 300);
 	creature->setPosture(CreaturePosture::UPRIGHT);
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
