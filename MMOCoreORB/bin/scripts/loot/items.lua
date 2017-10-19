@@ -1190,4 +1190,4 @@ includeFile("items/halloween/halloweenitems12.lua")
 includeFile("items/halloween/halloweenitems13.lua")
 includeFile("items/halloween/halloweenitems14.lua")
 includeFile("items/halloween/halloweenitems15.lua")
-
+includeFile("items/halloween/halloweenitems16.lua")
