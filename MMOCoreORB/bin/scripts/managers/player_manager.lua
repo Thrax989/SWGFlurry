@@ -79,7 +79,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/loot/misc/new_player_pack.iff", milestone=0, oneTime=true, description="New Player Resource Pack"},
 	
 		-- 1 Day Rewards
-		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=1, oneTime=false, description="Instant Full XP Token"},
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=1, oneTime=true, description="Instant Full XP Token"},
 
 		-- 10 Day Rewards
 		
