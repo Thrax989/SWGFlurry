@@ -34,9 +34,10 @@ crackdown_imperial_first_lieutenant = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 9000000},
+				{group = "junk", chance = 8500000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},
+				{group = "imperial_officer_common", chance = 500000},
 					
 			},
 		},
@@ -46,14 +47,7 @@ crackdown_imperial_first_lieutenant = Creature:new {
 				},
 			lootChance = 20000 
 			},
-		},
-			{
-			groups = {
-				{group = "rebpoints", chance = 10000000},
-				},
-			lootChance = 100000
-			},
-		},
+	},
 	weapons = {"imperial_weapons_medium"},
 	conversationTemplate = "",
 	attacks = merge(riflemanmaster,carbineermaster)

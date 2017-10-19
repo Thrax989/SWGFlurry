@@ -43,14 +43,7 @@ crackdown_imperial_sharpshooter = Creature:new {
 				},
 			lootChance = 20000 
 			},
-		},
-			{
-			groups = {
-				{group = "rebpoints", chance = 10000000},
-				},
-			lootChance = 100000
-			},
-		},
+	},
 	weapons = {"ranged_weapons"},
 	conversationTemplate = "",
 	attacks = merge(riflemanmaster,carbineermaster)

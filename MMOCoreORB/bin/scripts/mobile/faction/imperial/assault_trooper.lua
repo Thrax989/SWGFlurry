@@ -32,9 +32,10 @@ assault_trooper = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 9000000},
+				{group = "junk", chance = 8500000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},
+				{group = "stormtrooper_common", chance = 500000},
 					
 			},
 		},
@@ -44,14 +45,7 @@ assault_trooper = Creature:new {
 				},
 			lootChance = 20000 
 			},
-		},
-			{
-			groups = {
-				{group = "rebpoints", chance = 10000000},
-				},
-			lootChance = 100000
-			},
-		},
+	},
 	weapons = {"st_assault_weapons"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/stormtrooper",

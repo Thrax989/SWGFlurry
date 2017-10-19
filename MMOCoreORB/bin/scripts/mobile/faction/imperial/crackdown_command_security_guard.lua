@@ -50,14 +50,7 @@ crackdown_command_security_guard = Creature:new {
 				},
 			lootChance = 20000 
 			},
-		},
-			{
-			groups = {
-				{group = "rebpoints", chance = 10000000},
-				},
-			lootChance = 100000
-			},
-		},
+	},
 	weapons = {"imperial_weapons_light"},
 	conversationTemplate = "",
 	attacks = merge(riflemanmaster,carbineermaster)
