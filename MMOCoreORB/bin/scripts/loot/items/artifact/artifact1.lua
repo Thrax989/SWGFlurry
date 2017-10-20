@@ -1,4 +1,4 @@
-artifactone = {
+artifact1 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Artifact 1",
@@ -9,4 +9,4 @@ artifactone = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("artifactone", artifactone)
+addLootItemTemplate("artifact1", artifact1)
