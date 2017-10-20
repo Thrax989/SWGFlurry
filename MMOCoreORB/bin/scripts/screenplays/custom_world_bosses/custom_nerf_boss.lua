@@ -1,3 +1,5 @@
+local screenplayHelper = {}
+
 custom_nerf_boss_screenplay = ScreenPlay:new {
 	numberOfActs = 1,
 
@@ -14,11 +16,16 @@ function custom_nerf_boss_screenplay:start()
 end
 
 function custom_nerf_boss_screenplay:spawnMobiles()
-  	spawnMobile("corellia", "custom_nerf_boss", 1800, 6489, 20, -2841, 15, 0)
-	
+  	pNerfBoss = spawnMobile("corellia", "custom_nerf_boss", 1800, 6489, 20, -2841, 15, 0)
+	AiAgent(pNerfBoss):setAiTemplate("idlewander")
 --Need code to add spawns as time goes by
-spawnMobile("corellia", "custom_nerf_herd", 1800, -6157, 6, 1959, 15, 0)
-	spawnMobile("corellia", "custom_nerf_herd", 1800, -6190, 10, 1925, 15, 0)
-	spawnMobile("corellia", "custom_nerf_herd", 1800, -6262, 12, 1914, 15, 0)
-	spawnMobile("corellia", "custom_nerf_herd", 1800, -6214, 10, 1990, 15, 0)
+	pNpc = spawnMobile("corellia", "custom_nerf_herd", 1800, -6157, 6, 1959, 15, 0)
+	AiAgent(pNpc):setAiTemplate("idlewander")
+	pNpc = spawnMobile("corellia", "custom_nerf_herd", 1800, -6190, 10, 1925, 15, 0)
+	AiAgent(pNpc):setAiTemplate("idlewander")
+	pNpc = spawnMobile("corellia", "custom_nerf_herd", 1800, -6262, 12, 1914, 15, 0)
+	AiAgent(pNpc):setAiTemplate("idlewander")
+	pNpc = spawnMobile("corellia", "custom_nerf_herd", 1800, -6214, 10, 1990, 15, 0)
+	AiAgent(pNpc):setAiTemplate("idlewander")
 end
+

@@ -1,10 +1,10 @@
 object_building_player_jedi_house = object_building_player_shared_jedi_house:new {
 	lotSize = 2,
-	baseMaintenanceRate = 80,
+	baseMaintenanceRate = 16,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "kaas", "endor"},
-	constructionMarker = "object/building/player/construction/construction_player_house_corellia_medium_style_01.iff",
-	length = 4,
-	width = 4,
+	constructionMarker = "object/building/player/construction/construction_player_house_corellia_small_style_01.iff",
+	length = 1,
+	width = 1,
 	publicStructure = 0,
 skillMods = {
 		{"private_medical_rating", 100},
@@ -58,7 +58,12 @@ skillMods = {
 	},
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = 3.66726, z = 1.0082, y = 5.34343, ow = -4.2222e-08, ox = 1.13133e-08, oz = -0.258819, oy = 0.965926, cellid = 1, containmentType = -1},
-			{templateFile = "object/tangible/sign/player/house_address.iff", x = 2.05, z = 3.73, y = 6.46, ow = 0, ox = 0, oz = 0, oy = 1, cellid = -1, containmentType = -1}
+			{templateFile = "object/tangible/sign/player/house_address.iff", x = 2.05, z = 3.73, y = 6.46, ow = 0, ox = 0, oz = 0, oy = 1, cellid = -1, containmentType = -1},
+--Force Shrine		
+			{templateFile = "object/tangible/loot/mustafar/jedi_statue.iff", x = 0, z = 2, y = -6.65, ow = 1, ox = 0, oz = 0, oy = 1, cellid = 1, containmentType = -1},
+						
+
+			
 	},
 	shopSigns = {
 
