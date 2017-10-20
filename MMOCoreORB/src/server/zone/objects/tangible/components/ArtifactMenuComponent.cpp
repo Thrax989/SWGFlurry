@@ -35,7 +35,7 @@ int ArtifactMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 
  	ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
  	ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
-	lootManager->createLoot(inventory, "artifact1", 300);
+	lootManager->createLoot(inventory, "artifactone", 300);
 	creature->setPosture(CreaturePosture::UPRIGHT);
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
