@@ -968,7 +968,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("dathomir", -2281, 0, -4306);
+ 				        player->switchZone("dathomir", -2284, 0, -4317);
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
 			        }
