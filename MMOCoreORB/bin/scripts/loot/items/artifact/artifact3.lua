@@ -2,7 +2,7 @@ artifact3 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Artifact 3",
-	directObjectTemplate = "object/tangible/loot/npc/loot/answering_machine_generic.iff",
+	directObjectTemplate = "object/tangible/loot/npc/loot/armor_repair_device_generic.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
