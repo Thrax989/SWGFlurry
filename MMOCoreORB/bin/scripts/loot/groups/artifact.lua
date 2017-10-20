@@ -5,8 +5,7 @@ artifact = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "artifactone", weight = 9900000},
-		{groupTemplate = "collectiontierone", weight = 100000},
+		{itemTemplate = "artifactone", weight = 10000000},
 	}
 }
 
