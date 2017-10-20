@@ -1171,7 +1171,16 @@ includeFile("items/collection/collectiontiertwo.lua")
 includeFile("items/collection/collectiontierthree.lua")
 
 --Artifact system
-includeFile("items/artifact/artifactone.lua")
+includeFile("items/artifact/artifact1.lua")
+includeFile("items/artifact/artifact2.lua")
+includeFile("items/artifact/artifact3.lua")
+includeFile("items/artifact/artifact4.lua")
+includeFile("items/artifact/artifact5.lua")
+includeFile("items/artifact/artifact6.lua")
+includeFile("items/artifact/artifact7.lua")
+includeFile("items/artifact/artifact8.lua")
+includeFile("items/artifact/artifact9.lua")
+includeFile("items/artifact/artifact10.lua")
 
 --Halloween
 includeFile("items/halloween/halloweenitems.lua")
