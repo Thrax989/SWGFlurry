@@ -1,0 +1,7 @@
+includeFile("custom_content/draft_schematic/vehicle/civilian/air2_swoop.lua")
+includeFile("custom_content/draft_schematic/vehicle/civilian/flare_s_swoop.lua")
+includeFile("custom_content/draft_schematic/vehicle/civilian/flare_s_swoop_crafted.lua")
+includeFile("custom_content/draft_schematic/vehicle/civilian/landspeeder_ab1.lua")
+includeFile("custom_content/draft_schematic/vehicle/civilian/landspeeder_usv5.lua")
+includeFile("custom_content/draft_schematic/vehicle/civilian/landspeeder_v35.lua")
+includeFile("custom_content/draft_schematic/vehicle/civilian/landspeeder_xp38.lua")

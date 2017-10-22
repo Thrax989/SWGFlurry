@@ -1,0 +1,7 @@
+includeFile("custom_content/intangible/pet/bolotaur.lua")
+includeFile("custom_content/intangible/pet/kashyyyk_bantha.lua")
+includeFile("custom_content/intangible/pet/minstyngar.lua")
+includeFile("custom_content/intangible/pet/mouf.lua")
+includeFile("custom_content/intangible/pet/nerf_hue.lua")
+includeFile("custom_content/intangible/pet/tauntaun_hue.lua")
+includeFile("custom_content/intangible/pet/varactyl.lua")
