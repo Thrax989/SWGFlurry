@@ -1,3 +1,75 @@
+object_mobile_vehicle_shared_air2_swoop = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_air2_swoop.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_air2_swoop, "object/mobile/vehicle/shared_air2_swoop.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_mobile_vehicle_shared_balta_podracer = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_balta_podracer.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_balta_podracer, "object/mobile/vehicle/shared_balta_podracer.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_mobile_vehicle_shared_koro2_exodrive_airspeeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_koro2_exodrive_airspeeder.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_koro2_exodrive_airspeeder, "object/mobile/vehicle/shared_koro2_exodrive_airspeeder.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_mobile_vehicle_shared_military_transport = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_military_transport.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_military_transport, "object/mobile/vehicle/shared_military_transport.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_mobile_vehicle_shared_organa_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_organa_speeder.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_organa_speeder, "object/mobile/vehicle/shared_organa_speeder.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_mobile_vehicle_shared_podracer_gasgano = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_podracer_gasgano.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_podracer_gasgano, "object/mobile/vehicle/shared_podracer_gasgano.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_mobile_vehicle_shared_podracer_longtail = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_podracer_longtail.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_podracer_longtail, "object/mobile/vehicle/shared_podracer_longtail.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_mobile_vehicle_shared_podracer_mawhonic = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_podracer_mawhonic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_podracer_mawhonic, "object/mobile/vehicle/shared_podracer_mawhonic.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_mobile_vehicle_shared_speeder_stap = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_speeder_stap.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_speeder_stap, "object/mobile/vehicle/shared_speeder_stap.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
 object_mobile_vehicle_shared_vehicle_atat = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/vehicle/shared_vehicle_atat.iff"
 }

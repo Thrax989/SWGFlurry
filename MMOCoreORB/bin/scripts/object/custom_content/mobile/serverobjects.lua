@@ -5,6 +5,7 @@ includeFile("custom_content/mobile/som/serverobjects.lua")
 includeFile("custom_content/mobile/vehicle/serverobjects.lua")
 
 -- Server Objects
+includeFile("custom_content/mobile/ugnaught_static_robe.lua")
 includeFile("custom_content/mobile/ados_jarkey.lua")
 includeFile("custom_content/mobile/arcona.lua")
 includeFile("custom_content/mobile/arhul_narra.lua")

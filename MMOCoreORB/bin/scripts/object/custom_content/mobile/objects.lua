@@ -1,4 +1,10 @@
 --New
+object_mobile_shared_ugnaught_static_robe = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/shared_ugnaught_static_robe.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_shared_ugnaught_static_robe, "object/mobile/shared_ugnaught_static_robe.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 object_mobile_shared_ados_jarkey = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/shared_ados_jarkey.iff"
 }
