@@ -1,3 +1,17 @@
+object_tangible_deed_player_house_deed_shared_barn_house_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/player_house_deed/shared_barn_house_deed.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_deed_player_house_deed_shared_barn_house_deed, "object/tangible/deed/player_house_deed/shared_barn_house_deed.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_deed_player_house_deed_shared_diner_house_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/player_house_deed/shared_diner_house_deed.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_deed_player_house_deed_shared_diner_house_deed, "object/tangible/deed/player_house_deed/shared_diner_house_deed.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 object_tangible_deed_player_house_deed_shared_jedi_house_deed = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/deed/player_house_deed/shared_jedi_house_deed.iff"
 }

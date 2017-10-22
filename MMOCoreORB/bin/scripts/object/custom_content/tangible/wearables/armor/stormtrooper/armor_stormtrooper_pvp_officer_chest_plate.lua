@@ -83,8 +83,6 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_pvp_officer_ches
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
-				"object/creature/player/ithorian_male.iff",
-				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -95,8 +93,6 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_pvp_officer_ches
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
-				"object/creature/player/wookiee_male.iff",
-				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 	
@@ -104,18 +100,18 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_pvp_officer_ches
 	vulnerability = LIGHTSABER,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
+	healthEncumbrance = 45,
+	actionEncumbrance = 25,
+	mindEncumbrance = 25,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 15,
-	energy = 15,
-	electricity = 15,
-	stun = 15,
-	blast = 15,
+	kinetic = 55,
+	energy = 55,
+	electricity = 25,
+	stun = 26,
+	blast = 25,
 	heat = 15,
 	cold = 15,
 	acid = 15,
