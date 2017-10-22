@@ -41,6 +41,13 @@
 --Children folder includes
 
 -- Server Objects
+includeFile("custom_content/building/kashyyyk/kash_swamp_lilypad.lua")
+includeFile("custom_content/building/kashyyyk/kash_swamp_lilypad_s02.lua")
+includeFile("custom_content/building/kashyyyk/mun_kash_imprv_streetlamp_s02.lua")
+includeFile("custom_content/building/kashyyyk/poi_kash_rryatt_rope_lift_rope_half.lua")
+includeFile("custom_content/building/kashyyyk/poi_kash_rryatt_rope_lift_rope_quarter.lua")
+includeFile("custom_content/building/kashyyyk/rryatt_world_root_a1.lua")
+includeFile("custom_content/building/kashyyyk/rryatt_world_root_a2.lua")
 includeFile("custom_content/building/kashyyyk/frn_sordaan_armory_static.lua")
 includeFile("custom_content/building/kashyyyk/thm_kash_rodian_bannerpole_s01.lua")
 includeFile("custom_content/building/kashyyyk/thm_kash_rodian_flagpole_s01.lua")
