@@ -1925,4 +1925,12 @@ schematics = {
 	{path="object/draft_schematic/clothing/clothing_robe_jedi_black_01.iff"},
 	{path="object/draft_schematic/clothing/clothing_robe_jedi_black_02.iff"},
 
+--custom rides
+	{path="object/draft_schematic/vehicle/civilian/air2_swoop.iff"},
+	{path="object/draft_schematic/vehicle/civilian/flare_s_swoop.iff"},
+	{path="object/draft_schematic/vehicle/civilian/landspeeder_ab1.iff"},
+	{path="object/draft_schematic/vehicle/civilian/landspeeder_usv5.iff"},
+	{path="object/draft_schematic/vehicle/civilian/landspeeder_v35.iff"},
+	{path="object/draft_schematic/vehicle/civilian/landspeeder_xp38.iff"},
+
 };
