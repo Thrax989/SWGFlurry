@@ -1,17 +1,16 @@
 som_kenobi_reunite_tulrus = Creature:new {
-	customName = "Tulrus",
-	socialGroup = "self",
-	pvpFaction = "",
+	customName = "som_kenobi_reunite_tulrus",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 60,
-	chanceHit = 5,
-	damageMin = 450,
-	damageMax = 600,
-	baseXp = 2200,
-	baseHAM = 11000,
-	baseHAMmax = 15000,
-	armor = 1,
-	resists = {35,20,0,0,0,0,0,-1,-1},
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,27 +28,13 @@ som_kenobi_reunite_tulrus = Creature:new {
 	templates = {"object/mobile/som/som_kenobi_reunite_tulrus.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
-	attacks = {
-		{"dizzyattack",""}
-	}
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(som_kenobi_reunite_tulrus, "som_kenobi_reunite_tulrus")

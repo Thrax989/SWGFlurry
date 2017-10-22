@@ -1,17 +1,16 @@
 hk47 = Creature:new {
 	customName = "HK-47",
-	socialGroup = "self",
-	pvpFaction = "",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 300,
-	chanceHit = 50.00,
-	damageMin = 1800,
-	damageMax = 3310,
-	baseXp = 278490,
-	baseHAM = 421000,
-	baseHAMmax = 592000,
-	armor = 3,
-	resists = {90,90,90,90,90,90,90,90,90},
+	level = 120,
+	chanceHit = .90,
+	damageMin = 1245,
+	damageMax = 2400,
+	baseXp = 9884,
+	baseHAM = 79000,
+	baseHAMmax = 90000,
+	armor = 1,
+	resists = {70,70,70,70,70,70,70,70,70},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -25,28 +24,12 @@ hk47 = Creature:new {
 	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+
 	templates = {"object/mobile/som/hk47.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	reactionStf = "@npc_reaction/slang",
-	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "creaturerangedattack"
+	lootGroups = {},
+	weapons = {"pirate_weapons_light"},
+	conversationTemplate = "",
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(hk47, "hk47")

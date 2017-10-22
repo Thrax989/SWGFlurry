@@ -1,6 +1,6 @@
 ep3_blackscale_scaleguard = Creature:new {
 	customName = "Blackscale Scaleguard",
-	--randomNameType = NAME_GENERIC_TAG,
+	randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "trandoshan",
 	faction = "",
 	level = 105,
@@ -27,28 +27,11 @@ ep3_blackscale_scaleguard = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_blackscale_scaleguard.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
-	reactionStf = "@npc_reaction/slang"
-	--attacks = merge(brawlermaster,marksmanmaster,commandomaster,bountyhuntermaster)
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(brawlermaster,marksmanmaster,commandomaster,bountyhuntermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(ep3_blackscale_scaleguard, "ep3_blackscale_scaleguard")

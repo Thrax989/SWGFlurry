@@ -1,7 +1,7 @@
 ep3_clone_relics_leia = Creature:new {
 	customName = "Princess Leia",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "self",
+	socialGroup = "townsperson",
 	faction = "",
 	level = 300,
 	chanceHit = 75.00,
@@ -27,25 +27,8 @@ ep3_clone_relics_leia = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_clone_relics_leia.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},	
-	weapons = {"luke_skywalker_weapons"},
+	lootGroups = {},	
+	weapons = {},
 	conversationTemplate = "",
 	attacks = merge(brawlermaster,marksmanmaster,lightsabermaster)
 }

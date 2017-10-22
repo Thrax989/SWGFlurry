@@ -1,7 +1,6 @@
 som_alien_parasite = Creature:new {
 	customName = "Alien Parasite",
-	socialGroup = "mustafar",
-	pvpFaction = "",
+	socialGroup = "townsperson",
 	faction = "",
 	level = 70,
 	chanceHit = 0.27,
@@ -19,38 +18,23 @@ som_alien_parasite = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.15,
+	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + STALKER + KILLER,
+	pvpBitmask = ATTACKABLE,
+	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
-	diet = CARNIVORE,
+	diet = HERBIVORE,
 
 	templates = {"object/mobile/som/som_alien_parasite.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
-	attacks = {
-		{"creatureareadisease",""},
-		{"dizzyattack",""}
-	}
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(som_alien_parasite, "som_alien_parasite")

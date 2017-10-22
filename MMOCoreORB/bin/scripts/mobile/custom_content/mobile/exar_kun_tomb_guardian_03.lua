@@ -1,17 +1,17 @@
 exar_kun_tomb_guardian_03 = Creature:new {
-	customName = "exar_kun_tomb_guardian_03",
+	customName = "Exar Kun Tomb Guardian",
 	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",
-	level = 88,
-	chanceHit = 0.8,
-	damageMin = 545,
-	damageMax = 800,
-	baseXp = 8408,
-	baseHAM = 21000,
-	baseHAMmax = 26000,
-	armor = 1,
-	resists = {45,45,45,100,100,100,100,100,-1},
+	level = 107,
+	chanceHit = 1,
+	damageMin = 645,
+	damageMax = 1000,
+	baseXp = 10174,
+	baseHAM = 24000,
+	baseHAMmax = 30000,
+	armor = 2,
+	resists = {5,100,5,100,100,100,100,100,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,8 +21,8 @@ exar_kun_tomb_guardian_03 = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = ATTACKABLE + ENEMY,
-	creatureBitmask = HERD,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
@@ -30,7 +30,7 @@ exar_kun_tomb_guardian_03 = Creature:new {
 	lootGroups = {},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
-	attacks = merge(fencermid,swordsmanmid,tkamid,pikemanmaster,brawlermaster,forcewielder)
+	attacks = merge(fencermid,swordsmanmid,pikemanmaster,tkamaster,brawlermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(exar_kun_tomb_guardian_03, "exar_kun_tomb_guardian_03")

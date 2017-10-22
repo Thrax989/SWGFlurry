@@ -1,17 +1,16 @@
 som_dark_jedi_minion_5 = Creature:new {
-	customName = "Dark Jedi Guard",
-	socialGroup = "darkside",
-	pvpFaction = "",
+	customName = "som_dark_jedi_minion_5",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 265,
-	chanceHit = 23.5,
-	damageMin = 1245,
-	damageMax = 2100,
-	baseXp = 25266,
-	baseHAM = 181000,
-	baseHAMmax = 240000,
-	armor = 3,
-	resists = {90,90,90,90,90,90,90,90,-1},
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,7 +20,7 @@ som_dark_jedi_minion_5 = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
@@ -29,25 +28,13 @@ som_dark_jedi_minion_5 = Creature:new {
 	templates = {"object/mobile/som/som_dark_jedi_minion_5.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {"dark_jedi_weapons_gen3"},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
-	attacks = merge(lightsabermaster)
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(som_dark_jedi_minion_5, "som_dark_jedi_minion_5")

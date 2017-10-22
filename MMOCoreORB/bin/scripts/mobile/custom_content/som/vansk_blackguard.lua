@@ -1,17 +1,16 @@
 vansk_blackguard = Creature:new {
-	customName = "Vansk Blackguard",
-	socialGroup = "self",
-	pvpFaction = "",
+	customName = "vansk_blackguard",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 117,
-	chanceHit = 15,
-	damageMin = 1550,
-	damageMax = 1800,
-	baseXp = 5335,
-	baseHAM = 28000,
-	baseHAMmax = 35000,
-	armor = 2,
-	resists = {55,55,70,45,75,80,55,45,-1},
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,24 +28,13 @@ vansk_blackguard = Creature:new {
 	templates = {"object/mobile/som/vansk_blackguard.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {"pirate_weapons_heavy"},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
-	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,swordsmanmaster,pistoleermaster)
+	attacks = merge(marksmannovice,brawlernovice)
 }
+
 CreatureTemplates:addCreatureTemplate(vansk_blackguard, "vansk_blackguard")

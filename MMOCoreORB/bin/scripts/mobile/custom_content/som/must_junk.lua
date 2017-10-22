@@ -1,16 +1,15 @@
 must_junk = Creature:new {
-	customName = "Crayzed Junk Dealer",
-	socialGroup = "self",
-	pvpFaction = "",
+	customName = "Junk Dealer",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 300,
-	chanceHit = 50,
-	damageMin = 1550,
-	damageMax = 1800,
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
 	baseXp = 235,
-	baseHAM = 160000,
-	baseHAMmax = 190000,
-	armor = 3,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
+	armor = 0,
 	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
@@ -29,22 +28,10 @@ must_junk = Creature:new {
 	templates = {"object/mobile/som/must_junk.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,brawlernovice)

@@ -1,7 +1,7 @@
 ep3_rryatt_lost_rodian_maddened_01 = Creature:new {
 	customName = "Maddened Rodian",
-	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "self",
+	randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "townsperson",
 	faction = "",
 	level = 85,
 	chanceHit = 0.85,
@@ -27,24 +27,7 @@ ep3_rryatt_lost_rodian_maddened_01 = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_rryatt_lost_rodian_maddened_01.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {townsperson},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",

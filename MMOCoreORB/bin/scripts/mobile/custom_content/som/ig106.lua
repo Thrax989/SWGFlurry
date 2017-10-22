@@ -1,17 +1,16 @@
 ig106 = Creature:new {
 	customName = "IG-106",
-	socialGroup = "self",
-	pvpFaction = "",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 220,
-	chanceHit = 18,
-	damageMin = 1200,
-	damageMax = 2300,
-	baseXp = 19000,
-	baseHAM = 230000,
-	baseHAMmax = 230000,
-	armor = 2,
-	resists = {85,95,100,60,100,25,40,85,-1},
+	level = 107,
+	chanceHit = 1.75,
+	damageMin = 670,
+	damageMax = 1050,
+	baseXp = 10081,
+	baseHAM = 29000,
+	baseHAMmax = 36000,
+	armor = 1,
+	resists = {55,55,70,45,75,80,55,45,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -22,32 +21,16 @@ ig106 = Creature:new {
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + STALKER,
+	creatureBitmask = KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+	scale = 1.15,
 
 	templates = {"object/mobile/som/ig106.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
+	weapons = {"ig106_weapons"},
 	conversationTemplate = "",
-	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "creaturerangedattack"
+	attacks = merge(marksmannovice,pistoleernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(ig106, "ig106")

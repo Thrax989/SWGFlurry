@@ -1,17 +1,16 @@
 cww8_battle_droid = Creature:new {
-	customName = "World Boss",
-	socialGroup = "self",
-	pvpFaction = "",
+	customName = "CWW8 Battle Droid",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 300,
-	chanceHit = 75,
-	damageMin = 1200,
-	damageMax = 8300,
-	baseXp = 19000000,
-	baseHAM = 15000000,
-	baseHAMmax = 25000000,
-	armor = 1,
-	resists = {30,30,30,30,30,30,30,30,30},
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,34 +20,21 @@ cww8_battle_droid = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 2.5,
 
 	templates = {"object/mobile/som/cww8_battle_droid.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {"rebel_weapons_heavy"},
-	reactionStf = "@npc_reaction/slang",
-	attacks = merge(commandomaster)
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
+	conversationTemplate = "",
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(cww8_battle_droid, "cww8_battle_droid")

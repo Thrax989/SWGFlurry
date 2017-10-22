@@ -1,6 +1,6 @@
 ep3_anguished_wookiee_02 = Creature:new {
 	customName = "Anguished Wookiee",
-	--randomNameType = NAME_GENERIC_TAG,
+	randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "wookiee",
 	faction = "",
 	level = 45,
@@ -27,28 +27,13 @@ ep3_anguished_wookiee_02 = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_anguished_wookiee_02.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {"chewbacca_weapons"},
+	lootGroups = {},
+	weapons = {},
 	conversationTemplate = "",
-	reactionStf = "@npc_reaction/slang"
-	--attacks = merge(brawlermaster,marksmanmaster)
+	reactionStf = "@npc_reaction/slang",
+	attacks = {
+		{"intimidationattack",""}
+	}
 }
 
 CreatureTemplates:addCreatureTemplate(ep3_anguished_wookiee_02, "ep3_anguished_wookiee_02")
