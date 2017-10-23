@@ -52,4 +52,12 @@ mountSpeedData = {
 	{"appearance/dewback_hue.sat", 7.5, 1.3, 180, 660},
 	{"appearance/falumpaset_hue.sat", 7.5, 1.133, 300, 780},
 	{"appearance/kaadu_hue.sat", 7.5, 1.533, 120, 600},
+	{"appearance/tauntaun_hue.sat", 7.2, 1.444, 125, 600},
+	{"appearance/nerf_hue.sat", 7.5, 1.533, 120, 600},
+	{"appearance/varactyl.sat", 7.5, 1.533, 120, 600},
+	{"appearance/bolotaur.sat", 6.8, 1.233, 120, 600},
+	{"appearance/kashyyyk_bantha.sat", 7, 1.233, 120, 600},
+	{"appearance/lava_flea.sat", 6.8, 1.544, 125, 600},
+	{"appearance/kwi.sat", 6.8, 1.544, 125, 600},
+	{"appearance/snorbal_hue.sat", 7, 1.233, 120, 600},
 }

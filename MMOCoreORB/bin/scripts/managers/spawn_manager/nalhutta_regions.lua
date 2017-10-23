@@ -10,6 +10,7 @@
 require("scripts.managers.spawn_manager.regions")
 
 nalhutta_regions = {
-	{"huttcity",0,0,{1,1000},NOSPAWNAREA + NOBUILDZONEAREA},
+	{"huttcity",0,0,{1,750},NOSPAWNAREA + NOBUILDZONEAREA},
+	{"world_spawner",0,0,{1,-1},SPAWNAREA + WORLDSPAWNAREA,{"nalhutta_world"},2048},
 
 }
