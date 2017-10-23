@@ -1,5 +1,5 @@
 VillageGmSui = ScreenPlay:new {
-	productionServer = false
+	productionServer = true
 }
 
 function VillageGmSui:showMainPage(pPlayer)
@@ -31,10 +31,7 @@ function VillageGmSui:showMainPage(pPlayer)
 	sui.add("Lookup player by oid", "playerLookupByOID")
 	sui.add("List players in village", "listOnlineVillagePlayers")
 	sui.add("Output LUA os.time() (Debugging)", "getOSTime")
-
-	if (not self.productionServer) then
-		sui.add("Change to next phase", "changePhase")
-	end
+        sui.add("Change to next phase", "changePhase")
 
 	sui.sendTo(pPlayer)
 end
@@ -42,7 +39,7 @@ end
 function VillageGmSui:mainCallback(pPlayer, pSui, eventIndex, args)
 	local cancelPressed = (eventIndex == 1)
 
-	if (cancelPressed) then
+	if (cancelPressed or args == nil or tonumber(args) < 0) then
 		return
 	end
 
@@ -53,7 +50,7 @@ function VillageGmSui:mainCallback(pPlayer, pSui, eventIndex, args)
 	end
 
 	local suiPageData = LuaSuiPageData(pPageData)
-	local menuOption =  suiPageData:getStoredData(tostring(args))
+	local menuOption = suiPageData:getStoredData(tostring(args))
 
 	local targetID
 
@@ -73,7 +70,6 @@ function VillageGmSui:mainCallback(pPlayer, pSui, eventIndex, args)
 		printLuaError("Tried to execute invalid function " .. menuOption .. " in VillageGmSui")
 		return
 	end
-
 
 	self[menuOption](pPlayer, targetID)
 end
@@ -291,7 +287,7 @@ function VillageGmSui.playerInfo(pPlayer, targetID)
 			if (not PlayerObject(pGhost):isOnline()) then
 				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time until visit:" .. " \\#pcontrast2 Player Offline\n"
 			elseif (timeTilVisit > 0) then
-				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time until visit:" .. " \\#pcontrast2 " .. VillageGmSui:getTimeString(timeTilVisit) .. "\n"
+				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time until visit:" .. " \\#pcontrast2 " .. VillageGmSui:getTimeString(timeTilVisit * 1000) .. "\n"
 			else
 				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time until visit:" .. " \\#pcontrast2 Soon\n"
 			end
@@ -315,7 +311,7 @@ function VillageGmSui.playerInfo(pPlayer, targetID)
 			if (not PlayerObject(pGhost):isOnline()) then
 				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time until visit:" .. " \\#pcontrast2 Player Offline\n"
 			elseif (timeTilVisit > 0) then
-				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time until visit:" .. " \\#pcontrast2 " .. VillageGmSui:getTimeString(timeTilVisit) .. "\n"
+				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time until visit:" .. " \\#pcontrast2 " .. VillageGmSui:getTimeString(timeTilVisit * 1000) .. "\n"
 			else
 				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time until visit:" .. " \\#pcontrast2 Soon\n"
 			end
@@ -337,7 +333,7 @@ function VillageGmSui.playerInfo(pPlayer, targetID)
 			if (not PlayerObject(pGhost):isOnline()) then
 				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time Until Attack:" .. " \\#pcontrast2 Player Offline\n"
 			elseif (timeTilAttack > 0) then
-				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time Until Attack:" .. " \\#pcontrast2 " .. VillageGmSui:getTimeString(timeTilAttack) .. "\n"
+				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time Until Attack:" .. " \\#pcontrast2 " .. VillageGmSui:getTimeString(timeTilAttack * 1000) .. "\n"
 			else
 				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Time Until Attack:" .. " \\#pcontrast2 Soon\n"
 			end
@@ -351,6 +347,19 @@ function VillageGmSui.playerInfo(pPlayer, targetID)
 			promptBuf = promptBuf .. "Intro (Second Datapad Looted)\n"
 		elseif (curStep == FsIntro.VILLAGE) then
 			promptBuf = promptBuf .. "Intro (Sent to Village)\n"
+		end
+
+		if (curStep == FsIntro.OLDMANWAIT or curStep == FsIntro.OLDMANMEET or curStep == FsIntro.SITHWAIT or curStep == FsIntro.SITHATTACK) then
+			promptBuf = promptBuf .. " -- Encounter Checks --\n" .. "\\#pcontrast1 " .. "InPositionForEncounter:" .. " \\#pcontrast2 " .. tostring(Encounter:isPlayerInPositionForEncounter(pTarget)) .. "\n"
+
+			if (not Encounter:isPlayerInPositionForEncounter(pTarget)) then
+				promptBuf = promptBuf .. " \\#pcontrast1 " .. "Player Online:" .. " \\#pcontrast2 " .. tostring(Encounter:isPlayerOnline(pTarget)) .. "\n"
+				if (PlayerObject(pGhost):isOnline()) then
+					promptBuf = promptBuf .. " \\#pcontrast1 " .. "Player In a Building:" .. " \\#pcontrast2 " .. tostring(Encounter:isPlayerInABuilding(pTarget)) .. "\n"
+					promptBuf = promptBuf .. " \\#pcontrast1 " .. "Player In NPC City:" .. " \\#pcontrast2 " .. tostring(Encounter:isPlayerInNpcCity(pTarget)) .. "\n"
+				end
+			end
+			promptBuf = promptBuf .. " ----\n"
 		end
 	elseif (Glowing:isGlowing(pTarget)) then
 		promptBuf = promptBuf .. "Glowing\n"
@@ -571,13 +580,13 @@ function VillageGmSui.forceIntroSithAttackEvent(pPlayer, targetID)
 	end
 
 	local curStep = FsIntro:getCurrentStep(pTarget)
-
+	local playerName = CreatureObject(pTarget):getFirstName()
 	if (not FsIntro:isOnIntro(pTarget) or (curStep ~= FsIntro.SITHWAIT and curStep ~= FsIntro.SITHATTACK)) then
-		CreatureObject(pPlayer):sendSystemMessage("Unable to force the sith attack intro event for " .. CreatureObject(pTarget):getFirstName() .. ", they are not on the correct step.")
+		CreatureObject(pPlayer):sendSystemMessage("Unable to force the sith attack intro event for " .. playerName .. ", they are not on the correct step.")
 		return
 	end
 
-	CreatureObject(pPlayer):sendSystemMessage("Now forcing the sith attack intro event to start for " .. CreatureObject(pTarget):getFirstName() .. ".")
+	CreatureObject(pPlayer):sendSystemMessage("Now forcing the sith attack intro event to start for " .. playerName .. ".")
 	FsIntro:startSithAttack(pTarget)
 end
 
@@ -589,13 +598,13 @@ function VillageGmSui.forceIntroOldManEvent(pPlayer, targetID)
 	end
 
 	local curStep = FsIntro:getCurrentStep(pTarget)
-
+	local playerName = CreatureObject(pTarget):getFirstName()
 	if (not FsIntro:isOnIntro(pTarget) or (curStep ~= FsIntro.OLDMANWAIT and curStep ~= FsIntro.OLDMANMEET)) then
-		CreatureObject(pPlayer):sendSystemMessage("Unable to force the old man intro event for " .. CreatureObject(pTarget):getFirstName() .. ", they are not on the correct step.")
+		CreatureObject(pPlayer):sendSystemMessage("Unable to force the old man intro event for " .. playerName .. ", they are not on the correct step.")
 		return
 	end
 
-	CreatureObject(pPlayer):sendSystemMessage("Now forcing the old man event intro to start for " .. CreatureObject(pTarget):getFirstName() .. ".")
+	CreatureObject(pPlayer):sendSystemMessage("Now forcing the old man event intro to start for " .. playerName .. ".")
 	FsIntro:startOldMan(pTarget)
 end
 
@@ -614,7 +623,7 @@ function VillageGmSui.forceOutroOldManEvent(pPlayer, targetID)
 	end
 
 	CreatureObject(pPlayer):sendSystemMessage("Now forcing the old man event outro to start for " .. CreatureObject(pTarget):getFirstName() .. ".")
-	FsOutro:startOldMan(pTarget)
+	FsOutro:doOldManSpawn(pTarget)
 end
 
 function VillageGmSui.resetActiveQuest(pPlayer, targetID)

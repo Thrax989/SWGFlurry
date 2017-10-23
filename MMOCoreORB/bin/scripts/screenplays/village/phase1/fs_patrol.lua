@@ -16,8 +16,9 @@ FsPatrol = Patrol:new {
 }
 
 function FsPatrol:spawnEnemies(pPlayer, numEnemies, x, y)
-	writeData(SceneObject(pPlayer):getObjectID() .. self.taskName .. "numEnemies", numEnemies)
 	local playerID = SceneObject(pPlayer):getObjectID()
+	writeData(playerID .. self.taskName .. "numEnemies", numEnemies)
+	writeData(playerID .. self.taskName .. "totalEnemies", numEnemies)
 
 	for i = 1, numEnemies, 1 do
 		local npcType
@@ -38,13 +39,36 @@ function FsPatrol:spawnEnemies(pPlayer, numEnemies, x, y)
 		local pMobile = spawnMobile(SceneObject(pPlayer):getZoneName(), self.enemyList[npcType], 0, spawnX, spawnZ, spawnY, 0, 0)
 
 		if (pMobile ~= nil) then
+			local mobileID = SceneObject(pMobile):getObjectID()
+			writeData(playerID .. self.taskName .. "enemyNum" .. i, mobileID)
 			createEvent(600 * 1000, self.taskName, "destroyMobile", pMobile, "")
-			writeData(SceneObject(pMobile):getObjectID() .. self.taskName .. "ownerID", playerID)
+			writeData(mobileID .. self.taskName .. "ownerID", playerID)
 			if (numEnemies <= 3) then
 				createObserver(OBJECTDESTRUCTION, self.taskName, "notifyKilledGoodTarget", pMobile)
 			else
 				createObserver(OBJECTDESTRUCTION, self.taskName, "notifyKilledBadTarget", pMobile)
 			end
+		end
+	end
+end
+
+function FsPatrol:clearLastPoint(pPlayer)
+	local playerID = SceneObject(pPlayer):getObjectID()
+	local numEnemies = readData(playerID .. self.taskName .. "totalEnemies")
+
+	for i = 1, numEnemies, 1 do
+		local mobileID = readData(playerID .. self.taskName .. "enemyNum" .. i)
+		local pMobile = getSceneObject(mobileID)
+
+		if (pMobile ~= nil) then
+			if (CreatureObject(pMobile):isInCombat()) then
+				createEvent(30 * 1000, self.taskName, "destroyMobile", pMobile, "")
+			else
+				SceneObject(pMobile):destroyObjectFromWorld()
+				deleteData(mobileID .. self.taskName .. "ownerID")
+			end
+
+			deleteData(playerID .. self.taskName .. "enemyNum" .. i)
 		end
 	end
 end
@@ -106,6 +130,7 @@ function FsPatrol:onEnteredActiveArea(pPlayer, pActiveArea)
 	end
 
 	local playerID = SceneObject(pPlayer):getObjectID()
+	self:clearLastPoint(pPlayer)
 
 	if (readData(playerID .. ":completedCurrentPoint") == -1) then
 		CreatureObject(pPlayer):sendSystemMessage("@quest/force_sensitive/fs_patrol:failed_previous_point")
@@ -139,6 +164,22 @@ function FsPatrol:resetFsPatrol(pPlayer)
 	deleteData(playerID .. ":patrolWaypointsReached")
 	deleteData(playerID .. ":failedPatrol")
 	deleteData(playerID .. ":completedCurrentPoint")
+
+	local numEnemies = readData(playerID .. self.taskName .. "totalEnemies")
+
+	for i = 1, numEnemies, 1 do
+		local mobileID = readData(playerID .. self.taskName .. "enemyNum" .. i)
+		local pMobile = getSceneObject(mobileID)
+
+		if (pMobile ~= nil) then
+			SceneObject(pMobile):destroyObjectFromWorld()
+		end
+
+		deleteData(playerID .. self.taskName .. "enemyNum" .. i)
+	end
+
+	deleteData(playerID .. self.taskName .. "numEnemies")
+	deleteData(playerID .. self.taskName .. "totalEnemies")
 	self:waypointCleanup(pPlayer)
 	self:setupPatrolPoints(pPlayer)
 end
@@ -148,6 +189,22 @@ function FsPatrol:completeFsPatrol(pPlayer)
 	deleteData(playerID .. ":completedCurrentPoint")
 	deleteData(playerID .. ":failedPatrol")
 	deleteData(playerID .. ":patrolWaypointsReached")
+
+	local numEnemies = readData(playerID .. self.taskName .. "totalEnemies")
+
+	for i = 1, numEnemies, 1 do
+		local mobileID = readData(playerID .. self.taskName .. "enemyNum" .. i)
+		local pMobile = getSceneObject(mobileID)
+
+		if (pMobile ~= nil) then
+			SceneObject(pMobile):destroyObjectFromWorld()
+		end
+
+		deleteData(playerID .. self.taskName .. "enemyNum" .. i)
+	end
+
+	deleteData(playerID .. self.taskName .. "numEnemies")
+	deleteData(playerID .. self.taskName .. "totalEnemies")
 	self:finish(pPlayer)
 end
 
