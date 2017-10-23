@@ -1,4 +1,6 @@
 -- Server Objects
+includeFile("custom_content/tangible/deed/player_house_deed/barn_house_deed.lua")
+includeFile("custom_content/tangible/deed/player_house_deed/diner_house_deed.lua")
 includeFile("custom_content/tangible/deed/player_house_deed/musty_house_deed.lua")
 includeFile("custom_content/tangible/deed/player_house_deed/jedi_house_deed.lua")
 includeFile("custom_content/tangible/deed/player_house_deed/vipbunker_house_deed.lua")

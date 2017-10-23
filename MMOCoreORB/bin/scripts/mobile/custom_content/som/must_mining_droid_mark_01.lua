@@ -1,17 +1,16 @@
 must_mining_droid_mark_01 = Creature:new {
 	customName = "Mark I Mining Droid",
-	socialGroup = "self",
-	pvpFaction = "",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 39,
-	chanceHit = 0.44,
-	damageMin = 370,
-	damageMax = 450,
-	baseXp = 3824,
-	baseHAM = 9300,
-	baseHAMmax = 11300,
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
 	armor = 0,
-	resists = {30,30,30,-1,30,-1,30,-1,-1},
+	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,25 +28,13 @@ must_mining_droid_mark_01 = Creature:new {
 	templates = {"object/mobile/som/must_mining_droid_mark_01.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
-	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "creaturerangedattack",
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(must_mining_droid_mark_01, "must_mining_droid_mark_01")

@@ -12,9 +12,20 @@ includeFile("custom_loot/groups/crystals/crystal_kuns_blood.lua")
 includeFile("custom_loot/groups/lightsabers/exar_kun_ls_group.lua")
 includeFile("custom_loot/groups/lightsabers/g_jinzu_razor_loot_deed.lua")
 
+--Custom Jedi Clothing Treatments
+includeFile("custom_loot/groups/clothing/jedi_treatment_group.lua")
+
+--Custom Jedi Robe
+includeFile("custom_loot/groups/clothing/jedi_robe_black_01_group.lua")
+includeFile("custom_loot/groups/clothing/jedi_robe_black_02_group.lua")
+
 --NGE House Groups Multiple
 includeFile("custom_loot/groups/player_house_deeds/nge_house_loot_deed_01.lua")
 includeFile("custom_loot/groups/player_house_deeds/nge_house_loot_deed_windowed.lua")
+
+
+--Referral Crate
+includeFile("custom_loot/groups/ref_crate/ref_crate.lua")
 
 --NGE House single
 includeFile("custom_loot/groups/player_house_deeds/g_atat_house_loot_deed.lua")

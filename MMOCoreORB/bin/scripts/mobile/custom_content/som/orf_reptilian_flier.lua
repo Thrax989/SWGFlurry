@@ -1,17 +1,16 @@
 orf_reptilian_flier = Creature:new {
 	customName = "Reptilian Flier",
-	socialGroup = "mustafar",
-	pvpFaction = "",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 50,
-	chanceHit = 5,
-	damageMin = 450,
-	damageMax = 600,
-	baseXp = 1675,
-	baseHAM = 8500,
-	baseHAMmax = 11000,
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
 	armor = 0,
-	resists = {10,10,0,0,0,0,0,-1,-1},
+	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -19,7 +18,7 @@ orf_reptilian_flier = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.30,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + STALKER,
@@ -29,28 +28,13 @@ orf_reptilian_flier = Creature:new {
 	templates = {"object/mobile/som/orf_reptilian_flier.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
-	attacks = {
-		{"creatureareadisease",""},
-		{"dizzyattack",""}
-	}
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(orf_reptilian_flier, "orf_reptilian_flier")

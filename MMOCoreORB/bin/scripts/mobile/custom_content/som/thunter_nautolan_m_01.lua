@@ -1,13 +1,12 @@
 thunter_nautolan_m_01 = Creature:new {
-	customName = "Nautolan thunter",
-	socialGroup = "self",
-	pvpFaction = "",
+	customName = "thunter_nautolan_m_01",
+	socialGroup = "townsperson",
 	faction = "",
 	level = 70,
 	chanceHit = 0.27,
 	damageMin = 550,
 	damageMax = 800,
-	baseXp = 1235,
+	baseXp = 235,
 	baseHAM = 16000,
 	baseHAMmax = 19000,
 	armor = 0,
@@ -21,7 +20,7 @@ thunter_nautolan_m_01 = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
@@ -29,22 +28,10 @@ thunter_nautolan_m_01 = Creature:new {
 	templates = {"object/mobile/som/thunter_nautolan_m_01.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,brawlernovice)

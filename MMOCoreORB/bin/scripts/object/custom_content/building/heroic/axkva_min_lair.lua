@@ -42,6 +42,17 @@
 
 
 object_building_heroic_axkva_min_lair = object_building_heroic_shared_axkva_min_lair:new {
+
+
+	customName = "Unknown",
+spawningPoints = {
+            { x = -0, z = 0.2, y = 0, ow = 0.806, ox = 0, oz = 0, oy = -0.592, cellid = 1 },
+		},
+	templateType = CLONINGBUILDING,
+	planetMapCategory = "cloningfacility",
+	facilityType = CLONER_STANDARD,
+
+
 }
 
 ObjectTemplates:addTemplate(object_building_heroic_axkva_min_lair, "object/building/heroic/axkva_min_lair.iff")

@@ -1,7 +1,7 @@
 ep3_nautolan_hunter = Creature:new {
 	customName = "Nautolan Hunter",
-	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "self",
+	randomNameType = NAME_GENERIC_TAG,
+	socialGroup = "townsperson",
 	faction = "",
 	level = 120,
 	chanceHit = 4.50,
@@ -27,24 +27,7 @@ ep3_nautolan_hunter = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_nautolan_hunter.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
 	weapons = {"light_jedi_weapons"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/slang",

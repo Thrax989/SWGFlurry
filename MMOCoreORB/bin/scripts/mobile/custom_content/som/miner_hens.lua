@@ -1,14 +1,14 @@
 miner_hens = Creature:new {
 	customName = "Renlo Hens",
-	socialGroup = "self",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 17,
-	chanceHit = 0.32,
-	damageMin = 180,
-	damageMax = 190,
-	baseXp = 1257,
-	baseHAM = 3500,
-	baseHAMmax = 4300,
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
 	armor = 0,
 	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
@@ -26,24 +26,7 @@ miner_hens = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/som/miner_hens.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,brawlernovice)

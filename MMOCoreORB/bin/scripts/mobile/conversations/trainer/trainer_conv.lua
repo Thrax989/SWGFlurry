@@ -146,5 +146,9 @@ createTrainerConversationTemplate("tailorTrainerConvoTemplate", "trainer_tailor"
 createTrainerConversationTemplate("unarmedTrainerConvoTemplate", "trainer_unarmed")
 createTrainerConversationTemplate("weaponsmithTrainerConvoTemplate", "trainer_weaponsmith")
 
+--GCW
+createTrainerConversationTemplate("gcwimperialTrainerConvoTemplate", "trainer_gcw_imperial")
+createTrainerConversationTemplate("gcwrebelTrainerConvoTemplate", "trainer_gcw_rebel")
+
 createTrainerConversationTemplate("fsTrainerConvoTemplate", "trainer_fs")
 createTrainerConversationTemplate("jediTrainerConvoTemplate", "trainer_jedi")

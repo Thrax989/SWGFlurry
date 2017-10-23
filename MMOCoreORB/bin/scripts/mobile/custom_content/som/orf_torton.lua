@@ -1,17 +1,16 @@
 orf_torton = Creature:new {
-	customName = "Sheldon, Lord of the Tortons",
-	socialGroup = "mustafar",
-	pvpFaction = "",
+	customName = "Torton",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 300,
-	chanceHit = 30,
-	damageMin = 4450,
-	damageMax = 5800,
-	baseXp = 34675,
-	baseHAM = 888500,
-	baseHAMmax = 1311000,
-	armor = 3,
-	resists = {55,55,55,55,55,55,55,55,55},
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -19,46 +18,23 @@ orf_torton = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.10,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 3.0,
 
 	templates = {"object/mobile/som/orf_torton.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
-	attacks = {
-		{"creatureareacombo","stateAccuracyBonus=100"},
-		{"creatureareaknockdown","stateAccuracyBonus=100"},
-		{"knockdownattack",""},
-		{"creatureareaknockdown",""},
-		{"dizzyattack",""},
-		{"stunattack",""},
-		{"mildpoison",""},
-		{"intimidationattack",""},
-		{"mediumpoison",""},
-		{"creatureareaattack",""}
-	}
+	attacks = merge(marksmannovice,brawlernovice)
 }
+
 CreatureTemplates:addCreatureTemplate(orf_torton, "orf_torton")

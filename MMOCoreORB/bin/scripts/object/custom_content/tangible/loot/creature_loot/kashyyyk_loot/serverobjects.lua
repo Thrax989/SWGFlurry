@@ -1,5 +1,6 @@
 includeFile("custom_content/tangible/loot/creature_loot/kashyyyk_loot/adventurers_remains_01.lua")
 includeFile("custom_content/tangible/loot/creature_loot/kashyyyk_loot/adventurers_remains_02.lua")
+includeFile("custom_content/tangible/loot/creature_loot/kashyyyk_loot/adventurers_remains_03.lua")
 includeFile("custom_content/tangible/loot/creature_loot/kashyyyk_loot/adventurers_remains_04.lua")
 includeFile("custom_content/tangible/loot/creature_loot/kashyyyk_loot/adventurers_remains_05.lua")
 includeFile("custom_content/tangible/loot/creature_loot/kashyyyk_loot/adventurers_remains_06.lua")

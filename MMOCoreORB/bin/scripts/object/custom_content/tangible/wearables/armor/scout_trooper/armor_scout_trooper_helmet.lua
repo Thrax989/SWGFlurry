@@ -47,8 +47,18 @@ object_tangible_wearables_armor_scout_trooper_armor_scout_trooper_helmet = objec
 
 	faction = "Imperial",
 
-	playerRaces = { "object/creature/player/bothan_male.iff",
+	playerRaces = { 	"object/creature/player/smc_female.iff",
+				"object/creature/player/smc_male.iff",
+				"object/creature/player/nightsister_female.iff",
+				"object/creature/player/nightsister_male.iff",
+				"object/creature/player/nikto_male.iff",
+				"object/creature/player/nikto_female.iff",
+				"object/creature/player/chiss_female.iff",
+				"object/creature/player/chiss_male.iff",
+				"object/creature/player/devaronian_male.iff",
+				"object/creature/player/devaronian_female.iff",
 				"object/creature/player/bothan_female.iff",
+				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
 				"object/creature/player/moncal_male.iff",
@@ -62,46 +72,29 @@ object_tangible_wearables_armor_scout_trooper_armor_scout_trooper_helmet = objec
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
 				"object/creature/player/zabrak_male.iff",
-				"object/creature/player/zabrak_female.iff",
-				"object/mobile/vendor/aqualish_female.iff",
-				"object/mobile/vendor/aqualish_male.iff",
-				"object/mobile/vendor/bothan_female.iff",
-				"object/mobile/vendor/bothan_male.iff",
-				"object/mobile/vendor/devaronian_male.iff",
-				"object/mobile/vendor/human_female.iff",
-				"object/mobile/vendor/human_male.iff",
-				"object/mobile/vendor/moncal_female.iff",
-				"object/mobile/vendor/moncal_male.iff",
-				"object/mobile/vendor/rodian_female.iff",
-				"object/mobile/vendor/rodian_male.iff",
-				"object/mobile/vendor/sullustan_female.iff",
-				"object/mobile/vendor/sullustan_male.iff",
-				"object/mobile/vendor/trandoshan_female.iff",
-				"object/mobile/vendor/trandoshan_male.iff",
-				"object/mobile/vendor/twilek_female.iff",
-				"object/mobile/vendor/twilek_male.iff",
-				"object/mobile/vendor/zabrak_female.iff",
-				"object/mobile/vendor/zabrak_male.iff" },
+				"object/creature/player/zabrak_female.iff" },
 	
 	-- The damage types in WeaponObject
 	vulnerability = LIGHTSABER,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
+	healthEncumbrance = 15,
+	actionEncumbrance = 15,
+	mindEncumbrance = 25,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 15,
-	energy = 15,
-	electricity = 15,
-	stun = 15,
-	blast = 15,
+	maxCondition = 30000,
+
+	kinetic = 50,
+	energy = 50,
+	electricity = 35,
+	stun = 9,
+	blast = 35,
 	heat = 15,
 	cold = 15,
-	acid = 15,
+	acid = 9,
 	lightSaber = 0
 }
 

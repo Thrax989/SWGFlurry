@@ -1,3 +1,9 @@
+object_ship_player_shared_player_assaultship = SharedShipObjectTemplate:new {
+	clientTemplateFileName = "object/ship/player/shared_player_assaultship.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_ship_player_shared_player_assaultship, "object/ship/player/shared_player_assaultship.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 object_ship_player_shared_player_blacksun_vaksai = SharedShipObjectTemplate:new {
 	clientTemplateFileName = "object/ship/player/shared_player_blacksun_vaksai.iff"
 }

@@ -6,25 +6,24 @@ object_building_player_atat_house = object_building_player_shared_atat_house:new
 	length = 4,
 	width = 2,
 	constructionMarker = "object/building/player/construction/construction_player_house_corellia_large_style_01.iff",
-	--[[skillMods = {
+	skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
 		{"private_med_battle_fatigue", 5},
 		{"private_safe_logout", 1},
-		{"advanced_assembly", 20},
-		{"armor_assembly", 20},
-		{"general_assembly", 20},
-		{"bio_engineer_assembly", 20},
-		{"clothing_assembly", 20},
-		{"combat_medicine_assembly", 20},
-		{"droid_assembly", 20},
-		{"engineering_assembly", 20},
-		{"food_assembly", 20},
-		{"force_assembly", 20},
-		{"jedi_saber_assembly", 20},
-		{"medicine_assembly", 20},
-		{"structure_assembly", 20},
-		{"weapon_assembly", 20},
+		{"advanced_assembly", 10},
+		{"armor_assembly", 10},
+		{"general_assembly", 10},
+		{"bio_engineer_assembly", 10},
+		{"clothing_assembly", 10},
+		{"combat_medicine_assembly", 10},
+		{"droid_assembly", 10},
+		{"engineering_assembly", 10},
+		{"food_assembly", 10},
+		{"jedi_saber_assembly", 10},
+		{"medicine_assembly", 10},
+		{"structure_assembly", 10},
+		{"weapon_assembly", 10},
 		{"armor_experimentation", 5},
 		{"general_experimentation", 5},
 		{"bio_engineer_experimentation", 5},
@@ -39,7 +38,7 @@ object_building_player_atat_house = object_building_player_shared_atat_house:new
 		{"structure_experimentation", 5},
 		{"tissue_experimentation", 5},
 		{"weapon_experimentation", 5},
-		{"armor_complexity", 50},
+		--[[{"armor_complexity", 50},
 		{"clothing_complexity", 50},
 		{"medicine_complexity", 50},
 		{"droid_complexity", 50},
@@ -53,8 +52,10 @@ object_building_player_atat_house = object_building_player_shared_atat_house:new
 		{"clothing_repair", 20},
 		{"force_repair_bonus", 20},
 		{"crafting_repair", 20},
-		{"weapon_repair", 20}
-	},]]
+		{"weapon_repair", 20},
+		{"force_assembly", 20},
+		]]
+	},
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = 5.00735, z = 18.0688, y = 5.37879, ow = 0.707107, ox = 0, oz = 0, oy = -0.707107, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/sign/player/house_address.iff", x = -4.00, z = 6.40, y = 14.75, ow = 0.99939, ox = -0.0349, oz = 0, oy =0, cellid = -1, containmentType = -1}
@@ -65,22 +66,29 @@ object_building_player_atat_house = object_building_player_shared_atat_house:new
 			{templateFile = "object/tangible/sign/player/shop_sign_s02.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_02", suiItem = "@player_structure:shop_sign2"},
 			{templateFile = "object/tangible/sign/player/shop_sign_s03.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_03", suiItem = "@player_structure:shop_sign3"},
 			{templateFile = "object/tangible/sign/player/shop_sign_s04.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "crafting_merchant_management_04", suiItem = "@player_structure:shop_sign4"},
-			{templateFile = "object/tangible/sign/player/efol_hanging_sign_01.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Heart Sign 1"},
-			{templateFile = "object/tangible/sign/player/efol_standing_sign_01.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Heart  Sign 2"},
-			{templateFile = "object/tangible/sign/player/house_address_halloween_sign.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Halloween Sign 3"},
-			{templateFile = "object/tangible/sign/player/imperial_empire_day_2009_sign_hanging.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Imperial Sign 4"},
-			{templateFile = "object/tangible/sign/player/imperial_empire_day_2009_sign_standing.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Imperial Sign 5"},
-			{templateFile = "object/tangible/sign/player/pgc_sign_hanging.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Hologram Sign 6"},
-			{templateFile = "object/tangible/sign/player/pgc_sign_standing.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Hologram Sign 7"},
-			{templateFile = "object/tangible/sign/player/rebel_remembrance_day_2009_sign_hanging.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Rebel Sign 8"},
-			{templateFile = "object/tangible/sign/player/rebel_remembrance_day_2009_sign_standing.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Rebel Sign 9"},
-			{templateFile = "object/tangible/sign/player/shop_sign_halloween_sign.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Halloween Sign 10"},
-			{templateFile = "object/tangible/sign/player/wod_sm_banner_sign_01.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Halloween Sign 11"},
-			{templateFile = "object/tangible/sign/player/wod_sm_banner_sign_02.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Nightsister Banner Sign 12"},
-			{templateFile = "object/tangible/sign/player/wod_sm_banner_sign_03.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Nightsister Banner Sign 13"},
-			{templateFile = "object/tangible/sign/player/wod_sm_hanging_sign_01.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Stone Sign 14"},
-			{templateFile = "object/tangible/sign/player/wod_sm_standing_sign_01.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Stone Sign 15"}	
-	}
+--Custom Signs
+--Standing
+		{templateFile = "object/tangible/tcg/series5/house_sign_tcg_standing.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "TCG - Diner Sign Standing"},
+		{templateFile = "object/tangible/tcg/series3/house_sign_tcg_s02.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "TCG - Oval Standing"},
+		{templateFile = "object/tangible/sign/player/wod_sm_banner_sign_02.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Nightsister Banner Sign 1"},
+		{templateFile = "object/tangible/sign/player/wod_sm_banner_sign_03.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Nightsister Banner Sign 2"},
+		{templateFile = "object/tangible/sign/player/wod_sm_banner_sign_01.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Nightsister Banner Sign 3"},
+		{templateFile = "object/tangible/sign/player/wod_sm_standing_sign_01.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Nightsister Stone Sign Standing"},
+		{templateFile = "object/tangible/sign/player/imperial_empire_day_2009_sign_standing.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Imperial Emblem Sign Standing"},
+		{templateFile = "object/tangible/sign/player/rebel_remembrance_day_2009_sign_standing.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Rebel Sign Standing"},
+		{templateFile = "object/tangible/sign/player/pgc_sign_standing.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Hologram Sign Standing"},
+		{templateFile = "object/tangible/sign/player/efol_standing_sign_01.iff", x = -7.00, z = 0.94, y = 15.57, ow = 1, ox = 0, oz = 0, oy = 0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Heart Sign Standing"},
+
+
+--Hanging
+		{templateFile = "object/tangible/tcg/series5/house_sign_tcg_hanging.iff", x = -4.00, z = 6.40, y = 14.75, ow = 0.99939, ox = -0.0349, oz = 0, oy =0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "TCG - Diner Sign Hanging"},
+		{templateFile = "object/tangible/tcg/series3/house_sign_tcg_s01.iff", x = -4.00, z = 6.40, y = 14.75, ow = 0.99939, ox = -0.0349, oz = 0, oy =0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "TCG - Oval Hanging"},
+		{templateFile = "object/tangible/sign/player/wod_sm_hanging_sign_01.iff", x = -4.00, z = 6.40, y = 14.75, ow = 0.99939, ox = -0.0349, oz = 0, oy =0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Nightsister Stone Sign Hanging"},
+		{templateFile = "object/tangible/sign/player/efol_hanging_sign_01.iff", x = -4.00, z = 6.40, y = 14.75, ow = 0.99939, ox = -0.0349, oz = 0, oy =0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Heart Sign Hanging"},
+		{templateFile = "object/tangible/sign/player/house_address_halloween_sign.iff", x = -4.00, z = 6.40, y = 14.75, ow = 0.99939, ox = -0.0349, oz = 0, oy =0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Halloween Sign Hanging"},
+		{templateFile = "object/tangible/sign/player/imperial_empire_day_2009_sign_hanging.iff", x = -4.00, z = 6.40, y = 14.75, ow = 0.99939, ox = -0.0349, oz = 0, oy =0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Imperial Emblem Sign Hanging"},
+		{templateFile = "object/tangible/sign/player/rebel_remembrance_day_2009_sign_hanging.iff", x = -4.00, z = 6.40, y = 14.75, ow = 0.99939, ox = -0.0349, oz = 0, oy =0, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Rebel Emblem Sign Hanging"},
+	},
 }
 
 ObjectTemplates:addTemplate(object_building_player_atat_house, "object/building/player/atat_house.iff")

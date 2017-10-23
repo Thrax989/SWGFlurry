@@ -5,7 +5,16 @@ artifact = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "artifactone", weight = 10000000}
+		{itemTemplate = "artifact1", weight = 1000000},
+		{itemTemplate = "artifact2", weight = 1000000},
+		{itemTemplate = "artifact3", weight = 1000000},
+		{itemTemplate = "artifact4", weight = 1000000},
+		{itemTemplate = "artifact5", weight = 1000000},
+		{itemTemplate = "artifact6", weight = 1000000},
+		{itemTemplate = "artifact7", weight = 1000000},
+		{itemTemplate = "artifact8", weight = 1000000},
+		{itemTemplate = "artifact9", weight = 1000000},
+		{itemTemplate = "artifact10", weight = 1000000},
 	}
 }
 

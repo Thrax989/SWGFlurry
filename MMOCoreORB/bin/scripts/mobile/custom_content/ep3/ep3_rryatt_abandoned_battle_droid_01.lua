@@ -27,24 +27,7 @@ ep3_rryatt_abandoned_battle_droid_01 = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_rryatt_abandoned_battle_droid_01.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
 	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",
 	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster)

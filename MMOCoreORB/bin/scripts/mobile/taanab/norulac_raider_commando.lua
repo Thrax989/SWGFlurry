@@ -1,5 +1,5 @@
 norulac_raider_commando = Creature:new {
-	objectName = "@mob/creature_names:norulac_raider_commando",
+	customName = "Norulac Raider Commando",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "self",

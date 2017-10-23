@@ -1,6 +1,6 @@
 ep3_clone_relics_durge_droid_01 = Creature:new {
 	customName = "Durge Droid",
-	--randomNameType = NAME_GENERIC_TAG,
+	randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "droids",
 	faction = "",
 	level = 150,
@@ -27,27 +27,10 @@ ep3_clone_relics_durge_droid_01 = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_clone_relics_durge_droid_01.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {"unarmed_weapons"},
+	lootGroups = {},
+	weapons = {},
 	conversationTemplate = "",
-	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,pikemanmaster,fencermaster,swordsmanmaster,tkamaster,pistoleermaster,commandomaster)
+	attacks = merge(bountyhuntermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(ep3_clone_relics_durge_droid_01, "ep3_clone_relics_durge_droid_01")

@@ -43,13 +43,20 @@ fbase_specialist_noncom_hard = Creature:new {
 				{group = "stormtrooper_common", chance = 500000},
 					
 			},
-		},
+			lootChance = 10000000 
+			},
 			{
 			groups = {
 				{group = "g_rebel_credit", chance = 10000000},
 				},
 			lootChance = 20000 
 			},
+			{
+			groups = {
+				{group = "rebpoints", chance = 10000000},
+				},
+			lootChance = 100000 
+			}
 	},
 	weapons = {"imperial_weapons_light"},
 	reactionStf = "@npc_reaction/military",

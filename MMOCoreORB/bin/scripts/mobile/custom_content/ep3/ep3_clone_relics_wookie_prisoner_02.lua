@@ -1,6 +1,6 @@
 ep3_clone_relics_wookie_prisoner_02 = Creature:new {
 	customName = "Wookiee Prisoner",
-	--randomNameType = NAME_GENERIC_TAG,
+	randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "wookiee",
 	faction = "",
 	level = 45,
@@ -27,25 +27,8 @@ ep3_clone_relics_wookie_prisoner_02 = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_clone_relics_wookie_prisoner_02.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {"chewbacca_weapons"},
+	lootGroups = {},
+	weapons = {},
 	conversationTemplate = "",
 	attacks = merge(brawlermaster,marksmanmaster)
 }

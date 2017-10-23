@@ -33,6 +33,47 @@ includeFile("custom_loot/items/human_skull.lua")
 includeFile("custom_loot/items/tokens/imperial_credit.lua")
 includeFile("custom_loot/items/tokens/rebel_credit.lua")
 
+--Jedi Clothing Treatment
+includeFile("custom_loot/items/clothing/jedi_treatment_01.lua")
+
+--Jedi Robe
+includeFile("custom_loot/items/clothing/jedi_robe_black_01.lua")
+includeFile("custom_loot/items/clothing/jedi_robe_black_02.lua")
+
+--TCG Series 1
+includeFile("custom_loot/items/tcg_series_1/decorative_bas_relief.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_chon_bust.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_computer_console_01.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_computer_console_02.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_display_case_01.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_display_case_02.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_dooku_bust.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_fish_tank.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_indoor_fountain_01.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_indoor_fountain_02.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_indoor_garden_01.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_indoor_garden_02.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_jedi_library_bookshelf.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_painting_alliance_propaganda.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_painting_darth_vader.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_painting_imperial_propaganda.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_painting_jedi_crest.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_painting_trooper.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_statuette_darth_vader.lua")
+includeFile("custom_loot/items/tcg_series_1/decorative_statuette_princess_leia.lua")
+-- BROKEN WILL KILL SQL includeFile("custom_loot/items/tcg_series_1/structure_deed_barn.lua")
+-- BROKEN WILL KILL SQL includeFile("custom_loot/items/tcg_series_1/structure_deed_diner.lua")
+--includeFile("custom_loot/items/tcg_series_1/vehicle_deed_mechno_chair.lua")
+--includeFile("custom_loot/items/tcg_series_1/vehicle_deed_organa_speeder.lua")
+includeFile("custom_loot/items/tcg_series_1/wearable_arc170_flightsuit.lua")
+includeFile("custom_loot/items/tcg_series_1/wearable_black_corset_dress.lua")
+includeFile("custom_loot/items/tcg_series_1/wearable_glowing_blue_eyes.lua")
+includeFile("custom_loot/items/tcg_series_1/wearable_glowing_red_eyes.lua")
+includeFile("custom_loot/items/tcg_series_1/wearable_naboo_jacket.lua")
+includeFile("custom_loot/items/tcg_series_1/wearable_orange_flightsuit.lua")
+includeFile("custom_loot/items/tcg_series_1/wearable_snow_jacket.lua")
+
+
 
 --House Deeds
 includeFile("custom_loot/items/player_house_deeds/atat_house_loot_deed.lua")
@@ -549,3 +590,7 @@ includeFile("custom_loot/items/vehicle_comps/custom_veh_chassis_brace.lua")
 includeFile("custom_loot/items/vehicle_comps/custom_veh_grav_motor.lua")
 includeFile("custom_loot/items/vehicle_comps/custom_veh_steering_mech.lua")
 includeFile("custom_loot/items/vehicle_comps/custom_veh_turbine.lua")
+--Custom Vehicle Schematic
+includeFile("custom_loot/items/vehicle_schematics/ab_1_vehicle_schematic.lua")
+includeFile("custom_loot/items/vehicle_schematics/barc_vehicle_schematic.lua")
+

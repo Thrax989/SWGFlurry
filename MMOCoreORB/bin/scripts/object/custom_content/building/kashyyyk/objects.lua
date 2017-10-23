@@ -42,7 +42,48 @@
 
 -- STOT = SharedTangibleObjectTemplate
 --
+object_building_kashyyyk_shared_kash_swamp_lilypad = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_kash_swamp_lilypad.iff"
+}
 
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_kash_swamp_lilypad, "object/building/kashyyyk/shared_kash_swamp_lilypad.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_building_kashyyyk_shared_kash_swamp_lilypad_s02 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_kash_swamp_lilypad_s02.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_kash_swamp_lilypad_s02, "object/building/kashyyyk/shared_kash_swamp_lilypad_s02.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_building_kashyyyk_shared_mun_kash_imprv_streetlamp_s02 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_mun_kash_imprv_streetlamp_s02.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_mun_kash_imprv_streetlamp_s02, "object/building/kashyyyk/shared_mun_kash_imprv_streetlamp_s02.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_building_kashyyyk_shared_poi_kash_rryatt_rope_lift_rope_half = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_poi_kash_rryatt_rope_lift_rope_half.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_poi_kash_rryatt_rope_lift_rope_half, "object/building/kashyyyk/shared_poi_kash_rryatt_rope_lift_rope_half.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_building_kashyyyk_shared_poi_kash_rryatt_rope_lift_rope_quarter = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_poi_kash_rryatt_rope_lift_rope_quarter.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_poi_kash_rryatt_rope_lift_rope_quarter, "object/building/kashyyyk/shared_poi_kash_rryatt_rope_lift_rope_quarter.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_building_kashyyyk_shared_rryatt_world_root_a1 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_rryatt_world_root_a1.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_rryatt_world_root_a1, "object/building/kashyyyk/shared_rryatt_world_root_a1.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_building_kashyyyk_shared_rryatt_world_root_a2 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/kashyyyk/shared_rryatt_world_root_a2.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_rryatt_world_root_a2, "object/building/kashyyyk/shared_rryatt_world_root_a2.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 object_building_kashyyyk_shared_decd_wroshyr_stump_dry_01 = SharedStaticObjectTemplate:new {
 	clientTemplateFileName = "object/building/kashyyyk/shared_decd_wroshyr_stump_dry_01.iff"
 }

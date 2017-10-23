@@ -42,6 +42,21 @@
 
 
 object_building_heroic_echo_base = object_building_heroic_shared_echo_base:new {
+publicStructure = 1,
+
+spawningPoints = {
+
+
+	customName = "Unknown",
+            { x = 67.5, z = 14.7, y = 284.4, ow = 0.806, ox = 0, oz = 0, oy = -0.592, cellid = 28 },
+
+            },
+	templateType = CLONINGBUILDING,
+	planetMapCategory = "cloningfacility",
+	facilityType = CLONER_STANDARD,
+
+
+
 }
 
 ObjectTemplates:addTemplate(object_building_heroic_echo_base, "object/building/heroic/echo_base.iff")

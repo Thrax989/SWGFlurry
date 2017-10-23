@@ -2,7 +2,6 @@ package.path = package.path .. ";scripts/screenplays/themepark/?.lua;scripts/scr
 require("screenplay")
 require("conv_handler")
 require("themeParkLogic")
-require("screenplayHelper")
 require("corvetteTicketGiverLogic")
 require("corvetteTicketTakerLogic")
 
@@ -27,6 +26,9 @@ require("sui.custom.SuiPhase1AccessTerminal")
 require("sui.custom.SuiProcessorPuzzle")
 require("sui.custom.SuiRadiationSensor")
 require("sui.custom.SuiReceiverPuzzle")
+
+-- Custom content
+includeFile("../custom_scripts/screenplays/screenplays.lua")
 
 includeFile("helperfuncs.lua")
 
@@ -138,9 +140,6 @@ includeFile("dungeon/corellian_corvette/ticket_takers/ds_297.lua")
 includeFile("dungeon/corellian_corvette/ticket_takers/klaatu.lua")
 includeFile("dungeon/corellian_corvette/ticket_takers/lt_lance.lua")
 
-
---Dungeon ISD
-includeFile("dungeon/isd/isd.lua")
 
 -- Village
 includeFile("village/village_community_crafting.lua")
@@ -641,32 +640,5 @@ includeFile("record_keepers/record_keepers.lua")
 --Tests
 includeFile("tests/tests.lua")
 
---custom planets
-includeFile("caves/taanab_cave.lua")
-includeFile("cities/taanab_pandath.lua")
-includeFile("cities/taanab_starhunterstation.lua")
-includeFile("poi/taanab_downed_ship.lua")
-includeFile("poi/taanab_mine.lua")
-includeFile("poi/taanab_hex_farms.lua")
-includeFile("poi/taanab_great_herd.lua")
-includeFile("poi/DarthCaedusCave.lua")
-includeFile("poi/MandalMotors.lua")
-includeFile("poi/ShadowCollectiveCave.lua")
-includeFile("poi/TaungWarriorBunker.lua")
-includeFile("poi/VizslaHideout.lua")
-includeFile("static_spawns/taanab_static_spawns.lua")
-
--- Custom Content
---includeFile("events/world_exchange_dealer.lua")
---includeFile("events/imperial_exchange_dealer.lua")
---includeFile("events/rebel_exchange_dealer.lua")
---includeFile("events/holo_exchange_dealer.lua")
-includeFile("events/painting_exchange_dealer.lua")
-includeFile("events/imperial_armor_vendor.lua")
-includeFile("events/rebel_armor_vendor.lua")
-
---Custom World Bosses
-includeFile("custom_world_bosses/custom_jawa_boss.lua")
-includeFile("custom_world_bosses/custom_nerf_boss.lua")
-includeFile("custom_world_bosses/custom_exar_kun_boss.lua")
-includeFile("caves/dantooine_janta_cave_boss.lua")
+--Custom Screenplays
+includeFile("custom_screenplays/screenplays.lua")

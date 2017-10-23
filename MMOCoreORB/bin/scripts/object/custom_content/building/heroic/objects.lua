@@ -41,6 +41,84 @@
 --which carries forward this exception.
 
 --New
+object_building_heroic_shared_bespin_huge_tower = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_bespin_huge_tower.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_huge_tower, "object/building/heroic/shared_bespin_huge_tower.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_bespin_tower_a = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_bespin_tower_a.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_tower_a, "object/building/heroic/shared_bespin_tower_a.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_bespin_tower_b = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_bespin_tower_b.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_tower_b, "object/building/heroic/shared_bespin_tower_b.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_bespin_tower_c = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_bespin_tower_c.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_tower_c, "object/building/heroic/shared_bespin_tower_c.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_cloud_city = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_cloud_city.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_cloud_city, "object/building/heroic/shared_cloud_city.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_cloud_platform = SharedBuildingObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_cloud_platform.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_cloud_platform, "object/building/heroic/shared_cloud_platform.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_frozen_tauntaun = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_frozen_tauntaun.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_frozen_tauntaun, "object/building/heroic/shared_frozen_tauntaun.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_golan_laser_battery = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_golan_laser_battery.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_golan_laser_battery, "object/building/heroic/shared_golan_laser_battery.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_hoth_ion = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_hoth_ion.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_hoth_ion, "object/building/heroic/shared_hoth_ion.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_ptower = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_ptower.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_ptower, "object/building/heroic/shared_ptower.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 object_building_heroic_shared_axkva_altar = SharedBuildingObjectTemplate:new {
 	clientTemplateFileName = "object/building/heroic/shared_axkva_altar.iff"
 }
@@ -91,7 +169,7 @@ object_building_heroic_shared_exar_kun_tomb = SharedBuildingObjectTemplate:new {
 }
 ObjectTemplates:addClientTemplate(object_building_heroic_shared_exar_kun_tomb, "object/building/heroic/shared_exar_kun_tomb.iff")
 --**********************************************************************************************************************************
-object_building_heroic_shared_hoth_generator = SharedBuildingObjectTemplate:new {
+object_building_heroic_shared_hoth_generator = SharedStaticObjectTemplate:new {
 	clientTemplateFileName = "object/building/heroic/shared_hoth_generator.iff"
 }
 ObjectTemplates:addClientTemplate(object_building_heroic_shared_hoth_generator, "object/building/heroic/shared_hoth_generator.iff")

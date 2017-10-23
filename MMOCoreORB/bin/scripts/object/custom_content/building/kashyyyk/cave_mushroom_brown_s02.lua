@@ -38,7 +38,7 @@
 --gives permission to release a modified version without this exception; 
 --this exception also makes it possible to release a modified version 
 
-object_building_kashyyyk_cave_mushroom_brown_s01 = object_building_kashyyyk_shared_cave_mushroom_brown_s01:new {
+object_building_kashyyyk_cave_mushroom_brown_s02 = object_building_kashyyyk_shared_cave_mushroom_brown_s02:new {
 
 }
-ObjectTemplates:addTemplate(object_building_kashyyyk_cave_mushroom_brown_s01, "object/building/kashyyyk/cave_mushroom_brown_s01.iff")
+ObjectTemplates:addTemplate(object_building_kashyyyk_cave_mushroom_brown_s02, "object/building/kashyyyk/cave_mushroom_brown_s02.iff")

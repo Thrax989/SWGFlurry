@@ -1,5 +1,5 @@
 nerf_grassland = Creature:new {
-	objectName = "@mob/creature_names:nerf_grassland",
+	customName = "Nerf Grassland",
 	socialGroup = "nerf",
 	faction = "",
 	level = 32,

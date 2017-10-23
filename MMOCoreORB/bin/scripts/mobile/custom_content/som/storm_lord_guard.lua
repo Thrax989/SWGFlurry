@@ -1,17 +1,16 @@
 storm_lord_guard = Creature:new {
-	customName = "Storm Lord guard",
-	socialGroup = "self",
-	pvpFaction = "",
+	customName = "storm_lord_guard",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 85,
-	chanceHit = 12,
-	damageMin = 950,
-	damageMax = 1250,
-	baseXp = 5100,
-	baseHAM = 20000,
-	baseHAMmax = 23000,
-	armor = 1,
-	resists = {20,20,15,25,15,20,20,-1,-1},
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,7 +20,7 @@ storm_lord_guard = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
@@ -29,25 +28,13 @@ storm_lord_guard = Creature:new {
 	templates = {"object/mobile/som/storm_lord_guard.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {"mixed_force_weapons"},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
-	attacks = merge(fencermid,swordsmanmid,tkamid,pikemanmaster,brawlermaster)
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(storm_lord_guard, "storm_lord_guard")

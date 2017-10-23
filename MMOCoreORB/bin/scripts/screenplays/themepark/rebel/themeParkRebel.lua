@@ -16,7 +16,7 @@ c3po_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 50 }
+				{ rewardType = "credits", amount = 500 }
 			}
 		},
 		{
@@ -33,7 +33,7 @@ c3po_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 100 }
+				{ rewardType = "credits", amount = 1000 }
 			}
 		},
 		{
@@ -47,7 +47,7 @@ c3po_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 150 }
+				{ rewardType = "credits", amount = 1500 }
 			}
 		},
 		{
@@ -64,8 +64,8 @@ c3po_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 200 },
-				{ rewardType = "faction", faction = "rebel", amount = 50 },
+				{ rewardType = "credits", amount = 2000 },
+				{ rewardType = "faction", faction = "rebel", amount = 100 },
 				{ rewardType = "loot",  lootGroup = "theme_park_reward_rebel_c_3po" }
 			}
 		}
@@ -87,7 +87,7 @@ qualdo_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 200 }
+				{ rewardType = "credits", amount = 2000 }
 			}
 		},
 		{
@@ -107,7 +107,7 @@ qualdo_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 250 }
+				{ rewardType = "credits", amount = 2500 }
 			}
 		},
 		{
@@ -125,7 +125,7 @@ qualdo_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 300 }
+				{ rewardType = "credits", amount = 3000 }
 			}
 		},
 		{
@@ -139,7 +139,7 @@ qualdo_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "rebel", amount = 75 },
+				{ rewardType = "faction", faction = "rebel", amount = 150 },
 				{ rewardType = "loot", lootGroup = "theme_park_reward_rebel_qualdo_herm" }
 			}
 		}
@@ -161,7 +161,7 @@ wedge_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 350 }
+				{ rewardType = "credits", amount = 3500 }
 			}
 		},
 		{
@@ -175,7 +175,7 @@ wedge_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 400 }
+				{ rewardType = "credits", amount = 4000 }
 			}
 		},
 		{
@@ -193,7 +193,7 @@ wedge_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 450 }
+				{ rewardType = "credits", amount = 4500 }
 			}
 		},
 		{
@@ -216,7 +216,7 @@ wedge_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 500 }
+				{ rewardType = "credits", amount = 5000 }
 			}
 		},
 		{
@@ -237,7 +237,7 @@ wedge_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "rebel", amount = 100 },
+				{ rewardType = "faction", faction = "rebel", amount = 200 },
 				{ rewardType = "loot", lootGroup = "theme_park_reward_rebel_wedge_antilles" }
 			}
 		}
@@ -259,7 +259,7 @@ leia_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 550 }
+				{ rewardType = "credits", amount = 5500 }
 			}
 		},
 		{
@@ -273,7 +273,7 @@ leia_missions =
 			itemSpawns = { },
 			rewards =
 			{
-				{ rewardType = "credits", amount = 600 }
+				{ rewardType = "credits", amount = 6000 }
 			}
 		},
 		{
@@ -291,7 +291,7 @@ leia_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 650 }
+				{ rewardType = "credits", amount = 6500 }
 			}
 		},
 		{
@@ -308,7 +308,7 @@ leia_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 700 }
+				{ rewardType = "credits", amount = 7000 }
 			}
 		},
 		{
@@ -326,7 +326,7 @@ leia_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "rebel", amount = 125 },
+				{ rewardType = "faction", faction = "rebel", amount = 250 },
 				{ rewardType = "loot", lootGroup = "theme_park_reward_rebel_leia_organa" }
 			}
 		}
@@ -345,7 +345,7 @@ nien_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 750 }
+				{ rewardType = "credits", amount = 7500 }
 			}
 		},
 		{
@@ -359,7 +359,7 @@ nien_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 800 }
+				{ rewardType = "credits", amount = 8000 }
 			}
 		},
 		{
@@ -373,7 +373,7 @@ nien_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 850 }
+				{ rewardType = "credits", amount = 8500 }
 			}
 		},
 		{
@@ -390,7 +390,7 @@ nien_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "rebel", amount = 150 },
+				{ rewardType = "faction", faction = "rebel", amount = 300 },
 				{ rewardType = "loot", lootGroup = "theme_park_reward_rebel_nien_nunb" }
 			}
 		}
@@ -409,7 +409,7 @@ han_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 900 }
+				{ rewardType = "credits", amount = 9000 }
 			}
 		},
 		{
@@ -428,7 +428,7 @@ han_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 950 }
+				{ rewardType = "credits", amount = 9500 }
 			}
 		},
 		{
@@ -447,7 +447,7 @@ han_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1000 }
+				{ rewardType = "credits", amount = 10000 }
 			}
 		},
 		{
@@ -465,7 +465,7 @@ han_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1050 }
+				{ rewardType = "credits", amount = 10500 }
 			}
 		},
 		{
@@ -482,7 +482,7 @@ han_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "rebel", amount = 175 },
+				{ rewardType = "faction", faction = "rebel", amount = 350 },
 				{ rewardType = "loot",  lootGroup = "theme_park_reward_rebel_han_solo" }
 			}
 		}
@@ -503,7 +503,7 @@ ackbar_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1100 }
+				{ rewardType = "credits", amount = 11000 }
 			}
 		},
 		{
@@ -520,7 +520,7 @@ ackbar_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1150 }
+				{ rewardType = "credits", amount = 11500 }
 			}
 		},
 		{
@@ -537,7 +537,7 @@ ackbar_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1200 }
+				{ rewardType = "credits", amount = 12000 }
 			}
 		},
 		{
@@ -558,7 +558,7 @@ ackbar_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1250 }
+				{ rewardType = "credits", amount = 12500 }
 			}
 		},
 		{
@@ -576,7 +576,7 @@ ackbar_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "rebel", amount = 200 },
+				{ rewardType = "faction", faction = "rebel", amount = 400 },
 				{ rewardType = "loot",  lootGroup = "theme_park_reward_rebel_captain_ackbar" }
 			}
 		}
@@ -598,7 +598,7 @@ mon_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1300 }
+				{ rewardType = "credits", amount = 13000 }
 			}
 		},
 		{
@@ -616,7 +616,7 @@ mon_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1350 }
+				{ rewardType = "credits", amount = 13500 }
 			}
 		},
 		{
@@ -635,7 +635,7 @@ mon_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1400 }
+				{ rewardType = "credits", amount = 14000 }
 			}
 		},
 		{
@@ -653,7 +653,7 @@ mon_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1450 }
+				{ rewardType = "credits", amount = 14500 }
 			}
 		},
 		{
@@ -671,7 +671,7 @@ mon_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1500 }
+				{ rewardType = "credits", amount = 15000 }
 			}
 		},
 		{
@@ -689,7 +689,7 @@ mon_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "rebel", amount = 225 },
+				{ rewardType = "faction", faction = "rebel", amount = 450 },
 				{ rewardType = "loot",  lootGroup = "theme_park_reward_rebel_mon_mothma" }
 			}
 		},
@@ -712,7 +712,7 @@ jan_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1550 }
+				{ rewardType = "credits", amount = 15500 }
 			}
 		},
 		{
@@ -726,7 +726,7 @@ jan_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1600 }
+				{ rewardType = "credits", amount = 16000 }
 			}
 		},
 		{
@@ -744,7 +744,7 @@ jan_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1650 }
+				{ rewardType = "credits", amount = 16500 }
 			}
 		},
 		{
@@ -761,7 +761,7 @@ jan_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1700 }
+				{ rewardType = "credits", amount = 17000 }
 			}
 		},
 		{
@@ -779,7 +779,7 @@ jan_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "rebel", amount = 250 },
+				{ rewardType = "faction", faction = "rebel", amount = 500 },
 				{ rewardType = "loot",  lootGroup = "theme_park_reward_rebel_jan_dodonna" },
 				{ rewardType = "permission", permissionGroup = "temple_of_exar_kun2" }
 			}
@@ -799,7 +799,7 @@ luke_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1750 }
+				{ rewardType = "credits", amount = 17500 }
 			}
 		},
 		{
@@ -816,7 +816,7 @@ luke_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1800 }
+				{ rewardType = "credits", amount = 18000 }
 			}
 		},
 		{
@@ -830,7 +830,7 @@ luke_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1850 }
+				{ rewardType = "credits", amount = 18500 }
 			}
 		},
 		{
@@ -847,7 +847,7 @@ luke_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1900 }
+				{ rewardType = "credits", amount = 19000 }
 			}
 		},
 		{
@@ -864,8 +864,8 @@ luke_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "rebel", amount = 300 },
-				{ rewardType = "credits", amount = 1950 },
+				{ rewardType = "faction", faction = "rebel", amount = 600 },
+				{ rewardType = "credits", amount = 19500 },
 				{ rewardType = "loot",  lootGroup = "theme_park_reward_rebel_luke_skywalker" },
 				{ rewardType = "badge", badge = THEME_PARK_REBEL_BADGE }
 			}
@@ -961,7 +961,7 @@ npcMapRebel =
 			npcNumber = 512,
 			stfFile = "@theme_park_rebel/luke_skywalker",
 			missions = luke_missions
-		}
+}
 	}
 
 permissionMapRebel = {
@@ -992,30 +992,8 @@ permissionMapRebel = {
 				}
 			}
 		}
-	},
-	{
-		planetName = "yavin4",
-		regionName = "temple_of_exar_kun",
-		permissions =
-		{
-			{
-				cells = { 3465380, 3465381, 3465382, 3465383, 3465384, 3465385, 3465386, 3465387, 3465388, 3465389 },
-				conditions =
-				{
-					{ permissionType = "missionState", mission = "theme_park_rebel", missionState = 128 },
-					{ permissionType = "faction" }
-				}
-			},
-			{
-				cells = { 3465390, 3465391, 3465392, 3465393, 3465394 },
-				conditions =
-				{
-					{ permissionType = "missionState", mission = "theme_park_rebel", missionState = 256 },
-					{ permissionType = "faction" }
-				}
-			}
-		}
 	}
+	
 }
 
 ThemeParkRebel = ThemeParkLogic:new {

@@ -31,22 +31,28 @@ master_prophet_of_the_dark_side = Creature:new {
 		"object/mobile/dressed_dark_jedi_human_male_01.iff",
 		"object/mobile/dressed_dark_jedi_human_female_01.iff"},
 	lootGroups = {
-		lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 9000000},
+				{group = "junk", chance = 8500000},
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},
+				{group = "stormtrooper_common", chance = 500000},
 					
 			},
-		},
+			lootChance = 10000000 
+			},
 			{
 			groups = {
 				{group = "g_rebel_credit", chance = 10000000},
 				},
 			lootChance = 20000 
 			},
-	},
+			{
+			groups = {
+				{group = "rebpoints", chance = 10000000},
+				},
+			lootChance = 100000 
+			}
 	},
 	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",

@@ -69,11 +69,17 @@ baseStoredShips = 3
 -----------------------------------
 --VETERAN REWARDS CONFIG
 -----------------------------------
-veteranRewardMilestones = {10, 30, 45, 90, 120, 150, 180, 210, 240, 270, 300, 365} --days, must be sorted low to high
+veteranRewardMilestones = {0, 1, 10, 30, 45, 90, 120, 150, 180, 210, 240, 270, 300, 365} --days, must be sorted low to high
 
 veteranRewardAdditionalMilestones = 35 --frequency, in days, of additional milestones (beyond the established ones)
 
 veteranRewards = {
+		
+		-- 0 Day Rewards
+		{templateFile = "object/tangible/loot/misc/new_player_pack.iff", milestone=0, oneTime=true, description="New Player Resource Pack"},
+	
+		-- 1 Day Rewards
+		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=1, oneTime=true, description="Instant Full XP Token"},
 
 		-- 10 Day Rewards
 		

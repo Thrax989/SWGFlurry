@@ -1,6 +1,6 @@
 ep3_clone_relics_durge = Creature:new {
 	customName = "Durge",
-	socialGroup = "self",
+	socialGroup = "townsperson",
 	faction = "",
 	level = 300,
 	chanceHit = 30.0,
@@ -26,27 +26,10 @@ ep3_clone_relics_durge = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_clone_relics_durge.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {"unarmed_weapons"},
+	lootGroups = {},
+	weapons = {},
 	conversationTemplate = "",
-	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,pikemanmaster,fencermaster,swordsmanmaster,tkamaster,pistoleermaster,commandomaster)
+	attacks = merge(bountyhuntermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(ep3_clone_relics_durge, "ep3_clone_relics_durge")

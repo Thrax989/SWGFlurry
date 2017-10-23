@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_snowtrooper_armor_snowtrooper_leggings = object_tangible_wearables_armor_snowtrooper_shared_armor_snowtrooper_leggings:new {
 	templateType = ARMOROBJECT,
 
-	faction = "",
+	faction = "Imperial",
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
@@ -83,8 +83,6 @@ object_tangible_wearables_armor_snowtrooper_armor_snowtrooper_leggings = object_
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
-				"object/creature/player/ithorian_male.iff",
-				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -95,8 +93,6 @@ object_tangible_wearables_armor_snowtrooper_armor_snowtrooper_leggings = object_
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
-				"object/creature/player/wookiee_male.iff",
-				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 	
@@ -104,20 +100,22 @@ object_tangible_wearables_armor_snowtrooper_armor_snowtrooper_leggings = object_
 	vulnerability = LIGHTSABER,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
+	healthEncumbrance = 15,
+	actionEncumbrance = 15,
+	mindEncumbrance = 25,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 15,
-	energy = 15,
+	maxCondition = 30000,
+
+	kinetic = 52,
+	energy = 50,
 	electricity = 15,
-	stun = 15,
+	stun = 12,
 	blast = 15,
-	heat = 15,
-	cold = 15,
+	heat = 0,
+	cold = 58,
 	acid = 15,
 	lightSaber = 0
 }

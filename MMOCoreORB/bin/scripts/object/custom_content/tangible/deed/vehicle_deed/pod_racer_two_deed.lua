@@ -43,7 +43,7 @@
 
 object_tangible_deed_vehicle_deed_pod_racer_two_deed = object_tangible_deed_vehicle_deed_shared_pod_racer_two_deed:new {
 
-	templateType = VEHICLEDEED,	
+	templateType = VEHICLEDEED,
 
 	controlDeviceObjectTemplate = "object/intangible/vehicle/pod_racer_two_pcd.iff",
 	generatedObjectTemplate = "object/mobile/vehicle/pod_racer_two.iff",
@@ -53,8 +53,8 @@ object_tangible_deed_vehicle_deed_pod_racer_two_deed = object_tangible_deed_vehi
 	experimentalWeights = {1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "exp_durability"},
 	experimentalSubGroupTitles = {"null", "null", "hit_points"},
-	experimentalMin = {0, 0, 1500},
-	experimentalMax = {0, 0, 3000},
+	experimentalMin = {0, 0, 1000},
+	experimentalMax = {0, 0, 2500},
 	experimentalPrecision = {0, 0, 0},
 	experimentalCombineType = {0, 0, 1},
 }

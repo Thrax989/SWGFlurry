@@ -807,3 +807,12 @@ object_tangible_component_clothing_shared_trim = SharedTangibleObjectTemplate:ne
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_component_clothing_shared_trim, "object/tangible/component/clothing/shared_trim.iff")
+
+
+--Custom Jedi Treatment
+
+object_tangible_component_clothing_shared_clothing_jedi_treatment_01 = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/component/clothing/shared_clothing_jedi_treatment_01.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_component_clothing_shared_clothing_jedi_treatment_01, "object/tangible/component/clothing/shared_clothing_jedi_treatment_01.iff")

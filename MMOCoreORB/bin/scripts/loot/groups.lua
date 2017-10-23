@@ -1,3 +1,5 @@
+includeFile("groups/imppoints.lua")
+includeFile("groups/rebpoints.lua")
 includeFile("groups/armor_attachments.lua")
 includeFile("groups/clothing_attachments.lua")
 includeFile("groups/coa_encoded_disk_fragments.lua")
@@ -370,5 +372,11 @@ includeFile("groups/tierthree.lua")
 includeFile("groups/lootcollectiontierone.lua")
 includeFile("groups/lootcollectiontiertwo.lua")
 includeFile("groups/lootcollectiontierthree.lua")
-includeFile("groups/artifact.lua")
 
+--Artifact system
+includeFile("groups/artifact.lua")
+includeFile("groups/artifactreward.lua")
+
+--Halloween
+includeFile("groups/halloween.lua")
+includeFile("groups/halloween1.lua")

@@ -1,17 +1,16 @@
 storm_lord = Creature:new {
 	customName = "Storm Lord",
-	socialGroup = "self",
-	pvpFaction = "",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 300,
-	chanceHit = 27.25,
-	damageMin = 1250,
-	damageMax = 2500,
-	baseXp = 20476,
-	baseHAM = 278000,
-	baseHAMmax = 292000,
-	armor = 3,
-	resists = {75,25,25,75,75,75,75,75,-1},
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,33 +20,16 @@ storm_lord = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/som/storm_lord.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {"dark_jedi_weapons_gen4"},
-	reactionStf = "@npc_reaction/slang",
-	attacks = merge(lightsabermaster)
+	lootGroups = {},
+	weapons = {"pirate_weapons_light"},
+	conversationTemplate = "",
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(storm_lord, "storm_lord")

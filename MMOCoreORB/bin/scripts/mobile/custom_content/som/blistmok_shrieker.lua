@@ -1,17 +1,16 @@
 blistmok_shrieker = Creature:new {
-	customName = "Blistmok Shrieker",
-	socialGroup = "mustafar",
-	pvpFaction = "",
+	customName = "blistmok_shrieker",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 80,
-	chanceHit = 5,
-	damageMin = 650,
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
 	damageMax = 800,
-	baseXp = 1675,
-	baseHAM = 18500,
-	baseHAMmax = 21000,
-	armor = 1,
-	resists = {40,30,20,20,20,20,20,-1,-1},
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -19,38 +18,23 @@ blistmok_shrieker = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.10,
+	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + STALKER + KILLER,
+	pvpBitmask = ATTACKABLE,
+	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
-	diet = CARNIVORE,
+	diet = HERBIVORE,
 
 	templates = {"object/mobile/som/blistmok_shrieker.iff"},
-	scale = 2.0,
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
-	attacks = {
-		{"dizzyattack",""}
-	}
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(blistmok_shrieker, "blistmok_shrieker")

@@ -42,9 +42,7 @@
 
 
 object_tangible_wearables_apron_apron_s01 = object_tangible_wearables_apron_shared_apron_s01:new {
-objectMenuComponent = "ArmorObjectMenuComponent", 
-	playerRaces = { "object/creature/player/bothan_male.iff",
-				"object/creature/player/smc_female.iff",
+	playerRaces = { 	"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
 				"object/creature/player/talz_male.iff",
 				"object/creature/player/talz_female.iff",
@@ -107,8 +105,6 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
 				"object/mobile/vendor/ishi_tib_male.iff",
-				"object/mobile/vendor/ithorian_female.iff",
-				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
 				"object/mobile/vendor/nikto_male.iff",
@@ -126,8 +122,6 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_apron_apron_s01, "object/tangible/wearables/apron/apron_s01.iff")

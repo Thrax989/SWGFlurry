@@ -229,18 +229,6 @@ yavin4 = {
 }
 
 -----------------
---    Kaas
------------------
-kaas = {
-
-	defaultWeather = 0, -- Sunny
-
-	averageWeatherDuration = 3600, -- In seconds
-
-	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
-}
-
------------------
 --    Taanab
 -----------------
 taanab = {
@@ -249,31 +237,7 @@ taanab = {
 
 	averageWeatherDuration = 3600, -- In seconds
 
-	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
-}
-
------------------
---    mustafar
------------------
-mustafar = {
-
-	defaultWeather = 0, -- Sunny
-
-	averageWeatherDuration = 3600, -- In seconds
-
-	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
-}
-
------------------
---    mandalore
------------------
-mandalore = {
-
-	defaultWeather = 0, -- Sunny
-
-	averageWeatherDuration = 3600, -- In seconds
-
-	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+	weatherStability = 80, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
 }
 
 -----------------
@@ -283,9 +247,9 @@ hoth = {
 
 	defaultWeather = 5, -- Random
 
-	averageWeatherDuration = 600, -- In seconds
+	averageWeatherDuration = 2400, -- In seconds
 
-	weatherStability = 50, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+	weatherStability = 60, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
 
 	hasDamagingSandstorms = 1,
 
@@ -294,61 +258,205 @@ hoth = {
 }
 
 -----------------
---    moraband
+--    Nal Hutta
 -----------------
-moraband = {
+nalhutta = {
 
-	defaultWeather = 0, -- Sunny
+	defaultWeather = 0, -- Gloomy
 
-	averageWeatherDuration = 3600, -- In seconds
+	averageWeatherDuration = 2400, -- In seconds
 
-	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+	weatherStability = 80, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
 }
 
 -----------------
---    coruscant
+--    Kashyyyk
+-----------------
+kashyyyk = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 80, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
+}
+
+
+
+-----------------
+--    Mustafar
+-----------------
+mustafar = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
+}
+
+-----------------
+--    Dagobah
+-----------------
+dagobah = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 80, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
+}
+
+
+-----------------
+--    Coruscant
 -----------------
 coruscant = {
 
-	defaultWeather = 0, -- Sunny
+	defaultWeather = 0, -- Gloomy
 
 	averageWeatherDuration = 3600, -- In seconds
 
-	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
+}
+
+
+-----------------
+--    Bespin
+-----------------
+bespin = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
 }
 
 -----------------
---    hutta
+--    Ghomrassen
 -----------------
-hutta = {
+ghomrassen = {
 
-	defaultWeather = 0, -- Sunny
+	defaultWeather = 0, -- Gloomy
 
 	averageWeatherDuration = 3600, -- In seconds
 
-	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+	hasDamagingSandstorms = 1,
+
+	sandstormDamage = 50, -- 30 = Annoying, 50 = deadly
+
+
 }
 
 -----------------
---    chandrila
+--    Kuat
 -----------------
-chandrila = {
+kuat = {
 
-	defaultWeather = 0, -- Sunny
+	defaultWeather = 0, -- Gloomy
 
 	averageWeatherDuration = 3600, -- In seconds
 
-	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
 }
 
 -----------------
---    jakku
+--    Mon Calamari
 -----------------
-jakku = {
+moncal = {
 
-	defaultWeather = 0, -- Sunny
+	defaultWeather = 0, -- Gloomy
 
 	averageWeatherDuration = 3600, -- In seconds
 
-	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
+}
+
+-----------------
+--    Myrkr
+-----------------
+myrkr = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
+}
+
+-----------------
+--    Ord Mantell
+-----------------
+ordmantell = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
+}
+
+-----------------
+--    Wayland
+-----------------
+wayland = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
+}
+
+-----------------
+--    Tralus
+-----------------
+tralus = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
+}
+
+-----------------
+--    Kessel
+-----------------
+kessel = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+
 }

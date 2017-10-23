@@ -153,15 +153,6 @@ object_ship_shared_decimator_tier9 = SharedShipObjectTemplate:new {
 ObjectTemplates:addClientTemplate(object_ship_shared_decimator_tier9, "object/ship/shared_decimator_tier9.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
-
-object_ship_shared_droid_fighter_s01 = SharedShipObjectTemplate:new {
-	clientTemplateFileName = "object/ship/shared_droid_fighter_s01.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_ship_shared_droid_fighter_s01, "object/ship/shared_droid_fighter_s01.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
 object_ship_shared_dunelizard_s01_tier10 = SharedShipObjectTemplate:new {
 	clientTemplateFileName = "object/ship/shared_dunelizard_s01_tier10.iff"
 }
@@ -376,15 +367,6 @@ object_ship_shared_grievous_starship_tier5 = SharedShipObjectTemplate:new {
 
 ObjectTemplates:addClientTemplate(object_ship_shared_grievous_starship_tier5, "object/ship/shared_grievous_starship_tier5.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_ship_shared_havoc = SharedShipObjectTemplate:new {
-	clientTemplateFileName = "object/ship/shared_havoc.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_ship_shared_havoc, "object/ship/shared_havoc.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
 
 object_ship_shared_imperial_lancer = SharedShipObjectTemplate:new {
 	clientTemplateFileName = "object/ship/shared_imperial_lancer.iff"
@@ -1817,15 +1799,6 @@ object_ship_shared_scyk_s02_tier9 = SharedShipObjectTemplate:new {
 ObjectTemplates:addClientTemplate(object_ship_shared_scyk_s02_tier9, "object/ship/shared_scyk_s02_tier9.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
-
-object_ship_shared_snow_speeder_s01 = SharedShipObjectTemplate:new {
-	clientTemplateFileName = "object/ship/shared_snow_speeder_s01.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_ship_shared_snow_speeder_s01, "object/ship/shared_snow_speeder_s01.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
 object_ship_shared_spacestation_imperial_gcw = SharedShipObjectTemplate:new {
 	clientTemplateFileName = "object/ship/shared_spacestation_imperial_gcw.iff"
 }
@@ -2001,15 +1974,6 @@ object_ship_shared_tiebomber_tier9 = SharedShipObjectTemplate:new {
 ObjectTemplates:addClientTemplate(object_ship_shared_tiebomber_tier9, "object/ship/shared_tiebomber_tier9.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
-
-object_ship_shared_tiedefender = SharedShipObjectTemplate:new {
-	clientTemplateFileName = "object/ship/shared_tiedefender.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_ship_shared_tiedefender, "object/ship/shared_tiedefender.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
 object_ship_shared_tiefighter_tier10 = SharedShipObjectTemplate:new {
 	clientTemplateFileName = "object/ship/shared_tiefighter_tier10.iff"
 }
@@ -2129,23 +2093,6 @@ object_ship_shared_tieoppressor_tier9 = SharedShipObjectTemplate:new {
 ObjectTemplates:addClientTemplate(object_ship_shared_tieoppressor_tier9, "object/ship/shared_tieoppressor_tier9.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
-
-object_ship_shared_twing = SharedShipObjectTemplate:new {
-	clientTemplateFileName = "object/ship/shared_twing.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_ship_shared_twing, "object/ship/shared_twing.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_ship_shared_vwing = SharedShipObjectTemplate:new {
-	clientTemplateFileName = "object/ship/shared_vwing.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_ship_shared_vwing, "object/ship/shared_vwing.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
 object_ship_shared_xwing_tier10 = SharedShipObjectTemplate:new {
 	clientTemplateFileName = "object/ship/shared_xwing_tier10.iff"
 }
@@ -2264,15 +2211,6 @@ object_ship_shared_yt1300_tier9 = SharedShipObjectTemplate:new {
 
 ObjectTemplates:addClientTemplate(object_ship_shared_yt1300_tier9, "object/ship/shared_yt1300_tier9.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_ship_shared_yt2400 = SharedShipObjectTemplate:new {
-	clientTemplateFileName = "object/ship/shared_yt2400.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_ship_shared_yt2400, "object/ship/shared_yt2400.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
 
 object_ship_shared_ywing_tier10 = SharedShipObjectTemplate:new {
 	clientTemplateFileName = "object/ship/shared_ywing_tier10.iff"

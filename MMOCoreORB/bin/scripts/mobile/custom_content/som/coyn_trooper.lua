@@ -1,17 +1,16 @@
 coyn_trooper = Creature:new {
 	customName = "Coyn Trooper",
-	socialGroup = "self",
-	pvpFaction = "",
+	socialGroup = "townsperson",
 	faction = "",
-	level = 300,
-	chanceHit = 50,
-	damageMin = 1250,
-	damageMax = 1750,
-	baseXp = 7800,
-	baseHAM = 73450,
-	baseHAMmax = 97752,
-	armor = 3,
-	resists = {40,40,25,25,30,30,40,25,-1},
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,7 +20,7 @@ coyn_trooper = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
@@ -29,25 +28,13 @@ coyn_trooper = Creature:new {
 	templates = {"object/mobile/som/coyn_trooper.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
-	weapons = {"pirate_weapons_heavy"},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
-	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,swordsmanmaster,pistoleermaster)
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(coyn_trooper, "coyn_trooper")

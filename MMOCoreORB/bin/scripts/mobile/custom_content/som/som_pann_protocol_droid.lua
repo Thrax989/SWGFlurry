@@ -1,7 +1,6 @@
 som_pann_protocol_droid = Creature:new {
-	customName = "Pann protocol droid",
-	socialGroup = "self",
-	pvpFaction = "",
+	customName = "som_pann_protocol_droid",
+	socialGroup = "townsperson",
 	faction = "",
 	level = 70,
 	chanceHit = 0.27,
@@ -29,22 +28,10 @@ som_pann_protocol_droid = Creature:new {
 	templates = {"object/mobile/som/som_pann_protocol_droid.iff"},
 	lootGroups = {
 		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+			groups = {},
+			lootChance = 2100000
+		}
+	},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,brawlernovice)
