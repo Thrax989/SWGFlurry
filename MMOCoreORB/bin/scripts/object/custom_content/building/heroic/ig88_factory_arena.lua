@@ -42,6 +42,18 @@
 
 
 object_building_heroic_ig88_factory_arena = object_building_heroic_shared_ig88_factory_arena:new {
+
+
+	customName = "Unknown",
+	spawningPoints = {
+            { x = 29, z = 0, y = 43, ow = 0.806, ox = 0, oz = 0, oy = -0.592, cellid = 1 },
+	},
+	templateType = CLONINGBUILDING,
+	planetMapCategory = "cloningfacility",
+	facilityType = CLONER_STANDARD,
+
+
+
 }
 
 ObjectTemplates:addTemplate(object_building_heroic_ig88_factory_arena, "object/building/heroic/ig88_factory_arena.iff")
