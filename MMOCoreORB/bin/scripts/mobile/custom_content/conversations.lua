@@ -16,16 +16,3 @@ includeFile("custom_content/conversations/tansarii_point_station/han_start_conv.
 includeFile("custom_content/conversations/tansarii_point_station/sg_teleport_conv.lua")
 includeFile("custom_content/conversations/tansarii_point_station/tps_noslyn_conv.lua")
 includeFile("custom_content/conversations/tansarii_point_station/tps_teleport_conv.lua")
-
-
-includeFile("custom_content/conversations/instances/avatar/avatarfred_conv.lua")
-includeFile("custom_content/conversations/instances/axkva_min/sascha_conv.lua")
-includeFile("custom_content/conversations/instances/decrepit_droid_factory/ddffred_conv.lua")
-includeFile("custom_content/conversations/instances/exar_kun/exarkunfred_conv.lua")
-includeFile("custom_content/conversations/instances/ig_88/igfred_conv.lua")
-includeFile("custom_content/conversations/instances/isd/isdfred_conv.lua")
-includeFile("custom_content/conversations/instances/lava_cave/lavacavefred_conv.lua")
-includeFile("custom_content/conversations/instances/old_republic_facility/orffred_conv.lua")
-includeFile("custom_content/conversations/instances/sher_kar/leicia_conv.lua")
-includeFile("custom_content/conversations/instances/working_droid_factory/saschail_conv.lua")
-includeFile("custom_content/conversations/instances/working_droid_factory/sevi_defo_conv.lua")

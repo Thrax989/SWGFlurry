@@ -15,7 +15,7 @@ includeFile("custom_content/tansarii_point_station/serverobjects.lua")
 includeFile("custom_content/tatooine/serverobjects.lua")
 includeFile("custom_content/mustafar/serverobjects.lua")
 
-includeFile("custom_content/instances/serverobjects.lua")
+--includeFile("custom_content/instances/serverobjects.lua")
 
 
 
