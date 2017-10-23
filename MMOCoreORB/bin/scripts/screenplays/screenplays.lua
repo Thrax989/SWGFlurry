@@ -674,3 +674,6 @@ includeFile("caves/dantooine_janta_cave_boss.lua")
 
 --Custom Event Setting
 includeFile("events/event_setting.lua")
+
+--Custom Screenplays
+includeFile("custom_screenplays/screenplays.lua")
