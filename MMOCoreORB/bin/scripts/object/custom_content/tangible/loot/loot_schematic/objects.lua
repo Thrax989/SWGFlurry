@@ -228,5 +228,13 @@ object_tangible_loot_loot_schematic_shared_yt1300_house_schematic = SharedTangib
 
 ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_yt1300_house_schematic, "object/tangible/loot/loot_schematic/shared_yt1300_house_schematic.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
-
+object_tangible_loot_loot_schematic_shared_musty_house_loot_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_musty_house_loot_schem.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_musty_house_loot_schem, "object/tangible/loot/loot_schematic/shared_musty_house_loot_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_tangible_loot_loot_schematic_shared_sith_house_loot_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_sith_house_loot_schem.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_sith_house_loot_schem, "object/tangible/loot/loot_schematic/shared_sith_house_loot_schem.iff")
 

@@ -50,6 +50,31 @@ end
 function ImperialStarDestroyerScreenPlay:spawnMobiles()
 	
 
+	--Bridge
+
+	spawnMobile("dungeon2", "admiral_sait", 3600, 0.0, 453.6, 320.9, 178, 14201215)
+	spawnMobile("dungeon2", "elite_novatrooper_commander", 360, -6.5, 453.6, 345.1, 0, 14201215)
+	spawnMobile("dungeon2", "elite_novatrooper_commander", 360, 6.5, 453.6, 345.1, 0, 14201215)
+
+	spawnMobile("dungeon2", "imperial_second_lieutenant", 360, -21.4, 435.6, 359.2, -66, 14201214)
+	spawnMobile("dungeon2", "imperial_colonel", 360, -21.5, 453.6, 355.8, -109, 14201214)
+	spawnMobile("dungeon2", "imperial_colonel", 360, -11.6, 453.6, 357.3, 4, 14201214)
+	spawnMobile("dungeon2", "imperial_major", 360, -11.7, 453.6, 358.9, 137, 14201214)
+
+	spawnMobile("dungeon2", "elite_novatrooper", 360, -18.6, 453.6, 364.8, 0, 14201214)
+	spawnMobile("dungeon2", "elite_novatrooper", 360, -12, 453.6, 364.8, 0, 14201214)
+	spawnMobile("dungeon2", "novatrooper", 360, -17.2, 453.7, 371.9, 172, 14201214)
+	spawnMobile("dungeon2", "novatrooper", 360, -13.5, 453.7, 372.1, -167, 14201214)
+
+	spawnMobile("dungeon2", "novatrooper", 360, 2.4, 453.6, 360.6, -49, 14201213)
+	spawnMobile("dungeon2", "novatrooper", 360, -2.5, 453.6, 360.4, 43, 14201213)
+	spawnMobile("dungeon2", "imperial_second_lieutenant", 360, 8.2, 453.6, 367.1, 151, 14201213)
+	spawnMobile("dungeon2", "imperial_second_lieutenant", 360, 7.8, 453.6, 363, 3, 14201213)
+
+	spawnMobile("dungeon2", "novatrooper", 360, 17.5, 453.6, 417.2, 22, 14201211)
+	spawnMobile("dungeon2", "novatrooper", 360, 22.5, 453.6, 417.2, -55, 14201211)
+
+
 --tractorbeam
 
 	spawnMobile("dungeon2", "imperial_officer", 300, -5.4, 177.3, -48.8, 89, 14201193)
@@ -59,8 +84,8 @@ function ImperialStarDestroyerScreenPlay:spawnMobiles()
 	spawnMobile("dungeon2", "imperial_officer", 300, 5.1, 177.3, -50.1, -109, 14201193)
 	spawnMobile("dungeon2", "imperial_officer", 300, 7.1, 177.3, -47.8, -24, 14201193)
 
-	spawnMobile("dungeon2", "stormtrooper", 300, 3.5, 177.7, -60.4, -28, 14201193)
-	spawnMobile("dungeon2", "stormtrooper", 300, -3.7, 177.7, -60.8, 14, 14201193)
+	spawnMobile("dungeon2", "novatrooper", 300, 3.5, 177.7, -60.4, -28, 14201193)
+	spawnMobile("dungeon2", "novatrooper", 300, -3.7, 177.7, -60.8, 14, 14201193)
 
 --room05
 
@@ -68,24 +93,24 @@ function ImperialStarDestroyerScreenPlay:spawnMobiles()
 
 --hallway09
 
-	spawnMobile("dungeon2", "stormtrooper", 300, 11.9, 175.3, -26.3, -47, 14201190)
-	spawnMobile("dungeon2", "stormtrooper", 300, 6.0, 175.3, -26.4, 35, 14201190)
+	spawnMobile("dungeon2", "novatrooper", 300, 11.9, 175.3, -26.3, -47, 14201190)
+	spawnMobile("dungeon2", "novatrooper", 300, 6.0, 175.3, -26.4, 35, 14201190)
 
 --hallway06
 
-	spawnMobile("dungeon2", "stormtrooper", 300, 69.5, 173.8, 30.1, -90, 14201187)
-	spawnMobile("dungeon2", "stormtrooper", 300, 69.5, 173.8, 33.1, -90, 14201187)
+	spawnMobile("dungeon2", "novatrooper", 300, 69.5, 173.8, 30.1, -90, 14201187)
+	spawnMobile("dungeon2", "novatrooper", 300, 69.5, 173.8, 33.1, -90, 14201187)
 
-	spawnMobile("dungeon2", "stormtrooper", 300, 64.5, 173.8, 37.3, 138, 14201187)
-	spawnMobile("dungeon2", "stormtrooper", 300, 64.5, 173.8, 25.9, 37, 14201187)
+	spawnMobile("dungeon2", "novatrooper", 300, 64.5, 173.8, 37.3, 138, 14201187)
+	spawnMobile("dungeon2", "novatrooper", 300, 64.5, 173.8, 25.9, 37, 14201187)
 
 --hallway13
-	spawnMobile("dungeon2", "stormtrooper", 300, -69.1, 173.8, 35.5, 125, 14201197)
-	spawnMobile("dungeon2", "stormtrooper", 300, -64.9, 173.8, 35.4, -125, 14201197)
-	spawnMobile("dungeon2", "stormtrooper", 300, -69.5, 173.8, 33.3, 90, 14201197)
+	spawnMobile("dungeon2", "novatrooper", 300, -69.1, 173.8, 35.5, 125, 14201197)
+	spawnMobile("dungeon2", "novatrooper", 300, -64.9, 173.8, 35.4, -125, 14201197)
+	spawnMobile("dungeon2", "novatrooper", 300, -69.5, 173.8, 33.3, 90, 14201197)
 
-	spawnMobile("dungeon2", "stormtrooper", 300, -64.5, 173.8, 25.7, -57, 14201197)
-	spawnMobile("dungeon2", "stormtrooper", 300, -69.1, 173.8, 25.6, 54, 14201197)
+	spawnMobile("dungeon2", "novatrooper", 300, -64.5, 173.8, 25.7, -57, 14201197)
+	spawnMobile("dungeon2", "novatrooper", 300, -69.1, 173.8, 25.6, 54, 14201197)
 
 --undercarriage
 	spawnMobile("dungeon2", "imperial_colonel", 300, 1.2, 192.8, 196.7, -169, 14201176)
@@ -100,8 +125,8 @@ function ImperialStarDestroyerScreenPlay:spawnMobiles()
 	spawnMobile("dungeon2", "imperial_officer", 300, 11.2, 192.3, 207, 7, 14201176)
 	spawnMobile("dungeon2", "imperial_officer", 300, 7.5, 192.3, 207, -4, 14201176)
 
-	spawnMobile("dungeon2", "stormtrooper", 300, 15.3, 192.3, 207.1, 108, 14201176)
-	spawnMobile("dungeon2", "stormtrooper", 300, 15.2, 192.3, 204.2, 62, 14201176)
+	spawnMobile("dungeon2", "novatrooper", 300, 15.3, 192.3, 207.1, 108, 14201176)
+	spawnMobile("dungeon2", "novatrooper", 300, 15.2, 192.3, 204.2, 62, 14201176)
 
 
 	

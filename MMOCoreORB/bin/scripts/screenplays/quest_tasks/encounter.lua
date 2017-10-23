@@ -162,7 +162,6 @@ function Encounter:createEncounter(pPlayer)
 		return true
 	end
 
-	printLuaError("Encounter:createEncounter failed to spawn mobiles for task " .. self.taskName .. " (playerID " .. SceneObject(pPlayer):getObjectID() .. "). Player location: " .. SceneObject(pPlayer):getWorldPositionX() .. ", " .. SceneObject(pPlayer):getWorldPositionY() .. " on " .. SceneObject(pPlayer):getZoneName())
 	return false
 end
 

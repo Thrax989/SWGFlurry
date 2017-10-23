@@ -37,7 +37,7 @@ function GoToTheater:taskStart(pPlayer)
 	local playerID = SceneObject(pPlayer):getObjectID()
 
 	if (spawnPoint == nil) then
-		printLuaError("GoToTheater:taskStart() for task " .. self.taskName .. ", getSpawnArea returned nil using coords " .. SceneObject(pPlayer):getWorldPositionX() .. " " .. SceneObject(pPlayer):getWorldPositionY()  .. " on " .. SceneObject(pPlayer):getZoneName() .. ", min dist " .. self.minimumDistance .. ", max dist " .. self.maximumDistance .. ".")
+		printLuaError("GoToTheater:taskStart() for task " .. self.taskName .. ", spawnPoint is nil.")
 		self:callFunctionIfNotNil(self.onFailedSpawn, nil, pPlayer)
 		self:finish(pPlayer)
 		return false

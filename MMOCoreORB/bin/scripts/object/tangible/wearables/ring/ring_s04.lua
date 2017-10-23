@@ -92,10 +92,10 @@ object_tangible_wearables_ring_ring_s04 = object_tangible_wearables_ring_shared_
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
-				"object/creature/player/wookiee_male.iff",
-				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff",
+				"object/creature/player/wookiee_male.iff",
+				"object/creature/player/wookiee_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
 				"object/mobile/vendor/aqualish_male.iff",
 				"object/mobile/vendor/bith_female.iff",
@@ -126,7 +126,6 @@ object_tangible_wearables_ring_ring_s04 = object_tangible_wearables_ring_shared_
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_ring_ring_s04, "object/tangible/wearables/ring/ring_s04.iff")

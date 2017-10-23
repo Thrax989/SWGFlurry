@@ -1456,19 +1456,3 @@ object_tangible_wearables_robe_shared_robe_tusken_raider_s02 = SharedTangibleObj
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_robe_shared_robe_tusken_raider_s02, "object/tangible/wearables/robe/shared_robe_tusken_raider_s02.iff")
-
---****************************************************************************************
-
-object_tangible_wearables_robe_shared_robe_jedi_black_01 = SharedTangibleObjectTemplate:new {
-clientTemplateFileName = "object/tangible/wearables/robe/shared_robe_jedi_black_01.iff"
-}
-
-ObjectTemplates: addClientTemplate(object_tangible_wearables_robe_shared_robe_jedi_black_01, "object/tangible/wearables/robe/shared_robe_jedi_black_01.iff")
-
---****************************************************************************************
-
-object_tangible_wearables_robe_shared_robe_jedi_black_02 = SharedTangibleObjectTemplate:new {
-clientTemplateFileName = "object/tangible/wearables/robe/shared_robe_jedi_black_02.iff"
-}
-
-ObjectTemplates: addClientTemplate(object_tangible_wearables_robe_shared_robe_jedi_black_02, "object/tangible/wearables/robe/shared_robe_jedi_black_02.iff")

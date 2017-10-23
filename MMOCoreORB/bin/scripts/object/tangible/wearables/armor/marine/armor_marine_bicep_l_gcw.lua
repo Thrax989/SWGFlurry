@@ -2,7 +2,7 @@ object_tangible_wearables_armor_marine_armor_marine_bicep_l_gcw = object_tangibl
 
 	templateType = ARMOROBJECT,
 
-	objectMenuComponent = "ArmorObjectMenuComponent", 
+	faction = "Rebel",
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",

@@ -1,8 +1,7 @@
 admin = {
 	level = 15,
 	name = "admin",
-	flag = 0,
-	tag = "Owner",
+	tag = "Sunrunner II Admin",
 	skills = {
 		"admin_base",
 		"admin_debug_01",

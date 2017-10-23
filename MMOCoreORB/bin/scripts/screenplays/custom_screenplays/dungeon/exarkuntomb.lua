@@ -42,7 +42,7 @@ function ExarKunTombScreenPlay:spawnMobiles()
 	spawnMobile("dungeon2", "exar_kun_cultist_f_02", 300, 49.1, -0.2, -5.7, 166, 14200874)
 	spawnMobile("dungeon2", "exar_kun_cultist_f_02", 300, 54.0, -0.0, -36.7, -144, 14200874)
 	spawnMobile("dungeon2", "exar_kun_cultist_f_02", 300, 24.7, 0.0, -62.7, -97, 14200874)
-	spawnMobile("dungeon2", "exar_kun_open_hand", 300, -11.3, -0.4, -63.7, 179, 14200873)	
+	--spawnMobile("dungeon2", "exar_kun_open_hand", 300, -11.3, -0.4, -63.7, 179, 14200873)	
 	
 
 end

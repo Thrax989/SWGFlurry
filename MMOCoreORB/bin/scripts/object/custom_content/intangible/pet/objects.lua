@@ -54,3 +54,11 @@ ObjectTemplates:addClientTemplate(object_intangible_pet_shared_varactyl, "object
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
+object_intangible_pet_shared_lava_flea = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/pet/shared_lava_flea.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_lava_flea, "object/intangible/pet/shared_lava_flea.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+

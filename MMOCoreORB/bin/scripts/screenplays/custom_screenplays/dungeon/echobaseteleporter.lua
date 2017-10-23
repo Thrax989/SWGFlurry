@@ -30,6 +30,6 @@ function echobaseteleporterScreenPlay:spawnMobiles()
 end
 function echobaseteleporterScreenPlay:teleportechobase(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("hoth", 89.1, -14.7, 300.1, 6452949)
+	player:switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134)
 	return 0
 end

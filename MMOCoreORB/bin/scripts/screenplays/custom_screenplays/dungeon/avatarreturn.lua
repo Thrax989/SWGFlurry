@@ -6,7 +6,7 @@ avatarreturnScreenPlay = ScreenPlay:new {
 registerScreenPlay("avatarreturnScreenPlay", true)
 
 function avatarreturnScreenPlay:start()
-	if (isZoneEnabled("kashyyyk_pob_dungeons")) then
+	if (isZoneEnabled("dungeon2")) then
 		self:spawnMobiles()
 		self:spawnSceneObjects() 
 	end
@@ -19,7 +19,7 @@ end
 
 function avatarreturnScreenPlay:spawnMobiles()
 
-	local pCollector1 = spawnMobile("kashyyyk_pob_dungeons", "teleporter", 120, 181, 250, 2, 45, 0)
+	local pCollector1 = spawnMobile("dungeon2", "teleporter", 120, 6181, 250, -6002, 45, 0)
 	local collector1 = LuaCreatureObject(pCollector1)
 	collector1:setOptionsBitmask(264)
 	collector1:setCustomObjectName("\\#FF0000Exit Dungeon")

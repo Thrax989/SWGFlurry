@@ -8,7 +8,7 @@ FsOutro = ScreenPlay:new {
 	FORCESHRINE = 4,
 
 	stepDelay = {
-		[1] = { 600, 15600 }, -- Old man visit, 10 mins to 1 hour.
+		[1] = { 300, 600 }, -- Old man visit, 5-10 mins for testing
 	}
 }
 
@@ -50,11 +50,11 @@ function FsOutro:onLoggedIn(pPlayer)
 
 	if (curStep == self.OLDMANWAIT) then
 		if (self:hasDelayPassed(pPlayer)) then
-			createEvent(getRandomNumber(300, 900) * 1000, "FsOutro", "doOldManSpawn", pPlayer, "")
+			createEvent(getRandomNumber(300, 900) * 1000, "FsOutro", "startOldMan", pPlayer, "")
 		end
 	elseif (curStep == self.OLDMANMEET) then
 		QuestManager.resetQuest(pPlayer, QuestManager.quests.OLD_MAN_FINAL)
-		createEvent(getRandomNumber(300, 900) * 1000, "FsOutro", "doOldManSpawn", pPlayer, "")
+		createEvent(getRandomNumber(300, 900) * 1000, "FsOutro", "startOldMan", pPlayer, "")
 		self:setCurrentStep(pPlayer, self.OLDMANWAIT)
 	elseif (curStep == self.MELLICHAETHEATER) then
 		if (MellichaeOutroTheater:hasTaskStarted(pPlayer)) then

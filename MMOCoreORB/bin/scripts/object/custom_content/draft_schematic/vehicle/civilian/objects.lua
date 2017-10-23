@@ -52,4 +52,80 @@ object_draft_schematic_vehicle_civilian_shared_landspeeder_xp38 = SharedDraftSch
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_landspeeder_xp38, "object/draft_schematic/vehicle/civilian/shared_landspeeder_xp38.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
+object_draft_schematic_vehicle_civilian_shared_barc_speeder_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_barc_speeder_schem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_barc_speeder_schem, "object/draft_schematic/vehicle/civilian/shared_barc_speeder_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_draft_schematic_vehicle_civilian_shared_geonosian_speeder_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_geonosian_speeder_schem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_geonosian_speeder_schem, "object/draft_schematic/vehicle/civilian/shared_geonosian_speeder_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_draft_schematic_vehicle_civilian_shared_desert_skiff_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_desert_skiff_schem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_desert_skiff_schem, "object/draft_schematic/vehicle/civilian/shared_desert_skiff_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_draft_schematic_vehicle_civilian_shared_koro2_speeder_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_koro2_speeder_schem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_koro2_speeder_schem, "object/draft_schematic/vehicle/civilian/shared_koro2_speeder_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_draft_schematic_vehicle_civilian_shared_lava_skiff_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_lava_skiff_schem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_lava_skiff_schem, "object/draft_schematic/vehicle/civilian/shared_lava_skiff_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_draft_schematic_vehicle_civilian_shared_organa_speeder_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_organa_speeder_schem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_organa_speeder_schem, "object/draft_schematic/vehicle/civilian/shared_organa_speeder_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_draft_schematic_vehicle_civilian_shared_sith_speeder_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_sith_speeder_schem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_sith_speeder_schem, "object/draft_schematic/vehicle/civilian/shared_sith_speeder_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_draft_schematic_vehicle_civilian_shared_stap_speeder_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_stap_speeder_schem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_stap_speeder_schem, "object/draft_schematic/vehicle/civilian/shared_stap_speeder_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_draft_schematic_vehicle_civilian_shared_swamp_speeder_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_swamp_speeder_schem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_swamp_speeder_schem, "object/draft_schematic/vehicle/civilian/shared_swamp_speeder_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_draft_schematic_vehicle_civilian_shared_tantive4_speeder_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_tantive4_speeder_schem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_tantive4_speeder_schem, "object/draft_schematic/vehicle/civilian/shared_tantive4_speeder_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_draft_schematic_vehicle_civilian_shared_xj6_speeder_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_xj6_speeder_schem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_xj6_speeder_schem, "object/draft_schematic/vehicle/civilian/shared_xj6_speeder_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 

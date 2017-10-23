@@ -43,6 +43,15 @@
 
 object_building_general_space_dungeon_star_destroyer = object_building_general_shared_space_dungeon_star_destroyer:new {
 
+
+	customName = "Unknown",
+	spawningPoints = {
+            { x = -7.4, z = 175.5, y = -34.6, ow = 0.806, ox = 0, oz = 0, oy = -0.592, cellid = 33 },
+	},
+	templateType = CLONINGBUILDING,
+	planetMapCategory = "cloningfacility",
+	facilityType = CLONER_STANDARD,
+
 }
 
 ObjectTemplates:addTemplate(object_building_general_space_dungeon_star_destroyer, "object/building/general/space_dungeon_star_destroyer.iff")

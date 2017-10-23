@@ -532,38 +532,23 @@ function TheaterManagerScreenPlay:getExpectedPerformance(pPlayer, type)
 
 	local performance, currentPerformance
 	if (CreatureObject(pPlayer):isDancing() or CreatureObject(pPlayer):isPlayingMusic()) then
-		currentPerformance = CreatureObject(pPlayer):getPerformanceName()
+		currentPerformance = player:getPerformanceName()
 	end
 	if (type == 1) then
-	  local count = 0;
-	  
 		while performance == nil do
 			local performanceName = self.dances[getRandomNumber(#self.dances)]
-			count = count + 1;
 
-			if (PlayerObject(pGhost):hasAbility("startDance+" .. performanceName) and (currentPerformance == nil or performanceName ~= currentPerformance)) then
+			if (playerObject:hasAbility("startDance+" .. performanceName) and (currentPerformance == nil or performanceName ~= currentPerformance)) then
 				performance = self:getPerformanceKey(1, performanceName)
-			end
-			
-			if (count > 60) then
-			 return nil
 			end
 		end
 		return performance
 	elseif (type == 2) then
-	  local count = 0;
-	
 		while performance == nil do
 			local performanceName = self.songs[getRandomNumber(#self.songs)]
-			count = count + 1;
-			
 			if (PlayerObject(pGhost):hasAbility("startMusic+" .. performanceName) and (currentPerformance == nil or performanceName ~= currentPerformance)) then
 				performance = self:getPerformanceKey(2, performanceName)
 			end
-			
-			if (count > 60) then
-        return nil
-      end
 		end
 		return performance
 	elseif (type == 3) then

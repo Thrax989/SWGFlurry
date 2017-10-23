@@ -19,9 +19,8 @@ end
 
 function kashyyyktwoleveloneteleporterScreenPlay:spawnMobiles()
 
-	local pCollector1 = spawnMobile("kashyyyk", "wookteleporter", 120, -459, 179.5, -89.6, -64, 0)
-	local collector1 = LuaCreatureObject(pCollector1)
-	collector1:setOptionsBitmask(264)
+local pCollector1 = spawnSceneObject("kashyyyk","object/building/kashyyyk/mun_kash_tree_door_level1.iff",-458.66,179.44,-85.63,0,-0.53609,0,0.84416,0)
+	local collector1 = LuaSceneObject(pCollector1)
 	collector1:setCustomObjectName("\\#FF0000Level 1")
 	createObserver(OBJECTRADIALUSED, "kashyyyktwoleveloneteleporterScreenPlay", "teleportKashyyyk", pCollector1)
 	if (pCollecter1~= nil) then 

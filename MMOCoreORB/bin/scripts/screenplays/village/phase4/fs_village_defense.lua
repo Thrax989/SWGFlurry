@@ -1,5 +1,7 @@
 local QuestManager = require("managers.quest.quest_manager")
 
+
+--TODO: change kill reqs to live version after testing
 FsVillageDefense = ScreenPlay:new {
 	questData = {
 		ranged = {
@@ -8,12 +10,14 @@ FsVillageDefense = ScreenPlay:new {
 			outlaw = {
 				questNum = QuestManager.quests.FS_DEFEND_01,
 				questName = "fs_defend_01",
-				killReq = 50
+				killReq = 10
+			--killReq = 50
 			},
 			pirate = {
 				questNum = QuestManager.quests.FS_DEFEND_02,
 				questName = "fs_defend_02",
-				killReq = 25
+				killReq = 5
+			--killReq = 25
 			}
 		},
 		melee = {
@@ -22,12 +26,14 @@ FsVillageDefense = ScreenPlay:new {
 			outlaw = {
 				questNum = QuestManager.quests.FS_DEFEND_03,
 				questName = "fs_defend_03",
-				killReq = 50
+				killReq = 10
+			--killReq = 50
 			},
 			pirate = {
 				questNum = QuestManager.quests.FS_DEFEND_04,
 				questName = "fs_defend_04",
-				killReq = 25
+				killReq = 5
+			--killReq = 25
 			}
 		}
 	}

@@ -12,19 +12,19 @@ object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bicep_r =
 ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bicep_r, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_r.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
-object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bicep_l_camo = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_l_camo.iff"
+object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bicep_camo_l = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_camo_l.iff"
 }
 
-ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bicep_l_camo, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_l_camo.iff")
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bicep_camo_l, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_camo_l.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
-object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bicep_r_camo = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_r_camo.iff"
+object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bicep_camo_r = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_camo_r.iff"
 }
 
-ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bicep_r_camo, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_r_camo.iff")
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bicep_camo_r, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_camo_r.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -82,19 +82,19 @@ ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_s
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
-object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bracer_l_camo = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bracer_l_camo.iff"
+object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bracer_camo_l = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bracer_camo_l.iff"
 }
 
-ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bracer_l_camo, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bracer_l_camo.iff")
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bracer_camo_l, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bracer_camo_l.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
-object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bracer_r_camo = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bracer_r_camo.iff"
+object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bracer_camo_r = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bracer_camo_r.iff"
 }
 
-ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bracer_r_camo, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bracer_r_camo.iff")
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_bracer_camo_r, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bracer_camo_r.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -252,10 +252,4 @@ object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_utility_b
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_utility_belt, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_utility_belt.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
-
-object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_leggings_quest = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_leggings_quest.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_leggings_quest, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_leggings_quest.iff")
 

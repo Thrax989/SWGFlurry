@@ -42,11 +42,8 @@
 
 
 object_tangible_wearables_shirt_aakuan_shirt = object_tangible_wearables_shirt_shared_aakuan_shirt:new {
-objectMenuComponent = "ArmorObjectMenuComponent",
 
-
-	playerRaces = { "object/creature/player/bothan_male.iff",
-				"object/creature/player/smc_female.iff",
+	playerRaces = { 	"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
 				"object/creature/player/talz_male.iff",
 				"object/creature/player/talz_female.iff",
@@ -82,8 +79,6 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
-				"object/creature/player/ithorian_male.iff",
-				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -94,8 +89,6 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
-				"object/creature/player/wookiee_male.iff",
-				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
@@ -109,8 +102,6 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
 				"object/mobile/vendor/ishi_tib_male.iff",
-				"object/mobile/vendor/ithorian_female.iff",
-				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
 				"object/mobile/vendor/nikto_male.iff",
@@ -124,11 +115,8 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 				"object/mobile/vendor/twilek_female.iff",
 				"object/mobile/vendor/twilek_male.iff",
 				"object/mobile/vendor/weequay_male.iff",
-				"object/mobile/vendor/wookiee_female.iff",
-				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_shirt_aakuan_shirt, "object/tangible/wearables/shirt/aakuan_shirt.iff")

@@ -41,9 +41,9 @@ function ig88ScreenPlay:spawnMobiles()
 	--spawnMobile("dungeon2", "magnaguard", 300, 23, 0, 6.3, -45, 14200863)
 	--spawnMobile("dungeon2", "magnaguard", 300, -23, 0, 0, 90, 14200863)
 	--spawnMobile("dungeon2", "magnaguard", 300, 23, 0, 0, -90, 14200863)
-	spawnMobile("dungeon2", "hk77", 300, -3.5, 0, -1, 0, 14200863)
-	spawnMobile("dungeon2", "hk77", 300, 3.5, 0, -1, 0, 14200863)
-	spawnMobile("dungeon2", "hk77", 300, 0, 0, 0, 0, 14200863)
+	--spawnMobile("dungeon2", "hk77", 300, -3.5, 0, -1, 0, 14200863)
+	--spawnMobile("dungeon2", "hk77", 300, 3.5, 0, -1, 0, 14200863)
+	--spawnMobile("dungeon2", "hk77", 300, 0, 0, 0, 0, 14200863)
 
 	self:respawnIG88()
 

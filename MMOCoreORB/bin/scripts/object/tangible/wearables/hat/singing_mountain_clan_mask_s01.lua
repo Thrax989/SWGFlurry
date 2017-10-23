@@ -45,6 +45,7 @@ object_tangible_wearables_hat_singing_mountain_clan_mask_s01 = object_tangible_w
 	playerRaces = { "object/creature/player/human_female.iff",
 				"object/creature/player/twilek_female.iff",
 				"object/creature/player/zabrak_female.iff",
+				"object/creature/player/smc_female.iff",
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/twilek_female.iff",
 				"object/mobile/vendor/zabrak_female.iff" },

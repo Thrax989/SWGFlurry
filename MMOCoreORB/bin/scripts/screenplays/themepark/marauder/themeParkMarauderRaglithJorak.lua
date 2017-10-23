@@ -17,7 +17,7 @@ raglith_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 20 }
+				{ rewardType = "credits", amount = 2000 }
 			}
 		},
 		{
@@ -38,7 +38,7 @@ raglith_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 30 }
+				{ rewardType = "credits", amount = 3000 }
 			}
 		},
 		{
@@ -61,7 +61,7 @@ raglith_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 40 },
+				{ rewardType = "credits", amount = 4000 },
 				{ rewardType = "loot",  lootGroup = "theme_park_reward_marauder_armor_boots" }
 			}
 		}
@@ -85,7 +85,7 @@ fightmaster_jorak_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 25 }
+				{ rewardType = "credits", amount = 2500 }
 			}
 		},
 		{
@@ -104,7 +104,7 @@ fightmaster_jorak_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 30 }
+				{ rewardType = "credits", amount = 3000 }
 			}
 		},
 		{
@@ -123,7 +123,7 @@ fightmaster_jorak_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 40 },
+				{ rewardType = "credits", amount = 4000 },
 				{ rewardType = "loot_set",  lootGroup = "theme_park_reward_marauder_armor_bracer", setSize = 2 }
 			}
 		}

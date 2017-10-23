@@ -30,6 +30,6 @@ function avatarteleporterScreenPlay:spawnMobiles()
 end
 function avatarteleporterScreenPlay:teleportavatar(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("kashyyyk_pob_dungeons", 193, 250, 21, 0)
+	player:switchZone("dungeon2", 6193, 250, -5978, 0)
 	return 0
 end

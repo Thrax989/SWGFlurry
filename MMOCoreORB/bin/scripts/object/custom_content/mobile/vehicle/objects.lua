@@ -380,7 +380,8 @@ ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_sith_speeder, "ob
 --********************************************
 
 object_mobile_vehicle_shared_snowspeeder = SharedCreatureObjectTemplate:new {
-	clientTemplateFileName = "object/mobile/vehicle/shared_snowspeeder.iff"
+	clientTemplateFileName = "object/mobile/vehicle/shared_snowspeeder.iff",
+
 }
 ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_snowspeeder, "object/mobile/vehicle/shared_snowspeeder.iff")
 
