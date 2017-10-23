@@ -1,0 +1,5 @@
+object_draft_schematic_vehicle_civilian_air2_swoop = object_draft_schematic_vehicle_civilian_shared_air2_swoop:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_vehicle_civilian_air2_swoop, "object/draft_schematic/vehicle/civilian/air2_swoop.iff")
