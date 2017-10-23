@@ -50,7 +50,6 @@ object_tangible_wearables_shirt_nightsister_shirt_s03 = object_tangible_wearable
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_female.iff",
 				"object/creature/player/zabrak_female.iff",
-				"object/creature/player/nightsister_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
 				"object/mobile/vendor/bith_female.iff",
 				"object/mobile/vendor/bothan_female.iff",

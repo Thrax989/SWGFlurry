@@ -42,7 +42,10 @@
 
 
 object_tangible_wearables_bikini_bikini_leggings_s01 = object_tangible_wearables_bikini_shared_bikini_leggings_s01:new {
-	playerRaces = { 	"object/creature/player/smc_female.iff",
+objectMenuComponent = "ArmorObjectMenuComponent",
+
+	playerRaces = { "object/creature/player/bothan_male.iff",
+				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
 				"object/creature/player/talz_male.iff",
 				"object/creature/player/talz_female.iff",
@@ -89,6 +92,9 @@ object_tangible_wearables_bikini_bikini_leggings_s01 = object_tangible_wearables
 				"object/creature/player/trandoshan_male.iff",
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
+				"object/creature/player/twilek_female.iff",
+				"object/creature/player/wookiee_male.iff",
+				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
@@ -102,6 +108,8 @@ object_tangible_wearables_bikini_bikini_leggings_s01 = object_tangible_wearables
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
 				"object/mobile/vendor/ishi_tib_male.iff",
+				"object/mobile/vendor/ithorian_female.iff",
+				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
 				"object/mobile/vendor/nikto_male.iff",
@@ -115,6 +123,8 @@ object_tangible_wearables_bikini_bikini_leggings_s01 = object_tangible_wearables
 				"object/mobile/vendor/twilek_female.iff",
 				"object/mobile/vendor/twilek_male.iff",
 				"object/mobile/vendor/weequay_male.iff",
+				"object/mobile/vendor/wookiee_female.iff",
+				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 
