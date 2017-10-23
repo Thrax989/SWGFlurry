@@ -1,4 +1,5 @@
 --New Content Mob Template Files
+includeFile("custom_content/mobile/admiral_sait.lua")
 includeFile("custom_content/mobile/ados_jarkey.lua")
 includeFile("custom_content/mobile/arcona.lua")
 includeFile("custom_content/mobile/arhul_narra.lua")

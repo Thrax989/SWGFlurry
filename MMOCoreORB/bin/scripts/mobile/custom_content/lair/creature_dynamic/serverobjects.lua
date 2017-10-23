@@ -4,6 +4,7 @@ includeFile("custom_content/lair/creature_dynamic/taanab_ambrian_staga_pack.lua"
 includeFile("custom_content/lair/creature_dynamic/taanab_grassland_nerf_herd.lua")
 includeFile("custom_content/lair/creature_dynamic/hoth_wampa_pack.lua")
 includeFile("custom_content/lair/creature_dynamic/hoth_tauntaun_pack.lua")
+includeFile("custom_content/lair/creature_dynamic/hoth_mynock_pack.lua")
 includeFile("custom_content/lair/creature_dynamic/kash_varactyls.lua")
 includeFile("custom_content/lair/creature_dynamic/kash_bolotaurs.lua")
 includeFile("custom_content/lair/creature_dynamic/kash_moufs.lua")
