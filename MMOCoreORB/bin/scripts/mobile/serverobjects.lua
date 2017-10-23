@@ -22,7 +22,7 @@ includeFile("townsperson/serverobjects.lua")
 includeFile("tutorial/serverobjects.lua")
 includeFile("yavin4/serverobjects.lua")
 includeFile("mandalore/serverobjects.lua")
-includeFile("taanab/serverobjects.lua")
+--includeFile("taanab/serverobjects.lua")
 includeFile("faction/serverobjects.lua")
 includeFile("dungeon/serverobjects.lua") 
 
