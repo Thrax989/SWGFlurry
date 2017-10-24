@@ -64,4 +64,5 @@ includeFile("custom_content/tangible/wearables/armor/scout_trooper/serverobjects
 includeFile("custom_content/tangible/wearables/armor/snowtrooper/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/armor/tantel/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/armor/infiltrator/serverobjects.lua")
+includeFile("custom_content/tangible/wearables/armor/invisible/serverobjects.lua")
 
