@@ -66,7 +66,7 @@ includeFile("custom_content/tangible/wearables/backpack/empireday_rebel_endor_ba
 includeFile("custom_content/tangible/wearables/backpack/empireday_sandtrooper_backpack.lua")
 includeFile("custom_content/tangible/wearables/backpack/ep3_chiss_poacher_backpack.lua")
 includeFile("custom_content/tangible/wearables/backpack/ep3_chiss_poacher_player_backpack.lua")
---includeFile("custom_content/tangible/wearables/backpack/fannypack_s01.lua")
+includeFile("custom_content/tangible/wearables/backpack/fannypack_s01.lua")
 includeFile("custom_content/tangible/wearables/backpack/nym_themepark_backpack.lua")
 includeFile("custom_content/tangible/wearables/backpack/padawan_pouch.lua")
 includeFile("custom_content/tangible/wearables/backpack/wearable_backpack_armored.lua")
