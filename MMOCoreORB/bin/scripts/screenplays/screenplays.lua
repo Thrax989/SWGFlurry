@@ -642,3 +642,14 @@ includeFile("tests/tests.lua")
 
 --Custom Screenplays
 includeFile("custom_screenplays/screenplays.lua")
+--Halloween Event
+includeFile("events/halloween_moenia.lua")
+
+--Custom World Bosses
+includeFile("custom_world_bosses/custom_nerf_boss.lua")
+includeFile("custom_world_bosses/custom_jawa_boss.lua")
+includeFile("custom_world_bosses/custom_exar_kun_boss.lua")
+includeFile("caves/dantooine_janta_cave_boss.lua")
+
+--GCW Trainer
+includeFile("gcw/gcwTrainerScreenplay.lua")

@@ -3,21 +3,22 @@ local Logger = require("utils.logger")
 require("utils.helpers")
 spHelper = require("screenplayHelper")
 
-event_setting = ScreenPlay:new {
+halloween_moenia = ScreenPlay:new {
    numberOfActs = 1, 
 }
 
-registerScreenPlay("event_setting", true)
+registerScreenPlay("halloween_moenia", true)
 
-function event_setting:start()
+function halloween_moenia:start()
 if (isZoneEnabled("naboo")) then
+print("Halloween_Moenia Event ACTIVE")
 		self:spawnSceneObjects()
 		self:spawnMobiles()
 		self:spawnBoss()
 	end
 end
 
-function event_setting:spawnSceneObjects()
+function halloween_moenia:spawnSceneObjects()
 	
 --Trooper Piles
 	spawnSceneObject("naboo", "object/static/structure/dathomir/deathtrooper_pile.iff", 4730.26, 3.75, -4872.22, 0, 1, 0, 0, 0)
@@ -100,7 +101,7 @@ function event_setting:spawnSceneObjects()
 
 end
 
-function event_setting:spawnMobiles()
+function halloween_moenia:spawnMobiles()
 	
 
 --Deathtrooper
@@ -307,20 +308,20 @@ function event_setting:spawnMobiles()
 
 --Trigger Place Holder
 	--local T1Naboo = spawnMobile("naboo", "rancor", 1, 4849.01, 3.81524, -4727.87, 357, 0) print("Halloween Trigger 1 Loaded")
-        	--createObserver(OBJECTDESTRUCTION, "event_settingScreenPlay", "notify1NabooDead", T1Naboo)
+        	--createObserver(OBJECTDESTRUCTION, "halloween_moeniaScreenPlay", "notify1NabooDead", T1Naboo)
 
 --Trigger Place Holder
 	--local T2Naboo = spawnMobile("naboo", "rancor", 1, 4822.71, 3.95551, -4738.77, 256, 0) print("Halloween Trigger 2 Loaded")
-        	--createObserver(OBJECTDESTRUCTION, "event_settingScreenPlay", "notify2NabooDead", T2Naboo)
+        	--createObserver(OBJECTDESTRUCTION, "halloween_moeniaScreenPlay", "notify2NabooDead", T2Naboo)
 end
 
-function event_setting:spawnBoss()
+function halloween_moenia:spawnBoss()
 
 	local pMini = spawnMobile("naboo", "outbreak_mini_boss", 2400, 4756.34, 3.90096, -4872.23, 15, 0)
-        	createObserver(OBJECTDESTRUCTION, "event_setting", "notifyMiniDead", pMini)
+        	createObserver(OBJECTDESTRUCTION, "halloween_moenia", "notifyMiniDead", pMini)
 end
 
-function event_setting:notifyMiniDead(pMini, pKiller)
+function halloween_moenia:notifyMiniDead(pMini, pKiller)
 	local player = LuaCreatureObject(pKiller)
   	local pBoss = spawnMobile("naboo","outbreak_rancor_boss", 0, 4736.11, 3.75, -4921.59, 21, 0)  print("Spawned Mutant Rancor")
 	spatialChat(pMini, "Avenge me my pet!!")
@@ -328,14 +329,14 @@ function event_setting:notifyMiniDead(pMini, pKiller)
 end
 
 --Trigger Place Holder Activated
---function event_setting:notify1NabooDead(T1Naboo, pKiller)
+--function halloween_moenia:notify1NabooDead(T1Naboo, pKiller)
 	--local player = LuaCreatureObject(pKiller)
         --local pBoss = spawnMobile("naboo", "rancor", 1, 4849.01, 3.81524, -4727.87, 357, 0)  print("Phase 1 Started")
         --return 0
 --end
 
 --Trigger Place Holder Activated
---function event_setting:notify2NabooDead(T2Naboo, pKiller)
+--function halloween_moenia:notify2NabooDead(T2Naboo, pKiller)
 	--local player = LuaCreatureObject(pKiller)
         --local pBoss = spawnMobile("naboo", "rancor", 1, 4822.71, 3.95551, -4738.77, 256, 0) print("Phase 2 Started")
         --return 0
