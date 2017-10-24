@@ -1,4 +1,4 @@
- object_building_player_shared_atat_house = SharedBuildingObjectTemplate:new {
+object_building_player_shared_atat_house = SharedBuildingObjectTemplate:new {
 	clientTemplateFileName = "object/building/player/shared_atat_house.iff"
 }
 ObjectTemplates:addClientTemplate(object_building_player_shared_atat_house, "object/building/player/shared_atat_house.iff")
@@ -10,10 +10,10 @@ object_building_player_shared_barn_house = SharedBuildingObjectTemplate:new {
 ObjectTemplates:addClientTemplate(object_building_player_shared_barn_house, "object/building/player/shared_barn_house.iff")
 --**************************************************************************************************************************************
 
-object_building_player_shared_diner_house = SharedBuildingObjectTemplate:new {
-	clientTemplateFileName = "object/building/player/shared_diner_house.iff"
+object_building_player_shared_dinner_house = SharedBuildingObjectTemplate:new {
+	clientTemplateFileName = "object/building/player/shared_dinner_house.iff"
 }
-ObjectTemplates:addClientTemplate(object_building_player_shared_diner_house, "object/building/player/shared_diner_house.iff")
+ObjectTemplates:addClientTemplate(object_building_player_shared_dinner_house, "object/building/player/shared_dinner_house.iff")
 --**************************************************************************************************************************************
 
 object_building_player_shared_bespin_house = SharedBuildingObjectTemplate:new {

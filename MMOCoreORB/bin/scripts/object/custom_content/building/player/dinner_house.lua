@@ -1,11 +1,11 @@
-object_building_player_diner_house = object_building_player_shared_diner_house:new {
+object_building_player_dinner_house = object_building_player_shared_dinner_house:new {
 	lotSize = 5,
 	baseMaintenanceRate = 80,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "kaas", "endor"},
 	publicStructure = 0,
 	length = 4,
 	width = 2,
-	constructionMarker = "object/building/player/construction/construction_player_diner.iff",
+	constructionMarker = "object/building/player/construction/construction_player_dinner.iff",
 	skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
@@ -91,4 +91,4 @@ object_building_player_diner_house = object_building_player_shared_diner_house:n
 	},
 }
 
-ObjectTemplates:addTemplate(object_building_player_diner_house, "object/building/player/diner_house.iff")
+ObjectTemplates:addTemplate(object_building_player_dinner_house, "object/building/player/dinner_house.iff")
