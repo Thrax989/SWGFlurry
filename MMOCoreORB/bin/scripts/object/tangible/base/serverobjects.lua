@@ -45,6 +45,7 @@
 --Children folder includes
 
 -- Server Objects
+includeFile("tangible/base/holobeast_base.lua")
 includeFile("tangible/base/tangible_base.lua")
 includeFile("tangible/base/tangible_craftable.lua")
 includeFile("tangible/base/tangible_default.lua")

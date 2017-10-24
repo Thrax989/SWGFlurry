@@ -42,6 +42,7 @@
 
 
 object_tangible_wearables_ring_ring_s03_quest = object_tangible_wearables_ring_shared_ring_s03_quest:new {
+useCount = 1,
 	objectMenuComponent = "RingObjectMenuComponent",
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
@@ -92,10 +93,10 @@ object_tangible_wearables_ring_ring_s03_quest = object_tangible_wearables_ring_s
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
-				"object/creature/player/zabrak_male.iff",
-				"object/creature/player/zabrak_female.iff",
 				"object/creature/player/wookiee_male.iff",
 				"object/creature/player/wookiee_female.iff",
+				"object/creature/player/zabrak_male.iff",
+				"object/creature/player/zabrak_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
 				"object/mobile/vendor/aqualish_male.iff",
 				"object/mobile/vendor/bith_female.iff",
@@ -126,6 +127,7 @@ object_tangible_wearables_ring_ring_s03_quest = object_tangible_wearables_ring_s
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_ring_ring_s03_quest, "object/tangible/wearables/ring/ring_s03_quest.iff")

@@ -42,7 +42,10 @@
 
 
 object_tangible_wearables_robe_robe_jedi_test = object_tangible_wearables_robe_shared_robe_jedi_test:new {
-	playerRaces = { 	"object/creature/player/smc_female.iff",
+objectMenuComponent = "ArmorObjectMenuComponent",
+
+	playerRaces = { "object/creature/player/bothan_male.iff",
+				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
 				"object/creature/player/talz_male.iff",
 				"object/creature/player/talz_female.iff",
@@ -78,6 +81,8 @@ object_tangible_wearables_robe_robe_jedi_test = object_tangible_wearables_robe_s
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
+				"object/creature/player/ithorian_male.iff",
+				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -88,6 +93,8 @@ object_tangible_wearables_robe_robe_jedi_test = object_tangible_wearables_robe_s
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
+				"object/creature/player/wookiee_male.iff",
+				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
@@ -120,6 +127,7 @@ object_tangible_wearables_robe_robe_jedi_test = object_tangible_wearables_robe_s
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_robe_robe_jedi_test, "object/tangible/wearables/robe/robe_jedi_test.iff")
