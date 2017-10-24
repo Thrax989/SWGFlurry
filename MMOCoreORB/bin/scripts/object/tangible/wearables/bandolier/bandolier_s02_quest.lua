@@ -42,7 +42,10 @@
 
 
 object_tangible_wearables_bandolier_bandolier_s02_quest = object_tangible_wearables_bandolier_shared_bandolier_s02_quest:new {
-	playerRaces = { 	"object/creature/player/smc_female.iff",
+objectMenuComponent = "ArmorObjectMenuComponent",
+
+	playerRaces = { "object/creature/player/bothan_male.iff",
+				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
 				"object/creature/player/talz_male.iff",
 				"object/creature/player/talz_female.iff",
@@ -124,6 +127,7 @@ object_tangible_wearables_bandolier_bandolier_s02_quest = object_tangible_wearab
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_bandolier_bandolier_s02_quest, "object/tangible/wearables/bandolier/bandolier_s02_quest.iff")

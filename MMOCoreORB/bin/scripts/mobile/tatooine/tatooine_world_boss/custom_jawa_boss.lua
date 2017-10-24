@@ -5,11 +5,11 @@ custom_jawa_boss = Creature:new {
 	faction = "jawa",
 	level = 320,
 	chanceHit = 35.00,
-	damageMin = 1500,
-	damageMax = 3300,
+	damageMin = 1700,
+	damageMax = 3500,
 	baseXp = 28450,
 	baseHAM = 240000,
-	baseHAMmax = 300000,
+	baseHAMmax = 320000,
 	armor = 3,
 	resists = {195,195,195,195,195,195,195,195,-1},
 	meatType = "",
@@ -51,7 +51,7 @@ custom_jawa_boss = Creature:new {
 				{group = "armor_attachments", chance = 2500000},
 				{group = "clothing_attachments", chance = 2500000}
    },
-      			        lootChance = 10000000
+      			        lootChance = 5000000
    },
    {
       			groups = {
@@ -59,19 +59,19 @@ custom_jawa_boss = Creature:new {
        	 			{group = "armor_attachments", chance = 5000000},
         			 {group = "clothing_attachments", chance = 2500000}
    },
-      			        lootChance = 10000000
+      			        lootChance = 5000000
    },
    {
       			groups = {
         			{group = "armor_attachments", chance = 5000000},
         			{group = "clothing_attachments", chance = 5000000}
    },
-      			        lootChance = 10000000
+      			        lootChance = 5000000
    },
    {
       			groups = {
-        			{group = "nge_house_loot_deed_01", chance = 2500000},
-        			{group = "nge_house_loot_deed_windowed", chance = 7500000}
+        			{group = "nge_house_loot_deed_01", chance = 7500000},
+        			{group = "nge_house_loot_deed_windowed", chance = 2500000}
    },
       			        lootChance = 10000000
    },
@@ -87,14 +87,14 @@ custom_jawa_boss = Creature:new {
         			{group = "armor_attachments", chance = 5000000},
        	 			{group = "clothing_attachments", chance = 5000000}
    },
-     			        lootChance = 10000000
+     			        lootChance = 5000000
    },
    {
      			groups = {
         			{group = "armor_attachments", chance = 5000000},
         			{group = "clothing_attachments", chance = 5000000}
    },
-      			       	 lootChance = 10000000
+      			       	 lootChance = 5000000
    },
   
     
