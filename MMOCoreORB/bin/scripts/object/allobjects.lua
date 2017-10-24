@@ -1108,3 +1108,5 @@ includeFile("custom_content/tangible/holiday/life_day/rewards_09/objects.lua")
 includeFile("custom_content/tangible/holiday/love_day/objects.lua")
 includeFile("custom_content/tangible/holiday/love_day/rewards_10/objects.lua")
 includeFile("custom_content/tangible/holiday/love_day/rewards_11/objects.lua")
+
+includeFile("custom_content/tangible/wearables/armor/invisible/objects.lua")
