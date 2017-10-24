@@ -652,4 +652,4 @@ includeFile("custom_world_bosses/custom_exar_kun_boss.lua")
 includeFile("caves/dantooine_janta_cave_boss.lua")
 
 --GCW Trainer
-includeFile("gcw/gcwTrainerScreenplay.lua")
+--includeFile("gcw/gcwTrainerScreenplay.lua")
