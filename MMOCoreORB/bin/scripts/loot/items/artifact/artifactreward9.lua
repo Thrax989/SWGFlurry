@@ -2,7 +2,7 @@ artifactreward9 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Artifact 19",
-	directObjectTemplate = "object/tangible/collection/col_dust_durni_03.iff",
+	directObjectTemplate = "object/tangible/loot/npc/loot/answering_machine_generic.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
