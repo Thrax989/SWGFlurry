@@ -83,13 +83,13 @@ object_building_player_player_guildhall_corellia_style_01 = object_building_play
 
 
 --Hanging
-		{templateFile = "object/tangible/tcg/series5/house_sign_tcg_hanging.iff", x = 4.15, z = 1, y = 22.1, ox = 0, oy = 0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "TCG - Diner Sign Hanging"},
-		{templateFile = "object/tangible/tcg/series3/house_sign_tcg_s01.iff", x = 4.15, z = 1, y = 22.1, ox = 0, oy = 0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "TCG - Oval Hanging"},
-		{templateFile = "object/tangible/sign/player/wod_sm_hanging_sign_01.iff", x = 4.15, z = 1, y = 22.1, ox = 0, oy = 0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Nightsister Stone Sign Hanging"},
-		{templateFile = "object/tangible/sign/player/efol_hanging_sign_01.iff", x = 4.15, z = 1, y = 22.1, ox = 0, oy = 0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Heart Sign Hanging"},
-		{templateFile = "object/tangible/sign/player/house_address_halloween_sign.iff", x = 4.15, z = 1, y = 22.1, ox = 0, oy = 0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Halloween Sign Hanging"},
-		{templateFile = "object/tangible/sign/player/imperial_empire_day_2009_sign_hanging.iff", x = 4.15, z = 1, y = 22.1, ox = 0, oy = 0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Imperial Emblem Sign Hanging"},
-		{templateFile = "object/tangible/sign/player/rebel_remembrance_day_2009_sign_hanging.iff", x = 4.15, z = 1, y = 22.1, ox = 0, oy = 0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Rebel Emblem Sign Hanging"},
+		{templateFile = "object/tangible/tcg/series5/house_sign_tcg_hanging.iff", x = -0.5, z = 2.25, y = -11.5, ox = 0, oy = -0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "TCG - Diner Sign Hanging"},
+		{templateFile = "object/tangible/tcg/series3/house_sign_tcg_s01.iff", x = -0.5, z = 2.25, y = -11.5, ox = 0, oy = -0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "TCG - Oval Hanging"},
+		{templateFile = "object/tangible/sign/player/wod_sm_hanging_sign_01.iff", x = -0.5, z = 2.25, y = -11.5, ox = 0, oy = -0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Nightsister Stone Sign Hanging"},
+		{templateFile = "object/tangible/sign/player/efol_hanging_sign_01.iff", x = -0.5, z = 2.25, y = -11.5, ox = 0, oy = -0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Heart Sign Hanging"},
+		{templateFile = "object/tangible/sign/player/house_address_halloween_sign.iff", x = -0.5, z = 2.25, y = -11.5, ox = 0, oy = -0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Halloween Sign Hanging"},
+		{templateFile = "object/tangible/sign/player/imperial_empire_day_2009_sign_hanging.iff", x = -0.5, z = 2.25, y = -11.5, ox = 0, oy = -0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Imperial Emblem Sign Hanging"},
+		{templateFile = "object/tangible/sign/player/rebel_remembrance_day_2009_sign_hanging.iff", x = -0.5, z = 2.25, y = -11.5, ox = 0, oy = -0.707107, oz = 0, ow = 0.707107, cellid = -1, containmentType = -1, requiredSkill = "", suiItem = "Rebel Emblem Sign Hanging"},
 	},
 }
 
