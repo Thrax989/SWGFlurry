@@ -46,6 +46,30 @@ fbase_rebel_squad_leader = Creature:new {
 			},
 			{
 			groups = {
+				{group = "artifact", chance = 10000000}			
+			},
+			lootChance = 1000000
+			},
+			{
+			groups = {
+				{group = "tierone", chance = 10000000}
+			},
+			lootChance = 750000
+			},
+			{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+			},
+			lootChance = 100000
+			},
+			{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+			},
+			lootChance = 50000
+			},
+			{
+			groups = {
 				{group = "g_imperial_credit", chance = 10000000},
 				},
 			lootChance = 20000 
