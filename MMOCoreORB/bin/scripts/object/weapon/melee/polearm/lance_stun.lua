@@ -29,7 +29,7 @@ playerRaces = { "object/creature/player/bothan_male.iff",
 	damageType = STUN,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
-	armorPiercing = NONE,
+	armorPiercing = LIGHT,
 
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
@@ -88,4 +88,5 @@ playerRaces = { "object/creature/player/bothan_male.iff",
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
-ObjectTemplates: addTemplate(object_weapon_melee_polearm_lance_stun, "object/weapon/melee/polearm/lance_stun.iff")
+ObjectTemplates: addTemplate(object_weapon_melee_polearm_lance_stun, "object/weapon/melee/polearm/lance_stun.iff
+")
