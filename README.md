@@ -27,13 +27,14 @@ Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 # Required Mod The Galaxy TRE Files
 www.swgflurry.com/TRE/
 <br>
-	maxSearchPriority=28<br>
-	searchTree_00_26=mtg22.tre<br>
-	searchTree_00_25=species.tre<br>
-	searchTree_00_24=pallet.tre<br>
-	searchTree_00_23=pods.tre<br>
-	searchTree_00_22=skill_patch.tre<br>
-	searchTree_00_21=armor.tre<br>
+	maxSearchPriority=29<br>
+	searchTree_00_27=hotfix1.tre<br>
+	searchTree_00_26=flurrypatch1.tre<br>
+	searchTree_00_25=pallet.tre<br>
+	searchTree_00_24=weapon.tre<br>
+	searchTree_00_23=mtg22.tre<br>
+	searchTree_00_22=collection.tre<br>
+	searchTree_00_21=pods.tre<br>
 	searchTree_00_20=mtg_planets.tre<br>
 	searchTree_00_19=mtg_patch_021.tre<br>
 	searchTree_00_18=mtg_patch_019.tre<br>
@@ -108,20 +109,26 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#008000](https://placehold.it/15/008000/000000?text=+) nal hutta
 - ![#008000](https://placehold.it/15/008000/000000?text=+) moraband
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk hunting
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk rryatt trail
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk main
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk south dungeons
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk north dungeons
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk pob dungeons
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk dead forest
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Mustafar
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) jakku
-
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) bespin
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) dagobah
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) dungeon1
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) dungeon2
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ghomrassen
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) kessel
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) kuat
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) moncal
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) myrkr
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) nalhutta
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ordmantell
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) tralus
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) wayland
 
 ## -Server Code Contributors-
 * https://github.com/Thrax989 - Project Lead Creator
 * https://github.com/lasko-2112 - TRE File Creator All NGE Weapons Cu Weapons / Ghomrassen Planet Creator
+* https://bitbucket.org/sunrunnerii/sunrunner2/src - TRE File Creator All NGE Planets / Custom Assets
 * https://github.com/kurdtkobain - Additional Command Support / Game Tweaks
 * https://github.com/Xela-TheCreation - FRS system Creator
 * https://github.com/bobvious - Additional Game Balances Lua game Tweaks
