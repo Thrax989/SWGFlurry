@@ -1,13 +1,13 @@
 ## -Star Wars Galaxies Flurry Server-
 <img src="http://i.imgur.com/OB4Pa6a.png"> 
 
-- Main Web Site
+-Main Web Site-
 http://www.swgflurry.com/
-- Main Forums
+-Main Forums-
 http://www.swgflurry.com/forum/
-- Core 3 Base Server Code/Engine
+-Core 3 Base Server Code/Engine-
 http://review.swgemu.com
-- Main Servers Voice Chat 
+-Main Servers Voice Chat- 
 https://discord.gg/eN82pdc
 
 ## -Run Server in gdb debug mode-
@@ -24,9 +24,8 @@ swgemu runUnitTests<br>
 https://github.com/TheAnswer/PublicEngine/commit/b6bd1202d1f4770daa51a13fb5afab131e1c23f2<br>
 Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 
-# Required Mod The Galaxy TRE Files
-www.swgflurry.com/TRE/
-<br>
+## -Required Mod The Galaxy TRE Files-
+www.swgflurry.com/TRE/<br>
 	maxSearchPriority=29<br>
 	searchTree_00_27=hotfix1.tre<br>
 	searchTree_00_26=flurrypatch1.tre<br>
@@ -57,12 +56,12 @@ www.swgflurry.com/TRE/
 	searchTree_00_1=mtg_patch_002_appearance_02.tre<br>
 	searchTree_00_0=mtg_patch_001_appearance_01.tre<br>
 	
-## Coding Legend
+## -Coding Legend-
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Testing`
 
-### This Server Is A Branch From The MTGserver.
+## -This Server Is A Branch From The MTGserver-
 
 This server is specifically for new post 14.1 content and server modifications compatible with Core3. They have been created and submitted by the SWG community. The new content is available for any server to use with just one restriction: We ask that you give full credit to the creator for their work on your server's website and not claim it as your own work. Thank you.
 
