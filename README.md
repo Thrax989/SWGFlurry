@@ -7,8 +7,8 @@ http://www.swgflurry.com/<br>
 http://www.swgflurry.com/forum/<br>
 -Core 3 Base Server Code/Engine-<br>
 http://review.swgemu.com<br>
--Main Servers Voice Chat- <br>
-https://discord.gg/eN82pdc<br>
+-Main Servers Voice Chat-<br>
+https://discord.gg/ntZZfAy<br>
 
 ## -Run Server in gdb debug mode-
 Open Terminal "Type" cd /home/vagrant/workspace/Core3/MMOCoreORB/bin Then "type" gdb ./core3 <br>
