@@ -1,14 +1,14 @@
 ## -Star Wars Galaxies Flurry Server-
-<img src="http://i.imgur.com/OB4Pa6a.png"> 
+<img src="http://i.imgur.com/OB4Pa6a.png"><br>
 
--Main Web Site-
-http://www.swgflurry.com/
--Main Forums-
-http://www.swgflurry.com/forum/
--Core 3 Base Server Code/Engine-
-http://review.swgemu.com
--Main Servers Voice Chat- 
-https://discord.gg/eN82pdc
+-Main Web Site-<br>
+http://www.swgflurry.com/<br>
+-Main Forums-<br>
+http://www.swgflurry.com/forum/<br>
+-Core 3 Base Server Code/Engine-<br>
+http://review.swgemu.com<br>
+-Main Servers Voice Chat- <br>
+https://discord.gg/eN82pdc<br>
 
 ## -Run Server in gdb debug mode-
 Open Terminal "Type" cd /home/vagrant/workspace/Core3/MMOCoreORB/bin Then "type" gdb ./core3 <br>
