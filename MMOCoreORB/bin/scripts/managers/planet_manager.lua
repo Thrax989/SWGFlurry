@@ -1103,8 +1103,10 @@ kessel = {
 }
 
 kaas = {
+
 	weatherEnabled = 1,
-	gcwEnabled = 0,
+ 	gcwEnabled = 1,
+
 
 	planetTravelPoints = {
 		{name = "an Imperial Garrison", x = -5158.0, z = 80.0, y = -2239.0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
@@ -1113,6 +1115,55 @@ kaas = {
 	planetObjects = {
 		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = 0.0, oz = 0, ow = 0.0, x = -1123.2, z = 129.0, y = -4768.8, parentid = 0}
 	}
+}
+
+jakku = {
+  weatherEnabled = 1,
+  gcwEnabled = 0,
+  
+  badgeAreas = {
+    {"jakku_arena",4447,-5166,10,143},
+  },
+}
+
+chandrila = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Hanna City Spaceport", x = 164, z = 6, y = -2937, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    {name = "Nayli Outpost", x = -5272, z = 18, y = 264, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {
+    {"chandrila_mon_mothma_house",2469,2307,30,140},
+    {"chandrila_jedi_tomb",4339,-4287,30,141},
+    {"chandrila_state_park",-5013,4089,30,142},
+  },
+}
+
+hutta = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Bilbousa Starport", x = -789, z = 80, y = 1769, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {   
+  },
+}
+
+moraband = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Archaeological Outpost", x = -1696, z = 91, y = -624, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {   
+  },
 }
 
 mandalore = {
