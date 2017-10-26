@@ -62,18 +62,6 @@ meatlump_buffoon = Creature:new {
 		},
 		{
 			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
 				{group = "meatlump_common", chance = 10000000}
 		},
 			lootChance = 1000000
