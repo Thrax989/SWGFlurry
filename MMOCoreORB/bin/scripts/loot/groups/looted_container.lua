@@ -41,17 +41,18 @@ looted_container = {
 
 		
 		--Housing 35%
+		{groupTemplate = "tiertwo", chance = 800000}
 		{groupTemplate = "nge_house_loot_deed_01", weight = 2500000},
 		{groupTemplate = "nge_house_loot_deed_windowed", weight = 1000000},
 		--Decorations 40%
-		{groupTemplate = "crafted_rugs", weight = 500000},
-		{groupTemplate = "banner_imperial", weight = 500000},
-		{groupTemplate = "banner_imperial02", weight = 500000},
-		{groupTemplate = "banner_rebel", weight = 500000},
-		{groupTemplate = "banner_rebel02", weight = 500000},
-		{groupTemplate = "command_console", weight = 500000},
-		{groupTemplate = "potted_plants_large", weight = 500000},
-		{groupTemplate = "potted_plants_small", weight = 500000},
+		{groupTemplate = "crafted_rugs", weight = 400000},
+		{groupTemplate = "banner_imperial", weight = 400000},
+		{groupTemplate = "banner_imperial02", weight = 400000},
+		{groupTemplate = "banner_rebel", weight = 400000},
+		{groupTemplate = "banner_rebel02", weight = 400000},
+		{groupTemplate = "command_console", weight = 400000},
+		{groupTemplate = "potted_plants_large", weight = 400000},
+		{groupTemplate = "potted_plants_small", weight = 400000},
 		
 	}
 }
