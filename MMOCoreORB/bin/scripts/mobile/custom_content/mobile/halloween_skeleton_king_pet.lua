@@ -1,5 +1,5 @@
 halloween_skeleton_king_pet = Creature:new {
-	customName = "halloween_skeleton_2",
+	customName = "Skeleton King's Pet",
 	--objectName = "",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",

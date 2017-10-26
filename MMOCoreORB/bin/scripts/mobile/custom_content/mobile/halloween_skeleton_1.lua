@@ -28,7 +28,6 @@ halloween_skeleton_1 = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/halloween_skeleton_1.iff"},
-  	outfit = "custom_halloween_outfit",
 	lootGroups = {
 		{
 			groups = {
