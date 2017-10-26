@@ -1109,7 +1109,6 @@ kaas = {
 
 
 	planetTravelPoints = {
-		{name = "an Imperial Garrison", x = -5158.0, z = 80.0, y = -2239.0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
 	},
 	
 	planetObjects = {
@@ -1122,7 +1121,7 @@ jakku = {
   gcwEnabled = 0,
   
   badgeAreas = {
-    {"jakku_arena",4447,-5166,10,143},
+
   },
 }
 
@@ -1131,14 +1130,11 @@ chandrila = {
   gcwEnabled = 1,
   
   planetTravelPoints = {
-    {name = "Hanna City Spaceport", x = 164, z = 6, y = -2937, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-    {name = "Nayli Outpost", x = -5272, z = 18, y = 264, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+
     },
     
     badgeAreas = {
-    {"chandrila_mon_mothma_house",2469,2307,30,140},
-    {"chandrila_jedi_tomb",4339,-4287,30,141},
-    {"chandrila_state_park",-5013,4089,30,142},
+
   },
 }
 
@@ -1147,7 +1143,7 @@ hutta = {
   gcwEnabled = 1,
   
   planetTravelPoints = {
-    {name = "Bilbousa Starport", x = -789, z = 80, y = 1769, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+
     },
     
     badgeAreas = {   
@@ -1159,7 +1155,6 @@ moraband = {
   gcwEnabled = 1,
   
   planetTravelPoints = {
-    {name = "Archaeological Outpost", x = -1696, z = 91, y = -624, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
     },
     
     badgeAreas = {   
@@ -1171,13 +1166,7 @@ mandalore = {
 	gcwEnabled = 0,
 
 	planetTravelPoints = {
-		{name = "Bralsin", x = -5689, z = 0, y = -5034, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		{name = "Keldabe Starport", x = 1575, z = 4, y = -6408, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		{name = "Keldabe Shuttleport", x = 1432, z = 1.9, y = -6163, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		{name = "Sundari", x = 6275, z = 1, y = -6211, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		{name = "Norg Bral", x = -6648, z = 30, y = 5583, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		{name = "Enceri", x = 4713, z = 2, y = 7154, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		{name = "Shuror", x = 1068, z = 1, y = 2733, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+
 	},
 
 	badgeAreas = {
