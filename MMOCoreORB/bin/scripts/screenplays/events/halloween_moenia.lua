@@ -306,13 +306,17 @@ function halloween_moenia:spawnMobiles()
 	pNpc = spawnMobile("naboo","fbase_stormtrooper_squad_leader_extreme", 1, 4792.72, 4.17, -4697.94, 90, 0) 
 	AiAgent(pNpc):setAiTemplate("idlewander")
 
---Trigger Place Holder
-	--local T1Naboo = spawnMobile("naboo", "rancor", 1, 4849.01, 3.81524, -4727.87, 357, 0) print("Halloween Trigger 1 Loaded")
-        	--createObserver(OBJECTDESTRUCTION, "halloween_moeniaScreenPlay", "notify1NabooDead", T1Naboo)
+--Skeleton King
+	local T1Naboo = spawnMobile("naboo", "halloween_skeleton_king", 3600, 4913.46, 4.11553, -4861.94, 336, 0) print("Halloween Skeleton King Loaded")
+        	createObserver(OBJECTDESTRUCTION, "halloween_moeniaScreenPlay", "notify1NabooDead", T1Naboo)
 
---Trigger Place Holder
-	--local T2Naboo = spawnMobile("naboo", "rancor", 1, 4822.71, 3.95551, -4738.77, 256, 0) print("Halloween Trigger 2 Loaded")
-        	--createObserver(OBJECTDESTRUCTION, "halloween_moeniaScreenPlay", "notify2NabooDead", T2Naboo)
+--Skeleton King's Pet
+	local T2Naboo = spawnMobile("naboo", "halloween_skeleton_king_pet", 3600, 4914.7, 3.94756, -4859.97, 117, 0) print("Halloween Skeleton King's Pet Loaded")
+        	createObserver(OBJECTDESTRUCTION, "halloween_moeniaScreenPlay", "notify2NabooDead", T2Naboo)
+
+--Skeleton King's Executioner
+	local T3Naboo = spawnMobile("naboo", "halloween_skeleton_king_executioner", 3600, 4912.44, 4.44219, -4863.36, 349, 0) print("Halloween Skeleton King's Executioner Loaded")
+        	createObserver(OBJECTDESTRUCTION, "halloween_moeniaScreenPlay", "notify3NabooDead", T3Naboo)
 end
 
 function halloween_moenia:spawnBoss()
@@ -328,16 +332,23 @@ function halloween_moenia:notifyMiniDead(pMini, pKiller)
         return 0
 end
 
---Trigger Place Holder Activated
---function halloween_moenia:notify1NabooDead(T1Naboo, pKiller)
-	--local player = LuaCreatureObject(pKiller)
-        --local pBoss = spawnMobile("naboo", "rancor", 1, 4849.01, 3.81524, -4727.87, 357, 0)  print("Phase 1 Started")
-        --return 0
---end
+--Halloween Skeleton King Trigger Undead Army
+function halloween_moenia:notify1NabooDead(T1Naboo, pKiller)
+	local player = LuaCreatureObject(pKiller)
+        local pBoss = spawnMobile("naboo", "rancor", 0, 4849.01, 3.81524, -4727.87, 357, 0)  print("Phase 1 Started")
+        return 0
+end
 
---Trigger Place Holder Activated
---function halloween_moenia:notify2NabooDead(T2Naboo, pKiller)
-	--local player = LuaCreatureObject(pKiller)
-        --local pBoss = spawnMobile("naboo", "rancor", 1, 4822.71, 3.95551, -4738.77, 256, 0) print("Phase 2 Started")
-        --return 0
---end
+--Halloween Skeleton King's Pet Trigger
+function halloween_moenia:notify2NabooDead(T2Naboo, pKiller)
+	local player = LuaCreatureObject(pKiller)
+        local pBoss = spawnMobile("naboo", "rancor", 0, 4822.71, 3.95551, -4738.77, 256, 0) print("Phase 2 Started")
+        return 0
+end
+
+--Halloween Skeleton King's Executioner's Trigger
+function halloween_moenia:notify3NabooDead(T3Naboo, pKiller)
+	local player = LuaCreatureObject(pKiller)
+        local pBoss = spawnMobile("naboo", "rancor", 0, 4822.71, 3.95551, -4738.77, 256, 0) print("Phase 2 Started")
+        return 0
+end
