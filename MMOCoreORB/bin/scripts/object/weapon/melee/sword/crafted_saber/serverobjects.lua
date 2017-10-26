@@ -129,4 +129,3 @@ includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_s9_training.lua")
 includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_training.lua")
 includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_onehanded_gen5_exar_kun.lua")
 includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_onehanded_gen5_jinzu.lua")
-

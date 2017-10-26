@@ -5,11 +5,7 @@ jedi_treatment_01 = {
 	maximumLevel = -1,
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/component/clothing/clothing_jedi_treatment_01.iff",
-	craftingValues = {
-	{"jedi_force_power_regen",0,1,5},
-	{"jedi_force_power_max",100,200,500},
-	{"jedi_toughness",0,3,5},
-	},
+	craftingValues = {},
 	customizationStringNames = {},
 	customizationValues = {},
 }
