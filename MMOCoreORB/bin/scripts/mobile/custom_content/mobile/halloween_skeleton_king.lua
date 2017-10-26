@@ -72,9 +72,8 @@ halloween_skeleton_king = Creature:new {
 			}
 	},
 	weapons = {},
-	conversationTemplate = "",
-	attacks = {
-	}
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(halloween_skeleton_king, "halloween_skeleton_king")
