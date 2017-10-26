@@ -460,3 +460,75 @@ kessel = {
 
 
 }
+
+-----------------
+--    moraband
+-----------------
+moraband = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    hutta
+-----------------
+hutta = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    chandrila
+-----------------
+chandrila = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    jakku
+-----------------
+jakku = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Kaas
+-----------------
+kaas = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    mandalore
+-----------------
+mandalore = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
