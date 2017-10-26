@@ -1,10 +1,10 @@
-halloween_skeleton_1 = Creature:new {
-	customName = "Skeleton",
+halloween_skeleton_king = Creature:new {
+	customName = "Skeleton King",
 	--objectName = "",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
-	level = 100,
+	level = 300,
 	chanceHit = 10.0,
 	damageMin = 445,
 	damageMax = 600,
@@ -29,6 +29,7 @@ halloween_skeleton_1 = Creature:new {
 
 	templates = {"object/mobile/halloween_skeleton_1.iff"},
   	outfit = "custom_halloween_outfit",
+	scale = 2.0,
 	lootGroups = {
 		{
 			groups = {
@@ -75,5 +76,5 @@ halloween_skeleton_1 = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(halloween_skeleton_1, "halloween_skeleton_1")
+CreatureTemplates:addCreatureTemplate(halloween_skeleton_king, "halloween_skeleton_king")
 
