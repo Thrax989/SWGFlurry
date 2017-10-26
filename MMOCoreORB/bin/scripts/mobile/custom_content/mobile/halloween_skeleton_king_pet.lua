@@ -1,11 +1,11 @@
-halloween_skeleton_king = Creature:new {
-	customName = "Skeleton King",
+halloween_skeleton_king_pet = Creature:new {
+	customName = "halloween_skeleton_2",
 	--objectName = "",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
 	level = 300,
-	chanceHit = 30,
+	chanceHit = 15,
 	damageMin = 1645,
 	damageMax = 3000,
 	specialDamageMult = 7.5,
@@ -13,7 +13,7 @@ halloween_skeleton_king = Creature:new {
 	baseHAM = 385000,
 	baseHAMmax = 471000,
 	armor = 3,
-	resists = {75,75,75,75,75,75,75,75,75},
+	resists = {35,35,35,35,35,35,35,35,35},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -28,9 +28,8 @@ halloween_skeleton_king = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/halloween_skeleton_1.iff"},
-  	outfit = "custom_halloween_outfit",
-	scale = 2.0,
+	templates = {"object/mobile/halloween_skeleton_2.iff"},
+	scale = 3.0,
 	lootGroups = {
 		{
 			groups = {
@@ -38,37 +37,37 @@ halloween_skeleton_king = Creature:new {
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},					
 			},
-			lootChance = 10000000 
+			lootChance = 10000000
 			},
 			{
 			groups = {
 				{group = "artifact", chance = 10000000}			
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 			},
 			{
 			groups = {
 				{group = "tierone", chance = 10000000}
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 			},
 			{
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 			},
-			lootChance = 500000
+			lootChance = 10000000
 			},
 			{
 			groups = {
 				{group = "tierthree", chance = 10000000}
 			},
-			lootChance = 100000
+			lootChance = 10000000
 			},
 			{
 			groups = {
 				{group = "halloween", chance = 10000000},
 				},
-			lootChance = 1500000 
+			lootChance = 10000000
 			}
 	},
 	weapons = {},
@@ -77,5 +76,5 @@ halloween_skeleton_king = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(halloween_skeleton_king, "halloween_skeleton_king")
+CreatureTemplates:addCreatureTemplate(halloween_skeleton_king_pet, "halloween_skeleton_king_pet")
 

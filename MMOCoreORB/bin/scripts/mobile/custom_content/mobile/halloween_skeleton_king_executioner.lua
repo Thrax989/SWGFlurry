@@ -1,5 +1,5 @@
-halloween_skeleton_king = Creature:new {
-	customName = "Skeleton King",
+halloween_skeleton_king_executioner = Creature:new {
+	customName = "Skeleton King's Executioner",
 	--objectName = "",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
@@ -13,7 +13,7 @@ halloween_skeleton_king = Creature:new {
 	baseHAM = 385000,
 	baseHAMmax = 471000,
 	armor = 3,
-	resists = {75,75,75,75,75,75,75,75,75},
+	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,8 +29,8 @@ halloween_skeleton_king = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/halloween_skeleton_1.iff"},
-  	outfit = "custom_halloween_outfit",
-	scale = 2.0,
+  	outfit = "custom_halloween1_outfit",
+	scale = 1.5,
 	lootGroups = {
 		{
 			groups = {
@@ -38,37 +38,37 @@ halloween_skeleton_king = Creature:new {
 				{group = "clothing_attachments", chance = 500000},
 				{group = "armor_attachments", chance = 500000},					
 			},
-			lootChance = 10000000 
+			lootChance = 10000000
 			},
 			{
 			groups = {
 				{group = "artifact", chance = 10000000}			
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 			},
 			{
 			groups = {
 				{group = "tierone", chance = 10000000}
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 			},
 			{
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 			},
-			lootChance = 500000
+			lootChance = 10000000
 			},
 			{
 			groups = {
 				{group = "tierthree", chance = 10000000}
 			},
-			lootChance = 100000
+			lootChance = 10000000
 			},
 			{
 			groups = {
 				{group = "halloween", chance = 10000000},
 				},
-			lootChance = 1500000 
+			lootChance = 10000000
 			}
 	},
 	weapons = {},
@@ -77,5 +77,5 @@ halloween_skeleton_king = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(halloween_skeleton_king, "halloween_skeleton_king")
+CreatureTemplates:addCreatureTemplate(halloween_skeleton_king_executioner, "halloween_skeleton_king_executioner")
 
