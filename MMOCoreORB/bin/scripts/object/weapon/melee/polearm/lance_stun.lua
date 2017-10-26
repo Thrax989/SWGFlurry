@@ -88,5 +88,4 @@ playerRaces = { "object/creature/player/bothan_male.iff",
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
-ObjectTemplates: addTemplate(object_weapon_melee_polearm_lance_stun, "object/weapon/melee/polearm/lance_stun.iff
-")
+ObjectTemplates: addTemplate(object_weapon_melee_polearm_lance_stun, "object/weapon/melee/polearm/lance_stun.iff")
