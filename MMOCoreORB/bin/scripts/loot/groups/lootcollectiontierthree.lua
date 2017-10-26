@@ -25,15 +25,16 @@ lootcollectiontierthree  = {
 		--Fill to 25%
 		{groupTemplate = "crystal_kuns_blood", weight = 250000},
 		{groupTemplate = "ref_crate", weight = 750000},
-		{groupTemplate = "rare_vehicles", weight = 500000},
-		{groupTemplate = "krayt_pearls", weight = 500000},
-		{groupTemplate = "krayt_tissue_rare", weight = 500000},
+		{groupTemplate = "rare_vehicles", weight = 750000},
+		{groupTemplate = "krayt_pearls", weight = 750000},
+		
 
 		--Fill to 25%
-		{groupTemplate = "exar_kun_ls_group", weight = 250000},
-		{groupTemplate = "g_jinzu_razor_loot_deed", weight = 250000},
+		{groupTemplate = "krayt_tissue_rare", weight = 600000},
+		{groupTemplate = "exar_kun_ls_group", weight = 50000},
+		{groupTemplate = "g_jinzu_razor_loot_deed", weight = 50000},
 		{groupTemplate = "jedi_robe_black_01_group", weight = 500000},
-		{groupTemplate = "jedi_robe_black_02_group", weight = 500000},
+		{groupTemplate = "jedi_robe_black_02_group", weight = 300000},
 		{groupTemplate = "custom_vehicle_rare", weight = 1000000},
 	
 	}
