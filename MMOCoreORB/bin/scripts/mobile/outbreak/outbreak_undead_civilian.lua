@@ -84,12 +84,6 @@ afflicted_civilian = Creature:new {
 		},
 		{
 			groups = {
-				{group = "halloween", chance = 10000000}				
-		},
-			lootChance = 500000
-		},
-		{
-			groups = {
 				{group = "artifact", chance = 10000000}			
 		},
 			lootChance = 100000
@@ -100,24 +94,7 @@ afflicted_civilian = Creature:new {
 		},
 			lootChance = 75000
 		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 10000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 5000
-		},
-		{
-			groups = {
-				{group = "outbreak", chance = 10000000}
-		},
-			lootChance = 50000
-		},
+		
 },
 	weapons = {},
 	conversationTemplate = "",

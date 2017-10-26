@@ -26,52 +26,7 @@ tamed_razor_cat = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/tusk_cat.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 9000000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "armor_attachments", chance = 500000},					
-			},
-			lootChance = 10000000 
-			},
-			{
-			groups = {
-				{group = "g_imperial_credit", chance = 10000000},
-				},
-			lootChance = 20000 
-			},
-			{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-			},
-			lootChance = 1000000
-			},
-			{
-			groups = {
-				{group = "tierone", chance = 10000000}
-			},
-			lootChance = 750000
-			},
-			{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-			},
-			lootChance = 100000
-			},
-			{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-			},
-			lootChance = 50000
-			},
-			{
-			groups = {
-				{group = "imppoints", chance = 10000000},
-				},
-			lootChance = 100000 
-			}
-	},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
