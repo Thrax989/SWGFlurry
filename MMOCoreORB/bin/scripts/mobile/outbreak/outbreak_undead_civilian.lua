@@ -84,6 +84,12 @@ afflicted_civilian = Creature:new {
 		},
 		{
 			groups = {
+				{group = "halloween", chance = 10000000}				
+		},
+			lootChance = 500000
+		},
+		{
+			groups = {
 				{group = "artifact", chance = 10000000}			
 		},
 			lootChance = 100000

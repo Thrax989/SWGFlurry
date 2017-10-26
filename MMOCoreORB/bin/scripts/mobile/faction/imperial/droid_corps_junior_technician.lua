@@ -47,6 +47,30 @@ droid_corps_junior_technician = Creature:new {
 			},
 			{
 			groups = {
+				{group = "artifact", chance = 10000000}			
+			},
+			lootChance = 1000000
+			},
+			{
+			groups = {
+				{group = "tierone", chance = 10000000}
+			},
+			lootChance = 750000
+			},
+			{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+			},
+			lootChance = 100000
+			},
+			{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+			},
+			lootChance = 50000
+			},
+			{
+			groups = {
 				{group = "rebpoints", chance = 10000000},
 				},
 			lootChance = 100000 

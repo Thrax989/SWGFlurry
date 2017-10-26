@@ -29,7 +29,7 @@ playerRaces = { "object/creature/player/bothan_male.iff",
 	damageType = STUN,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
-	armorPiercing = NONE,
+	armorPiercing = MEDIUM,
 
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
@@ -82,8 +82,8 @@ playerRaces = { "object/creature/player/bothan_male.iff",
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "exp_durability", "expRange", "expRange", "null", "expRange", "null", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "maxrange", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 73, 108, 5.1, 12, 750, 0, 0, 3, 0, 4, 52, 17, 10},
-	experimentalMax = {0, 0, 118, 183, 3.6, 22, 1500, 10, 10, 3, 10, 4, 26, 8, 4},
+	experimentalMin = {0, 0, 53, 88, 5.6, 12, 750, 0, 0, 3, 0, 4, 52, 17, 10},
+	experimentalMax = {0, 0, 98, 163, 4.1, 22, 1500, 10, 10, 3, 10, 4, 26, 8, 4},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
