@@ -36,14 +36,13 @@ stormtrooper_major = Creature:new {
 				{group = "junk", chance = 5000000},
 				{group = "stormtrooper_common", chance = 2500000},
 				{group = "imperial_officer_common", chance = 2500000},
-
-						},
+		},
 			lootChance = 500000 
 
 		},
 		{
 			groups = {
-				{group = "g_imperial_credit", chance = 10000000}
+				{group = "g_rebel_credit", chance = 10000000}
 		},
 			lootChance = 200000 
 		},

@@ -525,7 +525,7 @@ includeFile("cities/lok_nym_stronghold.lua")
 includeFile("cities/naboo_deeja_peak.lua")
 includeFile("cities/naboo_kaadara.lua")
 includeFile("cities/naboo_keren.lua")
-includeFile("cities/naboo_moenia.lua")
+--includeFile("cities/naboo_moenia.lua")
 includeFile("cities/naboo_theed.lua")
 includeFile("cities/rori_narmle.lua")
 includeFile("cities/rori_rebel_outpost.lua")
@@ -638,12 +638,12 @@ includeFile("space/space_chassis_dealer_conv_handler.lua")
 includeFile("record_keepers/record_keepers.lua")
 
 --Tests
-includeFile("tests/tests.lua")
+--includeFile("tests/tests.lua")
 
 --Custom Screenplays
-includeFile("custom_screenplays/screenplays.lua")
+--includeFile("custom_screenplays/screenplays.lua")
 --Halloween Event
---includeFile("events/halloween_moenia.lua")
+includeFile("events/halloween_moenia.lua")
 
 --Custom World Bosses
 includeFile("custom_world_bosses/custom_nerf_boss.lua")
@@ -653,6 +653,10 @@ includeFile("caves/dantooine_janta_cave_boss.lua")
 
 --Painting Vendor
 includeFile("events/painting_exchange_dealer.lua")
+
+--GCW Vendors
+includeFile("events/imperial_armor_vendor.lua")
+includeFile("events/rebel_armor_vendor.lua")
 
 --GCW Trainer
 --includeFile("gcw/gcwTrainerScreenplay.lua")

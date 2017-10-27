@@ -39,7 +39,7 @@ crackdown_imperial_warrant_officer_li = Creature:new {
 		},
 		{
 			groups = {
-				{group = "g_imperial_credit", chance = 10000000}
+				{group = "g_rebel_credit", chance = 10000000}
 		},
 			lootChance = 200000 
 		},

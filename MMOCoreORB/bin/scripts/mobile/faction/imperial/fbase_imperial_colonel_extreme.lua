@@ -34,14 +34,13 @@ fbase_imperial_colonel_extreme = Creature:new {
 			groups = {
 				{group = "junk", chance = 7500000},
 				{group = "stormtrooper_common", chance = 2500000},
-
-						},
+		},
 			lootChance = 500000 
 
 		},
 		{
 			groups = {
-				{group = "g_imperial_credit", chance = 10000000}
+				{group = "g_rebel_credit", chance = 10000000}
 		},
 			lootChance = 200000 
 		},

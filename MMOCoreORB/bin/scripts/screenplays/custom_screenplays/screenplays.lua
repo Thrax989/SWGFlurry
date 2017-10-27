@@ -14,10 +14,10 @@ TODo List..........
 --Corellia
 
 --Coruscant
-includeFile("custom_screenplays/coruscant/coruscant.lua")
+--includeFile("custom_screenplays/coruscant/coruscant.lua")
 
 --Dagobah
-includeFile("custom_screenplays/dagobah/dagobah_yoda_house.lua")
+--includeFile("custom_screenplays/dagobah/dagobah_yoda_house.lua")
 
 --Dantooine
 

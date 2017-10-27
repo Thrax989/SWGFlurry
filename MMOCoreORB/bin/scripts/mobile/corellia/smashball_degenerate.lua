@@ -40,6 +40,8 @@ smashball_degenerate = Creature:new {
 		"object/mobile/dressed_criminal_thug_zabrak_male_01.iff",
 		"object/mobile/dressed_villain_trandoshan_female_01.iff",
 		"object/mobile/dressed_villain_trandoshan_male_01.iff"},
+
+--Static Spawn Reduced Loot
 	lootGroups = {
 		{
 			groups = {
@@ -59,17 +61,12 @@ smashball_degenerate = Creature:new {
 		},
 			lootChance = 750000
 		},
+		
 		{
 			groups = {
-				{group = "tiertwo", chance = 10000000}
+				{group = "loot_kit_parts", chance = 10000000}
 		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
+			lootChance = 1000000
 		}
 	},
 	weapons = {"pirate_weapons_heavy"},

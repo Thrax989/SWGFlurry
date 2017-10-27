@@ -32,13 +32,13 @@ imperial_staff_sergeant = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 10000000},
-						},
+		},
 			lootChance = 500000 
 
 		},
 		{
 			groups = {
-				{group = "g_imperial_credit", chance = 10000000}
+				{group = "g_rebel_credit", chance = 10000000}
 		},
 			lootChance = 200000 
 		},

@@ -7,7 +7,7 @@ includeFile("custom_content/weapon/melee/axe_heavy_duty_npe.lua")
 
 --SPECIAL
 includeFile("custom_content/weapon/melee/blacksun_razor_generic.lua")
-includeFile("custom_content/weapon/melee/blasterfist.lua")
+
 includeFile("custom_content/weapon/melee/blasterfist_generic.lua")
 includeFile("custom_content/weapon/melee/ep3_loot_heartstriker.lua")
 includeFile("custom_content/weapon/melee/ep3_loot_necrosis.lua")
