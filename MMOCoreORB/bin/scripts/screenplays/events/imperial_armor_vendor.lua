@@ -245,6 +245,28 @@ function imperial_armor_convo_handler:getNextConversationScreen(conversationTemp
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Imperial Command BARC Schematic Purchased.")
 
+--Crates
+
+		     elseif (optionLink == "20" and itemCounter < 10) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "20" and itemCounter >= 10) then
+	            local pItem = giveItem(pInventory, "object/tangible/loot/misc/personal_effects.iff", -1)
+	            DeleteItems = 10
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Gold Tier 2 Loot Crate Purchased.")
+
+	     elseif (optionLink == "21" and itemCounter < 25) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "21" and itemCounter >= 25) then
+	            local pItem = giveItem(pInventory, "object/tangible/loot/misc/toxic_rations.iff", -1)
+	            DeleteItems = 25
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Platinum Tier 3 Loot Crate Purchased.")
+
+
+
           	end
           for i = containerSize - 1 , 0 , -1 do
           	pInvObj = inventory:getContainerObject(i)
@@ -255,8 +277,10 @@ function imperial_armor_convo_handler:getNextConversationScreen(conversationTemp
 					invObj:destroyObjectFromDatabase()
 		       	end
    		  end
+
    		  
  	
+
       end
    end
    return nextConversationScreen

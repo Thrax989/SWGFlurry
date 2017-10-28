@@ -39,8 +39,9 @@ ragtag_loon = Creature:new {
 		"object/mobile/dressed_commoner_tatooine_rodian_female_03.iff",
 		"object/mobile/dressed_commoner_old_human_female_01.iff",
 		"object/mobile/dressed_commoner_old_human_male_02.iff",
-		"object/mobile/dressed_commoner_tatooine_aqualish_female_07.iff"
-	},
+		"object/mobile/dressed_commoner_tatooine_aqualish_female_07.iff"},
+
+--Static Spawn Reduced Loot
 	lootGroups = {
 		{
 			groups = {
@@ -60,18 +61,7 @@ ragtag_loon = Creature:new {
 		},
 			lootChance = 750000
 		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
+		
 		{
 			groups = {
 				{group = "loot_kit_parts", chance = 10000000}

@@ -41,8 +41,9 @@ ragtag_kook = Creature:new {
 		"object/mobile/dressed_commoner_tatooine_rodian_male_04.iff",
 		"object/mobile/dressed_commoner_tatooine_devaronian_male_03.iff",
 		"object/mobile/dressed_commoner_old_twilek_male_01.iff",
-		"object/mobile/dressed_commoner_tatooine_aqualish_female_08.iff"
-	},
+		"object/mobile/dressed_commoner_tatooine_aqualish_female_08.iff"},
+
+--Static Spawn Reduced Loot
 	lootGroups = {
 		{
 			groups = {
@@ -62,18 +63,7 @@ ragtag_kook = Creature:new {
 		},
 			lootChance = 750000
 		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
+		
 		{
 			groups = {
 				{group = "loot_kit_parts", chance = 10000000}

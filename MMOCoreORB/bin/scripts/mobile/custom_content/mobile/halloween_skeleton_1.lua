@@ -66,7 +66,7 @@ halloween_skeleton_1 = Creature:new {
 				{group = "halloween", chance = 10000000},
 				},
 			lootChance = 1500000 
-			}
+			},
 	},
 	weapons = {},
 	reactionStf = "@npc_reaction/slang",

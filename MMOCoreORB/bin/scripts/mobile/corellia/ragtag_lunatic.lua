@@ -36,8 +36,9 @@ ragtag_lunatic = Creature:new {
 		"object/mobile/dressed_villain_trandoshan_female_01.iff",
 		"object/mobile/dressed_villain_trandoshan_male_01.iff",
 		"object/mobile/dressed_commoner_tatooine_rodian_female_02.iff",
-		"object/mobile/dressed_commoner_tatooine_trandoshan_male_01.iff"
-	},
+		"object/mobile/dressed_commoner_tatooine_trandoshan_male_01.iff"},
+
+--Static Spawn Reduced Loot
 	lootGroups = {
 		{
 			groups = {
@@ -57,18 +58,7 @@ ragtag_lunatic = Creature:new {
 		},
 			lootChance = 750000
 		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
+		
 		{
 			groups = {
 				{group = "loot_kit_parts", chance = 10000000}

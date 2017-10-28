@@ -31,7 +31,9 @@ imperial_armor_items_screen = ConvoScreen:new {
       {"Camo Stormtrooper Armor Leg Plates No Trade Schematic - 3 Tokens", "16"},
       {"Camo Stormtrooper Armor Boots No Trade Schematic - 2 Tokens", "17"},
       {"Camo Stormtrooper Armor Gloves No Trade Schematic - 1 Token", "18"},
-      {"Imperial Command BARC Speeder Schematic - 25 Tokens", "19"},         
+      {"Imperial Command BARC Speeder Schematic - 25 Tokens", "19"}, 
+      {"Gold Tier Loot Crate - 10 Tokens", "20"}, 
+      {"Platinum Tier Loot Crate - 25 Tokens", "21"},         
       {"Back", "first_screen"},
       {"No thank you.", "deny_quest"},
       }
