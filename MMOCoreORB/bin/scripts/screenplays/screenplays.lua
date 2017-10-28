@@ -653,6 +653,9 @@ includeFile("caves/dantooine_janta_cave_boss.lua")
 
 --Painting Vendor
 includeFile("events/painting_exchange_dealer.lua")
+--Faction Armor Vendors
+includeFile("events/imperial_armor_vendor.lua")
+includeFile("events/rebel_armor_vendor.lua")
 
 --GCW Vendors
 includeFile("events/imperial_armor_vendor.lua")

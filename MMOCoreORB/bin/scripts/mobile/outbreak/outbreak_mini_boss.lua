@@ -30,45 +30,97 @@ outbreak_mini_boss = Creature:new {
 	scale = 2,
 
 	templates = {"object/mobile/outbreak_undead_imperial_inquisitor_human_male_03.iff"},
-	lootGroups = {
-		{
+ lootGroups = {
+	{
 			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 10000000
-		},
-		{
+        			{group = "potted_plants_small", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
+   	},
+			        lootChance = 10000000
+  	},
+  	{
+			groups = {
+        			{group = "potted_plants_large", chance = 5000000},
+        			{group = "armor_attachments", chance = 2500000},
+        			{group = "clothing_attachments", chance = 2500000}
+   	},
+      			        lootChance = 10000000
+   	},
+   	{
+      			groups = {
+        			{group = "backpacks_b02", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
+   	},
+      			        lootChance = 5000000
+   	},
+   	{
+      			groups = {
+        			{group = "backpacks_b01", chance = 2500000},
+       	 			{group = "armor_attachments", chance = 5000000},
+        			 {group = "clothing_attachments", chance = 2500000}
+   	},
+      			        lootChance = 5000000
+   	},
+   	{
+      			groups = {
+        			{group = "armor_attachments", chance = 5000000},
+        			{group = "clothing_attachments", chance = 5000000}
+   	},
+      			        lootChance = 5000000
+   	},
+   	{
+      			groups = {
+        			{group = "nge_house_loot_deed_01", chance = 7500000},
+        			{group = "nge_house_loot_deed_windowed", chance = 2500000}
+   	},
+      			        lootChance = 10000000
+   	},
+   	{
+      			groups = {
+        			{group = "armor_attachments", chance = 5000000},
+       	 			{group = "clothing_attachments", chance = 5000000}
+   	},
+     			        lootChance = 5000000
+   	},
+   	{
+     			groups = {
+        			{group = "armor_attachments", chance = 5000000},
+        			{group = "clothing_attachments", chance = 5000000}
+   	},
+      			       	 lootChance = 5000000
+   	},
+	{
 			groups = {
 				{group = "artifact", chance = 10000000}			
-		},
+	},
 			lootChance = 1000000
-		},
-		{
+	},
+	{
 			groups = {
 				{group = "tierone", chance = 10000000}
-		},
+	},
 			lootChance = 750000
-		},
-		{
+	},
+	{
 			groups = {
 				{group = "tiertwo", chance = 10000000}
-		},
+	},
 			lootChance = 100000
-		},
-		{
+	},
+	{
 			groups = {
 				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
+	},
+			lootChance = 10000000
+	},
+	{
 			groups = {
-				{group = "outbreak", chance = 10000000}
-		},
-			lootChance = 500000
-
-		
-		},
+				{group = "halloween", chance = 10000000}
+	},
+			lootChance = 10000000
+	},
 
     
     			
