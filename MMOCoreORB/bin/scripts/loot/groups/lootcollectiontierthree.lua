@@ -7,35 +7,43 @@ lootcollectiontierthree  = {
 	lootItems = {
 
 		--Fill to 25%
-		{itemTemplate = "junk", weight = 500000},
-		{itemTemplate = "goggles_all", weight = 500000},
-		{itemTemplate = "death_watch_bunker_ingredient_binary", weight = 500000},
-		{itemTemplate = "death_watch_bunker_ingredient_protective", weight = 500000},
-		{itemTemplate = "acklay", weight = 500000},
+		{groupTemplate = "junk", weight = 100000},
+		{groupTemplate = "goggles_all", weight = 500000},
+		{groupTemplate = "death_watch_bunker_ingredient_binary", weight = 500000},
+		{groupTemplate = "death_watch_bunker_ingredient_protective", weight = 500000},
+		{groupTemplate = "acklay", weight = 500000},
+		{groupTemplate = "imppoints", weight = 200000},
+		{groupTemplate = "rebpoints", weight = 200000},
 		
 
 		--Fill to 25%
-		{groupTemplate = "backpacks_b01", weight = 500000},
-		{groupTemplate = "backpacks_b02", weight = 500000},
+		{groupTemplate = "backpacks_b01", weight = 250000},
+		{groupTemplate = "backpacks_b02", weight = 250000},
 		{groupTemplate = "axkva_min", weight = 500000},
-		{groupTemplate = "force_hunter_rare", weight = 500000},
+		{groupTemplate = "force_hunter_rare", weight = 250000},
 		{groupTemplate = "blacksun_rare", weight = 500000},
+		{groupTemplate = "giant_dune_kimo_common", weight = 250000},
+		{groupTemplate = "gurk_king", weight = 250000},
+		{groupTemplate = "harrower_bone", weight = 250000},
 		
 
 		--Fill to 25%
-		{groupTemplate = "crystal_kuns_blood", weight = 250000},
-		{groupTemplate = "ref_crate", weight = 750000},
-		{groupTemplate = "rare_vehicles", weight = 750000},
-		{groupTemplate = "krayt_pearls", weight = 750000},
-		
+		{groupTemplate = "crystal_kuns_blood", weight = 150000},
+		{groupTemplate = "ref_crate", weight = 700000},
+		{groupTemplate = "rare_vehicles", weight = 200000},
+		{groupTemplate = "krayt_pearls", weight = 500000},
+		{groupTemplate = "krayt_tissue_rare", weight = 500000},
+		{groupTemplate = "neutral_corvette_loot", weight = 150000},
+		{groupTemplate = "imperial_corvette_loot", weight = 150000},
+		{groupTemplate = "rebel_corvette_loot", weight = 150000},
 
 		--Fill to 25%
-		{groupTemplate = "krayt_tissue_rare", weight = 600000},
-		{groupTemplate = "exar_kun_ls_group", weight = 50000},
-		{groupTemplate = "g_jinzu_razor_loot_deed", weight = 50000},
+		{groupTemplate = "exar_kun_ls_group", weight = 250000},
+		{groupTemplate = "g_jinzu_razor_loot_deed", weight = 250000},
 		{groupTemplate = "jedi_robe_black_01_group", weight = 500000},
-		{groupTemplate = "jedi_robe_black_02_group", weight = 300000},
-		{groupTemplate = "custom_vehicle_rare", weight = 1000000},
+		{groupTemplate = "jedi_robe_black_02_group", weight = 500000},
+		{groupTemplate = "custom_vehicle_rare", weight = 500000},
+		{groupTemplate = "theme_park_reward_imperial_kaja", weight = 500000},
 	
 	}
 }
