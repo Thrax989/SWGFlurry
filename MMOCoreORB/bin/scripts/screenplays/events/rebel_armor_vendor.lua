@@ -251,7 +251,7 @@ function rebel_armor_convo_handler:getNextConversationScreen(conversationTemplat
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
 	     elseif (optionLink == "20" and itemCounter >= 10) then
-	            local pItem = giveItem(pInventory, "object/tangible/loot/misc/personal_effects.iff", -1)
+	            local pItem = giveItem(pInventory, "object/tangible/item/loot_crates/gold_crate.iff", -1)
 	            DeleteItems = 10
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Gold Tier 2 Loot Crate Purchased.")
@@ -260,7 +260,7 @@ function rebel_armor_convo_handler:getNextConversationScreen(conversationTemplat
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
 	     elseif (optionLink == "21" and itemCounter >= 25) then
-	            local pItem = giveItem(pInventory, "object/tangible/loot/misc/toxic_rations.iff", -1)
+	            local pItem = giveItem(pInventory, "object/tangible/item/loot_crates/plat_crate.iff", -1)
 	            DeleteItems = 25
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Platinum Tier 3 Loot Crate Purchased.")
