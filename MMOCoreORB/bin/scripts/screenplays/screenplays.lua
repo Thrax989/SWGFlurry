@@ -2,6 +2,7 @@ package.path = package.path .. ";scripts/screenplays/themepark/?.lua;scripts/scr
 require("screenplay")
 require("conv_handler")
 require("themeParkLogic")
+require("screenplayHelper")
 require("corvetteTicketGiverLogic")
 require("corvetteTicketTakerLogic")
 
@@ -228,6 +229,7 @@ includeFile("village/convos/phase4/sarguillo_phase4_conv_handler.lua")
 includeFile("village/convos/phase4/sivarra_phase4_conv_handler.lua")
 
 -- Jedi Trials
+includeFile("jedi/frs.lua")
 includeFile("jedi/trialData.lua")
 includeFile("jedi/jedi_trials.lua")
 includeFile("jedi/knight/knight_trials.lua")
@@ -642,6 +644,7 @@ includeFile("record_keepers/record_keepers.lua")
 
 --Custom Screenplays
 --includeFile("custom_screenplays/screenplays.lua")
+
 --Halloween Event
 includeFile("events/halloween_moenia.lua")
 
@@ -653,6 +656,7 @@ includeFile("caves/dantooine_janta_cave_boss.lua")
 
 --Painting Vendor
 includeFile("events/painting_exchange_dealer.lua")
+
 --Faction Armor Vendors
 includeFile("events/imperial_armor_vendor.lua")
 includeFile("events/rebel_armor_vendor.lua")
@@ -660,6 +664,9 @@ includeFile("events/rebel_armor_vendor.lua")
 --GCW Vendors
 includeFile("events/imperial_armor_vendor.lua")
 includeFile("events/rebel_armor_vendor.lua")
+
+---Dungeon ISD
+ includeFile("dungeon/isd/isd.lua")
 
 --GCW Trainer
 --includeFile("gcw/gcwTrainerScreenplay.lua")
