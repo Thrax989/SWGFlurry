@@ -103,7 +103,7 @@ public:
 	 */
 	bool fulfillsSkillPrerequisites(const String& skillName, CreatureObject* creature);
 
-	bool knightPrereqsMet(CreatureObject* creature, const String& skillNameBeingDropped);
+	bool villageKnightPrereqsMet(CreatureObject* creature, const String& skillToDrop);
 
 	int getForceSensitiveSkillCount(CreatureObject* creature, bool includeNoviceMasterBoxes);
 
