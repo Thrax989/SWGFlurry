@@ -226,3 +226,6 @@ includeFile("tangible/loot/loot_schematic/rebel_assault_gloves_camo_schematic.lu
 --Jedi Robe
 includeFile("tangible/loot/loot_schematic/jedi_robe_black_01_schematic.lua")
 includeFile("tangible/loot/loot_schematic/jedi_robe_black_02_schematic.lua")
+includeFile("tangible/loot/loot_schematic/armor_jedi_belt_01_schematic.lua")
+includeFile("tangible/loot/loot_schematic/armor_jedi_belt_02_schematic.lua")
+includeFile("tangible/loot/loot_schematic/armor_jedi_belt_03_schematic.lua")

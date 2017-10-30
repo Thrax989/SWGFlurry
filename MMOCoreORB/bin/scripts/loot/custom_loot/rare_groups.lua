@@ -18,3 +18,6 @@ includeFile("custom_loot/groups/backpacks/backpacks_b02.lua")
 includeFile("custom_loot/groups/wearables/goggles_all.lua")
 --Halloween
 includeFile("custom_loot/groups/outbreak/outbreak.lua")
+--Jedi Belt Components
+includeFile("custom_loot/groups/clothing/jedi_belt_comp_group.lua")
+includeFile("custom_loot/groups/clothing/jedi_belt_group.lua")

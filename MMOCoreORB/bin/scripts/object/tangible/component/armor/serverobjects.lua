@@ -133,3 +133,6 @@ includeFile("tangible/component/armor/shield_generator_personal_b.lua")
 includeFile("tangible/component/armor/shield_generator_personal_c.lua")
 includeFile("tangible/component/armor/shield_generator_personal_imperial_test.lua")
 includeFile("tangible/component/armor/shield_generator_vehicular.lua")
+
+includeFile("tangible/component/armor/mando_iron.lua")
+includeFile("tangible/component/armor/orbalisk_shell.lua")

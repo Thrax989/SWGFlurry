@@ -591,3 +591,7 @@ includeFile("draft_schematic/clothing/clothing_armor_rebel_assault_leggings_camo
 --Jedi Robes
 includeFile("draft_schematic/clothing/clothing_robe_jedi_black_01.lua")
 includeFile("draft_schematic/clothing/clothing_robe_jedi_black_02.lua")
+--Jedi Belt
+includeFile("draft_schematic/clothing/clothing_armor_jedi_belt_01.lua")
+includeFile("draft_schematic/clothing/clothing_armor_jedi_belt_02.lua")
+includeFile("draft_schematic/clothing/clothing_armor_jedi_belt_03.lua")

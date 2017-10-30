@@ -5232,3 +5232,15 @@ object_tangible_component_armor_shared_shield_generator_vehicular = SharedTangib
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_component_armor_shared_shield_generator_vehicular, "object/tangible/component/armor/shared_shield_generator_vehicular.iff")
+
+object_tangible_component_armor_shared_mando_iron = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/component/armor/shared_mando_iron.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_armor_shared_mando_iron, "object/tangible/component/armor/shared_mando_iron.iff")
+
+object_tangible_component_armor_shared_orbalisk_shell = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/component/armor/shared_orbalisk_shell.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_armor_shared_orbalisk_shell, "object/tangible/component/armor/shared_orbalisk_shell.iff")

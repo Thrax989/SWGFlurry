@@ -23,7 +23,7 @@ lootcollectiontierthree  = {
 		{groupTemplate = "force_hunter_rare", weight = 250000},
 		{groupTemplate = "blacksun_rare", weight = 500000},
 		{groupTemplate = "giant_dune_kimo_common", weight = 250000},
-		{groupTemplate = "gurk_king", weight = 250000},
+		{groupTemplate = "gurk_king_common", weight = 250000},
 		{groupTemplate = "harrower_bone", weight = 250000},
 		
 
