@@ -1924,6 +1924,12 @@ schematics = {
 	--Jedi Robes
 	{path="object/draft_schematic/clothing/clothing_robe_jedi_black_01.iff"},
 	{path="object/draft_schematic/clothing/clothing_robe_jedi_black_02.iff"},
+	{path="object/draft_schematic/clothing/clothing_robe_jedi_tan_02.iff"},
+	{path="object/draft_schematic/clothing/clothing_robe_jedi_tan_01.iff"},
+	{path="object/draft_schematic/clothing/clothing_robe_s33.iff"},
+	{path="object/draft_schematic/clothing/clothing_robe_s33_h1.iff"},
+	{path="object/draft_schematic/clothing/clothing_robe_s32.iff"},
+	{path="object/draft_schematic/clothing/clothing_robe_s32_h1.iff"},
 	--Jedi Belt
 	{path="object/draft_schematic/clothing/clothing_armor_jedi_belt_01.iff"},
 	{path="object/draft_schematic/clothing/clothing_armor_jedi_belt_02.iff"},

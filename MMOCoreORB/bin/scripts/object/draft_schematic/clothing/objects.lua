@@ -24992,3 +24992,39 @@ clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_
 }
 
 ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_jedi_belt_03, "object/draft_schematic/clothing/shared_clothing_armor_jedi_belt_03.iff")
+
+object_draft_schematic_clothing_shared_clothing_robe_jedi_tan_01 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_robe_jedi_tan_01.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_jedi_tan_01, "object/draft_schematic/clothing/shared_clothing_robe_jedi_tan_01.iff")
+
+object_draft_schematic_clothing_shared_clothing_robe_jedi_tan_02 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_robe_jedi_tan_02.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_jedi_tan_02, "object/draft_schematic/clothing/shared_clothing_robe_jedi_tan_02.iff")
+
+object_draft_schematic_clothing_shared_clothing_robe_s32 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_robe_s32.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_s32, "object/draft_schematic/clothing/shared_clothing_robe_s32.iff")
+
+object_draft_schematic_clothing_shared_clothing_robe_s32_h1 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_robe_s32_h1.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_s32_h1, "object/draft_schematic/clothing/shared_clothing_robe_s32_h1.iff")
+
+object_draft_schematic_clothing_shared_clothing_robe_s33 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_robe_s33.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_s33, "object/draft_schematic/clothing/shared_clothing_robe_s33.iff")
+
+object_draft_schematic_clothing_shared_clothing_robe_s33_h1 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_robe_s33_h1.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_s33_h1, "object/draft_schematic/clothing/shared_clothing_robe_s33_h1.iff")

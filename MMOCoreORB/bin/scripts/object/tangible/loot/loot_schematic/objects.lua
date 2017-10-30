@@ -5567,3 +5567,39 @@ clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_armor_jedi_
 }
 
 ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_armor_jedi_belt_03_schematic, "object/tangible/loot/loot_schematic/shared_armor_jedi_belt_03_schematic.iff")
+
+object_tangible_loot_loot_schematic_shared_jedi_robe_s32_h1_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_jedi_robe_s32_h1_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_jedi_robe_s32_h1_schematic, "object/tangible/loot/loot_schematic/shared_jedi_robe_s32_h1_schematic.iff")
+
+object_tangible_loot_loot_schematic_shared_jedi_robe_s32_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_jedi_robe_s32_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_jedi_robe_s32_schematic, "object/tangible/loot/loot_schematic/shared_jedi_robe_s32_schematic.iff")
+
+object_tangible_loot_loot_schematic_shared_jedi_robe_s33_h1_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_jedi_robe_s33_h1_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_jedi_robe_s33_h1_schematic, "object/tangible/loot/loot_schematic/shared_jedi_robe_s33_h1_schematic.iff")
+
+object_tangible_loot_loot_schematic_shared_jedi_robe_s33_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_jedi_robe_s33_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_jedi_robe_s33_schematic, "object/tangible/loot/loot_schematic/shared_jedi_robe_s33_schematic.iff")
+
+object_tangible_loot_loot_schematic_shared_jedi_robe_tan_01_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_jedi_robe_tan_01_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_jedi_robe_tan_01_schematic, "object/tangible/loot/loot_schematic/shared_jedi_robe_tan_01_schematic.iff")
+
+object_tangible_loot_loot_schematic_shared_jedi_robe_tan_02_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_jedi_robe_tan_02_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_jedi_robe_tan_02_schematic, "object/tangible/loot/loot_schematic/shared_jedi_robe_tan_02_schematic.iff")

@@ -6,6 +6,8 @@ includeFile("custom_loot/groups/lightsabers/g_jinzu_razor_loot_deed.lua")
 --Custom Jedi Robe
 includeFile("custom_loot/groups/clothing/jedi_robe_black_01_group.lua")
 includeFile("custom_loot/groups/clothing/jedi_robe_black_02_group.lua")
+includeFile("custom_loot/groups/clothing/jedi_robe_tan_01_group.lua")
+includeFile("custom_loot/groups/clothing/jedi_robe_tan_02_group.lua")
 --Referral Crate
 includeFile("custom_loot/groups/ref_crate/ref_crate.lua")
 --Custom Vehicle Components
