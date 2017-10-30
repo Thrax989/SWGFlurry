@@ -41,9 +41,12 @@ looted_container = {
 
 		
 		--Housing 35%
-		{groupTemplate = "tiertwo", chance = 800000}
-		{groupTemplate = "nge_house_loot_deed_01", weight = 2500000},
+		{groupTemplate = "tiertwo", weight = 800000},
+		{groupTemplate = "nge_house_loot_deed_01", weight = 1500000},
 		{groupTemplate = "nge_house_loot_deed_windowed", weight = 1000000},
+		{groupTemplate = "jedi_belt_comp_group", weight = 500000},
+		{groupTemplate = "jedi_belt_group", weight = 500000},
+
 		--Decorations 40%
 		{groupTemplate = "crafted_rugs", weight = 400000},
 		{groupTemplate = "banner_imperial", weight = 400000},

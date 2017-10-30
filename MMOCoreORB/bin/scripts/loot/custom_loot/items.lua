@@ -35,6 +35,12 @@ includeFile("custom_loot/items/tokens/rebel_credit.lua")
 
 --Jedi Clothing Treatment
 includeFile("custom_loot/items/clothing/jedi_treatment_01.lua")
+--Jedi Belt Components
+includeFile("custom_loot/items/clothing/orbalisk_shell.lua")
+includeFile("custom_loot/items/clothing/mando_iron.lua")
+includeFile("custom_loot/items/clothing/jedi_belt_01.lua")
+includeFile("custom_loot/items/clothing/jedi_belt_02.lua")
+includeFile("custom_loot/items/clothing/jedi_belt_03.lua")
 
 --Jedi Robe
 includeFile("custom_loot/items/clothing/jedi_robe_black_01.lua")
@@ -593,4 +599,5 @@ includeFile("custom_loot/items/vehicle_comps/custom_veh_turbine.lua")
 --Custom Vehicle Schematic
 includeFile("custom_loot/items/vehicle_schematics/ab_1_vehicle_schematic.lua")
 includeFile("custom_loot/items/vehicle_schematics/barc_vehicle_schematic.lua")
+includeFile("custom_loot/items/vehicle_schematics/flare_s_vehicle_schematic.lua")
 

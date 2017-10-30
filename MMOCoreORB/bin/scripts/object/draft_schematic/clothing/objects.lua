@@ -24974,3 +24974,21 @@ clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_robe_j
 }
 
 ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_jedi_black_02, "object/draft_schematic/clothing/shared_clothing_robe_jedi_black_02.iff")
+
+object_draft_schematic_clothing_shared_clothing_armor_jedi_belt_01 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_jedi_belt_01.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_jedi_belt_01, "object/draft_schematic/clothing/shared_clothing_armor_jedi_belt_01.iff")
+
+object_draft_schematic_clothing_shared_clothing_armor_jedi_belt_02 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_jedi_belt_02.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_jedi_belt_02, "object/draft_schematic/clothing/shared_clothing_armor_jedi_belt_02.iff")
+
+object_draft_schematic_clothing_shared_clothing_armor_jedi_belt_03 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_jedi_belt_03.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_jedi_belt_03, "object/draft_schematic/clothing/shared_clothing_armor_jedi_belt_03.iff")

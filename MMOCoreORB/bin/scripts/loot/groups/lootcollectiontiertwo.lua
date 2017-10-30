@@ -28,11 +28,12 @@ lootcollectiontiertwo  = {
 		{groupTemplate = "nge_house_loot_deed_windowed", weight = 500000},
 
 		--Fill to 25%
-		{groupTemplate = "crafted_rugs", weight = 500000},
-		{groupTemplate = "g_banner_rebel", weight = 500000},
-		{groupTemplate = "g_banner_imperial", weight = 500000},
-		{groupTemplate = "g_command_console", weight = 500000},
-		{groupTemplate = "custom_vehicle_uncommon", weight = 500000},
+		{groupTemplate = "uncommon_vehicles", weight = 500000},
+		{groupTemplate = "crafted_rugs", weight = 400000},
+		{groupTemplate = "g_banner_rebel", weight = 400000},
+		{groupTemplate = "g_banner_imperial", weight = 400000},
+		{groupTemplate = "g_command_console", weight = 400000},
+		{groupTemplate = "custom_vehicle_uncommon", weight = 400000},
 	}
 }
 
