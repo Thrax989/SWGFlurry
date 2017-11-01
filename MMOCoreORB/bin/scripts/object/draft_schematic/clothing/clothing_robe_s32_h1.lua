@@ -41,39 +41,42 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_draft_schematic_clothing_clothing_robe_s32_h1 = object_draft_schematic_clothing_shared_clothing_robe_s32_h1:new {
 
---Children folder includes
+   	templateType = DRAFTSCHEMATIC,
 
--- Server Objects
-includeFile("tangible/wearables/robe/aakuan_robe.lua")
-includeFile("tangible/wearables/robe/robe_inquisitor.lua")
-includeFile("tangible/wearables/robe/robe_jedi_dark_s01.lua")
-includeFile("tangible/wearables/robe/robe_jedi_dark_s02.lua")
-includeFile("tangible/wearables/robe/robe_jedi_dark_s03.lua")
-includeFile("tangible/wearables/robe/robe_jedi_dark_s04.lua")
-includeFile("tangible/wearables/robe/robe_jedi_dark_s05.lua")
-includeFile("tangible/wearables/robe/robe_jedi_light_s01.lua")
-includeFile("tangible/wearables/robe/robe_jedi_light_s02.lua")
-includeFile("tangible/wearables/robe/robe_jedi_light_s03.lua")
-includeFile("tangible/wearables/robe/robe_jedi_light_s04.lua")
-includeFile("tangible/wearables/robe/robe_jedi_light_s05.lua")
-includeFile("tangible/wearables/robe/robe_jedi_padawan.lua")
-includeFile("tangible/wearables/robe/robe_jedi_test.lua")
-includeFile("tangible/wearables/robe/robe_prefect_talmont.lua")
-includeFile("tangible/wearables/robe/robe_s01.lua")
-includeFile("tangible/wearables/robe/robe_s04.lua")
-includeFile("tangible/wearables/robe/robe_s05.lua")
-includeFile("tangible/wearables/robe/robe_s05_h1.lua")
-includeFile("tangible/wearables/robe/robe_s12.lua")
-includeFile("tangible/wearables/robe/robe_s18.lua")
-includeFile("tangible/wearables/robe/robe_s27.lua")
-includeFile("tangible/wearables/robe/robe_tusken_raider_s01.lua")
-includeFile("tangible/wearables/robe/robe_tusken_raider_s02.lua")
-includeFile("tangible/wearables/robe/robe_jedi_black_01.lua")
-includeFile("tangible/wearables/robe/robe_jedi_black_02.lua")
-includeFile("tangible/wearables/robe/robe_jedi_tan_01.lua")
-includeFile("tangible/wearables/robe/robe_jedi_tan_02.lua")
-includeFile("tangible/wearables/robe/robe_s32.lua")
-includeFile("tangible/wearables/robe/robe_s32_h1.lua")
-includeFile("tangible/wearables/robe/robe_s33.lua")
-includeFile("tangible/wearables/robe/robe_s33_h1.lua")
+   	customObjectName = "Cloak of Hate",
+
+   	craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
+   	complexity = 20, 
+   	size = 3, 
+	factoryCrateSize = 0, 
+	disableFactoryRun = true,
+
+   	xpType = "crafting_clothing_general", 
+   	xp = 950, 
+
+   	assemblySkill = "clothing_assembly", 
+   	experimentingSkill = "clothing_experimentation", 
+   	customizationSkill = "clothing_customization", 
+
+   	customizationOptions = {},
+   	customizationStringNames = {},
+   	customizationDefaults = {},
+
+   	ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_item_ingredients_n"},
+  	 ingredientTitleNames = {"trim_and_binding", "extra_trim", "jewelry_setting", "hardware", "inner_gown", "outer_gown", "jedi_treatment_1"},
+  	 ingredientSlotType = {1, 1, 1, 0, 1, 0, 1},
+   	resourceTypes = {"object/tangible/component/clothing/shared_fiberplast_panel.iff", "object/tangible/component/clothing/shared_trim.iff", "object/tangible/component/clothing/shared_jewelry_setting.iff", "metal", "object/tangible/component/clothing/shared_synthetic_cloth.iff", "hide", "object/tangible/component/clothing/shared_clothing_jedi_treatment_01.iff"},
+   	resourceQuantities = {4, 4, 2, 160, 2, 120, 1},
+   	contribution = {100, 100, 100, 100, 100, 100, 1},
+
+
+
+   	targetTemplate = "object/tangible/wearables/robe/robe_s32_h1.iff",
+
+   	additionalTemplates = {
+             },
+
+}
+ObjectTemplates: addTemplate(object_draft_schematic_clothing_clothing_robe_s32_h1, "object/draft_schematic/clothing/clothing_robe_s32_h1.iff")

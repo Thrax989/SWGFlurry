@@ -12,3 +12,8 @@ includeFile("custom_loot/groups/tokens/g_imperial_credit.lua")
 includeFile("custom_loot/groups/tokens/g_rebel_credit.lua")
 --AB1 Schematic
 includeFile("custom_loot/groups/vehicle_schematics/uncommon_vehicles.lua")
+--Jedi Robes Generic
+includeFile("custom_loot/groups/clothing/jedi_robe_s32_group.lua")
+includeFile("custom_loot/groups/clothing/jedi_robe_s33_group.lua")
+includeFile("custom_loot/groups/clothing/jedi_robe_s32_h1_group.lua")
+includeFile("custom_loot/groups/clothing/jedi_robe_s33_h1_group.lua")

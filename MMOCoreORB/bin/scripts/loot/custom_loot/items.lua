@@ -45,6 +45,12 @@ includeFile("custom_loot/items/clothing/jedi_belt_03.lua")
 --Jedi Robe
 includeFile("custom_loot/items/clothing/jedi_robe_black_01.lua")
 includeFile("custom_loot/items/clothing/jedi_robe_black_02.lua")
+includeFile("custom_loot/items/clothing/jedi_robe_tan_02.lua")
+includeFile("custom_loot/items/clothing/jedi_robe_tan_01.lua")
+includeFile("custom_loot/items/clothing/jedi_robe_s33.lua")
+includeFile("custom_loot/items/clothing/jedi_robe_s32.lua")
+includeFile("custom_loot/items/clothing/jedi_robe_s33_h1.lua")
+includeFile("custom_loot/items/clothing/jedi_robe_s32_h1.lua")
 
 --TCG Series 1
 includeFile("custom_loot/items/tcg_series_1/decorative_bas_relief.lua")

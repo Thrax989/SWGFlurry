@@ -40,40 +40,13 @@
 --gives permission to release a modified version without this exception; 
 --this exception also makes it possible to release a modified version 
 
+object_tangible_loot_loot_schematic_jedi_robe_s33_schematic = object_tangible_loot_loot_schematic_shared_jedi_robe_s33_schematic:new {
+templateType = LOOTSCHEMATIC,
+	objectMenuComponent = "LootSchematicMenuComponent",
+	attributeListComponent = "LootSchematicAttributeListComponent",
+	requiredSkill = "crafting_tailor_master",
+	targetDraftSchematic = "object/draft_schematic/clothing/clothing_robe_s33.iff",
+	targetUseCount = 1
+}
 
-
---Children folder includes
-
--- Server Objects
-includeFile("tangible/wearables/robe/aakuan_robe.lua")
-includeFile("tangible/wearables/robe/robe_inquisitor.lua")
-includeFile("tangible/wearables/robe/robe_jedi_dark_s01.lua")
-includeFile("tangible/wearables/robe/robe_jedi_dark_s02.lua")
-includeFile("tangible/wearables/robe/robe_jedi_dark_s03.lua")
-includeFile("tangible/wearables/robe/robe_jedi_dark_s04.lua")
-includeFile("tangible/wearables/robe/robe_jedi_dark_s05.lua")
-includeFile("tangible/wearables/robe/robe_jedi_light_s01.lua")
-includeFile("tangible/wearables/robe/robe_jedi_light_s02.lua")
-includeFile("tangible/wearables/robe/robe_jedi_light_s03.lua")
-includeFile("tangible/wearables/robe/robe_jedi_light_s04.lua")
-includeFile("tangible/wearables/robe/robe_jedi_light_s05.lua")
-includeFile("tangible/wearables/robe/robe_jedi_padawan.lua")
-includeFile("tangible/wearables/robe/robe_jedi_test.lua")
-includeFile("tangible/wearables/robe/robe_prefect_talmont.lua")
-includeFile("tangible/wearables/robe/robe_s01.lua")
-includeFile("tangible/wearables/robe/robe_s04.lua")
-includeFile("tangible/wearables/robe/robe_s05.lua")
-includeFile("tangible/wearables/robe/robe_s05_h1.lua")
-includeFile("tangible/wearables/robe/robe_s12.lua")
-includeFile("tangible/wearables/robe/robe_s18.lua")
-includeFile("tangible/wearables/robe/robe_s27.lua")
-includeFile("tangible/wearables/robe/robe_tusken_raider_s01.lua")
-includeFile("tangible/wearables/robe/robe_tusken_raider_s02.lua")
-includeFile("tangible/wearables/robe/robe_jedi_black_01.lua")
-includeFile("tangible/wearables/robe/robe_jedi_black_02.lua")
-includeFile("tangible/wearables/robe/robe_jedi_tan_01.lua")
-includeFile("tangible/wearables/robe/robe_jedi_tan_02.lua")
-includeFile("tangible/wearables/robe/robe_s32.lua")
-includeFile("tangible/wearables/robe/robe_s32_h1.lua")
-includeFile("tangible/wearables/robe/robe_s33.lua")
-includeFile("tangible/wearables/robe/robe_s33_h1.lua")
+ObjectTemplates: addTemplate(object_tangible_loot_loot_schematic_jedi_robe_s33_schematic, "object/tangible/loot/loot_schematic/jedi_robe_s33_schematic.iff")

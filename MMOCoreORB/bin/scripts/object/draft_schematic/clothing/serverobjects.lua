@@ -521,7 +521,13 @@ includeFile("draft_schematic/clothing/clothing_skirt_formal_13.lua")
 includeFile("draft_schematic/clothing/clothing_skirt_formal_14.lua")
 includeFile("draft_schematic/clothing/clothing_vest_casual_01.lua")
 includeFile("draft_schematic/clothing/clothing_vest_casual_02.lua")
-includeFile("draft_schematic/clothing/clothing_vest_casual_03.lua")
+includeFile("draft_schematic/clothing/clothing_vest_casual_03.lua")includeFile("draft_schematic/clothing/clothing_robe_jedi_tan_01.lua")
+includeFile("draft_schematic/clothing/clothing_robe_jedi_tan_02.lua")
+includeFile("draft_schematic/clothing/clothing_robe_s32.lua")
+includeFile("draft_schematic/clothing/clothing_robe_s32_h1.lua")
+includeFile("draft_schematic/clothing/clothing_robe_s33.lua")
+includeFile("draft_schematic/clothing/clothing_robe_s33_h1.lua")
+
 includeFile("draft_schematic/clothing/clothing_vest_casual_04.lua")
 includeFile("draft_schematic/clothing/clothing_vest_casual_05.lua")
 includeFile("draft_schematic/clothing/clothing_vest_casual_10.lua")
@@ -591,6 +597,13 @@ includeFile("draft_schematic/clothing/clothing_armor_rebel_assault_leggings_camo
 --Jedi Robes
 includeFile("draft_schematic/clothing/clothing_robe_jedi_black_01.lua")
 includeFile("draft_schematic/clothing/clothing_robe_jedi_black_02.lua")
+includeFile("draft_schematic/clothing/clothing_robe_jedi_tan_01.lua")
+includeFile("draft_schematic/clothing/clothing_robe_jedi_tan_02.lua")
+includeFile("draft_schematic/clothing/clothing_robe_s32.lua")
+includeFile("draft_schematic/clothing/clothing_robe_s32_h1.lua")
+includeFile("draft_schematic/clothing/clothing_robe_s33.lua")
+includeFile("draft_schematic/clothing/clothing_robe_s33_h1.lua")
+
 --Jedi Belt
 includeFile("draft_schematic/clothing/clothing_armor_jedi_belt_01.lua")
 includeFile("draft_schematic/clothing/clothing_armor_jedi_belt_02.lua")
