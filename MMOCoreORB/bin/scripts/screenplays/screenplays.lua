@@ -646,7 +646,7 @@ includeFile("record_keepers/record_keepers.lua")
 --includeFile("custom_screenplays/screenplays.lua")
 
 --Halloween Event
-includeFile("events/halloween_moenia.lua")
+--includeFile("events/halloween_moenia.lua")
 
 --Custom World Bosses
 includeFile("custom_world_bosses/custom_nerf_boss.lua")
