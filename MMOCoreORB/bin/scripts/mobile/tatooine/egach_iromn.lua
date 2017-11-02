@@ -25,8 +25,9 @@ egach_iromn = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	
 	templates = {"object/mobile/dressed_bestine_capitol04.iff"},
+
+--Townsperson no loot
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

@@ -28,7 +28,8 @@ mutant_hermit_spider = Creature:new {
 	templates = {"object/mobile/hermit_spider_hue.iff"},
 	scale = 1.5,
 
---Creature Default Loot Template
+
+--Creature Reduced Loot Template
 	lootGroups = {
 		{
 			groups = {
@@ -48,12 +49,7 @@ mutant_hermit_spider = Creature:new {
 		},
 			lootChance = 25000
 		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
+		
 	},
 	weapons = {},
 	conversationTemplate = "",

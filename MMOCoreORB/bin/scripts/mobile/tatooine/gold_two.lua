@@ -25,8 +25,9 @@ gold_two = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_tatooine_gold_two.iff"},
+
+--Townsperson no loot
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

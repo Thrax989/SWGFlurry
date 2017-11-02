@@ -27,7 +27,8 @@ shaupaut = Creature:new {
 	templates = {"object/mobile/shaupaut.iff"},
 	controlDeviceTemplate = "object/intangible/pet/shaupaut_hue.iff",
 
---Creature Default Loot Template
+
+--Creature Reduced Loot Template
 	lootGroups = {
 		{
 			groups = {
@@ -47,12 +48,7 @@ shaupaut = Creature:new {
 		},
 			lootChance = 25000
 		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
+		
 	},
 	weapons = {},
 	conversationTemplate = "",

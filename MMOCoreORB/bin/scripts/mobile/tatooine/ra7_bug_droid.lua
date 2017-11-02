@@ -24,8 +24,9 @@ ra7_bug_droid = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/ra7_bug_droid.iff"},
+
+--Quest NPC no loot
 	lootGroups = {},
 	weapons = {},
 	attacks = {}

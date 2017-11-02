@@ -24,10 +24,31 @@ tatooine_mynock = Creature:new {
 	creatureBitmask = STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/mynock.iff"},
 	controlDeviceTemplate = "object/intangible/pet/mynock_hue.iff",
-	lootGroups = {},
+
+--Creature Reduced Loot Template
+	lootGroups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

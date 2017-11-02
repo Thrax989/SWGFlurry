@@ -27,8 +27,9 @@ bith_musician = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_commoner_tatooine_bith_male_03.iff"},
+
+--Townsperson no loot
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

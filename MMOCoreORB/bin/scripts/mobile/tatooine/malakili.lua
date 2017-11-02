@@ -24,8 +24,9 @@ malakili = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/malakili.iff"},
+
+--Quest NPC no loot
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

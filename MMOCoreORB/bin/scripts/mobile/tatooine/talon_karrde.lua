@@ -24,8 +24,9 @@ talon_karrde = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_talon_karrde.iff"},
+
+--Townsperson no loot
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",--TODO: convert to a JTL 'Smuggler Alliance' PILOT TRAINER for 'Tier 2' missions

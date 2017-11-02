@@ -26,18 +26,52 @@ weequay_champion = Creature:new {
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_tatooine_weequay_champion.iff"},
+		
+--NPC (Faction Loot) Default Template with Printer Parts
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 4500000},
-				{group = "tailor_components", chance = 1500000},
-				{group = "loot_kit_parts", chance = 2000000},
-				{group = "printer_parts", chance = 1000000},
-				{group = "weequay_common", chance = 500000},
-				{group = "color_crystals", chance = 500000}
-			}
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 7000000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+--Change this group to Faction loot group
+		{
+			groups = {
+				{group = "weequay_common", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "printer_parts", chance = 10000000}
+		},
+			lootChance = 2000000
 		}
 	},
 	weapons = {"rebel_weapons_heavy"},

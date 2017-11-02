@@ -27,7 +27,7 @@ nightspider = Creature:new {
 	templates = {"object/mobile/nightspider.iff"},
 	scale = .5,
 
---Creature Default Loot Template
+--Creature Reduced Loot Template
 	lootGroups = {
 		{
 			groups = {
@@ -47,12 +47,7 @@ nightspider = Creature:new {
 		},
 			lootChance = 25000
 		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
+		
 	},
 	weapons = {},
 	conversationTemplate = "",

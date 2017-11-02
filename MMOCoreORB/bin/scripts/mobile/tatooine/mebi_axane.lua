@@ -25,8 +25,9 @@ mebi_axane = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/gran_male.iff"},
+
+--Quest NPC no loot
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

@@ -28,7 +28,8 @@ spineflap_gatherer = Creature:new {
 	controlDeviceTemplate = "object/intangible/pet/capper_spineflap_hue.iff",
 	scale = 1.05,
 
---Creature Default Loot Template
+
+--Creature Reduced Loot Template
 	lootGroups = {
 		{
 			groups = {
@@ -48,12 +49,7 @@ spineflap_gatherer = Creature:new {
 		},
 			lootChance = 25000
 		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
+		
 	},
 	weapons = {},
 	conversationTemplate = "",

@@ -27,7 +27,7 @@ bark_mite_hatchling = Creature:new {
 	templates = {"object/mobile/bark_mite_hatchling.iff"},
 	scale = 0.85,
 
---Creature Default Loot Template
+--Creature Reduced Loot Template
 	lootGroups = {
 		{
 			groups = {
@@ -47,12 +47,7 @@ bark_mite_hatchling = Creature:new {
 		},
 			lootChance = 25000
 		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
+		
 	},
 	weapons = {},
 	conversationTemplate = "",

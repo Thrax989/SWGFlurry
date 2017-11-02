@@ -27,7 +27,7 @@ mott = Creature:new {
 	templates = {"object/mobile/mott.iff"},
 	controlDeviceTemplate = "object/intangible/pet/mott_hue.iff",
 
---Creature Default Loot Template
+--Creature Reduced Loot Template
 	lootGroups = {
 		{
 			groups = {
@@ -47,12 +47,7 @@ mott = Creature:new {
 		},
 			lootChance = 25000
 		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
+		
 	},
 	weapons = {},
 	conversationTemplate = "",
