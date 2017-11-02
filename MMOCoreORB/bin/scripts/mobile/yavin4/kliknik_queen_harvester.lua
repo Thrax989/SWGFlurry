@@ -24,16 +24,41 @@ kliknik_queen_harvester = Creature:new {
 	creatureBitmask = PACK + HERD + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/kliknik_hue.iff"},
 	scale = 1.2,
+	
+--Creature Default Loot Template
 	lootGroups = {
-	 {
-	        groups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		},
+		{
+			groups = {
 				{group = "kliknik_common", chance = 10000000}
-			},
-			lootChance = 1600000
-		}
+		},
+			lootChance = 1000000
+		},
 	},
 	weapons = {"creature_spit_small_yellow"},
 	conversationTemplate = "",

@@ -26,17 +26,54 @@ stranded_imperial_officer = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_stranded_imperial_officer.iff"},
+
+--Imperial Officer Loot Template	
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 100000},
-				{group = "junk", chance = 9700000},
-				{group = "clothing_attachments", chance = 100000},
-				{group = "armor_attachments", chance = 100000},
-			}
-		}
+				{group = "junk", chance = 7500000},
+				{group = "imperial_officer_common", chance = 2500000},
+		},
+			lootChance = 500000 
+
+		},
+		{
+			groups = {
+				{group = "g_rebel_credit", chance = 10000000}
+		},
+			lootChance = 200000 
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "rebpoints", chance = 10000000}
+		},
+			lootChance = 100000 
+		},
 	},
 	weapons = {"imperial_weapons_heavy"},
 	conversationTemplate = "",
