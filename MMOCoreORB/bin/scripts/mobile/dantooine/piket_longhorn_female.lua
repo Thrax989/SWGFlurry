@@ -25,10 +25,36 @@ piket_longhorn_female = Creature:new {
 	creatureBitmask = HERD,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/piket_hue.iff"},
 	scale = 0.95,
-	lootGroups = {},
+
+--Creature Default Loot Template
+	lootGroups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

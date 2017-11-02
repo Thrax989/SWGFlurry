@@ -41,12 +41,14 @@ beldonnas_league_enforcer = Creature:new {
 		"object/mobile/dressed_criminal_thug_zabrak_male_01.iff",
 		"object/mobile/dressed_villain_trandoshan_female_01.iff",
 		"object/mobile/dressed_villain_trandoshan_male_01.iff"},
+
+--NPC (Faction Loot) Default Template with Lootkit Drops
 	lootGroups = {
 		{
 			groups = {
 				{group = "junk", chance = 10000000}				
 		},
-			lootChance = 10000000
+			lootChance = 7000000
 		},
 		{
 			groups = {
@@ -72,6 +74,7 @@ beldonnas_league_enforcer = Creature:new {
 		},
 			lootChance = 50000
 		},
+--Change this group to Faction loot group
 		{
 			groups = {
 				{group = "beldonnas_common", chance = 10000000}

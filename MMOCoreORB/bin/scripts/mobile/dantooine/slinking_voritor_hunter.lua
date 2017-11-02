@@ -24,16 +24,49 @@ slinking_voritor_hunter = Creature:new {
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/slinking_voritor_hunter.iff"},
 	scale = 1.25,
+
+--Creature with special loot Default Template 
 	lootGroups = {
 		{
 			groups = {
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+--Change this group to special loot group
+		{
+			groups = {
 				{group = "voritor_lizard_common", chance = 10000000}
-			},
-			lootChance = 2140000
-		}
+		},
+			lootChance = 1000000
+		},
+		
 	},
 	weapons = {},
 	conversationTemplate = "",
