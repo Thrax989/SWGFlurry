@@ -24,11 +24,37 @@ rhoa_kwi_guardian = Creature:new {
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/kwi_hue.iff"},
 	controlDeviceTemplate = "object/intangible/pet/kwi_hue.iff",
 	scale = 1.25,
-	lootGroups = {},
+
+--Creature Default Loot Template
+	lootGroups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		}
+	},
 	weapons = {"creature_spit_small_red"},
 	conversationTemplate = "",
 	attacks = {

@@ -25,25 +25,77 @@ axkva_min = Creature:new {
 	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_dathomir_nightsister_axkva.iff"},
+
+--Mini Boss Template
 	lootGroups = {
 		{
 			groups = {
-				{group = "power_crystals", chance = 2000000},
-				{group = "nightsister_common", chance = 6000000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000},
-				
-			}
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 100000
 		},
 		{
 			groups = {
-				{group = "axkva_min", chance = 10000000},
-			},
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 7500000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 3500000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 3500000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 3500000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 3500000
+		},
+		{
+			groups = {
+				{group = "axkva_min", chance = 10000000}
+		},
 			lootChance = 10000000
-		}
-	},
+		},
+},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
 	attacks = merge(fencermaster,swordsmanmaster,tkamaster,pikemanmaster,brawlermaster,forcepowermaster)

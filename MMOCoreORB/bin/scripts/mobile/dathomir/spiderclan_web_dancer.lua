@@ -26,19 +26,54 @@ spiderclan_web_dancer = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_dathomir_spider_nightsister_web_dancer.iff"},
+
+	--NPC with AA/CA Template SMC Generic
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 4500000},
-				{group = "power_crystals", chance = 500000},
-				{group = "color_crystals", chance = 500000},
-				{group = "armor_attachments", chance = 1500000},
-				{group = "clothing_attachments", chance = 1500000},
-				{group = "tailor_components", chance = 1500000}
-			}
-		}
+				{group = "junk", chance = 10000000},
+		},
+			lootChance = 500000 
+
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000}
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 10000000}
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",

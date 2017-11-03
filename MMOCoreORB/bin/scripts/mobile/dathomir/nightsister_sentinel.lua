@@ -26,19 +26,59 @@ nightsister_sentinel = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_dathomir_nightsister_sentinal.iff"},
+	
+--NPC with AA/CA Template Nightsister Generic
 	lootGroups = {
 		{
 			groups = {
-				{group = "power_crystals", chance = 1000000},
-				{group = "nightsister_common", chance = 3000000},
-				{group = "junk", chance = 4000000},
-				{group = "armor_attachments", chance = 1000000},
-				{group = "clothing_attachments", chance = 1000000},
-				
-			}
-		}
+				{group = "junk", chance = 10000000},
+		},
+			lootChance = 500000 
+
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000}
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 10000000}
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "nightsister_common", chance = 10000000}
+		},
+			lootChance = 3000000
+		},
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
