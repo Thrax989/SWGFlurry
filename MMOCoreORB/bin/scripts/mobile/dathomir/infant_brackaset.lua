@@ -47,7 +47,7 @@ infant_brackaset = Creature:new {
 		},
 			lootChance = 25000
 		},
-		
+	},	
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

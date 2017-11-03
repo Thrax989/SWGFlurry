@@ -47,7 +47,7 @@ injured_kwi = Creature:new {
 		},
 			lootChance = 25000
 		},
-		
+	},	
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
