@@ -5603,3 +5603,15 @@ clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_jedi_robe_t
 }
 
 ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_jedi_robe_tan_02_schematic, "object/tangible/loot/loot_schematic/shared_jedi_robe_tan_02_schematic.iff")
+
+object_tangible_loot_loot_schematic_shared_jedi_robe_gray_01_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_jedi_robe_gray_01_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_jedi_robe_gray_01_schematic, "object/tangible/loot/loot_schematic/shared_jedi_robe_gray_01_schematic.iff")
+
+object_tangible_loot_loot_schematic_shared_jedi_robe_gray_02_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_jedi_robe_gray_02_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_jedi_robe_gray_02_schematic, "object/tangible/loot/loot_schematic/shared_jedi_robe_gray_02_schematic.iff")

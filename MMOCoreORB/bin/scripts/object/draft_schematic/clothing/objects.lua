@@ -25028,3 +25028,15 @@ clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_robe_s
 }
 
 ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_s33_h1, "object/draft_schematic/clothing/shared_clothing_robe_s33_h1.iff")
+
+object_draft_schematic_clothing_shared_clothing_robe_jedi_gray_01 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_robe_jedi_gray_01.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_jedi_gray_01, "object/draft_schematic/clothing/shared_clothing_robe_jedi_gray_01.iff")
+
+object_draft_schematic_clothing_shared_clothing_robe_jedi_gray_02 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_robe_jedi_gray_02.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_jedi_gray_02, "object/draft_schematic/clothing/shared_clothing_robe_jedi_gray_02.iff")

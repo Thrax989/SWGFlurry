@@ -44,10 +44,12 @@ lootcollectiontierthree  = {
 		--Fill to 25%
 		{groupTemplate = "exar_kun_ls_group", weight = 150000},
 		{groupTemplate = "g_jinzu_razor_loot_deed", weight = 150000},
-		{groupTemplate = "jedi_robe_black_01_group", weight = 400000},
-		{groupTemplate = "jedi_robe_black_02_group", weight = 400000},
-		{groupTemplate = "jedi_robe_tan_01_group", weight = 500000},
+		{groupTemplate = "jedi_robe_black_01_group", weight = 200000},
+		{groupTemplate = "jedi_robe_black_02_group", weight = 200000},
+		{groupTemplate = "jedi_robe_tan_01_group", weight = 200000},
 		{groupTemplate = "jedi_robe_tan_02_group", weight = 500000},
+		{groupTemplate = "jedi_robe_gray_01_group", weight = 200000},
+		{groupTemplate = "jedi_robe_gray_02_group", weight = 500000},
 		{groupTemplate = "theme_park_reward_imperial_kaja", weight = 400000},
 	
 	}
