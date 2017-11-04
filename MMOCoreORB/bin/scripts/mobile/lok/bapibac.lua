@@ -24,8 +24,9 @@ bapibac = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = HERD,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_rebel_trooper_human_male_01.iff"},
+
+--Quest NPC no loot
 	lootGroups = {},
 	weapons = {"rebel_weapons_light"},
 	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster)

@@ -144,15 +144,9 @@ kimo_commoner = Creature:new {
 			"object/mobile/dressed_commoner_tatooine_trandoshan_female_04.iff",
 			"object/mobile/dressed_commoner_tatooine_trandoshan_male_01.iff",
 			"object/mobile/dressed_commoner_tatooine_trandoshan_male_02.iff" },
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "loot_kit_parts", chance = 3500000},
-				{group = "tailor_components", chance = 1500000},
-			}
-		}
-	},
+	lootGroups = {},
+
+--Townsperson no loot
 	weapons = {"ranged_weapons"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/townperson",

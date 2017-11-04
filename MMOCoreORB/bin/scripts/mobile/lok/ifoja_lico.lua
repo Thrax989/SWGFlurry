@@ -24,8 +24,9 @@ ifoja_lico = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = HERD,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_rebel_specforce_pathfinder_human_male_01.iff"},
+
+--Townsperson no loot
 	lootGroups = {},
 	weapons = {"rebel_weapons_light"},
 	attacks = {}

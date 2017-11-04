@@ -27,13 +27,39 @@ aged_kimogila = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/kimogila_hue.iff"},
+	
+--Creature Default Loot Template Kimo
 	lootGroups = {
-	 {
-	        groups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		},
+	 	{
+	        	groups = {
 				{group = "kimogila_common", chance = 10000000}
-			},
+		},
 			lootChance = 3460000
-		}
+		},
 	},
 	weapons = {},
 	conversationTemplate = "",

@@ -31,18 +31,42 @@ mercenary_commander = Creature:new {
 		"object/mobile/dressed_mercenary_commander_hum_m.iff",
 		"object/mobile/dressed_mercenary_commander_nikto_m.iff",
 		"object/mobile/dressed_mercenary_commander_wee_m.iff",
-		"object/mobile/dressed_mercenary_commander_zab_m.iff"
-	},
+		"object/mobile/dressed_mercenary_commander_zab_m.iff"},
+
+	--NPC with AA/CA Template Generic
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 7500000},
-				{group = "tailor_components", chance = 1000000},
-				{group = "color_crystals", chance = 500000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "armor_attachments", chance = 500000}
-			}
-		}
+				{group = "junk", chance = 10000000},
+		},
+			lootChance = 500000 
+
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		
 	},
 	weapons = {"rebel_weapons_heavy"},
 	conversationTemplate = "",
