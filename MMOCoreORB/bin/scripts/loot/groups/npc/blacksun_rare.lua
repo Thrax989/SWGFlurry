@@ -14,7 +14,7 @@ blacksun_rare = {
 		{itemTemplate = "bh_armor_helmet", weight = 900000},
 		{itemTemplate = "bh_armor_leggings", weight = 900000},
 		{itemTemplate = "bh_armor_chest_plate", weight = 900000},
-		{itemTemplate = "bh_armor_chest_gloves", weight = 900000},
+		{itemTemplate = "bh_armor_gloves", weight = 900000},
 		{itemTemplate = "bh_armor_boots", weight = 900000}
 
 	}

@@ -26,6 +26,7 @@ nightsister_stalker = Creature:new {
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+	templates = {"object/mobile/dressed_dathomir_nightsister_stalker.iff"},
 	
 --NPC with AA/CA Template Nightsister Generic
 	lootGroups = {
