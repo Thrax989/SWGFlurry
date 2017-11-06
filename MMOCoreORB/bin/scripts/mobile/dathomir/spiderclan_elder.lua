@@ -6,8 +6,8 @@ spiderclan_elder = Creature:new {
 	faction = "spider_nightsister",
 	level = 277,
 	chanceHit = 27.25,
-	damageMin = 1520,
-	damageMax = 2750,
+	damageMin = 1020,
+	damageMax = 2250,
 	baseXp = 26555,
 	baseHAM = 321000,
 	baseHAMmax = 392000,
@@ -41,13 +41,13 @@ spiderclan_elder = Creature:new {
 			groups = {
 				{group = "armor_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 500000
 		},
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 500000
 		},
 		{
 			groups = {

@@ -28,7 +28,7 @@ wandering_desert_marauder = Creature:new {
 	diet = HERBIVORE,
 	scale = 1.35,
 	templates = {"object/mobile/dressed_wandering_desert_marauder.iff"},
-	
+
 --NPC with AA/CA Template Generic
 	lootGroups = {
 		{
@@ -42,13 +42,13 @@ wandering_desert_marauder = Creature:new {
 			groups = {
 				{group = "armor_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 100000
 		},
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 100000
 		},
 		{
 			groups = {

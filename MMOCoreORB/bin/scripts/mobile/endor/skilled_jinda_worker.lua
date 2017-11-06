@@ -32,6 +32,7 @@ skilled_jinda_worker = Creature:new {
 		"object/mobile/jinda_male_01.iff",
 		"object/mobile/jinda_female_01.iff"},
 		
+		
 --NPC with AA/CA Template Ewok Generic
 	lootGroups = {
 		{
@@ -45,13 +46,13 @@ skilled_jinda_worker = Creature:new {
 			groups = {
 				{group = "armor_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 100000
 		},
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 100000
 		},
 		{
 			groups = {

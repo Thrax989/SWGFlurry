@@ -29,8 +29,8 @@ hardened_jinda_warrior = Creature:new {
 	templates = {
 		"object/mobile/jinda_male.iff",
 		"object/mobile/jinda_male_01.iff"},
-
---NPC with AA/CA Template Generic
+		
+--NPC with AA/CA Template Ewok Generic
 	lootGroups = {
 		{
 			groups = {
@@ -43,13 +43,13 @@ hardened_jinda_warrior = Creature:new {
 			groups = {
 				{group = "armor_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 100000
 		},
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 100000
 		},
 		{
 			groups = {
@@ -75,7 +75,12 @@ hardened_jinda_warrior = Creature:new {
 		},
 			lootChance = 50000
 		},
-		
+		{
+			groups = {
+				{group = "ewok", chance = 10000000}
+		},
+			lootChance = 3000000
+		},
 	},
 	weapons = {"ewok_weapons"},
 	conversationTemplate = "",

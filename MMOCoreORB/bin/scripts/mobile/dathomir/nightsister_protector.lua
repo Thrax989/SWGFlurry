@@ -6,8 +6,8 @@ nightsister_protector = Creature:new {
 	faction = "nightsister",
 	level = 131,
 	chanceHit = 4.75,
-	damageMin = 770,
-	damageMax = 1250,
+	damageMin = 570,
+	damageMax = 1050,
 	baseXp = 12424,
 	baseHAM = 50000,
 	baseHAMmax = 61000,
@@ -41,13 +41,13 @@ nightsister_protector = Creature:new {
 			groups = {
 				{group = "armor_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 100000
 		},
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 100000
 		},
 		{
 			groups = {

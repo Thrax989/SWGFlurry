@@ -27,8 +27,8 @@ nightsister_slave = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 	templates = {"object/mobile/dressed_dathomir_nightsister_slave.iff"},
-
---NPC with Lootkit Template Nightsister Reduced
+	
+--NPC with AA/CA Template Nightsister Generic
 	lootGroups = {
 		{
 			groups = {
@@ -37,7 +37,18 @@ nightsister_slave = Creature:new {
 			lootChance = 500000 
 
 		},
-		
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 10000000}
+		},
+			lootChance = 100000
+		},
 		{
 			groups = {
 				{group = "artifact", chance = 10000000}			
@@ -64,15 +75,9 @@ nightsister_slave = Creature:new {
 		},
 		{
 			groups = {
-				{group = "loot_kit_parts", chance = 10000000}
-		},
-			lootChance = 150000
-		},
-		{
-			groups = {
 				{group = "nightsister_common", chance = 10000000}
 		},
-			lootChance = 150000
+			lootChance = 3000000
 		},
 	},
 	weapons = {},
