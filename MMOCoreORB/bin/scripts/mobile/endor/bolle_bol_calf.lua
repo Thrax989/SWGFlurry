@@ -25,10 +25,36 @@ bolle_bol_calf = Creature:new {
 	creatureBitmask = PACK + HERD,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/bolle_bol_calf.iff"},
 	scale = 0.65,
-	lootGroups = {},
+
+--Creature Default Loot Template
+	lootGroups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

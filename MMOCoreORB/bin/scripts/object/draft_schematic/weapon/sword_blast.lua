@@ -1,6 +1,5 @@
 object_draft_schematic_weapon_sword_blast = object_draft_schematic_weapon_shared_sword_blast:new {
 
-templateType = DRAFTSCHEMATIC,
 
    templateType = DRAFTSCHEMATIC,
 

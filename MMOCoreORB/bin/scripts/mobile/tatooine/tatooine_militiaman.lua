@@ -26,19 +26,38 @@ tatooine_militiaman = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {
 		"object/mobile/dressed_tatooine_militiaman.iff",
 		"object/mobile/dressed_eisley_officer_trandoshan_female_01.iff",
 		"object/mobile/dressed_eisley_officer_aqualish_male_01.iff"},
+
+--Default Reduced NPC Template	
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 7000000},
-				{group = "loot_kit_parts", chance = 2000000},
-				{group = "tailor_components", chance = 1000000},
-			}
-		}
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		
 	},
 	weapons = {"rebel_weapons_light"},
 	conversationTemplate = "",

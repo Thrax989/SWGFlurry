@@ -27,16 +27,42 @@ krayt_dragon_adolescent = Creature:new {
 
 	templates = {"object/mobile/krayt_dragon_hue.iff"},
 	scale = 0.7;
+		
+--Creature J Krayt Loot Template
 	lootGroups = {
 		{
-	        groups = {
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		},
+		{
+	        	groups = {
 				{group = "krayt_tissue_rare", chance = 3000000},
 				{group = "krayt_dragon_common", chance = 5500000},
 				{group = "krayt_pearls", chance = 1500000}
 				
-			},
+		},
 			lootChance = 7720000
-		}
+		},
 	},
 	weapons = {},
 	conversationTemplate = "",

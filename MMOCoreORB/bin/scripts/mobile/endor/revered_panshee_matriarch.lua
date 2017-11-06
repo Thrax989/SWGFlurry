@@ -24,15 +24,40 @@ revered_panshee_matriarch = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {
 		"object/mobile/dressed_ewok_f_05.iff"},
+
+--NPC Ewok Loot Template
 	lootGroups = {
-		 {
-	        groups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		},
+		{
+			groups = {
 				{group = "ewok", chance = 10000000}
 			},
-			lootChance = 1780000
+			lootChance = 1460000
 		}
 	},
 	weapons = {"ewok_weapons"},

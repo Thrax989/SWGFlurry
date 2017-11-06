@@ -24,17 +24,50 @@ spiked_slasher = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/voritor_lizard_hue.iff"},
 	controlDeviceTemplate = "object/intangible/pet/voritor_lizard_hue.iff",
 	scale = 1.3,
+
+--Creature with special loot Default Template 
 	lootGroups = {
 		{
 			groups = {
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+--Change this group to special loot group
+		{
+			groups = {
 				{group = "voritor_lizard_common", chance = 10000000}
-			},
-			lootChance = 2160000
-		}
+		},
+			lootChance = 1000000
+		},
+		
 	},
 	weapons = {},
 	conversationTemplate = "",

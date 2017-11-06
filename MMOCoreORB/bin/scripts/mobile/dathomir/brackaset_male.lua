@@ -24,18 +24,45 @@ brackaset_male = Creature:new {
 	creatureBitmask = PACK + HERD,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/brackaset_hue.iff"},
 	controlDeviceTemplate = "object/intangible/pet/brackaset_hue.iff",
 	scale = 1.1,
+
+
+--Creature Template Brackaset
 	lootGroups = {
-		 {
-	        groups = {
-				{group = "brackaset_common", chance = 10000000}
-			},
-			lootChance = 1600000
-		}
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		},
+		{
+			groups = {
+				{group = "brackaset_common", chance = 10000000},
+		},
+			lootChance = 1520000
+		},
 	},
+
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

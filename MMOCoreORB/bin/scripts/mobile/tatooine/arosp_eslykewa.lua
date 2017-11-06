@@ -25,8 +25,8 @@ arosp_eslykewa = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_rebel_specforce_pathfinder_moncal_female_01.iff"},
+--Townsperson no loot
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

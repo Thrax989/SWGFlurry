@@ -28,6 +28,8 @@ acicular_defender = Creature:new {
 	templates = {"object/mobile/paralope.iff"},
 	controlDeviceTemplate = "object/intangible/pet/swirl_prong_hue.iff",
 	scale = 1.2,
+
+--Creature Default Loot Template
 	lootGroups = {
 		{
 			groups = {

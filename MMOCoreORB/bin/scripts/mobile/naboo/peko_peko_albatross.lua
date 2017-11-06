@@ -27,13 +27,39 @@ peko_peko_albatross = Creature:new {
 
 	templates = {"object/mobile/peko_peko_hue.iff"},
 	scale = 2.0,
+
+--Creature Default Loot Template
 	lootGroups = {
-	 {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		},
+	 	{
 	        groups = {
 				{group = "peko_albatross", chance = 10000000}
-			},
+		},
 			lootChance = 4100000
-		}
+		},
 	},
 	weapons = {},
 	conversationTemplate = "",

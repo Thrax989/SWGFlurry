@@ -24,10 +24,44 @@ mature_snorbal_male = Creature:new {
 	creatureBitmask = PACK + HERD,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/elder_snorbal_male.iff"},
 	scale = 1.1,
-	lootGroups = {},
+
+--NPC with AA/CA Template Generic
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000},
+		},
+			lootChance = 500000 
+
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

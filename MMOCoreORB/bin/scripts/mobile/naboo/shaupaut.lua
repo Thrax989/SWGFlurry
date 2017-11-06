@@ -24,10 +24,32 @@ shaupaut = Creature:new {
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/shaupaut.iff"},
 	controlDeviceTemplate = "object/intangible/pet/shaupaut_hue.iff",
-	lootGroups = {},
+
+
+--Creature Reduced Loot Template
+	lootGroups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

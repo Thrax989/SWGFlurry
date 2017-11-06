@@ -24,8 +24,9 @@ melo = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = HERD,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/rodian_female.iff"},
+
+--Townsperson no loot
 	lootGroups = {},
 	weapons = {},
 	attacks = {}

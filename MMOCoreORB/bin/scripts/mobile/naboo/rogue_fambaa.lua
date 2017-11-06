@@ -25,16 +25,49 @@ rogue_fambaa = Creature:new {
 	creatureBitmask = NONE,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/fambaa_hue.iff"},
 	scale = 1.1,
+
+--Creature with special loot Default Template 
 	lootGroups = {
-	 {
-	        groups = {
+		{
+			groups = {
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 7000000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+--Change this group to special loot group
+		{
+			groups = {
 				{group = "fambaa_common", chance = 10000000}
-			},
-			lootChance = 1740000
-		}
+		},
+			lootChance = 1000000
+		},
+		
 	},
 	weapons = {},
 	conversationTemplate = "",

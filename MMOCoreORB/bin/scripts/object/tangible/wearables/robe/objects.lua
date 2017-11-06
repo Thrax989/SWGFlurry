@@ -1512,3 +1512,15 @@ clientTemplateFileName = "object/tangible/wearables/robe/shared_robe_jedi_tan_02
 }
 
 ObjectTemplates: addClientTemplate(object_tangible_wearables_robe_shared_robe_jedi_tan_02, "object/tangible/wearables/robe/shared_robe_jedi_tan_02.iff")
+
+object_tangible_wearables_robe_shared_robe_jedi_gray_01 = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/wearables/robe/shared_robe_jedi_gray_01.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_wearables_robe_shared_robe_jedi_gray_01, "object/tangible/wearables/robe/shared_robe_jedi_gray_01.iff")
+
+object_tangible_wearables_robe_shared_robe_jedi_gray_02 = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/wearables/robe/shared_robe_jedi_gray_02.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_wearables_robe_shared_robe_jedi_gray_02, "object/tangible/wearables/robe/shared_robe_jedi_gray_02.iff")

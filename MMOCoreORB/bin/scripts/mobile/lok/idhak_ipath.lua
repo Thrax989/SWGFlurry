@@ -24,8 +24,9 @@ idhak_ipath = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = HERD,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_noble_fat_twilek_female_01.iff"},
+
+--Townsperson no loot
 	lootGroups = {},
 	weapons = {},
 	attacks = {}

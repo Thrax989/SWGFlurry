@@ -25,16 +25,41 @@ masterful_ewok_warrior = Creature:new {
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER,
 	diet = HERBIVORE,
-
 	templates = {
 		"object/mobile/dressed_ewok_m_06.iff",
 		"object/mobile/dressed_ewok_m_08.iff"},
+
+--NPC Ewok Loot Template
 	lootGroups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		},
 		{
 			groups = {
 				{group = "ewok", chance = 10000000}
 			},
-			lootChance = 1220000
+			lootChance = 1460000
 		}
 	},
 	weapons = {"ewok_weapons"},

@@ -25,8 +25,9 @@ ysnide_omewror = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_noble_fat_twilek_female_01.iff"},
+
+--Townsperson no loot
 	lootGroups = {},
 	conversationTemplate = "",
 	attacks = {}

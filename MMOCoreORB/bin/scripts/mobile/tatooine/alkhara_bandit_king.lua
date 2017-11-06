@@ -26,16 +26,52 @@ alkhara_bandit_king = Creature:new {
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_tatooine_alkhara_king.iff"},
-	lootGroups = {
+
+--NPC Faction Loot Kit Template	Alkhara
+lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 8000000},
-				{group = "loot_kit_parts", chance = 1500000},
-				{group = "alkhara_common", chance = 500000}
-			}
-		}
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "loot_kit_parts", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "alkhara_common", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",

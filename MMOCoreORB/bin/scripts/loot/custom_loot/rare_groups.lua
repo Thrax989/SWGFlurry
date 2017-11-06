@@ -8,6 +8,8 @@ includeFile("custom_loot/groups/clothing/jedi_robe_black_01_group.lua")
 includeFile("custom_loot/groups/clothing/jedi_robe_black_02_group.lua")
 includeFile("custom_loot/groups/clothing/jedi_robe_tan_01_group.lua")
 includeFile("custom_loot/groups/clothing/jedi_robe_tan_02_group.lua")
+includeFile("custom_loot/groups/clothing/jedi_robe_gray_01_group.lua")
+includeFile("custom_loot/groups/clothing/jedi_robe_gray_02_group.lua")
 --Referral Crate
 includeFile("custom_loot/groups/ref_crate/ref_crate.lua")
 --Custom Vehicle Components

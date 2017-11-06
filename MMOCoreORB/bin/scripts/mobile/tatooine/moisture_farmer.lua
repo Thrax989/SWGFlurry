@@ -25,17 +25,10 @@ moisture_farmer = Creature:new {
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = NONE,
 	diet = HERBIVORE,
-
 	templates = {"object/mobile/dressed_tatooine_moisture_farmer.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 7000000},
-				{group = "loot_kit_parts", chance = 2000000},
-				{group = "tailor_components", chance = 1000000},
-			}
-		}
-	},
+
+--Townsperson no loot
+	lootGroups = {},
 	weapons = {"rebel_weapons_light"},
 	reactionStf = "@npc_reaction/townperson",
 	attacks = merge(marksmannovice,brawlernovice)

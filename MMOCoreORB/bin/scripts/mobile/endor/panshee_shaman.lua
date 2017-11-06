@@ -26,18 +26,42 @@ panshee_shaman = Creature:new {
 	creatureBitmask = PACK + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {
 		"object/mobile/dressed_ewok_m_03.iff",
 		"object/mobile/dressed_ewok_m_07.iff",
 		"object/mobile/dressed_ewok_m_11.iff"},
+	
+--NPC Ewok Loot Template
 	lootGroups = {
 		{
 			groups = {
-				{group = "ewok", chance = 10000000},
-
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		},
+		{
+			groups = {
+				{group = "ewok", chance = 10000000}
 			},
-			lootChance = 10000000
+			lootChance = 1460000
 		}
 	},
 	weapons = {"ewok_weapons"},

@@ -24,10 +24,31 @@ nightspider_aggressor = Creature:new {
 	creatureBitmask = PACK + HERD + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/nightspider_aggressor.iff"},
 	scale = 0.55,
-	lootGroups = {},
+
+--Creature Reduced Loot Template
+	lootGroups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

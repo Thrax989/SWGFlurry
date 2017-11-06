@@ -26,16 +26,41 @@ tainted_pubam_dark_shaman = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
 	templates = {
 		"object/mobile/dulok_male.iff",
 		"object/mobile/dulok_female.iff"},
+	
+--NPC Ewok Loot Template
 	lootGroups = {
 		{
 			groups = {
-				{group = "ewok", chance = 10000000},
-				},
-			lootChance = 1700000
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		},
+		{
+			groups = {
+				{group = "ewok", chance = 10000000}
+			},
+			lootChance = 1460000
 		}
 	},
 	weapons = {},

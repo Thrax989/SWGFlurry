@@ -40,26 +40,27 @@ looted_container = {
 		{itemTemplate = "attachment_armor", weight = 43860},
 
 		
-		--Housing 35%
-		{groupTemplate = "jedi_robe_s32_group", weight = 200000},
-		{groupTemplate = "jedi_robe_s33_group", weight = 200000},
-		{groupTemplate = "jedi_robe_s32_h1_group", weight = 200000},
-		{groupTemplate = "jedi_robe_s33_h1_group", weight = 200000},
+		
+		{groupTemplate = "jedi_robe_s32_group", weight = 300000},
+		{groupTemplate = "jedi_robe_s33_group", weight = 300000},
+		{groupTemplate = "jedi_robe_s32_h1_group", weight = 300000},
+		{groupTemplate = "jedi_robe_s33_h1_group", weight = 300000},
 		{groupTemplate = "tiertwo", weight = 700000},
 		{groupTemplate = "nge_house_loot_deed_01", weight = 1000000},
 		{groupTemplate = "nge_house_loot_deed_windowed", weight = 800000},
-		{groupTemplate = "jedi_belt_comp_group", weight = 500000},
-		{groupTemplate = "jedi_belt_group", weight = 500000},
+		{groupTemplate = "jedi_belt_comp_group", weight = 1000000},
+		
 
-		--Decorations 40%
+		
+		{groupTemplate = "jedi_belt_group", weight = 1000000},
 		{groupTemplate = "crafted_rugs", weight = 400000},
-		{groupTemplate = "banner_imperial", weight = 400000},
-		{groupTemplate = "banner_imperial02", weight = 400000},
-		{groupTemplate = "banner_rebel", weight = 400000},
-		{groupTemplate = "banner_rebel02", weight = 400000},
-		{groupTemplate = "command_console", weight = 400000},
-		{groupTemplate = "potted_plants_large", weight = 400000},
-		{groupTemplate = "potted_plants_small", weight = 400000},
+		{groupTemplate = "banner_imperial", weight = 200000},
+		{groupTemplate = "banner_imperial02", weight = 200000},
+		{groupTemplate = "banner_rebel", weight = 200000},
+		{groupTemplate = "banner_rebel02", weight = 200000},
+		{groupTemplate = "command_console", weight = 200000},
+		{groupTemplate = "potted_plants_large", weight = 200000},
+		{groupTemplate = "potted_plants_small", weight = 200000},
 		
 	}
 }

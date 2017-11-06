@@ -24,11 +24,33 @@ spineflap_gatherer = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-
 	templates = {"object/mobile/capper_spineflap_hue.iff"},
 	controlDeviceTemplate = "object/intangible/pet/capper_spineflap_hue.iff",
 	scale = 1.05,
-	lootGroups = {},
+
+
+--Creature Reduced Loot Template
+	lootGroups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

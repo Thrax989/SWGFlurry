@@ -39,7 +39,9 @@ flail_executioner = Creature:new {
 		"object/mobile/dressed_criminal_thug_zabrak_male_01.iff",
 		"object/mobile/dressed_villain_trandoshan_female_01.iff",
 		"object/mobile/dressed_villain_trandoshan_male_01.iff"},
-	lootGroups = {
+
+--NPC Faction Loot Kit Template	Flail
+lootGroups = {
 		{
 			groups = {
 				{group = "junk", chance = 10000000}				
@@ -72,10 +74,16 @@ flail_executioner = Creature:new {
 		},
 		{
 			groups = {
+				{group = "loot_kit_parts", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
 				{group = "flail_common", chance = 10000000}
 		},
 			lootChance = 1000000
-		}
+		},
 	},
 	weapons = {"pirate_weapons_medium"},
 	reactionStf = "@npc_reaction/slang",

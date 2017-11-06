@@ -33,7 +33,7 @@ fbase_imperial_first_lieutenant_hard = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 7500000},
-				{group = "stormtrooper_common", chance = 2500000},
+				{group = "imperial_officer_common", chance = 2500000},
 		},
 			lootChance = 500000 
 
