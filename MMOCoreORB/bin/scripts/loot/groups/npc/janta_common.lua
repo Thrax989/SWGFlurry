@@ -5,12 +5,12 @@ janta_common = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "janta_blood", weight = 2500000},
+		{itemTemplate = "janta_blood", weight = 4000000},
 		{itemTemplate = "janta_hides", weight = 3500000},
-		{itemTemplate = "spear_rack_schematic", weight = 500000},
-		{groupTemplate = "color_crystals", weight = 500000},
-		{groupTemplate = "power_crystals", weight = 500000},
-		{groupTemplate = "junk", weight = 2500000},
+		{itemTemplate = "spear_rack_schematic", weight = 1000000},
+		{groupTemplate = "color_crystals", weight = 750000},
+		{groupTemplate = "power_crystals", weight = 750000},
+
 	}
 }
 
