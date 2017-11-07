@@ -171,6 +171,9 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 
 				if (activePetTemplate == NULL || activePetTemplate->getTemplateName() == "at_st")
 					continue;
+				
+				if (activePetTemplate == NULL || activePetTemplate->getTemplateName() == "atxt")
+					continue;
 
 				if (++currentlySpawned >= maxPets) {
 					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
@@ -194,8 +197,16 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 
 				if (activePetTemplate == NULL || callingPetTemplate == NULL || activePetTemplate->getTemplateName() != "at_st")
 					continue;
+				
+				if (activePetTemplate == NULL || callingPetTemplate == NULL || activePetTemplate->getTemplateName() != "atxt")
+					continue;
 
 				if (++currentlySpawned >= maxPets || (activePetTemplate->getTemplateName() == "at_st" && callingPetTemplate->getTemplateName() == "at_st")) {
+					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
+					return;
+				}
+
+				if (++currentlySpawned >= maxPets || (activePetTemplate->getTemplateName() == "atxt" && callingPetTemplate->getTemplateName() == "atxt")) {
 					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
 					return;
 				}
