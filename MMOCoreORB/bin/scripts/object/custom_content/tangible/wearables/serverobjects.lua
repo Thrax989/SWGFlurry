@@ -43,16 +43,16 @@
 
 
 --Children folder includes
---[[
-includeFile("custom_content/tangible/wearables/apron/serverobjects.lua")
-includeFile("custom_content/tangible/wearables/armor/serverobjects.lua")
+
+--includeFile("custom_content/tangible/wearables/apron/serverobjects.lua")
+--includeFile("custom_content/tangible/wearables/armor/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/backpack/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/bandolier/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/belt/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/bodysuit/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/boots/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/bracelet/serverobjects.lua")
-includeFile("custom_content/tangible/wearables/cape/serverobjects.lua")
+--includeFile("custom_content/tangible/wearables/cape/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/cybernetic/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/dress/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/gloves/serverobjects.lua")
@@ -67,4 +67,3 @@ includeFile("custom_content/tangible/wearables/skirt/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/vest/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/wookiee/serverobjects.lua")
 
-]]

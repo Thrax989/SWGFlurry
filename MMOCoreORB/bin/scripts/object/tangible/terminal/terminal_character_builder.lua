@@ -973,6 +973,39 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					},
 					"Master", "combat_marksman_master"
 				},
+				"Mechanic",
+				{
+					"Novice", "crafting_mechanic_novice",
+					"Bikes",
+					{
+						"Bikes I", "crafting_mechanic_biker_01",
+						"Bikes II", "crafting_mechanic_biker_02",
+						"Bikes III", "crafting_mechanic_biker_03",
+						"Bikes IV", "crafting_mechanic_biker_04"
+					},
+					"Pods",
+					{
+						"Pods I", "crafting_mechanic_pod_01",
+						"Pods II", "crafting_mechanic_pod_02",
+						"Pods III", "crafting_mechanic_pod_03",
+						"Pods IV", "crafting_mechanic_pod_04"
+					},
+					"Speeders",
+					{
+						"Speeders I", "crafting_mechanic_speeder_01",
+						"Speeders II", "crafting_mechanic_speeder_02",
+						"Speeders III", "crafting_mechanic_speeder_03",
+						"Speeders IV", "crafting_mechanic_speeder_04"
+					},
+					"Customization",
+					{
+						"Customization I", "crafting_mechanic_custom_ve_01",
+						"Customization II", "crafting_mechanic_custom_ve_02",
+						"Customization III", "crafting_mechanic_custom_ve_03",
+						"Customization IV", "crafting_mechanic_custom_ve_04"
+					},
+					"Master", "crafting_mechanic_master"
+				},
 				"Medic",
 				{
 					"Novice", "science_medic_novice",

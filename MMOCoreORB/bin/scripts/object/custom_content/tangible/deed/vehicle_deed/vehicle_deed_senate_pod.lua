@@ -1,5 +1,0 @@
-object_tangible_deed_vehicle_deed_vehicle_deed_senate_pod = object_tangible_deed_vehicle_deed_shared_vehicle_deed_senate_pod:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_deed_vehicle_deed_vehicle_deed_senate_pod, "object/tangible/deed/vehicle_deed/vehicle_deed_senate_pod.iff")
