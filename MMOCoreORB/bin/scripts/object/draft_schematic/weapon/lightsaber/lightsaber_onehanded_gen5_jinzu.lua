@@ -15,6 +15,7 @@ templateType = DRAFTSCHEMATIC,
    experimentingSkill = "jedi_saber_experimentation", 
    customizationSkill = "jedi_customization", 
    factoryCrateSize = 0,   
+   disableFactoryRun = true,
 
    customizationOptions = {},
    customizationStringNames = {},

@@ -15,7 +15,7 @@ object_draft_schematic_vehicle_civilian_stap_speeder_schem = object_draft_schema
 
 	assemblySkill = "general_assembly",
 	experimentingSkill = "general_experimentation",
-	customizationSkill = "clothing_customization",
+	customizationSkill = "vehicle_customization",
 
 	customizationOptions = {},
 	customizationStringNames = {},

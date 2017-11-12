@@ -29,7 +29,7 @@ object_draft_schematic_vehicle_civilian_swamp_speeder_schem = object_draft_schem
 	contribution = {100, 100, 100},
 --********************************************************************************
 
-	targetTemplate = "object/tangible/deed/vehicle_deed/vehicle_deed_swamp_speeder.iff",
+	targetTemplate = "object/tangible/deed/vehicle_deed/swamp_speeder_deed.iff",
 
 	additionalTemplates = {}
 }

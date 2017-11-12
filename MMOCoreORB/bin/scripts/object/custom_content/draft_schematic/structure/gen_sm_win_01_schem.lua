@@ -50,6 +50,8 @@ object_draft_schematic_structure_gen_sm_win_01_schem = object_draft_schematic_st
    craftingToolTab = 1024, -- (See DraftSchemticImplementation.h)
    complexity = 45, 
    size = 14, 
+   factoryCrateSize = 0,   
+   disableFactoryRun = true,
 
    xpType = "crafting_structure_general", 
    xp = 1000, 

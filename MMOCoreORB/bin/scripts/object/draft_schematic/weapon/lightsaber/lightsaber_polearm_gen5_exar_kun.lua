@@ -15,6 +15,7 @@ object_draft_schematic_weapon_lightsaber_lightsaber_polearm_gen5_exar_kun = obje
    experimentingSkill = "jedi_saber_experimentation", 
    customizationSkill = "jedi_customization", 
    factoryCrateSize = 0,   
+   disableFactoryRun = true,
 
    customizationOptions = {},
    customizationStringNames = {},
