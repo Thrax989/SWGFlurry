@@ -41,23 +41,39 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_draft_schematic_vehicle_component_custom_veh_power_converter_schem = object_draft_schematic_vehicle_component_shared_custom_veh_power_converter_schem:new {
 
---Children folder includes
+templateType = DRAFTSCHEMATIC,
 
--- Server Objects
-includeFile("draft_schematic/vehicle/civilian/civilian_a.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_aa.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_b.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_c.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_d.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_e.lua")
-includeFile("draft_schematic/vehicle/civilian/jetpack.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_av21.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_x34.lua")
-includeFile("draft_schematic/vehicle/civilian/speeder_bike.lua")
-includeFile("draft_schematic/vehicle/civilian/speeder_bike_swoop.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_ab1.lua")
-includeFile("draft_schematic/vehicle/civilian/barc_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/flare_s_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/imperial_barc_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/rebel_barc_speeder.lua")
+	customObjectName = "Power Converter",
+
+	craftingToolTab = 16, -- (See DraftSchematicObjectTemplate.h)
+	complexity = 18,
+	size = 10,
+	factoryCrateSize = 5,
+
+	xpType = "crafting_general",
+	xp = 1850,
+
+	assemblySkill = "general_assembly",
+	experimentingSkill = "general_experimentation",
+	customizationSkill = "clothing_customization",
+
+	customizationOptions = {},
+	customizationStringNames = {},
+	customizationDefaults = {},
+
+	ingredientTemplateNames = {"craft_structure_ingredients_n", "craft_structure_ingredients_n", "craft_structure_ingredients_n", "craft_structure_ingredients_n", "craft_structure_ingredients_n", "craft_structure_ingredients_n", "craft_structure_ingredients_n"},
+	ingredientTitleNames = {"energy_gathering_array", "turbine_cradle", "magnetic_reaction_mass", "cradle_fittings", "charge_leakage_insulation_material", "turbine_rotor", "reaction_mass"},
+	ingredientSlotType = {0, 0, 0, 0, 0, 0, 0},
+	resourceTypes = {"copper", "steel", "ore_carbonate", "metal_nonferrous", "chemical", "aluminum", "gas_reactive"},
+	resourceQuantities = {250, 50, 250, 150, 50, 500, 200},
+	contribution = {100, 100, 100, 100, 100, 100, 100},
+
+
+	targetTemplate = "object/tangible/component/vehicle/custom_veh_power_converter.iff",
+
+	additionalTemplates = {}
+
+}
+ObjectTemplates: addTemplate(object_draft_schematic_vehicle_component_custom_veh_power_converter_schem, "object/draft_schematic/vehicle/component/custom_veh_power_converter_schem.iff")

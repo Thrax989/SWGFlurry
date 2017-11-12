@@ -1,4 +1,4 @@
---Copyright (C) 2010 <SWGEmu>
+--Copyright (C}, 2010 <SWGEmu>
 
 
 --This File is part of Core3.
@@ -7,7 +7,7 @@
 --it and/or modify it under the terms of the GNU Lesser
 --General Public License as published by the Free Software
 --Foundation; either version 2 of the License,
---or (at your option) any later version.
+--or (at your option}, any later version.
 
 --This program is distributed in the hope that it will be useful,
 --but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -28,7 +28,7 @@
 --give you permission to combine Engine3 program with free software
 --programs or libraries that are released under the GNU LGPL and with
 --code included in the standard release of Core3 under the GNU LGPL
---license (or modified versions of such code, with unchanged license).
+--license (or modified versions of such code, with unchanged license},.
 --You may copy and distribute such a system following the terms of the
 --GNU LGPL for Engine3 and the licenses of the other code concerned,
 --provided that you include the source code of that other code when
@@ -1924,40 +1924,48 @@ schematics = {
 	{path="object/draft_schematic/clothing/clothing_armor_jedi_belt_02.iff"},
 	{path="object/draft_schematic/clothing/clothing_armor_jedi_belt_03.iff"},
 --custom rides
-	{path="object/draft_schematic/vehicle/civilian/ab1_speeder.iff"},
+	{path="object/draft_schematic/vehicle/civilian/landspeeder_ab1.iff"},
 	{path="object/draft_schematic/vehicle/civilian/barc_speeder.iff"},
 	{path="object/draft_schematic/vehicle/civilian/flare_s_speeder.iff"},
 	{path="object/draft_schematic/vehicle/civilian/imperial_barc_speeder.iff"},
 	{path="object/draft_schematic/vehicle/civilian/rebel_barc_speeder.iff"},
-	{path="object/draft_schematic/vehicle/civilian/a1_deluxe_floater.lua")
-	{path="object/draft_schematic/vehicle/civilian/air2_swoop.lua")
-	{path="object/draft_schematic/vehicle/civilian/desert_skiff_schem.lua")
-	{path="object/draft_schematic/vehicle/civilian/fg_8t8_podracer.lua")
-	{path="object/draft_schematic/vehicle/civilian/geonosian_speeder_schem.lua")
-	{path="object/draft_schematic/vehicle/civilian/hoverlift_speeder.lua")
-	{path="object/draft_schematic/vehicle/civilian/hover_chair.lua")
-	{path="object/draft_schematic/vehicle/civilian/koro2_speeder_schem.lua")
-	{path="object/draft_schematic/vehicle/civilian/landspeeder_tantive4.lua")
-	{path="object/draft_schematic/vehicle/civilian/landspeeder_usv5.lua")
-	{path="object/draft_schematic/vehicle/civilian/landspeeder_v35.lua")
-	{path="object/draft_schematic/vehicle/civilian/landspeeder_xp38.lua")
-	{path="object/draft_schematic/vehicle/civilian/lava_skiff_schem.lua")
-	{path="object/draft_schematic/vehicle/civilian/mechano_chair.lua")
-	--{path="object/draft_schematic/vehicle/civilian/organa_speeder_schem.lua")
-	{path="object/draft_schematic/vehicle/civilian/podracer_anakin.lua")
-	{path="object/draft_schematic/vehicle/civilian/pod_racer_balta_podracer.lua")
-	{path="object/draft_schematic/vehicle/civilian/pod_racer_ipg_longtail.lua")
-	{path="object/draft_schematic/vehicle/civilian/pod_racer_one.lua")
-	{path="object/draft_schematic/vehicle/civilian/pod_racer_two.lua")
-	{path="object/draft_schematic/vehicle/civilian/senate_pod.lua")
-	{path="object/draft_schematic/vehicle/civilian/snowspeeder.lua")
-	{path="object/draft_schematic/vehicle/civilian/speeder_ric_920.lua")
-	{path="object/draft_schematic/vehicle/civilian/stap_speeder_schem.lua")
-	{path="object/draft_schematic/vehicle/civilian/swamp_speeder_schem.lua")
-	{path="object/draft_schematic/vehicle/civilian/sith_speeder_schem.lua")
-	{path="object/draft_schematic/vehicle/civilian/tcg_8_air_speeder.lua")
-	{path="object/draft_schematic/vehicle/civilian/tcg_military_transport.lua")
-	{path="object/draft_schematic/vehicle/civilian/tcg_republic_gunship.lua")
-	{path="object/draft_schematic/vehicle/civilian/xj6_speeder_schem.lua")
+	{path="object/draft_schematic/vehicle/civilian/a1_deluxe_floater.iff"},
+	{path="object/draft_schematic/vehicle/civilian/air2_swoop.iff"},
+	{path="object/draft_schematic/vehicle/civilian/desert_skiff_schem.iff"},
+	{path="object/draft_schematic/vehicle/civilian/fg_8t8_podracer.iff"},
+	{path="object/draft_schematic/vehicle/civilian/geonosian_speeder_schem.iff"},
+	{path="object/draft_schematic/vehicle/civilian/hoverlift_speeder.iff"},
+	{path="object/draft_schematic/vehicle/civilian/hover_chair.iff"},
+	{path="object/draft_schematic/vehicle/civilian/koro2_speeder_schem.iff"},
+	{path="object/draft_schematic/vehicle/civilian/landspeeder_tantive4.iff"},
+	{path="object/draft_schematic/vehicle/civilian/landspeeder_usv5.iff"},
+	{path="object/draft_schematic/vehicle/civilian/landspeeder_v35.iff"},
+	{path="object/draft_schematic/vehicle/civilian/landspeeder_xp38.iff"},
+	{path="object/draft_schematic/vehicle/civilian/lava_skiff_schem.iff"},
+	{path="object/draft_schematic/vehicle/civilian/mechano_chair.iff"},
+	--{path="object/draft_schematic/vehicle/civilian/organa_speeder_schem.iff"},
+	{path="object/draft_schematic/vehicle/civilian/podracer_anakin.iff"},
+	{path="object/draft_schematic/vehicle/civilian/pod_racer_balta_podracer.iff"},
+	{path="object/draft_schematic/vehicle/civilian/pod_racer_ipg_longtail.iff"},
+	{path="object/draft_schematic/vehicle/civilian/pod_racer_one.iff"},
+	{path="object/draft_schematic/vehicle/civilian/pod_racer_two.iff"},
+	{path="object/draft_schematic/vehicle/civilian/senate_pod.iff"},
+	{path="object/draft_schematic/vehicle/civilian/snowspeeder.iff"},
+	{path="object/draft_schematic/vehicle/civilian/speeder_ric_920.iff"},
+	{path="object/draft_schematic/vehicle/civilian/stap_speeder_schem.iff"},
+	{path="object/draft_schematic/vehicle/civilian/swamp_speeder_schem.iff"},
+	--{path="object/draft_schematic/vehicle/civilian/sith_speeder_schem.iff"},
+	{path="object/draft_schematic/vehicle/civilian/tcg_8_air_speeder.iff"},
+	{path="object/draft_schematic/vehicle/civilian/tcg_military_transport.iff"},
+	{path="object/draft_schematic/vehicle/civilian/tcg_republic_gunship.iff"},
+	{path="object/draft_schematic/vehicle/civilian/xj6_speeder_schem.iff"},
+	{path="object/draft_schematic/vehicle/component/custom_veh_autopilot_control_module_schem.iff"},
+	{path="object/draft_schematic/vehicle/component/custom_veh_body_panel_schem.iff"},
+	{path="object/draft_schematic/vehicle/component/custom_veh_engine_casing_schem.iff"},
+	{path="object/draft_schematic/vehicle/component/custom_veh_gravity_pump_schem.iff"},
+	{path="object/draft_schematic/vehicle/component/custom_veh_power_converter_schem.iff"},
+	{path="object/draft_schematic/vehicle/component/custom_veh_turbine_control_module_schem.iff"},
+
+
 
 };

@@ -41,23 +41,38 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_draft_schematic_vehicle_component_custom_veh_engine_casing_schem = object_draft_schematic_vehicle_component_shared_custom_veh_engine_casing_schem:new {
 
---Children folder includes
+templateType = DRAFTSCHEMATIC,
 
--- Server Objects
-includeFile("draft_schematic/vehicle/civilian/civilian_a.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_aa.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_b.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_c.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_d.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_e.lua")
-includeFile("draft_schematic/vehicle/civilian/jetpack.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_av21.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_x34.lua")
-includeFile("draft_schematic/vehicle/civilian/speeder_bike.lua")
-includeFile("draft_schematic/vehicle/civilian/speeder_bike_swoop.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_ab1.lua")
-includeFile("draft_schematic/vehicle/civilian/barc_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/flare_s_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/imperial_barc_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/rebel_barc_speeder.lua")
+	customObjectName = "Engine Casing",
+
+	craftingToolTab = 16, -- (See DraftSchematicObjectTemplate.h)
+	complexity = 5,
+	size = 2,
+	factoryCrateSize = 10,
+
+	xpType = "crafting_general",
+	xp = 1400,
+
+	assemblySkill = "general_assembly",
+	experimentingSkill = "general_experimentation",
+	customizationSkill = "clothing_customization",
+
+	customizationOptions = {},
+	customizationStringNames = {},
+	customizationDefaults = {},
+
+	ingredientTemplateNames = {"craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n"},
+	ingredientTitleNames = {"shielding", "piping", "fluid_hoses", "pump_unit", "sealant"},
+	ingredientSlotType = {0, 0, 0, 0, 0},
+	resourceTypes = {"steel_neutronium", "metal", "chemical", "metal", "petrochem_inert_polymer"},
+	resourceQuantities = {170, 150, 225, 80, 100},
+	contribution = {100, 100, 100, 100, 100},
+
+	targetTemplate = "object/tangible/component/vehicle/custom_veh_engine_casing.iff",
+
+	additionalTemplates = {}
+
+}
+ObjectTemplates: addTemplate(object_draft_schematic_vehicle_component_custom_veh_engine_casing_schem, "object/draft_schematic/vehicle/component/custom_veh_engine_casing_schem.iff")

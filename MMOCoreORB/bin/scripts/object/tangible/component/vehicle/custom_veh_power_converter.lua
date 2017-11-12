@@ -41,23 +41,18 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_tangible_component_vehicle_custom_veh_power_converter = object_tangible_component_vehicle_shared_custom_veh_power_converter:new {
 
---Children folder includes
+	numberExperimentalProperties = {1, 1, 1},
+	experimentalProperties = {"XX", "XX", "XX"},
+	experimentalWeights = {1, 1, 1},
+	experimentalGroupTitles = {"null", "null", "null"},
+	experimentalSubGroupTitles = {"null", "null", "hitpoints"},
+	experimentalMin = {0, 0, 1000},
+	experimentalMax = {0, 0, 5000},
+	experimentalPrecision = {0, 0, 0},
+	experimentalCombineType = {0, 0, 4},
 
--- Server Objects
-includeFile("draft_schematic/vehicle/civilian/civilian_a.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_aa.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_b.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_c.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_d.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_e.lua")
-includeFile("draft_schematic/vehicle/civilian/jetpack.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_av21.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_x34.lua")
-includeFile("draft_schematic/vehicle/civilian/speeder_bike.lua")
-includeFile("draft_schematic/vehicle/civilian/speeder_bike_swoop.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_ab1.lua")
-includeFile("draft_schematic/vehicle/civilian/barc_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/flare_s_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/imperial_barc_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/rebel_barc_speeder.lua")
+
+}
+ObjectTemplates: addTemplate(object_tangible_component_vehicle_custom_veh_power_converter, "object/tangible/component/vehicle/custom_veh_power_converter.iff")

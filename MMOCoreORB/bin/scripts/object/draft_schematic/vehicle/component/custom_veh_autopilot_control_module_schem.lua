@@ -41,23 +41,39 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_draft_schematic_vehicle_component_custom_veh_autopilot_control_module_schem = object_draft_schematic_vehicle_component_shared_custom_veh_autopilot_control_module_schem:new {
 
---Children folder includes
+	templateType = DRAFTSCHEMATIC,
 
--- Server Objects
-includeFile("draft_schematic/vehicle/civilian/civilian_a.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_aa.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_b.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_c.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_d.lua")
-includeFile("draft_schematic/vehicle/civilian/civilian_e.lua")
-includeFile("draft_schematic/vehicle/civilian/jetpack.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_av21.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_x34.lua")
-includeFile("draft_schematic/vehicle/civilian/speeder_bike.lua")
-includeFile("draft_schematic/vehicle/civilian/speeder_bike_swoop.lua")
-includeFile("draft_schematic/vehicle/civilian/landspeeder_ab1.lua")
-includeFile("draft_schematic/vehicle/civilian/barc_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/flare_s_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/imperial_barc_speeder.lua")
-includeFile("draft_schematic/vehicle/civilian/rebel_barc_speeder.lua")
+	customObjectName = "Autopilot Control Module",
+
+	craftingToolTab = 16,  -- (See DraftSchematicObjectTemplate.h)
+	complexity = 18,
+	size = 2,
+	factoryCrateSize = 5,
+
+	xpType = "crafting_general",
+	xp = 1850,
+
+	assemblySkill = "general_assembly",
+	experimentingSkill = "general_experimentation",
+	customizationSkill = "clothing_customization",
+
+	customizationOptions = {},
+	customizationStringNames = {},
+	customizationDefaults = {},
+
+	
+	ingredientTemplateNames = {"craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n"},
+	ingredientTitleNames = {"unit_frame", "module_controller", "coolant", "projector_plate", "power_converter"},
+	ingredientSlotType = {0, 0, 0, 0, 1},
+	resourceTypes = {"steel", "metal_nonferrous", "fuel_petrochem_liquid", "gemstone_crystalline", "object/tangible/component/vehicle/shared_custom_veh_power_converter.iff"},
+	resourceQuantities = {150, 100, 100, 100, 2},
+	contribution = {100, 100, 100, 100, 100},
+
+	targetTemplate = "object/tangible/component/vehicle/custom_veh_autopilot_control_module.iff",
+
+	additionalTemplates = {}
+
+}
+ObjectTemplates: addTemplate(object_draft_schematic_vehicle_component_custom_veh_autopilot_control_module_schem, "object/draft_schematic/vehicle/component/custom_veh_autopilot_control_module_schem.iff")

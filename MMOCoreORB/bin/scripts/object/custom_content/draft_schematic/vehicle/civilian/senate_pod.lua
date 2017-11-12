@@ -4,7 +4,7 @@ object_draft_schematic_vehicle_civilian_senate_pod = object_draft_schematic_vehi
 	customObjectName = "Senate Pod",
 
 
---TEMPLATE SCHEMATIC************************************************************
+--TEMPLATE SCHEMATIC MEDIUM 1 No Color ************************************************************
 	craftingToolTab = 16, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 25,
 	size = 1,
@@ -15,18 +15,20 @@ object_draft_schematic_vehicle_civilian_senate_pod = object_draft_schematic_vehi
 
 	assemblySkill = "general_assembly",
 	experimentingSkill = "general_experimentation",
-	customizationSkill = "clothing_customization",
+	customizationSkill = "vehicle_customization",
 
 	customizationOptions = {},
 	customizationStringNames = {},
 	customizationDefaults = {},
 
-	ingredientTemplateNames = {"craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n"},
-	ingredientTitleNames = {"vehicle_body", "structural_frame", "chassis_brace"},
-	ingredientSlotType = {0, 0, 1},
-	resourceTypes = {"metal_nonferrous", "metal_ferrous", "object/tangible/component/vehicle/shared_custom_veh_chassis_brace.iff"},
-	resourceQuantities = {1125, 3125, 1},
-	contribution = {100, 100, 100},
+	ingredientTemplateNames = {"craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n"},
+	ingredientTitleNames = {"vehicle_body", "frame", "shielding", "body_panel", "turbine_control", "veh_gravity_pump"},
+	ingredientSlotType = {0, 0, 0, 2, 1, 1},
+	resourceTypes = {"metal", "metal", "steel_neutronium", "object/tangible/component/vehicle/shared_custom_veh_body_panel.iff", "object/tangible/component/vehicle/shared_custom_veh_turbine_control_module.iff", "object/tangible/component/vehicle/shared_veh_gravity_pump.iff"},
+	resourceQuantities = {1250, 2250, 400, 6, 2, 1},
+	contribution = {100, 100, 100, 100, 100, 100},
+
+
 --********************************************************************************
 	targetTemplate = "object/tangible/deed/vehicle_deed/senate_pod_deed.iff",
 

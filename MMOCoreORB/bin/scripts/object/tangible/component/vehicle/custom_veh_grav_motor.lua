@@ -43,6 +43,7 @@
 
 object_tangible_component_vehicle_custom_veh_grav_motor = object_tangible_component_vehicle_shared_custom_veh_grav_motor:new {
 
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_component_vehicle_custom_veh_grav_motor, "object/tangible/component/vehicle/custom_veh_grav_motor.iff")

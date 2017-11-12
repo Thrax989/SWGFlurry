@@ -49,7 +49,8 @@ object_draft_schematic_clothing_clothing_armor_rebel_assault_boots = object_draf
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45,
-   size = 1
+   size = 1,
+   factoryCrateSize = 0, 
    disableFactoryRun = true,
 
    xpType = "crafting_clothing_armor",
