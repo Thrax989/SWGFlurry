@@ -1,6 +1,8 @@
 object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_gloves_camo = object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_gloves_camo:new {
-
+	
 	templateType = ARMOROBJECT,
+
+	objectMenuComponent = "ArmorObjectMenuComponent", 
 
 	faction = "Imperial",
 

@@ -104,15 +104,9 @@ custom_nerf_boss = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareacombo","stateAccuracyBonus=50"},
- 		{"creatureareaknockdown","stateAccuracyBonus=50"},
-		{"knockdownattack","KnockdownChance=50"},
-		{"creatureareaknockdown","KnockdownChance=50"},
-		{"dizzyattack","DizzyChance=50"},
-		{"stunattack","StunChance=50"},
-		{"intimidationattack","IntimidationChance=50"},
-		{"creatureareaattack","stateAccuracyBonus=35"},
- 	}
+		{"creatureareacombo","stateAccuracyBonus=100"},
+		{"creatureareaknockdown","stateAccuracyBonus=100"}
+	}
 }
 
 CreatureTemplates:addCreatureTemplate(custom_nerf_boss, "custom_nerf_boss")

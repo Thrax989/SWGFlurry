@@ -2,6 +2,8 @@ object_tangible_wearables_armor_rebel_assault_armor_rebel_assault_boots = object
 
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent", 
+
 	faction = "Rebel",
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
