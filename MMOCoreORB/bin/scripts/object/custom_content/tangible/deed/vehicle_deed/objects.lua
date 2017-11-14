@@ -3,8 +3,8 @@ object_tangible_deed_vehicle_deed_shared_a1_deluxe_floater_deed = SharedCreature
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_deed_vehicle_deed_shared_a1_deluxe_floater_deed, "object/tangible/deed/vehicle_deed/shared_a1_deluxe_floater_deed.iff")
-------------------------------------------------------------------------------------------------------------------------------------
 
+------------------------------------------------------------------------------------------------------------------------------------
 
 object_tangible_deed_vehicle_deed_shared_air2_swoop_deed = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/deed/vehicle_deed/shared_air2_swoop_deed.iff"

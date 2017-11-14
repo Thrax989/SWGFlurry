@@ -580,11 +580,11 @@ object_draft_schematic_vehicle_civilian_shared_speeder_bike_swoop = SharedDraftS
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_speeder_bike_swoop, "object/draft_schematic/vehicle/civilian/shared_speeder_bike_swoop.iff")
 
-object_draft_schematic_vehicle_civilian_shared_ab1_speeder = SharedDraftSchematicObjectTemplate:new {
-clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_ab1_speeder.iff"
+object_draft_schematic_vehicle_civilian_shared_landspeeder_ab1 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_landspeeder_ab1.iff"
 }
 
-ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_ab1_speeder, "object/draft_schematic/vehicle/civilian/shared_ab1_speeder.iff")
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_landspeeder_ab1, "object/draft_schematic/vehicle/civilian/shared_landspeeder_ab1.iff")
 
 object_draft_schematic_vehicle_civilian_shared_barc_speeder = SharedDraftSchematicObjectTemplate:new {
 clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_barc_speeder.iff"

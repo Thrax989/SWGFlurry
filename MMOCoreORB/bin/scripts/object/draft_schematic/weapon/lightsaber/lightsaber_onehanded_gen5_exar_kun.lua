@@ -7,6 +7,7 @@ templateType = DRAFTSCHEMATIC,
    craftingToolTab = 2048, -- (See DraftSchematicObjectTemplate.h)
    complexity = 19, 
    size = 1, 
+   factoryCrateSize = 0,   
 
    xpType = "jedi_general", 
    xp = 0, 
@@ -15,6 +16,8 @@ templateType = DRAFTSCHEMATIC,
    experimentingSkill = "jedi_saber_experimentation", 
    customizationSkill = "jedi_customization", 
    factoryCrateSize = 0,   
+   disableFactoryRun = true,
+
 
    customizationOptions = {},
    customizationStringNames = {},

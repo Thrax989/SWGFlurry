@@ -75,8 +75,8 @@ veteranRewardAdditionalMilestones = 35 --frequency, in days, of additional miles
 
 veteranRewards = {
 		
-		-- 0 Day Rewards
-		{templateFile = "object/tangible/loot/misc/new_player_pack.iff", milestone=0, oneTime=true, description="New Player Resource Pack"},
+		-- 1 Day Rewards
+		{templateFile = "object/tangible/loot/misc/new_player_pack.iff", milestone=1, oneTime=true, description="New Player Resource Pack"},
 	
 		-- 1 Day Rewards
 		{templateFile = "object/tangible/veteran_reward/exp_buff_item.iff", milestone=1, oneTime=true, description="Instant Full XP Token"},

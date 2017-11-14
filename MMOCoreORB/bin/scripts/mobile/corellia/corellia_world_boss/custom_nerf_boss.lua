@@ -111,7 +111,7 @@ custom_nerf_boss = Creature:new {
 		{"dizzyattack","DizzyChance=50"},
 		{"stunattack","StunChance=50"},
 		{"intimidationattack","IntimidationChance=50"},
-		{"creatureareaattack",""}
+		{"creatureareaattack","stateAccuracyBonus=35"},
  	}
 }
 

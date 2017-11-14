@@ -45,7 +45,7 @@ templateType = LOOTSCHEMATIC,
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_tailor_master",
-	targetDraftSchematic = "object/draft_schematic/clothing/clothing_robe_gray_gray_02.iff",
+	targetDraftSchematic = "object/draft_schematic/clothing/clothing_robe_jedi_gray_02.iff",
 	targetUseCount = 1
 }
 

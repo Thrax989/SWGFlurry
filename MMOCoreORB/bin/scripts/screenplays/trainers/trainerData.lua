@@ -443,6 +443,26 @@ trainerSkills = {
 		"social_imagedesigner_markings_04"
 	},
 
+	trainer_mechanic = {
+		"crafting_mechanic_novice",
+		"crafting_mechanic_master",
+		"crafting_mechanic_biker_01",
+		"crafting_mechanic_biker_02",
+		"crafting_mechanic_biker_03",
+		"crafting_mechanic_biker_04",
+		"crafting_mechanic_pod_01",
+		"crafting_mechanic_pod_02",
+		"crafting_mechanic_pod_03",
+		"crafting_mechanic_pod_04",
+		"crafting_mechanic_speeder_01",
+		"crafting_mechanic_speeder_02",
+		"crafting_mechanic_speeder_03",
+		"crafting_mechanic_speeder_04",
+		"crafting_mechanic_custom_ve_01",
+		"crafting_mechanic_custom_ve_02",
+		"crafting_mechanic_custom_ve_03",
+		"crafting_mechanic_custom_ve_04",
+	},
 	trainer_merchant = {
 		"crafting_merchant_novice",
 		"crafting_merchant_master",
