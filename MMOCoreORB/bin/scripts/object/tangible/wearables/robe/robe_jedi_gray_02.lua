@@ -141,8 +141,8 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 
 
 	skillMods = {
-		{"jedi_force_power_max", 250},
-		{"jedi_force_power_regen", 5},
+		{"jedi_force_power_max", 300},
+		{"jedi_force_power_regen", 7},
 		},
 
 
