@@ -43,7 +43,6 @@
 
 
 --Children folder includes
-includeFile("custom_content/tangible/tcg/series1/serverobjects.lua")
 includeFile("custom_content/tangible/tcg/series3/serverobjects.lua")
 includeFile("custom_content/tangible/tcg/series4/serverobjects.lua")
 includeFile("custom_content/tangible/tcg/series5/serverobjects.lua")
