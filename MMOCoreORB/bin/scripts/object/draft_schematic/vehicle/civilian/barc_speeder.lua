@@ -56,6 +56,11 @@ object_draft_schematic_vehicle_civilian_barc_speeder = object_draft_schematic_ve
 	xpType = "crafting_general",
 	xp = 1800,
 
+	assemblySkill = "general_assembly",
+	experimentingSkill = "general_experimentation",
+	customizationSkill = "clothing_customization",
+
+
 	customizationOptions = {2},
 	customizationStringNames = {"/private/index_color_1"},
 	customizationDefaults = {7},
