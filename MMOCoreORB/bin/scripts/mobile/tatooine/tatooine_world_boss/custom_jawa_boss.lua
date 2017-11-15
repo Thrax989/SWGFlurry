@@ -103,7 +103,7 @@ custom_jawa_boss = Creature:new {
     
 	weapons = {"jawa_warlord_weapons"},
 	conversationTemplate = "",
-	attacks = merge(commandomaster,fencermaster,brawlermaster,brawlermaster)
+	attacks = merge(commandomaster,marksmanmaster,riflemanmaster)
 		
 	
 }

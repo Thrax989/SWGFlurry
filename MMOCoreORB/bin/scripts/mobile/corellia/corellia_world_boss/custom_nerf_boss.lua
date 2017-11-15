@@ -20,12 +20,12 @@ custom_nerf_boss = Creature:new {
 	boneAmount = 905,
 	milk = 0,
 	tamingChance = 0,
-	ferocity = 20,
+	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 4.0,
+	scale = 3.0,
 
 	templates = {"object/mobile/nerf.iff"},
   lootGroups = {
