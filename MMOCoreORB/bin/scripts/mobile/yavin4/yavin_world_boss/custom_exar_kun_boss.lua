@@ -92,9 +92,9 @@ custom_exar_kun_boss = Creature:new {
 		  },
 		 
 		},
-	weapons = {"dark_jedi_weapons_gen3"},
-	reactionStf = "",
-	attacks = merge(forcewielder,forcepowermaster)
+	weapons = {"dark_jedi_weapons_gen4"},
+	conversationTemplate = "",
+	attacks = merge(forcepowermaster,tkamaster,lightsabermaster,brawlermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(custom_exar_kun_boss, "custom_exar_kun_boss")
