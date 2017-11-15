@@ -4,14 +4,14 @@ object_draft_schematic_vehicle_civilian_speeder_ric_920 = object_draft_schematic
 	customObjectName = "Speeder RIC920",
 
 
---TEMPLATE SCHEMATIC MEDIUM 1 No Color ************************************************************
+--TEMPLATE SCHEMATIC POD************************************************************
 	craftingToolTab = 16, -- (See DraftSchematicObjectTemplate.h)
-	complexity = 25,
+	complexity = 42,
 	size = 1,
 	factoryCrateSize = 5,
 
 	xpType = "crafting_general",
-	xp = 1800,
+	xp = 2600,
 
 	assemblySkill = "general_assembly",
 	experimentingSkill = "general_experimentation",
@@ -22,12 +22,11 @@ object_draft_schematic_vehicle_civilian_speeder_ric_920 = object_draft_schematic
 	customizationDefaults = {},
 
 	ingredientTemplateNames = {"craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n"},
-	ingredientTitleNames = {"vehicle_body", "frame", "shielding", "body_panel", "turbine_control", "veh_gravity_pump"},
+	ingredientTitleNames = {"wiring_harness", "paint", "frame", "body_panel", "veh_autopilot_", "turbine_control"},
 	ingredientSlotType = {0, 0, 0, 2, 1, 1},
-	resourceTypes = {"metal", "metal", "steel_neutronium", "object/tangible/component/vehicle/shared_custom_veh_body_panel.iff", "object/tangible/component/vehicle/shared_custom_veh_turbine_control_module.iff", "object/tangible/component/vehicle/shared_veh_gravity_pump.iff"},
-	resourceQuantities = {1250, 2250, 400, 6, 2, 1},
+	resourceTypes = {"copper", "chemical", "steel", "object/tangible/component/vehicle/shared_custom_veh_body_panel.iff", "object/tangible/component/vehicle/shared_custom_veh_autopilot_control_module.iff", "object/tangible/component/vehicle/shared_custom_veh_turbine_control_module.iff"},
+	resourceQuantities = {1500, 2500, 400, 10, 1, 2},
 	contribution = {100, 100, 100, 100, 100, 100},
-
 
 --********************************************************************************
 	targetTemplate = "object/tangible/deed/vehicle_deed/speeder_ric_920_deed.iff",

@@ -4,14 +4,15 @@ object_draft_schematic_vehicle_civilian_pod_racer_two = object_draft_schematic_v
 	customObjectName = "Pod Racer Two",
 
 
---TEMPLATE SCHEMATIC************************************************************
+
+--TEMPLATE SCHEMATIC POD************************************************************
 	craftingToolTab = 16, -- (See DraftSchematicObjectTemplate.h)
-	complexity = 25,
+	complexity = 42,
 	size = 1,
 	factoryCrateSize = 5,
 
 	xpType = "crafting_general",
-	xp = 1800,
+	xp = 2600,
 
 	assemblySkill = "general_assembly",
 	experimentingSkill = "general_experimentation",
@@ -22,13 +23,14 @@ object_draft_schematic_vehicle_civilian_pod_racer_two = object_draft_schematic_v
 	customizationDefaults = {},
 
 	ingredientTemplateNames = {"craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n"},
-	ingredientTitleNames = {"wiring_harness", "paint", "frame", "body_panel", "engine_casing", "turbine_control"},
+	ingredientTitleNames = {"wiring_harness", "paint", "frame", "body_panel", "veh_autopilot_", "turbine_control"},
 	ingredientSlotType = {0, 0, 0, 2, 1, 1},
-	resourceTypes = {"copper", "chemical", "steel", "object/tangible/component/vehicle/shared_custom_veh_body_panel.iff", "object/tangible/component/vehicle/shared_custom_veh_engine_casing.iff", "object/tangible/component/vehicle/shared_custom_veh_turbine_control_module.iff"},
-	resourceQuantities = {100, 200, 200, 10, 1, 1},
+	resourceTypes = {"copper", "chemical", "steel", "object/tangible/component/vehicle/shared_custom_veh_body_panel.iff", "object/tangible/component/vehicle/shared_custom_veh_autopilot_control_module.iff", "object/tangible/component/vehicle/shared_custom_veh_turbine_control_module.iff"},
+	resourceQuantities = {1500, 2500, 400, 10, 1, 2},
 	contribution = {100, 100, 100, 100, 100, 100},
 
 --********************************************************************************
+
 	targetTemplate = "object/tangible/deed/vehicle_deed/pod_racer_two_deed.iff",
 
 	additionalTemplates = {}
