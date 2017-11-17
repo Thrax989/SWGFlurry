@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_creature_player_hutt_male = object_creature_player_shared_hutt_male:new {
+object_creature_player_ortolan_male = object_creature_player_shared_ortolan_male:new {
 	baseHAM = { 100, 100, 100, 100, 100, 100, 100, 100, 100 },
 	gameObjectType = 1033,
 	zoneComponent = "PlayerZoneComponent",
@@ -60,7 +60,7 @@ object_creature_player_hutt_male = object_creature_player_shared_hutt_male:new {
 	},
 	defaultLanguage = 1,
 	startingItems = { },
-	startingSkills = { "species_hutt", "social_language_basic_comprehend", "social_language_basic_speak", "social_language_huttese_comprehend", "social_language_huttese_speak" }
+	startingSkills = { "species_ortolan", "social_language_basic_comprehend", "social_language_basic_speak" }
 }
 
-ObjectTemplates:addTemplate(object_creature_player_hutt_male, "object/creature/player/hutt_male.iff")
+ObjectTemplates:addTemplate(object_creature_player_ortolan_male, "object/creature/player/ortolan_male.iff")

@@ -88,3 +88,29 @@ includeFile("creature/player/bith_female.lua") --Bith female
 includeFile("creature/player/bith_male.lua") --Bith male
 includeFile("creature/player/gotal_male.lua") --Gotal male
 includeFile("creature/player/talz_male.lua") --Talz male
+includeFile("creature/player/abyssin_male.lua") --Abyssin male
+includeFile("creature/player/arcona_male.lua") --Arcona male
+includeFile("creature/player/cerean_male.lua") --Cerean male
+includeFile("creature/player/duros_male.lua") --Duros male
+includeFile("creature/player/gungan_male.lua") --Gungan male
+includeFile("creature/player/iktotchi_male.lua") --Iktotchi male
+includeFile("creature/player/jenet_male.lua") --Jenet male
+includeFile("creature/player/kel_dor_male.lua") --Kel Dor male
+includeFile("creature/player/kubaz_male.lua") --Kubaz male
+includeFile("creature/player/sanyassan_male.lua") --Sanyassan male
+includeFile("creature/player/sanyassan_female.lua") --Sanyassan female
+includeFile("creature/player/chadra_fan_male.lua") --Chadra Fan male
+includeFile("creature/player/chadra_fan_female.lua") --Chadra Fan female
+includeFile("creature/player/droid_male.lua") --Droid male
+includeFile("creature/player/dug_male.lua") --Dug male
+includeFile("creature/player/ewok_male.lua") --Ewok male
+includeFile("creature/player/ewok_female.lua") --Ewok female
+includeFile("creature/player/feeorin_male.lua") --Feeorin male
+includeFile("creature/player/geonosian_male.lua") --Geonosian male
+includeFile("creature/player/ortolan_male.lua") --Ortolan male
+includeFile("creature/player/togorian_male.lua") --Togorian male
+includeFile("creature/player/toydarian_male.lua") --Sanyassan male
+includeFile("creature/player/mirialan_male.lua") --Mirialan male
+includeFile("creature/player/mirialan_female.lua") --Mirialan female
+includeFile("creature/player/zeltron_male.lua") --Zeltron male
+includeFile("creature/player/zeltron_female.lua") --Zeltron female

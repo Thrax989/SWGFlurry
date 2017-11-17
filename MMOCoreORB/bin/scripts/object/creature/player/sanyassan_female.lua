@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_creature_player_hutt_male = object_creature_player_shared_hutt_male:new {
+object_creature_player_sanyassan_female = object_creature_player_shared_sanyassan_female:new {
 	baseHAM = { 100, 100, 100, 100, 100, 100, 100, 100, 100 },
 	gameObjectType = 1033,
 	zoneComponent = "PlayerZoneComponent",
@@ -50,17 +50,16 @@ object_creature_player_hutt_male = object_creature_player_shared_hutt_male:new {
 	pvpStatusBitmask = PLAYER,
 	templateType = PLAYERCREATURE,
 	childObjects = {
+		{templateFile = "object/player/player.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4},
 		{templateFile = "object/tangible/inventory/character_inventory.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4},
 		{templateFile = "object/tangible/datapad/character_datapad.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4},
-		{templateFile = "object/player/player.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4},
-		{templateFile = "object/tangible/bank/character_bank.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4},
 		{templateFile = "object/tangible/mission_bag/mission_bag.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4},
-		{templateFile = "object/weapon/melee/unarmed/unarmed_default_player.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4}
-		
+		{templateFile = "object/weapon/melee/unarmed/unarmed_default_player.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4},
+		{templateFile = "object/tangible/bank/character_bank.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4}
 	},
 	defaultLanguage = 1,
 	startingItems = { },
-	startingSkills = { "species_hutt", "social_language_basic_comprehend", "social_language_basic_speak", "social_language_huttese_comprehend", "social_language_huttese_speak" }
+	startingSkills = { "species_sanyassan", "social_language_basic_comprehend", "social_language_basic_speak" }
 }
 
-ObjectTemplates:addTemplate(object_creature_player_hutt_male, "object/creature/player/hutt_male.iff")
+ObjectTemplates:addTemplate(object_creature_player_sanyassan_female, "object/creature/player/sanyassan_female.iff")
