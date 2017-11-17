@@ -55,6 +55,6 @@ includeFile("tangible/hair/twilek/serverobjects.lua")
 includeFile("tangible/hair/wookiee/serverobjects.lua")
 includeFile("tangible/hair/zabrak/serverobjects.lua")
 includeFile("tangible/hair/kel_dor/serverobjects.lua")
-
+includeFile("tangible/hair/gungan/serverobjects.lua")
 
 -- Server Objects
