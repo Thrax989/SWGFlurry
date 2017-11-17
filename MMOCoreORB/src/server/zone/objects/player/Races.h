@@ -489,13 +489,6 @@ public:
 
 		return TemplateSpecies[raceid];
 	}
-	
-	inline const static char* getMood(int moodid) {
- 		if (moodid < 0 || moodid > 189)
- 			return "";
- 
- 		return MoodStr[moodid][0];
- 	}
 
 	inline const static char* getSpecies(int raceid) {
 		if (raceid < 0 || raceid > 65)
@@ -540,24 +533,6 @@ public:
     	}
 
     	return 0;
-	}
-
-	inline static int getMoodID(const String& name) {
-    	for (int i = 0; i < 190; i++) {
-        	if (strcmp(name.toCharArray(), MoodStr[i][0]) == 0)
-            	return i;
-    	}
-
-    	return 0;
-	}
-
-	inline const static char* getMoodStr(const String& name) {
-		for (int i = 0; i < 190; i++) {
-			if (strcmp(name.toCharArray(), MoodStr[i][0]) == 0)
-				return MoodStr[i][1];
-		}
-
-		return MoodStr[0][1];
 	}
 
 	inline static unsigned int * getAttribLimits(int raceid) {
