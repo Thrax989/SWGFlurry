@@ -489,6 +489,13 @@ public:
 
 		return TemplateSpecies[raceid];
 	}
+	
+	inline const static char* getMood(int moodid) {
+ 		if (moodid < 0 || moodid > 189)
+ 			return "";
+ 
+ 		return MoodStr[moodid][0];
+ 	}
 
 	inline const static char* getSpecies(int raceid) {
 		if (raceid < 0 || raceid > 65)
