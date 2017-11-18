@@ -42,17 +42,16 @@
 
 
 object_tangible_wearables_armor_rebel_assault_armor_rebel_assault_bracer_l = object_tangible_wearables_armor_rebel_assault_shared_armor_rebel_assault_bracer_l:new {
+	
 	templateType = ARMOROBJECT,
 
 	objectMenuComponent = "ArmorObjectMenuComponent", 
 
-	faction = "Rebel",
+	faction = "rebel",
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
-				"object/creature/player/talz_male.iff",
-				"object/creature/player/talz_female.iff",
 				"object/creature/player/togruta_female.iff",
 				"object/creature/player/togruta_male.iff",
 				"object/creature/player/weequay_male.iff",
@@ -67,8 +66,6 @@ object_tangible_wearables_armor_rebel_assault_armor_rebel_assault_bracer_l = obj
 				"object/creature/player/quarren_female.iff",
 				"object/creature/player/ishi_tib_male.iff",
 				"object/creature/player/ishi_tib_female.iff",
-				"object/creature/player/hutt_female.iff",
-				"object/creature/player/hutt_male.iff",
 				"object/creature/player/gran_male.iff",
 				"object/creature/player/gran_female.iff",
 				"object/creature/player/gotal_male.iff",
@@ -131,6 +128,7 @@ object_tangible_wearables_armor_rebel_assault_armor_rebel_assault_bracer_l = obj
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+
 
 	
 	-- Damage types in WeaponObject
