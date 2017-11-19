@@ -42,18 +42,15 @@
 
 
 object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_gloves = object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_gloves:new {
-	
 	templateType = ARMOROBJECT,
 
-	objectMenuComponent = "ArmorObjectMenuComponent", 
+	objectMenuComponent = "ArmorObjectMenuComponent",
 
-	faction = "Imperial",
+	faction = "imperial",
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
-				"object/creature/player/talz_male.iff",
-				"object/creature/player/talz_female.iff",
 				"object/creature/player/togruta_female.iff",
 				"object/creature/player/togruta_male.iff",
 				"object/creature/player/weequay_male.iff",
@@ -68,8 +65,6 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_gloves = object_
 				"object/creature/player/quarren_female.iff",
 				"object/creature/player/ishi_tib_male.iff",
 				"object/creature/player/ishi_tib_female.iff",
-				"object/creature/player/hutt_female.iff",
-				"object/creature/player/hutt_male.iff",
 				"object/creature/player/gran_male.iff",
 				"object/creature/player/gran_female.iff",
 				"object/creature/player/gotal_male.iff",

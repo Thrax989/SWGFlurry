@@ -1,14 +1,14 @@
 object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_bracer_l_gcw = object_tangible_wearables_armor_rebel_spec_force_shared_armor_rebel_spec_force_bracer_l_gcw:new {
-	
+
 	templateType = ARMOROBJECT,
 
 	objectMenuComponent = "ArmorObjectMenuComponent", 
 
-	faction = "rebel",
-
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
+				"object/creature/player/talz_male.iff",
+				"object/creature/player/talz_female.iff",
 				"object/creature/player/togruta_female.iff",
 				"object/creature/player/togruta_male.iff",
 				"object/creature/player/weequay_male.iff",
@@ -23,6 +23,8 @@ object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_bracer_l
 				"object/creature/player/quarren_female.iff",
 				"object/creature/player/ishi_tib_male.iff",
 				"object/creature/player/ishi_tib_female.iff",
+				"object/creature/player/hutt_female.iff",
+				"object/creature/player/hutt_male.iff",
 				"object/creature/player/gran_male.iff",
 				"object/creature/player/gran_female.iff",
 				"object/creature/player/gotal_male.iff",
@@ -86,41 +88,37 @@ object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_bracer_l
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 
-
-	
 	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
+	vulnerability = NONE,
 
-	specialResists = ELECTRICITY,
-
-	-- Copied from Comp
-	healthEncumbrance = 80,
-	actionEncumbrance = 80,
-	mindEncumbrance = 80,
-
-	maxCondition = 30000,
+	-- These are default Blue Frog stats
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
+	maxCondition = 300000,
 
 	-- LIGHT, MEDIUM, HEAVY
-	rating = LIGHT,
+	rating = HEAVY,
 
-	kinetic = 65,
-	energy = 65,
+	kinetic = 80,
+	energy = 80,
 	electricity = 80,
-	stun = 25,
-	blast = 65,
-	heat = 65,
-	cold = 65,
-	acid = 65,
-	lightSaber = 0,
+	stun = 80,
+	blast = 80,
+	heat = 80,
+	cold = 80,
+	acid = 80,
+	lightSaber = 80,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "OQ", "SR", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_resistance", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
 	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
-	experimentalMin = {0, 0, 0, 1000, 1, 30000, 25, 22, 25, 1, 0, 0, 0},
-	experimentalMax = {0, 0, 0, 1000, 40, 50000, 15, 13, 15, 1, 0, 0, 0},
+	experimentalMin = {0, 0, 0, 1000, 1, 250000, 75, 175, 25, 1, 0, 0, 0},
+	experimentalMax = {0, 0, 0, 1000, 40, 350000, 45, 105, 15, 1, 0, 0, 0},
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
+	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_bracer_l_gcw, "object/tangible/wearables/armor/rebel/spec/force/armor_rebel_spec_force_bracer_l_gcw.iff")

@@ -128,7 +128,7 @@ object_tangible_wearables_armor_rebel_snow_armor_rebel_snow_belt = object_tangib
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-}
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_snow_armor_rebel_snow_belt, "object/tangible/wearables/armor/rebel_snow/armor_rebel_snow_belt.iff")
