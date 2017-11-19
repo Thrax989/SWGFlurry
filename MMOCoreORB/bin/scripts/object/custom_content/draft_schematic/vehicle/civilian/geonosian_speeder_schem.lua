@@ -4,7 +4,7 @@ object_draft_schematic_vehicle_civilian_geonosian_speeder_schem = object_draft_s
 	customObjectName = "Geonosian Speeder",
 
 
---TEMPLATE SCHEMATIC************************************************************
+--TEMPLATE SCHEMATIC Small no color************************************************************
 	craftingToolTab = 16, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 25,
 	size = 1,

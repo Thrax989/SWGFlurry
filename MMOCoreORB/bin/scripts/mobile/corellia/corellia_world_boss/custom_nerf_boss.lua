@@ -20,12 +20,12 @@ custom_nerf_boss = Creature:new {
 	boneAmount = 905,
 	milk = 0,
 	tamingChance = 0,
-	ferocity = 20,
+	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 4.0,
+	scale = 3.0,
 
 	templates = {"object/mobile/nerf.iff"},
   lootGroups = {
@@ -104,15 +104,9 @@ custom_nerf_boss = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareacombo","stateAccuracyBonus=50"},
- 		{"creatureareaknockdown","stateAccuracyBonus=50"},
-		{"knockdownattack","KnockdownChance=50"},
-		{"creatureareaknockdown","KnockdownChance=50"},
-		{"dizzyattack","DizzyChance=50"},
-		{"stunattack","StunChance=50"},
-		{"intimidationattack","IntimidationChance=50"},
-		{"creatureareaattack","stateAccuracyBonus=35"},
- 	}
+		{"creatureareacombo","stateAccuracyBonus=100"},
+		{"creatureareaknockdown","stateAccuracyBonus=100"}
+	}
 }
 
 CreatureTemplates:addCreatureTemplate(custom_nerf_boss, "custom_nerf_boss")

@@ -4,11 +4,11 @@ object_tangible_wearables_armor_scout_trooper_armor_scout_trooper_boots_gcw = ob
 
 	objectMenuComponent = "ArmorObjectMenuComponent", 
 
+	faction = "imperial",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
-				"object/creature/player/talz_male.iff",
-				"object/creature/player/talz_female.iff",
 				"object/creature/player/togruta_female.iff",
 				"object/creature/player/togruta_male.iff",
 				"object/creature/player/weequay_male.iff",
@@ -23,8 +23,6 @@ object_tangible_wearables_armor_scout_trooper_armor_scout_trooper_boots_gcw = ob
 				"object/creature/player/quarren_female.iff",
 				"object/creature/player/ishi_tib_male.iff",
 				"object/creature/player/ishi_tib_female.iff",
-				"object/creature/player/hutt_female.iff",
-				"object/creature/player/hutt_male.iff",
 				"object/creature/player/gran_male.iff",
 				"object/creature/player/gran_female.iff",
 				"object/creature/player/gotal_male.iff",

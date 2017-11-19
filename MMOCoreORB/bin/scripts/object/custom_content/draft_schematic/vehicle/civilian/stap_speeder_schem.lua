@@ -29,7 +29,6 @@ object_draft_schematic_vehicle_civilian_stap_speeder_schem = object_draft_schema
 	contribution = {100, 100, 100, 100, 100, 100},
 
 --********************************************************************************
-
 	targetTemplate = "object/tangible/deed/vehicle_deed/speeder_stap_deed.iff",
 
 	additionalTemplates = {}

@@ -4,11 +4,9 @@ object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_bracer_r_g
 
 	objectMenuComponent = "ArmorObjectMenuComponent", 
 
-		playerRaces = { "object/creature/player/bothan_male.iff",
+	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
-				"object/creature/player/talz_male.iff",
-				"object/creature/player/talz_female.iff",
 				"object/creature/player/togruta_female.iff",
 				"object/creature/player/togruta_male.iff",
 				"object/creature/player/weequay_male.iff",
@@ -23,8 +21,6 @@ object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_bracer_r_g
 				"object/creature/player/quarren_female.iff",
 				"object/creature/player/ishi_tib_male.iff",
 				"object/creature/player/ishi_tib_female.iff",
-				"object/creature/player/hutt_female.iff",
-				"object/creature/player/hutt_male.iff",
 				"object/creature/player/gran_male.iff",
 				"object/creature/player/gran_female.iff",
 				"object/creature/player/gotal_male.iff",

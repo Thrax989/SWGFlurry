@@ -4,7 +4,7 @@ object_draft_schematic_vehicle_civilian_landspeeder_v35 = object_draft_schematic
 	customObjectName = "V-35 Landspeeder",
 
 
---TEMPLATE SCHEMATIC************************************************************
+--TEMPLATE SCHEMATIC Small no color************************************************************
 	craftingToolTab = 16, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 25,
 	size = 1,
@@ -29,7 +29,6 @@ object_draft_schematic_vehicle_civilian_landspeeder_v35 = object_draft_schematic
 	contribution = {100, 100, 100, 100, 100, 100},
 
 --********************************************************************************
-
 
 	targetTemplate = "object/tangible/deed/vehicle_deed/landspeeder_v35_deed.iff",
 

@@ -59,7 +59,7 @@ object_creature_player_hutt_female = object_creature_player_shared_hutt_female:n
 	},
 	defaultLanguage = 1,
 	startingItems = { },
-	startingSkills = { "species_hutt", "social_language_basic_comprehend", "social_language_basic_speak" }
+	startingSkills = { "species_hutt", "social_language_basic_comprehend", "social_language_basic_speak", "social_language_huttese_comprehend", "social_language_huttese_speak" }
 }
 
 ObjectTemplates:addTemplate(object_creature_player_hutt_female, "object/creature/player/hutt_female.iff")

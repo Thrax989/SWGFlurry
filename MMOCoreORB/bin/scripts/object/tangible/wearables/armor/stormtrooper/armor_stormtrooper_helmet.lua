@@ -42,7 +42,10 @@
 
 
 object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_helmet = object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_helmet:new {
+	
 	templateType = ARMOROBJECT,
+
+	objectMenuComponent = "ArmorObjectMenuComponent", 
 
 	faction = "Imperial",
 
@@ -164,7 +167,7 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_helmet = object_
 	experimentalMin = {0, 0, 0, 1000, 1, 30000, 25, 22, 300, 1, 0, 0, 0},
 	experimentalMax = {0, 0, 0, 1000, 40, 50000, 15, 13, 180, 1, 0, 0, 0},
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
-	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1}
+	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
 

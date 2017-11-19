@@ -4,11 +4,11 @@ object_tangible_wearables_armor_rebel_assault_armor_rebel_spec_ops_gloves = obje
 
 	objectMenuComponent = "ArmorObjectMenuComponent", 
 
+	faction = "rebel",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
-				"object/creature/player/talz_male.iff",
-				"object/creature/player/talz_female.iff",
 				"object/creature/player/togruta_female.iff",
 				"object/creature/player/togruta_male.iff",
 				"object/creature/player/weequay_male.iff",
@@ -23,8 +23,6 @@ object_tangible_wearables_armor_rebel_assault_armor_rebel_spec_ops_gloves = obje
 				"object/creature/player/quarren_female.iff",
 				"object/creature/player/ishi_tib_male.iff",
 				"object/creature/player/ishi_tib_female.iff",
-				"object/creature/player/hutt_female.iff",
-				"object/creature/player/hutt_male.iff",
 				"object/creature/player/gran_male.iff",
 				"object/creature/player/gran_female.iff",
 				"object/creature/player/gotal_male.iff",
@@ -89,6 +87,7 @@ object_tangible_wearables_armor_rebel_assault_armor_rebel_spec_ops_gloves = obje
 				"object/mobile/vendor/zabrak_male.iff" },
 
 
+
 	-- Damage types in WeaponObject
 	vulnerability = ACID + STUN,
 	specialResists = LIGHTSABER,
@@ -104,6 +103,16 @@ object_tangible_wearables_armor_rebel_assault_armor_rebel_spec_ops_gloves = obje
 	stun = 0,
 	acid = 0,
 	lightSaber = 12,
+
+	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
+	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
+	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_resistance", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
+	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
+	experimentalMin = {0, 0, 0, 1000, 1, 30000, 25, 22, 25, 1, 0, 0, 0},
+	experimentalMax = {0, 0, 0, 1000, 40, 50000, 15, 13, 15, 1, 0, 0, 0},
+	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
+	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_assault_armor_rebel_spec_ops_gloves, "object/tangible/wearables/armor/rebel/assault/armor_rebel_spec_ops_gloves.iff")
