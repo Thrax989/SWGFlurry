@@ -224,17 +224,6 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_one_handed_s4_gen1 = ob
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-				"object/mobile/vendor/sullustan_female.iff",
-				"object/mobile/vendor/sullustan_male.iff",
-				"object/mobile/vendor/trandoshan_female.iff",
-				"object/mobile/vendor/trandoshan_male.iff",
-				"object/mobile/vendor/twilek_female.iff",
-				"object/mobile/vendor/twilek_male.iff",
-				"object/mobile/vendor/weequay_male.iff",
-				"object/mobile/vendor/wookiee_female.iff",
-				"object/mobile/vendor/wookiee_male.iff",
-				"object/mobile/vendor/zabrak_female.iff",
-				"object/mobile/vendor/zabrak_male.iff" },
 
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK, 
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK

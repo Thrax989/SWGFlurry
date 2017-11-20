@@ -226,7 +226,6 @@ object_tangible_wearables_backpack_backpack_s08 = object_tangible_wearables_back
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-				"object/creature/player/wookiee_female.iff" },
 	numberExperimentalProperties = {1, 1, 1},
 	experimentalProperties = {"XX", "XX", "XX"},
 	experimentalWeights = {1, 1, 1},
