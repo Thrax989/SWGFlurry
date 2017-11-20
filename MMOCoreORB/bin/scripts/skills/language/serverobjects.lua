@@ -62,3 +62,7 @@ includeFile("language/social_language_wookiee_comprehend.lua")
 includeFile("language/social_language_wookiee_speak.lua")
 includeFile("language/social_language_zabrak_comprehend.lua")
 includeFile("language/social_language_zabrak_speak.lua")
+
+--added languages
+includeFile("language/social_language_huttese_comprehend.lua")
+includeFile("language/social_language_huttese_speak.lua")

@@ -9,7 +9,7 @@
 #include "server/zone/managers/collision/CollisionManager.h"
 
 ForceHealQueueCommand::ForceHealQueueCommand(const String& name, ZoneProcessServer* server) : JediQueueCommand(name, server) {
-	speed = 3;
+	speed = .5;
 	allowedTarget = TARGET_AUTO;
 
 	forceCost = 0;
@@ -370,8 +370,8 @@ int ForceHealQueueCommand::runCommandWithTarget(CreatureObject* creature, Creatu
 
 	Locker crossLocker(targetCreature, creature);
 
-	if (creature->isKnockedDown())
-		return GENERALERROR;
+	//if (creature->isKnockedDown())
+		//return GENERALERROR;
 
 	if(!checkDistance(creature, targetCreature, range))
 		return TOOFAR;

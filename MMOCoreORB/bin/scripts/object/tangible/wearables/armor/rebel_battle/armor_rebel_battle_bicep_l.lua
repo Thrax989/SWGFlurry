@@ -121,5 +121,5 @@ object_tangible_wearables_armor_rebel_battle_armor_rebel_battle_bicep_l = object
 	experimentalMax = {0, 0, 0, 1000, 40, 50000, 15, 13, 15, 1, 0, 0, 0},
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
-
+}
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_battle_armor_rebel_battle_bicep_l, "object/tangible/wearables/armor/rebel/battle/armor_rebel_battle_bicep_l.iff")
