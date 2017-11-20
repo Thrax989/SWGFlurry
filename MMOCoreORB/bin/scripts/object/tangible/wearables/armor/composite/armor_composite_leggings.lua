@@ -47,7 +47,6 @@ object_tangible_wearables_armor_composite_armor_composite_leggings = object_tang
 
 	objectMenuComponent = "ArmorObjectMenuComponent",
 
-	playerRaces = { "object/creature/player/bothan_male.iff",
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
