@@ -9,7 +9,7 @@
 #include "server/zone/managers/collision/CollisionManager.h"
 
 ForceHealQueueCommand::ForceHealQueueCommand(const String& name, ZoneProcessServer* server) : JediQueueCommand(name, server) {
-	speed = .5;
+	speed = 1.0;
 	allowedTarget = TARGET_AUTO;
 
 	forceCost = 0;
