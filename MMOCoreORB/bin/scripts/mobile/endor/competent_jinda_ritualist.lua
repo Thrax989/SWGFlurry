@@ -45,13 +45,13 @@ competent_jinda_ritualist = Creature:new {
 			groups = {
 				{group = "armor_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 10000
 		},
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 10000000}
 		},
-			lootChance = 10000000
+			lootChance = 10000
 		},
 		{
 			groups = {

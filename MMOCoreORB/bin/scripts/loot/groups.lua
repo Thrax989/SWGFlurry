@@ -373,6 +373,9 @@ includeFile("groups/tierthree.lua")
 includeFile("groups/lootcollectiontierone.lua")
 includeFile("groups/lootcollectiontiertwo.lua")
 includeFile("groups/lootcollectiontierthree.lua")
+includeFile("groups/lootcollectiontierdiamond.lua")
+includeFile("groups/lootcollectionflurry_coal.lua")
+includeFile("groups/lootcollectionflurry_present.lua")
 
 --Artifact system
 includeFile("groups/artifact.lua")
