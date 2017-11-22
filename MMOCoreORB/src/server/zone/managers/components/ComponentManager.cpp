@@ -51,6 +51,9 @@
 #include "server/zone/objects/tangible/components/CloningTerminalMenuComponent.h"
 #include "server/zone/objects/tangible/components/HolocronMenuComponent.h"
 #include "server/zone/objects/tangible/components/ArtifactMenuComponent.h"
+#include "server/zone/objects/tangible/components/DiamondMenuComponent.h"
+#include "server/zone/objects/tangible/components/FlurrycoalMenuComponent.h"
+#include "server/zone/objects/tangible/components/FlurrypresentMenuComponent.h"
 #include "server/zone/objects/tangible/components/HalloweenMenuComponent.h"
 #include "server/zone/objects/tangible/components/ForceShrineMenuComponent1.h"
 #include "server/zone/objects/tangible/components/FriendcrateMenuComponent.h"
@@ -207,6 +210,9 @@ ComponentManager::ComponentManager() {
 	components.put("CollectionplatinumMenuComponent", new CollectionplatinumMenuComponent());
 	components.put("XpMenuComponent", new XpMenuComponent());
 	components.put("ArtifactMenuComponent", new ArtifactMenuComponent());
+	components.put("DiamondMenuComponent", new DiamondMenuComponent());
+	components.put("FlurrycoalMenuComponent", new FlurrycoalMenuComponent());
+	components.put("FlurrypresentMenuComponent", new FlurrypresentMenuComponent());
 	components.put("HalloweenMenuComponent", new HalloweenMenuComponent());
 	components.put("ForceShrineMenuComponent1", new ForceShrineMenuComponent1());
 	components.put("FriendcrateMenuComponent", new FriendcrateMenuComponent());
