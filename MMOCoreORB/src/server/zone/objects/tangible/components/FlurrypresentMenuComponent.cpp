@@ -35,7 +35,7 @@ int FlurrypresentMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject,
 
  	ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
  	ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
-	lootManager->createLoot(inventory, "Flurrypresent", 300);
+	lootManager->createLoot(inventory, "flurry_present", 300);
 	creature->setPosture(CreaturePosture::UPRIGHT);
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
