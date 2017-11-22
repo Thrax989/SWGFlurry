@@ -35,7 +35,7 @@ int FlurrycoalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cr
 
  	ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
  	ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
-	lootManager->createLoot(inventory, "flurrycoal", 300);
+	lootManager->createLoot(inventory, "flurry_coal", 300);
 	creature->setPosture(CreaturePosture::UPRIGHT);
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
