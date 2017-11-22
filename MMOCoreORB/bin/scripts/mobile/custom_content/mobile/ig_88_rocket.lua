@@ -27,17 +27,7 @@ ig_88_rocket = Creature:new {
 	scale = 1.3,
 
 	templates = {"object/mobile/ig_88_rocket.iff"},
-	lootGroups = {
-{
-			groups = {
-				{group = "g_pistol_intimidator", chance = 2000000},
-				{group = "g_som_rifle_dp23", chance = 2000000},
-				{group = "g_som_carbine_republic_sfor", chance = 2000000},
-				{group = "g_lance_staff_magna_guard", chance = 2000000},
-				{group = "g_blasterfist", chance = 2000000}
-			}
-		}
-},
+	lootGroups = {},
 	weapons = {"st_bombardier_weapons"},
 	conversationTemplate = "",
 	attacks = merge(commandomaster,marksmanmaster)

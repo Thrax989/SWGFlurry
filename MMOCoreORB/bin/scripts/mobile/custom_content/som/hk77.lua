@@ -27,7 +27,7 @@ hk77 = Creature:new {
 
 	templates = {"object/mobile/som/hk77.iff"},
 	lootGroups = {},
-	weapons = {"ig106_weapons"},
+	weapons = {},
 	conversationTemplate = "",
 	attacks = merge(marksmanmaster,pistoleernovice)
 }

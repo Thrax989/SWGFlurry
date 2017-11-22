@@ -27,6 +27,10 @@ includeFile("custom_loot/items/backpacks/armored_backpack.lua")
 includeFile("custom_loot/items/backpacks/recon_backpack.lua")
 includeFile("custom_loot/items/backpacks/yoda_backpack.lua")
 
+--Hoth
+includeFile("custom_loot/items/hoth/wampa_bones.lua")
+includeFile("custom_loot/items/hoth/wampa_bones_rare.lua")
+
 --Human Skull
 includeFile("custom_loot/items/human_skull.lua")
 --Token

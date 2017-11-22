@@ -27,14 +27,8 @@ sherkar = Creature:new {
 
 	templates = {"object/mobile/som/sher_kar.iff"},
 	scale = 1.1;
-	lootGroups = {
-		{
-			groups = {
-				{group = "fire_breathing_spider", chance = 5000000},
-				{group = "g_som_lance_xandank", chance = 5000000}
-			}
-		}
-	},
+	lootGroups = {},
+		
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

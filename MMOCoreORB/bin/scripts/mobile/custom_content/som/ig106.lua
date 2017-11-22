@@ -28,7 +28,7 @@ ig106 = Creature:new {
 
 	templates = {"object/mobile/som/ig106.iff"},
 	lootGroups = {},
-	weapons = {"ig106_weapons"},
+	weapons = {},
 	conversationTemplate = "",
 	attacks = merge(marksmannovice,pistoleernovice)
 }

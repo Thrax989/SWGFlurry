@@ -31,18 +31,7 @@ norulac_raider = Creature:new {
 		"object/mobile/dressed_mercenary_destroyer_hum_f.iff"
 	},
 
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 6750000},
-				{group = "pistols", chance = 750000},
-				{group = "rifles", chance = 750000},
-				{group = "carbines", chance = 750000},
-				{group = "marauder_armor", chance = 500000},
-				{group = "clothing_attachments", chance = 500000}
-			}
-		}
-	},
+	lootGroups = {},
 	weapons = {"ranged_weapons"},
 	conversationTemplate = "",
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)

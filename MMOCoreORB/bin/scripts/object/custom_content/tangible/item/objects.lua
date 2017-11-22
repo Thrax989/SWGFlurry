@@ -194,14 +194,14 @@ object_tangible_item_loot_crates_shared_diamond_crate = SharedTangibleObjectTemp
 ObjectTemplates:addClientTemplate(object_tangible_item_loot_crates_shared_diamond_crate, "object/tangible/item/loot_crates/shared_diamond_crate.iff")
 --**********************************************************************************************************************************
 
-object_tangible_item_loot_crates_shared_flurry_coal = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/item/loot_crates/shared_flurry_coal.iff"
+object_tangible_item_loot_crates_shared_xmas_coal = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/loot_crates/shared_xmas_coal.iff"
 }
-ObjectTemplates:addClientTemplate(object_tangible_item_loot_crates_shared_flurry_coal, "object/tangible/item/loot_crates/shared_flurry_coal.iff")
+ObjectTemplates:addClientTemplate(object_tangible_item_loot_crates_shared_xmas_coal, "object/tangible/item/loot_crates/shared_xmas_coal.iff")
 --**********************************************************************************************************************************
 
-object_tangible_item_loot_crates_shared_flurry_present = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/item/loot_crates/shared_flurry_present.iff"
+object_tangible_item_loot_crates_shared_xmas_crate = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/item/loot_crates/shared_xmas_crate.iff"
 }
-ObjectTemplates:addClientTemplate(object_tangible_item_loot_crates_shared_flurry_present, "object/tangible/item/loot_crates/shared_flurry_present.iff")
+ObjectTemplates:addClientTemplate(object_tangible_item_loot_crates_shared_xmas_crate, "object/tangible/item/loot_crates/shared_xmas_crate.iff")
 --**********************************************************************************************************************************

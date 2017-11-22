@@ -27,19 +27,7 @@ exar_kun = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/exar_kun.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "g_lance_massassi", chance = 2000000},
-				{group = "g_som_2h_sword_massassi", chance = 2000000},
-				{group = "g_carbine_kun_massassi", chance = 1500000},
-				{group = "g_sith_house_loot_deed", chance = 1500000},
-				{group = "g_pistol_heroic_exar", chance = 1500000},
-				{group = "g_rifle_massassi_ink", chance = 1500000}
-
-			}
-		}
-	},
+	lootGroups = {},	
 	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
 	attacks = merge(forcepowermaster,tkamaster,lightsabermaster,brawlermaster,forcewielder)

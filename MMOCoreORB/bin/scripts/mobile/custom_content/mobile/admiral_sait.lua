@@ -29,11 +29,8 @@ admiral_sait = Creature:new {
 	lootGroups = {
 	 	{
 	        groups = {
-				{group = "g_polearm_heroic_sd", chance = 2000000},
-				{group = "g_carbine_heroic_sd", chance = 2000000},
-				{group = "g_pistol_heroic_sd", chance = 2000000},
-				{group = "g_rifle_a280", chance = 2000000},
-				{group = "g_2h_sword_pvp_bf_01", chance = 2000000},
+				{group = "junk", chance = 10000000},
+				
 			}
 		}
 	},

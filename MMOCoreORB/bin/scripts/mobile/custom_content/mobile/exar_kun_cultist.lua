@@ -27,18 +27,7 @@ exar_kun_cultist = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/exar_kun_cultist.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "armor_attachments", chance = 3000000},
-				{group = "clothing_attachments", chance = 3000000},
-				{group = "melee_weapons", chance = 3000000},
-				{group = "rifles", chance = 200000},
-				{group = "pistols", chance = 600000},
-				{group = "carbines", chance = 200000},
-			}
-		}
-	},
+	lootGroups = {},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
 	attacks = merge(tkamid,fencermid,swordsmanmid,pikemanmid,brawlermaster)

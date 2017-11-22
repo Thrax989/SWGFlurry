@@ -27,26 +27,7 @@ gr_krayt_dragon_grand = Creature:new {
 
 	templates = {"object/mobile/krayt_dragon.iff"},
 	scale = 1.1;
-	lootGroups = {
-		{
-	        groups = {
-				{group = "krayt_tissue_rare", chance = 3300000},
-				{group = "krayt_dragon_common", chance = 3300000},
-				{group = "pearls_flawless", chance = 3400000}				
-			},
-			lootChance = 6500000
-		},
-		{
-	        groups = {
-				{group = "composite_armor", chance = 2000000},
-				{group = "ubese_armor", chance = 2000000},
-				{group = "melee_two_handed", chance = 2000000},
-				{group = "rifles", chance = 2000000},
-				{group = "wearables_all", chance = 2000000},				
-			},
-			lootChance = 3500000
-		}
-	},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

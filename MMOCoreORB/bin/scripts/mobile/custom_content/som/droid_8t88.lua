@@ -27,7 +27,7 @@ droid_8t88 = Creature:new {
 
 	templates = {"object/mobile/som/8t88.iff"},
 	lootGroups = {},
-	weapons = {"ig106_weapons"},
+	weapons = {},
 	conversationTemplate = "",
 	attacks = merge(marksmanmaster,pistoleermaster)
 }

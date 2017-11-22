@@ -33,18 +33,8 @@ norulac_raider_captain = Creature:new {
 		
 	},
 
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 1750000},
-				{group = "g_pistol_renegade", chance = 1750000},
-				{group = "g_rifle_adventurer", chance = 1750000},
-				{group = "g_carbine_bothan_bola", chance = 1750000},
-				{group = "marauder_armor", chance = 1500000},
-				{group = "clothing_attachments", chance = 1500000}
-			}
-		}
-	},
+	lootGroups = {},
+		
 	weapons = {"dark_trooper_weapons"},
 	conversationTemplate = "",
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,swordsmanmaster,pistoleermaster)

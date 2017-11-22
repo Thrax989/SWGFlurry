@@ -23,4 +23,4 @@ lootcollectionflurry_present  = {
 	}
 }
 
-addLootGroupTemplate("lootcollectiontierflurry_present", lootcollectiontierflurry_present)
+addLootGroupTemplate("lootcollectionflurry_present", lootcollectionflurry_present)

@@ -29,16 +29,7 @@ general_grievous = Creature:new {
 	scale = 1.5,
 
 	templates = {"object/mobile/ep3/general_grievous.iff"},
-	lootGroups = {
-	 	{
-	        groups = {
-				{group = "crystal_banes_heart", chance = 2500000},
-				{group = "g_lance_staff_magna_guard", chance = 2500000},
-				{group = "g_hangar_house_loot_deed", chance = 2500000},
-				{group = "barc_speeder_deed_group", chance = 2500000}
-			}
-		}
-	},
+	lootGroups = {},
 	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
 	attacks = merge(lightsabermaster)

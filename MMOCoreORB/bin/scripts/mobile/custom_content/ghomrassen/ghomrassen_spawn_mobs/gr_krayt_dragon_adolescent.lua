@@ -27,25 +27,7 @@ gr_krayt_dragon_adolescent = Creature:new {
 
 	templates = {"object/mobile/krayt_dragon_hue.iff"},
 	scale = 0.7;
-	lootGroups = {
-		{
-	        groups = {
-				{group = "krayt_dragon_common", chance = 6000000},
-				{group = "krayt_tissue_uncommon", chance = 4000000}				
-			},
-			lootChance = 5000000
-		},
-		{
-	        groups = {
-				{group = "composite_armor", chance = 2000000},
-				{group = "ubese_armor", chance = 2000000},
-				{group = "melee_two_handed", chance = 2000000},
-				{group = "rifles", chance = 2000000},
-				{group = "wearables_all", chance = 2000000},				
-			},
-			lootChance = 2500000
-		}
-	},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

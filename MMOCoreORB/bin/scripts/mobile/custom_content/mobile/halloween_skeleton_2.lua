@@ -70,8 +70,7 @@ halloween_skeleton_2 = Creature:new {
 	},
 	weapons = {},
 	conversationTemplate = "",
-	attacks = {
-	}
+	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(halloween_skeleton_2, "halloween_skeleton_2")
