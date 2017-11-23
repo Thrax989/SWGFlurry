@@ -160,7 +160,8 @@ public:
 
 	float hitChanceEquation(float attackerAccuracy, float attackerRoll, float targetDefense, float defenderRoll);
 	float doDroidDetonation(CreatureObject* droid, CreatureObject* defender, float damage);
-
+	
+	void sendDamageTypeCombatSpam(CreatureObject* defender, WeaponObject* weapon);
 	void checkForTefs(CreatureObject* attacker, CreatureObject* defender, bool* shouldGcwTef, bool* shouldBhTef);
 
 	//all the combat math will go here
