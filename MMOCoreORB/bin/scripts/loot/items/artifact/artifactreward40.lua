@@ -2,7 +2,7 @@ artifactreward40 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Artifact 40",
-	directObjectTemplate = "object/tangible/collection/beetle_borer.iff",
+	directObjectTemplate = "object/tangible/collection/col_hoth_meteorite_01.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},

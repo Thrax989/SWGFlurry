@@ -2,7 +2,7 @@ artifactreward25 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Artifact 25",
-	directObjectTemplate = "object/tangible/collection/col_dust_durni_04.iff",
+	directObjectTemplate = "object/tangible/collection/col_family_story_grave_01.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},

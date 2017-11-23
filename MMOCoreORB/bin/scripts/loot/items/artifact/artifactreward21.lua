@@ -2,7 +2,7 @@ artifactreward21 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Artifact 21",
-	directObjectTemplate = "object/tangible/collection/col_dust_durni_04.iff",
+	directObjectTemplate = "object/tangible/collection/col_ent_instrument_04.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
