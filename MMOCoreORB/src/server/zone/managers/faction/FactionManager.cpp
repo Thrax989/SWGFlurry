@@ -199,7 +199,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				destructedObject->sendSystemMessage(message);
 				zBroadcast << "\\#00e604" << "Light Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#e60000 Dark Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
 			}else{
-				zBroadcast << "\\#00e604" << playerName << " \\#e60000 was killed in the GCW by " << "\\#00cc99" << killerName;
+				zBroadcast << "\\#7133FF Imperial " <<"\\#00e604" << playerName << " \\#e60000 was slain in the GCW by " <<"\\#FF9933 Rebel " << "\\#00cc99" << killerName;
 			}
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		} else if (killer->isImperial() && destructedObject->isRebel()) {
@@ -227,7 +227,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				destructedObject->sendSystemMessage(message);
 				zBroadcast << "\\#e60000" << "Dark Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#00e604 Light Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
 			}else{
-				zBroadcast << "\\#00e604" << playerName << " \\#e60000 was killed in the GCW by " << "\\#00cc99" << killerName;
+				zBroadcast << "\\#FF9933 Rebel " << "\\#00e604" << playerName << " \\#e60000 was slain in the GCW by " << "\\#7133FF Imperial "<< "\\#00cc99" << killerName;
 			}
 				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		}
