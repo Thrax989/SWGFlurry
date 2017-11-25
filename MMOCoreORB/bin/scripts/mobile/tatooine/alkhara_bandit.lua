@@ -34,13 +34,13 @@ lootGroups = {
 			groups = {
 				{group = "junk", chance = 10000000}				
 		},
-			lootChance = 10000000
+			lootChance = 100000
 		},
 		{
 			groups = {
 				{group = "artifact", chance = 10000000}			
 		},
-			lootChance = 1000000
+			lootChance = 100000
 		},
 		{
 			groups = {
@@ -64,13 +64,13 @@ lootGroups = {
 			groups = {
 				{group = "loot_kit_parts", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 100000
 		},
 		{
 			groups = {
 				{group = "alkhara_common", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 100000
 		},
 	},
 	weapons = {"ranged_weapons"},
