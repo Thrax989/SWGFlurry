@@ -1608,6 +1608,23 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  					player->subtractCashCredits(1000);
 					box->setForceCloseDistance(5.f);
 			        }
+			} else if (templatePath == "pc_gallo_skumopolis") {
+				if (!player->isInCombat() && player->getCashCredits() < 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Player City - Skumopolis");
+		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("naboo", -7155, -197, 5283);
+ 					player->subtractCashCredits(1000);
+					box->setForceCloseDistance(5.f);
+			        }
 //Mandalore Travels
 			} else if (templatePath == "sundari_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 999) {

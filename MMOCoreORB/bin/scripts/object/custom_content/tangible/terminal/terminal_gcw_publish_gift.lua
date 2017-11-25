@@ -76,6 +76,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Theed Starport (1,000 Credits)", "theed_starport_travel",
 			"Player City - Kessel (1,000 Credits)", "pc_kessel_travel",
 			"Player City - Gallo Valley (1,000 Credits)", "pc_gallo_valley_travel",
+			"Player City - Skumopolis (1,000 Credits)", "pc_gallo_skumopolis",
 		   },
 		 	"rori",
 		   {
