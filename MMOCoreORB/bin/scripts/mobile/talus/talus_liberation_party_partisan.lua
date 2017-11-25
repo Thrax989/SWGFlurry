@@ -28,14 +28,32 @@ talus_liberation_party_partisan = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_talus_sif_mercenary_rodian_01.iff"},
+
+--Creature Default Loot Template
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 6000000},
-				{group = "tailor_components", chance = 1500000},
-				{group = "loot_kit_parts", chance = 1500000},
-				{group = "printer_parts", chance = 1000000}
-			}
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
 		}
 	},
 	weapons = {"ranged_weapons"},
