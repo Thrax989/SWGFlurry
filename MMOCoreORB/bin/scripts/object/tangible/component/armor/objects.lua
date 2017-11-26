@@ -5244,3 +5244,9 @@ clientTemplateFileName = "object/tangible/component/armor/shared_orbalisk_shell.
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_component_armor_shared_orbalisk_shell, "object/tangible/component/armor/shared_orbalisk_shell.iff")
+
+object_tangible_component_armor_shared_wampa_blood = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/component/armor/shared_wampa_blood.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_component_armor_shared_wampa_blood, "object/tangible/component/armor/shared_wampa_blood.iff")
