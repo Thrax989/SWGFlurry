@@ -25,7 +25,7 @@ void CollectionplatinumMenuComponent::fillObjectMenuResponse(SceneObject* sceneO
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 
-	menuResponse->addRadialMenuItem(20, 3, "Reveal Collection Item Platinum Tier");
+	menuResponse->addRadialMenuItem(20, 3, "Open Platinum Crate");
 }
 
 int CollectionplatinumMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {

@@ -25,7 +25,7 @@ void CollectiongoldMenuComponent::fillObjectMenuResponse(SceneObject* sceneObjec
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 
-	menuResponse->addRadialMenuItem(20, 3, "Reveal Collection Item Gold Tier");
+	menuResponse->addRadialMenuItem(20, 3, "Open Gold Crate");
 }
 
 int CollectiongoldMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {

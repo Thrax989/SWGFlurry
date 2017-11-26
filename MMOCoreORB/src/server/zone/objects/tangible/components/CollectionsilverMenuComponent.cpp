@@ -25,7 +25,7 @@ void CollectionsilverMenuComponent::fillObjectMenuResponse(SceneObject* sceneObj
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 
-	menuResponse->addRadialMenuItem(20, 3, "Reveal Collection Item Silver Tier");
+	menuResponse->addRadialMenuItem(20, 3, "Open Silver Crate");
 }
 
 int CollectionsilverMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
