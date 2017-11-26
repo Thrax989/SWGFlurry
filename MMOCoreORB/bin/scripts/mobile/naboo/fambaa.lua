@@ -53,8 +53,8 @@ fambaa = Creature:new {
 				{group = "tierthree", chance = 10000000}
 		},
 			lootChance = 10000
-		}
-	},
+		},
+	
 --Change this group to special loot group
 		{
 			groups = {
