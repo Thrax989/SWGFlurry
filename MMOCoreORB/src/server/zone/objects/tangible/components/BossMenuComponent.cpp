@@ -41,7 +41,22 @@ void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectM
 }
 int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID == 213) {
-//SAVED FOR MINI BOSS ENCOUNTER TELEPORT 1
+	if (player->isInCombat) {
+	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+	box->setPromptTitle("Mini Boss Encounter 1");
+	box->setPromptText("You May Not Travel While In Combat");
+	box->setOkButton(true, "@cancel");
+	box->setUsingObject(player);
+	player->getPlayerObject()->addSuiBox(box);
+	player->sendMessage(box->generateMessage());
+	}
+	if (!player->isInCombat) {
+		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		player->sendSystemMessage("Prepair for the boss fight!.");
+		player->switchZone("corellia", 0, 0, 0);
+		box->setForceCloseDistance(5.f);
+		sceneObject->destroyObjectFromWorld(true);
+		}
 	}
 	if (selectedID == 214) {
 //SAVED FOR MINI BOSS ENCOUNTER TELEPORT 2
