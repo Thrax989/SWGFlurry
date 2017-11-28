@@ -41,58 +41,69 @@ void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectM
 }
 int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID == 213) {
-	if (player->isInCombat) {
-	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-	box->setPromptTitle("Mini Boss Encounter 1");
-	box->setPromptText("You May Not Travel While In Combat");
-	box->setOkButton(true, "@cancel");
-	box->setUsingObject(player);
-	player->getPlayerObject()->addSuiBox(box);
-	player->sendMessage(box->generateMessage());
-	}
-	if (!player->isInCombat) {
-		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		player->sendSystemMessage("Prepair for the boss fight!.");
-		player->switchZone("corellia", 0, 0, 0);
-		box->setForceCloseDistance(5.f);
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
 		sceneObject->destroyObjectFromWorld(true);
-		}
 	}
 	if (selectedID == 214) {
-//SAVED FOR MINI BOSS ENCOUNTER TELEPORT 2
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 215) {
-//SAVED FOR MINI BOSS ENCOUNTER TELEPORT 3
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 216) {
-//SAVED FOR MINI BOSS ENCOUNTER TELEPORT 4
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 217) {
-//SAVED FOR MINI BOSS ENCOUNTER TELEPORT 5
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 221) {
-//SAVED FOR BOSS ENCOUNTER TELEPORT 1
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 222) {
-//SAVED FOR BOSS ENCOUNTER TELEPORT 2
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 223) {
-//SAVED FOR BOSS ENCOUNTER TELEPORT 3
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 224) {
-//SAVED FOR BOSS ENCOUNTER TELEPORT 4
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 225) {
-//SAVED FOR BOSS ENCOUNTER TELEPORT 5
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 226) {
-//SAVED FOR BOSS ENCOUNTER TELEPORT 6
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 227) {
-//SAVED FOR BOSS ENCOUNTER TELEPORT 7
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 228) {
-//SAVED FOR BOSS ENCOUNTER TELEPORT 8
+		creature->sendSystemMessage("Prepair for the boss fight!.");
+		creature->switchZone("corellia", 0, 0, 0);
+		sceneObject->destroyObjectFromWorld(true);
 	}
 	return 0;
 }
