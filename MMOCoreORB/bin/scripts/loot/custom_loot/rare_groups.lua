@@ -27,3 +27,6 @@ includeFile("custom_loot/groups/clothing/jedi_belt_comp_group.lua")
 includeFile("custom_loot/groups/clothing/jedi_belt_group.lua")
 --Hoth
 includeFile("custom_loot/groups/hoth/wampa.lua")
+
+--Event
+includeFile("custom_loot/groups/events/event3.lua")
