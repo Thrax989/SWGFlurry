@@ -92,7 +92,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 	}
 	if (selectedID == 226) {
 		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078 6296349);
+		creature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
 		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 227) {
