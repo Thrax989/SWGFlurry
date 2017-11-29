@@ -5250,3 +5250,10 @@ clientTemplateFileName = "object/tangible/component/armor/shared_wampa_blood.iff
 }
 
 ObjectTemplates: addClientTemplate(object_tangible_component_armor_shared_wampa_blood, "object/tangible/component/armor/shared_wampa_blood.iff")
+
+object_tangible_component_armor_shared_spoiled_wampa_blood = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/component/armor/shared_spoiled_wampa_blood.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_component_armor_shared_spoiled_wampa_blood, "object/tangible/component/armor/shared_spoiled_wampa_blood.iff")
+

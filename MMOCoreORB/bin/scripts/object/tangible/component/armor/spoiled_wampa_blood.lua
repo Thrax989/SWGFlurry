@@ -41,19 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_tangible_component_armor_spoiled_wampa_blood = object_tangible_component_armor_shared_spoiled_wampa_blood:new {
 
---Children folder includes
-includeFile("tangible/loot/base/serverobjects.lua")
-includeFile("tangible/loot/bestine/serverobjects.lua")
-includeFile("tangible/loot/collectible/serverobjects.lua")
-includeFile("tangible/loot/creature_loot/serverobjects.lua")
-includeFile("tangible/loot/dungeon/serverobjects.lua")
-includeFile("tangible/loot/loot_schematic/serverobjects.lua")
-includeFile("tangible/loot/misc/serverobjects.lua")
-includeFile("tangible/loot/plant_grow/serverobjects.lua")
-includeFile("tangible/loot/quest/serverobjects.lua")
-includeFile("tangible/loot/simple_kit/serverobjects.lua")
-includeFile("tangible/loot/tool/serverobjects.lua")
-includeFile("tangible/loot/token/serverobjects.lua")
-
--- Server Objects
+}
+ObjectTemplates: addTemplate(object_tangible_component_armor_spoiled_wampa_blood, "object/tangible/component/armor/spoiled_wampa_blood.iff")

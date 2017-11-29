@@ -55,10 +55,10 @@ includeFile("custom_content/tangible/wearables/armor/kashyyykian_hunting/servero
 includeFile("custom_content/tangible/wearables/armor/mandalorian_imperial/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/armor/mandalorian_rebel/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/armor/marauder/serverobjects.lua")
-includeFile("custom_content/tangible/wearables/armor/rebel_snow/serverobjects.lua")
+--includeFile("custom_content/tangible/wearables/armor/rebel_snow/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/armor/rebel_spec_force/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/armor/scout_trooper/serverobjects.lua")
-includeFile("custom_content/tangible/wearables/armor/snowtrooper/serverobjects.lua")
+--includeFile("custom_content/tangible/wearables/armor/snowtrooper/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/armor/tantel/serverobjects.lua")
 includeFile("custom_content/tangible/wearables/armor/infiltrator/serverobjects.lua")
 
