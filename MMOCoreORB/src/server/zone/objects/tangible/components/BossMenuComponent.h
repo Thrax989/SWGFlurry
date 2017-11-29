@@ -46,7 +46,7 @@ namespace player {
 
 using namespace server::zone::objects::player;
 
-class BossMenuComponent1 : public TangibleObjectMenuComponent {
+class BossMenuComponent : public TangibleObjectMenuComponent {
 
 public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
