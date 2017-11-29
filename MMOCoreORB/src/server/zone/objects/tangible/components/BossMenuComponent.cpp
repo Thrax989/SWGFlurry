@@ -67,42 +67,42 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 	}
 	if (selectedID == 221) {
 		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872)
+		creature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
 		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 222) {
 		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", 6193, 250, -5978, 0)
+		creature->switchZone("dungeon2", 6193, 250, -5978, 0);
 		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 223) {
 		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134)
+		creature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
 		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 224) {
 		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863)
+		creature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
 		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 225) {
 		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198)
+		creature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
 		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 226) {
 		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("kashyyyk", -3.8, -1.1, -4.2, 281474997391073)
+		creature->switchZone("kashyyyk", -3.8, -1.1, -4.2, 281474997391073);
 		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 227) {
 		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104)
+		creature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
 		sceneObject->destroyObjectFromWorld(true);
 	}
 	if (selectedID == 228) {
 		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon1", 7, 172.3, 300, 4336867)
+		creature->switchZone("dungeon1", 7, 172.3, 300, 4336867);
 		sceneObject->destroyObjectFromWorld(true);
 	}
 	return 0;
