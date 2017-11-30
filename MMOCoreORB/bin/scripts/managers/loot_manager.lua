@@ -41,9 +41,10 @@
 --which carries forward this exception.
 
 --Determines how often exceptional and legendary items can drop.
-yellowChance = 500 -- 1 in 500
-exceptionalChance = 50000 --1 in 50,000
-legendaryChance = 500000 --1 in 500,000
+
+yellowChance = 50 -- 1 in 50
+exceptionalChance = 500 --1 in 500
+legendaryChance = 1000 --1 in 1,000
 
 --Determines how much of an increase in the base stats will be applied to the object.
 yellowModifier = 1.5
@@ -133,7 +134,20 @@ lootableArmorAttachmentStatMods = {
 	"unarmed_damage",
 	"unarmed_speed",
 	"volley",
-	"warcry"
+	"warcry",
+	"heavy_flame_thrower_accuracy",
+	"heavy_flame_thrower_speed",
+	"camp",
+	"tame_level",
+	"bio_engineer_assembly",
+	"bio_engineer_experimentation",
+	"combat_healing_ability",
+	"combat_medic_effectiveness",
+	"healing_ability",
+	"creature_harvesting",
+	"creature_hit_bonus",
+	"dna_harvesting",
+	"luck"
 }
 
 lootableClothingAttachmentStatMods = {
@@ -249,7 +263,20 @@ lootableClothingAttachmentStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"weapon_repair"
+	"weapon_repair",
+	"camp",
+	"tame_level",
+	"combat_healing_ability",
+	"combat_medic_effectiveness",
+	"healing_ability",
+	"bio_engineer_assembly",
+	"bio_engineer_experimentation",
+	"creature_hit_bonus",
+	"creature_knowledge",
+	"dna_harvesting",
+	"heavy_flame_thrower_accuracy",
+	"heavy_flame_thrower_speed",
+	"luck"
 }
 
 lootableArmorStatMods = {

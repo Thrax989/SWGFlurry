@@ -62,7 +62,7 @@ public:
 			} else {
 				currentPhase = ONEFAILURE;
 			}
-			this->reschedule(10000);
+			this->reschedule(2000);
 			break;
 		case ONESUCCESS:
 			if (success) {
@@ -71,14 +71,14 @@ public:
 			} else {
 					player->sendSystemMessage("@skl_use:milk_continue"); // You continue to milk the creature.
 					currentPhase = FINAL;
-					this->reschedule(10000);
+					this->reschedule(2000);
 			}
 			break;
 		case ONEFAILURE:
 			if (success) {
 				player->sendSystemMessage("@skl_use:milk_continue"); // You continue to milk the creature.
 				currentPhase = FINAL;
-				this->reschedule(10000);
+				this->reschedule(2000);
 			} else {
 				updateMilkState(CreatureManager::NOTMILKED);
 				_clocker.release();
@@ -106,7 +106,7 @@ public:
 		String restype = creature->getMilkType();
 		int quantity = creature->getMilk();
 
-		int quantityExtracted = Math::max(quantity, 10)*50;
+		int quantityExtracted = Math::max(quantity, 10)*5;
 
 		ManagedReference<ResourceSpawn*> resourceSpawn = resourceManager->getCurrentSpawn(restype, player->getZone()->getZoneName());
 
