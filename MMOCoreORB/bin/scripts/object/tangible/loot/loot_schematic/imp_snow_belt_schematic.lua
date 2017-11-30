@@ -42,13 +42,14 @@
 
 
 object_tangible_loot_loot_schematic_imp_snow_belt_schematic = object_tangible_loot_loot_schematic_shared_imp_snow_belt_schematic:new {
+	templateType = LOOTSCHEMATIC,
 	customName = "Snowtrooper Belt Armor Schematic",
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_armorsmith_master",
 	targetDraftSchematic = "object/draft_schematic/armor/armor_appearance_snowtrooper_utility_belt.iff", 
 	targetUseCount = 5, 
-	noTrade = 1
+	
 }
 
 ObjectTemplates: addTemplate(object_tangible_loot_loot_schematic_imp_snow_belt_schematic, "object/tangible/loot/loot_schematic/imp_snow_belt_schematic.iff")

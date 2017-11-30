@@ -19,12 +19,12 @@ object_draft_schematic_armor_armor_appearance_snowtrooper_utility_belt = object_
 	customizationStringNames = {"/private/index_color_2"},
 	customizationDefaults = {82},
 
-	ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
-	ingredientTitleNames = {"auxilary_coverage", "body", "liner"},
-	ingredientSlotType = {0, 0, 1},
-	resourceTypes = {"metal", "hide", "object/tangible/component/clothing/shared_fiberplast_panel.iff"},
-	resourceQuantities = {15, 4, 1},
-	contribution = {100, 100, 100},
+	ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_item_ingredients_n"},
+	ingredientTitleNames = {"auxilary_coverage", "body", "liner", "wampa_blood"},
+	ingredientSlotType = {0, 0, 1, 1},
+	resourceTypes = {"metal", "hide", "object/tangible/component/clothing/shared_fiberplast_panel.iff", "object/tangible/component/armor/shared_wampa_blood.iff"},
+	resourceQuantities = {15, 4, 1, 1},
+	contribution = {100, 100, 100, 0},
 
 
 	targetTemplate = "object/tangible/wearables/armor/snowtrooper/armor_snowtrooper_belt.iff",
