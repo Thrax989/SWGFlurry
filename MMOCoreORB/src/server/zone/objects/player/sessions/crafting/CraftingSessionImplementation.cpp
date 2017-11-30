@@ -67,7 +67,6 @@ int CraftingSessionImplementation::startSession() {
 	}
 
 	/// Get current allowed complexity
-	ManagedReference<PlayerObject*> playerObject = crafter->getPlayerObject();
 	int complexityLevel = craftingTool->getComplexityLevel();
 
 	if (craftingStation != NULL)
@@ -133,8 +132,7 @@ int CraftingSessionImplementation::cancelSession() {
 	ManagedReference<CraftingTool*> craftingTool = this->craftingTool.get();
 	ManagedReference<CreatureObject*> crafter = this->crafter.get();
 	ManagedReference<PlayerObject*> crafterGhost = this->crafterGhost.get();
-	ManagedReference<CraftingStation*> craftingStation = this->craftingStation.get();
-	
+
 	if (craftingTool != NULL)
 		craftingTool->dropActiveSession(SessionFacadeType::CRAFTING);
 
@@ -163,8 +161,7 @@ int CraftingSessionImplementation::clearSession() {
 	ManagedReference<PlayerObject*> crafterGhost = this->crafterGhost.get();
 	ManagedReference<ManufactureSchematic*> manufactureSchematic = this->manufactureSchematic.get();
 	ManagedReference<TangibleObject*> prototype = this->prototype.get();
-	ManagedReference<CraftingStation*> craftingStation = this->craftingStation.get();
-	
+
 	if (manufactureSchematic != NULL) {
 
 		Locker locker(manufactureSchematic);
@@ -481,7 +478,7 @@ void CraftingSessionImplementation::addIngredient(TangibleObject* tano, int slot
 		return;
 	}
 
-	ManagedReference<SceneObject*> craftingComponents = craftingTool->getSlottedObject("crafted_components");
+
 	ManagedReference<SceneObject*> craftingComponentsSatchel = craftingTool->getCraftedComponentsSatchel();
 
 	// Lock the craft and satchel as well
@@ -504,9 +501,7 @@ void CraftingSessionImplementation::removeIngredient(TangibleObject* tano, int s
 	ManagedReference<PlayerObject*> crafterGhost = this->crafterGhost.get();
 	ManagedReference<ManufactureSchematic*> manufactureSchematic = this->manufactureSchematic.get();
 	ManagedReference<TangibleObject*> prototype = this->prototype.get();
-	ManagedReference<CraftingTool*> craftingTool = this->craftingTool.get();
-	ManagedReference<CraftingStation*> craftingStation = this->craftingStation.get();
-	
+
 	if (crafter == NULL) {
 		sendSlotMessage(clientCounter, IngredientSlot::INVALID);
 		return;
@@ -560,9 +555,6 @@ void CraftingSessionImplementation::nextCraftingStage(int clientCounter) {
 	ManagedReference<CraftingTool*> craftingTool = this->craftingTool.get();
 	ManagedReference<ManufactureSchematic*> manufactureSchematic = this->manufactureSchematic.get();
 	ManagedReference<TangibleObject*> prototype = this->prototype.get();
-	ManagedReference<CreatureObject*> crafter = this->crafter.get();
-	ManagedReference<PlayerObject*> crafterGhost = this->crafterGhost.get();
-	ManagedReference<CraftingStation*> craftingStation = this->craftingStation.get();
 
 	if (manufactureSchematic == NULL) {
 		sendSlotMessage(clientCounter, IngredientSlot::NOSCHEMATIC);
@@ -859,8 +851,7 @@ void CraftingSessionImplementation::experiment(int rowsAttempted, const String& 
 	ManagedReference<ManufactureSchematic*> manufactureSchematic = this->manufactureSchematic.get();
 	ManagedReference<TangibleObject*> prototype = this->prototype.get();
 	ManagedReference<CraftingManager*> craftingManager = this->craftingManager.get();
-	ManagedReference<CraftingStation*> craftingStation = this->craftingStation.get();
-	
+
 	if (manufactureSchematic == NULL) {
 		sendSlotMessage(0, IngredientSlot::NOSCHEMATIC);
 		return;
@@ -1003,10 +994,7 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 	ManagedReference<CreatureObject*> crafter = this->crafter.get();
 	ManagedReference<ManufactureSchematic*> manufactureSchematic = this->manufactureSchematic.get();
 	ManagedReference<TangibleObject*> prototype = this->prototype.get();
-	ManagedReference<PlayerObject*> crafterGhost = this->crafterGhost.get();
-	ManagedReference<CraftingStation*> craftingStation = this->craftingStation.get();
-	ManagedReference<CraftingManager*> craftingManager = this->craftingManager.get();
-	
+
 	if (manufactureSchematic == NULL) {
 		sendSlotMessage(0, IngredientSlot::NOSCHEMATIC);
 		return;
@@ -1167,7 +1155,6 @@ void CraftingSessionImplementation::finishStage2(int clientCounter) {
 void CraftingSessionImplementation::createPrototype(int clientCounter, bool createItem) {
 	ManagedReference<CreatureObject*> crafter = this->crafter.get();
 	ManagedReference<ManufactureSchematic*> manufactureSchematic = this->manufactureSchematic.get();
-	ManagedReference<CraftingTool*> craftingTool = this->craftingTool.get();
 	
 	int grantLootChance = 1; // Enable junk loot when crafting AKA Scarp
 
@@ -1211,6 +1198,7 @@ void CraftingSessionImplementation::createPrototype(int clientCounter, bool crea
 		// Roll for loot drop when in practice mode
 		if (grantLootChance == 1){	
 			ManagedReference<DraftSchematic*> draftSchematic = manufactureSchematic->getDraftSchematic();
+	                ManagedReference<CraftingTool*> craftingTool = this->craftingTool.get();
 			int itemComplexity = manufactureSchematic->getComplexity();
 			int toolQuality = craftingTool->getEffectiveness();
 			int assemblySkill = crafter->getSkillMod(draftSchematic->getAssemblySkill());
@@ -1307,12 +1295,6 @@ void CraftingSessionImplementation::startCreationTasks(int timer, bool practice)
 
 	ManagedReference<ZoneServer*> server = crafter->getZoneServer();
 
-	ManagedReference<PlayerObject*> crafterGhost = this->crafterGhost.get();
-	ManagedReference<CraftingStation*> craftingStation = this->craftingStation.get();
-	ManagedReference<ManufactureSchematic*> manufactureSchematic = this->manufactureSchematic.get();
-	ManagedReference<TangibleObject*> prototype = this->prototype.get();
-	ManagedReference<CraftingManager*> craftingManager = this->craftingManager.get();
-
 	if (server != NULL) {
 
 		Locker locker(craftingTool);
@@ -1346,10 +1328,6 @@ void CraftingSessionImplementation::createManufactureSchematic(int clientCounter
 	ManagedReference<CreatureObject*> crafter = this->crafter.get();
 	ManagedReference<ManufactureSchematic*> manufactureSchematic = this->manufactureSchematic.get();
 	ManagedReference<TangibleObject*> prototype = this->prototype.get();
-	ManagedReference<CraftingTool*> craftingTool = this->craftingTool.get();
-	ManagedReference<PlayerObject*> crafterGhost = this->crafterGhost.get();
-	ManagedReference<CraftingStation*> craftingStation = this->craftingStation.get();
-	ManagedReference<CraftingManager*> craftingManager = this->craftingManager.get();
 
 	if (manufactureSchematic == NULL) {
 		sendSlotMessage(0, IngredientSlot::NOSCHEMATIC);
