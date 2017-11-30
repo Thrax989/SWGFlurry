@@ -36,6 +36,10 @@ int DiamondMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creat
  	ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
  	ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	creature->setPosture(CreaturePosture::UPRIGHT);
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
