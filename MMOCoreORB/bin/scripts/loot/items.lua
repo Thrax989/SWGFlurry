@@ -1169,6 +1169,8 @@ includeFile("items/wearables/wookiee/wke_skirt_s04.lua")
 includeFile("items/collection/collectiontierone.lua")
 includeFile("items/collection/collectiontiertwo.lua")
 includeFile("items/collection/collectiontierthree.lua")
+includeFile("items/collection/collectiondiamond.lua")
+
 
 --Artifact system
 includeFile("items/artifact/artifact1.lua")
