@@ -1198,6 +1198,7 @@ void CraftingSessionImplementation::createPrototype(int clientCounter, bool crea
 		// Roll for loot drop when in practice mode
 		if (grantLootChance == 1){	
 			ManagedReference<DraftSchematic*> draftSchematic = manufactureSchematic->getDraftSchematic();
+	                ManagedReference<CraftingTool*> craftingTool = this->craftingTool.get();
 			int itemComplexity = manufactureSchematic->getComplexity();
 			int toolQuality = craftingTool->getEffectiveness();
 			int assemblySkill = crafter->getSkillMod(draftSchematic->getAssemblySkill());
