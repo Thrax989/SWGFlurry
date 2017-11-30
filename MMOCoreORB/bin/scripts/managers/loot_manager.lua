@@ -41,6 +41,7 @@
 --which carries forward this exception.
 
 --Determines how often exceptional and legendary items can drop.
+
 yellowChance = 50 -- 1 in 50
 exceptionalChance = 500 --1 in 500
 legendaryChance = 1000 --1 in 1,000
