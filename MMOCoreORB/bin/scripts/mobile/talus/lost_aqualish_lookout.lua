@@ -30,15 +30,32 @@ lost_aqualish_lookout = Creature:new {
 	templates = {
 		"object/mobile/dressed_lost_aqualish_lookout_female_01.iff",
 		"object/mobile/dressed_lost_aqualish_lookout_male_01.iff"},
+
+--Creature Default Loot Template
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 6500000},
-				{group = "tailor_components", chance = 1500000},
-				{group = "loot_kit_parts", chance = 1500000},
-				{group = "color_crystals", chance = 500000}
-			},
-			lootChance = 2200000
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
 		}
 	},
 	weapons = {"pirate_weapons_medium"},

@@ -30,18 +30,8 @@ norulac_raider_commando = Creature:new {
 		templates = {"object/mobile/dressed_commando_trainer_human_male_01.iff"		
 	},
 
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 6750000},
-				{group = "pistols", chance = 750000},
-				{group = "rifles", chance = 750000},
-				{group = "carbines", chance = 750000},
-				{group = "marauder_armor", chance = 500000},
-				{group = "clothing_attachments", chance = 500000}
-			}
-		}
-	},
+	lootGroups = {},
+	
 	weapons = {"st_bombardier_weapons"},
 	conversationTemplate = "",
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)

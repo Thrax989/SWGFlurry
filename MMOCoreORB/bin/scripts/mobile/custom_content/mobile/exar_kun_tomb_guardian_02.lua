@@ -27,18 +27,7 @@ exar_kun_tomb_guardian_02 = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/exar_kun_tomb_guardian_02.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "armor_attachments", chance = 2000000},
-				{group = "clothing_attachments", chance = 2000000},
-				{group = "melee_weapons", chance = 2000000},
-				{group = "g_massassiknuckler", chance = 2000000},
-				{group = "g_sword_massassi", chance = 2000000},
-
-			}
-		}
-	},
+	lootGroups = {},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
 	attacks = merge(fencermid,swordsmanmid,pikemanmaster,tkamaster,brawlermaster,forcewielder)

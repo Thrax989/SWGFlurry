@@ -521,7 +521,7 @@ end
 		     		DeleteItems = DeleteItems - 1
 		     		invObj:destroyObjectFromWorld()
 					invObj:destroyObjectFromDatabase()
-		       	end					
+		       end					
 		       	end
    	  end
    end)		  

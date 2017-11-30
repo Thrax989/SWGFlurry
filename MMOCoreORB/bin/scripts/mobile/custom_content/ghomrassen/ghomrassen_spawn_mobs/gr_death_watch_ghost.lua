@@ -26,19 +26,7 @@ gr_death_watch_ghost = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_death_watch_grey.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "death_watch_bunker_commoners",   chance = 500000},
-				{group = "death_watch_bunker_lieutenants", chance = 3500000},
-				{group = "death_watch_bunker_ingredient_protective",  chance = 100000},
-				{group = "death_watch_bunker_ingredient_binary",  chance = 100000},
-				{group = "mandalorian_schemes", chance = 5800000}
-				--{group = "", chance = 2000000}  <=THERE IS NO GROUP HERE?????? WHAT WAS MEANT TO BE HERE - INCREASED CHANCE ON MANDO SCHEMES BY 2000000
-			},
-			lootChance = 10000000
-		}
-	},
+	lootGroups = {},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)

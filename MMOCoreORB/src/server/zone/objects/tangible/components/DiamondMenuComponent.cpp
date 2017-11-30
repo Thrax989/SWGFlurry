@@ -25,7 +25,7 @@ void DiamondMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Obje
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 
-	menuResponse->addRadialMenuItem(20, 3, "Reveal Diamond Crate");
+	menuResponse->addRadialMenuItem(20, 3, "Open Diamond Crate");
 }
 
 int DiamondMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {

@@ -27,11 +27,16 @@ includeFile("custom_loot/items/backpacks/armored_backpack.lua")
 includeFile("custom_loot/items/backpacks/recon_backpack.lua")
 includeFile("custom_loot/items/backpacks/yoda_backpack.lua")
 
+--Hoth
+includeFile("custom_loot/items/hoth/wampa_bones.lua")
+includeFile("custom_loot/items/hoth/wampa_bones_rare.lua")
+
 --Human Skull
 includeFile("custom_loot/items/human_skull.lua")
 --Token
 includeFile("custom_loot/items/tokens/imperial_credit.lua")
 includeFile("custom_loot/items/tokens/rebel_credit.lua")
+includeFile("custom_loot/items/tokens/event_token.lua")
 
 --Jedi Clothing Treatment
 includeFile("custom_loot/items/clothing/jedi_treatment_01.lua")
@@ -41,6 +46,8 @@ includeFile("custom_loot/items/clothing/mando_iron.lua")
 includeFile("custom_loot/items/clothing/jedi_belt_01.lua")
 includeFile("custom_loot/items/clothing/jedi_belt_02.lua")
 includeFile("custom_loot/items/clothing/jedi_belt_03.lua")
+includeFile("custom_loot/items/clothing/wampa_blood.lua")
+includeFile("custom_loot/items/clothing/spoiled_wampa_blood.lua")
 
 --Jedi Robe
 includeFile("custom_loot/items/clothing/jedi_robe_black_01.lua")

@@ -30,15 +30,45 @@ binayre_pirate = Creature:new {
 	templates = {
 		"object/mobile/dressed_binayre_pirate_zabrak_female_01.iff",
 		"object/mobile/dressed_binayre_pirate_zabrak_male_01.iff"},
-	lootGroups = {
+
+--NPC Faction Template	Binayre
+lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 2450000},
-				{group = "tailor_components", chance = 1500000},
-				{group = "loot_kit_parts", chance = 1500000},
-				{group = "binayre_common", chance = 4550000}
-			}
-		}
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "binayre_common", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
 	},
 	weapons = {"pirate_weapons_medium"},
 	conversationTemplate = "",

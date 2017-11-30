@@ -136,3 +136,5 @@ includeFile("tangible/component/armor/shield_generator_vehicular.lua")
 
 includeFile("tangible/component/armor/mando_iron.lua")
 includeFile("tangible/component/armor/orbalisk_shell.lua")
+includeFile("tangible/component/armor/wampa_blood.lua")
+includeFile("tangible/component/armor/spoiled_wampa_blood.lua")

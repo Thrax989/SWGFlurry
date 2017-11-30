@@ -27,7 +27,34 @@ feeble_kima = Creature:new {
 
 	templates = {"object/mobile/kima_hue.iff"},
 	scale = 0.9,
-	lootGroups = {},
+
+--Creature Default Loot Template
+	lootGroups = {
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

@@ -31,13 +31,32 @@ fed_dub_patrolman = Creature:new {
 		"object/mobile/dressed_fed_dub_patrol_man_human_male_01.iff",
 		"object/mobile/dressed_fed_dub_patrolman_human_female_01.iff",
 		"object/mobile/dressed_fed_dub_patrolman_human_male_01.iff"},
+
+--Creature Default Loot Template
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 7000000},
-				{group = "tailor_components", chance = 1500000},
-				{group = "loot_kit_parts", chance = 1500000}
-			}
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 25000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 10000
 		}
 	},
 	weapons = {"rebel_weapons_medium"},

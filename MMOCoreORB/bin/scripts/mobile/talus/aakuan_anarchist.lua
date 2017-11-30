@@ -31,16 +31,45 @@ aakuan_anarchist = Creature:new {
 	templates = {
 		"object/mobile/dressed_aakuan_follower_trandoshan_female_01.iff",
 		"object/mobile/dressed_aakuan_follower_trandoshan_male_01.iff"},
-	lootGroups = {
+
+--NPC Faction Template	Aajuan
+lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "data_storage_unit_parts", chance = 1600000},
-				{group = "aakuan_common", chance = 2400000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "clothing_attachments", chance = 500000}
-			}
-		}
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "artifact", chance = 10000000}			
+		},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 10000000}
+		},
+			lootChance = 750000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000}
+		},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+		},
+			lootChance = 50000
+		},
+		{
+			groups = {
+				{group = "aakuan_common", chance = 10000000}
+		},
+			lootChance = 1000000
+		},
 	},
 	weapons = {"melee_weapons"},
 	conversationTemplate = "",
