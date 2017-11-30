@@ -165,7 +165,8 @@ lootableArmorAttachmentStatMods = {
 	"forceintimidate_accuracy",
 	"forceknockdown_accuracy",
 	"forcelightning_accuracy",
-	"forceweaken_accuracy"
+	"forceweaken_accuracy",
+	"luck"
 }
 
 lootableClothingAttachmentStatMods = {
@@ -313,7 +314,8 @@ lootableClothingAttachmentStatMods = {
 	"forcelightning_accuracy",
 	"forceweaken_accuracy",
 	"heavy_flame_thrower_accuracy",
-	"heavy_flame_thrower_speed"
+	"heavy_flame_thrower_speed",
+	"luck"
 }
 
 lootableArmorStatMods = {
