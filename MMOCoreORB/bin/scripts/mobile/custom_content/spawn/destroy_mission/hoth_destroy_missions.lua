@@ -3,9 +3,21 @@ hoth_destroy_missions = {
 
 	lairSpawns = {
 		{
+			lairTemplateName = "hoth_taun_taun_lair",
+			minDifficulty = 1,
+			maxDifficulty = 5,
+			size = 25,
+		},
+		{
+			lairTemplateName = "hoth_taun_taun_lair",
+			minDifficulty = 5,
+			maxDifficulty = 10,
+			size = 25,
+		},
+		{
 			lairTemplateName = "hoth_wampa_lair",
 			minDifficulty = 15,
-			maxDifficulty = 24,
+			maxDifficulty = 25,
 			size = 25,
 		},
 		{
