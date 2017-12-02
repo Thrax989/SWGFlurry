@@ -30,10 +30,8 @@ lifeDayScreenplay = ScreenPlay:new {
 		{ planet = "yavin4", x = -14.4, y = -3919.7, },
 	},
 
-	randomGifts = {"object/tangible/loot/quest/lifeday_orb.iff",
-		"object/tangible/painting/painting_wookiee_m.iff",
-		"object/tangible/painting/painting_wookiee_f.iff",
-		"object/tangible/painting/painting_trees_s01.iff"},
+	randomGifts = {"object/tangible/item/loot_crates/xmas_crate.iff",
+		"object/tangible/item/loot_crates/xmas_coal.iff",},
 
 	robe = "object/tangible/wearables/wookiee/wke_lifeday_robe.iff"
 }

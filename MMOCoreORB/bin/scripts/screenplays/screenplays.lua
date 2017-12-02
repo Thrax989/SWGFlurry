@@ -664,8 +664,8 @@ includeFile("events/imperial_armor_vendor.lua")
 includeFile("events/rebel_armor_vendor.lua")
 
 --GCW Vendors
-includeFile("events/imperial_armor_vendor.lua")
-includeFile("events/rebel_armor_vendor.lua")
+--includeFile("events/imperial_armor_vendor.lua")
+--includeFile("events/rebel_armor_vendor.lua")
 
 ---Dungeon ISD
  includeFile("dungeon/isd/isd.lua")

@@ -30,3 +30,5 @@ includeFile("custom_loot/groups/hoth/wampa.lua")
 
 --Event
 includeFile("custom_loot/groups/events/event3.lua")
+--Lifeday
+includeFile("custom_loot/groups/lifeday/lifeday.lua")
