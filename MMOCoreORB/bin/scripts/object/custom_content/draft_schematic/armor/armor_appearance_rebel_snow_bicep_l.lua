@@ -26,7 +26,7 @@ templateType = DRAFTSCHEMATIC,
    ingredientSlotType = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1},
    resourceTypes = {"ore_intrusive", "fuel_petrochem_solid_known", "fiberplast_naboo", "aluminum", "copper_beyrllius", "hide_wooly", "object/tangible/component/armor/shared_armor_segment_composite.iff", "object/tangible/component/clothing/shared_synthetic_cloth.iff", "object/tangible/component/clothing/shared_reinforced_fiber_panels.iff", "object/tangible/component/armor/shared_wampa_blood.iff"},
    resourceQuantities = {70, 70, 35, 40, 30, 30, 2, 1, 1, 1},
-   contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100},
+   contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100, 0},
 
    targetTemplate = "object/tangible/wearables/armor/rebel_snow/armor_rebel_snow_bicep_l.iff",
 
