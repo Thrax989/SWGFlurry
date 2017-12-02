@@ -1,5 +1,5 @@
 hoth_wampa_lair = Lair:new {
-	mobiles = {{"wampa_baby",1}},
+	mobiles = {{"wampa",1}},
 	spawnLimit = 15,
 	buildingsVeryEasy = {"object/tangible/lair/base/poi_all_lair_bones_large_fog_red.iff"},
 	buildingsEasy = {"object/tangible/lair/base/poi_all_lair_bones_large_fog_red.iff"},
