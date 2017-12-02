@@ -24,5 +24,5 @@ includeFile("custom_content/spawn/kessel_world.lua")
 --destroy_mission
 
 includeFile("custom_content/spawn/destroy_mission/taanab_destroy_missions.lua")
-
+includeFile("custom_content/spawn/destroy_mission/hoth_destroy_missions.lua")
 
