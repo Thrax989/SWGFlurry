@@ -37,7 +37,7 @@ int FlurrycoalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cr
  	ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
 	lootManager->createLoot(inventory, "flurry_coal", 300);
 	lootManager->createLoot(inventory, "flurry_coal", 300);
-	creature->setPosture(CreaturePosture::UPRIGHT);
+	creature->playEffect("clienteffect/mustafar/dark_jedi_rock_attack_10.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
 }
