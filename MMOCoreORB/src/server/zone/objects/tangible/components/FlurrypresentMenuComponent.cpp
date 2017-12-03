@@ -38,7 +38,8 @@ int FlurrypresentMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject,
 	lootManager->createLoot(inventory, "flurry_present", 300);
 	lootManager->createLoot(inventory, "flurry_present", 300);
 	lootManager->createLoot(inventory, "flurry_present", 300);
-	creature->setPosture(CreaturePosture::UPRIGHT);
+	creature->playEffect("clienteffect/hh_15_torpedo_warhead.cef", "");
+	creature->playEffect("clienteffect/mus_relay_create.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
 }
