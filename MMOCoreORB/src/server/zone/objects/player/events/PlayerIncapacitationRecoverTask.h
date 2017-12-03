@@ -82,6 +82,7 @@ public:
 
 			if (deadRecovery) {
 				player->playEffect("clienteffect/player_clone_compile.cef");
+				player->playEffect("clienteffect/medic_cure_affliction.cef");
 				player->notifyObservers(ObserverEventType::PLAYERCLONED, player, 0);
 				player->broadcastPvpStatusBitmask();
 			}
