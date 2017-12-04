@@ -63,7 +63,6 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				}
 			}
 		}
-
 	}
 
 	if (selectedID == 214) {
