@@ -4,6 +4,10 @@
 
 #ifndef SETHUECOMMAND_H_
 #define SETHUECOMMAND_H_
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/packets/object/PlayClientEffectObjectMessage.h"
+#include "server/zone/packets/scene/PlayClientEffectLocMessage.h"
+#include "server/zone/packets/scene/PlayClientEventObjectMessage.h"
 
 class SetHueCommand : public QueueCommand {
 public:
