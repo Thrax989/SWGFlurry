@@ -54,6 +54,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 					if (groupedCreature != NULL && groupedCreature != creature) {
 						Locker dlocker(groupedCreature, creature);
 		                                creature->switchZone("corellia", 0, 0, 0);
+		                                member->switchZone("corellia", 0, 0, 0);		
 		                                sceneObject->destroyObjectFromWorld(true);
 						dlocker.release();
 					}
