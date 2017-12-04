@@ -1608,7 +1608,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  					player->subtractCashCredits(1000);
 					box->setForceCloseDistance(5.f);
 			        }
-			} else if (templatePath == "pc_gallo_skumopolis") {
+			} else if (templatePath == "pc_skumopolis") {
 				if (!player->isInCombat() && player->getCashCredits() < 999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Player City - Skumopolis");
