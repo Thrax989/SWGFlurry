@@ -19,6 +19,7 @@
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/ZoneServer.h"
 #include "server/chat/ChatManager.h"
+
 #include "server/zone/objects/group/GroupObject.h"
 
 void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
@@ -42,6 +43,7 @@ void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectM
 }
 int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID == 213) {
+
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group != NULL) {
@@ -53,10 +55,10 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 					if (groupedCreature != NULL && groupedCreature != creature) {
 						Locker dlocker(groupedCreature, creature);
-		                                creature->switchZone("corellia", 0, 0, 0);
-		                                member->switchZone("corellia", 0, 0, 0);		
+		                                member->switchZone("corellia", 0, 0, 0);
 		                                sceneObject->destroyObjectFromWorld(true);
 						dlocker.release();
+		                                creature->switchZone("corellia", 0, 0, 0);
 					}
 				}
 			}
