@@ -44,24 +44,25 @@ void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectM
 int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID == 213) {
 
-        	ManagedReference<GroupObject> group = creature->getGroup();
+		ManagedReference<GroupObject*> group = creature->getGroup();
 
-        	if (group != NULL) {
-            	for (int i = 0; i < group->getGroupSize()-1; i++) {
-                	ManagedReference<CreatureObject> groupedCreature = cast<CreatureObject*>(group->getGroupMember(i));
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				CreatureObject* member = group->getGroupMember(i);
 
-                	if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f)) {
+				if (member != NULL && member->isCreatureObject() && member->isInRange(creature, 30.0f)) {
+					ManagedReference<CreatureObject*> groupedCreature = cast<CreatureObject*>(member);
 
-                    	if (groupedCreature != NULL && groupedCreature != creature) {
-                        	Locker dlocker(groupedCreature, creature);
-                        	groupedCreature->switchZone("corellia", 0, 0, 0);
-                        	dlocker.release();
-                    	}
-                	}
-            	}
-            	sceneObject->destroyObjectFromWorld(true);
-            	creature->switchZone("corellia", 0, 0, 0);
-        	}
+					if (groupedCreature != NULL && groupedCreature != creature) {
+						Locker dlocker(groupedCreature, creature);
+		                                member->switchZone("corellia", 0, 0, 0);
+		                                sceneObject->destroyObjectFromWorld(true);
+						dlocker.release();
+		                                creature->switchZone("corellia", 0, 0, 0);
+					}
+				}
+			}
+		}
 	}
 
 	if (selectedID == 214) {
