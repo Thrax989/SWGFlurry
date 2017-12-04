@@ -25,7 +25,7 @@ public:
 
 		GroupManager* groupManager = GroupManager::instance();
 		groupManager->joinGroup(creature);
-			creature->playEffect("clienteffect/death_trooper_anti_virus.cef", "");
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 
 		return SUCCESS;
 	}
