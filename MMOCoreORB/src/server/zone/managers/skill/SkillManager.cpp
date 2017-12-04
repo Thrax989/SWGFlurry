@@ -383,7 +383,7 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 	creature->sendMessage(msg4);
 
 	SkillModManager::instance()->verifySkillBoxSkillMods(creature);
-	creature->playEffect("clienteffect/entertainer_spot_light_level_3.cef", "");
+	creature->playEffect("clienteffect/skill_granted.cef", "");
 	return true;
 }
 

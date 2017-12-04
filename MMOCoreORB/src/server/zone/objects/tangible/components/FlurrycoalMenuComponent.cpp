@@ -25,7 +25,7 @@ void FlurrycoalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, O
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 
-	menuResponse->addRadialMenuItem(20, 3, "Reveal Coal");
+	menuResponse->addRadialMenuItem(20, 3, "I have been naughty");
 }
 
 int FlurrycoalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
@@ -36,7 +36,8 @@ int FlurrycoalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cr
  	ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
  	ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
 	lootManager->createLoot(inventory, "flurry_coal", 300);
-	creature->setPosture(CreaturePosture::UPRIGHT);
+	lootManager->createLoot(inventory, "flurry_coal", 300);
+	creature->playEffect("clienteffect/mustafar/dark_jedi_rock_attack_10.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
 }

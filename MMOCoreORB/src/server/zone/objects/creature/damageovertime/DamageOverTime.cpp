@@ -199,6 +199,7 @@ uint32 DamageOverTime::doBleedingTick(CreatureObject* victim, CreatureObject* at
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_bleeding.cef","");
+		victimRef->playEffect("clienteffect/dot_bleeding.cef","");
 	}, "BleedTickLambda");
 
 	return damage;
@@ -250,6 +251,8 @@ uint32 DamageOverTime::doFireTick(CreatureObject* victim, CreatureObject* attack
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_fire.cef","");
+		victimRef->playEffect("clienteffect/lava_player_burning.cef");
+
 	}, "FireTickLambda");
 
 	return damage;
@@ -284,6 +287,7 @@ uint32 DamageOverTime::doPoisonTick(CreatureObject* victim, CreatureObject* atta
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_poisoned.cef","");
+		victimRef->playEffect("clienteffect/mus_cym_disease.cef");
 	}, "PoisonTickLambda");
 
 	return damage;
@@ -327,6 +331,7 @@ uint32 DamageOverTime::doDiseaseTick(CreatureObject* victim, CreatureObject* att
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_diseased.cef","");
+		victimRef->playEffect("clienteffect/mus_cym_poison.cef.cef");
 	}, "DiseaseTickLambda");
 
 	return damage;

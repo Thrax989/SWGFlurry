@@ -40,7 +40,7 @@ int DiamondMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creat
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	creature->setPosture(CreaturePosture::UPRIGHT);
+	creature->playEffect("clienteffect/level_granted.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
 	return 0;
 }

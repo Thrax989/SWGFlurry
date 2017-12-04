@@ -385,3 +385,7 @@ includeFile("groups/artifactreward.lua")
 --Halloween
 includeFile("groups/halloween.lua")
 includeFile("groups/halloween1.lua")
+
+--lifeday
+includeFile("groups/flurry_coal.lua")
+includeFile("groups/flurry_present.lua")

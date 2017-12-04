@@ -20,6 +20,8 @@
 #include "server/zone/ZoneServer.h"
 #include "server/chat/ChatManager.h"
 
+#include "server/zone/objects/group/GroupObject.h"
+
 void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
@@ -41,10 +43,28 @@ void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectM
 }
 int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID == 213) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("corellia", 0, 0, 0);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				CreatureObject* member = group->getGroupMember(i);
+
+				if (member != NULL && member->isCreatureObject() && member->isInRange(creature, 30.0f)) {
+					ManagedReference<CreatureObject*> groupedCreature = cast<CreatureObject*>(member);
+
+					if (groupedCreature != NULL && groupedCreature != creature) {
+						Locker dlocker(groupedCreature, creature);
+		                                member->switchZone("corellia", 0, 0, 0);
+		                                sceneObject->destroyObjectFromWorld(true);
+						dlocker.release();
+		                                creature->switchZone("corellia", 0, 0, 0);
+					}
+				}
+			}
+		}
 	}
+
 	if (selectedID == 214) {
 		creature->sendSystemMessage("Prepair for the boss fight!.");
 		creature->switchZone("corellia", 0, 0, 0);

@@ -842,12 +842,20 @@ bool CreatureObjectImplementation::setState(uint64 state, bool notifyClient) {
 				break;
 			}
 			case CreatureState::POISONED:
+				playEffect("clienteffect/dot_poisoned.cef");
+				playEffect("clienteffect/mus_cym_disease.cef");
+				
 				break;
 			case CreatureState::DISEASED:
+				playEffect("clienteffect/dot_diseased.cef");
+				playEffect("clienteffect/mus_cym_poison.cef.cef");
 				break;
 			case CreatureState::ONFIRE:
+				playEffect("clienteffect/dot_fire.cef");
+				playEffect("clienteffect/lava_player_burning.cef");
 				break;
 			case CreatureState::BLEEDING:
+				playEffect("clienteffect/dot_bleeding.cef");
 				break;
 			case CreatureState::INTIMIDATED:
 				playEffect("clienteffect/combat_special_defender_intimidate.cef");
