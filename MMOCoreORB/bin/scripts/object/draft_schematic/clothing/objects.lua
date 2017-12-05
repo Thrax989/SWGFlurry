@@ -25099,3 +25099,8 @@ object_draft_schematic_clothing_shared_clothing_armor_marauder_s02_leggings = Sh
 	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_marauder_s02_leggings.iff"
 }
 ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_marauder_s02_leggings, "object/draft_schematic/clothing/shared_clothing_armor_marauder_s02_leggings.iff")
+
+object_draft_schematic_clothing_shared_clothing_backpack_waist_admin = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_backpack_waist_admin.iff"
+}
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_backpack_waist_admin, "object/draft_schematic/clothing/shared_clothing_backpack_waist_admin.iff")

@@ -1987,6 +1987,8 @@ schematics = {
 	{path="object/draft_schematic/vehicle/component/custom_veh_gravity_pump_schem.iff"},
 	{path="object/draft_schematic/vehicle/component/custom_veh_power_converter_schem.iff"},
 	{path="object/draft_schematic/vehicle/component/custom_veh_turbine_control_module_schem.iff"},
+	--Admin Bag
+	{path="object/draft_schematic/clothing/clothing_backpack_waist_admin.iff"},
 
 
 
