@@ -389,3 +389,6 @@ includeFile("groups/halloween1.lua")
 --lifeday
 includeFile("groups/flurry_coal.lua")
 includeFile("groups/flurry_present.lua")
+
+--Marauder armor schems
+includeFile("groups/marauder_armor_schems.lua")

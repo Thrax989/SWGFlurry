@@ -42,9 +42,9 @@
 
 --Determines how often exceptional and legendary items can drop.
 
-yellowChance = 50 -- 1 in 50
+yellowChance = 250 -- 1 in 250
 exceptionalChance = 500 --1 in 500
-legendaryChance = 1000 --1 in 1,000
+legendaryChance = 5000 --1 in 5,000
 
 --Determines how much of an increase in the base stats will be applied to the object.
 yellowModifier = 1.5
