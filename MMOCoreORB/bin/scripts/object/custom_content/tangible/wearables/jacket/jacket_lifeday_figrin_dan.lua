@@ -1,7 +1,6 @@
 
 object_tangible_wearables_jacket_jacket_lifeday_figrin_dan = object_tangible_wearables_jacket_shared_jacket_lifeday_figrin_dan:new {
 
-objectMenuComponent = "ArmorObjectMenuComponent",
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",

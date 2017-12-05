@@ -1,6 +1,6 @@
 object_tangible_loot_loot_schematic_marauder_s02_bracer_r_schematic = object_tangible_loot_loot_schematic_shared_marauder_s02_bracer_r_schematic:new {
 	templateType = LOOTSCHEMATIC,
-	customName = "Marauder Armor Right Bracer Schematic"
+	customName = "Marauder Armor Right Bracer Schematic",
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_armorsmith_master",

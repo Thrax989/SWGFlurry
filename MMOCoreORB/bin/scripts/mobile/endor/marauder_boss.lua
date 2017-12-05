@@ -1,5 +1,5 @@
 marauder_boss = Creature:new {
-	customName = "The Marauder Warlord"
+	customName = "The Marauder Warlord",
 	socialGroup = "endor_marauder",
 	faction = "endor_marauder",
 	level = 300,

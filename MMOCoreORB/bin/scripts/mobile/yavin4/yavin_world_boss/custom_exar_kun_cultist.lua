@@ -21,7 +21,7 @@ custom_exar_kun_cultist = Creature:new {
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
-	creatureBitmask = PACK + HERD + KILLER,
+	creatureBitmask = KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
