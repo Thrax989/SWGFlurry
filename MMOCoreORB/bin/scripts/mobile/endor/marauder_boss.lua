@@ -1,17 +1,17 @@
-custom_exar_kun_boss = Creature:new {
-	customName = "The Infamous Exar Kun",
-	socialGroup = "",
-	pvpFaction = "",
-	faction = "",
+marauder_boss = Creature:new {
+	customName = "The Marauder Warlord"
+	socialGroup = "endor_marauder",
+	faction = "endor_marauder",
 	level = 300,
-	chanceHit = 35.00,
-	damageMin = 1750,
-	damageMax = 3750,
-	baseXp = 13273,
-	baseHAM = 750000,
-	baseHAMmax = 1000000,
+	chanceHit = 30,
+	damageMin = 1250,
+	damageMax = 2500,
+	specialDamageMult = 2.5,
+	baseXp = 28549,
+	baseHAM = 400000,
+	baseHAMmax = 525000,
 	armor = 3,
-	resists = {25,65,25,80,80,80,25,35,45},
+	resists = {10,65,10,80,80,35,80,80,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -22,31 +22,38 @@ custom_exar_kun_boss = Creature:new {
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = KILLER + STALKER,
+	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 1.5,
-	templates = {"object/mobile/costume_exar_kun_cultist.iff"},
+    templates = {"object/mobile/tatooine_npc/hedon_istee.iff"},
+    outfit = "marauder_outfit",
+
+
 	lootGroups = {
-		 {
+		{
 			groups = {
-				{group = "exar_kun_ls_group", chance = 10000000}
-			},
-			lootChance = 10000000
+				{group = "marauder_armor_schems", chance = 10000000}
 		},
-		 {
+			lootChance = 5000000
+		},
+		{
 			groups = {
-				{group = "power_crystals", chance = 10000000}
-			},
-			lootChance = 9000000
+				{group = "marauder_armor_schems", chance = 10000000}
 		},
-		  {
+			lootChance = 5000000
+		},
+		{
 			groups = {
-				{group = "crystal_kuns_blood", chance = 10000000}
-				
+				{group = "marauder_armor_schems", chance = 10000000}
 		},
-			lootChance = 9000000
-		  },
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "marauder_armor_schems", chance = 10000000}
+		},
+			lootChance = 5000000
+		},
 		{
 			groups = {
 				{group = "armor_attachments", chance = 10000000}
@@ -102,9 +109,9 @@ custom_exar_kun_boss = Creature:new {
 			lootChance = 1000000
 		},
 },
-	weapons = {"dark_jedi_weapons_gen4"},
+	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
-	attacks = merge(forcepowermaster,tkamaster,lightsabermaster,brawlermaster,forcewielder)
+	attacks = merge(fencermaster,swordsmanmaster,tkamaster,pikemanmaster,brawlermaster)
 }
 
-CreatureTemplates:addCreatureTemplate(custom_exar_kun_boss, "custom_exar_kun_boss")
+CreatureTemplates:addCreatureTemplate(marauder_boss, "marauder_boss")

@@ -1,5 +1,4 @@
-object_tangible_wearables_armor_marauder_armor_marauder_s02_bicep_r = object_tangible_wearables_armor_marauder_shared_armor_marauder_s02_bicep_r:new {
-
+object_tangible_wearables_armor_marauder_armor_marauder_s02_gloves = object_tangible_wearables_armor_marauder_shared_armor_marauder_s02_gloves:new {
 	templateType = ARMOROBJECT,
 
 	objectMenuComponent = "ArmorObjectMenuComponent",
@@ -221,4 +220,4 @@ object_tangible_wearables_armor_marauder_armor_marauder_s02_bicep_r = object_tan
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_marauder_armor_marauder_s02_bicep_r, "object/tangible/wearables/armor/marauder/armor_marauder_s02_bicep_r.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_marauder_armor_marauder_s02_gloves, "object/tangible/wearables/armor/marauder/armor_marauder_s02_gloves.iff")

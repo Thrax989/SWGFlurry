@@ -5736,3 +5736,61 @@ clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rebel_snow_
 
 ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_rebel_snow_leggings_schematic, "object/tangible/loot/loot_schematic/shared_rebel_snow_leggings_schematic.iff")
 
+object_tangible_loot_loot_schematic_shared_marauder_s02_bicep_l_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_marauder_s02_bicep_l_schematic.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_marauder_s02_bicep_l_schematic, "object/tangible/loot/loot_schematic/shared_marauder_s02_bicep_l_schematic.iff")
+
+
+object_tangible_loot_loot_schematic_shared_marauder_s02_bicep_r_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_marauder_s02_bicep_r_schematic.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_marauder_s02_bicep_r_schematic, "object/tangible/loot/loot_schematic/shared_marauder_s02_bicep_r_schematic.iff")
+
+
+object_tangible_loot_loot_schematic_shared_marauder_s02_bracer_l_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_marauder_s02_bracer_l_schematic.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_marauder_s02_bracer_l_schematic, "object/tangible/loot/loot_schematic/shared_marauder_s02_bracer_l_schematic.iff")
+
+
+object_tangible_loot_loot_schematic_shared_marauder_s02_bracer_r_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_marauder_s02_bracer_r_schematic.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_marauder_s02_bracer_r_schematic, "object/tangible/loot/loot_schematic/shared_marauder_s02_bracer_r_schematic.iff")
+
+
+object_tangible_loot_loot_schematic_shared_marauder_s02_boots_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_marauder_s02_boots_schematic.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_marauder_s02_boots_schematic, "object/tangible/loot/loot_schematic/shared_marauder_s02_boots_schematic.iff")
+
+
+object_tangible_loot_loot_schematic_shared_marauder_s02_chest_plate_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_marauder_s02_chest_plate_schematic.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_marauder_s02_chest_plate_schematic, "object/tangible/loot/loot_schematic/shared_marauder_s02_chest_plate_schematic.iff")
+
+
+object_tangible_loot_loot_schematic_shared_marauder_s02_chest_plate_quest_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_marauder_s02_chest_plate_quest_schematic.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_marauder_s02_chest_plate_quest_schematic, "object/tangible/loot/loot_schematic/shared_marauder_s02_chest_plate_quest_schematic.iff")
+
+
+object_tangible_loot_loot_schematic_shared_marauder_s02_gloves_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_marauder_s02_gloves_schematic.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_marauder_s02_gloves_schematic, "object/tangible/loot/loot_schematic/shared_marauder_s02_gloves_schematic.iff")
+
+
+object_tangible_loot_loot_schematic_shared_marauder_s02_helmet_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_marauder_s02_helmet_schematic.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_marauder_s02_helmet_schematic, "object/tangible/loot/loot_schematic/shared_marauder_s02_helmet_schematic.iff")
+
+
+object_tangible_loot_loot_schematic_shared_marauder_s02_leggings_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_marauder_s02_leggings_schematic.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_marauder_s02_leggings_schematic, "object/tangible/loot/loot_schematic/shared_marauder_s02_leggings_schematic.iff")
