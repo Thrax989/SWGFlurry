@@ -21,7 +21,7 @@ cd /home/vagrant/bin/<br>
 swgemu runUnitTests<br> 
 
 ## -Servers Engine Build-
-https://github.com/TheAnswer/PublicEngine/commit/b6bd1202d1f4770daa51a13fb5afab131e1c23f2<br>
+https://github.com/TheAnswer/PublicEngine/commit/0d1508baf87f539d3b6de904c1955d6fffa29812<br>
 Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 
 ## -Required Mod The Galaxy TRE Files-
