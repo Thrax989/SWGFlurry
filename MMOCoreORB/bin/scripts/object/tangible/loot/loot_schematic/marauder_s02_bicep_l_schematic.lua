@@ -1,6 +1,6 @@
 object_tangible_loot_loot_schematic_marauder_s02_bicep_l_schematic = object_tangible_loot_loot_schematic_shared_marauder_s02_bicep_l_schematic:new {
 	templateType = LOOTSCHEMATIC,
-	customName = "Marauder Armor Left Bicep Schematic"
+	customName = "Marauder Armor Left Bicep Schematic",
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_armorsmith_master",

@@ -610,6 +610,8 @@ includeFile("draft_schematic/clothing/clothing_robe_s33_h1.lua")
 includeFile("draft_schematic/clothing/clothing_armor_jedi_belt_01.lua")
 includeFile("draft_schematic/clothing/clothing_armor_jedi_belt_02.lua")
 includeFile("draft_schematic/clothing/clothing_armor_jedi_belt_03.lua")
+--Admin Belt
+includeFile("draft_schematic/clothing/clothing_backpack_waist_admin.lua")
 
 --Marauder Armor Schems
 includeFile("draft_schematic/clothing/clothing_armor_marauder_s02_bicep_l.lua")

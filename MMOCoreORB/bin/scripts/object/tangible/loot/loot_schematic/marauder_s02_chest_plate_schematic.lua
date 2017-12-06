@@ -1,6 +1,6 @@
 object_tangible_loot_loot_schematic_marauder_s02_chest_plate_schematic = object_tangible_loot_loot_schematic_shared_marauder_s02_chest_plate_schematic:new {
 	templateType = LOOTSCHEMATIC,
-	customName = "Marauder Armor Chest Plate Schematic"
+	customName = "Marauder Armor Chest Plate Schematic",
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_armorsmith_master",

@@ -82,5 +82,6 @@ includeFile("tangible/wearables/backpack/wearable_backpack_armored.lua")
 includeFile("tangible/wearables/backpack/wearable_backpack_c3po.lua")
 includeFile("tangible/wearables/backpack/wearable_backpack_yoda.lua")
 includeFile("tangible/wearables/backpack/wearable_backpack_recon.lua")
+includeFile("tangible/wearables/backpack/fannypack_admin.lua")
 
 

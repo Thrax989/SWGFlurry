@@ -1,5 +1,5 @@
 custom_exar_kun_boss = Creature:new {
-	customName = "The Infamous Exar Kun",
+	customName = "Shadow of Exar Kun",
 	socialGroup = "",
 	pvpFaction = "",
 	faction = "",

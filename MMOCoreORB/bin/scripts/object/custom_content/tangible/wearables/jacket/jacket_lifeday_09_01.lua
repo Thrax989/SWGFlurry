@@ -1,7 +1,7 @@
 
 object_tangible_wearables_jacket_jacket_lifeday_09_01 = object_tangible_wearables_jacket_shared_jacket_lifeday_09_01:new {
 
-objectMenuComponent = "ArmorObjectMenuComponent",
+
 
 	playerRaces = { 
 				"object/creature/player/abyssin_female.iff",

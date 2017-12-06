@@ -48,82 +48,234 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 		if (group != NULL) {
 			for (int i = 0; i < group->getGroupSize(); i++) {
-				CreatureObject* member = group->getGroupMember(i);
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (member != NULL && member->isCreatureObject() && member->isInRange(creature, 30.0f)) {
-					ManagedReference<CreatureObject*> groupedCreature = cast<CreatureObject*>(member);
-
-					if (groupedCreature != NULL && groupedCreature != creature) {
-						Locker dlocker(groupedCreature, creature);
-		                                member->switchZone("corellia", 0, 0, 0);
-		                                sceneObject->destroyObjectFromWorld(true);
-						dlocker.release();
-		                                creature->switchZone("corellia", 0, 0, 0);
-					}
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("corellia", 0, 0, 0);
+						locker.release();
 				}
 			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("corellia", 0, 0, 0);
 		}
 	}
 
 	if (selectedID == 214) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("corellia", 0, 0, 0);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("corellia", 0, 0, 0);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("corellia", 0, 0, 0);
+		}
 	}
 	if (selectedID == 215) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("corellia", 0, 0, 0);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("corellia", 0, 0, 0);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("corellia", 0, 0, 0);
+		}
 	}
 	if (selectedID == 216) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("corellia", 0, 0, 0);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("corellia", 0, 0, 0);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("corellia", 0, 0, 0);
+		}
 	}
 	if (selectedID == 217) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("corellia", 0, 0, 0);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("corellia", 0, 0, 0);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("corellia", 0, 0, 0);
+		}
 	}
 	if (selectedID == 221) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
+		}
 	}
 	if (selectedID == 222) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", 6193, 250, -5978, 0);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("dungeon2", 6193, 250, -5978, 0);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("dungeon2", 6193, 250, -5978, 0);
+		}
 	}
 	if (selectedID == 223) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
+		}
 	}
 	if (selectedID == 224) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
+		}
 	}
 	if (selectedID == 225) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
+		}
 	}
 	if (selectedID == 226) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
+		}
 	}
 	if (selectedID == 227) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
+		}
 	}
 	if (selectedID == 228) {
-		creature->sendSystemMessage("Prepair for the boss fight!.");
-		creature->switchZone("dungeon1", 7, 172.3, 300, 4336867);
-		sceneObject->destroyObjectFromWorld(true);
+
+		ManagedReference<GroupObject*> group = creature->getGroup();
+
+		if (group != NULL) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+						Locker locker(groupedCreature);
+		                                groupedCreature->switchZone("dungeon1", 7, 172.3, 300, 4336867);
+						locker.release();
+				}
+			}
+			sceneObject->destroyObjectFromWorld(true);
+			creature->switchZone("dungeon1", 7, 172.3, 300, 4336867);
+		}
 	}
 	return 0;
 }

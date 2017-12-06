@@ -41,7 +41,9 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_tangible_instrument_slitherhorn = object_tangible_instrument_shared_slitherhorn:new {
+object_tangible_wearables_backpack_fannypack_admin = object_tangible_wearables_backpack_shared_fannypack_admin:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
@@ -223,19 +225,28 @@ object_tangible_instrument_slitherhorn = object_tangible_instrument_shared_slith
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-	templateType = INSTRUMENT,
-	instrumentType = 2,
-
 
 	numberExperimentalProperties = {1, 1, 1, 1},
-	experimentalProperties = {"XX", "XX", "UT", "CD"},
+	experimentalProperties = {"XX", "XX", "XX", "XX"},
 	experimentalWeights = {1, 1, 1, 1},
-	experimentalGroupTitles = {"null", "null", "null", "exp_quality"},
-	experimentalSubGroupTitles = {"null", "null", "hitpoints", "quality"},
-	experimentalMin = {0, 0, 1000, 1},
-	experimentalMax = {0, 0, 1000, 100},
+	experimentalGroupTitles = {"null", "null", "null", "null"},
+	experimentalSubGroupTitles = {"null", "null", "sockets", "hitpoints"},
+	experimentalMin = {0, 0, 4, 1000},
+	experimentalMax = {0, 0, 4, 1000},
 	experimentalPrecision = {0, 0, 0, 0},
-	experimentalCombineType = {0, 0, 4, 1},
+	experimentalCombineType = {0, 0, 4, 4},
+
+	skillMods = {
+		{"lightsaber_toughness", 10},
+		{"jedi_toughness", 10},
+	},
+
+	
+		
+		
+
+
+	certificationsRequired = {"force_title_jedi_rank_02"},
 }
 
-ObjectTemplates:addTemplate(object_tangible_instrument_slitherhorn, "object/tangible/instrument/slitherhorn.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_backpack_fannypack_admin, "object/tangible/wearables/backpack/fannypack_admin.iff")
