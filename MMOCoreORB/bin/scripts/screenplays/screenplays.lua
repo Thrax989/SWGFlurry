@@ -101,6 +101,7 @@ includeFile("junk_dealer/junk_dealer.lua")
 includeFile("junk_dealer/junk_dealer_conv_handler.lua")
 
 -- Dungeons
+includeFile("dungeon/ig88/ig88_boss.lua")
 includeFile("dungeon/death_watch_bunker/deathWatchBunker.lua")
 includeFile("dungeon/death_watch_bunker/deathWatchContainerComponents.lua")
 includeFile("dungeon/death_watch_bunker/deathWatchMenuComponents.lua")
