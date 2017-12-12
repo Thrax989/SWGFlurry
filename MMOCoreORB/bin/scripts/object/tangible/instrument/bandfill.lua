@@ -42,6 +42,8 @@
 
 
 object_tangible_instrument_bandfill = object_tangible_instrument_shared_bandfill:new {
+	templateType = INSTRUMENT,
+	instrumentType = 7,
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
@@ -224,8 +226,7 @@ object_tangible_instrument_bandfill = object_tangible_instrument_shared_bandfill
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-	templateType = INSTRUMENT,
-	instrumentType = 7,
+
 
 	numberExperimentalProperties = {1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "UT", "CD"},
