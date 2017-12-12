@@ -51,26 +51,6 @@ function ig88_boss:notifyTriggerDead(pTrigger, pPlayer)
 	return 0
 end
 --------------------------------------
---  group test
---------------------------------------
-function ig88_boss:group(pPlayer, pCreature)
-	ObjectManager.withCreatureObject(pCreature, function(creature)
-		if (creature:isGrouped()) then
-			local groupSize = creature:getGroupSize()
-
-			for i = 0, groupSize - 1, 1 do
-				local pMember = creature:getGroupMember(i)
-				if pMember ~= nil then
-					local groupMember = LuaCreatureObject(pMember)
-						
-				if (((bossHealth <= (bossMaxHealth *0.8)) or (bossAction <= (bossMaxAction * 0.8)) or (bossMind <= (bossMaxMind *0.8))) and readData("ig88_boss:spawnState") == 1) then
-					groupMember:sendSystemMessage("You take damage from the fire")
-					local trapDmg = getRandomNumber(500, 1000)
-					groupMember:inflictDamage(pPlayer, 0, trapDmg, 1)
-		end
-	end
-end
---------------------------------------
 --   Range and health checks for boss
 --------------------------------------
 function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFour, pAddFive, pAddSix, pAddSeven, pAddEight, pAddNine, pAddTen, pAddEleven, pAddTwelve, pAddThirteen, pAddFourteen, pAddFifteen, pAddSixteen, pAddSeventeen, pAddEighteen, player)
