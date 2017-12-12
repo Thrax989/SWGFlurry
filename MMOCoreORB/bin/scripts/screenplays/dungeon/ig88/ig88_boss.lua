@@ -265,23 +265,21 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   10% health check near death
 --------------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind * 0.1))) and readData("ig88_boss:spawnState") == 6) then
-			spatialChat(pBoss, "Arming self destruct sequence!.")
                         CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
+		end
 --------------------------------------------
 --   5% health check near death
 --------------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.05)) or (bossAction <= (bossMaxAction * 0.05)) or (bossMind <= (bossMaxMind * 0.05))) and readData("ig88_boss:spawnState") == 6) then
-			spatialChat(pBoss, "hahahahah.")
                         CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
+		end
 --------------------------------------------
 --   1% health check for death
 --------------------------------------------
-		if (((bossHealth <= (bossMaxHealth * 0.002)) or (bossAction <= (bossMaxAction * 0.002)) or (bossMind <= (bossMaxMind * 0.002))) and readData("ig88_boss:spawnState") == 6) then
+		if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.00))) and readData("ig88_boss:spawnState") == 6) then
 			spatialChat(pBoss, "Self Destruct!.")
                         CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
 			CreatureObject(pBoss):broadcastToServer("\\#63C8F9 A Group Has Cleared The IG-88 Boss Dungeon! Next Boss Encounter will be Avalible in 24 hours!.")
-				end
-			end
 		end
 	end
 	return 0
