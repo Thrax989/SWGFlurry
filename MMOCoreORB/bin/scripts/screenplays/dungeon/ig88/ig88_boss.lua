@@ -257,9 +257,11 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   fifth wave 40% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind * 0.4))) and readData("ig88_boss:spawnState") == 5) then
+			CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+			local trapDmg = getRandomNumber(1000, 1500)
+			CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
 			CreatureObject(pBoss):playEffect("clienteffect/space_command/cbt_nebulae_fire.cef", "")
 			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
-			CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			CreatureObject(pPlayer):sendSystemMessage("Fifth Enemy Wave Starting!")
@@ -347,11 +349,6 @@ function ig88_boss:notifySpawnArea(pActiveArea, pMovingObject, pBoss, pPlayer)
 	
 	return ObjectManager.withCreatureObject(pMovingObject, function(player)
 		if (player:isAiAgent()) then
-			return 0
-		end
-
-		if (player:isImperial() or player:isNeutral() or player:isRebel() and readData("ig88_boss:spawnState") == 5) then
-			CreatureObject(pPlayer):inflictDamage(pPlayer, 0, 2000, 0)
 			return 0
 		end
 		
