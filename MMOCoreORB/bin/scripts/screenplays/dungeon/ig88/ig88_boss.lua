@@ -366,9 +366,9 @@ function ig88_boss:notifySpawnAreaLeave(pActiveArea, pMovingObject, pBoss, pPlay
 	
 	local areaID = SceneObject(pActiveArea):getObjectID()
 	
-	if (ActiveArea(pActiveArea):getCellObjectID() == 14200863) and readData("ig88_boss:spawnState") == 6) then
-		CreatureObject(pMovingObject):addDotState(pMovingObject, POISONED, getRandomNumber(20) + 80, HEALTH, 1000, 2000, areaID, 0)
-		CreatureObject(pMovingObject):addDotState(pMovingObject, POISONED, getRandomNumber(20) + 80, ACTION, 1000, 2000, areaID, 0)
+	if (player:isImperial() or player:isNeutral() or player:isRebel() and readData("ig88_boss:spawnState") == 6) then
+		CreatureObject(pPlayer):addDotState(pPlayer, FIRE, getRandomNumber(20) + 80, HEALTH, 1000, 2000)
+		CreatureObject(pPlayer):addDotState(pPlayer, FIRE, getRandomNumber(20) + 80, ACTION, 1000, 2000)
 		return 0
 	end
 
