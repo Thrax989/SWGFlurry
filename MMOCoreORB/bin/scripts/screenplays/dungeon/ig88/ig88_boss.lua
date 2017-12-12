@@ -78,7 +78,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			CreatureObject(pBoss):healDamage(heal, 0)
 			CreatureObject(pBoss):healDamage(heal, 3)
 			CreatureObject(pBoss):healDamage(heal, 6)
-                        CreatureObject(pBoss):playEffect("clienteffect/sm_spot_a_sucker.cef", "")
+                        CreatureObject(pBoss):playEffect("clienteffect/bacta_grenade.cef", "")
 			spatialChat(pBoss, "Systems powering down you are out of combat range")
 			CreatureObject(pPlayer):sendSystemMessage("You must be within 25m of the boss to fight, boss is now resetting")
 		end
@@ -86,7 +86,9 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   first wave 80% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth *0.8)) or (bossAction <= (bossMaxAction * 0.8)) or (bossMind <= (bossMaxMind *0.8))) and readData("ig88_boss:spawnState") == 1) then
-                        CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
+			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+			CreatureObject(pBoss):playEffect("clienteffect/commando_mirror_armor.cef", "")
+			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			CreatureObject(pPlayer):sendSystemMessage("First Enemy Wave Starting!")
 			spatialChat(pBoss, "Boss Current Health = 90%")
 			writeData("ig88_boss:spawnState",2)
@@ -126,6 +128,9 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   second wave 70% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind * 0.7))) and readData("ig88_boss:spawnState") == 2) then
+			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+			CreatureObject(pBoss):playEffect("clienteffect/commando_mirror_armor.cef", "")
+			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			CreatureObject(pPlayer):sendSystemMessage("Second Enemy Wave Starting!")
 			spatialChat(pBoss,"Boss Current Health = 70%")
 			writeData("ig88_boss:spawnState", 3)
@@ -165,6 +170,9 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   third wave 60% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind * 0.6))) and readData("ig88_boss:spawnState") == 3) then
+			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+			CreatureObject(pBoss):playEffect("clienteffect/commando_mirror_armor.cef", "")
+			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			CreatureObject(pPlayer):sendSystemMessage("Third Enemy Wave Starting!")
 			spatialChat(pBoss,"Boss Current Health = 60%")
 			writeData("ig88_boss:spawnState", 4)
@@ -204,6 +212,9 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   fourth wave 50% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind * 0.5))) and readData("ig88_boss:spawnState") == 4) then
+			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+			CreatureObject(pBoss):playEffect("clienteffect/commando_mirror_armor.cef", "")
+			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			CreatureObject(pPlayer):sendSystemMessage("Fourth Enemy Wave Starting!")
 			spatialChat(pBoss,"Boss Current Health = 50%")
 			writeData("ig88_boss:spawnState", 5)
@@ -243,6 +254,9 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   fifth wave 40% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind * 0.4))) and readData("ig88_boss:spawnState") == 5) then
+			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+			CreatureObject(pBoss):playEffect("clienteffect/commando_mirror_armor.cef", "")
+			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			CreatureObject(pPlayer):sendSystemMessage("Fifth Enemy Wave Starting!")
 			spatialChat(pBoss,"Boss Current Health = 40%")
 			writeData("ig88_boss:spawnState", 6)
@@ -271,14 +285,15 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   5% health check near death
 --------------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.05)) or (bossAction <= (bossMaxAction * 0.05)) or (bossMind <= (bossMaxMind * 0.05))) and readData("ig88_boss:spawnState") == 6) then
-                        CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
+                        CreatureObject(pBoss):playEffect("cbt_bolt_hit_metal.cef", "")
 		end
 --------------------------------------------
 --   1% health check for death
 --------------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.00))) and readData("ig88_boss:spawnState") == 6) then
 			spatialChat(pBoss, "Self Destruct!.")
-                        CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
+                        CreatureObject(pBoss):playEffect("clienteffect/cbt_bolt_hit_vulcan.cef", "")
+			CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
 			CreatureObject(pBoss):broadcastToServer("\\#63C8F9 A Group Has Cleared The IG-88 Boss Dungeon! Next Boss Encounter will be Avalible in 24 hours!.")
 		end
 	end
