@@ -351,8 +351,7 @@ function ig88_boss:notifySpawnArea(pActiveArea, pMovingObject, pBoss, pPlayer)
 		end
 
 		if (player:isImperial() or player:isNeutral() or player:isRebel() and readData("ig88_boss:spawnState") == 5) then
-			CreatureObject(pPlayer):addDotState(pPlayer, FIRE, getRandomNumber(20) + 80, HEALTH, 1000, 2000)
-			CreatureObject(pPlayer):addDotState(pPlayer, FIRE, getRandomNumber(20) + 80, ACTION, 1000, 2000)
+			CreatureObject(pPlayer):inflictDamage(pPlayer, 0, 2000, 0)
 			return 0
 		end
 		
