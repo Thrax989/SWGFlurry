@@ -25,11 +25,11 @@ function ig88_boss:start()
 		self:spawnActiveAreas()
  	end
 end
--------------------------------------------------
+--------------------------------------------------
 --   spawn mouse droid when droid dies spawn boss
--------------------------------------------------
+--------------------------------------------------
 function ig88_boss:spawnMobiles()
-	local pTrigger = spawnMobile("dungeon2", "mouse_droid", 3600, -0.0547165, 0.0315461, 10.281, 8, 14200863)
+	local pTrigger = spawnMobile("dungeon2", "mouse_droid", 1, -0.0547165, 0.0315461, 10.281, 8, 14200863)
 	if (pTrigger ~= nil ) then	
         createObserver(OBJECTDESTRUCTION, "ig88_boss", "notifyTriggerDead", pTrigger)
 	end
@@ -46,78 +46,18 @@ function ig88_boss:notifyTriggerDead(pTrigger, pPlayer)
 		writeData("ig88boss", oBoss:getObjectID())			
 		spatialChat(pBoss, "Intruder Alert Activating Defense Systems")	
 		createObserver(DAMAGERECEIVED,"ig88_boss","boss_damage", pBoss)
-		createObserver(OBJECTDESTRUCTION, "ig88_boss", "notifyBossDead", pBoss)
-		createEvent(1800000, "ig88_boss", "despawnBoss", pBoss)		
 	end)
 	return 0
 end
 --------------------------------------
---   despawn boss death check
+--   Range and health checks for boss
 --------------------------------------
-function ig88_boss:notifyBossDead(pBoss, pPlayer)
-	writeData("ig88_boss:spawnState", 0)
-	createEvent(6000, "ig88_boss", "despawnAdd", pAdd)
-	return 0
-end
-
-function ig88_boss:despawnBoss(pBoss, pPlayer)
-	forcePeace(pBoss)
-	spHelper.destroy(readData("ig88boss"),true)
-	writeData("ig88_boss:spawnState", 0)
-	createEvent(6000, "ig88_boss", "despawnAdd", pAdd)
-	return 0
-end
---------------------------------------
---   despawn force peace distance check
---------------------------------------
-function ig88_boss:despawnAdd(pAdd, pAddTwo, pAddThree, pAddFour, pAddFive, pAddSix, pAddSeven, pAddEight, pAddNine, pAddTen, pAddEleven, pAddTwelve, pAddThirteen, pAddFourteen, pAddFifteen, pAddSixteen, pAddSeventeen, pAddEighteen, player)
-	forcePeace(pAdd)
-	forcePeace(pAddTwo)
-	forcePeace(pAddThree)
-	forcePeace(pAddFour)
-	forcePeace(pAddFive)
-	forcePeace(pAddSix)
-	forcePeace(pAddSeven)
-	forcePeace(pAddEight)
-	forcePeace(pAddNine)
-	forcePeace(pAddTen)
-	forcePeace(pAddEleven)
-	forcePeace(pAddTwelve)
-	forcePeace(pAddThirteen)
-	forcePeace(pAddFourteen)
-	forcePeace(pAddFifteen)
-	forcePeace(pAddSixteen)
-	forcePeace(pAddSeventeen)
-	forcePeace(pAddEighteen)
-	spHelper.destroy(readData("countadd"),true)
-	spHelper.destroy(readData("countadd2"),true)
-	spHelper.destroy(readData("countadd3"),true)
-	spHelper.destroy(readData("countadd4"),true)
-	spHelper.destroy(readData("countadd5"),true)
-	spHelper.destroy(readData("countadd6"),true)
-	spHelper.destroy(readData("countadd7"),true)
-	spHelper.destroy(readData("countadd8"),true)
-	spHelper.destroy(readData("countadd9"),true)
-	spHelper.destroy(readData("countadd10"),true)
-	spHelper.destroy(readData("countadd11"),true)
-	spHelper.destroy(readData("countadd12"),true)
-	spHelper.destroy(readData("countadd13"),true)
-	spHelper.destroy(readData("countadd14"),true)
-	spHelper.destroy(readData("countadd15"),true)
-	spHelper.destroy(readData("countadd16"),true)
-	spHelper.destroy(readData("countadd17"),true)
-	spHelper.destroy(readData("countadd18"),true)
-
-	return 0
-end
---------------------------------------
---   RAnge and health checks for boss
---------------------------------------
-function ig88_boss:boss_damage(pBoss, pPlayer)
+function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFour, pAddFive, pAddSix, pAddSeven, pAddEight, pAddNine, pAddTen, pAddEleven, pAddTwelve, pAddThirteen, pAddFourteen, pAddFifteen, pAddSixteen, pAddSeventeen, pAddEighteen, player)
 
 	local player = LuaCreatureObject(pPlayer)
 	local boss = LuaCreatureObject(pBoss)
 	if (boss ~= nil) then
+
 		local bossHealth = boss:getHAM(0)
 		local bossAction = boss:getHAM(3)
 		local bossMind = boss:getHAM(6)
@@ -125,21 +65,41 @@ function ig88_boss:boss_damage(pBoss, pPlayer)
 		local bossMaxAction = boss:getMaxHAM(3)
 		local bossMaxMind = boss:getMaxHAM(6)
 
-		local x1 = 0.0
-		local y1 = -18.0
+		local x1 = -0.0547165
+		local y1 = 10.281
 		local x2 = boss:getPositionX()
 		local y2 = boss:getPositionY() 
 
 		local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-		local maxDistance = 75
+		local maxDistance = 10
 		
 		if distance > (maxDistance * maxDistance) then
+		local heal = 500000
+	        local boss = LuaCreatureObject(pBoss)
+			forcePeace(pBoss)
                         CreatureObject(pBoss):playEffect("clienteffect/sm_spot_a_sucker.cef", "")
-			spatialChat(pBoss, "Systems powering down")
-			forcePeace(pBoss)
-			forcePeace(pBoss)
-			forcePeace(pBoss)			
-			createEvent(3500, "ig88_boss", "resetScreenplayStatus", pPlayer)
+			spatialChat(pBoss, "Systems powering down you are out of combat range")
+			CreatureObject(pBoss):healDamage(heal, 0)
+			CreatureObject(pBoss):healDamage(heal, 3)
+			CreatureObject(pBoss):healDamage(heal, 6)
+			forcePeace(pAdd)
+			forcePeace(pAddTwo)
+			forcePeace(pAddThree)
+			forcePeace(pAddFour)
+			forcePeace(pAddFive)
+			forcePeace(pAddSix)
+			forcePeace(pAddSeven)
+			forcePeace(pAddEight)
+			forcePeace(pAddNine)
+			forcePeace(pAddTen)
+			forcePeace(pAddEleven)
+			forcePeace(pAddTwelve)
+			forcePeace(pAddThirteen)
+			forcePeace(pAddFourteen)
+			forcePeace(pAddFifteen)
+			forcePeace(pAddSixteen)
+			forcePeace(pAddSeventeen)
+			forcePeace(pAddEighteen)		
 		end
 --------------------------------------
 --   first wave 90% health check
@@ -315,9 +275,9 @@ function ig88_boss:boss_damage(pBoss, pPlayer)
 			end)
 			spatialChat(pAddEighteen, "Target Lock")
 		end		
---------------------------------------
+--------------------------------------------
 --   sixth wave 10% health check near death
---------------------------------------
+--------------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind * 0.1))) and readData("ig88_boss:spawnState") == 6) then
 			spatialChat(pBoss, "You have defeated me!.")
                         CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
@@ -326,22 +286,15 @@ function ig88_boss:boss_damage(pBoss, pPlayer)
 	return 0
 end
 --------------------------------------
---   Reset screenplay check
---------------------------------------
-function ig88_boss:resetScreenplayStatus(pPlayer)
-	writeData("ig88_boss:spawnState", 1)
-	return 0	
-end
---------------------------------------
 --   Added Active Area Check check
 --------------------------------------
 function ig88_boss:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", -0.0547165, 0.0315461, 10.281, 8, 14200863)
+	local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", 4000, 0, 6010, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(30)
+	        activeArea:setRadius(75)
 	        createObserver(ENTEREDAREA, "ig88_boss", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "ig88_boss", "notifySpawnAreaLeave", pSpawnArea)
 	    end
@@ -359,8 +312,8 @@ function ig88_boss:notifySpawnArea(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the Ig-88 Boss Dungeon!")
-			player:sendSystemMessage("You have entered the Ig-88 Boss Dungeon!")
+			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has Entered The Ig-88 Boss Dungeon!")
+			player:sendSystemMessage("You Have Entered The Ig-88 Boss Dungeon!")
 		end
 		return 0
 	end)
@@ -379,13 +332,7 @@ function ig88_boss:notifySpawnAreaLeave(pActiveArea, pMovingObject, pBoss, pPlay
 		
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
 			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Ig-88 Boss Dungeon!")
-			player:sendSystemMessage("You have reset the Ig-88 Boss Dungeon!")
-			CreatureObject(pBoss):playEffect("clienteffect/sm_spot_a_sucker.cef", "")
-			spatialChat(pBoss, "Systems powering down")
-			forcePeace(pBoss)
-			forcePeace(pBoss)
-			forcePeace(pBoss)			
-			createEvent(3500, "ig88_boss", "resetScreenplayStatus", pPlayer)
+			player:sendSystemMessage("You Have Reset The Ig-88 Boss Dungeon!")
 		end
 		return 0
 	end)
