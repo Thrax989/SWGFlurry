@@ -336,7 +336,7 @@ end
 --   Added Active Area Check check
 --------------------------------------
 function ig88_boss:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", -0.0547165, 0.0315461, 10.281, 8, 14200863, 0, 0, 0)
+	local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", -0.0547165, 0.0315461, 10.281, 8, 14200863)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
