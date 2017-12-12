@@ -71,7 +71,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 		local y2 = boss:getPositionY() 
 
 		local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-		local maxDistance = 30 --Max distance you can fight the boss is 30 meeters, you must be within range to fight the boss. Reset to full health if you fail the check.
+		local maxDistance = 40 --Max distance you can fight the boss is 40 meeters, you must be within range to fight the boss. Reset to full health if you fail the check.
 		
 		if distance > (maxDistance * maxDistance) then
 			forcePeace(pBoss)
