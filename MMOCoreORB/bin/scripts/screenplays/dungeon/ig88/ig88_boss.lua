@@ -101,7 +101,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAdd, function(firstTime)
 			writeData("countadd", firstTime:getObjectID())
 				firstTime:engageCombat(pPlayer)
-			        CreatureObject(firstTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAdd):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAdd, "target locked")
 	
@@ -109,7 +109,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddTwo, function(secondTime)
 			writeData("countadd2", secondTime:getObjectID())
 				secondTime:engageCombat(pPlayer)
-			        CreatureObject(secondTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddTwo):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddTwo, "target locked")
 		
@@ -117,7 +117,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddThree, function(thirdTime)
 			writeData("countadd3", thirdTime:getObjectID())
 				thirdTime:engageCombat(pPlayer)
-			        CreatureObject(thirdTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddThree):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)				
 			spatialChat(pAddThree, "target locked")
 		
@@ -125,7 +125,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddFour, function(fourthTime)
 			writeData("countadd4", fourthTime:getObjectID())
 				fourthTime:engageCombat(pPlayer)
-			        CreatureObject(fourthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddFour):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddFour, "target locked")				
 		end	
@@ -144,7 +144,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddFive, function(fifthTime)
 			writeData("countadd5", fifthTime:getObjectID())
 				fifthTime:engageCombat(pPlayer)
-			        CreatureObject(fifthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddFive):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddFive, "target locked")
 	
@@ -152,7 +152,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddSix, function(sixthTime)
 			writeData("countadd6", sixthTime:getObjectID())
 				sixthTime:engageCombat(pPlayer)
-			        CreatureObject(sixthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddSix):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddSix, "target locked")
 		
@@ -160,7 +160,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddSeven, function(seventhTime)
 			writeData("countadd7", seventhTime:getObjectID())
 				seventhTime:engageCombat(pPlayer)
-			        CreatureObject(seventhTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddSeven):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)				
 			spatialChat(pAddSeven, "target locked")
 		
@@ -168,7 +168,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddEight, function(eighthTime)
 			writeData("countadd8", eighthTime:getObjectID())
 				eighthTime:engageCombat(pPlayer)
-			        CreatureObject(eighthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddEight):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddEight, "Target Lock")		
 		end	
@@ -187,7 +187,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddNine, function(ninthTime)
 			writeData("countadd9", ninthTime:getObjectID())
 				ninthTime:engageCombat(pPlayer)
-			        CreatureObject(ninthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddNine):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddNine, "target locked")
 	
@@ -195,7 +195,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddTen, function(tenthTime)
 			writeData("countadd10", tenthTime:getObjectID())
 				tenthTime:engageCombat(pPlayer)
-			        CreatureObject(tenthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddTen):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddTen, "target locked")
 		
@@ -203,7 +203,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddEleven, function(eleventhTime)
 			writeData("countadd11", eleventhTime:getObjectID())
 				eleventhTime:engageCombat(pPlayer)
-			        CreatureObject(eleventhTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddEleven):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)				
 			spatialChat(pAddEleven, "target locked")
 		
@@ -211,7 +211,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddTwelve, function(twelthTime)
 			writeData("countadd12", twelthTime:getObjectID())
 				twelthTime:engageCombat(pPlayer)
-			        CreatureObject(twelthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddTwelve):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddTwelve, "Target Lock")		
 		end	
@@ -230,7 +230,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddThirteen, function(thirteenthTime)
 			writeData("countadd13", thirteenthTime:getObjectID())
 				thirteenthTime:engageCombat(pPlayer)
-			        CreatureObject(thirteenthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddThirteen):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddThirteen, "target locked")
 	
@@ -238,7 +238,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddFourteen, function(fourteenthTime)
 			writeData("countadd14", fourteenthTime:getObjectID())
 				fourteenthTime:engageCombat(pPlayer)
-			        CreatureObject(fourteenthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddFourteen):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddFourteen, "target locked")
 		
@@ -246,7 +246,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddFifteen, function(fifteenthTime)
 			writeData("countadd15", fifteenthTime:getObjectID())
 				fifteenthTime:engageCombat(pPlayer)
-			        CreatureObject(fifteenthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddFifteen):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)				
 			spatialChat(pAddFifteen, "target locked")
 		
@@ -273,14 +273,14 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			ObjectManager.withCreatureObject(pAddSeventeen, function(seventeenthTime)
 			writeData("countadd17", seventeenthTime:getObjectID())
 				seventeenthTime:engageCombat(pPlayer)
-			        CreatureObject(seventeenthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddSeventeen):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddSeventeen, "Target Lock")
 			local pAddEighteen = spawnMobile("dungeon2",  "droideka", 0, 16.7107, 0.0315455, -7.98008, 330, 14200863)
 			ObjectManager.withCreatureObject(pAddEighteen, function(eighteenthTime)
 			writeData("countadd18", eighteenthTime:getObjectID())
 				eighteenthTime:engageCombat(pPlayer)
-			        CreatureObject(eighteenthTime):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+			        CreatureObject(pAddEighteen):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			end)
 			spatialChat(pAddEighteen, "Target Lock")
 		end	
