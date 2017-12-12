@@ -71,42 +71,27 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 		local y2 = boss:getPositionY() 
 
 		local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-		local maxDistance = 25
+		local maxDistance = 10
 		
 		if distance > (maxDistance * maxDistance) then
 		local heal = 500000
 	        local boss = LuaCreatureObject(pBoss)
 			forcePeace(pBoss)
-                        CreatureObject(pBoss):playEffect("clienteffect/sm_spot_a_sucker.cef", "")
-			spatialChat(pBoss, "Systems powering down you are out of combat range")
 			CreatureObject(pBoss):healDamage(heal, 0)
 			CreatureObject(pBoss):healDamage(heal, 3)
 			CreatureObject(pBoss):healDamage(heal, 6)
-			forcePeace(pAdd)
-			forcePeace(pAddTwo)
-			forcePeace(pAddThree)
-			forcePeace(pAddFour)
-			forcePeace(pAddFive)
-			forcePeace(pAddSix)
-			forcePeace(pAddSeven)
-			forcePeace(pAddEight)
-			forcePeace(pAddNine)
-			forcePeace(pAddTen)
-			forcePeace(pAddEleven)
-			forcePeace(pAddTwelve)
-			forcePeace(pAddThirteen)
-			forcePeace(pAddFourteen)
-			forcePeace(pAddFifteen)
-			forcePeace(pAddSixteen)
-			forcePeace(pAddSeventeen)
-			forcePeace(pAddEighteen)		
+                        CreatureObject(pBoss):playEffect("clienteffect/sm_spot_a_sucker.cef", "")
+			spatialChat(pBoss, "Systems powering down you are out of combat range")
+			pPlayer:sendSystemMessage("You must be within 25m of the boss to fight, boss is now resetting")
+		        pBoss:engageCombat(pPlayer)	
 		end
 --------------------------------------
---   first wave 90% health check
+--   first wave 80% health check
 --------------------------------------
-		if (((bossHealth <= (bossMaxHealth *0.9)) or (bossAction <= (bossMaxAction * 0.9)) or (bossMind <= (bossMaxMind *0.9))) and readData("ig88_boss:spawnState") == 1) then
+		if (((bossHealth <= (bossMaxHealth *0.8)) or (bossAction <= (bossMaxAction * 0.8)) or (bossMind <= (bossMaxMind *0.8))) and readData("ig88_boss:spawnState") == 1) then
                         CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
-			spatialChat(pBoss, "Enemy Survival Chance = 90%")
+			pPlayer:sendSystemMessage("First Enemy Wave Starting!")
+			spatialChat(pBoss, "Boss Current Health = 90%")
 			writeData("ig88_boss:spawnState",2)
 			local pAdd = spawnMobile("dungeon2", "droideka", 0, -3.27221, 0.0315459, -7.91982, 342, 14200863)
 			ObjectManager.withCreatureObject(pAdd, function(firstTime)
@@ -144,7 +129,8 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   second wave 70% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind * 0.7))) and readData("ig88_boss:spawnState") == 2) then
-			spatialChat(pBoss,"Enemy Survival Chance = 70%")
+			pPlayer:sendSystemMessage("Second Enemy Wave Starting!")
+			spatialChat(pBoss,"Boss Current Health = 70%")
 			writeData("ig88_boss:spawnState", 3)
 			local pAddFive = spawnMobile("dungeon2", "droideka", 0, -3.27221, 0.0315459, -7.91982, 342, 14200863)
 			ObjectManager.withCreatureObject(pAddFive, function(fifthTime)
@@ -182,7 +168,8 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   third wave 60% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind * 0.6))) and readData("ig88_boss:spawnState") == 3) then
-			spatialChat(pBoss,"Enemy Survival Chance = 60%")
+			pPlayer:sendSystemMessage("Third Enemy Wave Starting!")
+			spatialChat(pBoss,"Boss Current Health = 60%")
 			writeData("ig88_boss:spawnState", 4)
 			local pAddNine = spawnMobile("dungeon2", "droideka", 0, -3.27221, 0.0315459, -7.91982, 342, 14200863)
 			ObjectManager.withCreatureObject(pAddNine, function(ninthTime)
@@ -220,7 +207,8 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   fourth wave 50% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind * 0.5))) and readData("ig88_boss:spawnState") == 4) then
-			spatialChat(pBoss,"Enemy Survival Chance = 50%")
+			pPlayer:sendSystemMessage("Fourth Enemy Wave Starting!")
+			spatialChat(pBoss,"Boss Current Health = 50%")
 			writeData("ig88_boss:spawnState", 5)
 			local pAddThirteen = spawnMobile("dungeon2", "droideka", 0, -3.27221, 0.0315459, -7.91982, 342, 14200863)
 			ObjectManager.withCreatureObject(pAddThirteen, function(thirteenthTime)
@@ -258,7 +246,8 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   fifth wave 40% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind * 0.4))) and readData("ig88_boss:spawnState") == 5) then
-			spatialChat(pBoss,"Enemy Survival Chance = 40%")
+			pPlayer:sendSystemMessage("Fifth Enemy Wave Starting!")
+			spatialChat(pBoss,"Boss Current Health = 40%")
 			writeData("ig88_boss:spawnState", 6)
 			local pAddSeventeen = spawnMobile("dungeon2", "droideka", 0, -3.27221, 0.0315459, -7.91982, 342, 14200863)
 			ObjectManager.withCreatureObject(pAddSeventeen, function(seventeenthTime)
@@ -276,16 +265,20 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 			spatialChat(pAddEighteen, "Target Lock")
 		end		
 --------------------------------------------
---   sixth wave 10% health check near death
+--   10% health check near death
 --------------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind * 0.1))) and readData("ig88_boss:spawnState") == 6) then
 			spatialChat(pBoss, "Arming self destruct sequence!.")
                         CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
-
+--------------------------------------------
+--   5% health check near death
+--------------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.05)) or (bossAction <= (bossMaxAction * 0.05)) or (bossMind <= (bossMaxMind * 0.05))) and readData("ig88_boss:spawnState") == 6) then
 			spatialChat(pBoss, "hahahahah.")
                         CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
-
+--------------------------------------------
+--   1% health check for death
+--------------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.002)) or (bossAction <= (bossMaxAction * 0.002)) or (bossMind <= (bossMaxMind * 0.002))) and readData("ig88_boss:spawnState") == 6) then
 			spatialChat(pBoss, "Self Destruct!.")
                         CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
@@ -296,9 +289,9 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 	end
 	return 0
 end
---------------------------------------
---   Added Active Area Check check
---------------------------------------
+----------------------------------------------
+--   Added Active Area Check for broadcasting
+----------------------------------------------
 function ig88_boss:spawnActiveAreas()
 	local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", 4000, 0, 6010, 0, 0, 0, 0, 0)
     
@@ -342,8 +335,8 @@ function ig88_boss:notifySpawnAreaLeave(pActiveArea, pMovingObject, pBoss, pPlay
 		end
 		
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Ig-88 Boss Dungeon!")
-			player:sendSystemMessage("You Have Reset The Ig-88 Boss Dungeon!")
+			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Ig-88 Boss Dungeon!")
+			player:sendSystemMessage("You Have Left The Ig-88 Boss Dungeon!")
 		end
 		return 0
 	end)
