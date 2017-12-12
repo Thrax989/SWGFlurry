@@ -29,7 +29,7 @@ end
 --   spawn mouse droid when droid dies spawn boss
 --------------------------------------------------
 function ig88_boss:spawnMobiles()
-	local pTrigger = spawnMobile("dungeon2", "mouse_droid", 1, -0.0547165, 0.0315461, 10.281, 8, 14200863)
+	local pTrigger = spawnMobile("dungeon2", "mouse_droid", 86400, -0.0547165, 0.0315461, 10.281, 8, 14200863)--24 hour respawn to start the boss
 	if (pTrigger ~= nil ) then	
         createObserver(OBJECTDESTRUCTION, "ig88_boss", "notifyTriggerDead", pTrigger)
 	end
@@ -71,7 +71,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 		local y2 = boss:getPositionY() 
 
 		local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-		local maxDistance = 10
+		local maxDistance = 25
 		
 		if distance > (maxDistance * maxDistance) then
 		local heal = 500000
@@ -279,8 +279,19 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   sixth wave 10% health check near death
 --------------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind * 0.1))) and readData("ig88_boss:spawnState") == 6) then
-			spatialChat(pBoss, "You have defeated me!.")
+			spatialChat(pBoss, "Arming self destruct sequence!.")
                         CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
+
+		if (((bossHealth <= (bossMaxHealth * 0.05)) or (bossAction <= (bossMaxAction * 0.05)) or (bossMind <= (bossMaxMind * 0.05))) and readData("ig88_boss:spawnState") == 6) then
+			spatialChat(pBoss, "hahahahah.")
+                        CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
+
+		if (((bossHealth <= (bossMaxHealth * 0.002)) or (bossAction <= (bossMaxAction * 0.002)) or (bossMind <= (bossMaxMind * 0.002))) and readData("ig88_boss:spawnState") == 6) then
+			spatialChat(pBoss, "Self Destruct!.")
+                        CreatureObject(pBoss):playEffect("clienteffect/level_granted.cef", "")
+			CreatureObject(pBoss):broadcastToServer("\\#63C8F9 A Group Has Cleared The IG-88 Boss Dungeon! Next Boss Encounter will be Avalible in 24 hours!.")
+				end
+			end
 		end
 	end
 	return 0
