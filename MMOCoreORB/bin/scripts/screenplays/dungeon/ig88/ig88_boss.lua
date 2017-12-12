@@ -5,7 +5,10 @@
 
 ig88_boss = ScreenPlay:new {
 	numberOfActs = 1,
-
+  	questString = "ig88_boss",
+  	questdata = Object:new {
+    	activePlayerName = "initial",
+    	}
 }
 ---------------------------------------------
 --   Register Screenplay to planet Dungeon 2
@@ -18,7 +21,8 @@ local ObjectManager = require("managers.object.object_manager")  --print("Object
 --------------------------------------
 function ig88_boss:start()
 	if (isZoneEnabled("dungeon2")) then
-		self:spawnMobiles()		
+		self:spawnMobiles()	
+		self:spawnActiveAreas()
  	end
 end
 -------------------------------------------------
@@ -130,6 +134,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer)
 		local maxDistance = 75
 		
 		if distance > (maxDistance * maxDistance) then
+                        CreatureObject(pBoss):playEffect("clienteffect/sm_spot_a_sucker.cef", "")
 			spatialChat(pBoss, "Systems powering down")
 			forcePeace(pBoss)
 			forcePeace(pBoss)
@@ -326,4 +331,62 @@ end
 function ig88_boss:resetScreenplayStatus(pPlayer)
 	writeData("ig88_boss:spawnState", 1)
 	return 0	
+end
+--------------------------------------
+--   Added Active Area Check check
+--------------------------------------
+function ig88_boss:spawnActiveAreas()
+	local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", -0.0547165, 0.0315461, 10.281, 8, 14200863, 0, 0, 0)
+    
+	if (pSpawnArea ~= nil) then
+		local activeArea = LuaActiveArea(pSpawnArea)
+	        activeArea:setCellObjectID(0)
+	        activeArea:setRadius(30)
+	        createObserver(ENTEREDAREA, "ig88_boss", "notifySpawnArea", pSpawnArea)
+	        createObserver(EXITEDAREA, "ig88_boss", "notifySpawnAreaLeave", pSpawnArea)
+	    end
+end
+
+function ig88_boss:notifySpawnArea(pActiveArea, pMovingObject)
+	
+	if (not SceneObject(pMovingObject):isCreatureObject()) then
+		return 0
+	end
+	
+	return ObjectManager.withCreatureObject(pMovingObject, function(player)
+		if (player:isAiAgent()) then
+			return 0
+		end
+		
+		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
+			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the Ig-88 Boss Dungeon!")
+			player:sendSystemMessage("You have entered the Ig-88 Boss Dungeon!")
+		end
+		return 0
+	end)
+end
+
+function ig88_boss:notifySpawnAreaLeave(pActiveArea, pMovingObject, pBoss, pPlayer)
+	
+	if (not SceneObject(pMovingObject):isCreatureObject()) then
+		return 0
+	end
+	
+	return ObjectManager.withCreatureObject(pMovingObject, function(player)
+		if (player:isAiAgent()) then
+			return 0
+		end
+		
+		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
+			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Ig-88 Boss Dungeon!")
+			player:sendSystemMessage("You have reset the Ig-88 Boss Dungeon!")
+			CreatureObject(pBoss):playEffect("clienteffect/sm_spot_a_sucker.cef", "")
+			spatialChat(pBoss, "Systems powering down")
+			forcePeace(pBoss)
+			forcePeace(pBoss)
+			forcePeace(pBoss)			
+			createEvent(3500, "ig88_boss", "resetScreenplayStatus", pPlayer)
+		end
+		return 0
+	end)
 end
