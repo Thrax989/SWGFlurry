@@ -89,6 +89,10 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   first wave 80% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth *0.8)) or (bossAction <= (bossMaxAction * 0.8)) or (bossMind <= (bossMaxMind *0.8))) and readData("ig88_boss:spawnState") == 1) then
+			CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+			local trapDmg = getRandomNumber(500, 1000)
+			CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+-			CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
 			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
@@ -131,6 +135,10 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   second wave 70% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind * 0.7))) and readData("ig88_boss:spawnState") == 2) then
+			CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+			local trapDmg = getRandomNumber(500, 1000)
+			CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+-			CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
 			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
@@ -173,6 +181,10 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   third wave 60% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind * 0.6))) and readData("ig88_boss:spawnState") == 3) then
+			CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+			local trapDmg = getRandomNumber(500, 1000)
+			CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+-			CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
 			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
@@ -215,6 +227,10 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   fourth wave 50% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind * 0.5))) and readData("ig88_boss:spawnState") == 4) then
+			CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+			local trapDmg = getRandomNumber(500, 1000)
+			CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+-			CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
 			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
