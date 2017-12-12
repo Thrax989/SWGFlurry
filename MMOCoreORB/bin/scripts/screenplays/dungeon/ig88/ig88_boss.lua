@@ -90,10 +90,8 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth *0.8)) or (bossAction <= (bossMaxAction * 0.8)) or (bossMind <= (bossMaxMind *0.8))) and readData("ig88_boss:spawnState") == 1) then
 			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
-			CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
-			CreatureObject(pBoss):playEffect("clienteffect/space_command/cbt_nebulae_fire.cef", "")
 			CreatureObject(pPlayer):sendSystemMessage("First Enemy Wave Starting!")
 			spatialChat(pBoss, "Boss Current Health = 90%")
 			writeData("ig88_boss:spawnState",2)
@@ -134,7 +132,6 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind * 0.7))) and readData("ig88_boss:spawnState") == 2) then
 			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
-			CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			CreatureObject(pPlayer):sendSystemMessage("Second Enemy Wave Starting!")
@@ -177,7 +174,6 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind * 0.6))) and readData("ig88_boss:spawnState") == 3) then
 			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
-			CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			CreatureObject(pPlayer):sendSystemMessage("Third Enemy Wave Starting!")
@@ -220,7 +216,6 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind * 0.5))) and readData("ig88_boss:spawnState") == 4) then
 			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
-			CreatureObject(pBoss):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 			CreatureObject(pPlayer):sendSystemMessage("Fourth Enemy Wave Starting!")
@@ -262,6 +257,7 @@ function ig88_boss:boss_damage(pBoss, pPlayer, pAdd, pAddTwo, pAddThree, pAddFou
 --   fifth wave 40% health check
 --------------------------------------
 		if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind * 0.4))) and readData("ig88_boss:spawnState") == 5) then
+			CreatureObject(pBoss):playEffect("clienteffect/space_command/cbt_nebulae_fire.cef", "")
 			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
 			CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
 			CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
@@ -343,7 +339,7 @@ function ig88_boss:spawnActiveAreas()
 	    end
 end
 
-function ig88_boss:notifySpawnArea(pActiveArea, pMovingObject)
+function ig88_boss:notifySpawnArea(pActiveArea, pMovingObject, pBoss, pPlayer)
 	
 	if (not SceneObject(pMovingObject):isCreatureObject()) then
 		return 0
@@ -351,6 +347,12 @@ function ig88_boss:notifySpawnArea(pActiveArea, pMovingObject)
 	
 	return ObjectManager.withCreatureObject(pMovingObject, function(player)
 		if (player:isAiAgent()) then
+			return 0
+		end
+
+		if (player:isImperial() or player:isNeutral() or player:isRebel() and readData("ig88_boss:spawnState") == 5) then
+			CreatureObject(pPlayer):addDotState(pPlayer, FIRE, getRandomNumber(20) + 80, HEALTH, 1000, 2000)
+			CreatureObject(pPlayer):addDotState(pPlayer, FIRE, getRandomNumber(20) + 80, ACTION, 1000, 2000)
 			return 0
 		end
 		
@@ -363,12 +365,6 @@ function ig88_boss:notifySpawnArea(pActiveArea, pMovingObject)
 end
 
 function ig88_boss:notifySpawnAreaLeave(pActiveArea, pMovingObject, pBoss, pPlayer)
-	
-	if (player:isImperial() or player:isNeutral() or player:isRebel() and readData("ig88_boss:spawnState") == 6) then
-		CreatureObject(pPlayer):addDotState(pPlayer, FIRE, getRandomNumber(20) + 80, HEALTH, 1000, 2000)
-		CreatureObject(pPlayer):addDotState(pPlayer, FIRE, getRandomNumber(20) + 80, ACTION, 1000, 2000)
-		return 0
-	end
 
 	if (not SceneObject(pMovingObject):isCreatureObject()) then
 		return 0
