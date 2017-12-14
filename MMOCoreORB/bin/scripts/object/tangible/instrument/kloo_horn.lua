@@ -42,6 +42,9 @@
 
 
 object_tangible_instrument_kloo_horn = object_tangible_instrument_shared_kloo_horn:new {
+	templateType = INSTRUMENT,
+	instrumentType = 5,
+
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
@@ -223,8 +226,7 @@ object_tangible_instrument_kloo_horn = object_tangible_instrument_shared_kloo_ho
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-	templateType = INSTRUMENT,
-	instrumentType = 5,
+
 
 	numberExperimentalProperties = {1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "UT", "CD"},

@@ -42,6 +42,10 @@
 
 
 object_tangible_instrument_mandoviol = object_tangible_instrument_shared_mandoviol:new {
+	templateType = INSTRUMENT,
+	instrumentType = 10,
+
+
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
@@ -223,8 +227,6 @@ object_tangible_instrument_mandoviol = object_tangible_instrument_shared_mandovi
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-	templateType = INSTRUMENT,
-	instrumentType = 10,
 
 	numberExperimentalProperties = {1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "UT", "CD"},

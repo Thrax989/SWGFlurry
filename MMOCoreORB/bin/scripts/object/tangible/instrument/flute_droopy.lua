@@ -42,6 +42,9 @@
 
 
 object_tangible_instrument_flute_droopy = object_tangible_instrument_shared_flute_droopy:new {
+	templateType = INSTRUMENT,
+	instrumentType = 4,
+
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
@@ -222,8 +225,7 @@ object_tangible_instrument_flute_droopy = object_tangible_instrument_shared_flut
 				"object/creature/player/zabrak_female.iff" ,
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
-	templateType = INSTRUMENT,
-	instrumentType = 4,
+	
 
 	numberExperimentalProperties = {1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "UT", "CD"},

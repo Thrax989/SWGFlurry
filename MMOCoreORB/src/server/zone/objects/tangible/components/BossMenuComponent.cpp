@@ -79,6 +79,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			creature->switchZone("corellia", 0, 0, 0);
 		}
 	}
+
 	if (selectedID == 215) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
@@ -97,6 +98,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			creature->switchZone("corellia", 0, 0, 0);
 		}
 	}
+
 	if (selectedID == 216) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
@@ -115,6 +117,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			creature->switchZone("corellia", 0, 0, 0);
 		}
 	}
+
 	if (selectedID == 217) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
@@ -133,6 +136,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			creature->switchZone("corellia", 0, 0, 0);
 		}
 	}
+
 	if (selectedID == 221) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
@@ -151,6 +155,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			creature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
 		}
 	}
+
 	if (selectedID == 222) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
@@ -169,6 +174,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			creature->switchZone("dungeon2", 6193, 250, -5978, 0);
 		}
 	}
+
 	if (selectedID == 223) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
@@ -187,6 +193,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			creature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
 		}
 	}
+
 	if (selectedID == 224) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
@@ -205,6 +212,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			creature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
 		}
 	}
+
 	if (selectedID == 225) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
@@ -223,6 +231,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			creature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
 		}
 	}
+
 	if (selectedID == 226) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
@@ -241,6 +250,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			creature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
 		}
 	}
+
 	if (selectedID == 227) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
@@ -259,6 +269,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			creature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
 		}
 	}
+
 	if (selectedID == 228) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
