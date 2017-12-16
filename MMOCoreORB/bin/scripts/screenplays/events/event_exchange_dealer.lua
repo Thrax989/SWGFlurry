@@ -21,6 +21,7 @@ event_exchange_dealer_convo_handler = Object:new {
  }
 
 function event_exchange_dealer_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
+   local pGhost = LuaCreatureObject(conversingPlayer):getPlayerObject()
    local creature = LuaCreatureObject(conversingPlayer)
    local convosession = creature:getConversationSession()
    lastConversation = nil
@@ -70,11 +71,10 @@ end
 		nextConversationScreen = conversation:getScreen("items_screen")
 
 --Xeno Furniture
-local pGhost = LuaCreatureObject(conversingPlayer):getPlayerObject()
 	     elseif (optionLink == "1" and itemCounter < 1) then            
 	            nextConversationScreen = conversation:getScreen("insufficient_item")
 	            creature:sendSystemMessage("You have insufficient items")
-		    PlayerObject(creature):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
+		    PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
 		    LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "1" and itemCounter >= 1) then
 	            local pItem = giveItem(pInventory, "object/tangible/furniture/house_cleanup/xeno_desk_lamp.iff", -1)
