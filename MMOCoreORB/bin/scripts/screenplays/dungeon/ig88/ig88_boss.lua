@@ -349,7 +349,7 @@ return ObjectManager.withCreatureObject(pMovingObject, function(player)
     return 0
 end
 if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-      player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has Entered The Ig-88 Boss Dungeon!")
+          player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has Entered The Ig-88 Boss Dungeon!")
           player:sendSystemMessage("You Have Entered The Ig-88 Boss Dungeon!")
           end
       return 0
@@ -364,9 +364,9 @@ if (player:isAiAgent()) then
   return 0
 end
 if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-     player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Ig-88 Boss Dungeon!")
+      player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Ig-88 Boss Dungeon!")
       player:sendSystemMessage("You Have Left The Ig-88 Boss Dungeon!")
-        end
+      end
     return 0
   end)
 end
