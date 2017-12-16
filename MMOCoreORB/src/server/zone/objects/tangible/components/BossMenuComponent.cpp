@@ -53,14 +53,10 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("corellia", 0, 0, 0);
-						groupedCreature->addWaypoint("corellia", "corellia test", "", 0, 0, WAYPOINTBLUE, true, true, 0)
-						groupedCreature->SystemMessage("The Waypoint has been added to your datpad.")
 						locker.release();
 				}
 			}
 			sceneObject->destroyObjectFromWorld(true);
-			creature->addWaypoint("corellia", "corellia test", "", 0, 0, WAYPOINTBLUE, true, true, 0)
-			creature->SystemMessage("The Waypoint has been added to your datpad.")
 			creature->switchZone("corellia", 0, 0, 0);
 		}
 	}
