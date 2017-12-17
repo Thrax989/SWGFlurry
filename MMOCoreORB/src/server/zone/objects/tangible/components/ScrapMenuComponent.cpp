@@ -24,7 +24,13 @@
 void ScrapMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(player->getRootParent());
 
+	// If outside don't bother doing anything ...
+	if (!building == NULL) {
+		player->sendSystemMessage("Error");
+		return false;
+	}
 	menuResponse->addRadialMenuItem(20, 3, "Scrap Item");
 }
 
