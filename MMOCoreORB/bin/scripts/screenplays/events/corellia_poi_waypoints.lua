@@ -12,7 +12,7 @@ corellia_poi_waypoints = ScreenPlay:new {
 registerScreenPlay("corellia_poi_waypoints", true)
 
 function corellia_poi_waypoints:start()
-   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -134.156, 28, -4717.36, 271, 0 )
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
 
 end
 
