@@ -20,6 +20,7 @@
 #include "server/chat/ChatManager.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
+#include "server/zone/objects/building/BuildingObject.h"
 
 void ScrapMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
@@ -27,11 +28,9 @@ void ScrapMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Object
 		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(player->getRootParent());
 
 	// If outside don't bother doing anything ...
-	if (!building == NULL) {
-		player->sendSystemMessage("Error");
-		return false;
-	}
+	if (building == NULL) {
 	menuResponse->addRadialMenuItem(20, 3, "Scrap Item");
+	}
 }
 
 int ScrapMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
