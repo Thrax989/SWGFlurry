@@ -27,7 +27,7 @@ void ScrapMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Object
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(player->getRootParent());
 
-	// If outside don't bother doing anything ...
+	// If outside dispaly menu options, if inside a building show nothing.
 	if (building == NULL) {
 	menuResponse->addRadialMenuItem(20, 3, "Scrap Item");
 	}
