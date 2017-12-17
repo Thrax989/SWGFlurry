@@ -20,12 +20,17 @@
 #include "server/chat/ChatManager.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
+#include "server/zone/objects/building/BuildingObject.h"
 
 void CollectionsilverMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(player->getRootParent());
 
+	// If outside dispaly menu options, if inside a building show nothing.
+	if (building == NULL) {
 	menuResponse->addRadialMenuItem(20, 3, "Open Silver Crate");
+	}
 }
 
 int CollectionsilverMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
