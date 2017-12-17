@@ -20,7 +20,6 @@
 #include "server/chat/ChatManager.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
-#include "server/zone/objects/building/BuildingObject.h"
 
 void ScrapMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
@@ -30,11 +29,6 @@ void ScrapMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Object
 }
 
 int ScrapMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
-
-	if (isPublicStructure() || isPrivateStructure()) {
-			return GENERALERROR;
-		creature->sendSystemMessage("@city/city:youre_city_banned"); // you are banned from this city and may not use any of its public services and structures
-	}
 
 	if (selectedID != 20)
 		return 0;
