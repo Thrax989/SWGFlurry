@@ -36,29 +36,20 @@ corellia_poi_waypoints_items_screen = ConvoScreen:new {
       {"Test 21", "21"}, 
       {"Test 22", "22"},  
       {"Test 23", "23"}, 
-      {"Test 24", "24"},         
-      {"Back", "first_screen"},
-      {"No thank you.", "deny_quest"},
+      {"Test 24", "24"},
       }
 }
 corellia_poi_waypoints_template:addScreen(corellia_poi_waypoints_items_screen);
-
-
-
-
 corellia_poi_waypoints_first_screen = ConvoScreen:new {
    id = "first_screen",
    leftDialog = "",
    customDialogText = "Welcome to Points Of Intreset Service.",
    stopConversation = "false",
    options = {
-      {"Items", "items"},
-      {"No thank you.", "deny_quest"},
+      {"Corellia Points Of Intrest", "items"},
       }
 }
 corellia_poi_waypoints_template:addScreen(corellia_poi_waypoints_first_screen);
-
-
 corellia_poi_waypoints_end_quest = ConvoScreen:new {
    id = "end",
    leftDialog = "",
@@ -68,8 +59,6 @@ corellia_poi_waypoints_end_quest = ConvoScreen:new {
    }
 }
 corellia_poi_waypoints_template:addScreen(corellia_poi_waypoints_end_quest);
-
-
 corellia_poi_waypoints_deny_quest = ConvoScreen:new {
    id = "deny_quest",
    leftDialog = "",
@@ -79,8 +68,6 @@ corellia_poi_waypoints_deny_quest = ConvoScreen:new {
    }
 }
 corellia_poi_waypoints_template:addScreen(corellia_poi_waypoints_deny_quest);
-
-
 corellia_poi_waypoints_insufficient_funds = ConvoScreen:new {
    id = "insufficient_funds",
    leftDialog = "",
@@ -90,8 +77,6 @@ corellia_poi_waypoints_insufficient_funds = ConvoScreen:new {
    }
 }
 corellia_poi_waypoints_template:addScreen(corellia_poi_waypoints_insufficient_funds);
-
-
 corellia_poi_waypoints_insufficient_space = ConvoScreen:new {
    id = "insufficient_space",
    leftDialog = "",
@@ -101,8 +86,6 @@ corellia_poi_waypoints_insufficient_space = ConvoScreen:new {
    }
 }
 corellia_poi_waypoints_template:addScreen(corellia_poi_waypoints_insufficient_space);
-
-
 corellia_poi_waypoints_insufficient_item = ConvoScreen:new {
    id = "insufficient_item",
    leftDialog = "",
@@ -112,6 +95,4 @@ corellia_poi_waypoints_insufficient_item = ConvoScreen:new {
    }
 }
 corellia_poi_waypoints_template:addScreen(corellia_poi_waypoints_insufficient_item);
-
-
 addConversationTemplate("corellia_poi_waypoints_template", corellia_poi_waypoints_template);
