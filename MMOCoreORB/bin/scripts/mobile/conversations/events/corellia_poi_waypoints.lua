@@ -43,7 +43,7 @@ corellia_poi_waypoints_template:addScreen(corellia_poi_waypoints_items_screen);
 corellia_poi_waypoints_first_screen = ConvoScreen:new {
    id = "first_screen",
    leftDialog = "",
-   customDialogText = "Welcome to Points Of Intreset Service.",
+   customDialogText = "Welcome to the Points Of Intrest Service.",
    stopConversation = "false",
    options = {
       {"Corellia Points Of Intrest", "items"},
