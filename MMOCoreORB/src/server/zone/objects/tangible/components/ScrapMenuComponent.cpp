@@ -21,9 +21,6 @@
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 
-#include "server/zone/objects/building/BuildingObject.h"
-#include "server/zone/objects/player/sessions/vendor/CreateVendorSession.h"
-
 void ScrapMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
@@ -32,20 +29,6 @@ void ScrapMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Object
 }
 
 int ScrapMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
-
-	ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
-	ManagedReference<SceneObject*> parent = player->getRootParent();
-	ManagedReference<BuildingObject*> building = cast<BuildingObject*>( parent.get());
-
-	if (building->isPublicStructure()) {
-			creature->sendSystemMessage("Error");
-			return false;
-		}
-
-	if (!building->isPublicStructure()) {
-			creature->sendSystemMessage("Error");
-			return false;
-		}
 
 	if (selectedID != 20)
 		return 0;
