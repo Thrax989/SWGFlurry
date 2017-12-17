@@ -673,3 +673,6 @@ includeFile("events/rebel_armor_vendor.lua")
 
 --GCW Trainer
 --includeFile("gcw/gcwTrainerScreenplay.lua")
+
+--poi waypoint npc's
+includeFile("events/corellia_poi_waypoints.lua")

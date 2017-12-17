@@ -305,3 +305,6 @@ includeFile("conversations/events/rebel_armor_vendor.lua")
 includeFile("conversations/events/event_exchange_dealer.lua")
 
 includeFile("custom_content/conversations.lua")
+
+--custom waypoint npc's
+includeFile("conversations/events/corellia_poi_waypoints.lua")
