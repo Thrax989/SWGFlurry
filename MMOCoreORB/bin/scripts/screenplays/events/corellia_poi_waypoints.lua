@@ -143,6 +143,8 @@ end
 	     elseif (optionLink == "24") then
        PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
        LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
+      end
+   end
 end
 
    return nextConversationScreen
