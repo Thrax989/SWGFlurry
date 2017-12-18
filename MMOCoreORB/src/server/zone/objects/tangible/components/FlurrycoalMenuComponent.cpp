@@ -34,7 +34,10 @@ void FlurrycoalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, O
 }
 
 int FlurrycoalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(creature->getRootParent());
 
+	// If outside dispaly menu options, if inside a building show nothing.
+	if (building == NULL) {
 	if (selectedID != 20)
 		return 0;
 
@@ -44,5 +47,6 @@ int FlurrycoalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cr
 	lootManager->createLoot(inventory, "flurry_coal", 300);
 	creature->playEffect("clienteffect/mustafar/dark_jedi_rock_attack_10.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
+	}
 	return 0;
 }
