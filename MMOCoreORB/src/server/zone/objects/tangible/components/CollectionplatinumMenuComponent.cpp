@@ -34,7 +34,10 @@ void CollectionplatinumMenuComponent::fillObjectMenuResponse(SceneObject* sceneO
 }
 
 int CollectionplatinumMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(creature->getRootParent());
 
+	// If outside dispaly menu options, if inside a building show nothing.
+	if (building == NULL) {
 	if (selectedID != 20)
 		return 0;
 
@@ -45,5 +48,6 @@ int CollectionplatinumMenuComponent::handleObjectMenuSelect(SceneObject* sceneOb
 	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
 	sceneObject->destroyObjectFromWorld(true);
 	sceneObject->destroyObjectFromDatabase(true);
+	}
 	return 0;
 }
