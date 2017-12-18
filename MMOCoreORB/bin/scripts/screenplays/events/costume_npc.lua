@@ -27,7 +27,7 @@ costume_convo_handler = Object:new {
 
 	tstring = "costume_convo_handler"
 }
-local screenplayHelper = require("helper.screenplayHelper")
+local screenplayHelper = require("screenplayHelper")
 
 function costume_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
 	local creature = LuaCreatureObject(conversingPlayer)

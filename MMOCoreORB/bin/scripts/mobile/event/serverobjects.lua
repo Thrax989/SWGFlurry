@@ -12,7 +12,7 @@ includeFile("event/event_shear_mite.lua")
 includeFile("event/event_torton.lua")
 includeFile("event/event_tybis.lua")
 includeFile("event/event_kaadu.lua")
-includeFile("event/costume_npc.lua.lua")
+includeFile("event/costume_npc.lua")
 
 
 
