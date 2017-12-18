@@ -35,7 +35,10 @@ void ImperialMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Obj
 }
 
 int ImperialMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(creature->getRootParent());
 
+	// If outside dispaly menu options, if inside a building show nothing.
+	if (building == NULL) {
 	if (selectedID != 20)
 		return 0;
 
@@ -47,5 +50,6 @@ int ImperialMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 	ghost->increaseFactionStanding("imperial", 1000);
 	sceneObject->destroyObjectFromWorld(true);
 	sceneObject->destroyObjectFromDatabase(true);
+	}
 	return 0;
 }
