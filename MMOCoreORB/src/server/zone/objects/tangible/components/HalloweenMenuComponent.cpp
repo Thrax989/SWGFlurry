@@ -34,7 +34,10 @@ void HalloweenMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Ob
 }
 
 int HalloweenMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(creature->getRootParent());
 
+	// If outside dispaly menu options, if inside a building show nothing.
+	if (building == NULL) {
 	if (selectedID != 20)
 		return 0;
 
@@ -43,5 +46,6 @@ int HalloweenMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 	lootManager->createLoot(inventory, "halloween1", 300);
 	creature->setPosture(CreaturePosture::UPRIGHT);
 	sceneObject->destroyObjectFromWorld(true);
+	}
 	return 0;
 }
