@@ -20,16 +20,24 @@
 #include "server/chat/ChatManager.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
+#include "server/zone/objects/building/BuildingObject.h"
 
 void ArtifactMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(player->getRootParent());
 
+	// If outside dispaly menu options, if inside a building show nothing.
+	if (building == NULL) {
 	menuResponse->addRadialMenuItem(20, 3, "Reveal Treasure");
+	}
 }
 
 int ArtifactMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(creature->getRootParent());
 
+	// If outside dispaly menu options, if inside a building show nothing.
+	if (building == NULL) {
 	if (selectedID != 20)
 		return 0;
 
@@ -38,5 +46,6 @@ int ArtifactMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 	lootManager->createLoot(inventory, "artifactreward", 300);
 	creature->setPosture(CreaturePosture::UPRIGHT);
 	sceneObject->destroyObjectFromWorld(true);
+	}
 	return 0;
 }

@@ -20,16 +20,24 @@
 #include "server/chat/ChatManager.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
+#include "server/zone/objects/building/BuildingObject.h"
 
 void FlurrycoalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(player->getRootParent());
 
+	// If outside dispaly menu options, if inside a building show nothing.
+	if (building == NULL) {
 	menuResponse->addRadialMenuItem(20, 3, "I have been naughty");
+	}
 }
 
 int FlurrycoalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(creature->getRootParent());
 
+	// If outside dispaly menu options, if inside a building show nothing.
+	if (building == NULL) {
 	if (selectedID != 20)
 		return 0;
 
@@ -39,5 +47,6 @@ int FlurrycoalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cr
 	lootManager->createLoot(inventory, "flurry_coal", 300);
 	creature->playEffect("clienteffect/mustafar/dark_jedi_rock_attack_10.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
+	}
 	return 0;
 }
