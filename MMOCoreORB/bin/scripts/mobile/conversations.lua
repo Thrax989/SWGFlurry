@@ -304,9 +304,6 @@ includeFile("conversations/events/imperial_armor_vendor.lua")
 includeFile("conversations/events/rebel_armor_vendor.lua")
 includeFile("conversations/events/event_exchange_dealer.lua")
 
-includeFile("conversations/events/costume_conversation.lua")
-
-
 includeFile("custom_content/conversations.lua")
 
 --custom waypoint npc's
