@@ -2832,11 +2832,18 @@ void PlayerManagerImplementation::updateSwimmingState(CreatureObject* player, fl
 
 		//Player is in the water.
 		player->setState(CreatureState::SWIMMING, true);
+		if (zone->getZoneName().contains("mustafar")) {
+		player->inflictDamage(player, CreatureAttribute::HEALTH, 118, true);
+		}
+	        player->setSpeedMultiplierMod(0.30f);
+	        player->setAccelerationMultiplierMod(0.10f);
 		return;
 	}
 
 	//Terrain is above water level.
 	player->clearState(CreatureState::SWIMMING, true);
+	player->setSpeedMultiplierMod(1.0f);
+   	player->setAccelerationMultiplierMod(1.0f);
 }
 
 int PlayerManagerImplementation::checkSpeedHackFirstTest(CreatureObject* player, float parsedSpeed, ValidatedPosition& teleportPosition, float errorMultiplier) {
