@@ -2826,6 +2826,8 @@ void PlayerManagerImplementation::updateSwimmingState(CreatureObject* player, fl
 			if (fabs(16384 - intersections->get(i).getIntersectionDistance() - newZ) < 0.2) {
 				//Player is on terrain above the water.
 				player->clearState(CreatureState::SWIMMING, true);
+				player->setSpeedMultiplierMod(1.0f);
+			        player->setAccelerationMultiplierMod(1.0f);
 				return;
 			}
 		}
