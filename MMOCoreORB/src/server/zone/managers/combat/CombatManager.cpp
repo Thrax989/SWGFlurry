@@ -539,6 +539,8 @@ void CombatManager::applyWeaponDots(CreatureObject* attacker, CreatureObject* de
 	if (!weapon->isCertifiedFor(attacker))
 		return;
 
+	int resist = defender->getSkillMod("combat_bleeding_defense");
+	
 	for (int i = 0; i < weapon->getNumberOfDots(); i++) {
 		if (weapon->getDotUses(i) <= 0)
 			continue;
