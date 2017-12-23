@@ -1903,7 +1903,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					player->subtractCashCredits(1000);
 					box->setForceCloseDistance(5.f);
 			        }
-			} else if (templatePath == "royal_guard_costume") {
+			} else if (templatePath == "royal_guard_appearance") {
 				if (!player->isInCombat() && player->getCashCredits() < 99) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Royal Guard");
