@@ -1884,7 +1884,42 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  					player->subtractCashCredits(1000);
 					box->setForceCloseDistance(5.f);
 			        }
-
+//New Mobile Template Outfit Swap Terminal
+//Swtich Back To Normal
+			} else if (templatePath == "switch_normal_loadout") {
+				if (!player->isInCombat() && player->getCashCredits() < 99) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Normal Player Loadout");
+		                box->setPromptText("Costume Coast 100 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 99) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("You are now swtiching back to your normal loadout , soft logging your character will fully cloth you again , you can also unequipt and reqequipt your items if you do not want to soft log..");
+                                        player->setAlternateAppearance("", true); 					
+					player->subtractCashCredits(1000);
+					box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "royal_guard_costume") {
+				if (!player->isInCombat() && player->getCashCredits() < 99) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Royal Guard");
+		                box->setPromptText("Costume Coast 100 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 99) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for purchasing a costume.");
+                                        player->setAlternateAppearance("object/mobile/shared_royal_guard.iff", true); 					
+					player->subtractCashCredits(1000);
+					box->setForceCloseDistance(5.f);
+			        }
 			} else if (templatePath == "become_glowy") {
 				bluefrog->grantGlowyBadges(player);
 
