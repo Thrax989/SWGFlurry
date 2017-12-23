@@ -9,7 +9,7 @@ includeFile("custom_content/hoth/wampa.lua")
 includeFile("custom_content/hoth/wampa_baby.lua")
 includeFile("custom_content/hoth/hoth_mynock.lua")
 includeFile("custom_content/hoth/wampa_christmas.lua")
-includeFile("custom_content/hoth/wampa_christmas_baby.lua")
+includeFile("custom_content/hoth/wampa_christmas_babys.lua")
 
 
 
