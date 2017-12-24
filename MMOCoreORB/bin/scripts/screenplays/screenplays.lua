@@ -644,7 +644,7 @@ includeFile("record_keepers/record_keepers.lua")
 --includeFile("tests/tests.lua")
 
 --Custom Screenplays
---includeFile("custom_screenplays/screenplays.lua")
+includeFile("custom_screenplays/screenplays.lua")
 
 --Halloween Event
 --includeFile("events/halloween_moenia.lua")
@@ -676,3 +676,6 @@ includeFile("events/rebel_armor_vendor.lua")
 
 --poi waypoint npc's
 includeFile("events/corellia_poi_waypoints.lua")
+
+--Boss teleport radius check zone
+includeFile("gcw/nova.lua")
