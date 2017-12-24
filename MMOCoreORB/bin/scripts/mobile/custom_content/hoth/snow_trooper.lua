@@ -38,7 +38,7 @@ snowtrooper = Creature:new {
 		},
 		{
 			groups = {
-				{group = "g_imperial_credit", chance = 10000000}
+				{group = "g_rebel_credit", chance = 10000000}
 		},
 			lootChance = 200000 
 		},
@@ -68,7 +68,7 @@ snowtrooper = Creature:new {
 		},
 		{
 			groups = {
-				{group = "imppoints", chance = 10000000}
+				{group = "rebpoints", chance = 10000000}
 		},
 			lootChance = 100000 
 		},
