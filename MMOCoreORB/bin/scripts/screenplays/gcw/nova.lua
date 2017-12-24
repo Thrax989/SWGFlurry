@@ -20,7 +20,7 @@ function nova:spawnActiveAreas()
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(5)
+	        activeArea:setRadius(6)
 	        createObserver(ENTEREDAREA, "nova", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "nova", "notifySpawnAreaLeave", pSpawnArea)
 	    end
@@ -38,8 +38,8 @@ function nova:notifySpawnArea(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the nova Boss Teleport Zone!")
-			player:sendSystemMessage("You have entered the Nova Boss Teleport zone.")
+			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the nova Boss Teleport Zone!")
+			player:sendSystemMessage("You have entered the Nova Boss Teleport Area.")
 		end
 		return 0
 	end)
@@ -57,8 +57,9 @@ function nova:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		end
 		
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-			player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Nova Boss Teleport Zone!")
-			player:sendSystemMessage("You have left the Nova Boss Teleport zone!")
+			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Nova Boss Teleport Zone!")
+			player:sendSystemMessage("You have left the Nova Boss Teleport Area.")
+			player:sendSystemMessage("Warning You must be inside the teleport area inorder to teleport with your group to a boss location. If you are outside the area you will be left behind")
 		end
 		return 0
 	end)
