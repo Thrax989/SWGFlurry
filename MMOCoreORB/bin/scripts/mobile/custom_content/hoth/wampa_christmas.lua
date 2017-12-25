@@ -3,14 +3,14 @@ wampa_christmas = Creature:new {
 	socialGroup = "wampa",
 	faction = "",
 	level = 300,
-	chanceHit = 0.75,
+	chanceHit = 25.00,
 	damageMin = 670,
 	damageMax = 1250,
 	baseXp = 700668,
 	baseHAM = 250000,
 	baseHAMmax = 300000,
 	armor = 3,
-	resists = {30,160,30,200,200,200,30,30,15},
+	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -30,9 +30,18 @@ wampa_christmas = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "lootcollectiontierdiamonds", chance = 5000000},
-				{group = "tierthree", chance = 5000000},
+				{group = "tiertwo", chance = 10000000}			},
+			lootChance = 10000000
 		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000}			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "lootcollectiontierdiamonds", chance = 10000000}
+			},
 			lootChance = 10000000
 		}
 	},
