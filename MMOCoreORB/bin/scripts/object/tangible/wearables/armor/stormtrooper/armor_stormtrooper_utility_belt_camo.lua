@@ -186,5 +186,5 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_utility_belt_cam
 				"object/creature/player/zabrak_female.iff" ,
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
-
+}
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_utility_belt_camo, "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_utility_belt_camo.iff")
