@@ -1014,6 +1014,11 @@ void GCWManagerImplementation::verifyUplinkBand(CreatureObject* creature, Buildi
 			creature->sendSystemMessage("You isolate the carrier signal to Channel #" + String::valueOf(band + 1) + ".");
 			creature->sendSystemMessage("Jamming complete! You disable the uplink...");
 			awardSlicingXP(creature, "bountyhunter", 1000);
+			//broadcast to galaxy base is under attack
+			if (building->getPvpStatusBitmask() & CreatureFlag::OVERT){
+				String str = "A PVP Base is Under Attack! @ " + zone->getZoneName() + " " + String::valueOf(building->getPositionX()) + " " + String::valueOf( building->getPositionZ()) + " " + String::valueOf( building->getPositionY()) + ".";
+				zone->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, str);
+			}
 			return;
 		} else {
 			baseData->setState(DestructibleBuildingDataComponent::BAND);
