@@ -30,6 +30,6 @@ function igreturnScreenPlay:spawnMobiles()
 end
 function igreturnScreenPlay:returnig(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("lok", 491.2, 12, 4832.2, 0)
+	player:switchZone("dungeon2", 59.7, 0.8, -43.1, 14200887)
 	return 0
 end

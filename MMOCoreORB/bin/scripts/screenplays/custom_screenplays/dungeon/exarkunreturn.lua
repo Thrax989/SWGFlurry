@@ -30,6 +30,6 @@ function exarkunreturnScreenPlay:spawnMobiles()
 end
 function exarkunreturnScreenPlay:returnExarkun(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("yavin4", -2.3, -6.4, -1.8, 3465393)
+	player:switchZone("dungeon2", 59.7, 0.8, -43.1, 14200887)
 	return 0
 end
