@@ -27,18 +27,18 @@ void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectM
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 	        menuResponse->addRadialMenuItem(213, 3, "Broadcast Server Message LFG"); //SERVER BROADCAST LFG
-		menuResponse->addRadialMenuItem(214, 3, "Mini Boss 2"); //MINI BOSS ENCOUNTER 2
-		menuResponse->addRadialMenuItem(215, 3, "Mini Boss 3"); //MINI BOSS ENCOUNTER 3
-		menuResponse->addRadialMenuItem(216, 3, "Mini Boss 4"); //MINI BOSS ENCOUNTER 4
-		menuResponse->addRadialMenuItem(217, 3, "Heroic Boss Instances");
-		menuResponse->addRadialMenuItemToRadialID(217, 221, 3, "Exar Kun Tomb"); //BOSS ENCOUNTER 1
-		menuResponse->addRadialMenuItemToRadialID(217, 222, 3, "Avatar Platform"); //BOSS ENCOTUNER 2
-		menuResponse->addRadialMenuItemToRadialID(217, 223, 3, "Hoth Echo Base"); //BOSS ENCOUNTER 3
-		menuResponse->addRadialMenuItemToRadialID(217, 224, 3, "IG-88"); //BOSS ENCOUNTER 4
-		menuResponse->addRadialMenuItemToRadialID(217, 225, 3, "Imperial Star Destroyer"); //BOSS ENCOUNTER 5
-		menuResponse->addRadialMenuItemToRadialID(217, 226, 3, "Myyydril"); //BOSS ENCOUNTER 6
-		menuResponse->addRadialMenuItemToRadialID(217, 227, 3, "NightSister Queen"); //BOSS ENCOUNTER 7
-		menuResponse->addRadialMenuItemToRadialID(217, 228, 3, "Rogue Star Destroyer"); //BOSS ENCOUNTER 8
+		//menuResponse->addRadialMenuItem(214, 3, "Mini Boss 2"); //MINI BOSS ENCOUNTER 2
+		//menuResponse->addRadialMenuItem(215, 3, "Mini Boss 3"); //MINI BOSS ENCOUNTER 3
+		//menuResponse->addRadialMenuItem(216, 3, "Mini Boss 4"); //MINI BOSS ENCOUNTER 4
+		//menuResponse->addRadialMenuItem(217, 3, "Heroic Boss Instances");
+		//menuResponse->addRadialMenuItemToRadialID(217, 221, 3, "Exar Kun Tomb"); //BOSS ENCOUNTER 1
+		//menuResponse->addRadialMenuItemToRadialID(217, 222, 3, "Avatar Platform"); //BOSS ENCOTUNER 2
+		//menuResponse->addRadialMenuItemToRadialID(217, 223, 3, "Hoth Echo Base"); //BOSS ENCOUNTER 3
+		//menuResponse->addRadialMenuItemToRadialID(217, 224, 3, "IG-88"); //BOSS ENCOUNTER 4
+		//menuResponse->addRadialMenuItemToRadialID(217, 225, 3, "Imperial Star Destroyer"); //BOSS ENCOUNTER 5
+		//menuResponse->addRadialMenuItemToRadialID(217, 226, 3, "Myyydril"); //BOSS ENCOUNTER 6
+		//menuResponse->addRadialMenuItemToRadialID(217, 227, 3, "NightSister Queen"); //BOSS ENCOUNTER 7
+		//menuResponse->addRadialMenuItemToRadialID(217, 228, 3, "Rogue Star Destroyer"); //BOSS ENCOUNTER 8
 }
 int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID == 213) {
@@ -59,7 +59,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			//Broadcast to Server
  			String playerName = creature->getFirstName();
  			StringBuffer zBroadcast;
- 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Looking To Join A Boss Raid Group, They Are located At The Nova Orion Space Station.";
+ 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Looking To Join A Raid Group, They Are located At The Nova Orion Space Station.";
 		        creature->addCooldown("server_broadcast_group", 60 * 1000);// 60 second cooldown
 			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		}
@@ -133,11 +133,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
+						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
 			
 			creature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -152,11 +154,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", 6193, 250, -5978, 0);
+						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
 			
 			creature->switchZone("dungeon2", 6193, 250, -5978, 0);
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -171,11 +175,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
+						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
 			
 			creature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -190,11 +196,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
+						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
 			
 			creature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -209,11 +217,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
+						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
 			
 			creature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -228,11 +238,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
+						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
 			
 			creature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -247,11 +259,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
+						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
 			
 			creature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -266,11 +280,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon1", 7, 172.3, 300, 4336867);
+						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
 			
 			creature->switchZone("dungeon1", 7, 172.3, 300, 4336867);
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 	return 0;

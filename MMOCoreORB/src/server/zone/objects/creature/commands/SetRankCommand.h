@@ -5,6 +5,10 @@
 #ifndef SETRANKCOMMAND_H_
 #define SETRANKCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/packets/object/PlayClientEffectObjectMessage.h"
+#include "server/zone/packets/scene/PlayClientEffectLocMessage.h"
+#include "server/zone/packets/scene/PlayClientEventObjectMessage.h"
 class SetRankCommand : public QueueCommand {
 public:
 

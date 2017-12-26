@@ -16,7 +16,7 @@ function hkArmyScreenPlay:start()
 end
 
 function hkArmyScreenPlay:spawnMobiles()
-
+--[[
 	spawnMobile("mustafar", "hk47", 3600, 3455, 74.8, 1004.9, -166, 0)
 
 	spawnMobile("mustafar", "hk77", 3600, 3410, 74.8, 820, 90, 0)
@@ -35,7 +35,7 @@ function hkArmyScreenPlay:spawnMobiles()
 	spawnMobile("mustafar", "magnaguard", 3600, 3485, 74.8, 716, 5, 0)
 	spawnMobile("mustafar", "magnaguard", 3600, 3510, 74.8, 730, 166, 0)
 	spawnMobile("mustafar", "magnaguard", 3600, 3520, 74.8, 696, 18, 0)
-	
+	]]--
 
 
 end
