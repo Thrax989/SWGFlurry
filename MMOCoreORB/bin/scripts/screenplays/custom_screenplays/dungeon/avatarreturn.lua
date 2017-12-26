@@ -30,6 +30,6 @@ function avatarreturnScreenPlay:spawnMobiles()
 end
 function avatarreturnScreenPlay:returnavatar(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("kashyyyk", 544.5, 31, 489.7, 0)
+	player:switchZone("dungeon2", 59.7, 0.8, -43.1, 14200887)
 	return 0
 end

@@ -30,6 +30,6 @@ function nightsisterreturnScreenPlay:spawnMobiles()
 end
 function nightsisterreturnScreenPlay:returnNightsister(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("dathomir", -100.3, -99.3, -107.9, 4115629)
+	player:switchZone("dungeon2", 59.7, 0.8, -43.1, 14200887)
 	return 0
 end

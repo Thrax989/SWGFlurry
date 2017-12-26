@@ -24,7 +24,7 @@ object_draft_schematic_vehicle_civilian_landspeeder_usv5 = object_draft_schemati
 	ingredientTemplateNames = {"craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n", "craft_vehicle_ingredients_n"},
 	ingredientTitleNames = {"vehicle_body", "frame", "shielding", "body_panel", "turbine_control", "veh_gravity_pump"},
 	ingredientSlotType = {0, 0, 0, 2, 1, 1},
-	resourceTypes = {"metal", "metal", "steel_neutronium", "object/tangible/component/vehicle/shared_custom_veh_body_panel.iff", "object/tangible/component/vehicle/shared_custom_veh_turbine_control_module.iff", "object/tangible/component/vehicle/shared_veh_gravity_pump.iff"},
+	resourceTypes = {"metal", "metal", "steel_neutronium", "object/tangible/component/vehicle/shared_custom_veh_body_panel.iff", "object/tangible/component/vehicle/shared_custom_veh_turbine_control_module.iff", "object/tangible/component/vehicle/shared_custom_veh_gravity_pump.iff"},
 	resourceQuantities = {1250, 2250, 400, 6, 2, 1},
 	contribution = {100, 100, 100, 100, 100, 100},
 

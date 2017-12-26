@@ -30,6 +30,6 @@ function isdreturnScreenPlay:spawnMobiles()
 end
 function isdreturnScreenPlay:returnisd(pCollector, pPlayer)--current
 	local player = LuaSceneObject(pPlayer)
-	player:switchZone("hoth", 0, 0, -2000, 0)
+	player:switchZone("dungeon2", 59.7, 0.8, -43.1, 14200887)
 	return 0
 end

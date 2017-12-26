@@ -47,7 +47,7 @@ object_tangible_loot_loot_schematic_ab_1_speeder_schematic = object_tangible_loo
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_artisan_master",
-	targetDraftSchematic = "object/draft_schematic/vehicle/civilian/ab_1_speeder.iff",
+	targetDraftSchematic = "object/draft_schematic/vehicle/civilian/ab1_speeder.iff",
 	targetUseCount = 1,
 
 }

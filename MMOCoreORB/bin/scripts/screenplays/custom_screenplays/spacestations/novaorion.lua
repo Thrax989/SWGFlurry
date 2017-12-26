@@ -26,6 +26,9 @@ function NovaOrionScreenPlay:spawnSceneObjects()
 	--bottom
 	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff",40.7,-31,0.7,14200906,1,0,0,0)
 
+        --Boss Teleporter
+        spawnSceneObject("dungeon2", "object/tangible/terminal/greeter_terminal.iff", -1.19459, -0.5, -1.81312, 14200880, 0.300706, 0, -0.953717, 0)
+
 end
 
 function NovaOrionScreenPlay:spawnMobiles()
