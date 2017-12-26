@@ -23,11 +23,6 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Tyrena Shuttle B (1,000 Credits)", "tyrena_b_shuttle_travel",
 			"Tyrena Starport (1,000 Credits)", "tyrena_starport_travel",
 			"Vreni Island Shuttle (1,000 Credits)", "vreni_island_shuttle_travel",
-			--[["POI Argilat Swamp Badge (1,000 Credits)", "argilat_swamp_badge",
-			"POI Bela Vistal Fountain Badge (1,000 Credits)", "bela_vistal_fountain_badge",
-			"POI Rebel Hideout (1,000 Credits)", "rebel_hideout_badge",
-			"POI Rogue Corsec Base Badge (1,000 Credits)", "rogue_corsec_base_badge",
-			"POI Tyrena Theater Badge (1,000 Credits)", "tyrena_theater_badge",]]--
 		   },
 			"dantooine",
 		   {
@@ -119,6 +114,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Yavin IV Imperial Outpost (1,000 Credits)", "yavin_iv_imperial_outpost_travel",
 			"Yavin IV Labor Outpost (1,000 Credits)", "yavin_iv_labor_outpost_travel",
 			"Player City - Temple Mount (1,000 Credits)", "pc_temple_mount_travel",
+		   },
+		 	"Nova Orion Space Station",
+		   {
+			"Nova Orion Cantina (1,000 Credits)", "Nova_orion_travel",
 		   },
 		 	--[["kaas",
 		   {

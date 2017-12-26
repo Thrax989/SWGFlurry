@@ -1884,6 +1884,24 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  					player->subtractCashCredits(1000);
 					box->setForceCloseDistance(5.f);
 			        }
+//Nova Orion Space Station Travels
+			} else if (templatePath == "Nova_orion_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Nova Orion Space Station");
+		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("dungeon2", 59.7, 0.8, -43.1, 14200887);
+ 					player->subtractCashCredits(1000);
+					box->setForceCloseDistance(5.f);
+			        }
 //New Mobile Template Outfit Swap Terminal
 //Swtich Back To Normal
 			} else if (templatePath == "switch_normal_loadout") {
