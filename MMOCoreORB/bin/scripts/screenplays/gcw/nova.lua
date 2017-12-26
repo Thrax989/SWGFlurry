@@ -42,7 +42,8 @@ local player = LuaCreatureObject(pPlayer)
 			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the nova Boss Teleport Zone!")
 			player:sendSystemMessage("You have entered the Nova Boss Teleport Area.")
 			player:playEffect("clienteffect/sm_end_of_the_line.cef", "")
-			player:playEffect("clienteffect/ui_target_select_enable_01.cef", "")
+			player:playEffect("clienteffect/cbt_hit_ship_shield_event_hvy.cef", "")
+			player:playEffect("clienteffect/droid_effect_dry_ice.cef", "")
 			end
 		return 0
 	end)
