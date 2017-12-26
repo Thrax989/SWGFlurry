@@ -59,7 +59,6 @@ function nova:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
 			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Nova Boss Teleport Zone!")
 			player:sendSystemMessage("You have left the Nova Boss Teleport Area.")
-			player:sendSystemMessage("Warning You must be inside the teleport area inorder to teleport with your group to a boss location. If you are outside the area you will be left behind")
 		end
 		return 0
 	end)
