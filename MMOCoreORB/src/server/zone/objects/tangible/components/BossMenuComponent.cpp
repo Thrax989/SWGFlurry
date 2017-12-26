@@ -26,7 +26,7 @@ void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectM
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-	        menuResponse->addRadialMenuItem(213, 3, "Mini Boss 1"); //MINI BOSS ENCOUNTER 1
+	        menuResponse->addRadialMenuItem(213, 3, "Broadcast Server Message LFG"); //SERVER BROADCAST LFG
 		menuResponse->addRadialMenuItem(214, 3, "Mini Boss 2"); //MINI BOSS ENCOUNTER 2
 		menuResponse->addRadialMenuItem(215, 3, "Mini Boss 3"); //MINI BOSS ENCOUNTER 3
 		menuResponse->addRadialMenuItem(216, 3, "Mini Boss 4"); //MINI BOSS ENCOUNTER 4
@@ -42,20 +42,27 @@ void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectM
 }
 int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID == 213) {
+		if (!creature->checkCooldownRecovery("server_broadcast_group")) {
+  			StringIdChatParameter stringId;
+  
+  			Time* cdTime = creature->getCooldownTime("server_broadcast_group");
+  
+  			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+  
+  			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+  			stringId.setDI(timeLeft);
+  			creature->sendSystemMessage(stringId);
+  			        return 0;
+  		       }
+				if (!creature->isInCombat()) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+			//Broadcast to Server
+ 			String playerName = creature->getFirstName();
+ 			StringBuffer zBroadcast;
+ 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Looking To Join A Boss Raid Group, He is located at the Nova Orion Space Station.";
+		        creature->addCooldown("server_broadcast_group", 60 * 1000);// 60 second cooldown
+			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 
-		ManagedReference<GroupObject*> group = creature->getGroup();
-
-		if (group != NULL) {
-			for (int i = 0; i < group->getGroupSize(); i++) {
-				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
-
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
-						Locker locker(groupedCreature);
-		                                groupedCreature->switchZone("corellia", 0, 0, 0);
-						locker.release();
-				}
-			}
-			creature->switchZone("corellia", 0, 0, 0);
 		}
 	}
 
@@ -67,12 +74,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("corellia", 0, 0, 0);
 						locker.release();
 				}
 			}
+			sceneObject->destroyObjectFromWorld(true);
 			creature->switchZone("corellia", 0, 0, 0);
 		}
 	}
@@ -85,12 +93,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("corellia", 0, 0, 0);
 						locker.release();
 				}
 			}
+			sceneObject->destroyObjectFromWorld(true);
 			creature->switchZone("corellia", 0, 0, 0);
 		}
 	}
@@ -103,12 +112,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("corellia", 0, 0, 0);
 						locker.release();
 				}
 			}
+			sceneObject->destroyObjectFromWorld(true);
 			creature->switchZone("corellia", 0, 0, 0);
 		}
 	}
@@ -121,12 +131,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
 						locker.release();
 				}
 			}
+			sceneObject->destroyObjectFromWorld(true);
 			creature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
 		}
 	}
@@ -139,12 +150,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", 6193, 250, -5978, 0);
 						locker.release();
 				}
 			}
+			sceneObject->destroyObjectFromWorld(true);
 			creature->switchZone("dungeon2", 6193, 250, -5978, 0);
 		}
 	}
@@ -157,12 +169,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
 						locker.release();
 				}
 			}
+			sceneObject->destroyObjectFromWorld(true);
 			creature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
 		}
 	}
@@ -175,12 +188,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
 						locker.release();
 				}
 			}
+			sceneObject->destroyObjectFromWorld(true);
 			creature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
 		}
 	}
@@ -193,7 +207,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
 						locker.release();
@@ -212,12 +226,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
 						locker.release();
 				}
 			}
+			sceneObject->destroyObjectFromWorld(true);
 			creature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
 		}
 	}
@@ -230,12 +245,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
 						locker.release();
 				}
 			}
+			sceneObject->destroyObjectFromWorld(true);
 			creature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
 		}
 	}
@@ -248,12 +264,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 10.0f) && groupedCreature != creature) {
+				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("dungeon1", 7, 172.3, 300, 4336867);
 						locker.release();
 				}
 			}
+			sceneObject->destroyObjectFromWorld(true);
 			creature->switchZone("dungeon1", 7, 172.3, 300, 4336867);
 		}
 	}
