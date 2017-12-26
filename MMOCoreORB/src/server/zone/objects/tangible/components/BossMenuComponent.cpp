@@ -59,10 +59,9 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 			//Broadcast to Server
  			String playerName = creature->getFirstName();
  			StringBuffer zBroadcast;
- 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Looking To Join A Boss Raid Group, He is located at the Nova Orion Space Station.";
+ 			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Looking To Join A Boss Raid Group, They Are located At The Nova Orion Space Station.";
 		        creature->addCooldown("server_broadcast_group", 60 * 1000);// 60 second cooldown
 			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-
 		}
 	}
 
