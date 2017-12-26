@@ -1,3 +1,4 @@
+--[[
 --Child Folders
 includeFile("custom_content/ghomrassen/ghomrassen_spawn_mobs/ghom_fringer.lua")
 includeFile("custom_content/ghomrassen/ghomrassen_spawn_mobs/ghom_frontiersman.lua")
@@ -160,5 +161,5 @@ includeFile("custom_content/ghomrassen/ghomrassen_spawn_mobs/gr_zucca_boar.lua")
 includeFile("custom_content/ghomrassen/ghomrassen_spawn_mobs/mosrassenracecoordinator.lua")
 --Root Folder
 
-
+]]--
 
