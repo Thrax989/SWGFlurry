@@ -41,9 +41,9 @@ local player = LuaCreatureObject(pPlayer)
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
 			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has entered the nova Boss Teleport Zone!")
 			player:sendSystemMessage("You have entered the Nova Boss Teleport Area.")
-			CreatureObject(pPlayer):playEffect("clienteffect/droid_effect_dry_ice.cef", "")
-			CreatureObject(pPlayer):playEffect("clienteffect/iff_scramble_pulse_send.cef", "")
-		end
+			player:playEffect("clienteffect/sm_end_of_the_line.cef", "")
+			player:playEffect("clienteffect/ui_target_select_enable_01.cef", "")
+			end
 		return 0
 	end)
 end
