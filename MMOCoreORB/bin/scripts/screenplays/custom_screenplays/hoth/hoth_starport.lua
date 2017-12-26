@@ -12,6 +12,11 @@ function HothStarportScreenPlay:start()
 	end
 end
 
+function HothStarportScreenPlay:spawnSceneObjects()
+--spawns the mission terminal
+spawnSceneObject("hoth", "object/tangible/terminal/terminal_mission_imperial.iff", -3.53275, 0, -1987.58, 0, 0.00932471, 0, 0.999957, 0)
+end
+
 function HothStarportScreenPlay:spawnMobiles()
 
 	--outside
