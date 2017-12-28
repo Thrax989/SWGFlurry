@@ -17,26 +17,7 @@ corellia_poi_waypoints_items_screen = ConvoScreen:new {
       {"Badge:Bela Vistal Fountain", "2"},
       {"Badge:Rebel Hideout", "3"},
       {"Badge:Rogue Corsec Base", "4"},
-      {"Badge:Tyrena Theater", "5"},      
-  --[[{"Test 6", "6"},
-      {"Test 7", "7"},
-      {"Test 8", "8"},
-      {"Test 9", "9"}, 
-      {"Test 10", "10"}, 
-      {"Test 11", "11"},  
-      {"Test 12", "12"},
-      {"Test 13", "13"},
-      {"Test 14", "14"},
-      {"Test 15", "15"},
-      {"Test 16", "16"},      
-      {"Test 17", "17"},
-      {"Test 18", "18"},
-      {"Test 19", "19"},
-      {"Test 20", "20"},
-      {"Test 21", "21"}, 
-      {"Test 22", "22"},  
-      {"Test 23", "23"}, 
-      {"Test 24", "24"},]]--
+      {"Badge:Tyrena Theater", "5"},
       }
 }
 corellia_poi_waypoints_template:addScreen(corellia_poi_waypoints_items_screen);
@@ -46,7 +27,7 @@ corellia_poi_waypoints_first_screen = ConvoScreen:new {
    customDialogText = "Welcome to the Points Of Intrest Service.",
    stopConversation = "false",
    options = {
-      {"Corellia Points Of Intrest", "items"},
+      {"Corellia Points Of Intrest", "items_screen"},
       }
 }
 corellia_poi_waypoints_template:addScreen(corellia_poi_waypoints_first_screen);
