@@ -75,7 +75,7 @@ end
         PlayerObject(pGhost):addWaypoint("corellia", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
         LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-       PlayerObject(pGhost):addWaypoint("corellia", "badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
+       PlayerObject(pGhost):addWaypoint("corellia", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
        LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
        PlayerObject(pGhost):addWaypoint("corellia", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
@@ -84,7 +84,7 @@ end
        PlayerObject(pGhost):addWaypoint("corellia", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
        LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "5") then
-       PlayerObject(pGhost):addWaypoint("corellia", "badge_tyrena_theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
+       PlayerObject(pGhost):addWaypoint("corellia", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
        LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	  --[[   elseif (optionLink == "6") then
        PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
