@@ -20,7 +20,8 @@ corellia_poi_waypoints_convo_handler = Object:new {
    tstring = "conversation_corellia_poi_waypoints"
  }
 
-function corellia_poi_waypoints_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
+function corellia_poi_waypoints_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
+        local pGhost = LuaCreatureObject(conversingPlayer):getPlayerObject()
 	local creature = LuaCreatureObject(conversingPlayer)
 	local convosession = creature:getConversationSession()
 	local conversation = LuaConversationTemplate(conversationTemplate)
@@ -44,85 +45,27 @@ function corellia_poi_waypoints_convo_handler:getNextConversationScreen(conversa
 			nextConversationScreen = conversation:getScreen(optionLink)
 
 			if (screenID == "items_screen") then
-				local ret = 0 
 				if (optionLink == "1") then
-					ret = creature:setAppearance("object/mobile/shared_jawa.iff")
-					ret = creature:addWaypoint("corellia", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
-					ret = nextConversationScreen = conversation:getScreen("end")
+					ret = PlayerObject(pGhost):addWaypoint("corellia", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
+					nextConversationScreen = conversation:getScreen("end")
 					ret = LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-					ret = creature:addWaypoint("corellia", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
-					ret = nextConversationScreen = conversation:getScreen("end")
+					ret = PlayerObject(pGhost):addWaypoint("corellia", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
+					nextConversationScreen = conversation:getScreen("end")
 					ret = LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
-					ret = creature:addWaypoint("corellia", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
-					ret = nextConversationScreen = conversation:getScreen("end")
+					ret = PlayerObject(pGhost):addWaypoint("corellia", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
+					nextConversationScreen = conversation:getScreen("end")
 					ret = LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "4") then
-					ret = creature:addWaypoint("corellia", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
-					ret = nextConversationScreen = conversation:getScreen("end")
-					ret = creature:sendSystemMessage("The Waypoint has been added to your datpad.")
+					ret = PlayerObject(pGhost):addWaypoint("corellia", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
+					nextConversationScreen = conversation:getScreen("end")
+					ret = LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "5") then
-					ret = creature:addWaypoint("corellia", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
-					ret = nextConversationScreen = conversation:getScreen("end")
-					ret = creature:sendSystemMessage("The Waypoint has been added to your datpad.")
-	  --[[   elseif (optionLink == "6") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "7") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "8") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "9") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "10") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "11") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "12") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "13") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "14") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "15") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "16") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "17") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "18") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-		   elseif (optionLink == "19") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-		   elseif (optionLink == "20") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-		   elseif (optionLink == "21") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-		   elseif (optionLink == "22") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-		   elseif (optionLink == "23") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "24") then
-       PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")]]--
+					ret = PlayerObject(pGhost):addWaypoint("corellia", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
+					nextConversationScreen = conversation:getScreen("end")
+					ret = LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
+         end
       end
    end
 end
