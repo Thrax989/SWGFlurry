@@ -13,12 +13,12 @@ corellia_poi_waypoints_items_screen = ConvoScreen:new {
    customDialogText = "Please select a POI to visit.",
    stopConversation = "false",
    options = {
-      {"Test 1", "1"},
-      {"Test 2", "2"},
-      {"Test 3", "3"},
-      {"Test 4", "4"},
-      {"Test 5", "5"},      
-      {"Test 6", "6"},
+      {"Badge:Agrilat Swap", "1"},
+      {"Badge:Bela Vistal Fountain", "2"},
+      {"Badge:Rebel Hideout", "3"},
+      {"Badge:Rogue Corsec Base", "4"},
+      {"Badge:Tyrena Theater", "5"},      
+  --[[{"Test 6", "6"},
       {"Test 7", "7"},
       {"Test 8", "8"},
       {"Test 9", "9"}, 
@@ -36,7 +36,7 @@ corellia_poi_waypoints_items_screen = ConvoScreen:new {
       {"Test 21", "21"}, 
       {"Test 22", "22"},  
       {"Test 23", "23"}, 
-      {"Test 24", "24"},
+      {"Test 24", "24"},]]--
       }
 }
 corellia_poi_waypoints_template:addScreen(corellia_poi_waypoints_items_screen);
