@@ -21,52 +21,51 @@ corellia_poi_waypoints_convo_handler = Object:new {
  }
 
 function corellia_poi_waypoints_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
-   local creature = LuaCreatureObject(conversingPlayer)
-   local convosession = creature:getConversationSession()
-   lastConversation = nil
-   local conversation = LuaConversationTemplate(conversationTemplate)
-   local nextConversationScreen
+	local creature = LuaCreatureObject(conversingPlayer)
+	local convosession = creature:getConversationSession()
+	local conversation = LuaConversationTemplate(conversationTemplate)
+	local nextConversationScreen
 
-   if ( conversation ~= nil ) then
-      if ( convosession ~= nil ) then
-          local session = LuaConversationSession(convosession)
-          if ( session ~= nil ) then
-             lastConversationScreen = session:getLastConversationScreen()
-          end
-      end
+	if ( conversation ~= nil ) then
+		if ( convosession ~= nil ) then
+			local session = LuaConversationSession(convosession)
+			if ( session ~= nil ) then
+				lastConversationScreen = session:getLastConversationScreen()
+			end
+		end
 
-      if ( lastConversationScreen == nil ) then
-         nextConversationScreen = conversation:getInitialScreen()
-      else
-         local luaLastConversationScreen = LuaConversationScreen(lastConversationScreen)
+		if ( lastConversationScreen == nil ) then
+			nextConversationScreen = conversation:getInitialScreen()
+		else
+			local luaLastConversationScreen = LuaConversationScreen(lastConversationScreen)
+			local screen = LuaConversationScreen(nextConversationScreen)
+			local screenID = luaLastConversationScreen:getScreenID()
+			local optionLink = luaLastConversationScreen:getOptionLink(selectedOption)
+			nextConversationScreen = conversation:getScreen(optionLink)
 
-         local optionLink = luaLastConversationScreen:getOptionLink(selectedOption)
-         nextConversationScreen = conversation:getScreen(optionLink)
-end
-	elseif (optionLink == "items") then
-		nextConversationScreen = conversation:getScreen("items_screen")
-
---Waypoints for planet
-	     elseif (optionLink == "1") then
-        creature:addWaypoint("corellia", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
-	nextConversationScreen = conversation:getScreen("end")
-        LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
+			if (screenID == "items_screen") then
+				local ret = 0 
+				if (optionLink == "1") then
+					ret = creature:setAppearance("object/mobile/shared_jawa.iff")
+					ret = creature:addWaypoint("corellia", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
+					ret = nextConversationScreen = conversation:getScreen("end")
+					ret = LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-       creature:addWaypoint("corellia", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
-	nextConversationScreen = conversation:getScreen("end")
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
+					ret = creature:addWaypoint("corellia", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
+					ret = nextConversationScreen = conversation:getScreen("end")
+					ret = LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
-      creature:addWaypoint("corellia", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
-	nextConversationScreen = conversation:getScreen("end")
-       LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
+					ret = creature:addWaypoint("corellia", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
+					ret = nextConversationScreen = conversation:getScreen("end")
+					ret = LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "4") then
-       creature:addWaypoint("corellia", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
-	nextConversationScreen = conversation:getScreen("end")
-       creature:sendSystemMessage("The Waypoint has been added to your datpad.")
+					ret = creature:addWaypoint("corellia", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
+					ret = nextConversationScreen = conversation:getScreen("end")
+					ret = creature:sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "5") then
-       creature:addWaypoint("corellia", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
-	nextConversationScreen = conversation:getScreen("end")
-       creature:sendSystemMessage("The Waypoint has been added to your datpad.")
+					ret = creature:addWaypoint("corellia", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
+					ret = nextConversationScreen = conversation:getScreen("end")
+					ret = creature:sendSystemMessage("The Waypoint has been added to your datpad.")
 	  --[[   elseif (optionLink == "6") then
        PlayerObject(pGhost):addWaypoint("corellia", "Corellia Test", "", -140, -4715, WAYPOINTBLUE, true, true, 0)
        LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
