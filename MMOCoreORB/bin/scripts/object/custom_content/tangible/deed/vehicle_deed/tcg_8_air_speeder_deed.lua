@@ -54,8 +54,8 @@ object_tangible_deed_vehicle_deed_tcg_8_air_speeder_deed = object_tangible_deed_
 	experimentalWeights = {1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "exp_durability"},
 	experimentalSubGroupTitles = {"null", "null", "hit_points"},
-	experimentalMin = {0, 0, 1000},
-	experimentalMax = {0, 0, 2500},
+	experimentalMin = {0, 0, 2000},
+	experimentalMax = {0, 0, 4500},
 	experimentalPrecision = {0, 0, 0},
 	experimentalCombineType = {0, 0, 1},
 }
