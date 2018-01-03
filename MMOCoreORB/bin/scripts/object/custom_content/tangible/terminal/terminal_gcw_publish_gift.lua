@@ -37,7 +37,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Dathomir Science Outpost Starport (1,000 Credits)", "dathomir_science_outpost_starport_travel",
 			"Dathomir Village Shuttleport (1,000 Credits)", "dathomir_village_shuttleport_travel",
 			"Player City - Tosh (1,000 Credits)", "pc_tosh_travel",
--			"Player City - Wraith (1,000 Credits)", "pc_wraith_travel",
+			"Player City - Wraith (1,000 Credits)", "pc_wraith_travel",
 		   },
 			--[["hoth",
 		   {
