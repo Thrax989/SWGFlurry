@@ -1,6 +1,6 @@
 object_tangible_deed_vehicle_deed_tcg_republic_gunship_deed = object_tangible_deed_vehicle_deed_shared_tcg_republic_gunship_deed:new {
 
-templateType = VEHICLEDEED,	
+	templateType = VEHICLEDEED,	
 
 	controlDeviceObjectTemplate = "object/intangible/vehicle/tcg_republic_gunship_pcd.iff",
 	generatedObjectTemplate = "object/mobile/vehicle/tcg_republic_gunship.iff",
@@ -11,7 +11,7 @@ templateType = VEHICLEDEED,
 	experimentalGroupTitles = {"null", "null", "exp_durability"},
 	experimentalSubGroupTitles = {"null", "null", "hit_points"},
 	experimentalMin = {0, 0, 2000},
-	experimentalMax = {0, 0, 4500},
+	experimentalMax = {0, 0, 9500},
 	experimentalPrecision = {0, 0, 0},
 	experimentalCombineType = {0, 0, 1},
 }

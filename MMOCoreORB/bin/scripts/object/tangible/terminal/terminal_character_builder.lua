@@ -2286,7 +2286,6 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Flare S-Swoop", "object/tangible/deed/vehicle_deed/flare_s_swoop.iff",
 					"XJ6 Speeder", "object/tangible/deed/vehicle_deed/xj6_air_speeder_deed.iff",
 					"Tantive IV Speeder", "object/tangible/deed/vehicle_deed/landspeeder_tantive4_deed.iff",
-					"Koro-2 Airspeeder", "object/tangible/tcg/series3/vehicle_deed_koro2_exodrive_airspeeder.iff",
 					"Senate Pod", "object/tangible/deed/vehicle_deed/senate_pod_deed.iff",
 					"Hover Chair", "object/tangible/deed/vehicle_deed/hover_chair_deed.iff",
 					"Single Pod Air Speeder", "object/tangible/deed/vehicle_deed/tcg_8_air_speeder_deed.iff",
