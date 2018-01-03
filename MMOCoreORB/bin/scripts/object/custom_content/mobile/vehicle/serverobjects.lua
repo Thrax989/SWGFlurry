@@ -1,6 +1,5 @@
 includeFile("custom_content/mobile/vehicle/air2_swoop.lua")
 includeFile("custom_content/mobile/vehicle/balta_podracer.lua")
-includeFile("custom_content/mobile/vehicle/koro2_exodrive_airspeeder.lua")
 includeFile("custom_content/mobile/vehicle/military_transport.lua")
 includeFile("custom_content/mobile/vehicle/organa_speeder.lua")
 includeFile("custom_content/mobile/vehicle/podracer_gasgano.lua")
