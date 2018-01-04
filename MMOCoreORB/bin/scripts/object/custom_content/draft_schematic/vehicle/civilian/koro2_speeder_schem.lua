@@ -31,7 +31,7 @@ object_draft_schematic_vehicle_civilian_koro2_speeder_schem = object_draft_schem
 --********************************************************************************
 
 
-	targetTemplate = "object/tangible/tcg/series3/vehicle_deed_koro2_exodrive_airspeeder.iff",
+	targetTemplate = "object/tangible/deed/vehicle_deed/koro2_speeder_deed.iff",
 
 	additionalTemplates = {}
 }
