@@ -1820,6 +1820,9 @@ schematics = {
 	{path="object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen5_exar_kun.iff"},
 	{path="object/draft_schematic/weapon/lightsaber/lightsaber_onehanded_gen5_exar_kun.iff"},
 	{path="object/draft_schematic/weapon/lightsaber/lightsaber_onehanded_gen5_jinzu.iff"},
+	{path="object/draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen5.iff"},
+	{path="object/draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen5.iff"},
+	{path="object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen5.iff"},
 	--Custom Furniture ************************************************
 	--Custom Plants
 	{path="object/draft_schematic/furniture/potted_plants_sml02.iff"},

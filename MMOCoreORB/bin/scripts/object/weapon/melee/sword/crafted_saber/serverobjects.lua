@@ -49,7 +49,7 @@ includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gen1.l
 includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gen2.lua")
 includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gen3.lua")
 includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gen4.lua")
-includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gen5.lua")
+--includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gen5.lua")
 includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_s1.lua")
 includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_s10.lua")
 includeFile("weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_s10_gen1.lua")

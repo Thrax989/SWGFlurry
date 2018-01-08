@@ -9,12 +9,13 @@ lootcollectiontierthree  = {
 		--Fill to 25%
 		{groupTemplate = "junk", weight = 100000},
 		{groupTemplate = "goggles_all", weight = 300000},
-		{groupTemplate = "death_watch_bunker_ingredient_binary", weight = 400000},
-		{groupTemplate = "death_watch_bunker_ingredient_protective", weight = 400000},
+		{groupTemplate = "death_watch_bunker_ingredient_binary", weight = 200000},
+		{groupTemplate = "death_watch_bunker_ingredient_protective", weight = 200000},
 		{groupTemplate = "acklay", weight = 500000},
 		{groupTemplate = "imppoints", weight = 250000},
 		{groupTemplate = "custom_vehicle_rare", weight = 300000},		
 		{groupTemplate = "rebpoints", weight = 250000},
+		{groupTemplate = "ls_gen5_group", weight = 400000},
 
 
 

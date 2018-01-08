@@ -131,6 +131,9 @@ includeFile("custom_loot/items/crystals/force_crystal_kuns_blood.lua")
 includeFile("custom_loot/items/lightsabers/exar_kun_ls_1h_loot_deed.lua")
 includeFile("custom_loot/items/lightsabers/exar_kun_ls_pa_loot_deed.lua")
 includeFile("custom_loot/items/lightsabers/jinzu_razor_loot_deed.lua")
+includeFile("custom_loot/items/lightsabers/ls_one_hand_gen5_scheme.lua")
+includeFile("custom_loot/items/lightsabers/ls_two_hand_gen5_scheme.lua")
+includeFile("custom_loot/items/lightsabers/ls_polearm_gen5_scheme.lua")
 
 
 --includeFile("custom_loot/items/vehicle_loot_deeds/barc_speeder_loot_deed.lua")
