@@ -31,7 +31,7 @@ custom_jawa_boss = Creature:new {
   lootGroups = {
 	{
 			groups = {
-        			{group = "potted_plants_small", chance = 5000000},
+        			{group = "tierthree", chance = 5000000},
 				{group = "armor_attachments", chance = 2500000},
 				{group = "clothing_attachments", chance = 2500000}
    },
@@ -39,7 +39,7 @@ custom_jawa_boss = Creature:new {
    },
    {
 			groups = {
-        			{group = "potted_plants_large", chance = 5000000},
+        			{group = "tierthree", chance = 5000000},
         			{group = "armor_attachments", chance = 2500000},
         			{group = "clothing_attachments", chance = 2500000}
    },
@@ -70,8 +70,8 @@ custom_jawa_boss = Creature:new {
    },
    {
       			groups = {
-        			{group = "nge_house_loot_deed_01", chance = 7500000},
-        			{group = "nge_house_loot_deed_windowed", chance = 2500000}
+        			{group = "tierthree", chance = 7500000},
+        			{group = "tierdiamond", chance = 2500000}
    },
       			        lootChance = 10000000
    },
@@ -101,9 +101,9 @@ custom_jawa_boss = Creature:new {
     			
     },
     
-	weapons = {"jawa_warlord_weapons"},
-	conversationTemplate = "",
-	attacks = merge(commandomaster,marksmanmaster,riflemanmaster)
+	weapons = {"pirate_weapons_heavy"},
+	attacks = merge(brawlermaster,marksmanmaster)
+	
 		
 	
 }

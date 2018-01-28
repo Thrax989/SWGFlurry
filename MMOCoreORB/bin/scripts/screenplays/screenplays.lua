@@ -651,7 +651,7 @@ includeFile("custom_screenplays/screenplays.lua")
 
 --Custom World Bosses
 --includeFile("custom_world_bosses/custom_nerf_boss.lua")
---includeFile("custom_world_bosses/custom_jawa_boss.lua")
+includeFile("custom_world_bosses/custom_jawa_boss.lua")
 includeFile("custom_world_bosses/custom_exar_kun_boss.lua")
 --includeFile("caves/dantooine_janta_cave_boss.lua")
 

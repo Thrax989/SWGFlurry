@@ -19,7 +19,7 @@ function custom_jawa_boss_screenplay:start()
 end
 
 function custom_jawa_boss_screenplay:spawnMobiles()
-  	pNpc = spawnMobile("tatooine", "custom_jawa_boss", 2200, -6180, 7, 1956, 15, 0)
+  	pNpc = spawnMobile("tatooine", "custom_jawa_boss", 6200, -6180, 7, 1956, 15, 0)
 	AiAgent(pNpc):setAiTemplate("idlewander")
 	pNpc = spawnMobile("tatooine", "custom_jawa_bodyguard", 2200, -6157, 6, 1959, 15, 0)
 	AiAgent(pNpc):setAiTemplate("idlewander")
