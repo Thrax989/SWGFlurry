@@ -15,12 +15,12 @@ function nova:start()
 end
   
 function nova:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", 4000, 0, 2000, 0, 0, 0, 0, 0)
+	local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", 3959, 0, 2029, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(6)
+	        activeArea:setRadius(15)
 	        createObserver(ENTEREDAREA, "nova", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "nova", "notifySpawnAreaLeave", pSpawnArea)
 	    end
