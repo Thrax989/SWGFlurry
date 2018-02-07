@@ -20,7 +20,7 @@ function nova:spawnActiveAreas()
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(15)
+	        activeArea:setRadius(12)
 	        createObserver(ENTEREDAREA, "nova", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "nova", "notifySpawnAreaLeave", pSpawnArea)
 	    end
