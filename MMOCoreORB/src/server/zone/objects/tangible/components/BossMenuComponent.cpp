@@ -102,7 +102,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (group == NULL) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
-		                        box->setPromptText("You must be in a group of 2 or more to use this option, All party members must be within 15 meeters of you for them to be teleported or they risk being left behind");
+		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
@@ -132,7 +132,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (group == NULL) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
-		                        box->setPromptText("You must be in a group of 2 or more to use this option, All party members must be within 15 meeters of you for them to be teleported or they risk being left behind");
+		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
@@ -162,7 +162,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (group == NULL) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
-		                        box->setPromptText("You must be in a group of 2 or more to use this option, All party members must be within 15 meeters of you for them to be teleported or they risk being left behind");
+		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
@@ -194,7 +194,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (group == NULL) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
-		                        box->setPromptText("You must be in a group of 2 or more to use this option, All party members must be within 15 meeters of you for them to be teleported or they risk being left behind");
+		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
@@ -226,7 +226,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (group == NULL) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
-		                        box->setPromptText("You must be in a group of 2 or more to use this option, All party members must be within 15 meeters of you for them to be teleported or they risk being left behind");
+		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
@@ -258,7 +258,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (group == NULL) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
-		                        box->setPromptText("You must be in a group of 2 or more to use this option, All party members must be within 15 meeters of you for them to be teleported or they risk being left behind");
+		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
@@ -290,7 +290,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (group == NULL) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
-		                        box->setPromptText("You must be in a group of 2 or more to use this option, All party members must be within 15 meeters of you for them to be teleported or they risk being left behind");
+		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
@@ -322,7 +322,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (group == NULL) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
-		                        box->setPromptText("You must be in a group of 2 or more to use this option, All party members must be within 15 meeters of you for them to be teleported or they risk being left behind");
+		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
@@ -354,7 +354,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (group == NULL) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
-		                        box->setPromptText("You must be in a group of 2 or more to use this option, All party members must be within 15 meeters of you for them to be teleported or they risk being left behind");
+		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
@@ -386,7 +386,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (group == NULL) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
-		                        box->setPromptText("You must be in a group of 2 or more to use this option, All party members must be within 15 meeters of you for them to be teleported or they risk being left behind");
+		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
