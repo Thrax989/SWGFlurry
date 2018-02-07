@@ -62,8 +62,7 @@ function nova:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
 			--player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Nova Boss Teleport Zone!")
 			player:sendSystemMessage("You have left the Nova Boss Teleport Area.")
-			player:playEffect("clienteffect/player_clone_compile.cef", "")
-		end
+			end
 		return 0
 	end)
 end
