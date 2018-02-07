@@ -87,14 +87,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
+						groupedCreature->playEffect("clienteffect/player_clone_compile.cef", "");
 		                                groupedCreature->switchZone("corellia", 0, 0, 0);
-						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
-			
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 			creature->switchZone("corellia", 0, 0, 0);
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -119,14 +118,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
+					        groupedCreature->playEffect("clienteffect/player_clone_compile.cef", "");
 		                                groupedCreature->switchZone("corellia", 0, 0, 0);
-						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
-			
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 			creature->switchZone("corellia", 0, 0, 0);
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -151,14 +149,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
+					        groupedCreature->playEffect("clienteffect/player_clone_compile.cef", "");
 		                                groupedCreature->switchZone("corellia", 0, 0, 0);
-						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
-			
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 			creature->switchZone("corellia", 0, 0, 0);
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -183,14 +180,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
+					        groupedCreature->playEffect("clienteffect/player_clone_compile.cef", "");
 		                                groupedCreature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
-						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
-			
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 			creature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -215,14 +211,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
+					        groupedCreature->playEffect("clienteffect/player_clone_compile.cef", "");
 		                                groupedCreature->switchZone("dungeon2", 6193, 250, -5978, 0);
-						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
-			
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 			creature->switchZone("dungeon2", 6193, 250, -5978, 0);
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -247,14 +242,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
+					        groupedCreature->playEffect("clienteffect/player_clone_compile.cef", "");
 		                                groupedCreature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
-						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
-			
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 			creature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -279,14 +273,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
+					        groupedCreature->playEffect("clienteffect/player_clone_compile.cef", "");
 		                                groupedCreature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
-						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
-			
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 			creature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -311,14 +304,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
+					        groupedCreature->playEffect("clienteffect/player_clone_compile.cef", "");
 		                                groupedCreature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
-						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
-			
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 			creature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -343,14 +335,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
+					        groupedCreature->playEffect("clienteffect/player_clone_compile.cef", "");
 		                                groupedCreature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
-						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
-			
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 			creature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -375,14 +366,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
+					        groupedCreature->playEffect("clienteffect/player_clone_compile.cef", "");
 		                                groupedCreature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
-						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
-			
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 			creature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -407,14 +397,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
+					        groupedCreature->playEffect("clienteffect/player_clone_compile.cef", "");
 		                                groupedCreature->switchZone("dungeon1", 7, 172.3, 300, 4336867);
-						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
-			
+			creature->playEffect("clienteffect/player_clone_compile.cef", "");
 			creature->switchZone("dungeon1", 7, 172.3, 300, 4336867);
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 	return 0;
