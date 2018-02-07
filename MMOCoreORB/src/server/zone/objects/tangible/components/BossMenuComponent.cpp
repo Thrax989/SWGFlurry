@@ -60,7 +60,8 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
  			String playerName = creature->getFirstName();
  			StringBuffer zBroadcast;
  			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Looking To Join A Raid Group, They Are located At The Nova Orion Space Station.";
-		        creature->addCooldown("server_broadcast_group", 60 * 1000);// 60 second cooldown
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
+			creature->addCooldown("server_broadcast_group", 60 * 1000);// 60 second cooldown
 			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		}
 	}
@@ -87,11 +88,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("corellia", 0, 0, 0);
+						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
 			
 			creature->switchZone("corellia", 0, 0, 0);
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -117,11 +120,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("corellia", 0, 0, 0);
+						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
 			
 			creature->switchZone("corellia", 0, 0, 0);
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
@@ -147,11 +152,13 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
 		                                groupedCreature->switchZone("corellia", 0, 0, 0);
+						groupedCreature->playEffect("clienteffect/mus_relay_activate.cef", "");
 						locker.release();
 				}
 			}
 			
 			creature->switchZone("corellia", 0, 0, 0);
+			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 		}
 	}
 
