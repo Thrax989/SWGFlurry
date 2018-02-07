@@ -61,6 +61,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
  			StringBuffer zBroadcast;
  			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Looking To Join A Raid Group, They Are located At The Nova Orion Space Station.";
 			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
+			creature->playEffect("clienteffect/death_trooper_infection_01.cef", "");
 			creature->addCooldown("server_broadcast_group", 60 * 1000);// 60 second cooldown
 			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		}
