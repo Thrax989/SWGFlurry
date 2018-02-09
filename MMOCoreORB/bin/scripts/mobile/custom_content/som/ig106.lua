@@ -6,11 +6,11 @@ ig106 = Creature:new {
 	chanceHit = 1.75,
 	damageMin = 670,
 	damageMax = 1050,
-	baseXp = 10081,
-	baseHAM = 29000,
-	baseHAMmax = 36000,
-	armor = 1,
-	resists = {55,55,70,45,75,80,55,45,-1},
+	baseXp = 10000,
+	baseHAM = 250000,
+	baseHAMmax = 300000,
+	armor = 3,
+	resists = {55,55,70,45,75,80,55,45,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,16 +21,16 @@ ig106 = Creature:new {
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = KILLER,
+	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 1.15,
+	scale = 1.3,
 
 	templates = {"object/mobile/som/ig106.iff"},
 	lootGroups = {},
-	weapons = {},
-	conversationTemplate = "",
-	attacks = merge(marksmannovice,pistoleernovice)
+	weapons = {"ig106_weapons"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(commandomaster,marksmanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(ig106, "ig106")
