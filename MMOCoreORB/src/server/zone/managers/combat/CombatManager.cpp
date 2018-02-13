@@ -303,6 +303,14 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 }
 
 int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef) {
+
+	if (attacker->isPlayerCreature() && weapon->isJediWeapon() && weapon->getForceCost() <= 1) {
+  		Locker locker(weapon);
+ 		weapon->setForceCost(3);
+  		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+                attacker->sendSystemMessage("Your weapon has an unintended force cost, it has been updated automatically to FC3, new sabers will not have this issue");
+	}
+
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
 

@@ -97,28 +97,36 @@ if (((bossHealth <= (bossMaxHealth *0.8)) or (bossAction <= (bossMaxAction * 0.8
       CreatureObject(pPlayer):sendSystemMessage("First Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 90%")
       writeData("ig88_boss:spawnState",2)
-      local pAdd = spawnMobile("dungeon2", "droideka", 0, -3.27221, 0.0315459, -7.91982, 342, 14200863)
+      local pAdd = spawnMobile("dungeon2", "droideka", 0, 30.1609, 0.0315462, 41.5876, 216, 14200863)
+      local pAdd = spawnMobile("dungeon2", "droideka", 0, 32.5711, 0.0315456, 9.91512, 271, 14200863)
+
       ObjectManager.withCreatureObject(pAdd, function(firstTime)
       writeData("countadd", firstTime:getObjectID())
       firstTime:engageCombat(pPlayer)
       CreatureObject(pAdd):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 end)
       spatialChat(pAdd, "target locked")
-      local pAddTwo = spawnMobile("dungeon2", "droideka", 0, 16.7107, 0.0315455, -7.98008, 330, 14200863)
+      local pAddTwo = spawnMobile("dungeon2", "droideka", 0, 25.236, 0.0315455, -16.7366, 295, 14200863)
+      local pAddTwo = spawnMobile("dungeon2", "droideka", 0, -0.0763456, 0.0315461, 43.036, 181, 14200863)
+
       ObjectManager.withCreatureObject(pAddTwo, function(secondTime)
       writeData("countadd2", secondTime:getObjectID())
       secondTime:engageCombat(pPlayer)
       CreatureObject(pAddTwo):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 end)
       spatialChat(pAddTwo, "target locked")
-      local pAddThree = spawnMobile("dungeon2", "droideka", 0, -3.47903, 0.0315461, 34.4707, 213, 14200863)
+      local pAddThree = spawnMobile("dungeon2", "droideka", 0, -28.0065, 0.031546, -19.2101, 33, 14200863)
+      local pAddThree = spawnMobile("dungeon2", "droideka", 0, 0.0157171, 0.0315459, -21.8045, 359, 14200863)
+
       ObjectManager.withCreatureObject(pAddThree, function(thirdTime)
       writeData("countadd3", thirdTime:getObjectID())
       thirdTime:engageCombat(pPlayer)
       CreatureObject(pAddThree):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
 end)
       spatialChat(pAddThree, "target locked")
-      local pAddFour = spawnMobile("dungeon2", "droideka", 0, 16.603, 0.0315462, 34.806, 205, 14200863)
+      local pAddFour = spawnMobile("dungeon2", "droideka", 0, -29.4181, 0.031546, 40.9501, 129, 14200863)
+      local pAddFour = spawnMobile("dungeon2", "droideka", 0, -29.6284, 0.031546, 9.97978, 87, 14200863)
+
       ObjectManager.withCreatureObject(pAddFour, function(fourthTime)
       writeData("countadd4", fourthTime:getObjectID())
       fourthTime:engageCombat(pPlayer)
@@ -317,7 +325,7 @@ end
 --------------------------------------------
 --   1% health check for death
 --------------------------------------------
-if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.001))) and readData("ig88_boss:spawnState") == 6) then
+if (((bossHealth <= (bossMaxHealth * 0.0001)) or (bossAction <= (bossMaxAction * 0.0001)) or (bossMind <= (bossMaxMind * 0.0001))) and readData("ig88_boss:spawnState") == 6) then
       spatialChat(pBoss, "Self Destruct!.")
       CreatureObject(pBoss):playEffect("clienteffect/cbt_bolt_hit_vulcan.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/ig88_bomb_droid_explode.cef", "")

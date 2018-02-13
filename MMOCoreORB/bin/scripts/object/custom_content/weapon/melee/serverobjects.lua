@@ -1,5 +1,8 @@
 -- Server Objects
 
+includeFile("custom_content/weapon/melee/2h_sword/crafted_saber/serverobjects.lua")
+includeFile("custom_content/weapon/melee/sword/crafted_saber/serverobjects.lua")
+includeFile("custom_content/weapon/melee/polearm/crafted_saber/serverobjects.lua")
 
 --AXE
 includeFile("custom_content/weapon/melee/axe_heavy_duty_npe.lua")

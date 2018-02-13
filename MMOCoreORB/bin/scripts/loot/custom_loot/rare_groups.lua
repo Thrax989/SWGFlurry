@@ -3,6 +3,7 @@ includeFile("custom_loot/groups/crystals/crystal_kuns_blood.lua")
 --Custom Jedi Lightsaber Groups
 includeFile("custom_loot/groups/lightsabers/exar_kun_ls_group.lua")
 includeFile("custom_loot/groups/lightsabers/g_jinzu_razor_loot_deed.lua")
+includeFile("custom_loot/groups/lightsabers/ls_gen5_group.lua")
 --Custom Jedi Robe
 includeFile("custom_loot/groups/clothing/jedi_robe_black_01_group.lua")
 includeFile("custom_loot/groups/clothing/jedi_robe_black_02_group.lua")

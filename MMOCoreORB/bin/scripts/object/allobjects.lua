@@ -1105,3 +1105,7 @@ includeFile("custom_content/tangible/holiday/life_day/rewards_09/objects.lua")
 includeFile("custom_content/tangible/holiday/love_day/objects.lua")
 includeFile("custom_content/tangible/holiday/love_day/rewards_10/objects.lua")
 includeFile("custom_content/tangible/holiday/love_day/rewards_11/objects.lua")
+
+includeFile("custom_content/weapon/melee/2h_sword/crafted_saber/objects.lua")
+includeFile("custom_content/weapon/melee/sword/crafted_saber/objects.lua")
+includeFile("custom_content/weapon/melee/polearm/crafted_saber/objects.lua")

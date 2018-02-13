@@ -47,7 +47,7 @@ includeFile("custom_screenplays/dungeon/necrosisspawn.lua")
 includeFile("custom_screenplays/dungeon/imperialstardestroyer.lua")
 includeFile("custom_screenplays/dungeon/exarkuntomb.lua")
 includeFile("custom_screenplays/dungeon/exarkuntemple.lua")
-includeFile("custom_screenplays/dungeon/ig88.lua")
+--includeFile("custom_screenplays/dungeon/ig88.lua")
 includeFile("custom_screenplays/dungeon/hothechobase.lua")
 includeFile("custom_screenplays/dungeon/hothechobaseelevators.lua")
 
