@@ -38,6 +38,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Dathomir Village Shuttleport (1,000 Credits)", "dathomir_village_shuttleport_travel",
 			"Player City - Tosh (1,000 Credits)", "pc_tosh_travel",
 			"Player City - Wraith (1,000 Credits)", "pc_wraith_travel",
+			"Player City - Seattle (1,000 Credits)", "pc_Seattle_travel",
 		   },
 			--[["hoth",
 		   {
