@@ -1,5 +1,5 @@
 custom_exar_kun_cultist = Creature:new {
-	customName = "Exar Kun's Keeper",
+	customName = "Possessed Cultist",
 	socialGroup = "",
 	faction = "",
 	level = 1,
