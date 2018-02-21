@@ -1,0 +1,36 @@
+ig_88 = Creature:new {
+	objectName = "@mob/creature_names:ig_88",
+	socialGroup = "mercenary",
+	faction = "",
+	level = 300,
+	chanceHit = 25.00,
+	damageMin = 250,
+	damageMax = 300,
+	baseXp = 9429,
+	baseHAM = 1000000,
+	baseHAMmax = 1250000,
+	armor = 3,
+	resists = {70,70,70,70,70,70,70,70,100},
+	meatType = "",
+	meatAmount = 0,
+	hideType = "",
+	hideAmount = 0,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 0,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = KILLER + STALKER,
+	optionsBitmask = AIENABLED,
+	diet = HERBIVORE,
+	scale = 1.3,
+
+	templates = {"object/mobile/ig_88_rocket.iff"},
+	lootGroups = {},
+	weapons = {"st_bombardier_weapons"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(commandomaster,marksmanmaster)
+}
+
+CreatureTemplates:addCreatureTemplate(ig_88, "ig_88")
