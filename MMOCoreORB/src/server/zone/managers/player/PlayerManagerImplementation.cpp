@@ -751,9 +751,13 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->sendSystemMessage(stringId);
 
 	player->updateTimeOfDeath();
-	player->clearBuffs(true, false);
+	//player->clearBuffs(true, false);
 
 	PlayerObject* ghost = player->getPlayerObject();
+	player->setFactionStatus(FactionStatus::ONLEAVE);
+	player->playEffect("clienteffect/holoemote_haunted.cef", "head");
+	PlayMusicMessage* pmm = new PlayMusicMessage("sound/mus_npe2_station_victory.snd");
+ 	player->sendMessage(pmm);
 
 	if (ghost != NULL) {
 		ghost->resetIncapacitationTimes();
@@ -1256,10 +1260,12 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				String xpType = entry->elementAt(j).getKey();
 				float xpAmount = baseXp;
 
-				xpAmount *= (float) damage / totalDamage;
+				//xpAmount *= (float) damage / totalDamage;
+				
+				xpAmount /= (float) entry->size() / 1;
 
 				//Cap xp based on level
-				xpAmount = Math::min(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
+				//xpAmount = Math::min(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
 
 				//Apply group bonus if in group
 				if (group != NULL)
@@ -1276,7 +1282,9 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				awardExperience(attacker, xpType, xpAmount);
 			}
 
-			combatXp = awardExperience(attacker, "combat_general", combatXp, true, 0.1f);
+			combatXp /= 10.f;
+
+			awardExperience(attacker, "combat_general", combatXp);
 
 			//Check if the group leader is a squad leader
 			if (group == NULL)

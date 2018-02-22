@@ -304,7 +304,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 
 int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef) {
 
-	if (attacker->isPlayerCreature() && weapon->isJediWeapon() && weapon->getForceCost() <= 1) {
+	if (attacker->isPlayerCreature() && weapon->isJediWeapon() && weapon->getForceCost() <= 2) {
   		Locker locker(weapon);
  		weapon->setForceCost(3);
   		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
@@ -1525,9 +1525,13 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 
 		// saber block is special because it's just a % chance to block based on the skillmod
 		if (def == "saber_block") {
-			if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < targetCreature->getSkillMod(def)))
-				return RICOCHET;
-			else return HIT;
+			int block_mod = targetCreature->getSkillMod(def);
+            	if (targetCreature->isIntimidated()) {
+                	block_mod = (block_mod / 2);
+            	}
+            	if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
+                return RICOCHET;
+            	else return HIT;
 		}
 
 		targetDefense = getDefenderSecondaryDefenseModifier(targetCreature);

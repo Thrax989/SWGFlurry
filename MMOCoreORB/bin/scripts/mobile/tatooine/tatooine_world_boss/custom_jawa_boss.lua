@@ -1,7 +1,6 @@
 custom_jawa_boss = Creature:new {
-	customName = "<<< Ootini >>>",
+	customName = "Jawa Warleader Ootini",
 	socialGroup = "jawa",
-	pvpFaction = "",
 	faction = "jawa",
 	level = 320,
 	chanceHit = 35.00,
@@ -22,14 +21,15 @@ custom_jawa_boss = Creature:new {
 	tamingChance = 0,
 	ferocity = 10,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = KILLER + STALKER,
+	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 	scale = 2.5,
 
 	templates = {"object/mobile/jawa_male.iff"},
+
   lootGroups = {
-	{
+		{
 			groups = {
         			{group = "tierthree", chance = 5000000},
 				{group = "armor_attachments", chance = 2500000},
@@ -71,7 +71,7 @@ custom_jawa_boss = Creature:new {
    {
       			groups = {
         			{group = "tierthree", chance = 7500000},
-        			{group = "tierdiamond", chance = 2500000}
+        			{group = "lootcollectiontierdiamond", chance = 2500000}
    },
       			        lootChance = 10000000
    },
@@ -100,9 +100,9 @@ custom_jawa_boss = Creature:new {
     
     			
     },
-    
-	weapons = {"pirate_weapons_heavy"},
-	attacks = merge(brawlermaster,marksmanmaster)
+	weapons = {"jawa_warlord_weapons"},
+	conversationTemplate = "",
+	attacks = merge(commandomaster,marksmanmaster,riflemanmaster)
 	
 		
 	

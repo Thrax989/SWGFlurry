@@ -1,7 +1,13 @@
 tusken_weapons = {
 	"object/weapon/ranged/rifle/rifle_tusken.iff",
+	"object/weapon/ranged/pistol/pistol_jawa.iff",
 	"object/weapon/melee/baton/baton_gaderiffi.iff",
-	"object/weapon/ranged/carbine/carbine_laser.iff"
+	"object/weapon/ranged/carbine/carbine_laser.iff",
+	"object/weapon/melee/special/vibroknuckler.iff",
+	"object/weapon/melee/polearm/polearm_vibro_axe.iff",
+	"object/weapon/ranged/rifle/rifle_t21.iff",
+	"object/weapon/ranged/pistol/pistol_geonosian_sonic_blaster_loot.iff",
+	"object/weapon/ranged/rifle/rifle_flame_thrower.iff"
 
 }
 

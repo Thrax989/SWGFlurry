@@ -4,12 +4,12 @@ custom_exar_kun_boss = Creature:new {
 	pvpFaction = "",
 	faction = "",
 	level = 300,
-	chanceHit = 35.00,
-	damageMin = 1750,
-	damageMax = 3750,
+	chanceHit = 25.00,
+	damageMin = 1050,
+	damageMax = 3050,
 	baseXp = 13273,
-	baseHAM = 750000,
-	baseHAMmax = 1000000,
+	baseHAM = 400000,
+	baseHAMmax = 600000,
 	armor = 3,
 	resists = {25,65,25,80,80,80,25,35,45},
 	meatType = "",
@@ -34,19 +34,27 @@ custom_exar_kun_boss = Creature:new {
 			},
 			lootChance = 10000000
 		},
-		 {
-			groups = {
-				{group = "power_crystals", chance = 10000000}
-			},
-			lootChance = 9000000
+		{
+            		groups = {
+                   		 {group = "krayt_pearls", chance = 5000000},
+                    		 {group = "krayt_pearls", chance = 5000000}
 		},
-		  {
-			groups = {
-				{group = "crystal_kuns_blood", chance = 10000000}
-				
+                	lootChance = 10000000
 		},
-			lootChance = 9000000
-		  },
+{
+            		groups = {
+                   		 {group = "krayt_pearls", chance = 5000000},
+                    		 {group = "krayt_pearls", chance = 5000000}
+		},
+                	lootChance = 10000000
+		},
+		{
+            		groups = {
+                   		 {group = "krayt_pearls", chance = 5000000},
+                    		 {group = "krayt_pearls", chance = 5000000}
+		},
+                	lootChance = 10000000
+		},
 		{
 			groups = {
 				{group = "armor_attachments", chance = 10000000}
@@ -61,13 +69,13 @@ custom_exar_kun_boss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "tierone", chance = 10000000}
+				{group = "lootcollectiontierdiamond", chance = 10000000}
 		},
-			lootChance = 7500000
+			lootChance = 2500000
 		},
 		{
 			groups = {
-				{group = "tiertwo", chance = 10000000}
+				{group = "tierthree", chance = 10000000}
 		},
 			lootChance = 3500000
 		},
@@ -79,7 +87,7 @@ custom_exar_kun_boss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "tiertwo", chance = 10000000}
+				{group = "lootcollectiontierdiamond", chance = 10000000}
 		},
 			lootChance = 3500000
 		},
@@ -91,7 +99,7 @@ custom_exar_kun_boss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "tiertwo", chance = 10000000}
+				{group = "tierthree", chance = 10000000}
 		},
 			lootChance = 3500000
 		},
