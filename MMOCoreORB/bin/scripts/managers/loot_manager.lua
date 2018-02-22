@@ -147,7 +147,12 @@ lootableArmorAttachmentStatMods = {
 	"creature_harvesting",
 	"creature_hit_bonus",
 	"dna_harvesting",
-	"luck"
+	"luck",
+	"combat_healing_ability",
+	"healing_ability",
+	"keep_creature",
+	"stored_pets",
+	"combat_medic_effectiveness"
 }
 
 lootableClothingAttachmentStatMods = {
@@ -276,7 +281,12 @@ lootableClothingAttachmentStatMods = {
 	"dna_harvesting",
 	"heavy_flame_thrower_accuracy",
 	"heavy_flame_thrower_speed",
-	"luck"
+	"luck",
+	"combat_healing_ability",
+	"healing_ability",
+	"keep_creature",
+	"stored_pets",
+	"combat_medic_effectiveness",
 }
 
 lootableArmorStatMods = {
@@ -387,7 +397,12 @@ lootableArmorStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"weapon_repair"
+	"weapon_repair",
+	"combat_healing_ability",
+	"healing_ability",
+	"keep_creature",
+	"stored_pets",
+	"combat_medic_effectiveness",
 }
 
 lootableClothingStatMods = {
@@ -498,7 +513,12 @@ lootableClothingStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"weapon_repair"
+	"weapon_repair",
+	"combat_healing_ability",
+	"healing_ability",
+	"keep_creature",
+	"stored_pets",
+	"combat_medic_effectiveness",
 }
 
 lootableOneHandedMeleeStatMods = {
