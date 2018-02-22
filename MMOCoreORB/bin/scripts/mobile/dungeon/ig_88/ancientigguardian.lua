@@ -3,7 +3,7 @@ ancientigguardian = Creature:new {
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
-	chanceHit = 10.00,
+	chanceHit = 25.00,
 	damageMin = 300,
 	damageMax = 400,
 	baseXp = 500000,
@@ -24,7 +24,7 @@ ancientigguardian = Creature:new {
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/som/som_ancient_guardian_ig.iff"},
+	templates = {"object/mobile/som/ig106.iff"},
 	lootGroups = {
 	},
 	conversationTemplate = "",
