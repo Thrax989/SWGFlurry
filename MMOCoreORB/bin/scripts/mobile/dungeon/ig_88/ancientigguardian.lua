@@ -27,8 +27,9 @@ ancientigguardian = Creature:new {
 	templates = {"object/mobile/som/ig106.iff"},
 	lootGroups = {
 	},
-	conversationTemplate = "",
-	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "attack",
+	weapons = {"tusken_weapons"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,marksmanmaster,riflemanmaster)
 }
+
 CreatureTemplates:addCreatureTemplate(ancientigguardian, "ancientigguardian")

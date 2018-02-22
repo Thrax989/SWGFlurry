@@ -31,9 +31,9 @@ igsuperbattledroid = Creature:new {
 	},
 	lootGroups = {
 	},
-	conversationTemplate = "",
-	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "creaturerangedattack"
+	weapons = {"tusken_weapons"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,marksmanmaster,riflemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(igsuperbattledroid, "igsuperbattledroid")

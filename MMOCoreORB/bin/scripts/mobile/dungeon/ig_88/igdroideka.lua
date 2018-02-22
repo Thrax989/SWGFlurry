@@ -1,5 +1,5 @@
-igdroideka = Creature:new {
-	customName = "Droideka",
+ig8t88 = Creature:new {
+	customName = "8T-88",
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
@@ -24,12 +24,13 @@ igdroideka = Creature:new {
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/droideka.iff"},
+	templates = {"object/mobile/som/8t88.iff"},
 
 	lootGroups = {
 	},
-	conversationTemplate = "",
-	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "attack",
+	weapons = {"tusken_weapons"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,marksmanmaster,riflemanmaster)
 }
-CreatureTemplates:addCreatureTemplate(igdroideka, "igdroideka")
+
+CreatureTemplates:addCreatureTemplate(ig8t88, "ig8t88")

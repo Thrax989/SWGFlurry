@@ -31,8 +31,9 @@ igbattledroids = Creature:new {
 	},
 	lootGroups = {
 	},
-	weapons = {"battle_droid_weapons"},
-	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster)
+	weapons = {"tusken_weapons"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,marksmanmaster,riflemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(igbattledroids, "igbattledroids")

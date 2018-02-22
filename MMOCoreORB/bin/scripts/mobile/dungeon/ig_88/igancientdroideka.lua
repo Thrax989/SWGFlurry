@@ -1,5 +1,5 @@
-igancientdroideka = Creature:new {
-	customName = "Ancient Droideka",
+igbattleforeman = Creature:new {
+	customName = "Battle Foreman",
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
@@ -24,11 +24,11 @@ igancientdroideka = Creature:new {
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/som/som_ancient_guardian_droideka.iff"},
-	lootGroups = {
+	templates = {"object/mobile/som/battlefield_foreman.iff"},	lootGroups = {
 	},
-	conversationTemplate = "",
-	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "attack",
+	weapons = {"tusken_weapons"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,marksmanmaster,riflemanmaster)
 }
-CreatureTemplates:addCreatureTemplate(igancientdroideka, "igancientdroideka")
+
+CreatureTemplates:addCreatureTemplate(igbattleforeman, "igbattleforeman")
