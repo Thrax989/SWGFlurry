@@ -1,5 +1,6 @@
 tusken_weapons = {
 	"object/weapon/ranged/rifle/rifle_tusken.iff",
+	"object/weapon/ranged/pistol/pistol_jawa.iff",
 	"object/weapon/melee/baton/baton_gaderiffi.iff",
 	"object/weapon/ranged/carbine/carbine_laser.iff",
 	"object/weapon/melee/special/vibroknuckler.iff",
