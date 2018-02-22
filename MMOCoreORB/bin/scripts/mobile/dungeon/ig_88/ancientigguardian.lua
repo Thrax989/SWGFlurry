@@ -24,10 +24,9 @@ ancientigguardian = Creature:new {
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {
-		"object/mobile/dressed_geonosian_warrior_01.iff",
-		"object/mobile/dressed_geonosian_warrior_02.iff",
-		"object/mobile/dressed_geonosian_warrior_03.iff"},	lootGroups = {
+	templates = {"object/mobile/dressed_death_watch_grey.iff"},
+
+	lootGroups = {
 	},
 	weapons = {"tusken_weapons"},
 	reactionStf = "@npc_reaction/slang",

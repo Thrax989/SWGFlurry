@@ -1,16 +1,16 @@
-igbattledroids = Creature:new {
-	customName = "Battle Droid",
+igtusken = Creature:new {
+	customName = "Tusken Raider",
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
 	chanceHit = 25.00,
-	damageMin = 100,
-	damageMax = 200,
-	baseXp = 100000,
-	baseHAM = 100000,
-	baseHAMmax = 110000,
+	damageMin = 150,
+	damageMax = 250,
+	baseXp = 200000,
+	baseHAM = 200000,
+	baseHAMmax = 210000,
 	armor = 0,
-	resists = {40,40,40,40,40,40,40,40,40},
+	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,14 +21,11 @@ igbattledroids = Creature:new {
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + KILLER,
+	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 1.15,
+	templates = {"object/mobile/tusken_raider.iff"},
 
-	templates = {
-		"object/mobile/battle_droid.iff"
-	},
 	lootGroups = {
 	},
 	weapons = {"tusken_weapons"},
@@ -36,4 +33,4 @@ igbattledroids = Creature:new {
 	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,marksmanmaster,riflemanmaster)
 }
 
-CreatureTemplates:addCreatureTemplate(igbattledroids, "igbattledroids")
+CreatureTemplates:addCreatureTemplate(igtusken, "igtusken")

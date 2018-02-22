@@ -1,16 +1,16 @@
-ig8t88 = Creature:new {
-	customName = "8T-88",
+iggungan = Creature:new {
+	customName = "Gungan",
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
 	chanceHit = 25.00,
-	damageMin = 150,
-	damageMax = 250,
-	baseXp = 200000,
-	baseHAM = 200000,
-	baseHAMmax = 210000,
+	damageMin = 100,
+	damageMax = 200,
+	baseXp = 100000,
+	baseHAM = 100000,
+	baseHAMmax = 110000,
 	armor = 0,
-	resists = {50,50,50,50,50,50,50,50,50},
+	resists = {40,40,40,40,40,40,40,40,40},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,11 +21,12 @@ ig8t88 = Creature:new {
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + STALKER,
+	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/som/miner_hens.iff"},
+	scale = 1.15,
 
+	templates = {"object/mobile/gungan_male.iff"},
 	lootGroups = {
 	},
 	weapons = {"tusken_weapons"},
@@ -33,4 +34,4 @@ ig8t88 = Creature:new {
 	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,marksmanmaster,riflemanmaster)
 }
 
-CreatureTemplates:addCreatureTemplate(ig8t88, "ig8t88")
+CreatureTemplates:addCreatureTemplate(iggungan, "iggungan")
