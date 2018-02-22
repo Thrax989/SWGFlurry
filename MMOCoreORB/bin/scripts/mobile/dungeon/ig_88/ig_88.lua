@@ -28,9 +28,9 @@ ig_88 = Creature:new {
 
 	templates = {"object/mobile/ig_88_rocket.iff"},
 	lootGroups = {},
-	weapons = {"st_bombardier_weapons"},
+	weapons = {"tusken_weapons"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(commandomaster,marksmanmaster)
+	attacks = merge(commandomaster,marksmanmaster,tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,riflemanmaster,pistoleermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(ig_88, "ig_88")

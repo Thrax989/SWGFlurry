@@ -30,7 +30,7 @@ ancientigguardian = Creature:new {
 	},
 	weapons = {"tusken_weapons"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,marksmanmaster,riflemanmaster)
+	attacks = merge(commandomaster,marksmanmaster,tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,riflemanmaster,pistoleermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(ancientigguardian, "ancientigguardian")
