@@ -9,7 +9,7 @@ ancientigguardian = Creature:new {
 	baseXp = 500000,
 	baseHAM = 500000,
 	baseHAMmax = 510000,
-	armor = 3,
+	armor = 0,
 	resists = {80,80,80,80,80,80,80,80,80},
 	meatType = "",
 	meatAmount = 0,
@@ -24,8 +24,10 @@ ancientigguardian = Creature:new {
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/som/ig106.iff"},
-	lootGroups = {
+	templates = {
+		"object/mobile/dressed_geonosian_warrior_01.iff",
+		"object/mobile/dressed_geonosian_warrior_02.iff",
+		"object/mobile/dressed_geonosian_warrior_03.iff"},	lootGroups = {
 	},
 	weapons = {"tusken_weapons"},
 	reactionStf = "@npc_reaction/slang",

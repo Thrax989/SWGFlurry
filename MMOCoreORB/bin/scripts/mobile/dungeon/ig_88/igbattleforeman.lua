@@ -9,7 +9,7 @@ igbattleforeman = Creature:new {
 	baseXp = 300000,
 	baseHAM = 300000,
 	baseHAMmax = 310000,
-	armor = 3,
+	armor = 0,
 	resists = {60,60,60,60,60,60,60,60,60},
 	meatType = "",
 	meatAmount = 0,
@@ -24,7 +24,8 @@ igbattleforeman = Creature:new {
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/som/battlefield_foreman.iff"},	lootGroups = {
+	templates = {"object/mobile/som/som_kenobi_reunite_dark_trooper.iff"},
+	lootGroups = {
 	},
 	weapons = {"tusken_weapons"},
 	reactionStf = "@npc_reaction/slang",

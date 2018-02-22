@@ -9,7 +9,7 @@ igsuperbattledroid = Creature:new {
 	baseXp = 400000,
 	baseHAM = 430000,
 	baseHAMmax = 430000,
-	armor = 3,
+	armor = 0,
 	resists = {70,70,70,70,70,70,70,70,70},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
 	meatType = "",
 	meatAmount = 0,
@@ -26,9 +26,7 @@ igsuperbattledroid = Creature:new {
 	diet = NONE,
 	scale = 1.40,
 
-	templates = {
-		"object/mobile/super_battle_droid.iff",
-	},
+	templates = {"object/mobile/dressed_dathomir_nightsister_spellweaver.iff"},	},
 	lootGroups = {
 	},
 	weapons = {"tusken_weapons"},

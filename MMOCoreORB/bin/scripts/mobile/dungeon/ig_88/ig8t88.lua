@@ -9,7 +9,7 @@ ig8t88 = Creature:new {
 	baseXp = 200000,
 	baseHAM = 200000,
 	baseHAMmax = 210000,
-	armor = 3,
+	armor = 0,
 	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
 	meatAmount = 0,
@@ -24,7 +24,7 @@ ig8t88 = Creature:new {
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/som/8t88.iff"},
+	templates = {"object/mobile/som/miner_hens.iff"},
 
 	lootGroups = {
 	},
