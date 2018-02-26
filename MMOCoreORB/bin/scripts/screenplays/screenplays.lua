@@ -686,6 +686,15 @@ includeFile("events/rebel_armor_vendor.lua")
 
 --poi waypoint npc's
 includeFile("events/corellia_poi_waypoints.lua")
+includeFile("events/dantooine_poi_waypoints.lua")
+includeFile("events/dathomir_poi_waypoints.lua")
+includeFile("events/endor_poi_waypoints.lua")
+includeFile("events/lok_poi_waypoints.lua")
+includeFile("events/naboo_poi_waypoints.lua")
+includeFile("events/rori_poi_waypoints.lua")
+includeFile("events/talus_poi_waypoints.lua")
+includeFile("events/tatooine_poi_waypoints.lua")
+includeFile("events/yavin4_poi_waypoints.lua")
 
 --Boss teleport radius check zone
 includeFile("gcw/nova.lua")
