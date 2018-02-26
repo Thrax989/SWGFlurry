@@ -12,7 +12,7 @@ lok_poi_waypoints = ScreenPlay:new {
 registerScreenPlay("lok_poi_waypoints", true)
 
 function lok_poi_waypoints:start()
-   local pMerchant = spawnMobile("lok", "lok_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
+   local pMerchant = spawnMobile("lok", "lok_poi_waypoints", 1, 466.774, 8.76109, 5505.97, 204, 0)
 
 end
 
