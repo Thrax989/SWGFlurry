@@ -12,7 +12,18 @@ naboo_poi_waypoints = ScreenPlay:new {
 registerScreenPlay("naboo_poi_waypoints", true)
 
 function naboo_poi_waypoints:start()
-   local pMerchant = spawnMobile("naboo", "naboo_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, -4989.17, 6, 4067.54, 289, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, -5426.2, 6, 4320.31, 31, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, -4878.43, 6, 4143.46, 24, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, 5334.53, 326.939, -1592.48, 295, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, 5115.11, -192, 6603.95, 17, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, 5195.1, -192, 6679.87, 55, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, 2023.93, 19, 2510.68, 326, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, 1554.48, 25, 2840.87, 123, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, 1445.97, 13, 2774.25, 266, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, 4823.51, 4.17, -4706.77, 242, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, -5491.47, -150, -34.3455, 340, 0)
+   local spawnMobile("naboo", "naboo_poi_waypoints", 1, -5858.84, 6, 4185.98, 105, 0)
 
 end
 
