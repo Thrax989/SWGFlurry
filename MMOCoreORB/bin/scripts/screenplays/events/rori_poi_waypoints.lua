@@ -12,10 +12,11 @@ rori_poi_waypoints = ScreenPlay:new {
 registerScreenPlay("rori_poi_waypoints", true)
 
 function rori_poi_waypoints:start()
-   local spawnMobile("rori", "rori_poi_waypoints", 1, 5369.25, 80, 5667.35, 239, 0)
-   local spawnMobile("rori", "rori_poi_waypoints", 1, 3671.68, 96, -6442.05, 301, 0)
-   local spawnMobile("rori", "rori_poi_waypoints", 1, -5305.61, 80.1613, -2216.46, 162, 0)
-   local spawnMobile("rori", "rori_poi_waypoints", 1, -5245.64, 80.6314, -2169.04, 323, 0)
+   local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, 5369.25, 80, 5667.35, 239, 0)
+   local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, 3671.68, 96, -6442.05, 301, 0)
+   local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, -5305.61, 80.1613, -2216.46, 162, 0)
+   local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, -5305.61, 80.1613, -2216.46, 162, 0)
+   local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, -5245.64, 80.6314, -2169.04, 323, 0)
 
 
 
