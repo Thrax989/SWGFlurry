@@ -12,7 +12,9 @@ endor_poi_waypoints = ScreenPlay:new {
 registerScreenPlay("endor_poi_waypoints", true)
 
 function endor_poi_waypoints:start()
-   local pMerchant = spawnMobile("endor", "endor_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
+   local pMerchant = spawnMobile("endor", "endor_poi_waypoints", 1, -965.392, 73, 1558, 216, 0)
+   local pMerchant = spawnMobile("endor", "endor_poi_waypoints", 1, 3239.87, 24, -3482.78, 261, 0)
+
 
 end
 
