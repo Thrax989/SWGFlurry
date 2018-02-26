@@ -12,7 +12,9 @@ dantooine_poi_waypoints = ScreenPlay:new {
 registerScreenPlay("dantooine_poi_waypoints", true)
 
 function dantooine_poi_waypoints:start()
-   local pMerchant = spawnMobile("dantooine", "dantooine_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
+   local pMerchant = spawnMobile("dantooine", "dantooine_poi_waypoints", 1, 1587.82, 4, -6369.34, 167, 0)
+   local pMerchant = spawnMobile("dantooine", "dantooine_poi_waypoints", 1, -4225.13, 3, -2357.29, 169, 0)
+   local pMerchant = spawnMobile("dantooine", "dantooine_poi_waypoints", 1, -629.056, 3, 2479.54, 221, 0)
 
 end
 
