@@ -12,7 +12,10 @@ talus_poi_waypoints = ScreenPlay:new {
 registerScreenPlay("talus_poi_waypoints", true)
 
 function talus_poi_waypoints:start()
-   local pMerchant = spawnMobile("talus", "talus_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
+   local pMerchant = spawnMobile("talus", "talus_poi_waypoints", 1, -2222.36, 20, 2302.11, 43, 0)
+   local pMerchant = spawnMobile("talus", "talus_poi_waypoints", 1, 4331.15, 9.9, 5420.37, 57, 0)
+   local pMerchant = spawnMobile("talus", "talus_poi_waypoints", 1, 329.384, 6, -2926.11, 124, 0)
+   local pMerchant = spawnMobile("talus", "talus_poi_waypoints", 1, 713.83, 6, -3044.31, 295, 0)
 
 end
 
