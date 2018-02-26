@@ -12,7 +12,9 @@ dathomir_poi_waypoints = ScreenPlay:new {
 registerScreenPlay("dathomir_poi_waypoints", true)
 
 function dathomir_poi_waypoints:start()
-   local pMerchant = spawnMobile("dathomir", "dathomir_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
+   local pMerchant = spawnMobile("dathomir", "dathomir_poi_waypoints", 1, 591.881, 6, 3091.52, 49, 0)
+   local pMerchant = spawnMobile("dathomir", "dathomir_poi_waypoints", 1, -69.3447, 18, -1594.4, 35, 0)
+   local pMerchant = spawnMobile("dathomir", "dathomir_poi_waypoints", 1, 5289.18, 78.5, -4147.9, 271, 0)
 
 end
 
