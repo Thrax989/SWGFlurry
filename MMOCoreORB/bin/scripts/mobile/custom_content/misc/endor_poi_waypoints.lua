@@ -1,4 +1,4 @@
-corellia_poi_waypoints = Creature:new {
+endor_poi_waypoints = Creature:new {
 	--objectName = "",
 	customName = "endor Waypoints",
 	socialGroup = "townsperson",
