@@ -3,24 +3,24 @@ local Logger = require("utils.logger")
 require("utils.helpers")
 spHelper = require("screenplayHelper")
 
-lok_poi_waypoints = ScreenPlay:new {
+naboo_poi_waypoints = ScreenPlay:new {
    numberOfActs = 1,
-   questString = "lok_poi_waypoints_task",
+   questString = "naboo_poi_waypoints_task",
    states = {},
 }
 
-registerScreenPlay("lok_poi_waypoints", true)
+registerScreenPlay("naboo_poi_waypoints", true)
 
-function lok_poi_waypoints:start()
-   local pMerchant = spawnMobile("lok", "lok_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
+function naboo_poi_waypoints:start()
+   local pMerchant = spawnMobile("naboo", "naboo_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
 
 end
 
-lok_poi_waypoints_convo_handler = Object:new {
-   tstring = "conversation_lok_poi_waypoints"
+naboo_poi_waypoints_convo_handler = Object:new {
+   tstring = "conversation_naboo_poi_waypoints"
  }
 
-function lok_poi_waypoints_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
+function naboo_poi_waypoints_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
         local pGhost = LuaCreatureObject(conversingPlayer):getPlayerObject()
 	local creature = LuaCreatureObject(conversingPlayer)
 	local convosession = creature:getConversationSession()
@@ -46,23 +46,23 @@ function lok_poi_waypoints_convo_handler:getNextConversationScreen(conversationT
 
 			if (screenID == "items_screen") then
 				if (optionLink == "1") then
-					rPlayerObject(pGhost):addWaypoint("lok", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
+					rPlayerObject(pGhost):addWaypoint("naboo", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-					PlayerObject(pGhost):addWaypoint("lok", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
-					PlayerObject(pGhost):addWaypoint("lok", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "4") then
-					PlayerObject(pGhost):addWaypoint("lok", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "5") then
-					PlayerObject(pGhost):addWaypoint("lok", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
          end
@@ -75,6 +75,6 @@ end
 end
 
 
-function lok_poi_waypoints_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
+function naboo_poi_waypoints_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
    return conversationScreen
 end
