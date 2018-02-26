@@ -53,6 +53,7 @@
 #include "server/zone/objects/tangible/components/ArtifactMenuComponent.h"
 #include "server/zone/objects/tangible/components/BossMenuComponent.h"
 #include "server/zone/objects/tangible/components/DiamondMenuComponent.h"
+#include "server/zone/objects/tangible/components/HeroicMenuComponent.h"
 #include "server/zone/objects/tangible/components/FlurrycoalMenuComponent.h"
 #include "server/zone/objects/tangible/components/FlurrypresentMenuComponent.h"
 #include "server/zone/objects/tangible/components/HalloweenMenuComponent.h"
@@ -213,6 +214,7 @@ ComponentManager::ComponentManager() {
 	components.put("ArtifactMenuComponent", new ArtifactMenuComponent());
 	components.put("BossMenuComponent", new BossMenuComponent());
 	components.put("DiamondMenuComponent", new DiamondMenuComponent());
+	components.put("HeroicMenuComponent", new HeroicMenuComponent());
 	components.put("FlurrycoalMenuComponent", new FlurrycoalMenuComponent());
 	components.put("FlurrypresentMenuComponent", new FlurrypresentMenuComponent());
 	components.put("HalloweenMenuComponent", new HalloweenMenuComponent());
