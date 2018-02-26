@@ -24,6 +24,7 @@
 void HeroicMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(player->getRootParent());
 
 	// If outside dispaly menu options, if inside a building show nothing.
 	if (building == NULL) {
@@ -32,6 +33,9 @@ void HeroicMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Objec
 }
 
 int HeroicMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(creature->getRootParent());
+	
+	// If outside dispaly menu options, if inside a building show nothing.	
 	if (building == NULL) {
 	if (selectedID != 20)
 		return 0;
