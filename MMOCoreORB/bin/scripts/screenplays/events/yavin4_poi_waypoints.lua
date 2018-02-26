@@ -12,7 +12,8 @@ yavin4_poi_waypoints = ScreenPlay:new {
 registerScreenPlay("yavin4_poi_waypoints", true)
 
 function yavin4_poi_waypoints:start()
-   local pMerchant = spawnMobile("yavin4", "yavin4_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
+   local pMerchant = spawnMobile("yavin4", "yavin4_poi_waypoints", 1, -6917.63, 73, -5734.68, 256, 0)
+   local pMerchant = spawnMobile("yavin4", "yavin4_poi_waypoints", 1, 4057.46, 37, -6219.45, 254, 0)
 
 end
 
