@@ -57,7 +57,7 @@ function rori_poi_waypoints_convo_handler:getNextConversationScreen(conversation
 
 			if (screenID == "items_screen") then
 				if (optionLink == "1") then
-					rPlayerObject(pGhost):addWaypoint("rori", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("rori", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then

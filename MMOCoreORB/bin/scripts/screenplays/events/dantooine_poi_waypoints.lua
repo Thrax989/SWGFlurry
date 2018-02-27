@@ -48,7 +48,7 @@ function dantooine_poi_waypoints_convo_handler:getNextConversationScreen(convers
 
 			if (screenID == "items_screen") then
 				if (optionLink == "1") then
-					rPlayerObject(pGhost):addWaypoint("dantooine", "Badge:Dantari Village 1", "", -3929, -5632, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("dantooine", "Badge:Dantari Village 1", "", -3929, -5632, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
