@@ -12,8 +12,15 @@ tatooine_poi_waypoints = ScreenPlay:new {
 registerScreenPlay("tatooine_poi_waypoints", true)
 
 function tatooine_poi_waypoints:start()
-   local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
-
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, -1271.87, 12, -3592.3, 301, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, 3411.41, 5, -4660.8, 17, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, 1745.7, 7, 3186.89, 241, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, 1410.15, 7, 3469.81, 229, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, 1296.92, 7, 3145.7, 192, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, -2817.4, 5, 2176.94, 356, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, -2910.47, 5, 1927.92, 5, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, -3111.13, 5, 2164.66, 352, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, -2897.18, 5, 2129.42, 290, 0)
 end
 
 tatooine_poi_waypoints_convo_handler = Object:new {
