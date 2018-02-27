@@ -1,6 +1,6 @@
-corellia_poi_waypoints = Creature:new {
+yavin4_poi_waypoints = Creature:new {
 	--objectName = "",
-	customName = "Corellia Waypoints",
+	customName = "yavin4 Waypoints",
 	socialGroup = "townsperson",
 	pvpFaction = "townsperson",
 	faction = "",
@@ -31,8 +31,8 @@ corellia_poi_waypoints = Creature:new {
 	scale = 1.1,		
         lootGroups = {},
 	
-        conversationTemplate = "corellia_poi_waypoints_template",
+        conversationTemplate = "yavin4_poi_waypoints_template",
         attacks = {}
 }
 
-CreatureTemplates:addCreatureTemplate(corellia_poi_waypoints, "corellia_poi_waypoints")
+CreatureTemplates:addCreatureTemplate(yavin4_poi_waypoints, "yavin4_poi_waypoints")

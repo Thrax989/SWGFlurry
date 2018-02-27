@@ -3,26 +3,31 @@ local Logger = require("utils.logger")
 require("utils.helpers")
 spHelper = require("screenplayHelper")
 
-dathomir_poi_waypoints = ScreenPlay:new {
+tatooine_poi_waypoints = ScreenPlay:new {
    numberOfActs = 1,
-   questString = "dathomir_poi_waypoints_task",
+   questString = "tatooine_poi_waypoints_task",
    states = {},
 }
 
-registerScreenPlay("dathomir_poi_waypoints", true)
+registerScreenPlay("tatooine_poi_waypoints", true)
 
-function dathomir_poi_waypoints:start()
-   local pMerchant = spawnMobile("dathomir", "dathomir_poi_waypoints", 1, 591.881, 6, 3091.52, 49, 0)
-   local pMerchant = spawnMobile("dathomir", "dathomir_poi_waypoints", 1, -69.3447, 18, -1594.4, 35, 0)
-   local pMerchant = spawnMobile("dathomir", "dathomir_poi_waypoints", 1, 5289.18, 78.5, -4147.9, 271, 0)
-
+function tatooine_poi_waypoints:start()
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, -1271.87, 12, -3592.3, 301, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, 3411.41, 5, -4660.8, 17, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, 1745.7, 7, 3186.89, 241, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, 1410.15, 7, 3469.81, 229, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, 1296.92, 7, 3145.7, 192, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, -2817.4, 5, 2176.94, 356, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, -2910.47, 5, 1927.92, 5, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, -3111.13, 5, 2164.66, 352, 0)
+  local pMerchant = spawnMobile("tatooine", "tatooine_poi_waypoints", 1, -2897.18, 5, 2129.42, 290, 0)
 end
 
-dathomir_poi_waypoints_convo_handler = Object:new {
-   tstring = "conversation_dathomir_poi_waypoints"
+tatooine_poi_waypoints_convo_handler = Object:new {
+   tstring = "conversation_tatooine_poi_waypoints"
  }
 
-function dathomir_poi_waypoints_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
+function tatooine_poi_waypoints_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
         local pGhost = LuaCreatureObject(conversingPlayer):getPlayerObject()
 	local creature = LuaCreatureObject(conversingPlayer)
 	local convosession = creature:getConversationSession()
@@ -48,34 +53,33 @@ function dathomir_poi_waypoints_convo_handler:getNextConversationScreen(conversa
 
 			if (screenID == "items_screen") then
 				if (optionLink == "1") then
-					PlayerObject(pGhost):addWaypoint("dathomir", "Badge:Crashed Ship", "", 5676, 1901, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Bens Hut", "", -4512, -2270, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-					PlayerObject(pGhost):addWaypoint("dathomir", "Badge:Escape Pod", "", -4427, 586, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Escape Pod", "", -3930, -4425, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
-					PlayerObject(pGhost):addWaypoint("dathomir", "Badge:Imperial Prison", "", -6141, 973, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Krayt Graveyard", "", 7396, 4478, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "4") then
-					PlayerObject(pGhost):addWaypoint("dathomir", "Badge:Misty Falls 1", "", 3558, 1554, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Krayt Skeleton", "", -4650, -4363, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "5") then
-					PlayerObject(pGhost):addWaypoint("dathomir", "Badge:Misty Falls 2", "", 3021, 1289, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Lars Homestead", "", -2579, -5500, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "6") then
-					PlayerObject(pGhost):addWaypoint("dathomir", "Badge:Sarlacc", "", -2101, 3165, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Sarlacc Pit", "", -6176, -3372, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "7") then
-					PlayerObject(pGhost):addWaypoint("dathomir", "Badge:Tarpit", "", 652, -4888, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Tusken Pool", "", -3971, 6267, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-
          end
       end
    end
@@ -86,6 +90,6 @@ end
 end
 
 
-function dathomir_poi_waypoints_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
+function tatooine_poi_waypoints_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
    return conversationScreen
 end

@@ -1170,7 +1170,7 @@ includeFile("items/collection/collectiontierone.lua")
 includeFile("items/collection/collectiontiertwo.lua")
 includeFile("items/collection/collectiontierthree.lua")
 includeFile("items/collection/collectiondiamond.lua")
-
+includeFile("items/collection/collectionheroic.lua")
 
 --Artifact system
 includeFile("items/artifact/artifact1.lua")

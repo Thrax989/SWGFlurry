@@ -3,26 +3,27 @@ local Logger = require("utils.logger")
 require("utils.helpers")
 spHelper = require("screenplayHelper")
 
-dantooine_poi_waypoints = ScreenPlay:new {
+rori_poi_waypoints = ScreenPlay:new {
    numberOfActs = 1,
-   questString = "dantooine_poi_waypoints_task",
+   questString = "rori_poi_waypoints_task",
    states = {},
 }
 
-registerScreenPlay("dantooine_poi_waypoints", true)
+registerScreenPlay("rori_poi_waypoints", true)
 
-function dantooine_poi_waypoints:start()
-   local pMerchant = spawnMobile("dantooine", "dantooine_poi_waypoints", 1, 1587.82, 4, -6369.34, 167, 0)
-   local pMerchant = spawnMobile("dantooine", "dantooine_poi_waypoints", 1, -4225.13, 3, -2357.29, 169, 0)
-   local pMerchant = spawnMobile("dantooine", "dantooine_poi_waypoints", 1, -629.056, 3, 2479.54, 221, 0)
-
+function rori_poi_waypoints:start()
+   local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, 5369.25, 80, 5667.35, 239, 0)
+   local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, 3671.68, 96, -6442.05, 301, 0)
+   local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, -5305.61, 80.1613, -2216.46, 162, 0)
+   local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, -5305.61, 80.1613, -2216.46, 162, 0)
+   local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, -5245.64, 80.6314, -2169.04, 323, 0)
 end
 
-dantooine_poi_waypoints_convo_handler = Object:new {
-   tstring = "conversation_dantooine_poi_waypoints"
+rori_poi_waypoints_convo_handler = Object:new {
+   tstring = "conversation_rori_poi_waypoints"
  }
 
-function dantooine_poi_waypoints_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
+function rori_poi_waypoints_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
         local pGhost = LuaCreatureObject(conversingPlayer):getPlayerObject()
 	local creature = LuaCreatureObject(conversingPlayer)
 	local convosession = creature:getConversationSession()
@@ -48,19 +49,19 @@ function dantooine_poi_waypoints_convo_handler:getNextConversationScreen(convers
 
 			if (screenID == "items_screen") then
 				if (optionLink == "1") then
-					PlayerObject(pGhost):addWaypoint("dantooine", "Badge:Dantari Village 1", "", -3929, -5632, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("rori", "Badge:Imp Camp", "", -5633, -5661, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-					PlayerObject(pGhost):addWaypoint("dantooine", "Badge:Dantari Village 2", "", -7185, -883, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("rori", "Badge:Imp Hyperdrive Fac", "", -1130, 4544, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
-					PlayerObject(pGhost):addWaypoint("dantooine", "Badge:Jedi Temple", "", 4195, 5203, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("rori", "Badge:Kobala Spice Mine", "", 7304, 63, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "4") then
-					PlayerObject(pGhost):addWaypoint("dantooine", "Badge:Rebel Base", "", -6836, 5520, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("rori", "Badge:Rebel Outpost", "", 3664, -6501, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
          end
@@ -73,6 +74,6 @@ end
 end
 
 
-function dantooine_poi_waypoints_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
+function rori_poi_waypoints_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
    return conversationScreen
 end

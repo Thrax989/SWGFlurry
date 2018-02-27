@@ -1,6 +1,6 @@
-corellia_poi_waypoints = Creature:new {
+rori_poi_waypoints = Creature:new {
 	--objectName = "",
-	customName = "Corellia Waypoints",
+	customName = "rori Waypoints",
 	socialGroup = "townsperson",
 	pvpFaction = "townsperson",
 	faction = "",
@@ -31,8 +31,8 @@ corellia_poi_waypoints = Creature:new {
 	scale = 1.1,		
         lootGroups = {},
 	
-        conversationTemplate = "corellia_poi_waypoints_template",
+        conversationTemplate = "rori_poi_waypoints_template",
         attacks = {}
 }
 
-CreatureTemplates:addCreatureTemplate(corellia_poi_waypoints, "corellia_poi_waypoints")
+CreatureTemplates:addCreatureTemplate(rori_poi_waypoints, "rori_poi_waypoints")

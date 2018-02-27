@@ -3,26 +3,26 @@ local Logger = require("utils.logger")
 require("utils.helpers")
 spHelper = require("screenplayHelper")
 
-dantooine_poi_waypoints = ScreenPlay:new {
+endor_poi_waypoints = ScreenPlay:new {
    numberOfActs = 1,
-   questString = "dantooine_poi_waypoints_task",
+   questString = "endor_poi_waypoints_task",
    states = {},
 }
 
-registerScreenPlay("dantooine_poi_waypoints", true)
+registerScreenPlay("endor_poi_waypoints", true)
 
-function dantooine_poi_waypoints:start()
-   local pMerchant = spawnMobile("dantooine", "dantooine_poi_waypoints", 1, 1587.82, 4, -6369.34, 167, 0)
-   local pMerchant = spawnMobile("dantooine", "dantooine_poi_waypoints", 1, -4225.13, 3, -2357.29, 169, 0)
-   local pMerchant = spawnMobile("dantooine", "dantooine_poi_waypoints", 1, -629.056, 3, 2479.54, 221, 0)
+function endor_poi_waypoints:start()
+   local pMerchant = spawnMobile("endor", "endor_poi_waypoints", 1, -965.392, 73, 1558, 216, 0)
+   local pMerchant = spawnMobile("endor", "endor_poi_waypoints", 1, 3239.87, 24, -3482.78, 261, 0)
+
 
 end
 
-dantooine_poi_waypoints_convo_handler = Object:new {
-   tstring = "conversation_dantooine_poi_waypoints"
+endor_poi_waypoints_convo_handler = Object:new {
+   tstring = "conversation_endor_poi_waypoints"
  }
 
-function dantooine_poi_waypoints_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
+function endor_poi_waypoints_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
         local pGhost = LuaCreatureObject(conversingPlayer):getPlayerObject()
 	local creature = LuaCreatureObject(conversingPlayer)
 	local convosession = creature:getConversationSession()
@@ -48,19 +48,19 @@ function dantooine_poi_waypoints_convo_handler:getNextConversationScreen(convers
 
 			if (screenID == "items_screen") then
 				if (optionLink == "1") then
-					PlayerObject(pGhost):addWaypoint("dantooine", "Badge:Dantari Village 1", "", -3929, -5632, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("endor", "Badge:Dulok Villlage", "", 5921, -2514, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-					PlayerObject(pGhost):addWaypoint("dantooine", "Badge:Dantari Village 2", "", -7185, -883, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("endor", "Ewok Tree Villlage", "", 4661, -2425, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
-					PlayerObject(pGhost):addWaypoint("dantooine", "Badge:Jedi Temple", "", 4195, 5203, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("endor", "Badge:Imp Outpost", "", -4628, -2273, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "4") then
-					PlayerObject(pGhost):addWaypoint("dantooine", "Badge:Rebel Base", "", -6836, 5520, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("endor", "Badge:Lake Villlage", "", 1454, -3272, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
          end
@@ -73,6 +73,6 @@ end
 end
 
 
-function dantooine_poi_waypoints_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
+function endor_poi_waypoints_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
    return conversationScreen
 end

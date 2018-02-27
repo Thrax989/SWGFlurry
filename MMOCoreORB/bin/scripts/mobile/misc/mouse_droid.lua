@@ -1,6 +1,6 @@
 mouse_droid = Creature:new {
 	objectName = "@mob/creature_names:mouse_droid",
-	socialGroup = "",
+	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
 	chanceHit = 100,

@@ -26,7 +26,7 @@ igsuperbattledroid = Creature:new {
 	diet = NONE,
 	scale = 1.40,
 
-	templates = {"object/mobile/dressed_dathomir_nightsister_spellweaver.iff"},	},
+	templates = {"object/mobile/dressed_dathomir_nightsister_spellweaver.iff"},
 	lootGroups = {
 	},
 	weapons = {"tusken_weapons"},
