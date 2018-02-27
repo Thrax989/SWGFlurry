@@ -13,13 +13,10 @@ naboo_poi_waypoints_items_screen = ConvoScreen:new {
    customDialogText = "Please select a POI to visit.",
    stopConversation = "false",
    options = {
-      {"Badge:Crashed Ship", "1"},
-      {"Badge:Escape Pod", "2"},
-      {"Badge:Imperial Prison", "3"},
-      {"Badge:Misty Falls 1", "4"},
-      {"Badge:Misty Falls 2", "5"},
-      {"Badge:Sarlacc", "6"},
-      {"Badge:Tarpit", "7"},
+      {"Badge:Amidalas Sandy Beach", "1"},
+      {"Badge:Deeja Falls Top", "2"},
+      {"Badge:Gungan Sacred Place", "3"},
+      {"Badge:Theed Falls Bottom", "4"},
       }
 }
 naboo_poi_waypoints_template:addScreen(naboo_poi_waypoints_items_screen);

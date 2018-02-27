@@ -57,23 +57,19 @@ function naboo_poi_waypoints_convo_handler:getNextConversationScreen(conversatio
 
 			if (screenID == "items_screen") then
 				if (optionLink == "1") then
-					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Amidalas Sandy Beach", "", -5828, -93, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Deeja Falls Top", "", 5161, -1627, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
-					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Gungan Sacred Place", "", -2000, -5429, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "4") then
-					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
-					nextConversationScreen = conversation:getScreen("end")
-					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "5") then
-					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("naboo", "Badge:Theed Falls Bottom", "", -4614, 4261, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
          end
