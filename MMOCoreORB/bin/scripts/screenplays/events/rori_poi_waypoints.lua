@@ -17,14 +17,6 @@ function rori_poi_waypoints:start()
    local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, -5305.61, 80.1613, -2216.46, 162, 0)
    local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, -5305.61, 80.1613, -2216.46, 162, 0)
    local pMerchant = spawnMobile("rori", "rori_poi_waypoints", 1, -5245.64, 80.6314, -2169.04, 323, 0)
-
-
-
-
-
-
-
-
 end
 
 rori_poi_waypoints_convo_handler = Object:new {
@@ -57,23 +49,19 @@ function rori_poi_waypoints_convo_handler:getNextConversationScreen(conversation
 
 			if (screenID == "items_screen") then
 				if (optionLink == "1") then
-					PlayerObject(pGhost):addWaypoint("rori", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("rori", "Badge:Imp Camp", "", -5633, -5661, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-					PlayerObject(pGhost):addWaypoint("rori", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("rori", "Badge:Imp Hyperdrive Fac", "", -1130, 4544, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
-					PlayerObject(pGhost):addWaypoint("rori", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("rori", "Badge:Kobala Spice Mine", "", 7304, 63, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "4") then
-					PlayerObject(pGhost):addWaypoint("rori", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
-					nextConversationScreen = conversation:getScreen("end")
-					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "5") then
-					PlayerObject(pGhost):addWaypoint("rori", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("rori", "Badge:Rebel Outpost", "", 3664, -6501, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
          end
