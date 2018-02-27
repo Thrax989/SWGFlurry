@@ -47,23 +47,15 @@ function yavin4_poi_waypoints_convo_handler:getNextConversationScreen(conversati
 
 			if (screenID == "items_screen") then
 				if (optionLink == "1") then
-					PlayerObject(pGhost):addWaypoint("yavin4", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("yavin4", "Badge:Temple Exar Kun", "", 5097, 5537, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-					PlayerObject(pGhost):addWaypoint("yavin4", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("yavin4", "Badge:Temple Woolamander", "", 519, -646, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
-					PlayerObject(pGhost):addWaypoint("yavin4", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
-					nextConversationScreen = conversation:getScreen("end")
-					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "4") then
-					PlayerObject(pGhost):addWaypoint("yavin4", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
-					nextConversationScreen = conversation:getScreen("end")
-					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "5") then
-					PlayerObject(pGhost):addWaypoint("yavin4", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("yavin4", "Badge:Yavin Temple Blueleaf", "", -875, -2047, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
          end
