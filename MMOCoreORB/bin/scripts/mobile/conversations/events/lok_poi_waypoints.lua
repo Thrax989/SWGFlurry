@@ -13,13 +13,9 @@ lok_poi_waypoints_items_screen = ConvoScreen:new {
    customDialogText = "Please select a POI to visit.",
    stopConversation = "false",
    options = {
-      {"Badge:Crashed Ship", "1"},
-      {"Badge:Escape Pod", "2"},
-      {"Badge:Imperial Prison", "3"},
-      {"Badge:Misty Falls 1", "4"},
-      {"Badge:Misty Falls 2", "5"},
-      {"Badge:Sarlacc", "6"},
-      {"Badge:Tarpit", "7"},
+      {"Badge:Imp Outpost", "1"},
+      {"Badge:Kimogila Skeleton", "2"},
+      {"Badge:Volcano", "3"},
       }
 }
 lok_poi_waypoints_template:addScreen(lok_poi_waypoints_items_screen);
