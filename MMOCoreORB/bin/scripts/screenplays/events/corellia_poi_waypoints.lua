@@ -11,9 +11,20 @@ corellia_poi_waypoints = ScreenPlay:new {
 
 registerScreenPlay("corellia_poi_waypoints", true)
 
-function corellia_poi_waypoints:start()
-   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -151.828, 28, -4715.77, 86, 0)
-
+function corellia_poi_waypoints:start()	
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, 6931.36, 330, -5548.07, 327, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -311.803, 28, -4642.33, 312, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, 3084.33, 280, 4986.19, 352, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, 3328.35, 308, 5517.86, 25, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, 6641.71, 330, -5933.11, 13, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -133.528, 28, -4713.08, 270, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -35.4193, 28, -4406.72, 104, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -5565.18, 15.5067, -6058.59, 98, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -3787.08, 86, 3236.63, 103, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -3129.85, 31, 2809.34, 167, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -5014.32, 21, -2383.93, 106, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -5603.04, 21, -2799.83, 68, 0)
+   local pMerchant = spawnMobile("corellia", "corellia_poi_waypoints", 1, -5051.34, 21, -2304.05, 13, 0)
 end
 
 corellia_poi_waypoints_convo_handler = Object:new {
