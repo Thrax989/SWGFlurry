@@ -53,23 +53,31 @@ function tatooine_poi_waypoints_convo_handler:getNextConversationScreen(conversa
 
 			if (screenID == "items_screen") then
 				if (optionLink == "1") then
-					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Bens Hut", "", -4512, -2270, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Escape Pod", "", -3930, -4425, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
-					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Krayt Graveyard", "", 7396, 4478, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "4") then
-					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Krayt Skeleton", "", -4650, -4363, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "5") then
-					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Lars Homestead", "", -2579, -5500, WAYPOINTBLUE, true, true, 0)
+					nextConversationScreen = conversation:getScreen("end")
+					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
+	     elseif (optionLink == "6") then
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Sarlacc Pit", "", -6176, -3372, WAYPOINTBLUE, true, true, 0)
+					nextConversationScreen = conversation:getScreen("end")
+					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
+	     elseif (optionLink == "7") then
+					PlayerObject(pGhost):addWaypoint("tatooine", "Badge:Tusken Pool", "", -3971, 6267, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
          end

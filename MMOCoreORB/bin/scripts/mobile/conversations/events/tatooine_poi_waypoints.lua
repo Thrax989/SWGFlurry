@@ -13,13 +13,13 @@ tatooine_poi_waypoints_items_screen = ConvoScreen:new {
    customDialogText = "Please select a POI to visit.",
    stopConversation = "false",
    options = {
-      {"Badge:Crashed Ship", "1"},
+      {"Badge:Bens Hut", "1"},
       {"Badge:Escape Pod", "2"},
-      {"Badge:Imperial Prison", "3"},
-      {"Badge:Misty Falls 1", "4"},
-      {"Badge:Misty Falls 2", "5"},
-      {"Badge:Sarlacc", "6"},
-      {"Badge:Tarpit", "7"},
+      {"Badge:Krayt Graveyard", "3"},
+      {"Badge:Krayt Skeleton", "4"},
+      {"Badge:Lars Homestead", "5"},
+      {"Badge:Sarlacc Pit", "6"},
+      {"Badge:Tusken Pool", "7"},
       }
 }
 tatooine_poi_waypoints_template:addScreen(tatooine_poi_waypoints_items_screen);
