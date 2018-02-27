@@ -48,23 +48,19 @@ function endor_poi_waypoints_convo_handler:getNextConversationScreen(conversatio
 
 			if (screenID == "items_screen") then
 				if (optionLink == "1") then
-					PlayerObject(pGhost):addWaypoint("endor", "Badge:Agrilat Swap", "", 1387, 3749, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("endor", "Badge:Dulok Villlage", "", 5921, -2514, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "2") then
-					PlayerObject(pGhost):addWaypoint("endor", "Badge:Bela Vistal Fountain", "", 6767, -5617, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("endor", "Ewok Tree Villlage", "", 4661, -2425, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "3") then
-					PlayerObject(pGhost):addWaypoint("endor", "Badge:Rebel Hideout", "", -6530, 5967, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("endor", "Badge:Imp Outpost", "", -4628, -2273, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
 	     elseif (optionLink == "4") then
-					PlayerObject(pGhost):addWaypoint("endor", "Badge:Rogue Corsec Base", "", 5291, 1494, WAYPOINTBLUE, true, true, 0)
-					nextConversationScreen = conversation:getScreen("end")
-					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
-	     elseif (optionLink == "5") then
-					PlayerObject(pGhost):addWaypoint("endor", "Badge:Tyrena Theater", "", -5418, -6248, WAYPOINTBLUE, true, true, 0)
+					PlayerObject(pGhost):addWaypoint("endor", "Badge:Lake Villlage", "", 1454, -3272, WAYPOINTBLUE, true, true, 0)
 					nextConversationScreen = conversation:getScreen("end")
 					LuaCreatureObject(conversingPlayer):sendSystemMessage("The Waypoint has been added to your datpad.")
          end
