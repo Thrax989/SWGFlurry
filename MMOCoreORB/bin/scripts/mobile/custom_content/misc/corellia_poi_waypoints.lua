@@ -24,7 +24,7 @@ corellia_poi_waypoints = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = 264,
+	optionsBitmask = INVULNERABLE + CONVERSABLE + JTLINTERESTING,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/wookiee_lifeday_elder.iff"},
