@@ -1,0 +1,5 @@
+object_draft_schematic_instrument_instrument_valahorn = object_draft_schematic_instrument_shared_instrument_valahorn:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_instrument_instrument_valahorn, "object/draft_schematic/instrument/instrument_valahorn.iff")

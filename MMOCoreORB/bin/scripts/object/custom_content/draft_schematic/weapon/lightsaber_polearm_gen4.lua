@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_lightsaber_polearm_gen4 = object_draft_schematic_weapon_shared_lightsaber_polearm_gen4:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_lightsaber_polearm_gen4, "object/draft_schematic/weapon/lightsaber_polearm_gen4.iff")

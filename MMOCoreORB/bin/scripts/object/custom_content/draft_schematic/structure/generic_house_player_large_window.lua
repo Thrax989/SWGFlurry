@@ -1,0 +1,5 @@
+object_draft_schematic_structure_generic_house_player_large_window = object_draft_schematic_structure_shared_generic_house_player_large_window:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_structure_generic_house_player_large_window, "object/draft_schematic/structure/generic_house_player_large_window.iff")

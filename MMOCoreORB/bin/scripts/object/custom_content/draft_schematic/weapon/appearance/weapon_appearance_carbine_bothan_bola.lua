@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_appearance_weapon_appearance_carbine_bothan_bola = object_draft_schematic_weapon_appearance_shared_weapon_appearance_carbine_bothan_bola:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_appearance_weapon_appearance_carbine_bothan_bola, "object/draft_schematic/weapon/appearance/weapon_appearance_carbine_bothan_bola.iff")

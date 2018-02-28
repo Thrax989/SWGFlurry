@@ -53,8 +53,6 @@ object_draft_schematic_structure_sandcrawler_house_schem = object_draft_schemati
 
    xpType = "crafting_structure_general", 
    xp = 10000, 
-   factoryCrateSize = 0,   
-   disableFactoryRun = true,
 
    assemblySkill = "structure_assembly", 
    experimentingSkill = "structure_experimentation", 

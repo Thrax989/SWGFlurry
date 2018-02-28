@@ -1,0 +1,5 @@
+object_draft_schematic_camp_modules_rebel_recruiter_module = object_draft_schematic_camp_modules_shared_rebel_recruiter_module:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_camp_modules_rebel_recruiter_module, "object/draft_schematic/camp/modules/rebel_recruiter_module.iff")

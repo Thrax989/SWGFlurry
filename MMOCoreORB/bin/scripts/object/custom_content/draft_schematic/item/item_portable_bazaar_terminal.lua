@@ -1,0 +1,5 @@
+object_draft_schematic_item_item_portable_bazaar_terminal = object_draft_schematic_item_shared_item_portable_bazaar_terminal:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_item_item_portable_bazaar_terminal, "object/draft_schematic/item/item_portable_bazaar_terminal.iff")
