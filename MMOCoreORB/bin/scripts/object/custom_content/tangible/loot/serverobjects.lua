@@ -12,5 +12,4 @@ includeFile("custom_content/tangible/loot/quest/serverobjects.lua")
 includeFile("custom_content/tangible/loot/simple_kit/serverobjects.lua")
 includeFile("custom_content/tangible/loot/undead/serverobjects.lua")
 
-
 -- Server Objects
