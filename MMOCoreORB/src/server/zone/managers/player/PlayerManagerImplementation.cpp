@@ -5389,12 +5389,13 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 			continue;
 		}
 
+
 		float damageContribution = (float) entry->getTotalDamage() / totalDamage;
 
-		if (frsManager != NULL && frsManager->isFrsEnabled() && frsManager->isValidFrsBattle(attacker, player)) {
-			int attackerFrsXp = frsManager->calculatePvpExperienceChange(attacker, player, damageContribution, false);
-			int victimFrsXp = frsManager->calculatePvpExperienceChange(attacker, player, damageContribution, true);
-			frsXpAdjustment += victimFrsXp;
+	/*	if (frsManager != NULL && frsManager->isFrsEnabled() && frsManager->isValidFrsBattle(attacker, player)) {
+			//int attackerFrsXp = frsManager->calculatePvpExperienceChange(attacker, player, damageContribution, false);
+			//int victimFrsXp = frsManager->calculatePvpExperienceChange(attacker, player, damageContribution, true);
+			//frsXpAdjustment += victimFrsXp;
 
 			ManagedReference<CreatureObject*> attackerRef = attacker;
 			if (attackerFrsXp > 0) {
@@ -5404,7 +5405,7 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 					frsManager->adjustFrsExperience(attackerRef, attackerFrsXp);
 				}, "FrsExperienceAdjustLambda");
 			}
-		}
+		}*/
 
 		ghost->addToKillerList(attacker->getObjectID());
 
@@ -5455,7 +5456,7 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 	if (frsManager != NULL && frsManager->isFrsEnabled() && frsXpAdjustment < 0) {
 		Locker crossLock(frsManager, player);
 
-		frsManager->adjustFrsExperience(player, frsXpAdjustment);
+		//frsManager->adjustFrsExperience(player, frsXpAdjustment);
 	}
 
 	if (defenderPvpRating <= PlayerObject::PVP_RATING_FLOOR) {
@@ -5505,6 +5506,7 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 		player->sendSystemMessage(toVictim);
 	}
 }
+
 
 float PlayerManagerImplementation::getSpeciesXpModifier(const String& species, const String& xpType) {
 	int bonus = xpBonusList.get(species).get(xpType);
