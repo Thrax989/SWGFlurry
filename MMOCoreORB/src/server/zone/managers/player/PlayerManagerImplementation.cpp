@@ -640,18 +640,13 @@ uint8 PlayerManagerImplementation::calculateIncapacitationTimer(CreatureObject* 
 	//Check for incap recovery food buff - overrides recovery time gate.
 	/*if (hasBuff(BuffCRC::FOOD_INCAP_RECOVERY)) {
 		Buff* buff = getBuff(BuffCRC::FOOD_INCAP_RECOVERY);
-
 		if (buff != NULL) {
 			float percent = buff->getSkillModifierValue("incap_recovery");
-
 			recoveryTime = round(recoveryTime * ((100.0f - percent) / 100.0f));
-
 			StfParameter* params = new StfParameter();
 			params->addDI(percent);
-
 			sendSystemMessage("combat_effects", "incap_recovery", params); //Incapacitation recovery time reduced by %DI%.
 			delete params;
-
 			removeBuff(buff);
 		}
 	}*/
@@ -1568,7 +1563,6 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 	int xp = playerObject->addExperience(xpType, (int) ((((amount * speciesModifier) * localMultiplier) * perExpMulti) * globalExpMultiplier));
 
 	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
-
 	if (sendSystemMessage) {
 		if (xp > 0) {
 			StringIdChatParameter message("base_player","prose_grant_xp");
@@ -1583,7 +1577,101 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 		}
 	}
 
+	if (xpType == "force_rank_xp") {
+		if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
+			PlayerObject* ghost = player->getPlayerObject();
+			SkillList* skillList = player->getSkillList();
+			int curExp = ghost->getExperience("force_rank_xp");
+			if (curExp < -15000) {
+				if (player->hasSkill("force_rank_light_novice")) {
+
+						for (int i = 0; i < skillList->size(); ++i) {
+							Skill* skill = skillList->get(i);
+							if (skill->getSkillName().indexOf("force_rank_") != -1 && skill->getSkillName().indexOf("force_rank_light_novice") == -1) {
+								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
+							}
+						}
+				} else if (player->hasSkill("force_rank_dark_novice")) {
+						for (int i = 0; i < skillList->size(); ++i) {
+							Skill* skill = skillList->get(i);
+							if (skill->getSkillName().indexOf("force_rank_") != -1 && skill->getSkillName().indexOf("force_rank_light_novice") == -1)  {
+								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
+							}
+						}
+
+				}
+			}
+			error("frsSkillCheck Current FRSXP = " + String::valueOf(curExp));
+			if (curExp < 10000) {
+				frsSkillCheck(player, "novice", "rank_01");
+			}
+			if (curExp >= 10000 && curExp < 20000) {
+				frsSkillCheck(player, "rank_01", "rank_02");
+			}
+			if (curExp >= 20000 && curExp < 30000) {
+				frsSkillCheck(player, "rank_02", "rank_03");
+			}
+			if (curExp >= 30000 && curExp < 40000) {
+				frsSkillCheck(player, "rank_03", "rank_04");
+			}
+			if (curExp >= 40000 && curExp < 60000) {
+				frsSkillCheck(player, "rank_04", "rank_05");
+			}
+			if (curExp >= 60000 && curExp < 80000) {
+				frsSkillCheck(player, "rank_05", "rank_06");
+			}
+			if (curExp >= 80000 && curExp < 100000) {
+				frsSkillCheck(player, "rank_06", "rank_07");
+			}
+			if (curExp >= 100000 && curExp < 150000) {
+				frsSkillCheck(player, "rank_07", "rank_08");
+			}
+			if (curExp >= 150000 && curExp < 200000) {
+				frsSkillCheck(player, "rank_08", "rank_09");
+				SkillManager::instance()->awardSkill("force_title_jedi_rank_04", player, true, true, true);
+			}
+			if (curExp >= 200000 && curExp < 300000) {
+				frsSkillCheck(player, "rank_09", "rank_10");
+			}
+			if (curExp >= 300000 && curExp < 500000) {
+				frsSkillCheck(player, "rank_10", "master");
+				SkillManager::instance()->awardSkill("force_title_jedi_master", player, true, true, true);
+			}
+			if (curExp >= 500000) {
+				frsSkillCheck(player, "master", "master");
+				SkillManager::instance()->awardSkill("force_title_jedi_master", player, true, true, true);
+			}
+		}
+	}
+
 	return xp;
+}
+
+
+void PlayerManagerImplementation::frsSkillCheck(CreatureObject* player, const String& skill, const String& skillParent) {
+	SkillManager* skillManager = server->getSkillManager();
+	String skillStarter;
+
+	error("frsskillcheckEntered for player: " + player->getFirstName() + " Skill: " + skill + " Skill Parent: " + skillParent);
+	if (player->hasSkill("force_rank_light_novice")) {
+		skillStarter = "force_rank_light_";
+	} else {
+		skillStarter = "force_rank_dark_";
+	}
+	player->sendSystemMessage("You have been granted: " + skillStarter + skill);
+	skillManager->awardSkill(skillStarter + skill, player, true, true, true);
+	if (player->hasSkill(skillStarter + skillParent) && (skill != skillParent)) {
+		player->sendSystemMessage("You no longer meet the requirements for: " + skillStarter + skill);
+		SkillList* skillList = player->getSkillList();
+		while (player->hasSkill(skillStarter + skillParent)) {
+			for (int i = 0; i < skillList->size(); ++i) {
+				Skill* skill = skillList->get(i);
+				if (skill->getSkillName().indexOf(skillStarter) != -1){
+					SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
+				}
+			}
+		}
+	}
 }
 
 void PlayerManagerImplementation::sendLoginMessage(CreatureObject* creature) {
@@ -3003,7 +3091,6 @@ int PlayerManagerImplementation::checkSpeedHackSecondTest(CreatureObject* player
 
 	/*if (oldNewPosZ > oldValidZ) {
 		float heightDist = oldNewPosZ - oldValidZ;
-
 		//if (heightDist > speed) {
 			StringBuffer msg;
 			msg << " heightDist:" << heightDist << " speed:" << speed << " terrain neg:" << player->getSlopeModPercent();
