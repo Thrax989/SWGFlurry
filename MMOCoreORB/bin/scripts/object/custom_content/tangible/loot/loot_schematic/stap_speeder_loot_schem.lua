@@ -44,14 +44,12 @@ object_tangible_loot_loot_schematic_stap_speeder_loot_schem = object_tangible_lo
 
 	templateType = LOOTSCHEMATIC,
 	objectName = "STAP Speeder Schematic",
-	detailedDescription = "STAP Speeder Schematic",
+	customName = "STAP Speeder Schematic",
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_artisan_master",
 	targetDraftSchematic = "object/draft_schematic/vehicle/civilian/stap_speeder_schem.iff",
 	targetUseCount = 1,
-	customName = "STAP Speeder Schematic",
-
 
 }
 ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_stap_speeder_loot_schem, "object/tangible/loot/loot_schematic/stap_speeder_loot_schem.iff")

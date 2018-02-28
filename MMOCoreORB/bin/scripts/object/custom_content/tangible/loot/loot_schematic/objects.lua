@@ -62,6 +62,14 @@ ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_imp
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
+object_tangible_loot_loot_schematic_shared_kashyyyk_treehouse_scem = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_kashyyyk_treehouse_scem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_kashyyyk_treehouse_scem, "object/tangible/loot/loot_schematic/shared_kashyyyk_treehouse_scem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
 object_tangible_loot_loot_schematic_shared_planning_table_bestine_imp_schematic = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_planning_table_bestine_imp_schematic.iff"
 }
@@ -182,6 +190,21 @@ ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_wod
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
+object_tangible_loot_loot_schematic_shared_wod_ns_hut = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_wod_ns_hut.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_wod_ns_hut, "object/tangible/loot/loot_schematic/shared_wod_ns_hut.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_loot_loot_schematic_shared_wod_sm_hut = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_wod_sm_hut.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_wod_sm_hut, "object/tangible/loot/loot_schematic/shared_wod_sm_hut.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
 
 object_tangible_loot_loot_schematic_shared_wod_tower_schematic = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_wod_tower_schematic.iff"
@@ -199,5 +222,93 @@ ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_wod
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
+object_tangible_loot_loot_schematic_shared_yt1300_house_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_yt1300_house_schematic.iff"
+}
 
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_yt1300_house_schematic, "object/tangible/loot/loot_schematic/shared_yt1300_house_schematic.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_tangible_loot_loot_schematic_shared_musty_house_loot_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_musty_house_loot_schem.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_musty_house_loot_schem, "object/tangible/loot/loot_schematic/shared_musty_house_loot_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_tangible_loot_loot_schematic_shared_hangar_house_loot_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_hangar_house_loot_schem.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_hangar_house_loot_schem, "object/tangible/loot/loot_schematic/shared_hangar_house_loot_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_tangible_loot_loot_schematic_shared_sith_house_loot_schem = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_sith_house_loot_schem.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_sith_house_loot_schem, "object/tangible/loot/loot_schematic/shared_sith_house_loot_schem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_tangible_loot_loot_schematic_shared_2h_sword_sith = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_2h_sword_sith.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_2h_sword_sith, "object/tangible/loot/loot_schematic/shared_2h_sword_sith.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_tangible_loot_loot_schematic_shared_razor_knuckler = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_razor_knuckler.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_razor_knuckler, "object/tangible/loot/loot_schematic/shared_razor_knuckler.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_loot_loot_schematic_shared_carbine_geo = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_carbine_geo.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_carbine_geo, "object/tangible/loot/loot_schematic/shared_carbine_geo.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_loot_loot_schematic_shared_carbine_proton = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_carbine_proton.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_carbine_proton, "object/tangible/loot/loot_schematic/shared_carbine_proton.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_loot_loot_schematic_shared_sword_bandit = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_sword_bandit.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_sword_bandit, "object/tangible/loot/loot_schematic/shared_sword_bandit.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_loot_loot_schematic_shared_pistol_deathhammer = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_pistol_deathhammer.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_pistol_deathhammer, "object/tangible/loot/loot_schematic/shared_pistol_deathhammer.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_loot_loot_schematic_shared_pistol_wookiee = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_pistol_wookiee.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_pistol_wookiee, "object/tangible/loot/loot_schematic/shared_pistol_wookiee.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_loot_loot_schematic_shared_rifle_geo_drill = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rifle_geo_drill.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_rifle_geo_drill, "object/tangible/loot/loot_schematic/shared_rifle_geo_drill.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_loot_loot_schematic_shared_rifle_proton = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_rifle_proton.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_rifle_proton, "object/tangible/loot/loot_schematic/shared_rifle_proton.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_loot_loot_schematic_shared_lance_cryo = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_lance_cryo.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_lance_cryo, "object/tangible/loot/loot_schematic/shared_lance_cryo.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 

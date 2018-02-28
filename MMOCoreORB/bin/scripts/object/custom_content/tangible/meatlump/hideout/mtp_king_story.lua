@@ -1,0 +1,5 @@
+object_tangible_meatlump_hideout_mtp_king_story = object_tangible_meatlump_hideout_shared_mtp_king_story:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_meatlump_hideout_mtp_king_story, "object/tangible/meatlump/hideout/mtp_king_story.iff")
