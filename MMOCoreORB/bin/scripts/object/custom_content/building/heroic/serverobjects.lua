@@ -38,3 +38,4 @@ includeFile("custom_content/building/heroic/frozen_tauntaun.lua")
 includeFile("custom_content/building/heroic/golan_laser_battery.lua")
 includeFile("custom_content/building/heroic/hoth_ion.lua")
 includeFile("custom_content/building/heroic/ptower.lua")
+

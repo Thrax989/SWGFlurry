@@ -42,6 +42,7 @@
 
 
 object_building_heroic_echo_base = object_building_heroic_shared_echo_base:new {
+
 publicStructure = 1,
 
 spawningPoints = {
