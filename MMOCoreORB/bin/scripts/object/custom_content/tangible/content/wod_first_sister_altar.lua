@@ -1,5 +1,0 @@
-object_tangible_content_wod_first_sister_altar = object_tangible_content_shared_wod_first_sister_altar:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_content_wod_first_sister_altar, "object/tangible/content/wod_first_sister_altar.iff")

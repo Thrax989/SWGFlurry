@@ -1,7 +1,6 @@
 --New
-object_tangible_food_shared_mtp_meatlump_xp_wine = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/food/shared_mtp_meatlump_xp_wine.iff"
+object_building_heroic_shared_del = SharedBuildingObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_del.iff"
 }
-
-ObjectTemplates:addClientTemplate(object_tangible_food_shared_mtp_meatlump_xp_wine, "object/tangible/food/shared_mtp_meatlump_xp_wine.iff")
-------------------------------------------------------------------------------------------------------------------------------------
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_del, "object/building/heroic/shared_del.iff")
+--**********************************************************************************************************************************

@@ -1,5 +1,0 @@
-object_tangible_component_clothing_fiberplast_panel_prison_guard = object_tangible_component_clothing_shared_fiberplast_panel_prison_guard:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_clothing_fiberplast_panel_prison_guard, "object/tangible/component/clothing/fiberplast_panel_prison_guard.iff")
