@@ -570,3 +570,4 @@ ObjectTemplates:addClientTemplate(object_static_particle_shared_particle_distant
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
+
