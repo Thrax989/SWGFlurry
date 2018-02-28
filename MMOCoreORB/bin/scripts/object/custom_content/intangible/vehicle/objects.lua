@@ -1,60 +1,3 @@
-object_intangible_vehicle_shared_swoopracer_black_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_swoopracer_black_pcd.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_swoopracer_black_pcd, "object/intangible/vehicle/shared_swoopracer_black_pcd.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_intangible_vehicle_shared_swoopracer_blue_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_swoopracer_blue_pcd.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_swoopracer_blue_pcd, "object/intangible/vehicle/shared_swoopracer_blue_pcd.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_intangible_vehicle_shared_swoopracer_gold_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_swoopracer_gold_pcd.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_swoopracer_gold_pcd, "object/intangible/vehicle/shared_swoopracer_gold_pcd.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_intangible_vehicle_shared_swoopracer_green_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_swoopracer_green_pcd.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_swoopracer_green_pcd, "object/intangible/vehicle/shared_swoopracer_green_pcd.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_intangible_vehicle_shared_swoopracer_purple_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_swoopracer_purple_pcd.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_swoopracer_purple_pcd, "object/intangible/vehicle/shared_swoopracer_purple_pcd.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_intangible_vehicle_shared_swoopracer_red_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_swoopracer_red_pcd.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_swoopracer_red_pcd, "object/intangible/vehicle/shared_swoopracer_red_pcd.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_intangible_vehicle_shared_swoopracer_silver_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_swoopracer_silver_pcd.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_swoopracer_silver_pcd, "object/intangible/vehicle/shared_swoopracer_silver_pcd.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-
 object_intangible_vehicle_shared_atat_pcd = SharedIntangibleObjectTemplate:new {
 	clientTemplateFileName = "object/intangible/vehicle/shared_atat_pcd.iff"
 }
@@ -159,7 +102,8 @@ object_intangible_vehicle_shared_gift_stap_pcd = SharedIntangibleObjectTemplate:
 	clientTemplateFileName = "object/intangible/vehicle/shared_gift_stap_pcd.iff"
 }
 ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_gift_stap_pcd, "object/intangible/vehicle/shared_gift_stap_pcd.iff")
-
+
+
 --**********************************************************************
 
 object_intangible_vehicle_shared_grievous_wheel_bike = SharedIntangibleObjectTemplate:new {
@@ -288,10 +232,10 @@ ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_mechno_chair_
 
 --**********************************************************************
 
-object_intangible_vehicle_shared_mustafar_panning_droid = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_mustafar_panning_droid.iff"
+object_intangible_vehicle_shared_mustafar_panning_droid_pcd = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/vehicle/shared_mustafar_panning_droid_pcd.iff"
 }
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_mustafar_panning_droid, "object/intangible/vehicle/shared_mustafar_panning_droid.iff")
+ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_mustafar_panning_droid_pcd, "object/intangible/vehicle/shared_mustafar_panning_droid_pcd.iff")
 
 --**********************************************************************
 
