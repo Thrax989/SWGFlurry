@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_working_droid_factory_exit_door = object_tangible_terminal_shared_terminal_working_droid_factory_exit_door:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_working_droid_factory_exit_door, "object/tangible/terminal/terminal_working_droid_factory_exit_door.iff")

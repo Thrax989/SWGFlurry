@@ -83,6 +83,8 @@ object_tangible_wearables_armor_snowtrooper_armor_snowtrooper_leggings = object_
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
+				"object/creature/player/ithorian_male.iff",
+				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -93,6 +95,8 @@ object_tangible_wearables_armor_snowtrooper_armor_snowtrooper_leggings = object_
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
+				"object/creature/player/wookiee_male.iff",
+				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 	
@@ -101,8 +105,8 @@ object_tangible_wearables_armor_snowtrooper_armor_snowtrooper_leggings = object_
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 15,
-	actionEncumbrance = 15,
-	mindEncumbrance = 25,
+	actionEncumbrance = 25,
+	mindEncumbrance = 15,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,

@@ -44,6 +44,8 @@
 object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_boots = object_tangible_wearables_armor_galactic_marine_shared_armor_galactic_marine_boots:new {
 	templateType = ARMOROBJECT,
 
+	faction = "Rebel",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",

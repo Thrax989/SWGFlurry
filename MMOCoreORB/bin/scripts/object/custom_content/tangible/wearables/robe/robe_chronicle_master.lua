@@ -1,3 +1,4 @@
+
 object_tangible_wearables_robe_robe_chronicle_master = object_tangible_wearables_robe_shared_robe_chronicle_master:new {
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
@@ -53,17 +54,7 @@ object_tangible_wearables_robe_robe_chronicle_master = object_tangible_wearables
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 
-				customName = "Chronicle Robe",
-
-				skillMods = {
-				    {"jedi_force_power_max", 100},
-				    {"jedi_force_power_regen", 5}
-				},
-
-				objectMenuComponent = "RobeObjectMenuComponent",
-				certificationsRequired = {"force_title_jedi_rank_02"},
-				attributeListComponent = "JediRobeAttributeListComponent",
+				noTrade = 1,
 
 }
-
 ObjectTemplates:addTemplate(object_tangible_wearables_robe_robe_chronicle_master, "object/tangible/wearables/robe/robe_chronicle_master.iff")

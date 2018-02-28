@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_clone_droid = object_tangible_terminal_shared_terminal_clone_droid:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_clone_droid, "object/tangible/terminal/terminal_clone_droid.iff")

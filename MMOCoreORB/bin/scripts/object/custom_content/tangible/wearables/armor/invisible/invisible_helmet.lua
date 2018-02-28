@@ -113,8 +113,8 @@ object_tangible_wearables_armor_invisible_invisible_helmet = object_tangible_wea
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 64,
-	energy = 64,
+	kinetic = 68,
+	energy = 68,
 	electricity = 50,
 	stun = 15,
 	blast = 45,

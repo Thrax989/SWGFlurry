@@ -28,6 +28,7 @@ includeFile("custom_content/tangible/terminal/terminal_borvo_security_scanner.lu
 includeFile("custom_content/tangible/terminal/terminal_borvos_vault.lua")
 includeFile("custom_content/tangible/terminal/terminal_camp_control.lua")
 includeFile("custom_content/tangible/terminal/terminal_city_junk_dealer.lua")
+includeFile("custom_content/tangible/terminal/terminal_clone_droid.lua")
 includeFile("custom_content/tangible/terminal/terminal_elevator_down_click.lua")
 includeFile("custom_content/tangible/terminal/terminal_elevator_down_noscript.lua")
 includeFile("custom_content/tangible/terminal/terminal_elevator_down_post_noscript.lua")
@@ -63,3 +64,5 @@ includeFile("custom_content/tangible/terminal/terminal_travel_instant_tcg_locati
 includeFile("custom_content/tangible/terminal/terminal_travel_instant_tcg_slave_1.lua")
 includeFile("custom_content/tangible/terminal/terminal_travel_instant_tie.lua")
 includeFile("custom_content/tangible/terminal/terminal_travel_instant_xwing.lua")
+includeFile("custom_content/tangible/terminal/terminal_working_droid_factory_exit_door.lua")
+

@@ -1,5 +1,4 @@
 object_tangible_wearables_armor_scout_trooper_armor_swamp_trooper_chest_plate = object_tangible_wearables_armor_scout_trooper_shared_armor_swamp_trooper_chest_plate:new {
-
 	templateType = ARMOROBJECT,
 
 	faction = "Imperial",
@@ -57,28 +56,29 @@ object_tangible_wearables_armor_scout_trooper_armor_swamp_trooper_chest_plate = 
 				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
-
-	-- Damage types in WeaponObject
-	vulnerability = NONE,
+	
+	-- The damage types in WeaponObject
+	vulnerability = LIGHTSABER,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
+	healthEncumbrance = 25,
+	actionEncumbrance = 15,
+	mindEncumbrance = 15,
 
 	-- LIGHT, MEDIUM, HEAVY
-	rating = HEAVY,
+	rating = LIGHT,
 
-	kinetic = 80,
-	energy = 80,
-	electricity = 80,
-	stun = 80,
-	blast = 80,
-	heat = 80,
-	cold = 80,
-	acid = 80,
-	lightSaber = 80,
+	maxCondition = 30000,
 
+	kinetic = 50,
+	energy = 50,
+	electricity = 35,
+	stun = 9,
+	blast = 35,
+	heat = 15,
+	cold = 15,
+	acid = 9,
+	lightSaber = 0
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_scout_trooper_armor_swamp_trooper_chest_plate, "object/tangible/wearables/armor/scout_trooper/armor_swamp_trooper_chest_plate.iff")
