@@ -1,5 +1,0 @@
-object_draft_schematic_armor_armor_appearance_mandalorian_imperial_boots = object_draft_schematic_armor_shared_armor_appearance_mandalorian_imperial_boots:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_armor_armor_appearance_mandalorian_imperial_boots, "object/draft_schematic/armor/armor_appearance_mandalorian_imperial_boots.iff")

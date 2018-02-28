@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_pistol_heroic_sd = object_draft_schematic_weapon_shared_pistol_heroic_sd:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_pistol_heroic_sd, "object/draft_schematic/weapon/pistol_heroic_sd.iff")

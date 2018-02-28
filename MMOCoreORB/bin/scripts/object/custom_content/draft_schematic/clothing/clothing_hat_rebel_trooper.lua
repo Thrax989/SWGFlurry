@@ -1,5 +1,0 @@
-object_draft_schematic_clothing_clothing_hat_rebel_trooper = object_draft_schematic_clothing_shared_clothing_hat_rebel_trooper:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_hat_rebel_trooper, "object/draft_schematic/clothing/clothing_hat_rebel_trooper.iff")

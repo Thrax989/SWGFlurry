@@ -53,6 +53,8 @@ object_draft_schematic_structure_relaxation_house_schem = object_draft_schematic
 
    xpType = "crafting_structure_general", 
    xp = 8000, 
+   factoryCrateSize = 0,   
+   disableFactoryRun = true,
 
    assemblySkill = "structure_assembly", 
    experimentingSkill = "structure_experimentation", 

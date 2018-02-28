@@ -1,5 +1,0 @@
-object_draft_schematic_structure_naboo_house_player_window_small_style_01 = object_draft_schematic_structure_shared_naboo_house_player_window_small_style_01:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_structure_naboo_house_player_window_small_style_01, "object/draft_schematic/structure/naboo_house_player_window_small_style_01.iff")

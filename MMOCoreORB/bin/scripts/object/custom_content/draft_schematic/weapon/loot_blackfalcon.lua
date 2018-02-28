@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_loot_blackfalcon = object_draft_schematic_weapon_shared_loot_blackfalcon:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_loot_blackfalcon, "object/draft_schematic/weapon/loot_blackfalcon.iff")

@@ -1,5 +1,0 @@
-object_draft_schematic_armor_component_armor_core_assault_standard = object_draft_schematic_armor_component_shared_armor_core_assault_standard:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_armor_component_armor_core_assault_standard, "object/draft_schematic/armor/component/armor_core_assault_standard.iff")

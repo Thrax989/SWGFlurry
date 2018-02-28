@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_component_weapon_power_bit = object_draft_schematic_weapon_component_shared_weapon_power_bit:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_component_weapon_power_bit, "object/draft_schematic/weapon/component/weapon_power_bit.iff")

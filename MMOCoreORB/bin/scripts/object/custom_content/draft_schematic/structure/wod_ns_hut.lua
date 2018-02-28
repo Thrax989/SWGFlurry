@@ -1,5 +1,0 @@
-object_draft_schematic_structure_wod_ns_hut = object_draft_schematic_structure_shared_wod_ns_hut:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_structure_wod_ns_hut, "object/draft_schematic/structure/wod_ns_hut.iff")
