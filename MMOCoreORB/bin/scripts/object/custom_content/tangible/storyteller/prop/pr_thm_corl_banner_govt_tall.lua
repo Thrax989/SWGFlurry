@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_thm_corl_banner_govt_tall = object_tangible_storyteller_prop_shared_pr_thm_corl_banner_govt_tall:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_thm_corl_banner_govt_tall, "object/tangible/storyteller/prop/pr_thm_corl_banner_govt_tall.iff")

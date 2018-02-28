@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_eqp_bones_must_monster_jaw_small = object_tangible_storyteller_prop_shared_pr_eqp_bones_must_monster_jaw_small:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_eqp_bones_must_monster_jaw_small, "object/tangible/storyteller/prop/pr_eqp_bones_must_monster_jaw_small.iff")
