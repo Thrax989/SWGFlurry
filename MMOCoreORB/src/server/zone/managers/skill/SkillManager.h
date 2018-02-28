@@ -71,11 +71,15 @@ public:
 	void addAbilities(PlayerObject* ghost, const Vector<String>& abilityNames, bool notifyClient = true);
 	void removeAbilities(PlayerObject* ghost, const Vector<String>& abilityNames, bool notifyClient = true);
 
-	bool awardSkill(const String& skillName, CreatureObject* creature, bool notifyClient = true, bool awardRequiredSkills = false, bool noXpRequired = false);
+	void awardForceFromSkills(CreatureObject* creature);
+
+	int getSpecificSkillCount(CreatureObject* creature, const String& skill);
+
+	bool awardSkill(const String& skillName, CreatureObject* creature, bool notifyClient = true, bool awardRequiredSkills = false, bool noXpRequired = false, bool ignoreRequirements = false);
 	void awardDraftSchematics(Skill* skill, PlayerObject* ghost, bool notifyClient = true);
 
-	bool surrenderSkill(const String& skillName, CreatureObject* creature, bool notifyClient = true);
-	void surrenderAllSkills(CreatureObject* creature, bool notifyClient = true);
+	bool surrenderSkill(const String& skillName, CreatureObject* creature, bool notifyClient = true, bool ignoreRequirements = false);
+	void surrenderAllSkills(CreatureObject* creature, bool notifyClient = true, bool removeForceProgression = true);
 
 	/**
 	 * Checks if the player can learn the skill (fulfills skill prerequisites, enough skill points and enough XP).
