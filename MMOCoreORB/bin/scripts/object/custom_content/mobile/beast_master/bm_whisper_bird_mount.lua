@@ -1,0 +1,5 @@
+object_mobile_beast_master_bm_whisper_bird_mount = object_mobile_beast_master_shared_bm_whisper_bird_mount:new {
+
+}
+
+ObjectTemplates:addTemplate(object_mobile_beast_master_bm_whisper_bird_mount, "object/mobile/beast_master/bm_whisper_bird_mount.iff")

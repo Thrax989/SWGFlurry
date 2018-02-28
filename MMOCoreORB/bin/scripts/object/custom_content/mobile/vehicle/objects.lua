@@ -13,6 +13,15 @@ object_mobile_vehicle_shared_balta_podracer = SharedCreatureObjectTemplate:new {
 ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_balta_podracer, "object/mobile/vehicle/shared_balta_podracer.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
+
+object_mobile_vehicle_shared_koro2_exodrive_airspeeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_koro2_exodrive_airspeeder.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_koro2_exodrive_airspeeder, "object/mobile/vehicle/shared_koro2_exodrive_airspeeder.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
 object_mobile_vehicle_shared_military_transport = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/vehicle/shared_military_transport.iff"
 }

@@ -1,0 +1,5 @@
+object_mobile_beast_master_bm_reptilian_flier = object_mobile_beast_master_shared_bm_reptilian_flier:new {
+
+}
+
+ObjectTemplates:addTemplate(object_mobile_beast_master_bm_reptilian_flier, "object/mobile/beast_master/bm_reptilian_flier.iff")

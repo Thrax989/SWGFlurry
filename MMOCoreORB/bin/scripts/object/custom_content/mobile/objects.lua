@@ -90,11 +90,6 @@ object_mobile_shared_blackwing_rancor_static = SharedCreatureObjectTemplate:new 
 }
 ObjectTemplates:addClientTemplate(object_mobile_shared_blackwing_rancor_static, "object/mobile/shared_blackwing_rancor_static.iff")
 --**********************************************************************************************************************************
-object_mobile_shared_bm_mobile = SharedCreatureObjectTemplate:new {
-	clientTemplateFileName = "object/mobile/shared_bm_mobile.iff"
-}
-ObjectTemplates:addClientTemplate(object_mobile_shared_bm_mobile, "object/mobile/shared_bm_mobile.iff")
---**********************************************************************************************************************************
 object_mobile_shared_bolotaur = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/shared_bolotaur.iff"
 }
@@ -3720,11 +3715,6 @@ object_mobile_shared_pit_droid = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/shared_pit_droid.iff"
 }
 ObjectTemplates:addClientTemplate(object_mobile_shared_pit_droid, "object/mobile/shared_pit_droid.iff")
---**********************************************************************************************************************************
-object_mobile_shared_player_transport_02 = SharedCreatureObjectTemplate:new {
-	clientTemplateFileName = "object/mobile/shared_player_transport_02.iff"
-}
-ObjectTemplates:addClientTemplate(object_mobile_shared_player_transport_02, "object/mobile/shared_player_transport_02.iff")
 --**********************************************************************************************************************************
 object_mobile_shared_radeld = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/shared_radeld.iff"

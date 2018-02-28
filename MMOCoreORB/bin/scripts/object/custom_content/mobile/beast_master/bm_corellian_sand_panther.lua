@@ -1,0 +1,5 @@
+object_mobile_beast_master_bm_corellian_sand_panther = object_mobile_beast_master_shared_bm_corellian_sand_panther:new {
+
+}
+
+ObjectTemplates:addTemplate(object_mobile_beast_master_bm_corellian_sand_panther, "object/mobile/beast_master/bm_corellian_sand_panther.iff")
