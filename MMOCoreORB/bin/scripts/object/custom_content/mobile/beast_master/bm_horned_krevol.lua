@@ -1,5 +1,0 @@
-object_mobile_beast_master_bm_horned_krevol = object_mobile_beast_master_shared_bm_horned_krevol:new {
-
-}
-
-ObjectTemplates:addTemplate(object_mobile_beast_master_bm_horned_krevol, "object/mobile/beast_master/bm_horned_krevol.iff")

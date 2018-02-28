@@ -1,3 +1,9 @@
+object_mobile_som_shared_8t88 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/som/shared_8t88.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_som_shared_8t88, "object/mobile/som/shared_8t88.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 object_mobile_som_shared_8t88 = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/som/shared_8t88.iff"
 }

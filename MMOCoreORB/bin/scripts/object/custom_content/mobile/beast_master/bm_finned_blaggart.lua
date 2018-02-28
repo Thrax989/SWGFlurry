@@ -1,5 +1,0 @@
-object_mobile_beast_master_bm_finned_blaggart = object_mobile_beast_master_shared_bm_finned_blaggart:new {
-
-}
-
-ObjectTemplates:addTemplate(object_mobile_beast_master_bm_finned_blaggart, "object/mobile/beast_master/bm_finned_blaggart.iff")
