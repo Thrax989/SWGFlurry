@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_loveday_card_05 = object_tangible_storyteller_prop_shared_pr_loveday_card_05:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_loveday_card_05, "object/tangible/storyteller/prop/pr_loveday_card_05.iff")

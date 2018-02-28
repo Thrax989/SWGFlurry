@@ -1,0 +1,5 @@
+object_tangible_storyteller_story_token_combat_npc = object_tangible_storyteller_shared_story_token_combat_npc:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_story_token_combat_npc, "object/tangible/storyteller/story_token_combat_npc.iff")

@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_entrance_arch = object_tangible_storyteller_prop_shared_pr_entrance_arch:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_entrance_arch, "object/tangible/storyteller/prop/pr_entrance_arch.iff")

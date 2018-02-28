@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_clone_barc_speeder = object_tangible_storyteller_prop_shared_pr_clone_barc_speeder:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_clone_barc_speeder, "object/tangible/storyteller/prop/pr_clone_barc_speeder.iff")

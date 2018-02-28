@@ -1,0 +1,5 @@
+object_tangible_storyteller_story_blueprint_blank = object_tangible_storyteller_shared_story_blueprint_blank:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_story_blueprint_blank, "object/tangible/storyteller/story_blueprint_blank.iff")

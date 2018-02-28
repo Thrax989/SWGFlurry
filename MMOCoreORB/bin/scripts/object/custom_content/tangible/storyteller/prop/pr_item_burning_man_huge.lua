@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_item_burning_man_huge = object_tangible_storyteller_prop_shared_pr_item_burning_man_huge:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_item_burning_man_huge, "object/tangible/storyteller/prop/pr_item_burning_man_huge.iff")

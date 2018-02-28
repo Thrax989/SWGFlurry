@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_palette_supply_03 = object_tangible_storyteller_prop_shared_pr_palette_supply_03:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_palette_supply_03, "object/tangible/storyteller/prop/pr_palette_supply_03.iff")

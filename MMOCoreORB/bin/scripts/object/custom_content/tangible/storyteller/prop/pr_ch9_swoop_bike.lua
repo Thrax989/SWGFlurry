@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_ch9_swoop_bike = object_tangible_storyteller_prop_shared_pr_ch9_swoop_bike:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_swoop_bike, "object/tangible/storyteller/prop/pr_ch9_swoop_bike.iff")

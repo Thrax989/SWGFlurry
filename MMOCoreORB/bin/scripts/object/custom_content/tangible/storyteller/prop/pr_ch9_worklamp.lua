@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_ch9_worklamp = object_tangible_storyteller_prop_shared_pr_ch9_worklamp:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_worklamp, "object/tangible/storyteller/prop/pr_ch9_worklamp.iff")

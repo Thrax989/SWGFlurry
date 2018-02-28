@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_poi_all_xwing = object_tangible_storyteller_prop_shared_pr_poi_all_xwing:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_poi_all_xwing, "object/tangible/storyteller/prop/pr_poi_all_xwing.iff")

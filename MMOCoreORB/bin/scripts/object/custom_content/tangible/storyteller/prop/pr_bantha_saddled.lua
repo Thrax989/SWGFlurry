@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_bantha_saddled = object_tangible_storyteller_prop_shared_pr_bantha_saddled:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_bantha_saddled, "object/tangible/storyteller/prop/pr_bantha_saddled.iff")
