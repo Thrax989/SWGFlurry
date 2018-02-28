@@ -100,26 +100,7 @@ object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_utility_be
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 	
-	-- The damage types in WeaponObject
-	vulnerability = LIGHTSABER,
 
-	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
-
-	-- LIGHT, MEDIUM, HEAVY
-	rating = HEAVY,
-
-	kinetic = 15,
-	energy = 15,
-	electricity = 15,
-	stun = 15,
-	blast = 15,
-	heat = 15,
-	cold = 15,
-	acid = 15,
-	lightSaber = 0
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_utility_belt, "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_utility_belt.iff")

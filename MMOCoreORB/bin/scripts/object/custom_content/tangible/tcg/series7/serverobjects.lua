@@ -1,7 +1,3 @@
-includeFile("custom_content/tangible/tcg/series7/garage_display_vehicles/serverobjects.lua")
-
-
-
 includeFile("custom_content/tangible/tcg/series7/armor_kit_composite_battleworn.lua")
 includeFile("custom_content/tangible/tcg/series7/armor_kit_composite_camo.lua")
 includeFile("custom_content/tangible/tcg/series7/combine_object_broken_ball_turret.lua")

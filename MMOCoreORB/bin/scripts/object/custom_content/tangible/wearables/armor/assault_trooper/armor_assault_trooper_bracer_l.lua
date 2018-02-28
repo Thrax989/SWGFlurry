@@ -83,8 +83,6 @@ object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_bracer_l =
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
-				"object/creature/player/ithorian_male.iff",
-				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -95,8 +93,6 @@ object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_bracer_l =
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
-				"object/creature/player/wookiee_male.iff",
-				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 	
@@ -105,8 +101,8 @@ object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_bracer_l =
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 15,
-	actionEncumbrance = 25,
-	mindEncumbrance = 15,
+	actionEncumbrance = 15,
+	mindEncumbrance = 25,
 
 	maxCondition = 30000,
 
@@ -123,5 +119,6 @@ object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_bracer_l =
 	acid = 25,
 	lightSaber = 0
 }
+
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_bracer_l, "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_bracer_l.iff")

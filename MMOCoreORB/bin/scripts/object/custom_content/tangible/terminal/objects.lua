@@ -1,10 +1,4 @@
 --New
-object_tangible_terminal_shared_terminal_working_droid_factory_exit_door = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/terminal/shared_terminal_working_droid_factory_exit_door.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_terminal_shared_terminal_working_droid_factory_exit_door, "object/tangible/terminal/shared_terminal_working_droid_factory_exit_door.iff")
-------------------------------------------------------------------------------------------------------------------------------------
 object_tangible_terminal_shared_terminal_myyydril_door = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/terminal/shared_terminal_myyydril_door.iff"
 }
@@ -326,9 +320,3 @@ object_tangible_terminal_shared_terminal_travel_instant_xwing = SharedTangibleOb
 }
 ObjectTemplates:addClientTemplate(object_tangible_terminal_shared_terminal_travel_instant_xwing, "object/tangible/terminal/shared_terminal_travel_instant_xwing.iff")
 --**********************************************************************************************************************************
-object_tangible_terminal_shared_terminal_clone_droid = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/terminal/shared_terminal_clone_droid.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_terminal_shared_terminal_clone_droid, "object/tangible/terminal/shared_terminal_clone_droid.iff")
-------------------------------------------------------------------------------------------------------------------------------------

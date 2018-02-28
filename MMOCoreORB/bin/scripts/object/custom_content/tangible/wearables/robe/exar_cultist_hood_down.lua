@@ -1,4 +1,3 @@
-
 object_tangible_wearables_robe_exar_cultist_hood_down = object_tangible_wearables_robe_shared_exar_cultist_hood_down:new {
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
@@ -53,16 +52,18 @@ object_tangible_wearables_robe_exar_cultist_hood_down = object_tangible_wearable
 				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
-				
+
+				customName = "Exar Kun Cultist Robe",
+
 				skillMods = {
-				    {"jedi_force_power_max", 250},
-				    {"jedi_force_power_regen", 10}
+				    {"jedi_force_power_max", 100},
+				    {"jedi_force_power_regen", 5}
 				},
 
-				noTrade = 1,
-
 				objectMenuComponent = "RobeObjectMenuComponent",
-				certificationsRequired = {"force_rank_light_rank_10"},
+				certificationsRequired = {"force_title_jedi_rank_02"},
 				attributeListComponent = "JediRobeAttributeListComponent",
+
 }
+
 ObjectTemplates:addTemplate(object_tangible_wearables_robe_exar_cultist_hood_down, "object/tangible/wearables/robe/exar_cultist_hood_down.iff")

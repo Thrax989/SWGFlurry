@@ -1,4 +1,5 @@
 object_tangible_wearables_armor_scout_trooper_armor_swamp_trooper_gloves = object_tangible_wearables_armor_scout_trooper_shared_armor_swamp_trooper_gloves:new {
+
 	templateType = ARMOROBJECT,
 
 	faction = "Imperial",
@@ -56,29 +57,28 @@ object_tangible_wearables_armor_scout_trooper_armor_swamp_trooper_gloves = objec
 				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
-	
-	-- The damage types in WeaponObject
-	vulnerability = LIGHTSABER,
+
+	-- Damage types in WeaponObject
+	vulnerability = NONE,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 15,
-	actionEncumbrance = 25,
-	mindEncumbrance = 15,
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
 
 	-- LIGHT, MEDIUM, HEAVY
-	rating = LIGHT,
+	rating = HEAVY,
 
-	maxCondition = 30000,
+	kinetic = 80,
+	energy = 80,
+	electricity = 80,
+	stun = 80,
+	blast = 80,
+	heat = 80,
+	cold = 80,
+	acid = 80,
+	lightSaber = 80,
 
-	kinetic = 50,
-	energy = 50,
-	electricity = 35,
-	stun = 9,
-	blast = 35,
-	heat = 15,
-	cold = 15,
-	acid = 9,
-	lightSaber = 0
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_scout_trooper_armor_swamp_trooper_gloves, "object/tangible/wearables/armor/scout_trooper/armor_swamp_trooper_gloves.iff")
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_scout_trooper_armor_swamp_trooper_gloves, "object/tangible/wearables/armor/scout/trooper/armor_swamp_trooper_gloves.iff")

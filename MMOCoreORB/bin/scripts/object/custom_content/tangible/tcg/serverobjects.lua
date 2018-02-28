@@ -47,13 +47,14 @@ includeFile("custom_content/tangible/tcg/series1/serverobjects.lua")
 includeFile("custom_content/tangible/tcg/series3/serverobjects.lua")
 includeFile("custom_content/tangible/tcg/series4/serverobjects.lua")
 includeFile("custom_content/tangible/tcg/series5/serverobjects.lua")
+includeFile("custom_content/tangible/tcg/series5/hangar_ships/serverobjects.lua")
 includeFile("custom_content/tangible/tcg/series6/serverobjects.lua")
 includeFile("custom_content/tangible/tcg/series7/serverobjects.lua")
+includeFile("custom_content/tangible/tcg/series7/garage_display_vehicles/serverobjects.lua")
 includeFile("custom_content/tangible/tcg/series8/serverobjects.lua")
 
 
 -- Server Objects
-includeFile("custom_content/tangible/tcg/booster.lua")
-includeFile("custom_content/tangible/tcg/card.lua")
-includeFile("custom_content/tangible/tcg/starter.lua")
-
+includeFile("custom_content/tangible/tcg/booster.lua");
+includeFile("custom_content/tangible/tcg/card.lua");
+includeFile("custom_content/tangible/tcg/starter.lua");

@@ -40,4 +40,3 @@ includeFile("custom_content/tangible/tcg/series5/hangar_ships/yt1300.lua")
 includeFile("custom_content/tangible/tcg/series5/hangar_ships/yt2400.lua")
 includeFile("custom_content/tangible/tcg/series5/hangar_ships/ywing.lua")
 includeFile("custom_content/tangible/tcg/series5/hangar_ships/z95.lua")
-

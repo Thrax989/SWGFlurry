@@ -104,22 +104,20 @@ object_tangible_wearables_armor_rebel_snow_armor_rebel_snow_bicep_l = object_tan
 	vulnerability = LIGHTSABER,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 15,
-	actionEncumbrance = 25,
-	mindEncumbrance = 15,
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	maxCondition = 30000,
-
-	kinetic = 52,
-	energy = 50,
+	kinetic = 15,
+	energy = 15,
 	electricity = 15,
-	stun = 12,
+	stun = 15,
 	blast = 15,
-	heat = 0,
-	cold = 58,
+	heat = 15,
+	cold = 15,
 	acid = 15,
 	lightSaber = 0
 }

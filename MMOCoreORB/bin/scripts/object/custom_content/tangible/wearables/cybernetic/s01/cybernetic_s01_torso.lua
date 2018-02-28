@@ -1,5 +1,12 @@
+--Copyright 2015 CUEmu
+
 object_tangible_wearables_cybernetic_s01_cybernetic_s01_torso = object_tangible_wearables_cybernetic_s01_shared_cybernetic_s01_torso:new {
-	playerRaces = { 	"object/creature/player/smc_female.iff",
+	templateType = ARMOROBJECT,
+
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
+	playerRaces = { "object/creature/player/bothan_male.iff",
+				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
 				"object/creature/player/talz_male.iff",
 				"object/creature/player/talz_female.iff",
@@ -50,7 +57,72 @@ object_tangible_wearables_cybernetic_s01_cybernetic_s01_torso = object_tangible_
 				"object/creature/player/wookiee_male.iff",
 				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
-				"object/creature/player/zabrak_female.iff" },
+				"object/creature/player/zabrak_female.iff",
+				"object/mobile/vendor/aqualish_female.iff",
+				"object/mobile/vendor/aqualish_male.iff",
+				"object/mobile/vendor/bith_female.iff",
+				"object/mobile/vendor/bith_male.iff",
+				"object/mobile/vendor/bothan_female.iff",
+				"object/mobile/vendor/bothan_male.iff",
+				"object/mobile/vendor/devaronian_male.iff",
+				"object/mobile/vendor/gran_male.iff",
+				"object/mobile/vendor/human_female.iff",
+				"object/mobile/vendor/human_male.iff",
+				"object/mobile/vendor/ishi_tib_male.iff",
+				"object/mobile/vendor/ithorian_female.iff",
+				"object/mobile/vendor/ithorian_male.iff",
+				"object/mobile/vendor/moncal_female.iff",
+				"object/mobile/vendor/moncal_male.iff",
+				"object/mobile/vendor/nikto_male.iff",
+				"object/mobile/vendor/quarren_male.iff",
+				"object/mobile/vendor/rodian_female.iff",
+				"object/mobile/vendor/rodian_male.iff",
+				"object/mobile/vendor/sullustan_female.iff",
+				"object/mobile/vendor/sullustan_male.iff",
+				"object/mobile/vendor/trandoshan_female.iff",
+				"object/mobile/vendor/trandoshan_male.iff",
+				"object/mobile/vendor/twilek_female.iff",
+				"object/mobile/vendor/twilek_male.iff",
+				"object/mobile/vendor/weequay_male.iff",
+				"object/mobile/vendor/wookiee_female.iff",
+				"object/mobile/vendor/wookiee_male.iff",
+				"object/mobile/vendor/zabrak_female.iff",
+				"object/mobile/vendor/zabrak_male.iff" },
+
+	
+	-- Damage types in WeaponObject
+	vulnerability = STUN,
+	specialResists = LIGHTSABER,
+
+	-- These are default Blue Frog stats
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
+
+	-- LIGHT, MEDIUM, HEAVY
+	rating = LIGHT,
+
+	kinetic = 15,
+	energy = 15,
+	electricity = 15,
+	stun = 15,
+	blast = 15,
+	heat = 15,
+	cold = 15,
+	acid = 15,
+	lightSaber = 15,
+
+	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
+	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
+	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_resistance", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
+	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
+	experimentalMin = {0, 0, 0, 1000, 5, 30000, 219, 66, 16, 1, 16, 5, 0},
+	experimentalMax = {0, 0, 0, 1000, 50, 50000, 131, 39, 9, 1, 16, 50, 0},
+	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 10, 0},
+	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
+
+
 
 ObjectTemplates:addTemplate(object_tangible_wearables_cybernetic_s01_cybernetic_s01_torso, "object/tangible/wearables/cybernetic/s01/cybernetic_s01_torso.iff")

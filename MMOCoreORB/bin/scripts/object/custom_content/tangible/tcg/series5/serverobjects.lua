@@ -37,4 +37,3 @@ includeFile("custom_content/tangible/tcg/series5/vehicle_deed_air2_swoop_speeder
 includeFile("custom_content/tangible/tcg/series5/vehicle_deed_fg_8t8_podracer.lua")
 includeFile("custom_content/tangible/tcg/series5/vehicle_deed_xj6_air_speeder.lua")
 includeFile("custom_content/tangible/tcg/series5/wearable_ceremonial_travel_headdress.lua")
-
