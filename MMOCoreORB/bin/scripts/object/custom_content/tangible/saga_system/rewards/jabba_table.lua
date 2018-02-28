@@ -1,5 +1,0 @@
-object_tangible_saga_system_rewards_jabba_table = object_tangible_saga_system_rewards_shared_jabba_table:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_saga_system_rewards_jabba_table, "object/tangible/saga_system/rewards/jabba_table.iff")
