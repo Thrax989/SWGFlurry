@@ -1,0 +1,5 @@
+object_tangible_component_armor_standard_armor_layer_cold = object_tangible_component_armor_shared_standard_armor_layer_cold:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_armor_standard_armor_layer_cold, "object/tangible/component/armor/standard_armor_layer_cold.iff")

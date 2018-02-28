@@ -1,0 +1,5 @@
+object_tangible_gcw_static_base_control_terminal = object_tangible_gcw_static_base_shared_control_terminal:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_static_base_control_terminal, "object/tangible/gcw/static_base/control_terminal.iff")

@@ -1,0 +1,5 @@
+object_tangible_component_clothing_clasp_heavy_duty_prison_guard = object_tangible_component_clothing_shared_clasp_heavy_duty_prison_guard:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_clothing_clasp_heavy_duty_prison_guard, "object/tangible/component/clothing/clasp_heavy_duty_prison_guard.iff")

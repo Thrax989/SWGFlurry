@@ -1,0 +1,8 @@
+includeFile("custom_content/tangible/component/clothing/cargo_pocket_prisoner_jumpsuit.lua")
+includeFile("custom_content/tangible/component/clothing/cargo_pocket_prison_guard.lua")
+includeFile("custom_content/tangible/component/clothing/clasp_heavy_duty_prison_guard.lua")
+includeFile("custom_content/tangible/component/clothing/fiberplast_panel_prison_guard.lua")
+includeFile("custom_content/tangible/component/clothing/leather_prison_guard.lua")
+includeFile("custom_content/tangible/component/clothing/metal_fasteners_prisoner_jumpsuit.lua")
+includeFile("custom_content/tangible/component/clothing/synthetic_cloth_prisoner_jumpsuit.lua")
+includeFile("custom_content/tangible/component/clothing/trim_outbreak_prison_guard_jacket.lua")

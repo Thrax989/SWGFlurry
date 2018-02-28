@@ -7,7 +7,7 @@ includeFile("custom_content/tangible/furniture/house_cleanup/xeno_table.lua")
 includeFile("custom_content/tangible/furniture/house_cleanup/cts_corbantis_box.lua")
 includeFile("custom_content/tangible/furniture/house_cleanup/cts_corbantis_box_unrestricted.lua")
 includeFile("custom_content/tangible/furniture/house_cleanup/cts_corbantis_painting.lua")
-includeFile("custom_content/tangible/furniture/house_cleanup/cts_early_settler_painting.lua") -- APT Error
+includeFile("custom_content/tangible/furniture/house_cleanup/cts_early_settler_painting.lua")
 includeFile("custom_content/tangible/furniture/house_cleanup/cts_galaxy_painting.lua")
 includeFile("custom_content/tangible/furniture/house_cleanup/cts_greeter_box.lua")
 includeFile("custom_content/tangible/furniture/house_cleanup/cts_infinity_box.lua")
@@ -44,8 +44,8 @@ includeFile("custom_content/tangible/furniture/house_cleanup/cts_wanderhome_box.
 includeFile("custom_content/tangible/furniture/house_cleanup/cts_wanderhome_box_unrestricted.lua")
 includeFile("custom_content/tangible/furniture/house_cleanup/cts_wanderhome_painting.lua")
 includeFile("custom_content/tangible/furniture/house_cleanup/emperor_chair.lua")
-includeFile("custom_content/tangible/furniture/house_cleanup/emperor_desk.lua") -- Token Error
-includeFile("custom_content/tangible/furniture/house_cleanup/emperor_lamp.lua") -- Token Error
+includeFile("custom_content/tangible/furniture/house_cleanup/emperor_desk.lua")
+includeFile("custom_content/tangible/furniture/house_cleanup/emperor_lamp.lua")
 includeFile("custom_content/tangible/furniture/house_cleanup/sarlacc_base_s01.lua")
 includeFile("custom_content/tangible/furniture/house_cleanup/sarlacc_base_s02.lua")
 includeFile("custom_content/tangible/furniture/house_cleanup/sarlacc_mini_s01.lua")

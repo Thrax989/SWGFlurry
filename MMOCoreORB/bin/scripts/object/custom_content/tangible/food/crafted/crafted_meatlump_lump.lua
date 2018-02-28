@@ -1,0 +1,5 @@
+object_tangible_food_crafted_crafted_meatlump_lump = object_tangible_food_crafted_shared_crafted_meatlump_lump:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_food_crafted_crafted_meatlump_lump, "object/tangible/food/crafted/crafted_meatlump_lump.iff")
