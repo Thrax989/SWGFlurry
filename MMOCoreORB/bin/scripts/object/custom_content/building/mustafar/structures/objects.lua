@@ -3,7 +3,7 @@ object_building_mustafar_structures_shared_droid_factory_exterior_door = SharedB
 }
 ObjectTemplates:addClientTemplate(object_building_mustafar_structures_shared_droid_factory_exterior_door, "object/building/mustafar/structures/shared_droid_factory_exterior_door.iff")
 --**********************************************************************************************************
-object_building_mustafar_structures_shared_droid_factory_interior_door = SharedTangibleObjectTemplate:new {
+object_building_mustafar_structures_shared_droid_factory_interior_door = SharedStaticObjectTemplate:new {
 	clientTemplateFileName = "object/building/mustafar/structures/shared_droid_factory_interior_door.iff"
 }
 ObjectTemplates:addClientTemplate(object_building_mustafar_structures_shared_droid_factory_interior_door, "object/building/mustafar/structures/shared_droid_factory_interior_door.iff")

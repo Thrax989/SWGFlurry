@@ -139,13 +139,3 @@ object_building_poi_shared_rebel_snow_camp = SharedBuildingObjectTemplate:new {
 }
 ObjectTemplates:addClientTemplate(object_building_poi_shared_rebel_snow_camp, "object/building/poi/shared_rebel_snow_camp.iff")
 --*************************************************************************************************************************************
-object_building_poi_shared_blank_large_area = SharedBuildingObjectTemplate:new {
-	clientTemplateFileName = "object/building/poi/shared_blank_large_area.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_poi_shared_blank_large_area, "object/building/poi/shared_blank_large_area.iff")
---*************************************************************************************************************************************
-object_building_poi_shared_blank_larger_area = SharedBuildingObjectTemplate:new {
-	clientTemplateFileName = "object/building/poi/shared_blank_larger_area.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_poi_shared_blank_larger_area, "object/building/poi/shared_blank_larger_area.iff")
---*************************************************************************************************************************************

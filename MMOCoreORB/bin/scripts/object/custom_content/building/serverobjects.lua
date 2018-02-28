@@ -12,9 +12,6 @@ includeFile("custom_content/building/player/serverobjects.lua")
 includeFile("custom_content/building/poi/serverobjects.lua")
 includeFile("custom_content/building/restuss/serverobjects.lua")
 includeFile("custom_content/building/tatooine/serverobjects.lua")
-includeFile("custom_content/building/coruscant/serverobjects.lua")
-includeFile("custom_content/building/moncal/serverobjects.lua")
-includeFile("custom_content/building/kuat/serverobjects.lua")
 --includeFile("custom_content/building/test/serverobjects.lua")
 
 -- Root Folder

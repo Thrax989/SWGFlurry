@@ -42,7 +42,8 @@
 
 
 object_building_heroic_exar_kun_tomb = object_building_heroic_shared_exar_kun_tomb:new {
-	
+
+
 	customName = "Unknown",
 	spawningPoints = {
             { x = -12.6, z = 0.2, y = -122.4, ow = 0.806, ox = 0, oz = 0, oy = -0.592, cellid = 1 },

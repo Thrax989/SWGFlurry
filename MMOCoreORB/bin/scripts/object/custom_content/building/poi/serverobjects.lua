@@ -27,7 +27,4 @@ includeFile("custom_content/building/poi/player_camp_s06.lua")
 includeFile("custom_content/building/poi/player_camp_shuttle_beacon.lua")
 includeFile("custom_content/building/poi/snowtrooper_camp.lua")
 includeFile("custom_content/building/poi/rebel_snow_camp.lua")
-includeFile("custom_content/building/poi/blank_large_area.lua")
-includeFile("custom_content/building/poi/blank_larger_area.lua")
-
 
