@@ -101,6 +101,11 @@
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackModuleDataComponent.h"
 #include "server/zone/objects/player/badges/Badge.h"
 
+/*  Custom Player BH system By :TOXIC*/
+#include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
+#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
+
 int PlayerManagerImplementation::MAX_CHAR_ONLINE_COUNT = 3;
 
 PlayerManagerImplementation::PlayerManagerImplementation(ZoneServer* zoneServer, ZoneProcessServer* impl) :
@@ -763,7 +768,19 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		if(ghost->hasPvpTef()) {
 			ghost->schedulePvpTefRemovalTask(true, true);
 		}
+	/* CUSTOM BH SYSTEM By:TOXIC*/
+	if (attacker->isPlayerCreature() && attacker != player) {
+		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		box->setPromptTitle("You have been slain...");
+		box->setPromptText("Would you like to pay 25,000 credits to place a bounty on your killers head?");
+		box->setCancelButton(true, "@no");
+		box->setOkButton(true, "@yes");
+		box->setUsingObject(attacker);
+		box->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
+		player->getPlayerObject()->addSuiBox(box);
+		player->sendMessage(box->generateMessage());
 	}
+}
 
 
 	if (attacker->getFaction() != 0) {
