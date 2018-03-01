@@ -1,7 +1,7 @@
 /*--------------------------------------
-*--   Creator : TOXIC
-*--   Date : 03/01/2018
-*/--------------------------------------
+   Creator : TOXIC
+   Date : 03/01/2018
+--------------------------------------*/
 
 #ifndef PLAYER_BH_SUI_CALLBACK
 #define PLAYER_BH_SUI_CALLBACK
