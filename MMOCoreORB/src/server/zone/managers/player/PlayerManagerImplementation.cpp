@@ -780,7 +780,12 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 			if (attackerCreature->isPlayerCreature()) {
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
-					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
+					//group split for pvp
+					group = attackerCreature->getGroup();
+					if (group != NULL)
+						groupSize = group->getGroupSize();
+
+					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player,groupSize);
 				}
 			}
 		}
