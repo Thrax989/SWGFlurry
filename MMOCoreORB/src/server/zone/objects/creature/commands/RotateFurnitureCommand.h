@@ -39,7 +39,7 @@ public:
 
 			dir = dir.toLowerCase();
 
-			if (dir != "left" && dir != "right" && dir != "yaw" && dir != "roll" && dir != "pitch" && dir !="reset")
+			if (dir != "left" && dir != "right" && dir != "yaw" && dir != "roll" && dir != "pitch" && dir != "reset")
 				throw Exception();
 
 		} catch (Exception& e) {
