@@ -283,17 +283,42 @@ int PlayerObjectImplementation::calculateBhReward() {
 	int maxReward = 250000; // Maximum reward for a player bounty
 
 	int reward = minReward;
+	int skillPoints = 0;
+	int frsSkills = 0;
+	int frsValue = 0;
 
-	int skillPoints = getSpentJediSkillPoints();
+	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
+	int bountyWorth = creature->getScreenPlayState("deathBounty") * 25000;
 
-	reward = skillPoints * 1000;
+	if (ghost != NULL) {
+		skillPoints = ghost->getSpentJediSkillPoints() + ghost->numSpecificSkills(creature, "force_sensitive");
+		frsSkills = ghost->numSpecificSkills(creature, "force_rank_");
+		if (frsSkills >= 5 && frsSkills < 8) {
+			frsValue = frsSkills * 25000;
+		} else if (frsSkills >= 8) {
+			frsValue = frsSkills * 50000;
+		} else {
+			frsValue = frsSkills * 15000;
+		}
 
-	if (reward < minReward)
-		reward = minReward;
-	else if (reward > maxReward)
-		reward = maxReward;
+		reward = skillPoints * 1000;
 
-	return reward;
+		if (reward < minReward) {
+			reward = minReward;
+		}
+		else if (reward > maxReward) {
+			reward = maxReward;
+		}
+	}
+	StringBuffer playerBountyInfo;
+	playerBountyInfo
+	<< creature->getFirstName()
+	<< " has been added to the Bounty Terminal with "
+	<< skillPoints << " Jedi Skill Points and "
+	<< frsSkills << " FRS Skills and "
+	<< bountyWorth << " Player Bounty Worth";
+	//info(playerBountyInfo, true);
+	return reward + bountyWorth + frsValue;
 }
 
 void PlayerObjectImplementation::sendBaselinesTo(SceneObject* player) {
