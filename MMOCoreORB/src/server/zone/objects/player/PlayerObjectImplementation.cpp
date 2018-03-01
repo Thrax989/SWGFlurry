@@ -1306,39 +1306,9 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	MissionManager* missionManager = zoneServer->getMissionManager();
 
-	// Check for force Title without past FRS
-	if (playerCreature->getScreenPlayState("jedi_FRS") == 0 && playerCreature->hasSkill("force_title_jedi_rank_03")) {
-		SkillManager::instance()->surrenderSkill("force_title_jedi_master", playerCreature, true);
-		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_04", playerCreature, true);
-		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_03", playerCreature, true);
-	}
-	//Check for Light side FRS without being a rebel
-	if (playerCreature->hasSkill("force_rank_light_novice") && !ghost->isPrivileged() && (playerCreature->getFaction() != 370444368 || playerCreature->getScreenPlayState("jedi_FRS") != 4)) {
-		while (numSpecificSkills(playerCreature, "force_rank_light_") > 0) {
-			for (int i = 0; i < skillList->size(); ++i) {
-				String skillName = skillList->get(i)->getSkillName();
-				if(skillName.contains("force_rank_light_")) {
-					SkillManager::instance()->surrenderSkill(skillName, playerCreature, true);
-				}
-			}
-		}
-		ghost->setJediState(2);
-	}
-	//Check for Dark Side FRS without being Imperial
-	if (playerCreature->hasSkill("force_rank_dark_novice") && !ghost->isPrivileged() && (playerCreature->getFaction() != 3679112276 || playerCreature->getScreenPlayState("jedi_FRS") != 8)) {
-		while (numSpecificSkills(playerCreature, "force_rank_dark_") > 0) {
-			for (int i = 0; i < skillList->size(); ++i) {
-				String skillName = skillList->get(i)->getSkillName();
-				if(skillName.contains("force_rank_dark_")) {
-					SkillManager::instance()->surrenderSkill(skillName, playerCreature, true);
-				}
-			}
-		}
-		ghost->setJediState(2);
-	}
 	//Check for FRS Jedi without overt
-	if ((playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) && !ghost->isPrivileged()) {
-		ghost->setFactionStatus(2);
+	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
+		playerCreature->setFactionStatus(2);
 	}
 
 	if (missionManager != NULL && playerCreature->hasSkill("force_title_jedi_rank_02")) {
@@ -2642,4 +2612,3 @@ void PlayerObjectImplementation::doFieldFactionChange(int newStatus) {
 bool PlayerObjectImplementation::isIgnoring(const String& name) {
 	return !name.isEmpty() && ignoreList.contains(name);
 }
-
