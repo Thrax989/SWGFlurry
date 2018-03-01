@@ -45,7 +45,7 @@ public:
 		} catch (Exception& e) {
 			creature->sendSystemMessage("Standard Format: /rotateFurniture <LEFT/RIGHT> <degrees>. Degrees can be 1 to 180 when using this format.");
  			creature->sendSystemMessage("Enhanced Format: /rotateFurniture <YAW/PITCH/ROLL> <degrees>. Degrees can be -360 to 360 when using this format.");
- 		creature->sendSystemMessage("Reset Rotation to Defaults: /rotateFurniture reset 1");
+ 			creature->sendSystemMessage("Reset Rotation to Defaults: /rotateFurniture reset 1");
 
 		return INVALIDPARAMETERS;
 
