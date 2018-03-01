@@ -38,7 +38,7 @@ public:
 	 */
 	void awardFactionStanding(CreatureObject* player, const String& factionName, int level);
 
-	void awardPvpFactionPoints(TangibleObject* killer, CreatureObject* destructedObject);
+	void awardPvpFactionPoints(TangibleObject* killer, CreatureObject* destructedObject, int numberCombatants);
 
 	/**
 	 * Gets a list of enemy factions to the faction passed to the method.
@@ -61,7 +61,7 @@ public:
 	int getFactionPointsCap(int rank);
 
 	bool isHighestRank(int rank) {
-		return rank >= factionRanks.getCount() - 1 || rank >= 21;
+		return rank >= factionRanks.getCount() - 1 || rank >= 15;
 	}
 
 	bool isFaction(const String& faction);
