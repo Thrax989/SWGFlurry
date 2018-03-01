@@ -1608,21 +1608,43 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 			int curExp = ghost->getExperience("force_rank_xp");
 			if (curExp < -15000) {
 				if (player->hasSkill("force_rank_light_novice")) {
-
+					while (player->hasSkill("force_rank_light_novice")) {
 						for (int i = 0; i < skillList->size(); ++i) {
 							Skill* skill = skillList->get(i);
 							if (skill->getSkillName().indexOf("force_rank_") != -1 && skill->getSkillName().indexOf("force_rank_light_novice") == -1) {
 								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
 							}
 						}
+					}
+					if (player->getScreenPlayState("jedi_FRS") == 4) {
+						player->setScreenPlayState("jedi_FRS", 16);
+					}
+					if (ghost->getJediState() > 2) {
+						ghost->setJediState(2);
+					}
+					String playerName = player->getFirstName();
+					StringBuffer zBroadcast;
+					zBroadcast << "\\#ffb90f" << playerName << " has left the \\#22b7f6Jedi Order!";
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 				} else if (player->hasSkill("force_rank_dark_novice")) {
+					while (player->hasSkill("force_rank_dark_novice")) {
 						for (int i = 0; i < skillList->size(); ++i) {
 							Skill* skill = skillList->get(i);
 							if (skill->getSkillName().indexOf("force_rank_") != -1 && skill->getSkillName().indexOf("force_rank_light_novice") == -1)  {
 								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
 							}
 						}
-
+					}
+					if (player->getScreenPlayState("jedi_FRS") == 8) {
+						player->setScreenPlayState("jedi_FRS", 16);
+					}
+					if (ghost->getJediState() > 2) {
+						ghost->setJediState(2);
+					}
+					String playerName = player->getFirstName();
+					StringBuffer zBroadcast;
+					zBroadcast << "\\#ffb90f" << playerName << " has left the \\#e51b1bSith Order!";
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 				}
 			}
 			error("frsSkillCheck Current FRSXP = " + String::valueOf(curExp));
