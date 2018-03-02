@@ -1612,7 +1612,7 @@ void PlayerObjectImplementation::doRecovery(int latency) {
 	}
 
 	CreatureObject* creature = dynamic_cast<CreatureObject*>(parent.get().get());
-
+	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 	if (creature == NULL)
 		return;
 
