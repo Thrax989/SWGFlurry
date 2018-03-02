@@ -430,12 +430,6 @@ bool SkillManager::surrenderSkill(const String& skillName, CreatureObject* creat
 		if((skillName == "force_title_jedi_rank_03" && creature->hasSkill("force_rank_light_novice") && creature->getScreenPlayState("jedi_FRS") == 4) || (skillName == "force_title_jedi_rank_03" && creature->hasSkill("force_rank_dark_novice") && creature->getScreenPlayState("jedi_FRS") == 8)) {
 			creature->sendSystemMessage("You must leave the FRS before you are able to drop Knight Title");
 			return false;
-		}
-		//Remove Set JediState 2 after leaving the FRS
-		if(skillName == "force_rank_light_novice" || skillName == "force_rank_dark_novice" ) {
-			ghost->setJediState(2);
-			if (creature->getScreenPlayState("jedi_FRS") > 0) {
-				creature->setScreenPlayState("jedi_FRS", 16);
 			}
 		}
 	}
