@@ -51,7 +51,8 @@ void run(CreatureObject* creature, SuiBox* suiBox, uint32 eventIndex, Vector<Uni
 				StringBuffer zBroadcast;
 				zBroadcast << "\\#ffb90f" << playerName << " is now on the bounty hunter \\#e51b1bTerminal!";
 				player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-				VisibilityManager::instance()->increaseVisibility(player, 8000);
+				VisibilityManager::instance()->increaseVisibility(player, 20000);
+				VisibilityManager::instance()->addToVisibilityList(player);
 			}
 			else creature->sendSystemMessage("You have insufficient funds!");
 		} catch(Exception& e) { }
