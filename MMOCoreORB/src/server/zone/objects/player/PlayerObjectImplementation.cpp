@@ -1354,6 +1354,20 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 }
 
+int PlayerObjectImplementation::numSpecificSkills(CreatureObject* creature, const String& reqSkillName) {
+	SkillList* skills =  creature->getSkillList();
+	int numSkills = 0;
+
+	for(int i = 0; i < skills->size(); ++i) {
+		String skillName = skills->get(i)->getSkillName();
+		if(skillName.contains(reqSkillName)) {
+			numSkills++;
+		}
+	}
+
+	return numSkills;
+}
+
 void PlayerObjectImplementation::notifyOffline() {
 	//info("notifyOffline", true);
 	ManagedReference<ChatManager*> chatManager = server->getChatManager();
