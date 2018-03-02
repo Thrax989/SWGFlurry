@@ -1337,8 +1337,8 @@ void PlayerObjectImplementation::notifyOnline() {
 		ghost->setJediState(2);
 	}
 	//Check for FRS Jedi without overt
-	if ((playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) && !ghost->isPrivileged()) {
-		ghost->setFactionStatus(2);
+	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
+		playerCreature->setFactionStatus(2);
 	}
 
 	if (missionManager != NULL && playerCreature->hasSkill("force_title_jedi_rank_02")) {
