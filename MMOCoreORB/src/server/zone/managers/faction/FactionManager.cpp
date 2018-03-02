@@ -10,11 +10,9 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "templates/manager/TemplateManager.h"
 #include "server/zone/managers/loot/LootManager.h"
-#include "server/zone/packets/player/PlayMusicMessage.h"
-#include "server/chat/ChatManager.h"
-#include "server/zone/managers/frs/FrsManager.h"
-#include "server/zone/objects/group/GroupObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
+#include "server/chat/ChatManager.h"
+#include "server/zone/packets/player/PlayMusicMessage.h"
 
 
 FactionManager::FactionManager() {
@@ -159,12 +157,7 @@ void FactionManager::awardFactionStanding(CreatureObject* player, const String& 
 }
 
 
-void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObject* destructedObject, int numberCombatants = 1) {
-	int killerFrsXp = 0;
-	int victimFrsXp	= 0;
-	ManagedReference<GroupObject*> group;
-	float contribution = 1;
-
+void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObject* destructedObject) {
 	if (killer->isPlayerCreature() && destructedObject->isPlayerCreature()) {
 		CreatureObject* killerCreature = cast<CreatureObject*>(killer);
 		ManagedReference<PlayerObject*> ghost = killerCreature->getPlayerObject();
@@ -178,8 +171,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 		String playerName = destructedObject->getFirstName();
 		String killerName = killerCreature->getFirstName();
 		StringBuffer zBroadcast;
-
-		FrsManager* frsManager = killerCreature->getZoneServer()->getFrsManager();
+		
 
 		if (killer->isRebel() && destructedObject->isImperial()) {
 			ghost->increaseFactionStanding("rebel", 30);
@@ -197,18 +189,19 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			//lootManager->createLoot(inventory, "armor_attachments", 300);//, playerName);
 			ghost->decreaseFactionStanding("imperial", 45);
 			killedGhost->decreaseFactionStanding("imperial", 45);
-
+			
 			if (killerCreature->hasSkill("force_rank_light_novice") && destructedObject->hasSkill("force_rank_dark_novice")) {
-				zBroadcast << "\\#00e604" << "Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#e60000 Sith " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
-			} else if (killerCreature->hasSkill("force_rank_light_novice") && destructedObject->hasSkill("force_title_jedi_rank_02")) {
-				zBroadcast << "\\#00e604" << "Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#e60000 Sith " << "\\#00bfff" << playerName << "\\#ffd700 in the GCW";
+				playerManager->awardExperience(killerCreature, "force_rank_xp", 5000);
+				playerManager->awardExperience(destructedObject, "force_rank_xp", -5000);
+				StringIdChatParameter message("base_player","prose_revoke_xp");
+				message.setDI(-5000);
+				message.setTO("exp_n", "force_rank_xp");
+				destructedObject->sendSystemMessage(message);
+				zBroadcast << "\\#00e604" << "Light Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#e60000 Dark Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
+			}else{
+				zBroadcast << "\\#7133FF Imperial " <<"\\#00e604" << playerName << " \\#e60000 was slain in the GCW by " <<"\\#FF9933 Rebel " << "\\#00cc99" << killerName;
 			}
-			else {
-				zBroadcast << "\\#00e604" << playerName << " \\#e60000 was slain in the GCW by " << "\\#00cc99" << killerName;
-			}
-
-
-			killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		} else if (killer->isImperial() && destructedObject->isRebel()) {
 			ghost->increaseFactionStanding("imperial", 30);
 			killer->playEffect("clienteffect/holoemote_imperial.cef", "head");
@@ -226,72 +219,18 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			ghost->decreaseFactionStanding("rebel", 45);
 			killedGhost->decreaseFactionStanding("rebel", 45);
 			if (killerCreature->hasSkill("force_rank_dark_novice") && destructedObject->hasSkill("force_rank_light_novice")) {
-				zBroadcast << "\\#e60000" << "Sith " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#00e604 Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
-			} else if (killerCreature->hasSkill("force_rank_dark_novice") && destructedObject->hasSkill("force_title_jedi_rank_02")){
-				zBroadcast << "\\#e60000" << "Sith " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#00e604 Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the GCW";
+				playerManager->awardExperience(killerCreature, "force_rank_xp", 5000);
+				playerManager->awardExperience(destructedObject, "force_rank_xp", -5000);
+				StringIdChatParameter message("base_player","prose_revoke_xp");
+				message.setDI(-5000);
+				message.setTO("exp_n", "force_rank_xp");
+				destructedObject->sendSystemMessage(message);
+				zBroadcast << "\\#e60000" << "Dark Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#00e604 Light Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
+			}else{
+				zBroadcast << "\\#FF9933 Rebel " << "\\#00e604" << playerName << " \\#e60000 was slain in the GCW by " << "\\#7133FF Imperial "<< "\\#00cc99" << killerName;
 			}
-			else {
-				zBroadcast << "\\#00e604" << playerName << " \\#e60000 was slain in the GCW by " << "\\#00cc99" << killerName;
-			}
-
-			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		}
-			if (killerCreature->hasSkill("force_rank_light_novice") || killerCreature->hasSkill("force_rank_dark_novice") || killerCreature->hasSkill("combat_bountyhunter_investigation_03")) {
-
-				group = killerCreature->getGroup();
-				if (group != NULL){
-					for (int x=0; x< group->getGroupSize(); x++){
-						ManagedReference<CreatureObject*> groupMember = group->getGroupMember(x);
-
-						if (groupMember == killerCreature)
-							continue;
-
-						if ((groupMember->hasSkill("force_rank_light_novice") && (destructedObject->hasSkill("force_rank_dark_novice") || destructedObject->hasSkill("combat_bountyhunter_investigation_03")))
-						|| (groupMember->hasSkill("force_rank_dark_novice") && (destructedObject->hasSkill("force_rank_light_novice") || destructedObject->hasSkill("combat_bountyhunter_investigation_03"))))
-							if (killedGhost->hasOnKillerList(groupMember->getObjectID()))
-								contribution++;
-					}
-				}
-				int groupFrsXp = 0;
-
-				if (group != NULL){
-					for (int x=0; x< group->getGroupSize(); x++){
-						ManagedReference<CreatureObject*> groupMember = group->getGroupMember(x);
-
-						if ((groupMember->hasSkill("force_rank_light_novice") && (destructedObject->hasSkill("force_rank_dark_novice") || destructedObject->hasSkill("combat_bountyhunter_investigation_03")))
-						|| (groupMember->hasSkill("force_rank_dark_novice") && (destructedObject->hasSkill("force_rank_light_novice") || destructedObject->hasSkill("combat_bountyhunter_investigation_03")))){
-
-							if (groupMember == killerCreature)
-								continue;
-
-							if (!groupMember->isInRange( killedGhost, 256.0 )){
-								error("group member: " + groupMember->getFirstName() + " Is not in range to recieve FRS XP");
-								continue;
-							}
-							Locker glocker(groupMember);
-							groupFrsXp = frsManager->calculatePvpExperienceChange(groupMember,destructedObject,1, false);
-							error("FRS Kill, Group member: " + String::valueOf(x) + " Killer XP =" + String::valueOf(killerFrsXp));
- 							frsManager->adjustFrsExperience(groupMember, groupFrsXp/contribution);
-							glocker.release();
-						}
-					}
-				}
-
-				killerFrsXp = frsManager->calculatePvpExperienceChange(killerCreature,destructedObject,1, false);
-				int modifiedKillerFrs = killerFrsXp/contribution;
-				error("FRS KILL, KILLER primary: Killer XP =" + String::valueOf(modifiedKillerFrs));
-				Locker locker(killerCreature);
-				frsManager->adjustFrsExperience(killerCreature, modifiedKillerFrs);
-
-				if (destructedObject->hasSkill("force_rank_dark_novice") || destructedObject->hasSkill("force_rank_light_novice")){
-					victimFrsXp = frsManager->calculatePvpExperienceChange(destructedObject,killerCreature,contribution, true);
-					Locker vlocker(destructedObject);
-					frsManager->adjustFrsExperience(destructedObject, killerFrsXp/contribution);
-				}
-				error("FRS Death, Killer XP =" + String::valueOf(killerFrsXp));
-				error("FRS Death, Victim XP =" + String::valueOf(victimFrsXp));
-
-			}
 	}
 }
 

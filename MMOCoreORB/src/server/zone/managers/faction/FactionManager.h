@@ -38,7 +38,7 @@ public:
 	 */
 	void awardFactionStanding(CreatureObject* player, const String& factionName, int level);
 
-	void awardPvpFactionPoints(TangibleObject* killer, CreatureObject* destructedObject, int numberCombatants);
+	void awardPvpFactionPoints(TangibleObject* killer, CreatureObject* destructedObject);
 
 	/**
 	 * Gets a list of enemy factions to the faction passed to the method.
