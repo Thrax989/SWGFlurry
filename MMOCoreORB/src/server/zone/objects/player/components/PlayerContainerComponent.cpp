@@ -82,10 +82,14 @@ int PlayerContainerComponent::canAddObject(SceneObject* sceneObject, SceneObject
 
 					if (!hasSkill) {
 						errorDescription = "@error_message:insufficient_skill"; // You lack the skill to use this item.
-
 						return TransferErrorCode::PLAYERUSEMASKERROR;
 					}
 				}
+				if ((wearable->getMaxCondition() - wearable->getConditionDamage()) <= 0) {
+					errorDescription = "This object has been damaged to the point of uselessness.";
+						return TransferErrorCode::PLAYERUSEMASKERROR;
+				}
+				
 			}
 		}
 

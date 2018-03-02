@@ -589,18 +589,21 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					int maxXpLoss = -40000;//bh kill adds 100,000 xp loss for jedi on top of cloning xp loss
 
 					VisibilityManager::instance()->clearVisibility(target);
-					int xpLoss = mission->getRewardCredits() * -2;
+					target->setScreenPlayState("deathBounty", 0);
+					if (target->hasSkill("force_title_jedi_rank_01")) {
+						int xpLoss = mission->getRewardCredits() * -2;
 
-					if (xpLoss > minXpLoss)
-						xpLoss = minXpLoss;
-					else if (xpLoss < maxXpLoss)
-						xpLoss = maxXpLoss;
+						if (xpLoss > minXpLoss)
+							xpLoss = minXpLoss;
+						else if (xpLoss < maxXpLoss)
+							xpLoss = maxXpLoss;
 
-					owner->getZoneServer()->getPlayerManager()->awardExperience(target, "jedi_general", xpLoss, true);
-					StringIdChatParameter message("base_player","prose_revoke_xp");
-					message.setDI(xpLoss * -1);
-					message.setTO("exp_n", "jedi_general");
-					target->sendSystemMessage(message);
+						owner->getZoneServer()->getPlayerManager()->awardExperience(target, "jedi_general", xpLoss, true);
+						StringIdChatParameter message("base_player","prose_revoke_xp");
+						message.setDI(xpLoss * -1);
+						message.setTO("exp_n", "jedi_general");
+						target->sendSystemMessage(message);
+					}
 				}
 			}
 

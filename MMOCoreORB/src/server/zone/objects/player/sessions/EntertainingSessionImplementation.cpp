@@ -103,7 +103,7 @@ void EntertainingSessionImplementation::doEntertainerPatronEffects() {
 			try {
 				//**VERIFY THE PATRON IS NOT ON THE DENY SERVICE LIST
 
-				if (creo->isInRange(patron, 10.0f)) {
+				if (creo->isInRange(patron, 20.0f)) {
 					healWounds(patron, woundHeal*(flourishCount+1), shockHeal*(flourishCount+1));
 					increaseEntertainerBuff(patron);
 
@@ -279,6 +279,8 @@ void EntertainingSessionImplementation::doPerformanceAction() {
 	}
 
 	int actionDrain = performance->getActionPointsPerLoop() - (int)(entertainer->getHAM(CreatureAttribute::QUICKNESS)/35.f);
+	
+	actionDrain = (int)round(actionDrain / 3); // Help non-human entertainers be a thing again!
 
 	if (entertainer->getHAM(CreatureAttribute::ACTION) <= actionDrain) {
 		if (isDancing()) {
@@ -589,8 +591,7 @@ void EntertainingSessionImplementation::doFlourish(int flourishNumber, bool gran
 
 	float baseActionDrain = performance->getActionPointsPerLoop() - (int)(entertainer->getHAM(CreatureAttribute::QUICKNESS)/35.f);
 
-	//float baseActionDrain = -40 + (getQuickness() / 37.5);
-	float flourishActionDrain = baseActionDrain / 2.0;
+	float flourishActionDrain = baseActionDrain / 5.0; // Help non-human entertainers be a thing again!
 
 	int actionDrain = (int)round((flourishActionDrain * 10 + 0.5) / 10.0); // Round to nearest dec for actual int cost
 
@@ -630,8 +631,8 @@ void EntertainingSessionImplementation::addEntertainerBuffDuration(CreatureObjec
 
 	buffDuration += duration;
 
-	if (buffDuration > (120.0f + (10.0f / 60.0f)) ) // 2hrs 10 seconds
-		buffDuration = (220.0f + (10.0f / 60.0f)); // 3hrs 10 seconds
+	if (buffDuration > (120.0f + (10.0f / 60.0f)) ) // 2 hrs 10 seconds
+		buffDuration = (210.0f); // 3 hours, 30 minutes
 
 	setEntertainerBuffDuration(creature, performanceType, buffDuration);
 }
@@ -654,6 +655,10 @@ void EntertainingSessionImplementation::addEntertainerBuffStrength(CreatureObjec
 
 	if(maxBuffStrength > 125.0f)
 		maxBuffStrength = 125.0f;	//cap at 125% power
+				
+	float citySpecStrength = entertainer->getSkillMod("private_spec_buff_mind");	
+	
+	maxBuffStrength += citySpecStrength;
 
 	float factionPerkStrength = entertainer->getSkillMod("private_faction_buff_mind");
 
@@ -908,6 +913,7 @@ void EntertainingSessionImplementation::activateEntertainerBuff(CreatureObject* 
 			return;
 
 		ManagedReference<PerformanceBuff*> oldBuff = NULL;
+
 		switch (performanceType){
 		case PerformanceType::MUSIC:
 		{
@@ -939,13 +945,9 @@ void EntertainingSessionImplementation::activateEntertainerBuff(CreatureObject* 
 			creature->addBuff(mindBuff);
 			break;
 		}
-		}
-
-
+		}	
 	} catch(Exception& e) {
-
 	}
-
 }
 
 void EntertainingSessionImplementation::updateEntertainerMissionStatus(bool entertaining, const int missionType) {

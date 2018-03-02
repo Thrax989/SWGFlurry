@@ -101,6 +101,11 @@
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackModuleDataComponent.h"
 #include "server/zone/objects/player/badges/Badge.h"
 
+/*  Custom Player BH system By :TOXIC*/
+#include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
+#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
+
 int PlayerManagerImplementation::MAX_CHAR_ONLINE_COUNT = 3;
 
 PlayerManagerImplementation::PlayerManagerImplementation(ZoneServer* zoneServer, ZoneProcessServer* impl) :
@@ -640,18 +645,13 @@ uint8 PlayerManagerImplementation::calculateIncapacitationTimer(CreatureObject* 
 	//Check for incap recovery food buff - overrides recovery time gate.
 	/*if (hasBuff(BuffCRC::FOOD_INCAP_RECOVERY)) {
 		Buff* buff = getBuff(BuffCRC::FOOD_INCAP_RECOVERY);
-
 		if (buff != NULL) {
 			float percent = buff->getSkillModifierValue("incap_recovery");
-
 			recoveryTime = round(recoveryTime * ((100.0f - percent) / 100.0f));
-
 			StfParameter* params = new StfParameter();
 			params->addDI(percent);
-
 			sendSystemMessage("combat_effects", "incap_recovery", params); //Incapacitation recovery time reduced by %DI%.
 			delete params;
-
 			removeBuff(buff);
 		}
 	}*/
@@ -734,6 +734,8 @@ int PlayerManagerImplementation::notifyDestruction(TangibleObject* destructor, T
 
 void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureObject* player, int typeofdeath, bool isCombatAction) {
 	StringIdChatParameter stringId;
+	ManagedReference<GroupObject*> group;
+	int groupSize = 1;
 
 	if (player->isRidingMount()) {
 		player->updateCooldownTimer("mount_dismount", 0);
@@ -766,7 +768,19 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		if(ghost->hasPvpTef()) {
 			ghost->schedulePvpTefRemovalTask(true, true);
 		}
+	/* CUSTOM BH SYSTEM By:TOXIC*/
+	if (attacker->isPlayerCreature() && attacker != player) {
+		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		box->setPromptTitle("You have been slain...");
+		box->setPromptText("Would you like to pay 25,000 credits to place a bounty on your killers head?");
+		box->setCancelButton(true, "@no");
+		box->setOkButton(true, "@yes");
+		box->setUsingObject(attacker);
+		box->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
+		player->getPlayerObject()->addSuiBox(box);
+		player->sendMessage(box->generateMessage());
 	}
+}
 
 
 	if (attacker->getFaction() != 0) {
@@ -1035,6 +1049,10 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::MIND, 100, true, false);
 		player->addShockWounds(100, true);
 	}
+
+	if (player->hasSkill("force_rank_dark_novice") || player->hasSkill("force_rank_light_novice")) {
+		player->setFactionStatus(2);
+	} 
 
 	if (player->getFactionStatus() != FactionStatus::ONLEAVE && cbot->getFacilityType() != CloningBuildingObjectTemplate::FACTION_IMPERIAL && cbot->getFacilityType() != CloningBuildingObjectTemplate::FACTION_REBEL && !player->hasSkill("force_title_jedi_rank_03"))
 		player->setFactionStatus(FactionStatus::ONLEAVE);
@@ -1568,7 +1586,6 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 	int xp = playerObject->addExperience(xpType, (int) ((((amount * speciesModifier) * localMultiplier) * perExpMulti) * globalExpMultiplier));
 
 	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
-
 	if (sendSystemMessage) {
 		if (xp > 0) {
 			StringIdChatParameter message("base_player","prose_grant_xp");
@@ -1583,7 +1600,123 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 		}
 	}
 
+	if (xpType == "force_rank_xp") {
+		if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
+			PlayerObject* ghost = player->getPlayerObject();
+			SkillList* skillList = player->getSkillList();
+			int curExp = ghost->getExperience("force_rank_xp");
+			if (curExp < -15000) {
+				if (player->hasSkill("force_rank_light_novice")) {
+					while (player->hasSkill("force_rank_light_novice")) {
+						for (int i = 0; i < skillList->size(); ++i) {
+							Skill* skill = skillList->get(i);
+							if (skill->getSkillName().indexOf("force_rank_") != -1 && skill->getSkillName().indexOf("force_rank_light_novice") == -1) {
+								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
+							}
+						}
+					}
+					if (player->getScreenPlayState("jedi_FRS") == 4) {
+						player->setScreenPlayState("jedi_FRS", 16);
+					}
+					if (ghost->getJediState() > 2) {
+						ghost->setJediState(2);
+					}
+					String playerName = player->getFirstName();
+					StringBuffer zBroadcast;
+					zBroadcast << "\\#ffb90f" << playerName << " has left the \\#22b7f6Jedi Order!";
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				} else if (player->hasSkill("force_rank_dark_novice")) {
+					while (player->hasSkill("force_rank_dark_novice")) {
+						for (int i = 0; i < skillList->size(); ++i) {
+							Skill* skill = skillList->get(i);
+							if (skill->getSkillName().indexOf("force_rank_") != -1 && skill->getSkillName().indexOf("force_rank_light_novice") == -1)  {
+								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
+							}
+						}
+					}
+					if (player->getScreenPlayState("jedi_FRS") == 8) {
+						player->setScreenPlayState("jedi_FRS", 16);
+					}
+					if (ghost->getJediState() > 2) {
+						ghost->setJediState(2);
+					}
+					String playerName = player->getFirstName();
+					StringBuffer zBroadcast;
+					zBroadcast << "\\#ffb90f" << playerName << " has left the \\#e51b1bSith Order!";
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				}
+			}
+			error("frsSkillCheck Current FRSXP = " + String::valueOf(curExp));
+			if (curExp < 10000) {
+				frsSkillCheck(player, "novice", "rank_01");
+			}
+			if (curExp >= 10000 && curExp < 20000) {
+				frsSkillCheck(player, "rank_01", "rank_02");
+			}
+			if (curExp >= 20000 && curExp < 30000) {
+				frsSkillCheck(player, "rank_02", "rank_03");
+			}
+			if (curExp >= 30000 && curExp < 40000) {
+				frsSkillCheck(player, "rank_03", "rank_04");
+			}
+			if (curExp >= 40000 && curExp < 60000) {
+				frsSkillCheck(player, "rank_04", "rank_05");
+			}
+			if (curExp >= 60000 && curExp < 80000) {
+				frsSkillCheck(player, "rank_05", "rank_06");
+			}
+			if (curExp >= 80000 && curExp < 100000) {
+				frsSkillCheck(player, "rank_06", "rank_07");
+			}
+			if (curExp >= 100000 && curExp < 150000) {
+				frsSkillCheck(player, "rank_07", "rank_08");
+			}
+			if (curExp >= 150000 && curExp < 200000) {
+				frsSkillCheck(player, "rank_08", "rank_09");
+				SkillManager::instance()->awardSkill("force_title_jedi_rank_04", player, true, true, true);
+			}
+			if (curExp >= 200000 && curExp < 300000) {
+				frsSkillCheck(player, "rank_09", "rank_10");
+			}
+			if (curExp >= 300000 && curExp < 500000) {
+				frsSkillCheck(player, "rank_10", "master");
+				SkillManager::instance()->awardSkill("force_title_jedi_master", player, true, true, true);
+			}
+			if (curExp >= 500000) {
+				frsSkillCheck(player, "master", "master");
+				SkillManager::instance()->awardSkill("force_title_jedi_master", player, true, true, true);
+			}
+		}
+	}
+
 	return xp;
+}
+
+
+void PlayerManagerImplementation::frsSkillCheck(CreatureObject* player, const String& skill, const String& skillParent) {
+	SkillManager* skillManager = server->getSkillManager();
+	String skillStarter;
+
+	error("frsskillcheckEntered for player: " + player->getFirstName() + " Skill: " + skill + " Skill Parent: " + skillParent);
+	if (player->hasSkill("force_rank_light_novice")) {
+		skillStarter = "force_rank_light_";
+	} else {
+		skillStarter = "force_rank_dark_";
+	}
+	player->sendSystemMessage("You have been granted: " + skillStarter + skill);
+	skillManager->awardSkill(skillStarter + skill, player, true, true, true);
+	if (player->hasSkill(skillStarter + skillParent) && (skill != skillParent)) {
+		player->sendSystemMessage("You no longer meet the requirements for: " + skillStarter + skill);
+		SkillList* skillList = player->getSkillList();
+		while (player->hasSkill(skillStarter + skillParent)) {
+			for (int i = 0; i < skillList->size(); ++i) {
+				Skill* skill = skillList->get(i);
+				if (skill->getSkillName().indexOf(skillStarter) != -1){
+					SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
+				}
+			}
+		}
+	}
 }
 
 void PlayerManagerImplementation::sendLoginMessage(CreatureObject* creature) {
@@ -3003,7 +3136,6 @@ int PlayerManagerImplementation::checkSpeedHackSecondTest(CreatureObject* player
 
 	/*if (oldNewPosZ > oldValidZ) {
 		float heightDist = oldNewPosZ - oldValidZ;
-
 		//if (heightDist > speed) {
 			StringBuffer msg;
 			msg << " heightDist:" << heightDist << " speed:" << speed << " terrain neg:" << player->getSlopeModPercent();
@@ -5302,12 +5434,13 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 			continue;
 		}
 
+
 		float damageContribution = (float) entry->getTotalDamage() / totalDamage;
 
-		if (frsManager != NULL && frsManager->isFrsEnabled() && frsManager->isValidFrsBattle(attacker, player)) {
-			int attackerFrsXp = frsManager->calculatePvpExperienceChange(attacker, player, damageContribution, false);
-			int victimFrsXp = frsManager->calculatePvpExperienceChange(attacker, player, damageContribution, true);
-			frsXpAdjustment += victimFrsXp;
+	/*	if (frsManager != NULL && frsManager->isFrsEnabled() && frsManager->isValidFrsBattle(attacker, player)) {
+			//int attackerFrsXp = frsManager->calculatePvpExperienceChange(attacker, player, damageContribution, false);
+			//int victimFrsXp = frsManager->calculatePvpExperienceChange(attacker, player, damageContribution, true);
+			//frsXpAdjustment += victimFrsXp;
 
 			ManagedReference<CreatureObject*> attackerRef = attacker;
 			if (attackerFrsXp > 0) {
@@ -5317,7 +5450,7 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 					frsManager->adjustFrsExperience(attackerRef, attackerFrsXp);
 				}, "FrsExperienceAdjustLambda");
 			}
-		}
+		}*/
 
 		ghost->addToKillerList(attacker->getObjectID());
 
@@ -5368,7 +5501,7 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 	if (frsManager != NULL && frsManager->isFrsEnabled() && frsXpAdjustment < 0) {
 		Locker crossLock(frsManager, player);
 
-		frsManager->adjustFrsExperience(player, frsXpAdjustment);
+		//frsManager->adjustFrsExperience(player, frsXpAdjustment);
 	}
 
 	if (defenderPvpRating <= PlayerObject::PVP_RATING_FLOOR) {
@@ -5418,6 +5551,7 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 		player->sendSystemMessage(toVictim);
 	}
 }
+
 
 float PlayerManagerImplementation::getSpeciesXpModifier(const String& species, const String& xpType) {
 	int bonus = xpBonusList.get(species).get(xpType);

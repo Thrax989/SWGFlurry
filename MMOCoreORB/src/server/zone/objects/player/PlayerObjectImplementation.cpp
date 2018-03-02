@@ -1305,6 +1305,43 @@ void PlayerObjectImplementation::notifyOnline() {
 	schedulePvpTefRemovalTask();
 
 	MissionManager* missionManager = zoneServer->getMissionManager();
+	SkillList* skillList = playerCreature->getSkillList();
+	ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
+
+	// Check for force Title without past FRS
+	if (playerCreature->getScreenPlayState("jedi_FRS") == 0 && playerCreature->hasSkill("force_title_jedi_rank_03")) {
+		SkillManager::instance()->surrenderSkill("force_title_jedi_master", playerCreature, true);
+		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_04", playerCreature, true);
+		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_03", playerCreature, true);
+	}
+	//Check for Light side FRS without being a rebel
+	if (playerCreature->hasSkill("force_rank_light_novice") && !ghost->isPrivileged() && (playerCreature->getFaction() != 370444368 || playerCreature->getScreenPlayState("jedi_FRS") != 4)) {
+		while (numSpecificSkills(playerCreature, "force_rank_light_") > 0) {
+			for (int i = 0; i < skillList->size(); ++i) {
+				String skillName = skillList->get(i)->getSkillName();
+				if(skillName.contains("force_rank_light_")) {
+					SkillManager::instance()->surrenderSkill(skillName, playerCreature, true);
+				}
+			}
+		}
+		ghost->setJediState(2);
+	}
+	//Check for Dark Side FRS without being Imperial
+	if (playerCreature->hasSkill("force_rank_dark_novice") && !ghost->isPrivileged() && (playerCreature->getFaction() != 3679112276 || playerCreature->getScreenPlayState("jedi_FRS") != 8)) {
+		while (numSpecificSkills(playerCreature, "force_rank_dark_") > 0) {
+			for (int i = 0; i < skillList->size(); ++i) {
+				String skillName = skillList->get(i)->getSkillName();
+				if(skillName.contains("force_rank_dark_")) {
+					SkillManager::instance()->surrenderSkill(skillName, playerCreature, true);
+				}
+			}
+		}
+		ghost->setJediState(2);
+	}
+	//Check for FRS Jedi without overt
+	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
+		playerCreature->setFactionStatus(2);
+	}
 
 	if (missionManager != NULL && playerCreature->hasSkill("force_title_jedi_rank_02")) {
 		uint64 id = playerCreature->getObjectID();
@@ -1315,6 +1352,20 @@ void PlayerObjectImplementation::notifyOnline() {
 			missionManager->updatePlayerBountyOnlineStatus(id, true);
 		}
 	}
+}
+
+int PlayerObjectImplementation::numSpecificSkills(CreatureObject* creature, const String& reqSkillName) {
+	SkillList* skills =  creature->getSkillList();
+	int numSkills = 0;
+
+	for(int i = 0; i < skills->size(); ++i) {
+		String skillName = skills->get(i)->getSkillName();
+		if(skillName.contains(reqSkillName)) {
+			numSkills++;
+		}
+	}
+
+	return numSkills;
 }
 
 void PlayerObjectImplementation::notifyOffline() {
@@ -1577,7 +1628,7 @@ void PlayerObjectImplementation::doRecovery(int latency) {
 	}
 
 	CreatureObject* creature = dynamic_cast<CreatureObject*>(parent.get().get());
-
+	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 	if (creature == NULL)
 		return;
 
