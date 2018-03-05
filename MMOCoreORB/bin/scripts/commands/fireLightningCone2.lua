@@ -44,11 +44,32 @@
 FireLightningCone2Command = {
         name = "firelightningcone2",
 
-	damageMultiplier = 4.0,
+	damageMultiplier = 5.0,
 	speedMultiplier = 2.0,
 	healthCostMultiplier = 1,
 	actionCostMultiplier = 1,
 	mindCostMultiplier = 1,
+
+stateEffects = {
+	StateEffect( 
+		STUN_EFFECT, 
+		{}, 
+		{ "stun_defense", "resistance_states" }, 
+		{ "jedi_state_defense" }, 
+		30, 
+		100, 
+		10 
+	  ),
+	StateEffect( 
+		INTIMIDATE_EFFECT, 
+		{}, 
+		{ "intimidate_defense", "resistance_states" }, 
+		{ "jedi_state_defense" }, 
+		75, 
+		0, 
+		60 
+	  )
+	},
 
 	animation = "fire_lightning_rifle_single_2",
 	animType = GENERATE_INTENSITY,
@@ -60,7 +81,7 @@ FireLightningCone2Command = {
 	
 	weaponType = SPECIALHEAVYWEAPON,
 
-	range = 16
+	range = 32
 }
 
 AddCommand(FireLightningCone2Command)

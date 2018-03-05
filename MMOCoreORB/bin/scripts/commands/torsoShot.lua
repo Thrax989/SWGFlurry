@@ -44,11 +44,23 @@
 TorsoShotCommand = {
         name = "torsoshot",
 
-	damageMultiplier = 3.0,
+	damageMultiplier = 4.0,
 	speedMultiplier = 2.3,
 	healthCostMultiplier = 1,
 	actionCostMultiplier = 1,
 	mindCostMultiplier = 1,
+
+	stateEffects = {
+	  StateEffect( 
+		INTIMIDATE_EFFECT, 
+		{}, 
+		{ "intimidate_defense", "resistance_states" }, 
+		{ "jedi_state_defense" }, 
+		50, 
+		0, 
+		30 
+	  )
+	},
 
 	poolsToDamage = HEALTH_ATTRIBUTE,
 
@@ -63,15 +75,14 @@ TorsoShotCommand = {
 		{ "resistance_fire", "fire_resist" },
 		HEALTH,
 		true,
-		0,
+		200,
 		100,
 		30, 
 		30,
-		50,
-		10
+		10,
+		2
 	  )
-	},
-	
+	},	
 	weaponType = PISTOLWEAPON,
 
 	range = -1
