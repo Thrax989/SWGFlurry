@@ -425,12 +425,6 @@ bool SkillManager::surrenderSkill(const String& skillName, CreatureObject* creat
 
 			if (checkSkill->isRequiredSkillOf(skill))
 				return false;
-
-		//Check if they have FRS
-		if((skillName == "force_title_jedi_rank_03" && creature->hasSkill("force_rank_light_novice") && creature->getScreenPlayState("jedi_FRS") == 4) || (skillName == "force_title_jedi_rank_03" && creature->hasSkill("force_rank_dark_novice") && creature->getScreenPlayState("jedi_FRS") == 8)) {
-			creature->sendSystemMessage("You must leave the FRS before you are able to drop Knight Title");
-			return false;
-			}
 		}
 	}
 	
