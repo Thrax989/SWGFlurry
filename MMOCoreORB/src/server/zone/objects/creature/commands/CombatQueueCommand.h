@@ -25,8 +25,6 @@
 #include "QueueCommand.h"
 #include "server/zone/objects/player/FactionStatus.h"
 
-#include "conf/ServerSettings.h"
-
 class CombatQueueCommand : public QueueCommand {
 protected:
 	float minDamage;
