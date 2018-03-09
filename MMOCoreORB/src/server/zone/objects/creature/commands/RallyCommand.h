@@ -69,6 +69,9 @@ public:
 			if (member == NULL)
 				continue;
 
+			if (!checkDistance(leader, member, 200))
+				continue;
+
 			if (!isValidGroupAbilityTarget(leader, member, true))
 				continue;
 
