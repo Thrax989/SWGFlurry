@@ -53,6 +53,11 @@ protected:
 
 	int stateAccuracyBonus;
 
+	float frsLightMinDmgMultiplier;
+	float frsDarkMinDmgMultiplier;
+	float frsLightMaxDmgMultiplier;
+	float frsDarkMaxDmgMultiplier;
+
 public:
     CreatureAttackData(const UnicodeString & dataString, const CombatQueueCommand *base, uint64 target);
     CreatureAttackData(const CreatureAttackData& data);
@@ -216,6 +221,19 @@ public:
 	bool changesDefenderPosture() const;
 
 	bool changesAttackerPosture() const;
+
+	float getFrsLightMinDmgMultiplier() const {
+		return frsLightMinDmgMultiplier;
+	}
+	float getFrsDarkMinDmgMultiplier() const {
+		return frsDarkMinDmgMultiplier;
+	}
+	float getFrsLightMaxDmgMultiplier() const {
+		return frsLightMaxDmgMultiplier;
+	}
+	float getFrsDarkMaxDmgMultiplier() const {
+		return frsDarkMaxDmgMultiplier;
+	}
 };
 
 #endif /* CREATUREATTACKDATA_H_ */
