@@ -59,7 +59,6 @@ FireLightningSingle2Command = {
 		30, 
 		100, 
 		20 
-	  )
 	},
 	StateEffect( 
 		INTIMIDATE_EFFECT, 
