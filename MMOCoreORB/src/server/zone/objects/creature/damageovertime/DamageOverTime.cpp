@@ -155,8 +155,31 @@ uint32 DamageOverTime::initDot(CreatureObject* victim, CreatureObject* attacker)
 		break;
 	case CommandEffect::FORCECHOKE:
 		nextTick.addMiliTime(6000);
-		strength = (float)(strength * 0.01f) + (strength * (System::random(100) * 0.01f));
+		strength = (float)strength * (1.f - (System::random(25) / 100.f));
 		victim->showFlyText("combat_effects", "choke", 0xFF, 0, 0);
+
+		if (victim->isPlayerCreature() && attacker->isPlayerCreature()) {
+			strength *= 0.50;
+			if (victim->isProne() || victim->isKnockedDown()) {
+				strength *= 1.5;
+			} else if (victim->isKneeling()) {
+				strength *= 1.25;
+			}
+		}
+
+		if (!victim->isPlayerCreature() && (victim->isProne() || victim->isKnockedDown())) {
+			strength *= 1.5;
+		} else if (!victim->isPlayerCreature() && victim->isKneeling()) {
+			strength *= 1.25;
+		}
+
+		int frsLightPowerMod = attacker->getSkillMod("force_power_light");
+		int frsDarkPowerMod = attacker->getSkillMod("force_power_dark");
+
+		if (frsLightPowerMod > 0)
+			strength += (int)((frsLightPowerMod / 2) * 2);
+		else if (frsDarkPowerMod > 0)
+			strength += (int)((frsDarkPowerMod / 2) * 4);
 
 		break;
 	}

@@ -44,7 +44,7 @@
 KnockdownFireCommand = {
         name = "knockdownfire",
 
-	damageMultiplier = 2.5,
+	damageMultiplier = 3.5,
 	speedMultiplier = 2.0,
 	healthCostMultiplier = 1,
 	actionCostMultiplier = 1,
@@ -58,7 +58,7 @@ KnockdownFireCommand = {
 		{ "jedi_state_defense" }, 
 		85, 
 		0, 
-		10 
+		30 
 	  ),
 	  StateEffect( 
 		KNOCKDOWN_EFFECT, 

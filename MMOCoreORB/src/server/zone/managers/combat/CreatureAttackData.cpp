@@ -69,6 +69,11 @@ CreatureAttackData::CreatureAttackData(const CreatureAttackData& data) {
 	combatSpam = data.combatSpam;
 
 	stateAccuracyBonus = data.stateAccuracyBonus;
+
+	frsLightMinDmgMultiplier = data.frsLightMinDmgMultiplier;
+	frsDarkMinDmgMultiplier = data.frsDarkMinDmgMultiplier;
+	frsLightMaxDmgMultiplier = data.frsLightMaxDmgMultiplier;
+	frsDarkMaxDmgMultiplier = data.frsDarkMaxDmgMultiplier;
 }
 
 void CreatureAttackData::fillFromBase() {
@@ -101,6 +106,11 @@ void CreatureAttackData::fillFromBase() {
 	mindDamageMultiplier = 1.f;
 
 	hitIncapTarget = false;
+
+	frsLightMinDmgMultiplier = baseCommand->getFrsLightMinDmgMultiplier();
+	frsDarkMinDmgMultiplier = baseCommand->getFrsDarkMinDmgMultiplier();
+	frsLightMaxDmgMultiplier = baseCommand->getFrsLightMaxDmgMultiplier();
+	frsDarkMaxDmgMultiplier = baseCommand->getFrsDarkMaxDmgMultiplier();
 }
 
 void CreatureAttackData::setVariable(const String& var, const String& val) {

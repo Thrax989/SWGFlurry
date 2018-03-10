@@ -39,8 +39,21 @@ public:
 		if (playerObject == NULL)
 			return;
 
-		// TODO: Force Rank modifiers.
-		int forceCost = param * 0.3;
+		float baseForce = 0.5;
+
+		int frsLightControlMod = creo->getSkillMod("force_control_light");
+		int frsDarkControlMod = creo->getSkillMod("force_control_dark");
+
+		if (frsLightControlMod > 0) {
+			if (frsLightAdditionalCostMultiplier != 0)
+				baseForce += (frsLightControlMod * frsLightAdditionalCostMultiplier);
+		} else if (frsDarkControlMod > 0) {
+			if (frsDarkAdditionalCostMultiplier != 0)
+				baseForce += (frsDarkControlMod * frsDarkAdditionalCostMultiplier);
+		}
+
+		int forceCost = (int)(param * baseForce);
+
 		if (playerObject->getForcePower() <= forceCost) { // Remove buff if not enough force.
 			Buff* buff = creo->getBuff(BuffCRC::JEDI_FORCE_SHIELD_1);
 			if (buff != NULL) {

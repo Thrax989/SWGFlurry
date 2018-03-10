@@ -68,6 +68,15 @@ protected:
 
 	uint32 weaponType;
 
+	float frsLightCostMultiplier;
+	float frsDarkCostMultiplier;
+	float frsLightMinDmgMultiplier;
+	float frsDarkMinDmgMultiplier;
+	float frsLightMaxDmgMultiplier;
+	float frsDarkMaxDmgMultiplier;
+	float frsLightSpeedMultiplier;
+	float frsDarkSpeedMultiplier;
+
 public:
 	enum AnimGenTypes {
 		GENERATE_NONE, // Uses animation as given - Default
@@ -118,6 +127,15 @@ public:
 		trails = CombatManager::DEFAULTTRAIL;
 
 		weaponType = SharedWeaponObjectTemplate::ANYWEAPON;
+
+		frsLightCostMultiplier = 0;
+		frsDarkCostMultiplier = 0;
+		frsLightMinDmgMultiplier = 0;
+		frsDarkMinDmgMultiplier = 0;
+		frsLightMaxDmgMultiplier = 0;
+		frsDarkMaxDmgMultiplier = 0;
+		frsLightSpeedMultiplier = 0;
+		frsDarkSpeedMultiplier = 0;
 	}
 
 	void onFail(uint32 actioncntr, CreatureObject* creature, uint32 errorNumber) const {
@@ -822,6 +840,43 @@ public:
 		return visMod;
 	}
 
+	void setFrsLightCostMultiplier(float multiplier) {
+		frsLightCostMultiplier = multiplier;
+	}
+	void setFrsDarkCostMultiplier(float multiplier) {
+		frsDarkCostMultiplier = multiplier;
+	}
+	void setFrsLightMinDmgMultiplier(float multiplier) {
+		frsLightMinDmgMultiplier = multiplier;
+	}
+	void setFrsDarkMinDmgMultiplier(float multiplier) {
+		frsDarkMinDmgMultiplier = multiplier;
+	}
+	void setFrsLightMaxDmgMultiplier(float multiplier) {
+		frsLightMaxDmgMultiplier = multiplier;
+	}
+	void setFrsDarkMaxDmgMultiplier(float multiplier) {
+		frsDarkMaxDmgMultiplier = multiplier;
+	}
+	void setFrsLightSpeedMultiplier(float multiplier) {
+		frsLightSpeedMultiplier = multiplier;
+	}
+	void setFrsDarkSpeedMultiplier(float multiplier) {
+		frsDarkSpeedMultiplier = multiplier;
+	}
+
+	inline float getFrsLightMinDmgMultiplier() const {
+		return frsLightMinDmgMultiplier;
+	}
+	inline float getFrsDarkMinDmgMultiplier() const {
+		return frsDarkMinDmgMultiplier;
+	}
+	inline float getFrsLightMaxDmgMultiplier() const {
+		return frsLightMaxDmgMultiplier;
+	}
+	inline float getFrsDarkMaxDmgMultiplier() const {
+		return frsDarkMaxDmgMultiplier;
+	}
 };
 
 #endif /* COMBATQUEUECOMMAND_H_ */

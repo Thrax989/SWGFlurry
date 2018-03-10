@@ -1242,11 +1242,30 @@ float CombatManager::getArmorPiercing(TangibleObject* defender, int armorPiercin
 float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* defender, const CreatureAttackData& data) {
 	float damage = 0;
 	int diff = 0;
+	int frsModMin = 0;
+	int frsModMax = 0;
 
 	if (data.getMinDamage() > 0 || data.getMaxDamage() > 0) { // this is a special attack (force, etc)
+		if (data.isForceAttack()) {
+			int lightPowerMod = attacker->getSkillMod("force_power_light");
+			int darkPowerMod = attacker->getSkillMod("force_power_dark");
+
+			if (lightPowerMod > 0) {
+				if (data.getFrsLightMinDmgMultiplier() != 0)
+					frsModMin += (int)((lightPowerMod * data.getFrsLightMinDmgMultiplier()) + 0.5);
+				if (data.getFrsLightMaxDmgMultiplier() != 0)
+					frsModMax += (int)((lightPowerMod * data.getFrsLightMaxDmgMultiplier()) + 0.5);
+			} else if (darkPowerMod > 0) {
+				if (data.getFrsDarkMinDmgMultiplier() != 0)
+					frsModMin += (int)((darkPowerMod * data.getFrsDarkMinDmgMultiplier()) + 0.5);
+				if (data.getFrsDarkMaxDmgMultiplier() != 0)
+					frsModMax += (int)((darkPowerMod * data.getFrsDarkMaxDmgMultiplier()) + 0.5);
+			}
+		}
+
 		float mod = attacker->isAiAgent() ? cast<AiAgent*>(attacker)->getSpecialDamageMult() : 1.f;
-		damage = data.getMinDamage() * mod;
-		diff = (data.getMaxDamage() * mod) - damage;
+		damage = (data.getMinDamage() + frsModMin) * mod;
+		diff = ((data.getMaxDamage() + frsModMax) * mod) - damage;
 
 	} else {
 		float minDamage = weapon->getMinDamage(), maxDamage = weapon->getMaxDamage();

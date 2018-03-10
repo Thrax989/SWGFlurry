@@ -551,7 +551,7 @@ int FrsManagerImplementation::getBaseExperienceGain(PlayerObject* playerGhost, P
 	if (!creo->hasSkill("force_title_jedi_rank_03")){
 		error("attempting to award frs to a character that isnt a knight");
 		return 0;
-	}//foobar
+	}
 	String key = "";
 
 	if (opponent->hasSkill("combat_bountyhunter_investigation_03")) { // Opponent is able to hunt jedis
