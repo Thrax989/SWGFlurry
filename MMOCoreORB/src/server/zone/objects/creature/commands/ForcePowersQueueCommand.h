@@ -44,7 +44,7 @@ public:
 
 			ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
 
-			int frsSkills = playerObject->numSpecificSkills(creature, "force_discipline_powers_");
+			int frsSkills = playerObject->numSpecificSkills(creature, "force_rank_");
 			float frsMod = frsSkills * 5;
 			int forceReduced = forceCost - frsMod;
 			if (forceReduced < 20) {
