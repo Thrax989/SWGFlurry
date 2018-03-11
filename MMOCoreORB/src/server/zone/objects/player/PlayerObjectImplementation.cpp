@@ -2089,7 +2089,10 @@ void PlayerObjectImplementation::doForceRegen() {
 		if (medTask != NULL)
 			modifier = 10;
 	}
-
+	
+	int frsSkills = numSpecificSkills(creature, "force_rank_");
+        float frsMod = frsSkills * .056;
+        modifier = modifier * (1 + frsMod);
 	uint32 forceTick = tick * modifier;
 
 	if (forceTick > getForcePowerMax() - getForcePower()){   // If the player's Force Power is going to regen again and it's close to max,
