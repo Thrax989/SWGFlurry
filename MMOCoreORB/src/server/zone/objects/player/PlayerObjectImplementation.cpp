@@ -2042,7 +2042,7 @@ void PlayerObjectImplementation::setForcePowerMax(int newValue, bool notifyClien
 		setForcePower(forcePowerMax, true);
 
 	if (forcePower < forcePowerMax) {
-		activateForcePowerRegen();
+		activateForcePowerRegen(true);
 	}
 
 	if (notifyClient == true){
