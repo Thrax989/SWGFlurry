@@ -32,12 +32,6 @@ protected:
 	Vector<uint32> blockingCRCs;
 	Vector<unsigned int> singleUseEventTypes;
 
-	float frsLightCostMultiplier;
-	float frsDarkCostMultiplier;
-	float frsLightAdditionalCostMultiplier;
-	float frsDarkAdditionalCostMultiplier;
-	float frsLightEffectMultiplier;
-	float frsDarkEffectMultiplier;
 
 public:
 	enum { BASE_BUFF, SINGLE_USE_BUFF };
@@ -51,13 +45,7 @@ public:
 		speedMod = 0;
 		visMod = 10;
 		buffCRC = 0;
-
-		frsLightCostMultiplier = 0;
-		frsDarkCostMultiplier = 0;
-		frsLightAdditionalCostMultiplier = 0;
-		frsDarkAdditionalCostMultiplier = 0;
-		frsLightEffectMultiplier = 0;
-		frsDarkEffectMultiplier = 0;
+        
 	}
 
 
@@ -94,46 +82,34 @@ public:
 		// Return if buff is NOT valid.
 		if (buff == NULL)
 			return GENERALERROR;
-
-		int frsLightManipulationMod = creature->getSkillMod("force_manipulation_light");
-		int frsDarkManipulationMod = creature->getSkillMod("force_manipulation_dark");
-		int ForceCost = forceCost;
-
-		//FRS Modifier -- Force Cost
-		if (frsLightManipulationMod > 0) {
-			if (frsLightCostMultiplier != 0)
-				ForceCost += (int)((frsLightManipulationMod * frsLightCostMultiplier) + 0.5);
-		} else if (frsDarkManipulationMod > 0) {
-			if (frsDarkCostMultiplier != 0)
-				ForceCost += (int)((frsDarkManipulationMod * frsDarkCostMultiplier) + 0.5);
-		}
-
-		//Check for Force Cost.
-		ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
-
-		if (ghost != NULL && ghost->getForcePower() < ForceCost) {
-			creature->sendSystemMessage("@jedi_spam:no_force_power"); //"You do not have enough Force Power to perform that action.
-			return GENERALERROR;
-		}
-
+        
 		Locker locker(buff);
         
 		// Add buff.
 		creature->addBuff(buff);
-
+        
 		// Force Cost.
-		if (ghost != NULL)
-			ghost->setForcePower(ghost->getForcePower() - ForceCost);
-
-		// Increase Visibility for Force Buff.
-		VisibilityManager::instance()->increaseVisibility(creature, visMod);
+		doForceCost(creature);
 
 		// Client Effect.
 		if (!clientEffect.isEmpty()) {
 			creature->playEffect(clientEffect, "");
 		}
+        
 
 		// Return.
+		return SUCCESS;
+	}
+
+	int doJediForceCostCheck(CreatureObject* creature) const {
+		//Check for Force Cost..
+		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
+
+		if (playerObject && playerObject->getForcePower() < forceCost) {
+			creature->sendSystemMessage("@jedi_spam:no_force_power"); //"You do not have enough Force Power to peform that action.
+			return GENERALERROR;
+		}
+
 		return SUCCESS;
 	}
 
@@ -151,7 +127,9 @@ public:
 				return NOSTACKJEDIBUFF;
 			}
 		}
-		return SUCCESS;
+
+		res = doJediForceCostCheck(creature);
+		return res;
 	}
 
 	ManagedReference<Buff*> createJediSelfBuff(CreatureObject* creature) const {
@@ -198,24 +176,20 @@ public:
 		buff->setStartMessage(start);
 		buff->setEndMessage(end);
 
-		int mod = 0;
-
-		int frsLightControlMod = creature->getSkillMod("force_control_light");
-		int frsDarkControlMod = creature->getSkillMod("force_control_dark");
-
-		if (frsLightControlMod > 0) {
-			if (frsLightEffectMultiplier != 0)
-				mod += (int)((frsLightControlMod * frsLightEffectMultiplier) + 0.5);
-		} else if (frsDarkControlMod > 0) {
-			if (frsDarkEffectMultiplier != 0)
-				mod += (int)((frsDarkControlMod * frsDarkEffectMultiplier) + 0.5);
-		}
-
 		for (int i=0; i < skillMods.size(); ++i) {
-			buff->setSkillModifier(skillMods.elementAt(i).getKey(), skillMods.elementAt(i).getValue() + mod);
+			buff->setSkillModifier(skillMods.elementAt(i).getKey(), skillMods.elementAt(i).getValue());
 		}
 
 		return buff;
+	}
+
+	void doForceCost(CreatureObject* creature) const {
+		// Force Cost.
+		ManagedReference<PlayerObject*> playerObject =
+				creature->getPlayerObject();
+		playerObject->setForcePower(playerObject->getForcePower() - forceCost);
+
+		VisibilityManager::instance()->increaseVisibility(creature, visMod);
 	}
 
 	void setForceCost(int fc) {
@@ -248,25 +222,6 @@ public:
 
 	int getVisMod() const {
 		return visMod;
-	}
-
-	void setFrsLightCostMultiplier(float multiplier) {
-		frsLightCostMultiplier = multiplier;
-	}
-	void setFrsDarkCostMultiplier(float multiplier) {
-		frsDarkCostMultiplier = multiplier;
-	}
-	void setFrsLightAdditionalCostMultiplier(float multiplier) {
-		frsLightAdditionalCostMultiplier = multiplier;
-	}
-	void setFrsDarkAdditionalCostMultiplier(float multiplier) {
-		frsDarkAdditionalCostMultiplier = multiplier;
-	}
-	void setFrsLightEffectMultiplier(float multiplier) {
-		frsLightEffectMultiplier = multiplier;
-	}
-	void setFrsDarkEffectMultiplier(float multiplier) {
-		frsDarkEffectMultiplier = multiplier;
 	}
 };
 
