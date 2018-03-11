@@ -43,12 +43,14 @@ public:
 			}
 
 			ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
-
+			int forceReduced = forceCost;
+			if (playerObject != NULL) {
 			int frsSkills = playerObject->numSpecificSkills(creature, "force_rank_");
 			float frsMod = frsSkills * 5;
 			int forceReduced = forceCost - frsMod;
 			if (forceReduced < 20) {
 				forceReduced = 20;
+				}
 			}
 			if (playerObject != NULL && playerObject->getForcePower() < forceReduced) {
 				creature->sendSystemMessage("@jedi_spam:no_force_power"); //"You do not have enough Force Power to peform that action.
