@@ -41,7 +41,13 @@ public:
 			return;
 
 		// TODO: Force Rank modifiers.
-		int forceCost = param * 0.3;
+		float force_manipulation = 0.f;
+		if (playerObject->getJediState() == 4) {
+			force_manipulation = (float)creo->getSkillMod("force_manipulation_light") / 1000;
+		} else if (playerObject->getJediState() == 8) {
+			force_manipulation = (float)creo->getSkillMod("force_manipulation_dark") / 1000;
+		}
+		int forceCost = (param * 0.0) - (force_manipulation * (param * 0.0));
 		if (playerObject->getForcePower() <= forceCost) { // Remove buff if not enough force.
 			Buff* buff = creo->getBuff(BuffCRC::JEDI_FORCE_SHIELD_2);
 			if (buff != NULL) {
