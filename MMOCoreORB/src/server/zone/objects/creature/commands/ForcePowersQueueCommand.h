@@ -43,16 +43,19 @@ public:
 			}
 
 			ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
-			int forceReduced = forceCost;
-			if (playerObject != NULL) {
-			int frsSkills = playerObject->numSpecificSkills(creature, "force_rank_");
-			float frsMod = frsSkills * 5;
-			int forceReduced = forceCost - frsMod;
-			if (forceReduced < 20) {
-				forceReduced = 20;
+			//FRS forceCost modifier for powers abilities
+			float force_manipulation = 0.f;
+			ManagedReference<CreatureObject*> creo = cast<CreatureObject*>( creature);
+			if (playerObject != NULL){
+				if (playerObject->getJediState() == 4) {
+					force_manipulation = (float)creo->getSkillMod("force_manipulation_light") / 1300;
+				}else if (playerObject->getJediState() == 8) {
+					force_manipulation = (float)creo->getSkillMod("force_manipulation_dark") / 1300;
 				}
 			}
-			if (playerObject != NULL && playerObject->getForcePower() < forceReduced) {
+			int adjustedforceCost = forceCost - (forceCost * force_manipulation);
+
+			if (playerObject != NULL && playerObject->getForcePower() < adjustedforceCost) {
 				creature->sendSystemMessage("@jedi_spam:no_force_power"); //"You do not have enough Force Power to peform that action.
 
 				return GENERALERROR;
