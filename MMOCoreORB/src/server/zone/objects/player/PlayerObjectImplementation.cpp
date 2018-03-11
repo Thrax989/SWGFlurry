@@ -2023,26 +2023,12 @@ void PlayerObjectImplementation::setForcePowerMax(int newValue, bool notifyClien
 		return;
 
 	forcePowerMax = newValue;
-	ManagedReference<CreatureObject*> creature = getParent().get().castTo<CreatureObject*>();
 
-	if (creature == NULL)
-		return;
-
-	int forceControlLight = creature->getSkillMod("force_control_light");
-	int forceControlDark = creature->getSkillMod("force_control_dark");
-	int forcePowerLight = creature->getSkillMod("force_power_light");
-	int forcePowerDark = creature->getSkillMod("force_power_dark");
-
-	if (creature->hasSkill("force_rank_light_novice"))
-		forcePowerMax += (forceControlLight + forcePowerLight) * 10;
-	else if (creature->hasSkill("force_rank_dark_novice"))
-		forcePowerMax += (forceControlDark + forcePowerDark) * 10;
-
-	if (forcePower > forcePowerMax)
+	if(forcePower > forcePowerMax)
 		setForcePower(forcePowerMax, true);
 
 	if (forcePower < forcePowerMax) {
-		activateForcePowerRegen(true);
+		activateForcePowerRegen();
 	}
 
 	if (notifyClient == true){
@@ -2105,16 +2091,6 @@ void PlayerObjectImplementation::doForceRegen() {
 	}
 
 	uint32 forceTick = tick * modifier;
-	
-	int forceControlLight = creature->getSkillMod("force_control_light");
-	int forceControlDark = creature->getSkillMod("force_control_dark");
-	int forceManipulationLight = creature->getSkillMod("force_manipulation_ligjt");
-	int forceManipulationDark = creature->getSkillMod("force_manipulation_dark");
-
-	if (creature->hasSkill("force_rank_light_novice"))
-		forceTick += (forceControlLight + forceManipulationLight) / 100;
-	else if (creature->hasSkill("force_rank_dark_novice"))
-		forceTick += (forceControlDark + forceManipulationDark) / 100;
 
 	if (forceTick > getForcePowerMax() - getForcePower()){   // If the player's Force Power is going to regen again and it's close to max,
 		setForcePower(getForcePowerMax());             // Set it to max, so it doesn't go over max.
