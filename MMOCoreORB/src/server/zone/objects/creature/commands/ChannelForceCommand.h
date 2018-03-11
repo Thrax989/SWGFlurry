@@ -43,7 +43,11 @@ public:
 		// Do not execute if the player's force bar is full.
 		if (playerObject->getForcePower() >= playerObject->getForcePowerMax())
 			return GENERALERROR;
-
+		
+		int frsSkills = playerObject->numSpecificSkills(creature, "force_ranks_");
+                float frsMod = frsSkills * .056;
+                forceBonus = forceBonus * (1 + frsMod);
+		
 		// To keep it from going over max...
 		if ((playerObject->getForcePowerMax() - playerObject->getForcePower()) < forceBonus)
 			forceBonus = ((playerObject->getForcePowerMax() - playerObject->getForcePower()) / 10) * 10;
