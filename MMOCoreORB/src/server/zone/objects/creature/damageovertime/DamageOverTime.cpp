@@ -155,7 +155,6 @@ uint32 DamageOverTime::initDot(CreatureObject* victim, CreatureObject* attacker)
 		break;
 	case CommandEffect::FORCECHOKE:
 		nextTick.addMiliTime(6000);
-		strength = (float)(strength * 0.01f) + (strength * (System::random(100) * 0.01f));
 		victim->showFlyText("combat_effects", "choke", 0xFF, 0, 0);
 
 		break;
