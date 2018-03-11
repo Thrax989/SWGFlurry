@@ -77,6 +77,10 @@ public:
 		uint32 buffCRC = STRING_HASHCODE("channelforcebuff");
 		Reference<Buff*> buff = creature->getBuff(buffCRC);
 		int duration = ChannelForceBuff::FORCE_CHANNEL_DURATION_SECONDS;
+		if (playerObject->hasPvpTef()) {
+			duration = duration * 3;
+			forceBonus = forceBonus * 2;
+		}
 		if (buff == NULL) {
 			buff = new ChannelForceBuff(creature, buffCRC, duration);
 			
