@@ -304,7 +304,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 
 int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef) {
 
-	if (attacker->isPlayerCreature() && weapon->isJediWeapon() && weapon->getForceCost() <= 3) {
+	if (attacker->isPlayerCreature() && weapon->isJediWeapon() && weapon->getForceCost() <= 2) {
   		Locker locker(weapon);
  		weapon->setForceCost(3);
   		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
