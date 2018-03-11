@@ -1346,6 +1346,14 @@ void PlayerObjectImplementation::notifyOnline() {
 		playerCreature->setFactionStatus(2);
 	}
 
+	// Check for Old Enhancer Skills
+	if (!playerCreature->hasSkill("force_discipline_enhancements_synergy_04") && ghost->hasAbility("forceMeditate")) {
+		SkillManager::instance()->removeAbility(ghost, "forceMeditate", true);
+	}
+	if (!playerCreature->hasSkill("force_discipline_enhancements_movement_02") && ghost->hasAbility("forceRun1")) {
+		SkillManager::instance()->removeAbility(ghost, "forceRun1", true);
+	}
+
 	if (missionManager != NULL && playerCreature->hasSkill("force_title_jedi_rank_02")) {
 		uint64 id = playerCreature->getObjectID();
 
