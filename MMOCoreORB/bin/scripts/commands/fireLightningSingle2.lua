@@ -51,7 +51,7 @@ FireLightningSingle2Command = {
 	mindCostMultiplier = 1,
 
 	stateEffects = {
-	StateEffect( 
+	  StateEffect( 
 		STUN_EFFECT, 
 		{}, 
 		{ "stun_defense", "resistance_states" }, 
@@ -60,14 +60,14 @@ FireLightningSingle2Command = {
 		100, 
 		20 
 	},
-	StateEffect( 
+	  StateEffect( 
 		INTIMIDATE_EFFECT, 
 		{}, 
 		{ "intimidate_defense", "resistance_states" }, 
 		{ "jedi_state_defense" }, 
-		50, 
+		75, 
 		0, 
-		30 
+		60 
 	  )
 	},
 
