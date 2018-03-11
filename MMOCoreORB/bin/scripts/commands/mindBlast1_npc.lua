@@ -41,24 +41,59 @@
 --which carries forward this exception.
 --true = 1, false = 0
 
-FireLightningSingle2Command = {
-        name = "firelightningsingle2",
+MindBlast1Command = {
+	name = "mindblast1_npc",
 
-	damageMultiplier = 6.0,
-	speedMultiplier = 2.0,
-	healthCostMultiplier = 1,
-	actionCostMultiplier = 1,
-	mindCostMultiplier = 1,
+	minDamage = 750,
+	maxDamage = 1000,
+	speed = 4.0,
+	forceCost = 50,
+	visMod = 25,
+	accuracySkillMod = "mindblast_accuracy";
 
-	animation = "fire_lightning_rifle_single_2",
+	stateEffects = {
+	  StateEffect(
+		STUN_EFFECT,
+		{},
+		{ "jedi_state_defense" },
+		{},
+		55,
+		0,
+		10
+	  ),
+
+	  StateEffect(
+		BLIND_EFFECT,
+		{},
+		{ "jedi_state_defense" },
+		{},
+		55,
+		0,
+		10
+	  ),
+
+	  StateEffect(
+		DIZZY_EFFECT,
+		{},
+		{ "jedi_state_defense" },
+		{},
+		55,
+		0,
+		10
+	  )
+	},
+
+	animation = "force_mind_blast_1_particle_level_1", 
 	animType = GENERATE_INTENSITY,
 
-	combatSpam = "firelightningsingle2",
-	
-	weaponType = SPECIALHEAVYWEAPON,
+	combatSpam = "mindblast1",
+
+	poolsToDamage = RANDOM_ATTRIBUTE,
+
+	forceAttack = true,
+	damageType = LIGHTSABER_DAMAGE,
 
 	range = 32
 }
 
-AddCommand(FireLightningSingle2Command)
-
+AddCommand(MindBlast1Command)

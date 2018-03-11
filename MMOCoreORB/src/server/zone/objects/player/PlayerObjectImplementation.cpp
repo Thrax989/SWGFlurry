@@ -1346,6 +1346,14 @@ void PlayerObjectImplementation::notifyOnline() {
 		playerCreature->setFactionStatus(2);
 	}
 
+	// Check for Old Enhancer Skills
+	if (!playerCreature->hasSkill("force_discipline_enhancements_synergy_04") && ghost->hasAbility("forceMeditate")) {
+		SkillManager::instance()->removeAbility(ghost, "forceMeditate", true);
+	}
+	if (!playerCreature->hasSkill("force_discipline_enhancements_movement_02") && ghost->hasAbility("forceRun1")) {
+		SkillManager::instance()->removeAbility(ghost, "forceRun1", true);
+	}
+
 	if (missionManager != NULL && playerCreature->hasSkill("force_title_jedi_rank_02")) {
 		uint64 id = playerCreature->getObjectID();
 
@@ -2023,22 +2031,8 @@ void PlayerObjectImplementation::setForcePowerMax(int newValue, bool notifyClien
 		return;
 
 	forcePowerMax = newValue;
-	ManagedReference<CreatureObject*> creature = getParent().get().castTo<CreatureObject*>();
 
-	if (creature == NULL)
-		return;
-
-	int forceControlLight = creature->getSkillMod("force_control_light");
-	int forceControlDark = creature->getSkillMod("force_control_dark");
-	int forcePowerLight = creature->getSkillMod("force_power_light");
-	int forcePowerDark = creature->getSkillMod("force_power_dark");
-
-	if (creature->hasSkill("force_rank_light_novice"))
-		forcePowerMax += (forceControlLight + forcePowerLight) * 10;
-	else if (creature->hasSkill("force_rank_dark_novice"))
-		forcePowerMax += (forceControlDark + forcePowerDark) * 10;
-
-	if (forcePower > forcePowerMax)
+	if(forcePower > forcePowerMax)
 		setForcePower(forcePowerMax, true);
 
 	if (forcePower < forcePowerMax) {
@@ -2103,18 +2097,11 @@ void PlayerObjectImplementation::doForceRegen() {
 		if (medTask != NULL)
 			modifier = 10;
 	}
-
-	uint32 forceTick = tick * modifier;
 	
-	int forceControlLight = creature->getSkillMod("force_control_light");
-	int forceControlDark = creature->getSkillMod("force_control_dark");
-	int forceManipulationLight = creature->getSkillMod("force_manipulation_ligjt");
-	int forceManipulationDark = creature->getSkillMod("force_manipulation_dark");
-
-	if (creature->hasSkill("force_rank_light_novice"))
-		forceTick += (forceControlLight + forceManipulationLight) / 100;
-	else if (creature->hasSkill("force_rank_dark_novice"))
-		forceTick += (forceControlDark + forceManipulationDark) / 100;
+	int frsSkills = numSpecificSkills(creature, "force_rank_");
+        float frsMod = frsSkills * .056;
+        modifier = modifier * (1 + frsMod);
+	uint32 forceTick = tick * modifier;
 
 	if (forceTick > getForcePowerMax() - getForcePower()){   // If the player's Force Power is going to regen again and it's close to max,
 		setForcePower(getForcePowerMax());             // Set it to max, so it doesn't go over max.

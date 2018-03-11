@@ -41,24 +41,39 @@
 --which carries forward this exception.
 --true = 1, false = 0
 
-FireLightningSingle2Command = {
-        name = "firelightningsingle2",
+ForceLightningSingle2Command = {
+	name = "forcelightningsingle2_npc",
 
-	damageMultiplier = 6.0,
-	speedMultiplier = 2.0,
-	healthCostMultiplier = 1,
-	actionCostMultiplier = 1,
-	mindCostMultiplier = 1,
+	minDamage = 750,
+	maxDamage = 1250,
+	speed = 4.0,
+	forceCost = 150,
+	visMod = 25,
+	accuracySkillMod = "forcelightning_accuracy",
 
-	animation = "fire_lightning_rifle_single_2",
+	stateEffects = {
+	  StateEffect(
+		STUN_EFFECT,
+		{},
+		{},
+		{ "jedi_state_defense" },
+		65,
+		0,
+		15
+	  )
+	},
+
+	animation = "force_lightning_1_particle_level_3",
 	animType = GENERATE_INTENSITY,
 
-	combatSpam = "firelightningsingle2",
-	
-	weaponType = SPECIALHEAVYWEAPON,
+	combatSpam = "forcelightningsingle2",
+
+	poolsToDamage = RANDOM_ATTRIBUTE,
+
+	forceAttack = true,
+	damageType = ELECTRICITY_DAMAGE,
 
 	range = 32
 }
 
-AddCommand(FireLightningSingle2Command)
-
+AddCommand(ForceLightningSingle2Command)

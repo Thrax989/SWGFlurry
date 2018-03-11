@@ -41,24 +41,67 @@
 --which carries forward this exception.
 --true = 1, false = 0
 
-FireLightningSingle2Command = {
-        name = "firelightningsingle2",
+ForceChokeCommand = {
+  name = "forcechoke_npc",
 
-	damageMultiplier = 6.0,
-	speedMultiplier = 2.0,
-	healthCostMultiplier = 1,
-	actionCostMultiplier = 1,
-	mindCostMultiplier = 1,
+  minDamage = 175,
+  maxDamage = 375,
+  speed = 6.0,
+  forceCost = 100,
+  visMod = 25,
+  forceAttack = true,
+  accuracyBonus = 95,
 
-	animation = "fire_lightning_rifle_single_2",
-	animType = GENERATE_INTENSITY,
+  animation = "force_choke_1_particle_level_1",
+  animType = GENERATE_INTENSITY,
 
-	combatSpam = "firelightningsingle2",
-	
-	weaponType = SPECIALHEAVYWEAPON,
+  combatSpam = "forcechoke",
 
-	range = 32
+  poolsToDamage = HEALTH_ATTRIBUTE,
+  damageType = LIGHTSABER_DAMAGE,
+
+  range = 32,
+
+  dotEffects = {
+    DotEffect(
+    FORCECHOKE,
+    { "", "" },
+    HEALTH,
+    true,
+    -1,
+    100,
+    350,
+    35,
+    33.0,
+    0.33
+    ),
+
+    DotEffect(
+    FORCECHOKE,
+    { "", "" },
+    ACTION,
+    true,
+    -1,
+    100,
+    350,
+    35,
+    33.0,
+    0.33
+    ),
+
+    DotEffect(
+    FORCECHOKE,
+    { "", "" },
+    MIND,
+    true,
+    -1,
+    100,
+    350,
+    35,
+    33.0,
+    0.33
+    )
+  },
 }
 
-AddCommand(FireLightningSingle2Command)
-
+AddCommand(ForceChokeCommand)

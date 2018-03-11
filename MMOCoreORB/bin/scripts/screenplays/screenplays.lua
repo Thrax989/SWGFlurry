@@ -69,6 +69,10 @@ includeFile("trainers/skillTrainer.lua")
 includeFile("trainers/trainerConvHandler.lua")
 
 -- GCW
+includeFile("gcw/pvp.lua")
+includeFile("gcw/pvp2.lua")
+includeFile("gcw/pvp3.lua")
+includeFile("gcw/restuss_cloner.lua")
 includeFile("gcw/newsnet.lua")
 includeFile("gcw/recruiters/recruiterConvoHandler.lua")
 includeFile("gcw/recruiters/recruiterScreenplay.lua")
