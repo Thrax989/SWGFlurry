@@ -74,7 +74,7 @@ public:
 				}
 
 				if (playerObject != NULL)
-					playerObject->setForcePower(playerObject->getForcePower() - forceReduced);
+					playerObject->setForcePower(playerObject->getForcePower() - adjustedforceCost);
 
 			} catch (Exception& e) {
 				error("unreported exception caught in ForcePowersQueueCommand::doCombatAction");
