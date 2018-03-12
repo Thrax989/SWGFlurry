@@ -393,3 +393,37 @@ includeFile("groups/flurry_present.lua")
 
 --Marauder armor schems
 includeFile("groups/marauder_armor_schems.lua")
+
+--Custom color crystals
+includeFile("groups/crystal_mauls_vengence.lua")
+includeFile("groups/crystal_qui_gons_devotion.lua")
+includeFile("groups/crystal_baass_wisdom.lua")
+includeFile("groups/crystal_banes_heart.lua")
+includeFile("groups/crystal_bnars_sacrifice.lua")
+includeFile("groups/crystal_bondaras_folly.lua")
+includeFile("groups/crystal_dawn_of_dagobah.lua")
+includeFile("groups/crystal_gallias_intuition.lua")
+includeFile("groups/crystal_horns_future.lua")
+includeFile("groups/crystal_kenobis_legacy.lua")
+includeFile("groups/crystal_kits_ferocity.lua")
+includeFile("groups/crystal_kuns_blood.lua")
+includeFile("groups/crystal_mundis_response.lua")
+includeFile("groups/crystal_prowess_of_plo_koon.lua")
+includeFile("groups/crystal_quintessence_of_the_force.lua")
+includeFile("groups/crystal_strength_of_luminaria.lua")
+includeFile("groups/crystal_sunriders_destiny.lua")
+includeFile("groups/crystal_ulics_redemption.lua")
+includeFile("groups/crystal_windus_guile.lua")
+
+--Nightsister gear
+includeFile("groups/cardeed1.lua")
+includeFile("groups/blacksunhelm1.lua")
+includeFile("groups/nightsister1.lua")
+includeFile("groups/nightsister2.lua")
+includeFile("groups/nightsister3.lua")
+includeFile("groups/nightsister4.lua")
+includeFile("groups/nightsister5.lua")
+includeFile("groups/nightsister6.lua")
+
+--World boss token
+includeFile("groups/worldbosstoken.lua")
