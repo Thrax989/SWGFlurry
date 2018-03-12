@@ -427,3 +427,6 @@ includeFile("groups/nightsister6.lua")
 
 --World boss token
 includeFile("groups/worldbosstoken.lua")
+
+--Bh saber loot when Deathblowing a Player jedi. Trophy no stats
+includeFile("groups/saberhand28.lua")

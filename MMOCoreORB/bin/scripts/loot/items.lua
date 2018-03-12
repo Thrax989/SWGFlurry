@@ -1288,3 +1288,6 @@ includeFile("items/nightsister06.lua")
 
 --World boss token
 includeFile("items/bonepile.lua")
+
+--Bh saber loot when Deathblowing a Player jedi. Trophy no stats
+includeFile("items/saber28.lua")
