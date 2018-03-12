@@ -178,7 +178,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			killer->playEffect("clienteffect/holoemote_rebel.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
-			lootManager->createLoot(inventory, "rebel_token1", 300);
+			lootManager->createLoot(inventory, "rebel_credit", 300);
 			lootManager->createLoot(inventory, "rebpoints", 300);
 			if(ghost->getJediState() >= 2){
 				lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
@@ -207,7 +207,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			killer->playEffect("clienteffect/holoemote_imperial.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
-			lootManager->createLoot(inventory, "imperial_token1", 300);
+			lootManager->createLoot(inventory, "imperial_credit", 300);
 			lootManager->createLoot(inventory, "imppoints", 300);
 			if(ghost->getJediState() >= 2){
 				lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
