@@ -1291,6 +1291,10 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	 //Reclassification on Players skillmods when logging in
 	SkillModManager::instance()->verifySkillBoxSkillMods(playerCreature);
+	
+	if (ghost->getJediState() >= 4) {
+	                SkillManager::instance()->awardSkill("force_title_jedi_rank_03", player, true, true, true);
+		}
 
 	if (getFrsData()->getRank() > 0) {
 		FrsManager* frsManager = zoneServer->getFrsManager();
