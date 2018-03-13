@@ -42,7 +42,7 @@ float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
 
 		ManagedReference<CreatureObject*> c = cast<CreatureObject*>(obj);
 
-		if (c == NULL || (!c->isNonPlayerCreatureObject() && !c->isPlayerCreature()))
+		if (c == NULL || (!c->isPlayerCreature()))
 			continue;
 
 		if (c->isDead() || c->isIncapacitated() || (c->isPlayerCreature() && c->getPlayerObject()->hasGodMode()))
@@ -53,13 +53,16 @@ float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
 
 		if (creature->getFaction() == 0 || (c->getFaction() != factionImperial && c->getFaction() != factionRebel)) {
 			visibilityIncrease += 0.5;
+			creature->playEffect("clienteffect/frs_dark_envy.cef");
 			//info(c->getCreatureName().toString() + " generating a 0.5 visibility modifier", true);
 		} else {
 			if (creature->getFaction() == c->getFaction()) {
 				visibilityIncrease += 0.25;
+				creature->playEffect("clienteffect/frs_dark_envy.cef");
 				//info(c->getCreatureName().toString() + " generating a 0.25 visibility modifier", true);
 			} else {
 				visibilityIncrease += 1;
+				creature->playEffect("clienteffect/frs_dark_envy.cef");
 				//info( c->getCreatureName().toString() + " generating a 1.0 visibility modifier", true);
 			}
 		}

@@ -1255,3 +1255,39 @@ includeFile("items/loot_schematic/maraud_chest_plate_schematic.lua")
 includeFile("items/loot_schematic/maraud_gloves_schematic.lua")
 includeFile("items/loot_schematic/maraud_helmet_schematic.lua")
 includeFile("items/loot_schematic/maraud_leggings_schematic.lua")
+
+
+--Color crystals
+includeFile("items/force_crystal_mauls_vengence.lua")
+includeFile("items/force_crystal_qui_gons_devotion.lua")
+includeFile("items/force_crystal_baass_wisdom.lua")
+includeFile("items/force_crystal_banes_heart.lua")
+includeFile("items/force_crystal_bnars_sacrifice.lua")
+includeFile("items/force_crystal_bondaras_folly.lua")
+includeFile("items/force_crystal_dawn_of_dagobah.lua")
+includeFile("items/force_crystal_gallias_intuition.lua")
+includeFile("items/force_crystal_horns_future.lua")
+includeFile("items/force_crystal_kenobis_legacy.lua")
+includeFile("items/force_crystal_kits_ferocity.lua")
+includeFile("items/force_crystal_kuns_blood.lua")
+includeFile("items/force_crystal_mundis_response.lua")
+includeFile("items/force_crystal_prowess_of_plo_koon.lua")
+includeFile("items/force_crystal_quintessence_of_the_force.lua")
+includeFile("items/force_crystal_strength_of_luminaria.lua")
+includeFile("items/force_crystal_sunriders_destiny.lua")
+includeFile("items/force_crystal_ulics_redemption.lua")
+includeFile("items/force_crystal_windus_guile.lua")
+
+--Nightsister wearables
+includeFile("items/nightsister01.lua")
+includeFile("items/nightsister02.lua")
+includeFile("items/nightsister03.lua")
+includeFile("items/nightsister04.lua")
+includeFile("items/nightsister05.lua")
+includeFile("items/nightsister06.lua")
+
+--World boss token
+includeFile("items/bonepile.lua")
+
+--Bh saber loot when Deathblowing a Player jedi. Trophy no stats
+includeFile("items/saber28.lua")
