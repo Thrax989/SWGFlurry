@@ -150,15 +150,9 @@ function Yavin4DarkEnclaveScreenPlay:spawnObjects()
 		createObserver(ENTEREDAREA, "Yavin4DarkEnclaveScreenPlay", "notifyEnteredTierFiveTooRoom", pTierfivetooArea)
 	end
 
-	spawnedPointer = spawnSceneObject("yavin4", "object/tangible/terminal/terminal_dark_enclave_challenge.iff", 3.8, -43.4, -35.7, 3435634, math.rad(-1) )
-	spawnedSceneObject:_setObject(spawnedPointer)
-	writeData(3435626 .. ":darkenclave:function1", spawnedSceneObject:getObjectID())
-	writeData(spawnedSceneObject:getObjectID() .. ":darkenclave:terminal", 1)
-
-	spawnedPointer = spawnSceneObject("yavin4", "object/tangible/terminal/terminal_dark_enclave_voting.iff", -3.8, -43.4, -35.7, 3435634, math.rad(-1) )
-	spawnedSceneObject:_setObject(spawnedPointer)
-	writeData(3435626 .. ":darkenclave:function2", spawnedSceneObject:getObjectID())
-	writeData(spawnedSceneObject:getObjectID() .. ":darkenclave:terminal", 2)
+        --FRS Shrines
+        spawnSceneObject("yavin4", "object/tangible/quest/col_jedi_robi_light_jedi_controller.iff", 17.0156, -43.4244, -37.6354, 3435634, 0.998624, 0, -0.0524352, 0)
+        spawnSceneObject("yavin4", "object/tangible/quest/col_jedi_robi_light_jedi_controller.iff", -16.3213, -43.4244, -37.6518, 3435634, 0.99741, 0, -0.0719286, 0)
 
 end
 
