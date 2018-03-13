@@ -1937,6 +1937,44 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setForceCloseDistance(5.f);
 
 			        }
+//Light Jedi Enclave
+			} else if (templatePath == "light_enclave_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Light Jedi Enclave");
+		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("yavin4", -5575, 87, 4901);
+ 					player->subtractCashCredits(1000);
+					box->setForceCloseDistance(5.f);
+
+			        }
+//Dark Jedi Enclave
+			} else if (templatePath == "dark_enclave_travel") {
+				if (!player->isInCombat() && player->getCashCredits() < 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Dark Jedi Enclave");
+		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your travels.");
+ 				        player->switchZone("yavin4", 5080, 79, 306);
+ 					player->subtractCashCredits(1000);
+					box->setForceCloseDistance(5.f);
+
+			        }
 //New Mobile Template Outfit Swap Terminal
 //Swtich Back To Normal
 			} else if (templatePath == "switch_normal_loadout") {
