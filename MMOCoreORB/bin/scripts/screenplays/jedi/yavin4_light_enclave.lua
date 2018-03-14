@@ -138,15 +138,9 @@ function Yavin4LightEnclaveScreenPlay:spawnObjects()
 		createObserver(ENTEREDAREA, "Yavin4LightEnclaveScreenPlay", "notifyEnteredTierFiveRoom", pTierfiveArea)
 	end
 
-	spawnedPointer = spawnSceneObject("yavin4", "object/tangible/terminal/terminal_light_enclave_challenge.iff", 0.0, -15.1, 22.3, 8525418, math.rad(0) )
-	spawnedSceneObject:_setObject(spawnedPointer)
-	writeData(8525417 .. ":lightenclave:function1", spawnedSceneObject:getObjectID())
-	writeData(spawnedSceneObject:getObjectID() .. ":lightenclave:terminal", 1)
-
-	spawnedPointer = spawnSceneObject("yavin4", "object/tangible/terminal/terminal_light_enclave_voting.iff", -6.9, -15.1, 21.2, 8525418, math.rad(-20) )
-	spawnedSceneObject:_setObject(spawnedPointer)
-	writeData(8525417 .. ":lightenclave:function2", spawnedSceneObject:getObjectID())
-	writeData(spawnedSceneObject:getObjectID() .. ":lightenclave:terminal", 2)
+        --FRS shriens
+	spawnSceneObject("yavin4", "object/tangible/quest/col_jedi_robi_light_jedi_controller.iff", 8.21562, -18.8883, 32.1547, 8525439, 0.996097, 0, -0.0882692, 0)
+        spawnSceneObject("yavin4", "object/tangible/quest/col_jedi_robi_light_jedi_controller.iff", -8.1815, -18.8883, 32.1397, 8525439, 0.998702, 0, -0.0509423, 0)
 
 end
 

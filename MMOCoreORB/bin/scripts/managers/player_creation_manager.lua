@@ -55,7 +55,7 @@ x31Speeder = "object/tangible/deed/vehicle_deed/landspeeder_x31_deed.iff"
 
 newplayerpack = "object/tangible/loot/misc/new_player_pack.iff"
 
-newplayerxpbuff = "object/tangible/veteran_reward/exp_buff_item.iff"
+--newplayerxpbuff = "object/tangible/veteran_reward/exp_buff_item.iff"
 
 professionSpecificItems = {
 	combat_brawler = { brawlerOneHander, brawlerTwoHander, brawlerPolearm },
@@ -67,4 +67,4 @@ professionSpecificItems = {
 	social_entertainer = { slitherhorn }
 }
 
-commonStartingItems = { noobhelemt, noobchest, noobboots, newplayerxpbuff, newplayerpack, slitherhorn, chemicalTool, mineralTool, foodTool, genericTool, brawlerPolearm, brawlerTwoHander, brawlerOneHander, marksmanCarbine, marksmanRifle, survivalKnife, marksmanPistol, marojMelon, x31Speeder }
+commonStartingItems = { noobhelemt, noobchest, noobboots, newplayerpack, slitherhorn, chemicalTool, mineralTool, foodTool, genericTool, brawlerPolearm, brawlerTwoHander, brawlerOneHander, marksmanCarbine, marksmanRifle, survivalKnife, marksmanPistol, marojMelon, x31Speeder }

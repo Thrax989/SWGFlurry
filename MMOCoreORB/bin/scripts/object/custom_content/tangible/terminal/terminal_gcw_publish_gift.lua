@@ -48,15 +48,6 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Nym's Stronghold Starport (1,000 Credits)", "nyms_stronghold_starport_travel",
 		   },
-			--[["mandalore",
-		   {
-			"Sundari Starport (1,000 Credits)", "sundari_starport_travel",
-			"Keldabe Starport (1,000 Credits)", "keldabe_starport_travel",
-			"Bralsin Starport (1,000 Credits)", "bralsin_starport_travel",
-			"Norg Bral Starport (1,000 Credits)", "norg_bral_starport_travel",
-			"Shuror Starport (1,000 Credits)", "shuror_starport_travel",
-			"Enceri Starport (1,000 Credits)", "enceri_starport_travel",
-		   },]]--
 			"naboo",
 		   {
 			"Dee'ja Peak Shuttleport (1,000 Credits)", "deeja_peak_shuttleport_travel",
@@ -83,11 +74,6 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Restuss Shuttleport (1,000 Credits)", "restuss_shuttleport_travel",
 			"Restuss Starport (1,000 Credits)", "restuss_starport_travel",
 		   },
-		 --[[	"taanab",
-		   {
-			"Taanab Pandath Port (1,000 Credits)", "taanab_pandath_port_travel",
-			"Taanab Starhunter Station (1,000 Credits)", "taanab_star_hunter_station_travel",
-		   },]]--
 		 	"talus",
 		   {
 			"Talus Dearic Shuttleport (1,000 Credits)", "talus_dearic_shuttleport_travel",
@@ -121,19 +107,41 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Nova Orion Cantina (1,000 Credits)", "Nova_orion_travel",
 		   },
-		 	--[["kaas",
-		   {
-			"Kaas PvP Zone (1,000 Credits)", "kaas_pvp_zone",
-		   },]]--
 		 	"endor",
 		   {
 			"Smuggler Outpost (1,000 Credits)", "smuggler_outpost_travel",
 			"Research Outpost (1,000 Credits)", "research_outpost_travel",
 		   },
+		 	"Light Jedi Enclave",
+		   {
+			"Light Jedi Enclave (1,000 Credits)", "light_enclave_travel",
+		   },
+		 	"Dark Jedi Enclave",
+		   {
+			"Dark Jedi Enclave (1,000 Credits)", "dark_enclave_travel",
+		   },
 		 	"Master Politician",
 		   {
 			"Master Politician Requires (10,000,000 Credits)", "citypolitician",
 		   },
+		 	--[["kaas",
+		   {
+			"Kaas PvP Zone (1,000 Credits)", "kaas_pvp_zone",
+		   },]]--
+			--[["mandalore",
+		   {
+			"Sundari Starport (1,000 Credits)", "sundari_starport_travel",
+			"Keldabe Starport (1,000 Credits)", "keldabe_starport_travel",
+			"Bralsin Starport (1,000 Credits)", "bralsin_starport_travel",
+			"Norg Bral Starport (1,000 Credits)", "norg_bral_starport_travel",
+			"Shuror Starport (1,000 Credits)", "shuror_starport_travel",
+			"Enceri Starport (1,000 Credits)", "enceri_starport_travel",
+		   },]]--
+		 --[[	"taanab",
+		   {
+			"Taanab Pandath Port (1,000 Credits)", "taanab_pandath_port_travel",
+			"Taanab Starhunter Station (1,000 Credits)", "taanab_star_hunter_station_travel",
+		   },]]--
 	}
 }
 ObjectTemplates:addTemplate(object_tangible_terminal_terminal_gcw_publish_gift, "object/tangible/terminal/terminal_gcw_publish_gift.iff")
