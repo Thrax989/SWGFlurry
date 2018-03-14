@@ -3,7 +3,7 @@
 		See file COPYING for copying conditions. */
 
 #include "server/zone/objects/player/PlayerObject.h"
-
+#include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/managers/object/ObjectManager.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/managers/skill/SkillManager.h"
@@ -1291,10 +1291,6 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	 //Reclassification on Players skillmods when logging in
 	SkillModManager::instance()->verifySkillBoxSkillMods(playerCreature);
-	
-	if (ghost->getJediState() >= 4) {
-	                SkillManager::instance()->awardSkill("force_title_jedi_rank_03", player, true, true, true);
-		}
 
 	if (getFrsData()->getRank() > 0) {
 		FrsManager* frsManager = zoneServer->getFrsManager();
@@ -1305,18 +1301,8 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
-	
-	//Broadcast to Server when FRS council leader logs in
-	if (player->hasSkill("force_rank_light_master") || player->hasSkill("force_rank_dark_master")) {
-	String playerName = playerCreature->getFirstName();
-	StringBuffer zBroadcast;
-	if (player->hasSkill("force_rank_light_master"))
-	{
-		zBroadcast << "\\#00bfff" << playerName << " \\#ffb90f Light Council Leader Has Logged Into The Server";
-	}else{
-		zBroadcast << "\\#e60000" << playerName << " \\#ffb90f Dark Council Leader Has Logged Into The Server";
-	}
-	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+
+	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
 
         //server rules promt when logging in
 	ManagedReference<PlayerObject*> player = playerCreature->getPlayerObject();
@@ -1337,7 +1323,22 @@ void PlayerObjectImplementation::notifyOnline() {
 	MissionManager* missionManager = zoneServer->getMissionManager();
 	SkillList* skillList = playerCreature->getSkillList();
 	ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
-
+	//Broadcast to Server that FRS Council Leader Has Logged In
+	if (playerCreature->hasSkill("force_rank_light_master") || playerCreature->hasSkill("force_rank_dark_master")) {
+ 	String playerName = playerCreature->getFirstName();
+ 	StringBuffer zBroadcast;
+ 	zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Now ";
+	if (playerCreature->hasSkill("force_rank_light_master")) {
+		zBroadcast << "\\#00bfff" << playerName << " \\#ffb90f Light Council Leader Has Logged Into The Server";
+	}else{
+		zBroadcast << "\\#00bfff" << playerName << " \\#ffb90f Dark Council Leader Has Logged Into The Server";
+	}
+	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+	}
+	// Check for FRS memebers that accidently droped knight to rejoin the FRS
+	if (player->getJediState() >= 4) {
+	        SkillManager::instance()->awardSkill("force_title_jedi_rank_03", playerCreature, true, true, true);
+	}
 	// Check for force Title without past FRS
 	if (playerCreature->getScreenPlayState("jedi_FRS") == 0 && playerCreature->hasSkill("force_title_jedi_rank_03")) {
 		SkillManager::instance()->surrenderSkill("force_title_jedi_master", playerCreature, true);
@@ -2691,4 +2692,3 @@ void PlayerObjectImplementation::doFieldFactionChange(int newStatus) {
 bool PlayerObjectImplementation::isIgnoring(const String& name) {
 	return !name.isEmpty() && ignoreList.contains(name);
 }
-
