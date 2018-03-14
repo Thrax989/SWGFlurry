@@ -26,10 +26,10 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-	menuResponse->addRadialMenuItem(213, 3, "@jedi_trials:meditate"); // Visibility
-	//if (player->hasSkill("force_title_jedi_rank_02")) {
-		//menuResponse->addRadialMenuItem(214, 3, "Robe Replacement"); // Get Robes
-	//}
+	menuResponse->addRadialMenuItem(213, 3, "@jedi_trials:meditate"); // Meditate
+	if (player->hasSkill("force_title_jedi_rank_02")) {
+		menuResponse->addRadialMenuItem(214, 3, "Robe Replacement"); // Get Robes
+	}
 	if ((ghost->getJediState() >= 2 && ghost->getSpentJediSkillPoints() > 235) || ghost->getJediState() >=4) {
 		menuResponse->addRadialMenuItem(215, 3, "Force Ranking");
 		if (ghost->getJediState() == 2 && ghost->getSpentJediSkillPoints() > 235) {
@@ -57,22 +57,28 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 }
 
 int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
-	if (selectedID != 213)
+	/*if (selectedID != 213)
 	return 0;
 
 	if (!creature->hasSkill("force_title_jedi_novice"))
-	return 0;
-	
+	return 0;*/
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 	if (ghost == NULL)
 	return 0;
-
-	if (ghost->getJediState() >= 2) {
-		int jediVis1 = ghost->getVisibility();
-		StringBuffer messageVis;
-		messageVis << "\\#00CC00 Your Visibility is at: " << jediVis1;
-		creature->sendSystemMessage(messageVis.toString());
+	if (creature->getPosture() != CreaturePosture::CROUCHED){
+		creature->sendSystemMessage("@jedi_trials:show_respect"); // Must show respect
 		return 0;
+		} else {
+		int rand = System::random(14) + 1;
+		StringBuffer sysmsg;
+		sysmsg << "@jedi_trials:force_shrine_wisdom_" << rand;
+		creature->sendSystemMessage(sysmsg.toString());
+		if (ghost->getJediState() >= 2) {
+			int jediVis1 = ghost->getVisibility();
+			StringBuffer messageVis;
+			messageVis << "\\#00CC00 Your Visibility is at: " << jediVis1;
+			creature->sendSystemMessage(messageVis.toString());
+		}
 	}
 
 	ZoneServer* zserv = creature->getZoneServer();
