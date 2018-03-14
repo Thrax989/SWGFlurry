@@ -147,14 +147,11 @@ ZonesEnabled = {
 TrePath = "/home/vagrant/workspace/tre/"
 
 TreFiles = {
-	"hotfix2.tre",
-	"hotfix1.tre",
-	"flurrypatch1.tre",
-        "pallet.tre",
-        "weapon.tre",
-        "mtg22.tre",
+        "flurrynova.tre",
+        "flurrymaster.tre",
+        "flurrytexture.tre",
         "collection.tre",
-        "pods.tre",
+        "mtg22.tre",
 	"mtg_planets.tre",
         "mtg_patch_021.tre",
 	"mtg_patch_019.tre",
