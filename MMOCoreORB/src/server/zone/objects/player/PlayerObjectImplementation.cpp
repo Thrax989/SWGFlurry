@@ -1327,7 +1327,6 @@ void PlayerObjectImplementation::notifyOnline() {
 	if (playerCreature->hasSkill("force_rank_light_master") || playerCreature->hasSkill("force_rank_dark_master")) {
  	String playerName = playerCreature->getFirstName();
  	StringBuffer zBroadcast;
- 	zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Now ";
 	if (playerCreature->hasSkill("force_rank_light_master")) {
 		zBroadcast << "\\#00bfff" << playerName << " \\#ffb90f Light Council Leader Has Logged Into The Server";
 	}else{
