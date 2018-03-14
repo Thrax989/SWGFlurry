@@ -152,7 +152,27 @@ lootableArmorAttachmentStatMods = {
 	"healing_ability",
 	"keep_creature",
 	"stored_pets",
-	"combat_medic_effectiveness"
+	"combat_medic_effectiveness",
+	"mindblast_accuracy",
+	"jedi_saber_assembly",
+	"jedi_saber_experimentation",
+	"jedi_force_power_regen",
+	"jedi_force_power_max",
+	"onehandlightsaber_accuracy",
+	"onehandlightsaber_speed",
+	"polearmlightsaber_accuracy",
+	"polearmlightsaber_speed",
+	"twohandlightsaber_accuracy",
+	"twohandlightsaber_speed",
+	"force_assembly",
+	"forcethrow_accuracy",
+	"force_experimentation",
+	"force_failure_reduction",
+	"force_repair_bonus",
+	"forceintimidate_accuracy",
+	"forceknockdown_accuracy",
+	"forcelightning_accuracy",
+	"forceweaken_accuracy"
 }
 
 lootableClothingAttachmentStatMods = {
@@ -286,7 +306,27 @@ lootableClothingAttachmentStatMods = {
 	"healing_ability",
 	"keep_creature",
 	"stored_pets",
-	"combat_medic_effectiveness",
+	"combat_medic_effectiveness"
+	"mindblast_accuracy",
+	"jedi_saber_assembly",
+	"jedi_saber_experimentation",
+	"jedi_force_power_regen",
+	"jedi_force_power_max",
+	"onehandlightsaber_accuracy",
+	"onehandlightsaber_speed",
+	"polearmlightsaber_accuracy",
+	"polearmlightsaber_speed",
+	"twohandlightsaber_accuracy",
+	"twohandlightsaber_speed",
+	"force_assembly",
+	"forcethrow_accuracy",
+	"force_experimentation",
+	"force_failure_reduction",
+	"force_repair_bonus",
+	"forceintimidate_accuracy",
+	"forceknockdown_accuracy",
+	"forcelightning_accuracy",
+	"forceweaken_accuracy"
 }
 
 lootableArmorStatMods = {

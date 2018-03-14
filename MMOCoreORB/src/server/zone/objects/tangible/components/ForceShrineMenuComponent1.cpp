@@ -27,9 +27,9 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 	menuResponse->addRadialMenuItem(213, 3, "@jedi_trials:meditate"); // Meditate
-	if (player->hasSkill("force_title_jedi_rank_02")) {
-		menuResponse->addRadialMenuItem(214, 3, "Robe Replacement"); // Get Robes
-	}
+	///if (player->hasSkill("force_title_jedi_rank_02")) {
+		///menuResponse->addRadialMenuItem(214, 3, "Robe Replacement"); // Get Robes
+	///}
 	if ((ghost->getJediState() >= 2 && ghost->getSpentJediSkillPoints() > 235) || ghost->getJediState() >=4) {
 		menuResponse->addRadialMenuItem(215, 3, "Force Ranking");
 		if (ghost->getJediState() == 2 && ghost->getSpentJediSkillPoints() > 235) {
