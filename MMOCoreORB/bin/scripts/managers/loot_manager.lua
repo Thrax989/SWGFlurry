@@ -306,7 +306,7 @@ lootableClothingAttachmentStatMods = {
 	"healing_ability",
 	"keep_creature",
 	"stored_pets",
-	"combat_medic_effectiveness"
+	"combat_medic_effectiveness",
 	"mindblast_accuracy",
 	"jedi_saber_assembly",
 	"jedi_saber_experimentation",
