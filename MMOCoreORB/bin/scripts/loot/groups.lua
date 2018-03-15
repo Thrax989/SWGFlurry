@@ -416,8 +416,6 @@ includeFile("groups/crystal_ulics_redemption.lua")
 includeFile("groups/crystal_windus_guile.lua")
 
 --Nightsister gear
-includeFile("groups/cardeed1.lua")
-includeFile("groups/blacksunhelm1.lua")
 includeFile("groups/nightsister1.lua")
 includeFile("groups/nightsister2.lua")
 includeFile("groups/nightsister3.lua")
