@@ -1323,51 +1323,38 @@ void PlayerObjectImplementation::notifyOnline() {
 	MissionManager* missionManager = zoneServer->getMissionManager();
 	SkillList* skillList = playerCreature->getSkillList();
 	ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
+
 	//Broadcast to Server that FRS Council Leader Has Logged In
-	if (playerCreature->hasSkill("force_rank_light_master") || playerCreature->hasSkill("force_rank_dark_master")) {
- 	String playerName = playerCreature->getFirstName();
- 	StringBuffer zBroadcast;
 	if (playerCreature->hasSkill("force_rank_light_master")) {
+		String playerName = playerCreature->getFirstName();
+ 		StringBuffer zBroadcast;
 		zBroadcast << "\\#00bfff" << playerName << " \\#ffb90f Light Council Leader Has Logged Into The Server";
-	}else{
+	        playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+	}
+
+	if (playerCreature->hasSkill("force_rank_light_master")) {
+		String playerName = playerCreature->getFirstName();
+		StringBuffer zBroadcast;
 		zBroadcast << "\\#00bfff" << playerName << " \\#ffb90f Dark Council Leader Has Logged Into The Server";
+		playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	}
-	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+
+	if (playerCreature->hasSkill("force_rank_light_novice")) {
+		player->setJediState(4);
+                info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 4 ", true);
 	}
-	// Check for FRS memebers that accidently droped knight to rejoin the FRS
-	if (player->getJediState() >= 4) {
-	        SkillManager::instance()->awardSkill("force_title_jedi_rank_03", playerCreature, true, true, true);
+
+	if (playerCreature->hasSkill("force_rank_dark_novice")) {
+		player->setJediState(8);
+                info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 8 ", true);
 	}
-	// Check for force Title without past FRS
-	if (playerCreature->getScreenPlayState("jedi_FRS") == 0 && playerCreature->hasSkill("force_title_jedi_rank_03")) {
+
+	if (player->getJediState() < 3) {
 		SkillManager::instance()->surrenderSkill("force_title_jedi_master", playerCreature, true);
 		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_04", playerCreature, true);
 		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_03", playerCreature, true);
 	}
-	//Check for Light side FRS without being a rebel
-	if (playerCreature->hasSkill("force_rank_light_novice") && !ghost->isPrivileged() && (playerCreature->getFaction() != 370444368 || playerCreature->getScreenPlayState("jedi_FRS") != 4)) {
-		while (numSpecificSkills(playerCreature, "force_rank_light_") > 0) {
-			for (int i = 0; i < skillList->size(); ++i) {
-				String skillName = skillList->get(i)->getSkillName();
-				if(skillName.contains("force_rank_light_")) {
-					SkillManager::instance()->surrenderSkill(skillName, playerCreature, true);
-				}
-			}
-		}
-		ghost->setJediState(2);
-	}
-	//Check for Dark Side FRS without being Imperial
-	if (playerCreature->hasSkill("force_rank_dark_novice") && !ghost->isPrivileged() && (playerCreature->getFaction() != 3679112276 || playerCreature->getScreenPlayState("jedi_FRS") != 8)) {
-		while (numSpecificSkills(playerCreature, "force_rank_dark_") > 0) {
-			for (int i = 0; i < skillList->size(); ++i) {
-				String skillName = skillList->get(i)->getSkillName();
-				if(skillName.contains("force_rank_dark_")) {
-					SkillManager::instance()->surrenderSkill(skillName, playerCreature, true);
-				}
-			}
-		}
-		ghost->setJediState(2);
-	}
+
 	//Check for FRS Jedi without overt
 	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
 		playerCreature->setFactionStatus(2);
