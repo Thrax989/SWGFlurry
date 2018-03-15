@@ -234,16 +234,7 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 	experimentalMax = {0, 0, 0, 1000},
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 4},
-
-
-	skillMods = {
-		{"lightsaber_toughness", 10},
-		{"jedi_toughness", 10},
-		
-		},
-
-
-
+	
 	certificationsRequired = {"force_title_jedi_rank_02"},
 
 }
