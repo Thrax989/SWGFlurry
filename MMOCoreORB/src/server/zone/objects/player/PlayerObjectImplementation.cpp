@@ -1324,42 +1324,47 @@ void PlayerObjectImplementation::notifyOnline() {
 	SkillList* skillList = playerCreature->getSkillList();
 	ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
 
-	//Broadcast to Server that FRS Council Leader Has Logged In
+	//Broadcast to Server that FRS Council Leader Has Logged In Light
 	if (playerCreature->hasSkill("force_rank_light_master")) {
 		String playerName = playerCreature->getFirstName();
  		StringBuffer zBroadcast;
 		zBroadcast << "\\#00bfff" << playerName << " \\#ffb90f Light Council Leader Has Logged Into The Server";
 	        playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	}
-
-	if (playerCreature->hasSkill("force_rank_light_master")) {
+	//Broadcast to Server that FRS Council Leader Has Logged In Dark
+	if (playerCreature->hasSkill("force_rank_dark_master")) {
 		String playerName = playerCreature->getFirstName();
 		StringBuffer zBroadcast;
 		zBroadcast << "\\#00bfff" << playerName << " \\#ffb90f Dark Council Leader Has Logged Into The Server";
 		playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	}
-
+	//jedi check when logging in light check for jedi state 4
 	if (playerCreature->hasSkill("force_rank_light_novice")) {
 		player->setJediState(4);
                 info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 4 ", true);
 	}
-
+	//jedi check when logging in dark check for jedi state 8
 	if (playerCreature->hasSkill("force_rank_dark_novice")) {
 		player->setJediState(8);
                 info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 8 ", true);
 	}
-
 	if (player->getJediState() < 3) {
 		SkillManager::instance()->surrenderSkill("force_title_jedi_master", playerCreature, true);
 		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_04", playerCreature, true);
 		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_03", playerCreature, true);
 	}
-
-	//Check for FRS Jedi without overt
+	//Check for FRS Jedi without overt skill check
 	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
 		playerCreature->setFactionStatus(2);
 	}
-
+	//Check for FRS Jedi without overt Light state check
+	if (player->getJediState() == 4) {
+		playerCreature->setFactionStatus(2);
+	}
+	//Check for FRS Jedi without overt Darks state check
+	if (player->getJediState() == 8) {
+		playerCreature->setFactionStatus(2);
+	}
 	if (missionManager != NULL && playerCreature->hasSkill("force_title_jedi_rank_02")) {
 		uint64 id = playerCreature->getObjectID();
 
