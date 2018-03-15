@@ -69,6 +69,10 @@ function JediTrials:onPlayerLoggedIn(pPlayer)
 		writeScreenPlayData(pPlayer, "KnightTrials", "completedTrials", 1)
 	end
 
+	if (CreatureObject(pPlayer):hasSkill("force_title_jedi_rank_02") and tonumber(readScreenPlayData(pPlayer, "KnightTrials", "completedTrials")) ~= 1) then
+			awardSkill(pPlayer, "force_title_jedi_rank_03")
+	end
+
 	if (self:isOnPadawanTrials(pPlayer) or self:isOnKnightTrials(pPlayer)) then
 		dropObserver(SKILLREMOVED, "JediTrials", "droppedSkillDuringTrials", pPlayer)
 		createObserver(SKILLREMOVED, "JediTrials", "droppedSkillDuringTrials", pPlayer)
