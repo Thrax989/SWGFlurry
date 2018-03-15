@@ -1348,6 +1348,18 @@ void PlayerObjectImplementation::notifyOnline() {
 		player->setJediState(8);
                 info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 8 ", true);
 	}
+	if (player->getJediState() == 4) {
+		SkillManager::instance()->awardSkill("force_title_jedi_rank_03, playerCreature, true);
+		info(playerCreature->getFirstName() + " Knight Now Granted To Player With Jedi State " + " 8 ", true);		
+		SkillManager::instance()->awardSkill("force_rank_light_novice", playerCreature, true);
+                info(playerCreature->getFirstName() + " Novice Force Ranking Light Now Granted To Player With Jedi State " + " 4 ", true);
+	}
+	if (player->getJediState() == 8) {
+		SkillManager::instance()->awardSkill("force_title_jedi_rank_03, playerCreature, true);
+		info(playerCreature->getFirstName() + " Knight Now Granted To Player With Jedi State " + " 8 ", true);		
+		SkillManager::instance()->awardSkill("force_rank_dark_novice", playerCreature, true);
+                info(playerCreature->getFirstName() + " Novice Force Ranking Dark Now Granted To Player With Jedi State " + " 8 ", true);
+	}
 	if (player->getJediState() < 3) {
 		SkillManager::instance()->surrenderSkill("force_title_jedi_master", playerCreature, true);
 		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_04", playerCreature, true);
