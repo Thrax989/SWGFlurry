@@ -139,8 +139,7 @@ function Yavin4LightEnclaveScreenPlay:spawnObjects()
 	end
 
         --FRS shriens
-	spawnSceneObject("yavin4", "object/tangible/quest/col_jedi_robi_light_jedi_controller.iff", 8.21562, -18.8883, 32.1547, 8525439, 0.996097, 0, -0.0882692, 0)
-        spawnSceneObject("yavin4", "object/tangible/quest/col_jedi_robi_light_jedi_controller.iff", -8.1815, -18.8883, 32.1397, 8525439, 0.998702, 0, -0.0509423, 0)
+        spawnSceneObject("yavin4", "object/tangible/quest/col_jedi_robi_light_jedi_controller.iff", 1.64916, 0.1, 62.1897, 8525444, -0.674861, 0, 0.737945, 0)
 
 end
 
