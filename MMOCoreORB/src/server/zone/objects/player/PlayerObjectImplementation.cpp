@@ -1301,9 +1301,6 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
-
-	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
-
         //server rules promt when logging in
 	ManagedReference<PlayerObject*> player = playerCreature->getPlayerObject();
 	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
