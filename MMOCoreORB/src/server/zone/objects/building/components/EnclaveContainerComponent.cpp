@@ -44,6 +44,14 @@ bool EnclaveContainerComponent::checkBuildingPermission(SceneObject* sceneObject
 	if (ghost == NULL)
 		return false;
 
+	//FRS check for light jedi state 4
+	if (ghost->getJediState() == 4)
+		return true;
+
+	//FRS check for dark jedi state 8
+	if (ghost->getJediState() == 8)
+		return true;
+
 	if (ghost->hasGodMode())
 		return true;
 
@@ -81,6 +89,14 @@ bool EnclaveContainerComponent::checkCellPermission(SceneObject* sceneObject, Cr
 
 	if (ghost == NULL)
 		return false;
+
+	//FRS check for light jedi state 4
+	if (ghost->getJediState() == 4)
+		return true;
+
+	//FRS check for dark jedi state 8
+	if (ghost->getJediState() == 8)
+		return true;
 
 	if (ghost->hasGodMode())
 		return true;
