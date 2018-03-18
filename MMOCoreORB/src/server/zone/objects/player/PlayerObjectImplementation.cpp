@@ -1347,30 +1347,30 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 	//jedi check when logging in light check for jedi state 4
 	if (playerCreature->hasSkill("force_rank_light_novice")) {
-		player->setJediState(4);
+		ghost->setJediState(4);
                 info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 4 ", true);
 	}
 	//jedi check when logging in dark check for jedi state 8
 	if (playerCreature->hasSkill("force_rank_dark_novice")) {
-		player->setJediState(8);
+		ghost->setJediState(8);
                 info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 8 ", true);
 	}
 	//Grant knight for players missing FRS skills check for light jedi state 4
-	if (player->getJediState() == 4) {
+	if (ghost->getJediState() == 4) {
 		SkillManager::instance()->awardSkill("force_title_jedi_rank_03", playerCreature, true, true, true);
 		info(playerCreature->getFirstName() + " Knight Now Granted To Player With Jedi State " + " 4 ", true);		
 		SkillManager::instance()->awardSkill("force_rank_light_novice", playerCreature, true, true, true);
                 info(playerCreature->getFirstName() + " Novice Force Ranking Light Now Granted To Player With Jedi State " + " 4 ", true);
 	}
 	//Grant knight for players missing FRS skills check for dark jedi state 8
-	if (player->getJediState() == 8) {
+	if (ghost->getJediState() == 8) {
 		SkillManager::instance()->awardSkill("force_title_jedi_rank_03", playerCreature, true, true, true);
 		info(playerCreature->getFirstName() + " Knight Now Granted To Player With Jedi State " + " 8 ", true);		
 		SkillManager::instance()->awardSkill("force_rank_dark_novice", playerCreature, true, true, true);
                 info(playerCreature->getFirstName() + " Novice Force Ranking Dark Now Granted To Player With Jedi State " + " 8 ", true);
 	}
 	//Surrender Jedi FRS skills if player does not meet required jedi FRS states
-	if (player->getJediState() < 3) {
+	if (ghost->getJediState() < 3) {
 		SkillManager::instance()->surrenderSkill("force_title_jedi_master", playerCreature, true);
 		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_04", playerCreature, true);
 		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_03", playerCreature, true);
