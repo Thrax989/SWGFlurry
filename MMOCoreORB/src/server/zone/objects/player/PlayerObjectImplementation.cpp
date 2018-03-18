@@ -1301,17 +1301,19 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
-	
+
+	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
+
         //server rules promt when logging in
-	//ManagedReference<PlayerObject*> player = playerCreature->getPlayerObject();
-	//ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
-	//box->setPromptTitle("Welcome To Flurry");
-	//box->setPromptText("Welcome to the SWG Flurry Server!.\n\nServer Rules\n\n1.) Accounts\n\n You are limited to creating one character every 30 minutes. Attempting to create another character or deleting your character before the 30 minute timer expires will reset the timer. Account Per Person 3 Characters May be logged in at any given time per account 5 Characters created per account 1 Account Per Person Per IP PRIOR approval is needed to have more then one account from a IP. If you want more than 2 accounts per IP you must gain approval from the Admins by writing a request on the forums. Breaking the rules above will result in the secondary account being suspended and potentially permanently banned. Before the removal of any accounts or characters a 7 day notification will be sent to you in-game requesting that you submit a multiple account per IP request. If you fail to do so, both accounts may be banned.\n\n2.)Exploiting / Hacking\n\nIf you accidentally come across a bug and report it to an admin/GM/CSR, this is deemed acceptable behaviour. If you come across a bug and continually replicate it for personal gain, this is seen as exploiting. Hacking Using third party applications, game modifications, etc, to alter game mechanics / gain advantage is deemed as hacking. If we witness players doing so, your account will be immediately banned and IP address blacklisted from game server and forums.\n\n3.)Fightclubbing\n\n Fightclubbing with your own characters or guildmates in order to increase FRS rank is against the rules. If it is determined that you have been fightclubbing, the following actions will take place:1st offense - Jedi state reset to padawan with no skills 2nd offense - 30 day ban 3rd offense - Permanent ban.\n\n");
-	//box->setCancelButton(true, "@no");
-	//box->setOkButton(true, "@yes");
-	//box->setUsingObject(player);
-	//player->addSuiBox(box);
-	//playerCreature->sendMessage(box->generateMessage());
+	ManagedReference<PlayerObject*> player = playerCreature->getPlayerObject();
+	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
+	box->setPromptTitle("Welcome To Flurry");
+	box->setPromptText("Welcome to the SWG Flurry Server!.\n\nServer Rules\n\n1.) Accounts\n\n You are limited to creating one character every 30 minutes. Attempting to create another character or deleting your character before the 30 minute timer expires will reset the timer. Account Per Person 3 Characters May be logged in at any given time per account 5 Characters created per account 1 Account Per Person Per IP PRIOR approval is needed to have more then one account from a IP. If you want more than 2 accounts per IP you must gain approval from the Admins by writing a request on the forums. Breaking the rules above will result in the secondary account being suspended and potentially permanently banned. Before the removal of any accounts or characters a 7 day notification will be sent to you in-game requesting that you submit a multiple account per IP request. If you fail to do so, both accounts may be banned.\n\n2.)Exploiting / Hacking\n\nIf you accidentally come across a bug and report it to an admin/GM/CSR, this is deemed acceptable behaviour. If you come across a bug and continually replicate it for personal gain, this is seen as exploiting. Hacking Using third party applications, game modifications, etc, to alter game mechanics / gain advantage is deemed as hacking. If we witness players doing so, your account will be immediately banned and IP address blacklisted from game server and forums.\n\n3.)Fightclubbing\n\n Fightclubbing with your own characters or guildmates in order to increase FRS rank is against the rules. If it is determined that you have been fightclubbing, the following actions will take place:1st offense - Jedi state reset to padawan with no skills 2nd offense - 30 day ban 3rd offense - Permanent ban.\n\n");
+	box->setCancelButton(true, "@no");
+	box->setOkButton(true, "@yes");
+	box->setUsingObject(player);
+	player->addSuiBox(box);
+	playerCreature->sendMessage(box->generateMessage());
 
 	if (getForcePowerMax() > 0 && getForcePower() < getForcePowerMax())
 		activateForcePowerRegen();
@@ -1347,30 +1349,30 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 	//jedi check when logging in light check for jedi state 4
 	if (playerCreature->hasSkill("force_rank_light_novice")) {
-		ghost->setJediState(4);
+		player->setJediState(4);
                 info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 4 ", true);
 	}
 	//jedi check when logging in dark check for jedi state 8
 	if (playerCreature->hasSkill("force_rank_dark_novice")) {
-		ghost->setJediState(8);
+		player->setJediState(8);
                 info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 8 ", true);
 	}
 	//Grant knight for players missing FRS skills check for light jedi state 4
-	if (ghost->getJediState() == 4) {
+	if (player->getJediState() == 4) {
 		SkillManager::instance()->awardSkill("force_title_jedi_rank_03", playerCreature, true, true, true);
 		info(playerCreature->getFirstName() + " Knight Now Granted To Player With Jedi State " + " 4 ", true);		
 		SkillManager::instance()->awardSkill("force_rank_light_novice", playerCreature, true, true, true);
                 info(playerCreature->getFirstName() + " Novice Force Ranking Light Now Granted To Player With Jedi State " + " 4 ", true);
 	}
 	//Grant knight for players missing FRS skills check for dark jedi state 8
-	if (ghost->getJediState() == 8) {
+	if (player->getJediState() == 8) {
 		SkillManager::instance()->awardSkill("force_title_jedi_rank_03", playerCreature, true, true, true);
 		info(playerCreature->getFirstName() + " Knight Now Granted To Player With Jedi State " + " 8 ", true);		
 		SkillManager::instance()->awardSkill("force_rank_dark_novice", playerCreature, true, true, true);
                 info(playerCreature->getFirstName() + " Novice Force Ranking Dark Now Granted To Player With Jedi State " + " 8 ", true);
 	}
 	//Surrender Jedi FRS skills if player does not meet required jedi FRS states
-	if (ghost->getJediState() < 3) {
+	if (player->getJediState() < 3) {
 		SkillManager::instance()->surrenderSkill("force_title_jedi_master", playerCreature, true);
 		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_04", playerCreature, true);
 		SkillManager::instance()->surrenderSkill("force_title_jedi_rank_03", playerCreature, true);
