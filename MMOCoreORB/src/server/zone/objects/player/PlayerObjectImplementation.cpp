@@ -1301,6 +1301,9 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
+
+	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
+
         //server rules promt when logging in
 	ManagedReference<PlayerObject*> player = playerCreature->getPlayerObject();
 	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
@@ -1320,6 +1323,15 @@ void PlayerObjectImplementation::notifyOnline() {
 	MissionManager* missionManager = zoneServer->getMissionManager();
 	SkillList* skillList = playerCreature->getSkillList();
 	ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
+
+	if (ghost->getExperience("force_rank_xp") >= 600000) {
+			int amount = 0;
+			int curExp = ghost->getExperience("force_rank_xp");
+			amount -= curExp;
+			ghost->getZoneServer()->getPlayerManager()->awardExperience(playerCreature, "force_rank_xp", amount);
+			SkillManager::instance()->surrenderSkill("force_title_jedi_master", playerCreature, true);
+			SkillManager::instance()->surrenderSkill("force_title_jedi_rank_04", playerCreature, true);
+	}
 
 	//Broadcast to Server that FRS Council Leader Has Logged In Light
 	if (playerCreature->hasSkill("force_rank_light_master")) {
@@ -1347,16 +1359,16 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 	//Grant knight for players missing FRS skills check for light jedi state 4
 	if (player->getJediState() == 4) {
-		SkillManager::instance()->awardSkill("force_title_jedi_rank_03", playerCreature, true);
+		SkillManager::instance()->awardSkill("force_title_jedi_rank_03", playerCreature, true, true, true);
 		info(playerCreature->getFirstName() + " Knight Now Granted To Player With Jedi State " + " 4 ", true);		
-		SkillManager::instance()->awardSkill("force_rank_light_novice", playerCreature, true);
+		SkillManager::instance()->awardSkill("force_rank_light_novice", playerCreature, true, true, true);
                 info(playerCreature->getFirstName() + " Novice Force Ranking Light Now Granted To Player With Jedi State " + " 4 ", true);
 	}
 	//Grant knight for players missing FRS skills check for dark jedi state 8
 	if (player->getJediState() == 8) {
-		SkillManager::instance()->awardSkill("force_title_jedi_rank_03", playerCreature, true);
+		SkillManager::instance()->awardSkill("force_title_jedi_rank_03", playerCreature, true, true, true);
 		info(playerCreature->getFirstName() + " Knight Now Granted To Player With Jedi State " + " 8 ", true);		
-		SkillManager::instance()->awardSkill("force_rank_dark_novice", playerCreature, true);
+		SkillManager::instance()->awardSkill("force_rank_dark_novice", playerCreature, true, true, true);
                 info(playerCreature->getFirstName() + " Novice Force Ranking Dark Now Granted To Player With Jedi State " + " 8 ", true);
 	}
 	//Surrender Jedi FRS skills if player does not meet required jedi FRS states
