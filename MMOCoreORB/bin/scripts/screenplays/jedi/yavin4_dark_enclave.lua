@@ -151,7 +151,7 @@ function Yavin4DarkEnclaveScreenPlay:spawnObjects()
         --FRS Shrines
         spawnSceneObject("yavin4", "object/tangible/quest/col_jedi_robi_light_jedi_controller.iff", 17.0156, -43.4244, -37.6354, 3435634, 0.998624, 0, -0.0524352, 0)
         spawnSceneObject("yavin4", "object/tangible/quest/col_jedi_robi_light_jedi_controller.iff", -16.3213, -43.4244, -37.6518, 3435634, 0.99741, 0, -0.0719286, 0)
-
+    
 end
 
 function Yavin4DarkEnclaveScreenPlay:notifyEnteredEnclave(pArea, pLifeform)
