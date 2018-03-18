@@ -99,8 +99,6 @@ function Yavin4LightEnclaveScreenPlay:start()
 	if (isZoneEnabled("yavin4")) then
 
 		self:spawnObjects()
-		self:spawnMobiles()
-
 	end
 end
 
