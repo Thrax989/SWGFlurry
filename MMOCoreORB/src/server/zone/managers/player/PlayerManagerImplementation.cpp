@@ -1618,8 +1618,8 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 					if (player->getScreenPlayState("jedi_FRS") == 4) {
 						player->setScreenPlayState("jedi_FRS", 16);
 					}
-					if (ghost->getJediState() == 4 {
-						ghost->setJediState(4;
+					if (ghost->getJediState() == 4) {
+						ghost->setJediState(4);
 					}
 					String playerName = player->getFirstName();
 					StringBuffer zBroadcast;
