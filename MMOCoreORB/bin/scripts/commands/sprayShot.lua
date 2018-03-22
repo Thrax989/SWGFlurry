@@ -44,48 +44,39 @@
 SprayShotCommand = {
         name = "sprayshot",
 
-	damageMultiplier = 6.0,
+	damageMultiplier = 4.0,
 	speedMultiplier = 3.5,
 	healthCostMultiplier = 1,
 	actionCostMultiplier = 1,
 	mindCostMultiplier = 1,
 
 	stateEffects = {
-	  StateEffect( 
-		DIZZY_EFFECT, 
-		{}, 
-		{ "dizzy_defense", "resistance_states" }, 
-		{ "jedi_state_defense" }, 
-		60, 
-		100, 
-		30 
+	  StateEffect(
+		DIZZY_EFFECT,
+		{},
+		{ "dizzy_defense", "resistance_states" },
+		{ "jedi_state_defense" },
+		60,
+		0,
+		30
 	  ),
-	  StateEffect( 
-		BLIND_EFFECT, 
-		{}, 
-		{ "blind_defense", "resistance_states" }, 
-		{ "jedi_state_defense" }, 
-		100, 
-		100, 
-		30 
+	  StateEffect(
+		BLIND_EFFECT,
+		{},
+		{ "blind_defense", "resistance_states" },
+		{ "jedi_state_defense" },
+		100,
+		0,
+		30
 	  ),
-	  StateEffect( 
-		STUN_EFFECT, 
-		{}, 
-		{ "stun_defense", "resistance_states" }, 
-		{ "jedi_state_defense" }, 
-		30, 
-		100, 
-		10 
-	  ),
-	  StateEffect( 
-		INTIMIDATE_EFFECT, 
-		{}, 
-		{ "intimidate_defense", "resistance_states" }, 
-		{ "jedi_state_defense" }, 
-		75, 
-		0, 
-		60 
+	  StateEffect(
+		STUN_EFFECT,
+		{},
+		{ "stun_defense", "resistance_states" },
+		{ "jedi_state_defense" },
+		30,
+		0,
+		10
 	  )
 	},
 

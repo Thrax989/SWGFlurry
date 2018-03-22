@@ -44,24 +44,11 @@
 BleedingShotCommand = {
         name = "bleedingshot",
 
-	damageMultiplier = 3.5,
+	damageMultiplier = 2.0,
 	speedMultiplier = 1.5,
 	healthCostMultiplier = 1,
 	actionCostMultiplier = 1,
 	mindCostMultiplier = 1,
-
-
-	stateEffects = {
-	  StateEffect( 
-		STUN_EFFECT, 
-		{}, 
-		{ "stun_defense", "resistance_states" }, 
-		{ "jedi_state_defense" }, 
-		30, 
-		100, 
-		15 
-	  )
-	},
 
 	animation = "fire_3_single", 
 	animType = GENERATE_RANGED,
@@ -74,7 +61,7 @@ BleedingShotCommand = {
 		{ "resistance_bleeding", "bleed_resist" },
 		MIND,
 		true,
-		200,
+		0,
 		100,
 		30, 
 		30
