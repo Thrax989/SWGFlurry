@@ -136,10 +136,10 @@ function Yavin4LightEnclaveScreenPlay:spawnObjects()
 		createObserver(ENTEREDAREA, "Yavin4LightEnclaveScreenPlay", "notifyEnteredTierFiveRoom", pTierfiveArea)
 	end
 
-        --FRS shriens
+        --FRS shrien
 	spawnSceneObject("yavin4", "object/tangible/quest/col_jedi_robi_light_jedi_controller.iff", 8.21562, -18.8883, 32.1547, 8525439, 0.996097, 0, -0.0882692, 0)
         spawnSceneObject("yavin4", "object/tangible/quest/col_jedi_robi_light_jedi_controller.iff", -8.1815, -18.8883, 32.1397, 8525439, 0.998702, 0, -0.0509423, 0)
-
+ 
 end
 
 function Yavin4LightEnclaveScreenPlay:notifyEnteredEnclave(pArea, pLifeform)
