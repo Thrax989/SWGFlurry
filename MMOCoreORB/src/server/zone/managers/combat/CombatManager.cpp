@@ -798,8 +798,15 @@ int CombatManager::getDefenderSecondaryDefenseModifier(CreatureObject* defender)
 		targetDefense += defender->getSkillMod("private_" + mod);
 	}
 
+	if ( defender->isIntimidated() || defender->isBerserked() )
+		targetDefense /= 2;
+
 	if (targetDefense > 125)
 		targetDefense = 125;
+
+	if ( defender->isDizzied() ){
+		targetDefense -= targetDefense * .20;
+	}
 
 	return targetDefense;
 }
