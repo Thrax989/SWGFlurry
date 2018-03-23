@@ -1948,6 +1948,21 @@ class CreatureObject extends TangibleObject {
 	public native int getSkillMod(final string skillmod);
 
 	@dirty
+	public native float getFrsControl();
+
+	@dirty
+	public native float getFrsPower();
+
+	@dirty
+	public native float getFrsManipulation();
+
+	@dirty
+	public native float getFrsMod(final string type);
+
+	@dirty
+	public native float getFrsMod(final string type, float multiplier);
+
+	@dirty
 	@preLocked
 	public native int getSkillModOfType(final string skillmod, final unsigned int modType);
 

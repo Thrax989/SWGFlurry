@@ -1301,9 +1301,9 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
-	
+
         //server rules promt when logging in
-	//ManagedReference<PlayerObject*> player = playerCreature->getPlayerObject();
+	ManagedReference<PlayerObject*> player = playerCreature->getPlayerObject();
 	//ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
 	//box->setPromptTitle("Welcome To Flurry");
 	//box->setPromptText("Welcome to the SWG Flurry Server!.\n\nServer Rules\n\n1.) Accounts\n\n You are limited to creating one character every 30 minutes. Attempting to create another character or deleting your character before the 30 minute timer expires will reset the timer. Account Per Person 3 Characters May be logged in at any given time per account 5 Characters created per account 1 Account Per Person Per IP PRIOR approval is needed to have more then one account from a IP. If you want more than 2 accounts per IP you must gain approval from the Admins by writing a request on the forums. Breaking the rules above will result in the secondary account being suspended and potentially permanently banned. Before the removal of any accounts or characters a 7 day notification will be sent to you in-game requesting that you submit a multiple account per IP request. If you fail to do so, both accounts may be banned.\n\n2.)Exploiting / Hacking\n\nIf you accidentally come across a bug and report it to an admin/GM/CSR, this is deemed acceptable behaviour. If you come across a bug and continually replicate it for personal gain, this is seen as exploiting. Hacking Using third party applications, game modifications, etc, to alter game mechanics / gain advantage is deemed as hacking. If we witness players doing so, your account will be immediately banned and IP address blacklisted from game server and forums.\n\n3.)Fightclubbing\n\n Fightclubbing with your own characters or guildmates in order to increase FRS rank is against the rules. If it is determined that you have been fightclubbing, the following actions will take place:1st offense - Jedi state reset to padawan with no skills 2nd offense - 30 day ban 3rd offense - Permanent ban.\n\n");

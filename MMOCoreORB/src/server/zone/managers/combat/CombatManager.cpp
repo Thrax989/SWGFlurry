@@ -798,8 +798,15 @@ int CombatManager::getDefenderSecondaryDefenseModifier(CreatureObject* defender)
 		targetDefense += defender->getSkillMod("private_" + mod);
 	}
 
+	if ( defender->isIntimidated() || defender->isBerserked() )
+		targetDefense /= 2;
+
 	if (targetDefense > 125)
 		targetDefense = 125;
+
+	if ( defender->isDizzied() ){
+		targetDefense -= targetDefense * .20;
+	}
 
 	return targetDefense;
 }
@@ -816,9 +823,22 @@ float CombatManager::getDefenderToughnessModifier(CreatureObject* defender, int 
 		}
 	}
 
+	// Take Cover Dmg Mitigation
+	if ( attackType == SharedWeaponObjectTemplate::RANGEDATTACK && defender->isInCover()){
+		damage *= 1.f - ( 30.f / 100.f);
+	}
+	
+	float frsBonus = defender->getFrsMod("manipulation");
 	int jediToughness = defender->getSkillMod("jedi_toughness");
-	if (damType != SharedWeaponObjectTemplate::LIGHTSABER && jediToughness > 0)
+
+	if (damType != SharedWeaponObjectTemplate::LIGHTSABER && damType != SharedWeaponObjectTemplate::FORCEATTACK && jediToughness > 0)
 		damage *= 1.f - (jediToughness / 100.f);
+
+	if (damType == SharedWeaponObjectTemplate::FORCEATTACK && jediToughness > 0)
+				damage *= 1.f - ((jediToughness * (defender->getSkillMod("force_defense")/100)) / 100.f);
+
+	if (damType == SharedWeaponObjectTemplate::LIGHTSABER && jediToughness > 0)
+		damage *= 1.f - ((jediToughness/(8.5*frsBonus)) / 100.f);
 
 	return damage < 0 ? 0 : damage;
 }
@@ -1097,6 +1117,10 @@ int CombatManager::getArmorVehicleReduction(VehicleObject* defender, int damageT
 
 int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, float damage, int hitLocation, const CreatureAttackData& data) {
 	int damageType = 0, armorPiercing = 1;
+	bool lightningAttack =  false;
+
+	if (isLightningAttack(data))
+		lightningAttack = true;
 
 	if (!data.isForceAttack()) {
 		damageType = weapon->getDamageType();
@@ -1107,6 +1131,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	} else {
 		damageType = data.getDamageType();
 	}
+
+	if (lightningAttack == true && !defender->isPlayerCreature())
+		damageType = SharedWeaponObjectTemplate::LIGHTSABER;	
 
 	if (defender->isAiAgent()) {
 		float armorReduction = getArmorNpcReduction(cast<AiAgent*>(defender), damageType);
@@ -1221,7 +1248,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		Locker plocker(psg);
 
-		psg->inflictDamage(psg, 0, damage * 0.1, true, true);
+		psg->inflictDamage(psg, 0, damage * 0.01, true, true);
 
 	}
 
@@ -1233,6 +1260,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	if (armor != NULL && !armor->isVulnerable(damageType)) {
 		float armorReduction = getArmorObjectReduction(armor, damageType);
 		float dmgAbsorbed = damage;
+
+		if (lightningAttack == true && attacker->isPlayerCreature()) //Force Lightning now has inherient AP2 for players only.
+			armorPiercing = 2;
 
 		// use only the damage applied to the armor for piercing (after the PSG takes some off)
 		damage *= getArmorPiercing(armor, armorPiercing);
@@ -1246,7 +1276,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		// inflict condition damage
 		Locker alocker(armor);
 
-		armor->inflictDamage(armor, 0, damage * 0.1, true, true);
+		armor->inflictDamage(armor, 0, damage * 0.01, true, true);
 	}
 
 	return damage;
@@ -1327,6 +1357,9 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 			break;
 	}
 
+	if (lairObserver && data.isForceAttack())
+		damage *= 3; //Damage boost for powers, killing lairs.
+	
 	if (lairObserver && lairObserver->getSpawnNumber() > 2)
 		damage *= 3.5;
 
@@ -1429,6 +1462,15 @@ float CombatManager::doDroidDetonation(CreatureObject* droid, CreatureObject* de
 	}
 }
 
+bool CombatManager::isLightningAttack(const CreatureAttackData& data){
+	if (data.getCombatSpam() == "forcelightningsingle1" || data.getCombatSpam() == "forcelightningsingle2" ||
+		data.getCombatSpam() == "forcelightningcone1" || data.getCombatSpam() == "forcelightningcone2")
+		return true;
+	else
+		return false;
+
+}
+
 float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data) {
 	float damage = 0;
 	int diff = 0;
@@ -1464,11 +1506,39 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	if (defender->isKnockedDown())
 		damage *= 1.5f;
 
+		if (data.isForceAttack()){
+		ManagedReference<WeaponObject*> wielded = NULL;;
+		wielded = attacker->getWeapon();
+
+		float frsPowerBonus = attacker->getFrsMod("power",2);
+		if (frsPowerBonus > 0)
+			damage *= frsPowerBonus;
+			}
+		//Force Lightning for player lightning
+		if (isLightningAttack(data)){
+			if (attacker->isPlayerCreature() && defender->isPlayerCreature())
+						damage *= 2.15;
+			else if (attacker->isPlayerCreature() && !defender->isPlayerCreature())
+						damage *= 5.25;
+
+			if (!attacker->isPlayerCreature())
+				damage *= .6; //40% damage reduction for NPCs using powers abilities
+			}
+
+		if ((data.getCombatSpam() == "mindblast2" || data.getCombatSpam() == "mindblast1"
+		|| data.getCombatSpam() == "forcethrow2"
+		|| data.getCombatSpam() == "forcethrow1")
+		&& !attacker->isPlayerCreature())
+		damage *= .30;
+
 	// Toughness reduction
 	if (data.isForceAttack())
 		damage = getDefenderToughnessModifier(defender, SharedWeaponObjectTemplate::FORCEATTACK, data.getDamageType(), damage);
 	else
 		damage = getDefenderToughnessModifier(defender, weapon->getAttackType(), weapon->getDamageType(), damage);
+
+	if (weapon->getDamageType() == SharedWeaponObjectTemplate::LIGHTSABER && attacker->isPlayerCreature())
+		damage *= attacker->getFrsMod("manipulation",2);
 
 	// PvP Damage Reduction.
 	if (attacker->isPlayerCreature() && defender->isPlayerCreature()) {
@@ -1569,14 +1639,10 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		const String& def = defenseAccMods->get(0); // FIXME: this is hacky, but a lot faster than using contains()
 
 		// saber block is special because it's just a % chance to block based on the skillmod
-		if (def == "saber_block") {
-			int block_mod = targetCreature->getSkillMod(def);
-            	if (targetCreature->isIntimidated()) {
-                	block_mod = (block_mod / 2);
-            	}
-            	if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < block_mod))
-                return RICOCHET;
-            	else return HIT;
+ 		if (def == "saber_block") {
+			if (!attacker->isTurret() && (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) && ((System::random(100)) < targetCreature->getSkillMod(def)))
+				return RICOCHET;
+			else return HIT;
 		}
 
 		targetDefense = getDefenderSecondaryDefenseModifier(targetCreature);
@@ -2115,6 +2181,9 @@ int CombatManager::applyDamage(CreatureObject* attacker, WeaponObject* weapon, T
 			if (weapon->isBroken())
 				armorPiercing = 0;
 		} else {
+		     if (isLightningAttack(data) && !defender->isPlayerCreature())
+        	       	damageType = SharedWeaponObjectTemplate::LIGHTSABER; 
+		     else
 			damageType = data.getDamageType();
 		}
 

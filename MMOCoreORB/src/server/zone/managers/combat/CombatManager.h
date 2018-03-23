@@ -195,6 +195,7 @@ protected:
 	float calculateDamage(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data);
 	float calculateDamage(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* defender, const CreatureAttackData& data);
 	bool checkConeAngle(SceneObject* targetCreature, float angle, float creatureVectorX, float creatureVectorY, float directionVectorX, float directionVectorY);
+	bool isLightningAttack(const CreatureAttackData& data);
 
 	void showHitLocationFlyText(CreatureObject *attacker, CreatureObject *defender, uint8 location);
 

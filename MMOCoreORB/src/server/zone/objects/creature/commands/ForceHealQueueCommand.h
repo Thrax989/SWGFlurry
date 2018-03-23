@@ -34,7 +34,7 @@ public:
 		DISEASED = 1,
 		POISONED = 2,
 		BLEEDING = 4,
-		ONFIRE   = 8
+		ONFIRE   = 8,
 	};
 
 	enum {
@@ -174,7 +174,10 @@ public:
 	}
 
 	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
-		return defaultTime * 1.0;
+
+		float defTime = defaultTime;
+
+		return defTime;
 	}
 };
 

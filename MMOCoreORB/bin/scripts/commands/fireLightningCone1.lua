@@ -50,18 +50,6 @@ FireLightningCone1Command = {
 	actionCostMultiplier = 1,
 	mindCostMultiplier = 1,
 
-	stateEffects = {
-	StateEffect( 
-		STUN_EFFECT, 
-		{}, 
-		{ "stun_defense", "resistance_states" }, 
-		{ "jedi_state_defense" }, 
-		30, 
-		100, 
-		20 
-	  )
-	},
-
 	animation = "fire_lightning_rifle_single_1",
 	animType = GENERATE_INTENSITY,
 
@@ -72,7 +60,7 @@ FireLightningCone1Command = {
 	
 	weaponType = SPECIALHEAVYWEAPON,
 
-	range = 32
+	range = 16
 }
 
 AddCommand(FireLightningCone1Command)

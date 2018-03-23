@@ -44,33 +44,12 @@
 FastBlastCommand = {
         name = "fastblast",
 
-	damageMultiplier = 6.0,
-	speedMultiplier = 3.0,
+	damageMultiplier = 4.15,
+	speedMultiplier = 3.05,
 	healthCostMultiplier = 1.5,
 	actionCostMultiplier = 1.5,
 	mindCostMultiplier = 1,
 	accuracyBonus = 95,
-
-	stateEffects = {
-	  StateEffect( 
-		DIZZY_EFFECT, 
-		{}, 
-		{ "dizzy_defense", "resistance_states" }, 
-		{ "jedi_state_defense" }, 
-		30, 
-		100, 
-		30 
-	  ),
-	  StateEffect( 
-		INTIMIDATE_EFFECT, 
-		{}, 
-		{}, 
-		{ "force_defense" }, 
-		75, 
-		0, 
-		60 
-	  )
-	},
 
 	poolsToDamage = HEALTH_ATTRIBUTE + ACTION_ATTRIBUTE + MIND_ATTRIBUTE,
 

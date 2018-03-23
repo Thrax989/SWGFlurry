@@ -1429,6 +1429,86 @@ int CreatureObjectImplementation::getSkillMod(const String& skillmod) {
 	return skillModList.getSkillMod(skillmod);
 }
 
+float CreatureObjectImplementation::getFrsPower() {
+	Locker locker(&skillModMutex);
+	float fpl = 0;
+	float fpd = 0;
+	fpl = (float)skillModList.getSkillMod("force_power_light");
+	fpd = (float)skillModList.getSkillMod("force_power_dark");
+
+	if (fpl > fpd)
+		return fpl;
+	else
+		return fpd;
+}
+
+float CreatureObjectImplementation::getFrsManipulation() {
+	Locker locker(&skillModMutex);
+	float fml,fmd;
+	fml = (float)skillModList.getSkillMod("force_manipulation_light");
+	fmd = (float)skillModList.getSkillMod("force_manipulation_dark");
+
+	if (fml > fmd)
+		return fml;
+	else
+		return fmd;
+}
+
+float CreatureObjectImplementation::getFrsControl() {
+	Locker locker(&skillModMutex);
+	float fcl,fcd;
+	fcl = (float)skillModList.getSkillMod("force_control_light");
+	fcd = (float)skillModList.getSkillMod("force_control_dark");
+
+	if (fcl > fcd)
+		return fcl;
+	else
+		return fcd;
+}
+
+float CreatureObjectImplementation::getFrsMod(const String& type) {
+	Locker locker(&skillModMutex);
+	int typeStat = 0;
+
+	if (type != "control" && type != "manipulation" && type != "power"){
+		error("Invalid frs mod being referenced in CreatureObjectImplementation::getFrsMod");
+		return 0;
+	}
+
+	if (type == "power")
+		typeStat = getFrsPower();
+	else if (type == "control")
+		typeStat = getFrsControl();
+	else if (type == "manipulation")
+		typeStat = getFrsManipulation();
+
+	float mod = (1 + .25 * (typeStat/120)); //25% bonus at 120 skill rank
+	return mod;
+}
+
+float CreatureObjectImplementation::getFrsMod(const String& type, float multiplier) {
+	Locker locker(&skillModMutex);
+	float typeStat = 0.f;
+
+	if (type != "control" && type != "manipulation" &&type != "power"){
+		error("Invalid frs mod being referenced in CreatureObjectImplementation::getFrsMod");
+		return 0;
+	}
+	
+	if (type == "power")
+		typeStat = getFrsPower();
+	else if (type == "control")
+		typeStat = getFrsControl();
+	else if (type == "manipulation")
+		typeStat = getFrsManipulation();
+
+	typeStat /= multiplier;
+
+	float mod = (1 + .25 * (typeStat/120)); //25% bonus at 120 skill rank
+
+	return mod;
+}
+
 int CreatureObjectImplementation::getSkillModOfType(const String& skillmod, const unsigned int modType) {
 	Locker locker(&skillModMutex);
 
