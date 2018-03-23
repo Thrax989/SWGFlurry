@@ -816,6 +816,11 @@ float CombatManager::getDefenderToughnessModifier(CreatureObject* defender, int 
 		}
 	}
 
+	 // Take Cover Dmg Mitigation
+	 if ( attackType == SharedWeaponObjectTemplate::RANGEDATTACK && defender->isInCover()){
+		 damage *= 1.f - ( 30.f / 100.f);
+	 }
+
 	int jediToughness = defender->getSkillMod("jedi_toughness");
 	if (damType != SharedWeaponObjectTemplate::LIGHTSABER && jediToughness > 0)
 		damage *= 1.f - (jediToughness / 100.f);
