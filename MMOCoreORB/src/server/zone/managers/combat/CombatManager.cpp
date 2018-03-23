@@ -2172,6 +2172,9 @@ int CombatManager::applyDamage(CreatureObject* attacker, WeaponObject* weapon, T
 			if (weapon->isBroken())
 				armorPiercing = 0;
 		} else {
+		     if (isLightningAttack(data) && !defender->isPlayerCreature())
+        	       	damageType = SharedWeaponObjectTemplate::LIGHTSABER; 
+		     else
 			damageType = data.getDamageType();
 		}
 
