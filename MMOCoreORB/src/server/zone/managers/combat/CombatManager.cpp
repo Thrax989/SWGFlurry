@@ -823,14 +823,22 @@ float CombatManager::getDefenderToughnessModifier(CreatureObject* defender, int 
 		}
 	}
 
-	 // Take Cover Dmg Mitigation
-	 if ( attackType == SharedWeaponObjectTemplate::RANGEDATTACK && defender->isInCover()){
-		 damage *= 1.f - ( 30.f / 100.f);
-	 }
-
+	// Take Cover Dmg Mitigation
+	if ( attackType == SharedWeaponObjectTemplate::RANGEDATTACK && defender->isInCover()){
+		damage *= 1.f - ( 30.f / 100.f);
+	}
+	
+	float frsBonus = defender->getFrsMod("manipulation");
 	int jediToughness = defender->getSkillMod("jedi_toughness");
-	if (damType != SharedWeaponObjectTemplate::LIGHTSABER && jediToughness > 0)
+
+	if (damType != SharedWeaponObjectTemplate::LIGHTSABER && damType != SharedWeaponObjectTemplate::FORCEATTACK && jediToughness > 0)
 		damage *= 1.f - (jediToughness / 100.f);
+
+	if (damType == SharedWeaponObjectTemplate::FORCEATTACK && jediToughness > 0)
+				damage *= 1.f - ((jediToughness * (defender->getSkillMod("force_defense")/100)) / 100.f);
+
+	if (damType == SharedWeaponObjectTemplate::LIGHTSABER && jediToughness > 0)
+		damage *= 1.f - ((jediToughness/(8.5*frsBonus)) / 100.f);
 
 	return damage < 0 ? 0 : damage;
 }
@@ -1109,6 +1117,10 @@ int CombatManager::getArmorVehicleReduction(VehicleObject* defender, int damageT
 
 int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, float damage, int hitLocation, const CreatureAttackData& data) {
 	int damageType = 0, armorPiercing = 1;
+	bool lightningAttack =  false;
+
+	if (isLightningAttack(data))
+		lightningAttack = true;
 
 	if (!data.isForceAttack()) {
 		damageType = weapon->getDamageType();
@@ -1119,6 +1131,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	} else {
 		damageType = data.getDamageType();
 	}
+
+	if (lightningAttack == true && !defender->isPlayerCreature())
+		damageType = SharedWeaponObjectTemplate::LIGHTSABER;	
 
 	if (defender->isAiAgent()) {
 		float armorReduction = getArmorNpcReduction(cast<AiAgent*>(defender), damageType);
@@ -1220,6 +1235,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	if (psg != NULL && !psg->isVulnerable(damageType)) {
 		float armorReduction =  getArmorObjectReduction(psg, damageType);
 		float dmgAbsorbed = damage;
+		
+		if (lightningAttack == true && attacker->isPlayerCreature()) //Force Lightning now has inherient AP2 for players only.
+			armorPiercing = 2;
 
         if (armorReduction > 0) damage *= 1.f - (armorReduction / 100.f);
 
@@ -1339,6 +1357,9 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 			break;
 	}
 
+	if (lairObserver && data.isForceAttack())
+		damage *= 3; //Damage boost for powers, killing lairs.
+	
 	if (lairObserver && lairObserver->getSpawnNumber() > 2)
 		damage *= 3.5;
 
@@ -1476,11 +1497,39 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	if (defender->isKnockedDown())
 		damage *= 1.5f;
 
+		if (data.isForceAttack()){
+		ManagedReference<WeaponObject*> wielded = NULL;;
+		wielded = attacker->getWeapon();
+
+		float frsPowerBonus = attacker->getFrsMod("power",2);
+		if (frsPowerBonus > 0)
+			damage *= frsPowerBonus;
+
+		//Force Lightning for player lightning
+		if (isLightningAttack(data)){
+			if (attacker->isPlayerCreature() && defender->isPlayerCreature())
+						damage *= 2.15;
+			else if (attacker->isPlayerCreature() && !defender->isPlayerCreature())
+						damage *= 5.25;
+
+			if (!attacker->isPlayerCreature())
+				damage *= .6; //40% damage reduction for NPCs using powers abilities
+			}
+
+		if ((data.getCombatSpam() == "mindblast2" || data.getCombatSpam() == "mindblast1"
+		|| data.getCombatSpam() == "forcethrow2"
+		|| data.getCombatSpam() == "forcethrow1")
+		&& !attacker->isPlayerCreature())
+		damage *= .30;
+
 	// Toughness reduction
 	if (data.isForceAttack())
 		damage = getDefenderToughnessModifier(defender, SharedWeaponObjectTemplate::FORCEATTACK, data.getDamageType(), damage);
 	else
 		damage = getDefenderToughnessModifier(defender, weapon->getAttackType(), weapon->getDamageType(), damage);
+
+	if (weapon->getDamageType() == SharedWeaponObjectTemplate::LIGHTSABER && attacker->isPlayerCreature())
+		damage *= attacker->getFrsMod("manipulation",2);
 
 	// PvP Damage Reduction.
 	if (attacker->isPlayerCreature() && defender->isPlayerCreature()) {
