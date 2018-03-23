@@ -619,7 +619,7 @@ public:
 		targetDefense -= mod;
 
 		uint32 duration = (uint32) Math::max(5.f, effect.getStateLength()*(1.f-targetDefense/120.f));
-
+		float frsBonus = defender->getFrsMod("manipulation");
 		switch (effectType) {
 		case CommandEffect::BLIND:
 			defender->setBlindedState(duration);
@@ -649,7 +649,7 @@ public:
 				defender->setPosture(CreaturePosture::KNOCKEDDOWN, false, false);
 
 			defender->updateKnockdownRecovery();
-			defender->updatePostureChangeDelay(5000);
+			defender->updatePostureChangeDelay(5500/(1.25*frsBonus));
 			defender->removeBuff(STRING_HASHCODE("burstrun"));
 			defender->removeBuff(STRING_HASHCODE("retreat"));
 			defender->sendSystemMessage("@cbt_spam:posture_knocked_down");
