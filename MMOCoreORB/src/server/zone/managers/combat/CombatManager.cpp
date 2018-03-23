@@ -1475,8 +1475,6 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	float damage = 0;
 	int diff = 0;
 
-	SkillManager* skillManager = SkillManager::instance();
-
 	if (data.getMinDamage() > 0 || data.getMaxDamage() > 0) { // this is a special attack (force, etc)
 		float mod = attacker->isAiAgent() ? cast<AiAgent*>(attacker)->getSpecialDamageMult() : 1.f;
 		damage = data.getMinDamage() * mod;
@@ -1507,31 +1505,6 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 
 	if (defender->isKnockedDown())
 		damage *= 1.5f;
-
-		if (data.isForceAttack()){
-		ManagedReference<WeaponObject*> wielded = NULL;;
-		wielded = attacker->getWeapon();
-
-		float frsPowerBonus = attacker->getFrsMod("power",2);
-		if (frsPowerBonus > 0)
-			damage *= frsPowerBonus;
-
-		//Force Lightning for player lightning
-		if (isLightningAttack(data)){
-			if (attacker->isPlayerCreature() && defender->isPlayerCreature())
-						damage *= 2.15;
-			else if (attacker->isPlayerCreature() && !defender->isPlayerCreature())
-						damage *= 5.25;
-
-			if (!attacker->isPlayerCreature())
-				damage *= .6; //40% damage reduction for NPCs using powers abilities
-			}
-
-		if ((data.getCombatSpam() == "mindblast2" || data.getCombatSpam() == "mindblast1"
-		|| data.getCombatSpam() == "forcethrow2"
-		|| data.getCombatSpam() == "forcethrow1")
-		&& !attacker->isPlayerCreature())
-		damage *= .30;
 
 	// Toughness reduction
 	if (data.isForceAttack())
