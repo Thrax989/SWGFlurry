@@ -1235,9 +1235,6 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	if (psg != NULL && !psg->isVulnerable(damageType)) {
 		float armorReduction =  getArmorObjectReduction(psg, damageType);
 		float dmgAbsorbed = damage;
-		
-		if (lightningAttack == true && attacker->isPlayerCreature()) //Force Lightning now has inherient AP2 for players only.
-			armorPiercing = 2;
 
         if (armorReduction > 0) damage *= 1.f - (armorReduction / 100.f);
 
@@ -1263,6 +1260,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	if (armor != NULL && !armor->isVulnerable(damageType)) {
 		float armorReduction = getArmorObjectReduction(armor, damageType);
 		float dmgAbsorbed = damage;
+
+		if (lightningAttack == true && attacker->isPlayerCreature()) //Force Lightning now has inherient AP2 for players only.
+			armorPiercing = 2;
 
 		// use only the damage applied to the armor for piercing (after the PSG takes some off)
 		damage *= getArmorPiercing(armor, armorPiercing);
