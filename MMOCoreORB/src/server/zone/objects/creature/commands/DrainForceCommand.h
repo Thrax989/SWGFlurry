@@ -31,8 +31,6 @@ public:
 			return NOJEDIARMOR;
 		}
 
-		// Fail if target is not a player...
-
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
 		if (object == NULL || !object->isPlayerCreature())
@@ -47,9 +45,14 @@ public:
 			return TOOFAR;
 
 		if (!CollisionManager::checkLineOfSight(creature, targetCreature)) {
-			creature->sendSystemMessage("@combat_effects:cansee_fail");//You cannot see your target.
+			creature->sendSystemMessage("@combat_effects:cansee_fail");
 			return GENERALERROR;
 		}
+
+		   	if (!creature->checkCooldownRecovery("drainforce")) {
+                    creature->sendSystemMessage("You cannot drain force yet.");
+                    return GENERALERROR;
+                }
 
 		Locker clocker(targetCreature, creature);
 
@@ -60,23 +63,41 @@ public:
 			return GENERALERROR;
 
 		CombatManager* manager = CombatManager::instance();
-
-		if (manager->startCombat(creature, targetCreature, false)) { //lockDefender = false because already locked above.
+		int maxDrain = 0;
+		if (manager->startCombat(creature, targetCreature, false)) {
 			int forceSpace = playerGhost->getForcePowerMax() - playerGhost->getForcePower();
-			if (forceSpace <= 0) //Cannot Force Drain if attacker can't hold any more Force.
+			if (forceSpace <= 0)
 				return GENERALERROR;
 
-			int maxDrain = minDamage; //Value set in command lua.
+			maxDrain = minDamage;
 
 			int targetForce = targetGhost->getForcePower();
 			if (targetForce <= 0) {
-				creature->sendSystemMessage("@jedi_spam:target_no_force"); //That target does not have any Force Power.
+				creature->sendSystemMessage("@jedi_spam:target_no_force");
 				return GENERALERROR;
 			}
 
-			int forceDrain = targetForce >= maxDrain ? maxDrain : targetForce; //Drain whatever Force the target has, up to max.
+			maxDrain += 30;
+			maxDrain *= creature->getFrsMod("power");
+			maxDrain /= targetCreature->getFrsMod("control");
+
+			if (creature->hasSkill("force_discipline_enhancements_master"))
+				maxDrain *= 1.25; //Master enhancer drains more
+
+			if (targetCreature->hasSkill("force_discipline_enhancements_master"))
+				maxDrain /= 1.5;
+
+			// Force Shield
+			float forceShield = targetCreature->getSkillMod("force_shield");
+
+				if (forceShield > 0) {
+					maxDrain *= (1 - (forceShield / 100.f));
+				}
+
+			int forceDrain = targetForce >= maxDrain ? maxDrain : targetForce;
+
 			if (forceDrain > forceSpace)
-				forceDrain = forceSpace; //Drain only what attacker can hold in their own Force pool.
+				forceDrain = forceSpace;
 
 			playerGhost->setForcePower(playerGhost->getForcePower() + forceDrain);
 			targetGhost->setForcePower(targetGhost->getForcePower() - forceDrain);
@@ -84,6 +105,7 @@ public:
 			uint32 animCRC = getAnimationString().hashCode();
 			creature->doCombatAnimation(targetCreature, animCRC, 0x1, 0xFF);
 			manager->broadcastCombatSpam(creature, targetCreature, NULL, forceDrain, "cbt_spam", combatSpam, 1);
+			creature->updateCooldownTimer("drainforce", (7000/creature->getFrsMod("manipulation")));
 
 			return SUCCESS;
 		}
@@ -93,7 +115,7 @@ public:
 	}
 
 	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
-		return defaultTime * 3.0;
+		return defaultTime * 1.5;
 	}
 
 };
