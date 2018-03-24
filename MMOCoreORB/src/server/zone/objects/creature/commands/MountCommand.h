@@ -78,16 +78,6 @@ public:
 			vehicle->setPosture(CreaturePosture::UPRIGHT);
 		}
 
-		if(creature->getZone()->getZoneName() == "kaas"){
-			creature->sendSystemMessage("Can not use mount on Kaas");
-			return GENERALERROR;
-		}
-		
-		if(creature->getZone()->getZoneName() == "rori"){
-			creature->sendSystemMessage("Can not use mount on Rori");
-			return GENERALERROR;
-		}
-
 		vehicle->setState(CreatureState::MOUNTEDCREATURE);
 
 		if (!vehicle->transferObject(creature, 4, true)) {
