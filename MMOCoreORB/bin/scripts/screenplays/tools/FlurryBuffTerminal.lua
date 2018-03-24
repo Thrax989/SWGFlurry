@@ -203,8 +203,8 @@ function FlurryBuffTerminal:applyBuff(pPlayer, buffSelected)
 			--end
 			
 			--CreatureObject(pPlayer):sendSystemMessage("Your active pets have also been buffed.")
-		end
-	end
+		--end
+	--end
 end
 
 

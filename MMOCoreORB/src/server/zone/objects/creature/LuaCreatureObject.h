@@ -120,6 +120,12 @@ namespace creature {
 		int broadcastToServer(lua_State* L);
 		int addStructureSkillMod(lua_State* L);
 		int removeAllStructureSkillMod (lua_State* L);
+		int buffSingleStat(lua_State* L);
+		int removeBuffs(lua_State* L);
+		int emptyStomach(lua_State* L);
+		int getActivePetsSize(lua_State* L);
+		int getActivePet(lua_State* L);
+		int subtractBankCredits(lua_State* L);
 	private:
 		// The pointer to the 'real object' defined in object.cc
 		CreatureObject* realObject;
