@@ -8,7 +8,7 @@ FlurryBuffTerminal = ScreenPlay:new {
 		{"Starter Buff", 100, 0.5, 500, 250, 250, 500, 250, 250, 500, 250, 250}, -- Free!
 		{"Basic Buff", 25000, 1, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750},
 		{"Advanced Buff", 50000, 1, 2200, 1750, 1750, 2200, 1750, 1750, 2200, 1750, 1750},
-		{"Uber Buff", 100000, 1, 2700, 2250, 2250, 2700, 2250, 2250, 2700, 2250, 2250},
+		--{"Uber Buff", 100000, 1, 2700, 2250, 2250, 2700, 2250, 2250, 2700, 2250, 2250},
 	},
 	termModel = "object/tangible/terminal/terminal_light_enclave_voting.iff",
 	termName = "Medical Services Terminal",
