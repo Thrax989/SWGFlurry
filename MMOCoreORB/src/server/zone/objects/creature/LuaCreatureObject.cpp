@@ -129,6 +129,12 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "enhanceCharacter", &LuaCreatureObject::enhanceCharacter },
 		{ "setWounds", &LuaCreatureObject::setWounds },
 		{ "setShockWounds", &LuaCreatureObject::setShockWounds },
+		{ "subtractBankCredits", &LuaCreatureObject::subtractBankCredits },
+		{ "buffSingleStat", &LuaCreatureObject::buffSingleStat },
+		{ "removeBuffs", &LuaCreatureObject::removeBuffs },
+		{ "emptyStomach", &LuaCreatureObject::emptyStomach },
+		{ "getActivePetsSize", &LuaCreatureObject::getActivePetsSize },
+		{ "getActivePet", &LuaCreatureObject::getActivePet },
 		{ "getForceSensitiveSkillCount", &LuaCreatureObject::getForceSensitiveSkillCount },
 		{ "villageKnightPrereqsMet", &LuaCreatureObject::villageKnightPrereqsMet },
 		{ "isOnLeave", &LuaTangibleObject::isOnLeave },
@@ -141,12 +147,6 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "broadcastToServer", &LuaCreatureObject::broadcastToServer },
 		{ "addStructureSkillMod", &LuaCreatureObject::addStructureSkillMod },
 		{ "removeAllStructureSkillMod", &LuaCreatureObject::removeAllStructureSkillMod },
-		{ "subtractBankCredits", &LuaCreatureObject::subtractBankCredits },
-		{ "buffSingleStat", &LuaCreatureObject::buffSingleStat },
-		{ "removeBuffs", &LuaCreatureObject::removeBuffs },
-		{ "emptyStomach", &LuaCreatureObject::emptyStomach },
-		{ "getActivePetsSize", &LuaCreatureObject::getActivePetsSize },
-		{ "getActivePet", &LuaCreatureObject::getActivePet },
 		{ 0, 0 }
 };
 
@@ -1135,7 +1135,7 @@ int LuaCreatureObject::buffSingleStat(lua_State* L) {
 int LuaCreatureObject::removeBuffs(lua_State* L) {
 	Reference<PlayerObject*> player = realObject->getPlayerObject();
 	
-	realObject->clearBuffs(true);
+	realObject->clearBuffs(true, false);
 	
 	return 0;
 }
@@ -1167,7 +1167,7 @@ int LuaCreatureObject::getActivePetsSize(lua_State* L) {
 int LuaCreatureObject::getActivePet(lua_State* L) {
 	int petNumber = lua_tointeger(L, -1);
 	
-	petNumber = MAX(0, petNumber);
+	petNumber = (0, petNumber);
 	
 	Logger::console.info("petNumber: " + String::valueOf(petNumber), true);
 	
