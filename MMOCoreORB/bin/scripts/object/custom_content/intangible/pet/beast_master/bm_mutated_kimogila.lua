@@ -1,0 +1,5 @@
+object_intangible_pet_beast_master_bm_mutated_kimogila = object_intangible_pet_beast_master_shared_bm_mutated_kimogila:new {
+
+}
+
+ObjectTemplates:addTemplate(object_intangible_pet_beast_master_bm_mutated_kimogila, "object/intangible/pet/beast_master/bm_mutated_kimogila.iff")
