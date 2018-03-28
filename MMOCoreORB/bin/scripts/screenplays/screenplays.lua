@@ -60,6 +60,7 @@ includeFile("themepark/smc/themeParkSmcVurleneAujante.lua")
 includeFile("utils/quest_spawner.lua")
 
 -- Staff tools
+includeFile("tools/FlurryBuffTerminal.lua")
 includeFile("tools/tools.lua")
 includeFile("tools/shuttle_dropoff.lua")
 includeFile("tools/firework_event.lua")
@@ -69,6 +70,7 @@ includeFile("trainers/skillTrainer.lua")
 includeFile("trainers/trainerConvHandler.lua")
 
 -- GCW
+includeFile("gcw/buff.lua")
 includeFile("gcw/pvp.lua")
 includeFile("gcw/pvp2.lua")
 includeFile("gcw/pvp3.lua")
