@@ -1,19 +1,18 @@
 FlurryBuffTerminal = ScreenPlay:new {
 	numberOfActs = 1,
 	healingFee = 10000, -- Optional fee (in Credits) for healing wounds and battle fatigue
-	buffPets = 0, -- 0 = No, 1 = Yes. Will buff all the player's active pets Health/Action/Mind with the same boost as the player.
-	buffPetSecondaryStats = 0, -- 0 = No, 1 = Yes. Will also buff the pet's secondary stats.
 	buffs = {
-		-- Legend: {name, price, duration in hours, health, strength, constitution, action, quickness, stamina, mind, focus, willpower},
-		{"Starter Buff", 100, 0.5, 500, 250, 250, 500, 250, 250, 500, 250, 250}, -- Free!
-		{"Basic Buff", 25000, 1, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750},
-		{"Advanced Buff", 50000, 1, 2200, 1750, 1750, 2200, 1750, 1750, 2200, 1750, 1750},
-		--{"Uber Buff", 100000, 1, 2700, 2250, 2250, 2700, 2250, 2250, 2700, 2250, 2250},
+		{"Info", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{"Starter", 100, 0.5, 500, 250, 250, 500, 250, 250, 500, 250, 250},
+		{"Basic", 25000, 1, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750},
+		{"Advanced", 50000, 1, 2200, 1750, 1750, 2200, 1750, 1750, 2200, 1750, 1750},
+		{"Uber", 100000, 1, 2700, 2250, 2250, 2700, 2250, 2250, 2700, 2250, 2250},
 	},
 	termModel = "object/tangible/terminal/terminal_light_enclave_voting.iff",
 	termName = "Medical Services Terminal",
 	terminals = {
-		{planetName = "corellia", x = -152.751, z = 28, y = -4724, ow = 0.746258, oy = 0.665657},
+		{planetName = "corellia", x = -136.633, z = 28, y = -4733.96, ow = -0.706686, oy = 0.707527},
+		{planetName = "corellia", x = -133.985, z = 28, y = -4715.72, ow = 0.740429, oy = -0.672135},
 		{planetName = "rori", x = 5303.04, z = 78.3096, y = 6100.57, ow = 0.999996, oy = -0.0028295},
 		{planetName = "rori", x = 5286.06, z = 78.8429, y = 6100.58, ow = 0.999998, oy = -0.00188644},
 	}
@@ -33,7 +32,6 @@ function FlurryBuffTerminal:start()
 	end
 end
 
-
 -- UI Window Functions
 
 function FlurryBuffTerminal:openWindow(pCreatureObject, pUsingObject)
@@ -52,22 +50,9 @@ function FlurryBuffTerminal:openWindow(pCreatureObject, pUsingObject)
 	
 	local message = "Please select a service below. \n\nNotice: \nAll current buffs (of all types) will be removed when purchasing a buff from this terminal. Therefore, you should save your consumable buffs for after you've purchased a terminal buff."
 	
-	if (self.buffPets == 1) then
-		message = message .. "\n\nAll of your currently active pets will also recieve a buff to their "
-		
-		if (self.buffPetSecondaryStats == 1) then 
-			message = message .. "primary and secondary stats."
-		else 
-			message = message .. "primary stats."
-		end
-	else
-		message = message .. "\n\nNo buffs will be applied to your pets."
-	end
-	
 	sui.setPrompt(message)
 
 	sui.add("Remove My Buffs and Empty My Stomach", "")
-	--sui.add("Remove Buffs from My Active Pets", "")
 	
 	local healMessage = "Heal My Wounds and Battle Fatigue"
 	
@@ -101,11 +86,9 @@ function FlurryBuffTerminal:defaultCallback(pPlayer, pSui, eventIndex, args)
 	if (selectedOption == 1) then
 		self:removePlayerBuffs(pPlayer)
 	elseif (selectedOption == 2) then
-		self:removePetBuffs(pPlayer)
-	elseif (selectedOption == 3) then
 		self:healWounds(pPlayer)
-	elseif (selectedOption > 3) then
-		self:applyBuff(pPlayer, selectedOption - 3) -- The -3 is to compensate for the first four entries in the menu
+	elseif (selectedOption >= 3) then
+		self:applyBuff(pPlayer, selectedOption - 2) -- The -3 is to compensate for the first four entries in the menu
 	end
 end
 
@@ -116,21 +99,6 @@ function FlurryBuffTerminal:removePlayerBuffs(pPlayer)
 	CreatureObject(pPlayer):removeBuffs()
 	CreatureObject(pPlayer):emptyStomach()
 	CreatureObject(pPlayer):sendSystemMessage("Your buffs have been removed and your stomach is now empty.")
-end
-
-function FlurryBuffTerminal:removePetBuffs(pPlayer)
-	local numberOfPets = CreatureObject(pPlayer):getActivePetsSize()
-		
-	if (numberOfPets > 0) then
-		for i = 1, numberOfPets, 1 do
-			local pPet = CreatureObject(pPlayer):getActivePet(i - 1)
-			--CreatureObject(pPet):removeBuffs()
-		end
-		
-		CreatureObject(pPlayer):sendSystemMessage("This Feature Is Currently Turrned Off")
-	else
-		CreatureObject(pPlayer):sendSystemMessage("You didn't have any pets out, so no buffs were removed. Please call a pet and try again. This Feature Is Currently Turrned Off")
-	end
 end
 
 function FlurryBuffTerminal:healWounds(pPlayer)
