@@ -24,9 +24,8 @@ kess_yarrow = Creature:new {
 	creatureBitmask = NONE,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/space_greeter_dantooine_brother_rebel.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/space_greeter_dantooine_brother_rebel.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

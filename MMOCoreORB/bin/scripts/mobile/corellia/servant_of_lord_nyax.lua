@@ -33,39 +33,10 @@ servant_of_lord_nyax = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "nyax", chance = 10000000}
-		},
-			lootChance = 1000000
+				{group = "nyax", chance = 2000000},
+				{group = "pistols", chance = 4000000},
+				{group = "rifles", chance = 4000000},
+			}
 		}
 	},
 	weapons = {"pirate_weapons_medium"},

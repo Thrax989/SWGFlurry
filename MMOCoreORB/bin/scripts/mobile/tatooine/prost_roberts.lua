@@ -24,9 +24,8 @@ prost_roberts = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/space_greeter_mos_espa_young_pilot.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/space_greeter_mos_espa_young_pilot.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

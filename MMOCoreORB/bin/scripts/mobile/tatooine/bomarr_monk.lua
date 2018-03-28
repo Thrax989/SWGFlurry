@@ -24,9 +24,8 @@ bomarr_monk = Creature:new {
 	creatureBitmask = NONE,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/bomarr_monk_spider_droid.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/bomarr_monk_spider_droid.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

@@ -23,9 +23,8 @@ j1_po = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
 	diet = HERBIVORE,
-	templates = {"object/mobile/3po_protocol_droid_silver.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/3po_protocol_droid_silver.iff"},
 	lootGroups = {},
 	weapons = {},
 	attacks = {},

@@ -24,9 +24,8 @@ jabba_the_hutt = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/jabba_the_hutt.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/jabba_the_hutt.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

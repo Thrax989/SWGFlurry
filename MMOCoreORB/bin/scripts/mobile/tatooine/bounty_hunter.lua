@@ -26,9 +26,8 @@ bounty_hunter = Creature:new {
 	creatureBitmask = HERD,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_bounty_hunter_zabrak_female_01.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_bounty_hunter_zabrak_female_01.iff"},
 	lootGroups = {},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",

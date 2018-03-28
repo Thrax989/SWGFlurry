@@ -24,9 +24,8 @@ ev_9d9 = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/ev_9d9.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/ev_9d9.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

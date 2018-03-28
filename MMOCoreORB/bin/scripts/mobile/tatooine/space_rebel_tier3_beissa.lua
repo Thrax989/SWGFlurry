@@ -24,9 +24,8 @@ space_rebel_tier3_beissa = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/space_rebel_tier3_beissa.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/space_rebel_tier3_beissa.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

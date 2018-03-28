@@ -26,50 +26,21 @@ nym_guard_strong = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+
 	templates = {"object/mobile/dressed_nym_guard_strong_hum_f.iff",
 		"object/mobile/dressed_nym_guard_strong_rod_m.iff",
 		"object/mobile/dressed_nym_guard_strong_nikto_m.iff",
 		"object/mobile/dressed_nym_guard_strong_hum_m.iff"},
-
-	--NPC with AA/CA Template Nyms Generic
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "nyms_common", chance = 10000000}
-		},
-			lootChance = 3000000
-		},
+				{group = "junk", chance = 6500000},
+				{group = "nyms_common", chance = 1000000},
+				{group = "pistols", chance = 1000000},
+				{group = "carbines", chance = 1000000},
+				{group = "tailor_components", chance = 500000}
+			}
+		}
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",

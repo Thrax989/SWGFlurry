@@ -25,9 +25,8 @@ jaleela_bindoo = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_jaleela_bindoo.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_jaleela_bindoo.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

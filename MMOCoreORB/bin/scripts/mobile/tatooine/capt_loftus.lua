@@ -25,9 +25,8 @@ capt_loftus = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_tatooine_lt_hantor_loftus.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/dressed_tatooine_lt_hantor_loftus.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

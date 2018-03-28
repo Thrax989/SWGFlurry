@@ -34,47 +34,18 @@ marooned_pirate = Creature:new {
 		"object/mobile/dressed_marooned_pirate_nikto_m.iff",
 		"object/mobile/dressed_marooned_pirate_rod_f.iff",
 		"object/mobile/dressed_marooned_pirate_rod_m.iff",
-		"object/mobile/dressed_marooned_pirate_tran_m.iff"},
-
-	--NPC with AA/CA Template Nyms Generic
+		"object/mobile/dressed_marooned_pirate_tran_m.iff"
+	},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "nyms_common", chance = 10000000}
-		},
-			lootChance = 3000000
-		},
+				{group = "junk", chance = 3000000},
+				{group = "wearables_common", chance = 2000000},
+				{group = "loot_kit_parts", chance = 2000000},
+				{group = "tailor_components", chance = 1000000},
+				{group = "melee_weapons", chance = 2000000}
+			}
+		}
 	},
 	weapons = {"pirate_weapons_medium"},
 	conversationTemplate = "",

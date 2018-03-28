@@ -1,7 +1,3 @@
---Custom Content
-includeFile("tatooine/tatooine_world_boss/serverobjects.lua")
-
---Default
 includeFile("tatooine/alkhara_bandit_king.lua")
 includeFile("tatooine/alkhara_bandit.lua")
 includeFile("tatooine/alkhara_champion.lua")

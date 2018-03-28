@@ -35,33 +35,11 @@ corsec_commissioner = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
+				{group = "junk", chance = 4500000},
+				{group = "corsec_weapons", chance = 2500000},
+				{group = "wearables_all", chance = 1500000},
+				{group = "tailor_components", chance = 1500000}
+			}
 		}
 	},
 	weapons = {"corsec_police_weapons"},

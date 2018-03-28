@@ -25,9 +25,8 @@ surlin_rolei = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_surlin_rolei.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_surlin_rolei.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

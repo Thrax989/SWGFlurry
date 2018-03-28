@@ -28,9 +28,16 @@ philosopher = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_philosopher.iff"},
-
---Townsperson no loot
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 2000000},
+				{group = "wearables_common", chance = 2000000},
+				{group = "tailor_components", chance = 2000000},
+				{group = "loot_kit_parts", chance = 4000000}
+			}
+		}
+	},
 	weapons = {"pirate_weapons_light"},
 	reactionStf = "@npc_reaction/fancy",
 	conversationTemplate = "philosopherConvoTemplate",

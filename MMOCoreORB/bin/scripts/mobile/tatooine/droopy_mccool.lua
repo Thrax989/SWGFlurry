@@ -24,8 +24,8 @@ droopy_mccool = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+
 	templates = {"object/mobile/droopy_mccool.iff"},
---Quest NPC no loot
 	lootGroups = {},
 	weapons = {},
 	outfit = "band_flute_droopy_outfit",

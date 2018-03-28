@@ -25,9 +25,8 @@ solcar_dienbel = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_solcar_dienbel.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_solcar_dienbel.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

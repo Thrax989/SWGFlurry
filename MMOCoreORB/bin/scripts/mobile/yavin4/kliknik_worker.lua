@@ -24,47 +24,22 @@ kliknik_worker = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
+
 	templates = {"object/mobile/kliknik_hue.iff"},
 	controlDeviceTemplate = "object/intangible/pet/kliknik_hue.iff",
-	
---Creature Default Loot Template
 	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		},
-		{
-			groups = {
+	 {
+	        groups = {
 				{group = "kliknik_common", chance = 10000000}
-		},
-			lootChance = 1000000
-		},
+			},
+			lootChance = 1460000
+		}
 	},
-	weapons = {"creature_spit_small_yellow"},
+	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"intimidationattack",""},
-		{"mildpoison",""}
-	},
+		{"posturedownattack",""}
+	}
 }
+
 CreatureTemplates:addCreatureTemplate(kliknik_worker, "kliknik_worker")

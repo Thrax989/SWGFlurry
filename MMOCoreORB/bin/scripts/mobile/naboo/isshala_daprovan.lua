@@ -25,8 +25,8 @@ isshala_daprovan = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+
 	templates = {"object/mobile/dressed_isshala_daprovan.iff"},
---Townsperson no loot
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

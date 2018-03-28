@@ -23,52 +23,19 @@ imperial_retreat_guard = Creature:new {
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER,
 	diet = HERBIVORE,
-	templates = {"object/mobile/emperor_royal_guard.iff"},
 
---NPC (Faction Loot) Default Template with Lootkit Drops
+	templates = {"object/mobile/emperor_royal_guard.iff"},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 7000000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
---Change this group to Faction loot group
-		{
-			groups = {
-				{group = "imperial_officer_common", chance = 10000000}
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "loot_kit_parts", chance = 10000000}
-		},
-			lootChance = 2000000
+				{group = "junk", chance = 2000000},
+				{group = "wearables_common", chance = 2000000},
+				{group = "wearables_uncommon", chance = 2000000},
+				{group = "tailor_components", chance = 1500000},
+				{group = "loot_kit_parts", chance = 2000000},
+				{group = "clothing_attachments", chance = 250000},
+				{group = "armor_attachments", chance = 250000}
+			}
 		}
 	},
 	weapons = {"imperial_weapons_medium"},

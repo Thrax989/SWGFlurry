@@ -25,9 +25,8 @@ oola = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/oola.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/oola.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

@@ -25,9 +25,8 @@ crix_yarrow = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_noble_fat_twilek_male_01.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_noble_fat_twilek_male_01.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

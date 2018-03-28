@@ -24,47 +24,21 @@ kliknik_hatchling = Creature:new {
 	creatureBitmask = PACK + HERD,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
+
 	templates = {"object/mobile/kliknik_hatchling.iff"},
 	scale = 0.65,
-	
---Creature Default Loot Template
 	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		},
-		{
-			groups = {
+	 {
+	        groups = {
 				{group = "kliknik_common", chance = 10000000}
-		},
-			lootChance = 1000000
 			},
+			lootChance = 1440000
+		}
 	},
-	weapons = {"creature_spit_small_yellow"},
+	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"intimidationattack",""},
-		{"mildpoison",""}
-	},
+	}
 }
+
 CreatureTemplates:addCreatureTemplate(kliknik_hatchling, "kliknik_hatchling")

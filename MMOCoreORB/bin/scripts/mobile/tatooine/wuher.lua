@@ -25,9 +25,8 @@ wuher = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_tatooine_wuher.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_tatooine_wuher.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

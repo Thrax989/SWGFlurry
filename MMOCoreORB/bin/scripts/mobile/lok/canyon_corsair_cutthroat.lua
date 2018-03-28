@@ -31,59 +31,24 @@ canyon_corsair_cutthroat = Creature:new {
 		"object/mobile/dressed_corsair_cutthroat_hum_f.iff",
 		"object/mobile/dressed_corsair_cutthroat_hum_m.iff",
 		"object/mobile/dressed_corsair_cutthroat_wee_m.iff",
-		"object/mobile/dressed_corsair_cutthroat_zab_m.iff"},
+		"object/mobile/dressed_corsair_cutthroat_zab_m.iff"
+	},
 
-	--NPC with AA/CA Template Canyon Corsair Generic
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "armor_attachments", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "clothing_attachments", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "canyon_corsair_common", chance = 10000000}
-		},
-			lootChance = 3000000
-		},
+				{group = "junk", chance = 4000000},
+				{group = "tailor_components", chance = 1000000},
+				{group = "color_crystals", chance = 400000},
+				{group = "power_crystals", chance = 400000},
+				{group = "melee_two_handed", chance = 600000},
+				{group = "carbines", chance = 600000},
+				{group = "pistols", chance = 600000},
+				{group = "clothing_attachments", chance = 450000},
+				{group = "armor_attachments", chance = 450000},
+				{group = "canyon_corsair_common", chance = 1500000}
+			}
+		}
 	},
 	weapons = {"canyon_corsair_weapons"},
 	conversationTemplate = "",

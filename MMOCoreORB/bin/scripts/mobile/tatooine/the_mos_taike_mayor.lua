@@ -26,10 +26,17 @@ the_mos_taike_mayor = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_mayor.iff"},
 
---Townsperson no loot
-	lootGroups = {},
+	templates = {"object/mobile/dressed_mayor.iff"},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 6500000},
+				{group = "tailor_components", chance = 1500000},
+				{group = "loot_kit_parts", chance = 2000000}
+			}
+		}
+	},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/townperson",

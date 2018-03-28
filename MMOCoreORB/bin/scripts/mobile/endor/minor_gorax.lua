@@ -24,43 +24,18 @@ minor_gorax = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
+
 	templates = {"object/mobile/gorax.iff"},
 	scale = 0.75,
-	
---Creature Default Loot Template
 	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		},
-		{
-	        	groups = {
+	    {
+	        groups = {
 				{group = "minor_gorax", chance = 6000000},
 				{group = "armor_attachments", chance = 2000000},
 				{group = "clothing_attachments", chance = 2000000}
-		},
+			},
 			lootChance = 3620000
-		},
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",

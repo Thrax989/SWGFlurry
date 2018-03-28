@@ -24,9 +24,8 @@ shamdon_kree = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/space_privateer_tier2_shamdon.iff"},
 
---Townsperson No loot
+	templates = {"object/mobile/space_privateer_tier2_shamdon.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

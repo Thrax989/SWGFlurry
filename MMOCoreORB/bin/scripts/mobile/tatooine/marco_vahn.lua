@@ -25,9 +25,8 @@ marco_vahn = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED + CONVERSABLE,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_noble_human_male_01.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/dressed_noble_human_male_01.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "padawan_old_musician_02_convo_template",

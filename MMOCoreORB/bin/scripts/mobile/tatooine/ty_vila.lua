@@ -24,9 +24,8 @@ ty_vila = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/space_privateer_broker_fired_worker.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/space_privateer_broker_fired_worker.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

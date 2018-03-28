@@ -24,9 +24,8 @@ max_rebo = Creature:new {
 	optionsBitmask = AIENABLED,
 	creatureBitmask = PACK,
 	diet = HERBIVORE,
-	templates = {"object/mobile/max_rebo.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/max_rebo.iff"},
 	lootGroups = {},
 	weapons = {},
 	outfit = "",

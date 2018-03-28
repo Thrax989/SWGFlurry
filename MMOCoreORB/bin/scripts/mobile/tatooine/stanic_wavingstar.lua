@@ -25,9 +25,8 @@ stanic_wavingstar = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_commoner_naboo_twilek_male_02.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_commoner_naboo_twilek_male_02.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

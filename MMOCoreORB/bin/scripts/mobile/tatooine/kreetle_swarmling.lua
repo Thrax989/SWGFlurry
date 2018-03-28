@@ -24,29 +24,9 @@ kreetle_swarmling = Creature:new {
 	creatureBitmask = PACK + HERD,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-	templates = {"object/mobile/kreetle.iff"},
 
---Creature Reduced Loot Template
-	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		},
+	templates = {"object/mobile/kreetle.iff"},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

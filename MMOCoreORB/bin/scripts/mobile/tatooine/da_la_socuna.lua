@@ -24,9 +24,8 @@ da_la_socuna = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/space_rebel_tier1_tatooine_socuna.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/space_rebel_tier1_tatooine_socuna.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

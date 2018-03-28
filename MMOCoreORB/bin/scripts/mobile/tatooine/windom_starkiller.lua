@@ -25,9 +25,8 @@ windom_starkiller = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_tatooine_windom_starkiller.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_tatooine_windom_starkiller.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

@@ -25,9 +25,8 @@ lt_oron_wintree = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_lt_oron_wintree.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_lt_oron_wintree.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

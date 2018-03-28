@@ -25,9 +25,8 @@ jyr_koble = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_jyr_koble.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_jyr_koble.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

@@ -28,32 +28,18 @@ sleemo_scamp = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_hoodlum_zabrak_male_01.iff"},
-
---Creature Default Loot Template
 	lootGroups = {
 		{
 			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
+				{group = "junk", chance = 3200000},
+				{group = "wearables_common", chance = 2000000},
+				{group = "rifles", chance = 700000},
+				{group = "melee_knife", chance = 700000},
+				{group = "pistols", chance = 700000},
+				{group = "carbines", chance = 700000},
+				{group = "printer_parts", chance = 1000000},
+				{group = "loot_kit_parts", chance = 1000000},
+			}
 		}
 	},
 	weapons = {"pirate_weapons_light"},

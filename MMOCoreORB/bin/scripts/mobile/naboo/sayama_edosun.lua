@@ -25,9 +25,8 @@ sayama_edosun = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_naboo_sayama_edosun.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_naboo_sayama_edosun.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

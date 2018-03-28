@@ -25,42 +25,20 @@ settler = Creature:new {
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = NONE,
 	diet = HERBIVORE,
+
 	templates = {
 		"object/mobile/dressed_commoner_tatooine_bith_female_03.iff",
 		"object/mobile/dressed_commoner_old_human_male_02.iff",
-		"object/mobile/dressed_commoner_naboo_twilek_female_01.iff"},
-
---Default NPC Template	
+		"object/mobile/dressed_commoner_naboo_twilek_female_01.iff"
+	},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
+				{group = "junk", chance = 4000000},
+				{group = "wearables_common", chance = 3000000},
+				{group = "loot_kit_parts", chance = 2000000},
+				{group = "tailor_components", chance = 1000000},
+			}
 		}
 	},
 	weapons = {"rebel_weapons_light"},
