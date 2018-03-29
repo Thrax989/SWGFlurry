@@ -49,7 +49,7 @@ BestineElection = ScreenPlay:new {
 	VICTOR_SLUMS_EVIDENCE = 8,
 	VICTOR_SMOOTH_STONE = 9,
 	VICTOR_CARVED_STONE = 10,
-	
+
 	VICTOR_STONE_REWARD_RECEIVED = 1,
 
 	VICTOR_TUSKEN_QUEST_ACCEPTED = 1,
@@ -167,6 +167,16 @@ function BestineElection:spawnElectionMobiles()
 			end
 		end
 	end
+
+	local electionNum = self:getElectionNumber()
+	local electionWinner = self:getElectionWinner(electionNum)
+	local curPhase = BestineElection:getCurrentPhase()
+
+	if (curPhase == BestineElection.ELECTION_PHASE) then
+		electionWinner = BestineElection:getElectionWinner(electionNum - 1)
+	end
+
+	self:spawnCandidateMobiles(electionWinner)
 end
 
 function BestineElection:spawnCandidateMobiles(candidate)
@@ -289,7 +299,9 @@ function BestineElection:enteredHistoryTerminalArea(pActiveArea, pPlayer)
 	if (self:getQuestStep(pPlayer, self.SEAN, self.SEAN_HISTORY_QUEST) == self.SEAN_HISTORY_QUEST_STARTED_SEARCH) then
 		local pInventory = CreatureObject(pPlayer):getSlottedObject("inventory")
 
-		if (pInventory == nil) then
+		if (pInventory == nil or SceneObject(pInventory):isContainerFullRecursive()) then
+			CreatureObject(pPlayer):sendSystemMessage("@city/bestine/terminal_items:inv_full")
+
 			return 0
 		end
 
@@ -387,6 +399,18 @@ function BestineElection:enteredInformantArea(pActiveArea, pMovingObject)
 
 	if (pMobile == nil) then
 		return 1
+	end
+
+	local electionNum = self:getElectionNumber()
+	local electionWinner = self:getElectionWinner(electionNum)
+
+	local curPhase = BestineElection:getCurrentPhase()
+	if (curPhase == BestineElection.ELECTION_PHASE) then
+		electionWinner = BestineElection:getElectionWinner(electionNum - 1)
+	end
+
+	if (electionWinner ~= BestineElection.SEAN or BestineElection:getQuestStep(pPlayer, BestineElection.SEAN, BestineElection.SEAN_HISTORY_QUEST) ~= BestineElection.SEAN_HISTORY_QUEST_SENT_TO_CONTACT) then
+		return 0
 	end
 
 	local pInventory = CreatureObject(pMovingObject):getSlottedObject("inventory")
@@ -507,13 +531,16 @@ function BestineElection:giveCampaignReward(pPlayer, candidate)
 	local rewardChance = getRandomNumber(1, 1000)
 	local rewardTemplate
 
-	if (rewardChance <= 50) then
+	-- No evidence of these rewards being given during 14.1.
+	--[[	if (rewardChance <= 50) then
 		if (candidate == self.SEAN) then
 			rewardTemplate = "object/tangible/painting/bestine_quest_painting.iff"
 		else
 			rewardTemplate = "object/weapon/melee/sword/bestine_quest_sword.iff"
 		end
-	elseif (rewardChance <= 300) then
+	else ]]
+
+	if (rewardChance <= 300) then
 		if (candidate == self.SEAN) then
 			rewardTemplate = "object/tangible/furniture/modern/bestine_quest_rug.iff"
 		else
