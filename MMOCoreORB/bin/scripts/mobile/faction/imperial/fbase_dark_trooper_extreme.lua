@@ -27,54 +27,22 @@ fbase_dark_trooper_extreme = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 	scale = 1.5,
-	templates = {"object/mobile/dressed_dark_trooper_black_hole.iff"},
 
---Imperial Stormtrooper Loot Template	
+	templates = {"object/mobile/dressed_dark_trooper_black_hole.iff"},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 7500000},
-				{group = "stormtrooper_common", chance = 2500000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "g_rebel_credit", chance = 10000000}
-		},
-			lootChance = 200000 
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "rebpoints", chance = 10000000}
-		},
-			lootChance = 100000 
-		},
+				{group = "color_crystals", chance = 300000},
+				{group = "junk", chance = 6000000},
+				{group = "holocron_dark", chance = 150000},
+				{group = "holocron_light", chance = 150000},
+				{group = "weapons_all", chance = 1050000},
+				{group = "armor_all", chance = 1050000},
+				{group = "clothing_attachments", chance = 150000},
+				{group = "armor_attachments", chance = 150000},
+				{group = "wearables_all", chance = 1000000}
+			}
+		}
 	},
 	weapons = {"dark_trooper_weapons"},
 	conversationTemplate = "",

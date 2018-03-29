@@ -34,53 +34,19 @@ fbase_rebel_first_lieutenant_hard = Creature:new {
 		"object/mobile/dressed_rebel_first_lieutenant_moncal_female_01.iff",
 		"object/mobile/dressed_rebel_first_lieutenant_moncal_female_02.iff",
 		"object/mobile/dressed_rebel_first_lieutenant_sullustan_male_01.iff"},
-
---Rebel Officer Loot Template	
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 7500000},
-				{group = "rebel_officer_common", chance = 2500000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "g_imperial_credit", chance = 10000000}
-		},
-			lootChance = 200000 
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "imppoints", chance = 10000000}
-		},
-			lootChance = 100000 
-		},
+				{group = "color_crystals", chance = 100000},
+				{group = "junk", chance = 6000000},
+				{group = "weapons_all", chance = 1100000},
+				{group = "armor_all", chance = 1100000},
+				{group = "clothing_attachments", chance = 150000},
+				{group = "armor_attachments", chance = 150000},
+				{group = "rebel_officer_common", chance = 400000},
+				{group = "wearables_all", chance = 1000000}
+			}
+		}
 	},
 	weapons = {"rebel_weapons_light"},
 	conversationTemplate = "rebelRecruiterConvoTemplate",

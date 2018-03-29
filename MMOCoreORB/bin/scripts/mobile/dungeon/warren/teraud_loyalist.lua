@@ -40,7 +40,7 @@ teraud_loyalist = Creature:new {
 				{group = "loot_kit_parts", chance = 2000000},
 				{group = "armor_attachments", chance = 500000},
 				{group = "clothing_attachments", chance = 500000},
-				{group = "junk", chance = 1500000}
+				{group = "wearables_common", chance = 1500000}
 			}
 		}
 	},
