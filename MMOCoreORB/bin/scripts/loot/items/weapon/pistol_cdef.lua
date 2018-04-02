@@ -6,8 +6,8 @@ pistol_cdef = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_cdef.iff",
 	craftingValues = {
-		{"mindamage",15,30,0},
-		{"maxdamage",32,61,0},
+		{"mindamage",75,100,0},
+		{"maxdamage",175,185,0},
 		{"attackspeed",5.6,3.8,1},
 		{"woundchance",2,4,0},
 		{"hitpoints",750,750,0},
@@ -24,7 +24,7 @@ pistol_cdef = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 625,
+	randomDotChance = 100,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 20,
 	junkMaxValue = 40

@@ -6,8 +6,8 @@ knife_dagger = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/knife/knife_dagger.iff",
 	craftingValues = {
-		{"mindamage",11,26,0},
-		{"maxdamage",14,26,0},
+		{"mindamage",75,100,0},
+		{"maxdamage",175,185,0},
 		{"attackspeed",3.9,2.7,1},
 		{"woundchance",6,12,0},
 		{"hitpoints",750,1500,0},
@@ -24,7 +24,7 @@ knife_dagger = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 500,
+	randomDotChance = 100,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 20,
 	junkMaxValue = 60

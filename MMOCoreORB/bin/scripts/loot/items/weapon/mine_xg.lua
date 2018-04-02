@@ -4,8 +4,8 @@ mine_xg = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/mine/wp_mine_xg.iff",
 	craftingValues = {
-		{"mindamage",70,130,0},
-		{"maxdamage",280,520,0},
+		{"mindamage",75,100,0},
+		{"maxdamage",175,185,0},
 		{"attackspeed",7,4,1},
 		{"woundchance",7,13,0},
 		{"hitpoints",1000,1000,0},
@@ -20,7 +20,7 @@ mine_xg = {
 	},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 750,
+	randomDotChance = 100,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

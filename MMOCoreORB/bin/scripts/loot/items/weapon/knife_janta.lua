@@ -6,8 +6,8 @@ knife_janta = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/knife/knife_janta.iff",
 	craftingValues = {
-		{"mindamage",14,26,0},
-		{"maxdamage",32,62,0},
+		{"mindamage",75,100,0},
+		{"maxdamage",175,185,0},
 		{"attackspeed",3.9,2.7,1},
 		{"woundchance",6,12,0},
 		{"hitpoints",750,1500,0},
@@ -24,7 +24,7 @@ knife_janta = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 500,
+	randomDotChance = 100,
 
 	-- staticDotChance: The chance of this weapon object dropping with a static dot on it. Higher number means less chance. Set to 0 to always have a static dot.
 	staticDotChance = 0,

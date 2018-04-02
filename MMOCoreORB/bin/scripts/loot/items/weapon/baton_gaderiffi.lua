@@ -6,8 +6,8 @@ baton_gaderiffi = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/baton/baton_gaderiffi.iff",
 	craftingValues = {
-		{"mindamage",49,91,0},
-		{"maxdamage",98,182,0},
+		{"mindamage",75,100,0},
+		{"maxdamage",175,185,0},
 		{"attackspeed",5.9,4,1},
 		{"woundchance",11,21,0},
 		{"hitpoints",750,1500,0},
@@ -24,7 +24,7 @@ baton_gaderiffi = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 625,
+	randomDotChance = 100,
 	junkDealerTypeNeeded = JUNKARMS + JUNKTUSKEN,
 	junkMinValue = 25,
 	junkMaxValue = 45
