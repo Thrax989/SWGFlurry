@@ -6,8 +6,8 @@ rifle_ewok_crossbow = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_ewok_crossbow.iff",
 	craftingValues = {
-		{"mindamage",45,50,0},
-		{"maxdamage",90,100,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",9.6,6.2,0},
 		{"woundchance",6.4,15.6,0},
 		{"hitpoints",750,750,0},

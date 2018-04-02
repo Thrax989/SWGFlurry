@@ -5,8 +5,8 @@ pistol_launcher = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_launcher.iff",
 	craftingValues = {
-		{"mindamage",45,50,0},
-		{"maxdamage",90,100,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",5.5,3.7,0},
 		{"woundchance",13,23,0},
 		{"hitpoints",750,750,0},

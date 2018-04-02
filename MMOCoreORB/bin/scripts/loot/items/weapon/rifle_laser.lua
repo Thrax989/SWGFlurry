@@ -6,8 +6,8 @@ rifle_laser = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_laser.iff",
 	craftingValues = {
-		{"mindamage",45,50,0},
-		{"maxdamage",90,100,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",9.4,6.7,0},
 		{"woundchance",4.8,12.3,0},
 		{"hitpoints",750,750,0},

@@ -4,8 +4,8 @@ mine_anti_vehicle = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/mine/wp_mine_anti_vehicle.iff",
 	craftingValues = {
-		{"mindamage",45,50,0},
-		{"maxdamage",90,100,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",13,9,1},
 		{"woundchance",7,13,0},
 		{"hitpoints",1000,1000,0},

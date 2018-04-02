@@ -6,8 +6,8 @@ rifle_jawa_ion = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_jawa_ion.iff",
 	craftingValues = {
-		{"mindamage",45,50,0},
-		{"maxdamage",90,100,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",9.1,6.3,0},
 		{"woundchance",2.4,4.2,0},
 		{"hitpoints",750,750,0},

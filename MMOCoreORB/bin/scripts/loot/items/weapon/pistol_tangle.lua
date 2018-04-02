@@ -5,8 +5,8 @@ pistol_tangle = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_tangle.iff",
 	craftingValues = {
-		{"mindamage",45,50,0},
-		{"maxdamage",90,100,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",4.8,3.3,0},
 		{"woundchance",2,4,0},
 		{"hitpoints",750,750,0},

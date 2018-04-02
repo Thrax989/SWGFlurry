@@ -6,8 +6,8 @@ nyax_sword = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/sword/sword_curved_nyax.iff",
 	craftingValues = {
-		{"mindamage",45,50,0},
-		{"maxdamage",90,100,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",4.3,3,1},
 		{"woundchance",15,29,0},
 		{"hitpoints",750,1500,0},
