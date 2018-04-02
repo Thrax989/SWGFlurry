@@ -3,10 +3,10 @@ FlurryBuffTerminal = ScreenPlay:new {
 	healingFee = 10000, -- Optional fee (in Credits) for healing wounds and battle fatigue
 	buffs = {
 		{"Info", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{"Starter", 100, 0.5, 500, 250, 250, 500, 250, 250, 500, 250, 250},
-		{"Basic", 15000, 1, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750},
-		{"Advanced", 25000, 1, 2200, 1750, 1750, 2200, 1750, 1750, 2200, 1750, 1750},
-		{"Uber", 40000, 2, 2700, 2250, 2250, 2700, 2250, 2250, 2700, 2250, 2250},
+		{"Starter", 100, 1, 500, 250, 250, 500, 250, 250, 500, 250, 250},
+		{"Basic", 10000, 1, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750},
+		{"Advanced", 20000, 1, 2200, 1750, 1750, 2200, 1750, 1750, 2200, 1750, 1750},
+		{"Uber", 30000, 1, 2700, 2250, 2250, 2700, 2250, 2250, 2700, 2250, 2250},
 	},
 	termModel = "object/tangible/terminal/terminal_light_enclave_voting.iff",
 	termName = "Medical Services Terminal",
