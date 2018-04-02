@@ -6,8 +6,8 @@ rifle_t21 = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_t21.iff",
 	craftingValues = {
-		{"mindamage",75,100,0},
-		{"maxdamage",175,185,0},
+		{"mindamage",45,50,0},
+		{"maxdamage",90,100,0},
 		{"attackspeed",12.7,7.4,0},
 		{"woundchance",11,25,0},
 		{"hitpoints",750,750,0},
@@ -24,7 +24,7 @@ rifle_t21 = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 100,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 30,
 	junkMaxValue = 55

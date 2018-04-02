@@ -6,8 +6,8 @@ polearm_vibro_axe = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/polearm/polearm_vibro_axe.iff",
 	craftingValues = {
-		{"mindamage",75,100,0},
-		{"maxdamage",175,185,0},
+		{"mindamage",45,50,0},
+		{"maxdamage",90,100,0},
 		{"attackspeed",6.5,4.5,1},
 		{"woundchance",23,43,0},
 		{"hitpoints",750,1500,0},
@@ -24,7 +24,7 @@ polearm_vibro_axe = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 100,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

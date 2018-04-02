@@ -6,8 +6,8 @@ melee_vibroknuckler = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/special/vibroknuckler.iff",
 	craftingValues = {
-		{"mindamage",75,100,0},
-		{"maxdamage",175,185,0},
+		{"mindamage",45,50,0},
+		{"maxdamage",90,100,0},
 		{"attackspeed",3.6,2.5,1},
 		{"woundchance",14,26,0},
 		{"hitpoints",750,1500,0},
@@ -24,7 +24,7 @@ melee_vibroknuckler = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 100,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 30,
 	junkMaxValue = 55

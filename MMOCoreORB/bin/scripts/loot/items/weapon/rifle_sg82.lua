@@ -6,8 +6,8 @@ rifle_sg82 = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_sg82.iff",
 	craftingValues = {
-		{"mindamage",75,100,0},
-		{"maxdamage",175,185,0},
+		{"mindamage",45,50,0},
+		{"maxdamage",90,100,0},
 		{"attackspeed",8.1,5.7,0},
 		{"woundchance",8,16,0},
 		{"hitpoints",750,750,0},
@@ -24,7 +24,7 @@ rifle_sg82 = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 100,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

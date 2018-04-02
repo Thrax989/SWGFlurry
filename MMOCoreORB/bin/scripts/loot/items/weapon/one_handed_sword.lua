@@ -5,8 +5,8 @@ one_handed_sword = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/sword/sword_01.iff",
 	craftingValues = {
-		{"mindamage",75,100,0},
-		{"maxdamage",175,185,0},
+		{"mindamage",45,50,0},
+		{"maxdamage",90,100,0},
 		{"attackspeed",4.6,3.2,1},
 		{"woundchance",9,18,0},
 		{"hitpoints",750,1500,0},
@@ -23,7 +23,7 @@ one_handed_sword = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 100,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45
