@@ -6,8 +6,8 @@ rifle_tusken = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_tusken.iff",
 	craftingValues = {
-		{"mindamage",35,40,0},
-		{"maxdamage",70,80,0},
+		{"mindamage",30,35,0},
+		{"maxdamage",75,85,0},
 		{"attackspeed",9.6,6.7,0},
 		{"woundchance",5.4,11.7,0},
 		{"hitpoints",750,750,0},

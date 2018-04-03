@@ -4,8 +4,8 @@ heavy_acid_beam = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/heavy/heavy_acid_beam.iff",
 	craftingValues = {
-		{"mindamage",35,40,0},
-		{"maxdamage",70,80,0},
+		{"mindamage",30,35,0},
+		{"maxdamage",75,85,0},
 		{"attackspeed",8.7,4.4,1},
 		{"woundchance",19,35,0},
 		{"hitpoints",1000,1000,0},

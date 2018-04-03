@@ -4,8 +4,8 @@ heavy_rocket_launcher = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/heavy/heavy_rocket_launcher.iff",
 	craftingValues = {
-		{"mindamage",35,40,0},
-		{"maxdamage",70,80,0},
+		{"mindamage",30,35,0},
+		{"maxdamage",75,85,0},
 		{"attackspeed",12.0,7.0,1},
 		{"woundchance",17,31,0},
 		{"hitpoints",1000,1000,0},

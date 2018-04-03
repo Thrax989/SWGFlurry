@@ -6,8 +6,8 @@ carbine_cdef = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_cdef.iff",
 	craftingValues = {
-		{"mindamage",35,40,0},
-		{"maxdamage",70,80,0},
+		{"mindamage",30,35,0},
+		{"maxdamage",75,85,0},
 		{"attackspeed",4.6,3.2,1},
 		{"woundchance",4,5,0},
 		{"roundsused",5,20,0},
