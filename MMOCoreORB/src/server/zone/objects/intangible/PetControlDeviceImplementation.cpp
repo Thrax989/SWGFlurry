@@ -167,10 +167,6 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 
 		if (object != NULL) {
 			if (object->isCreature() && petType == PetManager::CREATUREPET) {
-				ManagedReference<CreatureTemplate*> activePetTemplate = object->getCreatureTemplate();
-
-				if (activePetTemplate == NULL || activePetTemplate->getTemplateName() == "at_st")
-					continue;
 
 				if (++currentlySpawned >= maxPets) {
 					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
@@ -185,17 +181,6 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 				}
 			} else if (object->isNonPlayerCreatureObject() && petType == PetManager::FACTIONPET) {
 				if (++currentlySpawned >= maxPets) {
-					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
-					return;
-				}
-			} else if (object->isCreature() && petType == PetManager::FACTIONPET) {
-				ManagedReference<CreatureTemplate*> activePetTemplate = object->getCreatureTemplate();
-				ManagedReference<CreatureTemplate*> callingPetTemplate = pet->getCreatureTemplate();
-
-				if (activePetTemplate == NULL || callingPetTemplate == NULL || activePetTemplate->getTemplateName() != "at_st")
-					continue;
-
-				if (++currentlySpawned >= maxPets || (activePetTemplate->getTemplateName() == "at_st" && callingPetTemplate->getTemplateName() == "at_st")) {
 					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
 					return;
 				}
