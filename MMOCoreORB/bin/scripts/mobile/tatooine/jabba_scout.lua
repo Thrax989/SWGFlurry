@@ -26,56 +26,24 @@ jabba_scout = Creature:new {
 	creatureBitmask = NONE,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+
 	templates = {
 		"object/mobile/dressed_tatooine_jabba_scout.iff",
 		"object/mobile/dressed_hoodlum_zabrak_male_01.iff",
 		"object/mobile/dressed_criminal_thug_human_female_01.iff",
-		"object/mobile/dressed_mugger.iff"},
+		"object/mobile/dressed_mugger.iff"
 
---NPC (Faction Loot) Default Template with printer Drops
+	},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 7000000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
---Change this group to Faction loot group
-		{
-			groups = {
-				{group = "jabba_common", chance = 10000000}
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "printer_parts", chance = 10000000}
-		},
-			lootChance = 2000000
+				{group = "junk", chance = 1500000},
+				{group = "wearables_common", chance = 2000000},
+				{group = "pistols", chance = 2000000},
+				{group = "tailor_components", chance = 1500000},
+				{group = "loot_kit_parts", chance = 1500000},
+				{group = "jabba_common", chance = 1500000}
+			}
 		}
 	},
 	weapons = {"pirate_weapons_light"},

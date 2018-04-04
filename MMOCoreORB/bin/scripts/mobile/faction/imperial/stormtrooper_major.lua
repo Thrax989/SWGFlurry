@@ -27,55 +27,25 @@ stormtrooper_major = Creature:new {
 	optionsBitmask = AIENABLED + CONVERSABLE,
 	diet = HERBIVORE,
 	scale = 1.05,
-	templates = {"object/mobile/dressed_imperial_major_m.iff"},
 
---Imperial Stormtrooper Officer Loot Template	
+	templates = {"object/mobile/dressed_imperial_major_m.iff"},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "stormtrooper_common", chance = 2500000},
-				{group = "imperial_officer_common", chance = 2500000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "g_rebel_credit", chance = 10000000}
-		},
-			lootChance = 200000 
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "rebpoints", chance = 10000000}
-		},
-			lootChance = 100000 
-		},
+				{group = "color_crystals", chance = 100000},
+				{group = "junk", chance = 5050000},
+				{group = "rifles", chance = 550000},
+				{group = "pistols", chance = 550000},
+				{group = "melee_weapons", chance = 550000},
+				{group = "carbines", chance = 550000},
+				{group = "clothing_attachments", chance = 250000},
+				{group = "armor_attachments", chance = 250000},
+				{group = "imperial_officer_common", chance = 450000},
+				{group = "stormtrooper_common", chance = 700000},
+				{group = "wearables_common", chance = 500000},
+				{group = "wearables_uncommon", chance = 500000}
+			}
+		}
 	},
 	weapons = {"stormtrooper_weapons"},
 	conversationTemplate = "imperialRecruiterConvoTemplate",

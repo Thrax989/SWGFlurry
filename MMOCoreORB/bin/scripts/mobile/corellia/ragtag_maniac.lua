@@ -35,33 +35,15 @@ ragtag_maniac = Creature:new {
 		"object/mobile/dressed_hoodlum_zabrak_male_01.iff",
 		"object/mobile/dressed_hooligan_rodian_female_01.iff",
 		"object/mobile/dressed_hooligan_rodian_male_01.iff"},
-
---Static Spawn Reduced Loot
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		
-		{
-			groups = {
-				{group = "loot_kit_parts", chance = 10000000}
-		},
-			lootChance = 1000000
+				{group = "junk", chance = 4000000},
+				{group = "wearables_common", chance = 3000000},
+				{group = "loot_kit_parts", chance = 1500000},
+				{group = "power_crystals", chance = 500000},
+				{group = "tailor_components", chance = 1000000}
+			}
 		}
 	},
 	weapons = {"pirate_weapons_medium"},

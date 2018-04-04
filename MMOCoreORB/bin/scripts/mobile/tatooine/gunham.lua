@@ -24,9 +24,8 @@ gunham = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_imperial_lieutenant_m.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_imperial_lieutenant_m.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

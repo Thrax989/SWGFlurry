@@ -24,36 +24,10 @@ king_venom_nightspider = Creature:new {
 	creatureBitmask = PACK + HERD + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
+
 	templates = {"object/mobile/king_venom_nightspider.iff"},
 	scale = 0.65,
-
---Creature Default Loot Template
-	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
-	},
+	lootGroups = {},
 	weapons = {"creature_spit_small_toxicgreen"},
 	conversationTemplate = "",
 	attacks = {

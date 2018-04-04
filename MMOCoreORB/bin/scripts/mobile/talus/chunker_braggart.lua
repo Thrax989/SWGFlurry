@@ -28,45 +28,17 @@ chunker_braggart = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/human_male.iff"},
-
---NPC Faction Template Chunker
-lootGroups = {
+	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "chunker_common", chance = 10000000}
-		},
-			lootChance = 1000000
-		},
+				{group = "junk", chance = 1200000},
+				{group = "rifles", chance = 700000},
+				{group = "melee_knife", chance = 700000},
+				{group = "pistols", chance = 700000},
+				{group = "carbines", chance = 700000},
+				{group = "chunker_common", chance = 6000000},
+			}
+		}
 	},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",

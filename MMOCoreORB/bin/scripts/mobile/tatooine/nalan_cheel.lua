@@ -25,9 +25,8 @@ nalan_cheel = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/tatooine_npc/figrin_dan.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/tatooine_npc/figrin_dan.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

@@ -6,8 +6,8 @@ carbine_dh17_snubnose = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_dh17_snubnose.iff",
 	craftingValues = {
-		{"mindamage",28,52,0},
-		{"maxdamage",81,150,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",4.5,3.1,1},
 		{"woundchance",6,12,0},
 		{"roundsused",30,54,0},
@@ -24,7 +24,7 @@ carbine_dh17_snubnose = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 625,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

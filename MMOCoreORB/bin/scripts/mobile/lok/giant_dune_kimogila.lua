@@ -24,42 +24,17 @@ giant_dune_kimogila = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
+
 	templates = {"object/mobile/giant_dune_kimogila.iff"},
 	scale = 1.3,
-
-	--Creature Giant Dune Kimo Loot Template
 	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		},
-		{
-	        	groups = {
+	 {
+	        groups = {
 				{group = "giant_dune_kimo_common", chance = 3500000},
 				{group = "kimogila_common", chance = 6500000},
-		},
+			},
 			lootChance = 4060000
-		},
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",

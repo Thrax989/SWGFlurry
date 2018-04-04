@@ -25,9 +25,8 @@ lt_porro_dolphe = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_naboo_lt_porro_dolphe.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_naboo_lt_porro_dolphe.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

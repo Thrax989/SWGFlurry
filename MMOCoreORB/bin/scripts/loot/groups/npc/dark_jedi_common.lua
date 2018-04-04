@@ -3,7 +3,7 @@ dark_jedi_common = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{groupTemplate = "power_crystals", weight = 3500000},
+		{groupTemplate = "wearables_rare", weight = 3500000},
 		{groupTemplate = "junk", weight = 1000000},
 		{itemTemplate = "skill_buff_heavy_weapon_accuracy", weight = 500000},
 		{itemTemplate = "skill_buff_heavy_weapon_speed", weight = 500000},

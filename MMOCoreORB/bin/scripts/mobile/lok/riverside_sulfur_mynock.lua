@@ -24,37 +24,11 @@ riverside_sulfur_mynock = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
+
 	templates = {"object/mobile/riverside_sulfur_mynock.iff"},
 	controlDeviceTemplate = "object/intangible/pet/salt_mynock_hue.iff",
 	scale = 1.1,
-
---Creature Default Loot Template
-	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
-	},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

@@ -27,32 +27,7 @@ tabage = Creature:new {
 
 	templates = {"object/mobile/tabage.iff"},
 	controlDeviceTemplate = "object/intangible/pet/langlatch_hue.iff",
-	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
-	},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

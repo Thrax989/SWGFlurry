@@ -26,9 +26,8 @@ gamorrean_guard = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/gamorrean.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/gamorrean.iff"},
 	lootGroups = {},
 	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",

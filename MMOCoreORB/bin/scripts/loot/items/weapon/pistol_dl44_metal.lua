@@ -6,8 +6,8 @@ pistol_dl44_metal = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_dl44_metal.iff",
 	craftingValues = {
-		{"mindamage",11,24,0},
-		{"maxdamage",63,127,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",5.3,3.4,0},
 		{"woundchance",4.2,8.6,0},
 		{"hitpoints",750,750,0},
@@ -24,7 +24,7 @@ pistol_dl44_metal = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 625,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

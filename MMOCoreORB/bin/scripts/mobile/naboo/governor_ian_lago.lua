@@ -25,9 +25,8 @@ governor_ian_lago = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_naboo_govenor_ian_lago.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_naboo_govenor_ian_lago.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

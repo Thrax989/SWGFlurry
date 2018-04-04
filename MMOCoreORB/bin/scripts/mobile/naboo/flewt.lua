@@ -24,31 +24,10 @@ flewt = Creature:new {
 	creatureBitmask = HERD,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
+
 	templates = {"object/mobile/flewt.iff"},
 	controlDeviceTemplate = "object/intangible/pet/flewt_hue.iff",
-
---Creature Reduced Loot Template
-	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		
-	},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

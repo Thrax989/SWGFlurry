@@ -43,6 +43,9 @@ includeFile("groups/armor/tantel_armor.lua")
 includeFile("groups/armor/ubese_armor.lua")
 
 -- bestine election sub-folder
+includeFile("groups/bestine_election/bestine_election_baton.lua")
+includeFile("groups/bestine_election/bestine_election_smooth_stone.lua")
+includeFile("groups/bestine_election/bestine_election_carved_stone.lua")
 includeFile("groups/bestine_election/bestine_history_quest_reward.lua")
 includeFile("groups/bestine_election/bestine_election_sean_trenwell_rewards.lua")
 includeFile("groups/bestine_election/bestine_election_tusken_head.lua")

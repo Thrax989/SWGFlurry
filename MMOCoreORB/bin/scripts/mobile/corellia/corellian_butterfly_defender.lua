@@ -28,32 +28,7 @@ corellian_butterfly_defender = Creature:new {
 	templates = {"object/mobile/corellian_butterfly_defender.iff"},
 	controlDeviceTemplate = "object/intangible/pet/corellian_butterfly_hue.iff",
 	scale = 1.2,
-	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
-	},
+	lootGroups = {},
 	weapons = {"creature_spit_small_yellow"},
 	conversationTemplate = "",
 	attacks = {

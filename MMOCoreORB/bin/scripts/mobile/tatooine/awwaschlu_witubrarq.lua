@@ -25,8 +25,8 @@ awwaschlu_witubrarq = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+
 	templates = {"object/mobile/dressed_noble_fat_twilek_male_01.iff"},
---Townsperson no loot
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

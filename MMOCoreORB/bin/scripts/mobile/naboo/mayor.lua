@@ -25,9 +25,8 @@ mayor = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = HERD,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_mayor.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/dressed_mayor.iff"},
 	lootGroups = {},
 	weapons = {},
 	attacks = {}

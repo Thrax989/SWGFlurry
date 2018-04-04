@@ -26,63 +26,21 @@ naive_jinda_workling = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+
 	templates = {
 		"object/mobile/jinda_male.iff",
 		"object/mobile/jinda_female.iff",
 		"object/mobile/jinda_male_01.iff",
 		"object/mobile/jinda_female_01.iff"},
-		
---NPC with AA/CA Template Ewok Generic
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "armor_attachments", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "clothing_attachments", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "ewok", chance = 10000000}
-		},
-			lootChance = 3000000
-		},
+				{group = "ewok", chance = 9100000},
+				{group = "armor_attachments", chance = 450000},
+				{group = "clothing_attachments", chance = 450000}
+			},
+			lootChance = 1200000
+		}
 	},
 	weapons = {"ewok_weapons"},
 	conversationTemplate = "",

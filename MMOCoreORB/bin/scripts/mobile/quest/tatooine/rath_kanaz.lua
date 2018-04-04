@@ -30,9 +30,13 @@ rath_kanaz = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 7000000},
-				{group = "loot_kit_parts", chance = 2000000},
-				{group = "tailor_components", chance = 1000000}
+				{group = "junk", chance = 3500000},
+				{group = "grenades_looted", chance = 1000000},
+				{group = "armor_all", chance = 1500000},
+				{group = "pistols", chance = 1000000},
+				{group = "carbines", chance = 1000000},
+				{group = "tailor_components", chance = 1000000},
+				{group = "loot_kit_parts", chance = 1000000}
 			}
 		}
 	},

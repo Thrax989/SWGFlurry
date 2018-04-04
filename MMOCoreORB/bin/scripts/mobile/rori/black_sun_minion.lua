@@ -27,48 +27,19 @@ black_sun_minion = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 	scale = 1.15,
+
 	templates = {"object/mobile/dressed_black_sun_guard.iff"},
-	
---NPC with Lootkit Template
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-		},
-			lootChance = 500000 
-
-		},
-		
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "loot_kit_parts", chance = 10000000}
-		},
-			lootChance = 150000
-		},
+				{group = "junk", chance = 6500000},
+				{group = "pistols", chance = 800000},
+				{group = "rifles", chance = 800000},
+				{group = "carbines", chance = 800000},
+				{group = "wearables_common", chance = 550000},
+				{group = "wearables_uncommon", chance = 550000}
+			}
+		}
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",

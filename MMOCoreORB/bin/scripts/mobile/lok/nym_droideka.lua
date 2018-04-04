@@ -24,47 +24,20 @@ nym_droideka = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+
 	templates = {"object/mobile/droideka.iff"},
-	
-	--NPC with AA/CA Template Nyms Generic
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "nyms_common", chance = 10000000}
-		},
-			lootChance = 3000000
-		},
+				{group = "junk", chance = 4000000},
+				{group = "wearables_uncommon", chance = 2000000},
+				{group = "nyms_common", chance = 1000000},
+				{group = "nyms_rare", chance = 500000},
+				{group = "pistols", chance = 1000000},
+				{group = "carbines", chance = 1000000},
+				{group = "tailor_components", chance = 500000}
+			}
+		}
 	},
 	defaultAttack = "attack",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",

@@ -25,9 +25,8 @@ queen_kylantha_gazebo = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_naboo_queen_kylantha_02.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_naboo_queen_kylantha_02.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

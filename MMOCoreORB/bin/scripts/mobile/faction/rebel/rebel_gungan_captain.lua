@@ -28,53 +28,22 @@ rebel_gungan_captain = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/gungan_male.iff"},
-
---Rebel Officer Loot Template	
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 7500000},
-				{group = "rebel_officer_common", chance = 2500000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "g_imperial_credit", chance = 10000000}
-		},
-			lootChance = 200000 
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "imppoints", chance = 10000000}
-		},
-			lootChance = 100000 
-		},
+				{group = "junk", chance = 1000000},
+				{group = "wearables_common", chance = 2000000},
+				{group = "tailor_components", chance = 1000000},
+				{group = "loot_kit_parts", chance = 1000000},
+				{group = "rifles", chance = 1000000},
+				{group = "pistols", chance = 1000000},
+				{group = "melee_weapons", chance = 1000000},
+				{group = "carbines", chance = 1000000},
+				{group = "clothing_attachments", chance = 300000},
+				{group = "armor_attachments", chance = 300000},
+				{group = "rebel_officer_common", chance = 400000}
+			}
+		}
 	},
 	weapons = {"rebel_weapons_medium"},
 	conversationTemplate = "",

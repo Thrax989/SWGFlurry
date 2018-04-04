@@ -25,9 +25,8 @@ ovo = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_rebel_trooper_bith_m_01.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/dressed_rebel_trooper_bith_m_01.iff"},
 	lootGroups = {},
 	weapons = {"pirate_weapons_medium"},
 	conversationTemplate = "",

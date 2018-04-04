@@ -24,8 +24,8 @@ beissa = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+
 	templates = {"object/mobile/space_rebel_tier3_beissa.iff"},
---Townsperson no loot
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

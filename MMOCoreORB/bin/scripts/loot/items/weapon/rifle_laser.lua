@@ -6,8 +6,8 @@ rifle_laser = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_laser.iff",
 	craftingValues = {
-		{"mindamage",4,15,0},
-		{"maxdamage",186,356,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",9.4,6.7,0},
 		{"woundchance",4.8,12.3,0},
 		{"hitpoints",750,750,0},
@@ -24,7 +24,7 @@ rifle_laser = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 750,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

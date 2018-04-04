@@ -24,9 +24,8 @@ salacious_crumb = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/salacious_crumb.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/salacious_crumb.iff"},
 	lootGroups = {},
 	weapons = {},
 	attacks = {}

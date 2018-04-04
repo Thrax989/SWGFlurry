@@ -24,9 +24,8 @@ rel_keteris = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_tatooine_jabba_swooper_leader.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_tatooine_jabba_swooper_leader.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

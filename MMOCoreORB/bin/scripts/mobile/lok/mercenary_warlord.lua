@@ -30,42 +30,26 @@ mercenary_warlord = Creature:new {
 	templates = {
 		"object/mobile/dressed_mercenary_warlord_hum_m.iff",
 		"object/mobile/dressed_mercenary_warlord_nikto_m.iff",
-		"object/mobile/dressed_mercenary_warlord_wee_m.iff"},
-	
-	--NPC with AA/CA Template Generic
+		"object/mobile/dressed_mercenary_warlord_wee_m.iff"
+	},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		
+				{group = "junk", chance = 2600000},
+				{group = "wearables_common", chance = 1500000},
+				{group = "wearables_uncommon", chance = 500000},
+				{group = "tailor_components", chance = 1000000},
+				{group = "color_crystals", chance = 400000},
+				{group = "power_crystals", chance = 400000},
+				{group = "melee_unarmed", chance = 600000},
+				{group = "melee_polearm", chance = 600000},
+				{group = "pistols", chance = 600000},
+				{group = "carbines", chance = 600000},
+				{group = "rifles", chance = 600000},
+				{group = "clothing_attachments", chance = 300000},
+				{group = "armor_attachments", chance = 300000}
+			}
+		}
 	},
 	weapons = {"rebel_weapons_heavy"},
 	conversationTemplate = "",

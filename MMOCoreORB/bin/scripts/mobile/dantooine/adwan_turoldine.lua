@@ -24,9 +24,8 @@ adwan_turoldine = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/space_privateer_tier4_corellia_adwan.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/space_privateer_tier4_corellia_adwan.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

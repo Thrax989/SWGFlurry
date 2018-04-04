@@ -23,37 +23,11 @@ giant_gackle_bat = Creature:new {
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
 	diet = CARNIVORE,
+
 	templates = {"object/mobile/giant_gackle_bat.iff"},
 	controlDeviceTemplate = "object/intangible/pet/gackle_bat_hue.iff",
 	scale = 1.5,
-
---Creature Default Loot Template
-	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
-	},
+	lootGroups = {},
 	weapons = {},
 	attacks = {
 		{"intimidationattack",""}

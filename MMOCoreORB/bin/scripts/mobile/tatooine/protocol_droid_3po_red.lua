@@ -24,9 +24,8 @@ protocol_droid_3po_red = Creature:new {
 	creatureBitmask = NONE,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/3po_protocol_droid_red.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/3po_protocol_droid_red.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

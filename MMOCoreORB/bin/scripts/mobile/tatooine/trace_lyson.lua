@@ -25,9 +25,8 @@ trace_lyson = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_commoner_naboo_human_male_05.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_commoner_naboo_human_male_05.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

@@ -31,9 +31,10 @@ corsec_agent_quest_zekka = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 6000000},
-				{group = "tailor_components", chance = 2000000},
-				{group = "loot_kit_parts", chance = 2000000}
+				{group = "junk", chance = 4000000},
+				{group = "corsec_weapons", chance = 2500000},
+				{group = "wearables_common", chance = 2000000},
+				{group = "tailor_components", chance = 1500000}
 			}
 		}
 	},

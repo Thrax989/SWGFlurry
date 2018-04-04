@@ -5,6 +5,8 @@ tusken_common = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
+		{itemTemplate = "baton_gaderiffi", weight = 600000},
+		{itemTemplate = "rifle_tusken", weight = 600000},
 		{itemTemplate = "tusken_raider_bandolier_1", weight = 700000},
 		{itemTemplate = "tusken_raider_bandolier_2", weight = 400000},
 		{itemTemplate = "tusken_raider_bandolier_3", weight = 200000},
@@ -20,7 +22,6 @@ tusken_common = {
 		{itemTemplate = "tanned_hide_s01_schematic", weight = 400000},
 		{itemTemplate = "tanned_hide_s02_schematic", weight = 400000},
 		{itemTemplate = "tatooine_tapestry_schematic", weight = 400000},
-		{groupTemplate = "junk", weight = 1200000},
 	}
 }
 

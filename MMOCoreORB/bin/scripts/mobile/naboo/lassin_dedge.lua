@@ -25,9 +25,8 @@ lassin_dedge = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_lassin_dedge.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_lassin_dedge.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

@@ -30,39 +30,9 @@ sharnaff_reckless_ravager = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
 				{group = "sharnaff_common", chance = 10000000}
-		},
-			lootChance = 1000000
+			},
+			lootChance = 1680000
 		}
 	},
 	weapons = {},

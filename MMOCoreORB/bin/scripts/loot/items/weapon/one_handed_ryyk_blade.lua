@@ -5,8 +5,8 @@ one_handed_ryyk_blade = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/sword/sword_blade_ryyk.iff",
 	craftingValues = {
-		{"mindamage",18,33,0},
-		{"maxdamage",98,132,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",4.3,3,1},
 		{"woundchance",15,29,0},
 		{"hitpoints",750,1500,0},
@@ -23,7 +23,7 @@ one_handed_ryyk_blade = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 625,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

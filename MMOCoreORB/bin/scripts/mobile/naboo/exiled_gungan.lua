@@ -24,52 +24,20 @@ exiled_gungan = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/gungan_outcast.iff"},
 
---NPC (Faction Loot) Default Template with Lootkit Drops
+	templates = {"object/mobile/gungan_outcast.iff"},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 7000000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
---Change this group to Faction loot group
-		{
-			groups = {
-				{group = "gungan_common", chance = 10000000}
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "loot_kit_parts", chance = 10000000}
-		},
-			lootChance = 2000000
+				{group = "junk", chance = 2400000},
+				{group = "wearables_common", chance = 2000000},
+				{group = "tailor_components", chance = 1500000},
+				{group = "loot_kit_parts", chance = 1500000},
+				{group = "composite_armor", chance = 1000000},
+				{group = "melee_two_handed", chance = 1000000},
+				{group = "clothing_attachments", chance = 300000},
+				{group = "armor_attachments", chance = 300000},
+			}
 		}
 	},
 	weapons = {"pirate_weapons_heavy"},

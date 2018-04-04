@@ -4,8 +4,8 @@ rifle_flame_thrower = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_flame_thrower.iff",
 	craftingValues = {
-		{"mindamage",24,476,0},
-		{"maxdamage",300,826,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",7.2,4.9,1},
 		{"woundchance",8.0,16.0,0},
 		{"hitpoints",750,1500,0},
@@ -22,7 +22,7 @@ rifle_flame_thrower = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 750,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 20,
 	junkMaxValue = 60

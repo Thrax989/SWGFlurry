@@ -1,8 +1,8 @@
 torton = Creature:new {
-	customName = "@mob/creature_names:torton",
+	objectName = "@mob/creature_names:torton",
 	socialGroup = "torton",
 	faction = "",
-	level = 100,
+	level = 24,
 	chanceHit = 0.35,
 	damageMin = 270,
 	damageMax = 280,
@@ -24,35 +24,9 @@ torton = Creature:new {
 	creatureBitmask = PACK + HERD,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-	templates = {"object/mobile/torton.iff"},
 
---Creature Default Loot Template
-	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		}
-	},
+	templates = {"object/mobile/torton.iff"},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

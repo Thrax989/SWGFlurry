@@ -27,38 +27,14 @@ gorax = Creature:new {
 
 	templates = {"object/mobile/gorax.iff"},
 	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		},
-	 	{
-	        	groups = {
+	 {
+	        groups = {
 				{group = "gorax_common", chance = 6000000},
 				{group = "armor_attachments", chance = 2000000},
 				{group = "clothing_attachments", chance = 2000000}
-		},
+			},
 			lootChance = 7000000
-		},
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",

@@ -26,39 +26,14 @@ donkuwah_battlelord = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dulok_male.iff"},
 
---NPC Donkuwah Loot Template
+	templates = {"object/mobile/dulok_male.iff"},
 	lootGroups = {
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 25000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000
-		},
 		{
 			groups = {
 				{group = "donkuwah_common", chance = 10000000}
 			},
-			lootChance = 1460000
+			lootChance = 1520000
 		}
 	},
 	weapons = {"donkuwah_weapons"},

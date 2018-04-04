@@ -28,52 +28,15 @@ rebel_gungan_priest = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/gungan_male.iff"},
-
---Rebel Enlisted Loot Template	
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "g_imperial_credit", chance = 10000000}
-		},
-			lootChance = 200000 
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "imppoints", chance = 10000000}
-		},
-			lootChance = 100000 
-		},
+				{group = "junk", chance = 4000000},
+				{group = "gungan_common", chance = 2000000},
+				{group = "tailor_components", chance = 2000000},
+				{group = "loot_kit_parts", chance = 2000000}
+			}
+		}
 	},
 	weapons = {"rebel_weapons_medium"},
 	conversationTemplate = "",

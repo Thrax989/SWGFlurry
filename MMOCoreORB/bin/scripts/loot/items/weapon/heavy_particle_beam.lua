@@ -4,8 +4,8 @@ heavy_particle_beam = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/heavy/heavy_particle_beam.iff",
 	craftingValues = {
-		{"mindamage",1860,2000,0},
-		{"maxdamage",2700,3700,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",9.1,4.0,1},
 		{"woundchance",10,20,0},
 		{"hitpoints",1000,1000,0},
@@ -20,7 +20,7 @@ heavy_particle_beam = {
 	},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 750,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 30,
 	junkMaxValue = 55

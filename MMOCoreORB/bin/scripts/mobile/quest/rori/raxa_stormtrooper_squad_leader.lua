@@ -31,11 +31,16 @@ raxa_stormtrooper_squad_leader = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 6000000},
-				{group = "loot_kit_parts", chance = 2000000},
-				{group = "tailor_components", chance = 1000000},
-				{group = "stormtrooper_common", chance = 1000000}
-				
+				{group = "color_crystals", chance = 100000},
+				{group = "junk", chance = 5500000},
+				{group = "rifles", chance = 550000},
+				{group = "pistols", chance = 550000},
+				{group = "melee_weapons", chance = 550000},
+				{group = "carbines", chance = 550000},
+				{group = "clothing_attachments", chance = 250000},
+				{group = "armor_attachments", chance = 250000},
+				{group = "stormtrooper_common", chance = 700000},
+				{group = "wearables_common", chance = 1000000}
 			}
 		}
 	},

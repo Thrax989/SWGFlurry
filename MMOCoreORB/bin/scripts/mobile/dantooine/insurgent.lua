@@ -23,9 +23,8 @@ insurgent = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
 	diet = HERBIVORE,
-	templates = {"object/mobile/space_imperial_tier4_corellia_nin_gursawe.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/space_imperial_tier4_corellia_nin_gursawe.iff"},
 	lootGroups = {},
 	weapons = {"pirate_weapons_heavy"},
 	attacks = merge(brawlermaster,marksmanmaster)

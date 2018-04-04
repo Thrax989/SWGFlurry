@@ -6,8 +6,8 @@ pistol_striker = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_striker.iff",
 	craftingValues = {
-		{"mindamage",23,41,0},
-		{"maxdamage",44,73,0},
+		{"mindamage",35,40,0},
+		{"maxdamage",70,80,0},
 		{"attackspeed",4.9,3.5,0},
 		{"woundchance",4,11,0},
 		{"hitpoints",750,750,0},
@@ -24,7 +24,7 @@ pistol_striker = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 625,
+	randomDotChance = 375,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

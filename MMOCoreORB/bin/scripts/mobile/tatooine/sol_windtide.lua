@@ -24,9 +24,8 @@ sol_windtide = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_noble_old_human_male_01.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/dressed_noble_old_human_male_01.iff"},
 	lootGroups = {},
 	weapons = {},
 	attacks = {}

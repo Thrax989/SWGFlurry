@@ -25,9 +25,8 @@ dede_chesmi = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_noble_fat_human_female_01.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_noble_fat_human_female_01.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

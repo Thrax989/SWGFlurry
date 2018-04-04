@@ -24,9 +24,8 @@ yras_shen_jen = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/space_greeter_dantooine_old_pilot.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/space_greeter_dantooine_old_pilot.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

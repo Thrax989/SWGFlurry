@@ -24,9 +24,8 @@ boshek = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_tatooine_boshek.iff"},
 
---Townsperson no loot
+	templates = {"object/mobile/dressed_tatooine_boshek.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

@@ -28,9 +28,15 @@ young_mos_taike_guard = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/mos_taike_guard_young.iff"},
-
---Townsperson no loot
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "junk", chance = 6500000},
+				{group = "tailor_components", chance = 1500000},
+				{group = "loot_kit_parts", chance = 2000000}
+			}
+		}
+	},
 	weapons = {},
 	outfit = "mos_taike_guard_outfit",
 	conversationTemplate = "",

@@ -26,9 +26,8 @@ smuggler_pilot = Creature:new {
 	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_tatooine_jabba_henchman.iff"},
 
---Quest NPC no loot
+	templates = {"object/mobile/dressed_tatooine_jabba_henchman.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

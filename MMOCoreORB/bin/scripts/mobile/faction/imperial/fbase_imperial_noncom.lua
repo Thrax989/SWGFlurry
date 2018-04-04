@@ -25,55 +25,22 @@ fbase_imperial_noncom = Creature:new {
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + STALKER,
 	diet = HERBIVORE,
+
 	templates = {
 		"object/mobile/dressed_imperial_medic1_human_male_01.iff",
 		"object/mobile/dressed_imperial_medic3_human_male_01.iff"},
-
---Imperial Enlisted Loot Template	
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-		},
-			lootChance = 500000 
-
-		},
-		{
-			groups = {
-				{group = "g_rebel_credit", chance = 10000000}
-		},
-			lootChance = 200000 
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "rebpoints", chance = 10000000}
-		},
-			lootChance = 100000 
-		},
+				{group = "color_crystals", chance = 200000},
+				{group = "junk", chance = 6000000},
+				{group = "weapons_all", chance = 1250000},
+				{group = "armor_all", chance = 1250000},
+				{group = "clothing_attachments", chance = 150000},
+				{group = "armor_attachments", chance = 150000},
+				{group = "wearables_all", chance = 1000000}
+			}
+		}
 	},
 	weapons = {"imperial_weapons_light"},
 	reactionStf = "@npc_reaction/military",

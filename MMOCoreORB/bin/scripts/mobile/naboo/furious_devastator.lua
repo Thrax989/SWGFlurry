@@ -24,50 +24,17 @@ furious_devastator = Creature:new {
 	creatureBitmask = PACK + HERD + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
+
 	templates = {"object/mobile/fambaa_hue.iff"},
 	controlDeviceTemplate = "object/intangible/pet/fambaa_hue.iff",
 	scale = 1.3,
-
---Creature with special loot Default Template 
 	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 7000000
-		},
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
---Change this group to special loot group
-		{
-			groups = {
+	 {
+	        groups = {
 				{group = "fambaa_common", chance = 10000000}
-		},
-			lootChance = 1000000
-		},
-		
+			},
+			lootChance = 1760000
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",

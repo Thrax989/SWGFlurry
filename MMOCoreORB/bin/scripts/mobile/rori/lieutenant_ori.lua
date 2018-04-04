@@ -24,48 +24,17 @@ lieutenant_ori = Creature:new {
 	creatureBitmask = PACK + HERD + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	templates = {"object/mobile/lieutenant_ori.iff"},
 
---NPC with Lootkit Template
+	templates = {"object/mobile/lieutenant_ori.iff"},
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-		},
-			lootChance = 500000 
-
-		},
-		
-		{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-		},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000}
-		},
-			lootChance = 750000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 50000
-		},
-		{
-			groups = {
-				{group = "loot_kit_parts", chance = 10000000}
-		},
-			lootChance = 150000
-		},
+				{group = "junk", chance = 5000000},
+				{group = "tailor_components", chance = 2000000},
+				{group = "loot_kit_parts", chance = 2000000},
+				{group = "wearables_common", chance = 1000000}
+			}
+		}
 	},
 	weapons = {"lt_ori_weapons"},
 	conversationTemplate = "",
