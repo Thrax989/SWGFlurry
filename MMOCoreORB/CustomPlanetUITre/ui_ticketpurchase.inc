@@ -37,6 +37,7 @@
 				buttonHutta='map.GalaxyMap.buttonHutta'
 				buttonKashyyyk='map.GalaxyMap.buttonKashyyyk'
 				buttonKaas='map.galaxyMap.buttonKaas'
+				buttonMandalore='map.GalaxyMap.buttonMandalore'
 				buttonMoraband='map.GalaxyMap.buttonMoraband'
 				buttonMustafar='map.GalaxyMap.buttonMustafar'
 				buttondungeon2='map.GalaxyMap.buttondungeon2'
@@ -1015,6 +1016,25 @@ parent.buttonTravel.visible=false
 						ColorCarat='#FFFFFF'
 						ColorSelection='#FFFFFF'
 						Font='bold_13'
+						LocalText='Mandalore'
+						Location='63,95'
+						MinimumSize='0,19'
+						Name='Mandalore'
+						OpacityRelativeMin='0.70'
+						PackLocation='cpc,cpc'
+						PackSize='p,p'
+						PalText='contrast1'
+						ScrollExtent='75,19'
+						Size='75,19'
+						TextAlignment='Center'
+						TextAlignmentVertical='Center'
+						TextColor='#62FF15'
+					>Mandalore</Text>
+					<Text
+						BackgroundColor='#FFFFFF'
+						ColorCarat='#FFFFFF'
+						ColorSelection='#FFFFFF'
+						Font='bold_13'
 						LocalText='Talus'
 						Location='216,102'
 						MinimumSize='0,19'
@@ -1434,6 +1454,28 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							Size='482,482'
 							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_taanab'
+						/>
+					</Page>
+					<Page
+						BackgroundOpacity='1.00'
+						Name='Mandalore'
+						PackLocation='nfn,nfn'
+						PackSize='a,a'
+						RStyleDefault='rs_default'
+						ScrollExtent='498,482'
+						Size='498,482'
+					>
+						<Image
+							BackgroundOpacity='1.00'
+							Color='#00FFFF'
+							Name='New Image'
+							PackLocation='nfn,nfn'
+							PackSize='a,a'
+							PalColor='highlight'
+							ScrollExtent='498,482'
+							Size='498,482'
+							SourceRect='0,0,1024,1024'
+							SourceResource='ui_map_mandalore'
 						/>
 					</Page>
 					<Page
@@ -2045,6 +2087,37 @@ parent.planetnames.visible=visible'
 						PackSize='p,p'
 						ScrollExtent='41,39'
 						Size='41,39'
+						Style='/Styles.New.buttons.planetLrg.style'
+					></Button>
+					<CuiWidget3dObjectListViewer
+						AutoZoomOutOnly='true'
+						CameraForceTarget='true'
+						camerayaw='90'
+						dragyawok='false'
+						fieldofview='60'
+						FitDistanceFactor='1'
+						GetsInput='false'
+						lightambientcolor='#222222'
+						lightcolor='#ffffff'
+						Location='84,100'
+						Name='vMandalore'
+						objectdatasource='data.Mandalore'
+						PackLocation='cpc,cpc'
+						PackSize='p,p'
+						RotateSpeed='0.3'
+						RStyleDefault='rs_default'
+						ScrollExtent='52,51'
+						Size='52,51'
+					/>
+					<Button
+						BackgroundColor='#FFFFFF'
+						Location='84,100'
+						MaximumSize='800,600'
+						Name='buttonMandalore'
+						PackLocation='cpc,cpc'
+						PackSize='p,p'
+						ScrollExtent='52,51'
+						Size='52,51'
 						Style='/Styles.New.buttons.planetLrg.style'
 					></Button>
 					<CuiWidget3dObjectListViewer
@@ -4264,6 +4337,14 @@ parent.planetnames.visible=visible'
 							<Data
 								appearanceTemplate='appearance/ui_planet_sel_taanab.apt'
 								Name='Taanab'
+							/>
+						</DataSource>
+						<DataSource
+							Name='Mandalore'
+						>
+							<Data
+								appearanceTemplate='appearance/ui_planet_sel_ordmantell.apt'
+								Name='Mandalore'
 							/>
 						</DataSource>
 						<DataSource
