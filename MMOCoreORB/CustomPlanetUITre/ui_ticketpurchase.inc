@@ -921,7 +921,7 @@ parent.buttonTravel.visible=false
 						ColorSelection='#FFFFFF'
 						Font='bold_13'
 						LocalText='Nova Orion Station'
-						Location='183,380'
+						Location='150,380'
 						MinimumSize='0,19'
 						Name='dungeon2'
 						OpacityRelativeMin='0.70'
@@ -934,7 +934,6 @@ parent.buttonTravel.visible=false
 						TextAlignmentVertical='Center'
 						TextColor='#62FF15'
 					>Nova Orion Station</Text>
-
 					<Text
 						BackgroundColor='#FFFFFF'
 						ColorCarat='#FFFFFF'
@@ -1351,7 +1350,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							ScrollExtent='482,482'
 							Size='482,482'
 							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_kashyyyk'
+							SourceResource='ui_map_dungeon2'
 						/>
 					</Page>
 					<Page
@@ -1944,7 +1943,7 @@ parent.planetnames.visible=visible'
 						GetsInput='false'
 						lightambientcolor='#222222'
 						lightcolor='#ffffff'
-						Location='187,389'
+						Location='150,380'
 						Name='vdungeon2'
 						objectdatasource='data.dungeon2'
 						PackLocation='cpc,cpc'
@@ -1956,13 +1955,13 @@ parent.planetnames.visible=visible'
 					/>
 					<Button
 						BackgroundColor='#FFFFFF'
-						Location='315,388'
+						Location='150,380'
 						MaximumSize='800,600'
 						Name='buttondungeon2'
 						PackLocation='cpc,cpc'
 						PackSize='p,p'
-						ScrollExtent='41,39'
-						Size='41,39'
+						ScrollExtent='63,62'
+						Size='63,62'
 						Style='/Styles.New.buttons.planetLrg.style'
 					></Button>
 					<CuiWidget3dObjectListViewer
