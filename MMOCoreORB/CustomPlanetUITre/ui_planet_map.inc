@@ -283,11 +283,15 @@
 						LocalText='[@ui_planet_map:refresh]'
 						Location='7,6'
 						Name='buttonRefresh'
-						OnHide='parent.loading.visible=true
-parent.labelTree.visible=visible
+						OnHide='parent.loading.visible=true
+
+parent.labelTree.visible=visible
+
 parent.treebg.enabled=visible'
-						OnShow='parent.loading.visible=false
-parent.labelTree.visible=visible
+						OnShow='parent.loading.visible=false
+
+parent.labelTree.visible=visible
+
 parent.treebg.enabled=visible'
 						OpacityRelativeMin='0.80'
 						PackLocation='nfn,nfn'
@@ -727,6 +731,72 @@ parent.treebg.enabled=visible'
 								/>
 							</Page>
 							<Page
+								BackgroundColor=''
+								Name='hoth'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor=''
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_hoth'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='kashyyyk'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor=''
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_kashyyyk'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='nalhutta'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor=''
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_nalhutta'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
 								BackgroundColor='#FFFFFF'
 								Name='lok'
 								OpacityRelativeMin='0.50'
@@ -810,7 +880,7 @@ parent.treebg.enabled=visible'
 									ScrollExtent='485,440'
 									Size='485,440'
 									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_talus'
+									SourceResource='ui_map_taanab'
 									VisualEditLock='true'
 								/>
 							</Page>
@@ -854,6 +924,248 @@ parent.treebg.enabled=visible'
 									Size='485,440'
 									SourceRect='0,0,1024,1024'
 									SourceResource='ui_map_yavin4'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='mustafar'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_mustafar'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='dagobah'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_dagobah'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='bespin'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_bespin'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='moraband'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_moraband'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='jakku'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_jakku'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='chandrila'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_chandrila'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='mandalore'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_mandalore'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='hutta'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_hutta'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='kaas'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_kaas'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='ghomrassen'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_ghomrassen'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
+								Name='coruscant'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_coruscant'
 									VisualEditLock='true'
 								/>
 							</Page>
