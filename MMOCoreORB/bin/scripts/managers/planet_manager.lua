@@ -1102,20 +1102,6 @@ kessel = {
 	}
 }
 
-kaas = {
-
-	weatherEnabled = 1,
- 	gcwEnabled = 1,
-
-
-	planetTravelPoints = {
-	},
-	
-	planetObjects = {
-		{templateFile = "object/tangible/jedi/force_shrine_stone.iff", ox = 0, oy = 0.0, oz = 0, ow = 0.0, x = -1123.2, z = 129.0, y = -4768.8, parentid = 0}
-	}
-}
-
 jakku = {
   weatherEnabled = 1,
   gcwEnabled = 0,
@@ -1130,11 +1116,24 @@ chandrila = {
   gcwEnabled = 1,
   
   planetTravelPoints = {
-
+    {name = "Hanna City Spaceport", x = 164, z = 6, y = -2937, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    {name = "Nayli Outpost", x = -5272, z = 18, y = 264, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
     },
     
     badgeAreas = {
+  },
+}
 
+kaas = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "an Imperial Garrison", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    {name = "a Smuggler Outpost", x = 2852, z = 125, y = 3896, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {   
   },
 }
 
@@ -1143,7 +1142,23 @@ hutta = {
   gcwEnabled = 1,
   
   planetTravelPoints = {
+    {name = "Bilbousa Starport", x = -789, z = 80, y = 1769, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {   
+  },
+}
 
+coruscant = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Collective Commerce District", x = -1851, z = 40, y = -175, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
+    {name = "Monument Square", x = 1538, z = 40, y = 779, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
+    {name = "Entertainment District", x = 2248, z = 0, y = -4546, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
+    {name = "Spaceport District Shuttle", x = -28, z = 40, y = 3202, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
+    {name = "Coruscant Spaceport", x = -96, z = 40, y = 3149, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
     },
     
     badgeAreas = {   
@@ -1155,18 +1170,29 @@ moraband = {
   gcwEnabled = 1,
   
   planetTravelPoints = {
+    {name = "Archaeological Outpost", x = -1696, z = 91, y = -624, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
     },
     
     badgeAreas = {   
   },
 }
 
+
 mandalore = {
+
 	weatherEnabled = 1,
-	gcwEnabled = 0,
+	gcwEnabled = 1,
+
+	outpostRegionNames = { },
 
 	planetTravelPoints = {
-
+		{name = "Bralsin", x = -5689, z = 0, y = -5034, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Keldabe Starport", x = 1575, z = 4, y = -6408, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Keldabe Shuttleport", x = 1432, z = 1.9, y = -6163, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Sundari", x = 6275, z = 1, y = -6211, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Norg Bral", x = -6648, z = 30, y = 5583, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Enceri", x = 4713, z = 2, y = 7154, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Shuror", x = 1068, z = 1, y = 2733, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 	},
 
 	badgeAreas = {
