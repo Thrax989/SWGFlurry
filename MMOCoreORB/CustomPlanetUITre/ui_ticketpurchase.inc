@@ -2074,8 +2074,8 @@ parent.planetnames.visible=visible'
 						PackSize='p,p'
 						RotateSpeed='0.3'
 						RStyleDefault='rs_default'
-						ScrollExtent='32,30'
-						Size='32,30'
+						ScrollExtent='53,52'
+						Size='53,52'
 					/>
 					<Button
 						BackgroundColor='#FFFFFF'
@@ -2084,8 +2084,8 @@ parent.planetnames.visible=visible'
 						Name='buttonTaanab'
 						PackLocation='cpc,cpc'
 						PackSize='p,p'
-						ScrollExtent='41,39'
-						Size='41,39'
+						ScrollExtent='53,52'
+						Size='53,52'
 						Style='/Styles.New.buttons.planetLrg.style'
 					></Button>
 					<CuiWidget3dObjectListViewer
