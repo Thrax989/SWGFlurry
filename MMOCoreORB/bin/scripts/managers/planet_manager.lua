@@ -742,7 +742,7 @@ dungeon2 = {
 	outpostRegionNames = { },
 
 	planetTravelPoints = {
-		{name = "Nova Orion Station", x = 4000, z = 0, y = 2000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
+		{name = "Nova Orion Station", x = 4000, z = 0, y = 2000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 14200880},
 	},
 
 	badgeAreas = {
