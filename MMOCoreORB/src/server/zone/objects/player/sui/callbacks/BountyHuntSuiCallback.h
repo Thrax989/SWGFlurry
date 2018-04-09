@@ -18,33 +18,38 @@ public:
 
   virtual void run(CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args) {
     bool cancelPressed = (eventIndex == 1);
+
 		if (!sui->isInputBox() || creature == NULL || cancelPressed || args->size() <= 0) {
 			return;
 		}
+
 		try
 		{
 			int value = Integer::valueOf(args->get(0).toString());
+
 			ManagedReference<SceneObject*> suiObject = sui->getUsingObject();
 			CreatureObject* player = cast<CreatureObject*>(suiObject.get());
+
 			if(value < 25000 || value > 250000)
-				{
+			{
 				creature->sendSystemMessage("You have entered an insufficient amount, please try again.");
 				ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
 				input->setPromptTitle("Bounty Hunter Request");
 				input->setPromptText("Place a bounty on your killer. Bountys must be between 25,000 and 250,000 credits.");
 				input->setUsingObject(player);
 				input->setCallback(new BountyHuntSuiCallback(creature->getZoneServer()));
+
 				creature->getPlayerObject()->addSuiBox(input);
 				creature->sendMessage(input->generateMessage());
-				{
-				else if(creature->getBankCredits() + creature->getCashCredits() >= value)
-				{
-				if(creature->getBankCredits() > value) creature->subtractBankCredits(value);
+			}
+			else if(creature->getBankCredits() + creature->getCashCredits() >= value)
+			{
+					if(creature->getBankCredits() > value) creature->subtractBankCredits(value);
 					else
-				{
-				creature->subtractCashCredits(value - creature->getBankCredits());
-				creature->subtractBankCredits(creature->getBankCredits());
-				}
+					{
+						creature->subtractCashCredits(value - creature->getBankCredits());
+						creature->subtractBankCredits(creature->getBankCredits());
+					}
 				MissionManager* missionManager = player->getZoneServer()->getMissionManager();
 				missionManager->addPlayerToBountyList(player->getObjectID(), value);
 				int bountyWorth = player->getScreenPlayState("deathBounty") + 1;
@@ -59,9 +64,10 @@ public:
 				StringBuffer zBroadcast;
 				zBroadcast << "\\#ffb90f" << playerName << " is now on the bounty hunter \\#e51b1bTerminal!";
 				player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-				{
-				else creature->sendSystemMessage("You have insufficient funds!");
+			}
+			else creature->sendSystemMessage("You have insufficient funds!");
 		} catch(Exception& e) { }
 	}
 };
+
 #endif
