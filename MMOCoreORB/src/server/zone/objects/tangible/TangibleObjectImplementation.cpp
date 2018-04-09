@@ -11,7 +11,6 @@
 #include "server/zone/packets/tangible/TangibleObjectDeltaMessage3.h"
 #include "server/zone/packets/tangible/TangibleObjectDeltaMessage6.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
-#include "server/zone/managers/objectcontroller/ObjectController.h"
 #include "templates/SharedTangibleObjectTemplate.h"
 #include "templates/params/creature/CreatureFlag.h"
 #include "server/zone/packets/tangible/UpdatePVPStatusMessage.h"
@@ -655,21 +654,6 @@ int TangibleObjectImplementation::inflictDamage(TangibleObject* attacker, int da
 		notifyObjectDestructionObservers(attacker, newConditionDamage, isCombatAction);
 		notifyObservers(ObserverEventType::OBJECTDISABLED, attacker);
 		setDisabled(true);
-		
-	WearableObject* wearable = cast<WearableObject*>(asTangibleObject());
-		if(wearable != NULL) {
-			ManagedReference<SceneObject*> playerParent = getParentRecursively(SceneObjectType::PLAYERCREATURE);
-			if (wearable->isEquipped() && playerParent != NULL){
-				SceneObject* inventory = playerParent->getSlottedObject("inventory");
-				SceneObject* parentOfWearableParent = wearable->getParent().get();
-				ZoneServer* zoneServer = server->getZoneServer();
-				ObjectController* objectController = zoneServer->getObjectController();
-				if (objectController != NULL && inventory != NULL && parentOfWearableParent != NULL){
-					objectController->transferObject(wearable,inventory,wearable->getContainmentType(), true, true);
-				}
-			}
-					
-		}
 	}
 
 	return 0;
@@ -1089,7 +1073,7 @@ bool TangibleObjectImplementation::isAttackableBy(CreatureObject* object) {
 		if (ai->isPet()) {
 			ManagedReference<PetControlDevice*> pcd = ai->getControlDevice().get().castTo<PetControlDevice*>();
 			if (pcd != NULL && pcd->getPetType() == PetManager::FACTIONPET && isNeutral()) {
-				return false;
+				return true;
 			}
 
 			ManagedReference<CreatureObject*> owner = ai->getLinkedCreature().get();
