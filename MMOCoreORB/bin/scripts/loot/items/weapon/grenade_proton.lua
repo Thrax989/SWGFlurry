@@ -4,8 +4,8 @@ grenade_proton = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/grenade/grenade_proton.iff",
 	craftingValues = {
-		{"mindamage",35,40,0},
-		{"maxdamage",70,80,0},
+		{"mindamage",30,35,0},
+		{"maxdamage",75,85,0},
 		{"attackspeed",9,4.5,1},
 		{"woundchance",7,13,0},
 		{"hitpoints",1000,1000,0},

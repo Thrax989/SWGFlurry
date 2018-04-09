@@ -6,8 +6,8 @@ two_handed_sword_katana = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/2h_sword/2h_sword_katana.iff",
 	craftingValues = {
-		{"mindamage",35,40,0},
-		{"maxdamage",70,80,0},
+		{"mindamage",30,35,0},
+		{"maxdamage",75,85,0},
 		{"attackspeed",4.6,3.1,0},
 		{"woundchance",15,27,0},
 		{"hitpoints",750,1500,0},

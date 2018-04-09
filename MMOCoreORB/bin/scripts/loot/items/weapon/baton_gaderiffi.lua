@@ -6,8 +6,8 @@ baton_gaderiffi = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/baton/baton_gaderiffi.iff",
 	craftingValues = {
-		{"mindamage",35,40,0},
-		{"maxdamage",70,80,0},
+		{"mindamage",30,35,0},
+		{"maxdamage",75,85,0},
 		{"attackspeed",5.9,4,1},
 		{"woundchance",11,21,0},
 		{"hitpoints",750,1500,0},

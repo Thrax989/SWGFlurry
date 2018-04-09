@@ -1387,7 +1387,7 @@ void PlayerObjectImplementation::notifyOnline() {
 	if (player->getJediState() == 8) {
 		playerCreature->setFactionStatus(2);
 	}
-	if (missionManager != NULL && playerCreature->hasSkill("force_title_jedi_rank_02")) {
+	if (missionManager != NULL) {
 		uint64 id = playerCreature->getObjectID();
 
 		if (!missionManager->hasPlayerBountyTargetInList(id))
