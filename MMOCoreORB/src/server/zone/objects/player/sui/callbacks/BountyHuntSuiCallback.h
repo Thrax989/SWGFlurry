@@ -2,8 +2,8 @@
    Creator : TOXIC
    Date : 04/08/2018
 --------------------------------------*/
-#ifndef SEEFO_BH_SUI_CALLBACK
-#define SEEFO_BH_SUI_CALLBACK
+#ifndef PLAYER_BH_SUI_CALLBACK
+#define PLAYER_BH_SUI_CALLBACK
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/mission/MissionManager.h"
 #include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
