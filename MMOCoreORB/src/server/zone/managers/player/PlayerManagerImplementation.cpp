@@ -753,6 +753,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->sendSystemMessage(stringId);
 
 	player->updateTimeOfDeath();
+	VisibilityManager::instance()->clearVisibility(player);	
 	//player->clearBuffs(true, false);
 
 	PlayerObject* ghost = player->getPlayerObject();
@@ -770,17 +771,15 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		}
 	/* CUSTOM BH SYSTEM By:TOXIC*/
 	if (attacker->isPlayerCreature() && attacker != player) {
-		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		box->setPromptTitle("You have been slain...");
-		box->setPromptText("Would you like to pay 25,000 credits to place a bounty on your killers head?");
-		box->setCancelButton(true, "@no");
-		box->setOkButton(true, "@yes");
-		box->setUsingObject(attacker);
-		box->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
-		player->getPlayerObject()->addSuiBox(box);
-		player->sendMessage(box->generateMessage());
+		ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
+		input->setPromptTitle("Player Bounty Request");
+		input->setPromptText("Place a bounty on your killer. Bountys must be between 25,000 and 250,000 credits.");
+		input->setUsingObject(attacker);
+		input->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
+		player->getPlayerObject()->addSuiBox(input);
+		player->sendMessage(input->generateMessage());
+		}
 	}
-}
 
 
 	if (attacker->getFaction() != 0) {
