@@ -1,16 +1,15 @@
 ## -Star Wars Galaxies Flurry Server-
 <img src="http://i.imgur.com/OB4Pa6a.png"><br>
--Core 3 Base Server Source Code/Engine-<br>
+## -Server Base Source Code-
 https://github.com/TheAnswer/Core3<br>
 https://github.com/TheAnswer/PublicEngine<br>
-
--Discord Voice Chat-<br>
+## -Discord Voice Chat-
 https://discord.gg/ntZZfAy<br>
--Server Web Site-<br>
+## -Website-
 http://www.swgflurry.com/<br>
--Server Forums-<br>
+## -Server Forums-
 http://www.swgflurry.com/forum/<br>
--Server Wiki Flurrypedia-<br>
+## -Wiki Flurrypedia-
 http://www.swgflurry.com/wiki/index.php?title=Main_Page<br>
 
 ## -Run Server in gdb debug mode-
