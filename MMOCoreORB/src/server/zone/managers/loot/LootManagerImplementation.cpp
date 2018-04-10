@@ -646,9 +646,9 @@ void LootManagerImplementation::setSockets(TangibleObject* object, CraftingValue
 }
 
 bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* creature) {
-	int creatureLevel = MIN(300, creature->getLevel());
+	int creatureLevel = Math::min(300, creature->getLevel());
 	
-	if (System::random(100) > 49) - creatureLevel)
+	if (System::random(100) > 49 - creatureLevel)
 		createLoot(container, "junk", creatureLevel, false); // Chance for bonus loot for any mob
 	
 	// Always give lots of bonus loot for higher level mobs
