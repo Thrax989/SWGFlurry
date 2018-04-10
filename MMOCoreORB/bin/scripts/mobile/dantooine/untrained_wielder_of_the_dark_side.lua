@@ -20,7 +20,7 @@ untrained_wielder_of_the_dark_side = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -41,7 +41,8 @@ untrained_wielder_of_the_dark_side = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "wearables_uncommon", chance = 750000},
 				{group = "wearables_common", chance = 750000}
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"mixed_force_weapons"},

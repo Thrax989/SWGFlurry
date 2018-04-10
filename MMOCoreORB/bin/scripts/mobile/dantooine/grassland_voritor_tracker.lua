@@ -18,7 +18,7 @@ grassland_voritor_tracker = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 40,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + STALKER,
@@ -32,7 +32,7 @@ grassland_voritor_tracker = Creature:new {
 			groups = {
 				{group = "voritor_lizard_common", chance = 10000000}
 			},
-			lootChance = 1900000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},

@@ -20,7 +20,7 @@ janta_hunter = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD + KILLER,
@@ -36,7 +36,8 @@ janta_hunter = Creature:new {
 				{group = "junk", chance = 5500000},
 				{group = "janta_common", chance = 1500000},
 				{group = "loot_kit_parts", chance = 3000000}
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"primitive_weapons"},
