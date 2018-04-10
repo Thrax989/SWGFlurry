@@ -124,12 +124,12 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 
 ## -Server Code Contributors-
 * https://github.com/Thrax989/SWGFlurry/graphs/contributors - Check contribution log to see each indivudual contribution for users below
-* https://github.com/Thrax989 - Project Lead Creator
+* https://github.com/Thrax989 - Project Lead Creator - https://github.com/Thrax989/SWGFlurry/commits?author=Thrax989
 * https://github.com/lasko-2112 - TRE File Creator All NGE Weapons Cu Weapons / Ghomrassen Planet Creator
 * https://bitbucket.org/sunrunnerii/sunrunner2/src - TRE File Creator All NGE Planets / Custom Assets
-* https://github.com/kurdtkobain - Additional Command Support / Game Tweaks
+* https://github.com/kurdtkobain - Additional Command Support / Game Tweaks - https://github.com/Thrax989/SWGFlurry/commits?author=kurdtkobain
 * https://github.com/Xela-TheCreation - FRS system Creator
-* https://github.com/bobvious - Additional Game Balances Lua game Tweaks
+* https://github.com/bobvious - Additional Game Balances Lua game Tweaks - https://github.com/Thrax989/SWGFlurry/commits?author=bobvious
 * https://github.com/TheAnswer - Engine Developer 
 * https://github.com/Tatwi - Admin Tool Creator , Scripts Creator , Quest Logic Creator
 * https://github.com/Levarrishawk/ - Dromund Kaas Planet Creator
@@ -138,13 +138,16 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 * https://github.com/loswut - Enviroment Functionalit lua / CPP World Edditions
 * https://github.com/Miztah - Quest Logic Additional CPP functionality Village Implamentation for jedi
 * https://github.com/Neetoo - world / enviroment balance quest functionality 
-* https://github.com/Hellucard - Dungeons / Screen play creator 
-* https://github.com/Gungy - Additional game balances 
+* https://github.com/Hellucard - Dungeons / Screen play creator - https://github.com/Thrax989/SWGFlurry/commits?author=Hellucard
+* https://github.com/Gungy - Additional game balances - https://github.com/Thrax989/SWGFlurry/commits?author=Gungy
 * https://github.com/Bommbur - Additional game balances 
-* https://github.com/mhutcherson - Additional game balances 
-* https://github.com/Madvector - Additional game balances 
-* https://github.com/mikeface - Additional game balances Jedi Master Powers Revamp Enhancer Revamp
+* https://github.com/mhutcherson - Additional game balances - https://github.com/Thrax989/SWGFlurry/commits?author=mhutcherson
+* https://github.com/Madvector - Additional game balances - https://github.com/Thrax989/SWGFlurry/commits?author=Madvector
+* https://github.com/mikeface - Additional game balances Jedi Master Powers Revamp Enhancer Revamp - https://github.com/Thrax989/SWGFlurry/commits?author=mikeface
 * https://github.com/gyrantol - Mandalore , Taanab  world assets
 * https://github.com/washu - Droid functionality
 * https://github.com/Skyyyr - Additional Game Tweaks CPP / Lua script Writer
 * https://github.com/Yakone - Random NGE Item Additons
+* https://github.com/Weezyyy - Random NGE Item Additons - https://github.com/Thrax989/SWGFlurry/commits?author=Weezyyy
+* https://github.com/SlayerSG - Additional Game Balances Lua scripting game Tweaks - https://github.com/Thrax989/SWGFlurry/commits?author=SlayerSG
+* https://github.com/kissofdarknes - Additional Game Balances Lua scripting game Tweaks spy profession - https://github.com/Thrax989/SWGFlurry/commits?author=kissofdarknes
