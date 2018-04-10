@@ -31,11 +31,11 @@ Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 ## Required Mod The Galaxy TRE Files
 www.swgflurry.com/TRE/<br>
 	maxSearchPriority=27<br>
-	searchTree_00_25=flurrynov.tre
-	searchTree_00_24=flurrymaster.tre
-	searchTree_00_23=flurrytexture.tre
-	searchTree_00_22=collection.tre
-	searchTree_00_21=mtg22.tre
+	searchTree_00_25=flurrynov.tre<br>
+	searchTree_00_24=flurrymaster.tre<br>
+	searchTree_00_23=flurrytexture.tre<br>
+	searchTree_00_22=collection.tre<br>
+	searchTree_00_21=mtg22.tre<br>
 	searchTree_00_20=mtg_planets.tre<br>
 	searchTree_00_19=mtg_patch_021.tre<br>
 	searchTree_00_18=mtg_patch_019.tre<br>
