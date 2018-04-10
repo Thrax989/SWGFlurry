@@ -1,4 +1,4 @@
-ig_88 = Creature:new {
+ig_88_boss = Creature:new {
 	objectName = "@mob/creature_names:ig_88",
 	socialGroup = "mercenary",
 	faction = "",
@@ -33,4 +33,4 @@ ig_88 = Creature:new {
 	attacks = merge(commandomaster,marksmanmaster,tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,riflemanmaster,pistoleermaster)
 }
 
-CreatureTemplates:addCreatureTemplate(ig_88, "ig_88")
+CreatureTemplates:addCreatureTemplate(ig_88_boss, "ig_88_boss")

@@ -20,7 +20,7 @@ visionary_of_lord_nyax = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -37,7 +37,8 @@ visionary_of_lord_nyax = Creature:new {
 				{group = "pistols", chance = 1000000},
 				{group = "rifles", chance = 1000000},
 				{group = "carbines", chance = 1000000}
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"ranged_weapons"},

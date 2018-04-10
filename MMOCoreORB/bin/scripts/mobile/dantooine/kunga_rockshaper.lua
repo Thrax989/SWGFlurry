@@ -20,7 +20,7 @@ kunga_rockshaper = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -39,7 +39,8 @@ kunga_rockshaper = Creature:new {
 				{group = "clothing_attachments", chance = 500000},
 				{group = "wearables_all", chance = 2000000},
 				{group = "power_crystals", chance = 500000}
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"primitive_weapons"},

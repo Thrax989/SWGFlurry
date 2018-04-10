@@ -18,7 +18,7 @@ flail_cutthroat = Creature:new {
 	hideType = "",
 	hideAmount = 0,
 	boneType = "",
-	boneAmount = 0,
+	tamingChance = 0.25,
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
@@ -45,7 +45,8 @@ flail_cutthroat = Creature:new {
 				{group = "rifles", chance = 2000000},
 				{group = "color_crystals", chance = 1000000},
 				{group = "flail_common", chance = 500000}
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"rebel_weapons_medium"},

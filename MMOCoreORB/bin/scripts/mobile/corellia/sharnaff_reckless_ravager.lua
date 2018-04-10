@@ -18,7 +18,7 @@ sharnaff_reckless_ravager = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 180,
 	milk = 0,
-	tamingChance = 0.05,
+	tamingChance = 0.25,
 	ferocity = 8,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER,
@@ -32,7 +32,7 @@ sharnaff_reckless_ravager = Creature:new {
 			groups = {
 				{group = "sharnaff_common", chance = 10000000}
 			},
-			lootChance = 1680000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},

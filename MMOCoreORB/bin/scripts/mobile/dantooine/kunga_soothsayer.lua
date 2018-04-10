@@ -20,7 +20,7 @@ kunga_soothsayer = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -40,7 +40,8 @@ kunga_soothsayer = Creature:new {
 				{group = "wearables_common", chance = 1000000},
 				{group = "wearables_uncommon", chance = 1000000},
 				{group = "power_crystals", chance = 500000}
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"primitive_weapons"},

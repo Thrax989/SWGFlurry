@@ -20,7 +20,7 @@ monumenter_smuggler = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
@@ -49,7 +49,8 @@ monumenter_smuggler = Creature:new {
 				{group = "pistols", chance = 1000000},
 				{group = "melee_weapons", chance = 1000000},
 				{group = "carbines", chance = 1000000},
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"ranged_weapons"},

@@ -18,7 +18,7 @@ slinking_voritor_hunter = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 50,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -32,7 +32,7 @@ slinking_voritor_hunter = Creature:new {
 			groups = {
 				{group = "voritor_lizard_common", chance = 10000000}
 			},
-			lootChance = 2140000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},

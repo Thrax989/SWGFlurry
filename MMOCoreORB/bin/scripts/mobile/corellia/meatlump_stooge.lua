@@ -20,7 +20,7 @@ meatlump_stooge = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.000000,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
@@ -49,7 +49,8 @@ meatlump_stooge = Creature:new {
 				{group = "color_crystals", chance = 100000},
 				{group = "tailor_components", chance = 500000},
 				{group = "meatlump_common", chance = 5000000}
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"pirate_weapons_light"},

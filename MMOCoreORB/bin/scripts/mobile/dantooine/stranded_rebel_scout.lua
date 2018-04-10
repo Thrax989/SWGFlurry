@@ -20,7 +20,7 @@ stranded_rebel_scout = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -40,7 +40,8 @@ stranded_rebel_scout = Creature:new {
 				{group = "clothing_attachments", chance = 100000},
 				{group = "armor_attachments", chance = 100000},
 				{group = "wearables_common", chance = 1000000}
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"rebel_weapons_heavy"},
