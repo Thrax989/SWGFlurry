@@ -40,7 +40,7 @@ end
 --  active boss once mouse droid dies
 --------------------------------------
 function ig88_boss:notifyTriggerDead(pTrigger, pPlayer)
-local pBoss = spawnMobile("dungeon2", "ig_88", 0, -0.0547165, 0.0315461, 10.281, 8, 14200863)
+local pBoss = spawnMobile("dungeon2", "ig_88_boss", 0, -0.0547165, 0.0315461, 10.281, 8, 14200863)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
     ObjectManager.withCreatureObject(pBoss, function(oBoss)
     writeData("ig88_boss:spawnState", 1)
