@@ -1130,7 +1130,7 @@ kaas = {
   
   planetTravelPoints = {
     {name = "an Imperial Garrison", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-    {name = "a Smuggler Outpost", x = 2852, z = 125, y = 3896, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
+    --{name = "a Smuggler Outpost", x = 2852, z = 125, y = 3896, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
     },
     
     badgeAreas = {   
