@@ -36,7 +36,8 @@ disciple_of_lord_nyax = Creature:new {
 				{group = "rifles", chance = 1000000},
 				{group = "carbines", chance = 1000000},
 				{group = "color_crystals", chance = 1000000}
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"ranged_weapons"},
