@@ -9,6 +9,8 @@ http://www.swgflurry.com/forum/<br>
 http://review.swgemu.com<br>
 -Main Servers Voice Chat-<br>
 https://discord.gg/ntZZfAy<br>
+-Main Wiki Flurrypedia-<br>
+http://www.swgflurry.com/wiki/index.php?title=Main_Page<br>
 
 ## -Run Server in gdb debug mode-
 Open Terminal "Type" cd /home/vagrant/workspace/Core3/MMOCoreORB/bin Then "type" gdb ./core3 <br>
@@ -123,7 +125,7 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) wayland
 
 ## -Server Code Contributors-
-* https://github.com/Thrax989/SWGFlurry/graphs/contributors - Contribution log to see each indivudual contributions
+* https://github.com/Thrax989/SWGFlurry/graphs/contributors - Contribution log to see each indivudual contribution
 * https://github.com/Thrax989 - Project Lead Creator
 * https://github.com/lasko-2112 - TRE File Creator All NGE Weapons Cu Weapons / Ghomrassen Planet Creator
 * https://bitbucket.org/sunrunnerii/sunrunner2 - NGE Planets / Custom Assets
