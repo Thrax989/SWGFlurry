@@ -123,6 +123,7 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) wayland
 
 ## -Server Code Contributors-
+* https://github.com/Thrax989/SWGFlurry/graphs/contributors - Check contribution log to see each indivudual contribution for users below
 * https://github.com/Thrax989 - Project Lead Creator
 * https://github.com/lasko-2112 - TRE File Creator All NGE Weapons Cu Weapons / Ghomrassen Planet Creator
 * https://bitbucket.org/sunrunnerii/sunrunner2/src - TRE File Creator All NGE Planets / Custom Assets
