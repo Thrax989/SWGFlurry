@@ -109,13 +109,13 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#008000](https://placehold.it/15/008000/000000?text=+) chandrila
 - ![#008000](https://placehold.it/15/008000/000000?text=+) nal hutta
 - ![#008000](https://placehold.it/15/008000/000000?text=+) moraband
-- ![#008000](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk
-- ![#008000](https://placehold.it/15/1589F0/000000?text=+) Mustafar
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Kashyyyk
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Mustafar
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) jakku
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) bespin
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) dagobah
-- ![#008000](https://placehold.it/15/1589F0/000000?text=+) dungeon1
-- ![#008000](https://placehold.it/15/1589F0/000000?text=+) dungeon2
+- ![#008000](https://placehold.it/15/008000/000000?text=+) dungeon1
+- ![#008000](https://placehold.it/15/008000/000000?text=+) dungeon2
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ghomrassen
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) kessel
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) kuat
