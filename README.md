@@ -26,14 +26,12 @@ Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 
 ## -Required Mod The Galaxy TRE Files-
 www.swgflurry.com/TRE/<br>
-	maxSearchPriority=29<br>
-	searchTree_00_27=hotfix1.tre<br>
-	searchTree_00_26=flurrypatch1.tre<br>
-	searchTree_00_25=pallet.tre<br>
-	searchTree_00_24=weapon.tre<br>
-	searchTree_00_23=mtg22.tre<br>
-	searchTree_00_22=collection.tre<br>
-	searchTree_00_21=pods.tre<br>
+	maxSearchPriority=27<br>
+	searchTree_00_25=flurrynov.tre
+	searchTree_00_24=flurrymaster.tre
+	searchTree_00_23=flurrytexture.tre
+	searchTree_00_22=collection.tre
+	searchTree_00_21=mtg22.tre
 	searchTree_00_20=mtg_planets.tre<br>
 	searchTree_00_19=mtg_patch_021.tre<br>
 	searchTree_00_18=mtg_patch_019.tre<br>
@@ -85,8 +83,8 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Decorations / Hologram Decorations / 1 year - 10 year vet rewards 
 
 ## -Everything that needs to be added-
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) All TCG Items
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) Remaining NGE Wearable,Vehicles,Deeds,Assets
+- ![#008000](https://placehold.it/15/FF0000/000000?text=+) All TCG Items
+- ![#008000](https://placehold.it/15/FF0000/000000?text=+) Remaining NGE Wearable,Vehicles,Deeds,Assets
 
 ## -Planets That Need Testing-
 - ![#008000](https://placehold.it/15/008000/000000?text=+) corellia
@@ -107,13 +105,13 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#008000](https://placehold.it/15/008000/000000?text=+) chandrila
 - ![#008000](https://placehold.it/15/008000/000000?text=+) nal hutta
 - ![#008000](https://placehold.it/15/008000/000000?text=+) moraband
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Mustafar
+- ![#008000](https://placehold.it/15/1589F0/000000?text=+) Kashyyyk
+- ![#008000](https://placehold.it/15/1589F0/000000?text=+) Mustafar
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) jakku
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) bespin
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) dagobah
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) dungeon1
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) dungeon2
+- ![#008000](https://placehold.it/15/1589F0/000000?text=+) dungeon1
+- ![#008000](https://placehold.it/15/1589F0/000000?text=+) dungeon2
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ghomrassen
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) kessel
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) kuat
