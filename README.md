@@ -1,6 +1,3 @@
-## Star Wars Galaxies Flurry Server
-<img src="http://i.imgur.com/OB4Pa6a.png"><br>
-
 ## Server Base Source Code
 https://github.com/TheAnswer/Core3<br>
 https://github.com/TheAnswer/PublicEngine<br>
