@@ -646,6 +646,31 @@ void LootManagerImplementation::setSockets(TangibleObject* object, CraftingValue
 }
 
 bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* creature) {
+	int creatureLevel = MIN(300, creature->getLevel());
+	
+	if (System::random(100) > 49) - creatureLevel)
+		createLoot(container, "junk", creatureLevel, false); // Chance for bonus loot for any mob
+	
+	// Always give lots of bonus loot for higher level mobs
+	if (creatureLevel > 1){
+		int items = creatureLevel / 20;
+		
+		// For very high level mobs, always make one of the items an SEA
+		if (creatureLevel > 1){
+			items--;
+			
+			if (System::random(100) > 49) {
+				createLoot(container, "armor_attachments", creatureLevel, false);
+			} else {
+				createLoot(container, "clothing_attachments", creatureLevel, false);
+			}
+		}
+		
+		for (int i = 0; i < items; ++i) {
+			createLoot(container, "junk", creatureLevel, false);
+		}
+	}	
+
 	LootGroupCollection* lootCollection = creature->getLootGroups();
 
 	if (lootCollection == NULL)
