@@ -16,7 +16,8 @@ professions = {
 	"jedi",
 	"outdoors_scout",
 	"science_medic",
-	"social_entertainer"
+	"social_entertainer",
+	"grey_jedi"
 }
 
 noobboots = "object/tangible/wearables/armor/ubese/armor_ubese_boots.iff"
@@ -53,6 +54,18 @@ marojMelon = "object/tangible/food/foraged/foraged_fruit_s1.iff"
 
 x31Speeder = "object/tangible/deed/vehicle_deed/landspeeder_x31_deed.iff"
 
+robe = "object/tangible/wearables/robe/robe_jedi_padawan.iff"
+
+saber = "object/weapon/melee/sword/crafted_saber/sword_lightsaber_s9_training.iff"
+
+jediTool = "object/tangible/crafting/station/jedi_tool.iff"
+
+jediCrystal = "object/tangible/component/weapon/lightsaber/lightsaber_module_force_crystal.iff"
+
+gasTool = "object/tangible/survey_tool/survey_tool_gas.iff"
+
+stim = "object/tangible/medicine/crafted/crafted_stimpack_sm_s1_a.iff"
+
 newplayerpack = "object/tangible/loot/misc/new_player_pack.iff"
 
 --newplayerxpbuff = "object/tangible/veteran_reward/exp_buff_item.iff"
@@ -64,7 +77,8 @@ professionSpecificItems = {
 	jedi = { },
 	outdoors_scout = { genericTool },
 	science_medic = { foodTool },
-	social_entertainer = { slitherhorn }
+	social_entertainer = { slitherhorn },
+	grey_jedi = { genericTool, mineralTool, chemicalTool, gasTool, jediTool, jediCrystal, stim }
 }
 
 commonStartingItems = { noobhelemt, noobchest, noobboots, newplayerpack, slitherhorn, chemicalTool, mineralTool, foodTool, genericTool, brawlerPolearm, brawlerTwoHander, brawlerOneHander, marksmanCarbine, marksmanRifle, survivalKnife, marksmanPistol, marojMelon, x31Speeder }
