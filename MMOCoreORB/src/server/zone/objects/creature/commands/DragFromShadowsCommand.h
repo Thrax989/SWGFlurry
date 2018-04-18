@@ -78,22 +78,22 @@ public:
 						targetPlayer->sendSystemMessage("You are now visible to all players and creatures.");
 						targetPlayer->setInvisible(false);
 
-			SortedVector<QuadTreeEntry*> closeObjects(512,512);
-			CloseObjectsVector* closeVector = (CloseObjectsVector*) player->getCloseObjects();
-	
-			if (closeVector == NULL) {
-					player->getZone()->getInRangeObjects(player->getPositionX(), player->getPositionY(), 32, &closeObjects, true);
-				} else {
-					closeVector->safeCopyTo(closeObjects);
-			}
+						SortedVector<QuadTreeEntry*> closeObjects(512,512);
+						CloseObjectsVector* closeVector = (CloseObjectsVector*) targetPlayer->getCloseObjects();
+				
+						if (closeVector == NULL) {
+							targetPlayer->getZone()->getInRangeObjects(targetPlayer->getPositionX(), targetPlayer->getPositionY(), 32, &closeObjects, true);
+						} else {
+							closeVector->safeCopyTo(closeObjects);
+						}
 
-			for (int i = 0; i < closeObjects.size(); i++) {
-				SceneObject* targetObject = static_cast<SceneObject*>(closeObjects.get(i));
-		
-					if (targetObject != NULL && !targetObject->isBuildingObject())
-						targetObject->notifyInsert(player);
-				}
-			}
+						for (int i = 0; i < closeObjects.size(); i++) {
+							SceneObject* targetObject = static_cast<SceneObject*>(closeObjects.get(i));
+					
+							if (targetObject != NULL && !targetObject->isBuildingObject())
+								targetObject->notifyInsert(targetPlayer);
+						}
+					}
  
                     ++count;
                 }
