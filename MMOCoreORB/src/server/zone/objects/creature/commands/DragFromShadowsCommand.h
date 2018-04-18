@@ -78,16 +78,18 @@ public:
 						targetPlayer->sendSystemMessage("You are now visible to all players and creatures.");
 						targetPlayer->setInvisible(false);
 
-						SortedVector<ManagedReference<QuadTreeEntry*> >* targetCloseObjects = targetPlayer->getCloseObjects();
+			SortedVector<ManagedReference<QuadTreeEntry*> > closeObjects;
 
-						for (int ii = 0; ii < targetCloseObjects->size(); ++ii) {
-							SceneObject* scno = cast<SceneObject*>(targetCloseObjects->get(ii).get());
+			for (int i = 0; i < closeObjects.size(); i++) {
+				SceneObject* targetObject = cast<SceneObject*>(closeObjects.get(i).get());
+				if (targetObject != NULL && targetObject->isPlayerCreature()) {
+					ManagedReference<CreatureObject*> player = cast<CreatureObject*>(targetObject);
 
-							if (scno != targetPlayer && !scno->isBuildingObject()) {
-								scno->notifyInsert(targetPlayer);
-							}
-						}
+					if (player != NULL)
+						player->notifyInsert(targetPlayer);
 					}
+				}
+			}
  
                     ++count;
                 }
