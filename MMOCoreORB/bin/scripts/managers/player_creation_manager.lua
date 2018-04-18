@@ -17,7 +17,7 @@ professions = {
 	"outdoors_scout",
 	"science_medic",
 	"social_entertainer",
-	"grey_jedi",
+	"combat_jedi",
 	"combat_spy"
 }
 
@@ -77,7 +77,7 @@ professionSpecificItems = {
 	outdoors_scout = { genericTool },
 	science_medic = { foodTool },
 	social_entertainer = { slitherhorn },
-	grey_jedi = { genericTool, mineralTool, chemicalTool, gasTool, jediTool, jediCrystal, stim },
+	combat_jedi = { genericTool, mineralTool, chemicalTool, gasTool, jediTool, jediCrystal, stim },
 	combat_spy = { spyPistol, stim }
 
 }
