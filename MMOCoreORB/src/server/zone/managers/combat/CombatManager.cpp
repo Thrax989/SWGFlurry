@@ -52,10 +52,6 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
     if (!defender->isAttackableBy(attacker))
         return false;
  
-    CreatureObject *creo = defender->asCreatureObject();
-    if (creo != NULL && creo->isIncapacitated() && creo->isFeigningDeath() == false)
-        return false;
- 
     if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
         return false;
  
@@ -67,8 +63,8 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
                
                 SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = attacker->getCloseObjects();
  
-        for (int i = 0; i < closeObjects->size(); ++i) {
-            SceneObject* scno = cast<SceneObject*>( closeObjects->get(i).get());
+        for (int i = 0; i < closeObjects.size(); ++i) {
+            SceneObject* scno = cast<SceneObject*>( closeObjects.get(i).get());
             if (scno != attacker && !scno->isBuildingObject())
              scno->notifyInsert(attacker);
  
