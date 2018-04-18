@@ -660,9 +660,11 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 			items--;
 			
 			if (System::random(100) > 49) {
-				createLoot(container, "armor_attachments", creatureLevel, false);
+				createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
+				createLoot->playEffect("clienteffect/level_granted.cef", "");
 			} else {
-				createLoot(container, "clothing_attachments", creatureLevel, false);
+				createLoot(container, "collectionheroic", creatureLevel, false);
+				createLoot->playEffect("level_granted_chronicles.cef", "");
 			}
 		}
 		
