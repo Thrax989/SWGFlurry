@@ -90,15 +90,17 @@ public:
 
         player->setInvisible(true);
 
-        SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = player->getCloseObjects();
+	SortedVector<ManagedReference<QuadTreeEntry*> > closeObjects;
 
-        for (int i = 0; i < closeObjects->size(); ++i) {
-            SceneObject* scno = cast<SceneObject*>(closeObjects->get(i).get());
+	for (int i = 0; i < closeObjects.size(); i++) {
+		SceneObject* targetObject = cast<SceneObject*>(closeObjects.get(i).get());
+		if (targetObject != NULL && targetObject->isPlayerCreature()) {
+			ManagedReference<CreatureObject*> player = cast<CreatureObject*>(targetObject);
 
-            if (scno != player && !scno->isBuildingObject()) {
-                scno->notifyDissapear(player);
-            }
-        }
+			if (player != NULL)
+				player->notifyDissapear(player);
+		}
+	}
 
         PlayClientEffectLoc* invisibleLoc = new PlayClientEffectLoc(getClientEffect(), player->getZone()->getZoneName(), player->getPositionX(), player->getPositionZ(), player->getPositionY());
         player->broadcastMessage(invisibleLoc, true);
@@ -121,15 +123,17 @@ public:
 
         player->setInvisible(false);
 
-        SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = player->getCloseObjects();
+	SortedVector<ManagedReference<QuadTreeEntry*> > closeObjects;
 
-        for (int i = 0; i < closeObjects->size(); ++i) {
-            SceneObject* scno = cast<SceneObject*>(closeObjects->get(i).get());
+	for (int i = 0; i < closeObjects.size(); i++) {
+		SceneObject* targetObject = cast<SceneObject*>(closeObjects.get(i).get());
+		if (targetObject != NULL && targetObject->isPlayerCreature()) {
+			ManagedReference<CreatureObject*> player = cast<CreatureObject*>(targetObject);
 
-            if (scno != player && !scno->isBuildingObject()) {
-                scno->notifyInsert(player);
-            }
-        }
+			if (player != NULL)
+				player->notifyInsert(player);
+		}
+	}
 
         PlayClientEffectLoc* invisibledropLoc = new PlayClientEffectLoc(getClientEffect(), player->getZone()->getZoneName(), player->getPositionX(), player->getPositionZ(), player->getPositionY());
         player->broadcastMessage(invisibledropLoc, true);
