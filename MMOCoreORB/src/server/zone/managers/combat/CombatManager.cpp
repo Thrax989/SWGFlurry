@@ -1154,6 +1154,17 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		return damage;
 	}
+	
+ 	if (!data.isForceAttack()){
+		// BH SHIELD
+	float rawDamage = damage;
+	int abilityArmor = defender->getSkillMod("ability_armor");
+	if (abilityArmor > 0) {
+		float dmgAbsorbed = rawDamage - (damage *= 1.f - (abilityArmor / 100.f));
+		defender->notifyObservers(ObserverEventType::FORCEBUFFHIT, attacker, dmgAbsorbed);
+		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, ABILITYARMOR);
+		}
+	}
 
 		float rawDamage = damage;
 	ManagedReference<PlayerObject*> defenderGhost = defender->getPlayerObject();
