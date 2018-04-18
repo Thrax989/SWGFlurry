@@ -52,10 +52,6 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
     if (!defender->isAttackableBy(attacker))
         return false;
  
-    CreatureObject *creo = defender->asCreatureObject();
-    if (creo != NULL && creo->isIncapacitated() && creo->isFeigningDeath() == false)
-        return false;
- 
     if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
         return false;
  
@@ -64,14 +60,17 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
             attacker->removePendingTask("invisibleevent");
                 attacker->sendSystemMessage("You are now visible to all players and creatures.");
                 attacker->setInvisible(false);
-               
-                SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = attacker->getCloseObjects();
- 
-        for (int i = 0; i < closeObjects->size(); ++i) {
-            SceneObject* scno = cast<SceneObject*>( closeObjects->get(i).get());
-            if (scno != attacker && !scno->isBuildingObject())
-             scno->notifyInsert(attacker);
- 
+
+	SortedVector<ManagedReference<QuadTreeEntry*> > closeObjects;
+
+	for (int i = 0; i < closeObjects.size(); i++) {
+		SceneObject* targetObject = cast<SceneObject*>(closeObjects.get(i).get());
+		if (targetObject != NULL && targetObject->isPlayerCreature()) {
+			ManagedReference<CreatureObject*> player = cast<CreatureObject*>(targetObject);
+
+			if (player != NULL)
+				player->notifyInsert(attacker);
+			}
 		}
 	}
 
