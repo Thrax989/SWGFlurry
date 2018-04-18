@@ -600,7 +600,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					VisibilityManager::instance()->clearVisibility(target);
 					target->setScreenPlayState("deathBounty", 0);
 					StringBuffer bBroadcast;
-					if (target->hasSkill("force_title_jedi_rank_01") || target->hasSkill("combat_force_novice")) {
+					if (target->hasSkill("force_title_jedi_rank_01")) {
 						int xpLoss = mission->getRewardCredits() * -2;
 
 						if (xpLoss > minXpLoss)
@@ -667,3 +667,4 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 		}
 	}
 }
+
