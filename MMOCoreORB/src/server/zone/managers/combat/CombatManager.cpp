@@ -30,30 +30,50 @@
 #define COMBAT_SPAM_RANGE 85
 
 bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defender, bool lockDefender, bool allowIncapTarget) {
-	if (attacker == defender)
-		return false;
-
-	if (attacker->getZone() == NULL || defender->getZone() == NULL)
-		return false;
-
-	if (attacker->isRidingMount()) {
-		ManagedReference<CreatureObject*> parent = attacker->getParent().get().castTo<CreatureObject*>();
-
-		if (parent == NULL || !parent->isMount())
-			return false;
-
-		if (parent->hasBuff(STRING_HASHCODE("gallop")))
-			return false;
+    if (attacker == defender)
+        return false;
+ 
+    if (attacker->getZone() == NULL || defender->getZone() == NULL)
+        return false;
+ 
+    if (attacker->isRidingMount()) {
+        ManagedReference<CreatureObject*> parent = attacker->getParent().get().castTo<CreatureObject*>();
+ 
+        if (parent == NULL || !parent->isMount())
+            return false;
+ 
+        if (parent->hasBuff(STRING_HASHCODE("gallop")))
+            return false;
+    }
+ 
+    if (attacker->hasRidingCreature())
+        return false;
+ 
+    if (!defender->isAttackableBy(attacker))
+        return false;
+ 
+    CreatureObject *creo = defender->asCreatureObject();
+    if (creo != NULL && creo->isIncapacitated() && creo->isFeigningDeath() == false)
+        return false;
+ 
+    if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
+        return false;
+ 
+    //PlayerObject* player = attacker->getPlayerObject();
+    if (attacker != NULL && attacker->isInvisible()) {
+            attacker->removePendingTask("invisibleevent");
+                attacker->sendSystemMessage("You are now visible to all players and creatures.");
+                attacker->setInvisible(false);
+               
+                SortedVector<ManagedReference<QuadTreeEntry*> >* closeObjects = attacker->getCloseObjects();
+ 
+        for (int i = 0; i < closeObjects->size(); ++i) {
+            SceneObject* scno = cast<SceneObject*>( closeObjects->get(i).get());
+            if (scno != attacker && !scno->isBuildingObject())
+             scno->notifyInsert(attacker);
+ 
+		}
 	}
-
-	if (attacker->hasRidingCreature())
-		return false;
-
-	if (!defender->isAttackableBy(attacker))
-		return false;
-
-	if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
-		return false;
 
 	CreatureObject *creo = defender->asCreatureObject();
 	if (creo != NULL && creo->isIncapacitated() && creo->isFeigningDeath() == false) {
