@@ -123,16 +123,20 @@ public:
 
         player->setInvisible(false);
 
-	SortedVector<ManagedReference<QuadTreeEntry*> > closeObjects;
+	SortedVector<QuadTreeEntry*> closeObjects(512,512);
+	CloseObjectsVector* closeVector = (CloseObjectsVector*) player->getCloseObjects();
+	
+	if (closeVector == NULL) {
+			player->getZone()->getInRangeObjects(player->getPositionX(), player->getPositionY(), 32, &closeObjects, true);
+		} else {
+			closeVector->safeCopyTo(closeObjects);
+	}
 
 	for (int i = 0; i < closeObjects.size(); i++) {
-		SceneObject* targetObject = cast<SceneObject*>(closeObjects.get(i).get());
-		if (targetObject != NULL && targetObject->isPlayerCreature()) {
-			ManagedReference<CreatureObject*> player = cast<CreatureObject*>(targetObject);
-
-			if (player != NULL)
-				player->notifyInsert(player);
-		}
+		SceneObject* targetObject = static_cast<SceneObject*>(closeObjects.get(i));
+		
+			if (targetObject != NULL && !targetObject->isBuildingObject())
+				targetObject->notifyInsert(player);
 	}
 
         PlayClientEffectLoc* invisibledropLoc = new PlayClientEffectLoc(getClientEffect(), player->getZone()->getZoneName(), player->getPositionX(), player->getPositionZ(), player->getPositionY());
