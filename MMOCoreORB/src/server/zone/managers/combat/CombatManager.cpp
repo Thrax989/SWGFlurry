@@ -55,25 +55,29 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
     if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
         return false;
  
-    //PlayerObject* player = attacker->getPlayerObject();
+    PlayerObject* player = attacker->getPlayerObject();
     if (attacker != NULL && attacker->isInvisible()) {
             attacker->removePendingTask("invisibleevent");
                 attacker->sendSystemMessage("You are now visible to all players and creatures.");
                 attacker->setInvisible(false);
 
-	SortedVector<ManagedReference<QuadTreeEntry*> > closeObjects;
 
-	for (int i = 0; i < closeObjects.size(); i++) {
-		SceneObject* targetObject = cast<SceneObject*>(closeObjects.get(i).get());
-		if (targetObject != NULL && targetObject->isPlayerCreature()) {
-			ManagedReference<CreatureObject*> player = cast<CreatureObject*>(targetObject);
-
-			if (player != NULL)
-				player->notifyInsert(attacker);
-			}
-		}
+	SortedVector<QuadTreeEntry*> closeObjects(512,512);
+	CloseObjectsVector* closeVector = (CloseObjectsVector*) player->getCloseObjects();
+	
+	if (closeVector == NULL) {
+			player->getZone()->getInRangeObjects(player->getPositionX(), player->getPositionY(), 32, &closeObjects, true);
+		} else {
+			closeVector->safeCopyTo(closeObjects);
 	}
 
+	for (int i = 0; i < closeObjects.size(); i++) {
+		SceneObject* targetObject = static_cast<SceneObject*>(closeObjects.get(i));
+		
+			if (targetObject != NULL && !targetObject->isBuildingObject())
+				targetObject->notifyInsert(player);
+		}
+	}
 	CreatureObject *creo = defender->asCreatureObject();
 	if (creo != NULL && creo->isIncapacitated() && creo->isFeigningDeath() == false) {
 		if (allowIncapTarget) {
