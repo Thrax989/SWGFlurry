@@ -663,7 +663,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 				createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
 				createLoot->playEffect("clienteffect/level_granted.cef", "");
 			} else {
-				createLoot(container, "collectionheroic", creatureLevel, false);
+				createLoot(container, "lootcollectiontierheroic", creatureLevel, false);
 				createLoot->playEffect("level_granted_chronicles.cef", "");
 			}
 		}
