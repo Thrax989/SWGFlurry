@@ -856,7 +856,7 @@ trainerSkills = {
 	},
 
 	trainer_combatjedi = {
-		"combat_jedi_novice"
+		"combat_jedi_novice",
 		"combat_jedi_master",
 		"combat_jedi_dark_01",
 		"combat_jedi_dark_02",
