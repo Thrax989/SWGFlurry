@@ -1345,15 +1345,20 @@ void PlayerObjectImplementation::notifyOnline() {
 		zBroadcast << "\\#00bfff" << playerName << " \\#ffb90f Dark Council Leader Has Logged Into The Server";
 		playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	}
+	//jedi check when logging in for grey jedi state
+	if (playerCreature->hasSkill("cobat_jedi_novice")) {
+		player->setJediState(1);
+                info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 1 " + " Grey Jedi ", true);
+	}
 	//jedi check when logging in light check for jedi state 4
 	if (playerCreature->hasSkill("force_rank_light_novice")) {
 		player->setJediState(4);
-                info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 4 ", true);
+                info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 4 " + " Light Jedi ", true);
 	}
 	//jedi check when logging in dark check for jedi state 8
 	if (playerCreature->hasSkill("force_rank_dark_novice")) {
 		player->setJediState(8);
-                info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 8 ", true);
+                info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 8 " + " Dark Jedi ", true);
 	}
 	//Grant knight for players missing FRS skills check for light jedi state 4
 	if (player->getJediState() == 4) {
