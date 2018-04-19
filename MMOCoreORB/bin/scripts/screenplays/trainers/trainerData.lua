@@ -735,6 +735,48 @@ trainerSkills = {
 		"crafting_weaponsmith_techniques_03",
 		"crafting_weaponsmith_techniques_04"
 	},
+	
+		trainer_meleebountyhunter = {
+		"combat_meleebountyhunter_novice",
+		"combat_meleebountyhunter_master",
+		"combat_meleebountyhunter_investigation_01",
+		"combat_meleebountyhunter_investigation_02",
+		"combat_meleebountyhunter_investigation_03",
+		"combat_meleebountyhunter_investigation_04",
+		"combat_meleebountyhunter_polearm_01",
+		"combat_meleebountyhunter_polearm_02",
+		"combat_meleebountyhunter_polearm_03",
+		"combat_meleebountyhunter_polearm_04",
+		"combat_meleebountyhunter_1hsword_01",
+		"combat_meleebountyhunter_1hsword_02",
+		"combat_meleebountyhunter_1hsword_03",
+		"combat_meleebountyhunter_1hsword_04",
+		"combat_meleebountyhunter_2hsword_01",
+		"combat_meleebountyhunter_2hsword_02",
+		"combat_meleebountyhunter_2hsword_03",
+		"combat_meleebountyhunter_2hsword_04"
+	},
+	
+	trainer_spy = {
+		"combat_spy_novice",
+		"combat_spy_master",
+		"combat_spy_attacks_01",
+		"combat_spy_attacks_02",
+		"combat_spy_attacks_03",
+		"combat_spy_attacks_04",
+		"combat_spy_sneak_01",
+		"combat_spy_sneak_02",
+		"combat_spy_sneak_03",
+		"combat_spy_sneak_04",
+		"combat_spy_poison_01",
+		"combat_spy_poison_02",
+		"combat_spy_poison_03",
+		"combat_spy_poison_04",
+		"combat_spy_trap_01",
+		"combat_spy_trap_02",
+		"combat_spy_trap_03",
+		"combat_spy_trap_04"
+	},
 
 	-- Jedi trainers
 
@@ -811,6 +853,19 @@ trainerSkills = {
 		"force_sensitive_heightened_senses_luck_02",
 		"force_sensitive_heightened_senses_luck_03",
 		"force_sensitive_heightened_senses_luck_04"
+	},
+
+	trainer_combatjedi = {
+		"combat_jedi_novice"
+		"combat_jedi_master",
+		"combat_jedi_dark_01",
+		"combat_jedi_dark_02",
+		"combat_jedi_dark_03",
+		"combat_jedi_dark_04",
+		"combat_jedi_light_01",
+		"combat_jedi_light_02",
+		"combat_jedi_light_03",
+		"combat_jedi_light_04"
 	},
 
 	trainer_jedi = {
