@@ -150,6 +150,6 @@ createTrainerConversationTemplate("meleebountyhunterTrainerConvoTemplate", "trai
 --GCW
 createTrainerConversationTemplate("gcwimperialTrainerConvoTemplate", "trainer_gcw_imperial")
 createTrainerConversationTemplate("gcwrebelTrainerConvoTemplate", "trainer_gcw_rebel")
-createTrainerConversationTemplate("jediTrainerConvoTemplate", "trainer_combatjedi")
+createTrainerConversationTemplate("combatjediTrainerConvoTemplate", "trainer_combatjedi")
 createTrainerConversationTemplate("fsTrainerConvoTemplate", "trainer_fs")
 createTrainerConversationTemplate("jediTrainerConvoTemplate", "trainer_jedi")
