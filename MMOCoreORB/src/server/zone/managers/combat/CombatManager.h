@@ -55,6 +55,7 @@ public:
 	const static int FORCEARMOR = 0x5;
 	const static int ARMOR = 0x6;
 	const static int FOOD = 0x7;
+	const static int ABILITYARMOR = 0X8;
 
 
 

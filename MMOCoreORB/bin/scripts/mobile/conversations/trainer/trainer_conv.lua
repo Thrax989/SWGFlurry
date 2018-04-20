@@ -116,7 +116,6 @@ createTrainerConversationTemplate("entertainerTrainerConvoTemplate", "trainer_en
 createTrainerConversationTemplate("marksmanTrainerConvoTemplate", "trainer_marksman")
 createTrainerConversationTemplate("medicTrainerConvoTemplate", "trainer_medic")
 createTrainerConversationTemplate("scoutTrainerConvoTemplate", "trainer_scout")
-
 createTrainerConversationTemplate("1hswordTrainerConvoTemplate", "trainer_1hsword")
 createTrainerConversationTemplate("2hswordTrainerConvoTemplate", "trainer_2hsword")
 createTrainerConversationTemplate("architectTrainerConvoTemplate", "trainer_architect")
@@ -146,10 +145,11 @@ createTrainerConversationTemplate("tailorTrainerConvoTemplate", "trainer_tailor"
 createTrainerConversationTemplate("unarmedTrainerConvoTemplate", "trainer_unarmed")
 createTrainerConversationTemplate("weaponsmithTrainerConvoTemplate", "trainer_weaponsmith")
 createTrainerConversationTemplate("mechanicTrainerConvoTemplate", "trainer_mechanic")
-
+createTrainerConversationTemplate("spyTrainerConvoTemplate", "trainer_spy")
+createTrainerConversationTemplate("meleebountyhunterTrainerConvoTemplate", "trainer_meleebountyhunter")
 --GCW
 createTrainerConversationTemplate("gcwimperialTrainerConvoTemplate", "trainer_gcw_imperial")
 createTrainerConversationTemplate("gcwrebelTrainerConvoTemplate", "trainer_gcw_rebel")
-
+createTrainerConversationTemplate("combatjediTrainerConvoTemplate", "trainer_combatjedi")
 createTrainerConversationTemplate("fsTrainerConvoTemplate", "trainer_fs")
 createTrainerConversationTemplate("jediTrainerConvoTemplate", "trainer_jedi")

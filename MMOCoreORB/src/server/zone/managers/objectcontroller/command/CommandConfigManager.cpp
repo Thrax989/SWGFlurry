@@ -312,6 +312,9 @@ void CommandConfigManager::registerSpecialCommands(CommandList* sCommands) {
 	createCommand(String("creatureRangedAttack").toLowerCase())->setCommandGroup(0xe1c9a54a);
 	createCommand(String("defaultDroidAttack").toLowerCase())->setCommandGroup(0xe1c9a54a);
 
+	//Custom
+	commandFactory.registerCommand<setPvpCommand>(String("setPvp").toLowerCase());
+
 	//Pet commands
 	createCommand(String("petAttack").toLowerCase())->setCommandGroup(0xe1c9a54a);
 	createCommand(String("petEmote").toLowerCase())->setCommandGroup(0xe1c9a54a);
@@ -363,6 +366,8 @@ void CommandConfigManager::registerGlobals() {
 	setGlobalLong("FEIGNDEATH_STATE", CreatureState::FEIGNDEATH);
 	setGlobalLong("BLINDED_STATE", CreatureState::BLINDED);
 	setGlobalLong("DIZZY_STATE", CreatureState::DIZZY);
+	setGlobalLong("SNARE_STATE", CreatureState::SNARE);
+	setGlobalLong("ROOT_STATE", CreatureState::ROOT);
 	setGlobalLong("INTIMIDATED_STATE", CreatureState::INTIMIDATED);
 	setGlobalLong("IMMOBILIZED_STATE", CreatureState::IMMOBILIZED);
 	setGlobalLong("FROZEN_STATE", CreatureState::FROZEN);
@@ -446,6 +451,8 @@ void CommandConfigManager::registerGlobals() {
 	setGlobalInt("INVALID_EFFECT", CommandEffect::INVALID);
 	setGlobalInt("BLIND_EFFECT", CommandEffect::BLIND);
 	setGlobalInt("DIZZY_EFFECT", CommandEffect::DIZZY);
+	setGlobalInt("ROOT_EFFECT", CommandEffect::ROOT);
+	setGlobalInt("SNARE_EFFECT", CommandEffect::SNARE);
 	setGlobalInt("INTIMIDATE_EFFECT", CommandEffect::INTIMIDATE);
 	setGlobalInt("STUN_EFFECT", CommandEffect::STUN);
 	setGlobalInt("KNOCKDOWN_EFFECT", CommandEffect::KNOCKDOWN);
@@ -1635,6 +1642,16 @@ void CommandConfigManager::registerCommands() {
 	
 	
 	//Custom
-	
-	commandFactory.registerCommand<SetPvpCommand>(String("setPvp").toLowerCase());
+ 	commandFactory.registerCommand<InvisibleCommand>(String("invisible").toLowerCase());
+  	commandFactory.registerCommand<setPvpCommand>(String("setPvp").toLowerCase());
+ 	commandFactory.registerCommand<PistolWhip1Command>(String("pistolwhip1").toLowerCase());
+ 	commandFactory.registerCommand<PistolWhip2Command>(String("pistolwhip2").toLowerCase());
+ 	commandFactory.registerCommand<PoisonGasCloud1Command>(String("poisongascloud1").toLowerCase());
+ 	commandFactory.registerCommand<PoisonGasCloud2Command>(String("poisongascloud2").toLowerCase());
+	commandFactory.registerCommand<UndergroundExplosion1Command>(String("undergroundexplosion1").toLowerCase());
+	commandFactory.registerCommand<UndergroundExplosion2Command>(String("undergroundexplosion2").toLowerCase());
+ 	commandFactory.registerCommand<ExtractionCommand>(String("extraction").toLowerCase());
+ 	commandFactory.registerCommand<BactaJabCommand>(String("bactajab").toLowerCase());
+ 	commandFactory.registerCommand<StrangulationCommand>(String("strangulation").toLowerCase());
+ 	commandFactory.registerCommand<DragFromShadowsCommand>(String("dragfromshadows").toLowerCase());
 }

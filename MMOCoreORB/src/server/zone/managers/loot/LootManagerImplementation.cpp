@@ -646,12 +646,39 @@ void LootManagerImplementation::setSockets(TangibleObject* object, CraftingValue
 }
 
 bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* creature) {
+	int creatureLevel = Math::min(300, creature->getLevel());
+	
+	if (System::random(100) > 49 - creatureLevel)
+		createLoot(container, "junk", creatureLevel, false); // Chance for bonus loot for any mob
+	
+	// Always give lots of bonus loot for higher level mobs
+	if (creatureLevel > 1){
+		int items = creatureLevel / 20;
+		
+		// For very high level mobs, always make one of the items an SEA
+		if (creatureLevel > 1){
+			items--;
+			
+			if (System::random(100) > 49) {
+				createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
+				creature->playEffect("clienteffect/level_granted.cef", "");
+			} else {
+				createLoot(container, "lootcollectiontierheroic", creatureLevel, false);
+				creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
+			}
+		}
+		
+		for (int i = 0; i < items; ++i) {
+			createLoot(container, "junk", creatureLevel, false);
+		}
+	}	
+
 	LootGroupCollection* lootCollection = creature->getLootGroups();
 
 	if (lootCollection == NULL)
-		return false;
+		return createLoot(container, "junk", creatureLevel, false); // Common loot for all mobs that don't have loot
 
-	return createLootFromCollection(container, lootCollection, creature->getLevel());
+	return createLootFromCollection(container, lootCollection, creatureLevel);
 }
 
 bool LootManagerImplementation::createLootFromCollection(SceneObject* container, LootGroupCollection* lootCollection, int level) {

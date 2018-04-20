@@ -30,31 +30,54 @@
 #define COMBAT_SPAM_RANGE 85
 
 bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defender, bool lockDefender, bool allowIncapTarget) {
-	if (attacker == defender)
-		return false;
+    if (attacker == defender)
+        return false;
+ 
+    if (attacker->getZone() == NULL || defender->getZone() == NULL)
+        return false;
+ 
+    if (attacker->isRidingMount()) {
+        ManagedReference<CreatureObject*> parent = attacker->getParent().get().castTo<CreatureObject*>();
+ 
+        if (parent == NULL || !parent->isMount())
+            return false;
+ 
+        if (parent->hasBuff(STRING_HASHCODE("gallop")))
+            return false;
+    }
+ 
+    if (attacker->hasRidingCreature())
+        return false;
+ 
+    if (!defender->isAttackableBy(attacker))
+        return false;
+ 
+    if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
+        return false;
+ 
+    //PlayerObject* player = attacker->getPlayerObject();
+    if (attacker != NULL && attacker->isInvisible()) {
+            attacker->removePendingTask("invisibleevent");
+                attacker->sendSystemMessage("You are now visible to all players and creatures.");
+                attacker->setInvisible(false);
 
-	if (attacker->getZone() == NULL || defender->getZone() == NULL)
-		return false;
 
-	if (attacker->isRidingMount()) {
-		ManagedReference<CreatureObject*> parent = attacker->getParent().get().castTo<CreatureObject*>();
-
-		if (parent == NULL || !parent->isMount())
-			return false;
-
-		if (parent->hasBuff(STRING_HASHCODE("gallop")))
-			return false;
+	SortedVector<QuadTreeEntry*> closeObjects(512,512);
+	CloseObjectsVector* closeVector = (CloseObjectsVector*) attacker->getCloseObjects();
+	
+	if (closeVector == NULL) {
+			attacker->getZone()->getInRangeObjects(attacker->getPositionX(), attacker->getPositionY(), 32, &closeObjects, true);
+		} else {
+			closeVector->safeCopyTo(closeObjects);
 	}
 
-	if (attacker->hasRidingCreature())
-		return false;
-
-	if (!defender->isAttackableBy(attacker))
-		return false;
-
-	if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
-		return false;
-
+	for (int i = 0; i < closeObjects.size(); i++) {
+		SceneObject* targetObject = static_cast<SceneObject*>(closeObjects.get(i));
+		
+			if (targetObject != NULL && !targetObject->isBuildingObject())
+				targetObject->notifyInsert(attacker);
+		}
+	}
 	CreatureObject *creo = defender->asCreatureObject();
 	if (creo != NULL && creo->isIncapacitated() && creo->isFeigningDeath() == false) {
 		if (allowIncapTarget) {
@@ -1153,6 +1176,17 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		if (armorReduction > 0) damage *= (1.f - (armorReduction / 100.f));
 
 		return damage;
+	}
+	
+ 	if (!data.isForceAttack()){
+		// BH SHIELD
+	float rawDamage = damage;
+	int abilityArmor = defender->getSkillMod("ability_armor");
+	if (abilityArmor > 0) {
+		float dmgAbsorbed = rawDamage - (damage *= 1.f - (abilityArmor / 100.f));
+		defender->notifyObservers(ObserverEventType::FORCEBUFFHIT, attacker, dmgAbsorbed);
+		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, ABILITYARMOR);
+		}
 	}
 
 		float rawDamage = damage;
