@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_draft_schematic_vehicle_civilian_ab_1_speeder = object_draft_schematic_vehicle_civilian_shared_ab1_speeder:new {
+object_draft_schematic_vehicle_civilian_ab_1_speeder = object_draft_schematic_vehicle_civilian_shared_ab_1_speeder:new {
 
 	templateType = DRAFTSCHEMATIC,
 
