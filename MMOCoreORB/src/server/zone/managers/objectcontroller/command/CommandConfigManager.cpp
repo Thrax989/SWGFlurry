@@ -366,8 +366,8 @@ void CommandConfigManager::registerGlobals() {
 	setGlobalLong("FEIGNDEATH_STATE", CreatureState::FEIGNDEATH);
 	setGlobalLong("BLINDED_STATE", CreatureState::BLINDED);
 	setGlobalLong("DIZZY_STATE", CreatureState::DIZZY);
-	setGlobalLong("SNARE_STATE", CreatureState::SNARE);
-	setGlobalLong("ROOT_STATE", CreatureState::ROOT);
+	//setGlobalLong("SNARE_STATE", CreatureState::SNARE);
+	//setGlobalLong("ROOT_STATE", CreatureState::ROOT);
 	setGlobalLong("INTIMIDATED_STATE", CreatureState::INTIMIDATED);
 	setGlobalLong("IMMOBILIZED_STATE", CreatureState::IMMOBILIZED);
 	setGlobalLong("FROZEN_STATE", CreatureState::FROZEN);
@@ -451,8 +451,8 @@ void CommandConfigManager::registerGlobals() {
 	setGlobalInt("INVALID_EFFECT", CommandEffect::INVALID);
 	setGlobalInt("BLIND_EFFECT", CommandEffect::BLIND);
 	setGlobalInt("DIZZY_EFFECT", CommandEffect::DIZZY);
-	setGlobalInt("ROOT_EFFECT", CommandEffect::ROOT);
-	setGlobalInt("SNARE_EFFECT", CommandEffect::SNARE);
+	//setGlobalInt("ROOT_EFFECT", CommandEffect::ROOT);
+	//setGlobalInt("SNARE_EFFECT", CommandEffect::SNARE);
 	setGlobalInt("INTIMIDATE_EFFECT", CommandEffect::INTIMIDATE);
 	setGlobalInt("STUN_EFFECT", CommandEffect::STUN);
 	setGlobalInt("KNOCKDOWN_EFFECT", CommandEffect::KNOCKDOWN);
