@@ -35,8 +35,8 @@ int StartingLocationTerminalImplementation::handleObjectMenuSelect(CreatureObjec
 			xpBox->setPromptTitle("Please select experience rate.");
 			xpBox->setPromptText("This is PERMENENT, please choose carefully.");
 			xpBox->addMenuItem("Normal: 1x Exp",0);
-			xpBox->addMenuItem("Elevated: 2x Exp",1);
-			xpBox->addMenuItem("Fast: 2.5x Exp",2);
+			xpBox->addMenuItem("Elevated: 5x Exp",1);
+			xpBox->addMenuItem("Fast: 10x Exp",2);
 			ghost->addSuiBox(xpBox);
 			player->sendMessage(xpBox->generateMessage());
 			return 1;
