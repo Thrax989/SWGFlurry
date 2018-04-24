@@ -42,6 +42,8 @@ protected:
 
 	bool invisible;
 
+	bool forcecloak;
+
 	unsigned int faction;
 
 	int junkDealerNeeded;
@@ -110,6 +112,10 @@ public:
 
 	inline bool isInvisible() {
 		return invisible;
+	}
+
+	inline bool isforcecloak() {
+		return forcecloak;
 	}
 
 	inline int getUseCount() const {
