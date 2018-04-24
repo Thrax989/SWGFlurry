@@ -10,7 +10,7 @@ import system.lang.ref.Reference;
 import engine.util.Observer;
 import engine.util.Observable;
 import server.zone.objects.creature.CreatureObject;
-include server.zone.objects.scene.ObserverEventType;
+include templates.params.ObserverEventType;
 
 class CloakEventObserver extends Observer implements Logger {
     @weakReference
