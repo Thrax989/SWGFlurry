@@ -106,6 +106,7 @@ namespace creature {
 		int getOwner(lua_State* L);
 		int getCurrentSpeed(lua_State* L);
 		int isInvisible(lua_State* L);
+		int isForceCloak(lua_State* L);
 		int isInCombat(lua_State* L);
 		int healDamage(lua_State* L);
 		int getGroupID(lua_State* L);
