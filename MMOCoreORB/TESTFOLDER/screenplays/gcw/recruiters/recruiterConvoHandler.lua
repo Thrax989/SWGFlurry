@@ -133,8 +133,11 @@ function RecruiterConvoHandler:runScreenHandlers(conversationTemplate, conversin
 			recruiterScreenplay:sendPurchaseSui(conversingNPC, conversingPlayer, screenID)
 			
 		elseif (screenID == "greet_neutral_start") then
+			if (CreatureObject(pPlayer):hasSkill("combat_jedi_novice") or CreatureObject(pPlayer):hasSkill("combat_jedi_master")) then
 			self:addJoinMilitaryOption(recruiterScreenplay:getRecruiterFaction(conversingNPC), clonedConversation, playerObject, conversingNPC)
-
+				CreatureObject(pPlayer):sendSystemMessage("@faction_recruiter:jedi_cant_go_covert")
+			return
+		end
 		elseif (screenID == "show_gcw_score") then
 			local zoneName = SceneObject(conversingNPC):getZoneName()
 			clonedConversation:setDialogTextDI(getImperialScore(zoneName))
