@@ -851,8 +851,8 @@
 #include "BactaJabCommand.h"
 #include "StrangulationCommand.h"
 #include "DragFromShadowsCommand.h"
-
-
+#include "ForceCloakCommand.h"
+#include "CloakCommand.h"
 //Custom
 
 #include "SetPvpCommand.h"

@@ -372,7 +372,8 @@ core3_IDLS =	autogen/server/zone/objects/mission/PlayerBounty.cpp \
 				autogen/server/zone/objects/tangible/threat/ThreatMapObserver.cpp \
 				autogen/server/zone/objects/creature/conversation/ConversationObserver.cpp \
 				autogen/server/zone/objects/creature/conversation/DeliverMissionConversationObserver.cpp \
-				autogen/server/zone/objects/creature/conversation/InformantMissionConversationObserver.cpp
+				autogen/server/zone/objects/creature/conversation/InformantMissionConversationObserver.cpp \
+				autogen/server/zone/objects/creature/events/CloakEventObserver.cpp
 
 core3_SOURCES =	$(core3_IDLS) \
 		$(core3_TESTS) \
@@ -779,6 +780,7 @@ core3_SOURCES =	$(core3_IDLS) \
 		server/zone/objects/creature/conversation/screenhandlers/DeliverMissionScreenHandler.cpp \
 		server/zone/objects/creature/conversation/screenhandlers/PetTrainingScreenHandler.cpp \
 		server/zone/objects/creature/conversation/screenhandlers/InformantMissionScreenHandler.cpp \
+		server/zone/objects/creature/events/CloakEventObserverImplementation.cpp \
 		server/zone/objects/pathfinding/NavAreaImplementation.cpp \
 		server/zone/objects/player/PlayerObjectImplementation.cpp \
 		server/zone/objects/player/sui/callbacks/DelegateSuiCallback.cpp \

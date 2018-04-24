@@ -954,6 +954,8 @@ void CommandConfigManager::registerCommands() {
 	commandFactory.registerCommand<FireAcidSingle2Command>(String("fireAcidSingle2").toLowerCase());
 	commandFactory.registerCommand<FireHeavyWeaponCommand>(String("fireHeavyWeapon").toLowerCase());
 	commandFactory.registerCommand<FirejetCommand>(String("firejet").toLowerCase());
+	commandFactory.registerCommand<ForceCloakCommand>(String("forceCloak").toLowerCase());
+	commandFactory.registerCommand<CloakCommand>(String("cloak").toLowerCase());
 	commandFactory.registerCommand<FireLightningCone1Command>(String("fireLightningCone1").toLowerCase());
 	commandFactory.registerCommand<FireLightningCone2Command>(String("fireLightningCone2").toLowerCase());
 	commandFactory.registerCommand<FireLightningSingle1Command>(String("fireLightningSingle1").toLowerCase());
