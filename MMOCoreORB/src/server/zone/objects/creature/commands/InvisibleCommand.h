@@ -1,7 +1,5 @@
 /**
  * file invisibleCommand.h
- * author Heat
- * date 11.04.2015
  */
 
 #ifndef INVISIBLECOMMAND_H_
@@ -30,8 +28,6 @@ public:
 			return GENERALERROR;
 
         CreatureObject* player = cast<CreatureObject*>(creature);
-
-
 
         Reference<Task*> task = player->getPendingTask("invisibleevent");
 
@@ -69,18 +65,6 @@ ManagedReference<PlayerObject*> playerObject = player->getPlayerObject();
 
         player->sendSystemMessage("Your ready to go invisible...soon you will vanish from sight.");
         player->addPendingTask("invisibleevent", invisibleTask, 3000);
-
-
-		/*uint32 buffCRC = BuffCRC::JEDI_FORCE_ARMOR_2; //DURATION
-		int duration = 86400;
-		ManagedReference<SingleUseBuff*> buff = new SingleUseBuff(creature, buffCRC, duration, BuffType::JEDI, getNameCRC());
-		
-		 if (!creature->hasBuff(buffCRC)) {
-			Locker locker(buff);
-			//buff->setSpeedMultiplierMod(0.01f);
-			creature->addBuff(buff);
-			//creatureTarget->playEffect("clienteffect/underground_explosion.cef", "");
-			}*/ //needs more testing
 
         return SUCCESS;
     }

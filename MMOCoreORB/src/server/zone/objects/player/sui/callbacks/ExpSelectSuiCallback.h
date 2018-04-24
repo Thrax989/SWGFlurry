@@ -47,13 +47,13 @@ public:
 
 		case 1:
 			player->setSelectedExpMode(2);
-			player->setPersonalExpMultiplier(2.0);
+			player->setPersonalExpMultiplier(5.0);
 			//player->sendSystemMessage("EXPSelectSuiCallback: Setting mode to 2");
 		break;
 
 		case 2:
 			player->setSelectedExpMode(3);
-			player->setPersonalExpMultiplier(2.5);
+			player->setPersonalExpMultiplier(10.0);
 			//player->sendSystemMessage("EXPSelectSuiCallback: Setting mode to 3");
 		break;
 		}

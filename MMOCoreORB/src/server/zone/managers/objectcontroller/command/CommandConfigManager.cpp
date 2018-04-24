@@ -366,8 +366,8 @@ void CommandConfigManager::registerGlobals() {
 	setGlobalLong("FEIGNDEATH_STATE", CreatureState::FEIGNDEATH);
 	setGlobalLong("BLINDED_STATE", CreatureState::BLINDED);
 	setGlobalLong("DIZZY_STATE", CreatureState::DIZZY);
-	setGlobalLong("SNARE_STATE", CreatureState::SNARE);
-	setGlobalLong("ROOT_STATE", CreatureState::ROOT);
+	//setGlobalLong("SNARE_STATE", CreatureState::SNARE);
+	//setGlobalLong("ROOT_STATE", CreatureState::ROOT);
 	setGlobalLong("INTIMIDATED_STATE", CreatureState::INTIMIDATED);
 	setGlobalLong("IMMOBILIZED_STATE", CreatureState::IMMOBILIZED);
 	setGlobalLong("FROZEN_STATE", CreatureState::FROZEN);
@@ -451,8 +451,8 @@ void CommandConfigManager::registerGlobals() {
 	setGlobalInt("INVALID_EFFECT", CommandEffect::INVALID);
 	setGlobalInt("BLIND_EFFECT", CommandEffect::BLIND);
 	setGlobalInt("DIZZY_EFFECT", CommandEffect::DIZZY);
-	setGlobalInt("ROOT_EFFECT", CommandEffect::ROOT);
-	setGlobalInt("SNARE_EFFECT", CommandEffect::SNARE);
+	//setGlobalInt("ROOT_EFFECT", CommandEffect::ROOT);
+	//setGlobalInt("SNARE_EFFECT", CommandEffect::SNARE);
 	setGlobalInt("INTIMIDATE_EFFECT", CommandEffect::INTIMIDATE);
 	setGlobalInt("STUN_EFFECT", CommandEffect::STUN);
 	setGlobalInt("KNOCKDOWN_EFFECT", CommandEffect::KNOCKDOWN);
@@ -814,6 +814,7 @@ void CommandConfigManager::registerCommands() {
 	commandFactory.registerCommand<Berserk1Command>(String("berserk1").toLowerCase());
 	commandFactory.registerCommand<Berserk2Command>(String("berserk2").toLowerCase());
 	commandFactory.registerCommand<BetCommand>(String("bet").toLowerCase());
+	commandFactory.registerCommand<BhShieldCommand>(String("bhshield").toLowerCase());
 	commandFactory.registerCommand<BleedingShotCommand>(String("bleedingShot").toLowerCase());
 	commandFactory.registerCommand<BlindAttackCommand>(String("blindAttack").toLowerCase());
 	commandFactory.registerCommand<BoardShuttleCommand>(String("boardShuttle").toLowerCase());
@@ -953,6 +954,8 @@ void CommandConfigManager::registerCommands() {
 	commandFactory.registerCommand<FireAcidSingle2Command>(String("fireAcidSingle2").toLowerCase());
 	commandFactory.registerCommand<FireHeavyWeaponCommand>(String("fireHeavyWeapon").toLowerCase());
 	commandFactory.registerCommand<FirejetCommand>(String("firejet").toLowerCase());
+	commandFactory.registerCommand<ForceCloakCommand>(String("forceCloak").toLowerCase());
+	commandFactory.registerCommand<CloakCommand>(String("cloak").toLowerCase());
 	commandFactory.registerCommand<FireLightningCone1Command>(String("fireLightningCone1").toLowerCase());
 	commandFactory.registerCommand<FireLightningCone2Command>(String("fireLightningCone2").toLowerCase());
 	commandFactory.registerCommand<FireLightningSingle1Command>(String("fireLightningSingle1").toLowerCase());
