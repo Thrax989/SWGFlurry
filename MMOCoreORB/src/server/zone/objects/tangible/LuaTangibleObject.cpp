@@ -38,6 +38,7 @@ Luna<LuaTangibleObject>::RegType LuaTangibleObject::Register[] = {
 		{ "isNeutral", &LuaTangibleObject::isNeutral },
 		{ "hasActiveArea", &LuaTangibleObject::hasActiveArea},
 		{ "isInvisible", &LuaTangibleObject::isInvisible },
+		{ "isForceCloak", &LuaTangibleObject::isForceCloak },
 		{ "getLuaStringData", &LuaTangibleObject::getLuaStringData },
 		{ "setLuaStringData", &LuaTangibleObject::setLuaStringData },
 		{ "deleteLuaStringData", &LuaTangibleObject::deleteLuaStringData },
@@ -263,6 +264,13 @@ int LuaTangibleObject::hasActiveArea(lua_State* L) {
 
 int LuaTangibleObject::isInvisible(lua_State* L) {
 	bool retVal = realObject->isInvisible();
+	lua_pushboolean(L, retVal);
+
+	return 1;
+}
+
+int LuaTangibleObject::isForceCloak(lua_State* L) {
+	bool retVal = realObject->isForceCloak();
 	lua_pushboolean(L, retVal);
 
 	return 1;
