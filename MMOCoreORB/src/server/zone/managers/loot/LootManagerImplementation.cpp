@@ -651,27 +651,51 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	if (System::random(100) > 49 - creatureLevel)
 		createLoot(container, "junk", creatureLevel, false); // Chance for bonus loot for any mob
 	
-	// Always give lots of bonus loot for higher level mobs
-	if (creatureLevel > 1){
-		int items = creatureLevel / 20;
+	if (creatureLevel == 300){
+		int items = creatureLevel / 37.5; //lvl 300 = 8 items
 		
-		// For very high level mobs, always make one of the items an SEA
-		if (creatureLevel > 1){
-			items--;
-			
-			if (System::random(100) > 49) {
-				createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
-				creature->playEffect("clienteffect/level_granted.cef", "");
-			} else {
-				createLoot(container, "lootcollectiontierheroic", creatureLevel, false);
-				creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
-			}
+		for (int i = 0; i < items; ++i) {
+			createLoot(container, "junk", creatureLevel, false);
 		}
+	}
+
+	if (creatureLevel == 225){
+		int items = creatureLevel / 37.5; //lvl 300 = 6 items
+		
+		for (int i = 0; i < items; ++i) {
+			createLoot(container, "junk", creatureLevel, false);
+		}
+	}
+
+	if (creatureLevel == 150){
+		int items = creatureLevel / 37.5; //lvl 300 = 4 items
+		
+		for (int i = 0; i < items; ++i) {
+			createLoot(container, "junk", creatureLevel, false);
+		}
+	}
+
+	if (creatureLevel == 75){
+		int items = creatureLevel / 37.5; //lvl 300 = 2 items
 		
 		for (int i = 0; i < items; ++i) {
 			createLoot(container, "junk", creatureLevel, false);
 		}
 	}	
+
+	if (creatureLevel == 300){
+		items--;
+			
+	if (System::random(100) < 5) {
+			createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
+			creature->playEffect("clienteffect/level_granted.cef", "");
+		}
+		
+	if (System::random(100) < 2) {
+			createLoot(container, "lootcollectiontierheroic", creatureLevel, false);
+			creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
+		}
+	}
 
 	LootGroupCollection* lootCollection = creature->getLootGroups();
 
