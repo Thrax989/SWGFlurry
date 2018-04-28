@@ -854,5 +854,3 @@ RunSlashCommandsFile("strangulation.lua")
 RunSlashCommandsFile("dragfromshadows.lua")
 RunSlashCommandsFile("forceCloak.lua")
 RunSlashCommandsFile("cloak.lua")
-RunSlashCommandsFile("regrantskills.lua")
-

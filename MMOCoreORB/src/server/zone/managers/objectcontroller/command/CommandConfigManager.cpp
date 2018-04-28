@@ -312,6 +312,9 @@ void CommandConfigManager::registerSpecialCommands(CommandList* sCommands) {
 	createCommand(String("creatureRangedAttack").toLowerCase())->setCommandGroup(0xe1c9a54a);
 	createCommand(String("defaultDroidAttack").toLowerCase())->setCommandGroup(0xe1c9a54a);
 
+	//Custom
+	commandFactory.registerCommand<setPvpCommand>(String("setPvp").toLowerCase());
+
 	//Pet commands
 	createCommand(String("petAttack").toLowerCase())->setCommandGroup(0xe1c9a54a);
 	createCommand(String("petEmote").toLowerCase())->setCommandGroup(0xe1c9a54a);
@@ -1642,7 +1645,6 @@ void CommandConfigManager::registerCommands() {
 	
 	
 	//Custom
- 	commandFactory.registerCommand<Regrantskillscommand>(String("regrantskills").toLowerCase());
  	commandFactory.registerCommand<InvisibleCommand>(String("invisible").toLowerCase());
   	commandFactory.registerCommand<setPvpCommand>(String("setPvp").toLowerCase());
  	commandFactory.registerCommand<PistolWhip1Command>(String("pistolwhip1").toLowerCase());

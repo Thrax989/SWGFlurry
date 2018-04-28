@@ -837,8 +837,8 @@
 #include "InspacereloadCommand.h"
 #include "InspacerrCommand.h"
 #include "RequestSpaceTrainerCommand.h"
-//Custom
-#include "SetPvpCommand.h"
+
+#include "setPvp.h"
 #include "BhShieldCommand.h"
 #include "InvisibleCommand.h"
 #include "PistolWhip1Command.h"
@@ -853,6 +853,11 @@
 #include "DragFromShadowsCommand.h"
 #include "ForceCloakCommand.h"
 #include "CloakCommand.h"
-#include "Regrantskills.h"
+//Custom
+
+#include "SetPvpCommand.h"
+
+
+
 #endif /* COMMANDSNEW_H_ */
 
