@@ -648,35 +648,35 @@ void LootManagerImplementation::setSockets(TangibleObject* object, CraftingValue
 bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* creature) {
 	int creatureLevel = Math::min(300, creature->getLevel());
 	
-	if (System::random(100) > 49 - creatureLevel)
-		createLoot(container, "junk", creatureLevel, false); // Chance for bonus loot for any mob
+	//if (System::random(100) > 49 - creatureLevel)
+		//createLoot(container, "junk", creatureLevel, false); // Chance for bonus loot for any mob
 	
-	if (creatureLevel == 300){
-		int items = creatureLevel / 37.5; //lvl 300 = 8 items
+	if (creatureLevel >= 300){
+		int items = creatureLevel / 75; //lvl 300 = 4 items total 10
 		
 		for (int i = 0; i < items; ++i) {
 			createLoot(container, "junk", creatureLevel, false);
 		}
 	}
 
-	if (creatureLevel == 225){
-		int items = creatureLevel / 37.5; //lvl 300 = 6 items
+	if (creatureLevel >= 225){
+		int items = creatureLevel / 75; //lvl 300 = 3 items total 6
 		
 		for (int i = 0; i < items; ++i) {
 			createLoot(container, "junk", creatureLevel, false);
 		}
 	}
 
-	if (creatureLevel == 150){
-		int items = creatureLevel / 37.5; //lvl 300 = 4 items
+	if (creatureLevel >= 150){
+		int items = creatureLevel / 75; //lvl 300 = 2 items total 3
 		
 		for (int i = 0; i < items; ++i) {
 			createLoot(container, "junk", creatureLevel, false);
 		}
 	}
 
-	if (creatureLevel == 75){
-		int items = creatureLevel / 37.5; //lvl 300 = 2 items
+	if (creatureLevel >= 75){
+		int items = creatureLevel / 75; //lvl 300 = 1 items total 1
 		
 		for (int i = 0; i < items; ++i) {
 			createLoot(container, "junk", creatureLevel, false);
@@ -684,7 +684,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	}	
 
 	if (creatureLevel == 300){
-		items--;
+
 			
 	if (System::random(100) < 5) {
 			createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
@@ -700,7 +700,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	LootGroupCollection* lootCollection = creature->getLootGroups();
 
 	if (lootCollection == NULL)
-		return createLoot(container, "junk", creatureLevel, false); // Common loot for all mobs that don't have loot
+		return createLoot(container, "", creatureLevel, false); // Common loot for all mobs that don't have loot
 
 	return createLootFromCollection(container, lootCollection, creatureLevel);
 }
