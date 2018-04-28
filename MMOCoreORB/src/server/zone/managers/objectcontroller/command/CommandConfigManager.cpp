@@ -1657,4 +1657,5 @@ void CommandConfigManager::registerCommands() {
  	commandFactory.registerCommand<BactaJabCommand>(String("bactajab").toLowerCase());
  	commandFactory.registerCommand<StrangulationCommand>(String("strangulation").toLowerCase());
  	commandFactory.registerCommand<DragFromShadowsCommand>(String("dragfromshadows").toLowerCase());
+	commandFactory.registerCommand<RegrantSkillsCommand>(String("regrantSkills").toLowerCase());
 }

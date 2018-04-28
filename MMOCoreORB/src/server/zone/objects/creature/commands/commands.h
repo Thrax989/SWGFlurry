@@ -853,6 +853,7 @@
 #include "DragFromShadowsCommand.h"
 #include "ForceCloakCommand.h"
 #include "CloakCommand.h"
+#include "RegrantSkillsCommand.h"
 //Custom
 
 #include "SetPvpCommand.h"
