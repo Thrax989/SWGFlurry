@@ -700,7 +700,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	LootGroupCollection* lootCollection = creature->getLootGroups();
 
 	if (lootCollection == NULL)
-		return createLoot(container, "", creatureLevel, false); // Common loot for all mobs that don't have loot
+		return createLoot(container, "junk", creatureLevel, false); // Common loot for all mobs that don't have loot
 
 	return createLootFromCollection(container, lootCollection, creatureLevel);
 }
