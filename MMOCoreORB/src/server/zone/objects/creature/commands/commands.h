@@ -853,6 +853,6 @@
 #include "DragFromShadowsCommand.h"
 #include "ForceCloakCommand.h"
 #include "CloakCommand.h"
-#include "RegrantskillCommands.h"
+#include "Regrantskills.h"
 #endif /* COMMANDSNEW_H_ */
 
