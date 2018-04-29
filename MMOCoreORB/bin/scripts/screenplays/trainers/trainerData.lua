@@ -855,7 +855,28 @@ trainerSkills = {
 		"force_sensitive_heightened_senses_luck_04"
 	},
 
-	trainer_combatjedi = {
+	trainer_combatjedigrayelder = {
+		"combat_jedi_elder_novice",
+		"combat_jedi_elder_master",
+		"combat_jedi_elder_lightning_01",
+		"combat_jedi_elder_lightning_02",
+		"combat_jedi_elder_lightning_03",
+		"combat_jedi_elder_lightning_04",
+		"combat_jedi_elder_mental_01",
+		"combat_jedi_elder_mental_02",
+		"combat_jedi_elder_mental_03",
+		"combat_jedi_elder_mental_04",
+		"combat_jedi_elder_debuff_01",
+		"combat_jedi_elder_debuff_02",
+		"combat_jedi_elder_debuff_03",
+		"combat_jedi_elder_debuff_04",
+		"combat_jedi_elder_push_01",
+		"combat_jedi_elder_push_02",
+		"combat_jedi_elder_push_03",
+		"combat_jedi_elder_push_04"
+	},
+
+	trainer_combatjedigray = {
 		"combat_jedi_novice",
 		"combat_jedi_master",
 		"combat_jedi_dark_01",
