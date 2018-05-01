@@ -1,5 +1,5 @@
 trainer_combatjedigray = Creature:new {
-	customName = "Gray Jedi Trainer",
+	objectName = "@mob/creature_names:trainer_combatjedigray",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	planetMapCategory = "trainer_combatjedigray",
