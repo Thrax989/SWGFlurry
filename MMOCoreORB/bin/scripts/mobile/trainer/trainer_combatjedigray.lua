@@ -1,7 +1,5 @@
 trainer_combatjedigray = Creature:new {
 	objectName = "@mob/creature_names:trainer_combatjedigray",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	planetMapCategory = "trainer_combatjedigray",
 	faction = "",
 	level = 100,

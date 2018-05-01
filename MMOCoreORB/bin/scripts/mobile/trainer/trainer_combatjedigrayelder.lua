@@ -1,7 +1,5 @@
 trainer_combatjedigrayelder = Creature:new {
 	objectName = "@mob/creature_names:trainer_combatjedigrayelder",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	planetMapCategory = "trainer_combatjedigrayelder",
 	faction = "",
 	level = 100,

@@ -1,7 +1,5 @@
 trainer_meleebountyhunter = Creature:new {
 	customName = "Melee BountyHunter Trainer",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	planetMapCategory = "trainer_meleebountyhunter",
 	faction = "",
 	level = 100,
