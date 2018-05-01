@@ -661,37 +661,43 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	}
 	
 	if (creatureLevel >= 300){
+		if (System::random(100) < 50) { //50% chance to drop
 		int items = creatureLevel / 75; //lvl 300 = 4 items total 10
 		
 		for (int i = 0; i < items; ++i) {
 			createLoot(container, "armor_all", creatureLevel, false);
+			}
 		}
 	}
 
 	if (creatureLevel >= 225){
+		if (System::random(100) < 50) { //50% chance to drop
 		int items = creatureLevel / 75; //lvl 300 = 3 items total 6
 		
 		for (int i = 0; i < items; ++i) {
 			createLoot(container, "weapons_all", creatureLevel, false);
+			}
 		}
 	}
-
 	if (creatureLevel >= 150){
+		if (System::random(100) < 50) { //50% chance to drop
 		int items = creatureLevel / 75; //lvl 300 = 2 items total 3
 		
 		for (int i = 0; i < items; ++i) {
 			createLoot(container, "treasure_map_group", creatureLevel, false);
+			}
 		}
 	}
 
 	if (creatureLevel >= 75){
+		if (System::random(100) < 50) { //50% chance to drop
 		int items = creatureLevel / 75; //lvl 300 = 1 items total 1
 		
 		for (int i = 0; i < items; ++i) {
 			createLoot(container, "wearables_all", creatureLevel, false);
-		}
-	}	
-
+			}
+		}	
+	}
 	if (creatureLevel == 300){
 
 			
