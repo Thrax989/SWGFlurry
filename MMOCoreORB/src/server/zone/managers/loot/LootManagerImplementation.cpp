@@ -646,32 +646,75 @@ void LootManagerImplementation::setSockets(TangibleObject* object, CraftingValue
 }
 
 bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* creature) {
+	//Creature Loot System based on creature level
 	int creatureLevel = Math::min(300, creature->getLevel());
 	
-	if (System::random(100) > 49 - creatureLevel)
-		createLoot(container, "junk", creatureLevel, false); // Chance for bonus loot for any mob
-	
-	// Always give lots of bonus loot for higher level mobs
-	if (creatureLevel > 1){
-		int items = creatureLevel / 20;
-		
-		// For very high level mobs, always make one of the items an SEA
-		if (creatureLevel > 1){
-			items--;
-			
-			if (System::random(100) > 49) {
-				createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
-				creature->playEffect("clienteffect/level_granted.cef", "");
-			} else {
-				createLoot(container, "lootcollectiontierheroic", creatureLevel, false);
-				creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
-			}
+	if (creatureLevel >= 300){
+		if (System::random(100) < 10) { //10% chance to drop clothing or armor attachments
+			createLoot(container, "armor_attachments", creatureLevel, false);
+		} else {
+			createLoot(container, "clothing_attachments", creatureLevel, false);
 		}
+	}
+	
+	if (creatureLevel >= 300){
+		if (System::random(100) < 50) { //50% chance to drop
+		int items = creatureLevel / 75; //lvl 300 = 4 items total 10
 		
 		for (int i = 0; i < items; ++i) {
-			createLoot(container, "junk", creatureLevel, false);
+			createLoot(container, "armor_all", creatureLevel, false);
+			}
 		}
-	}	
+	}
+
+	if (creatureLevel >= 225){
+		if (System::random(100) < 50) { //50% chance to drop
+		int items = creatureLevel / 75; //lvl 300 = 3 items total 6
+		
+		for (int i = 0; i < items; ++i) {
+			createLoot(container, "weapons_all", creatureLevel, false);
+			}
+		}
+	}
+
+	if (creatureLevel >= 150){
+		if (System::random(100) < 50) { //50% chance to drop
+		int items = creatureLevel / 75; //lvl 300 = 2 items total 3
+		
+		for (int i = 0; i < items; ++i) {
+			createLoot(container, "treasure_map_group", creatureLevel, false);
+			}
+		}
+	}
+
+	if (creatureLevel >= 75){
+		if (System::random(100) < 50) { //50% chance to drop
+		int items = creatureLevel / 75; //lvl 300 = 1 items total 1
+		
+		for (int i = 0; i < items; ++i) {
+			createLoot(container, "wearables_all", creatureLevel, false);
+			}
+		}	
+	}
+
+	if (creatureLevel >= 1){
+		if (System::random(100) < 5) { //5% chance to drop Gold Crates
+			createLoot(container, "lootcollectiontierone", creatureLevel, false);
+		}
+	}
+
+	//Rare Loot System
+	if (creatureLevel == 300){
+	if (System::random(100) < 8) { //8% chance diamond crate
+			createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
+			creature->playEffect("clienteffect/level_granted.cef", "");
+		}
+		
+	if (System::random(100) < 5) { //5% chance heroic crate
+			createLoot(container, "lootcollectiontierheroic", creatureLevel, false);
+			creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
+		}
+	}
 
 	LootGroupCollection* lootCollection = creature->getLootGroups();
 

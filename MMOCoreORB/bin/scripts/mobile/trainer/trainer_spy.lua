@@ -1,7 +1,5 @@
 trainer_spy = Creature:new {
-	customName = "Spy Trainer",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
+	objectName = "@mob/creature_names:trainer_spy",
 	planetMapCategory = "trainer_spy",
 	faction = "",
 	level = 100,

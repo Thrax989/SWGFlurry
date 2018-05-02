@@ -1,6 +1,6 @@
-trainer_meleebountyhunter = Creature:new {
-	customName = "Melee BountyHunter Trainer",
-	planetMapCategory = "trainer_meleebountyhunter",
+trainer_combatjedigrayelder = Creature:new {
+	objectName = "@mob/creature_names:trainer_combatjedigrayelder",
+	planetMapCategory = "trainer_combatjedigrayelder",
 	faction = "",
 	level = 100,
 	chanceHit = 0.390000,
@@ -32,7 +32,7 @@ trainer_meleebountyhunter = Creature:new {
 	},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "meleebountyhunterTrainerConvoTemplate",
+	conversationTemplate = "combatjedigrayelderTrainerConvoTemplate",
 	attacks = {}
 }
-CreatureTemplates:addCreatureTemplate(trainer_meleebountyhunter,"trainer_meleebountyhunter")
+CreatureTemplates:addCreatureTemplate(trainer_combatjedigrayelder,"trainer_combatjedigrayelder")

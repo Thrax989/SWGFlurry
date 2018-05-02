@@ -1,8 +1,6 @@
-trainer_combatjedi = Creature:new {
-	customName = "Grey Jedi Trainer",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
-	planetMapCategory = "trainer_combatjedi",
+trainer_combatjedigray = Creature:new {
+	objectName = "@mob/creature_names:trainer_combatjedigray",
+	planetMapCategory = "trainer_combatjedigray",
 	faction = "",
 	level = 100,
 	chanceHit = 0.390000,
@@ -34,7 +32,7 @@ trainer_combatjedi = Creature:new {
 	},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "combatjediTrainerConvoTemplate",
+	conversationTemplate = "combatjedigrayTrainerConvoTemplate",
 	attacks = {}
 }
-CreatureTemplates:addCreatureTemplate(trainer_combatjedi,"trainer_combatjedi")
+CreatureTemplates:addCreatureTemplate(trainer_combatjedigray,"trainer_combatjedigray")
