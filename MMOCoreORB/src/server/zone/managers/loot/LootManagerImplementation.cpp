@@ -706,8 +706,8 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	}
 
 	if (creatureLevel >= 1){
-		if (System::random(100) < 10) { //10% chance to drop clothing or armor attachments
-			createLoot(container, "clothing_attachments", creatureLevel, false);
+		if (System::random(100) < 10) { //10% chance to drop Gold Crates
+			createLoot(container, "lootcollectiontierone", creatureLevel, false);
 		}
 	}
 
