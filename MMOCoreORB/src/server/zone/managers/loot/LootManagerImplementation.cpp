@@ -646,13 +646,18 @@ void LootManagerImplementation::setSockets(TangibleObject* object, CraftingValue
 }
 
 bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* creature) {
+	//Creature Loot System based on creature level
 	int creatureLevel = Math::min(300, creature->getLevel());
-	
-	if (System::random(100) < 10 - creatureLevel) //10% chance to loot crate
-		createLoot(container, "lootcollectiontierone", creatureLevel, false); // Chance for bonus loot for any mob
+
+	if (creatureLevel >= 300){
+		if (System::random(100) < 10) { //10% chance to drop clothing or armor attachments
+			createLoot(container, "armor_attachments", creatureLevel, false);
+		} else {
+			createLoot(container, "clothing_attachments", creatureLevel, false);
+		}
+	}
 	
 	if (creatureLevel >= 300){
-			
 		if (System::random(100) < 10) { //10% chance to drop clothing or armor attachments
 			createLoot(container, "armor_attachments", creatureLevel, false);
 		} else {
@@ -679,6 +684,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 			}
 		}
 	}
+
 	if (creatureLevel >= 150){
 		if (System::random(100) < 50) { //50% chance to drop
 		int items = creatureLevel / 75; //lvl 300 = 2 items total 3
@@ -698,9 +704,15 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 			}
 		}	
 	}
-	if (creatureLevel == 300){
 
-			
+	if (creatureLevel >= 1){
+		if (System::random(100) < 10) { //10% chance to drop clothing or armor attachments
+			createLoot(container, "clothing_attachments", creatureLevel, false);
+		}
+	}
+
+	//Rare Loot System
+	if (creatureLevel == 300){
 	if (System::random(100) < 8) { //8% chance diamond crate
 			createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
 			creature->playEffect("clienteffect/level_granted.cef", "");
