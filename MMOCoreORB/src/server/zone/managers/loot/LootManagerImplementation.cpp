@@ -648,14 +648,6 @@ void LootManagerImplementation::setSockets(TangibleObject* object, CraftingValue
 bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* creature) {
 	//Creature Loot System based on creature level
 	int creatureLevel = Math::min(300, creature->getLevel());
-
-	if (creatureLevel >= 300){
-		if (System::random(100) < 10) { //10% chance to drop clothing or armor attachments
-			createLoot(container, "armor_attachments", creatureLevel, false);
-		} else {
-			createLoot(container, "clothing_attachments", creatureLevel, false);
-		}
-	}
 	
 	if (creatureLevel >= 300){
 		if (System::random(100) < 10) { //10% chance to drop clothing or armor attachments
@@ -706,7 +698,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	}
 
 	if (creatureLevel >= 1){
-		if (System::random(100) < 10) { //10% chance to drop Gold Crates
+		if (System::random(100) < 5) { //5% chance to drop Gold Crates
 			createLoot(container, "lootcollectiontierone", creatureLevel, false);
 		}
 	}
