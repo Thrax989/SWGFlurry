@@ -130,39 +130,8 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) tralus
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) wayland
 
-## Server Code Contributors-
-* https://github.com/Thrax989/SWGFlurry/graphs/contributors - Contribution log to see each indivudual contribution
-* https://github.com/Thrax989 - Project Lead Creator
-* https://github.com/lasko-2112 - TRE File Creator All NGE Weapons Cu Weapons / Ghomrassen Planet Creator
-* https://bitbucket.org/sunrunnerii/sunrunner2 - NGE Planets / Custom Assets
-* https://github.com/kurdtkobain - Additional Command Support / Game Tweaks
-* https://github.com/Xela-TheCreation - FRS system Creator
-* https://github.com/bobvious - Additional Game Balances Lua game Tweaks
-* https://github.com/TheAnswer - Engine Developer 
-* https://github.com/Tatwi - Admin Tool Creator , Scripts Creator , Quest Logic Creator
-* https://github.com/Levarrishawk/ - Dromund Kaas Planet Creator
-* https://github.com/dannuic - Ai Functionalit World Implamentations lua / CPP functions
-* https://github.com/Ivojedi Enviroment Stability lua / CPP functionality additional game balance / tweaks
-* https://github.com/loswut - Enviroment Functionalit lua / CPP World Edditions
-* https://github.com/Miztah - Quest Logic Additional CPP functionality Village Implamentation for jedi
-* https://github.com/Neetoo - world / enviroment balance quest functionality 
-* https://github.com/Hellucard - Dungeons / Screen play creator
-* https://github.com/Gungy - Additional game balances
-* https://github.com/Bommbur - Additional game balances 
-* https://github.com/mhutcherson - Additional game balances
-* https://github.com/Madvector - Additional game balances
-* https://github.com/mikeface - Additional game balances Jedi Master Powers Revamp Enhancer Revamp
-* https://github.com/gyrantol - Mandalore , Taanab  world assets
-* https://github.com/washu - Droid functionality
-* https://github.com/Skyyyr - Additional Game Tweaks CPP / Lua script Writer
-* https://github.com/Yakone - Random NGE Item Additons
-* https://github.com/Weezyyy - Random NGE Item Additons
-* https://github.com/SlayerSG - Additional Game Balances Lua scripting game Tweaks
-* https://github.com/kissofdarknes - Additional Game Balances Lua scripting game Tweaks spy profession
-
-## Extended thanks ot the following servers
-Thank you to the following server that provided custom content / alterations to the base core3 experience
-Over The Course Of A Few Years Each Individual Has Added Some Portion To The Frame Work Or Code That Is Currently In This Repository.
+## Extended thanks ot the following servers / contributors
+Thank you to the following server that provided custom content / alterations to the base core3 experience. Over the course of a few years each individual has added some portion to the frame work or code that is currently in this repository.
 
 <br>Sentinels Republic Emu - http://www.swgsremu.com/
 <br>Empire in Flames - http://www.empireinflames.com/
