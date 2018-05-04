@@ -1,3 +1,5 @@
+## Repository EST Dec 29, 2016 
+
 ## <img src="http://i.imgur.com/OB4Pa6a.png">
 
 ## Server Base Source Code
@@ -168,3 +170,101 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 <br>Reckoning - https://swgreckoning.com/
 <br>RogueOne - http://www.swgrogueone.com/
 <br>Tarkin II - https://tarkin.org/
+
+Over The Course Of A Few Years Each Individual Has Added Some Portion To The Frame Work Or Code That Is Currently In This Repository.
+* https://github.com/Thrax989 
+* https://github.com/merik444 
+* https://github.com/kurdtkobain 
+* https://github.com/Mifie89 
+* https://github.com/Skyyyr
+* https://github.com/bobvious 
+* https://github.com/JigglyPoofSWG
+* https://github.com/TheAnswer
+* https://github.com/Xela
+* https://github.com/Yakone
+* https://github.com/Volinor
+* https://github.com/lasko-2112 
+* https://github.com/Tatwi
+* https://github.com/ariochx
+* https://github.com/Levarrishawk
+* https://github.com/aamedina
+* https://github.com/Asnokat
+* https://github.com/bobyblack26
+* https://github.com/Chilastra-Reborn
+* https://github.com/collinsg
+* https://github.com/dannuic 
+* https://github.com/diamondragon16
+* https://github.com/Dreadlow
+* https://github.com/er1c
+* https://github.com/EU-Cerberus
+* https://github.com/ste-bah
+* https://github.com/Ivojedi
+* https://github.com/KiritoShadowfang
+* https://github.com/kissofdarknes
+* https://github.com/Koushi009
+* https://github.com/LarelO
+* https://github.com/lexun
+* https://github.com/loswut
+* https://github.com/Mesagoppinmypants
+* https://github.com/Marott1
+* https://github.com/Miztah 
+* https://github.com/Neetoo 
+* https://github.com/newtempest
+* https://github.com/Nifdoolb
+* https://github.com/nikkokale
+* https://github.com/Owebb
+* https://github.com/Scanlon21
+* https://github.com/ussefferus
+* https://github.com/Viaron
+* https://github.com/Vorns
+* https://github.com/Warfeather
+* https://github.com/washu 
+* https://github.com/terminator2014 
+* BeetleJuice 
+* Cadmus 
+* Helios 
+* Yoshimo 
+* TheAnswer 
+* aamedina 
+* Asnokat 
+* bobyblack26 
+* c0pp3r 
+* bastrad 
+* Chilastra-Reborn
+* collinsg 
+* diamondragon16
+* Dreadlow
+* er1c er1c
+* EU-Cerberus
+* ste-bah ste-bah
+* freedom24
+* Ivojedi Ivojedi
+* kiale02 kiale02
+* KiritoShadowfang 
+* kissofdarknes 
+* Koushi009 
+* kurdtkobain 
+* LarelO LarelO
+* Levarrishawk 
+* lexun lexun
+* loswut loswut
+* merik444 
+* Mesagoppinmypants 
+* Marott1 
+* Miztah 
+* Neetoo 
+* newtempest 
+* Nifdoolb 
+* nikkokale 
+* Owebb 
+* PlaySWG 
+* Scanlon21 
+* steve541 
+* ussefferus 
+* Viaron 
+* Vision9 
+* Vorns 
+* Warfeather 
+* washu 
+* wwhitehead
+* Xela
