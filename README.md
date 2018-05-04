@@ -133,7 +133,7 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 ## Extended thanks ot the following servers / contributors
 Thank you to the following server that provided custom content / alterations to the base core3 experience. Over the course of a few years each individual has added some portion to the frame work or code that is currently in this repository.
 
-<br>Sentinels Republic Emu - http://www.swgsremu.com/
+Sentinels Republic Emu - http://www.swgsremu.com/
 <br>Empire in Flames - http://www.empireinflames.com/
 <br>Aftermath - http://www.swgaftermath.site/
 <br>Infinity - http://www.swginfinity.com/
