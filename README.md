@@ -159,13 +159,13 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 * https://github.com/kissofdarknes - Additional Game Balances Lua scripting game Tweaks spy profession
 
 
-Thank you to the folloiwng server that provided custom content / alterations to the basecore3 experience
+<br>Thank you to the folloiwng server that provided custom content / alterations to the basecore3 experience
 
-Sentinels Republic Emu
-Empire in Flames
-Aftermath
-SWG Infinity
-Sunrunner II
-SWG Reckoning
-SWG RogueOne
-Tarkin II
+<br>Sentinels Republic Emu
+<br>Empire in Flames
+<br>Aftermath
+<br>SWG Infinity
+<br>Sunrunner II
+<br>SWG Reckoning
+<br>SWG RogueOne
+<br>Tarkin II
