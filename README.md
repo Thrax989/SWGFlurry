@@ -160,7 +160,9 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 * https://github.com/SlayerSG - Additional Game Balances Lua scripting game Tweaks
 * https://github.com/kissofdarknes - Additional Game Balances Lua scripting game Tweaks spy profession
 
-<br>Thank you to the following server that provided custom content / alterations to the base core3 experience
+## Extended thanks ot the following servers
+Thank you to the following server that provided custom content / alterations to the base core3 experience
+Over The Course Of A Few Years Each Individual Has Added Some Portion To The Frame Work Or Code That Is Currently In This Repository.
 
 <br>Sentinels Republic Emu - http://www.swgsremu.com/
 <br>Empire in Flames - http://www.empireinflames.com/
@@ -171,7 +173,6 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 <br>RogueOne - http://www.swgrogueone.com/
 <br>Tarkin II - https://tarkin.org/
 
-Over The Course Of A Few Years Each Individual Has Added Some Portion To The Frame Work Or Code That Is Currently In This Repository.
 * https://github.com/Thrax989 
 * https://github.com/merik444 
 * https://github.com/kurdtkobain 
