@@ -204,20 +204,20 @@ Sentinels Republic Emu - http://www.swgsremu.com/
 * collinsg 
 * diamondragon16
 * Dreadlow
-* er1c er1c
+* er1c
 * EU-Cerberus
-* ste-bah ste-bah
+* ste-bah
 * freedom24
-* Ivojedi Ivojedi
-* kiale02 kiale02
+* Ivojedi
+* kiale02
 * KiritoShadowfang 
 * kissofdarknes 
 * Koushi009 
 * kurdtkobain 
-* LarelO LarelO
+* LarelO
 * Levarrishawk 
-* lexun lexun
-* loswut loswut
+* lexun
+* loswut
 * merik444 
 * Mesagoppinmypants 
 * Marott1 
