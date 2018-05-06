@@ -115,10 +115,10 @@ function RecruiterConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, s
 		recruiterScreenplay:sendPurchaseSui(pNpc, pPlayer, screenID)
 
 	elseif (screenID == "greet_neutral_start") then
+			self:addJoinMilitaryOption(recruiterScreenplay:getRecruiterFaction(conversingNPC), clonedConversation, playerObject, conversingNPC)
+		else
 			if (CreatureObject(pPlayer):hasSkill("combat_jedi_novice") or CreatureObject(pPlayer):hasSkill("combat_jedi_master")) then
 			CreatureObject(pPlayer):sendSystemMessage("Gray Jedi may not join a faction")
-		else
-			self:addJoinMilitaryOption(recruiterScreenplay:getRecruiterFaction(conversingNPC), clonedConversation, playerObject, conversingNPC)
  		end
 	elseif (screenID == "show_gcw_score") then
 		local zoneName = SceneObject(pNpc):getZoneName()
