@@ -7,7 +7,7 @@ https://github.com/TheAnswer/Core3<br>
 https://github.com/TheAnswer/PublicEngine<br>
 
 ## Discord Voice Chat
-https://discord.gg/ntZZfAy<br>
+https://discord.gg/5XahqGy<br>
 
 ## Website
 http://www.swgflurry.com/<br>
