@@ -234,13 +234,7 @@ object_tangible_wearables_armor_armor_jedi_belt_01 = object_tangible_wearables_a
 	experimentalMax = {0, 0, 0, 1000},
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 4},
-
-
 	
-		
-		
-
-
 	certificationsRequired = {"force_title_jedi_rank_02"},
 
 }

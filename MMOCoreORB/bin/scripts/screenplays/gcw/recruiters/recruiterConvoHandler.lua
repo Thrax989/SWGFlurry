@@ -115,7 +115,7 @@ function RecruiterConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, s
 		recruiterScreenplay:sendPurchaseSui(pNpc, pPlayer, screenID)
 
 	elseif (screenID == "greet_neutral_start") then
-		self:addJoinMilitaryOption(recruiterScreenplay:getRecruiterFaction(pNpc), clonedConversation, PlayerObject(pGhost), pNpc)
+			self:addJoinMilitaryOption(recruiterScreenplay:getRecruiterFaction(conversingNPC), clonedConversation, playerObject, conversingNPC)
 
 	elseif (screenID == "show_gcw_score") then
 		local zoneName = SceneObject(pNpc):getZoneName()

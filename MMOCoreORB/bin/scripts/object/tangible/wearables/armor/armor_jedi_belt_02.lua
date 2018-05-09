@@ -235,14 +235,6 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 4},
 
-
-	skillMods = {
-		{"jedi_toughness", 10},
-		
-		},
-
-
-
 	certificationsRequired = {"force_title_jedi_rank_02"},
 
 }

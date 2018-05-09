@@ -1,3 +1,5 @@
+## Repository EST Dec 29, 2016 
+
 ## <img src="http://i.imgur.com/OB4Pa6a.png">
 
 ## Server Base Source Code
@@ -5,7 +7,7 @@ https://github.com/TheAnswer/Core3<br>
 https://github.com/TheAnswer/PublicEngine<br>
 
 ## Discord Voice Chat
-https://discord.gg/ntZZfAy<br>
+https://discord.gg/5XahqGy<br>
 
 ## Website
 http://www.swgflurry.com/<br>
@@ -128,32 +130,111 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) tralus
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) wayland
 
-## Server Code Contributors-
-* https://github.com/Thrax989/SWGFlurry/graphs/contributors - Contribution log to see each indivudual contribution
-* https://github.com/Thrax989 - Project Lead Creator
-* https://github.com/lasko-2112 - TRE File Creator All NGE Weapons Cu Weapons / Ghomrassen Planet Creator
-* https://bitbucket.org/sunrunnerii/sunrunner2 - NGE Planets / Custom Assets
-* https://github.com/kurdtkobain - Additional Command Support / Game Tweaks
-* https://github.com/Xela-TheCreation - FRS system Creator
-* https://github.com/bobvious - Additional Game Balances Lua game Tweaks
-* https://github.com/TheAnswer - Engine Developer 
-* https://github.com/Tatwi - Admin Tool Creator , Scripts Creator , Quest Logic Creator
-* https://github.com/Levarrishawk/ - Dromund Kaas Planet Creator
-* https://github.com/dannuic - Ai Functionalit World Implamentations lua / CPP functions
-* https://github.com/Ivojedi Enviroment Stability lua / CPP functionality additional game balance / tweaks
-* https://github.com/loswut - Enviroment Functionalit lua / CPP World Edditions
-* https://github.com/Miztah - Quest Logic Additional CPP functionality Village Implamentation for jedi
-* https://github.com/Neetoo - world / enviroment balance quest functionality 
-* https://github.com/Hellucard - Dungeons / Screen play creator
-* https://github.com/Gungy - Additional game balances
-* https://github.com/Bommbur - Additional game balances 
-* https://github.com/mhutcherson - Additional game balances
-* https://github.com/Madvector - Additional game balances
-* https://github.com/mikeface - Additional game balances Jedi Master Powers Revamp Enhancer Revamp
-* https://github.com/gyrantol - Mandalore , Taanab  world assets
-* https://github.com/washu - Droid functionality
-* https://github.com/Skyyyr - Additional Game Tweaks CPP / Lua script Writer
-* https://github.com/Yakone - Random NGE Item Additons
-* https://github.com/Weezyyy - Random NGE Item Additons
-* https://github.com/SlayerSG - Additional Game Balances Lua scripting game Tweaks
-* https://github.com/kissofdarknes - Additional Game Balances Lua scripting game Tweaks spy profession
+## Extended thanks ot the following servers / contributors
+Thank you to the following server that provided custom content / alterations to the base core3 experience. Over the course of a few years each individual has added some portion to the frame work or code that is currently in this repository.
+
+Sentinels Republic Emu - http://www.swgsremu.com/
+<br>Empire in Flames - http://www.empireinflames.com/
+<br>Aftermath - http://www.swgaftermath.site/
+<br>Infinity - http://www.swginfinity.com/
+<br>Sunrunner II - http://swgsunrunner2.com/
+<br>Reckoning - https://swgreckoning.com/
+<br>RogueOne - http://www.swgrogueone.com/
+<br>Tarkin II - https://tarkin.org/
+
+* https://github.com/Thrax989 
+* https://github.com/merik444 
+* https://github.com/kurdtkobain 
+* https://github.com/Mifie89 
+* https://github.com/Skyyyr
+* https://github.com/bobvious 
+* https://github.com/JigglyPoofSWG
+* https://github.com/TheAnswer
+* https://github.com/Xela
+* https://github.com/Yakone
+* https://github.com/Volinor
+* https://github.com/lasko-2112 
+* https://github.com/Tatwi
+* https://github.com/ariochx
+* https://github.com/Levarrishawk
+* https://github.com/aamedina
+* https://github.com/Asnokat
+* https://github.com/bobyblack26
+* https://github.com/Chilastra-Reborn
+* https://github.com/collinsg
+* https://github.com/dannuic 
+* https://github.com/diamondragon16
+* https://github.com/Dreadlow
+* https://github.com/er1c
+* https://github.com/EU-Cerberus
+* https://github.com/ste-bah
+* https://github.com/Ivojedi
+* https://github.com/KiritoShadowfang
+* https://github.com/kissofdarknes
+* https://github.com/Koushi009
+* https://github.com/LarelO
+* https://github.com/lexun
+* https://github.com/loswut
+* https://github.com/Mesagoppinmypants
+* https://github.com/Marott1
+* https://github.com/Miztah 
+* https://github.com/Neetoo 
+* https://github.com/newtempest
+* https://github.com/Nifdoolb
+* https://github.com/nikkokale
+* https://github.com/Owebb
+* https://github.com/Scanlon21
+* https://github.com/ussefferus
+* https://github.com/Viaron
+* https://github.com/Vorns
+* https://github.com/Warfeather
+* https://github.com/washu 
+* https://github.com/terminator2014 
+* BeetleJuice 
+* Cadmus 
+* Helios 
+* Yoshimo 
+* TheAnswer 
+* aamedina 
+* Asnokat 
+* bobyblack26 
+* c0pp3r 
+* bastrad 
+* Chilastra-Reborn
+* collinsg 
+* diamondragon16
+* Dreadlow
+* er1c
+* EU-Cerberus
+* ste-bah
+* freedom24
+* Ivojedi
+* kiale02
+* KiritoShadowfang 
+* kissofdarknes 
+* Koushi009 
+* kurdtkobain 
+* LarelO
+* Levarrishawk 
+* lexun
+* loswut
+* merik444 
+* Mesagoppinmypants 
+* Marott1 
+* Miztah 
+* Neetoo 
+* newtempest 
+* Nifdoolb 
+* nikkokale 
+* Owebb 
+* PlaySWG 
+* Scanlon21 
+* steve541 
+* ussefferus 
+* Viaron 
+* Vision9 
+* Vorns 
+* Warfeather 
+* washu 
+* wwhitehead
+* Xela
