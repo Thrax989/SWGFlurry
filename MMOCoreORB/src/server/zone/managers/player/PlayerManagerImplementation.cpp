@@ -1110,7 +1110,7 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 
 	// Jedi experience loss.
 	//jedi who chose 1x will loose 40,000 xp jedi who choose 2x will lose 80,000 xp jedi who choose 2.5x will loose 100,000 k xp These values Double on Doulbe xp Weeknd , 80x, 160x,200x 
-	if(ghost->getJediState() >= 1) {
+	if(ghost->getJediState() >= 2) {
 		awardExperience(player, "jedi_general", -40000, true);
 		player->sendSystemMessage("You have lost  Jedi XP");
 		int negXpCap = -10000000; // Cap on negative jedi experience
