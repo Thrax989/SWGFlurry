@@ -8,6 +8,11 @@ function RecruiterConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, s
 	if (pGhost == nil) then
 		return pConvScreen
 	end
+	
+	if (CreatureObject(pPlayer):hasSkill("combat_jedi_novice") or CreatureObject(pPlayer):hasSkill("combat_jedi_master")) then
+	CreatureObject(pPlayer):sendSystemMessage("Gray Jedi may not join a faction")
+		return pConvScreen
+	end
 
 	local screen = LuaConversationScreen(pConvScreen)
 	local screenID = screen:getScreenID()
@@ -115,7 +120,7 @@ function RecruiterConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, s
 		recruiterScreenplay:sendPurchaseSui(pNpc, pPlayer, screenID)
 
 	elseif (screenID == "greet_neutral_start") then
-			self:addJoinMilitaryOption(recruiterScreenplay:getRecruiterFaction(conversingNPC), clonedConversation, playerObject, conversingNPC)
+		self:addJoinMilitaryOption(recruiterScreenplay:getRecruiterFaction(pNpc), clonedConversation, PlayerObject(pGhost), pNpc)
 
 	elseif (screenID == "show_gcw_score") then
 		local zoneName = SceneObject(pNpc):getZoneName()

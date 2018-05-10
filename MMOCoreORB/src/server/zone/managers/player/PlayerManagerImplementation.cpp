@@ -1107,12 +1107,18 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 
 	player->notifyObservers(ObserverEventType::PLAYERCLONED, player, 0);
 
+	// Gray Jedi experience loss.
+	if(player->hasSkill("combat_jedi_novice")) {
+		awardExperience(player, "jedi_general", -50000, true);
+		player->sendSystemMessage("You have lost Jedi XP");
+		int negXpCap = -10000000; // Cap on negative gray jedi experience
+	}
 
 	// Jedi experience loss.
 	//jedi who chose 1x will loose 40,000 xp jedi who choose 2x will lose 80,000 xp jedi who choose 2.5x will loose 100,000 k xp These values Double on Doulbe xp Weeknd , 80x, 160x,200x 
 	if(ghost->getJediState() >= 2) {
 		awardExperience(player, "jedi_general", -40000, true);
-		player->sendSystemMessage("You have lost  Jedi XP");
+		player->sendSystemMessage("You have lost Jedi XP");
 		int negXpCap = -10000000; // Cap on negative jedi experience
 	}
 }
@@ -1598,7 +1604,7 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 			player->sendSystemMessage(message);
 		}
 	}
-
+	
 	if (xpType == "force_rank_xp") {
 		if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
 			PlayerObject* ghost = player->getPlayerObject();
