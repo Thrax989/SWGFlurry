@@ -19,7 +19,7 @@ public:
 		if (!checkStateMask(creature))
 			return INVALIDSTATE;
 
-		if (!checkInvalidLocomotions(creature)) 
+		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
 
@@ -30,9 +30,17 @@ public:
 		SkillManager* skillManager = SkillManager::instance();
 		SkillList* skillList = creature->getSkillList();
 
-		if (skillList == NULL) 
+		if (skillList == NULL)
 			return GENERALERROR;
-			
+
+
+		if (!creature->checkCooldownRecovery("regrantSkills")) {
+                    creature->sendSystemMessage("You cannot have your skill regranted more than once per 1 hour.");
+                    return GENERALERROR;
+                }
+
+		creature->updateCooldownTimer("regrantSkills", 3600000);
+
 		String skillName = "";
 		Vector<String> listOfNames;
 		skillList->getStringList(listOfNames);
@@ -45,8 +53,8 @@ public:
 			String skillName = skill->getSkillName();
 
 			if (!skillName.beginsWith("admin")) {
-				skillManager->surrenderSkill(skillName, creature, true);
-				bool skillGranted = skillManager->awardSkill(skillName, creature, true, true, true);
+				skillManager->surrenderSkill(skillName, creature, true, true);
+				bool skillGranted = skillManager->awardSkill(skillName, creature, true, true, true, true);
 				creature->sendSystemMessage("Regranting SKill: " + skillName);
 			}
 		}
@@ -57,3 +65,4 @@ public:
 };
 
 #endif //REGRANTSKILLSCOMMAND_H_
+
