@@ -393,6 +393,67 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 	return true;
 }
 
+void SkillManager::awardForceFromSkills(CreatureObject* creature) {
+	int forceMax = 0;
+	int forceRegen = 0;
+
+	if (creature == NULL)
+		return;
+
+	Locker locker(creature);
+
+	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
+
+	SkillList* skillList = creature->getSkillList();
+
+	Vector<String> listOfNames;
+	skillList->getStringList(listOfNames);
+	SkillList copyOfList;
+
+	copyOfList.loadFromNames(listOfNames);
+
+	for (int i = 0; i < copyOfList.size(); i++) {
+		Skill* skill = copyOfList.get(i);
+		auto skillModifiers = skill->getSkillModifiers();
+
+		for (int i = 0; i < skillModifiers->size(); ++i) {
+			auto entry = &skillModifiers->elementAt(i);
+			if (entry->getKey() == "jedi_force_power_max"){
+				forceMax += entry->getValue();
+			}
+			if (entry->getKey() == "jedi_force_power_regen"){
+				forceRegen += entry->getValue();
+			}
+		}
+
+	}
+
+	int currentFPR = creature->getSkillMod("jedi_force_power_regen");
+	int currentFMax = creature->getSkillMod("jedi_force_power_max");
+
+	error("Current force max: " + String::valueOf(currentFMax) + " Current regen: " + String::valueOf(currentFPR) );
+
+		if (currentFPR < forceRegen){
+			creature->addSkillMod(SkillModManager::PERMANENTMOD, "jedi_force_power_regen", forceRegen - currentFPR, true);
+			error("difference of " + String::valueOf(currentFPR - forceRegen) + " detected in force regen, correcting");
+		}
+		if (currentFMax < forceMax){
+			creature->addSkillMod(SkillModManager::PERMANENTMOD, "jedi_force_power_max", forceMax - currentFMax, true);
+			error("difference of " + String::valueOf(currentFMax - forceMax) + " detected in force max, correcting");
+		}
+	error("New Force max: " + String::valueOf(forceMax) + " New Regen: " + String::valueOf(forceRegen));
+
+	if (ghost != NULL)
+		ghost->setForcePowerMax(forceMax, true);
+
+	ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
+
+	if (playerObject != NULL)
+		playerObject->setForcePower(forceMax);
+
+	return;
+}
+
 void SkillManager::removeSkillRelatedMissions(CreatureObject* creature, Skill* skill) {
 	if(skill->getSkillName().hashCode() == STRING_HASHCODE("combat_bountyhunter_investigation_03")) {
 		ManagedReference<ZoneServer*> zoneServer = creature->getZoneServer();
