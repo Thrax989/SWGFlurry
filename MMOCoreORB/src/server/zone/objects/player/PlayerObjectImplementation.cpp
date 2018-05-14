@@ -1384,14 +1384,6 @@ void PlayerObjectImplementation::notifyOnline() {
 	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
 		playerCreature->setFactionStatus(2);
 	}
-	//Check for FRS Jedi without overt Light state check
-	if (player->getJediState() == 4) {
-		playerCreature->setFactionStatus(2);
-	}
-	//Check for FRS Jedi without overt Darks state check
-	if (player->getJediState() == 8) {
-		playerCreature->setFactionStatus(2);
-	}
 	if (missionManager != NULL) {
 		uint64 id = playerCreature->getObjectID();
 
