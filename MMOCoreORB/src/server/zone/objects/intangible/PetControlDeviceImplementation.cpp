@@ -1075,6 +1075,20 @@ void PetControlDeviceImplementation::setTrainingCommand(unsigned int commandID) 
 			(commandID == PetManager::SPECIAL_ATTACK2 && (!owner->hasSkill("outdoors_creaturehandler_taming_04") || !pet->hasSpecialAttack(2))) ||
 			(commandID == PetManager::RANGED_ATTACK && (!owner->hasSkill("outdoors_creaturehandler_master") || !pet->hasRangedWeapon())) ||
 			(commandID == PetManager::FOLLOWOTHER && !owner->hasSkill("outdoors_creaturehandler_support_02")) ||
+		    	(commandID == PetManager::ATTACK || commandID == PetManager::FOLLOW || commandID == PetManager::STORE) && !owner->hasSkill("combat_jedi_novice") ) ||
+			(commandID == PetManager::STAY && !owner->hasSkill("combat_jedi_novice")) ||
+			(commandID == PetManager::GUARD && !owner->hasSkill("combat_jedi_novice")) ||
+			(commandID == PetManager::FRIEND && !owner->hasSkill("combat_jedi_novice")) ||
+			((commandID == PetManager::PATROL || commandID == PetManager::GETPATROLPOINT || commandID == PetManager::CLEARPATROLPOINTS) && !owner->hasSkill("combat_jedi_novice")) ||
+			((commandID == PetManager::FORMATION1 || commandID == PetManager::FORMATION2) && !owner->hasSkill("combat_jedi_novice")) ||
+			(commandID == PetManager::TRANSFER && !owner->hasSkill("combat_jedi_novice")) ||
+			(commandID == PetManager::TRICK1 && !owner->hasSkill("combat_jedi_novice")) ||
+			(commandID == PetManager::TRICK2 && !owner->hasSkill("combat_jedi_novice")) ||
+			(commandID == PetManager::GROUP && !owner->hasSkill("combat_jedi_novice")) ||
+			(commandID == PetManager::SPECIAL_ATTACK1 && (!owner->hasSkill("combat_jedi_novice") || !pet->hasSpecialAttack(1))) ||
+			(commandID == PetManager::SPECIAL_ATTACK2 && (!owner->hasSkill("combat_jedi_novice") || !pet->hasSpecialAttack(2))) ||
+			(commandID == PetManager::RANGED_ATTACK && (!owner->hasSkill("combat_jedi_novice") || !pet->hasRangedWeapon())) ||
+			(commandID == PetManager::FOLLOWOTHER && !owner->hasSkill("combat_jedi_novice")) ||
 			(commandID == PetManager::RECHARGEOTHER))
 				return;
 	}
