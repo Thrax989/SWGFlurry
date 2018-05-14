@@ -1232,7 +1232,7 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 			Locker crossLocker(owner, destructedObject);
 
 			PlayerObject* ownerGhost = owner->getPlayerObject();
-			if (ownerGhost == NULL || !owner->hasSkill("outdoors_creaturehandler_novice") || !owner->hasSkill("combat_jedi_novice") || !destructedObject->isInRange(owner, 80)) {
+			if (ownerGhost == NULL || !owner->hasSkill("outdoors_creaturehandler_novice") || !destructedObject->isInRange(owner, 80)) {
 				continue;
 			}
 

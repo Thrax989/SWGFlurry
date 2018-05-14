@@ -96,12 +96,6 @@ public:
 			player->sendSystemMessage("@pet/pet_menu:no_chance"); // That person has no chance of controlling this creature. Transfer failed.
 			return GENERALERROR;
 		}
-		
-		if(targetPlayer->hasSkill("combat_jedi_novice") && ((petLevel + pet->getLevel()) > targetPlayer->getSkillMod("tame_level")))
-		{
-			player->sendSystemMessage("@pet/pet_menu:no_chance"); // That person has no chance of controlling this creature. Transfer failed.
-			return GENERALERROR;
-		}
 
 		ManagedReference<SceneObject*> targetDatapad = targetPlayer->getSlottedObject("datapad");
 
