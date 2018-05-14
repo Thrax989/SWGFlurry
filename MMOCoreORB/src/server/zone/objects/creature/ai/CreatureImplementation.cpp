@@ -47,6 +47,9 @@ void CreatureImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResp
 	if (canTameMe(player) && player->hasSkill("outdoors_creaturehandler_novice") && getChanceToTame(player) >= 15) {
 		menuResponse->addRadialMenuItem(159, 3, "@pet/pet_menu:menu_tame");
 	}
+		if (canTameMe(player) && player->hasSkill("combat_jedi_novice") && getChanceToTame(player) >= 15) {
+		menuResponse->addRadialMenuItem(159, 3, "@pet/pet_menu:menu_tame");
+	}
 }
 
 int CreatureImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
