@@ -855,6 +855,30 @@ trainerSkills = {
 		"force_sensitive_heightened_senses_luck_04"
 	},
 
+	trainer_combatjedigrayelderrankcouncil = {
+		"force_rank_gray_novice",
+		"force_rank_gray_master",
+		"force_rank_gray_rank_01",
+		"force_rank_gray_rank_02",
+		"force_rank_gray_rank_03",
+		"force_rank_gray_rank_04",
+		"force_rank_gray_rank_05",
+		"force_rank_gray_rank_06",
+		"force_rank_gray_rank_07",
+		"force_rank_gray_rank_08",
+		"force_rank_gray_rank_09",
+		"force_rank_gray_rank_10"
+	},
+
+	trainer_combatjedigrayelderrank = {
+		"combat_jedi_elder_rank_novice",
+		"combat_jedi_elder_rank_master",
+		"combat_jedi_elder_rank_dark_01",
+		"combat_jedi_elder_rank_dark_02",
+		"combat_jedi_elder_rank_dark_03",
+		"combat_jedi_elder_rank_dark_04"
+	},
+
 	trainer_combatjedigrayelder = {
 		"combat_jedi_elder_novice",
 		"combat_jedi_elder_master",

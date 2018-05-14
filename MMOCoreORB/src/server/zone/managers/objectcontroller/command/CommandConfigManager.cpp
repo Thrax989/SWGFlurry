@@ -7,7 +7,7 @@
 #include "server/zone/objects/creature/commands/effect/StateEffect.h"
 #include "server/zone/objects/creature/commands/effect/DotEffect.h"
 #include "server/zone/objects/creature/commands/effect/CommandEffect.h"
-
+#include "server/zone/objects/creature/commands/RecalcForceCommand.h"
 #include "server/zone/objects/creature/commands/pet/PetAttackCommand.h"
 #include "server/zone/objects/creature/commands/pet/PetEmoteCommand.h"
 #include "server/zone/objects/creature/commands/pet/PetFeedCommand.h"
@@ -1658,4 +1658,5 @@ void CommandConfigManager::registerCommands() {
  	commandFactory.registerCommand<StrangulationCommand>(String("strangulation").toLowerCase());
  	commandFactory.registerCommand<DragFromShadowsCommand>(String("dragfromshadows").toLowerCase());
 	commandFactory.registerCommand<RegrantSkillsCommand>(String("regrantSkills").toLowerCase());
+	commandFactory.registerCommand<RecalcForceCommand>(String("recalcForce").toLowerCase());
 }

@@ -152,5 +152,7 @@ createTrainerConversationTemplate("gcwimperialTrainerConvoTemplate", "trainer_gc
 createTrainerConversationTemplate("gcwrebelTrainerConvoTemplate", "trainer_gcw_rebel")
 createTrainerConversationTemplate("combatjedigrayTrainerConvoTemplate", "trainer_combatjedigray")
 createTrainerConversationTemplate("combatjedigrayelderTrainerConvoTemplate", "trainer_combatjedigrayelder")
+createTrainerConversationTemplate("combatjedigrayelderrankTrainerConvoTemplate", "trainer_combatjedigrayelderrank")
+createTrainerConversationTemplate("combatjedigrayelderrankcouncilTrainerConvoTemplate", "trainer_combatjedigrayelderrankcouncil")
 createTrainerConversationTemplate("fsTrainerConvoTemplate", "trainer_fs")
 createTrainerConversationTemplate("jediTrainerConvoTemplate", "trainer_jedi")
