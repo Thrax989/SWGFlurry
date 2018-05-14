@@ -426,6 +426,12 @@ int PetDeedImplementation::handleObjectMenuSelect(CreatureObject* player, byte s
 				player->sendSystemMessage("@pet/pet_menu:sys_lack_skill"); // You lack the skill to be able to tame that creature.
 				return 1;
 			}
+			
+		if (level > 10 || isVicious) {
+			if (!player->hasSkill("combat_jedi_novice") || (level > maxLevelofPets)) {
+				player->sendSystemMessage("@pet/pet_menu:sys_lack_skill"); // You lack the skill to be able to tame that creature.
+				return 1;
+			}
 
 			if (isVicious && player->getSkillMod("tame_aggro") < 1) {
 				player->sendSystemMessage("@pet/pet_menu:sys_lack_skill"); // You lack the skill to be able to tame that creature.
