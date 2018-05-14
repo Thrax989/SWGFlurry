@@ -32,7 +32,7 @@ trainer_combatjedigrayelderrank = Creature:new {
 	},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "combatjedigrayelderTrainerConvoTemplate",
+	conversationTemplate = "combatjedigrayelderrankTrainerConvoTemplate",
 	attacks = {}
 }
 CreatureTemplates:addCreatureTemplate(trainer_combatjedigrayelderrank,"trainer_combatjedigrayelderrank")
