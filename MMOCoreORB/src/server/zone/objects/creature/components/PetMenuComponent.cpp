@@ -187,6 +187,26 @@ void PetMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMe
 			menuResponse->addRadialMenuItemToRadialID(141, 207, 3, "@pet/pet_menu:menu_train_mount" ); // Train Pet As A Mount
 		}
 
+		if( pet->isIncapacitated() ){
+			menuResponse->addRadialMenuItem(166, 3, "@pet/pet_menu:awaken" );
+		}
+
+		if (controlDevice->isTrainedAsMount() && !pet->isDead() && !pet->isIncapacitated()) {
+			Reference<SceneObject*> rider = pet->getSlottedObject("rider");
+
+			if (rider == NULL) {
+				menuResponse->addRadialMenuItem(205, 3, "@pet/pet_menu:menu_mount"); // Climb Aboard Pet
+			} else {
+				menuResponse->addRadialMenuItem(206, 3, "@pet/pet_menu:menu_dismount"); // Climb Off Of Pet
+			}
+		}
+		
+	else if( controlDevice->getPetType() == PetManager::CREATUREPET ){
+
+		menuResponse->addRadialMenuItem(234, 3, "@pet/pet_menu:menu_feed" ); // PET_FEED
+
+		menuResponse->addRadialMenuItem(141, 3, "@pet/pet_menu:menu_command"); // PET_COMMAND
+
 		if( player->hasSkill( "combat_jedi_novice" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 142, 3, "@pet/pet_menu:menu_follow" ); // PET_FOLLOW
 			menuResponse->addRadialMenuItemToRadialID(141, 146, 3, "@pet/pet_menu:menu_attack" ); // PET_ATTACK
@@ -263,11 +283,10 @@ void PetMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMe
 				menuResponse->addRadialMenuItem(205, 3, "@pet/pet_menu:menu_mount"); // Climb Aboard Pet
 			} else {
 				menuResponse->addRadialMenuItem(206, 3, "@pet/pet_menu:menu_dismount"); // Climb Off Of Pet
+				}
 			}
 		}
-
 	}
-
 }
 
 int PetMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const {
