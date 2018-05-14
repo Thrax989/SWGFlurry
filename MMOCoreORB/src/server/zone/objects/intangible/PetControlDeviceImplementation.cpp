@@ -141,7 +141,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		if (creaturePet == NULL)
 			return;
 
-		bool ch = player->hasSkill("outdoors_creaturehandler_novice");
+		bool ch = player->hasSkill("outdoors_creaturehandler_novice") || player->hasSkill("combat_jedi_novice");
 
 		if (ch) {
 			maxPets = player->getSkillMod("keep_creature");
@@ -706,7 +706,7 @@ bool PetControlDeviceImplementation::canBeTradedTo(CreatureObject* player, Creat
 		int maxStoredPets = playerManager->getBaseStoredCreaturePets();
 		int maxLevelofPets = 10;
 		int level = pet->getAdultLevel();
-		bool ch = receiver->hasSkill("outdoors_creaturehandler_novice");
+		bool ch = receiver->hasSkill("outdoors_creaturehandler_novice") || player->hasSkill("combat_jedi_novice");
 
 		if (ch) {
 			maxStoredPets += receiver->getSkillMod("stored_pets");
@@ -1122,7 +1122,7 @@ void PetControlDeviceImplementation::setTrainingCommand(unsigned int commandID) 
 }
 
 void PetControlDeviceImplementation::trainAsMount(CreatureObject* player) {
-	if (isTrainedAsMount() || !player->hasSkill("outdoors_creaturehandler_support_04"))
+	if (isTrainedAsMount() || !player->hasSkill("outdoors_creaturehandler_support_04") || player->hasSkill("combat_jedi_novice"))
 		return;
 
 	PetManager* petManager = player->getZoneServer()->getPetManager();
