@@ -187,10 +187,6 @@ void PetMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMe
 			menuResponse->addRadialMenuItemToRadialID(141, 207, 3, "@pet/pet_menu:menu_train_mount" ); // Train Pet As A Mount
 		}
 
-		if( pet->isIncapacitated() ){
-			menuResponse->addRadialMenuItem(166, 3, "@pet/pet_menu:awaken" );
-		}
-
 		if( player->hasSkill( "combat_jedi_novice" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 142, 3, "@pet/pet_menu:menu_follow" ); // PET_FOLLOW
 			menuResponse->addRadialMenuItemToRadialID(141, 146, 3, "@pet/pet_menu:menu_attack" ); // PET_ATTACK
