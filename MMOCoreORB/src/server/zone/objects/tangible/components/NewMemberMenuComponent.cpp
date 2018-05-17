@@ -33,6 +33,10 @@ int NewMemberMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 
 	manager->harvestResourceToPlayer(creature, recycledVersionIron, 1000);
 
+	ResourceSpawn* recycledVersionGas = manager->getRecycledVersionByType("gas");
+
+	manager->harvestResourceToPlayer(creature, recycledVersionGas, 1000);
+
 	ResourceSpawn* recycledVersionSteel = manager->getRecycledVersionByType("steel_smelted");
 
 	manager->harvestResourceToPlayer(creature, recycledVersionSteel, 1000);
