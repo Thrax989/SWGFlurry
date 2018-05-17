@@ -3,6 +3,8 @@ templateType = LOOTSCHEMATIC,
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "force_discipline_light_saber_master",
+	requiredSkill = { "force_discipline_light_saber_master",
+					"combat_jedi_novice" },
 	targetDraftSchematic = "object/draft_schematic/weapon/lightsaber/lightsaber_onehanded_gen5_exar_kun.iff",
 	targetUseCount = 1,
 	noTrade = 1
