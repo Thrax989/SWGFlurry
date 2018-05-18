@@ -7,7 +7,7 @@ function ForceShrineMenuComponent:fillObjectMenuResponse(pSceneObject, pMenuResp
 		menuResponse:addRadialMenuItem(120, 3, "@jedi_trials:meditate") -- Meditate
 	end
 
-	if (CreatureObject(pPlayer):hasSkill("force_title_jedi_rank_02")) then
+	if (CreatureObject(pPlayer):hasSkill("force_title_jedi_rank_02") or CreatureObject(pPlayer):hasSkill("combat_jedi_novice")) then
 		menuResponse:addRadialMenuItem(121, 3, "@force_rank:recover_jedi_items") -- Recover Jedi Items
 	end
 
@@ -24,7 +24,7 @@ function ForceShrineMenuComponent:handleObjectMenuSelect(pObject, pPlayer, selec
 		else
 			self:doMeditate(pObject, pPlayer)
 		end
-	elseif (selectedID == 121 and CreatureObject(pPlayer):hasSkill("force_title_jedi_rank_02")) then
+	elseif (selectedID == 121 and CreatureObject(pPlayer):hasSkill("force_title_jedi_rank_02") or CreatureObject(pPlayer):hasSkill("combat_jedi_novice")) then
 		self:recoverRobe(pPlayer)
 	end
 
