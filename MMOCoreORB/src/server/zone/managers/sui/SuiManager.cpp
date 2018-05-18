@@ -542,6 +542,61 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        SkillManager::instance()->awardSkill("social_politician_master", player, true, true, true);
  					player->subtractCashCredits(10000000);
 					box->setForceCloseDistance(5.f);
+			        }
+//PLAYER SELECTABLE XP
+			} else if (templatePath == "selectxp1") {
+				if (!player->isInCombat() && player->getCashCredits() < 999999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Player Selectable Xp 1x");
+		                box->setPromptText("Player Selectable Xp 1x Coast 1,000,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 999999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+						player->sendSystemMessage("Thank you for your credits. XP set to 1x");
+						player->setSelectedExpMode(1);
+						player->setPersonalExpMultiplier(1.0);
+						player->subtractCashCredits(1000000);
+						box->setForceCloseDistance(5.f);
+			        }
+			} else if (templatePath == "selectxp5") {
+				if (!player->isInCombat() && player->getCashCredits() < 999999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Player Selectable Xp 5x");
+		                box->setPromptText("Player Selectable Xp 5x Coast 1,000,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 999999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+						player->sendSystemMessage("Thank you for your credits. XP set to 5x");
+						player->setSelectedExpMode(2);
+						player->setPersonalExpMultiplier(5.0);
+						player->subtractCashCredits(1000000);
+						box->setForceCloseDistance(5.f);
+			        }	
+			} else if (templatePath == "selectxp10") {
+				if (!player->isInCombat() && player->getCashCredits() < 999999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Player Selectable Xp 10x");
+		                box->setPromptText("Player Selectable Xp 1x Coast 1,000,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 999999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+						player->sendSystemMessage("Thank you for your credits. XP set to 10x");
+						player->setSelectedExpMode(3);
+						player->setPersonalExpMultiplier(10.0);
+						player->subtractCashCredits(1000000);
+						box->setForceCloseDistance(5.f);
 			        }	
 //GALACTIC TRAVEL SYSTEM
 //Corellia Travel

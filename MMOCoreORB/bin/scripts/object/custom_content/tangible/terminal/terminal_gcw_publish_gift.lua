@@ -80,7 +80,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Talus Dearic Starport (1,000 Credits)", "talus_dearic_starport_travel",
 			"Talus Nashal Shuttleport (1,000 Credits)", "talus_nashal_shuttleport_travel",
 			"Talus Imperial Outpost (1,000 Credits)", "talus_imperial_outpost_travel",
-			
+
 		   },
 		 	"tatooine",
 		   {
@@ -124,6 +124,12 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Master Politician Requires (10,000,000 Credits)", "citypolitician",
 		   },
+			 "Player Selectable Xp",
+				{
+			 "Select Player Xp (1x) (1,000,000 Credits)", "selectxp1",
+			 "Select Player Xp (5x) (1,000,000 Credits)", "selectxp5",
+			 "Select Player Xp (10x) (1,000,000 Credits)", "selectxp10",
+				},
 		 	--[["kaas",
 		   {
 			"Kaas PvP Zone (1,000 Credits)", "kaas_pvp_zone",
