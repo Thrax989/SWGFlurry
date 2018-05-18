@@ -95,29 +95,48 @@ public:
 				sendSyntax(player);
 				return 1;
 			}
+			ManagedReference<SceneObject* > object = server->getZoneServer()->getObject(target);
+			ManagedReference<CreatureObject*> xpModTarget = NULL;
+			
+			if(object == NULL || !object->isPlayerCreature()) {
 
+				String firstName;
+				if(args.hasMoreTokens()) {
+					args.getStringToken(firstName);
+					xpModTarget = server->getZoneServer()->getPlayerManager()->getPlayer(firstName);
+				}
+
+			}else {
+				xpModTarget = cast<CreatureObject*>( object.get());
+			}
+			
+			if (!tokenizer.hasMoreTokens()) {
+				sendSyntax(player);
+				return 1;
+			}
+			
 			int option = tokenizer.getIntToken();
 
 			switch (option) {
 
         			case 1:
-					creature->setSelectedExpMode(2);
-					creature->setPersonalExpMultiplier(5.0);
+					xpModTarget->setSelectedExpMode(2);
+					xpModTarget->setPersonalExpMultiplier(5.0);
 				break;
 
 				case 2:
-					creature->setSelectedExpMode(3);
-					creature->setPersonalExpMultiplier(10.0);
+					xpModTarget->setSelectedExpMode(3);
+					xpModTarget->setPersonalExpMultiplier(10.0);
 				break;
           
         			default:
-					creature->setSelectedExpMode(1);
-					creature->setPersonalExpMultiplier(1.0);
+					xpModTarget->setSelectedExpMode(1);
+					xpModTarget->setPersonalExpMultiplier(1.0);
 				break;
 			}
 
 			StringBuffer message;
-			message << "Personal experience now set to " << creature->getPersonalExpMultiplier() << "x";
+			message << "Personal experience now set to " << xpModTarget->getPersonalExpMultiplier() << "x";
 
 			player->sendSystemMessage(message.toString());
 
@@ -136,7 +155,7 @@ public:
 			player->sendSystemMessage("Syntax: /server playermanager [listjedi]");
 			player->sendSystemMessage("Syntax: /server playermanager [list_frsjedi]");
 			player->sendSystemMessage("Syntax: /server playermanager [listadmins]");
-			player->sendSystemMessage("Syntax: /server playermanager [setpersonalxpmode] [value 0-2]");
+			player->sendSystemMessage("Syntax: /server playermanager [setpersonalxpmode] [player first name] [value 0-2]");
 		}
 	}
 };
