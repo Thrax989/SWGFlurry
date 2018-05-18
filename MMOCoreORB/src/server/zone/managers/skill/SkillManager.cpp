@@ -845,6 +845,10 @@ bool SkillManager::fulfillsSkillPrerequisites(const String& skillName, CreatureO
 
 	if (ghost->isPrivileged())
 		return true;
+		
+	if (creature->hasSkill("combat_jedi_novice")) {
+		return true;
+	}
 	
 	if (skillName.beginsWith("force_rank") && !creature->hasSkill("force_title_jedi_rank_03")) {
 		creature->sendSystemMessage("You must become a Knight prior to joining the FRS");
