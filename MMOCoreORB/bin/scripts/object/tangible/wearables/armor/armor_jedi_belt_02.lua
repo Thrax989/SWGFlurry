@@ -235,7 +235,8 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 4},
 
-	certificationsRequired = {"force_title_jedi_rank_02"},
+	certificationsRequired = { "force_title_jedi_rank_02",
+					"combat_jedi_novice" },
 
 }
 
