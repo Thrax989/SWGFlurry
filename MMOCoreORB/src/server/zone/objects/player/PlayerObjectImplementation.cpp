@@ -1347,8 +1347,8 @@ void PlayerObjectImplementation::notifyOnline() {
 	}*/
 	//jedi check when logging in for grey jedi state
 	if (playerCreature->hasSkill("combat_jedi_novice")) {
-		player->setJediState(1);
-                info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 1 " + " Grey Jedi ", true);
+		player->setJediState(2);
+                info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 2 " + " Grey Jedi ", true);
 	}
 	//jedi check when logging in light check for jedi state 4
 	if (playerCreature->hasSkill("force_rank_light_novice")) {
@@ -1442,6 +1442,10 @@ void PlayerObjectImplementation::notifyOffline() {
 	MissionManager* missionManager = getZoneServer()->getMissionManager();
 
 	if (missionManager != NULL && playerCreature->hasSkill("force_title_jedi_rank_02")) {
+		missionManager->updatePlayerBountyOnlineStatus(playerCreature->getObjectID(), false);
+	}
+
+	if (missionManager != NULL && playerCreature->hasSkill("combat_jedi_novice")) {
 		missionManager->updatePlayerBountyOnlineStatus(playerCreature->getObjectID(), false);
 	}
 }

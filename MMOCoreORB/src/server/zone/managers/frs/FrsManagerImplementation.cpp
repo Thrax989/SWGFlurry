@@ -554,7 +554,7 @@ int FrsManagerImplementation::getBaseExperienceGain(PlayerObject* playerGhost, P
 	}
 	String key = "";
 
-	if (opponent->hasSkill("combat_bountyhunter_investigation_03")) { // Opponent is able to hunt jedis
+	if (opponent->hasSkill("combat_bountyhunter_investigation_03") || opponent->hasSkill("combat_meleebountyhunter_investigation_03")) { // Opponent is able to hunt jedis
 		key = "bh_";
 	} else if (opponentRank >= 0 && opponent->hasSkill("force_title_jedi_rank_03")) { // Opponent is at least a knight
 		key = "rank" + String::valueOf(opponentRank) + "_";

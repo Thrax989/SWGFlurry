@@ -90,6 +90,37 @@ public:
 
 			player->sendSystemMessage(message.toString());
 
+		} else if (command == "setpersonalxpmode") {
+			if (!tokenizer.hasMoreTokens()) {
+				sendSyntax(player);
+				return 1;
+			}
+
+			int option = tokenizer.getIntToken();
+
+			switch (option) {
+
+        			case 1:
+					creature->setSelectedExpMode(2);
+					creature->setPersonalExpMultiplier(5.0);
+				break;
+
+				case 2:
+					creature->setSelectedExpMode(3);
+					creature->setPersonalExpMultiplier(10.0);
+				break;
+          
+        			default:
+					creature->setSelectedExpMode(1);
+					creature->setPersonalExpMultiplier(1.0);
+				break;
+			}
+
+			StringBuffer message;
+			message << "Personal experience now set to " << creature->getPersonalExpMultiplier() << "x";
+
+			player->sendSystemMessage(message.toString());
+
 		} else {
 			sendSyntax(player);
 			return 1;
@@ -105,6 +136,7 @@ public:
 			player->sendSystemMessage("Syntax: /server playermanager [listjedi]");
 			player->sendSystemMessage("Syntax: /server playermanager [list_frsjedi]");
 			player->sendSystemMessage("Syntax: /server playermanager [listadmins]");
+			player->sendSystemMessage("Syntax: /server playermanager [setpersonalxpmode] [value 0-2]");
 		}
 	}
 };
