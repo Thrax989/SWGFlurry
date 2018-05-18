@@ -455,7 +455,7 @@ void SkillManager::awardForceFromSkills(CreatureObject* creature) {
 }
 
 void SkillManager::removeSkillRelatedMissions(CreatureObject* creature, Skill* skill) {
-	if(skill->getSkillName().hashCode() == STRING_HASHCODE("combat_bountyhunter_investigation_03")) {
+	if(skill->getSkillName().hashCode() == STRING_HASHCODE("combat_bountyhunter_investigation_03") || skill->getSkillName().hashCode() == STRING_HASHCODE("combat_meleebountyhunter_investigation_03")) {
 		ManagedReference<ZoneServer*> zoneServer = creature->getZoneServer();
 		if(zoneServer != NULL) {
 			ManagedReference<MissionManager*> missionManager = zoneServer->getMissionManager();
