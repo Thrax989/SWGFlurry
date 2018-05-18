@@ -235,7 +235,8 @@ object_tangible_wearables_armor_armor_jedi_belt_01 = object_tangible_wearables_a
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 4},
 	
-	certificationsRequired = {"force_title_jedi_rank_02"},
+	certificationsRequired = { "force_title_jedi_rank_02",
+					"combat_jedi_novice" },
 
 }
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_armor_jedi_belt_01, "object/tangible/wearables/armor/armor_jedi_belt_01.iff")

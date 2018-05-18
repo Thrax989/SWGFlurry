@@ -42,9 +42,6 @@
 
 
 object_tangible_wearables_robe_robe_jedi_padawan = object_tangible_wearables_robe_shared_robe_jedi_padawan:new {
-
-	certificationsRequired = { "force_title_jedi_rank_02",
-				"combat_jedi_novice" },
 	
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
