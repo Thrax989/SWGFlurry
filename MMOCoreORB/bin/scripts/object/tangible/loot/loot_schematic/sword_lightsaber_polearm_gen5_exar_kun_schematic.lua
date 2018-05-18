@@ -3,7 +3,8 @@ object_tangible_loot_loot_schematic_sword_lightsaber_polearm_gen5_exar_kun_schem
 templateType = LOOTSCHEMATIC,
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
-	requiredSkill = "force_discipline_light_saber_master",
+	requiredSkill = { "force_discipline_light_saber_master",
+					"combat_jedi_novice" },
 	targetDraftSchematic = "object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen5_exar_kun.iff",
 	targetUseCount = 1,
 	noTrade = 1
