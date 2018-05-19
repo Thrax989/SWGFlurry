@@ -95,15 +95,15 @@ public:
 				sendSyntax(player);
 				return 1;
 			}
-			ManagedReference<SceneObject* > object = server->getZoneServer()->getObject(target);
+			ManagedReference<SceneObject* > object = creature->getZoneServer()->getObject(target);
 			ManagedReference<CreatureObject*> xpModTarget = NULL;
 			
 			if(object == NULL || !object->isPlayerCreature()) {
 
 				String firstName;
-				if(args.hasMoreTokens()) {
-					args.getStringToken(firstName);
-					xpModTarget = server->getZoneServer()->getPlayerManager()->getPlayer(firstName);
+				if(tokenizer.hasMoreTokens()) {
+					tokenizer.getStringToken(firstName);
+					xpModTarget = playerManager->getPlayer(firstName);
 				}
 
 			}else {
