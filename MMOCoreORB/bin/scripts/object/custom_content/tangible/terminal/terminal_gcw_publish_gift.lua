@@ -96,6 +96,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Mos Espa Shuttle West (1,000 Credits)", "mos_espa_shuttleport_west_travel",
 			"Mos Espa Starport (1,000 Credits)", "mos_espa_starport_travel",
 			"Player City - Decatur (1,000 Credits)", "pc_decatur_travel",
+			"Player City - Shadow Falls (1,000 Credits)", "pc_shadowfalls_travel",
 		   },
 		 	"yavin4",
 		   {
