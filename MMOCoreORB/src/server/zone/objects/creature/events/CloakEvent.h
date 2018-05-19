@@ -90,7 +90,7 @@ public:
                 player->sendSystemMessage("You cannot maintain your cloak here.");
             }
             else if (!hasResourcesForCloak()) {
-                player->sendSystemMessage("You lack the force needed to maintain your cloak.");
+                player->sendSystemMessage("You lack the strength needed to maintain your cloak.");
             }
             else if (player->isInCombat() || receivedDamage) {
                 player->sendSystemMessage("You cannot maintain your cloak in combat!");
@@ -202,7 +202,7 @@ protected:
         player->inflictDamage(player, CreatureAttribute::ACTION, 400, true);
 
         if (cloakApplied) {
-            player->sendSystemMessage("Your strength drains to keep you hidden");
+            player->sendSystemMessage("Your energy drains to keep you hidden");
         }
     }
 
