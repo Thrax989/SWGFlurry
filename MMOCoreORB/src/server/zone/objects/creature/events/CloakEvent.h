@@ -67,7 +67,7 @@ public:
 
         if (!cloakApplied) {
             if (!canApplyCloak()) {
-                player->sendSystemMessage("Your cloak could not be applied!");
+                player->sendSystemMessage("cloak could not be applied!");
                 return;
             }
 
@@ -90,7 +90,7 @@ public:
                 player->sendSystemMessage("You cannot maintain your cloak here.");
             }
             else if (!hasResourcesForCloak()) {
-                player->sendSystemMessage("You lack the strength needed to maintain your cloak.");
+                player->sendSystemMessage("You lack the force needed to maintain your cloak.");
             }
             else if (player->isInCombat() || receivedDamage) {
                 player->sendSystemMessage("You cannot maintain your cloak in combat!");
@@ -114,7 +114,7 @@ public:
         receivedDamage = true;
 
         if (!cloakApplied) {
-            player->sendSystemMessage("Your cloak could not be applied!");
+            player->sendSystemMessage("cloak could not be applied!");
         }
 
         // removeCloak handles some task cancellation, so we want to call it regardless
@@ -137,10 +137,17 @@ public:
 		} else {
 			closeVector->safeCopyTo(closeObjects);
 	}
+
+	for (int i = 0; i < closeObjects.size(); i++) {
+		SceneObject* targetObject = static_cast<SceneObject*>(closeObjects.get(i));
+		
+			if (targetObject != NULL && !targetObject->isBuildingObject())
+				targetObject->notifyDissapear(player);
+	}
         PlayClientEffectLoc* cloakLoc = new PlayClientEffectLoc(getClientEffect(), player->getZone()->getZoneName(), player->getPositionX(), player->getPositionZ(), player->getPositionY());
         player->broadcastMessage(cloakLoc, true);
 
-        player->sendSystemMessage("You cloak has been applied.  You vanish from sight.");
+        player->sendSystemMessage("cloak has been applied");
 
         cloakApplied = true;
     }
@@ -166,13 +173,20 @@ public:
 		} else {
 			closeVector->safeCopyTo(closeObjects);
 	}
+
+	for (int i = 0; i < closeObjects.size(); i++) {
+		SceneObject* targetObject = static_cast<SceneObject*>(closeObjects.get(i));
+		
+			if (targetObject != NULL && !targetObject->isBuildingObject())
+				targetObject->notifyInsert(player);
+	}
         PlayClientEffectLoc* cloakdropLoc = new PlayClientEffectLoc(getClientEffect(), player->getZone()->getZoneName(), player->getPositionX(), player->getPositionZ(), player->getPositionY());
         player->broadcastMessage(cloakdropLoc, true);
 
         UpdateTransformMessage* msg = new UpdateTransformMessage(player);
         player->broadcastMessage(msg, true);
 
-        player->sendSystemMessage("You cloak has been removed.  You are revealed to all.");
+        player->sendSystemMessage("Your cloak has been removed");
 
         cloakApplied = false;
     }
@@ -188,7 +202,7 @@ protected:
         player->inflictDamage(player, CreatureAttribute::ACTION, 400, true);
 
         if (cloakApplied) {
-            player->sendSystemMessage("Your energy drains to stay hidden");
+            player->sendSystemMessage("Your strength drains to keep you hidden");
         }
     }
 
