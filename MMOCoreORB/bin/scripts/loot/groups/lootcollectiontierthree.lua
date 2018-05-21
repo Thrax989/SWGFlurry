@@ -9,16 +9,12 @@ lootcollectiontierthree  = {
 		--Fill to 25%
 		{groupTemplate = "junk", weight = 100000},
 		{groupTemplate = "goggles_all", weight = 300000},
-		{groupTemplate = "death_watch_bunker_ingredient_binary", weight = 200000},
-		{groupTemplate = "death_watch_bunker_ingredient_protective", weight = 200000},
+		{groupTemplate = "death_watch_bunker_ingredient_binary", weight = 400000},
+		{groupTemplate = "death_watch_bunker_ingredient_protective", weight = 400000},
 		{groupTemplate = "acklay", weight = 500000},
 		{groupTemplate = "imppoints", weight = 250000},
 		{groupTemplate = "custom_vehicle_rare", weight = 300000},		
 		{groupTemplate = "rebpoints", weight = 250000},
-		{groupTemplate = "ls_gen5_group", weight = 400000},
-
-
-
 
 		--Fill to 25%
 		{groupTemplate = "backpacks_b01", weight = 250000},
@@ -28,8 +24,6 @@ lootcollectiontierthree  = {
 		{groupTemplate = "blacksun_rare", weight = 500000},
 		{groupTemplate = "giant_dune_kimo_common", weight = 350000},
 		{groupTemplate = "gurk_king_common", weight = 300000},
-
-		
 
 		--Fill to 25%
 		{groupTemplate = "crystal_kuns_blood", weight = 150000},
@@ -52,7 +46,6 @@ lootcollectiontierthree  = {
 		{groupTemplate = "jedi_robe_gray_01_group", weight = 200000},
 		{groupTemplate = "jedi_robe_gray_02_group", weight = 500000},
 		{groupTemplate = "theme_park_reward_imperial_kaja", weight = 400000},
-	
 	}
 }
 
