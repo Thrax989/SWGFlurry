@@ -172,7 +172,6 @@ public:
 			if (height > 0 && height != 0.9)
 			scaleTarget->setHeight(height, true);
 
-			//player->sendSystemMessage("Scale adjusted");
 			player->sendSystemMessage("Scale set to " + String::valueOf(height) + " for " + playerName);
 
 		} else {
