@@ -169,7 +169,18 @@ public:
 			float height = tokenizer.getFloatToken();
  			String playerName = creature->getFirstName();
  			
-			if (height > 0 && height != 0.9)
+			if (tokenizer.hasMoreTokens())
+			height = tokenizer.getFloatToken();
+
+			if (height < 0.f)
+				height = 1.f;
+
+
+			if (height > 50.f)
+				height = 50.f;
+
+ 			
+			if (height > 0.f)
 			scaleTarget->setHeight(height, true);
 
 			player->sendSystemMessage("Scale set to " + String::valueOf(height) + " for " + playerName);
@@ -190,7 +201,7 @@ public:
 			player->sendSystemMessage("Syntax: /server playermanager [list_frsjedi]");
 			player->sendSystemMessage("Syntax: /server playermanager [listadmins]");
 			player->sendSystemMessage("Syntax: /server playermanager [setpersonalxpmode] [player first name] [value 0-2]");
-			player->sendSystemMessage("Syntax: /server playermanager [setscale] [player first name] [value 1-50]");
+			player->sendSystemMessage("Syntax: /server playermanager [setscale] [player first name] [value 0.1-50.0]");
 		}
 	}
 };
