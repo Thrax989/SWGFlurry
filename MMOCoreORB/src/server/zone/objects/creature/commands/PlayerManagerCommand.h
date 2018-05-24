@@ -95,31 +95,95 @@ public:
 				sendSyntax(player);
 				return 1;
 			}
+			ManagedReference<SceneObject* > object = creature->getZoneServer()->getObject(target);
+			ManagedReference<CreatureObject*> xpModTarget = NULL;
+			
+			if(object == NULL || !object->isPlayerCreature()) {
 
+				String firstName;
+				if(tokenizer.hasMoreTokens()) {
+					tokenizer.getStringToken(firstName);
+					xpModTarget = playerManager->getPlayer(firstName);
+				}
+
+			}else {
+				xpModTarget = cast<CreatureObject*>( object.get());
+			}
+			
+			if (!tokenizer.hasMoreTokens()) {
+				sendSyntax(player);
+				return 1;
+			}
+			
 			int option = tokenizer.getIntToken();
 
 			switch (option) {
 
         			case 1:
-					creature->setSelectedExpMode(2);
-					creature->setPersonalExpMultiplier(5.0);
+					xpModTarget->setSelectedExpMode(2);
+					xpModTarget->setPersonalExpMultiplier(5.0);
 				break;
 
 				case 2:
-					creature->setSelectedExpMode(3);
-					creature->setPersonalExpMultiplier(10.0);
+					xpModTarget->setSelectedExpMode(3);
+					xpModTarget->setPersonalExpMultiplier(10.0);
 				break;
           
         			default:
-					creature->setSelectedExpMode(1);
-					creature->setPersonalExpMultiplier(1.0);
+					xpModTarget->setSelectedExpMode(1);
+					xpModTarget->setPersonalExpMultiplier(1.0);
 				break;
 			}
 
 			StringBuffer message;
-			message << "Personal experience now set to " << creature->getPersonalExpMultiplier() << "x";
+			message << "Personal experience now set to " << xpModTarget->getPersonalExpMultiplier() << "x";
 
 			player->sendSystemMessage(message.toString());
+
+		} else if (command == "setscale") {
+			if (!tokenizer.hasMoreTokens()) {
+				sendSyntax(player);
+				return 1;
+			}
+
+			ManagedReference<SceneObject* > object = creature->getZoneServer()->getObject(target);
+			ManagedReference<CreatureObject*> scaleTarget = NULL;
+			
+			if(object == NULL || !object->isPlayerCreature()) {
+
+				String firstName;
+				if(tokenizer.hasMoreTokens()) {
+					tokenizer.getStringToken(firstName);
+					scaleTarget = playerManager->getPlayer(firstName);
+				}
+
+			}else {
+				scaleTarget = cast<CreatureObject*>( object.get());
+			}
+			
+			if (!tokenizer.hasMoreTokens()) {
+				sendSyntax(player);
+				return 1;
+			}
+			
+			float height = tokenizer.getFloatToken();
+ 			String playerName = creature->getFirstName();
+ 			
+			if (tokenizer.hasMoreTokens())
+			height = tokenizer.getFloatToken();
+
+			if (height < 0.f)
+				height = 1.f;
+
+
+			if (height > 50.f)
+				height = 50.f;
+
+ 			
+			if (height > 0.f)
+			scaleTarget->setHeight(height, true);
+
+			player->sendSystemMessage("Scale set to " + String::valueOf(height) + " for " + playerName);
 
 		} else {
 			sendSyntax(player);
@@ -136,7 +200,8 @@ public:
 			player->sendSystemMessage("Syntax: /server playermanager [listjedi]");
 			player->sendSystemMessage("Syntax: /server playermanager [list_frsjedi]");
 			player->sendSystemMessage("Syntax: /server playermanager [listadmins]");
-			player->sendSystemMessage("Syntax: /server playermanager [setpersonalxpmode] [value 0-2]");
+			player->sendSystemMessage("Syntax: /server playermanager [setpersonalxpmode] [player first name] [value 0-2]");
+			player->sendSystemMessage("Syntax: /server playermanager [setscale] [player first name] [value 0.1-50.0]");
 		}
 	}
 };

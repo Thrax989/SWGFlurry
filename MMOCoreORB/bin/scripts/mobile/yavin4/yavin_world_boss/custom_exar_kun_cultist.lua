@@ -1,7 +1,7 @@
 custom_exar_kun_cultist = Creature:new {
 	customName = "Possessed Cultist",
-	socialGroup = "",
-	faction = "",
+	socialGroup = "townsperson",
+	faction = "townsperson",
 	level = 1,
 	chanceHit = 1,
 	damageMin = 1,

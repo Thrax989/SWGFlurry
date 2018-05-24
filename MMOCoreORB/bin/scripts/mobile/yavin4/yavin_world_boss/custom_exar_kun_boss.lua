@@ -1,7 +1,7 @@
 custom_exar_kun_boss = Creature:new {
 	customName = "Shadow of Exar Kun",
-	socialGroup = "",
-	pvpFaction = "",
+	socialGroup = "townsperson",
+	pvpFaction = "townsperson",
 	faction = "",
 	level = 300,
 	chanceHit = 25.00,

@@ -25,7 +25,7 @@ public:
 
         CreatureObject* player = cast<CreatureObject*>(creature);
 
-        if (!creature->hasSkill("force_discipline_powers_master"))
+        if (!creature->hasSkill("force_rank_gray_master"))
             return GENERALERROR;
 
         int nSkill = 0;
