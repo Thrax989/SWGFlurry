@@ -27,18 +27,18 @@ void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectM
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 	     menuResponse->addRadialMenuItem(213, 3, "Broadcast Server Message LFG"); //SERVER BROADCAST LFG
-		//menuResponse->addRadialMenuItem(214, 3, "Mini Boss 2"); //MINI BOSS ENCOUNTER 2
-		//menuResponse->addRadialMenuItem(215, 3, "Mini Boss 3"); //MINI BOSS ENCOUNTER 3
-		//menuResponse->addRadialMenuItem(216, 3, "Mini Boss 4"); //MINI BOSS ENCOUNTER 4
-		//menuResponse->addRadialMenuItem(217, 3, "Heroic Boss Instances");
-		//menuResponse->addRadialMenuItemToRadialID(217, 221, 3, "Exar Kun Tomb"); //BOSS ENCOUNTER 1
-		//menuResponse->addRadialMenuItemToRadialID(217, 222, 3, "Avatar Platform"); //BOSS ENCOTUNER 2
-		//menuResponse->addRadialMenuItemToRadialID(217, 223, 3, "Hoth Echo Base"); //BOSS ENCOUNTER 3
-		//menuResponse->addRadialMenuItemToRadialID(217, 224, 3, "IG-88"); //BOSS ENCOUNTER 4
-		//menuResponse->addRadialMenuItemToRadialID(217, 225, 3, "Imperial Star Destroyer"); //BOSS ENCOUNTER 5
-		//menuResponse->addRadialMenuItemToRadialID(217, 226, 3, "Myyydril"); //BOSS ENCOUNTER 6
-		//menuResponse->addRadialMenuItemToRadialID(217, 227, 3, "NightSister Queen"); //BOSS ENCOUNTER 7
-		//menuResponse->addRadialMenuItemToRadialID(217, 228, 3, "Rogue Star Destroyer"); //BOSS ENCOUNTER 8
+		menuResponse->addRadialMenuItem(214, 3, "Mini Boss 2"); //MINI BOSS ENCOUNTER 2
+		menuResponse->addRadialMenuItem(215, 3, "Mini Boss 3"); //MINI BOSS ENCOUNTER 3
+		menuResponse->addRadialMenuItem(216, 3, "Mini Boss 4"); //MINI BOSS ENCOUNTER 4
+		menuResponse->addRadialMenuItem(217, 3, "Heroic Boss Instances");
+		menuResponse->addRadialMenuItemToRadialID(217, 221, 3, "Exar Kun Tomb"); //BOSS ENCOUNTER 1
+		menuResponse->addRadialMenuItemToRadialID(217, 222, 3, "Avatar Platform"); //BOSS ENCOTUNER 2
+		menuResponse->addRadialMenuItemToRadialID(217, 223, 3, "Hoth Echo Base"); //BOSS ENCOUNTER 3
+		menuResponse->addRadialMenuItemToRadialID(217, 224, 3, "IG-88"); //BOSS ENCOUNTER 4
+		menuResponse->addRadialMenuItemToRadialID(217, 225, 3, "Imperial Star Destroyer"); //BOSS ENCOUNTER 5
+		menuResponse->addRadialMenuItemToRadialID(217, 226, 3, "Myyydril"); //BOSS ENCOUNTER 6
+		menuResponse->addRadialMenuItemToRadialID(217, 227, 3, "NightSister Queen"); //BOSS ENCOUNTER 7
+		menuResponse->addRadialMenuItemToRadialID(217, 228, 3, "Rogue Star Destroyer"); //BOSS ENCOUNTER 8
 }
 int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID == 213) {
@@ -54,8 +54,8 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
   			creature->sendSystemMessage(stringId);
   			        return 0;
   		       }
-				if (!creature->isInCombat()) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		if (!creature->isInCombat()) {
+		    ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 			//Broadcast to Server
  			String playerName = creature->getFirstName();
  			StringBuffer zBroadcast;
@@ -72,14 +72,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+								ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
 		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
 		                        creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
+								box->setForceCloseDistance(5.f);
 				   }
 
 		if (group != NULL) {
@@ -88,7 +88,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
-		                                groupedCreature->switchZone("corellia", 0, 0, 0);
+		                groupedCreature->switchZone("corellia", 0, 0, 0);
 						locker.release();
 				}
 			}
@@ -101,14 +101,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+								ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
 		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
 		                        creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
+								box->setForceCloseDistance(5.f);
 				   }
 
 		if (group != NULL) {
@@ -117,7 +117,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
-		                                groupedCreature->switchZone("corellia", 0, 0, 0);
+		                groupedCreature->switchZone("corellia", 0, 0, 0);
 						locker.release();
 				}
 			}
@@ -130,14 +130,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+								ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
 		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
 		                        creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
+								box->setForceCloseDistance(5.f);
 				   }
 
 		if (group != NULL) {
@@ -146,7 +146,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
-		                                groupedCreature->switchZone("corellia", 0, 0, 0);
+		                groupedCreature->switchZone("corellia", 0, 0, 0);
 						locker.release();
 				}
 			}
@@ -159,14 +159,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+								ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
 		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
 		                        creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
+								box->setForceCloseDistance(5.f);
 				   }
 
 		if (group != NULL) {
@@ -175,7 +175,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
-		                                groupedCreature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
+		                groupedCreature->switchZone("dungeon2", -11.5, 0.2, -121.8, 14200872);
 						locker.release();
 				}
 			}
@@ -188,14 +188,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+								ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
 		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
 		                        creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
+								box->setForceCloseDistance(5.f);
 				   }
 
 		if (group != NULL) {
@@ -204,7 +204,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
-		                                groupedCreature->switchZone("dungeon2", 6193, 250, -5978, 0);
+		                groupedCreature->switchZone("dungeon2", 6193, 250, -5978, 0);
 						locker.release();
 				}
 			}
@@ -217,14 +217,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+								ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
 		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
 		                        creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
+								box->setForceCloseDistance(5.f);
 				   }
 
 		if (group != NULL) {
@@ -233,7 +233,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
-		                                groupedCreature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
+		                groupedCreature->switchZone("dungeon2", 89.1, -14.7, 300.1, 14201134);
 						locker.release();
 				}
 			}
@@ -246,14 +246,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+								ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
 		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
 		                        creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
+								box->setForceCloseDistance(5.f);
 				   }
 
 		if (group != NULL) {
@@ -262,7 +262,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
-		                                groupedCreature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
+		                groupedCreature->switchZone("dungeon2", 0.1, 0.0, 42.2, 14200863);
 						locker.release();
 				}
 			}
@@ -275,14 +275,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+								ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
 		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
 		                        creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
+								box->setForceCloseDistance(5.f);
 				   }
 
 		if (group != NULL) {
@@ -291,7 +291,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
-		                                groupedCreature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
+		                groupedCreature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
 						locker.release();
 				}
 			}
@@ -304,14 +304,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+								ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
 		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
 		                        creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
+								box->setForceCloseDistance(5.f);
 				   }
 
 		if (group != NULL) {
@@ -320,7 +320,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
-		                                groupedCreature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
+		                groupedCreature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
 						locker.release();
 				}
 			}
@@ -333,14 +333,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+								ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
 		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
 		                        creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
+								box->setForceCloseDistance(5.f);
 				   }
 
 		if (group != NULL) {
@@ -349,7 +349,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
-		                                groupedCreature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
+		                groupedCreature->switchZone("dungeon2", 19.3, 0.1, 0.5, 14201104);
 						locker.release();
 				}
 			}
@@ -362,14 +362,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+								ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                        box->setPromptTitle("Dungeon Teleport Rules");
 		                        box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)All party members must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
 		                        box->setOkButton(true, "@cancel");
 		                        box->setUsingObject(creature);
 		                        creature->getPlayerObject()->addSuiBox(box);
 		                        creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
+								box->setForceCloseDistance(5.f);
 				   }
 
 		if (group != NULL) {
