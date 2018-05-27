@@ -12,6 +12,11 @@
 #include "templates/tangible/SharedStructureObjectTemplate.h"
 #include "templates/manager/TemplateManager.h"
 #include "server/zone/managers/components/ComponentManager.h"
+#include "server/zone/packets/object/ObjectMenuResponse.h"
+#include "server/zone/managers/structure/StructureManager.h"
+#include "server/zone/objects/tangible/deed/Deed.h"
+#include "server/zone/objects/tangible/deed/structure/StructureDeed.h"
+#include "server/zone/ZoneServer.h"
 
 void StructureDeedImplementation::initializeTransientMembers() {
 	DeedImplementation::initializeTransientMembers();
@@ -22,6 +27,13 @@ void StructureDeedImplementation::initializeTransientMembers() {
 		placeStructureComponent = ComponentManager::instance()->getComponent<PlaceStructureComponent*>(templ->getStructurePlacementComponent());
 
 	setLoggingName("StructureDeed");
+}
+
+void StructureDeedImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
+	if (player->getParent() == NULL) {	
+		menuResponse->addRadialMenuItem(73, 3, "Ruler");
+			menuResponse->addRadialMenuItemToRadialID(73, 70, 3, "Ruler");  
+	}
 }
 
 int StructureDeedImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
@@ -36,6 +48,17 @@ int StructureDeedImplementation::handleObjectMenuSelect(CreatureObject* player, 
 		return 0;
 	}
 
+	if (selectedID == 73) {
+		player->sendSystemMessage("Ruler");
+	}
+
+	if (selectedID == 70) {
+		player->sendSystemMessage("The ruler will display the direction you are facing.");
+		
+		// Execute client effect
+		String emoteEffectPath = "clienteffect/ruler.cef";
+		player->playEffect( emoteEffectPath, "" ); 
+	}
 	return DeedImplementation::handleObjectMenuSelect(player, selectedID);
 }
 
