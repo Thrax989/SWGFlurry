@@ -117,4 +117,5 @@ if (((bossHealth <= (bossMaxHealth * 0.0001)) or (bossAction <= (bossMaxAction *
         end
       end
    return 0
+  end
 end
