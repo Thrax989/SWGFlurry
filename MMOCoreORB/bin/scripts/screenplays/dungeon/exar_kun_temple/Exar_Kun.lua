@@ -5,11 +5,17 @@
 
 exar_kun = ScreenPlay:new {
   numberOfActs = 1,
+  debris = {
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = -15.5567, z = 0.242093, y = -94.4686, cell = 14200872 },
+	{ template = "object/static/destructible/destructible_tato_drum_dented.iff", x = -7.85724, z = 0.241319, y = -94.6849, cell = 14200872 }
+  },
   questString = "exar_kun",
   questdata = Object:new {
   activePlayerName = "initial",
   }
 }
+
+
 -------------------------------------------------------------
 --   Register Screenplay to planet Dungeon 2 exar kun temple
 -------------------------------------------------------------
@@ -23,7 +29,19 @@ function exar_kun:start()
 if (isZoneEnabled("dungeon2")) then
   self:spawnMobiles()
   self:spawnActiveAreas()
+  self:spawnSceneObjects()
   end
+end
+
+function exar_kun:spawnSceneObjects()
+	for i = 1, 2, 1 do
+		local debrisData = self.debris[i]
+		local pDebris = spawnSceneObject("dungeon2", debrisData.template, debrisData.x, debrisData.z, debrisData.y, debrisData.cell, 1, 0, 0, 0)
+		if (pDebris ~= nil) then
+			writeData(SceneObject(pDebris):getObjectID() .. ":exar_kun:debris_index", i)
+			createObserver(OBJECTDESTRUCTION, "exar_kun", "notifyDebrisDestroyed", pDebris)
+		end
+	end
 end
 --------------------------------------------------
 --   spawn mouse droid when droid dies spawn boss
@@ -124,11 +142,11 @@ end
 --   Added Active Area Check for server wide broadcasting, Entering/Exiting active boss zone
 --------------------------------------------------------------------------------------------
 function exar_kun:spawnActiveAreas()
-local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", 0, 0, 0, 0, 0, 0, 0, 0)
+local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", 5, 0, 1993, 0, 0, 0, 0, 0)
 if (pSpawnArea ~= nil) then
 local activeArea = LuaActiveArea(pSpawnArea)
           activeArea:setCellObjectID(0)
-          activeArea:setRadius(0)
+          activeArea:setRadius(120)
           createObserver(ENTEREDAREA, "exar_kun", "notifySpawnArea", pSpawnArea)
           createObserver(EXITEDAREA, "exar_kun", "notifySpawnAreaLeave", pSpawnArea)
     end
@@ -162,4 +180,31 @@ if (player:isImperial() or player:isNeutral() or player:isRebel()) then
       end
     return 0
   end)
+end
+
+function exar_kun:respawnDebris(pDebris)
+	if (pDebris == nil) then
+		return
+	end
+
+	TangibleObject(pDebris):setConditionDamage(0, false)
+	local debrisData = self.debris[readData(SceneObject(pDebris):getObjectID() .. ":exar_kun:debris_index")]
+
+	local pCell = getSceneObject(debrisData.cell)
+
+	if (pCell ~= nil) then
+		SceneObject(pCell):transferObject(pDebris, -1, true)
+	end
+end
+
+function exar_kun:notifyDebrisDestroyed(pDebris, pPlayer)
+	if (pPlayer == nil or pDebris == nil) then
+		return 0
+	end
+
+	createEvent(240000, "exar_kun", "respawnDebris", pDebris, "")
+	SceneObject(pDebris):destroyObjectFromWorld()
+
+	CreatureObject(pPlayer):clearCombatState(1)
+	return 0
 end
