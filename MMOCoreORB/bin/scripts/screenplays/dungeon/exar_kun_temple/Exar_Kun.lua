@@ -22,14 +22,14 @@ local ObjectManager = require("managers.object.object_manager")  --print("Object
 function exar_kun:start()
 if (isZoneEnabled("dungeon2")) then
   self:spawnMobiles()
-  self:spawnActiveAreas()
+  --self:spawnActiveAreas()
   end
 end
 --------------------------------------------------
 --   spawn mouse droid when droid dies spawn boss
 --------------------------------------------------
 function exar_kun:spawnMobiles()
-local pTrigger = spawnMobile("dungeon2", "mouse_droid", 86400, -0.0547165, 0.0315461, 10.281, 8, 14200863)--24 hour respawn to start the boss
+local pTrigger = spawnMobile("dungeon2", "exar_kun_cultist", 86400, -0.0547165, 0.0315461, 10.281, 8, 14200863)--24 hour respawn to start the boss
 if (pTrigger ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "exar_kun", "notifyTriggerDead", pTrigger)
 end
@@ -40,11 +40,11 @@ end
 --  active boss once mouse droid dies
 --------------------------------------
 function exar_kun:notifyTriggerDead(pTrigger, pPlayer)
-local pBoss = spawnMobile("dungeon2", "mouse_droid", 0, -0.0547165, 0.0315461, 10.281, 8, 14200863)
+local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", 0, -0.0547165, 0.0315461, 10.281, 8, 14200863)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
     ObjectManager.withCreatureObject(pBoss, function(oBoss)
     writeData("exar_kun:spawnState", 1)
-    writeData("exar_kun", oBoss:getObjectID())
+    writeData("exarkun", oBoss:getObjectID())
     spatialChat(pBoss, "Intruder Alert Activating Defense Systems")
     createObserver(DAMAGERECEIVED,"exar_kun","boss_damage", pBoss)
 end)
@@ -100,22 +100,23 @@ if (((bossHealth <= (bossMaxHealth *0.5)) or (bossAction <= (bossMaxAction * 0.5
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 50%")
       writeData("exar_kun:spawnState",2)
-      local oAdd = spawnMobile("dungeon2", "mouse_droid", 0, 30.1609, 0.0315462, 41.5876, 216, 14200863)
+      local oAdd = spawnMobile("dungeon2", "exar_kun_cultist", 0, 30.1609, 0.0315462, 41.5876, 216, 14200863)
       spatialChat(oAdd, "target locked")
-      local oAdd = spawnMobile("dungeon2", "mouse_droid", 0, 32.5711, 0.0315456, 9.91512, 271, 14200863)
+      local oAdd = spawnMobile("dungeon2", "exar_kun_cultist", 0, 32.5711, 0.0315456, 9.91512, 271, 14200863)
       spatialChat(oAdd, "target locked")
       ObjectManager.withCreatureObject(oAdd, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
-end)
+			end)
+		end	
 --------------------------------------------
 --   check for death
 --------------------------------------------
-if (((bossHealth <= (bossMaxHealth * 0.0001)) or (bossAction <= (bossMaxAction * 0.0001)) or (bossMind <= (bossMaxMind * 0.0001))) and readData("exar_kun:spawnState") == 2) then
-      spatialChat(pBoss, "uuuuughh!.")
-      CreatureObject(pBoss):broadcastToServer("\\#63C8F9 A Group Has Cleared The Dungeon! Next Boss Encounter will be Avalible in 1 hour!.")
+if (((bossHealth <= (bossMaxHealth * 0.01)) or (bossAction <= (bossMaxAction * 0.01)) or (bossMind <= (bossMaxMind * 0.01))) and readData("exar_kun:spawnState") == 2) then
+      spatialChat(pBoss, "We shall meet again uggggh!.")
+      CreatureObject(pBoss):broadcastToServer("\\#63C8F9 A Group Has Cleared The Exar Kun Temple Dungeon! Next Boss Encounter will be Avalible in 1 hour!.")
+            writeData("exar_kun:spawnState",3)
         end
       end
    return 0
-  end
 end
