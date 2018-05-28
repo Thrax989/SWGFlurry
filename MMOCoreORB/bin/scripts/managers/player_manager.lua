@@ -128,6 +128,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/harvester.iff", milestone=150, oneTime=true, description="@veteran_new:poweredharvester"},
 	
 		-- 180 Day Rewards
+		{templateFile = "object/tangible/veteran_reward/resource.iff", milestone=180, oneTime=true, description="@veteran_new:resourcecrate"},
 		{templateFile = "object/tangible/furniture/modern/bar_counter_s1.iff", milestone=180, oneTime=false, description="Bar Countertop"},
 		{templateFile = "object/tangible/furniture/modern/bar_piece_curve_s1.iff", milestone=180, oneTime=false, description="Bar Countertop (Curved, Style 1)"},
 		{templateFile = "object/tangible/furniture/modern/bar_piece_curve_s2.iff", milestone=180, oneTime=false, description="Bar Countertop (Curved, Style 2)"},
