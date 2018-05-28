@@ -10,7 +10,15 @@ exar_kun = ScreenPlay:new {
 	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = -7.85724, z = 0.241319, y = -94.6849, cell = 14200872 },
 	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 16.9549, z = 0, y = -56.8341, cell = 14200874 },
 	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 17.9766, z = 1.12179e-07, y = -65.0508, cell = 14200874 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 18.7983, z = -4.99223e-09, y = -71.5485, cell = 14200874 }
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 18.7983, z = -4.99223e-09, y = -71.5485, cell = 14200874 },
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 20.2718, z = -6.94268e-08, y = 56.1132, cell = 14200878 },
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 10.7234, z = -2.04994e-09, y = 55.8223, cell = 14200878 },
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 2.61241, z = -0.189507, y = 47.9296, cell = 14200877 },
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 2.72841, z = -0.189507, y = 41.964, cell = 14200877 },
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = -25.153, z = -0.351635, y = -24.125, cell = 14200876 },
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = -24.0239, z = -0.260338, y = -15.4308, cell = 14200876 },
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 34.944, z = -0.00688931, y = 6.12628, cell = 14200874 },
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 35.3728, z = -0.00118172, y = -3.25763, cell = 14200874 }
   },
   questString = "exar_kun",
   questdata = Object:new {
@@ -37,7 +45,7 @@ if (isZoneEnabled("dungeon2")) then
 end
 
 function exar_kun:spawnSceneObjects()
-	for i = 1, 5, 1 do
+	for i = 1, 15, 1 do
 		local debrisData = self.debris[i]
 		local pDebris = spawnSceneObject("dungeon2", debrisData.template, debrisData.x, debrisData.z, debrisData.y, debrisData.cell, 1, 0, 0, 0)
 		if (pDebris ~= nil) then
@@ -205,7 +213,7 @@ function exar_kun:notifyDebrisDestroyed(pDebris, pPlayer)
 		return 0
 	end
 
-	createEvent(240000, "exar_kun", "respawnDebris", pDebris, "")
+	createEvent(60000, "exar_kun", "respawnDebris", pDebris, "")
 	SceneObject(pDebris):destroyObjectFromWorld()
 
 	CreatureObject(pPlayer):clearCombatState(1)
