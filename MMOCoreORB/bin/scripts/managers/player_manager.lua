@@ -103,7 +103,6 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/frn_vet_darth_vader_toy.iff", milestone=45, oneTime=false, description="@veteran_new:mini_darthvader"},
 		
 		-- 90 Day Rewards
-		{templateFile = "object/tangible/veteran_reward/resource.iff", milestone=90, oneTime=true, description="@veteran_new:resourcecrate"},
 		{templateFile = "object/tangible/veteran_reward/frn_tech_console_sectional_a.iff", milestone=90, oneTime=false, description="@veteran_new:techconsole_a"},
 		{templateFile = "object/tangible/veteran_reward/frn_tech_console_sectional_b.iff", milestone=90, oneTime=false, description="@veteran_new:techconsole_b"},
 		{templateFile = "object/tangible/veteran_reward/frn_tech_console_sectional_c.iff", milestone=90, oneTime=false, description="@veteran_new:techconsole_c"},
@@ -152,7 +151,6 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/frn_vet_carbonite_geonosian.iff", milestone=240, oneTime=false, description="Geonosian in Carbonite"},
 
 		-- 270 Day Rewards
-		{templateFile = "object/tangible/veteran_reward/resource.iff", milestone=270, oneTime=true, description="@veteran_new:resourcecrate"},
 		{templateFile = "object/tangible/loot/misc/loot_skull_bith.iff", milestone=270, oneTime=false, description="A Bith Skull"},
 		{templateFile = "object/tangible/loot/misc/loot_skull_human.iff", milestone=270, oneTime=false, description="A Human Skull"},
 		{templateFile = "object/tangible/loot/misc/loot_skull_ithorian.iff", milestone=270, oneTime=false, description="A Ithorian Skull"},
@@ -169,7 +167,6 @@ veteranRewards = {
 		{templateFile = "object/tangible/wearables/armor/nightsister/armor_nightsister_bicep_r_s01.iff", milestone=300, oneTime=true, description="Nightsister Melee Armguard"},
 
 		-- 365 Day Rewards
-		{templateFile = "object/tangible/veteran_reward/resource.iff", milestone=365, oneTime=true, description="@veteran_new:resourcecrate"},
 		{templateFile = "object/tangible/veteran_reward/one_year_anniversary/painting_01.iff", milestone=365, oneTime=false, description="Painting: Cast Wing in Flight"},
 		{templateFile = "object/tangible/veteran_reward/one_year_anniversary/painting_02.iff", milestone=365, oneTime=false, description="Painting: Decimator"},
 		{templateFile = "object/tangible/veteran_reward/one_year_anniversary/painting_03.iff", milestone=365, oneTime=false, description="Painting: Tatooine Dune Speeder"},
