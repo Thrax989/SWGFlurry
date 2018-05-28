@@ -22,7 +22,7 @@ local ObjectManager = require("managers.object.object_manager")  --print("Object
 function exar_kun:start()
 if (isZoneEnabled("dungeon2")) then
   self:spawnMobiles()
-  --self:spawnActiveAreas()
+  self:spawnActiveAreas()
   end
 end
 --------------------------------------------------
@@ -44,7 +44,7 @@ local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", 0, -0.0547165, 0.03154
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
     ObjectManager.withCreatureObject(pBoss, function(oBoss)
     writeData("exar_kun:spawnState", 1)
-    writeData("exarkun", oBoss:getObjectID())
+    writeData("exar_kun", oBoss:getObjectID())
     spatialChat(pBoss, "Intruder Alert Activating Defense Systems")
     createObserver(DAMAGERECEIVED,"exar_kun","boss_damage", pBoss)
 end)
@@ -109,9 +109,9 @@ if (((bossHealth <= (bossMaxHealth *0.5)) or (bossAction <= (bossMaxAction * 0.5
       ofirstTime:engageCombat(pPlayer)
 			end)
 		end	
---------------------------------------------
---   check for death
---------------------------------------------
+--------------------------------------------------------------------------------
+--   Check that the boss has died, Broadcast server wide, set state for players
+--------------------------------------------------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.01)) or (bossAction <= (bossMaxAction * 0.01)) or (bossMind <= (bossMaxMind * 0.01))) and readData("exar_kun:spawnState") == 2) then
       spatialChat(pBoss, "We shall meet again uggggh!.")
       CreatureObject(pBoss):broadcastToServer("\\#63C8F9 A Group Has Cleared The Exar Kun Temple Dungeon! Next Boss Encounter will be Avalible in 1 hour!.")
@@ -119,4 +119,47 @@ if (((bossHealth <= (bossMaxHealth * 0.01)) or (bossAction <= (bossMaxAction * 0
         end
       end
    return 0
+end
+--------------------------------------------------------------------------------------------
+--   Added Active Area Check for server wide broadcasting, Entering/Exiting active boss zone
+--------------------------------------------------------------------------------------------
+function exar_kun:spawnActiveAreas()
+local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", 0, 0, 0, 0, 0, 0, 0, 0)
+if (pSpawnArea ~= nil) then
+local activeArea = LuaActiveArea(pSpawnArea)
+          activeArea:setCellObjectID(0)
+          activeArea:setRadius(0)
+          createObserver(ENTEREDAREA, "exar_kun", "notifySpawnArea", pSpawnArea)
+          createObserver(EXITEDAREA, "exar_kun", "notifySpawnAreaLeave", pSpawnArea)
+    end
+end
+function exar_kun:notifySpawnArea(pActiveArea, pMovingObject, pBoss, pPlayer)
+if (not SceneObject(pMovingObject):isCreatureObject()) then
+  return 0
+end
+return ObjectManager.withCreatureObject(pMovingObject, function(player)
+    if (player:isAiAgent()) then
+    return 0
+end
+if (player:isImperial() or player:isNeutral() or player:isRebel()) then
+          player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has Entered The Exar Kun Temple Dungeon!")
+          player:sendSystemMessage("You Have Entered The Exar Kun Temple Dungeon!")
+          end
+      return 0
+  end)
+end
+function exar_kun:notifySpawnAreaLeave(pActiveArea, pMovingObject, pBoss, pPlayer)
+if (not SceneObject(pMovingObject):isCreatureObject()) then
+  return 0
+end
+  return ObjectManager.withCreatureObject(pMovingObject, function(player)
+if (player:isAiAgent()) then
+  return 0
+end
+if (player:isImperial() or player:isNeutral() or player:isRebel()) then
+      player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Exar Kun Temple Dungeon!")
+      player:sendSystemMessage("You Have Left The Exar Kun Temple Dungeon!")
+      end
+    return 0
+  end)
 end
