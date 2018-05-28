@@ -7,7 +7,10 @@ exar_kun = ScreenPlay:new {
   numberOfActs = 1,
   debris = {
 	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = -15.5567, z = 0.242093, y = -94.4686, cell = 14200872 },
-	{ template = "object/static/destructible/destructible_tato_drum_dented.iff", x = -7.85724, z = 0.241319, y = -94.6849, cell = 14200872 }
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = -7.85724, z = 0.241319, y = -94.6849, cell = 14200872 },
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 16.9549, z = 0, y = -56.8341, cell = 14200874 },
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 17.9766, z = 1.12179e-07, y = -65.0508, cell = 14200874 },
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 18.7983, z = -4.99223e-09, y = -71.5485, cell = 14200874 }
   },
   questString = "exar_kun",
   questdata = Object:new {
@@ -34,7 +37,7 @@ if (isZoneEnabled("dungeon2")) then
 end
 
 function exar_kun:spawnSceneObjects()
-	for i = 1, 2, 1 do
+	for i = 1, 5, 1 do
 		local debrisData = self.debris[i]
 		local pDebris = spawnSceneObject("dungeon2", debrisData.template, debrisData.x, debrisData.z, debrisData.y, debrisData.cell, 1, 0, 0, 0)
 		if (pDebris ~= nil) then
