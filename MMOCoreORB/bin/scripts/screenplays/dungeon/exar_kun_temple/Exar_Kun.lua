@@ -2,31 +2,17 @@
 --   Creator : TOXIC
 --   Date : 5/27/2018
 --------------------------------------
-
 exar_kun = ScreenPlay:new {
   numberOfActs = 1,
   debris = {
 	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = -15.5567, z = 0.242093, y = -94.4686, cell = 14200872 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = -7.85724, z = 0.241319, y = -94.6849, cell = 14200872 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 16.9549, z = 0, y = -56.8341, cell = 14200874 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 17.9766, z = 1.12179e-07, y = -65.0508, cell = 14200874 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 18.7983, z = -4.99223e-09, y = -71.5485, cell = 14200874 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 20.2718, z = -6.94268e-08, y = 56.1132, cell = 14200878 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 10.7234, z = -2.04994e-09, y = 55.8223, cell = 14200878 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 2.61241, z = -0.189507, y = 47.9296, cell = 14200877 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 2.72841, z = -0.189507, y = 41.964, cell = 14200877 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = -25.153, z = -0.351635, y = -24.125, cell = 14200876 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = -24.0239, z = -0.260338, y = -15.4308, cell = 14200876 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 34.944, z = -0.00688931, y = 6.12628, cell = 14200874 },
-	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = 35.3728, z = -0.00118172, y = -3.25763, cell = 14200874 }
+	{ template = "object/static/destructible/destructible_cave_wall_damprock.iff", x = -7.85724, z = 0.241319, y = -94.6849, cell = 14200872 }
   },
   questString = "exar_kun",
   questdata = Object:new {
   activePlayerName = "initial",
   }
 }
-
-
 -------------------------------------------------------------
 --   Register Screenplay to planet Dungeon 2 exar kun temple
 -------------------------------------------------------------
@@ -44,8 +30,54 @@ if (isZoneEnabled("dungeon2")) then
   end
 end
 
+function exar_kun:PatrolDestReached(pMobile)
+	if (pMobile == nil) then
+		return 0
+	end
+
+	local curLoc = readData(SceneObject(pMobile):getObjectID() .. ":currentLoc")
+
+	if (curLoc == 1) then
+		writeData(SceneObject(pMobile):getObjectID() .. ":currentLoc", 2)
+	else
+		writeData(SceneObject(pMobile):getObjectID() .. ":currentLoc", 1)
+	end
+
+	createEvent(getRandomNumber(350,450) * 100, "exar_kun", "droidPatrol", pMobile, "")
+
+	return 0
+end
+----------------------------------------------------
+--   spawns patrol point locations for patrol npc's
+----------------------------------------------------
+function exar_kun:npcPatrol(pMobile)
+	if (pMobile == nil) then
+		return
+	end
+
+	local name = readStringData(SceneObject(pMobile):getObjectID() .. ":name")
+	local curLoc = readData(SceneObject(pMobile):getObjectID() .. ":currentLoc")
+	local nextLoc
+
+	if (name == "npc1") then
+		if (curLoc == 1) then
+
+			nextLoc = { -1.31937, 0.138508, 8.50137, 14200875}
+		else
+			nextLoc = { 16.7069, 0.138509, 8.23726, 14200875 }
+		end
+	end
+
+	AiAgent(pMobile):stopWaiting()
+	AiAgent(pMobile):setWait(0)
+	AiAgent(pMobile):setNextPosition(nextLoc[1], nextLoc[2], nextLoc[3], nextLoc[4])
+	AiAgent(pMobile):executeBehavior()
+end
+--------------------------------------------------
+--   spawns debris Observer when destroyed
+--------------------------------------------------
 function exar_kun:spawnSceneObjects()
-	for i = 1, 15, 1 do
+	for i = 1, 2, 1 do
 		local debrisData = self.debris[i]
 		local pDebris = spawnSceneObject("dungeon2", debrisData.template, debrisData.x, debrisData.z, debrisData.y, debrisData.cell, 1, 0, 0, 0)
 		if (pDebris ~= nil) then
@@ -55,9 +87,22 @@ function exar_kun:spawnSceneObjects()
 	end
 end
 --------------------------------------------------
---   spawn mouse droid when droid dies spawn boss
+--   spawn mobiles for dungeon
 --------------------------------------------------
 function exar_kun:spawnMobiles()
+--------------------------------------
+--  spawns initial patrol npc's
+--------------------------------------
+    pNpc = spawnMobile("dungeon2", "exar_kun_cultist", 120, -1.65118, 0.138509, -15.3809, 205, 14200875)
+    writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
+    writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc1")
+    createEvent(getRandomNumber(350,450) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
+    AiAgent(pNpc):setAiTemplate("manualescortwalk")
+    AiAgent(pNpc):setFollowState(4)
+-------------------------------------------------------------------------
+--  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
+-------------------------------------------------------------------------
 local pTrigger = spawnMobile("dungeon2", "exar_kun_cultist", 86400, -0.0547165, 0.0315461, 10.281, 8, 14200863)--24 hour respawn to start the boss
 if (pTrigger ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "exar_kun", "notifyTriggerDead", pTrigger)
@@ -66,7 +111,7 @@ end
     return 0
 end
 --------------------------------------
---  active boss once mouse droid dies
+--  Notify trigger is dead to spawn Boss
 --------------------------------------
 function exar_kun:notifyTriggerDead(pTrigger, pPlayer)
 local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", 0, -0.0547165, 0.0315461, 10.281, 8, 14200863)
@@ -157,7 +202,7 @@ local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", 5, 0, 
 if (pSpawnArea ~= nil) then
 local activeArea = LuaActiveArea(pSpawnArea)
           activeArea:setCellObjectID(0)
-          activeArea:setRadius(120)
+          activeArea:setRadius(120)--invisible active area script is set for 120m in a 360 degree radius
           createObserver(ENTEREDAREA, "exar_kun", "notifySpawnArea", pSpawnArea)
           createObserver(EXITEDAREA, "exar_kun", "notifySpawnAreaLeave", pSpawnArea)
     end
@@ -192,7 +237,9 @@ if (player:isImperial() or player:isNeutral() or player:isRebel()) then
     return 0
   end)
 end
-
+---------------------------------------------------
+--  set debris condtion on spawn
+---------------------------------------------------
 function exar_kun:respawnDebris(pDebris)
 	if (pDebris == nil) then
 		return
@@ -207,13 +254,15 @@ function exar_kun:respawnDebris(pDebris)
 		SceneObject(pCell):transferObject(pDebris, -1, true)
 	end
 end
-
+--------------------------------------------------
+--   creates debirs resapwn task 5 mins
+--------------------------------------------------
 function exar_kun:notifyDebrisDestroyed(pDebris, pPlayer)
 	if (pPlayer == nil or pDebris == nil) then
 		return 0
 	end
 
-	createEvent(60000, "exar_kun", "respawnDebris", pDebris, "")
+	createEvent(300000, "exar_kun", "respawnDebris", pDebris, "")--5 min respawn
 	SceneObject(pDebris):destroyObjectFromWorld()
 
 	CreatureObject(pPlayer):clearCombatState(1)
