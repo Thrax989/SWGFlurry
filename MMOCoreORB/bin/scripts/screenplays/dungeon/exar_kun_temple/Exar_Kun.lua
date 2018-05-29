@@ -39,11 +39,21 @@ function exar_kun:PatrolDestReached(pMobile)
 
 	if (curLoc == 1) then
 		writeData(SceneObject(pMobile):getObjectID() .. ":currentLoc", 2)
-	else
+	end
+	
+	if (curLoc == 2) then
+		writeData(SceneObject(pMobile):getObjectID() .. ":currentLoc", 3)
+	end
+	
+	if (curLoc == 3) then
+		writeData(SceneObject(pMobile):getObjectID() .. ":currentLoc", 4)
+	end
+	
+	if (curLoc == 4) then
 		writeData(SceneObject(pMobile):getObjectID() .. ":currentLoc", 1)
 	end
 
-	createEvent(getRandomNumber(350,450) * 100, "exar_kun", "npcPatrol", pMobile, "")
+	createEvent(getRandomNumber(175,225) * 100, "exar_kun", "npcPatrol", pMobile, "")
 
 	return 0
 end
@@ -58,16 +68,110 @@ function exar_kun:npcPatrol(pMobile)
 	local name = readStringData(SceneObject(pMobile):getObjectID() .. ":name")
 	local curLoc = readData(SceneObject(pMobile):getObjectID() .. ":currentLoc")
 	local nextLoc
-
+--------------
+--   patrol 1
+--------------
 	if (name == "npc1") then
 		if (curLoc == 1) then
-
-			nextLoc = { -1.31937, 0.138508, 8.50137, 14200875}
-		else
-			nextLoc = { 16.7069, 0.138509, 8.23726, 14200875 }
+			nextLoc = { -1.80582, 0.138508, 10.3238, 14200875}
 		end
 	end
 
+	if (name == "npc1") then
+		if (curLoc == 2) then
+			nextLoc = { 18.0264, 0.138509, 9.97312, 14200875 }
+		end
+	end
+	
+	if (name == "npc1") then
+		if (curLoc == 3) then
+			nextLoc = { 18.4538, 0.138509, -15.4002, 14200875 }
+		end
+	end
+	
+	if (name == "npc1") then
+		if (curLoc == 4) then
+			nextLoc = { -1.65118, 0.138509, -15.3809, 14200875 }
+		end
+	end
+--------------
+--   patrol 2
+--------------
+	if (name == "npc2") then
+		if (curLoc == 1) then
+			nextLoc = { 18.0264, 0.138509, 9.97312, 14200875}
+		end
+	end
+
+	if (name == "npc2") then
+		if (curLoc == 2) then
+			nextLoc = { 18.4538, 0.138509, -15.4002, 14200875 }
+		end
+	end
+	
+	if (name == "npc2") then
+		if (curLoc == 3) then
+			nextLoc = { -1.65118, 0.138509, -15.3809, 14200875 }
+		end
+	end
+	
+	if (name == "npc2") then
+		if (curLoc == 4) then
+			nextLoc = { -1.80582, 0.138508, 10.3238, 14200875 }
+		end
+	end
+--------------
+--   patrol 3
+--------------	
+	if (name == "npc3") then
+		if (curLoc == 1) then
+			nextLoc = { 18.4538, 0.138509, -15.4002, 14200875}
+		end
+	end
+
+	if (name == "npc3") then
+		if (curLoc == 2) then
+			nextLoc = { -1.65118, 0.138509, -15.3809, 14200875 }
+		end
+	end
+	
+	if (name == "npc3") then
+		if (curLoc == 3) then
+			nextLoc = { -1.80582, 0.138508, 10.3238, 14200875 }
+		end
+	end
+	
+	if (name == "npc3") then
+		if (curLoc == 4) then
+			nextLoc = { 18.0264, 0.138509, 9.97312, 14200875 }
+		end
+	end
+--------------
+--   patrol 4
+--------------
+	if (name == "npc4") then
+		if (curLoc == 1) then
+			nextLoc = { -1.65118, 0.138509, -15.3809, 14200875}
+		end
+	end
+
+	if (name == "npc4") then
+		if (curLoc == 2) then
+			nextLoc = { -1.80582, 0.138508, 10.3238, 14200875 }
+		end
+	end
+	
+	if (name == "npc4") then
+		if (curLoc == 3) then
+			nextLoc = { 18.0264, 0.138509, 9.97312, 14200875 }
+		end
+	end
+	
+	if (name == "npc4") then
+		if (curLoc == 4) then
+			nextLoc = { 18.4538, 0.138509, -15.4002, 14200875 }
+		end
+	end
 	AiAgent(pMobile):stopWaiting()
 	AiAgent(pMobile):setWait(0)
 	AiAgent(pMobile):setNextPosition(nextLoc[1], nextLoc[2], nextLoc[3], nextLoc[4])
@@ -91,15 +195,45 @@ end
 --------------------------------------------------
 function exar_kun:spawnMobiles()
 --------------------------------------
---  spawns initial patrol npc's
+--  spawns initial patrol 1
 --------------------------------------
     pNpc = spawnMobile("dungeon2", "exar_kun_cultist", 120, -1.65118, 0.138509, -15.3809, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc1")
-    createEvent(getRandomNumber(350,450) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(175,225) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
+--------------------------------------
+--  spawns initial patrol 2
+--------------------------------------
+    pNpc = spawnMobile("dungeon2", "exar_kun_cultist", 120, -1.80582, 0.138508, 10.3238, 205, 14200875)
+    writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
+    writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc2")
+    createEvent(getRandomNumber(175,225) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
+    AiAgent(pNpc):setAiTemplate("manualescortwalk")
+    AiAgent(pNpc):setFollowState(4)
+--------------------------------------
+--  spawns initial patrol 3
+--------------------------------------
+    pNpc = spawnMobile("dungeon2", "exar_kun_cultist", 120, 18.0264, 0.138509, 9.97312, 205, 14200875)
+    writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
+    writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc3")
+    createEvent(getRandomNumber(175,225) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
+    AiAgent(pNpc):setAiTemplate("manualescortwalk")
+    AiAgent(pNpc):setFollowState(4)
+--------------------------------------
+--  spawns initial patrol 4
+--------------------------------------
+    pNpc = spawnMobile("dungeon2", "exar_kun_cultist", 120, 18.4538, 0.138509, -15.4002, 205, 14200875)
+    writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
+    writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc4")
+    createEvent(getRandomNumber(175,225) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
+    AiAgent(pNpc):setAiTemplate("manualescortwalk")
+    AiAgent(pNpc):setFollowState(4)        
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
