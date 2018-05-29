@@ -278,6 +278,24 @@ void PlayerObjectImplementation::unload() {
 	creature->printReferenceHolders();*/
 }
 
+int PlayerObjectImplementation::calculateBhReward() {
+	int minReward = 25000; // Minimum reward for a player bounty
+	int maxReward = 250000; // Maximum reward for a player bounty
+
+	int reward = minReward;
+
+	int skillPoints = getSpentJediSkillPoints();
+
+	reward = skillPoints * 1000;
+
+	if (reward < minReward)
+		reward = minReward;
+	else if (reward > maxReward)
+		reward = maxReward;
+
+	return reward;
+}
+
 void PlayerObjectImplementation::sendBaselinesTo(SceneObject* player) {
 	debug("sending player object baselines");
 
