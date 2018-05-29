@@ -753,7 +753,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->sendSystemMessage(stringId);
 
 	player->updateTimeOfDeath();
-	VisibilityManager::instance()->clearVisibility(player);	
 	//player->clearBuffs(true, false);
 
 	PlayerObject* ghost = player->getPlayerObject();
