@@ -40,10 +40,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Player City - Wraith (1,000 Credits)", "pc_wraith_travel",
 			"Player City - Seattle (1,000 Credits)", "pc_Seattle_travel",
 		   },
-			--[["hoth",
+			"hoth",
 		   {
 			"Scavenger Starport (1,000 Credits)", "scavenger_starport_travel",
-		   },]]--
+		   },
 		  	"lok",
 		   {
 			"Nym's Stronghold Starport (1,000 Credits)", "nyms_stronghold_starport_travel",
@@ -130,16 +130,16 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Recalculate's Jedi's Force pool (24 hour cool down)", "recalculateforce",
 		   },
 			 "Player Selectable Xp",
-				{
+		   {
 			 "Select Player Xp (1x) (1,000,000 Credits)", "selectxp1",
 			 "Select Player Xp (5x) (1,000,000 Credits)", "selectxp5",
 			 "Select Player Xp (10x) (1,000,000 Credits)", "selectxp10",
-				},
-		 	--[["kaas",
+		   },
+		 	"kaas",
 		   {
 			"Kaas PvP Zone (1,000 Credits)", "kaas_pvp_zone",
-		   },]]--
-			--[["mandalore",
+		   },
+			"mandalore",
 		   {
 			"Sundari Starport (1,000 Credits)", "sundari_starport_travel",
 			"Keldabe Starport (1,000 Credits)", "keldabe_starport_travel",
@@ -147,12 +147,12 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Norg Bral Starport (1,000 Credits)", "norg_bral_starport_travel",
 			"Shuror Starport (1,000 Credits)", "shuror_starport_travel",
 			"Enceri Starport (1,000 Credits)", "enceri_starport_travel",
-		   },]]--
-		 --[[	"taanab",
+		   },
+		 	"taanab",
 		   {
 			"Taanab Pandath Port (1,000 Credits)", "taanab_pandath_port_travel",
 			"Taanab Starhunter Station (1,000 Credits)", "taanab_star_hunter_station_travel",
-		   },]]--
+		   },
 	}
 }
 ObjectTemplates:addTemplate(object_tangible_terminal_terminal_gcw_publish_gift, "object/tangible/terminal/terminal_gcw_publish_gift.iff")
