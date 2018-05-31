@@ -125,6 +125,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Master Politician Requires (10,000,000 Credits)", "citypolitician",
 		   },
+		 	"Recalculate Force",
+		   {
+			"Recalculate's Jedi's Force pool (24 hour cool down)", "recalculateforce",
+		   },
 			 "Player Selectable Xp",
 				{
 			 "Select Player Xp (1x) (1,000,000 Credits)", "selectxp1",

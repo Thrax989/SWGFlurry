@@ -543,6 +543,27 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  					player->subtractCashCredits(10000000);
 					box->setForceCloseDistance(5.f);
 			        }
+//GALACTIC TRAVEL SYSTEM Recalculate's Jedi's Force Pool
+			} else if (templatePath == "recalculateforce") {
+				if (!player->isInCombat() && player->getCashCredits() < 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Master Politician");
+		                box->setPromptText("Recalculate Force cost 1,000 credits. (Cash)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getCashCredits() > 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					player->sendSystemMessage("Thank you for your credits.");
+					SkillManager* skillManager = SkillManager::instance();
+					skillManager->surrenderSkill(player, true);
+					skillManager->awardForceFromSkills(player);
+					player->sendSystemMessage("Recalculated Max force and Regen");
+ 					player->subtractCashCredits(1000);
+					box->setForceCloseDistance(5.f);
+			        }
 //PLAYER SELECTABLE XP
 			} else if (templatePath == "selectxp1") {
 				if (!player->isInCombat() && player->getCashCredits() < 999999) {
