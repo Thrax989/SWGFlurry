@@ -26,6 +26,7 @@
 #include "server/zone/objects/tangible/eventperk/Jukebox.h"
 #include "server/zone/objects/tangible/eventperk/ShuttleBeacon.h"
 #include "server/zone/objects/player/sui/SuiBoxPage.h"
+#include "server/zone/objects/scene/SceneObject.h"
 
 SuiManager::SuiManager() : Logger("SuiManager") {
 	server = NULL;
@@ -538,10 +539,10 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 9999999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your credits.");
+						player->sendSystemMessage("Thank you for your credits.");
  				        SkillManager::instance()->awardSkill("social_politician_master", player, true, true, true);
- 					player->subtractCashCredits(10000000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(10000000);
+						box->setForceCloseDistance(5.f);
 			        }
 //GALACTIC TRAVEL SYSTEM Recalculate's Jedi's Force Pool
 			} else if (templatePath == "recalculateforce") {
@@ -556,13 +557,12 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your credits.");
-					SkillManager* skillManager = SkillManager::instance();
-					skillManager->surrenderSkill(player, true);
-					skillManager->awardForceFromSkills(player);
-					player->sendSystemMessage("Recalculated Max force and Regen");
- 					player->subtractCashCredits(1000);
-					box->setForceCloseDistance(5.f);
+						player->sendSystemMessage("Thank you for your credits.");
+						SkillManager* skillManager = SkillManager::instance();
+						skillManager->awardForceFromSkills(player);
+						player->sendSystemMessage("Recalculated Max force and Regen");
+						player->subtractCashCredits(1000);
+						box->setForceCloseDistance(5.f);
 			        }
 //PLAYER SELECTABLE XP
 			} else if (templatePath == "selectxp1") {
@@ -633,10 +633,10 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 6644.269, 330, -5922.5225);
- 					player->subtractCashCredits(1000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(1000);
+						box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "corellia_bela_vistal_b_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 999) {
