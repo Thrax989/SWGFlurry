@@ -27,6 +27,15 @@
 #include "server/zone/objects/tangible/eventperk/ShuttleBeacon.h"
 #include "server/zone/objects/player/sui/SuiBoxPage.h"
 #include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/packets/object/ObjectMenuResponse.h"
+#include "server/zone/managers/skill/SkillManager.h"
+#include "server/zone/managers/player/PlayerManager.h"
+#include "server/zone/packets/player/PlayMusicMessage.h"
+#include "server/zone/managers/creature/CreatureManager.h"
+#include "server/zone/objects/region/CityRegion.h"
+#include "server/zone/ZoneServer.h"
+#include "server/chat/ChatManager.h"
 
 SuiManager::SuiManager() : Logger("SuiManager") {
 	server = NULL;
@@ -546,23 +555,29 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 //GALACTIC TRAVEL SYSTEM Recalculate's Jedi's Force Pool
 			} else if (templatePath == "recalculateforce") {
-				if (!player->isInCombat() && player->getCashCredits() < 999) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		                box->setPromptTitle("Master Politician");
-		                box->setPromptText("Recalculate Force cost 1,000 credits. (Cash)");
-		                box->setOkButton(true, "@cancel");
-		                box->setUsingObject(player);
-		                player->getPlayerObject()->addSuiBox(box);
-		                player->sendMessage(box->generateMessage());
-			        }
-				if (!player->isInCombat() && player->getCashCredits() > 999) {
-		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-						player->sendSystemMessage("Thank you for your credits.");
-						SkillManager* skillManager = SkillManager::instance();
-						skillManager->awardForceFromSkills(player);
-						player->sendSystemMessage("Recalculated Max force and Regen");
-						player->subtractCashCredits(1000);
-						box->setForceCloseDistance(5.f);
+				
+				if (!player->checkCooldownRecovery("force_recalculate_cooldown")) {
+
+						StringIdChatParameter stringId;
+  
+						Time* cdTime = player->getCooldownTime("force_recalculate_cooldown");
+  
+						int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+  
+						stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+						stringId.setDI(timeLeft);
+						player->sendSystemMessage(stringId);
+						error("Cooldown In Effect You May Not Recalculate Force: " + player->getFirstName());
+						return;
+					}
+				if (!player->isInCombat()) {
+						ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+						String playerName = player->getFirstName();
+						StringBuffer zBroadcast;
+						zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Recalculated There Force Pool.";
+						player->playEffect("clienteffect/mus_relay_activate.cef", "");
+						player->addCooldown("force_recalculate_cooldown", 86400 * 1000);// 24 hour cooldown
+						player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			        }
 //PLAYER SELECTABLE XP
 			} else if (templatePath == "selectxp1") {
