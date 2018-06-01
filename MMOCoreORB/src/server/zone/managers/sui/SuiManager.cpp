@@ -575,6 +575,9 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						String playerName = player->getFirstName();
 						StringBuffer zBroadcast;
 						zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Recalculated There Force Pool.";
+						SkillManager* skillManager = SkillManager::instance();
+						skillManager->awardForceFromSkills(player);
+						player->sendSystemMessage("Recalculated Max force and Regen");
 						player->playEffect("clienteffect/mus_relay_activate.cef", "");
 						player->addCooldown("force_recalculate_cooldown", 86400 * 1000);// 24 hour cooldown
 						player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
