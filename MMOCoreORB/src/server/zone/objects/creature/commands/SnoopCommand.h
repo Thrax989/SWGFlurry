@@ -7,6 +7,9 @@
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
+#include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
+#include "server/zone/managers/mission/MissionManager.h"
+
 #include "server/zone/managers/auction/AuctionManager.h"
 #include "server/zone/managers/auction/AuctionsMap.h"
 #include "server/zone/managers/director/ScreenPlayTask.h"
@@ -99,6 +102,18 @@ public:
 
 			ghost->addSuiBox(box);
 			creature->sendMessage(box->generateMessage());
+		} else if (container == "jeditrainer") {
+			ManagedReference<PlayerObject*> targetGhost = targetObj->getPlayerObject();
+
+			if (targetGhost->getJediState() < 2 || !targetObj->hasSkill("force_title_jedi_rank_02")) {
+				creature->sendSystemMessage(targetObj->getFirstName() + " does not have a jedi state of 2+ or does not have the padawan skill box.");
+				return GENERALERROR;
+			}
+
+			String planet = ghost->getTrainerZoneName();
+			Vector3 coords = ghost->getTrainerCoordinates();
+
+			creature->sendSystemMessage(targetObj->getFirstName() + "'s jedi trainer is located at " + coords.toString() + " on " + planet);
 		} else if (container == "ham") {
 			return sendHam(creature, targetObj);
 		} else if (container == "lots") {
@@ -159,6 +174,20 @@ public:
 			return sendLuaEvents(creature, targetObj);
 		} else if (container == "buffs") {
 			return sendBuffs(creature, targetObj);
+		} else if (container == "visibility") {
+			MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
+
+			if (missionManager->sendPlayerBountyDebug(creature, targetObj))
+				return SUCCESS;
+			else
+				return GENERALERROR;
+		} else if (container == "frs") {
+			ManagedReference<PlayerObject*> targetGhost = targetObj->getPlayerObject();
+			FrsData* playerData = targetGhost->getFrsData();
+			int playerRank = playerData->getRank();
+			int playerCouncil = playerData->getCouncilType();
+
+			creature->sendSystemMessage(targetObj->getFirstName() + " has a FRS rank of " + String::valueOf(playerRank) + " and a council type of " + String::valueOf(playerCouncil));
 		} else {
 			SceneObject* creatureInventory = targetObj->getSlottedObject("inventory");
 
@@ -180,7 +209,7 @@ public:
 		if (ghost == NULL)
 			return GENERALERROR;
 
-		Vector<Reference<ScreenPlayTask*> > eventList = DirectorManager::instance()->getPlayerEvents(target);
+		Vector<Reference<ScreenPlayTask*> > eventList = DirectorManager::instance()->getObjectEvents(target);
 
 		ManagedReference<SuiListBox*> box = new SuiListBox(creature, 0);
 		box->setPromptTitle("LUA Events");
