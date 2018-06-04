@@ -158,6 +158,26 @@ public:
 				break;
 				
 		case 33: trainerTemplatePath = "trainer_mechanic";
+				break;
+				
+		case 34: trainerTemplatePath = "trainer_spy";
+				break;
+				
+		case 35: trainerTemplatePath = "trainer_meleebountyhunter";
+				break;
+				
+		case 36: trainerTemplatePath = "trainer_combatjedigray";
+
+				break;
+		case 37: trainerTemplatePath = "trainer_combatjedigrayelder";
+
+				break;
+		case 38: trainerTemplatePath = "trainer_combatjedigrayelderrank";
+
+				break;
+		case 39: trainerTemplatePath = "trainer_combatjedigrayelderrankcouncil ";
+
+
 
 		}
 

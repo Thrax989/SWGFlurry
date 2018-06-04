@@ -78,6 +78,13 @@ public:
 		suiTrainerType->addMenuItem("@city/city:st_unarmed", 31);
 		suiTrainerType->addMenuItem("@city/city:st_weaponsmith", 32);
 		suiTrainerType->addMenuItem("@city/city:st_mechanic", 33);
+		suiTrainerType->addMenuItem("@city/city:st_spy", 34);
+		suiTrainerType->addMenuItem("@city/city:st_meleebountyhunter", 35);
+		suiTrainerType->addMenuItem("@city/city:st_combatjedigray", 36);
+		suiTrainerType->addMenuItem("@city/city:st_combatjedigrayelder", 37);
+		suiTrainerType->addMenuItem("@city/city:st_combatjedigrayelderrank", 38);
+		suiTrainerType->addMenuItem("@city/city:st_combatjedigrayelderrankcouncil ", 39);
+
 
 		ghost->addSuiBox(suiTrainerType);
 		creature->sendMessage(suiTrainerType->generateMessage());
