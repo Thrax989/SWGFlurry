@@ -27,19 +27,9 @@ public:
 			if (res != SUCCESS)
 				return res;
 
-			//Check for Force Cost.
-			ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
-
-			if (ghost != NULL && ghost->getForcePower() < forceCost) {
-				creature->sendSystemMessage("@jedi_spam:no_force_power"); //"You do not have enough Force Power to perform that action.
-				return GENERALERROR;
-			}
-
 			creature->renewBuff(buffCRC, duration, true);
 
-			// Force Cost.
-			if (ghost != NULL)
-				ghost->setForcePower(ghost->getForcePower() - forceCost);
+			doForceCost(creature);
 
 			if (!clientEffect.isEmpty())
 				creature->playEffect(clientEffect, "");
