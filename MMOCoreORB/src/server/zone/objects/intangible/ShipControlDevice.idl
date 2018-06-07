@@ -23,8 +23,6 @@ class ShipControlDevice extends ControlDevice {
 	@arg1preLocked
 	public native void generateObject(CreatureObject player);
 
-	@preLocked
-	@arg1preLocked
 	public int handleObjectMenuSelect(CreatureObject player, byte selectedID) {
 		Logger.info("selected call");
 
