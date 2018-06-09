@@ -53,7 +53,7 @@ function exar_kun:PatrolDestReached(pMobile)
 		writeData(SceneObject(pMobile):getObjectID() .. ":currentLoc", 1)
 	end
 
-	createEvent(getRandomNumber(175,225) * 100, "exar_kun", "npcPatrol", pMobile, "")
+	createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pMobile, "")
 
 	return 0
 end
@@ -197,47 +197,47 @@ function exar_kun:spawnMobiles()
 --------------------------------------
 --  spawns initial patrol 1
 --------------------------------------
-    pNpc = spawnMobile("dungeon2", "exar_kun_cultist", 120, -1.65118, 0.138509, -15.3809, 205, 14200875)
+    pNpc = spawnMobile("dungeon2", "force_ghost", 120, -1.65118, 0.138509, -15.3809, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc1")
-    createEvent(getRandomNumber(175,225) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
 --------------------------------------
 --  spawns initial patrol 2
 --------------------------------------
-    pNpc = spawnMobile("dungeon2", "exar_kun_cultist", 120, -1.80582, 0.138508, 10.3238, 205, 14200875)
+    pNpc = spawnMobile("dungeon2", "force_ghost", 120, -1.80582, 0.138508, 10.3238, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc2")
-    createEvent(getRandomNumber(175,225) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
 --------------------------------------
 --  spawns initial patrol 3
 --------------------------------------
-    pNpc = spawnMobile("dungeon2", "exar_kun_cultist", 120, 18.0264, 0.138509, 9.97312, 205, 14200875)
+    pNpc = spawnMobile("dungeon2", "force_ghost", 120, 18.0264, 0.138509, 9.97312, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc3")
-    createEvent(getRandomNumber(175,225) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
 --------------------------------------
 --  spawns initial patrol 4
 --------------------------------------
-    pNpc = spawnMobile("dungeon2", "exar_kun_cultist", 120, 18.4538, 0.138509, -15.4002, 205, 14200875)
+    pNpc = spawnMobile("dungeon2", "force_ghost", 120, 18.4538, 0.138509, -15.4002, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc4")
-    createEvent(getRandomNumber(175,225) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)        
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pTrigger = spawnMobile("dungeon2", "exar_kun_cultist", 86400, -0.0547165, 0.0315461, 10.281, 8, 14200863)--24 hour respawn to start the boss
+local pTrigger = spawnMobile("dungeon2", "exar_kun_cultist", 3600, -13.6987, -0.386468, -62.0336, 117, 14200873)--1 hour respawn to start the boss
 if (pTrigger ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "exar_kun", "notifyTriggerDead", pTrigger)
 end
@@ -248,7 +248,7 @@ end
 --  Notify trigger is dead to spawn Boss
 --------------------------------------
 function exar_kun:notifyTriggerDead(pTrigger, pPlayer)
-local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", 0, -0.0547165, 0.0315461, 10.281, 8, 14200863)
+local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
     ObjectManager.withCreatureObject(pBoss, function(oBoss)
     writeData("exar_kun:spawnState", 1)
@@ -261,14 +261,14 @@ end
 --------------------------------------
 --   Player, Boss Functions
 --------------------------------------
-function exar_kun:boss_damage(pBoss, pPlayer, pAdd, oAdd, player, pMember)
+function exar_kun:boss_damage(pBoss, pPlayer, onespawn, twospawn, threespawn, fourspawn, fivespawn, sixspawn, sevenspawn, eightspawn, ninespawn, player, pMember)
 local player = LuaCreatureObject(pPlayer)
 local boss = LuaCreatureObject(pBoss)
 --------------------------------------
 --   Range and health checks for boss
 --------------------------------------
 if (boss ~= nil) then
-local heal = 500000
+local heal = 10000
 local bossHealth = boss:getHAM(0)
 local bossAction = boss:getHAM(3)
 local bossMind = boss:getHAM(6)
@@ -276,13 +276,13 @@ local bossMaxHealth = boss:getMaxHAM(0)
 local bossMaxAction = boss:getMaxHAM(3)
 local bossMaxMind = boss:getMaxHAM(6)
 
-local x1 = -0.0547165
-local y1 = 10.281
+local x1 = -13.6987
+local y1 = -62.0336
 local x2 = boss:getPositionX()
 local y2 = boss:getPositionY()
 
 local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-local maxDistance = 25 --Max distance you can fight the boss is 25 meeters, you must be within range to fight the boss. Reset to full health if you fail the check.
+local maxDistance = 20 --Max distance you can fight the boss is 20 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
 if distance > (maxDistance * maxDistance) then
       forcePeace(pBoss)
       CreatureObject(pBoss):healDamage(heal, 0)
@@ -294,10 +294,104 @@ if distance > (maxDistance * maxDistance) then
       spatialChat(pBoss, "Systems powering down you are out of combat range")
       CreatureObject(pPlayer):sendSystemMessage("You must be within 25m of the boss to fight, boss is now resetting")
 end
+
+
+--------------------------------------
+--   First wave 90% health check
+--------------------------------------
+if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.9)) or (bossMind <= (bossMaxMind * 0.9))) and readData("exar_kun:spawnState") == 1) then
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
+      spatialChat(pBoss, "Boss Current Health = 90%")
+      writeData("exar_kun:spawnState",2)
+      local onespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(onespawn, "target locked")
+      local onespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(onespawn, "target locked")
+      ObjectManager.withCreatureObject(onespawn, function(ofirstTime)
+      writeData("countspawn", ofirstTime:getObjectID())
+      ofirstTime:engageCombat(pPlayer)
+			end)
+		end	
+--------------------------------------
+--   First wave 80% health check
+--------------------------------------
+if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.8)) or (bossMind <= (bossMaxMind * 0.8))) and readData("exar_kun:spawnState") == 2) then
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
+      spatialChat(pBoss, "Boss Current Health = 80%")
+      writeData("exar_kun:spawnState",3)
+      local twospawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(twospawn, "target locked")
+      local twospawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(twospawn, "target locked")
+      ObjectManager.withCreatureObject(twospawn, function(ofirstTime)
+      writeData("countspawn", ofirstTime:getObjectID())
+      ofirstTime:engageCombat(pPlayer)
+			end)
+		end	
+--------------------------------------
+--   First wave 70% health check
+--------------------------------------
+if (((bossHealth <= (bossMaxHealth *0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind *0.7))) and readData("exar_kun:spawnState") == 3) then
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
+      spatialChat(pBoss, "Boss Current Health = 70%")
+      writeData("exar_kun:spawnState",4)
+      local threespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(threespawn, "target locked")
+      local threespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(threespawn, "target locked")
+      ObjectManager.withCreatureObject(threespawn, function(ofirstTime)
+      writeData("countadd", ofirstTime:getObjectID())
+      ofirstTime:engageCombat(pPlayer)
+			end)
+		end	
+--------------------------------------
+--   First wave 60% health check
+--------------------------------------
+if (((bossHealth <= (bossMaxHealth *0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind *0.6))) and readData("exar_kun:spawnState") == 4) then
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
+      spatialChat(pBoss, "Boss Current Health = 60%")
+      writeData("exar_kun:spawnState",5)
+      local fourspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(fourspawn, "target locked")
+      local fourspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(fourspawn, "target locked")
+      ObjectManager.withCreatureObject(fourspawn, function(ofirstTime)
+      writeData("countadd", ofirstTime:getObjectID())
+      ofirstTime:engageCombat(pPlayer)
+			end)
+		end
 --------------------------------------
 --   First wave 50% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind *0.5))) and readData("exar_kun:spawnState") == 1) then
+if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind * 0.5))) and readData("exar_kun:spawnState") == 5) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
       local trapDmg = getRandomNumber(500, 1000)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
@@ -307,23 +401,115 @@ if (((bossHealth <= (bossMaxHealth *0.5)) or (bossAction <= (bossMaxAction * 0.5
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 50%")
-      writeData("exar_kun:spawnState",2)
-      local oAdd = spawnMobile("dungeon2", "exar_kun_cultist", 0, 30.1609, 0.0315462, 41.5876, 216, 14200863)
-      spatialChat(oAdd, "target locked")
-      local oAdd = spawnMobile("dungeon2", "exar_kun_cultist", 0, 32.5711, 0.0315456, 9.91512, 271, 14200863)
-      spatialChat(oAdd, "target locked")
-      ObjectManager.withCreatureObject(oAdd, function(ofirstTime)
+      writeData("exar_kun:spawnState",6)
+      local fivespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(fivespawn, "target locked")
+      local fivespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(fivespawn, "target locked")
+      ObjectManager.withCreatureObject(fivespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
 			end)
-		end	
+		end
+--------------------------------------
+--   First wave 40% health check
+--------------------------------------
+if (((bossHealth <= (bossMaxHealth *0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind *0.4))) and readData("exar_kun:spawnState") == 6) then
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
+      spatialChat(pBoss, "Boss Current Health = 50%")
+      writeData("exar_kun:spawnState",7)
+      local sixspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(sixspawn, "target locked")
+      local sixspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(sixspawn, "target locked")
+      ObjectManager.withCreatureObject(sixspawn, function(ofirstTime)
+      writeData("countadd", ofirstTime:getObjectID())
+      ofirstTime:engageCombat(pPlayer)
+			end)
+		end
+--------------------------------------
+--   First wave 30% health check
+--------------------------------------
+if (((bossHealth <= (bossMaxHealth *0.3)) or (bossAction <= (bossMaxAction * 0.3)) or (bossMind <= (bossMaxMind *0.3))) and readData("exar_kun:spawnState") == 7) then
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
+      spatialChat(pBoss, "Boss Current Health = 30%")
+      writeData("exar_kun:spawnState",8)
+      local sevenspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(sevenspawn, "target locked")
+      local sevenspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(sevenspawn, "target locked")
+      ObjectManager.withCreatureObject(sevenspawn, function(ofirstTime)
+      writeData("countadd", ofirstTime:getObjectID())
+      ofirstTime:engageCombat(pPlayer)
+			end)
+		end
+--------------------------------------
+--   First wave 20% health check
+--------------------------------------
+if (((bossHealth <= (bossMaxHealth *0.2)) or (bossAction <= (bossMaxAction * 0.2)) or (bossMind <= (bossMaxMind *0.2))) and readData("exar_kun:spawnState") == 8) then
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
+      spatialChat(pBoss, "Boss Current Health = 20%")
+      writeData("exar_kun:spawnState",9)
+      local eightspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(eightspawn, "target locked")
+      local eightspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(eightspawn, "target locked")
+      ObjectManager.withCreatureObject(eightspawn, function(ofirstTime)
+      writeData("countadd", ofirstTime:getObjectID())
+      ofirstTime:engageCombat(pPlayer)
+			end)
+		end
+--------------------------------------
+--   First wave 10% health check
+--------------------------------------
+if (((bossHealth <= (bossMaxHealth *0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind *0.1))) and readData("exar_kun:spawnState") == 9) then
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
+      spatialChat(pBoss, "Boss Current Health = 10%")
+      writeData("exar_kun:spawnState",10)
+      local ninespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(ninespawn, "target locked")
+      local ninespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+      spatialChat(ninespawn, "target locked")
+      ObjectManager.withCreatureObject(ninespawn, function(ofirstTime)
+      writeData("countadd", ofirstTime:getObjectID())
+      ofirstTime:engageCombat(pPlayer)
+			end)
+		end
 --------------------------------------------------------------------------------
 --   Check that the boss has died, Broadcast server wide, set state for players
 --------------------------------------------------------------------------------
-if (((bossHealth <= (bossMaxHealth * 0.01)) or (bossAction <= (bossMaxAction * 0.01)) or (bossMind <= (bossMaxMind * 0.01))) and readData("exar_kun:spawnState") == 2) then
+if (((bossHealth <= (bossMaxHealth * 0.01)) or (bossAction <= (bossMaxAction * 0.01)) or (bossMind <= (bossMaxMind * 0.01))) and readData("exar_kun:spawnState") == 10) then
       spatialChat(pBoss, "We shall meet again uggggh!.")
       CreatureObject(pBoss):broadcastToServer("\\#63C8F9 A Group Has Cleared The Exar Kun Temple Dungeon! Next Boss Encounter will be Avalible in 1 hour!.")
-            writeData("exar_kun:spawnState",3)
+            writeData("exar_kun:spawnState",11)
         end
       end
    return 0
