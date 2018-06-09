@@ -29,7 +29,9 @@ if (isZoneEnabled("dungeon2")) then
   self:spawnSceneObjects()
   end
 end
-
+--------------------------------------
+--   Patroling location triggers
+--------------------------------------
 function exar_kun:PatrolDestReached(pMobile)
 	if (pMobile == nil) then
 		return 0
@@ -237,7 +239,7 @@ function exar_kun:spawnMobiles()
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pTrigger = spawnMobile("dungeon2", "exar_kun_cultist", 3600, -13.6987, -0.386468, -62.0336, 117, 14200873)--1 hour respawn to start the boss
+local pTrigger = spawnMobile("dungeon2", "exar_kun_cultist", 10800, -11.2544, -0.0730047, -39.2305, 163, 14200873)--3 hour respawn to start the boss
 if (pTrigger ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "exar_kun", "notifyTriggerDead", pTrigger)
 end
@@ -248,7 +250,7 @@ end
 --  Notify trigger is dead to spawn Boss
 --------------------------------------
 function exar_kun:notifyTriggerDead(pTrigger, pPlayer)
-local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
+local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", 0, -12.2959, -0.386468, -64.93, 178, 14200873)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
     ObjectManager.withCreatureObject(pBoss, function(oBoss)
     writeData("exar_kun:spawnState", 1)
@@ -294,10 +296,8 @@ if distance > (maxDistance * maxDistance) then
       spatialChat(pBoss, "Systems powering down you are out of combat range")
       CreatureObject(pPlayer):sendSystemMessage("You must be within 25m of the boss to fight, boss is now resetting")
 end
-
-
 --------------------------------------
---   First wave 90% health check
+--  90% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.9)) or (bossMind <= (bossMaxMind * 0.9))) and readData("exar_kun:spawnState") == 1) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
@@ -318,9 +318,9 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
       writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
 			end)
-		end	
+		end
 --------------------------------------
---   First wave 80% health check
+--  80% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.8)) or (bossMind <= (bossMaxMind * 0.8))) and readData("exar_kun:spawnState") == 2) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
@@ -341,9 +341,9 @@ if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.
       writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
 			end)
-		end	
+		end
 --------------------------------------
---   First wave 70% health check
+--  70% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth *0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind *0.7))) and readData("exar_kun:spawnState") == 3) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
@@ -366,7 +366,7 @@ if (((bossHealth <= (bossMaxHealth *0.7)) or (bossAction <= (bossMaxAction * 0.7
 			end)
 		end	
 --------------------------------------
---   First wave 60% health check
+--  60% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth *0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind *0.6))) and readData("exar_kun:spawnState") == 4) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
@@ -389,7 +389,7 @@ if (((bossHealth <= (bossMaxHealth *0.6)) or (bossAction <= (bossMaxAction * 0.6
 			end)
 		end
 --------------------------------------
---   First wave 50% health check
+--  50% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind * 0.5))) and readData("exar_kun:spawnState") == 5) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
@@ -412,7 +412,7 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
 			end)
 		end
 --------------------------------------
---   First wave 40% health check
+--  40% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth *0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind *0.4))) and readData("exar_kun:spawnState") == 6) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
@@ -435,7 +435,7 @@ if (((bossHealth <= (bossMaxHealth *0.4)) or (bossAction <= (bossMaxAction * 0.4
 			end)
 		end
 --------------------------------------
---   First wave 30% health check
+--  30% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth *0.3)) or (bossAction <= (bossMaxAction * 0.3)) or (bossMind <= (bossMaxMind *0.3))) and readData("exar_kun:spawnState") == 7) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
@@ -458,7 +458,7 @@ if (((bossHealth <= (bossMaxHealth *0.3)) or (bossAction <= (bossMaxAction * 0.3
 			end)
 		end
 --------------------------------------
---   First wave 20% health check
+--  20% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth *0.2)) or (bossAction <= (bossMaxAction * 0.2)) or (bossMind <= (bossMaxMind *0.2))) and readData("exar_kun:spawnState") == 8) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
@@ -481,7 +481,7 @@ if (((bossHealth <= (bossMaxHealth *0.2)) or (bossAction <= (bossMaxAction * 0.2
 			end)
 		end
 --------------------------------------
---   First wave 10% health check
+--  10% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth *0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind *0.1))) and readData("exar_kun:spawnState") == 9) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
@@ -536,7 +536,7 @@ return ObjectManager.withCreatureObject(pMovingObject, function(player)
     return 0
 end
 if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-          player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has Entered The Exar Kun Temple Dungeon!")
+          --player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has Entered The Exar Kun Temple Dungeon!")
           player:sendSystemMessage("You Have Entered The Exar Kun Temple Dungeon!")
           end
       return 0
@@ -551,7 +551,7 @@ if (player:isAiAgent()) then
   return 0
 end
 if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-      player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Exar Kun Temple Dungeon!")
+      --player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Exar Kun Temple Dungeon!")
       player:sendSystemMessage("You Have Left The Exar Kun Temple Dungeon!")
       end
     return 0
