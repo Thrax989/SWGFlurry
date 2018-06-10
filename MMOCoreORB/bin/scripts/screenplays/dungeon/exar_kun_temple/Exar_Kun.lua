@@ -55,7 +55,7 @@ function exar_kun:PatrolDestReached(pMobile)
 		writeData(SceneObject(pMobile):getObjectID() .. ":currentLoc", 1)
 	end
 
-	createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pMobile, "")
+	createEvent(getRandomNumber(350,350) * 100, "exar_kun", "npcPatrol", pMobile, "")
 
 	return 0
 end
@@ -75,7 +75,7 @@ function exar_kun:npcPatrol(pMobile)
 ---------------------
 	if (name == "npc1") then
 		if (curLoc == 1) then
-			nextLoc = { -1.80582, 0.138508, 10.3238, 14200875}
+			nextLoc = { -1.80582, 0.138508, 10.3238, 14200875 }
 		end
 	end
 
@@ -101,7 +101,7 @@ function exar_kun:npcPatrol(pMobile)
 ---------------------
 	if (name == "npc2") then
 		if (curLoc == 1) then
-			nextLoc = { 18.0264, 0.138509, 9.97312, 14200875}
+			nextLoc = { 18.0264, 0.138509, 9.97312, 14200875 }
 		end
 	end
 
@@ -127,7 +127,7 @@ function exar_kun:npcPatrol(pMobile)
 ---------------------
 	if (name == "npc3") then
 		if (curLoc == 1) then
-			nextLoc = { 18.4538, 0.138509, -15.4002, 14200875}
+			nextLoc = { 18.4538, 0.138509, -15.4002, 14200875 }
 		end
 	end
 
@@ -153,7 +153,7 @@ function exar_kun:npcPatrol(pMobile)
 ---------------------
 	if (name == "npc4") then
 		if (curLoc == 1) then
-			nextLoc = { -1.65118, 0.138509, -15.3809, 14200875}
+			nextLoc = { -1.65118, 0.138509, -15.3809, 14200875 }
 		end
 	end
 
@@ -306,7 +306,7 @@ function exar_kun:spawnMobiles()
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, -1.65118, 0.138509, -15.3809, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc1")
-    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(350,350) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
@@ -316,7 +316,7 @@ function exar_kun:spawnMobiles()
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, -1.80582, 0.138508, 10.3238, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc2")
-    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(350,350) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
@@ -326,7 +326,7 @@ function exar_kun:spawnMobiles()
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, 18.0264, 0.138509, 9.97312, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc3")
-    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(350,350) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
@@ -336,7 +336,7 @@ function exar_kun:spawnMobiles()
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, 18.4538, 0.138509, -15.4002, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "npc4")
-    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(350,350) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
@@ -346,7 +346,7 @@ function exar_kun:spawnMobiles()
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, -19.6974, -0.386468, -75.3737, 30, 14200873)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "1npc1")
-    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(350,350) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
@@ -356,7 +356,7 @@ function exar_kun:spawnMobiles()
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, -19.6852, -0.386468, -54.029, 120, 14200873)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "2npc2")
-    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(350,350) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
@@ -366,7 +366,7 @@ function exar_kun:spawnMobiles()
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, -3.55566, -0.386468, -53.7905, 201, 14200873)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "3npc3")
-    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(350,350) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
@@ -376,7 +376,7 @@ function exar_kun:spawnMobiles()
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, -3.59187, -0.386468, -74.9668, 293, 14200873)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
     writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "4npc4")
-    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createEvent(getRandomNumber(350,350) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)            
