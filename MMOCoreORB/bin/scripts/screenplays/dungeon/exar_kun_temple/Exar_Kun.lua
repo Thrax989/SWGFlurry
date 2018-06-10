@@ -70,9 +70,9 @@ function exar_kun:npcPatrol(pMobile)
 	local name = readStringData(SceneObject(pMobile):getObjectID() .. ":name")
 	local curLoc = readData(SceneObject(pMobile):getObjectID() .. ":currentLoc")
 	local nextLoc
---------------
---   patrol 1
---------------
+---------------------
+--   patrol 1 room 2
+---------------------
 	if (name == "npc1") then
 		if (curLoc == 1) then
 			nextLoc = { -1.80582, 0.138508, 10.3238, 14200875}
@@ -96,9 +96,9 @@ function exar_kun:npcPatrol(pMobile)
 			nextLoc = { -1.65118, 0.138509, -15.3809, 14200875 }
 		end
 	end
---------------
---   patrol 2
---------------
+---------------------
+--   patrol 2 room 2
+---------------------
 	if (name == "npc2") then
 		if (curLoc == 1) then
 			nextLoc = { 18.0264, 0.138509, 9.97312, 14200875}
@@ -122,9 +122,9 @@ function exar_kun:npcPatrol(pMobile)
 			nextLoc = { -1.80582, 0.138508, 10.3238, 14200875 }
 		end
 	end
---------------
---   patrol 3
---------------	
+---------------------
+--   patrol 3 room 2
+---------------------
 	if (name == "npc3") then
 		if (curLoc == 1) then
 			nextLoc = { 18.4538, 0.138509, -15.4002, 14200875}
@@ -148,9 +148,9 @@ function exar_kun:npcPatrol(pMobile)
 			nextLoc = { 18.0264, 0.138509, 9.97312, 14200875 }
 		end
 	end
---------------
---   patrol 4
---------------
+---------------------
+--   patrol 4 room 2
+---------------------
 	if (name == "npc4") then
 		if (curLoc == 1) then
 			nextLoc = { -1.65118, 0.138509, -15.3809, 14200875}
@@ -172,6 +172,110 @@ function exar_kun:npcPatrol(pMobile)
 	if (name == "npc4") then
 		if (curLoc == 4) then
 			nextLoc = { 18.4538, 0.138509, -15.4002, 14200875 }
+		end
+	end
+---------------------
+--   patrol 1 room 1
+---------------------
+	if (name == "1npc1") then
+		if (curLoc == 1) then
+			nextLoc = { -19.6852, -0.386468, -54.029, 14200873}
+		end
+	end
+
+	if (name == "1npc1") then
+		if (curLoc == 2) then
+			nextLoc = { -3.55566, -0.386468, -53.7905, 14200873 }
+		end
+	end
+	
+	if (name == "1npc1") then
+		if (curLoc == 3) then
+			nextLoc = { -3.59187, -0.386468, -74.9668, 14200873 }
+		end
+	end
+	
+	if (name == "1npc1") then
+		if (curLoc == 4) then
+			nextLoc = { -19.6974, -0.386468, -75.3737, 14200873 }
+		end
+	end
+---------------------
+--   patrol 2 room 1
+---------------------
+	if (name == "2npc2") then
+		if (curLoc == 1) then
+			nextLoc = { -3.55566, -0.386468, -53.7905, 14200873 }
+		end
+	end
+
+	if (name == "2npc2") then
+		if (curLoc == 2) then
+			nextLoc = { -3.59187, -0.386468, -74.9668, 14200873 }
+		end
+	end
+	
+	if (name == "2npc2") then
+		if (curLoc == 3) then
+			nextLoc = { -19.6974, -0.386468, -75.3737, 14200873 }
+		end
+	end
+	
+	if (name == "2npc2") then
+		if (curLoc == 4) then
+			nextLoc = { -19.6852, -0.386468, -54.029, 14200873 }
+		end
+	end
+---------------------
+--   patrol 3 room 1
+---------------------
+	if (name == "3npc3") then
+		if (curLoc == 1) then
+			nextLoc = { -3.59187, -0.386468, -74.9668, 14200873 }
+		end
+	end
+
+	if (name == "3npc3") then
+		if (curLoc == 2) then
+			nextLoc = { -19.6974, -0.386468, -75.3737, 14200873 }
+		end
+	end
+	
+	if (name == "3npc3") then
+		if (curLoc == 3) then
+			nextLoc = { -19.6852, -0.386468, -54.029, 14200873 }
+		end
+	end
+	
+	if (name == "3npc3") then
+		if (curLoc == 4) then
+			nextLoc = { -3.55566, -0.386468, -53.7905, 14200873 }
+		end
+	end
+---------------------
+--   patrol 4 room 1
+---------------------
+	if (name == "4npc4") then
+		if (curLoc == 1) then
+			nextLoc = { -19.6974, -0.386468, -75.3737, 14200873 }
+		end
+	end
+
+	if (name == "4npc4") then
+		if (curLoc == 2) then
+			nextLoc = { -19.6852, -0.386468, -54.029, 14200873}
+		end
+	end
+	
+	if (name == "4npc4") then
+		if (curLoc == 3) then
+			nextLoc = { -3.55566, -0.386468, -53.7905, 14200873 }
+		end
+	end
+	
+	if (name == "4npc4") then
+		if (curLoc == 4) then
+			nextLoc = { -3.59187, -0.386468, -74.9668, 14200873 }
 		end
 	end
 	AiAgent(pMobile):stopWaiting()
@@ -197,7 +301,7 @@ end
 --------------------------------------------------
 function exar_kun:spawnMobiles()
 --------------------------------------
---  spawns initial patrol 1
+--  spawns initial patrol 1 room 2
 --------------------------------------
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, -1.65118, 0.138509, -15.3809, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
@@ -207,7 +311,7 @@ function exar_kun:spawnMobiles()
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
 --------------------------------------
---  spawns initial patrol 2
+--  spawns initial patrol 2 room 2
 --------------------------------------
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, -1.80582, 0.138508, 10.3238, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
@@ -217,7 +321,7 @@ function exar_kun:spawnMobiles()
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
 --------------------------------------
---  spawns initial patrol 3
+--  spawns initial patrol 3 room 2
 --------------------------------------
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, 18.0264, 0.138509, 9.97312, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
@@ -227,7 +331,7 @@ function exar_kun:spawnMobiles()
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
     AiAgent(pNpc):setFollowState(4)
 --------------------------------------
---  spawns initial patrol 4
+--  spawns initial patrol 4 room 2
 --------------------------------------
     pNpc = spawnMobile("dungeon2", "force_ghost", 120, 18.4538, 0.138509, -15.4002, 205, 14200875)
     writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
@@ -235,7 +339,47 @@ function exar_kun:spawnMobiles()
     createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
     createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
     AiAgent(pNpc):setAiTemplate("manualescortwalk")
-    AiAgent(pNpc):setFollowState(4)        
+    AiAgent(pNpc):setFollowState(4)
+--------------------------------------
+--  spawns initial patrol 1 room 1
+--------------------------------------
+    pNpc = spawnMobile("dungeon2", "force_ghost", 120, -19.6974, -0.386468, -75.3737, 30, 14200873)
+    writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
+    writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "1npc1")
+    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
+    AiAgent(pNpc):setAiTemplate("manualescortwalk")
+    AiAgent(pNpc):setFollowState(4)
+--------------------------------------
+--  spawns initial patrol 2 room 1
+--------------------------------------
+    pNpc = spawnMobile("dungeon2", "force_ghost", 120, -19.6852, -0.386468, -54.029, 120, 14200873)
+    writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
+    writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "2npc2")
+    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
+    AiAgent(pNpc):setAiTemplate("manualescortwalk")
+    AiAgent(pNpc):setFollowState(4)
+--------------------------------------
+--  spawns initial patrol 3 room 1
+--------------------------------------
+    pNpc = spawnMobile("dungeon2", "force_ghost", 120, -3.55566, -0.386468, -53.7905, 201, 14200873)
+    writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
+    writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "3npc3")
+    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
+    AiAgent(pNpc):setAiTemplate("manualescortwalk")
+    AiAgent(pNpc):setFollowState(4)
+--------------------------------------
+--  spawns initial patrol 4 room 1
+--------------------------------------
+    pNpc = spawnMobile("dungeon2", "force_ghost", 120, -3.59187, -0.386468, -74.9668, 293, 14200873)
+    writeData(SceneObject(pNpc):getObjectID() .. ":currentLoc", 1)
+    writeStringData(SceneObject(pNpc):getObjectID() .. ":name", "4npc4")
+    createEvent(getRandomNumber(175,175) * 100, "exar_kun", "npcPatrol", pNpc, "")
+    createObserver(DESTINATIONREACHED, "exar_kun", "PatrolDestReached", pNpc)
+    AiAgent(pNpc):setAiTemplate("manualescortwalk")
+    AiAgent(pNpc):setFollowState(4)            
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
@@ -309,11 +453,12 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 90%")
+      spatialChat(pBoss, "You fools..")
       writeData("exar_kun:spawnState",2)
-      local onespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(onespawn, "target locked")
-      local onespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(onespawn, "target locked")
+      local onespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.55566, -0.386468, -53.7905, 201, 14200873)
+      local onespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6852, -0.386468, -54.029, 120, 14200873)
+      local onespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.59187, -0.386468, -74.9668, 293, 14200873)
+      local onespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6974, -0.386468, -75.3737, 30, 14200873)
       ObjectManager.withCreatureObject(onespawn, function(ofirstTime)
       writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -333,10 +478,10 @@ if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 80%")
       writeData("exar_kun:spawnState",3)
-      local twospawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(twospawn, "target locked")
-      local twospawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(twospawn, "target locked")
+      local twospawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.55566, -0.386468, -53.7905, 201, 14200873)
+      local twospawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6852, -0.386468, -54.029, 120, 14200873)
+      local twospawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.59187, -0.386468, -74.9668, 293, 14200873)
+      local twospawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6974, -0.386468, -75.3737, 30, 14200873)
       ObjectManager.withCreatureObject(twospawn, function(ofirstTime)
       writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -356,10 +501,10 @@ if (((bossHealth <= (bossMaxHealth *0.7)) or (bossAction <= (bossMaxAction * 0.7
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 70%")
       writeData("exar_kun:spawnState",4)
-      local threespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(threespawn, "target locked")
-      local threespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(threespawn, "target locked")
+      local threespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.55566, -0.386468, -53.7905, 201, 14200873)
+      local threespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6852, -0.386468, -54.029, 120, 14200873)
+      local threespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.59187, -0.386468, -74.9668, 293, 14200873)
+      local threespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6974, -0.386468, -75.3737, 30, 14200873)
       ObjectManager.withCreatureObject(threespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -379,10 +524,10 @@ if (((bossHealth <= (bossMaxHealth *0.6)) or (bossAction <= (bossMaxAction * 0.6
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 60%")
       writeData("exar_kun:spawnState",5)
-      local fourspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(fourspawn, "target locked")
-      local fourspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(fourspawn, "target locked")
+      local fourspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.55566, -0.386468, -53.7905, 201, 14200873)
+      local fourspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6852, -0.386468, -54.029, 120, 14200873)
+      local fourspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.59187, -0.386468, -74.9668, 293, 14200873)
+      local fourspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6974, -0.386468, -75.3737, 30, 14200873)
       ObjectManager.withCreatureObject(fourspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -402,10 +547,10 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 50%")
       writeData("exar_kun:spawnState",6)
-      local fivespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(fivespawn, "target locked")
-      local fivespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(fivespawn, "target locked")
+      local fivespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.55566, -0.386468, -53.7905, 201, 14200873)
+      local fivespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6852, -0.386468, -54.029, 120, 14200873)
+      local fivespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.59187, -0.386468, -74.9668, 293, 14200873)
+      local fivespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6974, -0.386468, -75.3737, 30, 14200873)
       ObjectManager.withCreatureObject(fivespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -425,10 +570,10 @@ if (((bossHealth <= (bossMaxHealth *0.4)) or (bossAction <= (bossMaxAction * 0.4
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 50%")
       writeData("exar_kun:spawnState",7)
-      local sixspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(sixspawn, "target locked")
-      local sixspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(sixspawn, "target locked")
+      local sixspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.55566, -0.386468, -53.7905, 201, 14200873)
+      local sixspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6852, -0.386468, -54.029, 120, 14200873)
+      local sixspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.59187, -0.386468, -74.9668, 293, 14200873)
+      local sixspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6974, -0.386468, -75.3737, 30, 14200873)
       ObjectManager.withCreatureObject(sixspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -448,10 +593,10 @@ if (((bossHealth <= (bossMaxHealth *0.3)) or (bossAction <= (bossMaxAction * 0.3
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 30%")
       writeData("exar_kun:spawnState",8)
-      local sevenspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(sevenspawn, "target locked")
-      local sevenspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(sevenspawn, "target locked")
+      local sevenspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.55566, -0.386468, -53.7905, 201, 14200873)
+      local sevenspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6852, -0.386468, -54.029, 120, 14200873)
+      local sevenspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.59187, -0.386468, -74.9668, 293, 14200873)
+      local sevenspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6974, -0.386468, -75.3737, 30, 14200873)
       ObjectManager.withCreatureObject(sevenspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -471,10 +616,10 @@ if (((bossHealth <= (bossMaxHealth *0.2)) or (bossAction <= (bossMaxAction * 0.2
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 20%")
       writeData("exar_kun:spawnState",9)
-      local eightspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(eightspawn, "target locked")
-      local eightspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(eightspawn, "target locked")
+      local eightspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.55566, -0.386468, -53.7905, 201, 14200873)
+      local eightspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6852, -0.386468, -54.029, 120, 14200873)
+      local eightspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.59187, -0.386468, -74.9668, 293, 14200873)
+      local eightspawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6974, -0.386468, -75.3737, 30, 14200873)
       ObjectManager.withCreatureObject(eightspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -494,10 +639,10 @@ if (((bossHealth <= (bossMaxHealth *0.1)) or (bossAction <= (bossMaxAction * 0.1
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 10%")
       writeData("exar_kun:spawnState",10)
-      local ninespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(ninespawn, "target locked")
-      local ninespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -13.6987, -0.386468, -62.0336, 117, 14200873)
-      spatialChat(ninespawn, "target locked")
+      local ninespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.55566, -0.386468, -53.7905, 201, 14200873)
+      local ninespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6852, -0.386468, -54.029, 120, 14200873)
+      local ninespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -3.59187, -0.386468, -74.9668, 293, 14200873)
+      local ninespawn = spawnMobile("dungeon2", "exar_kun_cultist", 0, -19.6974, -0.386468, -75.3737, 30, 14200873)
       ObjectManager.withCreatureObject(ninespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
