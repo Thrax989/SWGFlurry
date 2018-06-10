@@ -38,7 +38,6 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 			menuResponse->addRadialMenuItemToRadialID(215, 219, 3, "Leave Jedi Order"); // Leave Jedi
 		}
 	}
-}
 int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 
