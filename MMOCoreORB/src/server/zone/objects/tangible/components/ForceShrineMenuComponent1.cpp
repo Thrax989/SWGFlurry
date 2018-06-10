@@ -27,10 +27,7 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 
 	if (ghost->getJediState() >=2) {
 			menuResponse->addRadialMenuItem(213, 3, "Visibility"); // Visibility
-		}
-	if (ghost->getJediState() >=4) {
 			menuResponse->addRadialMenuItem(215, 3, "Force Ranking");
-	if (ghost->getJediState() >=4) {
 			menuResponse->addRadialMenuItemToRadialID(215, 216, 3, "Join Sith Order"); // Join Sith
 			menuResponse->addRadialMenuItemToRadialID(215, 217, 3, "Join Jedi Order"); // Join Jedi
 		}
@@ -60,7 +57,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 		creature->sendSystemMessage(messageVis.toString());
 	}
 
-	if (selectedID == 216 && (ghost->getJediState() >= 4)) {
+	if (selectedID == 216 && (ghost->getJediState() >= 2)) {
 		if (creature->getFaction() == 3679112276) {
 			creature->setScreenPlayState("jedi_FRS", 8);
 			SkillManager::instance()->awardSkill("force_title_jedi_rank_03", creature, true, true, true);
@@ -95,7 +92,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			creature->sendMessage(box->generateMessage());
 		}
 	}
-	if (selectedID == 217 && (ghost->getJediState() >= 4)) {
+	if (selectedID == 217 && (ghost->getJediState() >= 2)) {
 		if (creature->getFaction() == 370444368) {
 			creature->setScreenPlayState("jedi_FRS", 4);
 			SkillManager::instance()->awardSkill("force_title_jedi_rank_03", creature, true, true, true);
