@@ -25,8 +25,10 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
-	if (ghost->getJediState() >=2) {
+	if (ghost->getJediState() >=1) {
 			menuResponse->addRadialMenuItem(213, 3, "Visibility"); // Visibility
+		}
+	if (ghost->getJediState() >=2) {
 			menuResponse->addRadialMenuItem(215, 3, "Force Ranking");
 			menuResponse->addRadialMenuItemToRadialID(215, 216, 3, "Join Sith Order"); // Join Sith
 			menuResponse->addRadialMenuItemToRadialID(215, 217, 3, "Join Jedi Order"); // Join Jedi
