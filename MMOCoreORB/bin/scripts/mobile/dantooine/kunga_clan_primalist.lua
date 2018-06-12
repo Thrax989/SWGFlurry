@@ -20,7 +20,7 @@ kunga_clan_primalist = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -40,8 +40,7 @@ kunga_clan_primalist = Creature:new {
 				{group = "wearables_common", chance = 1000000},
 				{group = "wearables_uncommon", chance = 1000000},
 				{group = "power_crystals", chance = 500000}
-			},
-			lootChance = 10000000
+			}
 		}
 	},
 	weapons = {"primitive_weapons"},
