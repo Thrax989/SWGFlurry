@@ -73,7 +73,7 @@ local y1 = 22.0164
 local x2 = boss:getPositionX()
 local y2 = boss:getPositionY()
 local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-local maxDistance = 30 --Max distance you can fight the boss is 30 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
+local maxDistance = 45 --Max distance you can fight the boss is 45 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
 if distance > (maxDistance * maxDistance) then
       forcePeace(pBoss)
       CreatureObject(pBoss):healDamage(heal, 0)
@@ -100,6 +100,14 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
       spatialChat(pBoss, "Boss Current Health = 50%")
       writeData("nightsister_temple:spawnState",2)
       local onespawn = spawnMobile("dungeon2", "nightsisterqueenrancor", 0, -73.1526, 15.3035, 22.0164, 88, 14201105)
+      local onespawn = spawnMobile("dungeon2", "nightsister_spell_weaver", 0, -67.9458, 14.4691, 39.6276, 109, 14201105)
+      local onespawn = spawnMobile("dungeon2", "nightsister_spell_weaver", 0, -46.665, 10.9366, 33.1362, 178, 14201105)
+      local onespawn = spawnMobile("dungeon2", "nightsister_spell_weaver", 0, -35.9109, 6.9717, 5.65241, 272, 14201105)
+      local onespawn = spawnMobile("dungeon2", "nightsister_spell_weaver", 0, -37.484, 7.01589, -2.62426, 273, 14201105)
+      local onespawn = spawnMobile("dungeon2", "nightsister_spell_weaver", 0, -49.0013, 8.02626, -7.47848, 357, 14201105)
+      local onespawn = spawnMobile("dungeon2", "nightsister_spell_weaver", 0, -57.3591, 9.09595, -4.00961, 3, 14201105)
+      local onespawn = spawnMobile("dungeon2", "nightsister_spell_weaver", 0, -74.0005, 14.2439, 10.0138, 105, 14201105)
+      local onespawn = spawnMobile("dungeon2", "nightsister_spell_weaver", 0, -69.0156, 14.0137, 33.634, 102, 14201105)
       ObjectManager.withCreatureObject(onespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
