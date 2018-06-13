@@ -688,7 +688,8 @@ includeFile("events/rebel_armor_vendor.lua")
 --includeFile("events/rebel_armor_vendor.lua")
 
 ---Dungeon ISD
---includeFile("dungeon/isd/isd.lua")
+includeFile("dungeon/isd/isd.lua")
+includeFile("dungeon/nightsister_temple/nightsister_temple.lua")
 
 --GCW Trainer
 --includeFile("gcw/gcwTrainerScreenplay.lua")
