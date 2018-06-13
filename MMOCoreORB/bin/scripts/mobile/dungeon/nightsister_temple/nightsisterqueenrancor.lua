@@ -26,7 +26,7 @@ nightsisterqueenrancor = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/outbreak_afflicted_blackwing_rancor_boss"},
+	templates = {"object/mobile/outbreak_afflicted_blackwing_rancor_boss.iff"},
 	lootGroups = {
 		{
 			groups = {
