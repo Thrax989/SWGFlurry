@@ -20,7 +20,7 @@ nightsister_sentry = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -42,24 +42,8 @@ nightsister_sentry = Creature:new {
 				{group = "carbines", chance = 1000000},
 				{group = "wearables_common", chance = 500000},
 				{group = "tailor_components", chance = 500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "junk", chance = 4000000},
-				{group = "wearables_common", chance = 1000000},
-				{group = "loot_kit_parts", chance = 1000000},
-				{group = "tailor_components", chance = 1000000},
-				{group = "nightsister1", chance = 500000},
-				{group = "nightsister2", chance = 500000},
-				{group = "nightsister3", chance = 500000},
-				{group = "nightsister4", chance = 500000},
-				{group = "nightsister5", chance = 500000},
-				{group = "nightsister6", chance = 500000},
-			},
-			lootChance = 10000000
-		},
+			}
+		}
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",

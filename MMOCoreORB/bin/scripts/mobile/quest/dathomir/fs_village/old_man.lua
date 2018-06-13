@@ -25,7 +25,7 @@ old_man = Creature:new {
 	optionsBitmask = INVULNERABLE + CONVERSABLE,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/som/obi_wan_ghost.iff"},
+	templates = {"object/mobile/dressed_fs_village_oldman.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "oldManIntroConvoTemplate",

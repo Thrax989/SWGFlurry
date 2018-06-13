@@ -11,7 +11,7 @@ spiderclan_protector = Creature:new {
 	baseXp = 12424,
 	baseHAM = 50000,
 	baseHAMmax = 61000,
-	armor = 2,
+	armor = 0,
 	resists = {45,95,100,65,100,100,55,100,-1},
 	meatType = "",
 	meatAmount = 0,
@@ -20,7 +20,7 @@ spiderclan_protector = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -41,8 +41,7 @@ spiderclan_protector = Creature:new {
 				{group = "rifles", chance = 1000000},
 				{group = "carbines", chance = 1000000},
 				{group = "wearables_all", chance = 500000}
-			},
-			lootChance = 10000000
+			}
 		}
 	},
 	weapons = {"mixed_force_weapons"},

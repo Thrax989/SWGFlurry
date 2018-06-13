@@ -11,7 +11,7 @@ nightsister_protector = Creature:new {
 	baseXp = 12424,
 	baseHAM = 50000,
 	baseHAMmax = 61000,
-	armor = 2,
+	armor = 0,
 	resists = {15,200,15,200,200,200,200,200,-1},
 	meatType = "",
 	meatAmount = 0,
@@ -20,7 +20,7 @@ nightsister_protector = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -33,33 +33,17 @@ nightsister_protector = Creature:new {
 			groups = {
 				{group = "power_crystals", chance = 500000},
 				{group = "color_crystals", chance = 500000},
-				{group = "nightsister_common", chance = 2000000},
-				{group = "armor_attachments", chance = 250000},
-				{group = "clothing_attachments", chance = 250000},
-				{group = "melee_weapons", chance = 2500000},
+				{group = "nightsister_common", chance = 2300000},
+				{group = "armor_attachments", chance = 350000},
+				{group = "clothing_attachments", chance = 350000},
+				{group = "melee_weapons", chance = 2000000},
 				{group = "rifles", chance = 1000000},
 				{group = "pistols", chance = 1000000},
 				{group = "carbines", chance = 1000000},
 				{group = "wearables_common", chance = 500000},
 				{group = "tailor_components", chance = 500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "junk", chance = 4000000},
-				{group = "wearables_common", chance = 1000000},
-				{group = "loot_kit_parts", chance = 1000000},
-				{group = "tailor_components", chance = 1000000},
-				{group = "nightsister1", chance = 500000},
-				{group = "nightsister2", chance = 500000},
-				{group = "nightsister3", chance = 500000},
-				{group = "nightsister4", chance = 500000},
-				{group = "nightsister5", chance = 500000},
-				{group = "nightsister6", chance = 500000},
-			},
-			lootChance = 10000000
-		},
+			}
+		}
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",

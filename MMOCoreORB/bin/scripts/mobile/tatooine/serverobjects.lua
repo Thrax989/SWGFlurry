@@ -309,6 +309,5 @@ includeFile("tatooine/wuher.lua")
 includeFile("tatooine/young_mos_taike_guard.lua")
 includeFile("tatooine/young_mountain_squill.lua")
 includeFile("tatooine/zucca_boar.lua")
-
----Custom Content
-includeFile("tatooine/tatooine_world_boss/serverobjects.lua")
+----Custom Content
+includeFile("tatooine/tatooine_world_boss/serverobjects.lua") 

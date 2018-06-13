@@ -20,7 +20,7 @@ kunga_clan_leader = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD + KILLER,
@@ -37,8 +37,7 @@ kunga_clan_leader = Creature:new {
 				{group = "clothing_attachments", chance = 500000},
 				{group = "wearables_all", chance = 2000000},
 				{group = "power_crystals", chance = 500000}
-			},
-			lootChance = 10000000
+			}
 		}
 	},
 	weapons = {"primitive_weapons"},

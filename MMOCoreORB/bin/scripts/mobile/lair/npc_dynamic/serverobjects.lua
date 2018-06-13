@@ -156,8 +156,6 @@ includeFile("lair/npc_dynamic/rori_spice_collective_courier_neutral_none.lua")
 includeFile("lair/npc_dynamic/rori_spice_collective_mineral_scouts_neutral_none.lua")
 includeFile("lair/npc_dynamic/rori_trade_federation_roamers_neutral_none.lua")
 
-includeFile("lair/npc_dynamic/taanab_norulac_raider_band.lua")
-
 includeFile("lair/npc_dynamic/talus_aakuan_sentinal_patrol_neutral_none.lua")
 includeFile("lair/npc_dynamic/talus_aakuan_warder_patrol_neutral_none.lua")
 includeFile("lair/npc_dynamic/talus_beldonna_patrol_neutral_none.lua")
@@ -189,3 +187,5 @@ includeFile("lair/npc_dynamic/tatooine_jawa_warband_neutral_none.lua")
 includeFile("lair/npc_dynamic/tatooine_tusken_raider_patrol_neutral_none.lua")
 includeFile("lair/npc_dynamic/tatooine_tusken_raider_warband_neutral_none.lua")
 includeFile("lair/npc_dynamic/tatooine_wandering_kitonak_neutral_none.lua")
+--CUSTOM
+includeFile("lair/npc_dynamic/taanab_norulac_raider_band.lua")

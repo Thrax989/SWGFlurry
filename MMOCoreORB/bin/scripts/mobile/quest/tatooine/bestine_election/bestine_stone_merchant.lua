@@ -23,7 +23,7 @@ bestine_stone_merchant = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = PACK,
-	optionsBitmask = AIENABLED + INVULNERABLE,
+	optionsBitmask = AIENABLED + INVULNERABLE + CONVERSABLE,
 	diet = HERBIVORE,
 
 	templates = {
@@ -36,6 +36,7 @@ bestine_stone_merchant = Creature:new {
 	},
 	lootGroups = {},
 	weapons = {},
+	conversationTemplate = "bestineStoneMerchantConvoTemplate",
 	attacks = {}
 }
 

@@ -11,7 +11,7 @@ spiderclan_web_dancer = Creature:new {
 	baseXp = 8315,
 	baseHAM = 12000,
 	baseHAMmax = 15000,
-	armor = 1,
+	armor = 0,
 	resists = {100,95,100,65,100,65,90,100,-1},
 	meatType = "",
 	meatAmount = 0,
@@ -20,7 +20,7 @@ spiderclan_web_dancer = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -42,8 +42,7 @@ spiderclan_web_dancer = Creature:new {
 				{group = "carbines", chance = 1000000},
 				{group = "wearables_common", chance = 500000},
 				{group = "wearables_uncommon", chance = 500000}
-			},
-			lootChance = 10000000
+			}
 		}
 	},
 	weapons = {"mixed_force_weapons"},

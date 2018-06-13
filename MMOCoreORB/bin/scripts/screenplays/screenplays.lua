@@ -238,8 +238,8 @@ includeFile("village/convos/phase4/sarguillo_phase4_conv_handler.lua")
 includeFile("village/convos/phase4/sivarra_phase4_conv_handler.lua")
 
 -- Jedi Trials
-includeFile("jedi/yavin4_dark_enclave.lua")
-includeFile("jedi/yavin4_light_enclave.lua")
+--includeFile("jedi/yavin4_dark_enclave.lua")
+--includeFile("jedi/yavin4_light_enclave.lua")
 includeFile("jedi/frs.lua")
 includeFile("jedi/trialData.lua")
 includeFile("jedi/jedi_trials.lua")
@@ -688,7 +688,8 @@ includeFile("events/rebel_armor_vendor.lua")
 --includeFile("events/rebel_armor_vendor.lua")
 
 ---Dungeon ISD
---includeFile("dungeon/isd/isd.lua")
+includeFile("dungeon/isd/isd.lua")
+includeFile("dungeon/nightsister_temple/nightsister_temple.lua")
 
 --GCW Trainer
 --includeFile("gcw/gcwTrainerScreenplay.lua")

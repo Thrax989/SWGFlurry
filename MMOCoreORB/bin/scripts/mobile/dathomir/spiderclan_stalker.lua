@@ -11,7 +11,7 @@ spiderclan_stalker = Creature:new {
 	baseXp = 9522,
 	baseHAM = 20000,
 	baseHAMmax = 25000,
-	armor = 1,
+	armor = 0,
 	resists = {90,100,100,40,100,100,40,40,-1},
 	meatType = "",
 	meatAmount = 0,
@@ -20,7 +20,7 @@ spiderclan_stalker = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -42,8 +42,7 @@ spiderclan_stalker = Creature:new {
 				{group = "carbines", chance = 1000000},
 				{group = "wearables_common", chance = 500000},
 				{group = "wearables_uncommon", chance = 500000}
-			},
-			lootChance = 10000000
+			}
 		}
 	},
 	weapons = {"mixed_force_weapons"},
