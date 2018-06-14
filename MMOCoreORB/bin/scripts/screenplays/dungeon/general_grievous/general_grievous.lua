@@ -4,7 +4,6 @@
 --------------------------------------
 general_grievous = ScreenPlay:new {
   numberOfActs = 1,
-  },
   questString = "general_grievous",
   questdata = Object:new {
   activePlayerName = "initial",

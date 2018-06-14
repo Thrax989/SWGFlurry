@@ -4,7 +4,6 @@
 --------------------------------------
 avatar_platform = ScreenPlay:new {
   numberOfActs = 1,
-  },
   questString = "avatar_platform",
   questdata = Object:new {
   activePlayerName = "initial",
