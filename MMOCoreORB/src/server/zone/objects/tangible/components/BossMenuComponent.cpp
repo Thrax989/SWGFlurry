@@ -36,7 +36,7 @@ void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectM
 		//menuResponse->addRadialMenuItemToRadialID(217, 223, 3, "Hoth Echo Base"); //BOSS ENCOUNTER 3
 		menuResponse->addRadialMenuItemToRadialID(217, 224, 3, "Tusken King"); //BOSS ENCOUNTER 4
 		//menuResponse->addRadialMenuItemToRadialID(217, 225, 3, "Imperial Star Destroyer"); //BOSS ENCOUNTER 5
-		menuResponse->addRadialMenuItemToRadialID(217, 226, 3, "Myyydril"); //BOSS ENCOUNTER 6
+		menuResponse->addRadialMenuItemToRadialID(217, 226, 3, "General Grievous"); //BOSS ENCOUNTER 6
 		menuResponse->addRadialMenuItemToRadialID(217, 227, 3, "NightSister Queen"); //BOSS ENCOUNTER 7
 		//menuResponse->addRadialMenuItemToRadialID(217, 228, 3, "Rogue Star Destroyer"); //BOSS ENCOUNTER 8
 }
@@ -320,11 +320,11 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 						Locker locker(groupedCreature);
-		        			groupedCreature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
+		        			groupedCreature->switchZone("kashyyyk", -325.27, -120.959, 145.53, 6296404);
 						locker.release();
 				}
 			}
-			creature->switchZone("kashyyyk", -4.685, -1.02156, -4.1078, 6296349);
+			creature->switchZone("kashyyyk", -325.27, -120.959, 145.53, 6296404);
 		}
 	}
 
