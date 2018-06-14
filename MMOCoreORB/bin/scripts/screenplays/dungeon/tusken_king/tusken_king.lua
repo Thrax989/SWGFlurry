@@ -4,7 +4,6 @@
 --------------------------------------
 tusken_king = ScreenPlay:new {
   numberOfActs = 1,
-  },
   questString = "tusken_king",
   questdata = Object:new {
   activePlayerName = "initial",
