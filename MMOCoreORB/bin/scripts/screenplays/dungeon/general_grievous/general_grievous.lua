@@ -22,7 +22,15 @@ local ObjectManager = require("managers.object.object_manager")  --print("Object
 function general_grievous:start()
 if (isZoneEnabled("kashyyyk")) then
   self:spawnMobiles()
+  self:spawnSceneObjects()
   end
+end
+-------------------------------------------------------------------------
+--  Spawn Scene Objects 
+-------------------------------------------------------------------------
+function general_grievous:spawnSceneObjects()
+	--Spawn Galactic Service Travel Terminal
+	spawnSceneObject("kashyyyk", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -331.314, -120.481, 144.708, 6296404, 0.731252, 0, 0.682108, 0)
 end
 --------------------------------------------------
 --   spawn mobiles for dungeon
