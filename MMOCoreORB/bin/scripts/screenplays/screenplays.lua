@@ -108,8 +108,6 @@ includeFile("junk_dealer/junk_dealer.lua")
 includeFile("junk_dealer/junk_dealer_conv_handler.lua")
 
 -- Dungeons
-includeFile("dungeon/tusken_king/tusken_king.lua")
-includeFile("dungeon/exar_kun_temple/Exar_Kun.lua")
 includeFile("dungeon/death_watch_bunker/deathWatchBunker.lua")
 includeFile("dungeon/death_watch_bunker/deathWatchContainerComponents.lua")
 includeFile("dungeon/death_watch_bunker/deathWatchMenuComponents.lua")
@@ -687,9 +685,13 @@ includeFile("events/rebel_armor_vendor.lua")
 --includeFile("events/imperial_armor_vendor.lua")
 --includeFile("events/rebel_armor_vendor.lua")
 
----Dungeon ISD
-includeFile("dungeon/isd/isd.lua")
+---CUSTOM Dungeons
+--includeFile("dungeon/isd/isd.lua")
 includeFile("dungeon/nightsister_temple/nightsister_temple.lua")
+includeFile("dungeon/general_grievous/general_grievous.lua")
+includeFile("dungeon/tusken_king/tusken_king.lua")
+includeFile("dungeon/exar_kun_temple/Exar_Kun.lua")
+includeFile("dungeon/avatar_platform/avatar_platform.lua")
 
 --GCW Trainer
 --includeFile("gcw/gcwTrainerScreenplay.lua")
