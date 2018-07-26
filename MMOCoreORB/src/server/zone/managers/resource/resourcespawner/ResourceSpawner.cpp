@@ -1107,7 +1107,7 @@ void ResourceSpawner::sendSampleResults(CreatureObject* player, const float dens
 		return;
 	}
 
-	int maxUnitsExtracted = (int) (density * (25 + System::random(3)));
+	int maxUnitsExtracted = (int) (density * (250 + System::random(3)));
 
 	float cityMultiplier = 1.f + player->getSkillMod("private_spec_samplesize") / 100.f;
 
