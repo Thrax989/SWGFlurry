@@ -4,7 +4,7 @@ local ObjectManager = require("managers.object.object_manager")
 jediManagerName = "HologrindJediManager"
 
 NUMBEROFPROFESSIONSTOMASTER = 6
-MAXIMUMNUMBEROFPROFESSIONSTOSHOWWITHHOLOCRON = NUMBEROFPROFESSIONSTOMASTER - 2
+MAXIMUMNUMBEROFPROFESSIONSTOSHOWWITHHOLOCRON = NUMBEROFPROFESSIONSTOMASTER - 1
 
 HologrindJediManager = JediManager:new {
 	screenplayName = jediManagerName,
@@ -18,15 +18,10 @@ HologrindJediManager = JediManager:new {
 function HologrindJediManager:getGrindableProfessionList()
 	local grindableProfessions = {
 		-- String Id, badge number, profession name
-		--{ "pilot_rebel_navy_corellia", 	PILOT_REBEL_NAVY_CORELLIA },
-		--{ "pilot_imperial_navy_corellia", 	PILOT_IMPERIAL_NAVY_CORELLIA },
-		--{ "pilot_neutral_corellia", 		PILOT_CORELLIA },
-		--{ "pilot_rebel_navy_tatooine", 	PILOT_REBEL_NAVY_TATOOINE },
-		--{ "pilot_imperial_navy_naboo", 	PILOT_IMPERIAL_NAVY_NABOO },
 		{ "crafting_architect_master", 		CRAFTING_ARCHITECT_MASTER  },
 		{ "crafting_armorsmith_master", 	CRAFTING_ARMORSMITH_MASTER  },
 		{ "crafting_artisan_master", 		CRAFTING_ARTISAN_MASTER  },
-		{ "outdoors_bio_engineer_master", 	OUTDOORS_BIOENGINEER_MASTER  },
+		{ "outdoors_bio_engineer_master", 	OUTDOORS_BIO_ENGINEER_MASTER  },
 		{ "combat_bountyhunter_master", 	COMBAT_BOUNTYHUNTER_MASTER  },
 		{ "combat_brawler_master", 		COMBAT_BRAWLER_MASTER  },
 		{ "combat_carbine_master", 		COMBAT_CARBINE_MASTER  },
@@ -46,21 +41,15 @@ function HologrindJediManager:getGrindableProfessionList()
 		{ "social_musician_master", 		SOCIAL_MUSICIAN_MASTER  },
 		{ "combat_polearm_master", 		COMBAT_POLEARM_MASTER  },
 		{ "combat_pistol_master", 		COMBAT_PISTOL_MASTER  },
-		--{ "social_politician_master", 	SOCIAL_POLITICIAN_MASTER  },
 		{ "outdoors_ranger_master", 		OUTDOORS_RANGER_MASTER  },
 		{ "combat_rifleman_master", 		COMBAT_RIFLEMAN_MASTER  },
 		{ "outdoors_scout_master", 		OUTDOORS_SCOUT_MASTER  },
-		--{ "crafting_shipwright", 		CRAFTING_SHIPWRIGHT },
 		{ "combat_smuggler_master", 		COMBAT_SMUGGLER_MASTER  },
 		{ "outdoors_squadleader_master", 	OUTDOORS_SQUADLEADER_MASTER  },
 		{ "combat_2hsword_master", 		COMBAT_2HSWORD_MASTER  },
 		{ "crafting_tailor_master", 		CRAFTING_TAILOR_MASTER  },
 		{ "crafting_weaponsmith_master", 	CRAFTING_WEAPONSMITH_MASTER  },
-		--{ "pilot_neutral_naboo", 		PILOT_NEUTRAL_NABOO },
-		--{ "pilot_neutral_tatooine", 		PILOT_TATOOINE },
-		--{ "pilot_imperial_navy_tatooine", 	PILOT_IMPERIAL_NAVY_TATOOINE },
-		{ "combat_unarmed_master", 		COMBAT_UNARMED_MASTER  },
-	--{ "pilot_rebel_navy_naboo", 		PILOT_REBEL_NAVY_NABOO }
+		{ "combat_unarmed_master", 		COMBAT_UNARMED_MASTER  }
 	}
 	return grindableProfessions
 end
