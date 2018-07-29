@@ -801,16 +801,16 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	if (player->getScreenPlayState("jediLives") == 1) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
 		player->setScreenPlayState("jediLives", livesLeft);
-		player->sendSystemMessage("You have Lost -1 Lives on your jedi, you now have a total of 0 Lives"); // You have Lost -1 Lives on your jedi, you now have a total of 0 Lives
+		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 0 Lives"); // You have Lost 1 Jedi Life, you now have a total of 0 Lives
 		}
 	if (player->getScreenPlayState("jediLives") == 2) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
-		player->sendSystemMessage("You have added -1 Lives on your jedi, you now have a total of 1 Lives"); // You have added -1 Lives on your jedi, you now have a total of 1 Lives
+		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 1 Life"); // You have Lost 1 Jedi Life, you now have a total of 1 Life
 		player->setScreenPlayState("jediLives", livesLeft);
 		}
 	if (player->getScreenPlayState("jediLives") == 3) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
-		player->sendSystemMessage("You have added -1 Lives on your jedi, you now have a total of 2 Lives"); // You have added -1 Lives on your jedi, you now have a total of 2 Lives
+		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 2 Lives"); // You have Lost 1 Jedi Life, you now have a total of 2 Lives
 		player->setScreenPlayState("jediLives", livesLeft);
 		}
 	/* CUSTOM BH SYSTEM By:TOXIC*/
