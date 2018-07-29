@@ -43,7 +43,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		return 0;
 	
 	if (selectedID == 213) {
- 		if (!creature->hasSkill("force_title_jedi_novice") && (ghost->getJediState() >= 2)) {
+ 		if (ghost->getJediState() >= 2) {
 			JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
 		}
 	}
@@ -51,20 +51,22 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		int livesLeft = creature->getScreenPlayState("jediLives") + 1;
 		creature->setScreenPlayState("jediLives", livesLeft);
 		sceneObject->destroyObjectFromWorld(true);
+		creature->sendSystemMessage("You have added +1 Lives to your jedi, you now have a total of 1 Lives"); // You have added +1 Lives to your jedi, you now have a total of 1 Lives
 	}
 	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 1)) {
 		int livesLeft = creature->getScreenPlayState("jediLives") + 1;
 		creature->setScreenPlayState("jediLives", livesLeft);
 		sceneObject->destroyObjectFromWorld(true);
+		creature->sendSystemMessage("You have added +1 Lives to your jedi, you now have a total of 2 Lives"); // You have added +1 Lives to your jedi, you now have a total of 2 Lives
 	}
 	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 2)) {
 		int livesLeft = creature->getScreenPlayState("jediLives") + 1;
 		creature->setScreenPlayState("jediLives", livesLeft);
 		sceneObject->destroyObjectFromWorld(true);
+		creature->sendSystemMessage("You have added +1 Lives to your jedi, you now have a total of 3 Lives"); // You have added +1 Lives to your jedi, you now have a total of 3 Lives
 	}
 	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 3)) {
-		creature->sendSystemMessage("You are at your maximum amount of Jedi lives"); // You are at your maximum amount of Jedi Lives
-		return 0;
+				creature->sendSystemMessage("You are at your maximum amount of Jedi lives"); // You are at your maximum amount of Jedi Lives
 	}
 	return 0;
 }
