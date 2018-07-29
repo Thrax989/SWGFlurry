@@ -774,6 +774,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		StringBuffer zBroadcast;
 		zBroadcast << "\\#000000" << playerName << " \\#808080has become a \\#00ff00Force Ghost";
 		ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on your Jedi
 		}
 	if (player->getScreenPlayState("jediLives") == 0) {//rebel
 		if (player->getFaction() == 370444368) {
@@ -783,6 +784,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#000000" << playerName << " \\#808080has become a \\#0000ffForce Ghost";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on your Jedi
 			}
 		}
 	if (player->getScreenPlayState("jediLives") == 0) {
@@ -793,18 +795,22 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#000000" << playerName << " \\#808080has become a \\#e51b1bForce Ghost";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on your Jedi
 			}
 		}
 	if (player->getScreenPlayState("jediLives") == 1) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
 		player->setScreenPlayState("jediLives", livesLeft);
+		player->sendSystemMessage("You have Lost -1 Lives on your jedi, you now have a total of 0 Lives"); // You have Lost -1 Lives on your jedi, you now have a total of 0 Lives
 		}
 	if (player->getScreenPlayState("jediLives") == 2) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
+		player->sendSystemMessage("You have added -1 Lives on your jedi, you now have a total of 1 Lives"); // You have added -1 Lives on your jedi, you now have a total of 1 Lives
 		player->setScreenPlayState("jediLives", livesLeft);
 		}
 	if (player->getScreenPlayState("jediLives") == 3) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
+		player->sendSystemMessage("You have added -1 Lives on your jedi, you now have a total of 2 Lives"); // You have added -1 Lives on your jedi, you now have a total of 2 Lives
 		player->setScreenPlayState("jediLives", livesLeft);
 		}
 	/* CUSTOM BH SYSTEM By:TOXIC*/
