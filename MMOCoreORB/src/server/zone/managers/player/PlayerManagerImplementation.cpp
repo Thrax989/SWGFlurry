@@ -753,7 +753,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->sendSystemMessage(stringId);
 
 	player->updateTimeOfDeath();
-	//player->clearBuffs(true, false);
+	player->clearBuffs(true, false);
 
 	PlayerObject* ghost = player->getPlayerObject();
 	player->setFactionStatus(FactionStatus::ONLEAVE);
@@ -765,8 +765,47 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		ghost->resetIncapacitationTimes();
 		ghost->setFoodFilling(0);
 		ghost->setDrinkFilling(0);
-		if(ghost->hasPvpTef()) {
-			ghost->schedulePvpTefRemovalTask(true, true);
+	if(ghost->hasPvpTef()) {
+		ghost->schedulePvpTefRemovalTask(true, true);
+		}
+	if (player->getScreenPlayState("jediLives") == 0) {//neutral
+		player->switchZone("dungeon2", 0.0225881, -1, -14.55, 14200880);
+		String playerName = player->getFirstName();
+		StringBuffer zBroadcast;
+		zBroadcast << "\\#000000" << playerName << " \\#808080has become a \\#00ff00Force Ghost";
+		ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		}
+	if (player->getScreenPlayState("jediLives") == 0) {//rebel
+		if (player->getFaction() == 370444368) {
+			player->switchZone("dungeon2", 0.0225881, -1, -14.55, 14200880);
+			player->setAlternateAppearance("object/mobile/som/shared_obi_wan_ghost.iff", true);
+			String playerName = player->getFirstName();
+			StringBuffer zBroadcast;
+			zBroadcast << "\\#000000" << playerName << " \\#808080has become a \\#0000ffForce Ghost";
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			}
+		}
+	if (player->getScreenPlayState("jediLives") == 0) {
+		if (player->getFaction() == 3679112276) {//imperial
+			player->switchZone("dungeon2", 0.0225881, -1, -14.55, 14200880);
+			player->setAlternateAppearance("object/mobile/ep3/shared_palpatine_hologram.iff", true);
+			String playerName = player->getFirstName();
+			StringBuffer zBroadcast;
+			zBroadcast << "\\#000000" << playerName << " \\#808080has become a \\#e51b1bForce Ghost";
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			}
+		}
+	if (player->getScreenPlayState("jediLives") == 1) {
+		int livesLeft = player->getScreenPlayState("jediLives") - 1;
+		player->setScreenPlayState("jediLives", livesLeft);
+		}
+	if (player->getScreenPlayState("jediLives") == 2) {
+		int livesLeft = player->getScreenPlayState("jediLives") - 1;
+		player->setScreenPlayState("jediLives", livesLeft);
+		}
+	if (player->getScreenPlayState("jediLives") == 3) {
+		int livesLeft = player->getScreenPlayState("jediLives") - 1;
+		player->setScreenPlayState("jediLives", livesLeft);
 		}
 	/* CUSTOM BH SYSTEM By:TOXIC*/
 	if (attacker->isPlayerCreature() && attacker != player) {
@@ -779,7 +818,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		player->sendMessage(input->generateMessage());
 		}
 	}
-
 
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
