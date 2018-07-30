@@ -319,6 +319,10 @@ void ChatManagerImplementation::initiateRooms() {
 	guildRoom = createRoom("guild", systemRoom);
 	guildRoom->setPrivate();
 
+	flurryRoom = createRoom("Chat", flurryRoom);
+	flurryRoom->setCanEnter(true);
+	flurryRoom->setTitle("Main flurry chat channels");
+
 	Reference<ChatRoom*> generalRoom = createRoom("Chat", galaxyRoom);
 	generalRoom->setCanEnter(true);
 	generalRoom->setAllowSubrooms(true);
