@@ -127,12 +127,15 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		return 0;
 	}
 	if (selectedID == 216 && (ghost->getJediState() >= 2)) {
+		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
+		box->setPromptTitle("Jedi Visibility");
 		int jediVis1 = ghost->getVisibility();
-		StringBuffer messageVis;
+		StringBuffer promptText;
 		String playerName = creature->getFirstName();
-		messageVis << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
-		creature->sendSystemMessage(messageVis.toString());
-		sceneObject->destroyObjectFromWorld(true);
+		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << jediVis1 << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Visibility" << endl;
+		box->setPromptText(promptText.toString());
+		ghost->addSuiBox(box);
+		creature->sendMessage(box->generateMessage());
 		return 0;
 	}
 	if (selectedID == 217 && (ghost->getJediState() >= 2)) {
