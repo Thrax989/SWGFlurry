@@ -1,7 +1,7 @@
 /*
 * HolocronMenuComponent.cpp
 *
-* Created on: 07/29/2018
+* Created on: 02/29/2018
 *	 Author: TOXIC
 *  
 */
@@ -77,33 +77,54 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 				return 0;
 		}
 	if (selectedID == 215 && (ghost->getJediState() >= 2)) {
-		if (ghost->getJediState() >= 2) {
-		if (ghost->getForcePower() >= ghost->getForcePowerMax())
-			creature->sendSystemMessage("Your Force Bar Is Full Currently");
+		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
+		if (!creature->checkCooldownRecovery("force_recalculate_cooldown")) {
+		if (playerObject->getForcePower() >= playerObject->getForcePowerMax()) {
+			creature->sendSystemMessage("@jedi_spam:holocron_force_max");
+		} else {
+				StringIdChatParameter stringId;
+  
+				Time* cdTime = creature->getCooldownTime("force_recalculate_cooldown");
+  
+				int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+  
+				stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+				stringId.setDI(timeLeft);
+				creature->sendSystemMessage(stringId);
+				error("Cooldown In Effect You May Not Recalculate Force: " + creature->getFirstName());
+				return 0;
 			}
-		if (ghost->getForcePower() < ghost->getForcePowerMax()) {
-		if (!creature->checkCooldownRecovery("force_full_cooldown")) {
-
-			StringIdChatParameter stringId;
-  
-			Time* cdTime = creature->getCooldownTime("force_full_cooldown");
-  
-			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
-  
-			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
-			stringId.setDI(timeLeft);
-			creature->sendSystemMessage(stringId);
-			error("Cooldown In Effect You May Not Regenerate Full Force: " + creature->getFirstName());
-			}
-			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-			SkillManager* skillManager = SkillManager::instance();
-			skillManager->awardForceFromSkills(creature);
-			creature->sendSystemMessage("Regenerate Full force");
-			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
-			creature->addCooldown("force_full_cooldown", 3600 * 1000);// 1 hour cooldown
+		return 0;
+	}
+	if (playerObject != NULL && playerObject->getJediState() >= 2) {
+		//You're a jedi, and not on cooldown && forceFull ? fillForce : FullForceString
+		if (playerObject->getForcePower() < playerObject->getForcePowerMax()) {
+			//Refil force + Message player
+			creature->sendSystemMessage("@jedi_spam:holocron_force_replenish");
+			playerObject->setForcePower(playerObject->getForcePowerMax(), true);
+			//Set cooldown
+			creature->addCooldown("force_recalculate_cooldown", 3600 * 1000);// 1 hour cooldown
+			//Destroy object
 			sceneObject->destroyObjectFromWorld(true);
-			return 0;
+			//Music + Effect
+			creature->playEffect("clienteffect/pl_force_absorb_hit.cef");
+			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd");
+  			playerObject->sendMessage(pmm);
+			//Broadcast to Server
+ 			Zone* zone = creature->getZone();
+ 			String playerName = creature->getFirstName();
+  			StringBuffer zBroadcast;
+  			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Used A Holocron";
+ 			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		} else {
+			//You have max force
+			creature->sendSystemMessage("@jedi_spam:holocron_force_max");
 		}
+	} else {
+		//You're not a jedi yet
+		JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
+	}
+		return 0;
 	}
 	if (selectedID == 216 && (ghost->getJediState() >= 2)) {
 		int jediVis1 = ghost->getVisibility();
