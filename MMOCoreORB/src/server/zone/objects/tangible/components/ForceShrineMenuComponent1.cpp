@@ -195,6 +195,9 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 		if (creature->getScreenPlayState("jedi_FRS") == 8) {
 			creature->setScreenPlayState("jedi_FRS", 16);
 		}
+		if (ghost->getJediState() > 2) {
+ 			ghost->setJediState(2);
+ 		}
 	}
 	if (selectedID == 219) {
 		if (creature->hasSkill("force_rank_light_novice")) {
@@ -230,6 +233,9 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 		if (creature->getScreenPlayState("jedi_FRS") == 4) {
 			creature->setScreenPlayState("jedi_FRS", 16);
 		}
+		if (ghost->getJediState() > 2) {
+ 			ghost->setJediState(2);
+ 		}
 	}
 	return 0;
 }
