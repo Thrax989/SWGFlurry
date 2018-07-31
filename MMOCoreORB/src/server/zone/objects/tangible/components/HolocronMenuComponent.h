@@ -1,8 +1,8 @@
 /*
  * HolocronMenuComponent.h
  *
- *  Created on: 01/23/2012
- *      Author: xyborn
+ *  Created on: 07/29/2017
+ *      Author: Toxic
  */
 
 #ifndef HOLOCRONMENUCOMPONENT_H_
@@ -34,9 +34,24 @@ namespace creature {
 
 using namespace server::zone::objects::creature;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+	class PlayerObject;
+}
+}
+}
+}
+
+using namespace server::zone::objects::player;
+
 class HolocronMenuComponent : public TangibleObjectMenuComponent {
+
 public:
-	int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
+	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
+
+	virtual void fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const;
 };
 
 
