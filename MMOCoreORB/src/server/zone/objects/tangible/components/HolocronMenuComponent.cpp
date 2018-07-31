@@ -32,6 +32,8 @@ void HolocronMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Obj
 			menuResponse->addRadialMenuItemToRadialID(213, 215, 3, "Regenerate Full Force"); // Regenerate Full Force
 			menuResponse->addRadialMenuItemToRadialID(213, 216, 3, "Visibility"); // Visibility
 			menuResponse->addRadialMenuItemToRadialID(213, 217, 3, "Jedi Lives Remaining"); // Jedi Lives Remaining
+			menuResponse->addRadialMenuItemToRadialID(213, 218, 3, "Light Jedi Enclave Travel"); // Light Jedi Enclave Travel
+			menuResponse->addRadialMenuItemToRadialID(213, 219, 3, "Dark Jedi Enclave Travel"); // Dark Jedi Enclave Travel
 		}
 	}
 int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
@@ -144,6 +146,56 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		box->setPromptText(promptText.toString());
 		ghost->addSuiBox(box);
 		creature->sendMessage(box->generateMessage());
+		return 0;
+	}
+	//light enclave
+	if (selectedID == 218 && (ghost->getJediState() >= 2)) {
+		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
+		if (!creature->checkCooldownRecovery("light_enclave")) {
+ 				if (!creature->isInCombat()) {
+
+				StringIdChatParameter stringId;
+  
+				Time* cdTime = creature->getCooldownTime("light_enclave");
+  
+				int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+  
+				stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+				stringId.setDI(timeLeft);
+				creature->sendSystemMessage(stringId);
+				error("Cooldown In Effect: " + creature->getFirstName());
+				return 0;
+			}
+			return 0;
+		}
+		creature->switchZone("yavin4", -5575, 87, 4901);
+		//Set cooldown
+		creature->addCooldown("light_enclave", 3600 * 1000);// 1 hour cooldown
+		return 0;
+	}
+	//dark enclave
+	if (selectedID == 219 && (ghost->getJediState() >= 2)) {
+		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
+		if (!creature->checkCooldownRecovery("dark_enclave")) {
+ 				if (!creature->isInCombat()) {
+
+				StringIdChatParameter stringId;
+  
+				Time* cdTime = creature->getCooldownTime("dark_enclave");
+  
+				int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+  
+				stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+				stringId.setDI(timeLeft);
+				creature->sendSystemMessage(stringId);
+				error("Cooldown In Effect: " + creature->getFirstName());
+				return 0;
+			}
+			return 0;
+		}
+		creature->switchZone("yavin4", 5080, 79, 306);
+		//Set cooldown
+		creature->addCooldown("dark_enclave", 3600 * 1000);// 1 hour cooldown
 		return 0;
 	}
 	return 0;
