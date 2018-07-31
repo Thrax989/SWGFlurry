@@ -1388,9 +1388,11 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 	//Perma Death Jedi with 0 lives upon Logging In
 	if (playerCreature->getScreenPlayState("jediLives") == 0) {
-		ghost->setLinkDead(true);
-		ghost->disconnect(true, true);
-	}
+		if (player->getJediState() >= 2) {
+			ghost->setLinkDead(true);
+			ghost->disconnect(true, true);
+			}
+		}
 	if (missionManager != NULL) {
 		uint64 id = playerCreature->getObjectID();
 
