@@ -772,7 +772,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
 		int jediVis1 = ghost->getVisibility();
 		player->setScreenPlayState("jediLives", livesLeft);
-		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 0 Lives"); // You have Lost 1 Jedi Life, you now have a total of 0 Lives
 		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
 		box->setPromptTitle("Jedi Lives");
 		StringBuffer promptText;
@@ -782,6 +781,11 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		box->setPromptText(promptText.toString());
 		ghost->addSuiBox(box);
 		player->sendMessage(box->generateMessage());
+		StringBuffer zBroadcast;
+		zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#0000ffJedi";
+		ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 0 Lives"); // You have Lost 1 Jedi Life, you now have a total of 0 Lives
+		player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
 		}
 	if (player->getScreenPlayState("jediLives") == 2) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
@@ -824,29 +828,57 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		player->sendMessage(input->generateMessage());
 		}
 	//Custom Perma Death Broadcasting When you reach 0 lives
-	if (player->getScreenPlayState("jediLives") == 0) {//neutral
-		String playerName = player->getFirstName();
-		StringBuffer zBroadcast;
-		zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#00ff00jedi";
-		ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-		player->sendSystemMessage("You have Permanently died on your jedi"); // You have Permanently died on your jedi
-		}
-	if (player->getScreenPlayState("jediLives") == 0) {//rebel
-		if (player->getFaction() == 370444368) {
+	if (player->getScreenPlayState("jediLives") == 0) {
+		if (ghost->getJediState() == 2) {
 			String playerName = player->getFirstName();
 			StringBuffer zBroadcast;
-			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#0000ffJedi";
+			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#00ff00jedi";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
+			player->sendSystemMessage("You have Permanently died on your jedi"); // You have Permanently died on your jedi
 			}
 		}
 	if (player->getScreenPlayState("jediLives") == 0) {
-		if (player->getFaction() == 3679112276) {//imperial
+		if (player->getFaction() == 370444368) {//rebel
+		if (ghost->getJediState() == 2) {
 			String playerName = player->getFirstName();
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
+			}
+		}
+	}
+	if (player->getScreenPlayState("jediLives") == 0) {
+		if (player->getFaction() == 3679112276) {//imperial
+		if (ghost->getJediState() == 2) {
+			String playerName = player->getFirstName();
+			StringBuffer zBroadcast;
+			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
+				}
+			}
+		}
+	if (player->getScreenPlayState("jediLives") == 0) {
+		if (player->getFaction() == 370444368) {//FRS rebel
+		if (ghost->getJediState() == 4) {
+			String playerName = player->getFirstName();
+			StringBuffer zBroadcast;
+			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
+			}
+		}
+	}
+	if (player->getScreenPlayState("jediLives") == 0) {
+		if (player->getFaction() == 3679112276) {//FRS imperial
+		if (ghost->getJediState() == 8) {
+			String playerName = player->getFirstName();
+			StringBuffer zBroadcast;
+			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
+				}
 			}
 		}
 	}
@@ -1115,6 +1147,13 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::ACTION, 100, true, false);
 		player->addWounds(CreatureAttribute::MIND, 100, true, false);
 		player->addShockWounds(100, true);
+	}
+	
+	if (player->getScreenPlayState("jediLives") == 0) {
+		if (ghost->getJediState() >= 2) {
+			ghost->setLinkDead(true);
+			ghost->disconnect(true, true);
+		}
 	}
 	if (player->getScreenPlayState("jediLives") == 0) {//Perma Death Jedi with 0 lives
 		ghost->setLinkDead(true);
