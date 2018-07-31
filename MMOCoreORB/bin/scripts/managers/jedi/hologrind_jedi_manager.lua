@@ -138,7 +138,7 @@ function HologrindJediManager:awardJediStatusAndSkill(pCreatureObject)
 
 		awardSkill(pPlayer, "force_title_jedi_novice")
 		PlayerObject(pGhost):setJediState(2)
-		PlayerObject(pGhost):setScreenPlayState("jediLives", 1);
+		PlayerObject(pGhost):setScreenPlayState("jediLives", 3);
 		print(firstName, "has become a jedi")
 	end)
 end
