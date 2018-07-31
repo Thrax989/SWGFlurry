@@ -52,10 +52,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 			}
 		}
 	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 0)) {
-		int livesLeft = creature->getScreenPlayState("jediLives") + 1;
-		creature->setScreenPlayState("jediLives", livesLeft);
-		sceneObject->destroyObjectFromWorld(true);
-		creature->sendSystemMessage("You have added +1 Life to your jedi, you now have a total of 1 Life"); // You have added +1 Life to your jedi, you now have a total of 1 Life
+		creature->sendSystemMessage("You have Permanently died on your jedi"); // You have Permanently died on your jedi
 		return 0;
 		}
 	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 1)) {
@@ -73,8 +70,8 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		return 0;
 		}
 	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 3)) {
-				creature->sendSystemMessage("You are at your maximum amount of Jedi lives, 3 Remain"); // You are at your maximum amount of Jedi Lives
-				return 0;
+		creature->sendSystemMessage("You are at your maximum amount of Jedi lives, 3 Remain"); // You are at your maximum amount of Jedi Lives
+		return 0;
 		}
 	if (selectedID == 215 && (ghost->getJediState() >= 2)) {
 		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
@@ -127,15 +124,16 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		return 0;
 	}
 	if (selectedID == 216 && (ghost->getJediState() >= 2)) {
-		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
-		box->setPromptTitle("Jedi Visibility");
-		int jediVis1 = ghost->getVisibility();
-		StringBuffer promptText;
-		String playerName = creature->getFirstName();
-		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << jediVis1 << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Visibility" << endl;
-		box->setPromptText(promptText.toString());
-		ghost->addSuiBox(box);
-		creature->sendMessage(box->generateMessage());
+		creature->setScreenPlayState("jediLives", 1);
+		//ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
+		//box->setPromptTitle("Jedi Visibility");
+		//int jediVis1 = ghost->getVisibility();
+		//StringBuffer promptText;
+		//String playerName = creature->getFirstName();
+		//promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << jediVis1 << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Visibility" << endl;
+		//box->setPromptText(promptText.toString());
+		//ghost->addSuiBox(box);
+		//creature->sendMessage(box->generateMessage());
 		return 0;
 	}
 	if (selectedID == 217 && (ghost->getJediState() >= 2)) {
