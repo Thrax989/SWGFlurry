@@ -1345,6 +1345,7 @@ void PlayerObjectImplementation::notifyOnline() {
 		zBroadcast << "\\#00bfff" << playerName << " \\#ffb90f Dark Council Leader Has Logged Into The Server";
 		playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	}*/
+	/*
 	//jedi check when logging in for grey jedi state
 	if (playerCreature->hasSkill("combat_jedi_novice")) {
 		player->setJediState(2);
@@ -1374,6 +1375,7 @@ void PlayerObjectImplementation::notifyOnline() {
 		SkillManager::instance()->awardSkill("force_rank_dark_novice", playerCreature, true, true, true);
                 info(playerCreature->getFirstName() + " Novice Force Ranking Dark Now Granted To Player With Jedi State " + " 8 ", true);
 	}
+	*/
 	//Surrender Jedi FRS skills if player does not meet required jedi FRS states
 	if (player->getJediState() < 3) {
 		SkillManager::instance()->surrenderSkill("force_title_jedi_master", playerCreature, true);
@@ -1383,6 +1385,11 @@ void PlayerObjectImplementation::notifyOnline() {
 	//Check for FRS Jedi without overt skill check
 	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
 		playerCreature->setFactionStatus(2);
+	}
+	//Perma Death Jedi with 0 lives upon Logging In
+	if (playerCreature->getScreenPlayState("jediLives") == 0) {
+		ghost->setLinkDead(true);
+		ghost->disconnect(true, true);
 	}
 	if (missionManager != NULL) {
 		uint64 id = playerCreature->getObjectID();
