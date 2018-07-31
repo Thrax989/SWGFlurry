@@ -52,7 +52,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 			}
 		}
 	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 0)) {
-		creature->sendSystemMessage("You have Permanently died on your jedi"); // You have Permanently died on your jedi
+		creature->sendSystemMessage("You have Permanently died on your jedi, you may not use this option"); // You have Permanently died on your jedi, you may not use this option
 		return 0;
 		}
 	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 1)) {
