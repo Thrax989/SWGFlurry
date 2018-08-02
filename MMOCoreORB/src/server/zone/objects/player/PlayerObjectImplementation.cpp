@@ -2271,12 +2271,12 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 		}
 
 		if (pvpTefTask->isScheduled()) {
-		info("No Tef Scheduled, adding one");
 			pvpTefTask->cancel();
 		}
 	}
 
 	if (!pvpTefTask->isScheduled()) {
+		info("No Tef Scheduled, adding one");
 		if (hasPvpTef()) {
 			auto gcwTefMs = getLastGcwPvpCombatActionTimestamp().miliDifference();
 			auto bhTefMs = getLastBhPvpCombatActionTimestamp().miliDifference();
