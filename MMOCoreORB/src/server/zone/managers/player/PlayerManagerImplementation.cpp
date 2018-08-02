@@ -5483,13 +5483,15 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 		if (entry == NULL || attacker == NULL || attacker == player || !attacker->isPlayerCreature())
 			continue;
 
-		if (!player->isAttackableBy(attacker, true))
+		if (player->getGroupID() != 0 && player->getGroupID() == attacker->getGroupID())
 			continue;
 
 		PlayerObject* attackerGhost = attacker->getPlayerObject();
 
 		if (attackerGhost == NULL)
 			continue;
+
+		Locker crossLock(attacker, player);
 
 		if (!allowSameAccountPvpRatingCredit && ghost->getAccountID() == attackerGhost->getAccountID())
 			continue;
