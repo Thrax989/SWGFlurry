@@ -164,6 +164,9 @@ class CreatureObject extends TangibleObject {
 	@dereferenced
 	private VectorMap<string, unsigned long> screenPlayStates;
 
+	@dereferenced
+	protected SynchronizedVectorMap<unsigned long, unsigned long> personalEnemyFlags;
+
 	protected transient byte healthWoundHeal;
 	protected transient byte actionWoundHeal;
 	protected transient byte mindWoundHeal;
