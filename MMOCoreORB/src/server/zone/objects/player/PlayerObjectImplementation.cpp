@@ -2225,7 +2225,7 @@ void PlayerObjectImplementation::updateLastBhPvpCombatActionTimestamp() {
 }
 
 void PlayerObjectImplementation::updateLastGcwPvpCombatActionTimestamp() {
-	updateLastPvpCombatActionTimestamp(false, true, false);
+	updateLastPvpCombatActionTimestamp(true, false, false);
 }
 
 void PlayerObjectImplementation::updateLastJediPvpCombatActionTimestamp() {
