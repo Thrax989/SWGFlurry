@@ -2259,6 +2259,8 @@ class CreatureObject extends TangibleObject {
 	public abstract void reloadTemplate() {
 	}
 	
+	public native void updateCOV();
+
 	@preLocked
 	public native void addPersonalEnemyFlag(CreatureObject enemy, unsigned long duration);
 	
