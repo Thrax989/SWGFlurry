@@ -2206,6 +2206,12 @@ void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateG
 		lastGcwPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
 	}
 
+	if (updateJediAction){
+		lastJediPvpCombatActionTimestamp.updateToCurrentTime();
+		lastJediPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
+		info("Updating Jedi TEF");
+	}
+
 	schedulePvpTefRemovalTask();
 
 	if (!alreadyHasTef) {
@@ -2215,22 +2221,32 @@ void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateG
 }
 
 void PlayerObjectImplementation::updateLastBhPvpCombatActionTimestamp() {
-	updateLastPvpCombatActionTimestamp(false, true);
+	updateLastPvpCombatActionTimestamp(false, true, false);
 }
 
 void PlayerObjectImplementation::updateLastGcwPvpCombatActionTimestamp() {
-	updateLastPvpCombatActionTimestamp(true, false);
+	updateLastPvpCombatActionTimestamp(false, true, false);
 }
 
+void PlayerObjectImplementation::updateLastJediPvpCombatActionTimestamp() {
+	updateLastPvpCombatActionTimestamp(false, false, true);
+}
 bool PlayerObjectImplementation::hasPvpTef() {
-	return !lastGcwPvpCombatActionTimestamp.isPast() || hasBhTef();
+	return !lastGcwPvpCombatActionTimestamp.isPast() || hasBhTef() || hasJediTef();
 }
 
 bool PlayerObjectImplementation::hasBhTef() {
 	return !lastBhPvpCombatActionTimestamp.isPast();
 }
 
-void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow, bool removeBhTefNow) {
+bool PlayerObjectImplementation::hasJediTef() {
+	return !lastJediPvpCombatActionTimestamp.isPast();
+}
+bool PlayerObjectImplementation::isJediAttackable() {
+	return !lastJediAttackableTimestamp.isPast();
+}
+
+void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow, bool removeBhTefNow, bool removeJediTefNow) {
 	ManagedReference<CreatureObject*> parent = getParent().get().castTo<CreatureObject*>();
 
 	if (parent == NULL)
@@ -2240,7 +2256,7 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 		pvpTefTask = new PvpTefRemovalTask(parent);
 	}
 
-	if (removeGcwTefNow || removeBhTefNow) {
+	if (removeGcwTefNow || removeBhTefNow || removeJediTefNow) {
 		if (removeGcwTefNow)
 			lastGcwPvpCombatActionTimestamp.updateToCurrentTime();
 
@@ -2249,7 +2265,13 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 			parent->notifyObservers(ObserverEventType::BHTEFCHANGED);
 		}
 
+		if (removeJediTefNow){
+			lastJediPvpCombatActionTimestamp.updateToCurrentTime();
+			lastJediAttackableTimestamp.updateToCurrentTime();
+		}
+
 		if (pvpTefTask->isScheduled()) {
+		info("No Tef Scheduled, adding one");
 			pvpTefTask->cancel();
 		}
 	}
@@ -2258,7 +2280,8 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 		if (hasPvpTef()) {
 			auto gcwTefMs = getLastGcwPvpCombatActionTimestamp().miliDifference();
 			auto bhTefMs = getLastBhPvpCombatActionTimestamp().miliDifference();
-			pvpTefTask->schedule(llabs(gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs));
+			auto jediTefMs = getLastJediPvpCombatActionTimestamp().miliDifference();
+			pvpTefTask->schedule(llabs(jediTefMs < gcwTefMs ? (jediTefMs < bhTefMs ? jediTefMs : bhTefMs) : (gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs)));
 		} else {
 			pvpTefTask->execute();
 		}
@@ -2266,7 +2289,7 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 }
 
 void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeNow) {
-	schedulePvpTefRemovalTask(removeNow, removeNow);
+	schedulePvpTefRemovalTask(removeNow, removeNow, removeNow);
 }
 
 Vector3 PlayerObjectImplementation::getTrainerCoordinates() {
