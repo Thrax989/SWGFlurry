@@ -769,7 +769,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		ghost->schedulePvpTefRemovalTask(true, true, true);
 		}
 	if (player->getScreenPlayState("jediLives") == 1) {
-		if (ghost->getJediState() >= 2) {
+		if (ghost->getJediState() == 2) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
 		int jediVis1 = ghost->getVisibility();
 		player->setScreenPlayState("jediLives", livesLeft);
@@ -853,28 +853,47 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
-				}
 			}
 		}
+	}
 	if (player->getScreenPlayState("jediLives") == 0) {
 		if (player->getFaction() == 370444368) {//FRS rebel
 		if (ghost->getJediState() == 4) {
-			String playerName = player->getFirstName();
-			StringBuffer zBroadcast;
+			int jediVis1 = ghost->getVisibility();
+ 			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+ 			box->setPromptTitle("Jedi Lives");
+ 			StringBuffer promptText;
+ 			String playerName = player->getFirstName();
+ 			promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
+ 			promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+ 			box->setPromptText(promptText.toString());
+ 			ghost->addSuiBox(box);
+ 			player->sendMessage(box->generateMessage());
+ 			StringBuffer zBroadcast;
 			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
-			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
+ 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+ 			player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 0 Lives"); // You have Lost 1 Jedi Life, you now have a total of 0 Lives
+ 			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
 			}
 		}
 	}
 	if (player->getScreenPlayState("jediLives") == 0) {
 		if (player->getFaction() == 3679112276) {//FRS imperial
 		if (ghost->getJediState() == 8) {
-			String playerName = player->getFirstName();
-			StringBuffer zBroadcast;
+ 			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+ 			box->setPromptTitle("Jedi Lives");
+ 			StringBuffer promptText;
+ 			String playerName = player->getFirstName();
+ 			promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
+ 			promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+ 			box->setPromptText(promptText.toString());
+ 			ghost->addSuiBox(box);
+ 			player->sendMessage(box->generateMessage());
+ 			StringBuffer zBroadcast;
 			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
-			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
+ 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+ 			player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 0 Lives"); // You have Lost 1 Jedi Life, you now have a total of 0 Lives
+ 			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
 				}
 			}
 		}
