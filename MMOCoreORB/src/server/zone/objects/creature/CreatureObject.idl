@@ -34,7 +34,7 @@ include server.zone.objects.creature.variables.WearablesDeltaVector;
 import system.lang.Long;
 import engine.service.proto.BasePacket;
 import system.thread.Mutex;
-
+import system.util.SynchronizedVectorMap;
 @mock
 class CreatureObject extends TangibleObject {
 	@weakReference
