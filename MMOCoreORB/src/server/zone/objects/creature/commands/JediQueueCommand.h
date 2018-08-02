@@ -190,6 +190,8 @@ public:
 		playerObject->setForcePower(playerObject->getForcePower() - forceCost);
 
 		VisibilityManager::instance()->increaseVisibility(creature, visMod);
+		//Jedi tef
+		playerObject->updateLastJediAttackableTimestamp();
 	}
 
 	void setForceCost(int fc) {
