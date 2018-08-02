@@ -2172,7 +2172,19 @@ Time PlayerObjectImplementation::getLastGcwPvpCombatActionTimestamp() {
 	return lastGcwPvpCombatActionTimestamp;
 }
 
-void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateGcwAction, bool updateBhAction) {
+Time PlayerObjectImplementation::getLastJediPvpCombatActionTimestamp() {
+	return lastJediPvpCombatActionTimestamp;
+}
+Time PlayerObjectImplementation::getLastJediAttackableTimestamp() {
+	return lastJediAttackableTimestamp;
+}
+
+void PlayerObjectImplementation::updateLastJediAttackableTimestamp() {
+	lastJediAttackableTimestamp.updateToCurrentTime();
+	lastJediAttackableTimestamp.addMiliTime(60000);
+}
+
+void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateGcwAction, bool updateBhAction, bool updateJediAction) {
 	ManagedReference<CreatureObject*> parent = getParent().get().castTo<CreatureObject*>();
 
 	if (parent == NULL)
