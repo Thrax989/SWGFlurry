@@ -3596,3 +3596,143 @@ bool CreatureObjectImplementation::isPlayerCreature() {
 
 	return templateObject->isPlayerCreatureTemplate();
 }
+
+void CreatureObjectImplementation::updateCOV() {
+	debug("running out of range checks");
+
+	CreatureObject* creature = asCreatureObject();
+
+	SortedVector<QuadTreeEntry*> closeObjects;
+	auto closeObjectsVector = getCloseObjects();
+
+	if (closeObjectsVector == nullptr)
+		return;
+
+	closeObjectsVector->safeCopyTo(closeObjects);
+
+	auto worldPos = getWorldPosition();
+	float x = worldPos.getX();
+	float y = worldPos.getY();
+
+	auto currentZone = getZone();
+	float range2 = getOutOfRangeDistance();
+
+	for (int i = 0; i < closeObjects.size(); ++i) {
+		SceneObject* o = static_cast<SceneObject*>(closeObjects.getUnsafe(i));
+
+		auto rootParent = o->getRootParent();
+
+		if (rootParent != nullptr) { //the parent should be in cov, so we can ignore the contained object
+			continue;
+		}
+
+		if (o != creature) {
+			auto objectWorldPos = o->getWorldPosition();
+
+			float deltaX = x - objectWorldPos.getX();
+			float deltaY = y - objectWorldPos.getY();
+
+			//update out of range objects
+			float range1 = o->getOutOfRangeDistance();
+
+			float rangesq = Math::sqr(Math::max(range1, range2));
+
+			if (deltaX * deltaX + deltaY * deltaY > rangesq) {
+				if (getCloseObjects() != nullptr)
+					removeInRangeObject(o);
+
+				if (o->getCloseObjects() != nullptr)
+					o->removeInRangeObject(creature);
+			}
+		}
+	}
+}
+
+void CreatureObjectImplementation::addPersonalEnemyFlag(CreatureObject* enemy, uint64 duration) {
+	uint64 expireTime = duration;
+
+	if (duration > 0) {
+		Time currentTime;
+		expireTime += currentTime.getMiliTime();
+
+		ManagedReference<CreatureObject*> creo = _this.getReferenceUnsafeStaticCast();
+		ManagedReference<CreatureObject*> strongEnemy = enemy->asCreatureObject();
+
+		Core::getTaskManager()->scheduleTask([creo, strongEnemy] {
+			Locker locker(creo);
+			creo->removePersonalEnemyFlag(strongEnemy);
+		}, "PersonalEnemyFlagExpiration", duration);
+	}
+
+	personalEnemyFlags.put(enemy->getObjectID(), expireTime);
+	sendPvpStatusTo(enemy);
+}
+
+void CreatureObjectImplementation::removePersonalEnemyFlag(CreatureObject* enemy) {
+	uint64 enemyID = enemy->getObjectID();
+
+	if (!personalEnemyFlags.drop(enemyID))
+		return;
+
+	sendPvpStatusTo(enemy);
+}
+
+void CreatureObjectImplementation::removePersonalEnemyFlag(uint64 enemyID) {
+	if (!personalEnemyFlags.drop(enemyID))
+		return;
+
+	ZoneServer* zoneServer = server->getZoneServer();
+	ManagedReference<CreatureObject*> enemy = zoneServer->getObject(enemyID).castTo<CreatureObject*>();
+
+	if (enemy != NULL)
+		sendPvpStatusTo(enemy);
+}
+
+bool CreatureObjectImplementation::hasPersonalEnemyFlag(CreatureObject* enemy) {
+	uint64 enemyOID = enemy->getObjectID();
+
+	if (!personalEnemyFlags.contains(enemyOID))
+		return false;
+
+	uint64 expireTime = personalEnemyFlags.get(enemyOID);
+
+	if (expireTime == 0)
+		return true;
+
+	Time currentTime;
+
+	return currentTime.getMiliTime() < expireTime;
+}
+
+void CreatureObjectImplementation::schedulePersonalEnemyFlagTasks() {
+	if (personalEnemyFlags.size() <= 0)
+		return;
+
+	Time currentTime;
+	uint64 curTime = currentTime.getMiliTime();
+
+	for (int i = personalEnemyFlags.size() - 1; i >= 0; i--) {
+		uint64 expireTime = personalEnemyFlags.get(i);
+		uint64 enemyID = personalEnemyFlags.getKey(i);
+
+		if (expireTime == 0)
+			continue;
+
+		if (expireTime <= curTime) {
+			personalEnemyFlags.drop(enemyID);
+		} else {
+			uint64 timeDiff = expireTime - curTime;
+
+			ManagedReference<CreatureObject*> creo = _this.getReferenceUnsafeStaticCast();
+
+			Core::getTaskManager()->scheduleTask([creo, enemyID, expireTime] {
+				Locker locker(creo);
+
+				if (creo->getPersonalEnemyFlagTime(enemyID) != expireTime)
+					return;
+
+				creo->removePersonalEnemyFlag(enemyID);
+			}, "PersonalEnemyFlagExpiration", timeDiff);
+		}
+	}
+}
