@@ -3,7 +3,7 @@ local ObjectManager = require("managers.object.object_manager")
 
 jediManagerName = "HologrindJediManager"
 
-NUMBEROFPROFESSIONSTOMASTER = 4
+NUMBEROFPROFESSIONSTOMASTER = 5
 MAXIMUMNUMBEROFPROFESSIONSTOSHOWWITHHOLOCRON = NUMBEROFPROFESSIONSTOMASTER - 1
 
 HologrindJediManager = JediManager:new {
@@ -131,6 +131,8 @@ function HologrindJediManager:awardJediStatusAndSkill(pCreatureObject)
 	ObjectManager.withCreaturePlayerObject(pCreatureObject, function(playerObject)
 		local pGhost = CreatureObject(pCreatureObject):getPlayerObject()
 		local firstName = CreatureObject(pCreatureObject):getFirstName()
+		local player = LuaCreatureObject(pCreatureObject)
+
 
 		if (pGhost == nil) then
 			return
@@ -138,7 +140,7 @@ function HologrindJediManager:awardJediStatusAndSkill(pCreatureObject)
 
 		awardSkill(pPlayer, "force_title_jedi_novice")
 		PlayerObject(pGhost):setJediState(2)
-		PlayerObject(pGhost):setScreenPlayState("jediLives", 3);
+		player:setScreenPlayState(3, "jediLives")
 		print(firstName, "has become a jedi")
 	end)
 end
