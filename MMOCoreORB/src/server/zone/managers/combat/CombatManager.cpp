@@ -242,8 +242,7 @@ int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon
 					continue;
 				}
 
-				damage += doTargetCombatAction(attacker, weapon, areaDefenders->get(i), data, &shouldGcwTef,
-											   &shouldBhTef, &shouldJediTef);
+				damage += doTargetCombatAction(attacker, weapon, areaDefenders->get(i), data, &shouldGcwTef, &shouldBhTef, &shouldJediTef);
 				areaDefenders->remove(i);
 
 				tano->unlock();
