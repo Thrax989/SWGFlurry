@@ -769,7 +769,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		ghost->schedulePvpTefRemovalTask(true, true, true);
 		}
 	if (player->getScreenPlayState("jediLives") == 1) {
-		if (ghost->getJediState() == 2) {
+		if (ghost->getJediState() >= 2) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
 		int jediVis1 = ghost->getVisibility();
 		player->setScreenPlayState("jediLives", livesLeft);
@@ -790,7 +790,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		}
 	}
 	if (player->getScreenPlayState("jediLives") == 2) {
-		if (ghost->getJediState() == 2) {
+		if (ghost->getJediState() >= 2) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
 		int jediVis1 = ghost->getVisibility();
 		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 1 Life"); // You have Lost 1 Jedi Life, you now have a total of 1 Life
@@ -807,7 +807,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		}
 	}
 	if (player->getScreenPlayState("jediLives") == 3) {
-		if (ghost->getJediState() == 2) {
+		if (ghost->getJediState() >= 2) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
 		int jediVis1 = ghost->getVisibility();
 		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 2 Lives"); // You have Lost 1 Jedi Life, you now have a total of 2 Lives
@@ -836,7 +836,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	//Custom Perma Death Broadcasting When you reach 0 lives
 	if (player->getScreenPlayState("jediLives") == 0) {
 		if (player->getFaction() == 370444368) {//rebel
-		if (ghost->getJediState() == 2) {
+		if (ghost->getJediState() >= 2) {
 			String playerName = player->getFirstName();
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
@@ -847,7 +847,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	}
 	if (player->getScreenPlayState("jediLives") == 0) {
 		if (player->getFaction() == 3679112276) {//imperial
-		if (ghost->getJediState() == 2) {
+		if (ghost->getJediState() >= 2) {
 			String playerName = player->getFirstName();
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
