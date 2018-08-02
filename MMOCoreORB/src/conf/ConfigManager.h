@@ -17,6 +17,7 @@ namespace conf {
 		bool dumpObjFiles;
 		bool unloadContainers;
 		bool useMetrics;
+		bool pvpMode;
 
 		String orbNamingDirectoryAddress;
 		uint16 orbNamingDirectoryPort;
