@@ -766,7 +766,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		ghost->setFoodFilling(0);
 		ghost->setDrinkFilling(0);
 	if(ghost->hasPvpTef()) {
-		ghost->schedulePvpTefRemovalTask(true, true);
+		ghost->schedulePvpTefRemovalTask(true, true, true);
 		}
 	if (player->getScreenPlayState("jediLives") == 1) {
 		if (ghost->getJediState() == 2) {
