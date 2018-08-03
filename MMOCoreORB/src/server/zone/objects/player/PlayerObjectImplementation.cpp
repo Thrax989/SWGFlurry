@@ -1345,6 +1345,7 @@ void PlayerObjectImplementation::notifyOnline() {
 		zBroadcast << "\\#00bfff" << playerName << " \\#ffb90f Dark Council Leader Has Logged Into The Server";
 		playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	}*/
+	/*
 	//jedi check when logging in for grey jedi state
 	if (playerCreature->hasSkill("combat_jedi_novice")) {
 		player->setJediState(2);
@@ -1374,6 +1375,7 @@ void PlayerObjectImplementation::notifyOnline() {
 		SkillManager::instance()->awardSkill("force_rank_dark_novice", playerCreature, true, true, true);
                 info(playerCreature->getFirstName() + " Novice Force Ranking Dark Now Granted To Player With Jedi State " + " 8 ", true);
 	}
+	*/
 	//Surrender Jedi FRS skills if player does not meet required jedi FRS states
 	if (player->getJediState() < 3) {
 		SkillManager::instance()->surrenderSkill("force_title_jedi_master", playerCreature, true);
@@ -1384,6 +1386,13 @@ void PlayerObjectImplementation::notifyOnline() {
 	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
 		playerCreature->setFactionStatus(2);
 	}
+	//Perma Death Jedi with 0 lives upon Logging In
+	if (playerCreature->getScreenPlayState("jediLives") == 0) {
+		if (player->getJediState() >= 2) {
+			ghost->setLinkDead(true);
+			ghost->disconnect(true, true);
+			}
+		}
 	if (missionManager != NULL) {
 		uint64 id = playerCreature->getObjectID();
 
@@ -2163,7 +2172,19 @@ Time PlayerObjectImplementation::getLastGcwPvpCombatActionTimestamp() {
 	return lastGcwPvpCombatActionTimestamp;
 }
 
-void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateGcwAction, bool updateBhAction) {
+Time PlayerObjectImplementation::getLastJediPvpCombatActionTimestamp() {
+	return lastJediPvpCombatActionTimestamp;
+}
+Time PlayerObjectImplementation::getLastJediAttackableTimestamp() {
+	return lastJediAttackableTimestamp;
+}
+
+void PlayerObjectImplementation::updateLastJediAttackableTimestamp() {
+	lastJediAttackableTimestamp.updateToCurrentTime();
+	lastJediAttackableTimestamp.addMiliTime(60000);
+}
+
+void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateGcwAction, bool updateBhAction, bool updateJediAction) {
 	ManagedReference<CreatureObject*> parent = getParent().get().castTo<CreatureObject*>();
 
 	if (parent == NULL)
@@ -2185,6 +2206,12 @@ void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateG
 		lastGcwPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
 	}
 
+	if (updateJediAction){
+		lastJediPvpCombatActionTimestamp.updateToCurrentTime();
+		lastJediPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
+		info("Updating Jedi TEF");
+	}
+
 	schedulePvpTefRemovalTask();
 
 	if (!alreadyHasTef) {
@@ -2194,22 +2221,32 @@ void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateG
 }
 
 void PlayerObjectImplementation::updateLastBhPvpCombatActionTimestamp() {
-	updateLastPvpCombatActionTimestamp(false, true);
+	updateLastPvpCombatActionTimestamp(false, true, false);
 }
 
 void PlayerObjectImplementation::updateLastGcwPvpCombatActionTimestamp() {
-	updateLastPvpCombatActionTimestamp(true, false);
+	updateLastPvpCombatActionTimestamp(true, false, false);
 }
 
+void PlayerObjectImplementation::updateLastJediPvpCombatActionTimestamp() {
+	updateLastPvpCombatActionTimestamp(false, false, true);
+}
 bool PlayerObjectImplementation::hasPvpTef() {
-	return !lastGcwPvpCombatActionTimestamp.isPast() || hasBhTef();
+	return !lastGcwPvpCombatActionTimestamp.isPast() || hasBhTef() || hasJediTef();
 }
 
 bool PlayerObjectImplementation::hasBhTef() {
 	return !lastBhPvpCombatActionTimestamp.isPast();
 }
 
-void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow, bool removeBhTefNow) {
+bool PlayerObjectImplementation::hasJediTef() {
+	return !lastJediPvpCombatActionTimestamp.isPast();
+}
+bool PlayerObjectImplementation::isJediAttackable() {
+	return !lastJediAttackableTimestamp.isPast();
+}
+
+void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow, bool removeBhTefNow, bool removeJediTefNow) {
 	ManagedReference<CreatureObject*> parent = getParent().get().castTo<CreatureObject*>();
 
 	if (parent == NULL)
@@ -2219,7 +2256,7 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 		pvpTefTask = new PvpTefRemovalTask(parent);
 	}
 
-	if (removeGcwTefNow || removeBhTefNow) {
+	if (removeGcwTefNow || removeBhTefNow || removeJediTefNow) {
 		if (removeGcwTefNow)
 			lastGcwPvpCombatActionTimestamp.updateToCurrentTime();
 
@@ -2228,16 +2265,23 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 			parent->notifyObservers(ObserverEventType::BHTEFCHANGED);
 		}
 
+		if (removeJediTefNow){
+			lastJediPvpCombatActionTimestamp.updateToCurrentTime();
+			lastJediAttackableTimestamp.updateToCurrentTime();
+		}
+
 		if (pvpTefTask->isScheduled()) {
 			pvpTefTask->cancel();
 		}
 	}
 
 	if (!pvpTefTask->isScheduled()) {
+		info("No Tef Scheduled, adding one");
 		if (hasPvpTef()) {
 			auto gcwTefMs = getLastGcwPvpCombatActionTimestamp().miliDifference();
 			auto bhTefMs = getLastBhPvpCombatActionTimestamp().miliDifference();
-			pvpTefTask->schedule(llabs(gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs));
+			auto jediTefMs = getLastJediPvpCombatActionTimestamp().miliDifference();
+			pvpTefTask->schedule(llabs(jediTefMs < gcwTefMs ? (jediTefMs < bhTefMs ? jediTefMs : bhTefMs) : (gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs)));
 		} else {
 			pvpTefTask->execute();
 		}
@@ -2245,7 +2289,7 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 }
 
 void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeNow) {
-	schedulePvpTefRemovalTask(removeNow, removeNow);
+	schedulePvpTefRemovalTask(removeNow, removeNow, removeNow);
 }
 
 Vector3 PlayerObjectImplementation::getTrainerCoordinates() {

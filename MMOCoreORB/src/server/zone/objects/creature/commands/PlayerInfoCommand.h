@@ -130,6 +130,7 @@ public:
 			//Jedi FRS Member Custom attributes
 			//promptText << "\nPVP Rating: " << targetObject->getScreenPlayState("pvpRating") << endl;
 			promptText << "\nPlayer has " << targetObject->getScreenPlayState("deathBounty") << " people who want him dead" << endl;
+			promptText << "\nPlayer has " << targetObject->getScreenPlayState("jediLives") << " Jedi Lives Left" << endl;
 			int frsSkills = ghost->numSpecificSkills(targetObject, "force_rank_");
 			String frsSkillName = "";
 			if (frsSkills > 0) {

@@ -73,6 +73,12 @@ public:
 			creature->sendSystemMessage("@pet/pet_menu:cant_mount_veh_disabled");
 			return GENERALERROR;
 		}
+		
+		if (vehicle->isIncapacitated())
+			return GENERALERROR;
+
+		if (vehicle->isDead())
+			return GENERALERROR;
 
 		if (vehicle->getPosture() == CreaturePosture::LYINGDOWN || vehicle->getPosture() == CreaturePosture::SITTING) {
 			vehicle->setPosture(CreaturePosture::UPRIGHT);

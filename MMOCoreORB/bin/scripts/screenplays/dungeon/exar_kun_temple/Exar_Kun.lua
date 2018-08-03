@@ -396,6 +396,7 @@ end
 function exar_kun:notifyTriggerDead(pTrigger, pPlayer)
 local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", 0, -12.2959, -0.386468, -64.93, 178, 14200873)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
+    CreatureObject(pPlayer):playMusicMessage("sound/exar_kun.snd")
     ObjectManager.withCreatureObject(pBoss, function(oBoss)
     writeData("exar_kun:spawnState", 1)
     writeData("exar_kun", oBoss:getObjectID())

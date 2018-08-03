@@ -708,6 +708,6 @@ includeFile("events/talus_poi_waypoints.lua")
 includeFile("events/tatooine_poi_waypoints.lua")
 includeFile("events/yavin4_poi_waypoints.lua")
 includeFile("events/deathBounty.lua")
-
+includeFile("events/jediLives.lua")
 --Boss teleport radius check zone
 includeFile("gcw/nova.lua")
