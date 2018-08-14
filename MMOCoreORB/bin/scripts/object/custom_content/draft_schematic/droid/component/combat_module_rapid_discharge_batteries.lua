@@ -1,0 +1,5 @@
+object_draft_schematic_droid_component_combat_module_rapid_discharge_batteries = object_draft_schematic_droid_component_shared_combat_module_rapid_discharge_batteries:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_droid_component_combat_module_rapid_discharge_batteries, "object/draft_schematic/droid/component/combat_module_rapid_discharge_batteries.iff")

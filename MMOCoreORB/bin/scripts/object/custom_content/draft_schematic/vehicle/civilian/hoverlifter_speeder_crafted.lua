@@ -1,0 +1,5 @@
+object_draft_schematic_vehicle_civilian_hoverlifter_speeder_crafted = object_draft_schematic_vehicle_civilian_shared_hoverlifter_speeder_crafted:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_vehicle_civilian_hoverlifter_speeder_crafted, "object/draft_schematic/vehicle/civilian/hoverlifter_speeder_crafted.iff")

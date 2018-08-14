@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_rifle_flame_thrower_light = object_draft_schematic_weapon_shared_rifle_flame_thrower_light:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_rifle_flame_thrower_light, "object/draft_schematic/weapon/rifle_flame_thrower_light.iff")

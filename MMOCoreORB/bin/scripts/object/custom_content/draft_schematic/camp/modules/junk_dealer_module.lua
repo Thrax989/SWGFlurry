@@ -1,0 +1,5 @@
+object_draft_schematic_camp_modules_junk_dealer_module = object_draft_schematic_camp_modules_shared_junk_dealer_module:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_camp_modules_junk_dealer_module, "object/draft_schematic/camp/modules/junk_dealer_module.iff")

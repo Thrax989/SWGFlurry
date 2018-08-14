@@ -1,0 +1,5 @@
+object_draft_schematic_genetic_engineering_combiner_unit = object_draft_schematic_genetic_engineering_shared_combiner_unit:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_combiner_unit, "object/draft_schematic/genetic_engineering/combiner_unit.iff")

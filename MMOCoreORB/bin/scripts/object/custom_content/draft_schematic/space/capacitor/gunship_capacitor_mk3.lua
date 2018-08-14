@@ -1,0 +1,5 @@
+object_draft_schematic_space_capacitor_gunship_capacitor_mk3 = object_draft_schematic_space_capacitor_shared_gunship_capacitor_mk3:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_space_capacitor_gunship_capacitor_mk3, "object/draft_schematic/space/capacitor/gunship_capacitor_mk3.iff")
