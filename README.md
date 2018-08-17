@@ -73,33 +73,34 @@ It's purpose is to add all of the NGE assets and anything released by the kind c
 The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to this address. https://github.com/Thrax989/SWGFlurry/issues
 
 ## All Custom Additions
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * All standard Pre-CU assets
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * All post 14.1 Weapons
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * CU Armor - Katarn, Rebel Assault/Battle, Imperial Assualt & Scout Troopers
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * Mustafar Mobs & NPC's
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * Kashyyyk Mobs and worldbuilding assets
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * Many NGE Mobs
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * All NGE Backpack
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Wings / Halos
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * BARC Speeder Neutral / Rebel Imperial / Pod Racers 1 an 2 / Sith Sppeder
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * All NGE Housing Deeds With Appropriate signs / Halloween signs
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE House schematics 
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE capes Rebel / Imperial
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Decorations / Hologram Decorations / 1 year - 10 year vet rewards 
-- ![#008000](https://placehold.it/15/008000/000000?text=+) All TCG Items
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Remaining NGE Wearable,Vehicles,Deeds,Assets
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All standard Pre-CU assets`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All post 14.1 Weapons`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `CU Armor - Katarn, Rebel Assault/Battle, Imperial Assualt & Scout Troopers`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mustafar Mobs & NPC's`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyyk Mobs and worldbuilding assets`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Many NGE Mobs`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All NGE Backpack`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE Wings / Halos`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `BARC Speeder Neutral / Rebel Imperial / Pod Racers 1 an 2 / Sith Sppeder`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All NGE Housing Deeds With Appropriate signs / Halloween signs`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE House schematics`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE capes Rebel / Imperial`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE Decorations / Hologram Decorations / 1 year - 10 year vet rewards`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All TCG Items`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE Wearable,Vehicles,Deeds,Assets`
 
 ## Custom Professions
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Spy
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Mechanic
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Gray force sensative
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Gray Initiate
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Gray Jedi Novice 
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Gray Jedi Master
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Elder Gray Jedi
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Elder Gray Jedi Master
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Gray Jedi Order
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Grand Master
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Spy`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mechanic`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Melee Bounty Hunter`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray force sensative`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Initiate`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Novice` 
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Master`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Elder Gray Jedi`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Elder Gray Jedi Master`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Order`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Grand Master`
 
 ## Pre-Pub 9 Jedi Additions
 - ![#008000](https://placehold.it/15/008000/000000?text=+) Jedi Holocron Unlock System (4 Badges 1 Slient)
