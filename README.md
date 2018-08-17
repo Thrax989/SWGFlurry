@@ -32,8 +32,8 @@ https://github.com/TheAnswer/PublicEngine/commit/516a45fae783108812458369644137b
 https://github.com/Thrax989/SWGFlurry/tree/master/MMOEngine/lib/unix
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `With This File`
 https://github.com/Thrax989/SWGFlurry/tree/master/MMOEngine/lib/linux64
-<br>
-Once you have over writen `Unix Lib` with `Linux64 Lib` you may now start your server build
+
+Once you have over writen - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Unix Lib` with - ![#008000](https://placehold.it/15/008000/000000?text=+) `Linux64 Lib` you may now start your server build
 
 ## Build Server
 Open Terminal
