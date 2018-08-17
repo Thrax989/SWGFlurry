@@ -1,0 +1,5 @@
+object_draft_schematic_droid_droid_guardian_mark_ii_droid = object_draft_schematic_droid_shared_droid_guardian_mark_ii_droid:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_droid_droid_guardian_mark_ii_droid, "object/draft_schematic/droid/droid_guardian_mark_ii_droid.iff")

@@ -72,51 +72,67 @@ It's purpose is to add all of the NGE assets and anything released by the kind c
 
 The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to this address. https://github.com/Thrax989/SWGFlurry/issues
 
-## Everything that has been added so far
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * All standard Pre-CU assets
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * All post 14.1 Weapons
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * CU Armor - Katarn, Rebel Assault/Battle, Imperial Assualt & Scout Troopers
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * Mustafar Mobs & NPC's
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * Kashyyyk Mobs and worldbuilding assets
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * Many NGE Mobs
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * All NGE Backpack
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Wings / Halos
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * BARC Speeder Neutral / Rebel Imperial / Pod Racers 1 an 2 / Sith Sppeder
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * All NGE Housing Deeds With Appropriate signs / Halloween signs
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE House schematics 
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE capes Rebel / Imperial
-- ![#008000](https://placehold.it/15/008000/000000?text=+) * NGE Decorations / Hologram Decorations / 1 year - 10 year vet rewards 
+## All Custom Additions
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All standard Pre-CU assets`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All post 14.1 Weapons`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `CU Armor - Katarn, Rebel Assault/Battle, Imperial Assualt & Scout Troopers`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mustafar Mobs & NPC's`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyyk Mobs and worldbuilding assets`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Many NGE Mobs`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All NGE Backpack`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE Wings / Halos`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `BARC Speeder Neutral / Rebel Imperial / Pod Racers 1 an 2 / Sith Sppeder`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All NGE Housing Deeds With Appropriate signs / Halloween signs`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE House schematics`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE capes Rebel / Imperial`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE Decorations / Hologram Decorations / 1 year - 10 year vet rewards`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All TCG Items`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE Wearable,Vehicles,Deeds,Assets`
 
-## Everything that needs to be added
-- ![#008000](https://placehold.it/15/FF0000/000000?text=+) All TCG Items
-- ![#008000](https://placehold.it/15/FF0000/000000?text=+) Remaining NGE Wearable,Vehicles,Deeds,Assets
+## Custom Professions
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Spy`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mechanic`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Melee Bounty Hunter`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray force sensative`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Initiate`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Novice` 
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Master`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Elder Gray Jedi`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Elder Gray Jedi Master`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Order`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Grand Master`
 
-## Planets That Need Testing
-- ![#008000](https://placehold.it/15/008000/000000?text=+) corellia
-- ![#008000](https://placehold.it/15/008000/000000?text=+) dantooine
-- ![#008000](https://placehold.it/15/008000/000000?text=+) dathomir
-- ![#008000](https://placehold.it/15/008000/000000?text=+) endor
-- ![#008000](https://placehold.it/15/008000/000000?text=+) lok
-- ![#008000](https://placehold.it/15/008000/000000?text=+) naboo
-- ![#008000](https://placehold.it/15/008000/000000?text=+) rori
-- ![#008000](https://placehold.it/15/008000/000000?text=+) talus
-- ![#008000](https://placehold.it/15/008000/000000?text=+) tatooine
-- ![#008000](https://placehold.it/15/008000/000000?text=+) yavin4
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Mandalore
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Taanab
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Hoth
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Kaas
-- ![#008000](https://placehold.it/15/008000/000000?text=+) coruscant
-- ![#008000](https://placehold.it/15/008000/000000?text=+) chandrila
-- ![#008000](https://placehold.it/15/008000/000000?text=+) nal hutta
-- ![#008000](https://placehold.it/15/008000/000000?text=+) moraband
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Kashyyyk
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Mustafar
+## Pre-Pub 9 Jedi Additions
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Jedi Holocron Unlock System (4 Badges 1 Slient)
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Jedi Lightsaber TEF / Group TEF
+- ![#008000](https://placehold.it/15/008000/000000?text=+) Jedi Perma Death (3 Lives Additional lives gained from holocrons) - This system can be turn - ![#008000](https://placehold.it/15/008000/000000?text=+) `On` or - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Off` depending on the server operators choice
+
+## Custom Planets
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `corellia`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `dantooine`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `dathomir`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `endor`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `lok`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `naboo`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `rori`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `talus`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `tatooine`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `yavin4`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalore`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Taanab`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Hoth`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kaas`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `coruscant`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `chandrila`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `nal hutta`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `moraband`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyyk`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mustafar`
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) jakku
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) bespin
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) dagobah
-- ![#008000](https://placehold.it/15/008000/000000?text=+) dungeon1
-- ![#008000](https://placehold.it/15/008000/000000?text=+) dungeon2
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `dungeon1`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `dungeon2`
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ghomrassen
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) kessel
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) kuat

@@ -1,0 +1,5 @@
+object_draft_schematic_genetic_engineering_combiner_use_coolant = object_draft_schematic_genetic_engineering_shared_combiner_use_coolant:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_combiner_use_coolant, "object/draft_schematic/genetic_engineering/combiner_use_coolant.iff")

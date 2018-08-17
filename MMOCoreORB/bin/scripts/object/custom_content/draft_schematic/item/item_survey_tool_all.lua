@@ -1,0 +1,5 @@
+object_draft_schematic_item_item_survey_tool_all = object_draft_schematic_item_shared_item_survey_tool_all:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_item_item_survey_tool_all, "object/draft_schematic/item/item_survey_tool_all.iff")

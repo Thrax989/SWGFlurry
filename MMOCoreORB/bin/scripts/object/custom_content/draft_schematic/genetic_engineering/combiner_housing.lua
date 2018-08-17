@@ -1,0 +1,5 @@
+object_draft_schematic_genetic_engineering_combiner_housing = object_draft_schematic_genetic_engineering_shared_combiner_housing:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_combiner_housing, "object/draft_schematic/genetic_engineering/combiner_housing.iff")
