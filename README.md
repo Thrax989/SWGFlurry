@@ -29,6 +29,22 @@ swgemu runUnitTests<br>
 https://github.com/TheAnswer/PublicEngine/commit/516a45fae783108812458369644137baf62fe66d<br>
 Build Passed - ![#008000](https://placehold.it/15/008000/000000?text=+)
 
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Replace This File`
+https://github.com/Thrax989/SWGFlurry/tree/master/MMOEngine/lib/unix
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `With This File`
+https://github.com/Thrax989/SWGFlurry/tree/master/MMOEngine/lib/linux64
+Once you have over writen `Unix Lib` with `Linux64 Lib` you may now start your server build
+
+## Build Server
+Open Terminal
+- ![#008000](https://placehold.it/15/008000/000000?text=+)`cd ~/workspace/Core3/MMOCoreORBD`
+- ![#008000](https://placehold.it/15/008000/000000?text=+)`Make Config`
+- ![#008000](https://placehold.it/15/008000/000000?text=+)`MAke Clean`
+- ![#008000](https://placehold.it/15/008000/000000?text=+)`Make Idl`
+- ![#008000](https://placehold.it/15/008000/000000?text=+)`Make Build`
+
+## Correct Engine Lib
+Make sure you Overwrite your UNIX Lib with Linux64 Lib BEFOR YOU BUILD
 ## Required Mod The Galaxy TRE Files
 www.swgflurry.com/TRE/<br>
 	maxSearchPriority=27<br>
