@@ -2,6 +2,11 @@
 
 ## <img src="http://i.imgur.com/OB4Pa6a.png">
 
+## Coding Legend
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Testing`
+
 ## Server Base Source Code
 https://github.com/TheAnswer/Core3<br>
 https://github.com/TheAnswer/PublicEngine<br>
@@ -76,11 +81,6 @@ www.swgflurry.com/TRE/<br>
 	searchTree_00_2=mtg_patch_003_appearance_03.tre<br>
 	searchTree_00_1=mtg_patch_002_appearance_02.tre<br>
 	searchTree_00_0=mtg_patch_001_appearance_01.tre<br>
-	
-## Coding Legend
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Testing`
 
 ## This Server Is A Branch From The MTGserver
 
