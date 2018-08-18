@@ -19,7 +19,7 @@ https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
 ## Live Servers Virtual Machine Image
 Download - https://www.virtualbox.org/wiki/Downloads
   * VirtualBox v5.2.14 or greater
-
+Dowload SWGFlurry Server Image - https://mega.nz/#!GORAASyZ!Pg0IoC_trmPq39dsY4KIBcjHADC0-Fu-vOFkhYywJqY
 Once you have downloaded the Flurry Server Image you can Import the image in oracle Follow the following steps below to start your server.
 
 ## Build Server
