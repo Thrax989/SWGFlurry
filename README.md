@@ -11,34 +11,8 @@ It's purpose is to add all of the NGE assets and anything released by the kind c
 The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to this address. https://github.com/Thrax989/SWGFlurry/issues
 
 ## Required Server TRE Files
-	www.swgflurry.com/TRE/<br>
-	maxSearchPriority=27<br>
-	searchTree_00_25=flurrynov.tre<br>
-	searchTree_00_24=flurrymaster.tre<br>
-	searchTree_00_23=flurrytexture.tre<br>
-	searchTree_00_22=collection.tre<br>
-	searchTree_00_21=mtg22.tre<br>
-	searchTree_00_20=mtg_planets.tre<br>
-	searchTree_00_19=mtg_patch_021.tre<br>
-	searchTree_00_18=mtg_patch_019.tre<br>
-	searchTree_00_17=mtg_patch_018.tre<br>
-	searchTree_00_16=mtg_patch_017.tre<br>
-	searchTree_00_15=mtg_patch_016.tre<br>
-	searchTree_00_14=mtg_patch_015.tre<br>
-	searchTree_00_13=mtg_patch_014.tre<br>
-	searchTree_00_12=mtg_patch_013_configurable_02.tre<br>
-	searchTree_00_11=mtg_patch_012_configurable_01.tre<br>
-	searchTree_00_10=mtg_patch_011_files_01.tre<br>
-	searchTree_00_9=mtg_patch_010_object_01.tre<br>
-	searchTree_00_8=mtg_patch_009_Shader_01.tre<br>
-	searchTree_00_7=mtg_patch_008_texture_04.tre<br>
-	searchTree_00_6=mtg_patch_007_texture_03.tre<br>
-	searchTree_00_5=mtg_patch_006_texture_02.tre<br>
-	searchTree_00_4=mtg_patch_005_texture_01.tre<br>
-	searchTree_00_3=mtg_patch_004_appearance_04.tre<br>
-	searchTree_00_2=mtg_patch_003_appearance_03.tre<br>
-	searchTree_00_1=mtg_patch_002_appearance_02.tre<br>
-	searchTree_00_0=mtg_patch_001_appearance_01.tre<br>
+www.swgflurry.com/TRE/<br>
+https://github.com/Thrax989/SWGFlurry/blob/master/MMOCoreORB/bin/conf/config.lua#L149<br>
 
 ## Required Game Client
 https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
@@ -48,14 +22,12 @@ https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Testing`
 
-## Server Base Source Code
-https://github.com/TheAnswer/Core3<br>
-
-## Server Base Source Code Engine
-https://github.com/TheAnswer/PublicEngine<br>
-
 ## Website
 http://www.swgflurry.com/<br>
+
+## Server Base Source Code
+https://github.com/TheAnswer/Core3<br>
+https://github.com/TheAnswer/PublicEngine<br>
 
 ## Live Servers Virtual Machine Image
 Download - https://www.virtualbox.org/wiki/Downloads
@@ -181,13 +153,25 @@ Thank you to the following server that provided custom content / alterations to 
 
 https://github.com/TheAnswer/Core3/graphs/contributors
 
-Aftermath 
-Awakening 
-Empire in Flames
-Infinity
-Reckoning
-Sentinels
-Stardust
-SWG-Europa
-SWG-Rehab
-Sunrunner II
+  * Aftermath 
+  * Awakening 
+  * Empire in Flames
+  * Infinity
+  * Reckoning
+  * Sentinels
+  * Stardust
+  * SWG-Europa
+  * SWG-Rehab
+  * Sunrunner II
+
+### License ###
+    Copyright (C) 2017 SWGEmu
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+For more information, see https://review.swgemu.com.
