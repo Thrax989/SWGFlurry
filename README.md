@@ -52,6 +52,8 @@ type "bt" to do a back trace to find your error<br>
   * Open Terminal
   * cd ~/workspace/Core3/MMOCoreORBD/bin
   * swgemu runUnitTests
+ ## MySQL Workbench Password
+   * 12345678
 
 ## Coding Legend
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
