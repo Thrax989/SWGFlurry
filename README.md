@@ -20,7 +20,8 @@ https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
   * Download - https://www.virtualbox.org/wiki/Downloads
   * VirtualBox v5.2.14 or greater
   * Download SWGFlurry Server Image - https://mega.nz/#!GORAASyZ!Pg0IoC_trmPq39dsY4KIBcjHADC0-Fu-vOFkhYywJqY
-  * Once you have downloaded the Flurry Server Image you can Import the image in oracle Follow the following steps below to start your server.
+  * Once you have downloaded the Flurry Server Image you can Import the image into oracle
+  * Server is fully up to date, When launching create your new acount in the Yoda GUI, launch the server with the following commands
 
 ## Build Server
   * Open Terminal
