@@ -28,6 +28,10 @@ swgemu runUnitTests<br>
 ## Live Servers Engine Build
 https://github.com/TheAnswer/PublicEngine/commit/516a45fae783108812458369644137baf62fe66d<br>
 - ![#008000](https://placehold.it/15/008000/000000?text=+)`Enigne Build Passed`
+
+## Correct Engine Lib
+Make sure you Overwrite your UNIX Lib with Linux64 Lib BEFOR YOU BUILD
+
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Replace This File`
 https://github.com/Thrax989/SWGFlurry/tree/master/MMOEngine/lib/unix
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `With This File`
@@ -43,8 +47,6 @@ Open Terminal
 - ![#008000](https://placehold.it/15/008000/000000?text=+)`Make Idl`
 - ![#008000](https://placehold.it/15/008000/000000?text=+)`Make Build`
 
-## Correct Engine Lib
-Make sure you Overwrite your UNIX Lib with Linux64 Lib BEFOR YOU BUILD
 ## Required Mod The Galaxy TRE Files
 www.swgflurry.com/TRE/<br>
 	maxSearchPriority=27<br>
