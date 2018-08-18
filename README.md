@@ -11,58 +11,16 @@ It's purpose is to add all of the NGE assets and anything released by the kind c
 The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to this address. https://github.com/Thrax989/SWGFlurry/issues
 
 ## Required Server TRE Files
-    flurrynova.tre
-    flurrymaster.tre
-    flurrytexture.tre
-    collection.tre
-    mtg22.tre
-    mtg_planets.tre
-    mtg_patch_021.tre
-    mtg_patch_019.tre
-    mtg_patch_018.tre
-    mtg_patch_017.tre
-    mtg_patch_016.tre
-    mtg_patch_015.tre
-    mtg_patch_014.tre
-    mtg_patch_013_configurable_02.tre
-    mtg_patch_012_configurable_01.tre
-    mtg_patch_011_files_01.tre
-    mtg_patch_010_object_01.tre
-    mtg_patch_009_Shader_01.tre
-    mtg_patch_008_texture_04.tre
-    mtg_patch_007_texture_03.tre
-    mtg_patch_006_texture_02.tre
-    mtg_patch_005_texture_01.tre
-    mtg_patch_004_appearance_04.tre
-    mtg_patch_003_appearance_03.tre
-    mtg_patch_002_appearance_02.tre
-    mtg_patch_001_appearance_01.tre
 www.swgflurry.com/TRE/
 
 ## Required Game Client
 https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
-
-## Coding Legend
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Testing`
-
-## Website
-http://www.swgflurry.com/<br>
-
-## Server Base Source Code
-https://github.com/TheAnswer/Core3<br>
-https://github.com/TheAnswer/PublicEngine<br>
 
 ## Live Servers Virtual Machine Image
 Download - https://www.virtualbox.org/wiki/Downloads
   * VirtualBox v5.2.14 or greater
 
 Once you have downloaded the Flurry Server Image you can Import the image in oracle Follow the following steps below to start your server.
-
-## Live Servers Engine Build
-https://github.com/TheAnswer/PublicEngine/commit/516a45fae783108812458369644137baf62fe66d<br>
-  * Enigne Build Passed
 
 ## Build Server
   * Open Terminal
@@ -94,6 +52,11 @@ type "bt" to do a back trace to find your error<br>
   * Open Terminal
   * cd ~/workspace/Core3/MMOCoreORBD/bin
   * swgemu runUnitTests
+
+## Coding Legend
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
+- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Testing`
 
 ## All Custom Additions
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `All standard Pre-CU assets`
@@ -169,6 +132,7 @@ type "bt" to do a back trace to find your error<br>
 ## Extended thanks ot the following servers / contributors
 Thank you to the following server that provided custom content / alterations to the base core3 experience. Over the course of a few years each individual has added some portion to the frame work or code that is currently in this repository.
 
+  * http://www.swgflurry.com/<br>
   * https://github.com/TheAnswer/Core3/graphs/contributors
   * Aftermath 
   * Awakening 
