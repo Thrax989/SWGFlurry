@@ -53,6 +53,10 @@ type "bt" to do a back trace to find your error<br>
   * cd ~/workspace/Core3/MMOCoreORBD/bin
   * swgemu runUnitTests
 
+## Server Admin Commands
+  * Open Terminal https://pastebin.com/mmfSbdKb
+  * Make sure level 15 access is added to your account
+  
 ## Coding Legend
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
 - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
