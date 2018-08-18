@@ -129,7 +129,7 @@ type "bt" to do a back trace to find your error<br>
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) tralus
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) wayland
 
-## Extended thanks ot the following servers / contributors
+## Extended thanks to the following servers / contributors
 Thank you to the following server that provided custom content / alterations to the base core3 experience. Over the course of a few years each individual has added some portion to the frame work or code that is currently in this repository.
 
   * http://www.swgflurry.com/<br>
