@@ -10,7 +10,7 @@ It's purpose is to add all of the NGE assets and anything released by the kind c
 
 The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to this address. https://github.com/Thrax989/SWGFlurry/issues
 
-## Required Server TRE Files
+### Required Server TRE Files ###
 www.swgflurry.com/TRE/<br>
 flurrynova.tre
 flurrymaster.tre
