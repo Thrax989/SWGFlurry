@@ -54,7 +54,7 @@ type "bt" to do a back trace to find your error<br>
   * swgemu runUnitTests
 
 ## Server Admin Commands
-  * Open Terminal https://pastebin.com/mmfSbdKb
+  * https://pastebin.com/mmfSbdKb
   * Make sure level 15 access is added to your account
   
 ## Coding Legend
