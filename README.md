@@ -12,7 +12,32 @@ The core3 files are a stock version of the SWGEmu unstable branch. Scripts will 
 
 ## Required Server TRE Files
 www.swgflurry.com/TRE/<br>
-https://github.com/Thrax989/SWGFlurry/blob/master/MMOCoreORB/bin/conf/config.lua#L149<br>
+flurrynova.tre
+flurrymaster.tre
+flurrytexture.tre
+collection.tre
+mtg22.tre
+mtg_planets.tre
+mtg_patch_021.tre
+mtg_patch_019.tre
+mtg_patch_018.tre
+mtg_patch_017.tre
+mtg_patch_016.tre
+mtg_patch_015.tre
+mtg_patch_014.tre
+mtg_patch_013_configurable_02.tre
+mtg_patch_012_configurable_01.tre
+mtg_patch_011_files_01.tre
+mtg_patch_010_object_01.tre
+mtg_patch_009_Shader_01.tre
+mtg_patch_008_texture_04.tre
+mtg_patch_007_texture_03.tre
+mtg_patch_006_texture_02.tre
+mtg_patch_005_texture_01.tre
+mtg_patch_004_appearance_04.tre
+mtg_patch_003_appearance_03.tre
+mtg_patch_002_appearance_02.tre
+mtg_patch_001_appearance_01.tre
 
 ## Required Game Client
 https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
@@ -31,51 +56,44 @@ https://github.com/TheAnswer/PublicEngine<br>
 
 ## Live Servers Virtual Machine Image
 Download - https://www.virtualbox.org/wiki/Downloads
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`VirtualBox v5.2.14 or greater`
+  * VirtualBox v5.2.14 or greater
 
 Once you have downloaded the Flurry Server Image you can Import the image in oracle Follow the following steps below to start your server.
 
 ## Live Servers Engine Build
 https://github.com/TheAnswer/PublicEngine/commit/516a45fae783108812458369644137baf62fe66d<br>
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`Enigne Build Passed`
-
-## Correct Engine Lib
-Make sure you Overwrite your UNIX Lib with Linux64 Lib BEFOR YOU BUILD
-
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Replace This File`
-https://github.com/Thrax989/SWGFlurry/tree/master/MMOEngine/lib/unix
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `With This File`
-https://github.com/Thrax989/SWGFlurry/tree/master/MMOEngine/lib/linux64
-
-Once you have over writen ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Unix Lib` with ![#008000](https://placehold.it/15/008000/000000?text=+) `Linux64 Lib` you may now start your server build
+  * Enigne Build Passed
 
 ## Build Server
-Open Terminal
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`cd ~/workspace/Core3/MMOCoreORBD`
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`Make Config`
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`Make Clean`
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`Make Idl`
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`Make Build`
+  * Open Terminal
+  * cd ~/workspace/Core3/MMOCoreORBD
+  * Make Config
+  * Make Clean
+  * Make Idl
+  * Make Build
 
 ## Start Server Normal
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`cd ~/workspace/Core3/MMOCoreORBD/bin`
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`./core3`
+  * Open Termianl
+  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * ./core3
 
 ## Start Server Crash/Restart Script
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`cd ~/workspace/Core3/MMOCoreORBD/bin`
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`./startcore3.sh`
+  * Open Terminal
+  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * ./startcore3.sh
 
 ## Run Server in gdb debug mode
-Open Terminal 
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`cd ~/workspace/Core3/MMOCoreORBD/bin`
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`gdb ./core3`
+  * Open Terminal 
+  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * gdb ./core3
 This will promt a Black Blank Screen. Type "r" to Run the GDB<br>
 If your server segfaults it will promt you "segmentation fault"<br>
 type "bt" to do a back trace to find your error<br>
 
 ## Run Unit Integrity Test
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`cd ~/workspace/Core3/MMOCoreORBD/bin`
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`swgemu runUnitTests`
+  * Open Terminal
+  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * swgemu runUnitTests
 
 ## All Custom Additions
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `All standard Pre-CU assets`
@@ -151,8 +169,7 @@ type "bt" to do a back trace to find your error<br>
 ## Extended thanks ot the following servers / contributors
 Thank you to the following server that provided custom content / alterations to the base core3 experience. Over the course of a few years each individual has added some portion to the frame work or code that is currently in this repository.
 
-https://github.com/TheAnswer/Core3/graphs/contributors
-
+  * https://github.com/TheAnswer/Core3/graphs/contributors
   * Aftermath 
   * Awakening 
   * Empire in Flames
@@ -173,5 +190,3 @@ https://github.com/TheAnswer/Core3/graphs/contributors
     This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.
 
     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-For more information, see https://review.swgemu.com.
