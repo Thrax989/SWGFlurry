@@ -11,7 +11,6 @@ It's purpose is to add all of the NGE assets and anything released by the kind c
 The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to this address. https://github.com/Thrax989/SWGFlurry/issues
 
 ## Required Server TRE Files
-www.swgflurry.com/TRE/
     flurrynova.tre
     flurrymaster.tre
     flurrytexture.tre
@@ -38,6 +37,7 @@ www.swgflurry.com/TRE/
     mtg_patch_003_appearance_03.tre
     mtg_patch_002_appearance_02.tre
     mtg_patch_001_appearance_01.tre
+www.swgflurry.com/TRE/
 
 ## Required Game Client
 https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
