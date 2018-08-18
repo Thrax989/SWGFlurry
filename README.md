@@ -10,34 +10,34 @@ It's purpose is to add all of the NGE assets and anything released by the kind c
 
 The core3 files are a stock version of the SWGEmu unstable branch. Scripts will be added for all new content. Please test, and if you find any problems, please post to this address. https://github.com/Thrax989/SWGFlurry/issues
 
-### Required Server TRE Files ###
-www.swgflurry.com/TRE/<br>
-flurrynova.tre
-flurrymaster.tre
-flurrytexture.tre
-collection.tre
-mtg22.tre
-mtg_planets.tre
-mtg_patch_021.tre
-mtg_patch_019.tre
-mtg_patch_018.tre
-mtg_patch_017.tre
-mtg_patch_016.tre
-mtg_patch_015.tre
-mtg_patch_014.tre
-mtg_patch_013_configurable_02.tre
-mtg_patch_012_configurable_01.tre
-mtg_patch_011_files_01.tre
-mtg_patch_010_object_01.tre
-mtg_patch_009_Shader_01.tre
-mtg_patch_008_texture_04.tre
-mtg_patch_007_texture_03.tre
-mtg_patch_006_texture_02.tre
-mtg_patch_005_texture_01.tre
-mtg_patch_004_appearance_04.tre
-mtg_patch_003_appearance_03.tre
-mtg_patch_002_appearance_02.tre
-mtg_patch_001_appearance_01.tre
+## Required Server TRE Files
+    www.swgflurry.com/TRE/
+    flurrynova.tre
+    flurrymaster.tre
+    flurrytexture.tre
+    collection.tre
+    mtg22.tre
+    mtg_planets.tre
+    mtg_patch_021.tre
+    mtg_patch_019.tre
+    mtg_patch_018.tre
+    mtg_patch_017.tre
+    mtg_patch_016.tre
+    mtg_patch_015.tre
+    mtg_patch_014.tre
+    mtg_patch_013_configurable_02.tre
+    mtg_patch_012_configurable_01.tre
+    mtg_patch_011_files_01.tre
+    mtg_patch_010_object_01.tre
+    mtg_patch_009_Shader_01.tre
+    mtg_patch_008_texture_04.tre
+    mtg_patch_007_texture_03.tre
+    mtg_patch_006_texture_02.tre
+    mtg_patch_005_texture_01.tre
+    mtg_patch_004_appearance_04.tre
+    mtg_patch_003_appearance_03.tre
+    mtg_patch_002_appearance_02.tre
+    mtg_patch_001_appearance_01.tre
 
 ## Required Game Client
 https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
