@@ -768,6 +768,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	if(ghost->hasPvpTef()) {
 		ghost->schedulePvpTefRemovalTask(true, true, true);
 		}
+	/*
 	if (player->getScreenPlayState("jediLives") == 1) {
 		if (ghost->getJediState() == 2) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
@@ -823,16 +824,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		player->sendMessage(box->generateMessage());
 		}
 	}
-	//CUSTOM BH SYSTEM By:TOXIC
-	if (attacker->isPlayerCreature() && attacker != player) {
-		ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
-		input->setPromptTitle("Player Bounty Request");
-		input->setPromptText("Place a bounty on your killer. Bountys must be between 25,000 and 250,000 credits.");
-		input->setUsingObject(attacker);
-		input->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
-		player->getPlayerObject()->addSuiBox(input);
-		player->sendMessage(input->generateMessage());
-		}
 	//Custom Perma Death Broadcasting When you reach 0 lives
 	if (player->getScreenPlayState("jediLives") == 0) {
 		if (player->getFaction() == 370444368) {//rebel
@@ -879,6 +870,17 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			}
 		}
 	}
+	*/
+	//CUSTOM BH SYSTEM By:TOXIC
+	if (attacker->isPlayerCreature() && attacker != player) {
+		ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
+		input->setPromptTitle("Player Bounty Request");
+		input->setPromptText("Place a bounty on your killer. Bountys must be between 25,000 and 250,000 credits.");
+		input->setUsingObject(attacker);
+		input->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
+		player->getPlayerObject()->addSuiBox(input);
+		player->sendMessage(input->generateMessage());
+		}
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
 			CreatureObject* attackerCreature = attacker->asCreatureObject();

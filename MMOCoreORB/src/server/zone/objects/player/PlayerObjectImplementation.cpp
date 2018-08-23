@@ -1386,6 +1386,7 @@ void PlayerObjectImplementation::notifyOnline() {
 	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
 		playerCreature->setFactionStatus(2);
 	}
+	/*
 	//Perma Death Jedi with 0 lives upon Logging In
 	if (playerCreature->getScreenPlayState("jediLives") == 0) {
 		if (player->getJediState() >= 2) {
@@ -1393,6 +1394,7 @@ void PlayerObjectImplementation::notifyOnline() {
 			ghost->disconnect(true, true);
 			}
 		}
+	*/
 	if (missionManager != NULL) {
 		uint64 id = playerCreature->getObjectID();
 
