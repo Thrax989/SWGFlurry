@@ -53,6 +53,8 @@ type "bt" to do a back trace to find your error<br>
   * Open Terminal
   * cd ~/workspace/Core3/MMOCoreORBD/bin
   * swgemu runUnitTests
+ ## MySQL Workbench Password
+   * 12345678
 
 ## Server Admin Commands
   * https://pastebin.com/mmfSbdKb
