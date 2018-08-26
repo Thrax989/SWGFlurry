@@ -393,6 +393,10 @@ bool PlayerManagerImplementation::existsName(const String& name) {
 	return res;
 }
 
+bool PlayerManagerImplementation::existsPlayerCreatureOID(uint64 oid) {
+	return nameMap->containsOID(oid);
+}
+
 bool PlayerManagerImplementation::kickUser(const String& name, const String& admin, String& reason, bool doBan) {
 	ManagedReference<ChatManager*> chatManager = server->getChatManager();
 
@@ -762,19 +766,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	if(ghost->hasPvpTef()) {
 		ghost->schedulePvpTefRemovalTask(true, true, true);
 		}
-	}
-		
-	//CUSTOM BH SYSTEM By:TOXIC
-	if (attacker->isPlayerCreature() && attacker != player) {
-		ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
-		input->setPromptTitle("Player Bounty Request");
-		input->setPromptText("Place a bounty on your killer. Bountys must be between 25,000 and 250,000 credits.");
-		input->setUsingObject(attacker);
-		input->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
-		player->getPlayerObject()->addSuiBox(input);
-		player->sendMessage(input->generateMessage());
-		}
-		/*
+	/*
 	if (player->getScreenPlayState("jediLives") == 1) {
 		if (ghost->getJediState() == 2) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
@@ -876,6 +868,17 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			}
 		}
 	}
+	*/
+	//CUSTOM BH SYSTEM By:TOXIC
+	if (attacker->isPlayerCreature() && attacker != player) {
+		ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
+		input->setPromptTitle("Player Bounty Request");
+		input->setPromptText("Place a bounty on your killer. Bountys must be between 25,000 and 250,000 credits.");
+		input->setUsingObject(attacker);
+		input->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
+		player->getPlayerObject()->addSuiBox(input);
+		player->sendMessage(input->generateMessage());
+		}
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
 			CreatureObject* attackerCreature = attacker->asCreatureObject();
@@ -894,7 +897,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				}
 			}
 		}
-		*/
+	}
 
 	CombatManager::instance()->freeDuelList(player, false);
 
@@ -3004,7 +3007,9 @@ void PlayerManagerImplementation::updatePermissionLevel(CreatureObject* targetPl
 
 void PlayerManagerImplementation::updatePermissionName(CreatureObject* player, int permissionLevel) {
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-	
+	int priviledgeFlag = permissionLevelList->getPriviledgeFlag(permissionLevel);
+
+	ghost->setPriviledgeFlag(priviledgeFlag);
 	//Send deltas
 	if (player->isOnline()) {
 		UnicodeString tag = permissionLevelList->getPermissionTag(permissionLevel);
@@ -3029,21 +3034,21 @@ void PlayerManagerImplementation::updateSwimmingState(CreatureObject* player, fl
 		return;
 	}
 
-	ManagedReference<Zone*> zone = player->getZone();
+	Zone* zone = player->getZone();
 
 	if (zone == NULL) {
 		player->info("No zone.", true);
 		return;
 	}
 
-	ManagedReference<PlanetManager*> planetManager = zone->getPlanetManager();
+	PlanetManager* planetManager = zone->getPlanetManager();
 
 	if (planetManager == NULL) {
 		player->info("No planet manager.", true);
 		return;
 	}
 
-	ManagedReference<TerrainManager*> terrainManager = planetManager->getTerrainManager();
+	TerrainManager* terrainManager = planetManager->getTerrainManager();
 
 	if (terrainManager == NULL) {
 		player->info("No terrain manager.", true);
