@@ -815,7 +815,14 @@ void CityManagerImplementation::processIncomeTax(CityRegion* city) {
 	for (int i = 0; i < citizens->size(); ++i) {
 		uint64 oid = citizens->get(i);
 
-		task->addCitizen(oid);
+		ManagedReference<SceneObject*> obj = zoneServer->getObject(oid);
+
+		if (obj == NULL || !obj->isPlayerCreature())
+			continue;
+
+		CreatureObject* citizen = obj.castTo<CreatureObject*> ();
+
+		task->addCitizen(citizen);
 	}
 
 	task->execute();
@@ -1139,7 +1146,7 @@ void CityManagerImplementation::updateCityVoting(CityRegion* city, bool override
 			Reference<PlayerObject*> ghost = mayorObject->getSlottedObject("ghost").castTo<PlayerObject*>();
 
 			if (ghost != NULL) {
-				ghost->addExperience("political", votes * 3000, true);
+				ghost->addExperience("political", votes * 300, true);
 			}
 
 			if (votes > topVotes || (votes == topVotes && candidateID == incumbentID)) {

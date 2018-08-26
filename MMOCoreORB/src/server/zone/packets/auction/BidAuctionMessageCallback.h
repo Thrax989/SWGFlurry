@@ -22,7 +22,6 @@ public:
 	BidAuctionMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) :
 			MessageCallback(client, server), objectid(0), price1(0), price2(0) {
 
-		setCustomTaskQueue("slowQueue");
 	}
 
 	void parse(Message* message) {

@@ -50,6 +50,8 @@ class DataTransformWithParentCallback : public MessageCallback {
 	float parsedSpeed;
 
 	ObjectControllerMessageCallback* objectControllerMain;
+
+	//	taskqueue = 3;
 public:
 	DataTransformWithParentCallback(ObjectControllerMessageCallback* objectControllerCallback) :
 		MessageCallback(objectControllerCallback->getClient(), objectControllerCallback->getServer()) {
@@ -67,15 +69,23 @@ public:
 
 		objectControllerMain = objectControllerCallback;
 
+
+		taskqueue = 3;
+
 		ManagedReference<CreatureObject*> player = client->getPlayer();
 
 		if (player != NULL) {
-			Zone* zone = player->getZone();
+			Zone* zone = player->getLocalZone();
 
 			if (zone != NULL) {
 				String zoneName = zone->getZoneName();
 
-				setCustomTaskQueue(zoneName);
+				if (zoneName == "corellia")
+					taskqueue = 4;
+				else if (zoneName == "tatooine")
+					taskqueue = 5;
+				else if (zoneName == "naboo")
+					taskqueue = 6;
 			}
 		}
 	}

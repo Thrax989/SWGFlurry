@@ -44,8 +44,6 @@ ZoneImplementation::ZoneImplementation(ZoneProcessServer* serv, const String& na
 	planetManager = NULL;
 
 	setLoggingName("Zone " + name);
-
-	Core::getTaskManager()->initializeCustomQueue(zoneName, 1, true);
 }
 
 void ZoneImplementation::createContainerComponent() {

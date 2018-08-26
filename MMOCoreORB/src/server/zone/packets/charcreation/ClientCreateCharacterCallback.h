@@ -31,7 +31,8 @@ public:
 	ClientCreateCharacterCallback(ZoneClientSession* client, ZoneProcessServer* server) :
 		MessageCallback(client, server), species(0), height(0), tutflag(0) {
 
-		setCustomTaskQueue("slowQueue");
+		taskqueue = 7;
+
 	}
 
 	void parse(Message* message);
