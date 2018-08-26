@@ -456,8 +456,6 @@ class PlayerObject extends IntangibleObject {
 
 	public native void notifySceneReady();
 
-	public native void checkPendingMessages();
-
 	 /**
 	 * Adds experience of a type to the player's experience pool.
 	 * @pre { this is locked }
