@@ -27,6 +27,8 @@ public:
 		structureObject = structure;
 		playEffect = doEffect;
 		killOccupants = killStuff;
+
+		setCustomTaskQueue("slowQueue");
 	}
 
 	void run() {
@@ -112,6 +114,7 @@ public:
 			if (ghost != NULL && ghost->isPlayerObject()) {
 				PlayerObject* playerObject = cast<PlayerObject*>(ghost.get());
 				playerObject->removeOwnedStructure(structureObject);
+
 			}
 		}
 
