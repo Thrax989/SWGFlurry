@@ -13,8 +13,6 @@
 #include "server/zone/objects/guild/GuildMemberInfo.h"
 #include "server/zone/objects/guild/GuildUpdateEvent.h"
 
-#define EVENT_RANDOM_MAX_DELTA 3600 * 2 /*2 hours*/
-
 void GuildObjectImplementation::initializeTransientMembers() {
 	SceneObjectImplementation::initializeTransientMembers();
 
@@ -29,8 +27,6 @@ void GuildObjectImplementation::rescheduleUpdateEvent(uint32 seconds) {
 	} else if (guildUpdateEvent->isScheduled()) {
 		guildUpdateEvent->cancel();
 	}
-
-	seconds += System::random(EVENT_RANDOM_MAX_DELTA);
 
 	guildUpdateEvent->schedule(seconds * 1000);
 

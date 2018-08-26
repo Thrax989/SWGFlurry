@@ -17,8 +17,6 @@ class DeleteCharactersTask : public Task, public Logger {
 public:
 	DeleteCharactersTask() : Task(), Logger("DeleteCharactersTask"), deletedCharacters(250, 250) {
 		deletedCharacters.setNoDuplicateInsertPlan();
-
-		setCustomTaskQueue("slowQueue");
 	}
 
 	void run() {

@@ -23,12 +23,6 @@ class DespawnCreatureOnPlayerDissappear : public Task {
 public:
 	DespawnCreatureOnPlayerDissappear(AiAgent* creo) {
 		creature = creo;
-
-		auto zone = creo->getZone();
-
-		if (zone != nullptr) {
-			setCustomTaskQueue(zone->getZoneName());
-		}
 	}
 
 	void run() {

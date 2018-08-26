@@ -474,10 +474,15 @@ void ZoneServerImplementation::processMessage(Message* message) {
 	Task* task = zonePacketHandler->generateMessageTask(client, message);
 
 	if (task != NULL) {
+		int queue = ((MessageCallback*)task)->getTaskQueue();
 		auto taskManager = Core::getTaskManager();
 
 		if (taskManager) {
-			taskManager->executeTask(task);
+			if (queue >= 0) {
+				taskManager->executeTask(task, queue);
+			} else {
+				taskManager->executeTask(task);
+			}
 		} else {
 			delete task;
 		}
@@ -785,8 +790,8 @@ void ZoneServerImplementation::loadLoginMessage() {
 		reader = NULL;
 	}
 
-	//loginMessage += "\nLatest Commits:\n";
-	//loginMessage += ConfigManager::instance()->getRevision();
+	loginMessage += "\nLatest Commits:\n";
+	loginMessage += ConfigManager::instance()->getRevision();
 
 	delete reader;
 	delete file;

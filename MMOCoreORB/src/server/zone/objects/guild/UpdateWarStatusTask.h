@@ -11,8 +11,6 @@
 #include "engine/engine.h"
 #include "server/zone/objects/guild/GuildObject.h"
 #include "server/zone/ZoneServer.h"
-#include "server/zone/managers/player/PlayerManager.h"
-#include "server/chat/ChatManager.h"
 
 class UpdateWarStatusTask : public Task {
 	ZoneServer* server;
@@ -29,46 +27,32 @@ public:
 	}
 
 	void run() {
-		PlayerManager* playerManager = server->getPlayerManager();
-		ChatManager* chatManager = server->getChatManager();
-
-		//Get online members
-		SortedVector<ManagedReference<CreatureObject*>> onlineMembers1;
-		SortedVector<ManagedReference<CreatureObject*>> onlineMembers2;
-
+		//Loop through one map.
 		for (int i = 0; i < guild1.size(); ++i) {
 			VectorMapEntry<uint64, GuildMemberInfo>* entry = &guild1.elementAt(i);
 
-			auto memberName = playerManager->getPlayerName(entry->getKey());
+			ManagedReference<SceneObject*> obj = server->getObject(entry->getKey());
 
-			auto creo = chatManager->getPlayer(memberName);
-
-			if (creo == NULL || !creo->isPlayerCreature())
+			if (obj == NULL || !obj->isPlayerCreature())
 				continue;
 
-			onlineMembers1.put(creo);
-		}
+			CreatureObject* creo = obj.castTo<CreatureObject*>();
 
-		for (int j = 0; j < guild2.size(); ++j) {
-			VectorMapEntry<uint64, GuildMemberInfo>* entry2 = &guild2.elementAt(j);
+			//Loop through the other map.
+			for (int j = 0; j < guild2.size(); ++j) {
+				VectorMapEntry<uint64, GuildMemberInfo>* entry2 = &guild2.elementAt(j);
 
-			auto member2Name = playerManager->getPlayerName(entry2->getKey());
+				ManagedReference<SceneObject*> obj2 = server->getObject(entry2->getKey());
 
-			auto creo2 = chatManager->getPlayer(member2Name);
+				if (obj2 == NULL || !obj2->isPlayerCreature())
+					continue;
 
-			if (creo2 == NULL || !creo2->isPlayerCreature())
-				continue;
+				CreatureObject* creo2 = obj2.castTo<CreatureObject*>();
 
-			onlineMembers2.put(creo2);
-		}
-
-		for (int i = 0; i < onlineMembers1.size(); ++i) {
-			CreatureObject* creo = onlineMembers1.get(i);
-
-			for (int j = 0; j < onlineMembers2.size(); ++j) {
-				CreatureObject* creo2 = onlineMembers2.get(j);
+				Locker _lock(creo);
 
 				if (creo->isInRange(creo2, ZoneServer::CLOSEOBJECTRANGE)) {
+					Locker _crosslock(creo2, creo);
 					creo->sendPvpStatusTo(creo2);
 					creo2->sendPvpStatusTo(creo);
 				}

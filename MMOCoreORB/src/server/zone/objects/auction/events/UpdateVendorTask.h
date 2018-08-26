@@ -23,7 +23,6 @@ public:
 	UpdateVendorTask(SceneObject* vndr) {
 		vendor = vndr;
 
-		setCustomTaskQueue("slowQueue");
 	}
 
 	void run() {

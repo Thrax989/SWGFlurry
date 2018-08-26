@@ -236,13 +236,9 @@ void MissionObjectImplementation::updateMissionLocation() {
 		playerCreature->sendMessage(dmiso3);
 
 		if (playerCreature->isGrouped() && playerCreature->getGroup() != NULL) {
-			Reference<GroupObject*> group = playerCreature->getGroup();
-
-			Core::getTaskManager()->executeTask([group, playerCreature] () {
-				Locker locker(group);
-
-				group->scheduleUpdateNearestMissionForGroup(playerCreature->getPlanetCRC());
-			}, "updateMissionLocationLambda");
+			GroupObject* group = playerCreature->getGroup();
+			Locker locker(group);
+			group->scheduleUpdateNearestMissionForGroup(playerCreature->getPlanetCRC());
 		}
 	}
 }

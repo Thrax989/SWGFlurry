@@ -35,12 +35,6 @@ namespace server {
  }
 }
 
-namespace engine {
-	namespace core {
-		class MetricsManager;
-	}
-}
-
 using namespace server::web;
 
 class ServerCore : public Core, public Logger {
@@ -61,8 +55,6 @@ class ServerCore : public Core, public Logger {
 	PingServer* pingServer;
 
 	WebServer* webServer;
-
-	MetricsManager* metricsManager;
 
 	Mutex shutdownBlockMutex;
 	Condition waitCondition;

@@ -29,7 +29,6 @@ public:
 		requestID = 0;
 		unknown = 0;
 
-		setCustomTaskQueue("slowQueue");
 	}
 
 	void parse(Message* message) {

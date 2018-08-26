@@ -40,6 +40,8 @@ ClientPoiDataTable PlanetManagerImplementation::clientPoiDataTable;
 Mutex PlanetManagerImplementation::poiMutex;
 
 void PlanetManagerImplementation::initialize() {
+	performanceLocations = new MissionTargetMap();
+
 	numberOfCities = 0;
 
 	info("Loading planet.");

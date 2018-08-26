@@ -18,7 +18,6 @@ import server.zone.objects.player.PlayerObject;
 import server.zone.packets.chat.ChatInstantMessageToCharacter;
 import engine.log.Logger;
 import server.zone.objects.waypoint.WaypointObject;
-import server.chat.PendingMessageList;
 include server.chat.StringIdChatParameter;
 include server.chat.StringIdChatParameterVector;
 include server.chat.WaypointChatParameterVector;
@@ -40,7 +39,6 @@ class ChatManager extends ManagedService implements Logger {
 	ChatRoom guildRoom;
 	ChatRoom auctionRoom;
 	ChatRoom systemRoom;
-	ChatRoom flurryRoom;
 
 	transient ChatRoomMap roomMap;
 
@@ -407,14 +405,8 @@ class ChatManager extends ManagedService implements Logger {
 		return gameRooms.get(game);
 	}
 
-	@dirty
 	public int getPlayerCount() {
 		return playerMap.size();
-	}
-	
-	@dirty
-	public ZoneServer getZoneServer() {
-		return server;
 	}
 
 	@local
@@ -450,20 +442,9 @@ class ChatManager extends ManagedService implements Logger {
 		return systemRoom;
 	}
 
-	/*
-	 * Returns the flurry chat room
-	 */
-	public ChatRoom getFlurryRoom() {
-		return flurryRoom;
-	}
-
 	@dirty
 	public string getSocialType(unsigned int id) {
 		return socialTypes.get(id);
 	}
-
-	// returns a list of pending persistent messages for the player
-	@reference
-	public native PendingMessageList getPendingMessages(unsigned long oid);
 }
 

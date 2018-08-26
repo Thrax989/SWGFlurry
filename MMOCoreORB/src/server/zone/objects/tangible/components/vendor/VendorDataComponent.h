@@ -36,7 +36,6 @@ protected:
 	Time inactiveTimer;
 
 	bool mail1Sent;
-	bool mail2Sent;
 
 	Vector<uint64> vendorBarks;
 	uint64 lastBark;
