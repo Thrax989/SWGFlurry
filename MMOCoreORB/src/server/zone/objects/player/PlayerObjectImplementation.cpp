@@ -3,7 +3,6 @@
 		See file COPYING for copying conditions. */
 
 #include "server/zone/objects/player/PlayerObject.h"
-#include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/managers/object/ObjectManager.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/managers/skill/SkillManager.h"
@@ -69,7 +68,6 @@
 #include "server/zone/objects/player/events/ForceMeditateTask.h"
 #include "server/zone/objects/player/sui/callbacks/FieldFactionChangeSuiCallback.h"
 #include "server/zone/packets/ui/DestroyClientPathMessage.h"
-#include "server/chat/PendingMessageList.h"
 
 void PlayerObjectImplementation::initializeTransientMembers() {
 	IntangibleObjectImplementation::initializeTransientMembers();
@@ -83,27 +81,6 @@ void PlayerObjectImplementation::initializeTransientMembers() {
 	setLoggingName("PlayerObject");
 
 	initializeAccount();
-}
-
-void PlayerObjectImplementation::checkPendingMessages() {
-    ObjectManager *objectManager = ObjectManager::instance();
-    ManagedReference<PendingMessageList*> messageList = getZoneServer()->getChatManager()->getPendingMessages(parent.getSavedObjectID());
-
-    if (messageList != NULL) {
-        Locker locker(messageList);
-        Vector<uint64>& pendingMessages = *messageList->getPendingMessages();
-        
-        for (uint64 messageID : pendingMessages) {
-            ManagedReference<PersistentMessage*> mail = Core::getObjectBroker()->lookUp(messageID).castTo<PersistentMessage*>();
-
-            if (mail != NULL && isIgnoring(mail->getSenderName())) {
-                objectManager->destroyObjectFromDatabase(mail->getObjectID());
-                continue;
-            }
-            persistentMessages.put(messageID);
-        }
-        messageList->clearPendingMessages();
-    }
 }
 
 void PlayerObjectImplementation::initializeAccount() {
@@ -1684,7 +1661,7 @@ void PlayerObjectImplementation::doRecovery(int latency) {
 	}
 
 	CreatureObject* creature = dynamic_cast<CreatureObject*>(parent.get().get());
-	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
+
 	if (creature == NULL)
 		return;
 
@@ -1795,7 +1772,7 @@ void PlayerObjectImplementation::checkForNewSpawns() {
 
 	for (int i = 0; i < areas.size(); ++i) {
 		ManagedReference<ActiveArea*>& area = areas.get(i);
-
+		
 		if (area->isNoSpawnArea()) {
 			return;
 		}
@@ -1852,16 +1829,9 @@ void PlayerObjectImplementation::checkForNewSpawns() {
 		return;
 	}
 
-	String zoneName;
-	auto zone = creature->getZone();
-
-	if (zone != nullptr) {
-		zoneName = zone->getZoneName();
-	}
-
 	Core::getTaskManager()->executeTask([=] () {
 		finalArea->tryToSpawn(creature);
-	}, "TryToSpawnLambda", zoneName.toCharArray());
+	}, "TryToSpawnLambda";
 }
 
 void PlayerObjectImplementation::activateRecovery() {
