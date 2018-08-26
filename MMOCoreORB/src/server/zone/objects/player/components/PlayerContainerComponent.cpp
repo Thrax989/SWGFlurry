@@ -82,6 +82,7 @@ int PlayerContainerComponent::canAddObject(SceneObject* sceneObject, SceneObject
 
 					if (!hasSkill) {
 						errorDescription = "@error_message:insufficient_skill"; // You lack the skill to use this item.
+
 						return TransferErrorCode::PLAYERUSEMASKERROR;
 					}
 				}

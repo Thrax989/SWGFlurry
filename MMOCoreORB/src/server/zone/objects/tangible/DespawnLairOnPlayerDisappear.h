@@ -11,7 +11,6 @@
 #include "server/zone/objects/tangible/LairObject.h"
 #include "server/zone/objects/building/PoiBuilding.h"
 #include "server/zone/objects/intangible/TheaterObject.h"
-#include "server/zone/Zone.h"
 
 namespace server {
  namespace zone {
@@ -25,12 +24,6 @@ class DespawnLairOnPlayerDisappear : public Task {
 public:
 	DespawnLairOnPlayerDisappear(SceneObject* l) {
 		lair = l;
-
-		auto zone = l->getZone();
-
-		if (zone != nullptr) {
-			setCustomTaskQueue(zone->getZoneName());
-		}
 	}
 
 	void run() {

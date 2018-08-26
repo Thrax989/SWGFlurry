@@ -169,7 +169,6 @@ int PlaceStructureSessionImplementation::completeSession() {
 		waypointObject->setActive(true);
 		waypointObject->setPosition(positionX, 0, positionY);
 		waypointObject->setPlanetCRC(thisZone->getZoneCRC());
-		structureObject->setWaypointID(waypointObject->getObjectID());
 
 		ghost->addWaypoint(waypointObject, false, true);
 
