@@ -1831,7 +1831,7 @@ void PlayerObjectImplementation::checkForNewSpawns() {
 
 	Core::getTaskManager()->executeTask([=] () {
 		finalArea->tryToSpawn(creature);
-	}, "TryToSpawnLambda";
+	}, "TryToSpawnLambda");
 }
 
 void PlayerObjectImplementation::activateRecovery() {
