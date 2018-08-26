@@ -393,10 +393,6 @@ bool PlayerManagerImplementation::existsName(const String& name) {
 	return res;
 }
 
-bool PlayerManagerImplementation::existsPlayerCreatureOID(uint64 oid) {
-	return nameMap->containsOID(oid);
-}
-
 bool PlayerManagerImplementation::kickUser(const String& name, const String& admin, String& reason, bool doBan) {
 	ManagedReference<ChatManager*> chatManager = server->getChatManager();
 
@@ -734,8 +730,6 @@ int PlayerManagerImplementation::notifyDestruction(TangibleObject* destructor, T
 
 void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureObject* player, int typeofdeath, bool isCombatAction) {
 	StringIdChatParameter stringId;
-	ManagedReference<GroupObject*> group;
-	int groupSize = 1;
 
 	if (player->isRidingMount()) {
 		player->updateCooldownTimer("mount_dismount", 0);
@@ -3010,9 +3004,7 @@ void PlayerManagerImplementation::updatePermissionLevel(CreatureObject* targetPl
 
 void PlayerManagerImplementation::updatePermissionName(CreatureObject* player, int permissionLevel) {
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-	int priviledgeFlag = permissionLevelList->getPriviledgeFlag(permissionLevel);
-
-	ghost->setPriviledgeFlag(priviledgeFlag);
+	
 	//Send deltas
 	if (player->isOnline()) {
 		UnicodeString tag = permissionLevelList->getPermissionTag(permissionLevel);
@@ -3037,21 +3029,21 @@ void PlayerManagerImplementation::updateSwimmingState(CreatureObject* player, fl
 		return;
 	}
 
-	Zone* zone = player->getZone();
+	ManagedReference<Zone*> zone = player->getZone();
 
 	if (zone == NULL) {
 		player->info("No zone.", true);
 		return;
 	}
 
-	PlanetManager* planetManager = zone->getPlanetManager();
+	ManagedReference<PlanetManager*> planetManager = zone->getPlanetManager();
 
 	if (planetManager == NULL) {
 		player->info("No planet manager.", true);
 		return;
 	}
 
-	TerrainManager* terrainManager = planetManager->getTerrainManager();
+	ManagedReference<TerrainManager*> terrainManager = planetManager->getTerrainManager();
 
 	if (terrainManager == NULL) {
 		player->info("No terrain manager.", true);
