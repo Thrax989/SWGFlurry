@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_event_reward_bossk_pistol = object_draft_schematic_weapon_shared_event_reward_bossk_pistol:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_event_reward_bossk_pistol, "object/draft_schematic/weapon/event_reward_bossk_pistol.iff")

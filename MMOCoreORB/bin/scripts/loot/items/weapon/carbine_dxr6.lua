@@ -5,8 +5,8 @@ carbine_dxr6 = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_dxr6.iff",
 	craftingValues = {
-		{"mindamage",30,35,0},
-		{"maxdamage",75,85,0},
+		{"mindamage",63,90,0},
+		{"maxdamage",91,143,0},
 		{"attackspeed",6,4.1,1},
 		{"woundchance",10,20,0},
 		{"roundsused",30,65,0},
@@ -23,7 +23,7 @@ carbine_dxr6 = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 375,
+	randomDotChance = 625,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 30,
 	junkMaxValue = 55

@@ -55,6 +55,10 @@ function VillageJediManager:onPlayerLoggedIn(pPlayer)
 
 	Glowing:onPlayerLoggedIn(pPlayer)
 
+	if (VillageJediManagerCommon.isVillageEligible(pPlayer) and not CreatureObject(pPlayer):hasSkill("force_title_jedi_novice")) then
+		awardSkill(pPlayer, "force_title_jedi_novice")
+	end
+
 	if (FsIntro:isOnIntro(pPlayer)) then
 		FsIntro:onLoggedIn(pPlayer)
 	end
@@ -148,6 +152,16 @@ function VillageJediManager:onFSTreeCompleted(pPlayer, branch)
 	if (VillageJediManagerCommon.getLearnedForceSensitiveBranches(pPlayer) >= NUMBEROFTREESTOMASTER) then
 		VillageJediManagerCommon.setJediProgressionScreenPlayState(pPlayer, VILLAGE_JEDI_PROGRESSION_COMPLETED_VILLAGE)
 		FsOutro:startOldMan(pPlayer)
+	end
+end
+
+function VillageJediManager:onSkillRevoked(pPlayer, pSkill)
+	if (pPlayer == nil) then
+		return
+	end
+
+	if (JediTrials:isOnPadawanTrials(pPlayer) or JediTrials:isOnKnightTrials(pPlayer)) then
+		JediTrials:droppedSkillDuringTrials(pPlayer, pSkill)
 	end
 end
 

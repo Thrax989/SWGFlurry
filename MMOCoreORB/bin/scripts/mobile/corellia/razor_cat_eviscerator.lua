@@ -18,7 +18,7 @@ razor_cat_eviscerator = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 30,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0.05,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD + KILLER,
@@ -26,6 +26,7 @@ razor_cat_eviscerator = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/corellian_sand_panther_hue.iff"},
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	controlDeviceTemplate = "object/intangible/pet/corellian_sand_panther_hue.iff",
 	scale = 1.1,
 	lootGroups = {},

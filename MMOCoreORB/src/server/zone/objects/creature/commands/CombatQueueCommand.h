@@ -12,6 +12,7 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/combat/CombatManager.h"
 #include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/cell/CellObject.h"
 #include "server/zone/managers/combat/CreatureAttackData.h"
 #include "server/zone/managers/collision/CollisionManager.h"
@@ -24,7 +25,6 @@
 #include "server/zone/packets/object/CombatSpam.h"
 #include "QueueCommand.h"
 #include "server/zone/objects/player/FactionStatus.h"
-#include "server/zone/managers/visibility/VisibilityManager.h"
 
 class CombatQueueCommand : public QueueCommand {
 protected:
@@ -43,6 +43,12 @@ protected:
 	float forceCostMultiplier;
 	float forceCost;
 	int visMod;
+	float frsLightForceCostModifier;
+	float frsDarkForceCostModifier;
+	float frsLightMinDamageModifier;
+	float frsLightMaxDamageModifier;
+	float frsDarkMinDamageModifier;
+	float frsDarkMaxDamageModifier;
 
 	int coneRange;
 	int range;
@@ -88,6 +94,13 @@ public:
 		healthCostMultiplier = 1;
 		actionCostMultiplier = 1;
 		mindCostMultiplier = 1;
+
+		frsLightForceCostModifier = 0;
+		frsDarkForceCostModifier = 0;
+		frsLightMinDamageModifier = 0;
+		frsLightMaxDamageModifier = 0;
+		frsDarkMinDamageModifier = 0;
+		frsDarkMaxDamageModifier = 0;
 
 		// Force Power is only set in Jedi-skills.
 		forceCostMultiplier = 0;
@@ -217,14 +230,27 @@ public:
 			return GENERALERROR;
 		}
 
-		if (creature->isPlayerCreature() && !targetObject->isPlayerCreature() && targetObject->getParentID() != 0 && creature->getParentID() != targetObject->getParentID()) {
+		if (creature->isPlayerCreature() && targetObject->getParentID() != 0 && creature->getParentID() != targetObject->getParentID()) {
 			Reference<CellObject*> targetCell = targetObject->getParent().get().castTo<CellObject*>();
 
-			if (targetCell != NULL) {
-				ContainerPermissions* perms = targetCell->getContainerPermissions();
+			if (targetCell != nullptr) {
+				if (!targetObject->isPlayerCreature()) {
+					ContainerPermissions* perms = targetCell->getContainerPermissions();
 
-				if (!perms->hasInheritPermissionsFromParent()) {
-					if (!targetCell->checkContainerPermission(creature, ContainerPermissions::WALKIN)) {
+					if (!perms->hasInheritPermissionsFromParent()) {
+						if (!targetCell->checkContainerPermission(creature, ContainerPermissions::WALKIN)) {
+							creature->sendSystemMessage("@combat_effects:cansee_fail"); // You cannot see your target.
+							return GENERALERROR;
+						}
+					}
+				}
+
+				ManagedReference<SceneObject*> parentSceneObject = targetCell->getParent().get();
+
+				if (parentSceneObject != nullptr) {
+					BuildingObject* buildingObject = parentSceneObject->asBuildingObject();
+
+					if (buildingObject != nullptr && !buildingObject->isAllowedEntry(creature)) {
 						creature->sendSystemMessage("@combat_effects:cansee_fail"); // You cannot see your target.
 						return GENERALERROR;
 					}
@@ -255,20 +281,6 @@ public:
 		// only clear aiming states if command was successful
 		creature->removeStateBuff(CreatureState::AIMING);
 		creature->removeBuff(STRING_HASHCODE("steadyaim"));
-		
-		//Give visibility
-		if (creature->isPlayerCreature()){
-			PlayerObject* visGhost = creature->getPlayerObject().get();
-			if (visGhost->isJedi()){
-				WeaponObject* visWeap = creature->getWeapon();
-				if (visWeap->isJediWeapon()){
-					VisibilityManager::instance()->increaseVisibility(creature, 25);
-					//Jedi Attackable
-					visGhost->updateLastJediAttackableTimestamp();
-				}
-
-			}
-		}
 
 		return SUCCESS;
 	}
@@ -634,7 +646,7 @@ public:
 		targetDefense -= mod;
 
 		uint32 duration = (uint32) Math::max(5.f, effect.getStateLength()*(1.f-targetDefense/120.f));
-		float frsBonus = defender->getFrsMod("manipulation");
+
 		switch (effectType) {
 		case CommandEffect::BLIND:
 			defender->setBlindedState(duration);
@@ -664,7 +676,7 @@ public:
 				defender->setPosture(CreaturePosture::KNOCKEDDOWN, false, false);
 
 			defender->updateKnockdownRecovery();
-			defender->updatePostureChangeDelay(5500/(1.25*frsBonus));
+			defender->updatePostureChangeDelay(5000);
 			defender->removeBuff(STRING_HASHCODE("burstrun"));
 			defender->removeBuff(STRING_HASHCODE("retreat"));
 			defender->sendSystemMessage("@cbt_spam:posture_knocked_down");
@@ -837,6 +849,42 @@ public:
 		return visMod;
 	}
 
+	void setFrsLightForceCostModifier(float val) {
+		frsLightForceCostModifier = val;
+	}
+
+	void setFrsDarkForceCostModifier(float val) {
+		frsDarkForceCostModifier = val;
+	}
+
+	void setFrsLightMinDamageModifier(float val) {
+		frsLightMinDamageModifier = val;
+	}
+	void setFrsLightMaxDamageModifier(float val) {
+		frsLightMaxDamageModifier = val;
+	}
+	void setFrsDarkMinDamageModifier(float val) {
+		frsDarkMinDamageModifier = val;
+	}
+	void setFrsDarkMaxDamageModifier(float val) {
+		frsDarkMaxDamageModifier = val;
+	}
+
+	inline float getFrsLightMinDamageModifier() const {
+		return frsLightMinDamageModifier;
+	}
+
+	inline float getFrsLightMaxDamageModifier() const {
+		return frsLightMaxDamageModifier;
+	}
+
+	inline float getFrsDarkMinDamageModifier() const {
+		return frsDarkMinDamageModifier;
+	}
+
+	inline float getFrsDarkMaxDamageModifier() const {
+		return frsDarkMaxDamageModifier;
+	}
 };
 
 #endif /* COMBATQUEUECOMMAND_H_ */

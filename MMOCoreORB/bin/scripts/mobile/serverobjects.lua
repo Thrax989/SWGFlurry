@@ -1,3 +1,6 @@
+-- Custom content
+includeFile("../custom_scripts/mobile/serverobjects.lua")
+
 -- Conversations
 includeFile("conversations.lua")
 
@@ -21,8 +24,7 @@ includeFile("thug/serverobjects.lua")
 includeFile("townsperson/serverobjects.lua")
 includeFile("tutorial/serverobjects.lua")
 includeFile("yavin4/serverobjects.lua")
-includeFile("mandalore/serverobjects.lua")
---includeFile("taanab/serverobjects.lua")
+
 includeFile("faction/serverobjects.lua")
 includeFile("dungeon/serverobjects.lua") 
 
@@ -43,13 +45,3 @@ includeFile("lair/serverobjects.lua")
 
 -- Outfits
 includeFile("outfits/serverobjects.lua")
-
---ISD
-includeFile("isd/serverobjects.lua")
-
---Outbreak Halloween Event
-includeFile("outbreak/serverobjects.lua")
-
----New Content
-includeFile("custom_content/serverobjects.lua")
-includeFile("custom_vendors/serverobjects.lua")

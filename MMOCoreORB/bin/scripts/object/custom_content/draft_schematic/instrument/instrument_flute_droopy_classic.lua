@@ -1,5 +1,0 @@
-object_draft_schematic_instrument_instrument_flute_droopy_classic = object_draft_schematic_instrument_shared_instrument_flute_droopy_classic:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_instrument_instrument_flute_droopy_classic, "object/draft_schematic/instrument/instrument_flute_droopy_classic.iff")

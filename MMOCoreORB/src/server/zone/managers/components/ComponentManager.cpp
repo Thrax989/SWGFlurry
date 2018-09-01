@@ -50,23 +50,6 @@
 #include "server/zone/objects/tangible/components/BankTerminalMenuComponent.h"
 #include "server/zone/objects/tangible/components/CloningTerminalMenuComponent.h"
 #include "server/zone/objects/tangible/components/HolocronMenuComponent.h"
-#include "server/zone/objects/tangible/components/ArtifactMenuComponent.h"
-#include "server/zone/objects/tangible/components/BossMenuComponent.h"
-#include "server/zone/objects/tangible/components/DiamondMenuComponent.h"
-#include "server/zone/objects/tangible/components/HeroicMenuComponent.h"
-#include "server/zone/objects/tangible/components/FlurrycoalMenuComponent.h"
-#include "server/zone/objects/tangible/components/FlurrypresentMenuComponent.h"
-#include "server/zone/objects/tangible/components/HalloweenMenuComponent.h"
-#include "server/zone/objects/tangible/components/ForceShrineMenuComponent1.h"
-#include "server/zone/objects/tangible/components/FriendcrateMenuComponent.h"
-#include "server/zone/objects/tangible/components/NewMemberMenuComponent.h"
-#include "server/zone/objects/tangible/components/ScrapMenuComponent.h"
-#include "server/zone/objects/tangible/components/CollectionsilverMenuComponent.h"
-#include "server/zone/objects/tangible/components/CollectiongoldMenuComponent.h"
-#include "server/zone/objects/tangible/components/CollectionplatinumMenuComponent.h"
-#include "server/zone/objects/tangible/components/XpMenuComponent.h"
-#include "server/zone/objects/tangible/components/ImperialMenuComponent.h"
-#include "server/zone/objects/tangible/components/RebelMenuComponent.h"
 #include "server/zone/objects/tangible/components/WaypointDatapadMenuComponent.h"
 #include "server/zone/objects/tangible/components/ForceCrystalMenuComponent.h"
 #include "server/zone/objects/tangible/components/RobeObjectMenuComponent.h"
@@ -91,6 +74,7 @@
 #include "server/zone/objects/tangible/deed/components/PlaceCityHallComponent.h"
 #include "server/zone/objects/tangible/deed/components/PlaceGCWBaseComponent.h"
 #include "server/zone/objects/tangible/deed/components/PlaceDecorationComponent.h"
+#include "server/zone/objects/tangible/terminal/components/EnclaveTerminalMenuComponent.h"
 #include "server/zone/objects/tangible/terminal/components/DestructibleBuildingMenuComponent.h"
 #include "server/zone/objects/tangible/terminal/components/StructureTerminalMenuComponent.h"
 #include "server/zone/objects/tangible/terminal/components/HQMenuComponent.h"
@@ -205,23 +189,6 @@ ComponentManager::ComponentManager() {
 
 	components.put("ZoneContainerComponent", new ZoneContainerComponent());
 
-     components.put("ImperialMenuComponent", new ImperialMenuComponent());
-	components.put("RebelMenuComponent", new RebelMenuComponent());
-	components.put("CollectionsilverMenuComponent", new CollectionsilverMenuComponent());
-	components.put("CollectiongoldMenuComponent", new CollectiongoldMenuComponent());
-	components.put("CollectionplatinumMenuComponent", new CollectionplatinumMenuComponent());
-	components.put("XpMenuComponent", new XpMenuComponent());
-	components.put("ArtifactMenuComponent", new ArtifactMenuComponent());
-	components.put("BossMenuComponent", new BossMenuComponent());
-	components.put("DiamondMenuComponent", new DiamondMenuComponent());
-	components.put("HeroicMenuComponent", new HeroicMenuComponent());
-	components.put("FlurrycoalMenuComponent", new FlurrycoalMenuComponent());
-	components.put("FlurrypresentMenuComponent", new FlurrypresentMenuComponent());
-	components.put("HalloweenMenuComponent", new HalloweenMenuComponent());
-	components.put("ForceShrineMenuComponent1", new ForceShrineMenuComponent1());
-	components.put("FriendcrateMenuComponent", new FriendcrateMenuComponent());
-	components.put("NewMemberMenuComponent", new NewMemberMenuComponent());
-	components.put("ScrapMenuComponent", new ScrapMenuComponent());
 	components.put("HolocronMenuComponent", new HolocronMenuComponent());
 	components.put("WaypointDatapadMenuComponent", new WaypointDatapadMenuComponent());
 
@@ -328,6 +295,8 @@ ComponentManager::ComponentManager() {
 	components.put("GCWBaseContainerComponent", new GCWBaseContainerComponent());
 	components.put("PlaceDecorationComponent", new PlaceDecorationComponent());
 	components.put("CityDecorationMenuComponent", new CityDecorationMenuComponent());
+
+	components.put("EnclaveTerminalMenuComponent", new EnclaveTerminalMenuComponent());
 	components.put("EnclaveContainerComponent", new EnclaveContainerComponent());
 
 	// SE Goggles.

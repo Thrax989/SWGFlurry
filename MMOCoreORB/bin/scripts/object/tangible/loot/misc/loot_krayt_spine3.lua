@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_loot_krayt_spine3 = object_tangible_loot_misc_shared_loot_krayt_spine3:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

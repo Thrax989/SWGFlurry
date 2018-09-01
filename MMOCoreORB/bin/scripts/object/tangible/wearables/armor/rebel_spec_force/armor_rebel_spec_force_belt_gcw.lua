@@ -1,5 +1,0 @@
-object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_belt_gcw = object_tangible_wearables_armor_rebel_spec_force_shared_armor_rebel_spec_force_belt_gcw:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_belt_gcw, "object/tangible/wearables/armor/rebel/spec/force/armor_rebel_spec_force_belt_gcw.iff")

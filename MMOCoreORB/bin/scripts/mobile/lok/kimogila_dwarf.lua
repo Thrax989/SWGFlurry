@@ -9,7 +9,7 @@ kimogila_dwarf = Creature:new {
 	baseXp = 12671,
 	baseHAM = 71000,
 	baseHAMmax = 79000,
-	armor = 0,
+	armor = 2,
 	resists = {135,180,20,180,20,20,200,20,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
@@ -26,6 +26,7 @@ kimogila_dwarf = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/kimogila_hue.iff"},
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 0.8,
 	lootGroups = {
 	 {

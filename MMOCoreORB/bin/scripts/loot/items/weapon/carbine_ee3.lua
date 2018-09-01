@@ -6,8 +6,8 @@ carbine_ee3 = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_ee3.iff",
 	craftingValues = {
-		{"mindamage",30,35,0},
-		{"maxdamage",75,85,0},
+		{"mindamage",35,65,0},
+		{"maxdamage",91,169,0},
 		{"attackspeed",4.7,3.2,1},
 		{"woundchance",5,9,0},
 		{"roundsused",30,65,0},
@@ -24,7 +24,7 @@ carbine_ee3 = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 375,
+	randomDotChance = 625,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

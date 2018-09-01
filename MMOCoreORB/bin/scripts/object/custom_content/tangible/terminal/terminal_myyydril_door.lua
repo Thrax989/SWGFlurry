@@ -1,5 +1,0 @@
-object_tangible_terminal_terminal_myyydril_door = object_tangible_terminal_shared_terminal_myyydril_door:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_terminal_terminal_myyydril_door, "object/tangible/terminal/terminal_myyydril_door.iff")

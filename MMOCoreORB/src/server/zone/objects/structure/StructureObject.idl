@@ -13,6 +13,8 @@ include templates.SharedObjectTemplate;
 import system.lang.Time;
 include server.zone.objects.structure.StructurePermissionList;
 import server.zone.objects.pathfinding.NavArea;
+import server.zone.objects.creature.credits.CreditObject;
+include server.zone.CloseObjectsVector;
 
 class StructureObject extends TangibleObject {
 	protected transient StructureMaintenanceTask structureMaintenanceTask;
@@ -33,6 +35,7 @@ class StructureObject extends TangibleObject {
 
 	protected unsigned long ownerObjectID;
 	protected unsigned long deedObjectID;
+	protected unsigned long waypointID;
 
 	protected float surplusMaintenance;
 	protected float surplusPower;
@@ -49,6 +52,8 @@ class StructureObject extends TangibleObject {
 		ownerObjectID = 0;
 
 		deedObjectID = 0;
+		
+		waypointID = 0;
 
 		surplusMaintenance = 0;
 
@@ -98,6 +103,11 @@ class StructureObject extends TangibleObject {
 	@preLocked
 	public void createChildObjects() {
 		super.createChildObjects();
+	}
+
+	@dirty
+	public abstract int getReceiverFlags() {
+		return CloseObjectsVector.STRUCTURETYPE | super.getReceiverFlags();
 	}
 
 	/**
@@ -328,6 +338,16 @@ class StructureObject extends TangibleObject {
 		ownerObjectID = objectID;
 		structurePermissionList.setOwner(objectID);
 	}
+	
+	@preLocked
+	public void setWaypointID(unsigned long objectID) {
+		waypointID = objectID;
+	}
+	
+	@read
+	public unsigned long getWaypointID() {
+		return waypointID;
+	}
 
 	@preLocked
 	public void setDeedObjectID(unsigned long deedID) {
@@ -362,7 +382,7 @@ class StructureObject extends TangibleObject {
 	 */
 	@preLocked
 	@arg2preLocked
-	public native void payMaintenance(int maintenance, CreatureObject payer, boolean cashFirst);
+	public native void payMaintenance(int maintenance, CreditObject creditObj, boolean cashFirst);
 
 	@preLocked
 	public void setSurplusPower(int surplus) {

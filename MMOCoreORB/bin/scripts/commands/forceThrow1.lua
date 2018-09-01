@@ -44,24 +44,23 @@
 ForceThrow1Command = {
 	name = "forcethrow1",
 
-	minDamage = 600,
-	maxDamage = 900,
-	speed = 2.0,
-	forceCost = 35,
+	minDamage = 150,
+	maxDamage = 300,
+	speed = 4.0,
+	forceCost = 28,
 	visMod = 25,
 	accuracySkillMod = "forcethrow_accuracy",
-	accuracyBonus = 95,
 
 	stateEffects = {
-	  StateEffect(
-		STUN_EFFECT,
-		{},
-		{ "jedi_state_defense" },
-		{},
-		65,
-		0,
-		10
-	  )
+		StateEffect(
+			STUN_EFFECT,
+			{},
+			{},
+			{ "jedi_state_defense" },
+			65,
+			0,
+			10
+		)
 	},
 
 	animation = "force_throw_1_particle_level_1",
@@ -71,10 +70,15 @@ ForceThrow1Command = {
 
 	poolsToDamage = RANDOM_ATTRIBUTE,
 
-	forceAttack = false,
-	damageType = LIGHTSABER_DAMAGE,
+	forceAttack = true,
+	damageType = KINETIC_DAMAGE,
 
-	range = 45
+	frsLightMinDamageModifier = 1,
+	frsLightMaxDamageModifier = 3,
+	frsDarkMinDamageModifier = 1,
+	frsDarkMaxDamageModifier = 3,
+
+	range = 32
 }
 
 AddCommand(ForceThrow1Command)

@@ -58,6 +58,11 @@ public:
 
 			for(int j = 0; j < cell->getContainerObjectsSize(); ++j) {
 				ManagedReference<SceneObject*> obj = cell->getContainerObject(j);
+
+				if(obj != NULL && obj->isVendor()) {
+					creature->sendSystemMessage("@player_structure:vendor_no_private"); // A structure hosting a vendor cannot be declared private
+					return GENERALERROR;
+				}
 			}
 		}
 

@@ -10,6 +10,7 @@
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/sui/callbacks/RemoveDroidStructureSuiCallback.h"
 #include "server/zone/objects/player/sessions/DroidMaintenanceSession.h"
+#include "server/zone/objects/creature/credits/CreditObject.h"
 #include "server/zone/Zone.h"
 
 DroidMaintenanceModuleDataComponent::DroidMaintenanceModuleDataComponent() {
@@ -263,17 +264,26 @@ void DroidMaintenanceModuleDataComponent::validateStructures(){
 void DroidMaintenanceModuleDataComponent::payStructures(CreatureObject* player, VectorMap<unsigned long long, int> assignments) {
 	// we know each struct to pay and any fees applied.
 	ManagedReference<DroidObject*> droid = getDroidObject();
+	ManagedReference<CreatureObject*> play = player->asCreatureObject();
 
-	for(int i=0;i< assignments.size();i++) {
-		uint64 objectID = assignments.elementAt(i).getKey();
-		int maintToPay = assignments.elementAt(i).getValue();
-		ManagedReference<SceneObject*> obj = player->getZoneServer()->getObject(objectID);
-		StructureObject* structureObject = cast<StructureObject*>(obj.get());
-		if (structureObject != NULL) {
-			Locker sLock(obj,player);
-			structureObject->payMaintenance(maintToPay,player,true);
+	Core::getTaskManager()->executeTask([=]{
+		for(int i=0;i< assignments.size();i++) {
+			uint64 objectID = assignments.elementAt(i).getKey();
+			int maintToPay = assignments.elementAt(i).getValue();
+			ManagedReference<SceneObject*> obj = play->getZoneServer()->getObject(objectID);
+			StructureObject* structureObject = cast<StructureObject*>(obj.get());
+
+			if (structureObject != NULL) {
+				Locker locker(play);
+				Locker cross(structureObject, play);
+
+				ManagedReference<CreditObject*> creditObject = play->getCreditObject();
+
+				Locker clock(creditObject);
+				structureObject->payMaintenance(maintToPay, creditObject, true);
+			}
 		}
-	}
+	}, "DroidPayMaintenanceTask");
 }
 long DroidMaintenanceModuleDataComponent::calculateRunTime(const VectorMap<unsigned long long, int>& assignments, const String& localPlanet, DroidObject* droid) {
 	long duration = 0;

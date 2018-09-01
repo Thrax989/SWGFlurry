@@ -9,7 +9,7 @@ arachne_warrior = Creature:new {
 	baseXp = 4097,
 	baseHAM = 9100,
 	baseHAMmax = 11000,
-	armor = 0,
+	armor = 1,
 	resists = {130,130,-1,160,160,-1,160,-1,-1},
 	meatType = "meat_insect",
 	meatAmount = 55,
@@ -26,6 +26,7 @@ arachne_warrior = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/angler_hue.iff"},
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	controlDeviceTemplate = "object/intangible/pet/angler_hue.iff",
 	scale = 1.1,
 	lootGroups = {},

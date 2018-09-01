@@ -12,8 +12,8 @@ FsIntro = ScreenPlay:new {
 	VILLAGE = 8,
 
 	stepDelay = {
-		[1] = { 600, 15600 }, -- Old man visit, 10 mins - 1 hour
-		[3] = { 600, 15600 } -- Sith shadow attack, 10 mins - 1 hour
+		[1] = { 43200, 129600 }, -- Old man visit, 12-36 hours
+		[3] = { 3600, 43200 } -- Sith shadow attack, 1 hour to 12 hours
 	}
 }
 

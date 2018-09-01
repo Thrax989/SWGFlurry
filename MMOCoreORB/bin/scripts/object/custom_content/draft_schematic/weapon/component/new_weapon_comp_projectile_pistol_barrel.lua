@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_component_new_weapon_comp_projectile_pistol_barrel = object_draft_schematic_weapon_component_shared_new_weapon_comp_projectile_pistol_barrel:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_component_new_weapon_comp_projectile_pistol_barrel, "object/draft_schematic/weapon/component/new_weapon_comp_projectile_pistol_barrel.iff")

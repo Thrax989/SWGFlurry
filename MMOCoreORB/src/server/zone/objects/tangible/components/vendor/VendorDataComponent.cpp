@@ -29,7 +29,6 @@ VendorDataComponent::VendorDataComponent() : AuctionTerminalDataComponent(), adB
 	awardUsageXP = 0;
 	adBarking = false;
 	mail1Sent = false;
-	mail2Sent = false;
 	barkMessage = "";
 	lastBark = 0;
 	originalDirection = 1000;
@@ -48,7 +47,6 @@ void VendorDataComponent::addSerializableVariables() {
 	addSerializableVariable("lastSuccessfulUpdate", &lastSuccessfulUpdate);
 	addSerializableVariable("adBarking", &adBarking);
 	addSerializableVariable("mail1Sent", &mail1Sent);
-	addSerializableVariable("mail2Sent", &mail2Sent);
 	addSerializableVariable("emptyTimer", &emptyTimer);
 	addSerializableVariable("barkMessage", &barkMessage);
 	addSerializableVariable("barkMood", &barkMood);
@@ -130,9 +128,8 @@ void VendorDataComponent::runVendorUpdate() {
 		vendor->setMaxCondition(1000, true);
 	}
 
-	ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
-
 	if (isEmpty()) {
+		ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
 
 		String sender = strongParent->getDisplayedName();
 		UnicodeString subject("@auction:vendor_status_subject");
@@ -165,16 +162,6 @@ void VendorDataComponent::runVendorUpdate() {
 		if (isVendorSearchEnabled())
 			setVendorSearchEnabled(false);
 
-		if (!mail2Sent) {
-			String sender = strongParent->getDisplayedName();
-			UnicodeString subject("@auction:vendor_status_subject");
-			StringIdChatParameter body("Your vendor has run out of maintenance. If vendor search was enabled, you will have to enable it again after paying maintenance.");
-			body.setTO(strongParent->getDisplayedName());
-
-			cman->sendMail(sender, subject, body, owner->getFirstName());
-			mail2Sent = true;
-		}
-
 		if (time(0) - inactiveTimer.getTime() > DELETEWARNING) {
 
 			ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
@@ -189,7 +176,6 @@ void VendorDataComponent::runVendorUpdate() {
 		}
 
 	} else {
-		mail2Sent = false;
 
 		/// Award hourly XP
 		assert(vendor->isLockedByCurrentThread());
@@ -330,7 +316,6 @@ void VendorDataComponent::handleWithdrawMaintanence(int value) {
 		return;
 	}
 
-	Locker olocker(owner);
 	maintAmount -= value;
 	owner->addBankCredits(value, true);
 

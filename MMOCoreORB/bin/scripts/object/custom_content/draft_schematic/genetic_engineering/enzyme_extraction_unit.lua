@@ -1,5 +1,0 @@
-object_draft_schematic_genetic_engineering_enzyme_extraction_unit = object_draft_schematic_genetic_engineering_shared_enzyme_extraction_unit:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_enzyme_extraction_unit, "object/draft_schematic/genetic_engineering/enzyme_extraction_unit.iff")

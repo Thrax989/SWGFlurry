@@ -9,6 +9,8 @@
 #define COLLISIONMANAGER_H_
 
 #include "engine/engine.h"
+#include "server/zone/CloseObjectsVector.h"
+
 #include "templates/appearance/AppearanceTemplate.h"
 
 class PathNode;
@@ -62,6 +64,7 @@ public:
 	static float getRayOriginPoint(CreatureObject* creature);
 
 	static float getWorldFloorCollision(float x, float y, Zone* zone, bool testWater);
+	static float getWorldFloorCollision(float x, float y, float z, Zone* zone, bool testWater);
 	static void getWorldFloorCollisions(float x, float y, Zone* zone, SortedVector<IntersectionResult>* result, CloseObjectsVector* closeObjectsVector = NULL);
 
 	static void getWorldFloorCollisions(float x, float y, Zone* zone, SortedVector<IntersectionResult>* result, const SortedVector<ManagedReference<QuadTreeEntry*> >& inRangeObjects);

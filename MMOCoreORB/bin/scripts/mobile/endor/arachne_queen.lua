@@ -9,7 +9,7 @@ arachne_queen = Creature:new {
 	baseXp = 6105,
 	baseHAM = 11000,
 	baseHAMmax = 14000,
-	armor = 0,
+	armor = 1,
 	resists = {150,135,15,180,180,15,180,-1,-1},
 	meatType = "meat_insect",
 	meatAmount = 60,
@@ -26,6 +26,7 @@ arachne_queen = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/queen_arachne.iff"},
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	scale = 1.3,
 	lootGroups = {},
 	weapons = {},

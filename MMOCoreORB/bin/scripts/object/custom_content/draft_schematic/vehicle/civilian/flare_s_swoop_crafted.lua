@@ -1,5 +1,0 @@
-object_draft_schematic_vehicle_civilian_flare_s_swoop_crafted = object_draft_schematic_vehicle_civilian_shared_flare_s_swoop_crafted:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_vehicle_civilian_flare_s_swoop_crafted, "object/draft_schematic/vehicle/civilian/flare_s_swoop_crafted.iff")

@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_loot_skull_voritor = object_tangible_loot_misc_shared_loot_skull_voritor:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

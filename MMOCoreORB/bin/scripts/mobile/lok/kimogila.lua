@@ -9,7 +9,7 @@ kimogila = Creature:new {
 	baseXp = 9057,
 	baseHAM = 22000,
 	baseHAMmax = 27000,
-	armor = 0,
+	armor = 2,
 	resists = {145,175,0,175,0,0,200,-1,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
@@ -25,7 +25,8 @@ kimogila = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/kimogila.iff"},
+	templates = {"object/mobile/kimogila_hue.iff"},
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 0.85,
 	lootGroups = {
 	 {

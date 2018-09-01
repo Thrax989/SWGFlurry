@@ -1,5 +1,0 @@
-object_installation_turret_heroic_echo_ion_cannon = object_installation_turret_shared_heroic_echo_ion_cannon:new {
-
-}
-
-ObjectTemplates:addTemplate(object_installation_turret_heroic_echo_ion_cannon, "object/installation/turret/heroic_echo_ion_cannon.iff")

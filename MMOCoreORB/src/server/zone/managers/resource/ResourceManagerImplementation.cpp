@@ -276,13 +276,13 @@ void ResourceManagerImplementation::getResourceListByType(Vector<ManagedReferenc
 				if (type == 9){
 					if (resourceSpawn->isType("radioactive"))
 						list.add(resourceSpawn);
-				}
-
-				else if (resourceSpawn->getSurveyToolType() == type) {
+				} else if (type == 10) {
+					if (resourceSpawn->isType("inorganic"))
+						list.add(resourceSpawn);
+				} else if (resourceSpawn->getSurveyToolType() == type) {
 					list.add(resourceSpawn);
 				}
 			}
-
 		}
 
 	} catch (Exception& e) {
@@ -326,7 +326,7 @@ void ResourceManagerImplementation::removePowerFromPlayer(CreatureObject* player
 
 	uint32 containerPower = 0;
 
-	for (int i = 0; i < inventory->getContainerObjectsSize() && power > 0; ++i) {
+	for (int i = inventory->getContainerObjectsSize() - 1; i >= 0 && power > 0; --i) {
 		ManagedReference<SceneObject*> obj = inventory->getContainerObject(i);
 
 		if (obj == NULL || !obj->isResourceContainer())
@@ -401,11 +401,6 @@ bool ResourceManagerImplementation::isRecycledResource(ResourceSpawn* resource) 
 ResourceSpawn* ResourceManagerImplementation::getRecycledVersion(ResourceSpawn* resource) {
 	return resourceSpawner->getRecycledVersion(resource);
 }
-
-ResourceSpawn* ResourceManagerImplementation::getRecycledVersionByType(const String& resourceType) {
-	return resourceSpawner->getRecycledResourceSpawnByType(resourceType);
-}
-
 
 /// Resource Deed Methods
 void ResourceManagerImplementation::addNodeToListBox(SuiListBox* sui, const String& nodeName) {

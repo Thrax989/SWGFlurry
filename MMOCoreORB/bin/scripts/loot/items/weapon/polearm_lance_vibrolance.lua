@@ -6,8 +6,8 @@ polearm_lance_vibrolance = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_vibrolance.iff",
 	craftingValues = {
-		{"mindamage",30,35,0},
-		{"maxdamage",75,85,0},
+		{"mindamage",42,78,0},
+		{"maxdamage",154,286,0},
 		{"attackspeed",5.9,4,1},
 		{"woundchance",14,26,0},
 		{"hitpoints",750,1500,0},
@@ -24,7 +24,7 @@ polearm_lance_vibrolance = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 375,
+	randomDotChance = 500,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 30,
 	junkMaxValue = 55

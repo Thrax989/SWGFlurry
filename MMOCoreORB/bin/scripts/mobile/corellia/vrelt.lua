@@ -18,7 +18,7 @@ vrelt = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 2,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = NONE,
@@ -26,6 +26,7 @@ vrelt = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/vrelt.iff"},
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

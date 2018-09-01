@@ -44,24 +44,23 @@
 ForceLightningSingle2Command = {
 	name = "forcelightningsingle2",
 
-	minDamage = 2200,
-	maxDamage = 2650,
-	speed = 1.0,
-	forceCost = 120,
+	minDamage = 600,
+	maxDamage = 1200,
+	speed = 4.0,
+	forceCost = 150,
 	visMod = 25,
 	accuracySkillMod = "forcelightning_accuracy",
-	accuracyBonus = 95,
 
 	stateEffects = {
-	  StateEffect(
-		STUN_EFFECT,
-		{},
-		{},
-		{ "jedi_state_defense" },
-		65,
-		0,
-		15
-	  )
+		StateEffect(
+			STUN_EFFECT,
+			{},
+			{},
+			{ "jedi_state_defense" },
+			30,
+			0,
+			10
+		)
 	},
 
 	animation = "force_lightning_1_particle_level_3",
@@ -71,10 +70,15 @@ ForceLightningSingle2Command = {
 
 	poolsToDamage = RANDOM_ATTRIBUTE,
 
-	forceAttack = false,
-	damageType = LIGHTSABER_DAMAGE,
+	forceAttack = true,
+	damageType = ELECTRICITY_DAMAGE,
 
-	range = 45
+	frsLightMinDamageModifier = 5,
+	frsLightMaxDamageModifier = 10,
+	frsDarkMinDamageModifier = 5,
+	frsDarkMaxDamageModifier = 10,
+
+	range = 32
 }
 
 AddCommand(ForceLightningSingle2Command)

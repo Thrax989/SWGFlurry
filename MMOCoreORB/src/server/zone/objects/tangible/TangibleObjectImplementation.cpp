@@ -243,7 +243,7 @@ void TangibleObjectImplementation::broadcastPvpStatusBitmask() {
 
 		SortedVector<QuadTreeEntry*> closeObjects(closeobjects->size(), 10);
 
-		closeobjects->safeCopyTo(closeObjects);
+		closeobjects->safeCopyReceiversTo(closeObjects, CloseObjectsVector::CREOTYPE);
 
 		for (int i = 0; i < closeObjects.size(); ++i) {
 			SceneObject* obj = cast<SceneObject*>(closeObjects.get(i));
@@ -739,6 +739,9 @@ void TangibleObjectImplementation::setObjectName(StringId& stringID, bool notify
 void TangibleObjectImplementation::setCustomObjectName(const UnicodeString& name, bool notifyClient) {
 	customName = name;
 
+	if (isClientObject())
+		setForceSend(true);
+
 	if (!notifyClient)
 		return;
 
@@ -826,7 +829,7 @@ Reference<FactoryCrate*> TangibleObjectImplementation::createFactoryCrate(int ma
 
 	Locker locker(crate);
 
-	crate->setMaxCapacity(1000);
+	crate->setMaxCapacity(maxSize);
 
 
 	if (insertSelf) {
@@ -1073,7 +1076,7 @@ bool TangibleObjectImplementation::isAttackableBy(CreatureObject* object) {
 		if (ai->isPet()) {
 			ManagedReference<PetControlDevice*> pcd = ai->getControlDevice().get().castTo<PetControlDevice*>();
 			if (pcd != NULL && pcd->getPetType() == PetManager::FACTIONPET && isNeutral()) {
-				return true;
+				return false;
 			}
 
 			ManagedReference<CreatureObject*> owner = ai->getLinkedCreature().get();

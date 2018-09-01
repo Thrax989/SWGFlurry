@@ -13,6 +13,7 @@ ConfigManager::ConfigManager() {
 	dumpObjFiles = true;
 	unloadContainers = true;
 	useMetrics = true;
+	pvpMode = false;
 
 	orbNamingDirectoryAddress = "";
 	orbNamingDirectoryPort = 44419;
@@ -54,6 +55,7 @@ ConfigManager::ConfigManager() {
 	zoneAllowedConnections = 300;
 	zoneGalaxyID = 2;
 	zoneOnlineCharactersPerAccount = 1;
+	zonePort = 0;
 
 	statusAllowedConnections = 100;
 	statusInterval = 60;
@@ -64,6 +66,15 @@ ConfigManager::ConfigManager() {
 	purgeDeletedCharacters = 10; //Default is 10 minutes.
 
 	maxNavMeshJobs = 6;
+
+	termsOfService = "";
+	tosVersion = 0;
+
+	logFileLevel = Logger::INFO;
+	jsonLogOutput = false;
+	syncLogOutput = false;
+	pathfinderLogJSON = false;
+	luaLogJSON = false;
 }
 
 bool ConfigManager::loadConfigData() {
@@ -81,6 +92,7 @@ bool ConfigManager::loadConfigData() {
 	dumpObjFiles = getGlobalByte("DumpObjFiles");
 	unloadContainers = getGlobalByte("UnloadContainers");
 	useMetrics = getGlobalByte("UseMetrics");
+	pvpMode = getGlobalByte("PvpMode");
 
 	orbNamingDirectoryAddress = getGlobalString("ORB");
 	orbNamingDirectoryPort = getGlobalShort("ORBPort");
@@ -119,6 +131,7 @@ bool ConfigManager::loadConfigData() {
 	zoneAllowedConnections = getGlobalInt("ZoneAllowedConnections");
 	zoneGalaxyID = getGlobalInt("ZoneGalaxyID");
 	zoneOnlineCharactersPerAccount = getGlobalInt("ZoneOnlineCharactersPerAccount");
+	zonePort = getGlobalInt("ZoneServerPort");
 
 	statusAllowedConnections = getGlobalInt("StatusAllowedConnections");
 	statusInterval = getGlobalInt("StatusInterval");
@@ -129,6 +142,7 @@ bool ConfigManager::loadConfigData() {
 	webSessionTimeout = getGlobalInt("WebSessionTimeout");
 
 	metricsHost = getGlobalString("MetricsHost");
+	metricsPrefix = getGlobalString("MetricsPrefix");
 	metricsPort = getGlobalInt("MetricsPort");
 
 	progressMonitors = getGlobalBoolean("ProgressMonitors");
@@ -136,6 +150,17 @@ bool ConfigManager::loadConfigData() {
 	purgeDeletedCharacters = getGlobalInt("PurgeDeletedCharacters");
 
 	maxNavMeshJobs = getGlobalInt("MaxNavMeshJobs");
+
+	logFile = getGlobalString("LogFile");
+	logFileLevel = getGlobalInt("LogFileLevel");
+
+	jsonLogOutput = getGlobalByte("LogJSON");
+	syncLogOutput = getGlobalByte("LogSync");
+	luaLogJSON = getGlobalByte("LuaLogJSON");
+	pathfinderLogJSON = getGlobalByte("PathfinderLogJSON");
+
+	termsOfService = getGlobalString("TermsOfService");
+	tosVersion = getGlobalInt("TermsOfServiceVersion");
 
 	return true;
 }
@@ -181,8 +206,8 @@ void ConfigManager::loadMOTD() {
 
 		reader->close();
 	} catch (FileNotFoundException& e) {
-		file = NULL;
-		reader = NULL;
+		file = nullptr;
+		reader = nullptr;
 	}
 
 	delete reader;
@@ -206,11 +231,11 @@ void ConfigManager::loadRevision() {
 
 		reader->close();
 	} catch (FileNotFoundException& e) {
-		file = NULL;
-		reader = NULL;
+		file = nullptr;
+		reader = nullptr;
 	} catch (Exception& e) {
-		file = NULL;
-		reader = NULL;
+		file = nullptr;
+		reader = nullptr;
 	}
 
 	//revision = revision.replaceAll("\n", "");

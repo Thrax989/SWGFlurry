@@ -1,5 +1,0 @@
-object_draft_schematic_droid_component_combat_module_electric_shocker = object_draft_schematic_droid_component_shared_combat_module_electric_shocker:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_droid_component_combat_module_electric_shocker, "object/draft_schematic/droid/component/combat_module_electric_shocker.iff")

@@ -42,13 +42,10 @@
 
 
 object_tangible_wearables_hat_hat_twilek_s04 = object_tangible_wearables_hat_shared_hat_twilek_s04:new {
-objectMenuComponent = "ArmorObjectMenuComponent",
-
-		playerRaces = {"object/creature/player/twilek_male.iff",
+	playerRaces = { "object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
-				"object/mobile/vendor/twilek_male.iff",
-				"object/mobile/vendor/twilek_female.iff"},
-
+				"object/mobile/vendor/twilek_female.iff",
+				"object/mobile/vendor/twilek_male.iff" },
 
 	numberExperimentalProperties = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "XX", "XX", "XX", "XX", "XX", "XX", "XX", "XX", "XX", "XX", "XX", "XX"},

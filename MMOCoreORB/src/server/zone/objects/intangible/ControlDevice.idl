@@ -63,7 +63,7 @@ class ControlDevice extends IntangibleObject {
 		return false;
 	}
 
-	
+	@preLocked
 	public void setControlledObject(TangibleObject object) {
 		controlledObject = object;
 	}

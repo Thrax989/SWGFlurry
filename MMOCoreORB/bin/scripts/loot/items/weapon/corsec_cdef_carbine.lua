@@ -6,8 +6,8 @@ corsec_cdef_carbine = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_cdef_corsec.iff",
 	craftingValues = {
-		{"mindamage",30,35,0},
-		{"maxdamage",75,85,0},
+		{"mindamage",17,32,0},
+		{"maxdamage",35,65,0},
 		{"attackspeed",4.6,3.2,1},
 		{"woundchance",4,5,0},
 		{"roundsused",5,20,0},
@@ -24,7 +24,7 @@ corsec_cdef_carbine = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 375,
+	randomDotChance = 625,
 	junkDealerTypeNeeded = JUNKARMS + JUNKCORSEC,
 	junkMinValue = 20,
 	junkMaxValue = 60

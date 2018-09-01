@@ -19,7 +19,7 @@ domestic_krahbu = Creature:new {
 	boneAmount = 145,
 	milkType = "milk_domesticated",
 	milk = 110,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = HERD,
@@ -27,6 +27,7 @@ domestic_krahbu = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/krahbu_hue.iff"},
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

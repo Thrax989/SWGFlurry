@@ -31,25 +31,6 @@ const static char* TerrainNames[] = {
     "terrain/space_tatooine.trn", // 22
     "terrain/space_tatooine_2.trn", // 23
     "terrain/space_yavin4.trn", // 24
-    "terrain/mustafar.trn",
-    "terrain/kashyyyk.trn",
-    "terrain/hoth.trn",
-    "terrain/nalhutta.trn",
-    "terrain/bespin.trn",
-    "terrain/dagobah.trn",
-    "terrain/coruscant.trn",
-    "terrain/moncal.trn",
-    "terrain/kuat.trn",
-    "terrain/kessel.trn",
-    "terrain/ordmantell.trn",
-    "terrain/ghomrassen.trn",
-    "terrain/kaas.trn",
-    "terrain/moraband.trn",
-    "terrain/chandrila.trn",
-    "terrain/mandalore.trn",
-    "terrain/hutta.trn",
-    "terrain/ghomrassen.trn",
-    "terrain/dungeon2.trn",
 
     // Test/Unused
     "terrain/09.trn", // 25

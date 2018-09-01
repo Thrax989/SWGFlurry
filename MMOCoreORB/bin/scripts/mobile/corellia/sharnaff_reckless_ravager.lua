@@ -18,7 +18,7 @@ sharnaff_reckless_ravager = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 180,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0.05,
 	ferocity = 8,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER,
@@ -26,13 +26,14 @@ sharnaff_reckless_ravager = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/sharnaff_hue.iff"},
+	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	controlDeviceTemplate = "object/intangible/pet/sharnaff_hue.iff",
 	lootGroups = {
 		{
 			groups = {
 				{group = "sharnaff_common", chance = 10000000}
 			},
-			lootChance = 10000000
+			lootChance = 1680000
 		}
 	},
 	weapons = {},

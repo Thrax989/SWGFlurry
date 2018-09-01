@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_2h_sword_kun_massassi = object_draft_schematic_weapon_shared_2h_sword_kun_massassi:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_2h_sword_kun_massassi, "object/draft_schematic/weapon/2h_sword_kun_massassi.iff")

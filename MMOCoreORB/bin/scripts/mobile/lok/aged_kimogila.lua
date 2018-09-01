@@ -10,7 +10,7 @@ aged_kimogila = Creature:new {
 	baseXp = 13671,
 	baseHAM = 81000,
 	baseHAMmax = 99000,
-	armor = 0,
+	armor = 2,
 	resists = {135,180,20,180,20,20,200,20,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 700,
@@ -27,9 +27,10 @@ aged_kimogila = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/kimogila_hue.iff"},
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	lootGroups = {
-	 {
-	        groups = {
+		{
+			groups = {
 				{group = "kimogila_common", chance = 10000000}
 			},
 			lootChance = 3460000

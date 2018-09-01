@@ -1,5 +1,0 @@
-object_draft_schematic_chemistry_stimpack_tier_2 = object_draft_schematic_chemistry_shared_stimpack_tier_2:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_chemistry_stimpack_tier_2, "object/draft_schematic/chemistry/stimpack_tier_2.iff")

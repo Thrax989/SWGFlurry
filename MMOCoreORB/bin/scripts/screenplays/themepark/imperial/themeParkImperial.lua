@@ -15,7 +15,7 @@ kaja_orzee_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 750 }
+				{ rewardType = "credits", amount = 75 }
 			}
 		},
 		{
@@ -35,7 +35,7 @@ kaja_orzee_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1500 }
+				{ rewardType = "credits", amount = 150 }
 			}
 		},
 
@@ -51,7 +51,7 @@ kaja_orzee_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 2250 }
+				{ rewardType = "credits", amount = 225 }
 			}
 		},
 
@@ -71,7 +71,7 @@ kaja_orzee_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 3000 }
+				{ rewardType = "credits", amount = 300 }
 			}
 		},
 		{
@@ -87,7 +87,7 @@ kaja_orzee_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "imperial", amount = 150 },
+				{ rewardType = "faction", faction = "imperial", amount = 75 },
 				{ rewardType = "loot", lootGroup = "theme_park_reward_imperial_kaja"} ,
 				{ rewardType = "permission", permissionGroup = "emperors_retreat2" }
 			}
@@ -108,7 +108,7 @@ loam_redge_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 3750 }
+				{ rewardType = "credits", amount = 375 }
 			}
 		},
 
@@ -127,7 +127,7 @@ loam_redge_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 4500 }
+				{ rewardType = "credits", amount = 450 }
 			}
 		},
 		{
@@ -144,7 +144,7 @@ loam_redge_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 5250 }
+				{ rewardType = "credits", amount = 525 }
 			}
 		},
 
@@ -160,7 +160,7 @@ loam_redge_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "imperial", amount = 250 },
+				{ rewardType = "faction", faction = "imperial", amount = 125 },
 				{ rewardType = "loot", lootGroup = "theme_park_reward_imperial_redge"}
 			}
 		}
@@ -182,7 +182,7 @@ lord_hethrir_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 6000 }
+				{ rewardType = "credits", amount = 600 }
 			}
 		},
 
@@ -200,7 +200,7 @@ lord_hethrir_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 6750 }
+				{ rewardType = "credits", amount = 675 }
 			}
 		},
 		{
@@ -215,7 +215,7 @@ lord_hethrir_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 7500 }
+				{ rewardType = "credits", amount = 750 }
 			}
 		},
 
@@ -234,7 +234,7 @@ lord_hethrir_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 8250 }
+				{ rewardType = "credits", amount = 825 }
 			}
 		},
 		{
@@ -249,7 +249,7 @@ lord_hethrir_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "imperial", amount = 350 },
+				{ rewardType = "faction", faction = "imperial", amount = 175 },
 				{ rewardType = "loot", lootGroup = "theme_park_reward_imperial_hethrir"}
 			}
 		},
@@ -269,7 +269,7 @@ thrawn_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 9000 }
+				{ rewardType = "credits", amount = 900 }
 			}
 		},
 
@@ -286,7 +286,7 @@ thrawn_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 9750 }
+				{ rewardType = "credits", amount = 975 }
 			}
 		},
 		{
@@ -304,7 +304,7 @@ thrawn_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 10500 }
+				{ rewardType = "credits", amount = 1050 }
 			}
 		},
 
@@ -322,7 +322,7 @@ thrawn_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 11250 }
+				{ rewardType = "credits", amount = 1125 }
 			}
 		},
 		{
@@ -338,7 +338,7 @@ thrawn_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 12000 }
+				{ rewardType = "credits", amount = 1200 }
 			}
 		},
 
@@ -357,7 +357,7 @@ thrawn_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "imperial", amount = 450 },
+				{ rewardType = "faction", faction = "imperial", amount = 225 },
 				{ rewardType = "loot_set", lootGroup = "theme_park_reward_imperial_thrawn", setSize = 2}
 			}
 		},
@@ -382,7 +382,7 @@ veers_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 12750 }
+				{ rewardType = "credits", amount = 1275 }
 			}
 		},
 		{
@@ -400,7 +400,7 @@ veers_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 13500 }
+				{ rewardType = "credits", amount = 1350 }
 			}
 		},
 		{
@@ -419,7 +419,7 @@ veers_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 14250 }
+				{ rewardType = "credits", amount = 1425 }
 			}
 		},
 
@@ -437,7 +437,7 @@ veers_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 15000 }
+				{ rewardType = "credits", amount = 1500 }
 			}
 		},
 
@@ -457,7 +457,7 @@ veers_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "imperial", amount = 550 },
+				{ rewardType = "faction", faction = "imperial", amount = 275 },
 				{ rewardType = "loot", lootGroup = "theme_park_reward_imperial_veers"}
 			}
 		},
@@ -478,7 +478,7 @@ palpatine_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 15750 }
+				{ rewardType = "credits", amount = 1575 }
 			}
 		},
 		{
@@ -496,7 +496,7 @@ palpatine_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 16500 }
+				{ rewardType = "credits", amount = 1650 }
 			}
 		},
 		{
@@ -516,7 +516,7 @@ palpatine_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 17250 }
+				{ rewardType = "credits", amount = 1725 }
 			}
 		},
 
@@ -532,7 +532,7 @@ palpatine_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 18000 }
+				{ rewardType = "credits", amount = 1800 }
 			}
 		},
 
@@ -553,7 +553,7 @@ palpatine_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 18750 }
+				{ rewardType = "credits", amount = 1875 }
 			}
 		},
 
@@ -572,7 +572,7 @@ palpatine_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 19500 }
+				{ rewardType = "credits", amount = 1950 }
 			}
 		},
 
@@ -593,7 +593,7 @@ palpatine_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "imperial", amount = 650 },
+				{ rewardType = "faction", faction = "imperial", amount = 325 },
 				{ rewardType = "loot", lootGroup = "theme_park_reward_imperial_emperor"}
 			}
 		}
@@ -616,7 +616,7 @@ darth_vader_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 20250 }
+				{ rewardType = "credits", amount = 2025 }
 			}
 		},
 
@@ -634,7 +634,7 @@ darth_vader_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 21000 }
+				{ rewardType = "credits", amount = 2100 }
 			}
 		},
 
@@ -652,7 +652,7 @@ darth_vader_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 21750 }
+				{ rewardType = "credits", amount = 2175 }
 			}
 		},
 
@@ -671,7 +671,7 @@ darth_vader_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 22500 }
+				{ rewardType = "credits", amount = 2250 }
 			}
 		},
 
@@ -691,7 +691,7 @@ darth_vader_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 23250 }
+				{ rewardType = "credits", amount = 2325 }
 			}
 		},
 
@@ -709,8 +709,8 @@ darth_vader_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "faction", faction = "imperial", amount = 850 },
-				{ rewardType = "credits", amount = 24000 },
+				{ rewardType = "faction", faction = "imperial", amount = 425 },
+				{ rewardType = "credits", amount = 2400 },
 				{ rewardType = "loot",  lootGroup = "theme_park_reward_imperial_vader" },
 				{ rewardType = "badge", badge = THEME_PARK_IMPERIAL_BADGE }
 			}

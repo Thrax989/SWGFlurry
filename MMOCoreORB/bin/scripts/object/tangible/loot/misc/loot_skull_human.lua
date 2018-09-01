@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_loot_skull_human = object_tangible_loot_misc_shared_loot_skull_human:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 
