@@ -45,6 +45,8 @@ ls
 
 cd workspace
 
+git config --global http.sslverify false
+
 git clone http://review.swgemu.com/Core3
 
 git clone http://review.swgemu.com/PublicEngine
