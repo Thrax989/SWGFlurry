@@ -81,7 +81,7 @@ Create a new VNC session to log into
 
 vncserver :1
 
-Termonate a session
+Terminate a session
 
 vncserver -kill :1
 
