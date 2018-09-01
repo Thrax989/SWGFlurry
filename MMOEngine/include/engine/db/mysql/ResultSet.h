@@ -6,11 +6,7 @@ Distribution of this file for usage outside of Core3 is prohibited.
 #ifndef ENGINE_DB_MYSQL_RESULTSET_H_
 #define ENGINE_DB_MYSQL_RESULTSET_H_
 
-#ifdef PLATFORM_MAC
-#include "mysql5/mysql/mysql.h"
-#else
 #include <mysql.h>
-#endif
 
 #include "system/lang/Long.h"
 
@@ -27,7 +23,7 @@ namespace engine {
 		MYSQL_ROW row;
 
 	public:
-		ResultSet(MYSQL* db, MYSQL_RES *res) : row(NULL) {
+		ResultSet(MYSQL* db, MYSQL_RES *res) : row(nullptr) {
 			mysql = db;
 			result = res;
 		}
@@ -37,7 +33,7 @@ namespace engine {
 		}
 
 		bool next() {
-			return (row = mysql_fetch_row(result)) != NULL;
+			return (row = mysql_fetch_row(result)) != nullptr;
 		}
 
 		bool getBoolean(int index) {
@@ -49,7 +45,7 @@ namespace engine {
 		}
 
 		sys::uint32 getUnsignedInt(int index) {
-			return (sys::uint32) strtoul(row[index], NULL, 0);
+			return (sys::uint32) strtoul(row[index], nullptr, 0);
 		}
 
 		sys::int64 getLong(int index) {

@@ -38,7 +38,7 @@ namespace engine {
 		}
 
 		virtual Vector<Locker*>* blockTaskManager() {
-			return NULL;
+			return nullptr;
 		}
 
 		virtual void unblockTaskManager(Vector<Locker*>* lockers) {
@@ -59,7 +59,7 @@ namespace engine {
 		}
 
 		virtual Thread* getSerialWorker() {
-			return NULL;
+			return nullptr;
 		}
 #endif
 
@@ -103,6 +103,17 @@ namespace engine {
 
 		}
 
+		virtual void setStatsDTaskSampling(int val) {
+
+		}
+
+		virtual void setStatsDBdbSamplingRate(int val) {
+
+		}
+
+		virtual Task* getCurrentThreadTask() {
+			return nullptr;
+		}
 
 #ifdef CXX11_COMPILER
 		void executeTask(std::function<void()>&& function, const char* name) {
