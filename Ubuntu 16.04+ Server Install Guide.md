@@ -31,10 +31,14 @@ mysql -u <swgemu> -p
 
 exit
  
-"If this fails to boot when using starting your server with ./core3, change 127.0.0.1 to localhost in MySQL workbench under "User and Privileges" tab on the left hand side"
+"If this fails to boot when using ./core3, change 127.0.0.1 to localhost in MySQL workbench under "User and Privileges" tab on the left hand side"
 
 ## Create a New Workspace Directory
 mkdir workspace
+
+ls
+
+cd workspace
 
 git clone http://review.swgemu.com/Core3
 
@@ -62,3 +66,16 @@ sudo apt-get install xubuntu-desktop
 ## VNC Viewer
 sudo apt-get install tightvncserver
 tightvncserver :1
+
+Create a new VNC session to log into
+vncserver :1
+
+Termonate a session
+vncserver -kill :1
+
+Create a new screen session Screen -S SWG
+check what sessions are made or can be attached to
+screen -ls
+Attach to a screen session
+Screen -x xxxx.SWG
+Example Screen -x 6341.SWG
