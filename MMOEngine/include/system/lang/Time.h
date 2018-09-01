@@ -114,7 +114,7 @@ namespace sys {
 				//assert(type == 0);
 
 				struct timeval tv;
-				gettimeofday(&tv, NULL);
+				gettimeofday(&tv, nullptr);
 				TIMEVAL_TO_TIMESPEC(&tv, &ts);
 
 			#elif !defined(PLATFORM_WIN)
@@ -191,10 +191,43 @@ namespace sys {
 
 			char* ret = ctime_r(&ts.tv_sec, str);
 
-			if (ret != NULL)
+			if (ret != nullptr)
 				return String(ret, strlen(str) - 1);
 			else
 				return String("");
+		}
+
+		String getFormattedTimeFull() {
+			int ret;
+			struct tm t;
+			String value;
+			char buf[128];
+			int len = sizeof(buf);
+
+			if (localtime_r(&(ts.tv_sec), &t) == nullptr)
+				return value;
+
+			ret = strftime(buf, len, "%Y-%m-%dT%H:%M:%S", &t);
+			if (ret <= 0)
+				return value;
+
+			len -= ret - 1;
+
+			ret = snprintf(&buf[strlen(buf)], len, ".%09ld", ts.tv_nsec);
+			if (ret < 0 || ret >= len)
+				return value;
+
+			len -= ret;
+
+			char tz[32];
+
+			strftime(tz, sizeof(tz), "%z", &t);
+
+			snprintf(&buf[strlen(buf)], len, "%s", tz);
+
+			value = buf;
+
+			return value;
 		}
 
 		int compareMiliTo(Time& t) {
@@ -213,7 +246,7 @@ namespace sys {
 			#ifdef PLATFORM_MAC
 				//assert(type == 0);
 				struct timeval tv;
-				gettimeofday(&tv, NULL);
+				gettimeofday(&tv, nullptr);
 
 				struct timespec cts;
 				TIMEVAL_TO_TIMESPEC(&tv, &cts);
@@ -266,11 +299,11 @@ namespace sys {
 
 	public:
 		// getters
-		inline uint32 getTime() {
+		inline uint32 getTime() const {
 			return ts.tv_sec;
 		}
 
-		inline uint64 getMiliTime() {
+		inline uint64 getMiliTime() const {
 		    uint64 time;
 
 		    time = ts.tv_sec;
@@ -279,7 +312,7 @@ namespace sys {
 		    return time;
 		}
 
-		inline uint64 getMikroTime() {
+		inline uint64 getMikroTime() const {
 		    uint64 time;
 
 		    time = ts.tv_sec;
@@ -288,7 +321,7 @@ namespace sys {
 		    return time;
 		}
 
-		inline uint64 getNanoTime() {
+		inline uint64 getNanoTime() const {
 		    uint64 time;
 
 		    time = ts.tv_sec;
@@ -297,11 +330,11 @@ namespace sys {
 		    return time;
 		}
 
-		inline int64 miliDifference(Time& t) {
+		inline int64 miliDifference(Time& t) const {
 			return t.getMiliTime() - getMiliTime();
 		}
 
-		inline int64 miliDifference() {
+		inline int64 miliDifference() const {
 			return Time().getMiliTime() - getMiliTime();
 		}
 

@@ -16,45 +16,6 @@ namespace engine {
 	class TaskManager;
 	class TaskQueue;
 
-#ifdef COLLECT_TASKSTATISTICS
-		class TaskStatistics {
-		public:
-			uint64 totalRunTime;
-			uint64 maxRunTime;
-			uint64 totalRunCount;
-			uint64 minRunTime;
-
-			int compareTo(const TaskStatistics& t) const {
-				if (totalRunTime < t.totalRunTime)
-					return 1;
-				else if (totalRunTime > t.totalRunTime)
-					return -1;
-				else {
-					if (maxRunTime < t.maxRunTime)
-						return 1;
-					else if (maxRunTime > t.maxRunTime)
-						return -1;
-					else {
-						if (totalRunCount < t.totalRunCount)
-							return 1;
-						else if (totalRunCount > t.totalRunCount)
-							return -1;
-						else
-							return 0;
-					}
-				}
-			}
-
-			bool toBinaryStream(ObjectOutputStream* stream) {
-				return true;
-			}
-
-			bool parseFromBinaryStream(ObjectInputStream* stream) {
-				return true;
-			}
-		};
-#endif
-
 	class TaskWorkerThread : public ServiceThread {
 		Mutex blockMutex;
 		TaskQueue* queue;
@@ -64,6 +25,8 @@ namespace engine {
 
 		volatile bool pauseWorker;
 
+		Task* currentTask;
+
 #ifdef COLLECT_TASKSTATISTICS
 		HashTable<const char*, RunStatistics> tasksStatistics;
 		VectorMap<String, RunStatistics> luaTasksStatistics;
@@ -71,6 +34,12 @@ namespace engine {
 		VectorMap<String, RunStatistics> mysqlStatistics;
 
 		ReadWriteLock tasksStatsGuard;
+
+		uint64 totalTaskRunCount;
+		uint64 totalBdbReadCount;
+
+		int samplingRate;
+		int bdbSamplingRate;
 #endif
 
 	public:
@@ -97,6 +66,8 @@ namespace engine {
 		void addMysqlStats(const String& query, uint64 runTime);
 
 		void clearTaskStatistics();
+		void setStatsDSamplingRate(int val);
+		void setStatsDBdbSamplingRate(int val);
 
 #ifdef CXX11_COMPILER
 		void addLuaTaskStats(String&& name, uint64 runTime);
@@ -114,6 +85,10 @@ namespace engine {
 
 		inline bool doBlockWorkerDuringSave() const {
 			return blockDuringSave;
+		}
+
+		inline Task* getCurrentTask() const {
+			return currentTask;
 		}
 
 	};

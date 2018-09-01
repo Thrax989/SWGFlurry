@@ -64,6 +64,8 @@ namespace engine {
 		void shutdown();
 
 		void clearWorkersTaskStats();
+		void setStatsDTaskSampling(int val);
+		void setStatsDBdbSamplingRate(int val);
 
 		Vector<Locker*>* blockTaskManager();
 		void unblockTaskManager(Vector<Locker*>* lockers);
@@ -113,6 +115,8 @@ namespace engine {
 		int getExecutingTaskSize();
 
 		void setLogLevel(int level);
+
+		Task* getCurrentThreadTask();
 	private:
 		TaskScheduler* getTaskScheduler();
 		TaskScheduler* getIoTaskScheduler();

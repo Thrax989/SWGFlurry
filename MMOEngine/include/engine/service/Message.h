@@ -15,20 +15,20 @@ Distribution of this file for usage outside of Core3 is prohibited.
 namespace engine {
   namespace service {
 
-	class Message : public Packet, public DistributedObject {
+	class Message : public Packet, public Object/*, public DistributedObject */{
 	protected:
 		Reference<ServiceClient*> client;
 	
 		uint64 timestampMili;
 		
 	public:
-		Message() : Packet(), DistributedObject() {
-			client = NULL;
+		Message() : Packet()/*, DistributedObject() */{
+			client = nullptr;
 			timestampMili = 0;
 		}
 	
-		Message(int size) : Packet(size), DistributedObject() {
-			client = NULL;
+		Message(int size) : Packet(size)/*, DistributedObject() */{
+			client = nullptr;
 			timestampMili = 0;
 		}
 	

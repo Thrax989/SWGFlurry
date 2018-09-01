@@ -28,12 +28,16 @@ namespace engine {
 	public:
 		BaseClientEvent(BaseClient* cl) {
 			client = cl;
+
+#ifdef BASECLIENT_DISABLE_STATSD
+			setStatsSample(0);
+#endif
 		}
 
 		void run() {
 			Reference<BaseClient*> strong = client.get();
 
-			if (strong == NULL)
+			if (strong == nullptr)
 				return;
 
 			strong->run();

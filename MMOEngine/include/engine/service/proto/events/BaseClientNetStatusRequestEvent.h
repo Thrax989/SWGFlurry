@@ -22,19 +22,23 @@ namespace engine {
 	public:
 		BaseClientNetStatusRequestEvent(BaseClient* cl) : Task(5000) {
 			client = cl;
+
+#ifdef BASECLIENT_DISABLE_STATSD
+			setStatsSample(0);
+#endif
 		}
 
 		void run() {
 			Locker locker(&lock);
 
-			if (client != NULL)
+			if (client != nullptr)
 				client->requestNetStatus();
 		}
 
 		void clearClient() {
 			Locker locker(&lock);
 
-			client = NULL;
+			client = nullptr;
 		}
 	};
 

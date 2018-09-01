@@ -25,30 +25,28 @@ namespace engine {
 
 	class Task : public PriorityQueueEntry, public Runnable, public Object {
 	protected:
-		class TaskManager* taskManager;
+		TaskManager* taskManager;
 
 		AtomicReference<TaskScheduler*> taskScheduler;
 
 		Time nextExecutionTime;
 
-		int priority;
-
-		uint64 period;
-
 		String customTaskQueue;
-
-	#ifdef COLLECT_TASKSTATISTICS
-		Timer queuedTimer;
-		Timer executionTimer;
-		uint64 lastElapsedTime;
-		Timer blockedTimer;
-	#endif
 
 	#ifdef TRACE_TASKS
 		StackTrace* scheduleTrace;
 	#endif
 
-	public:
+		uint64 period;
+
+	#ifdef COLLECT_TASKSTATISTICS
+		uint64 lastElapsedTime;
+		int statsSampleRate;
+	#endif
+
+		int priority;
+
+	  public:
 		Task();
 		Task(uint64 mtime);
 		Task(Time& time);
@@ -93,9 +91,7 @@ namespace engine {
 
 			int cmp = nextExecutionTime.compareTo(task->nextExecutionTime);
 			if (cmp == 0) {
-			/*	if (this == task)
-					return 0;
-				else */if (this < task)
+				if (std::less<Task*>()(this, task))
 					return 1;
 				else
 					return -1;
@@ -136,7 +132,6 @@ namespace engine {
 			return taskScheduler;
 		}
 
-
 		inline int getPriroty() {
 			return priority;
 		}
@@ -146,13 +141,13 @@ namespace engine {
 		}
 
 		inline bool setTaskScheduler(TaskScheduler* scheduler) {
-			return taskScheduler.compareAndSet(NULL, scheduler);
+			return taskScheduler.compareAndSet(nullptr, scheduler);
 		}
 
 		inline bool clearTaskScheduler() {
 			TaskScheduler* scheduler = taskScheduler.get();
 
-			return taskScheduler.compareAndSet(scheduler, NULL);
+			return taskScheduler.compareAndSet(scheduler, nullptr);
 		}
 
 		inline void setPriority(int priority) {
@@ -179,26 +174,30 @@ namespace engine {
 			return customTaskQueue;
 		}
 
-#ifdef COLLECT_TASKSTATISTICS
-	  	inline const Timer& getExecutionTimer() const {
-	  		return executionTimer;
-	  	}
+	#ifdef COLLECT_TASKSTATISTICS
+		void setStatsSample(bool val) {
+			statsSampleRate = val;
+		}
 
 	  	inline uint64 getLastElapsedTime() const {
 	  		return lastElapsedTime;
 	  	}
-#endif
+
+		inline int getStatsSampleRate() const {
+			return statsSampleRate;
+		}
+	#endif
 
 	#ifdef TRACE_TASKS
 		void setScheduleTrace() {
-			if (scheduleTrace != NULL)
+			if (scheduleTrace != nullptr)
 				delete scheduleTrace;
 
 			scheduleTrace = new StackTrace();
 		}
 
 		void printScheduleTrace() {
-			assert(scheduleTrace != NULL);
+			assert(scheduleTrace != nullptr);
 
 			scheduleTrace->print();
 		}
