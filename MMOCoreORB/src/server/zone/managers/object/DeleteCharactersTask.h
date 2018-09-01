@@ -10,6 +10,7 @@
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/ZoneClientSession.h"
+#include "server/zone/managers/player/PlayerManager.h"
 
 class DeleteCharactersTask : public Task, public Logger {
 	SortedVector<uint64> deletedCharacters;
@@ -60,8 +61,12 @@ public:
 	}
 
 	void updateDeletedCharacters() {
-		StringBuffer query;
-		query << "UPDATE deleted_characters SET db_deleted = 1 WHERE";
+		ZoneServer* server = ServerCore::getZoneServer();
+
+		if (server == NULL)
+			return;
+
+		int galaxyid = server->getGalaxyID();
 
 		int size = deletedCharacters.size();
 
@@ -72,6 +77,11 @@ public:
 
 		info("Attempting to delete " + String::valueOf(size) + " characters from database.", true);
 
+		StringBuffer query;
+		query << "UPDATE deleted_characters SET db_deleted = 1 WHERE galaxy_id = " << galaxyid << " AND (";
+
+		PlayerManager* playerManager = server->getPlayerManager();
+
 		for (int i = 0; i < size; ++i) {
 			uint64 oid = deletedCharacters.get(i);
 
@@ -81,10 +91,17 @@ public:
 				query << " OR";
 		}
 
+		query << ")";
+
 		try {
 			ServerDatabase::instance()->executeQuery(query.toString());
 		} catch (Exception& e) {
 			error(e.getMessage());
+		}
+
+		for (int i = 0; i < size; ++i) {
+			uint64 oid = deletedCharacters.get(i);
+			playerManager->removePlayer(oid);
 		}
 
 		//Clear the vector now that its updated the database.

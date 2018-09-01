@@ -27,7 +27,7 @@ venthan_chassu_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 2500 }
+				{ rewardType = "credits", amount = 250 }
 			}
 		},
 		{
@@ -46,7 +46,7 @@ venthan_chassu_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 5000 }
+				{ rewardType = "credits", amount = 500 }
 			}
 		}
 	}

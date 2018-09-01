@@ -1,1 +1,0 @@
-object_tangible_droid_navicomputer_6 = object_tangible_droid_shared_navicomputer_6:new {}ObjectTemplates:addTemplate(object_tangible_droid_navicomputer_6, "object/tangible/droid/navicomputer_6.iff")

@@ -18,7 +18,7 @@ minor_gubbur = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 2,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = HERD,
@@ -26,6 +26,7 @@ minor_gubbur = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/minor_gubbur.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 0.85,
 	lootGroups = {},
 	weapons = {},

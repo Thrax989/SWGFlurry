@@ -24,7 +24,7 @@ denell_kel_vannon_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 3000 }
+				{ rewardType = "credits", amount = 300 }
 			}
 		},
 		{
@@ -41,7 +41,7 @@ denell_kel_vannon_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 4000 }
+				{ rewardType = "credits", amount = 400 }
 			}
 		},
 		{
@@ -63,7 +63,7 @@ denell_kel_vannon_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 5000 }
+				{ rewardType = "credits", amount = 500 }
 			}
 		}
 	}

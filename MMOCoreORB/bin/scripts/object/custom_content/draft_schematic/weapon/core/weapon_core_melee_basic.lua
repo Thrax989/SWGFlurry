@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_core_weapon_core_melee_basic = object_draft_schematic_weapon_core_shared_weapon_core_melee_basic:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_core_weapon_core_melee_basic, "object/draft_schematic/weapon/core/weapon_core_melee_basic.iff")

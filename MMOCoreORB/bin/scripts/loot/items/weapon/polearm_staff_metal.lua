@@ -6,8 +6,8 @@ polearm_staff_metal = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_staff_metal.iff",
 	craftingValues = {
-		{"mindamage",30,35,0},
-		{"maxdamage",75,85,0},
+		{"mindamage",56,90,0},
+		{"maxdamage",95,143,0},
 		{"attackspeed",6,4.2,1},
 		{"woundchance",7,7,0},
 		{"hitpoints",750,1500,0},
@@ -24,7 +24,7 @@ polearm_staff_metal = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 375,
+	randomDotChance = 500,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

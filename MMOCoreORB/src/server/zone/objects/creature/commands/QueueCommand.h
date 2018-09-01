@@ -70,6 +70,7 @@ public:
 	const static int INVALIDSYNTAX = 13;
 	const static int TOOCLOSE = 14;
 	const static int NOSTACKJEDIBUFF = 15;
+	const static int ALREADYAFFECTEDJEDIPOWER = 16;
 
 
 	virtual ~QueueCommand() {
@@ -322,7 +323,6 @@ public:
 	int doCommonMedicalCommandChecks(CreatureObject* creature) const;
 
 	void checkForTef(CreatureObject* creature, CreatureObject* target) const;
-	void checkCmTef(CreatureObject* creature, CreatureObject* target) const;
 };
 
 

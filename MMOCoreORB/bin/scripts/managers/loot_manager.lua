@@ -41,10 +41,12 @@
 --which carries forward this exception.
 
 --Determines how often exceptional and legendary items can drop.
-
-yellowChance = 250 -- 1 in 250
-exceptionalChance = 500 --1 in 500
-legendaryChance = 5000 --1 in 5,000
+yellowChance = 1000 -- 1 in 1,000
+exceptionalChance = 100000 --1 in 100,000
+legendaryChance = 1000000 --1 in 1,000,000
+--yellowChance = 50 --1 in 50 for testing
+--exceptionalChance = 100 --1 in 100 for testing
+--legendaryChance = 1000 --1 in 1000 for testing
 
 --Determines how much of an increase in the base stats will be applied to the object.
 yellowModifier = 1.5
@@ -52,14 +54,14 @@ exceptionalModifier = 2.5
 legendaryModifier = 5.0
 
 --The chance for random skill mods to be on looted weapons/wearables
-skillModChance = 1 -- 1 in 100
+skillModChance = 500 -- 1 in 500
 
 -- Value ranges for random dots on looted weapons (chance is set individually on the loot items)
 randomDotAttribute = {0, 8} -- See CreatureAttributes.h in src for numbers.
-randomDotStrength = {1, 100} -- Set for disease. Fire will be x1.5, poison x2.
-randomDotDuration = {1, 60} -- dot can last from 1 second - 300 seconds dending on the RNG roll
-randomDotPotency = {1, 50} -- dot can be 1% potent or up to 250%
-randomDotUses = {150, 200} -- dot use min 150 - 1000
+randomDotStrength = {10, 200} -- Set for disease. Fire will be x1.5, poison x2.
+randomDotDuration = {30, 240} -- Set for poison. Fire will be x1.5, disease x5.
+randomDotPotency = {1, 100}
+randomDotUses = {250, 9999}
 
 -- Modifier applied to min/max junk values found in loot item lua
 junkValueModifier = 5;
@@ -134,44 +136,7 @@ lootableArmorAttachmentStatMods = {
 	"unarmed_damage",
 	"unarmed_speed",
 	"volley",
-	"warcry",
-	"heavy_flame_thrower_accuracy",
-	"heavy_flame_thrower_speed",
-	"camp",
-	"tame_level",
-	"bio_engineer_assembly",
-	"bio_engineer_experimentation",
-	"combat_healing_ability",
-	"combat_medic_effectiveness",
-	"healing_ability",
-	"creature_harvesting",
-	"creature_hit_bonus",
-	"dna_harvesting",
-	"luck",
-	"combat_healing_ability",
-	"healing_ability",
-	"keep_creature",
-	"stored_pets",
-	"combat_medic_effectiveness",
-	"mindblast_accuracy",
-	"jedi_saber_assembly",
-	"jedi_saber_experimentation",
-	"jedi_force_power_max",
-	"onehandlightsaber_accuracy",
-	"onehandlightsaber_speed",
-	"polearmlightsaber_accuracy",
-	"polearmlightsaber_speed",
-	"twohandlightsaber_accuracy",
-	"twohandlightsaber_speed",
-	"force_assembly",
-	"forcethrow_accuracy",
-	"force_experimentation",
-	"force_failure_reduction",
-	"force_repair_bonus",
-	"forceintimidate_accuracy",
-	"forceknockdown_accuracy",
-	"forcelightning_accuracy",
-	"forceweaken_accuracy"
+	"warcry"
 }
 
 lootableClothingAttachmentStatMods = {
@@ -287,44 +252,7 @@ lootableClothingAttachmentStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"weapon_repair",
-	"camp",
-	"tame_level",
-	"combat_healing_ability",
-	"combat_medic_effectiveness",
-	"healing_ability",
-	"bio_engineer_assembly",
-	"bio_engineer_experimentation",
-	"creature_hit_bonus",
-	"creature_knowledge",
-	"dna_harvesting",
-	"heavy_flame_thrower_accuracy",
-	"heavy_flame_thrower_speed",
-	"luck",
-	"combat_healing_ability",
-	"healing_ability",
-	"keep_creature",
-	"stored_pets",
-	"combat_medic_effectiveness",
-	"mindblast_accuracy",
-	"jedi_saber_assembly",
-	"jedi_saber_experimentation",
-	"jedi_force_power_max",
-	"onehandlightsaber_accuracy",
-	"onehandlightsaber_speed",
-	"polearmlightsaber_accuracy",
-	"polearmlightsaber_speed",
-	"twohandlightsaber_accuracy",
-	"twohandlightsaber_speed",
-	"force_assembly",
-	"forcethrow_accuracy",
-	"force_experimentation",
-	"force_failure_reduction",
-	"force_repair_bonus",
-	"forceintimidate_accuracy",
-	"forceknockdown_accuracy",
-	"forcelightning_accuracy",
-	"forceweaken_accuracy"
+	"weapon_repair"
 }
 
 lootableArmorStatMods = {
@@ -435,12 +363,7 @@ lootableArmorStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"weapon_repair",
-	"combat_healing_ability",
-	"healing_ability",
-	"keep_creature",
-	"stored_pets",
-	"combat_medic_effectiveness",
+	"weapon_repair"
 }
 
 lootableClothingStatMods = {
@@ -551,12 +474,7 @@ lootableClothingStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"weapon_repair",
-	"combat_healing_ability",
-	"healing_ability",
-	"keep_creature",
-	"stored_pets",
-	"combat_medic_effectiveness",
+	"weapon_repair"
 }
 
 lootableOneHandedMeleeStatMods = {

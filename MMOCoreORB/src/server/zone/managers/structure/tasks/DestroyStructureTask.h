@@ -115,6 +115,10 @@ public:
 				PlayerObject* playerObject = cast<PlayerObject*>(ghost.get());
 				playerObject->removeOwnedStructure(structureObject);
 
+				uint64 waypointID = structureObject->getWaypointID();
+
+				if (waypointID != 0)
+					playerObject->removeWaypoint(waypointID, true, true);
 			}
 		}
 

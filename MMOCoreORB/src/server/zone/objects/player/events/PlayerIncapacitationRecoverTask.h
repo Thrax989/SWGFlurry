@@ -55,6 +55,8 @@ public:
 			else if (deadRecovery && !player->isDead())
 				return;
 
+			ghost->setCloning(false);
+
 			int health = player->getHAM(CreatureAttribute::HEALTH);
 
 			if (health < 0)
@@ -82,7 +84,6 @@ public:
 
 			if (deadRecovery) {
 				player->playEffect("clienteffect/player_clone_compile.cef");
-				player->playEffect("clienteffect/medic_cure_affliction.cef");
 				player->notifyObservers(ObserverEventType::PLAYERCLONED, player, 0);
 				player->broadcastPvpStatusBitmask();
 			}

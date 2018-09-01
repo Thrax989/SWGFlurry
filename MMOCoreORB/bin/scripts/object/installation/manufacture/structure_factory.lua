@@ -44,7 +44,6 @@
 object_installation_manufacture_structure_factory = object_installation_manufacture_shared_structure_factory:new {
 	templateType = FACTORY,
 	lotSize = 1,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "endor", "dathomir", "yavin4", "taanab"},
 	baseMaintenanceRate = 50,
 	basePowerRate = 50,
 	length = 5,

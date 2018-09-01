@@ -6,8 +6,8 @@ two_handed_sword_battleaxe = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/2h_sword/2h_sword_battleaxe.iff",
 	craftingValues = {
-		{"mindamage",30,35,0},
-		{"maxdamage",75,85,0},
+		{"mindamage",53,98,0},
+		{"maxdamage",88,163,0},
 		{"attackspeed",5.6,4.1,1},
 		{"woundchance",12,22,0},
 		{"hitpoints",750,1500,0},
@@ -24,7 +24,7 @@ two_handed_sword_battleaxe = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 375,
+	randomDotChance = 750,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

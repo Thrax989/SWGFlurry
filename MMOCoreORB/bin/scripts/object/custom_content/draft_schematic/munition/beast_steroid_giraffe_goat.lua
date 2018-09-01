@@ -1,5 +1,0 @@
-object_draft_schematic_munition_beast_steroid_giraffe_goat = object_draft_schematic_munition_shared_beast_steroid_giraffe_goat:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_munition_beast_steroid_giraffe_goat, "object/draft_schematic/munition/beast_steroid_giraffe_goat.iff")

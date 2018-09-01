@@ -73,7 +73,7 @@ public:
 			creature->sendSystemMessage("@pet/pet_menu:cant_mount_veh_disabled");
 			return GENERALERROR;
 		}
-		
+
 		if (vehicle->isIncapacitated())
 			return GENERALERROR;
 

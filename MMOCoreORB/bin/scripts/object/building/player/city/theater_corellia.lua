@@ -46,17 +46,16 @@ object_building_player_city_theater_corellia = object_building_player_city_share
 	baseMaintenanceRate = 50,
 	gameObjectType = 524,
 	planetMapCategory = "theater",
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "kaas", "endor"},
+	allowedZones = {"corellia", "talus"},
 	length = 5,
 	width = 6,
 	abilityRequired = "place_theater",
 	skillMods = {
-		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
-		{"private_med_battle_fatigue", 15},
-		{"private_med_wound_mind", 15},
+		{"private_med_battle_fatigue", 5},
 		{"private_safe_logout", 1}
 	},
+	ejectDistance = 1.5,
 	cityRankRequired = 4,
 	zoneComponent = "StructureZoneComponent",
 	childObjects = {

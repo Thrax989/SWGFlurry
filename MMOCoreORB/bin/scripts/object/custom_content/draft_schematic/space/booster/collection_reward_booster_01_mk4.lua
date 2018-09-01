@@ -1,5 +1,0 @@
-object_draft_schematic_space_booster_collection_reward_booster_01_mk4 = object_draft_schematic_space_booster_shared_collection_reward_booster_01_mk4:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_space_booster_collection_reward_booster_01_mk4, "object/draft_schematic/space/booster/collection_reward_booster_01_mk4.iff")

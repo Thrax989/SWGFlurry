@@ -1,5 +1,0 @@
-object_draft_schematic_item_collection_dwartii_statue_sistros = object_draft_schematic_item_shared_collection_dwartii_statue_sistros:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_item_collection_dwartii_statue_sistros, "object/draft_schematic/item/collection_dwartii_statue_sistros.iff")

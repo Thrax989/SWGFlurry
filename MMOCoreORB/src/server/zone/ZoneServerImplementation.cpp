@@ -785,8 +785,8 @@ void ZoneServerImplementation::loadLoginMessage() {
 		reader = NULL;
 	}
 
-	//loginMessage += "\nLatest Commits:\n";
-	//loginMessage += ConfigManager::instance()->getRevision();
+	loginMessage += "\nLatest Commits:\n";
+	loginMessage += ConfigManager::instance()->getRevision();
 
 	delete reader;
 	delete file;

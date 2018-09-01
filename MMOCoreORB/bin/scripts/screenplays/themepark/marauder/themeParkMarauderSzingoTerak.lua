@@ -17,7 +17,7 @@ scholar_szingo_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 750 }
+				{ rewardType = "credits", amount = 75 }
 			}
 		},
 		{
@@ -38,7 +38,7 @@ scholar_szingo_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1500 }
+				{ rewardType = "credits", amount = 150 }
 			}
 		},
 		{
@@ -57,7 +57,7 @@ scholar_szingo_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 3500 },
+				{ rewardType = "credits", amount = 350 },
 			}
 		}
 	}
@@ -80,7 +80,7 @@ king_terak_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 5000 },
+				{ rewardType = "credits", amount = 500 },
 			}
 		},
 		{
@@ -100,7 +100,7 @@ king_terak_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 3000 },
+				{ rewardType = "credits", amount = 300 },
 				{ rewardType = "loot",  lootGroup = "theme_park_reward_marauder_armor_leggings" }
 			}
 		},
@@ -121,7 +121,7 @@ king_terak_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 3000 },
+				{ rewardType = "credits", amount = 300 },
 				{ rewardType = "loot_set",  lootGroup = "theme_park_reward_marauder_armor_bicep", setSize = 2 }
 			}
 		},
@@ -143,7 +143,7 @@ king_terak_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 5750 },
+				{ rewardType = "credits", amount = 575 },
 				{ rewardType = "loot",  lootGroup = "theme_park_reward_marauder_armor_chest_plate" }
 			}
 		}

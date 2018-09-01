@@ -5,8 +5,8 @@ knife_vibroblade = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/knife/knife_vibroblade.iff",
 	craftingValues = {
-		{"mindamage",30,35,0},
-		{"maxdamage",75,85,0},
+		{"mindamage",11,20,0},
+		{"maxdamage",60,111,0},
 		{"attackspeed",4.2,2.9,1},
 		{"woundchance",6,12,0},
 		{"hitpoints",750,1500,0},
@@ -23,7 +23,7 @@ knife_vibroblade = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 375,
+	randomDotChance = 625,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 25,
 	junkMaxValue = 45

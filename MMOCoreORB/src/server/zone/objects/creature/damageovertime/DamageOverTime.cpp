@@ -9,6 +9,7 @@
 #include "server/zone/objects/creature/commands/effect/CommandEffect.h"
 #include "DamageOverTime.h"
 #include "server/zone/ZoneServer.h"
+#include "server/zone/managers/combat/CombatManager.h"
 
 DamageOverTime::DamageOverTime() {
 	setAttackerID(0);
@@ -124,7 +125,7 @@ uint32 DamageOverTime::applyDot(CreatureObject* victim) {
 		break;
 	case CommandEffect::FORCECHOKE:
 		power = doForceChokeTick(victim, attacker);
-		nextTick.addMiliTime(6000);
+		nextTick.addMiliTime(5000);
 		break;
 	}
 
@@ -154,7 +155,8 @@ uint32 DamageOverTime::initDot(CreatureObject* victim, CreatureObject* attacker)
 		nextTick.addMiliTime(40000);
 		break;
 	case CommandEffect::FORCECHOKE:
-		nextTick.addMiliTime(6000);
+		nextTick.addMiliTime(5000);
+		strength *= ((100 - System::random(20)) * 0.01f);
 		victim->showFlyText("combat_effects", "choke", 0xFF, 0, 0);
 
 		break;
@@ -197,7 +199,6 @@ uint32 DamageOverTime::doBleedingTick(CreatureObject* victim, CreatureObject* at
 		if (victimRef->hasAttackDelay())
 			victimRef->removeAttackDelay();
 
-		victimRef->playEffect("clienteffect/dot_bleeding.cef","");
 		victimRef->playEffect("clienteffect/dot_bleeding.cef","");
 	}, "BleedTickLambda");
 
@@ -250,8 +251,6 @@ uint32 DamageOverTime::doFireTick(CreatureObject* victim, CreatureObject* attack
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_fire.cef","");
-		victimRef->playEffect("clienteffect/lava_player_burning.cef");
-
 	}, "FireTickLambda");
 
 	return damage;
@@ -286,7 +285,6 @@ uint32 DamageOverTime::doPoisonTick(CreatureObject* victim, CreatureObject* atta
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_poisoned.cef","");
-		victimRef->playEffect("clienteffect/mus_cym_disease.cef");
 	}, "PoisonTickLambda");
 
 	return damage;
@@ -330,7 +328,6 @@ uint32 DamageOverTime::doDiseaseTick(CreatureObject* victim, CreatureObject* att
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_diseased.cef","");
-		victimRef->playEffect("clienteffect/mus_cym_poison.cef.cef");
 	}, "DiseaseTickLambda");
 
 	return damage;
@@ -351,12 +348,28 @@ uint32 DamageOverTime::doForceChokeTick(CreatureObject* victim, CreatureObject* 
 
 		Locker crossLocker(attackerRef, victimRef);
 
-		victimRef->inflictDamage(attackerRef, attribute, strength, true);
+		uint32 chokeDam = strength;
+
+		float jediBuffDamage = 0;
+		float rawDamage = chokeDam;
+
+		// Force Shield
+		int forceShield = victimRef->getSkillMod("force_shield");
+		if (forceShield > 0) {
+			jediBuffDamage = rawDamage - (chokeDam *= 1.f - (forceShield / 100.f));
+			victimRef->notifyObservers(ObserverEventType::FORCESHIELD, attackerRef, jediBuffDamage);
+			CombatManager::instance()->sendMitigationCombatSpam(victimRef, nullptr, (int)jediBuffDamage, CombatManager::FORCESHIELD);
+		}
+
+		CombatManager::instance()->broadcastCombatSpam(attackerRef, victimRef, nullptr, chokeDam, "cbt_spam", "forcechoke_hit", 1);
+		victimRef->inflictDamage(attackerRef, attribute, chokeDam, true);
+
 		if (victimRef->hasAttackDelay())
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/pl_force_choke.cef", "");
 		victimRef->sendSystemMessage("@combat_effects:choke_single");
+		victimRef->showFlyText("combat_effects", "choke", 0xFF, 0, 0);
 	}, "ForceChokeTickLambda");
 
 	return strength;

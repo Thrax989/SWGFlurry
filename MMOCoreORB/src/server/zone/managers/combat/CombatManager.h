@@ -55,7 +55,6 @@ public:
 	const static int FORCEARMOR = 0x5;
 	const static int ARMOR = 0x6;
 	const static int FOOD = 0x7;
-	const static int ABILITYARMOR = 0X8;
 
 
 
@@ -161,15 +160,15 @@ public:
 
 	float hitChanceEquation(float attackerAccuracy, float attackerRoll, float targetDefense, float defenderRoll);
 	float doDroidDetonation(CreatureObject* droid, CreatureObject* defender, float damage);
-	
-	void sendDamageTypeCombatSpam(CreatureObject* defender, WeaponObject* weapon);
-	void checkForTefs(CreatureObject* attacker, CreatureObject* defender, bool* shouldGcwTef, bool* shouldBhTef, bool* shouldJediTef);
+
+	void checkForTefs(CreatureObject* attacker, CreatureObject* defender, bool* shouldGcwTef, bool* shouldBhTef);
+	void getFrsModifiedForceAttackDamage(CreatureObject* attacker, float& minDmg, float& maxDmg, const CreatureAttackData& data);
 
 	//all the combat math will go here
 protected:
 
-	int doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, CreatureObject* defenderObject, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef, bool* shouldJediTef);
-	int doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* defenderObject, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef, bool* shouldJediTef);
+	int doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, CreatureObject* defenderObject, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef);
+	int doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* defenderObject, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef);
 	void applyDots(CreatureObject* attacker, CreatureObject* defender, const CreatureAttackData& data, int appliedDamage, int unmitDamage, int poolsToDamage);
 	void applyWeaponDots(CreatureObject* attacker, CreatureObject* defender, WeaponObject* weapon);
 	uint8 getPoolForDot(uint64 dotType, int poolsToDamage);
@@ -179,7 +178,7 @@ protected:
 	/**
 	 * @returns 0 - hit, 1 - block, 2 - dodge, 3 - counter-attack, 4 - miss
 	 */
-	int getHitChance(TangibleObject* attacker, CreatureObject* targetCreature, WeaponObject* weapon, int damage, int accuracyBonus);
+	int getHitChance(TangibleObject* attacker, CreatureObject* targetCreature, WeaponObject* weapon, const CreatureAttackData& data, int damage, int accuracyBonus);
 
 	int calculatePostureModifier(CreatureObject* creature, WeaponObject* weapon);
 	int calculateTargetPostureModifier(WeaponObject* weapon, CreatureObject* targetCreature);
@@ -196,7 +195,6 @@ protected:
 	float calculateDamage(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data);
 	float calculateDamage(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* defender, const CreatureAttackData& data);
 	bool checkConeAngle(SceneObject* targetCreature, float angle, float creatureVectorX, float creatureVectorY, float directionVectorX, float directionVectorY);
-	bool isLightningAttack(const CreatureAttackData& data);
 
 	void showHitLocationFlyText(CreatureObject *attacker, CreatureObject *defender, uint8 location);
 

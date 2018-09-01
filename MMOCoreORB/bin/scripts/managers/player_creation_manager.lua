@@ -1,11 +1,11 @@
 --Should all created players start with God Mode? 1 = yes, 0 = no
 freeGodMode = 0;
 --How many cash credits new characters start with after creating a character (changed during test phase, normal value is 100)
-startingCash = 10000
---startingCash = 10,000
+startingCash = 100
+--startingCash = 100000
 --How many bank credits new characters start with after creating a character (changed during test phase, normal value is 1000)
-startingBank = 10000
---startingBank = 10,000
+startingBank = 1000
+--startingBank = 100000
 --How many skill points a new characters start with
 skillPoints = 250
 
@@ -16,16 +16,8 @@ professions = {
 	"jedi",
 	"outdoors_scout",
 	"science_medic",
-	"social_entertainer",
-	"combat_jedi",
-	"combat_spy"
+	"social_entertainer"
 }
-
-noobboots = "object/tangible/wearables/armor/ubese/armor_ubese_boots.iff"
-
-noobchest = "object/tangible/wearables/armor/ubese/armor_ubese_jacket.iff"
-
-noobhelemt = "object/tangible/wearables/armor/ubese/armor_ubese_helmet.iff"
 
 marksmanPistol = "object/weapon/ranged/pistol/pistol_cdef.iff"
 	
@@ -55,20 +47,6 @@ marojMelon = "object/tangible/food/foraged/foraged_fruit_s1.iff"
 
 x31Speeder = "object/tangible/deed/vehicle_deed/landspeeder_x31_deed.iff"
 
-saber = "object/weapon/melee/sword/crafted_saber/sword_lightsaber_s9_training.iff"
-
-jediTool = "object/tangible/crafting/station/jedi_tool.iff"
-
-jediCrystal = "object/tangible/component/weapon/lightsaber/lightsaber_module_force_crystal.iff"
-
-gasTool = "object/tangible/survey_tool/survey_tool_gas.iff"
-
-stim = "object/tangible/medicine/crafted/crafted_stimpack_sm_s1_a.iff"
-
-spyPistol = "object/weapon/ranged/pistol/pistol_cdef.iff"
-
-newplayerpack = "object/tangible/loot/misc/new_player_pack.iff"
-
 professionSpecificItems = {
 	combat_brawler = { brawlerOneHander, brawlerTwoHander, brawlerPolearm },
 	combat_marksman = { marksmanPistol, marksmanCarbine, marksmanRifle },
@@ -76,10 +54,7 @@ professionSpecificItems = {
 	jedi = { },
 	outdoors_scout = { genericTool },
 	science_medic = { foodTool },
-	social_entertainer = { slitherhorn },
-	combat_jedi = { genericTool, mineralTool, chemicalTool, gasTool, jediTool, jediCrystal, stim },
-	combat_spy = { spyPistol, stim }
-
+	social_entertainer = { slitherhorn }
 }
 
-commonStartingItems = { noobhelemt, noobchest, noobboots, newplayerpack, slitherhorn, chemicalTool, mineralTool, foodTool, genericTool, brawlerPolearm, brawlerTwoHander, brawlerOneHander, marksmanCarbine, marksmanRifle, survivalKnife, marksmanPistol, marojMelon, x31Speeder }
+commonStartingItems = { marojMelon, survivalKnife, x31Speeder }

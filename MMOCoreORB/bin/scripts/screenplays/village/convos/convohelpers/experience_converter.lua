@@ -12,7 +12,6 @@ ExperienceConverter = ScreenPlay:new {
 	xpConversion = {
 		combat = {
 			{ "bountyhunter", 5 },
-			{ "jedi_general", 3 },
 			{ "combat_general", 3 },
 			{ "combat_meleespecialize_onehand", 30 },
 			{ "combat_meleespecialize_polearm", 30 },
@@ -26,7 +25,6 @@ ExperienceConverter = ScreenPlay:new {
 		},
 		senses = {
 			{ "bio_engineer_dna_harvesting", 3 },
-			{ "jedi_general", 3 },
 			{ "camp", 5 },
 			{ "creaturehandler", 9 },
 			{ "dance", 10 },
@@ -43,7 +41,6 @@ ExperienceConverter = ScreenPlay:new {
 		},
 		reflex = {
 			{ "bountyhunter", 5 },
-			{ "jedi_general", 3 },
 			{ "combat_general", 3 },
 			{ "combat_meleespecialize_onehand", 30 },
 			{ "combat_meleespecialize_polearm", 30 },
@@ -57,7 +54,6 @@ ExperienceConverter = ScreenPlay:new {
 		},
 		crafting = {
 			{ "crafting_bio_engineer_creature", 4 },
-			{ "jedi_general", 3 },
 			{ "crafting_clothing_armor", 5 },
 			{ "crafting_clothing_general", 5 },
 			{ "crafting_droid_general", 5 },
@@ -135,6 +131,7 @@ function ExperienceConverter:sendConversionSUI(pPlayer, pNpc, experienceType)
 	sui.setTargetNetworkId(SceneObject(pNpc):getObjectID())
 	sui.setTitle("@quest/force_sensitive/utils:xp_transfer_prompt")
 	sui.setPrompt("Select the experience you wish to convert to " .. getStringId("@exp_n:fs_" .. experienceType) .. ".")
+	sui.setForceCloseDistance(10)
 
 	for i = 1, #xpList, 1 do
 		sui.add(getStringId("@exp_n:" .. xpList[i]), xpList[i])
@@ -224,6 +221,7 @@ function ExperienceConverter:convertXpTypeCallback(pPlayer, pSui, eventIndex, ar
 	sui.setConversionFromRatio(1)
 	sui.setConversionToRatio(1)
 	sui.setWindowType(SuiWindowType.FS_EXP_CONVERT)
+	sui.setForceCloseDistance(10)
 
 	sui.sendTo(pPlayer)
 end

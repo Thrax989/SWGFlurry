@@ -11,28 +11,8 @@
 #include "server/zone/managers/player/PlayerManager.h"
 
 void ShipControlDeviceImplementation::generateObject(CreatureObject* player) {
-
-	if (player->isDead() || player->isIncapacitated()) {
-		player->sendSystemMessage("You can't call a ship right now.");
-		return;
-	}
-
-	if (!isClientObject()) {
-		PlayerObject* ghost = player->getPlayerObject().get();
-
-		if (ghost != NULL && ghost->hasPvpTef()) {
-			player->sendSystemMessage("You can't call a ship while Flaged.");
-			return;
-		}
-	}
-
-	if (!isASubChildOf(player))
-		return;
-
-	if (player->getParent() != NULL) {
-		player->sendSystemMessage("you have to be outside to use this option");
-		return;
-	}
+	//info("generating ship", true);
+	//return;
 
 	ZoneServer* zoneServer = getZoneServer();
 
@@ -43,8 +23,13 @@ void ShipControlDeviceImplementation::generateObject(CreatureObject* player) {
 	controlledObject->initializePosition(player->getPositionX(), player->getPositionZ() + 10, player->getPositionY());
 
 	player->getZone()->transferObject(controlledObject, -1, true);
+	//controlledObject->insertToZone(player->getZone());
+
+	//removeObject(controlledObject, true);
+
 	controlledObject->transferObject(player, 5, true);
 	player->setState(CreatureState::PILOTINGSHIP);
+	//controlledObject->inflictDamage(player, 0, System::random(50), true);
 
 	updateStatus(1);
 
@@ -73,15 +58,16 @@ void ShipControlDeviceImplementation::storeObject(CreatureObject* player, bool f
 		return;
 
 	zone->transferObject(player, -1, false);
-
+	
 	controlledObject->destroyObjectFromWorld(true);
 
 	transferObject(controlledObject, 4, true);
-
+	
 	updateStatus(0);
 }
 
 void ShipControlDeviceImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
+	//ControlDeviceImplementation::fillObjectMenuResponse(menuResponse, player);
 
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
@@ -89,6 +75,7 @@ void ShipControlDeviceImplementation::fillObjectMenuResponse(ObjectMenuResponse*
 		menuResponse->addRadialMenuItem(60, 3, "Launch Ship"); //Launch
 	} else
 		menuResponse->addRadialMenuItem(61, 3, "Land Ship"); //Launch
+	//menuResponse->addRadialMenuItem(61, 3, "Launch Ship"); //Launch
 }
 
 bool ShipControlDeviceImplementation::canBeTradedTo(CreatureObject* player, CreatureObject* receiver, int numberInTrade) {

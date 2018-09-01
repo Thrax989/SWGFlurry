@@ -18,7 +18,7 @@ gronda_patriarch = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 180,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 15,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD + KILLER,
@@ -26,6 +26,7 @@ gronda_patriarch = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/gronda_hue.iff"},
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 1.25,
 	lootGroups = {},
 	weapons = {},

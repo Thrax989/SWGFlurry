@@ -49,16 +49,16 @@ which carries forward this exception.
 	--------------------
 --]]
 --The amount of time in minutes before the city specialization may be changed again.
-CitySpecializationCooldown = 1
+CitySpecializationCooldown = 604800000
 
 --The amount of time in minutes before another withdrawal from the city treasury may be made.
-TreasuryWithdrawalCooldown = 1
+TreasuryWithdrawalCooldown = 86400000
 
 --The number of city update cycles that must pass before mayoral voting process is complete.
-CityVotingCycles = 1
+CityVotingCycles = 3
 
 --The number of city update cyles after which to lock the mayoral voting race registration.
-CityVotingCyclesUntilLocked = 1
+CityVotingCyclesUntilLocked = 2
 
 --The amount of time in minutes before the city performs an update.
 CityUpdateInterval = 10080
@@ -70,18 +70,18 @@ NewCityGracePeriod = 1440
 OldCityGracePeriod = 4320
 
 --Whether or not to allow the use of the command, /cityWarn to give players a TEF while in the city limits.
-EnableCityWarn = true
+EnableCityWarn = false
 
 --The number of citizens required to achieve each city rank. (Outpost, Village, Township, City, Metropolis)
---CitizensPerRank = {2, 4, 6, 8, 10}
 CitizensPerRank = {2, 4, 6, 8, 10}
+--CitizensPerRank = {10, 20, 35, 55, 85}
 
 --The radius in meters of the city at each city rank. (Outpost, Village, Township, City, Metropolis)
 RadiusPerRank = {150, 200, 300, 400, 450}
 
 -- Maximum for each rank.  ex. rank 1 = DecorationsPerRank * 1, rank 5 = DecorationsPerRank * 5
 DecorationsPerRank = 10
-TrainersPerRank = 7
+TrainersPerRank = 3
 MissionTerminalsPerRank = 3
 
 -- Amount to discount city maintenance  float.  1 = 100%, .75 =75%, .5=50% etc
@@ -95,16 +95,16 @@ maintenanceDiscount = 1.0
 	The maximum amount of cities per rank is 255.
 --]]
 CitiesAllowed = {
-	{"corellia", {50, 50, 30, 20, 20}},
+	{"corellia", {20, 20, 15, 10, 10}},
 	{"dantooine", {50, 50, 30, 20, 20}},
-	{"dathomir", {50, 50, 30, 20, 20}},
-	{"endor", {50, 50, 30, 20, 20}},
+	{"dathomir", {0, 0, 0, 0, 0}},
+	{"endor", {0, 0, 0, 0, 0}},
 	{"lok", {50, 50, 30, 20, 20}},
-	{"naboo", {50, 50, 30, 20, 20}},
+	{"naboo", {20, 20, 15, 10, 10}},
 	{"rori", {50, 50, 30, 20, 20}},
 	{"talus", {50, 50, 30, 20, 20}},
-	{"tatooine", {50, 50, 30, 20, 20}},
-	{"yavin4", {50, 50, 30, 20, 20}}
+	{"tatooine", {20, 20, 15, 10, 10}},
+	{"yavin4", {0, 0, 0, 0, 0}}
 }
 
 
@@ -186,7 +186,7 @@ CityTaxes = {
 CitySpecializations = {
 	{--Sample Rich
 		name = "@city/city:city_spec_sample_rich",
-		cost = 35000,
+		cost = 70000,
 		skillMods = {
 			{"private_spec_samplesize", 20},
 			{"private_spec_samplerate", 10}
@@ -194,60 +194,51 @@ CitySpecializations = {
 	},
 	{--Manufacturing Center
 		name = "@city/city:city_spec_industry",
-		cost = 25000,
+		cost = 50000,
 		skillMods = {
 			{"private_spec_assembly", 10}
 		}
 	},
 	{--Medical Center
 		name = "@city/city:city_spec_doctor",
-		cost = 40000,
+		cost = 80000,
 		skillMods = {
 			{"private_medical_rating", 10}
 		}
 	},
 	{--Clone Lab
 		name = "@city/city:city_spec_cloning",
-		cost = 40000,
+		cost = 80000,
 		skillMods = {
 			{"private_spec_cloning", 20}
 		}
 	},
 	{--Research Center
 		name = "@city/city:city_spec_research",
-		cost = 62500,
+		cost = 125000,
 		skillMods = {
 			{"private_spec_experimentation", 15}
 		}
 	},
 	{--Improved Job Market
 		name = "@city/city:city_spec_missions",
-		cost = 40000,
+		cost = 80000,
 		skillMods = {
 			{"private_spec_missions", 15}
 		}
 	},
 	{--Entertainment District
 		name = "@city/city:city_spec_entertainer",
-		cost = 40000,
+		cost = 80000,
 		skillMods = {
 			{"private_spec_entertainer", 10}
 		}
 	},
 	{--Stronghold
 		name = "@city/city:city_spec_stronghold",
-		cost = 750000,
+		cost = 150000,
 		skillMods = {
-			{"private_defense", 90},
-			{"private_spec_samplesize", 20},
-			{"private_spec_samplerate", 10},
-			{"private_spec_assembly", 10},
-			{"private_medical_rating", 10},
-			{"private_spec_cloning", 20},
-			{"private_spec_experimentation", 15},
-			{"private_spec_missions", 15},
-			{"private_spec_entertainer", 10}
-
+			{"private_defense", 90}
 		}
 	},
 }

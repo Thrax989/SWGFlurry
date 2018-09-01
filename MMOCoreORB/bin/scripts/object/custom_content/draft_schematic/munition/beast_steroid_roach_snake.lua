@@ -1,5 +1,0 @@
-object_draft_schematic_munition_beast_steroid_roach_snake = object_draft_schematic_munition_shared_beast_steroid_roach_snake:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_munition_beast_steroid_roach_snake, "object/draft_schematic/munition/beast_steroid_roach_snake.iff")

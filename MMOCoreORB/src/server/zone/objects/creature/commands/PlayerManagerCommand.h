@@ -11,6 +11,8 @@
 #include "engine/engine.h"
 #include "server/zone/managers/player/PlayerManager.h"
 
+#include "server/zone/managers/collision/PathFinderManager.h"
+
 class PlayerManagerCommand {
 public:
 	static int executeCommand(CreatureObject* creature, uint64 target, const UnicodeString& arguments) {
@@ -47,8 +49,65 @@ public:
 			Sphere sphere(pos, 125);
 			Vector3 result;
 			PathFinderManager::instance()->getSpawnPointInArea(sphere, creature->getZone(), result);
-		}
-		if (command == "listjedi") {
+		} else if (command == "dumpcov") {
+			uint64_t oid = creature->getObjectID();
+			if (tokenizer.hasMoreTokens())
+				oid = tokenizer.getLongToken();
+
+			ManagedReference<SceneObject*> targetObject = player->getZoneServer()->getObject(oid);
+			if (targetObject == NULL) {
+				player->sendSystemMessage("Unable to look up character");
+				return 1;
+			}
+
+			Locker locker(targetObject, player);
+
+			CloseObjectsVector* vec = (CloseObjectsVector*)targetObject->getCloseObjects();
+			if (vec == NULL) {
+				player->sendSystemMessage("Object does not have a close object vector");
+				return 1;
+			}
+			SortedVector<QuadTreeEntry*> closeObjects;
+			vec->safeCopyTo(closeObjects);
+			locker.release();
+
+			StringBuffer resp;
+			for (int i=0; i<vec->size(); i++) {
+				ManagedReference<SceneObject *> obj = vec->get(i).castTo<SceneObject *>();
+				resp << i << ": ";
+				if (obj == NULL) {
+					resp << "NULL Object" << endl;
+				} else {
+					Reference<SceneObject*> parent = obj->getParent().get();
+					resp << obj->getObjectID() << ":" << obj->getObjectTemplate()->getTemplateFileName();
+					if (parent == NULL)
+						resp << " Parent: NULL";
+					else
+						resp << " Parent: " << parent->getObjectID();
+					resp << obj->getWorldPosition().toString() << endl << "Addr: " <<  (uint64)obj.get();
+					resp << " PrevX: " << obj->getPreviousPositionX() << " PrevY: " << obj->getPreviousPositionY() << endl;
+				}
+			}
+			ChatManager* chatManager = player->getZoneServer()->getChatManager();
+			chatManager->sendMail("System", "Dump COV" , resp.toString(), player->getFirstName());
+			player->sendSystemMessage(resp.toString());
+			return 0;
+		} else if (command == "bench") {
+			Reference<CreatureObject*> creo = player;
+			int iterations = 100;
+			if (tokenizer.hasMoreTokens())
+				iterations = tokenizer.getIntToken();
+
+			for (int i=0; i<iterations; i++) {
+				Core::getTaskManager()->scheduleTask([creo]{
+					Locker locker(creo);
+					creo->executeObjectControllerAction(STRING_HASHCODE("createcreature"), 0, "gorax");
+					creo->executeObjectControllerAction(STRING_HASHCODE("createcreature"), 0, "nightsister_elder");
+					creo->executeObjectControllerAction(STRING_HASHCODE("createcreature"), 0, "death_watch_wraith");
+
+				}, "spawnCreatureBenchmark", i*100);
+			}
+		} else if (command == "listjedi") {
 			player->sendSystemMessage("Please wait. This may take a while.");
 
 			Core::getTaskManager()->executeTask([=] () {
@@ -90,101 +149,6 @@ public:
 
 			player->sendSystemMessage(message.toString());
 
-		} else if (command == "setpersonalxpmode") {
-			if (!tokenizer.hasMoreTokens()) {
-				sendSyntax(player);
-				return 1;
-			}
-			ManagedReference<SceneObject* > object = creature->getZoneServer()->getObject(target);
-			ManagedReference<CreatureObject*> xpModTarget = NULL;
-			
-			if(object == NULL || !object->isPlayerCreature()) {
-
-				String firstName;
-				if(tokenizer.hasMoreTokens()) {
-					tokenizer.getStringToken(firstName);
-					xpModTarget = playerManager->getPlayer(firstName);
-				}
-
-			}else {
-				xpModTarget = cast<CreatureObject*>( object.get());
-			}
-			
-			if (!tokenizer.hasMoreTokens()) {
-				sendSyntax(player);
-				return 1;
-			}
-			
-			int option = tokenizer.getIntToken();
-
-			switch (option) {
-
-        			case 1:
-					xpModTarget->setSelectedExpMode(2);
-					xpModTarget->setPersonalExpMultiplier(5.0);
-				break;
-
-				case 2:
-					xpModTarget->setSelectedExpMode(3);
-					xpModTarget->setPersonalExpMultiplier(10.0);
-				break;
-          
-        			default:
-					xpModTarget->setSelectedExpMode(1);
-					xpModTarget->setPersonalExpMultiplier(1.0);
-				break;
-			}
-
-			StringBuffer message;
-			message << "Personal experience now set to " << xpModTarget->getPersonalExpMultiplier() << "x";
-
-			player->sendSystemMessage(message.toString());
-
-		} else if (command == "setscale") {
-			if (!tokenizer.hasMoreTokens()) {
-				sendSyntax(player);
-				return 1;
-			}
-
-			ManagedReference<SceneObject* > object = creature->getZoneServer()->getObject(target);
-			ManagedReference<CreatureObject*> scaleTarget = NULL;
-			
-			if(object == NULL || !object->isPlayerCreature()) {
-
-				String firstName;
-				if(tokenizer.hasMoreTokens()) {
-					tokenizer.getStringToken(firstName);
-					scaleTarget = playerManager->getPlayer(firstName);
-				}
-
-			}else {
-				scaleTarget = cast<CreatureObject*>( object.get());
-			}
-			
-			if (!tokenizer.hasMoreTokens()) {
-				sendSyntax(player);
-				return 1;
-			}
-			
-			float height = tokenizer.getFloatToken();
- 			String playerName = creature->getFirstName();
- 			
-			if (tokenizer.hasMoreTokens())
-			height = tokenizer.getFloatToken();
-
-			if (height < 0.f)
-				height = 1.f;
-
-
-			if (height > 50.f)
-				height = 50.f;
-
- 			
-			if (height > 0.f)
-			scaleTarget->setHeight(height, true);
-
-			player->sendSystemMessage("Scale set to " + String::valueOf(height) + " for " + playerName);
-
 		} else {
 			sendSyntax(player);
 			return 1;
@@ -200,8 +164,6 @@ public:
 			player->sendSystemMessage("Syntax: /server playermanager [listjedi]");
 			player->sendSystemMessage("Syntax: /server playermanager [list_frsjedi]");
 			player->sendSystemMessage("Syntax: /server playermanager [listadmins]");
-			player->sendSystemMessage("Syntax: /server playermanager [setpersonalxpmode] [player first name] [value 0-2]");
-			player->sendSystemMessage("Syntax: /server playermanager [setscale] [player first name] [value 0.1-50.0]");
 		}
 	}
 };

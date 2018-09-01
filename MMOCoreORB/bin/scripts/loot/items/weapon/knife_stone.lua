@@ -6,8 +6,8 @@ knife_stone = {
 	customObjectName = "",
 	directObjectTemplate = "object/weapon/melee/knife/knife_stone.iff",
 	craftingValues = {
-		{"mindamage",30,35,0},
-		{"maxdamage",75,85,0},
+		{"mindamage",14,26,0},
+		{"maxdamage",32,55,0},
 		{"attackspeed",3.9,2.7,1},
 		{"woundchance",6,12,0},
 		{"hitpoints",750,1500,0},
@@ -24,7 +24,7 @@ knife_stone = {
 	customizationValues = {},
 
 	-- randomDotChance: The chance of this weapon object dropping with a random dot on it. Higher number means less chance. Set to 0 to always have a random dot.
-	randomDotChance = 375,
+	randomDotChance = 500,
 	junkDealerTypeNeeded = JUNKARMS,
 	junkMinValue = 20,
 	junkMaxValue = 40

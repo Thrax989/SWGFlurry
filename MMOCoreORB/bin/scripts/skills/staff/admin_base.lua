@@ -21,8 +21,7 @@ admin_base = {
 	jediStateRequired = 0,
 	skillAbility = {},
 	commands = {
-		"admin",
-		"recalcForce"
+		"admin"
 	},
 	skillModifiers = {},
 	schematicsGranted = {},

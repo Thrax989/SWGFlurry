@@ -60,7 +60,10 @@ ObjectManager::ObjectManager() : DOBObjectManager() {
 	databaseManager->loadObjectDatabase("surveys", true);
 	databaseManager->loadObjectDatabase("accounts", true);
     databaseManager->loadObjectDatabase("pendingmail", true);
+	databaseManager->loadObjectDatabase("credits", true);
 	databaseManager->loadObjectDatabase("navareas", true, 0xFFFF, false);
+	databaseManager->loadObjectDatabase("frsdata", true);
+	databaseManager->loadObjectDatabase("frsmanager", true);
 
 	ObjectDatabaseManager::instance()->commitLocalTransaction();
 
@@ -169,7 +172,6 @@ void ObjectManager::registerObjectTypes() {
 
 	objectFactory.registerObject<BuildingObject>(SceneObjectType::BUILDING);
 	objectFactory.registerObject<BuildingObject>(SceneObjectType::CAPITOLBUILDING);
-	objectFactory.registerObject<TutorialBuildingObject>(SceneObjectType::TUTORIALBUILDING);
 	objectFactory.registerObject<HospitalBuildingObject>(SceneObjectType::HOSPITALBUILDING);
 	objectFactory.registerObject<TravelBuildingObject>(SceneObjectType::TRAVELBUILDING);
 	objectFactory.registerObject<RecreationBuildingObject>(SceneObjectType::RECREATIONBUILDING);
@@ -183,6 +185,7 @@ void ObjectManager::registerObjectTypes() {
 	objectFactory.registerObject<BuildingObject>(SceneObjectType::GARAGEBUILDING);
 	objectFactory.registerObject<BuildingObject>(SceneObjectType::SALONBUILDING);
 	objectFactory.registerObject<PoiBuilding>(SceneObjectType::POIBUILDING);
+	objectFactory.registerObject<TutorialBuildingObject>(SceneObjectType::TUTORIALBUILDING);
 
 
 	objectFactory.registerObject<InstallationObject>(SceneObjectType::INSTALLATION);
@@ -866,12 +869,12 @@ SceneObject* ObjectManager::createObject(uint32 objectCRC, int persistenceLevel,
 		return NULL;
 	}
 
+	object->setPersistent(persistenceLevel);
+
 	if (initializeTransientMembers)
 		object->initializeTransientMembers();
 
 	if (persistenceLevel > 0) {
-		object->setPersistent(persistenceLevel);
-
 		updatePersistentObject(object);
 
 		object->queueUpdateToDatabaseTask();
@@ -900,10 +903,10 @@ ManagedObject* ObjectManager::createObject(const String& className, int persiste
 
 	servant->_serializationHelperMethod();
 
+	object->setPersistent(persistenceLevel);
+
 	if (initializeTransientMembers)
 		object->initializeTransientMembers();
-
-	object->setPersistent(persistenceLevel);
 
 	object->deploy();
 

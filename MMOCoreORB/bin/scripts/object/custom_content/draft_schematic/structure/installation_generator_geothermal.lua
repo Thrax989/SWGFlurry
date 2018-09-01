@@ -1,5 +1,0 @@
-object_draft_schematic_structure_installation_generator_geothermal = object_draft_schematic_structure_shared_installation_generator_geothermal:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_structure_installation_generator_geothermal, "object/draft_schematic/structure/installation_generator_geothermal.iff")

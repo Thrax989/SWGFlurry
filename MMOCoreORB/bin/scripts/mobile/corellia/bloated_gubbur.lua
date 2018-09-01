@@ -18,7 +18,7 @@ bloated_gubbur = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 3,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = HERD,
@@ -26,6 +26,7 @@ bloated_gubbur = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/gubbur_hue.iff"},
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	scale = 1.25,
 	lootGroups = {},
 	weapons = {},

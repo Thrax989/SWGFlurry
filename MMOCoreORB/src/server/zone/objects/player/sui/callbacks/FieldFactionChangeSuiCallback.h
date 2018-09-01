@@ -55,9 +55,9 @@ public:
 
 					creo->setFactionStatus(FactionStatus::COVERT);
 				}
-			}, "UpdateFactionStatusTask", 30);
+			}, "UpdateFactionStatusTask", 30000);
 		} else if (newStatus == FactionStatus::OVERT) {
-			player->sendSystemMessage("You will be flagged as Special Forces in 30 seconds."); // No string available for overt.
+			player->sendSystemMessage("You will be flagged as Special Forces in 5 minutes."); // No string available for overt.
 			player->setFutureFactionStatus(FactionStatus::OVERT);
 
 			ManagedReference<CreatureObject*> creo = player->asCreatureObject();
@@ -68,7 +68,7 @@ public:
 
 					creo->setFactionStatus(FactionStatus::OVERT);
 				}
-			}, "UpdateFactionStatusTask", 30);
+			}, "UpdateFactionStatusTask", 300000);
 		}
 	}
 };

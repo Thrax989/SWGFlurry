@@ -61,7 +61,7 @@ public:
 				}
 				break;
 			case SAMPLING:
-				if (waitCount == 1) {
+				if (waitCount == 9) {
 					currentPhase = END;
 				}else {
 					waitCount++;

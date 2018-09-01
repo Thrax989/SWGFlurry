@@ -18,7 +18,7 @@ majestic_plumed_rasp = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 4,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
@@ -26,6 +26,7 @@ majestic_plumed_rasp = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/plumed_rasp_hue.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.15,
 	lootGroups = {},
 	weapons = {},

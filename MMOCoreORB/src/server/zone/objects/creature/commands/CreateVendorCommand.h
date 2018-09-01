@@ -50,6 +50,11 @@ public:
 			return GENERALERROR;
 		}
 
+		if (!building->isPublicStructure()) {
+			player->sendSystemMessage("@player_structure:vendor_public_only");
+			return GENERALERROR;
+		}
+
 		//Create Session
 		ManagedReference<CreateVendorSession*> session = new CreateVendorSession(player);
 		session->initializeSession();

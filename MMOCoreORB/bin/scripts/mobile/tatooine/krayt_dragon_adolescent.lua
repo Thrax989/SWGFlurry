@@ -9,7 +9,7 @@ krayt_dragon_adolescent = Creature:new {
 	baseXp = 28549,
 	baseHAM = 410000,
 	baseHAMmax = 501000,
-	armor = 0,
+	armor = 3,
 	resists = {195,195,195,195,165,195,195,195,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
@@ -26,6 +26,7 @@ krayt_dragon_adolescent = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/krayt_dragon_hue.iff"},
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 0.7;
 	lootGroups = {
 		{

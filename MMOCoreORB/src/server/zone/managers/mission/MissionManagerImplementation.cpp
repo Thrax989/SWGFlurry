@@ -98,6 +98,9 @@ void MissionManagerImplementation::loadLuaSettings() {
 			enableSameAccountBountyMissions = true;
 		}
 
+		playerBountyKillBuffer = lua->getGlobalLong("playerBountyKillBuffer");
+		playerBountyDebuffLength = lua->getGlobalLong("playerBountyDebuffLength");
+
 		delete lua;
 	}
 	catch (Exception& e) {
@@ -163,7 +166,7 @@ void MissionManagerImplementation::handleMissionListRequest(MissionTerminal* mis
 	}
 
 	if (missionTerminal->isBountyTerminal()) {
-		if (!player->hasSkill("combat_bountyhunter_novice") && !player->hasSkill("combat_meleebountyhunter_novice")) {
+		if (!player->hasSkill("combat_bountyhunter_novice")) {
 			player->sendSystemMessage("@mission/mission_generic:not_bounty_hunter_terminal");
 			return;
 		}
@@ -183,7 +186,7 @@ void MissionManagerImplementation::handleMissionListRequest(MissionTerminal* mis
 	if (missionBag == NULL)
 		return;
 
-	int maximumNumberOfItemsInMissionBag = 25;
+	int maximumNumberOfItemsInMissionBag = 12;
 
 
 	if (enableFactionalCraftingMissions) {
@@ -245,7 +248,7 @@ void MissionManagerImplementation::handleMissionAccept(MissionTerminal* missionT
 	}
 
 	//Limit to two missions (only one of them can be a bounty mission)
-	if (missionCount >= 3 || (hasBountyMission && mission->getTypeCRC() == MissionTypes::BOUNTY)) {
+	if (missionCount >= 2 || (hasBountyMission && mission->getTypeCRC() == MissionTypes::BOUNTY)) {
 		StringIdChatParameter stringId("mission/mission_generic", "too_many_missions");
 		player->sendSystemMessage(stringId);
 		return;
@@ -546,9 +549,9 @@ void MissionManagerImplementation::randomizeGeneralTerminalMissions(CreatureObje
 		//Clear mission type before calling mission generators.
 		mission->setTypeCRC(0);
 
-		if (i < 25) {
+		if (i < 6) {
 			randomizeGenericDestroyMission(player, mission, Factions::FACTIONNEUTRAL);
-		} else if (i < 50) {
+		} else if (i < 12) {
 			randomizeGenericDeliverMission(player, mission, Factions::FACTIONNEUTRAL);
 		}
 
@@ -575,9 +578,9 @@ void MissionManagerImplementation::randomizeArtisanTerminalMissions(CreatureObje
 		//Clear mission type before calling mission generators.
 		mission->setTypeCRC(0);
 
-		if (i < 25) {
+		if (i < 6) {
 			randomizeGenericSurveyMission(player, mission, Factions::FACTIONNEUTRAL);
-		} else if (i < 50) {
+		} else if (i < 12) {
 			randomizeGenericCraftingMission(player, mission, Factions::FACTIONNEUTRAL);
 		}
 
@@ -604,9 +607,9 @@ void MissionManagerImplementation::randomizeEntertainerTerminalMissions(Creature
 		//Clear mission type before calling mission generators.
 		mission->setTypeCRC(0);
 
-		if (i < 25) {
+		if (i < 6) {
 			randomizeGenericEntertainerMission(player, mission, Factions::FACTIONNEUTRAL, MissionTypes::DANCER);
-		} else if (i < 50) {
+		} else if (i < 12) {
 			randomizeGenericEntertainerMission(player, mission, Factions::FACTIONNEUTRAL, MissionTypes::MUSICIAN);
 		}
 
@@ -633,9 +636,9 @@ void MissionManagerImplementation::randomizeScoutTerminalMissions(CreatureObject
 		//Clear mission type before calling mission generators.
 		mission->setTypeCRC(0);
 
-		if (i < 25) {
+		if (i < 6) {
 			randomizeGenericReconMission(player, mission, Factions::FACTIONNEUTRAL);
-		} else if (i < 50) {
+		} else if (i < 12) {
 			randomizeGenericHuntingMission(player, mission, Factions::FACTIONNEUTRAL);
 		}
 
@@ -664,7 +667,7 @@ void MissionManagerImplementation::randomizeBountyTerminalMissions(CreatureObjec
 		//Clear mission type before calling mission generators.
 		mission->setTypeCRC(0);
 
-		if (i < 25) {
+		if (i < 10) {
 			randomizeGenericBountyMission(player, mission, Factions::FACTIONNEUTRAL, &potentialTargets);
 		}
 
@@ -692,9 +695,9 @@ void MissionManagerImplementation::randomizeFactionTerminalMissions(CreatureObje
 		//Clear mission type before calling mission generators.
 		mission->setTypeCRC(0);
 
-		if (i < 25) {
+		if (i < 6) {
 			randomizeGenericDestroyMission(player, mission, faction);
-		} else if (i < 50) {
+		} else if (i < 12) {
 			randomizeGenericDeliverMission(player, mission, faction);
 		} else {
 			if (enableFactionalCraftingMissions && numberOfCraftingMissions < 6) {
@@ -841,24 +844,12 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
 	else
 		messageDifficulty = "_hard";
 
-	String groupSuffix;
- 
- 	if (lairTemplateObject->getMobType() == LairTemplate::NPC){
+	if (lairTemplateObject->getMobType() == LairTemplate::NPC)
 		missionType = "_npc";
-		groupSuffix = " camp.";
- 	} else {
-  		missionType = "_creature";
- 		groupSuffix = " lair.";
- 	}
- 		
- 	VectorMap<String, int>* mobiles = lairTemplateObject->getMobiles();
- 	String mobileName = "mysterious";
- 	
- 	if (mobiles->size() > 0) {
- 		mobileName = mobiles->elementAt(0).getKey();
- 	}
+	else
+		missionType = "_creature";
 
-	mission->setMissionTitle("CL" + String::valueOf(diffDisplay), " Destroy the " + mobileName.replaceAll("_", " ") + groupSuffix);
+	mission->setMissionTitle("mission/mission_destroy_neutral" + messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "t");
 	mission->setMissionDescription("mission/mission_destroy_neutral" +  messageDifficulty + missionType, "m" + String::valueOf(randTexts) + "d");
 
 	switch (faction) {
@@ -957,7 +948,7 @@ void MissionManagerImplementation::randomizeGenericSurveyMission(CreatureObject*
 }
 
 void MissionManagerImplementation::randomizeGenericBountyMission(CreatureObject* player, MissionObject* mission, const uint32 faction, Vector<ManagedReference<PlayerBounty*>>* potentialTargets) {
-	if (!player->hasSkill("combat_bountyhunter_novice") && !player->hasSkill("combat_meleebountyhunter_novice")) {
+	if (!player->hasSkill("combat_bountyhunter_novice")) {
 		player->sendSystemMessage("@mission/mission_generic:not_bounty_hunter_terminal");
 		return;
 	}
@@ -970,9 +961,9 @@ void MissionManagerImplementation::randomizeGenericBountyMission(CreatureObject*
 
 	int level = 1;
 	int randomTexts = 25;
-	if (player->hasSkill("combat_bountyhunter_investigation_03") || player->hasSkill("combat_meleebountyhunter_investigation_03")) {
+	if (player->hasSkill("combat_bountyhunter_investigation_03")) {
 		level = 3;
-	} else if (player->hasSkill("combat_bountyhunter_investigation_01") || player->hasSkill("combat_meleebountyhunter_investigation_01")) {
+	} else if (player->hasSkill("combat_bountyhunter_investigation_01")) {
 		level = 2;
 		randomTexts = 50;
 	}
@@ -1019,7 +1010,7 @@ void MissionManagerImplementation::randomizeGenericBountyMission(CreatureObject*
 
 			mission->setMissionTargetName(name);
 			mission->setMissionDifficulty(75);
-			mission->setRewardCredits(target->getReward());
+			mission->setRewardCredits(getRealBountyReward(creature, target));
 
 			// Set the Title, Creator, and Description of the mission.
 
@@ -1962,6 +1953,17 @@ bool MissionManagerImplementation::isBountyValidForPlayer(CreatureObject* player
 	if (targetId == playerId)
 		return false;
 
+	if (playerBountyKillBuffer > 0) {
+		uint64 lastBountyKill = bounty->getLastBountyKill();
+
+		Time currentTime;
+		uint64 curTime = currentTime.getMiliTime();
+
+		if (lastBountyKill > 0 && (curTime - lastBountyKill) < playerBountyKillBuffer)
+			return false;
+
+	}
+
 	ManagedReference<CreatureObject*> creature = server->getObject(targetId).castTo<CreatureObject*>();
 
 	if (creature == NULL)
@@ -2005,6 +2007,15 @@ void MissionManagerImplementation::completePlayerBounty(uint64 targetId, uint64 
 	if (playerBountyList.contains(targetId)) {
 		PlayerBounty* target = playerBountyList.get(targetId);
 
+		Time currentTime;
+
+		uint64 curTime = currentTime.getMiliTime();
+		target->setLastBountyKill(curTime);
+		uint64 lastDebuff = target->getLastBountyDebuff();
+
+		if (curTime-lastDebuff > playerBountyDebuffLength)
+			target->setLastBountyDebuff(curTime);
+
 		Vector<uint64> activeBountyHunters;
 
 		for (int i = 0; i < target->getBountyHunters()->size(); i++)
@@ -2020,7 +2031,7 @@ void MissionManagerImplementation::completePlayerBounty(uint64 targetId, uint64 
 				ManagedReference<CreatureObject*> creo = server->getObject(activeBountyHunters.get(i)).castTo<CreatureObject*>();
 				auto ghost = creo->getPlayerObject();
 				if (ghost != NULL)
-					ghost->schedulePvpTefRemovalTask(false, true, false);
+					ghost->schedulePvpTefRemovalTask(false, true);
 			}
 		}
 	}
@@ -2045,7 +2056,7 @@ void MissionManagerImplementation::failPlayerBountyMission(uint64 bountyHunter) 
 
 					auto ghost = player->getPlayerObject();
 					if (ghost != NULL)
-						ghost->schedulePvpTefRemovalTask(false, true, false);
+						ghost->schedulePvpTefRemovalTask(false, true);
 				}
 
 				objective->fail();
@@ -2122,7 +2133,79 @@ void MissionManagerImplementation::deactivateMissions(CreatureObject* player) {
 	}
 }
 
+int MissionManagerImplementation::getRealBountyReward(CreatureObject* creo, PlayerBounty* bounty)  {
+	if (creo == NULL || bounty == NULL)
+		return 0;
+
+	if (System::getMiliTime() - bounty->getLastBountyDebuff() < playerBountyDebuffLength) {
+		ManagedReference<PlayerObject*> player = creo->getPlayerObject();
+		if (player == NULL)
+			return 0;
+
+		if (player->getJediState() >= 4)
+			return 50000;
+		else
+			return 25000;
+	}
+	return bounty->getReward();
+}
+
 String MissionManagerImplementation::getRandomBountyPlanet() {
 	int randomNumber = System::random(bhTargetZones.size() - 1);
 	return bhTargetZones.get(randomNumber);
+}
+
+bool MissionManagerImplementation::sendPlayerBountyDebug(CreatureObject* creature, CreatureObject* target) {
+	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
+
+	if (ghost == NULL)
+		return false;
+
+	ManagedReference<PlayerObject*> targetGhost = target->getPlayerObject();
+
+	if (targetGhost == NULL)
+		return false;
+
+	Locker listLocker(&playerBountyListMutex);
+
+	PlayerBounty* playerBounty = playerBountyList.get(target->getObjectID());
+
+	ManagedReference<SuiListBox*> box = new SuiListBox(creature, 0);
+	box->setPromptTitle("Jedi Visibility");
+	String promptText = "Player: " + target->getFirstName() + "\n" + "Visibility: " + String::valueOf(targetGhost->getVisibility()) + "\n";
+
+	if (playerBounty == NULL) {
+		promptText += "-- No player bounty data --\n";
+	} else {
+		promptText += "-- Bounty Data --\n";
+		promptText += "Current Reward: " + String::valueOf(getRealBountyReward(target, playerBounty)) + "\n";
+		promptText += "Bounty Reward: " + String::valueOf(playerBounty->getReward()) + "\n";
+		String onlineStatus = playerBounty->isOnline() ? "True" : "False";
+		promptText += "Online Status: " + onlineStatus + "\n";
+		int activeCount = playerBounty->numberOfActiveMissions();
+		promptText += "Active Bounty Count: " + String::valueOf(activeCount) + "\n";
+		if (activeCount > 0) {
+			promptText += "\nPlayers holding active bounties:";
+			ManagedReference<PlayerManager*> playerManager = creature->getZoneServer()->getPlayerManager();
+
+			SortedVector<uint64>* bountyHunters = playerBounty->getBountyHunters();
+
+			for (int i = 0; i < bountyHunters->size(); i++) {
+				String name = playerManager->getPlayerName(bountyHunters->get(i));
+
+				if (name.isEmpty())
+					box->addMenuItem("Unknown player");
+				else
+					box->addMenuItem(name);
+			}
+		}
+	}
+
+	box->setPromptText(promptText);
+	box->setUsingObject(target);
+	box->setForceCloseDisabled();
+	ghost->addSuiBox(box);
+	creature->sendMessage(box->generateMessage());
+
+	return true;
 }

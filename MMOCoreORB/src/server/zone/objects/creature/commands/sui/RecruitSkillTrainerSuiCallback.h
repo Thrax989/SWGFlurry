@@ -155,29 +155,6 @@ public:
 				break;
 
 		case 32: trainerTemplatePath = "trainer_weaponsmith";
-				break;
-				
-		case 33: trainerTemplatePath = "trainer_mechanic";
-				break;
-				
-		case 34: trainerTemplatePath = "trainer_spy";
-				break;
-				
-		case 35: trainerTemplatePath = "trainer_meleebountyhunter";
-				break;
-				
-		case 36: trainerTemplatePath = "trainer_combatjedigray";
-
-				break;
-		case 37: trainerTemplatePath = "trainer_combatjedigrayelder";
-
-				break;
-		case 38: trainerTemplatePath = "trainer_combatjedigrayelderrank";
-
-				break;
-		case 39: trainerTemplatePath = "trainer_combatjedigrayelderrankcouncil ";
-
-
 
 		}
 
@@ -191,6 +168,10 @@ public:
 				player->sendSystemMessage(msg); //"The city treasury must have %DI credits in order to perform that action.");
 				return;
 
+			}
+
+			if(player->isSwimming() || player->isIncapacitated() || player->isDead()) {
+				return;
 			}
 
 			CreatureObject* trainer = zone->getCreatureManager()->spawnCreature(trainerTemplatePath.hashCode(),0,player->getWorldPositionX(),player->getWorldPositionZ(),player->getWorldPositionY(),0,true);

@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_datadisk_corrupt = object_tangible_loot_misc_shared_datadisk_corrupt:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

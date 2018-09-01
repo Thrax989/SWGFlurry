@@ -1,3 +1,0 @@
-object_tangible_terminal_npe_droid_production = object_tangible_terminal_shared_npe_droid_production:new {
-}
-ObjectTemplates:addTemplate(object_tangible_terminal_npe_droid_production, "object/tangible/terminal/npe_droid_production.iff")

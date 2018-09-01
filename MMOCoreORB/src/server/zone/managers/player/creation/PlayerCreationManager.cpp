@@ -4,7 +4,6 @@
 */
 
 #include "server/db/ServerDatabase.h"
-#include "server/db/MantisDatabase.h"
 #include "PlayerCreationManager.h"
 #include "ProfessionDefaultsInfo.h"
 #include "RacialCreationData.h"
@@ -16,7 +15,6 @@
 #include "server/login/account/Account.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/objects/player/PlayerObject.h"
-#include "server/zone/packets/MessageCallback.h"
 #include "server/zone/packets/charcreation/ClientCreateCharacterCallback.h"
 #include "server/zone/packets/charcreation/ClientCreateCharacterSuccess.h"
 #include "templates/manager/TemplateManager.h"
@@ -29,9 +27,6 @@
 #include "server/zone/objects/ship/ShipObject.h"
 #include "templates/customization/CustomizationIdManager.h"
 #include "server/zone/managers/skill/imagedesign/ImageDesignManager.h"
-#include "templates/customization/AssetCustomizationManagerTemplate.h"
-#include "templates/params/PaletteColorCustomizationVariable.h"
-#include "templates/customization/BasicRangedIntCustomizationVariable.h"
 #include "server/zone/managers/jedi/JediManager.h"
 
 PlayerCreationManager::PlayerCreationManager() :
@@ -387,8 +382,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	String profession, customization, hairTemplate, hairCustomization;
 	callback->getSkill(profession);
 
-	//if (profession.contains("jedi"))
-		//profession = "crafting_artisan";
+	if (profession.contains("jedi"))
+		profession = "crafting_artisan";
 
 	callback->getCustomizationString(customization);
 	callback->getHairObject(hairTemplate);
@@ -478,9 +473,10 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 				if(accountPermissionLevel > 0 && (accountPermissionLevel == 9 || accountPermissionLevel == 10 || accountPermissionLevel == 12 || accountPermissionLevel == 15)) {
 					playerManager->updatePermissionLevel(playerCreature, accountPermissionLevel);
 
-
-					Reference<ShipControlDevice*> shipControlDevice = zoneServer->createObject(STRING_HASHCODE("object/intangible/ship/firespray_pcd.iff"), 1).castTo<ShipControlDevice*>();
-					Reference<ShipObject*> ship = zoneServer->createObject(STRING_HASHCODE("object/ship/player/player_firespray.iff"), 1).castTo<ShipObject*>();
+					/*
+					Reference<ShipControlDevice*> shipControlDevice = zoneServer->createObject(STRING_HASHCODE("object/intangible/ship/sorosuub_space_yacht_pcd.iff"), 1).castTo<ShipControlDevice*>();
+					//ShipObject* ship = (ShipObject*) server->createObject(STRING_HASHCODE("object/ship/player/player_sorosuub_space_yacht.iff"), 1);
+					Reference<ShipObject*> ship = zoneServer->createObject(STRING_HASHCODE("object/ship/player/player_basic_tiefighter.iff"), 1).castTo<ShipObject*>();
 
 					shipControlDevice->setControlledObject(ship);
 
@@ -497,7 +493,7 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 						shipControlDevice->destroyObjectFromDatabase(true);
 						error("could not get datapad from player");
 					}
-
+					*/
 				}
 
 				if (accountPermissionLevel < 9) {
@@ -515,8 +511,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 							Time timeVal(sec);
 
-							if (timeVal.miliDifference() < 300000) {
-								ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per 30 minutes. Repeat attempts prior to 5 minutes elapsing will reset the timer.", 0x0);
+							if (timeVal.miliDifference() < 3600000) {
+								ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per hour. Repeat attempts prior to 1 hour elapsing will reset the timer.", 0x0);
 								client->sendMessage(errMsg);
 
 								playerCreature->destroyPlayerCreatureFromDatabase(true);
@@ -533,8 +529,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 					if (lastCreatedCharacter.containsKey(accID)) {
 						Time lastCreatedTime = lastCreatedCharacter.get(accID);
 
-						if (lastCreatedTime.miliDifference() < 300000) {
-							ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per 30 minutes. Repeat attempts prior to 5 minutes elapsing will reset the timer.", 0x0);
+						if (lastCreatedTime.miliDifference() < 3600000) {
+							ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per hour. Repeat attempts prior to 1 hour elapsing will reset the timer.", 0x0);
 							client->sendMessage(errMsg);
 
 							playerCreature->destroyPlayerCreatureFromDatabase(true);
@@ -604,20 +600,13 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	chatManager->sendMail("system", "@newbie_tutorial/newbie_mail:welcome_subject", "@newbie_tutorial/newbie_mail:welcome_body", playerCreature->getFirstName());
 
-	//Join auction chat room //Join main flurry chat
+	//Join auction chat room
 	ghost->addChatRoom(chatManager->getAuctionRoom()->getRoomID());
-	ghost->addChatRoom(chatManager->getFlurryRoom()->getRoomID());
+
 	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
-	box->setPromptTitle("Welcome To SWG Flurry");
-	box->setPromptText("Welcome to the SWG Flurry Server!.\n\nServer Rules\n\n1.) Accounts\n\n You are limited to creating one character every 5 minutes. Attempting to create another character or deleting your character before the 5 minute timer expires will reset the timer. Account Per Person 4 Characters May be logged in at any given time per account 10 Characters created per account 1 Account Per Person Per IP PRIOR approval is needed to have more then one account from a IP. If you want more than 2 accounts per IP you must gain approval from the Admins by writing a request on the forums. Breaking the rules above will result in the secondary account being suspended and potentially permanently banned. Before the removal of any accounts or characters a 7 day notification will be sent to you in-game requesting that you submit a multiple account per IP request. If you fail to do so, both accounts may be banned.\n\n2.)Exploiting / Hacking\n\nIf you accidentally come across a bug and report it to an admin/GM/CSR, this is deemed acceptable behaviour. If you come across a bug and continually replicate it for personal gain, this is seen as exploiting. Hacking Using third party applications, game modifications, etc, to alter game mechanics / gain advantage is deemed as hacking. If we witness players doing so, your account will be immediately banned and IP address blacklisted from game server and forums.\n\n3.)Fightclubbing\n\n Fightclubbing with your own characters or guildmates in order to increase FRS rank is against the rules. If it is determined that you have been fightclubbing, the following actions will take place:1st offense - Jedi state reset to padawan with no skills 2nd offense - 30 day ban 3rd offense - Permanent ban.\n\n");
-	box->setCancelButton(true, "@no");
-	box->setOkButton(true, "@yes");
-	box->setUsingObject(ghost);
-	//Broadcast to Server
-	String playerName = playerCreature->getFirstName();
-	StringBuffer zBroadcast;
-	zBroadcast << "\\#00ace6" << playerName << " \\#ffb90f Has Joined The Flurry Server!";
-	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+	box->setPromptTitle("PLEASE NOTE");
+	box->setPromptText("You are limited to creating one character per hour. Attempting to create another character or deleting your character before the 1 hour timer expires will reset the timer.");
+
 	ghost->addSuiBox(box);
 	playerCreature->sendMessage(box->generateMessage());
 
@@ -830,14 +819,14 @@ void PlayerCreationManager::addHair(CreatureObject* creature,
 		return;
 	}
 
-/*	if (hairAssetData->getServerPlayerTemplate()
+	if (hairAssetData->getServerPlayerTemplate()
 			!= creature->getObjectTemplate()->getFullTemplateString()) {
 		error(
 				"hair " + hairTemplate
 						+ " is not compatible with this creature player "
 						+ creature->getObjectTemplate()->getFullTemplateString());
 		return;
-	} */
+	}
 
 	if (!hairAssetData->isAvailableAtCreation()) {
 		error("hair " + hairTemplate + " not available at creation");

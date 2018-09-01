@@ -1,7 +1,5 @@
+-- Custom content
+includeFile("../custom_scripts/loot/serverobjects.lua")
+
 includeFile("items.lua")
 includeFile("groups.lua")
---includeFile("custom_loot/groups.lua")
-includeFile("custom_loot/common_groups.lua")
-includeFile("custom_loot/uncommon_groups.lua")
-includeFile("custom_loot/rare_groups.lua")
-includeFile("custom_loot/items.lua")

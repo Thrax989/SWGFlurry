@@ -9,7 +9,7 @@ nightsister_enraged_bull_rancor = Creature:new {
 	baseXp = 8500,
 	baseHAM = 13000,
 	baseHAMmax = 16000,
-	armor = 0,
+	armor = 1,
 	resists = {40,170,40,200,200,200,40,40,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 880,
@@ -26,6 +26,7 @@ nightsister_enraged_bull_rancor = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/bull_rancor.iff"},
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 1.2,
 	lootGroups = {
 		{

@@ -1,5 +1,0 @@
-object_draft_schematic_droid_component_hand_sample_module = object_draft_schematic_droid_component_shared_hand_sample_module:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_droid_component_hand_sample_module, "object/draft_schematic/droid/component/hand_sample_module.iff")

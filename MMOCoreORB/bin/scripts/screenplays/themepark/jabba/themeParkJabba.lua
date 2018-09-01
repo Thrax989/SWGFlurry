@@ -24,7 +24,7 @@ reelo_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 500 }
+				{ rewardType = "credits", amount = 50 }
 			}
 		},
 		{
@@ -42,7 +42,7 @@ reelo_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 1500 }
+				{ rewardType = "credits", amount = 150 }
 			}
 		},
 		{
@@ -62,7 +62,7 @@ reelo_missions =
 			rewards =
 			{
 				{ rewardType = "loot", lootGroup = "jabba_theme_park_reelo" },
-				{ rewardType = "faction", faction = "jabba", amount = 50 }
+				{ rewardType = "faction", faction = "jabba", amount = 25 }
 			}
 		}
 	}
@@ -84,7 +84,7 @@ ree_yees_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 2500 }
+				{ rewardType = "credits", amount = 250 }
 			}
 		},
 		{
@@ -105,7 +105,7 @@ ree_yees_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 3500 }
+				{ rewardType = "credits", amount = 350 }
 			}
 		},
 		{
@@ -128,7 +128,7 @@ ree_yees_missions =
 			{
 				{ rewardType = "loot", lootGroup = "jabba_theme_park_ree_yees" },
 				{ rewardType = "permission", permissionGroup = "jabba_palace1" },
-				{ rewardType = "faction", faction = "jabba", amount = 100 }
+				{ rewardType = "faction", faction = "jabba", amount = 50 }
 			}
 		}
 	}
@@ -151,7 +151,7 @@ ephant_mon_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 4500 }
+				{ rewardType = "credits", amount = 450 }
 			}
 		},
 		{
@@ -173,7 +173,7 @@ ephant_mon_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 5500 },
+				{ rewardType = "credits", amount = 550 },
 			}
 		},
 		{
@@ -191,7 +191,7 @@ ephant_mon_missions =
 			{
 				{ rewardType = "loot", lootGroup = "jabba_theme_park_ephant_mon"},
 				{ rewardType = "permission", permissionGroup = "jabba_palace2" },
-				{ rewardType = "faction", faction = "jabba", amount = 150 }
+				{ rewardType = "faction", faction = "jabba", amount = 75 }
 			}
 		}
 	}
@@ -214,7 +214,7 @@ porcellus_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 6500 }
+				{ rewardType = "credits", amount = 650 }
 			}
 		},
 		{
@@ -233,7 +233,7 @@ porcellus_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 7500 }
+				{ rewardType = "credits", amount = 750 }
 			}
 		},
 		{
@@ -251,7 +251,7 @@ porcellus_missions =
 			{
 				{ rewardType = "loot", lootGroup = "jabba_theme_park_porcellus"},
 				{ rewardType = "permission", permissionGroup = "jabba_palace3" },
-				{ rewardType = "faction", faction = "jabba", amount = 200 }
+				{ rewardType = "faction", faction = "jabba", amount = 100 }
 			}
 		}
 	}
@@ -274,7 +274,7 @@ barada_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 8500 }
+				{ rewardType = "credits", amount = 850 }
 			}
 		},
 		{
@@ -290,7 +290,7 @@ barada_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 9500 }
+				{ rewardType = "credits", amount = 950 }
 			}
 		},
 		{
@@ -312,7 +312,7 @@ barada_missions =
 			{
 				{ rewardType = "loot", lootGroup = "jabba_theme_park_barada"},
 				{ rewardType = "permission", permissionGroup = "jabba_palace4" },
-				{ rewardType = "faction", faction = "jabba", amount = 250 }
+				{ rewardType = "faction", faction = "jabba", amount = 125 }
 			}
 		}
 	}
@@ -329,7 +329,7 @@ bib_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 10500 }
+				{ rewardType = "credits", amount = 1050 }
 			}
 		},
 		{
@@ -346,7 +346,7 @@ bib_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 11500 }
+				{ rewardType = "credits", amount = 1150 }
 			}
 		},
 		{
@@ -362,7 +362,7 @@ bib_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 12500 }
+				{ rewardType = "credits", amount = 1250 }
 			}
 		},
 		{
@@ -382,7 +382,7 @@ bib_missions =
 			rewards =
 			{
 				{ rewardType = "loot", lootGroup = "jabba_theme_park_bib"},
-				{ rewardType = "faction", faction = "jabba", amount = 300 }
+				{ rewardType = "faction", faction = "jabba", amount = 150 }
 			}
 		}
 	}
@@ -403,7 +403,7 @@ g5po_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 13500 }
+				{ rewardType = "credits", amount = 1350 }
 			}
 		},
 		{
@@ -421,7 +421,7 @@ g5po_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 14500 }
+				{ rewardType = "credits", amount = 1450 }
 			}
 		},
 		{
@@ -440,7 +440,7 @@ g5po_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 15500 }
+				{ rewardType = "credits", amount = 1550 }
 			}
 		},
 		{
@@ -458,7 +458,7 @@ g5po_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 16500 }
+				{ rewardType = "credits", amount = 1650 }
 			}
 		},
 		{
@@ -474,7 +474,7 @@ g5po_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 17500 }
+				{ rewardType = "credits", amount = 1750 }
 			}
 		},
 		{
@@ -491,7 +491,7 @@ g5po_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 18500 }
+				{ rewardType = "credits", amount = 1850 }
 			}
 		},
 		{
@@ -507,7 +507,7 @@ g5po_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 19500 }
+				{ rewardType = "credits", amount = 1950 }
 			}
 		},
 		{
@@ -530,9 +530,9 @@ g5po_missions =
 			{
 				{ rewardType = "loot", lootGroup = "jabba_theme_park_g5p0"},
 				{ rewardType = "badge", badge = THEME_PARK_JABBA_BADGE },
-				{ rewardType = "faction", faction = "jabba", amount = 400 },
+				{ rewardType = "faction", faction = "jabba", amount = 200 },
 				{ rewardType = "permission", permissionGroup = "jabba_palace5" },
-				{ rewardType = "credits", amount = 20000 }
+				{ rewardType = "credits", amount = 2000 }
 			}
 		},
 	}

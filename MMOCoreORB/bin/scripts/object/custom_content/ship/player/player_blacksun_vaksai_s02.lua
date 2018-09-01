@@ -1,5 +1,0 @@
-object_ship_player_player_blacksun_vaksai_s02 = object_ship_player_shared_player_blacksun_vaksai_s02:new {
-
-}
-
-ObjectTemplates:addTemplate(object_ship_player_player_blacksun_vaksai_s02, "object/ship/player/player_blacksun_vaksai_s02.iff")

@@ -1,5 +1,0 @@
-object_draft_schematic_item_item_duel_recording_terminal = object_draft_schematic_item_shared_item_duel_recording_terminal:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_item_item_duel_recording_terminal, "object/draft_schematic/item/item_duel_recording_terminal.iff")

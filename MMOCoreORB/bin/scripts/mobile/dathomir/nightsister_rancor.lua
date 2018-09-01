@@ -9,7 +9,7 @@ nightsister_rancor = Creature:new {
 	baseXp = 5373,
 	baseHAM = 10000,
 	baseHAMmax = 12000,
-	armor = 0,
+	armor = 1,
 	resists = {130,160,5,200,200,200,5,5,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 950,
@@ -25,7 +25,8 @@ nightsister_rancor = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/rancor.iff"},
+	templates = {"object/mobile/rancor_hue.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.05,
 	lootGroups = {
 		{

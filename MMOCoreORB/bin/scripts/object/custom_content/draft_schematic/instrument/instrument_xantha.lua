@@ -1,5 +1,0 @@
-object_draft_schematic_instrument_instrument_xantha = object_draft_schematic_instrument_shared_instrument_xantha:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_instrument_instrument_xantha, "object/draft_schematic/instrument/instrument_xantha.iff")

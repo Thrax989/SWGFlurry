@@ -1,5 +1,0 @@
-object_draft_schematic_instrument_instrument_omni_box_classic = object_draft_schematic_instrument_shared_instrument_omni_box_classic:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_instrument_instrument_omni_box_classic, "object/draft_schematic/instrument/instrument_omni_box_classic.iff")

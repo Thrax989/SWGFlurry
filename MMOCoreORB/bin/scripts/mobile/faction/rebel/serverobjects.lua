@@ -155,5 +155,3 @@ includeFile("faction/rebel/tamed_gurrcat.lua")
 includeFile("faction/rebel/tamed_huurton.lua")
 includeFile("faction/rebel/tamed_razor_cat.lua")
 includeFile("faction/rebel/tamed_slice_hound.lua")
---CUSTOM
-includeFile("faction/rebel/light_jedi_sentinel_rebel.lua")

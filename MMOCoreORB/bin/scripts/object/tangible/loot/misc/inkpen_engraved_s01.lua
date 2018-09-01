@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_inkpen_engraved_s01 = object_tangible_loot_misc_shared_inkpen_engraved_s01:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

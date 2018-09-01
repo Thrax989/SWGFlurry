@@ -27,7 +27,7 @@ gilker_budz_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 2500 }
+				{ rewardType = "credits", amount = 250 }
 			}
 		},
 		{
@@ -53,7 +53,7 @@ gilker_budz_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 5000 }
+				{ rewardType = "credits", amount = 500 }
 			}
 		},
 		{
@@ -76,7 +76,7 @@ gilker_budz_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "credits", amount = 7500 }
+				{ rewardType = "credits", amount = 750 }
 			}
 		}
 	}

@@ -25,6 +25,7 @@
 #include "tasks/StorePetTask.h"
 #include "server/chat/ChatManager.h"
 #include "server/zone/objects/player/FactionStatus.h"
+#include "server/zone/managers/frs/FrsManager.h"
 
 void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 	if (player->isInCombat() || player->isDead() || player->isIncapacitated() || player->getPendingTask("tame_pet") != NULL) {
@@ -63,6 +64,13 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 
 	if (ghost->hasActivePet(pet))
 		return;
+
+	FrsManager* frsManager = server->getZoneServer()->getFrsManager();
+
+	if (frsManager->isFrsEnabled() && frsManager->isPlayerInEnclave(player)) {
+		player->sendSystemMessage("@pet/pet_menu:cant_call"); //  You cannot call this pet right now.
+		return;
+	}
 
 	if (vitality <= 0) {
 		player->sendSystemMessage("@pet/pet_menu:dead_pet"); // This pet is dead. Select DESTROY from the radial menu to delete this pet control device.
@@ -167,6 +175,10 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 
 		if (object != NULL) {
 			if (object->isCreature() && petType == PetManager::CREATUREPET) {
+				ManagedReference<CreatureTemplate*> activePetTemplate = object->getCreatureTemplate();
+
+				if (activePetTemplate == NULL || activePetTemplate->getTemplateName() == "at_st")
+					continue;
 
 				if (++currentlySpawned >= maxPets) {
 					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
@@ -181,6 +193,17 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 				}
 			} else if (object->isNonPlayerCreatureObject() && petType == PetManager::FACTIONPET) {
 				if (++currentlySpawned >= maxPets) {
+					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
+					return;
+				}
+			} else if (object->isCreature() && petType == PetManager::FACTIONPET) {
+				ManagedReference<CreatureTemplate*> activePetTemplate = object->getCreatureTemplate();
+				ManagedReference<CreatureTemplate*> callingPetTemplate = pet->getCreatureTemplate();
+
+				if (activePetTemplate == NULL || callingPetTemplate == NULL || activePetTemplate->getTemplateName() != "at_st")
+					continue;
+
+				if (++currentlySpawned >= maxPets || (activePetTemplate->getTemplateName() == "at_st" && callingPetTemplate->getTemplateName() == "at_st")) {
 					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
 					return;
 				}
@@ -205,10 +228,10 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		Reference<CallPetTask*> callPet = new CallPetTask(_this.getReferenceUnsafeStaticCast(), player, "call_pet");
 
 		StringIdChatParameter message("pet/pet_menu", "call_pet_delay"); // Calling pet in %DI seconds. Combat will terminate pet call.
-		message.setDI(3);
+		message.setDI(15);
 		player->sendSystemMessage(message);
 
-		player->addPendingTask("call_pet", callPet, 3 * 1000);
+		player->addPendingTask("call_pet", callPet, 15 * 1000);
 
 		if (petControlObserver == NULL) {
 			petControlObserver = new PetControlObserver(_this.getReferenceUnsafeStaticCast());
@@ -255,9 +278,19 @@ int PetControlDeviceImplementation::handleObjectMenuSelect(CreatureObject* playe
 			error("null controlled object in pet control device");
 			return 1;
 		} else {
-			Locker crossLocker(pet, player);
+			Reference<AiAgent*> petReference = pet;
+			Reference<CreatureObject*> playerReference = player;
+			Reference<PetControlDevice*> thisReference = _this.getReferenceUnsafeStaticCast();
 
-			callObject(player);
+			Core::getTaskManager()->executeTask([thisReference, petReference, playerReference] () {
+				Locker locker(playerReference);
+
+				Locker crossLocker(petReference, playerReference);
+
+				Locker controlLocker(thisReference);
+
+				thisReference->callObject(playerReference);
+			}, "ControlDeviceCallLambda");
 		}
 	} else if (selectedID == 59) {
 		if (pet == NULL) {
@@ -265,13 +298,33 @@ int PetControlDeviceImplementation::handleObjectMenuSelect(CreatureObject* playe
 			return 1;
 		} else {
 			if (status == 1 && !ghost->hasActivePet(pet)) {
-				Locker crossLocker(pet, player);
+				Reference<AiAgent*> petReference = pet;
+				Reference<CreatureObject*> playerReference = player;
+				Reference<PetControlDevice*> thisReference = _this.getReferenceUnsafeStaticCast();
 
-				callObject(player);
+				Core::getTaskManager()->executeTask([thisReference, petReference, playerReference] () {
+					Locker locker(playerReference);
+
+					Locker crossLocker(petReference, playerReference);
+
+					Locker controlLocker(thisReference);
+
+					thisReference->callObject(playerReference);
+				}, "ControlDeviceCallLambda2");
 			} else {
-				Locker crossLocker(pet, player);
+				Reference<AiAgent*> petReference = pet;
+				Reference<CreatureObject*> playerReference = player;
+				Reference<PetControlDevice*> thisReference = _this.getReferenceUnsafeStaticCast();
 
-				storeObject(player);
+				Core::getTaskManager()->executeTask([thisReference, petReference, playerReference] () {
+					Locker locker(playerReference);
+
+					Locker crossLocker(petReference, playerReference);
+
+					Locker controlLocker(thisReference);
+
+					thisReference->storeObject(playerReference);
+				}, "ControlDeviceStoreLambda");
 			}
 		}
 	}
@@ -307,6 +360,9 @@ void PetControlDeviceImplementation::spawnObject(CreatureObject* player) {
 		creature->setControlDevice(_this.getReferenceUnsafeStaticCast());
 		creature->setFaction(player->getFaction());
 		creature->setObjectMenuComponent("PetMenuComponent");
+
+		if (creature->getHueValue() >= 0)
+			creature->setHue(creature->getHueValue());
 
 		if (player->getPvpStatusBitmask() & CreatureFlag::PLAYER)
 			creature->setPvpStatusBitmask(player->getPvpStatusBitmask() - CreatureFlag::PLAYER, true);
@@ -409,8 +465,8 @@ void PetControlDeviceImplementation::storeObject(CreatureObject* player, bool fo
 
 	assert(pet->isLockedByCurrentThread());
 
-	/*if (!force && (pet->isInCombat() || player->isInCombat() || player->isDead()))
-		return;*/
+	if (!force && (pet->isInCombat() || player->isInCombat() || player->isDead()))
+		return;
 
 	if (player->isRidingMount() && player->getParent() == pet) {
 
@@ -446,8 +502,8 @@ void PetControlDeviceImplementation::storeObject(CreatureObject* player, bool fo
 	}
 	else {
 		if (pet->getPendingTask("store_pet") == NULL) {
-			player->sendSystemMessage( "Storing pet in 5 seconds");
-			pet->addPendingTask("store_pet", task, 5 * 1000);
+			player->sendSystemMessage( "Storing pet in 60 seconds");
+			pet->addPendingTask("store_pet", task, 60 * 1000);
 		}
 		else {
 			Time nextExecution;
@@ -487,7 +543,7 @@ bool PetControlDeviceImplementation::growPet(CreatureObject* player, bool force,
 
 	Time currentTime;
 	uint32 timeDelta = currentTime.getTime() - lastGrowth.getTime();
-	int stagesToGrow = timeDelta / 10; // 10 Seconds
+	int stagesToGrow = timeDelta / 43200; // 12 hour
 
 	if (adult)
 		stagesToGrow = 10;

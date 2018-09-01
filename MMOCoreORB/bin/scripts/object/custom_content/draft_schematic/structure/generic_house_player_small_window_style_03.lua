@@ -1,5 +1,0 @@
-object_draft_schematic_structure_generic_house_player_small_window_style_03 = object_draft_schematic_structure_shared_generic_house_player_small_window_style_03:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_structure_generic_house_player_small_window_style_03, "object/draft_schematic/structure/generic_house_player_small_window_style_03.iff")

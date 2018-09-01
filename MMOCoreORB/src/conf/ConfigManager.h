@@ -49,6 +49,7 @@ namespace conf {
 		String revision;
 
 		String metricsHost;
+		String metricsPrefix;
 		int metricsPort;
 
 		int purgeDeletedCharacters;
@@ -63,6 +64,7 @@ namespace conf {
 		int zoneAllowedConnections;
 		int zoneGalaxyID;
 		int zoneOnlineCharactersPerAccount;
+		int zonePort;
 
 		int statusAllowedConnections;
 		unsigned int statusInterval;
@@ -75,6 +77,16 @@ namespace conf {
 
 		Vector<String> treFiles;
 		SortedVector<String> enabledZones;
+
+		String logFile;
+		int logFileLevel;
+		bool jsonLogOutput;
+		bool syncLogOutput;
+		bool luaLogJSON;
+		bool pathfinderLogJSON;
+
+		String termsOfService;
+		int tosVersion;
 
 	public:
 
@@ -126,7 +138,7 @@ namespace conf {
 		inline bool shouldUseMetrics() const {
 			return useMetrics;
 		}
-		
+
 		inline bool getPvpMode() const {
 			return pvpMode;
 		}
@@ -205,6 +217,10 @@ namespace conf {
 
 		inline const String& getMetricsHost() const {
 			return metricsHost;
+		}
+
+		inline const String& getMetricsPrefix() const {
+			return metricsPrefix;
 		}
 
 		inline int getMetricsPort() const {
@@ -287,6 +303,10 @@ namespace conf {
 			return zoneOnlineCharactersPerAccount;
 		}
 
+		inline int getZoneServerPort() const {
+			return zonePort;
+		}
+
 		const SortedVector<String>* getEnabledZones() const {
 			return &enabledZones;
 		}
@@ -299,8 +319,40 @@ namespace conf {
 			return maxNavMeshJobs;
 		}
 
+		inline const String& getLogFile() const {
+			return logFile;
+		}
+
+		inline int getLogFileLevel() const {
+			return logFileLevel;
+		}
+
 		inline void setProgressMonitors(bool val) {
 			progressMonitors = val;
+		}
+
+		inline const String& getTermsOfService() const {
+			return termsOfService;
+		}
+
+		inline int getTermsOfServiceVersion() const {
+			return tosVersion;
+		}
+
+		inline bool getJsonLogOutput() const {
+			return jsonLogOutput;
+		}
+
+		inline bool getSyncLogOutput() const {
+			return syncLogOutput;
+		}
+
+		inline bool getLuaLogJSON() const {
+			return luaLogJSON;
+		}
+
+		inline bool getPathfinderLogJSON() const {
+			return pathfinderLogJSON;
 		}
 	};
 }

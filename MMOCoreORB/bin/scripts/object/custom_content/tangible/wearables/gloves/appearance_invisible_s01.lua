@@ -1,5 +1,0 @@
-
-object_tangible_wearables_gloves_appearance_invisible_s01 = object_tangible_wearables_gloves_shared_appearance_invisible_s01:new {
-
-}
-ObjectTemplates:addTemplate(object_tangible_wearables_gloves_appearance_invisible_s01, "object/tangible/wearables/gloves/appearance_invisible_s01.iff")

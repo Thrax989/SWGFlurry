@@ -9,7 +9,7 @@ singing_mountain_clan_rancor = Creature:new {
 	baseXp = 5281,
 	baseHAM = 11000,
 	baseHAMmax = 13000,
-	armor = 0,
+	armor = 1,
 	resists = {130,160,5,200,200,200,5,5,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 620,
@@ -25,7 +25,8 @@ singing_mountain_clan_rancor = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/rancor.iff"},
+	templates = {"object/mobile/rancor_hue.iff"},
+	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.05,
 	lootGroups = {
 		{
