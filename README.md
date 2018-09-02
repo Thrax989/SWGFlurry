@@ -1,9 +1,9 @@
 ## Repository EST Dec 29, 2016 
 
 ## <img src="http://i.imgur.com/OB4Pa6a.png">
-Custom Flurry Server Build (8/13/2017-8/13/2018) https://github.com/Thrax989/SWGFlurry/tree/Publish9
+(Old) Publish-9 Server Build (8/13/2017-8/13/2018) https://github.com/Thrax989/SWGFlurry/tree/Publish9
 
-Upgraded Publish 10 14.1 Build No Custom https://github.com/Thrax989/SWGFlurry/tree/Publish-10
+(Current) Publish-10 Server Build (9/1/2018-x/xx/xxxx) https://github.com/Thrax989/SWGFlurry/tree/Publish-10
 
 ## What is SWGEmu? ##
 
