@@ -11,12 +11,6 @@ Star Wars Galaxies was a massively multi-player online role playing game introdu
 It is this game the SWGEmu project focuses to recreate at a specific milestone referred to as Pre-CU, or Pre-Combat Upgrade. The Combat Upgrade was a set of game changes which radically changed the game-play, to the dislike of thousands of players. These changes led to the founding of this project, in an attempt to "recreate" the game as it was during the Pre-CU era.
 At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emulator is meant to imitate Sony Online Entertainment's server-side software, which hosted the galaxies of Star Wars Galaxies during the Pre-CU era.
 
-## Required Server TRE Files
-www.swgflurry.com/TRE/
-
-## Required Game Client
-https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
-
 ## How to build ##
 
 ##### Dependencies #####
@@ -31,7 +25,9 @@ https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
   * engine3
   * java jre 1.7+
 
-### Debian 9+ or Ubuntu 16.04+ ###
+### Ubuntu 16.04+ ###
+  * Advanced Bare Metal Ubuntu Server Guide  https://github.com/Thrax989/SWGFlurry/blob/master/Ubuntu-Guide.md
+
   * Install dependencies
 
         sudo apt install build-essential libmysqlclient-dev liblua5.3-dev libdb5.3-dev libssl-dev cmake git default-jre libssl-dev
@@ -57,6 +53,12 @@ https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
 ### How to Run ###
     cd ~/git/Core3/MMOCoreORB/bin
     ./core3
+
+## Required Server TRE Files
+www.swgflurry.com/TRE/
+
+## Required Game Client
+https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
 
 ### License ###
     Copyright (C) 2017 SWGEmu
