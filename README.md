@@ -5,12 +5,14 @@
 
 (Current) Publish-10 Server Build (9/1/2018-x/xx/xxxx) https://github.com/Thrax989/SWGFlurry/tree/Publish-10
 
-## SWG Flurry Discord  ##
-https://discord.gg/XHmEz9F
-
-## Web Site  ##
-www.swgflurry.com
-
+## SWGFlurry Server Index  ##
+  * Server Client https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
+  * Server Wiki http://www.swgflurry.com/wiki/index.php?title=Main_Page
+  * Server Tre's www.swgflurry.com/TRE/
+  * Discord https://discord.gg/XHmEz9F
+  * Website www.swgflurry.com
+  * Forums www.swgflurry.com
+  
 ## What is SWGEmu? ##
 
 Star Wars Galaxies was a massively multi-player online role playing game introduced by Sony Online Entertainment in the year 2003 and shut down in 2011.
@@ -59,12 +61,6 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
 ### How to Run ###
     cd ~/git/Core3/MMOCoreORB/bin
     ./core3
-
-## Required Server TRE Files
-www.swgflurry.com/TRE/
-
-## Required Game Client
-https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
 
 ### License ###
     Copyright (C) 2017 SWGEmu
