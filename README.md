@@ -5,8 +5,6 @@ Custom Flurry Server Build (8/13/2017-8/13/2018) https://github.com/Thrax989/SWG
 
 Upgraded Publish 10 14.1 Build No Custom https://github.com/Thrax989/SWGFlurry/tree/Publish-10
 
-# SWGEmu Core3 #
-
 ## What is SWGEmu? ##
 
 Star Wars Galaxies was a massively multi-player online role playing game introduced by Sony Online Entertainment in the year 2003 and shut down in 2011.
