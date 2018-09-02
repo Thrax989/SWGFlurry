@@ -17,7 +17,7 @@ www.swgflurry.com/TRE/
 ## Required Game Client
 https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
 
-#### How to build ####
+## How to build ##
 
 ##### Dependencies #####
   * CMake 3.1.0 or higher
