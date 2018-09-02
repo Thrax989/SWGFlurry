@@ -7,11 +7,11 @@
 
 ## SWGFlurry Server Index  ##
   * Server Client https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
-  * Server Wiki http://www.swgflurry.com/wiki/index.php?title=Main_Page
   * Server Tre's www.swgflurry.com/TRE/
+  * Wiki http://www.swgflurry.com/wiki/
   * Discord https://discord.gg/XHmEz9F
   * Website www.swgflurry.com
-  * Forums www.swgflurry.com
+  * Forums http://www.swgflurry.com/forum/
   
 ## What is SWGEmu? ##
 
