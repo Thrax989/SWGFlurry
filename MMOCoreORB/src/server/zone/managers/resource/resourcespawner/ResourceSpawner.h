@@ -106,6 +106,8 @@ public:
 
 	ResourceSpawn* createRecycledResourceSpawn(ResourceTreeEntry* entry);
 
+	ResourceSpawn* getRecycledResourceSpawnByType(const String& resourceType);
+
 	ResourceSpawn* getRecycledVersion(ResourceSpawn* resource);
 
 	bool isRecycledResource(ResourceSpawn* resource);
