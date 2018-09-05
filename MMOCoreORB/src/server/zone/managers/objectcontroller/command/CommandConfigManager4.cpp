@@ -354,4 +354,3 @@ void CommandConfigManager::registerCommands4() {
 	commandFactory.registerCommand<RegrantSkillsCommand>(String("regrantSkills").toLowerCase());
 	commandFactory.registerCommand<RecalcForceCommand>(String("recalcForce").toLowerCase());
 }
-}
