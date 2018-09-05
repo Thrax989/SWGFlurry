@@ -581,12 +581,12 @@ void SlicingSessionImplementation::handleWeaponSlice() {
 
 	if(!selectSlice){
 		switch(System::random(1)) {
-		case 0:
-			handleSliceDamage(percentage);
-			break;
+			case 0:
+				handleSliceDamage(percentage);
+				break;
 			case 1:
-			handleSliceSpeed(percentage);
-			break;
+				handleSliceSpeed(percentage);
+				break;
 		}
 	}else{
 		switch(sliceOption) {
