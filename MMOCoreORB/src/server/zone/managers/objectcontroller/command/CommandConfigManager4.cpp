@@ -194,7 +194,6 @@
 #include "server/zone/objects/creature/commands/dragfromshadowsCommand.h"
 #include "server/zone/objects/creature/commands/regrantSkillsCommand.h"
 #include "server/zone/objects/creature/commands/recalcForceCommand.h"
-}
 
 using namespace server::zone::managers::objectcontroller::command;
 
