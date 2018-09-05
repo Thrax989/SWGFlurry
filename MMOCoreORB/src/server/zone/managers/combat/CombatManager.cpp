@@ -56,6 +56,28 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
 	if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
 		return false;
 
+   	//PlayerObject* player = attacker->getPlayerObject();
+    	if (attacker != NULL && attacker->isInvisible()) {
+            	attacker->removePendingTask("invisibleevent");
+                attacker->sendSystemMessage("You are now visible to all players and creatures.");
+                attacker->setInvisible(false);
+
+	SortedVector<QuadTreeEntry*> closeObjects(512,512);
+	CloseObjectsVector* closeVector = (CloseObjectsVector*) attacker->getCloseObjects();
+	
+	if (closeVector == NULL) {
+			attacker->getZone()->getInRangeObjects(attacker->getPositionX(), attacker->getPositionY(), 32, &closeObjects, true);
+		} else {
+			closeVector->safeCopyTo(closeObjects);
+	}
+
+	for (int i = 0; i < closeObjects.size(); i++) {
+		SceneObject* targetObject = static_cast<SceneObject*>(closeObjects.get(i));
+		
+			if (targetObject != NULL && !targetObject->isBuildingObject())
+				targetObject->notifyInsert(attacker);
+		}
+	}
 	CreatureObject *creo = defender->asCreatureObject();
 	if (creo != nullptr && creo->isIncapacitated() && creo->isFeigningDeath() == false) {
 		if (allowIncapTarget) {
@@ -585,15 +607,15 @@ void CombatManager::applyWeaponDots(CreatureObject* attacker, CreatureObject* de
 		switch (weapon->getDotType(i)) {
 		case 1: //POISON
 			type = CreatureState::POISONED;
-			//resist = defender->getSkillMod("resistance_poison");
+			resist = defender->getSkillMod("resistance_poison");
 			break;
 		case 2: //DISEASE
 			type = CreatureState::DISEASED;
-			//resist = defender->getSkillMod("resistance_disease");
+			resist = defender->getSkillMod("resistance_disease");
 			break;
 		case 3: //FIRE
 			type = CreatureState::ONFIRE;
-			//resist = defender->getSkillMod("resistance_fire");
+			resist = defender->getSkillMod("resistance_fire");
 			break;
 		case 4: //BLEED
 			type = CreatureState::BLEEDING;
@@ -1138,6 +1160,17 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		return damage;
 	}
+	
+ 	if (!data.isForceAttack()){
+		// BH SHIELD
+	float rawDamage = damage;
+	int abilityArmor = defender->getSkillMod("ability_armor");
+	if (abilityArmor > 0) {
+		float dmgAbsorbed = rawDamage - (damage *= 1.f - (abilityArmor / 100.f));
+		defender->notifyObservers(ObserverEventType::FORCEBUFFHIT, attacker, dmgAbsorbed);
+		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, ABILITYARMOR);
+		}
+	}
 
 	if (!data.isForceAttack()) {
 		// Force Armor
@@ -1232,7 +1265,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		// inflict condition damage
 		Locker alocker(armor);
 
-		armor->inflictDamage(armor, 0, damage * 0.1, true, true);
+		armor->inflictDamage(armor, 0, damage * 0.01, true, true);
 	}
 
 	return damage;
