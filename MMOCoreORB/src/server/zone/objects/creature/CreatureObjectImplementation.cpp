@@ -124,6 +124,9 @@ void CreatureObjectImplementation::initializeMembers() {
 
 	pvpStatusBitmask = 0;
 
+	selectedExpMode = 0;
+	personalExpMultiplier = 2.5;
+
 	posture = 0;
 	factionRank = 0;
 	faction = 0;
@@ -854,12 +857,19 @@ bool CreatureObjectImplementation::setState(uint64 state, bool notifyClient) {
 				break;
 			}
 			case CreatureState::POISONED:
+				playEffect("clienteffect/dot_poisoned.cef");
+				playEffect("clienteffect/mus_cym_disease.cef");
 				break;
 			case CreatureState::DISEASED:
+				playEffect("clienteffect/dot_diseased.cef");
+				playEffect("clienteffect/mus_cym_poison.cef.cef");
 				break;
 			case CreatureState::ONFIRE:
+				playEffect("clienteffect/dot_fire.cef");
+				playEffect("clienteffect/lava_player_burning.cef");
 				break;
 			case CreatureState::BLEEDING:
+				playEffect("clienteffect/dot_bleeding.cef");
 				break;
 			case CreatureState::INTIMIDATED:
 				playEffect("clienteffect/combat_special_defender_intimidate.cef");
@@ -2031,6 +2041,9 @@ void CreatureObjectImplementation::notifyLoadFromDatabase() {
 	listenToID = 0;
 	watchToID = 0;
 
+	selectedExpMode = getSelectedExpMode();
+	personalExpMultiplier = getPersonalExpMultiplier();
+
 	if (isIncapacitated()) {
 
 		int health = getHAM(CreatureAttribute::HEALTH);
@@ -2680,6 +2693,8 @@ void CreatureObjectImplementation::activateHAMRegeneration(int latency) {
 		modifier *= 1.25f;
 	else if (isSitting())
 		modifier *= 1.75f;
+	else if (isSitting() && !isInCombat()) //No bonus for sitting in combat, but large bonus when resting out of combat
+		modifier *= (10);
 
 	// this formula gives the amount of regen per second
 	uint32 healthTick = (uint32) ceil((float) Math::max(0, getHAM(
