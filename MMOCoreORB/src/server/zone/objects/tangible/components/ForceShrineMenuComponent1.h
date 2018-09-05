@@ -1,12 +1,12 @@
 /*
- * HolocronMenuComponent.h
+ * ForceShrineMenuComponent1.h
  *
- *  Created on: 07/29/2017
+ *  Created on: 10/16/2017
  *      Author: Toxic
  */
 
-#ifndef HOLOCRONMENUCOMPONENT_H_
-#define HOLOCRONMENUCOMPONENT_H_
+#ifndef FORCESHRINEMENUCOMPONENT1_H_
+#define FORCESHRINEMENUCOMPONENT1_H_
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -46,7 +46,7 @@ namespace player {
 
 using namespace server::zone::objects::player;
 
-class HolocronMenuComponent : public TangibleObjectMenuComponent {
+class ForceShrineMenuComponent1 : public TangibleObjectMenuComponent {
 
 public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
@@ -55,4 +55,4 @@ public:
 };
 
 
-#endif /* HOLOCRONMENUCOMPONENT_H_ */
+#endif /* FORCESHRINEMENUCOMPONENT1_H_ */
