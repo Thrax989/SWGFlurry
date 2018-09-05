@@ -180,7 +180,21 @@
 #include "server/zone/objects/creature/commands/InspacereloadCommand.h"
 #include "server/zone/objects/creature/commands/InspacerrCommand.h"
 #include "server/zone/objects/creature/commands/RequestSpaceTrainerCommand.h"
-
+#include "server/zone/objects/creature/commands/InviteCommand.h"
+#include "server/zone/objects/creature/commands/setPvp.h"
+#include "server/zone/objects/creature/commands/pistolwhip1Command.h"
+#include "server/zone/objects/creature/commands/pistolwhip2Command.h"
+#include "server/zone/objects/creature/commands/poisongascloud1Command.h"
+#include "server/zone/objects/creature/commands/poisongascloud2Command.h"
+#include "server/zone/objects/creature/commands/undergroundexplosion1Command.h"
+#include "server/zone/objects/creature/commands/undergroundexplosion2Command.h"
+#include "server/zone/objects/creature/commands/extractionCommand.h"
+#include "server/zone/objects/creature/commands/bactajabCommand.h"
+#include "server/zone/objects/creature/commands/strangulatioCommandn.h"
+#include "server/zone/objects/creature/commands/dragfromshadowsCommand.h"
+#include "server/zone/objects/creature/commands/regrantSkillsCommand.h"
+#include "server/zone/objects/creature/commands/recalcForceCommand.h"
+}
 
 using namespace server::zone::managers::objectcontroller::command;
 
@@ -325,4 +339,20 @@ void CommandConfigManager::registerCommands4() {
 	commandFactory.registerCommand<InspacereloadCommand>(String("inspacereload").toLowerCase());
 	commandFactory.registerCommand<InspacerrCommand>(String("inspacerr").toLowerCase());
 	commandFactory.registerCommand<RequestSpaceTrainerCommand>(String("requestSpaceTrainer").toLowerCase());
+
+ 	commandFactory.registerCommand<InvisibleCommand>(String("invisible").toLowerCase());
+  	commandFactory.registerCommand<setPvpCommand>(String("setPvp").toLowerCase());
+ 	commandFactory.registerCommand<PistolWhip1Command>(String("pistolwhip1").toLowerCase());
+ 	commandFactory.registerCommand<PistolWhip2Command>(String("pistolwhip2").toLowerCase());
+ 	commandFactory.registerCommand<PoisonGasCloud1Command>(String("poisongascloud1").toLowerCase());
+ 	commandFactory.registerCommand<PoisonGasCloud2Command>(String("poisongascloud2").toLowerCase());
+	commandFactory.registerCommand<UndergroundExplosion1Command>(String("undergroundexplosion1").toLowerCase());
+	commandFactory.registerCommand<UndergroundExplosion2Command>(String("undergroundexplosion2").toLowerCase());
+ 	commandFactory.registerCommand<ExtractionCommand>(String("extraction").toLowerCase());
+ 	commandFactory.registerCommand<BactaJabCommand>(String("bactajab").toLowerCase());
+ 	commandFactory.registerCommand<StrangulationCommand>(String("strangulation").toLowerCase());
+ 	commandFactory.registerCommand<DragFromShadowsCommand>(String("dragfromshadows").toLowerCase());
+	commandFactory.registerCommand<RegrantSkillsCommand>(String("regrantSkills").toLowerCase());
+	commandFactory.registerCommand<RecalcForceCommand>(String("recalcForce").toLowerCase());
+}
 }
