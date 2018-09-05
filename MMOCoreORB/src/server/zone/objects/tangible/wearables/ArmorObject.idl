@@ -12,7 +12,6 @@ include engine.log.Logger;
 import server.zone.objects.scene.SceneObject;
 import server.zone.packets.scene.AttributeListMessage;
 
-
 class ArmorObject extends WearableObject {
 	protected int healthEncumbrance;
 	protected int actionEncumbrance;
@@ -273,4 +272,6 @@ class ArmorObject extends WearableObject {
 	public void setHitLocation(unsigned byte h) {
 		hitLocation = h;
 	}
+	@dirty
+	public native float getResist(int type);
 }
