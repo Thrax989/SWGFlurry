@@ -1,0 +1,5 @@
+object_draft_schematic_genetic_engineering_centrifuge_burst_piston = object_draft_schematic_genetic_engineering_shared_centrifuge_burst_piston:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_centrifuge_burst_piston, "object/draft_schematic/genetic_engineering/centrifuge_burst_piston.iff")

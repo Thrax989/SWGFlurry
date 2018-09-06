@@ -1,0 +1,3 @@
+object_tangible_buildout_event_empire_day_emperor_statue = object_tangible_buildout_event_shared_empire_day_emperor_statue:new {
+}
+ObjectTemplates:addTemplate(object_tangible_buildout_event_empire_day_emperor_statue, "object/tangible/buildout/event/empire_day_emperor_statue.iff")

@@ -1,0 +1,5 @@
+object_draft_schematic_structure_generic_house_player_medium_windowed_s02 = object_draft_schematic_structure_shared_generic_house_player_medium_windowed_s02:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_structure_generic_house_player_medium_windowed_s02, "object/draft_schematic/structure/generic_house_player_medium_windowed_s02.iff")

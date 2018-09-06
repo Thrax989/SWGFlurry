@@ -1,0 +1,3 @@
+object_tangible_destructible_gcw_kit_turret = object_tangible_destructible_shared_gcw_kit_turret:new {
+}
+ObjectTemplates:addTemplate(object_tangible_destructible_gcw_kit_turret, "object/tangible/destructible/gcw_kit_turret.iff")

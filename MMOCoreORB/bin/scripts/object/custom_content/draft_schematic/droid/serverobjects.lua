@@ -1,0 +1,22 @@
+--Children folder includes
+includeFile("custom_content/draft_schematic/droid/component/serverobjects.lua")
+
+-- Server Objects
+includeFile("custom_content/draft_schematic/droid/cyborg_crafting_headband.lua")
+includeFile("custom_content/draft_schematic/droid/cyborg_crafting_interface.lua")
+includeFile("custom_content/draft_schematic/droid/droid_8d8.lua")
+includeFile("custom_content/draft_schematic/droid/droid_asn_121.lua")
+includeFile("custom_content/draft_schematic/droid/droid_battle_droid.lua")
+includeFile("custom_content/draft_schematic/droid/droid_cww8_droid.lua")
+includeFile("custom_content/draft_schematic/droid/droid_droideka.lua")
+includeFile("custom_content/draft_schematic/droid/droid_dwarf_spider_droid.lua")
+includeFile("custom_content/draft_schematic/droid/droid_guardian_mark_ii_droid.lua")
+includeFile("custom_content/draft_schematic/droid/droid_ins_444.lua")
+includeFile("custom_content/draft_schematic/droid/droid_lin_demolition_droid.lua")
+includeFile("custom_content/draft_schematic/droid/droid_magnaguard.lua")
+includeFile("custom_content/draft_schematic/droid/droid_mark_iv_sentry_droid.lua")
+includeFile("custom_content/draft_schematic/droid/droid_mining_mk3.lua")
+includeFile("custom_content/draft_schematic/droid/droid_pit_droid.lua")
+includeFile("custom_content/draft_schematic/droid/droid_super_battle_droid.lua")
+includeFile("custom_content/draft_schematic/droid/droid_texture_kit.lua")
+includeFile("custom_content/draft_schematic/droid/droid_union_sentry_droid.lua")

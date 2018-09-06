@@ -1,0 +1,5 @@
+object_draft_schematic_clothing_clothing_backpack_krayt_skull = object_draft_schematic_clothing_shared_clothing_backpack_krayt_skull:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_backpack_krayt_skull, "object/draft_schematic/clothing/clothing_backpack_krayt_skull.iff")

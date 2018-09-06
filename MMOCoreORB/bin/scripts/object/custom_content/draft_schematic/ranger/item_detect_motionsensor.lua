@@ -1,0 +1,5 @@
+object_draft_schematic_ranger_item_detect_motionsensor = object_draft_schematic_ranger_shared_item_detect_motionsensor:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_ranger_item_detect_motionsensor, "object/draft_schematic/ranger/item_detect_motionsensor.iff")

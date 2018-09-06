@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_travel_instant_snowspeeder = object_tangible_terminal_shared_terminal_travel_instant_snowspeeder:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_travel_instant_snowspeeder, "object/tangible/terminal/terminal_travel_instant_snowspeeder.iff")

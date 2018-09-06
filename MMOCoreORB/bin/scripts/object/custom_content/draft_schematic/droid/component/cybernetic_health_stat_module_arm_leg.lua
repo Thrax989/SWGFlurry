@@ -1,0 +1,5 @@
+object_draft_schematic_droid_component_cybernetic_health_stat_module_arm_leg = object_draft_schematic_droid_component_shared_cybernetic_health_stat_module_arm_leg:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_droid_component_cybernetic_health_stat_module_arm_leg, "object/draft_schematic/droid/component/cybernetic_health_stat_module_arm_leg.iff")

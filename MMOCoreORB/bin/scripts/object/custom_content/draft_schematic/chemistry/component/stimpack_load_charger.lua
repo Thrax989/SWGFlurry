@@ -1,0 +1,5 @@
+object_draft_schematic_chemistry_component_stimpack_load_charger = object_draft_schematic_chemistry_component_shared_stimpack_load_charger:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_chemistry_component_stimpack_load_charger, "object/draft_schematic/chemistry/component/stimpack_load_charger.iff")

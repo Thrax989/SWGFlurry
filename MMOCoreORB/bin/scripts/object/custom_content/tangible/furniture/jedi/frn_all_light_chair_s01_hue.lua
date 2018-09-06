@@ -1,0 +1,5 @@
+object_tangible_furniture_jedi_frn_all_light_chair_s01_hue = object_tangible_furniture_jedi_shared_frn_all_light_chair_s01_hue:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_furniture_jedi_frn_all_light_chair_s01_hue, "object/tangible/furniture/jedi/frn_all_light_chair_s01_hue.iff")
