@@ -180,7 +180,7 @@
 #include "server/zone/objects/creature/commands/InspacereloadCommand.h"
 #include "server/zone/objects/creature/commands/InspacerrCommand.h"
 #include "server/zone/objects/creature/commands/RequestSpaceTrainerCommand.h"
-#include "server/zone/objects/creature/commands/InviteCommand.h"
+#include "server/zone/objects/creature/commands/InvisibleCommand.h"
 #include "server/zone/objects/creature/commands/setPvp.h"
 #include "server/zone/objects/creature/commands/PistolWhip1Command.h"
 #include "server/zone/objects/creature/commands/PistolWhip2Command.h"
