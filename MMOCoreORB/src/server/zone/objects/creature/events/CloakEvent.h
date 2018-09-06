@@ -9,7 +9,8 @@
 
 #include "server/zone/Zone.h"
 #include "server/zone/managers/objectcontroller/ObjectController.h"
-#include "server/zone/objects/creature/CreatureAttribute.h"
+//#include "server/zone/objects/creature/CreatureAttribute.h"
+#include "templates/params/creature/CreatureAttribute.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/creature/events/CloakEventObserver.h"
 #include "server/zone/objects/player/PlayerObject.h"
