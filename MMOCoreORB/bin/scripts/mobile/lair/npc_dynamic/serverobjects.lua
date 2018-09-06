@@ -187,3 +187,5 @@ includeFile("lair/npc_dynamic/tatooine_jawa_warband_neutral_none.lua")
 includeFile("lair/npc_dynamic/tatooine_tusken_raider_patrol_neutral_none.lua")
 includeFile("lair/npc_dynamic/tatooine_tusken_raider_warband_neutral_none.lua")
 includeFile("lair/npc_dynamic/tatooine_wandering_kitonak_neutral_none.lua")
+--CUSTOM
+includeFile("lair/npc_dynamic/taanab_norulac_raider_band.lua")
