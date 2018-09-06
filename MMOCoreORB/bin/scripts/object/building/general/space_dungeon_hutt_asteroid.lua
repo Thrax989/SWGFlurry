@@ -43,6 +43,15 @@
 
 object_building_general_space_dungeon_hutt_asteroid = object_building_general_shared_space_dungeon_hutt_asteroid:new {
 
-}
 
+	customName = "Unknown",
+	spawningPoints = {
+            { x = 110, z = 0.0, y = 21.6, ow = 0, ox = 0, oz = 0, oy = 0, cellid = 1 },
+		},
+	templateType = CLONINGBUILDING,
+	planetMapCategory = "cloningfacility",
+	facilityType = CLONER_STANDARD,
+
+
+}
 ObjectTemplates:addTemplate(object_building_general_space_dungeon_hutt_asteroid, "object/building/general/space_dungeon_hutt_asteroid.iff")

@@ -51,7 +51,7 @@ object_draft_schematic_instrument_instrument_fanfar = object_draft_schematic_ins
    complexity = 14, 
    size = 1, 
 
-   xpType = "music", 
+   xpType = "dance", 
    xp = 110, 
 
    assemblySkill = "instrument_assembly", 

@@ -511,4 +511,13 @@ object_static_destructible_shared_gungan_sacred_head = SharedInstallationObjectT
 ]]
 }
 
+
 ObjectTemplates:addClientTemplate(object_static_destructible_shared_gungan_sacred_head, "object/static/destructible/shared_gungan_sacred_head.iff")
+
+
+--Custom
+object_static_destructible_shared_custom_exar_kun_crystal = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/static/destructible/shared_custom_exar_kun_crystal.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_static_destructible_shared_custom_exar_kun_crystal, "object/static/destructible/shared_custom_exar_kun_crystal.iff")

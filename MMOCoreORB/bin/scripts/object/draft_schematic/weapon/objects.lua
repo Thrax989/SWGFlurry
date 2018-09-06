@@ -4107,3 +4107,47 @@ object_draft_schematic_weapon_shared_turbo_laser = SharedDraftSchematicObjectTem
 }
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_shared_turbo_laser, "object/draft_schematic/weapon/shared_turbo_laser.iff")
+--********************************************************************************************************************************************
+
+object_draft_schematic_weapon_shared_blasterfist = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/weapon/shared_blasterfist.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_weapon_shared_blasterfist, "object/draft_schematic/weapon/shared_blasterfist.iff")
+--********************************************************************************************************************************************
+
+object_draft_schematic_weapon_shared_carbine_underslung_blast = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/weapon/shared_carbine_underslung_blast.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_weapon_shared_carbine_underslung_blast, "object/draft_schematic/weapon/shared_carbine_underslung_blast.iff")
+--********************************************************************************************************************************************
+
+object_draft_schematic_weapon_shared_lance_blast = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/weapon/shared_lance_blast.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_weapon_shared_lance_blast, "object/draft_schematic/weapon/shared_lance_blast.iff")
+--********************************************************************************************************************************************
+
+object_draft_schematic_weapon_shared_lance_stun = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/weapon/shared_lance_stun.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_weapon_shared_lance_stun, "object/draft_schematic/weapon/shared_lance_stun.iff")
+--********************************************************************************************************************************************
+
+object_draft_schematic_weapon_shared_sword_blast = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/weapon/shared_sword_blast.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_weapon_shared_sword_blast, "object/draft_schematic/weapon/shared_sword_blast.iff")
+--********************************************************************************************************************************************
+
+object_draft_schematic_weapon_shared_2h_sword_battleaxe_stun = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/weapon/shared_2h_sword_battleaxe_stun.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_weapon_shared_2h_sword_battleaxe_stun, "object/draft_schematic/weapon/shared_2h_sword_battleaxe_stun.iff")
+--********************************************************************************************************************************************
+
