@@ -146,7 +146,7 @@ ZonesEnabled = {
 
 
 -- directory of tres with live.cfg
-TrePath = "/home/swgemu/Desktop/SWGEmu"
+TrePath = "/root/workspace/tre/"
 
 TreFiles = {
         "flurrynov.tre",
