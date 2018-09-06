@@ -42,6 +42,7 @@
 
 
 object_tangible_loot_misc_worklight = object_tangible_loot_misc_shared_worklight:new {
+	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

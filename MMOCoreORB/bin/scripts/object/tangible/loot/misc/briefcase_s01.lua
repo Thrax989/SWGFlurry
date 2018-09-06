@@ -42,6 +42,8 @@
 
 
 object_tangible_loot_misc_briefcase_s01 = object_tangible_loot_misc_shared_briefcase_s01:new {
+	gameObjectType = 8245,
+	sliceable = 1,
 
 }
 

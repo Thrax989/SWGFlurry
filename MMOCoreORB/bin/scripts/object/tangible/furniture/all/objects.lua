@@ -7061,3 +7061,25 @@ object_tangible_furniture_all_shared_frn_bench_generic = SharedTangibleObjectTem
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_bench_generic, "object/tangible/furniture/all/shared_frn_bench_generic.iff")
+
+object_tangible_furniture_all_shared_frn_all_rebel_banner = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/furniture/all/shared_frn_all_rebel_banner.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_furniture_all_shared_frn_all_rebel_banner, "object/tangible/furniture/all/shared_frn_all_rebel_banner.iff")
+--***************************************************************************************************************************************************************
+
+object_tangible_furniture_all_shared_frn_all_imp_banner = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/furniture/all/shared_frn_all_imp_banner.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_furniture_all_shared_frn_all_imp_banner, "object/tangible/furniture/all/shared_frn_all_imp_banner.iff")
+--***************************************************************************************************************************************************************
+
+object_tangible_furniture_all_shared_frn_all_banner_imperial = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/furniture/all/shared_frn_all_banner_imperial.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_furniture_all_shared_frn_all_banner_imperial, "object/tangible/furniture/all/shared_frn_all_banner_imperial.iff")
+--***************************************************************************************************************************************************************
+
