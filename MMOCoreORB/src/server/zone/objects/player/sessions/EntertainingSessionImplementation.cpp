@@ -103,7 +103,7 @@ void EntertainingSessionImplementation::doEntertainerPatronEffects() {
 			try {
 				//**VERIFY THE PATRON IS NOT ON THE DENY SERVICE LIST
 
-				if (creo->isInRange(patron, 10.0f)) {
+				if (creo->isInRange(patron, 20.0f)) {
 					healWounds(patron, woundHeal*(flourishCount+1), shockHeal*(flourishCount+1));
 					increaseEntertainerBuff(patron);
 
@@ -175,10 +175,22 @@ void EntertainingSessionImplementation::healWounds(CreatureObject* creature, flo
 	}
 	if(woundHeal > 0 && (creature->getWounds(CreatureAttribute::MIND) > 0
 			|| creature->getWounds(CreatureAttribute::FOCUS) > 0
-			|| creature->getWounds(CreatureAttribute::WILLPOWER) > 0)) {
+			|| creature->getWounds(CreatureAttribute::WILLPOWER) > 0
+			|| creature->getWounds(CreatureAttribute::HEALTH) > 0
+			|| creature->getWounds(CreatureAttribute::STRENGTH) > 0
+			|| creature->getWounds(CreatureAttribute::CONSTITUTION) > 0
+			|| creature->getWounds(CreatureAttribute::ACTION) > 0
+			|| creature->getWounds(CreatureAttribute::STAMINA) > 0
+			|| creature->getWounds(CreatureAttribute::QUICKNESS) > 0)) {
 		creature->healWound(entertainer, CreatureAttribute::MIND, woundHeal, true, false);
 		creature->healWound(entertainer, CreatureAttribute::FOCUS, woundHeal, true, false);
 		creature->healWound(entertainer, CreatureAttribute::WILLPOWER, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::HEALTH, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::STRENGTH, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::CONSTITUTION, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::ACTION, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::STAMINA, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::QUICKNESS, woundHeal, true, false);
 
 		amountHealed += woundHeal;
 	}
@@ -282,7 +294,7 @@ void EntertainingSessionImplementation::doPerformanceAction() {
 	}
 
 	int actionDrain = performance->getActionPointsPerLoop() - (int)(entertainer->getHAM(CreatureAttribute::QUICKNESS)/35.f);
-
+	actionDrain = (int)round(actionDrain / 3);
 	if (entertainer->getHAM(CreatureAttribute::ACTION) <= actionDrain) {
 		if (isDancing()) {
 			stopDancing();
@@ -592,8 +604,8 @@ void EntertainingSessionImplementation::doFlourish(int flourishNumber, bool gran
 	float baseActionDrain = performance->getActionPointsPerLoop() - (int)(entertainer->getHAM(CreatureAttribute::QUICKNESS)/35.f);
 
 	//float baseActionDrain = -40 + (getQuickness() / 37.5);
-	float flourishActionDrain = baseActionDrain / 2.0;
-
+	//float flourishActionDrain = baseActionDrain / 2.0;
+	float flourishActionDrain = baseActionDrain / 5.0;
 	int actionDrain = (int)round((flourishActionDrain * 10 + 0.5) / 10.0); // Round to nearest dec for actual int cost
 
 	if (entertainer->getHAM(CreatureAttribute::ACTION) <= actionDrain) {
@@ -633,7 +645,7 @@ void EntertainingSessionImplementation::addEntertainerBuffDuration(CreatureObjec
 	buffDuration += duration;
 
 	if (buffDuration > (120.0f + (10.0f / 60.0f)) ) // 2 hrs 10 seconds
-		buffDuration = (120.0f + (10.0f / 60.0f)); // 2hrs 10 seconds
+		buffDuration = (210.0f); // 3 hours, 30 minutes
 
 	setEntertainerBuffDuration(creature, performanceType, buffDuration);
 }
@@ -656,6 +668,10 @@ void EntertainingSessionImplementation::addEntertainerBuffStrength(CreatureObjec
 
 	if(maxBuffStrength > 125.0f)
 		maxBuffStrength = 125.0f;	//cap at 125% power
+	
+	float citySpecStrength = entertainer->getSkillMod("private_spec_buff_mind");	
+	
+	maxBuffStrength += citySpecStrength;
 
 	float factionPerkStrength = entertainer->getSkillMod("private_faction_buff_mind");
 

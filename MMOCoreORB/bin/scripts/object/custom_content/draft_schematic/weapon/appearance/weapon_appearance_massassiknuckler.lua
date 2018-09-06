@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_appearance_weapon_appearance_massassiknuckler = object_draft_schematic_weapon_appearance_shared_weapon_appearance_massassiknuckler:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_appearance_weapon_appearance_massassiknuckler, "object/draft_schematic/weapon/appearance/weapon_appearance_massassiknuckler.iff")

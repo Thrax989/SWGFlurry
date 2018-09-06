@@ -1,0 +1,1 @@
+rebel_battle_helmet = {	description = "",	minimumLevel = 0,	maximumLevel = 0,	lootItems = {		{itemTemplate = "armor_rebel_battle_helmet", weight = 10000000}	}}addLootGroupTemplate("rebel_battle_helmet", rebel_battle_helmet)

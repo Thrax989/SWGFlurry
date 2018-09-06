@@ -392,7 +392,7 @@ bool ForageManagerImplementation::forageGiveResource(CreatureObject* player, flo
 		}
 	}
 
-	int quantity = System::random(30) + 10;
+	int quantity = System::random(30) + 300;
 	resourceManager->harvestResourceToPlayer(player, resource, quantity);
 	return true;
 }

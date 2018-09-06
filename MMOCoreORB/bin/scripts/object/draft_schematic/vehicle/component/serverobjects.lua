@@ -98,3 +98,11 @@ includeFile("draft_schematic/vehicle/component/vehicle_module_advanced.lua")
 includeFile("draft_schematic/vehicle/component/warhead_launcher.lua")
 includeFile("draft_schematic/vehicle/component/weapon_array.lua")
 includeFile("draft_schematic/vehicle/component/weapon_link.lua")
+--custom
+includeFile("draft_schematic/vehicle/component/custom_veh_autopilot_control_module_schem.lua")
+includeFile("draft_schematic/vehicle/component/custom_veh_body_panel_schem.lua")
+includeFile("draft_schematic/vehicle/component/custom_veh_engine_casing_schem.lua")
+includeFile("draft_schematic/vehicle/component/custom_veh_gravity_pump_schem.lua")
+includeFile("draft_schematic/vehicle/component/custom_veh_power_converter_schem.lua")
+includeFile("draft_schematic/vehicle/component/custom_veh_turbine_control_module_schem.lua")
+

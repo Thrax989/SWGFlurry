@@ -1,0 +1,35 @@
+ghom_tusken_chief = Creature:new {
+	objectName = "@mob/creature_names:tusken_chief",
+	socialGroup = "tusken_raider",
+	faction = "tusken_raider",
+	level = 43,
+	chanceHit = 0.46,
+	damageMin = 365,
+	damageMax = 440,
+	baseXp = 4279,
+	baseHAM = 9600,
+	baseHAMmax = 11800,
+	armor = 0,
+	resists = {45,30,30,60,-1,40,-1,-1,-1},
+	meatType = "",
+	meatAmount = 0,
+	hideType = "",
+	hideAmount = 0,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 0,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + STALKER,
+	optionsBitmask = AIENABLED,
+	diet = HERBIVORE,
+
+	templates = {"object/mobile/tusken_raider.iff"},
+	lootGroups = {},
+	weapons = {"tusken_weapons"},
+	conversationTemplate = "",
+	attacks = merge(marksmanmaster,brawlermaster,fencermaster,riflemanmaster)
+}
+
+CreatureTemplates:addCreatureTemplate(ghom_tusken_chief, "ghom_tusken_chief")

@@ -40,6 +40,20 @@
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
 
+object_tangible_furniture_base_shared_flag_city_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/base/shared_flag_city_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_base_shared_flag_city_base, "object/tangible/furniture/base/shared_flag_city_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_furniture_base_shared_flag_home_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/base/shared_flag_home_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_base_shared_flag_home_base, "object/tangible/furniture/base/shared_flag_home_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 
 object_tangible_furniture_base_shared_furniture_base = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/furniture/base/shared_furniture_base.iff"

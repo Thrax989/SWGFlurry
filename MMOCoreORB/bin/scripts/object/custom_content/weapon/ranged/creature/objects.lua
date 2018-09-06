@@ -1,0 +1,4 @@
+object_weapon_ranged_creature_shared_creature_spit_hoth_tauntaun = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/creature/shared_creature_spit_hoth_tauntaun.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_creature_shared_creature_spit_hoth_tauntaun, "object/weapon/ranged/creature/shared_creature_spit_hoth_tauntaun.iff")

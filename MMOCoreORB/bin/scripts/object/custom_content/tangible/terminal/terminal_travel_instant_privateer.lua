@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_travel_instant_privateer = object_tangible_terminal_shared_terminal_travel_instant_privateer:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_travel_instant_privateer, "object/tangible/terminal/terminal_travel_instant_privateer.iff")

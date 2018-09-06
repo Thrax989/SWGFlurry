@@ -293,3 +293,29 @@ includeFile("conversations/junk_dealer/junk_dealer_quich_conv.lua")
 includeFile("conversations/junk_dealer/junk_dealer_reggi_conv.lua")
 includeFile("conversations/junk_dealer/junk_dealer_sheani_conv.lua")
 includeFile("conversations/junk_dealer/junk_dealer_sneg_conv.lua")
+
+
+-- World Boss Exchange System
+--includeFile("conversations/events/world_exchange.lua")
+--includeFile("conversations/events/imperial_exchange.lua")
+--includeFile("conversations/events/rebel_exchange.lua")
+--includeFile("conversations/events/holo_exchange.lua")
+includeFile("conversations/events/painting_exchange.lua")
+
+--Custom Vendor
+includeFile("conversations/events/imperial_armor_vendor.lua")
+includeFile("conversations/events/rebel_armor_vendor.lua")
+includeFile("conversations/events/event_exchange_dealer.lua")
+includeFile("custom_content/conversations.lua")
+
+--custom waypoint npc's
+includeFile("conversations/events/corellia_poi_waypoints.lua")
+includeFile("conversations/events/dantooine_poi_waypoints.lua")
+includeFile("conversations/events/dathomir_poi_waypoints.lua")
+includeFile("conversations/events/endor_poi_waypoints.lua")
+includeFile("conversations/events/lok_poi_waypoints.lua")
+includeFile("conversations/events/naboo_poi_waypoints.lua")
+includeFile("conversations/events/rori_poi_waypoints.lua")
+includeFile("conversations/events/talus_poi_waypoints.lua")
+includeFile("conversations/events/tatooine_poi_waypoints.lua")
+includeFile("conversations/events/yavin4_poi_waypoints.lua")

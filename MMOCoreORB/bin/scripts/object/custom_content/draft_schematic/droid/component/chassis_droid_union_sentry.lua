@@ -1,0 +1,5 @@
+object_draft_schematic_droid_component_chassis_droid_union_sentry = object_draft_schematic_droid_component_shared_chassis_droid_union_sentry:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_droid_component_chassis_droid_union_sentry, "object/draft_schematic/droid/component/chassis_droid_union_sentry.iff")

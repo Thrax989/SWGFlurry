@@ -1,0 +1,5 @@
+object_draft_schematic_munition_beast_steroid_gorilla_griffon = object_draft_schematic_munition_shared_beast_steroid_gorilla_griffon:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_munition_beast_steroid_gorilla_griffon, "object/draft_schematic/munition/beast_steroid_gorilla_griffon.iff")

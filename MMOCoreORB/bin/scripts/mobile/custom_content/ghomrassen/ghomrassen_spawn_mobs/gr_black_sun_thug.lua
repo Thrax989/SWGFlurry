@@ -1,0 +1,35 @@
+gr_black_sun_thug = Creature:new {
+	customName = "Blacksun Thug",
+	socialGroup = "death_watch",
+	faction = "",
+	level = 86,
+	chanceHit = 1.85,
+	damageMin = 570,
+	damageMax = 850,
+	baseXp = 8130,
+	baseHAM = 13000,
+	baseHAMmax = 16000,
+	armor = 1,
+	resists = {30,30,30,35,35,30,35,30,35},
+	meatType = "",
+	meatAmount = 0,
+	hideType = "",
+	hideAmount = 0,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 0,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + STALKER + KILLER,
+	optionsBitmask = AIENABLED,
+	diet = HERBIVORE,
+
+	templates = {"object/mobile/dressed_black_sun_thug.iff"},
+		lootGroups = {},
+	weapons = {"pirate_weapons_heavy"},
+	conversationTemplate = "",
+	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)
+}
+
+CreatureTemplates:addCreatureTemplate(gr_black_sun_thug, "gr_black_sun_thug")

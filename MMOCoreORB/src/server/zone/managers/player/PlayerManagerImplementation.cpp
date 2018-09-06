@@ -103,6 +103,10 @@
 #include "server/zone/objects/player/badges/Badge.h"
 #include "server/zone/objects/building/TutorialBuildingObject.h"
 #include "server/zone/managers/frs/FrsManager.h"
+/*  Custom Player BH system By :TOXIC*/
+#include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
+#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 
 PlayerManagerImplementation::PlayerManagerImplementation(ZoneServer* zoneServer, ZoneProcessServer* impl) :
 										Logger("PlayerManager") {
@@ -815,17 +819,35 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	player->updateTimeOfDeath();
 	player->clearBuffs(true, false);
+	
+	player->setFactionStatus(FactionStatus::ONLEAVE);
+	player->playEffect("clienteffect/holoemote_haunted.cef", "head");
+	PlayMusicMessage* pmm = new PlayMusicMessage("sound/mus_npe2_station_victory.snd");
+ 	player->sendMessage(pmm);
 
 	PlayerObject* ghost = player->getPlayerObject();
 
 	if (ghost != NULL) {
 		ghost->resetIncapacitationTimes();
+		ghost->setFoodFilling(0);
+		ghost->setDrinkFilling(0);
 		if (ghost->hasPvpTef()) {
 			ghost->schedulePvpTefRemovalTask(true, true);
 		}
 	}
 
 	ThreatMap* threatMap = player->getThreatMap();
+
+	//CUSTOM BH SYSTEM By:TOXIC
+	if (attacker->isPlayerCreature() && attacker != player) {
+		ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
+		input->setPromptTitle("Player Bounty Request");
+		input->setPromptText("Place a bounty on your killer. Bountys must be between 25,000 and 250,000 credits.");
+		input->setUsingObject(attacker);
+		input->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
+		player->getPlayerObject()->addSuiBox(input);
+		player->sendMessage(input->generateMessage());
+		}
 
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
@@ -1117,6 +1139,10 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::MIND, 100, true, false);
 		player->addShockWounds(100, true);
 	}
+	
+	if (player->hasSkill("force_rank_dark_novice") || player->hasSkill("force_rank_light_novice")) {
+		player->setFactionStatus(2);
+	}
 
 	if (player->getFactionStatus() != FactionStatus::ONLEAVE && cbot->getFacilityType() != CloningBuildingObjectTemplate::FACTION_IMPERIAL && cbot->getFacilityType() != CloningBuildingObjectTemplate::FACTION_REBEL && !player->hasSkill("force_title_jedi_rank_03"))
 		player->setFactionStatus(FactionStatus::ONLEAVE);
@@ -1172,9 +1198,8 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 
 	player->notifyObservers(ObserverEventType::PLAYERCLONED, player, 0);
 
-
 	// Jedi experience loss.
-	if (ghost->getJediState() >= 2) {
+	if (ghost->getJediState() >= 1) {
 		int jediXpCap = ghost->getXpCap("jedi_general");
 		int xpLoss = (int)(jediXpCap * -0.05);
 		int curExp = ghost->getExperience("jedi_general");
@@ -1352,10 +1377,12 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				String xpType = entry->elementAt(j).getKey();
 				float xpAmount = baseXp;
 
-				xpAmount *= (float) damage / totalDamage;
+				//xpAmount *= (float) damage / totalDamage;
+
+				xpAmount /= (float) entry->size() / 1;
 
 				//Cap xp based on level
-				xpAmount = Math::min(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
+				//xpAmount = Math::min(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
 
 				//Apply group bonus if in group
 				if (group != NULL)
@@ -1367,14 +1394,14 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				//Jedi experience doesn't count towards combat experience, and is earned at 20% the rate of normal experience
 				if (xpType != "jedi_general")
 					combatXp += xpAmount;
-				else
-					xpAmount *= 0.2f;
 
 				//Award individual expType
 				awardExperience(attacker, xpType, xpAmount);
 			}
 
-			combatXp = awardExperience(attacker, "combat_general", combatXp, true, 0.1f);
+			combatXp /= 10.f;
+
+			awardExperience(attacker, "combat_general", combatXp);
 
 			//Check if the group leader is a squad leader
 			if (group == NULL)
@@ -1641,9 +1668,11 @@ void PlayerManagerImplementation::setExperienceMultiplier(float globalMultiplier
  *
  */
 int PlayerManagerImplementation::awardExperience(CreatureObject* player, const String& xpType,
-		int amount, bool sendSystemMessage, float localMultiplier, bool applyModifiers) {
+		int amount, bool sendSystemMessage, float localMultiplier) {
 
 	PlayerObject* playerObject = player->getPlayerObject();
+	
+	float perExpMulti = player->getPersonalExpMultiplier();
 
 	if (playerObject == NULL)
 		return 0;
@@ -1653,12 +1682,7 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 	if (amount > 0)
 		speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
 
-	int xp = 0;
-
-	if (applyModifiers)
-		xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * localMultiplier * globalExpMultiplier));
-	else
-		xp = playerObject->addExperience(xpType, (int)amount);
+	int xp = playerObject->addExperience(xpType, (int) ((((amount * speciesModifier) * localMultiplier) * perExpMulti) * globalExpMultiplier));
 
 	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
 
@@ -2928,17 +2952,26 @@ void PlayerManagerImplementation::updateSwimmingState(CreatureObject* player, fl
 			if (fabs(16384 - intersections->get(i).getIntersectionDistance() - newZ) < 0.2) {
 				//Player is on terrain above the water.
 				player->clearState(CreatureState::SWIMMING, true);
+				player->setSpeedMultiplierMod(1.0f);
+			        player->setAccelerationMultiplierMod(1.0f);
 				return;
 			}
 		}
 
 		//Player is in the water.
 		player->setState(CreatureState::SWIMMING, true);
+		if (zone->getZoneName().contains("mustafar")) {
+		player->inflictDamage(player, CreatureAttribute::HEALTH, 118, true);
+		}
+	        player->setSpeedMultiplierMod(0.30f);
+	        player->setAccelerationMultiplierMod(0.10f);
 		return;
 	}
 
 	//Terrain is above water level.
 	player->clearState(CreatureState::SWIMMING, true);
+	player->setSpeedMultiplierMod(1.0f);
+   	player->setAccelerationMultiplierMod(1.0f);
 }
 
 int PlayerManagerImplementation::checkSpeedHackFirstTest(CreatureObject* player, float parsedSpeed, ValidatedPosition& teleportPosition, float errorMultiplier) {
@@ -3138,6 +3171,7 @@ void PlayerManagerImplementation::lootAll(CreatureObject* player, CreatureObject
 
 	if (cashCredits > 0) {
 		int luck = player->getSkillMod("force_luck");
+		luck += player->getSkillMod("luck");
 
 		if (luck > 0)
 			cashCredits += (cashCredits * luck) / 20;

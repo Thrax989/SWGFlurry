@@ -925,3 +925,50 @@ object_tangible_inventory_shared_vendor_inventory = SharedTangibleObjectTemplate
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_inventory_shared_vendor_inventory, "object/tangible/inventory/shared_vendor_inventory.iff")
+
+object_tangible_inventory_shared_lightsaber_inventory_5 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/inventory/shared_lightsaber_inventory_5.iff"
+	--Data below here is deprecated and loaded from the tres, keeping for easy lookups
+--[[
+	appearanceFilename = "",
+	arrangementDescriptorFilename = "abstract/slot/arrangement/saber_inv_arrangement.iff",
+	certificationsRequired = {},
+	clearFloraRadius = 0,
+	clientDataFile = "",
+	clientGameObjectType = 8197,
+	collisionActionBlockFlags = 0,
+	collisionActionFlags = 0,
+	collisionActionPassFlags = 0,
+	collisionMaterialBlockFlags = 0,
+	collisionMaterialFlags = 0,
+	collisionMaterialPassFlags = 0,
+	containerType = 2,
+	containerVolumeLimit = 5,
+	customizationVariableMapping = {},
+	detailedDescription = "@item_n:saber_inventory",
+	gameObjectType = 8197,
+	locationReservationRadius = 0,
+	lookAtText = "",
+	noBuildRadius = 0,
+	objectName = "@item_n:saber_inventory",
+	onlyVisibleInTools = 0,
+	paletteColorCustomizationVariables = {},
+	portalLayoutFilename = "",
+	rangedIntCustomizationVariables = {},
+	scale = 1,
+	scaleThresholdBeforeExtentTest = 0.5,
+	sendToClient = 1,
+	slotDescriptorFilename = "",
+	snapToTerrain = 1,
+	socketDestinations = {},
+	structureFootprintFileName = "",
+	surfaceType = 0,
+	targetable = 1,
+	totalCellNumber = 0,
+	useStructureFootprintOutline = 0,
+	clientObjectCRC = 3520993342,
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/inventory/shared_lightsaber_inventory_base.iff"}
+]]
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_inventory_shared_lightsaber_inventory_5, "object/tangible/inventory/shared_lightsaber_inventory_5.iff")

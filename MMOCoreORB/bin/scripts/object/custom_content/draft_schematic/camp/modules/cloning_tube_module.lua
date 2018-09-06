@@ -1,0 +1,5 @@
+object_draft_schematic_camp_modules_cloning_tube_module = object_draft_schematic_camp_modules_shared_cloning_tube_module:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_camp_modules_cloning_tube_module, "object/draft_schematic/camp/modules/cloning_tube_module.iff")

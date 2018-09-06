@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_personal_effects = object_tangible_loot_misc_shared_personal_effects:new {
-
+	objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_personal_effects, "object/tangible/loot/misc/personal_effects.iff")

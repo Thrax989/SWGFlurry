@@ -1,0 +1,37 @@
+rebel_armor_vendor = Creature:new {
+	--objectName = "",
+	customName = "Rebellion Requisition Officer",
+	socialGroup = "townsperson",
+	pvpFaction = "townsperson",
+	faction = "rebel",
+	level = 300,
+	chanceHit = 300,
+	damageMin = 1245,
+	damageMax = 2000,
+	baseXp = 26845,
+	baseHAM = 9145253,
+	baseHAMmax = 9154500,
+	armor = 3,
+	resists = {95,95,75,65,75,35,65,45,55},
+	meatType = "",
+	meatAmount = 0,
+	hideType = "",
+	hideAmount = 0,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 0,
+	pvpBitmask = NONE,
+	creatureBitmask = NONE,
+	optionsBitmask = 264,
+	diet = HERBIVORE,
+
+	templates = {"object/mobile/dressed_rebel_surface_marshal_moncal_female_01.iff"},
+	scale = 1.1,		
+        lootGroups = {},
+	conversationTemplate = "rebel_armor_template",
+        attacks = {}
+}
+
+CreatureTemplates:addCreatureTemplate(rebel_armor_vendor, "rebel_armor_vendor")

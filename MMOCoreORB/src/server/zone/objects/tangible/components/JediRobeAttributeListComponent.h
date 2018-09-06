@@ -38,6 +38,10 @@ public:
 		if (!rankRequired.isEmpty() && rankRequired != "force_title_jedi_rank_02") {
 			alm->insertAttribute("jedi_rank_required", "@skl_n:" + rankRequired);
 		}
+
+		if (!rankRequired.isEmpty() && rankRequired != "combat_jedi_novice") {
+			alm->insertAttribute("jedi_rank_required", "@skl_n:" + rankRequired);
+		}
 	}
 
 };

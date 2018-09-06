@@ -1,0 +1,5 @@
+object_draft_schematic_droid_droid_union_sentry_droid = object_draft_schematic_droid_shared_droid_union_sentry_droid:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_droid_droid_union_sentry_droid, "object/draft_schematic/droid/droid_union_sentry_droid.iff")

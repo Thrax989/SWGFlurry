@@ -39,14 +39,29 @@ looted_container = {
 		{itemTemplate = "attachment_clothing", weight = 43860},
 		{itemTemplate = "attachment_armor", weight = 43860},
 
-		-- Weapons (25% chance)
-		{groupTemplate = "weapons_all", weight = 2500000},
+		
+		
+		{groupTemplate = "jedi_robe_s32_group", weight = 300000},
+		{groupTemplate = "jedi_robe_s33_group", weight = 300000},
+		{groupTemplate = "jedi_robe_s32_h1_group", weight = 300000},
+		{groupTemplate = "jedi_robe_s33_h1_group", weight = 300000},
+		{groupTemplate = "tiertwo", weight = 700000},
+		{groupTemplate = "nge_house_loot_deed_01", weight = 1000000},
+		{groupTemplate = "nge_house_loot_deed_windowed", weight = 800000},
+		{groupTemplate = "jedi_belt_comp_group", weight = 1000000},
+		
 
-		-- Armors (25% chance)
-		{groupTemplate = "armor_all", weight = 2500000},
-
-		-- Clothing (25% chance)
-		{groupTemplate = "wearables_all", weight = 2500000},
+		
+		{groupTemplate = "jedi_belt_group", weight = 1000000},
+		{groupTemplate = "crafted_rugs", weight = 400000},
+		{groupTemplate = "banner_imperial", weight = 200000},
+		{groupTemplate = "banner_imperial02", weight = 200000},
+		{groupTemplate = "banner_rebel", weight = 200000},
+		{groupTemplate = "banner_rebel02", weight = 200000},
+		{groupTemplate = "command_console", weight = 200000},
+		{groupTemplate = "potted_plants_large", weight = 200000},
+		{groupTemplate = "potted_plants_small", weight = 200000},
+		
 	}
 }
 

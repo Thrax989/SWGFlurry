@@ -579,3 +579,82 @@ object_draft_schematic_vehicle_civilian_shared_speeder_bike_swoop = SharedDraftS
 }
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_vehicle_civilian_shared_speeder_bike_swoop, "object/draft_schematic/vehicle/civilian/shared_speeder_bike_swoop.iff")
+
+object_draft_schematic_vehicle_civilian_shared_landspeeder_ab1 = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_landspeeder_ab1.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_landspeeder_ab1, "object/draft_schematic/vehicle/civilian/shared_landspeeder_ab1.iff")
+
+object_draft_schematic_vehicle_civilian_shared_barc_speeder = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_barc_speeder.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_barc_speeder, "object/draft_schematic/vehicle/civilian/shared_barc_speeder.iff")
+
+object_draft_schematic_vehicle_civilian_shared_flare_s_speeder = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_flare_s_speeder.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_flare_s_speeder, "object/draft_schematic/vehicle/civilian/shared_flare_s_speeder.iff")
+
+object_draft_schematic_vehicle_civilian_shared_imperial_barc_speeder = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_imperial_barc_speeder.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_imperial_barc_speeder, "object/draft_schematic/vehicle/civilian/shared_imperial_barc_speeder.iff")
+
+object_draft_schematic_vehicle_civilian_shared_rebel_barc_speeder = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_rebel_barc_speeder.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_rebel_barc_speeder, "object/draft_schematic/vehicle/civilian/shared_rebel_barc_speeder.iff")
+
+
+
+--Coming Soon
+--[[
+object_draft_schematic_vehicle_civilian_shared_koro2_speeder_a = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_koro2_speeder_a.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_koro2_speeder_a, "object/draft_schematic/vehicle/civilian/shared_koro2_speeder_a.iff")
+
+object_draft_schematic_vehicle_civilian_shared_koro2_speeder_b = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_koro2_speeder_b.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_koro2_speeder_b, "object/draft_schematic/vehicle/civilian/shared_koro2_speeder_b.iff")
+
+object_draft_schematic_vehicle_civilian_shared_koro2_speeder_i = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_koro2_speeder_i.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_koro2_speeder_i, "object/draft_schematic/vehicle/civilian/shared_koro2_speeder_i.iff")
+
+object_draft_schematic_vehicle_civilian_shared_pod_racer_one_speeder = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_pod_racer_one_speeder.iff"
+}
+
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_pod_racer_one_speeder, "object/draft_schematic/vehicle/civilian/shared_pod_racer_one_speeder.iff")
+
+object_draft_schematic_vehicle_civilian_shared_pod_racer_two_speeder = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_pod_racer_two_speeder.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_pod_racer_two_speeder, "object/draft_schematic/vehicle/civilian/shared_pod_racer_two_speeder.iff")
+
+object_draft_schematic_vehicle_civilian_shared_sith_speeder = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_sith_speeder.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_sith_speeder, "object/draft_schematic/vehicle/civilian/shared_sith_speeder.iff")
+
+object_draft_schematic_vehicle_civilian_shared_stap_speeder = SharedDraftSchematicObjectTemplate:new {
+clientTemplateFileName = "object/draft_schematic/vehicle/civilian/shared_stap_speeder.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_draft_schematic_vehicle_civilian_shared_stap_speeder, "object/draft_schematic/vehicle/civilian/shared_stap_speeder.iff")
+]]
+
