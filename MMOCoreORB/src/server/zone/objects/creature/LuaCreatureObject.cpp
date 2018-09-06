@@ -1063,6 +1063,7 @@ int LuaCreatureObject::getSkillMod(lua_State* L) {
 
 int LuaCreatureObject::getGender(lua_State* L) {
 	lua_pushnumber(L, realObject->getGender());
+	return 1;
 }
 
 int LuaCreatureObject::broadcastToServer(lua_State* L) {
