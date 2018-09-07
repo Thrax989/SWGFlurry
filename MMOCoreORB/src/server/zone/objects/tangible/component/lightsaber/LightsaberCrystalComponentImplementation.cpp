@@ -402,7 +402,7 @@ bool LightsaberCrystalComponentImplementation::hasPlayerAsParent(CreatureObject*
 void LightsaberCrystalComponentImplementation::tuneCrystal(CreatureObject* player) {
 	ManagedReference<PlayerObject*> jedi = player->getPlayerObject();
 
-	if (!jedi->getJediState() >= 1) {
+	if (jedi->getJediState() >= 1) {
 		return;
 	}
 
