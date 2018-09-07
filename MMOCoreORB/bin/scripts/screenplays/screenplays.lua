@@ -70,7 +70,7 @@ includeFile("trainers/skillTrainer.lua")
 includeFile("trainers/trainerConvHandler.lua")
 
 -- GCW
-includeFile("gcw/buff.lua")
+--includeFile("gcw/buff.lua")
 includeFile("gcw/pvp.lua")
 includeFile("gcw/pvp2.lua")
 includeFile("gcw/pvp3.lua")
