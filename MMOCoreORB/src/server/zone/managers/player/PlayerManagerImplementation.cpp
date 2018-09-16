@@ -839,7 +839,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	ThreatMap* threatMap = player->getThreatMap();
 	//0 Lives left you have Permanently died on your gray jedi
 	if (player->getScreenPlayState("jediLives") == 1) {
-		if (player->hasSkill("combat_jedi_novice") {
+		if (player->hasSkill("combat_jedi_novice")) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
 		int jediVis1 = ghost->getVisibility();
 		player->setScreenPlayState("jediLives", livesLeft);
@@ -861,7 +861,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	}
 	//1 life left on your gray jedi
 	if (player->getScreenPlayState("jediLives") == 2) {
-		if (player->hasSkill("combat_jedi_novice") {
+		if (player->hasSkill("combat_jedi_novice")) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
 		int jediVis1 = ghost->getVisibility();
 		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 1 Life"); // You have Lost 1 Jedi Life, you now have a total of 1 Life
@@ -879,7 +879,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	}
 	//2 Lives left on your gray jedi
 	if (player->getScreenPlayState("jediLives") == 3) {
-		if (player->hasSkill("combat_jedi_novice") {
+		if (player->hasSkill("combat_jedi_novice")) {
 		int livesLeft = player->getScreenPlayState("jediLives") - 1;
 		int jediVis1 = ghost->getVisibility();
 		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 2 Lives"); // You have Lost 1 Jedi Life, you now have a total of 2 Lives
@@ -911,7 +911,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	//Rebel gray jedi check
 	if (player->getScreenPlayState("jediLives") == 0) {
 		if (player->getFaction() == 370444368) {//rebel
-		if (player->hasSkill("combat_jedi_novice") {
+		if (player->hasSkill("combat_jedi_novice")) {
 			String playerName = player->getFirstName();
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
@@ -919,10 +919,11 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
 			}
 		}
+	}
 	//Imperial gray jedi check
 	if (player->getScreenPlayState("jediLives") == 0) {
 		if (player->getFaction() == 3679112276) {//imperial
-		if (player->hasSkill("combat_jedi_novice") {
+		if (player->hasSkill("combat_jedi_novice")) {
 			String playerName = player->getFirstName();
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
@@ -1229,7 +1230,7 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 
 	//PermaDeath : Gray Jedi with 0 lives cannot login
 	if (player->getScreenPlayState("jediLives") == 0) {
-		if (player->hasSkill("combat_jedi_novice") {
+		if (player->hasSkill("combat_jedi_novice")) {
 			ghost->setLinkDead(true);
 			ghost->disconnect(true, true);
 		}
