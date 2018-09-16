@@ -337,8 +337,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	auto client = callback->getClient();
 
-	if (client->getCharacterCount(zoneServer.get()->getGalaxyID()) >= 2) {
-		ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are limited to 2 characters per galaxy.", 0x0);
+	if (client->getCharacterCount(zoneServer.get()->getGalaxyID()) >= 10) {
+		ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are limited to 10 characters per galaxy.", 0x0);
 		client->sendMessage(errMsg);
 
 		return false;
@@ -452,6 +452,11 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	// Set starting cash and starting bank
 	playerCreature->setCashCredits(startingCash, false);
 	playerCreature->setBankCredits(startingBank, false);
+	
+	//Add 3 lives to gray jedi upon character creation
+	if (playerCreature->hasSkill("combat_jedi_novice") {
+			playerCreature->setScreenPlayState("jediLives", 3);
+		}
 
 	if (ghost != NULL) {
 		int accID = client->getAccountID();
@@ -474,8 +479,9 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 					playerManager->updatePermissionLevel(playerCreature, accountPermissionLevel);
 
 					/*
-					Reference<ShipControlDevice*> shipControlDevice = zoneServer->createObject(STRING_HASHCODE("object/intangible/ship/firespray_pcd.iff"), 1).castTo<ShipControlDevice*>();
-					Reference<ShipObject*> ship = zoneServer->createObject(STRING_HASHCODE("object/ship/player/player_firespray.iff"), 1).castTo<ShipObject*>();
+					Reference<ShipControlDevice*> shipControlDevice = zoneServer->createObject(STRING_HASHCODE("object/intangible/ship/sorosuub_space_yacht_pcd.iff"), 1).castTo<ShipControlDevice*>();
+					//ShipObject* ship = (ShipObject*) server->createObject(STRING_HASHCODE("object/ship/player/player_sorosuub_space_yacht.iff"), 1);
+					Reference<ShipObject*> ship = zoneServer->createObject(STRING_HASHCODE("object/ship/player/player_basic_tiefighter.iff"), 1).castTo<ShipObject*>();
 
 					shipControlDevice->setControlledObject(ship);
 
@@ -601,17 +607,11 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	//Join auction chat room
 	ghost->addChatRoom(chatManager->getAuctionRoom()->getRoomID());
+
 	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
-	box->setPromptTitle("Welcome To SWG Flurry");
-	box->setPromptText("Welcome to the SWG Flurry Server!.\n\nServer Rules\n\n1.) Accounts\n\n You are limited to creating one character every 5 minutes. Attempting to create another character or deleting your character before the 5 minute timer expires will reset the timer. Account Per Person 4 Characters May be logged in at any given time per account 10 Characters created per account 1 Account Per Person Per IP PRIOR approval is needed to have more then one account from a IP. If you want more than 2 accounts per IP you must gain approval from the Admins by writing a request on the forums. Breaking the rules above will result in the secondary account being suspended and potentially permanently banned. Before the removal of any accounts or characters a 7 day notification will be sent to you in-game requesting that you submit a multiple account per IP request. If you fail to do so, both accounts may be banned.\n\n2.)Exploiting / Hacking\n\nIf you accidentally come across a bug and report it to an admin/GM/CSR, this is deemed acceptable behaviour. If you come across a bug and continually replicate it for personal gain, this is seen as exploiting. Hacking Using third party applications, game modifications, etc, to alter game mechanics / gain advantage is deemed as hacking. If we witness players doing so, your account will be immediately banned and IP address blacklisted from game server and forums.\n\n3.)Fightclubbing\n\n Fightclubbing with your own characters or guildmates in order to increase FRS rank is against the rules. If it is determined that you have been fightclubbing, the following actions will take place:1st offense - Jedi state reset to padawan with no skills 2nd offense - 30 day ban 3rd offense - Permanent ban.\n\n");
-	box->setCancelButton(true, "@no");
-	box->setOkButton(true, "@yes");
-	box->setUsingObject(ghost);
-	//Broadcast to Server
-	String playerName = playerCreature->getFirstName();
-	StringBuffer zBroadcast;
-	zBroadcast << "\\#00ace6" << playerName << " \\#ffb90f Has Joined The Flurry Server!";
-	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+	box->setPromptTitle("PLEASE NOTE");
+	box->setPromptText("You are limited to creating one character per hour. Attempting to create another character or deleting your character before the 1 hour timer expires will reset the timer.");
+
 	ghost->addSuiBox(box);
 	playerCreature->sendMessage(box->generateMessage());
 
@@ -824,14 +824,14 @@ void PlayerCreationManager::addHair(CreatureObject* creature,
 		return;
 	}
 
-/*	if (hairAssetData->getServerPlayerTemplate()
+	/*if (hairAssetData->getServerPlayerTemplate()
 			!= creature->getObjectTemplate()->getFullTemplateString()) {
 		error(
 				"hair " + hairTemplate
 						+ " is not compatible with this creature player "
 						+ creature->getObjectTemplate()->getFullTemplateString());
 		return;
-	} */
+	}*/
 
 	if (!hairAssetData->isAvailableAtCreation()) {
 		error("hair " + hairTemplate + " not available at creation");
