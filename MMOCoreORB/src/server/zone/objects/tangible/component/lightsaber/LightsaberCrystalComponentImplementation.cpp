@@ -321,7 +321,7 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
 	ManagedReference<PlayerObject*> jedi = player->getPlayerObject();
 
-	if (jedi->getJediState() >= 1) {
+	if (jedi->hasSkill("force_title_jedi_rank_01") || jedi->hasSkill("combat_jedi_novice"()) {
 		String text = "@jedi_spam:tune_crystal";
 		menuResponse->addRadialMenuItem(128, 3, text);
 	}
@@ -343,7 +343,7 @@ void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenu
 int LightsaberCrystalComponentImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
 	ManagedReference<PlayerObject*> jedi = player->getPlayerObject();
 
-	if (selectedID == 128 && jedi->getJediState() >= 1) {
+	if (selectedID == 128 && jedi->hasSkill("force_title_jedi_rank_01") || jedi->hasSkill("combat_jedi_novice"()) {
 		ManagedReference<SuiMessageBox*> suiMessageBox = new SuiMessageBox(player, SuiWindowType::TUNE_CRYSTAL);
 		suiMessageBox->setPromptTitle("@jedi_spam:confirm_tune_title");
 		suiMessageBox->setPromptText("@jedi_spam:confirm_tune_prompt");
