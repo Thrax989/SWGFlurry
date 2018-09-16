@@ -278,7 +278,7 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 	TangibleObjectImplementation::fillAttributeList(alm, object);
 
 	PlayerObject* player = object->getPlayerObject();
-	if (object->hasSkill("force_title_jedi_novice") || object->hasSkill("combat_jedi_novice") || player->isPrivileged()) {
+	if (object->hasSkill("force_title_jedi_rank_01") || object->hasSkill("combat_jedi_novice") || player->isPrivileged()) {
 		if (ownerID == 0) {
 			StringBuffer str;
 			str << "\\#pcontrast2 UNTUNED";
@@ -321,7 +321,7 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
 	ManagedReference<PlayerObject*> jedi = player->getPlayerObject();
 
-	if (player->hasSkill("force_title_jedi_novice") || player->hasSkill("combat_jedi_novice")) {
+	if (jedi->getForcePower() >= 1) {
 		String text = "@jedi_spam:tune_crystal";
 		menuResponse->addRadialMenuItem(128, 3, text);
 	}
@@ -343,9 +343,7 @@ void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenu
 int LightsaberCrystalComponentImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
 	ManagedReference<PlayerObject*> jedi = player->getPlayerObject();
 
-	if (selectedID == 128) {
-		
- if (player->hasSkill("force_title_jedi_novice") || player->hasSkill("combat_jedi_novice")) {
+	if (selectedID == 128 && jedi->getForcePower() >= 1) {
 		ManagedReference<SuiMessageBox*> suiMessageBox = new SuiMessageBox(player, SuiWindowType::TUNE_CRYSTAL);
 		suiMessageBox->setPromptTitle("@jedi_spam:confirm_tune_title");
 		suiMessageBox->setPromptText("@jedi_spam:confirm_tune_prompt");
@@ -355,7 +353,6 @@ int LightsaberCrystalComponentImplementation::handleObjectMenuSelect(CreatureObj
 		player->getPlayerObject()->addSuiBox(suiMessageBox);
 		player->sendMessage(suiMessageBox->generateMessage());
 	}
-}
 
 	PlayerObject* ghost = player->getPlayerObject();
 	if (ghost != NULL && ghost->isPrivileged()){
@@ -405,7 +402,7 @@ bool LightsaberCrystalComponentImplementation::hasPlayerAsParent(CreatureObject*
 void LightsaberCrystalComponentImplementation::tuneCrystal(CreatureObject* player) {
 	ManagedReference<PlayerObject*> jedi = player->getPlayerObject();
 
-	 if (player->hasSkill("force_title_jedi_novice") || player->hasSkill("combat_jedi_novice")) {
+	if (jedi->getForcePower() <= 1) {
 		return;
 	}
 
