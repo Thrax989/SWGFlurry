@@ -454,7 +454,7 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	playerCreature->setBankCredits(startingBank, false);
 	
 	//Add 3 lives to gray jedi upon character creation
-	if (playerCreature->hasSkill("combat_jedi_novice") {
+	if (playerCreature->hasSkill("combat_jedi_novice")) {
 			playerCreature->setScreenPlayState("jediLives", 3);
 		}
 
