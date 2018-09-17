@@ -458,11 +458,11 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 		int livesLeft = playerCreature->getScreenPlayState("jediLives") + 3;
 		int jediVis1 = ghost->getVisibility();
 		playerCreature->setScreenPlayState("jediLives", livesLeft);
-		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
 		box->setPromptTitle("Gray Jedi Lives");
 		StringBuffer promptText;
 		String playerName = playerCreature->getFirstName();
-		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
+		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << playerCreature->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
 		promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
 		box->setPromptText(promptText.toString());
 		ghost->addSuiBox(box);
