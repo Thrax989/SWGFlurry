@@ -455,8 +455,20 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	
 	//Add 3 lives to gray jedi upon character creation
 	if (playerCreature->hasSkill("combat_jedi_novice")) {
-			playerCreature->setScreenPlayState("jediLives", 3);
-		}
+		int livesLeft = playerCreature->getScreenPlayState("jediLives") + 3;
+		int jediVis1 = ghost->getVisibility();
+		playerCreature->setScreenPlayState("jediLives", livesLeft);
+		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+		box->setPromptTitle("Gray Jedi Lives");
+		StringBuffer promptText;
+		String playerName = playerCreature->getFirstName();
+		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
+		promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+		box->setPromptText(promptText.toString());
+		ghost->addSuiBox(box);
+		playerCreature->sendMessage(box->generateMessage());
+		playerCreature->sendSystemMessage("You have a total of 3 Jedi Lives, to gain more Lives use a holocron");
+	}
 
 	if (ghost != NULL) {
 		int accID = client->getAccountID();
