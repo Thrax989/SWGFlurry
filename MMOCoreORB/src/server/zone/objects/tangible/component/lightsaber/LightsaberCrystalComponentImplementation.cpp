@@ -319,9 +319,8 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 }
 
 void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
-	ManagedReference<PlayerObject*> jedi = player->getPlayerObject();
-
-	if (jedi->getJediState() >= 1) {
+	ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
+	if (jedi->getForcePower() >= 1) {
 		String text = "@jedi_spam:tune_crystal";
 		menuResponse->addRadialMenuItem(128, 3, text);
 	}
@@ -341,15 +340,16 @@ void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenu
 }
 
 int LightsaberCrystalComponentImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
-	ManagedReference<PlayerObject*> jedi = player->getPlayerObject();
-
-	if (selectedID == 128 && jedi->getJediState() >= 1) {
+ 	ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
+	if (selectedID == 128 && jedi->getForcePower() >= 1) {
 		ManagedReference<SuiMessageBox*> suiMessageBox = new SuiMessageBox(player, SuiWindowType::TUNE_CRYSTAL);
+
 		suiMessageBox->setPromptTitle("@jedi_spam:confirm_tune_title");
 		suiMessageBox->setPromptText("@jedi_spam:confirm_tune_prompt");
 		suiMessageBox->setCancelButton(true, "Cancel");
 		suiMessageBox->setUsingObject(_this.getReferenceUnsafeStaticCast());
 		suiMessageBox->setCallback(new LightsaberCrystalTuneSuiCallback(player->getZoneServer()));
+
 		player->getPlayerObject()->addSuiBox(suiMessageBox);
 		player->sendMessage(suiMessageBox->generateMessage());
 	}
@@ -400,9 +400,8 @@ bool LightsaberCrystalComponentImplementation::hasPlayerAsParent(CreatureObject*
 }
 
 void LightsaberCrystalComponentImplementation::tuneCrystal(CreatureObject* player) {
-	ManagedReference<PlayerObject*> jedi = player->getPlayerObject();
-
-	if (jedi->getJediState() >= 1) {
+	ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
+	if (jedi->getForcePower() <= 1) {
 		return;
 	}
 

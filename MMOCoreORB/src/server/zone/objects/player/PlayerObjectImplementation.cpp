@@ -1311,6 +1311,15 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	if (getForcePowerMax() > 0 && getForcePower() < getForcePowerMax())
 		activateForcePowerRegen();
+		
+	//PermaDeath : Gray Jedi with 0 lives cannont login
+	ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
+	if (playerCreature->getScreenPlayState("jediLives") == 0) {
+		if (playerCreature->hasSkill("combat_jedi_novice")) {
+			ghost->setLinkDead(true);
+			ghost->disconnect(true, true);
+			}
+		}
 
 	schedulePvpTefRemovalTask();
 
