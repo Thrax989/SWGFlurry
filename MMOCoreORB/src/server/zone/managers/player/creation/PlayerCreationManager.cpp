@@ -452,7 +452,7 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	// Set starting cash and starting bank
 	playerCreature->setCashCredits(startingCash, false);
 	playerCreature->setBankCredits(startingBank, false);
-	
+
 	//Add 3 lives to gray jedi upon character creation
 	if (playerCreature->hasSkill("combat_jedi_novice")) {
 		int livesLeft = playerCreature->getScreenPlayState("jediLives") + 3;
@@ -463,11 +463,14 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 		StringBuffer promptText;
 		String playerName = playerCreature->getFirstName();
 		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << playerCreature->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
-		promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+		promptText << endl;
+		promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1 << endl;
+		promptText << endl;
+		promptText << "To gain more Gray Jedi Lives you muse consume a Holocron, 3 Lives is max for a Gray Jedi." << endl;
+		promptText << endl;
 		box->setPromptText(promptText.toString());
 		ghost->addSuiBox(box);
 		playerCreature->sendMessage(box->generateMessage());
-		playerCreature->sendSystemMessage("You have a total of 3 Jedi Lives, to gain more Lives use a holocron");
 	}
 
 	if (ghost != NULL) {
