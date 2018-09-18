@@ -26,8 +26,8 @@ void HolocronMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Obj
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
-	if (ghost->getJediState() >=2) {
-			menuResponse->addRadialMenuItem(213, 3, "Use Holocron"); // Use Holocron
+	if (ghost->getJediState() >= 0) {
+			menuResponse->addRadialMenuItem(213, 3, "Reveal Encrypted Data"); // Use Holocron
 			menuResponse->addRadialMenuItemToRadialID(213, 214, 3, "Increase Jedi Lives"); // Increase Jedi Lives
 			menuResponse->addRadialMenuItemToRadialID(213, 215, 3, "Regenerate Full Force"); // Regenerate Full Force
 			menuResponse->addRadialMenuItemToRadialID(213, 216, 3, "Visibility"); // Visibility
@@ -48,34 +48,33 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		return 0;
 	
 	if (selectedID == 213) {
- 		if (ghost->getJediState() >= 2) {
+ 		if (ghost->getJediState() >= 0) {
 			JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
 			return 0;
 			}
 		}
-	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 0)) {
+	if (selectedID == 214 && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 0)) {
 		creature->sendSystemMessage("You have Permanently died on your jedi, you may not use this option"); // You have Permanently died on your jedi, you may not use this option
-		return 0;
-		}
-	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 1)) {
+		} else 
+	if (selectedID == 214 && (!creature->isDead() && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 1))) {
 		int livesLeft = creature->getScreenPlayState("jediLives") + 1;
 		creature->setScreenPlayState("jediLives", livesLeft);
 		sceneObject->destroyObjectFromWorld(true);
 		creature->sendSystemMessage("You have added +1 Life to your jedi, you now have a total of 2 Lives"); // You have added +1 Life to your jedi, you now have a total of 2 Lives
-		return 0;
-		}
-	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 2)) {
+		} else 
+	if (selectedID == 214 && (!creature->isDead() && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 2))) {
 		int livesLeft = creature->getScreenPlayState("jediLives") + 1;
 		creature->setScreenPlayState("jediLives", livesLeft);
 		sceneObject->destroyObjectFromWorld(true);
 		creature->sendSystemMessage("You have added +1 Life to your jedi, you now have a total of 3 Lives"); // You have added +1 Life to your jedi, you now have a total of 3 Lives
-		return 0;
-		}
-	if (selectedID == 214 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 3)) {
+		} else 
+	if (selectedID == 214 && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 3)) {
 		creature->sendSystemMessage("You are at your maximum amount of Jedi lives, 3 Remain"); // You are at your maximum amount of Jedi Lives
+		} else {
+		creature->sendSystemMessage("You may not increase jedi lives while dead.");
 		return 0;
 		}
-	if (selectedID == 215 && (ghost->getJediState() >= 2)) {
+	if (selectedID == 215 && (ghost->getJediState() >= 1)) {
 		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
 		if (!creature->checkCooldownRecovery("force_recalculate_cooldown")) {
 		if (playerObject->getForcePower() >= playerObject->getForcePowerMax()) {
@@ -95,7 +94,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 			}
 		return 0;
 	}
-	if (playerObject != NULL && playerObject->getJediState() >= 2) {
+	if (playerObject != NULL && playerObject->getJediState() >= 1) {
 		//You're a jedi, and not on cooldown && forceFull ? fillForce : FullForceString
 		if (playerObject->getForcePower() < playerObject->getForcePowerMax()) {
 			//Refil force + Message player
@@ -117,7 +116,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
  			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		} else {
 			//You have max force
-			creature->sendSystemMessage("@jedi_spam:holocron_force_max");
+			creature->sendSystemMessage("You may not use this option unless you are a jedi");
 		}
 	} else {
 		//You're not a jedi yet
@@ -125,7 +124,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 	}
 		return 0;
 	}
-	if (selectedID == 216 && (ghost->getJediState() >= 2)) {
+	if (selectedID == 216 && (ghost->getJediState() >= 0)) {
 		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
 		box->setPromptTitle("Jedi Visibility");
 		int jediVis1 = ghost->getVisibility();
@@ -137,7 +136,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		creature->sendMessage(box->generateMessage());
 		return 0;
 	}
-	if (selectedID == 217 && (ghost->getJediState() >= 2)) {
+	if (selectedID == 217 && (ghost->getJediState() >= 0)) {
 		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
 		box->setPromptTitle("Jedi Lives");
 		StringBuffer promptText;
@@ -149,7 +148,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		return 0;
 	}
 	//light enclave
-	if (selectedID == 218 && (ghost->getJediState() >= 2)) {
+	if (selectedID == 218 && (ghost->getJediState() >= 0)) {
 		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
 		if (!creature->checkCooldownRecovery("light_enclave")) {
  				if (!creature->isInCombat()) {
@@ -174,7 +173,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		return 0;
 	}
 	//dark enclave
-	if (selectedID == 219 && (ghost->getJediState() >= 2)) {
+	if (selectedID == 219 && (ghost->getJediState() >= 0)) {
 		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
 		if (!creature->checkCooldownRecovery("dark_enclave")) {
  				if (!creature->isInCombat()) {
