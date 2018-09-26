@@ -53,7 +53,7 @@ class CreatureObject extends TangibleObject {
 	protected int cashCredits;
 	
 	protected int hueValue;
-	
+
 	protected int selectedExpMode;
 	protected float personalExpMultiplier;
 
@@ -810,6 +810,14 @@ class CreatureObject extends TangibleObject {
 		int newCredits = getCashCredits() + credits;
 		setCashCredits(newCredits);
 	}
+	
+	public void setSelectedExpMode(int mode){
+		selectedExpMode = mode;
+	}
+	
+	public void setPersonalExpMultiplier(float multi){
+		personalExpMultiplier = multi;
+	}
 
 	@preLocked
 	public native CreditObject getCreditObject();
@@ -1487,6 +1495,16 @@ class CreatureObject extends TangibleObject {
 	@read
 	public boolean isGrouped() {
 		return group != null;
+	}
+
+	@read
+	public int getSelectedExpMode(){
+		return selectedExpMode;
+	}
+
+	@read
+	public float getPersonalExpMultiplier(){
+		return personalExpMultiplier;
 	}
 
 	@read
