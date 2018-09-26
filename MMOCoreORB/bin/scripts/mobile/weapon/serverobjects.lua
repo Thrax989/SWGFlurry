@@ -82,6 +82,3 @@ includeFile("weapon/groups/tusken_weapons.lua")
 
 -- tutorial
 includeFile("weapon/groups/tutorial_bandit.lua")
-
---CUSTOM
-includeFile("weapon/groups/ig106_weapons.lua")
