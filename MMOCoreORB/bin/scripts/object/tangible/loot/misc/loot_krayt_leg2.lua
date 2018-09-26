@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_loot_krayt_leg2 = object_tangible_loot_misc_shared_loot_krayt_leg2:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

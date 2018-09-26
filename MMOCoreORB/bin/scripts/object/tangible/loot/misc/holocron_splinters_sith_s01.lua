@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_holocron_splinters_sith_s01 = object_tangible_loot_misc_shared_holocron_splinters_sith_s01:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

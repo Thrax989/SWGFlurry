@@ -116,7 +116,3 @@ includeFile("tangible/loot/misc/ticket_collectors_item_s01.lua")
 includeFile("tangible/loot/misc/ticket_expired.lua")
 includeFile("tangible/loot/misc/toxic_rations.lua")
 includeFile("tangible/loot/misc/worklight.lua")
---Custom
-includeFile("tangible/loot/misc/imperial_credit.lua")
-includeFile("tangible/loot/misc/rebel_credit.lua")
-includeFile("tangible/loot/misc/new_player_pack.lua")

@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_force_crystal = object_tangible_loot_misc_shared_force_crystal:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

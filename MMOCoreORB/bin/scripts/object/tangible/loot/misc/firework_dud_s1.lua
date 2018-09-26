@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_firework_dud_s1 = object_tangible_loot_misc_shared_firework_dud_s1:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

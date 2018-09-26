@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_green_rug = object_tangible_loot_misc_shared_green_rug:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 
