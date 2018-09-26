@@ -8,11 +8,6 @@ function RecruiterConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, s
 	if (pGhost == nil) then
 		return pConvScreen
 	end
-	
-	if (CreatureObject(pPlayer):hasSkill("combat_jedi_novice") or CreatureObject(pPlayer):hasSkill("combat_jedi_master")) then
-	CreatureObject(pPlayer):sendSystemMessage("Gray Jedi may not join a faction")
-		return pConvScreen
-	end
 
 	local screen = LuaConversationScreen(pConvScreen)
 	local screenID = screen:getScreenID()

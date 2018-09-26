@@ -298,6 +298,7 @@ function CorelliaCoronetScreenPlay:spawnMobiles()
 	spawnMobile(self.planet, "businessman",60,-306.34,28,-4620.82,67.4368,0)
 	spawnMobile(self.planet, "businessman",60,-312.404,28,-4646.51,242.881,0)
 	spawnMobile(self.planet, "businessman",60,-135.995,28,-4745.63,251.824,0)
+	spawnMobile(self.planet, "cll8_binary_load_lifter",60,-146.217,28,-4738.99,346.392,0)
 	spawnMobile(self.planet, "commoner",60,-306.539,28,-4546.52,95.6639,0)
 	spawnMobile(self.planet, "commoner",60,-306.061,28,-4600.68,146.312,0)
 	spawnMobile(self.planet, "commoner",60,-258.479,28,-4620,198.098,0)
@@ -456,10 +457,6 @@ function CorelliaCoronetScreenPlay:spawnMobiles()
 	spawnMobile(self.planet, "trainer_politician",0,-218,28,-4500,0,0)
 	spawnMobile(self.planet, "trainer_ranger",0,-505,28,-4633,180,0)
 	spawnMobile(self.planet, "trainer_scout",0,-169.45,28,-4712.58,134,0)
-	spawnMobile(self.planet, "trainer_spy", 0, -166.924, 28, -4739.61, 33, 0)
-	spawnMobile(self.planet, "trainer_meleebountyhunter", 0, -165.318, 28, -4741.14, 55, 0)
-
-
 
 	-- Chassis dealer.
 	spawnMobile(self.planet, "chassis_dealer", 0, 0.1, 0.6, 72.9, -4, 1855672)
