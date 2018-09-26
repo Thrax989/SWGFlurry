@@ -63,7 +63,6 @@ public:
 		FORCEABSORB,				// ManagedObject arg1 = player, long arg2 = force cost of attack
 		SPATIALCHATSENT,			// ManagedObject arg1 = ChatMessage containing string text, long arg2 = 0
 		OBJECTINSERTED,				// ManagedObject arg1 = inserted object, long arg2 = 0
-		FORCEBUFFHIT,				// ManagedObject arg1 = player, long arg2 = damage amount absorbed.
 		OBJECTDISAPPEARED,			// ManagedObject arg1 = disappeared object, long arg2 = 0
 		ITEMLOOTED,					// ManagedObject arg1 = looting player, long arg2 = 0
 		MEDPACKUSED,				// ManagedObject arg1 = null, long arg2 = 0
