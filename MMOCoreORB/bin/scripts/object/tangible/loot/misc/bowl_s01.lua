@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_bowl_s01 = object_tangible_loot_misc_shared_bowl_s01:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

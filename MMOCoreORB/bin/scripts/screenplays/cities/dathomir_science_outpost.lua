@@ -19,12 +19,6 @@ function DathomirScienceOutpostScreenPlay:spawnMobiles()
 	self:setMoodString(pNpc, "sad")
 	pNpc = spawnMobile("dathomir", "contractor",60,6.3,0.6,-6.4,-133,2835573)
 	self:setMoodString(pNpc, "nervous")
-	
-	--Trainers in the village
-	spawnMobile("dathomir", "trainer_combatjedigray", 0, 5215.21, 78.5, -4137.86, 268, 0)
-	spawnMobile("dathomir", "trainer_combatjedigrayelder", 0, 5194.96, 78.5, -4159.68, 6, 0)
-	spawnMobile("dathomir", "trainer_combatjedigrayelderrank", 0, 5168.49, 78.5, -4137.66, 81, 0)
-	spawnMobile("dathomir", "trainer_combatjedigrayelderrankcouncil", 0, 5191.39, 78.5, -4115.94, 166, 0)
 
 	--Outside
 	spawnMobile("dathomir", "businessman", 60, -70.8878, 18, -1646.08, 315.408, 0)

@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_loot_skull_krayt1 = object_tangible_loot_misc_shared_loot_skull_krayt1:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

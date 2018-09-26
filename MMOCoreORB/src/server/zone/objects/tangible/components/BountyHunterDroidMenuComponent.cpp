@@ -71,11 +71,11 @@ int BountyHunterDroidMenuComponent::handleObjectMenuSelect(SceneObject* droidObj
 }
 
 bool BountyHunterDroidMenuComponent::playerCanUseTrack(CreatureObject* player) const {
-	return player->hasSkill("combat_bountyhunter_investigation_03") || player->hasSkill("combat_meleebountyhunter_investigation_03");
+	return player->hasSkill("combat_bountyhunter_investigation_03");
 }
 
 bool BountyHunterDroidMenuComponent::playerCanUseDroids(CreatureObject* player) const {
-	return player->hasSkill("combat_bountyhunter_investigation_01") || player->hasSkill("combat_meleebountyhunter_investigation_01");
+	return player->hasSkill("combat_bountyhunter_investigation_01");
 }
 
 bool BountyHunterDroidMenuComponent::isProbeDroid(SceneObject* droidObject) const {

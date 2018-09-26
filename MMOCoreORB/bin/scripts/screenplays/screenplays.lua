@@ -30,6 +30,7 @@ require("sui.custom.SuiReceiverPuzzle")
 
 -- Custom content
 includeFile("../custom_scripts/screenplays/screenplays.lua")
+includeFile("tools/FlurryBuffTerminal.lua")
 
 includeFile("helperfuncs.lua")
 includeFile("playerTriggers.lua")
@@ -60,7 +61,6 @@ includeFile("themepark/smc/themeParkSmcVurleneAujante.lua")
 includeFile("utils/quest_spawner.lua")
 
 -- Staff tools
-includeFile("tools/FlurryBuffTerminal.lua")
 includeFile("tools/tools.lua")
 includeFile("tools/shuttle_dropoff.lua")
 includeFile("tools/firework_event.lua")
@@ -70,11 +70,6 @@ includeFile("trainers/skillTrainer.lua")
 includeFile("trainers/trainerConvHandler.lua")
 
 -- GCW
---includeFile("gcw/buff.lua")
-includeFile("gcw/pvp.lua")
-includeFile("gcw/pvp2.lua")
-includeFile("gcw/pvp3.lua")
-includeFile("gcw/restuss_cloner.lua")
 includeFile("gcw/newsnet.lua")
 includeFile("gcw/recruiters/recruiterConvoHandler.lua")
 includeFile("gcw/recruiters/recruiterScreenplay.lua")
@@ -124,6 +119,15 @@ includeFile("dungeon/death_watch_bunker/conversations/deathWatchWorkshopDroidCon
 includeFile("dungeon/geonosian_lab/geoLab.lua")
 includeFile("dungeon/geonosian_lab/geoLabContainerComponents.lua")
 includeFile("dungeon/geonosian_lab/geoLabMenuComponents.lua")
+includeFile("dungeon/geonosian_lab/conversations/biogenicAssistantConvoHandler.lua")
+includeFile("dungeon/geonosian_lab/conversations/biogenicConstructionConvoHandler.lua")
+includeFile("dungeon/geonosian_lab/conversations/biogenicEngineerTechConvoHandler.lua")
+includeFile("dungeon/geonosian_lab/conversations/biogenicHeraldConvoHandler.lua")
+includeFile("dungeon/geonosian_lab/conversations/biogenicHeraldDealerConvoHandler.lua")
+includeFile("dungeon/geonosian_lab/conversations/biogenicRandomConvoHandler.lua")
+includeFile("dungeon/geonosian_lab/conversations/biogenicScientistGeneric02ConvoHandler.lua")
+includeFile("dungeon/geonosian_lab/conversations/biogenicScientistHumanConvoHandler.lua")
+includeFile("dungeon/geonosian_lab/conversations/biogenicSecurityTechConvoHandler.lua")
 includeFile("dungeon/warren/warren.lua")
 includeFile("dungeon/warren/warrenComponents.lua")
 includeFile("dungeon/warren/convos/mirla_convo_handler.lua")
@@ -244,9 +248,6 @@ includeFile("village/convos/phase4/sarguillo_phase4_conv_handler.lua")
 includeFile("village/convos/phase4/sivarra_phase4_conv_handler.lua")
 
 -- Jedi Trials
---includeFile("jedi/yavin4_dark_enclave.lua")
---includeFile("jedi/yavin4_light_enclave.lua")
-includeFile("jedi/frs.lua")
 includeFile("jedi/trialData.lua")
 includeFile("jedi/jedi_trials.lua")
 includeFile("jedi/knight/knight_trials.lua")
@@ -302,29 +303,6 @@ includeFile("events/bestine_election/convos/victor_questp_slums_conv_handler.lua
 includeFile("events/bestine_election/convos/victor_visalis_conv_handler.lua")
 includeFile("events/bestine_election/convos/tour_aryon_conv_handler.lua")
 
--- Events
-includeFile("events/conversations/bestine_artist_conv_handler.lua")
-includeFile("events/conversations/imperial_commander_conv_handler.lua")
-includeFile("events/conversations/imperial_coordinator_conv_handler.lua")
-includeFile("events/conversations/imperial_informant_conv_handler.lua")
-includeFile("events/conversations/life_day_anarra_conv_handler.lua")
-includeFile("events/conversations/life_day_kkatamk_conv_handler.lua")
-includeFile("events/conversations/life_day_oraalarri_conv_handler.lua")
-includeFile("events/conversations/life_day_radrrl_conv_handler.lua")
-includeFile("events/conversations/life_day_tebeurra_conv_handler.lua")
-includeFile("events/conversations/museum_curator_conv_handler.lua")
-includeFile("events/conversations/race_droid_conv_handler.lua")
-includeFile("events/conversations/rebel_commander_conv_handler.lua")
-includeFile("events/conversations/rebel_coordinator_conv_handler.lua")
-includeFile("events/conversations/rebel_lyda_conv_handler.lua")
-includeFile("events/conversations/rebel_sympathizer_conv_handler.lua")
-includeFile("events/bestineMuseum.lua")
-includeFile("events/coa2Screenplay.lua")
-includeFile("events/eventPromoter.lua")
-includeFile("events/lifeDay.lua")
-includeFile("events/buffTerminalMenuComponent.lua")
-includeFile("events/race_droid.lua")
-
 -- Cries of Alderaan
 includeFile("events/coa/coa.lua")
 includeFile("events/coa/coa2Screenplay.lua")
@@ -335,6 +313,21 @@ includeFile("events/coa/conversations/rebel_commander_conv_handler.lua")
 includeFile("events/coa/conversations/rebel_coordinator_conv_handler.lua")
 includeFile("events/coa/conversations/rebel_lyda_conv_handler.lua")
 includeFile("events/coa/conversations/rebel_sympathizer_conv_handler.lua")
+
+-- Events
+includeFile("events/conversations/bestine_artist_conv_handler.lua")
+includeFile("events/conversations/life_day_anarra_conv_handler.lua")
+includeFile("events/conversations/life_day_kkatamk_conv_handler.lua")
+includeFile("events/conversations/life_day_oraalarri_conv_handler.lua")
+includeFile("events/conversations/life_day_radrrl_conv_handler.lua")
+includeFile("events/conversations/life_day_tebeurra_conv_handler.lua")
+includeFile("events/conversations/museum_curator_conv_handler.lua")
+includeFile("events/conversations/race_droid_conv_handler.lua")
+includeFile("events/bestineMuseum.lua")
+includeFile("events/eventPromoter.lua")
+includeFile("events/lifeDay.lua")
+includeFile("events/buffTerminalMenuComponent.lua")
+includeFile("events/race_droid.lua")
 
 -- Hero of Tatooine
 includeFile("tasks/hero_of_tatooine/conversations/hermitConvoHandler.lua")
@@ -676,57 +669,5 @@ includeFile("space/space_chassis_dealer_conv_handler.lua")
 includeFile("record_keepers/record_keepers.lua")
 
 --Tests
---includeFile("tests/tests.lua")
+includeFile("tests/tests.lua")
 
---Custom Screenplays
-includeFile("custom_screenplays/screenplays.lua")
-
---Halloween Event
---includeFile("events/halloween_moenia.lua")
-
---Custom World Bosses
---includeFile("custom_world_bosses/custom_nerf_boss.lua")
-includeFile("custom_world_bosses/custom_jawa_boss.lua")
-includeFile("custom_world_bosses/custom_krayt_queen.lua")
-includeFile("custom_world_bosses/custom_exar_kun_boss.lua")
---includeFile("caves/dantooine_janta_cave_boss.lua")
-
---Painting Vendor
-includeFile("events/painting_exchange_dealer.lua")
---Event Vendor
-includeFile("events/event_exchange_dealer.lua")
-
---Faction Armor Vendors
-includeFile("events/imperial_armor_vendor.lua")
-includeFile("events/rebel_armor_vendor.lua")
-
---GCW Vendors
---includeFile("events/imperial_armor_vendor.lua")
---includeFile("events/rebel_armor_vendor.lua")
-
----CUSTOM Dungeons
---includeFile("dungeon/isd/isd.lua")
-includeFile("dungeon/nightsister_temple/nightsister_temple.lua")
-includeFile("dungeon/general_grievous/general_grievous.lua")
-includeFile("dungeon/tusken_king/tusken_king.lua")
-includeFile("dungeon/exar_kun_temple/Exar_Kun.lua")
-includeFile("dungeon/avatar_platform/avatar_platform.lua")
-
---GCW Trainer
---includeFile("gcw/gcwTrainerScreenplay.lua")
-
---poi waypoint npc's
-includeFile("events/corellia_poi_waypoints.lua")
-includeFile("events/dantooine_poi_waypoints.lua")
-includeFile("events/dathomir_poi_waypoints.lua")
-includeFile("events/endor_poi_waypoints.lua")
-includeFile("events/lok_poi_waypoints.lua")
-includeFile("events/naboo_poi_waypoints.lua")
-includeFile("events/rori_poi_waypoints.lua")
-includeFile("events/talus_poi_waypoints.lua")
-includeFile("events/tatooine_poi_waypoints.lua")
-includeFile("events/yavin4_poi_waypoints.lua")
-includeFile("events/deathBounty.lua")
-includeFile("events/jediLives.lua")
---Boss teleport radius check zone
-includeFile("gcw/nova.lua")

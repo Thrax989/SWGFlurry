@@ -1,5 +1,3 @@
-includeFile("groups/imppoints.lua")
-includeFile("groups/rebpoints.lua")
 includeFile("groups/armor_attachments.lua")
 includeFile("groups/clothing_attachments.lua")
 includeFile("groups/coa_encoded_disk_fragments.lua")
@@ -11,7 +9,6 @@ includeFile("groups/data_storage_unit_parts.lua")
 includeFile("groups/fenri_dalso_drop.lua")
 includeFile("groups/holocron_dark.lua")
 includeFile("groups/holocron_light.lua")
-includeFile("groups/holocron_group.lua")
 includeFile("groups/junk.lua")
 includeFile("groups/klin_nif_drop.lua")
 includeFile("groups/loot_kit_parts.lua")
@@ -24,13 +21,6 @@ includeFile("groups/sith_shadow_intro_theater_datapad.lua")
 includeFile("groups/skill_buffs.lua")
 includeFile("groups/tailor_components.lua")
 includeFile("groups/treasure_map_group.lua")
-
--- component loot sub-folder
-
-includeFile("groups/component_loot/chemistry_component_advanced.lua")
-includeFile("groups/component_loot/weapon_component_advanced.lua")
-includeFile("groups/component_loot/chemistry_component.lua")
-includeFile("groups/component_loot/weapon_component.lua")
 
 -- armor sub-folder
 includeFile("groups/armor/armor_all.lua")
@@ -56,12 +46,15 @@ includeFile("groups/bestine_election/bestine_election_tusken_head.lua")
 includeFile("groups/bestine_election/bestine_election_baton.lua")
 includeFile("groups/bestine_election/bestine_election_smooth_stone.lua")
 includeFile("groups/bestine_election/bestine_election_carved_stone.lua")
-includeFile("groups/bestine_election/bestine_history_quest_reward.lua")
-includeFile("groups/bestine_election/bestine_election_sean_trenwell_rewards.lua")
-includeFile("groups/bestine_election/bestine_election_tusken_head.lua")
-includeFile("groups/bestine_election/bestine_election_tusken_loot.lua")
 includeFile("groups/bestine_election/bestine_election_tusken_quest.lua")
 includeFile("groups/bestine_election/bestine_election_victor_visalis_rewards.lua")
+
+-- component loot sub-folder
+
+includeFile("groups/component_loot/chemistry_component_advanced.lua")
+includeFile("groups/component_loot/weapon_component_advanced.lua")
+includeFile("groups/component_loot/chemistry_component.lua")
+includeFile("groups/component_loot/weapon_component.lua")
 
 -- corellian_corvette sub-folder
 includeFile("groups/corellian_corvette/imperial_corvette_loot.lua")
@@ -120,8 +113,8 @@ includeFile("groups/geonosian_lab/geo_kliknik.lua")
 includeFile("groups/geonosian_lab/geonosian_common.lua")
 includeFile("groups/geonosian_lab/geonosian_cubes.lua")
 includeFile("groups/geonosian_lab/geonosian_hard.lua")
-includeFile("groups/geonosian_lab/geonosian_relic.lua")
 includeFile("groups/geonosian_lab/geonosian_loot_container.lua")
+includeFile("groups/geonosian_lab/geonosian_relic.lua")
 
 -- hero_of_tatooine sub-folder
 includeFile("groups/hero_of_tatooine/hero_of_tat_mark_of_courage.lua")
@@ -375,70 +368,3 @@ includeFile("groups/wearables/wearables_common.lua")
 includeFile("groups/wearables/wearables_rare.lua")
 includeFile("groups/wearables/wearables_scarce.lua")
 includeFile("groups/wearables/wearables_uncommon.lua")
-
-includeFile("groups/playerDatapad.lua")
-includeFile("groups/playerSkull.lua")
-
-
---Collection system
-includeFile("groups/tierone.lua")
-includeFile("groups/tiertwo.lua")
-includeFile("groups/tierthree.lua")
-includeFile("groups/lootcollectiontierone.lua")
-includeFile("groups/lootcollectiontiertwo.lua")
-includeFile("groups/lootcollectiontierthree.lua")
-includeFile("groups/lootcollectiontierdiamond.lua")
-includeFile("groups/lootcollectiontierheroic.lua")
-includeFile("groups/lootcollectiontierdiamonds.lua")
-includeFile("groups/lootcollectionflurry_coal.lua")
-includeFile("groups/lootcollectionflurry_present.lua")
-
---Artifact system
-includeFile("groups/artifact.lua")
-includeFile("groups/artifactreward.lua")
-
---Halloween
-includeFile("groups/halloween.lua")
-includeFile("groups/halloween1.lua")
-
---lifeday
-includeFile("groups/flurry_coal.lua")
-includeFile("groups/flurry_present.lua")
-
---Marauder armor schems
-includeFile("groups/marauder_armor_schems.lua")
-
---Custom color crystals
-includeFile("groups/crystal_mauls_vengence.lua")
-includeFile("groups/crystal_qui_gons_devotion.lua")
-includeFile("groups/crystal_baass_wisdom.lua")
-includeFile("groups/crystal_banes_heart.lua")
-includeFile("groups/crystal_bnars_sacrifice.lua")
-includeFile("groups/crystal_bondaras_folly.lua")
-includeFile("groups/crystal_dawn_of_dagobah.lua")
-includeFile("groups/crystal_gallias_intuition.lua")
-includeFile("groups/crystal_horns_future.lua")
-includeFile("groups/crystal_kenobis_legacy.lua")
-includeFile("groups/crystal_kits_ferocity.lua")
-includeFile("groups/crystal_kuns_blood.lua")
-includeFile("groups/crystal_mundis_response.lua")
-includeFile("groups/crystal_prowess_of_plo_koon.lua")
-includeFile("groups/crystal_quintessence_of_the_force.lua")
-includeFile("groups/crystal_strength_of_luminaria.lua")
-includeFile("groups/crystal_sunriders_destiny.lua")
-includeFile("groups/crystal_ulics_redemption.lua")
-includeFile("groups/crystal_windus_guile.lua")
-
---Nightsister gear
-includeFile("groups/nightsister1.lua")
-includeFile("groups/nightsister2.lua")
-includeFile("groups/nightsister3.lua")
-includeFile("groups/nightsister4.lua")
-includeFile("groups/nightsister5.lua")
-includeFile("groups/nightsister6.lua")
-
---World boss token
-includeFile("groups/worldbosstoken.lua")
-
---Bh saber loot when Deathblowing a Player jedi. Trophy no stats
-includeFile("groups/saberhand28.lua")

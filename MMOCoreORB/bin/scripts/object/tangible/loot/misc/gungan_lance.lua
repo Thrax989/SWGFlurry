@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_gungan_lance = object_tangible_loot_misc_shared_gungan_lance:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

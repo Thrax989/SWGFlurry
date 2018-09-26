@@ -42,7 +42,6 @@
 
 
 object_tangible_loot_misc_mt_flatbread = object_tangible_loot_misc_shared_mt_flatbread:new {
-	objectMenuComponent = "ScrapMenuComponent",
 
 }
 

@@ -26,18 +26,8 @@ public:
 		if (isWearingArmor(creature)) {
 			return NOJEDIARMOR;
 		}
-		ManagedReference<SceneObject* > object = server->getZoneServer()->getObject(target);
-
-		ManagedReference<CreatureObject* > targetPlayer = NULL;
-		targetPlayer = cast<CreatureObject*>( object.get());
-
-		if (targetPlayer != NULL)
-		targetPlayer->playEffect("clienteffect/mustafar/dark_jedi_rock_attack_1.cef", "");
 
 		return doCombatAction(creature, target);
-	}
-	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
-		return defaultTime * 1.0;
 	}
 
 };
