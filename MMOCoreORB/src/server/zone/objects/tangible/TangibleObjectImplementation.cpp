@@ -829,7 +829,7 @@ Reference<FactoryCrate*> TangibleObjectImplementation::createFactoryCrate(int ma
 
 	Locker locker(crate);
 
-	crate->setMaxCapacity(1000);
+	crate->setMaxCapacity(maxSize);
 
 
 	if (insertSelf) {
@@ -1076,7 +1076,7 @@ bool TangibleObjectImplementation::isAttackableBy(CreatureObject* object) {
 		if (ai->isPet()) {
 			ManagedReference<PetControlDevice*> pcd = ai->getControlDevice().get().castTo<PetControlDevice*>();
 			if (pcd != NULL && pcd->getPetType() == PetManager::FACTIONPET && isNeutral()) {
-				return true;
+				return false;
 			}
 
 			ManagedReference<CreatureObject*> owner = ai->getLinkedCreature().get();
