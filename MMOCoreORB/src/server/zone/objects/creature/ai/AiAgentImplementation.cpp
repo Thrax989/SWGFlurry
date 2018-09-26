@@ -3212,7 +3212,7 @@ bool AiAgentImplementation::isAttackableBy(TangibleObject* object) {
 	if (isPet()) {
 		ManagedReference<PetControlDevice*> pcd = getControlDevice().get().castTo<PetControlDevice*>();
 		if (pcd != NULL && pcd->getPetType() == PetManager::FACTIONPET && object->isNeutral()) {
-			return true;
+			return false;
 		}
 
 		ManagedReference<CreatureObject*> owner = getLinkedCreature().get();
@@ -3252,7 +3252,7 @@ bool AiAgentImplementation::isAttackableBy(CreatureObject* object) {
 	if (isPet()) {
 		ManagedReference<PetControlDevice*> pcd = getControlDevice().get().castTo<PetControlDevice*>();
 		if (pcd != NULL && pcd->getPetType() == PetManager::FACTIONPET && object->isNeutral()) {
-			return true;
+			return false;
 		}
 
 		ManagedReference<CreatureObject*> owner = getLinkedCreature().get();
@@ -3267,7 +3267,7 @@ bool AiAgentImplementation::isAttackableBy(CreatureObject* object) {
 	if (object->isPet() || object->isVehicleObject()) {
 		ManagedReference<PetControlDevice*> pcd = object->getControlDevice().get().castTo<PetControlDevice*>();
 		if (pcd != NULL && pcd->getPetType() == PetManager::FACTIONPET && isNeutral()) {
-			return true;
+			return false;
 		}
 
 		ManagedReference<CreatureObject*> owner = object->getLinkedCreature().get();

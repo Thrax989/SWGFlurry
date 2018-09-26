@@ -108,12 +108,6 @@ public:
 		JEDI_AVOID_INCAPACITATION_5 = 0xB373CBF5
 	};
 
-	// OTHER
-	enum {
-		//OTHER_DEFENSE_DIVE           = 0xDE808B67,
-		//OTHER_PISTOL_WHIP_2          = 0xE7510E07,
-		OTHER_BH_SHIELD		     = 0x3B78E672
-	};
 
 	// SKILL
 	enum {
