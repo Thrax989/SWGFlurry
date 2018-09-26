@@ -53,6 +53,9 @@ class CreatureObject extends TangibleObject {
 	protected int cashCredits;
 	
 	protected int hueValue;
+	
+	protected int selectedExpMode;
+	protected float personalExpMultiplier;
 
 	@dereferenced
 	protected DeltaVector<int> baseHAM;
