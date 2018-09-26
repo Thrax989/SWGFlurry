@@ -382,8 +382,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	String profession, customization, hairTemplate, hairCustomization;
 	callback->getSkill(profession);
 
-	//if (profession.contains("jedi"))
-		//profession = "crafting_artisan";
+	if (profession.contains("jedi"))
+		profession = "crafting_artisan";
 
 	callback->getCustomizationString(customization);
 	callback->getHairObject(hairTemplate);
@@ -452,26 +452,6 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	// Set starting cash and starting bank
 	playerCreature->setCashCredits(startingCash, false);
 	playerCreature->setBankCredits(startingBank, false);
-
-	//Add 3 lives to gray jedi upon character creation
-	if (playerCreature->hasSkill("combat_jedi_novice")) {
-		int livesLeft = playerCreature->getScreenPlayState("jediLives") + 3;
-		int jediVis1 = ghost->getVisibility();
-		playerCreature->setScreenPlayState("jediLives", livesLeft);
-		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
-		box->setPromptTitle("Gray Jedi Lives");
-		StringBuffer promptText;
-		String playerName = playerCreature->getFirstName();
-		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << playerCreature->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
-		promptText << endl;
-		promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1 << endl;
-		promptText << endl;
-		promptText << "To gain more Gray Jedi Lives you muse consume a Holocron, 3 Lives is max for a Gray Jedi." << endl;
-		promptText << endl;
-		box->setPromptText(promptText.toString());
-		ghost->addSuiBox(box);
-		playerCreature->sendMessage(box->generateMessage());
-	}
 
 	if (ghost != NULL) {
 		int accID = client->getAccountID();
@@ -839,14 +819,14 @@ void PlayerCreationManager::addHair(CreatureObject* creature,
 		return;
 	}
 
-	/*if (hairAssetData->getServerPlayerTemplate()
+/*	if (hairAssetData->getServerPlayerTemplate()
 			!= creature->getObjectTemplate()->getFullTemplateString()) {
 		error(
 				"hair " + hairTemplate
 						+ " is not compatible with this creature player "
 						+ creature->getObjectTemplate()->getFullTemplateString());
 		return;
-	}*/
+	} */
 
 	if (!hairAssetData->isAvailableAtCreation()) {
 		error("hair " + hairTemplate + " not available at creation");
