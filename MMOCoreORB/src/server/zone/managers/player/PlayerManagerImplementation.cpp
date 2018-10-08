@@ -170,7 +170,8 @@ void PlayerManagerImplementation::loadLuaConfig() {
 	performanceDuration = lua->getGlobalInt("performanceDuration");
 	medicalDuration = lua->getGlobalInt("medicalDuration");
 
-	groupExpMultiplier = lua->getGlobalFloat("groupExpMultiplier");
+	groupExpMultiplierInRange = lua->getGlobalFloat("groupExpMultiplierInRange");
+	groupExpMultiplierOutOfRange = lua->getGlobalFloat("groupExpMultiplierOutOfRange");
 
 	globalExpMultiplier = lua->getGlobalFloat("globalExpMultiplier");
 
@@ -815,8 +816,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	player->updateTimeOfDeath();
 	player->clearBuffs(true, false);
-	player->setFoodFilling(0);
-	player->setDrinkFilling(0);
 
 	PlayerObject* ghost = player->getPlayerObject();
 
@@ -824,6 +823,8 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		ghost->resetIncapacitationTimes();
 		if (ghost->hasPvpTef()) {
 			ghost->schedulePvpTefRemovalTask(true, true);
+			ghost->setFoodFilling(0);
+			ghost->setDrinkFilling(0);
 		}
 	}
 
@@ -1353,17 +1354,21 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				uint32 damage = entry->elementAt(j).getValue();
 				String xpType = entry->elementAt(j).getKey();
 				float xpAmount = baseXp;
-
-				//xpAmount *= (float) damage / totalDamage;
-
 				xpAmount /= (float) entry->size() / 1;
+				//Added Custom Group Bonus System :TOXIC 10/7/2018
+				//Adjust Range default 100m
+				//Players not in a group recieve 1x Xp bonus
+				if (group != NULL) {
+					for (int i = 0; i < group->getGroupSize(); i++) {
+						ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				//Cap xp based on level
-				//xpAmount = Math::min(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
-
-				//Apply group bonus if in group
-				if (group != NULL)
-					xpAmount *= groupExpMultiplier;
+						if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(attacker, 100.0f) && groupedCreature != attacker) {
+							xpAmount *= groupExpMultiplierInRange;//If you are within 100 meeters of your group you recieve 2x Xp bonus
+							} else {
+							xpAmount *= groupExpMultiplierOutOfRange;//If you are farther than 100 meeters of your group you recieve default 1.2x Xp bonus
+						}
+					}
+				}
 
 				if (winningFaction == attacker->getFaction())
 					xpAmount *= gcwBonus;
