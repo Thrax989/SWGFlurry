@@ -1,11 +1,9 @@
 ## Repository EST Dec 29, 2016 
 
 ## <img src="http://i.imgur.com/OB4Pa6a.png">
-(Old) Publish-9 Server Build (8/13/2017-8/13/2018) https://github.com/Thrax989/SWGFlurry/tree/Publish9
-
-(Current) Publish-10 Server Build (9/1/2018-x/xx/xxxx) https://github.com/Thrax989/SWGFlurry/tree/Publish-10
 
 ## SWGFlurry Server Index  ##
+  * Server RoadMap https://trello.com/b/fawSAKWE/swg-flurry-classic-server
   * Server Client https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
   * Server Tre's www.swgflurry.com/TRE/
   * Wiki http://www.swgflurry.com/wiki/
