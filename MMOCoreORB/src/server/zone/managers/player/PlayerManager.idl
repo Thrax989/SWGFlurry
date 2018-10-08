@@ -77,7 +77,8 @@ class PlayerManager extends Observer implements Logger {
 
 	transient CharacterNameMap nameMap;
 	private float globalExpMultiplier;
-	private float groupExpMultiplier;
+	private float groupExpMultiplierInRange;
+	private float groupExpMultiplierOutOfRange;
 
 	@dereferenced
 	private transient ReadWriteLock onlineMapMutex;
