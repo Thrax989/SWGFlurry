@@ -1355,11 +1355,13 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				float xpAmount = baseXp;
 				xpAmount /= (float) entry->size() / 1;
 				
+				//Added Custom Group Bonus System :TOXIC 10/7/2018
+				//Adjust Range default 100m
 				if (group != NULL) {
 					for (int i = 0; i < group->getGroupSize(); i++) {
 						ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-						if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(attacker, 15.0f) && groupedCreature != attacker) {
+						if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(attacker, 100.0f) && groupedCreature != attacker) {
 							xpAmount *= groupExpMultiplier;
 						}
 					}
