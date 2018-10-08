@@ -1353,26 +1353,24 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				uint32 damage = entry->elementAt(j).getValue();
 				String xpType = entry->elementAt(j).getKey();
 				float xpAmount = baseXp;
-
-				//xpAmount *= (float) damage / totalDamage;
-
 				xpAmount /= (float) entry->size() / 1;
+				
+				if (group != NULL) {
+					for (int i = 0; i < group->getGroupSize(); i++) {
+						ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-				//Cap xp based on level
-				//xpAmount = Math::min(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
-
-				//Apply group bonus if in group
-				if (group != NULL)
-					xpAmount *= groupExpMultiplier;
+						if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(attacker, 15.0f) && groupedCreature != attacker) {
+							xpAmount *= groupExpMultiplier;
+						}
+					}
+				}
 
 				if (winningFaction == attacker->getFaction())
 					xpAmount *= gcwBonus;
 
-				//Jedi experience doesn't count towards combat experience, and is earned at 20% the rate of normal experience
+				//Jedi experience doesn't count towards combat experience
 				if (xpType != "jedi_general")
 					combatXp += xpAmount;
-				else
-					xpAmount *= 0.2f;
 
 				//Award individual expType
 				awardExperience(attacker, xpType, xpAmount);
