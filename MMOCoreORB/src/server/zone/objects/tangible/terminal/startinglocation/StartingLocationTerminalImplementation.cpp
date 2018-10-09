@@ -33,7 +33,7 @@ int StartingLocationTerminalImplementation::handleObjectMenuSelect(CreatureObjec
 			ManagedReference<SuiListBox*> xpBox = new SuiListBox(player, SuiWindowType::XP_SELECT, 0);
 			xpBox->setCallback(new ExpSelectSuiCallback(player->getZoneServer()));
 			xpBox->setPromptTitle("Please select experience rate.");
-			xpBox->setPromptText("This is PERMENENT, please choose carefully.");
+			xpBox->setPromptText("This is Permanent, please choose carefully.");
 			xpBox->addMenuItem("Normal: 1x Exp",0);
 			xpBox->addMenuItem("Elevated: 5x Exp",1);
 			xpBox->addMenuItem("Fast: 10x Exp",2);
