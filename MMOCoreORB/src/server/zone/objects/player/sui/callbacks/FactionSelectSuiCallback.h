@@ -37,13 +37,11 @@ public:
 		case 0:
 			player->setFaction("Neutral");
 			player->sendSystemMessage("You have joined the Neutral faction.");
-");
 		break;
 
 		case 1:
 			player->setFaction("Imperial");
 			player->sendSystemMessage("You have joined the Imperial faction.");
-");
 		break;
 
 		case 2:
