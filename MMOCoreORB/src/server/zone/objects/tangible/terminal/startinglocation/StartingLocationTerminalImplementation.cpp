@@ -33,7 +33,7 @@ int StartingLocationTerminalImplementation::handleObjectMenuSelect(CreatureObjec
 			ManagedReference<SuiListBox*> xpBox = new SuiListBox(player, SuiWindowType::XP_SELECT, 0);
 			xpBox->setCallback(new ExpSelectSuiCallback(player->getZoneServer()));
 			xpBox->setPromptTitle("Please select experience rate.");
-			xpBox->setPromptText("This is Permanent, please choose carefully.");
+			xpBox->setPromptText("This is PERMENENT, please choose carefully.");
 			xpBox->addMenuItem("Normal: 1x Exp",0);
 			xpBox->addMenuItem("Elevated: 5x Exp",1);
 			xpBox->addMenuItem("Fast: 10x Exp",2);
@@ -46,22 +46,22 @@ int StartingLocationTerminalImplementation::handleObjectMenuSelect(CreatureObjec
 	}
 	
 	if(player->getSelectedExpMode() >= 0 ){
-		if(!player->getPlayerObject()->hasSuiBoxWindowType(SuiWindowType::FACTION_SELECT)){
-			ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-			ManagedReference<SuiListBox*> xpBox = new SuiListBox(player, SuiWindowType::XP_SELECT, 0);
-			xpBox->setCallback(new FactionSelectSuiCallback(player->getZoneServer()));
-			xpBox->setPromptTitle("Please select your faction.");
-			xpBox->setPromptText("Please choose carefully.");
-			xpBox->addMenuItem("Neutral",0);
-			xpBox->addMenuItem("Imperial",1);
-			xpBox->addMenuItem("Rebel",2);
-			ghost->addSuiBox(xpBox);
-			player->sendMessage(xpBox->generateMessage());
-			return 1;
-		}else{
-			return 1;
-		}
-	}
+ 		if(!player->getPlayerObject()->hasSuiBoxWindowType(SuiWindowType::FACTION_SELECT)){
+ 			ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
+ 			ManagedReference<SuiListBox*> factionBox = new SuiListBox(player, SuiWindowType::FACTION_SELECT, 0);
+ 			factionBox->setCallback(new FactionSelectSuiCallback(player->getZoneServer()));
+ 			factionBox->setPromptTitle("Please select your faction.");
+ 			factionBox->setPromptText("Please choose carefully.");
+ 			factionBox->addMenuItem("Neutral",0);
+ 			factionBox->addMenuItem("Imperial",1);
+ 			factionBox->addMenuItem("Rebel",2);
+ 			ghost->addSuiBox(factionBox);
+ 			player->sendMessage(factionBox->generateMessage());
+ 			return 1;
+ 		}else{
+ 			return 1;
+ 		}
+ 	}
 	
 	server->getPlayerManager()->sendStartingLocationsTo(player);
 
