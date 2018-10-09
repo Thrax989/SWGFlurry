@@ -35,18 +35,21 @@ public:
 		switch (option) {
 
 		case 0:
-			player->setFaction("Neutral");
+			player->setFaction(0);
 			player->sendSystemMessage("You have joined the Neutral faction.");
+			server->getPlayerManager()->sendStartingLocationsTo(player);
 		break;
 
 		case 1:
-			player->setFaction("Imperial");
+			player->setFaction(3679112276);
 			player->sendSystemMessage("You have joined the Imperial faction.");
+			server->getPlayerManager()->sendStartingLocationsTo(player);
 		break;
 
 		case 2:
-			player->setFaction("Rebel");
+			player->setFaction(370444368);
 			player->sendSystemMessage("You have joined the Rebel faction.");
+			server->getPlayerManager()->sendStartingLocationsTo(player);
 		break;
 		}
 	}
