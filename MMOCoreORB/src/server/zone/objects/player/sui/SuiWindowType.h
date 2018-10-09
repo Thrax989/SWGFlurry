@@ -274,7 +274,8 @@ public:
 		FIELD_FACTION_CHANGE			   = 1040,
 		GOTO_LIST						   = 1041,
 		FS_EXP_CONVERT 					   = 1042,
-		XP_SELECT						   = 1043
+		XP_SELECT						   = 1043,
+		FACTION_SELECT						   = 1044
 	};
 };
 
