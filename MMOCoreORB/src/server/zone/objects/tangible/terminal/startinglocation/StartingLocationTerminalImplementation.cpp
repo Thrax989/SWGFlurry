@@ -11,6 +11,7 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/sui/callbacks/ExpSelectSuiCallback.h"
+#include "server/zone/objects/player/sui/callbacks/FactionSelectSuiCallback.h"
 
 void StartingLocationTerminalImplementation::initializeTransientMembers() {
 	TerminalImplementation::initializeTransientMembers();
@@ -50,7 +51,7 @@ int StartingLocationTerminalImplementation::handleObjectMenuSelect(CreatureObjec
  			ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
  			ManagedReference<SuiListBox*> factionBox = new SuiListBox(player, SuiWindowType::FACTION_SELECT, 0);
  			factionBox->setCallback(new FactionSelectSuiCallback(player->getZoneServer()));
- 			factionBox->setPromptTitle("Please select your faction.");
+ 			factionBox->setPromptTitle("Please select a faction.");
  			factionBox->setPromptText("Please choose carefully.");
  			factionBox->addMenuItem("Neutral",0);
  			factionBox->addMenuItem("Imperial",1);
