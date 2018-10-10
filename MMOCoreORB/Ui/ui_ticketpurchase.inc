@@ -29,12 +29,10 @@
 				buttonCancel='buttonExit'
 				buttonclose='bg.mmc.close'
 				buttonCorellia='map.GalaxyMap.buttonCorellia'
+				buttonMainspacestation='map.GalaxyMap.buttondungeon2'
 				buttonDantooine='map.GalaxyMap.buttonDantooine'
-				buttonKaas='map.GalaxyMap.buttonKaas'
-				buttonGhomrassen='map.galaxyMap.buttonGhomrassen'
-				buttonKashyyyk='map.galaxyMap.buttonKashyyyk'
-				buttonTaanab='map.galaxyMap.buttonTaanab'
 				buttonDathomir='map.GalaxyMap.buttonDathomir'
+				buttonKashyyyk='map.GalaxyMap.buttonKashyyyk'
 				buttonDepartGalactic='old.target.from.buttonDepartGalactic'
 				buttonDepartPlanet='old.target.from.buttonDepartPlanet'
 				buttonEndor='map.GalaxyMap.buttonEndor'
@@ -856,6 +854,25 @@ parent.buttonTravel.visible=false
 						ColorCarat='#FFFFFF'
 						ColorSelection='#FFFFFF'
 						Font='bold_13'
+						LocalText='Kashyyyk'
+						Location='150,193'
+						MinimumSize='0,19'
+						Name='Kashyyyk'
+						OpacityRelativeMin='0.70'
+						PackLocation='cpc,cpc'
+						PackSize='p,p'
+						PalText='contrast1'
+						ScrollExtent='75,19'
+						Size='75,19'
+						TextAlignment='Center'
+						TextAlignmentVertical='Center'
+						TextColor='#62FF15'
+					>Kashyyyk</Text>
+					<Text
+						BackgroundColor='#FFFFFF'
+						ColorCarat='#FFFFFF'
+						ColorSelection='#FFFFFF'
+						Font='bold_13'
 						LocalText='Lok'
 						Location='345,429'
 						MinimumSize='0,19'
@@ -933,7 +950,7 @@ parent.buttonTravel.visible=false
 						ColorSelection='#FFFFFF'
 						Font='bold_13'
 						LocalText='Tatooine'
-						Location='334,361'
+						Location='354,361'
 						MinimumSize='0,19'
 						Name='Tatooine'
 						OpacityRelativeMin='0.70'
@@ -965,53 +982,16 @@ parent.buttonTravel.visible=false
 						TextAlignmentVertical='Center'
 						TextColor='#62FF15'
 					>Yavin IV</Text>
+
 					<Text
 						BackgroundColor='#FFFFFF'
 						ColorCarat='#FFFFFF'
 						ColorSelection='#FFFFFF'
 						Font='bold_13'
-						LocalText='Ghomrassen'
-						Location='395,355'
-						MinimumSize='0,19'
-						Name='Ghomrassen'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,f'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Ghomrassen</Text>	
-						<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Kashyyyk'
-						Location='395,355'
-						MinimumSize='0,19'
-						Name='Kashyyyk'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,f'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Kashyyyk</Text>				
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Dromund Kaas'
+						LocalText='dungeon2'
 						Location='385,270'
 						MinimumSize='0,19'
-						Name='Kaas'
+						Name='dungeon2'
 						OpacityRelativeMin='0.70'
 						PackLocation='cpc,cpc'
 						PackSize='p,f'
@@ -1021,27 +1001,7 @@ parent.buttonTravel.visible=false
 						TextAlignment='Center'
 						TextAlignmentVertical='Center'
 						TextColor='#62FF15'
-					>Dromund Kaas</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Taanab'
-						Location='37,117'
-						MinimumSize='0,19'
-						Name='Taanab'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,f'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Taanab</Text>
-					
+					>Flurry Station</Text>
 					</Page>
 				<Page
 					BackgroundColor='#FFFFFF'
@@ -1150,6 +1110,46 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							Size='498,482'
 							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_endor'
+						/>
+					</Page>
+					<Page
+						BackgroundOpacity='1.00'
+						Name='Kashyyyk'
+						PackLocation='nfn,nfn'
+						PackSize='a,a'
+						RStyleDefault='rs_default'
+						ScrollExtent='482,482'
+						Size='482,482'
+					>
+						<Image
+							BackgroundOpacity='1.00'
+							Name='New Image'
+							PackLocation='nfn,nfn'
+							PackSize='a,a'
+							ScrollExtent='482,482'
+							Size='482,482'
+							SourceRect='0,0,1024,1024'
+							SourceResource='ui_map_kashyyyk'
+						/>
+					</Page>
+					<Page
+						BackgroundOpacity='1.00'
+						Name='dungeon2'
+						PackLocation='nfn,nfn'
+						PackSize='a,a'
+						RStyleDefault='rs_default'
+						ScrollExtent='482,482'
+						Size='482,482'
+					>
+						<Image
+							BackgroundOpacity='1.00'
+							Name='New Image'
+							PackLocation='nfn,nfn'
+							PackSize='a,a'
+							ScrollExtent='482,482'
+							Size='482,482'
+							SourceRect='0,0,1024,1024'
+							SourceResource='ui_map_dungeon2'
 						/>
 					</Page>
 					<Page
@@ -1272,69 +1272,9 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							SourceResource='ui_map_yavin4'
 						/>
 					</Page>
-					<Page
-						BackgroundOpacity='1.00'
-						Name='Ghomrassen'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='498,482'
-						Size='498,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='498,482'
-							Size='498,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_ghomrassen'
-						/>
-					</Page>
-					<Page
-						BackgroundOpacity='1.00'
-						Name='Kashyyyk'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='498,482'
-						Size='498,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='498,482'
-							Size='498,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_kashyyyk'
-						/>
-					</Page>
-					<Page
-						BackgroundOpacity='1.00'
-						Name='Kaas'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='498,482'
-						Size='498,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='498,482'
-							Size='498,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_kaas'
-						/>
-          </Page>
           <Page
 						BackgroundOpacity='1.00'
-						Name='Taanab'
+						Name='dungeon2'
 						PackLocation='nfn,nfn'
 						PackSize='a,a'
 						RStyleDefault='rs_default'
@@ -1349,9 +1289,9 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							ScrollExtent='498,482'
 							Size='498,482'
 							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_taanab'
+							SourceResource='ui_map_dungeon2'
 						/>
-          </Page>
+				</Page>
 				</Page>
 				<Page
 					Location='2,2'
@@ -1564,6 +1504,37 @@ parent.planetnames.visible=visible'
 						GetsInput='false'
 						lightambientcolor='#222222'
 						lightcolor='#ffffff'
+						Location='154,202.5'
+						Name='vKashyyyk'
+						objectdatasource='data.Kashyyyk'
+						PackLocation='cpc,cpc'
+						PackSize='p,p'
+						RotateSpeed='0.3'
+						RStyleDefault='rs_default'
+						ScrollExtent='40,41'
+						Size='40,41'
+					/>
+					<Button
+						BackgroundColor='#FFFFFF'
+						Location='150,197.5'
+						MaximumSize='800,600'
+						Name='buttonKashyyyk'
+						PackLocation='cpc,cpc'
+						PackSize='p,p'
+						ScrollExtent='49,50'
+						Size='49,50'
+						Style='/Styles.New.buttons.planetLrg.style'
+					></Button>
+					<CuiWidget3dObjectListViewer
+						AutoZoomOutOnly='true'
+						CameraForceTarget='true'
+						camerayaw='90'
+						dragyawok='false'
+						fieldofview='60'
+						FitDistanceFactor='1'
+						GetsInput='false'
+						lightambientcolor='#222222'
+						lightcolor='#ffffff'
 						Location='232,108'
 						Name='vTalus'
 						objectdatasource='data.Talus'
@@ -1626,87 +1597,25 @@ parent.planetnames.visible=visible'
 						GetsInput='false'
 						lightambientcolor='#222222'
 						lightcolor='#ffffff'
-						Location='400,360'
-						Name='vGhomrassen'
-						objectdatasource='data.Ghomrassen'
+						Location='345,225'
+						Name='vdungeon2'
+						objectdatasource='data.dungeon2'
 						PackLocation='cpc,cpc'
 						PackSize='p,p'
 						RotateSpeed='0.5'
 						RStyleDefault='rs_default'
-						ScrollExtent='35,36'
-						Size='35,36'
+						ScrollExtent='150,149'
+						Size='150,149'
 					/>
 					<Button
 						BackgroundColor='#000000'
-						Location='400,360'
+						Location='400,283'
 						MaximumSize='800,600'
-						Name='buttonGhomrassen'
+						Name='buttondungeon2'
 						PackLocation='cpc,cpc'
 						PackSize='p,p'
-						ScrollExtent='35,36'
-						Size='35,36'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='400,360'
-						Name='vGhomrassen'
-						objectdatasource='data.Kashyyyk'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.5'
-						RStyleDefault='rs_default'
-						ScrollExtent='35,36'
-						Size='35,36'
-					/>
-					<Button
-						BackgroundColor='#000000'
-						Location='400,50'
-						MaximumSize='800,600'
-						Name='buttonKashyyyk'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='35,36'
-						Size='35,36'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='385,270'
-						Name='vKaas'
-						objectdatasource='data.Kaas'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.5'
-						RStyleDefault='rs_default'
-						ScrollExtent='63,62'
-						Size='63,62'
-					/>
-					<Button
-						BackgroundColor='#000000'
-						Location='385,270'
-						MaximumSize='800,600'
-						Name='buttonKaas'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='63,62'
-						Size='63,62'
+						ScrollExtent='40,39'
+						Size='40,39'
 						Style='/Styles.New.buttons.planetLrg.style'
 					></Button>
 					<CuiWidget3dObjectListViewer
@@ -1740,38 +1649,6 @@ parent.planetnames.visible=visible'
 						Size='58,55'
 						Style='/Styles.New.buttons.planetLrg.style'
 					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='50,124'
-						Name='vTaanab'
-						objectdatasource='data.Taanab'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='49,46'
-						Size='49,46'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='45,120'
-						MaximumSize='800,600'
-						Name='buttonTaanab'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='58,55'
-						Size='58,55'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-
 					<CuiWidget3dObjectListViewer
 						AutoZoomOutOnly='true'
 						CameraForceTarget='true'
@@ -2776,6 +2653,134 @@ parent.planetnames.visible=visible'
 							Size='2,17'
 						/>
 					</Runner>
+
+					<Runner
+						BackgroundColor='#FFFFFF'
+						Color='#80FF00'
+						Location='331,-84'
+						Name='corellia_dathomir'
+						PackLocation='cpc,cpc'
+						PackSize='f,f'
+						Rotation='0.60'
+						RunAdvance='2'
+						RunDelayAdvance='100'
+						RunDelayRestart='0'
+						RunEffectorsOff='/effectors.opacity.slow.fadeout'
+						RunEffectorsOn='/effectors.opacity.fast.fadefull'
+						RunPaused='false'
+						RunSimultaneous='2'
+						ScrollExtent='2,404'
+						Size='2,404'
+					>
+						<Page
+							BackgroundColor='#FFFFFF'
+							BackgroundOpacity='1.00'
+							Location='1,178'
+							Name='light21'
+							Opacity='0.00'
+							PackSize='a,a'
+							RStyleDefault='/Styles.New.line.rs_default'
+							ScrollExtent='2,17'
+							Size='2,17'
+						/>
+						<Page
+							BackgroundColor='#FFFFFF'
+							BackgroundOpacity='1.00'
+							Location='1,188'
+							Name='light20'
+							Opacity='0.00'
+							PackSize='a,a'
+							RStyleDefault='/Styles.New.line.rs_default'
+							ScrollExtent='2,17'
+							Size='2,17'
+						/>
+						<Page
+							BackgroundColor='#FFFFFF'
+							BackgroundOpacity='1.00'
+							Location='1,168'
+							Name='light22'
+							Opacity='0.00'
+							PackSize='a,a'
+							RStyleDefault='/Styles.New.line.rs_default'
+							ScrollExtent='2,17'
+							Size='2,17'
+						/>
+						<Page
+							BackgroundColor='#FFFFFF'
+							BackgroundOpacity='1.00'
+							Location='1,198'
+							Name='light19'
+							Opacity='0.00'
+							PackSize='a,a'
+							RStyleDefault='/Styles.New.line.rs_default'
+							ScrollExtent='2,17'
+							Size='2,17'
+						/>
+						<Page
+							BackgroundColor='#FFFFFF'
+							BackgroundOpacity='1.00'
+							Location='1,158'
+							Name='light23'
+							Opacity='0.00'
+							PackSize='a,a'
+							RStyleDefault='/Styles.New.line.rs_default'
+							ScrollExtent='2,17'
+							Size='2,17'
+						/>
+						<Page
+							BackgroundColor='#FFFFFF'
+							BackgroundOpacity='1.00'
+							Location='1,208'
+							Name='light18'
+							Opacity='0.00'
+							PackSize='a,a'
+							RStyleDefault='/Styles.New.line.rs_default'
+							ScrollExtent='2,17'
+							Size='2,17'
+						/>
+						<Page
+							BackgroundColor='#FFFFFF'
+							BackgroundOpacity='1.00'
+							Location='1,148'
+							Name='light24'
+							Opacity='0.00'
+							PackSize='a,a'
+							RStyleDefault='/Styles.New.line.rs_default'
+							ScrollExtent='2,17'
+							Size='2,17'
+						/>
+						<Page
+							BackgroundColor='#FFFFFF'
+							BackgroundOpacity='1.00'
+							Location='1,218'
+							Name='light17'
+							Opacity='0.00'
+							PackSize='a,a'
+							RStyleDefault='/Styles.New.line.rs_default'
+							ScrollExtent='2,17'
+							Size='2,17'
+						/>
+						<Page
+							BackgroundColor='#FFFFFF'
+							BackgroundOpacity='1.00'
+							Location='1,138'
+							Name='light25'
+							PackSize='a,a'
+							RStyleDefault='/Styles.New.line.rs_default'
+							ScrollExtent='2,17'
+							Size='2,17'
+						/>
+						<Page
+							BackgroundColor='#FFFFFF'
+							BackgroundOpacity='1.00'
+							Location='1,228'
+							Name='light16'
+							PackSize='a,a'
+							RStyleDefault='/Styles.New.line.rs_default'
+							ScrollExtent='2,17'
+							Size='2,17'
+						/>
+					</Runner>
 					<Runner
 						BackgroundColor='#FFFFFF'
 						Color='#80FF00'
@@ -3653,35 +3658,11 @@ parent.planetnames.visible=visible'
 							/>
 						</DataSource>
 						<DataSource
-							Name='Ghomrassen'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_ghomrassen.apt'
-								Name='Ghomrassen'
-							/>
-						</DataSource>
-						<DataSource
-							Name='Kashyyyk'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_kash.apt'
-								Name='Kashyyyk'
-							/>
-						</DataSource>
-						<DataSource
 							Name='Tatooine'
 						>
-						<Data
+							<Data
 								appearanceTemplate='appearance/ui_planet_sel_tato.apt'
 								Name='Tatooine'
-							/>
-						</DataSource>
-						<DataSource
-							Name='Taanab'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_taanab.apt'
-								Name='Taanab'
 							/>
 						</DataSource>
 						<DataSource
@@ -3701,11 +3682,19 @@ parent.planetnames.visible=visible'
 							/>
 						</DataSource>
 						<DataSource
-							Name='Kaas'
+							Name='Kashyyyk'
 						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_kaas.apt'
-								Name='Kaas'
+						<Data
+								appearanceTemplate='appearance/ui_planet_sel_kash.apt'
+								Name='Kashyyyk'
+							/>
+						</DataSource>
+						<DataSource
+							Name='dungeon2'
+						>
+						<Data
+								appearanceTemplate='appearance/spacestation_outpost_rebel_s01.apt'
+								Name='dungeon2'
 							/>
 						</DataSource>
 						<DataSource
