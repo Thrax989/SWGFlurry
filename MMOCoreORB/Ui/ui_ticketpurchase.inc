@@ -29,10 +29,10 @@
 				buttonCancel='buttonExit'
 				buttonclose='bg.mmc.close'
 				buttonCorellia='map.GalaxyMap.buttonCorellia'
-				buttonMainspacestation='map.GalaxyMap.buttondungeon2'
+				buttonDungeon2='map.GalaxyMap.buttondungeon2'
 				buttonDantooine='map.GalaxyMap.buttonDantooine'
-				buttonDathomir='map.GalaxyMap.buttonDathomir'
 				buttonKashyyyk='map.GalaxyMap.buttonKashyyyk'
+				buttonDathomir='map.GalaxyMap.buttonDathomir'
 				buttonDepartGalactic='old.target.from.buttonDepartGalactic'
 				buttonDepartPlanet='old.target.from.buttonDepartPlanet'
 				buttonEndor='map.GalaxyMap.buttonEndor'
@@ -1046,7 +1046,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,1024,1024'
+							SourceRect='0,0,4096,4096'
 							SourceResource='ui_map_corellia'
 						/>
 					</Page>
@@ -1068,7 +1068,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PalColor='highlight'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,1024,1024'
+							SourceRect='0,0,4096,4096'
 							SourceResource='ui_map_dantooine'
 						/>
 					</Page>
@@ -1088,7 +1088,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,1024,1024'
+							SourceRect='0,0,4096,4096'
 							SourceResource='ui_map_dathomir'
 						/>
 					</Page>
@@ -1108,7 +1108,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,1024,1024'
+							SourceRect='0,0,4096,4096'
 							SourceResource='ui_map_endor'
 						/>
 					</Page>
@@ -1188,7 +1188,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,1024,1024'
+							SourceRect='0,0,4096,4096'
 							SourceResource='ui_map_naboo'
 						/>
 					</Page>
@@ -1208,7 +1208,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,1024,1024'
+							SourceRect='0,0,4096,4096'
 							SourceResource='ui_map_rori'
 						/>
 					</Page>
@@ -1228,7 +1228,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,1024,1024'
+							SourceRect='0,0,4096,4096'
 							SourceResource='ui_map_talus'
 						/>
 					</Page>
@@ -1248,7 +1248,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,1024,1024'
+							SourceRect='0,0,4096,4096'
 							SourceResource='ui_map_tatooine'
 						/>
 					</Page>
@@ -1268,28 +1268,8 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,1024,1024'
+							SourceRect='0,0,4096,4096'
 							SourceResource='ui_map_yavin4'
-						/>
-					</Page>
-          <Page
-						BackgroundOpacity='1.00'
-						Name='dungeon2'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='498,482'
-						Size='498,482'
-					>
-            <Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='498,482'
-							Size='498,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_dungeon2'
 						/>
 				</Page>
 				</Page>

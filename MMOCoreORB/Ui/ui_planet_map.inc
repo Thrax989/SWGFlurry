@@ -674,6 +674,28 @@ parent.treebg.enabled=visible'
 							</Page>
 							<Page
 								BackgroundColor='#FFFFFF'
+								Name='dungeon2'
+								OpacityRelativeMin='0.50'
+								PackLocation='nfn,nfn'
+								PackSize='a,a'
+								RStyleDefault='rs_default'
+								ScrollExtent='485,440'
+								Size='485,440'
+								Visible='false'
+							>
+								<Image
+									BackgroundColor='#FFFFFF'
+									Name='a'
+									PackSize='a,a'
+									ScrollExtent='485,440'
+									Size='485,440'
+									SourceRect='0,0,1024,1024'
+									SourceResource='ui_map_dungeon2'
+									VisualEditLock='true'
+								/>
+							</Page>
+							<Page
+								BackgroundColor='#FFFFFF'
 								Name='default'
 								OpacityRelativeMin='0.50'
 								PackLocation='nfn,nfn'
