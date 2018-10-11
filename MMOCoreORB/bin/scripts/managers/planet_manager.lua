@@ -93,11 +93,11 @@ corellia = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.664289, oz = 0, ow = 0.747476, x = -133.192, z = 28, y = -4711.16, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.346712, oz = 0, ow = 0.937972, x = -5049.64, z = 21, y = -2304.52, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.290803, oz = 0, ow = 0.956783, x = 3330.38, z = 308, y = 5517.14, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.666281, oz = 0, ow = 0.745701, x = -136.437, z = 28, y = -4730.23, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.666281, oz = 0, ow = 0.745701, x = -3128, z = 31, y = 2809, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = -0.664289, oz = 0, ow = 0.747476, x = -133.192, z = 28, y = -4711.16, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.346712, oz = 0, ow = 0.937972, x = -5049.64, z = 21, y = -2304.52, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.290803, oz = 0, ow = 0.956783, x = 3330.38, z = 308, y = 5517.14, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = -0.666281, oz = 0, ow = 0.745701, x = -136.437, z = 28, y = -4730.23, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = -0.666281, oz = 0, ow = 0.745701, x = -3128, z = 31, y = 2809, parentid = 0}
 	}
 }
 
@@ -136,9 +136,9 @@ dantooine = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.695864, oz = 0, ow = 0.718174, x = 1585.68, z = 4, y = -6368.95, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.725999, oz = 0, ow = -0.687696, x = -629.417, z = 3, y = 2481.24, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.692641, oz = 0, ow = 0.721282, x = -4223, z = 3, y = -2357, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.695864, oz = 0, ow = 0.718174, x = 1585.68, z = 4, y = -6368.95, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.725999, oz = 0, ow = -0.687696, x = -629.417, z = 3, y = 2481.24, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.692641, oz = 0, ow = 0.721282, x = -4223, z = 3, y = -2357, parentid = 0}
 	}
 }
 
@@ -197,9 +197,9 @@ dathomir = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.701463, oz = 0, ow = 0.712705, x = 592.612, z = 6, y = 3089.84, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.314904, oz = 0, ow = 0.949123, x = -67.6585, z = 18, y = -1595.3, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.314904, oz = 0, ow = 0.949123, x = 5289.6, z = 78.5, y = -4146.1, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.701463, oz = 0, ow = 0.712705, x = 592.612, z = 6, y = 3089.84, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.314904, oz = 0, ow = 0.949123, x = -67.6585, z = 18, y = -1595.3, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.314904, oz = 0, ow = 0.949123, x = 5289.6, z = 78.5, y = -4146.1, parentid = 0}
 	}
 }
 
@@ -240,8 +240,8 @@ endor = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.932952, oz = 0, ow = -0.360002, x = -963.537, z = 73, y = 1556.86, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.723459, oz = 0, ow = -0.690367, x = 3240.5, z = 24, y = -3484.79, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.932952, oz = 0, ow = -0.360002, x = -963.537, z = 73, y = 1556.86, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.723459, oz = 0, ow = -0.690367, x = 3240.5, z = 24, y = -3484.79, parentid = 0},
 	}
 }
 
@@ -279,7 +279,7 @@ lok = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.999879, oz = 0, ow = 0.015506, x = 464.677, z = 8.75806, y = 5506.49, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.999879, oz = 0, ow = 0.015506, x = 464.677, z = 8.75806, y = 5506.49, parentid = 0}
 	}
 }
 
@@ -336,10 +336,10 @@ naboo = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.715602, oz = 0, ow = -0.698509, x = 4824.53, z = 4.17, y = -4704.9, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.309582, oz = 0, ow = 0.950873, x = -4876.99, z = 6, y = 4142.12, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.0116238, oz = 0, ow = 0.999932, x = 5193.14, z = -192, y = 6680.25, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.0116238, oz = 0, ow = -0.686427, x = 1445.8, z = 13, y = 2771.98, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.715602, oz = 0, ow = -0.698509, x = 4824.53, z = 4.17, y = -4704.9, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.309582, oz = 0, ow = 0.950873, x = -4876.99, z = 6, y = 4142.12, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = -0.0116238, oz = 0, ow = 0.999932, x = 5193.14, z = -192, y = 6680.25, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = -0.0116238, oz = 0, ow = -0.686427, x = 1445.8, z = 13, y = 2771.98, parentid = 0}
 		
 	}
 }
@@ -417,9 +417,9 @@ rori = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.100263, oz = 0, ow = 0.994961, x = -5307.37, z = 80.1274, y = -2216.91, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.69192, oz = 0, ow = 0.721974, x = 5370.22, z = 80, y = 5666.04, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.0274543, oz = 0, ow = 0.999623, x = 3672.91, z = 96, y = -6441.07, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = -0.100263, oz = 0, ow = 0.994961, x = -5307.37, z = 80.1274, y = -2216.91, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = -0.69192, oz = 0, ow = 0.721974, x = 5370.22, z = 80, y = 5666.04, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = -0.0274543, oz = 0, ow = 0.999623, x = 3672.91, z = 96, y = -6441.07, parentid = 0}
 		
 	}
 }
@@ -503,8 +503,8 @@ talus = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.996369, oz = 0, ow = -0.0851417, x = 4447.08, z = 2, y = 5286.96, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.692641, oz = 0, ow = 0.721282, x = 329.666, z = 6, y = -2924.69, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.996369, oz = 0, ow = -0.0851417, x = 4447.08, z = 2, y = 5286.96, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.692641, oz = 0, ow = 0.721282, x = 329.666, z = 6, y = -2924.69, parentid = 0}
 	}
 }
 
@@ -566,10 +566,10 @@ tatooine = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.768226, oz = 0, ow = -0.640178, x = 3533.04, z = 5, y = -4796, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.486657, oz = 0, ow = 0.873593, x = -1271.07, z = 12, y = -3590.22, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.514176, oz = 0, ow = 0.857684, x = -2896.35, z = 5, y = 2130.87, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.989124, oz = 0, ow = -0.147086, x = 1299.08, z = 7, y = 3145.21, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.768226, oz = 0, ow = -0.640178, x = 3533.04, z = 5, y = -4796, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = -0.486657, oz = 0, ow = 0.873593, x = -1271.07, z = 12, y = -3590.22, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = -0.514176, oz = 0, ow = 0.857684, x = -2896.35, z = 5, y = 2130.87, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.989124, oz = 0, ow = -0.147086, x = 1299.08, z = 7, y = 3145.21, parentid = 0}
 	}
 }
 
@@ -606,9 +606,9 @@ yavin4 = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = -6917.18, z = 73, y = -5732.25, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.723339, oz = 0, ow = -0.690493, x = 4057.69, z = 37, y = -6217.54, parentid = 0},
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.00721678, oz = 0, ow = 0.999974, x = -293.367, z = 35, y = 4854.52, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = -6917.18, z = 73, y = -5732.25, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.723339, oz = 0, ow = -0.690493, x = 4057.69, z = 37, y = -6217.54, parentid = 0},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff", ox = 0, oy = 0.00721678, oz = 0, ow = 0.999974, x = -293.367, z = 35, y = 4854.52, parentid = 0}
 	}
 }
 
@@ -705,503 +705,9 @@ space_yavin4 = {
 	}
 }
 
-hoth = {
-	weatherEnabled = 1,
-	gcwEnabled = 1,
-
-	outpostRegionNames = { },
-
-	planetTravelPoints = {
-		{name = "Scavenger Outpost", x = 0, z = 0, y = -2000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-		{"exp_hoth_echobase",-5100,5100,0,30,146},
-		{"exp_hoth_lake",0,-4000,0,30,147},
-		{"exp_hoth_starport",0,-2000,0,30,148},
-		{"exp_hoth_wampacave",0,4000,0,30,149},		
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 0, z = 0, y = -2020, parentid = 0},
-	}
-}
-
 dungeon1 = {
 	weatherEnabled = 0,
 	gcwEnabled = 0,
-}
-
-dungeon2 = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-	planetTravelPoints = {
-		{name = "Nova Orion Station", x = 4000, z = 0, y = 2000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 14200880},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-
-	}
-}
-
-
-kashyyyk = {
-	weatherEnabled = 1,
-	gcwEnabled = 1,
-
-	outpostRegionNames = { },
-
-	planetTravelPoints = {
-		{name = "Kachirho Starport", x = -669.73, z = 18.85, y = -148.48, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = -688, z = 18.5, y = -144, parentid = 0},
-	}
-}
-
-nalhutta = {
-	weatherEnabled = 1,
-	gcwEnabled = 1,
-
-	outpostRegionNames = { },
-
-	planetTravelPoints = {
-		{name = "Hutt City", x = -800, z = 8, y = 1200, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = -800, z = 8, y = 1195, parentid = 0},
-	}
-}
-
-taanab = {
-	weatherEnabled = 1,
-	gcwEnabled = 1,
-
-	outpostRegionNames = { },
-
-	planetTravelPoints = {
-		{name = "Pandath", x = 2100, z = 45, y = 5400, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-
-		{name = "Starhunter Station", x = 3610, z = 31.7, y = -5425, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-		{"exp_tan_pan",2000,5400,0,30,140},
-		{"exp_tan_downed_ship",3293,-1324,0,30,141},
-		{"exp_tan_mine",-2609,-1305,0,30,142},
-		{"exp_tan_hexfarms",-3002,-103,0,30,143},
-		{"exp_tan_great_herd",5537,-4958,0,30,144},
-		{"exp_tan_canyonlands",-2590,3705,0,30,145},
-	},
-
-	navAreas = {	
-	},
-
-	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 2020, z = 45.0, y = 5400, parentid = 0},
-	}
-}
-
-mustafar = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-
-	planetTravelPoints = {
-		{name = "Mensix Mining Facility", x = -2475, z = 230.1, y = 1624.7, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = -2532, z = 225, y = 1650, parentid = 0},
-	}
-}
-
-dagobah = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-	planetTravelPoints = {
-		{name = "Ship Graveyard", x = 3000, z = 3, y = 3000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 3024, z = 3, y = 2991, parentid = 0},
-	}
-}
-
-coruscant = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-	planetTravelPoints = {
-
-		{name = "Imperial City", x = -105, z = 40, y = 3157, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-		{name = "Starport District", x = -31, z = 40, y = 3203, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-		{name = "Entertainment District", x = 2250, z = 0, y = -4547, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-		{name = "Commercial District", x = -1847, z = 40, y = -175, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-		{name = "Monument Square", x = 1538, z = 40, y = 775, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-		
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = -127, z = 40, y = 3217, parentid = 0},
-	}
-}
-
-
-bespin = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-	planetTravelPoints = {
-		{name = "Cloud City", x = 0, z = 500, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 27, z = 500, y = 45, parentid = 0},
-	}
-}
-
-
-ghomrassen = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-
-	planetTravelPoints = {
-			{name = "Ghomrassen City", x = 0, z = 5, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-
-	}
-}
-
-
-kuat = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-
-	planetTravelPoints = {
-			{name = "Kuat City", x = 2600, z = 25, y = -3100, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-
-	}
-}
-
-
-moncal = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-
-	planetTravelPoints = {
-			{name = "Mon Calamari City", x = 125, z = 25, y = -100, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-
-	}
-}
-
-
-myrkr = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-
-	planetTravelPoints = {
-			{name = "Hyllyard City", x = 1000, z = 90, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-
-	}
-}
-
-
-ordmantell = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-
-	planetTravelPoints = {
-			{name = "Ord Mantell City", x = 0, z = 85, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-
-	}
-}
-
-
-wayland = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-
-	planetTravelPoints = {
-			{name = "Wayland City", x = 0, z = 125, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-
-	}
-}
-
-tralus = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-
-	planetTravelPoints = {
-			{name = "Tralus City", x = 0, z = 4, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-
-	}
-}
-
-kessel = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-
-	planetTravelPoints = {
-			{name = "Kessel City", x = 0, z = 90, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-
-	}
-}
-
-jakku = {
-  weatherEnabled = 1,
-  gcwEnabled = 0,
-  
-  badgeAreas = {
-
-  },
-}
-
-chandrila = {
-  weatherEnabled = 1,
-  gcwEnabled = 1,
-  
-  planetTravelPoints = {
-    {name = "Hanna City Spaceport", x = 164, z = 6, y = -2937, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-    {name = "Nayli Outpost", x = -5272, z = 18, y = 264, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-    },
-    
-    badgeAreas = {
-  },
-}
-
-kaas = {
-  weatherEnabled = 1,
-  gcwEnabled = 1,
-  
-  planetTravelPoints = {
-    {name = "an Imperial Garrison", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-    --{name = "a Smuggler Outpost", x = 2852, z = 125, y = 3896, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-    },
-    
-    badgeAreas = {   
-  },
-}
-
-hutta = {
-  weatherEnabled = 1,
-  gcwEnabled = 1,
-  
-  planetTravelPoints = {
-    {name = "Bilbousa Starport", x = -789, z = 80, y = 1769, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-    },
-    
-    badgeAreas = {   
-  },
-}
-
-coruscant = {
-  weatherEnabled = 1,
-  gcwEnabled = 1,
-  
-  planetTravelPoints = {
-    {name = "Collective Commerce District", x = -1851, z = 40, y = -175, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
-    {name = "Monument Square", x = 1538, z = 40, y = 779, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
-    {name = "Entertainment District", x = 2248, z = 0, y = -4546, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
-    {name = "Spaceport District Shuttle", x = -28, z = 40, y = 3202, interplanetaryTravelAllowed = 0, incomingTravelAllowed = 1},
-    {name = "Coruscant Spaceport", x = -96, z = 40, y = 3149, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-    },
-    
-    badgeAreas = {   
-  },
-}
-
-moraband = {
-  weatherEnabled = 1,
-  gcwEnabled = 1,
-  
-  planetTravelPoints = {
-    {name = "Archaeological Outpost", x = -1696, z = 91, y = -624, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-    },
-    
-    badgeAreas = {   
-  },
-}
-
-
-mandalore = {
-
-	weatherEnabled = 1,
-	gcwEnabled = 1,
-
-	outpostRegionNames = { },
-
-	planetTravelPoints = {
-		{name = "Bralsin", x = -5689, z = 0, y = -5034, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-		{name = "Keldabe Starport", x = 1575, z = 4, y = -6408, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-		{name = "Keldabe Shuttleport", x = 1432, z = 1.9, y = -6163, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-		{name = "Sundari", x = 6275, z = 1, y = -6211, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-		{name = "Norg Bral", x = -6648, z = 30, y = 5583, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-		{name = "Enceri", x = 4713, z = 2, y = 7154, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-		{name = "Shuror", x = 1068, z = 1, y = 2733, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-	},
-
-	badgeAreas = {
-
-	},
-
-	planetObjects = {
-
-	}
 }
 
 tutorial = {

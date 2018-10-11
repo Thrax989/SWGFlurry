@@ -29,9 +29,7 @@
 				buttonCancel='buttonExit'
 				buttonclose='bg.mmc.close'
 				buttonCorellia='map.GalaxyMap.buttonCorellia'
-				buttonDungeon2='map.GalaxyMap.buttondungeon2'
 				buttonDantooine='map.GalaxyMap.buttonDantooine'
-				buttonKashyyyk='map.GalaxyMap.buttonKashyyyk'
 				buttonDathomir='map.GalaxyMap.buttonDathomir'
 				buttonDepartGalactic='old.target.from.buttonDepartGalactic'
 				buttonDepartPlanet='old.target.from.buttonDepartPlanet'
@@ -854,25 +852,6 @@ parent.buttonTravel.visible=false
 						ColorCarat='#FFFFFF'
 						ColorSelection='#FFFFFF'
 						Font='bold_13'
-						LocalText='Kashyyyk'
-						Location='150,193'
-						MinimumSize='0,19'
-						Name='Kashyyyk'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Kashyyyk</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
 						LocalText='Lok'
 						Location='345,429'
 						MinimumSize='0,19'
@@ -982,27 +961,6 @@ parent.buttonTravel.visible=false
 						TextAlignmentVertical='Center'
 						TextColor='#62FF15'
 					>Yavin IV</Text>
-
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='dungeon2'
-						Location='385,270'
-						MinimumSize='0,19'
-						Name='dungeon2'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,f'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Flurry Station</Text>
-					</Page>
 				<Page
 					BackgroundColor='#FFFFFF'
 					BackgroundOpacity='1.00'
@@ -1114,46 +1072,6 @@ parent.parent.buttonArriveGalactic.visible=visible'
 					</Page>
 					<Page
 						BackgroundOpacity='1.00'
-						Name='Kashyyyk'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='482,482'
-						Size='482,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='482,482'
-							Size='482,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_kashyyyk'
-						/>
-					</Page>
-					<Page
-						BackgroundOpacity='1.00'
-						Name='dungeon2'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='482,482'
-						Size='482,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='482,482'
-							Size='482,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_dungeon2'
-						/>
-					</Page>
-					<Page
-						BackgroundOpacity='1.00'
 						Name='Lok'
 						PackLocation='nfn,nfn'
 						PackSize='a,a'
@@ -1168,7 +1086,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,1024,1024'
+							SourceRect='0,0,4096,4096'
 							SourceResource='ui_map_lok'
 						/>
 					</Page>
@@ -1484,37 +1402,6 @@ parent.planetnames.visible=visible'
 						GetsInput='false'
 						lightambientcolor='#222222'
 						lightcolor='#ffffff'
-						Location='154,202.5'
-						Name='vKashyyyk'
-						objectdatasource='data.Kashyyyk'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='40,41'
-						Size='40,41'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='150,197.5'
-						MaximumSize='800,600'
-						Name='buttonKashyyyk'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='49,50'
-						Size='49,50'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
 						Location='232,108'
 						Name='vTalus'
 						objectdatasource='data.Talus'
@@ -1565,37 +1452,6 @@ parent.planetnames.visible=visible'
 						PackSize='p,p'
 						ScrollExtent='72,71'
 						Size='72,71'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='345,225'
-						Name='vdungeon2'
-						objectdatasource='data.dungeon2'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.5'
-						RStyleDefault='rs_default'
-						ScrollExtent='150,149'
-						Size='150,149'
-					/>
-					<Button
-						BackgroundColor='#000000'
-						Location='400,283'
-						MaximumSize='800,600'
-						Name='buttondungeon2'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='40,39'
-						Size='40,39'
 						Style='/Styles.New.buttons.planetLrg.style'
 					></Button>
 					<CuiWidget3dObjectListViewer
@@ -3659,22 +3515,6 @@ parent.planetnames.visible=visible'
 							<Data
 								appearanceTemplate='appearance/ui_planet_sel_lok.apt'
 								Name='Lok'
-							/>
-						</DataSource>
-						<DataSource
-							Name='Kashyyyk'
-						>
-						<Data
-								appearanceTemplate='appearance/ui_planet_sel_kash.apt'
-								Name='Kashyyyk'
-							/>
-						</DataSource>
-						<DataSource
-							Name='dungeon2'
-						>
-						<Data
-								appearanceTemplate='appearance/spacestation_outpost_rebel_s01.apt'
-								Name='dungeon2'
 							/>
 						</DataSource>
 						<DataSource

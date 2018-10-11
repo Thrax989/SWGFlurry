@@ -629,28 +629,6 @@ parent.treebg.enabled=visible'
 								/>
 							</Page>
 							<Page
-								BackgroundColor=''
-								Name='hoth'
-								OpacityRelativeMin='0.50'
-								PackLocation='nfn,nfn'
-								PackSize='a,a'
-								RStyleDefault='rs_default'
-								ScrollExtent='485,440'
-								Size='485,440'
-								Visible='false'
-							>
-								<Image
-									BackgroundColor=''
-									Name='a'
-									PackSize='a,a'
-									ScrollExtent='485,440'
-									Size='485,440'
-									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_hoth'
-									VisualEditLock='true'
-								/>
-							</Page>
-							<Page
 								BackgroundColor='#FFFFFF'
 								Name='tatooine'
 								OpacityRelativeMin='0.50'
@@ -669,28 +647,6 @@ parent.treebg.enabled=visible'
 									Size='485,440'
 									SourceRect='0,0,4096,4096'
 									SourceResource='ui_map_tatooine'
-									VisualEditLock='true'
-								/>
-							</Page>
-							<Page
-								BackgroundColor='#FFFFFF'
-								Name='dungeon2'
-								OpacityRelativeMin='0.50'
-								PackLocation='nfn,nfn'
-								PackSize='a,a'
-								RStyleDefault='rs_default'
-								ScrollExtent='485,440'
-								Size='485,440'
-								Visible='false'
-							>
-								<Image
-									BackgroundColor='#FFFFFF'
-									Name='a'
-									PackSize='a,a'
-									ScrollExtent='485,440'
-									Size='485,440'
-									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_dungeon2'
 									VisualEditLock='true'
 								/>
 							</Page>
@@ -784,182 +740,6 @@ parent.treebg.enabled=visible'
 							</Page>
 							<Page
 								BackgroundColor='#FFFFFF'
-								Name='ghomrassen'
-								OpacityRelativeMin='0.50'
-								PackLocation='nfn,nfn'
-								PackSize='a,a'
-								RStyleDefault='rs_default'
-								ScrollExtent='485,440'
-								Size='485,440'
-								Visible='false'
-							>
-								<Image
-									BackgroundColor='#FFFFFF'
-									Name='a'
-									PackSize='a,a'
-									ScrollExtent='485,440'
-									Size='485,440'
-									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_ghomrassen'
-									VisualEditLock='true'
-								/>
-							</Page>
-							<Page
-								BackgroundColor='#FFFFFF'
-								Name='kashyyyk'
-								OpacityRelativeMin='0.50'
-								PackLocation='nfn,nfn'
-								PackSize='a,a'
-								RStyleDefault='rs_default'
-								ScrollExtent='485,440'
-								Size='485,440'
-								Visible='false'
-							>
-								<Image
-									BackgroundColor='#FFFFFF'
-									Name='a'
-									PackSize='a,a'
-									ScrollExtent='485,440'
-									Size='485,440'
-									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_kashyyyk_planet'
-									VisualEditLock='true'
-								/>
-							</Page>
-							<Page
-								BackgroundColor='#FFFFFF'
-								Name='kashyyyk_main'
-								OpacityRelativeMin='0.50'
-								PackLocation='nfn,nfn'
-								PackSize='a,a'
-								RStyleDefault='rs_default'
-								ScrollExtent='485,440'
-								Size='485,440'
-								Visible='false'
-							>
-								<Image
-									BackgroundColor='#FFFFFF'
-									Name='a'
-									PackSize='a,a'
-									ScrollExtent='485,440'
-									Size='485,440'
-									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_kashyyyk_main'
-									VisualEditLock='true'
-								/>
-							</Page>
-							<Page
-								BackgroundColor='#FFFFFF'
-								Name='mustafar'
-								OpacityRelativeMin='0.50'
-								PackLocation='nfn,nfn'
-								PackSize='a,a'
-								RStyleDefault='rs_default'
-								ScrollExtent='485,440'
-								Size='485,440'
-								Visible='false'
-							>
-								<Image
-									BackgroundColor='#FFFFFF'
-									Name='a'
-									PackSize='a,a'
-									ScrollExtent='485,440'
-									Size='485,440'
-									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_mustafar'
-									VisualEditLock='true'
-								/>
-							</Page>
-							<Page
-								BackgroundColor='#FFFFFF'
-								Name='kashyyyk_hunting'
-								OpacityRelativeMin='0.50'
-								PackLocation='nfn,nfn'
-								PackSize='a,a'
-								RStyleDefault='rs_default'
-								ScrollExtent='485,440'
-								Size='485,440'
-								Visible='false'
-							>
-								<Image
-									BackgroundColor='#FFFFFF'
-									Name='a'
-									PackSize='a,a'
-									ScrollExtent='485,440'
-									Size='485,440'
-									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_kashyyyk_hunting'
-									VisualEditLock='true'
-								/>
-							</Page>
-							<Page
-								BackgroundColor='#FFFFFF'
-								Name='kashyyyk_dead_forest'
-								OpacityRelativeMin='0.50'
-								PackLocation='nfn,nfn'
-								PackSize='a,a'
-								RStyleDefault='rs_default'
-								ScrollExtent='485,440'
-								Size='485,440'
-								Visible='false'
-							>
-								<Image
-									BackgroundColor='#FFFFFF'
-									Name='a'
-									PackSize='a,a'
-									ScrollExtent='485,440'
-									Size='485,440'
-									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_kashyyyk_dead_forest'
-									VisualEditLock='true'
-								/>
-							</Page>
-							<Page
-								BackgroundColor='#FFFFFF'
-								Name='kashyyyk_rryatt_trail'
-								OpacityRelativeMin='0.50'
-								PackLocation='nfn,nfn'
-								PackSize='a,a'
-								RStyleDefault='rs_default'
-								ScrollExtent='485,440'
-								Size='485,440'
-								Visible='false'
-							>
-								<Image
-									BackgroundColor='#FFFFFF'
-									Name='a'
-									PackSize='a,a'
-									ScrollExtent='485,440'
-									Size='485,440'
-									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_kashyyyk_rryatt_trail'
-									VisualEditLock='true'
-								/>
-							</Page>
-							<Page
-								BackgroundColor='#FFFFFF'
-								Name='kaas'
-								OpacityRelativeMin='0.50'
-								PackLocation='nfn,nfn'
-								PackSize='a,a'
-								RStyleDefault='rs_default'
-								ScrollExtent='485,440'
-								Size='485,440'
-								Visible='false'
-							>
-								<Image
-									BackgroundColor='#FFFFFF'
-									Name='a'
-									PackSize='a,a'
-									ScrollExtent='485,440'
-									Size='485,440'
-									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_kaas'
-									VisualEditLock='true'
-								/>
-							</Page>
-							<Page
-								BackgroundColor='#FFFFFF'
 								Name='lok'
 								OpacityRelativeMin='0.50'
 								PackLocation='nfn,nfn'
@@ -1021,28 +801,6 @@ parent.treebg.enabled=visible'
 									Size='485,440'
 									SourceRect='0,0,4096,4096'
 									SourceResource='ui_map_rori'
-									VisualEditLock='true'
-								/>
-							</Page>
-							<Page
-								BackgroundColor='#FFFFFF'
-								Name='taanab'
-								OpacityRelativeMin='0.50'
-								PackLocation='nfn,nfn'
-								PackSize='a,a'
-								RStyleDefault='rs_default'
-								ScrollExtent='485,440'
-								Size='485,440'
-								Visible='false'
-							>
-								<Image
-									BackgroundColor='#FFFFFF'
-									Name='a'
-									PackSize='a,a'
-									ScrollExtent='485,440'
-									Size='485,440'
-									SourceRect='0,0,1024,1024'
-									SourceResource='ui_map_taanab'
 									VisualEditLock='true'
 								/>
 							</Page>
