@@ -60,7 +60,7 @@ ConfigManager::ConfigManager() {
 	statusAllowedConnections = 100;
 	statusInterval = 60;
 
-	pingAllowedConnections = 3000;
+	pingAllowedConnections = 500;
 	enabledZones.setNoDuplicateInsertPlan();
 
 	purgeDeletedCharacters = 10; //Default is 10 minutes.
