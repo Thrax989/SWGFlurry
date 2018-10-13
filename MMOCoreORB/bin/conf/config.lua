@@ -60,7 +60,7 @@ DBSecret = "swgemus3cr37!" -- Change this! This value should be unique and of re
 
 LoginPort = 44453
 LoginProcessingThreads = 1
-LoginAllowedConnections = 3000
+LoginAllowedConnections = 500
 LoginRequiredVersion = "20050408-18:00"
 
 MantisHost = "127.0.0.1"
@@ -79,7 +79,7 @@ AutoReg = 0
 ProgressMonitors = "true"
 
 PingPort = 44462
-PingAllowedConnections = 3000
+PingAllowedConnections = 500
 
 ZoneProcessingThreads = 10
 ZoneAllowedConnections = 30000
