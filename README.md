@@ -5,6 +5,7 @@
   * Wiki http://www.swgflurry.com/wiki/
   * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/XHmEz9F)
   * [![Release](https://img.shields.io/github/release/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/releases/latest)
+  * [![Downloads](https://img.shields.io/github/downloads/Thrax989/SWGFlurry/total.svg)](https://github.com/Thrax989/SWGFlurry/releases/latest)
   * Website www.swgflurry.com
   * Forums http://www.swgflurry.com/forum/
   
