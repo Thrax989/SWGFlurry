@@ -1,15 +1,10 @@
-[![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/XHmEz9F)
-
-## Repository EST Dec 29, 2016 
-
-## <img src="http://i.imgur.com/OB4Pa6a.png">
-
 ## SWGFlurry Server Index  ##
   * Server RoadMap https://trello.com/b/fawSAKWE/swg-flurry-classic-server
   * Server Client https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
   * Server Tre's www.swgflurry.com/TRE/
   * Wiki http://www.swgflurry.com/wiki/
-  * Discord https://discord.gg/XHmEz9F
+  * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/XHmEz9F)
+  * [![Release](https://img.shields.io/github/release/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/releases/latest)
   * Website www.swgflurry.com
   * Forums http://www.swgflurry.com/forum/
   
