@@ -1287,6 +1287,21 @@ void PlayerObjectImplementation::notifyOnline() {
 		parent->sendMessage(sui->generateMessage());
 	}
 
+	//Send Sui to player with number of players currently logged in
+	ManagedReference<PlayerObject*> player = playerCreature->getPlayerObject();
+	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
+	int playercount = zoneServer->getConnectionCount();
+  	String playerName = playerCreature->getFirstName();
+	box->setPromptTitle("SWG Flurry");
+  	StringBuffer promptText;
+  	promptText << "\\#ffffff Welcome to the server: \\#00ff00" << playerName << "\\#ffffff There are currently: \\#00ff00" << playercount << "\\#ffffff players logged in out of\\#00ff00 1000.";
+  	box->setPromptText(promptText.toString());
+	box->setCancelButton(true, "@no");
+	box->setOkButton(true, "@yes");
+	box->setUsingObject(player);
+	player->addSuiBox(box);
+	playerCreature->sendMessage(box->generateMessage());
+
 	//Add player to visibility list
 	VisibilityManager::instance()->addToVisibilityList(playerCreature);
 
