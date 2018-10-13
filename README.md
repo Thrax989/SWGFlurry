@@ -7,7 +7,7 @@
   * Forums http://www.swgflurry.com/forum/
 
 ## Live Server Status  ##
-<img src="http://flurry.quasarfire.com/testStatus.png" height="150" width="300">
+<img src="http://flurry.quasarfire.com/testStatus.png" height="125" width="300">
 
 ## What is SWGEmu? ##
 
