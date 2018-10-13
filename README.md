@@ -5,7 +5,7 @@
   * Server Tre's www.swgflurry.com/TRE/
   * Website www.swgflurry.com
   * Forums http://www.swgflurry.com/forum/
-  * <img src="http://flurry.quasarfire.com/testStatus.png">
+  <img src="http://flurry.quasarfire.com/testStatus.png" height="100" width="100">
 ## What is SWGEmu? ##
 
 Star Wars Galaxies was a massively multi-player online role playing game introduced by Sony Online Entertainment in the year 2003 and shut down in 2011.
