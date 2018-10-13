@@ -1,12 +1,11 @@
 ## SWGFlurry Server Index  ##
-  * Server RoadMap https://trello.com/b/fawSAKWE/swg-flurry-classic-server
-  * Server Client https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
-  * Server Tre's www.swgflurry.com/TRE/
-  * Wiki http://www.swgflurry.com/wiki/
   * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/XHmEz9F)
   * [![Release](https://img.shields.io/github/release/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/releases/latest)
   * [![Downloads](https://img.shields.io/github/downloads/Thrax989/SWGFlurry/total.svg)](https://github.com/Thrax989/SWGFlurry/releases/latest)
   * [![License](https://img.shields.io/github/license/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/blob/master/COPYING)
+  * Server RoadMap https://trello.com/b/fawSAKWE/swg-flurry-classic-server
+  * Server Client https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
+  * Server Tre's www.swgflurry.com/TRE/
   * Website www.swgflurry.com
   * Forums http://www.swgflurry.com/forum/
   
