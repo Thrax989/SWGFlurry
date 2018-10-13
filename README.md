@@ -1,3 +1,5 @@
+[![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/XHmEz9F)
+
 ## Repository EST Dec 29, 2016 
 
 ## <img src="http://i.imgur.com/OB4Pa6a.png">
