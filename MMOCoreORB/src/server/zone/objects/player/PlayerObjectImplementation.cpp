@@ -1294,11 +1294,11 @@ void PlayerObjectImplementation::notifyOnline() {
   	String playerName = playerCreature->getFirstName();
 	box->setPromptTitle("SWG Flurry");
   	StringBuffer promptText;
-  	promptText << "\\#ffffff Welcome to the server: \\#00ff00" << playerName << "\\#ffffff There is currently: \\#00ff00" << playercount << "\\#ffffff players logged in out of\\#00ff00 1000.";
+  	promptText << "\\#ffffff Welcome to the server: \\#00ff00" << playerName << "\\#ffffff There is currently: \\#00ff00" << playercount << "\\#ffffff players logged in out of\\#00ff00 500.";
    	promptText << endl;
    	promptText << endl;
    	promptText << endl; 	
-  	promptText << "\\#ffffffAccount Info (Vanilla)";
+  	promptText << "\\#ffffffAccount Info";
   	promptText << endl;
   	promptText << "\\#00ff001 Account per IP";
    	promptText << endl;
@@ -1308,7 +1308,7 @@ void PlayerObjectImplementation::notifyOnline() {
    	promptText << endl;
    	promptText << endl;
    	promptText << endl;
-   	promptText << "\\#ffffffServer XP Rates (Vanilla)";
+   	promptText << "\\#ffffffServer XP Rates";
    	promptText << endl;
    	promptText << "\\#00ff001x XP Solo | 1.2x XP Grouped";
    	promptText << endl;
@@ -1316,7 +1316,7 @@ void PlayerObjectImplementation::notifyOnline() {
    	promptText << endl;
    	promptText << endl;
    	promptText << endl;
-   	promptText << "\\#ffffffServer Drop Rates (Vanilla)";
+   	promptText << "\\#ffffffServer Drop Rates";
    	promptText << endl;
    	promptText << "\\#00ff00YellowChance = 1 in 1000";
    	promptText << endl;
@@ -1342,7 +1342,7 @@ void PlayerObjectImplementation::notifyOnline() {
    	promptText << endl;
    	promptText << endl;
    	promptText << endl;
-   	promptText << "\\#ffffffOpen Source";
+   	promptText << "\\#ffffffOpen Source Repository";
    	promptText << endl;
    	promptText << "\\#00ff00https://github.com/Thrax989/SWGFlurry";
   	box->setPromptText(promptText.toString());
