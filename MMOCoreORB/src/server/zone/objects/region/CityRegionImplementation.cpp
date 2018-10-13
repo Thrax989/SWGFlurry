@@ -30,7 +30,7 @@
 #include "pathfinding/RecastNavMesh.h"
 #include "server/zone/objects/pathfinding/NavArea.h"
 
-int BoardShuttleCommand::MAXIMUM_PLAYER_COUNT = 3000;
+int BoardShuttleCommand::MAXIMUM_PLAYER_COUNT = 500;
 
 void CityRegionImplementation::initializeTransientMembers() {
 	ManagedObjectImplementation::initializeTransientMembers();
