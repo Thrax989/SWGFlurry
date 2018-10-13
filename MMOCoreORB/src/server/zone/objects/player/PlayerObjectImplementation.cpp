@@ -1318,7 +1318,7 @@ void PlayerObjectImplementation::notifyOnline() {
    	promptText << endl;
    	promptText << "\\#ffffffServer Drop Rates (Vanilla)";
    	promptText << endl;
-   	promptText << "\\#00ff00YellowChance = 1 in 1000:;
+   	promptText << "\\#00ff00YellowChance = 1 in 1000";
    	promptText << endl;
    	promptText << "ExceptionalChance = 1 in 100000";
    	promptText << endl;
