@@ -90,30 +90,18 @@ ZoneGalaxyID = 2 --The actual zone server's galaxyID. Should coordinate with you
 --To save on RAM and CPU usage, you should only enable the zones you need.
 --In order to disable a zone, all you have to do is comment it out.
 ZonesEnabled = {
-	--"chandrila",
 	"corellia",
-	--"coruscant",
 	"dantooine",
 	"dathomir",
 	"dungeon1",
-	--"dungeon2",
 	"endor",
-	--"hoth",
-	--"kaas",
-	--"kashyyyk",
-	--"kashyyyk_hunting",
-	--"kashyyyk_rryatt_trail",
-	--"kashyyyk_main",
-	--"kashyyyk_south_dungeons",
-	--"kashyyyk_north_dungeons",
-	--"kashyyyk_pob_dungeons",
-	--"kashyyyk_dead_forest",
 	"lok",
-	--"mandalore",
-	--"moraband",
-	--"mustafar",
 	"naboo",
 	"rori",
+	"talus",
+	"tatooine",
+	"tutorial",
+	"yavin4"
 	--"space_corellia",
 	--"space_corellia_2",
 	--"space_dantooine",
@@ -129,11 +117,6 @@ ZonesEnabled = {
 	--"space_tatooine",
 	--"space_tatooine_2",
 	--"space_yavin4",
-	--"taanab",
-	"talus",
-	"tatooine",
-	"tutorial",
-	"yavin4"
 }
 
 
