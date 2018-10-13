@@ -1,3 +1,4 @@
+<img src="http://flurry.quasarfire.com/testStatus.png">
 ## SWGFlurry Server Index  ##
   * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/XHmEz9F) [![Release](https://img.shields.io/github/release/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/releases/latest) [![Downloads](https://img.shields.io/github/downloads/Thrax989/SWGFlurry/total.svg)](https://github.com/Thrax989/SWGFlurry/releases/latest) [![License](https://img.shields.io/github/license/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/blob/master/COPYING)
   * Server RoadMap https://trello.com/b/fawSAKWE/swg-flurry-classic-server
