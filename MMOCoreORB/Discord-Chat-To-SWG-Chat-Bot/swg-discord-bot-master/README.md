@@ -75,5 +75,46 @@ and run it with
 ```sh
 forever start discordbot.js
 ```
+shutdown bot script
+
+```sh
+forever stopall
+```
+
+Few extra steps I used to get this bot to work -Toxic
+
+Download and setup the APT repository add the PGP key to the system’s APT keychain,
+```sh
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+```
+
+Running apt-get to Install Node.js
+```sh
+sudo apt-get install -y nodejs
+```
+
+Check that we are up to date
+```sh
+node -v
+```
+
+Update Your Version of npm
+```sh
+sudo npm install npm --global
+```
+
+If you run into erros using "npm install" I used the following
+```sh
+npm cache clean
+sudo npm install -g npm
+npm install
+npm init
+```
+
+If you run into any more errors you can always use the npm debug
+```sh
+npm install debug
+```
+
 
 Any issues?  Add an Issue in github and I'll take a look as soon as I can.
