@@ -103,7 +103,7 @@ void EntertainingSessionImplementation::doEntertainerPatronEffects() {
 			try {
 				//**VERIFY THE PATRON IS NOT ON THE DENY SERVICE LIST
 
-				if (creo->isInRange(patron, 20.0f)) {
+				if (creo->isInRange(patron, 10.0f)) {
 					healWounds(patron, woundHeal*(flourishCount+1), shockHeal*(flourishCount+1));
 					increaseEntertainerBuff(patron);
 
