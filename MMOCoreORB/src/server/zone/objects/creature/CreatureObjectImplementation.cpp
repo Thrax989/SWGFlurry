@@ -88,6 +88,7 @@
 #include "templates/customization/BasicRangedIntCustomizationVariable.h"
 #include "templates/params/PaletteColorCustomizationVariable.h"
 #include "templates/appearance/PaletteTemplate.h"
+#include "server/zone/managers/auction/AuctionSearchTask.h"
 
 float CreatureObjectImplementation::DEFAULTRUNSPEED = 5.376;
 
@@ -142,6 +143,7 @@ void CreatureObjectImplementation::initializeMembers() {
 	weapon = nullptr;
 	guild = nullptr;
 	group = nullptr;
+	auctionSearch = nullptr;
 	groupInviterID = 0;
 	groupInviteCounter = 0;
 	targetID = 0;
@@ -3702,7 +3704,7 @@ void CreatureObjectImplementation::setHue(int hueIndex) {
 
 		setCustomizationVariable(varName, tempHue, true);
 
-		delete(paletteTemplate);
+		delete paletteTemplate;
 	}
 
 	hueValue = hueIndex;
