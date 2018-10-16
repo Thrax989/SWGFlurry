@@ -30,7 +30,7 @@ require("sui.custom.SuiReceiverPuzzle")
 
 -- Custom content
 includeFile("../custom_scripts/screenplays/screenplays.lua")
-includeFile("tools/FlurryBuffTerminal.lua")
+--includeFile("tools/FlurryBuffTerminal.lua")
 
 includeFile("helperfuncs.lua")
 includeFile("playerTriggers.lua")
