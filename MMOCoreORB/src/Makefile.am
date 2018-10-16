@@ -106,7 +106,12 @@ core3_TESTS = 	tests/CircularAreaShapeTest.cpp \
 			  	tests/ZoneTest.cpp \
 			  	tests/CommandLuaTest.cpp
 
-core3_IDLS =	autogen/server/zone/objects/building/TutorialBuildingObject.cpp \
+core3_IDLS =	autogen/server/zone/managers/frs/ArenaChallengeData.cpp \
+				autogen/server/zone/managers/frs/FrsManagerData.cpp \
+				autogen/server/zone/managers/frs/FrsRank.cpp \
+				autogen/server/zone/managers/frs/ChallengeVoteData.cpp \
+				autogen/server/zone/QuadTreeEntry.cpp \
+				autogen/server/zone/objects/building/TutorialBuildingObject.cpp \
 				autogen/server/zone/objects/creature/credits/CreditObject.cpp \
 				autogen/server/zone/objects/mission/PlayerBounty.cpp \
 				autogen/server/chat/PendingMessageList.cpp \
@@ -469,10 +474,6 @@ core3_SOURCES =	$(core3_IDLS) \
 		server/zone/managers/director/PersistentEventImplementation.cpp \
 		server/zone/managers/director/QuestVectorMapImplementation.cpp \
 		server/zone/objects/ship/SpaceStationObjectImplementation.cpp \
-		server/zone/objects/ship/FighterShipObjectImplementation.cpp \
-		server/zone/objects/ship/ShipObjectImplementation.cpp \
-		server/zone/objects/intangible/ShipControlDeviceImplementation.cpp \
-		server/zone/objects/tangible/terminal/spaceship/SpaceshipTerminalImplementation.cpp \
 		server/zone/objects/tangible/components/ArtifactMenuComponent.cpp \
 		server/zone/objects/tangible/components/BossMenuComponent.cpp \
 		server/zone/objects/tangible/components/DiamondMenuComponent.cpp \
@@ -491,6 +492,10 @@ core3_SOURCES =	$(core3_IDLS) \
 		server/zone/objects/tangible/components/ImperialMenuComponent.cpp \
 		server/zone/objects/tangible/components/RebelMenuComponent.cpp \
 		server/zone/objects/creature/events/CloakEventObserverImplementation.cpp \
+		server/zone/objects/ship/FighterShipObjectImplementation.cpp \
+		server/zone/objects/ship/ShipObjectImplementation.cpp \
+		server/zone/objects/intangible/ShipControlDeviceImplementation.cpp \
+		server/zone/objects/tangible/terminal/spaceship/SpaceshipTerminalImplementation.cpp \
 		server/zone/objects/tangible/deed/components/PlaceStructureComponent.cpp \
 		server/zone/objects/tangible/deed/components/PlaceCityHallComponent.cpp \
 		server/zone/objects/tangible/deed/components/PlaceGCWBaseComponent.cpp \
