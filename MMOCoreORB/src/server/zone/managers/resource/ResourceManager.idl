@@ -84,8 +84,6 @@ class ResourceManager extends Observer implements Logger {
 
 	public native ResourceSpawn getRecycledVersion(ResourceSpawn resource);
 	
-	public native ResourceSpawn getRecycledVersionByType(final string resourceType);
-	
 	/// Resource Deed Methods
 	public native void addNodeToListBox(SuiListBox sui, final string nodeName);
 	public native string addParentNodeToListBox(SuiListBox sui, final string currentNode);
