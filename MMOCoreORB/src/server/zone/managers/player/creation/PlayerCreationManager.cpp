@@ -602,13 +602,83 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	//Join auction chat room
 	ghost->addChatRoom(chatManager->getAuctionRoom()->getRoomID());
+	//Join general/discord chat room
+	ghost->addChatRoom(chatManager->getGeneralRoom()->getRoomID());
 
+	//Send Sui to player with server information
 	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
-	box->setPromptTitle("PLEASE NOTE");
-	box->setPromptText("You are limited to creating one character per hour. Attempting to create another character or deleting your character before the 1 hour timer expires will reset the timer.");
-
+	int playercount = zoneServer->getConnectionCount();
+  	String playerName = playerCreature->getFirstName();
+	box->setPromptTitle("Welcome To SWG Flurry");
+  	StringBuffer promptText;
+  	promptText << "\\#ffffff Welcome to the server: \\#00ff00" << playerName << "\\#ffffff There is currently: \\#00ff00" << playercount << "\\#ffffff players logged in out of\\#00ff00 500.";//Current number of players currently logged in
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl; 	
+  	promptText << "\\#ffffffAccount Info";
+  	promptText << endl;
+  	promptText << "\\#00ff001 Account per IP";
+   	promptText << endl;
+  	promptText << "2 Characters Max per account";
+   	promptText << endl;
+   	promptText << "1 Character Max Online per account";
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << "\\#ffffffServer XP Rates";
+   	promptText << endl;
+   	promptText << "\\#00ff001x XP Solo | 1.2x XP Grouped";
+   	promptText << endl;
+   	promptText << "3x XP group bonus when fighting within 100 meeters of your group members";
+   	promptText << endl;
+   	promptText << "When grouping you and your party can attack the same Npc while you all gain max exp if you hit the target";
+   	promptText << endl;
+   	promptText << "gaining multiple xp types from npc is accuried by switching weapon types while you attack a npc, this will allow you to grind multiple profession box's at once";
+   	promptText << endl;
+   	promptText << "An example for gaining multiple xp types would be choose a brawler class, when attacking a meatlump npc on corellia start with unarmed, attack once, switch to 1hand weapon attack once, switch to 2hand weapon attack once, switch to polearm attack once, now kill your target, you should get max xp from the npc for all 4 weapon types allowing you to train 4 box's of brawler once you have maxed your xp";
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << "\\#ffffffServer Drop Rates";
+   	promptText << endl;
+   	promptText << "\\#00ff00YellowChance = 1 in 1000";
+   	promptText << endl;
+   	promptText << "ExceptionalChance = 1 in 100000";
+   	promptText << endl;
+   	promptText << "LegendaryChance = 1 in 1000000";
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << "\\#ffffffCommunity Info";
+   	promptText << endl;
+   	promptText << "\\#00ff00www.swgflurry.com";
+   	promptText << endl;
+   	promptText << "www.swgflurry.com/TRE";
+   	promptText << endl;
+   	promptText << "www.swgflurry.com/forum";
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << "\\#ffffffCommunity Discord Server";
+   	promptText << endl;
+   	promptText << "\\#00ff00https://discordapp.com/invite/dXm6t3W";
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << "\\#ffffffOpen Source Repository";
+   	promptText << endl;
+   	promptText << "\\#00ff00https://github.com/Thrax989/SWGFlurry";
+  	box->setPromptText(promptText.toString());
+ 	box->setCancelButton(true, "@no");
+	box->setOkButton(true, "@yes");
+	box->setUsingObject(ghost);
 	ghost->addSuiBox(box);
-	playerCreature->sendMessage(box->generateMessage());
+	ghost->sendMessage(box->generateMessage());	
+
+	//Broadcast Server wide message, new player has joined the server
+	StringBuffer zBroadcast;
+	zBroadcast << "\\#00ace6" << playerName << " \\#ffb90f Has Joined The Flurry Server!";
+	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 
 	return true;
 }

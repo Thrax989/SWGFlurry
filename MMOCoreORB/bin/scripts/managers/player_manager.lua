@@ -44,7 +44,7 @@
 --GENERAL PLAYER SETTINGS
 -----------------------------------
 
-onlineCharactersPerAccount = 2 --How many characters are allowed online from a single account.
+onlineCharactersPerAccount = 1 --How many characters are allowed online from a single account.
 allowSameAccountPvpRatingCredit = 0
 
 --Blue frog / GM buff values
@@ -54,7 +54,7 @@ performanceDuration = 7200 -- in seconds
 medicalDuration = 7200 -- in seconds
 
 --Sets the experience multiplier while within range of party members
-groupExpMultiplierInRange = 2.0--You will receive 2x bonus if you are wihin 100m of party members
+groupExpMultiplierInRange = 3.0--You will receive 3x bonus if you are wihin 100m of party members
 
  --Sets the experience multiplier while out of range of party members
 groupExpMultiplierOutOfRange = 1.2--You will receive default 1.2x bonus if you are more than 100m away from party members

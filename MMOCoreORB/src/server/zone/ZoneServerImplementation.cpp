@@ -52,7 +52,7 @@ ZoneServerImplementation::ZoneServerImplementation(ConfigManager* config) :
 	processor = NULL;
 	
 	
-	serverCap = 3000;
+	serverCap = 500;
 
 	phandler = NULL;
 

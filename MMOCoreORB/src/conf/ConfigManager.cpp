@@ -60,12 +60,13 @@ ConfigManager::ConfigManager() {
 	statusAllowedConnections = 100;
 	statusInterval = 60;
 
-	pingAllowedConnections = 3000;
+	pingAllowedConnections = 500;
 	enabledZones.setNoDuplicateInsertPlan();
 
 	purgeDeletedCharacters = 10; //Default is 10 minutes.
 
 	maxNavMeshJobs = 6;
+	maxAuctionSearchJobs = 1;
 
 	termsOfService = "";
 	tosVersion = 0;
@@ -150,6 +151,7 @@ bool ConfigManager::loadConfigData() {
 	purgeDeletedCharacters = getGlobalInt("PurgeDeletedCharacters");
 
 	maxNavMeshJobs = getGlobalInt("MaxNavMeshJobs");
+	maxAuctionSearchJobs = getGlobalInt("MaxAuctionSearchJobs");
 
 	logFile = getGlobalString("LogFile");
 	logFileLevel = getGlobalInt("LogFileLevel");
@@ -215,31 +217,21 @@ void ConfigManager::loadMOTD() {
 }
 
 void ConfigManager::loadRevision() {
-	File* file;
-	FileReader* reader;
-
 	revision = "";
 
 	try {
-		file = new File("conf/rev.txt");
-		reader = new FileReader(file);
+		File file("conf/rev.txt");
+		FileReader reader(&file);
 
 		String line;
 
-		while (reader->readLine(line))
+		while (reader.readLine(line))
 			revision += line;
 
-		reader->close();
+		reader.close();
 	} catch (FileNotFoundException& e) {
-		file = nullptr;
-		reader = nullptr;
 	} catch (Exception& e) {
-		file = nullptr;
-		reader = nullptr;
 	}
 
 	//revision = revision.replaceAll("\n", "");
-
-	delete reader;
-	delete file;
 }

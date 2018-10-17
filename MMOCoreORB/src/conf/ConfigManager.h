@@ -72,6 +72,7 @@ namespace conf {
 		int pingAllowedConnections;
 
 		int maxNavMeshJobs;
+		int maxAuctionSearchJobs;
 
 		String messageOfTheDay;
 
@@ -89,7 +90,6 @@ namespace conf {
 		int tosVersion;
 
 	public:
-
 		ConfigManager();
 
 		~ConfigManager() {
@@ -106,7 +106,6 @@ namespace conf {
 		void loadEnabledZones();
 
 		//getters
-
 		inline bool getMakeLogin() const {
 			return makeLogin;
 		}
@@ -317,6 +316,10 @@ namespace conf {
 
 		inline int getMaxNavMeshJobs() const {
 			return maxNavMeshJobs;
+		}
+
+		inline int getMaxAuctionSearchJobs() const {
+			return maxAuctionSearchJobs;
 		}
 
 		inline const String& getLogFile() const {

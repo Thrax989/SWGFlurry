@@ -20,7 +20,6 @@ class PlanetTravelPoint : public Object {
 	String pointName;
 	Vector3 arrivalVector;
 	Vector3 departureVector;
-	int cellid;
 	bool interplanetaryTravelAllowed;
 	bool incomingTravelAllowed;
 
@@ -31,10 +30,9 @@ public:
 		interplanetaryTravelAllowed = false;
 		incomingTravelAllowed = true;
 		shuttleObject = NULL;
-		cellid = 0;
 	}
 
-	PlanetTravelPoint(const String& zoneName, const String& cityName, Vector3 arrVector, Vector3 departVector, CreatureObject* shuttle,int cell = 0) {
+	PlanetTravelPoint(const String& zoneName, const String& cityName, Vector3 arrVector, Vector3 departVector, CreatureObject* shuttle) {
 			pointZone = zoneName;
 			pointName = cityName;
 			arrivalVector = arrVector;
@@ -42,7 +40,6 @@ public:
 			interplanetaryTravelAllowed = false;
 			incomingTravelAllowed = true;
 			shuttleObject = shuttle;
-			cellid = cell;
 	}
 
 	PlanetTravelPoint(const PlanetTravelPoint& ptp) : Object() {
@@ -53,7 +50,6 @@ public:
 		interplanetaryTravelAllowed = ptp.interplanetaryTravelAllowed;
 		incomingTravelAllowed = ptp.incomingTravelAllowed;
 		shuttleObject = ptp.shuttleObject;
-		cellid = ptp.cellid;
 	}
 
 	PlanetTravelPoint& operator= (const PlanetTravelPoint& ptp) {
@@ -67,7 +63,6 @@ public:
 		interplanetaryTravelAllowed = ptp.interplanetaryTravelAllowed;
 		incomingTravelAllowed = ptp.incomingTravelAllowed;
 		shuttleObject = ptp.shuttleObject;
-		cellid = ptp.cellid;
 
 		return *this;
 	}
@@ -83,7 +78,6 @@ public:
 
 		interplanetaryTravelAllowed = (bool) luaObject->getByteField("interplanetaryTravelAllowed");
 		incomingTravelAllowed = (bool) luaObject->getByteField("incomingTravelAllowed");
-		cellid = luaObject->getIntField("cell");
 	}
 
 	// Called by the shuttles and transports to set the shuttle object for the nearest travel point
@@ -157,10 +151,6 @@ public:
 	 */
 	inline bool isIncomingAllowed() {
 		return incomingTravelAllowed;
-	}
-	
-	inline int getCellID() const {
-		return cellid;
 	}
 
 	/**
