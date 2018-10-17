@@ -19,12 +19,6 @@ professions = {
 	"social_entertainer"
 }
 
-noobboots = "object/tangible/wearables/armor/ubese/armor_ubese_boots.iff"
-
-noobchest = "object/tangible/wearables/armor/ubese/armor_ubese_jacket.iff"
-
-noobhelemt = "object/tangible/wearables/armor/ubese/armor_ubese_helmet.iff"
-
 marksmanPistol = "object/weapon/ranged/pistol/pistol_cdef.iff"
 	
 marksmanRifle = "object/weapon/ranged/rifle/rifle_cdef.iff"
@@ -53,12 +47,6 @@ marojMelon = "object/tangible/food/foraged/foraged_fruit_s1.iff"
 
 x31Speeder = "object/tangible/deed/vehicle_deed/landspeeder_x31_deed.iff"
 
-gasTool = "object/tangible/survey_tool/survey_tool_gas.iff"
-
-stim = "object/tangible/medicine/crafted/crafted_stimpack_sm_s1_a.iff"
-
-newplayerpack = "object/tangible/loot/misc/new_player_pack.iff"
-
 professionSpecificItems = {
 	combat_brawler = { brawlerOneHander, brawlerTwoHander, brawlerPolearm },
 	combat_marksman = { marksmanPistol, marksmanCarbine, marksmanRifle },
@@ -69,4 +57,4 @@ professionSpecificItems = {
 	social_entertainer = { slitherhorn }
 }
 
-commonStartingItems = { noobhelemt, noobchest, noobboots, newplayerpack, marojMelon, x31Speeder }
+commonStartingItems = { marojMelon, survivalKnife, x31Speeder }
