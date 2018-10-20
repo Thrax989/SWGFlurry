@@ -961,6 +961,7 @@ parent.buttonTravel.visible=false
 						TextAlignmentVertical='Center'
 						TextColor='#62FF15'
 					>Yavin IV</Text>
+					</Page>
 				<Page
 					BackgroundColor='#FFFFFF'
 					BackgroundOpacity='1.00'
