@@ -206,7 +206,7 @@ void AuctionManagerImplementation::doAuctionMaint(TerminalListVector* items) {
 	}
 }
 
-void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 objectid, SceneObject* vendor, const UnicodeString& description, int price, uint32 duration, bool auction, bool premium) {
+void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 objectid, SceneObject* vendor, const UnicodeString& description, int price, uint32 duration, bool auction, bool premium, bool isRelist) {
 
 	if (vendor == NULL || (!vendor->isVendor() && !vendor->isBazaarTerminal())) {
 		error("terminal is not a valid vendor object");
@@ -298,7 +298,7 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 
 	// add city tax to the price
 	ManagedReference<CityRegion*> city = vendor->getCityRegion().get();
-	if (city != NULL) {
+	if (city != NULL && !isRelist) {
 		price *= (1.0f + (city->getSalesTax() / 100.0f));
 	}
 

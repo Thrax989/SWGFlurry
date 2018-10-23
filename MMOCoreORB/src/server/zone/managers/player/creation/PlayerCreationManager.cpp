@@ -629,13 +629,11 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
    	promptText << endl;
    	promptText << "\\#00ff001x XP Solo | 1.2x XP Grouped";
    	promptText << endl;
-   	promptText << "3x XP group bonus when fighting within 100 meeters of your group members";
+   	promptText << "3x group XP bonus when fighting within 100 meters of your group members";
    	promptText << endl;
-   	promptText << "When grouping you and your party can attack the same Npc while you all gain max exp if you hit the target";
+   	promptText << "Gaining multiple xp types while in combat is acquired by switching weapon types while you attack, this will allow you to gain more than one kind of xp type when killing creatures/npc";
    	promptText << endl;
-   	promptText << "gaining multiple xp types from npc is accuried by switching weapon types while you attack a npc, this will allow you to grind multiple profession box's at once";
-   	promptText << endl;
-   	promptText << "An example for gaining multiple xp types would be choose a brawler class, when attacking a meatlump npc on corellia start with unarmed, attack once, switch to 1hand weapon attack once, switch to 2hand weapon attack once, switch to polearm attack once, now kill your target, you should get max xp from the npc for all 4 weapon types allowing you to train 4 box's of brawler once you have maxed your xp";
+   	promptText << "When leveling you gain max xp from your first hit, allowing you to focus on killing the creature/npc as fast as possible instead of the traditional way of gaining XP per hit,";
    	promptText << endl;
    	promptText << endl;
    	promptText << endl;

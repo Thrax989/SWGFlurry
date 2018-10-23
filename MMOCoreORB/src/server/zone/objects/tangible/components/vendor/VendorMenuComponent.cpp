@@ -74,6 +74,9 @@ void VendorMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject,
 		menuResponse->addRadialMenuItemToRadialID(70, 73, 3, "@player_structure:pay_vendor_t");
 		menuResponse->addRadialMenuItemToRadialID(70, 74, 3, "@player_structure:withdraw_vendor_t");
 
+		if (player->hasSkill("crafting_merchant_novice") && !vendorData->isOnStrike())
+			menuResponse->addRadialMenuItemToRadialID(70, 80, 3, "Restock Items");
+
 		if (vendorData->isVendorSearchEnabled())
 			menuResponse->addRadialMenuItemToRadialID(70, 75, 3, "@player_structure:disable_vendor_search");
 		else if (!vendorData->isOnStrike())
@@ -211,6 +214,11 @@ int VendorMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject,
 		vendorData->setInitialized(true);
 		vendorData->setEmpty();
 		vendorData->scheduleVendorCheckTask(VendorDataComponent::VENDORCHECKINTERVAL);
+		return 0;
+	}
+
+	case 80: {
+		VendorManager::instance()->promptRelistItems(player, vendor);
 		return 0;
 	}
 
