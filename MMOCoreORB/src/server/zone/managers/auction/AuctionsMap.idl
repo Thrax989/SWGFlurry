@@ -69,8 +69,6 @@ class AuctionsMap extends ManagedObject {
 
 	public native int getPlayerItemCount(CreatureObject player);
 
-	public native int getVendorExpiredItemCount(SceneObject vendor);
-
 	public native int getVendorItemCount(SceneObject vendor, boolean forSaleOnly = false);
 	
 	public native void deleteTerminalItems(SceneObject vendor);
