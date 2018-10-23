@@ -35,6 +35,7 @@ import system.lang.Long;
 import engine.service.proto.BasePacket;
 import system.thread.Mutex;
 import server.zone.objects.creature.credits.CreditObject;
+import server.zone.managers.auction.AuctionSearchTask;
 include engine.util.u3d.Vector3;
 include system.util.SortedVector;
 include engine.log.Logger;

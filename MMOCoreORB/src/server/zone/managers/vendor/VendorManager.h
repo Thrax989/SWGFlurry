@@ -47,6 +47,8 @@ public:
 
 	String getTimeString(uint32 timestamp);
 
+	void promptRelistItems(CreatureObject* player, TangibleObject* vendor);
+
 	void promptDestroyVendor(CreatureObject* player, TangibleObject* vendor);
 
 	void promptRenameVendorTo(CreatureObject* player, TangibleObject* vendor);
@@ -54,6 +56,8 @@ public:
 	void destroyVendor(TangibleObject* vendor);
 
 	void sendRegisterVendorTo(CreatureObject* player, TangibleObject* vendor);
+
+	void handleRelistItems(CreatureObject* player, TangibleObject* vendor);
 
 	void handleRegisterVendorCallback(CreatureObject* player, TangibleObject* vendor, const String& planetMapCategoryName);
 

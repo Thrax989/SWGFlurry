@@ -168,6 +168,44 @@ int AuctionsMapImplementation::getPlayerItemCount(CreatureObject* player) {
 	return total;
 }
 
+int AuctionsMapImplementation::getVendorExpiredItemCount(SceneObject* vendor) {
+	Locker locker(_this.getReferenceUnsafeStaticCast());
+
+	if(vendor == NULL) {
+		logger.error("null vendor in AuctionsMapImplementation::getVendorItemCount");
+		return 0;
+	}
+
+	Reference<TerminalItemList*> vendorItems = vendorItemsForSale.get(vendor->getObjectID());
+
+	if(vendorItems == NULL)
+		return 0;
+
+	int size = 0;
+
+	ReadLocker rlocker(vendorItems);
+
+	for (int i = 0; i < vendorItems->size(); ++i) {
+		AuctionItem* item = vendorItems->get(i);
+		if (item == NULL)
+			continue;
+
+		if (item->getStatus() != AuctionItem::EXPIRED)
+			continue;
+
+		int itemSize = item->getSize();
+
+		if (itemSize > 50)
+			size += 50;
+		else if (itemSize > 0)
+			size += itemSize;
+		else
+			size++;
+	}
+
+	return size;
+}
+
 int AuctionsMapImplementation::getVendorItemCount(SceneObject* vendor, bool forSaleOnly) {
 	Locker locker(_this.getReferenceUnsafeStaticCast());
 	
