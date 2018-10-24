@@ -463,7 +463,6 @@ void ResourceSpawner::dumpToJSON(){
 	
 	} catch (Exception& e) {
 		error("Error dumping resources to JSON");
-		return false;
 	}
 }
 
