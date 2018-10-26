@@ -104,8 +104,6 @@
 #include "server/zone/objects/building/TutorialBuildingObject.h"
 #include "server/zone/managers/frs/FrsManager.h"
 
-#include "conf/ServerSettings.h"
-
 PlayerManagerImplementation::PlayerManagerImplementation(ZoneServer* zoneServer, ZoneProcessServer* impl) :
 										Logger("PlayerManager") {
 	server = zoneServer;
@@ -5668,33 +5666,5 @@ void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
 
 	if (ghost != NULL) {
 		ghost->updatePvpKills();
-
-		if (ghost->getPvpKills() == 50) {
-			awardBadge(ghost, 144);
-		} else if (ghost->getPvpKills() == 75) {
-			awardBadge(ghost, 145);
-		} else if (ghost->getPvpKills() == 100) {
-			awardBadge(ghost, 146);
-		} else if (ghost->getPvpKills() == 250) {
-			awardBadge(ghost, 147);
-		} else if (ghost->getPvpKills() == 500) {
-			awardBadge(ghost, 148);
-		} else if (ghost->getPvpKills() == 750) {
-			awardBadge(ghost, 149);
-		} else if (ghost->getPvpKills() == 1000) {
-			awardBadge(ghost, 150);
-		} else if (ghost->getPvpKills() == 1500) {
-			awardBadge(ghost, 151);
-		} else if (ghost->getPvpKills() == 2000) {
-			awardBadge(ghost, 152);
-		} else if (ghost->getPvpKills() == 2500) {
-			awardBadge(ghost, 153);
-		} else if (ghost->getPvpKills() == 3000) {
-			awardBadge(ghost, 154);
-		} else if (ghost->getPvpKills() == 4000) {
-			awardBadge(ghost, 155);
-		} else if (ghost->getPvpKills() == 5000) {
-			awardBadge(ghost, 156);
-		}
 	}
 }
