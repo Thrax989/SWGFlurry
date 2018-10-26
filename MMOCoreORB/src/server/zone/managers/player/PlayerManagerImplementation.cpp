@@ -104,6 +104,8 @@
 #include "server/zone/objects/building/TutorialBuildingObject.h"
 #include "server/zone/managers/frs/FrsManager.h"
 
+#include "conf/ServerSettings.h"
+
 PlayerManagerImplementation::PlayerManagerImplementation(ZoneServer* zoneServer, ZoneProcessServer* impl) :
 										Logger("PlayerManager") {
 	server = zoneServer;
@@ -842,16 +844,28 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				}
 			}
 
-			if (attackerCreature->isPlayerCreature()) {
-				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
-					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
-				}
+		if (attackerCreature->isPlayerCreature()) {
+			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
+			if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
+				//Award Faction Points
+				FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
+
+				if (attackerGhost != nullptr && ghost != nullptr && attackerGhost->getIpAddress() != ghost->getIpAddress() &&
+						attackerGhost->getAccountID() != ghost->getAccountID())
+					updatePvPKillCount(attackerCreature);
+
+				if (attackerGhost != nullptr && ghost != nullptr && attackerGhost->getIpAddress() != ghost->getIpAddress() &&
+						attackerGhost->getAccountID() != ghost->getAccountID())
+					ghost->updatePvpDeaths();
+
+				if (attackerGhost != nullptr && ghost != nullptr && attackerCreature->hasBountyMissionFor(player) &&
+						attackerGhost->getIpAddress() != ghost->getIpAddress() && attackerGhost->getAccountID() != ghost->getAccountID())
+					attackerGhost->updateBountyKills();
 			}
 
-			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 			PlayerObject* victimGhost = player->getPlayerObject();
 
-			if (attackerGhost != NULL && victimGhost != NULL) {
+			if (attackerGhost != nullptr && victimGhost != nullptr) {
 				FrsData* attackerData = attackerGhost->getFrsData();
 				int attackerCouncil = attackerData->getCouncilType();
 
@@ -899,6 +913,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->setTargetID(0, true);
 
 	player->notifyObjectKillObservers(attacker);
+	}
 }
 
 void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* player, int typeofdeath) {
@@ -5597,4 +5612,89 @@ void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, in
 	*luaFrsTesting << councilType;
 
 	luaFrsTesting->callFunction();
+}
+
+void PlayerManagerImplementation::updateTopList(){
+	info("**** Updating Website Top List ***",true);
+
+	ObjectDatabase* sceneDatabase = ObjectDatabaseManager::instance()->loadObjectDatabase("sceneobjects", true, 0xFFFF, false);
+
+	if (sceneDatabase == nullptr)
+		return;
+
+	ObjectInputStream objectData(2000);
+	ObjectDatabaseIterator iterator(sceneDatabase);
+
+	uint64 objectID;
+	String className;
+
+	while (iterator.getNextKeyAndValue(objectID, &objectData)) {
+		if (Serializable::getVariable<String>(STRING_HASHCODE("_className"), &className, &objectData)) {
+			if (className == "CreatureObject") {
+				ManagedReference<CreatureObject*> player = Core::getObjectBroker()->lookUp(objectID).castTo<CreatureObject*>();
+
+				if (player == nullptr)
+					continue;
+
+				PlayerObject* ghost = player->getPlayerObject();
+
+				if (ghost == nullptr)
+					continue;
+
+				int faction = 0;
+
+				if (!ghost->hasGodMode()) {
+					int faction = 0;
+
+					if (player->getFaction() == Factions::FACTIONREBEL)
+						faction = 1;
+					else if (player->getFaction() == Factions::FACTIONIMPERIAL)
+						faction = 2;
+
+					StringBuffer query;
+					query << "UPDATE characters SET faction = '" << faction << "', pvpkills = '" << ghost->getPvpKills() << "', bountykills = '" << ghost->getBountyKills()
+							<< "', pvekills = '" << ghost->getPveKills() << "', missionscompleted = '" << ghost->getMissionsCompleted() << "' WHERE character_oid = '" << player->getObjectID() << "'";
+					ServerDatabase::instance()->executeStatement(query);
+				}
+			}
+		}
+		objectData.reset();
+	}
+	info("Website Top List Update Complete", true);
+}
+
+void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
+	PlayerObject* ghost = player->getPlayerObject();
+
+	if (ghost != NULL) {
+		ghost->updatePvpKills();
+
+		if (ghost->getPvpKills() == 50) {
+			awardBadge(ghost, 144);
+		} else if (ghost->getPvpKills() == 75) {
+			awardBadge(ghost, 145);
+		} else if (ghost->getPvpKills() == 100) {
+			awardBadge(ghost, 146);
+		} else if (ghost->getPvpKills() == 250) {
+			awardBadge(ghost, 147);
+		} else if (ghost->getPvpKills() == 500) {
+			awardBadge(ghost, 148);
+		} else if (ghost->getPvpKills() == 750) {
+			awardBadge(ghost, 149);
+		} else if (ghost->getPvpKills() == 1000) {
+			awardBadge(ghost, 150);
+		} else if (ghost->getPvpKills() == 1500) {
+			awardBadge(ghost, 151);
+		} else if (ghost->getPvpKills() == 2000) {
+			awardBadge(ghost, 152);
+		} else if (ghost->getPvpKills() == 2500) {
+			awardBadge(ghost, 153);
+		} else if (ghost->getPvpKills() == 3000) {
+			awardBadge(ghost, 154);
+		} else if (ghost->getPvpKills() == 4000) {
+			awardBadge(ghost, 155);
+		} else if (ghost->getPvpKills() == 5000) {
+			awardBadge(ghost, 156);
+		}
+	}
 }
