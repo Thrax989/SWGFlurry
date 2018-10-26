@@ -5658,8 +5658,9 @@ void PlayerManagerImplementation::updateTopList(){
 						faction = 2;
 
 					StringBuffer query;
-					query << "UPDATE characters SET faction = '" << faction << "', pvpkills = '" << ghost->getPvpKills() << "', bountykills = '" << ghost->getBountyKills()
-							<< "', pvekills = '" << ghost->getPveKills() << "', missionscompleted = '" << ghost->getMissionsCompleted() << "' WHERE character_oid = '" << player->getObjectID() << "'";
+					query << "UPDATE characters SET faction = '" << faction << "', pvpkills = '" << ghost->getPvpKills() << "', pvpdeaths = '" << ghost->getPvpDeaths()
+							<< "', bountykills = '" << ghost->getBountyKills() << "', pvekills = '" << ghost->getPveKills() << "', pvedeaths = '" << ghost->getPveDeaths()
+							<< "', missionscompleted = '" << ghost->getMissionsCompleted() << "' WHERE character_oid = '" << player->getObjectID() << "'";
 					ServerDatabase::instance()->executeStatement(query);
 				}
 			}
