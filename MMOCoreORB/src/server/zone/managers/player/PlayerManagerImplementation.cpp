@@ -5552,6 +5552,14 @@ float PlayerManagerImplementation::getSpeciesXpModifier(const String& species, c
 	return (100.f + bonus) / 100.f;
 }
 
+void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
+	PlayerObject* ghost = player->getPlayerObject();
+
+	if (ghost != NULL) {
+		ghost->updatePvpKills();
+	}
+}
+
 void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, int councilType) {
 	PlayerObject* ghost = player->getPlayerObject();
 
@@ -5659,12 +5667,4 @@ void PlayerManagerImplementation::updateTopList(){
 		objectData.reset();
 	}
 	info("Website Top List Update Complete", true);
-}
-
-void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
-	PlayerObject* ghost = player->getPlayerObject();
-
-	if (ghost != NULL) {
-		ghost->updatePvpKills();
-	}
 }
