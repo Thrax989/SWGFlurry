@@ -166,8 +166,8 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 		ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
 		ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
 		ManagedReference<PlayerManager*> playerManager = killerCreature->getZoneServer()->getPlayerManager();
-        PlayerObject* pvpdeaths = destructedObject->getPlayerObject();
-        PlayerObject* pvpkills = killerCreature->getPlayerObject();
+        	PlayerObject* pvpdeaths = destructedObject->getPlayerObject();
+        	PlayerObject* pvpkills = killerCreature->getPlayerObject();
 
 		//Broadcast to Server
 		String playerName = destructedObject->getFirstName();
