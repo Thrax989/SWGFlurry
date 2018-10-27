@@ -888,6 +888,9 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			}
 		}
 	}
+	else {
+		ghost->updatePveDeaths();
+	}
 
 	CombatManager::instance()->freeDuelList(player, false);
 
@@ -908,9 +911,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		}, "PvpDeathRatingUpdateLambda");
 	}
 
-	if (!attacker->isPlayerCreature()) {
-		ghost->updatePveDeaths();
-	}
 	threatMap->removeAll(true);
 
 	player->dropFromDefenderLists();
