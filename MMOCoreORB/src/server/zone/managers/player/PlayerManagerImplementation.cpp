@@ -858,15 +858,15 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			
 		if (attackerCreature->isPlayerCreature()) {
 			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
-                if (attackerCreature->hasBountyMissionFor(player)) {
-					    attackerGhost->updateBountyKills();
-						String victimName = player->getFirstName();
-					    String bhName = attackerCreature->getFirstName();
-			            StringBuffer zBroadcast;
-						zBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
-						attackerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());					
+                	if (attackerCreature->hasBountyMissionFor(player)) {
+					attackerGhost->updateBountyKills();
+					String victimName = player->getFirstName();
+					String bhName = attackerCreature->getFirstName();
+			            	StringBuffer zBroadcast;
+					zBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
+					attackerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());					
+				}
 			}
-		}
 
 			PlayerObject* victimGhost = player->getPlayerObject();
 
