@@ -830,6 +830,10 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	ThreatMap* threatMap = player->getThreatMap();
 
+	if (!attacker->isPlayerCreature()) {
+		ghost->updatePveDeaths();
+	}
+
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
 			CreatureObject* attackerCreature = attacker->asCreatureObject();
@@ -887,9 +891,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				}
 			}
 		}
-	}
-	else {
-		ghost->updatePveDeaths();
 	}
 
 	CombatManager::instance()->freeDuelList(player, false);
