@@ -845,6 +845,9 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		if (attackerCreature->isPlayerCreature()) {
 			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 			if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
+				//If not in duel
+				ghost->updatePvpDeaths();
+				attackerGhost->updatePvpKills();
 				//Award Faction Points
 				FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
 
@@ -883,6 +886,9 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 					}, "PvPFRSKillTask");
 				}
 			}
+		}
+		else {
+			ghost->updatePveDeaths();
 		}
 	}
 
