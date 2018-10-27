@@ -273,6 +273,17 @@ class PlayerObject extends IntangibleObject {
 	@rawTemplate(value = "uint32, PlayerQuestData")
 	protected DeltaVectorMap playerQuestsData;
 
+	protected string ipAddress;
+	protected boolean opposingFactionArea;
+	protected unsigned long pvpKills;
+	protected unsigned long pvpDeaths;
+	protected unsigned long bountyKills;
+	protected unsigned long pveKills;
+	protected unsigned long pveDeaths;
+	protected unsigned long missionsCompleted;
+	protected unsigned long bountyPlacerId;
+	protected int bountyReward;
+
 	public static final int LFG = 1;
 	public static final int NEWBIEHELPER = 2;
 	public static final int ROLEPLAYER = 4;
@@ -376,6 +387,17 @@ class PlayerObject extends IntangibleObject {
                 tosVersionAccepted = 0;
 		
 		Logger.setLoggingName("PlayerObject");
+
+		ipAddress = "";
+		opposingFactionArea = false;
+		pvpKills = 0;
+		pvpDeaths = 0;
+		bountyKills = 0;
+		pveKills = 0;
+		pveDeaths = 0;
+		missionsCompleted = 0;
+		bountyPlacerId = 0;
+		bountyReward = 0;
 	}
 
 	public void finalize() {
@@ -1868,6 +1890,55 @@ class PlayerObject extends IntangibleObject {
 		pvpRating = rating;
 	}
 	
+	public void setIpAddress(string address) {
+		ipAddress = address;
+	}
+	public string getIpAddress() {
+		return ipAddress;
+	}
+	public void updatePvpKills() {
+		pvpKills += 1;
+	}
+	public unsigned long getPvpKills() {
+		return pvpKills;
+	}
+	public void updatePvpDeaths() {
+		pvpDeaths += 1;
+	}
+	public unsigned long getPvpDeaths() {
+		return pvpDeaths;
+	}
+	public void updateBountyKills() {
+		bountyKills += 1;
+	}
+	public unsigned long getBountyKills() {
+		return bountyKills;
+	}
+	public void updatePveKills() {
+		pveKills += 1;
+	}
+	public unsigned long getPveKills() {
+		return pveKills;
+	}
+	public void updatePveDeaths() {
+		pveDeaths += 1;
+	}
+	public unsigned long getPveDeaths() {
+		return pveDeaths;
+	}
+	public void updateMissionsCompleted() {
+		missionsCompleted += 1;
+	}
+	public unsigned long getMissionsCompleted() {
+		return missionsCompleted;
+	}
+	public void setBountyReward(int reward) {
+		bountyReward = reward;
+	}
+	public unsigned long getBountyReward() {
+		return bountyReward;
+	}
+
 	public boolean isCloning() {
 		return isPlayerCloning;
 	}

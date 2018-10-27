@@ -544,7 +544,7 @@ int CreatureManagerImplementation::notifyDestruction(TangibleObject* destructor,
 
 		if (player != NULL) {
 
-			if(player->isGrouped()) {
+			if (player->isGrouped()) {
 				ownerID = player->getGroupID();
 			} else {
 				ownerID = player->getObjectID();
@@ -559,27 +559,38 @@ int CreatureManagerImplementation::notifyDestruction(TangibleObject* destructor,
 							ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
 
 							if (groupMember->isPlayerCreature()) {
-								Locker locker(groupMember, destructedObject);
-								groupMember->notifyObservers(ObserverEventType::KILLEDCREATURE, destructedObject);
+								if (groupMember->getWorldPosition().distanceTo(destructedObject->getWorldPosition()) < ZoneServer::CLOSEOBJECTRANGE) {
+									Locker locker(groupMember, destructedObject);
+									groupMember->notifyObservers(ObserverEventType::KILLEDCREATURE, destructedObject);
+
+									PlayerObject* groupGhost = groupMember->getPlayerObject();
+									if (groupGhost != NULL)
+										groupGhost->updatePveKills();
+								}
 							}
 						}
+
 					}
 				} else {
 					Locker locker(player, destructedObject);
 					player->notifyObservers(ObserverEventType::KILLEDCREATURE, destructedObject);
+
+					PlayerObject* ghost = player->getPlayerObject();
+					if (ghost != NULL) {
+						ghost->updatePveKills();
+					}
 				}
 
 				FactionManager* factionManager = FactionManager::instance();
 
 				if (!destructedObject->getFactionString().isEmpty() && !destructedObject->isEventMob()) {
 					int level = destructedObject->getLevel();
-					if(!player->isGrouped())
+					if (!player->isGrouped())
 						factionManager->awardFactionStanding(player, destructedObject->getFactionString(), level);
 					else
 						factionManager->awardFactionStanding(copyThreatMap.getHighestDamagePlayer(), destructedObject->getFactionString(), level);
 				}
 			}
-
 		}
 
 		if (playerManager != NULL)

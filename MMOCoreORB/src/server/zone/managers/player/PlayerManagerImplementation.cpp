@@ -830,6 +830,10 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	ThreatMap* threatMap = player->getThreatMap();
 
+	if (!attacker->isPlayerCreature()) {
+		ghost->updatePveDeaths();
+	}
+
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
 			CreatureObject* attackerCreature = attacker->asCreatureObject();
@@ -842,16 +846,31 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				}
 			}
 
-			if (attackerCreature->isPlayerCreature()) {
-				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
-					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
+		if (attackerCreature->isPlayerCreature()) {
+			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
+			if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
+				//If not in duel
+				ghost->updatePvpDeaths();
+				attackerGhost->updatePvpKills();
+				//Award Faction Points
+				FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
+			}
+			
+		if (attackerCreature->isPlayerCreature()) {
+			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
+                	if (attackerCreature->hasBountyMissionFor(player)) {
+					attackerGhost->updateBountyKills();
+					String victimName = player->getFirstName();
+					String bhName = attackerCreature->getFirstName();
+			            	StringBuffer zBroadcast;
+					zBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
+					attackerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());					
 				}
 			}
 
-			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 			PlayerObject* victimGhost = player->getPlayerObject();
 
-			if (attackerGhost != NULL && victimGhost != NULL) {
+			if (attackerGhost != nullptr && victimGhost != nullptr) {
 				FrsData* attackerData = attackerGhost->getFrsData();
 				int attackerCouncil = attackerData->getCouncilType();
 
@@ -899,6 +918,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->setTargetID(0, true);
 
 	player->notifyObjectKillObservers(attacker);
+	}
 }
 
 void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* player, int typeofdeath) {
@@ -5539,6 +5559,14 @@ float PlayerManagerImplementation::getSpeciesXpModifier(const String& species, c
 	return (100.f + bonus) / 100.f;
 }
 
+void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
+	PlayerObject* ghost = player->getPlayerObject();
+
+	if (ghost != NULL) {
+		ghost->updatePvpKills();
+	}
+}
+
 void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, int councilType) {
 	PlayerObject* ghost = player->getPlayerObject();
 
@@ -5597,4 +5625,54 @@ void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, in
 	*luaFrsTesting << councilType;
 
 	luaFrsTesting->callFunction();
+}
+
+void PlayerManagerImplementation::updateTopList(){
+	info("**** Updating Website Top List ***",true);
+
+	ObjectDatabase* sceneDatabase = ObjectDatabaseManager::instance()->loadObjectDatabase("sceneobjects", true, 0xFFFF, false);
+
+	if (sceneDatabase == nullptr)
+		return;
+
+	ObjectInputStream objectData(2000);
+	ObjectDatabaseIterator iterator(sceneDatabase);
+
+	uint64 objectID;
+	String className;
+
+	while (iterator.getNextKeyAndValue(objectID, &objectData)) {
+		if (Serializable::getVariable<String>(STRING_HASHCODE("_className"), &className, &objectData)) {
+			if (className == "CreatureObject") {
+				ManagedReference<CreatureObject*> player = Core::getObjectBroker()->lookUp(objectID).castTo<CreatureObject*>();
+
+				if (player == nullptr)
+					continue;
+
+				PlayerObject* ghost = player->getPlayerObject();
+
+				if (ghost == nullptr)
+					continue;
+
+				int faction = 0;
+
+				if (!ghost->hasGodMode()) {
+					int faction = 0;
+
+					if (player->getFaction() == Factions::FACTIONREBEL)
+						faction = 1;
+					else if (player->getFaction() == Factions::FACTIONIMPERIAL)
+						faction = 2;
+
+					StringBuffer query;
+					query << "UPDATE characters SET faction = '" << faction << "', pvpkills = '" << ghost->getPvpKills() << "', pvpdeaths = '" << ghost->getPvpDeaths()
+							<< "', bountykills = '" << ghost->getBountyKills() << "', pvekills = '" << ghost->getPveKills() << "', pvedeaths = '" << ghost->getPveDeaths()
+							<< "', missionscompleted = '" << ghost->getMissionsCompleted() << "' WHERE character_oid = '" << player->getObjectID() << "'";
+					ServerDatabase::instance()->executeStatement(query);
+				}
+			}
+		}
+		objectData.reset();
+	}
+	info("Website Top List Update Complete", true);
 }

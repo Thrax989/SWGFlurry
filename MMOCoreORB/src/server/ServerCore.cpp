@@ -602,6 +602,16 @@ void ServerCore::handleCommands() {
 					System::out << "invalid statsd sampling rate" << endl;
 				}
 #endif
+//NEW STUFF HERE
+			} else if ( command == "updatetoplist" ) {
+				if (zoneServerRef != nullptr){
+
+					ZoneServer* server = zoneServerRef.get();
+
+					if (server != nullptr)
+						server->getPlayerManager()->updateTopList();
+				}
+//NEW STUFF END
 			} else {
 				System::out << "unknown command (" << command << ")\n";
 			}

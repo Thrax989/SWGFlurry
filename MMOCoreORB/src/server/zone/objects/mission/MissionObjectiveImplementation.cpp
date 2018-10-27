@@ -255,6 +255,10 @@ void MissionObjectiveImplementation::awardReward() {
 	int creditsDistributed = dividedReward * players.size();
 
 	StatisticsManager::instance()->completeMission(mission->getTypeCRC(), creditsDistributed);
+
+	PlayerObject* ownerGhost = owner->getPlayerObject();
+	if (ownerGhost != NULL)
+		ownerGhost->updateMissionsCompleted();
 }
 
 Vector3 MissionObjectiveImplementation::getEndPosition() {
