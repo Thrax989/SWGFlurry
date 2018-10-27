@@ -166,21 +166,18 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 		ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
 		ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
 		ManagedReference<PlayerManager*> playerManager = killerCreature->getZoneServer()->getPlayerManager();
-        PlayerObject* pvpdeaths = destructedObject->getPlayerObject();
-        PlayerObject* pvpkills = killerCreature->getPlayerObject();
 
 		//Broadcast to Server
 		String playerName = destructedObject->getFirstName();
 		String killerName = killerCreature->getFirstName();
 		StringBuffer zBroadcast;
 		
+
 		if (killer->isRebel() && destructedObject->isImperial()) {
 			ghost->increaseFactionStanding("rebel", 30);
 			killer->playEffect("clienteffect/holoemote_rebel.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
- 			pvpkills->updatePvpKills();
- 			pvpdeaths->updatePvpDeaths();
 			if(ghost->getJediState() >= 2){
 				lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
 			}else{
@@ -188,6 +185,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			}
 			ghost->decreaseFactionStanding("imperial", 45);
 			killedGhost->decreaseFactionStanding("imperial", 45);
+			
 			if (killerCreature->hasSkill("force_rank_light_novice") && destructedObject->hasSkill("force_rank_dark_novice")) {
 				zBroadcast << "\\#00e604" << "Light Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#e60000 Dark Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
 			}else{
@@ -199,8 +197,6 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			killer->playEffect("clienteffect/holoemote_imperial.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
- 			pvpkills->updatePvpKills();
- 			pvpdeaths->updatePvpDeaths();
 			if(ghost->getJediState() >= 2){
 				lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
 			}else{
