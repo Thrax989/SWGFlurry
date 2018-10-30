@@ -609,7 +609,8 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			complete();
 		} else if (mission->getTargetObjectId() == killer->getObjectID() ||
 				(npcTarget != NULL && npcTarget->getObjectID() == killer->getObjectID())) {
-
+	                String playerName = killer->getFirstName();
+		        String bhName = owner->getFirstName();
 			owner->sendSystemMessage("@mission/mission_generic:failed"); // Mission failed
 			killer->sendSystemMessage("You have defeated a bounty hunter, ruining their mission against you!");
 			StringBuffer zBroadcast;
