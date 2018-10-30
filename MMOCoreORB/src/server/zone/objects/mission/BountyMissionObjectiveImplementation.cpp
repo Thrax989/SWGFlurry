@@ -596,7 +596,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					else if (xpLoss < maxXpLoss)
 						xpLoss = maxXpLoss;
 			        
-			        PlayerObject* attackerGhost = owner->getPlayerObject();
+			       	 	PlayerObject* attackerGhost = owner->getPlayerObject();
 					owner->getZoneServer()->getPlayerManager()->awardExperience(target, "jedi_general", xpLoss, true);
 					StringIdChatParameter message("base_player","prose_revoke_xp");
 					message.setDI(xpLoss * -1);
@@ -605,7 +605,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					attackerGhost->updateBountyKills();
 					String victimName = target->getFirstName();
 					String bhName = owner->getFirstName();
-			        StringBuffer zBroadcast;
+					StringBuffer zBroadcast;
 					zBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
 					owner->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());	
 				}
