@@ -618,6 +618,17 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			owner->sendSystemMessage("@mission/mission_generic:failed"); // Mission failed
 			killer->sendSystemMessage("You have defeated a bounty hunter, ruining his mission against you!");
 			fail();
+			//Player killed by target, fail mission.
+	                String playerName = killer->getFirstName();
+		        String bhName = owner->getFirstName();
+			StringBuffer zBroadcast;
+			if (killer->hasSkill("force_title_jedi_novice")) {
+			zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#00e604 Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+			}
+			killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
+			killer->sendMessage(pmm);
+			killer->getZoneServer()->getPlayerManager()->awardExperience(killer, "jedi_general", 5000, true);//tiny bit of xp for slaying the bounty hunter
 		}
 	}
 }
