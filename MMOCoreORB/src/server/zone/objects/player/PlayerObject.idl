@@ -281,8 +281,6 @@ class PlayerObject extends IntangibleObject {
 	protected unsigned long pveKills;
 	protected unsigned long pveDeaths;
 	protected unsigned long missionsCompleted;
-	protected unsigned long bountyPlacerId;
-	protected int bountyReward;
 
 	public static final int LFG = 1;
 	public static final int NEWBIEHELPER = 2;
@@ -396,8 +394,6 @@ class PlayerObject extends IntangibleObject {
 		pveKills = 0;
 		pveDeaths = 0;
 		missionsCompleted = 0;
-		bountyPlacerId = 0;
-		bountyReward = 0;
 	}
 
 	public void finalize() {
@@ -1931,12 +1927,6 @@ class PlayerObject extends IntangibleObject {
 	}
 	public unsigned long getMissionsCompleted() {
 		return missionsCompleted;
-	}
-	public void setBountyReward(int reward) {
-		bountyReward = reward;
-	}
-	public unsigned long getBountyReward() {
-		return bountyReward;
 	}
 
 	public boolean isCloning() {
