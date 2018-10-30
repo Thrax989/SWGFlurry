@@ -159,7 +159,7 @@ public:
 
 			// Crafter Name
 			ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-			if (ghost->getAdminLevel() >= 16) {
+			if (ghost->getAdminLevel() >= 15) {
 				String name = player->getFirstName();
 				prototype->setCraftersName(name);
 			} else {
