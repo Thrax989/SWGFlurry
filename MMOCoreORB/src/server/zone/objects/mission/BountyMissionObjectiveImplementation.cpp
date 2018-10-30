@@ -22,8 +22,6 @@
 #include "server/zone/objects/mission/bountyhunter/BountyHunterDroid.h"
 #include "server/zone/objects/mission/bountyhunter/events/BountyHunterTargetTask.h"
 #include "server/zone/managers/visibility/VisibilityManager.h"
-#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
-#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 
 void BountyMissionObjectiveImplementation::setNpcTemplateToSpawn(SharedObjectTemplate* sp) {
 	npcTemplateToSpawn = sp;
@@ -609,13 +607,9 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			complete();
 		} else if (mission->getTargetObjectId() == killer->getObjectID() ||
 				(npcTarget != NULL && npcTarget->getObjectID() == killer->getObjectID())) {
-	                String playerName = killer->getFirstName();
-		        String bhName = owner->getFirstName();
+
 			owner->sendSystemMessage("@mission/mission_generic:failed"); // Mission failed
-			killer->sendSystemMessage("You have defeated a bounty hunter, ruining their mission against you!");
-			StringBuffer zBroadcast;
-			zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
-			killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			killer->sendSystemMessage("You have defeated a bounty hunter, ruining his mission against you!");
 			fail();
 		}
 	}
