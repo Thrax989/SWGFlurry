@@ -833,7 +833,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	if (!attacker->isPlayerCreature()) {
 		ghost->updatePveDeaths();
 	}
-	
+		CreatureObject* attackerCreature = attacker->asCreatureObject();
 		if (attackerCreature->isPlayerCreature()) {
 				String playerName = player->getFirstName();
 				String killerName = attackerCreature->getFirstName();
@@ -860,7 +860,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		}
 
-	}
 
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
