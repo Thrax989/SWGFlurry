@@ -833,33 +833,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	if (!attacker->isPlayerCreature()) {
 		ghost->updatePveDeaths();
 	}
-		CreatureObject* attackerCreature = attacker->asCreatureObject();
-		if (attackerCreature->isPlayerCreature()) {
-				String playerName = player->getFirstName();
-				String killerName = attackerCreature->getFirstName();
-				StringBuffer zBroadcast;
-				String killerFaction, playerFaction;
-				if (attacker->isRebel())
-					killerFaction = "\\#FF9933 Rebel";
-				else if (attacker->isImperial())
-					killerFaction = "\\#7133FF Imperial";
-				else
-					killerFaction = "\\#c1be13 Civilian";
-
-				if (player->isRebel())
-					playerFaction = "\\#FF9933 Rebel";
-				else if (player->isImperial())
-					playerFaction = "\\#7133FF Imperial";
-				else
-					playerFaction = "\\#c1be13 Civilian";
-				if (!CombatManager::instance()->areInDuel(attackerCreature, player))
-					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName;
-				else
-					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a duel by" << killerFaction << "\\#00cc99 " << killerName;
-
-				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-		}
-
 
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
@@ -882,19 +855,33 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				//Award Faction Points
 				FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
 			}
-			
-		if (attackerCreature->isPlayerCreature()) {
-			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
-                	if (attackerCreature->hasBountyMissionFor(player)) {
-					attackerGhost->updateBountyKills();
-					String victimName = player->getFirstName();
-					String bhName = attackerCreature->getFirstName();
-			            	StringBuffer zBroadcast;
-					zBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
-					attackerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());					
-				}
-			}
+		}
 
+		 if (!attackerCreature->hasBountyMissionFor(player)) {
+				String playerName = player->getFirstName();
+				String killerName = attackerCreature->getFirstName();
+				StringBuffer zBroadcast;
+				String killerFaction, playerFaction;
+				if (attacker->isRebel())
+					killerFaction = "\\#FF9933 Rebel";
+				else if (attacker->isImperial())
+					killerFaction = "\\#7133FF Imperial";
+				else
+					killerFaction = "\\#c1be13 Civilian";
+				if (player->isRebel())
+					playerFaction = "\\#FF9933 Rebel";
+				else if (player->isImperial())
+					playerFaction = "\\#7133FF Imperial";
+				else
+					playerFaction = "\\#c1be13 Civilian";
+				if (!CombatManager::instance()->areInDuel(attackerCreature, player))
+					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName;
+				else
+					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a duel by" << killerFaction << "\\#00cc99 " << killerName;
+				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		}
+
+			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 			PlayerObject* victimGhost = player->getPlayerObject();
 
 			if (attackerGhost != nullptr && victimGhost != nullptr) {
@@ -945,7 +932,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->setTargetID(0, true);
 
 	player->notifyObjectKillObservers(attacker);
-	}
 }
 
 void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* player, int typeofdeath) {
