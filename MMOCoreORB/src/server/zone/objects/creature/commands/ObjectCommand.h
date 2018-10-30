@@ -77,7 +77,7 @@ public:
 				// Object Name
 				StringBuffer customName;
 				if (ghost->getAdminLevel() >= 15) {
-					customName << object->getDisplayedName(); << " \\#ff0000(" << player->getFirstName() << ")\\#FFFFFF";//Red for admin
+					customName << object->getDisplayedName() << " \\#ff0000(" << player->getFirstName() << ")\\#FFFFFF";//Red for admin
 				} else {
 					customName << object->getDisplayedName() << " \\#00CC00(" << player->getFirstName() << ")\\#FFFFFF";//Green for player
 				}
