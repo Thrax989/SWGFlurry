@@ -603,14 +603,12 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					else if (xpLoss < maxXpLoss)
 						xpLoss = maxXpLoss;
 
-					StringBuffer bBroadcast;
 					owner->getZoneServer()->getPlayerManager()->awardExperience(target, "jedi_general", xpLoss, true);
 					StringIdChatParameter message("base_player","prose_revoke_xp");
 					message.setDI(xpLoss * -1);
 					message.setTO("exp_n", "jedi_general");
 						target->sendSystemMessage(message);
 						String victimName = target->getFirstName();
-						owner->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, bBroadcast.toString());
 						lootManager->createNamedLoot(inventory, "saberbhloot", victimName, 300);
  						if (target->hasSkill("force_rank_light_novice"))
 						{
@@ -636,7 +634,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 		        String bhName = owner->getFirstName();
 			StringBuffer zBroadcast;
 			if (killer->hasSkill("force_title_jedi_novice")) {
-			zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#00e604 Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+			zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 			}
 			killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
