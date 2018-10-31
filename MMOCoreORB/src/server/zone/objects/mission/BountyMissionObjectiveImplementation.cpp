@@ -628,7 +628,6 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
 			killer->sendMessage(pmm);
-			killer->getZoneServer()->getPlayerManager()->awardExperience(killer, "jedi_general", 5000, true);//tiny bit of xp for slaying the bounty hunter
 		}
 	}
 }
