@@ -36,9 +36,9 @@ function missionScreenplay:start()
 
   local pNpc = spawnMobile("corellia", "mission_solo",0,-169.45,28,-4712.58,134,0)
 
-    self:setMoodString(pNpc, "neutral")
+  self:setMoodString(pNpc, "neutral")
 
-    self:spawnMobiles()
+  self:spawnMobiles()
 
 end
 -------------------------------------------------------
@@ -50,11 +50,11 @@ function missionScreenplay:spawnMobiles(pMobile)
 
         pMobile = spawnMobile("corellia", "meatlump_buffoon",20,-164,28,-4754,88,0)
 
-                self:setMoodString(pMobile, "npc_accusing")
+        self:setMoodString(pMobile, "npc_accusing")
 
-				createObserver(OBJECTDESTRUCTION, "missionScreenplay", "enemyKilled", pMobile)
+	createObserver(OBJECTDESTRUCTION, "missionScreenplay", "enemyKilled", pMobile)
 
-           return 0
+        return 0
 
     end
 
@@ -69,7 +69,6 @@ function missionScreenplay:enemyKilled(pMobile, pPlayer)
     local enemy = LuaCreatureObject(pMobile)
 
     player:setScreenPlayState(missionScreenplay.states.enemydead, "missionquest")
-
 -------------------------------------------------------
 --Conditions Of Whether The Mission Is Accepted Or Not
 -------------------------------------------------------
@@ -77,7 +76,7 @@ function missionScreenplay:enemyKilled(pMobile, pPlayer)
 
     if player:hasScreenPlayState(missionScreenplay.states.complete, "missionquest") then
 
-           player:sendSystemMessage("*** You have already completed this mission. Impossible to do it again ***")
+    player:sendSystemMessage("*** You have already completed this mission. Impossible to do it again ***")
 
     elseif player:hasScreenPlayState(missionScreenplay.states.accepted, "missionquest") then
 -------------------------------------------------------
@@ -228,9 +227,9 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 -------------------------------------------------------
 --Collecting Player Data
 -------------------------------------------------------
-			local pInventory = creature:getSlottedObject("inventory")
+		local pInventory = creature:getSlottedObject("inventory")
 
-            local inventory = LuaSceneObject(pInventory)
+            	local inventory = LuaSceneObject(pInventory)
 -------------------------------------------------------
 --Full Container
 -------------------------------------------------------
@@ -254,18 +253,7 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 
                 creature:addCashCredits(25000, true)
 
-                --local pItem = giveItem(pInventory, "robe_jedi_light_hood_down.iff", -1) -- Tunica Shatterpoint Cloak Hood Down
-                
-				creature:removeScreenPlayState(missionScreenplay.states.accepted,     missionScreenplay.questString)
-
-				creature:removeScreenPlayState(missionScreenplay.states.fightingenemy, missionScreenplay.questString)
-
-				creature:removeScreenPlayState(missionScreenplay.states.enemydead,     missionScreenplay.questString)
-
-				creature:removeScreenPlayState(missionScreenplay.states.complete,     missionScreenplay.questString)
-
-				creature:removeScreenPlayState(missionScreenplay.questString)
-
+                local pItem = giveItem(pInventory, "robe_jedi_light_hood_down.iff", -1) -- Tunica Shatterpoint Cloak Hood Down
                 end
 -------------------------------------------------------
 --Not yet
@@ -287,8 +275,6 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 --Start if the quest was not obtained yet
 -------------------------------------------------------
                 nextConversationScreen = conversation:getScreen("start")
-
-----------------------------------------------------------------------------------------------
 
             end
 
@@ -344,7 +330,7 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
       player:sendSystemMessage("ACCEPTED mission: Family Revenge")
       player:playMusicMessage("sound/music_themequest_victory_imperial.snd")
 
-    elseif (screenID == "quest_status") then
+    	elseif (screenID == "quest_status") then
 
         conversationScreen = screen:cloneScreen()
 
@@ -374,7 +360,7 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 
         if ( thisState ~= 0 ) then
 
-      clonedConversation:setCustomDialogText("Come back if you change your mind ...")
+      	clonedConversation:setCustomDialogText("Come back if you change your mind ...")
 -------------------------------------------------------
 --All Data Removed
 -------------------------------------------------------
@@ -399,7 +385,7 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
         PlayerObject(pGhost):removeWaypoint(oldWaypointID, true)
         else
 
-            clonedConversation:setCustomDialogText("You have not started or finished this mission")
+        clonedConversation:setCustomDialogText("You have not started or finished this mission")
 
         end
 -------------------------------------------------------
