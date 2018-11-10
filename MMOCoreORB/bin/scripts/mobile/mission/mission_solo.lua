@@ -23,13 +23,13 @@ mission_solo = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
 	optionsBitmask = INVULNERABLE + CONVERSABLE + INTERESTING,
-    diet = HERBIVORE,
+    	diet = HERBIVORE,
 	templates = {"object/mobile/dressed_criminal_thug_zabrak_male_01.iff"},
 	scale = 1,
-    lootGroups = {},
+    	lootGroups = {},
 	weapons = {},
-    conversationTemplate = "mission_quest_template",
-    attacks = merge(brawlernovice,marksmannovice)
+    	conversationTemplate = "mission_quest_template",
+    	attacks = merge(brawlernovice,marksmannovice)
 
 }
 
