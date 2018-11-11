@@ -2694,9 +2694,7 @@ void CreatureObjectImplementation::activateHAMRegeneration(int latency) {
 	if (isKneeling())
 		modifier *= 1.25f;
 	else if (isSitting())
-		modifier *= 1.75f;
-	else if (isSitting() && !isInCombat()) //No bonus for sitting in combat, but large bonus when resting out of combat
-		modifier *= (10);
+		modifier *= 3.5f;
 
 	// this formula gives the amount of regen per second
 	uint32 healthTick = (uint32) ceil((float) Math::max(0, getHAM(
