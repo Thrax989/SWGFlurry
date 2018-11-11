@@ -926,38 +926,44 @@ void EntertainingSessionImplementation::activateEntertainerBuff(CreatureObject* 
 			return;
 
 		ManagedReference<PerformanceBuff*> oldBuff = NULL;
+		switch (performanceType){
+		case PerformanceType::MUSIC:
+		{
+			uint32 focusBuffCRC = STRING_HASHCODE("performance_enhance_music_focus");
+			uint32 willBuffCRC = STRING_HASHCODE("performance_enhance_music_willpower");
+			oldBuff = cast<PerformanceBuff*>(creature->getBuff(focusBuffCRC));
+			if (oldBuff != NULL && oldBuff->getBuffStrength() > buffStrength)
+				return;
+			ManagedReference<PerformanceBuff*> focusBuff = new PerformanceBuff(creature, focusBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::MUSIC_FOCUS);
+			ManagedReference<PerformanceBuff*> willBuff = new PerformanceBuff(creature, willBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::MUSIC_WILLPOWER);
 
-		uint32 mindBuffCRC = STRING_HASHCODE("performance_enhance_dance_mind");
-		uint32 focusBuffCRC = STRING_HASHCODE("performance_enhance_music_focus");
-		uint32 willBuffCRC = STRING_HASHCODE("performance_enhance_music_willpower");
-			
-		oldBuff = cast<PerformanceBuff*>(creature->getBuff(mindBuffCRC));
+			Locker locker(focusBuff);
+			creature->addBuff(focusBuff);
+			locker.release();
+
+			Locker locker2(willBuff);
+			creature->addBuff(willBuff);
+			break;
+		}
+		case PerformanceType::DANCE:
+		{
+			uint32 mindBuffCRC = STRING_HASHCODE("performance_enhance_dance_mind");
+			oldBuff = cast<PerformanceBuff*>(creature->getBuff(mindBuffCRC));
+			if (oldBuff != NULL && oldBuff->getBuffStrength() > buffStrength)
+				return;
+			ManagedReference<PerformanceBuff*> mindBuff = new PerformanceBuff(creature, mindBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::DANCE_MIND);
+
+			Locker locker(mindBuff);
+			creature->addBuff(mindBuff);
+			break;
+		}
+		}
 
 
-		if (oldBuff != NULL && oldBuff->getBuffStrength() > buffStrength)
-			return;
-				
-		if (oldBuff != NULL && (oldBuff->getBuffDuration() > buffDuration * 60) && (oldBuff->getBuffStrength() <= buffStrength))
-			return;
-			
-		ManagedReference<PerformanceBuff*> mindBuff = new PerformanceBuff(creature, mindBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::DANCE_MIND);							
-		ManagedReference<PerformanceBuff*> focusBuff = new PerformanceBuff(creature, focusBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::MUSIC_FOCUS);
-		ManagedReference<PerformanceBuff*> willBuff = new PerformanceBuff(creature, willBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::MUSIC_WILLPOWER);
-	
-		Locker locker(mindBuff);
-		creature->addBuff(mindBuff);
-		locker.release();
-	
-		Locker locker2(focusBuff);
-		creature->addBuff(focusBuff);
-		locker.release();
-
-		Locker locker3(willBuff);
-		creature->addBuff(willBuff);
-		
 	} catch(Exception& e) {
 
 	}
+
 }
 
 void EntertainingSessionImplementation::updateEntertainerMissionStatus(bool entertaining, const int missionType) {
@@ -1103,7 +1109,7 @@ void EntertainingSessionImplementation::awardEntertainerExperience() {
 
 			float groupMod = groupBonusCount * 0.05;
 
-			float totalBonus = 4.f + groupMod + audienceMod + applauseMod;
+			float totalBonus = 1.f + groupMod + audienceMod + applauseMod;
 
 			xpAmount = ceil(xpAmount * totalBonus);
 

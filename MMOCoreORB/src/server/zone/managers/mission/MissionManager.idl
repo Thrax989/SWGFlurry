@@ -101,7 +101,8 @@ class MissionManager extends Observer implements Logger {
 	private native void randomizeGenericBountyMission(CreatureObject player, MissionObject mission, final unsigned int faction, Vector<PlayerBounty> potentialTargets);
 	private native void randomizeGenericCraftingMission(CreatureObject player, MissionObject mission, final unsigned int faction);
 	private native void randomizeGenericDeliverMission(CreatureObject player, MissionObject mission, final unsigned int faction);
-	private native void randomizeGenericDestroyMission(CreatureObject player, MissionObject mission, final unsigned int faction);
+	public native void randomizeHuntingMission(CreatureObject player, MissionObject mission);	
+        public native void randomizeGenericDestroyMission(CreatureObject player, MissionObject mission, final unsigned int faction);
 	private native void randomizeGenericEntertainerMission(CreatureObject player, MissionObject mission, final unsigned int faction, final unsigned int missionType);
 	private native void randomizeGenericHuntingMission(CreatureObject player, MissionObject mission, final unsigned int faction);
 	private native void randomizeGenericReconMission(CreatureObject player, MissionObject mission, final unsigned int faction);
