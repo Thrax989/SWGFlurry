@@ -54,10 +54,10 @@ performanceDuration = 7200 -- in seconds
 medicalDuration = 7200 -- in seconds
 
 --Sets the experience multiplier while within range of party members
-groupExpMultiplierInRange = 3.0--You will receive 3x bonus if you are wihin 100m of party members
+groupExpMultiplierInRange = 1.2--You will receive extra xp bonus for each party member in range
 
  --Sets the experience multiplier while out of range of party members
-groupExpMultiplierOutOfRange = 1.2--You will receive default 1.2x bonus if you are more than 100m away from party members
+groupExpMultiplierOutOfRange = 1.1--You will receive default 1.2x bonus if you are more than 100m away from party members
 
 --Sets the base number of control devices of each type that a player can have in their datapad at once
 --For creature pets, A Creature Handler will have the base number + their stored pets skill mod as limit
