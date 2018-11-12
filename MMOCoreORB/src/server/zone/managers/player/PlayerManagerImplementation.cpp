@@ -1717,7 +1717,7 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 		   xpType == "crafting_droid_general" ||
 		   xpType == "crafting_spice" ||
 		   xpType == "political") {
-		   xp = playerObject->addExperience(xpType, (amount * 2));
+		   xp = playerObject->addExperience(xpType, (amount * 2.5));
 		   player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
 	}
 
