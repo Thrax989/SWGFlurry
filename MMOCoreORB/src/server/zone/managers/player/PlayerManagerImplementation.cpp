@@ -1701,7 +1701,25 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 
 	int xp = playerObject->addExperience(xpType, (int) ((((amount * speciesModifier) * localMultiplier) * perExpMulti) * globalExpMultiplier));
 
-	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
+	if (amount <= 0 || xpType == "jedi_general") {
+		xp = playerObject->addExperience(xpType, amount);
+	} else if (xpType == "imagedesigner" ||
+		   xpType == "music" ||
+		   xpType == "dance" ||
+		   xpType == "entertainer_healing" ||
+		   xpType == "crafting_medicine_general" ||
+		   xpType == "crafting_general" ||
+		   xpType == "crafting_clothing_armor" ||
+		   xpType == "crafting_weapons_general" ||
+		   xpType == "crafting_food_general" ||
+		   xpType == "crafting_clothing_general" ||
+		   xpType == "crafting_structure_general" ||
+		   xpType == "crafting_droid_general" ||
+		   xpType == "crafting_spice" ||
+		   xpType == "political") {
+		   xp = playerObject->addExperience(xpType, (amount * 2));
+		   player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
+	}
 
 	if (sendSystemMessage) {
 		if (xp > 0) {
