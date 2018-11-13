@@ -111,15 +111,19 @@ function missionScreenplay:setActivePlayerName(playerName)
     self.questdata.activePlayerName = playerName
 
 end
+-------------------------------------------------------
+--Defender Added Fired
+-------------------------------------------------------
 function missionScreenplay:DefenderAdded(pMobile, pPlayer)
 
     local player = LuaCreatureObject(pPlayer)
 
     local pName = player:getName()
--------------------------------------------------------
---Defender Added Fired
--------------------------------------------------------
+
 end
+-------------------------------------------------------
+--Defender Droped Fired
+-------------------------------------------------------
 function missionScreenplay:DefenderDropped(pMobile, pPlayer)
 
         local player = LuaCreatureObject(pPlayer)
@@ -218,7 +222,7 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 -------------------------------------------------------
 --Complete
 -------------------------------------------------------
-                   nextConversationScreen = conversation:getScreen("completed")
+                 nextConversationScreen = conversation:getScreen("completed")
 
             elseif creature:hasScreenPlayState(missionScreenplay.states.enemydead, "missionquest") then
 -------------------------------------------------------
@@ -247,12 +251,18 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
                 creature:playMusicMessage("sound/music_combat_bfield_vict.snd")
 
                 nextConversationScreen = conversation:getScreen("thank_you")
-
+-------------------------------------------------------
+--Reward Message
+-------------------------------------------------------
                 creature:sendSystemMessage("FINALIZED mission: Family revenge You have received 25,000 credits and a special tunic of Luminous Jedi.")
-
+-------------------------------------------------------
+--Reward Credits
+-------------------------------------------------------
                 creature:addCashCredits(25000, true)
-
-                local pItem = giveItem(pInventory, "robe_jedi_light_hood_down.iff", -1) -- Tunica Shatterpoint Cloak Hood Down
+-------------------------------------------------------
+--Reward Item
+-------------------------------------------------------
+                local pItem = giveItem(pInventory, "robe_jedi_light_hood_down.iff", -1)
                 end
 -------------------------------------------------------
 --Not yet
@@ -361,19 +371,19 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 
       	clonedConversation:setCustomDialogText("Come back if you change your mind ...")
 -------------------------------------------------------
---All Data Removed
+--All Quest Data Removed From Player
 -------------------------------------------------------
-            player:removeScreenPlayState(missionScreenplay.states.accepted,     missionScreenplay.questString)
+        player:removeScreenPlayState(missionScreenplay.states.accepted,     missionScreenplay.questString)
 
-            player:removeScreenPlayState(missionScreenplay.states.fightingenemy, missionScreenplay.questString)
+        player:removeScreenPlayState(missionScreenplay.states.fightingenemy, missionScreenplay.questString)
 
-            player:removeScreenPlayState(missionScreenplay.states.enemydead,     missionScreenplay.questString)
+        player:removeScreenPlayState(missionScreenplay.states.enemydead,     missionScreenplay.questString)
 
-            player:removeScreenPlayState(missionScreenplay.states.complete,     missionScreenplay.questString)
+        player:removeScreenPlayState(missionScreenplay.states.complete,     missionScreenplay.questString)
 
-            player:removeScreenPlayState(missionScreenplay.questString)
+        player:removeScreenPlayState(missionScreenplay.questString)
 -------------------------------------------------------
---Play Music
+--Play Music failed mission reset
 -------------------------------------------------------
         player:playMusicMessage("sound/music_player_v_player_death.snd")
 -------------------------------------------------------
@@ -387,9 +397,9 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
         clonedConversation:setCustomDialogText("You have not started or finished this mission")
 
         end
--------------------------------------------------------
---Final Message
--------------------------------------------------------
+---------------------------------------------------------
+--Final Message Quest comeplete you cannont repeat quest
+---------------------------------------------------------
     elseif (screenID == "completed") then
 
             conversationScreen = screen:cloneScreen()
@@ -410,7 +420,7 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 
 end
 -------------------------------------------------------
---Reset Quest
+--Reset Quest remove all quest data
 -------------------------------------------------------
   function mission_quest_convo_handler:addQuestOptions(convoScreen)
 
