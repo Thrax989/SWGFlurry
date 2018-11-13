@@ -93,8 +93,7 @@ function missionScreenplay:enemyKilled(pMobile, pPlayer)
 -------------------------------------------------------
        player:sendSystemMessage("You've finished with Darth Caedus! talk with mission Solo.")
 end
-    return 1
-
+    return 0
 end
 ------------------------------------------------------
 --Get Active Player Name
