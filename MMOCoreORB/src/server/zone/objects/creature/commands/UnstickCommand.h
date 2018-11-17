@@ -32,8 +32,14 @@ public:
 		if(zone == NULL){
 			return GENERALERROR;
 		}
+
 		if (player->isDead() || player->isIncapacitated()){
 			player->sendSystemMessage("You cant unstick now");
+			return GENERALERROR;
+		}
+		
+		if (player->isRidingMount()) {
+			player->sendSystemMessage("You cannot unstick while mounted.");
 			return GENERALERROR;
 		}
 
@@ -54,11 +60,6 @@ public:
 			stringId.setDI(timeLeft);
 			player->sendSystemMessage("Unstick is on a 1 minute cooldown.");
 			return 0;
-		}
-
-		if (player->isRidingMount()) {
-			player->sendSystemMessage("You cannot unstick while mounted.");
-			return GENERALERROR;
 		}
 
 		player->initializePosition(player->getPositionX() + 10, player->getPositionZ() + 10, player->getPositionY() + 10);
