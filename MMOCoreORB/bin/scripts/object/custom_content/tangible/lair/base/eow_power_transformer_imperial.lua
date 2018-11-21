@@ -1,0 +1,5 @@
+object_tangible_lair_base_eow_power_transformer_imperial = object_tangible_lair_base_shared_eow_power_transformer_imperial:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_lair_base_eow_power_transformer_imperial, "object/tangible/lair/base/eow_power_transformer_imperial.iff")

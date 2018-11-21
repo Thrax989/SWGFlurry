@@ -1,0 +1,5 @@
+object_tangible_meatlump_hideout_mtp_hideout_instance_supplies = object_tangible_meatlump_hideout_shared_mtp_hideout_instance_supplies:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_meatlump_hideout_mtp_hideout_instance_supplies, "object/tangible/meatlump/hideout/mtp_hideout_instance_supplies.iff")

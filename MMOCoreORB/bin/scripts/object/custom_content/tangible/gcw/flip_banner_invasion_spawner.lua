@@ -1,0 +1,5 @@
+object_tangible_gcw_flip_banner_invasion_spawner = object_tangible_gcw_shared_flip_banner_invasion_spawner:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_flip_banner_invasion_spawner, "object/tangible/gcw/flip_banner_invasion_spawner.iff")

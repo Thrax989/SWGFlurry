@@ -1,0 +1,5 @@
+object_tangible_component_droid_mark_iv_sentry_droid_chassis = object_tangible_component_droid_shared_mark_iv_sentry_droid_chassis:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_droid_mark_iv_sentry_droid_chassis, "object/tangible/component/droid/mark_iv_sentry_droid_chassis.iff")

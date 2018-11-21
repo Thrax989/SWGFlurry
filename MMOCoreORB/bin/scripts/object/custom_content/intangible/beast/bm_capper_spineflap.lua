@@ -1,0 +1,5 @@
+object_intangible_beast_bm_capper_spineflap = object_intangible_beast_shared_bm_capper_spineflap:new {
+
+}
+
+ObjectTemplates:addTemplate(object_intangible_beast_bm_capper_spineflap, "object/intangible/beast/bm_capper_spineflap.iff")

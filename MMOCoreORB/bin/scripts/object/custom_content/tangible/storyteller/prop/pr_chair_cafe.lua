@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_chair_cafe = object_tangible_storyteller_prop_shared_pr_chair_cafe:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_chair_cafe, "object/tangible/storyteller/prop/pr_chair_cafe.iff")

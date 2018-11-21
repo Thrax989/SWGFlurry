@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_ch9_installation_ore_harvester_style_2 = object_tangible_storyteller_prop_shared_pr_ch9_installation_ore_harvester_style_2:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_installation_ore_harvester_style_2, "object/tangible/storyteller/prop/pr_ch9_installation_ore_harvester_style_2.iff")
