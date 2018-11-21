@@ -42,6 +42,7 @@
 
 -- Custom content
 includeFile("../custom_scripts/object/serverobjects.lua")
+includeFile("custom_content/serverobjects.lua")
 
 --Children folder includes
 includeFile("battlefield_marker/serverobjects.lua")
