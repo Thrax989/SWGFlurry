@@ -1,0 +1,5 @@
+includeFile("custom_content/tangible/gcw/pvp_rank_rewards/comm_link.lua")
+includeFile("custom_content/tangible/gcw/pvp_rank_rewards/imperial_battle_banner.lua")
+includeFile("custom_content/tangible/gcw/pvp_rank_rewards/pvp_imperial_battle_banner.lua")
+includeFile("custom_content/tangible/gcw/pvp_rank_rewards/pvp_rebel_battle_banner.lua")
+includeFile("custom_content/tangible/gcw/pvp_rank_rewards/rebel_battle_banner.lua")

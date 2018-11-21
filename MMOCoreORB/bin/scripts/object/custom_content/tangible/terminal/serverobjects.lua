@@ -1,5 +1,4 @@
 -- Server Objects
-includeFile("custom_content/tangible/terminal/terminal_myyydril_door.lua")
 includeFile("custom_content/tangible/terminal/crafting_assembly_terminal.lua")
 includeFile("custom_content/tangible/terminal/gcw_imp_defense_table.lua")
 includeFile("custom_content/tangible/terminal/gcw_imp_offense_table.lua")
@@ -63,3 +62,4 @@ includeFile("custom_content/tangible/terminal/terminal_travel_instant_tcg_locati
 includeFile("custom_content/tangible/terminal/terminal_travel_instant_tcg_slave_1.lua")
 includeFile("custom_content/tangible/terminal/terminal_travel_instant_tie.lua")
 includeFile("custom_content/tangible/terminal/terminal_travel_instant_xwing.lua")
+

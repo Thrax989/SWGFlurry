@@ -1,0 +1,5 @@
+object_tangible_component_weapon_scope_weapon_base = object_tangible_component_weapon_shared_scope_weapon_base:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_scope_weapon_base, "object/tangible/component/weapon/scope_weapon_base.iff")

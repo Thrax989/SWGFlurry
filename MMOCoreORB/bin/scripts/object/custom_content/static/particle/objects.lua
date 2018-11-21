@@ -562,11 +562,3 @@ ObjectTemplates:addClientTemplate(object_static_particle_shared_pt_water_drop_so
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
-object_static_particle_shared_particle_distant_ships_cloud_city = SharedStaticObjectTemplate:new {
-	clientTemplateFileName = "object/static/particle/shared_particle_distant_ships_cloud_city.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_static_particle_shared_particle_distant_ships_cloud_city, "object/static/particle/shared_particle_distant_ships_cloud_city.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-

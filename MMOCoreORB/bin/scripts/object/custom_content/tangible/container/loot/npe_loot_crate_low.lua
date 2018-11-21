@@ -1,0 +1,5 @@
+object_tangible_container_loot_npe_loot_crate_low = object_tangible_container_loot_shared_npe_loot_crate_low:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_container_loot_npe_loot_crate_low, "object/tangible/container/loot/npe_loot_crate_low.iff")

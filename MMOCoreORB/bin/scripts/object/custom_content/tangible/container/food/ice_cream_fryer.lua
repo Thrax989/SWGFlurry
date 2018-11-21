@@ -1,0 +1,5 @@
+object_tangible_container_food_ice_cream_fryer = object_tangible_container_food_shared_ice_cream_fryer:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_container_food_ice_cream_fryer, "object/tangible/container/food/ice_cream_fryer.iff")

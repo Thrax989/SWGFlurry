@@ -55,3 +55,4 @@ includeFile("custom_content/tangible/tcg/series7/garage_display_vehicles/walker_
 includeFile("custom_content/tangible/tcg/series7/garage_display_vehicles/walker_at_rt_reg.lua")
 includeFile("custom_content/tangible/tcg/series7/garage_display_vehicles/walker_at_xt.lua")
 includeFile("custom_content/tangible/tcg/series7/garage_display_vehicles/xj6_air_speeder.lua")
+

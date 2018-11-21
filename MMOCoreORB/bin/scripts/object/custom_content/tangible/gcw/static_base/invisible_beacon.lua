@@ -1,0 +1,5 @@
+object_tangible_gcw_static_base_invisible_beacon = object_tangible_gcw_static_base_shared_invisible_beacon:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_static_base_invisible_beacon, "object/tangible/gcw/static_base/invisible_beacon.iff")

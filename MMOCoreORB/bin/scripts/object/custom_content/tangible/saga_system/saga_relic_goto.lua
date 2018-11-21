@@ -1,0 +1,5 @@
+object_tangible_saga_system_saga_relic_goto = object_tangible_saga_system_shared_saga_relic_goto:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_saga_system_saga_relic_goto, "object/tangible/saga_system/saga_relic_goto.iff")

@@ -1,3 +1,147 @@
+object_draft_schematic_structure_shared_generic_house_player_large_window = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_generic_house_player_large_window.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_generic_house_player_large_window, "object/draft_schematic/structure/shared_generic_house_player_large_window.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_generic_house_player_large_window_s02 = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_generic_house_player_large_window_s02.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_generic_house_player_large_window_s02, "object/draft_schematic/structure/shared_generic_house_player_large_window_s02.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_generic_house_player_medium_windowed = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_generic_house_player_medium_windowed.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_generic_house_player_medium_windowed, "object/draft_schematic/structure/shared_generic_house_player_medium_windowed.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_generic_house_player_medium_windowed_s02 = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_generic_house_player_medium_windowed_s02.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_generic_house_player_medium_windowed_s02, "object/draft_schematic/structure/shared_generic_house_player_medium_windowed_s02.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_generic_house_player_small_windowed = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_generic_house_player_small_windowed.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_generic_house_player_small_windowed, "object/draft_schematic/structure/shared_generic_house_player_small_windowed.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_generic_house_player_small_window_style_03 = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_generic_house_player_small_window_style_03.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_generic_house_player_small_window_style_03, "object/draft_schematic/structure/shared_generic_house_player_small_window_style_03.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_house_player_tat_window_small_style_01 = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_house_player_tat_window_small_style_01.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_house_player_tat_window_small_style_01, "object/draft_schematic/structure/shared_house_player_tat_window_small_style_01.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_installation_generator_geothermal = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_installation_generator_geothermal.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_installation_generator_geothermal, "object/draft_schematic/structure/shared_installation_generator_geothermal.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_installation_mining_gas_heavy_elite = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_installation_mining_gas_heavy_elite.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_installation_mining_gas_heavy_elite, "object/draft_schematic/structure/shared_installation_mining_gas_heavy_elite.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_installation_mining_liquid_elite = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_installation_mining_liquid_elite.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_installation_mining_liquid_elite, "object/draft_schematic/structure/shared_installation_mining_liquid_elite.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_installation_mining_liquid_vapor_elite = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_installation_mining_liquid_vapor_elite.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_installation_mining_liquid_vapor_elite, "object/draft_schematic/structure/shared_installation_mining_liquid_vapor_elite.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_installation_mining_ore_elite = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_installation_mining_ore_elite.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_installation_mining_ore_elite, "object/draft_schematic/structure/shared_installation_mining_ore_elite.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_installation_mining_organic_flora_elite = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_installation_mining_organic_flora_elite.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_installation_mining_organic_flora_elite, "object/draft_schematic/structure/shared_installation_mining_organic_flora_elite.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_kashyyyk_treehouse = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_kashyyyk_treehouse.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_kashyyyk_treehouse, "object/draft_schematic/structure/shared_kashyyyk_treehouse.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_naboo_house_player_window_small_style_01 = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_naboo_house_player_window_small_style_01.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_naboo_house_player_window_small_style_01, "object/draft_schematic/structure/shared_naboo_house_player_window_small_style_01.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_wod_ns_hut = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_wod_ns_hut.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_wod_ns_hut, "object/draft_schematic/structure/shared_wod_ns_hut.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_wod_sm_hut = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_wod_sm_hut.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_wod_sm_hut, "object/draft_schematic/structure/shared_wod_sm_hut.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_structure_shared_yt1300_house = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_yt1300_house.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_yt1300_house, "object/draft_schematic/structure/shared_yt1300_house.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
 object_draft_schematic_structure_shared_atat_house_schem = SharedDraftSchematicObjectTemplate:new {
 	clientTemplateFileName = "object/draft_schematic/structure/shared_atat_house_schem.iff"
 }

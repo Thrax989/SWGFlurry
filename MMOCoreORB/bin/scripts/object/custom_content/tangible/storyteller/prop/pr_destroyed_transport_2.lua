@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_destroyed_transport_2 = object_tangible_storyteller_prop_shared_pr_destroyed_transport_2:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_destroyed_transport_2, "object/tangible/storyteller/prop/pr_destroyed_transport_2.iff")

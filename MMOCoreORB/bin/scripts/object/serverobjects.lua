@@ -42,7 +42,6 @@
 
 -- Custom content
 includeFile("../custom_scripts/object/serverobjects.lua")
-includeFile("custom_content/serverobjects.lua")
 
 --Children folder includes
 includeFile("battlefield_marker/serverobjects.lua")
@@ -84,3 +83,6 @@ includeFile("mission_recon_area.lua")
 includeFile("sarlacc_area.lua")
 includeFile("spawn_area.lua")
 includeFile("fs_village_area.lua")
+
+--New Content
+includeFile("custom_content/serverobjects.lua")

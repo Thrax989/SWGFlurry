@@ -41,6 +41,85 @@
 --which carries forward this exception.
 
 
+object_tangible_wearables_base_shared_base_cybernetic_forearm_l = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_forearm_l.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_forearm_l, "object/tangible/wearables/base/shared_base_cybernetic_forearm_l.iff")
+
+
+
+object_tangible_wearables_base_shared_base_cybernetic_forearm_r = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_forearm_r.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_forearm_r, "object/tangible/wearables/base/shared_base_cybernetic_forearm_r.iff")
+
+
+
+object_tangible_wearables_base_shared_base_cybernetic_hand_l = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_hand_l.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_hand_l, "object/tangible/wearables/base/shared_base_cybernetic_hand_l.iff")
+
+
+
+object_tangible_wearables_base_shared_base_cybernetic_hand_r = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_hand_r.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_hand_r, "object/tangible/wearables/base/shared_base_cybernetic_hand_r.iff")
+
+
+
+object_tangible_wearables_base_shared_base_dress_longsleeve = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_dress_longsleeve.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_dress_longsleeve, "object/tangible/wearables/base/shared_base_dress_longsleeve.iff")
+
+
+
+object_tangible_wearables_base_shared_base_fannypack = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_fannypack.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_fannypack, "object/tangible/wearables/base/shared_base_fannypack.iff")
+
+
+
+
+object_tangible_wearables_base_shared_base_cybernetic_arm_l = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_arm_l.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_arm_l, "object/tangible/wearables/base/shared_base_cybernetic_arm_l.iff")
+
+
+object_tangible_wearables_base_shared_base_cybernetic_arm_r = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_arm_r.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_arm_r, "object/tangible/wearables/base/shared_base_cybernetic_arm_r.iff")
+
+
+object_tangible_wearables_base_shared_base_cybernetic_legs = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_legs.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_legs, "object/tangible/wearables/base/shared_base_cybernetic_legs.iff")
+
+
+object_tangible_wearables_base_shared_base_cybernetic_torso = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_base_cybernetic_torso.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_base_cybernetic_torso, "object/tangible/wearables/base/shared_base_cybernetic_torso.iff")
+
+
+
+object_tangible_wearables_base_shared_cybernetic_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/base/shared_cybernetic_base.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_base_shared_cybernetic_base, "object/tangible/wearables/base/shared_cybernetic_base.iff")
+
+
+
+
+
+
+
 object_tangible_wearables_base_shared_armor_base = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/wearables/base/shared_armor_base.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups

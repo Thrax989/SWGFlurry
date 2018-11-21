@@ -1,0 +1,5 @@
+object_tangible_saga_system_rewards_starship_storage_device = object_tangible_saga_system_rewards_shared_starship_storage_device:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_saga_system_rewards_starship_storage_device, "object/tangible/saga_system/rewards/starship_storage_device.iff")

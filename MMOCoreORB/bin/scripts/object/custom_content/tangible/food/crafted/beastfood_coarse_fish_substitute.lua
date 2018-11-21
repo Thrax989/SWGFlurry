@@ -1,0 +1,5 @@
+object_tangible_food_crafted_beastfood_coarse_fish_substitute = object_tangible_food_crafted_shared_beastfood_coarse_fish_substitute:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_food_crafted_beastfood_coarse_fish_substitute, "object/tangible/food/crafted/beastfood_coarse_fish_substitute.iff")

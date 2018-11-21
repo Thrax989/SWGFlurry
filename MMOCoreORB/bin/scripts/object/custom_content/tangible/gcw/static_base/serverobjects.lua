@@ -1,0 +1,6 @@
+includeFile("custom_content/tangible/gcw/static_base/control_terminal.lua")
+includeFile("custom_content/tangible/gcw/static_base/imperial_icon.lua")
+includeFile("custom_content/tangible/gcw/static_base/invisible_beacon.lua")
+includeFile("custom_content/tangible/gcw/static_base/invisible_cloner_imperial.lua")
+includeFile("custom_content/tangible/gcw/static_base/invisible_cloner_rebel.lua")
+includeFile("custom_content/tangible/gcw/static_base/rebel_icon.lua")

@@ -1,8 +1,5 @@
 -- Server Objects
 
-includeFile("custom_content/weapon/melee/2h_sword/crafted_saber/serverobjects.lua")
-includeFile("custom_content/weapon/melee/sword/crafted_saber/serverobjects.lua")
-includeFile("custom_content/weapon/melee/polearm/crafted_saber/serverobjects.lua")
 
 --AXE
 includeFile("custom_content/weapon/melee/axe_heavy_duty_npe.lua")
@@ -10,7 +7,7 @@ includeFile("custom_content/weapon/melee/axe_heavy_duty_npe.lua")
 
 --SPECIAL
 includeFile("custom_content/weapon/melee/blacksun_razor_generic.lua")
-
+includeFile("custom_content/weapon/melee/blasterfist.lua")
 includeFile("custom_content/weapon/melee/blasterfist_generic.lua")
 includeFile("custom_content/weapon/melee/ep3_loot_heartstriker.lua")
 includeFile("custom_content/weapon/melee/ep3_loot_necrosis.lua")
@@ -104,7 +101,7 @@ includeFile("custom_content/weapon/melee/sword_lightsaber_two_handed_gen5_eow.lu
 includeFile("custom_content/weapon/melee/sword_lightsaber_two_handed_gen5_sith.lua")
 includeFile("custom_content/weapon/melee/sword_lightsaber_two_handed_pvp_bf.lua")
 includeFile("custom_content/weapon/melee/sword_lightsaber_two_handed_pvp_bf_gen5.lua")
-
+includeFile("custom_content/weapon/melee/sword_lightsaber_two_handed_gen6_must.lua")
 
 --BATON
 includeFile("custom_content/weapon/melee/baton_avatar_trando_stun_stick.lua")

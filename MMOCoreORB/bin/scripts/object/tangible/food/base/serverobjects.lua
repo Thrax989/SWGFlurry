@@ -45,6 +45,7 @@
 --Children folder includes
 
 -- Server Objects
+includeFile("tangible/food/base/base_crafted_beast_food.lua")
 includeFile("tangible/food/base/alcoholic_drink_base.lua")
 includeFile("tangible/food/base/base_crafted_food.lua")
 includeFile("tangible/food/base/base_food.lua")

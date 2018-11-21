@@ -45,6 +45,8 @@
 --Children folder includes
 
 -- Server Objects
+includeFile("draft_schematic/armor/component/new_armor_core_base.lua")
+includeFile("draft_schematic/armor/component/new_armor_layer_base.lua")
 includeFile("draft_schematic/armor/component/armor_layer_acid.lua")
 includeFile("draft_schematic/armor/component/armor_layer_blast.lua")
 includeFile("draft_schematic/armor/component/armor_layer_cold.lua")

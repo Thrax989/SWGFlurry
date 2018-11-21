@@ -40,6 +40,11 @@
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
 
+object_tangible_terminal_base_shared_base_portable_terminal = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/terminal/base/shared_base_portable_terminal.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_terminal_base_shared_base_portable_terminal, "object/tangible/terminal/base/shared_base_portable_terminal.iff")
+
 
 object_tangible_terminal_base_shared_base_terminal = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/terminal/base/shared_base_terminal.iff"

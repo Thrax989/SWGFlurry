@@ -1,0 +1,5 @@
+object_tangible_gcw_base_rewards_military_damage_shield = object_tangible_gcw_base_rewards_shared_military_damage_shield:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_base_rewards_military_damage_shield, "object/tangible/gcw/base_rewards/military_damage_shield.iff")

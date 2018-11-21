@@ -3,81 +3,48 @@
 
 --This File is part of Core3.
 
---This program is free software; you can redistribute
---it and/or modify it under the terms of the GNU Lesser
+--This program is free software; you can redistribute 
+--it and/or modify it under the terms of the GNU Lesser 
 --General Public License as published by the Free Software
---Foundation; either version 2 of the License,
+--Foundation; either version 2 of the License, 
 --or (at your option) any later version.
 
---This program is distributed in the hope that it will be useful,
---but WITHOUT ANY WARRANTY; without even the implied warranty of
---MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+--This program is distributed in the hope that it will be useful, 
+--but WITHOUT ANY WARRANTY; without even the implied warranty of 
+--MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
 --See the GNU Lesser General Public License for
 --more details.
 
---You should have received a copy of the GNU Lesser General
+--You should have received a copy of the GNU Lesser General 
 --Public License along with this program; if not, write to
 --the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
---Linking Engine3 statically or dynamically with other modules
---is making a combined work based on Engine3.
---Thus, the terms and conditions of the GNU Lesser General Public License
+--Linking Engine3 statically or dynamically with other modules 
+--is making a combined work based on Engine3. 
+--Thus, the terms and conditions of the GNU Lesser General Public License 
 --cover the whole combination.
 
---In addition, as a special exception, the copyright holders of Engine3
---give you permission to combine Engine3 program with free software
---programs or libraries that are released under the GNU LGPL and with
---code included in the standard release of Core3 under the GNU LGPL
---license (or modified versions of such code, with unchanged license).
---You may copy and distribute such a system following the terms of the
---GNU LGPL for Engine3 and the licenses of the other code concerned,
---provided that you include the source code of that other code when
+--In addition, as a special exception, the copyright holders of Engine3 
+--give you permission to combine Engine3 program with free software 
+--programs or libraries that are released under the GNU LGPL and with 
+--code included in the standard release of Core3 under the GNU LGPL 
+--license (or modified versions of such code, with unchanged license). 
+--You may copy and distribute such a system following the terms of the 
+--GNU LGPL for Engine3 and the licenses of the other code concerned, 
+--provided that you include the source code of that other code when 
 --and as the GNU LGPL requires distribution of source code.
 
---Note that people who make modified versions of Engine3 are not obligated
---to grant this special exception for their modified versions;
---it is their choice whether to do so. The GNU Lesser General Public License
---gives permission to release a modified version without this exception;
---this exception also makes it possible to release a modified version
+--Note that people who make modified versions of Engine3 are not obligated 
+--to grant this special exception for their modified versions; 
+--it is their choice whether to do so. The GNU Lesser General Public License 
+--gives permission to release a modified version without this exception; 
+--this exception also makes it possible to release a modified version 
 
 
 object_weapon_ranged_rifle_ep3_loot_retaliation = object_weapon_ranged_rifle_shared_ep3_loot_retaliation:new {
-
+	
 	playerRaces = { "object/creature/player/bothan_male.iff",
-				"object/creature/player/smc_female.iff",
-				"object/creature/player/smc_male.iff",
-				"object/creature/player/talz_male.iff",
-				"object/creature/player/talz_female.iff",
-				"object/creature/player/togruta_female.iff",
-				"object/creature/player/togruta_male.iff",
-				"object/creature/player/weequay_male.iff",
-				"object/creature/player/weequay_female.iff",
-				"object/creature/player/nautolan_male.iff",
-				"object/creature/player/nautolan_female.iff",
-				"object/creature/player/nightsister_female.iff",
-				"object/creature/player/nightsister_male.iff",
-				"object/creature/player/nikto_male.iff",
-				"object/creature/player/nikto_female.iff",
-				"object/creature/player/quarren_male.iff",
-				"object/creature/player/quarren_female.iff",
-				"object/creature/player/ishi_tib_male.iff",
-				"object/creature/player/ishi_tib_female.iff",
-				"object/creature/player/hutt_female.iff",
-				"object/creature/player/hutt_male.iff",
-				"object/creature/player/gran_male.iff",
-				"object/creature/player/gran_female.iff",
-				"object/creature/player/gotal_male.iff",
-				"object/creature/player/gotal_female.iff",
-				"object/creature/player/aqualish_female.iff",
-				"object/creature/player/aqualish_male.iff",
-				"object/creature/player/bith_female.iff",
-				"object/creature/player/bith_male.iff",
-				"object/creature/player/chiss_female.iff",
-				"object/creature/player/chiss_male.iff",
-				"object/creature/player/devaronian_male.iff",
-				"object/creature/player/devaronian_female.iff",
 				"object/creature/player/bothan_female.iff",
-				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
 				"object/creature/player/ithorian_male.iff",
@@ -102,10 +69,10 @@ object_weapon_ranged_rifle_ep3_loot_retaliation = object_weapon_ranged_rifle_sha
 	attackType = RANGEDATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
-	damageType = ENERGY,
+	damageType = KINETIC,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
-	armorPiercing = HEAVY,
+	armorPiercing = MEDIUM,
 
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
@@ -113,7 +80,7 @@ object_weapon_ranged_rifle_ep3_loot_retaliation = object_weapon_ranged_rifle_sha
 	xpType = "combat_rangedspecialize_rifle",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_rifle_t21" },
+	certificationsRequired = { "cert_rifle_cdef" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "rifle_accuracy" },
 
@@ -133,34 +100,34 @@ object_weapon_ranged_rifle_ep3_loot_retaliation = object_weapon_ranged_rifle_sha
 
 
 	-- The values below are the default values.  To be used for blue frog objects primarily
-	healthAttackCost = 0,
-	actionAttackCost = 0,
-	mindAttackCost = 0,
+	healthAttackCost = 35,
+	actionAttackCost = 30,
+	mindAttackCost = 64,
 	forceCost = 0,
 
 	pointBlankRange = 0,
-	pointBlankAccuracy = 100,
+	pointBlankAccuracy = -90,
 
-	idealRange = 45,
-	idealAccuracy = 100,
+	idealRange = 60,
+	idealAccuracy = 45,
 
-	maxRange = 64,
-	maxRangeAccuracy = 100,
+	maxRange = 80,
+	maxRangeAccuracy = 10,
 
 	minDamage = 900,
-	maxDamage = 1200,
+	maxDamage = 1900,
 
-	attackSpeed = 1,
+	attackSpeed = 5.2,
 
-	woundsRatio = 95,
+	woundsRatio = 22,
 
-	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2},
-	experimentalProperties = {"XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "XX", "XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ"},
+	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 1, 1, 2, 2, 2},
+	experimentalProperties = {"XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "XX", "CD", "OQ", "XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ"},
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "exp_durability", "null", "null", "null", "expRange", "expEffeciency", "expEffeciency", "expEffeciency"},
-	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "roundsused", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 17, 35, 4.6, 4, 5, 750, 0, -80, 35, 35, 10, 22, 10},
-	experimentalMax = {0, 0, 32, 65, 3.2, 5, 20, 1500, 0, -80, 35, 65, 7, 15, 7},
+	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "exp_durability", "null", "expRange", "null", "null", "expEffeciency", "expEffeciency", "expEffeciency"},
+	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "roundsused", "hitpoints", "zerorangemod", "midrangemod", "midrange", "maxrangemod", "attackhealthcost", "attackactioncost", "attackmindcost"},
+	experimentalMin = {0, 0, 80, 200, 10.5, 15, 30, 750, -70, -10, 50, 10, 46, 39, 83},
+	experimentalMax = {0, 0, 115, 375, 6.5, 29, 65, 1500, -70, 15, 50, 10, 25, 21, 45},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }

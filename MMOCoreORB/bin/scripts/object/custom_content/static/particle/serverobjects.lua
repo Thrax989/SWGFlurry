@@ -1,5 +1,4 @@
 -- Server Objects
-includeFile("custom_content/static/particle/particle_distant_ships_cloud_city.lua")
 includeFile("custom_content/static/particle/holo_planet_hoth.lua")
 includeFile("custom_content/static/particle/particle_effect_machine_imp.lua")
 includeFile("custom_content/static/particle/particle_effect_machine_neut.lua")

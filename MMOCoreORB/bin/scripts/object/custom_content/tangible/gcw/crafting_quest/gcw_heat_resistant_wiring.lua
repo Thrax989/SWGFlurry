@@ -1,0 +1,5 @@
+object_tangible_gcw_crafting_quest_gcw_heat_resistant_wiring = object_tangible_gcw_crafting_quest_shared_gcw_heat_resistant_wiring:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_crafting_quest_gcw_heat_resistant_wiring, "object/tangible/gcw/crafting_quest/gcw_heat_resistant_wiring.iff")

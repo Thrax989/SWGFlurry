@@ -1,0 +1,5 @@
+object_tangible_scout_trap_trap_ap_kaminoandart = object_tangible_scout_trap_shared_trap_ap_kaminoandart:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_scout_trap_trap_ap_kaminoandart, "object/tangible/scout/trap/trap_ap_kaminoandart.iff")

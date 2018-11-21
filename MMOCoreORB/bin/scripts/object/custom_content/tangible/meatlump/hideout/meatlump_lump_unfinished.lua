@@ -1,0 +1,5 @@
+object_tangible_meatlump_hideout_meatlump_lump_unfinished = object_tangible_meatlump_hideout_shared_meatlump_lump_unfinished:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_meatlump_hideout_meatlump_lump_unfinished, "object/tangible/meatlump/hideout/meatlump_lump_unfinished.iff")

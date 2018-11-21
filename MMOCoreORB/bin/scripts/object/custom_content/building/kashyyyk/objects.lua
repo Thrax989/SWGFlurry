@@ -1353,7 +1353,7 @@ object_building_kashyyyk_shared_poi_kash_rryatt_lvl4_tree_trunk_a3 = SharedStati
 }
 ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_poi_kash_rryatt_lvl4_tree_trunk_a3, "object/building/kashyyyk/shared_poi_kash_rryatt_lvl4_tree_trunk_a3.iff")
 --***********************************************************************************************************
-object_building_kashyyyk_shared_poi_kash_rryatt_rope_lift = SharedTangibleObjectTemplate:new {
+object_building_kashyyyk_shared_poi_kash_rryatt_rope_lift = SharedStaticObjectTemplate:new {
 	clientTemplateFileName = "object/building/kashyyyk/shared_poi_kash_rryatt_rope_lift.iff"
 }
 ObjectTemplates:addClientTemplate(object_building_kashyyyk_shared_poi_kash_rryatt_rope_lift, "object/building/kashyyyk/shared_poi_kash_rryatt_rope_lift.iff")

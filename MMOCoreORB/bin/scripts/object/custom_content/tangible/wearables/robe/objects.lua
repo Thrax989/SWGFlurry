@@ -41,3 +41,30 @@ object_tangible_wearables_robe_shared_robe_jedi_padawan_generic = SharedTangible
 }
 ObjectTemplates:addClientTemplate(object_tangible_wearables_robe_shared_robe_jedi_padawan_generic, "object/tangible/wearables/robe/shared_robe_jedi_padawan_generic.iff")
 
+--********************************************
+
+object_tangible_wearables_robe_shared_robe_s32 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/robe/shared_robe_s32.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_robe_shared_robe_s32, "object/tangible/wearables/robe/shared_robe_s32.iff")
+
+--********************************************
+
+object_tangible_wearables_robe_shared_robe_s32_h1 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/robe/shared_robe_s32_h1.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_robe_shared_robe_s32_h1, "object/tangible/wearables/robe/shared_robe_s32_h1.iff")
+
+--********************************************
+
+object_tangible_wearables_robe_shared_robe_s33 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/robe/shared_robe_s33.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_robe_shared_robe_s33, "object/tangible/wearables/robe/shared_robe_s33.iff")
+
+--********************************************
+
+object_tangible_wearables_robe_shared_robe_s33_h1 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/robe/shared_robe_s33_h1.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_robe_shared_robe_s33_h1, "object/tangible/wearables/robe/shared_robe_s33_h1.iff")

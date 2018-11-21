@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_cave_mushroom_cluster = object_tangible_storyteller_prop_shared_pr_cave_mushroom_cluster:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_cave_mushroom_cluster, "object/tangible/storyteller/prop/pr_cave_mushroom_cluster.iff")
