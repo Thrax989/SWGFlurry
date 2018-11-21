@@ -1,3 +1,4 @@
+
 object_tangible_wearables_robe_robe_jedi_padawan_generic = object_tangible_wearables_robe_shared_robe_jedi_padawan_generic:new {
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
@@ -52,18 +53,16 @@ object_tangible_wearables_robe_robe_jedi_padawan_generic = object_tangible_weara
 				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
-
-				customName = "Obi Wan Kenobi Ancient Robe",
-
+				
 				skillMods = {
-				    {"jedi_force_power_max", 100},
-				    {"jedi_force_power_regen", 5}
+				    {"jedi_force_power_max", 250},
+				    {"jedi_force_power_regen", 10}
 				},
 
+				noTrade = 1,
+
 				objectMenuComponent = "RobeObjectMenuComponent",
-				certificationsRequired = {"force_title_jedi_rank_02"},
+				certificationsRequired = {"force_rank_light_rank_10"},
 				attributeListComponent = "JediRobeAttributeListComponent",
-
 }
-
 ObjectTemplates:addTemplate(object_tangible_wearables_robe_robe_jedi_padawan_generic, "object/tangible/wearables/robe/robe_jedi_padawan_generic.iff")

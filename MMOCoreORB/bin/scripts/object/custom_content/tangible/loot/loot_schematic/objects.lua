@@ -62,6 +62,14 @@ ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_imp
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
+object_tangible_loot_loot_schematic_shared_kashyyyk_treehouse_scem = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_kashyyyk_treehouse_scem.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_kashyyyk_treehouse_scem, "object/tangible/loot/loot_schematic/shared_kashyyyk_treehouse_scem.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
 object_tangible_loot_loot_schematic_shared_planning_table_bestine_imp_schematic = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_planning_table_bestine_imp_schematic.iff"
 }
@@ -182,6 +190,21 @@ ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_wod
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
+object_tangible_loot_loot_schematic_shared_wod_ns_hut = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_wod_ns_hut.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_wod_ns_hut, "object/tangible/loot/loot_schematic/shared_wod_ns_hut.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_loot_loot_schematic_shared_wod_sm_hut = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_wod_sm_hut.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_wod_sm_hut, "object/tangible/loot/loot_schematic/shared_wod_sm_hut.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
 
 object_tangible_loot_loot_schematic_shared_wod_tower_schematic = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_wod_tower_schematic.iff"
@@ -199,5 +222,11 @@ ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_wod
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
+object_tangible_loot_loot_schematic_shared_yt1300_house_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_yt1300_house_schematic.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_yt1300_house_schematic, "object/tangible/loot/loot_schematic/shared_yt1300_house_schematic.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 
 

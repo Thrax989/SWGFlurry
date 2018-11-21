@@ -129,13 +129,3 @@ object_building_poi_shared_player_camp_shuttle_beacon = SharedBuildingObjectTemp
 }
 ObjectTemplates:addClientTemplate(object_building_poi_shared_player_camp_shuttle_beacon, "object/building/poi/shared_player_camp_shuttle_beacon.iff")
 --*************************************************************************************************************************************
-object_building_poi_shared_snowtrooper_camp = SharedBuildingObjectTemplate:new {
-	clientTemplateFileName = "object/building/poi/shared_snowtrooper_camp.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_poi_shared_snowtrooper_camp, "object/building/poi/shared_snowtrooper_camp.iff")
---*************************************************************************************************************************************
-object_building_poi_shared_rebel_snow_camp = SharedBuildingObjectTemplate:new {
-	clientTemplateFileName = "object/building/poi/shared_rebel_snow_camp.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_poi_shared_rebel_snow_camp, "object/building/poi/shared_rebel_snow_camp.iff")
---*************************************************************************************************************************************

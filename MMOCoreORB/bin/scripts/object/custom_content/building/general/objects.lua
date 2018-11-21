@@ -286,11 +286,6 @@ object_building_general_shared_naboo_theed_skaak_bunker_02 = SharedBuildingObjec
 }
 ObjectTemplates:addClientTemplate(object_building_general_shared_naboo_theed_skaak_bunker_02, "object/building/general/shared_naboo_theed_skaak_bunker_02.iff")
 --**********************************************************************************************************************************
-object_building_general_shared_mobile_starport = SharedBuildingObjectTemplate:new {
-	clientTemplateFileName = "object/building/general/shared_mobile_starport.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_general_shared_mobile_starport, "object/building/general/shared_mobile_starport.iff")
---**********************************************************************************************************************************
 object_building_general_shared_npe_hangar_1 = SharedBuildingObjectTemplate:new {
 	clientTemplateFileName = "object/building/general/shared_npe_hangar_1.iff"
 }
@@ -370,9 +365,4 @@ object_building_general_shared_wod_kwi_temple = SharedBuildingObjectTemplate:new
 	clientTemplateFileName = "object/building/general/shared_wod_kwi_temple.iff"
 }
 ObjectTemplates:addClientTemplate(object_building_general_shared_wod_kwi_temple, "object/building/general/shared_wod_kwi_temple.iff")
---**********************************************************************************************************************************
-object_building_general_shared_cave_morag = SharedBuildingObjectTemplate:new {
-	clientTemplateFileName = "object/building/general/shared_cave_morag.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_general_shared_cave_morag, "object/building/general/shared_cave_morag.iff")
 --**********************************************************************************************************************************

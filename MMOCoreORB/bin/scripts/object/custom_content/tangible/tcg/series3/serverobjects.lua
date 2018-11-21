@@ -28,7 +28,7 @@ includeFile("custom_content/tangible/tcg/series3/reuseable_buff_gargans_hands_of
 includeFile("custom_content/tangible/tcg/series3/structure_deed_jedi_meditation_room_deed.lua")
 includeFile("custom_content/tangible/tcg/series3/structure_deed_sith_meditation_room_deed.lua")
 includeFile("custom_content/tangible/tcg/series3/target_dummy_deed.lua")
---includeFile("custom_content/tangible/tcg/series3/vehicle_deed_koro2_exodrive_airspeeder.lua")
+includeFile("custom_content/tangible/tcg/series3/vehicle_deed_koro2_exodrive_airspeeder.lua")
 includeFile("custom_content/tangible/tcg/series3/vehicle_deed_podracer_longtail.lua")
 includeFile("custom_content/tangible/tcg/series3/vehicle_deed_swamp_speeder.lua")
 includeFile("custom_content/tangible/tcg/series3/vendor_deed_battle_droid.lua")

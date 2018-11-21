@@ -1,41 +1,7 @@
 object_weapon_melee_2h_sword_2h_sword_pvp_bf_01 = object_weapon_melee_2h_sword_shared_2h_sword_pvp_bf_01:new {
 
--- vibrosword
 	playerRaces = { "object/creature/player/bothan_male.iff",
-				"object/creature/player/smc_female.iff",
-				"object/creature/player/smc_male.iff",
-				"object/creature/player/talz_male.iff",
-				"object/creature/player/talz_female.iff",
-				"object/creature/player/togruta_female.iff",
-				"object/creature/player/togruta_male.iff",
-				"object/creature/player/weequay_male.iff",
-				"object/creature/player/weequay_female.iff",
-				"object/creature/player/nautolan_male.iff",
-				"object/creature/player/nautolan_female.iff",
-				"object/creature/player/nightsister_female.iff",
-				"object/creature/player/nightsister_male.iff",
-				"object/creature/player/nikto_male.iff",
-				"object/creature/player/nikto_female.iff",
-				"object/creature/player/quarren_male.iff",
-				"object/creature/player/quarren_female.iff",
-				"object/creature/player/ishi_tib_male.iff",
-				"object/creature/player/ishi_tib_female.iff",
-				"object/creature/player/hutt_female.iff",
-				"object/creature/player/hutt_male.iff",
-				"object/creature/player/gran_male.iff",
-				"object/creature/player/gran_female.iff",
-				"object/creature/player/gotal_male.iff",
-				"object/creature/player/gotal_female.iff",
-				"object/creature/player/aqualish_female.iff",
-				"object/creature/player/aqualish_male.iff",
-				"object/creature/player/bith_female.iff",
-				"object/creature/player/bith_male.iff",
-				"object/creature/player/chiss_female.iff",
-				"object/creature/player/chiss_male.iff",
-				"object/creature/player/devaronian_male.iff",
-				"object/creature/player/devaronian_female.iff",
 				"object/creature/player/bothan_female.iff",
-				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
 				"object/creature/player/ithorian_male.iff",
@@ -63,7 +29,7 @@ object_weapon_melee_2h_sword_2h_sword_pvp_bf_01 = object_weapon_melee_2h_sword_s
 	damageType = KINETIC,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
-	armorPiercing = HEAVY,
+	armorPiercing = NONE,
 
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
@@ -71,7 +37,7 @@ object_weapon_melee_2h_sword_2h_sword_pvp_bf_01 = object_weapon_melee_2h_sword_s
 	xpType = "combat_meleespecialize_twohand",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_sword_2h_katana" },
+	certificationsRequired = { "cert_sword_2h_axe" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "twohandmelee_accuracy" },
 
@@ -91,34 +57,34 @@ object_weapon_melee_2h_sword_2h_sword_pvp_bf_01 = object_weapon_melee_2h_sword_s
 
 
 	-- The values below are the default values.  To be used for blue frog objects primarily
-	healthAttackCost = 21,
-	actionAttackCost = 50,
-	mindAttackCost = 25,
+	healthAttackCost = 42,
+	actionAttackCost = 15,
+	mindAttackCost = 10,
 	forceCost = 0,
 
 	pointBlankRange = 0,
-	pointBlankAccuracy = -5,
+	pointBlankAccuracy = 5,
 
 	idealRange = 5,
-	idealAccuracy = -5,
+	idealAccuracy = 5,
 
 	maxRange = 5,
-	maxRangeAccuracy = -5,
+	maxRangeAccuracy = 5,
 
-	minDamage = 25,
-	maxDamage = 200,
+	minDamage = 60,
+	maxDamage = 250,
 
-	attackSpeed = 3.5,
+	attackSpeed = 4.5,
 
-	woundsRatio = 21,
+	woundsRatio = 17,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "SR", "SR", "SR", "SR", "SR", "SR", "SR", "XX", "SR", "XX", "SR", "SR", "SR"},
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "exp_durability", "expRange", "expRange", "null", "expRange", "null", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "maxrange", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 11, 112, 4.6, 15, 750, -4, -4, 3, -4, 4, 27, 65, 33},
-	experimentalMax = {0, 0, 20, 208, 3.1, 27, 1500, 6, 6, 3, 6, 4, 15, 35, 18},
+	experimentalMin = {0, 0, 53, 88, 5.6, 12, 750, 0, 0, 3, 0, 4, 52, 17, 10},
+	experimentalMax = {0, 0, 98, 163, 4.1, 22, 1500, 10, 10, 3, 10, 4, 26, 8, 4},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }

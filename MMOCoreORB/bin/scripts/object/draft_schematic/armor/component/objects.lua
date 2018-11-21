@@ -41,6 +41,22 @@
 --which carries forward this exception.
 
 
+
+object_draft_schematic_armor_component_shared_new_armor_core_base = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/armor/component/shared_new_armor_core_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_armor_component_shared_new_armor_core_base, "object/draft_schematic/armor/component/shared_new_armor_core_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_armor_component_shared_new_armor_layer_base = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/armor/component/shared_new_armor_layer_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_armor_component_shared_new_armor_layer_base, "object/draft_schematic/armor/component/shared_new_armor_layer_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
 object_draft_schematic_armor_component_shared_armor_layer_acid = SharedDraftSchematicObjectTemplate:new {
 	clientTemplateFileName = "object/draft_schematic/armor/component/shared_armor_layer_acid.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups

@@ -1,4 +1,11 @@
 --New
+object_tangible_food_bar_shared_drink_bar_s02 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/food/bar/shared_drink_bar_s02.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_food_bar_shared_drink_bar_s02, "object/tangible/food/bar/shared_drink_bar_s02.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
 object_tangible_food_bar_shared_drink_bar_s01 = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/food/bar/shared_drink_bar_s01.iff"
 }

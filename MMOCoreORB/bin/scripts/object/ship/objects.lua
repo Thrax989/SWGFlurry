@@ -40,6 +40,49 @@
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
 
+object_ship_shared_droid_fighter_s01 = SharedShipObjectTemplate:new {
+	clientTemplateFileName = "object/ship/shared_droid_fighter_s01.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_ship_shared_droid_fighter_s01, "object/ship/shared_droid_fighter_s01.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_ship_shared_havoc = SharedShipObjectTemplate:new {
+	clientTemplateFileName = "object/ship/shared_havoc.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_ship_shared_havoc, "object/ship/shared_havoc.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_ship_shared_snow_speeder_s01 = SharedShipObjectTemplate:new {
+	clientTemplateFileName = "object/ship/shared_snow_speeder_s01.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_ship_shared_snow_speeder_s01, "object/ship/shared_snow_speeder_s01.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_ship_shared_tiedefender = SharedShipObjectTemplate:new {
+	clientTemplateFileName = "object/ship/shared_tiedefender.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_ship_shared_tiedefender, "object/ship/shared_tiedefender.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_ship_shared_twing = SharedShipObjectTemplate:new {
+	clientTemplateFileName = "object/ship/shared_twing.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_ship_shared_twing, "object/ship/shared_twing.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_ship_shared_vwing = SharedShipObjectTemplate:new {
+	clientTemplateFileName = "object/ship/shared_vwing.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_ship_shared_vwing, "object/ship/shared_vwing.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+object_ship_shared_yt2400 = SharedShipObjectTemplate:new {
+	clientTemplateFileName = "object/ship/shared_yt2400.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_ship_shared_yt2400, "object/ship/shared_yt2400.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
 
 object_ship_shared_assaultship = SharedShipObjectTemplate:new {
 	clientTemplateFileName = "object/ship/shared_assaultship.iff"

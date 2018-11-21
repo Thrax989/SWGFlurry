@@ -53,8 +53,6 @@ object_draft_schematic_structure_hangar_house_schem = object_draft_schematic_str
 
    xpType = "crafting_structure_general", 
    xp = 8000, 
-   factoryCrateSize = 0,   
-   disableFactoryRun = true,
 
    assemblySkill = "structure_assembly", 
    experimentingSkill = "structure_experimentation", 

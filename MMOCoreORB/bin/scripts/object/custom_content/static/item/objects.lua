@@ -1,5 +1,10 @@
 --New
+object_static_item_shared_eqp_platform_stage = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/item/shared_eqp_platform_stage.iff"
+}
 
+ObjectTemplates:addClientTemplate(object_static_item_shared_eqp_platform_stage, "object/static/item/shared_eqp_platform_stage.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 --Made with Skyyyr's Wrench Tool 
 
 object_static_item_shared_eqp_camping_cot_s2 = SharedStaticObjectTemplate:new {

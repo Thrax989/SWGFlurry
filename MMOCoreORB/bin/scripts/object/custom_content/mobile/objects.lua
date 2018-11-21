@@ -1,15 +1,4 @@
 --New
-object_mobile_shared_ugnaught_static_robe = SharedCreatureObjectTemplate:new {
-	clientTemplateFileName = "object/mobile/shared_ugnaught_static_robe.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_mobile_shared_ugnaught_static_robe, "object/mobile/shared_ugnaught_static_robe.iff")
---**********************************************************************************************************************************
-object_mobile_shared_admiral_sait = SharedCreatureObjectTemplate:new {
-	clientTemplateFileName = "object/mobile/shared_admiral_sait.iff"
-}
-ObjectTemplates:addClientTemplate(object_mobile_shared_admiral_sait, "object/mobile/shared_admiral_sait.iff")
-------------------------------------------------------------------------------------------------------------------------------------
 object_mobile_shared_ados_jarkey = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/shared_ados_jarkey.iff"
 }
@@ -3720,11 +3709,6 @@ object_mobile_shared_pit_droid = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/shared_pit_droid.iff"
 }
 ObjectTemplates:addClientTemplate(object_mobile_shared_pit_droid, "object/mobile/shared_pit_droid.iff")
---**********************************************************************************************************************************
-object_mobile_shared_player_transport_02 = SharedCreatureObjectTemplate:new {
-	clientTemplateFileName = "object/mobile/shared_player_transport_02.iff"
-}
-ObjectTemplates:addClientTemplate(object_mobile_shared_player_transport_02, "object/mobile/shared_player_transport_02.iff")
 --**********************************************************************************************************************************
 object_mobile_shared_radeld = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/shared_radeld.iff"
@@ -8958,7 +8942,7 @@ ObjectTemplates:addClientTemplate(object_mobile_shared_hoth_collector, "object/m
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
-object_mobile_shared_hoth_turret_s1 = SharedInstallationObjectTemplate:new {
+object_mobile_shared_hoth_turret_s1 = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/shared_hoth_turret_s1.iff"
 }
 
@@ -8966,7 +8950,7 @@ ObjectTemplates:addClientTemplate(object_mobile_shared_hoth_turret_s1, "object/m
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
-object_mobile_shared_hoth_turret_s2 = SharedInstallationObjectTemplate:new {
+object_mobile_shared_hoth_turret_s2 = SharedCreatureObjectTemplate:new {
 	clientTemplateFileName = "object/mobile/shared_hoth_turret_s2.iff"
 }
 

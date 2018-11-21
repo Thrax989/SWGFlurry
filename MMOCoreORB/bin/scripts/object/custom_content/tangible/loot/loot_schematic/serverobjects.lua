@@ -6,6 +6,7 @@ includeFile("custom_content/tangible/loot/loot_schematic/duel_recording_terminal
 includeFile("custom_content/tangible/loot/loot_schematic/generic_limited_use_flashy.lua")
 includeFile("custom_content/tangible/loot/loot_schematic/generic_vehicle.lua")
 includeFile("custom_content/tangible/loot/loot_schematic/imperial_gunner_helmet_schematic.lua")
+includeFile("custom_content/tangible/loot/loot_schematic/kashyyyk_treehouse_scem.lua")
 includeFile("custom_content/tangible/loot/loot_schematic/planning_table_bestine_imp_schematic.lua")
 includeFile("custom_content/tangible/loot/loot_schematic/planning_table_bestine_reb_schematic.lua")
 includeFile("custom_content/tangible/loot/loot_schematic/planning_table_dearic_imp_schematic.lua")
@@ -21,18 +22,9 @@ includeFile("custom_content/tangible/loot/loot_schematic/trandoshan_hunter_rifle
 includeFile("custom_content/tangible/loot/loot_schematic/vehicle_lava_res_kit_schematic.lua")
 includeFile("custom_content/tangible/loot/loot_schematic/wod_floating_stones_schematic.lua")
 includeFile("custom_content/tangible/loot/loot_schematic/wod_ns_gate_schematic.lua")
+includeFile("custom_content/tangible/loot/loot_schematic/wod_ns_hut.lua")
+includeFile("custom_content/tangible/loot/loot_schematic/wod_sm_hut.lua")
+includeFile("custom_content/tangible/loot/loot_schematic/wod_tower_schematic.lua")
 includeFile("custom_content/tangible/loot/loot_schematic/wod_trilithon_schematic.lua")
-includeFile("custom_content/tangible/loot/loot_schematic/desert_skiff_loot_schem.lua")
-includeFile("custom_content/tangible/loot/loot_schematic/geonosian_speeder_loot_schem.lua")
-includeFile("custom_content/tangible/loot/loot_schematic/koro2_speeder_loot_schem.lua")
-includeFile("custom_content/tangible/loot/loot_schematic/lava_skiff_loot_schem.lua")
---includeFile("custom_content/tangible/loot/loot_schematic/organa_speeder_loot_schem.lua") Causes Client Crash on load
---includeFile("custom_content/tangible/loot/loot_schematic/sith_speeder_loot_schem.lua") PCD file not correct, rider in T pose
-includeFile("custom_content/tangible/loot/loot_schematic/stap_speeder_loot_schem.lua")
-includeFile("custom_content/tangible/loot/loot_schematic/swamp_speeder_loot_schem.lua")
-includeFile("custom_content/tangible/loot/loot_schematic/tantive4_speeder_loot_schem.lua")
-includeFile("custom_content/tangible/loot/loot_schematic/xj6_speeder_loot_schem.lua")
-
---includeFile("custom_content/tangible/loot/loot_schematic/barn_house_loot_schem.lua")
-
+includeFile("custom_content/tangible/loot/loot_schematic/yt1300_house_schematic.lua")
 
