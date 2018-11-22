@@ -23,14 +23,13 @@ ep3_wke_vryyyr = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = AIENABLED + CONVERSABLE,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_wke_vryyyr.iff"},
 	scale = 1.25,
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "vryyyrConvoTemplate",
 	reactionStf = "",
 	attacks = merge(brawlermaster,marksmanmaster)
 }
