@@ -1,18 +1,18 @@
 halloween_skeleton_1 = Creature:new {
-	customName = "Skeleton",
+	customName = "halloween_skeleton_1",
 	--objectName = "",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
 	level = 100,
-	chanceHit = 10.0,
-	damageMin = 445,
-	damageMax = 600,
-	baseXp = 5830,
-	baseHAM = 11000,
-	baseHAMmax = 14000,
-	armor = 1,
-	resists = {40,40,40,40,40,40,40,40,40},
+	chanceHit = 1,
+	damageMin = 645,
+	damageMax = 1000,
+	baseXp = 9429,
+	baseHAM = 24000,
+	baseHAMmax = 30000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,0,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -22,55 +22,17 @@ halloween_skeleton_1 = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + KILLER + STALKER,
+	pvpBitmask = NONE,
+	creatureBitmask = NONE,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/halloween_skeleton_1.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 9000000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "armor_attachments", chance = 500000},					
-			},
-			lootChance = 10000000 
-			},
-			{
-			groups = {
-				{group = "artifact", chance = 10000000}			
-			},
-			lootChance = 1000000
-			},
-			{
-			groups = {
-				{group = "tierone", chance = 10000000}
-			},
-			lootChance = 1000000
-			},
-			{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-			},
-			lootChance = 500000
-			},
-			{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-			},
-			lootChance = 100000
-			},
-			{
-			groups = {
-				{group = "halloween", chance = 10000000},
-				},
-			lootChance = 1500000 
-			},
-	},
+	lootGroups = {},
 	weapons = {},
-	reactionStf = "@npc_reaction/slang",
-	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster)
+	conversationTemplate = "",
+	attacks = {
+	}
 }
 
 CreatureTemplates:addCreatureTemplate(halloween_skeleton_1, "halloween_skeleton_1")

@@ -21,7 +21,7 @@ sher_kar = Creature:new {
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
-	creatureBitmask = PACK + STALKER,
+	creatureBitmask = PACK + STALKER + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 

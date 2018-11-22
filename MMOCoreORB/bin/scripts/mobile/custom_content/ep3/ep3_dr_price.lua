@@ -1,6 +1,5 @@
 ep3_dr_price = Creature:new {
 	customName = "Dr Price",
-	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
 	level = 30,
@@ -23,14 +22,12 @@ ep3_dr_price = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = AIENABLED + CONVERSABLE,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_dr_price.iff"},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "kachirhoDrPriceConvoTemplate",
-	--reactionStf = "@npc_reaction/slang",
 	attacks = merge(brawlermaster,marksmanmaster)
 }
 

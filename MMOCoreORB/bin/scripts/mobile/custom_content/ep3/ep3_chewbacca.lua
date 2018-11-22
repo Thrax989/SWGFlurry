@@ -1,6 +1,5 @@
 ep3_chewbacca = Creature:new {
 	customName = "Chewbacca",
-	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
 	level = 30,
@@ -23,14 +22,13 @@ ep3_chewbacca = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = AIENABLED + CONVERSABLE,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/chewbacca.iff"},
 	scale = 1.26,
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "kachirhoChewbaccaConvoTemplate",
 	--reactionStf = "@npc_reaction/slang",
 	attacks = merge(brawlermaster,marksmanmaster)
 }

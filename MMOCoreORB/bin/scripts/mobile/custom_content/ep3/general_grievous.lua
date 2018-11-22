@@ -1,7 +1,7 @@
 general_grievous = Creature:new {
 	--objectName = "@mob/creature_names:ep3_general_grievous",
 	customName = "General Grievous",
-	socialGroup = "self",
+	socialGroup = "droids",
 	pvpFaction = "",
 	faction = "",
 	level = 300,
@@ -29,24 +29,7 @@ general_grievous = Creature:new {
 	scale = 1.5,
 
 	templates = {"object/mobile/ep3/general_grievous.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
-			},
-			lootChance = 10000000
-		},
-		},
+	lootGroups = {},
 	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
 	attacks = merge(lightsabermaster)

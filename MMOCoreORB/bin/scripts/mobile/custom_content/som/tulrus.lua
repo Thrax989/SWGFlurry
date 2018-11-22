@@ -1,14 +1,14 @@
 tulrus = Creature:new {
-	customName = "a tulrus",
+	customName = "tulrus",
 	socialGroup = "townsperson",
 	faction = "",
-	level = 24,
-	chanceHit = 0.34,
-	damageMin = 175,
-	damageMax = 450,
-	baseXp = 3500,
-	baseHAM = 16300,
-	baseHAMmax = 19800,
+	level = 70,
+	chanceHit = 0.27,
+	damageMin = 550,
+	damageMax = 800,
+	baseXp = 235,
+	baseHAM = 16000,
+	baseHAMmax = 19000,
 	armor = 0,
 	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
@@ -17,21 +17,24 @@ tulrus = Creature:new {
 	hideAmount = 0,
 	boneType = "",
 	boneAmount = 0,
-	milkType = "",
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
-	creatureBitmask = HERD,
+	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/som/tulrus.iff"},
-	lootGroups = {},
-	weapons = {},
+	lootGroups = {
+		{
+			groups = {},
+			lootChance = 2100000
+		}
+	},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
-	attacks = {}
-
+	attacks = merge(marksmannovice,brawlernovice)
 }
 
 CreatureTemplates:addCreatureTemplate(tulrus, "tulrus")
