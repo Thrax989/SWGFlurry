@@ -141,13 +141,13 @@ public:
 
 		}
 
-		// Heal 10% of base in wounds
-		int healthHeal = pet->getBaseHAM(CreatureAttribute::HEALTH) * 0.10;
-		int strengthHeal = pet->getBaseHAM(CreatureAttribute::STRENGTH) * 0.10;
-		int conHeal = pet->getBaseHAM(CreatureAttribute::CONSTITUTION) * 0.10;
-		int actionHeal = pet->getBaseHAM(CreatureAttribute::ACTION) * 0.10;
-		int quicknessHeal = pet->getBaseHAM(CreatureAttribute::QUICKNESS) * 0.10;
-		int staminaHeal = pet->getBaseHAM(CreatureAttribute::STAMINA) * 0.10;
+		// Heal 20% of base in wounds
+		int healthHeal = pet->getBaseHAM(CreatureAttribute::HEALTH) * 0.20;
+		int strengthHeal = pet->getBaseHAM(CreatureAttribute::STRENGTH) * 0.20;
+		int conHeal = pet->getBaseHAM(CreatureAttribute::CONSTITUTION) * 0.20;
+		int actionHeal = pet->getBaseHAM(CreatureAttribute::ACTION) * 0.20;
+		int quicknessHeal = pet->getBaseHAM(CreatureAttribute::QUICKNESS) * 0.20;
+		int staminaHeal = pet->getBaseHAM(CreatureAttribute::STAMINA) * 0.20;
 
 		pet->healWound(player, CreatureAttribute::HEALTH, healthHeal, true, false);
 		pet->healWound(player, CreatureAttribute::STRENGTH, strengthHeal, true, false);
