@@ -97,7 +97,6 @@ object_tangible_wearables_armor_kashyyykian_hunting_armor_kashyyykian_hunting_le
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 
-
 	-- Damage types in WeaponObject
 	vulnerability = STUN + LIGHTSABER,
 

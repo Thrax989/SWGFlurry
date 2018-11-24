@@ -96,23 +96,28 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_helmet = object_ta
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-
 	
 	-- Damage types in WeaponObject
-	vulnerability = ACID + STUN,
-	specialResists = LIGHTSABER,
+	vulnerability = COLD + ELECTRICITY + STUN + LIGHTSABER,
 
-	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
+	-- These are default Blue Frog stats, These are also used as temporary DWB crafting stats. Needs to be adjusted to random color, and Blast should be a Special Resist. Encumberance on boots and all arm/hand armor are estimated. Helm/Chest/Leggings are correct. 
+	healthEncumbrance = 45,
+	actionEncumbrance = 48,
+	mindEncumbrance = 286,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
+	maxCondition = 40000,
 
+	kinetic = 58,
+	energy = 58,
+	electricity = 0,
 	stun = 0,
-	acid = 0,
-	lightSaber = 12,
+	blast = 65,
+	heat = 58,
+	cold = 0,
+	acid = 58,
+	lightSaber = 0
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_mandalorian_armor_mandalorian_helmet, "object/tangible/wearables/armor/mandalorian/armor_mandalorian_helmet.iff")
