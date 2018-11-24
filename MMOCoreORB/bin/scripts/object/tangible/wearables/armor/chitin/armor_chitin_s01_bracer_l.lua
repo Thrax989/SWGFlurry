@@ -44,6 +44,8 @@
 object_tangible_wearables_armor_chitin_armor_chitin_s01_bracer_l = object_tangible_wearables_armor_chitin_shared_armor_chitin_s01_bracer_l:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
@@ -97,28 +99,24 @@ object_tangible_wearables_armor_chitin_armor_chitin_s01_bracer_l = object_tangib
 
 
 	-- Damagetypes in WeaponObject
-	vulnerability = BLAST + STUN + ACID + LIGHTSABER,
-
-	specialResists = ELECTRICITY + HEAT + COLD,
+	vulnerability = STUN + HEAT + COLD + ELECTRICITY + LIGHTSABER,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 30,
-	actionEncumbrance = 15,
-	mindEncumbrance = 10,
-
-	maxCondition = 30000,
+	healthEncumbrance = 13,
+	actionEncumbrance = 13,
+	mindEncumbrance = 16,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 50,
-	energy = 50,
-	electricity = 65,
+	kinetic = 25,
+	energy = 15,
+	electricity = 0,
 	stun = 0,
-	blast = 0,
-	heat = 50,
-	cold = 50,
-	acid = 0,
+	blast = 15,
+	heat = 0,
+	cold = 0,
+	acid = 15,
 	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
@@ -126,8 +124,8 @@ object_tangible_wearables_armor_chitin_armor_chitin_s01_bracer_l = object_tangib
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "null", "null", "exp_quality", "exp_durability", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
 	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
-	experimentalMin = {0, 0, 0, 1000, 5, 15000, 13, 25, 16, 1, 1, 5, 15000},
-	experimentalMax = {0, 0, 0, 1000, 35, 25000, 8, 15, 9, 1, 1, 30, 25000},
+	experimentalMin = {0, 0, 0, 1000, 5, 15000, 13, 13, 16, 1, 1, 5, 15000},
+	experimentalMax = {0, 0, 0, 1000, 30, 25000, 8, 8, 9, 1, 1, 40, 25000},
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
