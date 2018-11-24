@@ -98,16 +98,15 @@ object_tangible_wearables_armor_composite_armor_composite_chest_plate = object_t
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 
-
 	-- Damage types in WeaponObject
 	vulnerability = STUN + LIGHTSABER,
 
 	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 80,
-	actionEncumbrance = 80,
-	mindEncumbrance = 80,
+	healthEncumbrance = 300,
+	actionEncumbrance = 120,
+	mindEncumbrance = 85,
 
 	maxCondition = 30000,
 
