@@ -48,6 +48,8 @@ object_tangible_wearables_armor_chitin_armor_chitin_s01_bracer_l = object_tangib
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
+				"object/creature/player/ithorian_male.iff",
+				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -58,6 +60,8 @@ object_tangible_wearables_armor_chitin_armor_chitin_s01_bracer_l = object_tangib
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
+				"object/creature/player/wookiee_male.iff",
+				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
@@ -71,6 +75,8 @@ object_tangible_wearables_armor_chitin_armor_chitin_s01_bracer_l = object_tangib
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
 				"object/mobile/vendor/ishi_tib_male.iff",
+				"object/mobile/vendor/ithorian_female.iff",
+				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
 				"object/mobile/vendor/nikto_male.iff",
@@ -84,28 +90,35 @@ object_tangible_wearables_armor_chitin_armor_chitin_s01_bracer_l = object_tangib
 				"object/mobile/vendor/twilek_female.iff",
 				"object/mobile/vendor/twilek_male.iff",
 				"object/mobile/vendor/weequay_male.iff",
+				"object/mobile/vendor/wookiee_female.iff",
+				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 
+
 	-- Damagetypes in WeaponObject
-	vulnerability = STUN + HEAT + COLD + ELECTRICITY + LIGHTSABER,
+	vulnerability = BLAST + STUN + ACID + LIGHTSABER,
+
+	specialResists = ELECTRICITY + HEAT + COLD,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 13,
-	actionEncumbrance = 13,
-	mindEncumbrance = 16,
+	healthEncumbrance = 30,
+	actionEncumbrance = 15,
+	mindEncumbrance = 10,
+
+	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 25,
-	energy = 15,
-	electricity = 0,
+	kinetic = 50,
+	energy = 50,
+	electricity = 65,
 	stun = 0,
-	blast = 15,
-	heat = 0,
-	cold = 0,
-	acid = 15,
+	blast = 0,
+	heat = 50,
+	cold = 50,
+	acid = 0,
 	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
@@ -113,8 +126,8 @@ object_tangible_wearables_armor_chitin_armor_chitin_s01_bracer_l = object_tangib
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "null", "null", "exp_quality", "exp_durability", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
 	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
-	experimentalMin = {0, 0, 0, 1000, 5, 15000, 13, 13, 16, 1, 1, 5, 15000},
-	experimentalMax = {0, 0, 0, 1000, 30, 25000, 8, 8, 9, 1, 1, 40, 25000},
+	experimentalMin = {0, 0, 0, 1000, 5, 15000, 13, 25, 16, 1, 1, 5, 15000},
+	experimentalMax = {0, 0, 0, 1000, 35, 25000, 8, 15, 9, 1, 1, 30, 25000},
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }

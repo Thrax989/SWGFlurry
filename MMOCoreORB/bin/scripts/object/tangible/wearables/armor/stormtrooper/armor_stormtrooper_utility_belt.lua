@@ -46,7 +46,7 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_utility_belt = o
 	faction = "Imperial",
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
-					"object/creature/player/human_male.iff",
+				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
 				"object/creature/player/ithorian_male.iff",
 				"object/creature/player/ithorian_female.iff",

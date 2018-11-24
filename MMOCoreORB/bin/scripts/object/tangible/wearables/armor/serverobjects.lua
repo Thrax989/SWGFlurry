@@ -43,6 +43,8 @@
 
 
 --Children folder includes
+includeFile("tangible/wearables/armor/assault_trooper/serverobjects.lua")
+includeFile("tangible/wearables/armor/clone_trooper/serverobjects.lua")
 includeFile("tangible/wearables/armor/bone/serverobjects.lua")
 includeFile("tangible/wearables/armor/bounty_hunter/serverobjects.lua")
 includeFile("tangible/wearables/armor/chitin/serverobjects.lua")
@@ -64,5 +66,16 @@ includeFile("tangible/wearables/armor/stormtrooper/serverobjects.lua")
 includeFile("tangible/wearables/armor/tantel/serverobjects.lua")
 includeFile("tangible/wearables/armor/ubese/serverobjects.lua")
 includeFile("tangible/wearables/armor/zam/serverobjects.lua")
+includeFile("tangible/wearables/armor/mandalorian_rebel/serverobjects.lua")
+includeFile("tangible/wearables/armor/mandalorian_imperial/serverobjects.lua")
+includeFile("tangible/wearables/armor/rebel_snow/serverobjects.lua")
+includeFile("tangible/wearables/armor/rebel_assault/serverobjects.lua")
+includeFile("tangible/wearables/armor/snowtrooper/serverobjects.lua")
+includeFile("tangible/wearables/armor/deathtrooper/serverobjects.lua")
+includeFile("tangible/wearables/armor/rebel_spec_force/serverobjects.lua")
+includeFile("tangible/wearables/armor/infiltrator/serverobjects.lua")
+includeFile("tangible/wearables/armor/rebel_battle/serverobjects.lua")
+includeFile("tangible/wearables/armor/galactic_marine/serverobjects.lua")
+includeFile("tangible/wearables/armor/scout_trooper/serverobjects.lua")
 
 -- Server Objects

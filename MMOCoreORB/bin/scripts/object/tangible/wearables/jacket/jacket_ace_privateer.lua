@@ -42,6 +42,8 @@
 
 
 object_tangible_wearables_jacket_jacket_ace_privateer = object_tangible_wearables_jacket_shared_jacket_ace_privateer:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
@@ -81,6 +83,17 @@ object_tangible_wearables_jacket_jacket_ace_privateer = object_tangible_wearable
 				"object/mobile/vendor/quarren_male.iff",
 				"object/mobile/vendor/rodian_female.iff",
 				"object/mobile/vendor/rodian_male.iff",
+				"object/mobile/vendor/sullustan_female.iff",
+				"object/mobile/vendor/sullustan_male.iff",
+				"object/mobile/vendor/trandoshan_female.iff",
+				"object/mobile/vendor/trandoshan_male.iff",
+				"object/mobile/vendor/twilek_female.iff",
+				"object/mobile/vendor/twilek_male.iff",
+				"object/mobile/vendor/weequay_male.iff",
+				"object/mobile/vendor/wookiee_female.iff",
+				"object/mobile/vendor/wookiee_male.iff",
+				"object/mobile/vendor/zabrak_female.iff",
+				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/sullustan_female.iff",
 				"object/mobile/vendor/sullustan_male.iff",
 				"object/mobile/vendor/trandoshan_female.iff",
