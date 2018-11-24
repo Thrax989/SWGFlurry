@@ -44,6 +44,8 @@
 object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_boots = object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_boots:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+	
 	faction = "Imperial",
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
@@ -98,23 +100,27 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_boots = object_t
 				"object/mobile/vendor/zabrak_male.iff" },
 	
 	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
-
-	specialResists = ELECTRICITY,
+	vulnerability = ACID + STUN + LIGHTSABER,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 80,
-	actionEncumbrance = 80,
-	mindEncumbrance = 80,
-
-	maxCondition = 30000,
+	healthEncumbrance = 15,
+	actionEncumbrance = 33,
+	mindEncumbrance = 19,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
-
-	electricity = 80,
+	
+	maxCondition = 45000,
+	
+	kinetic = 30,
+	energy = 30,
+	electricity = 30,
 	stun = 0,
-	lightSaber = 0,
+	blast = 30,
+	heat = 30,
+	cold = 30,
+	acid = 0,
+	lightSaber = 0
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_boots, "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_boots.iff")

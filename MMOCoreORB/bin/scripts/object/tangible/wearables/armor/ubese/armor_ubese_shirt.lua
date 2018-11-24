@@ -96,7 +96,6 @@ object_tangible_wearables_armor_ubese_armor_ubese_shirt = object_tangible_wearab
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-
 	-- Damage types in WeaponObject
 	vulnerability = HEAT + COLD + STUN + LIGHTSABER,
 

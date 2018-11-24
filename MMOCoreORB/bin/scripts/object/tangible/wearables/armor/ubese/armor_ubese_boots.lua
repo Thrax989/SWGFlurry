@@ -96,30 +96,25 @@ object_tangible_wearables_armor_ubese_armor_ubese_boots = object_tangible_wearab
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
-
 	-- Damage types in WeaponObject
-	vulnerability = BLAST + STUN + LIGHTSABER,
-
-	specialResists = HEAT + COLD + ELECTRICITY + ACID,
+	vulnerability = HEAT + COLD + STUN + LIGHTSABER,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 80,
-	actionEncumbrance = 150,
-	mindEncumbrance = 80,
-
-	maxCondition = 30000,
+	healthEncumbrance = 1,
+	actionEncumbrance = 1,
+	mindEncumbrance = 1,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 45,
-	energy = 45,
-	electricity = 45,
-	stun = 30,
-	blast = 0,
-	heat = 45,
-	cold = 45,
-	acid = 55,
+	kinetic = 15,
+	energy = 15,
+	electricity = 15,
+	stun = 15,
+	blast = 15,
+	heat = 15,
+	cold = 15,
+	acid = 15,
 	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
@@ -128,7 +123,7 @@ object_tangible_wearables_armor_ubese_armor_ubese_boots = object_tangible_wearab
 	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_durability", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
 	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
 	experimentalMin = {0, 0, 0, 1000, 1, 15000, 11, 28, 19, 1, 1, 1, 18750},
-	experimentalMax = {0, 0, 0, 1000, 35, 25000, 7, 17, 11, 1, 1, 30, 31250},
+	experimentalMax = {0, 0, 0, 1000, 30, 25000, 7, 17, 11, 1, 1, 40, 31250},
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
