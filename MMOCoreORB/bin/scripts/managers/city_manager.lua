@@ -186,7 +186,7 @@ CityTaxes = {
 CitySpecializations = {
 	{--Sample Rich
 		name = "@city/city:city_spec_sample_rich",
-		cost = 35000,
+		cost = 40000,
 		skillMods = {
 			{"private_spec_samplesize", 20},
 			{"private_spec_samplerate", 10}
@@ -194,7 +194,7 @@ CitySpecializations = {
 	},
 	{--Manufacturing Center
 		name = "@city/city:city_spec_industry",
-		cost = 25000,
+		cost = 40000,
 		skillMods = {
 			{"private_spec_assembly", 10}
 		}
@@ -215,7 +215,7 @@ CitySpecializations = {
 	},
 	{--Research Center
 		name = "@city/city:city_spec_research",
-		cost = 62500,
+		cost = 40000,
 		skillMods = {
 			{"private_spec_experimentation", 15}
 		}
@@ -236,7 +236,7 @@ CitySpecializations = {
 	},
 	{--Stronghold
 		name = "@city/city:city_spec_stronghold",
-		cost = 750000,
+		cost = 320000,
 		skillMods = {
 			{"private_defense", 90},
 			{"private_spec_samplesize", 20},
