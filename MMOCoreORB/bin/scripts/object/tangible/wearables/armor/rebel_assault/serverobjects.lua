@@ -1,4 +1,4 @@
-includeFile("tangible/wearables/armor/rebel_assault/armor_appearance_rebel_assault_helmet_gcw.lua")
+--includeFile("tangible/wearables/armor/rebel_assault/armor_appearance_rebel_assault_helmet_gcw.lua")
 includeFile("tangible/wearables/armor/rebel_assault/armor_rebel_assault_belt.lua")
 includeFile("tangible/wearables/armor/rebel_assault/armor_rebel_assault_belt_camo.lua")
 includeFile("tangible/wearables/armor/rebel_assault/armor_rebel_assault_belt_gcw.lua")

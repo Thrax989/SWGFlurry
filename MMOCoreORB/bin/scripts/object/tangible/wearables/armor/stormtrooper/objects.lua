@@ -207,6 +207,13 @@ object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_leggings 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_leggings, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_leggings.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
+object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_leggings_quest = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_leggings_quest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_leggings_quest, "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_leggings_quest.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
 object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_leggings_camo = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_leggings_camo.iff"
 }
