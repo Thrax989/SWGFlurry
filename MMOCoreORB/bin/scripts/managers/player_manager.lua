@@ -53,6 +53,9 @@ medicalBuff = 1900
 performanceDuration = 7200 -- in seconds
 medicalDuration = 7200 -- in seconds
 
+--Sets a global experience multiplier
+globalExpMultiplier = 1.0
+
 --Sets the experience multiplier while within range of party members
 groupExpMultiplierInRange = 1.2--You will receive extra xp bonus for each party member in range
 
