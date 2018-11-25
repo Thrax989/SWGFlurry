@@ -83,6 +83,7 @@ function missionScreenplay:enemyKilled(pMobile, pPlayer)
 --Mission Target Killed Active Waypoint Removed
 -------------------------------------------------------
            player:sendSystemMessage("COMPLETED MISSION: Test.")
+	   player:playMusicMessage("sound/ui_npe2_quest_completed.snd")
            local pGhost = CreatureObject(pPlayer):getPlayerObject()
            local playerID = CreatureObject(pPlayer):getObjectID()
            local oldWaypointID = tonumber(getQuestStatus(playerID .. ":caedusWaypointID"))
@@ -248,7 +249,7 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 -------------------------------------------------------
                 creature:setScreenPlayState(missionScreenplay.states.complete, "missionquest") --- NEWLY COMPLETED
 
-                creature:playMusicMessage("sound/music_combat_bfield_vict.snd")
+                creature:playMusicMessage("sound/ui_npe2_quest_credits.snd")
 
                 nextConversationScreen = conversation:getScreen("thank_you")
 -------------------------------------------------------
@@ -337,7 +338,7 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 -------------------------------------------------------
       player:setScreenPlayState( missionScreenplay.states.accepted , missionScreenplay.questString)
       player:sendSystemMessage("ACCEPTED mission: Family Revenge")
-      player:playMusicMessage("sound/music_themequest_victory_imperial.snd")
+      player:playMusicMessage("sound/ui_npe2_quest_received.snd")
 
     	elseif (screenID == "quest_status") then
 

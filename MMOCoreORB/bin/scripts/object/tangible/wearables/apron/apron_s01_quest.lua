@@ -42,10 +42,14 @@
 
 
 object_tangible_wearables_apron_apron_s01_quest = object_tangible_wearables_apron_shared_apron_s01_quest:new {
+objectMenuComponent = "ArmorObjectMenuComponent", 
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
+				"object/creature/player/ithorian_male.iff",
+				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -56,6 +60,8 @@ object_tangible_wearables_apron_apron_s01_quest = object_tangible_wearables_apro
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
+				"object/creature/player/wookiee_male.iff",
+				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
@@ -69,6 +75,8 @@ object_tangible_wearables_apron_apron_s01_quest = object_tangible_wearables_apro
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
 				"object/mobile/vendor/ishi_tib_male.iff",
+				"object/mobile/vendor/ithorian_female.iff",
+				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
 				"object/mobile/vendor/nikto_male.iff",
@@ -86,6 +94,7 @@ object_tangible_wearables_apron_apron_s01_quest = object_tangible_wearables_apro
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_apron_apron_s01_quest, "object/tangible/wearables/apron/apron_s01_quest.iff")

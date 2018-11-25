@@ -44,10 +44,14 @@
 object_tangible_wearables_armor_marauder_armor_marauder_s02_chest_plate_quest = object_tangible_wearables_armor_marauder_shared_armor_marauder_s02_chest_plate_quest:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
+				"object/creature/player/ithorian_male.iff",
+				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -58,6 +62,8 @@ object_tangible_wearables_armor_marauder_armor_marauder_s02_chest_plate_quest = 
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
+				"object/creature/player/wookiee_male.iff",
+				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
@@ -71,6 +77,8 @@ object_tangible_wearables_armor_marauder_armor_marauder_s02_chest_plate_quest = 
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
 				"object/mobile/vendor/ishi_tib_male.iff",
+				"object/mobile/vendor/ithorian_female.iff",
+				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
 				"object/mobile/vendor/nikto_male.iff",
@@ -84,8 +92,11 @@ object_tangible_wearables_armor_marauder_armor_marauder_s02_chest_plate_quest = 
 				"object/mobile/vendor/twilek_female.iff",
 				"object/mobile/vendor/twilek_male.iff",
 				"object/mobile/vendor/weequay_male.iff",
+				"object/mobile/vendor/wookiee_female.iff",
+				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+
 	
 	-- Damage types in WeaponObject
 	vulnerability = ELECTRICITY + ACID + STUN + LIGHTSABER,

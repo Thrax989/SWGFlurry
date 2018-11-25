@@ -9,9 +9,3 @@ object_tangible_wearables_cape_shared_cape_imperial_01 = SharedTangibleObjectTem
 	clientTemplateFileName = "object/tangible/wearables/cape/shared_cape_imperial_01.iff"
 }
 ObjectTemplates:addClientTemplate(object_tangible_wearables_cape_shared_cape_imperial_01, "object/tangible/wearables/cape/shared_cape_imperial_01.iff")
---*********************************************************************************
-object_tangible_wearables_cape_shared_cape_kubaz = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/wearables/cape/shared_cape_kubaz.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_wearables_cape_shared_cape_kubaz, "object/tangible/wearables/cape/shared_cape_kubaz.iff")

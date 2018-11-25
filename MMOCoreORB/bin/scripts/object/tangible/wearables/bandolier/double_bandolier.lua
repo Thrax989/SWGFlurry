@@ -42,6 +42,8 @@
 
 
 object_tangible_wearables_bandolier_double_bandolier = object_tangible_wearables_bandolier_shared_double_bandolier:new {
+objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
@@ -73,6 +75,8 @@ object_tangible_wearables_bandolier_double_bandolier = object_tangible_wearables
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
 				"object/mobile/vendor/ishi_tib_male.iff",
+				"object/mobile/vendor/ithorian_female.iff",
+				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
 				"object/mobile/vendor/nikto_male.iff",

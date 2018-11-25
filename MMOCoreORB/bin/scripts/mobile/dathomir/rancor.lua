@@ -25,8 +25,7 @@ rancor = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/rancor_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	templates = {"object/mobile/rancor.iff"},
 	controlDeviceTemplate = "object/intangible/pet/rancor_hue.iff",
 	lootGroups = {
 		{

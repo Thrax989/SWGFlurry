@@ -44,6 +44,8 @@
 object_tangible_wearables_armor_marauder_armor_marauder_s03_bandolier_double = object_tangible_wearables_armor_marauder_shared_armor_marauder_s03_bandolier_double:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
@@ -94,6 +96,7 @@ object_tangible_wearables_armor_marauder_armor_marauder_s03_bandolier_double = o
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
+
 	
 	-- Damage types in WeaponObject
 	vulnerability = ELECTRICITY + ACID + STUN + LIGHTSABER,

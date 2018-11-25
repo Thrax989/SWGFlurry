@@ -56,7 +56,8 @@ CreatureAreaAttackCommand = {
 
 	areaRange = 25,
 	areaAction = true,
-	poolsToDamage = RANDOM_ATTRIBUTE
+	poolsToDamage = RANDOM_ATTRIBUTE,
+	range = -1
 }
 
 AddCommand(CreatureAreaAttackCommand)
