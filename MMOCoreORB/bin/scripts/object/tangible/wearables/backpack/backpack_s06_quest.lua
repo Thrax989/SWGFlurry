@@ -91,8 +91,7 @@ object_tangible_wearables_backpack_backpack_s06_quest = object_tangible_wearable
 				"object/mobile/vendor/wookiee_female.iff",
 				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
-				"object/mobile/vendor/zabrak_male.iff" 
-	}
+				"object/mobile/vendor/zabrak_male.iff" },
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_backpack_backpack_s06_quest, "object/tangible/wearables/backpack/backpack_s06_quest.iff")
