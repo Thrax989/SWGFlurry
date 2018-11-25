@@ -1703,20 +1703,29 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 
 	if (amount <= 0 || xpType == "jedi_general") {
 		xp = playerObject->addExperience(xpType, amount);
-	} else if (xpType == "imagedesigner" ||
-		   xpType == "music" ||
+	} else if (xpType == "bio_engineer_dna_harvesting" ||
+		   xpType == "camp" ||
+		   xpType == "crafting_bio_engineer_creature" ||
+		   xpType == "crafting_clothing_armor" ||
+		   xpType == "crafting_clothing_general" ||
+		   xpType == "crafting_droid_general" ||
+		   xpType == "crafting_food_general" ||
+		   xpType == "crafting_general" ||
+		   xpType == "crafting_medicine_general" ||
+		   xpType == "crafting_spice" ||
+		   xpType == "crafting_structure_general" ||
+		   xpType == "crafting_weapons_general" ||
+		   xpType == "creaturehandler" ||
 		   xpType == "dance" ||
 		   xpType == "entertainer_healing" ||
-		   xpType == "crafting_medicine_general" ||
-		   xpType == "crafting_general" ||
-		   xpType == "crafting_clothing_armor" ||
-		   xpType == "crafting_weapons_general" ||
-		   xpType == "crafting_food_general" ||
-		   xpType == "crafting_clothing_general" ||
-		   xpType == "crafting_structure_general" ||
-		   xpType == "crafting_droid_general" ||
-		   xpType == "crafting_spice" ||
-		   xpType == "political") {
+		   xpType == "merchant" ||
+		   xpType == "music" ||
+		   xpType == "political" ||
+		   xpType == "resource_harvesting_inorganic" ||
+		   xpType == "scout" ||
+		   xpType == "shipwright" ||
+		   xpType == "slicing" ||
+		   xpType == "trapping") {
 		   xp = playerObject->addExperience(xpType, (amount * 2.5));
 		   player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
 	}
