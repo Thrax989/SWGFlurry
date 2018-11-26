@@ -294,50 +294,50 @@ make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[  1%] Built target gtest
-[  1%] Built target gmock
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+[  0%] Built target gmock
+[  0%] Built target gmock_main
+[  1%] Built target gtest
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[  1%] Built target gmock_main
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [  1%] Built target gtest_main
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 Scanning dependencies of target core3client
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[  1%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/ZonePacketHandler.cpp.o
 [  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/Zone.cpp.o
-[  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/managers/object/ObjectManager.cpp.o
-[  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/ZoneClientThread.cpp.o
-[  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/managers/objectcontroller/ObjectController.cpp.o
+[  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/ZonePacketHandler.cpp.o
 [  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/objects/scene/SceneObject.cpp.o
+[  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/ZoneClientThread.cpp.o
 [  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/objects/scene/variables/StringId.cpp.o
+[  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/managers/object/ObjectManager.cpp.o
+[  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/managers/objectcontroller/ObjectController.cpp.o
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-Scanning dependencies of target idlobjects
 [  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/objects/intangible/IntangibleObject.cpp.o
 [  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/objects/creature/CreatureObject.cpp.o
 [  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/objects/player/PlayerObject.cpp.o
 [  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/objects/player/PlayerCreature.cpp.o
 [  2%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/objects/tangible/TangibleObject.cpp.o
 [  3%] Building CXX object src/client/CMakeFiles/core3client.dir/zone/ZoneClient.cpp.o
+Scanning dependencies of target idlobjects
 [  3%] Building CXX object src/client/CMakeFiles/core3client.dir/ClientCore.cpp.o
-make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [  3%] Building CXX object src/client/CMakeFiles/core3client.dir/login/LoginSession.cpp.o
 [  3%] Building CXX object src/client/CMakeFiles/core3client.dir/login/LoginPacketHandler.cpp.o
 [  3%] Building CXX object src/client/CMakeFiles/core3client.dir/login/LoginClient.cpp.o
+[  3%] Linking CXX executable core3client
+make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+[  3%] Built target core3client
+make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [  3%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/utils/LambdaObserver.cpp.o
 [  3%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/ZoneProcessServer.cpp.o
 [  3%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/Zone.cpp.o
-[  3%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/ZoneServer.cpp.o
 [  3%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/QuadTreeEntry.cpp.o
+[  3%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/ZoneServer.cpp.o
 [  3%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/managers/city/CityManager.cpp.o
 [  4%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/managers/planet/PlanetManager.cpp.o
 [  4%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/managers/radial/RadialManager.cpp.o
-[  4%] Linking CXX executable core3client
 [  4%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/managers/reaction/ReactionManager.cpp.o
-make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[  4%] Built target core3client
 [  4%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/managers/guild/GuildManager.cpp.o
 [  4%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/managers/ZoneManager.cpp.o
 [  4%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/managers/gcw/GCWManager.cpp.o
@@ -375,8 +375,8 @@ make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [  8%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/managers/space/SpaceManager.cpp.o
 [  8%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/region/Region.cpp.o
 [  8%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/region/CityRegion.cpp.o
-[  8%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/building/recreation/RecreationBuildingObject.cpp.o
 [  8%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/building/BuildingObject.cpp.o
+[  8%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/building/recreation/RecreationBuildingObject.cpp.o
 [  8%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/building/TutorialBuildingObject.cpp.o
 [  8%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/building/PoiBuilding.cpp.o
 [  8%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/building/hospital/HospitalBuildingObject.cpp.o
@@ -388,8 +388,8 @@ make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [  9%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/structure/StructureObject.cpp.o
 [  9%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/auction/AuctionItem.cpp.o
 [  9%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/cell/CellObject.cpp.o
-[  9%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/ship/FighterShipObject.cpp.o
 [  9%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/draftschematic/DraftSchematic.cpp.o
+[  9%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/ship/FighterShipObject.cpp.o
 [ 10%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/ship/ShipObject.cpp.o
 [ 10%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/ship/SpaceStationObject.cpp.o
 [ 10%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/installation/InstallationObject.cpp.o
@@ -493,8 +493,8 @@ make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [ 20%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/player/sui/slotmachinebox/SuiSlotMachineBox.cpp.o
 [ 20%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/player/sui/SuiBoxPage.cpp.o
 [ 21%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/player/sui/listbox/SuiListBoxMenuItem.cpp.o
-[ 21%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/player/sui/inputbox/SuiInputBox.cpp.o
 [ 21%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/player/sui/listbox/SuiListBox.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/player/sui/inputbox/SuiInputBox.cpp.o
 [ 21%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/player/PlayerObject.cpp.o
 [ 21%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/tangible/misc/FsBuffItem.cpp.o
 [ 21%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/tangible/misc/ContractCrate.cpp.o
@@ -560,8 +560,8 @@ make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [ 28%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/tangible/tool/smuggler/PrecisionLaserKnife.cpp.o
 [ 28%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/tangible/tool/SurveyTool.cpp.o
 [ 28%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/tangible/tool/CraftingTool.cpp.o
-[ 28%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/tangible/TangibleObject.cpp.o
 [ 28%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/tangible/sign/SignObject.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/tangible/TangibleObject.cpp.o
 [ 28%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/tangible/attachment/Attachment.cpp.o
 [ 28%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/tangible/Container.cpp.o
 [ 28%] Building CXX object src/CMakeFiles/idlobjects.dir/autogen/server/zone/objects/tangible/fishing/FishingPoleObject.cpp.o
@@ -610,194 +610,194 @@ make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-Scanning dependencies of target conf3
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-Scanning dependencies of target status3
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 Scanning dependencies of target db3
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+Scanning dependencies of target status3
+Scanning dependencies of target conf3
 Scanning dependencies of target core3pathfinding
-Scanning dependencies of target chat3
 Scanning dependencies of target core3terrain
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+Scanning dependencies of target chat3
 Scanning dependencies of target core3tests
 Scanning dependencies of target core3templates
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [ 33%] Building CXX object src/conf/CMakeFiles/conf3.dir/ConfigManager.cpp.o
-make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+[ 33%] Building CXX object src/server/db/CMakeFiles/db3.dir/MantisDatabase.cpp.o
 [ 33%] Building CXX object src/server/status/CMakeFiles/status3.dir/StatusServer.cpp.o
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 33%] Building CXX object src/server/db/CMakeFiles/db3.dir/MantisDatabase.cpp.o
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+[ 33%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/RecastNavMesh.cpp.o
+make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+[ 33%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/ProceduralTerrainAppearance.cpp.o
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+[ 33%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/LuaStringIdChatParameter.cpp.o
+make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [ 33%] Building CXX object src/CMakeFiles/core3tests.dir/tests/RectangularAreaShapeTest.cpp.o
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 33%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/RecastNavMesh.cpp.o
-[ 33%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/ProceduralTerrainAppearance.cpp.o
-[ 33%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/LuaStringIdChatParameter.cpp.o
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [ 34%] Building CXX object src/templates/CMakeFiles/core3templates.dir/string/StringFile.cpp.o
 [ 34%] Linking CXX static library libstatus3.a
-[ 35%] Linking CXX static library libconf3.a
-[ 36%] Building CXX object src/server/db/CMakeFiles/db3.dir/ServerDatabase.cpp.o
+[ 35%] Building CXX object src/server/db/CMakeFiles/db3.dir/ServerDatabase.cpp.o
+[ 35%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/room/ChatRoomImplementation.cpp.o
+[ 36%] Linking CXX static library libconf3.a
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 36%] Built target status3
 [ 36%] Built target conf3
-[ 36%] Building CXX object src/CMakeFiles/core3tests.dir/tests/TerrainManagerTest.cpp.o
+make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+[ 36%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/StringIdChatParameter.cpp.o
+[ 36%] Built target status3
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-Scanning dependencies of target web3
+[ 36%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/RecastNavMeshBuilder.cpp.o
 [ 36%] Building CXX object src/templates/CMakeFiles/core3templates.dir/building/SharedBuildingObjectTemplate.cpp.o
-[ 36%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/room/ChatRoomImplementation.cpp.o
+Scanning dependencies of target web3
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [ 36%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/Servlet.cpp.o
-[ 36%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/RecastNavMeshBuilder.cpp.o
 [ 36%] Linking CXX static library libdb3.a
+[ 36%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/manager/TerrainManager.cpp.o
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [ 36%] Built target db3
-[ 36%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/ChunkyTriMesh.cpp.o
-[ 36%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/manager/TerrainManager.cpp.o
+[ 36%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/manager/TerrainCache.cpp.o
+[ 36%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/PersistentMessageImplementation.cpp.o
 [ 36%] Building CXX object src/templates/CMakeFiles/core3templates.dir/building/CampStructureTemplate.cpp.o
-[ 37%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/RecastTileBuilder.cpp.o
-[ 37%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/account/AccountServlet.cpp.o
-[ 37%] Building CXX object src/CMakeFiles/core3tests.dir/tests/BehaviorTest.cpp.o
-[ 37%] Building CXX object src/templates/CMakeFiles/core3templates.dir/faction/FactionRanks.cpp.o
-[ 37%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/character/CharacterServlet.cpp.o
-[ 37%] Building CXX object src/CMakeFiles/core3tests.dir/tests/CircularAreaShapeTest.cpp.o
-[ 37%] Building CXX object src/templates/CMakeFiles/core3templates.dir/customization/CustomizationIdManager.cpp.o
-[ 37%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastRasterization.cpp.o
-[ 37%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastContour.cpp.o
-[ 37%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/resource/ResourceServlet.cpp.o
-[ 37%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/manager/TerrainCache.cpp.o
-[ 37%] Building CXX object src/templates/CMakeFiles/core3templates.dir/customization/AssetCustomizationManagerTemplate.cpp.o
-[ 37%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/StringIdChatParameter.cpp.o
-[ 37%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastArea.cpp.o
-[ 37%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/permissions/PermissionsServlet.cpp.o
-[ 37%] Building CXX object src/templates/CMakeFiles/core3templates.dir/params/RangedIntCustomizationVariables.cpp.o
-[ 37%] Building CXX object src/CMakeFiles/core3tests.dir/tests/BasicScreenPlayTest.cpp.o
-[ 38%] Building CXX object src/CMakeFiles/core3tests.dir/tests/RingAreaShapeTest.cpp.o
-[ 38%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourAlloc.cpp.o
-[ 38%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastLayers.cpp.o
-[ 38%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/PersistentMessageImplementation.cpp.o
-[ 38%] Building CXX object src/templates/CMakeFiles/core3templates.dir/params/creature/CreatureAttribute.cpp.o
-[ 38%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/Recast.cpp.o
-[ 38%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastMesh.cpp.o
-[ 38%] Building CXX object src/templates/CMakeFiles/core3templates.dir/params/PaletteColorCustomizationVariables.cpp.o
-[ 38%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/SpaceTerrainAppearance.cpp.o
+[ 36%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/account/AccountServlet.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/core3tests.dir/tests/TerrainManagerTest.cpp.o
+[ 36%] Building CXX object src/templates/CMakeFiles/core3templates.dir/faction/FactionRanks.cpp.o
+[ 36%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/character/CharacterServlet.cpp.o
+[ 36%] Building CXX object src/templates/CMakeFiles/core3templates.dir/customization/CustomizationIdManager.cpp.o
+[ 36%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/SpaceTerrainAppearance.cpp.o
+[ 36%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/layer/affectors/AffectorHeightFractal.cpp.o
+[ 36%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/resource/ResourceServlet.cpp.o
+[ 36%] Building CXX object src/templates/CMakeFiles/core3templates.dir/customization/AssetCustomizationManagerTemplate.cpp.o
+[ 36%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/WaypointChatParameter.cpp.o
+[ 36%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/layer/Layer.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/core3tests.dir/tests/BehaviorTest.cpp.o
+[ 36%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/layer/filters/FilterFractal.cpp.o
+[ 36%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/permissions/PermissionsServlet.cpp.o
+[ 36%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/ChatParameter.cpp.o
+[ 36%] Building CXX object src/templates/CMakeFiles/core3templates.dir/params/RangedIntCustomizationVariables.cpp.o
+[ 36%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/layer/filters/FilterBitmap.cpp.o
+[ 36%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/ChatManagerImplementation.cpp.o
+[ 36%] Building CXX object src/templates/CMakeFiles/core3templates.dir/params/creature/CreatureAttribute.cpp.o
+[ 37%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/MapFractal.cpp.o
+[ 37%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/TargaBitmap.cpp.o
+[ 37%] Building CXX object src/templates/CMakeFiles/core3templates.dir/params/PaletteColorCustomizationVariables.cpp.o
+[ 37%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/TerrainGenerator.cpp.o
+[ 38%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/logs/LogsServlet.cpp.o
 [ 38%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/CylinderVolume.cpp.o
-[ 38%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/layer/affectors/AffectorHeightFractal.cpp.o
-[ 38%] Building CXX object src/CMakeFiles/core3tests.dir/tests/LuaMobileTest.cpp.o
-[ 38%] Building CXX object src/CMakeFiles/core3tests.dir/tests/ZoneTest.cpp.o
-[ 38%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourNavMeshQuery.cpp.o
-[ 39%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourNavMeshBuilder.cpp.o
-[ 39%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/layer/Layer.cpp.o
-[ 40%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/CompositeVolume.cpp.o
-[ 40%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourNavMesh.cpp.o
-[ 41%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/logs/LogsServlet.cpp.o
-[ 41%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/WaypointChatParameter.cpp.o
-[ 41%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/DetailVolume.cpp.o
-[ 41%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastRegion.cpp.o
-[ 41%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/login/LoginServlet.cpp.o
-[ 41%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/layer/filters/FilterFractal.cpp.o
-[ 41%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastFilter.cpp.o
-[ 41%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourNode.cpp.o
-[ 41%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourCommon.cpp.o
-[ 41%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/SphereVolume.cpp.o
-[ 41%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/layer/filters/FilterBitmap.cpp.o
-[ 41%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastMeshDetail.cpp.o
-[ 41%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/admin/AdminServlet.cpp.o
-[ 41%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/BoundingVolumeFactory.cpp.o
-[ 42%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/MapFractal.cpp.o
-[ 42%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastAlloc.cpp.o
-[ 42%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/ChatParameter.cpp.o
-[ 42%] Building CXX object src/server/chat/CMakeFiles/chat3.dir/ChatManagerImplementation.cpp.o
-[ 42%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/main/MainServlet.cpp.o
-[ 42%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/TargaBitmap.cpp.o
-[ 42%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/BoxVolume.cpp.o
-[ 42%] Linking CXX static library libcore3pathfinding.a
-[ 42%] Building CXX object src/CMakeFiles/core3tests.dir/tests/JediManagerTest.cpp.o
-[ 42%] Building CXX object src/CMakeFiles/core3tests.dir/tests/DeadlockTestBase.cpp.o
+[ 39%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/CompositeVolume.cpp.o
+[ 39%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/ChunkyTriMesh.cpp.o
+[ 40%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/RecastTileBuilder.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/core3tests.dir/tests/CircularAreaShapeTest.cpp.o
+[ 40%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/login/LoginServlet.cpp.o
+[ 40%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/DetailVolume.cpp.o
+[ 40%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/SphereVolume.cpp.o
+[ 40%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/admin/AdminServlet.cpp.o
+[ 40%] Linking CXX static library libcore3terrain.a
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 42%] Built target core3pathfinding
-[ 42%] Building CXX object src/CMakeFiles/core3tests.dir/tests/BasicTerrainTest.cpp.o
-[ 42%] Building CXX object src/CMakeFiles/core3tests.dir/tests/CommandLuaTest.cpp.o
-[ 42%] Building CXX object src/server/web/CMakeFiles/web3.dir/session/HttpSession.cpp.o
-[ 42%] Building CXX object src/terrain/CMakeFiles/core3terrain.dir/TerrainGenerator.cpp.o
-[ 42%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/CollisionMeshVolume.cpp.o
-[ 42%] Building CXX object src/server/web/CMakeFiles/web3.dir/WebServer.cpp.o
-[ 42%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/ComponentVolume.cpp.o
-[ 42%] Linking CXX static library libcore3terrain.a
+[ 40%] Built target core3terrain
+[ 40%] Building CXX object src/server/web/CMakeFiles/web3.dir/servlets/main/MainServlet.cpp.o
+[ 40%] Building CXX object src/server/web/CMakeFiles/web3.dir/session/HttpSession.cpp.o
+[ 40%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/BoundingVolumeFactory.cpp.o
+[ 40%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/BoxVolume.cpp.o
+[ 40%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastRasterization.cpp.o
+[ 40%] Building CXX object src/server/web/CMakeFiles/web3.dir/WebServer.cpp.o
+[ 40%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastContour.cpp.o
+[ 40%] Building CXX object src/server/web/CMakeFiles/web3.dir/HttpRequest.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/core3tests.dir/tests/BasicScreenPlayTest.cpp.o
+[ 40%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/CollisionMeshVolume.cpp.o
+[ 40%] Building CXX object src/server/web/CMakeFiles/web3.dir/HttpResponse.cpp.o
+[ 40%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/ComponentVolume.cpp.o
+[ 40%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastArea.cpp.o
+[ 40%] Building C object src/server/web/CMakeFiles/web3.dir/mongoose/mongoose.c.o
+[ 40%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourAlloc.cpp.o
+[ 40%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastLayers.cpp.o
+[ 40%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/BaseBoundingVolume.cpp.o
+[ 40%] Building CXX object src/templates/CMakeFiles/core3templates.dir/datatables/DataTableCell.cpp.o
+[ 41%] Building CXX object src/templates/CMakeFiles/core3templates.dir/datatables/DataTableIff.cpp.o
+[ 41%] Building CXX object src/templates/CMakeFiles/core3templates.dir/snapshot/WorldSnapshotIff.cpp.o
+[ 41%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/Recast.cpp.o
+[ 41%] Building CXX object src/templates/CMakeFiles/core3templates.dir/manager/DataArchiveStore.cpp.o
+[ 41%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastMesh.cpp.o
+[ 41%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourNavMeshQuery.cpp.o
+[ 42%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourNavMeshBuilder.cpp.o
+[ 42%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourNavMesh.cpp.o
+[ 42%] Linking CXX static library libchat3.a
+[ 43%] Building CXX object src/CMakeFiles/core3tests.dir/tests/RingAreaShapeTest.cpp.o
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 42%] Building CXX object src/templates/CMakeFiles/core3templates.dir/collision/BaseBoundingVolume.cpp.o
-[ 42%] Built target core3terrain
+[ 43%] Built target chat3
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 Scanning dependencies of target ping3
-[ 42%] Building CXX object src/server/web/CMakeFiles/web3.dir/HttpRequest.cpp.o
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 43%] Building CXX object src/server/ping/CMakeFiles/ping3.dir/PingServer.cpp.o
-[ 43%] Building CXX object src/templates/CMakeFiles/core3templates.dir/datatables/DataTableCell.cpp.o
-[ 44%] Building CXX object src/templates/CMakeFiles/core3templates.dir/datatables/DataTableIff.cpp.o
-[ 44%] Building CXX object src/templates/CMakeFiles/core3templates.dir/snapshot/WorldSnapshotIff.cpp.o
-[ 44%] Linking CXX static library libping3.a
-[ 44%] Building CXX object src/templates/CMakeFiles/core3templates.dir/manager/DataArchiveStore.cpp.o
-make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 44%] Built target ping3
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-Scanning dependencies of target login3
-make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 44%] Building CXX object src/server/web/CMakeFiles/web3.dir/HttpResponse.cpp.o
-make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 44%] Building CXX object src/server/login/CMakeFiles/login3.dir/account/GalaxyAccountInfoMap.cpp.o
+[ 43%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastRegion.cpp.o
+[ 44%] Building CXX object src/server/ping/CMakeFiles/ping3.dir/PingServer.cpp.o
 [ 44%] Building CXX object src/templates/CMakeFiles/core3templates.dir/manager/TemplateManager.cpp.o
-[ 44%] Building CXX object src/templates/CMakeFiles/core3templates.dir/intangible/DraftSchematicObjectTemplate.cpp.o
-[ 44%] Building CXX object src/server/login/CMakeFiles/login3.dir/account/GalaxyAccountInfo.cpp.o
-[ 44%] Building CXX object src/templates/CMakeFiles/core3templates.dir/appearance/PortalLayout.cpp.o
-[ 44%] Building C object src/server/web/CMakeFiles/web3.dir/mongoose/mongoose.c.o
-[ 44%] Building CXX object src/server/login/CMakeFiles/login3.dir/account/AccountManager.cpp.o
-[ 44%] Building CXX object src/server/login/CMakeFiles/login3.dir/account/AccountImplementation.cpp.o
-[ 44%] Linking CXX static library libchat3.a
-make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 44%] Built target chat3
-[ 44%] Building CXX object src/server/login/CMakeFiles/login3.dir/LoginProcessServerImplementation.cpp.o
+[ 44%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastFilter.cpp.o
+[ 44%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourNode.cpp.o
+[ 44%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/DetourCommon.cpp.o
+[ 44%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastMeshDetail.cpp.o
 [ 45%] Linking CXX static library libweb3.a
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 45%] Building CXX object src/templates/CMakeFiles/core3templates.dir/appearance/PathGraph.cpp.o
 [ 45%] Built target web3
+[ 45%] Building CXX object src/pathfinding/CMakeFiles/core3pathfinding.dir/recast/RecastAlloc.cpp.o
+[ 45%] Linking CXX static library libping3.a
+make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+[ 45%] Building CXX object src/CMakeFiles/core3tests.dir/tests/LuaMobileTest.cpp.o
+[ 45%] Built target ping3
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+Scanning dependencies of target login3
+[ 45%] Building CXX object src/CMakeFiles/core3tests.dir/tests/ZoneTest.cpp.o
+make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+[ 45%] Building CXX object src/server/login/CMakeFiles/login3.dir/account/GalaxyAccountInfoMap.cpp.o
+[ 45%] Building CXX object src/server/login/CMakeFiles/login3.dir/account/GalaxyAccountInfo.cpp.o
+[ 45%] Building CXX object src/server/login/CMakeFiles/login3.dir/account/AccountManager.cpp.o
+[ 45%] Building CXX object src/server/login/CMakeFiles/login3.dir/account/AccountImplementation.cpp.o
+[ 45%] Building CXX object src/server/login/CMakeFiles/login3.dir/LoginProcessServerImplementation.cpp.o
+[ 45%] Building CXX object src/server/login/CMakeFiles/login3.dir/LoginServerImplementation.cpp.o
+[ 45%] Linking CXX static library libcore3pathfinding.a
+make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+[ 45%] Built target core3pathfinding
+[ 45%] Building CXX object src/server/login/CMakeFiles/login3.dir/LoginPacketHandler.cpp.o
+[ 45%] Building CXX object src/templates/CMakeFiles/core3templates.dir/intangible/DraftSchematicObjectTemplate.cpp.o
+[ 45%] Building CXX object src/templates/CMakeFiles/core3templates.dir/appearance/PortalLayout.cpp.o
+[ 45%] Building CXX object src/templates/CMakeFiles/core3templates.dir/appearance/PathGraph.cpp.o
 [ 45%] Building CXX object src/templates/CMakeFiles/core3templates.dir/appearance/MeshData.cpp.o
 [ 45%] Building CXX object src/templates/CMakeFiles/core3templates.dir/appearance/FloorMesh.cpp.o
 [ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/appearance/CellProperty.cpp.o
-[ 46%] Building CXX object src/server/login/CMakeFiles/login3.dir/LoginServerImplementation.cpp.o
-[ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/appearance/DetailAppearanceTemplate.cpp.o
-[ 46%] Linking CXX static library libcore3tests.a
-[ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/appearance/MeshAppearanceTemplate.cpp.o
+[ 46%] Linking CXX static library liblogin3.a
+[ 46%] Building CXX object src/CMakeFiles/core3tests.dir/tests/JediManagerTest.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/core3tests.dir/tests/DeadlockTestBase.cpp.o
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 46%] Built target core3tests
+[ 46%] Built target login3
+[ 46%] Building CXX object src/CMakeFiles/core3tests.dir/tests/BasicTerrainTest.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/core3tests.dir/tests/CommandLuaTest.cpp.o
+[ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/appearance/DetailAppearanceTemplate.cpp.o
+[ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/appearance/MeshAppearanceTemplate.cpp.o
 [ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/creature/PlayerCreatureTemplate.cpp.o
 [ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/creature/SharedCreatureObjectTemplate.cpp.o
 [ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/SharedTangibleObjectTemplate.cpp.o
-[ 46%] Building CXX object src/server/login/CMakeFiles/login3.dir/LoginPacketHandler.cpp.o
 [ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/tangible/SharedWeaponObjectTemplate.cpp.o
 [ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/tangible/SharedStructureObjectTemplate.cpp.o
 [ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/crafting/ValuesMap.cpp.o
 [ 46%] Building CXX object src/templates/CMakeFiles/core3templates.dir/SharedObjectTemplate.cpp.o
-[ 46%] Linking CXX static library liblogin3.a
-make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
-[ 46%] Built target login3
 [ 47%] Linking CXX static library libcore3templates.a
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [ 47%] Built target core3templates
+[ 47%] Linking CXX static library libcore3tests.a
+make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
+[ 47%] Built target core3tests
 make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 Scanning dependencies of target core3
 make[3]: Leaving directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
@@ -805,9 +805,9 @@ make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [ 47%] Building CXX object src/CMakeFiles/core3.dir/main.cpp.o
 [ 47%] Building CXX object src/CMakeFiles/core3.dir/server/ServerCore.cpp.o
 [ 47%] Building CXX object src/CMakeFiles/core3.dir/tre3/TreeFile.cpp.o
-[ 47%] Building CXX object src/CMakeFiles/core3.dir/server/zone/ZonePacketHandler.cpp.o
 [ 47%] Building CXX object src/CMakeFiles/core3.dir/server/zone/ZoneContainerComponent.cpp.o
 [ 47%] Building CXX object src/CMakeFiles/core3.dir/server/zone/ZoneProcessServerImplementation.cpp.o
+[ 47%] Building CXX object src/CMakeFiles/core3.dir/server/zone/ZonePacketHandler.cpp.o
 [ 47%] Building CXX object src/CMakeFiles/core3.dir/server/zone/ZoneImplementation.cpp.o
 [ 47%] Building CXX object src/CMakeFiles/core3.dir/server/zone/QuadTreeEntryImplementation.cpp.o
 [ 48%] Building CXX object src/CMakeFiles/core3.dir/server/zone/ZoneClientSessionImplementation.cpp.o
@@ -1089,8 +1089,8 @@ make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [ 77%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/player/sui/SuiPageData.cpp.o
 [ 77%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/player/sui/characterbuilderbox/SuiCharacterBuilderBoxImplementation.cpp.o
 [ 78%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/player/sui/SuiBoxPageImplementation.cpp.o
-[ 78%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/player/sui/listbox/LuaSuiListBox.cpp.o
 [ 78%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/player/sui/colorbox/SuiColorBoxImplementation.cpp.o
+[ 78%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/player/sui/listbox/LuaSuiListBox.cpp.o
 [ 78%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/player/sui/listbox/SuiListBoxImplementation.cpp.o
 [ 78%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/player/sui/SuiBoxImplementation.cpp.o
 [ 78%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/player/sui/inputbox/SuiInputBoxImplementation.cpp.o
@@ -1251,8 +1251,8 @@ make[3]: Entering directory '/home/swgemu/workspace/Core3/MMOCoreORB/build/unix'
 [ 95%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/tangible/component/armor/ArmorComponentImplementation.cpp.o
 [ 95%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/tangible/component/ComponentImplementation.cpp.o
 [ 95%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/tangible/TangibleObjectImplementation.cpp.o
-[ 95%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/tangible/ContainerImplementation.cpp.o
 [ 95%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/tangible/tool/CraftingStationImplementation.cpp.o
+[ 95%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/tangible/ContainerImplementation.cpp.o
 [ 95%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/tangible/tool/antidecay/AntiDecayKitImplementation.cpp.o
 [ 95%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/tangible/tool/repair/RepairToolImplementation.cpp.o
 [ 96%] Building CXX object src/CMakeFiles/core3.dir/server/zone/objects/tangible/tool/recycle/RecycleToolImplementation.cpp.o
