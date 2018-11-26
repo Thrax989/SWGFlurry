@@ -25,10 +25,9 @@ bachelor_gualama = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gualama_hue.iff"},
+	templates = {"object/mobile/gualama.iff"},
 	controlDeviceTemplate = "object/intangible/pet/gualama_hue.iff",
 	scale = 0.95,
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

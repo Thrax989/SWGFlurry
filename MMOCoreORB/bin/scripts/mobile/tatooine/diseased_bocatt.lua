@@ -25,8 +25,7 @@ diseased_bocatt = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/bocatt_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	templates = {"object/mobile/bocatt.iff"},
 	scale = 0.8,
 	lootGroups = {},
 	weapons = {},

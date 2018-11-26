@@ -25,8 +25,7 @@ nym_kusak_guardian = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/kusak_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	templates = {"object/mobile/kusak.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

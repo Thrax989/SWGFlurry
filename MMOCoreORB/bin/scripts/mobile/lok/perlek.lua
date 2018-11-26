@@ -25,8 +25,7 @@ perlek = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/perlek_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	templates = {"object/mobile/perlek.iff"},
 	controlDeviceTemplate = "object/intangible/pet/perlek_hue.iff",
 	lootGroups = {},
 	weapons = {"creature_spit_small_yellow"},

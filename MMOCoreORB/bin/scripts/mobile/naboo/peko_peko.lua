@@ -25,8 +25,7 @@ peko_peko = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/peko_peko_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	templates = {"object/mobile/peko_peko.iff"},
 	controlDeviceTemplate = "object/intangible/pet/peko_peko_hue.iff",
 	lootGroups = {},
 	weapons = {},

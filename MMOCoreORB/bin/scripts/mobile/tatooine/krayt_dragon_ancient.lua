@@ -26,8 +26,7 @@ krayt_dragon_ancient = Creature:new {
 	diet = CARNIVORE,
 	scale = 1.5,
 
-	templates = {"object/mobile/krayt_dragon_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	templates = {"object/mobile/krayt_dragon.iff"},
 	lootGroups = {
 		{
 	        groups = {

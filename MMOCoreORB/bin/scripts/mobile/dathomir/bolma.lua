@@ -26,8 +26,7 @@ bolma = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/bolma_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	templates = {"object/mobile/bolma.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

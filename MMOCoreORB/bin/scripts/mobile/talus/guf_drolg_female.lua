@@ -26,7 +26,6 @@ guf_drolg_female = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/guf_drolg_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	controlDeviceTemplate = "object/intangible/pet/guf_drolg_hue.iff",
 	scale = 1.05,
 	lootGroups = {},

@@ -25,8 +25,7 @@ fynock = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/fynock_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	templates = {"object/mobile/fynock.iff"},
 	controlDeviceTemplate = "object/intangible/pet/fynock_hue.iff",
 	lootGroups = {},
 	weapons = {},

@@ -26,7 +26,6 @@ reptilian_life_stealer = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/reptilian_flier_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.5,
 	lootGroups = {},
 	weapons = {},

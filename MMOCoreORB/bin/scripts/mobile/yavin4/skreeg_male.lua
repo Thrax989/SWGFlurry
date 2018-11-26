@@ -25,8 +25,7 @@ skreeg_male = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/skreeg_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	templates = {"object/mobile/skreeg.iff"},
 	controlDeviceTemplate = "object/intangible/pet/skreeg_hue.iff",
 	scale = 1.05,
 	lootGroups = {},

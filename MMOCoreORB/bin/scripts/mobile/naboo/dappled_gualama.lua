@@ -29,7 +29,6 @@ dappled_gualama = Creature:new {
 	templates = {"object/mobile/dappled_gualama.iff"},
 	controlDeviceTemplate = "object/intangible/pet/gualama_hue.iff",
 	scale = 1.05,
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

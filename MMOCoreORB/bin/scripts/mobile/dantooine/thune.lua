@@ -25,8 +25,7 @@ thune = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/thune_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	templates = {"object/mobile/thune.iff"},
 	controlDeviceTemplate = "object/intangible/pet/thune_hue.iff",
 	lootGroups = {},
 	weapons = {},

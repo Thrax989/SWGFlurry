@@ -25,8 +25,7 @@ scavenger_rat = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/womp_rat_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	templates = {"object/mobile/womp_rat.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

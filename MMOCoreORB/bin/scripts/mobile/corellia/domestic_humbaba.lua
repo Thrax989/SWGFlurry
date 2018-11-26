@@ -26,8 +26,7 @@ domestic_humbaba = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/falumpaset_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	templates = {"object/mobile/savage_humbaba.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

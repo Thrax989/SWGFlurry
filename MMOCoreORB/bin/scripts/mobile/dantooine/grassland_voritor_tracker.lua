@@ -26,7 +26,6 @@ grassland_voritor_tracker = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/grassland_voritor_tracker.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 1.1,
 	lootGroups = {
 		{

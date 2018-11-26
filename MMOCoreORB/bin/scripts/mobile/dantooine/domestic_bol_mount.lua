@@ -25,8 +25,7 @@ domestic_bol_mount = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/bol_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	templates = {"object/mobile/bol.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
