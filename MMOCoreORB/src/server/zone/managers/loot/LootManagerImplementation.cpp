@@ -760,12 +760,12 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 		}
 	}
 	//Rare Loot System
-	//if (creatureLevel >= 1){
-	//if (System::random(100) < 2) { //2% Rare Loot System
-			//createLoot(container, "lootcollectiontierheroic", creatureLevel, false);
-			//creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
-		//}
-	//}
+	if (creatureLevel >= 75){
+		if (System::random(100) < 2) { //2% Rare Loot System
+			createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
+			creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
+		}
+	}
 	LootGroupCollection* lootCollection = creature->getLootGroups();
 
 	if (lootCollection == NULL)
