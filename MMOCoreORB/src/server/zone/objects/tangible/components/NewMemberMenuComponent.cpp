@@ -67,7 +67,7 @@ int NewMemberMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 
 	ResourceSpawn* recycledVersionWood = manager->getRecycledVersionByType("processed_wood");
 
-	manager->harvestResourceToPlayer(creature, recycledVersionWood, 500);
+	manager->harvestResourceToPlayer(creature, recycledVersionWood, 1000);
  	
 	ResourceSpawn* recycledVersionHide = manager->getRecycledVersionByType("synthesized_hides");
 
@@ -75,7 +75,7 @@ int NewMemberMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 
 	ResourceSpawn* recycledVersionBone = manager->getRecycledVersionByType("ground_bones");
 
-	manager->harvestResourceToPlayer(creature, recycledVersionBone, 500);
+	manager->harvestResourceToPlayer(creature, recycledVersionBone, 1000);
 
 	sceneObject->destroyObjectFromWorld(true);
 	sceneObject->destroyObjectFromDatabase(true);
