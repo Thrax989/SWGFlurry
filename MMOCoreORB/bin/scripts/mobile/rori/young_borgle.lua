@@ -25,8 +25,7 @@ young_borgle = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/borgle_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	templates = {"object/mobile/borgle.iff"},
 	scale = 0.85,
 	lootGroups = {},
 	weapons = {},

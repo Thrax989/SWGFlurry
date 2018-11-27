@@ -25,8 +25,7 @@ male_kai_tok = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/kai_tok_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	templates = {"object/mobile/kai_tok.iff"},
 	controlDeviceTemplate = "object/intangible/pet/kai_tok_hue.iff",
 	lootGroups = {},
 	weapons = {"creature_spit_small_green"},

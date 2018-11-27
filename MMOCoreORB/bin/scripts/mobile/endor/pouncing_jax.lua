@@ -25,8 +25,7 @@ pouncing_jax = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/bearded_jax_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	templates = {"object/mobile/bearded_jax.iff"},
 	controlDeviceTemplate = "object/intangible/pet/bearded_jax_hue.iff",
 	lootGroups = {},
 	weapons = {},

@@ -25,8 +25,7 @@ voracious_patriarch = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/torton_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	templates = {"object/mobile/torton.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

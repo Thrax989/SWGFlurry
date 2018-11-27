@@ -25,8 +25,7 @@ wild_dune_boar = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/zucca_boar_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	templates = {"object/mobile/zucca_boar.iff"},
 	controlDeviceTemplate = "object/intangible/pet/pet_control.iff", -- zucca_boar_hue.iff bugged in client
 	scale = 1.3,
 	lootGroups = {},

@@ -26,7 +26,6 @@ blushing_jax = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/blushing_jax.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.25,
 	lootGroups = {},
 	weapons = {},

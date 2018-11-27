@@ -25,8 +25,7 @@ vir_vur = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/vir_vur_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	templates = {"object/mobile/vir_vur.iff"},
 	controlDeviceTemplate = "object/intangible/pet/vir_vur_hue.iff",
 	lootGroups = {},
 	weapons = {},

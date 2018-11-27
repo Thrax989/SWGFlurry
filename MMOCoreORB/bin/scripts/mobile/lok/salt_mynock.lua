@@ -25,8 +25,7 @@ salt_mynock = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/salt_mynock_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	templates = {"object/mobile/salt_mynock.iff"},
 	controlDeviceTemplate = "object/intangible/pet/salt_mynock_hue.iff",
 	scale = 0.95,
 	lootGroups = {},

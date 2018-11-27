@@ -25,8 +25,7 @@ diseased_vrelt = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/stintaril_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	templates = {"object/mobile/vrelt.iff"},
 	controlDeviceTemplate = "object/intangible/pet/stintaril_hue.iff",
 	scale = 1.1,
 	lootGroups = {},

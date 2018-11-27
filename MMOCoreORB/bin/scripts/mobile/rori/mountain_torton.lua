@@ -26,7 +26,6 @@ mountain_torton = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/torton_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 1.05,
 	lootGroups = {},
 	weapons = {},

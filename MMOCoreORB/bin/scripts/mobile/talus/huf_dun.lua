@@ -25,8 +25,7 @@ huf_dun = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/huf_dun_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	templates = {"object/mobile/huf_dun.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

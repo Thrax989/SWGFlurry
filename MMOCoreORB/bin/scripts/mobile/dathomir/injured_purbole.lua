@@ -25,8 +25,7 @@ injured_purbole = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/purbole_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	templates = {"object/mobile/purbole.iff"},
 	controlDeviceTemplate = "object/intangible/pet/purbole_hue.iff",
 	scale = 0.9,
 	lootGroups = {},

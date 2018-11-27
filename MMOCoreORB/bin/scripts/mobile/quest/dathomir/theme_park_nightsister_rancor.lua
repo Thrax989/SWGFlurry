@@ -25,8 +25,7 @@ theme_park_nightsister_rancor = Creature:new {
   optionsBitmask = AIENABLED + CONVERSABLE,
   diet = CARNIVORE,
 
-  templates = {"object/mobile/rancor_hue.iff"},
-  hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+  templates = {"object/mobile/rancor.iff"},
   scale = 1.05,
   lootGroups = {},
   weapons = {},

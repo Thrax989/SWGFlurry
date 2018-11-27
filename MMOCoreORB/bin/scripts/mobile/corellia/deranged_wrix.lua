@@ -26,7 +26,6 @@ deranged_wrix = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/deranged_wrix.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.1,
 	lootGroups = {},
 	weapons = {},

@@ -26,7 +26,6 @@ corellian_butterfly_drone = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/corellian_butterfly_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 0.9,
 	lootGroups = {},
 	weapons = {},

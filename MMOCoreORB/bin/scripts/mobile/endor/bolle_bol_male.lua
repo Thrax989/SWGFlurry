@@ -25,8 +25,7 @@ bolle_bol_male = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/bolle_bol_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	templates = {"object/mobile/bolle_bol.iff"},
 	scale = 1.1,
 	lootGroups = {},
 	weapons = {},

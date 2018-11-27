@@ -25,8 +25,7 @@ boar_wolf = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/boar_wolf_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	templates = {"object/mobile/boar_wolf.iff"},
 	controlDeviceTemplate = "object/intangible/pet/boar_wolf_hue.iff",
 	lootGroups = {},
 	weapons = {},

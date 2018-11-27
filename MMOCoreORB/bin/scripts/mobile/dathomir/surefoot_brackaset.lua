@@ -26,7 +26,6 @@ surefoot_brackaset = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/brackaset_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 1.2,
 	lootGroups = {
 		 {

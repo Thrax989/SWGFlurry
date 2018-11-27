@@ -25,8 +25,7 @@ reptilian_flier = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/reptilian_flier_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	templates = {"object/mobile/reptilian_flier.iff"},
 	controlDeviceTemplate = "object/intangible/pet/pet_control.iff",
 	lootGroups = {},
 	weapons = {},

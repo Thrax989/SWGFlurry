@@ -25,8 +25,7 @@ flit = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/flit_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	templates = {"object/mobile/flit.iff"},
 	controlDeviceTemplate = "object/intangible/pet/flit_hue.iff",
 	lootGroups = {},
 	weapons = {},

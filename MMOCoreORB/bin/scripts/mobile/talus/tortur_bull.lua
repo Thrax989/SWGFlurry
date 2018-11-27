@@ -25,8 +25,7 @@ tortur_bull = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/torton_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	templates = {"object/mobile/meager_tortur.iff"},
 	scale = 1.1,
 	lootGroups = {},
 	weapons = {},
