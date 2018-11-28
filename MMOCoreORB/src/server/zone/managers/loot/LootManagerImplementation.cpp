@@ -723,42 +723,6 @@ void LootManagerImplementation::setSockets(TangibleObject* object, CraftingValue
 bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* creature) {
 	//Creature Loot System based on creature level
 	int creatureLevel = Math::min(300, creature->getLevel());
-	if (creatureLevel >= 300){
-		if (System::random(100) < 5) { //5% chance to drop clothing or armor attachments
-			createLoot(container, "armor_attachments", creatureLevel, false);
-		} else {
-			createLoot(container, "clothing_attachments", creatureLevel, false);
-		}
-	}
-	if (creatureLevel >= 300){
-		if (System::random(100) < 15) { //15% chance to drop
-			createLoot(container, "armor_all", creatureLevel, false);
-		}
-	}
-
-	if (creatureLevel >= 225){
-		if (System::random(100) < 15) { //15% chance to drop
-			createLoot(container, "weapons_all", creatureLevel, false);
-		}
-	}
-
-	if (creatureLevel >= 150){
-		if (System::random(100) < 15) { //15% chance to drop
-			createLoot(container, "treasure_map_group", creatureLevel, false);
-		}
-	}
-
-	if (creatureLevel >= 75){
-		if (System::random(100) < 15) { //15% chance to drop
-			createLoot(container, "wearables_all", creatureLevel, false);
-		}
-	}	
-
-	if (creatureLevel >= 1){
-		if (System::random(100) < 5) { //5% chance to drop clothing or armor attachments
-			createLoot(container, "clothing_attachments", creatureLevel, false);
-		}
-	}
 	//Rare Loot System
 	if (creatureLevel >= 75){
 		if (System::random(100) < 2) { //2% Rare Loot System
@@ -769,9 +733,9 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	LootGroupCollection* lootCollection = creature->getLootGroups();
 
 	if (lootCollection == NULL)
-		return createLoot(container, "junk", creatureLevel, false); // Common loot for all mobs that don't have loot
+		return false;
 
-	return createLootFromCollection(container, lootCollection, creatureLevel);
+	return createLootFromCollection(container, lootCollection, creature->getLevel());
 }
 
 bool LootManagerImplementation::createLootFromCollection(SceneObject* container, LootGroupCollection* lootCollection, int level) {
