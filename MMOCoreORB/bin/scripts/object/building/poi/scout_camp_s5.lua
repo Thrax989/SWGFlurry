@@ -90,10 +90,9 @@ object_building_poi_scout_camp_s5 = object_building_poi_shared_scout_camp_s5:new
 			cellid = -1,
 			containmentType = -1},
 
-		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
-			x = -1.7, z = 0, y = -7.06,
-			ox = 0, oy = -0.898, oz = 0,
-			ow = 0.440, cellid = -1,
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff",
+			x = -1.7, z = 0, y = -7.06, ox = 0, oy = -0.898,
+			oz = 0, ow = 0.440, cellid = -1,
 			containmentType = -1},
 
 		{templateFile = "object/tangible/camp/camp_chair_s3.iff",
