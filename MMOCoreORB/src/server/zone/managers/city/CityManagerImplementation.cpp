@@ -752,7 +752,7 @@ void CityManagerImplementation::processCityUpdate(CityRegion* city) {
 			Reference<PlayerObject*> ghost = mayor->getSlottedObject("ghost").castTo<PlayerObject*> ();
 
 			if (ghost != NULL) {
-				ghost->addExperience("political", 750, true);
+				ghost->addExperience("political", 3000, true);
 			}
 		}
 		updateCityVoting(city);
