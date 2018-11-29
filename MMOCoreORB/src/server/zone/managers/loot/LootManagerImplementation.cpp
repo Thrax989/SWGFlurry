@@ -722,14 +722,14 @@ void LootManagerImplementation::setSockets(TangibleObject* object, CraftingValue
 
 bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* creature) {
 	//Creature Loot System based on creature level
-	int creatureLevel = Math::min(300, creature->getLevel());
+	//int creatureLevel = Math::min(300, creature->getLevel());
 	//Rare Loot System
-	if (creatureLevel >= 75){
-		if (System::random(100) < 2) { //2% Rare Loot System
-			createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
-			creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
-		}
-	}
+	//if (creatureLevel >= 75){
+		//if (System::random(100) < 2) { //2% Rare Loot System
+			//createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
+			//creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
+		//}
+	//}
 	LootGroupCollection* lootCollection = creature->getLootGroups();
 
 	if (lootCollection == NULL)
