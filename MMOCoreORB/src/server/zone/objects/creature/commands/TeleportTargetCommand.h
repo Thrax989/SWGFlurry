@@ -95,6 +95,8 @@ public:
 		Locker _lock(targetCreature, creature);
 
 		targetCreature->switchZone(planetName, x, z, y, parentID);
+		targetCreature->setLinkDead(true);
+		targetCreature->disconnect(true, true);
 
 		return SUCCESS;
 	}
