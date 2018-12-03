@@ -53,8 +53,6 @@ class CreatureObject extends TangibleObject {
     // deprectated
 	protected int bankCredits;
 	protected int cashCredits;
-	
-	protected int hueValue;
 
 	protected int selectedExpMode;
 	protected float personalExpMultiplier;
@@ -2218,14 +2216,6 @@ class CreatureObject extends TangibleObject {
 	
 	@preLocked
 	public native void schedulePersonalEnemyFlagTasks();
-	
-	@preLocked
-	public native void setHue(int hueIndex);
-	
-	@read
-	public int getHueValue() {
-		return hueValue;
-	}
 
 	@local
 	@weakReference
