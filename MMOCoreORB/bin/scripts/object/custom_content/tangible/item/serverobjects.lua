@@ -9,7 +9,7 @@ includeFile("custom_content/tangible/item/quest/serverobjects.lua")
 includeFile("custom_content/tangible/item/skillmod/serverobjects.lua")
 includeFile("custom_content/tangible/item/som/serverobjects.lua")
 includeFile("custom_content/tangible/item/treasure_map/serverobjects.lua")
-
+includeFile("custom_content/tangible/item/loot_crates/serverobjects.lua")
 -- Server Objects
 includeFile("custom_content/tangible/item/data_cube.lua")
 includeFile("custom_content/tangible/item/ig_droid_head.lua")
