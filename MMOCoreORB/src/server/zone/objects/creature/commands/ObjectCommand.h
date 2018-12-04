@@ -258,19 +258,6 @@ public:
 				creature->sendSystemMessage("Number of Exceptionals Looted: " + String::valueOf(lootManager->getExceptionalLooted()));
 				creature->sendSystemMessage("Number of Magical Looted: " + String::valueOf(lootManager->getYellowLooted()));
 			}
-			else if (commandType.beginsWith("addstructure")) {
-				if (creature->getParent() != NULL){
-					creature->sendSystemMessage("You must be outside to place a structure.");
-					return GENERALERROR;
-				}
-
-				Lua* lua = DirectorManager::instance()->getLuaInstance();
-
-				Reference<LuaFunction*> adminPlaceStructure = lua->createFunction("AdminPlaceStructure", "openWindow", 0);
-				*adminPlaceStructure << creature;
-
-				adminPlaceStructure->callFunction();
-			}
 		} catch (Exception& e) {
 			creature->sendSystemMessage("SYNTAX: /object createitem <objectTemplatePath> [<quantity>]");
 			creature->sendSystemMessage("SYNTAX: /object createresource <resourceName> [<quantity>]");
@@ -278,7 +265,7 @@ public:
 			creature->sendSystemMessage("SYNTAX: /object createarealoot <loottemplate> [<range>] [<level>]");
 			creature->sendSystemMessage("SYNTAX: /object createattachment <armor/clothing> <skillModName> [<bonus>]");
 			creature->sendSystemMessage("SYNTAX: /object checklooted");
-            creature->sendSystemMessage("SYNTAX: /object addstructure");
+
 			return INVALIDPARAMETERS;
 		}
 
