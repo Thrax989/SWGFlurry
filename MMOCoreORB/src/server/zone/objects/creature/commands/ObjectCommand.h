@@ -278,7 +278,7 @@ public:
 			creature->sendSystemMessage("SYNTAX: /object createarealoot <loottemplate> [<range>] [<level>]");
 			creature->sendSystemMessage("SYNTAX: /object createattachment <armor/clothing> <skillModName> [<bonus>]");
 			creature->sendSystemMessage("SYNTAX: /object checklooted");
-            		creature->sendSystemMessage("SYNTAX: /object addstructure");
+            creature->sendSystemMessage("SYNTAX: /object addstructure");
 			return INVALIDPARAMETERS;
 		}
 
