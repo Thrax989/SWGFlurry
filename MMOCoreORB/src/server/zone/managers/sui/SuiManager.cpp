@@ -1717,7 +1717,12 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        player->switchZone("yavin4", 5080, 79, 306);
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
-
+					// GTS will add funds to city treasury when used in player cities
+					ManagedReference<CityRegion*> city = cityRegion().get();
+					if (city != NULL) {
+						Locker clocker(city);
+						city->addToCityTreasury(1000);
+					}
 			        }
 //Player City Travels
 			} else if (templatePath == "pc_korrivan_travel") {
@@ -1753,6 +1758,12 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        player->switchZone("corellia", -1454, 7, -3111);
  					player->subtractCashCredits(5000);
 					box->setForceCloseDistance(5.f);
+					// GTS will add funds to city treasury when used in player cities
+					ManagedReference<CityRegion*> city = cityRegion().get();
+					if (city != NULL) {
+						Locker clocker(city);
+						city->addToCityTreasury(1000);
+					}
 			        }
 //New Mobile Template Outfit Swap Terminal
 //Swtich Back To Normal
