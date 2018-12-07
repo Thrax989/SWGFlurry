@@ -565,7 +565,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getCashCredits() > 9999999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 						player->sendSystemMessage("Thank you for your credits.");
- 				        SkillManager::instance()->awardSkill("social_politician_master", player, true, true, true);
+ 				        	SkillManager::instance()->awardSkill("social_politician_master", player, true, true, true);
 						player->subtractCashCredits(10000000);
 						box->setForceCloseDistance(5.f);
 			        }
@@ -614,7 +614,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 6644.269, 330, -5922.5225);
+ 				        	player->switchZone("corellia", 6644.269, 330, -5922.5225);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -636,7 +636,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 6930.8042, 330, -5534.8936);
+ 				        	player->switchZone("corellia", 6930.8042, 330, -5534.8936);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -658,7 +658,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -66.760902, 28, -4711.3281);
+ 				        	player->switchZone("corellia", -66.760902, 28, -4711.3281);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -680,7 +680,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -25.671804, 28, -4409.7847);
+ 				        	player->switchZone("corellia", -25.671804, 28, -4409.7847);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -702,7 +702,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -329.76605, 28, -4641.23);
+ 				        	player->switchZone("corellia", -329.76605, 28, -4641.23);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -724,7 +724,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 3085.4963, 280, 4993.0098);
+ 				        	player->switchZone("corellia", 3085.4963, 280, 4993.0098);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -746,7 +746,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 3349.8933, 308, 5598.1362);
+ 				        	player->switchZone("corellia", 3349.8933, 308, 5598.1362);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -768,7 +768,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -3775.2546, 31, 3234.2202);
+ 				        	player->switchZone("corellia", -3775.2546, 31, 3234.2202);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -790,7 +790,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -3157.2834, 31, 2876.2029);
+ 				        	player->switchZone("corellia", -3157.2834, 31, 2876.2029);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -812,7 +812,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -5005.354, 21, -2386.9819);
+ 				        	player->switchZone("corellia", -5005.354, 21, -2386.9819);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -834,7 +834,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -5600.6367, 21, -2790.7429);
+ 				        	player->switchZone("corellia", -5600.6367, 21, -2790.7429);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -856,7 +856,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -5003.0649, 21, -2228.3665);
+ 				        	player->switchZone("corellia", -5003.0649, 21, -2228.3665);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -878,7 +878,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -5551.9473, 15.890146, -6059.9673);
+ 				        	player->switchZone("corellia", -5551.9473, 15.890146, -6059.9673);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -900,7 +900,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 1387, 30, 3749);
+ 				        	player->switchZone("corellia", 1387, 30, 3749);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -922,7 +922,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 6767, 30, -5617);
+ 				        	player->switchZone("corellia", 6767, 30, -5617);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -944,7 +944,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -6530, 30, 5967);
+ 				        	player->switchZone("corellia", -6530, 30, 5967);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -966,7 +966,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", 5291, 30, 1494);
+ 				        	player->switchZone("corellia", 5291, 30, 1494);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -988,7 +988,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -5418, 30, -6248);
+ 				        	player->switchZone("corellia", -5418, 30, -6248);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1011,7 +1011,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("dantooine", 1569.66, 4, -6415.7598);
+ 				        	player->switchZone("dantooine", 1569.66, 4, -6415.7598);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1033,7 +1033,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("dantooine", -4208.6602, 3, -2350.24);
+ 				        	player->switchZone("dantooine", -4208.6602, 3, -2350.24);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1055,7 +1055,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("dantooine", -635.96887, 3, 2507.0115);
+ 				        	player->switchZone("dantooine", -635.96887, 3, 2507.0115);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1078,7 +1078,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("dathomir", 618.89258, 6.039608, 3092.0142);
+ 				        	player->switchZone("dathomir", 618.89258, 6.039608, 3092.0142);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1100,7 +1100,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("dathomir", -49.021923, 18, -1584.7278);
+ 				        	player->switchZone("dathomir", -49.021923, 18, -1584.7278);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1122,7 +1122,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("dathomir", 5271.4, 0, -4119.53);
+ 				        	player->switchZone("dathomir", 5271.4, 0, -4119.53);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1145,7 +1145,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("lok", 478.92676, 9, 5511.9565);
+ 				        	player->switchZone("lok", 478.92676, 9, 5511.9565);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1168,7 +1168,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("hoth", 0, 0, -2000);
+ 				        	player->switchZone("hoth", 0, 0, -2000);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1191,7 +1191,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("yavin4", 4054.1, 37, -6216.9);
+ 				        	player->switchZone("yavin4", 4054.1, 37, -6216.9);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1213,7 +1213,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("yavin4", -6921.6733, 73, -5726.5161);
+ 				        	player->switchZone("yavin4", -6921.6733, 73, -5726.5161);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1236,7 +1236,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", 47.565128, 52, -5338.9072);
+ 				        	player->switchZone("tatooine", 47.565128, 52, -5338.9072);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1258,7 +1258,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", -1098.4836, 12, -3563.5342);
+ 				        	player->switchZone("tatooine", -1098.4836, 12, -3563.5342);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1280,7 +1280,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", -1361.1917, 12, -3600.0254);
+ 				        	player->switchZone("tatooine", -1361.1917, 12, -3600.0254);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1302,7 +1302,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", 3416.6914, 5, -4648.1411);
+ 				        	player->switchZone("tatooine", 3416.6914, 5, -4648.1411);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1324,7 +1324,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", 1730.8828, 7, 3184.6135);
+ 				        	player->switchZone("tatooine", 1730.8828, 7, 3184.6135);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1346,7 +1346,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", 1395.447, 7, 3467.0117);
+ 				        	player->switchZone("tatooine", 1395.447, 7, 3467.0117);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1368,7 +1368,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", 1266.0996, 7, 3065.1392);
+ 				        	player->switchZone("tatooine", 1266.0996, 7, 3065.1392);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1390,7 +1390,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", -2803.511, 5, 2182.9648);
+ 				        	player->switchZone("tatooine", -2803.511, 5, 2182.9648);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1412,7 +1412,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", -2897.0933, 5, 1933.4144);
+ 				        	player->switchZone("tatooine", -2897.0933, 5, 1933.4144);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1434,7 +1434,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", -3112.1296, 5, 2176.9607);
+ 				        	player->switchZone("tatooine", -3112.1296, 5, 2176.9607);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1456,7 +1456,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", -2833.1609, 5, 2107.3787);
+ 				        	player->switchZone("tatooine", -2833.1609, 5, 2107.3787);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1479,7 +1479,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("talus", 699.297, 6, -3041.4199);
+ 				        	player->switchZone("talus", 699.297, 6, -3041.4199);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1501,7 +1501,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("talus", 263.58401, 6, -2952.1284);
+ 				        	player->switchZone("talus", 263.58401, 6, -2952.1284);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1523,7 +1523,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("talus", 4334.5786, 9.8999996, 5431.0415);
+ 				        	player->switchZone("talus", 4334.5786, 9.8999996, 5431.0415);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1545,7 +1545,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("talus", -2226, 20, 2319);
+ 				        	player->switchZone("talus", -2226, 20, 2319);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1568,7 +1568,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", 5331.9375, 327.02765, -1576.6733);
+ 				        	player->switchZone("naboo", 5331.9375, 327.02765, -1576.6733);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1590,7 +1590,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", 5123.3857, -192, 6616.0264);
+ 				        	player->switchZone("naboo", 5123.3857, -192, 6616.0264);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1612,7 +1612,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", 5280.2002, -192, 6688.0498);
+ 				        	player->switchZone("naboo", 5280.2002, -192, 6688.0498);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1634,7 +1634,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", 2021.0026, 19, 2525.679);
+ 				        	player->switchZone("naboo", 2021.0026, 19, 2525.679);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1656,7 +1656,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", 1567.5193, 25, 2837.8777);
+ 				        	player->switchZone("naboo", 1567.5193, 25, 2837.8777);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1678,7 +1678,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", 1371.5938, 13, 2747.9043);
+ 				        	player->switchZone("naboo", 1371.5938, 13, 2747.9043);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1700,7 +1700,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", 4731.1743, 4.1700001, -4677.5439);
+ 				        	player->switchZone("naboo", 4731.1743, 4.1700001, -4677.5439);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1722,7 +1722,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", -5494.4224, -150, -21.837162);
+ 				        	player->switchZone("naboo", -5494.4224, -150, -21.837162);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1744,7 +1744,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", -5856.1055, 6, 4172.1606);
+ 				        	player->switchZone("naboo", -5856.1055, 6, 4172.1606);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1810,7 +1810,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", -4858.834, 5.9483199, 4164.0679);
+ 				        	player->switchZone("naboo", -4858.834, 5.9483199, 4164.0679);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1832,7 +1832,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("naboo", 7405, -196, 6200);
+ 				        	player->switchZone("naboo", 7405, -196, 6200);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1855,7 +1855,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("rori", -5255.4116, 80.664185, -2161.6274);
+ 				        	player->switchZone("rori", -5255.4116, 80.664185, -2161.6274);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1877,7 +1877,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("rori", -5374.0718, 80, -2188.6143);
+ 				        	player->switchZone("rori", -5374.0718, 80, -2188.6143);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1899,7 +1899,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("rori", 3691.9023, 96, -6403.4404);
+ 				        	player->switchZone("rori", 3691.9023, 96, -6403.4404);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1921,7 +1921,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("rori", 5297, 78, 6138);
+ 				        	player->switchZone("rori", 5297, 78, 6138);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1943,7 +1943,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("rori", 5340, 80, 5734);
+ 				        	player->switchZone("rori", 5340, 80, 5734);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1966,7 +1966,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("endor", -950.59241, 73, 1553.4125);
+ 				        	player->switchZone("endor", -950.59241, 73, 1553.4125);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -1988,7 +1988,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("endor", 3201.6599, 24, -3499.76);
+ 				        	player->switchZone("endor", 3201.6599, 24, -3499.76);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -2011,7 +2011,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("yavin4", -5575, 87, 4901);
+ 				        	player->switchZone("yavin4", -5575, 87, 4901);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -2034,7 +2034,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("yavin4", 5080, 79, 306);
+ 				        	player->switchZone("yavin4", 5080, 79, 306);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -2057,7 +2057,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("tatooine", -1644, 0, -5277);
+ 				        	player->switchZone("tatooine", -1644, 0, -5277);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -2079,7 +2079,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -1454, 7, -3111);
+ 				        	player->switchZone("corellia", -1454, 7, -3111);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != NULL && !currentCity->isClientRegion()) {
@@ -2102,7 +2102,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getCashCredits() > 99) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 						player->sendSystemMessage("You are now swtiching back to your normal loadout , soft logging your character will fully cloth you again , you can also unequipt and reqequipt your items if you do not want to soft log..");
-                        player->setAlternateAppearance("", true); 					
+                        			player->setAlternateAppearance("", true); 					
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 			        }
@@ -2119,7 +2119,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getCashCredits() > 99) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 						player->sendSystemMessage("Thank you for purchasing a costume.");
-                        player->setAlternateAppearance("object/mobile/shared_royal_guard.iff", true); 					
+                        			player->setAlternateAppearance("object/mobile/shared_royal_guard.iff", true); 					
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
 			        }
