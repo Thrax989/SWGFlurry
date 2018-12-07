@@ -612,10 +612,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 6644.269, 330, -5922.5225);
 						player->subtractCashCredits(5000);
 						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "corellia_bela_vistal_b_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -629,10 +634,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 6930.8042, 330, -5534.8936);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "corellia_coronet_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -646,10 +656,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -66.760902, 28, -4711.3281);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "corellia_coronet_a_shuttle_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -663,10 +678,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -25.671804, 28, -4409.7847);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "corellia_coronet_b_shuttle_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -680,10 +700,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -329.76605, 28, -4641.23);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "doaba_guerfel_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -697,10 +722,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 3085.4963, 280, 4993.0098);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "doaba_guerfel_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -714,10 +744,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 3349.8933, 308, 5598.1362);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "kor_vella_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -731,10 +766,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -3775.2546, 31, 3234.2202);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "kor_vella_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -748,10 +788,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -3157.2834, 31, 2876.2029);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "tyrena_a_shuttle_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -765,10 +810,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -5005.354, 21, -2386.9819);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "tyrena_b_shuttle_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -782,10 +832,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -5600.6367, 21, -2790.7429);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "tyrena_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -799,10 +854,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -5003.0649, 21, -2228.3665);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "vreni_island_shuttle_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -816,10 +876,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -5551.9473, 15.890146, -6059.9673);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "argilat_swamp_badge") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -833,10 +898,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 1387, 30, 3749);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "bela_vistal_fountain_badge") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -850,10 +920,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 6767, 30, -5617);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "rebel_hideout_badge") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -867,10 +942,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -6530, 30, 5967);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "rogue_corsec_base_badge") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -884,10 +964,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", 5291, 30, 1494);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "tyrena_theater_badge") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -901,10 +986,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -5418, 30, -6248);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Dantooine Travels
 			} else if (templatePath == "dantooine_agro_outpost_starport_travel") {
@@ -919,10 +1009,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dantooine", 1569.66, 4, -6415.7598);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "dantooine_imperial_outpost_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -936,10 +1031,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dantooine", -4208.6602, 3, -2350.24);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "dantooine_mining_outpost_startport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -953,10 +1053,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dantooine", -635.96887, 3, 2507.0115);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Dathomir Travels
 			} else if (templatePath == "dathomir_trade_outpost_starport_travel") {
@@ -971,10 +1076,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dathomir", 618.89258, 6.039608, 3092.0142);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "dathomir_science_outpost_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -988,10 +1098,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dathomir", -49.021923, 18, -1584.7278);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "dathomir_village_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1005,10 +1120,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("dathomir", 5271.4, 0, -4119.53);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Lok Travels
 			} else if (templatePath == "nyms_stronghold_starport_travel") {
@@ -1023,10 +1143,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("lok", 478.92676, 9, 5511.9565);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Hoth Travels
 			} else if (templatePath == "scavenger_starport_travel") {
@@ -1041,10 +1166,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("hoth", 0, 0, -2000);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Yavin IV Travels
 			} else if (templatePath == "yavin_iv_imperial_outpost_travel") {
@@ -1059,10 +1189,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("yavin4", 4054.1, 37, -6216.9);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "yavin_iv_labor_outpost_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1076,10 +1211,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("yavin4", -6921.6733, 73, -5726.5161);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Tatooine Travels
 			} else if (templatePath == "anchorhead_shuttle_travel") {
@@ -1094,10 +1234,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", 47.565128, 52, -5338.9072);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "bestine_shuttle_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1111,10 +1256,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", -1098.4836, 12, -3563.5342);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "bestine_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1128,10 +1278,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", -1361.1917, 12, -3600.0254);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "mos_eisley_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1145,10 +1300,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", 3416.6914, 5, -4648.1411);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "mos_entha_shuttle_a_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1162,10 +1322,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", 1730.8828, 7, 3184.6135);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "mos_entha_shuttle_b_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1179,10 +1344,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", 1395.447, 7, 3467.0117);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "mos_entha_spaceport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1196,10 +1366,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", 1266.0996, 7, 3065.1392);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "mos_espa_shuttleport_east_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1213,10 +1388,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", -2803.511, 5, 2182.9648);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "mos_espa_shuttleport_south_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1230,10 +1410,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", -2897.0933, 5, 1933.4144);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "mos_espa_shuttleport_west_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1247,10 +1432,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", -3112.1296, 5, 2176.9607);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "mos_espa_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1264,10 +1454,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", -2833.1609, 5, 2107.3787);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Talus Travels
 			} else if (templatePath == "talus_dearic_shuttleport_travel") {
@@ -1282,10 +1477,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("talus", 699.297, 6, -3041.4199);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "talus_dearic_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1299,10 +1499,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("talus", 263.58401, 6, -2952.1284);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "talus_nashal_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1316,10 +1521,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("talus", 4334.5786, 9.8999996, 5431.0415);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "talus_imperial_outpost_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1333,10 +1543,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("talus", -2226, 20, 2319);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Naboo Travels
 			} else if (templatePath == "deeja_peak_shuttleport_travel") {
@@ -1351,10 +1566,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", 5331.9375, 327.02765, -1576.6733);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "kaadar_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1368,10 +1588,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", 5123.3857, -192, 6616.0264);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "kaadara_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1385,10 +1610,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", 5280.2002, -192, 6688.0498);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "keren_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1402,10 +1632,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", 2021.0026, 19, 2525.679);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "karen_shuttleport_south_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1419,10 +1654,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", 1567.5193, 25, 2837.8777);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "keren_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1436,10 +1676,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", 1371.5938, 13, 2747.9043);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "moemia_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1453,10 +1698,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", 4731.1743, 4.1700001, -4677.5439);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "the_lake_retreat_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1470,10 +1720,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", -5494.4224, -150, -21.837162);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "theed_shuttleport_a_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1487,10 +1742,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", -5856.1055, 6, 4172.1606);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "theed_shuttleport_b_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1504,10 +1764,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", -5005, 6, 4072);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "theed_shuttleport_c_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1521,10 +1786,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", -5411.0171, 6, 4322.3315);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "theed_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1538,10 +1808,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", -4858.834, 5.9483199, 4164.0679);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "pc_kessel_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1555,10 +1830,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("naboo", 7405, -196, 6200);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Rori Travels
 			} else if (templatePath == "narmel_shuttleport_travel") {
@@ -1573,10 +1853,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("rori", -5255.4116, 80.664185, -2161.6274);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "narmel_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1590,10 +1875,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("rori", -5374.0718, 80, -2188.6143);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "rebel_outpost_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1607,10 +1897,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("rori", 3691.9023, 96, -6403.4404);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "restuss_shuttleport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1624,10 +1919,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("rori", 5297, 78, 6138);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "restuss_starport_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1641,10 +1941,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("rori", 5340, 80, 5734);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Endor Travels
 			} else if (templatePath == "smuggler_outpost_travel") {
@@ -1659,10 +1964,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("endor", -950.59241, 73, 1553.4125);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "research_outpost_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1676,10 +1986,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("endor", 3201.6599, 24, -3499.76);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Light Jedi Enclave
 			} else if (templatePath == "light_enclave_travel") {
@@ -1694,11 +2009,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("yavin4", -5575, 87, 4901);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
-
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Dark Jedi Enclave
 			} else if (templatePath == "dark_enclave_travel") {
@@ -1713,16 +2032,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("yavin4", 5080, 79, 306);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
-					// GTS will add funds to city treasury when used in player cities
-					ManagedReference<CityRegion*> city = cityRegion().get();
-					if (city != NULL) {
-						Locker clocker(city);
-						city->addToCityTreasury(1000);
-					}
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //Player City Travels
 			} else if (templatePath == "pc_korrivan_travel") {
@@ -1737,10 +2055,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("tatooine", -1644, 0, -5277);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 			} else if (templatePath == "pc_atlantis_travel") {
 				if (!player->isInCombat() && player->getCashCredits() < 4999) {
@@ -1754,16 +2077,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for your travels.");
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
  				        player->switchZone("corellia", -1454, 7, -3111);
- 					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
-					// GTS will add funds to city treasury when used in player cities
-					ManagedReference<CityRegion*> city = cityRegion().get();
-					if (city != NULL) {
-						Locker clocker(city);
-						city->addToCityTreasury(1000);
-					}
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //New Mobile Template Outfit Swap Terminal
 //Swtich Back To Normal
@@ -1779,10 +2101,10 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 99) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("You are now swtiching back to your normal loadout , soft logging your character will fully cloth you again , you can also unequipt and reqequipt your items if you do not want to soft log..");
-                                        player->setAlternateAppearance("", true); 					
-					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->sendSystemMessage("You are now swtiching back to your normal loadout , soft logging your character will fully cloth you again , you can also unequipt and reqequipt your items if you do not want to soft log..");
+                        player->setAlternateAppearance("", true); 					
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "royal_guard_appearance") {
 				if (!player->isInCombat() && player->getCashCredits() < 99) {
@@ -1796,10 +2118,10 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 				if (!player->isInCombat() && player->getCashCredits() > 99) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					player->sendSystemMessage("Thank you for purchasing a costume.");
-                                        player->setAlternateAppearance("object/mobile/shared_royal_guard.iff", true); 					
-					player->subtractCashCredits(5000);
-					box->setForceCloseDistance(5.f);
+						player->sendSystemMessage("Thank you for purchasing a costume.");
+                        player->setAlternateAppearance("object/mobile/shared_royal_guard.iff", true); 					
+						player->subtractCashCredits(5000);
+						box->setForceCloseDistance(5.f);
 			        }
 			} else if (templatePath == "become_glowy") {
 				bluefrog->grantGlowyBadges(player);
