@@ -83,6 +83,7 @@
 
 #include "engine/core/TaskManager.h"
 #include "server/zone/objects/creature/credits/CreditObject.h"
+#include "server/zone/managers/auction/AuctionSearchTask.h" 
 
 float CreatureObjectImplementation::DEFAULTRUNSPEED = 5.376;
 
