@@ -50,7 +50,7 @@ object_draft_schematic_droid_component_chassis_droid_3p0 = object_draft_schemati
 	craftingToolTab = 32, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 32,
 	size = 6,
-	factoryCrateSize = 5,
+	factoryCrateSize = 1000,
 
 	xpType = "crafting_droid_general",
 	xp = 210,

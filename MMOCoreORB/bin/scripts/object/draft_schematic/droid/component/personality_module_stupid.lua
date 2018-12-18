@@ -50,6 +50,7 @@ object_draft_schematic_droid_component_personality_module_stupid = object_draft_
    craftingToolTab = 32, -- (See DraftSchematicObjectTemplate.h)
    complexity = 15, 
    size = 2, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_droid_general", 
    xp = 20, 
