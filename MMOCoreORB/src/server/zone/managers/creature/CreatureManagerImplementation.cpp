@@ -859,7 +859,7 @@ void CreatureManagerImplementation::harvest(Creature* creature, CreatureObject* 
 		return;
 	}
 	// Make the worst possible amount 10
-	quantity = MAX(quantity, 10); // Over-ride really low template values
+	quantity = Math::max(quantity, 10); // Over-ride really low template values
 
 	int quantityExtracted = int(quantity * float(player->getSkillMod("creature_harvesting") / 100.0f + 1.0f)); // Always give a bonus based on skill level
 
