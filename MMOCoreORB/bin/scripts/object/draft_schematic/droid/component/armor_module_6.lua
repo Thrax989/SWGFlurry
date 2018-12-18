@@ -50,6 +50,7 @@ object_draft_schematic_droid_component_armor_module_6 = object_draft_schematic_d
    craftingToolTab = 32, -- (See DraftSchematicObjectTemplate.h)
    complexity = 32, 
    size = 2, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_droid_general", 
    xp = 250, 

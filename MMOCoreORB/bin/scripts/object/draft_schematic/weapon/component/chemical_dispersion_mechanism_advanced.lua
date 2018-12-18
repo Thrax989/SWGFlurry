@@ -50,6 +50,7 @@ object_draft_schematic_weapon_component_chemical_dispersion_mechanism_advanced =
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 15, 
    size = 1, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_weapons_general", 
    xp = 50, 

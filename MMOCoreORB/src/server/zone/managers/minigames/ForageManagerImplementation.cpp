@@ -9,9 +9,11 @@
 #include "server/zone/managers/loot/LootManager.h"
 #include "server/zone/managers/resource/ResourceManager.h"
 #include "server/zone/managers/minigames/events/ForagingEvent.h"
+#include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/area/ForageAreaCollection.h"
 #include "templates/params/creature/CreatureAttribute.h"
 #include "server/zone/Zone.h"
+#include "server/zone/ZoneServer.h"
 
 void ForageManagerImplementation::startForaging(CreatureObject* player, int forageType) {
 	if (player == NULL)
@@ -20,8 +22,8 @@ void ForageManagerImplementation::startForaging(CreatureObject* player, int fora
 	Locker playerLocker(player);
 
 	int actionCostForage = 50;
-	int mindCostShellfish = 100;
-	int actionCostShellfish =  100;
+	int mindCostShellfish = 50;
+	int actionCostShellfish =  50;
 
 	//Check if already foraging.
 	Reference<Task*> pendingForage = player->getPendingTask("foraging");
@@ -178,14 +180,14 @@ void ForageManagerImplementation::finishForaging(CreatureObject* player, int for
 		chance = (int)(15 + (skillMod * 0.6));
 		break;
 	default:
-		skillMod = 20;
-		chance = (int)(15 + (skillMod * 0.6));
+		skillMod = 40;
+		chance = (int)(16 + (skillMod * 0.6));
 		break;
 	}
 
 	//Determine if player finds an item.
-	if (chance > 100) //There could possibly be +foraging skill tapes.
-		chance = 100;
+	if (chance > 125) //There could possibly be +foraging skill tapes.
+		chance = 125;
 
 	if (System::random(80) > chance) {
 		if (forageType == ForageManager::SHELLFISH)
@@ -199,6 +201,22 @@ void ForageManagerImplementation::finishForaging(CreatureObject* player, int for
 
 		forageGiveItems(player, forageType, forageX, forageY, zoneName);
 
+				// Grant XP
+ 		ZoneServer* zoneServer = player->getZoneServer();
+ 		PlayerManager* playerManager = zoneServer->getPlayerManager();
+ 		
+ 		int xp = System::random(player->getSkillMod("foraging") +10); // Min 1, Max 135
+ 		
+ 		if (forageType == ForageManager::SCOUT || forageType == ForageManager::SHELLFISH){
+ 			playerManager->awardExperience(player, "camp", xp);
+ 		}
+ 		else if (forageType == ForageManager::LAIR){
+ 			playerManager->awardExperience(player, "camp", (xp + 15)); // 15 Bonus XP
+ 		}
+ 		else if (forageType == ForageManager::MEDICAL){
+ 			playerManager->awardExperience(player, "medical", xp);
+ 			playerManager->awardExperience(player, "camp", (xp / 2)); // Smaller Wilderness Survival XP bonus
+ 		}
 	}
 
 	return;
@@ -319,11 +337,14 @@ bool ForageManagerImplementation::forageGiveItems(CreatureObject* player, int fo
 	} else if (forageType == ForageManager::LAIR) { //Lair Search
 		dice = System::random(109);
 		level = 1;
+		float creatureHarvestingSkill = player->getSkillMod("creature_harvesting") + 1; // Makes it 1 even if it's NULL
+ 		
+ 		dice *= creatureHarvestingSkill / 100 + 1;
 
-		if (dice >= 0 && dice < 40) { // Live Creatures
+		if (dice < 40) { // Live Creatures
 			lootGroup = "forage_live_creatures";
 		}
-		else if (dice > 39 && dice < 110) { // Eggs
+		else { // Eggs
 			resName = "meat_egg";
 			if(forageGiveResource(player, forageX, forageY, planet, resName)) {
 				player->sendSystemMessage("@lair_n:found_eggs");
@@ -392,7 +413,7 @@ bool ForageManagerImplementation::forageGiveResource(CreatureObject* player, flo
 		}
 	}
 
-	int quantity = System::random(30) + 10;
+	int quantity = System::random(50) + 50;
 	resourceManager->harvestResourceToPlayer(player, resource, quantity);
 	return true;
 }

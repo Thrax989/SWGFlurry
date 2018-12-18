@@ -50,6 +50,7 @@ object_draft_schematic_droid_component_sensor_package_droid = object_draft_schem
    craftingToolTab = 32, -- (See DraftSchematicObjectTemplate.h)
    complexity = 19, 
    size = 6, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_droid_general", 
    xp = 50, 

@@ -417,8 +417,8 @@ bool FactoryObjectImplementation::startFactory() {
 			return false;
 	}
 
-		// Customization
- 	timer = ((int)schematic->getComplexity()) / 4; // Originally * 2
+	timer = ((int)schematic->getComplexity()) * 1;
+
  	if (timer < 1)
  		timer = 1; // prevent negative run time
 
@@ -427,7 +427,7 @@ bool FactoryObjectImplementation::startFactory() {
 
 	// Add sampletask
 	Reference<CreateFactoryObjectTask* > createFactoryObjectTask = new CreateFactoryObjectTask(_this.getReferenceUnsafeStaticCast());
-	addPendingTask("createFactoryObject", createFactoryObjectTask, timer * 1000);
+	addPendingTask("createFactoryObject", createFactoryObjectTask, timer * 1);
 
 	operating = true;
 
@@ -608,7 +608,7 @@ void FactoryObjectImplementation::createNewObject() {
 	Reference<Task*> pending = getPendingTask("createFactoryObject");
 
 	if (pending != nullptr)
-		pending->reschedule(timer * 1000);
+		pending->reschedule(timer * 1);
 	else
 		stopFactory("manf_error", "", "", -1);
 }

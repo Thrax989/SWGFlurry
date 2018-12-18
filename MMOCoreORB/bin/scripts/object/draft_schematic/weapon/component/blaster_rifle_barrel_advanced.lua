@@ -50,6 +50,7 @@ object_draft_schematic_weapon_component_blaster_rifle_barrel_advanced = object_d
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 22, 
    size = 3, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_weapons_general", 
    xp = 115, 
