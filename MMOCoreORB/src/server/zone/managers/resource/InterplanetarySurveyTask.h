@@ -32,6 +32,7 @@ public:
 		// We need to sort this by family name
 		HashTable<String, Vector<String>* > mapped;
 		HashTable<String, Vector<String>* > typeMap;
+		HashTable<short, Vector<short>* > attributeMap;
 		for(int i=0;i<resources.size();i++) {
 			resourceSpawn = resources.get(i);
 			String family = resourceSpawn->getFamilyName();
