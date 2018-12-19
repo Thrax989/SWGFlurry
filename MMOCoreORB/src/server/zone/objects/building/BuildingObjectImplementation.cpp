@@ -845,6 +845,20 @@ int BuildingObjectImplementation::notifyObjectInsertedToChild(SceneObject* objec
 				CellObject* cell = static_cast<CellObject*>(child);
 
 				if (cell != nullptr) {
+					SortedVector<QuadTreeEntry*> closeObjects(512,512);
+					CloseObjectsVector* closeVector = (CloseObjectsVector*) child->getCloseObjects();
+					if (closeVector == NULL) {
+							child->getZone()->getInRangeObjects(attacker->getPositionX(), child->getPositionY(), 32, &closeObjects, true);
+						} else {
+							closeVector->safeCopyTo(closeObjects);
+					}
+					for (int i = 0; i < closeObjects.size(); i++) {
+						SceneObject* targetObject = static_cast<SceneObject*>(closeObjects.get(i));
+		
+							if (targetObject != NULL && !targetObject->isBuildingObject())
+								targetObject->notifyInsert(child);
+						}
+					}
 					for (int j = 0; j < cell->getContainerObjectsSize(); ++j) {
 						ManagedReference<SceneObject*> cobj = cell->getContainerObject(j);
 
