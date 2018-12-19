@@ -845,20 +845,56 @@ int BuildingObjectImplementation::notifyObjectInsertedToChild(SceneObject* objec
 				CellObject* cell = static_cast<CellObject*>(child);
 
 				if (cell != nullptr) {
-					SortedVector<QuadTreeEntry*> closeObjects(512,512);
-					CloseObjectsVector* closeVector = (CloseObjectsVector*) child->getCloseObjects();
-					if (closeVector == NULL) {
-							child->getZone()->getInRangeObjects(attacker->getPositionX(), child->getPositionY(), 32, &closeObjects, true);
-						} else {
-							closeVector->safeCopyTo(closeObjects);
-					}
-					for (int i = 0; i < closeObjects.size(); i++) {
-						SceneObject* targetObject = static_cast<SceneObject*>(closeObjects.get(i));
-		
-							if (targetObject != NULL && !targetObject->isBuildingObject())
-								targetObject->notifyInsert(child);
+					if (child->getCloseObjects() != nullptr)
+					{
+						if (!child->getCloseObjects()->contains(object))
+						{
+							child->addInRangeObject(object, false);
+							object->sendTo(child, true, false);
 						}
 					}
+					else
+						{
+							child->notifyInsert(object);
+						}
+					if (object->getCloseObjects() != nullptr)
+					{
+						if (!object->getCloseObjects()->contains(child))
+						{
+							object->addInRangeObject(child, false);
+							child->sendTo(object, true, false);
+						}
+					}
+					else
+						{
+							object->notifyInsert(child);
+						}
+					SceneObject* building = static_cast<SceneObject*>(asBuildingObject());
+
+					if (building->getCloseObjects() != nullptr)
+					{
+						if (!building->getCloseObjects()->contains(object))
+						{
+							building->addInRangeObject(object, false);
+							object->sendTo(building, true, false);
+						}
+					}
+					else
+						{
+							building->notifyInsert(object);
+						}
+					if (object->getCloseObjects() != nullptr)
+					{
+						if (!object->getCloseObjects()->contains(building))
+						{
+							object->addInRangeObject(building, false);
+							building->sendTo(object, true, false);
+						}
+					}
+					else
+						{
+							object->notifyInsert(building);
+						}
 					for (int j = 0; j < cell->getContainerObjectsSize(); ++j) {
 						ManagedReference<SceneObject*> cobj = cell->getContainerObject(j);
 
