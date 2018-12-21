@@ -43,6 +43,7 @@
 
 object_installation_generators_power_generator_photo_bio_style_1 = object_installation_generators_shared_power_generator_photo_bio_style_1:new {
 	lotSize = 1,
+	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
 	baseMaintenanceRate = 60,
 	basePowerRate = 0,
 	width = 3,
