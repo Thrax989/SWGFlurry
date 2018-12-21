@@ -84,6 +84,7 @@ function missionScreenplay:enemyKilled(pMobile, pPlayer)
 -------------------------------------------------------
            player:sendSystemMessage("COMPLETED MISSION: Test.")
 	   player:playMusicMessage("sound/ui_npe2_quest_completed.snd")
+           player:playEffect("clienteffect/level_granted_chronicles.cef", "")
            local pGhost = CreatureObject(pPlayer):getPlayerObject()
            local playerID = CreatureObject(pPlayer):getObjectID()
            local oldWaypointID = tonumber(getQuestStatus(playerID .. ":caedusWaypointID"))
@@ -339,7 +340,7 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
       player:setScreenPlayState( missionScreenplay.states.accepted , missionScreenplay.questString)
       player:sendSystemMessage("ACCEPTED mission: Family Revenge")
       player:playMusicMessage("sound/ui_npe2_quest_received.snd")
-
+      player:playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
     	elseif (screenID == "quest_status") then
 
         conversationScreen = screen:cloneScreen()
