@@ -27,8 +27,7 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
   * java jre 1.7+
 
 ## Ubuntu 16.04+ ##
-  * [![Ubuntu 16.04 Guide ](https://img.shields.io/badge/Ubuntu 16.04 Guide-Click%20Here-005f71.svg?style=plastic)](https://github.com/Thrax989/SWGFlurry/blob/master/Ubuntu-Guide.md) 
-  
+  * [![Ubuntu Guide ](https://img.shields.io/badge/Ubuntu%20Guide-Click%20Here-005f71.svg?style=plastic)](https://github.com/Thrax989/SWGFlurry/blob/master/Ubuntu-Guide.md) 
   * Install dependencies
 
         sudo apt install build-essential libmysqlclient-dev liblua5.3-dev libdb5.3-dev libssl-dev cmake git default-jre libssl-dev
