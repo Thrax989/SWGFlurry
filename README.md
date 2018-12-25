@@ -28,7 +28,7 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
 
 ### Ubuntu 16.04+ ###
 
-  * [![Bare Metal Ubuntu Server Guide ](https://img.shields.io/badge/Server%20Bare Metal Ubuntu Server Guide-Click%20Here-005f71.svg?style=plastic)](https://github.com/Thrax989/SWGFlurry/blob/master/Ubuntu-Guide.md) 
+  * [![Bare Metal Ubuntu Server Guide ](https://img.shields.io/badge/%20Bare Metal Ubuntu Server Guide-Click%20Here-005f71.svg?style=plastic)](https://github.com/Thrax989/SWGFlurry/blob/master/Ubuntu-Guide.md) 
 
   * Install dependencies
 
@@ -66,4 +66,4 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
 
     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-For more information, see [![Review SWGemu ](https://img.shields.io/badge/Server%20Review.SWGemu-Click%20Here-005f71.svg?style=plastic)](https://review.swgemu.com.)
+For more information, see [![Review SWGemu ](https://img.shields.io/badge/%20Review.SWGemu-Click%20Here-005f71.svg?style=plastic)](https://review.swgemu.com.)
