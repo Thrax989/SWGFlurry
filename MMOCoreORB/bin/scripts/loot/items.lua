@@ -1261,3 +1261,8 @@ includeFile("items/bonepile.lua")
 
 --Bh saber loot when Deathblowing a Player jedi. Trophy no stats
 includeFile("items/saber28.lua")
+
+--Christmas Present Gift
+includeFile("items/flurry_present.lua")
+--Christmas Coal
+includeFile("items/flurry_coal.lua")

@@ -390,7 +390,7 @@ includeFile("groups/lootcollectionflurry_present.lua")
 includeFile("groups/halloween.lua")
 includeFile("groups/halloween1.lua")
 
---lifeday
+--Christmas
 includeFile("groups/flurry_coal.lua")
 includeFile("groups/flurry_present.lua")
 
