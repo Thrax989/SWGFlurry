@@ -5,7 +5,7 @@ flurry_coal = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "lootcollectionflurry_coal", weight = 10000000}
+		{itemTemplate = "flurry_coal", weight = 10000000}
 	}
 }
 

@@ -5,7 +5,7 @@ flurry_present = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "lootcollectionflurry_present", weight = 10000000}
+		{itemTemplate = "flurry_present", weight = 10000000}
 	}
 }
 

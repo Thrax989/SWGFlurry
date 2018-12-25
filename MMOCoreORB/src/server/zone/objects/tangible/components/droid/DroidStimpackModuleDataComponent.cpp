@@ -208,9 +208,7 @@ void DroidStimpackModuleDataComponent::onStore() {
  */
 void DroidStimpackModuleDataComponent::fillObjectMenuResponse(SceneObject* droidObject, ObjectMenuResponse* menuResponse, CreatureObject* player) {
 	menuResponse->addRadialMenuItem(REQUEST_STIMPACK, 3, "@pet/droid_modules:request_stimpack" );
-
-	if (player != NULL && player->hasSkill("science_medic_ability_04"))
-		menuResponse->addRadialMenuItemToRadialID(REQUEST_STIMPACK, LOAD_STIMPACK, 3, "@pet/droid_modules:load_stimpack" );
+	menuResponse->addRadialMenuItemToRadialID(REQUEST_STIMPACK, LOAD_STIMPACK, 3, "@pet/droid_modules:load_stimpack" );
 }
 
 void DroidStimpackModuleDataComponent::initialize(DroidObject* droid) {
@@ -262,7 +260,7 @@ int DroidStimpackModuleDataComponent::handleObjectMenuSelect(CreatureObject* pla
 			if (pharma->isStimPack()) {
 				StimPack* stim = cast<StimPack*>(pharma);
 
-				if (stim->isClassA()) {
+				if (stim->isClassA() || stim->isClassB() || stim->isClassC() || stim->isClassD() || stim->isClassE()) {
 					foundStims += 1;
 				}
 			}
@@ -325,7 +323,7 @@ void DroidStimpackModuleDataComponent::sendLoadUI(CreatureObject* player) {
 		if (pharma->isStimPack()) {
 			StimPack* stim = cast<StimPack*>(pharma);
 
-			if (stim->isClassA()) {
+			if (stim->isClassA() || stim->isClassB() || stim->isClassC() || stim->isClassD() || stim->isClassE()) {
 				String name;
 
 				if (stim->getCustomObjectName().isEmpty()) {
@@ -386,10 +384,6 @@ void DroidStimpackModuleDataComponent::handleInsertStimpack(CreatureObject* play
 	if (player == NULL)
 		return;
 
-	if (!player->hasSkill("science_medic_ability_04")) {
-		return;
-	}
-
 	ManagedReference<DroidObject*> droid = getDroidObject();
 	if (droid == NULL) {
 		return;
@@ -400,7 +394,7 @@ void DroidStimpackModuleDataComponent::handleInsertStimpack(CreatureObject* play
 		return;
 	}
 
-	if (!pack->isClassA()) {
+	if (!pack->isClassA() && !pack->isClassB() && !pack->isClassC() && !pack->isClassD() && !pack->isClassE()) {
 		player->sendSystemMessage("@pet/droid_modules:invalid_stimpack");
 		return;
 	}
