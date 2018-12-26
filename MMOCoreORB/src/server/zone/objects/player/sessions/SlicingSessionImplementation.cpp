@@ -679,16 +679,16 @@ void SlicingSessionImplementation::handleArmorSlice() {
 	uint8 min = 0;
 	uint8 max = 0;
 
-	switch (sliceSkill) {
+	switch (sliceSkill) {// 25-45% max encumbrance slice, 20-40% max effectiveness slice
 	case 5:
-		min += (sliceType == 0) ? 6 : 5;
+		min += (sliceType == 0) ? 5 : 10;
 		max += 5;
 	case 4:
-		min += (sliceType == 0) ? 0 : 10;
+		min += (sliceType == 0) ? 10 : 10;
 		max += 10;
 	case 3:
 		min += 5;
-		max += (sliceType == 0) ? 20 : 30;
+		max += (sliceType == 0) ? 25 : 30;
 		break;
 	default:
 		return;
@@ -730,7 +730,7 @@ void SlicingSessionImplementation::handleSliceEncumbrance(uint8 percent) {
 
 	armor->setEncumbranceSlice(percent / 100.f);
 	armor->setSliced(true);
-
+	armor->setMaxSockets(4);
 	StringIdChatParameter params;
 	params.setDI(percent);
 	params.setStringId("@slicing/slicing:enc_mod");
@@ -751,7 +751,7 @@ void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 
 	armor->setEffectivenessSlice(percent / 100.f);
 	armor->setSliced(true);
-
+	armor->setMaxSockets(4);
 	StringIdChatParameter params;
 	params.setDI(percent);
 	params.setStringId("@slicing/slicing:eff_mod");
