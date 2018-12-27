@@ -852,13 +852,13 @@ int BuildingObjectImplementation::notifyObjectInsertedToChild(SceneObject* objec
 						{
 							child->addInRangeObject(object, false);
 							object->sendTo(child, true, false);
-							info("In Range",true);
+							//info("In Range",true);
 						}
 					}
 					else
 						{
 							child->notifyInsert(object);
-							info("Notify Insert",true);
+							//info("Notify Insert",true);
 						}
 					if (object->getCloseObjects() != nullptr)
 					{
@@ -866,13 +866,13 @@ int BuildingObjectImplementation::notifyObjectInsertedToChild(SceneObject* objec
 						{
 							object->addInRangeObject(child, false);
 							child->sendTo(object, true, false);
-							info("In Range",true);
+							//info("In Range",true);
 						}
 					}
 					else
 						{
 							object->notifyInsert(child);
-							info("Notify Insert",true);
+							//info("Notify Insert",true);
 						}
 					SceneObject* building = static_cast<SceneObject*>(asBuildingObject());
 
@@ -882,13 +882,13 @@ int BuildingObjectImplementation::notifyObjectInsertedToChild(SceneObject* objec
 						{
 							building->addInRangeObject(object, false);
 							object->sendTo(building, true, false);
-							info("In Range",true);
+							//info("In Range",true);
 						}
 					}
 					else
 						{
 							building->notifyInsert(object);
-							info("Notify Insert",true);
+							//info("Notify Insert",true);
 						}
 					if (object->getCloseObjects() != nullptr)
 					{
@@ -896,13 +896,13 @@ int BuildingObjectImplementation::notifyObjectInsertedToChild(SceneObject* objec
 						{
 							object->addInRangeObject(building, false);
 							building->sendTo(object, true, false);
-							info("In Range",true);
+							//info("In Range",true);
 						}
 					}
 					else
 						{
 							object->notifyInsert(building);
-							info("Notify Insert",true);
+							//info("Notify Insert",true);
 						}
 					for (int j = 0; j < cell->getContainerObjectsSize(); ++j) {
 						ManagedReference<SceneObject*> cobj = cell->getContainerObject(j);
