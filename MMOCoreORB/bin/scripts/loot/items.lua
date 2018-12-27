@@ -1263,6 +1263,6 @@ includeFile("items/bonepile.lua")
 includeFile("items/saber28.lua")
 
 --Christmas Present Gift
-includeFile("items/flurry_present.lua")
+includeFile("items/flurry_presents.lua")
 --Christmas Coal
-includeFile("items/flurry_coal.lua")
+includeFile("items/flurry_coals.lua")
