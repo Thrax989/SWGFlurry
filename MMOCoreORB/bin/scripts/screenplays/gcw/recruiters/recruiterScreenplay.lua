@@ -592,9 +592,9 @@ end
 
 function recruiterScreenplay:getSmugglerDiscount(pPlayer)
 	if CreatureObject(pPlayer):hasSkill("combat_smuggler_master") then
-		return .75
+		return .50
 	elseif CreatureObject(pPlayer):hasSkill("combat_smuggler_underworld_01") then
-		return .90
+		return .75
 	end
 	return 1.0
 end

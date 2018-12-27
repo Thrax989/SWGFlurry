@@ -71,6 +71,7 @@ public:
 	void addAbilities(PlayerObject* ghost, const Vector<String>& abilityNames, bool notifyClient = true);
 	void removeAbilities(PlayerObject* ghost, const Vector<String>& abilityNames, bool notifyClient = true);
 
+	void awardResetSkills(CreatureObject* creature);
 	void awardForceFromSkills(CreatureObject* creature);
 	int getSpecificSkillCount(CreatureObject* creature, const String& skill);
 

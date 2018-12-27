@@ -43,10 +43,8 @@ int FlurrypresentMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject,
 
  	ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
  	ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
-	lootManager->createLoot(inventory, "flurry_present", 300);
-	lootManager->createLoot(inventory, "flurry_present", 300);
-	lootManager->createLoot(inventory, "flurry_present", 300);
-	creature->playEffect("clienteffect/hh_15_torpedo_warhead.cef", "");
+	lootManager->createLoot(inventory, "nge_house_loot_deed_01", 300);
+	creature->playEffect("clienteffect/healing_tree.cef", "");
 	creature->playEffect("clienteffect/mus_relay_create.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
 	}

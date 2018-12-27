@@ -515,20 +515,20 @@ void SlicingSessionImplementation::handleSlice(SuiListBox* suiBox) {
 
 	if (tangibleObject->isContainerObject() || tangibleObject->getGameObjectType() == SceneObjectType::PLAYERLOOTCRATE) {
 		handleContainerSlice();
-		playerManager->awardExperience(player, "slicing", 250, true); // Container Slice XP
+		playerManager->awardExperience(player, "slicing", 500, true); // Container Slice XP
 	} else if (tangibleObject->isMissionTerminal()) {
 		MissionTerminal* term = cast<MissionTerminal*>( tangibleObject.get());
-		playerManager->awardExperience(player, "slicing", 100, true); // Terminal Slice XP
+		playerManager->awardExperience(player, "slicing", 200, true); // Terminal Slice XP
 		term->addSlicer(player);
 		player->sendSystemMessage("@slicing/slicing:terminal_success");
 	} else if (tangibleObject->isWeaponObject()) {
 		handleWeaponSlice();
-		playerManager->awardExperience(player, "slicing", 250, true); // Weapon Slice XP
+		playerManager->awardExperience(player, "slicing", 500, true); // Weapon Slice XP
 	} else if (tangibleObject->isArmorObject()) {
 		handleArmorSlice();
-		playerManager->awardExperience(player, "slicing", 250, true); // Armor Slice XP
+		playerManager->awardExperience(player, "slicing", 500, true); // Armor Slice XP
 	} else if ( isBaseSlice()){
-		playerManager->awardExperience(player,"slicing", 1000, true); // Base slicing
+		playerManager->awardExperience(player,"slicing", 2000, true); // Base slicing
 
 		Zone* zone = player->getZone();
 
@@ -679,16 +679,16 @@ void SlicingSessionImplementation::handleArmorSlice() {
 	uint8 min = 0;
 	uint8 max = 0;
 
-	switch (sliceSkill) {
+	switch (sliceSkill) {// 25-45% max encumbrance slice, 20-40% max effectiveness slice
 	case 5:
-		min += (sliceType == 0) ? 6 : 5;
+		min += (sliceType == 0) ? 5 : 10;
 		max += 5;
 	case 4:
-		min += (sliceType == 0) ? 0 : 10;
+		min += (sliceType == 0) ? 10 : 10;
 		max += 10;
 	case 3:
 		min += 5;
-		max += (sliceType == 0) ? 20 : 30;
+		max += (sliceType == 0) ? 25 : 30;
 		break;
 	default:
 		return;
@@ -730,7 +730,7 @@ void SlicingSessionImplementation::handleSliceEncumbrance(uint8 percent) {
 
 	armor->setEncumbranceSlice(percent / 100.f);
 	armor->setSliced(true);
-
+	armor->setMaxSockets(4);
 	StringIdChatParameter params;
 	params.setDI(percent);
 	params.setStringId("@slicing/slicing:enc_mod");
@@ -751,7 +751,7 @@ void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 
 	armor->setEffectivenessSlice(percent / 100.f);
 	armor->setSliced(true);
-
+	armor->setMaxSockets(4);
 	StringIdChatParameter params;
 	params.setDI(percent);
 	params.setStringId("@slicing/slicing:eff_mod");

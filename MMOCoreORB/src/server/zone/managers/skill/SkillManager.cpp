@@ -450,6 +450,41 @@ void SkillManager::awardForceFromSkills(CreatureObject* creature) {
 	return;
 }
 
+void SkillManager::awardResetSkills(CreatureObject* creature) {
+
+		if (creature == NULL)
+			return;
+
+		Locker locker(creature);
+
+		SkillManager* skillManager = SkillManager::instance();
+		SkillList* skillList = creature->getSkillList();
+
+		if (skillList == NULL) 
+			return;
+
+		String skillName = "";
+		Vector<String> listOfNames;
+		skillList->getStringList(listOfNames);
+		SkillList copyOfList;
+		copyOfList.loadFromNames(listOfNames);
+
+
+		for (int i = 0; i < copyOfList.size(); i++) {
+			Skill* skill = copyOfList.get(i);
+			String skillName = skill->getSkillName();
+
+			if (!skillName.beginsWith("admin")) {
+				skillManager->surrenderSkill(skillName, creature, true);
+				bool skillGranted = skillManager->awardSkill(skillName, creature, true, true, true);
+				creature->sendSystemMessage("Regranting SKill: " + skillName);
+				ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
+			}
+		}
+
+	return;
+}
+
 void SkillManager::removeSkillRelatedMissions(CreatureObject* creature, Skill* skill) {
 	if(skill->getSkillName().hashCode() == STRING_HASHCODE("combat_bountyhunter_investigation_03")) {
 		ManagedReference<ZoneServer*> zoneServer = creature->getZoneServer();

@@ -598,6 +598,35 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						player->addCooldown("force_recalculate_cooldown", 86400 * 1000);// 24 hour cooldown
 						player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			        }
+//GALACTIC TRAVEL SYSTEM Recalculate's Players Skills
+			} else if (templatePath == "recalculateskills") {
+				
+				if (!player->checkCooldownRecovery("skill_recalculate_cooldown")) {
+
+						StringIdChatParameter stringId;
+  
+						Time* cdTime = player->getCooldownTime("skill_recalculate_cooldown");
+  
+						int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+  
+						stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+						stringId.setDI(timeLeft);
+						player->sendSystemMessage(stringId);
+						error("Cooldown In Effect You May Not Recalculate Skills: " + player->getFirstName());
+						return;
+					}
+				if (!player->isInCombat()) {
+						ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+						String playerName = player->getFirstName();
+						StringBuffer zBroadcast;
+						zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Recalculated There Skills.";
+						SkillManager* skillManager = SkillManager::instance();
+						skillManager->awardResetSkills(player);
+						player->sendSystemMessage("Recalculated Skills");
+						player->playEffect("clienteffect/mus_relay_activate.cef", "");
+						player->addCooldown("skill_recalculate_cooldown", 86400 * 1000);// 24 hour cooldown
+						player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			        }
 //GALACTIC TRAVEL SYSTEM
 //Corellia Travel
 			} else if (templatePath == "corellia_bela_vistal_a_shuttleport_travel") {

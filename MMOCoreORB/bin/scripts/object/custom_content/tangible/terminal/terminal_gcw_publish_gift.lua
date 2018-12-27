@@ -104,6 +104,14 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Master Politician Requires (10,000,000 Credits)", "citypolitician",
 		   },
+		 	"Recalculate Force",
+		   {
+			"Recalculate's Jedi's Force pool (24 hour cool down)", "recalculateforce",
+		   },
+		 	"Recalculate Skills",
+		   {
+			"Recalculate's Players Skills (24 hour cool down)", "recalculateskills",
+		   },
 		 	"Player Cities",
 		   {
 			"Korrivan Player City (5,000 Credits)", "pc_korrivan_travel",

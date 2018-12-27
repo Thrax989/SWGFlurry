@@ -1266,7 +1266,7 @@ void AiAgentImplementation::setDefender(SceneObject* defender) {
 }
 
 void AiAgentImplementation::queueDizzyFallEvent() {
-	if (isNonPlayerCreatureObject())
+       if (System::random(10) == 1)
 		CreatureObjectImplementation::queueDizzyFallEvent();
 }
 
