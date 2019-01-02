@@ -476,6 +476,7 @@ core3_SOURCES =	$(core3_IDLS) \
 		server/zone/objects/ship/SpaceStationObjectImplementation.cpp \
 		server/zone/objects/tangible/components/ArtifactMenuComponent.cpp \
 		server/zone/objects/tangible/components/BossMenuComponent.cpp \
+		server/zone/objects/tangible/components/pvpMenuComponent.cpp \
 		server/zone/objects/tangible/components/DiamondMenuComponent.cpp \
 		server/zone/objects/tangible/components/HeroicMenuComponent.cpp \
 		server/zone/objects/tangible/components/FlurrycoalMenuComponent.cpp \
