@@ -44,6 +44,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
   			creature->sendSystemMessage(stringId);
 			return 0;
 		}
+
 		if (!creature->isInCombat()) {
 		    ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 			//Broadcast to Server
@@ -61,10 +62,10 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 		ManagedReference<GroupObject*> group = creature->getGroup();
 		for (int i = 0; i < group->getGroupSize(); i++) {
 		ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
-		groupedCreature->setFactionStatus(FactionStatus::OVERT);
-		groupedCreature->switchZone("tatooine", 4313, 5, -5141);
-		creature->setFactionStatus(FactionStatus::OVERT);
-		creature->switchZone("tatooine", 3372, 10, -5129;
+		groupedCreature->setFactionStatus(FactionStatus::ONLEAVE);
+		groupedCreature->switchZone("tatooine", 3372, 10, -5129);
+		creature->setFactionStatus(FactionStatus::ONLEAVE);
+		creature->switchZone("tatooine", 3372, 10, -5129);
 		}
 	}
 
@@ -119,6 +120,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 					creature->sendMessage(box->generateMessage());
 					box->setForceCloseDistance(5.f);
 				}
+
 		if (group != NULL) {
 				if (creature->getFaction() == 370444368) {//Rebel
 				for (int i = 0; i < group->getGroupSize(); i++) {
