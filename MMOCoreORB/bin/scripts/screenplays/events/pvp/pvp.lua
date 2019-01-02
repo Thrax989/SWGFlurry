@@ -18,4 +18,5 @@ end
 
 function pvpScreenPlay:spawnSceneObjects()
 --Spawn PvP Terminal for 2v2 Imperial Vs Rebel
+	spawnSceneObject("tatooine", "object/tangible/terminal/systems_control_terminal.iff", 3373.25, 10.998, -5128.88, 0, -0.34202, 0, 0.939693, 0)
 end
