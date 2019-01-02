@@ -230,7 +230,7 @@ void SuiManager::handleBankTransfer(CreatureObject* player, SuiBox* suiBox, uint
 	if (args->size() < 2)
 		return;
 
-	int Bank = Integer::valueOf(args->get(0).toString());
+	int cash = Integer::valueOf(args->get(0).toString());
 	int bank = Integer::valueOf(args->get(1).toString());
 
 	SuiBankTransferBox* suiBank = cast<SuiBankTransferBox*>( suiBox);
@@ -243,11 +243,11 @@ void SuiManager::handleBankTransfer(CreatureObject* player, SuiBox* suiBox, uint
 	if (!player->isInRange(bankObject, 5))
 		return;
 
-	uint32 currentBank = player->getBankCredits();
+	uint32 currentCash = player->getCashCredits();
 	uint32 currentBank = player->getBankCredits();
 
-	if ((currentBank + currentBank) == ((uint32) Bank + (uint32) bank)) {
-		player->setBankCredits(Bank);
+	if ((currentCash + currentBank) == ((uint32) cash + (uint32) bank)) {
+		player->setCashCredits(cash);
 		player->setBankCredits(bank);
 	}
 
@@ -499,7 +499,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				bluefrog->enhanceCharacter(player);
 
 			} else if (templatePath == "credits") {
-				player->addBankCredits(50000, true);
+				player->addCashCredits(50000, true);
 				player->sendSystemMessage("You have received 50.000 Credits");
 
 			} else if (templatePath == "faction_rebel") {
