@@ -62,6 +62,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 	if (!creature->isInCombat()) {
 		creature->setFactionStatus(FactionStatus::ONLEAVE);
 		creature->switchZone("tatooine", 3372, 10, -5129);
+		info("Teleporting " + creature->getFirstName(), true);
 		}
 	}
 
@@ -113,8 +114,10 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				Locker locker(groupedCreature);
 		        groupedCreature->switchZone("tatooine", 3360, 5, -5099);
 				groupedCreature->setFactionStatus(FactionStatus::OVERT);
+				info("Teleporting " + groupedCreature->getFirstName(), true);
 				locker.release();
 				creature->switchZone("tatooine", 3382, 5, -5074);
+				info("Teleporting " + creature->getFirstName(), true);
 				creature->setFactionStatus(FactionStatus::OVERT);
 				//Broadcast to Server Imperial Team Has Entered Arena
 				String playerName = creature->getFirstName();
@@ -174,9 +177,11 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				Locker locker(groupedCreature);
 				groupedCreature->switchZone("tatooine", 3360, 5, -5099);
 				groupedCreature->setFactionStatus(FactionStatus::OVERT);
+				info("Teleporting " + groupedCreature->getFirstName(), true);
 				locker.release();
 				creature->switchZone("tatooine", 3382, 5, -5074);
 				creature->setFactionStatus(FactionStatus::OVERT);
+				info("Teleporting " + creature->getFirstName(), true);
 				//Broadcast to Server Rebel Team Has Entered Arena
 				String playerName = creature->getFirstName();
 				StringBuffer zBroadcast;
