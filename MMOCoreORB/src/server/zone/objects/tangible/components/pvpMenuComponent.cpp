@@ -59,11 +59,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 	}
 	
 	if (selectedID == 214) {
-		ManagedReference<GroupObject*> group = creature->getGroup();
-		for (int i = 0; i < group->getGroupSize(); i++) {
-		ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
-		groupedCreature->setFactionStatus(FactionStatus::ONLEAVE);
-		groupedCreature->switchZone("tatooine", 3372, 10, -5129);
+	if (!creature->isInCombat()) {
 		creature->setFactionStatus(FactionStatus::ONLEAVE);
 		creature->switchZone("tatooine", 3372, 10, -5129);
 		}
@@ -82,26 +78,52 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 			creature->getPlayerObject()->addSuiBox(box);
 			creature->sendMessage(box->generateMessage());
 			box->setForceCloseDistance(5.f);
+			return 0;
 		}
+		
+		if (group == NULL) {
+				if (creature->getFaction() != 3679112276) {//Not Imperial Return Error Message
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					box->setPromptTitle("Faction Requirment");
+					box->setPromptText("You Must Be Imperial To Use This Option");
+					box->setOkButton(true, "@cancel");
+					box->setUsingObject(creature);
+					creature->getPlayerObject()->addSuiBox(box);
+					creature->sendMessage(box->generateMessage());
+					box->setForceCloseDistance(5.f);
+					return 0;
+					}
+				}
 
 		if (group != NULL) {
+				if (creature->getFaction() != 3679112276) {//Not Imperial Return Error Message
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					box->setPromptTitle("Faction Requirment");
+					box->setPromptText("You Must Be Imperial To Use This Option");
+					box->setOkButton(true, "@cancel");
+					box->setUsingObject(creature);
+					creature->getPlayerObject()->addSuiBox(box);
+					creature->sendMessage(box->generateMessage());
+					box->setForceCloseDistance(5.f);
+					return 0;
+					}
+				}
 				if (creature->getFaction() == 3679112276) {//Imperial
 				for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
-					Locker locker(groupedCreature);
-		        	groupedCreature->switchZone("tatooine", 3433, 5, -5117);
-					groupedCreature->setFactionStatus(FactionStatus::OVERT);
-					locker.release();
-					}
-				}
-				creature->switchZone("tatooine", 4313, 5, -5141);
+				Locker locker(groupedCreature);
+		        groupedCreature->switchZone("tatooine", 3360, 5, -5099);
+				groupedCreature->setFactionStatus(FactionStatus::OVERT);
+				locker.release();
+				creature->switchZone("tatooine", 3382, 5, -5074);
 				creature->setFactionStatus(FactionStatus::OVERT);
 				//Broadcast to Server Imperial Team Has Entered Arena
 				String playerName = creature->getFirstName();
 				StringBuffer zBroadcast;
-				zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Team 1 (Imperials) Have Entered the pvp arena.";
+				zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Team 1 (Imperial) Has Entered The Pvp Arena.";
 				creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				}
 			}
 		}
 	}
@@ -119,26 +141,52 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 		            creature->getPlayerObject()->addSuiBox(box);
 					creature->sendMessage(box->generateMessage());
 					box->setForceCloseDistance(5.f);
+					return 0;
+				}
+				
+		if (group == NULL) {
+				if (creature->getFaction() != 370444368) {//Not Rebel Return Error Message
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					box->setPromptTitle("Faction Requirment");
+					box->setPromptText("You Must Be Rebel To Use This Option");
+					box->setOkButton(true, "@cancel");
+					box->setUsingObject(creature);
+					creature->getPlayerObject()->addSuiBox(box);
+					creature->sendMessage(box->generateMessage());
+					box->setForceCloseDistance(5.f);
+					return 0;
+					}
 				}
 
 		if (group != NULL) {
+				if (creature->getFaction() != 370444368) {//Not Rebel Return Error Message
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+					box->setPromptTitle("Faction Requirment");
+					box->setPromptText("You Must Be Rebel To Use This Option");
+					box->setOkButton(true, "@cancel");
+					box->setUsingObject(creature);
+					creature->getPlayerObject()->addSuiBox(box);
+					creature->sendMessage(box->generateMessage());
+					box->setForceCloseDistance(5.f);
+					return 0;
+					}
+				}
 				if (creature->getFaction() == 370444368) {//Rebel
 				for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
-					Locker locker(groupedCreature);
-					groupedCreature->switchZone("tatooine", 3360, 5, -5099);
-					groupedCreature->setFactionStatus(FactionStatus::OVERT);
-					locker.release();
-					}
-				}
+				Locker locker(groupedCreature);
+				groupedCreature->switchZone("tatooine", 3360, 5, -5099);
+				groupedCreature->setFactionStatus(FactionStatus::OVERT);
+				locker.release();
 				creature->switchZone("tatooine", 3382, 5, -5074);
 				creature->setFactionStatus(FactionStatus::OVERT);
 				//Broadcast to Server Rebel Team Has Entered Arena
 				String playerName = creature->getFirstName();
 				StringBuffer zBroadcast;
-				zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Team 2 (Rebels) Have Entered the pvp arena.";
+				zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Team 2 (Rebel) Has Entered The Pvp Arena.";
 				creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				}
 			}
 		}
 	}
