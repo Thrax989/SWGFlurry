@@ -230,7 +230,7 @@ void SuiManager::handleBankTransfer(CreatureObject* player, SuiBox* suiBox, uint
 	if (args->size() < 2)
 		return;
 
-	int cash = Integer::valueOf(args->get(0).toString());
+	int Bank = Integer::valueOf(args->get(0).toString());
 	int bank = Integer::valueOf(args->get(1).toString());
 
 	SuiBankTransferBox* suiBank = cast<SuiBankTransferBox*>( suiBox);
@@ -243,11 +243,11 @@ void SuiManager::handleBankTransfer(CreatureObject* player, SuiBox* suiBox, uint
 	if (!player->isInRange(bankObject, 5))
 		return;
 
-	uint32 currentCash = player->getBankCredits();
+	uint32 currentBank = player->getBankCredits();
 	uint32 currentBank = player->getBankCredits();
 
-	if ((currentCash + currentBank) == ((uint32) cash + (uint32) bank)) {
-		player->setCashCredits(cash);
+	if ((currentBank + currentBank) == ((uint32) Bank + (uint32) bank)) {
+		player->setBankCredits(Bank);
 		player->setBankCredits(bank);
 	}
 
@@ -499,7 +499,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				bluefrog->enhanceCharacter(player);
 
 			} else if (templatePath == "credits") {
-				player->addCashCredits(50000, true);
+				player->addBankCredits(50000, true);
 				player->sendSystemMessage("You have received 50.000 Credits");
 
 			} else if (templatePath == "faction_rebel") {
@@ -556,7 +556,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 9999999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Master Politician");
-		                box->setPromptText("Master Politician Requires 10,000,000 credits. (Cash)");
+		                box->setPromptText("Master Politician Requires 10,000,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -633,7 +633,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Bela Vistal Shuttleport A");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -655,7 +655,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Bela Vistal Shuttleport B");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -677,7 +677,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Coronet Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -699,7 +699,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Coronet Shuttle A");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -721,7 +721,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Coronet Shuttle B");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -743,7 +743,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Doaba Guerfel Shuttleport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -765,7 +765,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Doaba Guerfel Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -787,7 +787,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Kor Vella Shuttleport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -809,7 +809,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Kor Vella Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -831,7 +831,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Tyrena Shuttle A");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -853,7 +853,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Tyrena Shuttle B");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -875,7 +875,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Tyrena Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -897,7 +897,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Vreni Island Shuttle");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -919,7 +919,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("POI Argilat Swamp Badge");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -941,7 +941,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("POI Bela Vistal Fountain Badge");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -963,7 +963,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("POI Rebel Hideout");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -985,7 +985,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("POI Rogue Corsec Base Badge");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1007,7 +1007,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("POI Tyrena Theater Badge");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1030,7 +1030,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dantooine Agro Outpost Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1052,7 +1052,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dantooine Imperial Outpost Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1074,7 +1074,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dantooine Mining Outpost Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1097,7 +1097,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dathomir Trade Outpost Starport ");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1119,7 +1119,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dathomir Science Outpost Starport ");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1141,7 +1141,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dathomir Village Shuttleport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1164,7 +1164,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Nym's Stronghold Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1187,7 +1187,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Scavenger Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1210,7 +1210,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Yavin IV Imperial Outpost");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1232,7 +1232,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Yavin IV Labor Outpost");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1255,7 +1255,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Tatooine Anchorhead Shuttle");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1277,7 +1277,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Bestine Shuttle");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1299,7 +1299,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Bestine Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1321,7 +1321,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Mos Eisley Shuttleport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1343,7 +1343,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Mos Entha Shuttle A");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1365,7 +1365,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Mos Entha Shuttle B");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1387,7 +1387,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Mos Entha Spaceport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1409,7 +1409,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Mos Espa Shuttle Port East");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1431,7 +1431,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Mos Espa Shuttle Port South");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1453,7 +1453,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Mos Espa Shuttle Port West");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1475,7 +1475,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Mos Espa Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1498,7 +1498,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Talus Dearic Shuttleport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1520,7 +1520,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Talus Dearic Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1542,7 +1542,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Talus Nashal Shuttleport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1564,7 +1564,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Talus Imprial Outpost");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1587,7 +1587,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dee'ja Peak ShuttlePort");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1609,7 +1609,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Kaadara ShuttlePort");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1631,7 +1631,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Kaadara StarPort");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1653,7 +1653,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Keren ShuttlePort");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1675,7 +1675,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Karen ShuttlePort South");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1697,7 +1697,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Keren Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1719,7 +1719,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Moenia StarPort");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1741,7 +1741,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("The Lake Retreat ShuttlePort");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1763,7 +1763,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Theed ShuttlePort A");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1785,7 +1785,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Theed ShuttlePort B");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1807,7 +1807,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Theed ShuttlePort C");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1829,7 +1829,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Theed Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1851,7 +1851,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Player City - Kessel");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1874,7 +1874,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Narmle Shuttleport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1896,7 +1896,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Narmle Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1918,7 +1918,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Rebel Outpost Shuttleport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1940,7 +1940,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Restuss Shuttleport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1962,7 +1962,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Restuss Starport");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -1985,7 +1985,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Endor Smuggler Outpost");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -2007,7 +2007,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Endor Research Outpost");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -2030,7 +2030,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Light Jedi Enclave");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -2053,7 +2053,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Dark Jedi Enclave");
-		                box->setPromptText("Travel Coast 1,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 1,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -2076,7 +2076,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Player City Korrivan");
-		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -2098,7 +2098,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Player City Atlantis");
-		                box->setPromptText("Travel Coast 5,000 credits. (Cash)");
+		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -2122,7 +2122,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 99) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Normal Player Loadout");
-		                box->setPromptText("Costume Coast 100 credits. (Cash)");
+		                box->setPromptText("Costume Coast 100 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -2139,7 +2139,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 99) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Royal Guard");
-		                box->setPromptText("Costume Coast 100 credits. (Cash)");
+		                box->setPromptText("Costume Coast 100 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
