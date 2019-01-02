@@ -68,7 +68,19 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 	if (selectedID == 221) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
-
+		
+		if (creature->getFaction() != 3679112276) {//Not Imperial Return Error Message
+			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+			box->setPromptTitle("Faction Requirment");
+			box->setPromptText("You Must Be Imperial To Use This Option");
+			box->setOkButton(true, "@cancel");
+			box->setUsingObject(creature);
+			creature->getPlayerObject()->addSuiBox(box);
+			creature->sendMessage(box->generateMessage());
+			box->setForceCloseDistance(5.f);
+			return 0;
+		}
+				
 		if (group == NULL) {
 			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 			box->setPromptTitle("PvP Teleport Rules");
@@ -80,20 +92,6 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 			box->setForceCloseDistance(5.f);
 			return 0;
 		}
-		
-		if (group == NULL) {
-				if (creature->getFaction() != 3679112276) {//Not Imperial Return Error Message
-					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					box->setPromptTitle("Faction Requirment");
-					box->setPromptText("You Must Be Imperial To Use This Option");
-					box->setOkButton(true, "@cancel");
-					box->setUsingObject(creature);
-					creature->getPlayerObject()->addSuiBox(box);
-					creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
-					return 0;
-					}
-				}
 
 		if (group != NULL) {
 				if (creature->getFaction() != 3679112276) {//Not Imperial Return Error Message
@@ -131,31 +129,29 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 	if (selectedID == 222) {
 
 		ManagedReference<GroupObject*> group = creature->getGroup();
-
+				
+		if (creature->getFaction() != 370444368) {//Not Rebel Return Error Message
+			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+			box->setPromptTitle("Faction Requirment");
+			box->setPromptText("You Must Be Rebel To Use This Option");
+			box->setOkButton(true, "@cancel");
+			box->setUsingObject(creature);
+			creature->getPlayerObject()->addSuiBox(box);
+			creature->sendMessage(box->generateMessage());
+			box->setForceCloseDistance(5.f);
+			return 0;
+		}
+				
 		if (group == NULL) {
 				ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		            box->setPromptTitle("PvP Teleport Rules");
-					box->setPromptText("1.)You must be in a group of 2 use this option.\n\n2.)Your group Member must be within 15 meeters of this terminal when teleporting or they risk being left behind.");
+					box->setPromptText("1.)You must be in a group of 2 to use this option.\n\n2.)Your group Member must be within 15 meeters of this terminal when teleporting or they risk being left behind.");
 		            box->setOkButton(true, "@cancel");
 		            box->setUsingObject(creature);
 		            creature->getPlayerObject()->addSuiBox(box);
 					creature->sendMessage(box->generateMessage());
 					box->setForceCloseDistance(5.f);
 					return 0;
-				}
-				
-		if (group == NULL) {
-				if (creature->getFaction() != 370444368) {//Not Rebel Return Error Message
-					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					box->setPromptTitle("Faction Requirment");
-					box->setPromptText("You Must Be Rebel To Use This Option");
-					box->setOkButton(true, "@cancel");
-					box->setUsingObject(creature);
-					creature->getPlayerObject()->addSuiBox(box);
-					creature->sendMessage(box->generateMessage());
-					box->setForceCloseDistance(5.f);
-					return 0;
-					}
 				}
 
 		if (group != NULL) {
