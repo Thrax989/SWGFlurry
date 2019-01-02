@@ -41,7 +41,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 			return 0;
 		}
 		if (!creature->isInCombat()) {
-		    ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		    	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 			//Broadcast to Server
  			String playerName = creature->getFirstName();
  			StringBuffer zBroadcast;
@@ -74,11 +74,11 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 					Locker locker(groupedCreature);
-		        		groupedCreature->switchZone("tatooine", 3375, 5, -5076)
+		        		groupedCreature->switchZone("tatooine", 3375, 5, -5076);
 					locker.release();
+					}
 				}
-			}
-			creature->switchZone("tatooine", 3375, 5, -5076);
+				creature->switchZone("tatooine", 3375, 5, -5076);
 			}
 		}
 	}
@@ -88,14 +88,14 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 		ManagedReference<GroupObject*> group = creature->getGroup();
 
 		if (group == NULL) {
-				ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		                box->setPromptTitle("PvP Teleport Rules");
-				box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)Your group Team Member must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
-		                box->setOkButton(true, "@cancel");
-		                box->setUsingObject(creature);
-		                creature->getPlayerObject()->addSuiBox(box);
-				creature->sendMessage(box->generateMessage());
-				box->setForceCloseDistance(5.f);
+			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		        box->setPromptTitle("PvP Teleport Rules");
+			box->setPromptText("1.)You must be in a group of 2 or more to use this option.\n\n2.)Your group Team Member must be within 15 meeters of this termianl when teleporting or they risk being left behind.");
+		        box->setOkButton(true, "@cancel");
+		        box->setUsingObject(creature);
+		        creature->getPlayerObject()->addSuiBox(box);
+			creature->sendMessage(box->generateMessage());
+			box->setForceCloseDistance(5.f);
 				}
 		if (group != NULL) {
 				if (creature->getFaction() == 370444368) {
@@ -103,11 +103,11 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 					Locker locker(groupedCreature);
-					groupedCreature->switchZone("tatooine", 3375, 5, -5076)
+					groupedCreature->switchZone("tatooine", 3375, 5, -5076);
 					locker.release();
+					}
 				}
-			}
-			creature->switchZone("tatooine", 3375, 5, -5076)
+				creature->switchZone("tatooine", 3375, 5, -5076);
 			}
 		}
 	}
