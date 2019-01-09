@@ -21,7 +21,7 @@
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 
-void MenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
+void DiamondMenuComponentMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<BuildingObject*> building = cast<BuildingObject*>(player->getRootParent());
