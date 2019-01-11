@@ -337,8 +337,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	auto client = callback->getClient();
 
-	if (client->getCharacterCount(zoneServer.get()->getGalaxyID()) >= 2) {
-		ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are limited to 2 characters per galaxy.", 0x0);
+	if (client->getCharacterCount(zoneServer.get()->getGalaxyID()) >= 3) {
+		ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are limited to 3 characters per galaxy.", 0x0);
 		client->sendMessage(errMsg);
 
 		return false;
@@ -619,9 +619,9 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
   	promptText << endl;
   	promptText << "\\#00ff001 Account per IP";
    	promptText << endl;
-  	promptText << "2 Characters Max per account";
+  	promptText << "3 Characters Max per account";
    	promptText << endl;
-   	promptText << "1 Character Max Online per account";
+   	promptText << "2 Character Max Online per account";
    	promptText << endl;
    	promptText << endl;
    	promptText << endl;
