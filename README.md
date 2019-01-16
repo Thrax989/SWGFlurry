@@ -67,5 +67,4 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
 For more information, see [![Review SWGemu ](https://img.shields.io/badge/%20Review.SWGemu-Click%20Here-005f71.svg?style=plastic)](https://review.swgemu.com.)
 
 ### Credits ###
-Custom Leader Board Stat Tracking
-we thank swgreckoning server and Developer Aso for this public contribution that we use on flurry
+Custom Leader Board Stat Tracking - Made by Aso
