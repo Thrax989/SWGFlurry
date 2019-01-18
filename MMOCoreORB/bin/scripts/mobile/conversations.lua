@@ -170,7 +170,16 @@ includeFile("conversations/trainer/trainer_conv.lua")
 -- Missions
 includeFile("conversations/mission/deliver_npc.lua")
 includeFile("conversations/mission/informant_npc.lua")
---includeFile("conversations/mission/mission.lua")
+includeFile("conversations/mission_quest/mission.lua")
+includeFile("conversations/mission_quest/missionone.lua")
+--includeFile("conversations/mission_quest/missiontwo.lua")
+--includeFile("conversations/mission_quest/missionthree.lua")
+--includeFile("conversations/mission_quest/missionfour.lua")
+--includeFile("conversations/mission_quest/missionfive.lua")
+--includeFile("conversations/mission_quest/missionsix.lua")
+--includeFile("conversations/mission_quest/missionseven.lua")
+--includeFile("conversations/mission_quest/missioneight.lua")
+
 
 -- Recruiters
 includeFile("conversations/recruiter/rebel_recruiter_conv.lua")

@@ -675,4 +675,6 @@ includeFile("record_keepers/record_keepers.lua")
 includeFile("tests/tests.lua")
 
 --New quest missions (Not Active In Development)
---includeFile("mission/mission.lua")
+includeFile("mission/mission.lua")
+includeFile("mission/missionone.lua")
+
