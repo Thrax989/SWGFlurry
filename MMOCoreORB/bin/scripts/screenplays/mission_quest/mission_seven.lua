@@ -34,7 +34,7 @@ registerScreenPlay("missionsevenScreenplay", true)
 
 function missionsevenScreenplay:start()
 
-  local pNpc = spawnMobile("tatooine", "mission_one",0,-169.45,28,-4712.58,134,0)
+  local pNpc = spawnMobile("tatooine", "mission_seven", 1, -10.8436, 0.0387584, 2.22378, 330, 610000319)
 
   self:setMoodString(pNpc, "neutral")
 
