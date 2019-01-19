@@ -1,5 +1,5 @@
 mission_solo = Creature:new {
-	customName = "Mission solo",
+	customName = "Watto",
 	socialGroup = "",
 	faction = "",
 	level = 100,
@@ -24,7 +24,7 @@ mission_solo = Creature:new {
 	creatureBitmask = NONE,
 	optionsBitmask = INVULNERABLE + CONVERSABLE + INTERESTING,
     	diet = HERBIVORE,
-	templates = {"object/mobile/dressed_criminal_thug_zabrak_male_01.iff"},
+	templates = {"object/mobile/watto.iff"},
 	scale = 1,
     	lootGroups = {},
 	weapons = {},
