@@ -8,11 +8,11 @@ mission_quest_template = ConvoTemplate:new {
 
 mission_start_quest = ConvoScreen:new {
 	id = "start",
-	customDialogText = "In these dark times the Empire is dedicated to hunting the exiled Jedi throughout the galaxy. Nobody remembers since they were the defenders of peace. I'm worried.",
+	customDialogText = "Welcome to my shop, here you can find all sorts of junk for sale, do you like to gamble?",
 	stopConversation = "false",
 	options = {
-		{ "I can help you with something?.", "intro" },
-		{ "Goodbye, I'm not interested in what you say.", "bye" },
+		{ "Sometimes what did you have in mind", "intro" },
+		{ "Goodbye, I'm not interested in what you have to say.", "bye" },
 	}
 }
 mission_quest_template:addScreen(mission_start_quest);
@@ -20,10 +20,10 @@ mission_quest_template:addScreen(mission_start_quest);
 
 mission_intro = ConvoScreen:new {
 	id = "intro",
-	customDialogText = "I fear that the Force will become too unbalanced. I feel that the search for greater power ended with my brother.",
+	customDialogText = "ah good, I have a friend who owes me a gambling debt who has run off and not paid me for weeks can you help?",
 	stopConversation = "false",
 	options = {
-		{ "Who is your brother?.", "intro2" },
+		{ "Sure I can help what do you need me to do?", "intro2" },
 		{ "I'm sorry, I'm on the sidelines of this.", "bye" },
 	}
 }
@@ -33,11 +33,11 @@ mission_quest_template:addScreen(mission_intro);
 
 mission_intro2 = ConvoScreen:new {
 	id = "intro2",
-  customDialogText = "My brother's name was Jacen. We were twins. A dark Sith Lord I have just finished with him. And although I feel thirst for revenge I know I should not intervene ... but we must do something.",
+	customDialogText = "You are going to need a speed, he is pretty far from here , are you sure you are up to this",
 	stopConversation = "false",
 	options = {
-		{ "And what do you want me to do?.", "intro3" },
-		{ "I'm sorry, this surpasses me.", "bye" },
+		{ "yea Im sure how difficult can it be?.", "intro3" },
+		{ "I'm sorry, I am not up to the challange.", "bye" },
 	}
 }
 mission_quest_template:addScreen(mission_intro2);
@@ -46,11 +46,11 @@ mission_quest_template:addScreen(mission_intro2);
 
 mission_intro3 = ConvoScreen:new {
 	id = "intro3",
-  customDialogText = "I can not face that sith. The suffering of losing my brother could betray me. I think you could do it. You could end it and you would not feel remorse.",
+  customDialogText = "You would be suprise, this guy has many tricks up his sleeve make sure you bring a weapon with you",
 	stopConversation = "false",
 	options = {
-		{ "Kill me a sith ?!", "intro4" },
-		{ "I'm leaving, this surpasses me.", "bye" },
+		{ "This sounds dangerous I think I can handle it tho", "intro4" },
+		{ "I'm leaving, I'm not up to the challnge.", "bye" },
 	}
 }
 mission_quest_template:addScreen(mission_intro3);
@@ -58,11 +58,11 @@ mission_quest_template:addScreen(mission_intro3);
 
 mission_intro4 = ConvoScreen:new {
 	id = "intro4",
-customDialogText = "I know it's a very hard task. It may be the hardest of your life but it would be a very heroic action on your part to free the galaxy from such an evil being. He must not continue to grow in strength ...",
+customDialogText = "Very well if you do defeat him and bring back what he owes me I will reward you.",
 	stopConversation = "false",
 	options = {
-		{ "In agreement. Let's go there.", "intro5" },
-		{ "No ... you're wrong person.", "bye" },
+		{ "what type of reward are you offering?", "intro5" },
+		{ "No ... I dont think its worth dieing over.", "bye" },
 	}
 }
 mission_quest_template:addScreen(mission_intro4);
@@ -70,10 +70,10 @@ mission_quest_template:addScreen(mission_intro4);
 
 mission_intro5 = ConvoScreen:new {
   id = "intro5",
-  customDialogText = "Great. Go to Mandalore. The last time they saw him there. He has distanced himself from civilization due to his training.",
+  customDialogText = "Great. go to the other side of tatoooine you will find him roaming around the tusken fort , be very carful of the rouge tuskens there not veryy friendly.",
   stopConversation = "false",
   options = {
-		{ "To the planet Mandalore ?.", "intro6" },
+		{ "To the tusken fort?.", "intro6" },
 		{ "I am sorry I have to go.", "bye" },
 	}
 }
@@ -83,10 +83,10 @@ mission_quest_template:addScreen(mission_intro5);
 
 mission_intro6 = ConvoScreen:new {
   id = "intro6",
-  customDialogText = "Yes, in the Outer Rim territories. Once in Mandalore follow your instinct and you can find your goal. But be careful, do not expect a welcome welcome. It is a very powerful sith.",
+  customDialogText = "Yes, it is very dangerous make sure you bring a friend with you if you think you are not up to the challange  by yourself.",
   stopConversation = "false",
   options = {
-		{ "And why do not you take care of yourself?", "intro7" },
+		{ "And why do not you take care of it yourself?", "intro7" },
 		{ "I do not want to know more. Goodbye.", "bye" },
 	}
 }
@@ -94,22 +94,22 @@ mission_quest_template:addScreen(mission_intro6);
 
 mission_intro7 = ConvoScreen:new {
   id = "intro7",
-  customDialogText = "I know I should do it but something tells me that I'm not ready. Although if you fail, I will have no choice, and I will have to face my destiny. I have to kill my twin brother's killer at any price.",
+  customDialogText = "I know I should do it but something tells me that I'm not ready. Although if you fail, I will have no choice, and I will have to face my destiny.",
   stopConversation = "false",
   options = {
-		{ "All right. And what was the name of that sith?", "intro8" },
-		{ "I think that's your thing. I get out of here.", "bye3" },
+		{ "All right. And what was the name of this guy again so i make sure I find the right person?", "intro8" },
+		{ "I think that's your thing. I'll get out of here while I still can.", "bye3" },
 	}
 }
 mission_quest_template:addScreen(mission_intro7);
 
 mission_intro8 = ConvoScreen:new {
   id = "intro8",
-  customDialogText = "His name is ... Darth Caedus.",
+  customDialogText = "His name is ... the tueksn king",
   stopConversation = "false",
   options = {
 		{ "I'm ready...", "accept_quest" },
-		{ "The infamous Darth Caedus ??!. I have things to do!. Goodbye!.", "bye" },
+		{ "The tusken king??!. I have things to do!. Goodbye!.", "bye" },
 	}
 }
 mission_quest_template:addScreen(mission_intro8);
@@ -140,7 +140,7 @@ mission_quest_template:addScreen(mission_bye3);
 
 mission_quest_accept_quest = ConvoScreen:new {
 	id = "accept_quest",
-	customDialogText = "Good luck. And may the Force guide you.",
+	customDialogText = "Good luck your going to need it.",
 	stopConversation = "true",
 	options = {}
 }
@@ -156,11 +156,11 @@ mission_quest_template:addScreen(mission_quest_quest_status);
 
 mission_quest_not_yet= ConvoScreen:new {
 	id = "not_yet",
-	customDialogText = "Did not you have something to do? Darth Caedus is still alive ... I can still feel him on the planet Mandalore.",
+	customDialogText = "Did not you have something to do? The tusken king is still alive ... I can still feel him on the planet tatooine.",
 	stopConversation = "false",
 	options = {
 		{"Yes. It is true...", "bye2"},
-		{"I've thought better. I do not want to do this.", "quest_reset"},
+		{"I've thought about it, I do not want to do this until I am ready or have friends to help.", "quest_reset"},
 	}
 }
 mission_quest_template:addScreen(mission_quest_not_yet);
@@ -175,7 +175,7 @@ mission_quest_template:addScreen(mission_quest_thank_you);
 
 mission_quest_completed = ConvoScreen:new {
 	id = "completed",
-	customDialogText = "I feel that you managed to defeat Darth Caedus! You came to my brother ...",
+	customDialogText = "I feel that you managed to defeat the tusken king ...",
 	stopConversation = "true",
 	options = {}
 }
