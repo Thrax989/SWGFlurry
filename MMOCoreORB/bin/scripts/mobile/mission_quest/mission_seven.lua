@@ -1,5 +1,5 @@
 mission_seven = Creature:new {
-	customName = "Mission solo",
+	customName = "Mission Seven",
 	socialGroup = "",
 	faction = "",
 	level = 100,
