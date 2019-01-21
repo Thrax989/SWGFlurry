@@ -1,12 +1,12 @@
 local ObjectManager = require("managers.object.object_manager")
 -------------------------------------------------------
---Mission States
+--missionseven States
 -------------------------------------------------------
-missionScreenplay = ScreenPlay:new {
+missionsevenScreenplay = ScreenPlay:new {
 
     numberOfActs = 1,
 
-    questString = "missionquest",
+    questString = "missionsevenquest",
 
     states = {
 
@@ -28,13 +28,13 @@ missionScreenplay = ScreenPlay:new {
 
 }
 -------------------------------------------------------
---Spawn Mission Giver
+--Spawn missionseven Giver
 -------------------------------------------------------
-registerScreenPlay("missionScreenplay", true)
+registerScreenPlay("missionsevenScreenplay", true)
 
-function missionScreenplay:start()
+function missionsevenScreenplay:start()
 
-  local pNpc = spawnMobile("corellia", "mission_solo",0,-169.45,28,-4712.58,134,0)
+  local pNpc = spawnMobile("tatooine", "mission_seven", 1, -10.8436, 0.0387584, 2.22378, 330, 610000319)
 
   self:setMoodString(pNpc, "neutral")
 
@@ -42,9 +42,9 @@ function missionScreenplay:start()
 
 end
 -------------------------------------------------------
---Spawn Mission Target
+--Spawn missionseven Target
 -------------------------------------------------------
-function missionScreenplay:spawnMobiles(pMobile)
+function missionsevenScreenplay:spawnMobiles(pMobile)
 
     if (pMobile == nil) then
 
@@ -52,7 +52,7 @@ function missionScreenplay:spawnMobiles(pMobile)
 
         self:setMoodString(pMobile, "npc_accusing")
 
-	createObserver(OBJECTDESTRUCTION, "missionScreenplay", "enemyKilled", pMobile)
+	createObserver(OBJECTDESTRUCTION, "missionsevenScreenplay", "enemyKilled", pMobile)
 
         return 0
 
@@ -62,27 +62,27 @@ end
 -------------------------------------------------------
 --Set Enemy Dead state
 -------------------------------------------------------
-function missionScreenplay:enemyKilled(pMobile, pPlayer)
+function missionsevenScreenplay:enemyKilled(pMobile, pPlayer)
 
     local player = LuaCreatureObject(pPlayer)
 
     local enemy = LuaCreatureObject(pMobile)
 
-    player:setScreenPlayState(missionScreenplay.states.enemydead, "missionquest")
+    player:setScreenPlayState(missionsevenScreenplay.states.enemydead, "missionsevenquest")
 -------------------------------------------------------
---Conditions Of Whether The Mission Is Accepted Or Not
+--Conditions Of Whether The missionseven Is Accepted Or Not
 -------------------------------------------------------
-    local thisState = player:getScreenPlayState(missionScreenplay.questString)
+    local thisState = player:getScreenPlayState(missionsevenScreenplay.questString)
 
-    if player:hasScreenPlayState(missionScreenplay.states.complete, "missionquest") then
+    if player:hasScreenPlayState(missionsevenScreenplay.states.complete, "missionsevenquest") then
 
-    player:sendSystemMessage("*** You have already completed this mission. Impossible to do it again ***")
+    player:sendSystemMessage("*** You have already completed this missionseven. Impossible to do it again ***")
 
-    elseif player:hasScreenPlayState(missionScreenplay.states.accepted, "missionquest") then
+    elseif player:hasScreenPlayState(missionsevenScreenplay.states.accepted, "missionsevenquest") then
 -------------------------------------------------------
---Mission Target Killed Active Waypoint Removed
+--missionseven Target Killed Active Waypoint Removed
 -------------------------------------------------------
-           player:sendSystemMessage("COMPLETED MISSION: Test.")
+           player:sendSystemMessage("COMPLETED missionseven: Test.")
 	   player:playMusicMessage("sound/ui_npe2_quest_completed.snd")
            player:playEffect("clienteffect/level_granted_chronicles.cef", "")
            local pGhost = CreatureObject(pPlayer):getPlayerObject()
@@ -91,22 +91,22 @@ function missionScreenplay:enemyKilled(pMobile, pPlayer)
            PlayerObject(pGhost):removeWaypoint(oldWaypointID, true)
     else
 -------------------------------------------------------
---Promt To Go Back To Mission Giver
+--Promt To Go Back To missionseven Giver
 -------------------------------------------------------
-       player:sendSystemMessage("You've finished with Darth Caedus! talk with mission Solo.")
+       player:sendSystemMessage("You've finished with Darth Caedus! talk with missionseven Solo.")
 end
     return 0
 end
 ------------------------------------------------------
 --Get Active Player Name
 -------------------------------------------------------
-function missionScreenplay:getActivePlayerName()
+function missionsevenScreenplay:getActivePlayerName()
 
     return self.questdata.activePlayerName
 
 end
 
-function missionScreenplay:setActivePlayerName(playerName)
+function missionsevenScreenplay:setActivePlayerName(playerName)
 -------------------------------------------------------
 --Changing Playername
 -------------------------------------------------------
@@ -116,7 +116,7 @@ end
 -------------------------------------------------------
 --Defender Added Fired
 -------------------------------------------------------
-function missionScreenplay:DefenderAdded(pMobile, pPlayer)
+function missionsevenScreenplay:DefenderAdded(pMobile, pPlayer)
 
     local player = LuaCreatureObject(pPlayer)
 
@@ -126,7 +126,7 @@ end
 -------------------------------------------------------
 --Defender Droped Fired
 -------------------------------------------------------
-function missionScreenplay:DefenderDropped(pMobile, pPlayer)
+function missionsevenScreenplay:DefenderDropped(pMobile, pPlayer)
 
         local player = LuaCreatureObject(pPlayer)
 
@@ -149,23 +149,23 @@ function missionScreenplay:DefenderDropped(pMobile, pPlayer)
 --Enemy Is Dead
 --Check To See If The Defender Was On The Quest And Was In A State Of Enemy Combat
 -------------------------------------------------------
-                local questState = player:getScreenPlayState(missionScreenplay.questString)
+                local questState = player:getScreenPlayState(missionsevenScreenplay.questString)
 
-                if ( player:hasScreenPlayState(missionScreenplay.states.fightingenemy) ) then
+                if ( player:hasScreenPlayState(missionsevenScreenplay.states.fightingenemy) ) then
 -------------------------------------------------------
 --Setting The Quest Status To Enemydead
 -------------------------------------------------------
-                    player:setScreenPlayState(missionScreenplay.states.enemydead, missionScreenplay.questString)
+                    player:setScreenPlayState(missionsevenScreenplay.states.enemydead, missionsevenScreenplay.questString)
 
                 end
 
             else
 
-                if ( player:hasScreenPlayState(missionScreenplay.states.fightingenemy) ) then
+                if ( player:hasScreenPlayState(missionsevenScreenplay.states.fightingenemy) ) then
 -------------------------------------------------------
 --Enemy Isn't Dead.  Remove Fightingenemy Playerstate
 -------------------------------------------------------
-                    player:removeScreenPlayState(missionScreenplay.states.fightingenemy, missionScreenplay.questString)
+                    player:removeScreenPlayState(missionsevenScreenplay.states.fightingenemy, missionsevenScreenplay.questString)
                 end
 
             end
@@ -180,9 +180,9 @@ end
 -------------------------------------------------------
 --Quest Conversation Handlers
 -------------------------------------------------------
-mission_quest_convo_handler = conv_handler:new {}
+missionseven_quest_convo_handler = conv_handler:new {}
 
-function mission_quest_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
+function missionseven_quest_convo_handler:getNextConversationScreen(conversationTemplate, conversingPlayer, selectedOption)
 -------------------------------------------------------
 --GetNextConversation Called NPC
 -------------------------------------------------------
@@ -220,13 +220,13 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 -------------------------------------------------------
             local creature = LuaCreatureObject(conversingPlayer)
 
-            if creature:hasScreenPlayState(missionScreenplay.states.complete, "missionquest") then
+            if creature:hasScreenPlayState(missionsevenScreenplay.states.complete, "missionsevenquest") then
 -------------------------------------------------------
 --Complete
 -------------------------------------------------------
                  nextConversationScreen = conversation:getScreen("completed")
 
-            elseif creature:hasScreenPlayState(missionScreenplay.states.enemydead, "missionquest") then
+            elseif creature:hasScreenPlayState(missionsevenScreenplay.states.enemydead, "missionsevenquest") then
 -------------------------------------------------------
 --Full Inventory To Receive The Reward
 -------------------------------------------------------
@@ -246,9 +246,9 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 
                 else              
 -------------------------------------------------------
---End The Mission And Reward
+--End The missionseven And Reward
 -------------------------------------------------------
-                creature:setScreenPlayState(missionScreenplay.states.complete, "missionquest") --- NEWLY COMPLETED
+                creature:setScreenPlayState(missionsevenScreenplay.states.complete, "missionsevenquest") --- NEWLY COMPLETED
 
                 creature:playMusicMessage("sound/ui_npe2_quest_credits.snd")
 
@@ -256,7 +256,7 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 -------------------------------------------------------
 --Reward Message
 -------------------------------------------------------
-                creature:sendSystemMessage("FINALIZED mission: Family revenge You have received 25,000 credits and a special tunic of Luminous Jedi.")
+                creature:sendSystemMessage("FINALIZED missionseven: Family revenge You have received 25,000 credits and a special tunic of Luminous Jedi.")
 -------------------------------------------------------
 --Reward Credits
 -------------------------------------------------------
@@ -269,15 +269,15 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 -------------------------------------------------------
 --Not yet
 -------------------------------------------------------
-            elseif creature:hasScreenPlayState(missionScreenplay.states.fightingenemy, "missionquest") then
+            elseif creature:hasScreenPlayState(missionsevenScreenplay.states.fightingenemy, "missionsevenquest") then
 -------------------------------------------------------
 --Fighting Enemy State
 -------------------------------------------------------
                 nextConversationScreen = conversation:getScreen("not_yet")
 
-            elseif creature:hasScreenPlayState(missionScreenplay.states.accepted, "missionquest") then
+            elseif creature:hasScreenPlayState(missionsevenScreenplay.states.accepted, "missionsevenquest") then
 -------------------------------------------------------
---why are you coming back? You have a mission pending
+--why are you coming back? You have a missionseven pending
 -------------------------------------------------------
                 nextConversationScreen = conversation:getScreen("not_yet")
 
@@ -309,7 +309,7 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 
 end
 
-function mission_quest_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
+function missionseven_quest_convo_handler:runScreenHandlers(conversationTemplate, conversingPlayer, conversingNPC, selectedOption, conversationScreen)
 local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 
     local screen = LuaConversationScreen(conversationScreen)
@@ -322,7 +322,7 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 --Completed The Quest
 --Settings State For Quest
 -------------------------------------------------------
-        player:setScreenPlayState( missionScreenplay.states.complete , missionScreenplay.questString)
+        player:setScreenPlayState( missionsevenScreenplay.states.complete , missionsevenScreenplay.questString)
 -------------------------------------------------------
     elseif (screenID == "accept_quest") then
     
@@ -337,8 +337,8 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 --Accepting The Quest
 --Settings State For Quest
 -------------------------------------------------------
-      player:setScreenPlayState( missionScreenplay.states.accepted , missionScreenplay.questString)
-      player:sendSystemMessage("ACCEPTED mission: Family Revenge")
+      player:setScreenPlayState( missionsevenScreenplay.states.accepted , missionsevenScreenplay.questString)
+      player:sendSystemMessage("ACCEPTED missionseven: Family Revenge")
       player:playMusicMessage("sound/ui_npe2_quest_received.snd")
       player:playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
     	elseif (screenID == "quest_status") then
@@ -347,15 +347,15 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 
         local clonedConversation = LuaConversationScreen(conversationScreen)
 
-        local thisState = player:getScreenPlayState(missionScreenplay.questString)
+        local thisState = player:getScreenPlayState(missionsevenScreenplay.questString)
 
         if ( thisState ~= 0 ) then
 
-            clonedConversation:setCustomDialogText("You are in the ".. thisState .." part of this mission")
+            clonedConversation:setCustomDialogText("You are in the ".. thisState .." part of this missionseven")
 
         else
 
-            clonedConversation:setCustomDialogText("You have not yet registered information on this mission")
+            clonedConversation:setCustomDialogText("You have not yet registered information on this missionseven")
 
         end
 
@@ -367,7 +367,7 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 
         local clonedConversation = LuaConversationScreen(conversationScreen)
 
-        local thisState = player:getScreenPlayState(missionScreenplay.questString)
+        local thisState = player:getScreenPlayState(missionsevenScreenplay.questString)
 
         if ( thisState ~= 0 ) then
 
@@ -375,28 +375,28 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 -------------------------------------------------------
 --All Quest Data Removed From Player
 -------------------------------------------------------
-        player:removeScreenPlayState(missionScreenplay.states.accepted,     missionScreenplay.questString)
+        player:removeScreenPlayState(missionsevenScreenplay.states.accepted,     missionsevenScreenplay.questString)
 
-        player:removeScreenPlayState(missionScreenplay.states.fightingenemy, missionScreenplay.questString)
+        player:removeScreenPlayState(missionsevenScreenplay.states.fightingenemy, missionsevenScreenplay.questString)
 
-        player:removeScreenPlayState(missionScreenplay.states.enemydead,     missionScreenplay.questString)
+        player:removeScreenPlayState(missionsevenScreenplay.states.enemydead,     missionsevenScreenplay.questString)
 
-        player:removeScreenPlayState(missionScreenplay.states.complete,     missionScreenplay.questString)
+        player:removeScreenPlayState(missionsevenScreenplay.states.complete,     missionsevenScreenplay.questString)
 
-        player:removeScreenPlayState(missionScreenplay.questString)
+        player:removeScreenPlayState(missionsevenScreenplay.questString)
 -------------------------------------------------------
---Play Music failed mission reset
+--Play Music failed missionseven reset
 -------------------------------------------------------
         player:playMusicMessage("sound/music_player_v_player_death.snd")
 -------------------------------------------------------
 --Remove Active Waypoint If There s One
 -------------------------------------------------------
-        player:sendSystemMessage("FAILED mission: Family revenge")
+        player:sendSystemMessage("FAILED missionseven: Family revenge")
         local oldWaypointID = tonumber(getQuestStatus(playerID .. ":caedusWaypointID"))
         PlayerObject(pGhost):removeWaypoint(oldWaypointID, true)
         else
 
-        clonedConversation:setCustomDialogText("You have not started or finished this mission")
+        clonedConversation:setCustomDialogText("You have not started or finished this missionseven")
 
         end
 ---------------------------------------------------------
@@ -424,7 +424,7 @@ end
 -------------------------------------------------------
 --Reset Quest remove all quest data
 -------------------------------------------------------
-  function mission_quest_convo_handler:addQuestOptions(convoScreen)
+  function missionseven_quest_convo_handler:addQuestOptions(convoScreen)
 
         convoScreen:addOption("STATUS", "quest_status")
 

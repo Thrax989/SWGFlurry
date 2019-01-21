@@ -116,7 +116,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Korrivan Player City (5,000 Credits)", "pc_korrivan_travel",
 			"Atlantis Player City (5,000 Credits)", "pc_atlantis_travel",
-
+			"Beast Player City (5,000 Credits)", "pc_beast_travel",
 		   },
 	}
 }

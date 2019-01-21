@@ -1,5 +1,5 @@
-mission_solo = Creature:new {
-	customName = "Mission solo",
+mission_seven = Creature:new {
+	customName = "Mission Seven",
 	socialGroup = "",
 	faction = "",
 	level = 100,
@@ -28,9 +28,9 @@ mission_solo = Creature:new {
 	scale = 1,
     	lootGroups = {},
 	weapons = {},
-    	conversationTemplate = "mission_quest_template",
+    	conversationTemplate = "missionseven_quest_template",
     	attacks = merge(brawlernovice,marksmannovice)
 
 }
 
-CreatureTemplates:addCreatureTemplate(mission_solo, "mission_solo")
+CreatureTemplates:addCreatureTemplate(mission_seven, "mission_seven")
