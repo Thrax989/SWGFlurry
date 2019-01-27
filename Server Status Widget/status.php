@@ -26,7 +26,7 @@ function getStatus($ipAdd,$server){
 					$seconds = $seconds % 60;
 					$minutes = $minutes % 60;
 					$hours = $hours % 24;
-					echo '<div id="'.$server.'"><p><b>SWGFlurry - '.$server.'</b><br><a style ="color:green;">Server is Online</a><br>' . $data->users->connected . '/' . $data->users->cap . ' Currently online.<br>' . $data->users->
+					echo '<div id="'.$server.'"><p><b>YOUR SERVER NAME GOES HERE - '.$server.'</b><br><a style ="color:green;">Server is Online</a><br>' . $data->users->connected . '/' . $data->users->cap . ' Currently online.<br>' . $data->users->
 					deleted . ' characters have been deleted.<br>' . $data->users->total . ' Logins since last restart.<br>Highest Population: ' . $data->users->max . '<br>Uptime: ' .$days.'d:'.$hours.'h:'.$minutes.'m:'.$seconds .
 					's</p></div>';
 				}
