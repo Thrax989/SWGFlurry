@@ -43,8 +43,7 @@
 			</thead>
 			<tbody>
 EOT;
-			$mysqli = new mysqli("167.114.102.173", "swgemu", "123456", "swgemu"); //CHANGE ME
-			//$mysqli = new mysqli("", "swgemu", "", "swgemu");
+			$mysqli = new mysqli("", "", "", ""); //CHANGE ME
 			$result = $mysqli->query("SELECT  * FROM characters WHERE firstname LIKE '%" . $name .  "%' OR surname LIKE '%" . $name ."%'");
 
 			while(($row = $result->fetch_assoc())) {
@@ -95,8 +94,7 @@ EOT;
   }
 ?>
 <?php
-$mysqli = new mysqli("", "swgemu", "", "swgemu"); //CHANGE ME
-//$mysqli = new mysqli("", "swgemu", "", "swgemu");
+$mysqli = new mysqli("", "", "", ""); //CHANGE ME
 $pveresult = $mysqli->query("SELECT * FROM characters ORDER BY pvekills * 1 DESC LIMIT 10");
 $pvpresult = $mysqli->query("SELECT * FROM characters ORDER BY pvpkills * 1 DESC LIMIT 10");
 $missionresult = $mysqli->query("SELECT * FROM characters ORDER BY missionscompleted * 1 DESC LIMIT 10");
@@ -144,12 +142,8 @@ EOT;
 	$firstname = str_replace("'","",$row['firstname']);
 	$surname = str_replace("'","",$row['surname']);
 	$fac = str_replace("'","",$fac);
-	//$pvpkills = str_replace("'","",$row['pvpkills']);
-	//$pvpdeaths = str_replace("'","",$row['pvpdeaths']);
-	//$bounty = str_replace("'","",$row['bountykills']);
 	$pvekills = str_replace("'","",$row['pvekills']);
 	$pvedeaths = str_replace("'","",$row['pvedeaths']);
-	//$missions = str_replace("'","",$row['missionscompleted']);
 //-display the result of the array
 	printf("<tr>
 	<td>%s</td>
@@ -200,10 +194,6 @@ EOT;
 	$fac = str_replace("'","",$fac);
 	$pvpkills = str_replace("'","",$row['pvpkills']);
 	$pvpdeaths = str_replace("'","",$row['pvpdeaths']);
-	//$bounty = str_replace("'","",$row['bountykills']);
-	//$pvekills = str_replace("'","",$row['pvekills']);
-	//$pvedeaths = str_replace("'","",$row['pvedeaths']);
-	//$missions = str_replace("'","",$row['missionscompleted']);
 //-display the result of the array
 	printf("<tr>
 	<td>%s</td>
@@ -251,11 +241,6 @@ EOT;
 	$firstname = str_replace("'","",$row['firstname']);
 	$surname = str_replace("'","",$row['surname']);
 	$fac = str_replace("'","",$fac);
-	//$pvpkills = str_replace("'","",$row['pvpkills']);
-	//$pvpdeaths = str_replace("'","",$row['pvpdeaths']);
-	//$bounty = str_replace("'","",$row['bountykills']);
-	//$pvekills = str_replace("'","",$row['pvekills']);
-	//$pvedeaths = str_replace("'","",$row['pvedeaths']);
 	$missions = str_replace("'","",$row['missionscompleted']);
 //-display the result of the array
 	printf("<tr>
@@ -302,12 +287,7 @@ EOT;
 	$firstname = str_replace("'","",$row['firstname']);
 	$surname = str_replace("'","",$row['surname']);
 	$fac = str_replace("'","",$fac);
-	//$pvpkills = str_replace("'","",$row['pvpkills']);
-	//$pvpdeaths = str_replace("'","",$row['pvpdeaths']);
 	$bounty = str_replace("'","",$row['bountykills']);
-	//$pvekills = str_replace("'","",$row['pvekills']);
-	//$pvedeaths = str_replace("'","",$row['pvedeaths']);
-	//$missions = str_replace("'","",$row['missionscompleted']);
 //-display the result of the array
 	printf("<tr>
 	<td>%s</td>

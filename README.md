@@ -1,10 +1,10 @@
 ## Flurry Server Index  ##
-  * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/XHmEz9F) [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/thrax989/swgflurry.svg)](https://github.com/Thrax989/SWGFlurry/graphs/contributors) [![GitHub last commit](https://img.shields.io/github/last-commit/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/commits/master) [![Release](https://img.shields.io/github/release/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/releases/latest) [![Downloads](https://img.shields.io/github/downloads/Thrax989/SWGFlurry/total.svg)](https://github.com/Thrax989/SWGFlurry/releases/latest) [![License](https://img.shields.io/github/license/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/blob/master/COPYING)
-  * Server RoadMap https://trello.com/b/fawSAKWE/swg-flurry-classic-server
-  * Server Client https://www.mediafire.com/file/v0u0wcr4k21ihcd/Flurry.7z
-  * Server Tre's www.swgflurry.com/TRE/
-  * Website www.swgflurry.com
-  * Forums http://www.swgflurry.com/forum/
+  * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/XHmEz9F) [![GitHub last commit](https://img.shields.io/github/last-commit/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/commits/master) [![License](https://img.shields.io/github/license/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/blob/master/COPYING)
+  * [![Server RoadMap ](https://img.shields.io/badge/Server%20Roadmap-Click%20Here-005f71.svg?style=plastic)](https://trello.com/b/fawSAKWE/swg-flurry-classic-server)
+  * [![Server Client ](https://img.shields.io/badge/Server%20Client-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com/Launcher/SWGFlurry_Launcher_0.0.3.7.exe) 
+  * [![Server Tre's ](https://img.shields.io/badge/Server%20Tre's-Click%20Here-005f71.svg?style=plastic)](https://mega.nz/#F!fw0EzZ4I!RfRwyqE859Ad3kGlQv7T4Q) 
+  * [![Website ](https://img.shields.io/badge/Server%20Website-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com) 
+  * [![Forums ](https://img.shields.io/badge/Server%20Forum's-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com/forum/) 
 
 ## What is SWGEmu? ##
 
@@ -26,9 +26,8 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
   * engine3
   * java jre 1.7+
 
-### Ubuntu 16.04+ ###
-  * Advanced Bare Metal Ubuntu Server Guide  https://github.com/Thrax989/SWGFlurry/blob/master/Ubuntu-Guide.md
-
+## Ubuntu 16.04+ ##
+  * [![Ubuntu Guide ](https://img.shields.io/badge/Ubuntu%20Guide-Click%20Here-005f71.svg?style=plastic)](https://github.com/Thrax989/SWGFlurry/blob/master/Ubuntu-Guide.md) 
   * Install dependencies
 
         sudo apt install build-essential libmysqlclient-dev liblua5.3-dev libdb5.3-dev libssl-dev cmake git default-jre libssl-dev
@@ -65,4 +64,9 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
 
     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-For more information, see https://review.swgemu.com.
+For more information, see [![Review SWGemu ](https://img.shields.io/badge/%20Review.SWGemu-Click%20Here-005f71.svg?style=plastic)](https://review.swgemu.com.)
+
+### Credits ###
+* Custom Leader Board Stat Tracking - RK Aso
+* Custom Mobile Template Viwer - SR Tyclo
+* Custom Recalculate Command - Infinity 
