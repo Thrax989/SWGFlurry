@@ -31,10 +31,10 @@ function getStatus($ipAdd,$server){
 					's</p></div>';
 				}
 			}else{
-					echo '<div><p>SWGFlurry - '.$server.'</p><p style="color:red;">Server is Down</p></div>';
+					echo '<div><p>YOUR SERVER NAME GOES HERE - '.$server.'</p><p style="color:red;">Server is Down</p></div>';
 			}
 		}catch(Exception $e) {
-			echo '<div><p>SWGFlurry - '.$server.'</p><p style="color:red;">Unknown expection caught '.$e.'</p></div>';
+			echo '<div><p>YOUR SERVER NAME GOES HERE - '.$server.'</p><p style="color:red;">Unknown expection caught '.$e.'</p></div>';
 		}
 	}
 getStatus("YOUR_SERVER_IP_GOES_HERE","Live");
