@@ -10,11 +10,11 @@ function getStatus($ipAdd,$server){
 		if($result != null){
 				$tmp = $out = '';
 			
-			while ($out = socket_read($socket, 2048)) {
+				while ($out = socket_read($socket, 2048)) {
 				$tmp .= $out;
-			}
-			socket_close($socket);
-			libxml_use_internal_errors(true);
+				}
+				socket_close($socket);
+				libxml_use_internal_errors(true);
 				$data = simplexml_load_string($tmp);
 				if (!$data) {
 					echo '<div><p>YOUR SERVER NAME GOES HERE - '.$server.'</p><p style="color:red;">Server is Down</p></div>';
