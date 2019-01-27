@@ -2959,6 +2959,50 @@
 	}
 ,
 	{
+"name": "Echriism",
+"type": "iron_bronzium",
+"classes": {
+"Inorganic": "inorganic"
+,
+"Mineral": "mineral"
+,
+"Metal": "metal"
+,
+"Ferrous Metal": "metal_ferrous"
+,
+"Iron": "iron"
+,
+"Bronzium Iron": "iron_bronzium"
+		},
+"attributes": {
+"res_cold_resist": "376"
+,
+"res_conductivity": "267"
+,
+"res_decay_resist": "614"
+,
+"res_heat_resist": "695"
+,
+"res_malleability": "261"
+,
+"res_quality": "636"
+,
+"res_shock_resistance": "677"
+,
+"res_toughness": "691"
+		},
+"deSpawnTime" : "1549138078",
+"planet" : [
+"dantooine"
+,
+"dathomir"
+,
+"yavin4"
+],
+"zoneRestriction": ""
+	}
+,
+	{
 "name": "Eehnae",
 "type": "meat_herbivore_endor",
 "classes": {
@@ -3685,40 +3729,6 @@
 	}
 ,
 	{
-"name": "Fegadha",
-"type": "oats_wild_rori",
-"classes": {
-"Organic": "organic"
-,
-"Flora Resources": "flora_resources"
-,
-"Flora Food": "flora_food"
-,
-"Cereal": "cereal"
-,
-"Oats": "oats"
-,
-"Wild Oats": "oats_wild"
-,
-"Rori Wild Oats": "oats_wild_rori"
-		},
-"attributes": {
-"res_decay_resist": "29"
-,
-"res_flavor": "713"
-,
-"res_potential_energy": "423"
-,
-"res_quality": "234"
-		},
-"deSpawnTime" : "1548589471",
-"planet" : [
-"rori"
-],
-"zoneRestriction": "rori"
-	}
-,
-	{
 "name": "Feipra",
 "type": "water_vapor_dantooine",
 "classes": {
@@ -3894,40 +3904,6 @@
 "dathomir"
 ],
 "zoneRestriction": ""
-	}
-,
-	{
-"name": "Fifeiako",
-"type": "hide_leathery_naboo",
-"classes": {
-"Organic": "organic"
-,
-"Creature Resources": "creature_resources"
-,
-"Creature Structural": "creature_structural"
-,
-"Hide": "hide"
-,
-"Leathery Hide": "hide_leathery"
-,
-"Nabooian Leathery Hide": "hide_leathery_naboo"
-		},
-"attributes": {
-"res_decay_resist": "437"
-,
-"res_malleability": "855"
-,
-"res_quality": "729"
-,
-"res_shock_resistance": "424"
-,
-"res_toughness": "60"
-		},
-"deSpawnTime" : "1548580869",
-"planet" : [
-"naboo"
-],
-"zoneRestriction": "naboo"
 	}
 ,
 	{
@@ -4232,6 +4208,40 @@
 "rori"
 ],
 "zoneRestriction": "rori"
+	}
+,
+	{
+"name": "Fople",
+"type": "hide_leathery_naboo",
+"classes": {
+"Organic": "organic"
+,
+"Creature Resources": "creature_resources"
+,
+"Creature Structural": "creature_structural"
+,
+"Hide": "hide"
+,
+"Leathery Hide": "hide_leathery"
+,
+"Nabooian Leathery Hide": "hide_leathery_naboo"
+		},
+"attributes": {
+"res_decay_resist": "480"
+,
+"res_malleability": "667"
+,
+"res_quality": "107"
+,
+"res_shock_resistance": "88"
+,
+"res_toughness": "416"
+		},
+"deSpawnTime" : "1549734681",
+"planet" : [
+"naboo"
+],
+"zoneRestriction": "naboo"
 	}
 ,
 	{
@@ -4989,6 +4999,38 @@
 	}
 ,
 	{
+"name": "Gloveiki",
+"type": "meat_carnivore_dathomir",
+"classes": {
+"Organic": "organic"
+,
+"Creature Resources": "creature_resources"
+,
+"Creature Food": "creature_food"
+,
+"Meat": "meat"
+,
+"Carnivore Meat": "meat_carnivore"
+,
+"Dathomirian Carnivore Meat": "meat_carnivore_dathomir"
+		},
+"attributes": {
+"res_decay_resist": "418"
+,
+"res_flavor": "869"
+,
+"res_potential_energy": "546"
+,
+"res_quality": "255"
+		},
+"deSpawnTime" : "1549265656",
+"planet" : [
+"dathomir"
+],
+"zoneRestriction": "dathomir"
+	}
+,
+	{
 "name": "Gnoisa",
 "type": "hide_bristley_yavin4",
 "classes": {
@@ -5054,6 +5096,40 @@
 "naboo"
 ],
 "zoneRestriction": "naboo"
+	}
+,
+	{
+"name": "Gogahe",
+"type": "oats_wild_rori",
+"classes": {
+"Organic": "organic"
+,
+"Flora Resources": "flora_resources"
+,
+"Flora Food": "flora_food"
+,
+"Cereal": "cereal"
+,
+"Oats": "oats"
+,
+"Wild Oats": "oats_wild"
+,
+"Rori Wild Oats": "oats_wild_rori"
+		},
+"attributes": {
+"res_decay_resist": "55"
+,
+"res_flavor": "552"
+,
+"res_potential_energy": "410"
+,
+"res_quality": "653"
+		},
+"deSpawnTime" : "1549895189",
+"planet" : [
+"rori"
+],
+"zoneRestriction": "rori"
 	}
 ,
 	{
@@ -7858,6 +7934,58 @@
 "talus"
 ,
 "tatooine"
+,
+"yavin4"
+],
+"zoneRestriction": ""
+	}
+,
+	{
+"name": "Lefoide",
+"type": "armophous_sedrellium",
+"classes": {
+"Inorganic": "inorganic"
+,
+"Mineral": "mineral"
+,
+"Gemstone": "gemstone"
+,
+"Amorphous Gemstone": "gemstone_armophous"
+,
+"Sedrellium Amorphous Gemstone": "armophous_sedrellium"
+		},
+"attributes": {
+"entangle_resistance": "498"
+,
+"res_cold_resist": "603"
+,
+"res_decay_resist": "698"
+,
+"res_heat_resist": "886"
+,
+"res_malleability": "350"
+,
+"res_quality": "459"
+,
+"res_shock_resistance": "700"
+,
+"res_toughness": "703"
+		},
+"deSpawnTime" : "1549159579",
+"planet" : [
+"corellia"
+,
+"dantooine"
+,
+"dathomir"
+,
+"endor"
+,
+"lok"
+,
+"naboo"
+,
+"rori"
 ,
 "yavin4"
 ],
@@ -10848,46 +10976,6 @@
 "tatooine"
 ],
 "zoneRestriction": "tatooine"
-	}
-,
-	{
-"name": "Pevofe",
-"type": "iron_doonium",
-"classes": {
-"Inorganic": "inorganic"
-,
-"Mineral": "mineral"
-,
-"Metal": "metal"
-,
-"Ferrous Metal": "metal_ferrous"
-,
-"Iron": "iron"
-,
-"Doonium Iron": "iron_doonium"
-		},
-"attributes": {
-"res_cold_resist": "617"
-,
-"res_conductivity": "390"
-,
-"res_decay_resist": "922"
-,
-"res_heat_resist": "913"
-,
-"res_malleability": "432"
-,
-"res_quality": "646"
-,
-"res_shock_resistance": "885"
-,
-"res_toughness": "857"
-		},
-"deSpawnTime" : "1548588953",
-"planet" : [
-"rori"
-],
-"zoneRestriction": ""
 	}
 ,
 	{
@@ -14848,38 +14936,6 @@
 "tatooine"
 ],
 "zoneRestriction": "tatooine"
-	}
-,
-	{
-"name": "Vato",
-"type": "meat_carnivore_dathomir",
-"classes": {
-"Organic": "organic"
-,
-"Creature Resources": "creature_resources"
-,
-"Creature Food": "creature_food"
-,
-"Meat": "meat"
-,
-"Carnivore Meat": "meat_carnivore"
-,
-"Dathomirian Carnivore Meat": "meat_carnivore_dathomir"
-		},
-"attributes": {
-"res_decay_resist": "841"
-,
-"res_flavor": "844"
-,
-"res_potential_energy": "484"
-,
-"res_quality": "402"
-		},
-"deSpawnTime" : "1548579154",
-"planet" : [
-"dathomir"
-],
-"zoneRestriction": "dathomir"
 	}
 ,
 	{
