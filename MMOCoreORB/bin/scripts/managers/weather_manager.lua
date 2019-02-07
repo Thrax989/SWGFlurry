@@ -227,3 +227,171 @@ yavin4 = {
 
 	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
 }
+
+-----------------
+--    Taanab
+-----------------
+taanab = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 80, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Hoth
+-----------------
+hoth = {
+
+	defaultWeather = 5, -- Random
+
+	averageWeatherDuration = 2400, -- In seconds
+
+	weatherStability = 60, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+	hasDamagingSandstorms = 1,
+
+	sandstormDamage = 40, -- 30 = Annoying, 50 = deadly
+}
+
+-----------------
+--    Kashyyyk
+-----------------
+kashyyyk = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 80, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Mustafar
+-----------------
+mustafar = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Coruscant
+-----------------
+coruscant = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Geonosis
+-----------------
+geonosis = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+	hasDamagingSandstorms = 1,
+
+	sandstormDamage = 50, -- 30 = Annoying, 50 = deadly
+}
+
+-----------------
+--    Ghomrassen
+-----------------
+ghomrassen = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+	hasDamagingSandstorms = 1,
+
+	sandstormDamage = 50, -- 30 = Annoying, 50 = deadly
+}
+
+-----------------
+--    moraband
+-----------------
+moraband = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    hutta
+-----------------
+hutta = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    chandrila
+-----------------
+chandrila = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    jakku
+-----------------
+jakku = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Kaas
+-----------------
+kaas = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    mandalore
+-----------------
+mandalore = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}

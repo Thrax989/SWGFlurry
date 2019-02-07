@@ -844,6 +844,26 @@ coruscant = {
 	}
 }
 
+geonosis = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+	planetTravelPoints = {
+			{name = "Geonosis City", x = 0, z = 5, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+	}
+}
+
 ghomrassen = {
 	weatherEnabled = 1,
 	gcwEnabled = 0,
