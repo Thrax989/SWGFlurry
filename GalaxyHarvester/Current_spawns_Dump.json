@@ -167,6 +167,32 @@
 	}
 ,
 	{
+"name": "Afesmi",
+"type": "energy_renewable_unlimited_wind_endor",
+"classes": {
+"Energy": "energy"
+,
+"Renewable energy": "energy_renewable"
+,
+"Non Site-Restricted Renewable Energy": "energy_renewable_unlimited"
+,
+"Wind Energy": "energy_renewable_unlimited_wind"
+,
+"Endorian Wind Renewable Energy": "energy_renewable_unlimited_wind_endor"
+		},
+"attributes": {
+"res_potential_energy": "348"
+,
+"res_quality": "500"
+		},
+"deSpawnTime" : "1550361245",
+"planet" : [
+"endor"
+],
+"zoneRestriction": "endor"
+	}
+,
+	{
 "name": "Agli",
 "type": "milk_domesticated_rori",
 "classes": {
@@ -1029,32 +1055,6 @@
 	}
 ,
 	{
-"name": "Beta",
-"type": "energy_renewable_unlimited_wind_dantooine",
-"classes": {
-"Energy": "energy"
-,
-"Renewable energy": "energy_renewable"
-,
-"Non Site-Restricted Renewable Energy": "energy_renewable_unlimited"
-,
-"Wind Energy": "energy_renewable_unlimited_wind"
-,
-"Dantooine Wind Renewable Energy": "energy_renewable_unlimited_wind_dantooine"
-		},
-"attributes": {
-"res_potential_energy": "341"
-,
-"res_quality": "500"
-		},
-"deSpawnTime" : "1549665110",
-"planet" : [
-"dantooine"
-],
-"zoneRestriction": "dantooine"
-	}
-,
-	{
 "name": "Bevo",
 "type": "meat_carnivore_endor",
 "classes": {
@@ -1278,6 +1278,48 @@
 "corellia"
 ],
 "zoneRestriction": "corellia"
+	}
+,
+	{
+"name": "Bobeic",
+"type": "iron_kammris",
+"classes": {
+"Inorganic": "inorganic"
+,
+"Mineral": "mineral"
+,
+"Metal": "metal"
+,
+"Ferrous Metal": "metal_ferrous"
+,
+"Iron": "iron"
+,
+"Kammris Iron": "iron_kammris"
+		},
+"attributes": {
+"res_cold_resist": "671"
+,
+"res_conductivity": "458"
+,
+"res_decay_resist": "893"
+,
+"res_heat_resist": "932"
+,
+"res_malleability": "573"
+,
+"res_quality": "164"
+,
+"res_shock_resistance": "993"
+,
+"res_toughness": "934"
+		},
+"deSpawnTime" : "1550310518",
+"planet" : [
+"dathomir"
+,
+"rori"
+],
+"zoneRestriction": ""
 	}
 ,
 	{
@@ -2018,32 +2060,6 @@
 "dantooine"
 ],
 "zoneRestriction": "dantooine"
-	}
-,
-	{
-"name": "Cove",
-"type": "energy_renewable_unlimited_wind_endor",
-"classes": {
-"Energy": "energy"
-,
-"Renewable energy": "energy_renewable"
-,
-"Non Site-Restricted Renewable Energy": "energy_renewable_unlimited"
-,
-"Wind Energy": "energy_renewable_unlimited_wind"
-,
-"Endorian Wind Renewable Energy": "energy_renewable_unlimited_wind_endor"
-		},
-"attributes": {
-"res_potential_energy": "384"
-,
-"res_quality": "500"
-		},
-"deSpawnTime" : "1549657830",
-"planet" : [
-"endor"
-],
-"zoneRestriction": "endor"
 	}
 ,
 	{
@@ -3471,6 +3487,32 @@
 	}
 ,
 	{
+"name": "Enei",
+"type": "energy_renewable_unlimited_wind_dantooine",
+"classes": {
+"Energy": "energy"
+,
+"Renewable energy": "energy_renewable"
+,
+"Non Site-Restricted Renewable Energy": "energy_renewable_unlimited"
+,
+"Wind Energy": "energy_renewable_unlimited_wind"
+,
+"Dantooine Wind Renewable Energy": "energy_renewable_unlimited_wind_dantooine"
+		},
+"attributes": {
+"res_potential_energy": "112"
+,
+"res_quality": "500"
+		},
+"deSpawnTime" : "1550279598",
+"planet" : [
+"dantooine"
+],
+"zoneRestriction": "dantooine"
+	}
+,
+	{
 "name": "Enime",
 "type": "milk_domesticated_dathomir",
 "classes": {
@@ -4673,40 +4715,6 @@
 	}
 ,
 	{
-"name": "Game",
-"type": "hide_scaley_yavin4",
-"classes": {
-"Organic": "organic"
-,
-"Creature Resources": "creature_resources"
-,
-"Creature Structural": "creature_structural"
-,
-"Hide": "hide"
-,
-"Scaley Hide": "hide_scaley"
-,
-"Yavinian Scaley Hide": "hide_scaley_yavin4"
-		},
-"attributes": {
-"res_decay_resist": "799"
-,
-"res_malleability": "590"
-,
-"res_quality": "733"
-,
-"res_shock_resistance": "104"
-,
-"res_toughness": "573"
-		},
-"deSpawnTime" : "1549634596",
-"planet" : [
-"yavin4"
-],
-"zoneRestriction": "yavin4"
-	}
-,
-	{
 "name": "Gapine",
 "type": "corn_wild_rori",
 "classes": {
@@ -4812,6 +4820,40 @@
 "yavin4"
 ],
 "zoneRestriction": ""
+	}
+,
+	{
+"name": "Geawaumo",
+"type": "fruit_fruits_talus",
+"classes": {
+"Organic": "organic"
+,
+"Flora Resources": "flora_resources"
+,
+"Flora Food": "flora_food"
+,
+"Seeds": "seeds"
+,
+"Fruit": "fruit"
+,
+"Fruits": "fruit_fruits"
+,
+"Talusian Fruit": "fruit_fruits_talus"
+		},
+"attributes": {
+"res_decay_resist": "310"
+,
+"res_flavor": "986"
+,
+"res_potential_energy": "476"
+,
+"res_quality": "630"
+		},
+"deSpawnTime" : "1550922947",
+"planet" : [
+"talus"
+],
+"zoneRestriction": "talus"
 	}
 ,
 	{
@@ -6629,40 +6671,6 @@
 	}
 ,
 	{
-"name": "Iwwiamo",
-"type": "fruit_fruits_talus",
-"classes": {
-"Organic": "organic"
-,
-"Flora Resources": "flora_resources"
-,
-"Flora Food": "flora_food"
-,
-"Seeds": "seeds"
-,
-"Fruit": "fruit"
-,
-"Fruits": "fruit_fruits"
-,
-"Talusian Fruit": "fruit_fruits_talus"
-		},
-"attributes": {
-"res_decay_resist": "589"
-,
-"res_flavor": "901"
-,
-"res_potential_energy": "734"
-,
-"res_quality": "413"
-		},
-"deSpawnTime" : "1549631598",
-"planet" : [
-"talus"
-],
-"zoneRestriction": "talus"
-	}
-,
-	{
 "name": "Ixi",
 "type": "meat_domesticated_dathomir",
 "classes": {
@@ -7789,6 +7797,40 @@
 	}
 ,
 	{
+"name": "Lare",
+"type": "fruit_flowers_talus",
+"classes": {
+"Organic": "organic"
+,
+"Flora Resources": "flora_resources"
+,
+"Flora Food": "flora_food"
+,
+"Seeds": "seeds"
+,
+"Fruit": "fruit"
+,
+"Flowers": "fruit_flowers"
+,
+"Talusian Flower Fruit": "fruit_flowers_talus"
+		},
+"attributes": {
+"res_decay_resist": "351"
+,
+"res_flavor": "484"
+,
+"res_potential_energy": "672"
+,
+"res_quality": "986"
+		},
+"deSpawnTime" : "1551481135",
+"planet" : [
+"talus"
+],
+"zoneRestriction": "talus"
+	}
+,
+	{
 "name": "Lauhostei",
 "type": "meat_avian_naboo",
 "classes": {
@@ -7988,36 +8030,6 @@
 "tatooine"
 ],
 "zoneRestriction": "tatooine"
-	}
-,
-	{
-"name": "Liceidi",
-"type": "fiberplast_lok",
-"classes": {
-"Inorganic": "inorganic"
-,
-"Chemical": "chemical"
-,
-"Fiberplast": "fiberplast"
-,
-"Lokian Fiberplast": "fiberplast_lok"
-		},
-"attributes": {
-"res_decay_resist": "287"
-,
-"res_malleability": "123"
-,
-"res_quality": "599"
-,
-"res_shock_resistance": "907"
-,
-"res_toughness": "492"
-		},
-"deSpawnTime" : "1549669163",
-"planet" : [
-"lok"
-],
-"zoneRestriction": "lok"
 	}
 ,
 	{
@@ -8420,38 +8432,6 @@
 "tatooine"
 ],
 "zoneRestriction": "tatooine"
-	}
-,
-	{
-"name": "Megaka",
-"type": "meat_avian_corellia",
-"classes": {
-"Organic": "organic"
-,
-"Creature Resources": "creature_resources"
-,
-"Creature Food": "creature_food"
-,
-"Meat": "meat"
-,
-"Avian Meat": "meat_avian"
-,
-"Corellian Avian Meat": "meat_avian_corellia"
-		},
-"attributes": {
-"res_decay_resist": "640"
-,
-"res_flavor": "503"
-,
-"res_potential_energy": "744"
-,
-"res_quality": "334"
-		},
-"deSpawnTime" : "1549638090",
-"planet" : [
-"corellia"
-],
-"zoneRestriction": "corellia"
 	}
 ,
 	{
@@ -9139,6 +9119,40 @@
 	}
 ,
 	{
+"name": "Nebeu",
+"type": "corn_domesticated_naboo",
+"classes": {
+"Organic": "organic"
+,
+"Flora Resources": "flora_resources"
+,
+"Flora Food": "flora_food"
+,
+"Cereal": "cereal"
+,
+"Corn": "corn"
+,
+"Domesticated Corn": "corn_domesticated"
+,
+"Nabooian Domesticated Corn": "corn_domesticated_naboo"
+		},
+"attributes": {
+"res_decay_resist": "301"
+,
+"res_flavor": "484"
+,
+"res_potential_energy": "782"
+,
+"res_quality": "665"
+		},
+"deSpawnTime" : "1551423415",
+"planet" : [
+"naboo"
+],
+"zoneRestriction": "naboo"
+	}
+,
+	{
 "name": "Nega",
 "type": "hide_bristley_yavin4",
 "classes": {
@@ -9484,40 +9498,6 @@
 "endor"
 ],
 "zoneRestriction": "endor"
-	}
-,
-	{
-"name": "Nizegoe",
-"type": "fruit_berries_dathomir",
-"classes": {
-"Organic": "organic"
-,
-"Flora Resources": "flora_resources"
-,
-"Flora Food": "flora_food"
-,
-"Seeds": "seeds"
-,
-"Fruit": "fruit"
-,
-"Berries": "fruit_berries"
-,
-"Dathomirian Berry Fruit": "fruit_berries_dathomir"
-		},
-"attributes": {
-"res_decay_resist": "735"
-,
-"res_flavor": "208"
-,
-"res_potential_energy": "888"
-,
-"res_quality": "646"
-		},
-"deSpawnTime" : "1549635417",
-"planet" : [
-"dathomir"
-],
-"zoneRestriction": "dathomir"
 	}
 ,
 	{
@@ -10413,6 +10393,40 @@
 	}
 ,
 	{
+"name": "Osri",
+"type": "vegetable_tubers_endor",
+"classes": {
+"Organic": "organic"
+,
+"Flora Resources": "flora_resources"
+,
+"Flora Food": "flora_food"
+,
+"Seeds": "seeds"
+,
+"Vegetables": "vegetable"
+,
+"Tubers": "vegetable_tubers"
+,
+"Endorian Vegetable Tubers": "vegetable_tubers_endor"
+		},
+"attributes": {
+"res_decay_resist": "632"
+,
+"res_flavor": "332"
+,
+"res_potential_energy": "620"
+,
+"res_quality": "786"
+		},
+"deSpawnTime" : "1550426034",
+"planet" : [
+"endor"
+],
+"zoneRestriction": "endor"
+	}
+,
+	{
 "name": "Osriboa",
 "type": "meat_wild_talus",
 "classes": {
@@ -10572,40 +10586,6 @@
 "res_quality": "624"
 		},
 "deSpawnTime" : "1549866701",
-"planet" : [
-"talus"
-],
-"zoneRestriction": "talus"
-	}
-,
-	{
-"name": "Padea",
-"type": "fruit_flowers_talus",
-"classes": {
-"Organic": "organic"
-,
-"Flora Resources": "flora_resources"
-,
-"Flora Food": "flora_food"
-,
-"Seeds": "seeds"
-,
-"Fruit": "fruit"
-,
-"Flowers": "fruit_flowers"
-,
-"Talusian Flower Fruit": "fruit_flowers_talus"
-		},
-"attributes": {
-"res_decay_resist": "594"
-,
-"res_flavor": "968"
-,
-"res_potential_energy": "67"
-,
-"res_quality": "29"
-		},
-"deSpawnTime" : "1549655961",
 "planet" : [
 "talus"
 ],
@@ -10896,40 +10876,6 @@
 "corellia"
 ],
 "zoneRestriction": "corellia"
-	}
-,
-	{
-"name": "Pisi",
-"type": "rice_wild_dantooine",
-"classes": {
-"Organic": "organic"
-,
-"Flora Resources": "flora_resources"
-,
-"Flora Food": "flora_food"
-,
-"Cereal": "cereal"
-,
-"Rice": "rice"
-,
-"Wild Rice": "rice_wild"
-,
-"Dantooine Wild Rice": "rice_wild_dantooine"
-		},
-"attributes": {
-"res_decay_resist": "628"
-,
-"res_flavor": "848"
-,
-"res_potential_energy": "326"
-,
-"res_quality": "847"
-		},
-"deSpawnTime" : "1549637720",
-"planet" : [
-"dantooine"
-],
-"zoneRestriction": "dantooine"
 	}
 ,
 	{
@@ -13161,37 +13107,35 @@
 	}
 ,
 	{
-"name": "Sobe",
-"type": "corn_domesticated_naboo",
+"name": "Soci",
+"type": "meat_avian_corellia",
 "classes": {
 "Organic": "organic"
 ,
-"Flora Resources": "flora_resources"
+"Creature Resources": "creature_resources"
 ,
-"Flora Food": "flora_food"
+"Creature Food": "creature_food"
 ,
-"Cereal": "cereal"
+"Meat": "meat"
 ,
-"Corn": "corn"
+"Avian Meat": "meat_avian"
 ,
-"Domesticated Corn": "corn_domesticated"
-,
-"Nabooian Domesticated Corn": "corn_domesticated_naboo"
+"Corellian Avian Meat": "meat_avian_corellia"
 		},
 "attributes": {
-"res_decay_resist": "354"
+"res_decay_resist": "697"
 ,
-"res_flavor": "32"
+"res_flavor": "358"
 ,
-"res_potential_energy": "477"
+"res_potential_energy": "905"
 ,
-"res_quality": "370"
+"res_quality": "195"
 		},
-"deSpawnTime" : "1549637110",
+"deSpawnTime" : "1551190746",
 "planet" : [
-"naboo"
+"corellia"
 ],
-"zoneRestriction": "naboo"
+"zoneRestriction": "corellia"
 	}
 ,
 	{
@@ -13226,46 +13170,6 @@
 "rori"
 ],
 "zoneRestriction": "rori"
-	}
-,
-	{
-"name": "Sohau",
-"type": "iron_dolovite",
-"classes": {
-"Inorganic": "inorganic"
-,
-"Mineral": "mineral"
-,
-"Metal": "metal"
-,
-"Ferrous Metal": "metal_ferrous"
-,
-"Iron": "iron"
-,
-"Dolovite Iron": "iron_dolovite"
-		},
-"attributes": {
-"res_cold_resist": "532"
-,
-"res_conductivity": "334"
-,
-"res_decay_resist": "827"
-,
-"res_heat_resist": "892"
-,
-"res_malleability": "359"
-,
-"res_quality": "159"
-,
-"res_shock_resistance": "779"
-,
-"res_toughness": "779"
-		},
-"deSpawnTime" : "1549668948",
-"planet" : [
-"corellia"
-],
-"zoneRestriction": ""
 	}
 ,
 	{
@@ -13558,6 +13462,40 @@
 "res_quality": "606"
 		},
 "deSpawnTime" : "1550304381",
+"planet" : [
+"yavin4"
+],
+"zoneRestriction": "yavin4"
+	}
+,
+	{
+"name": "Srehe",
+"type": "hide_scaley_yavin4",
+"classes": {
+"Organic": "organic"
+,
+"Creature Resources": "creature_resources"
+,
+"Creature Structural": "creature_structural"
+,
+"Hide": "hide"
+,
+"Scaley Hide": "hide_scaley"
+,
+"Yavinian Scaley Hide": "hide_scaley_yavin4"
+		},
+"attributes": {
+"res_decay_resist": "313"
+,
+"res_malleability": "929"
+,
+"res_quality": "285"
+,
+"res_shock_resistance": "463"
+,
+"res_toughness": "547"
+		},
+"deSpawnTime" : "1550737362",
 "planet" : [
 "yavin4"
 ],
@@ -13936,40 +13874,6 @@
 "dathomir"
 ],
 "zoneRestriction": "dathomir"
-	}
-,
-	{
-"name": "Stenapro",
-"type": "vegetable_tubers_endor",
-"classes": {
-"Organic": "organic"
-,
-"Flora Resources": "flora_resources"
-,
-"Flora Food": "flora_food"
-,
-"Seeds": "seeds"
-,
-"Vegetables": "vegetable"
-,
-"Tubers": "vegetable_tubers"
-,
-"Endorian Vegetable Tubers": "vegetable_tubers_endor"
-		},
-"attributes": {
-"res_decay_resist": "223"
-,
-"res_flavor": "361"
-,
-"res_potential_energy": "162"
-,
-"res_quality": "719"
-		},
-"deSpawnTime" : "1549657956",
-"planet" : [
-"endor"
-],
-"zoneRestriction": "endor"
 	}
 ,
 	{
@@ -14845,6 +14749,40 @@
 	}
 ,
 	{
+"name": "Tiha",
+"type": "fruit_berries_dathomir",
+"classes": {
+"Organic": "organic"
+,
+"Flora Resources": "flora_resources"
+,
+"Flora Food": "flora_food"
+,
+"Seeds": "seeds"
+,
+"Fruit": "fruit"
+,
+"Berries": "fruit_berries"
+,
+"Dathomirian Berry Fruit": "fruit_berries_dathomir"
+		},
+"attributes": {
+"res_decay_resist": "563"
+,
+"res_flavor": "207"
+,
+"res_potential_energy": "90"
+,
+"res_quality": "676"
+		},
+"deSpawnTime" : "1550964929",
+"planet" : [
+"dathomir"
+],
+"zoneRestriction": "dathomir"
+	}
+,
+	{
 "name": "Tinothi",
 "type": "hide_scaley_lok",
 "classes": {
@@ -15072,6 +15010,32 @@
 "naboo"
 ],
 "zoneRestriction": "naboo"
+	}
+,
+	{
+"name": "Treve",
+"type": "energy_renewable_unlimited_wind_yavin4",
+"classes": {
+"Energy": "energy"
+,
+"Renewable energy": "energy_renewable"
+,
+"Non Site-Restricted Renewable Energy": "energy_renewable_unlimited"
+,
+"Wind Energy": "energy_renewable_unlimited_wind"
+,
+"Yavinian Wind Renewable Energy": "energy_renewable_unlimited_wind_yavin4"
+		},
+"attributes": {
+"res_potential_energy": "323"
+,
+"res_quality": "500"
+		},
+"deSpawnTime" : "1550265739",
+"planet" : [
+"yavin4"
+],
+"zoneRestriction": "yavin4"
 	}
 ,
 	{
@@ -16233,29 +16197,67 @@
 	}
 ,
 	{
-"name": "Wrekaiqiium",
-"type": "energy_renewable_unlimited_wind_yavin4",
+"name": "Woele",
+"type": "fiberplast_lok",
 "classes": {
-"Energy": "energy"
+"Inorganic": "inorganic"
 ,
-"Renewable energy": "energy_renewable"
+"Chemical": "chemical"
 ,
-"Non Site-Restricted Renewable Energy": "energy_renewable_unlimited"
+"Fiberplast": "fiberplast"
 ,
-"Wind Energy": "energy_renewable_unlimited_wind"
-,
-"Yavinian Wind Renewable Energy": "energy_renewable_unlimited_wind_yavin4"
+"Lokian Fiberplast": "fiberplast_lok"
 		},
 "attributes": {
-"res_potential_energy": "252"
+"res_decay_resist": "338"
 ,
-"res_quality": "500"
+"res_malleability": "655"
+,
+"res_quality": "438"
+,
+"res_shock_resistance": "763"
+,
+"res_toughness": "263"
 		},
-"deSpawnTime" : "1549649128",
+"deSpawnTime" : "1550613555",
 "planet" : [
-"yavin4"
+"lok"
 ],
-"zoneRestriction": "yavin4"
+"zoneRestriction": "lok"
+	}
+,
+	{
+"name": "Wogote",
+"type": "rice_wild_dantooine",
+"classes": {
+"Organic": "organic"
+,
+"Flora Resources": "flora_resources"
+,
+"Flora Food": "flora_food"
+,
+"Cereal": "cereal"
+,
+"Rice": "rice"
+,
+"Wild Rice": "rice_wild"
+,
+"Dantooine Wild Rice": "rice_wild_dantooine"
+		},
+"attributes": {
+"res_decay_resist": "962"
+,
+"res_flavor": "352"
+,
+"res_potential_energy": "346"
+,
+"res_quality": "355"
+		},
+"deSpawnTime" : "1550278232",
+"planet" : [
+"dantooine"
+],
+"zoneRestriction": "dantooine"
 	}
 ,
 	{
