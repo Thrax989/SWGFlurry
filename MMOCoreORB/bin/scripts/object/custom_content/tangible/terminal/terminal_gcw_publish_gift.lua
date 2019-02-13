@@ -48,7 +48,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Keren Shuttleport (5,000 Credits)", "keren_shuttleport_travel",
 			"Keren Shuttleport South (5,000 Credits)", "karen_shuttleport_south_travel",
 			"Keren Starport (5,000 Credits)", "keren_starport_travel",
-      "Moenia Starport (5,000 Credits)", "moemia_starport_travel"
+    			"Moenia Starport (5,000 Credits)", "moemia_starport_travel"
 			"Moenia Shuttleport (5,000 Credits)", "moemia_shuttleport_travel",
 			"The Lake Retreat Shuttleport (5,000 Credits)", "the_lake_retreat_shuttleport_travel",
 			"Theed Shuttleport A (5,000 Credits)", "theed_shuttleport_a_travel",
