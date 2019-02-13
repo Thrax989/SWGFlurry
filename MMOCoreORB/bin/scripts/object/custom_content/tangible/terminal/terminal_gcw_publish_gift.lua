@@ -8,7 +8,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 	templateType = CHARACTERBUILDERTERMINAL,
 
 	itemList = {
-		        "corellia",
+		        "Corellia",
 		   {
 			"Bela Vistal Shuttleport A (5,000 Credits)", "corellia_bela_vistal_a_shuttleport_travel",
 			"Bela Vistal Shuttleport B (5,000 Credits)", "corellia_bela_vistal_b_shuttleport_travel",
@@ -24,23 +24,23 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Tyrena Starport (5,000 Credits)", "tyrena_starport_travel",
 			"Vreni Island Shuttle (5,000 Credits)", "vreni_island_shuttle_travel",
 		   },
-			"dantooine",
+			"Dantooine",
 		   {
 			"Dantooine Agro Outpost Starport (5,000 Credits)", "dantooine_agro_outpost_starport_travel",
 			"Dantooine Imperial Outpost Starport (5,000 Credits)", "dantooine_imperial_outpost_starport_travel",
 			"Dantooine Mining Outpost Starport (5,000 Credits)", "dantooine_mining_outpost_startport_travel",
 		   },
-			"dathomir",
+			"Dathomir",
 		   {
 			"Dathomir Trade Outpost Starport (5,000 Credits)", "dathomir_trade_outpost_starport_travel",
 			"Dathomir Science Outpost Starport (5,000 Credits)", "dathomir_science_outpost_starport_travel",
 			"Dathomir Village Shuttleport (5,000 Credits)", "dathomir_village_shuttleport_travel",
 		   },
-		  	"lok",
+		  	"Lok",
 		   {
 			"Nym's Stronghold Starport (5,000 Credits)", "nyms_stronghold_starport_travel",
 		   },
-			"naboo",
+			"Naboo",
 		   {
 			"Dee'ja Peak Shuttleport (5,000 Credits)", "deeja_peak_shuttleport_travel",
 			"Kaadara Shuttleport (5,000 Credits)", "kaadar_shuttleport_travel",
@@ -48,14 +48,15 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Keren Shuttleport (5,000 Credits)", "keren_shuttleport_travel",
 			"Keren Shuttleport South (5,000 Credits)", "karen_shuttleport_south_travel",
 			"Keren Starport (5,000 Credits)", "keren_starport_travel",
-			"Moenia Starport (5,000 Credits)", "moemia_starport_travel",
+      "Moenia Starport (5,000 Credits)", "moemia_starport_travel"
+			"Moenia Shuttleport (5,000 Credits)", "moemia_shuttleport_travel",
 			"The Lake Retreat Shuttleport (5,000 Credits)", "the_lake_retreat_shuttleport_travel",
 			"Theed Shuttleport A (5,000 Credits)", "theed_shuttleport_a_travel",
 			"Theed Shuttleport B (5,000 Credits)", "theed_shuttleport_b_travel",
 			"Theed Shuttleport C (5,000 Credits)", "theed_shuttleport_c_travel",
 			"Theed Starport (5,000 Credits)", "theed_starport_travel",
 		   },
-		 	"rori",
+		 	"Rori",
 		   {
 			"Narmle Shuttleport (5,000 Credits)", "narmel_shuttleport_travel",
 			"Narmle Starport (5,000 Credits)", "narmel_starport_travel",
@@ -63,19 +64,21 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Restuss Shuttleport (5,000 Credits)", "restuss_shuttleport_travel",
 			"Restuss Starport (5,000 Credits)", "restuss_starport_travel",
 		   },
-		 	"talus",
+		 	"Talus",
 		   {
 			"Talus Dearic Shuttleport (5,000 Credits)", "talus_dearic_shuttleport_travel",
 			"Talus Dearic Starport (5,000 Credits)", "talus_dearic_starport_travel",
+ 			"Talus Nashal Starport (5,000 Credits)", "talus_nashal_starport_travel",     
 			"Talus Nashal Shuttleport (5,000 Credits)", "talus_nashal_shuttleport_travel",
 			"Talus Imperial Outpost (5,000 Credits)", "talus_imperial_outpost_travel",
 
 		   },
-		 	"tatooine",
+		 	"Tatooine",
 		   {
 			"Anchorhead Shuttleport (5,000 Credits)", "anchorhead_shuttle_travel",
 			"Bestine Shuttleport (5,000 Credits)", "bestine_shuttle_travel",
 			"Bestine Starport (5,000 Credits)", "bestine_starport_travel",
+ 			"Mos Eisley Starport (5,000 Credits)", "mos_eisley_starport_travel",     
 			"Mos Eisley Shuttleport (5,000 Credits)", "mos_eisley_shuttleport_travel",
 			"Mos Entha Shuttle A (5,000 Credits)", "mos_entha_shuttle_a_travel",
 			"Mos Entha Shuttle B (5,000 Credits)", "mos_entha_shuttle_b_travel",
@@ -85,12 +88,13 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Mos Espa Shuttle West (5,000 Credits)", "mos_espa_shuttleport_west_travel",
 			"Mos Espa Starport (5,000 Credits)", "mos_espa_starport_travel",
 		   },
-		 	"yavin4",
+		 	"Yavin4",
 		   {
 			"Yavin IV Imperial Outpost (5,000 Credits)", "yavin_iv_imperial_outpost_travel",
+      "Yavin IV Mining Outpost (5,000 Credits)", "yavin_iv_mining_outpost_travel",
 			"Yavin IV Labor Outpost (5,000 Credits)", "yavin_iv_labor_outpost_travel",
 		   },
-		 	"endor",
+		 	"Endor",
 		   {
 			"Smuggler Outpost (5,000 Credits)", "smuggler_outpost_travel",
 			"Research Outpost (5,000 Credits)", "research_outpost_travel",
