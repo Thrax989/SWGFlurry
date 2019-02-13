@@ -91,7 +91,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		 	"Yavin4",
 		   {
 			"Yavin IV Imperial Outpost (5,000 Credits)", "yavin_iv_imperial_outpost_travel",
-      "Yavin IV Mining Outpost (5,000 Credits)", "yavin_iv_mining_outpost_travel",
+   			"Yavin IV Mining Outpost (5,000 Credits)", "yavin_iv_mining_outpost_travel",
 			"Yavin IV Labor Outpost (5,000 Credits)", "yavin_iv_labor_outpost_travel",
 		   },
 		 	"Endor",
