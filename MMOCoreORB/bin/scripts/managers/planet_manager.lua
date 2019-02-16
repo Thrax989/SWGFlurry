@@ -396,6 +396,18 @@ kashyyyk = {
 	}
 }
 
+korriban = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Korriban Outpost", x = -1696, z = 91, y = -624, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
+    },
+    
+    badgeAreas = {   
+  },
+}
+
 lok = {
 	weatherEnabled = 1,
 	gcwEnabled = 1,
@@ -456,18 +468,6 @@ mandalore = {
 
 	planetObjects = {
 	}
-}
-
-moraband = {
-  weatherEnabled = 1,
-  gcwEnabled = 1,
-  
-  planetTravelPoints = {
-    {name = "Archaeological Outpost", x = -1696, z = 91, y = -624, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1, cell = 0},
-    },
-    
-    badgeAreas = {   
-  },
 }
 
 mustafar = {

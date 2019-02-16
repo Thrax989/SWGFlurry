@@ -106,6 +106,7 @@ ZonesEnabled = {
 	"jakku",
 	"lok",
 	"mandalore",
+	"korriban",
 	"naboo",
 	"rori",
 	"taanab",
