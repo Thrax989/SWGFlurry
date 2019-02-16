@@ -268,13 +268,13 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 -------------------------------------------------------
                 creature:addCashCredits(25000, true)
 -------------------------------------------------------
---Quest Reward Item
+--Quest Reward Item First Reward
 -------------------------------------------------------
-                local pItem = giveItem(pInventory, "object/tangible/wearables/armor/mandalorian/armor_mandalorian_helmet.iff", -1)
+                local pItem = giveItem(pInventory, "", -1)
 -------------------------------------------------------
---Set Up Additional Quest Reward Items
+--Set Up Additional Quest Reward Items Second Reward
 -------------------------------------------------------
-                local pItem = giveItem(pInventory, "object/tangible/wearables/armor/mandalorian/armor_mandalorian_helmet.iff", -1)
+                local pItem = giveItem(pInventory, "", -1)
                 end
 -------------------------------------------------------
 --Not yet
