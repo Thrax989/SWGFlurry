@@ -90,7 +90,7 @@ ZoneGalaxyID = 2 --The actual zone server's galaxyID. Should coordinate with you
 --To save on RAM and CPU usage, you should only enable the zones you need.
 --In order to disable a zone, all you have to do is comment it out.
 ZonesEnabled = {
-    "chandrila",
+	"chandrila",
 	"corellia",
 	"coruscant",
 	"dantooine",
@@ -98,16 +98,14 @@ ZonesEnabled = {
 	"dungeon1",
 	"dungeon2",
 	"endor",
-	"ghomrassen",
+	"geonosis",
 	"hoth",
-    	"hutta",
+	"hutta",
 	"kashyyyk",
 	"kaas",
-    	"jakku",
+	"jakku",
 	"lok",
 	"mandalore",
-    	"moraband",
-	"mustafar",
 	"naboo",
 	"rori",
 	"taanab",
@@ -137,11 +135,6 @@ ZonesEnabled = {
 TrePath = "/root/workspace/tre/"
 
 TreFiles = {
-    	"flurrynova.tre",
-    	"flurrymaster.tre",
-    	"flurrytexture.tre",
-	"mtg_patch_024.tre",
-	"mtg_patch_023.tre",
 	"mtg_patch_022.tre",
 	"mtg_planets.tre",
 	"mtg_patch_021.tre",
