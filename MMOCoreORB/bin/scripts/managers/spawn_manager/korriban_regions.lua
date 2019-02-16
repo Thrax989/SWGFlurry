@@ -1,3 +1,6 @@
+-- Planet Region Definitions
+-- This file has been generated with the SWGEmu World Spawner Tool.
+--
 -- {"regionName", xCenter, yCenter, shape and size, tier, {"spawnGroup1", ...}, maxSpawnLimit}
 -- Shape and size is a table with the following format depending on the shape of the area:
 --   - Circle: {1, radius}
@@ -9,9 +12,6 @@
 
 require("scripts.managers.spawn_manager.regions")
 
-dagobah_regions = {
-	{"world_spawner",0,0,{1,-1},SPAWNAREA + WORLDSPAWNAREA,{"dagobah_world"},256},
-	{"starship_graveyard",3000,3000,{1,250},NOSPAWNAREA + NOBUILDZONEAREA},
-	{"yoda_hut",0,0,{1,50},NOSPAWNAREA + NOBUILDZONEAREA},
-
+korriban_regions = {,
+  {"world_spawner", 0, 0, {1, -1}, SPAWNAREA + WORLDSPAWNAREA, {"korriban_world", "global_hard"}, 2048}
 }

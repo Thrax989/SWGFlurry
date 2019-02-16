@@ -9,7 +9,7 @@
 
 require("scripts.managers.spawn_manager.regions")
 
-ordmantell_regions = {
+geonosis_regions = {
 	{"world_spawner",0,0,{1,-1},NOSPAWNAREA + NOBUILDZONEAREA},
 
 
