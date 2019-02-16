@@ -590,7 +590,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 						String playerName = player->getFirstName();
 						StringBuffer zBroadcast;
-						zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Recalculated There Force Pool.";
+						zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Recalculated Their Force Pool.";
 						SkillManager* skillManager = SkillManager::instance();
 						skillManager->awardForceFromSkills(player);
 						player->sendSystemMessage("Recalculated Max force and Regen");
@@ -619,7 +619,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 						String playerName = player->getFirstName();
 						StringBuffer zBroadcast;
-						zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Recalculated There Skills.";
+						zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Recalculated Their Skills.";
 						SkillManager* skillManager = SkillManager::instance();
 						skillManager->awardResetSkills(player);
 						player->sendSystemMessage("Recalculated Skills");
