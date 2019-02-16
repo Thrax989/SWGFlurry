@@ -1,3 +1,7 @@
+-------------------------------------------------------
+--Wattos Main Quest Line
+--Quest Starts in Tattooine /way 
+-------------------------------------------------------
 local ObjectManager = require("managers.object.object_manager")
 -------------------------------------------------------
 --Mission States
@@ -22,7 +26,7 @@ missionScreenplay = ScreenPlay:new {
 
     questdata = Object:new {
 
-     activePlayerName = "initial",
+    activePlayerName = "initial",
 
     }
 
@@ -47,12 +51,14 @@ end
 function missionScreenplay:spawnMobiles(pMobile)
 
     if (pMobile == nil) then
-
-        pMobile = spawnMobile("corellia", "meatlump_buffoon",20,-164,28,-4754,88,0)
+-------------------------------------------------------
+--Mission Target Location
+-------------------------------------------------------
+		pMobile = spawnMobile("tatooine", "meatlump_buffoon", 1, 3527.94, 5, -4801.99, 271, 0)
 
         self:setMoodString(pMobile, "npc_accusing")
 
-	createObserver(OBJECTDESTRUCTION, "missionScreenplay", "enemyKilled", pMobile)
+		createObserver(OBJECTDESTRUCTION, "missionScreenplay", "enemyKilled", pMobile)
 
         return 0
 
@@ -82,18 +88,18 @@ function missionScreenplay:enemyKilled(pMobile, pPlayer)
 -------------------------------------------------------
 --Mission Target Killed Active Waypoint Removed
 -------------------------------------------------------
-           player:sendSystemMessage("COMPLETED MISSION: Test.")
-	   player:playMusicMessage("sound/ui_npe2_quest_completed.snd")
+           player:sendSystemMessage("MISSION COMPLETED")
+		   player:playMusicMessage("sound/ui_npe2_quest_completed.snd")
            player:playEffect("clienteffect/level_granted_chronicles.cef", "")
            local pGhost = CreatureObject(pPlayer):getPlayerObject()
            local playerID = CreatureObject(pPlayer):getObjectID()
-           local oldWaypointID = tonumber(getQuestStatus(playerID .. ":caedusWaypointID"))
+           local oldWaypointID = tonumber(getQuestStatus(playerID .. ":wattoWaypointID"))
            PlayerObject(pGhost):removeWaypoint(oldWaypointID, true)
     else
 -------------------------------------------------------
---Promt To Go Back To Mission Giver
+--Promt To Go Back To Mission Giver (Watto)
 -------------------------------------------------------
-       player:sendSystemMessage("You've finished with Darth Caedus! talk with mission Solo.")
+       player:sendSystemMessage("You've finished the Quest talk with Watto.")
 end
     return 0
 end
@@ -242,7 +248,7 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 
                  nextConversationScreen = conversation:getScreen("no_space")
 
-                 creature:sendSystemMessage("You do not have enough space in your inventory")
+                 creature:sendSystemMessage("You do not have enough space in your inventory, Please make room for your quest reward")
 
                 else              
 -------------------------------------------------------
@@ -256,15 +262,19 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 -------------------------------------------------------
 --Reward Message
 -------------------------------------------------------
-                creature:sendSystemMessage("FINALIZED mission: Family revenge You have received 25,000 credits and a special tunic of Luminous Jedi.")
+                creature:sendSystemMessage("FINALIZED mission: Quest Complete, You have received 25,000 credits additional rewards will be added to your inventory.")
 -------------------------------------------------------
 --Reward Credits
 -------------------------------------------------------
                 creature:addCashCredits(25000, true)
 -------------------------------------------------------
---Reward Item
+--Quest Reward Item
 -------------------------------------------------------
-                local pItem = giveItem(pInventory, "robe_jedi_light_hood_down.iff", -1)
+                local pItem = giveItem(pInventory, "object/tangible/wearables/armor/mandalorian/armor_mandalorian_helmet.iff", -1)
+-------------------------------------------------------
+--Set Up Additional Quest Reward Items
+-------------------------------------------------------
+                local pItem = giveItem(pInventory, "object/tangible/wearables/armor/mandalorian/armor_mandalorian_helmet.iff", -1)
                 end
 -------------------------------------------------------
 --Not yet
@@ -316,31 +326,34 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
     local screenID = screen:getScreenID()
     local playerID = CreatureObject(conversingPlayer):getObjectID()
     local player = LuaCreatureObject(conversingPlayer)
--------------------------------------------------------
     if (screenID == "thank_you") then
 -------------------------------------------------------
 --Completed The Quest
 --Settings State For Quest
 -------------------------------------------------------
         player:setScreenPlayState( missionScreenplay.states.complete , missionScreenplay.questString)
--------------------------------------------------------
     elseif (screenID == "accept_quest") then
-    
-      local oldWaypointID = tonumber(getQuestStatus(playerID .. ":caedusWaypointID"))
+-------------------------------------------------------
+--Remove Player Active Waypoint For Watto Quest Target
+-------------------------------------------------------
+      local oldWaypointID = tonumber(getQuestStatus(playerID .. ":wattoWaypointID"))
       if (oldWaypointID ~= 0) then
       PlayerObject(pGhost):removeWaypoint(oldWaypointID, true)
-      removeQuestStatus(playerID .. ":caedusWaypointID")
+      removeQuestStatus(playerID .. ":wattoWaypointID")
       end
-      local waypointID = PlayerObject(pGhost):addWaypoint("corellia", "Target", "", -164, -4754, WAYPOINT_COLOR_PURPLE, true, true, 0)
-      setQuestStatus(playerID .. ":caedusWaypointID", waypointID)
+-------------------------------------------------------
+--Set Player Active Waypoint For Watto Quest Target
+-------------------------------------------------------
+      local waypointID = PlayerObject(pGhost):addWaypoint("tatooine", "Target", "", 3527.94, -4801.99, WAYPOINT_COLOR_PURPLE, true, true, 0)
+      setQuestStatus(playerID .. ":wattoWaypointID", waypointID)
 -------------------------------------------------------
 --Accepting The Quest
 --Settings State For Quest
 -------------------------------------------------------
-      player:setScreenPlayState( missionScreenplay.states.accepted , missionScreenplay.questString)
-      player:sendSystemMessage("ACCEPTED mission: Family Revenge")
-      player:playMusicMessage("sound/ui_npe2_quest_received.snd")
-      player:playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+        player:setScreenPlayState( missionScreenplay.states.accepted , missionScreenplay.questString)
+        player:sendSystemMessage("ACCEPTED mission: Wattos Revenge")
+        player:playMusicMessage("sound/ui_npe2_quest_received.snd")
+        player:playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
     	elseif (screenID == "quest_status") then
 
         conversationScreen = screen:cloneScreen()
@@ -391,8 +404,8 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 -------------------------------------------------------
 --Remove Active Waypoint If There s One
 -------------------------------------------------------
-        player:sendSystemMessage("FAILED mission: Family revenge")
-        local oldWaypointID = tonumber(getQuestStatus(playerID .. ":caedusWaypointID"))
+        player:sendSystemMessage("FAILED mission: Wattos Revenge")
+        local oldWaypointID = tonumber(getQuestStatus(playerID .. ":wattoWaypointID"))
         PlayerObject(pGhost):removeWaypoint(oldWaypointID, true)
         else
 
@@ -412,7 +425,7 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 
                 self:addQuestOptions(clonedConversation)
 
-                clonedConversation:setCustomDialogText("I feel that you managed to defeat Darth Caedus! You came to my brother")
+                clonedConversation:setCustomDialogText("You have already completed the quest")
 
             end
 
