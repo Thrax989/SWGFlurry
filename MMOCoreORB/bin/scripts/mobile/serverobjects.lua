@@ -1,12 +1,18 @@
 -- Custom content
 includeFile("../custom_scripts/mobile/serverobjects.lua")
-
 -- Conversations
 includeFile("conversations.lua")
-
 --New Content
 includeFile("custom_content/serverobjects.lua")
-
+--New Content Mob Template Files
+includeFile("hoth/serverobjects.lua")
+includeFile("kashyyyk/serverobjects.lua")
+includeFile("nalhutta/serverobjects.lua")
+includeFile("taanab/serverobjects.lua")
+includeFile("mustafar/serverobjects.lua")
+includeFile("geonosis/serverobjects.lua")
+includeFile("korriban/serverobjects.lua")
+includeFile("mandalore/serverobjects.lua")
 -- Creatures
 includeFile("corellia/serverobjects.lua")
 includeFile("dantooine/serverobjects.lua")
@@ -27,27 +33,17 @@ includeFile("thug/serverobjects.lua")
 includeFile("townsperson/serverobjects.lua")
 includeFile("tutorial/serverobjects.lua")
 includeFile("yavin4/serverobjects.lua")
-
 includeFile("faction/serverobjects.lua")
-includeFile("dungeon/serverobjects.lua") 
-
+includeFile("dungeon/serverobjects.lua")
 -- Weapons
 includeFile("weapon/serverobjects.lua") 
-
 -- Spawn Groups
 includeFile("spawn/serverobjects.lua")
-
 -- Trainer
 includeFile("trainer/serverobjects.lua")
-
 -- Mission
 includeFile("mission/serverobjects.lua")
-
--- Mission quests
-includeFile("mission_quest/serverobjects.lua")
-
 -- Lairs
 includeFile("lair/serverobjects.lua")
-
 -- Outfits
 includeFile("outfits/serverobjects.lua")
