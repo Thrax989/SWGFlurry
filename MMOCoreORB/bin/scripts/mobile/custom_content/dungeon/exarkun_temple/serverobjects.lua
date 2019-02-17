@@ -1,1 +1,1 @@
-includeFile("dungeon/exarkun_temple/force_ghost.lua")
+includeFile("custom_content/dungeon/exarkun_temple/force_ghost.lua")

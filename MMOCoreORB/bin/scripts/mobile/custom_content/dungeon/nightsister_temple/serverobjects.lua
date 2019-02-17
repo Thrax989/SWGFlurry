@@ -1,5 +1,5 @@
---includeFile("dungeon/nightsister_temple/NPCNAMEHERE.lua")
-includeFile("dungeon/nightsister_temple/nightsisterqueen.lua")
-includeFile("dungeon/nightsister_temple/nightsisterqueenboss.lua")
-includeFile("dungeon/nightsister_temple/nightsisterqueenrancor.lua")
+--includeFile("custom_content/dungeon/nightsister_temple/NPCNAMEHERE.lua")
+includeFile("custom_content/dungeon/nightsister_temple/nightsisterqueen.lua")
+includeFile("custom_content/dungeon/nightsister_temple/nightsisterqueenboss.lua")
+includeFile("custom_content/dungeon/nightsister_temple/nightsisterqueenrancor.lua")
 
