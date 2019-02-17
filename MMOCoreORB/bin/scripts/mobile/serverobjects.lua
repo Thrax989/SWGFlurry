@@ -24,12 +24,8 @@ includeFile("thug/serverobjects.lua")
 includeFile("townsperson/serverobjects.lua")
 includeFile("tutorial/serverobjects.lua")
 includeFile("yavin4/serverobjects.lua")
-includeFile("mandalore/serverobjects.lua")
-includeFile("taanab/serverobjects.lua")
 includeFile("faction/serverobjects.lua")
 includeFile("dungeon/serverobjects.lua")
-includeFile("isd/serverobjects.lua")
-includeFile("outbreak/serverobjects.lua")
 -- Weapons
 includeFile("weapon/serverobjects.lua") 
 -- Spawn Groups
