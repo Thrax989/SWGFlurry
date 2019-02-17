@@ -21,3 +21,5 @@ includeFile("custom_content/spawn/serverobjects.lua")
 includeFile("custom_content/lair/serverobjects.lua")
 -- Mission quests
 includeFile("custom_content/mission_quest/serverobjects.lua")
+--Poi NPC Waypoint Givers
+includeFile("custom_content/poi/serverobjects.lua")
