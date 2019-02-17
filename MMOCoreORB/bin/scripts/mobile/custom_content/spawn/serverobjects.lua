@@ -11,5 +11,5 @@ includeFile("custom_content/spawn/mandalore_world.lua")
 --destroy_mission
 includeFile("custom_content/spawn/destroy_mission/taanab_destroy_missions.lua")
 includeFile("custom_content/spawn/destroy_mission/hoth_destroy_missions.lua")
-includeFile("spawn/destroy_mission/korriban_destroy_missions.lua")
-includeFile("spawn/destroy_mission/geonosis_destroy_missions.lua")
+includeFile("custom_content/spawn/destroy_mission/korriban_destroy_missions.lua")
+includeFile("custom_content/spawn/destroy_mission/geonosis_destroy_missions.lua")
