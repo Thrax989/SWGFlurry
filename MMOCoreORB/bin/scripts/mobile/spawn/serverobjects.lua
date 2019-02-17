@@ -9,7 +9,6 @@ includeFile("spawn/rori_world.lua")
 includeFile("spawn/talus_world.lua")
 includeFile("spawn/tatooine_world.lua")
 includeFile("spawn/yavin4_world.lua")
-
 includeFile("spawn/corellia_easy.lua")
 includeFile("spawn/corellia_medium.lua")
 includeFile("spawn/dantooine_hard_graul.lua")
