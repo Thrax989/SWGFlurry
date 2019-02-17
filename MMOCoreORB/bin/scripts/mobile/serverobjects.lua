@@ -4,6 +4,15 @@ includeFile("../custom_scripts/mobile/serverobjects.lua")
 includeFile("conversations.lua")
 --New Content
 includeFile("custom_content/serverobjects.lua")
+--New Content Mob Template Files
+includeFile("hoth/serverobjects.lua")
+includeFile("kashyyyk/serverobjects.lua")
+includeFile("nalhutta/serverobjects.lua")
+includeFile("taanab/serverobjects.lua")
+includeFile("mustafar/serverobjects.lua")
+includeFile("geonosis/serverobjects.lua")
+includeFile("korriban/serverobjects.lua")
+includeFile("mandalore/serverobjects.lua")
 -- Creatures
 includeFile("corellia/serverobjects.lua")
 includeFile("dantooine/serverobjects.lua")

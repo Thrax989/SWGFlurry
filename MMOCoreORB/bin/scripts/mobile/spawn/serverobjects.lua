@@ -26,6 +26,17 @@ includeFile("spawn/talus_medium.lua")
 includeFile("spawn/tatooine_easy.lua")
 includeFile("spawn/tatooine_medium.lua")
 
+--custom planets
+includeFile("spawn/hoth_world.lua")
+includeFile("spawn/kashyyyk_world.lua")
+includeFile("spawn/mustafar_world.lua")
+includeFile("spawn/taanab_nerfherd.lua")
+includeFile("spawn/taanab_world.lua")
+includeFile("spawn/nalhutta_world.lua")
+includeFile("spawn/korriban_world.lua")
+includeFile("spawn/geonosis_world.lua")
+includeFile("spawn/mandalore_world.lua")
+
 --destroy_mission
 includeFile("spawn/destroy_mission/corellia_destroy_missions.lua")
 includeFile("spawn/destroy_mission/dantooine_destroy_missions.lua")
@@ -41,3 +52,8 @@ includeFile("spawn/destroy_mission/factional_imperial_destroy_missions.lua")
 includeFile("spawn/destroy_mission/factional_neutral_destroy_missions.lua")
 includeFile("spawn/destroy_mission/factional_rebel_destroy_missions.lua")
 
+--custom planets destroy_mission
+includeFile("spawn/destroy_mission/taanab_destroy_missions.lua")
+includeFile("spawn/destroy_mission/hoth_destroy_missions.lua")
+includeFile("spawn/destroy_mission/korriban_destroy_missions.lua")
+includeFile("spawn/destroy_mission/geonosis_destroy_missions.lua")

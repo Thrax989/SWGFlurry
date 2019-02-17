@@ -1,15 +1,1 @@
--- spawn groups
-includeFile("custom_content/spawn/hoth_world.lua")
-includeFile("custom_content/spawn/kashyyyk_world.lua")
-includeFile("custom_content/spawn/mustafar_world.lua")
-includeFile("custom_content/spawn/taanab_nerfherd.lua")
-includeFile("custom_content/spawn/taanab_world.lua")
-includeFile("custom_content/spawn/nalhutta_world.lua")
-includeFile("custom_content/spawn/korriban_world.lua")
-includeFile("custom_content/spawn/geonosis_world.lua")
-includeFile("custom_content/spawn/mandalore_world.lua")
---destroy_mission
-includeFile("custom_content/spawn/destroy_mission/taanab_destroy_missions.lua")
-includeFile("custom_content/spawn/destroy_mission/hoth_destroy_missions.lua")
-includeFile("custom_content/spawn/destroy_mission/korriban_destroy_missions.lua")
-includeFile("custom_content/spawn/destroy_mission/geonosis_destroy_missions.lua")
+
