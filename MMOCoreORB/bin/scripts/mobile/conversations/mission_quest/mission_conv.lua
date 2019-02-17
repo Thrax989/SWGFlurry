@@ -33,7 +33,7 @@ mission_quest_template:addScreen(mission_intro);
 
 mission_intro2 = ConvoScreen:new {
 	id = "intro2",
-	customDialogText = "You are going to need a speed, he is pretty far from here , are you sure you are up to this",
+	customDialogText = "You are going to need a speeder, he is pretty far from here , are you sure you are up for this",
 	stopConversation = "false",
 	options = {
 		{ "yea Im sure how difficult can it be?.", "intro3" },
@@ -46,7 +46,7 @@ mission_quest_template:addScreen(mission_intro2);
 
 mission_intro3 = ConvoScreen:new {
 	id = "intro3",
-  customDialogText = "You would be suprise, this guy has many tricks up his sleeve make sure you bring a weapon with you",
+  customDialogText = "You would be suprise, this guy has many tricks up his sleeve make sure you bring a weapon with you.",
 	stopConversation = "false",
 	options = {
 		{ "This sounds dangerous I think I can handle it tho", "intro4" },
@@ -70,7 +70,7 @@ mission_quest_template:addScreen(mission_intro4);
 
 mission_intro5 = ConvoScreen:new {
   id = "intro5",
-  customDialogText = "Great. go to the other side of tatoooine you will find him roaming around the tusken fort , be very carful of the rouge tuskens there not veryy friendly.",
+  customDialogText = "Great. go to the other side of tatoooine you will find him roaming around the tusken fort , be very carful of the rouge tuskens there not very friendly.",
   stopConversation = "false",
   options = {
 		{ "To the tusken fort?.", "intro6" },
@@ -105,7 +105,7 @@ mission_quest_template:addScreen(mission_intro7);
 
 mission_intro8 = ConvoScreen:new {
   id = "intro8",
-  customDialogText = "His name is ... the tueksn king",
+  customDialogText = "His name is ... the Tusken King",
   stopConversation = "false",
   options = {
 		{ "I'm ready...", "accept_quest" },
