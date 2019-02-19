@@ -271,7 +271,7 @@ kashyyyk = {
 -----------------
 --    Korriban
 -----------------
-moraband = {
+korriban = {
 
 	defaultWeather = 0, -- Sunny
 
