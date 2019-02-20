@@ -2,9 +2,9 @@ object_building_player_emperors_house = object_building_player_shared_emperors_h
 	lotSize = 2,
 	baseMaintenanceRate = 80,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
-	constructionMarker = "object/building/player/construction/construction_player_tcg_emperors_spire.iff",
-	length = 2,
-	width = 2,
+	constructionMarker = "object/building/player/construction/construction_player_house_corellia_small_style_01.iff",
+	length = 1,
+	width = 1,
 	publicStructure = 0,
 	skillMods = {
 		{"private_medical_rating", 100},
