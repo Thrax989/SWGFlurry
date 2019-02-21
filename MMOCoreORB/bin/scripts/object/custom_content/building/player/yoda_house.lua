@@ -2,10 +2,10 @@ object_building_player_yoda_house = object_building_player_shared_yoda_house:new
 	lotSize = 5,
 	baseMaintenanceRate = 80,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
-	publicStructure = 0,
 	constructionMarker = "object/building/player/construction/construction_player_house_corellia_small_style_01.iff",
-	length = 2,
-	width = 2,
+	length = 1,
+	width = 1,
+	publicStructure = 0,
 	skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},

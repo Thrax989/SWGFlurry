@@ -2,9 +2,9 @@ object_building_player_generic_medium_window_s02 = object_building_player_shared
 	lotSize = 3,
 	baseMaintenanceRate = 40,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
-	constructionMarker = "object/building/player/construction/construction_player_house_corellia_medium_style_02.iff",
-	length = 3,
-	width = 4,
+	constructionMarker = "object/building/player/construction/construction_player_house_corellia_small_style_01.iff",
+	length = 1,
+	width = 1,
 	publicStructure = 0,
 	skillMods = {
 		{"private_medical_rating", 100},
