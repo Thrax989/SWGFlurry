@@ -165,11 +165,6 @@ public:
 		Coordinate p;
 		float x;
 		float y;
-		int cellid = 0;
-		
-		if(arrivalPoint->getCellID() != 0){
-			cellid = arrivalPoint->getCellID();
-		}
 
 		p.initializePosition(arrivalPoint->getArrivalPosition());
 
@@ -198,12 +193,8 @@ public:
 			x = p.getPositionX() + sin(dirRadians) * distance;
 			y = p.getPositionY() + cos(dirRadians) * distance;
 		}
-		
-		if(cellid != 0){
-			creature->switchZone(arrivalZone->getZoneName(), x, p.getPositionZ(), y, cellid);
-		}else{
-			creature->switchZone(arrivalZone->getZoneName(), x, p.getPositionZ(), y, 0);
-		}
+
+		creature->switchZone(arrivalZone->getZoneName(), x, p.getPositionZ(), y, 0);
 
 		// Update the nearest mission for group waypoint for both the arrival and departure planet.
 		if (creature->isGrouped()) {
