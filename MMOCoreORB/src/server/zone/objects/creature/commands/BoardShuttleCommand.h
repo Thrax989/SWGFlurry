@@ -198,9 +198,9 @@ public:
 			x = p.getPositionX() + sin(dirRadians) * distance;
 			y = p.getPositionY() + cos(dirRadians) * distance;
 		}
-		
-		if(cellid != 0){
-			creature->switchZone(arrivalZone->getZoneName(), x, p.getPositionZ(), y, cellid);
+
+		if (arrivalZone->getZoneName() == "dungeon2") {
+			creature->switchZone(arrivalZone->getZoneName(), 84.1568, 0.899999, -46.0048, 14200813);
 		}else{
 			creature->switchZone(arrivalZone->getZoneName(), x, p.getPositionZ(), y, 0);
 		}
