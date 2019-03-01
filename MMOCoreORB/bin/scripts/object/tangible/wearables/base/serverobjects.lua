@@ -51,8 +51,6 @@ includeFile("tangible/wearables/base/base_cybernetic_hand_l.lua")
 includeFile("tangible/wearables/base/base_cybernetic_hand_r.lua")
 includeFile("tangible/wearables/base/base_dress_longsleeve.lua")
 includeFile("tangible/wearables/base/base_fannypack.lua")
-
-
 includeFile("tangible/wearables/base/armor_base.lua")
 includeFile("tangible/wearables/base/base_back.lua")
 includeFile("tangible/wearables/base/base_backpack.lua")
