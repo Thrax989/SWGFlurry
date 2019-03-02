@@ -2,7 +2,7 @@
   * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/XHmEz9F) [![GitHub last commit](https://img.shields.io/github/last-commit/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/commits/master) [![License](https://img.shields.io/github/license/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/blob/master/COPYING)
   * [![Server RoadMap ](https://img.shields.io/badge/Server%20Roadmap-Click%20Here-005f71.svg?style=plastic)](https://trello.com/b/fawSAKWE/swg-flurry-classic-server)
   * [![Server Client ](https://img.shields.io/badge/Server%20Client-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com/Launcher/SWGFlurry_Launcher_0.0.3.7.exe) 
-  * [![Server Tre's ](https://img.shields.io/badge/Server%20Tre's-Click%20Here-005f71.svg?style=plastic)](https://mega.nz/#F!fw0EzZ4I!RfRwyqE859Ad3kGlQv7T4Q) 
+  * [![Server Tre's ](https://img.shields.io/badge/Server%20Tre's-Click%20Here-005f71.svg?style=plastic)](http://www.mediafire.com/file/3la3xdsqb3z3p1j/MTG.zip/file) 
   * [![Website ](https://img.shields.io/badge/Server%20Website-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com) 
   * [![Forums ](https://img.shields.io/badge/Server%20Forum's-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com/forum/) 
 
