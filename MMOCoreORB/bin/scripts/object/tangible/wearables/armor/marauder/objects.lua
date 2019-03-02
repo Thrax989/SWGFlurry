@@ -1633,3 +1633,15 @@ object_tangible_wearables_armor_marauder_shared_armor_marauder_s03_leggings = Sh
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marauder_shared_armor_marauder_s03_leggings, "object/tangible/wearables/armor/marauder/shared_armor_marauder_s03_leggings.iff")
+
+object_tangible_wearables_armor_marauder_shared_armor_marauder_s02_gloves = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marauder/shared_armor_marauder_s02_gloves.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marauder_shared_armor_marauder_s02_gloves, "object/tangible/wearables/armor/marauder/shared_armor_marauder_s02_gloves.iff")
+
+object_tangible_wearables_armor_marauder_shared_armor_marauder_s02_helmet = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marauder/shared_armor_marauder_s02_helmet.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marauder_shared_armor_marauder_s02_helmet, "object/tangible/wearables/armor/marauder/shared_armor_marauder_s02_helmet.iff")

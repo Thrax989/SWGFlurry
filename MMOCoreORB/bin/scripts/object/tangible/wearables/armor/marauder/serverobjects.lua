@@ -72,3 +72,5 @@ includeFile("tangible/wearables/armor/marauder/armor_marauder_s03_chest_plate.lu
 includeFile("tangible/wearables/armor/marauder/armor_marauder_s03_gloves.lua")
 includeFile("tangible/wearables/armor/marauder/armor_marauder_s03_helmet.lua")
 includeFile("tangible/wearables/armor/marauder/armor_marauder_s03_leggings.lua")
+includeFile("tangible/wearables/armor/marauder/armor_marauder_s02_helmet.lua")
+includeFile("tangible/wearables/armor/marauder/armor_marauder_s02_gloves.lua")

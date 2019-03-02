@@ -39,4 +39,22 @@
 --gives permission to release a modified version without this exception;
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
+object_tangible_wearables_armor_shared_armor_jedi_belt_01 = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/wearables/armor/shared_armor_jedi_belt_01.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_shared_armor_jedi_belt_01, "object/tangible/wearables/armor/shared_armor_jedi_belt_01.iff")
+
+
+object_tangible_wearables_armor_shared_armor_jedi_belt_02 = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/wearables/armor/shared_armor_jedi_belt_02.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_shared_armor_jedi_belt_02, "object/tangible/wearables/armor/shared_armor_jedi_belt_02.iff")
+
+object_tangible_wearables_armor_shared_armor_jedi_belt_03 = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/wearables/armor/shared_armor_jedi_belt_03.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_shared_armor_jedi_belt_03, "object/tangible/wearables/armor/shared_armor_jedi_belt_03.iff")
 
