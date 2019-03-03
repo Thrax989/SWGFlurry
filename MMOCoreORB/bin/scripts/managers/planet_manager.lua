@@ -307,7 +307,7 @@ geonosis = {
 	outpostRegionNames = { },
 
 	planetTravelPoints = {
-			{name = "Geonosis City", x = 0, z = 5, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+		{name = "Geonosis City", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
 	},
 
 	badgeAreas = {
