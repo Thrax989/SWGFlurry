@@ -358,7 +358,7 @@ jakku = {
   gcwEnabled = 0,
 
   planetTravelPoints = {
-	{name = "Battle Of Jakku", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	{name = "Battle Of Jakku", x = -4247, z = 6, y = -2418, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
     },
 
   badgeAreas = {
