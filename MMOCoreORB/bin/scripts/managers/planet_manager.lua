@@ -358,6 +358,7 @@ jakku = {
   gcwEnabled = 0,
 
   planetTravelPoints = {
+	{name = "Battle Of Jakku", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
     },
 
   badgeAreas = {
@@ -369,8 +370,8 @@ kaas = {
   gcwEnabled = 1,
   
   planetTravelPoints = {
-    {name = "an Imperial Garrison", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-	{name = "a Smuggler Outpost", x = 2852, z = 125, y = 3896, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	{name = "an Imperial Garrison", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	--{name = "a Smuggler Outpost", x = 2852, z = 125, y = 3896, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
     },
     
     badgeAreas = {   
