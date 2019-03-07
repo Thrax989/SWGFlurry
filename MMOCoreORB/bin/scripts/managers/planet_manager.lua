@@ -307,7 +307,7 @@ geonosis = {
 	outpostRegionNames = { },
 
 	planetTravelPoints = {
-		{name = "Geonosis City", x = -1, z = 5, y = -10, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+		{name = "Geonosis City", x = -8, z = 5, y = -24, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
 	},
 
 	badgeAreas = {
@@ -358,7 +358,7 @@ jakku = {
   gcwEnabled = 0,
 
   planetTravelPoints = {
-	{name = "Battle Of Jakku", x = -4247, z = 6, y = -2418, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	{name = "Battle Of Jakku", x = -4263, z = 6, y = -2411, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
     },
 
   badgeAreas = {
