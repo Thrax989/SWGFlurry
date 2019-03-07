@@ -97,16 +97,16 @@ ZonesEnabled = {
 	"dathomir",
 	"dungeon1",
 	"dungeon2",
-	"dungeon3",
 	"endor",
 	"geonosis",
 	"hoth",
 	"hutta",
-	"kaas",
 	"jakku",
+	"kaas",
+	"korriban",
 	"lok",
 	"mandalore",
-	"korriban",
+	"mustafar",
 	"naboo",
 	"rori",
 	"taanab",
@@ -136,6 +136,8 @@ ZonesEnabled = {
 TrePath = "/root/workspace/tre/"
 
 TreFiles = {
+	"flurry2.tre",
+	"flurry1.tre",
 	"mtg_patch_022.tre",
 	"mtg_planets.tre",
 	"mtg_patch_021.tre",
