@@ -26,17 +26,17 @@ krayt_dragon_adolescent = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/krayt_dragon_hue.iff"},
-	scale = 0.7;
+	scale = 1.1;
 	lootGroups = {
 		{
 	        groups = {
 				{group = "krayt_tissue_rare", chance = 2000000},
-				{group = "krayt_dragon_common", chance = 2500000},
-				{group = "krayt_pearls", chance = 1500000},
+				{group = "krayt_dragon_common", chance = 2000000},
+				{group = "krayt_pearls", chance = 2000000},
 				{group = "armor_all", chance = 2000000},
 				{group = "weapons_all", chance = 2000000},
 			},
-			lootChance = 7720000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},

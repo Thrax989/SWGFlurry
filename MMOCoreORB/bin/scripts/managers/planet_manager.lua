@@ -307,7 +307,7 @@ geonosis = {
 	outpostRegionNames = { },
 
 	planetTravelPoints = {
-			{name = "Geonosis City", x = 0, z = 5, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+		{name = "Geonosis City", x = -8, z = 5, y = -24, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
 	},
 
 	badgeAreas = {
@@ -358,6 +358,7 @@ jakku = {
   gcwEnabled = 0,
 
   planetTravelPoints = {
+	{name = "Battle Of Jakku", x = -4263, z = 6, y = -2411, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
     },
 
   badgeAreas = {
@@ -369,8 +370,8 @@ kaas = {
   gcwEnabled = 1,
   
   planetTravelPoints = {
-    {name = "an Imperial Garrison", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-	{name = "a Smuggler Outpost", x = 2852, z = 125, y = 3896, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	{name = "an Imperial Garrison", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	--{name = "a Smuggler Outpost", x = 2852, z = 125, y = 3896, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
     },
     
     badgeAreas = {   
@@ -403,7 +404,7 @@ korriban = {
   gcwEnabled = 1,
   
   planetTravelPoints = {
-    {name = "Archaeological Outpost", x = -1751, z = 91, y = -641, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+    {name = "Korriban Starport", x = -1751, z = 91, y = -641, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
     },
     
     badgeAreas = {   

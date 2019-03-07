@@ -29,39 +29,7 @@ lom_pyke = Creature:new {
 
 	templates = {"object/mobile/dressed_black_sun_henchman.iff"},
 	scale = 2.5,
-	lootGroups = {
-  		{
-  			      groups = {
-  				            {group = "armor_attachments", chance = 1000000},
-  				            {group = "clothing_attachments", chance = 1000000},
-  				            {group = "power_crystals", chance = 8000000},
-  				            
-},
-                      lootChance = 10000000
-},
-{
-            groups = {
-                    {group = "armor_attachments", chance = 5000000},
-                    {group = "clothing_attachments", chance = 5000000}
-},
-                    lootChance = 10000000
-},
-{
-            groups = {
-                    {group = "armor_attachments", chance = 5000000},
-                    {group = "clothing_attachments", chance = 5000000}
-},
-                    lootChance = 10000000
-},    
-{
-            groups = {
-                    {group = "g_banner_rebel", chance = 10000000}
-},
-                    lootChance = 10000000
-},
-
-
-},
+	lootGroups = {},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster,commandomaster)

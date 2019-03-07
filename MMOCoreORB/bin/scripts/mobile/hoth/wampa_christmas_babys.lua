@@ -27,15 +27,7 @@ wampa_christmas_babys = Creature:new {
 
 	templates = {"object/mobile/wampa.iff"},
 	scale = 0.5,
-	lootGroups = {
-		{
-			groups = {
-				{group = "tiertwo", chance = 5000000},
-				{group = "tierthree", chance = 5000000},
-		},
-			lootChance = 10000000
-		}
-	},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
