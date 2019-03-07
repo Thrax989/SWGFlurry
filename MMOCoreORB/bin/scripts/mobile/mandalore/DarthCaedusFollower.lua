@@ -31,21 +31,7 @@ darth_caedus_follower = Creature:new {
 	templates = {
 		"object/mobile/dressed_dark_jedi_human_male_01.iff",
 		"object/mobile/dressed_dark_jedi_human_female_01.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "power_crystals",  chance = 2200000},
-				{group = "color_crystals",  chance = 500000},
-				{group = "nightsister_common",  chance = 1200000},
-				{group = "armor_attachments",  chance = 2000000},
-				{group = "clothing_attachments",  chance = 1600000},
-				{group = "junk",  chance = 500000},
-				{group = "axkva_min",  chance = 2000000}
-			},
-			lootChance = 10000000
-		}
-		
-	},
+	lootGroups = {},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
 	attacks = merge(lightsabermaster)

@@ -29,36 +29,7 @@ shadow_collective_sc87 = Creature:new {
 
 	templates = {"object/mobile/ig_88.iff"},
 	scale = 1.5,
-	lootGroups = {
-		{
-	groups = {
-		{group = "armor_attachments", chance = 5000000},
-                {group = "clothing_attachments", chance = 5000000}
-    },
-		lootChance = 10000000
-    },
-    {
-      	 groups = {
-        	{group = "clothing_attachments", chance = 5000000},
-        	{group = "armor_attachments", chance = 5000000}
-    },
-      		lootChance = 10000000
-    },
-    {
-      	 groups = {
-        	{group = "clothing_attachments", chance = 5000000},
-        	{group = "armor_attachments", chance = 5000000}
-    },
-      		lootChance = 10000000
-    },
-    {
-      	 groups = {
-        	{group = "clothing_attachments", chance = 5000000},
-        	{group = "armor_attachments", chance = 5000000}
-    },
-      		lootChance = 10000000
-      },
-},
+	lootGroups = {},
 	weapons = {"dark_jedi_weapons_gen3"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(lightsabermaster)
