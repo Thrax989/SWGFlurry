@@ -404,7 +404,7 @@ korriban = {
   gcwEnabled = 1,
   
   planetTravelPoints = {
-    {name = "Archaeological Outpost", x = -1751, z = 91, y = -641, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+    {name = "Korriban Starport", x = -1751, z = 91, y = -641, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
     },
     
     badgeAreas = {   
