@@ -3,7 +3,7 @@ krayt_dragon_grand = Creature:new {
 	socialGroup = "krayt",
 	faction = "",
 	level = 336,
-	chanceHit = 30,
+	chanceHit = 30.0,
 	damageMin = 2270,
 	damageMax = 4250,
 	baseXp = 28549,
@@ -26,17 +26,17 @@ krayt_dragon_grand = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/krayt_dragon.iff"},
-	scale = 1.1;
+	scale = 1.3;
 	lootGroups = {
 		{
 	        groups = {
 				{group = "krayt_tissue_rare", chance = 2000000},
-				{group = "krayt_dragon_common", chance = 2500000},
-				{group = "krayt_pearls", chance = 1500000},
+				{group = "krayt_dragon_common", chance = 2000000},
+				{group = "krayt_pearls", chance = 2000000},
 				{group = "armor_all", chance = 2000000},
 				{group = "weapons_all", chance = 2000000},
 			},
-			lootChance = 7720000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},
