@@ -41,6 +41,10 @@ class ChatManager extends ManagedService implements Logger {
 	ChatRoom auctionRoom;
 	ChatRoom systemRoom;
 	ChatRoom generalRoom;
+	ChatRoom buffRoom;
+	ChatRoom thePitRoom;
+	ChatRoom pvpRoom;
+	
 
 	transient ChatRoomMap roomMap;
 
@@ -441,19 +445,40 @@ class ChatManager extends ManagedService implements Logger {
 	public ChatRoom getAuctionRoom() {
 		return auctionRoom;
 	}
-	
- 	/*
- 	 * Returns the general chat room
- 	 */
- 	public ChatRoom getGeneralRoom() {
- 		return generalRoom;
- 	}
 
 	/*
 	 * Returns the system chat room
 	 */
 	public ChatRoom getSystemRoom() {
 		return systemRoom;
+	}
+
+	/*
+	 * Returns the general chat room
+	 */
+	public ChatRoom getGeneralRoom() {
+		return generalRoom;
+	}
+
+	/*
+	 * Returns the Buffs chat room
+	 */
+	public ChatRoom getbuffRoom() {
+		return buffRoom;
+	}
+	
+	/*
+	 * Returns the ThePit chat room
+	 */
+	public ChatRoom getthePitRoom() {
+		return thePitRoom;
+	}
+	
+	/*
+	* Returns the parent room for GCW chat rooms.
+	*/
+	public ChatRoom getPvpRoom() {
+		return pvpRoom;
 	}
 
 	@dirty
