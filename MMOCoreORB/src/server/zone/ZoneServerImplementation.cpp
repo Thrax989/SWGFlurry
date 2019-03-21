@@ -249,7 +249,6 @@ void ZoneServerImplementation::startManagers() {
 
 	//Loads the FactionManager LUA Config.
 	FactionManager::instance()->loadData();
-	FactionManager::instance()->createGcwRooms(chatManager);
 
 	//Start global screen plays
 	DirectorManager::instance()->loadPersistentEvents();
