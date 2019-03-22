@@ -551,6 +551,25 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				ghost->maximizeExperience();
 				player->sendSystemMessage("You have maximized all xp types.");
 
+//JediQuest Screen Play Tester
+			} else if (templatePath == "jedi_quest") {
+				if (!player->isInCombat() && player->getBankCredits() < 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Jedi Quest");
+		                box->setPromptText("Jedi Quest Requires 1,000 credits. (Bank)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getBankCredits() > 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+						player->sendSystemMessage("Thank you for your credits.");
+						int questLeft = creature->getScreenPlayState("jediQuest") + 1;
+						player->setScreenPlayState("jediQuest", questLeft);
+						player->subtractBankCredits(1000);
+						box->setForceCloseDistance(5.f);
+			        }
 //GALACTIC TRAVEL SYSTEM City Politician Skill
 			} else if (templatePath == "citypolitician") {
 				if (!player->isInCombat() && player->getBankCredits() < 9999999) {
@@ -2138,6 +2157,42 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						currentCity->addToCityTreasury(1000);
 						}
 			        }
+//DARK JEDI HOLOCRON QUEST CHAPTER 1-30
+			} else if (templatePath == "Dark_Chapter_1") {
+				if (!player->isInCombat() && player->getScreenPlayState("jediQuest") == 1) {
+					if (player->hasSkill("force_title_jedi_novice") {
+					int questLeft = player->getScreenPlayState("jediQuest") + 1;
+					int jediVis1 = ghost->getVisibility();
+					player->setScreenPlayState("jediQuest", questLeft);
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Quest Progress" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You still have much ways to go befor becoming a full Jedi");
+					}
+				}
+				if (!player->isInCombat() && player->getScreenPlayState("jediQuest") >= 2) {
+					if (player->hasSkill("force_title_jedi_novice") {
+					int questLeft = player->getScreenPlayState("jediQuest");
+					int jediVis1 = ghost->getVisibility();
+					player->setScreenPlayState("jediQuest", questLeft);
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Quest Progress" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You still have much ways to go befor becoming a full Jedi");
+					}
+				}
 //New Mobile Template Outfit Swap Terminal
 //Swtich Back To Normal
 			} else if (templatePath == "switch_normal_loadout") {

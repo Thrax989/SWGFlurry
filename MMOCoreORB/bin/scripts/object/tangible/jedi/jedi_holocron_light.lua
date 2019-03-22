@@ -42,7 +42,136 @@
 
 
 object_tangible_jedi_jedi_holocron_light = object_tangible_jedi_shared_jedi_holocron_light:new {
-	objectMenuComponent = "HolocronMenuComponent",
+	gameObjectType = 16400,
+
+	maxCondition = 0,
+
+	customName = "Light Holocron",
+
+	templateType = CHARACTERBUILDERTERMINAL,
+
+	itemList = {
+		     "Chapter 1",
+		   {
+			"Light Chapter 1", "Light_Chapter_1",
+		   },
+			"Chapter 2",
+		   {
+			"Light Chapter 2", "Light_Chapter_2",
+		   },
+			"Chapter 3",
+		   {
+			"Light Chapter 3", "Light_Chapter_3",
+		   },
+		  	"Chapter 4",
+		   {
+			"Light Chapter 4", "Light_Chapter_4",
+		   },
+			"Chapter 5",
+		   {
+			"Light Chapter 5", "Light_Chapter_5",
+		   },
+		 	"Chapter 6",
+		   {
+			"Light Chapter 6", "Light_Chapter_6",
+		   },
+		 	"Chapter 7",
+		   {
+			"Light Chapter 7", "Light_Chapter_7",
+		   },
+		 	"Chapter 8",
+		   {
+			"Light Chapter 8", "Light_Chapter_8",
+		   },
+		 	"Chapter 9",
+		   {
+			"Light Chapter 9", "Light_Chapter_9",
+		   },
+		 	"Chapter 10",
+		   {
+			"Light Chapter 10", "Light_Chapter_10",
+		   },
+		 	"Chapter 11",
+		   {
+			"Light Chapter 11", "Light_Chapter_11",
+		   },
+		 	"Chapter 12",
+		   {
+			"Light Chapter 12", "Light_Chapter_12",
+		   },
+		 	"Chapter 13",
+		   {
+			"Light Chapter 13", "Light_Chapter_13",
+		   },
+		 	"Chapter 14",
+		   {
+			"Light Chapter 14", "Light_Chapter_14",
+		   },
+		 	"Chapter 15",
+		   {
+			"Light Chapter 15", "Light_Chapter_15",
+		   },
+		 	"Chapter 16",
+		   {
+			"Light Chapter 16", "Light_Chapter_16",
+		   },
+		 	"Chapter 17",
+		   {
+			"Light Chapter 17", "Light_Chapter_17",
+		   },
+		 	"Chapter 18",
+		   {
+			"Light Chapter 18", "Light_Chapter_18",
+		   },
+		 	"Chapter 19",
+		   {
+			"Light Chapter 19", "Light_Chapter_19",
+		   },
+		 	"Chapter 20",
+		   {
+			"Light Chapter 20", "Light_Chapter_20",
+		   },
+		 	"Chapter 21",
+		   {
+			"Light Chapter 21", "Light_Chapter_21",
+		   },
+		 	"Chapter 22",
+		   {
+			"Light Chapter 22", "Light_Chapter_22",
+		   },
+		 	"Chapter 23",
+		   {
+			"Light Chapter 23", "Light_Chapter_23",
+		   },
+		 	"Chapter 24",
+		   {
+			"Light Chapter 24", "Light_Chapter_24",
+		   },
+		 	"Chapter 25",
+		   {
+			"Light Chapter 25", "Light_Chapter_25",
+		   },
+		 	"Chapter 26",
+		   {
+			"Light Chapter 26", "Light_Chapter_26",
+		   },  
+		 	"Chapter 27",
+		   {
+			"Light Chapter 27", "Light_Chapter_27",
+		   },
+		 	"Chapter 28",
+		   {
+			"Light Chapter 28", "Light_Chapter_28",
+		   },
+		 	"Chapter 29",
+		   {
+			"Light Chapter 29", "Light_Chapter_29",
+		   },
+		 	"Chapter 30",
+		   {
+			"Light Chapter 30", "Light_Chapter_30",
+		   },
+	}
 }
 
 ObjectTemplates:addTemplate(object_tangible_jedi_jedi_holocron_light, "object/tangible/jedi/jedi_holocron_light.iff")
