@@ -20,6 +20,7 @@
 #include "server/chat/ChatManager.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
+#include "server/zone/objects/building/BuildingObject.h"
 
 void DiamondMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
