@@ -46,130 +46,138 @@ object_tangible_jedi_jedi_holocron_dark = object_tangible_jedi_shared_jedi_holoc
 
 	maxCondition = 0,
 
-	customName = "Dark Holocron",
+	customName = "Gray Holocron",
 
 	templateType = CHARACTERBUILDERTERMINAL,
 
 	itemList = {
 		     "Chapter 1",
 		   {
-			"Dark Chapter 1", "Dark_Chapter_1",
+			"Gray Chapter 1", "Gray_Chapter_1",
 		   },
 			"Chapter 2",
 		   {
-			"Dark Chapter 2", "Dark_Chapter_2",
+			"Gray Chapter 2", "Gray_Chapter_2",
 		   },
 			"Chapter 3",
 		   {
-			"Dark Chapter 3", "Dark_Chapter_3",
+			"Gray Chapter 3", "Gray_Chapter_3",
 		   },
 		  	"Chapter 4",
 		   {
-			"Dark Chapter 4", "Dark_Chapter_4",
+			"Gray Chapter 4", "Gray_Chapter_4",
 		   },
 			"Chapter 5",
 		   {
-			"Dark Chapter 5", "Dark_Chapter_5",
+			"Gray Chapter 5", "Gray_Chapter_5",
 		   },
 		 	"Chapter 6",
 		   {
-			"Dark Chapter 6", "Dark_Chapter_6",
+			"Gray Chapter 6", "Gray_Chapter_6",
 		   },
 		 	"Chapter 7",
 		   {
-			"Dark Chapter 7", "Dark_Chapter_7",
+			"Gray Chapter 7", "Gray_Chapter_7",
 		   },
 		 	"Chapter 8",
 		   {
-			"Dark Chapter 8", "Dark_Chapter_8",
+			"Gray Chapter 8", "Gray_Chapter_8",
 		   },
 		 	"Chapter 9",
 		   {
-			"Dark Chapter 9", "Dark_Chapter_9",
+			"Gray Chapter 9", "Gray_Chapter_9",
 		   },
 		 	"Chapter 10",
 		   {
-			"Dark Chapter 10", "Dark_Chapter_10",
+			"Gray Chapter 10", "Gray_Chapter_10",
 		   },
 		 	"Chapter 11",
 		   {
-			"Dark Chapter 11", "Dark_Chapter_11",
+			"Gray Chapter 11", "Gray_Chapter_11",
 		   },
 		 	"Chapter 12",
 		   {
-			"Dark Chapter 12", "Dark_Chapter_12",
+			"Gray Chapter 12", "Gray_Chapter_12",
 		   },
 		 	"Chapter 13",
 		   {
-			"Dark Chapter 13", "Dark_Chapter_13",
+			"Gray Chapter 13", "Gray_Chapter_13",
 		   },
 		 	"Chapter 14",
 		   {
-			"Dark Chapter 14", "Dark_Chapter_14",
+			"Gray Chapter 14", "Gray_Chapter_14",
 		   },
 		 	"Chapter 15",
 		   {
-			"Dark Chapter 15", "Dark_Chapter_15",
+			"Gray Chapter 15", "Gray_Chapter_15",
 		   },
 		 	"Chapter 16",
 		   {
-			"Dark Chapter 16", "Dark_Chapter_16",
+			"Gray Chapter 16", "Gray_Chapter_16",
 		   },
 		 	"Chapter 17",
 		   {
-			"Dark Chapter 17", "Dark_Chapter_17",
+			"Gray Chapter 17", "Gray_Chapter_17",
 		   },
 		 	"Chapter 18",
 		   {
-			"Dark Chapter 18", "Dark_Chapter_18",
+			"Gray Chapter 18", "Gray_Chapter_18",
 		   },
 		 	"Chapter 19",
 		   {
-			"Dark Chapter 19", "Dark_Chapter_19",
+			"Gray Chapter 19", "Gray_Chapter_19",
 		   },
 		 	"Chapter 20",
 		   {
-			"Dark Chapter 20", "Dark_Chapter_20",
+			"Gray Chapter 20", "Gray_Chapter_20",
 		   },
 		 	"Chapter 21",
 		   {
-			"Dark Chapter 21", "Dark_Chapter_21",
+			"Gray Chapter 21", "Gray_Chapter_21",
 		   },
 		 	"Chapter 22",
 		   {
-			"Dark Chapter 22", "Dark_Chapter_22",
+			"Gray Chapter 22", "Gray_Chapter_22",
 		   },
 		 	"Chapter 23",
 		   {
-			"Dark Chapter 23", "Dark_Chapter_23",
+			"Gray Chapter 23", "Gray_Chapter_23",
 		   },
 		 	"Chapter 24",
 		   {
-			"Dark Chapter 24", "Dark_Chapter_24",
+			"Gray Chapter 24", "Gray_Chapter_24",
 		   },
 		 	"Chapter 25",
 		   {
-			"Dark Chapter 25", "Dark_Chapter_25",
+			"Gray Chapter 25", "Gray_Chapter_25",
 		   },
 		 	"Chapter 26",
 		   {
-			"Dark Chapter 26", "Dark_Chapter_26",
+			"Gray Chapter 26", "Gray_Chapter_26",
 		   },  
 		 	"Chapter 27",
 		   {
-			"Dark Chapter 27", "Dark_Chapter_27",
+			"Gray Chapter 27", "Gray_Chapter_27",
 		   },
 		 	"Chapter 28",
 		   {
-			"Dark Chapter 28", "Dark_Chapter_28",
+			"Gray Chapter 28", "Gray_Chapter_28",
 		   },
 		 	"Chapter 29",
 		   {
-			"Dark Chapter 29", "Dark_Chapter_29",
+			"Gray Chapter 29", "Gray_Chapter_29",
 		   },
 		 	"Chapter 30",
 		   {
-			"Dark Chapter 30", "Dark_Chapter_30",
+			"Gray Chapter 30", "Gray_Chapter_30",
+		   },
+		 	"Start Gray Jedi Quest",
+		   {
+			"Begin The Gray Jedi Quest Line", "Gray_Chapter_32",
+		   },
+		 	"Complete Gray Jedi Quest",
+		   {
+			"Have You Completed All 30 Quests?", "Gray_Chapter_31",
 		   },
 	}
 }
