@@ -2196,7 +2196,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 //GRAY JEDI HOLOCRON QUEST END CHAPTER
 			} else if (templatePath == "Gray_Chapter_31") {
-				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 31) {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && (ghost->getSkillPoints() == 250) && player->getScreenPlayState("jediQuest") >= 31) {
 					int jediVis1 = ghost->getVisibility();
 					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
 					box->setPromptTitle("Gray Jedi Quest Progress");
@@ -2207,11 +2207,14 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					box->setPromptText(promptText.toString());
 					ghost->addSuiBox(box);
 					player->sendMessage(box->generateMessage());
+					SkillManager* skillManager = server->getSkillManager();
 					SkillManager::instance()->awardSkill("combat_jedi_novice", player, true, true, true);
 					player->setScreenPlayState("jediQuest", 32);
 					player->sendSystemMessage("You may now start your training as a Gray Jedi");
-				}
-				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 31) {
+				} else {
+					player->sendSystemMessage("You need 250 Skill Points Avalible");
+					}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") <= 30) {
 					player->sendSystemMessage("You may not use this option until you have completed all 30 Quests");
 				}
 //GRAY JEDI HOLOCRON QUEST START CHAPTER
