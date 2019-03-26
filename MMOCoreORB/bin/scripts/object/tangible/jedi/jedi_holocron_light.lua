@@ -51,123 +51,123 @@ object_tangible_jedi_jedi_holocron_light = object_tangible_jedi_shared_jedi_holo
 	templateType = CHARACTERBUILDERTERMINAL,
 
 	itemList = {
-		     "Chapter 1",
+		     "Gray Chapter 1",
 		   {
 			"Gray Chapter 1", "Gray_Chapter_1",
 		   },
-			"Chapter 2",
+			"Gray Chapter 2",
 		   {
 			"Gray Chapter 2", "Gray_Chapter_2",
 		   },
-			"Chapter 3",
+			"Gray Chapter 3",
 		   {
 			"Gray Chapter 3", "Gray_Chapter_3",
 		   },
-		  	"Chapter 4",
+		  	"Gray Chapter 4",
 		   {
 			"Gray Chapter 4", "Gray_Chapter_4",
 		   },
-			"Chapter 5",
+			"Gray Chapter 5",
 		   {
 			"Gray Chapter 5", "Gray_Chapter_5",
 		   },
-		 	"Chapter 6",
+		 	"Gray Chapter 6",
 		   {
 			"Gray Chapter 6", "Gray_Chapter_6",
 		   },
-		 	"Chapter 7",
+		 	"Gray Chapter 7",
 		   {
 			"Gray Chapter 7", "Gray_Chapter_7",
 		   },
-		 	"Chapter 8",
+		 	"Gray Chapter 8",
 		   {
 			"Gray Chapter 8", "Gray_Chapter_8",
 		   },
-		 	"Chapter 9",
+		 	"Gray Chapter 9",
 		   {
 			"Gray Chapter 9", "Gray_Chapter_9",
 		   },
-		 	"Chapter 10",
+		 	"Gray Chapter 10",
 		   {
 			"Gray Chapter 10", "Gray_Chapter_10",
 		   },
-		 	"Chapter 11",
+		 	"Gray Chapter 11",
 		   {
 			"Gray Chapter 11", "Gray_Chapter_11",
 		   },
-		 	"Chapter 12",
+		 	"Gray Chapter 12",
 		   {
 			"Gray Chapter 12", "Gray_Chapter_12",
 		   },
-		 	"Chapter 13",
+		 	"Gray Chapter 13",
 		   {
 			"Gray Chapter 13", "Gray_Chapter_13",
 		   },
-		 	"Chapter 14",
+		 	"Gray Chapter 14",
 		   {
 			"Gray Chapter 14", "Gray_Chapter_14",
 		   },
-		 	"Chapter 15",
+		 	"Gray Chapter 15",
 		   {
 			"Gray Chapter 15", "Gray_Chapter_15",
 		   },
-		 	"Chapter 16",
+		 	"Gray Chapter 16",
 		   {
 			"Gray Chapter 16", "Gray_Chapter_16",
 		   },
-		 	"Chapter 17",
+		 	"Gray Chapter 17",
 		   {
 			"Gray Chapter 17", "Gray_Chapter_17",
 		   },
-		 	"Chapter 18",
+		 	"Gray Chapter 18",
 		   {
 			"Gray Chapter 18", "Gray_Chapter_18",
 		   },
-		 	"Chapter 19",
+		 	"Gray Chapter 19",
 		   {
 			"Gray Chapter 19", "Gray_Chapter_19",
 		   },
-		 	"Chapter 20",
+		 	"Gray Chapter 20",
 		   {
 			"Gray Chapter 20", "Gray_Chapter_20",
 		   },
-		 	"Chapter 21",
+		 	"Gray Chapter 21",
 		   {
 			"Gray Chapter 21", "Gray_Chapter_21",
 		   },
-		 	"Chapter 22",
+		 	"Gray Chapter 22",
 		   {
 			"Gray Chapter 22", "Gray_Chapter_22",
 		   },
-		 	"Chapter 23",
+		 	"Gray Chapter 23",
 		   {
 			"Gray Chapter 23", "Gray_Chapter_23",
 		   },
-		 	"Chapter 24",
+		 	"Gray Chapter 24",
 		   {
 			"Gray Chapter 24", "Gray_Chapter_24",
 		   },
-		 	"Chapter 25",
+		 	"Gray Chapter 25",
 		   {
 			"Gray Chapter 25", "Gray_Chapter_25",
 		   },
-		 	"Chapter 26",
+		 	"Gray Chapter 26",
 		   {
 			"Gray Chapter 26", "Gray_Chapter_26",
 		   },  
-		 	"Chapter 27",
+		 	"Gray Chapter 27",
 		   {
 			"Gray Chapter 27", "Gray_Chapter_27",
 		   },
-		 	"Chapter 28",
+		 	"Gray Chapter 28",
 		   {
 			"Gray Chapter 28", "Gray_Chapter_28",
 		   },
-		 	"Chapter 29",
+		 	"Gray Chapter 29",
 		   {
 			"Gray Chapter 29", "Gray_Chapter_29",
 		   },
-		 	"Chapter 30",
+		 	"Gray Chapter 30",
 		   {
 			"Gray Chapter 30", "Gray_Chapter_30",
 		   },
@@ -175,7 +175,7 @@ object_tangible_jedi_jedi_holocron_light = object_tangible_jedi_shared_jedi_holo
 		   {
 			"Begin The Gray Jedi Quest Line", "Gray_Chapter_32",
 		   },
-		 	"Complete Gray Jedi Quest",
+		 	"Complete The Gray Jedi Quest Line",
 		   {
 			"Have You Completed All 30 Quests?", "Gray_Chapter_31",
 		   },
