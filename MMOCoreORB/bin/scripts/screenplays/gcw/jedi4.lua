@@ -1,36 +1,36 @@
 --------------------------------------
 --   Creator : TOXIC
---   Date : 03/22/2019
+--   Date : 03/25/2019
 --------------------------------------
 local ObjectManager = require("managers.object.object_manager")
 
-jedi3 = ScreenPlay:new {
+jedi4 = ScreenPlay:new {
 	numberOfActs = 1,
-  	questString = "jedi3",
+  	questString = "jedi4",
   	questdata = Object:new {
     	activePlayerName = "initial",
     	}
 }
   
-registerScreenPlay("jedi3", true)
+registerScreenPlay("jedi4", true)
   
-function jedi3:start()
+function jedi4:start()
     	self:spawnActiveAreas()
 end
   
-function jedi3:spawnActiveAreas()
+function jedi4:spawnActiveAreas()
 	local pSpawnArea = spawnSceneObject("corellia", "object/active_area.iff", 0, 0, 0, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
 	        activeArea:setRadius(340)
-	        createObserver(ENTEREDAREA, "jedi3", "notifySpawnArea", pSpawnArea)
-	        createObserver(EXITEDAREA, "jedi3", "notifySpawnAreaLeave", pSpawnArea)
+	        createObserver(ENTEREDAREA, "jedi4", "notifySpawnArea", pSpawnArea)
+	        createObserver(EXITEDAREA, "jedi4", "notifySpawnAreaLeave", pSpawnArea)
 	    end
 end
  
-function jedi3:notifySpawnArea(pActiveArea, pMovingObject)
+function jedi4:notifySpawnArea(pActiveArea, pMovingObject)
 	
 	if (not SceneObject(pMovingObject):isCreatureObject()) then
 		return 0
@@ -43,10 +43,10 @@ function jedi3:notifySpawnArea(pActiveArea, pMovingObject)
 		
         local thisState = player:getScreenPlayState(jediQuest.questString)
 
-        if ( thisState ~= 3 ) then
+        if ( thisState ~= 4 ) then
 		if (player:isImperial() or player:isRebel() or player:isNeutral()) then
 			player:sendSystemMessage("You must have the quest state to enter the zone!")
-			player:teleport(5294, 78, 6112, 0)
+			player:teleport(0, 0, 0, 0)
 		else
 			player:sendSystemMessage("You have entered the Quest Zone")
 		end
@@ -54,7 +54,7 @@ function jedi3:notifySpawnArea(pActiveArea, pMovingObject)
 	end)
 end
 
-function jedi3:notifySpawnAreaLeave(pActiveArea, pMovingObject)
+function jedi4:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 	
 	if (not SceneObject(pMovingObject):isCreatureObject()) then
 		return 0
