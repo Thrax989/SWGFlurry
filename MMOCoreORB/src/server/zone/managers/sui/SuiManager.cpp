@@ -2196,7 +2196,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 //GRAY JEDI HOLOCRON QUEST END CHAPTER
 			} else if (templatePath == "Gray_Chapter_31") {
-				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 31) {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 31) {
 					int jediVis1 = ghost->getVisibility();
 					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
 					box->setPromptTitle("Gray Jedi Quest Progress");
@@ -2208,6 +2208,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					ghost->addSuiBox(box);
 					player->sendMessage(box->generateMessage());
 					SkillManager::instance()->awardSkill("combat_jedi_novice", player, true, true, true);
+					player->setScreenPlayState("jediQuest", 32);
 					player->sendSystemMessage("You may now start your training as a Gray Jedi");
 				}
 				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 31) {
@@ -2228,8 +2229,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					player->sendMessage(box->generateMessage());
 					player->setScreenPlayState("jediQuest", 1);
 					player->sendSystemMessage("You may now start your Quest to become a Gray Jedi");
-				}
-				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 1) {
+			} else {
 					player->sendSystemMessage("You may not use this option you have already started the gray jedi journey");
 				}
 //GRAY JEDI HOLOCRON QUEST CHAPTER 1
@@ -3597,7 +3597,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					ghost->setTrainerZoneName(zoneName);
 					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
 					player->sendMessage(box->generateMessage());
-					player->sendSystemMessage("**Chapter 1 Started**");
+					player->sendSystemMessage("**Chapter 30 Started**");
 				}
 				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 31) {
 					int jediVis1 = ghost->getVisibility();
