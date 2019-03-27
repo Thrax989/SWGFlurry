@@ -57,6 +57,7 @@ public:
 		WOUNDHEALINGRECEIVED,		// ManagedObject arg1 = player, long arg2 = wound heal amount
 		XPAWARDED,					// ManagedObject arg1 = player, long arg2 = xp amount
 		SPICEDOWNERACTIVATED,		// ManagedObject arg1 = player, long arg2 = 0
+		FORCEBUFFHIT, 				// ManagedObject arg1 = player, long arg2 = damage amount absorbed.
 		FORCEARMOR,					// ManagedObject arg1 = player, long arg2 = damage amount absorbed.
 		FORCESHIELD,				// ManagedObject arg1 = player, long arg2 = damage amount absorbed.
 		FORCEFEEDBACK,				// ManagedObject arg1 = player, long arg2 = damage amount absorbed.

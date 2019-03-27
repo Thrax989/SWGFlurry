@@ -73,6 +73,14 @@ function missionScreenplay:enemyKilled(pMobile, pPlayer)
     local player = LuaCreatureObject(pPlayer)
 
     local enemy = LuaCreatureObject(pMobile)
+    
+    local accepted = player:getScreenPlayState(missionScreenplay.questString)
+------------------------------------------------------------------------------------------------------------------
+--Check Players Screen Play Status Deny Access To The Quest's Target If The Player Does Not Have The Quest Active
+------------------------------------------------------------------------------------------------------------------
+    if ( accepted == 0 ) then
+		player:sendSystemMessage("*** You must accept the quest befor killing the target ***")
+    else
 
     player:setScreenPlayState(missionScreenplay.states.enemydead, "missionquest")
 -------------------------------------------------------
@@ -100,6 +108,7 @@ function missionScreenplay:enemyKilled(pMobile, pPlayer)
 --Promt To Go Back To Mission Giver (Watto)
 -------------------------------------------------------
        player:sendSystemMessage("You've finished the Quest talk with Watto.")
+       end
 end
     return 0
 end
