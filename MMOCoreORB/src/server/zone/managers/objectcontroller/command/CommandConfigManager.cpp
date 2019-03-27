@@ -850,18 +850,4 @@ void CommandConfigManager::registerCommands() {
 	commandFactory.registerCommand<PetPatrolCommand>(String("petPatrol").toLowerCase());
 	commandFactory.registerCommand<PetClearPatrolPointsCommand>(String("petClearPatrolPoints").toLowerCase());
 	commandFactory.registerCommand<PetGetPatrolPointCommand>(String("petGetPatrolPoint").toLowerCase());
-	
-	//Custom
- 	commandFactory.registerCommand<InvisibleCommand>(String("invisible").toLowerCase());
-  	commandFactory.registerCommand<setPvpCommand>(String("setPvp").toLowerCase());
- 	commandFactory.registerCommand<PistolWhip1Command>(String("pistolwhip1").toLowerCase());
- 	commandFactory.registerCommand<PistolWhip2Command>(String("pistolwhip2").toLowerCase());
- 	commandFactory.registerCommand<PoisonGasCloud1Command>(String("poisongascloud1").toLowerCase());
- 	commandFactory.registerCommand<PoisonGasCloud2Command>(String("poisongascloud2").toLowerCase());
-	commandFactory.registerCommand<UndergroundExplosion1Command>(String("undergroundexplosion1").toLowerCase());
-	commandFactory.registerCommand<UndergroundExplosion2Command>(String("undergroundexplosion2").toLowerCase());
- 	commandFactory.registerCommand<ExtractionCommand>(String("extraction").toLowerCase());
- 	commandFactory.registerCommand<BactaJabCommand>(String("bactajab").toLowerCase());
- 	commandFactory.registerCommand<StrangulationCommand>(String("strangulation").toLowerCase());
- 	commandFactory.registerCommand<DragFromShadowsCommand>(String("dragfromshadows").toLowerCase());
 }
