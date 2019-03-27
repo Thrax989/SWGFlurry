@@ -1295,6 +1295,9 @@ void PlayerObjectImplementation::notifyOnline() {
 	//Login to jedi manager
 	JediManager::instance()->onPlayerLoggedIn(playerCreature);
 
+	//Reset Players Skill Mods
+	SkillModManager::instance()->verifySkillBoxSkillMods(playerCreature);
+
 	if (getFrsData()->getRank() >= 0) {
 		FrsManager* frsManager = zoneServer->getFrsManager();
 
