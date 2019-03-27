@@ -195,8 +195,9 @@
 #include "server/zone/objects/creature/commands/DragFromShadowsCommand.h"
 #include "server/zone/objects/creature/commands/RegrantSkillsCommand.h"
 #include "server/zone/objects/creature/commands/RecalcForceCommand.h"
-
-
+#include "server/zone/objects/creature/commands/BhShieldCommand.h"
+#include "server/zone/objects/creature/commands/CloakCommand.h"
+#include "server/zone/objects/creature/commands/ForceCloakCommand.h"
 using namespace server::zone::managers::objectcontroller::command;
 
 
@@ -355,4 +356,7 @@ void CommandConfigManager::registerCommands4() {
  	commandFactory.registerCommand<DragFromShadowsCommand>(String("dragfromshadows").toLowerCase());
 	commandFactory.registerCommand<RegrantSkillsCommand>(String("regrantSkills").toLowerCase());
 	commandFactory.registerCommand<RecalcForceCommand>(String("recalcForce").toLowerCase());
+	commandFactory.registerCommand<ForceCloakCommand>(String("forceCloak").toLowerCase());
+	commandFactory.registerCommand<CloakCommand>(String("cloak").toLowerCase());
+	commandFactory.registerCommand<BhShieldCommand>(String("bhshield").toLowerCase());
 }
