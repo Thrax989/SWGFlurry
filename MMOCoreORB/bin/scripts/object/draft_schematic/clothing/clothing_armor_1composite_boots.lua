@@ -70,7 +70,7 @@ object_draft_schematic_clothing_clothing_armor_1composite_boots = object_draft_s
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/armor/composite/armor_stormtrooper_boots.iff",
+   targetTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_boots.iff",
 
    additionalTemplates = {
               }
