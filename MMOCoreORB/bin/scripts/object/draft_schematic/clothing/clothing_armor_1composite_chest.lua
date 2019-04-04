@@ -70,7 +70,7 @@ object_draft_schematic_clothing_clothing_armor_1composite_chest = object_draft_s
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_chest_plate.iff",
+   targetTemplate = "object/tangible/wearables/armor/composite/armor_stormtrooper_chest_plate.iff",
 
    additionalTemplates = {
               }

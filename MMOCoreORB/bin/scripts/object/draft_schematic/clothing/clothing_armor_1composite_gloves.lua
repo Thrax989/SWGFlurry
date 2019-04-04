@@ -70,7 +70,7 @@ object_draft_schematic_clothing_clothing_armor_1composite_gloves = object_draft_
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_gloves.iff",
+   targetTemplate = "object/tangible/wearables/armor/composite/armor_stormtrooper_gloves.iff",
 
    additionalTemplates = {
               }
