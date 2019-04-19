@@ -24739,9 +24739,131 @@ ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothin
 
 
 
-
+--NGE Crafted Armor
+--***********************************************************************************************************************************************************************************************
 object_draft_schematic_clothing_shared_clothing_armor_assault_trooper_chest = SharedDraftSchematicObjectTemplate:new {
 	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_assault_trooper_chest.iff"
 }
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_assault_trooper_chest, "object/draft_schematic/clothing/shared_clothing_armor_assault_trooper_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_bounty_hunter_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_bounty_hunter_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_bounty_hunter_chest, "object/draft_schematic/clothing/shared_clothing_bounty_hunter_trooper_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_clone_trooper_imperial_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_clone_trooper_imperial_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_clone_trooper_imperial_chest, "object/draft_schematic/clothing/shared_clothing_armor_clone_trooper_imperial_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_clone_trooper_neutral_chest_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_clone_trooper_neutral_chest_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_clone_trooper_neutral_chest_chest, "object/draft_schematic/clothing/shared_clothing_armor_clone_trooper_neutral_chest_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_clone_trooper_rebel_chest_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_clone_trooper_rebel_chest_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_clone_trooper_rebel_chest_chest, "object/draft_schematic/clothing/shared_clothing_armor_clone_trooper_rebel_chest_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_deathtrooper_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_deathtrooper_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_deathtrooper_chest, "object/draft_schematic/clothing/shared_clothing_armor_deathtrooper_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_galactic_marine_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_galactic_marine_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_galactic_marine_chest, "object/draft_schematic/clothing/shared_clothing_armor_galactic_marine_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_infiltrator_s01_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_infiltrator_s01_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_infiltrator_s01_chest, "object/draft_schematic/clothing/shared_clothing_armor_infiltrator_s01_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_infiltrator_s02_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_infiltrator_s02_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_infiltrator_s02_chest, "object/draft_schematic/clothing/shared_clothing_armor_infiltrator_s02_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_mandalorian_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_mandalorian_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_mandalorian_chest, "object/draft_schematic/clothing/shared_clothing_armor_mandalorian_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_mandalorian_imperial_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_mandalorian_imperial_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_mandalorian_imperial_chest, "object/draft_schematic/clothing/shared_clothing_armor_mandalorian_imperial_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_mandalorian_rebel_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_mandalorian_rebel_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_mandalorian_rebel_chest, "object/draft_schematic/clothing/shared_clothing_armor_mandalorian_rebel_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_marauder_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_marauder_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_marauder_chest, "object/draft_schematic/clothing/shared_clothing_armor_marauder_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_marine_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_marine_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_marine_chest, "object/draft_schematic/clothing/shared_clothing_armor_marine_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_rebel_assault_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_rebel_assault_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_rebel_assault_chest, "object/draft_schematic/clothing/shared_clothing_armor_rebel_assault_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_rebel_battle_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_rebel_battle_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_rebel_battle_chest, "object/draft_schematic/clothing/shared_clothing_armor_rebel_battle_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_rebel_snow_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_rebel_snow_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_rebel_snow_chest, "object/draft_schematic/clothing/shared_clothing_armor_rebel_snow_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_rebel_spec_force_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_rebel_spec_force_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_rebel_spec_force_chest, "object/draft_schematic/clothing/shared_clothing_armor_rebel_spec_force_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_scout_trooper_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_scout_trooper_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_scout_trooper_chest, "object/draft_schematic/clothing/shared_clothing_armor_scout_trooper_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_snowtrooper_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_snowtrooper_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_snowtrooper_chest, "object/draft_schematic/clothing/shared_clothing_armor_snowtrooper_chest.iff")
+--***********************************************************************************************************************************************************************************************
+object_draft_schematic_clothing_shared_clothing_armor_stormtrooper_chest = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_stormtrooper_chest.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_stormtrooper_chest, "object/draft_schematic/clothing/shared_clothing_armor_stormtrooper_chest.iff")
+--***********************************************************************************************************************************************************************************************
