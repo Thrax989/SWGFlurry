@@ -24736,12 +24736,3 @@ object_draft_schematic_clothing_shared_clothing_wke_skirt_s04 = SharedDraftSchem
 }
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_wke_skirt_s04, "object/draft_schematic/clothing/shared_clothing_wke_skirt_s04.iff")
-
-
-
-
-object_draft_schematic_clothing_shared_clothing_armor_assault_trooper_chest = SharedDraftSchematicObjectTemplate:new {
-	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_assault_trooper_chest.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_assault_trooper_chest, "object/draft_schematic/clothing/shared_clothing_armor_assault_trooper_chest.iff")
