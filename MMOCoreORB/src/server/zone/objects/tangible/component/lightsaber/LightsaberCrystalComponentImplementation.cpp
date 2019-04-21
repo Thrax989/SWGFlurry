@@ -278,7 +278,7 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 	TangibleObjectImplementation::fillAttributeList(alm, object);
 
 	PlayerObject* player = object->getPlayerObject();
-	if (object->hasSkill("force_title_jedi_rank_01") || player->isPrivileged()) {
+	if (object->hasSkill("force_title_jedi_rank_01") || object->hasSkill("combat_jedi_novice") || player->isPrivileged()) {
 		if (ownerID == 0) {
 			StringBuffer str;
 			str << "\\#pcontrast2 UNTUNED";
@@ -319,7 +319,8 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 }
 
 void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
-	if (ownerID == 0 && player->hasSkill("force_title_jedi_rank_01") && hasPlayerAsParent(player)) {
+	ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
+	if (jedi->getForcePower() >= 1) {
 		String text = "@jedi_spam:tune_crystal";
 		menuResponse->addRadialMenuItem(128, 3, text);
 	}
@@ -339,7 +340,8 @@ void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenu
 }
 
 int LightsaberCrystalComponentImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
-	if (selectedID == 128 && player->hasSkill("force_title_jedi_rank_01") && hasPlayerAsParent(player) && ownerID == 0) {
+ 	ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
+	if (selectedID == 128 && jedi->getForcePower() >= 1) {
 		ManagedReference<SuiMessageBox*> suiMessageBox = new SuiMessageBox(player, SuiWindowType::TUNE_CRYSTAL);
 
 		suiMessageBox->setPromptTitle("@jedi_spam:confirm_tune_title");
@@ -398,7 +400,8 @@ bool LightsaberCrystalComponentImplementation::hasPlayerAsParent(CreatureObject*
 }
 
 void LightsaberCrystalComponentImplementation::tuneCrystal(CreatureObject* player) {
-	if(!player->hasSkill("force_title_jedi_rank_01") || !hasPlayerAsParent(player)) {
+	ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
+	if (jedi->getForcePower() <= 1) {
 		return;
 	}
 
