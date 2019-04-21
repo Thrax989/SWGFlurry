@@ -1,5 +1,0 @@
-object_draft_schematic_instrument_instrument_kloo_horn_classic = object_draft_schematic_instrument_shared_instrument_kloo_horn_classic:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_instrument_instrument_kloo_horn_classic, "object/draft_schematic/instrument/instrument_kloo_horn_classic.iff")

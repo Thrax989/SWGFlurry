@@ -1,5 +1,0 @@
-object_draft_schematic_droid_component_droid_dance_module = object_draft_schematic_droid_component_shared_droid_dance_module:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_droid_component_droid_dance_module, "object/draft_schematic/droid/component/droid_dance_module.iff")

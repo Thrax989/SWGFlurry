@@ -1,5 +1,0 @@
-object_ship_spacestation_ord_mantell_dungeon = object_ship_shared_spacestation_ord_mantell_dungeon:new {
-
-}
-
-ObjectTemplates:addTemplate(object_ship_spacestation_ord_mantell_dungeon, "object/ship/spacestation_ord_mantell_dungeon.iff")

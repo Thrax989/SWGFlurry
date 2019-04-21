@@ -1,5 +1,0 @@
-object_tangible_meatlump_reward_mtp_meatlump_graffiti_07 = object_tangible_meatlump_reward_shared_mtp_meatlump_graffiti_07:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_meatlump_reward_mtp_meatlump_graffiti_07, "object/tangible/meatlump/reward/mtp_meatlump_graffiti_07.iff")

@@ -1,5 +1,0 @@
-object_tangible_component_food_ingredient_cereal_flakes = object_tangible_component_food_shared_ingredient_cereal_flakes:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_food_ingredient_cereal_flakes, "object/tangible/component/food/ingredient_cereal_flakes.iff")

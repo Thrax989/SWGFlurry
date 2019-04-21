@@ -1,5 +1,0 @@
-object_tangible_component_droid_droid_dance_module = object_tangible_component_droid_shared_droid_dance_module:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_droid_droid_dance_module, "object/tangible/component/droid/droid_dance_module.iff")

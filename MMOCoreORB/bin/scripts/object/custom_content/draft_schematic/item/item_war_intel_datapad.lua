@@ -1,5 +1,0 @@
-object_draft_schematic_item_item_war_intel_datapad = object_draft_schematic_item_shared_item_war_intel_datapad:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_item_item_war_intel_datapad, "object/draft_schematic/item/item_war_intel_datapad.iff")

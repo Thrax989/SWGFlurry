@@ -1,5 +1,0 @@
-object_draft_schematic_ranger_item_detect_trackingbeacon = object_draft_schematic_ranger_shared_item_detect_trackingbeacon:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_ranger_item_detect_trackingbeacon, "object/draft_schematic/ranger/item_detect_trackingbeacon.iff")

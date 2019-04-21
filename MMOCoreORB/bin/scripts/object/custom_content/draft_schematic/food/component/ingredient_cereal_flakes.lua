@@ -1,5 +1,0 @@
-object_draft_schematic_food_component_ingredient_cereal_flakes = object_draft_schematic_food_component_shared_ingredient_cereal_flakes:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_food_component_ingredient_cereal_flakes, "object/draft_schematic/food/component/ingredient_cereal_flakes.iff")

@@ -1,5 +1,0 @@
-object_draft_schematic_item_gcw_patrol_tool = object_draft_schematic_item_shared_gcw_patrol_tool:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_item_gcw_patrol_tool, "object/draft_schematic/item/gcw_patrol_tool.iff")

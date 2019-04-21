@@ -1,5 +1,0 @@
-object_draft_schematic_camp_modules_battery_module = object_draft_schematic_camp_modules_shared_battery_module:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_camp_modules_battery_module, "object/draft_schematic/camp/modules/battery_module.iff")

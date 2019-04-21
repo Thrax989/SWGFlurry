@@ -1,5 +1,0 @@
-object_tangible_component_weapon_new_weapon_enhancement_melee_base = object_tangible_component_weapon_new_weapon_shared_enhancement_melee_base:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_weapon_new_weapon_enhancement_melee_base, "object/tangible/component/weapon/new_weapon/enhancement_melee_base.iff")

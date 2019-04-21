@@ -1,5 +1,0 @@
-object_tangible_component_structure_heavy_harvesting_mechanism_advanced = object_tangible_component_structure_shared_heavy_harvesting_mechanism_advanced:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_structure_heavy_harvesting_mechanism_advanced, "object/tangible/component/structure/heavy_harvesting_mechanism_advanced.iff")

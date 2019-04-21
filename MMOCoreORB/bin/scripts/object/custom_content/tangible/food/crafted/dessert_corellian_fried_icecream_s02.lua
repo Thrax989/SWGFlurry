@@ -1,5 +1,0 @@
-object_tangible_food_crafted_dessert_corellian_fried_icecream_s02 = object_tangible_food_crafted_shared_dessert_corellian_fried_icecream_s02:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_food_crafted_dessert_corellian_fried_icecream_s02, "object/tangible/food/crafted/dessert_corellian_fried_icecream_s02.iff")

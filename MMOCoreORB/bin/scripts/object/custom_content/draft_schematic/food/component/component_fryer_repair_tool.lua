@@ -1,5 +1,0 @@
-object_draft_schematic_food_component_component_fryer_repair_tool = object_draft_schematic_food_component_shared_component_fryer_repair_tool:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_food_component_component_fryer_repair_tool, "object/draft_schematic/food/component/component_fryer_repair_tool.iff")

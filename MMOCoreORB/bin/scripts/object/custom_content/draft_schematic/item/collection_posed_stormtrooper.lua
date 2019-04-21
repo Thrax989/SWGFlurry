@@ -1,5 +1,0 @@
-object_draft_schematic_item_collection_posed_stormtrooper = object_draft_schematic_item_shared_collection_posed_stormtrooper:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_item_collection_posed_stormtrooper, "object/draft_schematic/item/collection_posed_stormtrooper.iff")

@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_tank_farm = object_tangible_storyteller_prop_shared_pr_tank_farm:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_tank_farm, "object/tangible/storyteller/prop/pr_tank_farm.iff")

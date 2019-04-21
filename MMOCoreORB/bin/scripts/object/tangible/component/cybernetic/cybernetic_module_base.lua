@@ -1,5 +1,0 @@
-object_tangible_component_cybernetic_cybernetic_module_base = object_tangible_component_cybernetic_shared_cybernetic_module_base:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_cybernetic_cybernetic_module_base, "object/tangible/component/cybernetic/cybernetic_module_base.iff")

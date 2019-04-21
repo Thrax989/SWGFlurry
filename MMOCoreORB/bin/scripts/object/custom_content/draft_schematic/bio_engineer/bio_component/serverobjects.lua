@@ -1,4 +1,0 @@
-includeFile("custom_content/draft_schematic/bio_engineer/bio_component/bio_component_armor_adenine.lua")
-includeFile("custom_content/draft_schematic/bio_engineer/bio_component/bio_component_armor_cytosine.lua")
-includeFile("custom_content/draft_schematic/bio_engineer/bio_component/bio_component_armor_guanine.lua")
-includeFile("custom_content/draft_schematic/bio_engineer/bio_component/bio_component_armor_thymine.lua")
