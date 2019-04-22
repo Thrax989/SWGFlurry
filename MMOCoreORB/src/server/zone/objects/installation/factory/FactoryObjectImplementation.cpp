@@ -417,14 +417,17 @@ bool FactoryObjectImplementation::startFactory() {
 			return false;
 	}
 
-	timer = ((int)schematic->getComplexity()) * 8;
+	timer = ((int)schematic->getComplexity()) * 1;
+
+ 	if (timer < 1)
+ 		timer = 1; // prevent negative run time
 
 	if(!populateSchematicBlueprint(schematic))
 		return false;
 
 	// Add sampletask
 	Reference<CreateFactoryObjectTask* > createFactoryObjectTask = new CreateFactoryObjectTask(_this.getReferenceUnsafeStaticCast());
-	addPendingTask("createFactoryObject", createFactoryObjectTask, timer * 1000);
+	addPendingTask("createFactoryObject", createFactoryObjectTask, timer * 1);
 
 	operating = true;
 
@@ -605,7 +608,7 @@ void FactoryObjectImplementation::createNewObject() {
 	Reference<Task*> pending = getPendingTask("createFactoryObject");
 
 	if (pending != nullptr)
-		pending->reschedule(timer * 1000);
+		pending->reschedule(timer * 1);
 	else
 		stopFactory("manf_error", "", "", -1);
 }
