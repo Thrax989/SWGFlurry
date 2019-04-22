@@ -50,7 +50,7 @@ object_draft_schematic_item_item_powerup_weapon_mine_explosive = object_draft_sc
 	craftingToolTab = 524288, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 5,
 	size = 1,
-	factoryCrateSize = 10,
+	factoryCrateSize = 100,
 
 	xpType = "crafting_general",
 	xp = 20,
