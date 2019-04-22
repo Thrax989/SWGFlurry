@@ -559,14 +559,26 @@ int CreatureManagerImplementation::notifyDestruction(TangibleObject* destructor,
 							ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
 
 							if (groupMember->isPlayerCreature()) {
-								Locker locker(groupMember, destructedObject);
-								groupMember->notifyObservers(ObserverEventType::KILLEDCREATURE, destructedObject);
+								if (groupMember->getWorldPosition().distanceTo(destructedObject->getWorldPosition()) < ZoneServer::CLOSEOBJECTRANGE) {
+									Locker locker(groupMember, destructedObject);
+									groupMember->notifyObservers(ObserverEventType::KILLEDCREATURE, destructedObject);
+
+									PlayerObject* groupGhost = groupMember->getPlayerObject();
+									if (groupGhost != NULL)
+										groupGhost->updatePveKills();
+								}
 							}
 						}
+
 					}
 				} else {
 					Locker locker(player, destructedObject);
 					player->notifyObservers(ObserverEventType::KILLEDCREATURE, destructedObject);
+
+					PlayerObject* ghost = player->getPlayerObject();
+					if (ghost != NULL) {
+						ghost->updatePveKills();
+					}
 				}
 
 				FactionManager* factionManager = FactionManager::instance();
@@ -579,7 +591,6 @@ int CreatureManagerImplementation::notifyDestruction(TangibleObject* destructor,
 						factionManager->awardFactionStanding(copyThreatMap.getHighestDamagePlayer(), destructedObject->getFactionString(), level);
 				}
 			}
-
 		}
 
 		if (playerManager != NULL)
@@ -847,8 +858,10 @@ void CreatureManagerImplementation::harvest(Creature* creature, CreatureObject* 
 		player->sendSystemMessage("Tried to harvest something this creature didn't have, please report this error");
 		return;
 	}
-	int quantityExtracted = int(quantity * float(player->getSkillMod("creature_harvesting") / 100.0f));
-	quantityExtracted = Math::max(quantityExtracted, 3);
+	// Make the worst possible amount 10
+	quantity = Math::max(quantity, 10.0f); // Over-ride really low template values
+
+	int quantityExtracted = int(quantity * float(player->getSkillMod("creature_harvesting") / 100.0f + 1.0f)); // Always give a bonus based on skill level
 
 	ManagedReference<ResourceSpawn*> resourceSpawn = resourceManager->getCurrentSpawn(restype, player->getZone()->getZoneName());
 
@@ -877,10 +890,24 @@ void CreatureManagerImplementation::harvest(Creature* creature, CreatureObject* 
 
 	float modifier = 1;
 	int baseAmount = quantityExtracted;
+	
+	String skillNovice = "outdoors_ranger_novice";
+	String skillMaster = "outdoors_ranger_master";
 
 	if (player->isGrouped()) {
+		// Apply group bonus and see if anyone else in the group is a Ranger
 		modifier = player->getGroup()->getGroupHarvestModifier(player);
-
+		// See if I am a Ranger novice or Ranger Master.
+		if(modifier < 1.3f && player->hasSkill(skillNovice)) {
+			modifier = 1.3f; // Novice, only if there isn't a master in the group
+		}
+		if(player->hasSkill(skillMaster)){
+			modifier = 1.4f; // Master
+		}
+		// Apply bonus. 
+		// 1.2 for generally being grouped, always generated in getGroupHarvestModifier(player);
+		// 1.3 for personally being or being with a Novice Ranger
+		// 1.4 for personally being or being with a Master Ranger
 		quantityExtracted = (int)(quantityExtracted * modifier);
 	}
 
