@@ -45,7 +45,7 @@ object_building_player_city_garden_endor_lrg_01 = object_building_player_city_sh
 
 	lotSize = 0,
 	baseMaintenanceRate = 0,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine"},
+	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
 	length = 7,
 	width = 7,
 	cityRankRequired = 3,

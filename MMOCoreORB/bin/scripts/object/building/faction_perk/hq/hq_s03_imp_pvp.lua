@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version
 
 
-object_building_faction_perk_hq_hq_s03_imp_pvp = object_building_faction_perk_hq_shared_hq_s03_imp_pvp:new {
+object_building_faction_perk_hq_hq_s03_imp_pvp = object_building_faction_perk_hq_shared_hq_s03:new {
 
 		lotSize = 0,
 		containerComponent = "GCWBaseContainerComponent",
@@ -52,7 +52,7 @@ object_building_faction_perk_hq_hq_s03_imp_pvp = object_building_faction_perk_hq
 		pvpFaction = "imperial",
 		pvpStatusBitmask = OVERT,
 		dataObjectComponent = "DestructibleBuildingDataComponent",
-		allowedZones = {"dantooine", "naboo", "rori","tatooine", "corellia", "lok", "talus"},
+		allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
 		constructionMarker = "object/building/player/construction/construction_player_house_generic_medium_style_01.iff",
 		length = 7,
 		width = 6,
