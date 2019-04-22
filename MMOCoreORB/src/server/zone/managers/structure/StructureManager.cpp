@@ -951,8 +951,10 @@ void StructureManager::reportStructureStatus(CreatureObject* creature,
 
 		status->addMenuItem(
 				"@player_structure:items_in_building_prompt "
-						+ String::valueOf(
-								building->getCurrentNumberOfPlayerItems())); //Number of Items in Building:
+				//Number of Items in Building. Max item limit Added. [1/1000]:
+				+ String::valueOf(building->getCurrentNumberOfPlayerItems())
+				+ "/"
+				+ String::valueOf(building->getMaximumNumberOfPlayerItems())); :
 #if ENABLE_STRUCTURE_JSON_EXPORT
 		if (creature->hasSkill("admin_base")) {
 			String exportNote = "Exported: " + building->exportJSON("reportStructureStatus");
