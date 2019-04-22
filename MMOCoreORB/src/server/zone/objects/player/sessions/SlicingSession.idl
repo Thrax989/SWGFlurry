@@ -14,7 +14,6 @@ include server.zone.objects.tangible.weapon.WeaponObject;
 include server.zone.objects.player.sui.listbox.SuiListBox;
 include server.zone.objects.tangible.tool.smuggler.SlicingTool;
 include server.zone.objects.tangible.RelockLootContainerEvent;
-
 @json
 class SlicingSession extends Facade {
 	@weakReference
@@ -34,6 +33,11 @@ class SlicingSession extends Facade {
 
 	protected boolean usedNode;
 	protected boolean usedClamp;
+	
+	protected byte sliceOption;
+	
+	protected boolean selectSlice;
+	protected boolean firstRun;
 
 	protected boolean baseSlice;
 	protected boolean keypadSlice;

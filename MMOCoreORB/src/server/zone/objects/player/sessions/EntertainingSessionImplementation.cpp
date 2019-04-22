@@ -175,10 +175,22 @@ void EntertainingSessionImplementation::healWounds(CreatureObject* creature, flo
 	}
 	if(woundHeal > 0 && (creature->getWounds(CreatureAttribute::MIND) > 0
 			|| creature->getWounds(CreatureAttribute::FOCUS) > 0
-			|| creature->getWounds(CreatureAttribute::WILLPOWER) > 0)) {
+			|| creature->getWounds(CreatureAttribute::WILLPOWER) > 0
+			|| creature->getWounds(CreatureAttribute::HEALTH) > 0
+			|| creature->getWounds(CreatureAttribute::STRENGTH) > 0
+			|| creature->getWounds(CreatureAttribute::CONSTITUTION) > 0
+			|| creature->getWounds(CreatureAttribute::ACTION) > 0
+			|| creature->getWounds(CreatureAttribute::STAMINA) > 0
+			|| creature->getWounds(CreatureAttribute::QUICKNESS) > 0)) {
 		creature->healWound(entertainer, CreatureAttribute::MIND, woundHeal, true, false);
 		creature->healWound(entertainer, CreatureAttribute::FOCUS, woundHeal, true, false);
 		creature->healWound(entertainer, CreatureAttribute::WILLPOWER, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::HEALTH, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::STRENGTH, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::CONSTITUTION, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::ACTION, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::STAMINA, woundHeal, true, false);
+		creature->healWound(entertainer, CreatureAttribute::QUICKNESS, woundHeal, true, false);
 
 		amountHealed += woundHeal;
 	}
@@ -282,7 +294,7 @@ void EntertainingSessionImplementation::doPerformanceAction() {
 	}
 
 	int actionDrain = performance->getActionPointsPerLoop() - (int)(entertainer->getHAM(CreatureAttribute::QUICKNESS)/35.f);
-
+	actionDrain = (int)round(actionDrain / 3);
 	if (entertainer->getHAM(CreatureAttribute::ACTION) <= actionDrain) {
 		if (isDancing()) {
 			stopDancing();
@@ -592,8 +604,8 @@ void EntertainingSessionImplementation::doFlourish(int flourishNumber, bool gran
 	float baseActionDrain = performance->getActionPointsPerLoop() - (int)(entertainer->getHAM(CreatureAttribute::QUICKNESS)/35.f);
 
 	//float baseActionDrain = -40 + (getQuickness() / 37.5);
-	float flourishActionDrain = baseActionDrain / 2.0;
-
+	//float flourishActionDrain = baseActionDrain / 2.0;
+	float flourishActionDrain = baseActionDrain / 5.0;
 	int actionDrain = (int)round((flourishActionDrain * 10 + 0.5) / 10.0); // Round to nearest dec for actual int cost
 
 	if (entertainer->getHAM(CreatureAttribute::ACTION) <= actionDrain) {
@@ -633,7 +645,7 @@ void EntertainingSessionImplementation::addEntertainerBuffDuration(CreatureObjec
 	buffDuration += duration;
 
 	if (buffDuration > (120.0f + (10.0f / 60.0f)) ) // 2 hrs 10 seconds
-		buffDuration = (120.0f + (10.0f / 60.0f)); // 2hrs 10 seconds
+		buffDuration = (210.0f); // 3 hours, 30 minutes
 
 	setEntertainerBuffDuration(creature, performanceType, buffDuration);
 }
@@ -656,6 +668,10 @@ void EntertainingSessionImplementation::addEntertainerBuffStrength(CreatureObjec
 
 	if(maxBuffStrength > 125.0f)
 		maxBuffStrength = 125.0f;	//cap at 125% power
+	
+	float citySpecStrength = entertainer->getSkillMod("private_spec_buff_mind");	
+	
+	maxBuffStrength += citySpecStrength;
 
 	float factionPerkStrength = entertainer->getSkillMod("private_faction_buff_mind");
 
@@ -910,44 +926,38 @@ void EntertainingSessionImplementation::activateEntertainerBuff(CreatureObject* 
 			return;
 
 		ManagedReference<PerformanceBuff*> oldBuff = NULL;
-		switch (performanceType){
-		case PerformanceType::MUSIC:
-		{
-			uint32 focusBuffCRC = STRING_HASHCODE("performance_enhance_music_focus");
-			uint32 willBuffCRC = STRING_HASHCODE("performance_enhance_music_willpower");
-			oldBuff = cast<PerformanceBuff*>(creature->getBuff(focusBuffCRC));
-			if (oldBuff != NULL && oldBuff->getBuffStrength() > buffStrength)
-				return;
-			ManagedReference<PerformanceBuff*> focusBuff = new PerformanceBuff(creature, focusBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::MUSIC_FOCUS);
-			ManagedReference<PerformanceBuff*> willBuff = new PerformanceBuff(creature, willBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::MUSIC_WILLPOWER);
 
-			Locker locker(focusBuff);
-			creature->addBuff(focusBuff);
-			locker.release();
-
-			Locker locker2(willBuff);
-			creature->addBuff(willBuff);
-			break;
-		}
-		case PerformanceType::DANCE:
-		{
-			uint32 mindBuffCRC = STRING_HASHCODE("performance_enhance_dance_mind");
-			oldBuff = cast<PerformanceBuff*>(creature->getBuff(mindBuffCRC));
-			if (oldBuff != NULL && oldBuff->getBuffStrength() > buffStrength)
-				return;
-			ManagedReference<PerformanceBuff*> mindBuff = new PerformanceBuff(creature, mindBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::DANCE_MIND);
-
-			Locker locker(mindBuff);
-			creature->addBuff(mindBuff);
-			break;
-		}
-		}
+		uint32 mindBuffCRC = STRING_HASHCODE("performance_enhance_dance_mind");
+		uint32 focusBuffCRC = STRING_HASHCODE("performance_enhance_music_focus");
+		uint32 willBuffCRC = STRING_HASHCODE("performance_enhance_music_willpower");
+			
+		oldBuff = cast<PerformanceBuff*>(creature->getBuff(mindBuffCRC));
 
 
+		if (oldBuff != NULL && oldBuff->getBuffStrength() > buffStrength)
+			return;
+				
+		if (oldBuff != NULL && (oldBuff->getBuffDuration() > buffDuration * 60) && (oldBuff->getBuffStrength() <= buffStrength))
+			return;
+			
+		ManagedReference<PerformanceBuff*> mindBuff = new PerformanceBuff(creature, mindBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::DANCE_MIND);							
+		ManagedReference<PerformanceBuff*> focusBuff = new PerformanceBuff(creature, focusBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::MUSIC_FOCUS);
+		ManagedReference<PerformanceBuff*> willBuff = new PerformanceBuff(creature, willBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::MUSIC_WILLPOWER);
+	
+		Locker locker(mindBuff);
+		creature->addBuff(mindBuff);
+		locker.release();
+	
+		Locker locker2(focusBuff);
+		creature->addBuff(focusBuff);
+		locker.release();
+
+		Locker locker3(willBuff);
+		creature->addBuff(willBuff);
+		
 	} catch(Exception& e) {
 
 	}
-
 }
 
 void EntertainingSessionImplementation::updateEntertainerMissionStatus(bool entertaining, const int missionType) {
@@ -1093,7 +1103,7 @@ void EntertainingSessionImplementation::awardEntertainerExperience() {
 
 			float groupMod = groupBonusCount * 0.05;
 
-			float totalBonus = 1.f + groupMod + audienceMod + applauseMod;
+			float totalBonus = 4.f + groupMod + audienceMod + applauseMod;
 
 			xpAmount = ceil(xpAmount * totalBonus);
 

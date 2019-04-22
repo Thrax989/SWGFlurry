@@ -39,6 +39,10 @@ int SlicingSessionImplementation::initializeSession() {
 	usedNode = false;
 	usedClamp = false;
 
+	selectSlice = false;
+	firstRun = true;
+	
+	sliceOption = 0;
 	relockEvent = nullptr;
 
 	baseSlice = false;
@@ -133,12 +137,25 @@ void SlicingSessionImplementation::generateSliceMenu(SuiListBox* suiBox) {
 		else
 			prompt << progress;
 
-		suiBox->addMenuItem("@slicing/slicing:blue_cable", 0);
-		suiBox->addMenuItem("@slicing/slicing:red_cable", 1);
+		if(!firstRun || tangibleObject->isContainerObject() || tangibleObject->isMissionTerminal() || isBaseSlice()){
 
-		if (!usedClamp && !usedNode) {
-			suiBox->addMenuItem("@slicing/slicing:use_clamp", 2);
-			suiBox->addMenuItem("@slicing/slicing:use_analyzer", 3);
+			suiBox->addMenuItem("@slicing/slicing:blue_cable", 0);
+			suiBox->addMenuItem("@slicing/slicing:red_cable", 1);
+
+			if (!usedClamp && !usedNode) {
+				suiBox->addMenuItem("@slicing/slicing:use_clamp", 2);
+				suiBox->addMenuItem("@slicing/slicing:use_analyzer", 3);
+			}
+		}
+		if(!selectSlice && !tangibleObject->isContainerObject() && !tangibleObject->isMissionTerminal() && firstRun){
+			if(tangibleObject->isArmorObject()){
+				suiBox->addMenuItem("Slice for base effectiveness.", 4);
+				suiBox->addMenuItem("Slice for encumbrance.", 5);
+			}else if(tangibleObject->isWeaponObject()){
+				suiBox->addMenuItem("Slice for speed.", 6);
+				suiBox->addMenuItem("Slice for damage.", 7);
+			}
+			suiBox->addMenuItem("Random slice.", 8);
 		}
 
 	} else if (progress == 1) {
@@ -202,6 +219,34 @@ void SlicingSessionImplementation::handleMenuSelect(CreatureObject* pl, byte men
 
 		case 3: {
 			handleUseFlowAnalyzer(); // Handle Use of Flow Analyzer
+			break;
+		}
+		case 4: {
+			selectSlice = true;
+			sliceOption = 1;
+			firstRun = false;
+			break;
+		}
+		case 5: {
+			selectSlice = true;
+			sliceOption = 2;
+			firstRun = false;
+			break;
+		}
+		case 6: {
+			selectSlice = true;
+			sliceOption = 1;
+			firstRun = false;
+			break;
+		}
+		case 7: {
+			selectSlice = true;
+			sliceOption = 2;
+			firstRun = false;
+			break;
+		}
+		case 8: {
+			firstRun = false;
 			break;
 		}
 		default:
@@ -470,20 +515,20 @@ void SlicingSessionImplementation::handleSlice(SuiListBox* suiBox) {
 
 	if (tangibleObject->isContainerObject() || tangibleObject->getGameObjectType() == SceneObjectType::PLAYERLOOTCRATE) {
 		handleContainerSlice();
-		playerManager->awardExperience(player, "slicing", 250, true); // Container Slice XP
+		playerManager->awardExperience(player, "slicing", 500, true); // Container Slice XP
 	} else if (tangibleObject->isMissionTerminal()) {
 		MissionTerminal* term = cast<MissionTerminal*>( tangibleObject.get());
-		playerManager->awardExperience(player, "slicing", 100, true); // Terminal Slice XP
+		playerManager->awardExperience(player, "slicing", 200, true); // Terminal Slice XP
 		term->addSlicer(player);
 		player->sendSystemMessage("@slicing/slicing:terminal_success");
 	} else if (tangibleObject->isWeaponObject()) {
 		handleWeaponSlice();
-		playerManager->awardExperience(player, "slicing", 250, true); // Weapon Slice XP
+		playerManager->awardExperience(player, "slicing", 500, true); // Weapon Slice XP
 	} else if (tangibleObject->isArmorObject()) {
 		handleArmorSlice();
-		playerManager->awardExperience(player, "slicing", 250, true); // Armor Slice XP
+		playerManager->awardExperience(player, "slicing", 500, true); // Armor Slice XP
 	} else if ( isBaseSlice()){
-		playerManager->awardExperience(player,"slicing", 1000, true); // Base slicing
+		playerManager->awardExperience(player,"slicing", 2000, true); // Base slicing
 
 		Zone* zone = player->getZone();
 
@@ -534,13 +579,24 @@ void SlicingSessionImplementation::handleWeaponSlice() {
 
 	uint8 percentage = System::random(max - min) + min;
 
-	switch(System::random(1)) {
-	case 0:
-		handleSliceDamage(percentage);
-		break;
-	case 1:
-		handleSliceSpeed(percentage);
-		break;
+	if(!selectSlice){
+		switch(System::random(1)) {
+			case 0:
+				handleSliceDamage(percentage);
+				break;
+			case 1:
+				handleSliceSpeed(percentage);
+				break;
+		}
+	}else{
+		switch(sliceOption) {
+			case 2:
+				handleSliceDamage(percentage);
+				break;
+			case 1:
+				handleSliceSpeed(percentage);
+				break;
+		}
 	}
 }
 
@@ -623,16 +679,16 @@ void SlicingSessionImplementation::handleArmorSlice() {
 	uint8 min = 0;
 	uint8 max = 0;
 
-	switch (sliceSkill) {
+	switch (sliceSkill) {// 25-45% max encumbrance slice, 20-40% max effectiveness slice
 	case 5:
-		min += (sliceType == 0) ? 6 : 5;
+		min += (sliceType == 0) ? 5 : 10;
 		max += 5;
 	case 4:
-		min += (sliceType == 0) ? 0 : 10;
+		min += (sliceType == 0) ? 10 : 10;
 		max += 10;
 	case 3:
 		min += 5;
-		max += (sliceType == 0) ? 20 : 30;
+		max += (sliceType == 0) ? 25 : 30;
 		break;
 	default:
 		return;
@@ -640,13 +696,24 @@ void SlicingSessionImplementation::handleArmorSlice() {
 
 	uint8 percent = System::random(max - min) + min;
 
-	switch (sliceType) {
-	case 0:
-		handleSliceEffectiveness(percent);
-		break;
-	case 1:
-		handleSliceEncumbrance(percent);
-		break;
+	if(!selectSlice){
+		switch (sliceType) {
+			case 0:
+				handleSliceEffectiveness(percent);
+				break;
+			case 1:
+				handleSliceEncumbrance(percent);
+				break;
+		}
+	}else{
+		switch (sliceOption) {
+			case 1:
+				handleSliceEffectiveness(percent);
+				break;
+			case 2:
+				handleSliceEncumbrance(percent);
+				break;
+		}
 	}
 }
 
@@ -663,7 +730,7 @@ void SlicingSessionImplementation::handleSliceEncumbrance(uint8 percent) {
 
 	armor->setEncumbranceSlice(percent / 100.f);
 	armor->setSliced(true);
-
+	armor->setMaxSockets(4);
 	StringIdChatParameter params;
 	params.setDI(percent);
 	params.setStringId("@slicing/slicing:enc_mod");
@@ -684,7 +751,7 @@ void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 
 	armor->setEffectivenessSlice(percent / 100.f);
 	armor->setSliced(true);
-
+	armor->setMaxSockets(4);
 	StringIdChatParameter params;
 	params.setDI(percent);
 	params.setStringId("@slicing/slicing:eff_mod");
@@ -710,6 +777,11 @@ void SlicingSessionImplementation::handleContainerSlice() {
 
 	if (tangibleObject->getGameObjectType() == SceneObjectType::PLAYERLOOTCRATE) {
 		Reference<SceneObject*> containerSceno = player->getZoneServer()->createObject(STRING_HASHCODE("object/tangible/container/loot/loot_crate.iff"), 1);
+		
+		if (tangibleObject->getClientObjectCRC() == 0x6C34F325) {
+			containerSceno->destroyObjectFromDatabase(true);
+			containerSceno = player->getZoneServer()->createObject(STRING_HASHCODE("object/tangible/container/loot/loot_briefcase.iff"), 1);
+		}
 
 		if (containerSceno == nullptr)
 			return;
