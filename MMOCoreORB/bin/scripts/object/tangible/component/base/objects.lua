@@ -40,6 +40,13 @@
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
 
+object_tangible_component_base_shared_weapon_core_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/base/shared_weapon_core_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_base_shared_weapon_core_base, "object/tangible/component/base/shared_weapon_core_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
 
 object_tangible_component_base_shared_base_barrel = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/component/base/shared_base_barrel.iff"

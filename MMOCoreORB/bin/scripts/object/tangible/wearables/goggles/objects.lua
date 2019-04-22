@@ -453,3 +453,9 @@ object_tangible_wearables_goggles_shared_rebreather = SharedTangibleObjectTempla
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_goggles_shared_rebreather, "object/tangible/wearables/goggles/shared_rebreather.iff")
+
+object_tangible_wearables_goggles_shared_goggles_kubaz = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/goggles/shared_goggles_kubaz.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_goggles_shared_goggles_kubaz, "object/tangible/wearables/goggles/shared_goggles_kubaz.iff")
