@@ -162,7 +162,10 @@ class LootManager extends ManagedService implements Logger {
 	
 	@local
 	public native string getRandomLootableMod( unsigned int sceneObjectType );	
-	
+
+	@local
+    public native TangibleObject createLootAttachment(LootItemTemplate templateObject, final string modName, int value);
+
 	public native int calculateLootCredits(int level);
 
 	public native boolean createLoot(SceneObject container, AiAgent creature);
@@ -171,6 +174,8 @@ class LootManager extends ManagedService implements Logger {
 	public native boolean createLootFromCollection(SceneObject container, LootGroupCollection collection, int level);
 	
 	public native boolean createLoot(SceneObject container, final string lootGroup, int level = -1, boolean maxCondition = false);
+	
+	public native boolean createNamedLoot(SceneObject container, final string lootGroup, final string name, int level = -1, boolean maxCondition = false);
 
 	public native boolean createLootSet(SceneObject container, final string lootGroup, int level, boolean maxCondition,int setSize);	
 	

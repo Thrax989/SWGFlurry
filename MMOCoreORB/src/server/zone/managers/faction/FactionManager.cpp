@@ -9,6 +9,11 @@
 #include "FactionMap.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "templates/manager/TemplateManager.h"
+#include "server/zone/managers/loot/LootManager.h"
+#include "server/zone/managers/player/PlayerManager.h"
+#include "server/chat/ChatManager.h"
+#include "server/zone/packets/player/PlayMusicMessage.h"
+
 
 FactionManager::FactionManager() {
 	setLoggingName("FactionManager");
@@ -158,16 +163,29 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 		ManagedReference<PlayerObject*> ghost = killerCreature->getPlayerObject();
 
 		ManagedReference<PlayerObject*> killedGhost = destructedObject->getPlayerObject();
+		ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
+		ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
+		ManagedReference<PlayerManager*> playerManager = killerCreature->getZoneServer()->getPlayerManager();
+
+		//Player name on player datapad
+		String playerName = destructedObject->getFirstName();
+		
 
 		if (killer->isRebel() && destructedObject->isImperial()) {
 			ghost->increaseFactionStanding("rebel", 30);
+			killer->playEffect("clienteffect/holoemote_rebel.cef", "head");
+			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
+ 			killer->sendMessage(pmm);
+			lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
 			ghost->decreaseFactionStanding("imperial", 45);
-
 			killedGhost->decreaseFactionStanding("imperial", 45);
-		} else if (killer->isImperial() && destructedObject->isRebel()) {
+			} else if (killer->isImperial() && destructedObject->isRebel()) {
 			ghost->increaseFactionStanding("imperial", 30);
+			killer->playEffect("clienteffect/holoemote_imperial.cef", "head");
+			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
+ 			killer->sendMessage(pmm);
+			lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
 			ghost->decreaseFactionStanding("rebel", 45);
-
 			killedGhost->decreaseFactionStanding("rebel", 45);
 		}
 	}
@@ -205,7 +223,7 @@ int FactionManager::getFactionPointsCap(int rank) {
 	if (rank >= factionRanks.getCount())
 		return -1;
 
-	return Math::max(1000, getRankCost(rank) * 20);
+	return Math::max(1000, getRankCost(rank) * 170);
 }
 
 bool FactionManager::isFaction(const String& faction) {
