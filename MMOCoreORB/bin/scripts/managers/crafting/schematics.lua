@@ -1,4 +1,4 @@
---Copyright (C) 2010 <SWGEmu>
+--Copyright (C}, 2010 <SWGEmu>
 
 
 --This File is part of Core3.
@@ -7,7 +7,7 @@
 --it and/or modify it under the terms of the GNU Lesser
 --General Public License as published by the Free Software
 --Foundation; either version 2 of the License,
---or (at your option) any later version.
+--or (at your option}, any later version.
 
 --This program is distributed in the hope that it will be useful,
 --but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -28,7 +28,7 @@
 --give you permission to combine Engine3 program with free software
 --programs or libraries that are released under the GNU LGPL and with
 --code included in the standard release of Core3 under the GNU LGPL
---license (or modified versions of such code, with unchanged license).
+--license (or modified versions of such code, with unchanged license},.
 --You may copy and distribute such a system following the terms of the
 --GNU LGPL for Engine3 and the licenses of the other code concerned,
 --provided that you include the source code of that other code when
@@ -1810,4 +1810,30 @@ schematics = {
 	{path="object/draft_schematic/furniture/bestine/painting_bestine_ronka.iff"},
 	{path="object/draft_schematic/item/theme_park/alderaan/act2/dead_eye_decoder.iff"},
 	{path="object/draft_schematic/item/quest_item/fs_medic_puzzle_heal_pack.iff"},
+	--NGE Houses *****************************************************
+	{path="object/draft_schematic/structure/atat_house_schem.iff"},
+	{path="object/draft_schematic/structure/bespin_house_schem.iff"},
+	{path="object/draft_schematic/structure/commando_house_schem.iff"},
+	{path="object/draft_schematic/structure/emperors_house_schem.iff"},
+	{path="object/draft_schematic/structure/gen_lg_win_01_schem.iff"},
+	{path="object/draft_schematic/structure/gen_lg_win_02_schem.iff"},
+	{path="object/draft_schematic/structure/gen_md_win_01_schem.iff"},
+	{path="object/draft_schematic/structure/gen_md_win_02_schem.iff"},
+	{path="object/draft_schematic/structure/gen_sm_win_01_schem.iff"},
+	{path="object/draft_schematic/structure/gen_sm_win_02_schem.iff"},
+	{path="object/draft_schematic/structure/hangar_house_schem.iff"},
+	{path="object/draft_schematic/structure/jabbas_house_schem.iff"},
+	{path="object/draft_schematic/structure/jedi_house_schem.iff"},
+	{path="object/draft_schematic/structure/musty_house_schem.iff"},
+	{path="object/draft_schematic/structure/nab_sm_win_01_schem.iff"},
+	{path="object/draft_schematic/structure/rebel_house_schem.iff"},
+	{path="object/draft_schematic/structure/relaxation_house_schem.iff"},
+	{path="object/draft_schematic/structure/sandcrawler_house_schem.iff"},
+	{path="object/draft_schematic/structure/sith_house_schem.iff"},
+	{path="object/draft_schematic/structure/tat_sm_win_01_schem.iff"},
+	{path="object/draft_schematic/structure/tree_house_schem.iff"},
+	{path="object/draft_schematic/structure/vehicle_house_schem.iff"},
+	{path="object/draft_schematic/structure/vipbunker_house_schem.iff"},
+	{path="object/draft_schematic/structure/yoda_house_schem.iff"},
+	{path="object/draft_schematic/structure/yt1300_house_schem.iff"},
 };
