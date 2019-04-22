@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_loveday_flowers = object_tangible_storyteller_prop_shared_pr_loveday_flowers:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_loveday_flowers, "object/tangible/storyteller/prop/pr_loveday_flowers.iff")

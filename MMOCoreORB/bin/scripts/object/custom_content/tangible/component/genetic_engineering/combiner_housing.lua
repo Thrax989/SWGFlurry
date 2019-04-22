@@ -1,0 +1,5 @@
+object_tangible_component_genetic_engineering_combiner_housing = object_tangible_component_genetic_engineering_shared_combiner_housing:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_genetic_engineering_combiner_housing, "object/tangible/component/genetic_engineering/combiner_housing.iff")

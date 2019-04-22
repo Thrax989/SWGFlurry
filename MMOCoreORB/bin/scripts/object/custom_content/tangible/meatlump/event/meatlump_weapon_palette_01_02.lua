@@ -1,0 +1,5 @@
+object_tangible_meatlump_event_meatlump_weapon_palette_01_02 = object_tangible_meatlump_event_shared_meatlump_weapon_palette_01_02:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_meatlump_event_meatlump_weapon_palette_01_02, "object/tangible/meatlump/event/meatlump_weapon_palette_01_02.iff")

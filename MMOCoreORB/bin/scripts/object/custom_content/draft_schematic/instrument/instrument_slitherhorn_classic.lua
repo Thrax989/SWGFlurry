@@ -1,0 +1,5 @@
+object_draft_schematic_instrument_instrument_slitherhorn_classic = object_draft_schematic_instrument_shared_instrument_slitherhorn_classic:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_instrument_instrument_slitherhorn_classic, "object/draft_schematic/instrument/instrument_slitherhorn_classic.iff")

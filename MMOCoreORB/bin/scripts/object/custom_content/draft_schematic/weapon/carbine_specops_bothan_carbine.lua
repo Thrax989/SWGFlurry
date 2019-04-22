@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_carbine_specops_bothan_carbine = object_draft_schematic_weapon_shared_carbine_specops_bothan_carbine:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_carbine_specops_bothan_carbine, "object/draft_schematic/weapon/carbine_specops_bothan_carbine.iff")

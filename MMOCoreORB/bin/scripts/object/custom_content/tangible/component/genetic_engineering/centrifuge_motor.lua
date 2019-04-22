@@ -1,0 +1,5 @@
+object_tangible_component_genetic_engineering_centrifuge_motor = object_tangible_component_genetic_engineering_shared_centrifuge_motor:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_genetic_engineering_centrifuge_motor, "object/tangible/component/genetic_engineering/centrifuge_motor.iff")

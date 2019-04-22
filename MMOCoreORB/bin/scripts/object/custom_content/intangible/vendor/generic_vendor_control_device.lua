@@ -1,0 +1,5 @@
+object_intangible_vendor_generic_vendor_control_device = object_intangible_vendor_shared_generic_vendor_control_device:new {
+
+}
+
+ObjectTemplates:addTemplate(object_intangible_vendor_generic_vendor_control_device, "object/intangible/vendor/generic_vendor_control_device.iff")

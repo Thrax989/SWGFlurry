@@ -1,0 +1,3 @@
+object_tangible_destructible_barricade = object_tangible_destructible_shared_barricade:new {
+}
+ObjectTemplates:addTemplate(object_tangible_destructible_barricade, "object/tangible/destructible/barricade.iff")

@@ -1,0 +1,5 @@
+object_draft_schematic_space_chassis_texture_kit_arc170_s01 = object_draft_schematic_space_chassis_shared_texture_kit_arc170_s01:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_space_chassis_texture_kit_arc170_s01, "object/draft_schematic/space/chassis/texture_kit_arc170_s01.iff")

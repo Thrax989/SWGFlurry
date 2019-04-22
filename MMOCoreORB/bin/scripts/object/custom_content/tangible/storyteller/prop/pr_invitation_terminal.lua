@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_invitation_terminal = object_tangible_storyteller_prop_shared_pr_invitation_terminal:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_invitation_terminal, "object/tangible/storyteller/prop/pr_invitation_terminal.iff")

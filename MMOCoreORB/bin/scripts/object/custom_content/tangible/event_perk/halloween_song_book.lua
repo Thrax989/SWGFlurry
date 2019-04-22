@@ -1,0 +1,3 @@
+object_tangible_event_perk_halloween_song_book = object_tangible_event_perk_shared_halloween_song_book:new {
+}
+ObjectTemplates:addTemplate(object_tangible_event_perk_halloween_song_book, "object/tangible/event_perk/halloween_song_book.iff")

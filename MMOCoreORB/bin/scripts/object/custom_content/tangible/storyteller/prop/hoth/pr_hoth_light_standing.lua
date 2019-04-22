@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_hoth_pr_hoth_light_standing = object_tangible_storyteller_prop_hoth_shared_pr_hoth_light_standing:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_hoth_pr_hoth_light_standing, "object/tangible/storyteller/prop/hoth/pr_hoth_light_standing.iff")

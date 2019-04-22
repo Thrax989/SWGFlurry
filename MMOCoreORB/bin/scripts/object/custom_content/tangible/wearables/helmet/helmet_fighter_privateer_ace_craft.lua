@@ -1,0 +1,5 @@
+
+object_tangible_wearables_helmet_helmet_fighter_privateer_ace_craft = object_tangible_wearables_helmet_shared_helmet_fighter_privateer_ace_craft:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_helmet_helmet_fighter_privateer_ace_craft, "object/tangible/wearables/helmet/helmet_fighter_privateer_ace_craft.iff")

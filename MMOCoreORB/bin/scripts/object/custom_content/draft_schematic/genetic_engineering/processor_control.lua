@@ -1,0 +1,5 @@
+object_draft_schematic_genetic_engineering_processor_control = object_draft_schematic_genetic_engineering_shared_processor_control:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_processor_control, "object/draft_schematic/genetic_engineering/processor_control.iff")

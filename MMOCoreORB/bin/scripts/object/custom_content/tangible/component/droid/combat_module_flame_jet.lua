@@ -1,0 +1,5 @@
+object_tangible_component_droid_combat_module_flame_jet = object_tangible_component_droid_shared_combat_module_flame_jet:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_droid_combat_module_flame_jet, "object/tangible/component/droid/combat_module_flame_jet.iff")

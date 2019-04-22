@@ -1,0 +1,5 @@
+object_tangible_saga_system_rewards_jabba_tassels = object_tangible_saga_system_rewards_shared_jabba_tassels:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_saga_system_rewards_jabba_tassels, "object/tangible/saga_system/rewards/jabba_tassels.iff")

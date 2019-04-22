@@ -1,0 +1,5 @@
+object_tangible_meatlump_reward_mtp_king_painting = object_tangible_meatlump_reward_shared_mtp_king_painting:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_meatlump_reward_mtp_king_painting, "object/tangible/meatlump/reward/mtp_king_painting.iff")

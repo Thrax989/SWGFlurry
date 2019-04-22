@@ -1,0 +1,5 @@
+object_tangible_gcw_crafting_quest_gcw_heat_absorbent_casing = object_tangible_gcw_crafting_quest_shared_gcw_heat_absorbent_casing:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_crafting_quest_gcw_heat_absorbent_casing, "object/tangible/gcw/crafting_quest/gcw_heat_absorbent_casing.iff")

@@ -1,0 +1,5 @@
+object_tangible_container_loot_socket_retrofit_tool = object_tangible_container_loot_shared_socket_retrofit_tool:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_container_loot_socket_retrofit_tool, "object/tangible/container/loot/socket_retrofit_tool.iff")

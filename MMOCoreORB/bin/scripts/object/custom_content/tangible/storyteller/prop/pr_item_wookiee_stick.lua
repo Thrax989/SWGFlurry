@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_item_wookiee_stick = object_tangible_storyteller_prop_shared_pr_item_wookiee_stick:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_item_wookiee_stick, "object/tangible/storyteller/prop/pr_item_wookiee_stick.iff")

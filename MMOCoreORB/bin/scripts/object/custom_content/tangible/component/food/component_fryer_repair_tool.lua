@@ -1,0 +1,5 @@
+object_tangible_component_food_component_fryer_repair_tool = object_tangible_component_food_shared_component_fryer_repair_tool:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_food_component_fryer_repair_tool, "object/tangible/component/food/component_fryer_repair_tool.iff")

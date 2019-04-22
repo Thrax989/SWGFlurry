@@ -1,0 +1,5 @@
+object_tangible_component_chemistry_stimpack_charge_loader = object_tangible_component_chemistry_shared_stimpack_charge_loader:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_chemistry_stimpack_charge_loader, "object/tangible/component/chemistry/stimpack_charge_loader.iff")

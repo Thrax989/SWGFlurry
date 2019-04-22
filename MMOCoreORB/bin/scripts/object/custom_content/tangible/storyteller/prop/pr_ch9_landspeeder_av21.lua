@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_ch9_landspeeder_av21 = object_tangible_storyteller_prop_shared_pr_ch9_landspeeder_av21:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_landspeeder_av21, "object/tangible/storyteller/prop/pr_ch9_landspeeder_av21.iff")

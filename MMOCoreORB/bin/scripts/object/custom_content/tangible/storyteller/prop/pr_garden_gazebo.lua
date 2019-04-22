@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_garden_gazebo = object_tangible_storyteller_prop_shared_pr_garden_gazebo:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_garden_gazebo, "object/tangible/storyteller/prop/pr_garden_gazebo.iff")
