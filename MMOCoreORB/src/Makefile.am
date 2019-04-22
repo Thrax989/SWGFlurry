@@ -379,7 +379,8 @@ core3_IDLS =	autogen/server/zone/managers/frs/ArenaChallengeData.cpp \
 				autogen/server/zone/objects/tangible/threat/ThreatMapObserver.cpp \
 				autogen/server/zone/objects/creature/conversation/ConversationObserver.cpp \
 				autogen/server/zone/objects/creature/conversation/DeliverMissionConversationObserver.cpp \
-				autogen/server/zone/objects/creature/conversation/InformantMissionConversationObserver.cpp
+				autogen/server/zone/objects/creature/conversation/InformantMissionConversationObserver.cpp \
+				autogen/server/zone/objects/creature/events/CloakEventObserver.cpp
 
 core3_SOURCES =	$(core3_IDLS) \
 		$(core3_TESTS) \
@@ -473,6 +474,25 @@ core3_SOURCES =	$(core3_IDLS) \
 		server/zone/managers/director/PersistentEventImplementation.cpp \
 		server/zone/managers/director/QuestVectorMapImplementation.cpp \
 		server/zone/objects/ship/SpaceStationObjectImplementation.cpp \
+		server/zone/objects/tangible/components/ArtifactMenuComponent.cpp \
+		server/zone/objects/tangible/components/BossMenuComponent.cpp \
+		server/zone/objects/tangible/components/pvpMenuComponent.cpp \
+		server/zone/objects/tangible/components/DiamondMenuComponent.cpp \
+		server/zone/objects/tangible/components/HeroicMenuComponent.cpp \
+		server/zone/objects/tangible/components/FlurrycoalMenuComponent.cpp \
+		server/zone/objects/tangible/components/FlurrypresentMenuComponent.cpp \
+		server/zone/objects/tangible/components/HalloweenMenuComponent.cpp \
+		server/zone/objects/tangible/components/NewMemberMenuComponent.cpp \
+		server/zone/objects/tangible/components/ForceShrineMenuComponent1.cpp \
+		server/zone/objects/tangible/components/FriendcrateMenuComponent.cpp \
+		server/zone/objects/tangible/components/ScrapMenuComponent.cpp \
+		server/zone/objects/tangible/components/CollectionsilverMenuComponent.cpp \
+		server/zone/objects/tangible/components/CollectiongoldMenuComponent.cpp \
+		server/zone/objects/tangible/components/CollectionplatinumMenuComponent.cpp \
+		server/zone/objects/tangible/components/XpMenuComponent.cpp \
+		server/zone/objects/tangible/components/ImperialMenuComponent.cpp \
+		server/zone/objects/tangible/components/RebelMenuComponent.cpp \
+		server/zone/objects/creature/events/CloakEventObserverImplementation.cpp \
 		server/zone/objects/ship/FighterShipObjectImplementation.cpp \
 		server/zone/objects/ship/ShipObjectImplementation.cpp \
 		server/zone/objects/intangible/ShipControlDeviceImplementation.cpp \
