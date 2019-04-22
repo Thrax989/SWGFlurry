@@ -62,7 +62,7 @@ public:
 			} else {
 				currentPhase = ONEFAILURE;
 			}
-			this->reschedule(10000);
+			this->reschedule(2000);
 			break;
 		case ONESUCCESS:
 			if (success) {
@@ -71,14 +71,14 @@ public:
 			} else {
 					player->sendSystemMessage("@skl_use:milk_continue"); // You continue to milk the creature.
 					currentPhase = FINAL;
-					this->reschedule(10000);
+					this->reschedule(2000);
 			}
 			break;
 		case ONEFAILURE:
 			if (success) {
 				player->sendSystemMessage("@skl_use:milk_continue"); // You continue to milk the creature.
 				currentPhase = FINAL;
-				this->reschedule(10000);
+				this->reschedule(2000);
 			} else {
 				updateMilkState(CreatureManager::NOTMILKED);
 				_clocker.release();
@@ -106,7 +106,7 @@ public:
 		String restype = creature->getMilkType();
 		int quantity = creature->getMilk();
 
-		int quantityExtracted = Math::max(quantity, 3);
+		int quantityExtracted = Math::max(quantity, 10)*5;
 
 		ManagedReference<ResourceSpawn*> resourceSpawn = resourceManager->getCurrentSpawn(restype, player->getZone()->getZoneName());
 
@@ -130,6 +130,21 @@ public:
 		resourceManager->harvestResourceToPlayer(player, resourceSpawn, quantityExtracted);
 
 		updateMilkState(CreatureManager::ALREADYMILKED);
+		// Grant XP
+		ZoneServer* zoneServer = player->getZoneServer();
+		PlayerManager* playerManager = zoneServer->getPlayerManager();
+		CreatureTemplate* creatureTemplate = creature->getCreatureTemplate();
+
+		int xp = player->getSkillMod("foraging");
+		if (xp > 125)
+			xp = 125; // Cap SEA usage at +25
+
+		if (creatureTemplate != NULL)
+			xp += 5 * creatureTemplate->getLevel();
+		else
+			xp += 5 * creature->getLevel();
+
+		playerManager->awardExperience(player, "camp", xp);
 	}
 
 	void updateMilkState(const short milkState) {

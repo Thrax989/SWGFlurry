@@ -77,11 +77,11 @@ public:
 				if( pet->getCooldownTimerMap() == NULL || !pet->getCooldownTimerMap()->isPast("enragePetsCooldown") )
 					continue;
 
-				// Determine damage bonus (15% of average damage)
-				int damageBonus = (int) ((((float)pet->getDamageMin() + (float)pet->getDamageMax())/2) * 0.15);
+				// Determine damage bonus (50% of average damage)
+				int damageBonus = (int) ((((float)pet->getDamageMin() + (float)pet->getDamageMax())/2) * 0.50);
 
-				// Determine damage susceptibility (half of damage bonus)
-				int damageSusceptibility = damageBonus / 2;
+				// Determine damage susceptibility (one quarter of damage bonus)
+				int damageSusceptibility = damageBonus / 4;
 
 				// Build buff
 				ManagedReference<Buff*> buff = new Buff(pet, buffCRC, durationSec, BuffType::OTHER);
