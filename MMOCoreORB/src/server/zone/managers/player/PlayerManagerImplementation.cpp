@@ -1002,12 +1002,18 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	if (ghost != NULL) {
 		ghost->resetIncapacitationTimes();
+		ghost->setFoodFilling(0);//Remove Food Filling After Death
+		ghost->setDrinkFilling(0);//Remove Drink Filling After Death
 		if (ghost->hasPvpTef()) {
 			ghost->schedulePvpTefRemovalTask(true, true);
 		}
 	}
 
 	ThreatMap* threatMap = player->getThreatMap();
+
+	if (!attacker->isPlayerCreature()) {
+		ghost->updatePveDeaths();
+	}
 
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
@@ -1021,11 +1027,40 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				}
 			}
 
-			if (attackerCreature->isPlayerCreature()) {
-				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
-					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
-				}
+		if (attackerCreature->isPlayerCreature()) {
+			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
+			if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
+				//If not in duel
+				ghost->updatePvpDeaths();
+				attackerGhost->updatePvpKills();
+				//Award Faction Points
+				FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
 			}
+		}
+
+		 if (!attackerCreature->hasBountyMissionFor(player)) {
+				String playerName = player->getFirstName();
+				String killerName = attackerCreature->getFirstName();
+				StringBuffer zBroadcast;
+				String killerFaction, playerFaction;
+				if (attacker->isRebel())
+					killerFaction = "\\#FF9933 Rebel";
+				else if (attacker->isImperial())
+					killerFaction = "\\#7133FF Imperial";
+				else
+					killerFaction = "\\#c1be13 Civilian";
+				if (player->isRebel())
+					playerFaction = "\\#FF9933 Rebel";
+				else if (player->isImperial())
+					playerFaction = "\\#7133FF Imperial";
+				else
+					playerFaction = "\\#c1be13 Civilian";
+				if (!CombatManager::instance()->areInDuel(attackerCreature, player))
+					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName;
+				else
+					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a duel by" << killerFaction << "\\#00cc99 " << killerName;
+				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		}
 
 			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 			PlayerObject* victimGhost = player->getPlayerObject();
@@ -1556,7 +1591,9 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				awardExperience(attacker, xpType, xpAmount);
 			}
 
-			combatXp = awardExperience(attacker, "combat_general", combatXp, true, 0.1f);
+			combatXp /= 10.f;
+
+			awardExperience(attacker, "combat_general", combatXp);
 
 			//Check if the group leader is a squad leader
 			if (group == NULL)
@@ -1823,7 +1860,7 @@ void PlayerManagerImplementation::setExperienceMultiplier(float globalMultiplier
  *
  */
 int PlayerManagerImplementation::awardExperience(CreatureObject* player, const String& xpType,
-		int amount, bool sendSystemMessage, float localMultiplier, bool applyModifiers) {
+		int amount, bool sendSystemMessage, float localMultiplier) {
 
 	PlayerObject* playerObject = player->getPlayerObject();
 
@@ -1835,19 +1872,36 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 	if (amount > 0)
 		speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
 
-	float buffMultiplier = 1.f;
+	int xp = playerObject->addExperience(xpType, (int) ((((amount * speciesModifier) * localMultiplier) * perExpMulti) * globalExpMultiplier));
 
-	if (player->hasBuff(BuffCRC::FOOD_XP_INCREASE) && !player->containsActiveSession(SessionFacadeType::CRAFTING))
-		buffMultiplier += player->getSkillModFromBuffs("xp_increase") / 100.f;
-
-	int xp = 0;
-
-	if (applyModifiers)
-		xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * buffMultiplier * localMultiplier * globalExpMultiplier));
-	else
-		xp = playerObject->addExperience(xpType, (int)amount);
-
-	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
+	if (amount <= 0 || xpType == "jedi_general") {
+		xp = playerObject->addExperience(xpType, amount);
+	} else if (xpType == "bio_engineer_dna_harvesting" ||
+		   xpType == "camp" ||
+		   xpType == "crafting_bio_engineer_creature" ||
+		   xpType == "crafting_clothing_armor" ||
+		   xpType == "crafting_clothing_general" ||
+		   xpType == "crafting_droid_general" ||
+		   xpType == "crafting_food_general" ||
+		   xpType == "crafting_general" ||
+		   xpType == "crafting_medicine_general" ||
+		   xpType == "crafting_spice" ||
+		   xpType == "crafting_structure_general" ||
+		   xpType == "crafting_weapons_general" ||
+		   xpType == "creaturehandler" ||
+		   xpType == "dance" ||
+		   xpType == "entertainer_healing" ||
+		   xpType == "merchant" ||
+		   xpType == "music" ||
+		   xpType == "political" ||
+		   xpType == "resource_harvesting_inorganic" ||
+		   xpType == "scout" ||
+		   xpType == "shipwright" ||
+		   xpType == "slicing" ||
+		   xpType == "trapping") {
+		   xp = playerObject->addExperience(xpType, (amount * 20));
+		   player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
+	}
 
 	if (sendSystemMessage) {
 		if (xp > 0) {
@@ -3404,9 +3458,9 @@ void PlayerManagerImplementation::addInsurableItemsRecursive(SceneObject* obj, S
 		if (item == NULL || item->hasAntiDecayKit())
 			continue;
 
-		if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isArmorObject() || item->isWearableObject())) {
+		if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || (item->isArmorObject() || item->isWearableObject()))) {
 			items->put(item);
-		} else if ((item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isArmorObject() || item->isWearableObject()) && !onlyInsurable) {
+		} else if ((item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || (item->isArmorObject() || item->isWearableObject())) && !onlyInsurable) {
 			items->put(item);
 		}
 
@@ -3438,9 +3492,9 @@ SortedVector<ManagedReference<SceneObject*> > PlayerManagerImplementation::getIn
 			if (item == NULL || item->hasAntiDecayKit())
 				continue;
 
-			if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isArmorObject() || item->isWearableObject())) {
+		if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || (item->isArmorObject() || item->isWearableObject()))) {
 				insurableItems.put(item);
-			} else if ((item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isArmorObject() || item->isWearableObject()) && !onlyInsurable) {
+			} else if ((item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || (item->isArmorObject() || item->isWearableObject())) && !onlyInsurable) {
 				insurableItems.put(item);
 			}
 		}
@@ -5762,6 +5816,14 @@ float PlayerManagerImplementation::getSpeciesXpModifier(const String& species, c
 	return (100.f + bonus) / 100.f;
 }
 
+void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
+	PlayerObject* ghost = player->getPlayerObject();
+
+	if (ghost != NULL) {
+		ghost->updatePvpKills();
+	}
+}
+
 void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, int councilType) {
 	PlayerObject* ghost = player->getPlayerObject();
 
@@ -5827,28 +5889,53 @@ void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, in
 	luaFrsTesting->callFunction();
 }
 
-Vector<uint64> PlayerManagerImplementation::getOnlinePlayerList() {
-	Vector<uint64> playerList;
+void PlayerManagerImplementation::updateTopList(){
+	info("**** Updating Website Top List ***",true);
 
-	Locker locker(&onlineMapMutex);
+	ObjectDatabase* sceneDatabase = ObjectDatabaseManager::instance()->loadObjectDatabase("sceneobjects", true, 0xFFFF, false);
 
-	HashTableIterator<uint32, Vector<Reference<ZoneClientSession*> > > iter = onlineZoneClientMap.iterator();
+	if (sceneDatabase == nullptr)
+		return;
 
-	while (iter.hasNext()) {
-		Vector<Reference<ZoneClientSession*> > clients = iter.next();
+	ObjectInputStream objectData(2000);
+	ObjectDatabaseIterator iterator(sceneDatabase);
 
-		for (int i = 0; i < clients.size(); i++) {
-			ZoneClientSession* session = clients.get(i);
+	uint64 objectID;
+	String className;
 
-			if (session != NULL) {
-				CreatureObject* player = session->getPlayer();
+	while (iterator.getNextKeyAndValue(objectID, &objectData)) {
+		if (Serializable::getVariable<String>(STRING_HASHCODE("_className"), &className, &objectData)) {
+			if (className == "CreatureObject") {
+				ManagedReference<CreatureObject*> player = Core::getObjectBroker()->lookUp(objectID).castTo<CreatureObject*>();
 
-				if (player != NULL) {
-					playerList.add(player->getObjectID());
+				if (player == nullptr)
+					continue;
+
+				PlayerObject* ghost = player->getPlayerObject();
+
+				if (ghost == nullptr)
+					continue;
+
+				int faction = 0;
+
+				if (!ghost->hasGodMode()) {
+					int faction = 0;
+
+					if (player->getFaction() == Factions::FACTIONREBEL)
+						faction = 1;
+					else if (player->getFaction() == Factions::FACTIONIMPERIAL)
+						faction = 2;
+
+					StringBuffer query;
+					query << "UPDATE characters SET faction = '" << faction << "', pvpkills = '" << ghost->getPvpKills() << "', pvpdeaths = '" << ghost->getPvpDeaths()
+							<< "', bountykills = '" << ghost->getBountyKills() << "', pvekills = '" << ghost->getPveKills() << "', pvedeaths = '" << ghost->getPveDeaths()
+							<< "', missionscompleted = '" << ghost->getMissionsCompleted() << "' WHERE character_oid = '" << player->getObjectID() << "'";
+					ServerDatabase::instance()->executeStatement(query);
 				}
 			}
 		}
+		objectData.reset();
 	}
 
-	return playerList;
+	info("Website Top List Update Complete", true);
 }
