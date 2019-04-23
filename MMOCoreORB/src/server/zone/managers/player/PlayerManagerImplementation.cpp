@@ -1860,48 +1860,54 @@ void PlayerManagerImplementation::setExperienceMultiplier(float globalMultiplier
  *
  */
 int PlayerManagerImplementation::awardExperience(CreatureObject* player, const String& xpType,
-		int amount, bool sendSystemMessage, float localMultiplier) {
+		int amount, bool sendSystemMessage, float localMultiplier, bool applyModifiers) {
 
 	PlayerObject* playerObject = player->getPlayerObject();
 
 	if (playerObject == NULL)
 		return 0;
-
-	float speciesModifier = 1.f;
-
-	if (amount > 0)
-		speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
-
-	int xp = playerObject->addExperience(xpType, (int) ((((amount * speciesModifier) * localMultiplier) * perExpMulti) * globalExpMultiplier));
-
-	if (amount <= 0 || xpType == "jedi_general") {
+	int xp;
+	if (amount <= 0 || xpType == "jedi_general" || xpType == "combat_jedi_novice"){
 		xp = playerObject->addExperience(xpType, amount);
-	} else if (xpType == "bio_engineer_dna_harvesting" ||
-		   xpType == "camp" ||
-		   xpType == "crafting_bio_engineer_creature" ||
-		   xpType == "crafting_clothing_armor" ||
-		   xpType == "crafting_clothing_general" ||
-		   xpType == "crafting_droid_general" ||
-		   xpType == "crafting_food_general" ||
-		   xpType == "crafting_general" ||
-		   xpType == "crafting_medicine_general" ||
-		   xpType == "crafting_spice" ||
-		   xpType == "crafting_structure_general" ||
-		   xpType == "crafting_weapons_general" ||
-		   xpType == "creaturehandler" ||
-		   xpType == "dance" ||
-		   xpType == "entertainer_healing" ||
-		   xpType == "merchant" ||
-		   xpType == "music" ||
-		   xpType == "political" ||
-		   xpType == "resource_harvesting_inorganic" ||
-		   xpType == "scout" ||
-		   xpType == "shipwright" ||
-		   xpType == "slicing" ||
-		   xpType == "trapping") {
-		   xp = playerObject->addExperience(xpType, (amount * 20));
-		   player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
+	} else if (xpType == "imagedesigner" ||
+		xpType == "music" ||
+		xpType == "dance" ||
+		xpType == "entertainer_healing" ||
+		xpType == "scout" ||
+		xpType == "trapping" ||
+		xpType == "camp" ||
+		xpType == "crafting_medicine_general" ||
+		xpType == "crafting_general" ||
+		xpType == "resource_harvesting_inorganic" ||
+		xpType == "creaturehandler" ||
+		xpType == "crafting_bio_engineer_creature" ||
+		xpType == "bio_engineer_dna_harvesting" ||
+		xpType == "crafting_clothing_armor" ||
+		xpType == "crafting_weapons_general" ||
+		xpType == "crafting_food_general" ||
+		xpType == "crafting_clothing_general" ||
+		xpType == "crafting_structure_general" ||
+		xpType == "crafting_droid_general" ||
+		xpType == "merchant" ||
+		xpType == "slicing" ||
+		xpType == "crafting_spice" ||
+		xpType == "political" ||
+		xpType == "bountyhunter" ||
+		xpType == "shipwright") {
+			xp = playerObject->addExperience(xpType, (amount * 20));
+			float speciesModifier = 1.f;
+			if (amount > 0)
+				speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+	} else {
+		float speciesModifier = 1.f;
+		if (amount > 0)
+			speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+		if (applyModifiers)
+			xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * localMultiplier * globalExpMultiplier));
+		else
+			xp = playerObject->addExperience(xpType, (int)amount);
 	}
+	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
 
 	if (sendSystemMessage) {
 		if (xp > 0) {
