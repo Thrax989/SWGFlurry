@@ -1885,6 +1885,8 @@ void PlayerObjectImplementation::setOnline() {
 
 	doRecovery(1000);
 
+	regrantSkills();
+
 	activateMissions();
 }
 
@@ -2693,6 +2695,26 @@ void PlayerObjectImplementation::checkAndShowTOS() {
 
 	addSuiBox(box);
 	creature->sendMessage(box->generateMessage());
+}
+
+void PlayerObjectImplementation::regrantSkills(){
+		ZoneServer* zoneServer = server->getZoneServer();
+		SkillManager* skillManager = SkillManager::instance();
+		ManagedReference<CreatureObject*> player = getParentRecursively(SceneObjectType::PLAYERCREATURE).castTo<CreatureObject*>();
+		SkillList* skillList = player->getSkillList();
+		String skillName = "";
+		Vector<String> listOfNames;
+		skillList->getStringList(listOfNames);
+		SkillList copyOfList;
+		copyOfList.loadFromNames(listOfNames);
+		for (int i = 0; i < copyOfList.size(); i++) {
+			Skill* skill = copyOfList.get(i);
+			String skillName = skill->getSkillName();
+			if (!skillName.beginsWith("admin") ) {
+			skillManager->surrenderSkill(skillName, player, true);
+			bool skillGranted = skillManager->awardSkill(skillName, player, true, true, true);
+		}
+	}
 }
 
 void PlayerObjectImplementation::recalculateForcePower() {
