@@ -2751,8 +2751,8 @@ void PlayerManagerImplementation::startWatch(CreatureObject* creature, uint64 en
 	ManagedReference<SceneObject*> object = server->getObject(entid);
 	uint64 watchID = creature->getWatchToID();
 
-	if (watchID == entid)
-		return;
+	/*if (watchID == entid)
+		return;*/
 
 	if (object == NULL)
 		return;
@@ -2769,8 +2769,8 @@ void PlayerManagerImplementation::startWatch(CreatureObject* creature, uint64 en
 
 	CreatureObject* entertainer = cast<CreatureObject*>( object.get());
 
-	if (creature == entertainer)
-		return;
+	/*if (creature == entertainer)
+		return;*/
 
 	Locker clocker(entertainer, creature);
 
@@ -2833,8 +2833,8 @@ void PlayerManagerImplementation::startListen(CreatureObject* creature, uint64 e
 	ManagedReference<SceneObject*> object = server->getObject(entid);
 	uint64 listenID = creature->getListenID();
 
-	if (listenID == entid)
-		return;
+	/*if (listenID == entid)
+		return;*/
 
 	if (object == NULL)
 		return;
@@ -2904,8 +2904,8 @@ void PlayerManagerImplementation::startListen(CreatureObject* creature, uint64 e
 
 	CreatureObject* entertainer = cast<CreatureObject*>( object.get());
 
-	if (creature == entertainer)
-		return;
+	/*if (creature == entertainer)
+		return;*/
 
 	Locker clocker(entertainer, creature);
 
