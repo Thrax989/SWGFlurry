@@ -2682,9 +2682,6 @@ void CreatureObjectImplementation::activateHAMRegeneration(int latency) {
 	if (isIncapacitated() || isDead())
 		return;
 
-	if (!isPlayerCreature() && isInCombat())
-		return;
-
 	float modifier = (float)latency/1000.f;
 
 	if (isKneeling())
