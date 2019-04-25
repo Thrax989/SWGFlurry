@@ -9,7 +9,6 @@
 #include "SquadLeaderCommand.h"
 #include "CombatQueueCommand.h"
 #include "server/zone/managers/combat/CombatManager.h"
-#include "server/zone/objects/player/events/setNormalTask.h"
 
 class RallyCommand : public SquadLeaderCommand {
 public:
