@@ -24,7 +24,6 @@
 #include "server/zone/managers/vendor/VendorManager.h"
 #include "server/zone/managers/collision/CollisionManager.h"
 
-
 #include "server/zone/objects/player/sui/callbacks/StructurePayAccessFeeSuiCallback.h"
 #include "server/zone/objects/building/tasks/RevokePaidAccessTask.h"
 #include "tasks/EjectObjectEvent.h"
@@ -78,6 +77,18 @@ void BuildingObjectImplementation::createContainerComponent() {
 }
 
 void BuildingObjectImplementation::notifyInsertToZone(Zone* zone) {
+	StringBuffer newName;
+
+	newName << "BuildingObject"
+		<< " 0x" << String::hexvalueOf((int64)getObjectID())
+		<< " owner: " << String::valueOf(getOwnerObjectID())
+		<< " " << String::valueOf((int)getPositionX()) << " " << String::valueOf((int)getPositionY())
+		<< " " << zone->getZoneName()
+		<< " " << String::valueOf((int)getPositionZ())
+		<< " " << getObjectName()->getFullPath();
+
+	setLoggingName(newName.toString());
+
 	StructureObjectImplementation::notifyInsertToZone(zone);
 
 	Locker locker(zone);
@@ -87,6 +98,11 @@ void BuildingObjectImplementation::notifyInsertToZone(Zone* zone) {
 
 		cell->onBuildingInsertedToZone(asBuildingObject());
 	}
+
+#if ENABLE_STRUCTURE_JSON_EXPORT
+	if (getOwnerObjectID() != 0)
+		info("Exported to " + exportJSON("notifyInsertToZone"), true);
+#endif // DEBUG_STRUCTURE_MAINT
 }
 
 int BuildingObjectImplementation::getCurrentNumberOfPlayerItems() {
@@ -601,7 +617,7 @@ void BuildingObjectImplementation::destroyObjectFromDatabase(
 
 		if (child == nullptr)
 			continue;
-          
+
 		Locker locker(child);
 
 		AiAgent* ai = child->asAiAgent();

@@ -6,6 +6,8 @@
  */
 
 #include "server/zone/managers/player/PlayerManager.h"
+#include <utility>
+#include <mutex>
 
 #include "server/zone/packets/charcreation/ClientCreateCharacterCallback.h"
 #include "server/zone/packets/charcreation/ClientCreateCharacterFailed.h"
@@ -170,8 +172,7 @@ void PlayerManagerImplementation::loadLuaConfig() {
 	performanceDuration = lua->getGlobalInt("performanceDuration");
 	medicalDuration = lua->getGlobalInt("medicalDuration");
 
-	groupExpMultiplierInRange = lua->getGlobalFloat("groupExpMultiplierInRange");
-	groupExpMultiplierOutOfRange = lua->getGlobalFloat("groupExpMultiplierOutOfRange");
+	groupExpMultiplier = lua->getGlobalFloat("groupExpMultiplier");
 
 	globalExpMultiplier = lua->getGlobalFloat("globalExpMultiplier");
 
@@ -350,13 +351,13 @@ void PlayerManagerImplementation::loadNameMap() {
 	info("loading character names");
 
 	try {
-		String query = "SELECT * FROM characters where character_oid > 16777216 and galaxy_id = " + String::valueOf(server->getGalaxyID()) + " order by character_oid asc";
+		String query = "SELECT character_oid, firstname FROM characters where character_oid > 16777216 and galaxy_id = " + String::valueOf(server->getGalaxyID()) + " order by character_oid asc";
 
 		Reference<ResultSet*> res = ServerDatabase::instance()->executeQuery(query);
 
 		while (res->next()) {
 			uint64 oid = res->getUnsignedLong(0);
-			String firstName = res->getString(3);
+			String firstName = res->getString(1);
 
 			if (!nameMap->put(firstName.toLowerCase(), oid)) {
 				error("error coliding name:" + firstName.toLowerCase());
@@ -576,6 +577,186 @@ bool PlayerManagerImplementation::checkPlayerName(ClientCreateCharacterCallback*
 	}
 
 	return true;
+}
+
+String PlayerManagerImplementation::setFirstName(CreatureObject* creature, const String& newFirstName) {
+    if (creature == nullptr)
+		return "nullptr creature specified";
+
+	if (!creature->isPlayerCreature())
+		return "Can only set FirstName on players.";
+
+	auto ghost = creature->getPlayerObject();
+
+	if (ghost == nullptr)
+		return "missing ghost";
+
+	if (newFirstName.isEmpty())
+		return "Empty first name is now allowed";
+
+	if (existsName(newFirstName))
+		return "That name is already in use";
+
+	Locker locker(creature, ghost);
+
+	auto nameManager = processor->getNameManager();
+
+	int result = nameManager->validateName(newFirstName, creature->getSpecies());
+
+	switch (result) {
+	case NameManagerResult::ACCEPTED:
+		break;
+	case NameManagerResult::DECLINED_EMPTY:
+		return "First names may not be empty.";
+		break;
+	case NameManagerResult::DECLINED_RACE_INAPP:
+		return "That name is inappropriate for the player's species.";
+		break;
+	case NameManagerResult::DECLINED_PROFANE:
+		return "That name is profane.";
+		break;
+	case NameManagerResult::DECLINED_DEVELOPER:
+		return "That is a developer's name.";
+		break;
+	case NameManagerResult::DECLINED_FICT_RESERVED:
+		return "That name is a reserved fictional name.";
+		break;
+	case NameManagerResult::DECLINED_RESERVED:
+		return "That name is reserved.";
+		break;
+	case NameManagerResult::DECLINED_SYNTAX:
+		return "That name contains invalid syntax.";
+		break;
+	}
+
+	String oldFirstName = creature->getFirstName();
+	String oldLastName = creature->getLastName();
+	String newFullName = newFirstName;
+
+	if (!oldLastName.isEmpty())
+		newFullName = newFirstName + " " + oldLastName;
+
+	creature->setCustomObjectName(newFullName, true);
+
+	// If staff fix their staff tags
+	if (ghost->hasGodMode())
+		updatePermissionName(creature, ghost->getAdminLevel());
+
+	auto chatManager = server->getChatManager();
+	chatManager->removePlayer(oldFirstName);
+	chatManager->addPlayer(creature);
+
+	removePlayer(oldFirstName);
+	addPlayer(creature);
+
+	// Remove the old name from other people's friends lists
+	ghost->removeAllReverseFriends(oldFirstName);
+
+	// Update mysql characters table
+	String characterFirstName = creature->getFirstName();
+	Database::escapeString(characterFirstName);
+
+	int galaxyID = server->getGalaxyID();
+
+	StringBuffer charDirtyQuery;
+	charDirtyQuery
+			<< "UPDATE `characters_dirty` SET `firstname` = '"  << characterFirstName
+			<< "' WHERE `character_oid` = '" << creature->getObjectID()
+			<< "' AND `galaxy_id` = '" << galaxyID << "'";
+
+	ServerDatabase::instance()->executeStatement(charDirtyQuery);
+
+	StringBuffer charQuery;
+	charQuery
+			<< "UPDATE `characters` SET `firstname` = '"  << characterFirstName
+			<< "' WHERE `character_oid` = '" << creature->getObjectID()
+			<< "' AND `galaxy_id` = '" << galaxyID << "'";
+
+	ServerDatabase::instance()->executeStatement(charQuery);
+
+	// Success, return empty string
+	return "";
+}
+
+String PlayerManagerImplementation::setLastName(CreatureObject* creature, const String& newLastName, bool skipVerify) {
+    if (creature == nullptr)
+		return "nullptr creature specified";
+
+	if (!creature->isPlayerCreature())
+		return "Can only set LastName on players.";
+
+	auto ghost = creature->getPlayerObject();
+
+	if (ghost == nullptr)
+		return "missing ghost";
+
+	Locker locker(creature, ghost);
+
+	String oldFirstName = creature->getFirstName();
+	String newFullName = oldFirstName;
+
+	if (!newLastName.isEmpty())
+		newFullName = oldFirstName + " " + newLastName;
+
+	if (!skipVerify) {
+		auto nameManager = processor->getNameManager();
+
+		int result = nameManager->validateName(newFullName, creature->getSpecies());
+
+		switch (result) {
+		case NameManagerResult::ACCEPTED:
+			break;
+		case NameManagerResult::DECLINED_RACE_INAPP:
+			return "That name is inappropriate for the player's species.";
+			break;
+		case NameManagerResult::DECLINED_PROFANE:
+			return "That name is profane.";
+			break;
+		case NameManagerResult::DECLINED_DEVELOPER:
+			return "That is a developer's name.";
+			break;
+		case NameManagerResult::DECLINED_FICT_RESERVED:
+			return "That name is a reserved fictional name.";
+			break;
+		case NameManagerResult::DECLINED_RESERVED:
+			return "That name is reserved.";
+			break;
+		case NameManagerResult::DECLINED_SYNTAX:
+			return "That name contains invalid syntax.";
+			break;
+		}
+	}
+
+	creature->setCustomObjectName(newFullName, true);
+
+	// If staff fix their staff tags
+	if (ghost->hasGodMode())
+		updatePermissionName(creature, ghost->getAdminLevel());
+
+	// Update mysql characters table
+	String characterLastName = creature->getLastName();
+	Database::escapeString(characterLastName);
+
+	int galaxyID = server->getGalaxyID();
+
+	StringBuffer charDirtyQuery;
+	charDirtyQuery
+			<< "UPDATE `characters_dirty` SET `surname` = '"  << characterLastName
+			<< "' WHERE `character_oid` = '" << creature->getObjectID()
+			<< "' AND `galaxy_id` = '" << galaxyID << "'";
+
+	ServerDatabase::instance()->executeStatement(charDirtyQuery);
+
+	StringBuffer charQuery;
+	charQuery
+			<< "UPDATE `characters` SET `surname` = '"  << characterLastName
+			<< "' WHERE `character_oid` = '" << creature->getObjectID()
+			<< "' AND `galaxy_id` = '" << galaxyID << "'";
+
+	ServerDatabase::instance()->executeStatement(charQuery);
+
+	// Success, return empty string
+	return "";
 }
 
 void PlayerManagerImplementation::createTutorialBuilding(CreatureObject* player) {
@@ -815,7 +996,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->sendSystemMessage(stringId);
 
 	player->updateTimeOfDeath();
-	player->clearBuffs(true, false);
+	//player->clearBuffs(true, false);
 
 	PlayerObject* ghost = player->getPlayerObject();
 
@@ -825,8 +1006,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		ghost->setDrinkFilling(0);//Remove Drink Filling After Death
 		if (ghost->hasPvpTef()) {
 			ghost->schedulePvpTefRemovalTask(true, true);
-			ghost->setFoodFilling(0);
-			ghost->setDrinkFilling(0);
 		}
 	}
 
@@ -886,7 +1065,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 			PlayerObject* victimGhost = player->getPlayerObject();
 
-			if (attackerGhost != nullptr && victimGhost != nullptr) {
+			if (attackerGhost != NULL && victimGhost != NULL) {
 				FrsData* attackerData = attackerGhost->getFrsData();
 				int attackerCouncil = attackerData->getCouncilType();
 
@@ -1389,21 +1568,15 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				uint32 damage = entry->elementAt(j).getValue();
 				String xpType = entry->elementAt(j).getKey();
 				float xpAmount = baseXp;
-				xpAmount /= (float) entry->size() / 1;
-				//Added Custom Group Bonus System :TOXIC 10/7/2018
-				//Adjust Range default 100m
-				//Players not in a group recieve 1x Xp bonus
-				if (group != NULL) {
-					for (int i = 0; i < group->getGroupSize(); i++) {
-						ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 
-						if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(attacker, 100.0f) && groupedCreature != attacker) {
-							xpAmount *= groupExpMultiplierInRange;//If you are within 100 meeters of your group you recieve 2x Xp bonus
-							} else {
-							xpAmount *= groupExpMultiplierOutOfRange;//If you are farther than 100 meeters of your group you recieve default 1.2x Xp bonus
-						}
-					}
-				}
+				xpAmount /= (float) entry->size() / 1;
+
+				//Cap xp based on level
+				xpAmount = Math::min(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
+
+				//Apply group bonus if in group
+				if (group != NULL)
+					xpAmount *= groupExpMultiplier;
 
 				if (winningFaction == attacker->getFaction())
 					xpAmount *= gcwBonus;
@@ -1412,7 +1585,7 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				if (xpType != "jedi_general")
 					combatXp += xpAmount;
 				else
-					xpAmount *= 0.2f;
+					combatXp += xpAmount;
 
 				//Award individual expType
 				awardExperience(attacker, xpType, xpAmount);
@@ -1687,50 +1860,54 @@ void PlayerManagerImplementation::setExperienceMultiplier(float globalMultiplier
  *
  */
 int PlayerManagerImplementation::awardExperience(CreatureObject* player, const String& xpType,
-		int amount, bool sendSystemMessage, float localMultiplier) {
+		int amount, bool sendSystemMessage, float localMultiplier, bool applyModifiers) {
 
 	PlayerObject* playerObject = player->getPlayerObject();
-	
-	float perExpMulti = player->getPersonalExpMultiplier();
 
 	if (playerObject == NULL)
 		return 0;
-
-	float speciesModifier = 1.f;
-
-	if (amount > 0)
-		speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
-
-	int xp = playerObject->addExperience(xpType, (int) ((((amount * speciesModifier) * localMultiplier) * perExpMulti) * globalExpMultiplier));
-
-	if (amount <= 0 || xpType == "jedi_general") {
+	int xp;
+	if (amount <= 0 || xpType == "jedi_general" || xpType == "combat_jedi_novice"){
 		xp = playerObject->addExperience(xpType, amount);
-	} else if (xpType == "bio_engineer_dna_harvesting" ||
-		   xpType == "camp" ||
-		   xpType == "crafting_bio_engineer_creature" ||
-		   xpType == "crafting_clothing_armor" ||
-		   xpType == "crafting_clothing_general" ||
-		   xpType == "crafting_droid_general" ||
-		   xpType == "crafting_food_general" ||
-		   xpType == "crafting_general" ||
-		   xpType == "crafting_medicine_general" ||
-		   xpType == "crafting_spice" ||
-		   xpType == "crafting_structure_general" ||
-		   xpType == "crafting_weapons_general" ||
-		   xpType == "creaturehandler" ||
-		   xpType == "dance" ||
-		   xpType == "entertainer_healing" ||
-		   xpType == "merchant" ||
-		   xpType == "music" ||
-		   xpType == "political" ||
-		   xpType == "resource_harvesting_inorganic" ||
-		   xpType == "scout" ||
-		   xpType == "shipwright" ||
-		   xpType == "slicing" ||
-		   xpType == "trapping") {
-		   xp = playerObject->addExperience(xpType, (amount * 2.5));
-		   player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
+	} else if (xpType == "imagedesigner" ||
+		xpType == "music" ||
+		xpType == "dance" ||
+		xpType == "entertainer_healing" ||
+		xpType == "scout" ||
+		xpType == "trapping" ||
+		xpType == "camp" ||
+		xpType == "crafting_medicine_general" ||
+		xpType == "crafting_general" ||
+		xpType == "resource_harvesting_inorganic" ||
+		xpType == "creaturehandler" ||
+		xpType == "crafting_bio_engineer_creature" ||
+		xpType == "bio_engineer_dna_harvesting" ||
+		xpType == "crafting_clothing_armor" ||
+		xpType == "crafting_weapons_general" ||
+		xpType == "crafting_food_general" ||
+		xpType == "crafting_clothing_general" ||
+		xpType == "crafting_structure_general" ||
+		xpType == "crafting_droid_general" ||
+		xpType == "merchant" ||
+		xpType == "slicing" ||
+		xpType == "crafting_spice" ||
+		xpType == "political" ||
+		xpType == "bountyhunter" ||
+		xpType == "shipwright") {
+			xp = playerObject->addExperience(xpType, (amount * 20));
+			float speciesModifier = 1.f;
+			if (amount > 0)
+				speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+	} else {
+		float speciesModifier = 1.f;
+		if (amount > 0)
+			speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+		if (applyModifiers)
+			xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * localMultiplier * globalExpMultiplier));
+		else
+			xp = playerObject->addExperience(xpType, (int)amount);
 	}
+	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
 
 	if (sendSystemMessage) {
 		if (xp > 0) {
@@ -2574,8 +2751,8 @@ void PlayerManagerImplementation::startWatch(CreatureObject* creature, uint64 en
 	ManagedReference<SceneObject*> object = server->getObject(entid);
 	uint64 watchID = creature->getWatchToID();
 
-	if (watchID == entid)
-		return;
+	/*if (watchID == entid)
+		return;*/
 
 	if (object == NULL)
 		return;
@@ -2592,8 +2769,8 @@ void PlayerManagerImplementation::startWatch(CreatureObject* creature, uint64 en
 
 	CreatureObject* entertainer = cast<CreatureObject*>( object.get());
 
-	if (creature == entertainer)
-		return;
+	/*if (creature == entertainer)
+		return;*/
 
 	Locker clocker(entertainer, creature);
 
@@ -2656,8 +2833,8 @@ void PlayerManagerImplementation::startListen(CreatureObject* creature, uint64 e
 	ManagedReference<SceneObject*> object = server->getObject(entid);
 	uint64 listenID = creature->getListenID();
 
-	if (listenID == entid)
-		return;
+	/*if (listenID == entid)
+		return;*/
 
 	if (object == NULL)
 		return;
@@ -2727,8 +2904,8 @@ void PlayerManagerImplementation::startListen(CreatureObject* creature, uint64 e
 
 	CreatureObject* entertainer = cast<CreatureObject*>( object.get());
 
-	if (creature == entertainer)
-		return;
+	/*if (creature == entertainer)
+		return;*/
 
 	Locker clocker(entertainer, creature);
 
@@ -3054,7 +3231,7 @@ int PlayerManagerImplementation::checkSpeedHackFirstTest(CreatureObject* player,
 		}
 
 		SpeedModChange* firstChange = &changeBuffer->get(changeBuffer->size() - 1);
-		Time* timeStamp = &firstChange->getTimeStamp();
+		const Time* timeStamp = &firstChange->getTimeStamp();
 
 		if (timeStamp->miliDifference() > 2000) { // we already should have lowered the speed, 2 seconds lag
 			StringBuffer msg;
@@ -3208,7 +3385,6 @@ void PlayerManagerImplementation::lootAll(CreatureObject* player, CreatureObject
 
 	if (cashCredits > 0) {
 		int luck = player->getSkillMod("force_luck");
-		luck += player->getSkillMod("luck");
 
 		if (luck > 0)
 			cashCredits += (cashCredits * luck) / 20;
@@ -3322,7 +3498,7 @@ SortedVector<ManagedReference<SceneObject*> > PlayerManagerImplementation::getIn
 			if (item == NULL || item->hasAntiDecayKit())
 				continue;
 
-			if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || (item->isArmorObject() || item->isWearableObject()))) {
+		if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || (item->isArmorObject() || item->isWearableObject()))) {
 				insurableItems.put(item);
 			} else if ((item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || (item->isArmorObject() || item->isWearableObject())) && !onlyInsurable) {
 				insurableItems.put(item);
@@ -5138,8 +5314,19 @@ bool PlayerManagerImplementation::doBurstRun(CreatureObject* player, float hamMo
 	}
 
 	float hamReduction = 1.f - hamModifier;
-	hamCost *= hamReduction;
-	int newHamCost = (int) hamCost;
+
+	int healthCost = (int) (player->calculateCostAdjustment(CreatureAttribute::STRENGTH, hamCost) * hamReduction);
+	int actionCost = (int) (player->calculateCostAdjustment(CreatureAttribute::QUICKNESS, hamCost) * hamReduction);
+	int mindCost = (int) (player->calculateCostAdjustment(CreatureAttribute::FOCUS, hamCost) * hamReduction);
+
+	if (player->getHAM(CreatureAttribute::HEALTH) <= healthCost || player->getHAM(CreatureAttribute::ACTION) <= actionCost || player->getHAM(CreatureAttribute::MIND) <= mindCost) {
+		player->sendSystemMessage("@combat_effects:burst_run_wait"); // You are too tired to Burst Run.
+		return false;
+	}
+
+	player->inflictDamage(player, CreatureAttribute::HEALTH, healthCost, true);
+	player->inflictDamage(player, CreatureAttribute::ACTION, actionCost, true);
+	player->inflictDamage(player, CreatureAttribute::MIND, mindCost, true);
 
 	if (cooldownModifier > 1.0f) {
 		cooldownModifier = 1.0f;
@@ -5148,15 +5335,6 @@ bool PlayerManagerImplementation::doBurstRun(CreatureObject* player, float hamMo
 	float coodownReduction = 1.f - cooldownModifier;
 	cooldown *= coodownReduction;
 	int newCooldown = (int) cooldown;
-
-	if (player->getHAM(CreatureAttribute::HEALTH) <= newHamCost || player->getHAM(CreatureAttribute::ACTION) <= newHamCost || player->getHAM(CreatureAttribute::MIND) <= newHamCost) {
-		player->sendSystemMessage("@combat_effects:burst_run_wait"); // You are too tired to Burst Run.
-		return false;
-	}
-
-	player->inflictDamage(player, CreatureAttribute::HEALTH, newHamCost, true);
-	player->inflictDamage(player, CreatureAttribute::ACTION, newHamCost, true);
-	player->inflictDamage(player, CreatureAttribute::MIND, newHamCost, true);
 
 	StringIdChatParameter startStringId("cbt_spam", "burstrun_start_single");
 	StringIdChatParameter modifiedStartStringId("combat_effects", "instant_burst_run");
@@ -5332,35 +5510,78 @@ void PlayerManagerImplementation::sendAdminFRSList(CreatureObject* player) {
 }
 
 VectorMap<String, int> PlayerManagerImplementation::generateAdminList() {
+	static Mutex guard; //only one thread cann run this
+
+	Locker locker(&guard);
+
 	VectorMap<String, int> players;
 
 	HashTable<String, uint64> names = nameMap->getNames();
 	HashTableIterator<String, uint64> iter = names.iterator();
 
-	Reference<ObjectManager*> objectManager = server->getObjectManager();
+	auto objectManager = server->getObjectManager();
+	auto taskManager = Core::getTaskManager();
+
+	constexpr const int objectsPerTask = 500;
+
+	static SynchronizedVectorMap<String, int> sharedMap;
+	static AtomicInteger totalObjects;
+
+	totalObjects = names.size();
+
+	Vector<VectorMapEntry<String, uint64>> currentObjects;
+
+	int count = 0;
+	static TaskQueue* customQueue = [taskManager] () { return taskManager->initializeCustomQueue("AdminListThreads", 10); } (); //only once
 
 	while (iter.hasNext()) {
 		uint64 oid;
 		String playerName;
 		iter.getNextKeyAndValue(playerName, oid);
+		++count;
 
-		VectorMap<String, uint64> slottedObjects;
-		int state = 0;
+		currentObjects.emplace(std::move(playerName), std::move(oid));
 
-		objectManager->getPersistentObjectsSerializedVariable<VectorMap<String, uint64> >(STRING_HASHCODE("SceneObject.slottedObjects"), &slottedObjects, oid);
+		if (currentObjects.size() >= objectsPerTask || count >= names.size()) {
+			taskManager->executeTask([currentObjects, objectManager]() {
+				for (const auto& obj : currentObjects) {
+					try {
+						VectorMap<String, uint64> slottedObjects;
+						int state = 0;
 
-		uint64 ghostId = slottedObjects.get("ghost");
+						objectManager->getPersistentObjectsSerializedVariable<VectorMap<String, uint64> >(STRING_HASHCODE("SceneObject.slottedObjects"), &slottedObjects, obj.getValue());
 
-		if (ghostId == 0) {
-			continue;
-		}
+						uint64 ghostId = slottedObjects.get("ghost");
 
-		objectManager->getPersistentObjectsSerializedVariable<int>(STRING_HASHCODE("PlayerObject.adminLevel"), &state, ghostId);
+						if (ghostId == 0) {
+							totalObjects.decrement();
+							continue;
+						}
 
-		if (state != 0) {
-			players.put(playerName, state);
+						objectManager->getPersistentObjectsSerializedVariable<int>(STRING_HASHCODE("PlayerObject.adminLevel"), &state, ghostId);
+
+						if (state != 0) {
+							sharedMap.put(obj.getKey(), state);
+						}
+					} catch (...) {
+						Logger::console.error("unreported exception caught in GetAdminPlayerObjectTask");
+					}
+
+					totalObjects.decrement();
+				}
+
+			}, "GetAdminPlayerObjectTask", "AdminListThreads");
+
+			currentObjects.removeAll(objectsPerTask, 50);
 		}
 	}
+
+	taskManager->waitForQueueToFinish("AdminListThreads");
+
+	players = sharedMap.getMapUnsafe();
+
+	sharedMap.removeAll();
+	totalObjects = 0;
 
 	return players;
 }
@@ -5434,7 +5655,7 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 			highDamageAttacker = attacker;
 		}
 
-		if (ghost->hasOnKillerList(attacker->getObjectID())) {
+		if (attackerGhost->hasOnVictimList(player->getObjectID())) {
 			String stringFile;
 
 			if (attacker->getSpecies() == CreatureObject::TRANDOSHAN)
@@ -5484,7 +5705,7 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 			}
 		}
 
-		ghost->addToKillerList(attacker->getObjectID());
+		attackerGhost->addToVictimList(player->getObjectID());
 		throttleOnly = false;
 
 		if (defenderPvpRating > PlayerObject::PVP_RATING_FLOOR) {
@@ -5615,6 +5836,11 @@ void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, in
 	if (ghost == nullptr)
 		return;
 
+	if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
+		player->sendSystemMessage("You already have FRS skills. You must drop them before using this feature again.");
+		return;
+	}
+
 	SkillManager* skillManager = SkillManager::instance();
 
 	int glowyBadgeIds[] = { 12, 14, 15, 16, 17, 19, 20, 21, 23, 30, 38, 39, 71, 105, 106, 107 };
@@ -5716,5 +5942,32 @@ void PlayerManagerImplementation::updateTopList(){
 		}
 		objectData.reset();
 	}
+
 	info("Website Top List Update Complete", true);
+}
+
+Vector<uint64> PlayerManagerImplementation::getOnlinePlayerList() {
+	Vector<uint64> playerList;
+
+	Locker locker(&onlineMapMutex);
+
+	HashTableIterator<uint32, Vector<Reference<ZoneClientSession*> > > iter = onlineZoneClientMap.iterator();
+
+	while (iter.hasNext()) {
+		Vector<Reference<ZoneClientSession*> > clients = iter.next();
+
+		for (int i = 0; i < clients.size(); i++) {
+			ZoneClientSession* session = clients.get(i);
+
+			if (session != NULL) {
+				CreatureObject* player = session->getPlayer();
+
+				if (player != NULL) {
+					playerList.add(player->getObjectID());
+				}
+			}
+		}
+	}
+
+	return playerList;
 }

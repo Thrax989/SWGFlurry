@@ -3,7 +3,6 @@
 		See file COPYING for copying conditions. */
 
 #include "SuiManager.h"
-
 #include "server/zone/ZoneProcessServer.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/sui/SuiWindowType.h"
@@ -295,6 +294,9 @@ void SuiManager::handleFishingAction(CreatureObject* player, SuiBox* suiBox, uin
 }
 
 void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox* suiBox, uint32 cancel, Vector<UnicodeString>* args) {
+	if (!ConfigManager::instance()->getCharacterBuilderEnabled())
+		return;
+
 	ZoneServer* zserv = player->getZoneServer();
 
 	if (args->size() < 1)
@@ -382,6 +384,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					player->setShockWounds(0);
 				} else {
 					player->sendSystemMessage("Not within combat.");
+					return;
 				}
 			} else if (templatePath == "fill_force_bar") {
 				if (ghost->isJedi()) {
@@ -403,6 +406,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					ghost->setDrinkFilling(0);
 				} else {
 					player->sendSystemMessage("Not within combat.");
+					return;
 				}
 
 			} else if (templatePath.beginsWith("crafting_apron_")) {
@@ -550,7 +554,6 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "max_xp") {
 				ghost->maximizeExperience();
 				player->sendSystemMessage("You have maximized all xp types.");
-
 //JediQuest Screen Play Tester
 			} else if (templatePath == "jedi_quest") {
 				if (!player->isInCombat() && player->getBankCredits() < 999) {
@@ -3666,6 +3669,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 
 				} else {
 					player->sendSystemMessage("Unknown selection.");
+					return;
 				}
 			}
 
@@ -3741,6 +3745,8 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			ghost->addSuiBox(cbSui);
 			player->sendMessage(cbSui->generateMessage());
 		}
+
+		player->info("[CharacterBuilder] gave player " + templatePath, true);
 	}
 }
 

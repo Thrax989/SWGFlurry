@@ -26,7 +26,7 @@ public:
 			return INVALIDLOCOMOTION;
 
 		int skillLevel = creature->getSkillMod("trapping");
-		if (skillLevel < 1 || !creature->hasSkill("outdoors_scout_novice")) {
+		if (skillLevel < 1 ) {
 			creature->sendSystemMessage("@trap/trap:trap_no_skill");
 			return GENERALERROR;
 		}
@@ -54,7 +54,7 @@ public:
 			ManagedReference<CreatureObject*> targetCreature =
 					server->getZoneServer()->getObject(target).castTo<CreatureObject*>();
 
-			if (targetCreature == NULL || !targetCreature->isCreature()) {
+			if (targetCreature == NULL ) {
 				creature->sendSystemMessage("@trap/trap:sys_creatures_only");
 				return GENERALERROR;
 			}
@@ -144,7 +144,7 @@ public:
 
 				Locker locker(buff);
 
-				if(state != 0)
+				if(state != 0 && state != CreatureState::FROZEN )
 					buff->addState(state);
 
 				VectorMap<String, int>* skillMods = trapData->getSkillMods();

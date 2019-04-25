@@ -567,6 +567,8 @@ void FactoryObjectImplementation::createNewObject() {
 		return;
 	}
 
+	crateSize = 1000;
+
 	if (crateSize > 1) {
 		ManagedReference<FactoryCrate*> crate = locateCrateInOutputHopper(prototype);
 

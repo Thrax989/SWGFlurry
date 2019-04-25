@@ -6,15 +6,16 @@
 
 #include <type_traits>
 
+#include "db/MySqlDatabase.h"
 #include "db/ServerDatabase.h"
 #include "db/MantisDatabase.h"
 
 #include "server/chat/ChatManager.h"
 #include "server/login/LoginServer.h"
-#include "features/Features.h"
 #include "ping/PingServer.h"
 #include "status/StatusServer.h"
 #include "web/WebServer.h"
+#include "web/RESTServer.h"
 #include "server/zone/ZoneServer.h"
 
 #include "server/zone/managers/object/ObjectManager.h"
@@ -33,7 +34,7 @@ bool ServerCore::truncateAllData = false;
 ServerCore* ServerCore::instance = nullptr;
 
 ServerCore::ServerCore(bool truncateDatabases, SortedVector<String>& args) :
-		Core("log/core3.log"), Logger("Core") {
+		Core("log/core3.log", "core3engine", LogLevel::LOG), Logger("Core") {
 	orb = nullptr;
 
 	loginServer = nullptr;
@@ -43,6 +44,7 @@ ServerCore::ServerCore(bool truncateDatabases, SortedVector<String>& args) :
 	webServer = nullptr;
 	database = nullptr;
 	mantisDatabase = nullptr;
+	restServer = nullptr;
 
 	truncateAllData = truncateDatabases;
 	arguments = args;
@@ -69,6 +71,31 @@ public:
 		zoneServer->printInfo();
 	}
 };
+
+void ServerCore::finalizeContext() {
+	Core::finalizeContext();
+
+	server::db::mysql::MySqlDatabase::finalizeLibrary();
+}
+
+void ServerCore::initializeContext(int logLevel) {
+	server::db::mysql::MySqlDatabase::initializeLibrary();
+
+	class ThreadHook : public ThreadInitializer {
+	public:
+		void onThreadStart(Thread* thread) final {
+			server::db::mysql::MySqlDatabase::onThreadStart();
+		}
+
+		void onThreadEnd(Thread* thread) final {
+			server::db::mysql::MySqlDatabase::onThreadEnd();
+		}
+	};
+
+	Thread::setThreadInitializer(new ThreadHook());
+
+	Core::initializeContext(logLevel);
+}
 
 void ServerCore::signalShutdown() {
 	shutdownBlockMutex.lock();
@@ -97,14 +124,12 @@ void ServerCore::initialize() {
 
 		const String& orbaddr = configManager->getORBNamingDirectoryAddress();
 		orb = DistributedObjectBroker::initialize(orbaddr,
-//				DistributedObjectBroker::NAMING_DIRECTORY_PORT);
 				configManager->getORBNamingDirectoryPort());
 
 		orb->setCustomObjectManager(objectManager);
 
 		StringBuffer metricsMsg;
-		metricsMsg << "METRICS: " << String::valueOf(configManager->shouldUseMetrics()) << " " << configManager->getMetricsHost() << " " << String::valueOf(configManager->getMetricsPort()) << endl;
-
+		metricsMsg << "MetricsServer: " << String::valueOf(configManager->shouldUseMetrics()) << " " << configManager->getMetricsHost() << " " << String::valueOf(configManager->getMetricsPort());
 		info(metricsMsg, true);
 
 		if (configManager->shouldUseMetrics()) {
@@ -220,6 +245,11 @@ void ServerCore::initialize() {
 		statiscticsTask->schedulePeriodic(10000, 10000);
 #endif
 
+		if (configManager->getRESTPort()) {
+			restServer = new server::web3::RESTServer(configManager->getRESTPort());
+			restServer->start();
+		}
+
 		info("initialized", true);
 
 		if (arguments.contains("playercleanup") && zoneServer != nullptr) {
@@ -251,6 +281,13 @@ void ServerCore::run() {
 
 void ServerCore::shutdown() {
 	info("shutting down server..", true);
+
+	if (restServer) {
+		restServer->stop();
+
+		delete restServer;
+		restServer = nullptr;
+	}
 
 	ObjectManager* objectManager = ObjectManager::instance();
 
@@ -367,7 +404,7 @@ void ServerCore::shutdown() {
 	}
 
 	mysql_thread_end();
-	engine::db::mysql::MySqlDatabase::finalizeLibrary();
+	server::db::mysql::MySqlDatabase::finalizeLibrary();
 
 	NetworkInterface::finalize();
 
@@ -459,8 +496,10 @@ void ServerCore::handleCommands() {
 				ObjectManager::instance()->createBackup();
 				//ObjectDatabaseManager::instance()->checkpoint();
 			} else if (command == "help") {
-				System::out << "available commands:\n";
-				System::out << "\texit, logQuadTree, info, lock, unlock, icap, dcap, fixQueue, save, chars, lookupcrc, rev, broadcast, shutdown.\n";
+				System::out << "available commands:" << endl
+					<< "\texit, logQuadTree, info, lock, unlock, icap, dcap, fixQueue, save, chars, lookupcrc, rev, broadcast, shutdown, "
+					<< "setpvpmode, getpvpmode"
+					<< endl;
 			} else if (command == "chars") {
 				uint32 num = 0;
 
@@ -602,16 +641,33 @@ void ServerCore::handleCommands() {
 					System::out << "invalid statsd sampling rate" << endl;
 				}
 #endif
-//NEW STUFF HERE
-			} else if ( command == "updatetoplist" ) {
-				if (zoneServerRef != nullptr){
+			} else if (command == "getpvpmode" || command == "getpvp") {
+				System::out << "PvpMode = " << ConfigManager::instance()->getPvpMode() << endl;
+			} else if (command == "setpvpmode" || command == "setpvp") {
+				int num;
 
-					ZoneServer* server = zoneServerRef.get();
+				try {
+					if (arguments == "on") {
+						num = 1;
+					} else if (arguments == "off") {
+						num = 0;
+					} else {
+						num = UnsignedInteger::valueOf(arguments);
+					}
 
-					if (server != nullptr)
-						server->getPlayerManager()->updateTopList();
+					if (num == 1) {
+						ConfigManager::instance()->setPvpMode(true);
+					} else {
+						ConfigManager::instance()->setPvpMode(false);
+					}
+
+					StringBuffer msg;
+					msg << "console set new PvpMode = " << ConfigManager::instance()->getPvpMode();
+
+					info(msg.toString(), true);
+				} catch (Exception& e) {
+					System::out << "invalid PvpMode: (0=off; 1=on)" << endl;
 				}
-//NEW STUFF END
 			} else {
 				System::out << "unknown command (" << command << ")\n";
 			}

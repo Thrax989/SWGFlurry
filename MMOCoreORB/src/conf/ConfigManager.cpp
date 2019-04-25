@@ -54,13 +54,12 @@ ConfigManager::ConfigManager() {
 	zoneProcessingThreads = 10;
 	zoneAllowedConnections = 300;
 	zoneGalaxyID = 2;
-	zoneOnlineCharactersPerAccount = 1;
 	zonePort = 0;
 
 	statusAllowedConnections = 100;
 	statusInterval = 60;
 
-	pingAllowedConnections = 500;
+	pingAllowedConnections = 3000;
 	enabledZones.setNoDuplicateInsertPlan();
 
 	purgeDeletedCharacters = 10; //Default is 10 minutes.
@@ -76,6 +75,10 @@ ConfigManager::ConfigManager() {
 	syncLogOutput = false;
 	pathfinderLogJSON = false;
 	luaLogJSON = false;
+
+	restPort = 0;
+
+	characterBuilderEnabled = true;
 }
 
 bool ConfigManager::loadConfigData() {
@@ -131,7 +134,6 @@ bool ConfigManager::loadConfigData() {
 	zoneProcessingThreads = getGlobalInt("ZoneProcessingThreads");
 	zoneAllowedConnections = getGlobalInt("ZoneAllowedConnections");
 	zoneGalaxyID = getGlobalInt("ZoneGalaxyID");
-	zoneOnlineCharactersPerAccount = getGlobalInt("ZoneOnlineCharactersPerAccount");
 	zonePort = getGlobalInt("ZoneServerPort");
 
 	statusAllowedConnections = getGlobalInt("StatusAllowedConnections");
@@ -161,8 +163,17 @@ bool ConfigManager::loadConfigData() {
 	luaLogJSON = getGlobalByte("LuaLogJSON");
 	pathfinderLogJSON = getGlobalByte("PathfinderLogJSON");
 
+	cleanupMailCount = getGlobalInt("CleanupMailCount");
+
 	termsOfService = getGlobalString("TermsOfService");
 	tosVersion = getGlobalInt("TermsOfServiceVersion");
+
+	restPort = getGlobalInt("RESTServerPort");
+
+	inactiveAccountTitle = getGlobalString("InactiveAccountTitle");
+	inactiveAccountText = getGlobalString("InactiveAccountText");
+
+	characterBuilderEnabled = getGlobalBoolean("CharacterBuilderEnabled");
 
 	return true;
 }

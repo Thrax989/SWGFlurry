@@ -107,7 +107,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 
 	if(player->getPendingTask("call_pet") != NULL) {
 		StringIdChatParameter waitTime("pet/pet_menu", "call_delay_finish_pet"); // Already calling a Pet: Call will be finished in %DI seconds.
-		Time nextExecution;
+		AtomicTime nextExecution;
 		Core::getTaskManager()->getNextExecutionTime(player->getPendingTask("call_pet"), nextExecution);
 		int timeLeft = (nextExecution.getMiliTime() / 1000) - System::getTime();
 		waitTime.setDI(timeLeft);
@@ -175,9 +175,9 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 
 		if (object != NULL) {
 			if (object->isCreature() && petType == PetManager::CREATUREPET) {
-				ManagedReference<CreatureTemplate*> activePetTemplate = object->getCreatureTemplate();
+				CreatureTemplate* activePetTemplate = object->getCreatureTemplate();
 
-				if (activePetTemplate == NULL || activePetTemplate->getTemplateName() == "at_st")
+				if (activePetTemplate == NULL || activePetTemplate->getTemplateName() == "at_st" || activePetTemplate->getTemplateName() == "at_xt")
 					continue;
 
 				if (++currentlySpawned >= maxPets) {
@@ -197,13 +197,14 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 					return;
 				}
 			} else if (object->isCreature() && petType == PetManager::FACTIONPET) {
-				ManagedReference<CreatureTemplate*> activePetTemplate = object->getCreatureTemplate();
-				ManagedReference<CreatureTemplate*> callingPetTemplate = pet->getCreatureTemplate();
+				CreatureTemplate* activePetTemplate = object->getCreatureTemplate();
+				CreatureTemplate* callingPetTemplate = pet->getCreatureTemplate();
 
-				if (activePetTemplate == NULL || callingPetTemplate == NULL || activePetTemplate->getTemplateName() != "at_st")
+				if (activePetTemplate == NULL || callingPetTemplate == NULL || activePetTemplate->getTemplateName() != "at_st" || activePetTemplate->getTemplateName() != "at_xt")
 					continue;
 
-				if (++currentlySpawned >= maxPets || (activePetTemplate->getTemplateName() == "at_st" && callingPetTemplate->getTemplateName() == "at_st")) {
+				if (++currentlySpawned >= maxPets || (activePetTemplate->getTemplateName() == "at_st" && callingPetTemplate->getTemplateName() == "at_st") ||
+						(activePetTemplate->getTemplateName() == "at_xt" && callingPetTemplate->getTemplateName() == "at_xt")) {
 					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
 					return;
 				}
@@ -361,6 +362,9 @@ void PetControlDeviceImplementation::spawnObject(CreatureObject* player) {
 		creature->setFaction(player->getFaction());
 		creature->setObjectMenuComponent("PetMenuComponent");
 
+		if (creature->getHueValue() >= 0)
+			creature->setHue(creature->getHueValue());
+
 		if (player->getPvpStatusBitmask() & CreatureFlag::PLAYER)
 			creature->setPvpStatusBitmask(player->getPvpStatusBitmask() - CreatureFlag::PLAYER, true);
 		else
@@ -462,8 +466,8 @@ void PetControlDeviceImplementation::storeObject(CreatureObject* player, bool fo
 
 	assert(pet->isLockedByCurrentThread());
 
-	//if (!force && (pet->isInCombat() || player->isInCombat() || player->isDead()))
-		//return;
+	if (!force && (pet->isInCombat() || player->isInCombat() || player->isDead()))
+		return;
 
 	if (player->isRidingMount() && player->getParent() == pet) {
 
@@ -503,7 +507,7 @@ void PetControlDeviceImplementation::storeObject(CreatureObject* player, bool fo
 			pet->addPendingTask("store_pet", task, 5 * 1000);
 		}
 		else {
-			Time nextExecution;
+			AtomicTime nextExecution;
 			Core::getTaskManager()->getNextExecutionTime(pet->getPendingTask("store_pet"), nextExecution);
 			int timeLeft = (nextExecution.getMiliTime() / 1000) - System::getTime();
 			player->sendSystemMessage( "Pet will store in " + String::valueOf(timeLeft) + " seconds." );
@@ -529,7 +533,7 @@ bool PetControlDeviceImplementation::growPet(CreatureObject* player, bool force,
 		return true;
 	ManagedReference<Creature*> pet = cast<Creature*>(controlledObject.get());
 
-	ManagedReference<CreatureTemplate*> creatureTemplate = pet->getCreatureTemplate();
+	Reference<CreatureTemplate*> creatureTemplate = pet->getCreatureTemplate();
 
 	if (creatureTemplate == NULL)
 		return true;
@@ -618,7 +622,7 @@ void PetControlDeviceImplementation::arrestGrowth() {
 
 	ManagedReference<Creature*> pet = cast<Creature*>(controlledObject.get());
 
-	ManagedReference<CreatureTemplate*> creatureTemplate = pet->getCreatureTemplate();
+	Reference<CreatureTemplate*> creatureTemplate = pet->getCreatureTemplate();
 
 	if (creatureTemplate == NULL)
 		return;

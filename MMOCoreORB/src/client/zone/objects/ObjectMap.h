@@ -11,7 +11,7 @@ class ObjectMap : public HashTable<uint64, Reference<SceneObject*> > {
 	}
 
 public:
-	ObjectMap() : HashTable<uint64, Reference<SceneObject*> >(1000), maxConnections(500) {
+	ObjectMap() : HashTable<uint64, Reference<SceneObject*> >(1000), maxConnections(3000) {
 		setNullValue(NULL);
 	}
 

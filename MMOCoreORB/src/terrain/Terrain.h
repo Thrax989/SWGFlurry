@@ -16,6 +16,17 @@ const static char* TerrainNames[] = {
     "terrain/talus.trn", // 7
     "terrain/tatooine.trn", // 8
     "terrain/yavin4.trn", // 9
+    "terrain/chandrila.trn",
+    "terrain/coruscant.trn",
+    "terrain/geonosis.trn",
+    "terrain/hoth.trn",
+    "terrain/hutta.trn",
+    "terrain/jakku.trn",
+    "terrain/kaas.trn",
+    "terrain/korriban.trn",
+    "terrain/mandalore.trn",
+    "terrain/mustafar.trn",
+    "terrain/taanab.trn",
     "terrain/space_corellia.trn", // 10
     "terrain/space_corellia_2.trn", // 11
     "terrain/space_dantooine.trn", // 12

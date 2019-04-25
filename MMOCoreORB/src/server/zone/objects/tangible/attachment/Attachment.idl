@@ -11,7 +11,7 @@ include templates.SharedObjectTemplate;
 import server.zone.packets.scene.AttributeListMessage;
 include server.zone.objects.scene.SceneObjectType;
 import system.util.HashTable;
-
+@json
 class Attachment extends TangibleObject {
 
 	protected int attachmentType;

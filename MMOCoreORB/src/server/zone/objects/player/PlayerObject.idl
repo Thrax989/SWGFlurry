@@ -45,6 +45,7 @@ include server.zone.objects.scene.variables.DeltaVector;
 include server.zone.objects.scene.variables.DeltaVectorMap;
 include server.zone.objects.scene.variables.DeltaBitArray;
 
+@json
 class PlayerObject extends IntangibleObject {
 	protected unsigned int characterBitmask;
 	protected string title;
@@ -110,7 +111,7 @@ class PlayerObject extends IntangibleObject {
 
 	@dereferenced
 	protected DeltaVectorMap<string, int> experienceList;
-	
+
 	@dereferenced
 	protected FrsData frsData;
 
@@ -150,7 +151,7 @@ class PlayerObject extends IntangibleObject {
 	protected transient SynchronizedSortedVector<CreatureObject> duelList;
 
 	@dereferenced
-	protected Vector<unsigned long> newKillerList;
+	protected Vector<unsigned long> victimList;
 
 	protected unsigned long declaredResidence;
 
@@ -198,7 +199,7 @@ class PlayerObject extends IntangibleObject {
 	protected int skillPoints; //TODO: This could be encapsulated in the skill list.
 
 	protected int pvpRating;
-	
+
 	@dereferenced
 	protected Time lastPvpRatingUpdate; // Timestamp of when last time player received a pvp rating change
 
@@ -229,7 +230,7 @@ class PlayerObject extends IntangibleObject {
 
 	@dereferenced
 	protected Time lastVisibilityUpdateTimestamp;
-	
+
 	@dereferenced
 	protected Time lastBhPvpCombatActionTimestamp;
 
@@ -237,7 +238,7 @@ class PlayerObject extends IntangibleObject {
 	protected Time lastGcwPvpCombatActionTimestamp;
 
 	@dereferenced
-	protected Reference<PvpTefRemovalTask> pvpTefTask;
+	protected transient Reference<PvpTefRemovalTask> pvpTefTask;
 
 	@dereferenced
 	protected Time lastDigestion;
@@ -273,6 +274,8 @@ class PlayerObject extends IntangibleObject {
 	@rawTemplate(value = "uint32, PlayerQuestData")
 	protected DeltaVectorMap playerQuestsData;
 
+	protected unsigned long miliSecsPlayed;
+	protected unsigned long miliSecsSession;
 	protected string ipAddress;
 	protected boolean opposingFactionArea;
 	protected unsigned long pvpKills;
@@ -379,13 +382,14 @@ class PlayerObject extends IntangibleObject {
 		drinkFillingMax = 0;
 
 		reactionFines = 0;
-		
-		lastPvpRatingUpdate.updateToCurrentTime();
-                
-                tosVersionAccepted = 0;
-		
-		Logger.setLoggingName("PlayerObject");
 
+		lastPvpRatingUpdate.updateToCurrentTime();
+
+		tosVersionAccepted = 0;
+
+		miliSecsPlayed = 0;
+
+		Logger.setLoggingName("PlayerObject");
 		ipAddress = "";
 		opposingFactionArea = false;
 		pvpKills = 0;
@@ -414,7 +418,7 @@ class PlayerObject extends IntangibleObject {
 	public native void notifyLoadFromDatabase();
 
 	public native void unload();
-	
+
 	public native int calculateBhReward();
 
 	@local
@@ -526,7 +530,7 @@ class PlayerObject extends IntangibleObject {
 	public native void addWaypoint(WaypointObject waypoint, boolean checkName, boolean notifyClient = true);
 	public native void setWaypoint(WaypointObject waypoint, boolean notifyClient = true);
 
-	/** 
+	/**
 	 * Adds a new waypoint with the specified coordinates
 	 * @pre { this is locked }
 	 * @post { this is locked, waypoint object is in the list }
@@ -638,7 +642,7 @@ class PlayerObject extends IntangibleObject {
 	public native void removeRewardedSchematic(DraftSchematic schematic, boolean notifyClient = true);
 
 	@local
-	public native void decreaseSchematicUseCount(DraftSchematic schematic); 
+	public native void decreaseSchematicUseCount(DraftSchematic schematic);
 
 	//@local
 	//public native void addSchematic(DraftSchematic schematic, boolean notifyClient = true);
@@ -704,7 +708,7 @@ class PlayerObject extends IntangibleObject {
 	 * @pre { this locked }
 	 * @post { this locked }
 	 * @param factionName The string key for the faction the faction points are to be added.
-	 * @param amount The float amount of faction points to add. 
+	 * @param amount The float amount of faction points to add.
 	 */
 	public native void increaseFactionStanding(final string factionName, float amount);
 	public native void decreaseFactionStanding(final string factionName, float amount);
@@ -979,7 +983,7 @@ class PlayerObject extends IntangibleObject {
 	 * @post { }
 	 */
 	public native void notifyOnline();
-	
+
 	public native int numSpecificSkills(CreatureObject creature, final string reqSkillName);
 
 	public native void doDigest(int fillingReduction);
@@ -1011,7 +1015,7 @@ class PlayerObject extends IntangibleObject {
 	public native void setForcePowerMax(int newValue, boolean notifyClient = true);
 
 	public native void doForceRegen();
-	
+
 	public native void recalculateForcePower();
 
 	@dirty
@@ -1046,12 +1050,12 @@ class PlayerObject extends IntangibleObject {
 	@dirty
 	public boolean hasSuiBoxWindowType(unsigned int windowType) {
 		unsigned int type = 0;
-		
+
 		for (int i = 0; i < suiBoxes.size(); ++i) {
 			SuiBox sui = suiBoxes.get(i);
-			
+
 			type = sui.getWindowType();
-			
+
 			if (windowType == type)
 				return true;
 		}
@@ -1062,7 +1066,7 @@ class PlayerObject extends IntangibleObject {
 	public void closeSuiWindowType(unsigned int windowType) {
 		if (hasSuiBoxWindowType(windowType)) {
 			SuiBox sui = getSuiBoxFromWindowType(windowType);
-			
+
 			if (sui != null) {
 				sendMessage(sui.generateCloseMessage());
 				removeSuiBox(sui.getBoxID());
@@ -1077,7 +1081,7 @@ class PlayerObject extends IntangibleObject {
 
 		for (int i = 0; i < suiBoxes.size(); ++i) {
 			SuiBox sui = suiBoxes.get(i);
-			
+
 			if (windowType == sui.getWindowType())
 				return sui;
 		}
@@ -1262,7 +1266,7 @@ class PlayerObject extends IntangibleObject {
 	public void setAdminLevel(unsigned int adminlvl) {
 		adminLevel = adminlvl;
 	}
-	
+
 	@read
 	public int getPriviledgeFlag() {
 		return priviledgeFlag;
@@ -1337,7 +1341,7 @@ class PlayerObject extends IntangibleObject {
 		return activeQuests;
 	}
 
-	@local 
+	@local
 	@dirty
 	public DeltaBitArray getCompletedQuests() {
 		return completedQuests;
@@ -1364,7 +1368,7 @@ class PlayerObject extends IntangibleObject {
 	public FrsData getFrsData() {
 		return frsData;
 	}
-	
+
 	@local
 	@dirty
 	public SchematicList getSchematics() {
@@ -1474,6 +1478,7 @@ class PlayerObject extends IntangibleObject {
 	public native void maximizeExperience();
 
 	public native void activateMissions();
+	public native void regrantSkills();
 
 	@dirty
 	public string getCommandMessageString(unsigned int actionCRC) {
@@ -1649,7 +1654,7 @@ class PlayerObject extends IntangibleObject {
 	@dereferenced
 	@local
 	public native Time getLastVisibilityUpdateTimestamp();
-	
+
 	@dereferenced
 	@local
 	public native Time getLastBhPvpCombatActionTimestamp();
@@ -1657,7 +1662,7 @@ class PlayerObject extends IntangibleObject {
 	@dereferenced
 	@local
 	public native Time getLastGcwPvpCombatActionTimestamp();
-	
+
 	public native void updateLastPvpCombatActionTimestamp(boolean updateGcwAction, boolean updateBhAction);
 
 	public native void updateLastBhPvpCombatActionTimestamp();
@@ -1665,9 +1670,9 @@ class PlayerObject extends IntangibleObject {
 	public native void updateLastGcwPvpCombatActionTimestamp();
 
 	public native boolean hasPvpTef();
-	
+
 	public native boolean hasBhTef();
-	
+
 	public native void schedulePvpTefRemovalTask(boolean removeGcwTefNow, boolean removeBhTefNow);
 
 	public native void schedulePvpTefRemovalTask(boolean removeNow = false);
@@ -1850,25 +1855,25 @@ class PlayerObject extends IntangibleObject {
 
 	public native void doFieldFactionChange(int newStatus);
 
-	public void addToKillerList(unsigned int playerID) {
-		if (lastPvpRatingUpdate.miliDifference() >= PVP_RESET_TIME && newKillerList.size() > 0)
-			newKillerList.removeAll();
-		
-		newKillerList.add(0, playerID);
+	public void addToVictimList(unsigned int playerID) {
+		if (lastPvpRatingUpdate.miliDifference() >= PVP_RESET_TIME && victimList.size() > 0)
+			victimList.removeAll();
 
-		if (newKillerList.size() > 20)
-			newKillerList.remove(newKillerList.size() - 1);
-		
+		victimList.add(0, playerID);
+
+		if (victimList.size() > 20)
+			victimList.remove(victimList.size() - 1);
+
 		lastPvpRatingUpdate.updateToCurrentTime();
 	}
 
-	public boolean hasOnKillerList(unsigned int playerID) {
-		if (lastPvpRatingUpdate.miliDifference() >= PVP_RESET_TIME && newKillerList.size() > 0) {
-			newKillerList.removeAll();
+	public boolean hasOnVictimList(unsigned int playerID) {
+		if (lastPvpRatingUpdate.miliDifference() >= PVP_RESET_TIME && victimList.size() > 0) {
+			victimList.removeAll();
 			return false;
 		}
-		
-		return newKillerList.contains(playerID);
+
+		return victimList.contains(playerID);
 	}
 
 	@read
@@ -1932,8 +1937,24 @@ class PlayerObject extends IntangibleObject {
 	public boolean isCloning() {
 		return isPlayerCloning;
 	}
-	
+
 	public void setCloning(boolean val) {
 		isPlayerCloning = val;
 	}
+
+	@read
+	public unsigned long getPlayedMiliSecs() {
+		return miliSecsPlayed;
+	}
+
+	@read
+	public unsigned long getSessionMiliSecs() {
+		return miliSecsSession;
+	}
+
+	@dirty
+	public native string getMiliSecsTimeString(unsigned long miliSecs, boolean verbose = false);
+
+	@dirty
+	public native string getPlayedTimeString(boolean verbose = false);
 }

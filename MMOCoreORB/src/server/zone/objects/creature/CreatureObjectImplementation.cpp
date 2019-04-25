@@ -83,7 +83,12 @@
 
 #include "engine/core/TaskManager.h"
 #include "server/zone/objects/creature/credits/CreditObject.h"
-#include "server/zone/managers/auction/AuctionSearchTask.h" 
+
+#include "templates/customization/AssetCustomizationManagerTemplate.h"
+#include "templates/customization/BasicRangedIntCustomizationVariable.h"
+#include "templates/params/PaletteColorCustomizationVariable.h"
+#include "templates/appearance/PaletteTemplate.h"
+#include "server/zone/managers/auction/AuctionSearchTask.h"
 
 float CreatureObjectImplementation::DEFAULTRUNSPEED = 5.376;
 
@@ -120,12 +125,11 @@ void CreatureObjectImplementation::initializeMembers() {
 
 	pvpStatusBitmask = 0;
 
-	selectedExpMode = 0;
-	personalExpMultiplier = 2.5;
-
 	posture = 0;
 	factionRank = 0;
 	faction = 0;
+
+	hueValue = -1;
 
 	stateBitmask = 0;
 	terrainNegotiation = 0.0f;
@@ -628,7 +632,7 @@ void CreatureObjectImplementation::addMountedCombatSlow() {
 		return;
 	}
 
-	ManagedReference<CreatureObject*> creo = asCreatureObject();
+	/*ManagedReference<CreatureObject*> creo = asCreatureObject();
 
 	Core::getTaskManager()->executeTask([=] () {
 		Locker locker(creo);
@@ -665,6 +669,7 @@ void CreatureObjectImplementation::addMountedCombatSlow() {
 
 		parent->addBuff(buff);
 	}, "AddMountedCombatSlowLambda");
+	*/
 }
 
 void CreatureObjectImplementation::removeMountedCombatSlow(bool showEndMessage) {
@@ -673,7 +678,7 @@ void CreatureObjectImplementation::removeMountedCombatSlow(bool showEndMessage) 
 	if (vehicle == nullptr)
 		return;
 
-	Core::getTaskManager()->executeTask([=] () {
+	/*Core::getTaskManager()->executeTask([=] () {
 		Locker locker(vehicle);
 		uint32 buffCRC = STRING_HASHCODE("mounted_combat_slow");
 		bool hasBuff = vehicle->hasBuff(buffCRC);
@@ -686,6 +691,7 @@ void CreatureObjectImplementation::removeMountedCombatSlow(bool showEndMessage) 
 			}
 		}
 	}, "RemoveMountedCombatSlowLambda");
+	*/
 }
 
 void CreatureObjectImplementation::setCombatState() {
@@ -852,19 +858,12 @@ bool CreatureObjectImplementation::setState(uint64 state, bool notifyClient) {
 				break;
 			}
 			case CreatureState::POISONED:
-				playEffect("clienteffect/dot_poisoned.cef");
-				playEffect("clienteffect/mus_cym_disease.cef");
 				break;
 			case CreatureState::DISEASED:
-				playEffect("clienteffect/dot_diseased.cef");
-				playEffect("clienteffect/mus_cym_poison.cef.cef");
 				break;
 			case CreatureState::ONFIRE:
-				playEffect("clienteffect/dot_fire.cef");
-				playEffect("clienteffect/lava_player_burning.cef");
 				break;
 			case CreatureState::BLEEDING:
-				playEffect("clienteffect/dot_bleeding.cef");
 				break;
 			case CreatureState::INTIMIDATED:
 				playEffect("clienteffect/combat_special_defender_intimidate.cef");
@@ -2036,9 +2035,6 @@ void CreatureObjectImplementation::notifyLoadFromDatabase() {
 	listenToID = 0;
 	watchToID = 0;
 
-	selectedExpMode = getSelectedExpMode();
-	personalExpMultiplier = getPersonalExpMultiplier();
-
 	if (isIncapacitated()) {
 
 		int health = getHAM(CreatureAttribute::HEALTH);
@@ -2415,7 +2411,7 @@ void CreatureObjectImplementation::setIntimidatedState(int durationSeconds) {
 		Locker blocker(multBuff);
 
 		multBuff->setSkillModifier("private_damage_divisor", 2);
-	
+
 		addBuff(multBuff);
 	}
 }
@@ -2597,11 +2593,18 @@ void CreatureObjectImplementation::notifyPostureChange(int newPosture) {
 
 void CreatureObjectImplementation::updateGroupMFDPositions() {
 	Reference<CreatureObject*> creo = _this.getReferenceUnsafeStaticCast();
+	auto group = this->group;
 
 	if (group != nullptr) {
 		GroupList* list = group->getGroupList();
 		if (list != nullptr) {
-			ClientMfdStatusUpdateMessage* msg = new ClientMfdStatusUpdateMessage(creo);
+			auto zone = getZone();
+
+			if (zone == nullptr) {
+				return;
+			}
+
+			ClientMfdStatusUpdateMessage* msg = new ClientMfdStatusUpdateMessage(creo, zone->getZoneName());
 
 #ifdef LOCKFREE_BCLIENT_BUFFERS
 			Reference<BasePacket*> pack = msg;
@@ -2609,7 +2612,7 @@ void CreatureObjectImplementation::updateGroupMFDPositions() {
 
 			for (int i = 0; i < list->size(); i++) {
 
-				Reference<CreatureObject*> member = list->get(i).get();
+				Reference<CreatureObject*> member = list->getSafe(i).get();
 
 				if (member == nullptr || creo == member || !member->isPlayerCreature())
 					continue;
@@ -2645,13 +2648,13 @@ void CreatureObjectImplementation::notifySelfPositionUpdate() {
 
 			if (terrainManager != nullptr) {
 				float waterHeight;
-				
+
 				CreatureObject* creature = asCreatureObject();
-				
+
 				if (parent == nullptr && terrainManager->getWaterHeight(getPositionX(), getPositionY(), waterHeight)) {
 					if ((getPositionZ() + getSwimHeight() - waterHeight < 0.2)) {
 						Reference<CreatureObject*> strongRef = asCreatureObject();
-						
+
 						Core::getTaskManager()->executeTask([strongRef] () {
 							Locker locker(strongRef);
 
@@ -2679,15 +2682,12 @@ void CreatureObjectImplementation::activateHAMRegeneration(int latency) {
 	if (isIncapacitated() || isDead())
 		return;
 
-	if (!isPlayerCreature() && isInCombat())
-		return;
-
 	float modifier = (float)latency/1000.f;
 
 	if (isKneeling())
 		modifier *= 1.25f;
 	else if (isSitting())
-		modifier *= 3.5f;
+		modifier *= 1.75f;
 
 	// this formula gives the amount of regen per second
 	uint32 healthTick = (uint32) ceil((float) Math::max(0, getHAM(
@@ -2866,6 +2866,13 @@ String CreatureObjectImplementation::getFirstName() {
 	}
 }
 
+String CreatureObjectImplementation::setFirstName(const String& newFirstName) {
+	if (!isPlayerCreature())
+		return "Can only set FirstName on players.";
+
+	return getZoneServer()->getPlayerManager()->setFirstName(asCreatureObject(), newFirstName);
+}
+
 String CreatureObjectImplementation::getLastName() {
 	UnicodeString lastName;
 
@@ -2879,6 +2886,17 @@ String CreatureObjectImplementation::getLastName() {
 		tokenizer.getUnicodeToken(lastName);
 
 	return lastName.toString();
+}
+
+String CreatureObjectImplementation::setLastName(const String& newLastName, bool skipVerify) {
+	if (!isPlayerCreature())
+		return "Can only set LastName on players.";
+
+	return getZoneServer()->getPlayerManager()->setLastName(asCreatureObject(), newLastName, skipVerify);
+}
+
+String CreatureObjectImplementation::setLastName(const String& newLastName) {
+	return setLastName(newLastName, false);
 }
 
 void CreatureObjectImplementation::sendExecuteConsoleCommand(
@@ -3659,4 +3677,44 @@ void CreatureObjectImplementation::schedulePersonalEnemyFlagTasks() {
 			}, "PersonalEnemyFlagExpiration", timeDiff);
 		}
 	}
+}
+
+void CreatureObjectImplementation::setHue(int hueIndex) {
+	String appearanceFilename = getObjectTemplate()->getAppearanceFilename();
+	VectorMap<String, Reference<CustomizationVariable*> > variables;
+	AssetCustomizationManagerTemplate::instance()->getCustomizationVariables(appearanceFilename.hashCode(), variables, false);
+
+	for (int i = 0; i < variables.size(); ++i) {
+		String varName = variables.elementAt(i).getKey();
+		CustomizationVariable* customizationVariable = variables.elementAt(i).getValue().get();
+
+		if (customizationVariable == nullptr)
+			continue;
+
+		PaletteColorCustomizationVariable* palette = dynamic_cast<PaletteColorCustomizationVariable*>(customizationVariable);
+
+		if (palette == nullptr)
+			continue;
+
+		String paletteFileName = palette->getPaletteFileName();
+		PaletteTemplate* paletteTemplate = TemplateManager::instance()->getPaletteTemplate(paletteFileName);
+
+		if (paletteTemplate == nullptr)
+			continue;
+
+		int maxIndex = paletteTemplate->getColorCount();
+
+		int tempHue = hueIndex;
+
+		if (tempHue < 0)
+			tempHue = 0;
+		else if (tempHue >= maxIndex)
+			tempHue = maxIndex - 1;
+
+		setCustomizationVariable(varName, tempHue, true);
+
+		delete paletteTemplate;
+	}
+
+	hueValue = hueIndex;
 }

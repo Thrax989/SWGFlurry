@@ -62,7 +62,7 @@ public:
 
 			BuildingObject* building = cast<BuildingObject*>(structure);
 
-			for (int i = 1; i < building->getTotalCellNumber(); ++i) {
+			for (int i = 1; i <= building->getTotalCellNumber(); ++i) {
 				ManagedReference<CellObject*> cell = building->getCell(i);
 
 				if(cell == NULL)
@@ -200,6 +200,13 @@ public:
 		}
 
 		Locker targetLock(targetCreature);
+		
+		if (structure->isBuildingObject()) {
+			BuildingObject* building = cast<BuildingObject*>(structure);
+			if(building->hasAccessFee()) {
+				building->removeAccessFee();
+			}
+		}
 
 		targetGhost->addOwnedStructure(structure);
 

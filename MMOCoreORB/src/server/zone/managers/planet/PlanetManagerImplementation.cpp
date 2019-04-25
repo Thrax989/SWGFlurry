@@ -215,6 +215,11 @@ void PlanetManagerImplementation::loadPlanetObjects(LuaObject* luaObject) {
 
 		String templateFile = planetObject.getStringField("templateFile");
 
+		// Don't spawn character builder terminals if they're not enabled
+		if (templateFile == "object/tangible/terminal/terminal_character_builder.iff" && !ConfigManager::instance()->getCharacterBuilderEnabled()) {
+			continue;
+		}
+
 		ManagedReference<SceneObject*> obj = ObjectManager::instance()->createObject(templateFile.hashCode(), 0, "");
 
 		if (obj != NULL) {
@@ -537,30 +542,46 @@ void PlanetManagerImplementation::loadSnapshotObjects() {
 
 	IffStream* iffStream = templateManager->openIffFile("snapshot/" + zone->getZoneName() + ".ws");
 
-	if (iffStream == NULL) {
+	if (iffStream == nullptr) {
 		info("Snapshot wasn't found.", true);
 		return;
 	}
 
-	WorldSnapshotIff wsiff;
-	wsiff.readObject(iffStream);
+	Reference<WorldSnapshotIff*> wsiff = new WorldSnapshotIff();
+	wsiff->readObject(iffStream);
 
 	int totalObjects = 0;
+	Vector<SceneObject*> objects;
 
-	Vector<SceneObject*> objects(1000, 1000);
+	for (int i = 0; i < wsiff->getNodeCount(); ++i) {
+		auto node = wsiff->getNode(i);
 
-	for (int i = 0; i < wsiff.getNodeCount(); ++i) {
-		WorldSnapshotNode* node = wsiff.getNode(i);
-
-		if (node == NULL)
+		if (node == nullptr)
 			continue;
 
-		SceneObject* object = loadSnapshotObject(node, &wsiff, totalObjects);
+#ifdef PARALLEL_SNAPSHOT_LOADING
+		++totalObjects;
 
-		if (object != NULL)
-			objects.add(object);
+		Core::getTaskManager()->executeTask([this, node, wsiff, totalObjects]() mutable {
+			auto sceno = loadSnapshotObject(node, wsiff, totalObjects);
+
+			if (sceno != nullptr) {
+				Locker locker(sceno);
+
+				sceno->createChildObjects();
+			}
+		}, "LoadSnapshotObjectLambda");
+
+#else
+		auto sceno = loadSnapshotObject(node, wsiff, totalObjects);
+
+		if (sceno != nullptr) {
+			objects.emplace(sceno);
+		}
+#endif
 	}
 
+#ifndef PARALLEL_SNAPSHOT_LOADING
 	for (int i = 0; i < objects.size(); ++i) {
 		SceneObject* sceno = objects.get(i);
 
@@ -568,6 +589,7 @@ void PlanetManagerImplementation::loadSnapshotObjects() {
 
 		sceno->createChildObjects();
 	}
+#endif
 
 	delete iffStream;
 
@@ -643,7 +665,7 @@ PlanetTravelPoint* PlanetManagerImplementation::getNearestPlanetTravelPoint(cons
 	Reference<PlanetTravelPoint*> planetTravelPoint = NULL;
 
 	for (int i = 0; i < planetTravelPointList->size(); ++i) {
-		Reference<PlanetTravelPoint*> ptp = planetTravelPointList->get(i);
+		const auto& ptp = planetTravelPointList->get(i);
 
 		float dist = position.distanceTo(ptp->getDeparturePosition());
 

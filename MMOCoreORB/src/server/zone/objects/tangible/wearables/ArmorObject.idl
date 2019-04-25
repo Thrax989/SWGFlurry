@@ -11,7 +11,7 @@ include templates.SharedObjectTemplate;
 include engine.log.Logger;
 import server.zone.objects.scene.SceneObject;
 import server.zone.packets.scene.AttributeListMessage;
-
+@json
 class ArmorObject extends WearableObject {
 	protected int healthEncumbrance;
 	protected int actionEncumbrance;

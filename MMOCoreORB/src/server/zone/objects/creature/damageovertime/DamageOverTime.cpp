@@ -23,11 +23,11 @@ DamageOverTime::DamageOverTime() {
 }
 
 DamageOverTime::DamageOverTime(CreatureObject* attacker,
-							   uint64 tp,
-							   uint8 attrib,
-							   uint32 str,
-							   uint32 dur,
-							   int secondaryStrength) {
+		uint64 tp,
+		uint8 attrib,
+		uint32 str,
+		uint32 dur,
+		int secondaryStrength) {
 
 	if (attacker != NULL)
 		setAttackerID(attacker->getObjectID());
@@ -87,6 +87,18 @@ void DamageOverTime::addSerializableVariables() {
 	addSerializableVariable("nextTick", &nextTick);
 	addSerializableVariable("secondaryStrength", &secondaryStrength);
 
+}
+
+void to_json(nlohmann::json& j, const DamageOverTime& t) {
+	j["attackerID"] = t.attackerID;
+	j["type"] = t.type;
+	j["attribute"] = t.attribute;
+	j["strength"] = t.strength;
+	j["duration"] = t.duration;
+	j["applied"] = t.applied;
+	j["expires"] = t.expires;
+	j["nextTick"] = t.nextTick;
+	j["secondaryStrength"] = t.secondaryStrength;
 }
 
 void DamageOverTime::activate() {
@@ -251,7 +263,6 @@ uint32 DamageOverTime::doFireTick(CreatureObject* victim, CreatureObject* attack
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_fire.cef","");
-		victimRef->playEffect("clienteffect/lava_player_burning.cef");
 	}, "FireTickLambda");
 
 	return damage;
@@ -286,7 +297,6 @@ uint32 DamageOverTime::doPoisonTick(CreatureObject* victim, CreatureObject* atta
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_poisoned.cef","");
-		victimRef->playEffect("clienteffect/mus_cym_poison.cef.cef");
 	}, "PoisonTickLambda");
 
 	return damage;
@@ -330,7 +340,6 @@ uint32 DamageOverTime::doDiseaseTick(CreatureObject* victim, CreatureObject* att
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_diseased.cef","");
-		victimRef->playEffect("clienteffect/mus_cym_disease.cef");
 	}, "DiseaseTickLambda");
 
 	return damage;

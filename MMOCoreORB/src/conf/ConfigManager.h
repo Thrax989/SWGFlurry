@@ -63,7 +63,6 @@ namespace conf {
 		int zoneProcessingThreads;
 		int zoneAllowedConnections;
 		int zoneGalaxyID;
-		int zoneOnlineCharactersPerAccount;
 		int zonePort;
 
 		int statusAllowedConnections;
@@ -86,8 +85,17 @@ namespace conf {
 		bool luaLogJSON;
 		bool pathfinderLogJSON;
 
+		int cleanupMailCount = 25000;
+
 		String termsOfService;
 		int tosVersion;
+
+		int restPort = 0;
+
+		String inactiveAccountTitle;
+		String inactiveAccountText;
+
+		bool characterBuilderEnabled = true;
 
 	public:
 		ConfigManager();
@@ -140,6 +148,10 @@ namespace conf {
 
 		inline bool getPvpMode() const {
 			return pvpMode;
+		}
+
+		inline void setPvpMode(bool val) {
+			pvpMode = val;
 		}
 
 		inline const String& getORBNamingDirectoryAddress() const {
@@ -298,10 +310,6 @@ namespace conf {
 			return zoneGalaxyID;
 		}
 
-		inline int getZoneOnlineCharactersPerAccount() const {
-			return zoneOnlineCharactersPerAccount;
-		}
-
 		inline int getZoneServerPort() const {
 			return zonePort;
 		}
@@ -357,6 +365,26 @@ namespace conf {
 		inline bool getPathfinderLogJSON() const {
 			return pathfinderLogJSON;
 		}
+
+		inline int getCleanupMailCount() const {
+			return cleanupMailCount;
+		}
+
+		inline int getRESTPort() const {
+			return restPort;
+		}
+
+		inline const String& getInactiveAccountTitle() const {
+			return inactiveAccountTitle;
+		}
+
+		inline const String& getInactiveAccountText() const {
+			return inactiveAccountText;
+		}
+
+		inline bool getCharacterBuilderEnabled() const {
+			return characterBuilderEnabled;
+		}
 	};
 }
 
@@ -364,6 +392,3 @@ namespace conf {
 using namespace conf;
 
 #endif // #ifndef CONFIGMANAGER_H_
-
-
-

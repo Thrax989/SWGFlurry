@@ -38,9 +38,9 @@ bool SkillList::containsSkill(const String& skillBox) {
 	return false;
 }
 
-void SkillList::getStringList(Vector<String>& skills) {
+void SkillList::getStringList(Vector<String>& skills) const {
 	for (int i = 0; i < vector.size(); ++i) {
-		const Reference<Skill*>& skill = vector.get(i);
+		const Reference<Skill*>& skill = vector.getUnsafe(i);
 
 		if (skill == NULL)
 			continue;
@@ -52,22 +52,40 @@ void SkillList::getStringList(Vector<String>& skills) {
 }
 
 bool SkillList::toBinaryStream(ObjectOutputStream* stream) {
+#ifdef ODB_SERIALIZATION
+	skills.toBinaryStream(stream);
+#else
 	Vector<String> names;
 	getStringList(names);
 
 	TypeInfo<uint32>::toBinaryStream(&updateCounter, stream);
 	names.toBinaryStream(stream);
-
+#endif
 	return true;
 }
 
+void to_json(nlohmann::json& j, const SkillList& s) {
+#ifdef ODB_SERIALIZATION
+	j = s.skills;
+#else
+	Vector<String> names;
+	s.getStringList(names);
+
+	j = names;
+#endif
+}
+
 bool SkillList::parseFromBinaryStream(ObjectInputStream* stream) {
+#ifdef ODB_SERIALIZATION
+	skills.parseFromBinaryStream(stream);
+#else
 	Vector<String> skills;
 
 	TypeInfo<uint32>::parseFromBinaryStream(&updateCounter, stream);
 	skills.parseFromBinaryStream(stream);
 
 	loadFromNames(skills);
+#endif
 
 	return true;
 }

@@ -76,6 +76,8 @@ protected:
 	unsigned int creatureBitmask;
 	unsigned int diet;
 
+	Vector<int> hues;
+
 	Vector<String> templates;
 
 	LootGroupCollection lootgroups;
@@ -308,6 +310,19 @@ public:
 
 	inline int getBaseHAMmax() {
 		return baseHAMmax;
+	}
+
+	inline int getRandomHue() {
+		int randHue = System::random(hues.size() - 1);
+		return hues.get(randHue);
+	}
+
+	inline int getHueCount() {
+		return hues.size();
+	}
+
+	inline int getTotalHues() {
+		return hues.size();
 	}
 
 	inline int getAggroRadius() {

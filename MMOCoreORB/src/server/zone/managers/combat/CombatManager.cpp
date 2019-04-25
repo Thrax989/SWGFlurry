@@ -400,7 +400,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		doCounterAttack(attacker, weapon, defender, damage);
 		if (!defender->hasState(CreatureState::PEACE))
 			defender->executeObjectControllerAction(STRING_HASHCODE("attack"), attacker->getObjectID(), "");
-		damageMultiplier = 0.0f;
+		damageMultiplier = 0.75f;
 		break;}
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defender, damage);
@@ -502,7 +502,7 @@ int CombatManager::doTargetCombatAction(TangibleObject* attacker, WeaponObject* 
 		doCounterAttack(attacker, weapon, defenderObject, damage);
 		if (!defenderObject->hasState(CreatureState::PEACE))
 			defenderObject->executeObjectControllerAction(STRING_HASHCODE("attack"), attacker->getObjectID(), "");
-		damageMultiplier = 0.0f;
+		damageMultiplier = 0.75f;
 		break;
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defenderObject, damage);
@@ -606,15 +606,15 @@ void CombatManager::applyWeaponDots(CreatureObject* attacker, CreatureObject* de
 		switch (weapon->getDotType(i)) {
 		case 1: //POISON
 			type = CreatureState::POISONED;
-			//resist = defender->getSkillMod("resistance_poison");
+			resist = defender->getSkillMod("resistance_poison");
 			break;
 		case 2: //DISEASE
 			type = CreatureState::DISEASED;
-			//resist = defender->getSkillMod("resistance_disease");
+			resist = defender->getSkillMod("resistance_disease");
 			break;
 		case 3: //FIRE
 			type = CreatureState::ONFIRE;
-			//resist = defender->getSkillMod("resistance_fire");
+			resist = defender->getSkillMod("resistance_fire");
 			break;
 		case 4: //BLEED
 			type = CreatureState::BLEEDING;
@@ -847,6 +847,9 @@ int CombatManager::getDefenderSecondaryDefenseModifier(CreatureObject* defender)
 		targetDefense += defender->getSkillMod(mod);
 		targetDefense += defender->getSkillMod("private_" + mod);
 	}
+
+	if ( defender->isIntimidated() || defender->isBerserked())
+		targetDefense /= 2;
 
 	if (targetDefense > 125)
 		targetDefense = 125;
@@ -1129,6 +1132,14 @@ int CombatManager::getArmorVehicleReduction(VehicleObject* defender, int damageT
 
 int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, float damage, int hitLocation, const CreatureAttackData& data) {
 	int damageType = 0, armorPiercing = 1;
+	bool lightningAttack =  false;
+    	bool flamethrowerAttack = false;
+
+	if (isLightningAttack(data))
+		lightningAttack = true;
+
+    	if (isFlameThrowerAttack(data))
+		flamethrowerAttack = true;
 
 	if (!data.isForceAttack()) {
 		damageType = weapon->getDamageType();
@@ -1139,6 +1150,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	} else {
 		damageType = data.getDamageType();
 	}
+
+	if (lightningAttack == true && !defender->isPlayerCreature())
+		damageType = SharedWeaponObjectTemplate::LIGHTSABER;
 
 	if (defender->isAiAgent()) {
 		float armorReduction = getArmorNpcReduction(cast<AiAgent*>(defender), damageType);
@@ -1226,6 +1240,17 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	if (psg != nullptr && !psg->isVulnerable(damageType)) {
 		float armorReduction =  getArmorObjectReduction(psg, damageType);
 		float dmgAbsorbed = damage;
+		float preArmorDamage = damage;
+
+		if (lightningAttack == true && attacker->isPlayerCreature()) //Force Lightning now has inherient AP2 for players only.
+			armorPiercing = 2;
+
+		if (flamethrowerAttack == true && attacker->isPlayerCreature()) //Ap2  equals less damage for unarmored targets (jedi) and roughly
+			armorPiercing = 2;											//the same for armored targets.
+
+		if (defender->isPlayerCreature())
+			armorPiercing++;
+		}
 
         if (armorReduction > 0) damage *= 1.f - (armorReduction / 100.f);
 
@@ -1264,7 +1289,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		// inflict condition damage
 		Locker alocker(armor);
 
-		armor->inflictDamage(armor, 0, damage * 0.1, true, true);
+		armor->inflictDamage(armor, 0, damage * 0.2, true, true);
 	}
 
 	return damage;
@@ -1349,6 +1374,9 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 		if (lairObserver != nullptr)
 			break;
 	}
+
+	if (lairObserver && data.isForceAttack())
+		damage *= 3.5;
 
 	if (lairObserver && lairObserver->getSpawnNumber() > 2)
 		damage *= 3.5;
@@ -1451,6 +1479,24 @@ float CombatManager::doDroidDetonation(CreatureObject* droid, CreatureObject* de
 		return 0;
 	}
 }
+
+bool CombatManager::isLightningAttack(const CreatureAttackData& data){
+	if (data.getCombatSpam() == "forcelightningsingle1" || data.getCombatSpam() == "forcelightningsingle2" ||
+		data.getCombatSpam() == "forcelightningcone1" || data.getCombatSpam() == "forcelightningcone2")
+		return true;
+	else
+		return false;
+
+}
+
+bool CombatManager::isFlameThrowerAttack(const CreatureAttackData& data)
+{
+	if(data.getCombatSpam() == "flamesingle1" || data.getCombatSpam() == "flamesingle2" || data.getCombatSpam() =="flamecone1" || data.getCombatSpam() == "flamecone2")
+		return true;
+	else
+		return false;
+	}
+ 
 
 void CombatManager::getFrsModifiedForceAttackDamage(CreatureObject* attacker, float& minDmg, float& maxDmg, const CreatureAttackData& data) {
 	ManagedReference<PlayerObject*> ghost = attacker->getPlayerObject();
@@ -1692,9 +1738,16 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		if (targetDefense > 50 + attackerAccuracy + weaponAccuracy + accuracyBonus + postureAccuracy + bonusAccuracy + attackerRoll) { // successful secondary defense, return type of defense
 
 			//info("Secondaries defenses prevailed", true);
-			// this means use defensive acuity, which mean random 1, 2, or 3
-			if (targetWeapon == nullptr)
-				return System::random(2) + 1;
+			// defense acuity returns random: case 0 BLOCK, case 1 DODGE or default COUNTER
+			if (targetWeapon == nullptr || def == "unarmed_passive_defense") {
+				int randRoll = System::random(2);
+				switch (randRoll) {
+				case 0: return BLOCK;
+				case 1: return DODGE;
+				case 2:
+				default: return COUNTER;
+				}
+			}
 
 			if (def == "block")
 				return BLOCK;
@@ -1702,8 +1755,6 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 				return DODGE;
 			else if (def == "counterattack")
 				return COUNTER;
-			else if (def == "unarmed_passive_defense")
-				return System::random(2) + 1;
 			else // shouldn't get here
 				return HIT; // no secondary defenses available on this weapon
 		}
@@ -1885,6 +1936,9 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 			targetDefense /= 1.5;
 			targetDefense += playerLevel;
 
+			if (targetDefense > 90)
+				targetDefense = 90.f;
+
 			if (System::random(100) > accuracyMod - targetDefense)
 				failed = true;
 
@@ -1898,6 +1952,9 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 
 					targetDefense /= 1.5;
 					targetDefense += playerLevel;
+
+					if (targetDefense > 90)
+						targetDefense = 90.f;
 
 					if (System::random(100) > accuracyMod - targetDefense) {
 						failed = true;
@@ -2684,6 +2741,31 @@ Reference<SortedVector<ManagedReference<TangibleObject*> >* > CombatManager::get
 			if (!tano->isAttackableBy(attacker)) {
 				//error("object is not attackable");
 				continue;
+			}
+
+			if (attacker->isPlayerCreature() && object->getParentID() != 0 && attacker->getParentID() != object->getParentID()) {
+				Reference<CellObject*> targetCell = object->getParent().get().castTo<CellObject*>();
+				CreatureObject* aggressor = attacker->asCreatureObject();
+
+				if (targetCell != nullptr) {
+					if (!object->isPlayerCreature()) {
+						ContainerPermissions* perms = targetCell->getContainerPermissions();
+
+						if (!perms->hasInheritPermissionsFromParent()) {
+							if (targetCell->checkContainerPermission(aggressor, ContainerPermissions::WALKIN))
+								continue;
+						}
+					}
+
+					ManagedReference<SceneObject*> parentSceneObject = targetCell->getParent().get();
+
+					if (parentSceneObject != nullptr) {
+						BuildingObject* buildingObject = parentSceneObject->asBuildingObject();
+
+						if (buildingObject != nullptr && !buildingObject->isAllowedEntry(aggressor))
+							continue;
+					}
+				}
 			}
 
 			if (attacker->getWorldPosition().distanceTo(object->getWorldPosition()) - attacker->getTemplateRadius() - object->getTemplateRadius() > range) {

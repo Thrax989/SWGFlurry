@@ -28,7 +28,10 @@ require("sui.custom.SuiProcessorPuzzle")
 require("sui.custom.SuiRadiationSensor")
 require("sui.custom.SuiReceiverPuzzle")
 
--- Custom content
+-- Server Event Automation
+includeFile("events/ServerEventAutomation.lua")
+
+-- Custom content - Loads last to allow for overrides
 includeFile("../custom_scripts/screenplays/screenplays.lua")
 --includeFile("tools/FlurryBuffTerminal.lua")
 

@@ -7,6 +7,8 @@
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "SquadLeaderCommand.h"
+#include "CombatQueueCommand.h"
+#include "server/zone/managers/combat/CombatManager.h"
 
 class RallyCommand : public SquadLeaderCommand {
 public:
@@ -61,6 +63,7 @@ public:
 		int duration = 30;
 
 		leader->sendSystemMessage("@cbt_spam:rally_success_single"); //"You rally the group!"
+		leader->playEffect("clienteffect/off_scatter.cef", "");
 		sendRallyCombatSpam(leader, group, true);
 
 		for (int i = 0; i < group->getGroupSize(); i++) {
@@ -74,9 +77,10 @@ public:
 
 			Locker clocker(member, leader);
 
-			if (member != leader)
+			if (member != leader){
 				member->sendSystemMessage("@cbt_spam:rally_success_group_msg"); //"Your group rallies to the attack!"
-
+				member->playEffect("clienteffect/off_scatter.cef", "");
+			}
 			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
 
 			Locker locker(buff);

@@ -33,6 +33,7 @@
 #include "server/zone/objects/tangible/components/vendor/AuctionTerminalDataComponent.h"
 #include "server/zone/objects/player/sessions/TradeSession.h"
 #include "AuctionSearchTask.h"
+#include "server/zone/objects/factorycrate/FactoryCrate.h"
 
 void AuctionManagerImplementation::initialize() {
 
@@ -159,12 +160,11 @@ void AuctionManagerImplementation::checkAuctions() {
 }
 
 void AuctionManagerImplementation::doAuctionMaint(TerminalListVector* items) {
-
 	Time expireTime;
 	uint64 currentTime = expireTime.getMiliTime() / 1000;
 
 	for (int i = 0; i < items->size(); ++i) {
-		Reference<TerminalItemList*> list = items->get(i);
+		Reference<TerminalItemList*>& list = items->get(i);
 		if (list == NULL)
 			continue;
 
@@ -182,12 +182,15 @@ void AuctionManagerImplementation::doAuctionMaint(TerminalListVector* items) {
 
 				auctionMap->deleteItem(vendor, item);
 
-				ManagedReference<SceneObject*> sceno = zoneServer->getObject(objectId);
+				Core::getTaskManager()->executeTask([this, objectId] () {
+						ManagedReference<SceneObject*> sceno = zoneServer->getObject(objectId);
 
-				if (sceno != NULL) {
-					Locker locker(sceno);
-					sceno->destroyObjectFromDatabase(true);
-				}
+						if (sceno != NULL) {
+							Locker locker(sceno);
+
+							sceno->destroyObjectFromDatabase(true);
+						}
+					}, "DeleteAuctionItemLambda", "slowQueue");
 
 				continue;
 			}
@@ -512,6 +515,20 @@ AuctionItem* AuctionManagerImplementation::createVendorItem(CreatureObject* play
 	item->setVendorID(vendor->getObjectID());
 	item->setItemName(name);
 	item->setItemDescription(description.toString());
+
+	if (objectToSell->isFactoryCrate()) {
+		ManagedReference<FactoryCrate*> crate = cast<FactoryCrate*>(objectToSell);
+
+		if (crate != nullptr) {
+			ManagedReference<TangibleObject*> prototype = crate->getPrototype();
+
+			if (prototype != nullptr) {
+				item->setFactoryCrate(true);
+				item->setCratedItemType(prototype->getClientGameObjectType());
+			}
+		}
+	}
+
 	item->setItemType(objectToSell->getClientGameObjectType());
 	item->setPrice(price);
 	item->setAuction(auction);
@@ -924,7 +941,7 @@ int AuctionManagerImplementation::checkRetrieve(CreatureObject* player, uint64 o
 		return RetrieveAuctionItemResponseMessage::NOTALLOWED;
 
 	ManagedReference<SceneObject*> saleItem = zoneServer->getObject(objectIdToRetrieve);
-	
+
 	if (saleItem == NULL) {
 		return RetrieveAuctionItemResponseMessage::NOTALLOWED;
 	}
@@ -1093,14 +1110,17 @@ void AuctionManagerImplementation::retrieveItem(CreatureObject* player, uint64 o
 	}
 }
 bool AuctionManagerImplementation::checkItemCategory(int category, AuctionItem* item) {
+	int itemType = item->getItemType();
+	bool isCrate = item->isFactoryCrate();
+	int cratedItemType = item->getCratedItemType();
+
 	if (category & 255) { // Searching a sub category
-		if (item->getItemType() == category) {
+		if (itemType == category || (isCrate && cratedItemType == category)) {
 			return true;
 		}
-	} else if (item->getItemType() & category) {
+	} else if ((itemType & category) || (isCrate && (cratedItemType & category))) {
 		return true;
-
-	} else if ((category == 8192) && (item->getItemType() < 256)) {
+	} else if ((category == 8192) && (itemType < 256 || (isCrate && cratedItemType < 256))) {
 		return true;
 	} else if (category == 0) { // Searching all items
 		return true;
@@ -1456,10 +1476,10 @@ void AuctionManagerImplementation::cancelItem(CreatureObject* player, uint64 obj
 
 		if(auctionEvents.contains(item->getAuctionedItemObjectID())) {
 			Reference<Task*> newTask = auctionEvents.get(item->getAuctionedItemObjectID());
-			
+
 			if(newTask != NULL)
 				newTask->cancel();
-				
+
 			auctionEvents.drop(item->getAuctionedItemObjectID());
 		}
 	}
@@ -1514,7 +1534,7 @@ void AuctionManagerImplementation::cancelItem(CreatureObject* player, uint64 obj
 
 void AuctionManagerImplementation::expireSale(AuctionItem* item) {
 	Locker locker(item);
-		
+
 	if(item->getStatus() == AuctionItem::EXPIRED) {
 		deleteExpiredSale(item);
 		return;
@@ -1585,9 +1605,9 @@ void AuctionManagerImplementation::expireBidAuction(AuctionItem* item) {
 	item->setStatus(AuctionItem::EXPIRED);
 	item->setExpireTime(availableTime);
 	item->clearAuctionWithdraw();
-	
+
 	locker.release();
-	
+
 	cman->sendMail(sender, sellerSubject, sellerBody, item->getOwnerName());
 }
 
@@ -1630,7 +1650,7 @@ void AuctionManagerImplementation::expireAuction(AuctionItem* item) {
 	} else {
 		// Someone won the auction
 		ManagedReference<CreatureObject*> buyer = pman->getPlayer(item->getBidderName());
-		
+
 		if (buyer == NULL) {
 			locker.release();
 			expireBidAuction(item);
@@ -1703,7 +1723,7 @@ void AuctionManagerImplementation::expireAuction(AuctionItem* item) {
 
 		//Send the Mail
 		locker.release();
-		
+
 		UnicodeString blankBody;
 		cman->sendMail(sender, sellerSubject, blankBody, sellerName, &sellerBodyVector, &sellerWaypointVector);
 		cman->sendMail(sender, buyerSubject, blankBody, item->getBidderName(), &buyerBodyVector, &buyerWaypointVector);
@@ -1712,7 +1732,7 @@ void AuctionManagerImplementation::expireAuction(AuctionItem* item) {
 
 void AuctionManagerImplementation::deleteExpiredSale(AuctionItem* item) {
 	Locker locker(item);
-		
+
 	ManagedReference<SceneObject*> vendor = zoneServer->getObject(item->getVendorID());
 	if (vendor != NULL) {
 
@@ -1742,7 +1762,7 @@ void AuctionManagerImplementation::deleteExpiredSale(AuctionItem* item) {
 
 		//Send the Mail
 		locker.release();
-		
+
 		cman->sendMail(sender, sellerSubject, sellerBody, item->getOwnerName(), waypoint);
 	}
 

@@ -52,7 +52,7 @@ ZoneServerImplementation::ZoneServerImplementation(ConfigManager* config) :
 	processor = NULL;
 	
 	
-	serverCap = 500;
+	serverCap = 3000;
 
 	phandler = NULL;
 
@@ -785,8 +785,8 @@ void ZoneServerImplementation::loadLoginMessage() {
 		reader = NULL;
 	}
 
-	//loginMessage += "\nLatest Commits:\n";
-	//loginMessage += ConfigManager::instance()->getRevision();
+	loginMessage += "\nLatest Commits:\n";
+	loginMessage += ConfigManager::instance()->getRevision();
 
 	delete reader;
 	delete file;

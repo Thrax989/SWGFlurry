@@ -35,7 +35,6 @@ import system.lang.Long;
 import engine.service.proto.BasePacket;
 import system.thread.Mutex;
 import server.zone.objects.creature.credits.CreditObject;
-import server.zone.managers.auction.AuctionSearchTask;
 include engine.util.u3d.Vector3;
 include system.util.SortedVector;
 include engine.log.Logger;
@@ -44,18 +43,18 @@ import system.util.SynchronizedVectorMap;
 import server.zone.managers.auction.AuctionSearchTask;
 
 @mock
+@json
 class CreatureObject extends TangibleObject {
 	@weakReference
 	protected transient ZoneClientSession owner;
 
-    protected CreditObject creditObject;
+    	protected CreditObject creditObject;
 
-    // deprectated
+    	// deprectated
 	protected int bankCredits;
 	protected int cashCredits;
 
-	protected int selectedExpMode;
-	protected float personalExpMultiplier;
+	protected int hueValue;
 
 	@dereferenced
 	protected DeltaVector<int> baseHAM;
@@ -82,7 +81,7 @@ class CreatureObject extends TangibleObject {
 
 	@dereferenced
 	protected WearablesDeltaVector wearablesVector;
-	
+
 	@weakReference
 	protected transient AuctionSearchTask auctionSearch;
 
@@ -123,7 +122,7 @@ class CreatureObject extends TangibleObject {
 	protected byte moodID;
 	protected int performanceCounter;
 	protected int instrumentID;
-	
+
 	@dereferenced
 	protected DeltaVector<int> hamList;
 
@@ -156,7 +155,7 @@ class CreatureObject extends TangibleObject {
 	protected Time nextAction;
 
 	@transactional
-	protected CooldownTimerMap cooldownTimerMap;
+	protected transient CooldownTimerMap cooldownTimerMap;
 
 	@dereferenced
 	protected BuffList creatureBuffs;
@@ -178,7 +177,7 @@ class CreatureObject extends TangibleObject {
 	 */
 	@dereferenced
 	private VectorMap<string, unsigned long> screenPlayStates;
-	
+
 	@dereferenced
 	protected SynchronizedVectorMap<unsigned long, unsigned long> personalEnemyFlags;
 
@@ -234,15 +233,14 @@ class CreatureObject extends TangibleObject {
 	public static final int KUBAZ = 0x27;
 	public static final int SANYASSAN = 0x28;
 
-
 	public static final int MALE = 0;
 	public static final int FEMALE = 1;
-	
+
 	public static final int CREOCOVTYPE = 2;
 
 	public static transient float DEFAULTRUNSPEED;
 
-	public static final unsigned long DEAD_TOO_LONG = 1800000; //30 minutes - How long can someone be dead and still be resuscitated in Miliseconds 
+	public static final unsigned long DEAD_TOO_LONG = 1800000; //30 minutes - How long can someone be dead and still be resuscitated in Miliseconds
 
 	/**
 	 * CreatureObject constructor, used to initialized the object
@@ -284,7 +282,7 @@ class CreatureObject extends TangibleObject {
 		super.setCountdownTimer(newCount, notifyClient);
 		cooldownTimerMap.updateToCurrentAndAddMili("incapTimer", getUseCount()*1000);
 	}
-		
+
 	/**
 	 * Sends a CommandQueueRemove ObjectControllerMessage to the owner client of this object
 	 * @pre { }
@@ -411,11 +409,11 @@ class CreatureObject extends TangibleObject {
 	 * @post {this object is locked, this object has the new posture set }
 	 * @param newPosture posture to set
 	 * @param immediate if set true the client will immediately play the posture animation, should not be used in combat
-	 * 
+	 *
 	 */
 	@preLocked
 	public native abstract void setPosture(int newPosture, boolean immediate = true, boolean notifyClient = true);
-	
+
 	@preLocked
 	public native abstract void updatePostures(boolean immediate = true);
 
@@ -633,7 +631,7 @@ class CreatureObject extends TangibleObject {
 	 * Updates listen id
 	 */
 	@preLocked
-	public native void setListenToID(unsigned long id, boolean notifyClient = true); 
+	public native void setListenToID(unsigned long id, boolean notifyClient = true);
 
 	/**
 	 * Updates the preformance counter
@@ -713,7 +711,7 @@ class CreatureObject extends TangibleObject {
 	@preLocked
 	@arg1preLocked
 	public native void removeBuff(Buff buff);
-	
+
 	@preLocked
 	public native boolean removeStateBuff(unsigned long state);
 
@@ -723,7 +721,7 @@ class CreatureObject extends TangibleObject {
 	 */
 	@preLocked
 	public native void clearBuffs(boolean updateclient, boolean removeAll);
-	
+
 	/**
 	 * Renews the buff and all secondary buffs associated with it.
 	 * @param buffCRC The buff to renew from the list
@@ -786,7 +784,7 @@ class CreatureObject extends TangibleObject {
 		return damageOverTimeList.addDot(this,
 										 attacker,
 										 objectID,
-										 duration, 
+										 duration,
 										 dotType,
 										 type,
 										 strength,
@@ -839,14 +837,6 @@ class CreatureObject extends TangibleObject {
 	public void addCashCredits(int credits, boolean notifyClient = true) {
 		int newCredits = getCashCredits() + credits;
 		setCashCredits(newCredits);
-	}
-	
-	public void setSelectedExpMode(int mode){
-		selectedExpMode = mode;
-	}
-	
-	public void setPersonalExpMultiplier(float multi){
-		personalExpMultiplier = multi;
 	}
 
 	@preLocked
@@ -1255,8 +1245,14 @@ class CreatureObject extends TangibleObject {
 	@dirty
 	public native string getFirstName();
 
+	public native string setFirstName(final string newFirstName);
+
 	@dirty
 	public native string getLastName();
+
+	public native string setLastName(final string newLastName, boolean skipVerify);
+
+	public native string setLastName(final string newLastName);
 
 	@dirty
 	public boolean isOnline() {
@@ -1382,7 +1378,7 @@ class CreatureObject extends TangibleObject {
 	public void removeAttackDelay() {
 		cooldownTimerMap.updateToCurrentTime("nextAttackDelay");
 	}
-	
+
 	@dirty
 	public boolean hasIncapTimer() {
 		return !cooldownTimerMap.isPast("incapTimer");
@@ -1437,10 +1433,10 @@ class CreatureObject extends TangibleObject {
 	public boolean checkKnockdownRecovery() {
 		return cooldownTimerMap.isPast("knockdownRecovery");
 	}
-	
-	
+
+
 	// Updates directional arrows and planet names for group members out of range
-	@dirty 
+	@dirty
 	public native void updateGroupMFDPositions();
 
 	// misc methods
@@ -1509,7 +1505,7 @@ class CreatureObject extends TangibleObject {
 
 	@dirty
 	public native void doCombatAnimation(TangibleObject defender, unsigned int animationCRC, byte hit, byte trails, unsigned long weaponID=0);
-	
+
 	@dirty
 	public native void doCombatAnimation(unsigned int animationCRC);
 
@@ -1525,16 +1521,6 @@ class CreatureObject extends TangibleObject {
 	@read
 	public boolean isGrouped() {
 		return group != null;
-	}
-
-	@read
-	public int getSelectedExpMode(){
-		return selectedExpMode;
-	}
-
-	@read
-	public float getPersonalExpMultiplier(){
-		return personalExpMultiplier;
 	}
 
 	@read
@@ -2141,7 +2127,7 @@ class CreatureObject extends TangibleObject {
 	public boolean isOnFire() {
 		return stateBitmask & CreatureState.ONFIRE;
 	}
-	
+
 	@read
 	public boolean isFeigningDeath() {
 		return stateBitmask & CreatureState.FEIGNDEATH;
@@ -2271,31 +2257,39 @@ class CreatureObject extends TangibleObject {
 	}
 
 	public native void updateCOV();
-	
+
 	@preLocked
 	public native void addPersonalEnemyFlag(CreatureObject enemy, unsigned long duration);
-	
+
 	public unsigned long getPersonalEnemyFlagTime(unsigned long enemyID) {
 		return personalEnemyFlags.get(enemyID);
 	}
-	
+
 	@preLocked
 	public native void removePersonalEnemyFlag(CreatureObject enemy);
-	
+
 	@preLocked
 	public native void removePersonalEnemyFlag(unsigned long enemyID);
-	
+
 	public native boolean hasPersonalEnemyFlag(CreatureObject enemy);
-	
+
 	@preLocked
 	public native void schedulePersonalEnemyFlagTasks();
+
+	@preLocked
+	public native void setHue(int hueIndex);
+
+	@read
+	public int getHueValue() {
+		return hueValue;
+	}
 
 	@local
 	@weakReference
 	public AuctionSearchTask getAuctionSearchTask() {
 		return auctionSearch;
 	}
-	
+
 	@preLocked
 	@local
 	public void setAuctionSearchTask(AuctionSearchTask task) {

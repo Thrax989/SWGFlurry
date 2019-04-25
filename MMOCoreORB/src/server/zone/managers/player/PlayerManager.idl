@@ -77,8 +77,7 @@ class PlayerManager extends Observer implements Logger {
 
 	transient CharacterNameMap nameMap;
 	private float globalExpMultiplier;
-	private float groupExpMultiplierInRange;
-	private float groupExpMultiplierOutOfRange;
+	private float groupExpMultiplier;
 
 	@dereferenced
 	private transient ReadWriteLock onlineMapMutex;
@@ -125,6 +124,10 @@ class PlayerManager extends Observer implements Logger {
 	@local
 	public native boolean checkPlayerName(ClientCreateCharacterCallback callback);
 
+	public native string setFirstName(CreatureObject creature, final string newFirstName);
+
+	public native string setLastName(CreatureObject creature, final string newLastName, boolean skipVerify = false);
+
 	public native int notifyObserverEvent(unsigned int eventType, Observable observable, ManagedObject arg1, long arg2);
 
 	/**
@@ -164,7 +167,7 @@ class PlayerManager extends Observer implements Logger {
 	public native void awardBadge(PlayerObject ghost, final Badge badge);
 
 	public native void setExperienceMultiplier(float globalMultiplier);
-	public native int awardExperience(CreatureObject player, final string xpType, int amount, boolean sendSystemMessage = true, float localMultiplier = 1.0f);
+	public native int awardExperience(CreatureObject player, final string xpType, int amount, boolean sendSystemMessage = true, float localMultiplier = 1.0f, boolean applyModifiers = true);
 
 	@local @dereferenced
 	public native SortedVector<SceneObject> getInsurableItems(CreatureObject player, boolean onlyInsurable = true);
@@ -521,13 +524,14 @@ class PlayerManager extends Observer implements Logger {
 	@local
 	@arg1preLocked
 	public native void doPvpDeathRatingUpdate(CreatureObject player, ThreatMap threatMap);
-	
-	public native void updatePvPKillCount(CreatureObject player);
-
+	public native void updatePvPKillCount(CreatureObject player);	
 	private native void loadXpBonusList();
 	public native float getSpeciesXpModifier(final string species, final string xpType);
 	
 	public native void unlockFRSForTesting(CreatureObject player, int councilType);
 
+	@local
+	@dereferenced
+	public native Vector<unsigned long> getOnlinePlayerList();
 	public native void updateTopList();
 }

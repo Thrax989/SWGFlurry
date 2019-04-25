@@ -544,7 +544,7 @@ int CreatureManagerImplementation::notifyDestruction(TangibleObject* destructor,
 
 		if (player != NULL) {
 
-			if (player->isGrouped()) {
+			if(player->isGrouped()) {
 				ownerID = player->getGroupID();
 			} else {
 				ownerID = player->getObjectID();
@@ -585,7 +585,7 @@ int CreatureManagerImplementation::notifyDestruction(TangibleObject* destructor,
 
 				if (!destructedObject->getFactionString().isEmpty() && !destructedObject->isEventMob()) {
 					int level = destructedObject->getLevel();
-					if (!player->isGrouped())
+					if(!player->isGrouped())
 						factionManager->awardFactionStanding(player, destructedObject->getFactionString(), level);
 					else
 						factionManager->awardFactionStanding(copyThreatMap.getHighestDamagePlayer(), destructedObject->getFactionString(), level);
@@ -1083,7 +1083,7 @@ void CreatureManagerImplementation::tame(Creature* creature, CreatureObject* pla
 		agent->activateLoad("wait");
 	}
 
-	ManagedReference<TameCreatureTask*> task = new TameCreatureTask(creature, player, mask, force, adult);
+	Reference<TameCreatureTask*> task = new TameCreatureTask(creature, player, mask, force, adult);
 
 	player->addPendingTask("tame_pet", task, 10000);
 }
@@ -1108,7 +1108,7 @@ void CreatureManagerImplementation::milk(Creature* creature, CreatureObject* pla
 
 	creature->setMilkState(BEINGMILKED);
 
-	ManagedReference<MilkCreatureTask*> task = new MilkCreatureTask(creature, player);
+	Reference<MilkCreatureTask*> task = new MilkCreatureTask(creature, player);
 
 	task->schedule(10000);
 }
@@ -1141,7 +1141,7 @@ void CreatureManagerImplementation::sample(Creature* creature, CreatureObject* p
 
 	Locker clocker(creature);
 
-	ManagedReference<SampleDnaTask*> task = new SampleDnaTask(creature, player);
+	Reference<SampleDnaTask*> task = new SampleDnaTask(creature, player);
 	player->addPendingTask("sampledna",task,0);
 
 }

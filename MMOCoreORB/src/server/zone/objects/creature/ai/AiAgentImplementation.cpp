@@ -159,6 +159,11 @@ void AiAgentImplementation::loadTemplateData(CreatureTemplate* templateData) {
 		allowedWeapon = petDeed->getRanged();
 	}
 
+	if (getHueValue() == -1 && npcTemplate->getTotalHues() > 0) {
+		int randHue = npcTemplate->getRandomHue();
+		setHue(randHue);
+	}
+
 	Vector<String> weapons;
 
 	if (allowedWeapon) {
@@ -1266,13 +1271,9 @@ void AiAgentImplementation::setDefender(SceneObject* defender) {
 }
 
 void AiAgentImplementation::queueDizzyFallEvent() {
-       if (!isNonPlayerCreatureObject())
-		CreatureObjectImplementation::queueDizzyFallEvent();
-	else
-       if (isNonPlayerCreatureObject())
+	if (isNonPlayerCreatureObject())
 		CreatureObjectImplementation::queueDizzyFallEvent();
 }
-
 
 void AiAgentImplementation::addDefender(SceneObject* defender) {
 	unsigned int stateCopy = getFollowState();
@@ -1600,7 +1601,11 @@ void AiAgentImplementation::activateAwarenessEvent(uint64 delay) {
 
 	if (awarenessEvent == NULL) {
 		awarenessEvent = new AiAwarenessEvent(asAiAgent());
+		auto zone = getZone();
 
+		if (zone != nullptr) {
+			awarenessEvent->setCustomTaskQueue(zone->getZoneName());
+		}
 #ifdef DEBUG
 		info("Creating new Awareness Event", true);
 #endif
@@ -2283,7 +2288,7 @@ bool AiAgentImplementation::isScentMasked(CreatureObject* target) {
 		return false;
 	}
 
-	if (isNonPlayerCreatureObject() || isDroidObject())
+	if (isNonPlayerCreatureObject() || isDroidObject() || isDroidSpecies())
 		return false;
 
 	// Don't check if it's already been checked

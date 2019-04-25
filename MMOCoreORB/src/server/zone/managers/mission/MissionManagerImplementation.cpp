@@ -1715,7 +1715,7 @@ LairSpawn* MissionManagerImplementation::getRandomLairSpawn(CreatureObject* play
 
 	} else if (type == MissionTypes::HUNTING) {
 		CreatureManager* creatureManager = zone->getCreatureManager();
-		Vector<ManagedReference<SpawnArea* > >* worldAreas = creatureManager->getWorldSpawnAreas();
+		auto worldAreas = creatureManager->getWorldSpawnAreas();
 
 		ManagedReference<SpawnArea*> spawnArea = nullptr;
 

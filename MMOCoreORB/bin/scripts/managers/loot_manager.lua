@@ -41,20 +41,17 @@
 --which carries forward this exception.
 
 --Determines how often exceptional and legendary items can drop.
-yellowChance = 1000 -- 1 in 1,000
-exceptionalChance = 100000 --1 in 100,000
-legendaryChance = 1000000 --1 in 1,000,000
---yellowChance = 50 --1 in 50 for testing
---exceptionalChance = 100 --1 in 100 for testing
---legendaryChance = 1000 --1 in 1000 for testing
+yellowChance = 250 -- 1 in 250
+exceptionalChance = 25000 --1 in 25,000
+legendaryChance = 250000 --1 in 250,000
 
 --Determines how much of an increase in the base stats will be applied to the object.
-yellowModifier = 1.5
-exceptionalModifier = 2.5
-legendaryModifier = 5.0
+yellowModifier = 1.15
+exceptionalModifier = 1.50
+legendaryModifier = 2.0
 
 --The chance for random skill mods to be on looted weapons/wearables
-skillModChance = 500 -- 1 in 500
+skillModChance = 125 -- 1 in 125
 
 -- Value ranges for random dots on looted weapons (chance is set individually on the loot items)
 randomDotAttribute = {0, 8} -- See CreatureAttributes.h in src for numbers.
@@ -97,12 +94,17 @@ lootableArmorAttachmentStatMods = {
 	"jedi_saber_experimentation",
 	"jedi_force_power_regen",
 	"jedi_force_power_max",
+	"jedi_state_defense",
+	"jedi_toughness",
+	"lightsaber_toughness",
 	"onehandlightsaber_accuracy",
 	"onehandlightsaber_speed",
 	"polearmlightsaber_accuracy",
 	"polearmlightsaber_speed",
 	"twohandlightsaber_accuracy",
 	"twohandlightsaber_speed",
+	"force_experimentation",
+	"force_failure_reduction",
 	"force_assembly",
 	"force_choke",
 	"forcethrow_accuracy",
@@ -168,7 +170,6 @@ lootableArmorAttachmentStatMods = {
 	"unarmed_damage",
 	"unarmed_speed",
 	"volley",
-	"luck",
 	"warcry"
 }
 
@@ -208,6 +209,9 @@ lootableClothingAttachmentStatMods = {
 	"creature_hit_bonus",
 	"dna_harvesting",
 	"mindblast_accuracy",
+	"jedi_state_defense",
+	"jedi_toughness",
+	"lightsaber_toughness",
 	"jedi_saber_assembly",
 	"jedi_saber_experimentation",
 	"jedi_force_power_regen",
@@ -218,6 +222,8 @@ lootableClothingAttachmentStatMods = {
 	"polearmlightsaber_speed",
 	"twohandlightsaber_accuracy",
 	"twohandlightsaber_speed",
+	"force_experimentation",
+	"force_failure_reduction",
 	"force_assembly",
 	"force_choke",
 	"forcethrow_accuracy",
@@ -317,7 +323,6 @@ lootableClothingAttachmentStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"luck",
 	"weapon_repair"
 }
 
@@ -461,7 +466,6 @@ lootableArmorStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"luck",
 	"weapon_repair"
 }
 
@@ -605,7 +609,6 @@ lootableClothingStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"luck",
 	"weapon_repair"
 }
 
@@ -677,7 +680,6 @@ lootableOneHandedMeleeStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"luck",
 	"warcry"
 }
 
@@ -749,7 +751,6 @@ lootableTwoHandedMeleeStatMods = {
 	"twohandmelee_accuracy",
 	"twohandmelee_damage",
 	"twohandmelee_speed",
-	"luck",
 	"warcry"
 }
 
@@ -821,7 +822,6 @@ lootableUnarmedStatMods = {
 	"unarmed_accuracy",
 	"unarmed_damage",
 	"unarmed_speed",
-	"luck",
 	"warcry"
 }
 
@@ -896,7 +896,6 @@ lootablePistolStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"luck",
 	"volley"
 }
 
@@ -974,7 +973,6 @@ lootableRifleStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"luck",
 	"volley"
 }
 
@@ -1048,7 +1046,6 @@ lootableCarbineStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"luck",
 	"volley"
 }
 
@@ -1119,7 +1116,6 @@ lootablePolearmStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"luck",
 	"warcry"
 }
 
@@ -1193,7 +1189,6 @@ lootableHeavyWeaponStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"luck",
 	"volley"
 }
 
