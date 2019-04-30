@@ -1242,15 +1242,14 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		float dmgAbsorbed = damage;
 		float preArmorDamage = damage;
 
-		if (lightningAttack == true && attacker->isPlayerCreature()) //Force Lightning now has inherient AP2 for players only.
+		if (lightningAttack == true && attacker->isPlayerCreature())
 			armorPiercing = 2;
 
-		if (flamethrowerAttack == true && attacker->isPlayerCreature()) //Ap2  equals less damage for unarmored targets (jedi) and roughly
-			armorPiercing = 2;											//the same for armored targets.
+		if (flamethrowerAttack == true && attacker->isPlayerCreature())
+			armorPiercing = 2;	
 
 		if (defender->isPlayerCreature())
 			armorPiercing++;
-		}
 
         if (armorReduction > 0) damage *= 1.f - (armorReduction / 100.f);
 
@@ -1480,24 +1479,21 @@ float CombatManager::doDroidDetonation(CreatureObject* droid, CreatureObject* de
 	}
 }
 
-bool CombatManager::isLightningAttack(const CreatureAttackData& data){
+bool CombatManager::isLightningAttack(const CreatureAttackData& data) {
 	if (data.getCombatSpam() == "forcelightningsingle1" || data.getCombatSpam() == "forcelightningsingle2" ||
 		data.getCombatSpam() == "forcelightningcone1" || data.getCombatSpam() == "forcelightningcone2")
 		return true;
 	else
 		return false;
-
 }
 
-bool CombatManager::isFlameThrowerAttack(const CreatureAttackData& data)
-{
+bool CombatManager::isFlameThrowerAttack(const CreatureAttackData& data) {
 	if(data.getCombatSpam() == "flamesingle1" || data.getCombatSpam() == "flamesingle2" || data.getCombatSpam() =="flamecone1" || data.getCombatSpam() == "flamecone2")
 		return true;
 	else
 		return false;
-	}
+}
  
-
 void CombatManager::getFrsModifiedForceAttackDamage(CreatureObject* attacker, float& minDmg, float& maxDmg, const CreatureAttackData& data) {
 	ManagedReference<PlayerObject*> ghost = attacker->getPlayerObject();
 
