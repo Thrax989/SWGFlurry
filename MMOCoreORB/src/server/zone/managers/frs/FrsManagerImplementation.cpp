@@ -2031,7 +2031,6 @@ Vector<uint64>* FrsManagerImplementation::getTopVotes(FrsRank* rankData, int num
 	for (int i = 0; i < numWinners; i++) {
 		uint64 highestID = 0;
 		int highestVote = 0;
-		int highestIndex = 0;
 
 		for (int j = 0; j < petitionerList->size(); j++) {
 			VectorMapEntry<uint64, int> entry = petitionerList->elementAt(j);
@@ -2041,10 +2040,9 @@ Vector<uint64>* FrsManagerImplementation::getTopVotes(FrsRank* rankData, int num
 			if (winnerList->contains(petitionerID))
 				continue;
 
-			if (petitionerVotes > highestVote || (petitionerVotes == highestVote && System::random(100) > 50)) {
+			if (highestID == 0 || petitionerVotes > highestVote || (petitionerVotes == highestVote && System::random(100) > 50)) {
 				highestVote = petitionerVotes;
 				highestID = petitionerID;
-				highestIndex = j;
 			}
 		}
 
@@ -2231,6 +2229,7 @@ void FrsManagerImplementation::handleChallengeVoteIssueSui(CreatureObject* playe
 	adjustFrsExperience(player, challengeCost * -1, false);
 
 	challengeData = new ChallengeVoteData(challengedID, ChallengeVoteData::VOTING_OPEN, challengedRank, player->getObjectID());
+	ObjectManager::instance()->persistObject(challengeData, 1, "frsdata");
 	challengeData->updateChallengeVoteStart();
 
 	managerData->addLightChallenge(challengedID, challengeData);
@@ -4102,4 +4101,3 @@ void FrsManagerImplementation::handleSuddenDeathLoss(CreatureObject* player, Thr
 ZoneServer* FrsManagerImplementation::getZoneServer() {
 	return zoneServer.get();
 }
-

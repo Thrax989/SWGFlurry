@@ -23,6 +23,9 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
+		if (creature != nullptr)
+			creature->error("used /unstick " + arguments.toString());
+
 		if (creature->isInCombat())
 			return INVALIDSTATE;
 

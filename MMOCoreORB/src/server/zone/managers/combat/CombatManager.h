@@ -164,7 +164,9 @@ public:
 
 	void checkForTefs(CreatureObject* attacker, CreatureObject* defender, bool* shouldGcwTef, bool* shouldBhTef);
 	void getFrsModifiedForceAttackDamage(CreatureObject* attacker, float& minDmg, float& maxDmg, const CreatureAttackData& data);
+	int getArmorObjectReduction(ArmorObject* armor, int damageType);
 
+	ArmorObject* getPSGArmor(CreatureObject* defender);
 	//all the combat math will go here
 protected:
 
