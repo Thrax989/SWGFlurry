@@ -1866,6 +1866,7 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 
 	if (playerObject == NULL)
 		return 0;
+
 	int xp;
 	if (amount <= 0 || xpType == "jedi_general" || xpType == "combat_jedi_novice"){
 		xp = playerObject->addExperience(xpType, amount);
@@ -1894,19 +1895,25 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 		xpType == "political" ||
 		xpType == "bountyhunter" ||
 		xpType == "shipwright") {
-			xp = playerObject->addExperience(xpType, (amount * 20));
-			float speciesModifier = 1.f;
-			if (amount > 0)
-				speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
-	} else {
-		float speciesModifier = 1.f;
-		if (amount > 0)
-			speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
-		if (applyModifiers)
-			xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * localMultiplier * globalExpMultiplier));
-		else
-			xp = playerObject->addExperience(xpType, (int)amount);
-	}
+		xp = playerObject->addExperience(xpType, (amount * 20));
+
+	float speciesModifier = 1.f;
+
+	if (amount > 0)
+		speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+
+	float buffMultiplier = 1.f;
+
+	if (player->hasBuff(BuffCRC::FOOD_XP_INCREASE) && !player->containsActiveSession(SessionFacadeType::CRAFTING))
+		buffMultiplier += player->getSkillModFromBuffs("xp_increase") / 100.f;
+
+	int xp = 0;
+
+	if (applyModifiers)
+		xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * buffMultiplier * localMultiplier * globalExpMultiplier));
+	else
+		xp = playerObject->addExperience(xpType, (int)amount);
+
 	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
 
 	if (sendSystemMessage) {
