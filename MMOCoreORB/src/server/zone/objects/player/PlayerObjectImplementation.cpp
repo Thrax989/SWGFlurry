@@ -1888,7 +1888,7 @@ void PlayerObjectImplementation::setLinkDead(bool isSafeLogout) {
 	onlineStatus = LINKDEAD;
 
 	logoutTimeStamp.updateToCurrentTime();
-	if(!isSafeLogout)
+	if(!isSafeLogout) {
 		info("went link dead");
 		logoutTimeStamp.addMiliTime(180000); // 3 minutes if unsafe
 	}
