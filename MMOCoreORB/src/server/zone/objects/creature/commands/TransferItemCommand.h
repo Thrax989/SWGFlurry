@@ -28,4 +28,3 @@ public:
 };
 
 #endif //TRANSFERITEMCOMMAND_H_
-=

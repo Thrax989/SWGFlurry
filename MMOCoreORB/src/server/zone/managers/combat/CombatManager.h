@@ -217,14 +217,10 @@ protected:
 	int doTargetCombatAction(TangibleObject* attacker, WeaponObject* weapon, TangibleObject* tano, const CreatureAttackData& data);
 	int getArmorReduction(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, float damage, int hitLocation, const CreatureAttackData& data);
 	float getArmorPiercing(TangibleObject* defender, int armorPiercing);
-	int getArmorObjectReduction(ArmorObject* armor, int damageType);
 	int getArmorNpcReduction(AiAgent* defender, int damageType);
 	int getArmorVehicleReduction(VehicleObject* defender, int damageType);
 	int getArmorTurretReduction(CreatureObject* attacker, TangibleObject* defender, int damageType);
-
 	ArmorObject* getArmorObject(CreatureObject* defender, uint8 hitLocation);
-	ArmorObject* getPSGArmor(CreatureObject* defender);
-
 	/**
 	 * returns bitmask with what pools to damage
 	 */

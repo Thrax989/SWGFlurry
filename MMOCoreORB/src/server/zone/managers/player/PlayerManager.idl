@@ -415,6 +415,16 @@ class PlayerManager extends Observer implements Logger {
 	public native string unbanCharacter(PlayerObject admin, Account account, final string name, unsigned int galaxyID, final string reason);
 	public native void clearOwnedStructuresPermissions(CreatureObject player);
 
+	public native boolean promptTeachableSkills(CreatureObject teacher, SceneObject target);
+
+	public native void decreaseOnlineCharCount(ZoneClientSession client);
+	public native boolean increaseOnlineCharCountIfPossible(ZoneClientSession client);
+	//public native int getOnlineCharCount(unsigned int accountId);
+	public native void disconnectAllPlayers();
+
+	public native void fixHAM(CreatureObject player);
+	public native void fixBuffSkillMods(CreatureObject player);
+
 	@local
 	@dereferenced
 	public native JSONSerializationType basePlayerLogEntry(CreatureObject creature, PlayerObject ghost);
@@ -430,16 +440,6 @@ class PlayerManager extends Observer implements Logger {
 
 	@local
 	public native void writePlayerLog(CreatureObject creature, final string msg, int logLevelType);
-
-	public native boolean promptTeachableSkills(CreatureObject teacher, SceneObject target);
-
-	public native void decreaseOnlineCharCount(ZoneClientSession client);
-	public native boolean increaseOnlineCharCountIfPossible(ZoneClientSession client);
-	//public native int getOnlineCharCount(unsigned int accountId);
-	public native void disconnectAllPlayers();
-
-	public native void fixHAM(CreatureObject player);
-	public native void fixBuffSkillMods(CreatureObject player);
 
 	public native int getPlayerQuestID(final string name);
 	public native string getPlayerQuestParent(int questID);

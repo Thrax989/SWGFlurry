@@ -1986,48 +1986,78 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 	if (amount <= 0 || xpType == "jedi_general" || xpType == "combat_jedi_novice"){
 		xp = playerObject->addExperience(xpType, amount);
 	} else if (xpType == "imagedesigner" ||
-		xpType == "music" ||
+		xpType == "bio_engineer" ||
+		xpType == "bio_engineer_dna_harvesting" ||
+		xpType == "bountyhunter" ||
+		xpType == "business_general" ||
+		xpType == "camp" ||
+		xpType == "combat" ||
+		xpType == "combat_general" ||
+		xpType == "combat_meleespecialize_onehand" ||
+		xpType == "combat_meleespecialize_polearm" ||
+		xpType == "combat_meleespecialize_twohand" ||
+		xpType == "combat_meleespecialize_unarmed" ||
+		xpType == "combat_rangedspecialize_carbine" ||
+		xpType == "combat_rangedspecialize_heavy" ||
+		xpType == "combat_rangedspecialize_pistol" ||
+		xpType == "combat_rangedspecialize_rifle" ||
+		xpType == "combat_rangespecialize_bactarifle" ||
+		xpType == "combatmedic" ||
+		xpType == "crafting_bio_engineer_creature" ||
+		xpType == "crafting_bio_engineer_tissue" ||
+		xpType == "crafting_clothing_armor" ||
+		xpType == "crafting_clothing_general" ||
+		xpType == "crafting_droid_general" ||
+		xpType == "crafting_food_general" ||
+		xpType == "crafting_general" ||
+		xpType == "crafting_medicine_general" ||
+		xpType == "crafting_scout" ||
+		xpType == "crafting_scout_camp" ||
+		xpType == "rafting_scout_trap" ||
+		xpType == "crafting_spice" ||
+		xpType == "crafting_structure_general" ||
+		xpType == "crafting_weapons_general" ||
+		xpType == "crafting_weapons_melee" ||
+		xpType == "crafting_weapons_munition" ||
+		xpType == "crafting_weapons_munitions" ||
+		xpType == "crafting_weapons_ranged" ||
+		xpType == "creaturehandler" ||
 		xpType == "dance" ||
 		xpType == "entertainer_healing" ||
-		xpType == "scout" ||
-		xpType == "trapping" ||
-		xpType == "camp" ||
-		xpType == "crafting_medicine_general" ||
-		xpType == "crafting_general" ||
-		xpType == "resource_harvesting_inorganic" ||
-		xpType == "creaturehandler" ||
-		xpType == "crafting_bio_engineer_creature" ||
-		xpType == "bio_engineer_dna_harvesting" ||
-		xpType == "crafting_clothing_armor" ||
-		xpType == "crafting_weapons_general" ||
-		xpType == "crafting_food_general" ||
-		xpType == "crafting_clothing_general" ||
-		xpType == "crafting_structure_general" ||
-		xpType == "crafting_droid_general" ||
+		xpType == "medical" ||
 		xpType == "merchant" ||
-		xpType == "slicing" ||
-		xpType == "crafting_spice" ||
+		xpType == "music" ||
+		xpType == "pilot_general" ||
+		xpType == "pilot_imperial" ||
+		xpType == "pilot_neutral" ||
 		xpType == "political" ||
-		xpType == "bountyhunter" ||
+		xpType == "prestige_imperial" ||
+		xpType == "prestige_pilot" ||
+		xpType == "prestige_rebel" ||
+		xpType == "ranger" ||
+		xpType == "resource_harvesting_inorganic" ||
+		xpType == "resource_harvesting_organic" ||
+		xpType == "reverse_engineering" ||
+		xpType == "scout" ||
+		xpType == "slicing" ||
+		xpType == "smuggler" || 
+		xpType == "space_combat_general" ||  
+		xpType == "squadleader" ||  
+		xpType == "trapping" || 
 		xpType == "shipwright") {
 		xp = playerObject->addExperience(xpType, (amount * 20));
-
-	float speciesModifier = 1.f;
-
-	if (amount > 0)
-		speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
-
-	float buffMultiplier = 1.f;
-
-	if (player->hasBuff(BuffCRC::FOOD_XP_INCREASE) && !player->containsActiveSession(SessionFacadeType::CRAFTING))
-		buffMultiplier += player->getSkillModFromBuffs("xp_increase") / 100.f;
-
-	int xp = 0;
-
-	if (applyModifiers)
-		xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * buffMultiplier * localMultiplier * globalExpMultiplier));
-	else
-		xp = playerObject->addExperience(xpType, (int)amount);
+		float speciesModifier = 1.f;
+		if (amount > 0)
+			speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+		} else {
+			float speciesModifier = 1.f;
+			if (amount > 0)
+				speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+			if (applyModifiers)
+				xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * localMultiplier * globalExpMultiplier));
+			else
+				xp = playerObject->addExperience(xpType, (int)amount);
+		}
 
 	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
 
@@ -2044,7 +2074,6 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 			player->sendSystemMessage(message);
 		}
 	}
-
 	return xp;
 }
 
