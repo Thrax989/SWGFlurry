@@ -641,6 +641,14 @@ void ServerCore::handleCommands() {
 					System::out << "invalid statsd sampling rate" << endl;
 				}
 #endif
+			} else if ( command == "updatetoplist" ) {
+				if (zoneServerRef != nullptr){
+
+					ZoneServer* server = zoneServerRef.get();
+
+					if (server != nullptr)
+						server->getPlayerManager()->updateTopList();
+				}
 			} else if (command == "getpvpmode" || command == "getpvp") {
 				System::out << "PvpMode = " << ConfigManager::instance()->getPvpMode() << endl;
 			} else if (command == "setpvpmode" || command == "setpvp") {
