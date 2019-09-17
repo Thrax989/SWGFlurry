@@ -112,10 +112,6 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Recalculate's Players Skills (24 hour cool down)", "recalculateskills",
 		   },
-		 	"Jedi Quest",
-		   {
-			"Jedi Quest Screenplay", "jedi_quest",
-		   },
 		 	"Player Cities",
 		   {
 			"Korrivan Player City (5,000 Credits)", "pc_korrivan_travel",
