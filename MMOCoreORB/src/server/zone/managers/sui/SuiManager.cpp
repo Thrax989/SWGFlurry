@@ -579,7 +579,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					    box->setPromptText(promptText.toString());
 					    ghost->addSuiBox(box);
 					    player->sendMessage(box->generateMessage());
-						player->subtractBankCredits(1000);
+						SkillManager::instance()->awardSkill("combat_jedi_novice", creature, true, true, true);
 						box->setForceCloseDistance(5.f);
 			        }
 //JediQuest Remove Screen Play Tester

@@ -39,6 +39,7 @@ void HolocronMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Obj
 			menuResponse->addRadialMenuItemToRadialID(213, 217, 3, "Jedi Lives Remaining"); // Jedi Live's Remaining
 			menuResponse->addRadialMenuItemToRadialID(213, 218, 3, "Light Jedi Enclave Travel"); // Light Jedi Enclave Travel
 			menuResponse->addRadialMenuItemToRadialID(213, 219, 3, "Dark Jedi Enclave Travel"); // Dark Jedi Enclave Travel
+			menuResponse->addRadialMenuItemToRadialID(213, 220, 3, "Unlock Gray Jedi"); // Unlocks Gray Jedi
 		}
 	}
 int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
@@ -199,6 +200,25 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		creature->switchZone("yavin4", 5080, 79, 306);
 		//Set cooldown
 		creature->addCooldown("dark_enclave", 3600 * 1000);// 1 hour cooldown
+		return 0;
+	}
+	//Unock Gray Jedi
+	if (selectedID == 220 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 0)) {
+		        ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+				player->sendSystemMessage("You Have Unlocked Gray Jedi");
+				int livesLeft = player->getScreenPlayState("jediLives") + 3;
+				player->setScreenPlayState("jediLives", livesLeft);
+				int jediVis1 = ghost->getVisibility();
+				box->setPromptTitle("Gray Jedi Progress");
+				StringBuffer promptText;
+				String playerName = player->getFirstName();
+				promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Gray Jedi Lives" << endl;
+				promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+				box->setPromptText(promptText.toString());
+				ghost->addSuiBox(box);
+				player->sendMessage(box->generateMessage());
+				SkillManager::instance()->awardSkill("combat_jedi_novice", creature, true, true, true);
+				box->setForceCloseDistance(5.f);
 		return 0;
 	}
 	return 0;
