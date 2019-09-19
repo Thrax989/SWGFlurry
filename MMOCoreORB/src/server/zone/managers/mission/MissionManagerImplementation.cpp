@@ -799,7 +799,7 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
 
 		float direction = (float)System::random(360);
 
-		// Player direction choice -/+ 8 degrees deviation from center
+		// Player direction choice -/+ 8 degrees deviation from center to spread out the lairs a bit. Any higher will change the direction diplayed on the client.
 		if (dirChoice > 0){
 			int dev = System::random(8);
 			int isMinus = System::random(100);
@@ -814,7 +814,13 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
 				direction -= 360;
 		}
 
-		startPos = player->getWorldCoordinate(System::random(1000) + 1000, direction, false);
+		// Start position, always based on "facing north"
+		int distance = System::random(1000) + 1000;
+		float angleRads = direction * (M_PI / 180.0f);
+		float newAngle = angleRads + (M_PI / 2);
+		startPos.setX(player->getWorldPositionX() + (cos(newAngle) * distance)); // client has x/y inverted
+		startPos.setY(player->getWorldPositionY() + (sin(newAngle) * distance));
+		startPos.setZ(0.0f);
 
 		if (zone->isWithinBoundaries(startPos)) {
 			float height = zone->getHeight(startPos.getX(), startPos.getY());
