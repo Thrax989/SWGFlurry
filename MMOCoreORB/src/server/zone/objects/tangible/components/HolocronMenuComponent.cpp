@@ -202,7 +202,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		creature->addCooldown("dark_enclave", 3600 * 1000);// 1 hour cooldown
 		return 0;
 	}
-	//Unock Gray Jedi
+	//Unlock Gray Jedi
 	if (selectedID == 220 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 0)) {
 		        ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 				player->sendSystemMessage("You Have Unlocked Gray Jedi");

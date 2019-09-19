@@ -111,7 +111,7 @@
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 
 /* To Do List
- * Clean Up Chcecks With New BH System
+ * Clean Up Checks With New BH System
  * Improve Credit Checks For BH System
  * Add More Rewards To BH System
  * Improve Casting For Gray Jedi Lives

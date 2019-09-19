@@ -6,6 +6,7 @@
 #define PLAYER_BH_SUI_CALLBACK
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/mission/MissionManager.h"
+#include "server/zone/managers/visibility/VisibilityManager.h"
 #include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 
@@ -30,12 +31,12 @@ public:
 			ManagedReference<SceneObject*> suiObject = sui->getUsingObject();
 			CreatureObject* player = cast<CreatureObject*>(suiObject.get());
 
-			if(value < 25000 || value > 250000)
+			if(value < 25000 || value > 1000000)
 			{
 				creature->sendSystemMessage("You have entered an insufficient amount, please try again.");
 				ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
 				input->setPromptTitle("Bounty Hunter Request");
-				input->setPromptText("Place a bounty on your killer. Bountys must be between 25,000 and 250,000 credits.");
+				input->setPromptText("Place a bounty on your killer. Bounties must be between 25,000 and 1,000,000 credits.");
 				input->setUsingObject(player);
 				input->setCallback(new BountyHuntSuiCallback(creature->getZoneServer()));
 
