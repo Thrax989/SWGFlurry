@@ -32,9 +32,10 @@ void MissionTerminalImplementation::fillObjectMenuResponse(ObjectMenuResponse* m
 		menuResponse->addRadialMenuItemToRadialID(73, 77, 3, "@city/city:west"); // West
 	}
 
-	if (terminalType == "general")
-		menuResponse->addRadialMenuItem(112, 3, "Choose Mission Level"); 
-}
+	if (terminalType == "general" || terminalType == "imperial" || terminalType == "rebel") {
+		menuResponse->addRadialMenuItem(112, 3, "Choose Mission Level");
+		menuResponse->addRadialMenuItem(113, 3, "Choose Mission Direction");
+	}
 
 int MissionTerminalImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
 	ManagedReference<CityRegion*> city = player->getCityRegion().get();
@@ -93,6 +94,15 @@ int MissionTerminalImplementation::handleObjectMenuSelect(CreatureObject* player
 		*mission_level_choice << player;
 
 		mission_level_choice->callFunction();
+		return 0;
+	} else if (selectedID == 113) {
+
+		Lua* lua = DirectorManager::instance()->getLuaInstance();
+
+		Reference<LuaFunction*> mission_direction_choice = lua->createFunction("mission_direction_choice", "openWindow", 0);
+		*mission_direction_choice << player;
+
+		mission_direction_choice->callFunction();
 		return 0;
 	}
 
