@@ -363,6 +363,8 @@ includeFile("events/lifeDay.lua")
 includeFile("events/buffTerminalMenuComponent.lua")
 includeFile("events/race_droid.lua")
 includeFile("events/jediQuest.lua")
+includeFile("jediLives.lua")
+includeFile("deathBounty.lua")
 
 --Pvp Arena
 includeFile("events/pvp/pvp.lua")
