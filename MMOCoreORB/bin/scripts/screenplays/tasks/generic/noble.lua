@@ -13,7 +13,8 @@ generic_noble_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/basket_expensive_s01.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -29,7 +30,8 @@ generic_noble_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/proclamation_s01.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -45,7 +47,8 @@ generic_noble_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/picture_handheld_s02.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -61,7 +64,8 @@ generic_noble_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/recording_rod_s01.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -74,7 +78,8 @@ generic_noble_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/basket_expensive_s01.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -87,7 +92,8 @@ generic_noble_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/proclamation_s01.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -100,7 +106,8 @@ generic_noble_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/picture_handheld_s01.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -113,7 +120,8 @@ generic_noble_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/recording_rod_s01.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -129,7 +137,8 @@ generic_noble_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/firework_dud_s1.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -145,7 +154,8 @@ generic_noble_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/firework_dud_s2.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -161,7 +171,8 @@ generic_noble_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/picture_handheld_s01.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -177,7 +188,8 @@ generic_noble_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/recording_rod_s01.iff" }
+				{ rewardType = "loot", lootGroup = "junk" },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		}
 	}
