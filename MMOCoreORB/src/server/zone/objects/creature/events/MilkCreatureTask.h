@@ -7,6 +7,7 @@
 #include "server/zone/managers/creature/CreatureManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "engine/engine.h"
+#include "server/zone/managers/player/PlayerManager.h"
 
 class MilkCreatureTask : public Task {
 
@@ -62,7 +63,7 @@ public:
 			} else {
 				currentPhase = ONEFAILURE;
 			}
-			this->reschedule(2000);
+			this->reschedule(10000);
 			break;
 		case ONESUCCESS:
 			if (success) {
@@ -71,14 +72,14 @@ public:
 			} else {
 					player->sendSystemMessage("@skl_use:milk_continue"); // You continue to milk the creature.
 					currentPhase = FINAL;
-					this->reschedule(2000);
+					this->reschedule(10000);
 			}
 			break;
 		case ONEFAILURE:
 			if (success) {
 				player->sendSystemMessage("@skl_use:milk_continue"); // You continue to milk the creature.
 				currentPhase = FINAL;
-				this->reschedule(2000);
+				this->reschedule(10000);
 			} else {
 				updateMilkState(CreatureManager::NOTMILKED);
 				_clocker.release();
@@ -106,7 +107,7 @@ public:
 		String restype = creature->getMilkType();
 		int quantity = creature->getMilk();
 
-		int quantityExtracted = Math::max(quantity, 10)*5;
+		int quantityExtracted = Math::max(quantity, 100)*4;
 
 		ManagedReference<ResourceSpawn*> resourceSpawn = resourceManager->getCurrentSpawn(restype, player->getZone()->getZoneName());
 
@@ -117,34 +118,45 @@ public:
 
 		float density = resourceSpawn->getDensityAt(player->getZone()->getZoneName(), player->getPositionX(), player->getPositionY());
 
+		String milkZone = "";
+
 		if (density > 0.80f) {
 			quantityExtracted = int(quantityExtracted * 1.25f);
+			milkZone = "creature_quality_fat";
 		} else if (density > 0.60f) {
 			quantityExtracted = int(quantityExtracted * 1.00f);
+			milkZone = "creature_quality_medium";
 		} else if (density > 0.40f) {
 			quantityExtracted = int(quantityExtracted * 0.75f);
+			milkZone = "creature_quality_skinny";
 		} else {
 			quantityExtracted = int(quantityExtracted * 0.50f);
+			milkZone = "creature_quality_scrawny";
 		}
 
+		StringIdChatParameter harvestMessage("skl_use", milkZone);
+		harvestMessage.setDI(quantityExtracted);
+		harvestMessage.setTU(resourceSpawn->getFinalClass());
+
 		resourceManager->harvestResourceToPlayer(player, resourceSpawn, quantityExtracted);
+		player->sendSystemMessage(harvestMessage);
 
 		updateMilkState(CreatureManager::ALREADYMILKED);
-		// Grant XP
+		
+		// Grant Wilderness Survival XP
+		CreatureTemplate* creatureTemplate = creature->getCreatureTemplate();
+		
+		int xp = ((125 < player->getSkillMod("foraging")) ? 125 : player->getSkillMod("foraging"));
+		
+		if (creatureTemplate != NULL)
+			xp += 3 * creatureTemplate->getLevel() + quantityExtracted;
+		else
+			xp += quantityExtracted;
+		
 		ZoneServer* zoneServer = player->getZoneServer();
 		PlayerManager* playerManager = zoneServer->getPlayerManager();
-		CreatureTemplate* creatureTemplate = creature->getCreatureTemplate();
-
-		int xp = player->getSkillMod("foraging");
-		if (xp > 125)
-			xp = 125; // Cap SEA usage at +25
-
-		if (creatureTemplate != NULL)
-			xp += 5 * creatureTemplate->getLevel();
-		else
-			xp += 5 * creature->getLevel();
-
 		playerManager->awardExperience(player, "camp", xp);
+		
 	}
 
 	void updateMilkState(const short milkState) {
