@@ -391,7 +391,7 @@ bool CreatureImplementation::canCollectDna(CreatureObject* player) {
 	if (_this.getReferenceUnsafeStaticCast()->isNonPlayerCreatureObject()) {
 		return false;
 	}
-	if(!player->isInRange(_this.getReferenceUnsafeStaticCast(), 16.0f) || player->isInCombat() || player->isDead() || player->isIncapacitated() ){
+	if(!player->isInRange(_this.getReferenceUnsafeStaticCast(), 25.0f) || player->isInCombat() || player->isDead() || player->isIncapacitated() ){
 		return false;
 	}
 
