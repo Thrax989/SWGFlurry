@@ -36,6 +36,7 @@ void MissionTerminalImplementation::fillObjectMenuResponse(ObjectMenuResponse* m
 		menuResponse->addRadialMenuItem(112, 3, "Choose Mission Level");
 		menuResponse->addRadialMenuItem(113, 3, "Choose Mission Direction");
 	}
+}
 
 int MissionTerminalImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
 	ManagedReference<CityRegion*> city = player->getCityRegion().get();

@@ -556,7 +556,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				player->sendSystemMessage("You have maximized all xp types.");
 //Gray Jedi Unlock Checks
 			} else if (templatePath == "jedi_Lives") {
-				if (!ghost->getJediState() >= 2) {
+				if (ghost->getJediState() < 2) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Gray Jedi Unlock");
 		                box->setPromptText("Gray Jedi Requires (Force Sensative)");
@@ -565,7 +565,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 0)) {
+				if (ghost->getJediState() >= 2 && player->getScreenPlayState("jedi_Lives") == 0) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 						player->sendSystemMessage("You Have Unlocked Gray Jedi");
 						int livesLeft = player->getScreenPlayState("jediLives") + 3;
@@ -579,7 +579,8 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					    box->setPromptText(promptText.toString());
 					    ghost->addSuiBox(box);
 					    player->sendMessage(box->generateMessage());
-						SkillManager::instance()->awardSkill("combat_jedi_novice", creature, true, true, true);
+					    SkillManager* skillManager = server->getSkillManager();
+						SkillManager::instance()->awardSkill("combat_jedi_novice", player, true, true, true);
 						box->setForceCloseDistance(5.f);
 			        }
 //JediQuest Remove Screen Play Tester
