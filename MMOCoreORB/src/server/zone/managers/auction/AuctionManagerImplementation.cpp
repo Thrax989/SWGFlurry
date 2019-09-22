@@ -263,6 +263,10 @@ void AuctionManagerImplementation::doAuctionMaint(TerminalListVector* items, con
 
 void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 objectid, SceneObject* vendor, const UnicodeString& description, int price, uint32 duration, bool auction, bool premium) {
 
+	int bank = player->getBankCredits();
+	int cash = player->getCashCredits();
+	int totalFunds = bank + cash;
+
 	if (vendor == nullptr || (!vendor->isVendor() && !vendor->isBazaarTerminal())) {
 		error("terminal is not a valid vendor object");
 		ItemSoldMessage* soldMessage = new ItemSoldMessage(objectid, ItemSoldMessage::VENDORNOTWORKING);
@@ -384,6 +388,7 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 	objectToSellLocker.release();
 
 	if (vendor->isBazaarTerminal()) {
+
 		StringIdChatParameter str("@base_player:sale_fee"); // The fee for your listing is %DI credits.
 
 		float costReduction = 1;
@@ -393,14 +398,47 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 				costReduction = .60f;
 
 		if (item->isPremiumAuction()) {
-			player->subtractBankCredits(costReduction * (SALESFEE * 5));
-			str.setDI(costReduction * (SALESFEE * 5));
+			int listCost = costReduction * (SALESFEE * 5);
+			if (bank < listCost) {
+				int diff = listCost - bank;
+
+				if (diff > cash) {
+					player->sendSystemMessage("You do not have enough credits to cover the listing fee");
+					return;
+				}
+			
+				player->subtractBankCredits(bank); //Take all from bank, since they didn't have enough to cover.
+				player->subtractCashCredits(diff); //Take the rest from cash.
+				str.setDI(listCost);
+			
+			} else {
+	
+				player->subtractBankCredits(listCost); //Take all of the payment from bank.
+				str.setDI(listCost);
+			}
 
 		} else {
-			player->subtractBankCredits(costReduction * SALESFEE);
-			str.setDI(costReduction * SALESFEE);
-		}
 
+			int listCost = costReduction * SALESFEE;
+
+			if (bank < listCost) {
+				int diff = listCost - bank;
+
+				if (diff > cash) {
+					player->sendSystemMessage("You do not have enough credits to cover the listing fee");
+					return;
+				}
+			
+				player->subtractBankCredits(bank); //Take all from bank, since they didn't have enough to cover.
+				player->subtractCashCredits(diff); //Take the rest from cash.
+				str.setDI(listCost);
+			
+			} else {
+	
+				player->subtractBankCredits(listCost); //Take all of the payment from bank.
+				str.setDI(listCost);
+			}
+		}
 		player->sendSystemMessage(str);
 	}
 
@@ -420,6 +458,30 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 				if(strongOwnerRef->isOnline()) {
 					strongOwnerRef->sendSystemMessage(player->getFirstName() + " has offered an item to " + vendor->getDisplayedName());
 				}
+				
+				// Flurry: Email player about offer to vendor
+				UnicodeString subject("@auction:vedor_offer_subject"); // An item has been offered to your vendor
+				
+				StringIdChatParameter offerBody("@auction:vedor_offer_body"); // %TU has been offered %TO by %TT for %DI credits.
+				offerBody.setTU(vendor->getDisplayedName());
+				offerBody.setTO(item->getItemName());
+				offerBody.setTT(player->getDisplayedName());
+				offerBody.setDI(item->getPrice());
+				
+				float waypointX = vendor->getWorldPositionX();
+				float waypointY = vendor->getWorldPositionY();
+
+				ManagedReference<WaypointObject*> waypointObject = ( zoneServer->createObject(STRING_HASHCODE("object/waypoint/world_waypoint_blue.iff"), 1)).castTo<WaypointObject*>();
+				Locker lockerWaypointObject(waypointObject);
+				waypointObject->setCustomObjectName(vendor->getDisplayedName(), false);
+				waypointObject->setActive(false);
+				waypointObject->setPosition(waypointX, 0, waypointY);
+				waypointObject->setPlanetCRC(vendor->getPlanetCRC());
+				lockerWaypointObject.release();
+			
+				ManagedReference<ChatManager*> cman = zoneServer->getChatManager();
+				if (cman != NULL)
+					cman->sendMail(vendor->getDisplayedName(), subject, offerBody, strongOwnerRef->getFirstName(), waypointObject);
 			}
 		}
 	}
@@ -506,10 +568,14 @@ int AuctionManagerImplementation::checkSaleItem(CreatureObject* player, SceneObj
 		if (price > MAXBAZAARPRICE)
 			return ItemSoldMessage::INVALIDSALEPRICE;
 
-		if (player->getBankCredits() < SALESFEE)
+		int bank = player->getBankCredits();
+		int cash = player->getCashCredits();
+		int availableCredits = bank + cash;
+
+		if (availableCredits < SALESFEE)
 			return ItemSoldMessage::NOTENOUGHCREDITS;
 
-		if (premium && player->getBankCredits() < SALESFEE * 5)
+		if (premium && availableCredits < SALESFEE * 5)
 			return ItemSoldMessage::NOTENOUGHCREDITS;
 
 	}
@@ -628,7 +694,11 @@ int AuctionManagerImplementation::checkBidAuction(CreatureObject* player, Auctio
 		return BidAuctionResponseMessage::INVALIDPRICE;
 	}
 
-	if (player->getBankCredits() < price1) { // Credit Check
+	int bank = player->getBankCredits();
+	int cash = player->getCashCredits();
+	int availableCredits = bank + cash;
+
+	if (availableCredits < price1) { // Credit Check
 		return BidAuctionResponseMessage::NOTENOUGHCREDITS;
 	}
 
@@ -642,7 +712,12 @@ void AuctionManagerImplementation::doInstantBuy(CreatureObject* player, AuctionI
 		return;
 
 	int tax = 0;
+	int bank = player->getBankCredits();
+	int cash = player->getCashCredits();
+	int availableCredits = bank + cash;
+
 	ManagedReference<CityRegion*> city = nullptr;
+
 	String vendorPlanetName("@planet_n:" + vendor->getZone()->getZoneName());
 	String vendorRegionName = vendorPlanetName;
 
@@ -682,7 +757,21 @@ void AuctionManagerImplementation::doInstantBuy(CreatureObject* player, AuctionI
 	item->setBidderName(playername);
 	item->clearAuctionWithdraw();
 
-	player->subtractBankCredits(item->getPrice());
+	int itemPrice = item->getPrice();
+
+	if (bank < itemPrice) {
+		int diff = itemPrice - bank;
+
+		if (diff > cash){
+			player->sendSystemMessage("You lack sufficent credits to make this purchase.");
+			return;
+		}
+
+		player->subtractBankCredits(bank); //Take all from bank, since they didn't have enough to cover.
+		player->subtractCashCredits(diff); //Take the rest from cash.
+	} else {
+		player->subtractBankCredits(itemPrice); //Take all of the payment from bank.
+	}
 
 	BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), 0);
 	player->sendMessage(msg);
@@ -801,7 +890,7 @@ void AuctionManagerImplementation::doInstantBuy(CreatureObject* player, AuctionI
 		UnicodeString blankBody;
 		cman->sendMail(sender, sellerSubject, blankBody, sellerName, &sellerBodyVector, &sellerWaypointVector);
 		cman->sendMail(sender, buyerSubject, blankBody, item->getBidderName(), &buyerBodyVector, &buyerWaypointVector);
-
+		
 	}
 
 	if (seller == nullptr) {
@@ -810,9 +899,28 @@ void AuctionManagerImplementation::doInstantBuy(CreatureObject* player, AuctionI
 	}
 
 	locker.release();
+	
+	// Skim % of vendor sale into vendor maint
+	int skim = 0;
+	
+	if (!item->isOnBazaar() && item->getPrice() > 10){
+		VendorDataComponent* vendorData = NULL;
+		DataObjectComponentReference* data = vendor->getDataObjectComponent();
+		if(data != NULL && data->get() != NULL && data->get()->isVendorData())
+			vendorData = cast<VendorDataComponent*>(data->get());
+
+		if(vendorData != NULL){
+			skim = item->getPrice() * 0.05; // 5%
+			
+			if(skim > 100000) // Respecting hard cap in VendorData handlePayMaintanence()
+				skim = 100000;
+				
+			vendorData->skimMaintanence(skim);
+		}
+	}
 
 	Locker slocker(seller);
-	seller->addBankCredits(item->getPrice() - tax);
+	seller->addBankCredits(item->getPrice() - tax - skim);
 	slocker.release();
 
 
@@ -854,15 +962,35 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 
 		int fullPrice = proxyBid + increase - item->getPrice();
 
+		int priorBank = priorBidder->getBankCredits();
+		int priorCash = priorBidder->getCashCredits();
+		int priorAvailableCredits = priorBank + priorCash;
+
+
 		//TODO: prior didnt have enough money -> assert.. fix properly
-		if (priorBidder->getBankCredits() < fullPrice) {
+		if (priorAvailableCredits < fullPrice) {
 			BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), BidAuctionResponseMessage::NOTENOUGHCREDITS);
 			player->sendMessage(msg);
 
 			return;
 		}
 
-		priorBidder->subtractBankCredits(fullPrice);
+		if (priorBank < fullPrice) {
+			int priorDiff = fullPrice - priorBank;
+
+			//TODO: prior didnt have enough money -> assert.. fix properly
+			if (priorDiff > priorCash){
+				BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), BidAuctionResponseMessage::NOTENOUGHCREDITS);
+				player->sendMessage(msg);
+				return;
+			}
+
+			priorBidder->subtractBankCredits(priorBank); //Take all from bank, since they didn't have enough to cover.
+			priorBidder->subtractCashCredits(priorDiff); //Take the rest from cash.
+		} else {
+			priorBidder->subtractBankCredits(fullPrice); //Take all of the payment from bank.
+		}
+
 		item->setPrice(proxyBid + increase);
 		BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), BidAuctionResponseMessage::SUCCEDED);
 		player->sendMessage(msg);
@@ -879,11 +1007,13 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 	Locker locker(item);
 	Locker plocker(player);
 
-	if (player->getBankCredits() < price1 ||
-			player->getBankCredits() < item->getPrice()) {
+	int playerBank = player->getBankCredits();
+	int playerCash = player->getCashCredits();
+	int playerAvailableCredits = playerBank + playerCash;
+
+	if (playerAvailableCredits <  price1 || playerAvailableCredits < item->getPrice()) {
 		BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), BidAuctionResponseMessage::NOTENOUGHCREDITS);
 		player->sendMessage(msg);
-
 		return;
 	}
 
@@ -905,7 +1035,20 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 		item->setBidderName(playername);
 
 		// take money from high bidder
-		player->subtractBankCredits(item->getPrice());
+		
+		if (playerBank < item->getPrice()) {
+			int playerDiff = item->getPrice() - playerBank;
+
+			if (playerDiff > playerCash){
+				player->sendSystemMessage("You lack sufficent funds to make this purchase.");
+				return;
+			}
+
+			player->subtractBankCredits(playerBank); //Take all from bank, since they didn't have enough to cover.
+			player->subtractCashCredits(playerDiff); //Take the rest from cash.
+			} else {
+			player->subtractBankCredits(item->getPrice()); //Take all of the payment from bank.
+		}
 
 		if (priorBidder != nullptr) {
 			Locker clocker(priorBidder, player);
@@ -928,7 +1071,19 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 		item->setBuyerID(player->getObjectID());
 		item->setBidderName(playername);
 
-		player->subtractBankCredits(item->getPrice());
+		if (playerBank < item->getPrice()) {
+			int playerDiff = item->getPrice() - playerBank;
+
+			if (playerDiff > playerCash){
+				player->sendSystemMessage("You lack sufficent funds to make this purchase.");
+				return;
+			}
+
+			player->subtractBankCredits(playerBank); //Take all from bank, since they didn't have enough to cover.
+			player->subtractCashCredits(playerDiff); //Take the rest from cash.
+		} else {
+			player->subtractBankCredits(item->getPrice()); //Take all of the payment from bank.
+		}
 	}
 
 	BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), 0);

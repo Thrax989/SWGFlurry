@@ -148,6 +148,28 @@ void VendorDataComponent::runVendorUpdate() {
 		vendor->setConditionDamage(0, true);
 		vendor->setMaxCondition(1000, true);
 	}
+	
+	// Aprox 24 hours of maint warnings.
+	if (maintAmount < LOWWARNING && maintAmount > LOWWARNING * -1) {
+		ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
+
+		String sender = strongParent->getDisplayedName();
+		UnicodeString subject("@auction:vendor_status_subject");
+		StringBuffer body;
+		
+		if (maintAmount > 0){
+			body << strongParent->getDisplayedName() << " is running low on maintenance. There are currently only " << maintAmount << " credits available. ";
+		} else {
+			body << strongParent->getDisplayedName() << " is disabled, because it ran out of credits. The maintenance is overdrawn by " << abs(maintAmount) << " credits. ";
+			body << "You will only receive this warning for approximately 24 hours. ";
+		}
+		
+		body << "The maintenance rate is " << getMaintenanceRate() << " credits / hour. You can check the status of all your vendors by using the command: /tarkin aboutme\n\n";
+		body << "Vendor Location: " << int(vendor->getWorldPositionX()) << ", " << int(vendor->getWorldPositionY()) << " " << strongParent->getZone()->getZoneName();
+		
+		if (cman != NULL)
+			cman->sendMail(sender, subject, body.toString(), owner->getFirstName());
+	}
 
 	if (isEmpty()) {
 		ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();

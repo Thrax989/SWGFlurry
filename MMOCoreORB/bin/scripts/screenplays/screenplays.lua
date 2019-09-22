@@ -34,7 +34,8 @@ includeFile("events/ServerEventAutomation.lua")
 -- Custom content - Loads last to allow for overrides
 includeFile("../custom_scripts/screenplays/screenplays.lua")
 --includeFile("tools/FlurryBuffTerminal.lua")
-
+includeFile("tools/mission_level_choice.lua")
+includeFile("tools/mission_direction_choice.lua")
 includeFile("helperfuncs.lua")
 includeFile("playerTriggers.lua")
 
@@ -363,6 +364,8 @@ includeFile("events/lifeDay.lua")
 includeFile("events/buffTerminalMenuComponent.lua")
 includeFile("events/race_droid.lua")
 includeFile("events/jediQuest.lua")
+includeFile("jediLives.lua")
+includeFile("deathBounty.lua")
 
 --Pvp Arena
 includeFile("events/pvp/pvp.lua")

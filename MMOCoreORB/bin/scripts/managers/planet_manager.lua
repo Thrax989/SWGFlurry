@@ -115,6 +115,10 @@ coruscant = {
     
     badgeAreas = {   
   },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
 }
 
 chandrila = {
@@ -128,6 +132,10 @@ chandrila = {
     
     badgeAreas = {
   },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
 }
 
 dantooine = {
@@ -254,7 +262,7 @@ dungeon2 = {
 	},
 
 	planetObjects = {
-
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
 	}
 }
 
@@ -317,6 +325,7 @@ geonosis = {
 	},
 
 	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
 	}
 }
 
@@ -351,6 +360,10 @@ hutta = {
     
     badgeAreas = {   
   },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
 }
 
 jakku = {
@@ -363,6 +376,10 @@ jakku = {
 
   badgeAreas = {
   },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
 }
 
 kaas = {
@@ -376,6 +393,10 @@ kaas = {
     
     badgeAreas = {   
   },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
 }
 
 kashyyyk = {
@@ -409,6 +430,10 @@ korriban = {
     
     badgeAreas = {   
   },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
 }
 
 lok = {
@@ -470,6 +495,7 @@ mandalore = {
 	},
 
 	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
 	}
 }
 

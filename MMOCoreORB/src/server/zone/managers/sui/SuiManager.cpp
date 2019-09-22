@@ -554,32 +554,32 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "max_xp") {
 				ghost->maximizeExperience();
 				player->sendSystemMessage("You have maximized all xp types.");
-//JediQuest Screen Play Tester
-			} else if (templatePath == "jedi_quest") {
-				if (!player->isInCombat() && player->getBankCredits() < 999) {
+//Gray Jedi Unlock Checks
+			} else if (templatePath == "jedi_Lives") {
+				if (!ghost->getJediState() >= 2) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		                box->setPromptTitle("Jedi Quest");
-		                box->setPromptText("Jedi Quest Requires 1,000 credits. (Bank)");
+		                box->setPromptTitle("Gray Jedi Unlock");
+		                box->setPromptText("Gray Jedi Requires (Force Sensative)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (!player->isInCombat() && player->getBankCredits() > 999) {
+				if (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 0)) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-						player->sendSystemMessage("Thank you for your credits.");
-						int questLeft = player->getScreenPlayState("jediQuest") + 1;
-						player->setScreenPlayState("jediQuest", questLeft);
+						player->sendSystemMessage("You Have Unlocked Gray Jedi");
+						int livesLeft = player->getScreenPlayState("jediLives") + 3;
+						player->setScreenPlayState("jediLives", livesLeft);
 					    int jediVis1 = ghost->getVisibility();
-					    box->setPromptTitle("Jedi Quest Progress");
+					    box->setPromptTitle("Gray Jedi Progress");
 					    StringBuffer promptText;
 					    String playerName = player->getFirstName();
-					    promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Quest Progress" << endl;
+					    promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Gray Jedi Lives" << endl;
 					    promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
 					    box->setPromptText(promptText.toString());
 					    ghost->addSuiBox(box);
 					    player->sendMessage(box->generateMessage());
-						player->subtractBankCredits(1000);
+						SkillManager::instance()->awardSkill("combat_jedi_novice", creature, true, true, true);
 						box->setForceCloseDistance(5.f);
 			        }
 //JediQuest Remove Screen Play Tester
