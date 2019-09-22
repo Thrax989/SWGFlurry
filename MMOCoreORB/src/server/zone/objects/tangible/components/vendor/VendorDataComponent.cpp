@@ -1,120 +1,447 @@
 /*
- * MissionTerminalImplementation.cpp
+ * VendorDataComponent.cpp
  *
- *  Created on: 03/05/11
- *      Author: polonel
+ *  Created on: 5/29/2012
+ *      Author: Kyle
  */
 
-#include "server/zone/objects/tangible/terminal/mission/MissionTerminal.h"
-#include "server/zone/objects/creature/CreatureObject.h"
-#include "server/zone/packets/object/ObjectMenuResponse.h"
-#include "server/zone/objects/region/CityRegion.h"
-#include "server/zone/managers/city/CityManager.h"
-#include "server/zone/managers/city/CityRemoveAmenityTask.h"
-#include "server/zone/objects/player/sessions/SlicingSession.h"
-#include "server/zone/managers/director/DirectorManager.h"
-
+#include "VendorDataComponent.h"
+#include "server/zone/ZoneServer.h"
+#include "server/zone/managers/vendor/VendorManager.h"
 #include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/objects/player/sui/callbacks/VendorMaintSuiCallback.h"
+#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
+#include "server/chat/ChatManager.h"
+#include "server/zone/objects/auction/events/UpdateVendorTask.h"
+#include "server/zone/managers/auction/AuctionManager.h"
+#include "server/zone/managers/player/PlayerManager.h"
+#include "server/zone/packets/object/SpatialChat.h"
+#include "server/zone/objects/tangible/tasks/VendorReturnToPositionTask.h"
 
-void MissionTerminalImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
-	TerminalImplementation::fillObjectMenuResponse(menuResponse, player);
+VendorDataComponent::VendorDataComponent() : AuctionTerminalDataComponent(), adBarkingMutex() {
+	ownerId = 0;
+	auctionMan = NULL;
+	initialized = false;
+	vendorSearchEnabled = false;
+	disabled = false;
+	registered = false;
+	maintAmount = 0;
+	awardUsageXP = 0;
+	adBarking = false;
+	mail1Sent = false;
+	barkMessage = "";
+	lastBark = 0;
+	originalDirection = 1000;
+	addSerializableVariables();
+}
 
-	ManagedReference<CityRegion*> city = player->getCityRegion().get();
+void VendorDataComponent::addSerializableVariables() {
+	addSerializableVariable("ownerId", &ownerId);
+	addSerializableVariable("initialized", &initialized);
+	addSerializableVariable("vendorSearchEnabled", &vendorSearchEnabled);
+	addSerializableVariable("disabled", &disabled);
+	addSerializableVariable("registered", &registered);
+	addSerializableVariable("maintAmount", &maintAmount);
+	addSerializableVariable("lastXpAward", &lastXpAward);
+	addSerializableVariable("awardUsageXP", &awardUsageXP);
+	addSerializableVariable("lastSuccessfulUpdate", &lastSuccessfulUpdate);
+	addSerializableVariable("adBarking", &adBarking);
+	addSerializableVariable("mail1Sent", &mail1Sent);
+	addSerializableVariable("emptyTimer", &emptyTimer);
+	addSerializableVariable("barkMessage", &barkMessage);
+	addSerializableVariable("barkMood", &barkMood);
+	addSerializableVariable("barkAnimation", &barkAnimation);
+	addSerializableVariable("originalDirection", &originalDirection);
+}
 
-	if (city != NULL && city->isMayor(player->getObjectID()) && getParent().get() == NULL) {
+void VendorDataComponent::writeJSON(nlohmann::json& j) const {
+	AuctionTerminalDataComponent::writeJSON(j);
 
-		menuResponse->addRadialMenuItem(72, 3, "@city/city:mt_remove"); // Remove
+	SERIALIZE_JSON_MEMBER(ownerId);
+	SERIALIZE_JSON_MEMBER(initialized);
+	SERIALIZE_JSON_MEMBER(vendorSearchEnabled);
+	SERIALIZE_JSON_MEMBER(disabled);
+	SERIALIZE_JSON_MEMBER(registered);
+	SERIALIZE_JSON_MEMBER(maintAmount);
+	SERIALIZE_JSON_MEMBER(lastXpAward);
+	SERIALIZE_JSON_MEMBER(awardUsageXP);
+	SERIALIZE_JSON_MEMBER(lastSuccessfulUpdate);
+	SERIALIZE_JSON_MEMBER(adBarking);
+	SERIALIZE_JSON_MEMBER(mail1Sent);
+	SERIALIZE_JSON_MEMBER(emptyTimer);
+	SERIALIZE_JSON_MEMBER(barkMessage);
+	SERIALIZE_JSON_MEMBER(barkMood);
+	SERIALIZE_JSON_MEMBER(barkAnimation);
+	SERIALIZE_JSON_MEMBER(originalDirection);
+}
 
-		menuResponse->addRadialMenuItem(73, 3, "@city/city:align"); // Align
-		menuResponse->addRadialMenuItemToRadialID(73, 74, 3, "@city/city:north"); // North
-		menuResponse->addRadialMenuItemToRadialID(73, 75, 3, "@city/city:east"); // East
-		menuResponse->addRadialMenuItemToRadialID(73, 76, 3, "@city/city:south"); // South
-		menuResponse->addRadialMenuItemToRadialID(73, 77, 3, "@city/city:west"); // West
-	}
+void VendorDataComponent::initializeTransientMembers() {
 
-	if (terminalType == "general" || terminalType == "imperial" || terminalType == "rebel") {
-		menuResponse->addRadialMenuItem(112, 3, "Choose Mission Level");
-		menuResponse->addRadialMenuItem(113, 3, "Choose Mission Direction");
+	AuctionTerminalDataComponent::initializeTransientMembers();
+
+	lastBark = 0;
+	ManagedReference<SceneObject*> strongParent = parent.get();
+
+	if(strongParent != NULL) {
+
+		if (isInitialized()) {
+			scheduleVendorCheckTask(VENDORCHECKDELAY + System::random(VENDORCHECKINTERVAL));
+
+			if(originalDirection == 1000)
+				originalDirection = strongParent->getDirectionAngle();
+
+			if(isRegistered() && strongParent->getZone() != NULL)
+				strongParent->getZone()->registerObjectWithPlanetaryMap(strongParent);
+		}
 	}
 }
 
-int MissionTerminalImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
-	ManagedReference<CityRegion*> city = player->getCityRegion().get();
+void VendorDataComponent::notifyObjectDestroyingFromDatabase() {
+	ManagedReference<SceneObject*> strong = parent.get();
 
-	if (selectedID == 69 && player->hasSkill("combat_smuggler_slicing_01")) {
-		if (isBountyTerminal())
-			return 0;
+	if(strong == NULL)
+		return;
 
-		if (city != NULL && !city->isClientRegion() && city->isBanned(player->getObjectID())) {
-			player->sendSystemMessage("@city/city:banned_services"); // You are banned from using this city's services.
-			return 0;
+	ManagedReference<CreatureObject*> player = strong->getZoneServer()->getObject(ownerId).castTo<CreatureObject*>();
+	if(player == NULL)
+		return;
+
+	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
+
+	if (ghost != NULL)
+		ghost->removeVendor(strong);
+}
+
+void VendorDataComponent::runVendorUpdate() {
+	ManagedReference<SceneObject*> strongParent = parent.get();
+
+	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+		return;
+
+	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
+	ManagedReference<PlayerManager*> playerManager = strongParent->getZoneServer()->getPlayerManager();
+	ManagedReference<TangibleObject*> vendor = cast<TangibleObject*>(strongParent.get());
+
+	if (owner == NULL || !owner->isPlayerCreature() || playerManager == NULL || vendor == NULL) {
+		return;
+	}
+
+	scheduleVendorCheckTask(VENDORCHECKINTERVAL);
+
+	removeAllVendorBarks();
+
+	int now = time(0);
+	int last = lastSuccessfulUpdate.getTime();
+	float hoursSinceLastUpdate = now - last;
+	hoursSinceLastUpdate /= 3600.f;
+
+	if (maintAmount > 0)
+		inactiveTimer.updateToCurrentTime();
+
+	/// parent salaries
+	Locker vlocker(owner, vendor);
+	maintAmount -= getMaintenanceRate() * hoursSinceLastUpdate;
+
+	if (maintAmount < 0) {
+		vendor->setConditionDamage(-maintAmount, true);
+	} else {
+		vendor->setConditionDamage(0, true);
+		vendor->setMaxCondition(1000, true);
+	}
+	
+	// Aprox 24 hours of maint warnings.
+	if (maintAmount < LOWWARNING && maintAmount > LOWWARNING * -1) {
+		ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
+
+		String sender = strongParent->getDisplayedName();
+		UnicodeString subject("@auction:vendor_status_subject");
+		StringBuffer body;
+		
+		if (maintAmount > 0){
+			body << strongParent->getDisplayedName() << " is running low on maintenance. There are currently only " << maintAmount << " credits available. ";
+		} else {
+			body << strongParent->getDisplayedName() << " is disabled, because it ran out of credits. The maintenance is overdrawn by " << abs(maintAmount) << " credits. ";
+			body << "You will only receive this warning for approximately 24 hours. ";
+		}
+		
+		body << "The maintenance rate is " << getMaintenanceRate() << " credits / hour. You can check the status of all your vendors by using the command: /tarkin aboutme\n\n";
+		body << "Vendor Location: " << int(vendor->getWorldPositionX()) << ", " << int(vendor->getWorldPositionY()) << " " << strongParent->getZone()->getZoneName();
+		
+		if (cman != NULL)
+			cman->sendMail(sender, subject, body.toString(), owner->getFirstName());
+	}
+
+	if (isEmpty()) {
+		ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
+
+		String sender = strongParent->getDisplayedName();
+		UnicodeString subject("@auction:vendor_status_subject");
+
+		if (!mail1Sent && time(0) - emptyTimer.getTime() > EMPTYWARNING) {
+			StringIdChatParameter body("@auction:vendor_status_endangered");
+			body.setTO(strongParent->getDisplayedName());
+			if (cman != NULL)
+				cman->sendMail(sender, subject, body, owner->getFirstName());
+			mail1Sent = true;
 		}
 
-		if (player->containsActiveSession(SessionFacadeType::SLICING)) {
-			player->sendSystemMessage("@slicing/slicing:already_slicing");
-			return 0;
+		else if (time(0) - emptyTimer.getTime() > EMPTYDELETE) {
+			StringIdChatParameter body("@auction:vendor_status_deleted");
+			if (cman != NULL)
+				cman->sendMail(sender, subject, body, owner->getFirstName());
+			VendorManager::instance()->destroyVendor(vendor);
+			return;
 		}
 
-		if (!player->checkCooldownRecovery("slicing.terminal")) {
+	} else {
+		mail1Sent = false;
+		emptyTimer.updateToCurrentTime();
+	}
+
+	if (isOnStrike()) {
+		if (isRegistered())
+			VendorManager::instance()->handleUnregisterVendor(owner, vendor);
+
+		if (isVendorSearchEnabled())
+			setVendorSearchEnabled(false);
+
+		if (time(0) - inactiveTimer.getTime() > DELETEWARNING) {
+
+			ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
+
+			String sender = strongParent->getDisplayedName();
+			UnicodeString subject("@auction:vendor_status_subject");
+
+			StringIdChatParameter body("@auction:vendor_status_deleted");
+			if (cman != NULL)
+				cman->sendMail(sender, subject, body, owner->getFirstName());
+			VendorManager::instance()->destroyVendor(vendor);
+		}
+
+	} else {
+
+		/// Award hourly XP
+		assert(vendor->isLockedByCurrentThread());
+
+		Locker locker(owner, vendor);
+		playerManager->awardExperience(owner, "merchant", 150 * hoursSinceLastUpdate, false);
+
+		playerManager->awardExperience(owner, "merchant", awardUsageXP * 50, false);
+
+	}
+
+	awardUsageXP = 0;
+	lastSuccessfulUpdate.updateToCurrentTime();
+}
+
+float VendorDataComponent::getMaintenanceRate() {
+	ManagedReference<SceneObject*> strongParent = parent.get();
+	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+		return 15.f;
+
+	// 15 credits base maintenance
+	float maintRate = 15.f;
+
+	// Apply reduction for merchant skills
+	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
+	if (owner != NULL && owner->isPlayerCreature() ) {
+		if(owner->hasSkill("crafting_merchant_master"))
+			maintRate *= .60f;
+		else if(owner->hasSkill("crafting_merchant_sales_02"))
+			maintRate *= .80f;
+	}
+
+	// Additional 6 credits per hour to be registered on the map
+	if(registered)
+		maintRate += 6.f;
+
+	return maintRate;
+}
+
+void VendorDataComponent::payMaintanence() {
+	ManagedReference<SceneObject*> strongParent = parent.get();
+	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+		return;
+
+	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
+	if(owner == NULL)
+		return;
+
+	ManagedReference<SuiInputBox*> input = new SuiInputBox(owner, SuiWindowType::STRUCTURE_VENDOR_PAY);
+	input->setPromptTitle("@player_structure:pay_vendor_t"); //Add Militia Member
+	input->setPromptText("@player_structure:pay_vendor_d");
+	input->setUsingObject(strongParent);
+	input->setForceCloseDistance(5.f);
+	input->setCallback(new VendorMaintSuiCallback(strongParent->getZoneServer()));
+
+	owner->getPlayerObject()->addSuiBox(input);
+	owner->sendMessage(input->generateMessage());
+
+}
+
+void VendorDataComponent::handlePayMaintanence(int value) {
+	ManagedReference<SceneObject*> strongParent = parent.get();
+	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+		return;
+
+	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
+	if(owner == NULL)
+		return;
+
+	if(value > 100000) {
+		owner->sendSystemMessage("@player_structure:vendor_maint_invalid");
+		return;
+	}
+
+	if(value <= 0) {
+		owner->sendSystemMessage("@player_structure:amt_greater_than_zero");
+		return;
+	}
+
+	if(owner->getBankCredits() + owner->getCashCredits() >= value) {
+		maintAmount += value;
+
+		if(owner->getBankCredits() > value) {
+			owner->subtractBankCredits(value);
+		} else {
+			owner->subtractCashCredits(value - owner->getBankCredits());
+			owner->subtractBankCredits(owner->getBankCredits());
+		}
+
+		StringIdChatParameter message("@player_structure:vendor_maint_accepted");
+		message.setDI(maintAmount);
+		owner->sendSystemMessage(message);
+
+	} else {
+		owner->sendSystemMessage("@player_structure:vendor_maint_denied");
+	}
+}
+
+void VendorDataComponent::withdrawMaintanence() {
+	ManagedReference<SceneObject*> strongParent = parent.get();
+	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+		return;
+
+	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
+	if(owner == NULL)
+		return;
+
+	ManagedReference<SuiInputBox*> input = new SuiInputBox(owner, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
+	input->setPromptTitle("@player_structure:withdraw_vendor_t"); //Add Militia Member
+	input->setPromptText("@player_structure:withdraw_vendor_d");
+	input->setUsingObject(strongParent);
+	input->setForceCloseDistance(5.f);
+	input->setCallback(new VendorMaintSuiCallback(strongParent->getZoneServer()));
+
+	owner->getPlayerObject()->addSuiBox(input);
+	owner->sendMessage(input->generateMessage());
+
+}
+
+void VendorDataComponent::handleWithdrawMaintanence(int value) {
+	ManagedReference<SceneObject*> strongParent = parent.get();
+	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+		return;
+
+	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
+	if(owner == NULL)
+		return;
+
+	if(value > maintAmount) {
+		StringIdChatParameter message("@player_structure:vendor_withdraw_fail"); // The vendor maintenance pool doesn't have %DI credits!
+		message.setDI(value);
+		owner->sendSystemMessage(message);
+		return;
+	}
+
+	if(value <= 0) {
+		owner->sendSystemMessage("@player_structure:amt_greater_than_zero"); // The amount must be greater than zero.
+		return;
+	}
+
+	maintAmount -= value;
+	owner->addBankCredits(value, true);
+
+	StringIdChatParameter message("@player_structure:vendor_withdraw"); // You successfully withdraw %DI credits from the maintenance pool.
+	message.setDI(value);
+	owner->sendSystemMessage(message);
+}
+
+void VendorDataComponent::setVendorSearchEnabled(bool enabled) {
+	ManagedReference<SceneObject*> strongParent = parent.get();
+	ManagedReference<AuctionManager*> auctionManager = auctionMan.get();
+
+	if (auctionManager == NULL || strongParent == NULL || strongParent->getZoneServer() == NULL || strongParent->getZone() == NULL)
+		return;
+
+	vendorSearchEnabled = enabled;
+	auctionManager->updateVendorSearch(strongParent, vendorSearchEnabled);
+}
+
+
+void VendorDataComponent::performVendorBark(SceneObject* target) {
+	if (isOnStrike()) {
+		return;
+	}
+
+	ManagedReference<CreatureObject*> vendor = cast<CreatureObject*>(parent.get().get());
+	if (vendor == NULL)
+		return;
+
+	ManagedReference<CreatureObject*> player = cast<CreatureObject*>(target);
+	if (player == NULL || !player->isPlayerCreature() || player->isInvisible())
+		return;
+
+	resetLastBark();
+	addBarkTarget(target);
+
+	Core::getTaskManager()->executeTask([=] () {
+		Locker locker(vendor);
+
+		VendorDataComponent* data = cast<VendorDataComponent*>(vendor->getDataObjectComponent()->get());
+
+		if (data == NULL)
+			return;
+
+		vendor->faceObject(player);
+		vendor->updateDirection(Math::deg2rad(vendor->getDirectionAngle()));
+
+		SpatialChat* chatMessage = NULL;
+		String barkMessage = data->getAdPhrase();
+		ChatManager* chatManager = vendor->getZoneServer()->getChatManager();
+
+		if (barkMessage.beginsWith("@")) {
 			StringIdChatParameter message;
-			message.setStringId("@slicing/slicing:not_yet"); // You will be able to hack the network again in %DI seconds.
-			message.setDI(player->getCooldownTime("slicing.terminal")->getTime() - Time().getTime());
-			player->sendSystemMessage(message);
-			return 0;
+			message.setStringId(barkMessage);
+			message.setTT(player->getObjectID());
+			chatMessage = new SpatialChat(vendor->getObjectID(), player->getObjectID(), player->getObjectID(), message, 50, 0, chatManager->getMoodID(data->getAdMood()), 0, 0);
+
+		} else {
+			UnicodeString uniMessage(barkMessage);
+			chatMessage = new SpatialChat(vendor->getObjectID(), player->getObjectID(), player->getObjectID(), uniMessage, 50, 0, chatManager->getMoodID(data->getAdMood()), 0, 0);
 		}
 
-		//Create Session
-		ManagedReference<SlicingSession*> session = new SlicingSession(player);
-		session->initalizeSlicingMenu(player, _this.getReferenceUnsafeStaticCast());
+		vendor->broadcastMessage(chatMessage, true);
+		vendor->doAnimation(data->getAdAnimation());
 
-		return 0;
-
-	} else if (selectedID == 72) {
-
-		if (city != NULL && city->isMayor(player->getObjectID())) {
-			CityRemoveAmenityTask* task = new CityRemoveAmenityTask(_this.getReferenceUnsafeStaticCast(), city);
-			task->execute();
-
-			player->sendSystemMessage("@city/city:mt_removed"); // The object has been removed from the city.
-		}
-
-		return 0;
-
-	} else if (selectedID == 74 || selectedID == 75 || selectedID == 76 || selectedID == 77) {
-
-		CityManager* cityManager = getZoneServer()->getCityManager();
-		cityManager->alignAmenity(city, player, _this.getReferenceUnsafeStaticCast(), selectedID - 74);
-
-		return 0;
-
-	} else if (selectedID == 112) {
-
-		Lua* lua = DirectorManager::instance()->getLuaInstance();
-
-		Reference<LuaFunction*> mission_level_choice = lua->createFunction("mission_level_choice", "openWindow", 0);
-		*mission_level_choice << player;
-
-		mission_level_choice->callFunction();
-		return 0;
-	} else if (selectedID == 113) {
-
-		Lua* lua = DirectorManager::instance()->getLuaInstance();
-
-		Reference<LuaFunction*> mission_direction_choice = lua->createFunction("mission_direction_choice", "openWindow", 0);
-		*mission_direction_choice << player;
-
-		mission_direction_choice->callFunction();
-		return 0;
-	}
-
-	return TangibleObjectImplementation::handleObjectMenuSelect(player, selectedID);
+		Reference<VendorReturnToPositionTask*> returnTask = new VendorReturnToPositionTask(vendor, data->getOriginalDirection());
+		vendor->addPendingTask("vendorreturn", returnTask, 3000);
+	}, "VendorBarkLambda");
 }
 
-String MissionTerminalImplementation::getTerminalName() {
-	String name = "@terminal_name:terminal_mission";
+void VendorDataComponent::scheduleVendorCheckTask(int delay) {
+	ManagedReference<SceneObject*> strongParent = parent.get();
 
-	if (terminalType == "artisan" || terminalType == "entertainer" || terminalType == "bounty" || terminalType == "imperial" || terminalType == "rebel" || terminalType == "scout")
-		name = name + "_" + terminalType;
+	if (strongParent == NULL)
+		return;
 
-	return name;
+	if (vendorCheckTask == NULL)
+		vendorCheckTask = new UpdateVendorTask(strongParent);
+
+	vendorCheckTask->reschedule(1000 * 60 * delay);
+}
+
+void VendorDataComponent::cancelVendorCheckTask() {
+	if (vendorCheckTask != NULL)
+		vendorCheckTask->cancel();
 }
