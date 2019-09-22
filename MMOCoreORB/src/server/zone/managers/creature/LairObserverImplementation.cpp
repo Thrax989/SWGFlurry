@@ -130,10 +130,11 @@ void LairObserverImplementation::doAggro(TangibleObject* lair, TangibleObject* a
 				continue;
 
 			if (creo->isAiAgent() && attacker != NULL && (allAttack || (System::random(1) == 1))) {
-				// TODO: only set defender if needed
+
 				AiAgent* ai = cast<AiAgent*>( creo);
 				Locker clocker(creo, lair);
-				creo->setDefender(attacker);
+				if (lair->hasDefender(attacker))
+					creo->setDefender(attacker);
 
 			}
 	}
@@ -170,8 +171,8 @@ void LairObserverImplementation::healLair(TangibleObject* lair, TangibleObject* 
 		if (creo->isDead() || creo->getZone() == NULL)
 			continue;
 
-		//  TODO: Range check
-		damageToHeal += lairMaxCondition / 100;
+		if (creo->isInRange(lair, 32.f))
+			damageToHeal += lairMaxCondition / 100;
 
 	}
 
@@ -343,4 +344,3 @@ bool LairObserverImplementation::checkForNewSpawns(TangibleObject* lair, Tangibl
 
 	return objectsToSpawn.size() > 0;
 }
-
