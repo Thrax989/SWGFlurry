@@ -203,7 +203,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		return 0;
 	}
 	//Unlock Gray Jedi
-	if (selectedID == 220 && (ghost->getJediState() >= 2) && (creature->getScreenPlayState("jediLives") == 0)) {
+	if (selectedID == 220 && (ghost->getJediState() >= 2) && (ghost->getSkillPoints() == 250)) {
 		        ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 				creature->sendSystemMessage("You Have Unlocked Gray Jedi");
 				int livesLeft = creature->getScreenPlayState("jediLives") + 3;
@@ -219,7 +219,9 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 				creature->sendMessage(box->generateMessage());
 				SkillManager::instance()->awardSkill("combat_jedi_novice", creature, true, true, true);
 				box->setForceCloseDistance(5.f);
+		} else {
+		creature->sendSystemMessage("You do not meet the requirements for this feature, Force Sensitive and 250 skill points must be free to become gray jedi");
 		return 0;
-	}
+		}
 	return 0;
 }
