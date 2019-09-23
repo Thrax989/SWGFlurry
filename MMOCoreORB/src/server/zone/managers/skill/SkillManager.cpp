@@ -20,13 +20,6 @@
 #include "server/zone/packets/creature/CreatureObjectDeltaMessage4.h"
 #include "server/zone/managers/mission/MissionManager.h"
 #include "server/zone/managers/frs/FrsManager.h"
-#include "server/zone/managers/frs/FrsRankingData.h"
-#include "server/zone/ZoneServer.h"
-#include "server/zone/managers/visibility/VisibilityManager.h"
-#include "server/zone/objects/tangible/weapon/WeaponObject.h"
-#include "server/zone/objects/player/variables/FrsData.h"
-#include "server/zone/objects/tangible/wearables/WearableObject.h"
-#include "server/zone/objects/tangible/wearables/WearableContainerObject.h"
 
 SkillManager::SkillManager()
 : Logger("SkillManager") {
@@ -520,19 +513,11 @@ void SkillManager::removeSkillRelatedMissions(CreatureObject* creature, Skill* s
 
 bool SkillManager::surrenderSkill(const String& skillName, CreatureObject* creature, bool notifyClient, bool checkFrs) {
 	Skill* skill = skillMap.get(skillName.hashCode());
-	int initialSkillsBounty = 0;
-	int initialBounty = 0;
-	int newSkillBounty = 0;
 
 	if (skill == NULL)
 		return false;
 
 	Locker locker(creature);
-	initialSkillsBounty = VisibilityManager::instance()->calculateReward(creature);
-
-	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
-	int bountyWorth = missionManager->getPlayerBounty(creature->getObjectID());
-	bountyWorth -= initialSkillsBounty;
 
 	//If they have already surrendered the skill, then return true.
 	if (!creature->hasSkill(skill->getSkillName()))
@@ -637,10 +622,8 @@ bool SkillManager::surrenderSkill(const String& skillName, CreatureObject* creat
 			if (missionManager != NULL)
 				missionManager->removePlayerFromBountyList(creature->getObjectID());
 		} else if (skill->getSkillName().contains("force_discipline")) {
-			if (missionManager != NULL){
-				newSkillBounty = VisibilityManager::instance()->calculateReward(creature);
-				missionManager->updatePlayerBountyReward(creature->getObjectID(), bountyWorth + newSkillBounty);
-			}
+			if (missionManager != NULL)
+				missionManager->updatePlayerBountyReward(creature->getObjectID(), ghost->calculateBhReward());
 		} else if (skill->getSkillName().contains("squadleader")) {
 			Reference<GroupObject*> group = creature->getGroup();
 
