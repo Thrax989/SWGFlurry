@@ -1198,17 +1198,13 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	}
 
 	//CUSTOM BH SYSTEM
-	if (attacker->isPlayerCreature() && attacker != player){
-		ManagedReference<SuiInputBox*> box = new SuiInputBox(player, SuiWindowType::OBJECT_NAME);
-		box->setPromptTitle("You have died.");
-		box->setPromptText("Place a bounty on your killer! Enter an amount between 1k and 2.5m credits. The Bounty Hunter Guild will take 20% for their fees and your target will be added to our boards immediately.");
-		box->setMaxInputSize(128);
-		box->setCancelButton(true, "@no");
-		box->setOkButton(true, "@yes");
-		box->setUsingObject(attacker);
-		box->setForceCloseDistance(2048.f);
-		box->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
-		player->getPlayerObject()->addSuiBox(box);
+	if (attacker->isPlayerCreature() && attacker != player) {
+		ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
+		input->setPromptTitle("Player Bounty Request");
+		input->setPromptText("Place a bounty on your killer. Bountys must be between 25,000 and 250,000 credits.");
+		input->setUsingObject(attacker);
+		input->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
+		player->getPlayerObject()->addSuiBox(input);
 		player->sendMessage(input->generateMessage());
 		}
 
