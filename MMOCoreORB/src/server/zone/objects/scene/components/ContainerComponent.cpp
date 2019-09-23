@@ -303,6 +303,17 @@ bool ContainerComponent::removeObject(SceneObject* sceneObject, SceneObject* obj
 			for (int i = 0; i < descriptors->size(); ++i)
 				slottedObjects->drop(descriptors->get(i));
 		}
+
+		if (object->isRobeObject() && slottedObjects->get("back") != NULL){
+			if (slottedObjects->get("back")->isRobeObject())
+				slottedObjects->drop("back");
+		}
+
+
+		if (object->isRobeObject() && slottedObjects->get("chest1") != NULL){
+			if (slottedObjects->get("chest1")->isRobeObject())
+				slottedObjects->drop("chest1");
+		}
 	}
 
 	if (containerObjects->contains(object->getObjectID())) {
