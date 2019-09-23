@@ -25,6 +25,7 @@
 void ManufactureSchematicImplementation::fillAttributeList(AttributeListMessage* alm, CreatureObject* object) {
 
 	alm->insertAttribute("data_volume", dataSize);
+	alm->insertAttribute("complexity", complexity);
 
 	try {
 
