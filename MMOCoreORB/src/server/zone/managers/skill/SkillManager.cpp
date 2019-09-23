@@ -363,15 +363,11 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 		MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
 
 		if (skill->getSkillName() == "force_title_jedi_rank_02") {
-			if (missionManager != NULL){
-				newSkillBounty = VisibilityManager::instance()->calculateReward(creature);
-				missionManager->addPlayerToBountyList(creature->getObjectID(), bountyWorth + newSkillBounty);
-			}
-		} else if (skill->getSkillName().contains("force_discipline") {
-			if (missionManager != NULL){
-				newSkillBounty = VisibilityManager::instance()->calculateReward(creature);
-				missionManager->updatePlayerBountyReward(creature->getObjectID(), bountyWorth + newSkillBounty);
-			}
+			if (missionManager != NULL)
+				missionManager->addPlayerToBountyList(creature->getObjectID(), ghost->calculateBhReward());
+		} else if (skill->getSkillName().contains("force_discipline")) {
+			if (missionManager != NULL)
+				missionManager->updatePlayerBountyReward(creature->getObjectID(), ghost->calculateBhReward());
 		} else if (skill->getSkillName().contains("squadleader")) {
 			Reference<GroupObject*> group = creature->getGroup();
 
