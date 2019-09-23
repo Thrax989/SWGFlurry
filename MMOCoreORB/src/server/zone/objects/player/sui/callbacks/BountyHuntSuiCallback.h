@@ -5,22 +5,24 @@
 #ifndef PLAYER_BH_SUI_CALLBACK
 #define PLAYER_BH_SUI_CALLBACK
 #include "server/zone/objects/player/sui/SuiCallback.h"
-#include "server/zone/managers/mission/MissionManager.h"
 #include "server/zone/managers/visibility/VisibilityManager.h"
 #include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
+#include "server/zone/managers/mission/MissionManager.h"
 
 class BountyHuntSuiCallback : public SuiCallback {
 
 public:
 	BountyHuntSuiCallback(ZoneServer* serv) : SuiCallback(serv) {
-
 	}
+void run(CreatureObject* creature, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
+		bool cancelPressed = (eventIndex == 1);
+		int newBounty = 0;
+		int refund = 0;
+		int fee = 0;
+		int currentBounty = 0;
 
-  virtual void run(CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args) {
-    bool cancelPressed = (eventIndex == 1);
-
-		if (!sui->isInputBox() || creature == NULL || cancelPressed || args->size() <= 0) {
+		if (creature == NULL || cancelPressed) {
 			return;
 		}
 
@@ -28,47 +30,49 @@ public:
 		{
 			int value = Integer::valueOf(args->get(0).toString());
 
-			ManagedReference<SceneObject*> suiObject = sui->getUsingObject();
+			if (value <= 1000)
+				value = 1000;
+				
+			fee = value * .2;
+
+			ManagedReference<SceneObject*> suiObject = suiBox->getUsingObject();
 			CreatureObject* player = cast<CreatureObject*>(suiObject.get());
+			MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
+			int currentBounty = missionManager->getPlayerBounty(player->getObjectID());
 
-			if(value < 25000 || value > 1000000)
-			{
-				creature->sendSystemMessage("You have entered an insufficient amount, please try again.");
-				ManagedReference<SuiInputBox*> input = new SuiInputBox(player, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
-				input->setPromptTitle("Bounty Hunter Request");
-				input->setPromptText("Place a bounty on your killer. Bounties must be between 25,000 and 1,000,000 credits.");
-				input->setUsingObject(player);
-				input->setCallback(new BountyHuntSuiCallback(creature->getZoneServer()));
-
-				creature->getPlayerObject()->addSuiBox(input);
-				creature->sendMessage(input->generateMessage());
+			newBounty = currentBounty+(value * .8); //Fee for BH
+						
+			if (creature->getBankCredits() + creature->getCashCredits() >= value) {
+				VisibilityManager::instance()->clearVisibility(player);
+				if (creature->getBankCredits() > value) {
+					creature->subtractBankCredits(value);
+				} else {
+					creature->subtractCashCredits(value - creature->getBankCredits());
+					creature->subtractBankCredits(creature->getBankCredits());
+				}
+			if (newBounty >= 2500000){
+				refund = newBounty - 2500000;
+				newBounty = 2500000;
 			}
-			else if(creature->getBankCredits() + creature->getCashCredits() >= value)
-			{
-					if(creature->getBankCredits() > value) creature->subtractBankCredits(value);
-					else
-					{
-						creature->subtractCashCredits(value - creature->getBankCredits());
-						creature->subtractBankCredits(creature->getBankCredits());
-					}
-				MissionManager* missionManager = player->getZoneServer()->getMissionManager();
-				missionManager->addPlayerToBountyList(player->getObjectID(), value);
-				int bountyWorth = player->getScreenPlayState("deathBounty") + 1;
-				player->setScreenPlayState("deathBounty", bountyWorth);
+				creature->sendSystemMessage("Set total bounty to " + String::valueOf(newBounty));	
 				player->playEffect("clienteffect/ui_missile_aquiring.cef", "");
 				creature->playEffect("clienteffect/holoemote_haunted.cef", "head");
 				creature->sendSystemMessage("Bounty has been successfully placed!");
-				VisibilityManager::instance()->increaseVisibility(player, 8000);
-				VisibilityManager::instance()->addToVisibilityList(player);
+				VisibilityManager::instance()->addPlayerToBountyList(player,(newBounty));
+				missionManager->updatePlayerBountyReward(player->getObjectID(), newBounty);
+			if (refund > 0){	
+			creature->sendSystemMessage("Refunding excess bounty of " + String::valueOf(refund));		
+			creature->addBankCredits(refund);
+			}
 				//Broadcast to Server
 				String playerName = player->getFirstName();
 				StringBuffer zBroadcast;
-				zBroadcast << "\\#ffb90f" << playerName << " is now on the bounty hunter \\#e51b1bTerminal!";
+				zBroadcast << "\\#ffffff The Bounty Hunter guild has acquired a new target.\\#ffffff";
 				player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				VisibilityManager::instance()->setVisibility(player, 8000);
 			}
-			else creature->sendSystemMessage("You have insufficient funds!");
+			else creature->sendSystemMessage("You have insufficient funds! You need at least 1,000cr in Cash or Bank.");
 		} catch(Exception& e) { }
 	}
 };
-
 #endif
