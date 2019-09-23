@@ -1982,6 +1982,18 @@ void MissionManagerImplementation::removeBountyHunterFromPlayerBounty(uint64 tar
 	}
 }
 
+int MissionManagerImplementation::getPlayerBounty(uint64 targetId) {
+	Locker listLocker(&playerBountyListMutex);
+
+	if (playerBountyList.contains(targetId)) {
+		return playerBountyList.get(targetId)->getReward();
+
+	}
+	else{
+		return 0;
+	}
+}
+
 Vector<ManagedReference<PlayerBounty*>> MissionManagerImplementation::getPotentialPlayerBountyTargets(CreatureObject* player) {
 	Locker listLocker(&playerBountyListMutex);
 

@@ -135,6 +135,15 @@ public:
 	void addToVisibilityList(CreatureObject* creature);
 
 	/**
+	 *
+	 * 
+	 */
+	void login(CreatureObject *creature);
+	void logout(CreatureObject *creature);
+	void removePlayerFromBountyList(CreatureObject *creature);
+	void addPlayerToBountyList(CreatureObject *creature, int reward);
+	
+	/**
 	 * Remove player from the visibility list.
 	 * @param creature the player to remove.
 	 */
@@ -146,7 +155,7 @@ public:
 	 * @param creature the player to increase the visibility for.
 	 */
 	void increaseVisibility(CreatureObject* creature, int visibilityMultiplier);
-
+	void setVisibility(CreatureObject* creature, int visibilityMultiplier);
 	/**
 	 * Clear the visibility for a player and remove him/her from the visibility
 	 * list. Should be used when a player is killed from a bounty hunter with

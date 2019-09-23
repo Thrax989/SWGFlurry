@@ -137,7 +137,7 @@ class MissionManager extends Observer implements Logger {
 
 	@dirty
 	public native int getRealBountyReward(CreatureObject creo, PlayerBounty bounty);
-
+	public native int getPlayerBounty(unsigned long targetId);
 	private native string getDeliveryMissionFileName(final unsigned int faction);
 	private native int getDeliverMissionNumberOfMissions(final unsigned int faction);
 	private native int getDeliverMissionSpawnType(final unsigned int faction);
