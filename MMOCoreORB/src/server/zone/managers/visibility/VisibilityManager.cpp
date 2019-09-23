@@ -141,35 +141,6 @@ void VisibilityManager::removeFromVisibilityList(CreatureObject* creature) {
 	}
 }
 
-void VisibilityManager::logout(CreatureObject* creature){
-	Locker locker(&visibilityListLock);
-
-		if (visibilityList.contains(creature->getObjectID())){
-			visibilityList.drop(creature->getObjectID());
-			removePlayerFromBountyList(creature);
-		}
-}
-
-void VisibilityManager::login(CreatureObject* creature){
-	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
-
-		if (ghost != NULL){
-		decreaseVisibility(creature);
-		Locker locker(&visibilityListLock);
-
-			if ((ghost->getVisibility() > 0) && (!visibilityList.contains(creature->getObjectID()))){
-				visibilityList.put(creature->getObjectID(), creature);
-			}
-			locker.release();
-
-			if (ghost->getVisibility() >= terminalVisThreshold){
-				int reward = calculateRewardWithExisting(creature);
-				//info("Adding player " + String::valueOf(creature->getObjectID()) + " to bounty board with value = " +  String::valueOf(reward), true);
-				addPlayerToBountyList(creature,reward);
-			}
-		}
-}
-
 void VisibilityManager::increaseVisibility(CreatureObject* creature, int visibilityMultiplier) {
 	//info("Increasing visibility for " + creature->getFirstName(), true);
 	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
