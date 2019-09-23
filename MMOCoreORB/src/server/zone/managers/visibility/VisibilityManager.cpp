@@ -210,6 +210,36 @@ void VisibilityManager::setVisibility(CreatureObject* creature, int visibilityAm
 	}
 }
 
+int VisibilityManager::calculateReward(CreatureObject* creature){
+		int minReward = 25000;
+		int maxReward = 2500000;
+		int maxSkillBonus = 250000;
+		int totalReward = 0;
+
+		int reward = minReward;
+		int skillPoints = 0;
+
+		MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
+
+		Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
+
+		if (ghost != NULL){
+		skillPoints = ghost->getSpentJediSkillPoints() + ghost->numSpecificSkills(creature,"force_sensitive");
+
+		reward = skillPoints * 1000;
+
+			if (reward < minReward){
+				reward = minReward;
+			}
+			else if (reward > maxSkillBonus){
+			reward = maxSkillBonus;
+			}
+		}
+
+
+	return reward;
+}
+
 int VisibilityManager::calculateRewardWithExisting(CreatureObject *creature){
 	int skills = calculateReward(creature);
 	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
