@@ -235,6 +235,10 @@ void SkillManager::removeAbilities(PlayerObject* ghost, const Vector<String>& ab
 
 bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature, bool notifyClient, bool awardRequiredSkills, bool noXpRequired) {
 	auto skill = skillMap.get(skillName.hashCode());
+	int initialSkillsBounty = 0;
+	int initialBounty = 0;
+	int newSkillBounty = 0;
+	String skillStarter;
 
 	if (skill == NULL)
 		return false;
@@ -247,8 +251,14 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 		const String& requiredSkillName = requiredSkills->get(i);
 		auto requiredSkill = skillMap.get(requiredSkillName.hashCode());
 
+	initialSkillsBounty = VisibilityManager::instance()->calculateReward(creature);
+
 		if (requiredSkill == NULL)
 			continue;
+
+	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
+	int bountyWorth = missionManager->getPlayerBounty(creature->getObjectID());
+	bountyWorth -= initialSkillsBounty;
 
 		if (awardRequiredSkills)
 			awardSkill(requiredSkillName, creature, notifyClient, awardRequiredSkills, noXpRequired);
