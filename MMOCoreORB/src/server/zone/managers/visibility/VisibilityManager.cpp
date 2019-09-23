@@ -200,7 +200,27 @@ void VisibilityManager::clearVisibility(CreatureObject* creature) {
 		ghost->setVisibility(0);
 		locker.release();
 
-		removeFromVisibilityList(creature);
+		login(creature);
+	}
+}
+
+void VisibilityManager::setVisibility(CreatureObject* creature, int visibilityAmount) {
+	int newVis = 0;
+	//info("Increasing visibility for " + creature->getFirstName(), true);
+	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
+
+	if (ghost != NULL  && !ghost->hasGodMode()) {
+		Locker locker(ghost);
+		decreaseVisibility(creature);
+
+		newVis = Math::min(maxVisibility,  (float)visibilityAmount); // Cap visibility
+
+		ghost->setVisibility(newVis);
+
+		//info("New visibility for " + creature->getFirstName() + " is " + String::valueOf(ghost->getVisibility()), true);
+		locker.release();
+
+		login(creature);
 	}
 }
 
@@ -238,4 +258,3 @@ void VisibilityManager::loadConfiguration() {
 		error(e.getMessage());
 	}
 }
-
