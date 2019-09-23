@@ -14,6 +14,16 @@ const String VisibilityManager::factionStringImperial = "imperial";
 const unsigned int VisibilityManager::factionRebel = factionStringRebel.hashCode();
 const unsigned int VisibilityManager::factionImperial = factionStringImperial.hashCode();
 
+void VisibilityManager::addPlayerToBountyList(CreatureObject* creature, int reward){
+	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
+	missionManager->addPlayerToBountyList(creature->getObjectID(), reward);
+}
+
+void VisibilityManager::removePlayerFromBountyList(CreatureObject* creature){
+	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
+	missionManager->removePlayerFromBountyList(creature->getObjectID());
+}
+
 float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
 	Zone* zone = creature->getZone();
 
