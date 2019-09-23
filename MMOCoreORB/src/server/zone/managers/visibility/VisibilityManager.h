@@ -165,13 +165,6 @@ public:
 	void clearVisibility(CreatureObject* creature);
 
 	/**
-	 * Calculate/generate a reward for the player bounty.
-	 * @param creature the jedi's player creature object.
-	 * @return calculated/generated reward.
-	 */
-	int calculateReward(CreatureObject* creature);
-	int calculateRewardWithExisting(CreatureObject* creature);
-	/**
 	 * Iterates through all currently online players and decays their visibility.
 	 */
 	void performVisiblityDecay();
