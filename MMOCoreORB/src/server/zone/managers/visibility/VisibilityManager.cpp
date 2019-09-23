@@ -186,20 +186,6 @@ void VisibilityManager::increaseVisibility(CreatureObject* creature, int visibil
 		//info("New visibility for " + creature->getFirstName() + " is " + String::valueOf(ghost->getVisibility()), true);
 		locker.release();
 
-		addToVisibilityList(creature);
-	}
-}
-
-void VisibilityManager::clearVisibility(CreatureObject* creature) {
-	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
-
-	if (ghost != NULL  && !ghost->hasGodMode()) {
-		//info("Clearing visibility for player " + String::valueOf(creature->getObjectID()), true);
-
-		Locker locker(ghost);
-		ghost->setVisibility(0);
-		locker.release();
-
 		login(creature);
 	}
 }
@@ -221,6 +207,28 @@ void VisibilityManager::setVisibility(CreatureObject* creature, int visibilityAm
 		locker.release();
 
 		login(creature);
+	}
+}
+
+int VisibilityManager::calculateRewardWithExisting(CreatureObject *creature){
+	int skills = calculateReward(creature);
+	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
+	int bountyWorth = missionManager->getPlayerBounty(creature->getObjectID());
+
+	return skills + bountyWorth;
+}
+
+void VisibilityManager::clearVisibility(CreatureObject* creature) {
+	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
+
+	if (ghost != NULL  && !ghost->hasGodMode()) {
+		//info("Clearing visibility for player " + String::valueOf(creature->getObjectID()), true);
+
+		Locker locker(ghost);
+		ghost->setVisibility(0);
+		locker.release();
+
+		logout(creature);
 	}
 }
 
