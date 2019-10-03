@@ -1,2 +1,0 @@
-includeFile("custom_content/draft_schematic/space/reverse_engineering/droid_interface_scanner.lua")
-includeFile("custom_content/draft_schematic/space/reverse_engineering/interdiction_generator.lua")

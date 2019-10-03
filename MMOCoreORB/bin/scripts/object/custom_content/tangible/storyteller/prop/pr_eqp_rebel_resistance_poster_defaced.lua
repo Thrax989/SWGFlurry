@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_eqp_rebel_resistance_poster_defaced = object_tangible_storyteller_prop_shared_pr_eqp_rebel_resistance_poster_defaced:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_eqp_rebel_resistance_poster_defaced, "object/tangible/storyteller/prop/pr_eqp_rebel_resistance_poster_defaced.iff")

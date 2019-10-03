@@ -1,5 +1,0 @@
-object_draft_schematic_clothing_clothing_belt_padawan_pouch = object_draft_schematic_clothing_shared_clothing_belt_padawan_pouch:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_belt_padawan_pouch, "object/draft_schematic/clothing/clothing_belt_padawan_pouch.iff")

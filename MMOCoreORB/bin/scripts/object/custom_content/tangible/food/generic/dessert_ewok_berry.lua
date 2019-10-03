@@ -1,5 +1,0 @@
-object_tangible_food_generic_dessert_ewok_berry = object_tangible_food_generic_shared_dessert_ewok_berry:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_food_generic_dessert_ewok_berry, "object/tangible/food/generic/dessert_ewok_berry.iff")

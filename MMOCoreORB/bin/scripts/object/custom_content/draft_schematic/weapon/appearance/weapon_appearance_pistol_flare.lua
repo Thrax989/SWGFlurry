@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_appearance_weapon_appearance_pistol_flare = object_draft_schematic_weapon_appearance_shared_weapon_appearance_pistol_flare:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_appearance_weapon_appearance_pistol_flare, "object/draft_schematic/weapon/appearance/weapon_appearance_pistol_flare.iff")

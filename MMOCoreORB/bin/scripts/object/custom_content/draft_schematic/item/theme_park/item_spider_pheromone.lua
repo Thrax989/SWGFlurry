@@ -1,5 +1,0 @@
-object_draft_schematic_item_theme_park_item_spider_pheromone = object_draft_schematic_item_theme_park_shared_item_spider_pheromone:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_item_theme_park_item_spider_pheromone, "object/draft_schematic/item/theme_park/item_spider_pheromone.iff")

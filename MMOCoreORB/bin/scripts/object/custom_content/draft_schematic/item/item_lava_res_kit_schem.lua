@@ -1,5 +1,0 @@
-object_draft_schematic_item_item_lava_res_kit_schem = object_draft_schematic_item_shared_item_lava_res_kit_schem:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_item_item_lava_res_kit_schem, "object/draft_schematic/item/item_lava_res_kit_schem.iff")

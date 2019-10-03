@@ -1,3 +1,0 @@
-object_tangible_event_perk_gmf_crafted_bat_pheromone = object_tangible_event_perk_shared_gmf_crafted_bat_pheromone:new {
-}
-ObjectTemplates:addTemplate(object_tangible_event_perk_gmf_crafted_bat_pheromone, "object/tangible/event_perk/gmf_crafted_bat_pheromone.iff")

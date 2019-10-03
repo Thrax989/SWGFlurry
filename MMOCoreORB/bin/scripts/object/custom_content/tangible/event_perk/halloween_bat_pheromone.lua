@@ -1,3 +1,0 @@
-object_tangible_event_perk_halloween_bat_pheromone = object_tangible_event_perk_shared_halloween_bat_pheromone:new {
-}
-ObjectTemplates:addTemplate(object_tangible_event_perk_halloween_bat_pheromone, "object/tangible/event_perk/halloween_bat_pheromone.iff")

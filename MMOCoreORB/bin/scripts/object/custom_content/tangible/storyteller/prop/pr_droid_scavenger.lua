@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_droid_scavenger = object_tangible_storyteller_prop_shared_pr_droid_scavenger:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_droid_scavenger, "object/tangible/storyteller/prop/pr_droid_scavenger.iff")

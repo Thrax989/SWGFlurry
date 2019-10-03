@@ -1,5 +1,0 @@
-object_tangible_saga_system_rewards_structure_deed_player_tent_chronicler = object_tangible_saga_system_rewards_shared_structure_deed_player_tent_chronicler:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_saga_system_rewards_structure_deed_player_tent_chronicler, "object/tangible/saga_system/rewards/structure_deed_player_tent_chronicler.iff")

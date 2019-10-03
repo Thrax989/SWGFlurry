@@ -1,5 +1,0 @@
-object_draft_schematic_camp_modules_shuttle_beacon_module = object_draft_schematic_camp_modules_shared_shuttle_beacon_module:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_camp_modules_shuttle_beacon_module, "object/draft_schematic/camp/modules/shuttle_beacon_module.iff")

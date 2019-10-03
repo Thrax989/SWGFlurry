@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_droid_race = object_tangible_storyteller_prop_shared_pr_droid_race:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_droid_race, "object/tangible/storyteller/prop/pr_droid_race.iff")

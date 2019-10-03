@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_ch9_speeder_ab1 = object_tangible_storyteller_prop_shared_pr_ch9_speeder_ab1:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_speeder_ab1, "object/tangible/storyteller/prop/pr_ch9_speeder_ab1.iff")

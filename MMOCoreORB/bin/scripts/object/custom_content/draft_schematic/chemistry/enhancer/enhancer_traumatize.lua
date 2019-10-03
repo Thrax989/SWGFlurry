@@ -1,5 +1,0 @@
-object_draft_schematic_chemistry_enhancer_enhancer_traumatize = object_draft_schematic_chemistry_enhancer_shared_enhancer_traumatize:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_chemistry_enhancer_enhancer_traumatize, "object/draft_schematic/chemistry/enhancer/enhancer_traumatize.iff")

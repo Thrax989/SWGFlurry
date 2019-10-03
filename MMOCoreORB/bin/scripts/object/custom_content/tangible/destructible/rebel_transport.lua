@@ -1,3 +1,0 @@
-object_tangible_destructible_rebel_transport = object_tangible_destructible_shared_rebel_transport:new {
-}
-ObjectTemplates:addTemplate(object_tangible_destructible_rebel_transport, "object/tangible/destructible/rebel_transport.iff")

@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_ch9_exar_kun_torch_02 = object_tangible_storyteller_prop_shared_pr_ch9_exar_kun_torch_02:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_exar_kun_torch_02, "object/tangible/storyteller/prop/pr_ch9_exar_kun_torch_02.iff")

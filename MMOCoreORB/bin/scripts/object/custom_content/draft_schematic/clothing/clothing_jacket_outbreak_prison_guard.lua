@@ -1,5 +1,0 @@
-object_draft_schematic_clothing_clothing_jacket_outbreak_prison_guard = object_draft_schematic_clothing_shared_clothing_jacket_outbreak_prison_guard:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_jacket_outbreak_prison_guard, "object/draft_schematic/clothing/clothing_jacket_outbreak_prison_guard.iff")

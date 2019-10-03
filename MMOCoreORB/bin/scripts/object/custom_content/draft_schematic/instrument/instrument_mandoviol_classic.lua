@@ -1,5 +1,0 @@
-object_draft_schematic_instrument_instrument_mandoviol_classic = object_draft_schematic_instrument_shared_instrument_mandoviol_classic:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_instrument_instrument_mandoviol_classic, "object/draft_schematic/instrument/instrument_mandoviol_classic.iff")

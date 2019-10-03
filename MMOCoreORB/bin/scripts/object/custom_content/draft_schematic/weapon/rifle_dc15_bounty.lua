@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_rifle_dc15_bounty = object_draft_schematic_weapon_shared_rifle_dc15_bounty:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_rifle_dc15_bounty, "object/draft_schematic/weapon/rifle_dc15_bounty.iff")

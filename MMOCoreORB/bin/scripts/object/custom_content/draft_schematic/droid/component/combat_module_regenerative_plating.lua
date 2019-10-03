@@ -1,5 +1,0 @@
-object_draft_schematic_droid_component_combat_module_regenerative_plating = object_draft_schematic_droid_component_shared_combat_module_regenerative_plating:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_droid_component_combat_module_regenerative_plating, "object/draft_schematic/droid/component/combat_module_regenerative_plating.iff")

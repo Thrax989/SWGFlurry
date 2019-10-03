@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_yoda_fountain = object_tangible_storyteller_prop_shared_pr_yoda_fountain:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_yoda_fountain, "object/tangible/storyteller/prop/pr_yoda_fountain.iff")

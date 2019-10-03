@@ -1,5 +1,0 @@
-object_draft_schematic_armor_armor_appearance_rebel_specforce_chest = object_draft_schematic_armor_shared_armor_appearance_rebel_specforce_chest:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_armor_armor_appearance_rebel_specforce_chest, "object/draft_schematic/armor/armor_appearance_rebel_specforce_chest.iff")

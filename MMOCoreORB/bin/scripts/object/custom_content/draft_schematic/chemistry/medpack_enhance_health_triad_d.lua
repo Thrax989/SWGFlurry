@@ -1,5 +1,0 @@
-object_draft_schematic_chemistry_medpack_enhance_health_triad_d = object_draft_schematic_chemistry_shared_medpack_enhance_health_triad_d:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_chemistry_medpack_enhance_health_triad_d, "object/draft_schematic/chemistry/medpack_enhance_health_triad_d.iff")

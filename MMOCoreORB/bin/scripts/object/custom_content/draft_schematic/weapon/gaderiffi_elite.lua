@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_gaderiffi_elite = object_draft_schematic_weapon_shared_gaderiffi_elite:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_gaderiffi_elite, "object/draft_schematic/weapon/gaderiffi_elite.iff")
