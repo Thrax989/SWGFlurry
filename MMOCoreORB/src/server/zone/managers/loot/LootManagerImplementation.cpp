@@ -14,6 +14,7 @@
 #include "templates/LootGroupTemplate.h"
 #include "server/zone/ZoneServer.h"
 #include "LootGroupMap.h"
+#include "server/zone/managers/stringid/StringIdManager.h"
 #include "server/zone/objects/tangible/component/lightsaber/LightsaberCrystalComponent.h"
 
 void LootManagerImplementation::initialize() {
@@ -476,7 +477,109 @@ TangibleObject* LootManagerImplementation::createLootObject(const LootItemTempla
 
 	delete craftingValues;
 
+	if(prototype->isAttachment()){
+		Attachment* attachment = cast<Attachment*>( prototype.get());
+		HashTable<String, int>* mods = attachment->getSkillMods();
+		HashTableIterator<String, int> iterator = mods->iterator();
+
+		StringIdManager* stringIdManager = StringIdManager::instance();
+
+		String key = "";
+		int value = 0;
+		int last = 0;
+
+		for(int i = 0; i < mods->size(); ++i) {
+			iterator.getNextKeyAndValue(key, value);
+		
+			if(value > last){
+				last = value;
+				String statName = "@stat_n:" + key;
+				
+				prototype->setCustomObjectName(stringIdManager->getStringId(statName.hashCode()),false);
+
+				if(attachment->isClothingAttachment()){
+					prototype->setCustomObjectName(prototype->getDisplayedName() + " (" + String::valueOf(value) + ") CA",false);
+				}else{
+					prototype->setCustomObjectName(prototype->getDisplayedName() + " (" + String::valueOf(value) + ") AA",false);
+				}
+			}
+		}
+	}
+
 	return prototype;
+}
+
+TangibleObject* LootManagerImplementation::createLootAttachment(LootItemTemplate* templateObject, const String& modName, int value) {
+	
+	const String& directTemplateObject = templateObject->getDirectObjectTemplate();
+	
+	ManagedReference<TangibleObject*> prototype = zoneServer->createObject(directTemplateObject.hashCode(), 2).castTo<TangibleObject*>();
+	
+	if (prototype == NULL) {
+		error("could not create loot object: " + directTemplateObject);
+		return NULL;
+	}
+
+	Locker objLocker(prototype);
+
+	prototype->createChildObjects();
+
+	String serial = craftingManager->generateSerial();
+	prototype->setSerialNumber(serial);
+
+	ValuesMap valuesMap = templateObject->getValuesMapCopy();
+	CraftingValues* craftingValues = new CraftingValues(valuesMap);
+
+	setInitialObjectStats(templateObject, craftingValues, prototype);
+
+	setCustomObjectName(prototype, templateObject);
+
+	String subtitle;
+
+	for (int i = 0; i < craftingValues->getExperimentalPropertySubtitleSize(); ++i) {
+		subtitle = craftingValues->getExperimentalPropertySubtitle(i);
+
+		if (subtitle == "hitpoints" && !prototype->isComponent()) {
+			continue;
+		}
+
+		float min = craftingValues->getMinValue(subtitle);
+		float max = craftingValues->getMaxValue(subtitle);
+	}
+
+
+	if(prototype->isAttachment()){
+		Attachment* attachment = cast<Attachment*>( prototype.get());
+		attachment->updateAttachmentValues(modName, value);
+		delete craftingValues;
+	
+		HashTable<String, int>* mods = attachment->getSkillMods();
+		HashTableIterator<String, int> iterator = mods->iterator();
+		StringId attachmentName;
+		String key = "";
+		int value = 0;
+		int last = 0;
+		String attachmentType = "AA ";
+		String attachmentCustomName = "";
+
+		if(attachment->isClothingAttachment()){
+			attachmentType = "CA ";
+		}
+
+		for(int i = 0; i < mods->size(); ++i) {
+			iterator.getNextKeyAndValue(key, value);
+
+			if(value > last){
+				last = value;
+				attachmentName.setStringId("stat_n", key);
+				prototype->setObjectName(attachmentName,false);
+				attachmentCustomName = attachmentType + prototype->getDisplayedName() + " " + String::valueOf(value);
+			}
+		}
+		prototype->setCustomObjectName(attachmentCustomName,false);
+	}
+	return prototype;
+
 }
 
 void LootManagerImplementation::addConditionDamage(TangibleObject* loot, CraftingValues* craftingValues) {
@@ -620,8 +723,16 @@ void LootManagerImplementation::setSockets(TangibleObject* object, CraftingValue
 }
 
 bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* creature) {
-	auto lootCollection = creature->getLootGroups();
-
+	//Creature Loot System based on creature level
+	//int creatureLevel = Math::min(300, creature->getLevel());
+	//Rare Loot System
+	//if (creatureLevel >= 75){
+		//if (System::random(100) < 2) { //2% Rare Loot System
+			//createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
+			//creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
+		//}
+	//}
+	LootGroupCollection* lootCollection = creature->getLootGroups();
 	if (lootCollection == nullptr)
 		return false;
 
@@ -668,7 +779,48 @@ bool LootManagerImplementation::createLootFromCollection(SceneObject* container,
 }
 
 bool LootManagerImplementation::createLoot(SceneObject* container, const String& lootGroup, int level, bool maxCondition) {
-	Reference<const LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
+	Reference<LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
+
+	if (group == nullptr) {
+		warning("Loot group template requested does not exist: " + lootGroup);
+		return false;
+	}
+
+	//Now we do the third roll for the item out of the group.
+	int roll = System::random(10000000);
+
+	String selection = group->getLootGroupEntryForRoll(roll);
+
+	//Check to see if the group entry is another group
+	if (lootGroupMap->lootGroupExists(selection))
+		return createLoot(container, selection, level, maxCondition);
+
+	//Entry wasn't another group, it should be a loot item
+	Reference<LootItemTemplate*> itemTemplate = lootGroupMap->getLootItemTemplate(selection);
+
+	if (itemTemplate == nullptr) {
+		warning("Loot item template requested does not exist: " + group->getLootGroupEntryForRoll(roll) + " for templateName: " + group->getTemplateName());
+		return false;
+	}
+
+	TangibleObject* obj = createLootObject(itemTemplate, level, maxCondition);
+
+	if (obj == nullptr)
+		return false;
+
+	if (container->transferObject(obj, -1, false, true)) {
+		container->broadcastObject(obj, true);
+	} else {
+		obj->destroyObjectFromDatabase(true);
+		return false;
+	}
+
+
+	return true;
+}
+
+bool LootManagerImplementation::createNamedLoot(SceneObject* container, const String& lootGroup, const String& name, int level, bool maxCondition) {
+	Reference<LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
 
 	if (group == nullptr) {
 		warning("Loot group template requested does not exist: " + lootGroup);
