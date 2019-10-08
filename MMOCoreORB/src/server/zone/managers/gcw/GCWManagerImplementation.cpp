@@ -44,6 +44,7 @@
 #include "server/zone/managers/collision/CollisionManager.h"
 #include "server/zone/packets/scene/PlayClientEffectLocMessage.h"
 #include "server/zone/managers/gcw/sessions/ContrabandScanSession.h"
+#include "server/chat/ChatManager.h"
 
 void GCWManagerImplementation::initialize() {
 	loadLuaConfig();
