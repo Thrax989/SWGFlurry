@@ -56,6 +56,27 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
 	if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
 		return false;
 
+	    if (attacker != nullptr && attacker->isInvisible()) {
+            	attacker->removePendingTask("invisibleevent");
+                attacker->sendSystemMessage("You are now visible to all players and creatures.");
+                attacker->setInvisible(false);
+
+	SortedVector<QuadTreeEntry*> closeObjects(512,512);
+	CloseObjectsVector* closeVector = (CloseObjectsVector*) attacker->getCloseObjects();
+	
+	if (closeVector == nullptr) {
+			attacker->getZone()->getInRangeObjects(attacker->getPositionX(), attacker->getPositionY(), 32, &closeObjects, true);
+		} else {
+			closeVector->safeCopyTo(closeObjects);
+	}
+
+	for (int i = 0; i < closeObjects.size(); i++) {
+		SceneObject* targetObject = static_cast<SceneObject*>(closeObjects.get(i));
+		
+			if (targetObject != nullptr && !targetObject->isBuildingObject())
+				targetObject->notifyInsert(attacker);
+		}
+	}
 	CreatureObject *creo = defender->asCreatureObject();
 	if (creo != nullptr && creo->isIncapacitated() && creo->isFeigningDeath() == false) {
 		if (allowIncapTarget) {
@@ -379,10 +400,15 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		doCounterAttack(attacker, weapon, defender, damage);
 		if (!defender->hasState(CreatureState::PEACE))
 			defender->executeObjectControllerAction(STRING_HASHCODE("attack"), attacker->getObjectID(), "");
-		damageMultiplier = 0.0f;
+		damageMultiplier = 0.75f;
 		break;}
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defender, damage);
+		if (System::random(100) < 10 && !defender->hasState(CreatureState::PEACE) && !attacker->isPlayerCreature()){
+			defender->showFlyText("combat_effects", "reflect", 0, 255, 0);
+			int poolsToDamageReflect = calculatePoolsToDamage(data.getPoolsToDamage());
+			damage = applyDamage(defender, weapon, attacker, damage * .3, damageMultiplier, poolsToDamageReflect, hitLocation, data);
+		}
 		damageMultiplier = 0.0f;
 		break;
 	default:
@@ -481,7 +507,7 @@ int CombatManager::doTargetCombatAction(TangibleObject* attacker, WeaponObject* 
 		doCounterAttack(attacker, weapon, defenderObject, damage);
 		if (!defenderObject->hasState(CreatureState::PEACE))
 			defenderObject->executeObjectControllerAction(STRING_HASHCODE("attack"), attacker->getObjectID(), "");
-		damageMultiplier = 0.0f;
+		damageMultiplier = 0.75f;
 		break;
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defenderObject, damage);
@@ -585,15 +611,15 @@ void CombatManager::applyWeaponDots(CreatureObject* attacker, CreatureObject* de
 		switch (weapon->getDotType(i)) {
 		case 1: //POISON
 			type = CreatureState::POISONED;
-			//resist = defender->getSkillMod("resistance_poison");
+			resist = defender->getSkillMod("resistance_poison");
 			break;
 		case 2: //DISEASE
 			type = CreatureState::DISEASED;
-			//resist = defender->getSkillMod("resistance_disease");
+			resist = defender->getSkillMod("resistance_disease");
 			break;
 		case 3: //FIRE
 			type = CreatureState::ONFIRE;
-			//resist = defender->getSkillMod("resistance_fire");
+			resist = defender->getSkillMod("resistance_fire");
 			break;
 		case 4: //BLEED
 			type = CreatureState::BLEEDING;
@@ -826,6 +852,9 @@ int CombatManager::getDefenderSecondaryDefenseModifier(CreatureObject* defender)
 		targetDefense += defender->getSkillMod(mod);
 		targetDefense += defender->getSkillMod("private_" + mod);
 	}
+
+	if ( defender->isIntimidated() || defender->isBerserked())
+		targetDefense /= 2;
 
 	if (targetDefense > 125)
 		targetDefense = 125;
@@ -1108,6 +1137,14 @@ int CombatManager::getArmorVehicleReduction(VehicleObject* defender, int damageT
 
 int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, float damage, int hitLocation, const CreatureAttackData& data) {
 	int damageType = 0, armorPiercing = 1;
+	bool lightningAttack =  false;
+    	bool flamethrowerAttack = false;
+
+	if (isLightningAttack(data))
+		lightningAttack = true;
+
+    	if (isFlameThrowerAttack(data))
+		flamethrowerAttack = true;
 
 	if (!data.isForceAttack()) {
 		damageType = weapon->getDamageType();
@@ -1118,6 +1155,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	} else {
 		damageType = data.getDamageType();
 	}
+
+	if (lightningAttack == true && !defender->isPlayerCreature())
+		damageType = SharedWeaponObjectTemplate::LIGHTSABER;
 
 	if (defender->isAiAgent()) {
 		float armorReduction = getArmorNpcReduction(cast<AiAgent*>(defender), damageType);
@@ -1137,6 +1177,17 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		if (armorReduction > 0) damage *= (1.f - (armorReduction / 100.f));
 
 		return damage;
+	}
+
+ 	if (!data.isForceAttack()){
+	// BH
+	float rawDamage = damage;
+	int abilityArmor = defender->getSkillMod("ability_armor");
+	if (abilityArmor > 0) {
+		float dmgAbsorbed = rawDamage - (damage *= 1.f - (abilityArmor / 100.f));
+		defender->notifyObservers(ObserverEventType::FORCEBUFFHIT, attacker, dmgAbsorbed);
+		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, ABILITYARMOR);
+		}
 	}
 
 	if (!data.isForceAttack()) {
@@ -1194,6 +1245,16 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	if (psg != nullptr && !psg->isVulnerable(damageType)) {
 		float armorReduction =  getArmorObjectReduction(psg, damageType);
 		float dmgAbsorbed = damage;
+		float preArmorDamage = damage;
+
+		if (lightningAttack == true && attacker->isPlayerCreature())
+			armorPiercing = 2;
+
+		if (flamethrowerAttack == true && attacker->isPlayerCreature())
+			armorPiercing = 2;	
+
+		if (defender->isPlayerCreature())
+			armorPiercing++;
 
 		damage *= getArmorPiercing(psg, armorPiercing);
 
@@ -1205,7 +1266,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		Locker plocker(psg);
 
-		psg->inflictDamage(psg, 0, damage * 0.2, true, true);
+		psg->inflictDamage(psg, 0, damage * 0.1, true, true);
 
 	}
 
@@ -1217,6 +1278,12 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	if (armor != nullptr && !armor->isVulnerable(damageType)) {
 		float armorReduction = getArmorObjectReduction(armor, damageType);
 		float dmgAbsorbed = damage;
+
+		if (lightningAttack == true && attacker->isPlayerCreature()) //Ap2
+			armorPiercing = 2;
+
+		if (flamethrowerAttack == true && attacker->isPlayerCreature()) //Ap2
+			armorPiercing = 2;
 
 		// use only the damage applied to the armor for piercing (after the PSG takes some off)
 		damage *= getArmorPiercing(armor, armorPiercing);
@@ -1315,6 +1382,9 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 		if (lairObserver != nullptr)
 			break;
 	}
+
+	if (lairObserver && data.isForceAttack())
+		damage *= 3.5;
 
 	if (lairObserver && lairObserver->getSpawnNumber() > 2)
 		damage *= 3.5;
@@ -1416,6 +1486,21 @@ float CombatManager::doDroidDetonation(CreatureObject* droid, CreatureObject* de
 	} else {
 		return 0;
 	}
+}
+
+bool CombatManager::isLightningAttack(const CreatureAttackData& data) {
+	if (data.getCombatSpam() == "forcelightningsingle1" || data.getCombatSpam() == "forcelightningsingle2" ||
+		data.getCombatSpam() == "forcelightningcone1" || data.getCombatSpam() == "forcelightningcone2")
+		return true;
+	else
+		return false;
+}
+
+bool CombatManager::isFlameThrowerAttack(const CreatureAttackData& data) {
+	if(data.getCombatSpam() == "flamesingle1" || data.getCombatSpam() == "flamesingle2" || data.getCombatSpam() =="flamecone1" || data.getCombatSpam() == "flamecone2")
+		return true;
+	else
+		return false;
 }
 
 void CombatManager::getFrsModifiedForceAttackDamage(CreatureObject* attacker, float& minDmg, float& maxDmg, const CreatureAttackData& data) {
