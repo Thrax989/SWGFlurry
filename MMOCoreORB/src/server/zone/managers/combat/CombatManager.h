@@ -55,7 +55,7 @@ public:
 	const static int FORCEARMOR = 0x5;
 	const static int ARMOR = 0x6;
 	const static int FOOD = 0x7;
-
+	const static int ABILITYARMOR = 0x8;
 
 
 	Vector<uint32> defaultMeleeAttacks;
@@ -198,6 +198,8 @@ protected:
 	float calculateDamage(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data);
 	float calculateDamage(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* defender, const CreatureAttackData& data);
 	bool checkConeAngle(SceneObject* targetCreature, float angle, float creatureVectorX, float creatureVectorY, float directionVectorX, float directionVectorY);
+	bool isLightningAttack(const CreatureAttackData& data);
+	bool isFlameThrowerAttack(const CreatureAttackData& data);
 
 	void showHitLocationFlyText(CreatureObject *attacker, CreatureObject *defender, uint8 location);
 
