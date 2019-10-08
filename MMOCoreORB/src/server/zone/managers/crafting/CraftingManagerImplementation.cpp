@@ -69,9 +69,9 @@ int CraftingManagerImplementation::calculateExperimentationSuccess(CreatureObjec
 	int forceSkill = player->getSkillMod("force_experimentation");
 	experimentationSkill += forceSkill;
 
-	float experimentingPoints = ((float)experimentationSkill) / 10.0f;
+	float experimentingPoints = ((float)experimentationSkill + forceSkill) / 10.0f;
 
-	int failMitigate = (player->getSkillMod(draftSchematic->getAssemblySkill()) - 100 + cityBonus) / 7;
+	int failMitigate = (player->getSkillMod(draftSchematic->getAssemblySkill() + forceSkill) - 100 + cityBonus) / 7;
 	failMitigate += player->getSkillMod("force_failure_reduction");
 
 	if(failMitigate < 0)
