@@ -337,8 +337,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	auto client = callback->getClient();
 
-	if (client->getCharacterCount(zoneServer.get()->getGalaxyID()) >= 10) {
-		ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are limited to 10 characters per galaxy.", 0x0);
+	if (client->getCharacterCount(zoneServer.get()->getGalaxyID()) >= 4) {
+		ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are limited to 4 characters per galaxy.", 0x0);
 		client->sendMessage(errMsg);
 
 		return false;
@@ -511,8 +511,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 							Time timeVal(sec);
 
-							if (timeVal.miliDifference() < 3600000) {
-								ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per hour. Repeat attempts prior to 1 hour elapsing will reset the timer.", 0x0);
+							if (timeVal.miliDifference() < 300000) {
+								ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per hour. Repeat attempts prior to 5 minutes elapsing will reset the timer.", 0x0);
 								client->sendMessage(errMsg);
 
 								playerCreature->destroyPlayerCreatureFromDatabase(true);
@@ -529,8 +529,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 					if (lastCreatedCharacter.containsKey(accID)) {
 						Time lastCreatedTime = lastCreatedCharacter.get(accID);
 
-						if (lastCreatedTime.miliDifference() < 3600000) {
-							ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per hour. Repeat attempts prior to 1 hour elapsing will reset the timer.", 0x0);
+						if (lastCreatedTime.miliDifference() < 300000) {
+							ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per hour. Repeat attempts prior to 5 minutes elapsing will reset the timer.", 0x0);
 							client->sendMessage(errMsg);
 
 							playerCreature->destroyPlayerCreatureFromDatabase(true);
@@ -599,16 +599,83 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	JediManager::instance()->onPlayerCreated(playerCreature);
 
 	chatManager->sendMail("system", "@newbie_tutorial/newbie_mail:welcome_subject", "@newbie_tutorial/newbie_mail:welcome_body", playerCreature->getFirstName());
+	chatManager->sendMail("Admin", "Welcome", "The SWG Flurry Community welcomes you to the server!\n\nJoin our community voice chat today.\n\nhttps://discord.gg/eN82pdc", playerCreature->getFirstName());
 
 	//Join auction chat room
 	ghost->addChatRoom(chatManager->getAuctionRoom()->getRoomID());
-
+	//Join general/discord chat room
+	ghost->addChatRoom(chatManager->getGeneralRoom()->getRoomID());
+	//Send Sui to player with server information
 	ManagedReference<SuiMessageBox*> box = new SuiMessageBox(playerCreature, SuiWindowType::NONE);
-	box->setPromptTitle("PLEASE NOTE");
-	box->setPromptText("You are limited to creating one character per hour. Attempting to create another character or deleting your character before the 1 hour timer expires will reset the timer.");
+	int playercount = zoneServer->getConnectionCount();
+  	String playerName = playerCreature->getFirstName();
+	box->setPromptTitle("Welcome To SWG Flurry");
+  	StringBuffer promptText;
+  	promptText << "\\#ffffff Welcome to the server: \\#00ff00" << playerName << "\\#ffffff There is currently: \\#00ff00" << playercount << "\\#ffffff players logged in out of\\#00ff00 500.";//Current number of players currently logged in
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl; 	
+  	promptText << "\\#ffffffAccount Info";
+  	promptText << endl;
+  	promptText << "\\#00ff001 Account per IP";
+   	promptText << endl;
+  	promptText << "4 Characters Max per account";
+   	promptText << endl;
+   	promptText << "2 Character Max Online per account";
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << "\\#ffffffServer XP Rates";
+   	promptText << endl;
+   	promptText << "\\#00ff001x XP Solo | 1.2x XP Grouped";
+   	promptText << endl;
+   	promptText << "3x group XP bonus when fighting within 100 meters of your group members";
+   	promptText << endl;
+   	promptText << "Gaining multiple xp types while in combat is acquired by switching weapon types while you attack, this will allow you to gain more than one kind of xp type when killing creatures/npc";
+   	promptText << endl;
+   	promptText << "When leveling you gain max xp from your first hit, allowing you to focus on killing the creature/npc as fast as possible instead of the traditional way of gaining XP per hit,";
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << "\\#ffffffServer Drop Rates";
+   	promptText << endl;
+   	promptText << "\\#00ff00YellowChance = 1 in 1000";
+   	promptText << endl;
+   	promptText << "ExceptionalChance = 1 in 100000";
+   	promptText << endl;
+   	promptText << "LegendaryChance = 1 in 1000000";
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << "\\#ffffffCommunity Info";
+   	promptText << endl;
+   	promptText << "\\#00ff00www.swgflurry.com";
+   	promptText << endl;
+   	promptText << "www.swgflurry.com/TRE";
+   	promptText << endl;
+   	promptText << "www.swgflurry.com/forum";
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << "\\#ffffffCommunity Discord Server";
+   	promptText << endl;
+   	promptText << "\\#00ff00https://discordapp.com/invite/dXm6t3W";
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << endl;
+   	promptText << "\\#ffffffOpen Source Repository";
+   	promptText << endl;
+   	promptText << "\\#00ff00https://github.com/Thrax989/SWGFlurry";
+  	box->setPromptText(promptText.toString());
+ 	box->setCancelButton(true, "@no");
+	box->setOkButton(true, "@yes");
+	box->setUsingObject(ghost);
+	ghost->sendMessage(box->generateMessage());	
 
-	ghost->addSuiBox(box);
-	playerCreature->sendMessage(box->generateMessage());
+	//Broadcast Server wide message, new player has joined the server
+	StringBuffer zBroadcast;
+	zBroadcast << "\\#00ace6" << playerName << " \\#ffb90f Has Joined The Flurry Server!";
+	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 
 	return true;
 }
@@ -819,14 +886,14 @@ void PlayerCreationManager::addHair(CreatureObject* creature,
 		return;
 	}
 
-	if (hairAssetData->getServerPlayerTemplate()
+	/*if (hairAssetData->getServerPlayerTemplate()
 			!= creature->getObjectTemplate()->getFullTemplateString()) {
 		error(
 				"hair " + hairTemplate
 						+ " is not compatible with this creature player "
 						+ creature->getObjectTemplate()->getFullTemplateString());
 		return;
-	}
+	}*/
 
 	if (!hairAssetData->isAvailableAtCreation()) {
 		error("hair " + hairTemplate + " not available at creation");
