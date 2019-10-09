@@ -107,7 +107,8 @@ public:
 	ResourceSpawn* createRecycledResourceSpawn(const ResourceTreeEntry* entry) const;
 
 	ResourceSpawn* getRecycledVersion(const ResourceSpawn* resource) const;
-
+	ResourceSpawn* getRecycledResourceSpawnByType(const String& resourceType) const;
+	
 	bool isRecycledResource(const ResourceSpawn* resource) const;
 
 	int sendResourceRecycleType(const ResourceSpawn* resource) const;
@@ -148,7 +149,7 @@ public:
 
 		return "Error Dumping resources";
 	}
-
+	void dumpToJSON();
 	String getPlanetByIndex(int index) const;
 private:
 
