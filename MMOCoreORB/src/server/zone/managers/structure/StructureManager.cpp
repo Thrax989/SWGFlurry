@@ -993,8 +993,10 @@ void StructureManager::reportStructureStatus(CreatureObject* creature,
 
 		status->addMenuItem(
 				"@player_structure:items_in_building_prompt "
-						+ String::valueOf(
-								building->getCurrentNumberOfPlayerItems())); //Number of Items in Building:
+				//Number of Items in Building. Max item limit Added. [1/1000]:
+				+ String::valueOf(building->getCurrentNumberOfPlayerItems())
+				+ "/"
+				+ String::valueOf(building->getMaximumNumberOfPlayerItems()));
 
 #if ENABLE_STRUCTURE_JSON_EXPORT
 		if (creature->hasSkill("admin_base")) {
@@ -1139,7 +1141,9 @@ void StructureManager::promptPayUncondemnMaintenance(CreatureObject* creature, S
 }
 
 void StructureManager::promptPayMaintenance(StructureObject* structure, CreatureObject* creature, SceneObject* terminal) {
-	int availableCredits = creature->getCashCredits();
+	int bank = creature->getBankCredits();
+	int cash = creature->getCashCredits();
+	int availableCredits = bank + cash;
 
 	if (availableCredits <= 0) {
 		creature->sendSystemMessage("@player_structure:no_money"); //You do not have any money to pay maintenance.
@@ -1308,12 +1312,8 @@ void StructureManager::payMaintenance(StructureObject* structure,
 		return;
 	}
 
+	int bank = creature->getBankCredits();
 	int cash = creature->getCashCredits();
-
-	if (cash < amount) {
-		creature->sendSystemMessage("@player_structure:insufficient_funds"); //You have insufficient funds to make this deposit.
-		return;
-	}
 
 	StringIdChatParameter params("base_player", "prose_pay_success"); //You successfully make a payment of %DI credits to %TT.
 	params.setTT(structure->getDisplayedName());
@@ -1321,7 +1321,19 @@ void StructureManager::payMaintenance(StructureObject* structure,
 
 	creature->sendSystemMessage(params);
 
-	creature->subtractCashCredits(amount);
+	if (cash < amount) {
+		int diff = amount - cash;
+
+		if (diff > bank){
+			creature->sendSystemMessage("@player_structure:insufficient_funds"); //You have insufficient funds to make this deposit.
+			return;
+		}
+
+		creature->subtractCashCredits(cash); //Take all from cash, since they didn't have enough to cover.
+		creature->subtractBankCredits(diff); //Take the rest from the bank.
+	} else {
+		creature->subtractCashCredits(amount); //Take all of the payment from cash.
+	}
 	structure->addMaintenance(amount);
 
 	PlayerObject* ghost = creature->getPlayerObject();
