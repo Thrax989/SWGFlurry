@@ -95,6 +95,9 @@ public:
 		Locker _lock(targetCreature, creature);
 
 		targetCreature->switchZone(planetName, x, z, y, parentID);
+		ManagedReference<PlayerObject*> ghost = targetCreature->getPlayerObject();
+		ghost->setLinkDead(true);
+		ghost->disconnect(true, true);
 
 		return SUCCESS;
 	}
