@@ -10,6 +10,7 @@
 #include "server/zone/objects/draftschematic/DraftSchematic.h"
 #include "server/zone/objects/factorycrate/FactoryCrate.h"
 #include "server/zone/managers/crafting/CraftingManager.h"
+#include "server/zone/managers/stringid/StringIdManager.h"
 
 class GenerateCraftedItemCommand : public QueueCommand {
 public:
@@ -156,14 +157,26 @@ public:
 
 			prototype->createChildObjects();
 
-			// Set Crafter name and generate serial number
-			String name = "Generated with GenerateC Command";
-			prototype->setCraftersName(name);
+			// Crafter Name
+			ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
+			if (ghost->getAdminLevel() >= 15) {
+				String name = player->getFirstName();
+				prototype->setCraftersName(name);
+			} else {
+				String name = "Generated with GenerateC Command";
+				prototype->setCraftersName(name);
+			}
 
+			// Object Name
 			StringBuffer customName;
-			customName << prototype->getDisplayedName() <<  " (System Generated)";
+			if (ghost->getAdminLevel() >= 15) {
+				customName << prototype->getDisplayedName() << " \\#00CC00(" << player->getFirstName() << ")\\#FFFFFF";
+			} else {
+				customName << prototype->getDisplayedName() <<  " (System Generated)";
+			}
 			prototype->setCustomObjectName(customName.toString(), false);
 
+			// Serial Number
 			String serial = craftingManager->generateSerial();
 			prototype->setSerialNumber(serial);
 
