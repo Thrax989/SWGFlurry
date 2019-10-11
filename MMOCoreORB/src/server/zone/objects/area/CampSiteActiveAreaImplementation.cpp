@@ -204,7 +204,7 @@ void CampSiteActiveAreaImplementation::abandonCamp() {
 
 	if(despawnTask != nullptr && despawnTask->isScheduled()) {
 		despawnTask->cancel();
-                if (camp->getZone() != nullptr && campOwner != nullptr  && campOwner->getZone() != nullptr && campOwner->getZone()->getZoneName() != camp->getZone()->getZoneName()) { //If, at the time the camp goes abandoned (which happens one minute after it is empty), the camp owner is in a different zone from the camp (has teleported off world), schedule the despawn task in five seconds
+                if (camp->getZone() != NULL && campOwner != NULL  && campOwner->getZone() != NULL && campOwner->getZone()->getZoneName() != camp->getZone()->getZoneName()) { //If, at the time the camp goes abandoned (which happens one minute after it is empty), the camp owner is in a different zone from the camp (has teleported off world), schedule the despawn task in five seconds
                 	despawnTask->schedule(5000);
 
                 } else { // Otherwise, despawn the camp 2 minutes after it becomes abandoned
