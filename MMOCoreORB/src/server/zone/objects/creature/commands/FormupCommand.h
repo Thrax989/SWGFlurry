@@ -6,6 +6,9 @@
 #define FORMUPCOMMAND_H_
 
 #include "SquadLeaderCommand.h"
+#include "CombatQueueCommand.h"
+#include "server/zone/managers/combat/CombatManager.h"
+#include "server/zone/objects/scene/SceneObject.h"
 
 class FormupCommand : public SquadLeaderCommand {
 public:
@@ -58,6 +61,7 @@ public:
 			UnicodeString shout(ghost->getCommandMessageString(STRING_HASHCODE("formup")));
  	 	 	server->getChatManager()->broadcastChatMessage(player, shout, 0, 80, player->getMoodID(), 0, ghost->getLanguageID());
  	 	 	creature->updateCooldownTimer("command_message", 30 * 1000);
+ 	 	 	creature->playEffect("clienteffect/off_charge.cef", "");
 		}
 
 		return SUCCESS;
@@ -80,6 +84,9 @@ public:
 			Locker clocker(member, leader);
 
 			sendCombatSpam(member);
+
+			member->playEffect("clienteffect/off_charge.cef", "");
+			leader->playEffect("clienteffect/off_charge.cef", "");
 
 			if (member->isDizzied())
 				member->removeStateBuff(CreatureState::DIZZY);
