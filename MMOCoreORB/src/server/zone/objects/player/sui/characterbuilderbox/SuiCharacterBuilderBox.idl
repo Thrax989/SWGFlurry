@@ -23,8 +23,8 @@ class SuiCharacterBuilderBox extends SuiListBox {
 		
 		setPromptTitle("Character Builder");
 		
-		setPromptText("Provided below are items which the developers feel are necessary to complete the current testing objectives. Please select only the items which you require.");
-		
+		setPromptText("Welome To Flurry.");
+
 		rootNode = root;
 		
 		currentNode = root;
