@@ -6,6 +6,9 @@
 #define STEADYAIMCOMMAND_H_
 
 #include "SquadLeaderCommand.h"
+#include "CombatQueueCommand.h"
+#include "server/zone/managers/combat/CombatManager.h"
+#include "server/zone/objects/scene/SceneObject.h"
 
 class SteadyaimCommand : public SquadLeaderCommand {
 public:
@@ -62,7 +65,8 @@ public:
  	 	 	server->getChatManager()->broadcastChatMessage(player, shout, 0, 80, player->getMoodID(), 0, ghost->getLanguageID());
  	 	 	creature->updateCooldownTimer("command_message", 30 * 1000);
 		}
-
+		creature->playEffect("clienteffect/off_tactics.cef", "");
+		ghost->playEffect("clienteffect/off_tactics.cef", "");
 		return SUCCESS;
 	}
 
@@ -88,6 +92,7 @@ public:
 			if (!weapon->isRangedWeapon())
 				continue;
 
+			member->playEffect("clienteffect/off_tactics.cef", "");
 			int duration = 300;
 
 			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
