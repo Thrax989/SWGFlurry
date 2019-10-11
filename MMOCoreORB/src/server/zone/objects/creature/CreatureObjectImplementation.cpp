@@ -645,7 +645,7 @@ void CreatureObjectImplementation::addMountedCombatSlow() {
 		return;
 	}
 
-	ManagedReference<CreatureObject*> creo = asCreatureObject();
+	/*ManagedReference<CreatureObject*> creo = asCreatureObject();
 
 	Core::getTaskManager()->executeTask([=] () {
 		Locker locker(creo);
@@ -681,7 +681,7 @@ void CreatureObjectImplementation::addMountedCombatSlow() {
 		buff->setStartMessage(startStringId);
 
 		parent->addBuff(buff);
-	}, "AddMountedCombatSlowLambda");
+	}, "AddMountedCombatSlowLambda");*/
 }
 
 void CreatureObjectImplementation::removeMountedCombatSlow(bool showEndMessage) {
@@ -690,7 +690,7 @@ void CreatureObjectImplementation::removeMountedCombatSlow(bool showEndMessage) 
 	if (vehicle == nullptr)
 		return;
 
-	Core::getTaskManager()->executeTask([=] () {
+	/*Core::getTaskManager()->executeTask([=] () {
 		Locker locker(vehicle);
 		uint32 buffCRC = STRING_HASHCODE("mounted_combat_slow");
 		bool hasBuff = vehicle->hasBuff(buffCRC);
@@ -702,7 +702,7 @@ void CreatureObjectImplementation::removeMountedCombatSlow(bool showEndMessage) 
 				creo->sendSystemMessage(endStringId);
 			}
 		}
-	}, "RemoveMountedCombatSlowLambda");
+	}, "RemoveMountedCombatSlowLambda");*/
 }
 
 void CreatureObjectImplementation::setCombatState() {
