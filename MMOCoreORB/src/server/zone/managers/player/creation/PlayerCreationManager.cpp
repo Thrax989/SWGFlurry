@@ -670,6 +670,7 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
  	box->setCancelButton(true, "@no");
 	box->setOkButton(true, "@yes");
 	box->setUsingObject(ghost);
+	ghost->addSuiBox(box);
 	ghost->sendMessage(box->generateMessage());	
 
 	//Broadcast Server wide message, new player has joined the server
