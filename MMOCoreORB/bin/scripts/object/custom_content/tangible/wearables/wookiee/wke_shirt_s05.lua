@@ -1,0 +1,5 @@
+
+object_tangible_wearables_wookiee_wke_shirt_s05 = object_tangible_wearables_wookiee_shared_wke_shirt_s05:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_wookiee_wke_shirt_s05, "object/tangible/wearables/wookiee/wke_shirt_s05.iff")

@@ -1,0 +1,5 @@
+object_tangible_component_weapon_new_weapon_comp_reinforcement_core = object_tangible_component_weapon_shared_new_weapon_comp_reinforcement_core:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_new_weapon_comp_reinforcement_core, "object/tangible/component/weapon/new_weapon_comp_reinforcement_core.iff")

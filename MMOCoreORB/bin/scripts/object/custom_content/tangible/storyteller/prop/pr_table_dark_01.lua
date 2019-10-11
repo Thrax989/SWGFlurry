@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_table_dark_01 = object_tangible_storyteller_prop_shared_pr_table_dark_01:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_table_dark_01, "object/tangible/storyteller/prop/pr_table_dark_01.iff")

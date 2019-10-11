@@ -1,0 +1,5 @@
+object_tangible_component_camp_camp_module_shuttle_beacon = object_tangible_component_camp_shared_camp_module_shuttle_beacon:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_camp_camp_module_shuttle_beacon, "object/tangible/component/camp/camp_module_shuttle_beacon.iff")

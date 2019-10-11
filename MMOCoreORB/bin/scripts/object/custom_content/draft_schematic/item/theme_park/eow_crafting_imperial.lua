@@ -1,0 +1,5 @@
+object_draft_schematic_item_theme_park_eow_crafting_imperial = object_draft_schematic_item_theme_park_shared_eow_crafting_imperial:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_item_theme_park_eow_crafting_imperial, "object/draft_schematic/item/theme_park/eow_crafting_imperial.iff")

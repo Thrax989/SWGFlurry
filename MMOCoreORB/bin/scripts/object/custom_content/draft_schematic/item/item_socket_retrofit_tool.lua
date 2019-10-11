@@ -1,0 +1,5 @@
+object_draft_schematic_item_item_socket_retrofit_tool = object_draft_schematic_item_shared_item_socket_retrofit_tool:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_item_item_socket_retrofit_tool, "object/draft_schematic/item/item_socket_retrofit_tool.iff")

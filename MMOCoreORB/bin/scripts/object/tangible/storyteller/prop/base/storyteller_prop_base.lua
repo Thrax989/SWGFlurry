@@ -1,0 +1,3 @@
+object_tangible_storyteller_prop_base_storyteller_prop_base = object_tangible_storyteller_prop_base_shared_storyteller_prop_base:new {
+}
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_base_storyteller_prop_base, "object/tangible/storyteller/prop/base/storyteller_prop_base.iff")

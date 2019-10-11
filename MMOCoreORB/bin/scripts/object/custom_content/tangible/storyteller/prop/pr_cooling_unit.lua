@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_cooling_unit = object_tangible_storyteller_prop_shared_pr_cooling_unit:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_cooling_unit, "object/tangible/storyteller/prop/pr_cooling_unit.iff")

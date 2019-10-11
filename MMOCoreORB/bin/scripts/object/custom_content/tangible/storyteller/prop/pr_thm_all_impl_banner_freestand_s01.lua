@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_thm_all_impl_banner_freestand_s01 = object_tangible_storyteller_prop_shared_pr_thm_all_impl_banner_freestand_s01:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_thm_all_impl_banner_freestand_s01, "object/tangible/storyteller/prop/pr_thm_all_impl_banner_freestand_s01.iff")

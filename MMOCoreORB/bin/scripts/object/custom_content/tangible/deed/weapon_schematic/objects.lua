@@ -1,0 +1,4 @@
+object_tangible_deed_weapon_schematic_shared_2h_sword_sith_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/weapon_schematic/shared_2h_sword_sith_schematic.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_weapon_schematic_shared_2h_sword_sith_schematic, "object/tangible/deed/weapon_schematic/shared_2h_sword_sith_schematic.iff")

@@ -1,0 +1,8 @@
+includeFile("custom_content/draft_schematic/weapon/core/weapon_core_heavy_advanced.lua")
+includeFile("custom_content/draft_schematic/weapon/core/weapon_core_heavy_standard.lua")
+includeFile("custom_content/draft_schematic/weapon/core/weapon_core_melee_advanced.lua")
+includeFile("custom_content/draft_schematic/weapon/core/weapon_core_melee_basic.lua")
+includeFile("custom_content/draft_schematic/weapon/core/weapon_core_melee_standard.lua")
+includeFile("custom_content/draft_schematic/weapon/core/weapon_core_ranged_advanced.lua")
+includeFile("custom_content/draft_schematic/weapon/core/weapon_core_ranged_basic.lua")
+includeFile("custom_content/draft_schematic/weapon/core/weapon_core_ranged_standard.lua")

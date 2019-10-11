@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_rifle_lightning_basic = object_draft_schematic_weapon_shared_rifle_lightning_basic:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_rifle_lightning_basic, "object/draft_schematic/weapon/rifle_lightning_basic.iff")

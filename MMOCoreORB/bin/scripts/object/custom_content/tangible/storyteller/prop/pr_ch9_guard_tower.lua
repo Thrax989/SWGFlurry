@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_ch9_guard_tower = object_tangible_storyteller_prop_shared_pr_ch9_guard_tower:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_guard_tower, "object/tangible/storyteller/prop/pr_ch9_guard_tower.iff")

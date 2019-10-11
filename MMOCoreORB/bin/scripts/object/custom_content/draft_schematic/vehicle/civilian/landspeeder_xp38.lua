@@ -1,0 +1,5 @@
+object_draft_schematic_vehicle_civilian_landspeeder_xp38 = object_draft_schematic_vehicle_civilian_shared_landspeeder_xp38:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_vehicle_civilian_landspeeder_xp38, "object/draft_schematic/vehicle/civilian/landspeeder_xp38.iff")

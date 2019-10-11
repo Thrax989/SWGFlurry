@@ -1,0 +1,1 @@
+rebel_assault_boots = {	description = "",	minimumLevel = 0,	maximumLevel = 0,	lootItems = {		{itemTemplate = "armor_rebel_assault_boots", weight = 10000000}	}}addLootGroupTemplate("rebel_assault_boots", rebel_assault_boots)

@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_flash_speeder = object_tangible_storyteller_prop_shared_pr_flash_speeder:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_flash_speeder, "object/tangible/storyteller/prop/pr_flash_speeder.iff")

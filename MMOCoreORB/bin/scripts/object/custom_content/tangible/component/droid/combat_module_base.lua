@@ -1,0 +1,5 @@
+object_tangible_component_droid_combat_module_base = object_tangible_component_droid_shared_combat_module_base:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_droid_combat_module_base, "object/tangible/component/droid/combat_module_base.iff")

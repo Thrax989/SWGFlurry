@@ -1,0 +1,5 @@
+object_tangible_saga_system_rewards_planet_hologram_rori = object_tangible_saga_system_rewards_shared_planet_hologram_rori:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_saga_system_rewards_planet_hologram_rori, "object/tangible/saga_system/rewards/planet_hologram_rori.iff")

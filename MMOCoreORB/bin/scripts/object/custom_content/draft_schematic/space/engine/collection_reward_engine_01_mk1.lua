@@ -1,0 +1,5 @@
+object_draft_schematic_space_engine_collection_reward_engine_01_mk1 = object_draft_schematic_space_engine_shared_collection_reward_engine_01_mk1:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_space_engine_collection_reward_engine_01_mk1, "object/draft_schematic/space/engine/collection_reward_engine_01_mk1.iff")

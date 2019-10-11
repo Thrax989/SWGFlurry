@@ -1,0 +1,5 @@
+object_tangible_meatlump_hideout_meatlump_hotdog_grill_02 = object_tangible_meatlump_hideout_shared_meatlump_hotdog_grill_02:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_meatlump_hideout_meatlump_hotdog_grill_02, "object/tangible/meatlump/hideout/meatlump_hotdog_grill_02.iff")

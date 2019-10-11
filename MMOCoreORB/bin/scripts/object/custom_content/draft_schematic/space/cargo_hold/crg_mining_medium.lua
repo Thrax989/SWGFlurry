@@ -1,0 +1,5 @@
+object_draft_schematic_space_cargo_hold_crg_mining_medium = object_draft_schematic_space_cargo_hold_shared_crg_mining_medium:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_space_cargo_hold_crg_mining_medium, "object/draft_schematic/space/cargo_hold/crg_mining_medium.iff")
