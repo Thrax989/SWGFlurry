@@ -101,7 +101,7 @@ public:
 			if (channelBuff != nullptr)
 				channelBuff->activateRegenTick();
 		}
-
+		creature->playEffect("clienteffect/pl_force_channel_self.cef", "");
 		return SUCCESS;
 	}
 
