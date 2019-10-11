@@ -201,6 +201,13 @@ public:
 
 		Locker targetLock(targetCreature);
 
+		if (structure->isBuildingObject()) {
+			BuildingObject* building = cast<BuildingObject*>(structure);
+			if(building->hasAccessFee()) {
+				building->removeAccessFee();
+			}
+		}
+
 		targetGhost->addOwnedStructure(structure);
 
 		Locker clocker(structure, targetCreature);
