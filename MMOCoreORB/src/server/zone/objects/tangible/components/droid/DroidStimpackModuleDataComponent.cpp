@@ -384,10 +384,6 @@ void DroidStimpackModuleDataComponent::handleInsertStimpack(CreatureObject* play
 	if (player == nullptr)
 		return;
 
-	if (!player->hasSkill("science_medic_ability_04")) {
-		return;
-	}
-
 	ManagedReference<DroidObject*> droid = getDroidObject();
 	if (droid == nullptr) {
 		return;
