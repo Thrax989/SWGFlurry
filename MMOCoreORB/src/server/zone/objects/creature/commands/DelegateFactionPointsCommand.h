@@ -24,6 +24,11 @@ public:
 
 		uint32 currentFaction = creature->getFaction();
 
+		if (currentFaction == 0) {
+			creature->sendSystemMessage("@base_player:must_be_declared");
+			return GENERALERROR;
+		}
+
 		String faction;
 
 		if (creature->isImperial()) {
@@ -31,37 +36,30 @@ public:
 		} else
 			faction = "rebel";
 
-		PlayerObject* delegator = creature->getPlayerObject();
+		PlayerObject* ownerPlayerObject = creature->getPlayerObject();
 		PlayerObject* targetPlayerObject = targetPlayer->getPlayerObject();
 
 		int delegateRatioFrom = FactionManager::instance()->getRankDelegateRatioFrom(creature->getFactionRank());
 		int delegateRatioTo = FactionManager::instance()->getRankDelegateRatioTo(creature->getFactionRank());
 
-		int currentFactionPoints = delegator->getFactionStanding(faction);
-
-		uint32 targetsRank = targetPlayer->getFactionRank();
-		int targetsCap = FactionManager::instance()->getFactionPointsCap(targetsRank);
-		int targetsCurrentPoints = targetPlayerObject->getFactionStanding(faction);
+		int currentFactionPoints = ownerPlayerObject->getFactionStanding(faction);
 
 		float ratio = (float) delegateRatioFrom / (float)delegateRatioTo;
 
 		uint32 charge = ceil((float)tipAmount * ratio);
 
-		if (delegator->getFactionStanding(faction) < charge + 200) {
+		if (ownerPlayerObject->getFactionStanding(faction) < charge + 200) {
+			//not sure of the message
 			StringIdChatParameter param("faction_recruiter", "not_enough_standing_spend");
-			param.setDI(charge + 200);
+			param.setDI(200);
 			param.setTO(faction);
+
 			creature->sendSystemMessage(param);
 			return GENERALERROR;
 		}
 
-		if ((targetsCurrentPoints + tipAmount) > targetsCap) {
-			creature->sendSystemMessage("That amount would exceed the player's current rank points limit.");
-			return GENERALERROR;
-		}
-
 		targetPlayerObject->increaseFactionStanding(faction, tipAmount);
-		delegator->decreaseFactionStanding(faction, charge);
+		ownerPlayerObject->decreaseFactionStanding(faction, charge);
 
 		return SUCCESS;
 	}
@@ -86,44 +84,27 @@ public:
 		//Lets first check if it's a player, cause if it is we can skip some stuff.
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
-		StringIdChatParameter params("@cmd_err:target_type_prose"); // Your target for %TO was invalid.
-		params.setTO("Delegate Faction");
-
-		if (object == nullptr) {
-			creature->sendSystemMessage(params);
+		if (object == nullptr)
 			return INVALIDTARGET;
-		}
 
 		CreatureObject* targetCreature = dynamic_cast<CreatureObject*>(object.get());
 
-		if (targetCreature == nullptr) {
-			creature->sendSystemMessage(params);
+		if (targetCreature == nullptr)
 			return INVALIDTARGET;
-		}
 
 		Locker clocker(targetCreature, creature);
 
-		ManagedReference<PlayerObject*> delegator = creature->getPlayerObject();
 		PlayerObject* targetPlayerObject = targetCreature->getPlayerObject();
 
-		if (targetPlayerObject == nullptr) {
-			creature->sendSystemMessage(params);
+		if (targetPlayerObject == nullptr)
 			return INVALIDTARGET;
-		} else if (delegator == nullptr)
-			return GENERALERROR;
 
-		uint64 delegatorID = creature->getObjectID();
-
-		if (targetCreature->getObjectID() == delegatorID) {
-			creature->sendSystemMessage("@error_message:target_self_disallowed"); // You cannot target yourself with this command.
-			return INVALIDTARGET;
-		}
+		PlayerObject* ownerPlayerObject = creature->getPlayerObject();
 
 		uint32 currentFaction = creature->getFaction();
-		int delStatus = creature->getFactionStatus();
 
-		if (currentFaction == 0 || delStatus != 2) {
-			creature->sendSystemMessage("@base_player:must_be_declared"); // You must be declared to a faction before you may use that command.
+		if (currentFaction == 0) {
+			creature->sendSystemMessage("@base_player:must_be_declared");
 			return GENERALERROR;
 		}
 
@@ -137,21 +118,13 @@ public:
 		int delegateRatioFrom = FactionManager::instance()->getRankDelegateRatioFrom(creature->getFactionRank());
 		int delegateRatioTo = FactionManager::instance()->getRankDelegateRatioTo(creature->getFactionRank());
 
-		uint32 targetsRank = targetCreature->getFactionRank();
-		int targetsCap = FactionManager::instance()->getFactionPointsCap(targetsRank);
-
-		int currentFactionPoints = delegator->getFactionStanding(faction);
-		int targetsCurrentPoints = targetPlayerObject->getFactionStanding(faction);
-
-		if (targetsCurrentPoints == targetsCap) {
-			creature->sendSystemMessage("That player has reached the faction points limit for their current rank.");
-			return GENERALERROR;
-		}
+		int currentFactionPoints = ownerPlayerObject->getFactionStanding(faction);
 
 		if (currentFactionPoints < 200) {
-			StringIdChatParameter param("faction_recruiter", "not_enough_standing_spend"); //"You do not have enough faction standing to spend. You must maintain at least %DI to remain part of the %TO faction."
+			StringIdChatParameter param("faction_recruiter", "not_enough_standing_spend");
 			param.setDI(200);
 			param.setTO(faction);
+
 			creature->sendSystemMessage(param);
 			return GENERALERROR;
 		}
@@ -160,13 +133,13 @@ public:
 			ManagedReference<SuiTransferBox*> sui = new SuiTransferBox(creature, SuiWindowType::DELEGATE_TRANSFER);
 			sui->setCallback(new DelegateSuiCallback(server->getZoneServer()));
 			sui->setPromptTitle("@player_structure:select_amount"); //Select Amount
-			sui->setPromptText("Current faction points:" + String::valueOf(delegator->getFactionStanding(faction)));
+			sui->setPromptText("Current faction points:" + String::valueOf(ownerPlayerObject->getFactionStanding(faction)));
 			sui->addFrom("Total amount", String::valueOf(currentFactionPoints), String::valueOf(currentFactionPoints), String::valueOf(delegateRatioFrom));
 			sui->addTo("Delegate amount", "0", "0", String::valueOf(delegateRatioTo));
 			sui->setUsingObject(targetCreature);
 			sui->setForceCloseDistance(15.f);
 
-			delegator->addSuiBox(sui);
+			ownerPlayerObject->addSuiBox(sui);
 			creature->sendMessage(sui->generateMessage());
 
 			return SUCCESS;
