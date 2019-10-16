@@ -107,6 +107,9 @@
 #include "server/zone/managers/frs/FrsManager.h"
 #include "server/zone/objects/player/events/OnlinePlayerLogTask.h"
 #include <sys/stat.h>
+#include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
+#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 
 PlayerManagerImplementation::PlayerManagerImplementation(ZoneServer* zoneServer, ZoneProcessServer* impl,
 							bool trackOnlineUsers) :
@@ -1190,6 +1193,8 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	if (ghost != nullptr) {
 		ghost->resetIncapacitationTimes();
+		ghost->setFoodFilling(0);//Remove Food Filling After Death
+		ghost->setDrinkFilling(0);//Remove Drink Filling After Death
 		if (ghost->hasPvpTef()) {
 			ghost->schedulePvpTefRemovalTask(true, true);
 		}
@@ -1197,6 +1202,109 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	ThreatMap* threatMap = player->getThreatMap();
 
+/*Gray Jedi Death System*/
+	//0 Lives left you have Permanently died on your gray jedi
+	if (player->getScreenPlayState("jediLives") == 1) {
+		if (player->hasSkill("combat_jedi_novice")) {
+		int livesLeft = player->getScreenPlayState("jediLives") - 1;
+		int jediVis1 = ghost->getVisibility();
+		player->setScreenPlayState("jediLives", livesLeft);
+		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+		box->setPromptTitle("Jedi Lives");
+		StringBuffer promptText;
+		String playerName = player->getFirstName();
+		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
+		promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+		box->setPromptText(promptText.toString());
+		ghost->addSuiBox(box);
+		player->sendMessage(box->generateMessage());
+		StringBuffer zBroadcast;
+		zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#00ff00jedi";
+		ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 0 Lives"); // You have Lost 1 Jedi Life, you now have a total of 0 Lives
+		player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
+		}
+	}
+	//1 life left on your gray jedi
+	if (player->getScreenPlayState("jediLives") == 2) {
+		if (player->hasSkill("combat_jedi_novice")) {
+		int livesLeft = player->getScreenPlayState("jediLives") - 1;
+		int jediVis1 = ghost->getVisibility();
+		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 1 Life"); // You have Lost 1 Jedi Life, you now have a total of 1 Life
+		player->setScreenPlayState("jediLives", livesLeft);
+		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+		box->setPromptTitle("Jedi Lives");
+		StringBuffer promptText;
+		String playerName = player->getFirstName();
+		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
+		promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+		box->setPromptText(promptText.toString());
+		ghost->addSuiBox(box);
+		player->sendMessage(box->generateMessage());
+		}
+	}
+	//2 Lives left on your gray jedi
+	if (player->getScreenPlayState("jediLives") == 3) {
+		if (player->hasSkill("combat_jedi_novice")) {
+		int livesLeft = player->getScreenPlayState("jediLives") - 1;
+		int jediVis1 = ghost->getVisibility();
+		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 2 Lives"); // You have Lost 1 Jedi Life, you now have a total of 2 Lives
+		player->setScreenPlayState("jediLives", livesLeft);
+		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+		box->setPromptTitle("Jedi Lives");
+		StringBuffer promptText;
+		String playerName = player->getFirstName();
+		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
+		promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+		box->setPromptText(promptText.toString());
+		ghost->addSuiBox(box);
+		player->sendMessage(box->generateMessage());
+		}
+	}
+
+	//CUSTOM BH SYSTEM
+	if (attacker->isPlayerCreature() && attacker != player){
+		ManagedReference<SuiInputBox*> box = new SuiInputBox(player, SuiWindowType::OBJECT_NAME);
+		box->setPromptTitle("You have died.");
+		box->setPromptText("Place a bounty on your killer! Enter an amount between 1k and 2.5m credits. The Bounty Hunter Guild will take 20% for their fees and your target will be added to our boards immediately.");
+		box->setMaxInputSize(128);
+		box->setCancelButton(true, "@no");
+		box->setOkButton(true, "@yes");
+		box->setUsingObject(attacker);
+		box->setForceCloseDistance(2048.f);
+		box->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
+		player->getPlayerObject()->addSuiBox(box);
+		player->sendMessage(input->generateMessage());
+		}
+
+	//Custom Perma Death Broadcasting When you reach 0 lives
+	//Rebel gray jedi check
+	if (player->getScreenPlayState("jediLives") == 0) {
+		if (player->getFaction() == 370444368) {//rebel
+		if (player->hasSkill("combat_jedi_novice")) {
+			String playerName = player->getFirstName();
+			StringBuffer zBroadcast;
+			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
+			}
+		}
+	//Imperial gray jedi check
+	if (player->getScreenPlayState("jediLives") == 0) {
+		if (player->getFaction() == 3679112276) {//imperial
+		if (player->hasSkill("combat_jedi_novice")) {
+			String playerName = player->getFirstName();
+			StringBuffer zBroadcast;
+			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on your jedi
+			}
+		}
+	}
+
+	if (!attacker->isPlayerCreature()) {
+		ghost->updatePveDeaths();
+	}
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
 			CreatureObject* attackerCreature = attacker->asCreatureObject();
@@ -1266,6 +1374,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->setTargetID(0, true);
 
 	player->notifyObjectKillObservers(attacker);
+	}
 }
 
 void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* player, int typeofdeath) {
@@ -1486,6 +1595,14 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::ACTION, 100, true, false);
 		player->addWounds(CreatureAttribute::MIND, 100, true, false);
 		player->addShockWounds(100, true);
+	}
+
+	//PermaDeath : Gray Jedi with 0 lives cannot login
+	if (player->getScreenPlayState("jediLives") == 0) {
+		if (player->hasSkill("combat_jedi_novice")) {
+			ghost->setLinkDead(true);
+			ghost->disconnect(true, true);
+		}
 	}
 
 	if (player->getFactionStatus() != FactionStatus::ONLEAVE && cbot->getFacilityType() != CloningBuildingObjectTemplate::FACTION_IMPERIAL && cbot->getFacilityType() != CloningBuildingObjectTemplate::FACTION_REBEL && !player->hasSkill("force_title_jedi_rank_03"))
@@ -1722,7 +1839,7 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				String xpType = entry->elementAt(j).getKey();
 				float xpAmount = baseXp;
 
-				xpAmount *= (float) damage / totalDamage;
+				xpAmount /= (float) entry->size() / 1;
 
 				//Cap xp based on level
 				xpAmount = Math::min(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
@@ -1738,13 +1855,15 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				if (xpType != "jedi_general")
 					combatXp += xpAmount;
 				else
-					xpAmount *= 0.2f;
+					combatXp += xpAmount;
 
 				//Award individual expType
 				awardExperience(attacker, xpType, xpAmount);
 			}
 
-			combatXp = awardExperience(attacker, "combat_general", combatXp, true, 0.1f);
+			combatXp /= 10.f;
+
+			awardExperience(attacker, "combat_general", combatXp);
 
 			//Check if the group leader is a squad leader
 			if (group == nullptr)
@@ -2018,22 +2137,82 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 	if (playerObject == nullptr)
 		return 0;
 
-	float speciesModifier = 1.f;
-
-	if (amount > 0)
-		speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
-
-	float buffMultiplier = 1.f;
-
-	if (player->hasBuff(BuffCRC::FOOD_XP_INCREASE) && !player->containsActiveSession(SessionFacadeType::CRAFTING))
-		buffMultiplier += player->getSkillModFromBuffs("xp_increase") / 100.f;
-
-	int xp = 0;
-
-	if (applyModifiers)
-		xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * buffMultiplier * localMultiplier * globalExpMultiplier));
-	else
-		xp = playerObject->addExperience(xpType, (int)amount);
+	int xp;
+	if (amount <= 0 || xpType == "jedi_general" || xpType == "combat_jedi_novice"){
+		xp = playerObject->addExperience(xpType, amount);
+	} else if (xpType == "imagedesigner" ||
+		xpType == "bio_engineer" ||
+		xpType == "bio_engineer_dna_harvesting" ||
+		xpType == "bountyhunter" ||
+		xpType == "business_general" ||
+		xpType == "camp" ||
+		xpType == "combat" ||
+		xpType == "combat_general" ||
+		xpType == "combat_meleespecialize_onehand" ||
+		xpType == "combat_meleespecialize_polearm" ||
+		xpType == "combat_meleespecialize_twohand" ||
+		xpType == "combat_meleespecialize_unarmed" ||
+		xpType == "combat_rangedspecialize_carbine" ||
+		xpType == "combat_rangedspecialize_heavy" ||
+		xpType == "combat_rangedspecialize_pistol" ||
+		xpType == "combat_rangedspecialize_rifle" ||
+		xpType == "combat_rangespecialize_bactarifle" ||
+		xpType == "combatmedic" ||
+		xpType == "crafting_bio_engineer_creature" ||
+		xpType == "crafting_bio_engineer_tissue" ||
+		xpType == "crafting_clothing_armor" ||
+		xpType == "crafting_clothing_general" ||
+		xpType == "crafting_droid_general" ||
+		xpType == "crafting_food_general" ||
+		xpType == "crafting_general" ||
+		xpType == "crafting_medicine_general" ||
+		xpType == "crafting_scout" ||
+		xpType == "crafting_scout_camp" ||
+		xpType == "rafting_scout_trap" ||
+		xpType == "crafting_spice" ||
+		xpType == "crafting_structure_general" ||
+		xpType == "crafting_weapons_general" ||
+		xpType == "crafting_weapons_melee" ||
+		xpType == "crafting_weapons_munition" ||
+		xpType == "crafting_weapons_munitions" ||
+		xpType == "crafting_weapons_ranged" ||
+		xpType == "creaturehandler" ||
+		xpType == "dance" ||
+		xpType == "entertainer_healing" ||
+		xpType == "medical" ||
+		xpType == "merchant" ||
+		xpType == "music" ||
+		xpType == "pilot_general" ||
+		xpType == "pilot_imperial" ||
+		xpType == "pilot_neutral" ||
+		xpType == "political" ||
+		xpType == "prestige_imperial" ||
+		xpType == "prestige_pilot" ||
+		xpType == "prestige_rebel" ||
+		xpType == "ranger" ||
+		xpType == "resource_harvesting_inorganic" ||
+		xpType == "resource_harvesting_organic" ||
+		xpType == "reverse_engineering" ||
+		xpType == "scout" ||
+		xpType == "slicing" ||
+		xpType == "smuggler" || 
+		xpType == "space_combat_general" ||  
+		xpType == "squadleader" ||  
+		xpType == "trapping" || 
+		xpType == "shipwright") {
+		xp = playerObject->addExperience(xpType, (amount * 20));
+		float speciesModifier = 1.f;
+		if (amount > 0)
+			speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+		} else {
+			float speciesModifier = 1.f;
+			if (amount > 0)
+				speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
+			if (applyModifiers)
+				xp = playerObject->addExperience(xpType, (int) (amount * speciesModifier * localMultiplier * globalExpMultiplier));
+			else
+				xp = playerObject->addExperience(xpType, (int)amount);
+		}
 
 	player->notifyObservers(ObserverEventType::XPAWARDED, player, xp);
 
@@ -2879,8 +3058,8 @@ void PlayerManagerImplementation::startWatch(CreatureObject* creature, uint64 en
 	ManagedReference<SceneObject*> object = server->getObject(entid);
 	uint64 watchID = creature->getWatchToID();
 
-	if (watchID == entid)
-		return;
+	/*if (watchID == entid)
+		return;*/
 
 	if (object == nullptr)
 		return;
@@ -2897,8 +3076,8 @@ void PlayerManagerImplementation::startWatch(CreatureObject* creature, uint64 en
 
 	CreatureObject* entertainer = cast<CreatureObject*>( object.get());
 
-	if (creature == entertainer)
-		return;
+	/*if (creature == entertainer)
+		return;*/
 
 	Locker clocker(entertainer, creature);
 
@@ -2961,8 +3140,8 @@ void PlayerManagerImplementation::startListen(CreatureObject* creature, uint64 e
 	ManagedReference<SceneObject*> object = server->getObject(entid);
 	uint64 listenID = creature->getListenID();
 
-	if (listenID == entid)
-		return;
+	/*if (listenID == entid)
+		return;*/
 
 	if (object == nullptr)
 		return;
@@ -3032,8 +3211,8 @@ void PlayerManagerImplementation::startListen(CreatureObject* creature, uint64 e
 
 	CreatureObject* entertainer = cast<CreatureObject*>( object.get());
 
-	if (creature == entertainer)
-		return;
+	/*if (creature == entertainer)
+		return;*/
 
 	Locker clocker(entertainer, creature);
 
@@ -3594,9 +3773,9 @@ void PlayerManagerImplementation::addInsurableItemsRecursive(SceneObject* obj, S
 		if (item == nullptr || item->hasAntiDecayKit())
 			continue;
 
-		if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isArmorObject() || item->isWearableObject())) {
+		if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || (item->isArmorObject() || item->isWearableObject()))) {
 			items->put(item);
-		} else if ((item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isArmorObject() || item->isWearableObject()) && !onlyInsurable) {
+		} else if ((item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || (item->isArmorObject() || item->isWearableObject())) && !onlyInsurable) {
 			items->put(item);
 		}
 
@@ -5943,6 +6122,14 @@ float PlayerManagerImplementation::getSpeciesXpModifier(const String& species, c
 	return (100.f + bonus) / 100.f;
 }
 
+void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
+	PlayerObject* ghost = player->getPlayerObject();
+
+	if (ghost != nullptr) {
+		ghost->updatePvpKills();
+	}
+}
+
 void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, int councilType) {
 	PlayerObject* ghost = player->getPlayerObject();
 
@@ -6254,4 +6441,81 @@ void PlayerManagerImplementation::logOnlinePlayers(bool onlyWho) {
 	} catch (Exception& e) {
 		error("logOnlinePlayers failed to write " + fileName + ": " + e.getMessage());
 	}
+}
+
+void PlayerManagerImplementation::updateTopList(){
+	info("**** Updating Website Top List ***",true);
+
+	ObjectDatabase* sceneDatabase = ObjectDatabaseManager::instance()->loadObjectDatabase("sceneobjects", true, 0xFFFF, false);
+
+	if (sceneDatabase == nullptr)
+		return;
+
+	ObjectInputStream objectData(2000);
+	ObjectDatabaseIterator iterator(sceneDatabase);
+
+	uint64 objectID;
+	String className;
+
+	while (iterator.getNextKeyAndValue(objectID, &objectData)) {
+		if (Serializable::getVariable<String>(STRING_HASHCODE("_className"), &className, &objectData)) {
+			if (className == "CreatureObject") {
+				ManagedReference<CreatureObject*> player = Core::getObjectBroker()->lookUp(objectID).castTo<CreatureObject*>();
+
+				if (player == nullptr)
+					continue;
+
+				PlayerObject* ghost = player->getPlayerObject();
+
+				if (ghost == nullptr)
+					continue;
+
+				int faction = 0;
+
+				if (!ghost->hasGodMode()) {
+					int faction = 0;
+
+					if (player->getFaction() == Factions::FACTIONREBEL)
+						faction = 1;
+					else if (player->getFaction() == Factions::FACTIONIMPERIAL)
+						faction = 2;
+
+					StringBuffer query;
+					query << "UPDATE characters SET faction = '" << faction << "', pvpkills = '" << ghost->getPvpKills() << "', pvpdeaths = '" << ghost->getPvpDeaths()
+							<< "', bountykills = '" << ghost->getBountyKills() << "', pvekills = '" << ghost->getPveKills() << "', pvedeaths = '" << ghost->getPveDeaths()
+							<< "', missionscompleted = '" << ghost->getMissionsCompleted() << "' WHERE character_oid = '" << player->getObjectID() << "'";
+					ServerDatabase::instance()->executeStatement(query);
+				}
+			}
+		}
+		objectData.reset();
+	}
+
+	info("Website Top List Update Complete", true);
+}
+
+Vector<uint64> PlayerManagerImplementation::getOnlinePlayerList() {
+	Vector<uint64> playerList;
+
+	Locker locker(&onlineMapMutex);
+
+	HashTableIterator<uint32, Vector<Reference<ZoneClientSession*> > > iter = onlineZoneClientMap.iterator();
+
+	while (iter.hasNext()) {
+		Vector<Reference<ZoneClientSession*> > clients = iter.next();
+
+		for (int i = 0; i < clients.size(); i++) {
+			ZoneClientSession* session = clients.get(i);
+
+			if (session != NULL) {
+				CreatureObject* player = session->getPlayer();
+
+				if (player != NULL) {
+					playerList.add(player->getObjectID());
+				}
+			}
+		}
+	}
+
+	return playerList;
 }
