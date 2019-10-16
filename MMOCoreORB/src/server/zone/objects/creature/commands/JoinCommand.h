@@ -25,12 +25,10 @@ public:
 
 		GroupManager* groupManager = GroupManager::instance();
 		groupManager->joinGroup(creature);
-			creature->playEffect("clienteffect/death_trooper_anti_virus.cef", "");
-
+		creature->playEffect("clienteffect/death_trooper_anti_virus.cef", "");
 		return SUCCESS;
 	}
 
 };
 
 #endif //JOINCOMMAND_H_
-

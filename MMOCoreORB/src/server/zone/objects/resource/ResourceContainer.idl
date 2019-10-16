@@ -10,6 +10,7 @@ include server.zone.objects.resource.ResourceSpawn;
 import server.zone.objects.creature.CreatureObject;
 include server.zone.packets.scene.AttributeListMessage;
 import server.zone.objects.scene.SceneObject;
+
 @json
 class ResourceContainer extends TangibleObject {
 
@@ -66,12 +67,12 @@ class ResourceContainer extends TangibleObject {
 		return true;
 	}
 
-	@dirty
+	@read
 	public int getQuantity() {
 		return stackQuantity;
 	}
 
-	@dirty
+	@read
 	public int getUseCount() {
 		return getQuantity();
 	}

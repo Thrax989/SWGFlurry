@@ -136,7 +136,7 @@ public:
 
 		StringIdChatParameter harvestMessage("skl_use", milkZone);
 		harvestMessage.setDI(quantityExtracted);
-		harvestMessage.setTU(resourceSpawn->getFinalClass());
+		harvestMessage.setTU(resourceSpawn->nullptr());
 
 		resourceManager->harvestResourceToPlayer(player, resourceSpawn, quantityExtracted);
 		player->sendSystemMessage(harvestMessage);

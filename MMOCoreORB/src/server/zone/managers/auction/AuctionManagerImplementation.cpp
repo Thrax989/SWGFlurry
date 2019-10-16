@@ -36,10 +36,9 @@
 #include "server/zone/objects/factorycrate/FactoryCrate.h"
 
 void AuctionManagerImplementation::initialize() {
-
 	Locker locker(_this.getReferenceUnsafeStaticCast());
 
-	Core::getTaskManager()->initializeCustomQueue("AuctionSearchQueue", ConfigManager::instance()->getMaxAuctionSearchJobs(), false);
+	Core::getTaskManager()->initializeCustomQueue("AuctionSearchQueue", ConfigManager::instance()->getMaxAuctionSearchJobs(), true);
 
 	auctionMap = new AuctionsMap();
 
@@ -52,6 +51,7 @@ void AuctionManagerImplementation::initialize() {
 
 	Vector<ManagedReference<AuctionItem*> > orphanedBazaarItems;
 	ManagedReference<SceneObject*> defaultBazaar = nullptr;
+	ManagedReference<PlayerManager*> playerManager = zoneServer->getPlayerManager();
 
 	while (iterator.getNextKey(objectID)) {
 		Reference<AuctionItem*> auctionItem = Core::getObjectBroker()->lookUp(objectID).castTo<AuctionItem*>();
@@ -80,10 +80,47 @@ void AuctionManagerImplementation::initialize() {
 			continue;
 		}
 
+		String ownerName = playerManager->getPlayerName(auctionItem->getOwnerID());
+
+		if (ownerName.isEmpty()) {
+			error("Auction for item " + String::valueOf(auctionItem->getAuctionedItemObjectID()) + " had invalid owner, oid: " + String::valueOf(auctionItem->getOwnerID()) + ", deleting item.");
+
+			uint64 sellingId = auctionItem->getAuctionedItemObjectID();
+			auctionMap->deleteItem(vendor, auctionItem);
+
+			Core::getTaskManager()->executeTask([this, sellingId] () {
+					ManagedReference<SceneObject*> sceno = zoneServer->getObject(sellingId);
+
+					if (sceno != nullptr) {
+						Locker locker(sceno);
+
+						sceno->destroyObjectFromDatabase(true);
+					}
+				}, "DeleteAuctionItemLambda", "slowQueue");
+
+			continue;
+		}
+
+		uint64 vendorExpire = time(0) + AuctionManager::VENDOREXPIREPERIOD;
+		uint64 commodityExpire = time(0) + AuctionManager::COMMODITYEXPIREPERIOD;
+		uint64 oldExpire = 0;
+
+		if (auctionItem->getStatus() == AuctionItem::FORSALE && auctionItem->getExpireTime() > vendorExpire) {
+			oldExpire = auctionItem->getExpireTime();
+			auctionItem->setExpireTime(vendorExpire);
+			error("Auction for item " + String::valueOf(auctionItem->getAuctionedItemObjectID()) + " had invalid expiration time. Old: " + String::valueOf(oldExpire) + ", new: " + String::valueOf(auctionItem->getExpireTime()) + ", owner: " + ownerName);
+		}
+
+		if (auctionItem->getStatus() == AuctionItem::OFFERED && auctionItem->getExpireTime() > commodityExpire) {
+			oldExpire = auctionItem->getExpireTime();
+			auctionItem->setExpireTime(commodityExpire);
+			error("Auction for item " + String::valueOf(auctionItem->getAuctionedItemObjectID()) + " had invalid expiration time. Old: " + String::valueOf(oldExpire) + ", new: " + String::valueOf(auctionItem->getExpireTime()) + ", owner: " + ownerName);
+		}
+
 		if(vendor->isBazaarTerminal() && defaultBazaar == nullptr)
 			defaultBazaar = vendor;
 
-		auctionMap->addItem(NULL, vendor, auctionItem);
+		auctionMap->addItem(nullptr, vendor, auctionItem);
 
 		if(auctionItem->isOnBazaar() || auctionItem->getStatus() == AuctionItem::OFFERED)
 			auctionMap->addToCommodityLimit(auctionItem);
@@ -130,8 +167,10 @@ void AuctionManagerImplementation::initialize() {
 
 	locker.release();
 
-	checkAuctions(true);
-	checkVendorItems(true);
+	Core::getTaskManager()->executeTask([=] () {
+		checkAuctions(true);
+		checkVendorItems(true);
+	}, "StartupAuctionManagerCheck", "slowQueue");
 
 	info("loaded auctionsMap of size: " + String::valueOf(auctionMap->getTotalItemCount()), true);
 
@@ -139,7 +178,10 @@ void AuctionManagerImplementation::initialize() {
 }
 
 void AuctionManagerImplementation::checkVendorItems(bool startupTask) {
-    Timer timer(Time::MONOTONIC_TIME);
+	if (startupTask)
+		info("checkVendorItems initial startup task", true);
+
+    	Timer timer(Time::MONOTONIC_TIME);
 
 	timer.start();
 	TerminalListVector items = auctionMap->getVendorTerminalData("", "", 0);
@@ -154,6 +196,9 @@ void AuctionManagerImplementation::checkVendorItems(bool startupTask) {
 }
 
 void AuctionManagerImplementation::checkAuctions(bool startupTask) {
+	if (startupTask)
+		info("checkAuctions initial startup task", true);
+
 	Reference<CheckAuctionsTask*> task = new CheckAuctionsTask(_this.getReferenceUnsafeStaticCast());
 	task->schedule(CHECKEVERY * 60 * 1000);
 
@@ -194,10 +239,15 @@ void AuctionManagerImplementation::doAuctionMaint(TerminalListVector* items, con
 			count_total++;
 
 			ManagedReference<SceneObject*> vendor = zoneServer->getObject(item->getVendorID());
+			ManagedReference<PlayerManager*> playerManager = zoneServer->getPlayerManager();
+			String ownerName = playerManager->getPlayerName(item->getOwnerID());
 
-			if(vendor == nullptr || vendor->getZone() == nullptr) {
+			if(vendor == nullptr || vendor->getZone() == nullptr || ownerName.isEmpty()) {
 				uint64 sellingId = item->getAuctionedItemObjectID();
 				auctionMap->deleteItem(vendor, item);
+
+				if (ownerName.isEmpty())
+					error("Auction for item " + String::valueOf(item->getAuctionedItemObjectID()) + " had invalid owner, oid: " + String::valueOf(item->getOwnerID()) + ", deleting item.");
 
 				Core::getTaskManager()->executeTask([this, sellingId] () {
 						ManagedReference<SceneObject*> sceno = zoneServer->getObject(sellingId);
@@ -210,6 +260,34 @@ void AuctionManagerImplementation::doAuctionMaint(TerminalListVector* items, con
 					}, "DeleteAuctionItemLambda", "slowQueue");
 
 				continue;
+			}
+
+			uint64 vendorExpire = time(0) + AuctionManager::VENDOREXPIREPERIOD;
+			uint64 commodityExpire = time(0) + AuctionManager::COMMODITYEXPIREPERIOD;
+			bool updatedExpire = false;
+			uint64 oldExpire = 0;
+
+			if (item->getStatus() == AuctionItem::FORSALE && item->getExpireTime() > vendorExpire) {
+				oldExpire = item->getExpireTime();
+				item->setExpireTime(vendorExpire);
+				updatedExpire = true;
+			}
+
+			if (item->getStatus() == AuctionItem::OFFERED && item->getExpireTime() > commodityExpire) {
+				oldExpire = item->getExpireTime();
+				item->setExpireTime(commodityExpire);
+				updatedExpire = true;
+			}
+
+			if (updatedExpire) {
+				if(item->isAuction() && auctionEvents.contains(item->getAuctionedItemObjectID())) {
+					Reference<Task*> newTask = auctionEvents.get(item->getAuctionedItemObjectID());
+
+					if(newTask != nullptr)
+						newTask->reschedule((item->getExpireTime() - time(0)) * 1000);
+				}
+
+				error("Auction for item " + String::valueOf(item->getAuctionedItemObjectID()) + " had invalid expiration time. Old: " + String::valueOf(oldExpire) + ", new: " + String::valueOf(item->getExpireTime()) + ", owner: " + ownerName);
 			}
 
 			if (item->getExpireTime() <= currentTime) {
@@ -388,7 +466,6 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 	objectToSellLocker.release();
 
 	if (vendor->isBazaarTerminal()) {
-
 		StringIdChatParameter str("@base_player:sale_fee"); // The fee for your listing is %DI credits.
 
 		float costReduction = 1;
@@ -418,7 +495,6 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 			}
 
 		} else {
-
 			int listCost = costReduction * SALESFEE;
 
 			if (bank < listCost) {
@@ -458,7 +534,6 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 				if(strongOwnerRef->isOnline()) {
 					strongOwnerRef->sendSystemMessage(player->getFirstName() + " has offered an item to " + vendor->getDisplayedName());
 				}
-				
 				// Flurry: Email player about offer to vendor
 				UnicodeString subject("@auction:vedor_offer_subject"); // An item has been offered to your vendor
 				
@@ -526,7 +601,7 @@ String AuctionManagerImplementation::getVendorUID(SceneObject* vendor) {
 int AuctionManagerImplementation::checkSaleItem(CreatureObject* player, SceneObject* object, SceneObject* vendor, int price, bool premium, bool stockroomSale) {
 
 	if (vendor == nullptr) {
-		error("NULL Vendor");
+		error("nullptr Vendor");
 		return ItemSoldMessage::UNKNOWNERROR;
 	}
 
@@ -643,6 +718,7 @@ AuctionItem* AuctionManagerImplementation::createVendorItem(CreatureObject* play
 			if (prototype != nullptr) {
 				item->setFactoryCrate(true);
 				item->setCratedItemType(prototype->getClientGameObjectType());
+				item->setUpdated(true);
 			}
 		}
 	}
@@ -715,9 +791,7 @@ void AuctionManagerImplementation::doInstantBuy(CreatureObject* player, AuctionI
 	int bank = player->getBankCredits();
 	int cash = player->getCashCredits();
 	int availableCredits = bank + cash;
-
 	ManagedReference<CityRegion*> city = nullptr;
-
 	String vendorPlanetName("@planet_n:" + vendor->getZone()->getZoneName());
 	String vendorRegionName = vendorPlanetName;
 
@@ -890,7 +964,7 @@ void AuctionManagerImplementation::doInstantBuy(CreatureObject* player, AuctionI
 		UnicodeString blankBody;
 		cman->sendMail(sender, sellerSubject, blankBody, sellerName, &sellerBodyVector, &sellerWaypointVector);
 		cman->sendMail(sender, buyerSubject, blankBody, item->getBidderName(), &buyerBodyVector, &buyerWaypointVector);
-		
+
 	}
 
 	if (seller == nullptr) {
@@ -899,7 +973,6 @@ void AuctionManagerImplementation::doInstantBuy(CreatureObject* player, AuctionI
 	}
 
 	locker.release();
-	
 	// Skim % of vendor sale into vendor maint
 	int skim = 0;
 	
@@ -918,7 +991,6 @@ void AuctionManagerImplementation::doInstantBuy(CreatureObject* player, AuctionI
 			vendorData->skimMaintanence(skim);
 		}
 	}
-
 	Locker slocker(seller);
 	seller->addBankCredits(item->getPrice() - tax - skim);
 	slocker.release();
@@ -961,11 +1033,9 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 		int increase = price1 - item->getPrice();
 
 		int fullPrice = proxyBid + increase - item->getPrice();
-
 		int priorBank = priorBidder->getBankCredits();
 		int priorCash = priorBidder->getCashCredits();
 		int priorAvailableCredits = priorBank + priorCash;
-
 
 		//TODO: prior didnt have enough money -> assert.. fix properly
 		if (priorAvailableCredits < fullPrice) {
@@ -990,7 +1060,6 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 		} else {
 			priorBidder->subtractBankCredits(fullPrice); //Take all of the payment from bank.
 		}
-
 		item->setPrice(proxyBid + increase);
 		BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), BidAuctionResponseMessage::SUCCEDED);
 		player->sendMessage(msg);
@@ -1014,6 +1083,7 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 	if (playerAvailableCredits <  price1 || playerAvailableCredits < item->getPrice()) {
 		BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), BidAuctionResponseMessage::NOTENOUGHCREDITS);
 		player->sendMessage(msg);
+
 		return;
 	}
 
@@ -1035,7 +1105,6 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 		item->setBidderName(playername);
 
 		// take money from high bidder
-		
 		if (playerBank < item->getPrice()) {
 			int playerDiff = item->getPrice() - playerBank;
 
@@ -1137,9 +1206,7 @@ void AuctionManagerImplementation::buyItem(CreatureObject* player, uint64 object
 
 		doAuctionBid(player, item, price1, price2);
 	}
-
 }
-
 
 int AuctionManagerImplementation::checkRetrieve(CreatureObject* player, uint64 objectIdToRetrieve, SceneObject* vendor) {
     // Check both Bazaar and Vendors
@@ -1277,7 +1344,7 @@ void AuctionManagerImplementation::retrieveItem(CreatureObject* player, uint64 o
 
 	ManagedReference<AuctionItem*> item = auctionMap->getItem(objectid);
 	if (item == nullptr) {
-		error("NULL item in retrieveItem()");
+		error("nullptr item in retrieveItem()");
 		return;
 	}
 

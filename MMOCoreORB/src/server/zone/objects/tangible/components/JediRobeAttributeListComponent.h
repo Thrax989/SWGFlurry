@@ -17,11 +17,11 @@ public:
 	void fillAttributeList(AttributeListMessage* alm, CreatureObject* creature, SceneObject* object) const {
 
 		ManagedReference<RobeObject*> robe = cast<RobeObject*> (object);
-		if (robe == NULL) {
+		if (robe == nullptr) {
 			return;
 		}
 
-		VectorMap<String, int>* skills = robe->getTemplateSkillMods();
+		const auto skills = robe->getTemplateSkillMods();
 
 		if (skills->contains("jedi_force_power_max")) {
 			int mod = skills->get("jedi_force_power_max");

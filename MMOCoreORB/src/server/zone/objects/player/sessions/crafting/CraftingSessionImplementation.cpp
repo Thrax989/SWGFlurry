@@ -5,6 +5,7 @@
  *      Author: Kyle
  */
 
+#include "server/zone/objects/scene/variables/StringId.h"
 #include "server/zone/objects/player/sessions/crafting/CraftingSession.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -1065,10 +1066,12 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 	UnicodeString customName(newName);
 	prototype->setCustomObjectName(customName, false);
 
-	/// Set Name
-	manufactureSchematic->getObjectName()->setStringId(
+	auto newObjectName = server::zone::objects::scene::variables::StringId(
 			prototype->getObjectNameStringIdFile(),
 			prototype->getObjectNameStringIdName());
+
+	/// Set Name
+	manufactureSchematic->setObjectName(newObjectName, false);
 
 	/// Set Manufacture Schematic Custom name
 	if (!newName.isEmpty())
@@ -1305,10 +1308,10 @@ void CraftingSessionImplementation::addSkillMods() {
 
 	ManagedReference<DraftSchematic*> draftSchematic = manufactureSchematic->getDraftSchematic();
 
-	VectorMap<String, int>* skillMods = draftSchematic->getDraftSchematicTemplate()->getSkillMods();
+	const VectorMap<String, int>* skillMods = draftSchematic->getDraftSchematicTemplate()->getSkillMods();
 
 	for (int i = 0; i < skillMods->size(); i++) {
-		VectorMapEntry<String, int> mod = skillMods->elementAt(i);
+		const auto& mod = skillMods->elementAt(i);
 
 		if (prototype->isWearableObject()) {
 			WearableObject* wearable = prototype.castTo<WearableObject*>();
@@ -1341,13 +1344,13 @@ void CraftingSessionImplementation::addWeaponDots() {
 	ManagedReference<ManufactureSchematic*> manufactureSchematic = this->manufactureSchematic.get();
 	ManagedReference<DraftSchematic*> draftSchematic = manufactureSchematic->getDraftSchematic();
 
-	Vector<VectorMap<String, int> >* weaponDots = draftSchematic->getDraftSchematicTemplate()->getWeaponDots();
+	const Vector<VectorMap<String, int> >* weaponDots = draftSchematic->getDraftSchematicTemplate()->getWeaponDots();
 
 	for (int i = 0; i < weaponDots->size(); i++) {
-		VectorMap<String, int> dot = weaponDots->elementAt(i);
+		const auto& dot = weaponDots->elementAt(i);
 
 		for (int j = 0; j < dot.size(); j++) {
-			String property = dot.elementAt(j).getKey();
+			const String& property = dot.elementAt(j).getKey();
 			int value = dot.elementAt(j).getValue();
 
 			if (property == "type")

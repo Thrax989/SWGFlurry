@@ -62,7 +62,7 @@ void BuildingObjectImplementation::loadTemplateData(
 
 	totalCellNumber = buildingData->getTotalCellNumber();
 
-	PortalLayout* portalLayout = templateData->getPortalLayout();
+	const PortalLayout* portalLayout = templateData->getPortalLayout();
 
 	if (portalLayout != nullptr)
 		totalCellNumber = portalLayout->getFloorMeshNumber() - 1; //remove the exterior floor
@@ -160,7 +160,7 @@ void BuildingObjectImplementation::sendTo(SceneObject* player, bool doClose, boo
 	for (int i = 0; i < cells.size(); ++i) {
 		auto& cell = cells.get(i);
 
-		ContainerPermissions* perms = cell->getContainerPermissions();
+		auto perms = cell->getContainerPermissions();
 
 		if (!perms->hasInheritPermissionsFromParent()) {
 			CreatureObject* creo = player->asCreatureObject();
@@ -199,7 +199,7 @@ bool BuildingObjectImplementation::hasTemplateEjectionPoint() {
 		return true;
 }
 
-Vector3 BuildingObjectImplementation::getTemplateEjectionPoint() {
+Vector3 BuildingObjectImplementation::getTemplateEjectionPoint() const {
 	SharedBuildingObjectTemplate* buildingTemplate = templateObject.castTo<SharedBuildingObjectTemplate*>();
 
 	return buildingTemplate->getEjectionPoint();
@@ -228,7 +228,7 @@ Vector3 BuildingObjectImplementation::getEjectionPoint() {
 
 		if (shot != nullptr && shot->isSharedBuildingObjectTemplate()) {
 			SharedBuildingObjectTemplate *templateData = static_cast<SharedBuildingObjectTemplate*>(shot);
-			PortalLayout* portalLayout = templateData->getPortalLayout();
+			const PortalLayout* portalLayout = templateData->getPortalLayout();
 
 			if (portalLayout != nullptr) {
 				const Vector<Reference<CellProperty*> >& cells = portalLayout->getCellProperties();
@@ -448,11 +448,18 @@ void BuildingObjectImplementation::notifyObjectInsertedToZone(SceneObject* objec
 }
 
 void BuildingObjectImplementation::notifyInsert(QuadTreeEntry* obj) {
-	//info("BuildingObjectImplementation::notifyInsert");
-	//remove when done
-	//return;
+#if DEBUG_COV
+	if (getObjectID() == 88) { // Theed Cantina
+		info("BuildingObjectImplementation::notifyInsert(" + String::valueOf(obj->getObjectID()) + ")", true);
 
-	SceneObject* scno = static_cast<SceneObject*>(obj);
+		auto c = static_cast<CreatureObject*>(obj);
+
+		if (c != nullptr)
+			c->info("BuildingObjectImplementation::notifyInsert into " + String::valueOf(getObjectID()), true);
+	}
+#endif // DEBUG_COV
+
+	auto scno = static_cast<SceneObject*>(obj);
 
 	bool objectInThisBuilding = scno->getRootParent() == asBuildingObject();
 
@@ -468,14 +475,12 @@ void BuildingObjectImplementation::notifyInsert(QuadTreeEntry* obj) {
 
 				if (child != obj && child != nullptr) {
 					if ((objectInThisBuilding || (child->isCreatureObject() && isPublicStructure())) || isStaticBuilding()) {
-						//if (is)
-
 						if (child->getCloseObjects() != nullptr)
 							child->addInRangeObject(obj, false);
 						else
 							child->notifyInsert(obj);
 
-						child->sendTo(scno, true, false);//sendTo because notifyInsert doesnt send objects with parent
+						child->sendTo(scno, true, false);
 
 						if (scno->getCloseObjects() != nullptr)
 							scno->addInRangeObject(child, false);
@@ -498,6 +503,17 @@ void BuildingObjectImplementation::notifyInsert(QuadTreeEntry* obj) {
 }
 
 void BuildingObjectImplementation::notifyDissapear(QuadTreeEntry* obj) {
+#if DEBUG_COV
+	if (getObjectID() == 88) { // Theed Cantina
+		info("BuildingObjectImplementation::notifyDissapear(" + String::valueOf(obj->getObjectID()) + ")", true);
+
+		auto c = static_cast<CreatureObject*>(obj);
+
+		if (c != nullptr)
+			c->info("BuildingObjectImplementation::notifyDissapear from " + String::valueOf(getObjectID()), true);
+	}
+#endif // DEBUG_COV
+
 	for (int i = 0; i < cells.size(); ++i) {
 		auto& cell = cells.get(i);
 
@@ -512,11 +528,70 @@ void BuildingObjectImplementation::notifyDissapear(QuadTreeEntry* obj) {
 
 			if (child->getCloseObjects() != nullptr)
 				child->removeInRangeObject(obj);
+			else
+				child->notifyDissapear(obj);
 
 			if (obj->getCloseObjects() != nullptr)
 				obj->removeInRangeObject(child);
+			else
+				obj->notifyDissapear(child);
 		}
 	}
+}
+
+void BuildingObjectImplementation::notifyPositionUpdate(QuadTreeEntry* entry) {
+#if ! COV_BUILDING_QUAD_RANGE
+	StructureObjectImplementation::notifyPositionUpdate(entry);
+	return;
+#else // COV_BUILDING_QUAD_RANGE
+#if DEBUG_COV_VERBOSE
+	if (getObjectID() == 88) { // Theed Cantina
+		info("BuildingObjectImplementation::notifyPositionUpdate(" + String::valueOf(entry->getObjectID()) + ")", true);
+
+		auto c = static_cast<CreatureObject*>(entry);
+
+		if (c != nullptr)
+			c->info("BuildingObjectImplementation::notifyPositionUpdate to " + String::valueOf(getObjectID()), true);
+	}
+#endif // DEBUG_COV_VERBOSE
+
+	auto scno = static_cast<SceneObject*>(entry);
+
+	bool objectInThisBuilding = scno->getRootParent() == asBuildingObject();
+
+	for (int i = 0; i < cells.size(); ++i) {
+		auto& cell = cells.get(i);
+
+		if (!cell->isContainerLoaded())
+			continue;
+
+		try {
+			for (int j = 0; j < cell->getContainerObjectsSize(); ++j) {
+				auto child = cell->getContainerObject(j);
+
+				if (child != entry && child != nullptr) {
+					if ((objectInThisBuilding || (child->isCreatureObject() && isPublicStructure())) || isStaticBuilding()) {
+						if (child->getCloseObjects() != nullptr)
+							child->addInRangeObject(entry);
+						else
+							child->notifyPositionUpdate(entry);
+
+						if (entry->getCloseObjects() != nullptr)
+							entry->addInRangeObject(child);
+						else
+							entry->notifyPositionUpdate(child);
+					} else if (!scno->isCreatureObject() && !child->isCreatureObject()) {
+						child->notifyPositionUpdate(entry);
+						entry->notifyPositionUpdate(child);
+					}
+				}
+			}
+		} catch (Exception& e) {
+			warning(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+#endif // COV_BUILDING_QUAD_RANGE
 }
 
 void BuildingObjectImplementation::insert(QuadTreeEntry* entry) {
@@ -557,7 +632,7 @@ CellObject* BuildingObjectImplementation::getCell(const String& cellName) {
 	if (buildingTemplate == nullptr)
 		return nullptr;
 
-	PortalLayout* portalLayout = buildingTemplate->getPortalLayout();
+	const PortalLayout* portalLayout = buildingTemplate->getPortalLayout();
 
 	if (portalLayout == nullptr)
 		return nullptr;
@@ -949,7 +1024,7 @@ bool BuildingObjectImplementation::isInPlayerCity() {
 }
 
 bool BuildingObjectImplementation::canPlayerRegisterWithin() {
-	PlanetMapCategory* pmc = getPlanetMapSubCategory();
+	const PlanetMapCategory* pmc = getPlanetMapSubCategory();
 
 	if (pmc == nullptr)
 		pmc = getPlanetMapCategory();
@@ -1292,7 +1367,7 @@ void BuildingObjectImplementation::createChildObjects() {
 				}
 			}
 
-			ContainerPermissions* permissions = obj->getContainerPermissions();
+			ContainerPermissions* permissions = obj->getContainerPermissionsForUpdate();
 			permissions->setOwner(getObjectID());
 			permissions->setInheritPermissionsFromParent(false);
 			permissions->setDefaultDenyPermission(ContainerPermissions::MOVECONTAINER);
@@ -1463,7 +1538,7 @@ void BuildingObjectImplementation::spawnChildCreature(String& mobile, int respaw
 	childCreatureObjects.put(creature);
 }
 
-bool BuildingObjectImplementation::hasTemplateChildCreatures() {
+bool BuildingObjectImplementation::hasTemplateChildCreatures() const {
 	SharedBuildingObjectTemplate* buildingTemplate = cast<SharedBuildingObjectTemplate*>(getObjectTemplate());
 
 	if (buildingTemplate == nullptr)
@@ -1508,7 +1583,7 @@ void BuildingObjectImplementation::destroyChildObjects() {
 	}
 }
 
-void BuildingObjectImplementation::changeSign(SignTemplate* signConfig) {
+void BuildingObjectImplementation::changeSign(const SignTemplate* signConfig) {
 	if (signConfig == nullptr)
 		return;
 
@@ -1562,7 +1637,7 @@ void BuildingObjectImplementation::changeSign(SignTemplate* signConfig) {
 	getZone()->transferObject(signObject, -1, false);
 
 	// Set sign permissions
-	ContainerPermissions* permissions = signSceno->getContainerPermissions();
+	ContainerPermissions* permissions = signSceno->getContainerPermissionsForUpdate();
 	permissions->setOwner(getObjectID());
 	permissions->setInheritPermissionsFromParent(false);
 	permissions->setDefaultDenyPermission(ContainerPermissions::MOVECONTAINER);
@@ -1599,7 +1674,7 @@ void BuildingObjectImplementation::changeSign(SignTemplate* signConfig) {
 bool BuildingObjectImplementation::togglePrivacy() {
 	// If the building is a cantina then we need to add/remove it from the planet's
 	// mission map for performance locations.
-	PlanetMapCategory* planetMapCategory = getPlanetMapCategory();
+	const PlanetMapCategory* planetMapCategory = getPlanetMapCategory();
 	if (planetMapCategory != nullptr) {
 		String planetMapCategoryName = planetMapCategory->getName();
 		if (planetMapCategoryName == "cantina") {
@@ -1630,7 +1705,7 @@ BuildingObject* BuildingObjectImplementation::asBuildingObject() {
 	return _this.getReferenceUnsafeStaticCast();
 }
 
-Vector<Reference<MeshData*> > BuildingObjectImplementation::getTransformedMeshData(const Matrix4* parentTransform) {
+Vector<Reference<MeshData*> > BuildingObjectImplementation::getTransformedMeshData(const Matrix4* parentTransform) const {
 	Vector<Reference<MeshData*> > data;
 
 	Quaternion directionRecast(direction.getW(), direction.getX(), direction.getY(), -direction.getZ());
@@ -1641,11 +1716,11 @@ Vector<Reference<MeshData*> > BuildingObjectImplementation::getTransformedMeshDa
 
 	const auto fullTransform = transform * *parentTransform;
 
-	PortalLayout *pl = getObjectTemplate()->getPortalLayout();
+	const PortalLayout *pl = getObjectTemplate()->getPortalLayout();
 	if(pl) {
 		if(pl->getCellTotalNumber() > 0) {
-			AppearanceTemplate *appr = pl->getAppearanceTemplate(0);
-			FloorMesh *floor = TemplateManager::instance()->getFloorMesh(appr->getFloorMesh());
+			const AppearanceTemplate *appr = pl->getAppearanceTemplate(0);
+			const FloorMesh *floor = TemplateManager::instance()->getFloorMesh(appr->getFloorMesh());
 
 			if (floor == nullptr) {
 				floor = pl->getFloorMesh(0);
@@ -1677,11 +1752,11 @@ Vector<Reference<MeshData*> > BuildingObjectImplementation::getTransformedMeshDa
 }
 
 const BaseBoundingVolume* BuildingObjectImplementation::getBoundingVolume() {
-	PortalLayout *pl = getObjectTemplate()->getPortalLayout();
+	const PortalLayout *pl = getObjectTemplate()->getPortalLayout();
 
 	if(pl) {
 		if(pl->getCellTotalNumber() > 0) {
-			AppearanceTemplate *appr = pl->getAppearanceTemplate(0);
+			const AppearanceTemplate *appr = pl->getAppearanceTemplate(0);
 			return appr->getBoundingVolume();
 		}
 	} else {
@@ -1700,16 +1775,20 @@ bool BuildingObjectImplementation::isBuildingObject() {
 }
 
 float BuildingObjectImplementation::getOutOfRangeDistance() const {
+#ifdef COV_BUILDING_QUAD_RANGE
 	return ZoneServer::CLOSEOBJECTRANGE * 4;
+#else // COV_BUILDING_QUAD_RANGE
+	return ZoneServer::CLOSEOBJECTRANGE;
+#endif // COV_BUILDING_QUAD_RANGE
 }
 
-String BuildingObjectImplementation::getCellName(uint64 cellID) {
+String BuildingObjectImplementation::getCellName(uint64 cellID) const {
 	SharedBuildingObjectTemplate* buildingTemplate = templateObject.castTo<SharedBuildingObjectTemplate*>();
 
 	if (buildingTemplate == nullptr)
 		return "";
 
-	PortalLayout* portalLayout = buildingTemplate->getPortalLayout();
+	const PortalLayout* portalLayout = buildingTemplate->getPortalLayout();
 
 	if (portalLayout == nullptr)
 		return "";

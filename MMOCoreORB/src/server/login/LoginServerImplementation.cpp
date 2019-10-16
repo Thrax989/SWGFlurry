@@ -10,6 +10,7 @@
 #include "LoginMessageProcessorTask.h"
 
 #include "conf/ConfigManager.h"
+#include "server/login/account/Account.h"
 #include "server/login/account/AccountManager.h"
 
 #include "LoginHandler.h"
@@ -19,7 +20,7 @@
 LoginServerImplementation::LoginServerImplementation(ConfigManager* configMan) :
 		ManagedServiceImplementation(), Logger("LoginServer") {
 
-	phandler = NULL;
+	phandler = nullptr;
 
 	datagramService = new DatagramServiceThread("LoginDatagramService");
 	datagramService->setLogging(false);
@@ -30,19 +31,17 @@ LoginServerImplementation::LoginServerImplementation(ConfigManager* configMan) :
 
 	configManager = configMan;
 
-	processor = NULL;
+	processor = nullptr;
 
-	enumClusterMessage = NULL;
-
-	accountManager = NULL;
+	accountManager = nullptr;
 
 	setLogging(false);
 }
 
 void LoginServerImplementation::initializeTransientMembers() {
-	phandler = NULL;
+	phandler = nullptr;
 
-	processor = NULL;
+	processor = nullptr;
 
 	ManagedObjectImplementation::initializeTransientMembers();
 }
@@ -57,8 +56,6 @@ void LoginServerImplementation::initialize() {
 	startManagers();
 
 	//taskManager->setLogging(false);
-
-	populateGalaxyList();
 
 	return;
 }
@@ -83,15 +80,14 @@ void LoginServerImplementation::stop() {
 	shutdown();
 
 	datagramService->stop();
-	datagramService = NULL;
+	datagramService = nullptr;
 }
 
 void LoginServerImplementation::shutdown() {
 	stopManagers();
-	loginHandler = NULL;
-	phandler = NULL;
-	processor = NULL;
-	enumClusterMessage = NULL;
+	loginHandler = nullptr;
+	phandler = nullptr;
+	processor = nullptr;
 
 	printInfo();
 
@@ -99,8 +95,8 @@ void LoginServerImplementation::shutdown() {
 }
 
 void LoginServerImplementation::stopManagers() {
-	accountManager = NULL;
-	configManager = NULL;
+	accountManager = nullptr;
+	configManager = nullptr;
 
 	info("managers stopped", true);
 }
@@ -121,13 +117,13 @@ LoginClient* LoginServerImplementation::createConnection(Socket* sock, SocketAdd
 }
 
 void LoginServerImplementation::handleMessage(LoginClient* client, Packet* message) {
-	if (phandler == NULL)
+	if (phandler == nullptr)
 		return;
 
 	BaseClientProxy* session = cast<BaseClientProxy*>(client->getSession());
 
 	try {
-		if (session != NULL && session->isAvailable())
+		if (session != nullptr && session->isAvailable())
 			phandler->handlePacket(session, message);
 
 	} catch (PacketIndexOutOfBoundsException& e) {
@@ -154,7 +150,7 @@ LoginClient* LoginServerImplementation::getLoginClient(ServiceClient* session) {
 bool LoginServerImplementation::handleError(ServiceClient* client, Exception& e) {
 	BaseClientProxy* bclient = cast<BaseClientProxy*>(client);
 
-	if (bclient != NULL) {
+	if (bclient != nullptr) {
 		bclient->setError();
 
 		bclient->disconnect();
@@ -173,45 +169,35 @@ void LoginServerImplementation::printInfo() {
 	unlock();
 }
 
-void LoginServerImplementation::populateGalaxyList() {
-	//Populate the galaxies list for the login server.
-	GalaxyList galaxies;
+LoginEnumCluster* LoginServerImplementation::getLoginEnumClusterMessage(Account* account) {
+	auto galaxies = GalaxyList(account->getUsername());
 	uint32 galaxyCount = galaxies.size();
 
-	//In case we want to add the functionality to update the lists while the server is running...
-	if (enumClusterMessage != NULL) {
-		delete enumClusterMessage;
-		enumClusterMessage = NULL;
-	}
-
-	enumClusterMessage = new LoginEnumCluster(galaxyCount);
-    while (galaxies.next()) {
-    	uint32 galaxyID = galaxies.getGalaxyID();
-
-    	String name;
-    	galaxies.getGalaxyName(name);
-
-    	enumClusterMessage->addGalaxy(galaxyID, name);
-    }
-
-    enumClusterMessage->finish();
-}
-
-LoginClusterStatus* LoginServerImplementation::getLoginClusterStatusMessage() {
-	GalaxyList galaxies;
-	uint32 galaxyCount = galaxies.size();
-
-	auto clusterStatusMessage = new LoginClusterStatus(galaxyCount);
+	auto msg = new LoginEnumCluster(galaxyCount);
 
 	while (galaxies.next()) {
-		uint32 galaxyID = galaxies.getGalaxyID();
-
-		String address;
-		galaxies.getGalaxyAddress(address);
-
-		clusterStatusMessage->addGalaxy(galaxyID, address, galaxies.getRandomGalaxyPort(), galaxies.getGalaxyPingPort());
+		msg->addGalaxy(galaxies.getID(), galaxies.getName());
 	}
 
-	return clusterStatusMessage;
+	msg->finish();
+
+	return msg;
 }
 
+LoginClusterStatus* LoginServerImplementation::getLoginClusterStatusMessage(Account* account) {
+	auto galaxies = GalaxyList(account->getUsername());
+	uint32 galaxyCount = galaxies.size();
+
+	auto msg = new LoginClusterStatus(galaxyCount);
+
+	while (galaxies.next()) {
+		msg->addGalaxy(
+			galaxies.getID(),
+			galaxies.getAddress(),
+			galaxies.getRandomPort(),
+			galaxies.getPingPort()
+		);
+	}
+
+	return msg;
+}

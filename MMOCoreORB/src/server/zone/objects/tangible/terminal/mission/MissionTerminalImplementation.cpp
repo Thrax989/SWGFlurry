@@ -13,7 +13,6 @@
 #include "server/zone/managers/city/CityRemoveAmenityTask.h"
 #include "server/zone/objects/player/sessions/SlicingSession.h"
 #include "server/zone/managers/director/DirectorManager.h"
-
 #include "server/zone/objects/player/PlayerObject.h"
 
 void MissionTerminalImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
@@ -21,7 +20,7 @@ void MissionTerminalImplementation::fillObjectMenuResponse(ObjectMenuResponse* m
 
 	ManagedReference<CityRegion*> city = player->getCityRegion().get();
 
-	if (city != NULL && city->isMayor(player->getObjectID()) && getParent().get() == NULL) {
+	if (city != nullptr && city->isMayor(player->getObjectID()) && getParent().get() == nullptr) {
 
 		menuResponse->addRadialMenuItem(72, 3, "@city/city:mt_remove"); // Remove
 
@@ -31,7 +30,6 @@ void MissionTerminalImplementation::fillObjectMenuResponse(ObjectMenuResponse* m
 		menuResponse->addRadialMenuItemToRadialID(73, 76, 3, "@city/city:south"); // South
 		menuResponse->addRadialMenuItemToRadialID(73, 77, 3, "@city/city:west"); // West
 	}
-
 	if (terminalType == "general" || terminalType == "imperial" || terminalType == "rebel") {
 		menuResponse->addRadialMenuItem(112, 3, "Choose Mission Level");
 		menuResponse->addRadialMenuItem(113, 3, "Choose Mission Direction");
@@ -45,7 +43,7 @@ int MissionTerminalImplementation::handleObjectMenuSelect(CreatureObject* player
 		if (isBountyTerminal())
 			return 0;
 
-		if (city != NULL && !city->isClientRegion() && city->isBanned(player->getObjectID())) {
+		if (city != nullptr && !city->isClientRegion() && city->isBanned(player->getObjectID())) {
 			player->sendSystemMessage("@city/city:banned_services"); // You are banned from using this city's services.
 			return 0;
 		}
@@ -71,7 +69,7 @@ int MissionTerminalImplementation::handleObjectMenuSelect(CreatureObject* player
 
 	} else if (selectedID == 72) {
 
-		if (city != NULL && city->isMayor(player->getObjectID())) {
+		if (city != nullptr && city->isMayor(player->getObjectID())) {
 			CityRemoveAmenityTask* task = new CityRemoveAmenityTask(_this.getReferenceUnsafeStaticCast(), city);
 			task->execute();
 
@@ -86,7 +84,6 @@ int MissionTerminalImplementation::handleObjectMenuSelect(CreatureObject* player
 		cityManager->alignAmenity(city, player, _this.getReferenceUnsafeStaticCast(), selectedID - 74);
 
 		return 0;
-
 	} else if (selectedID == 112) {
 
 		Lua* lua = DirectorManager::instance()->getLuaInstance();

@@ -10,15 +10,15 @@
 #include "Skill.h"
 #include "server/zone/managers/skill/SkillManager.h"
 
-bool SkillList::containsSkill(const String& skillBox) {
+bool SkillList::containsSkill(const String& skillBox) const {
 	String low = skillBox.toLowerCase();
 
 	ReadLocker readLocker(getLock());
 
 	for (int i = 0; i < vector.size(); ++i) {
-		Reference<Skill*> skill = vector.get(i);
+		const auto& skill = vector.get(i);
 
-		if (skill == NULL)
+		if (skill == nullptr)
 			continue;
 
 		String name = skill->getSkillName().toLowerCase();
@@ -31,7 +31,7 @@ bool SkillList::containsSkill(const String& skillBox) {
 
 	Reference<Skill*> box = skillManager->getSkill(skillBox);
 
-	if (box != NULL) {
+	if (box != nullptr) {
 		return find(box) != -1;
 	}
 
@@ -42,7 +42,7 @@ void SkillList::getStringList(Vector<String>& skills) const {
 	for (int i = 0; i < vector.size(); ++i) {
 		const Reference<Skill*>& skill = vector.getUnsafe(i);
 
-		if (skill == NULL)
+		if (skill == nullptr)
 			continue;
 
 		const String& name = skill->getSkillName();
@@ -52,13 +52,14 @@ void SkillList::getStringList(Vector<String>& skills) const {
 }
 
 bool SkillList::toBinaryStream(ObjectOutputStream* stream) {
+	TypeInfo<uint32>::toBinaryStream(&updateCounter, stream);
+
 #ifdef ODB_SERIALIZATION
 	skills.toBinaryStream(stream);
 #else
 	Vector<String> names;
 	getStringList(names);
 
-	TypeInfo<uint32>::toBinaryStream(&updateCounter, stream);
 	names.toBinaryStream(stream);
 #endif
 	return true;
@@ -76,12 +77,12 @@ void to_json(nlohmann::json& j, const SkillList& s) {
 }
 
 bool SkillList::parseFromBinaryStream(ObjectInputStream* stream) {
+	TypeInfo<uint32>::parseFromBinaryStream(&updateCounter, stream);
+
 #ifdef ODB_SERIALIZATION
 	skills.parseFromBinaryStream(stream);
 #else
 	Vector<String> skills;
-
-	TypeInfo<uint32>::parseFromBinaryStream(&updateCounter, stream);
 	skills.parseFromBinaryStream(stream);
 
 	loadFromNames(skills);
@@ -100,7 +101,7 @@ void SkillList::loadFromNames(Vector<String>& skillBoxes) {
 
 		Reference<Skill*> box = skillManager->getSkill(name);
 
-		if (box == NULL)
+		if (box == nullptr)
 			continue;
 
 		vector.add(box);
@@ -110,7 +111,7 @@ void SkillList::loadFromNames(Vector<String>& skillBoxes) {
 bool SkillList::add(Skill* skill, DeltaMessage* message) {
 	bool val = vector.emplace(skill);
 
-	if (message != NULL && skill != NULL) {
+	if (message != nullptr && skill != nullptr) {
 		message->startList(1, ++updateCounter);
 
 		message->insertByte(1);
@@ -127,7 +128,7 @@ void SkillList::remove(Skill* skill, DeltaMessage* message) {
 
 	Reference<Skill*> skillObject = vector.remove(index);
 
-	if (message != NULL  && skill != NULL) {
+	if (message != nullptr  && skill != nullptr) {
 		message->startList(1, ++updateCounter);
 
 		message->insertByte(0);
@@ -136,14 +137,14 @@ void SkillList::remove(Skill* skill, DeltaMessage* message) {
 	}
 }
 
-void SkillList::insertToMessage(BaseMessage* msg) {
+void SkillList::insertToMessage(BaseMessage* msg) const {
 	msg->insertInt(vector.size());
 	msg->insertInt(updateCounter);
 
 	for (int i = 0; i < vector.size(); ++i) {
 		const Reference<Skill*>& skill = get(i);
 
-		if (skill == NULL)
+		if (skill == nullptr)
 			continue;
 
 		msg->insertAscii(skill->getSkillName());

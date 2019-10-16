@@ -56,7 +56,7 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
 	if (attacker->isPlayerCreature() && attacker->getPlayerObject()->isAFK())
 		return false;
 
-    if (attacker != nullptr && attacker->isInvisible()) {
+	    if (attacker != nullptr && attacker->isInvisible()) {
             	attacker->removePendingTask("invisibleevent");
                 attacker->sendSystemMessage("You are now visible to all players and creatures.");
                 attacker->setInvisible(false);
@@ -112,7 +112,7 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
 }
 
 bool CombatManager::attemptPeace(CreatureObject* attacker) {
-	DeltaVector<ManagedReference<SceneObject*> >* defenderList = attacker->getDefenderList();
+	const DeltaVector<ManagedReference<SceneObject*> >* defenderList = attacker->getDefenderList();
 
 	for (int i = defenderList->size() - 1; i >= 0; --i) {
 		try {
@@ -173,7 +173,7 @@ bool CombatManager::attemptPeace(CreatureObject* attacker) {
 void CombatManager::forcePeace(CreatureObject* attacker) {
 	assert(attacker->isLockedByCurrentThread());
 
-	DeltaVector<ManagedReference<SceneObject*> >* defenderList = attacker->getDefenderList();
+	const DeltaVector<ManagedReference<SceneObject*> >* defenderList = attacker->getDefenderList();
 
 	for (int i = 0; i < defenderList->size(); ++i) {
 		ManagedReference<SceneObject*> object = defenderList->getSafe(i);
@@ -306,7 +306,7 @@ int CombatManager::doCombatAction(TangibleObject* attacker, WeaponObject* weapon
 
 int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* tano, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef) {
 	int damage = 0;
-	
+
 	Locker clocker(tano, attacker);
 
 	if (!tano->isAttackableBy(attacker))
@@ -747,7 +747,7 @@ int CombatManager::getAttackerAccuracyModifier(TangibleObject* attacker, Creatur
 
 	int attackerAccuracy = 0;
 
-	Vector<String>* creatureAccMods = weapon->getCreatureAccuracyModifiers();
+	const auto creatureAccMods = weapon->getCreatureAccuracyModifiers();
 
 	for (int i = 0; i < creatureAccMods->size(); ++i) {
 		const String& mod = creatureAccMods->get(i);
@@ -807,7 +807,7 @@ int CombatManager::getDefenderDefenseModifier(CreatureObject* defender, WeaponOb
 	int targetDefense = defender->isPlayerCreature() ? 0 : defender->getLevel();
 	int buffDefense = 0;
 
-	Vector<String>* defenseAccMods = weapon->getDefenderDefenseModifiers();
+	const auto defenseAccMods = weapon->getDefenderDefenseModifiers();
 
 	for (int i = 0; i < defenseAccMods->size(); ++i) {
 		const String& mod = defenseAccMods->get(i);
@@ -845,7 +845,7 @@ int CombatManager::getDefenderSecondaryDefenseModifier(CreatureObject* defender)
 	int targetDefense = defender->isPlayerCreature() ? 0 : defender->getLevel();
 	ManagedReference<WeaponObject*> weapon = defender->getWeapon();
 
-	Vector<String>* defenseAccMods = weapon->getDefenderSecondaryDefenseModifiers();
+	const auto defenseAccMods = weapon->getDefenderSecondaryDefenseModifiers();
 
 	for (int i = 0; i < defenseAccMods->size(); ++i) {
 		const String& mod = defenseAccMods->get(i);
@@ -865,7 +865,7 @@ int CombatManager::getDefenderSecondaryDefenseModifier(CreatureObject* defender)
 float CombatManager::getDefenderToughnessModifier(CreatureObject* defender, int attackType, int damType, float damage) {
 	ManagedReference<WeaponObject*> weapon = defender->getWeapon();
 
-	Vector<String>* defenseToughMods = weapon->getDefenderToughnessModifiers();
+	const auto defenseToughMods = weapon->getDefenderToughnessModifiers();
 
 	if (attackType == weapon->getAttackType()) {
 		for (int i = 0; i < defenseToughMods->size(); ++i) {
@@ -957,7 +957,7 @@ int CombatManager::calculateDamageRange(TangibleObject* attacker, CreatureObject
 
 float CombatManager::applyDamageModifiers(CreatureObject* attacker, WeaponObject* weapon, float damage, const CreatureAttackData& data) {
 	if (!data.isForceAttack()) {
-		Vector<String>* weaponDamageMods = weapon->getDamageModifiers();
+		const auto weaponDamageMods = weapon->getDamageModifiers();
 
 		for (int i = 0; i < weaponDamageMods->size(); ++i) {
 			damage += attacker->getSkillMod(weaponDamageMods->get(i));
@@ -987,7 +987,7 @@ float CombatManager::applyDamageModifiers(CreatureObject* attacker, WeaponObject
 int CombatManager::getSpeedModifier(CreatureObject* attacker, WeaponObject* weapon) {
 	int speedMods = 0;
 
-	Vector<String>* weaponSpeedMods = weapon->getSpeedModifiers();
+	const auto weaponSpeedMods = weapon->getSpeedModifiers();
 
 	for (int i = 0; i < weaponSpeedMods->size(); ++i) {
 		speedMods += attacker->getSkillMod(weaponSpeedMods->get(i));
@@ -1189,7 +1189,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, ABILITYARMOR);
 		}
 	}
-		
+
 	if (!data.isForceAttack()) {
 		// Force Armor
 		float rawDamage = damage;
@@ -1263,10 +1263,6 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		dmgAbsorbed -= damage;
 		if (dmgAbsorbed > 0)
 			sendMitigationCombatSpam(defender, psg, (int)dmgAbsorbed, PSG);
-
-		// inflict condition damage
-		// TODO: this formula makes PSG's take more damage than regular armor, but that's how it was on live
-		// it can be fixed by doing condition damage after all damage reductions
 
 		Locker plocker(psg);
 
@@ -1506,7 +1502,7 @@ bool CombatManager::isFlameThrowerAttack(const CreatureAttackData& data) {
 	else
 		return false;
 }
- 
+
 void CombatManager::getFrsModifiedForceAttackDamage(CreatureObject* attacker, float& minDmg, float& maxDmg, const CreatureAttackData& data) {
 	ManagedReference<PlayerObject*> ghost = attacker->getPlayerObject();
 
@@ -1715,7 +1711,7 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 	// now we have a successful hit, so calculate secondary defenses if there is a damage component
 	if (damage > 0) {
 		ManagedReference<WeaponObject*> targetWeapon = targetCreature->getWeapon();
-		Vector<String>* defenseAccMods = targetWeapon->getDefenderSecondaryDefenseModifiers();
+		const auto defenseAccMods = targetWeapon->getDefenderSecondaryDefenseModifiers();
 		const String& def = defenseAccMods->get(0); // FIXME: this is hacky, but a lot faster than using contains()
 
 		// saber block is special because it's just a % chance to block based on the skillmod
@@ -2641,6 +2637,7 @@ void CombatManager::declineDuel(CreatureObject* player, CreatureObject* targetPl
 		StringIdChatParameter stringId2("duel", "cancel_target");
 		stringId2.setTT(player->getObjectID());
 		targetPlayer->sendSystemMessage(stringId2);
+
 		player->info("declined duel with " + String::valueOf(targetPlayer->getObjectID()));
 	}
 }
@@ -2759,7 +2756,7 @@ Reference<SortedVector<ManagedReference<TangibleObject*> >* > CombatManager::get
 
 				if (targetCell != nullptr) {
 					if (!object->isPlayerCreature()) {
-						ContainerPermissions* perms = targetCell->getContainerPermissions();
+						auto perms = targetCell->getContainerPermissions();
 
 						if (!perms->hasInheritPermissionsFromParent()) {
 							if (targetCell->checkContainerPermission(aggressor, ContainerPermissions::WALKIN))

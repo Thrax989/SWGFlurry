@@ -58,7 +58,6 @@ public:
 	const static int ABILITYARMOR = 0x8;
 
 
-
 	Vector<uint32> defaultMeleeAttacks;
 	Vector<uint32> defaultRangedAttacks;
 
@@ -167,6 +166,7 @@ public:
 	int getArmorObjectReduction(ArmorObject* armor, int damageType);
 
 	ArmorObject* getPSGArmor(CreatureObject* defender);
+
 	//all the combat math will go here
 protected:
 
@@ -220,7 +220,9 @@ protected:
 	int getArmorNpcReduction(AiAgent* defender, int damageType);
 	int getArmorVehicleReduction(VehicleObject* defender, int damageType);
 	int getArmorTurretReduction(CreatureObject* attacker, TangibleObject* defender, int damageType);
+
 	ArmorObject* getArmorObject(CreatureObject* defender, uint8 hitLocation);
+
 	/**
 	 * returns bitmask with what pools to damage
 	 */

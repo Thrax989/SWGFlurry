@@ -45,8 +45,8 @@ IDLC = ../MMOEngine/bin/idlc
 
 IDL_CLASSPATH = ../MMOEngine/include
 
-#IDL_DIRECTIVES = -noprelocks -makefile src/Makefile.am -outdir autogen -cp $(IDL_CLASSPATH)
-IDL_DIRECTIVES = -makefile src/Makefile.am -outdir autogen -cp $(IDL_CLASSPATH)
+#IDL_DIRECTIVES = -noprelocks -outdir autogen -cp $(IDL_CLASSPATH)
+IDL_DIRECTIVES = -outdir autogen -cp $(IDL_CLASSPATH)
 
 UNITTEST_DIRECTIVES =
 
@@ -80,7 +80,7 @@ rebuild: clean
 	${MAKE} build
 
 gitlog:
-	cd bin/conf && git log --pretty=format:'%h was %an, %ar, message: %s' -10 > rev.txt
+	cd bin/conf && git log --no-merges --pretty=format:'%h was %an, %ar, message: %s' -10 > rev.txt
 
 idl:
 	$(IDLC) $(IDL_DIRECTIVES) -sd src anyadEclipse

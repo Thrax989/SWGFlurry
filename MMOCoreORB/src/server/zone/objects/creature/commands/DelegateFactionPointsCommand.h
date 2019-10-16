@@ -84,19 +84,19 @@ public:
 		//Lets first check if it's a player, cause if it is we can skip some stuff.
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
-		if (object == NULL)
+		if (object == nullptr)
 			return INVALIDTARGET;
 
 		CreatureObject* targetCreature = dynamic_cast<CreatureObject*>(object.get());
 
-		if (targetCreature == NULL)
+		if (targetCreature == nullptr)
 			return INVALIDTARGET;
 
 		Locker clocker(targetCreature, creature);
 
 		PlayerObject* targetPlayerObject = targetCreature->getPlayerObject();
 
-		if (targetPlayerObject == NULL)
+		if (targetPlayerObject == nullptr)
 			return INVALIDTARGET;
 
 		PlayerObject* ownerPlayerObject = creature->getPlayerObject();

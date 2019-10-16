@@ -30,12 +30,12 @@ public:
 
 		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
 
-		if (player == NULL)
+		if (player == nullptr)
 			return GENERALERROR;
 
 		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
-		if (ghost == NULL)
+		if (ghost == nullptr)
 			return GENERALERROR;
 
 		ManagedReference<GroupObject*> group = player->getGroup();
@@ -65,21 +65,19 @@ public:
  	 	 	server->getChatManager()->broadcastChatMessage(player, shout, 0, 80, player->getMoodID(), 0, ghost->getLanguageID());
  	 	 	creature->updateCooldownTimer("command_message", 30 * 1000);
 		}
-
 		creature->playEffect("clienteffect/off_tactics.cef", "");
 		ghost->playEffect("clienteffect/off_tactics.cef", "");
-
 		return SUCCESS;
 	}
 
 	bool doSteadyAim(CreatureObject* leader, GroupObject* group, int amount) const {
-		if (leader == NULL || group == NULL)
+		if (leader == nullptr || group == nullptr)
 			return false;
 
 		for (int i = 0; i < group->getGroupSize(); i++) {
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
-			if (member == NULL || !member->isPlayerCreature())
+			if (member == nullptr || !member->isPlayerCreature())
 				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, false))
@@ -95,7 +93,6 @@ public:
 				continue;
 
 			member->playEffect("clienteffect/off_tactics.cef", "");
-
 			int duration = 300;
 
 			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);

@@ -27,7 +27,7 @@ public:
 
 		ManagedReference<SceneObject*> obj = listBox->getUsingObject().get();
 
-		if (obj == NULL || !obj->isVehicleObject())
+		if (obj == nullptr || !obj->isVehicleObject())
 			return;
 
 		VehicleObject* vehicle = cast<VehicleObject*>( obj.get());
@@ -49,7 +49,7 @@ public:
 		int tax = 0;
 
 		ManagedReference<CityRegion*> city =vehicle->getCityRegion().get();
-		if(city != NULL && city->getGarageTax() > 0){
+		if(city != nullptr && city->getGarageTax() > 0){
 			tax = repairCost * city->getGarageTax() / 100;
 			repairCost += tax;
 		}
@@ -79,7 +79,7 @@ public:
 		if (vehicle->isDisabled())
 			vehicle->setDisabled(false);
 
-		if( city != NULL && tax > 0){
+		if( city != nullptr && tax > 0){
 
 			_lock.release();
 			Locker clocker(city, player);

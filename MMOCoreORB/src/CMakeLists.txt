@@ -127,10 +127,26 @@ target_link_libraries(core3
 	${ENGINE3_LIBRARIES}
 	${gmock_libs} ${Boost_LIBRARIES} ${GCCLIBATOMIC_LIBRARY} Threads::Threads ${MYSQL_CLIENT_LIBS} ${LUA_LIBRARIES} ${DB_LIBRARIES} ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES} ${CMAKE_DL_LIBS})
 
+if (NOT ENABLE_ASAN AND NOT ENABLE_TSAN AND NOT ENABLE_UBSAN AND JEMALLOC_FOUND AND ENABLE_JEMALLOC_LINK)
+	target_link_libraries(core3 ${JEMALLOC_LIBRARIES})
+endif()
+
+if(ENABLE_MULTITHREADED_LINKER)
+	use_gold(core3)
+endif(ENABLE_MULTITHREADED_LINKER)
+
 if(ENABLE_ODB)
 target_link_libraries(odb3
 	${ENGINE3_LIBRARIES}
 	${gmock_libs} ${Boost_LIBRARIES} ${GCCLIBATOMIC_LIBRARY} Threads::Threads ${MYSQL_CLIENT_LIBS} ${LUA_LIBRARIES} ${DB_LIBRARIES} ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES} ${CMAKE_DL_LIBS})
+
+if (NOT ENABLE_ASAN AND NOT ENABLE_TSAN AND NOT ENABLE_UBSAN AND JEMALLOC_FOUND AND ENABLE_JEMALLOC_LINK)
+	target_link_libraries(odb3 ${JEMALLOC_LIBRARIES})
+endif()
+
+if(ENABLE_MULTITHREADED_LINKER)
+	use_gold(odb3)
+endif(ENABLE_MULTITHREADED_LINKER)
 
 # Copy core3 binary
 add_custom_command(
@@ -150,7 +166,7 @@ add_custom_command(
 if(GIT_FOUND AND RUN_GIT)
     add_custom_command(
         TARGET core3 POST_BUILD
-        COMMAND ${GIT_EXECUTABLE} log --pretty=format:"%h was %an, %ar, message: %s" -10 > ${CMAKE_SOURCE_DIR}/bin/conf/rev.txt
+        COMMAND ${GIT_EXECUTABLE} log --no-merges --pretty=format:"%h was %an, %ar, message: %s" -10 > ${CMAKE_SOURCE_DIR}/bin/conf/rev.txt
 		WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 		VERBATIM)
 endif()

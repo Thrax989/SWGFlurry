@@ -16,8 +16,7 @@ generic_scientist_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "junk" },
-				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/insects_rare_s01.iff" }
 			}
 		},
 		{
@@ -33,8 +32,7 @@ generic_scientist_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "junk" },
-				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/picture_handheld_s01.iff" }
 			}
 		},
 		{
@@ -47,8 +45,7 @@ generic_scientist_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "junk" },
-				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/insects_rare_s01.iff" }
 			}
 		},
 		{
@@ -61,8 +58,7 @@ generic_scientist_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "junk" },
-				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/picture_handheld_s01.iff" }
 			}
 		},
 		{
@@ -75,8 +71,7 @@ generic_scientist_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "junk" },
-				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/insects_rare_s01.iff" }
 			}
 		},
 		{
@@ -89,8 +84,7 @@ generic_scientist_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "junk" },
-				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/picture_handheld_s01.iff" }
 			}
 		}
 	}

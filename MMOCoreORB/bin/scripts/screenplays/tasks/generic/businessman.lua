@@ -23,8 +23,7 @@ generic_businessman_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "junk" },
-				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+				{ rewardType = "loot", lootGroup = "generic_quests_businessman_expired_ticket" }
 			}
 		},
 		{
@@ -40,8 +39,7 @@ generic_businessman_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "junk" },
-				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/inkpen_engraved_s01.iff" }
 			}
 		},
 		{
@@ -57,8 +55,7 @@ generic_businessman_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "junk" },
-				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+				{ rewardType = "loot", lootGroup = "generic_quests_businessman_expired_ticket" }
 			}
 		},
 		{
@@ -74,8 +71,7 @@ generic_businessman_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "junk" },
-				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/inkpen_engraved_s01.iff" }
 			}
 		},
 		{
@@ -91,8 +87,7 @@ generic_businessman_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "junk" },
-				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+				{ rewardType = "loot", lootGroup = "generic_quests_businessman_expired_ticket" }
 			}
 		}
 	}

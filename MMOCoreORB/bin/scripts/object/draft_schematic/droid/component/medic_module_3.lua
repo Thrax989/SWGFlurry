@@ -50,7 +50,6 @@ object_draft_schematic_droid_component_medic_module_3 = object_draft_schematic_d
    craftingToolTab = 32, -- (See DraftSchematicObjectTemplate.h)
    complexity = 18, 
    size = 2, 
-   factoryCrateSize = 1000,
 
    xpType = "crafting_droid_general", 
    xp = 100, 

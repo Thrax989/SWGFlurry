@@ -23,7 +23,7 @@ public:
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
 
 		ManagedReference<PetControlDevice*> controlDevice = creature->getControlDevice().get().castTo<PetControlDevice*>();
-		if (controlDevice == NULL)
+		if (controlDevice == nullptr)
 			return GENERALERROR;
 
 		// Creature specific command
@@ -34,14 +34,14 @@ public:
 			return GENERALERROR;
 
 		ManagedReference<AiAgent*> pet = cast<AiAgent*>(creature);
-		if( pet == NULL )
+		if( pet == nullptr )
 			return GENERALERROR;
 
 		ManagedReference< CreatureObject*> player = pet->getLinkedCreature().get();
-		if( player == NULL )
+		if( player == nullptr )
 			return GENERALERROR;
 
-		if( pet->getCooldownTimerMap() == NULL )
+		if( pet->getCooldownTimerMap() == nullptr )
 			return GENERALERROR;
 
 		// Check pet states
@@ -50,13 +50,13 @@ public:
 
 		// Find food sceno (either provided in arguments or first food in inventory)
 		Locker clocker(player, creature);
-		ManagedReference<SceneObject*> foodSceno = NULL;
+		ManagedReference<SceneObject*> foodSceno = nullptr;
 		StringTokenizer args(arguments.toString());
 		if (!args.hasMoreTokens()){
 
 			// Find food in player inventory
 			ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
-			if (inventory == NULL){
+			if (inventory == nullptr){
 				player->sendSystemMessage("Player inventory not found");
 				return GENERALERROR;
 			}
@@ -87,7 +87,7 @@ public:
 		}
 
 		// Valid food not found
-		if( foodSceno == NULL || foodSceno->getGameObjectType() != SceneObjectType::FOOD){
+		if( foodSceno == nullptr || foodSceno->getGameObjectType() != SceneObjectType::FOOD){
 			pet->showFlyText("npc_reaction/flytext","nofood", 204, 0, 0); // "You don't have any food to give!"
 			return GENERALERROR;
 		}
@@ -100,7 +100,7 @@ public:
 
 		// Food found
 		ManagedReference<Consumable*> consumable = cast<Consumable*>(foodSceno.get());
-		if( consumable == NULL ){
+		if( consumable == nullptr ){
 			player->sendSystemMessage("Error with consumable object");
 			return GENERALERROR;
 		}
@@ -141,13 +141,13 @@ public:
 
 		}
 
-		// Heal 20% of base in wounds
-		int healthHeal = pet->getBaseHAM(CreatureAttribute::HEALTH) * 0.20;
-		int strengthHeal = pet->getBaseHAM(CreatureAttribute::STRENGTH) * 0.20;
-		int conHeal = pet->getBaseHAM(CreatureAttribute::CONSTITUTION) * 0.20;
-		int actionHeal = pet->getBaseHAM(CreatureAttribute::ACTION) * 0.20;
-		int quicknessHeal = pet->getBaseHAM(CreatureAttribute::QUICKNESS) * 0.20;
-		int staminaHeal = pet->getBaseHAM(CreatureAttribute::STAMINA) * 0.20;
+		// Heal 10% of base in wounds
+		int healthHeal = pet->getBaseHAM(CreatureAttribute::HEALTH) * 0.10;
+		int strengthHeal = pet->getBaseHAM(CreatureAttribute::STRENGTH) * 0.10;
+		int conHeal = pet->getBaseHAM(CreatureAttribute::CONSTITUTION) * 0.10;
+		int actionHeal = pet->getBaseHAM(CreatureAttribute::ACTION) * 0.10;
+		int quicknessHeal = pet->getBaseHAM(CreatureAttribute::QUICKNESS) * 0.10;
+		int staminaHeal = pet->getBaseHAM(CreatureAttribute::STAMINA) * 0.10;
 
 		pet->healWound(player, CreatureAttribute::HEALTH, healthHeal, true, false);
 		pet->healWound(player, CreatureAttribute::STRENGTH, strengthHeal, true, false);

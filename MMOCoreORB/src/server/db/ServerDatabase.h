@@ -11,15 +11,14 @@ namespace conf {
 	class ConfigManager;
 }
 
-class ServerDatabase {
+class ServerDatabase : public Logger {
 	static Vector<Database*>* databases;
 	static AtomicInteger currentDB;
+	int dbSchemaVersion;
 
 public:
 	ServerDatabase(conf::ConfigManager* configManager);
 	~ServerDatabase();
-
-	const static int DEFAULT_SERVERDATABASE_INSTANCES = 8;
 
 	inline static Database* instance() {
 		if (databases == nullptr)
@@ -31,6 +30,13 @@ public:
 
 		return databases->get(i);
 	}
+
+	inline int getSchemaVersion() const {
+		return dbSchemaVersion;
+	}
+private:
+	void alterDatabase(int nextVersion, const String& alterSql);
+	void updateDatabaseSchema();
 };
 
 #endif /*SERVERDATABASE_H_*/

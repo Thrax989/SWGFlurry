@@ -61,7 +61,7 @@ public:
 		DELETEWARNING       = 60 * 60 * 24 * 100, // 100 days
 
 		BARKRANGE           = 15, // 15 Meters
-		BARKINTERVAL        = 60 * 2, // 2 Minutes
+		BARKINTERVAL        = 60 * 2 // 2 Minutes
 		LOWWARNING			= 360 // Credits, 1 day worth at the default rate
 	};
 
@@ -78,7 +78,7 @@ public:
 
 	void runVendorUpdate();
 
-    void writeJSON(nlohmann::json& j) const;
+	void writeJSON(nlohmann::json& j) const;
 
 	void setOwnerId(uint64 id) {
 		ownerId = id;
@@ -97,7 +97,7 @@ public:
 		updateUID();
 
 		ManagedReference<SceneObject*> strongParent = parent.get();
-		if (strongParent == NULL)
+		if (strongParent == nullptr)
 			return;
 
 		originalDirection = strongParent->getDirectionAngle();
@@ -173,12 +173,12 @@ public:
 	inline bool isEmpty() {
 		ManagedReference<AuctionManager*> auctionManager = auctionMan.get();
 
-		if (auctionManager == NULL)
+		if (auctionManager == nullptr)
 			return false;
 
 		ManagedReference<AuctionsMap*> auctionsMap =
 				auctionManager->getAuctionMap();
-		if (auctionsMap == NULL) {
+		if (auctionsMap == nullptr) {
 			return false;
 		}
 
@@ -272,7 +272,7 @@ public:
 	void scheduleVendorCheckTask(int delay); // In minutes
 
 	void cancelVendorCheckTask();
-	
+
 	void skimMaintanence(int value){
 		maintAmount += value;
 	}

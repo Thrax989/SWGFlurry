@@ -50,7 +50,6 @@ object_draft_schematic_weapon_component_projectile_feed_mechanism = object_draft
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 10, 
    size = 2, 
-   factoryCrateSize = 1000,
 
    xpType = "crafting_weapons_general", 
    xp = 35, 

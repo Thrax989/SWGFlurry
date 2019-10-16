@@ -23,7 +23,7 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		int bank = creature->getBankCredits();
+			int bank = creature->getBankCredits();
 		int cash = creature->getCashCredits();
 		int availableCredits = bank + cash;
 
@@ -38,7 +38,7 @@ public:
 
 		ManagedReference<SceneObject*> obj = playerManager->getInRangeStructureWithAdminRights(creature, targetid);
 
-		if (obj == NULL || !obj->isStructureObject())
+		if (obj == nullptr || !obj->isStructureObject())
 			return INVALIDTARGET;
 
 		StructureObject* structure = cast<StructureObject*>(obj.get());
@@ -47,7 +47,7 @@ public:
 
 		ManagedReference<Zone*> zone = structure->getZone();
 
-		if (zone == NULL)
+		if (zone == nullptr)
 			return INVALIDPARAMETERS;
 
 		if (structure->isCivicStructure()) {

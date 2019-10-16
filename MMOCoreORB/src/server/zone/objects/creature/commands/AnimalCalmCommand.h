@@ -35,7 +35,7 @@ public:
 
 		Creature* targetCreature = cast<Creature*>(targetObject.get());
 
-		if (targetCreature == NULL || !targetCreature->isCreature()) {
+		if (targetCreature == nullptr || !targetCreature->isCreature()) {
 			creature->sendSystemMessage("@error_message:target_not_creature");
 			return GENERALERROR;
 		}
@@ -60,13 +60,13 @@ public:
 			creature->doCombatAnimation(creatureTarget, STRING_HASHCODE("mind_trick_1"), 1, 0);
 			creature->sendSystemMessage("@jedi_spam:calm_target");
 
-			CombatManager::instance()->broadcastCombatSpam(creature, targetCreature, NULL, 0, "cbt_spam", combatSpam + "_hit", 1);
+			CombatManager::instance()->broadcastCombatSpam(creature, targetCreature, nullptr, 0, "cbt_spam", combatSpam + "_hit", 1);
 
 			return SUCCESS;
 
 		} else {
 			creature->sendSystemMessage("@jedi_spam:fail_calm_target");
-			CombatManager::instance()->broadcastCombatSpam(creature, targetCreature, NULL, 0, "cbt_spam", combatSpam + "_miss", 1);
+			CombatManager::instance()->broadcastCombatSpam(creature, targetCreature, nullptr, 0, "cbt_spam", combatSpam + "_miss", 1);
 		}
 
 		return res;

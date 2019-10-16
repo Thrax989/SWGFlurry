@@ -42,78 +42,77 @@
 -- Core3 Config File
 -- 0 = false, 1 = true
 
-MakeLogin = 1
-MakeZone = 1
-MakePing = 1
-MakeStatus = 1
-MakeWeb = 0
+Core3 = {
+	MakeLogin = 1,
+	MakeZone = 1,
+	MakePing = 1,
+	MakeStatus = 1,
+	MakeWeb = 0,
 
-ORB = ""
-ORBPort = 44419
+	ORB = "",
+	ORBPort = 44419,
 
-DBHost = "127.0.0.1"
-DBPort = 3306
-DBName = "swgemu"
-DBUser = "swgemu"
-DBPass = "123456"
-DBSecret = "swgemus3cr37!" -- Change this! This value should be unique and of reasonable length.
+	DBHost = "127.0.0.1",
+	DBPort = 3306,
+	DBName = "swgemu",
+	DBUser = "swgemu",
+	DBPass = "123456",
+	DBInstances = 2,
+	DBSecret = "swgemus3cr37!", -- Change this! This value should be unique and of reasonable length.
 
-LoginPort = 44453
-LoginProcessingThreads = 1
-LoginAllowedConnections = 3000
-LoginRequiredVersion = "20050408-18:00"
+	LoginPort = 44453,
+	LoginProcessingThreads = 1,
+	LoginAllowedConnections = 3000,
+	LoginRequiredVersion = "20050408-18:00",
 
-MantisHost = "127.0.0.1"
-MantisPort = 3306
-MantisName = "swgemu"
-MantisUser = "swgemu"
-MantisPass = "123456"
-MantisPrfx = "mantis_" -- The prefix for your mantis tables.
+	MantisHost = "127.0.0.1",
+	MantisPort = 3306,
+	MantisName = "swgemu",
+	MantisUser = "swgemu",
+	MantisPass = "123456",
+	MantisPrfx = "mantis_", -- The prefix for your mantis tables.
 
-MetricsHost = "localhost"
-MetricsPort = 8125
-MetricsPrefix = ""
+	MetricsHost = "localhost",
+	MetricsPort = 8125,
+	MetricsPrefix = "",
 
-AutoReg = 0
+	AutoReg = 1,
 
-ProgressMonitors = "true"
+	ProgressMonitors = "true",
 
-PingPort = 44462
-PingAllowedConnections = 3000
+	PingPort = 44462,
+	PingAllowedConnections = 3000,
 
-ZoneProcessingThreads = 10
-ZoneAllowedConnections = 30000
-ZoneGalaxyID = 2 --The actual zone server's galaxyID. Should coordinate with your login server.
+	ZoneProcessingThreads = 10,
+	ZoneAllowedConnections = 30000,
+	ZoneGalaxyID = 2, --The actual zone server's galaxyID. Should coordinate with your login server.
 
-
---The following zones are enabled, and will be loaded with server start.
---To save on RAM and CPU usage, you should only enable the zones you need.
---In order to disable a zone, all you have to do is comment it out.
-ZonesEnabled = {
-	"chandrila",
-	"corellia",
-	"coruscant",
-	"dantooine",
-	"dathomir",
-	"dungeon1",
-	"dungeon2",
-	"endor",
-	"geonosis",
-	"hoth",
-	"hutta",
-	"jakku",
-	"kaas",
-	"korriban",
-	"lok",
-	"mandalore",
-	"mustafar",
-	"naboo",
-	"rori",
-	"taanab",
-	"talus",
-	"tatooine",
-	"tutorial",
-	"yavin4"
+	--The following zones are enabled, and will be loaded with server start.
+	--To save on RAM and CPU usage, you should only enable the zones you need.
+	--In order to disable a zone, all you have to do is comment it out.
+	ZonesEnabled = {
+	--"09",
+	--"10",
+	--"11",
+	--"character_farm",
+	--"cinco_city_test_m5",
+	--"corellia",
+	--"creature_test",
+	--"dantooine",
+	--"dathomir",
+	--"dungeon1",
+	--"endor",
+	--"endor_asommers",
+	--"floratest",
+	--"godclient_test",
+	--"lok",
+	--"naboo",
+	--"otoh_gunga",
+	--"rivertest",
+	--"rori",
+	--"runtimerules",
+	--"simple",
+	--"space_09",
 	--"space_corellia",
 	--"space_corellia_2",
 	--"space_dantooine",
@@ -129,82 +128,115 @@ ZonesEnabled = {
 	--"space_tatooine",
 	--"space_tatooine_2",
 	--"space_yavin4",
+	--"taanab",
+	--"talus",
+	"tatooine",
+	--"test_wearables",
+	"tutorial",
+	--"umbra",
+	--"watertabletest",
+	--"yavin4"
+	},
+
+
+	-- Where tre files are stored
+	TrePath = "/home/swgemu/Desktop/SWGEmu",
+
+	-- Each tre file (order is important!)
+	TreFiles = {
+		"default_patch.tre",
+		"patch_sku1_14_00.tre",
+		"patch_14_00.tre",
+		"patch_sku1_13_00.tre",
+		"patch_13_00.tre",
+		"patch_sku1_12_00.tre",
+		"patch_12_00.tre",
+		"patch_11_03.tre",
+		"data_sku1_07.tre",
+		"patch_11_02.tre",
+		"data_sku1_06.tre",
+		"patch_11_01.tre",
+		"patch_11_00.tre",
+		"data_sku1_05.tre",
+		"data_sku1_04.tre",
+		"data_sku1_03.tre",
+		"data_sku1_02.tre",
+		"data_sku1_01.tre",
+		"data_sku1_00.tre",
+		"patch_10.tre",
+		"patch_09.tre",
+		"patch_08.tre",
+		"patch_07.tre",
+		"patch_06.tre",
+		"patch_05.tre",
+		"patch_04.tre",
+		"patch_03.tre",
+		"patch_02.tre",
+		"patch_01.tre",
+		"patch_00.tre",
+		"data_other_00.tre",
+		"data_static_mesh_01.tre",
+		"data_static_mesh_00.tre",
+		"data_texture_07.tre",
+		"data_texture_06.tre",
+		"data_texture_05.tre",
+		"data_texture_04.tre",
+		"data_texture_03.tre",
+		"data_texture_02.tre",
+		"data_texture_01.tre",
+		"data_texture_00.tre",
+		"data_skeletal_mesh_01.tre",
+		"data_skeletal_mesh_00.tre",
+		"data_animation_00.tre",
+		"data_sample_04.tre",
+		"data_sample_03.tre",
+		"data_sample_02.tre",
+		"data_sample_01.tre",
+		"data_sample_00.tre",
+		"data_music_00.tre",
+		"bottom.tre"
+	},
+
+	-- Status Server Config
+	StatusPort = 44455,
+	StatusAllowedConnections = 500,
+	StatusInterval = 30, -- interval to check if zone is locked up (in seconds)
+
+	-- Web Server Config
+	WebPorts = 44460, -- Can be multiple ports 44460,44461
+	WebAccessLog = "../log/webaccess.log",
+	WebErrorLog = "../log/weberror.log",
+	WebSessionTimeout = 600, -- Length that inactive web sessions expire
+
+	DeleteCharacters = 10, -- How often in minutes to purge deleted characters
+	MaxNavMeshJobs = 6,
+	MaxAuctionSearchJobs = 1,
+	DumpObjFiles = 1,
+
+	UnloadContainers = 1, -- Whether to unload container contents from RAM after the container hasn't been accessed for a time
+
+	LogFile = "log/core3.log",
+	LogFileLevel = 4, -- -1 NONE, 0 FATAL, 1 ERROR, 2 WARNING, 3 LOG, 4 INFO, 5 DEBUG
+	LogJSON = 0, -- global log output in JSON format
+	LogSync = 0, -- flush global log file after each write
+
+	LuaLogJSON = 0,
+	PathfinderLogJSON = 0,
+
+	TermsOfServiceVersion = 0,
+	TermsOfService = "",
+
+	CleanupMailCount = 25000,
+
+	RESTServerPort = 0,
+
+	InactiveAccountTitle = "Account Disabled",
+	InactiveAccountText = "The server administrators have disabled your account.",
+
+	CharacterBuilderEnabled = "true", -- Enable character builder terminals by default
+
+	PlayerLogLevel = 4, -- -1 NONE, 0 FATAL, 1 ERROR, 2 WARNING, 3 LOG, 4 INFO, 5 DEBUG
+	MaxLogLines = 1000000, -- how often to rotate log (currently only log/player.log rotates)
 }
 
-
--- directory of tres with live.cfg
-TrePath = "/home/swgemu/Desktop/SWGEmu"
-
-TreFiles = {
-	"flurry2.tre",
-	"flurry1.tre",
-	"mtg_patch_022.tre",
-	"mtg_planets.tre",
-	"mtg_patch_021.tre",
-	"mtg_patch_019.tre",
-	"mtg_patch_018.tre",
-	"mtg_patch_017.tre",
-	"mtg_patch_016.tre",
-	"mtg_patch_015.tre",
-	"mtg_patch_014.tre",
-	"mtg_patch_013_configurable_02.tre",
-	"mtg_patch_012_configurable_01.tre",
-	"mtg_patch_011_files_01.tre",
-	"mtg_patch_010_object_01.tre",
-	"mtg_patch_009_Shader_01.tre",
-	"mtg_patch_008_texture_04.tre",
-	"mtg_patch_007_texture_03.tre",
-	"mtg_patch_006_texture_02.tre",
-	"mtg_patch_005_texture_01.tre",
-	"mtg_patch_004_appearance_04.tre",
-	"mtg_patch_003_appearance_03.tre",
-	"mtg_patch_002_appearance_02.tre",
-	"mtg_patch_001_appearance_01.tre"
-}
-
---Status Server Config
-StatusPort = 44455
-StatusAllowedConnections = 500
-StatusInterval = 30 -- interval to check if zone is locked up (in seconds)
-
---Web Server Config
-WebPorts = 44460 -- Can be multiple ports 44460,44461
-WebAccessLog = "../log/webaccess.log"
-WebErrorLog = "../log/weberror.log"
-WebSessionTimeout = 600 -- Length that inactive web sessions expire
-
-PurgeDeletedCharacters = 10 --How often in minutes to purge deleted characters
-MaxNavMeshJobs = 6
-MaxAuctionSearchJobs = 1
-DumpObjFiles = 1
-
-UnloadContainers = 1 --Whether to unload container contents from RAM after the container hasn't been accessed for a time
-
-LogFile = "log/core3.log"
-LogFileLevel = 4 -- -1 NONE, 0 FATAL, 1 ERROR, 2 WARNING, 3 LOG, 4 INFO, 5 DEBUG
-LogJSON = 0 -- global log output in JSON format
-LogSync = 0 -- flush global log file after each write
-
-LuaLogJSON = 0
-PathfinderLogJSON = 0
-
-TermsOfServiceVersion = 0
-TermsOfService = ""
-
-CleanupMailCount = 25000
-
-RESTServerPort = 0
-
-InactiveAccountTitle = "Account Disabled"
-InactiveAccountText = "The server administrators have disabled your account."
-
-CharacterBuilderEnabled = "true" -- Enable character builder terminals by default
-
-PlayerLogLevel = 4 -- -1 NONE, 0 FATAL, 1 ERROR, 2 WARNING, 3 LOG, 4 INFO, 5 DEBUG
-MaxLogLines = 1000000 -- how often to rotate log (currently only log/player.log rotates)
-
-local localFile = loadfile("conf/config-local.lua")
-
-if (localFile ~= nil) then
-  localFile()
-end
+-- NOTE: conf/config-local.lua is parsed after this file if it exists
