@@ -518,7 +518,7 @@ class PlayerManager extends Observer implements Logger {
 	 * @returns true if it was added
 	 * @param crc CRC of the buff, player target of buff, amount is the attribute modifier for the buff, duration of the buff, buffType specifies whether medical or performance and attribute sets the creature attribute to modify
 	 */
-	private native boolean doEnhanceCharacter(unsigned int crc, CreatureObject player, int amount, int duration, int buffType, byte attribute);
+	public native boolean doEnhanceCharacter(unsigned int crc, CreatureObject player, int amount, int duration, int buffType, byte attribute);
 
 	public int getBaseStoredCreaturePets() {
 		return baseStoredCreaturePets;
@@ -565,6 +565,7 @@ class PlayerManager extends Observer implements Logger {
 	@arg1preLocked
 	public native void doPvpDeathRatingUpdate(CreatureObject player, ThreatMap threatMap);
 
+	public native void updatePvPKillCount(CreatureObject player);
 	private native void loadXpBonusList();
 	public native float getSpeciesXpModifier(final string species, final string xpType);
 
@@ -586,4 +587,5 @@ class PlayerManager extends Observer implements Logger {
 	}
 
 	public native void stopOnlinePlayerLogTask();
+	public native void updateTopList();
 }
