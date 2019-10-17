@@ -1187,7 +1187,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 	if (abilityArmor > 0) {
 		float dmgAbsorbed = rawDamage - (damage *= 1.f - (abilityArmor / 100.f));
 		defender->notifyObservers(ObserverEventType::DAMAGERECEIVED, attacker, dmgAbsorbed);
-		sendMitigationCombatSpam(defender, nullptr, (int)dmgAbsorbed, FORCEARMOR);
+		sendMitigationCombatSpam(defender, nullptr, (int)dmgAbsorbed, ABILITYARMOR);
 		}
 	}
 
