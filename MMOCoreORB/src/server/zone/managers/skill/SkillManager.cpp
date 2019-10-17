@@ -402,7 +402,7 @@ void SkillManager::awardForceFromSkills(CreatureObject* creature) {
 
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 
-	SkillList* skillList = creature->getSkillList();
+	const SkillList* skillList = creature->getSkillList();
 
 	Vector<String> listOfNames;
 	skillList->getStringList(listOfNames);
@@ -460,7 +460,7 @@ void SkillManager::awardResetSkills(CreatureObject* creature) {
 		Locker locker(creature);
 
 		SkillManager* skillManager = SkillManager::instance();
-		SkillList* skillList = creature->getSkillList();
+		const SkillList* skillList = creature->getSkillList();
 
 		if (skillList == NULL) 
 			return;
@@ -894,7 +894,7 @@ bool SkillManager::fulfillsSkillPrerequisites(const String& skillName, CreatureO
 }
 
 int SkillManager::getSpecificSkillCount(CreatureObject* creature, const String& skill) {
-	SkillList* skills =  creature->getSkillList();
+	const SkillList* skills =  creature->getSkillList();
 	int skillCount = 0;
 
 	for (int i = 0; i < skills->size(); ++i) {
