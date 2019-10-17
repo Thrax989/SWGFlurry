@@ -734,3 +734,9 @@ includeFile("events/poi/rori_poi_waypoints.lua")
 includeFile("events/poi/talus_poi_waypoints.lua")
 includeFile("events/poi/tatooine_poi_waypoints.lua")
 includeFile("events/poi/yavin4_poi_waypoints.lua")
+
+-- Server Event Automation
+includeFile("events/ServerEventAutomation.lua")
+
+-- Custom content - Loads last to allow for overrides
+includeFile("../custom_scripts/screenplays/screenplays.lua")
