@@ -163,7 +163,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 	}
 	if (selectedID == 218) {
 		if (creature->hasSkill("force_rank_dark_novice")) {
-			SkillList* skillList = creature->getSkillList();
+			const SkillList* skillList = creature->getSkillList();
 			while (creature->hasSkill("force_rank_dark_novice")) {
 				for (int i = 0; i < skillList->size(); ++i) {
 					Skill* skill = skillList->get(i);
@@ -201,7 +201,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 	}
 	if (selectedID == 219) {
 		if (creature->hasSkill("force_rank_light_novice")) {
-			SkillList* skillList = creature->getSkillList();
+			const SkillList* skillList = creature->getSkillList();
 			while (creature->hasSkill("force_rank_light_novice")) {
 				for (int i = 0; i < skillList->size(); ++i) {
 					Skill* skill = skillList->get(i);
