@@ -394,7 +394,7 @@ void DroidStimpackModuleDataComponent::handleInsertStimpack(CreatureObject* play
 		return;
 	}
 
-	if (stim->isClassA() || stim->isClassB() || stim->isClassC() || stim->isClassD() || stim->isClassE()) {
+	if (!pack->isClassA() || !pack->isClassB() || !pack->isClassC() || !pack->isClassD() || !pack->isClassE()) {
 		player->sendSystemMessage("@pet/droid_modules:invalid_stimpack");
 		return;
 	}
