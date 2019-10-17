@@ -176,7 +176,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			killer->playEffect("clienteffect/holoemote_rebel.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
-			lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
+			//lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
 			ghost->decreaseFactionStanding("imperial", 45);
 			killedGhost->decreaseFactionStanding("imperial", 45);
 		} else if (killer->isImperial() && destructedObject->isRebel()) {
@@ -184,7 +184,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			killer->playEffect("clienteffect/holoemote_imperial.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
-			lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
+			//lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
 			ghost->decreaseFactionStanding("rebel", 45);
 			killedGhost->decreaseFactionStanding("rebel", 45);
 		}
