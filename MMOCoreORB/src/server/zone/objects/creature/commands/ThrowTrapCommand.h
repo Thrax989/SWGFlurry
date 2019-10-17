@@ -147,7 +147,7 @@ public:
 				if(state != 0 && state != CreatureState::FROZEN )
 					buff->addState(state);
 
-				VectorMap<String, int>* skillMods = trapData->getSkillMods();
+				const VectorMap<String, int>* skillMods = trapData->getSkillMods();
 				for(int i = 0; i < skillMods->size(); ++i) {
 					buff->setSkillModifier(skillMods->elementAt(i).getKey(), skillMods->get(i));
 				}
