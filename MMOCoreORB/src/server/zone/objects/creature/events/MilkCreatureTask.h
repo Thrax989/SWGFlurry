@@ -111,7 +111,7 @@ public:
 
 		ManagedReference<ResourceSpawn*> resourceSpawn = resourceManager->getCurrentSpawn(restype, player->getZone()->getZoneName());
 
-		if (resourceSpawn == NULL) {
+		if (resourceSpawn == nullptr) {
 			player->sendSystemMessage("Error: Server cannot locate a current spawn of " + restype);
 			return;
 		}
@@ -136,26 +136,12 @@ public:
 
 		StringIdChatParameter harvestMessage("skl_use", milkZone);
 		harvestMessage.setDI(quantityExtracted);
-		harvestMessage.setTU(resourceSpawn->nullptr());
+		harvestMessage.setTU(resourceSpawn->getFinalClass());
 
 		resourceManager->harvestResourceToPlayer(player, resourceSpawn, quantityExtracted);
 		player->sendSystemMessage(harvestMessage);
 
 		updateMilkState(CreatureManager::ALREADYMILKED);
-		
-		// Grant Wilderness Survival XP
-		CreatureTemplate* creatureTemplate = creature->getCreatureTemplate();
-		
-		int xp = ((125 < player->getSkillMod("foraging")) ? 125 : player->getSkillMod("foraging"));
-		
-		if (creatureTemplate != NULL)
-			xp += 3 * creatureTemplate->getLevel() + quantityExtracted;
-		else
-			xp += quantityExtracted;
-		
-		ZoneServer* zoneServer = player->getZoneServer();
-		PlayerManager* playerManager = zoneServer->getPlayerManager();
-		playerManager->awardExperience(player, "camp", xp);
 		
 	}
 
