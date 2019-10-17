@@ -11,6 +11,7 @@
 #include "server/zone/managers/crafting/ComponentMap.h"
 #include "server/zone/objects/tangible/terminal/characterbuilder/CharacterBuilderTerminal.h"
 
+
 class ObjectCommand : public QueueCommand {
 public:
 
@@ -67,20 +68,13 @@ public:
 
 				object->createChildObjects();
 
-				ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
-				ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
-
-				// Set Player as Crafter
-				String name = player->getFirstName();
+				// Set Crafter name and generate serial number
+				String name = "Generated with Object Command";
 				object->setCraftersName(name);
 
-				// Object Name
 				StringBuffer customName;
-				if (ghost->getAdminLevel() >= 15) {
-					customName << object->getDisplayedName() << " \\#ff0000(" << player->getFirstName() << ")\\#FFFFFF";//Red for admin
-				} else {
-					customName << object->getDisplayedName() << " \\#00CC00(" << player->getFirstName() << ")\\#FFFFFF";//Green for player
-				}
+				customName << object->getDisplayedName() <<  " (System Generated)";
+
 				object->setCustomObjectName(customName.toString(), false);
 
 				String serial = craftingManager->generateSerial();
@@ -134,58 +128,7 @@ public:
 					return INVALIDPARAMETERS;
 
 				lootManager->createLoot(inventory, lootGroup, level);
-			}else if (commandType.beginsWith("createattachment")) {
-				//Syntax exmaple /object createattachment clothing mindblast_accuracy 25
-				String attachmentType;
-				String skillMod;
-				args.getStringToken(attachmentType);
-		
-				if (attachmentType != "armor" && attachmentType != "clothing"){
-					creature->sendSystemMessage("You must specify armor or clothing.");
-					return INVALIDPARAMETERS;
-				}
- 				if (args.hasMoreTokens())
-					args.getStringToken(skillMod);
-				
-				int skillBonus = 1;
-				if (args.hasMoreTokens())
-					skillBonus = args.getIntToken();
- 				ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
- 				if (inventory == nullptr || inventory->isContainerFullRecursive()) {
-					creature->sendSystemMessage("Your inventory is full, so the item could not be created.");
-					return INVALIDPARAMETERS;
-				}
- 				ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
- 				
- 				if (lootManager == nullptr)
-					return INVALIDPARAMETERS;
-					
-				Reference<LootItemTemplate*> itemTemplate = nullptr;
-				LootGroupMap* lootGroupMap = LootGroupMap::instance();
-				if (attachmentType == "armor")
-					itemTemplate = lootGroupMap->getLootItemTemplate("attachment_armor");
-				else
-					itemTemplate = lootGroupMap->getLootItemTemplate("attachment_clothing");
-							
-				ManagedReference<SceneObject*> ca = lootManager->createLootAttachment(itemTemplate,skillMod, skillBonus); 
- 				if (ca != nullptr){
-					Attachment* attachment = cast<Attachment*>(ca.get());
-								
-					if (attachment != nullptr){
-						Locker objLocker(attachment);
-						if (inventory->transferObject(ca, -1, true, true)) { //Transfer tape to player inventory
-							inventory->broadcastObject(ca, true);
-						} else {
-							ca->destroyObjectFromDatabase(true);
-							creature->sendSystemMessage("Unable to place Skill Attachment in player's inventory!");
-							return INVALIDPARAMETERS;
-						}
-						
-					}
-							
-				}
- 			}
-			 else if (commandType.beginsWith("createresource")) {
+			} else if (commandType.beginsWith("createresource")) {
 				String resourceName;
 				args.getStringToken(resourceName);
 
@@ -257,6 +200,7 @@ public:
 				creature->sendSystemMessage("Number of Legendaries Looted: " + String::valueOf(lootManager->getLegendaryLooted()));
 				creature->sendSystemMessage("Number of Exceptionals Looted: " + String::valueOf(lootManager->getExceptionalLooted()));
 				creature->sendSystemMessage("Number of Magical Looted: " + String::valueOf(lootManager->getYellowLooted()));
+
 			} else if (commandType.beginsWith("characterbuilder")) {
 				ZoneServer* zserv = server->getZoneServer();
 
@@ -283,18 +227,19 @@ public:
 					creature->getZone()->transferObject(blueFrog, -1, true);
 
 				info("blue frog created", true);
+
 			}
+
 		} catch (Exception& e) {
 			creature->sendSystemMessage("SYNTAX: /object createitem <objectTemplatePath> [<quantity>]");
 			creature->sendSystemMessage("SYNTAX: /object createresource <resourceName> [<quantity>]");
 			creature->sendSystemMessage("SYNTAX: /object createloot <loottemplate> [<level>]");
 			creature->sendSystemMessage("SYNTAX: /object createarealoot <loottemplate> [<range>] [<level>]");
-			creature->sendSystemMessage("SYNTAX: /object createattachment <armor/clothing> <skillModName> [<bonus>]");
 			creature->sendSystemMessage("SYNTAX: /object checklooted");
 			creature->sendSystemMessage("SYNTAX: /object characterbuilder");
+                  
 			return INVALIDPARAMETERS;
 		}
-
 
 		return SUCCESS;
 	}
