@@ -29,7 +29,7 @@ public:
 		if (ghost == nullptr)
 			return GENERALERROR;
 
-		if (ghost->getJediState() < 2 || !creature->hasSkill("force_title_jedi_rank_02"))
+		if (ghost->getJediState() < 1)
 			return GENERALERROR;
 
 		String planet = ghost->getTrainerZoneName();
