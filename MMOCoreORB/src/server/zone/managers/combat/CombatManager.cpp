@@ -1182,11 +1182,12 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
  	if (!data.isForceAttack()){
 	// BH
 	float rawDamage = damage;
+
 	int abilityArmor = defender->getSkillMod("ability_armor");
 	if (abilityArmor > 0) {
 		float dmgAbsorbed = rawDamage - (damage *= 1.f - (abilityArmor / 100.f));
-		defender->notifyObservers(ObserverEventType::FORCEBUFFHIT, attacker, dmgAbsorbed);
-		sendMitigationCombatSpam(defender, NULL, (int)dmgAbsorbed, ABILITYARMOR);
+		defender->notifyObservers(ObserverEventType::DAMAGERECEIVED, attacker, dmgAbsorbed);
+		sendMitigationCombatSpam(defender, nullptr, (int)dmgAbsorbed, FORCEARMOR);
 		}
 	}
 
