@@ -30,7 +30,6 @@ object_resource_container_resource_spawn = object_resource_container_shared_simp
 	pvpStatusBitmask = 0,
 	objectMenuComponent = "TangibleObjectMenuComponent",
 	attributeListComponent = "AttributeListComponent",
-	zoneComponent = "ZoneComponent",
 
 	sliceable = 0,
 

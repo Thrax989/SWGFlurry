@@ -41,6 +41,13 @@
 --which carries forward this exception.
 
 
+object_tangible_component_dna_shared_dna_playersample_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/dna/shared_dna_playersample_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_dna_shared_dna_playersample_base, "object/tangible/component/dna/shared_dna_playersample_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
 object_tangible_component_dna_shared_dna_sample_above_average = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/component/dna/shared_dna_sample_above_average.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups

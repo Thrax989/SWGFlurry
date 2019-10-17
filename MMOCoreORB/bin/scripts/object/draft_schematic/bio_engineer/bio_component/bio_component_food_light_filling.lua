@@ -50,6 +50,7 @@ object_draft_schematic_bio_engineer_bio_component_bio_component_food_light_filli
    craftingToolTab = 128, -- (See DraftSchematicObjectTemplate.h)
    complexity = 18, 
    size = 1, 
+   factoryCrateSize = 1000, 
 
    xpType = "crafting_bio_engineer_creature", 
    xp = 120, 

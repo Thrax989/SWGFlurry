@@ -50,7 +50,7 @@ object_draft_schematic_armor_armor_segment_kashyyykian_black_mtn = object_draft_
 	craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 25,
 	size = 1,
-	factoryCrateSize = 50,
+	factoryCrateSize = 1000,
 
 	xpType = "crafting_clothing_armor",
 	xp = 50,

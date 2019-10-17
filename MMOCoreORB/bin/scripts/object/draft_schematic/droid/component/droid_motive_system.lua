@@ -50,6 +50,7 @@ object_draft_schematic_droid_component_droid_motive_system = object_draft_schema
    craftingToolTab = 32, -- (See DraftSchematicObjectTemplate.h)
    complexity = 14, 
    size = 6, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_droid_general", 
    xp = 80, 

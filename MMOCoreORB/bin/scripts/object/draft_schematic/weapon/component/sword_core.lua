@@ -50,6 +50,7 @@ object_draft_schematic_weapon_component_sword_core = object_draft_schematic_weap
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 5, 
    size = 1, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_weapons_general", 
    xp = 25, 

@@ -50,6 +50,7 @@ object_draft_schematic_item_component_item_electronic_energy_distributor = objec
    craftingToolTab = 524288, -- (See DraftSchematicObjectTemplate.h)
    complexity = 19, 
    size = 3, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_general", 
    xp = 55, 

@@ -45,6 +45,8 @@
 --Children folder includes
 
 -- Server Objects
+includeFile("tangible/component/dna/dna_playersample_base.lua")
+
 includeFile("tangible/component/dna/dna_sample_above_average.lua")
 includeFile("tangible/component/dna/dna_sample_average.lua")
 includeFile("tangible/component/dna/dna_sample_below_average.lua")

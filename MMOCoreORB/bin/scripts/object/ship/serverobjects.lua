@@ -47,6 +47,14 @@ includeFile("ship/base/serverobjects.lua")
 includeFile("ship/player/serverobjects.lua")
 
 -- Server Objects
+includeFile("ship/droid_fighter_s01.lua")
+includeFile("ship/havoc.lua")
+includeFile("ship/snow_speeder_s01.lua")
+includeFile("ship/tiedefender.lua")
+includeFile("ship/twing.lua")
+includeFile("ship/vwing.lua")
+includeFile("ship/yt2400.lua")
+
 includeFile("ship/assaultship.lua")
 includeFile("ship/awing.lua")
 includeFile("ship/awing_tier1.lua")

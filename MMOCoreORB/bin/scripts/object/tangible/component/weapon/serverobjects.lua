@@ -46,6 +46,16 @@
 includeFile("tangible/component/weapon/lightsaber/serverobjects.lua")
 
 -- Server Objects
+includeFile("tangible/component/weapon/blaster_pistol_barrel_base.lua")
+includeFile("tangible/component/weapon/blaster_rifle_barrel_base.lua")
+includeFile("tangible/component/weapon/new_weapon_comp_gas_cartridge_base.lua")
+includeFile("tangible/component/weapon/new_weapon_comp_reinforcement_core_base.lua")
+includeFile("tangible/component/weapon/projectile_pistol_barrel_base.lua")
+includeFile("tangible/component/weapon/projectile_rifle_barrel_base.lua")
+includeFile("tangible/component/weapon/scope_weapon_base.lua")
+includeFile("tangible/component/weapon/stock_base.lua")
+includeFile("tangible/component/weapon/vibro_unit_base.lua")
+
 includeFile("tangible/component/weapon/acklay_bone_reinforcement_core.lua")
 includeFile("tangible/component/weapon/base_blaster_power_handler_enhancement.lua")
 includeFile("tangible/component/weapon/base_projectile_feed_mechanism_enhancement.lua")
