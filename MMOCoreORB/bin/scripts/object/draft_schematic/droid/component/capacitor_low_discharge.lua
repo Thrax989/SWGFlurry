@@ -50,7 +50,7 @@ object_draft_schematic_droid_component_capacitor_low_discharge = object_draft_sc
 	craftingToolTab = 32, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 10,
 	size = 1,
-	factoryCrateSize = 50,
+	factoryCrateSize = 1000,
 
 	xpType = "crafting_droid_general",
 	xp = 50,

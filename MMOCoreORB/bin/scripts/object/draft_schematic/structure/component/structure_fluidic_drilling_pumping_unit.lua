@@ -50,7 +50,7 @@ object_draft_schematic_structure_component_structure_fluidic_drilling_pumping_un
 	craftingToolTab = 1024, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 13,
 	size = 4,
-	factoryCrateSize = 10,
+	factoryCrateSize = 1000,
 
 	xpType = "crafting_structure_general",
 	xp = 1170,

@@ -50,6 +50,7 @@ object_draft_schematic_droid_component_crafting_module_food = object_draft_schem
    craftingToolTab = 32, -- (See DraftSchematicObjectTemplate.h)
    complexity = 22, 
    size = 1, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_droid_general", 
    xp = 200, 

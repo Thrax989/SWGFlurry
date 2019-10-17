@@ -7233,6 +7233,12 @@ object_building_general_shared_space_dungeon_star_destroyer = SharedBuildingObje
 
 ObjectTemplates:addClientTemplate(object_building_general_shared_space_dungeon_star_destroyer, "object/building/general/shared_space_dungeon_star_destroyer.iff")
 
+object_building_general_shared_star_destroyer_construction = SharedBuildingObjectTemplate:new {
+	clientTemplateFileName = "object/building/general/shared_star_destroyer_construction.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_general_shared_star_destroyer_construction, "object/building/general/shared_star_destroyer_construction.iff")
+
 object_building_general_shared_starport_general = SharedBuildingObjectTemplate:new {
 	clientTemplateFileName = "object/building/general/shared_starport_general.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups

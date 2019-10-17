@@ -40,6 +40,72 @@
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
 
+object_tangible_component_weapon_shared_blaster_pistol_barrel_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/weapon/shared_blaster_pistol_barrel_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_weapon_shared_blaster_pistol_barrel_base, "object/tangible/component/weapon/shared_blaster_pistol_barrel_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_component_weapon_shared_blaster_rifle_barrel_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/weapon/shared_blaster_rifle_barrel_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_weapon_shared_blaster_rifle_barrel_base, "object/tangible/component/weapon/shared_blaster_rifle_barrel_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_component_weapon_shared_new_weapon_comp_gas_cartridge_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/weapon/shared_new_weapon_comp_gas_cartridge_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_weapon_shared_new_weapon_comp_gas_cartridge_base, "object/tangible/component/weapon/shared_new_weapon_comp_gas_cartridge_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_component_weapon_shared_new_weapon_comp_reinforcement_core_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/weapon/shared_new_weapon_comp_reinforcement_core_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_weapon_shared_new_weapon_comp_reinforcement_core_base, "object/tangible/component/weapon/shared_new_weapon_comp_reinforcement_core_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_component_weapon_shared_projectile_pistol_barrel_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/weapon/shared_projectile_pistol_barrel_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_weapon_shared_projectile_pistol_barrel_base, "object/tangible/component/weapon/shared_projectile_pistol_barrel_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_component_weapon_shared_projectile_rifle_barrel_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/weapon/shared_projectile_rifle_barrel_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_weapon_shared_projectile_rifle_barrel_base, "object/tangible/component/weapon/shared_projectile_rifle_barrel_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+object_tangible_component_weapon_shared_scope_weapon_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/weapon/shared_scope_weapon_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_weapon_shared_scope_weapon_base, "object/tangible/component/weapon/shared_scope_weapon_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_component_weapon_shared_stock_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/weapon/shared_stock_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_weapon_shared_stock_base, "object/tangible/component/weapon/shared_stock_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_tangible_component_weapon_shared_vibro_unit_base = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/weapon/shared_vibro_unit_base.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_weapon_shared_vibro_unit_base, "object/tangible/component/weapon/shared_vibro_unit_base.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 object_tangible_component_weapon_shared_acklay_bone_reinforcement_core = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/component/weapon/shared_acklay_bone_reinforcement_core.iff"

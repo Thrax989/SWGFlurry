@@ -67,7 +67,7 @@ object_draft_schematic_vehicle_civilian_speeder_bike_swoop = object_draft_schema
 	ingredientTitleNames = {"vehicle_body", "structural_frame"},
 	ingredientSlotType = {0, 0},
 	resourceTypes = {"metal_nonferrous", "metal_ferrous"},
-	resourceQuantities = {1600, 6400},
+	resourceQuantities = {1600, 3200},
 	contribution = {100, 100},
 
 	targetTemplate = "object/tangible/deed/vehicle_deed/speederbike_swoop_deed.iff",

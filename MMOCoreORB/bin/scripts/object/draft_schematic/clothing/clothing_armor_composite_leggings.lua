@@ -73,7 +73,7 @@ object_draft_schematic_clothing_clothing_armor_composite_leggings = object_draft
    targetTemplate = "object/tangible/wearables/armor/composite/armor_composite_leggings.iff",
 
    additionalTemplates = {
-             }
+              }
 
 }
 ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_armor_composite_leggings, "object/draft_schematic/clothing/clothing_armor_composite_leggings.iff")

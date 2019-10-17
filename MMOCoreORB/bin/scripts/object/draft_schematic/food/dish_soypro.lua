@@ -50,6 +50,7 @@ object_draft_schematic_food_dish_soypro = object_draft_schematic_food_shared_dis
    craftingToolTab = 4, -- (See DraftSchematicObjectTemplate.h)
    complexity = 5, 
    size = 1, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_food_general", 
    xp = 80, 

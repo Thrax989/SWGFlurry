@@ -50,7 +50,7 @@ object_draft_schematic_armor_component_armor_layer_energy = object_draft_schemat
 	craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 20,
 	size = 3,
-	factoryCrateSize = 100,
+	factoryCrateSize = 1000,
 
 	xpType = "crafting_clothing_armor",
 	xp = 90,

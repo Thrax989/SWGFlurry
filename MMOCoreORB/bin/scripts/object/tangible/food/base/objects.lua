@@ -40,6 +40,13 @@
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
 
+object_tangible_food_base_shared_base_crafted_beast_food = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/food/base/shared_base_crafted_beast_food.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_food_base_shared_base_crafted_beast_food, "object/tangible/food/base/shared_base_crafted_beast_food.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
 
 object_tangible_food_base_shared_alcoholic_drink_base = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/food/base/shared_alcoholic_drink_base.iff"
