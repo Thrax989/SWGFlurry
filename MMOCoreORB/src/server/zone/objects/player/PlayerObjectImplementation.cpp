@@ -1377,7 +1377,7 @@ void PlayerObjectImplementation::notifyOnline() {
 }
 
 int PlayerObjectImplementation::numSpecificSkills(CreatureObject* creature, const String& reqSkillName) {
-	SkillList* skills =  creature->getSkillList();
+	const SkillList* skills =  creature->getSkillList();
 	int numSkills = 0;
 
 	for(int i = 0; i < skills->size(); ++i) {
@@ -2902,7 +2902,7 @@ void PlayerObjectImplementation::regrantSkills(){
 		ZoneServer* zoneServer = server->getZoneServer();
 		SkillManager* skillManager = SkillManager::instance();
 		ManagedReference<CreatureObject*> player = getParentRecursively(SceneObjectType::PLAYERCREATURE).castTo<CreatureObject*>();
-		SkillList* skillList = player->getSkillList();
+		const SkillList* skillList = player->getSkillList();
 		String skillName = "";
 		Vector<String> listOfNames;
 		skillList->getStringList(listOfNames);

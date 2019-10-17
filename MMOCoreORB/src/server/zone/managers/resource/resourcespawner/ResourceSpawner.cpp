@@ -760,7 +760,7 @@ bool ResourceSpawner::isRecycledResource(const ResourceSpawn* resource) const {
 
 ResourceSpawn* ResourceSpawner::getRecycledResourceSpawnByType(const String& resourceType) const {
 
-	ResourceTreeEntry* recycledEntry = nullptr;
+	const ResourceTreeEntry* recycledEntry = nullptr;
 	ManagedReference<ResourceSpawn*> recycledVersion = nullptr;
 	recycledEntry = resourceTree->getEntry(resourceType);
 	if (resourceMap->containsType(recycledEntry->getFinalClass())) {

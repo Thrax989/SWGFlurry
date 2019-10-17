@@ -1274,7 +1274,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		box->setForceCloseDistance(2048.f);
 		box->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
 		player->getPlayerObject()->addSuiBox(box);
-		player->sendMessage(input->generateMessage());
+		player->sendMessage(box->generateMessage());
 		}
 
 	//Custom Perma Death Broadcasting When you reach 0 lives
@@ -6195,32 +6195,6 @@ void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, in
 	luaFrsTesting->callFunction();
 }
 
-Vector<uint64> PlayerManagerImplementation::getOnlinePlayerList() {
-	Vector<uint64> playerList;
-
-	Locker locker(&onlineMapMutex);
-
-	HashTableIterator<uint32, Vector<Reference<ZoneClientSession*> > > iter = onlineZoneClientMap.iterator();
-
-	while (iter.hasNext()) {
-		Vector<Reference<ZoneClientSession*> > clients = iter.next();
-
-		for (int i = 0; i < clients.size(); i++) {
-			ZoneClientSession* session = clients.get(i);
-
-			if (session != nullptr) {
-				CreatureObject* player = session->getPlayer();
-
-				if (player != nullptr) {
-					playerList.add(player->getObjectID());
-				}
-			}
-		}
-	}
-
-	return playerList;
-}
-
 void PlayerManagerImplementation::logOnlinePlayers(bool onlyWho) {
 	int countOnline = 0;
 	int countAccounts = 0;
@@ -6507,10 +6481,10 @@ Vector<uint64> PlayerManagerImplementation::getOnlinePlayerList() {
 		for (int i = 0; i < clients.size(); i++) {
 			ZoneClientSession* session = clients.get(i);
 
-			if (session != NULL) {
+			if (session != nullptr) {
 				CreatureObject* player = session->getPlayer();
 
-				if (player != NULL) {
+				if (player != nullptr) {
 					playerList.add(player->getObjectID());
 				}
 			}

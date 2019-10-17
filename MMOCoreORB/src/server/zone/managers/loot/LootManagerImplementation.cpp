@@ -723,16 +723,9 @@ void LootManagerImplementation::setSockets(TangibleObject* object, CraftingValue
 }
 
 bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* creature) {
-	//Creature Loot System based on creature level
-	//int creatureLevel = Math::min(300, creature->getLevel());
-	//Rare Loot System
-	//if (creatureLevel >= 75){
-		//if (System::random(100) < 2) { //2% Rare Loot System
-			//createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
-			//creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
-		//}
-	//}
-	LootGroupCollection* lootCollection = creature->getLootGroups();
+
+	auto lootCollection = creature->getLootGroups();
+
 	if (lootCollection == nullptr)
 		return false;
 
@@ -779,48 +772,7 @@ bool LootManagerImplementation::createLootFromCollection(SceneObject* container,
 }
 
 bool LootManagerImplementation::createLoot(SceneObject* container, const String& lootGroup, int level, bool maxCondition) {
-	Reference<LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
-
-	if (group == nullptr) {
-		warning("Loot group template requested does not exist: " + lootGroup);
-		return false;
-	}
-
-	//Now we do the third roll for the item out of the group.
-	int roll = System::random(10000000);
-
-	String selection = group->getLootGroupEntryForRoll(roll);
-
-	//Check to see if the group entry is another group
-	if (lootGroupMap->lootGroupExists(selection))
-		return createLoot(container, selection, level, maxCondition);
-
-	//Entry wasn't another group, it should be a loot item
-	Reference<LootItemTemplate*> itemTemplate = lootGroupMap->getLootItemTemplate(selection);
-
-	if (itemTemplate == nullptr) {
-		warning("Loot item template requested does not exist: " + group->getLootGroupEntryForRoll(roll) + " for templateName: " + group->getTemplateName());
-		return false;
-	}
-
-	TangibleObject* obj = createLootObject(itemTemplate, level, maxCondition);
-
-	if (obj == nullptr)
-		return false;
-
-	if (container->transferObject(obj, -1, false, true)) {
-		container->broadcastObject(obj, true);
-	} else {
-		obj->destroyObjectFromDatabase(true);
-		return false;
-	}
-
-
-	return true;
-}
-
-bool LootManagerImplementation::createNamedLoot(SceneObject* container, const String& lootGroup, const String& name, int level, bool maxCondition) {
-	Reference<LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
+	Reference<const LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
 
 	if (group == nullptr) {
 		warning("Loot group template requested does not exist: " + lootGroup);

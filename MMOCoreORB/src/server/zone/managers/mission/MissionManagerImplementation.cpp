@@ -889,7 +889,7 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
  		groupSuffix = " lair.";
  	}
  		
- 	VectorMap<String, int>* mobiles = lairTemplateObject->getMobiles();
+ 	const VectorMap<String, int>* mobiles = lairTemplateObject->getMobiles();
  	String mobileName = "mysterious";
  	
  	if (mobiles->size() > 0) {
@@ -1490,7 +1490,7 @@ void MissionManagerImplementation::randomizeGenericHuntingMission(CreatureObject
 		return;
 	}
 
-	Vector<String>& templatesNames = creatureTemplate->getTemplates();
+	const Vector<String>& templatesNames = creatureTemplate->getTemplates();
 
 	if (templatesNames.size() == 0) {
 		return;

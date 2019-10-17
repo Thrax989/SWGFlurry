@@ -6,7 +6,7 @@
  */
 
 #include "server/zone/objects/mission/BountyMissionObjective.h"
-
+#include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/objects/waypoint/WaypointObject.h"
 #include "server/zone/Zone.h"
 #include "server/zone/ZoneServer.h"
@@ -631,4 +631,3 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 		}
 	}
 }
-
