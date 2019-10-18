@@ -33,7 +33,7 @@ includeFile("events/ServerEventAutomation.lua")
 
 -- Custom content - Loads last to allow for overrides
 includeFile("../custom_scripts/screenplays/screenplays.lua")
---includeFile("tools/FlurryBuffTerminal.lua")
+includeFile("tools/FlurryBuffTerminal.lua")
 includeFile("tools/mission_level_choice.lua")
 includeFile("tools/mission_direction_choice.lua")
 includeFile("helperfuncs.lua")
