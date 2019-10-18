@@ -25,7 +25,7 @@ void HolocronMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Obj
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
-	if (ghost->getJediState() >=2) {
+	if (ghost->getJediState() >=1) {
 			menuResponse->addRadialMenuItem(213, 3, "Use Holocron"); // Use Holocron
 			menuResponse->addRadialMenuItemToRadialID(213, 214, 3, "Increase Jedi Lives"); // Increase Jedi Lives
 			menuResponse->addRadialMenuItemToRadialID(213, 216, 3, "Visibility"); // Show Jedi's Visibility
@@ -45,7 +45,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		return 0;
 	
 	if (selectedID == 213) {
- 		if (ghost->getJediState() >= 2) {
+ 		if (ghost->getJediState() >= 1) {
 			JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
 		}
 	}
@@ -73,7 +73,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 	if (selectedID == 214 && !creature->hasSkill("combat_jedi_novice")) {
 		creature->sendSystemMessage("You must be a gray jedi to use this option"); // You have Permanently died on your jedi, you may not use this option
 		}
-	if (selectedID == 216 && (ghost->getJediState() >= 2)) {
+	if (selectedID == 216 && (ghost->getJediState() >= 1)) {
 		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
 		box->setPromptTitle("Jedi Visibility");
 		int jediVis1 = ghost->getVisibility();
@@ -84,7 +84,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		ghost->addSuiBox(box);
 		creature->sendMessage(box->generateMessage());
 	}
-	if (selectedID == 217 && (ghost->getJediState() >= 2)) {
+	if (selectedID == 217 && (ghost->getJediState() >= 1)) {
 		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
 		box->setPromptTitle("Jedi Lives");
 		StringBuffer promptText;
@@ -94,7 +94,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		ghost->addSuiBox(box);
 		creature->sendMessage(box->generateMessage());
 	}
-	if (selectedID == 220 && (ghost->getJediState() >= 2) && (ghost->getSkillPoints() == 250)) {
+	if (selectedID == 220 && (ghost->getJediState() >= 1) && (ghost->getSkillPoints() == 250)) {
 		        ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 				creature->sendSystemMessage("You Have Unlocked Gray Jedi");
 				int livesLeft = creature->getScreenPlayState("jediLives") + 3;
@@ -116,7 +116,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 				creature->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
 				box->setForceCloseDistance(5.f);
 		}
-	if (selectedID == 220 && (ghost->getJediState() >= 2) && (ghost->getSkillPoints() < 250) && !creature->hasSkill("combat_jedi_novice")) {
+	if (selectedID == 220 && (ghost->getJediState() >= 1) && (ghost->getSkillPoints() < 250) && !creature->hasSkill("combat_jedi_novice")) {
 				creature->sendSystemMessage("You do not meet the requirements for this feature, Force Sensitive and 250 skill points must be free to become gray jedi");
 		return 0;
 		}
