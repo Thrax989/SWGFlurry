@@ -78,4 +78,6 @@ factionList = {
 	{ "trade_federation", true, "borvo,naboo_security_force", "", 1.0 },
 	{ "tusken_raider", true, "alkhara,jawa", "", 1.0 },
 	{ "valarian", true, "jabba", "", 1.0 },
+	{ "norulac_raiders", true, "", "", 1.0 },
+	{ "blackscale", true, "", "", 1.0 },
 }
