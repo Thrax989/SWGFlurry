@@ -737,6 +737,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 
 	//Bonus Credit System LeveL 50
 	if (creatureLevel == 50){
+		if (System::random(100) < 20) {
 			creature->addCashCredits(250, true);
 			creature->showFlyText("250 bonus", "Credits", 0, 255, 0);
 		}
