@@ -260,3 +260,7 @@ includeFile("lair/npc_theater/yavin4_stranded_imperial_patrol_imperial_medium_th
 includeFile("lair/npc_theater/yavin4_stranded_rebel_base_rebel_medium_theater.lua")
 includeFile("lair/npc_theater/yavin4_stranded_rebel_patrol_rebel_medium_theater.lua")
 
+--custom planets
+includeFile("lair/npc_theater/taanab_norulac_raider_camp.lua")
+includeFile("lair/npc_theater/hoth_snowtrooper_camp.lua")
+includeFile("lair/npc_theater/hoth_rebel_camp.lua")
