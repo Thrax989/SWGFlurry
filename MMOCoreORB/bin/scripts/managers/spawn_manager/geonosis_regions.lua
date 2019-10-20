@@ -10,7 +10,5 @@
 require("scripts.managers.spawn_manager.regions")
 
 geonosis_regions = {
-	{"world_spawner",0,0,{CIRCLE,-1},NOSPAWNAREA + NOBUILDZONEAREA},
-
-
+	{"world_spawner",0,0,{CIRCLE,-1},SPAWNAREA + WORLDSPAWNAREA,{"geonosis_world"},1024},
 }
