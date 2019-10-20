@@ -2138,7 +2138,7 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 		return 0;
 
 	int xp;
-	if (amount <= 0 || xpType == "jedi_general" || xpType == "combat_jedi_novice"){
+	if (amount <= 0){
 		xp = playerObject->addExperience(xpType, amount);
 	} else if (xpType == "imagedesigner" ||
 		xpType == "bio_engineer" ||
@@ -2179,6 +2179,8 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 		xpType == "creaturehandler" ||
 		xpType == "dance" ||
 		xpType == "entertainer_healing" ||
+		xpType == "jedi_general" ||
+		xpType == "combat_jedi_novice" ||
 		xpType == "medical" ||
 		xpType == "merchant" ||
 		xpType == "music" ||
