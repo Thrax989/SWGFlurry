@@ -731,6 +731,39 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 		if (System::random(100) < 2) { //2% Rare Loot System
 			createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
 			creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
+			creature->showFlyText("Rare", "Loot", 0, 255, 0);
+		}
+	}
+
+	//Bonus Credit System LeveL 50
+	if (creatureLevel == 50){
+		if (System::random(100) < 20) {
+			creature->addCashCredits(250, true);
+			creature->showFlyText("250 bonus", "Credits", 0, 255, 0);
+		}
+	}
+
+	//Bonus Credit System Level 75
+	if (creatureLevel == 75){
+		if (System::random(100) < 20) {
+			creature->addCashCredits(500, true);
+			creature->showFlyText("500 extra", "Credits", 0, 255, 0);
+		}
+	}
+
+	//Bonus Credit System LeveL 150
+	if (creatureLevel == 150){
+		if (System::random(100) < 20) {
+			creature->addCashCredits(1000, true);
+			creature->showFlyText("1,000 extra", "Credits", 0, 255, 0);
+		}
+	}
+	
+	//Bonus Credit System Level 300
+	if (creatureLevel == 300){
+		if (System::random(100) < 20) {
+			creature->addCashCredits(2500, true);
+			creature->showFlyText("2,500 extra", "Credits", 0, 255, 0);
 		}
 	}
 
