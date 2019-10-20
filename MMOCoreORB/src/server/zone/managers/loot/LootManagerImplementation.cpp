@@ -747,7 +747,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	if (creatureLevel == 75){
 		if (System::random(100) < 20) {
 			creature->addCashCredits(500, true);
-			creature->showFlyText("500 extra", "Credits", 0, 255, 0);
+			creature->showFlyText("500 bonus", "Credits", 0, 255, 0);
 		}
 	}
 
@@ -755,7 +755,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	if (creatureLevel == 150){
 		if (System::random(100) < 20) {
 			creature->addCashCredits(1000, true);
-			creature->showFlyText("1,000 extra", "Credits", 0, 255, 0);
+			creature->showFlyText("1,000 bonus", "Credits", 0, 255, 0);
 		}
 	}
 	
@@ -763,7 +763,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	if (creatureLevel == 300){
 		if (System::random(100) < 20) {
 			creature->addCashCredits(2500, true);
-			creature->showFlyText("2,500 extra", "Credits", 0, 255, 0);
+			creature->showFlyText("2,500 bonus", "Credits", 0, 255, 0);
 		}
 	}
 
