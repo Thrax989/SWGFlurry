@@ -834,6 +834,12 @@ int CombatManager::getDefenderDefenseModifier(CreatureObject* defender, WeaponOb
 	targetDefense += defender->getSkillMod("dodge_attack");
 	targetDefense += defender->getSkillMod("private_dodge_attack");
 
+	if (weapon->getAttackType() == SharedWeaponObjectTemplate::MELEEATTACK) {
+		targetDefense += defender->getSkillMod("melee_defence");
+	} else if (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) {
+		targetDefense += defender->getSkillMod("ranged_defence");
+	}
+
 	//info("Target defense after state affects and cap is " +  String::valueOf(targetDefense), true);
 
 	return targetDefense;
