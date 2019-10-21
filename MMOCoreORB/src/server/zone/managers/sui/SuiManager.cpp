@@ -545,7 +545,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "color_crystals" || templatePath == "krayt_pearls") {
 				ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
 
-				if (inventory == nullptrptr)
+				if (inventory == nullptr)
 					return;
 
 				LootManager* lootManager = zserv->getLootManager();
