@@ -712,8 +712,10 @@ includeFile("record_keepers/record_keepers.lua")
 --Tests
 includeFile("tests/tests.lua")
 
+
+--Acive Quest
+includeFile("mission_quest/mission.lua")--First Acive Quest Line /way Tatooine
 --New quest missions (Not Active In Development)
---includeFile("mission_quest/mission.lua")
 --includeFile("mission_quest/mission_one.lua")
 --includeFile("mission_quest/mission_two.lua")
 --includeFile("mission_quest/mission_three.lua")
