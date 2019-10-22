@@ -3028,7 +3028,7 @@ void PlayerObjectImplementation::updateWebStats(const String& stat, int newValue
 	uint64 playerID = player->getObjectID();
 
 	StringBuffer statQuery;
-	statQuery << "UPDATE `character_stats` SET `" << stat.escapeString() << "` = '"  << newValue << "' WHERE `character_oid` = '" << playerID << "'";
+	statQuery << "UPDATE `characters` SET `" << stat.escapeString() << "` = '"  << newValue << "' WHERE `character_oid` = '" << playerID << "'";
 
 	try {
 		Reference<ResultSet*> result = ServerDatabase::instance()->executeQuery(statQuery);
