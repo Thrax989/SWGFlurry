@@ -277,10 +277,10 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 -------------------------------------------------------
 --Set Player Active Waypoint For Watto Quest Target
 -------------------------------------------------------
-      local waypointID = PlayerObject(pGhost):addWaypoint("tatooine", "Target", "", 3527.94, -4801.99, WAYPOINT_COLOR_PURPLE, true, true, 0)
+      local waypointID = PlayerObject(pGhost):addWaypoint("tatooine", "Quest Target", "", -3821.73, 6497.91, WAYPOINT_COLOR_PURPLE, true, true, 0)
       setQuestStatus(playerID .. ":wattoWaypointID", waypointID)
 -------------------------------------------------------
---Accepting The Quest
+--Accepting The Quest 
 --Settings State For Quest
 -------------------------------------------------------
         player:setScreenPlayState( missionScreenplay.states.accepted , missionScreenplay.questString)
