@@ -587,5 +587,4 @@ class PlayerManager extends Observer implements Logger {
 	}
 
 	public native void stopOnlinePlayerLogTask();
-	public native void updateTopList();
 }
