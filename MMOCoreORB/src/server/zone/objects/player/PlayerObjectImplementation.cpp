@@ -3054,14 +3054,11 @@ void PlayerObjectImplementation::updateWebStats(const String& stat, int newValue
 				faction = 2;
 
 			String firstname = player->getFirstName();
-			StringBuffer statsAddQuery;
-
-			statsAddQuery
-				<< "INSERT INTO `character_stats` (`character_oid`, `firstname`, `faction`, `pvpkills`, `bountykills`, `pvekills`, `missionscompleted`)"
-				<< " VALUES (" << player->getObjectID() << "," << "'" << firstname.escapeString() <<  "','" << faction << "','" << ghost->getPvpKills()
-				<< "','" << ghost->getBountyKills() << "','" << ghost->getPveKills() << "','" << ghost->getMissionsCompleted() << "')";
-
-			ServerDatabase::instance()->executeStatement(statsAddQuery);
+				StringBuffer query;
+				query << "UPDATE characters SET faction = '" << faction << "', pvpkills = '" << ghost->getPvpKills() << "', pvpdeaths = '" << ghost->getPvpDeaths()
+						<< "', bountykills = '" << ghost->getBountyKills() << "', pvekills = '" << ghost->getPveKills() << "', pvedeaths = '" << ghost->getPveDeaths()
+						<< "', missionscompleted = '" << ghost->getMissionsCompleted() << "' WHERE character_oid = '" << player->getObjectID() << "'";
+				ServerDatabase::instance()->executeStatement(query);
 		}
 
 	} catch ( DatabaseException &err) {
