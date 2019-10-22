@@ -1,5 +1,5 @@
 mission_solo = Creature:new {
-	customName = "Watto",
+	customName = "Kaesii",
 	socialGroup = "",
 	faction = "",
 	level = 100,
@@ -24,7 +24,7 @@ mission_solo = Creature:new {
 	creatureBitmask = NONE,
 	optionsBitmask = INVULNERABLE + CONVERSABLE + INTERESTING,
     	diet = HERBIVORE,
-	templates = {"object/mobile/watto.iff"},
+	templates = {"object/mobile/dressed_tatooine_kaesii.iff"},
 	scale = 1,
     	lootGroups = {},
 	weapons = {},
