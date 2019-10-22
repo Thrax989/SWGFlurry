@@ -1967,13 +1967,14 @@ class PlayerObject extends IntangibleObject {
 	}
 	public void updatePvpKills() {
 		pvpKills += 1;
+		updateWebStats("pvpKills", pvpKills);
 	}
 	public unsigned long getPvpKills() {
 		return pvpKills;
-		updateWebStats("pvpkills", pvpKills);
 	}
 	public void updatePvpDeaths() {
 		pvpDeaths += 1;
+		updateWebStats("pvpDeaths", pvpDeaths);
 	}
 	public unsigned long getPvpDeaths() {
 		return pvpDeaths;
@@ -1994,6 +1995,7 @@ class PlayerObject extends IntangibleObject {
 	}
 	public void updatePveDeaths() {
 		pveDeaths += 1;
+		updateWebStats("pveDeaths", pveDeaths);
 	}
 	public unsigned long getPveDeaths() {
 		return pveDeaths;
