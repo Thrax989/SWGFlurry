@@ -10,10 +10,10 @@ missionScreenplay = ScreenPlay:new {
     numberOfActs = 1,
     questString = "missionquest",
     states = {
-        accepted = 1,
-        fightingenemy = 2,
-        enemydead = 4,
-        complete = 8,
+        accepted = 2,
+        fightingenemy = 4,
+        enemydead = 8,
+        complete = 16,
     },
     questdata = Object:new {
     activePlayerName = "initial",
@@ -24,7 +24,7 @@ missionScreenplay = ScreenPlay:new {
 -------------------------------------------------------
 registerScreenPlay("missionScreenplay", true)
 function missionScreenplay:start()
-  local pNpc = spawnMobile("tatooine", "mission_solo", 1, 4.06065, -0.478888, 1.82857, 253, 610000320)
+  local pNpc = spawnMobile("tatooine", "mission_solo", 1, 3.67032, 0.124125, -11.385, 338, 610000320)--/way 3486 -4769 Tatooine First Active Quest
   self:setMoodString(pNpc, "neutral")
   self:spawnMobiles()
 end
@@ -36,7 +36,7 @@ function missionScreenplay:spawnMobiles(pMobile)
 -------------------------------------------------------
 --Mission Target Location
 -------------------------------------------------------
-		pMobile = spawnMobile("tatooine", "meatlump_buffoon", 1, 3527.94, 5, -4801.99, 271, 0)
+		pMobile = spawnMobile("tatooine", "quest_1", 300, -3821.73, 45.5989, 6497.91, 352, 0) 
         	self:setMoodString(pMobile, "npc_accusing")
 		createObserver(OBJECTDESTRUCTION, "missionScreenplay", "enemyKilled", pMobile)
         return 0
