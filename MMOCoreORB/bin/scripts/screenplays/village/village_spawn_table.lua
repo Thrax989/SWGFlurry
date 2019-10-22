@@ -8,6 +8,10 @@ villageMobileSpawns = {
 		{ "noldan", 5243, 78, -4224, 0, "", "" },
 		{ "fs_villager_farmer", 5291.31, 78.5, -4037.8, 164, "", "" },
 		{ "eozlin", 5200.15, 78.5, -4141.37, 164, "", "villageSurveyorConvoTemplate" },
+		{ "trainer_combatjedigrayelderrankcouncil", 5303.26, 78.5, -4135.07, 294, "", "" },
+		{ "trainer_combatjedigrayelderrank", 5304.53, 78.5, -4125.42, 244, "", "" },
+		{ "trainer_combatjedigrayelder", 5296.71, 78.5, -4121.27, 173, "", "" },
+		{ "trainer_combatjedigray", 5293.58, 78.5, -4122.84, 151, "", "" },
 	},
 
 	[1] = {
@@ -51,10 +55,6 @@ villageMobileSpawns = {
 		{ "whip", 5283.66, 78.5, -4226.31, -143, "", "villageWhipPhase2ConvoTemplate" },
 		{ "quharek", 5373.7, 78.5, -4181.4, -69, "", "villageQuharekPhase2ConvoTemplate" },
 		{ "fs_cll8_binary_load_lifter", 5193.25, 78.5, -4195.6, -34, "initQtQcComponent", "villageQtQcPhase2ConvoTemplate" },
-		{ "trainer_combatjedigrayelderrankcouncil", 5303.26, 78.5, -4135.07, 294, "", "" },
-		{ "trainer_combatjedigrayelderrank", 5304.53, 78.5, -4125.42, 244, "", "" },
-		{ "trainer_combatjedigrayelder", 5296.71, 78.5, -4121.27, 173, "", "" },
-		{ "trainer_combatjedigray", 5293.58, 78.5, -4122.84, 151, "", "" },
 
 		{ "fs_villager_male", 5346.7, 78.5, -4062.15, -46, "", "fsVillageConvo6MaleTemplate" },
 		{ "fs_villager_female", 5199.3, 78.5, -4128.55, -142, "", "fsVillageConvo5FemaleTemplate" },

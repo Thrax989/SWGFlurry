@@ -1970,6 +1970,7 @@ class PlayerObject extends IntangibleObject {
 	}
 	public unsigned long getPvpKills() {
 		return pvpKills;
+		updateWebStats("pvpkills", pvpKills);
 	}
 	public void updatePvpDeaths() {
 		pvpDeaths += 1;
@@ -1979,12 +1980,14 @@ class PlayerObject extends IntangibleObject {
 	}
 	public void updateBountyKills() {
 		bountyKills += 1;
+		updateWebStats("bountykills", bountyKills);
 	}
 	public unsigned long getBountyKills() {
 		return bountyKills;
 	}
 	public void updatePveKills() {
 		pveKills += 1;
+		updateWebStats("pvekills", pveKills);
 	}
 	public unsigned long getPveKills() {
 		return pveKills;
@@ -1997,10 +2000,13 @@ class PlayerObject extends IntangibleObject {
 	}
 	public void updateMissionsCompleted() {
 		missionsCompleted += 1;
+		updateWebStats("missionscompleted", missionsCompleted);
 	}
 	public unsigned long getMissionsCompleted() {
 		return missionsCompleted;
 	}
+	
+	public native void updateWebStats(final string stat, int newValue);
 
 	@read
 	public boolean isCloning() {

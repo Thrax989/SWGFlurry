@@ -3015,3 +3015,53 @@ String PlayerObjectImplementation::getPlayedTimeString(bool verbose) const {
 
 	return buf.toString();
 }
+
+void PlayerObjectImplementation::updateWebStats(const String& stat, int newValue) {
+	ManagedReference<CreatureObject*> player = getParent().get().castTo<CreatureObject*>();
+
+	if (player == nullptr)
+		return;
+
+	if (isPrivileged())
+		return;
+
+	uint64 playerID = player->getObjectID();
+
+	StringBuffer statQuery;
+	statQuery << "UPDATE `character_stats` SET `" << stat.escapeString() << "` = '"  << newValue << "' WHERE `character_oid` = '" << playerID << "'";
+
+	try {
+		Reference<ResultSet*> result = ServerDatabase::instance()->executeQuery(statQuery);
+
+		if (result == nullptr) {
+			error("ERROR WHILE TRYING TO UPDATE PLAYER STATS. RESULT IS NULL.");
+		} else if (result.get()->getRowsAffected() > 1) {
+			error("More than one character with oid = " + String::valueOf(playerID));
+		} else if (result.get()->getRowsAffected() == 0) {
+			PlayerObject* ghost = player->getPlayerObject();
+
+			if (ghost == nullptr)
+				return;
+
+			if (ghost->isPrivileged())
+				return;
+
+			int faction = 0;
+
+			if (player->getFaction() == Factions::FACTIONREBEL)
+				faction = 1;
+			else if (player->getFaction() == Factions::FACTIONIMPERIAL)
+				faction = 2;
+
+			String firstname = player->getFirstName();
+				StringBuffer query;
+				query << "UPDATE characters SET faction = '" << faction << "', pvpkills = '" << ghost->getPvpKills() << "', pvpdeaths = '" << ghost->getPvpDeaths()
+						<< "', bountykills = '" << ghost->getBountyKills() << "', pvekills = '" << ghost->getPveKills() << "', pvedeaths = '" << ghost->getPveDeaths()
+						<< "', missionscompleted = '" << ghost->getMissionsCompleted() << "' WHERE character_oid = '" << player->getObjectID() << "'";
+				ServerDatabase::instance()->executeStatement(query);
+		}
+
+	} catch ( DatabaseException &err) {
+		info("database error " + err.getMessage(),true);
+	}
+}
