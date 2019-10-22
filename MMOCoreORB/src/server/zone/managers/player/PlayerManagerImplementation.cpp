@@ -6419,57 +6419,6 @@ void PlayerManagerImplementation::logOnlinePlayers(bool onlyWho) {
 	}
 }
 
-void PlayerManagerImplementation::updateTopList(){
-	info("**** Updating Website Top List ***",true);
-
-	ObjectDatabase* sceneDatabase = ObjectDatabaseManager::instance()->loadObjectDatabase("sceneobjects", true, 0xFFFF, false);
-
-	if (sceneDatabase == nullptr)
-		return;
-
-	ObjectInputStream objectData(2000);
-	ObjectDatabaseIterator iterator(sceneDatabase);
-
-	uint64 objectID;
-	String className;
-
-	while (iterator.getNextKeyAndValue(objectID, &objectData)) {
-		if (Serializable::getVariable<String>(STRING_HASHCODE("_className"), &className, &objectData)) {
-			if (className == "CreatureObject") {
-				ManagedReference<CreatureObject*> player = Core::getObjectBroker()->lookUp(objectID).castTo<CreatureObject*>();
-
-				if (player == nullptr)
-					continue;
-
-				PlayerObject* ghost = player->getPlayerObject();
-
-				if (ghost == nullptr)
-					continue;
-
-				int faction = 0;
-
-				if (!ghost->hasGodMode()) {
-					int faction = 0;
-
-					if (player->getFaction() == Factions::FACTIONREBEL)
-						faction = 1;
-					else if (player->getFaction() == Factions::FACTIONIMPERIAL)
-						faction = 2;
-
-					StringBuffer query;
-					query << "UPDATE characters SET faction = '" << faction << "', pvpkills = '" << ghost->getPvpKills() << "', pvpdeaths = '" << ghost->getPvpDeaths()
-							<< "', bountykills = '" << ghost->getBountyKills() << "', pvekills = '" << ghost->getPveKills() << "', pvedeaths = '" << ghost->getPveDeaths()
-							<< "', missionscompleted = '" << ghost->getMissionsCompleted() << "' WHERE character_oid = '" << player->getObjectID() << "'";
-					ServerDatabase::instance()->executeStatement(query);
-				}
-			}
-		}
-		objectData.reset();
-	}
-
-	info("Website Top List Update Complete", true);
-}
-
 Vector<uint64> PlayerManagerImplementation::getOnlinePlayerList() {
 	Vector<uint64> playerList;
 
