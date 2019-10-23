@@ -1,5 +1,5 @@
 -------------------------------------------------------
---Wattos Main Quest Line
+--First Quest Line
 --Quest Starts in Tattooine /way 
 -------------------------------------------------------
 local ObjectManager = require("managers.object.object_manager")
@@ -211,11 +211,11 @@ function mission_quest_convo_handler:getNextConversationScreen(conversationTempl
 -------------------------------------------------------
 --Quest Reward Item First Reward
 -------------------------------------------------------
-                local pItem = giveItem(pInventory, "", -1)
+                local pItem = giveItem(pInventory, "object/tangible/tcg/series1/video_game_table.iff", -1)
 -------------------------------------------------------
 --Set Up Additional Quest Reward Items Second Reward
 -------------------------------------------------------
-                local pItem = giveItem(pInventory, "", -1)
+                local pItem = giveItem(pInventory, "object/tangible/tcg/series1/decorative_painting_darth_vader.iff", -1)
                 end
 -------------------------------------------------------
 --Not yet
