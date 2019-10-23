@@ -71,13 +71,13 @@ function missionScreenplay:enemyKilled(pMobile, pPlayer)
            player:playEffect("clienteffect/level_granted_chronicles.cef", "")
            local pGhost = CreatureObject(pPlayer):getPlayerObject()
            local playerID = CreatureObject(pPlayer):getObjectID()
-           local oldWaypointID = tonumber(getQuestStatus(playerID .. ":wattoWaypointID"))
+           local oldWaypointID = tonumber(getQuestStatus(playerID .. ":executionerWaypointID"))
            PlayerObject(pGhost):removeWaypoint(oldWaypointID, true)
     else
 -------------------------------------------------------
---Promt To Go Back To Mission Giver (Watto)
+--Promt To Go Back To Mission Giver (executioner)
 -------------------------------------------------------
-       player:sendSystemMessage("You've finished the Quest talk with Watto.")
+       player:sendSystemMessage("You've finished the Quest talk with executioner.")
        end
 end
     return 0
@@ -267,24 +267,24 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
         player:setScreenPlayState( missionScreenplay.states.complete , missionScreenplay.questString)
     elseif (screenID == "accept_quest") then
 -------------------------------------------------------
---Remove Player Active Waypoint For Watto Quest Target
+--Remove Player Active Waypoint For executioner Quest Target
 -------------------------------------------------------
-      local oldWaypointID = tonumber(getQuestStatus(playerID .. ":wattoWaypointID"))
+      local oldWaypointID = tonumber(getQuestStatus(playerID .. ":executionerWaypointID"))
       if (oldWaypointID ~= 0) then
       PlayerObject(pGhost):removeWaypoint(oldWaypointID, true)
-      removeQuestStatus(playerID .. ":wattoWaypointID")
+      removeQuestStatus(playerID .. ":executionerWaypointID")
       end
 -------------------------------------------------------
---Set Player Active Waypoint For Watto Quest Target
+--Set Player Active Waypoint For executioner Quest Target
 -------------------------------------------------------
       local waypointID = PlayerObject(pGhost):addWaypoint("tatooine", "Quest Target", "", -3821.73, 6497.91, WAYPOINT_COLOR_PURPLE, true, true, 0)
-      setQuestStatus(playerID .. ":wattoWaypointID", waypointID)
+      setQuestStatus(playerID .. ":executionerWaypointID", waypointID)
 -------------------------------------------------------
 --Accepting The Quest 
 --Settings State For Quest
 -------------------------------------------------------
         player:setScreenPlayState( missionScreenplay.states.accepted , missionScreenplay.questString)
-        player:sendSystemMessage("ACCEPTED mission: Wattos Revenge")
+        player:sendSystemMessage("ACCEPTED mission: executioners Revenge")
         player:playMusicMessage("sound/ui_npe2_quest_received.snd")
         player:playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
     	elseif (screenID == "quest_status") then
@@ -320,8 +320,8 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 -------------------------------------------------------
 --Remove Active Waypoint If There s One
 -------------------------------------------------------
-        player:sendSystemMessage("FAILED mission: Wattos Revenge")
-        local oldWaypointID = tonumber(getQuestStatus(playerID .. ":wattoWaypointID"))
+        player:sendSystemMessage("FAILED mission: executioners Revenge")
+        local oldWaypointID = tonumber(getQuestStatus(playerID .. ":executionerWaypointID"))
         PlayerObject(pGhost):removeWaypoint(oldWaypointID, true)
         else
         clonedConversation:setCustomDialogText("You have not started or finished this mission")
