@@ -77,7 +77,7 @@ function missionScreenplay:enemyKilled(pMobile, pPlayer)
 -------------------------------------------------------
 --Promt To Go Back To Mission Giver (executioner)
 -------------------------------------------------------
-       player:sendSystemMessage("You've finished the Quest talk with executioner.")
+       player:sendSystemMessage("You've finished the Quest talk with kaesii.")
        end
 end
     return 0
@@ -320,7 +320,7 @@ local pGhost = CreatureObject(conversingPlayer):getPlayerObject()
 -------------------------------------------------------
 --Remove Active Waypoint If There s One
 -------------------------------------------------------
-        player:sendSystemMessage("FAILED mission: executioners Revenge")
+        player:sendSystemMessage("FAILED mission: Executioners Revenge")
         local oldWaypointID = tonumber(getQuestStatus(playerID .. ":executionerWaypointID"))
         PlayerObject(pGhost):removeWaypoint(oldWaypointID, true)
         else
