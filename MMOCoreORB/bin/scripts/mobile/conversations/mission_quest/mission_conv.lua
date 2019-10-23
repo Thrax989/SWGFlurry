@@ -11,7 +11,7 @@ mission_start_quest = ConvoScreen:new {
 	customDialogText = "Hello, how may I help you today?",
 	stopConversation = "false",
 	options = {
-		{ "I am looking for some work any available?", "intro" },
+		{ "I am looking for some work, is there any available?", "intro" },
 		{ "Goodbye, I'm not interested in what you have to say.", "bye" },
 	}
 }
@@ -20,7 +20,7 @@ mission_quest_template:addScreen(mission_start_quest);
 
 mission_intro = ConvoScreen:new {
 	id = "intro",
-	customDialogText = "ah yes, there is much work to be done around here are you sure you would like to get your hands dirty?",
+	customDialogText = "ah yes, there is much work to be done around here, are you sure you would like to get your hands dirty?",
 	stopConversation = "false",
 	options = {
 		{ "Sure I can help what do you need me to do?", "intro2" },
@@ -46,7 +46,7 @@ mission_quest_template:addScreen(mission_intro2);
 
 mission_intro3 = ConvoScreen:new {
 	id = "intro3",
-  customDialogText = "You would be surprised, this guy has many tricks up his sleeve, make sure you bring a weapon with you maybe even a friend or two.",
+  customDialogText = "You would be surprised, the guy that you are tracking down has many tricks up his sleeve, make sure you bring a weapon with you, maybe even a friend or two just to be safe.",
 	stopConversation = "false",
 	options = {
 		{ "This sounds dangerous I think I can handle it though", "intro4" },
@@ -58,7 +58,7 @@ mission_quest_template:addScreen(mission_intro3);
 
 mission_intro4 = ConvoScreen:new {
 	id = "intro4",
-customDialogText = "Very well if you do defeat him, bring back what he owes me, I will reward you for your efforts.",
+customDialogText = "Very well if you do defeat him, bring back what he has taken from me, I will reward you for your efforts.",
 	stopConversation = "false",
 	options = {
 		{ "what type of reward are you offering?", "intro5" },
@@ -70,7 +70,7 @@ mission_quest_template:addScreen(mission_intro4);
 
 mission_intro5 = ConvoScreen:new {
   id = "intro5",
-  customDialogText = "Well if you are able to complete the job I can give you a fair amount of Credits along with some valuable Items.",
+  customDialogText = "Well if you are able to complete the job I can give you a fair amount of Credits along with some Rare valuable Items.",
   stopConversation = "false",
   options = {
 		{ "I need the work.", "intro6" },
@@ -94,7 +94,7 @@ mission_quest_template:addScreen(mission_intro6);
 
 mission_intro7 = ConvoScreen:new {
   id = "intro7",
-  customDialogText = "You will be traveling across planet to the fort tusken region make sure you keep your guard up it can be very dangerous around there. Don't Forget...",
+  customDialogText = "You will be traveling across planet to the fort tusken region, make sure you keep your guard up it can be very dangerous around there.",
   stopConversation = "false",
   options = {
 		{ "All right. I'll come back once the job is complete.", "intro8" },
@@ -105,7 +105,7 @@ mission_quest_template:addScreen(mission_intro7);
 
 mission_intro8 = ConvoScreen:new {
   id = "intro8",
-  customDialogText = "His name is ... The Tusken Executioner",
+  customDialogText = "Dont Forget, your target is the ... The Tusken Executioner",
   stopConversation = "false",
   options = {
 		{ "I'm ready...", "accept_quest" },
@@ -124,7 +124,7 @@ mission_quest_template:addScreen(mission_bye);
 
 mission_bye2 = ConvoScreen:new {
   id = "bye2",
-  customDialogText = "Luck.",
+  customDialogText = "maybe another time",
   stopConversation = "true",
   options = {}
 }
@@ -175,7 +175,7 @@ mission_quest_template:addScreen(mission_quest_thank_you);
 
 mission_quest_completed = ConvoScreen:new {
 	id = "completed",
-	customDialogText = "I feel that you managed to defeat the tusken king ...",
+	customDialogText = "I feel that you managed to defeat the tusken executioner ...",
 	stopConversation = "true",
 	options = {}
 }
