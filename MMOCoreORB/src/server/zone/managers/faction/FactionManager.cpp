@@ -13,7 +13,7 @@
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/chat/ChatManager.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
-
+#include "server/zone/objects/group/GroupObject.h"
 
 FactionManager::FactionManager() {
 	setLoggingName("FactionManager");
@@ -152,6 +152,27 @@ void FactionManager::awardFactionStanding(CreatureObject* player, const String& 
 		if (!enemyFaction.isPlayerAllowed())
 			continue;
 
+		if (enemy == "rebel" || enemy == "imperial") {
+
+			if (player->isGrouped()) {
+		
+				ManagedReference<GroupObject*> group = player->getGroup();
+				int groupSize = group->getGroupSize();
+
+				for (int i = 0; i < groupSize; i++) {
+					ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+
+					ManagedReference<PlayerObject*> groupMemberPlayer = groupMember->getPlayerObject();
+
+					if (groupMember->isInRange(player, 100.0) && (groupMember != player)) {	
+						if (groupMember->isPlayerCreature()) {			
+							groupMemberPlayer->increaseFactionStanding(enemy, (gain * 0.5));
+						} 			
+					}	
+				}	
+		    
+			}
+		}
 		ghost->increaseFactionStanding(enemy, gain);
 	}
 }
