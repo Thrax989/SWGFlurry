@@ -100,4 +100,4 @@ public:
 
 };
 
-#endif /* MEDITATETASK_H_ *
+#endif /* MEDITATETASK_H_ */
