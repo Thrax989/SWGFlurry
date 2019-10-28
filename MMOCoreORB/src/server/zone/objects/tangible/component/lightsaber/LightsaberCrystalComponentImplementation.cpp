@@ -307,41 +307,52 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 			alm->insertAttribute("crystal_owner", ownerName);
 		}
 
-		if (getColor() != 31) {
+	if (getColor() != 31){
+		if (ownerID == 0) {
+			StringBuffer str2;
+			str2 << "@jedi_spam:saber_color_" << getColor();
+			alm->insertAttribute("color", str2);
+		} else {
 			StringBuffer str3;
 			str3 << "@jedi_spam:saber_color_" << getColor();
 			alm->insertAttribute("color", str3);
+		}
+	}
+	
+	if ((player->getJediState() > 1 && getColor() != 31) || player->getAdminLevel() > 6) {
+		if (ownerID != 0 || player->getAdminLevel() > 6) {
+			alm->insertAttribute("mindamage", minimumDamage);
+			alm->insertAttribute("maxdamage", maximumDamage);
+			alm->insertAttribute("wpn_attack_speed", attackSpeed);
+			alm->insertAttribute("wpn_wound_chance", woundChance);
+			alm->insertAttribute("wpn_attack_cost_health", sacHealth);
+			alm->insertAttribute("wpn_attack_cost_action", sacAction);
+			alm->insertAttribute("wpn_attack_cost_mind", sacMind);
+			alm->insertAttribute("forcecost", (int)getForceCost());
 		} else {
-			if (ownerID != 0 || player->isPrivileged()) {
-				if (minimumDamage != maximumDamage || itemLevel == 0) {
-					alm->insertAttribute("mindamage", minimumDamage);
-				 	alm->insertAttribute("maxdamage", maximumDamage);
-				} else {
-				 	alm->insertAttribute("mindamage", damage);
-				 	alm->insertAttribute("maxdamage", damage);
-				}
-				alm->insertAttribute("wpn_attack_speed", attackSpeed);
-				alm->insertAttribute("wpn_wound_chance", woundChance);
-				alm->insertAttribute("wpn_attack_cost_health", sacHealth);
-				alm->insertAttribute("wpn_attack_cost_action", sacAction);
-				alm->insertAttribute("wpn_attack_cost_mind", sacMind);
-				alm->insertAttribute("forcecost", (float)getForceCost());
+			StringBuffer str;
+			str << "@jedi_spam:crystal_quality_" << getQuality();
+			alm->insertAttribute("quality", str);
+		}
 
-				// For debugging
-				if (player->isPrivileged()) {
-					StringBuffer str;
-					str << "@jedi_spam:crystal_quality_" << getQuality();
-					alm->insertAttribute("challenge_level", itemLevel);
-					alm->insertAttribute("crystal_quality", str);
-				}
-			} else {
-				StringBuffer str;
-				str << "@jedi_spam:crystal_quality_" << getQuality();
-				alm->insertAttribute("crystal_quality", str);
-			}
+	if ((player->getJediState() > 1 && getColor() == 31) || player->getAdminLevel() > 6) {
+		if (ownerID != 0 || player->getAdminLevel() > 6) {
+			alm->insertAttribute("mindamage", minimumDamage);
+			alm->insertAttribute("maxdamage", maximumDamage);
+			alm->insertAttribute("wpn_attack_speed", attackSpeed);
+			alm->insertAttribute("wpn_wound_chance", woundChance);
+			alm->insertAttribute("wpn_attack_cost_health", sacHealth);
+			alm->insertAttribute("wpn_attack_cost_action", sacAction);
+			alm->insertAttribute("wpn_attack_cost_mind", sacMind);
+			alm->insertAttribute("forcecost", (int)getForceCost());
+		} else {
+			StringBuffer str;
+			str << "@jedi_spam:crystal_quality_" << getQuality();
+			alm->insertAttribute("quality", str);
 		}
 	}
 }
+
 
 void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
 ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
