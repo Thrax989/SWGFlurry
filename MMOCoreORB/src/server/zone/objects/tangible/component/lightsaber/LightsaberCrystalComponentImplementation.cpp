@@ -313,8 +313,13 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 			alm->insertAttribute("color", str3);
 		} else {
 			if (ownerID != 0 || player->isPrivileged()) {
-				alm->insertAttribute("mindamage", damage);
-				alm->insertAttribute("maxdamage", damage);
+				if (minimumDamage != maximumDamage || itemLevel == 0) {
+					alm->insertAttribute("mindamage", minimumDamage);
+				 	alm->insertAttribute("maxdamage", maximumDamage);
+				} else {
+				 	alm->insertAttribute("mindamage", damage);
+				 	alm->insertAttribute("maxdamage", damage);
+				}
 				alm->insertAttribute("wpn_attack_speed", attackSpeed);
 				alm->insertAttribute("wpn_wound_chance", woundChance);
 				alm->insertAttribute("wpn_attack_cost_health", sacHealth);
