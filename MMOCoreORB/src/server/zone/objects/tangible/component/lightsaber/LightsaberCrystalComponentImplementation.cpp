@@ -320,7 +320,7 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 
 void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
 ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
-	if (jedi->getForcePower() >= 1) {
+	if (jedi->getJediState() >= 1) {
 		String text = "@jedi_spam:tune_crystal";
 		menuResponse->addRadialMenuItem(128, 3, text);
 	}
@@ -341,7 +341,7 @@ ManagedReference<PlayerObject*> jedi = player->getPlayerObject();
 
 int LightsaberCrystalComponentImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
  	ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
-	if (selectedID == 128 && jedi->getForcePower() >= 1) {
+	if (selectedID == 128 && jedi->getJediState() >= 1) {
 		ManagedReference<SuiMessageBox*> suiMessageBox = new SuiMessageBox(player, SuiWindowType::TUNE_CRYSTAL);
 
 		suiMessageBox->setPromptTitle("@jedi_spam:confirm_tune_title");
@@ -401,26 +401,10 @@ bool LightsaberCrystalComponentImplementation::hasPlayerAsParent(CreatureObject*
 
 void LightsaberCrystalComponentImplementation::tuneCrystal(CreatureObject* player) {
 	ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
-	if (jedi->getForcePower() <= 1) {
+	if (!jedi->getJediState() >= 1) {
 		return;
 	}
-
-	if (getColor() == 31) {
-		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-
-		if (ghost == nullptr)
-			return;
-
-		int tuningCost = 100 + (quality * 75);
-
-		if (ghost->getForcePower() <= tuningCost) {
-			player->sendSystemMessage("@jedi_spam:no_force_power");
-			return;
-		}
-
-		ghost->setForcePower(ghost->getForcePower() - tuningCost);
-	}
-
+}
 	if (ownerID == 0) {
 		validateCrystalStats();
 
