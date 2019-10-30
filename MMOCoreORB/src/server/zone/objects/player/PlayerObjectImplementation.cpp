@@ -2304,6 +2304,10 @@ void PlayerObjectImplementation::doForceRegen() {
 			modifier = 3;
 	}
 
+	int enhSkills = numSpecificSkills(creature, "force_discipline_enhancements_");
+        float enhMod = enhSkills * .056;
+        modifier = modifier * (1 + enhMod);
+
 	uint32 forceTick = tick * modifier;
 
 	if (forceTick > getForcePowerMax() - getForcePower()){   // If the player's Force Power is going to regen again and it's close to max,

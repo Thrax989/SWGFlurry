@@ -44,7 +44,7 @@ turretAutoFireTimeout = 20
 maxBasesPerPlayer = 3
 
 -- xp bonus for faction controlling a planet
-bonusXP = 15
+bonusXP = 50
 
 -- thresholds for scaling crackdown npc's difficulty, first threshold should always be 0.
 difficutlyScalingThresholds = {0, 64}
@@ -60,7 +60,7 @@ spawnDefenses = 1
 -- Amount of time to delay vulnerability in seconds afer placing base
 initialVulnerabilityDelay = 0
 
-racialPenaltyEnabled = 1
+racialPenaltyEnabled = 0
 
 -- assign points to each type of base
 -- s01=Forward Outpost, s02 = Field Hospital , s03 = Tactical Center, s04 = Detach HQ
