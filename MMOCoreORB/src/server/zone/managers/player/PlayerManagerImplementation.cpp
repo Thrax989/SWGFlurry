@@ -1263,9 +1263,8 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	}
 	if (player->getScreenPlayState("jediLives") >= 4) {
 		if (player->hasSkill("combat_jedi_novice")) {
-		int livesLeft = player->getScreenPlayState("jediLives") - 1;
 		int jediVis1 = ghost->getVisibility();
-		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 2 Lives"); // You have Lost 1 Jedi Life, you now have a total of 2 Lives
+		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 3 Lives"); // You have Lost 1 Jedi Life, you now have a total of 3 Lives
 		player->setScreenPlayState("jediLives", 3);
 		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
 		box->setPromptTitle("Jedi Lives");
