@@ -401,7 +401,7 @@ bool LightsaberCrystalComponentImplementation::hasPlayerAsParent(CreatureObject*
 
 void LightsaberCrystalComponentImplementation::tuneCrystal(CreatureObject* player) {
 	ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
-	if(!player->hasSkill("force_title_jedi_rank_01") || !player->hasSkill("force_title_jedi_rank_01")) {
+	if(!player->hasSkill("force_title_jedi_rank_01") || !player->hasSkill("combat_jedi_novice")) {
 		return;
 	}
 
