@@ -1261,7 +1261,22 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		player->sendMessage(box->generateMessage());
 		}
 	}
-
+	if (player->getScreenPlayState("jediLives") >= 4) {
+		if (player->hasSkill("combat_jedi_novice")) {
+		int jediVis1 = ghost->getVisibility();
+		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 3 Lives"); // You have Lost 1 Jedi Life, you now have a total of 3 Lives
+		player->setScreenPlayState("jediLives", 3);
+		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+		box->setPromptTitle("Jedi Lives");
+		StringBuffer promptText;
+		String playerName = player->getFirstName();
+		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
+		promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+		box->setPromptText(promptText.toString());
+		ghost->addSuiBox(box);
+		player->sendMessage(box->generateMessage());
+		}
+	}
 	//CUSTOM BH SYSTEM
 	if (attacker->isPlayerCreature() && attacker != player){
 		ManagedReference<SuiInputBox*> box = new SuiInputBox(player, SuiWindowType::OBJECT_NAME);

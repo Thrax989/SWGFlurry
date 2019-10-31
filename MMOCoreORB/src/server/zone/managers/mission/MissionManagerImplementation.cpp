@@ -166,7 +166,7 @@ void MissionManagerImplementation::handleMissionListRequest(MissionTerminal* mis
 	}
 
 	if (missionTerminal->isBountyTerminal()) {
-		if (!player->hasSkill("combat_bountyhunter_novice") || !player->hasSkill("combat_meleebountyhunter_novice")) {
+		if (!player->hasSkill("combat_bountyhunter_novice") && !player->hasSkill("combat_meleebountyhunter_novice")) {
 			player->sendSystemMessage("@mission/mission_generic:not_bounty_hunter_terminal");
 			return;
 		}
@@ -248,7 +248,7 @@ void MissionManagerImplementation::handleMissionAccept(MissionTerminal* missionT
 	}
 
 	//Limit to two missions (only one of them can be a bounty mission)
-	if (missionCount >= 4 || (hasBountyMission && mission->getTypeCRC() == MissionTypes::BOUNTY)) {
+	if (missionCount >= 2 || (hasBountyMission && mission->getTypeCRC() == MissionTypes::BOUNTY)) {
 		StringIdChatParameter stringId("mission/mission_generic", "too_many_missions");
 		player->sendSystemMessage(stringId);
 		return;
@@ -996,7 +996,7 @@ void MissionManagerImplementation::randomizeGenericSurveyMission(CreatureObject*
 }
 
 void MissionManagerImplementation::randomizeGenericBountyMission(CreatureObject* player, MissionObject* mission, const uint32 faction, Vector<ManagedReference<PlayerBounty*>>* potentialTargets) {
-	if (!player->hasSkill("combat_bountyhunter_novice") || !player->hasSkill("combat_meleebountyhunter_novice")) {
+	if (!player->hasSkill("combat_bountyhunter_novice") && !player->hasSkill("combat_meleebountyhunter_novice")) {
 		player->sendSystemMessage("@mission/mission_generic:not_bounty_hunter_terminal");
 		return;
 	}
