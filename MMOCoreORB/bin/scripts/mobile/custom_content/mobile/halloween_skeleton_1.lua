@@ -43,7 +43,7 @@ halloween_skeleton_1 = Creature:new {
 		},
 		{
 			groups = {
-				{group = "tierthree", chance = 2500000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 2500000
 		},

@@ -25,8 +25,8 @@ halloween_skeleton_king_executioner = Creature:new {
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
-	optionsBitmask = AIENABLED,
-	diet = HERBIVORE + JTLINTERESTING,
+	optionsBitmask = AIENABLED + JTLINTERESTING,
+	diet = HERBIVORE,
 
 	templates = {"object/mobile/halloween_skeleton_1.iff"},
   	outfit = "custom_halloween1_outfit",
@@ -46,7 +46,7 @@ halloween_skeleton_king_executioner = Creature:new {
 		},
 		{
 			groups = {
-				{group = "tierthree", chance = 2500000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
