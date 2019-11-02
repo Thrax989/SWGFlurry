@@ -45,7 +45,7 @@ halloween_skeleton_king_pet = Creature:new {
 		},
 		{
 			groups = {
-				{group = "tierthree", chance = 2500000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
