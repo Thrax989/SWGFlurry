@@ -80,4 +80,6 @@ factionList = {
 	{ "valarian", true, "jabba", "", 1.0 },
 	{ "norulac_raiders", true, "", "", 1.0 },
 	{ "blackscale", true, "", "", 1.0 },
+	{ "halloween", true, "", "", 1.0 },
+
 }
