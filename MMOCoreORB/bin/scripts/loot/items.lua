@@ -1266,3 +1266,7 @@ includeFile("items/saber28.lua")
 includeFile("items/flurry_presents.lua")
 --Christmas Coal
 includeFile("items/flurry_coals.lua")
+
+--Faction /point /loot
+includeFile("items/imppointsitem.lua")
+includeFile("items/rebpointsitem.lua")
