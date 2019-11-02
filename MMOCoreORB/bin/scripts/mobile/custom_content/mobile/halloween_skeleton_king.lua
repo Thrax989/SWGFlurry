@@ -2,8 +2,8 @@ halloween_skeleton_king = Creature:new {
 	customName = "Skeleton King",
 	--objectName = "",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "townsperson",
-	faction = "",
+	socialGroup = "halloween",
+	faction = "halloween",
 	level = 300,
 	chanceHit = 30.0,
 	damageMin = 1645,
@@ -25,7 +25,7 @@ halloween_skeleton_king = Creature:new {
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = AIENABLED + JTLINTERESTING,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/halloween_skeleton_1.iff"},
@@ -94,13 +94,25 @@ halloween_skeleton_king = Creature:new {
 		},
 		{
 			groups = {
-				{group = "imppoints", chance = 10000000},
+				{group = "krayt_tissue_rare", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "rebpoints", chance = 10000000},
+				{group = "krayt_pearls", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
