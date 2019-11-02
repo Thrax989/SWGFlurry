@@ -1,18 +1,18 @@
 halloween_skeleton_2 = Creature:new {
-	customName = "halloween_skeleton_2",
+	customName = "Undead Skeleton",
 	--objectName = "",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "townsperson",
-	faction = "",
-	level = 100,
-	chanceHit = 1,
-	damageMin = 645,
-	damageMax = 1000,
-	baseXp = 9429,
-	baseHAM = 24000,
-	baseHAMmax = 30000,
-	armor = 0,
-	resists = {0,0,0,0,0,0,0,0,-1},
+	socialGroup = "halloween",
+	faction = "halloween",
+	level = 250,
+	chanceHit = 19.75,
+	damageMin = 1270,
+	damageMax = 2250,
+	baseXp = 21630,
+	baseHAM = 208000,
+	baseHAMmax = 254000,
+	armor = 2,
+	resists = {185,185,135,200,10,130,145,180,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -22,13 +22,86 @@ halloween_skeleton_2 = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = NONE,
-	creatureBitmask = NONE,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/halloween_skeleton_2.iff"},
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "tierone", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 2500000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "tierdiamond", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "halloween", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "power_crystals", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "nightsister1", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "nightsister2", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "nightsister3", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "nightsister4", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
