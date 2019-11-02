@@ -1,7 +1,7 @@
 --New Content Mob Template Files
 includeFile("custom_content/ep3/serverobjects.lua")
 includeFile("custom_content/misc/serverobjects.lua")
---includeFile("custom_content/mobile/serverobjects.lua")
+includeFile("custom_content/mobile/serverobjects.lua")
 includeFile("custom_content/npe/serverobjects.lua")
 includeFile("custom_content/som/serverobjects.lua")
 includeFile("custom_content/tatooine/serverobjects.lua")
