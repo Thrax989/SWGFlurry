@@ -376,6 +376,7 @@ includeFile("groups/playerSkull.lua")
 includeFile("groups/tierone.lua")
 includeFile("groups/tiertwo.lua")
 includeFile("groups/tierthree.lua")
+includeFile("groups/tierdiamond.lua")
 includeFile("groups/lootcollectiontierone.lua")
 includeFile("groups/lootcollectiontiertwo.lua")
 includeFile("groups/lootcollectiontierthree.lua")
@@ -431,3 +432,7 @@ includeFile("groups/worldbosstoken.lua")
 
 --Bh saber loot when Deathblowing a Player jedi. Trophy no stats
 includeFile("groups/saberhand28.lua")
+
+--Faction /point /loot
+includeFile("groups/imppoints.lua")
+includeFile("groups/rebpoints.lua")
