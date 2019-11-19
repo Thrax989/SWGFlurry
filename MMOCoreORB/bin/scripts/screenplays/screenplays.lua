@@ -369,6 +369,7 @@ includeFile("events/jediQuest.lua")
 includeFile("events/jediLives.lua")
 includeFile("events/deathBounty.lua")
 includeFile("events/halloween_moenia.lua")
+includeFile("events/spirit_exar.lua")
 
 --Pvp Arena
 includeFile("events/pvp/pvp.lua")
