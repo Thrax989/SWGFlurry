@@ -743,3 +743,6 @@ includeFile("events/ServerEventAutomation.lua")
 
 -- Custom content - Loads last to allow for overrides
 includeFile("../custom_scripts/screenplays/screenplays.lua")
+
+-- World Boss Systems
+includeFile("events/worldboss_one.lua")
