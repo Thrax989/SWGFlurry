@@ -36,8 +36,6 @@ includeFile("../custom_scripts/screenplays/screenplays.lua")
 includeFile("tools/FlurryBuffTerminal.lua")
 includeFile("tools/mission_level_choice.lua")
 includeFile("tools/mission_direction_choice.lua")
-includeFile("tools/flurry_world_boss.lua")
-includeFile("tools/spawn_points_table.lua")
 includeFile("helperfuncs.lua")
 includeFile("playerTriggers.lua")
 
