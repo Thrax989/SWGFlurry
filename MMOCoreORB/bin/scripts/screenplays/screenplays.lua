@@ -366,7 +366,7 @@ includeFile("events/race_droid.lua")
 includeFile("events/jediQuest.lua")
 includeFile("events/jediLives.lua")
 includeFile("events/deathBounty.lua")
-includeFile("events/halloween_moenia.lua")
+--includeFile("events/halloween_moenia.lua")
 
 --Pvp Arena
 includeFile("events/pvp/pvp.lua")
