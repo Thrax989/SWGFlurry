@@ -16,6 +16,7 @@
 #include "server/zone/Zone.h"
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/objects/player/sessions/SlicingSession.h"
+#include "server/chat/ChatManager.h"
 
 const char LuaPlayerObject::className[] = "LuaPlayerObject";
 
@@ -755,6 +756,6 @@ int LuaPlayerObject::getPlayedTimeString(lua_State* L) {
 int LuaPlayerObject::broadcastToServer(lua_State* L) {
 	String message = lua_tostring(L, -1);
 	ZoneServer* zServ = realObject->getZoneServer();
-	zServ->getChatManager()->broadcastGalaxy(NULL, message);
+	zServ->getChatManager()->broadcastGalaxy(nullptr, message);
 	return 1;
 } 
