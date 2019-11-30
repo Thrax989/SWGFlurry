@@ -373,15 +373,15 @@ bool ResourceSpawner::ghDumpAll() {
 		return false;
 	planets =  new Vector<String> ();
 	planets->add("corellia");
-	//planets->add("dantooine");
-	//planets->add("dathomir");
-	//planets->add("endor");
-	//planets->add("lok");
+	planets->add("dantooine");
+	planets->add("dathomir");
+	planets->add("endor");
+	planets->add("lok");
 	planets->add("naboo");
-	//planets->add("rori");
-	//planets->add("talus");
+	planets->add("rori");
+	planets->add("talus");
 	planets->add("tatooine");
-	//planets->add("yavin4");
+	planets->add("yavin4");
 	//String planets = "corellia";
 
 	try {
