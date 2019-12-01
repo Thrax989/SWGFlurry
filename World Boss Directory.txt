@@ -1,0 +1,66 @@
+* List Of All Current Active Flurry World Bosses *
+
+-*PLANETS*-    |    -*CREATURE/NPC*-    |    -*LEVEL*-    |    -*WAYPOINT*-    |
+
+
+Chandrila      |
+
+
+Corellia       |
+
+
+Coruscant      |
+
+
+Dantooine      |
+
+
+Dathomir       |
+
+
+Endor          |
+
+
+Geonosis       |
+
+
+Hoth           |
+
+
+Hutta          |
+
+
+Jakku          |
+
+
+Kaas           |
+
+
+Korriban       |
+
+
+Lok            |
+
+
+Mandalore      |
+
+
+Mustafar       |
+
+
+Naboo          |
+
+
+Rori           |
+
+
+Taanab         |
+
+
+Talus          |
+
+
+Tatooine       |
+
+
+Yavin4         |
