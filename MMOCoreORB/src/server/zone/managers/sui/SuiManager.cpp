@@ -2154,10 +2154,10 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						currentCity->addToCityTreasury(1000);
 						}
 			        }
-			} else if (templatePath == "pc_atlantis_travel") {
+			} else if (templatePath == "pc_intas_travel") {
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		                box->setPromptTitle("Player City Atlantis");
+		                box->setPromptTitle("Player City Intas Minor");
 		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
@@ -2168,7 +2168,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("corellia", -1454, 7, -3111);
+ 				        player->switchZone("naboo", -2577, -196, 6027);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != nullptr && !currentCity->isClientRegion()) {

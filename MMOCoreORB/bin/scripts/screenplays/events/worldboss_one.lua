@@ -40,6 +40,7 @@ function worldboss_oneScreenplay:spawnMobiles(spawnList)
 		local pBoss = spawnMobile(self.planet, "WORLDBOSS", -1, math.random(v.radius) + v.x, 0, math.random(v.radius) + v.y, math.random(360), 0)
 		local creature = CreatureObject(pBoss)
 		print("World Boss Spawned")
+		creature:broadcastToServer("\\#63C8F9 Yavin4 World Boss Loaded!")
 		creature:setScreenPlayState(k, "worldboss_oneScreenplay")
 		createObserver(OBJECTDESTRUCTION, "worldboss_oneScreenplay", "bossDead", pBoss)
 	end
