@@ -405,6 +405,7 @@ class PlayerObject extends IntangibleObject {
 
 		ipAddress = "";
 		opposingFactionArea = false;
+		worldbossKills = 0;
 		pvpKills = 0;
 		pvpDeaths = 0;
 		bountyKills = 0;
