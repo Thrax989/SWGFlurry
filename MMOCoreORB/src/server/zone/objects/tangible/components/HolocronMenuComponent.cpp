@@ -26,8 +26,9 @@ void HolocronMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Obj
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
 	if (ghost->getJediState() >=1) {
-			menuResponse->addRadialMenuItem(213, 3, "Use Holocron"); // Use Holocron
+			menuResponse->addRadialMenuItem(213, 3, "Reveal Encrypted Data"); // Use Holocron
 			menuResponse->addRadialMenuItemToRadialID(213, 214, 3, "Increase Jedi Lives"); // Increase Jedi Lives
+			menuResponse->addRadialMenuItemToRadialID(213, 215, 3, "Regenerate Full Force"); // Regenerate Jedi's Full Force
 			menuResponse->addRadialMenuItemToRadialID(213, 216, 3, "Visibility"); // Show Jedi's Visibility
 			menuResponse->addRadialMenuItemToRadialID(213, 217, 3, "Jedi Lives Remaining"); // Jedi Live's Remaining
 			menuResponse->addRadialMenuItemToRadialID(213, 220, 3, "Unlock Gray Jedi"); // Unlocks Gray Jedi
@@ -73,6 +74,49 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 	if (selectedID == 214 && !creature->hasSkill("combat_jedi_novice")) {
 		creature->sendSystemMessage("You must be a gray jedi to use this option"); // You have Permanently died on your jedi, you may not use this option
 		}
+	if (selectedID == 215 && (ghost->getJediState() >= 1)) {
+		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
+		if (!creature->checkCooldownRecovery("force_replenish_cooldown")) {
+		if (playerObject->getForcePower() >= playerObject->getForcePowerMax()) {
+			creature->sendSystemMessage("@jedi_spam:holocron_force_max");
+		} else {
+				StringIdChatParameter stringId;
+  
+				Time* cdTime = creature->getCooldownTime("force_replenish_cooldown");
+  
+				int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+  
+				stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
+				stringId.setDI(timeLeft);
+				creature->sendSystemMessage(stringId);
+				error("Cooldown In Effect You May Not Replenish Force: " + creature->getFirstName());
+				return 0;
+			}
+		return 0;
+	}
+	if (playerObject != NULL && playerObject->getJediState() >= 1) {
+		if (playerObject->getForcePower() < playerObject->getForcePowerMax()) {
+			//Refil force + Message player
+			creature->sendSystemMessage("@jedi_spam:holocron_force_replenish");
+			playerObject->setForcePower(playerObject->getForcePowerMax(), true);
+			//Set cooldown
+			creature->addCooldown("force_replenish_cooldown", 3600 * 1000);// 1 hour cooldown
+			//Destroy object
+			sceneObject->destroyObjectFromWorld(true);
+			//Music + Effect
+			creature->playEffect("clienteffect/pl_force_absorb_hit.cef");
+			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd");
+  			playerObject->sendMessage(pmm);
+		} else {
+			//You have max force
+			creature->sendSystemMessage("You may not use this option unless you are a jedi");
+		}
+	} else {
+		//You're not a jedi yet
+		JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
+	}
+		return 0;
+	}
 	if (selectedID == 216 && (ghost->getJediState() >= 1)) {
 		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
 		box->setPromptTitle("Jedi Visibility");

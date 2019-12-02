@@ -3059,7 +3059,7 @@ void PlayerObjectImplementation::updateWebStats(const String& stat, int newValue
 
 			String firstname = player->getFirstName();
 				StringBuffer query;
-				query << "UPDATE characters SET faction = '" << faction << "', pvpkills = '" << ghost->getPvpKills() << "', pvpdeaths = '" << ghost->getPvpDeaths()
+				query << "UPDATE characters SET faction = '" << faction << "', pvpkills = '" << ghost->getPvpKills() << "', worldbosskills = '" << ghost->getWorldBossKills() << "', pvpdeaths = '" << ghost->getPvpDeaths()
 						<< "', bountykills = '" << ghost->getBountyKills() << "', pvekills = '" << ghost->getPveKills() << "', pvedeaths = '" << ghost->getPveDeaths()
 						<< "', missionscompleted = '" << ghost->getMissionsCompleted() << "' WHERE character_oid = '" << player->getObjectID() << "'";
 				ServerDatabase::instance()->executeStatement(query);

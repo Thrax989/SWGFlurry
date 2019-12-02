@@ -405,6 +405,7 @@ class PlayerObject extends IntangibleObject {
 
 		ipAddress = "";
 		opposingFactionArea = false;
+		worldbossKills = 0;
 		pvpKills = 0;
 		pvpDeaths = 0;
 		bountyKills = 0;
@@ -1971,6 +1972,13 @@ class PlayerObject extends IntangibleObject {
 	}
 	public unsigned long getPvpKills() {
 		return pvpKills;
+	}
+	public void updateWorldBossKills() {
+		worldbossKills += 1;
+		updateWebStats("worldbossKills", worldbossKills);
+	}
+	public unsigned long getWorldBossKills() {
+		return worldbossKills;
 	}
 	public void updatePvpDeaths() {
 		pvpDeaths += 1;
