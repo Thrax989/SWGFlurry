@@ -1972,6 +1972,13 @@ class PlayerObject extends IntangibleObject {
 	public unsigned long getPvpKills() {
 		return pvpKills;
 	}
+	public void updateWorldBossKills() {
+		worldbossKills += 1;
+		updateWebStats("worldbossKills", worldbossKills);
+	}
+	public unsigned long getWorldBossKills() {
+		return worldbossKills;
+	}
 	public void updatePvpDeaths() {
 		pvpDeaths += 1;
 		updateWebStats("pvpDeaths", pvpDeaths);
