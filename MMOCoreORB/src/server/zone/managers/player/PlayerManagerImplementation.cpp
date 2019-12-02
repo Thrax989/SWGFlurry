@@ -1335,6 +1335,19 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			if (attackerCreature->isPlayerCreature()) {
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
 					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
+
+
+				if (attackerGhost != nullptr && ghost != nullptr && attackerGhost->getIpAddress() != ghost->getIpAddress() &&
+						attackerGhost->getAccountID() != ghost->getAccountID())
+					updatePvPKillCount(attackerCreature);
+
+				if (attackerGhost != nullptr && ghost != nullptr && attackerGhost->getIpAddress() != ghost->getIpAddress() &&
+						attackerGhost->getAccountID() != ghost->getAccountID())
+					ghost->updatePvpDeaths();
+
+				if (attackerGhost != nullptr && ghost != nullptr && attackerCreature->hasBountyMissionFor(player) &&
+						attackerGhost->getIpAddress() != ghost->getIpAddress() && attackerGhost->getAccountID() != ghost->getAccountID())
+					attackerGhost->updateBountyKills();
 				}
 			}
 
