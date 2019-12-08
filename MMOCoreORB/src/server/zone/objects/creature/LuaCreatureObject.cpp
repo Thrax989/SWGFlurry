@@ -85,6 +85,8 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "isNeutral", &LuaCreatureObject::isNeutral},
 		{ "teleport", &LuaSceneObject::teleport},
 		{ "getFirstName", &LuaCreatureObject::getFirstName},
+		{ "getLastName", &LuaCreatureObject::getLastName},
+		{ "setLastName", &LuaCreatureObject::setLastName},
 		{ "isAiAgent", &LuaCreatureObject::isAiAgent},
 		{ "setFactionRank", &LuaCreatureObject::setFactionRank},
 		{ "getFactionRank", &LuaCreatureObject::getFactionRank},
@@ -155,7 +157,7 @@ LuaCreatureObject::LuaCreatureObject(lua_State *L) : LuaTangibleObject(L) {
 #ifdef DYNAMIC_CAST_LUAOBJECTS
 	realObject = dynamic_cast<CreatureObject*>(_getRealSceneObject());
 
-	assert(!_getRealSceneObject() || realObject != NULL);
+	assert(!_getRealSceneObject() || realObject != nullptr);
 #else
 	realObject = static_cast<CreatureObject*>(lua_touserdata(L, 1));
 #endif
@@ -173,7 +175,7 @@ int LuaCreatureObject::_setObject(lua_State* L) {
 	if (obj != realObject)
 		realObject = obj;
 
-	assert(!_getRealSceneObject() || realObject != NULL);
+	assert(!_getRealSceneObject() || realObject != nullptr);
 #else
 	auto obj = static_cast<CreatureObject*>(lua_touserdata(L, -1));
 
@@ -187,6 +189,40 @@ int LuaCreatureObject::_setObject(lua_State* L) {
 int LuaCreatureObject::getFirstName(lua_State* L) {
 	String text = realObject->getFirstName();
 	lua_pushstring(L, text.toCharArray());
+	return 1;
+}
+
+int LuaCreatureObject::getLastName(lua_State* L) {
+	String text = realObject->getLastName();
+	lua_pushstring(L, text.toCharArray());
+	return 1;
+}
+
+int LuaCreatureObject::setLastName(lua_State* L) {
+	int argc = lua_gettop(L) - 1;
+
+	if (argc < 1 || argc > 2) {
+		Logger::console.error("incorrect number of arguments for LuaCreatureObject::setLastName");
+		return 0;
+	}
+
+	String newLastName;
+	bool skipVerify;
+
+	if (argc == 1) {
+		newLastName = lua_tostring(L, -1);
+		skipVerify = false;
+	} else {
+		newLastName = lua_tostring(L, -2);
+		skipVerify = lua_toboolean(L, -1);
+	}
+
+	Locker locker(realObject);
+
+	auto errmsg = realObject->setLastName(newLastName, skipVerify);
+
+	lua_pushstring(L, errmsg.toCharArray());
+
 	return 1;
 }
 
@@ -312,7 +348,7 @@ int LuaCreatureObject::sendSystemMessageWithTT(lua_State* L) {
 int LuaCreatureObject::sendGroupMessage(lua_State* L) {
 	String value = lua_tostring(L, -1);
 
-	if (realObject == NULL)
+	if (realObject == nullptr)
 		return 0;
 
 	if (!realObject->isGrouped()) {
@@ -444,7 +480,7 @@ int LuaCreatureObject::surrenderSkill(lua_State* L) {
 int LuaCreatureObject::getInCellNumber(lua_State* L) {
 	SceneObject* parent = realObject->getParent().get().get();
 
-	if (parent == NULL || !parent->isCellObject())
+	if (parent == nullptr || !parent->isCellObject())
 		lua_pushnumber(L, -1);
 	else {
 		int cellId = ((CellObject*)parent)->getCellNumber();
@@ -458,7 +494,7 @@ int LuaCreatureObject::getInCellNumber(lua_State* L) {
 int LuaCreatureObject::getBuildingParentID(lua_State* L) {
 	ManagedReference<SceneObject*> parent = realObject->getParentRecursively(SceneObjectType::BUILDING);
 
-	if (parent == NULL)
+	if (parent == nullptr)
 		lua_pushnumber(L, 0);
 	else
 		lua_pushnumber(L, parent->getObjectID());
@@ -479,7 +515,7 @@ int LuaCreatureObject::removeScreenPlayState(lua_State* L) {
 	String play = lua_tostring(L, -1);
 	uint64 stateToClear = lua_tointeger(L, -2);
 
-	if (realObject != NULL) {
+	if (realObject != nullptr) {
 		realObject->setScreenPlayState(play, realObject->getScreenPlayState(play) & (~stateToClear));
 		realObject->notifyObservers(ObserverEventType::SCREENPLAYSTATECHANGED, realObject);
 	}
@@ -554,7 +590,7 @@ int LuaCreatureObject::getBankCredits(lua_State *L) {
 int LuaCreatureObject::getConversationSession(lua_State* L) {
 	Reference<ConversationSession*> session = realObject->getActiveSession(SessionFacadeType::CONVERSATION).castTo<ConversationSession*>();
 
-	if (session != NULL) {
+	if (session != nullptr) {
 		session->_setUpdated(true);
 		lua_pushlightuserdata(L, session);
 	} else
@@ -566,7 +602,7 @@ int LuaCreatureObject::getConversationSession(lua_State* L) {
 int LuaCreatureObject::doAnimation(lua_State* L) {
 	String animString = lua_tostring(L, -1);
 
-	if (realObject != NULL)
+	if (realObject != nullptr)
 		realObject->doAnimation(animString);
 
 	return 0;
@@ -577,7 +613,7 @@ int LuaCreatureObject::engageCombat(lua_State* L) {
 
 	Locker locker(realObject);
 
-	if (enemy != NULL)
+	if (enemy != nullptr)
 		realObject->addDefender(enemy);
 
 	return 0;
@@ -586,7 +622,7 @@ int LuaCreatureObject::engageCombat(lua_State* L) {
 int LuaCreatureObject::getPlayerObject(lua_State* L) {
 	Reference<PlayerObject*> obj = realObject->getPlayerObject();
 
-	if (obj != NULL) {
+	if (obj != nullptr) {
 		obj->_setUpdated(true);
 		lua_pushlightuserdata(L, obj);
 	} else
@@ -691,12 +727,12 @@ int LuaCreatureObject::isGrouped(lua_State* L) {
 int LuaCreatureObject::isGroupedWith(lua_State* L) {
 	CreatureObject* groupMember = (CreatureObject*) lua_touserdata(L, -1);
 
-	if (realObject == NULL || groupMember == NULL || !realObject->isGrouped())
+	if (realObject == nullptr || groupMember == nullptr || !realObject->isGrouped())
 		return 0;
 
 	GroupObject* group = realObject->getGroup();
 
-	lua_pushboolean(L, group != NULL && group->hasMember(groupMember));
+	lua_pushboolean(L, group != nullptr && group->hasMember(groupMember));
 
 	return 1;
 }
@@ -704,18 +740,18 @@ int LuaCreatureObject::isGroupedWith(lua_State* L) {
 int LuaCreatureObject::setLootRights(lua_State* L) {
 	CreatureObject* player = (CreatureObject*) lua_touserdata(L, -1);
 
-	if (realObject == NULL)
+	if (realObject == nullptr)
 		return 0;
 
 	uint64 ownerID = 0;
 
-	if (player != NULL) {
+	if (player != nullptr) {
 		ownerID = player->getObjectID();
 	}
 
 	SceneObject* inventory = realObject->getSlottedObject("inventory");
 
-	if (inventory == NULL)
+	if (inventory == nullptr)
 		return 0;
 
 	Locker locker(inventory);
@@ -729,7 +765,7 @@ int LuaCreatureObject::getGroupSize(lua_State* L) {
 
 	GroupObject* group = realObject->getGroup();
 
-	if (group == NULL) {
+	if (group == nullptr) {
 		lua_pushnumber(L, 0);
 		return 1;
 	}
@@ -761,7 +797,7 @@ int LuaCreatureObject::getGroupMember(lua_State* L) {
 
 	GroupObject* group = realObject->getGroup();
 
-	if (group == NULL) {
+	if (group == nullptr) {
 		lua_pushnil(L);
 		return 1;
 	}
@@ -775,8 +811,8 @@ int LuaCreatureObject::getGroupMember(lua_State* L) {
 
 	CreatureObject* creo = group->getGroupMember(i);
 
-	if (creo == NULL) {
-		realObject->info("LuaCreatureObject::getGroupMember GroupMember is NULL.");
+	if (creo == nullptr) {
+		realObject->info("LuaCreatureObject::getGroupMember GroupMember is nullptr.");
 		lua_pushnil(L);
 	} else {
 		creo->_setUpdated(true);
@@ -851,14 +887,14 @@ int LuaCreatureObject::isPlayingMusic(lua_State* L) {
 int LuaCreatureObject::getPerformanceName(lua_State* L) {
 	ManagedReference<Facade*> facade = realObject->getActiveSession(SessionFacadeType::ENTERTAINING);
 
-	if (facade == NULL) {
+	if (facade == nullptr) {
 		lua_pushnil(L);
 		return 1;
 	}
 
 	ManagedReference<EntertainingSession*> session = dynamic_cast<EntertainingSession*> (facade.get());
 
-	if (session == NULL) {
+	if (session == nullptr) {
 		lua_pushnil(L);
 		return 1;
 	}
@@ -914,7 +950,7 @@ int LuaCreatureObject::awardExperience(lua_State* L) {
 	bool sendSysMessage = lua_toboolean(L, -1);
 
 	PlayerManager* playerManager = realObject->getZoneServer()->getPlayerManager();
-	playerManager->awardExperience(realObject, experienceType, experienceAmount, sendSysMessage);
+	playerManager->awardExperience(realObject, experienceType, experienceAmount, sendSysMessage, 1.0f, false);
 
 	return 0;
 }
@@ -922,7 +958,7 @@ int LuaCreatureObject::awardExperience(lua_State* L) {
 int LuaCreatureObject::getOwner(lua_State* L) {
 	CreatureObject* retVal = realObject->getLinkedCreature().get();
 
-	if (retVal == NULL)
+	if (retVal == nullptr)
 		lua_pushnil(L);
 	else
 		lua_pushlightuserdata(L, retVal);
@@ -1067,7 +1103,7 @@ int LuaCreatureObject::getGender(lua_State* L) {
 int LuaCreatureObject::broadcastToServer(lua_State* L) {
 	String message = lua_tostring(L, -1);
 	ZoneServer* zServ = realObject->getZoneServer();
-	zServ->getChatManager()->broadcastGalaxy(NULL, message);
+	zServ->getChatManager()->broadcastGalaxy(nullptr, message);
 	return 1;
 }
 
@@ -1157,7 +1193,7 @@ int LuaCreatureObject::getActivePet(lua_State* L) {
 	ManagedReference<PlayerObject*> player = realObject->getPlayerObject();
 	ManagedReference<CreatureObject*> pet = player->getActivePet(petNumber);
 	
-	if (pet != NULL) {
+	if (pet != nullptr) {
 		String petName = pet->getFirstName();
 		Logger::console.info("Pet Name: " + petName, true);
 	}

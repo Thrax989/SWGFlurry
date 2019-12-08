@@ -11,6 +11,7 @@
 #include "server/zone/objects/player/FactionStatus.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 #include "server/zone/managers/combat/CombatManager.h"
+#include "server/zone/managers/frs/FrsManager.h"
 
 QueueCommand::QueueCommand(const String& skillname, ZoneProcessServer* serv) : Logger() {
 	server = serv;
@@ -121,7 +122,7 @@ void QueueCommand::onFail(uint32 actioncntr, CreatureObject* creature, uint32 er
 		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
 		int attackType = -1;
 
-		if (weapon != NULL) {
+		if (weapon != nullptr) {
 			attackType = weapon->getAttackType();
 		}
 
@@ -236,29 +237,41 @@ int QueueCommand::doCommonMedicalCommandChecks(CreatureObject* creature) const {
 	return SUCCESS;
 }
 
+bool QueueCommand::checkForArenaDuel(CreatureObject* target) const {
+	FrsManager* frsManager = server->getZoneServer()->getFrsManager();
+
+	if (frsManager == nullptr)
+		return false;
+
+	if (!frsManager->isFrsEnabled())
+		return false;
+
+	return frsManager->isPlayerFightingInArena(target->getObjectID());
+}
+
 void QueueCommand::checkForTef(CreatureObject* creature, CreatureObject* target) const {
 	if (!creature->isPlayerCreature() || creature == target)
 		return;
 
 	PlayerObject* ghost = creature->getPlayerObject().get();
-	if (ghost == NULL)
+	if (ghost == nullptr)
 		return;
 
 	if (target->isPlayerCreature()) {
 		PlayerObject* targetGhost = target->getPlayerObject().get();
 
 		if (!CombatManager::instance()->areInDuel(creature, target)
-				&& targetGhost != NULL && target->getFactionStatus() == FactionStatus::OVERT && targetGhost->hasPvpTef()) {
+				&& targetGhost != nullptr && target->getFactionStatus() == FactionStatus::OVERT && targetGhost->hasPvpTef()) {
 			ghost->updateLastGcwPvpCombatActionTimestamp();
 		}
 	} else if (target->isPet()) {
 		ManagedReference<CreatureObject*> owner = target->getLinkedCreature().get();
 
-		if (owner != NULL && owner->isPlayerCreature()) {
+		if (owner != nullptr && owner->isPlayerCreature()) {
 			PlayerObject* ownerGhost = owner->getPlayerObject().get();
 
 			if (!CombatManager::instance()->areInDuel(creature, owner)
-					&& ownerGhost != NULL && owner->getFactionStatus() == FactionStatus::OVERT && ownerGhost->hasPvpTef()) {
+					&& ownerGhost != nullptr && owner->getFactionStatus() == FactionStatus::OVERT && ownerGhost->hasPvpTef()) {
 				ghost->updateLastGcwPvpCombatActionTimestamp();
 			}
 		}

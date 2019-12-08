@@ -6,7 +6,7 @@
 class BaseRebootTask : public Task {
 	ManagedReference<BuildingObject*> buildingObject;
 	ManagedReference<GCWManager*> gcwManager;
-	ManagedReference<DestructibleBuildingDataComponent*> baseData;
+	Reference<DestructibleBuildingDataComponent*> baseData;
 
 public:
 	BaseRebootTask(GCWManager* gcwMan, BuildingObject* building, DestructibleBuildingDataComponent* data) {
@@ -16,7 +16,7 @@ public:
 	}
 
 	void run() {
-		if (gcwManager == NULL || buildingObject == NULL || baseData == NULL)
+		if (gcwManager == nullptr || buildingObject == nullptr || baseData == nullptr)
 			return;
 
 		Locker block(buildingObject);

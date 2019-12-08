@@ -20,6 +20,7 @@ include templates.TemplateReference;
 include system.lang.System;
 include system.util.Vector;
 
+@json
 class CampSiteActiveArea extends ActiveArea {
 
 	protected StructureObject camp;
@@ -34,8 +35,8 @@ class CampSiteActiveArea extends ActiveArea {
 
 	protected CampSiteObserver campObserver;
 
-	protected CampAbandonTask abandonTask;
-	protected CampDespawnTask despawnTask;
+	protected transient CampAbandonTask abandonTask;
+	protected transient CampDespawnTask despawnTask;
 
 	protected CreatureObject campOwner;
 
@@ -47,8 +48,8 @@ class CampSiteActiveArea extends ActiveArea {
 	@dereferenced
 	protected TemplateReference<CampStructureTemplate> campStructureData;
 
-	// 1 Hour
-	public final static int DESPAWNTIME = 6000000;
+	// 3 hours
+	public final static int DESPAWNTIME = 10800000;
 
 	// 1 minute
 	public final static int ABANDONTIME = 60000;
@@ -148,7 +149,7 @@ class CampSiteActiveArea extends ActiveArea {
 
 	@preLocked
 	public native void abandonCamp();
-	
+
 	@preLocked
 	public native void setAbandoned(boolean isAbandoned);
 

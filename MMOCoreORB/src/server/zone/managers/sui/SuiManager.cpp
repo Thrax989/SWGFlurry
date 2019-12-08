@@ -3,7 +3,6 @@
 		See file COPYING for copying conditions. */
 
 #include "SuiManager.h"
-
 #include "server/zone/ZoneProcessServer.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/sui/SuiWindowType.h"
@@ -39,7 +38,7 @@
 #include "server/chat/ChatManager.h"
 
 SuiManager::SuiManager() : Logger("SuiManager") {
-	server = NULL;
+	server = nullptr;
 	setGlobalLogging(true);
 	setLogging(false);
 }
@@ -51,12 +50,12 @@ void SuiManager::handleSuiEventNotification(uint32 boxID, CreatureObject* player
 
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
-	if (ghost == NULL)
+	if (ghost == nullptr)
 		return;
 
 	ManagedReference<SuiBox*> suiBox = ghost->getSuiBox(boxID);
 
-	if (suiBox == NULL)
+	if (suiBox == nullptr)
 		return;
 
 	//Remove the box from the player, callback can readd it to the player if needed.
@@ -65,20 +64,20 @@ void SuiManager::handleSuiEventNotification(uint32 boxID, CreatureObject* player
 
 	Reference<SuiCallback*> callback = suiBox->getCallback();
 
-	if (callback != NULL) {
+	if (callback != nullptr) {
 		Reference<LuaSuiCallback*> luaCallback = cast<LuaSuiCallback*>(callback.get());
 
-		if (luaCallback != NULL && suiBox->isSuiBoxPage()) {
+		if (luaCallback != nullptr && suiBox->isSuiBoxPage()) {
 			Reference<SuiBoxPage*> boxPage = cast<SuiBoxPage*>(suiBox.get());
 
-			if (boxPage != NULL) {
+			if (boxPage != nullptr) {
 				Reference<SuiPageData*> pageData = boxPage->getSuiPageData();
 
-				if (pageData != NULL) {
+				if (pageData != nullptr) {
 					try {
 						Reference<SuiCommand*> suiCommand = pageData->getCommand(eventIndex);
 
-						if (suiCommand != NULL && suiCommand->getCommandType() == SuiCommand::SCT_subscribeToEvent) {
+						if (suiCommand != nullptr && suiCommand->getCommandType() == SuiCommand::SCT_subscribeToEvent) {
 							StringTokenizer callbackString(suiCommand->getNarrowParameter(2));
 							callbackString.setDelimeter(":");
 
@@ -144,7 +143,7 @@ void SuiManager::handleSetObjectName(CreatureObject* player, SuiBox* suiBox, uin
 
 	ManagedReference<SceneObject*> object = suiBox->getUsingObject().get();
 
-	if (object == NULL)
+	if (object == nullptr)
 		return;
 
 	if (args->size() < 1)
@@ -237,7 +236,7 @@ void SuiManager::handleBankTransfer(CreatureObject* player, SuiBox* suiBox, uint
 
 	ManagedReference<SceneObject*> bankObject = suiBank->getBank();
 
-	if (bankObject == NULL)
+	if (bankObject == nullptr)
 		return;
 
 	if (!player->isInRange(bankObject, 5))
@@ -295,6 +294,9 @@ void SuiManager::handleFishingAction(CreatureObject* player, SuiBox* suiBox, uin
 }
 
 void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox* suiBox, uint32 cancel, Vector<UnicodeString>* args) {
+	if (!ConfigManager::instance()->getCharacterBuilderEnabled())
+		return;
+
 	ZoneServer* zserv = player->getZoneServer();
 
 	if (args->size() < 1)
@@ -320,14 +322,14 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 	PlayerObject* ghost = player->getPlayerObject();
 
 	//If cancel was pressed then we kill the box/menu.
-	if (cancel != 0 || ghost == NULL)
+	if (cancel != 0 || ghost == nullptr)
 		return;
 
 	//Back was pressed. Send the node above it.
 	if (otherPressed) {
 		CharacterBuilderMenuNode* parentNode = currentNode->getParentNode();
 
-		if(parentNode == NULL)
+		if(parentNode == nullptr)
 			return;
 
 		cbSui->setCurrentNode(parentNode);
@@ -340,7 +342,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 	CharacterBuilderMenuNode* node = currentNode->getChildNodeAt(index);
 
 	//Node doesn't exist or the index was out of bounds. Should probably resend the menu here.
-	if (node == NULL) {
+	if (node == nullptr) {
 		ghost->addSuiBox(cbSui);
 		player->sendMessage(cbSui->generateMessage());
 		return;
@@ -354,12 +356,12 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 	} else {
 		ManagedReference<SceneObject*> scob = cbSui->getUsingObject().get();
 
-		if (scob == NULL)
+		if (scob == nullptr)
 			return;
 
 		CharacterBuilderTerminal* bluefrog = scob.castTo<CharacterBuilderTerminal*>();
 
-		if (bluefrog == NULL)
+		if (bluefrog == nullptr)
 			return;
 
 		String templatePath = node->getTemplatePath();
@@ -382,6 +384,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					player->setShockWounds(0);
 				} else {
 					player->sendSystemMessage("Not within combat.");
+					return;
 				}
 			} else if (templatePath == "fill_force_bar") {
 				if (ghost->isJedi()) {
@@ -403,6 +406,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					ghost->setDrinkFilling(0);
 				} else {
 					player->sendSystemMessage("Not within combat.");
+					return;
 				}
 
 			} else if (templatePath.beginsWith("crafting_apron_")) {
@@ -410,7 +414,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				//"object/tangible/wearables/ithorian/apron_chef_jacket_s01_ith.iff"
 
 				ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
-				if (inventory == NULL) {
+				if (inventory == nullptr) {
 					return;
 				}
 
@@ -418,7 +422,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 
 				ManagedReference<WearableObject*> apron = zserv->createObject(itemCrc, 2).castTo<WearableObject*>();
 
-				if (apron == NULL) {
+				if (apron == nullptr) {
 					player->sendSystemMessage("There was an error creating the requested item. Please report this issue.");
 					ghost->addSuiBox(cbSui);
 					player->sendMessage(cbSui->generateMessage());
@@ -550,7 +554,63 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "max_xp") {
 				ghost->maximizeExperience();
 				player->sendSystemMessage("You have maximized all xp types.");
-
+//Gray Jedi Unlock Checks
+			} else if (templatePath == "jedi_Lives") {
+				if (ghost->getJediState() < 2) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Gray Jedi Unlock");
+		                box->setPromptText("Gray Jedi Requires (Force Sensative)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (ghost->getJediState() >= 2 && player->getScreenPlayState("jedi_Lives") == 0) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+						player->sendSystemMessage("You Have Unlocked Gray Jedi");
+						int livesLeft = player->getScreenPlayState("jediLives") + 3;
+						player->setScreenPlayState("jediLives", livesLeft);
+					    int jediVis1 = ghost->getVisibility();
+					    box->setPromptTitle("Gray Jedi Progress");
+					    StringBuffer promptText;
+					    String playerName = player->getFirstName();
+					    promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Gray Jedi Lives" << endl;
+					    promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					    box->setPromptText(promptText.toString());
+					    ghost->addSuiBox(box);
+					    player->sendMessage(box->generateMessage());
+					    SkillManager* skillManager = server->getSkillManager();
+						SkillManager::instance()->awardSkill("combat_jedi_novice", player, true, true, true);
+						box->setForceCloseDistance(5.f);
+			        }
+//JediQuest Remove Screen Play Tester
+			} else if (templatePath == "jedi_quest_remove") {
+				if (!player->isInCombat() && player->getBankCredits() < 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Jedi Quest");
+		                box->setPromptText("Jedi Quest Requires 1,000 credits. (Bank)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getBankCredits() > 999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+						player->sendSystemMessage("Thank you for your credits.");
+						int questLeft = player->getScreenPlayState("jediQuest") - 1;
+						player->setScreenPlayState("jediQuest", questLeft);
+					    int jediVis1 = ghost->getVisibility();
+					    box->setPromptTitle("Jedi Quest Progress");
+					    StringBuffer promptText;
+					    String playerName = player->getFirstName();
+					    promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Quest Progress" << endl;
+					    promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					    box->setPromptText(promptText.toString());
+					    ghost->addSuiBox(box);
+					    player->sendMessage(box->generateMessage());
+						player->subtractBankCredits(1000);
+						box->setForceCloseDistance(5.f);
+			        }
 //GALACTIC TRAVEL SYSTEM City Politician Skill
 			} else if (templatePath == "citypolitician") {
 				if (!player->isInCombat() && player->getBankCredits() < 9999999) {
@@ -590,13 +650,13 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 						String playerName = player->getFirstName();
 						StringBuffer zBroadcast;
-						zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Recalculated There Force Pool.";
+						zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Recalculated Their Force Pool.";
 						SkillManager* skillManager = SkillManager::instance();
 						skillManager->awardForceFromSkills(player);
 						player->sendSystemMessage("Recalculated Max force and Regen");
 						player->playEffect("clienteffect/mus_relay_activate.cef", "");
 						player->addCooldown("force_recalculate_cooldown", 86400 * 1000);// 24 hour cooldown
-						player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+						player->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 			        }
 //GALACTIC TRAVEL SYSTEM Recalculate's Players Skills
 			} else if (templatePath == "recalculateskills") {
@@ -619,13 +679,13 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 						String playerName = player->getFirstName();
 						StringBuffer zBroadcast;
-						zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Recalculated There Skills.";
+						zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Recalculated Their Skills.";
 						SkillManager* skillManager = SkillManager::instance();
 						skillManager->awardResetSkills(player);
 						player->sendSystemMessage("Recalculated Skills");
 						player->playEffect("clienteffect/mus_relay_activate.cef", "");
 						player->addCooldown("skill_recalculate_cooldown", 86400 * 1000);// 24 hour cooldown
-						player->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+						player->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 			        }
 //GALACTIC TRAVEL SYSTEM
 //Corellia Travel
@@ -646,7 +706,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", 6644.269, 330, -5922.5225);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -668,7 +728,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", 6930.8042, 330, -5534.8936);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -690,7 +750,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", -66.760902, 28, -4711.3281);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -712,7 +772,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", -25.671804, 28, -4409.7847);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -734,7 +794,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", -329.76605, 28, -4641.23);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -756,7 +816,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", 3085.4963, 280, 4993.0098);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -778,7 +838,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", 3349.8933, 308, 5598.1362);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -800,7 +860,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", -3775.2546, 31, 3234.2202);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -822,7 +882,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", -3157.2834, 31, 2876.2029);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -844,7 +904,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", -5005.354, 21, -2386.9819);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -866,7 +926,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", -5600.6367, 21, -2790.7429);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -888,7 +948,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", -5003.0649, 21, -2228.3665);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -910,7 +970,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", -5551.9473, 15.890146, -6059.9673);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -932,7 +992,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", 1387, 30, 3749);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -954,7 +1014,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", 6767, 30, -5617);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -976,7 +1036,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", -6530, 30, 5967);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -998,7 +1058,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", 5291, 30, 1494);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1020,7 +1080,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("corellia", -5418, 30, -6248);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1043,7 +1103,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("dantooine", 1569.66, 4, -6415.7598);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1065,7 +1125,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("dantooine", -4208.6602, 3, -2350.24);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1087,7 +1147,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("dantooine", -635.96887, 3, 2507.0115);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1110,7 +1170,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("dathomir", 618.89258, 6.039608, 3092.0142);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1132,7 +1192,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("dathomir", -49.021923, 18, -1584.7278);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1154,7 +1214,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("dathomir", 5271.4, 0, -4119.53);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1177,7 +1237,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("lok", 478.92676, 9, 5511.9565);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1200,7 +1260,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("hoth", 0, 0, -2000);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1223,7 +1283,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("yavin4", 4054.1, 37, -6216.9);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1245,7 +1305,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("yavin4", -6921.6733, 73, -5726.5161);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1268,7 +1328,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", 47.565128, 52, -5338.9072);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1290,7 +1350,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", -1098.4836, 12, -3563.5342);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1312,7 +1372,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", -1361.1917, 12, -3600.0254);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1334,7 +1394,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", 3416.6914, 5, -4648.1411);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1356,7 +1416,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", 1730.8828, 7, 3184.6135);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1378,7 +1438,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", 1395.447, 7, 3467.0117);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1400,7 +1460,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", 1266.0996, 7, 3065.1392);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1422,7 +1482,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", -2803.511, 5, 2182.9648);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1444,7 +1504,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", -2897.0933, 5, 1933.4144);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1466,7 +1526,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", -3112.1296, 5, 2176.9607);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1488,7 +1548,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", -2833.1609, 5, 2107.3787);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1511,7 +1571,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("talus", 699.297, 6, -3041.4199);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1533,7 +1593,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("talus", 263.58401, 6, -2952.1284);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1555,7 +1615,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("talus", 4334.5786, 9.8999996, 5431.0415);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1577,7 +1637,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("talus", -2226, 20, 2319);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1600,7 +1660,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("naboo", 5331.9375, 327.02765, -1576.6733);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1622,7 +1682,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("naboo", 5123.3857, -192, 6616.0264);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1644,7 +1704,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("naboo", 5280.2002, -192, 6688.0498);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1666,7 +1726,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("naboo", 2021.0026, 19, 2525.679);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1688,7 +1748,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("naboo", 1567.5193, 25, 2837.8777);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1710,7 +1770,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("naboo", 1371.5938, 13, 2747.9043);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1732,7 +1792,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("naboo", 4731.1743, 4.1700001, -4677.5439);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1754,7 +1814,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("naboo", -5494.4224, -150, -21.837162);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1776,7 +1836,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("naboo", -5856.1055, 6, 4172.1606);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1798,7 +1858,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        player->switchZone("naboo", -5005, 6, 4072);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1820,7 +1880,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        player->switchZone("naboo", -5411.0171, 6, 4322.3315);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1842,7 +1902,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("naboo", -4858.834, 5.9483199, 4164.0679);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1864,7 +1924,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("naboo", 7405, -196, 6200);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1887,7 +1947,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("rori", -5255.4116, 80.664185, -2161.6274);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1909,7 +1969,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("rori", -5374.0718, 80, -2188.6143);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1931,7 +1991,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("rori", 3691.9023, 96, -6403.4404);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1953,7 +2013,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("rori", 5297, 78, 6138);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1975,7 +2035,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("rori", 5340, 80, 5734);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -1998,7 +2058,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("endor", -950.59241, 73, 1553.4125);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -2020,7 +2080,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("endor", 3201.6599, 24, -3499.76);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -2043,7 +2103,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("yavin4", -5575, 87, 4901);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -2066,7 +2126,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("yavin4", 5080, 79, 306);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -2089,15 +2149,15 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        	player->switchZone("tatooine", -1644, 0, -5277);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
 			        }
-			} else if (templatePath == "pc_atlantis_travel") {
+			} else if (templatePath == "pc_intas_travel") {
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		                box->setPromptTitle("Player City Atlantis");
+		                box->setPromptTitle("Player City Intas Minor");
 		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
@@ -2108,10 +2168,10 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        	player->switchZone("corellia", -1454, 7, -3111);
+ 				        player->switchZone("naboo", -2577, -196, 6027);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
@@ -2133,11 +2193,1432 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
  				        player->switchZone("dathomir", -3339, 70, -5345);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
-						if(currentCity != NULL && !currentCity->isClientRegion()) {
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
 						Locker clocker(currentCity, player);
 						currentCity->addToCityTreasury(1000);
 						}
 			        }
+//GRAY JEDI HOLOCRON QUEST END CHAPTER
+			} else if (templatePath == "Gray_Chapter_31") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && (ghost->getSkillPoints() == 250) && player->getScreenPlayState("jediQuest") >= 31) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					SkillManager* skillManager = server->getSkillManager();
+					SkillManager::instance()->awardSkill("combat_jedi_novice", player, true, true, true);
+					player->setScreenPlayState("jediQuest", 32);
+					player->sendSystemMessage("You may now start your training as a Gray Jedi");
+				} else {
+					player->sendSystemMessage("You need 250 Skill Points Avalible");
+					}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") <= 30) {
+					player->sendSystemMessage("You may not use this option until you have completed all 30 Quests");
+				}
+//GRAY JEDI HOLOCRON QUEST START CHAPTER
+			} else if (templatePath == "Gray_Chapter_32") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 0) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->setScreenPlayState("jediQuest", 1);
+					player->sendSystemMessage("You may now start your Quest to become a Gray Jedi");
+			} else {
+					player->sendSystemMessage("You may not use this option you have already started the gray jedi journey");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 1
+			} else if (templatePath == "Gray_Chapter_1") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 1) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 1) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 1 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 2) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 2 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 2
+			} else if (templatePath == "Gray_Chapter_2") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 2) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 2) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 2 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 3) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 3 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 3
+			} else if (templatePath == "Gray_Chapter_3") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 3) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 3) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 3 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 4) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 4 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 4
+			} else if (templatePath == "Gray_Chapter_4") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 4) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 4) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 4 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 5) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 5 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 5
+			} else if (templatePath == "Gray_Chapter_5") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 5) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 5) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 5 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 6) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 6 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 6
+			} else if (templatePath == "Gray_Chapter_6") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 6) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 6) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 6 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 7) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 7 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 7
+			} else if (templatePath == "Gray_Chapter_7") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 7) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 7) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 7 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 8) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 8 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 8
+			} else if (templatePath == "Gray_Chapter_8") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 8) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 8) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 8 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 9) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 9 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 9
+			} else if (templatePath == "Gray_Chapter_9") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 9) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 9) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 9 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 10) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 10 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 10
+			} else if (templatePath == "Gray_Chapter_10") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 10) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 10) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 10 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 11) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 11 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 11
+			} else if (templatePath == "Gray_Chapter_11") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 11) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 11) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 11 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 12) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 12 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 12
+			} else if (templatePath == "Gray_Chapter_12") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 12) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 12) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 12 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 13) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 13 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 13
+			} else if (templatePath == "Gray_Chapter_13") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 13) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 13) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 13 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 14) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 14 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 14
+			} else if (templatePath == "Gray_Chapter_14") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 14) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 14) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 14 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 15) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 15 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 15
+			} else if (templatePath == "Gray_Chapter_15") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 15) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 15) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 15 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 16) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 16 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 16
+			} else if (templatePath == "Gray_Chapter_16") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 16) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 16) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 16 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 17) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 17 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 17
+			} else if (templatePath == "Gray_Chapter_17") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 17) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 17) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 17 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 18) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 18 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 18
+			} else if (templatePath == "Gray_Chapter_18") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 18) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 18) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 18 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 19) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 19 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 19
+			} else if (templatePath == "Gray_Chapter_19") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 19) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 19) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 19 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 20) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 20 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 20
+			} else if (templatePath == "Gray_Chapter_20") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 20) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 20) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 20 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 21) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 21 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 21
+			} else if (templatePath == "Gray_Chapter_21") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 21) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 21) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 21 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 22) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 22 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 22
+			} else if (templatePath == "Gray_Chapter_22") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 22) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 22) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 22 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 23) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 23 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 23
+			} else if (templatePath == "Gray_Chapter_23") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 23) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 23) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 23 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 24) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 24 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 24
+			} else if (templatePath == "Gray_Chapter_24") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 24) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 24) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 24 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 25) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 25 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 25
+			} else if (templatePath == "Gray_Chapter_25") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 25) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 25) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 25 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 26) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 26 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 26
+			} else if (templatePath == "Gray_Chapter_26") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 26) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 26) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 26 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 27) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 27 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 27
+			} else if (templatePath == "Gray_Chapter_27") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 27) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 27) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 27 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 28) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 28 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 28
+			} else if (templatePath == "Gray_Chapter_28") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 28) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 28) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 28 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 29) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 29 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 29
+			} else if (templatePath == "Gray_Chapter_29") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 29) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 29) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 29 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 30) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed this quest Chapter 30 is now available");
+				}
+//GRAY JEDI HOLOCRON QUEST CHAPTER 30
+			} else if (templatePath == "Gray_Chapter_30") {
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") < 30) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You need to seek further knowledge befor proceeding to the next chapter");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") == 30) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					Vector3 coords(0, 0, 0);
+					String zoneName = "corellia";
+					ghost->setTrainerCoordinates(coords);
+					ghost->setTrainerZoneName(zoneName);
+					player->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("**Chapter 30 Started**");
+				}
+				if (!player->isInCombat() && player->hasSkill("force_title_jedi_novice") && player->getScreenPlayState("jediQuest") >= 31) {
+					int jediVis1 = ghost->getVisibility();
+					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+					box->setPromptTitle("Gray Jedi Quest Progress");
+					StringBuffer promptText;
+					String playerName = player->getFirstName();
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Has " << "\\#000000 " << "(" << "\\#ffffff " << player->getScreenPlayState("jediQuest") << "\\#000000 " << ")" << "\\#00ff00 " << " Out Of \\#ffffff30 \\#00ff00 Quest Completed" << endl;
+					promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
+					box->setPromptText(promptText.toString());
+					ghost->addSuiBox(box);
+					player->sendMessage(box->generateMessage());
+					player->sendSystemMessage("You have completed all 30 Quests");
+				}
 //New Mobile Template Outfit Swap Terminal
 //Swtich Back To Normal
 			} else if (templatePath == "switch_normal_loadout") {
@@ -2189,6 +3670,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 
 				} else {
 					player->sendSystemMessage("Unknown selection.");
+					return;
 				}
 			}
 
@@ -2198,7 +3680,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		} else { // Items
 			ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
 
-			if (inventory == NULL) {
+			if (inventory == nullptr) {
 				return;
 			}
 
@@ -2213,7 +3695,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 
 			ManagedReference<SceneObject*> item = zserv->createObject(node->getTemplateCRC(), 1);
 
-			if (item == NULL) {
+			if (item == nullptr) {
 				player->sendSystemMessage("There was an error creating the requested item. Please report this issue.");
 				ghost->addSuiBox(cbSui);
 				player->sendMessage(cbSui->generateMessage());
@@ -2236,12 +3718,12 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (item->getServerObjectCRC() == 0x46BD798B) { // Jukebox
 					Jukebox* jbox = item.castTo<Jukebox*>();
 
-					if (jbox != NULL)
+					if (jbox != nullptr)
 						jbox->setOwner(player);
 				} else if (item->getServerObjectCRC() == 0x255F612C) { // Shuttle Beacon
 					ShuttleBeacon* beacon = item.castTo<ShuttleBeacon*>();
 
-					if (beacon != NULL)
+					if (beacon != nullptr)
 						beacon->setOwner(player);
 				}
 				ghost->addEventPerk(item);
@@ -2264,22 +3746,24 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			ghost->addSuiBox(cbSui);
 			player->sendMessage(cbSui->generateMessage());
 		}
+
+		player->info("[CharacterBuilder] gave player " + templatePath, true);
 	}
 }
 
 void SuiManager::sendKeypadSui(SceneObject* keypad, SceneObject* creatureSceneObject, const String& play, const String& callback) {
 
-	if (keypad == NULL)
+	if (keypad == nullptr)
 		return;
 
-	if (creatureSceneObject == NULL || !creatureSceneObject->isCreatureObject())
+	if (creatureSceneObject == nullptr || !creatureSceneObject->isCreatureObject())
 		return;
 
 	CreatureObject* creature = cast<CreatureObject*>(creatureSceneObject);
 
 	PlayerObject* playerObject = creature->getPlayerObject();
 
-	if (playerObject != NULL) {
+	if (playerObject != nullptr) {
 		ManagedReference<SuiKeypadBox*> keypadSui = new SuiKeypadBox(creature, 0x00);
 		keypadSui->setCallback(new LuaSuiCallback(creature->getZoneServer(), play, callback));
 		keypadSui->setUsingObject(keypad);
@@ -2292,17 +3776,17 @@ void SuiManager::sendKeypadSui(SceneObject* keypad, SceneObject* creatureSceneOb
 
 void SuiManager::sendConfirmSui(SceneObject* terminal, SceneObject* player, const String& play, const String& callback, const String& prompt, const String& button) {
 
-	if (terminal == NULL)
+	if (terminal == nullptr)
 		return;
 
-	if (player == NULL || !player->isCreatureObject())
+	if (player == nullptr || !player->isCreatureObject())
 		return;
 
 	CreatureObject* creature = cast<CreatureObject*>(player);
 
 	PlayerObject* playerObject = creature->getPlayerObject();
 
-	if (playerObject != NULL) {
+	if (playerObject != nullptr) {
 		ManagedReference<SuiMessageBox*> confirmSui = new SuiMessageBox(creature, 0x00);
 		confirmSui->setCallback(new LuaSuiCallback(creature->getZoneServer(), play, callback));
 		confirmSui->setUsingObject(terminal);
@@ -2318,17 +3802,17 @@ void SuiManager::sendConfirmSui(SceneObject* terminal, SceneObject* player, cons
 }
 
 void SuiManager::sendInputBox(SceneObject* terminal, SceneObject* player, const String& play, const String& callback, const String& prompt, const String& button) {
-	if (terminal == NULL)
+	if (terminal == nullptr)
 		return;
 
-	if (player == NULL || !player->isCreatureObject())
+	if (player == nullptr || !player->isCreatureObject())
 		return;
 
 	CreatureObject* creature = cast<CreatureObject*>(player);
 
 	PlayerObject* playerObject = creature->getPlayerObject();
 
-	if (playerObject != NULL) {
+	if (playerObject != nullptr) {
 		ManagedReference<SuiInputBox*> confirmSui = new SuiInputBox(creature, 0x00);
 		confirmSui->setCallback(new LuaSuiCallback(creature->getZoneServer(), play, callback));
 		confirmSui->setUsingObject(terminal);
@@ -2344,17 +3828,17 @@ void SuiManager::sendInputBox(SceneObject* terminal, SceneObject* player, const 
 }
 
 void SuiManager::sendMessageBox(SceneObject* usingObject, SceneObject* player, const String& title, const String& text, const String& okButton, const String& screenplay, const String& callback, unsigned int windowType ) {
-	if (usingObject == NULL)
+	if (usingObject == nullptr)
 		return;
 
-	if (player == NULL || !player->isCreatureObject())
+	if (player == nullptr || !player->isCreatureObject())
 		return;
 
 	CreatureObject* creature = cast<CreatureObject*>(player);
 
 	PlayerObject* playerObject = creature->getPlayerObject();
 
-	if (playerObject != NULL) {
+	if (playerObject != nullptr) {
 		ManagedReference<SuiMessageBox*> messageBox = new SuiMessageBox(creature, windowType);
 		messageBox->setCallback(new LuaSuiCallback(creature->getZoneServer(), screenplay, callback));
 		messageBox->setPromptTitle(title);
@@ -2370,19 +3854,19 @@ void SuiManager::sendMessageBox(SceneObject* usingObject, SceneObject* player, c
 }
 
 void SuiManager::sendListBox(SceneObject* usingObject, SceneObject* player, const String& title, const String& text, const uint8& numOfButtons, const String& cancelButton, const String& otherButton, const String& okButton, LuaObject& options, const String& screenplay, const String& callback, const float& forceCloseDist) {
-	if (usingObject == NULL)
+	if (usingObject == nullptr)
 		return;
 
-	if (player == NULL || !player->isCreatureObject())
+	if (player == nullptr || !player->isCreatureObject())
 		return;
 
 	CreatureObject* creature = cast<CreatureObject*>(player);
 
 	PlayerObject* playerObject = creature->getPlayerObject();
 
-	if (playerObject != NULL) {
+	if (playerObject != nullptr) {
 
-		ManagedReference<SuiListBox*> box = NULL;
+		ManagedReference<SuiListBox*> box = nullptr;
 
 		switch (numOfButtons) {
 		case 1:
@@ -2430,19 +3914,19 @@ void SuiManager::sendListBox(SceneObject* usingObject, SceneObject* player, cons
 }
 
 void SuiManager::sendTransferBox(SceneObject* usingObject, SceneObject* player, const String& title, const String& text, LuaObject& optionsAddFrom, LuaObject& optionsAddTo, const String& screenplay, const String& callback) {
-	if (usingObject == NULL)
+	if (usingObject == nullptr)
 		return;
 
-	if (player == NULL || !player->isCreatureObject())
+	if (player == nullptr || !player->isCreatureObject())
 		return;
 
 	CreatureObject* creature = cast<CreatureObject*>(player);
 
 	PlayerObject* playerObject = creature->getPlayerObject();
 
-	if (playerObject != NULL) {
+	if (playerObject != nullptr) {
 
-		ManagedReference<SuiTransferBox*> box = NULL;
+		ManagedReference<SuiTransferBox*> box = nullptr;
 
 		box = new SuiTransferBox(creature, 0x00);
 
@@ -2479,15 +3963,15 @@ void SuiManager::sendTransferBox(SceneObject* usingObject, SceneObject* player, 
 
 int32 SuiManager::sendSuiPage(CreatureObject* creature, SuiPageData* pageData, const String& play, const String& callback, unsigned int windowType) {
 
-	if (pageData == NULL)
+	if (pageData == nullptr)
 		return 0;
 
-	if (creature == NULL || !creature->isPlayerCreature())
+	if (creature == nullptr || !creature->isPlayerCreature())
 		return 0;
 
 	PlayerObject* playerObject = creature->getPlayerObject();
 
-	if (playerObject != NULL) {
+	if (playerObject != nullptr) {
 		ManagedReference<SuiBoxPage*> boxPage = new SuiBoxPage(creature, pageData, windowType);
 		boxPage->setCallback(new LuaSuiCallback(creature->getZoneServer(), play, callback));
 		creature->sendMessage(boxPage->generateMessage());

@@ -26,6 +26,7 @@ include templates.collision.BaseBoundingVolume;
 include system.lang.ref.Reference;
 include system.util.VectorMap;
 
+@json
 class BuildingObject extends StructureObject {
 	@dereferenced
 	protected VectorMap<unsigned int, CellObject> cells;
@@ -41,7 +42,7 @@ class BuildingObject extends StructureObject {
 	protected transient unsigned int lastAccessFeeChange;
 
 	@dereferenced
-	protected transient Mutex paidAccessListMutex; 
+	protected transient Mutex paidAccessListMutex;
 
 	@dereferenced
 	protected VectorMap<unsigned long, unsigned int> paidAccessList;
@@ -53,31 +54,31 @@ class BuildingObject extends StructureObject {
 	protected transient SynchronizedSortedVector<unsigned long> registeredPlayerIdList;
 
 	public boolean publicStructure;
-	
+
 	public static final int MAXPLAYERITEMS = 1000;
 
 	protected unicode signName;
-		
+
 	protected boolean isOwnerResidence;
 
 	protected int factionBaseType;
 
 	public BuildingObject() {
 		Logger.setLoggingName("BuildingObject");
-		
+
 		super.closeobjects = new CloseObjectsVector();
 		super.closeobjects.setNoDuplicateInsertPlan();
 
 		super.staticObject = false;
-						
+
 		totalCellNumber = 0;
-		
+
 		accessFee = 0;
 		accessDuration = 0;
 		lastAccessFeeChange = 0;
-		
+
 		deedObjectID = 0;
-		
+
 		publicStructure = true;
 
 		signName = "";
@@ -113,7 +114,7 @@ class BuildingObject extends StructureObject {
 	 * Sends the contained non slotted objects to the specified player
 	 * @pre { this object is locked }
 	 * @post { this object is locked, player received the container objects }
-	 * @param player SceneObject that will receive the objects 
+	 * @param player SceneObject that will receive the objects
 	 */
 	@dirty
 	public native void sendContainerObjectsTo(SceneObject player, boolean forceLoad);
@@ -173,7 +174,7 @@ class BuildingObject extends StructureObject {
 	*/
 	@local
 	@dereferenced
-	@dirty
+	@read
 	public native Vector3 getTemplateEjectionPoint();
 
 	@local
@@ -196,6 +197,10 @@ class BuildingObject extends StructureObject {
 
 	@local
 	public native void notifyDissapear(QuadTreeEntry obj);
+
+	@dirty
+	@local
+	public native void notifyPositionUpdate(QuadTreeEntry entry);
 
 	public native void notifyObjectInsertedToZone(SceneObject object);
 
@@ -221,7 +226,7 @@ class BuildingObject extends StructureObject {
 	@preLocked
 	public native void addCell(CellObject cell, unsigned int cellNumber);
 
-	@dirty
+	@read
 	public boolean isStaticBuilding() {
 		return super.staticObject;
 	}
@@ -234,10 +239,10 @@ class BuildingObject extends StructureObject {
 	public CellObject getCell(unsigned int idx) {
 		if (idx == 0) {
 			super.error("trying to get Cell with id = 0");
-			
+
 			StackTrace.printStackTrace();
 		}
-			
+
 		return cells.get(idx);
 	}
 
@@ -292,16 +297,17 @@ class BuildingObject extends StructureObject {
 		signObject = sign;
 	}
 
+	@read
 	public SignObject getSignObject() {
 		return signObject;
 	}
 
-	@dirty
+	@read
 	public boolean isPublicStructure() {
 		return publicStructure;
 	}
 
-	@dirty
+	@read
 	public boolean isPrivateStructure() {
 		return !publicStructure;
 	}
@@ -366,7 +372,7 @@ class BuildingObject extends StructureObject {
 			updatePaidAccessList();
 		}
 	}
-	
+
 	@dirty
 	@nativeStub
 	@local
@@ -392,6 +398,7 @@ class BuildingObject extends StructureObject {
 	@dirty
 	public native boolean canPlayerRegisterWithin();
 
+	@read
 	public boolean isPlayerRegisteredWithin(unsigned long id) {
 		return registeredPlayerIdList.contains(id);
 	}
@@ -409,12 +416,13 @@ class BuildingObject extends StructureObject {
 	@preLocked
 	public native void spawnChildCreature(string mobile, int respawnTimer, float x, float z, float y, float heading, unsigned long cellID);
 
+	@read
 	public native boolean hasTemplateChildCreatures();
 
 	@preLocked
 	public native void destroyChildObjects();
 
-	@dirty
+	@read
 	public boolean isResidence(){
 		return isOwnerResidence;
 	}
@@ -433,14 +441,15 @@ class BuildingObject extends StructureObject {
 	 * Adds the desired sign as a child object, removing any current sign
 	 * @param SignTemplate sign config from structure lua
 	 * @pre structure object is locked
-	 * @post structure object is locked 
+	 * @post structure object is locked
 	 */
 	@local
 	@preLocked
-	public native void changeSign( SignTemplate signConfig );
+	public native void changeSign(final SignTemplate signConfig );
 
 	@local
 	@dereferenced
+	@read
 	public abstract native Vector<Reference<MeshData> > getTransformedMeshData(final Matrix4 parentTransform);
 
 	@dirty
@@ -449,6 +458,7 @@ class BuildingObject extends StructureObject {
 
 	@read
 	public native abstract float getOutOfRangeDistance();
-	
+
+	@read
 	public native string getCellName(unsigned long cellID);
 }

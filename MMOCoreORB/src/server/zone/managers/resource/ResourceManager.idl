@@ -83,7 +83,7 @@ class ResourceManager extends Observer implements Logger {
 	public native boolean isRecycledResource(ResourceSpawn resource);
 
 	public native ResourceSpawn getRecycledVersion(ResourceSpawn resource);
-	
+
 	public native ResourceSpawn getRecycledVersionByType(final string resourceType);
 	
 	/// Resource Deed Methods

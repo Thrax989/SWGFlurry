@@ -88,14 +88,14 @@ public:
 
 		ManagedReference<CreatureObject*> object = client->getPlayer();
 
-		if (object == NULL)
+		if (object == nullptr)
 			return;
 
 		Locker _locker(object);
 
 		PlayerObject* ghost = object->getPlayerObject();
 
-		if (ghost == NULL)
+		if (ghost == nullptr)
 			return;
 
 		if (std::isnan(positionX) || std::isnan(positionY) || std::isnan(positionZ))
@@ -107,20 +107,22 @@ public:
 		if (ghost->isTeleporting())
 			return;
 
-		if (object->getZone() == NULL)
+		if (object->getZone() == nullptr)
 			return;
 
 		if (positionX > 8000.0f || positionX < -8000.0f || positionY > 8000.0f || positionY < -8000.0f) {
+			/*
 			StringBuffer msg;
 			msg << "position out of bounds";
 			object->error(msg.toString());
+			*/
 
 			return;
 		}
 
 		ManagedReference<ShipObject*> ship = dynamic_cast<ShipObject*>(object->getParent().get().get());
 
-		if (ship == NULL)
+		if (ship == nullptr)
 			return;
 
 		Locker clocker(ship, object);

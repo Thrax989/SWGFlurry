@@ -66,8 +66,8 @@
 #include "templates/datatables/DataTableRow.h"
 #include "CommandList.h"
 
-CommandList* CommandConfigManager::slashCommands = NULL;
-ZoneProcessServer* CommandConfigManager::server = NULL;
+CommandList* CommandConfigManager::slashCommands = nullptr;
+ZoneProcessServer* CommandConfigManager::server = nullptr;
 int CommandConfigManager::ERROR_CODE = 0;
 
 CommandConfigManager::CommandConfigManager(ZoneProcessServer* serv) {
@@ -84,8 +84,8 @@ CommandConfigManager::CommandConfigManager(ZoneProcessServer* serv) {
 }
 
 CommandConfigManager::~CommandConfigManager() {
-	server = NULL;
-	slashCommands = NULL;
+	server = nullptr;
+	slashCommands = nullptr;
 
 	ERROR_CODE = 0;
 }
@@ -95,7 +95,7 @@ void CommandConfigManager::loadCommandData(const String& filename) {
 
 	IffStream* metatable = TemplateManager::instance()->openIffFile(filename);
 
-	if (metatable == NULL) {
+	if (metatable == nullptr) {
 		error("Could not load command table " + filename + ".");
 		return;
 	}
@@ -113,7 +113,7 @@ void CommandConfigManager::loadCommandData(const String& filename) {
 
 		IffStream* iffStream = TemplateManager::instance()->openIffFile(tableName);
 
-		if (iffStream == NULL) {
+		if (iffStream == nullptr) {
 			error("Could not load commands from " + tableName + ".");
 			return;
 		} else
@@ -144,7 +144,7 @@ void CommandConfigManager::loadCommandData(const String& filename) {
 			row->getValue(CommandConfigManager::COMMANDNAME, name);
 			slashCommand = createCommand(name.trim().toLowerCase());
 
-			if (slashCommand == NULL) {
+			if (slashCommand == nullptr) {
 				error("Could not create command " + name);
 				continue;
 			}
@@ -300,16 +300,16 @@ void CommandConfigManager::loadCommandData(const String& filename) {
 }
 
 QueueCommand* CommandConfigManager::createCommand(const String& name) {
-	QueueCommand* command = NULL;
+	QueueCommand* command = nullptr;
 
 	command = commandFactory.createCommand(name, name, server);
 
-	if (command == NULL)
+	if (command == nullptr)
 		return command;
 
 	slashCommands->put(command);
 
-	info("created command " + name);
+	debug() << "created command " << name;
 
 	return command;
 }
@@ -323,7 +323,7 @@ void CommandConfigManager::registerSpecialCommands(CommandList* sCommands) {
 	// Meanwhile the client sends this to the server as part of the /logout command sequence
 	QueueCommand* slashCommand = createCommand(String("logout").toLowerCase());
 
-	if (slashCommand == NULL) {
+	if (slashCommand == nullptr) {
 		error("Could not create command /logout");
 	}
 
@@ -367,9 +367,9 @@ void CommandConfigManager::registerSpecialCommands(CommandList* sCommands) {
 
 void CommandConfigManager::registerFunctions() {
 	//lua generic
-	lua_register(getLuaState(), "RunSlashCommandsFile", runSlashCommandsFile);
-	lua_register(getLuaState(), "AddCommand", addCommand);
-	lua_register(getLuaState(), "hashCode", hashCode);
+	registerFunction("RunSlashCommandsFile", runSlashCommandsFile);
+	registerFunction("AddCommand", addCommand);
+	registerFunction("hashCode", hashCode);
 }
 
 void CommandConfigManager::registerGlobals() {
@@ -508,11 +508,11 @@ void CommandConfigManager::registerGlobals() {
 	setGlobalInt("COLD_DAMAGE", SharedWeaponObjectTemplate::COLD);
 	setGlobalInt("ACID_DAMAGE", SharedWeaponObjectTemplate::ACID);
 	setGlobalInt("ELECTRICITY_DAMAGE", SharedWeaponObjectTemplate::ELECTRICITY);
-    
+
 	// JediQueueCommand buff types
 	setGlobalInt("BASE_BUFF", JediQueueCommand::BASE_BUFF);
 	setGlobalInt("SINGLE_USE_BUFF", JediQueueCommand::SINGLE_USE_BUFF);
-    
+
 	// force heal targets
 	setGlobalInt("FORCE_HEAL_TARGET_SELF", ForceHealQueueCommand::TARGET_SELF);
 	setGlobalInt("FORCE_HEAL_TARGET_OTHER", ForceHealQueueCommand::TARGET_OTHER);
@@ -736,7 +736,7 @@ void CommandConfigManager::parseVariableData(String varName, LuaObject &command,
 			ForceHealQueueCommand* healCommand = cast<ForceHealQueueCommand*>(jediCommand);
 			if (varName == "healAmount")
 				healCommand->setHealAmount(Lua::getIntParameter(L));
-			else if (varName == "healWoundAmount") 
+			else if (varName == "healWoundAmount")
 				healCommand->setHealWoundAmount(Lua::getIntParameter(L));
 			else if (varName == "attributesToHeal")
 				healCommand->setAttributesToHeal(Lua::getUnsignedIntParameter(L));
@@ -814,7 +814,7 @@ int CommandConfigManager::addCommand(lua_State* L) {
 	// get object from map, then overwrite/fill in variables
 	String name = slashcommand.getStringField("name");
 	QueueCommand* command = slashCommands->getSlashCommand(name);
-	if (command == NULL)
+	if (command == nullptr)
 		return 0;
 
 	parseOptions(slashcommand, command);

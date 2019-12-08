@@ -63,7 +63,7 @@ public:
                     }
                     
                     AiAgent* mob = object.castTo<AiAgent*> ();
-                    CreatureTemplate* creatureTemplate = mob->getCreatureTemplate();
+                    const CreatureTemplate* creatureTemplate = mob->getCreatureTemplate();
                     String mobileName = creatureTemplate->getTemplateName();
 
                     text << "spawnMobile(\"" << planetName << "\", " <<  "\"" << mobileName << "\", 1, ";
@@ -102,7 +102,7 @@ public:
 			info(text, true);
                     }
                     
-                    Quaternion* dir = object->getDirection();
+                    const Quaternion* dir = object->getDirection();
                     
                     text << dir->getW() << ", " << dir->getX() << ", " << dir->getY() << ", " << dir->getZ() << ")\n";
 		    info(text, true);
@@ -155,7 +155,7 @@ public:
 		    info(text, true);
                 }
                 
-                Quaternion* dir = object->getDirection();
+                const Quaternion* dir = object->getDirection();
                 
                 text << dir->getW() << ", " << dir->getX() << ", " << dir->getY() << ", " << dir->getZ() << ")\n";
 		info(text, true);

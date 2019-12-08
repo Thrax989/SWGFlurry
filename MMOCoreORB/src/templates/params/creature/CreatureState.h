@@ -53,17 +53,15 @@ public:
 
 
 	void loadStateData() {
-		IffStream* iffStream = TemplateManager::instance()->openIffFile("datatables/include/state.iff");
+		UniqueReference<IffStream*> iffStream(TemplateManager::instance()->openIffFile("datatables/include/state.iff"));
 
-		if (iffStream == NULL) {
+		if (iffStream == nullptr) {
 			error("Could not load states.");
 			return;
 		}
 
 		DataTableIff dtiff;
 		dtiff.readObject(iffStream);
-
-		delete iffStream;
 
 		states.removeAll();
 
@@ -76,17 +74,17 @@ public:
 			row->getValue(1, value);
 
 			if (value >= 0)
-				states.put(name.toLowerCase(), 1 << value);
+				states.put(name.toLowerCase(), 1ull << value);
 			else
 				states.put(name.toLowerCase(), 0x00);
 		}
 	}
 
-	uint64 getState(const String& state) {
+	uint64 getState(const String& state) const {
 		return states.get(state.toLowerCase());
 	}
 
-	String getSpecialName(const uint64 state, bool initialCap = false) {
+	String getSpecialName(const uint64 state, bool initialCap = false) const {
 		//This method is used for String building to match up with the tre's
 		String name = "";
 
@@ -108,7 +106,7 @@ public:
 		return name;
 	}
 
-	String getName(const uint64 state, bool initialCap = false) {
+	String getName(const uint64 state, bool initialCap = false) const {
 		String name = "invalid";
 
 		HashTableIterator<String, uint64> iter(&states);

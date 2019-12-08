@@ -39,8 +39,8 @@ public:
 			Reference<Task*> surveytask = creature->getPendingTask("survey");
 
 			// If the sample task exists, we can't sample again
-			if (sampletask != NULL) {
-				Time nextExecutionTime;
+			if (sampletask != nullptr) {
+				AtomicTime nextExecutionTime;
 				Core::getTaskManager()->getNextExecutionTime(sampletask, nextExecutionTime);
 				int seconds = (int) ((nextExecutionTime.getMiliTime() - Time().getMiliTime()) / 1000.0f);
 				if(seconds < 1)
@@ -55,7 +55,7 @@ public:
 			}
 
 			// If the survey task exists, we can't sample
-			if (surveytask != NULL) {
+			if (surveytask != nullptr) {
 				creature->sendSystemMessage("@survey:sample_survey");
 
 				return SUCCESS;
@@ -64,7 +64,7 @@ public:
 
 			ManagedReference<SurveySession*> session = creature->getActiveSession(SessionFacadeType::SURVEY).castTo<SurveySession*>();
 
-			if(session == NULL) {
+			if(session == nullptr) {
 				creature->sendSystemMessage("@ui:survey_notool");
 				return GENERALERROR;
 			}

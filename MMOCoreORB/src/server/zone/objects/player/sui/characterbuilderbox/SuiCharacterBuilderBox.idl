@@ -22,7 +22,7 @@ class SuiCharacterBuilderBox extends SuiListBox {
 		Logger.setLoggingName("SuiCharacterBuilderBox");
 		
 		setPromptTitle("Character Builder");
-
+		
 		setPromptText("Welome To Flurry.");
 
 		rootNode = root;

@@ -31,18 +31,21 @@ public:
 			return NOJEDIARMOR;
 		}
 
-		// Bonus is in between 200-300.
-		int rand = System::random(10);
-		int forceBonus = 200 + (rand * 10); // Needs to be divisible by amount of ticks.
+		// Bonus is in between 250-350.
+		int forceRandom = System::random(100);
+		int forceBonus = 250 + (forceRandom);
 
 		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
-
-		if (playerObject == NULL)
+		if (playerObject == nullptr)
 			return GENERALERROR;
 
 		// Do not execute if the player's force bar is full.
 		if (playerObject->getForcePower() >= playerObject->getForcePowerMax())
 			return GENERALERROR;
+
+		int enhSkills = playerObject->numSpecificSkills(creature, "force_discipline_enhancements_");
+                float enhMod = enhSkills * .056;
+                forceBonus = forceBonus * (1 + enhMod);
 
 		// To keep it from going over max...
 		if ((playerObject->getForcePowerMax() - playerObject->getForcePower()) < forceBonus)
@@ -73,7 +76,7 @@ public:
 		uint32 buffCRC = STRING_HASHCODE("channelforcebuff");
 		Reference<Buff*> buff = creature->getBuff(buffCRC);
 		int duration = ChannelForceBuff::FORCE_CHANNEL_DURATION_SECONDS;
-		if (buff == NULL) {
+		if (buff == nullptr) {
 			buff = new ChannelForceBuff(creature, buffCRC, duration);
 			
 			Locker locker(buff);
@@ -99,10 +102,10 @@ public:
 			
 			creature->renewBuff(buffCRC, duration);
 			Reference<ChannelForceBuff*> channelBuff = buff.castTo<ChannelForceBuff*>();
-			if (channelBuff != NULL)
+			if (channelBuff != nullptr)
 				channelBuff->activateRegenTick();
 		}
-
+		creature->playEffect("clienteffect/pl_force_channel_self.cef", "");
 		return SUCCESS;
 	}
 

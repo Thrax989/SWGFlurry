@@ -14,7 +14,7 @@ namespace player {
 namespace events {
 
 class RecordTrackTimeoutEvent: public Task {
-	ManagedReference<DroidPlaybackModuleDataComponent*> module;
+	Reference<DroidPlaybackModuleDataComponent*> module;
 	ManagedReference<CreatureObject*> player;
 	int recordingState;
 public:
@@ -25,7 +25,7 @@ public:
 	}
 
 	void run() {
-		if (module == NULL)
+		if (module == nullptr)
 			return;
 		Locker plock(player);
 		module->sessionTimeout(player,recordingState);

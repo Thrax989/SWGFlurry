@@ -2,10 +2,10 @@ object_building_player_musty_house = object_building_player_shared_musty_house:n
 	lotSize = 5,
 	baseMaintenanceRate = 80,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
+	constructionMarker = "object/building/player/construction/construction_player_house_corellia_small_style_01.iff",
+	length = 1,
+	width = 1,
 	publicStructure = 0,
-	constructionMarker = "object/building/player/construction/construction_player_house_corellia_medium_style_01.iff",
-	length = 4,
-	width = 4,
 	skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},

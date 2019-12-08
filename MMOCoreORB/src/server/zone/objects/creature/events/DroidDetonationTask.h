@@ -5,6 +5,7 @@
 #ifndef DROIDEFFECTSTASK_H_
 #define DROIDEFFECTSTASK_H_
 
+#include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/creature/ai/DroidObject.h"
 #include "server/zone/objects/tangible/components/droid/DroidDetonationModuleDataComponent.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -24,7 +25,7 @@ namespace events {
 class DroidDetonationTask : public Task, public Logger {
 
 private:
-	ManagedReference<DroidDetonationModuleDataComponent*> module;
+	Reference<DroidDetonationModuleDataComponent*> module;
 	ManagedReference<CreatureObject*> player;
 	int detonationStep;
 public:
@@ -35,13 +36,13 @@ public:
 	}
 
 	void run() {
-		if (module == NULL || player == NULL) {
+		if (module == nullptr || player == nullptr) {
 			return;
 		}
 
 		ManagedReference<DroidObject*> droid = module->getDroidObject();
 
-		if (droid == NULL) {
+		if (droid == nullptr) {
 			return;
 		}
 
@@ -49,9 +50,9 @@ public:
 		Locker crossLocker(player, droid);
 
 		// Check if droid is spawned
-		if (droid->getLocalZone() == NULL) {  // Not outdoors
+		if (droid->getLocalZone() == nullptr) {  // Not outdoors
 			ManagedReference<SceneObject*> parent = droid->getParent().get();
-			if (parent == NULL || !parent->isCellObject()) { // Not indoors either
+			if (parent == nullptr || !parent->isCellObject()) { // Not indoors either
 				droid->removePendingTask("droid_detonation");
 				return;
 			}
@@ -97,7 +98,7 @@ public:
 				CloseObjectsVector* vec = (CloseObjectsVector*) droid->getCloseObjects();
 				SortedVector<ManagedReference<QuadTreeEntry*> > closeObjects;
 
-				if (vec != NULL) {
+				if (vec != nullptr) {
 					closeObjects.removeAll(vec->size(), 10);
 					vec->safeCopyTo(closeObjects);
 				} else {
@@ -121,12 +122,36 @@ public:
 
 					CreatureObject* creo = object->asCreatureObject();
 
-					if (creo == NULL || creo->isDead() || !creo->isAttackableBy(droid) || !droid->isInRange(object, 17)) {
+					if (creo == nullptr || creo->isDead() || !creo->isAttackableBy(droid) || !droid->isInRange(object, 17)) {
 						continue;
 					}
 
 					if (creo->isIncapacitated() && !creo->isFeigningDeath()) {
 						continue;
+					}
+
+					if (player->isPlayerCreature() && object->getParentID() != 0 && player->getParentID() != object->getParentID()) {
+						Reference<CellObject*> targetCell = object->getParent().get().castTo<CellObject*>();
+
+						if (targetCell != nullptr) {
+							if (!object->isPlayerCreature()) {
+								auto perms = targetCell->getContainerPermissions();
+
+								if (!perms->hasInheritPermissionsFromParent()) {
+									if (targetCell->checkContainerPermission(player, ContainerPermissions::WALKIN))
+										continue;
+								}
+							}
+
+							ManagedReference<SceneObject*> parentSceneObject = targetCell->getParent().get();
+
+							if (parentSceneObject != nullptr) {
+								BuildingObject* buildingObject = parentSceneObject->asBuildingObject();
+
+								if (buildingObject != nullptr && !buildingObject->isAllowedEntry(player))
+									continue;
+							}
+						}
 					}
 
 					try {
@@ -168,7 +193,7 @@ public:
 
 				// nuke the droid from the world
 				ManagedReference<PetControlDevice*> petControlDevice = droid->getControlDevice().get().castTo<PetControlDevice*>();
-				if (petControlDevice != NULL) {
+				if (petControlDevice != nullptr) {
 					Locker deviceLocker(petControlDevice);
 
 					petControlDevice->storeObject(player, true);
@@ -181,7 +206,7 @@ public:
 				if (shouldGcwTef || shouldBhTef) {
 					PlayerObject* ghost = player->getPlayerObject();
 
-					if (ghost != NULL) {
+					if (ghost != nullptr) {
 						ghost->updateLastPvpCombatActionTimestamp(shouldGcwTef, shouldBhTef);
 					}
 				}

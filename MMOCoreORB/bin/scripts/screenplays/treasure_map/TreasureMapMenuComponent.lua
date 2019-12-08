@@ -203,12 +203,9 @@ function TreasureMapMenuComponent:spawnTreasureLoot(pChest, pPlayer, mapType)
 
 		for i = 1, 5 do
 			createLoot(pChest, "treasure_map_group", playerLevelRange, false)
-			createLoot(pChest, "base_crate_resource", playerLevelRange, false)
-
 		end
 	else
 		createLoot(pChest, "hedon_istee_treasure", 10, false)
-		createLoot(pChest, "base_crate_resource", 10, false)
 	end
 end
 

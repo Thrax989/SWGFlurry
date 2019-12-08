@@ -9,7 +9,10 @@
 #define BADGES_H_
 
 #include "engine/engine.h"
+#include "engine/util/json_utils.h"
+
 #include "server/zone/managers/player/BadgeList.h"
+
 #include "Badge.h"
 
 class Badges : public Serializable, public ReadWriteLock {
@@ -73,12 +76,33 @@ public:
 	}
 
 public:
+
+	friend void to_json(nlohmann::json& j, const Badges& b) {
+		auto array = nlohmann::json::array();
+
+		for (int i = 0; i < 5; ++i) {
+			array.push_back(b.badgeBitmask[i]);
+		}
+
+		j["badgeBitmasks"] = array;
+
+		auto array2 = nlohmann::json::array();
+
+		for (int i = 0; i < 6; ++i) {
+			array2.push_back(b.badgeTypeCounts[i]);
+		}
+
+		j["badgeTypeCounts"] = array2;
+		j["badgeTotal"] = b.badgeTotal;
+	}
+
 	void setBadge(const uint badgeid) {
 		const Badge* badge = BadgeList::instance()->get(badgeid);
 		setBadge(badge);
 	}
+
 	void setBadge(const Badge* badge) {
-		if (badge == NULL) return;
+		if (badge == nullptr) return;
 
 		Locker locker(this);
 
@@ -97,14 +121,14 @@ public:
 
 		if (!(badgeBitmask[bitmaskNumber] & value)) {
 			badgeBitmask[bitmaskNumber] |= value;
-			const int badgeType = badge->getTypeInt(); 
+			const int badgeType = badge->getTypeInt();
 			badgeTypeCounts[badgeType]++;
 			badgeTotal++;
 		}
 	}
 
 	void unsetBadge(Badge* badge) {
-		if (badge == NULL) return;
+		if (badge == nullptr) return;
 		Locker locker(this);
 
 		const int badgeIndex = badge->getIndex();

@@ -77,5 +77,11 @@ includeFile("tangible/wearables/armor/infiltrator/serverobjects.lua")
 includeFile("tangible/wearables/armor/rebel_battle/serverobjects.lua")
 includeFile("tangible/wearables/armor/galactic_marine/serverobjects.lua")
 includeFile("tangible/wearables/armor/scout_trooper/serverobjects.lua")
+--includeFile("tangible/wearables/armor/spy/serverobjects.lua")
+
+includeFile("tangible/wearables/armor/armor_jedi_belt_01.lua")
+includeFile("tangible/wearables/armor/armor_jedi_belt_02.lua")
+includeFile("tangible/wearables/armor/armor_jedi_belt_03.lua")
+
 
 -- Server Objects

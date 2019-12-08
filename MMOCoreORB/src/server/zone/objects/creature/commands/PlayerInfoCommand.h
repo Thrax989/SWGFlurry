@@ -29,7 +29,7 @@ public:
 			targetObject = creature->getZoneServer()->getObject(creature->getTargetID()).castTo<CreatureObject*>();
 		}
 
-		if (targetObject == NULL || !targetObject->isPlayerCreature()) {
+		if (targetObject == nullptr || !targetObject->isPlayerCreature()) {
 			targetObject = creature;
 		}
 
@@ -43,13 +43,13 @@ public:
 
 		Locker smodLocker(targetObject->getSkillModMutex());
 
-		SkillModList* skillModList = targetObject->getSkillModList();
+		const SkillModList* skillModList = targetObject->getSkillModList();
 
 		StringBuffer promptText;
 		promptText << "Name: " << targetObject->getCustomObjectName().toString()  << endl;
 		promptText << "ObjectID: " << targetObject->getObjectID() << endl;
 
-		if (ghost != NULL) {
+		if (ghost != nullptr) {
 			promptText << "Online Status: ";
 
 			if(ghost->isOnline())
@@ -57,10 +57,38 @@ public:
 			else {
 				promptText << "OFFLINE. Last On: " << ghost->getLastLogout()->getFormattedTime() << endl;
 			}
-		}
 
-		promptText << endl << "Xp Rate:" << endl;
-		promptText << targetObject->getPersonalExpMultiplier() << endl;
+			if (ghost->isOnline()) {
+				auto zone = targetObject->getZone();
+
+				promptText << "Current Location: " << targetObject->getWorldPosition().toString()
+					<< " zone: " << (zone != nullptr ? zone->getZoneName() : "<nullZone>")
+					<< endl;
+			} else {
+				auto loginPos = targetObject->getWorldPosition();
+
+				Reference<SceneObject*> playerParent = creature->getZoneServer()->getObject(ghost->getSavedParentID(), true);
+
+				if (playerParent == nullptr)
+					playerParent = targetObject->getParent().get();
+
+				if (playerParent != nullptr && playerParent->isCellObject()) {
+					Reference<SceneObject*> root = playerParent->getRootParent();
+
+					if (root != nullptr && root->isBuildingObject()) {
+						float length = Math::sqrt(targetObject->getPositionX() * targetObject->getPositionX() + targetObject->getPositionY() * targetObject->getPositionY());
+						float angle = root->getDirection()->getRadians() + atan2(targetObject->getPositionX(), targetObject->getPositionY());
+						float posX = root->getPositionX() + (sin(angle) * length);
+						float posY = root->getPositionY() + (cos(angle) * length);
+						float posZ = root->getPositionZ() + targetObject->getPositionZ();
+
+						loginPos = Vector3(posX, posY, posZ);
+					}
+				}
+
+				promptText << "Login Location: " << loginPos.toString() << " zone: " << ghost->getSavedTerrainName() << endl;
+			}
+		}
 
 		promptText << endl << "SkillMods:" << endl;
 		promptText << skillModList->getPrintableSkillModList() << endl;
@@ -68,7 +96,7 @@ public:
 		smodLocker.release();
 
 		promptText << "Skills:" << endl;
-		SkillList* list = targetObject->getSkillList();
+		const SkillList* list = targetObject->getSkillList();
 
 		int totalSkillPointsWasted = 0;
 
@@ -81,7 +109,7 @@ public:
 
 		promptText << endl << "Level: " << targetObject->getLevel() << endl;
 
-		if (ghost != NULL) {
+		if (ghost != nullptr) {
 			promptText << "totalSkillPointsWasted = " << totalSkillPointsWasted << " skillPoints var:" << ghost->getSkillPoints() << endl;
 
 			promptText << endl << "Ability list:" << endl;
@@ -100,7 +128,7 @@ public:
 				promptText << "Hologrind professions:\n";
 
 				BadgeList* badgeList = BadgeList::instance();
-				if (badgeList != NULL) {
+				if (badgeList != nullptr) {
 					for (int i = 0; i < holoProfessions->size(); ++i) {
 						byte prof = holoProfessions->get(i);
 						const Badge* badge = badgeList->get(prof);
@@ -118,86 +146,29 @@ public:
 				MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
 				Vector<uint64>* hunterList =  missionManager->getHuntersHuntingTarget(targetObject->getObjectID());
 
-				if (hunterList != NULL) {
+				if (hunterList != nullptr) {
 					for (int i = 0; i < hunterList->size(); i++) {
 						promptText << "Hunter #" << i << ": " << hunterList->get(i) << endl;
 					}
-				}
-			} else {
-				promptText << "Not currently hunted" << endl;
-			}
-
-			//Jedi FRS Member Custom attributes
-			//promptText << "\nPVP Rating: " << targetObject->getScreenPlayState("pvpRating") << endl;
-			promptText << "\nPlayer has " << targetObject->getScreenPlayState("deathBounty") << " people who want him dead" << endl;
-			int frsSkills = ghost->numSpecificSkills(targetObject, "force_rank_");
-			String frsSkillName = "";
-			if (frsSkills > 0) {
-				switch (frsSkills) {
-				case 1:
-					frsSkillName = "novice";
-					break;
-				case 2:
-					frsSkillName = "rank 01";
-					break;
-				case 3:
-					frsSkillName = "rank 02";
-					break;
-				case 4:
-					frsSkillName = "rank 03";
-					break;
-				case 5:
-					frsSkillName = "rank 04";
-					break;
-				case 6:
-					frsSkillName = "rank 05";
-					break;
-				case 7:
-					frsSkillName = "rank 06";
-					break;
-				case 8:
-					frsSkillName = "rank 07";
-					break;
-				case 9:
-					frsSkillName = "rank 08";
-					break;
-				case 10:
-					frsSkillName = "rank 09";
-					break;
-				case 11:
-					frsSkillName = "rank 10";
-					break;
-				case 12:
-					frsSkillName = "master";
-					break;
-				}
-				if (ghost->getJediState() == 4) {
-					//promptText << "\nFRS Rank: @skl_n:force_rank_light_" << frsSkillName << endl;
-					promptText << "\nFRS Rank: Lightside " << frsSkillName << endl;
-				} else if (ghost->getJediState() == 8) {
-					//promptText << "\nFRS Rank: @skl_n:force_rank_dark_" << frsSkillName << endl;
-					promptText << "\nFRS Rank: Darkside " << frsSkillName << endl;
-				} else {
-					promptText << "\nFRS Rank: Player is not currently in the FRS" << endl;
 				}
 
 				promptText << endl;
 			}
 		} else {
-			promptText << "ERROR: PlayerObject NULL" << endl;
+			promptText << "ERROR: PlayerObject nullptr" << endl;
 		}
 
 		ManagedReference<SceneObject*> inventory = targetObject->getSlottedObject("inventory");
 		ManagedReference<SceneObject*> bank = targetObject->getSlottedObject("bank");
 		ManagedReference<SceneObject*> datapad = targetObject->getSlottedObject("datapad");
 
-		promptText << "Inventory: " << (inventory == NULL ? String("NULL") : String::valueOf(inventory->getObjectID()));
+		promptText << "Inventory: " << (inventory == nullptr ? String("nullptr") : String::valueOf(inventory->getObjectID()));
 		promptText << endl;
 
-		promptText << "Bank: " << (bank == NULL ? String("NULL") : String::valueOf(bank->getObjectID()));
+		promptText << "Bank: " << (bank == nullptr ? String("nullptr") : String::valueOf(bank->getObjectID()));
 		promptText << endl;
 
-		promptText << "Datapad: " << (datapad == NULL ? String("NULL") : String::valueOf(datapad->getObjectID()));
+		promptText << "Datapad: " << (datapad == nullptr ? String("nullptr") : String::valueOf(datapad->getObjectID()));
 		promptText << endl;
 
 

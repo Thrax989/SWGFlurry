@@ -20,7 +20,7 @@
 
 VendorDataComponent::VendorDataComponent() : AuctionTerminalDataComponent(), adBarkingMutex() {
 	ownerId = 0;
-	auctionMan = NULL;
+	auctionMan = nullptr;
 	initialized = false;
 	vendorSearchEnabled = false;
 	disabled = false;
@@ -54,6 +54,27 @@ void VendorDataComponent::addSerializableVariables() {
 	addSerializableVariable("originalDirection", &originalDirection);
 }
 
+void VendorDataComponent::writeJSON(nlohmann::json& j) const {
+	AuctionTerminalDataComponent::writeJSON(j);
+
+	SERIALIZE_JSON_MEMBER(ownerId);
+	SERIALIZE_JSON_MEMBER(initialized);
+	SERIALIZE_JSON_MEMBER(vendorSearchEnabled);
+	SERIALIZE_JSON_MEMBER(disabled);
+	SERIALIZE_JSON_MEMBER(registered);
+	SERIALIZE_JSON_MEMBER(maintAmount);
+	SERIALIZE_JSON_MEMBER(lastXpAward);
+	SERIALIZE_JSON_MEMBER(awardUsageXP);
+	SERIALIZE_JSON_MEMBER(lastSuccessfulUpdate);
+	SERIALIZE_JSON_MEMBER(adBarking);
+	SERIALIZE_JSON_MEMBER(mail1Sent);
+	SERIALIZE_JSON_MEMBER(emptyTimer);
+	SERIALIZE_JSON_MEMBER(barkMessage);
+	SERIALIZE_JSON_MEMBER(barkMood);
+	SERIALIZE_JSON_MEMBER(barkAnimation);
+	SERIALIZE_JSON_MEMBER(originalDirection);
+}
+
 void VendorDataComponent::initializeTransientMembers() {
 
 	AuctionTerminalDataComponent::initializeTransientMembers();
@@ -61,7 +82,7 @@ void VendorDataComponent::initializeTransientMembers() {
 	lastBark = 0;
 	ManagedReference<SceneObject*> strongParent = parent.get();
 
-	if(strongParent != NULL) {
+	if(strongParent != nullptr) {
 
 		if (isInitialized()) {
 			scheduleVendorCheckTask(VENDORCHECKDELAY + System::random(VENDORCHECKINTERVAL));
@@ -69,7 +90,7 @@ void VendorDataComponent::initializeTransientMembers() {
 			if(originalDirection == 1000)
 				originalDirection = strongParent->getDirectionAngle();
 
-			if(isRegistered() && strongParent->getZone() != NULL)
+			if(isRegistered() && strongParent->getZone() != nullptr)
 				strongParent->getZone()->registerObjectWithPlanetaryMap(strongParent);
 		}
 	}
@@ -78,30 +99,30 @@ void VendorDataComponent::initializeTransientMembers() {
 void VendorDataComponent::notifyObjectDestroyingFromDatabase() {
 	ManagedReference<SceneObject*> strong = parent.get();
 
-	if(strong == NULL)
+	if(strong == nullptr)
 		return;
 
 	ManagedReference<CreatureObject*> player = strong->getZoneServer()->getObject(ownerId).castTo<CreatureObject*>();
-	if(player == NULL)
+	if(player == nullptr)
 		return;
 
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
-	if (ghost != NULL)
+	if (ghost != nullptr)
 		ghost->removeVendor(strong);
 }
 
 void VendorDataComponent::runVendorUpdate() {
 	ManagedReference<SceneObject*> strongParent = parent.get();
 
-	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+	if (strongParent == nullptr || strongParent->getZoneServer() == nullptr)
 		return;
 
 	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
 	ManagedReference<PlayerManager*> playerManager = strongParent->getZoneServer()->getPlayerManager();
 	ManagedReference<TangibleObject*> vendor = cast<TangibleObject*>(strongParent.get());
 
-	if (owner == NULL || !owner->isPlayerCreature() || playerManager == NULL || vendor == NULL) {
+	if (owner == nullptr || !owner->isPlayerCreature() || playerManager == nullptr || vendor == nullptr) {
 		return;
 	}
 
@@ -128,6 +149,28 @@ void VendorDataComponent::runVendorUpdate() {
 		vendor->setMaxCondition(1000, true);
 	}
 
+	// Aprox 24 hours of maint warnings.
+	if (maintAmount < LOWWARNING && maintAmount > LOWWARNING * -1) {
+		ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
+
+		String sender = strongParent->getDisplayedName();
+		UnicodeString subject("@auction:vendor_status_subject");
+		StringBuffer body;
+		
+		if (maintAmount > 0){
+			body << strongParent->getDisplayedName() << " is running low on maintenance. There are currently only " << maintAmount << " credits available. ";
+		} else {
+			body << strongParent->getDisplayedName() << " is disabled, because it ran out of credits. The maintenance is overdrawn by " << abs(maintAmount) << " credits. ";
+			body << "You will only receive this warning for approximately 24 hours. ";
+		}
+		
+		body << "The maintenance rate is " << getMaintenanceRate() << " credits / hour. You can check the status of all your vendors by using the command: /tarkin aboutme\n\n";
+		body << "Vendor Location: " << int(vendor->getWorldPositionX()) << ", " << int(vendor->getWorldPositionY()) << " " << strongParent->getZone()->getZoneName();
+		
+		if (cman != NULL)
+			cman->sendMail(sender, subject, body.toString(), owner->getFirstName());
+	}
+
 	if (isEmpty()) {
 		ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
 
@@ -137,14 +180,14 @@ void VendorDataComponent::runVendorUpdate() {
 		if (!mail1Sent && time(0) - emptyTimer.getTime() > EMPTYWARNING) {
 			StringIdChatParameter body("@auction:vendor_status_endangered");
 			body.setTO(strongParent->getDisplayedName());
-			if (cman != NULL)
+			if (cman != nullptr)
 				cman->sendMail(sender, subject, body, owner->getFirstName());
 			mail1Sent = true;
 		}
 
 		else if (time(0) - emptyTimer.getTime() > EMPTYDELETE) {
 			StringIdChatParameter body("@auction:vendor_status_deleted");
-			if (cman != NULL)
+			if (cman != nullptr)
 				cman->sendMail(sender, subject, body, owner->getFirstName());
 			VendorManager::instance()->destroyVendor(vendor);
 			return;
@@ -170,7 +213,7 @@ void VendorDataComponent::runVendorUpdate() {
 			UnicodeString subject("@auction:vendor_status_subject");
 
 			StringIdChatParameter body("@auction:vendor_status_deleted");
-			if (cman != NULL)
+			if (cman != nullptr)
 				cman->sendMail(sender, subject, body, owner->getFirstName());
 			VendorManager::instance()->destroyVendor(vendor);
 		}
@@ -193,7 +236,7 @@ void VendorDataComponent::runVendorUpdate() {
 
 float VendorDataComponent::getMaintenanceRate() {
 	ManagedReference<SceneObject*> strongParent = parent.get();
-	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+	if (strongParent == nullptr || strongParent->getZoneServer() == nullptr)
 		return 15.f;
 
 	// 15 credits base maintenance
@@ -201,7 +244,7 @@ float VendorDataComponent::getMaintenanceRate() {
 
 	// Apply reduction for merchant skills
 	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
-	if (owner != NULL && owner->isPlayerCreature() ) {
+	if (owner != nullptr && owner->isPlayerCreature() ) {
 		if(owner->hasSkill("crafting_merchant_master"))
 			maintRate *= .60f;
 		else if(owner->hasSkill("crafting_merchant_sales_02"))
@@ -217,11 +260,11 @@ float VendorDataComponent::getMaintenanceRate() {
 
 void VendorDataComponent::payMaintanence() {
 	ManagedReference<SceneObject*> strongParent = parent.get();
-	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+	if (strongParent == nullptr || strongParent->getZoneServer() == nullptr)
 		return;
 
 	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
-	if(owner == NULL)
+	if(owner == nullptr)
 		return;
 
 	ManagedReference<SuiInputBox*> input = new SuiInputBox(owner, SuiWindowType::STRUCTURE_VENDOR_PAY);
@@ -238,11 +281,11 @@ void VendorDataComponent::payMaintanence() {
 
 void VendorDataComponent::handlePayMaintanence(int value) {
 	ManagedReference<SceneObject*> strongParent = parent.get();
-	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+	if (strongParent == nullptr || strongParent->getZoneServer() == nullptr)
 		return;
 
 	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
-	if(owner == NULL)
+	if(owner == nullptr)
 		return;
 
 	if(value > 100000) {
@@ -276,11 +319,11 @@ void VendorDataComponent::handlePayMaintanence(int value) {
 
 void VendorDataComponent::withdrawMaintanence() {
 	ManagedReference<SceneObject*> strongParent = parent.get();
-	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+	if (strongParent == nullptr || strongParent->getZoneServer() == nullptr)
 		return;
 
 	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
-	if(owner == NULL)
+	if(owner == nullptr)
 		return;
 
 	ManagedReference<SuiInputBox*> input = new SuiInputBox(owner, SuiWindowType::STRUCTURE_VENDOR_WITHDRAW);
@@ -297,11 +340,11 @@ void VendorDataComponent::withdrawMaintanence() {
 
 void VendorDataComponent::handleWithdrawMaintanence(int value) {
 	ManagedReference<SceneObject*> strongParent = parent.get();
-	if (strongParent == NULL || strongParent->getZoneServer() == NULL)
+	if (strongParent == nullptr || strongParent->getZoneServer() == nullptr)
 		return;
 
 	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
-	if(owner == NULL)
+	if(owner == nullptr)
 		return;
 
 	if(value > maintAmount) {
@@ -328,7 +371,7 @@ void VendorDataComponent::setVendorSearchEnabled(bool enabled) {
 	ManagedReference<SceneObject*> strongParent = parent.get();
 	ManagedReference<AuctionManager*> auctionManager = auctionMan.get();
 
-	if (auctionManager == NULL || strongParent == NULL || strongParent->getZoneServer() == NULL || strongParent->getZone() == NULL)
+	if (auctionManager == nullptr || strongParent == nullptr || strongParent->getZoneServer() == nullptr || strongParent->getZone() == nullptr)
 		return;
 
 	vendorSearchEnabled = enabled;
@@ -342,11 +385,11 @@ void VendorDataComponent::performVendorBark(SceneObject* target) {
 	}
 
 	ManagedReference<CreatureObject*> vendor = cast<CreatureObject*>(parent.get().get());
-	if (vendor == NULL)
+	if (vendor == nullptr)
 		return;
 
 	ManagedReference<CreatureObject*> player = cast<CreatureObject*>(target);
-	if (player == NULL || !player->isPlayerCreature() || player->isInvisible())
+	if (player == nullptr || !player->isPlayerCreature() || player->isInvisible())
 		return;
 
 	resetLastBark();
@@ -357,13 +400,13 @@ void VendorDataComponent::performVendorBark(SceneObject* target) {
 
 		VendorDataComponent* data = cast<VendorDataComponent*>(vendor->getDataObjectComponent()->get());
 
-		if (data == NULL)
+		if (data == nullptr)
 			return;
 
 		vendor->faceObject(player);
 		vendor->updateDirection(Math::deg2rad(vendor->getDirectionAngle()));
 
-		SpatialChat* chatMessage = NULL;
+		SpatialChat* chatMessage = nullptr;
 		String barkMessage = data->getAdPhrase();
 		ChatManager* chatManager = vendor->getZoneServer()->getChatManager();
 
@@ -389,16 +432,16 @@ void VendorDataComponent::performVendorBark(SceneObject* target) {
 void VendorDataComponent::scheduleVendorCheckTask(int delay) {
 	ManagedReference<SceneObject*> strongParent = parent.get();
 
-	if (strongParent == NULL)
+	if (strongParent == nullptr)
 		return;
 
-	if (vendorCheckTask == NULL)
+	if (vendorCheckTask == nullptr)
 		vendorCheckTask = new UpdateVendorTask(strongParent);
 
 	vendorCheckTask->reschedule(1000 * 60 * delay);
 }
 
 void VendorDataComponent::cancelVendorCheckTask() {
-	if (vendorCheckTask != NULL)
+	if (vendorCheckTask != nullptr)
 		vendorCheckTask->cancel();
 }

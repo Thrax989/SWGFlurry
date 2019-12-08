@@ -88,11 +88,11 @@ public:
 
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
-		if (object != NULL) {
+		if (object != nullptr) {
 			if (!object->isCreatureObject()) {
 				TangibleObject* tangibleObject = dynamic_cast<TangibleObject*>(object.get());
 
-				if (tangibleObject != NULL && tangibleObject->isAttackableBy(creature)) {
+				if (tangibleObject != nullptr && tangibleObject->isAttackableBy(creature)) {
 					object = creature;
 				} else {
 					creature->sendSystemMessage("@healing_response:healing_response_99"); //Target must be a player or a creature pet in order to quick heal.
@@ -112,6 +112,11 @@ public:
 
 		if ((creatureTarget->isAiAgent() && !creatureTarget->isPet()) || creatureTarget->isDroidObject() || creatureTarget->isDead() || creatureTarget->isRidingMount() || creatureTarget->isAttackableBy(creature))
 			creatureTarget = creature;
+
+		if (creature != creatureTarget && checkForArenaDuel(creatureTarget)) {
+			creature->sendSystemMessage("@jedi_spam:no_help_target"); // You are not permitted to help that target.
+			return GENERALERROR;
+		}
 
 		if (!creatureTarget->isHealableBy(creature)) {
 			creature->sendSystemMessage("@healing:pvp_no_help");  //It would be unwise to help such a patient.

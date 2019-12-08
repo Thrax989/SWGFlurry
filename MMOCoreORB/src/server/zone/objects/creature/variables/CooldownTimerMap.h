@@ -10,12 +10,14 @@
 
 #include "engine/engine.h"
 
+#include "engine/util/json_utils.h"
+
 class CooldownTimer : public Variable {
 	Time timeStamp;
 
 public:
 	CooldownTimer() : Variable() {
-		//timeStamp = NULL;
+		//timeStamp = nullptr;
 	}
 
 	CooldownTimer(const Time& timestamp) : Variable() {
@@ -59,6 +61,10 @@ public:
 		timeStamp.toBinaryStream(stream);
 
 		return true;
+	}
+
+	friend void to_json(nlohmann::json& j, const CooldownTimer& t) {
+		j["timeStamp"] = t.timeStamp;
 	}
 
 	bool parseFromBinaryStream(ObjectInputStream* stream) {
@@ -167,7 +173,7 @@ public:
 		Locker locker(&cooldownMutex);
 
 		if (!timers.containsKey(cooldownName))
-			return NULL;
+			return nullptr;
 
 		Time* cooldown = timers.get(cooldownName).getTime();
 

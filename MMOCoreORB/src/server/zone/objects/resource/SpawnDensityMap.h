@@ -12,6 +12,8 @@
 #define SPAWNDENSITYMAP_H_
 
 #include "engine/engine.h"
+#include "engine/util/json_utils.h"
+
 #include "simplexnoise/SimplexNoise.h"
 
 /*
@@ -35,7 +37,7 @@ public:
 		MEDIUMDENSITY = 2,
 		LOWDENSITY    = 3
 	};
-		
+
 
 public:
 	SpawnDensityMap() : Object(), Serializable() {
@@ -70,6 +72,18 @@ public:
 
 	}
 
+	friend void to_json(nlohmann::json& j, const SpawnDensityMap& m) {
+		j["seed"] = m.seed;
+		j["modifier"] = m.modifier;
+		j["density"] = m.density;
+		j["totalUnits"] = m.totalUnits;
+		j["unitsHarvested"] = m.unitsHarvested;
+		j["minX"] = m.minX;
+		j["maxX"] = m.maxX;
+		j["minY"] = m.minY;
+		j["maxY"] = m.maxY;
+	}
+
 	SpawnDensityMap& operator=(const SpawnDensityMap& map) {
 		if (this == &map)
 			return *this;
@@ -89,7 +103,7 @@ public:
 	}
 
 
-	float getDensityAt(float x, float y) {
+	float getDensityAt(float x, float y) const {
 		x -= minX;
 		y = maxY - y;
 		float value = SimplexNoise::noise(x * modifier, y * modifier, seed * modifier);

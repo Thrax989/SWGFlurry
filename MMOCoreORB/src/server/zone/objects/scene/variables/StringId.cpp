@@ -32,12 +32,10 @@ StringId::StringId(const String& fil, const String& stringId) : Object() {
 	filler = 0;
 }
 
-#ifdef CXX11_COMPILER
 StringId::StringId(StringId&& id) : Object(), file(std::move(id.file)), filler(id.filler),
 		stringID(std::move(id.stringID)) {
 
 }
-#endif
 
 void StringId::clear() {
 	file = "";
@@ -58,3 +56,8 @@ void StringId::setStringId(const String& fullPath) {
 	}
 }
 
+void server::zone::objects::scene::variables::to_json(nlohmann::json& j, const server::zone::objects::scene::variables::StringId& str) {
+	j["file"] = str.getFile();
+	j["filler"] = str.getFiller();
+	j["stringID"] = str.getStringID();
+}

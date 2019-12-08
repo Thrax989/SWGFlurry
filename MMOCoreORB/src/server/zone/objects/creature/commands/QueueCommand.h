@@ -84,6 +84,8 @@ public:
 	void onStateFail(CreatureObject* creature, uint32 actioncntr) const;
 	void onLocomotionFail(CreatureObject* creature, uint32 actioncntr) const;
 
+	bool checkForArenaDuel(CreatureObject* target) const;
+
 	/**
 	 * Gets a string describing this commands syntax usage.
 	 */
@@ -310,7 +312,7 @@ public:
 	bool isWearingArmor(CreatureObject* creo) const {
 		for (int i = 0; i < creo->getSlottedObjectsSize(); ++i) {
 			SceneObject* item = creo->getSlottedObject(i);
-			if (item != NULL && item->isArmorObject())
+			if (item != nullptr && item->isArmorObject())
 				return true;
 		}
 

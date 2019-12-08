@@ -7,6 +7,7 @@
 
 #include "engine/engine.h"
 
+#include "engine/util/json_utils.h"
 
 namespace server {
 namespace zone {
@@ -26,10 +27,7 @@ public:
 	StringId(const char * cstr);
 	StringId(const String& fullPath);
 	StringId(const String& fil, const String& stringId);
-
-#ifdef CXX11_COMPILER
 	StringId(StringId&& id);
-#endif
 
 	StringId& operator=(const StringId& id) {
 		if (&id == this)
@@ -42,7 +40,6 @@ public:
 		return *this;
 	}
 
-#ifdef CXX11_COMPILER
 	StringId& operator=(StringId&& id) {
 		if (&id == this)
 			return *this;
@@ -53,8 +50,6 @@ public:
 
 		return *this;
 	}
-#endif
-
 
 	bool operator==(const StringId& id) const {
 		if (&id == this)
@@ -81,11 +76,11 @@ public:
 		return "@" + file + ":" + stringID;
 	}
 
-	inline String getFile() const {
+	inline const String& getFile() const {
 		return file;
 	}
 
-	inline String getStringID() const {
+	inline const String& getStringID() const {
 		return stringID;
 	}
 
@@ -100,6 +95,9 @@ public:
 		return false;
 	}
 
+	inline int getFiller() const {
+		return filler;
+	}
 
 	void setStringId(const String& fullPath);
 
@@ -115,7 +113,6 @@ public:
 	}
 
 	bool parseFromBinaryStream(ObjectInputStream* stream) {
-
 		file.parseFromBinaryStream(stream);
 		TypeInfo<int >::parseFromBinaryStream(&filler, stream);
 		stringID.parseFromBinaryStream(stream);
@@ -123,6 +120,8 @@ public:
 		return true;
 	}
 };
+
+void to_json(nlohmann::json& k, const server::zone::objects::scene::variables::StringId& str);
 
 }
 }

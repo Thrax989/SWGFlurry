@@ -41,11 +41,11 @@ public:
 
 		ManagedReference<CreatureObject*> targetPlayer = chatManager->getPlayer(name);
 
-		if (targetPlayer == NULL) {
-			ManagedReference<StringIdChatParameter*> message = new StringIdChatParameter("@ui_cmnty:friend_location_failed"); // Unable to locate %TU
-			message->setTU(name);
+		if (targetPlayer == nullptr) {
+			StringIdChatParameter message("@ui_cmnty:friend_location_failed"); // Unable to locate %TU
+			message.setTU(name);
 
-			player->sendSystemMessage(*message);
+			player->sendSystemMessage(message);
 			return GENERALERROR;
 		}
 
@@ -53,20 +53,20 @@ public:
 		String myFirstName = player->getFirstName().toLowerCase();
 
 		if (!targetGhost->hasFriend(myFirstName)) {
-			ManagedReference<StringIdChatParameter*> message = new StringIdChatParameter("@ui_cmnty:friend_location_failed"); // Unable to locate %TU
-			message->setTU(name);
+			StringIdChatParameter message("@ui_cmnty:friend_location_failed"); // Unable to locate %TU
+			message.setTU(name);
 
-			player->sendSystemMessage(*message);
+			player->sendSystemMessage(message);
 			return GENERALERROR;
 		}
 
 		Zone* zone = targetPlayer->getZone();
 
-		if (zone == NULL) {
-			ManagedReference<StringIdChatParameter*> message = new StringIdChatParameter("@ui_cmnty:friend_location_failed"); // Unable to locate %TU
-			message->setTU(name);
+		if (zone == nullptr) {
+			StringIdChatParameter message("@ui_cmnty:friend_location_failed"); // Unable to locate %TU
+			message.setTU(name);
 
-			player->sendSystemMessage(*message);
+			player->sendSystemMessage(message);
 			return GENERALERROR;
 		}
 
@@ -76,7 +76,7 @@ public:
 
 		ManagedReference<SceneObject*> parent = targetPlayer->getParent().get();
 
-		if (parent != NULL && parent->isCellObject()) {
+		if (parent != nullptr && parent->isCellObject()) {
 			ManagedReference<SceneObject*> building = parent->getParent().get();
 
 			x = building->getPositionX();
@@ -98,10 +98,10 @@ public:
 
 		ghost->addWaypoint(obj, true, true);
 
-		ManagedReference<StringIdChatParameter*> message = new StringIdChatParameter("@ui_cmnty:friend_location"); // The friend waypoint has been updated to the location of %TU.
-		message->setTU(name);
+		StringIdChatParameter message("@ui_cmnty:friend_location"); // The friend waypoint has been updated to the location of %TU.
+		message.setTU(name);
 
-		player->sendSystemMessage(*message);
+		player->sendSystemMessage(message);
 
 		return SUCCESS;
 	}

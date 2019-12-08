@@ -7,6 +7,9 @@
 
 #include "SquadLeaderCommand.h"
 #include "server/zone/managers/skill/SkillModManager.h"
+#include "CombatQueueCommand.h"
+#include "server/zone/managers/combat/CombatManager.h"
+#include "server/zone/objects/scene/SceneObject.h"
 
 class VolleyFireCommand : public SquadLeaderCommand {
 public:
@@ -51,14 +54,14 @@ public:
 	}
 
 	bool attemptVolleyFire(CreatureObject* player, uint64* target, int skillMod) const {
-		if (player == NULL)
+		if (player == nullptr)
 			return false;
 
 		ManagedReference<WeaponObject*> weapon = player->getWeapon();
 
 		String skillCRC;
 
-		if (weapon != NULL) {
+		if (weapon != nullptr) {
 			if (!weapon->getCreatureAccuracyModifiers()->isEmpty()) {
 				skillCRC = weapon->getCreatureAccuracyModifiers()->get(0);
 
@@ -70,12 +73,12 @@ public:
 
 		if (!skillCRC.isEmpty())
 			player->addSkillMod(SkillModManager::ABILITYBONUS, skillCRC, (int) skillMod * -2, false);
-
+		player->playEffect("clienteffect/off_superior_firepower.cef", "");
 		return ret == SUCCESS;
 	}
 
 	bool doVolleyFire(CreatureObject* leader, GroupObject* group, uint64* target) const {
-		if (leader == NULL || group == NULL)
+		if (leader == nullptr || group == nullptr)
 			return false;
 
 		for (int i = 0; i < group->getGroupSize(); i++) {
@@ -96,7 +99,8 @@ public:
 			uint64 queueActionCRC = queueAction.hashCode();
 
 			member->executeObjectControllerAction(queueActionCRC, (uint64)target, "");
-
+			member->playEffect("clienteffect/off_superior_firepower.cef", "");
+			leader->playEffect("clienteffect/off_superior_firepower.cef", "");
 			checkForTef(leader, member);
 		}
 

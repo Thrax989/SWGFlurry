@@ -69,6 +69,14 @@ public:
 		addSerializableVariable("mods", &mods);
 	}
 
+	friend void to_json(nlohmann::json& j, const SkillModList& map) {
+		j["mods"] = map.mods;
+
+		const DeltaVectorMap<String, SkillModEntry>& vm = map;
+
+		to_json(j, vm);
+	}
+
 	bool add(const uint32 modType, const String& skillMod, int value) {
 		if (!mods.contains(modType)) {
 			SkillModGroup newgroup;
@@ -87,7 +95,7 @@ public:
 		return true;
 	}
 
-	SkillModEntry getVisibleSkillMod(const String& skillMod) {
+	SkillModEntry getVisibleSkillMod(const String& skillMod) const {
 		SkillModEntry newEntry;
 
 		for (int i = 0; i < mods.size(); ++i) {
@@ -137,14 +145,12 @@ public:
 		return &mods.get(type);
 	}
 
-	int getSkillMod(const String& skillMod) {
-
+	int getSkillMod(const String& skillMod) const {
 		int skill = 0;
 
 		for (int i = 0; i < mods.size(); ++i) {
-
 			uint32 modType = mods.elementAt(i).getKey();
-			SkillModGroup* group = &mods.elementAt(i).getValue();
+			const SkillModGroup* group = &mods.elementAt(i).getValue();
 
 			if (group->contains(skillMod)) {
 
@@ -168,7 +174,7 @@ public:
 	}
 
 	int getSkillModOfType(const String& skillMod, const uint32 modType) {
-		SkillModGroup* group = getSkillModGroup(modType);
+		const SkillModGroup* group = getSkillModGroup(modType);
 
 		if (group->contains(skillMod)) {
 			return group->get(skillMod);
@@ -177,19 +183,15 @@ public:
 		return 0;
 	}
 
-	String getPrintableSkillModList() {
-
-
+	String getPrintableSkillModList() const {
 		VectorMap<String, int> skills;
 		skills.setAllowOverwriteInsertPlan();
 
 		for (int i = 0; i < mods.size(); ++i) {
-
 			uint32 modType = mods.elementAt(i).getKey();
-			SkillModGroup* group = &mods.elementAt(i).getValue();
+			const SkillModGroup* group = &mods.elementAt(i).getValue();
 
 			for(int j = 0; j < group->size(); ++j) {
-
 				String skillMod = group->elementAt(j).getKey();
 				int skillModValue = group->get(skillMod);
 

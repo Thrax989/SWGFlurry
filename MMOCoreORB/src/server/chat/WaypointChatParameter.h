@@ -10,6 +10,8 @@
 
 #include "server/chat/ChatParameter.h"
 
+#include "engine/util/json_utils.h"
+
 namespace server {
 namespace zone {
 namespace objects {
@@ -51,17 +53,30 @@ protected:
 		addSerializableVariable("active", &active);
 	}
 
-	void insertHeaderToMessage(Message* message) {
+	void insertHeaderToMessage(Message* message) const override {
 		message->insertByte(TYPE_WAYPOINT);
 		message->insertInt(WAYPOINT);
 	}
 
-	void addToPacketStream(Message* packet);
+	void addToPacketStream(Message* packet) const override;
 
 public:
 	WaypointChatParameter();
 	WaypointChatParameter(WaypointObject* waypoint);
 	WaypointChatParameter(const WaypointChatParameter& custom);
+
+	friend void to_json(nlohmann::json& j, const WaypointChatParameter& p) {
+		j["waypointName"] = p.waypointName;
+		j["pointerParameter"] = p.pointerParameter;
+		j["cellID"] = p.cellID;
+		j["planetCRC"] = p.planetCRC;
+		j["unknownInt"] = p.unknownInt;
+		j["positionX"] = p.positionX;
+		j["positionY"] = p.positionY;
+		j["positionZ"] = p.positionZ;
+		j["color"] = p.color;
+		j["active"] = p.active;
+       	}
 
 	WaypointChatParameter& operator=(const WaypointChatParameter& par) {
 		if (this == &par)
@@ -81,48 +96,48 @@ public:
 		return *this;
 	}
 
-	void parse(Message* message);
+	void parse(Message* message) override;
 
 	void set(WaypointObject* waypoint);
 	void set(const UnicodeString& name, float x, float z, float y, uint32 planetcrc, uint64 pointer = 0, uint64 cellid = 0, byte clr = 1, bool actv = false);
 
-	inline UnicodeString& getWaypointName() {
+	inline const UnicodeString& getWaypointName() const {
 		return waypointName;
 	}
 
-	inline uint64 getPointerParameter() {
+	inline uint64 getPointerParameter() const {
 		return pointerParameter;
 	}
 
-	inline uint64 getCellID() {
+	inline uint64 getCellID() const {
 		return cellID;
 	}
 
-	inline uint32 getPlanetCRC() {
+	inline uint32 getPlanetCRC() const {
 		return planetCRC;
 	}
 
-	inline uint32 getUnknownInt() {
+	inline uint32 getUnknownInt() const {
 		return unknownInt;
 	}
 
-	inline float getPositionX() {
+	inline float getPositionX() const {
 		return positionX;
 	}
 
-	inline float getPositionY() {
+	inline float getPositionY() const {
 		return positionY;
 	}
 
-	inline float getPositionZ() {
+	inline float getPositionZ() const {
 		return positionZ;
 	}
 
-	inline byte getColor() {
+	inline byte getColor() const {
 		return color;
 	}
 
-	inline bool isActive() {
+	inline bool isActive() const {
 		return active;
 	}
 };

@@ -49,7 +49,7 @@ public:
 
 		Reference<Task*> incapTask = player->getPendingTask("incapacitationRecovery");
 
-		if (!creature->isIncapacitated() || incapTask == NULL || !incapTask->isScheduled()) {
+		if (!creature->isIncapacitated() || incapTask == nullptr || !incapTask->isScheduled()) {
 			creature->sendSystemMessage("@teraskasi:forceofwill_fail"); //You must be incapacitated to perform that command.
 			return GENERALERROR;
 		}
@@ -69,7 +69,7 @@ public:
 		//Handle our failures.
 		if (roll < 5 || roll > meditateMod) {
 			player->sendSystemMessage("@teraskasi:forceofwill_unsuccessful"); //You are unable to keep yourself centered, and become lost in unconsciousness.
-			Time nextExecutionTime;
+			AtomicTime nextExecutionTime;
 			Core::getTaskManager()->getNextExecutionTime(incapTask, nextExecutionTime);
 			player->addCooldown("tkaForceOfWill", nextExecutionTime.miliDifference()); //Disable the command until the current incapacitation is up.
 
@@ -105,9 +105,9 @@ public:
 		incapTask->cancel();
 		player->removePendingTask("incapacitationRecovery");
 		player->addCooldown("tkaForceOfWill", 3600 * 1000);
-		
+
 		player->removeFeignedDeath();
-		
+
 		return SUCCESS;
 	}
 };

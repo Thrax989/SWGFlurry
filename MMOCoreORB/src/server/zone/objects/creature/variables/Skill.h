@@ -76,7 +76,7 @@ public:
 		searchable = false;
 		skillsRequiredCount = 0;
 		pointsRequired = 0;
-		parentNode = NULL;
+		parentNode = nullptr;
 	}
 
 	~Skill() {
@@ -311,7 +311,7 @@ public:
 	 * @return the credits required for training the skill at a trainer.
 	 */
 	inline int getMoneyRequired() const {
-		return moneyRequired;
+		return moneyRequired/10;
 	}
 
 	/**

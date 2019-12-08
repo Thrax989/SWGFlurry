@@ -6,6 +6,7 @@
 #define SKILLMODENTRY_H_
 
 #include "engine/engine.h"
+#include "engine/util/json_utils.h"
 
 class SkillModEntry : public virtual Object {
 private:
@@ -45,7 +46,7 @@ public:
 		skillMod = mod;
 	}
 
-	int getSkillMod() {
+	int getSkillMod() const {
 		return skillMod;
 	}
 
@@ -53,17 +54,22 @@ public:
 		skillBonus = bonus;
 	}
 
-	int getSkillBonus() {
+	int getSkillBonus() const {
 		return skillBonus;
 	}
 
-	int getTotalSkill() {
+	int getTotalSkill() const {
 		return getSkillMod() + getSkillBonus();
 	}
 
 	bool toBinaryStream(ObjectOutputStream* stream) {
 		return TypeInfo<int >::toBinaryStream(&skillMod, stream) &&
 				TypeInfo<int >::toBinaryStream(&skillBonus, stream);
+	}
+
+	friend void to_json(nlohmann::json& j, const SkillModEntry& e) {
+		j["skillMod"] = e.skillMod;
+		j["skillBonus"] = e.skillBonus;
 	}
 
 	bool parseFromBinaryStream(ObjectInputStream* stream) {

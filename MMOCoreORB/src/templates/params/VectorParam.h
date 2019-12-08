@@ -48,11 +48,15 @@ public:
 		return vectorData.get(i);
 	}
 
-	void add(Data data) {
+	void add(const Data& data) {
 		vectorData.add(data);
 	}
 
-	String toString() {
+	void removeAll() {
+		vectorData.removeAll();
+	}
+
+	String toString() const {
 		//String var;
 		StringBuffer stream;
 

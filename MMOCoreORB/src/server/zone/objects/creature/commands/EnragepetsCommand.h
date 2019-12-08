@@ -35,7 +35,7 @@ public:
 			return INVALIDSTATE;
 
 		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-		if( ghost == NULL )
+		if( ghost == nullptr )
 			return GENERALERROR;
 
 		// Check player mind
@@ -49,11 +49,11 @@ public:
 		for (int i = 0; i < ghost->getActivePetsSize(); ++i) {
 
 			ManagedReference<AiAgent*> pet = ghost->getActivePet(i);
-			if(pet == NULL)
+			if(pet == nullptr)
 				continue;
 
 			ManagedReference<PetControlDevice*> controlDevice = pet->getControlDevice().get().castTo<PetControlDevice*>();
-			if( controlDevice == NULL )
+			if( controlDevice == nullptr )
 				continue;
 
 			// Creatures only
@@ -74,14 +74,14 @@ public:
 					continue;
 
 				// Check cooldown
-				if( pet->getCooldownTimerMap() == NULL || !pet->getCooldownTimerMap()->isPast("enragePetsCooldown") )
+				if( pet->getCooldownTimerMap() == nullptr || !pet->getCooldownTimerMap()->isPast("enragePetsCooldown") )
 					continue;
 
-				// Determine damage bonus (50% of average damage)
-				int damageBonus = (int) ((((float)pet->getDamageMin() + (float)pet->getDamageMax())/2) * 0.50);
+				// Determine damage bonus (15% of average damage)
+				int damageBonus = (int) ((((float)pet->getDamageMin() + (float)pet->getDamageMax())/2) * 0.15);
 
-				// Determine damage susceptibility (one quarter of damage bonus)
-				int damageSusceptibility = damageBonus / 4;
+				// Determine damage susceptibility (half of damage bonus)
+				int damageSusceptibility = damageBonus / 2;
 
 				// Build buff
 				ManagedReference<Buff*> buff = new Buff(pet, buffCRC, durationSec, BuffType::OTHER);

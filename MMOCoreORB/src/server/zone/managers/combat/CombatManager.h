@@ -55,7 +55,7 @@ public:
 	const static int FORCEARMOR = 0x5;
 	const static int ARMOR = 0x6;
 	const static int FOOD = 0x7;
-
+	const static int ABILITYARMOR = 0x8;
 
 
 	Vector<uint32> defaultMeleeAttacks;
@@ -163,6 +163,9 @@ public:
 
 	void checkForTefs(CreatureObject* attacker, CreatureObject* defender, bool* shouldGcwTef, bool* shouldBhTef);
 	void getFrsModifiedForceAttackDamage(CreatureObject* attacker, float& minDmg, float& maxDmg, const CreatureAttackData& data);
+	int getArmorObjectReduction(ArmorObject* armor, int damageType);
+
+	ArmorObject* getPSGArmor(CreatureObject* defender);
 
 	//all the combat math will go here
 protected:
@@ -195,6 +198,8 @@ protected:
 	float calculateDamage(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data);
 	float calculateDamage(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* defender, const CreatureAttackData& data);
 	bool checkConeAngle(SceneObject* targetCreature, float angle, float creatureVectorX, float creatureVectorY, float directionVectorX, float directionVectorY);
+	bool isLightningAttack(const CreatureAttackData& data);
+	bool isFlameThrowerAttack(const CreatureAttackData& data);
 
 	void showHitLocationFlyText(CreatureObject *attacker, CreatureObject *defender, uint8 location);
 
@@ -212,13 +217,11 @@ protected:
 	int doTargetCombatAction(TangibleObject* attacker, WeaponObject* weapon, TangibleObject* tano, const CreatureAttackData& data);
 	int getArmorReduction(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, float damage, int hitLocation, const CreatureAttackData& data);
 	float getArmorPiercing(TangibleObject* defender, int armorPiercing);
-	int getArmorObjectReduction(ArmorObject* armor, int damageType);
 	int getArmorNpcReduction(AiAgent* defender, int damageType);
 	int getArmorVehicleReduction(VehicleObject* defender, int damageType);
 	int getArmorTurretReduction(CreatureObject* attacker, TangibleObject* defender, int damageType);
 
 	ArmorObject* getArmorObject(CreatureObject* defender, uint8 hitLocation);
-	ArmorObject* getPSGArmor(CreatureObject* defender);
 
 	/**
 	 * returns bitmask with what pools to damage

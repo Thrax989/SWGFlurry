@@ -32,14 +32,33 @@ public:
 		maxRange = 80;
 		attackSpeed = 1;
 		nextAutoFireTime = Time();
-		templateData = NULL;
-		controller = NULL;
-		manualTarget = NULL;
-		turretFireTask = NULL;
+		templateData = nullptr;
+		controller = nullptr;
+		manualTarget = nullptr;
+		turretFireTask = nullptr;
 	}
 
 	~TurretDataComponent() {
 
+	}
+
+	void writeJSON(nlohmann::json& j) const {
+		DataObjectComponent::writeJSON(j);
+
+		SERIALIZE_JSON_MEMBER(maxRange);
+		SERIALIZE_JSON_MEMBER(attackSpeed);
+		SERIALIZE_JSON_MEMBER(nextAutoFireTime);
+
+		if (templateData) {
+			j["templateData"] = templateData->getTemplateFileName();
+		} else {
+			j["templateData"] = "";
+		}
+
+		SERIALIZE_JSON_MEMBER(controller);
+		SERIALIZE_JSON_MEMBER(manualTarget);
+		SERIALIZE_JSON_MEMBER(lastAutoTarget);
+		SERIALIZE_JSON_MEMBER(numberOfPlayersInRange);
 	}
 
 	void initializeTransientMembers();

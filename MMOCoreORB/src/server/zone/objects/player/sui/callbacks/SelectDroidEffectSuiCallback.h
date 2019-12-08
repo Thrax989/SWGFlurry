@@ -17,7 +17,7 @@
 
 class SelectDroidEffectSuiCallback : public SuiCallback, public Logger {
 
-	ManagedReference<DroidEffectsModuleDataComponent*> module;
+	Reference<DroidEffectsModuleDataComponent*> module;
 	int slotIndex;
 
 public:
@@ -29,7 +29,7 @@ public:
 	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
 		bool cancelPressed = (eventIndex == 1);
 
-		if( !suiBox->isListBox() || module == NULL )
+		if( !suiBox->isListBox() || module == nullptr )
 			return;
 
 		if( cancelPressed ){

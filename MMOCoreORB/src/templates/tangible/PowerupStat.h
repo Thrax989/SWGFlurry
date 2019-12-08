@@ -8,6 +8,10 @@
 #ifndef POWERUPSTAT_H_
 #define POWERUPSTAT_H_
 
+#include "engine/engine.h"
+
+#include "engine/util/json_utils.h"
+
 class PowerupStat: public virtual Serializable {
 protected:
 	SerializableString attributeToModify;
@@ -60,6 +64,13 @@ public:
 				&& (name == stat.name) && (pupAttribute == stat.pupAttribute));
 	}
 
+	friend void to_json(nlohmann::json& j, const PowerupStat& s) {
+		j["attributeToModify"] = s.attributeToModify;
+		j["name"] = s.name;
+		j["pupAttribute"] = s.pupAttribute;
+		j["value"] = s.value;
+	}
+
 	void addSerializableVariables() {
 		addSerializableVariable("attributeToModify", &attributeToModify);
 		addSerializableVariable("name", &name);
@@ -67,19 +78,19 @@ public:
 		addSerializableVariable("value", &value);
 	}
 
-	String getAttributeToModify() {
+	const String& getAttributeToModify() const {
 		return attributeToModify;
 	}
 
-	String getName() {
+	const String& getName() const {
 		return name;
 	}
 
-	String getPupAttribute() {
+	const String& getPupAttribute() const {
 		return pupAttribute;
 	}
 
-	float getValue() {
+	float getValue() const {
 		return value;
 	}
 

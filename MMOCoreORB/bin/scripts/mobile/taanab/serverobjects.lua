@@ -8,4 +8,3 @@ includeFile("taanab/ambrian_staga_female.lua")
 includeFile("taanab/norulac_raider.lua")
 includeFile("taanab/norulac_raider_captain.lua")
 includeFile("taanab/norulac_raider_commando.lua")
-

@@ -29,26 +29,7 @@ vizsla_loyalist = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_death_watch_gold.iff"},
-	lootGroups = {
-    {
-      groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
-  },
-      lootChance = 10000000
-  },
-  {
-      groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
-  },
-      lootChance = 10000000
-  },
-	},
+	lootGroups = {},
 	weapons = {"dark_trooper_weapons"},
 	conversationTemplate = "",
 	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster)

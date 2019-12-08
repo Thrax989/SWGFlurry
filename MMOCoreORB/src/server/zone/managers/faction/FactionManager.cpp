@@ -13,7 +13,7 @@
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/chat/ChatManager.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
-
+#include "server/zone/objects/group/GroupObject.h"
 
 FactionManager::FactionManager() {
 	setLoggingName("FactionManager");
@@ -29,7 +29,7 @@ void FactionManager::loadData() {
 void FactionManager::loadFactionRanks() {
 	IffStream* iffStream = TemplateManager::instance()->openIffFile("datatables/faction/rank.iff");
 
-	if (iffStream == NULL) {
+	if (iffStream == nullptr) {
 		warning("Faction ranks could not be found.");
 		return;
 	}
@@ -84,7 +84,7 @@ void FactionManager::loadLuaConfig() {
 	luaObject.pop();
 
 	delete lua;
-	lua = NULL;
+	lua = nullptr;
 }
 
 FactionMap* FactionManager::getFactionMap() {
@@ -92,7 +92,7 @@ FactionMap* FactionManager::getFactionMap() {
 }
 
 void FactionManager::awardFactionStanding(CreatureObject* player, const String& factionName, int level) {
-	if (player == NULL)
+	if (player == nullptr)
 		return;
 
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
@@ -152,6 +152,27 @@ void FactionManager::awardFactionStanding(CreatureObject* player, const String& 
 		if (!enemyFaction.isPlayerAllowed())
 			continue;
 
+		if (enemy == "rebel" || enemy == "imperial") {
+
+			if (player->isGrouped()) {
+		
+				ManagedReference<GroupObject*> group = player->getGroup();
+				int groupSize = group->getGroupSize();
+
+				for (int i = 0; i < groupSize; i++) {
+					ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+
+					ManagedReference<PlayerObject*> groupMemberPlayer = groupMember->getPlayerObject();
+
+					if (groupMember->isInRange(player, 100.0) && (groupMember != player)) {	
+						if (groupMember->isPlayerCreature()) {			
+							groupMemberPlayer->increaseFactionStanding(enemy, (gain * 0.5));
+						} 			
+					}	
+				}	
+		    
+			}
+		}
 		ghost->increaseFactionStanding(enemy, gain);
 	}
 }
@@ -176,15 +197,15 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			killer->playEffect("clienteffect/holoemote_rebel.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
-			lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
+			//lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
 			ghost->decreaseFactionStanding("imperial", 45);
 			killedGhost->decreaseFactionStanding("imperial", 45);
-			} else if (killer->isImperial() && destructedObject->isRebel()) {
+		} else if (killer->isImperial() && destructedObject->isRebel()) {
 			ghost->increaseFactionStanding("imperial", 30);
 			killer->playEffect("clienteffect/holoemote_imperial.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
-			lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
+			//lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
 			ghost->decreaseFactionStanding("rebel", 45);
 			killedGhost->decreaseFactionStanding("rebel", 45);
 		}

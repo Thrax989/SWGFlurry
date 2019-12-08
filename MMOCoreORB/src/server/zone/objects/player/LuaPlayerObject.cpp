@@ -16,6 +16,7 @@
 #include "server/zone/Zone.h"
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/objects/player/sessions/SlicingSession.h"
+#include "server/chat/ChatManager.h"
 
 const char LuaPlayerObject::className[] = "LuaPlayerObject";
 
@@ -81,6 +82,8 @@ Luna<LuaPlayerObject>::RegType LuaPlayerObject::Register[] = {
 		{ "getFrsCouncil", &LuaPlayerObject::getFrsCouncil },
 		{ "startSlicingSession", &LuaPlayerObject::startSlicingSession },
 		{ "setVisibility", &LuaPlayerObject::setVisibility },
+		{ "getPlayedTimeString", &LuaPlayerObject::getPlayedTimeString },
+		{ "broadcastToServer", &LuaPlayerObject::broadcastToServer },
 		{ 0, 0 }
 };
 
@@ -733,3 +736,26 @@ int LuaPlayerObject::startSlicingSession(lua_State* L) {
 
 	return 0;
 }
+
+int LuaPlayerObject::getPlayedTimeString(lua_State* L) {
+	int argc = lua_gettop(L) - 1;
+
+	bool verbose = false;
+
+	if (argc == 1) {
+		verbose = lua_toboolean(L, -1);
+	}
+
+	Locker locker(realObject);
+
+	lua_pushstring(L, realObject->getPlayedTimeString(verbose).toCharArray());
+
+	return 1;
+}
+
+int LuaPlayerObject::broadcastToServer(lua_State* L) {
+	String message = lua_tostring(L, -1);
+	ZoneServer* zServ = realObject->getZoneServer();
+	zServ->getChatManager()->broadcastGalaxy(nullptr, message);
+	return 1;
+} 

@@ -23,13 +23,13 @@ DamageOverTime::DamageOverTime() {
 }
 
 DamageOverTime::DamageOverTime(CreatureObject* attacker,
-							   uint64 tp,
-							   uint8 attrib,
-							   uint32 str,
-							   uint32 dur,
-							   int secondaryStrength) {
+		uint64 tp,
+		uint8 attrib,
+		uint32 str,
+		uint32 dur,
+		int secondaryStrength) {
 
-	if (attacker != NULL)
+	if (attacker != nullptr)
 		setAttackerID(attacker->getObjectID());
 
 	setType(tp);
@@ -89,6 +89,18 @@ void DamageOverTime::addSerializableVariables() {
 
 }
 
+void to_json(nlohmann::json& j, const DamageOverTime& t) {
+	j["attackerID"] = t.attackerID;
+	j["type"] = t.type;
+	j["attribute"] = t.attribute;
+	j["strength"] = t.strength;
+	j["duration"] = t.duration;
+	j["applied"] = t.applied;
+	j["expires"] = t.expires;
+	j["nextTick"] = t.nextTick;
+	j["secondaryStrength"] = t.secondaryStrength;
+}
+
 void DamageOverTime::activate() {
 	expires.updateToCurrentTime();
 	expires.addMiliTime(duration * 1000);
@@ -103,7 +115,7 @@ uint32 DamageOverTime::applyDot(CreatureObject* victim) {
 	uint32 power = 0;
 	ManagedReference<CreatureObject*> attacker = victim->getZoneServer()->getObject(attackerID).castTo<CreatureObject*>();
 
-	if (attacker == NULL)
+	if (attacker == nullptr)
 		attacker = victim;
 
 	switch(type) {
@@ -251,7 +263,6 @@ uint32 DamageOverTime::doFireTick(CreatureObject* victim, CreatureObject* attack
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_fire.cef","");
-		victimRef->playEffect("clienteffect/lava_player_burning.cef");
 	}, "FireTickLambda");
 
 	return damage;
@@ -286,7 +297,6 @@ uint32 DamageOverTime::doPoisonTick(CreatureObject* victim, CreatureObject* atta
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_poisoned.cef","");
-		victimRef->playEffect("clienteffect/mus_cym_poison.cef.cef");
 	}, "PoisonTickLambda");
 
 	return damage;
@@ -330,7 +340,6 @@ uint32 DamageOverTime::doDiseaseTick(CreatureObject* victim, CreatureObject* att
 			victimRef->removeAttackDelay();
 
 		victimRef->playEffect("clienteffect/dot_diseased.cef","");
-		victimRef->playEffect("clienteffect/mus_cym_disease.cef");
 	}, "DiseaseTickLambda");
 
 	return damage;
@@ -362,6 +371,16 @@ uint32 DamageOverTime::doForceChokeTick(CreatureObject* victim, CreatureObject* 
 			jediBuffDamage = rawDamage - (chokeDam *= 1.f - (forceShield / 100.f));
 			victimRef->notifyObservers(ObserverEventType::FORCESHIELD, attackerRef, jediBuffDamage);
 			CombatManager::instance()->sendMitigationCombatSpam(victimRef, nullptr, (int)jediBuffDamage, CombatManager::FORCESHIELD);
+		}
+
+		//PSG with lightsaber resistance only
+		ManagedReference<ArmorObject*> psg = CombatManager::instance()->getPSGArmor(victimRef);
+		if (psg != nullptr && !psg->isVulnerable(SharedWeaponObjectTemplate::LIGHTSABER)) {
+			float armorReduction =  CombatManager::instance()->getArmorObjectReduction(psg, SharedWeaponObjectTemplate::LIGHTSABER);
+
+		if (armorReduction > 0)
+			chokeDam *= 1.f - (armorReduction / 100.f);
+
 		}
 
 		CombatManager::instance()->broadcastCombatSpam(attackerRef, victimRef, nullptr, chokeDam, "cbt_spam", "forcechoke_hit", 1);

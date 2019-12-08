@@ -101,6 +101,43 @@ corellia = {
 	}
 }
 
+coruscant = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Collective Commerce District", x = -1851, z = 40, y = -175, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    {name = "Monument Square", x = 1538, z = 40, y = 779, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    {name = "Entertainment District", x = 2248, z = 0, y = -4546, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    {name = "Spaceport District Shuttle", x = -28, z = 40, y = 3202, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    {name = "Coruscant Spaceport", x = -96, z = 40, y = 3149, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+    },
+    
+    badgeAreas = {   
+  },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
+chandrila = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Hanna City Spaceport", x = 178, z = 6, y = -2961, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    {name = "Nayli Outpost", x = -5272, z = 18, y = 264, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {
+  },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
 dantooine = {
 	weatherEnabled = 1,
 	gcwEnabled = 1,
@@ -203,6 +240,32 @@ dathomir = {
 	}
 }
 
+dungeon1 = {
+	weatherEnabled = 0,
+	gcwEnabled = 0,
+}
+
+dungeon2 = {
+	weatherEnabled = 0,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+	planetTravelPoints = {
+		{name = "Flurry Space Station", x = 6000, z = 0, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
 endor = {
 	weatherEnabled = 1,
 	gcwEnabled = 1,
@@ -245,6 +308,134 @@ endor = {
 	}
 }
 
+geonosis = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+	planetTravelPoints = {
+		{name = "Geonosis City", x = -8, z = 5, y = -24, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
+hoth = {
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+
+	outpostRegionNames = { },
+
+	planetTravelPoints = {
+		{name = "Scavenger Outpost", x = 0, z = 0, y = -2000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	},
+
+	badgeAreas = {	
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 0, z = 0, y = -2020, parentid = 0},
+	}
+}
+
+hutta = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Bilbousa Starport", x = -789, z = 80, y = 1769, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+    },
+    
+    badgeAreas = {   
+  },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
+jakku = {
+  weatherEnabled = 1,
+  gcwEnabled = 0,
+
+  planetTravelPoints = {
+	{name = "Battle Of Jakku", x = -4263, z = 6, y = -2411, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+    },
+
+  badgeAreas = {
+  },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
+kaas = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+	{name = "an Imperial Garrison", x = -5163, z = 80, y = -2238, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	--{name = "a Smuggler Outpost", x = 2852, z = 125, y = 3896, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+    },
+    
+    badgeAreas = {   
+  },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
+kashyyyk = {
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+
+	outpostRegionNames = { },
+
+	planetTravelPoints = {
+		{name = "Kachirho Starport", x = -669.73, z = 18.85, y = -148.48, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = -688, z = 18.5, y = -144, parentid = 0},
+	}
+}
+
+korriban = {
+  weatherEnabled = 1,
+  gcwEnabled = 1,
+  
+  planetTravelPoints = {
+    {name = "Korriban Starport", x = -1751, z = 91, y = -641, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+    },
+    
+    badgeAreas = {   
+  },
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
 lok = {
 	weatherEnabled = 1,
 	gcwEnabled = 1,
@@ -280,6 +471,53 @@ lok = {
 
 	planetObjects = {
 		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0.999879, oz = 0, ow = 0.015506, x = 464.677, z = 8.75806, y = 5506.49, parentid = 0}
+	}
+}
+
+mandalore = {
+
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+
+	outpostRegionNames = { },
+
+	planetTravelPoints = {
+		{name = "Bralsin", x = -5689, z = 0, y = -5034, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Keldabe Starport", x = 1575, z = 4, y = -6408, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Keldabe Shuttleport", x = 1432, z = 1.9, y = -6163, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Sundari", x = 6275, z = 1, y = -6211, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Norg Bral", x = -6648, z = 30, y = 5583, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Enceri", x = 4713, z = 2, y = 7154, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Shuror", x = 1068, z = 1, y = 2733, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	},
+
+	badgeAreas = {
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
+mustafar = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+
+	planetTravelPoints = {
+		{name = "Mensix Mining Facility", x = -2475, z = 230.1, y = 1624.7, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = -2532, z = 225, y = 1650, parentid = 0},
 	}
 }
 
@@ -508,6 +746,28 @@ talus = {
 	}
 }
 
+taanab = {
+	weatherEnabled = 1,
+	gcwEnabled = 1,
+
+	outpostRegionNames = { },
+
+	planetTravelPoints = {
+		{name = "Pandath", x = 2100, z = 45, y = 5400, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Starhunter Station", x = 3610, z = 31.7, y = -5425, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {	
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.705623, oz = 0, ow = 0.708587, x = 2020, z = 45.0, y = 5400, parentid = 0},
+	}
+}
+
 tatooine = {
 	weatherEnabled = 1,
 	gcwEnabled = 1,
@@ -573,6 +833,12 @@ tatooine = {
 	}
 }
 
+tutorial = {
+	weatherEnabled = 0,
+	gcwEnabled = 0,
+}
+
+
 yavin4 = {
 	weatherEnabled = 1,
 	gcwEnabled = 1,
@@ -585,7 +851,7 @@ yavin4 = {
 	planetTravelPoints = {
 		{name = "Yavin IV Labor Outpost", x = -6921.6733, z = 73, y = -5726.5161, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Yavin IV Mining Outpost", x = -267.23914, z = 35, y = 4896.3013, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		{name = "Yavin IV Imperial Outpost", x = 4054.1, z = 37, y = -6216.9, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 0},
+		{name = "Yavin IV Imperial Outpost", x = 4054.1, z = 37, y = -6216.9, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
 	},
 
 	badgeAreas = {
@@ -703,14 +969,4 @@ space_yavin4 = {
 		{templateFile = "object/ship/spacestation_imperial.iff", x = 85.21, z = -342.3, y = -57.62, ow = 0.627024, ox = 0.0158741, oy = 0.777827, oz = -0.039685, parentid = 0},
 		{templateFile = "object/ship/spacestation_neutral.iff", x = -5570.46, z = -5168, y = -5234.88, ow = 0.994108, ox = 0.105996, oy = -0.0145207, oz = -0.0173906, parentid = 0}
 	}
-}
-
-dungeon1 = {
-	weatherEnabled = 0,
-	gcwEnabled = 0,
-}
-
-tutorial = {
-	weatherEnabled = 0,
-	gcwEnabled = 0,
 }

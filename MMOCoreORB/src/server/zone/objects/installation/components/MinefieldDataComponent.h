@@ -17,13 +17,14 @@ protected:
 	uint64 nextExplodeTime;
 	int attackSpeed;
 	const static int CAPACITY = 20;
-	Vector<WeaponObject*> mines;
+	Vector<ManagedReference<WeaponObject*>> mines;
 	SharedInstallationObjectTemplate* templateData;
 	int maxRange;
+	SynchronizedSortedVector<uint64> notifiedPlayers;
 public:
 	MinefieldDataComponent() {
 		attackSpeed = 5;
-		templateData = NULL;
+		templateData = nullptr;
 		nextExplodeTime = time(0);
 		maxRange = 5;
 		addSerializableVariables();
@@ -34,10 +35,16 @@ public:
 
 	}
 
+	void writeJSON(nlohmann::json& j) const {
+		DataObjectComponent::writeJSON(j);
+
+		SERIALIZE_JSON_MEMBER(mines);
+	}
+
 	void initializeTransientMembers(){
 		//Logger::Logger tlog("minefieldata");
 		//tlog.info("initializing minefield transients",true);
-		if(getParent() != NULL){
+		if(getParent() != nullptr){
 			templateData = dynamic_cast<SharedInstallationObjectTemplate*>(getParent()->getObjectTemplate());
 			attackSpeed = 5;
 		}
@@ -89,7 +96,17 @@ public:
 		return maxRange;
 	}
 
+	bool hasNotifiedPlayer(const uint64 oid) {
+		return notifiedPlayers.contains(oid);
+	}
 
+	void addNotifiedPlayer(const uint64 oid) {
+		notifiedPlayers.put(oid);
+	}
+
+	void removeNotifiedPlayer(const uint64 oid) {
+		notifiedPlayers.drop(oid);
+	}
 
 
 

@@ -20,6 +20,7 @@
 #include "server/chat/ChatManager.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
+#include "server/zone/objects/building/BuildingObject.h"
 
 void DiamondMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
@@ -46,6 +47,8 @@ int DiamondMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creat
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "armor_attachments", 300);
+	lootManager->createLoot(inventory, "clothing_attachments", 300);
 	creature->playEffect("clienteffect/level_granted.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
 	}

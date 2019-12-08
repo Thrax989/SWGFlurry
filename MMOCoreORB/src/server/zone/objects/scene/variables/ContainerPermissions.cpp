@@ -56,15 +56,15 @@ void ContainerPermissions::clearDefaultDenyPermission(uint16 permission) {
 	}
 }
 
-bool ContainerPermissions::hasPermission(const String& group, uint16 permission) {
+bool ContainerPermissions::hasPermission(const String& group, uint16 permission) const {
 	return hasPermission(group.hashCode(), permission);
 }
 
-uint16 ContainerPermissions::getAllowPermissions(const String& group) {
+uint16 ContainerPermissions::getAllowPermissions(const String& group) const {
 	return getAllowPermissions(group.hashCode());
 }
 
-uint16 ContainerPermissions::getDenyPermissions(const String& group) {
+uint16 ContainerPermissions::getDenyPermissions(const String& group) const {
 	return getDenyPermissions(group.hashCode());
 }
 
@@ -84,7 +84,7 @@ void ContainerPermissions::clearDenyPermission(const String& group, uint16 permi
 	clearDenyPermission(group.hashCode(), permission);
 }
 
-bool ContainerPermissions::hasPermission(uint32 group, uint16 permission) {
+bool ContainerPermissions::hasPermission(uint32 group, uint16 permission) const {
 	uint32 fullPerm = groupPermissions.get(group);
 
 	uint16 allow = (uint16)(fullPerm >> 16);
@@ -93,7 +93,7 @@ bool ContainerPermissions::hasPermission(uint32 group, uint16 permission) {
 	return permission & (allow & ~deny);
 }
 
-bool ContainerPermissions::hasOwnerPermission(uint16 permission) {
+bool ContainerPermissions::hasOwnerPermission(uint16 permission) const {
 	return hasPermission("owner", permission);
 }
 
@@ -153,4 +153,10 @@ bool ContainerPermissions::parseFromBinaryStream(ObjectInputStream* stream) {
 	TypeInfo<bool>::parseFromBinaryStream(&inheritPermissionsFromParent, stream);
 
 	return true;
+}
+
+void server::zone::objects::scene::variables::to_json(nlohmann::json& j, const server::zone::objects::scene::variables::ContainerPermissions& perms) {
+	j["groupPermissions"] = *perms.getGroupPermissions();
+	j["ownerID"] = perms.getOwnerID();
+	j["inheritPermissionsFromParent"] = perms.hasInheritPermissionsFromParent();
 }

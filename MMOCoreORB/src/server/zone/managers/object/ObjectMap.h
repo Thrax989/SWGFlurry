@@ -13,10 +13,10 @@ class ObjectMap : public Object {
 	int maxConnections;
 
 public:
-	ObjectMap() : objects(3000), maxConnections(500) {
+	ObjectMap() : objects(3000), maxConnections(50000) {
 	}
 
-	ObjectMap(int initsize) : objects(initsize), maxConnections(500) {
+	ObjectMap(int initsize) : objects(initsize), maxConnections(50000) {
 	}
 
 	ManagedReference<SceneObject*> put(uint64 oid, SceneObject* object) {

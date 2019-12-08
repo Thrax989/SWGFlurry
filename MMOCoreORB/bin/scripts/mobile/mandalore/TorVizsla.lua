@@ -28,70 +28,7 @@ tor_vizsla = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_death_watch_gold.iff"},
-	lootGroups = {
-		{
-			groups = {
-        			{group = "power_crystals", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
-		},
-			lootChance = 10000000
-		},
-   		{
-			groups = {
-        			{group = "power_crystals", chance = 5000000},
-        			{group = "armor_attachments", chance = 2500000},
-        			{group = "clothing_attachments", chance = 2500000}
-      		},
-      			lootChance = 10000000
-    		},
-    		{
-      			groups = {
-        			{group = "power_crystals", chance = 5000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000}
-      		},
-      			lootChance = 10000000
-    		},
-   		{
-      			groups = {
-        			{group = "power_crystals", chance = 5000000},
-       	 			{group = "armor_attachments", chance = 2500000},
-        			{group = "clothing_attachments", chance = 2500000}
-      		},
-      			lootChance = 10000000
-    		},
-    		{
-      			groups = {
-        			{group = "armor_attachments", chance = 5000000},
-        			{group = "clothing_attachments", chance = 5000000}
-      		},
-      			lootChance = 10000000
-    		},
-    		{
-     	 		groups = {
-        			{group = "armor_attachments", chance = 5000000},
-        			{group = "clothing_attachments", chance = 5000000}
-      		},
-      			lootChance = 10000000
-    		},
-    		{
-      			groups = {
-        			{group = "armor_attachments", chance = 5000000},
-       	 			{group = "clothing_attachments", chance = 5000000}
-      		},
-     			 lootChance = 10000000
-    		},
-    		{
-     			groups = {
-        			{group = "armor_attachments", chance = 5000000},
-        			{group = "clothing_attachments", chance = 5000000}
-      		},
-      			lootChance = 10000000
-    		},
-			
-				      
-		},
+	lootGroups = {},
 	weapons = {"creature_spit_heavy_flame"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = {

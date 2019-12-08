@@ -47,7 +47,7 @@ int RebelMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creatur
 
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 
-	ghost->increaseFactionStanding("rebel", 1000);
+	ghost->increaseFactionStanding("rebel", 500);
 	sceneObject->destroyObjectFromWorld(true);
 	sceneObject->destroyObjectFromDatabase(true);
 	}

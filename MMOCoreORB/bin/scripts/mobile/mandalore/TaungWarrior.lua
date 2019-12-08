@@ -29,26 +29,7 @@ taung_warrior = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_death_watch_red.iff"},
-	lootGroups = {
-    {
-      groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
-  },
-      lootChance = 10000000
-  },
-  {
-      groups = {
-        {group = "junk", chance = 5000000},
-        {group = "armor_attachments", chance = 2500000},
-        {group = "clothing_attachments", chance = 2500000}
-
-  },
-      lootChance = 10000000
-  },
-	},
+	lootGroups = {},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	attacks = merge(brawlermaster,marksmanmaster,fencermaster,commandomaster,riflemanmaster)

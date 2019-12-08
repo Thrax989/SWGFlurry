@@ -166,7 +166,7 @@ void MissionManagerImplementation::handleMissionListRequest(MissionTerminal* mis
 	}
 
 	if (missionTerminal->isBountyTerminal()) {
-		if (!player->hasSkill("combat_bountyhunter_novice")) {
+		if (!player->hasSkill("combat_bountyhunter_novice") && !player->hasSkill("combat_meleebountyhunter_novice")) {
 			player->sendSystemMessage("@mission/mission_generic:not_bounty_hunter_terminal");
 			return;
 		}
@@ -248,7 +248,7 @@ void MissionManagerImplementation::handleMissionAccept(MissionTerminal* missionT
 	}
 
 	//Limit to two missions (only one of them can be a bounty mission)
-	if (missionCount >= 2 || (hasBountyMission && mission->getTypeCRC() == MissionTypes::BOUNTY)) {
+	if (missionCount >= 4 || (hasBountyMission && mission->getTypeCRC() == MissionTypes::BOUNTY)) {
 		StringIdChatParameter stringId("mission/mission_generic", "too_many_missions");
 		player->sendSystemMessage(stringId);
 		return;
@@ -756,10 +756,22 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
 		difficulty = 4;
 
 	int diffDisplay = difficultyLevel + 7;
-	if (player->isGrouped())
+	PlayerObject* targetGhost = player->getPlayerObject();
+
+	String level = targetGhost->getScreenPlayData("mission_level_choice", "levelChoice");
+
+  	int levelChoice = Integer::valueOf(level);
+
+	if (levelChoice > 0) 
+		diffDisplay += levelChoice;
+
+	else if (player->isGrouped())
 		diffDisplay += player->getGroup()->getGroupLevel();
 	else
 		diffDisplay += playerLevel;
+
+	String dir = targetGhost->getScreenPlayData("mission_direction_choice", "directionChoice");
+  	float dirChoice = Float::valueOf(dir);
 
 	String building = lairTemplateObject->getMissionBuilding(difficulty);
 
@@ -785,7 +797,30 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
 	while (!foundPosition && maximumNumberOfTries-- > 0) {
 		foundPosition = true;
 
-		startPos = player->getWorldCoordinate(System::random(1000) + 1000, (float)System::random(360), false);
+		float direction = (float)System::random(360);
+
+		// Player direction choice -/+ 8 degrees deviation from center to spread out the lairs a bit. Any higher will change the direction diplayed on the client.
+		if (dirChoice > 0){
+			int dev = System::random(8);
+			int isMinus = System::random(100);
+
+			if (isMinus > 49)
+				dev *= -1;
+
+			direction = dirChoice + dev;
+
+			// Fix degree values greater than 360
+			if (direction > 360)
+				direction -= 360;
+		}
+
+		// Start position, always based on "facing north"
+		int distance = System::random(1000) + 1000;
+		float angleRads = direction * (M_PI / 180.0f);
+		float newAngle = angleRads + (M_PI / 2);
+		startPos.setX(player->getWorldPositionX() + (cos(newAngle) * distance)); // client has x/y inverted
+		startPos.setY(player->getWorldPositionY() + (sin(newAngle) * distance));
+		startPos.setZ(0.0f);
 
 		if (zone->isWithinBoundaries(startPos)) {
 			float height = zone->getHeight(startPos.getX(), startPos.getY());
@@ -854,7 +889,7 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
  		groupSuffix = " lair.";
  	}
  		
- 	VectorMap<String, int>* mobiles = lairTemplateObject->getMobiles();
+ 	const VectorMap<String, int>* mobiles = lairTemplateObject->getMobiles();
  	String mobileName = "mysterious";
  	
  	if (mobiles->size() > 0) {
@@ -961,7 +996,7 @@ void MissionManagerImplementation::randomizeGenericSurveyMission(CreatureObject*
 }
 
 void MissionManagerImplementation::randomizeGenericBountyMission(CreatureObject* player, MissionObject* mission, const uint32 faction, Vector<ManagedReference<PlayerBounty*>>* potentialTargets) {
-	if (!player->hasSkill("combat_bountyhunter_novice")) {
+	if (!player->hasSkill("combat_bountyhunter_novice") && !player->hasSkill("combat_meleebountyhunter_novice")) {
 		player->sendSystemMessage("@mission/mission_generic:not_bounty_hunter_terminal");
 		return;
 	}
@@ -974,9 +1009,9 @@ void MissionManagerImplementation::randomizeGenericBountyMission(CreatureObject*
 
 	int level = 1;
 	int randomTexts = 25;
-	if (player->hasSkill("combat_bountyhunter_investigation_03")) {
+	if (player->hasSkill("combat_bountyhunter_investigation_03") || player->hasSkill("combat_meleebountyhunter_investigation_03")) {
 		level = 3;
-	} else if (player->hasSkill("combat_bountyhunter_investigation_01")) {
+	} else if (player->hasSkill("combat_bountyhunter_investigation_01") || player->hasSkill("combat_meleebountyhunter_investigation_01")) {
 		level = 2;
 		randomTexts = 50;
 	}
@@ -1441,7 +1476,7 @@ void MissionManagerImplementation::randomizeGenericHuntingMission(CreatureObject
 		return;
 	}
 
-	VectorMap<String, int>* mobiles = lairTemplate->getMobiles();
+	const VectorMap<String, int>* mobiles = lairTemplate->getMobiles();
 
 	if (mobiles->size() == 0) {
 		return;
@@ -1455,7 +1490,7 @@ void MissionManagerImplementation::randomizeGenericHuntingMission(CreatureObject
 		return;
 	}
 
-	Vector<String>& templatesNames = creatureTemplate->getTemplates();
+	const Vector<String>& templatesNames = creatureTemplate->getTemplates();
 
 	if (templatesNames.size() == 0) {
 		return;
@@ -1715,7 +1750,7 @@ LairSpawn* MissionManagerImplementation::getRandomLairSpawn(CreatureObject* play
 
 	} else if (type == MissionTypes::HUNTING) {
 		CreatureManager* creatureManager = zone->getCreatureManager();
-		Vector<ManagedReference<SpawnArea* > >* worldAreas = creatureManager->getWorldSpawnAreas();
+		auto worldAreas = creatureManager->getWorldSpawnAreas();
 
 		ManagedReference<SpawnArea*> spawnArea = nullptr;
 
@@ -1741,7 +1776,16 @@ LairSpawn* MissionManagerImplementation::getRandomLairSpawn(CreatureObject* play
 	bool foundLair = false;
 	int counter = availableLairList->size();
 	int playerLevel = server->getPlayerManager()->calculatePlayerLevel(player);
-	if (player->isGrouped())
+	PlayerObject* targetGhost = player->getPlayerObject();
+
+	String level = targetGhost->getScreenPlayData("mission_level_choice", "levelChoice");
+
+  	int levelChoice = Integer::valueOf(level);
+
+	if (levelChoice > 0) 
+		playerLevel = levelChoice;
+
+	else if(player->isGrouped())
 		playerLevel = player->getGroup()->getGroupLevel();
 
 	LairSpawn* lairSpawn = nullptr;

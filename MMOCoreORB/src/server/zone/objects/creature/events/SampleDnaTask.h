@@ -39,7 +39,7 @@ public:
 		Locker locker(creature);
 		Locker crosslocker(player,creature);
 		player->removePendingTask("sampledna");
-		if (!creature->isInRange(player, 16.f) ) {
+		if (!creature->isInRange(player, 25.f) ) {
 			player->sendSystemMessage("@bio_engineer:harvest_dna_out_of_range");
 			resetCreatureStatus();
 			return;
@@ -80,7 +80,7 @@ public:
 			}
 			break;
 		case SAMPLING:
-			if (waitCount == 9) {
+			if (waitCount == 3) {
 				currentPhase = END;
 			}else {
 				waitCount++;
@@ -215,7 +215,7 @@ public:
 	void award(int cl, float rollMod, int skillMod) {
 		int xp = DnaManager::instance()->generateXp(cl);
 		ManagedReference<PlayerManager*> playerManager = player->getZoneServer()->getPlayerManager();
-		if(playerManager != NULL)
+		if(playerManager != nullptr)
 			playerManager->awardExperience(player, "bio_engineer_dna_harvesting", xp, true);
 		int quality = 0;
 		// generate quality based on skill

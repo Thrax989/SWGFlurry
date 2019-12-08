@@ -28,17 +28,18 @@ CreatureTemplateManager::CreatureTemplateManager() : Logger("CreatureTemplateMan
 		lua->setLogging(true);
 	}
 
-	hashTable.setNullValue(NULL);
+	hashTable.setNullValue(nullptr);
 
-	lua_register(lua->getLuaState(), "includeFile", includeFile);
-	lua_register(lua->getLuaState(), "addTemplate", addTemplate);
-	lua_register(lua->getLuaState(), "addWeapon", addWeapon);
-	lua_register(lua->getLuaState(), "addConversationTemplate", addConversationTemplate);
-	lua_register(lua->getLuaState(), "addLairTemplate", addLairTemplate);
-	lua_register(lua->getLuaState(), "addSpawnGroup", addSpawnGroup);
-	lua_register(lua->getLuaState(), "addDestroyMissionGroup", addDestroyMissionGroup);
-	lua_register(lua->getLuaState(), "addPatrolPathTemplate", addPatrolPathTemplate);
-	lua_register(lua->getLuaState(), "addOutfitGroup", addOutfitGroup);
+	lua->registerFunction("includeFile", includeFile);
+	lua->registerFunction("addTemplate", addTemplate);
+	lua->registerFunction("addWeapon", addWeapon);
+	lua->registerFunction("addConversationTemplate", addConversationTemplate);
+	lua->registerFunction("addLairTemplate", addLairTemplate);
+	lua->registerFunction("addSpawnGroup", addSpawnGroup);
+	lua->registerFunction("addDestroyMissionGroup", addDestroyMissionGroup);
+	lua->registerFunction("addPatrolPathTemplate", addPatrolPathTemplate);
+	lua->registerFunction("addOutfitGroup", addOutfitGroup);
+	lua->registerFunction("addDressGroup", addDressGroup);
 
 	lua->setGlobalInt("NONE", CreatureFlag::NONE);
 	lua->setGlobalInt("ATTACKABLE", CreatureFlag::ATTACKABLE);
@@ -133,7 +134,7 @@ int CreatureTemplateManager::loadTemplates() {
 		ret = false;
 	}
 
-	lua = NULL;
+	lua = nullptr;
 
 	if (!ret)
 		ERROR_CODE = GENERAL_ERROR;
@@ -358,6 +359,40 @@ int CreatureTemplateManager::addOutfitGroup(lua_State* L) {
 	templ->readObject(&obj);
 
 	instance()->outfits.put(ascii, templ);
+
+	return 0;
+}
+
+int CreatureTemplateManager::addDressGroup(lua_State* L) {
+	if (checkArgumentCount(L, 2) == 1) {
+		instance()->error("incorrect number of arguments passed to CreatureTemplateManager::addDressGroup");
+		ERROR_CODE = INCORRECT_ARGUMENTS;
+		return 0;
+	}
+
+	String ascii = lua_tostring(L, -2);
+	uint32 crc = (uint32) ascii.hashCode();
+
+	LuaObject obj(L);
+
+	if (obj.isValidTable()) {
+		Vector<String> dressGroup;
+
+		for (int i = 1; i <= obj.getTableSize(); ++i) {
+			String templ = obj.getStringAt(i);
+
+			SharedObjectTemplate* dressTemplate = TemplateManager::instance()->getTemplate(templ.hashCode());
+
+			if (dressTemplate == nullptr) {
+				instance()->error("Unable to add " + templ + " to dress group " + ascii + ", invalid template.");
+				continue;
+			}
+
+			dressGroup.add(templ);
+		}
+
+		CreatureTemplateManager::instance()->dressMap.put(crc, dressGroup);
+	}
 
 	return 0;
 }

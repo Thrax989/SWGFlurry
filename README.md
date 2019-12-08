@@ -1,10 +1,13 @@
 ## Flurry Server Index  ##
-  * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/XHmEz9F) [![GitHub last commit](https://img.shields.io/github/last-commit/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/commits/master) [![License](https://img.shields.io/github/license/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/blob/master/COPYING)
+  * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/RVx66Sw) [![GitHub last commit](https://img.shields.io/github/last-commit/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/commits/master) [![License](https://img.shields.io/github/license/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/blob/master/COPYING)
   * [![Server RoadMap ](https://img.shields.io/badge/Server%20Roadmap-Click%20Here-005f71.svg?style=plastic)](https://trello.com/b/fawSAKWE/swg-flurry-classic-server)
   * [![Server Client ](https://img.shields.io/badge/Server%20Client-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com/Launcher/SWGFlurry_Launcher_0.0.3.7.exe) 
   * [![Server Tre's ](https://img.shields.io/badge/Server%20Tre's-Click%20Here-005f71.svg?style=plastic)](https://mega.nz/#F!fw0EzZ4I!RfRwyqE859Ad3kGlQv7T4Q) 
   * [![Website ](https://img.shields.io/badge/Server%20Website-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com) 
   * [![Forums ](https://img.shields.io/badge/Server%20Forum's-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com/forum/) 
+
+
+# SWGEmu Core3 #
 
 ## What is SWGEmu? ##
 
@@ -12,12 +15,12 @@ Star Wars Galaxies was a massively multi-player online role playing game introdu
 It is this game the SWGEmu project focuses to recreate at a specific milestone referred to as Pre-CU, or Pre-Combat Upgrade. The Combat Upgrade was a set of game changes which radically changed the game-play, to the dislike of thousands of players. These changes led to the founding of this project, in an attempt to "recreate" the game as it was during the Pre-CU era.
 At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emulator is meant to imitate Sony Online Entertainment's server-side software, which hosted the galaxies of Star Wars Galaxies during the Pre-CU era.
 
-## How to build ##
+#### How to build ####
 
 ##### Dependencies #####
   * CMake 3.1.0 or higher
   * BerkeleyDB 5.3
-  * MySQL (libmysqlclient20)
+  * MySQL Client and Server
   * OpenSSL libraries
   * pthreads
   * Lua 5.3 libraries
@@ -26,29 +29,22 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
   * engine3
   * java jre 1.7+
 
-## Ubuntu 16.04+ ##
-  * [![Ubuntu Guide ](https://img.shields.io/badge/Ubuntu%20Guide-Click%20Here-005f71.svg?style=plastic)](https://github.com/Thrax989/SWGFlurry/blob/master/Ubuntu-Guide.md) 
+### Debian 9+ or Ubuntu 16.04+ ###
   * Install dependencies
 
-        sudo apt install build-essential libmysqlclient-dev liblua5.3-dev libdb5.3-dev libssl-dev cmake git default-jre libssl-dev
+        sudo apt install build-essential libmysqlclient-dev liblua5.3-dev libdb5.3-dev libssl-dev cmake git default-jre libssl-dev git
   * Clone core3 repository somewhere  (~/git)
 
+        mkdir -p ~/git
+        cd ~/git
         git clone http://review.swgemu.com/Core3
-  * Clone engine3 repository somewhere (~/git)
-
-        git clone http://review.swgemu.com/PublicEngine
-  * Enter repository and run make
-
-        cd PublicEngine/MMOEngine && make
-  * Symlink MMOEngine in Core3 where MMOCoreORB resides
-
-        cd ../../Core3
-        ln -s ../PublicEngine/MMOEngine MMOEngine
   * Build Core3 with 8 threads
 
         cd MMOCoreORB
-        git checkout origin/unstable
-        make build-cmake -j8
+        make -j8
+  * Import sql database
+
+        mysql -h<MYSQLHOST> -u<MYSQLUSER> -p<MYSQLPASSWORD> < sql/swgemu.sql
 
 ### How to Run ###
     cd ~/git/Core3/MMOCoreORB/bin
@@ -64,9 +60,16 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
 
     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-For more information, see [![Review SWGemu ](https://img.shields.io/badge/%20Review.SWGemu-Click%20Here-005f71.svg?style=plastic)](https://review.swgemu.com.)
+For more information, see https://review.swgemu.com.
 
-### Credits ###
-* Custom Leader Board Stat Tracking - RK Aso
-* Custom Mobile Template Viwer - SR Tyclo
-* Custom Recalculate Command - Infinity 
+### Credits to the following servers for there additional code contributions that we use in our code.
+  * Awakening
+  * Basilisk
+  * Clone Wars
+  * Empire in Flames
+  * Infinity
+  * Reckoning
+  * Sentinels Republi
+  * SWG-Europa
+  * Sunrunner II
+  * Tarkins Revenge

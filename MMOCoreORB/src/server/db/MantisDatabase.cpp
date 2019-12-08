@@ -5,7 +5,7 @@
  *      Author: crush
  */
 
-
+#include "MySqlDatabase.h"
 #include "MantisDatabase.h"
 
 #include "conf/ConfigManager.h"
@@ -20,7 +20,7 @@ MantisDatabase::MantisDatabase(ConfigManager* configManager) {
 	const String& dbPass = configManager->getMantisPass();
 	const String& dbName = configManager->getMantisName();
 	tablePrefix = configManager->getMantisPrefix();
-	const uint16& dbPort = configManager->getMantisPort();
+	const int     dbPort = configManager->getMantisPort();
 
 	databases = new ArrayList<UniqueReference<Database*>>();
 
@@ -31,10 +31,10 @@ MantisDatabase::MantisDatabase(ConfigManager* configManager) {
 		Database* db = nullptr;
 
 		try {
-			db = new engine::db::mysql::MySqlDatabase(String("MantisDatabase" + String::valueOf(i)), dbHost);
+			db = new server::db::mysql::MySqlDatabase(String("MantisDatabase" + String::valueOf(i)), dbHost);
 			db->connect(dbName, dbUser, dbPass, dbPort);
 
-			databases->add(db);
+			databases->emplace(db);
 		} catch (const Exception& e) {
 			Logger::console.error(e.getMessage());
 

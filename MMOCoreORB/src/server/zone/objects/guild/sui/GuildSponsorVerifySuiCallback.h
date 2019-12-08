@@ -25,12 +25,12 @@ public:
 
 		ManagedReference<GuildManager*> guildManager = server->getGuildManager();
 
-		if (guildManager == NULL)
+		if (guildManager == nullptr)
 			return;
 
 		ManagedReference<SceneObject*> obj = suiBox->getUsingObject().get();
 
-		if (obj == NULL || !obj->isPlayerCreature())
+		if (obj == nullptr || !obj->isPlayerCreature())
 			return;
 
 		CreatureObject* sponsor = cast<CreatureObject*>( obj.get());
@@ -38,14 +38,14 @@ public:
 		if (!sponsor->isOnline())
 			return;
 
-		if (!sponsor->isInRange(player, 32)) {
+		/*if (!sponsor->isInRange(player, 32)) {
 			sponsor->sendSystemMessage("@guild:sponsor_not_found"); // The specified person to sponsor could not be found nearby.
 			return;
-		}
+		}*/
 
 		ManagedReference<GuildObject*> guild = sponsor->getGuildObject().get();
 
-		if (guild == NULL || !guild->hasSponsorPermission(sponsor->getObjectID())) {
+		if (guild == nullptr || !guild->hasSponsorPermission(sponsor->getObjectID())) {
 			sponsor->sendSystemMessage("@guild:generic_fail_no_permission"); // You do not have permission to perform that operation.
 			return;
 		}

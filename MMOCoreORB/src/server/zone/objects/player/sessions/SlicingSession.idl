@@ -15,6 +15,7 @@ include server.zone.objects.player.sui.listbox.SuiListBox;
 include server.zone.objects.tangible.tool.smuggler.SlicingTool;
 include server.zone.objects.tangible.RelockLootContainerEvent;
 
+@json
 class SlicingSession extends Facade {
 	@weakReference
 	protected CreatureObject player;
@@ -33,7 +34,7 @@ class SlicingSession extends Facade {
 
 	protected boolean usedNode;
 	protected boolean usedClamp;
-	
+
 	protected byte sliceOption;
 	
 	protected boolean selectSlice;
@@ -95,11 +96,11 @@ class SlicingSession extends Facade {
 	public native boolean isBaseSlice() {
 		return baseSlice;
 	}
-	
+
 	public native boolean isKeypadSlice() {
 		return keypadSlice;
 	}
-	
+
 	public native void setKeypadSlice(boolean val){
 		keypadSlice = val;
 	}

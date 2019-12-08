@@ -62,12 +62,12 @@ void LightsaberCrystalComponentImplementation::notifyLoadFromDatabase() {
 void LightsaberCrystalComponentImplementation::generateCrystalStats() {
 	ManagedReference<LootManager*> lootManager = getZoneServer()->getLootManager();
 
-	if (lootManager == NULL)
+	if (lootManager == nullptr)
 		return;
 
-	CrystalData* crystalData = lootManager->getCrystalData(getObjectTemplate()->getTemplateFileName());
+	const CrystalData* crystalData = lootManager->getCrystalData(getObjectTemplate()->getTemplateFileName());
 
-	if (crystalData == NULL) {
+	if (crystalData == nullptr) {
 		error("Unable to find crystal stats for " + getObjectTemplate()->getTemplateFileName());
 		return;
 	}
@@ -120,12 +120,12 @@ void LightsaberCrystalComponentImplementation::generateCrystalStats() {
 void LightsaberCrystalComponentImplementation::validateCrystalStats() {
 	ManagedReference<LootManager*> lootManager = getZoneServer()->getLootManager();
 
-	if (lootManager == NULL)
+	if (lootManager == nullptr)
 		return;
 
-	CrystalData* crystalData = lootManager->getCrystalData(getObjectTemplate()->getTemplateFileName());
+	const CrystalData* crystalData = lootManager->getCrystalData(getObjectTemplate()->getTemplateFileName());
 
-	if (crystalData == NULL) {
+	if (crystalData == nullptr) {
 		error("Unable to find crystal stats for " + getObjectTemplate()->getTemplateFileName());
 		return;
 	}
@@ -278,7 +278,7 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 	TangibleObjectImplementation::fillAttributeList(alm, object);
 
 	PlayerObject* player = object->getPlayerObject();
-	if (object->hasSkill("force_title_jedi_rank_01") || player->isPrivileged()) {
+	if (object->hasSkill("force_title_jedi_rank_01") || object->hasSkill("combat_jedi_novice") || object->hasSkill("combat_jedi_novice") || player->isPrivileged()) {
 		if (ownerID == 0) {
 			StringBuffer str;
 			str << "\\#pcontrast2 UNTUNED";
@@ -319,13 +319,14 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 }
 
 void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
-	if (ownerID == 0 && player->hasSkill("force_title_jedi_rank_01") && hasPlayerAsParent(player)) {
+ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
+	if (jedi->getJediState() >= 1) {
 		String text = "@jedi_spam:tune_crystal";
 		menuResponse->addRadialMenuItem(128, 3, text);
 	}
 
 	PlayerObject* ghost = player->getPlayerObject();
-	if (ghost != NULL && ghost->isPrivileged()) {
+	if (ghost != nullptr && ghost->isPrivileged()) {
 		menuResponse->addRadialMenuItem(129, 3, "Staff Commands");
 
 		if (getColor() == 31)
@@ -339,7 +340,8 @@ void LightsaberCrystalComponentImplementation::fillObjectMenuResponse(ObjectMenu
 }
 
 int LightsaberCrystalComponentImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
-	if (selectedID == 128 && player->hasSkill("force_title_jedi_rank_01") && hasPlayerAsParent(player) && ownerID == 0) {
+ 	ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
+	if (selectedID == 128 && jedi->getJediState() >= 1) {
 		ManagedReference<SuiMessageBox*> suiMessageBox = new SuiMessageBox(player, SuiWindowType::TUNE_CRYSTAL);
 
 		suiMessageBox->setPromptTitle("@jedi_spam:confirm_tune_title");
@@ -353,7 +355,7 @@ int LightsaberCrystalComponentImplementation::handleObjectMenuSelect(CreatureObj
 	}
 
 	PlayerObject* ghost = player->getPlayerObject();
-	if (ghost != NULL && ghost->isPrivileged()){
+	if (ghost != nullptr && ghost->isPrivileged()){
 		if (selectedID == 130 && getColor() == 31) {
 			generateCrystalStats();
 		} else if (selectedID == 131 && ownerID != 0) {
@@ -378,10 +380,10 @@ bool LightsaberCrystalComponentImplementation::hasPlayerAsParent(CreatureObject*
 	SceneObject* bank = player->getSlottedObject("bank");
 
 	// Check if crystal is inside a wearable container in bank or inventory
-	if (wearableParent != NULL) {
+	if (wearableParent != nullptr) {
 		ManagedReference<WearableContainerObject*> wearable = cast<WearableContainerObject*>(wearableParent.get());
 
-		if (wearable != NULL) {
+		if (wearable != nullptr) {
 			SceneObject* parentOfWearableParent = wearable->getParent().get();
 
 			if (parentOfWearableParent == inventory || parentOfWearableParent == bank)
@@ -398,24 +400,9 @@ bool LightsaberCrystalComponentImplementation::hasPlayerAsParent(CreatureObject*
 }
 
 void LightsaberCrystalComponentImplementation::tuneCrystal(CreatureObject* player) {
-	if(!player->hasSkill("force_title_jedi_rank_01") || !hasPlayerAsParent(player)) {
+	ManagedReference<PlayerObject*> jedi = player->getPlayerObject(); 
+	if(!player->hasSkill("force_title_jedi_rank_01") && !player->hasSkill("combat_jedi_novice")) {
 		return;
-	}
-
-	if (getColor() == 31) {
-		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-
-		if (ghost == NULL)
-			return;
-
-		int tuningCost = 100 + (quality * 75);
-
-		if (ghost->getForcePower() <= tuningCost) {
-			player->sendSystemMessage("@jedi_spam:no_force_power");
-			return;
-		}
-
-		ghost->setForcePower(ghost->getForcePower() - tuningCost);
 	}
 
 	if (ownerID == 0) {
@@ -472,7 +459,7 @@ int LightsaberCrystalComponentImplementation::inflictDamage(TangibleObject* atta
 	if (isDestroyed()) {
 		ManagedReference<WeaponObject*> weapon = cast<WeaponObject*>(_this.getReferenceUnsafeStaticCast()->getParent().get()->getParent().get().get());
 
-		if (weapon != NULL) {
+		if (weapon != nullptr) {
 			if (getColor() == 31) {
 				weapon->setAttackSpeed(weapon->getAttackSpeed() - getAttackSpeed());
 				weapon->setMinDamage(weapon->getMinDamage() - getDamage());

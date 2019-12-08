@@ -59,6 +59,7 @@ private:
 
 	Vector<String> jtlResources;
 	Vector<String> activeResourceZones;
+	Vector<String>* planets;
 
 	MinimumPool* minimumPool;
 	FixedPool* fixedPool;
@@ -92,6 +93,7 @@ public:
 
 	void spawnScriptResources();
 	bool writeAllSpawnsToScript();
+	bool ghDumpAll();
 
 	void start();
 	void shiftResources();
@@ -104,40 +106,42 @@ public:
 
 	ResourceSpawn* manualCreateResourceSpawn(CreatureObject* player, const UnicodeString& args);
 
-	ResourceSpawn* createRecycledResourceSpawn(ResourceTreeEntry* entry);
+	ResourceSpawn* createRecycledResourceSpawn(const ResourceTreeEntry* entry) const;
 
-	ResourceSpawn* getRecycledResourceSpawnByType(const String& resourceType);
+	ResourceSpawn* getRecycledVersion(const ResourceSpawn* resource) const;
+	ResourceSpawn* getRecycledResourceSpawnByType(const String& resourceType) const;
 
-	ResourceSpawn* getRecycledVersion(ResourceSpawn* resource);
+	bool isRecycledResource(const ResourceSpawn* resource) const;
 
-	bool isRecycledResource(ResourceSpawn* resource);
+	int sendResourceRecycleType(const ResourceSpawn* resource) const;
 
-	int sendResourceRecycleType(ResourceSpawn* resource);
+	void sendResourceListForSurvey(CreatureObject* player, const int toolType, const String& surveyType) const;
 
-	void sendResourceListForSurvey(CreatureObject* player, const int toolType, const String& surveyType);
-
-	void sendSurvey(CreatureObject* player, const String& resname);
-	void sendSample(CreatureObject* player, const String& resname, const String& sampleAnimation);
-	void sendSampleResults(CreatureObject* player, const float density, const String& resname);
+	void sendSurvey(CreatureObject* player, const String& resname) const;
+	void sendSample(CreatureObject* player, const String& resname, const String& sampleAnimation) const;
+	void sendSampleResults(CreatureObject* player, const float density, const String& resname) const;
 
 	Reference<ResourceContainer*> harvestResource(CreatureObject* player, const String& type, const int quantity);
 	bool harvestResource(CreatureObject* player, ResourceSpawn* resourceSpawn, int quantity);
-	bool addResourceToPlayerInventory(CreatureObject* player, ResourceSpawn* resourceSpawn, int unitsExtracted);
+	bool addResourceToPlayerInventory(CreatureObject* player, ResourceSpawn* resourceSpawn, int unitsExtracted) const;
 
-	ResourceSpawn* getCurrentSpawn(const String& restype, const String& zoneName);
-
+	ResourceSpawn* getCurrentSpawn(const String& restype, const String& zoneName) const;
 	ResourceSpawn* getFromRandomPool(const String& type);
 
-	void addNodeToListBox(SuiListBox* sui, const String& nodeName);
-	void addPlanetsToListBox(SuiListBox* sui);
+	void addNodeToListBox(SuiListBox* sui, const String& nodeName) const;
+	void addPlanetsToListBox(SuiListBox* sui) const;
 
-	String addParentNodeToListBox(SuiListBox* sui, const String& currentNode);
+	String addParentNodeToListBox(SuiListBox* sui, const String& currentNode) const;
 
 	inline ResourceMap* getResourceMap() {
 		return resourceMap;
 	}
 
-	void listResourcesForPlanetOnScreen(CreatureObject* creature, const String& planet);
+	inline const ResourceMap* getResourceMap() const {
+		return resourceMap;
+	}
+
+	void listResourcesForPlanetOnScreen(CreatureObject* creature, const String& planet) const;
 
 	String healthCheck();
 
@@ -148,17 +152,23 @@ public:
 		return "Error Dumping resources";
 	}
 	void dumpToJSON();
-	String getPlanetByIndex(int index);
+	String ghDump() {
+		if(ghDumpAll())
+			return "Galaxy Harvester Output Dumped!";
+		return "Error Dumping Galaxy Harvesters Output!";
+	}
+
+	String getPlanetByIndex(int index) const;
 private:
 
 	void loadResourceSpawns();
 	String makeResourceName(const String& randomNameClass);
 	int randomizeValue(int min, int max);
-	long getRandomExpirationTime(ResourceTreeEntry* resourceEntry);
-	long getRandomUnixTimestamp(int min, int max);
+	long getRandomExpirationTime(const ResourceTreeEntry* resourceEntry);
+	long getRandomUnixTimestamp(int min, int max) const;
 
-	Vector<String>& getJtlResources();
-	Vector<String>& getActiveResourceZones();
+	const Vector<String>& getJtlResources() const;
+	const Vector<String>& getActiveResourceZones() const;
 
 	friend class ResourceTree;
 	friend class ResourceManager;

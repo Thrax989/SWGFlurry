@@ -20,6 +20,7 @@ include server.zone.CloseObjectsVector;
 
 import server.zone.objects.tangible.wearables.ArmorObject;
 
+@json
 class InstallationObject extends StructureObject {
 	protected transient SyncrhonizedUiListenInstallationTask syncUiTask;
 
@@ -112,7 +113,7 @@ class InstallationObject extends StructureObject {
 
 	@dirty
 	public abstract void updateOperators() {
-		
+
 	}
 
 	@preLocked
@@ -244,15 +245,15 @@ class InstallationObject extends StructureObject {
 	* @pre { }
 	* @post { }
 	* @return returns true if object can attack this
-	*/ 
+	*/
 	@dirty
 	public native boolean isAttackableBy(CreatureObject object);
 
 	@preLocked
 	public native void createChildObjects();
 
-	@dirty
+	@read
 	public native float getHitChance();
-}	
+}
 
-	
+

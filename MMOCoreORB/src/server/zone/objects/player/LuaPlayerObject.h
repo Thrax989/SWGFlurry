@@ -81,6 +81,7 @@ namespace player {
 		int addSuiBox(lua_State* L);
 		int removeSuiBox(lua_State* L);
 		int isJediTrainer(lua_State* L);
+		int broadcastToServer(lua_State* L);
 		int getVisibility(lua_State* L);
 		int setFrsCouncil(lua_State* L);
 		int setFrsRank(lua_State* L);
@@ -88,6 +89,7 @@ namespace player {
 		int getFrsCouncil(lua_State* L);
 		int startSlicingSession(lua_State* L);
 		int setVisibility(lua_State* L);
+		int getPlayedTimeString(lua_State* L);
 
 	private:
 		// The pointer to the 'real object' defined in object.cc

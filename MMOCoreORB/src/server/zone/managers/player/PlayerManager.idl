@@ -43,10 +43,34 @@ include system.util.Vector;
 include system.lang.ref.Reference;
 include server.zone.managers.player.XpBonusList;
 import server.zone.ZoneClientSession;
+import system.thread.Mutex;
+include engine.util.JSONSerializationType;
+import server.zone.objects.player.events.OnlinePlayerLogTask;
+import system.lang.Time;
 
 @dirty
 class PlayerManager extends Observer implements Logger {
 	transient ZoneProcessServer processor;
+
+	@dereferenced
+	private transient Logger playerLogger;
+
+	private transient string playerLoggerFilename;
+
+	@dereferenced
+	protected transient Mutex playerLoggerMutex;
+	protected transient int playerLoggerLines = 0;
+
+	@dereferenced
+	protected transient Mutex onlinePlayerLogMutext;
+
+	@weakReference
+	protected transient OnlinePlayerLogTask onlinePlayerLogTask;
+	protected transient int onlinePlayerLogSum;
+	protected transient boolean onlinePlayersLogOnSessionChange;
+
+	@dereferenced
+	protected transient Time lastOnlinePlayerLogMsg;
 
 	// Used for frog/gm buffs
 	protected int performanceBuff;
@@ -61,7 +85,7 @@ class PlayerManager extends Observer implements Logger {
 	protected int baseStoredShips;
 	protected boolean allowSameAccountPvpRatingCredit;
 	protected int onlineCharactersPerAccount;
-	
+
 	@dereferenced
 	protected XpBonusList xpBonusList;
 
@@ -70,15 +94,14 @@ class PlayerManager extends Observer implements Logger {
 
 	private int veteranRewardAdditionalMilestones;
 
-	@dereferenced 
+	@dereferenced
 	private VeteranRewardList veteranRewards;
 
 	private ZoneServer server;
 
 	transient CharacterNameMap nameMap;
 	private float globalExpMultiplier;
-	private float groupExpMultiplierInRange;
-	private float groupExpMultiplierOutOfRange;
+	private float groupExpMultiplier;
 
 	@dereferenced
 	private transient ReadWriteLock onlineMapMutex;
@@ -92,7 +115,7 @@ class PlayerManager extends Observer implements Logger {
 	@dereferenced
 	private transient OnlineZoneClientMap onlineZoneClientMap;
 
-	public native PlayerManager(ZoneServer zoneServer, ZoneProcessServer impl);
+	public native PlayerManager(ZoneServer zoneServer, ZoneProcessServer impl, boolean trackOnlineUsers);
 	public native void loadNameMap();
 
 	private native void loadLuaConfig();
@@ -125,6 +148,10 @@ class PlayerManager extends Observer implements Logger {
 	@local
 	public native boolean checkPlayerName(ClientCreateCharacterCallback callback);
 
+	public native string setFirstName(CreatureObject creature, final string newFirstName);
+
+	public native string setLastName(CreatureObject creature, final string newLastName, boolean skipVerify = false);
+
 	public native int notifyObserverEvent(unsigned int eventType, Observable observable, ManagedObject arg1, long arg2);
 
 	/**
@@ -133,7 +160,7 @@ class PlayerManager extends Observer implements Logger {
 	 */
 	@arg1preLocked
 	@arg2preLocked
-	public native int notifyDestruction(TangibleObject destructor, TangibleObject destructedObject, int condition, boolean isCombatAction); 
+	public native int notifyDestruction(TangibleObject destructor, TangibleObject destructedObject, int condition, boolean isCombatAction);
 
 	public native boolean shouldRescheduleCorpseDestruction(CreatureObject player, CreatureObject ai);
 
@@ -154,7 +181,7 @@ class PlayerManager extends Observer implements Logger {
 	public native byte calculateIncapacitationTimer(CreatureObject player, int condition);
 
 	/**
-	 * Check for enough encumbrances 
+	 * Check for enough encumbrances
 	 */
 	public native boolean checkEncumbrancies(CreatureObject player, ArmorObject armor);
 	public native void applyEncumbrancies(CreatureObject player, ArmorObject armor);
@@ -164,7 +191,7 @@ class PlayerManager extends Observer implements Logger {
 	public native void awardBadge(PlayerObject ghost, final Badge badge);
 
 	public native void setExperienceMultiplier(float globalMultiplier);
-	public native int awardExperience(CreatureObject player, final string xpType, int amount, boolean sendSystemMessage = true, float localMultiplier = 1.0f);
+	public native int awardExperience(CreatureObject player, final string xpType, int amount, boolean sendSystemMessage = true, float localMultiplier = 1.0f, boolean applyModifiers = true);
 
 	@local @dereferenced
 	public native SortedVector<SceneObject> getInsurableItems(CreatureObject player, boolean onlyInsurable = true);
@@ -234,7 +261,7 @@ class PlayerManager extends Observer implements Logger {
 	 * @pre respondingPlayer locked
 	 * @post respondingPlayer locked
 	 */
-	public native void completeUnity(CreatureObject respondingPlayer, unsigned long respondingPlayerRing);	
+	public native void completeUnity(CreatureObject respondingPlayer, unsigned long respondingPlayerRing);
 
 	/**
 	 * Cancel the propose unity session
@@ -251,7 +278,7 @@ class PlayerManager extends Observer implements Logger {
 	 * @pre player locked
 	 * @post player locked
 	 */
-	public native void promptDivorce(CreatureObject player);	
+	public native void promptDivorce(CreatureObject player);
 
 	/**
 	 * Nullify unity
@@ -260,7 +287,7 @@ class PlayerManager extends Observer implements Logger {
 	 * @post player locked
 	 */
 	@arg1preLocked
-	public native void grantDivorce(CreatureObject player);	
+	public native void grantDivorce(CreatureObject player);
 
 	/**
 	 * Checks whether the player qualifies for any veteran rewards
@@ -285,7 +312,7 @@ class PlayerManager extends Observer implements Logger {
 	 * @param playerGhost player requesting veteran rewards
 	 * @param account requesting veteran rewards
 	 */
-	public native int getFirstIneligibleMilestone(PlayerObject playerGhost, Account account);	
+	public native int getFirstIneligibleMilestone(PlayerObject playerGhost, Account account);
 
 	/**
 	 * Cancels the current reward session
@@ -298,7 +325,7 @@ class PlayerManager extends Observer implements Logger {
 	 * @param player requesting veteran rewards
 	 * @param itemIndex index to item in veteranRewards list
 	 */
-	public native void confirmVeteranReward( CreatureObject player, int itemIndex );	
+	public native void confirmVeteranReward( CreatureObject player, int itemIndex );
 
 	/**
 	 * Generates the selected reward for the player. Starts a new reward session
@@ -346,16 +373,16 @@ class PlayerManager extends Observer implements Logger {
 
 	@dirty
 	public native boolean existsName(final string name);
-	
+
 	@dirty
 	public native boolean existsPlayerCreatureOID(unsigned long oid);
-	
+
 	@dirty
 	public native unsigned long getObjectID(final string name);
-	
+
 	@dirty
 	public native string getPlayerName(unsigned long oid);
-	
+
 	@reference
 	public native CreatureObject getPlayer(final string name);
 
@@ -371,7 +398,7 @@ class PlayerManager extends Observer implements Logger {
 	public void removePlayer(final string playerName) {
 		nameMap.remove(playerName);
 	}
-	
+
 	@dirty
 	public void removePlayer(unsigned long playerID) {
 		nameMap.remove(playerID);
@@ -383,7 +410,7 @@ class PlayerManager extends Observer implements Logger {
 	}
 
 	public native void sendAdminJediList(CreatureObject player);
-	public native void sendAdminFRSList(CreatureObject player);	
+	public native void sendAdminFRSList(CreatureObject player);
 	public native void sendAdminList(CreatureObject player);
 
     @dereferenced
@@ -394,10 +421,10 @@ class PlayerManager extends Observer implements Logger {
 
 	public native void finishHologrind(CreatureObject player);
 
-	public native string banAccount(PlayerObject admin, Account account, unsigned int seconds, final string reason);	
-	public native string unbanAccount(PlayerObject admin, Account account, final string reason);	
-	public native string banFromGalaxy(PlayerObject admin, Account account, final unsigned int galaxy, unsigned int seconds, final string reason);	
-	public native string unbanFromGalaxy(PlayerObject admin, Account account, final unsigned int galaxy, final string reason);	
+	public native string banAccount(PlayerObject admin, Account account, unsigned int seconds, final string reason);
+	public native string unbanAccount(PlayerObject admin, Account account, final string reason);
+	public native string banFromGalaxy(PlayerObject admin, Account account, final unsigned int galaxy, unsigned int seconds, final string reason);
+	public native string unbanFromGalaxy(PlayerObject admin, Account account, final unsigned int galaxy, final string reason);
 	public native string banCharacter(PlayerObject admin, Account account, final string name, unsigned int galaxyID, unsigned int seconds, final string reason);
 	public native string unbanCharacter(PlayerObject admin, Account account, final string name, unsigned int galaxyID, final string reason);
 	public native void clearOwnedStructuresPermissions(CreatureObject player);
@@ -411,6 +438,22 @@ class PlayerManager extends Observer implements Logger {
 
 	public native void fixHAM(CreatureObject player);
 	public native void fixBuffSkillMods(CreatureObject player);
+
+	@local
+	@dereferenced
+	public native JSONSerializationType basePlayerLogEntry(CreatureObject creature, PlayerObject ghost);
+
+	@local
+	public native void writePlayerLogEntry(@dereferenced JSONSerializationType logEntry);
+
+	@local
+	public native void writePlayerLog(CreatureObject creature, PlayerObject ghost, final string msg, int logLevelType);
+
+	@local
+	public native void writePlayerLog(PlayerObject ghost, final string msg, int logLevelType);
+
+	@local
+	public native void writePlayerLog(CreatureObject creature, final string msg, int logLevelType);
 
 	public native int getPlayerQuestID(final string name);
 	public native string getPlayerQuestParent(int questID);
@@ -513,7 +556,7 @@ class PlayerManager extends Observer implements Logger {
 	public int getNumJukeboxSongs(){
 		return jukeboxSongs.size();
 	}
-	
+
 	public void setOnlineCharactersPerAccount(int count) {
 		onlineCharactersPerAccount = count;
 	}
@@ -521,13 +564,27 @@ class PlayerManager extends Observer implements Logger {
 	@local
 	@arg1preLocked
 	public native void doPvpDeathRatingUpdate(CreatureObject player, ThreatMap threatMap);
-	
-	public native void updatePvPKillCount(CreatureObject player);
 
+	public native void updatePvPKillCount(CreatureObject player);
 	private native void loadXpBonusList();
 	public native float getSpeciesXpModifier(final string species, final string xpType);
-	
+
 	public native void unlockFRSForTesting(CreatureObject player, int councilType);
 
-	public native void updateTopList();
+	@local
+	@dereferenced
+	public native Vector<unsigned long> getOnlinePlayerList();
+
+	@local
+	public native void logOnlinePlayers(boolean onlyWho);
+
+	@local
+	public native boolean rescheduleOnlinePlayerLogTask(int logSeconds);
+
+	public void updateOnlinePlayers() {
+		// Update just the log/who.json file based on Core3.LogOnlineOnSessionChange (default: true)
+		logOnlinePlayers(!onlinePlayersLogOnSessionChange);
+	}
+
+	public native void stopOnlinePlayerLogTask();
 }
