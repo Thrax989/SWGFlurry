@@ -602,7 +602,6 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					message.setDI(xpLoss * -1);
 					message.setTO("exp_n", "jedi_general");
 					target->sendSystemMessage(message);
-					attackerGhost->updateBountyKills();
 					String victimName = target->getFirstName();
 					String bhName = owner->getFirstName();
 					StringBuffer zBroadcast;
