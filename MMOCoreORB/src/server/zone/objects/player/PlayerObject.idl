@@ -296,6 +296,7 @@ class PlayerObject extends IntangibleObject {
 	protected unsigned long pveKills;
 	protected unsigned long pveDeaths;
 	protected unsigned long missionsCompleted;
+	protected unsigned long worldBossKills;
 
 	public static final int LFG = 1;
 	public static final int NEWBIEHELPER = 2;
