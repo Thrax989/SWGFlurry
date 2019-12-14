@@ -41,11 +41,11 @@ function worldboss_oneScreenplay:bossDead(pBoss, pPlayer)
 	print("World Boss One Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "worldboss_oneScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
-	createEvent(3600 * 1000, "worldboss_oneScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
-	createEvent(3597 * 1000, "worldboss_oneScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(3598 * 1000, "worldboss_oneScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(3599 * 1000, "worldboss_oneScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(3600 * 1000, "worldboss_oneScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
+	createEvent(10800 * 1000, "worldboss_oneScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
+	createEvent(10797 * 1000, "worldboss_oneScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
+	createEvent(10798 * 1000, "worldboss_oneScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
+	createEvent(10799 * 1000, "worldboss_oneScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
+	createEvent(10800 * 1000, "worldboss_oneScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
