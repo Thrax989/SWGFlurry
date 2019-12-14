@@ -26,7 +26,7 @@ end
 --The Boss Has Spawned
 -----------------------
 function worldboss_oneScreenplay:spawnMobiles()
-		local pBoss = spawnMobile("tatooine", "WorldBoss", -1, -5542.36, 29.3671, -1787.52, 139, 0)--Spawn World Boss
+		local pBoss = spawnMobile("tatooine", "worldboss_1", -1, -5542.36, 29.3671, -1787.52, 139, 0)--Spawn World Boss
 		local creature = CreatureObject(pBoss)
 		print("World Boss Spawned")
 		createObserver(OBJECTDESTRUCTION, "worldboss_oneScreenplay", "bossDead", pBoss)--World Boss Has Died Trigger Respawn Function
@@ -52,7 +52,7 @@ end
 --Respawn World Boss
 -----------------------
 function worldboss_oneScreenplay:KillSpawn()
-		local pBoss = spawnMobile("tatooine", "WorldBoss", -1, -5542.36, 29.3671, -1787.52, 139, 0)--Spawn WorldBoss After Death 3 Hour Timer
+		local pBoss = spawnMobile("tatooine", "worldboss_1", -1, -5542.36, 29.3671, -1787.52, 139, 0)--Spawn WorldBoss After Death 3 Hour Timer
 		local creature = CreatureObject(pBoss)
 		print("World Boss Spawned 1")
 		createObserver(OBJECTDESTRUCTION, "worldboss_oneScreenplay", "bossDead", pBoss)
