@@ -26,10 +26,10 @@ end
 --The Boss Has Spawned
 -----------------------
 function worldboss_oneScreenplay:spawnMobiles()
-		local pBoss = spawnMobile("tatooine", "WorldBoss", -1, -5542.36, 29.3671, -1787.52, 139, 0)
+		local pBoss = spawnMobile("tatooine", "WorldBoss", -1, -5542.36, 29.3671, -1787.52, 139, 0)--Spawn World Boss
 		local creature = CreatureObject(pBoss)
 		print("World Boss Spawned")
-		createObserver(OBJECTDESTRUCTION, "worldboss_oneScreenplay", "bossDead", pBoss)
+		createObserver(OBJECTDESTRUCTION, "worldboss_oneScreenplay", "bossDead", pBoss)--World Boss Has Died Trigger Respawn Function
 end
 ---------------------------------------------------------------
 --The Boss Has Died Respawn WorldBoss With A New Dynamic Spawn
@@ -40,19 +40,19 @@ function worldboss_oneScreenplay:bossDead(pBoss, pPlayer)
 	player:broadcastToServer("\\#63C8F9 Tatooine World Boss Will Respawn In 3 Hours")
 	print("World Boss One Has Died")
 	local creature = CreatureObject(pBoss)
-	createEvent(120 * 1000, "worldboss_oneScreenplay", "KillBoss", pBoss, "")
-	createEvent(30 * 1000, "worldboss_oneScreenplay", "KillSpawn", pBoss, "")
-	createEvent(27 * 1000, "worldboss_oneScreenplay", "KillSpawnCast", pBoss, "")
-	createEvent(28 * 1000, "worldboss_oneScreenplay", "KillSpawnCast1", pBoss, "")
-	createEvent(29 * 1000, "worldboss_oneScreenplay", "KillSpawnCast2", pBoss, "")
-	createEvent(30 * 1000, "worldboss_oneScreenplay", "KillSpawnCast3", pBoss, "")
+	createEvent(120 * 1000, "worldboss_oneScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
+	createEvent(3600 * 1000, "worldboss_oneScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
+	createEvent(3597 * 1000, "worldboss_oneScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
+	createEvent(3598 * 1000, "worldboss_oneScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
+	createEvent(3599 * 1000, "worldboss_oneScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
+	createEvent(3600 * 1000, "worldboss_oneScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
 --Respawn World Boss
 -----------------------
 function worldboss_oneScreenplay:KillSpawn()
-		local pBoss = spawnMobile("tatooine", "WorldBoss", -1, -5542.36, 29.3671, -1787.52, 139, 0)
+		local pBoss = spawnMobile("tatooine", "WorldBoss", -1, -5542.36, 29.3671, -1787.52, 139, 0)--Spawn WorldBoss After Death 3 Hour Timer
 		local creature = CreatureObject(pBoss)
 		print("World Boss Spawned 1")
 		createObserver(OBJECTDESTRUCTION, "worldboss_oneScreenplay", "bossDead", pBoss)
