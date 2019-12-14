@@ -32,6 +32,7 @@ object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_belt_gcw =
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
+               "object/creature/player/kel_dor_male.iff",
 				"object/creature/player/human_female.iff",
 				"object/creature/player/ithorian_male.iff",
 				"object/creature/player/ithorian_female.iff",

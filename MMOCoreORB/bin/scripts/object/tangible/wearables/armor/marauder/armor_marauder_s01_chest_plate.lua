@@ -76,6 +76,7 @@ object_tangible_wearables_armor_marauder_armor_marauder_s01_chest_plate = object
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
+               "object/creature/player/kel_dor_male.iff",
 				"object/creature/player/human_female.iff",
 				"object/creature/player/ithorian_male.iff",
 				"object/creature/player/ithorian_female.iff",
