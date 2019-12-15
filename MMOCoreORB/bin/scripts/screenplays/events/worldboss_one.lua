@@ -1,12 +1,12 @@
 --/////////////////////////////////////////////////////////
---//		  World Boss Dynamic Spawn System	 //
---//			Created By TOXIC:11/20/2019      //
+--//		  World Boss Spawn System					//
+--//			Created By TOXIC:11/20/2019				//
 --////////////////////////////////////////////////////////
---//		Change your world boss under WORLDBOSS	//
+--//		Change your world boss under WORLDBOSS		//
 --//Spawn Points Will Determain The Boss Spawn location //
 --////////////////////////////////////////////////////////
---//		Current World Boss Planet Yavin4	//
---//		Current World Boss Type CREATURE 	//
+--//		Current World Boss Planet Tatooinw			//
+--//		Current World Boss Type CREATURE			//
 --///////////////////////////////////////////////////////
 worldboss_oneScreenplay = ScreenPlay:new {
 	numberOfActs = 1,
@@ -26,9 +26,9 @@ end
 --The Boss Has Spawned
 -----------------------
 function worldboss_oneScreenplay:spawnMobiles()
-		local pBoss = spawnMobile("tatooine", "worldboss_1", -1, -5542.36, 29.3671, -1787.52, 139, 0)--Spawn World Boss
+		local pBoss = spawnMobile("tatooine", "worldboss_1", -1, 6617.49, 21.3744, 4249.5, 326, 0)--Spawn World Boss
 		local creature = CreatureObject(pBoss)
-		print("World Boss Spawned")
+		print("World Boss One Spawned")
 		createObserver(OBJECTDESTRUCTION, "worldboss_oneScreenplay", "bossDead", pBoss)--World Boss Has Died Trigger Respawn Function
 end
 ---------------------------------------------------------------
@@ -52,7 +52,7 @@ end
 --Respawn World Boss
 -----------------------
 function worldboss_oneScreenplay:KillSpawn()
-		local pBoss = spawnMobile("tatooine", "worldboss_1", -1, -5542.36, 29.3671, -1787.52, 139, 0)--Spawn WorldBoss After Death 3 Hour Timer
+		local pBoss = spawnMobile("tatooine", "worldboss_1", -1, 6617.49, 21.3744, 4249.5, 326, 0)--Spawn WorldBoss After Death 3 Hour Timer
 		local creature = CreatureObject(pBoss)
 		print("World Boss Spawned 1")
 		createObserver(OBJECTDESTRUCTION, "worldboss_oneScreenplay", "bossDead", pBoss)
