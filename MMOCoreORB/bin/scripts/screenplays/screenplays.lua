@@ -747,7 +747,7 @@ includeFile("../custom_scripts/screenplays/screenplays.lua")
 -- World Boss Systems
 includeFile("events/worldboss_one.lua")
 includeFile("events/worldboss_two.lua")
---includeFile("events/worldboss_three.lua")
+includeFile("events/worldboss_three.lua")
 --includeFile("events/worldboss_four.lua")
 --includeFile("events/worldboss_five.lua")
 --includeFile("events/worldboss_six.lua")
