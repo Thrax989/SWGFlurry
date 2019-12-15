@@ -49,15 +49,21 @@ krayt_dragon_adolescent = Creature:new {
 		},
 		{
 			groups = {
-				{group = "armor_all", chance = 10000000},
+				{group = "tierone", chance = 2000000},
+				{group = "tiertwo", chance = 4000000},
+				{group = "tierthree", chance = 2000000},
+				{group = "tierdiamond", chance = 2000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "tierone", chance = 2000000},
+				{group = "tiertwo", chance = 4000000},
+				{group = "tierthree", chance = 2000000},
+				{group = "tierdiamond", chance = 2000000},
 			},
-			lootChance = 2500000
+			lootChance = 4000000
 		},
 	},
 	weapons = {},

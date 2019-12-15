@@ -296,6 +296,8 @@ class PlayerObject extends IntangibleObject {
 	protected unsigned long pveKills;
 	protected unsigned long pveDeaths;
 	protected unsigned long missionsCompleted;
+	protected unsigned long worldbossKills;
+	
 
 	public static final int LFG = 1;
 	public static final int NEWBIEHELPER = 2;
@@ -1973,11 +1975,11 @@ class PlayerObject extends IntangibleObject {
 	public unsigned long getPvpKills() {
 		return pvpKills;
 	}
-	public void updateWorldBossKills() {
+	public void updateworldbossKills() {
 		worldbossKills += 1;
 		updateWebStats("worldbossKills", worldbossKills);
 	}
-	public unsigned long getWorldBossKills() {
+	public unsigned long getworldbossKills() {
 		return worldbossKills;
 	}
 	public void updatePvpDeaths() {

@@ -37,6 +37,7 @@ includeFile("tutorial/serverobjects.lua")
 includeFile("yavin4/serverobjects.lua")
 includeFile("faction/serverobjects.lua")
 includeFile("dungeon/serverobjects.lua")
+includeFile("worldboss/serverobjects.lua")
 -- Weapons
 includeFile("weapon/serverobjects.lua") 
 -- Spawn Groups
