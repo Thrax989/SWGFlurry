@@ -22,7 +22,7 @@ worldboss_2 = Creature:new {
 	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = AIENABLED + INTERESTING,
 	diet = CARNIVORE,
 	scale = 3.0,
 
