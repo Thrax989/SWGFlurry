@@ -1,5 +1,5 @@
-worldboss_3 = Creature:new {
-	customName = "Mutant Acklay Guardian",
+worldboss_4 = Creature:new {
+	customName = "Carax Nightwraith",
 	socialGroup = "",
 	faction = "",
 	level = 300,
@@ -26,7 +26,7 @@ worldboss_3 = Creature:new {
 	diet = CARNIVORE,
 	scale = 3.0,
 
-	templates = {"object/mobile/mutant_acklay.iff"},
+	templates = {"object/mobile/carax.iff"},
 	lootGroups = {
 		{
 			groups = {
@@ -69,4 +69,4 @@ worldboss_3 = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(worldboss_3, "worldboss_3")
+CreatureTemplates:addCreatureTemplate(worldboss_4, "worldboss_4")
