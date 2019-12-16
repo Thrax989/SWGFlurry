@@ -54,6 +54,7 @@
 #include "server/zone/objects/tangible/components/BossMenuComponent.h"
 #include "server/zone/objects/tangible/components/pvpMenuComponent.h"
 #include "server/zone/objects/tangible/components/DiamondMenuComponent.h"
+#include "server/zone/objects/tangible/components/WorldMenuComponent.h"
 #include "server/zone/objects/tangible/components/HeroicMenuComponent.h"
 #include "server/zone/objects/tangible/components/FlurrycoalMenuComponent.h"
 #include "server/zone/objects/tangible/components/FlurrypresentMenuComponent.h"
@@ -217,6 +218,7 @@ ComponentManager::ComponentManager() {
 	components.put("BossMenuComponent", new BossMenuComponent());
 	components.put("pvpMenuComponent", new pvpMenuComponent());
 	components.put("DiamondMenuComponent", new DiamondMenuComponent());
+	components.put("WorldMenuComponent", new WorldMenuComponent());
 	components.put("HeroicMenuComponent", new HeroicMenuComponent());
 	components.put("FlurrycoalMenuComponent", new FlurrycoalMenuComponent());
 	components.put("FlurrypresentMenuComponent", new FlurrypresentMenuComponent());
