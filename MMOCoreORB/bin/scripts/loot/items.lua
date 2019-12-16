@@ -1270,3 +1270,6 @@ includeFile("items/flurry_coals.lua")
 --Faction /point /loot
 includeFile("items/imppointsitem.lua")
 includeFile("items/rebpointsitem.lua")
+
+--World Boss Crate
+includeFile("items/world.lua")

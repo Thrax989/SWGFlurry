@@ -436,3 +436,6 @@ includeFile("groups/saberhand28.lua")
 --Faction /point /loot
 includeFile("groups/imppoints.lua")
 includeFile("groups/rebpoints.lua")
+
+--World Boss Crate
+includeFile("groups/worldbosscrate.lua")
