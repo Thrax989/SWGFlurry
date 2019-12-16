@@ -1,4 +1,4 @@
-/*
+
  * WorldMenuComponent.cpp
  *
  *  Created on: 12/15/2019
@@ -6,7 +6,7 @@
  */
 
 #include "server/zone/objects/creature/CreatureObject.h"
-#include "CloneArmorCrateMenuComponent.h"
+#include "WorldMenuComponent.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/loot/LootManager.h"
 #include "server/zone/Zone.h"
@@ -15,7 +15,7 @@
 void WorldMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
-	menuResponse->addRadialMenuItem(20, 3, "Earn World Boss Kill");
+	menuResponse->addRadialMenuItem(20, 3, "Open World Boss Crate");
 }
 
 int WorldMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const {
@@ -30,15 +30,13 @@ int WorldMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creatur
 		return 0;
 
 	if (selectedID != 20)
+		return 0;
+
 	PlayerObject* ghost = player->getPlayerObject();
 	if (ghost != nullptr) {
-	ghost->updateworldbossKills();
-	sceneObject->destroyObjectFromWorld(true);
-	sceneObject->destroyObjectFromDatabase(true);
-
+		ghost->updateworldbossKills();
+		sceneObject->destroyObjectFromWorld(true);
+		sceneObject->destroyObjectFromDatabase(true);
 	}
-		return 0;
-	}
-
-	return TangibleObjectMenuComponent::handleObjectMenuSelect(sceneObject, player, selectedID);
+	return 0;
 }
