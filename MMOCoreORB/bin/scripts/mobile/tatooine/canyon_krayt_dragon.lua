@@ -60,7 +60,7 @@ canyon_krayt_dragon = Creature:new {
 				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 2500000
-		},
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",

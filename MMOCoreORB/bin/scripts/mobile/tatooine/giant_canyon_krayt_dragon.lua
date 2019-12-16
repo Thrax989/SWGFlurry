@@ -39,7 +39,7 @@ giant_canyon_krayt_dragon = Creature:new {
 				{group = "weapons_all", chance = 2000000},
 			},
 			lootChance = 10000000
-		}
+		},
 		{
 			groups = {
 				{group = "tierone", chance = 5000000},
@@ -57,7 +57,7 @@ giant_canyon_krayt_dragon = Creature:new {
 				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 3000000
-		},
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",
