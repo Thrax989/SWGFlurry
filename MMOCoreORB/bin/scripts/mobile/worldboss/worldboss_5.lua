@@ -30,43 +30,46 @@ worldboss_5 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "weapons_all", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "armor_all", chance = 10000000},
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "weapons_all", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
+			lootChance = 10000000
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",
-	attacks = {
-		{"creatureareacombo","stateAccuracyBonus=100"},
-		{"creatureareaknockdown","stateAccuracyBonus=100"},
-		{"posturedownattack","stateAccuracyBonus=100"},
-		{"creatureareacombo","stateAccuracyBonus=100"}
-	}
+	weapons = {"mixed_force_weapons"},
+	conversationTemplate = "",
+	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster,forcepowermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(worldboss_5, "worldboss_5")

@@ -31,40 +31,48 @@ worldboss_1 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "krayt_tissue_rare", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "krayt_dragon_common", chance = 10000000},
+				{group = "armor_attachments", chance = 10000000},
 			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "krayt_pearls", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "armor_all", chance = 10000000},
-			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "weapons_all", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
 		{"creatureareacombo","stateAccuracyBonus=100"},
-		{"creatureareaknockdown","stateAccuracyBonus=100"}
+		{"creatureareaknockdown","stateAccuracyBonus=100"},
+		{"posturedownattack","stateAccuracyBonus=100"},
+		{"creatureareacombo","stateAccuracyBonus=100"}
 	}
 }
 

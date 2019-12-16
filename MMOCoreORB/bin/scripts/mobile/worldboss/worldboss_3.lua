@@ -30,34 +30,40 @@ worldboss_3 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "weapons_all", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "armor_all", chance = 10000000},
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "weapons_all", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
+			lootChance = 10000000
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",
