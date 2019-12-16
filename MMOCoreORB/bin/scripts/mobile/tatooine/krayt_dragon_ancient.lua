@@ -64,7 +64,7 @@ krayt_dragon_ancient = Creature:new {
 				{group = "tierdiamond", chance = 2500000},
 			},
 			lootChance = 5000000
-		},
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",

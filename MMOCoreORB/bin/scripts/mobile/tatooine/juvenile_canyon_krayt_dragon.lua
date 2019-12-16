@@ -44,7 +44,7 @@ juvenile_canyon_krayt_dragon = Creature:new {
 				{group = "tierone", chance = 10000000},
 			},
 			lootChance = 1500000
-		},
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",
