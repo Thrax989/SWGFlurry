@@ -12,6 +12,48 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "templates/faction/FactionRanks.h"
 
+#include "server/chat/room/ChatRoom.h"
+
+namespace server {
+namespace chat {
+
+class ChatManager;
+
+} // namespace chat
+} // namespace server
+
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+
+class CreatureObject;
+
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+
+class TangibleObject;
+
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::chat;
+using namespace server::chat::room;
+
+class FactionMap;
+
+using namespace server::zone::objects::creature;
+using namespace server::zone::objects::tangible;
+
 class FactionManager : public Singleton<FactionManager>, public Logger, public Object {
 	FactionMap factionMap;
 	FactionRanks factionRanks;
@@ -29,6 +71,12 @@ public:
 	void loadData();
 
 	/**
+	* Creates GCW specific Chat Rooms
+	*/
+	void createGcwRooms(ChatManager* chatManager);
+
+	/**
+
 	 * Awards points to the player based on the faction they killed.
 	 * @pre: player locked
 	 * @post: player locked
@@ -38,7 +86,7 @@ public:
 	 */
 	void awardFactionStanding(CreatureObject* player, const String& factionName, int level);
 
-	void awardPvpFactionPoints(TangibleObject* killer, CreatureObject* destructedObject);
+	void awardPvpFactionPoints(TangibleObject* killer, CreatureObject* destructedObject, int numberCombatants);
 
 	/**
 	 * Gets a list of enemy factions to the faction passed to the method.
@@ -68,9 +116,16 @@ public:
 	bool isEnemy(const String& faction1, const String& faction2);
 	bool isAlly(const String& faction1, const String& faction2);
 
+	ChatRoom* getImperialChat() const { return imperialChat; }
+	ChatRoom* getRebelChat() const { return rebelChat; }
+	ChatRoom* getPvpNotificationChat() const { return pvpNotificationChat; }
+
 protected:
 	void loadFactionRanks();
 	void loadLuaConfig();
+  ManagedReference<ChatRoom*> imperialChat;
+  ManagedReference<ChatRoom*> rebelChat;
+  ManagedReference<ChatRoom*> pvpNotificationChat;
 };
 
 #endif /* FACTIONMANAGER_H_ */
