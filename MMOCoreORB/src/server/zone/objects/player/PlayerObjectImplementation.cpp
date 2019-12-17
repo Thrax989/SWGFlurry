@@ -429,12 +429,41 @@ void PlayerObjectImplementation::notifySceneReady() {
 		}
 	}
 
+	//Join the faction chat rooms
+	switch (creature->getFaction())
+	{
+		case Factions::FACTIONIMPERIAL:
+			{
+				ManagedReference<ChatRoom*> chat = FactionManager::instance()->getImperialChat();
+				chat->sendTo(creature);
+				chatManager->handleChatEnterRoomById(creature, chat->getRoomID(), -1, true);
+// for gcw frs reporting wip
+				chat = FactionManager::instance()->getPvpNotificationChat();
+				chat->sendTo(creature);
+				chatManager->handleChatEnterRoomById(creature, chat->getRoomID(), -1, true);
+			}
+			break;
+		case Factions::FACTIONREBEL:
+			{
+				ManagedReference<ChatRoom*> chat = FactionManager::instance()->getRebelChat();
+				chat->sendTo(creature);
+				chatManager->handleChatEnterRoomById(creature, chat->getRoomID(), -1, true);
+// for gcw/frs reporting wip
+				chat = FactionManager::instance()->getPvpNotificationChat();
+				chat->sendTo(creature);
+				chatManager->handleChatEnterRoomById(creature, chat->getRoomID(), -1, true);
+			}
+			break;
+		default:
+			break;
+	}
+
 	//Re-join chat rooms player was a member of before disconnecting.
 	for (int i = chatRooms.size() - 1; i >= 0; i--) {
 		ChatRoom* room = chatManager->getChatRoom(chatRooms.get(i));
 		if (room != nullptr) {
 			int roomType = room->getChatRoomType();
-			if (roomType == ChatRoom::PLANET || roomType == ChatRoom::GUILD)
+			if (roomType == ChatRoom::PLANET || roomType == ChatRoom::GUILD || roomType == ChatRoom::PVP)
 				continue; //Planet and Guild are handled above.
 
 			room->sendTo(creature);
