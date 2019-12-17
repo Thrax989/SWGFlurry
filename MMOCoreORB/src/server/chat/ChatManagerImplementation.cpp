@@ -75,6 +75,7 @@ void ChatManagerImplementation::stop() {
 	groupRoom = nullptr;
 	guildRoom = nullptr;
 	auctionRoom = nullptr;
+	generalRoom = nullptr;
 	gameRooms.removeAll();
 }
 
@@ -314,28 +315,12 @@ void ChatManagerImplementation::initiateRooms() {
 	guildRoom = createRoom("guild", systemRoom);
 	guildRoom->setPrivate();
 
-	pvpRoom = createRoom("pvp", systemRoom);
-	pvpRoom->setPrivate();
-	
-	Reference<ChatRoom*> generalRoom = createRoom("Flurry", galaxyRoom);
+	generalRoom = createRoom("General", galaxyRoom);
 	generalRoom->setCanEnter(true);
-	generalRoom->setAllowSubrooms(true);
-	generalRoom->setTitle("Flurry General Chat");
 
 	auctionRoom = createRoom("Auction", galaxyRoom);
 	auctionRoom->setCanEnter(true);
 	auctionRoom->setChatRoomType(ChatRoom::AUCTION);
-
-	buffRoom = createRoom("Buffs", galaxyRoom);
-	buffRoom->setCanEnter(true);
-	buffRoom->setAllowSubrooms(true);
-	buffRoom->setTitle("Buff Services Advertising");
-	
-	thePitRoom = createRoom("ThePit", galaxyRoom);
-	thePitRoom->setCanEnter(true);
-	thePitRoom->setAllowSubrooms(true);
-	thePitRoom->setTitle("The Pit - Warning, unmoderated!");
-
 
 }
 
