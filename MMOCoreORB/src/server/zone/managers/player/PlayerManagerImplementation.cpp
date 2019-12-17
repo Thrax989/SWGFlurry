@@ -1337,15 +1337,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			if (attackerCreature->isPlayerCreature()) {
 				PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
-				//group split for pvp
-				group = attackerCreature->getGroup();
-				if (group != nullptr)
-					groupSize = group->getGroupSize();
-				//group split for pvp
-				group = attackerCreature->getGroup();
-				if (group != nullptr)
-					groupSize = group->getGroupSize();
-					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player,groupsize);
+					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
 
 				if (attackerGhost != nullptr && ghost != nullptr && attackerGhost->getIpAddress() != ghost->getIpAddress() &&
 						attackerGhost->getAccountID() != ghost->getAccountID())
