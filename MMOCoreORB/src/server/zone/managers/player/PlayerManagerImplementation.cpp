@@ -1170,6 +1170,8 @@ int PlayerManagerImplementation::notifyDestruction(TangibleObject* destructor, T
 
 void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureObject* player, int typeofdeath, bool isCombatAction) {
 	StringIdChatParameter stringId;
+	ManagedReference<GroupObject*> group;
+	int groupSize = 1;
 
 	if (player->isRidingMount()) {
 		player->updateCooldownTimer("mount_dismount", 0);
