@@ -439,3 +439,7 @@ includeFile("groups/rebpoints.lua")
 
 --World Boss Crate
 includeFile("groups/worldbosscrate.lua")
+
+--Vehicle Deeds
+includeFile("groups/vehicledeedsnormal.lua")
+includeFile("groups/vehicledeedsrare.lua")
