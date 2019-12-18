@@ -6,7 +6,8 @@ worldboss_2 = Creature:new {
 	chanceHit = 35.0,
 	damageMin = 2500,
 	damageMax = 6000,
-	baseXp = 28549,	lootGroups = {
+	baseXp = 28549,
+	lootGroups = {
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 10000000},
@@ -22,6 +23,12 @@ worldboss_2 = Creature:new {
 		{
 			groups = {
 				{group = "weapons_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "worldbosscrate", chance = 10000000},
 			},
 			lootChance = 10000000
 		},

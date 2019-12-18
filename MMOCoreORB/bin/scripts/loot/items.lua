@@ -1270,3 +1270,31 @@ includeFile("items/flurry_coals.lua")
 --Faction /point /loot
 includeFile("items/imppointsitem.lua")
 includeFile("items/rebpointsitem.lua")
+
+--World Boss Crate
+includeFile("items/world.lua")
+
+--Normal Vehicle Deeds
+includeFile("items/vehicle/vehicle1.lua")
+includeFile("items/vehicle/vehicle2.lua")
+includeFile("items/vehicle/vehicle3.lua")
+includeFile("items/vehicle/vehicle4.lua")
+includeFile("items/vehicle/vehicle5.lua")
+includeFile("items/vehicle/vehicle6.lua")
+includeFile("items/vehicle/vehicle7.lua")
+includeFile("items/vehicle/vehicle8.lua")
+includeFile("items/vehicle/vehicle9.lua")
+includeFile("items/vehicle/vehicle10.lua")
+includeFile("items/vehicle/vehicle11.lua")
+includeFile("items/vehicle/vehicle12.lua")
+includeFile("items/vehicle/vehicle13.lua")
+includeFile("items/vehicle/vehicle14.lua")
+includeFile("items/vehicle/vehicle15.lua")
+includeFile("items/vehicle/vehicle16.lua")
+includeFile("items/vehicle/vehicle17.lua")
+includeFile("items/vehicle/vehicle18.lua")
+includeFile("items/vehicle/vehicle19.lua")
+includeFile("items/vehicle/vehicle20.lua")
+
+--Rare Vehicle Deeds
+includeFile("items/vehicle/rarevehicle1.lua")
