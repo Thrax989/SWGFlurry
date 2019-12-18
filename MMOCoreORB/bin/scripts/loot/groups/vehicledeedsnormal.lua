@@ -5,7 +5,7 @@ vehicledeedsnormal = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "", weight = 1000000},
+		{itemTemplate = "vehicle1", weight = 1000000},
 		{itemTemplate = "", weight = 1000000},
 		{itemTemplate = "", weight = 1000000},
 		{itemTemplate = "", weight = 1000000},
