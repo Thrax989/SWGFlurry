@@ -1291,6 +1291,7 @@ includeFile("items/vehicle/vehicle13.lua")
 includeFile("items/vehicle/vehicle14.lua")
 includeFile("items/vehicle/vehicle15.lua")
 includeFile("items/vehicle/vehicle16.lua")
+includeFile("items/vehicle/vehicle17.lua")
 
 --Rare Vehicle Deeds
 includeFile("items/vehicle/rarevehicle1.lua")
