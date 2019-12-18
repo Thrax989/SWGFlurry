@@ -1273,3 +1273,6 @@ includeFile("items/rebpointsitem.lua")
 
 --World Boss Crate
 includeFile("items/world.lua")
+
+--Vehicle Deeds
+includeFile("items/vehicle/vehicle1.lua")
