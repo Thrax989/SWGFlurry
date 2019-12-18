@@ -1274,7 +1274,7 @@ includeFile("items/rebpointsitem.lua")
 --World Boss Crate
 includeFile("items/world.lua")
 
---Vehicle Deeds
+--Normal Vehicle Deeds
 includeFile("items/vehicle/vehicle1.lua")
 includeFile("items/vehicle/vehicle2.lua")
 includeFile("items/vehicle/vehicle3.lua")
@@ -1290,3 +1290,6 @@ includeFile("items/vehicle/vehicle12.lua")
 includeFile("items/vehicle/vehicle13.lua")
 includeFile("items/vehicle/vehicle14.lua")
 includeFile("items/vehicle/vehicle15.lua")
+
+--Rare Vehicle Deeds
+includeFile("items/vehicle/rarevehicle1.lua")
