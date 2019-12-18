@@ -1309,6 +1309,7 @@ includeFile("items/vehicle/rarevehicle9.lua")
 includeFile("items/vehicle/rarevehicle10.lua")
 includeFile("items/vehicle/rarevehicle11.lua")
 includeFile("items/vehicle/rarevehicle12.lua")
-includeFile("items/vehicle/rarevehicle13.lua"v
+includeFile("items/vehicle/rarevehicle13.lua")
 includeFile("items/vehicle/rarevehicle14.lua")
 includeFile("items/vehicle/rarevehicle15.lua")
+includeFile("items/vehicle/rarevehicle16.lua")
