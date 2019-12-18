@@ -1277,3 +1277,4 @@ includeFile("items/world.lua")
 --Vehicle Deeds
 includeFile("items/vehicle/vehicle1.lua")
 includeFile("items/vehicle/vehicle2.lua")
+includeFile("items/vehicle/vehicle3.lua")
