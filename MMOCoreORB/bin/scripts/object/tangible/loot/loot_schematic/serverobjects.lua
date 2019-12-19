@@ -179,8 +179,31 @@ includeFile("tangible/loot/loot_schematic/sm_house_loot_schem.lua")
 includeFile("tangible/loot/loot_schematic/barn_house_loot_schem.lua")
 includeFile("tangible/loot/loot_schematic/diner_house_loot_schem.lua")
 
+--NGE/CU Vehicles
+includeFile("tangible/loot/loot_schematic/a1_deluxe_floater_schematic.lua")
+includeFile("tangible/loot/loot_schematic/air2_swoop_speeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/barc_speeder_imperial_schematic.lua")
+includeFile("tangible/loot/loot_schematic/barc_speeder_rebel_schematic.lua")
+includeFile("tangible/loot/loot_schematic/flare_s_swoop_schematic.lua")
+includeFile("tangible/loot/loot_schematic/geonosian_speeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/hoverlifter_speeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/koro2_exodrive_airspeeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/landspeeder_ab1_schematic.lua")
+includeFile("tangible/loot/loot_schematic/speeder_desert_skiff_schematic.lua")
+includeFile("tangible/loot/loot_schematic/speeder_lava_skiff_schematic.lua")
+includeFile("tangible/loot/loot_schematic/organa_speeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/landspeeder_tantive4_schematic.lua")
+includeFile("tangible/loot/loot_schematic/speeder_usv5_schematic.lua")
+includeFile("tangible/loot/loot_schematic/landspeeder_v35_schematic.lua")
+includeFile("tangible/loot/loot_schematic/landspeeder_xp38_schematic.lua")
+includeFile("tangible/loot/loot_schematic/mechno_chair_schematic.lua")
+includeFile("tangible/loot/loot_schematic/sith_speeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/speeder_ric_920_schematic.lua")
+includeFile("tangible/loot/loot_schematic/speeder_stap_schematic.lua")
+includeFile("tangible/loot/loot_schematic/swamp_speeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/xj6_air_speeder_schematic.lua")
 
---NGE Weapons
+--Post 14 Weapons
 includeFile("tangible/loot/loot_schematic/intimidator_pistol_schematic.lua")
 includeFile("tangible/loot/loot_schematic/pistol_crusader_schematic.lua")
 includeFile("tangible/loot/loot_schematic/pistol_p8_lamprey_schematic.lua")
@@ -289,8 +312,10 @@ includeFile("tangible/loot/loot_schematic/lance_electric_schematic.lua")
 includeFile("tangible/loot/loot_schematic/lance_paragon_schematic.lua")
 includeFile("tangible/loot/loot_schematic/lance_magnaguard_schematic.lua")
 includeFile("tangible/loot/loot_schematic/lance_kashyyyk_spirit_schematic.lua")
+
 --Rebel Marine Armor Chest Plate w/Rebel Insignia
 includeFile("tangible/loot/loot_schematic/armor_marine_chest_rebel_schematic.lua")
+
 --Battle Worn Rebel Marine Armor
 includeFile("tangible/loot/loot_schematic/rebel_marine_bicep_l_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/rebel_marine_bicep_r_gcw_schematic.lua")
@@ -302,6 +327,7 @@ includeFile("tangible/loot/loot_schematic/rebel_marine_gloves_gcw_schematic.lua"
 includeFile("tangible/loot/loot_schematic/rebel_marine_helmet_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/rebel_marine_leggings_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/rebel_marine_utility_belt_gcw_schematic.lua")
+
 --Battle Worn Stormtrooper Armor
 includeFile("tangible/loot/loot_schematic/stormtrooper_bicep_l_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/stormtrooper_bicep_r_gcw_schematic.lua")
@@ -313,12 +339,16 @@ includeFile("tangible/loot/loot_schematic/stormtrooper_gloves_gcw_schematic.lua"
 includeFile("tangible/loot/loot_schematic/stormtrooper_helmet_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/stormtrooper_leggings_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/stormtrooper_utility_belt_gcw_schematic.lua")
+
 --Stormtrooper Chestplate w/Officer's Pauldron
 includeFile("tangible/loot/loot_schematic/stormtrooper_chest_officer_schematic.lua")
+
 --Battle Worn Stormtrooper Chestplate w/Officer's Pauldron
 includeFile("tangible/loot/loot_schematic/stormtrooper_chest_officer_gcw_schematic.lua")
+
 --Camo Stormtrooper Chestplate w/Officer's Pauldron
 includeFile("tangible/loot/loot_schematic/stormtrooper_chest_officer_camo_schematic.lua")
+
 --Camo Stormtrooper Armor
 includeFile("tangible/loot/loot_schematic/stormtrooper_bicep_l_camo_schematic.lua")
 includeFile("tangible/loot/loot_schematic/stormtrooper_bicep_r_camo_schematic.lua")
@@ -330,6 +360,7 @@ includeFile("tangible/loot/loot_schematic/stormtrooper_gloves_camo_schematic.lua
 includeFile("tangible/loot/loot_schematic/stormtrooper_helmet_camo_schematic.lua")
 includeFile("tangible/loot/loot_schematic/stormtrooper_leggings_camo_schematic.lua")
 includeFile("tangible/loot/loot_schematic/stormtrooper_utility_belt_camo_schematic.lua")
+
 --Assault Trooper Armor
 includeFile("tangible/loot/loot_schematic/assault_trooper_bicep_l_schematic.lua")
 includeFile("tangible/loot/loot_schematic/assault_trooper_bicep_r_schematic.lua")
@@ -341,6 +372,7 @@ includeFile("tangible/loot/loot_schematic/assault_trooper_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/assault_trooper_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/assault_trooper_leggings_schematic.lua")
 includeFile("tangible/loot/loot_schematic/assault_trooper_utility_belt_schematic.lua")
+
 --Battle Worn Assault Trooper Armor
 includeFile("tangible/loot/loot_schematic/assault_trooper_bicep_l_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/assault_trooper_bicep_r_gcw_schematic.lua")
@@ -352,6 +384,7 @@ includeFile("tangible/loot/loot_schematic/assault_trooper_gloves_gcw_schematic.l
 includeFile("tangible/loot/loot_schematic/assault_trooper_helmet_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/assault_trooper_leggings_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/assault_trooper_utility_belt_gcw_schematic.lua")
+
 --Galactic Marine Armor
 includeFile("tangible/loot/loot_schematic/galactic_marine_bicep_l_schematic.lua")
 includeFile("tangible/loot/loot_schematic/galactic_marine_bicep_r_schematic.lua")
@@ -363,6 +396,7 @@ includeFile("tangible/loot/loot_schematic/galactic_marine_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/galactic_marine_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/galactic_marine_leggings_schematic.lua")
 includeFile("tangible/loot/loot_schematic/galactic_marine_utility_belt_schematic.lua")
+
 --Battle Worn Galactic Marine Armor
 includeFile("tangible/loot/loot_schematic/galactic_marine_bicep_l_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/galactic_marine_bicep_r_gcw_schematic.lua")
@@ -374,6 +408,7 @@ includeFile("tangible/loot/loot_schematic/galactic_marine_gloves_gcw_schematic.l
 includeFile("tangible/loot/loot_schematic/galactic_marine_helmet_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/galactic_marine_leggings_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/galactic_marine_utility_belt_gcw_schematic.lua")
+
 --Scout Trooper Armor
 includeFile("tangible/loot/loot_schematic/scout_trooper_bicep_l_schematic.lua")
 includeFile("tangible/loot/loot_schematic/scout_trooper_bicep_r_schematic.lua")
@@ -385,6 +420,7 @@ includeFile("tangible/loot/loot_schematic/scout_trooper_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/scout_trooper_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/scout_trooper_leggings_schematic.lua")
 includeFile("tangible/loot/loot_schematic/scout_trooper_utility_belt_schematic.lua")
+
 --Battle Worn Scout Trooper Armor
 includeFile("tangible/loot/loot_schematic/scout_trooper_bicep_l_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/scout_trooper_bicep_r_gcw_schematic.lua")
@@ -396,6 +432,7 @@ includeFile("tangible/loot/loot_schematic/scout_trooper_gloves_gcw_schematic.lua
 includeFile("tangible/loot/loot_schematic/scout_trooper_helmet_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/scout_trooper_leggings_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/scout_trooper_utility_belt_gcw_schematic.lua")
+
 --Camo Scout Trooper Armor
 includeFile("tangible/loot/loot_schematic/scout_trooper_bicep_l_camo_schematic.lua")
 includeFile("tangible/loot/loot_schematic/scout_trooper_bicep_r_camo_schematic.lua")
@@ -407,6 +444,7 @@ includeFile("tangible/loot/loot_schematic/scout_trooper_gloves_camo_schematic.lu
 includeFile("tangible/loot/loot_schematic/scout_trooper_helmet_camo_schematic.lua")
 includeFile("tangible/loot/loot_schematic/scout_trooper_leggings_camo_schematic.lua")
 includeFile("tangible/loot/loot_schematic/scout_trooper_utility_belt_camo_schematic.lua")
+
 --Swamp Trooper Armor
 includeFile("tangible/loot/loot_schematic/swamp_trooper_bicep_l_schematic.lua")
 includeFile("tangible/loot/loot_schematic/swamp_trooper_bicep_r_schematic.lua")
@@ -418,6 +456,7 @@ includeFile("tangible/loot/loot_schematic/swamp_trooper_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/swamp_trooper_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/swamp_trooper_leggings_schematic.lua")
 includeFile("tangible/loot/loot_schematic/swamp_trooper_utility_belt_schematic.lua")
+
 --Snowtrooper Armor
 includeFile("tangible/loot/loot_schematic/snowtrooper_bicep_l_schematic.lua")
 includeFile("tangible/loot/loot_schematic/snowtrooper_bicep_r_schematic.lua")
@@ -429,6 +468,7 @@ includeFile("tangible/loot/loot_schematic/snowtrooper_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/snowtrooper_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/snowtrooper_leggings_schematic.lua")
 includeFile("tangible/loot/loot_schematic/snowtrooper_utility_belt_schematic.lua")
+
 --Factional Backpacks
 includeFile("tangible/loot/loot_schematic/backpack_s08_schematic.lua")
 includeFile("tangible/loot/loot_schematic/backpack_snowtrooper_schematic.lua")
@@ -438,6 +478,7 @@ includeFile("tangible/loot/loot_schematic/backpack_marine_schematic.lua")
 includeFile("tangible/loot/loot_schematic/backpack_s07_schematic.lua")
 includeFile("tangible/loot/loot_schematic/rebel_endor_backpack_schematic.lua")
 includeFile("tangible/loot/loot_schematic/backpack_rebel_snow_soldier_schematic.lua")
+
 --Rebel Assault Armor
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_belt_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_bicep_l_schematic.lua")
@@ -449,6 +490,7 @@ includeFile("tangible/loot/loot_schematic/armor_rebel_assault_chest_schematic.lu
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_leggings_schematic.lua")
+
 --Battle Worn Rebel Assault Armor
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_belt_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_bicep_l_gcw_schematic.lua")
@@ -460,6 +502,7 @@ includeFile("tangible/loot/loot_schematic/armor_rebel_assault_chest_gcw_schemati
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_gloves_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_helmet_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_leggings_gcw_schematic.lua")
+
 --Rebel Assault Forest Camouflage Armor
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_belt_camo_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_bicep_l_camo_schematic.lua")
@@ -471,6 +514,7 @@ includeFile("tangible/loot/loot_schematic/armor_rebel_assault_chest_camo_schemat
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_gloves_camo_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_helmet_camo_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_assault_leggings_camo_schematic.lua")
+
 --Rebel Battle Armor
 includeFile("tangible/loot/loot_schematic/armor_rebel_battle_belt_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_battle_bicep_l_schematic.lua")
@@ -482,6 +526,7 @@ includeFile("tangible/loot/loot_schematic/armor_rebel_battle_chest_schematic.lua
 includeFile("tangible/loot/loot_schematic/armor_rebel_battle_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_battle_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_battle_leggings_schematic.lua")
+
 --Battle Worn Rebel Battle Armor
 includeFile("tangible/loot/loot_schematic/armor_rebel_battle_belt_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_battle_bicep_l_gcw_schematic.lua")
@@ -493,6 +538,7 @@ includeFile("tangible/loot/loot_schematic/armor_rebel_battle_chest_gcw_schematic
 includeFile("tangible/loot/loot_schematic/armor_rebel_battle_gloves_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_battle_helmet_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_battle_leggings_gcw_schematic.lua")
+
 --Rebel Spec Force Armor
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_belt_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_bicep_l_schematic.lua")
@@ -504,6 +550,7 @@ includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_chest_schematic
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_leggings_schematic.lua")
+
 --Battle Worn Rebel Spec Force Armor
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_belt_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_bicep_l_gcw_schematic.lua")
@@ -515,6 +562,7 @@ includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_chest_gcw_schem
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_gloves_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_helmet_gcw_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_force_leggings_gcw_schematic.lua")
+
 --Rebel Spec Ops Armor
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_ops_belt_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_ops_bicep_l_schematic.lua")
@@ -526,6 +574,7 @@ includeFile("tangible/loot/loot_schematic/armor_rebel_spec_ops_chest_schematic.l
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_ops_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_ops_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_spec_ops_leggings_schematic.lua")
+
 --Alliance Cold Weather Armor
 includeFile("tangible/loot/loot_schematic/armor_rebel_snow_belt_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_snow_bicep_l_schematic.lua")
@@ -537,8 +586,10 @@ includeFile("tangible/loot/loot_schematic/armor_rebel_snow_chest_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_snow_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_snow_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_rebel_snow_leggings_schematic.lua")
+
 --Rebel Endor Helmet
 includeFile("tangible/loot/loot_schematic/armor_rebel_endor_helmet_schematic.lua")
+
 --Imperial Mandalorian Armor
 includeFile("tangible/loot/loot_schematic/armor_mandalorian_imperial_belt_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_mandalorian_imperial_bicep_l_schematic.lua")
@@ -550,6 +601,7 @@ includeFile("tangible/loot/loot_schematic/armor_mandalorian_imperial_chest_schem
 includeFile("tangible/loot/loot_schematic/armor_mandalorian_imperial_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_mandalorian_imperial_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_mandalorian_imperial_leggings_schematic.lua")
+
 --Rebel Mandalorian Armor
 includeFile("tangible/loot/loot_schematic/armor_mandalorian_rebel_belt_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_mandalorian_rebel_bicep_l_schematic.lua")
@@ -561,3 +613,159 @@ includeFile("tangible/loot/loot_schematic/armor_mandalorian_rebel_chest_schemati
 includeFile("tangible/loot/loot_schematic/armor_mandalorian_rebel_gloves_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_mandalorian_rebel_helmet_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_mandalorian_rebel_leggings_schematic.lua")
+
+--TCG Backpacks
+includeFile("tangible/loot/loot_schematic/wearable_backpack_armored_schematic.lua")
+includeFile("tangible/loot/loot_schematic/wearable_backpack_recon_schematic.lua")
+
+--Lok Revenant Backpack
+includeFile("tangible/loot/loot_schematic/nym_themepark_backpack_schematic.lua")
+
+--Aurebesh Tiles
+includeFile("tangible/loot/loot_schematic/aurebesh_aurek_schematic.lua")
+includeFile("tangible/loot/loot_schematic/aurebesh_forn_schematic.lua")
+includeFile("tangible/loot/loot_schematic/aurebesh_leth_schematic.lua")
+includeFile("tangible/loot/loot_schematic/aurebesh_peth_schematic.lua")
+includeFile("tangible/loot/loot_schematic/aurebesh_usk_schematic.lua")
+
+--Elite Backpacks
+includeFile("tangible/loot/loot_schematic/backpack_s01_elite_schematic.lua")
+includeFile("tangible/loot/loot_schematic/backpack_s03_elite_schematic.lua")
+includeFile("tangible/loot/loot_schematic/backpack_s04_elite_schematic.lua")
+includeFile("tangible/loot/loot_schematic/backpack_s05_elite_schematic.lua")
+includeFile("tangible/loot/loot_schematic/backpack_s06_elite_schematic.lua")
+
+--Pilot Ace Backpack
+includeFile("tangible/loot/loot_schematic/backpack_s09_schematic.lua")
+
+--Chiss Poacher Backpack
+includeFile("tangible/loot/loot_schematic/ep3_chiss_poacher_backpack_schematic.lua")
+
+--Bio-Engineered Pet Deeds
+includeFile("tangible/loot/loot_schematic/be_baz_nitch_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_borgle_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_chuba_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_corellian_butterfly_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_female_narglatch_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_flewt_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_flit_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_fynock_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_gackle_bat_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_gualaar_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_gubbur_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_gulginaw_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_gurk_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_hanadak_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_horned_krevol_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_horned_rasp_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_kai_tok_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_lantern_bird_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mamien_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mynock_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_nuna_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_peko_peko_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_perlek_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_pharple_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_plumed_rasp_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_purbole_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_quenker_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_reptilian_flier_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_salt_mynock_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_shaupaut_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_skreeg_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_spined_snake_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_squill_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_varactyl_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_voritor_lizard_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_vynock_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_womp_rat_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_worrt_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_bane_back_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_barbed_quenker_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_blistmok_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_bolotaur_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_crystal_snake_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_fanned_rawl_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_finned_blaggart_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_forage_worm_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_hawk_bat_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_jundak_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_kashyyyk_bantha_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_kittle_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_kubaza_beetle_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_lava_flea_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_minstyngar_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_monkey_lizard_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mooc_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mouf_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_narglatch_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_acklay_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_boar_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_bol_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_bolle_bol_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_borgax_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_cat_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_chuba_fly_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_cu_pa_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_dewback_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_durni_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_griffon_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_hermit_spider_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_jax_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_kimogila_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_malkloc_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_quenker_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_rancor_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_reek_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_slice_hound_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_thune_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_varasquactyl_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mutated_vesp_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_nerf_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_nexu_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_pangrack_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_reek_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_spiderclan_consort_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_spiderclan_queen_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_tanray_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_tulrus_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_uller_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_urnsoris_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_uwari_beetle_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_walluga_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_wampa_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_webweaver_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_xandank_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_armored_bantha_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_armored_dewback_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_armored_tauntaun_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_armored_varactyl_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_whisper_bird_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_bark_mite_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_blackwing_rancor_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_capper_spineflap_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_razor_angler_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_remmer_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_spined_puc_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_stintaril_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_tanc_mite_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_dwarf_nuna_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_gaping_spider_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_mantigrue_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_katarn_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_kkorrwrot_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_flite_rasp_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_crowned_rasp_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_painted_spat_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_murra_blanca_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_spiketail_blurrg_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_scorpion_kliknik_schematic.lua")
+includeFile("tangible/loot/loot_schematic/wed_scav_reward_scotch_schematic.lua")
+includeFile("tangible/loot/loot_schematic/wed_scav_reward_camp_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_tcg_peko_peko_mount_schematic.lua")
+includeFile("tangible/loot/loot_schematic/be_skeletal_tauntaun_schematic.lua")
+includeFile("tangible/loot/loot_schematic/ghost_flash_speeder_schematic.lua")
+includeFile("tangible/loot/loot_schematic/chest_of_holding_schematic.lua")
+includeFile("tangible/loot/loot_schematic/gcw_reward_drink_rebel_schematic.lua")
+includeFile("tangible/loot/loot_schematic/gcw_reward_food_imperial_schematic.lua")
+includeFile("tangible/loot/loot_schematic/armor_segment_gcw_reward_schematic.lua")
