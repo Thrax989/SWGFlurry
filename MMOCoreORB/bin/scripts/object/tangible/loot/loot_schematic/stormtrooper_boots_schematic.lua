@@ -47,9 +47,8 @@ object_tangible_loot_loot_schematic_stormtrooper_boots_schematic = object_tangib
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_armorsmith_master",
-	targetDraftSchematic = "object/draft_schematic/clothing/clothing_armor_stormtrooper_boots.iff",
-	targetUseCount = 5,
-	noTrade = 1
+	targetDraftSchematic = "object/draft_schematic/armor/armor_appearance_stormtrooper_boots.iff",
+	targetUseCount = 1
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_stormtrooper_boots_schematic, "object/tangible/loot/loot_schematic/stormtrooper_boots_schematic.iff")
