@@ -1,6 +1,6 @@
 --------------------------------------
 --   Creator : TOXIC
---   Date : 5/27/2018
+--   Date : 12/20/2019
 --------------------------------------
 exar_kun = ScreenPlay:new {
   numberOfActs = 1,
@@ -21,8 +21,7 @@ local ObjectManager = require("managers.object.object_manager")  --print("Object
 function exar_kun:start()
 if (isZoneEnabled("dungeon2")) then
   self:spawnMobiles()
-  self:spawnActiveAreas()
-  self:spawnSceneObjects()
+
   end
 end
 --------------------------------------------------
@@ -32,9 +31,10 @@ function exar_kun:spawnMobiles()
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pTrigger = spawnMobile("dungeon2", "exar_kun_cultist", 10800, -11.2544, -0.0730047, -39.2305, 163, 14200873)--3 hour respawn to start the boss
-if (pTrigger ~= nil ) then
-    createObserver(OBJECTDESTRUCTION, "exar_kun", "notifyTriggerDead", pTrigger)
+local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", 10800, -11.2544, -0.0730047, -39.2305, 163, 14200873)--3 hour respawn to start the boss
+    		print("Spawning Exar Kun Clone")
+if (pBoss ~= nil ) then
+    createObserver(OBJECTDESTRUCTION, "exar_kun", "notifyTriggerDead", pBoss)
 end
     writeData("exar_kun:spawnState",0)
     return 0
@@ -42,8 +42,10 @@ end
 --------------------------------------
 --  Notify trigger is dead to spawn Boss
 --------------------------------------
-function exar_kun:notifyTriggerDead(pTrigger, pPlayer)
-local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", 0, -12.2959, -0.386468, -64.93, 178, 14200873)
+function exar_kun:notifyTriggerDead(pBoss, pPlayer)
+local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", -1, -12.2959, -0.386468, -64.93, 178, 14200873)
+    		print("Spawning Exar Kun")
+	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
     CreatureObject(pPlayer):playMusicMessage("sound/exar_kun.snd")
     ObjectManager.withCreatureObject(pBoss, function(oBoss)
@@ -51,7 +53,19 @@ local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", 0, -12.2959, -0.386468
     writeData("exar_kun", oBoss:getObjectID())
     spatialChat(pBoss, "Intruder Alert Activating Defense Systems")
     createObserver(DAMAGERECEIVED,"exar_kun","boss_damage", pBoss)
+    createObserver(OBJECTDESTRUCTION, "exar_kun", "Restart", pBoss)
 end)
+    return 0
+end
+
+function exar_kun:Restart(pPlayer, pBoss)
+    		print("Starting Boss Broadcast Scripts")
+	createEvent(1 * 1000, "exar_kun", "BroadcastRespawn", pPlayer, "")--Broadcast 3 Hour Respawn
+	createEvent(10800 * 1000, "exar_kun", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
+	createEvent(10795 * 1000, "exar_kun", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
+	createEvent(10798 * 1000, "exar_kun", "KillSpawnCast1", pPlayer, "")--Broadcast Respawn 3
+	createEvent(10799 * 1000, "exar_kun", "KillSpawnCast2", pPlayer, "")--Broadcast Respawn 2
+	createEvent(10800 * 1000, "exar_kun", "KillSpawnCast3", pPlayer, "")--Broadcast Respawn 1
     return 0
 end
 --------------------------------------
@@ -309,46 +323,52 @@ if (((bossHealth <= (bossMaxHealth * 0.01)) or (bossAction <= (bossMaxAction * 0
       end
    return 0
 end
---------------------------------------------------------------------------------------------
---   Added Active Area Check for server wide broadcasting, Entering/Exiting active boss zone
---------------------------------------------------------------------------------------------
-function exar_kun:spawnActiveAreas()
-local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", 5, 0, 1993, 0, 0, 0, 0, 0)
-if (pSpawnArea ~= nil) then
-local activeArea = LuaActiveArea(pSpawnArea)
-          activeArea:setCellObjectID(0)
-          activeArea:setRadius(120)--invisible active area script is set for 120m in a 360 degree radius
-          createObserver(ENTEREDAREA, "exar_kun", "notifySpawnArea", pSpawnArea)
-          createObserver(EXITEDAREA, "exar_kun", "notifySpawnAreaLeave", pSpawnArea)
-    end
+----------------------------
+--Broadcast Initial Respawn
+----------------------------
+function exar_kun:BroadcastRespawn(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 Exar Kun Boss Respawning In 3 Hours")
+    		print("Starting Boss Respawn Broadcast Message")
 end
-function exar_kun:notifySpawnArea(pActiveArea, pMovingObject, pBoss, pPlayer)
-if (not SceneObject(pMovingObject):isCreatureObject()) then
-  return 0
+-----------------------
+--Broadcast Respawn
+-----------------------
+function exar_kun:KillSpawnCast(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 Tatooine World Boss Respawning In ...")
 end
-return ObjectManager.withCreatureObject(pMovingObject, function(player)
-    if (player:isAiAgent()) then
-    return 0
+-----------------------
+--Broadcast Respawn 3
+-----------------------
+function exar_kun:KillSpawnCast1(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 3")
 end
-if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-          --player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has Entered The Exar Kun Temple Dungeon!")
-          player:sendSystemMessage("You Have Entered The Exar Kun Temple Dungeon!")
-          end
-      return 0
-  end)
+-----------------------
+--Broadcast Respawn 2
+-----------------------
+function exar_kun:KillSpawnCast2(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 2")
 end
-function exar_kun:notifySpawnAreaLeave(pActiveArea, pMovingObject, pBoss, pPlayer)
-if (not SceneObject(pMovingObject):isCreatureObject()) then
-  return 0
+-----------------------
+--Broadcast Respawn 1
+-----------------------
+function exar_kun:KillSpawnCast3(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 1")
+    		print("Exar Kun Is Respawning")
 end
-  return ObjectManager.withCreatureObject(pMovingObject, function(player)
-if (player:isAiAgent()) then
-  return 0
-end
-if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-      --player:broadcastToServer("\\#00E604" .. player:getFirstName() .. "\\#63C8F9 Has left the Exar Kun Temple Dungeon!")
-      player:sendSystemMessage("You Have Left The Exar Kun Temple Dungeon!")
-      end
-    return 0
-  end)
+-----------------------------------------------------------------------------
+--The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
+-----------------------------------------------------------------------------
+function exar_kun:KillBoss(pBoss)
+	dropObserver(pBoss, OBJECTDESTRUCTION)
+	if SceneObject(pBoss) then
+		print("Unlooted Exar Kun Boss Destroyed")
+		SceneObject(pBoss):destroyObjectFromWorld()
+		SceneObject(pBoss):destroyObjectFromDatabase()
+	end
+	return 0
 end
