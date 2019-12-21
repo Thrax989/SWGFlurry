@@ -290,14 +290,6 @@ if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 
       end
    return 0
 end
-
-function exar_kun:bossSixKilled(boss6, pPlayer)  -- TODO Use this function to reset the instance on success.   Delay by 30 seconds to allow looting time.
-    writeData("axkvaMin:bossSixDead", 1) 
-    CreatureObject(pPlayer):sendSystemMessage("You and your group have defeated Mother Talzin! This instance will close in 120 seconds.")  
-    createEvent(1000, "axkvaMin", "awardBadgeToAll", pPlayer, "")
-    createEvent(120000, "axkvaMin", "handleVictory", pPlayer, "")
-  return 0
-end
 ----------------------------
 --Broadcast Initial Respawn
 ----------------------------
