@@ -20,8 +20,14 @@ local ObjectManager = require("managers.object.object_manager")  --print("Object
 --------------------------------------
 function exar_kun:start()
 if (isZoneEnabled("dungeon2")) then
-  self:spawnMobiles()
+	self:spawnMobiles()
+	self:spawnSceneObjects()
   end
+end
+
+function exar_kun:spawnSceneObjects()
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", -40.4491, 0.61331, 29.3437, 14200816, 1, 0, 0, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 15.5419, 4.71103, 106.975, 14200878, 1, 0, 0, 0)
 end
 --------------------------------------------------
 --   spawn mobiles for dungeon
