@@ -2,7 +2,7 @@
 * BossMenuComponent.cpp
 *
 * Created on: 11/28/2017
-* Revised on: 2/28/2019
+* Revised on: 12/21/2019
 *	 Author: Toxic
 *  
 */
@@ -21,28 +21,22 @@
 #include "server/chat/ChatManager.h"
 #include "server/zone/objects/group/GroupObject.h"
 
-/* To Do List
- * Clean Up Entire Dungeon Boss System
- * Improve All Dungeon Bosses
- * Finish All Dungeon Encounters
- * Add New Loot To All Dungeons
-*/
 void BossMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 					TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 					ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 					menuResponse->addRadialMenuItem(213, 3, "Broadcast Server Message LFG"); //SERVER BROADCAST LFG
-					menuResponse->addRadialMenuItem(214, 3, "Mutated Rancor"); //MINI BOSS ENCOUNTER 2
-					menuResponse->addRadialMenuItem(215, 3, "Mythical Krayt"); //MINI BOSS ENCOUNTER 3
-					menuResponse->addRadialMenuItem(216, 3, "Undead Petrified Soul "); //MINI BOSS ENCOUNTER 4
+					menuResponse->addRadialMenuItem(214, 3, "Teleport To Boss Instance Room"); //Teleport Tp Boss Instance Room
+					//menuResponse->addRadialMenuItem(215, 3, "Mythical Krayt"); //MINI BOSS ENCOUNTER 3
+					//menuResponse->addRadialMenuItem(216, 3, "Undead Petrified Soul "); //MINI BOSS ENCOUNTER 4
 					menuResponse->addRadialMenuItem(217, 3, "Heroic Boss Instances");
 					menuResponse->addRadialMenuItemToRadialID(217, 221, 3, "Exar Kun Tomb"); //BOSS ENCOUNTER 1
-					menuResponse->addRadialMenuItemToRadialID(217, 222, 3, "Avatar Platform"); //BOSS ENCOTUNER 2
-					menuResponse->addRadialMenuItemToRadialID(217, 223, 3, "Sher Kar"); //BOSS ENCOUNTER 3
-					menuResponse->addRadialMenuItemToRadialID(217, 224, 3, "Ig-88"); //BOSS ENCOUNTER 4
-					menuResponse->addRadialMenuItemToRadialID(217, 225, 3, "Star Destroyer"); //BOSS ENCOUNTER 5
-					menuResponse->addRadialMenuItemToRadialID(217, 226, 3, "Droid Factory"); //BOSS ENCOUNTER 6
-					menuResponse->addRadialMenuItemToRadialID(217, 227, 3, "NightSister Queen"); //BOSS ENCOUNTER 7
-					menuResponse->addRadialMenuItemToRadialID(217, 228, 3, "Weapon Factory"); //BOSS ENCOUNTER 8
+					//menuResponse->addRadialMenuItemToRadialID(217, 222, 3, "Avatar Platform"); //BOSS ENCOTUNER 2
+					//menuResponse->addRadialMenuItemToRadialID(217, 223, 3, "Sher Kar"); //BOSS ENCOUNTER 3
+					//menuResponse->addRadialMenuItemToRadialID(217, 224, 3, "Ig-88"); //BOSS ENCOUNTER 4
+					//menuResponse->addRadialMenuItemToRadialID(217, 225, 3, "Star Destroyer"); //BOSS ENCOUNTER 5
+					//menuResponse->addRadialMenuItemToRadialID(217, 226, 3, "Droid Factory"); //BOSS ENCOUNTER 6
+					//menuResponse->addRadialMenuItemToRadialID(217, 227, 3, "NightSister Queen"); //BOSS ENCOUNTER 7
+					//menuResponse->addRadialMenuItemToRadialID(217, 228, 3, "Weapon Factory"); //BOSS ENCOUNTER 8
 }
 int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	if (selectedID == 213) {
@@ -84,11 +78,11 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 					ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 					if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 					Locker locker(groupedCreature);
-					groupedCreature->switchZone("corellia", 0, 0, 0);
+					groupedCreature->switchZone("dungeon2", -33.6957, 0.77033, 24.5291, 14200816);
 					locker.release();
 				}
 			}
-			creature->switchZone("corellia", 0, 0, 0);
+			creature->switchZone("dungeon2", -33.6957, 0.77033, 24.5291, 14200816);
 		}
 	}
 	if (selectedID == 215) {
