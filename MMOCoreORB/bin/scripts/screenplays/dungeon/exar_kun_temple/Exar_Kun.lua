@@ -76,7 +76,7 @@ end
 function exar_kun:boss_damage(pBoss, pPlayer, onespawn, twospawn, threespawn, fourspawn, fivespawn, sixspawn, sevenspawn, eightspawn, ninespawn, player, pMember)
 local player = LuaCreatureObject(pPlayer)
 local boss = LuaCreatureObject(pBoss)
-createEvent(20 * 1000, "exar_kun", "Remove", pBoss, "")
+createEvent(10800 * 1000, "exar_kun", "Remove", pBoss, "")
 --------------------------------------
 --   Range and health checks for boss
 --------------------------------------
