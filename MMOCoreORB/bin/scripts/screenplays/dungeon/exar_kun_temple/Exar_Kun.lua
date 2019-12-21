@@ -1,4 +1,4 @@
---------------------------------------
+  --------------------------------------
 --   Creator : TOXIC
 --   Date : 12/20/2019
 --------------------------------------
@@ -38,9 +38,9 @@ end
     writeData("exar_kun:spawnState",0)
     return 0
 end
---------------------------------------
+-----------------------------------------
 --  Notify trigger is dead to spawn Boss
---------------------------------------
+-----------------------------------------
 function exar_kun:notifyTriggerDead(pBoss, pPlayer)
 local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", -1, 15.4963, 4.651, 106.287, 178, 14200878)
     print("Spawning Exar Kun")
@@ -56,11 +56,14 @@ local pBoss = spawnMobile("dungeon2", "exar_kun_cultist", -1, 15.4963, 4.651, 10
 end)
     return 0
 end
-
+-----------------------------------------
+--  Notify trigger broadcast respawning
+-----------------------------------------
 function exar_kun:Restart(pPlayer, pBoss)
     print("Starting Boss Broadcast Scripts")
+	createEvent(1 * 1000, "exar_kun", "Restartstates", pPlayer, "")--Restart Exar Kun States
 	createEvent(1 * 1000, "exar_kun", "BroadcastRespawn", pPlayer, "")--Broadcast 3 Hour Respawn
-	createEvent(10800 * 1000, "exar_kun", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
+	createEvent(60 * 1000, "exar_kun", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
 	createEvent(10795 * 1000, "exar_kun", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
 	createEvent(10798 * 1000, "exar_kun", "KillSpawnCast1", pPlayer, "")--Broadcast Respawn 3
 	createEvent(10799 * 1000, "exar_kun", "KillSpawnCast2", pPlayer, "")--Broadcast Respawn 2
@@ -73,6 +76,7 @@ end
 function exar_kun:boss_damage(pBoss, pPlayer, onespawn, twospawn, threespawn, fourspawn, fivespawn, sixspawn, sevenspawn, eightspawn, ninespawn, player, pMember)
 local player = LuaCreatureObject(pPlayer)
 local boss = LuaCreatureObject(pBoss)
+createEvent(20 * 1000, "exar_kun", "Remove", pBoss, "")
 --------------------------------------
 --   Range and health checks for boss
 --------------------------------------
@@ -285,6 +289,7 @@ if (((bossHealth <= (bossMaxHealth *0.1)) or (bossAction <= (bossMaxAction * 0.1
 --------------------------------------------------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.001))) and readData("exar_kun:spawnState") == 10) then
       spatialChat(pBoss, "We shall meet again uggggh!.")
+      spatialChat(pBoss, "You have 60 seconds to loot my body befor it disappears.")
             writeData("exar_kun:spawnState",11)
         end
       end
@@ -359,6 +364,31 @@ function exar_kun:KillBoss(pBoss)
 		print("Unlooted Exar Kun Boss Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
 		SceneObject(pBoss):destroyObjectFromDatabase()
+		return 0
 	end
-	return 0
+end
+----------------------------
+--Remove Boss After 3 hours
+----------------------------
+function exar_kun:Remove(pBoss)
+	if SceneObject(pBoss) then
+		print("Exar Kun Boss Removed")
+		SceneObject(pBoss):destroyObjectFromWorld()
+		SceneObject(pBoss):destroyObjectFromDatabase()
+		dropObserver(pBoss, OBJECTDESTRUCTION)
+		dropObserver(pBoss, DAMAGERECEIVED)
+		forcePeace(pBoss)
+		forcePeace(pBoss)
+		forcePeace(pBoss)
+		forcePeace(pBoss)
+		forcePeace(pBoss)
+		forcePeace(pBoss)
+		end
+		return 0
+end
+----------------------------
+--Reset Player Boss States
+----------------------------
+function exar_kun:Restartstates(pPlayer)
+   writeData("exar_kun:spawnState", 0)
 end
