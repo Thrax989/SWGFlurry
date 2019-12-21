@@ -10,7 +10,7 @@ JUNKGUNGAN = 128
 JUNKCORSEC = 256
 
 --NGE Backpacks
---includeFile("custom_loot/items/backpacks/ep3_chiss_poacher_backpack.lua")
+includeFile("custom_loot/items/backpacks/ep3_chiss_poacher_backpack.lua")
 includeFile("custom_loot/items/backpacks/tauntaun_skull.lua")
 includeFile("custom_loot/items/backpacks/galactic_marine.lua")
 includeFile("custom_loot/items/backpacks/gmf_01.lua")
@@ -517,7 +517,6 @@ includeFile("custom_loot/items/weapons/wookiee_knuckler_wod.lua")
 includeFile("custom_loot/items/weapons/xantha_smasher.lua")
 ]]
 --Wearables
---[[
 includeFile("custom_loot/items/wearables/cloak_of_hate.lua")
 includeFile("custom_loot/items/wearables/shatterpoint_cloak.lua")
 includeFile("custom_loot/items/wearables/shatterpoint_cloak_hood.lua")
@@ -573,19 +572,19 @@ includeFile("custom_loot/items/goggles/goggles_g06.lua")
 
 
 
---includeFile("custom_loot/items/wearables/necklace_ornamental_ratchet.lua")
---includeFile("custom_loot/items/wearables/necklace_pawl_chain.lua")
---includeFile("custom_loot/items/wearables/necklace_rusty_beads.lua")
---includeFile("custom_loot/items/wearables/necklace_sparkling_bijou.lua")
---includeFile("custom_loot/items/wearables/necklace_wampum_doctor.lua")
---includeFile("custom_loot/items/wearables/necklace_wampum_entertainer.lua")
+includeFile("custom_loot/items/wearables/necklace_ornamental_ratchet.lua")
+includeFile("custom_loot/items/wearables/necklace_pawl_chain.lua")
+includeFile("custom_loot/items/wearables/necklace_rusty_beads.lua")
+includeFile("custom_loot/items/wearables/necklace_sparkling_bijou.lua")
+includeFile("custom_loot/items/wearables/necklace_wampum_doctor.lua")
+includeFile("custom_loot/items/wearables/necklace_wampum_entertainer.lua")
 
---includeFile("custom_loot/items/backpacks/backpack_smc.lua")
---includeFile("custom_loot/items/backpacks/wings_angel.lua")
---includeFile("custom_loot/items/backpacks/wings_bat.lua")
---includeFile("custom_loot/items/backpacks/wings_blue.lua")
---includeFile("custom_loot/items/backpacks/wings_golden.lua")
---includeFile("custom_loot/items/backpacks/wings_pink.lua")
+includeFile("custom_loot/items/backpacks/backpack_smc.lua")
+includeFile("custom_loot/items/backpacks/wings_angel.lua")
+includeFile("custom_loot/items/backpacks/wings_bat.lua")
+includeFile("custom_loot/items/backpacks/wings_blue.lua")
+includeFile("custom_loot/items/backpacks/wings_golden.lua")
+includeFile("custom_loot/items/backpacks/wings_pink.lua")
 
 --Custom Furniture Schems
 includeFile("custom_loot/items/furniture_loot_schematics/potted_plant_lrg02.lua")
