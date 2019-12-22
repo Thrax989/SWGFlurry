@@ -83,10 +83,10 @@ spawnMobile("dungeon2", "exar_guard", 1800, -8.53399, -4.81847e-08, 80.7342, 98,
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pBoss = spawnMobile("dungeon2", "exar_guard", 10800, 15.4963, 4.651, 106.287, 178, 14200878)--3 hour respawn to start the boss
+local pBoss = spawnMobile("dungeon2", "clone", 10800, 15.4963, 4.651, 106.287, 178, 14200878)--3 hour respawn to start the boss
 	print("Spawning Exar Kun Clone")
 if (pBoss ~= nil ) then
-    createObserver(OBJECTDESTRUCTION, "exar_kun", "notifyTriggerDead", pBoss)
+    createObserver(OBJECTDESTRUCTION, "exar_boss", "notifyTriggerDead", pBoss)
 end
     writeData("exar_kun:spawnState",0)
     return 0
