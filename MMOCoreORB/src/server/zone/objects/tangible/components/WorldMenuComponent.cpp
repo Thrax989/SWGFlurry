@@ -45,9 +45,25 @@ int WorldMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creatur
 
 	PlayerObject* ghost = player->getPlayerObject();
 	if (ghost != nullptr) {
-		ghost->updateworldbossKills();
-		sceneObject->destroyObjectFromWorld(true);
-		sceneObject->destroyObjectFromDatabase(true);
+ 	ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
+ 	ManagedReference<LootManager*> lootManager = player->getZoneServer()->getLootManager();
+	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "clothing_attachments.", 300);
+	lootManager->createLoot(inventory, "armor_attachments", 300);
+	lootManager->createLoot(inventory, "power_crystals", 300);
+	lootManager->createLoot(inventory, "tiertwo", 300);
+	lootManager->createLoot(inventory, "tierthree", 300);
+	lootManager->createLoot(inventory, "tierone", 300);
+	lootManager->createLoot(inventory, "tierdiamond.lua", 300);
+	player->playEffect("clienteffect/level_granted.cef", "");
+	ghost->updateworldbossKills();
+	sceneObject->destroyObjectFromWorld(true);
+	sceneObject->destroyObjectFromDatabase(true);	
 	}
 	return 0;
 }
