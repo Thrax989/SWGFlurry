@@ -611,6 +611,29 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						player->subtractBankCredits(1000);
 						box->setForceCloseDistance(5.f);
 			        }
+//BOSS TELEPORT ROOM
+			} else if (templatePath == "teleportroom") {
+				if (!player->isInCombat() && player->getBankCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Boss Instance Teleport Room");
+		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getBankCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
+ 				        	player->switchZone("dungeon2", -33.6957, 0.77033, 24.5291);
+						player->subtractBankCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
+			        }
 //GALACTIC TRAVEL SYSTEM City Politician Skill
 			} else if (templatePath == "citypolitician") {
 				if (!player->isInCombat() && player->getBankCredits() < 9999999) {
