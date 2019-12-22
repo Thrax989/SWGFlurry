@@ -25,7 +25,7 @@ exar_clone = Creature:new {
 	optionsBitmask = AIENABLED + INTERESTING,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/exar_kun.if"},
+	templates = {"object/mobile/exar_kun.iff"},
 	lootGroups = {
 		{
 			groups = {
