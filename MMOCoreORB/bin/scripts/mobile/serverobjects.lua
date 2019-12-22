@@ -6,6 +6,7 @@ includeFile("conversations.lua")
 includeFile("dressgroup/serverobjects.lua") 
 --New Content
 includeFile("custom_content/serverobjects.lua")
+includeFile("custom_vendors/serverobjects.lua")
 --New Content Mob Template Files
 includeFile("hoth/serverobjects.lua")
 includeFile("kashyyyk/serverobjects.lua")
@@ -50,5 +51,3 @@ includeFile("mission/serverobjects.lua")
 includeFile("lair/serverobjects.lua")
 -- Outfits
 includeFile("outfits/serverobjects.lua")
--- Custom content - Loads last to allow for overrides
-includeFile("../custom_scripts/mobile/serverobjects.lua")

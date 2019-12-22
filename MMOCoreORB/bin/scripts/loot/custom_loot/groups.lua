@@ -306,7 +306,7 @@ includeFile("custom_loot/groups/weapons/melee/g_ep3_loot_blackbane.lua")
 includeFile("custom_loot/groups/weapons/melee/g_ep3_loot_eventide.lua")
 includeFile("custom_loot/groups/weapons/melee/g_ep3_loot_lifeblood")
 ]]
-includeFile("custom_loot/groups/wearables/g_cloak_of_hate")
+includeFile("custom_loot/groups/wearables/cloak_of_hate.lua")
 includeFile("custom_loot/groups/wearables/jewelry/g_necklaces.lua")
 includeFile("custom_loot/groups/wearables/jewelry/jedi_rings.lua")
 includeFile("custom_loot/groups/wearables/jewelry/jedi_neck.lua")
