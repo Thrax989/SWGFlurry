@@ -1,7 +1,5 @@
 exar_guard = Creature:new {
 	customName = "Cultist Guard",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "exar",
 	faction = "exar",
 	level = 300,

@@ -1,7 +1,5 @@
 exar_clone = Creature:new {
 	customName = "Exar Kun Clone",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "exar",
 	faction = "exar",
 	level = 300,
