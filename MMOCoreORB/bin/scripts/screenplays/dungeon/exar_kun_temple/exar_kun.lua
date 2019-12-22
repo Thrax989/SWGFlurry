@@ -28,6 +28,7 @@ end
 function exar_kun:spawnSceneObjects()
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", -40.4491, 0.61331, 29.3437, 14200816, 1, 0, 0, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 15.5419, 4.71103, 106.975, 14200878, 1, 0, 0, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -0.0673289, 3.8147e-06, 3.19915, 14200737, 1, 0, 0, 0)
 end
 --------------------------------------------------
 --   spawn mobiles for dungeon

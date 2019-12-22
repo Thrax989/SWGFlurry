@@ -569,16 +569,6 @@ includeFile("custom_loot/items/goggles/goggles_g04.lua")
 includeFile("custom_loot/items/goggles/goggles_g05.lua")
 includeFile("custom_loot/items/goggles/goggles_g06.lua")
 
-
-
-
-includeFile("custom_loot/items/wearables/necklace_ornamental_ratchet.lua")
-includeFile("custom_loot/items/wearables/necklace_pawl_chain.lua")
-includeFile("custom_loot/items/wearables/necklace_rusty_beads.lua")
-includeFile("custom_loot/items/wearables/necklace_sparkling_bijou.lua")
-includeFile("custom_loot/items/wearables/necklace_wampum_doctor.lua")
-includeFile("custom_loot/items/wearables/necklace_wampum_entertainer.lua")
-
 includeFile("custom_loot/items/backpacks/backpack_smc.lua")
 includeFile("custom_loot/items/backpacks/wings_angel.lua")
 includeFile("custom_loot/items/backpacks/wings_bat.lua")
