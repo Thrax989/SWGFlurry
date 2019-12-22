@@ -3,7 +3,7 @@ exar_boss = Creature:new {
 	socialGroup = "exar",
 	faction = "exar",
 	level = 300,
-	chanceHit = 50.00,
+	chanceHit = 25.00,
 	damageMin = 1645,
 	damageMax = 3000,
 	specialDamageMult = 7.5,
@@ -48,9 +48,9 @@ exar_boss = Creature:new {
 			lootChance = 5000000
 		}
 	},
-	weapons = {"mixed_force_weapons"},
+	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
-	attacks = merge(fencermaster,swordsmanmaster,tkamaster,pikemanmaster,brawlermaster,forcepowermaster)
+	attacks = merge(lightsabermaster,forcepowermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(exar_boss, "exar_boss")
