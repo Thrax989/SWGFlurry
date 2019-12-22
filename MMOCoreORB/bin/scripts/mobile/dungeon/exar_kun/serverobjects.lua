@@ -1,3 +1,3 @@
-includeFile("dungeon/exar_kun/clone.lua")
-includeFile("dungeon/exar_kun/boss.lua")
-includeFile("dungeon/exar_kun/guards.lua")
+includeFile("dungeon/exar_kun/exar_clone.lua")
+includeFile("dungeon/exar_kun/exar_boss.lua")
+includeFile("dungeon/exar_kun/exar_guard.lua")
