@@ -29,70 +29,58 @@ exar_clone = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "power_crystals", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
-			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "color_crystals", chance = 10000000},
-			},
-			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "nightsister_common", chance = 10000000},
-			},
-			lootChance = 2000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "armor_attachments", chance = 10000000},
 			},
-			lootChance = 250000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 10000000},
+				{group = "weapons_all", chance = 10000000},
 			},
-			lootChance = 250000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "melee_weapons", chance = 10000000},
+				{group = "worldbosscrate", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "rifles", chance = 10000000},
+				{group = "vehicledeedsnormal", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 3000000
 		},
 		{
 			groups = {
-				{group = "wearables_scarce", chance = 10000000},
+				{group = "vehicledeedsrare", chance = 10000000},
 			},
-			lootChance = 500000
+			lootChance = 1500000
 		},
 		{
 			groups = {
-				{group = "carbines", chance = 10000000},
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "tailor_components", chance = 10000000},
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "pistols", chance = 10000000},
-			},
-			lootChance = 1000000
-		},
+			lootChance = 5000000
+		}
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",

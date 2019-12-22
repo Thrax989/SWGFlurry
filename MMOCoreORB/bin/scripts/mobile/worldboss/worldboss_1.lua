@@ -4,13 +4,13 @@ worldboss_1 = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 35.0,
-	damageMin = 2500,
+	damageMin = 3000,
 	damageMax = 6000,
 	baseXp = 28549,
-	baseHAM = 950000,
+	baseHAM = 9900000,
 	baseHAMmax = 1000000,
 	armor = 3,
-	resists = {165,165,165,165,165,165,165,165,165},
+	resists = {75,75,75,75,75,75,75,75,75},
 	meatType = "meat_carnivore",
 	meatAmount = 1500,
 	hideType = "hide_bristley",
@@ -29,6 +29,72 @@ worldboss_1 = Creature:new {
 	templates = {"object/mobile/krayt_dragon_hue.iff"},
 	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	lootGroups = {
+		{
+			groups = {
+				{group = "goggles_all", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "neck_crafter", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "non_jedi_ring_crafter_second", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "non_jedi_ring_crafter", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "non_jedi_rings_ranged", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "non_jedi_rings", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "jedi_earings", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "jedi_bracelets", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "jedi_neck", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "jedi_rings", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "g_necklaces", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 10000000},
@@ -57,13 +123,13 @@ worldboss_1 = Creature:new {
 			groups = {
 				{group = "vehicledeedsnormal", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "vehicledeedsrare", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
