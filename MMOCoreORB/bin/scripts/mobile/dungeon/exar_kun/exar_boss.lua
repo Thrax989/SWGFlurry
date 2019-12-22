@@ -3,7 +3,7 @@ exar_boss = Creature:new {
 	socialGroup = "exar",
 	faction = "exar",
 	level = 300,
-	chanceHit = 25.00,
+	chanceHit = 50.00,
 	damageMin = 1645,
 	damageMax = 3000,
 	specialDamageMult = 7.5,
@@ -30,22 +30,129 @@ exar_boss = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "power_crystals", chance = 900000},
-				{group = "nightsister_common", chance = 2600000},
-				{group = "pistols", chance = 1000000},
-				{group = "rifles", chance = 1000000},
-				{group = "carbines", chance = 1000000},
-				{group = "melee_weapons", chance = 2000000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "wearables_rare", chance = 500000}
-			}
+				{group = "g_named_crystals", chance = 10000000},
+			},
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "axkva_min", chance = 10000000},
+				{group = "goggles_all", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "neck_crafter", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "non_jedi_ring_crafter_second", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "non_jedi_ring_crafter", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "non_jedi_rings_ranged", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "non_jedi_rings", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "jedi_earings", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "jedi_bracelets", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "jedi_neck", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "jedi_rings", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "g_necklaces", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "weapons_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "worldbosscrate", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "vehicledeedsnormal", chance = 10000000},
 			},
 			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "vehicledeedsrare", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"dark_jedi_weapons_gen4"},
