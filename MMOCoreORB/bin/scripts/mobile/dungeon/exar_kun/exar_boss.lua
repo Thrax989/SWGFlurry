@@ -36,6 +36,12 @@ exar_boss = Creature:new {
 		},
 		{
 			groups = {
+				{group = "g_cloak_of_hate", chance = 10000000},
+			},
+			lootChance = 1500000
+		},
+		{
+			groups = {
 				{group = "goggles_all", chance = 10000000},
 			},
 			lootChance = 2000000
