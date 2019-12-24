@@ -234,7 +234,8 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 				noTrade = 0,
 
 				objectMenuComponent = "RobeObjectMenuComponent",
-				certificationsRequired = {"force_rank_dark_rank_10"},
+				certificationsRequired = { "combat_jedi_novice",
+							"force_title_jedi_rank_02" },
 				attributeListComponent = "JediRobeAttributeListComponent",
 }
 
