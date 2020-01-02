@@ -297,6 +297,7 @@ class PlayerObject extends IntangibleObject {
 	protected unsigned long pveDeaths;
 	protected unsigned long missionsCompleted;
 	protected unsigned long worldbossKills;
+	protected unsigned long eventplayerCrate;
 	
 
 	public static final int LFG = 1;
@@ -408,6 +409,7 @@ class PlayerObject extends IntangibleObject {
 		ipAddress = "";
 		opposingFactionArea = false;
 		worldbossKills = 0;
+		eventplayerCrate = 0;
 		pvpKills = 0;
 		pvpDeaths = 0;
 		bountyKills = 0;
@@ -1981,6 +1983,13 @@ class PlayerObject extends IntangibleObject {
 	}
 	public unsigned long getworldbossKills() {
 		return worldbossKills;
+	}
+	public void updateeventplayerCrate() {
+		eventplayerCrate += 1;
+		updateWebStats("eventplayerCrate", eventplayerCrate);
+	}
+	public unsigned long geteventplayerCrate() {
+		return eventplayerCrate;
 	}
 	public void updatePvpDeaths() {
 		pvpDeaths += 1;

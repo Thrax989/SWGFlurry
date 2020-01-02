@@ -1274,6 +1274,10 @@ includeFile("items/rebpointsitem.lua")
 --World Boss Crate
 includeFile("items/world.lua")
 
+--Event Player Crate
+includeFile("items/eventplayer.lua")
+
+
 --Normal Vehicle Deeds
 includeFile("items/vehicle/vehicle1.lua")
 includeFile("items/vehicle/vehicle2.lua")

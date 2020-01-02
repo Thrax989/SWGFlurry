@@ -46,6 +46,7 @@ int CollectionplatinumMenuComponent::handleObjectMenuSelect(SceneObject* sceneOb
 	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
 	sceneObject->destroyObjectFromWorld(true);
 	sceneObject->destroyObjectFromDatabase(true);
 	}

@@ -28,24 +28,6 @@ public:
         if (!creature->hasSkill("force_rank_gray_master"))
             return GENERALERROR;
 
-        int nSkill = 0;
-        if (creature->hasSkill("combat_brawler_novice"))
-            nSkill += 1;
-        if (creature->hasSkill("combat_marksman_novice"))
-            nSkill += 1;
-        if (creature->hasSkill("social_entertainer_novice"))
-            nSkill += 1;
-        if (creature->hasSkill("crafting_artisan_novice"))
-            nSkill += 1;
-        if (creature->hasSkill("outdoors_scout_novice"))
-            nSkill += 1;
-
-        if (nSkill > 0) {
-            creature->sendSystemMessage("You are trying to use a top level skill while still being invested in other non jedi skills, "
-                "you must master the force in all its aspects before using this command.");
-            return GENERALERROR;
-        }
-
         Reference<Task*> task = player->getPendingTask("cloakevent");
 
         if (task != NULL) {
