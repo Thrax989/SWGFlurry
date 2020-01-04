@@ -6140,6 +6140,24 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 	}
 }
 
+void PlayerManagerImplementation::updateworldbossKillCount(CreatureObject* player) {
+	PlayerObject* ghost = player->getPlayerObject();
+
+	if (ghost != nullptr) {
+		ghost->updateworldbossKills();
+
+		if (ghost->getworldbossKills() == 10) {
+			ManagedReference<SceneObject*> inventory = ghost->getSlottedObject("inventory");
+			ManagedReference<LootManager*> lootManager = ghost->getZoneServer()->getLootManager();
+			lootManager->createLoot(inventory, "tierone", 300);
+		} else if (ghost->getworldbossKills() == 20) {
+			ManagedReference<SceneObject*> inventory = ghost->getSlottedObject("inventory");
+			ManagedReference<LootManager*> lootManager = ghost->getZoneServer()->getLootManager();
+			lootManager->createLoot(inventory, "tiertwo", 300);
+		}
+	}
+}
+
 float PlayerManagerImplementation::getSpeciesXpModifier(const String& species, const String& xpType) {
 	int bonus = xpBonusList.get(species).get(xpType);
 
