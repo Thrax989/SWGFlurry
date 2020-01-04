@@ -567,8 +567,6 @@ class PlayerManager extends Observer implements Logger {
 
 	public native void updatePvPKillCount(CreatureObject player);
 	private native void loadXpBonusList();
-	
-	public native void updateworldbossKillCount(CreatureObject player);
 	public native float getSpeciesXpModifier(final string species, final string xpType);
 
 	public native void unlockFRSForTesting(CreatureObject player, int councilType);
