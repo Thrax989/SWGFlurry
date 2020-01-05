@@ -1339,7 +1339,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 				if (attackerGhost != nullptr && ghost != nullptr && attackerGhost->getIpAddress() != ghost->getIpAddress() &&
 						attackerGhost->getAccountID() != ghost->getAccountID())
-					updatePvPKillCount(attackerCreature);
+					updatePvpKills(attackerCreature);
 
 				if (attackerGhost != nullptr && ghost != nullptr && attackerGhost->getIpAddress() != ghost->getIpAddress() &&
 						attackerGhost->getAccountID() != ghost->getAccountID())
@@ -6150,14 +6150,6 @@ float PlayerManagerImplementation::getSpeciesXpModifier(const String& species, c
 		return 1.f;
 
 	return (100.f + bonus) / 100.f;
-}
-
-void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
-	PlayerObject* ghost = player->getPlayerObject();
-
-	if (ghost != nullptr) {
-		ghost->updatePvpKills();
-	}
 }
 
 void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, int councilType) {
