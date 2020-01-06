@@ -446,3 +446,6 @@ includeFile("groups/eventplayercrate.lua")
 --Vehicle Deeds
 includeFile("groups/vehicledeedsnormal.lua")
 includeFile("groups/vehicledeedsrare.lua")
+
+--Custom Capes
+includeFile("groups/wearables/capes.lua")

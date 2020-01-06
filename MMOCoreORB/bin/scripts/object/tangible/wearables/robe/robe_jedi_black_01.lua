@@ -42,7 +42,6 @@
 
 
 object_tangible_wearables_robe_robe_jedi_black_01 = object_tangible_wearables_robe_shared_robe_jedi_black_01:new {
-objectMenuComponent = "ArmorObjectMenuComponent",
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
@@ -248,5 +247,6 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 	attributeListComponent = "JediRobeAttributeListComponent",
 
 }
+
 
 ObjectTemplates: addTemplate(object_tangible_wearables_robe_robe_jedi_black_01, "object/tangible/wearables/robe/robe_jedi_black_01.iff")

@@ -42,8 +42,6 @@
 
 
 object_tangible_wearables_robe_robe_s32_h1 = object_tangible_wearables_robe_shared_robe_s32_h1:new {
-objectMenuComponent = "ArmorObjectMenuComponent",
-
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",

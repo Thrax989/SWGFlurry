@@ -42,7 +42,6 @@
 
 
 object_tangible_wearables_robe_robe_jedi_test = object_tangible_wearables_robe_shared_robe_jedi_test:new {
-objectMenuComponent = "ArmorObjectMenuComponent",
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
