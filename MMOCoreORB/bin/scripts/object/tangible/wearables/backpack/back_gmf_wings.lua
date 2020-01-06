@@ -223,7 +223,6 @@ object_tangible_wearables_backpack_back_gmf_wings = object_tangible_wearables_ba
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-
 	numberExperimentalProperties = {1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX"},
 	experimentalWeights = {1, 1, 1, 1},
@@ -234,5 +233,4 @@ object_tangible_wearables_backpack_back_gmf_wings = object_tangible_wearables_ba
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 4},
 }
-
 ObjectTemplates:addTemplate(object_tangible_wearables_backpack_back_gmf_wings, "object/tangible/wearables/backpack/back_gmf_wings.iff")

@@ -233,5 +233,4 @@ object_tangible_wearables_backpack_back_gmf_wings = object_tangible_wearables_ba
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 4},
 }
-
 ObjectTemplates:addTemplate(object_tangible_wearables_backpack_back_gmf_wings, "object/tangible/wearables/backpack/back_gmf_wings.iff")
