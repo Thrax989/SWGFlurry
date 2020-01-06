@@ -42,9 +42,6 @@
 
 
 object_tangible_wearables_backpack_empireday_rebel_endor_backpack = object_tangible_wearables_backpack_shared_empireday_rebel_endor_backpack:new {
-
-	faction = "Rebel",
-
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
@@ -236,5 +233,4 @@ object_tangible_wearables_backpack_empireday_rebel_endor_backpack = object_tangi
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 4},
 }
-
 ObjectTemplates:addTemplate(object_tangible_wearables_backpack_empireday_rebel_endor_backpack, "object/tangible/wearables/backpack/empireday_rebel_endor_backpack.iff")
