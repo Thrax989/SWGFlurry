@@ -1,4 +1,4 @@
-robe1 = {
+robe5 = {
   minimumLevel = 0,
   maximumLevel = -1,
   customObjectName = "",
@@ -12,4 +12,4 @@ robe1 = {
   junkMaxValue = 110
 }
 
-addLootItemTemplate("robe1", robe1)
+addLootItemTemplate("robe5", robe5)
