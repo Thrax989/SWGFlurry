@@ -36,6 +36,12 @@ worldboss_5 = Creature:new {
 		},
 		{
 			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
 				{group = "neck_crafter", chance = 10000000},
 			},
 			lootChance = 2000000
