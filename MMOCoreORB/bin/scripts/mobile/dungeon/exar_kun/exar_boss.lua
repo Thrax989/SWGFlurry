@@ -11,7 +11,7 @@ exar_boss = Creature:new {
 	baseHAM = 385000,
 	baseHAMmax = 471000,
 	armor = 0,
-	resists = {175,175,175,175,175,175,175,175,175},
+	resists = {75,75,75,75,75,75,75,75,75},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -37,6 +37,12 @@ exar_boss = Creature:new {
 		{
 			groups = {
 				{group = "g_cloak_of_hate", chance = 10000000},
+			},
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "capes", chance = 10000000},
 			},
 			lootChance = 1500000
 		},
