@@ -1037,7 +1037,6 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 }
 
 int FrsManagerImplementation::getBaseExperienceGain(PlayerObject* playerGhost, PlayerObject* opponentGhost, bool playerWon) {
-	ManagedReference<CreatureObject*> player = playerGhost->getParentRecursively(SceneObjectType::PLAYERCREATURE).castTo<CreatureObject*>();
 	ManagedReference<CreatureObject*> opponent = opponentGhost->getParentRecursively(SceneObjectType::PLAYERCREATURE).castTo<CreatureObject*>();
 
 	if (opponent == nullptr)
@@ -1056,7 +1055,7 @@ int FrsManagerImplementation::getBaseExperienceGain(PlayerObject* playerGhost, P
 
 	String key = "";
 
-	if (opponent->hasBountyMissionFor(player) || opponent->hasSkill("combat_bountyhunter_master")) { // Opponent Has Mission For Player Or is MBH
+	if (opponent->hasSkill("combat_bountyhunter_master")) { // Opponent is MBH
 		key = "bh_";
 	} else if (opponentRank >= 0 && opponent->hasSkill("force_title_jedi_rank_03")) { // Opponent is at least a knight
 		key = "rank" + String::valueOf(opponentRank) + "_";

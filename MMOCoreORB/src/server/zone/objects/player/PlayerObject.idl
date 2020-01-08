@@ -289,7 +289,6 @@ class PlayerObject extends IntangibleObject {
 	protected transient unsigned long sessionStatsTotalMovement;
 	protected transient string sessionStatsIPAddress;
 	protected transient string ipAddress;
-	protected boolean cityTef;
 	protected boolean opposingFactionArea;
 	protected unsigned long pvpKills;
 	protected unsigned long pvpDeaths;
@@ -300,11 +299,6 @@ class PlayerObject extends IntangibleObject {
 	protected unsigned long worldbossKills;
 	protected unsigned long eventplayerCrate;
 	
-	//Player Bounty
-	@dereferenced
-	protected Time playerBountyTimestamp;
-	protected unsigned long bountyPlacerId;
-	protected int bountyReward;
 
 	public static final int LFG = 1;
 	public static final int NEWBIEHELPER = 2;
@@ -413,7 +407,6 @@ class PlayerObject extends IntangibleObject {
 		miliSecsPlayed = 0;
 
 		ipAddress = "";
-		cityTef = false;
 		opposingFactionArea = false;
 		worldbossKills = 0;
 		eventplayerCrate = 0;
@@ -423,11 +416,6 @@ class PlayerObject extends IntangibleObject {
 		pveKills = 0;
 		pveDeaths = 0;
 		missionsCompleted = 0;
-
-		//Player Bounty
-		playerBountyTimestamp.updateToCurrentTime();
-		bountyPlacerId = 0;
-		bountyReward = 0;
 
 		Logger.setLoggingName("PlayerObjectBase");
 	}
@@ -1740,14 +1728,14 @@ class PlayerObject extends IntangibleObject {
 	@read
 	public native Time getLastGcwPvpCombatActionTimestamp();
 
-	public native void updateLastPvpCombatActionTimestamp(boolean updateGcwAction, boolean updateBhAction, int duration = 0);
+	public native void updateLastPvpCombatActionTimestamp(boolean updateGcwAction, boolean updateBhAction);
 
 	public native void updateLastBhPvpCombatActionTimestamp();
 
 	public native void updateLastGcwPvpCombatActionTimestamp();
 
 	@read
-	public native boolean hasGcwTef();
+	public native boolean hasPvpTef();
 
 	@read
 	public native boolean hasBhTef();
@@ -1982,19 +1970,6 @@ class PlayerObject extends IntangibleObject {
 	public string getIpAddress() {
 		return ipAddress;
 	}
-	public boolean hasCityTef() {
-		return cityTef;
-	}
-	public void setHasCityTef(boolean shouldCityTef) {
-		cityTef = shouldCityTef;
-	}
-	public boolean isInOpposingArea() {
-		return opposingFactionArea;
-	}
-	public void setIsInOpposingArea(boolean factionArea) {
-		opposingFactionArea = factionArea;
-	}
-	public native boolean isPvpFlagged();
 	public void updatePvpKills() {
 		pvpKills += 1;
 		updateWebStats("pvpKills", pvpKills);
@@ -2053,28 +2028,6 @@ class PlayerObject extends IntangibleObject {
 	}
 	
 	public native void updateWebStats(final string stat, int newValue);
-
-	public void updatePlayerBountyTimestamp(int duration) {
-		playerBountyTimestamp.updateToCurrentTime();
-		playerBountyTimestamp.addMiliTime(duration);
-	}
-	public void setBountyReward(int reward) {
-		bountyReward = reward;
-	}
-	public unsigned long getBountyReward() {
-		return bountyReward;
-	}
-
-	public void setBountyPlacerId(unsigned long placerId) {
-		bountyPlacerId = placerId;
-	}
-	public unsigned long getBountyPlacerId() {
-		return bountyPlacerId;
-	}
-	public boolean hasPlayerBounty() {
-		return !playerBountyTimestamp.isPast();
-	}
-	public native void refundPlayerBountyCredits();
 
 	@read
 	public boolean isCloning() {

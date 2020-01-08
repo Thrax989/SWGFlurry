@@ -33,19 +33,13 @@ public:
 
 		Locker locker(player);
 
-		if (ghost->isInOpposingArea())
-			ghost->updateLastGcwPvpCombatActionTimestamp();
-
-		if (ghost->hasGcwTef() || ghost->hasBhTef()) {
+		if (ghost->hasPvpTef()) {
 			auto gcwTefMs = ghost->getLastGcwPvpCombatActionTimestamp().miliDifference();
 			auto bhTefMs = ghost->getLastBhPvpCombatActionTimestamp().miliDifference();
 			this->reschedule(llabs(gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs));
 		} else {
-			if (!ghost->hasCityTef())
-				player->clearPvpStatusBit(CreatureFlag::TEF);
-
 			ghost->updateInRangeBuildingPermissions();
-			player->broadcastPvpStatusBitmask();
+			player->clearPvpStatusBit(CreatureFlag::TEF);
 		}
 
 		if (!ghost->hasBhTef())

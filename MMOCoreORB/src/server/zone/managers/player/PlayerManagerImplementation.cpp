@@ -1196,8 +1196,8 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		ghost->resetIncapacitationTimes();
 		ghost->setFoodFilling(0);//Remove Food Filling After Death
 		ghost->setDrinkFilling(0);//Remove Drink Filling After Death
-	if (ghost != nullptr) {
-		if (ghost->hasGcwTef() || ghost->hasBhTef())
+		if (ghost->hasPvpTef()) {
+			ghost->schedulePvpTefRemovalTask(true, true);
 		}
 	}
 

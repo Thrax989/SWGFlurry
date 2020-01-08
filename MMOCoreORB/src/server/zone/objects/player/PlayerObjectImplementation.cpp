@@ -317,22 +317,18 @@ void PlayerObjectImplementation::unload() {
 }
 
 int PlayerObjectImplementation::calculateBhReward() {
-	int minReward = 50000; // Minimum reward for a player bounty
-	int reward = 0;
+	int minReward = 25000; // Minimum reward for a player bounty
 
-	ManagedReference<CreatureObject*> player = getParent().get().castTo<CreatureObject*>();
+	if (getJediState() >= 4) // Minimum if player is knight
+		minReward = 50000;
 
-	if (player != nullptr) {
-		if (player->hasSkill("force_title_jedi_rank_02")) {
-			reward = getSpentJediSkillPoints() * 1000;
+	int skillPoints = getSpentJediSkillPoints();
+	int reward = skillPoints * 1000;
 
-			if (player->hasSkill("force_title_jedi_rank_03"))
-				reward += getFrsData()->getRank() * 100000;
+	int frsRank = getFrsData()->getRank();
 
-		} else {
-			reward = getPvpKills() * 1000;
-		}
-	}
+	if (frsRank > 0)
+		reward += frsRank * 100000; // +100k per frs rank
 
 	if (reward < minReward)
 		reward = minReward;
@@ -1376,26 +1372,14 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	MissionManager* missionManager = zoneServer->getMissionManager();
 
-	if (missionManager != nullptr) {
+	if (missionManager != nullptr && playerCreature->hasSkill("force_title_jedi_rank_02")) {
 		uint64 id = playerCreature->getObjectID();
-		bool isJedi = playerCreature->hasSkill("force_title_jedi_rank_02");
-		int reward = 0;
 
-		if (isJedi)
-			reward = calculateBhReward();
-		else if (hasPlayerBounty())
-			reward = getBountyReward();
-
-		if (isJedi || hasPlayerBounty()) {
-			if (!missionManager->hasPlayerBountyTargetInList(id)) {
-				missionManager->addPlayerToBountyList(id, reward);
-			} else {
-				missionManager->updatePlayerBountyReward(id, reward);
-				missionManager->updatePlayerBountyOnlineStatus(id, true);
-			}
-		} else if (!isJedi && !hasPlayerBounty() && missionManager->hasPlayerBountyTargetInList(id)) {
-			missionManager->removePlayerFromBountyList(id);
-			refundPlayerBountyCredits();
+		if (!missionManager->hasPlayerBountyTargetInList(id))
+			missionManager->addPlayerToBountyList(id, calculateBhReward());
+		else {
+			missionManager->updatePlayerBountyReward(id, calculateBhReward());
+			missionManager->updatePlayerBountyOnlineStatus(id, true);
 		}
 	}
 
@@ -1453,15 +1437,11 @@ void PlayerObjectImplementation::notifyOffline() {
 	luaOnPlayerLoggedOut->callFunction();
 
 	MissionManager* missionManager = getZoneServer()->getMissionManager();
-	if (missionManager != nullptr) {
-		bool isJedi = playerCreature->hasSkill("force_title_jedi_rank_02");
-		uint64 id = playerCreature->getObjectID();
-		if (isJedi || hasPlayerBounty()) {
-			missionManager->updatePlayerBountyOnlineStatus(playerCreature->getObjectID(), false);
-		} else if (!hasPlayerBounty() && missionManager->hasPlayerBountyTargetInList(id)) {
-			missionManager->removePlayerFromBountyList(id);
-			refundPlayerBountyCredits();
-		}
+
+	if (missionManager != nullptr && playerCreature->hasSkill("force_title_jedi_rank_02")) {
+		missionManager->updatePlayerBountyOnlineStatus(playerCreature->getObjectID(), false);
+	}
+
 	logSessionStats(true);
 }
 
@@ -2354,36 +2334,33 @@ Time PlayerObjectImplementation::getLastGcwPvpCombatActionTimestamp() const {
 	return lastGcwPvpCombatActionTimestamp;
 }
 
-void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateGcwAction, bool updateBhAction, int duration) {
+void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateGcwAction, bool updateBhAction) {
 	ManagedReference<CreatureObject*> parent = getParent().get().castTo<CreatureObject*>();
 
 	if (parent == nullptr)
 		return;
 
-	if (duration == 0)
-		duration = FactionManager::TEFTIMER;
-	else
-		duration = duration * 60000;
+	bool alreadyHasTef = hasPvpTef();
 
 	if (updateBhAction) {
+		bool alreadyHasBhTef = hasBhTef();
 		lastBhPvpCombatActionTimestamp.updateToCurrentTime();
-		lastBhPvpCombatActionTimestamp.addMiliTime(duration);
+		lastBhPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
 
-		if (!hasBhTef())
+		if (!alreadyHasBhTef)
 			parent->notifyObservers(ObserverEventType::BHTEFCHANGED);
 	}
 
 	if (updateGcwAction) {
 		lastGcwPvpCombatActionTimestamp.updateToCurrentTime();
-		lastGcwPvpCombatActionTimestamp.addMiliTime(duration);
+		lastGcwPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
 	}
 
 	schedulePvpTefRemovalTask();
 
-	if (!hasGcwTef() || !hasBhTef()) {
+	if (!alreadyHasTef) {
 		updateInRangeBuildingPermissions();
 		parent->setPvpStatusBit(CreatureFlag::TEF);
-		parent->broadcastPvpStatusBitmask();
 	}
 }
 
@@ -2395,8 +2372,8 @@ void PlayerObjectImplementation::updateLastGcwPvpCombatActionTimestamp() {
 	updateLastPvpCombatActionTimestamp(true, false);
 }
 
-bool PlayerObjectImplementation::hasGcwTef() {
-	return !lastGcwPvpCombatActionTimestamp.isPast();
+bool PlayerObjectImplementation::hasPvpTef() const {
+	return !lastGcwPvpCombatActionTimestamp.isPast() || hasBhTef();
 }
 
 bool PlayerObjectImplementation::hasBhTef() const {
@@ -2414,10 +2391,8 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 	}
 
 	if (removeGcwTefNow || removeBhTefNow) {
-		if (removeGcwTefNow) {
+		if (removeGcwTefNow)
 			lastGcwPvpCombatActionTimestamp.updateToCurrentTime();
-			lastGcwPvpCombatActionTimestamp.addMiliTime(5000);
-		}
 
 		if (removeBhTefNow) {
 			lastBhPvpCombatActionTimestamp.updateToCurrentTime();
@@ -2430,7 +2405,7 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 	}
 
 	if (!pvpTefTask->isScheduled()) {
-		if (hasGcwTef() || hasBhTef()) {
+		if (hasPvpTef()) {
 			auto gcwTefMs = getLastGcwPvpCombatActionTimestamp().miliDifference();
 			auto bhTefMs = getLastBhPvpCombatActionTimestamp().miliDifference();
 			pvpTefTask->schedule(llabs(gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs));
@@ -2442,18 +2417,6 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 
 void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeNow) {
 	schedulePvpTefRemovalTask(removeNow, removeNow);
-}
-
-bool PlayerObjectImplementation::isPvpFlagged() {
-	ManagedReference<CreatureObject*> parent = getParent().get().castTo<CreatureObject*>();
-
-	if (parent == nullptr)
-		return false;
-
-	if (!(parent->getPvpStatusBitmask() & CreatureFlag::OVERT) && !hasGcwTef() && !hasCityTef())
-		return false;
-
-	return true;
 }
 
 Vector3 PlayerObjectImplementation::getTrainerCoordinates() {
@@ -3053,28 +3016,6 @@ String PlayerObjectImplementation::getPlayedTimeString(bool verbose) const {
 	}
 
 	return buf.toString();
-}
-
-void PlayerObjectImplementation::refundPlayerBountyCredits() {
-	ZoneServer* zoneServer = server->getZoneServer();
-	ManagedReference<CreatureObject*> creature = getParent().get().castTo<CreatureObject*>();
-	ManagedReference<CreatureObject*> bountyPlacer = zoneServer->getObject(getBountyPlacerId()).castTo<CreatureObject*>();
-
-	if (creature != nullptr && bountyPlacer != nullptr) {
-		ManagedReference<ChatManager*> chatManager = zoneServer->getChatManager();
-
-		String sender = "Bounty Hunters Guild";
-		UnicodeString subject("Player Bounty Failure");
-		String body = creature->getFirstName() + " has eluded even our best Bounty Hunters. Given this shameful failure, we have refunded the credits you placed on their head back into your bank account.";
-
-		chatManager->sendMail(sender, subject, body, bountyPlacer->getFirstName());
-
-		Locker locker(bountyPlacer);
-		bountyPlacer->addBankCredits(getBountyReward());
-	}
-
-	setBountyPlacerId(0);
-	setBountyReward(0);
 }
 
 void PlayerObjectImplementation::updateWebStats(const String& stat, int newValue) {
