@@ -35,7 +35,7 @@
 #include "templates/params/OptionBitmask.h"
 #include "server/zone/managers/player/JukeboxSong.h"
 #include "server/zone/managers/player/QuestInfo.h"
-#include "server/zone/objects/player/sui/callbacks/PlaceBountySuiCallback.h"
+
 #include "server/zone/objects/intangible/ShipControlDevice.h"
 #include "server/zone/objects/group/GroupObject.h"
 #include "server/zone/objects/building/BuildingObject.h"
@@ -1349,13 +1349,10 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				if (attackerGhost != nullptr && ghost != nullptr && attackerCreature->hasBountyMissionFor(player) &&
 						attackerGhost->getIpAddress() != ghost->getIpAddress() && attackerGhost->getAccountID() != ghost->getAccountID())
 					attackerGhost->updateBountyKills();
-
-				if (!attackerCreature->hasBountyMissionFor(player) && !player->hasBountyMissionFor(attackerCreature))
-					offerPlayerBounty(attackerCreature, player);
 				}
 			}
 
-			//PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
+			PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 			PlayerObject* victimGhost = player->getPlayerObject();
 
 			if (attackerGhost != nullptr && victimGhost != nullptr) {
@@ -6164,49 +6161,6 @@ void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
 	}
 }
 
-void PlayerManagerImplementation::offerPlayerBounty(CreatureObject* attacker, CreatureObject* defender) {
-	PlayerObject* attackerGhost = attacker->getPlayerObject();
-	PlayerObject* defenderGhost = defender->getPlayerObject();
-
-	if (attackerGhost == nullptr || defenderGhost == nullptr)
-		return;
-
-	//Check if they already have the bounty offer window open.
-	if (defenderGhost->hasSuiBoxWindowType(SuiWindowType::PLAYER_BOUNTY_OFFER))
-		return;
-
-	if (attackerGhost->isPrivileged())
-		return;
-
-	//Player already has a bounty on their head or they are a jedi
-	if (attackerGhost->hasPlayerBounty() || attacker->hasSkill("force_title_jedi_rank_02"))
-		return;
-
-	//50% chance to offer a bounty and the killer has to have at least 1 kills.
-	bool offer = (System::random(100)) < 1;
-	if (!offer || attackerGhost->getPvpKills() < 1)
-		return;
-
-	int reward = attackerGhost->calculateBhReward();
-
-	ManagedReference<SuiMessageBox*> suibox = new SuiMessageBox(defender, SuiWindowType::PLAYER_BOUNTY_OFFER);
-
-	suibox->setPromptTitle("Bounty Hunters Guild");
-	suibox->setCallback(new PlaceBountySuiCallback(server, attacker, reward));
-	suibox->setOkButton(true, "@yes");
-	suibox->setCancelButton(true, "@no");
-
-	StringBuffer prompt;
-
-	prompt << "You have been killed in combat by " + attacker->getFirstName() + ".\n\n"
-           << "The Bounty Hunters Guild has taken notice and you can place a bounty on their head for " + String::valueOf(reward) + " credits.\n\n"
-           << "Do you want to place a bounty on " + attacker->getFirstName() + " for " + String::valueOf(reward) + " credits?";
-
-	suibox->setPromptText(prompt.toString());
-
-	defenderGhost->addSuiBox(suibox);
-	defender->sendMessage(suibox->generateMessage());
-}
 void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, int councilType) {
 	PlayerObject* ghost = player->getPlayerObject();
 
