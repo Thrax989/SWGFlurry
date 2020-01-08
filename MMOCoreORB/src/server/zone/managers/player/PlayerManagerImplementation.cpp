@@ -110,6 +110,7 @@
 #include "server/zone/managers/visibility/VisibilityManager.h"
 #include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
+#include "server/zone/managers/object/ObjectManager.h"
 
 PlayerManagerImplementation::PlayerManagerImplementation(ZoneServer* zoneServer, ZoneProcessServer* impl,
 							bool trackOnlineUsers) :
@@ -1339,7 +1340,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 				if (attackerGhost != nullptr && ghost != nullptr && attackerGhost->getIpAddress() != ghost->getIpAddress() &&
 						attackerGhost->getAccountID() != ghost->getAccountID())
-					updatePvpKills(attackerCreature);
+					updatePvPKillCount(attackerCreature);
 
 				if (attackerGhost != nullptr && ghost != nullptr && attackerGhost->getIpAddress() != ghost->getIpAddress() &&
 						attackerGhost->getAccountID() != ghost->getAccountID())
@@ -2511,6 +2512,9 @@ bool PlayerManagerImplementation::checkTradeItems(CreatureObject* player, Creatu
 
 			if (!playerDatapad->hasObjectInContainer(scene->getObjectID()))
 				return false;
+				
+			if (scene->isStructureControlDevice())
+				return false;
 
 			if (scene->isPetControlDevice()) {
 				PetControlDevice* petControlDevice = cast<PetControlDevice*>(scene.get());
@@ -2578,6 +2582,9 @@ bool PlayerManagerImplementation::checkTradeItems(CreatureObject* player, Creatu
 				return false;
 
 			if (!receiverDatapad->hasObjectInContainer(scene->getObjectID()))
+				return false;
+
+			if (scene->isStructureControlDevice())
 				return false;
 
 			if (scene->isPetControlDevice()) {
@@ -6150,6 +6157,14 @@ float PlayerManagerImplementation::getSpeciesXpModifier(const String& species, c
 		return 1.f;
 
 	return (100.f + bonus) / 100.f;
+}
+
+void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
+	PlayerObject* ghost = player->getPlayerObject();
+
+	if (ghost != nullptr) {
+		ghost->updatePvpKills();
+	}
 }
 
 void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, int councilType) {
