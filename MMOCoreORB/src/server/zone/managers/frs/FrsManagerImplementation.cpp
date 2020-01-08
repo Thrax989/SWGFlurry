@@ -1037,6 +1037,7 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 }
 
 int FrsManagerImplementation::getBaseExperienceGain(PlayerObject* playerGhost, PlayerObject* opponentGhost, bool playerWon) {
+	ManagedReference<CreatureObject*> player = playerGhost->getParentRecursively(SceneObjectType::PLAYERCREATURE).castTo<CreatureObject*>();
 	ManagedReference<CreatureObject*> opponent = opponentGhost->getParentRecursively(SceneObjectType::PLAYERCREATURE).castTo<CreatureObject*>();
 
 	if (opponent == nullptr)
