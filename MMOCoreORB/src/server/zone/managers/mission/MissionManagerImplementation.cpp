@@ -2129,8 +2129,7 @@ void MissionManagerImplementation::completePlayerBounty(uint64 targetId, uint64 
 
 void MissionManagerImplementation::failPlayerBountyMission(uint64 bountyHunter) {
 	ManagedReference<CreatureObject*> creature = server->getObject(bountyHunter).castTo<CreatureObject*>();
-	ManagedReference<CreatureObject*> target = server->getObject(mission->getTargetObjectId()).castTo<CreatureObject*>();
-
+	
 	if (creature != nullptr) {
 		Locker creatureLock(creature);
 
@@ -2141,6 +2140,7 @@ void MissionManagerImplementation::failPlayerBountyMission(uint64 bountyHunter) 
 
 			if (objective != nullptr) {
 				ManagedReference<CreatureObject*> player = objective->getPlayerOwner();
+				ManagedReference<CreatureObject*> target = server->getObject(mission->getTargetObjectId()).castTo<CreatureObject*>();
 
 				if (player != nullptr) {
 					player->sendSystemMessage("@mission/mission_generic:failed");
