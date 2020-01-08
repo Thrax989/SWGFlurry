@@ -2369,7 +2369,7 @@ void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateG
 		lastBhPvpCombatActionTimestamp.updateToCurrentTime();
 		lastBhPvpCombatActionTimestamp.addMiliTime(duration);
 
-		if (!hasBhTef)
+		if (!hasBhTef())
 			parent->notifyObservers(ObserverEventType::BHTEFCHANGED);
 	}
 
