@@ -50,6 +50,7 @@ object_draft_schematic_item_component_item_micro_sensor_suite = object_draft_sch
    craftingToolTab = 524288, -- (See DraftSchematicObjectTemplate.h)
    complexity = 17, 
    size = 5, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_general", 
    xp = 80, 

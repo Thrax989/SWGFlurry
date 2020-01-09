@@ -2,6 +2,7 @@ package.path = package.path .. ";scripts/screenplays/themepark/?.lua;scripts/scr
 require("screenplay")
 require("conv_handler")
 require("themeParkLogic")
+require("screenplayHelper")
 require("corvetteTicketGiverLogic")
 require("corvetteTicketTakerLogic")
 
@@ -27,6 +28,14 @@ require("sui.custom.SuiProcessorPuzzle")
 require("sui.custom.SuiRadiationSensor")
 require("sui.custom.SuiReceiverPuzzle")
 
+-- Server Event Automation
+includeFile("events/ServerEventAutomation.lua")
+
+-- Custom content - Loads last to allow for overrides
+includeFile("../custom_scripts/screenplays/screenplays.lua")
+includeFile("tools/FlurryBuffTerminal.lua")
+includeFile("tools/mission_level_choice.lua")
+includeFile("tools/mission_direction_choice.lua")
 includeFile("helperfuncs.lua")
 includeFile("playerTriggers.lua")
 
@@ -154,6 +163,8 @@ includeFile("dungeon/corellian_corvette/ticket_givers/corvette_yondalla_neutral_
 includeFile("dungeon/corellian_corvette/ticket_takers/ds_297.lua")
 includeFile("dungeon/corellian_corvette/ticket_takers/klaatu.lua")
 includeFile("dungeon/corellian_corvette/ticket_takers/lt_lance.lua")
+--Custom exar kun dungeon
+includeFile("dungeon/exar_kun_temple/exar_kun.lua")
 
 
 -- Village
@@ -271,6 +282,37 @@ includeFile("jedi/padawan/convos/padawan_spice_mom_02_conv_handler.lua")
 includeFile("jedi/padawan/convos/padawan_surveyor_01_conv_handler.lua")
 includeFile("jedi/padawan/convos/padawan_the_ring_01_conv_handler.lua")
 includeFile("jedi/padawan/convos/padawan_the_ring_02_conv_handler.lua")
+--includeFile("jedi/gray/jedi1.lua")
+--includeFile("jedi/gray/jedi2.lua")
+--includeFile("jedi/gray/jedi3.lua")
+--includeFile("jedi/gray/jedi4.lua")
+--includeFile("jedi/gray/jedi5.lua")
+--includeFile("jedi/gray/jedi6.lua")
+--includeFile("jedi/gray/jedi7.lua")
+--includeFile("jedi/gray/jedi8.lua")
+--includeFile("jedi/gray/jedi9.lua")
+--includeFile("jedi/gray/jedi10.lua")
+--includeFile("jedi/gray/jedi11.lua")
+--includeFile("jedi/gray/jedi12.lua")
+--includeFile("jedi/gray/jedi13.lua")
+--includeFile("jedi/gray/jedi14.lua")
+--includeFile("jedi/gray/jedi15.lua")
+--includeFile("jedi/gray/jedi16.lua")
+--includeFile("jedi/gray/jedi17.lua")
+--includeFile("jedi/gray/jedi18.lua")
+--includeFile("jedi/gray/jedi19.lua")
+--includeFile("jedi/gray/jedi20.lua")
+--includeFile("jedi/gray/jedi21.lua")
+--includeFile("jedi/gray/jedi22.lua")
+--includeFile("jedi/gray/jedi23.lua")
+--includeFile("jedi/gray/jedi24.lua")
+--includeFile("jedi/gray/jedi25.lua")
+--includeFile("jedi/gray/jedi26.lua")
+--includeFile("jedi/gray/jedi27.lua")
+--includeFile("jedi/gray/jedi28.lua")
+--includeFile("jedi/gray/jedi29.lua")
+--includeFile("jedi/gray/jedi30.lua")
+
 
 -- Jedi Objects
 includeFile("jedi/components/ForceShrineMenuComponent.lua")
@@ -323,6 +365,13 @@ includeFile("events/eventPromoter.lua")
 includeFile("events/lifeDay.lua")
 includeFile("events/buffTerminalMenuComponent.lua")
 includeFile("events/race_droid.lua")
+includeFile("events/jediQuest.lua")
+includeFile("events/jediLives.lua")
+includeFile("events/deathBounty.lua")
+--includeFile("events/halloween_moenia.lua")
+
+--Pvp Arena
+includeFile("events/pvp/pvp.lua")
 
 -- Hero of Tatooine
 includeFile("tasks/hero_of_tatooine/conversations/hermitConvoHandler.lua")
@@ -666,8 +715,53 @@ includeFile("record_keepers/record_keepers.lua")
 --Tests
 includeFile("tests/tests.lua")
 
+
+--Acive Quest
+includeFile("mission_quest/mission.lua")--First Acive Quest Line /way Tatooine
+--New quest missions (Not Active In Development)
+--includeFile("mission_quest/mission_one.lua")
+--includeFile("mission_quest/mission_two.lua")
+--includeFile("mission_quest/mission_three.lua")
+--includeFile("mission_quest/mission_four.lua")
+--includeFile("mission_quest/mission_five.lua")
+--includeFile("mission_quest/mission_six.lua")
+--includeFile("mission_quest/mission_seven.lua")
+--includeFile("mission_quest/mission_eight.lua")
+
+--New Badge Locations poi waypoint npc's (Not Active In Development)
+includeFile("events/poi/corellia_poi_waypoints.lua")
+includeFile("events/poi/dantooine_poi_waypoints.lua")
+includeFile("events/poi/dathomir_poi_waypoints.lua")
+includeFile("events/poi/endor_poi_waypoints.lua")
+includeFile("events/poi/lok_poi_waypoints.lua")
+includeFile("events/poi/naboo_poi_waypoints.lua")
+includeFile("events/poi/rori_poi_waypoints.lua")
+includeFile("events/poi/talus_poi_waypoints.lua")
+includeFile("events/poi/tatooine_poi_waypoints.lua")
+includeFile("events/poi/yavin4_poi_waypoints.lua")
+
 -- Server Event Automation
 includeFile("events/ServerEventAutomation.lua")
 
 -- Custom content - Loads last to allow for overrides
 includeFile("../custom_scripts/screenplays/screenplays.lua")
+
+-- World Boss Systems
+includeFile("events/worldboss_one.lua")
+includeFile("events/worldboss_two.lua")
+includeFile("events/worldboss_three.lua")
+includeFile("events/worldboss_four.lua")
+includeFile("events/worldboss_five.lua")
+--includeFile("events/worldboss_six.lua")
+--includeFile("events/worldboss_seven.lua")
+--includeFile("events/worldboss_eight.lua")
+--includeFile("events/worldboss_nine.lua")
+--includeFile("events/worldboss_ten.lua")
+--includeFile("events/worldboss_eleven.lua")
+--includeFile("events/worldboss_tewlve.lua")
+--includeFile("events/worldboss_thirteen.lua")
+--includeFile("events/worldboss_fourteen.lua")
+--includeFile("events/worldboss_fifteen.lua")
+
+--painting exchange dealer
+includeFile("events/painting_exchange_dealer.lua")

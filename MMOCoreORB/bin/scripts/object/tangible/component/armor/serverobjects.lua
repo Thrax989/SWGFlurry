@@ -45,6 +45,16 @@
 --Children folder includes
 
 -- Server Objects
+includeFile("tangible/component/armor/armor_core_base.lua")
+includeFile("tangible/component/armor/armor_core_enhancement_base.lua")
+includeFile("tangible/component/armor/armor_layer_new.lua")
+includeFile("tangible/component/armor/armor_segment_enhancement_base.lua")
+includeFile("tangible/component/armor/bio_cartridge_base.lua")
+includeFile("tangible/component/armor/armor_appearance_enhancement_base.lua")
+includeFile("tangible/component/armor/armor_appearance_enhancement_base_two.lua")
+includeFile("tangible/component/armor/armor_segment_new.lua")
+
+
 includeFile("tangible/component/armor/armor_layer.lua")
 includeFile("tangible/component/armor/armor_layer_acid.lua")
 includeFile("tangible/component/armor/armor_layer_blast.lua")

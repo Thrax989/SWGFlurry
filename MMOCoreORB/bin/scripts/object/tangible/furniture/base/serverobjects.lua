@@ -46,3 +46,5 @@
 
 -- Server Objects
 includeFile("tangible/furniture/base/furniture_base.lua")
+includeFile("tangible/furniture/base/flag_city_base.lua")
+includeFile("tangible/furniture/base/flag_home_base.lua")

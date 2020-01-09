@@ -91,28 +91,30 @@ Core3 = {
 	--To save on RAM and CPU usage, you should only enable the zones you need.
 	--In order to disable a zone, all you have to do is comment it out.
 	ZonesEnabled = {
-	--"09",
-	--"10",
-	--"11",
-	--"character_farm",
-	--"cinco_city_test_m5",
-	--"corellia",
-	--"creature_test",
-	--"dantooine",
-	--"dathomir",
-	--"dungeon1",
-	--"endor",
-	--"endor_asommers",
-	--"floratest",
-	--"godclient_test",
-	--"lok",
-	--"naboo",
-	--"otoh_gunga",
-	--"rivertest",
-	--"rori",
-	--"runtimerules",
-	--"simple",
-	--"space_09",
+	"chandrila",
+	"corellia",
+	"coruscant",
+	"dantooine",
+	"dathomir",
+	"dungeon1",
+	"dungeon2",
+	"endor",
+	"geonosis",
+	"hoth",
+	"hutta",
+	"jakku",
+	"kaas",
+	"korriban",
+	"lok",
+	"mandalore",
+	"mustafar",
+	"naboo",
+	"rori",
+	"taanab",
+	"talus",
+	"tatooine",
+	"tutorial",
+	"yavin4"
 	--"space_corellia",
 	--"space_corellia_2",
 	--"space_dantooine",
@@ -128,15 +130,7 @@ Core3 = {
 	--"space_tatooine",
 	--"space_tatooine_2",
 	--"space_yavin4",
-	--"taanab",
-	--"talus",
-	"tatooine",
-	--"test_wearables",
-	"tutorial",
-	--"umbra",
-	--"watertabletest",
-	--"yavin4"
-	},
+},
 
 
 	-- Where tre files are stored
@@ -144,58 +138,30 @@ Core3 = {
 
 	-- Each tre file (order is important!)
 	TreFiles = {
-		"default_patch.tre",
-		"packup.tre",
-		"patch_sku1_14_00.tre",
-		"patch_14_00.tre",
-		"patch_sku1_13_00.tre",
-		"patch_13_00.tre",
-		"patch_sku1_12_00.tre",
-		"patch_12_00.tre",
-		"patch_11_03.tre",
-		"data_sku1_07.tre",
-		"patch_11_02.tre",
-		"data_sku1_06.tre",
-		"patch_11_01.tre",
-		"patch_11_00.tre",
-		"data_sku1_05.tre",
-		"data_sku1_04.tre",
-		"data_sku1_03.tre",
-		"data_sku1_02.tre",
-		"data_sku1_01.tre",
-		"data_sku1_00.tre",
-		"patch_10.tre",
-		"patch_09.tre",
-		"patch_08.tre",
-		"patch_07.tre",
-		"patch_06.tre",
-		"patch_05.tre",
-		"patch_04.tre",
-		"patch_03.tre",
-		"patch_02.tre",
-		"patch_01.tre",
-		"patch_00.tre",
-		"data_other_00.tre",
-		"data_static_mesh_01.tre",
-		"data_static_mesh_00.tre",
-		"data_texture_07.tre",
-		"data_texture_06.tre",
-		"data_texture_05.tre",
-		"data_texture_04.tre",
-		"data_texture_03.tre",
-		"data_texture_02.tre",
-		"data_texture_01.tre",
-		"data_texture_00.tre",
-		"data_skeletal_mesh_01.tre",
-		"data_skeletal_mesh_00.tre",
-		"data_animation_00.tre",
-		"data_sample_04.tre",
-		"data_sample_03.tre",
-		"data_sample_02.tre",
-		"data_sample_01.tre",
-		"data_sample_00.tre",
-		"data_music_00.tre",
-		"bottom.tre"
+	"flurry2.tre",
+	"flurry1.tre",
+	"mtg_patch_022.tre",
+	"mtg_planets.tre",
+	"mtg_patch_021.tre",
+	"mtg_patch_019.tre",
+	"mtg_patch_018.tre",
+	"mtg_patch_017.tre",
+	"mtg_patch_016.tre",
+	"mtg_patch_015.tre",
+	"mtg_patch_014.tre",
+	"mtg_patch_013_configurable_02.tre",
+	"mtg_patch_012_configurable_01.tre",
+	"mtg_patch_011_files_01.tre",
+	"mtg_patch_010_object_01.tre",
+	"mtg_patch_009_Shader_01.tre",
+	"mtg_patch_008_texture_04.tre",
+	"mtg_patch_007_texture_03.tre",
+	"mtg_patch_006_texture_02.tre",
+	"mtg_patch_005_texture_01.tre",
+	"mtg_patch_004_appearance_04.tre",
+	"mtg_patch_003_appearance_03.tre",
+	"mtg_patch_002_appearance_02.tre",
+	"mtg_patch_001_appearance_01.tre"
 	},
 
 	-- Status Server Config
@@ -238,12 +204,12 @@ Core3 = {
 
 	PlayerLogLevel = 4, -- -1 NONE, 0 FATAL, 1 ERROR, 2 WARNING, 3 LOG, 4 INFO, 5 DEBUG
 	MaxLogLines = 1000000, -- how often to rotate log (currently only log/player.log rotates)
-
+	
 	------------------------
 	--Custom Server Settings
 	------------------------
 	--Structure Packup Config
-	structurePackupEnabled = "false", --Enables Structure Packup.
+	structurePackupEnabled = "true", --Enables Structure Packup.
 
 	--Structure Inactivity Packup Config
 	inactiveStructurePackupEnabled = "false", --Enables Inactive Structure Packup. Structure Packup must be enabled above.

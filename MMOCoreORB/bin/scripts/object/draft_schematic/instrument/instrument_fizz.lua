@@ -51,8 +51,8 @@ object_draft_schematic_instrument_instrument_fizz = object_draft_schematic_instr
    complexity = 11, 
    size = 1, 
 
-   xpType = "music", 
-   xp = 90, 
+   xpType = "entertainer_healing", 
+   xp = 400, 
 
    assemblySkill = "instrument_assembly", 
    experimentingSkill = "general_experimentation", 
