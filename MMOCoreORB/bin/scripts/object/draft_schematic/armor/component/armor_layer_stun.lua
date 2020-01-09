@@ -50,7 +50,7 @@ object_draft_schematic_armor_component_armor_layer_stun = object_draft_schematic
 	craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 40,
 	size = 3,
-	factoryCrateSize = 1000,
+	factoryCrateSize = 100,
 
 	xpType = "crafting_clothing_armor",
 	xp = 130,

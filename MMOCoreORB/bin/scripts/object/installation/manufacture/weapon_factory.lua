@@ -44,7 +44,6 @@
 object_installation_manufacture_weapon_factory = object_installation_manufacture_shared_weapon_factory:new {
 	templateType = FACTORY,
 	lotSize = 1,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
 	baseMaintenanceRate = 50,
 	basePowerRate = 50,
 	objectMenuComponent = "FactoryObjectMenuComponent",

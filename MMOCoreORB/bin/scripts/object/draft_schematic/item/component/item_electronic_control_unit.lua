@@ -50,7 +50,6 @@ object_draft_schematic_item_component_item_electronic_control_unit = object_draf
    craftingToolTab = 524288, -- (See DraftSchematicObjectTemplate.h)
    complexity = 15, 
    size = 2, 
-   factoryCrateSize = 1000,
 
    xpType = "crafting_general", 
    xp = 65, 

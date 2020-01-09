@@ -50,7 +50,6 @@ object_draft_schematic_food_dessert_sweet_cake_mix = object_draft_schematic_food
    craftingToolTab = 4, -- (See DraftSchematicObjectTemplate.h)
    complexity = 8, 
    size = 1, 
-   factoryCrateSize = 1000,
 
    xpType = "crafting_food_general", 
    xp = 100, 

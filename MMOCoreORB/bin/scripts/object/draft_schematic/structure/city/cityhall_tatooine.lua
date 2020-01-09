@@ -72,8 +72,6 @@ object_draft_schematic_structure_city_cityhall_tatooine = object_draft_schematic
 
 	targetTemplate = "object/tangible/deed/city_deed/cityhall_tatooine_deed.iff",
 
-	additionalTemplates = {"object/tangible/deed/city_deed/cityhall_tatooine_01_deed.iff",
-	"object/tangible/deed/city_deed/cityhall_tatooine_02_deed.iff",
-	"object/tangible/deed/city_deed/cityhall_tatooine_03_deed.iff",}
+	additionalTemplates = {}
 }
 ObjectTemplates:addTemplate(object_draft_schematic_structure_city_cityhall_tatooine, "object/draft_schematic/structure/city/cityhall_tatooine.iff")

@@ -13,7 +13,6 @@ ExperienceConverter = ScreenPlay:new {
 		combat = {
 			{ "bountyhunter", 5 },
 			{ "combat_general", 3 },
-			{ "jedi_general", 3 },
 			{ "combat_meleespecialize_onehand", 30 },
 			{ "combat_meleespecialize_polearm", 30 },
 			{ "combat_meleespecialize_twohand", 30 },
@@ -26,7 +25,6 @@ ExperienceConverter = ScreenPlay:new {
 		},
 		senses = {
 			{ "bio_engineer_dna_harvesting", 3 },
-			{ "jedi_general", 3 },
 			{ "camp", 5 },
 			{ "creaturehandler", 9 },
 			{ "dance", 10 },
@@ -43,7 +41,6 @@ ExperienceConverter = ScreenPlay:new {
 		},
 		reflex = {
 			{ "bountyhunter", 5 },
-			{ "jedi_general", 3 },
 			{ "combat_general", 3 },
 			{ "combat_meleespecialize_onehand", 30 },
 			{ "combat_meleespecialize_polearm", 30 },
@@ -57,7 +54,6 @@ ExperienceConverter = ScreenPlay:new {
 		},
 		crafting = {
 			{ "crafting_bio_engineer_creature", 4 },
-			{ "jedi_general", 3 },
 			{ "crafting_clothing_armor", 5 },
 			{ "crafting_clothing_general", 5 },
 			{ "crafting_droid_general", 5 },

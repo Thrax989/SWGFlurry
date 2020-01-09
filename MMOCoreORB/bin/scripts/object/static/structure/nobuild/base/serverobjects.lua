@@ -46,4 +46,3 @@
 
 -- Server Objects
 includeFile("static/structure/nobuild/base/nobuild_base.lua")
-includeFile("static/structure/nobuild/base/noflora_base.lua")

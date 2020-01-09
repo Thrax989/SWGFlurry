@@ -50,7 +50,6 @@ object_draft_schematic_slicing_slicing_laser_knife = object_draft_schematic_slic
    craftingToolTab = 524288, -- (See DraftSchematicObjectTemplate.h)
    complexity = 7, 
    size = 1, 
-   factoryCrateSize = 1000,
 
    xpType = "crafting_general", 
    xp = 32, 
