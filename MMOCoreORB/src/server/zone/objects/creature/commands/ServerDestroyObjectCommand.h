@@ -124,11 +124,6 @@ public:
 				}
 			}
 
-			if (object->isStructureControlDevice()) {
-				creature->sendSystemMessage("Error: You cannot delete this control device.");
-				return GENERALERROR;
-			}
-
 			destroyObject(object, creature);
 		}
 

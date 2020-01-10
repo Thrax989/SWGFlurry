@@ -70,7 +70,7 @@ int PlaceStructureSessionImplementation::constructStructure(float x, float y, in
 		}
 	}
 
-	Reference<Task*> task = new StructureConstructionCompleteTask(creature, false);
+	Reference<Task*> task = new StructureConstructionCompleteTask(creature);
 	task->schedule(constructionDuration);
 
 	return 0;
