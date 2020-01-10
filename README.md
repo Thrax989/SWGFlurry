@@ -9,10 +9,9 @@
   * [![Forums ](https://img.shields.io/badge/Server%20Forum's-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com/forum/) 
 
 <img src="http://i.imgur.com/OB4Pa6a.png">
-## Flurry Server Index  ##
-  * [![Live Server Player Stats ](https://img.shields.io/badge/Server%20LivePlayerStats-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com/stats/search.php?go) 
 
-  * [![Live Server Player Stats ](https://img.shields.io/badge/Server%20LiveServerPlayerStats-Click%20Here-005f71.svg?style=plastic)]
+## Flurry Server Index  ##
+  * [![Live Server Player Stats ](https://img.shields.io/badge/Server%20LivePlayerStats-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com/forum/) 
 
 ## This Server Is A Branch From The MTGserver
 
