@@ -45,7 +45,6 @@ looted_container = {
 		-- Armors (25% chance)
 		{groupTemplate = "armor_all", weight = 1000000},
 		{groupTemplate = "nge_all", weight = 1000000},
-
 		{groupTemplate = "outbreak", weight = 1000000},
 
 		-- Clothing (25% chance)

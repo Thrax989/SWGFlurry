@@ -12,7 +12,8 @@ carbines = {
 		{itemTemplate = "carbine_ee3", weight = 1000000},
 		{itemTemplate = "carbine_laser", weight = 500000},
 		{itemTemplate = "carbine_elite", weight = 500000},
-		{itemTemplate = "carbine_dxr6", weight = 500000}
+		{itemTemplate = "carbine_dxr6", weight = 250000},
+		{groupTemplate = "nge_all", weight = 250000},
 	}
 }
 

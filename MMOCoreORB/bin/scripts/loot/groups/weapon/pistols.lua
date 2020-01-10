@@ -19,7 +19,8 @@ pistols = {
 		{itemTemplate = "pistol_scout_trooper", weight = 700000},
 		{itemTemplate = "pistol_sr_combat", weight = 700000},
 		{itemTemplate = "pistol_striker", weight = 700000},
-		{itemTemplate = "pistol_tangle", weight = 500000},
+		{itemTemplate = "pistol_tangle", weight = 250000},
+		{groupTemplate = "nge_all", weight = 250000},
 	}
 }
 
