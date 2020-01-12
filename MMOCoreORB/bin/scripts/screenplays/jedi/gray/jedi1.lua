@@ -19,12 +19,12 @@ function jedi1:start()
 end
   
 function jedi1:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("corellia", "object/active_area.iff", 0, 0, 0, 0, 0, 0, 0, 0)
+	local pSpawnArea = spawnSceneObject("dathomir", "object/active_area.iff", 5306, 0, -4145, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(340)
+	        activeArea:setRadius(10)
 	        createObserver(ENTEREDAREA, "jedi1", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "jedi1", "notifySpawnAreaLeave", pSpawnArea)
 	    end
@@ -41,14 +41,14 @@ function jedi1:notifySpawnArea(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-        local thisState = player:getScreenPlayState(jediQuest.questString)
+        local jediLives = player:getScreenPlayState(jediQuest.questString)
 
-        if ( thisState ~= 1 ) then
+        if ( jediLives >= 1 ) then
 		if (player:isImperial() or player:isRebel() or player:isNeutral()) then
-			player:sendSystemMessage("You must have the quest state to enter the zone!")
-			player:teleport(0, 0, 0, 0)
+			player:sendSystemMessage("You have entered the Gray jedi Training area.")
 		else
-			player:sendSystemMessage("You have entered the Quest Zone")
+			player:sendSystemMessage("You must be a gray jedi to enter this area.")
+			player:teleport(0, 0, 0, 0)
 		end
 		return 0
 	end)
@@ -66,7 +66,7 @@ function jedi1:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		end
  
 		if (player:isImperial() or player:isRebel() or player:isNeutral()) then
-			player:sendSystemMessage("You have left the Quest zone!")
+			player:sendSystemMessage("You have left the Training area!")
 		end
 		return 0
 	end)
