@@ -70,9 +70,9 @@ baseStoredShips = 5
 -----------------------------------
 --VETERAN REWARDS CONFIG
 -----------------------------------
-veteranRewardMilestones = {30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360} --days, must be sorted low to high
+veteranRewardMilestones = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 120, 150, 180, 210, 240, 270, 300, 330, 360, 365} --days, must be sorted low to high
 
-veteranRewardAdditionalMilestones = 360 --frequency, in days, of additional milestones (beyond the established ones)
+veteranRewardAdditionalMilestones = 365 --frequency, in days, of additional milestones (beyond the established ones)
 
 veteranRewards = {
 
@@ -299,6 +299,9 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/one_year_anniversary/painting_09.iff", milestone=360, oneTime=false, description="Painting: Emperor's Eyes (TIE Sentinel)"},
 		{templateFile = "object/tangible/wearables/armor/nightsister/armor_nightsister_bicep_r_s01.iff", milestone=360, oneTime=true, description="Nightsister Melee Armguard"},
 		{templateFile = "object/tangible/veteran_reward/resource.iff", milestone=360, oneTime=true, description="@veteran_new:resourcecrate"},
+		-- 365 Day Rewards
+		{templateFile = "object/tangible/furniture/modern/rug_rect_lg_s01.iff", milestone=365, oneTime=false, description="Large Rectangular Rug (Style 1)"},
+		{templateFile = "object/tangible/furniture/modern/rug_rect_lg_s02.iff", milestone=365, oneTime=false, description="Large Rectangular Rug (Style 2)"},
 }
 
 -- { "stringId", "songFilePath" }
