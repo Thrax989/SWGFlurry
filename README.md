@@ -1,7 +1,8 @@
 ## Repository EST Dec 29, 2016 
 
 ## Flurry Server Index  ##
-  * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/XHmEz9F) [![GitHub last commit](https://img.shields.io/github/last-commit/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/commits/master) [![License](https://img.shields.io/github/license/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/blob/master/COPYING)
+  * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/RVx66Sw) [![GitHub last commit](https://img.shields.io/github/last-commit/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/commits/master) [![License](https://img.shields.io/github/license/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/blob/master/COPYING)
+
   * [![Server RoadMap ](https://img.shields.io/badge/Server%20Roadmap-Click%20Here-005f71.svg?style=plastic)](https://trello.com/b/fawSAKWE/swg-flurry-classic-server)
   * [![Server Client ](https://img.shields.io/badge/Server%20Client-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com/Launcher/SWGFlurry_Launcher_0.0.3.7.exe) 
   * [![Server Tre's ](https://img.shields.io/badge/Server%20Tre's-Click%20Here-005f71.svg?style=plastic)](https://mega.nz/#F!fw0EzZ4I!RfRwyqE859Ad3kGlQv7T4Q) 
@@ -203,3 +204,15 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 For more information, see https://review.swgemu.com.
+
+### Credits to the following servers for there additional code contributions that we use in our code.
+  * Awakening
+  * Basilisk
+  * Clone Wars
+  * Empire in Flames
+  * Infinity
+  * Reckoning
+  * Sentinels Republi
+  * SWG-Europa
+  * Sunrunner II
+  * Tarkins Revenge
