@@ -75,7 +75,48 @@ veteranRewardMilestones = {30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 3
 veteranRewardAdditionalMilestones = 360 --frequency, in days, of additional milestones (beyond the established ones)
 
 veteranRewards = {
+
+		-- 5 Day Rewards
+		{templateFile = "object/tangible/tcg/series1/consumable_hans_hydrospanner.iff", milestone=5, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series1/consumable_keelkana_tooth.iff", milestone=5, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series1/consumable_lepese_dictionary.iff", milestone=5, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series1/consumable_mandalorian_strongbox.iff", milestone=5, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series1/consumable_nuna_ball_advertisement.iff", milestone=5, oneTime=false, description=""},
+
+		-- 10 Day Rewards
+		{templateFile = "", milestone=10, oneTime=false, description=""},
+		{templateFile = "", milestone=10, oneTime=false, description=""},
+		{templateFile = "", milestone=10, oneTime=false, description=""},
+		{templateFile = "", milestone=10, oneTime=false, description=""},
+		{templateFile = "", milestone=10, oneTime=false, description=""},
+		
+		-- 15 Day Rewards
+		{templateFile = "", milestone=15, oneTime=false, description=""},
+		{templateFile = "", milestone=15, oneTime=false, description=""},
+		{templateFile = "", milestone=15, oneTime=false, description=""},
+		{templateFile = "", milestone=15, oneTime=false, description=""},
+		{templateFile = "", milestone=15, oneTime=false, description=""},
+		
+		-- 20 Day Rewards
+		{templateFile = "", milestone=20, oneTime=false, description=""},
+		{templateFile = "", milestone=20, oneTime=false, description=""},
+		{templateFile = "", milestone=20, oneTime=false, description=""},
+		{templateFile = "", milestone=20, oneTime=false, description=""},
+		{templateFile = "", milestone=20, oneTime=false, description=""},
+		
+		-- 25 Day Rewards
+		{templateFile = "", milestone=25, oneTime=false, description=""},
+		{templateFile = "", milestone=25, oneTime=false, description=""},
+		{templateFile = "", milestone=25, oneTime=false, description=""},
+		{templateFile = "", milestone=25, oneTime=false, description=""},
+		{templateFile = "", milestone=25, oneTime=false, description=""},
+		
 		-- 30 Day Rewards
+		{templateFile = "", milestone=30, oneTime=false, description=""},
+		{templateFile = "", milestone=30, oneTime=false, description=""},
+		{templateFile = "", milestone=30, oneTime=false, description=""},
+		{templateFile = "", milestone=30, oneTime=false, description=""},
+		{templateFile = "", milestone=30, oneTime=false, description=""},
 		{templateFile = "object/tangible/veteran_reward/harvester.iff", milestone=30, oneTime=true, description="@veteran_new:poweredharvester"},
 		{templateFile = "object/tangible/veteran_reward/data_terminal_s1.iff", milestone=30, oneTime=false, description="@veteran_new:dataterminal1"},
 		{templateFile = "object/tangible/veteran_reward/data_terminal_s2.iff", milestone=30, oneTime=false, description="@veteran_new:dataterminal2"},
@@ -83,12 +124,94 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/data_terminal_s4.iff", milestone=30, oneTime=false, description="@veteran_new:dataterminal4"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_protocol_droid_toy.iff", milestone=30, oneTime=false, description="@veteran_new:mini_protocoldroid"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_r2_toy.iff", milestone=30, oneTime=false, description="@veteran_new:mini_r2"},
+		
+		-- 35 Day Rewards
+		{templateFile = "", milestone=35, oneTime=false, description=""},
+		{templateFile = "", milestone=35, oneTime=false, description=""},
+		{templateFile = "", milestone=35, oneTime=false, description=""},
+		{templateFile = "", milestone=35, oneTime=false, description=""},
+		{templateFile = "", milestone=35, oneTime=false, description=""},
+		
+		-- 40 Day Rewards
+		{templateFile = "", milestone=40, oneTime=false, description=""},
+		{templateFile = "", milestone=40, oneTime=false, description=""},
+		{templateFile = "", milestone=40, oneTime=false, description=""},
+		{templateFile = "", milestone=40, oneTime=false, description=""},
+		{templateFile = "", milestone=40, oneTime=false, description=""},
+		
+		-- 45 Day Rewards
+		{templateFile = "", milestone=45, oneTime=false, description=""},
+		{templateFile = "", milestone=45, oneTime=false, description=""},
+		{templateFile = "", milestone=45, oneTime=false, description=""},
+		{templateFile = "", milestone=45, oneTime=false, description=""},
+		{templateFile = "", milestone=45, oneTime=false, description=""},
+		
+		-- 50 Day Rewards
+		{templateFile = "", milestone=50, oneTime=false, description=""},
+		{templateFile = "", milestone=50, oneTime=false, description=""},
+		{templateFile = "", milestone=50, oneTime=false, description=""},
+		{templateFile = "", milestone=50, oneTime=false, description=""},
+		{templateFile = "", milestone=50, oneTime=false, description=""},
+		
+		-- 55 Day Rewards
+		{templateFile = "", milestone=55, oneTime=false, description=""},
+		{templateFile = "", milestone=55, oneTime=false, description=""},
+		{templateFile = "", milestone=55, oneTime=false, description=""},
+		{templateFile = "", milestone=55, oneTime=false, description=""},
+		{templateFile = "", milestone=55, oneTime=false, description=""},
+		
 		-- 60 Day Rewards
+		{templateFile = "", milestone=60, oneTime=false, description=""},
+		{templateFile = "", milestone=60, oneTime=false, description=""},
+		{templateFile = "", milestone=60, oneTime=false, description=""},
+		{templateFile = "", milestone=60, oneTime=false, description=""},
+		{templateFile = "", milestone=60, oneTime=false, description=""},
 		{templateFile = "object/tangible/veteran_reward/frn_couch_falcon_corner_s01.iff", milestone=60, oneTime=false, description="@veteran_new:falconcouch"},
 		{templateFile = "object/tangible/veteran_reward/frn_couch_falcon_section_s01.iff", milestone=60, oneTime=false, description="@veteran_new:falconchair"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_tie_fighter_toy.iff", milestone=60, oneTime=false, description="@veteran_new:mini_tiefighter"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_x_wing_toy.iff", milestone=60, oneTime=false, description="@veteran_new:mini_xwing"},
+		
+		-- 65 Day Rewards
+		{templateFile = "", milestone=65, oneTime=false, description=""},
+		{templateFile = "", milestone=65, oneTime=false, description=""},
+		{templateFile = "", milestone=65, oneTime=false, description=""},
+		{templateFile = "", milestone=65, oneTime=false, description=""},
+		{templateFile = "", milestone=65, oneTime=false, description=""},
+		
+		-- 7 Day Rewards
+		{templateFile = "", milestone=75, oneTime=false, description=""},
+		{templateFile = "", milestone=75, oneTime=false, description=""},
+		{templateFile = "", milestone=75, oneTime=false, description=""},
+		{templateFile = "", milestone=75, oneTime=false, description=""},
+		{templateFile = "", milestone=75, oneTime=false, description=""},
+		
+		-- 75 Day Rewards
+		{templateFile = "", milestone=75, oneTime=false, description=""},
+		{templateFile = "", milestone=75, oneTime=false, description=""},
+		{templateFile = "", milestone=75, oneTime=false, description=""},
+		{templateFile = "", milestone=75, oneTime=false, description=""},
+		{templateFile = "", milestone=75, oneTime=false, description=""},
+		
+		-- 80 Day Rewards
+		{templateFile = "", milestone=85, oneTime=false, description=""},
+		{templateFile = "", milestone=85, oneTime=false, description=""},
+		{templateFile = "", milestone=85, oneTime=false, description=""},
+		{templateFile = "", milestone=85, oneTime=false, description=""},
+		{templateFile = "", milestone=85, oneTime=false, description=""},
+		
+		-- 85 Day Rewards
+		{templateFile = "", milestone=85, oneTime=false, description=""},
+		{templateFile = "", milestone=85, oneTime=false, description=""},
+		{templateFile = "", milestone=85, oneTime=false, description=""},
+		{templateFile = "", milestone=85, oneTime=false, description=""},
+		{templateFile = "", milestone=85, oneTime=false, description=""},
+		
 		-- 90 Day Rewards
+		{templateFile = "", milestone=95, oneTime=false, description=""},
+		{templateFile = "", milestone=95, oneTime=false, description=""},
+		{templateFile = "", milestone=95, oneTime=false, description=""},
+		{templateFile = "", milestone=95, oneTime=false, description=""},
+		{templateFile = "", milestone=95, oneTime=false, description=""},
 		{templateFile = "object/tangible/deed/vehicle_deed/speederbike_flash_deed.iff", milestone=90, oneTime=true},
 		{templateFile = "object/tangible/wearables/goggles/goggles_s01.iff", milestone=90, oneTime=false, description="Special Edition Goggles Style 1"},
 		{templateFile = "object/tangible/wearables/goggles/goggles_s02.iff", milestone=90, oneTime=false, description="Special Edition Goggles Style 2"},
@@ -97,6 +220,21 @@ veteranRewards = {
 		{templateFile = "object/tangible/wearables/goggles/goggles_s05.iff", milestone=90, oneTime=false, description="Special Edition Goggles Style 5"},
 		{templateFile = "object/tangible/wearables/goggles/goggles_s06.iff", milestone=90, oneTime=false, description="Special Edition Goggles Style 6"},
 		{templateFile = "object/tangible/veteran_reward/frn_vet_darth_vader_toy.iff", milestone=90, oneTime=false, description="@veteran_new:mini_darthvader"},
+		
+		-- 95 Day Rewards
+		{templateFile = "", milestone=95, oneTime=false, description=""},
+		{templateFile = "", milestone=95, oneTime=false, description=""},
+		{templateFile = "", milestone=95, oneTime=false, description=""},
+		{templateFile = "", milestone=95, oneTime=false, description=""},
+		{templateFile = "", milestone=95, oneTime=false, description=""},
+		
+		-- 100 Day Rewards
+		{templateFile = "", milestone=100, oneTime=false, description=""},
+		{templateFile = "", milestone=100, oneTime=false, description=""},
+		{templateFile = "", milestone=100, oneTime=false, description=""},
+		{templateFile = "", milestone=100, oneTime=false, description=""},
+		{templateFile = "", milestone=100, oneTime=false, description=""},
+
 		-- 120 Day Rewards
 		{templateFile = "object/tangible/veteran_reward/frn_tech_console_sectional_a.iff", milestone=120, oneTime=false, description="@veteran_new:techconsole_a"},
 		{templateFile = "object/tangible/veteran_reward/frn_tech_console_sectional_b.iff", milestone=120, oneTime=false, description="@veteran_new:techconsole_b"},
