@@ -1,6 +1,5 @@
 object_tangible_wearables_backpack_nym_themepark_backpack = object_tangible_wearables_backpack_shared_nym_themepark_backpack:new {
 	playerRaces = { "object/creature/player/abyssin_male.iff",
-	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
 				"object/mobile/vendor/abyssin_female.iff",
