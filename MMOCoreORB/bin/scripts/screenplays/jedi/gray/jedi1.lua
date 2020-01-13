@@ -1,6 +1,6 @@
 --------------------------------------
 --   Creator : TOXIC
---   Date : 03/25/2019
+--   Date : 01/12/2020
 --------------------------------------
 local ObjectManager = require("managers.object.object_manager")
 
@@ -19,7 +19,7 @@ function jedi1:start()
 end
   
 function jedi1:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("dathomir", "object/active_area.iff", 5306, 0, -4145, 0, 0, 0, 0, 0)
+	local pSpawnArea = spawnSceneObject("dathomir", "object/active_area.iff", 5297, 78, -4129, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
@@ -41,14 +41,11 @@ function jedi1:notifySpawnArea(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-        local jediLives = player:getScreenPlayState(jediQuest.questString)
-
-        if ( jediLives >= 1 ) then
-		if (player:isImperial() or player:isRebel() or player:isNeutral()) then
-			player:sendSystemMessage("You have entered the Gray jedi Training area.")
+		if (player:hasSkill("combat_jedi_novice")) then
+			player:sendSystemMessage("You have entered the training area!")
 		else
-			player:sendSystemMessage("You must be a gray jedi to enter this area.")
-			player:teleport(0, 0, 0, 0)
+			player:sendSystemMessage("You must be a gray jedi to enter the training area!")
+			player:teleport(5285, 78, -4171, 0)
 		end
 		return 0
 	end)
@@ -64,9 +61,9 @@ function jedi1:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		if (player:isAiAgent()) then
 			return 0
 		end
- 
-		if (player:isImperial() or player:isRebel() or player:isNeutral()) then
-			player:sendSystemMessage("You have left the Training area!")
+		
+		if (player:hasSkill("combat_jedi_novice")) then
+			player:sendSystemMessage("You have left training area!")
 		end
 		return 0
 	end)
