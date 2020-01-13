@@ -37,6 +37,12 @@ nightsister_slave = Creature:new {
 		},
 		{
 			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
 				{group = "wearables_common", chance = 10000000},
 			},
 			lootChance = 3000000

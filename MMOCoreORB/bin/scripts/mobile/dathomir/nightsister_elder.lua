@@ -37,6 +37,12 @@ nightsister_elder = Creature:new {
 		},
 		{
 			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
 				{group = "color_crystals", chance = 10000000},
 			},
 			lootChance = 500000

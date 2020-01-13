@@ -7,7 +7,7 @@
 
 #ifndef STRUCTUREPAYMAINTENANCESUICALLBACK_H_
 #define STRUCTUREPAYMAINTENANCESUICALLBACK_H_
-#include "server/zone/objects/intangible/StructureControlDevice.h"
+
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/structure/StructureObject.h"
@@ -32,7 +32,7 @@ public:
 
 		ManagedReference<SceneObject*> obj = sui->getUsingObject().get();
 
-		if (obj == nullptr || (!obj->isStructureObject() && !obj->isStructureControlDevice())) {
+		if (obj == nullptr || !obj->isStructureObject()) {
 			creature->sendSystemMessage("@player_structure:invalid_target"); // "Your original structure target is no longer valid. Aborting..."
 			return;
 		}
@@ -40,12 +40,10 @@ public:
 		//Deposit/Withdraw the maintenance
 		StructureObject* structure = cast<StructureObject*>(obj.get());
 
-		if (obj->isStructureControlDevice()) {
-			StructureControlDevice* device = cast<StructureControlDevice*>(obj.get());
+		ManagedReference<Zone*> zone = structure->getZone();
 
-			if (device != nullptr)
-				structure = cast<StructureObject*>(device->getControlledObject());
-		}
+		if (zone == nullptr)
+			return;
 
 		//Creature is already locked (done in handleSuiEventNotification in SuiManager).
 		Locker _lock(structure, creature);

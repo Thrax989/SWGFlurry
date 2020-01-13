@@ -52,8 +52,8 @@ int EventMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creatur
 	lootManager->createLoot(inventory, "tierone", 300);
 	lootManager->createLoot(inventory, "tierdiamond", 300);
 	player->playEffect("clienteffect/level_granted.cef", "");
-	ghost->updateEventplayerCrate();
-	sceneObject->destroyObjectFromEvent(true);
+	ghost->updateeventplayerCrate();
+	sceneObject->destroyObjectFromWorld(true);
 	sceneObject->destroyObjectFromDatabase(true);	
 	}
 	return 0;

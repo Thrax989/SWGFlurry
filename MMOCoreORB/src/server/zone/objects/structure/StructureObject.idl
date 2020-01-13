@@ -3,7 +3,7 @@
 		See file COPYING for copying conditions.*/
 
 package server.zone.objects.structure;
-include server.zone.objects.intangible.ControlDevice;
+
 import server.zone.Zone;
 import server.zone.objects.tangible.TangibleObject;
 import server.zone.objects.structure.events.StructureMaintenanceTask;
@@ -45,9 +45,6 @@ class StructureObject extends TangibleObject {
 
 	protected boolean permissionsFixed;
 
-	@weakReference
-	protected ControlDevice controlDevice;
-
 	public StructureObject() {
 		Logger.setLoggingName("StructureObject");
 
@@ -70,7 +67,6 @@ class StructureObject extends TangibleObject {
 		permissionsFixed = false;
 
 		navArea = null;
-		controlDevice = null;
 	}
 
 	public native void initializeTransientMembers();
@@ -470,11 +466,6 @@ class StructureObject extends TangibleObject {
 		return "";
 	}
 
-	@dirty
-	public abstract string getPackupMessage() {
-		return "";
-	}
-
 	@read
 	public native boolean isCivicStructure();
 
@@ -505,22 +496,4 @@ class StructureObject extends TangibleObject {
 
 	@preLocked
 	public native abstract void createNavMesh();
-
-	@preLocked
-	public void setControlDevice(ControlDevice device) {
-		controlDevice = device;
-	}
-
-	@weakReference
-	@read
-	public ControlDevice getControlDevice() {
-		return controlDevice;
-	}
-
-	@dirty
-	public boolean isPackedUp() {
-		return controlDevice != null;
-	}
-
-	public native boolean unloadFromZone(boolean sendSelfDestroy);
 }
