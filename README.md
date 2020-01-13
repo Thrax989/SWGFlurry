@@ -144,11 +144,12 @@ Thank you to the following server that provided custom content / alterations to 
   * Empire in Flames
   * Infinity
   * Reckoning
-  * Sentinels
+  * Sentinels Republic
   * Stardust
   * SWG-Europa
   * SWG-Rehab
   * Sunrunner II
+  * Tarkins Revenge
 
 # SWGEmu Core3 #
 
