@@ -204,15 +204,3 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 For more information, see https://review.swgemu.com.
-
-### Credits to the following servers for there additional code contributions that we use in our code.
-  * Awakening
-  * Basilisk
-  * Clone Wars
-  * Empire in Flames
-  * Infinity
-  * Reckoning
-  * Sentinels Republi
-  * SWG-Europa
-  * Sunrunner II
-  * Tarkins Revenge
