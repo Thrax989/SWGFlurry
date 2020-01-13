@@ -77,39 +77,39 @@ veteranRewardAdditionalMilestones = 365 --frequency, in days, of additional mile
 veteranRewards = {
 
 		-- 5 Day Rewards
-		{templateFile = "object/tangible/tcg/series1/consumable_hans_hydrospanner.iff", milestone=5, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/consumable_keelkana_tooth.iff", milestone=5, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/consumable_lepese_dictionary.iff", milestone=5, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/consumable_mandalorian_strongbox.iff", milestone=5, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series1/consumable_hans_hydrospanner.iff", milestone=5, oneTime=false, description="hans hydrospanner"},
+		{templateFile = "object/tangible/tcg/series1/consumable_keelkana_tooth.iff", milestone=5, oneTime=false, description="keelkana tooth"},
+		{templateFile = "object/tangible/tcg/series1/consumable_lepese_dictionary.iff", milestone=5, oneTime=false, description="lepese dictionary"},
+		{templateFile = "object/tangible/tcg/series1/consumable_mandalorian_strongbox.iff", milestone=5, oneTime=false, description="mandalorian strongbox"},
 		{templateFile = "object/tangible/tcg/series1/consumable_nuna_ball_advertisement.iff", milestone=5, oneTime=false, description=""},
 
 		-- 10 Day Rewards
-		{templateFile = "object/tangible/tcg/series1/consumable_radtrooper_badge.iff", milestone=10, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/consumable_versafunction88_datapad.iff", milestone=10, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_bas_relief.iff", milestone=10, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_chon_bust.iff", milestone=10, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_computer_console_01.iff", milestone=10, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series1/consumable_radtrooper_badge.iff", milestone=10, oneTime=false, description="radtrooper badge"},
+		{templateFile = "object/tangible/tcg/series1/consumable_versafunction88_datapad.iff", milestone=10, oneTime=false, description="versafunction88 datpad"},
+		{templateFile = "object/tangible/tcg/series1/decorative_bas_relief.iff", milestone=10, oneTime=false, description="bas relief"},
+		{templateFile = "object/tangible/tcg/series1/decorative_chon_bust.iff", milestone=10, oneTime=false, description="chon bust"},
+		{templateFile = "object/tangible/tcg/series1/decorative_computer_console_01.iff", milestone=10, oneTime=false, description="computer console 01"},
 		
 		-- 15 Day Rewards
-		{templateFile = "object/tangible/tcg/series1/decorative_computer_console_02.iff", milestone=15, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_display_case_01.iff", milestone=15, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_display_case_02.iff", milestone=15, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_dooku_bust.iff", milestone=15, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_drink_dispenser.iff", milestone=15, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series1/decorative_computer_console_02.iff", milestone=15, oneTime=false, description="computer console 02"},
+		{templateFile = "object/tangible/tcg/series1/decorative_display_case_01.iff", milestone=15, oneTime=false, description="display case 01"},
+		{templateFile = "object/tangible/tcg/series1/decorative_display_case_02.iff", milestone=15, oneTime=false, description="display case 02"},
+		{templateFile = "object/tangible/tcg/series1/decorative_dooku_bust.iff", milestone=15, oneTime=false, description="dooku bust"},
+		{templateFile = "object/tangible/tcg/series1/decorative_drink_dispenser.iff", milestone=15, oneTime=false, description="drink dispenser"},
 		
 		-- 20 Day Rewards
-		{templateFile = "object/tangible/tcg/series1/decorative_fish_tank.iff", milestone=20, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_indoor_fountain_01.iff", milestone=20, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_indoor_fountain_02.iff", milestone=20, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_indoor_garden_01.iff", milestone=20, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_indoor_garden_02.iff", milestone=20, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series1/decorative_fish_tank.iff", milestone=20, oneTime=false, description="fish tank"},
+		{templateFile = "object/tangible/tcg/series1/decorative_indoor_fountain_01.iff", milestone=20, oneTime=false, description="indoor fountain 01"},
+		{templateFile = "object/tangible/tcg/series1/decorative_indoor_fountain_02.iff", milestone=20, oneTime=false, description="indoor fountain 02"},
+		{templateFile = "object/tangible/tcg/series1/decorative_indoor_garden_01.iff", milestone=20, oneTime=false, description="indoor garden 01"},
+		{templateFile = "object/tangible/tcg/series1/decorative_indoor_garden_02.iff", milestone=20, oneTime=false, description="indoor garden 02"},
 		
 		-- 25 Day Rewards
-		{templateFile = "object/tangible/tcg/series1/decorative_jedi_library_bookshelf.iff", milestone=25, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_painting_alliance_propaganda.iff", milestone=25, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_painting_darth_vader.iff", milestone=25, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_painting_imperial_propaganda.iff", milestone=25, oneTime=false, description=""},
-		{templateFile = "object/tangible/tcg/series1/decorative_painting_jedi_crest.iff", milestone=25, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series1/decorative_jedi_library_bookshelf.iff", milestone=25, oneTime=false, description="jedi library bookshelf"},
+		{templateFile = "object/tangible/tcg/series1/decorative_painting_alliance_propaganda.iff", milestone=25, oneTime=false, description="painting allaince propaganda"},
+		{templateFile = "object/tangible/tcg/series1/decorative_painting_darth_vader.iff", milestone=25, oneTime=false, description="painting darth vader"},
+		{templateFile = "object/tangible/tcg/series1/decorative_painting_imperial_propaganda.iff", milestone=25, oneTime=false, description="painting imperial propaganda"},
+		{templateFile = "object/tangible/tcg/series1/decorative_painting_jedi_crest.iff", milestone=25, oneTime=false, description="painting jedi crest"},
 		
 		-- 30 Day Rewards
 		{templateFile = "object/tangible/tcg/series1/decorative_painting_trooper.iff", milestone=30, oneTime=false, description=""},
