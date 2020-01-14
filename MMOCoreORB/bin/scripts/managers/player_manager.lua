@@ -70,7 +70,7 @@ baseStoredShips = 5
 -----------------------------------
 --VETERAN REWARDS CONFIG
 -----------------------------------
-veteranRewardMilestones = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 120, 150, 180, 210, 240, 270, 300, 330, 360, 365} --days, must be sorted low to high
+veteranRewardMilestones = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 150, 180, 210, 240, 270, 300, 330, 360, 365} --days, must be sorted low to high
 
 veteranRewardAdditionalMilestones = 365 --frequency, in days, of additional milestones (beyond the established ones)
 
@@ -363,6 +363,35 @@ veteranRewards = {
 		-- 365 Day Rewards
 		{templateFile = "object/tangible/furniture/modern/rug_rect_lg_s01.iff", milestone=365, oneTime=false, description="Large Rectangular Rug (Style 1)"},
 		{templateFile = "object/tangible/furniture/modern/rug_rect_lg_s02.iff", milestone=365, oneTime=false, description="Large Rectangular Rug (Style 2)"},
+		{templateFile = "object/tangible/tcg/series6/multi_item_baby_colo_claw_set.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/painting_nightsister.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/painting_spined_rancor.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/painting_travel_ad_coruscant.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/decorative_jabba_bed.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/multi_item_baby_colo_claw_set.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/painting_travel_ad_ord_mantell.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/painting_winged_quenker.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/reuseable_buff_item_auto_feeder.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/reuseable_buff_item_beast_muzzle.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/reuseable_buff_item_shock_collar.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/statuette_lando.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/wearable_greedos_outfit.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/wearable_guise_of_fire.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/wearable_guise_of_ice.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series5/wearable_ceremonial_travel_headdress.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/combine_object_battle_droid_statuette.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/combine_object_hk47_mustafar_diorama.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/combine_object_hk47_statuette.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/combine_object_hk_droids_poster.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/consumable_ponda_baba_arm.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/decorative_baby_colo_claw_fish.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/decorative_baby_colo_claw_fishtank.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/decorative_house_lamp.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/dewback_armor_statue.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/diorama_han_greedo.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/diorama_jedi_council.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "object/tangible/tcg/series6/hologram_cloud_city.iff", milestone=365, oneTime=false, description=""},
+		{templateFile = "", milestone=365, oneTime=false, description=""},
 }
 
 -- { "stringId", "songFilePath" }
