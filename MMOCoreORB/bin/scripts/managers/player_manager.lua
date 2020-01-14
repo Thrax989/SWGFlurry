@@ -275,6 +275,27 @@ veteranRewards = {
 		{templateFile = "object/tangible/tcg/series5/hangar_ships/ywing.iff", milestone=100, oneTime=false, description="Ywing"},
 		{templateFile = "object/tangible/tcg/series5/hangar_ships/z95.iff", milestone=100, oneTime=false, description="Z95"},
 		
+		-- 105 Day Rewards
+		{templateFile = "object/tangible/tcg/series6/diorama_jedi_council.iff", milestone=105, oneTime=false, description="Tauntaun ride"},
+		{templateFile = "object/tangible/tcg/series6/hologram_cloud_city.iff", milestone=105, oneTime=false, description="Tcg rug 01"},
+		{templateFile = "object/tangible/tcg/series6/multi_item_baby_colo_claw_set.iff", milestone=105, oneTime=false, description="Video game table"},
+		{templateFile = "object/tangible/tcg/series6/painting_nightsister.iff", milestone=105, oneTime=false, description="Chandrilan dress"},
+		{templateFile = "object/tangible/tcg/series6/painting_spined_rancor.iff", milestone=105, oneTime=false, description="Guise of vapaad"},
+
+		-- 110 Day Rewards
+		{templateFile = "object/tangible/tcg/series6/painting_travel_ad_coruscant.iff", milestone=110, oneTime=false, description="Tauntaun ride"},
+		{templateFile = "object/tangible/tcg/series6/painting_travel_ad_ord_mantell.iff", milestone=110, oneTime=false, description="Tcg rug 01"},
+		{templateFile = "object/tangible/tcg/series4/video_game_table.iff", milestone=110, oneTime=false, description="Video game table"},
+		{templateFile = "object/tangible/tcg/series6/painting_winged_quenker.iff", milestone=110, oneTime=false, description="Chandrilan dress"},
+		{templateFile = "object/tangible/tcg/series6/reuseable_buff_item_auto_feeder.iff", milestone=110, oneTime=false, description="Guise of vapaad"},
+		
+		-- 115 Day Rewards
+		{templateFile = "object/tangible/tcg/series6/reuseable_buff_item_beast_muzzle.iff", milestone=115, oneTime=false, description="Tauntaun ride"},
+		{templateFile = "object/tangible/tcg/series6/reuseable_buff_item_shock_collar.iff", milestone=115, oneTime=false, description="Tcg rug 01"},
+		{templateFile = "object/tangible/tcg/series4/video_game_table.iff", milestone=115, oneTime=false, description="Video game table"},
+		{templateFile = "object/tangible/tcg/series4/wearable_chandrilan_dress.iff", milestone=115, oneTime=false, description="Chandrilan dress"},
+		{templateFile = "object/tangible/tcg/series4/wearable_guise_of_vapaad.iff", milestone=115, oneTime=false, description="Guise of vapaad"},
+	
 		-- 120 Day Rewards
 		{templateFile = "object/tangible/veteran_reward/frn_tech_console_sectional_a.iff", milestone=120, oneTime=false, description="@veteran_new:techconsole_a"},
 		{templateFile = "object/tangible/veteran_reward/frn_tech_console_sectional_b.iff", milestone=120, oneTime=false, description="@veteran_new:techconsole_b"},
