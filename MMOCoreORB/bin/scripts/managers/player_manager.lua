@@ -115,8 +115,8 @@ veteranRewards = {
 		{templateFile = "object/tangible/tcg/series1/decorative_painting_trooper.iff", milestone=30, oneTime=false, description="Painitng trooper"},
 		{templateFile = "object/tangible/tcg/series1/decorative_statuette_darth_vader.iff", milestone=30, oneTime=false, description="Statuette darth vader"},
 		{templateFile = "object/tangible/tcg/series1/decorative_statuette_princess_leia.iff", milestone=30, oneTime=false, description="Statuette princess leia"},
-		{templateFile = "object/tangible/tcg/series1/greeter_deed_bomarr_monk.iff", milestone=30, oneTime=false, description="reeter deed bomarr monk"},
-		{templateFile = "object/tangible/tcg/series1/greeter_deed_ewok.iff", milestone=30, oneTime=false, description="greeter deed ewok"},
+		{templateFile = "object/tangible/tcg/series5/furniture_tie_fighter_chair.iff", milestone=30, oneTime=false, description="Tie fighter chair"},
+		{templateFile = "object/tangible/tcg/series6/combine_object_battle_droid_statuette.iff", milestone=30, oneTime=false, description="Battle droid statuette"},
 		{templateFile = "object/tangible/veteran_reward/harvester.iff", milestone=30, oneTime=true, description="@veteran_new:poweredharvester"},
 		{templateFile = "object/tangible/veteran_reward/data_terminal_s1.iff", milestone=30, oneTime=false, description="@veteran_new:dataterminal1"},
 		{templateFile = "object/tangible/veteran_reward/data_terminal_s2.iff", milestone=30, oneTime=false, description="@veteran_new:dataterminal2"},
@@ -126,11 +126,11 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/frn_vet_r2_toy.iff", milestone=30, oneTime=false, description="@veteran_new:mini_r2"},
 		
 		-- 35 Day Rewards
-		{templateFile = "object/tangible/tcg/series1/greeter_deed_gungan.iff", milestone=35, oneTime=false, description="greeter deed gugan"},
-		{templateFile = "object/tangible/tcg/series1/greeter_deed_jawa.iff", milestone=35, oneTime=false, description="greeter deed jawa"},
-		{templateFile = "object/tangible/tcg/series1/greeter_deed_meatlump.iff", milestone=35, oneTime=false, description="greeter deed meatlump"},
-		{templateFile = "object/tangible/tcg/series1/greeter_deed_serving_droid.iff", milestone=35, oneTime=false, description="greeter deed serving droid"},
-		{templateFile = "object/tangible/tcg/series1/house_capacity_beru_whitesuns_cookbook.iff", milestone=35, oneTime=false, description="house capacity beru whitesuns cookbook"},
+		{templateFile = "object/tangible/tcg/series6/combine_object_hk47_mustafar_diorama.iff", milestone=35, oneTime=false, description="Mustafar hk47 diorama"},
+		{templateFile = "object/tangible/tcg/series6/combine_object_hk_droids_poster.iff", milestone=35, oneTime=false, description="Hk droids poster"},
+		{templateFile = "object/tangible/tcg/series6/consumable_ponda_baba_arm.iff", milestone=35, oneTime=false, description="Ponda baby arm"},
+		{templateFile = "object/tangible/tcg/series6/decorative_baby_colo_claw_fish.iff", milestone=35, oneTime=false, description="Baby colo claw fish"},
+		{templateFile = "object/tangible/tcg/series1/house_capacity_beru_whitesuns_cookbook.iff", milestone=35, oneTime=false, description="House capacity beru whitesuns cookbook"},
 		
 		-- 40 Day Rewards
 		{templateFile = "object/tangible/tcg/series1/house_capacity_housecleaning_kit.iff", milestone=40, oneTime=false, description="House capacity housecleaning kit"},
@@ -143,13 +143,13 @@ veteranRewards = {
 		{templateFile = "object/tangible/tcg/series1/reuseable_buff_item_tusken_talisman.iff", milestone=45, oneTime=false, description="Buff item tusken talisman"},
 		{templateFile = "object/tangible/tcg/series1/target_creature_acklay_display.iff", milestone=45, oneTime=false, description="Acklay display"},
 		{templateFile = "object/tangible/tcg/series1/target_creature_deed.iff", milestone=45, oneTime=false, description="Creature deed"},
-		{templateFile = "object/tangible/tcg/series1/target_dummy_deed.iff", milestone=45, oneTime=false, description="target dummy deed"},
-		{templateFile = "object/tangible/tcg/series1/vendor_deed_ewok.iff", milestone=45, oneTime=false, description="vendor ewok deed"},
+		{templateFile = "object/tangible/tcg/series6/decorative_house_lamp.iff", milestone=45, oneTime=false, description="House lamp"},
+		{templateFile = "object/tangible/tcg/series6/decorative_baby_colo_claw_fishtank.iff", milestone=45, oneTime=false, description="Baby colo claw fishtank"},
 		
 		-- 50 Day Rewards
-		{templateFile = "object/tangible/tcg/series1/vendor_deed_gungan.iff", milestone=50, oneTime=false, description="vendor deed gungan"},
-		{templateFile = "object/tangible/tcg/series1/vendor_deed_jawa.iff", milestone=50, oneTime=false, description="vendor deed jawa"},
-		{templateFile = "object/tangible/tcg/series1/vendor_deed_meatlump.iff", milestone=50, oneTime=false, description="vendor deed meatlump"},
+		{templateFile = "object/tangible/tcg/series6/decorative_jabba_bed.iff", milestone=50, oneTime=false, description="Jabba bed"},
+		{templateFile = "object/tangible/tcg/series6/dewback_armor_statue.iff", milestone=50, oneTime=false, description="Armor dewback statue"},
+		{templateFile = "object/tangible/tcg/series6/diorama_han_greedo.iff", milestone=50, oneTime=false, description="Diorama han and greedo"},
 		{templateFile = "object/tangible/tcg/series1/video_game_table.iff", milestone=50, oneTime=false, description="Video game table"},
 		{templateFile = "object/tangible/tcg/series1/wearable_arc170_flightsuit.iff", milestone=50, oneTime=false, description="Arc170 flightsuit"},
 		
