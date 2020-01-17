@@ -143,6 +143,7 @@ Thank you to the following server that provided custom content / alterations to 
   * Awakening 
   * Empire in Flames
   * Infinity
+  * Project Carbonite
   * Reckoning
   * Sentinels Republic
   * Stardust
