@@ -578,6 +578,9 @@ void SlicingSessionImplementation::handleWeaponSlice() {
 	}
 
 	uint8 percentage = System::random(max - min) + min;
+	player->sendSystemMessage(" \\#C7DB00\\Your Maximum allowed slice is: \\#ff0000" + String::valueOf(max));
+	player->sendSystemMessage(" \\#C7DB00\\Your Minimum allowed slice is: \\#ff0000" + String::valueOf(min));
+	player->sendSystemMessage(" \\#C7DB00\\Your Slice roll is: \\#ff0000" + String::valueOf(percentage));
 
 	if(!selectSlice){
 		switch(System::random(1)) {
@@ -695,6 +698,9 @@ void SlicingSessionImplementation::handleArmorSlice() {
 	}
 
 	uint8 percent = System::random(max - min) + min;
+	player->sendSystemMessage(" \\#C7DB00\\Your Maximum allowed slice is: \\#ff0000" + String::valueOf(max));
+	player->sendSystemMessage(" \\#C7DB00\\Your Minimum allowed slice is: \\#ff0000" + String::valueOf(min));
+	player->sendSystemMessage(" \\#C7DB00\\Your Slice roll is: \\#ff0000" + String::valueOf(percent));
 
 	if(!selectSlice){
 		switch (sliceType) {
