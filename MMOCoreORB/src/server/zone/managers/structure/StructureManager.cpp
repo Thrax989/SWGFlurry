@@ -559,24 +559,6 @@ StructureObject* StructureManager::placeStructure(CreatureObject* creature,
 	return structureObject;
 }
 
-int StructureManager::destroyStructure(StructureObject* structureObject, bool playEffect, String reason) {
-	ManagedReference<CreatureObject*> creature = server->getObject(structureObject->getOwnerObjectID()).castTo<CreatureObject*>();
- 
-	if (creature != nullptr && !reason.isEmpty()) {
-		StringBuffer msg;
-		msg << "Structure ID: " << structureObject->getObjectID() << " Owned By: " << creature->getFirstName() << " has been destroyed because " << reason;
- 
-		structureDestroyLog.info(msg.toString());
-	}
-
-	if (structureObject->isPackedUp()) {
-		Reference<DestroyPackedupStructureTask*> task = new DestroyPackedupStructureTask(structureObject);
-		task->execute();
-	} else {
-		Reference<DestroyStructureTask*> task = new DestroyStructureTask(structureObject, playEffect);
-		task->execute();
-	}
-
 int StructureManager::destroyStructure(StructureObject* structureObject, bool playEffect) {
 	Reference<DestroyStructureTask*> task = new DestroyStructureTask(structureObject, playEffect);
 	task->execute();
