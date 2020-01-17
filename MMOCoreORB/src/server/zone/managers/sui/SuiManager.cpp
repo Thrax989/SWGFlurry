@@ -37,6 +37,13 @@
 #include "server/zone/ZoneServer.h"
 #include "server/chat/ChatManager.h"
 
+#include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
+#include "server/zone/managers/stringid/StringIdManager.h"
+#include "server/zone/managers/auction/AuctionManager.h"
+#include "server/zone/managers/auction/AuctionsMap.h"
+#include "server/zone/managers/statistics/StatisticsManager.h"
+#include "server/zone/objects/mission/MissionTypes.h"
+
 SuiManager::SuiManager() : Logger("SuiManager") {
 	server = nullptr;
 	setGlobalLogging(true);
@@ -583,6 +590,58 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						SkillManager::instance()->awardSkill("combat_jedi_novice", player, true, true, true);
 						box->setForceCloseDistance(5.f);
 			        }
+//Player Stats
+			} else if (templatePath == "player_stats") {
+
+						PlayerObject* ghost = player->getPlayerObject();
+
+						StringBuffer msg;
+
+						msg << "---PvP Statistics---\n"
+							<< "PvP Rating: " << ghost->getPvpRating() << "\n"
+							<< "Total PvP Kills: " << ghost->getPvpKills() << "\n"
+							<< "Total PvP Deaths: " << ghost->getPvpDeaths() << "\n"
+							<< "Total Bounty Kills: " << ghost->getBountyKills() << "\n\n"
+							<< "---PvE Statistics---\n"
+							<< "Total PvE Kills: " << ghost->getPveKills() << "\n"
+							<< "Total PvE Deaths: " << ghost->getPveDeaths() << "\n"
+							<< "Total Boss Kills: " << ghost->getworldbossKills() << "\n\n"
+							<< "---Mission Statistics---\n"
+							<< "Total Missions Completed: " << ghost->getMissionsCompleted() << "\n\n"
+							<< "---Misc Statistics---\n"
+							<< "Event Attendance: " << ghost->geteventplayerCrate();
+
+						ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+						box->setPromptTitle(player->getFirstName() + "'s" + " Character Statistics");
+						box->setPromptText(msg.toString());
+						ghost->addSuiBox(box);
+						player->sendMessage(box->generateMessage());
+//Community Online Status
+			} else if (templatePath == "community_status") {
+
+						ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
+						PlayerManager* playerManager = server->getZoneServer()->getPlayerManager();
+	
+						StringBuffer body;
+						Time timestamp;
+						timestamp.updateToCurrentTime();
+
+						body << "-- Flurry Server --" << endl << endl;
+						body << "Connections Online: " << String::valueOf(player->getZoneServer()->getConnectionCount()) << endl;
+						body << "Most Concurrent (since last reset): " << String::valueOf(player->getZoneServer()->getMaxPlayers()) << endl;
+						body << "Server Cap: " << String::valueOf(player->getZoneServer()->getServerCap()) << endl << endl << endl;
+						body << "Deleted Characters (since last reset): " << String::valueOf(player->getZoneServer()->getDeletedPlayers()) << endl;
+						body << "Total Connections (since last reset): " << String::valueOf(player->getZoneServer()->getTotalPlayers()) << endl;
+						body << endl;endl;
+
+						body << "Missions info (since last reset): " << endl;
+						body << StatisticsManager::instance()->getStatistics() << endl;
+
+						ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+						box->setPromptTitle("Flurry Community Status");
+						box->setPromptText(body.toString());
+						ghost->addSuiBox(box);
+						player->sendMessage(box->generateMessage());
 //JediQuest Remove Screen Play Tester
 			} else if (templatePath == "jedi_quest_remove") {
 				if (!player->isInCombat() && player->getBankCredits() < 999) {
