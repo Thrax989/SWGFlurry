@@ -3,7 +3,7 @@
 nge11 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Poisonspike Polearm",
 	directObjectTemplate = "object/weapon/melee/polearm/ep3_loot_poisonspike.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

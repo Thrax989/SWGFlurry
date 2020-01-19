@@ -3,7 +3,7 @@
 nge35 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Eventide Sword",
 	directObjectTemplate = "object/weapon/melee/sword/ep3_loot_eventide.iff",
 	craftingValues = {
 		{"mindamage",25,50,0},

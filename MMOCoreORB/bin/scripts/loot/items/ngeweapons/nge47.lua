@@ -3,7 +3,7 @@
 nge47 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Alliance Needler Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_alliance_needler.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

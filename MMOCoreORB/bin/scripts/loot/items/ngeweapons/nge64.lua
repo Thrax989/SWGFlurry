@@ -3,7 +3,7 @@
 nge64 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "PvP Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_pvp_ngant.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

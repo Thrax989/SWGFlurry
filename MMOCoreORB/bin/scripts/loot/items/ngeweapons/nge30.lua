@@ -3,7 +3,7 @@
 nge30 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Soulstinger",
 	directObjectTemplate = "object/weapon/melee/special/ep3_loot_soulstinger.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

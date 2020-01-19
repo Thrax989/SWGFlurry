@@ -3,7 +3,7 @@
 nge40 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Mandalorian Sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_mandalorian.iff",
 	craftingValues = {
 		{"mindamage",25,50,0},

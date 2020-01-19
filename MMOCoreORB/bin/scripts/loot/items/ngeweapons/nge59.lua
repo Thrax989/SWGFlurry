@@ -3,7 +3,7 @@
 nge59 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Geo Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_geo.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

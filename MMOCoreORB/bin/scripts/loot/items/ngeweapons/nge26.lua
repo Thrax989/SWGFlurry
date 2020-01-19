@@ -3,7 +3,7 @@
 nge26 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Obsidian Lance Polearm",
 	directObjectTemplate = "object/weapon/melee/polearm/som_lance_obsidian.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

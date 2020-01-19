@@ -3,7 +3,7 @@
 nge17 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "GCW Grand Shockprod Polearm",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_gcw_gand_shockprod.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

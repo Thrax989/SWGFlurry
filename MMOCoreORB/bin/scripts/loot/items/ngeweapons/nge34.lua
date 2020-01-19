@@ -3,7 +3,7 @@
 nge34 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Wookie Knuckler",
 	directObjectTemplate = "object/weapon/melee/special/ep3/wookiee_knuckler.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

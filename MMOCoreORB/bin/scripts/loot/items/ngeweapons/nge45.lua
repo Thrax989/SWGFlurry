@@ -3,7 +3,7 @@
 nge45 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Rsf Sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_rsf.iff",
 	craftingValues = {
 		{"mindamage",25,50,0},

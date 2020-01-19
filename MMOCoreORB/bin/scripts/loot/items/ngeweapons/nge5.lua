@@ -3,7 +3,7 @@
 nge5 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "2H Scyth Sword",
 	directObjectTemplate = "object/weapon/melee/2h_sword/2h_sword_wod_scyth.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

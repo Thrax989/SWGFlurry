@@ -343,6 +343,8 @@ float CreatureImplementation::getChanceToTame(CreatureObject* player) {
 		skill += 5; // Non-Aggro tame bonus
 	}
 
+ 	float chanceToTame = tamingChance + skill - (cl + ferocity);
+
 	return chanceToTame;
 }
 

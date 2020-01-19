@@ -3,7 +3,7 @@
 nge42 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Massassi Sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_massassi.iff",
 	craftingValues = {
 		{"mindamage",25,50,0},

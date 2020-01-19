@@ -3,7 +3,7 @@
 nge24 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Heroic Star Destroyer Polearm",
 	directObjectTemplate = "object/weapon/melee/polearm/polearm_heroic_sd.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

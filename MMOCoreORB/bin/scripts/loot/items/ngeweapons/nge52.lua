@@ -3,7 +3,7 @@
 nge52 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Charric Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_charric.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

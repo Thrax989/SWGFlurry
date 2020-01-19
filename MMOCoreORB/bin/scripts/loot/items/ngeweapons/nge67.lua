@@ -3,7 +3,7 @@
 nge67 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Corestrike Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3_loot_corestrike.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

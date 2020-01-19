@@ -3,7 +3,7 @@
 nge39 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Acid Sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_acid.iff",
 	craftingValues = {
 		{"mindamage",25,50,0},

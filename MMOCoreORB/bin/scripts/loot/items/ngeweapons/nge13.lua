@@ -3,7 +3,7 @@
 nge13 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Wookie Avatar Heartlance Polearm",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_avatar_wke_heartlance.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

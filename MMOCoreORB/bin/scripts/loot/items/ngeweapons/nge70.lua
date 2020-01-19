@@ -3,7 +3,7 @@
 nge70 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Mark Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3_loot_mark.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

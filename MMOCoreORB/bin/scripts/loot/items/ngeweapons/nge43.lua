@@ -3,7 +3,7 @@
 nge43 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "PvP Sword",
 	directObjectTemplate = "object/weapon/melee/sword/sword_pvp_bf_01.iff",
 	craftingValues = {
 		{"mindamage",25,50,0},
