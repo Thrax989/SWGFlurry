@@ -3,7 +3,7 @@
 nge95 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Odararissl Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_odararissl.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

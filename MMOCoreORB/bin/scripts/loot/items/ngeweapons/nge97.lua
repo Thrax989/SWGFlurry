@@ -3,7 +3,7 @@
 nge97 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Massassi Ink Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_massassi_ink_generic.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

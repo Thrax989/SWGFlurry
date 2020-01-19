@@ -3,7 +3,7 @@
 nge37 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Mustafar Bandit Sword",
 	directObjectTemplate = "object/weapon/melee/sword/som_sword_mustafar_bandit.iff",
 	craftingValues = {
 		{"mindamage",25,50,0},

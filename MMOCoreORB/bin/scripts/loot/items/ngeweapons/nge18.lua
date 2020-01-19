@@ -3,7 +3,7 @@
 nge18 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Kaminoan Lance Polearm",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_kaminoan.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

@@ -3,7 +3,7 @@
 nge48 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Trando Avatar Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_avatar_trando.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

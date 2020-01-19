@@ -3,7 +3,7 @@
 nge6 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Obsidian Sword",
 	directObjectTemplate = "object/weapon/melee/sword/som_sword_obsidian.iff",
 	craftingValues = {
 		{"mindamage",25,50,0},

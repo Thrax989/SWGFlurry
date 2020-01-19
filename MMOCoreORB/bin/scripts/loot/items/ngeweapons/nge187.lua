@@ -3,7 +3,7 @@
 nge187 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Retaliation Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/ep3_loot_retaliation.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

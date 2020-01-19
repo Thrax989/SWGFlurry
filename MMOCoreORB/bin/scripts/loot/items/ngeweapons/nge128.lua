@@ -3,7 +3,7 @@
 nge128 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Republic Blaster Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/quest_pistol_republic_blaster.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

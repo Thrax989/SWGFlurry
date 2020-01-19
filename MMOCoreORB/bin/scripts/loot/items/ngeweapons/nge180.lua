@@ -3,7 +3,7 @@
 nge180 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Void",
 	directObjectTemplate = "object/weapon/ranged/heavy/ep3_loot_void.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

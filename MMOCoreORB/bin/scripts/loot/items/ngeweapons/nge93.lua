@@ -3,7 +3,7 @@
 nge93 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "PvP Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_pvp.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

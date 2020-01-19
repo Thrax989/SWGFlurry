@@ -3,7 +3,7 @@
 nge188 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Quicktrigger Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_quicktrigger.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

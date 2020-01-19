@@ -3,7 +3,7 @@
 nge120 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Bowcaster Rifle Heavy",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_bowcaster_heavy.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

@@ -3,7 +3,7 @@
 nge169 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "De10 Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_de_10_generic.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

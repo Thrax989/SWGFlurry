@@ -3,7 +3,7 @@
 nge100 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Love Day Crowssbow Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_love_day_crossbow.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

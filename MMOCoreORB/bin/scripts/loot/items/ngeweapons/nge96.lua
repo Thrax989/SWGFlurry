@@ -3,7 +3,7 @@
 nge96 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Naktra Crystal Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/ep3/rifle_naktra_crystal.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

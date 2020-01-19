@@ -3,7 +3,7 @@
 nge87 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Tusken Elite Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_tusken_elite.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

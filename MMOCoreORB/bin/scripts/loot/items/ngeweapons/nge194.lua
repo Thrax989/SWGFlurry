@@ -3,7 +3,7 @@
 nge194 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Grievance Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3_loot_grievance.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

@@ -3,7 +3,7 @@
 nge109 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Geo Drill Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_geo_drill.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

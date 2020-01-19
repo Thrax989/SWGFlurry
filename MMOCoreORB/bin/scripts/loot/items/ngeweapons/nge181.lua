@@ -3,7 +3,7 @@
 nge181 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Silencer Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_silencer.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

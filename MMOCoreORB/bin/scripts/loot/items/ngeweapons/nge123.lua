@@ -3,7 +3,7 @@
 nge123 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Alliance Gauss Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_alliance_gauss_generic.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

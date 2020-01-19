@@ -3,7 +3,7 @@
 nge144 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "PvP Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_pvp.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

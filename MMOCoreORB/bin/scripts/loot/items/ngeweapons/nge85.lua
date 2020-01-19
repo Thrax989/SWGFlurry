@@ -3,7 +3,7 @@
 nge85 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Westar M5 Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_westar_m5.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

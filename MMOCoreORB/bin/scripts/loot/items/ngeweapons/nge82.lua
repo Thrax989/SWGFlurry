@@ -3,7 +3,7 @@
 nge82 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Disruptor Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/som_disruptor_pistol.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

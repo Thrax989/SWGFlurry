@@ -3,7 +3,7 @@
 nge89 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Tc22 Blaster Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_tc22_blaster.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

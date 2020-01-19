@@ -3,7 +3,7 @@
 nge92 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Rebel Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_rebel.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

@@ -3,7 +3,7 @@
 nge22 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Magna Guard Staff Lance Polearm",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_staff_magna_guard.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

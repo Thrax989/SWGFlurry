@@ -3,7 +3,7 @@
 nge199 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Darksting Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/ep3_loot_darksting.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

@@ -3,7 +3,7 @@
 nge157 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Star Destroyer Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_heroic_sd.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

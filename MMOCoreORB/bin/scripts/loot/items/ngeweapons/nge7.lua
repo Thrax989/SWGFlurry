@@ -3,7 +3,7 @@
 nge7 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "2H Tulrus Sword",
 	directObjectTemplate = "object/weapon/melee/2h_sword/som_2h_sword_tulrus.iff",
 	craftingValues = {
 		{"mindamage",53,98,0},

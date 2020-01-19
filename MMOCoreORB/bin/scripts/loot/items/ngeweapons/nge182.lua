@@ -3,7 +3,7 @@
 nge182 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Sharpshooter Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/ep3_loot_sharpshooter.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

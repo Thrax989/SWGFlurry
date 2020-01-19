@@ -3,7 +3,7 @@
 nge60 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Heroic Star Destroyer Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/carbine_heroic_sd.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

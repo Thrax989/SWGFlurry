@@ -3,7 +3,7 @@
 nge193 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Hydra Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_hydra.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

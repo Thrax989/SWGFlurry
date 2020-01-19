@@ -3,7 +3,7 @@
 nge66 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Wookie Bowcaster Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3/carbine_wookiee_bowcaster.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

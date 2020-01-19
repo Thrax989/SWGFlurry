@@ -3,7 +3,7 @@
 nge19 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Kashyyk Lance Polearm",
 	directObjectTemplate = "object/weapon/melee/polearm/lance_kashyyk.iff",
 	craftingValues = {
 		{"mindamage",49,91,0},

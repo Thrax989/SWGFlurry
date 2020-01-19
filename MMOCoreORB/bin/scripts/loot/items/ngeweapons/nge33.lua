@@ -3,7 +3,7 @@
 nge33 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "PvP Knuckler",
 	directObjectTemplate = "object/weapon/melee/special/pvp_bf_knuckler.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

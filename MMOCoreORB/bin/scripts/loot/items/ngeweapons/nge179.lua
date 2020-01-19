@@ -3,7 +3,7 @@
 nge179 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Hairtrigger Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/event_carbine_hairtrigger.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

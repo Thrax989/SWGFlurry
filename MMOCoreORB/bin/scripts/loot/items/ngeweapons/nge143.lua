@@ -3,7 +3,7 @@
 nge143 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Imperial Navy Fromal Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_quest_imperial_navy_formal.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

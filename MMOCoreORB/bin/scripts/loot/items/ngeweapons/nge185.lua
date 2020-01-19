@@ -3,7 +3,7 @@
 nge185 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Rhiss Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_rhiss.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

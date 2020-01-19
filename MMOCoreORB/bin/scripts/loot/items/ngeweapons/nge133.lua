@@ -3,7 +3,7 @@
 nge133 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Trando Suppressor Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3/pistol_trando_suppressor.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

@@ -3,7 +3,7 @@
 nge203 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Blackhand Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3_loot_blackhand.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

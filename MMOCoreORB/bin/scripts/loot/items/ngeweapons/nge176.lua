@@ -3,7 +3,7 @@
 nge176 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "J1 Jinkins Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/jinkins_j1_rifle.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

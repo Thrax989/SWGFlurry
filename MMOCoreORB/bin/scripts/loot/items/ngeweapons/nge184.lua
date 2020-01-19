@@ -3,7 +3,7 @@
 nge184 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Rilctur Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3_loot_rilctur.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

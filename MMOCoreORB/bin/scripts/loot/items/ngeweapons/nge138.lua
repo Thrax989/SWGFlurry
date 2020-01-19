@@ -3,7 +3,7 @@
 nge138 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Scatter Pistol Light",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_scatter_light.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

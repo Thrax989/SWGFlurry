@@ -3,7 +3,7 @@
 nge112 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Eweb Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_eweb.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

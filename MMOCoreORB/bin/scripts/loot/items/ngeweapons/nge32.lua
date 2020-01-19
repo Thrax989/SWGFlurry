@@ -3,7 +3,7 @@
 nge32 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Punch Dagger",
 	directObjectTemplate = "object/weapon/melee/special/punch_dagger.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

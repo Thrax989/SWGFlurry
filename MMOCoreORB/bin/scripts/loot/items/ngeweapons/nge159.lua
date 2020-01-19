@@ -3,7 +3,7 @@
 nge159 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Green Bolt Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_green_bolt.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

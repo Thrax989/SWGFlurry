@@ -3,7 +3,7 @@
 nge177 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Tusken Beserker Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/event_rifle_tusken_berserker.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

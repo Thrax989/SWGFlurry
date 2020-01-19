@@ -3,7 +3,7 @@
 nge147 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Launcher Pistol Medium",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_launcher_medium.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

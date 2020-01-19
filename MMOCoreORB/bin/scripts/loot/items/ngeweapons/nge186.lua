@@ -3,7 +3,7 @@
 nge186 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Retribution Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3_loot_retribution.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

@@ -3,7 +3,7 @@
 nge107 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Light Laser Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/rifle_laser_light.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

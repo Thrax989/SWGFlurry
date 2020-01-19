@@ -3,7 +3,7 @@
 nge74 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Republic Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/som_carbine_republic_sfor.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

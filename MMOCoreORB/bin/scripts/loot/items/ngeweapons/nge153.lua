@@ -3,7 +3,7 @@
 nge153 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Ion Stunner Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/ep3/pistol_ion_stunner.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

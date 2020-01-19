@@ -3,7 +3,7 @@
 nge195 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Firestar Carbine",
 	directObjectTemplate = "object/weapon/ranged/carbine/ep3_loot_firestar.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

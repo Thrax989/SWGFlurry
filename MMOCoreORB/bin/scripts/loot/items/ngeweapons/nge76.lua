@@ -3,7 +3,7 @@
 nge76 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Mustafar Disruptor Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/som_rifle_mustafar_disruptor.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

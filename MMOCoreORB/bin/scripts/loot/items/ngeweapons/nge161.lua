@@ -3,7 +3,7 @@
 nge161 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Flechette Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_flechette_generic.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

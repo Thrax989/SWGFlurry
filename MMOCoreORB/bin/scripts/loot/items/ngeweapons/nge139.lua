@@ -3,7 +3,7 @@
 nge139 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Scatter Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_scatter_generic.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

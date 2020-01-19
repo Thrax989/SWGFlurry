@@ -3,7 +3,7 @@
 nge88 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Trando Hunter Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/ep3/rifle_trando_hunter.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

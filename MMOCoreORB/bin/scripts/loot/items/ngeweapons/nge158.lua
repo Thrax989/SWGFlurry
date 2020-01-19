@@ -3,7 +3,7 @@
 nge158 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Exar Kun Pistol",
 	directObjectTemplate = "object/weapon/ranged/pistol/pistol_heroic_exar.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

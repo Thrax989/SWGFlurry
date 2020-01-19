@@ -3,7 +3,7 @@
 nge201 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Corellian",
 	directObjectTemplate = "object/weapon/ranged/heavy/ep3_loot_corellian.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},

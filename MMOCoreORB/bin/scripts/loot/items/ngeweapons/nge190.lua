@@ -3,7 +3,7 @@
 nge190 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Nullifier Rifle",
 	directObjectTemplate = "object/weapon/ranged/rifle/ep3_loot_nullifier.iff",
 	craftingValues = {
 		{"mindamage",7,13,0},
