@@ -29,12 +29,24 @@ enhanced_force_kliknik = Creature:new {
 	templates = {"object/mobile/kliknik_hue.iff"},
 	scale = 1.45,
 	lootGroups = {
-	 {
-	        groups = {
-				{group = "geo_kliknik", chance = 10000000}
+		{
+			groups = {
+				{group = "geo_kliknik", chance = 10000000},
 			},
-			lootChance = 2880000
-		}
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "geonosian_relic", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
 	},
 	weapons = {"creature_spit_heavy_flame"},
 	conversationTemplate = "",
