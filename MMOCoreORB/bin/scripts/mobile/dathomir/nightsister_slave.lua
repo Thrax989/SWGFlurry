@@ -33,31 +33,31 @@ nightsister_slave = Creature:new {
 			groups = {
 				{group = "junk", chance = 10000000},
 			},
-			lootChance = 4000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "nge_all", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "wearables_common", chance = 10000000},
 			},
-			lootChance = 3000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "loot_kit_parts", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "tailor_components", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 	},
 	weapons = {},
