@@ -42,17 +42,19 @@
 
 
 object_tangible_wearables_armor_mandalorian_armor_mandalorian_shoes = object_tangible_wearables_armor_mandalorian_shared_armor_mandalorian_shoes:new {
+
 	templateType = ARMOROBJECT,
+
 	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	certificationsRequired = { "combat_bountyhunter_master",
 					"combat_commando_master",
 					"outdoors_squadleader_master",
 					"outdoors_ranger_master" },
 
-	playerRaces = { 	"object/creature/player/smc_female.iff",
+	playerRaces = { "object/creature/player/bothan_male.iff",
+				"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
-				"object/creature/player/talz_male.iff",
-				"object/creature/player/talz_female.iff",
 				"object/creature/player/togruta_female.iff",
 				"object/creature/player/togruta_male.iff",
 				"object/creature/player/weequay_male.iff",
@@ -67,8 +69,6 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_shoes = object_tan
 				"object/creature/player/quarren_female.iff",
 				"object/creature/player/ishi_tib_male.iff",
 				"object/creature/player/ishi_tib_female.iff",
-				"object/creature/player/hutt_female.iff",
-				"object/creature/player/hutt_male.iff",
 				"object/creature/player/gran_male.iff",
 				"object/creature/player/gran_female.iff",
 				"object/creature/player/gotal_male.iff",
@@ -84,15 +84,22 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_shoes = object_tan
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
+               "object/creature/player/kel_dor_male.iff",
 				"object/creature/player/human_female.iff",
+				"object/creature/player/ithorian_male.iff",
+				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
 				"object/creature/player/rodian_female.iff",
 				"object/creature/player/sullustan_male.iff",
 				"object/creature/player/sullustan_female.iff",
+				"object/creature/player/trandoshan_male.iff",
+				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
+				"object/creature/player/wookiee_male.iff",
+				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
@@ -106,6 +113,8 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_shoes = object_tan
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
 				"object/mobile/vendor/ishi_tib_male.iff",
+				"object/mobile/vendor/ithorian_female.iff",
+				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
 				"object/mobile/vendor/nikto_male.iff",
@@ -114,32 +123,37 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_shoes = object_tan
 				"object/mobile/vendor/rodian_male.iff",
 				"object/mobile/vendor/sullustan_female.iff",
 				"object/mobile/vendor/sullustan_male.iff",
+				"object/mobile/vendor/trandoshan_female.iff",
+				"object/mobile/vendor/trandoshan_male.iff",
 				"object/mobile/vendor/twilek_female.iff",
 				"object/mobile/vendor/twilek_male.iff",
 				"object/mobile/vendor/weequay_male.iff",
+				"object/mobile/vendor/wookiee_female.iff",
+				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 	
 	-- Damage types in WeaponObject
-	vulnerability = STUN,
-
-	specialResists = ELECTRICITY + BLAST + ACID,
+	vulnerability = COLD + ELECTRICITY + STUN + LIGHTSABER,
 
 	-- These are default Blue Frog stats, These are also used as temporary DWB crafting stats. Needs to be adjusted to random color, and Blast should be a Special Resist. Encumberance on boots and all arm/hand armor are estimated. Helm/Chest/Leggings are correct. 
-	healthEncumbrance = 20,
-	actionEncumbrance = 20,
-	mindEncumbrance = 20,
+	healthEncumbrance = 75,
+	actionEncumbrance = 96,
+	mindEncumbrance = 78,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 	maxCondition = 40000,
 
-	kinetic = 65,
-	energy = 65,
-	electricity = 65,
+	kinetic = 58,
+	energy = 58,
+	electricity = 0,
+	stun = 0,
 	blast = 65,
-	acid = 65,
-	lightSaber = 25
+	heat = 58,
+	cold = 0,
+	acid = 58,
+	lightSaber = 0
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_mandalorian_armor_mandalorian_shoes, "object/tangible/wearables/armor/mandalorian/armor_mandalorian_shoes.iff")

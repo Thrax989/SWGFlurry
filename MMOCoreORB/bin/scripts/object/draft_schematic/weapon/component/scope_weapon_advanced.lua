@@ -50,6 +50,7 @@ object_draft_schematic_weapon_component_scope_weapon_advanced = object_draft_sch
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 14, 
    size = 2, 
+   factoryCrateSize = 1000,
 
    xpType = "crafting_weapons_general", 
    xp = 60, 

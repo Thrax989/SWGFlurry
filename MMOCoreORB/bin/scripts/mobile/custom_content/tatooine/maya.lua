@@ -24,13 +24,13 @@ maya = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = AIENABLED + CONVERSABLE,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/nova_orion_garrick_orion.iff"},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "brari_keohi_mission_target_convotemplate",
+	conversationTemplate = "",
 	attacks = {
 	}
 }

@@ -14,7 +14,8 @@ rifles = {
 		{itemTemplate = "rifle_laser", weight = 1000000},
 		{itemTemplate = "rifle_sg82", weight = 1050000},
 		{itemTemplate = "rifle_spraystick", weight = 1050000},
-		{itemTemplate = "rifle_t21", weight = 400000}
+		{itemTemplate = "rifle_t21", weight = 200000},
+		{groupTemplate = "nge_all", weight = 200000},
 	}
 }
 

@@ -1,7 +1,7 @@
 minor_gorax = Creature:new {
 	objectName = "@mob/creature_names:minor_gorax",
 	socialGroup = "gorax",
-	faction = "gorax",
+	faction = "",
 	level = 131,
 	chanceHit = 4,
 	damageMin = 745,

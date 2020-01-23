@@ -100,6 +100,18 @@
 -----------------------------------------------------------
 
 -----------------
+--    Chandrila
+-----------------
+chandrila = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
 --   Corellia
 -----------------
 corellia = {
@@ -109,6 +121,18 @@ corellia = {
 	averageWeatherDuration = 3600, -- In seconds
 
 	weatherStability = 90, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Coruscant
+-----------------
+coruscant = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
 }
 
 -----------------
@@ -165,9 +189,41 @@ endor = {
 }
 
 -----------------
---    Kashyyyk_hunting
+--    Geonosis
 -----------------
-kashyyyk_hunting = {
+geonosis = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+	hasDamagingSandstorms = 1,
+
+	sandstormDamage = 50, -- 30 = Annoying, 50 = deadly
+}
+
+-----------------
+--    Hoth
+-----------------
+hoth = {
+
+	defaultWeather = 5, -- Random
+
+	averageWeatherDuration = 2400, -- In seconds
+
+	weatherStability = 60, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+
+	hasDamagingSandstorms = 1,
+
+	sandstormDamage = 40, -- 30 = Annoying, 50 = deadly
+}
+
+-----------------
+--    Hutta
+-----------------
+hutta = {
 
 	defaultWeather = 0, -- Sunny
 
@@ -177,9 +233,45 @@ kashyyyk_hunting = {
 }
 
 -----------------
---    Kashyyyk_main
+--    Jakku
 -----------------
-kashyyyk_main = {
+jakku = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Kaas
+-----------------
+kaas = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Kashyyyk
+-----------------
+kashyyyk = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 80, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Korriban
+-----------------
+korriban = {
 
 	defaultWeather = 0, -- Sunny
 
@@ -205,15 +297,27 @@ lok = {
 }
 
 -----------------
---    Mustafar
+--    Mandalore
 -----------------
-mustafar = {
+mandalore = {
 
 	defaultWeather = 0, -- Sunny
 
 	averageWeatherDuration = 3600, -- In seconds
 
 	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Mustafar
+-----------------
+mustafar = {
+
+	defaultWeather = 0, -- Gloomy
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 100, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
 }
 
 -----------------
@@ -232,6 +336,18 @@ naboo = {
 --     Rori
 -----------------
 rori = {
+
+	defaultWeather = 0, -- Sunny
+
+	averageWeatherDuration = 3600, -- In seconds
+
+	weatherStability = 80, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
+}
+
+-----------------
+--    Taanab
+-----------------
+taanab = {
 
 	defaultWeather = 0, -- Sunny
 
@@ -263,4 +379,3 @@ yavin4 = {
 
 	weatherStability = 70, -- Range 0 - 100, Higher = Less weather changes, Overall better weather
 }
-

@@ -1,12 +1,18 @@
+includeFile("custom_content/conversations/corellia/gcw_transitconvo.lua")
+includeFile("custom_content/conversations/corellia/reb_transitconvo.lua")
+includeFile("custom_content/conversations/corellia/exar_kun_exchange.lua")
+includeFile("custom_content/conversations/corellia/jinda.lua")
+includeFile("custom_content/conversations/corellia/salvation_gift_store.lua")
+includeFile("custom_content/conversations/chandrila/gmf_token_exchange.lua")
 
--- Kashyyyk
--- Kashyyyk Main
+includeFile("custom_content/conversations/kashyyyk/kachirho/dr_price_conv.lua")
 includeFile("custom_content/conversations/kashyyyk/kachirho/ep3_chewbacca_conv.lua")
 includeFile("custom_content/conversations/kashyyyk/kachirho/ep3_vryyyr_conv.lua")
-
--- Dead Forest
-includeFile("custom_content/conversations/kashyyyk/dead_forest/shaey_kayr_conv.lua")
-
-
--- Tutorials
-includeFile("custom_content/conversations/the_tutorial/tutorial_0001_han_solo_conv.lua")
+includeFile("custom_content/conversations/kashyyyk/kachirho/tree_teleport_ground_conv.lua")
+includeFile("custom_content/conversations/kashyyyk/kachirho/tree_teleport_lvl_one_conv.lua")
+includeFile("custom_content/conversations/kashyyyk/kachirho/tree_teleport_lvl_two_conv.lua")
+includeFile("custom_content/conversations/kashyyyk/kachirho/tree_teleport_lvl_three_conv.lua")
+includeFile("custom_content/conversations/tansarii_point_station/han_start_conv.lua")
+includeFile("custom_content/conversations/tansarii_point_station/sg_teleport_conv.lua")
+includeFile("custom_content/conversations/tansarii_point_station/tps_noslyn_conv.lua")
+includeFile("custom_content/conversations/tansarii_point_station/tps_teleport_conv.lua")

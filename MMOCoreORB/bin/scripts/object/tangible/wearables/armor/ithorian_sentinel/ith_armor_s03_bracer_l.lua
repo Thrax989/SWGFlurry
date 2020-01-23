@@ -43,34 +43,36 @@
 
 object_tangible_wearables_armor_ithorian_sentinel_ith_armor_s03_bracer_l = object_tangible_wearables_armor_ithorian_sentinel_shared_ith_armor_s03_bracer_l:new {
 	templateType = ARMOROBJECT,
-	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/ithorian_male.iff",
 				"object/creature/player/ithorian_female.iff",
 				"object/mobile/vendor/ithorian_female.iff",
 				"object/mobile/vendor/ithorian_male.iff" },
 
-
 	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER + HEAT,
+	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY+ ENERGY + KINETIC,
+	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 20,
-	actionEncumbrance = 20,
-	mindEncumbrance = 20,
+	healthEncumbrance = 80,
+	actionEncumbrance = 80,
+	mindEncumbrance = 80,
 
 	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 80,
-	energy = 80,
+	kinetic = 65,
+	energy = 65,
 	electricity = 80,
+	stun = 25,
 	blast = 65,
+	heat = 65,
 	cold = 65,
 	acid = 65,
+	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "OQ", "SR", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},

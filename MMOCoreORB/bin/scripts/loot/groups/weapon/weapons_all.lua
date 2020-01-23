@@ -79,7 +79,8 @@ weapons_all = {
 		{itemTemplate = "pistol_republic_blaster", weight = 59524},
 		{itemTemplate = "heavy_rocket_launcher", weight = 59524},
 		{itemTemplate = "rifle_t21", weight = 59524},
-		{itemTemplate = "pistol_tangle", weight = 59524},
+		{itemTemplate = "pistol_tangle", weight = 29762},
+		{groupTemplate = "nge_all", weight = 29762},
 	}
 }
 

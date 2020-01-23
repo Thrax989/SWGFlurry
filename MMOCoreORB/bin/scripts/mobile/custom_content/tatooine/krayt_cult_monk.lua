@@ -1,7 +1,9 @@
 krayt_cult_monk = Creature:new {
 	customName = "a Krayt cult monk",
-	socialGroup = "krayt_cult",
-	faction = "krayt_cult",
+	randomNameType = NAME_GENERIC,
+	randomNameTag = true,
+	socialGroup = "townsperson",
+	--faction = "",
 	level = 20,
 	chanceHit = 0.31,
 	damageMin = 240,
