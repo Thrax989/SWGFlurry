@@ -1,0 +1,36 @@
+ep3_myyydril_nk3 = Creature:new {
+	customName = "NK-3",
+	socialGroup = "myyydril_grievous",
+	faction = "",
+	level = 260,
+	chanceHit = 19,
+	damageMin = 1245,
+	damageMax = 2400,
+	baseXp = 16884,
+	baseHAM = 365000,
+	baseHAMmax = 385000,
+	armor = 2,
+	resists = {70,70,70,70,70,70,70,70,70},
+	meatType = "",
+	meatAmount = 0,
+	hideType = "",
+	hideAmount = 0,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 0,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + STALKER,
+	optionsBitmask = AIENABLED,
+	diet = HERBIVORE,
+
+	templates = {"object/mobile/ep3_myyydril_nk3.iff"},
+	scale = 1.2,
+	lootGroups = {},
+	weapons = {"nk3_weapons"},
+	conversationTemplate = "",
+	attacks = "pikemanmaster"
+}
+
+CreatureTemplates:addCreatureTemplate(ep3_myyydril_nk3, "ep3_myyydril_nk3")

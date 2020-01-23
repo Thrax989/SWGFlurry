@@ -1,0 +1,35 @@
+white_thranta_guard = Creature:new {
+	customName = "a White Thranta security guard",
+	socialGroup = "thug",
+	faction = "thug",
+	level = 10,
+	chanceHit = 0.64,
+	damageMin = 80,
+	damageMax = 135,
+	baseXp = 120,
+	baseHAM = 290,
+	baseHAMmax = 390,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
+	meatType = "",
+	meatAmount = 0,
+	hideType = "",
+	hideAmount = 0,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 0,
+	pvpBitmask = ATTACKABLE,
+	creatureBitmask = NONE,
+	optionsBitmask = AIENABLED,
+	diet = HERBIVORE,
+
+	templates = {"object/mobile/dressed_tatooine_opening_wh_guard.iff"},
+	lootGroups = {},
+	weapons = {"ranged_weapons"},
+	conversationTemplate = "",
+	attacks = merge(marksmannovice,brawlernovice)
+}
+
+CreatureTemplates:addCreatureTemplate(white_thranta_guard, "white_thranta_guard")

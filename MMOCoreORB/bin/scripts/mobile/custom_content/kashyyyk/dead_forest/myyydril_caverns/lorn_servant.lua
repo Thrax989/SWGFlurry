@@ -1,0 +1,35 @@
+lorn_servant = Creature:new {
+	customName = "Lorn's servant",
+	socialGroup = "thug",
+	faction = "thug",
+	level = 300,
+	chanceHit = 0.46,
+	damageMin = 65,
+	damageMax = 80,
+	baseXp = 250,
+	baseHAM = 290,
+	baseHAMmax = 390,
+	armor = 0,
+	--resists = {10,10,10,10,10,10,10,-1,-1},
+	meatType = "",
+	meatAmount = 0,
+	hideType = "",
+	hideAmount = 0,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 0,
+	pvpBitmask = NONE,
+	creatureBitmask = NONE,
+	optionsBitmask = AIENABLED,
+	diet = HERBIVORE,
+
+	templates = {"object/mobile/battle_droid.iff"},
+	lootGroups = {},
+	weapons = {},
+	conversationTemplate = "",
+	attacks = {}
+}
+
+CreatureTemplates:addCreatureTemplate(lorn_servant, "lorn_servant")

@@ -1,0 +1,36 @@
+general_grievous = Creature:new {
+	customName = "N-K Necrosis",
+	socialGroup = "myyydril_grievous",
+	faction = "",
+	level = 260,
+	chanceHit = 19,
+	damageMin = 1245,
+	damageMax = 2400,
+	baseXp = 16884,
+	baseHAM = 365000,
+	baseHAMmax = 385000,
+	armor = 2,
+	resists = {70,70,70,70,70,70,70,70,70},
+	meatType = "",
+	meatAmount = 0,
+	hideType = "",
+	hideAmount = 0,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 0,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + STALKER,
+	optionsBitmask = AIENABLED,
+	diet = HERBIVORE,
+	scale = 1.5,
+
+	templates = {"object/mobile/ep3/general_grievous.iff"},
+	lootGroups = {},
+	weapons = {"general_grievous_weapons"},
+	conversationTemplate = "",
+	attacks = merge(lightsabermaster)
+}
+
+CreatureTemplates:addCreatureTemplate(general_grievous, "general_grievous")
