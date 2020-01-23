@@ -4,15 +4,6 @@ object_tangible_deed_vehicle_deed_barc_speeder_imperial_deed = object_tangible_d
 
 	controlDeviceObjectTemplate = "object/intangible/vehicle/barc_speeder_imperial_pcd.iff",
 	generatedObjectTemplate = "object/mobile/vehicle/barc_speeder_imperial.iff",
-	numberExperimentalProperties = {1, 1, 1},
-	experimentalProperties = {"XX", "XX", "SR"},
-	experimentalWeights = {1, 1, 1},
-	experimentalGroupTitles = {"null", "null", "exp_durability"},
-	experimentalSubGroupTitles = {"null", "null", "hit_points"},
-	experimentalMin = {0, 0, 1500},
-	experimentalMax = {0, 0, 3000},
-	experimentalPrecision = {0, 0, 0},
-	experimentalCombineType = {0, 0, 1},
 
 }
 

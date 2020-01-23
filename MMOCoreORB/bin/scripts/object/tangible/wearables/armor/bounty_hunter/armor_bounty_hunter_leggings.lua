@@ -44,9 +44,12 @@
 object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_leggings = object_tangible_wearables_armor_bounty_hunter_shared_armor_bounty_hunter_leggings:new {
 	templateType = ARMOROBJECT,
 
-	playerRaces = { "object/creature/player/bothan_male.iff",
-				"object/creature/player/smc_female.iff",
+	objectMenuComponent = "ArmorObjectMenuComponent",
+	
+	playerRaces = { 	"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
+				"object/creature/player/talz_male.iff",
+				"object/creature/player/talz_female.iff",
 				"object/creature/player/togruta_female.iff",
 				"object/creature/player/togruta_male.iff",
 				"object/creature/player/weequay_male.iff",
@@ -61,6 +64,8 @@ object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_leggings = obj
 				"object/creature/player/quarren_female.iff",
 				"object/creature/player/ishi_tib_male.iff",
 				"object/creature/player/ishi_tib_female.iff",
+				"object/creature/player/hutt_female.iff",
+				"object/creature/player/hutt_male.iff",
 				"object/creature/player/gran_male.iff",
 				"object/creature/player/gran_female.iff",
 				"object/creature/player/gotal_male.iff",
@@ -76,10 +81,7 @@ object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_leggings = obj
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
-               "object/creature/player/kel_dor_male.iff",
 				"object/creature/player/human_female.iff",
-				"object/creature/player/ithorian_male.iff",
-				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -90,8 +92,6 @@ object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_leggings = obj
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
-				"object/creature/player/wookiee_male.iff",
-				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
@@ -105,8 +105,6 @@ object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_leggings = obj
 				"object/mobile/vendor/human_female.iff",
 				"object/mobile/vendor/human_male.iff",
 				"object/mobile/vendor/ishi_tib_male.iff",
-				"object/mobile/vendor/ithorian_female.iff",
-				"object/mobile/vendor/ithorian_male.iff",
 				"object/mobile/vendor/moncal_female.iff",
 				"object/mobile/vendor/moncal_male.iff",
 				"object/mobile/vendor/nikto_male.iff",
@@ -120,27 +118,41 @@ object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_leggings = obj
 				"object/mobile/vendor/twilek_female.iff",
 				"object/mobile/vendor/twilek_male.iff",
 				"object/mobile/vendor/weequay_male.iff",
-				"object/mobile/vendor/wookiee_female.iff",
-				"object/mobile/vendor/wookiee_male.iff",
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 	
-	-- The damage types in WeaponObject
-	vulnerability = STUN + HEAT + ACID + LIGHTSABER,
+	-- Damage types in WeaponObject
+	vulnerability = STUN + LIGHTSABER,
+
+	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
+	healthEncumbrance = 20,
+	actionEncumbrance = 20,
+	mindEncumbrance = 20,
+
+	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 15,
-	energy = 15,
-	electricity = 15,
-	blast = 15,
-	cold = 15,
+	kinetic = 65,
+	energy = 65,
+	electricity = 80,
+	heat = 65,
+	cold = 65,
+	blast = 65,
+	acid = 65,
+
+	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
+	experimentalProperties = {"XX", "XX", "XX", "OQ", "SR", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
+	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_resistance", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
+	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
+	experimentalMin = {0, 0, 0, 1000, 1, 30000, 75, 175, 25, 1, 0, 0, 0},
+	experimentalMax = {0, 0, 0, 1000, 40, 50000, 45, 105, 15, 1, 0, 0, 0},
+	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
+	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 
 }
 

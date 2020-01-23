@@ -366,8 +366,3 @@ object_building_general_shared_wod_kwi_temple = SharedBuildingObjectTemplate:new
 }
 ObjectTemplates:addClientTemplate(object_building_general_shared_wod_kwi_temple, "object/building/general/shared_wod_kwi_temple.iff")
 --**********************************************************************************************************************************
-object_building_general_shared_mobile_starport = SharedBuildingObjectTemplate:new {
-	clientTemplateFileName = "object/building/general/shared_mobile_starport.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_general_shared_mobile_starport, "object/building/general/shared_mobile_starport.iff")
---**********************************************************************************************************************************

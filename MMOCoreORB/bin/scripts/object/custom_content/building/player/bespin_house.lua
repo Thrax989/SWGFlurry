@@ -2,10 +2,10 @@ object_building_player_bespin_house = object_building_player_shared_bespin_house
 	lotSize = 5,
 	baseMaintenanceRate = 80,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
-	constructionMarker = "object/building/player/construction/construction_player_house_corellia_small_style_01.iff",
+	publicStructure = 0,
+	constructionMarker = "object/building/player/construction/construction_player_house_corellia_large_style_01.iff",
 	length = 1,
 	width = 1,
-	publicStructure = 0,
 	skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},
@@ -14,8 +14,8 @@ object_building_player_bespin_house = object_building_player_shared_bespin_house
 	},
 	childObjects = {
 			{templateFile = "object/tangible/terminal/terminal_bank.iff", x = -4.23739, z = 88.8804, y = -1.80391, ow = 0.819152, ox = 0, oz = 0, oy = 0.573576, cellid = 2, containmentType = -1},
-			{templateFile = "object/tangible/terminal/terminal_mission.iff", x = 4.27712, z = 88.8805, y = 1.78337, ow = -0.573577, ox = 0, oz = 0, oy = 0.819152, cellid = 2, containmentType = -1},
-			{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", x = 2.156, z = 88.8801, y = -4.99758, ow = 0.984808, ox = 0, oz = 0, oy = -0.173648, cellid = 2, containmentType = -1},
+			--{templateFile = "object/tangible/terminal/terminal_mission.iff", x = 4.27712, z = 88.8805, y = 1.78337, ow = -0.573577, ox = 0, oz = 0, oy = 0.819152, cellid = 2, containmentType = -1},
+			--{templateFile = "object/tangible/beta/beta_terminal_wound.iff", x = 2.156, z = 88.8801, y = -4.99758, ow = 0.984808, ox = 0, oz = 0, oy = -0.173648, cellid = 2, containmentType = -1},
 			{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = -1.75983, z = 88.8802, y = 4.3361, ow = 0.173648, ox = 0, oz = 0, oy = 0.984808, cellid = 2, containmentType = -1},
 			{templateFile = "object/tangible/terminal/terminal_elevator_up.iff", x = 0.680352, z = 0.631912, y = 1.11112, ow = -0.258819, ox = 0, oy = 0.965926, oz = 0, cellid = 1, containmentType = -1},
 			{templateFile = "object/tangible/terminal/terminal_elevator_down.iff", x = 0.680352, z = 88.8368, y = 1.11112, ow = -0.258819, ox = 0, oy = 0.965926, oz = 0, cellid = 1, containmentType = -1},

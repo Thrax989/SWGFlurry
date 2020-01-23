@@ -1,9 +1,7 @@
 krayt_cult_novice = Creature:new {
 	customName = "a Krayt cult novice",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
-	socialGroup = "townsperson",
-	--faction = "",
+	socialGroup = "krayt_cult",
+	faction = "krayt_cult",
 	level = 16,
 	chanceHit = 0.31,
 	damageMin = 170,
@@ -22,8 +20,8 @@ krayt_cult_novice = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = ATTACKABLE + AGGRESSIVE,
-	creatureBitmask = PACK + KILLER,
+	pvpBitmask = ATTACKABLE,
+	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 

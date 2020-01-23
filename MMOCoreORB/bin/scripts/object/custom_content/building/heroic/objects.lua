@@ -41,52 +41,7 @@
 --which carries forward this exception.
 
 --New
-object_building_heroic_shared_bespin_huge_tower = SharedStaticObjectTemplate:new {
-	clientTemplateFileName = "object/building/heroic/shared_bespin_huge_tower.iff"
-}
 
-ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_huge_tower, "object/building/heroic/shared_bespin_huge_tower.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_building_heroic_shared_bespin_tower_a = SharedStaticObjectTemplate:new {
-	clientTemplateFileName = "object/building/heroic/shared_bespin_tower_a.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_tower_a, "object/building/heroic/shared_bespin_tower_a.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_building_heroic_shared_bespin_tower_b = SharedStaticObjectTemplate:new {
-	clientTemplateFileName = "object/building/heroic/shared_bespin_tower_b.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_tower_b, "object/building/heroic/shared_bespin_tower_b.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_building_heroic_shared_bespin_tower_c = SharedStaticObjectTemplate:new {
-	clientTemplateFileName = "object/building/heroic/shared_bespin_tower_c.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_tower_c, "object/building/heroic/shared_bespin_tower_c.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_building_heroic_shared_cloud_city = SharedStaticObjectTemplate:new {
-	clientTemplateFileName = "object/building/heroic/shared_cloud_city.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_building_heroic_shared_cloud_city, "object/building/heroic/shared_cloud_city.iff")
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_building_heroic_shared_cloud_platform = SharedBuildingObjectTemplate:new {
-	clientTemplateFileName = "object/building/heroic/shared_cloud_platform.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_building_heroic_shared_cloud_platform, "object/building/heroic/shared_cloud_platform.iff")
-------------------------------------------------------------------------------------------------------------------------------------
 
 
 object_building_heroic_shared_frozen_tauntaun = SharedStaticObjectTemplate:new {

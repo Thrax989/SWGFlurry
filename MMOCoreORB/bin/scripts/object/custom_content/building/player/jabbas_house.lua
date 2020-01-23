@@ -2,9 +2,9 @@ object_building_player_jabbas_house = object_building_player_shared_jabbas_house
 	lotSize = 5,
 	baseMaintenanceRate = 80,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
-	constructionMarker = "object/building/player/construction/construction_player_house_corellia_small_style_01.iff",
-	length = 1,
-	width = 1,
+	constructionMarker = "object/building/player/construction/construction_player_house_jabbas_sail_barge.iff",
+	length = 4,
+	width = 2,
 	publicStructure = 0,
 	skillMods = {
 		{"private_medical_rating", 100},

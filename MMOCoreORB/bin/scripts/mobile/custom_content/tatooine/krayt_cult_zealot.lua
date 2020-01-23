@@ -1,9 +1,7 @@
 krayt_cult_zealot = Creature:new {
 	customName = "a Krayt cult zealot",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
-	socialGroup = "townsperson",
-	--faction = "",
+	socialGroup = "krayt_cult",
+	faction = "krayt_cult",
 	level = 19,
 	chanceHit = 0.31,
 	damageMin = 200,
@@ -22,8 +20,8 @@ krayt_cult_zealot = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = ATTACKABLE + AGGRESSIVE,
-	creatureBitmask = PACK + KILLER,
+	pvpBitmask = ATTACKABLE,
+	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 

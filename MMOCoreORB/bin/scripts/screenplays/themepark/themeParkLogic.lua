@@ -2135,9 +2135,7 @@ function ThemeParkLogic:escortedNpcCloseEnough(pConversingPlayer)
 	local objectID = readData(CreatureObject(pConversingPlayer):getObjectID() .. ":missionSpawn:no1")
 	local pNpc = getSceneObject(objectID)
 
-	--return pNpc ~= nil and SceneObject(pConversingPlayer):getDistanceTo(pNpc) < 64
-	if pNpc == nil then return end
-	return true
+	return pNpc ~= nil and SceneObject(pConversingPlayer):getDistanceTo(pNpc) < 64
 end
 
 function ThemeParkLogic:resetThemePark(pConversingPlayer)

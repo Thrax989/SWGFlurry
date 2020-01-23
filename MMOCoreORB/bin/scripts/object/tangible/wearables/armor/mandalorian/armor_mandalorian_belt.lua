@@ -42,19 +42,17 @@
 
 
 object_tangible_wearables_armor_mandalorian_armor_mandalorian_belt = object_tangible_wearables_armor_mandalorian_shared_armor_mandalorian_belt:new {
-
 	templateType = ARMOROBJECT,
-
 	objectMenuComponent = "ArmorObjectMenuComponent",
-
 	certificationsRequired = { "combat_bountyhunter_master",
 					"combat_commando_master",
 					"outdoors_squadleader_master",
 					"outdoors_ranger_master" },
 
-	playerRaces = { "object/creature/player/bothan_male.iff",
-				"object/creature/player/smc_female.iff",
+	playerRaces = { 	"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
+				"object/creature/player/talz_male.iff",
+				"object/creature/player/talz_female.iff",
 				"object/creature/player/togruta_female.iff",
 				"object/creature/player/togruta_male.iff",
 				"object/creature/player/weequay_male.iff",
@@ -69,6 +67,8 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_belt = object_tang
 				"object/creature/player/quarren_female.iff",
 				"object/creature/player/ishi_tib_male.iff",
 				"object/creature/player/ishi_tib_female.iff",
+				"object/creature/player/hutt_female.iff",
+				"object/creature/player/hutt_male.iff",
 				"object/creature/player/gran_male.iff",
 				"object/creature/player/gran_female.iff",
 				"object/creature/player/gotal_male.iff",
@@ -84,10 +84,7 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_belt = object_tang
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
-               "object/creature/player/kel_dor_male.iff",
 				"object/creature/player/human_female.iff",
-				"object/creature/player/ithorian_male.iff",
-				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -98,10 +95,10 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_belt = object_tang
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
-				"object/creature/player/wookiee_male.iff",
-				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff",
+				"object/creature/player/wookiee_male.iff",
+				"object/creature/player/wookiee_female.iff",
 				"object/mobile/vendor/aqualish_female.iff",
 				"object/mobile/vendor/aqualish_male.iff",
 				"object/mobile/vendor/bith_female.iff",

@@ -278,33 +278,3 @@ object_tangible_tcg_series8_shared_wearable_lando_cape = SharedTangibleObjectTem
 	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_lando_cape.iff"
 }
 ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_lando_cape, "object/tangible/tcg/series8/shared_wearable_lando_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_bh_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_bh_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_bh_cape, "object/tangible/tcg/series8/shared_wearable_bh_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_first_order_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_first_order_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_first_order_cape, "object/tangible/tcg/series8/shared_wearable_first_order_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_light_jedi_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_light_jedi_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_light_jedi_cape, "object/tangible/tcg/series8/shared_wearable_light_jedi_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_revan_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_revan_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_revan_cape, "object/tangible/tcg/series8/shared_wearable_revan_cape.iff")
-
-object_tangible_tcg_series8_shared_wearable_sith_cape = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/tcg/series8/shared_wearable_sith_cape.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_tangible_tcg_series8_shared_wearable_sith_cape, "object/tangible/tcg/series8/shared_wearable_sith_cape.iff")

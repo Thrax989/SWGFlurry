@@ -2,15 +2,15 @@ tusken_king = Creature:new {
 	objectName = "@mob/creature_names:tusken_king",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
-	level = 300,
-	chanceHit = 50.0,
-	damageMin = 1645,
-	damageMax = 3000,
-	baseXp = 25167,
-	baseHAM = 261000,
-	baseHAMmax = 320000,
-	armor = 3,
-	resists = {85,80,35,100,20,30,45,80,-1},
+	level = 100,
+	chanceHit = 1,
+	damageMin = 645,
+	damageMax = 1000,
+	baseXp = 9522,
+	baseHAM = 24000,
+	baseHAMmax = 30000,
+	armor = 2,
+	resists = {45,35,5,80,-1,50,5,5,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,58 +29,17 @@ tusken_king = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tusken_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "bone_armor", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "chitin_armor", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "armor_attachments", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "clothing_attachments", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "color_crystals", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "power_crystals", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
+				{group = "junk", chance = 1500000},
+				{group = "tusken_common", chance = 3000000},
+				{group = "wearables_all", chance = 2000000},
+				{group = "bone_armor", chance = 750000},
+				{group = "chitin_armor", chance = 750000},
+				{group = "armor_attachments", chance = 500000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "color_crystals", chance = 500000},
+				{group = "power_crystals", chance = 500000}
+			}
+		}
 	},
 	weapons = {"tusken_weapons"},
 	conversationTemplate = "",

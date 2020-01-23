@@ -2,10 +2,10 @@ object_building_player_atat_house = object_building_player_shared_atat_house:new
 	lotSize = 5,
 	baseMaintenanceRate = 80,
 	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
-	constructionMarker = "object/building/player/construction/construction_player_house_corellia_small_style_01.iff",
-	length = 1,
-	width = 1,
 	publicStructure = 0,
+	length = 4,
+	width = 2,
+	constructionMarker = "object/building/player/construction/construction_player_house_atat.iff",
 	skillMods = {
 		{"private_medical_rating", 100},
 		{"private_buff_mind", 100},

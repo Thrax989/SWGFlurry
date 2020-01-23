@@ -9,8 +9,7 @@ heavy_weapons = {
 		{itemTemplate = "heavy_particle_beam", weight = 1000000},
 		{itemTemplate = "rifle_acid_beam", weight = 2000000},
 		{itemTemplate = "rifle_flame_thrower", weight = 2000000},
-		{itemTemplate = "rifle_lightning", weight = 1000000},
-		{groupTemplate = "nge_all", weight = 1000000},
+		{itemTemplate = "rifle_lightning", weight = 2000000}
 	}
 }
 

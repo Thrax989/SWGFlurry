@@ -50,7 +50,6 @@ object_draft_schematic_food_component_ingredient_ball_of_dough = object_draft_sc
    craftingToolTab = 4, -- (See DraftSchematicObjectTemplate.h)
    complexity = 3, 
    size = 2, 
-   factoryCrateSize = 1000,
 
    xpType = "crafting_general", 
    xp = 20, 

@@ -50,7 +50,6 @@ object_draft_schematic_droid_component_droid_brain = object_draft_schematic_droi
    craftingToolTab = 32, -- (See DraftSchematicObjectTemplate.h)
    complexity = 21, 
    size = 8, 
-   factoryCrateSize = 1000,
 
    xpType = "crafting_droid_general", 
    xp = 80, 

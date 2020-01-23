@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_clone_trooper_armor_clone_trooper_neutral_s01_chest_plate = object_tangible_wearables_armor_clone_trooper_shared_armor_clone_trooper_neutral_s01_chest_plate:new {
 	templateType = ARMOROBJECT,
 
-	--objectMenuComponent = {"cpp", "ArmorObjectMenuComponent"},
+	objectMenuComponent = "ArmorObjectMenuComponent",
 
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
@@ -84,8 +84,6 @@ object_tangible_wearables_armor_clone_trooper_armor_clone_trooper_neutral_s01_ch
 				"object/creature/player/bothan_male.iff",
 				"object/creature/player/human_male.iff",
 				"object/creature/player/human_female.iff",
-				"object/creature/player/ithorian_male.iff",
-				"object/creature/player/ithorian_female.iff",
 				"object/creature/player/moncal_male.iff",
 				"object/creature/player/moncal_female.iff",
 				"object/creature/player/rodian_male.iff",
@@ -96,31 +94,41 @@ object_tangible_wearables_armor_clone_trooper_armor_clone_trooper_neutral_s01_ch
 				"object/creature/player/trandoshan_female.iff",
 				"object/creature/player/twilek_male.iff",
 				"object/creature/player/twilek_female.iff",
-				"object/creature/player/wookiee_male.iff",
-				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 	
-	-- The damage types in WeaponObject
-	vulnerability = LIGHTSABER,
+	-- Damage types in WeaponObject
+	vulnerability = STUN + LIGHTSABER + ACID,
+
+	specialResists = HEAT + ENERGY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
+	healthEncumbrance = 20,
+	actionEncumbrance = 20,
+	mindEncumbrance = 20,
+
+	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
-	rating = HEAVY,
+	rating = LIGHT,
 
-	kinetic = 15,
-	energy = 15,
-	electricity = 15,
-	stun = 15,
-	blast = 15,
-	heat = 15,
-	cold = 15,
-	acid = 15,
-	lightSaber = 0
+	kinetic = 65,
+	energy = 65,
+	electricity = 65,
+	blast = 65,
+	heat = 65,
+	cold = 65,
+
+	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
+	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
+	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_resistance", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
+	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
+	experimentalMin = {0, 0, 0, 1000, 5, 30000, 219, 66, 16, 1, 1, 5, 0},
+	experimentalMax = {0, 0, 0, 1000, 50, 50000, 131, 39, 9, 1, 1, 70, 0},
+	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 10, 0},
+	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_clone_trooper_armor_clone_trooper_neutral_s01_chest_plate, "object/tangible/wearables/armor/clone_trooper/armor_clone_trooper_neutral_s01_chest_plate.iff")

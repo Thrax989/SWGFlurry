@@ -26,40 +26,12 @@ acklay = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/acklay_hue.iff"},	
+	templates = {"object/mobile/acklay_hue.iff"},
 	lootGroups = {
 		{
 			groups = {
-				{group = "acklay", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "nge_all", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 2500000},
-				{group = "tiertwo", chance = 2500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "acklay", chance = 10000000},
-			},
-			lootChance = 5000000
+				{group = "acklay", chance = 10000000}
+			}
 		}
 	},
 	weapons = {},

@@ -1,9 +1,7 @@
 krayt_cult_acolyte = Creature:new {
 	customName = "a Krayt cult acolyte",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
-	socialGroup = "townsperson",
-	--faction = "",
+	socialGroup = "krayt_cult",
+	faction = "krayt_cult",
 	level = 17,
 	chanceHit = 0.31,
 	damageMin = 180,
@@ -22,8 +20,8 @@ krayt_cult_acolyte = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = ATTACKABLE + AGGRESSIVE,
-	creatureBitmask = PACK + KILLER,
+	pvpBitmask = ATTACKABLE,
+	creatureBitmask = PACK,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 

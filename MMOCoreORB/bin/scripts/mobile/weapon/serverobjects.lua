@@ -3,6 +3,11 @@
 -- creature default attack
 includeFile("weapon/creature_default_weapon.lua")
 
+-- custom groups
+includeFile("weapon/custom_groups/general_grievous_weapons.lua")
+includeFile("weapon/custom_groups/nk3_weapons.lua")
+includeFile("weapon/custom_groups/wookiee_weapons.lua")
+
 -- creature spit attacks
 includeFile("weapon/creature_spit_heavy_flame.lua")
 includeFile("weapon/creature_spit_large_green.lua")

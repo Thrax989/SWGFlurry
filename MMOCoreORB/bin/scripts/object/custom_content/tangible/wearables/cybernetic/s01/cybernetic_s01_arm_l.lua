@@ -42,8 +42,10 @@
 
 
 object_tangible_wearables_cybernetic_s01_cybernetic_s01_arm_l = object_tangible_wearables_cybernetic_s01_shared_cybernetic_s01_arm_l:new {
-	playerRaces = { "object/creature/player/bothan_male.iff",
-				"object/creature/player/smc_female.iff",
+		
+	objectMenuComponent = "ArmorObjectMenuComponent",
+	templateType = ARMOROBJECT,
+	playerRaces = { 	"object/creature/player/smc_female.iff",
 				"object/creature/player/smc_male.iff",
 				"object/creature/player/talz_male.iff",
 				"object/creature/player/talz_female.iff",
@@ -95,6 +97,28 @@ object_tangible_wearables_cybernetic_s01_cybernetic_s01_arm_l = object_tangible_
 				"object/creature/player/wookiee_female.iff",
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
+
+	-- Damage types in WeaponObject
+	vulnerability = LIGHTSABER + STUN + ELECTRICITY,
+
+	specialResists = ACID,
+
+	-- These are default Blue Frog stats
+	healthEncumbrance = 20,
+	actionEncumbrance = 20,
+	mindEncumbrance = 20,
+
+	maxCondition = 60000,
+
+	-- LIGHT, MEDIUM, HEAVY
+	rating = LIGHT,
+
+	kinetic = 65,
+	energy = 65,
+	blast = 65,
+	heat = 65,
+	cold = 65,
+	acid = 80,
 
 	numberExperimentalProperties = {1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX"},

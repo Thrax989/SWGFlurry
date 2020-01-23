@@ -50,7 +50,6 @@ object_draft_schematic_weapon_component_blaster_power_handler_advanced = object_
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 20, 
    size = 3, 
-   factoryCrateSize = 1000,
 
    xpType = "crafting_weapons_general", 
    xp = 50, 

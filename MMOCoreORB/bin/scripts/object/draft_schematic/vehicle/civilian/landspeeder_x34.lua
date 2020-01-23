@@ -45,7 +45,7 @@ object_draft_schematic_vehicle_civilian_landspeeder_x34 = object_draft_schematic
 
 	templateType = DRAFTSCHEMATIC,
 
-	customObjectName = "Cadillac",
+	customObjectName = "X34 Landspeeder",
 
 	craftingToolTab = 16, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 25,

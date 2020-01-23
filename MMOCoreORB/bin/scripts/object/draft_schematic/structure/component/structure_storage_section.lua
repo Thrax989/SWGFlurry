@@ -50,7 +50,7 @@ object_draft_schematic_structure_component_structure_storage_section = object_dr
 	craftingToolTab = 1024, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 5,
 	size = 2,
-	factoryCrateSize = 1000,
+	factoryCrateSize = 100,
 
 	xpType = "crafting_structure_general",
 	xp = 400,

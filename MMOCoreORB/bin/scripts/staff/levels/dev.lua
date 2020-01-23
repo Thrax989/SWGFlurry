@@ -2,7 +2,7 @@ dev = {
 	level = 14,
 	name = "dev",
 	flag = 2, -- Developer
-	tag = "Flurry Developer OWNER",
+	tag = "SWGEmu-Dev",
 	skills = {
 		"admin_base",
 		"admin_debug_01",
@@ -15,7 +15,6 @@ dev = {
 		"admin_player_management_01",
 		"admin_player_management_02",
 		"admin_player_management_03",
-		"admin_player_management_04",
 		"admin_quest_management_01",
 		"admin_quest_management_02",
 		"admin_server_admin_01",

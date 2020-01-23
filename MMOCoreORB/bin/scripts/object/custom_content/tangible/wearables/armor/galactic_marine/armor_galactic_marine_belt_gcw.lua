@@ -44,7 +44,6 @@
 object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_belt_gcw = object_tangible_wearables_armor_galactic_marine_shared_armor_galactic_marine_belt_gcw:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Imperial",
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
@@ -100,26 +99,7 @@ object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_belt_gcw =
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 	
-	-- The damage types in WeaponObject
-	vulnerability = LIGHTSABER,
 
-	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
-
-	-- LIGHT, MEDIUM, HEAVY
-	rating = LIGHT,
-
-	kinetic = 15,
-	energy = 15,
-	electricity = 15,
-	stun = 15,
-	blast = 15,
-	heat = 15,
-	cold = 15,
-	acid = 15,
-	lightSaber = 0
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_belt_gcw, "object/tangible/wearables/armor/galactic_marine/armor_galactic_marine_belt_gcw.iff")
