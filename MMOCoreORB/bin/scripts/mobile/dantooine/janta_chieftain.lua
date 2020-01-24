@@ -39,7 +39,7 @@ janta_chieftain = Creature:new {
 		},
 		{
 			groups = {
-				{group = "artifact", chance = 10000000}			
+				{group = "nge_all", chance = 10000000}			
 		},
 			lootChance = 5000000
 		},

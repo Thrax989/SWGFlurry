@@ -35,7 +35,7 @@ function janta_cave:spawnMobiles()
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pBoss = spawnMobile("dantooine", "janta_chief", 10800, -91.6196, -100.898, -99.5903, 165, 529333)--3 hour respawn to start the boss
+local pBoss = spawnMobile("dantooine", "janta_chieftain", 10800, -91.6196, -100.898, -99.5903, 165, 529333)--3 hour respawn to start the boss
 	print("Spawning Janta Boss")
 if (pBoss ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "janta_cave", "notifyTriggerDead", pBoss)
@@ -47,7 +47,7 @@ end
 --  Notify trigger is dead to spawn Boss
 -----------------------------------------
 function janta_cave:notifyTriggerDead(pBoss, pPlayer)
-local pBoss = spawnMobile("dantooine", "janta_boss", -1, -91.6196, -100.898, -99.5903, 165, 529333)
+local pBoss = spawnMobile("dantooine", "janta_cave_boss", -1, -91.6196, -100.898, -99.5903, 165, 529333)
     print("Spawning Janta Boss")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
