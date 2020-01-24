@@ -30,10 +30,22 @@ enhanced_kwi = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "enhanced_kwi", chance = 10000000}
+				{group = "enhanced_kwi", chance = 10000000},
 			},
-			lootChance = 3120000
-		}
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "fire_breathing_spider", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
 	},
 	weapons = {},
 	conversationTemplate = "",

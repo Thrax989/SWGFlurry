@@ -32,34 +32,34 @@ acklay = Creature:new {
 			groups = {
 				{group = "acklay", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "nge_all", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 2500000},
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "vehicledeedsrare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "acklay", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		}
 	},
 	weapons = {},

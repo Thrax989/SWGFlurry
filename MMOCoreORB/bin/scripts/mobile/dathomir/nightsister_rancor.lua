@@ -33,25 +33,25 @@ nightsister_rancor = Creature:new {
 			groups = {
 				{group = "rancor_common", chance = 10000000},
 			},
-			lootChance = 4000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "armor_all", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "weapons_all", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "wearables_all", chance = 10000000},
 			},
-			lootChance = 1500000
+			lootChance = 5000000
 		},
 	},
 	weapons = {},

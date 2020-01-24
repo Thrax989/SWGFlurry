@@ -735,6 +735,15 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 		}
 	}
 
+	//Rare Loot NGE Weapon System
+	if (creatureLevel >= 75){
+		if (System::random(100) < 2) { //2% NGE Weapon System
+			createLoot(container, "nge_all", creatureLevel, false);
+			creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
+			creature->showFlyText("NGE", "Weapon", 0, 255, 0);
+		}
+	}
+
 	//Bonus Credit System LeveL 50
 	if (creatureLevel == 50){
 		if (System::random(100) < 20) {

@@ -35,67 +35,67 @@ janta_chieftain = Creature:new {
 			groups = {
 				{group = "junk", chance = 10000000}				
 		},
-			lootChance = 100000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "artifact", chance = 10000000}			
+				{group = "nge_all", chance = 10000000}			
 		},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "tierone", chance = 10000000}
 		},
-			lootChance = 7500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 		},
-			lootChance = 3500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "tierthree", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 		},
-			lootChance = 3500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "tierthree", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 {
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 		},
-			lootChance = 3500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "tierthree", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 {
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 		},
-			lootChance = 3500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "janta_common", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 },
 weapons = {"unarmed_weapons"},
