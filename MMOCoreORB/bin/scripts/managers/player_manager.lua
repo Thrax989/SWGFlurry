@@ -44,7 +44,7 @@
 --GENERAL PLAYER SETTINGS
 -----------------------------------
 
-onlineCharactersPerAccount = 2 --How many characters are allowed online from a single account.
+onlineCharactersPerAccount = 4 --How many characters are allowed online from a single account.
 allowSameAccountPvpRatingCredit = 0
 
 --Blue frog / GM buff values
@@ -63,13 +63,13 @@ globalExpMultiplier = 1.0
 --For creature pets, A Creature Handler will have the base number + their stored pets skill mod as limit
 baseStoredCreaturePets = 2
 baseStoredFactionPets = 3
-baseStoredDroids = 5
-baseStoredVehicles = 5
-baseStoredShips = 5
+baseStoredDroids = 20
+baseStoredVehicles = 20
+baseStoredShips = 20
 -----------------------------------
 --VETERAN REWARDS CONFIG
 -----------------------------------
-veteranRewardMilestones = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 150, 180, 210, 240, 270, 300, 330, 360, 365, 450, 540, 630, 720, 810, 900, 990, 1080}} --days, must be sorted low to high
+veteranRewardMilestones = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 150, 180, 210, 240, 270, 300, 330, 360, 365, 450, 540, 630, 720, 810, 900, 990, 1080} --days, must be sorted low to high
 
 veteranRewardAdditionalMilestones = 365 --frequency, in days, of additional milestones (beyond the established ones)
 
@@ -351,7 +351,7 @@ veteranRewards = {
 		{templateFile = "object/tangible/tcg/series6/reuseable_buff_item_shock_collar.iff", milestone=365, oneTime=false, description="Shock collar"},
 		{templateFile = "object/tangible/tcg/series6/statuette_lando.iff", milestone=365, oneTime=false, description="Lando statuette"},
 		{templateFile = "object/tangible/tcg/series6/wearable_greedos_outfit.iff", milestone=365, oneTime=false, description="Greedos outfit"},
-		{templateFile = "object/tangible/tcg/series6/wearable_guise_of_fire.iff", milestone=365, oneTime=false, description="Fire of guise"},/
+		{templateFile = "object/tangible/tcg/series6/wearable_guise_of_fire.iff", milestone=365, oneTime=false, description="Fire of guise"},
 		{templateFile = "object/tangible/tcg/series6/wearable_guise_of_ice.iff", milestone=365, oneTime=false, description="Ice of guise"},
 		{templateFile = "object/tangible/tcg/series5/wearable_ceremonial_travel_headdress.iff", milestone=365, oneTime=false, description="Ceremonial Headress"},
 		{templateFile = "object/tangible/tcg/series6/combine_object_battle_droid_statuette.iff", milestone=365, oneTime=false, description="Battle droid statuette"},
