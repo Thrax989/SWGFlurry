@@ -32,7 +32,7 @@ sherkar = Creature:new {
 			groups = {
 				{group = "goggles_all", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
