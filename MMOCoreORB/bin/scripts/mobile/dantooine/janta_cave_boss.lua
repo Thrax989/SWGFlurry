@@ -27,8 +27,7 @@ janta_cave_boss = Creature:new {
 	  diet = HERBIVORE,
 	  Scale = 2.0,	
 
-	templates = {"object/mobile/tusken_raider.iff"},
-
+	templates = {"object/mobile/dantari_male.iff"},
 --Mini Boss Template
 	lootGroups = {
 		{
