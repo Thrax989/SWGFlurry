@@ -1,6 +1,6 @@
 --------------------------------------
 --   Creator : TOXIC
---   Date : 1/25/2020
+--   Date : 6/13/2018
 --------------------------------------
 avatar_platform = ScreenPlay:new {
   numberOfActs = 1,
@@ -126,7 +126,27 @@ spawnMobile("dungeon2","ep3_blackscale_guard_m_01",360,-81,-14,-83,180,14201239)
 spawnMobile("dungeon2","ep3_blackscale_guard_m_02",360,-104,-14,-84,180,14201239)
 spawnMobile("dungeon2","ep3_blackscale_scaleguard",360,-90,-14,-82,0,14201239)
 spawnMobile("dungeon2","ep3_blackscale_guard_m_01",360,-87,-14,-68,90,14201239)
-spawnMobile("dungeon2","ep3_blackscale_guard_m_03",360,-93,-14,-68.,-90,14201239)      
+spawnMobile("dungeon2","ep3_blackscale_guard_m_03",360,-93,-14,-68.,-90,14201239)
+
+--Boss Room
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -204.523, 3.07264e-08, -16.5945, 188, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -195.08, -1.80585e-08, -16.5001, 54, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -194.91, -2.85989e-08, -32.9612, 158, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -206.562, 5.37062e-08, -31.8888, 359, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -205.181, -3.61113e-08, -47.1831, 99, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -214.551, 5.66324e-08, -32.4732, 208, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -216.127, 9.56048e-08, -30.2505, 215, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -218.302, 1.01136e-08, -28.7245, 221, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -218.213, 8.02523e-08, -26.4286, 239, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -218.237, 6.40836e-08, -23.6183, 280, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -218.183, 6.22061e-08, -20.972, 270, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -216.092, 6.27911e-08, -19.5472, 308, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -214.619, 6.13758e-08, -17.4476, 319, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -204.523, 3.07264e-08, -16.5945, 188, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -215.745, -1, -36.0073, 167, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -221.225, -1, -19.4058, 219, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -222.017, -1, -29.2173, 252, 14201271)
+spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 1800, -216.899, -1, -14.8131, 272, 14201271)
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
