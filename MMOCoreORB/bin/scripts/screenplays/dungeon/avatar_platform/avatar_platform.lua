@@ -142,13 +142,30 @@ end
 --------------------------------------
 function avatar_platform:notifyTriggerDead(pTrigger, pPlayer)
 local pBoss = spawnMobile("dungeon2", "avatar_droid_boss", 0, -234, -1, -25.07, 90, 14201271)
+    print("Spawning Avatar Boss")
+	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
     ObjectManager.withCreatureObject(pBoss, function(oBoss)
     writeData("avatar_platform:spawnState", 1)
     writeData("avatar_platform", oBoss:getObjectID())
     spatialChat(pBoss, "Intruder Alert Activating Defense Systems")
     createObserver(DAMAGERECEIVED,"avatar_platform","boss_damage", pBoss)
+    createObserver(OBJECTDESTRUCTION, "avatar_platform", "Restart", pBoss)
 end)
+    return 0
+end
+-----------------------------------------
+--  Notify trigger broadcast respawning
+-----------------------------------------
+function avatar_platform:Restart(pPlayer, pBoss)
+    print("Starting Boss Broadcast Scripts")
+	createEvent(1 * 1000, "avatar_platform", "Restartstates", pPlayer, "")--Restart Avatar  States
+	createEvent(1 * 1000, "avatar_platform", "BroadcastRespawn", pPlayer, "")--Broadcast 3 Hour Respawn
+	createEvent(60 * 1000, "avatar_platform", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
+	createEvent(10795 * 1000, "avatar_platform", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
+	createEvent(10798 * 1000, "avatar_platform", "KillSpawnCast1", pPlayer, "")--Broadcast Respawn 3
+	createEvent(10799 * 1000, "avatar_platform", "KillSpawnCast2", pPlayer, "")--Broadcast Respawn 2
+	createEvent(10800 * 1000, "avatar_platform", "KillSpawnCast3", pPlayer, "")--Broadcast Respawn 1
     return 0
 end
 --------------------------------------
@@ -175,7 +192,7 @@ local x2 = boss:getPositionX()
 local y2 = boss:getPositionY()
 
 local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-local maxDistance = 40 --Max distance you can fight the boss is 40 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
+local maxDistance = 50 --Max distance you can fight the boss is 40 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
 if distance > (maxDistance * maxDistance) then
       forcePeace(pBoss)
       CreatureObject(pBoss):healDamage(heal, 0)
@@ -185,7 +202,7 @@ if distance > (maxDistance * maxDistance) then
       CreatureObject(pBoss):playEffect("clienteffect/bacta_grenade.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_shocked_01_noshake.cef", "")
       spatialChat(pBoss, "Systems powering down you are out of combat range")
-      CreatureObject(pPlayer):sendSystemMessage("You must be within 25m of the boss to fight, boss is now resetting")
+      CreatureObject(pPlayer):sendSystemMessage("You must be within 50m of the boss to fight, boss is now resetting")
 end
 --------------------------------------
 --  90% health check
@@ -244,7 +261,7 @@ if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 --  70% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind *0.7))) and readData("avatar_platform:spawnState") == 3) then
+if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind * 0.7))) and readData("avatar_platform:spawnState") == 3) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
       local trapDmg = getRandomNumber(500, 1000)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
@@ -270,7 +287,7 @@ if (((bossHealth <= (bossMaxHealth *0.7)) or (bossAction <= (bossMaxAction * 0.7
 --------------------------------------
 --  60% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind *0.6))) and readData("avatar_platform:spawnState") == 4) then
+if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind * 0.6))) and readData("avatar_platform:spawnState") == 4) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
       local trapDmg = getRandomNumber(500, 1000)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
@@ -322,7 +339,7 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 --  40% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind *0.4))) and readData("avatar_platform:spawnState") == 6) then
+if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind * 0.4))) and readData("avatar_platform:spawnState") == 6) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
       local trapDmg = getRandomNumber(500, 1000)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
@@ -331,7 +348,7 @@ if (((bossHealth <= (bossMaxHealth *0.4)) or (bossAction <= (bossMaxAction * 0.4
       CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
-      spatialChat(pBoss, "Boss Current Health = 50%")
+      spatialChat(pBoss, "Boss Current Health = 40%")
       writeData("avatar_platform:spawnState",7)
       local sixspawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.774, -1, -10.4822, 144, 14201271)
       local sixspawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.759, -1, -12.9513, 150, 14201271)
@@ -348,7 +365,7 @@ if (((bossHealth <= (bossMaxHealth *0.4)) or (bossAction <= (bossMaxAction * 0.4
 --------------------------------------
 --  30% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.3)) or (bossAction <= (bossMaxAction * 0.3)) or (bossMind <= (bossMaxMind *0.3))) and readData("avatar_platform:spawnState") == 7) then
+if (((bossHealth <= (bossMaxHealth * 0.3)) or (bossAction <= (bossMaxAction * 0.3)) or (bossMind <= (bossMaxMind * 0.3))) and readData("avatar_platform:spawnState") == 7) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
       local trapDmg = getRandomNumber(500, 1000)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
@@ -426,11 +443,85 @@ if (((bossHealth <= (bossMaxHealth *0.1)) or (bossAction <= (bossMaxAction * 0.1
 --------------------------------------------------------------------------------
 --   Check that the boss has died, Broadcast server wide, set state for players
 --------------------------------------------------------------------------------
-if (((bossHealth <= (bossMaxHealth * 0.01)) or (bossAction <= (bossMaxAction * 0.01)) or (bossMind <= (bossMaxMind * 0.01))) and readData("avatar_platform:spawnState") == 10) then
+if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.001))) and readData("avatar_platform:spawnState") == 10) then
       spatialChat(pBoss, "We shall meet again uggggh!.")
-      CreatureObject(pBoss):broadcastToServer("\\#63C8F9 A Group Has Cleared The Tusken King Dungeon! Next Boss Encounter will be Avalible in 1 hour!.")
             writeData("avatar_platform:spawnState",11)
         end
       end
    return 0
 end
+----------------------------
+--Broadcast Initial Respawn
+----------------------------
+function avatar_platform:BroadcastRespawn(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 Avatar Boss Respawning In 3 Hours")
+    	print("Starting Boss Respawn Broadcast Message")
+end
+-----------------------
+--Broadcast Respawn
+-----------------------
+function avatar_platform:KillSpawnCast(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 Avatar Boss Respawning In ...")
+end
+-----------------------
+--Broadcast Respawn 3
+-----------------------
+function avatar_platform:KillSpawnCast1(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 3")
+end
+-----------------------
+--Broadcast Respawn 2
+-----------------------
+function avatar_platform:KillSpawnCast2(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 2")
+end
+-----------------------
+--Broadcast Respawn 1
+-----------------------
+function avatar_platform:KillSpawnCast3(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 1")
+    	print("Avatar Boss Is Respawning")
+end
+-----------------------------------------------------------------------------
+--The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
+-----------------------------------------------------------------------------
+function avatar_platform:KillBoss(pBoss)
+	dropObserver(pBoss, OBJECTDESTRUCTION)
+	if SceneObject(pBoss) then
+		print("Unlooted Avatar Boss Destroyed")
+		SceneObject(pBoss):destroyObjectFromWorld()
+		SceneObject(pBoss):destroyObjectFromDatabase()
+		return 0
+	end
+end
+----------------------------
+--Remove Boss After 3 hours
+----------------------------
+function avatar_platform:Remove(pBoss)
+	if SceneObject(pBoss) then
+		print("Avatar Boss Removed")
+		SceneObject(pBoss):destroyObjectFromWorld()
+		SceneObject(pBoss):destroyObjectFromDatabase()
+		dropObserver(pBoss, OBJECTDESTRUCTION)
+		dropObserver(pBoss, DAMAGERECEIVED)
+		forcePeace(pBoss)
+		forcePeace(pBoss)
+		forcePeace(pBoss)
+		forcePeace(pBoss)
+		forcePeace(pBoss)
+		forcePeace(pBoss)
+		end
+		return 0
+end
+----------------------------
+--Reset Player Boss States
+----------------------------
+function avatar_platform:Restartstates(pPlayer)
+   writeData("avatar_platform:spawnState", 0)
+end
+
