@@ -137,11 +137,6 @@ end
 --------------------------------
 function exar_kun:bomb(pPlayer)
 
-	if (pPlayer == nil) then
-		return
-		
-	end
-
 	if (CreatureObject(pPlayer):isGrouped()) then
 		local groupSize = CreatureObject(pPlayer):getGroupSize()
 
@@ -440,9 +435,5 @@ end
 --Reset Player Boss States
 ----------------------------
 function exar_kun:Restartstates(pPlayer)
-
-	if (pPlayer == nil) then
-		return
-	end
    writeData("exar_kun:spawnState", 0)
 end
