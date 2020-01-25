@@ -369,7 +369,7 @@ includeFile("events/buffTerminalMenuComponent.lua")
 includeFile("events/race_droid.lua")
 includeFile("events/jediQuest.lua")
 includeFile("events/jediLives.lua")
-includeFile("events/black_sun.lua")
+--includeFile("events/black_sun.lua")
 includeFile("events/deathBounty.lua")
 --includeFile("events/halloween_moenia.lua")
 
