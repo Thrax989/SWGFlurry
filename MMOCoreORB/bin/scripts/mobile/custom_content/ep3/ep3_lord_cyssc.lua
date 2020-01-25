@@ -1,17 +1,18 @@
 ep3_lord_cyssc = Creature:new {
 	customName = "Lord Cyssc",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "townsperson",
+	socialGroup = "trandoshan",
 	faction = "",
 	level = 300,
-	chanceHit = 15.00,
-	damageMin = 1400,
-	damageMax = 1850,
-	baseXp = 26654,
-	baseHAM = 95000,
-	baseHAMmax = 125000,
-	armor = 0,
-	resists = {15,15,15,15,15,15,15,15,15},
+	chanceHit = 25.00,
+	damageMin = 1245,
+	damageMax = 2600,
+	specialDamageMult = 7.5,
+	baseXp = 28549,
+	baseHAM = 800000,
+	baseHAMmax = 850000,
+	armor = 2,
+	resists = {80,80,80,80,80,80,80,80,80},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -23,7 +24,7 @@ ep3_lord_cyssc = Creature:new {
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + HEALER,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = AIENABLED + INTERESTING,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_lord_cyssc.iff"},
@@ -48,12 +49,33 @@ ep3_lord_cyssc = Creature:new {
 		},
 		{
 			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
+				{group = "nge_all", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -62,7 +84,16 @@ ep3_lord_cyssc = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2000000
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"mixed_force_weapons"},

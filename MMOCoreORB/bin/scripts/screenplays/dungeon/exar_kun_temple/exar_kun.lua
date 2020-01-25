@@ -32,6 +32,7 @@ spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff"
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", -11.4999, 0.246572, -121.8, 14200872, 1, 0, 0, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 13.8999, 173.835, 14.6001, 14201198, 1, 0, 0, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 5.43268, -8, 30.8895, 14200766, 1, 0, 0, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", -209.378, 6.08163e-08, -25.2531, 14201271, 1, 0, 0, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 19.3, 0.1, 0.5, 14201104, 1, 0, 0, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 5.4443, -8, 30.8646, 14200737, 1, 0, 0, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 0.1, 0.0315461, 42.2, 14200863, 1, 0, 0, 0)
@@ -42,6 +43,7 @@ end
 --   spawn mobiles for dungeon
 --------------------------------------------------
 function exar_kun:spawnMobiles()
+spawnMobile("mustafar", "sherkar", 10800, -79.9848, -20.4863, -121.67, 277, 12116005)
 spawnMobile("dungeon2", "exar_guard", 1800, -18.336, 0.230914, -90.2677, 353, 14200873)
 spawnMobile("dungeon2", "exar_guard", 1800, -5.34595, 0.230444, -90.253, 354, 14200873)
 spawnMobile("dungeon2", "exar_guard", 1800, 8.63837, -0.0594431, -78.3088, 279, 14200873)
@@ -132,30 +134,6 @@ function exar_kun:Restart(pPlayer, pBoss)
 	createEvent(10800 * 1000, "exar_kun", "KillSpawnCast3", pPlayer, "")--Broadcast Respawn 1
     return 0
 end
---------------------------------
---Deploy Boss Trigger Trap Bomb
---------------------------------
-function exar_kun:bomb(pPlayer)
-
-	if (CreatureObject(pPlayer):isGrouped()) then
-		local groupSize = CreatureObject(pPlayer):getGroupSize()
-
-		for i = 0, groupSize - 1, 1 do
-			local pMember = CreatureObject(pPlayer):getGroupMember(i)
-			if pMember ~= nil and pMember ~= pPlayer and CreatureObject(pPlayer):isInRangeWithObject(pMember, 500) and not SceneObject(pMember):isAiAgent() then
-			local trapDmg = getRandomNumber(1000, 1500)
-			CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
-			CreatureObject(pMember):sendSystemMessage("You take damage from the fire")
-			CreatureObject(pMember):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
-			CreatureObject(pMember):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
-			CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
-			CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-			CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
-			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
-			end
-		end
-	end
-end
 --------------------------------------
 --   Player, Boss Functions
 --------------------------------------
@@ -202,7 +180,11 @@ end
 --  90% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.9)) or (bossMind <= (bossMaxMind * 0.9))) and readData("exar_kun:spawnState") == 1) then
-      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
@@ -220,7 +202,11 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
 --  80% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.8)) or (bossMind <= (bossMaxMind * 0.8))) and readData("exar_kun:spawnState") == 2) then
-      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
@@ -237,7 +223,11 @@ if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.
 --  70% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind * 0.7))) and readData("exar_kun:spawnState") == 3) then
-      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
@@ -254,7 +244,11 @@ if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.
 --  60% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind * 0.6))) and readData("exar_kun:spawnState") == 4) then
-      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
@@ -271,7 +265,11 @@ if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.
 --  50% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind * 0.5))) and readData("exar_kun:spawnState") == 5) then
-      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
@@ -288,7 +286,11 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
 --  40% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind * 0.4))) and readData("exar_kun:spawnState") == 6) then
-      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
@@ -305,7 +307,11 @@ if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.
 --  30% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.3)) or (bossAction <= (bossMaxAction * 0.3)) or (bossMind <= (bossMaxMind * 0.3))) and readData("exar_kun:spawnState") == 7) then
-      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
@@ -322,7 +328,11 @@ if (((bossHealth <= (bossMaxHealth * 0.3)) or (bossAction <= (bossMaxAction * 0.
 --  20% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.2)) or (bossAction <= (bossMaxAction * 0.2)) or (bossMind <= (bossMaxMind * 0.2))) and readData("exar_kun:spawnState") == 8) then
-      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
@@ -339,7 +349,11 @@ if (((bossHealth <= (bossMaxHealth * 0.2)) or (bossAction <= (bossMaxAction * 0.
 --  10% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind * 0.1))) and readData("exar_kun:spawnState") == 9) then
-      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+      local trapDmg = getRandomNumber(500, 1000)
+      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
