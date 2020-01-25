@@ -1,5 +1,5 @@
 sherkar = Creature:new {
-	objectName = "@mob/creature_names:sherkar",
+	customName = "Sherkar",
 	socialGroup = "sherkar",
 	faction = "",
 	level = 300,
