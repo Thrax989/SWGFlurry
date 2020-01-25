@@ -43,6 +43,7 @@ end
 --   spawn mobiles for dungeon
 --------------------------------------------------
 function exar_kun:spawnMobiles()
+spawnMobile("mustafar", "sherkar", 10800, -79.9848, -20.4863, -121.67, 277, 12116005)
 spawnMobile("dungeon2", "exar_guard", 1800, -18.336, 0.230914, -90.2677, 353, 14200873)
 spawnMobile("dungeon2", "exar_guard", 1800, -5.34595, 0.230444, -90.253, 354, 14200873)
 spawnMobile("dungeon2", "exar_guard", 1800, 8.63837, -0.0594431, -78.3088, 279, 14200873)
