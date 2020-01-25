@@ -123,10 +123,6 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
       spatialChat(pBoss, "Boss Current Health = 90%")
       spatialChat(pBoss, "You fools..")
       writeData("janta_cave:spawnState",2)
-      ObjectManager.withCreatureObject(onespawn, function(ofirstTime)
-      writeData("countspawn", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  80% health check
@@ -134,32 +130,20 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
 if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.8)) or (bossMind <= (bossMaxMind * 0.8))) and readData("janta_cave:spawnState") == 2) then
       spatialChat(pBoss, "Boss Current Health = 80%")
       writeData("janta_cave:spawnState",3)
-      ObjectManager.withCreatureObject(twospawn, function(ofirstTime)
-      writeData("countspawn", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  70% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind *0.7))) and readData("janta_cave:spawnState") == 3) then
+if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind * 0.7))) and readData("janta_cave:spawnState") == 3) then
       spatialChat(pBoss, "Boss Current Health = 70%")
       writeData("janta_cave:spawnState",4)
-      ObjectManager.withCreatureObject(threespawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end	
 --------------------------------------
 --  60% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind *0.6))) and readData("janta_cave:spawnState") == 4) then
+if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind * 0.6))) and readData("janta_cave:spawnState") == 4) then
       spatialChat(pBoss, "Boss Current Health = 60%")
       writeData("janta_cave:spawnState",5)
-      ObjectManager.withCreatureObject(fourspawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  50% health check
@@ -167,53 +151,37 @@ if (((bossHealth <= (bossMaxHealth *0.6)) or (bossAction <= (bossMaxAction * 0.6
 if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind * 0.5))) and readData("janta_cave:spawnState") == 5) then
       spatialChat(pBoss, "Boss Current Health = 50%")
       writeData("janta_cave:spawnState",6)
-      ObjectManager.withCreatureObject(fivespawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  40% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind *0.4))) and readData("janta_cave:spawnState") == 6) then
-      spatialChat(pBoss, "Boss Current Health = 50%")
+if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind * 0.4))) and readData("janta_cave:spawnState") == 6) then
+      spatialChat(pBoss, "Boss Current Health = 40%")
       writeData("janta_cave:spawnState",7)
-      ObjectManager.withCreatureObject(sixspawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  30% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.3)) or (bossAction <= (bossMaxAction * 0.3)) or (bossMind <= (bossMaxMind *0.3))) and readData("janta_cave:spawnState") == 7) then
+if (((bossHealth <= (bossMaxHealth * 0.3)) or (bossAction <= (bossMaxAction * 0.3)) or (bossMind <= (bossMaxMind * 0.3))) and readData("janta_cave:spawnState") == 7) then
       spatialChat(pBoss, "Boss Current Health = 30%")
       writeData("janta_cave:spawnState",8)
-      ObjectManager.withCreatureObject(sevenspawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  20% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.2)) or (bossAction <= (bossMaxAction * 0.2)) or (bossMind <= (bossMaxMind *0.2))) and readData("janta_cave:spawnState") == 8) then
+if (((bossHealth <= (bossMaxHealth * 0.2)) or (bossAction <= (bossMaxAction * 0.2)) or (bossMind <= (bossMaxMind * 0.2))) and readData("janta_cave:spawnState") == 8) then
       spatialChat(pBoss, "Boss Current Health = 20%")
       writeData("janta_cave:spawnState",9)
-      ObjectManager.withCreatureObject(eightspawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  10% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind *0.1))) and readData("janta_cave:spawnState") == 9) then
+if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind * 0.1))) and readData("janta_cave:spawnState") == 9) then
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 10%")
       writeData("janta_cave:spawnState",10)
-      local ninespawn = spawnMobile("dantooine", "janta_guard", 0, -91.6196, -100.898, -99.5903, 165, 529333)
-      local ninespawn = spawnMobile("dantooine", "janta_guard", 0, -91.6196, -100.898, -99.5903, 165, 529333)
+      local ninespawn = spawnMobile("dantooine", "janta_chieftain", 0, -91.6196, -100.898, -99.5903, 165, 529333)
+      local ninespawn = spawnMobile("dantooine", "janta_chieftain", 0, -91.6196, -100.898, -99.5903, 165, 529333)
       ObjectManager.withCreatureObject(ninespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
