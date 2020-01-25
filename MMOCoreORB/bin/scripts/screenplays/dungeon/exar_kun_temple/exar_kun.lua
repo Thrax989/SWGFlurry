@@ -132,6 +132,35 @@ function exar_kun:Restart(pPlayer, pBoss)
 	createEvent(10800 * 1000, "exar_kun", "KillSpawnCast3", pPlayer, "")--Broadcast Respawn 1
     return 0
 end
+--------------------------------
+--Deploy Boss Trigger Trap Bomb
+--------------------------------
+function exar_kun:bomb(pPlayer)
+
+	if (pPlayer == nil) then
+		return
+		
+	end
+
+	if (CreatureObject(pPlayer):isGrouped()) then
+		local groupSize = CreatureObject(pPlayer):getGroupSize()
+
+		for i = 0, groupSize - 1, 1 do
+			local pMember = CreatureObject(pPlayer):getGroupMember(i)
+			if pMember ~= nil and pMember ~= pPlayer and CreatureObject(pPlayer):isInRangeWithObject(pMember, 500) and not SceneObject(pMember):isAiAgent() then
+			local trapDmg = getRandomNumber(1000, 1500)
+			CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
+			CreatureObject(pMember):sendSystemMessage("You take damage from the fire")
+			CreatureObject(pMember):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+			CreatureObject(pMember):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+			CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
+			CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
+			CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+			CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+			end
+		end
+	end
+end
 --------------------------------------
 --   Player, Boss Functions
 --------------------------------------
@@ -178,7 +207,7 @@ end
 --  90% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.9)) or (bossMind <= (bossMaxMind * 0.9))) and readData("exar_kun:spawnState") == 1) then
-  	  createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      createEvent(1, "exar_kun", "bomb", pPlayer, "")
       CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
       CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
@@ -196,6 +225,9 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
 --  80% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.8)) or (bossMind <= (bossMaxMind * 0.8))) and readData("exar_kun:spawnState") == 2) then
+      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 80%")
       writeData("exar_kun:spawnState",3)
@@ -209,7 +241,10 @@ if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 --  70% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind *0.7))) and readData("exar_kun:spawnState") == 3) then
+if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind * 0.7))) and readData("exar_kun:spawnState") == 3) then
+      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 70%")
       writeData("exar_kun:spawnState",4)
@@ -223,7 +258,10 @@ if (((bossHealth <= (bossMaxHealth *0.7)) or (bossAction <= (bossMaxAction * 0.7
 --------------------------------------
 --  60% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind *0.6))) and readData("exar_kun:spawnState") == 4) then
+if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind * 0.6))) and readData("exar_kun:spawnState") == 4) then
+      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 60%")
       writeData("exar_kun:spawnState",5)
@@ -238,6 +276,9 @@ if (((bossHealth <= (bossMaxHealth *0.6)) or (bossAction <= (bossMaxAction * 0.6
 --  50% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind * 0.5))) and readData("exar_kun:spawnState") == 5) then
+      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 50%")
       writeData("exar_kun:spawnState",6)
@@ -251,9 +292,12 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 --  40% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind *0.4))) and readData("exar_kun:spawnState") == 6) then
+if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind * 0.4))) and readData("exar_kun:spawnState") == 6) then
+      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
-      spatialChat(pBoss, "Boss Current Health = 50%")
+      spatialChat(pBoss, "Boss Current Health = 40%")
       writeData("exar_kun:spawnState",7)
       local sixspawn = spawnMobile("dungeon2", "exar_guard", 0, 6.70729, -0.027031, 97.9255, 169, 14200878)
       local sixspawn = spawnMobile("dungeon2", "exar_guard", 0, 21.089, -0.0977471, 61.4571, 359, 14200878)
@@ -265,7 +309,10 @@ if (((bossHealth <= (bossMaxHealth *0.4)) or (bossAction <= (bossMaxAction * 0.4
 --------------------------------------
 --  30% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.3)) or (bossAction <= (bossMaxAction * 0.3)) or (bossMind <= (bossMaxMind *0.3))) and readData("exar_kun:spawnState") == 7) then
+if (((bossHealth <= (bossMaxHealth * 0.3)) or (bossAction <= (bossMaxAction * 0.3)) or (bossMind <= (bossMaxMind * 0.3))) and readData("exar_kun:spawnState") == 7) then
+      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 30%")
       writeData("exar_kun:spawnState",8)
@@ -279,7 +326,10 @@ if (((bossHealth <= (bossMaxHealth *0.3)) or (bossAction <= (bossMaxAction * 0.3
 --------------------------------------
 --  20% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.2)) or (bossAction <= (bossMaxAction * 0.2)) or (bossMind <= (bossMaxMind *0.2))) and readData("exar_kun:spawnState") == 8) then
+if (((bossHealth <= (bossMaxHealth * 0.2)) or (bossAction <= (bossMaxAction * 0.2)) or (bossMind <= (bossMaxMind * 0.2))) and readData("exar_kun:spawnState") == 8) then
+      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 20%")
       writeData("exar_kun:spawnState",9)  
@@ -293,7 +343,10 @@ if (((bossHealth <= (bossMaxHealth *0.2)) or (bossAction <= (bossMaxAction * 0.2
 --------------------------------------
 --  10% health check
 --------------------------------------
-if (((bossHealth <= (bossMaxHealth *0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind *0.1))) and readData("exar_kun:spawnState") == 9) then
+if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind * 0.1))) and readData("exar_kun:spawnState") == 9) then
+      createEvent(1, "exar_kun", "bomb", pPlayer, "")
+      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
+      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 10%")
       writeData("exar_kun:spawnState",10)
@@ -387,5 +440,9 @@ end
 --Reset Player Boss States
 ----------------------------
 function exar_kun:Restartstates(pPlayer)
+
+	if (pPlayer == nil) then
+		return
+	end
    writeData("exar_kun:spawnState", 0)
 end
