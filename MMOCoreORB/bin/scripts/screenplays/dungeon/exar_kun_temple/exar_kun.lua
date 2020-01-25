@@ -19,7 +19,7 @@ local ObjectManager = require("managers.object.object_manager")  --print("Object
 --   Initialize screenplay
 --------------------------------------
 function exar_kun:start()
-if (isZoneEnabled("dungeon2")) then
+if (isZoneEnabled("dungeon2") and isZoneEnabled("mustafar")) then
 	self:spawnMobiles()
 	self:spawnSceneObjects()
   end
@@ -29,6 +29,14 @@ function exar_kun:spawnSceneObjects()
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", -40.4491, 0.61331, 29.3437, 14200816, 1, 0, 0, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 15.5419, 4.71103, 106.975, 14200878, 1, 0, 0, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", -40.4448, 0.61331, 29.3521, 14200890, 1, 0, 0, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", -11.4999, 0.246572, -121.8, 14200872, 1, 0, 0, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 13.8999, 173.835, 14.6001, 14201198, 1, 0, 0, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 5.43268, -8, 30.8895, 14200766, 1, 0, 0, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 19.3, 0.1, 0.5, 14201104, 1, 0, 0, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 5.4443, -8, 30.8646, 14200737, 1, 0, 0, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 0.1, 0.0315461, 42.2, 14200863, 1, 0, 0, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 6193, 249.9, -5978, 0, 1, 0, 0, 0)
+spawnSceneObject("mustafar", "object/tangible/terminal/terminal_quad_screen.iff", -4.9798, -0.528749, 4.48454, 12116005, 0.48481, 0, 0.87462, 0)
 end
 --------------------------------------------------
 --   spawn mobiles for dungeon
