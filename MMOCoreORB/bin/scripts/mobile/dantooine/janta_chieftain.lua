@@ -8,7 +8,7 @@ janta_chieftain = Creature:new {
 	damageMax = 1500,
 	specialDamageMult = 1.5,
 	baseXp = 27849,
-	baseHAM = 600000,
+	baseHAM = 500000,
 	baseHAMmax = 600000,
 	armor = 1,
 	resists = {70,70,70,70,70,70,70,70,80,-1},
@@ -98,7 +98,7 @@ janta_chieftain = Creature:new {
 			lootChance = 5000000
 		},
 },
-weapons = {"unarmed_weapons"},
+weapons = {"melee_weapons"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster)
 }
