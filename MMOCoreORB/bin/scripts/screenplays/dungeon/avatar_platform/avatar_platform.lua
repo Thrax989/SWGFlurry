@@ -1,6 +1,6 @@
 --------------------------------------
 --   Creator : TOXIC
---   Date : 6/13/2018
+--   Date : 1/25/2020
 --------------------------------------
 avatar_platform = ScreenPlay:new {
   numberOfActs = 1,
@@ -130,7 +130,7 @@ spawnMobile("dungeon2","ep3_blackscale_guard_m_03",360,-93,-14,-68.,-90,14201239
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pTrigger = spawnMobile("dungeon2", "ep3_lord_cyssc", 10800, -234, -1, -25.07, 90, 14201271)--3 hour respawn to start the boss
+local pTrigger = spawnMobile("dungeon2", "ep3_blackscale_guard_m_02", 10800, -234, -1, -25.07, 90, 14201271)--3 hour respawn to start the boss
 if (pTrigger ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "avatar_platform", "notifyTriggerDead", pTrigger)
 end
@@ -141,7 +141,7 @@ end
 --  Notify trigger is dead to spawn Boss
 --------------------------------------
 function avatar_platform:notifyTriggerDead(pTrigger, pPlayer)
-local pBoss = spawnMobile("dungeon2", "avatar_droid_boss", 0, -234, -1, -25.07, 90, 14201271)
+local pBoss = spawnMobile("dungeon2", "ep3_lord_cyssc", 0, -234, -1, -25.07, 90, 14201271)
     print("Spawning Avatar Boss")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
@@ -186,8 +186,8 @@ local bossMaxHealth = boss:getMaxHAM(0)
 local bossMaxAction = boss:getMaxHAM(3)
 local bossMaxMind = boss:getMaxHAM(6)
 
-local x1 = -0.0547165
-local y1 = 10.281
+local x1 = -234
+local y1 = -25.07
 local x2 = boss:getPositionX()
 local y2 = boss:getPositionY()
 
@@ -219,18 +219,6 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
       spatialChat(pBoss, "Boss Current Health = 90%")
       spatialChat(pBoss, "You fools..")
       writeData("avatar_platform:spawnState",2)
-      local onespawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.774, -1, -10.4822, 144, 14201271)
-      local onespawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.759, -1, -12.9513, 150, 14201271)
-      local onespawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.513, -1, -18.6579, 111, 14201271)
-      local onespawn = spawnMobile("dungeon2", "avatar_guard", 0, -235.879, -1, -25.0242, 99, 14201271)
-      local onespawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.424, -1, -31.4353, 44, 14201271)
-      local onespawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.672, -1, -36.8962, 13, 14201271)
-      local onespawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.822, -1, -39.2119, 353, 14201271)
-
-      ObjectManager.withCreatureObject(onespawn, function(ofirstTime)
-      writeData("countspawn", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  80% health check
@@ -246,17 +234,6 @@ if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 80%")
       writeData("avatar_platform:spawnState",3)
-      local twospawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.774, -1, -10.4822, 144, 14201271)
-      local twospawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.759, -1, -12.9513, 150, 14201271)
-      local twospawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.513, -1, -18.6579, 111, 14201271)
-      local twospawn = spawnMobile("dungeon2", "avatar_guard", 0, -235.879, -1, -25.0242, 99, 14201271)
-      local twospawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.424, -1, -31.4353, 44, 14201271)
-      local twospawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.672, -1, -36.8962, 13, 14201271)
-      local twospawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.822, -1, -39.2119, 353, 14201271)
-      ObjectManager.withCreatureObject(twospawn, function(ofirstTime)
-      writeData("countspawn", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  70% health check
@@ -272,17 +249,6 @@ if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 70%")
       writeData("avatar_platform:spawnState",4)
-      local threespawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.774, -1, -10.4822, 144, 14201271)
-      local threespawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.759, -1, -12.9513, 150, 14201271)
-      local threespawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.513, -1, -18.6579, 111, 14201271)
-      local threespawn = spawnMobile("dungeon2", "avatar_guard", 0, -235.879, -1, -25.0242, 99, 14201271)
-      local threespawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.424, -1, -31.4353, 44, 14201271)
-      local threespawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.672, -1, -36.8962, 13, 14201271)
-      local threespawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.822, -1, -39.2119, 353, 14201271)
-      ObjectManager.withCreatureObject(threespawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end	
 --------------------------------------
 --  60% health check
@@ -298,17 +264,6 @@ if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 60%")
       writeData("avatar_platform:spawnState",5)
-      local fourspawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.774, -1, -10.4822, 144, 14201271)
-      local fourspawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.759, -1, -12.9513, 150, 14201271)
-      local fourspawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.513, -1, -18.6579, 111, 14201271)
-      local fourspawn = spawnMobile("dungeon2", "avatar_guard", 0, -235.879, -1, -25.0242, 99, 14201271)
-      local fourspawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.424, -1, -31.4353, 44, 14201271)
-      local fourspawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.672, -1, -36.8962, 13, 14201271)
-      local fourspawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.822, -1, -39.2119, 353, 14201271)
-      ObjectManager.withCreatureObject(fourspawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  50% health check
@@ -324,13 +279,13 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 50%")
       writeData("avatar_platform:spawnState",6)
-      local fivespawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.774, -1, -10.4822, 144, 14201271)
-      local fivespawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.759, -1, -12.9513, 150, 14201271)
-      local fivespawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.513, -1, -18.6579, 111, 14201271)
-      local fivespawn = spawnMobile("dungeon2", "avatar_guard", 0, -235.879, -1, -25.0242, 99, 14201271)
-      local fivespawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.424, -1, -31.4353, 44, 14201271)
-      local fivespawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.672, -1, -36.8962, 13, 14201271)
-      local fivespawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.822, -1, -39.2119, 353, 14201271)
+      local fivespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -223.854, -1, -9.97092, 173, 14201271)
+      local fivespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -229.786, -1, -12.8313, 169, 14201271)
+      local fivespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -234.791, -1, -18.631, 93, 14201271)
+      local fivespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -235.897, -1, -25.1299, 82, 14201271)
+      local fivespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -234.588, -1, -31.3546, 56, 14201271)
+      local fivespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -229.591, -1, -36.829, 6, 14201271)
+      local fivespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -223.892, -1, -39.4279, 347, 14201271)
       ObjectManager.withCreatureObject(fivespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -350,17 +305,6 @@ if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 40%")
       writeData("avatar_platform:spawnState",7)
-      local sixspawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.774, -1, -10.4822, 144, 14201271)
-      local sixspawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.759, -1, -12.9513, 150, 14201271)
-      local sixspawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.513, -1, -18.6579, 111, 14201271)
-      local sixspawn = spawnMobile("dungeon2", "avatar_guard", 0, -235.879, -1, -25.0242, 99, 14201271)
-      local sixspawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.424, -1, -31.4353, 44, 14201271)
-      local sixspawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.672, -1, -36.8962, 13, 14201271)
-      local sixspawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.822, -1, -39.2119, 353, 14201271)
-      ObjectManager.withCreatureObject(sixspawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  30% health check
@@ -376,17 +320,6 @@ if (((bossHealth <= (bossMaxHealth * 0.3)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 30%")
       writeData("avatar_platform:spawnState",8)
-      local sevenspawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.774, -1, -10.4822, 144, 14201271)
-      local sevenspawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.759, -1, -12.9513, 150, 14201271)
-      local sevenspawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.513, -1, -18.6579, 111, 14201271)
-      local sevenspawn = spawnMobile("dungeon2", "avatar_guard", 0, -235.879, -1, -25.0242, 99, 14201271)
-      local sevenspawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.424, -1, -31.4353, 44, 14201271)
-      local sevenspawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.672, -1, -36.8962, 13, 14201271)
-      local sevenspawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.822, -1, -39.2119, 353, 14201271)
-      ObjectManager.withCreatureObject(sevenspawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  20% health check
@@ -402,17 +335,6 @@ if (((bossHealth <= (bossMaxHealth *0.2)) or (bossAction <= (bossMaxAction * 0.2
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 20%")
       writeData("avatar_platform:spawnState",9)
-      local eightspawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.774, -1, -10.4822, 144, 14201271)
-      local eightspawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.759, -1, -12.9513, 150, 14201271)
-      local eightspawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.513, -1, -18.6579, 111, 14201271)
-      local eightspawn = spawnMobile("dungeon2", "avatar_guard", 0, -235.879, -1, -25.0242, 99, 14201271)
-      local eightspawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.424, -1, -31.4353, 44, 14201271)
-      local eightspawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.672, -1, -36.8962, 13, 14201271)
-      local eightspawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.822, -1, -39.2119, 353, 14201271)
-      ObjectManager.withCreatureObject(eightspawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
 		end
 --------------------------------------
 --  10% health check
@@ -428,13 +350,13 @@ if (((bossHealth <= (bossMaxHealth *0.1)) or (bossAction <= (bossMaxAction * 0.1
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 10%")
       writeData("avatar_platform:spawnState",10)
-      local ninespawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.774, -1, -10.4822, 144, 14201271)
-      local ninespawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.759, -1, -12.9513, 150, 14201271)
-      local ninespawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.513, -1, -18.6579, 111, 14201271)
-      local ninespawn = spawnMobile("dungeon2", "avatar_guard", 0, -235.879, -1, -25.0242, 99, 14201271)
-      local ninespawn = spawnMobile("dungeon2", "avatar_guard", 0, -234.424, -1, -31.4353, 44, 14201271)
-      local ninespawn = spawnMobile("dungeon2", "avatar_guard", 0, -229.672, -1, -36.8962, 13, 14201271)
-      local ninespawn = spawnMobile("dungeon2", "avatar_guard", 0, -223.822, -1, -39.2119, 353, 14201271)
+      local ninespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -223.854, -1, -9.97092, 173, 14201271)
+      local ninespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -229.786, -1, -12.8313, 169, 14201271)
+      local ninespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -234.791, -1, -18.631, 93, 14201271)
+      local ninespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -235.897, -1, -25.1299, 82, 14201271)
+      local ninespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -234.588, -1, -31.3546, 56, 14201271)
+      local ninespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -229.591, -1, -36.829, 6, 14201271)
+      local ninespawn = spawnMobile("dungeon2", "ep3_blackscale_scaleguard", 0, -223.892, -1, -39.4279, 347, 14201271)
       ObjectManager.withCreatureObject(ninespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -524,4 +446,3 @@ end
 function avatar_platform:Restartstates(pPlayer)
    writeData("avatar_platform:spawnState", 0)
 end
-
