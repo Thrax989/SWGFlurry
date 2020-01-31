@@ -49,6 +49,39 @@ spawnMobile("dungeon2", "isd_stormtrooper", 1, 0.0159999, 175.335, -13.1841, 181
 
 --Mini Boss Room
 spawnMobile("dungeon2", "isd_stormtrooper", 1, -0.0410455, 177.335, -58.3967, 355, 14201193)--Save For Mini Boss
+
+--Entrance to creature mutation room
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 59.344, 173.835, 70.5219, 121, 14201188)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 59.4756, 173.835, 73.7074, 89, 14201188)
+
+
+--entrance to boss mutation room
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 81.8535, 173.835, 69.755, 358, 14201177)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 78.1821, 173.835, 69.906, 358, 14201177)
+--boss in for mutation room
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 80.178, 173.835, 63.479, 352, 14201181)
+
+
+--mutation room 1
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 89.7521, 173.835, 94.8365, 265, 14201180)
+--mutation room2
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 89.4285, 173.835, 114.51, 268, 14201179)
+--mutation room 3
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 79.897, 173.835, 146.539, 179, 14201178)
+--mutation room 4
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 57.7598, 173.835, 100.133, 128, 14201184)
+--guards for muation room 4
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 65.8852, 173.835, 83.8533, 265, 14201185)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 65.7755, 173.835, 81.6075, 268, 14201185)
+
+--exit mutation room 4 guards
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 69.5949, 173.835, 116.89, 267, 14201183)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 54.0397, 173.835, 113.848, 354, 14201183)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 51.8217, 173.835, 113.764, 354, 14201183)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 50.3441, 173.835, 115.545, 88, 14201183)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 50.5408, 173.835, 117.646, 80, 14201183)
+
+
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
