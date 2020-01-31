@@ -82,6 +82,13 @@ spawnMobile("dungeon2", "isd_stormtrooper", 1, 50.3441, 173.835, 115.545, 88, 14
 spawnMobile("dungeon2", "isd_stormtrooper", 1, 50.5408, 173.835, 117.646, 80, 14201183)
 
 
+--middle entance hallway gaurds
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 62.7065, 173.835, 168.518, 162, 14201175)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 67.3617, 173.835, 168.516, 186, 14201175)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 64.8666, 173.835, 133.389, 359, 14201175)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 52.9773, 173.835, 138.086, 157, 14201182)
+
+
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
