@@ -290,7 +290,7 @@ if (((bossHealth <= (bossMaxHealth * 0.2)) or (bossAction <= (bossMaxAction * 0.
       local twospawn = spawnMobile("dungeon2", "isd_stormtrooper", 1, 10.0493, 173.835, 9.19901, 356, 14201198)
       local twospawn = spawnMobile("dungeon2", "isd_stormtrooper", 1, 9.87268, 173.835, 36.1161, 200, 14201198)
       local twospawn = spawnMobile("dungeon2", "isd_stormtrooper", 1, -10.0813, 173.835, 36.2106, 179, 14201198)
-      local twospawn = spawnMobile("dungeon2", "isd_stormtrooper", 1, 39.4956, 173.835, 31.5939, 266, 14201198)--Special mini at-st
+      local twospawn = spawnMobile("dungeon2", "isd_atst", 1, 39.4956, 173.835, 31.5939, 266, 14201198)--Special mini at-st
       ObjectManager.withCreatureObject(eightspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
