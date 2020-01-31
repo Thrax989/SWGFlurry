@@ -32,7 +32,7 @@ spawnMobile("dungeon2", "rancor", 1800, -5.34595, 0.230444, -90.253, 354, 142008
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pBoss = spawnMobile("dungeon2", "nightsisterqueen", 10800, 15.4963, 4.651, 106.287, 178, 14200878)--3 hour respawn to start the boss
+local pBoss = spawnMobile("dungeon2", "nightsisterqueen", 1, -79.1685, 17.8173, 23.93, 100, 14201105)--3 hour respawn to start the boss
 	print("Spawning nightsister temple queen")
 if (pBoss ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "nightsister_temple", "notifyTriggerDead", pBoss)
@@ -44,7 +44,7 @@ end
 --  Notify trigger is dead to spawn Boss
 -----------------------------------------
 function nightsister_temple:notifyTriggerDead(pBoss, pPlayer)
-local pBoss = spawnMobile("dungeon2", "nightsisterqueenboss", -1, 15.4963, 4.651, 106.287, 178, 14200878)
+local pBoss = spawnMobile("dungeon2", "nightsisterqueenboss", 1, -79.1685, 17.8173, 23.93, 100, 14201105)
     print("Spawning nightsister temple boss")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
