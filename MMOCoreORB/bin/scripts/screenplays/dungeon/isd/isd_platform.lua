@@ -34,6 +34,7 @@ spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff"
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", -53.0554, 181.335, 20.3764, 14201200, -0.707107, 0, -0.707107, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 54, 173.835, 20.0022, 14201199, 0.707107, 0, -0.707107, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 54, 181.335, 20.3601, 14201199, 0.707107, 0, -0.707107, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", -38.3662, 173.835, 67.0904, 14201198, 1, 0, 0, 0)
 end
 --------------------------------------------------
 --   spawn mobiles for dungeon
