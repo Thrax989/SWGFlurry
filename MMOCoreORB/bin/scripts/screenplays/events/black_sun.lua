@@ -1,10 +1,23 @@
+  --------------------------------------
+--   Creator : TOXIC
+--   Date : 1/24/2020
+--------------------------------------
 black_sunScreenPlay = ScreenPlay:new {
-        numberOfActs = 1,
-        screenplayName = "black_sunScreenPlay",
+  numberOfActs = 1,
+  questString = "black_sunScreenPlay",
+  questdata = Object:new {
+  activePlayerName = "initial",
+  }
 }
-
+-------------------------------------------------------------
+--   Register Screenplay to planet Dungeon 2 exar kun temple
+-------------------------------------------------------------
+spHelper = require("screenplayHelper")
 registerScreenPlay("black_sunScreenPlay", true)
-
+local ObjectManager = require("managers.object.object_manager")  --print("Object manager loaded for Exar Kun")
+--------------------------------------
+--   Initialize screenplay
+--------------------------------------
 function black_sunScreenPlay:start()
 if (isZoneEnabled("tatooine")) then
 	self:spawnMobiles()
@@ -12,9 +25,12 @@ if (isZoneEnabled("tatooine")) then
   end
 end
 
-function black_sunScreenPlay:spawnMobiles()
+function black_sunScreenPlay:spawnSceneObjects()
 	spawnSceneObject("tatooine","object/static/vehicle/static_speeder_bike.iff", -3264.0, 0.0, -4777.3, 0, 0, 0, 0, 0)
 	spawnSceneObject("tatooine","object/static/vehicle/static_sandcrawler.iff", -3075.0, 0.0, -4838.3, 0, 0, 0, 0, 0)
+end
+
+function black_sunScreenPlay:spawnMobiles()
 	spawnMobile("tatooine", "death_watch_miner", 30, -3251, 0, -4810, -165, 0)
 	spawnMobile("tatooine", "death_watch_miner", 30, -3259, 0, -4819, -132, 0)
 	spawnMobile("tatooine", "death_watch_miner", 30, -3262, 0, -4820, -71, 0)

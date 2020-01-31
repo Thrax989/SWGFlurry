@@ -47,12 +47,6 @@ exar_clone = Creature:new {
 		},
 		{
 			groups = {
-				{group = "worldbosscrate", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
 				{group = "vehicledeedsnormal", chance = 10000000},
 			},
 			lootChance = 3000000

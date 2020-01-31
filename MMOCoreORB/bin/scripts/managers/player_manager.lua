@@ -131,7 +131,6 @@ veteranRewards = {
 		{templateFile = "object/tangible/tcg/series1/reuseable_buff_item_sanyassan_skull.iff", milestone=40, oneTime=false, description="Buff item sanyassan skull"},
 		-- 45 Day Rewards
 		{templateFile = "object/tangible/tcg/series1/reuseable_buff_item_tusken_talisman.iff", milestone=45, oneTime=false, description="Buff item tusken talisman"},
-		{templateFile = "object/tangible/tcg/series1/target_creature_acklay_display.iff", milestone=45, oneTime=false, description="Acklay display"},
 		{templateFile = "object/tangible/tcg/series1/target_creature_deed.iff", milestone=45, oneTime=false, description="Creature deed"},
 		{templateFile = "object/tangible/tcg/series6/decorative_house_lamp.iff", milestone=45, oneTime=false, description="House lamp"},
 		{templateFile = "object/tangible/tcg/series6/decorative_baby_colo_claw_fishtank.iff", milestone=45, oneTime=false, description="Baby colo claw fishtank"},

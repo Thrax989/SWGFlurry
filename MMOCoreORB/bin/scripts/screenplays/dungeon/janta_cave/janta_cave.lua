@@ -251,6 +251,11 @@ end
 --Remove Boss After 3 hours
 ----------------------------
 function janta_cave:Remove(pBoss)
+
+	if SceneObject(pBoss == nil) then
+		return
+	end
+
 	if SceneObject(pBoss) then
 		print("Janta Boss Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()

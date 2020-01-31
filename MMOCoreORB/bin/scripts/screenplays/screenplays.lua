@@ -167,7 +167,8 @@ includeFile("dungeon/corellian_corvette/ticket_takers/lt_lance.lua")
 includeFile("dungeon/exar_kun_temple/exar_kun.lua")
 --Custom janta cave
 includeFile("dungeon/janta_cave/janta_cave.lua")
-
+--Custom avatar dungeon
+includeFile("dungeon/avatar_platform/avatar_platform.lua")
 
 -- Village
 includeFile("village/village_community_crafting.lua")
