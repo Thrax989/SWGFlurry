@@ -169,7 +169,10 @@ includeFile("dungeon/exar_kun_temple/exar_kun.lua")
 includeFile("dungeon/janta_cave/janta_cave.lua")
 --Custom avatar dungeon
 includeFile("dungeon/avatar_platform/avatar_platform.lua")
-
+--custom rogue star destoryer
+includeFile("dungeon/isd/isd_platform.lua")
+--custom nightsister temple
+includeFile("dungeon/nightsister_temple/nightsister_temple.lua")
 -- Village
 includeFile("village/village_community_crafting.lua")
 includeFile("village/village_gm_sui.lua")
