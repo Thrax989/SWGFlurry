@@ -41,7 +41,7 @@ spawnMobile("dungeon2", "isd_stormtrooper", 1, -34.4541, 173.835, 36.1355, 136, 
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pBoss = spawnMobile("dungeon2", "isd_stormtrooper", 1, -0.0423342, 173.835, 9.39721, 358, 14201198)--3 hour respawn to start the boss
+local pBoss = spawnMobile("dungeon2", "isd_mouse_droid", 1, 0.0534111, 173.835, 9.2723, 357, 14201198)--3 hour respawn to start the boss
 	print("Spawning ISD Platform Clone")
 if (pBoss ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "isd_platform", "notifyTriggerDead", pBoss)
@@ -53,7 +53,7 @@ end
 --  Notify trigger is dead to spawn Boss
 -----------------------------------------
 function isd_platform:notifyTriggerDead(pBoss, pPlayer)
-local pBoss = spawnMobile("dungeon2", "isd_stormtrooper", 1, -0.0423342, 173.835, 9.39721, 358, 14201198)
+local pBoss = spawnMobile("dungeon2", "isd_thrawn", 1, 0.0534111, 173.835, 9.2723, 357, 14201198)
     print("Spawning ISD Platform")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
@@ -138,8 +138,9 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
       spatialChat(pBoss, "Boss Current Health = 90%")
       spatialChat(pBoss, "You fools..")
       writeData("isd_platform:spawnState",2)
-      local onespawn = spawnMobile("dungeon2", "", 0, 6.70729, -0.027031, 97.9255, 169, 14200878)
-      local onespawn = spawnMobile("dungeon2", "", 0, 21.089, -0.0977471, 61.4571, 359, 14200878)
+      local onespawn = spawnMobile("dungeon2", "isd_stormtrooper", 1, 10.0493, 173.835, 9.19901, 356, 14201198)
+      local onespawn = spawnMobile("dungeon2", "isd_stormtrooper", 1, 10.0493, 173.835, 9.19901, 356, 14201198)
+      local onespawn = spawnMobile("dungeon2", "krix_swift", 1, -0.0402867, 173.835, 0.294756, 329, 14201198)
       ObjectManager.withCreatureObject(onespawn, function(ofirstTime)
       writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
