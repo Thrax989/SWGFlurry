@@ -28,34 +28,13 @@ end
 --   spawn elevator pads for dungeon
 --------------------------------------------------
 function exar_kun:spawnSceneObjects()
-	--elevator00 done
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 54.44, 173.835, 20.1186, 4336903, -0.7, 0, 0.7, 0)
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 54.4198, 181.335, 20.1185, 4336903, -0.7, 0, 0.7, 0)
-	
-	--elevator01 done
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", -54.4198, 173.835, 20.1647, 4336904, 0.7, 0, 0.7, 0)
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", -54.4908, 181.335, 20.1559, 4336904, 0.7, 0, 0.7, 0)
-	
-	--elevator02 done
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 48.9851, 173.835, 205.601, 4336905, -0.7, 0, 0.7, 0)
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 48.9717, 192.335, 205.611, 4336905, -0.7, 0, 0.7, 0)
-	
-	--elevator03 done
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 19.9851, 170.585, 430.571, 4336914, 0, 0, -1, 0)
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 20.0174, 453.359, 430.567, 4336914, 0, 0, -1, 0)
-	
-	--elevator04
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 21.41, 448.607, 341.828, 4336921, -0.7, 0, 0.7, 0)
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 21.41, 453.609, 341.828, 4336921, -0.7, 0, 0.7, 0)
-	
-	--elevator05 done
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", -21.42, 448.609, 341.822, 4336922, 0.7, 0, 0.7, 0)
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", -21.42, 453.609, 341.916, 4336922, 0.7, 0, 0.7, 0)
-	
-	--reactorlift done
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 19.9601, 140.585, 347.612, 4336906, 1, 0, 0, 0)
-	spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 19.9884, 170.585, 347.603, 4336906, 1, 0, 0, 0)
-end	
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 20.058, 170.585, 430.548, 14201210, 0, 0, -1, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 19.8045, 453.359, 430.494, 14201210, 0, 0, -1, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", -54, 173.835, 20.3058, 14201200, -0.707107, 0, -0.707107, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", -53.0554, 181.335, 20.3764, 14201200, -0.707107, 0, -0.707107, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 54, 173.835, 20.0022, 14201199, 0.707107, 0, -0.707107, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 54, 181.335, 20.3601, 14201199, 0.707107, 0, -0.707107, 0)
+end
 --------------------------------------------------
 --   spawn mobiles for dungeon
 --------------------------------------------------
