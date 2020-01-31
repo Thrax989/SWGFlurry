@@ -246,11 +246,11 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 					ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 					if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 					Locker locker(groupedCreature);
-					groupedCreature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
+ 					groupedCreature->switchZone("dungeon2", -36.7588, 173.835, 57.8608, 14201198);
 					locker.release();
 				}
 			}
-			creature->switchZone("dungeon2", 13.9, 173.8, 14.6, 14201198);
+			creature->switchZone("dungeon2", -36.7588, 173.835, 57.8608, 14201198);
 		}
 	}
 	if (selectedID == 226) {
