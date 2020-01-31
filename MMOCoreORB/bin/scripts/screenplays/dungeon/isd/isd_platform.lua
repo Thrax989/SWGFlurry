@@ -37,6 +37,16 @@ spawnMobile("dungeon2", "isd_stormtrooper", 1, -23.5692, 173.835, 2.95916, 90, 1
 spawnMobile("dungeon2", "isd_stormtrooper", 1, -29.9028, 173.835, 9.24134, 110, 14201198)
 spawnMobile("dungeon2", "isd_stormtrooper", 1, -34.4891, 173.835, 27.1564, 121, 14201198)
 spawnMobile("dungeon2", "isd_stormtrooper", 1, -34.4541, 173.835, 36.1355, 136, 14201198)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 6.8299, 177.335, -57.0574, 325, 14201193)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, -0.0410455, 177.335, -58.3967, 355, 14201193)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, -6.83028, 177.335, -56.4635, 326, 14201193)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 8.93966, 175.335, -31.7196, 358, 14201191)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 69.1725, 173.835, 25.9111, 349, 14201187)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 64.5691, 173.835, 25.8934, 30, 14201187)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, -69.0112, 173.835, 34.0492, 151, 14201197)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, -15.2133, 175.335, -24.3627, 90, 14201194)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, -9.90025, 175.335, -31.5628, 76, 14201195)
+spawnMobile("dungeon2", "isd_stormtrooper", 1, 0.0159999, 175.335, -13.1841, 181, 14201192)
 
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
