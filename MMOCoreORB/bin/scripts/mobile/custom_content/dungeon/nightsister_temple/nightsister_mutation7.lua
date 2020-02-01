@@ -68,8 +68,18 @@ nightsister_mutation7 = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareableeding",""},
-		{"creatureareacombo",""}
+		{"creatureareacombo","StateAccuracyBonus=50"},
+		{"creatureareaknockdown","StateAccuracyBonus=50"},
+		{"knockdownattack","KnockdownChance=50"},
+		{"creatureareaknockdown","KnockdownChance=50"},
+		{"dizzyattack","DizzyChance=50"},
+		{"stunattack","StunChance=50"},
+		{"mildpoison","PoisonChance=50"},
+		{"intimidationattack","IntimidationChance=50"},
+		{"mediumpoison","PoisonChance=50"},
+		{"creatureareapoison","PoisonChance=50"},
+		{"strongpoison","PoisonChance=50"},
+		{"creatureareaattack","StateAccuracyBonus=50"}
 	}
 }
 
