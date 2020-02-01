@@ -65,7 +65,7 @@ function nightsister_temple:Restart(pPlayer, pBoss)
     print("Starting Boss Broadcast Scripts")
 	createEvent(1 * 1000, "nightsister_temple", "Restartstates", pPlayer, "")--Restart nightsister temple States
 	createEvent(1 * 1000, "nightsister_temple", "BroadcastRespawn", pPlayer, "")--Broadcast 3 Hour Respawn
-	createEvent(60 * 1000, "nightsister_temple", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
+	createEvent(300 * 1000, "nightsister_temple", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
 	createEvent(10795 * 1000, "nightsister_temple", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
 	createEvent(10798 * 1000, "nightsister_temple", "KillSpawnCast1", pPlayer, "")--Broadcast Respawn 3
 	createEvent(10799 * 1000, "nightsister_temple", "KillSpawnCast2", pPlayer, "")--Broadcast Respawn 2
@@ -306,7 +306,7 @@ if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------------------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.001))) and readData("nightsister_temple:spawnState") == 10) then
       spatialChat(pBoss, "We shall meet again uggggh!.")
-      spatialChat(pBoss, "You have 60 seconds to loot my body befor it disappears.")
+      spatialChat(pBoss, "You have 5 minuets to loot my body befor it disappears.")
             writeData("nightsister_temple:spawnState",11)
         end
       end
