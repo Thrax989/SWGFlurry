@@ -181,7 +181,7 @@ function avatar_platform:Restart(pPlayer, pBoss)
     print("Starting Boss Broadcast Scripts")
 	createEvent(1 * 1000, "avatar_platform", "Restartstates", pPlayer, "")--Restart Avatar  States
 	createEvent(1 * 1000, "avatar_platform", "BroadcastRespawn", pPlayer, "")--Broadcast 3 Hour Respawn
-	createEvent(60 * 1000, "avatar_platform", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
+	createEvent(300 * 1000, "avatar_platform", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
 	createEvent(10795 * 1000, "avatar_platform", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
 	createEvent(10798 * 1000, "avatar_platform", "KillSpawnCast1", pPlayer, "")--Broadcast Respawn 3
 	createEvent(10799 * 1000, "avatar_platform", "KillSpawnCast2", pPlayer, "")--Broadcast Respawn 2
