@@ -32,19 +32,19 @@ isd_stormtrooper = Creature:new {
 			groups = {
 				{group = "clothing_attachments", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
 				{group = "armor_attachments", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
 				{group = "weapons_all", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
