@@ -646,7 +646,7 @@ void SlicingSessionImplementation::handleSliceDamage(uint8 percent) {
 	player->sendSystemMessage(params);
 
 	if(System::random(1) == 1)
-		armor->setRating(System::random(3));
+		armor->setArmorPiercing(System::random(3));
 
 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000" + String::valueOf(armorPiercing));
 }
@@ -676,7 +676,7 @@ void SlicingSessionImplementation::handleSliceSpeed(uint8 percent) {
 	player->sendSystemMessage(params);
 
 	if(System::random(1) == 1)
-		armor->setRating(System::random(3));
+		armor->setArmorPiercing(System::random(3));
 
 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000" + String::valueOf(armorPiercing));
 }
