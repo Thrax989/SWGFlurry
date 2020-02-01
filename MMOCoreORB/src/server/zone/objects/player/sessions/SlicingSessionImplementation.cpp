@@ -644,13 +644,10 @@ void SlicingSessionImplementation::handleSliceDamage(uint8 percent) {
 	params.setStringId("@slicing/slicing:dam_mod");
 
 	player->sendSystemMessage(params);
-	weap->setArmorPiercing(0);
-	if (System::random(20) == 5)
-	weap->setArmorPiercing(1);
-	if (System::random(20) == 10)
-	weap->setArmorPiercing(2);
-	if (System::random(20) == 15)
-	weap->setArmorPiercing(3);
+
+	if(System::random(1) == 1)
+		armor->setRating(System::random(3));
+
 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000" + String::valueOf(armorPiercing));
 }
 
@@ -677,13 +674,10 @@ void SlicingSessionImplementation::handleSliceSpeed(uint8 percent) {
 	params.setStringId("@slicing/slicing:spd_mod");
 
 	player->sendSystemMessage(params);
-	weap->setArmorPiercing(0);
-	if (System::random(20) == 5)
-	weap->setArmorPiercing(1);
-	if (System::random(20) == 10)
-	weap->setArmorPiercing(2);
-	if (System::random(20) == 15)
-	weap->setArmorPiercing(3);
+
+	if(System::random(1) == 1)
+		armor->setRating(System::random(3));
+
 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000" + String::valueOf(armorPiercing));
 }
 
@@ -760,13 +754,10 @@ void SlicingSessionImplementation::handleSliceEncumbrance(uint8 percent) {
 	params.setStringId("@slicing/slicing:enc_mod");
 
 	player->sendSystemMessage(params);
-	armor->setArmorPiercing(0);
-	if (System::random(20) == 5)
-	armor->setArmorPiercing(1);
-	if (System::random(20) == 10)
-	armor->setArmorPiercing(2);
-	if (System::random(20) == 15)
-	armor->setArmorPiercing(3);
+
+	if(System::random(1) == 1)
+		armor->setRating(System::random(3));
+
 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000" + String::valueOf(armorPiercing));
 }
 
@@ -790,13 +781,10 @@ void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 	params.setStringId("@slicing/slicing:eff_mod");
 
 	player->sendSystemMessage(params);
-	armor->setArmorPiercing(0);
-	if (System::random(20) == 5)
-	armor->setArmorPiercing(1);
-	if (System::random(20) == 10)
-	armor->setArmorPiercing(2);
-	if (System::random(20) == 15)
-	armor->setArmorPiercing(3);
+
+	if(System::random(1) == 1)
+		armor->setRating(System::random(3));
+
 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000" + String::valueOf(armorPiercing));
 }
 
