@@ -624,6 +624,7 @@ void SlicingSessionImplementation::detachPowerUp(CreatureObject* player, WeaponO
 void SlicingSessionImplementation::handleSliceDamage(uint8 percent) {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
+	uint8 armorPiercing = 0;
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isWeaponObject())
 		return;
@@ -650,11 +651,13 @@ void SlicingSessionImplementation::handleSliceDamage(uint8 percent) {
 	weap->setArmorPiercing(2);
 	if (System::random(20) == 15)
 	weap->setArmorPiercing(3);
+	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000" + String::valueOf(armorPiercing));
 }
 
 void SlicingSessionImplementation::handleSliceSpeed(uint8 percent) {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
+	uint8 armorPiercing = 0;
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isWeaponObject())
 		return;
@@ -681,6 +684,7 @@ void SlicingSessionImplementation::handleSliceSpeed(uint8 percent) {
 	weap->setArmorPiercing(2);
 	if (System::random(20) == 15)
 	weap->setArmorPiercing(3);
+	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000" + String::valueOf(armorPiercing));
 }
 
 void SlicingSessionImplementation::handleArmorSlice() {
