@@ -69,11 +69,22 @@ baseStoredShips = 20
 -----------------------------------
 --VETERAN REWARDS CONFIG
 -----------------------------------
-veteranRewardMilestones = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 150, 180, 210, 240, 270, 300, 330, 360, 365, 450, 540, 630, 720, 810, 900, 990, 1080} --days, must be sorted low to high
+veteranRewardMilestones = {0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 150, 180, 210, 240, 270, 300, 330, 360, 365, 450, 540, 630, 720, 810, 900, 990, 1080} --days, must be sorted low to high
 
 veteranRewardAdditionalMilestones = 365 --frequency, in days, of additional milestones (beyond the established ones)
 
 veteranRewards = {
+
+		-- 1 Day Rewards
+		{templateFile = "object/tangible/item/loot_crates/heroic_crate.iff", milestone=0, oneTime=false, description="Heroic Crate"},
+		{templateFile = "object/tangible/item/loot_crates/base_crate_01.iff", milestone=0, oneTime=true, description="New Player Crate"},
+		{templateFile = "object/tangible/item/loot_crates/diamond_crate.iff", milestone=0, oneTime=false, description="Diamond Crate"},
+		{templateFile = "object/tangible/item/loot_crates/plat_crate.iff", milestone=0, oneTime=false, description="Platinum Crate"},
+		{templateFile = "object/tangible/item/loot_crates/gold_crate.iff", milestone=0, oneTime=false, description="Gold Crate"},
+		{templateFile = "object/tangible/item/loot_crates/silver_crate.iff", milestone=0, oneTime=false, description="Silver Crate"},
+		{templateFile = "object/tangible/item/loot_crates/xmas_crate.iff", milestone=0, oneTime=true, description="Xmas Crate"},
+		{templateFile = "object/tangible/item/loot_crates/xmas_coal.iff", milestone=0, oneTime=true, description="Xmas Coal"},
+
 		-- 5 Day Rewards
 		{templateFile = "object/tangible/tcg/series1/consumable_hans_hydrospanner.iff", milestone=5, oneTime=false, description="Hans hydrospanner"},
 		{templateFile = "object/tangible/tcg/series1/consumable_keelkana_tooth.iff", milestone=5, oneTime=false, description="Keelkana tooth"},
