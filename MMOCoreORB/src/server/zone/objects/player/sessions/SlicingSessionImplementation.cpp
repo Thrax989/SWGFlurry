@@ -624,7 +624,7 @@ void SlicingSessionImplementation::detachPowerUp(CreatureObject* player, WeaponO
 void SlicingSessionImplementation::handleSliceDamage(uint8 percent) {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
-	int armorPiercing = 0;
+ 	int apslice = System::random(3);
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isWeaponObject())
 		return;
@@ -637,7 +637,7 @@ void SlicingSessionImplementation::handleSliceDamage(uint8 percent) {
 		this->detachPowerUp(player, weap);
 
 	weap->setDamageSlice(percent / 100.f);
-	weap->setArmorPiercing(System::random(3));
+	weap->setArmorPiercing(apslice);
 	weap->setSliced(true);
 
 	StringIdChatParameter params;
@@ -645,15 +645,7 @@ void SlicingSessionImplementation::handleSliceDamage(uint8 percent) {
 	params.setStringId("@slicing/slicing:dam_mod");
 
 	player->sendSystemMessage(params);
-	
-if (System::random(3) == 0)
-			player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000 none");
-	else if (System::random(3) == 1)
-			player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000 light");
-	else if (System::random(3) == 2)
-			player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000 medium");
-	else if (System::random(3) == 3)
-			player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000 heavy");
+ 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is: \\#ff0000" + String::valueOf(apslice));
 }
 
 void SlicingSessionImplementation::handleSliceSpeed(uint8 percent) {
