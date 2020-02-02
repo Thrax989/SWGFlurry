@@ -1372,7 +1372,7 @@ void AiAgentImplementation::respawn(Zone* zone, int level) {
 	CreatureManager* creatureManager = zone->getCreatureManager();
 
 	if (npcTemplate != nullptr && creatureManager != nullptr && isCreature()) {
-		int chance = 2000;
+		int chance = 500;
 		int babiesSpawned = 0;
 
 		ManagedReference<SceneObject*> home = homeObject.get();
