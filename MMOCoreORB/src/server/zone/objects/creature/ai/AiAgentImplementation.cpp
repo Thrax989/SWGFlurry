@@ -98,7 +98,7 @@ void AiAgentImplementation::loadTemplateData(SharedObjectTemplate* templateData)
 }
 
 int AiAgentImplementation::calculateAttackMinDamage(int level) {
-	int minDmg = Math::max(getDamageMin(), 20 + (level * 5));
+	int minDmg = Math::max(getDamageMin(), 45 + (level * 13));
 	if (petDeed != nullptr) {
 		minDmg = petDeed->getMinDamage();
 		if (level < petDeed->getLevel()) {
@@ -114,7 +114,7 @@ int AiAgentImplementation::calculateAttackMinDamage(int level) {
 }
 
 int AiAgentImplementation::calculateAttackMaxDamage(int level) {
-	int dmg = Math::max(getDamageMax(), calculateAttackMinDamage(level) * 2);
+	int dmg = Math::max(getDamageMax(), (calculateAttackMinDamage(level) * 1.25) + 13);
 	if (petDeed != nullptr) {
 		dmg = petDeed->getMaxDamage();
 		if (level < petDeed->getLevel()) {
@@ -128,7 +128,7 @@ int AiAgentImplementation::calculateAttackMaxDamage(int level) {
 	return dmg;
 }
 float AiAgentImplementation::calculateAttackSpeed(int level) {
-	float speed = 3.5f - ((float)level / 100.f);
+	float speed = 2.5f - ((float)level / 100.f);
 	return speed;
 }
 
@@ -1271,10 +1271,7 @@ void AiAgentImplementation::setDefender(SceneObject* defender) {
 }
 
 void AiAgentImplementation::queueDizzyFallEvent() {
-       if (!isNonPlayerCreatureObject())
-		CreatureObjectImplementation::queueDizzyFallEvent();
-	else
-       if (isNonPlayerCreatureObject())
+       if (System::random(1) == 1)
 		CreatureObjectImplementation::queueDizzyFallEvent();
 }
 
@@ -1372,7 +1369,7 @@ void AiAgentImplementation::respawn(Zone* zone, int level) {
 	CreatureManager* creatureManager = zone->getCreatureManager();
 
 	if (npcTemplate != nullptr && creatureManager != nullptr && isCreature()) {
-		int chance = 2000;
+		int chance = 500;
 		int babiesSpawned = 0;
 
 		ManagedReference<SceneObject*> home = homeObject.get();
