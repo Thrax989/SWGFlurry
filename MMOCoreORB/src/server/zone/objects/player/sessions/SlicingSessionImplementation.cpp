@@ -149,15 +149,15 @@ void SlicingSessionImplementation::generateSliceMenu(SuiListBox* suiBox) {
 		}
 		if(!selectSlice && !tangibleObject->isContainerObject() && !tangibleObject->isMissionTerminal() && firstRun){
 			if(tangibleObject->isArmorObject()){
-				suiBox->addMenuItem("Slice for base effectiveness.", 4);
-				suiBox->addMenuItem("Slice for encumbrance.", 5);
-				suiBox->addMenuItem("Slice for armor piercing.", 10);
+				suiBox->addMenuItem("Slice For Base Effectiveness.", 4);
+				suiBox->addMenuItem("Slice For Encumbrance.", 5);
+				suiBox->addMenuItem("Slice For Armor Piercing.", 10);
 			}else if(tangibleObject->isWeaponObject()){
-				suiBox->addMenuItem("Slice for speed.", 6);
-				suiBox->addMenuItem("Slice for damage.", 7);
-				suiBox->addMenuItem("Slice for armor piercing.", 9);
+				suiBox->addMenuItem("Slice For Speed.", 6);
+				suiBox->addMenuItem("Slice For Damage.", 7);
+				suiBox->addMenuItem("Slice For Weapon Armor Piercing.", 9);
 			}
-			suiBox->addMenuItem("Random slice.", 8);
+			suiBox->addMenuItem("Random Slice.", 8);
 		}
 
 	} else if (progress == 1) {
