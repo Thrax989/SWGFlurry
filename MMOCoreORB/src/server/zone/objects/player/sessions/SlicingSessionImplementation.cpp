@@ -726,12 +726,24 @@ void SlicingSessionImplementation::handleArmorSlice() {
 	if (tangibleObject == nullptr || player == nullptr)
 		return;
 
-	uint8 sliceType = System::random(1);
+	uint8 sliceType = 0;
 	int sliceSkill = getSlicingSkill(player);
 	uint8 min = 0;
 	uint8 max = 0;
 
-	switch (sliceSkill) {// 25-45% max encumbrance slice, 20-40% max effectiveness slice
+	if(!selectSlice){
+		sliceType = System::random(1);    //If not selected type, random slice
+	}else{
+		switch (sliceOption) {
+			case 1:
+				sliceType=0;      // Effectiveness slice
+				break;
+			case 2:
+				sliceType=1;      // Encumbrance slice
+				break;
+		}
+	}
+	switch (sliceSkill) {       // 20-45% max encumbrance slice, 11-35% max effectiveness slice
 	case 5:
 		min += (sliceType == 0) ? 5 : 10;
 		max += 5;
