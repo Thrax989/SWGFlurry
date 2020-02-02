@@ -382,3 +382,26 @@ int LuaTangibleObject::isNoTrade(lua_State* L){
 
 	return 1;
 }
+
+int LuaTangibleObject::setSocketCount(lua_State* L){
+
+    int count = lua_tointeger(L, -1);
+    
+    if (realObject->isWearableObject() && realObject != nullptr)
+    {
+        Locker locker(realObject);
+        
+        WearableObject* wo = cast<WearableObject*>(realObject);
+        
+        // Prevent over 4 sockets
+        if (count > 4)
+        { count = 4; }
+        // Prevent trying to set negative sockets
+        if (count < 0)
+        { count = 0; }
+        
+        wo->setSockets(count);
+    }
+    
+    return 0;
+}
