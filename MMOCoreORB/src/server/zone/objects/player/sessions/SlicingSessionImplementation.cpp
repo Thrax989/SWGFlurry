@@ -669,7 +669,8 @@ void SlicingSessionImplementation::handleSliceAp() {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
  	int apslice = System::random(3);
-
+	int conDmg = System::random(2000);
+	
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isWeaponObject())
 		return;
 
@@ -681,8 +682,11 @@ void SlicingSessionImplementation::handleSliceAp() {
 		this->detachPowerUp(player, weap);
 
 	weap->setArmorPiercing(apslice);
+	weap->setConditionDamage(conDmg);
 	weap->setSliced(true);
  	player->sendSystemMessage(" \\#C7DB00\\Your Weapon Armor Piercing Roll Is: \\#ff0000" + String::valueOf(apslice));
+ 	player->sendSystemMessage(" \\#C7DB00\\Your Weapon Condition Roll Is: \\#ff0000" + String::valueOf(conDmg));
+
 }
 
 void SlicingSessionImplementation::handleSliceSpeed(uint8 percent) {
@@ -772,6 +776,7 @@ void SlicingSessionImplementation::handleSliceEncumbrance(uint8 percent) {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
  	int sockets = System::random(4);
+	int conDmg = System::random(2000);
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
 		return;
@@ -782,6 +787,7 @@ void SlicingSessionImplementation::handleSliceEncumbrance(uint8 percent) {
 
 	armor->setEncumbranceSlice(percent / 100.f);
 	armor->setMaxSockets(sockets);
+	weap->setConditionDamage(conDmg);
 	armor->setSliced(true);
 	StringIdChatParameter params;
 	params.setDI(percent);
@@ -789,12 +795,14 @@ void SlicingSessionImplementation::handleSliceEncumbrance(uint8 percent) {
 
 	player->sendSystemMessage(params);
 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Socket Roll Is: \\#ff0000" + String::valueOf(sockets));
+ 	player->sendSystemMessage(" \\#C7DB00\\Your Weapon Condition Roll Is: \\#ff0000" + String::valueOf(conDmg));
 }
 
 void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
  	int sockets = System::random(4);
+	int conDmg = System::random(2000);
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
 		return;
@@ -805,6 +813,7 @@ void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 
 	armor->setEffectivenessSlice(percent / 100.f);
 	armor->setMaxSockets(sockets);
+	armor->setConditionDamage(conDmg);
 	armor->setSliced(true);
 	StringIdChatParameter params;
 	params.setDI(percent);
@@ -812,6 +821,7 @@ void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 
 	player->sendSystemMessage(params);
 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Socket Roll Is: \\#ff0000" + String::valueOf(sockets));
+ 	player->sendSystemMessage(" \\#C7DB00\\Your Weapon Condition Roll Is: \\#ff0000" + String::valueOf(conDmg));
 }
 
 void SlicingSessionImplementation::handleSliceArmorAp() {
@@ -819,6 +829,7 @@ void SlicingSessionImplementation::handleSliceArmorAp() {
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
  	int apslice = System::random(3);
  	int sockets = System::random(4);
+	int conDmg = System::random(2000);
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
 		return;
@@ -829,9 +840,11 @@ void SlicingSessionImplementation::handleSliceArmorAp() {
 	
 	armor->setRating(apslice);
 	armor->setMaxSockets(sockets);
+	armor->setConditionDamage(conDmg);
 	armor->setSliced(true);
  	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Roll Is: \\#ff0000" + String::valueOf(apslice));
  	player->sendSystemMessage(" \\#C7DB00\\Your Armor Socket Roll Is: \\#ff0000" + String::valueOf(sockets));
+ 	player->sendSystemMessage(" \\#C7DB00\\Your Weapon Condition Roll Is: \\#ff0000" + String::valueOf(conDmg));
 }
 
 void SlicingSessionImplementation::handleContainerSlice() {
