@@ -644,7 +644,7 @@ void SlicingSessionImplementation::detachPowerUp(CreatureObject* player, WeaponO
 void SlicingSessionImplementation::handleSliceDamage(uint8 percent) {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
-	int conDmg = System::random(2000)+500;
+	int conDmg = System::random(2000)+1000;
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isWeaponObject())
 		return;
@@ -672,7 +672,7 @@ void SlicingSessionImplementation::handleSliceAp() {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
  	int apslice = System::random(3);
-	int conDmg = System::random(2000)+500;
+	int conDmg = System::random(2000)+1000;
 	
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isWeaponObject())
 		return;
@@ -695,7 +695,7 @@ void SlicingSessionImplementation::handleSliceAp() {
 void SlicingSessionImplementation::handleSliceSpeed(uint8 percent) {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
-	int conDmg = System::random(2000)+500;
+	int conDmg = System::random(2000)+1000;
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isWeaponObject())
 		return;
@@ -782,7 +782,7 @@ void SlicingSessionImplementation::handleSliceEncumbrance(uint8 percent) {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
  	int sockets = System::random(4);
-	int conDmg = System::random(2000)+500;
+	int conDmg = System::random(2000)+1000;
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
 		return;
@@ -808,7 +808,7 @@ void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
  	int sockets = System::random(4);
-	int conDmg = System::random(2000)+500;
+	int conDmg = System::random(2000)+1000;
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
 		return;
@@ -835,7 +835,7 @@ void SlicingSessionImplementation::handleSliceArmorAp() {
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
  	int apslice = System::random(3);
  	int sockets = System::random(4);
-	int conDmg = System::random(2000)+500;
+	int conDmg = System::random(2000)+1000;
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
 		return;
