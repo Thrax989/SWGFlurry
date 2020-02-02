@@ -1,18 +1,17 @@
-krix_swift = Creature:new {
-	--objectName = "",
-	customName = "Krix SwiftShadow",
-	socialGroup = "",
-	pvpFaction = "",
-	faction = "",
+nightsister_mutation4 = Creature:new {
+	customName = "Nightsister Queens Pet",
+	socialGroup = "nightsister",
+	faction = "nightsister",
 	level = 300,
-	chanceHit = 200,
-	damageMin = 670,
-	damageMax = 1050,
-	baseXp = 10081,
-	baseHAM = 1129000,
-	baseHAMmax = 1136000,
-	armor = 2,
-	resists = {55,55,70,45,75,80,55,75,50},
+	chanceHit = 30,
+	damageMin = 1645,
+	damageMax = 3000,
+	specialDamageMult = 7.5,
+	baseXp = 28549,
+	baseHAM = 385000,
+	baseHAMmax = 471000,
+	armor = 3,
+	resists = {60,60,60,60,60,60,60,60,60},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -22,14 +21,12 @@ krix_swift = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = NONE,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-	scale = 1.0,
-
-
-	templates = {"object/mobile/dressed_imperial_colonel_m.iff"},
+	scale = 0.8,
+	templates = {"object/mobile/outbreak_afflicted_blackwing_rancor_boss.iff"},
 	lootGroups = {
 		{
 			groups = {
@@ -68,9 +65,12 @@ krix_swift = Creature:new {
 			lootChance = 2000000
 		}
 	},
-	weapons = {"imperial_weapons_heavy"},
+	weapons = {},
 	conversationTemplate = "",
-	attacks = merge(riflemanmaster,carbineermaster,brawlermaster)
+	attacks = {
+		{"creatureareableeding",""},
+		{"creatureareacombo",""}
+	}
 }
 
-CreatureTemplates:addCreatureTemplate(krix_swift, "krix_swift")
+CreatureTemplates:addCreatureTemplate(nightsister_mutation4, "nightsister_mutation4")

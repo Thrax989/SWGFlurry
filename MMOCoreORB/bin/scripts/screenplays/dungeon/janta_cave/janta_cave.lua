@@ -67,7 +67,7 @@ function janta_cave:Restart(pPlayer, pBoss)
     print("Starting Boss Broadcast Scripts")
 	createEvent(1 * 1000, "janta_cave", "Restartstates", pPlayer, "")--Restart Janta Boss States
 	createEvent(1 * 1000, "janta_cave", "BroadcastRespawn", pPlayer, "")--Broadcast 3 Hour Respawn
-	createEvent(60 * 1000, "janta_cave", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
+	createEvent(300 * 1000, "janta_cave", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
 	createEvent(10795 * 1000, "janta_cave", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
 	createEvent(10798 * 1000, "janta_cave", "KillSpawnCast1", pPlayer, "")--Broadcast Respawn 3
 	createEvent(10799 * 1000, "janta_cave", "KillSpawnCast2", pPlayer, "")--Broadcast Respawn 2
@@ -192,7 +192,7 @@ if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------------------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.001))) and readData("janta_cave:spawnState") == 10) then
       spatialChat(pBoss, "We shall meet again uggggh!.")
-      spatialChat(pBoss, "You have 60 seconds to loot my body befor it disappears.")
+      spatialChat(pBoss, "You have 5 minuets to loot my body befor it disappears.")
             writeData("janta_cave:spawnState",11)
         end
       end

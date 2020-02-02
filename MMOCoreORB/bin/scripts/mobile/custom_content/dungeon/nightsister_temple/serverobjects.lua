@@ -2,4 +2,10 @@
 includeFile("custom_content/dungeon/nightsister_temple/nightsisterqueen.lua")
 includeFile("custom_content/dungeon/nightsister_temple/nightsisterqueenboss.lua")
 includeFile("custom_content/dungeon/nightsister_temple/nightsisterqueenrancor.lua")
-
+includeFile("custom_content/dungeon/nightsister_temple/nightsister_mutation1.lua")
+includeFile("custom_content/dungeon/nightsister_temple/nightsister_mutation2.lua")
+includeFile("custom_content/dungeon/nightsister_temple/nightsister_mutation3.lua")
+includeFile("custom_content/dungeon/nightsister_temple/nightsister_mutation4.lua")
+includeFile("custom_content/dungeon/nightsister_temple/nightsister_mutation5.lua")
+includeFile("custom_content/dungeon/nightsister_temple/nightsister_mutation6.lua")
+includeFile("custom_content/dungeon/nightsister_temple/nightsister_mutation7.lua")

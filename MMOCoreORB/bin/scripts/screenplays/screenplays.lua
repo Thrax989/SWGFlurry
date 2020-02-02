@@ -173,6 +173,8 @@ includeFile("dungeon/avatar_platform/avatar_platform.lua")
 includeFile("dungeon/isd/isd_platform.lua")
 --custom nightsister temple
 includeFile("dungeon/nightsister_temple/nightsister_temple.lua")
+--custom ig88 platform
+includeFile("dungeon/ig88/ig88_platform.lua")
 -- Village
 includeFile("village/village_community_crafting.lua")
 includeFile("village/village_gm_sui.lua")

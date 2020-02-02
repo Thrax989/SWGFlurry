@@ -27,7 +27,7 @@ end
 --------------------------------------------------
 --   spawn elevator pads for dungeon
 --------------------------------------------------
-function exar_kun:spawnSceneObjects()
+function isd_platform:spawnSceneObjects()
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 20.058, 170.585, 430.548, 14201210, 0, 0, -1, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 19.8045, 453.359, 430.494, 14201210, 0, 0, -1, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", -54, 173.835, 20.3058, 14201200, -0.707107, 0, -0.707107, 0)
@@ -138,7 +138,7 @@ function isd_platform:Restart(pPlayer, pBoss)
     print("Starting Boss Broadcast Scripts")
 	createEvent(1 * 1000, "isd_platform", "Restartstates", pPlayer, "")--Restart ISD Platform States
 	createEvent(1 * 1000, "isd_platform", "BroadcastRespawn", pPlayer, "")--Broadcast 3 Hour Respawn
-	createEvent(60 * 1000, "isd_platform", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
+	createEvent(300 * 1000, "isd_platform", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
 	createEvent(10795 * 1000, "isd_platform", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
 	createEvent(10798 * 1000, "isd_platform", "KillSpawnCast1", pPlayer, "")--Broadcast Respawn 3
 	createEvent(10799 * 1000, "isd_platform", "KillSpawnCast2", pPlayer, "")--Broadcast Respawn 2
@@ -389,7 +389,7 @@ if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------------------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.001))) and readData("isd_platform:spawnState") == 10) then
       spatialChat(pBoss, "We shall meet again uggggh!.")
-      spatialChat(pBoss, "You have 60 seconds to loot my body befor it disappears.")
+      spatialChat(pBoss, "You have 5 minuets to loot my body befor it disappears.")
             writeData("isd_platform:spawnState",11)
         end
       end

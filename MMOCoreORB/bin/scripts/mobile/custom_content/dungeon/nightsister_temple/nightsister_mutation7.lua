@@ -1,16 +1,17 @@
-isd_mouse_droid = Creature:new {
-	objectName = "@mob/creature_names:mouse_droid",
-	socialGroup = "mercenary",
-	faction = "",
+nightsister_mutation7 = Creature:new {
+	customName = "Nightsister Queens Pet",
+	socialGroup = "nightsister",
+	faction = "nightsister",
 	level = 300,
-	chanceHit = 20,
-	damageMin = 200,
-	damageMax = 1000,
-	baseXp = 10081,
-	baseHAM = 1029000,
-	baseHAMmax = 1036000,
-	armor = 0,
-	resists = {55,55,70,45,75,80,55,75,50},
+	chanceHit = 30,
+	damageMin = 1645,
+	damageMax = 3000,
+	specialDamageMult = 7.5,
+	baseXp = 28549,
+	baseHAM = 385000,
+	baseHAMmax = 471000,
+	armor = 3,
+	resists = {60,60,60,60,60,60,60,60,60},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,10 +22,11 @@ isd_mouse_droid = Creature:new {
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = KILLER,
+	creatureBitmask = PACK + KILLER + HEALER,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-
-	templates = {"object/mobile/mouse_droid.iff"},
+	scale = 3.0,
+	templates = {"object/mobile/outbreak_afflicted_blackwing_rancor_boss.iff"},
 	lootGroups = {
 		{
 			groups = {
@@ -63,8 +65,8 @@ isd_mouse_droid = Creature:new {
 			lootChance = 2000000
 		}
 	},
-	weapons = {"creature_spit_heavy_flame"},
-	reactionStf = "@npc_reaction/slang",
+	weapons = {},
+	conversationTemplate = "",
 	attacks = {
 		{"creatureareacombo","StateAccuracyBonus=50"},
 		{"creatureareaknockdown","StateAccuracyBonus=50"},
@@ -81,4 +83,4 @@ isd_mouse_droid = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(isd_mouse_droid, "isd_mouse_droid")
+CreatureTemplates:addCreatureTemplate(nightsister_mutation7, "nightsister_mutation7")
