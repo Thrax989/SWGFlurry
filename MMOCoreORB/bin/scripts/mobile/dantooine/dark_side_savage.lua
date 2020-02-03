@@ -18,7 +18,7 @@ dark_side_savage = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER,
@@ -39,8 +39,7 @@ dark_side_savage = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "wearables_common", chance = 500000},
 				{group = "wearables_uncommon", chance = 500000}
-			},
-			lootChance = 10000000
+			}
 		}
 	},
 	weapons = {},

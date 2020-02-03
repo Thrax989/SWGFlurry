@@ -24,7 +24,7 @@ warren_imperial_worker = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = AIENABLED + CONVERSABLE,
 	diet = HERBIVORE,
 
 	templates = {
@@ -37,14 +37,15 @@ warren_imperial_worker = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 7000000},
+				{group = "junk", chance = 4000000},
+				{group = "wearables_common", chance = 3000000},
 				{group = "loot_kit_parts", chance = 2000000},
 				{group = "tailor_components", chance = 1000000},
 			}
 		}
 	},
 	weapons = {"rebel_weapons_light"},
-	conversationTemplate = "",
+	conversationTemplate = "warrenWorkerConvoTemplate",
 	attacks = merge(brawlermid,marksmanmid)
 }
 

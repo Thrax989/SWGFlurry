@@ -18,7 +18,7 @@ nightsister_enraged_bull_rancor = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 670,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -26,17 +26,33 @@ nightsister_enraged_bull_rancor = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/bull_rancor.iff"},
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 1.2,
 	lootGroups = {
 		{
 			groups = {
-				{group = "rancor_common", chance = 4000000},
-				{group = "armor_all", chance = 2000000},
-				{group = "weapons_all", chance = 2500000},
-				{group = "wearables_all", chance = 1500000}
+				{group = "rancor_common", chance = 10000000},
 			},
-			lootChance = 2780000
-		}
+			lootChance = 4000000
+		},
+		{
+			groups = {
+				{group = "armor_all", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "weapons_all", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "wearables_all", chance = 10000000},
+			},
+			lootChance = 1500000
+		},
 	},
 	weapons = {},
 	conversationTemplate = "",

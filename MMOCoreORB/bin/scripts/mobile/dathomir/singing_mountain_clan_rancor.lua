@@ -18,25 +18,41 @@ singing_mountain_clan_rancor = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 480,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 10,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/rancor.iff"},
+	templates = {"object/mobile/rancor_hue.iff"},
+	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.05,
 	lootGroups = {
 		{
 			groups = {
-				{group = "rancor_common", chance = 4000000},
-				{group = "armor_all", chance = 2000000},
-				{group = "weapons_all", chance = 2500000},
-				{group = "wearables_all", chance = 1500000}
+				{group = "junk", chance = 10000000},
 			},
-			lootChance = 2100000
-		}
+			lootChance = 4000000
+		},
+		{
+			groups = {
+				{group = "wearables_common", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "loot_kit_parts", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "tailor_components", chance = 10000000},
+			},
+			lootChance = 1500000
+		},
 	},
 	weapons = {},
 	conversationTemplate = "",

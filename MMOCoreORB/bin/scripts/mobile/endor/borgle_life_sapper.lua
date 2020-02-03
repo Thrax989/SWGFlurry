@@ -18,7 +18,7 @@ borgle_life_sapper = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 5,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -26,6 +26,7 @@ borgle_life_sapper = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/borgle_hue.iff"},
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 1.1,
 	lootGroups = {},
 	weapons = {"creature_spit_small_red"},

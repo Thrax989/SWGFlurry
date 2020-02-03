@@ -1,18 +1,18 @@
 magnaguard = Creature:new {
-	customName = "Magnaguard",
+	customName = "magnaguard",
 	--objectName = "",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
-	level = 75,
-	chanceHit = .750,
-	damageMin = 800,
+	level = 100,
+	chanceHit = 1,
+	damageMin = 645,
 	damageMax = 1000,
-	baseXp = 5884,
-	baseHAM = 21000,
-	baseHAMmax = 25000,
-	armor = 1,
-	resists = {40,40,40,40,40,40,40,40,40},
+	baseXp = 9429,
+	baseHAM = 24000,
+	baseHAMmax = 30000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,0,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -22,18 +22,17 @@ magnaguard = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = KILLER + STALKER,
+	pvpBitmask = NONE,
+	creatureBitmask = NONE,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-
 	templates = {"object/mobile/magnaguard.iff"},
 	lootGroups = {},
-	weapons = {"battle_droid_weapons"},
+	weapons = {},
 	conversationTemplate = "",
-	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster)
-
+	attacks = {
+	}
 }
 
 CreatureTemplates:addCreatureTemplate(magnaguard, "magnaguard")

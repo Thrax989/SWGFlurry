@@ -1,9 +1,9 @@
 norulac_raider_commando = Creature:new {
-	customName = "Norulac Raider Commando",
+	objectName = "@mob/creature_names:norulac_raider_commando",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
-	socialGroup = "self",
-	faction = "",
+	socialGroup = "norulac",
+	faction = "norulac_raiders",
 	level = 96,
 	chanceHit = 0.95,
 	damageMin = 620,
@@ -30,18 +30,8 @@ norulac_raider_commando = Creature:new {
 		templates = {"object/mobile/dressed_commando_trainer_human_male_01.iff"		
 	},
 
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 2000000},
-				{group = "pistols", chance = 1000000},
-				{group = "rifles", chance = 1000000},
-				{group = "carbines", chance = 1000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "wearables_uncommon", chance = 2500000}
-			}
-		}
-	},
+	lootGroups = {},
+	
 	weapons = {"st_bombardier_weapons"},
 	conversationTemplate = "",
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)

@@ -19,7 +19,7 @@ hostile_thune_mother = Creature:new {
 	boneAmount = 0,
 	milkType = "milk_wild",
 	milk = 65,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + HERD,
@@ -27,6 +27,7 @@ hostile_thune_mother = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/thune_hue.iff"},
+	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.05,
 	lootGroups = {},
 	weapons = {},

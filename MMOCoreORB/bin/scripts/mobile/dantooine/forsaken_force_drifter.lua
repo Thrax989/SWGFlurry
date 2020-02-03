@@ -20,7 +20,7 @@ forsaken_force_drifter = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER,
@@ -42,8 +42,7 @@ forsaken_force_drifter = Creature:new {
 				{group = "wearables_common", chance = 700000},
 				{group = "wearables_uncommon", chance = 700000},
 				{group = "force_hunter_rare", chance = 100000}
-			},
-			lootChance = 10000000
+			}
 		}
 	},
 	weapons = {"mixed_force_weapons"},

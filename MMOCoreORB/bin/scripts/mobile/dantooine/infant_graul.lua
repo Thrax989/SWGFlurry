@@ -18,7 +18,7 @@ infant_graul = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 650,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -26,6 +26,7 @@ infant_graul = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/infant_graul.iff"},
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 0.75,
 	lootGroups = {},
 	weapons = {},

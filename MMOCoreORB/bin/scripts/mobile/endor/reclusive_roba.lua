@@ -18,7 +18,7 @@ reclusive_roba = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 15,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -26,6 +26,7 @@ reclusive_roba = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/roba_hue.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.1,
 	lootGroups = {},
 	weapons = {},

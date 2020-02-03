@@ -18,7 +18,7 @@ mantigrue_hunter = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 45,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0.2,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = KILLER,
@@ -26,6 +26,7 @@ mantigrue_hunter = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/mantigrue_night_stalker.iff"},
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	controlDeviceTemplate = "object/intangible/pet/perlek_hue.iff",
 	lootGroups = {},
 	weapons = {},

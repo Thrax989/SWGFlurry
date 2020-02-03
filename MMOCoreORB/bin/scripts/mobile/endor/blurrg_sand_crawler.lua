@@ -18,7 +18,7 @@ blurrg_sand_crawler = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 35,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
@@ -26,6 +26,7 @@ blurrg_sand_crawler = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/blurrg_hue.iff"},
+	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.1,
 	lootGroups = {},
 	weapons = {"creature_spit_small_yellow"},

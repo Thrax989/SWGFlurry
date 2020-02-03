@@ -11,8 +11,8 @@ krix_swiftshadow = Creature:new {
 	baseXp = 9429,
 	baseHAM = 24000,
 	baseHAMmax = 30000,
-	armor = 0,
-	resists = {0,0,0,0,0,0,0,0,-1},
+	armor = 1,
+	resists = {40,40,40,100,40,40,40,40,40},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -22,17 +22,16 @@ krix_swiftshadow = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = NONE,
-	creatureBitmask = NONE,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + HERD + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/krix_swiftshadow.iff"},
 	lootGroups = {},
-	weapons = {},
+	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
-	attacks = {
-	}
+	attacks = merge(pikemanmaster,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(krix_swiftshadow, "krix_swiftshadow")

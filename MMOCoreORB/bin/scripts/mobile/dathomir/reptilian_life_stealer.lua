@@ -18,7 +18,7 @@ reptilian_life_stealer = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 85,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -26,6 +26,7 @@ reptilian_life_stealer = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/reptilian_flier_hue.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.5,
 	lootGroups = {},
 	weapons = {},

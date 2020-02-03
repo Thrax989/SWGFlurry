@@ -18,7 +18,7 @@ crimson_blurrg = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 75,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,6 +26,7 @@ crimson_blurrg = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/blurrg_hue.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	lootGroups = {},
 	weapons = {"creature_spit_small_red"},
 	conversationTemplate = "",

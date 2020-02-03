@@ -18,7 +18,7 @@ roaming_desert_borgle = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 5,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -26,6 +26,7 @@ roaming_desert_borgle = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/borgle_hue.iff"},
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	scale = 1.2,
 	lootGroups = {},
 	weapons = {},

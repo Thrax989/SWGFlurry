@@ -18,7 +18,7 @@ rancor_pygmy = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 453,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 10,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -26,6 +26,7 @@ rancor_pygmy = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/rancor_hue.iff"},
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	scale = 0.5,
 	lootGroups = {
 		{

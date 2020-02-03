@@ -18,7 +18,7 @@ alpha_bolma = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 500,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 5,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + HERD,
@@ -26,6 +26,7 @@ alpha_bolma = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/alpha_bolma.iff"},
+	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.2,
 	lootGroups = {},
 	weapons = {},

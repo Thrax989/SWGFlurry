@@ -18,7 +18,7 @@ giant_baz_nitch = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 5,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + HERD + KILLER,
@@ -26,6 +26,7 @@ giant_baz_nitch = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/giant_baz_nitch.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.5,
 	lootGroups = {},
 	weapons = {},

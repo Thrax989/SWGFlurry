@@ -75,13 +75,13 @@ includeFile("conversations/events/life_day/life_day_radrrl_conv.lua")
 includeFile("conversations/events/life_day/life_day_tebeurra_conv.lua")
 
 --Coa2
-includeFile("conversations/events/coa_2/imperial_commander_conv.lua")
-includeFile("conversations/events/coa_2/imperial_coordinator_conv.lua")
-includeFile("conversations/events/coa_2/imperial_informant_conv.lua")
-includeFile("conversations/events/coa_2/rebel_commander_conv.lua")
-includeFile("conversations/events/coa_2/rebel_coordinator_conv.lua")
-includeFile("conversations/events/coa_2/rebel_lyda_conv.lua")
-includeFile("conversations/events/coa_2/rebel_sympathizer_conv.lua")
+includeFile("conversations/events/coa/imperial_commander_conv.lua")
+includeFile("conversations/events/coa/imperial_coordinator_conv.lua")
+includeFile("conversations/events/coa/imperial_informant_conv.lua")
+includeFile("conversations/events/coa/rebel_commander_conv.lua")
+includeFile("conversations/events/coa/rebel_coordinator_conv.lua")
+includeFile("conversations/events/coa/rebel_lyda_conv.lua")
+includeFile("conversations/events/coa/rebel_sympathizer_conv.lua")
 
 -- Hero of Tat
 includeFile("conversations/tasks/hero_of_tatooine/hermit_conv.lua")
@@ -144,6 +144,8 @@ includeFile("conversations/dungeon/warren/mirla_conv.lua")
 includeFile("conversations/dungeon/warren/dirk_maggin_conv.lua")
 includeFile("conversations/dungeon/warren/captain_heff_conv.lua")
 includeFile("conversations/dungeon/warren/manx_try_conv.lua")
+includeFile("conversations/dungeon/warren/phy_hudgen_conv.lua")
+includeFile("conversations/dungeon/warren/warren_worker_conv.lua")
 
 -- Geonosian Lab
 includeFile("conversations/dungeon/geonosian_lab/biogenic_assistant_convo.lua")
@@ -153,6 +155,7 @@ includeFile("conversations/dungeon/geonosian_lab/biogenic_engineer_tech_convo.lu
 includeFile("conversations/dungeon/geonosian_lab/biogenic_herald_02.lua")
 includeFile("conversations/dungeon/geonosian_lab/biogenic_herald_03.lua")
 includeFile("conversations/dungeon/geonosian_lab/biogenic_herald_dealer.lua")
+includeFile("conversations/dungeon/geonosian_lab/biogenic_random_conv.lua")
 includeFile("conversations/dungeon/geonosian_lab/biogenic_scientist_generic_01_convo.lua")
 includeFile("conversations/dungeon/geonosian_lab/biogenic_scientist_generic_02_convo.lua")
 includeFile("conversations/dungeon/geonosian_lab/biogenic_scientist_generic_03_convo.lua")
@@ -167,6 +170,16 @@ includeFile("conversations/trainer/trainer_conv.lua")
 -- Missions
 includeFile("conversations/mission/deliver_npc.lua")
 includeFile("conversations/mission/informant_npc.lua")
+includeFile("conversations/mission_quest/mission_conv.lua")
+includeFile("conversations/mission_quest/missionone_conv.lua")
+includeFile("conversations/mission_quest/missiontwo_conv.lua")
+includeFile("conversations/mission_quest/missionthree_conv.lua")
+includeFile("conversations/mission_quest/missionfour_conv.lua")
+includeFile("conversations/mission_quest/missionfive_conv.lua")
+includeFile("conversations/mission_quest/missionsix_conv.lua")
+includeFile("conversations/mission_quest/missionseven_conv.lua")
+includeFile("conversations/mission_quest/missioneight_conv.lua")
+
 
 -- Recruiters
 includeFile("conversations/recruiter/rebel_recruiter_conv.lua")
@@ -264,8 +277,8 @@ includeFile("conversations/racetracks/nashalconversation.lua")
 includeFile("conversations/space/chassis_dealer_conv.lua")
 
 -- Record Keepers
-includeFile("conversations/record_keepers/planet_record_keeper_dantoonie_conv.lua")
-includeFile("conversations/record_keepers/planet_record_keeper_tatoonie_conv.lua")
+includeFile("conversations/record_keepers/planet_record_keeper_dantooine_conv.lua")
+includeFile("conversations/record_keepers/planet_record_keeper_tatooine_conv.lua")
 includeFile("conversations/record_keepers/record_keeper_imperial_conv.lua")
 includeFile("conversations/record_keepers/record_keeper_jabba_conv.lua")
 includeFile("conversations/record_keepers/record_keeper_rebel_conv.lua")
@@ -292,20 +305,6 @@ includeFile("conversations/junk_dealer/junk_dealer_reggi_conv.lua")
 includeFile("conversations/junk_dealer/junk_dealer_sheani_conv.lua")
 includeFile("conversations/junk_dealer/junk_dealer_sneg_conv.lua")
 
-
--- World Boss Exchange System
---includeFile("conversations/events/world_exchange.lua")
---includeFile("conversations/events/imperial_exchange.lua")
---includeFile("conversations/events/rebel_exchange.lua")
---includeFile("conversations/events/holo_exchange.lua")
-includeFile("conversations/events/painting_exchange.lua")
-
---Custom Vendor
-includeFile("conversations/events/imperial_armor_vendor.lua")
-includeFile("conversations/events/rebel_armor_vendor.lua")
-includeFile("conversations/events/event_exchange_dealer.lua")
-includeFile("custom_content/conversations.lua")
-
 --custom waypoint npc's
 includeFile("conversations/events/corellia_poi_waypoints.lua")
 includeFile("conversations/events/dantooine_poi_waypoints.lua")
@@ -317,3 +316,6 @@ includeFile("conversations/events/rori_poi_waypoints.lua")
 includeFile("conversations/events/talus_poi_waypoints.lua")
 includeFile("conversations/events/tatooine_poi_waypoints.lua")
 includeFile("conversations/events/yavin4_poi_waypoints.lua")
+
+--custom painting exchange
+includeFile("conversations/events/painting_exchange.lua")

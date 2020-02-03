@@ -18,7 +18,7 @@ merek_deaths_head = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0.05,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -26,6 +26,7 @@ merek_deaths_head = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/merek_hue.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	controlDeviceTemplate = "object/intangible/pet/merek_hue.iff",
 	scale = 1.3,
 	lootGroups = {},

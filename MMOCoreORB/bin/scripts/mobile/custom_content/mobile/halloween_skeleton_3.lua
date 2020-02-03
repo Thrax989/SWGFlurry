@@ -1,18 +1,18 @@
 halloween_skeleton_3 = Creature:new {
-	customName = "halloween_skeleton_3",
+	customName = "Undead Skeleton",
 	--objectName = "",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "townsperson",
-	faction = "",
-	level = 100,
-	chanceHit = 10.0,
-	damageMin = 445,
-	damageMax = 600,
-	baseXp = 5830,
-	baseHAM = 11000,
-	baseHAMmax = 14000,
-	armor = 1,
-	resists = {40,40,40,40,40,40,40,40,40},
+	socialGroup = "halloween",
+	faction = "halloween",
+	level = 300,
+	chanceHit = 23.5,
+	damageMin = 1645,
+	damageMax = 3000,
+	baseXp = 25167,
+	baseHAM = 261000,
+	baseHAMmax = 320000,
+	armor = 3,
+	resists = {85,80,35,100,20,30,45,80,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -31,46 +31,81 @@ halloween_skeleton_3 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 9000000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "armor_attachments", chance = 500000},					
+				{group = "tierone", chance = 10000000},
 			},
-			lootChance = 10000000 
-			},
-			{
+			lootChance = 4000000
+		},
+		{
 			groups = {
-				{group = "artifact", chance = 10000000}			
+				{group = "tiertwo", chance = 10000000},
 			},
-			lootChance = 1000000
-			},
-			{
+			lootChance = 4000000
+		},
+		{
 			groups = {
-				{group = "tierone", chance = 10000000}
+				{group = "tierthree", chance = 10000000},
 			},
-			lootChance = 1000000
-			},
-			{
+			lootChance = 4000000
+		},
+		{
 			groups = {
-				{group = "tiertwo", chance = 10000000}
+				{group = "tierdiamond", chance = 10000000},
 			},
-			lootChance = 500000
-			},
-			{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-			},
-			lootChance = 100000
-			},
-			{
+			lootChance = 4000000
+		},
+		{
 			groups = {
 				{group = "halloween", chance = 10000000},
-				},
-			lootChance = 1500000 
-			}
+			},
+			lootChance = 4000000
+		},
+		{
+			groups = {
+				{group = "power_crystals", chance = 10000000},
+			},
+			lootChance = 4000000
+		},
+		{
+			groups = {
+				{group = "nightsister1", chance = 10000000},
+			},
+			lootChance = 4000000
+		},
+		{
+			groups = {
+				{group = "nightsister2", chance = 10000000},
+			},
+			lootChance = 4000000
+		},
+		{
+			groups = {
+				{group = "nightsister3", chance = 10000000},
+			},
+			lootChance = 4000000
+		},
+		{
+			groups = {
+				{group = "nightsister4", chance = 10000000},
+			},
+			lootChance = 4000000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 10000000},
+			},
+			lootChance = 4000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 4000000
+		},
 	},
 	weapons = {},
 	conversationTemplate = "",
-	attacks = merge(tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster)
+	attacks = {
+	}
 }
 
 CreatureTemplates:addCreatureTemplate(halloween_skeleton_3, "halloween_skeleton_3")

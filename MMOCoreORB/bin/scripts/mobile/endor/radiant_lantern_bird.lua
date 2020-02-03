@@ -18,7 +18,7 @@ radiant_lantern_bird = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 46,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,6 +26,7 @@ radiant_lantern_bird = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/lantern_bird_hue.iff"},
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 1.2,
 	lootGroups = {},
 	weapons = {},

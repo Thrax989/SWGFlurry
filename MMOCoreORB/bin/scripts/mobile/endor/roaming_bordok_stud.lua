@@ -18,7 +18,7 @@ roaming_bordok_stud = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 65,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
@@ -26,6 +26,7 @@ roaming_bordok_stud = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/bordok_hue.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

@@ -211,5 +211,4 @@ includeFile("corellia/wrix.lua")
 includeFile("corellia/zealot_of_lord_nyax.lua")
 includeFile("corellia/zo_ssa.lua")
 
----Custom Boss
-includeFile("corellia/corellia_world_boss/serverobjects.lua")
+

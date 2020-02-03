@@ -22,7 +22,6 @@ includeFile("weapon/creature_spit_spray_yellow.lua")
 includeFile("weapon/droid_probot_ranged.lua")
 
 -- npc weapons
-includeFile("weapon/groups/ig106_weapons.lua")
 includeFile("weapon/groups/dark_trooper_weapons.lua")
 includeFile("weapon/groups/darth_vader_weapons.lua")
 includeFile("weapon/groups/blood_razer_weapons.lua")

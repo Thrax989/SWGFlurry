@@ -18,7 +18,7 @@ purbole_elder = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 11,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 7,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + STALKER,
@@ -26,6 +26,7 @@ purbole_elder = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/purbole_elder.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.15,
 	lootGroups = {},
 	weapons = {},

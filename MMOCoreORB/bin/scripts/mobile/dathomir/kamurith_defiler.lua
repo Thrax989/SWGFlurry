@@ -18,7 +18,7 @@ kamurith_defiler = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 50,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 2,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -26,6 +26,7 @@ kamurith_defiler = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/voritor_lizard_hue.iff"},
+	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.25,
 	lootGroups = {},
 	weapons = {},

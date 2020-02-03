@@ -23,13 +23,13 @@ kash_transporter_04 = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = AIENABLED + CONVERSABLE,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/ep3/ep3_forlorn_wookiee_01.iff"},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "treeTeleportThreeConvoTemplate",
+	conversationTemplate = "",
 	attacks = merge(brawlermaster,marksmanmaster)
 }
 

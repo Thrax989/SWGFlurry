@@ -18,7 +18,7 @@ gurrcat = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 30,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 1,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,6 +26,7 @@ gurrcat = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/gurrcat.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

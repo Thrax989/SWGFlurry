@@ -18,7 +18,7 @@ stoneskin_hanadak = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 40,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 9,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -26,6 +26,7 @@ stoneskin_hanadak = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/hanadak_hue.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.25,
 	lootGroups = {},
 	weapons = {},

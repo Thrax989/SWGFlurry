@@ -18,7 +18,7 @@ bloodseeker_mite_guardian = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -26,6 +26,7 @@ bloodseeker_mite_guardian = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/bloodseeker_mite.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.15,
 	lootGroups = {},
 	weapons = {"creature_spit_small_red"},

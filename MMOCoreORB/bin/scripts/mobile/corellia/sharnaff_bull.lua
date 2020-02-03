@@ -18,7 +18,7 @@ sharnaff_bull = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 200,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 8,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
@@ -26,6 +26,7 @@ sharnaff_bull = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/sharnaff_bull.iff"},
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	lootGroups = {
 		{
 			groups = {

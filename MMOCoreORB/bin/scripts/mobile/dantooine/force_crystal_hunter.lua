@@ -20,7 +20,7 @@ force_crystal_hunter = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -41,8 +41,7 @@ force_crystal_hunter = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "wearables_all", chance = 1400000},
 				{group = "force_hunter_rare", chance = 100000}
-			},
-			lootChance = 10000000
+			}
 		}
 	},
 	weapons = {"mixed_force_weapons"},

@@ -18,7 +18,7 @@ king_merek_harvester = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + HERD + KILLER,
@@ -26,6 +26,7 @@ king_merek_harvester = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/king_merek_harvester.iff"},
+	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.1,
 	lootGroups = {},
 	weapons = {"creature_spit_small_red"},

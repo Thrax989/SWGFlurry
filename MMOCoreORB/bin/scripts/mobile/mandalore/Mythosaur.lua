@@ -20,7 +20,7 @@ mythosaur = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -28,36 +28,7 @@ mythosaur = Creature:new {
 	diet = CARNIVORE,
     scale = 1.5,
 	templates = {"object/mobile/giant_dune_kimogila.iff"},
-	lootGroups = {
-		{
-	        	groups = {
-				{group = "krayt_dragon_common", chance = 6000000},
-				{group = "krayt_tissue_uncommon", chance = 4000000},
-				
-			},
-			lootChance = 10000000
-		},
-		{
-	        groups = {
-				{group = "armor_attachments", chance = 5000000},
-				{group = "clothing_attachments", chance = 5000000}
-			},
-			lootChance = 5000000
-		},
-		{
-	        groups = {
-				{group = "junk", chance = 10000000}
-			},
-			lootChance = 10000000
-		},
-		{
-	        groups = {
-				{group = "krayt_tissue_rare", chance = 10000000}
-			},
-			lootChance = 2500000
-		},
-		
-	},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

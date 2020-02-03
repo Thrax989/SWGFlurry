@@ -20,7 +20,7 @@ corsec_deserter = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -39,8 +39,7 @@ corsec_deserter = Creature:new {
 				{group = "corsec_weapons", chance = 2500000},
 				{group = "wearables_common", chance = 2000000},
 				{group = "tailor_components", chance = 1500000}
-			},
-			lootChance = 10000000
+			}
 		}
 	},
 	weapons = {"ranged_weapons"},

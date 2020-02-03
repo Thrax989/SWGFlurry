@@ -20,7 +20,7 @@ swooper_corellia = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = NONE,
@@ -39,8 +39,7 @@ swooper_corellia = Creature:new {
 				{group = "tailor_components", chance = 1500000},
 				{group = "printer_parts", chance = 1000000},
 				{group = "swooper_common", chance = 2000000}
-			},
-			lootChance = 10000000
+			}
 		}
 	},
 	weapons = {"pirate_weapons_light"},

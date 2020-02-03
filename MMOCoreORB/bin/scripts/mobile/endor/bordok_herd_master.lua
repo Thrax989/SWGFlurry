@@ -18,7 +18,7 @@ bordok_herd_master = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 165,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,6 +26,7 @@ bordok_herd_master = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/bordok_hue.iff"},
+	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.1,
 	lootGroups = {},
 	weapons = {},

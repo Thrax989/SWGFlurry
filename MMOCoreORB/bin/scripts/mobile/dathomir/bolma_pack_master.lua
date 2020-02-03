@@ -18,7 +18,7 @@ bolma_pack_master = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 150,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
@@ -26,6 +26,7 @@ bolma_pack_master = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/bolma_hue.iff"},
+	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.05,
 	lootGroups = {},
 	weapons = {},

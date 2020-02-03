@@ -1,9 +1,9 @@
 norulac_raider_captain = Creature:new {
-	customName = "Norulac Raider Captain",
+	objectName = "@mob/creature_names:norulac_raider_captain",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
-	socialGroup = "self",
-	faction = "",
+	socialGroup = "norulac",
+	faction = "norulac_raiders",
 	level = 107,
 	chanceHit = 1.75,
 	damageMin = 670,
@@ -33,18 +33,8 @@ norulac_raider_captain = Creature:new {
 		
 	},
 
-	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 2000000},
-				{group = "pistols", chance = 1000000},
-				{group = "rifles", chance = 1000000},
-				{group = "melee_weapons", chance = 1000000},
-				{group = "armor_attachments", chance = 2500000},
-				{group = "clothing_attachments", chance = 2500000},
-			}
-		}
-	},
+	lootGroups = {},
+		
 	weapons = {"dark_trooper_weapons"},
 	conversationTemplate = "",
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,swordsmanmaster,pistoleermaster)

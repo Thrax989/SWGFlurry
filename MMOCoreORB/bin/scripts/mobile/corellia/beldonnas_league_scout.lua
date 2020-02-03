@@ -20,7 +20,7 @@ beldonnas_league_scout = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
@@ -47,8 +47,7 @@ beldonnas_league_scout = Creature:new {
 				{group = "loot_kit_parts", chance = 2000000},
 				{group = "tailor_components", chance = 1000000},
 				{group = "beldonnas_common", chance = 2000000}
-			},
-			lootChance = 10000000
+			}
 		}
 	},
 	weapons = {"pirate_weapons_light"},

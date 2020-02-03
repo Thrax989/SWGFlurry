@@ -18,7 +18,7 @@ swirl_prong_impaler = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 80,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
@@ -26,6 +26,7 @@ swirl_prong_impaler = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/swirl_prong_hue.iff"},
+	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.15,
 	lootGroups = {},
 	weapons = {},
