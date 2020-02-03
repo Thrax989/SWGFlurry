@@ -258,7 +258,7 @@ class WeaponObject extends TangibleObject {
 		idealAccuracy = value;
 	}
 
-	@read
+	@dirty
 	public void setArmorPiercing(int value) {
                 armorPiercing = value;
         }
