@@ -93,7 +93,7 @@ spawnMobile("dungeon2", "exar_guard", 1800, -8.53399, -4.81847e-08, 80.7342, 98,
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pBoss = spawnMobile("dungeon2", "exar_clone", 10800, 15.4963, 4.651, 106.287, 178, 14200878)--3 hour respawn to start the boss
+local pBoss = spawnMobile("dungeon2", "exar_clone", 10800, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--3 hour respawn to start the boss
 	print("Spawning Exar Kun Clone")
 if (pBoss ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "exar_kun", "notifyTriggerDead", pBoss)
@@ -105,7 +105,7 @@ end
 --  Notify trigger is dead to spawn Boss
 -----------------------------------------
 function exar_kun:notifyTriggerDead(pBoss, pPlayer)
-local pBoss = spawnMobile("dungeon2", "exar_boss", -1, 15.4963, 4.651, 106.287, 178, 14200878)
+local pBoss = spawnMobile("dungeon2", "exar_boss", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)
     print("Spawning Exar Kun")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
@@ -152,8 +152,8 @@ local bossMaxHealth = boss:getMaxHAM(0)
 local bossMaxAction = boss:getMaxHAM(3)
 local bossMaxMind = boss:getMaxHAM(6)
 
-local x1 = 15.4963
-local y1 = 106.287
+local x1 = 15.1374
+local y1 = 85.2292
 local x2 = boss:getPositionX()
 local y2 = boss:getPositionY()
 
