@@ -18,7 +18,7 @@ howling_plumed_rasp = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 2,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -26,7 +26,6 @@ howling_plumed_rasp = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/plumed_rasp_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 0.95,
 	lootGroups = {},
 	weapons = {},

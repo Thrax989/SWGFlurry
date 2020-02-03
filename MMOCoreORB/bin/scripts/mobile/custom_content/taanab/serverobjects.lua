@@ -1,0 +1,11 @@
+includeFile("custom_content/taanab/nerf_grassland.lua")
+includeFile("custom_content/taanab/nerf.lua")
+includeFile("custom_content/taanab/nerf_male.lua")
+includeFile("custom_content/taanab/nerf_female.lua")
+includeFile("custom_content/taanab/ambrian_staga.lua")
+includeFile("custom_content/taanab/ambrian_staga_male.lua")
+includeFile("custom_content/taanab/ambrian_staga_female.lua")
+includeFile("custom_content/taanab/norulac_raider.lua")
+includeFile("custom_content/taanab/norulac_raider_captain.lua")
+includeFile("custom_content/taanab/norulac_raider_commando.lua")
+

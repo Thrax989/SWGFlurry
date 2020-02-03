@@ -1,5 +1,5 @@
 nerf_male = Creature:new {
-	objectName = "@mob/creature_names:nerf_male",
+	customName = "Nerf Male",
 	socialGroup = "nerf",
 	faction = "",
 	level = 29,
@@ -12,27 +12,27 @@ nerf_male = Creature:new {
 	armor = 0,
 	resists = {135,20,-1,20,20,-1,20,-1,-1},
 	meatType = "meat_herbivore",
-	meatAmount = 85,
+	meatAmount = 500,
 	hideType = "hide_leathery",
-	hideAmount = 75,
+	hideAmount = 500,
 	boneType = "bone_mammal",
-	boneAmount = 85,
-	milkType = "",
+	boneAmount = 500,
 	milk = 0,
-	tamingChance = 0.5,
+	tamingChance = 0.1,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = 128,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/nerf_hue.iff"},
-	controlDeviceTemplate = "object/intangible/pet/nerf_hue.iff",
+	templates = {"object/mobile/nerf.iff"},
+	controlDeviceTemplate = "",
 	scale = 1,
 	lootGroups = {},
 	weapons = {},
+	conversationTemplate = "",
 	attacks = {
-		
+		{"",""},
 		{"stunattack",""}
 	}
 }

@@ -18,7 +18,7 @@ seething_bol_crusher = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 180,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,7 +26,6 @@ seething_bol_crusher = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/seething_bol_crusher.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.25,
 	lootGroups = {},
 	weapons = {},

@@ -26,7 +26,6 @@ cyborg_tusk_cat = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/warren_cyborg_tuskcat.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

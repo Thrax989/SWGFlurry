@@ -18,7 +18,7 @@ rotten_gut_remmer_king = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -26,7 +26,6 @@ rotten_gut_remmer_king = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/rotten_gut_remmer_king.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.25,
 	lootGroups = {},
 	weapons = {},

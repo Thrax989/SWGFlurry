@@ -1,14 +1,14 @@
 lava_flea = Creature:new {
-	customName = "Lava Flea",
+	customName = "a lava flea",
 	socialGroup = "townsperson",
 	faction = "",
-	level = 70,
-	chanceHit = 0.27,
-	damageMin = 550,
-	damageMax = 800,
-	baseXp = 235,
-	baseHAM = 16000,
-	baseHAMmax = 19000,
+	level = 24,
+	chanceHit = 0.34,
+	damageMin = 175,
+	damageMax = 450,
+	baseXp = 3500,
+	baseHAM = 16300,
+	baseHAMmax = 19800,
 	armor = 0,
 	resists = {0,0,0,0,0,0,0,-1,-1},
 	meatType = "",
@@ -17,24 +17,20 @@ lava_flea = Creature:new {
 	hideAmount = 0,
 	boneType = "",
 	boneAmount = 0,
+	milkType = "",
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
-	creatureBitmask = PACK + STALKER,
+	creatureBitmask = HERD,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/som/lava_flea.iff"},
-	lootGroups = {
-		{
-			groups = {},
-			lootChance = 2100000
-		}
-	},
-	weapons = {"pirate_weapons_light"},
+	lootGroups = {},
+	weapons = {},
 	conversationTemplate = "",
-	attacks = merge(marksmannovice,brawlernovice)
+	attacks = {}
 }
 
 CreatureTemplates:addCreatureTemplate(lava_flea, "lava_flea")

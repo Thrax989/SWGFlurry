@@ -18,7 +18,7 @@ highland_remmer = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 5,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -26,7 +26,6 @@ highland_remmer = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/remmer_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.05,
 	lootGroups = {},
 	weapons = {"creature_spit_small_yellow"},

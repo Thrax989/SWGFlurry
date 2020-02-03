@@ -20,7 +20,7 @@ selonian_separatist_soldier = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER,
@@ -60,7 +60,8 @@ selonian_separatist_soldier = Creature:new {
 				{group = "pistols", chance = 1000000},
 				{group = "loot_kit_parts", chance = 2500000},
 				{group = "tailor_components", chance = 1500000}
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"rebel_weapons_medium"},

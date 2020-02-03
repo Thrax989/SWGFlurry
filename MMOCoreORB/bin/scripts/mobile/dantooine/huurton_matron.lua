@@ -18,7 +18,7 @@ huurton_matron = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 15,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,7 +26,6 @@ huurton_matron = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/huurton_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.1,
 	lootGroups = {},
 	weapons = {},

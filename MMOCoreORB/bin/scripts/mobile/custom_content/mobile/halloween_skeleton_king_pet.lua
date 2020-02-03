@@ -2,10 +2,10 @@ halloween_skeleton_king_pet = Creature:new {
 	customName = "Skeleton King's Pet",
 	--objectName = "",
 	--randomNameType = NAME_GENERIC_TAG,
-	socialGroup = "halloween",
-	faction = "halloween",
+	socialGroup = "townsperson",
+	faction = "",
 	level = 300,
-	chanceHit = 30,
+	chanceHit = 15,
 	damageMin = 1645,
 	damageMax = 3000,
 	specialDamageMult = 7.5,
@@ -13,7 +13,7 @@ halloween_skeleton_king_pet = Creature:new {
 	baseHAM = 385000,
 	baseHAMmax = 471000,
 	armor = 3,
-	resists = {50,50,50,50,50,50,50,50,50},
+	resists = {35,35,35,35,35,35,35,35,35},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -25,7 +25,7 @@ halloween_skeleton_king_pet = Creature:new {
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
-	optionsBitmask = AIENABLED + JTLINTERESTING,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/halloween_skeleton_2.iff"},
@@ -33,88 +33,42 @@ halloween_skeleton_king_pet = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "tierone", chance = 10000000},
+				{group = "junk", chance = 9000000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "armor_attachments", chance = 500000},					
 			},
 			lootChance = 10000000
-		},
-		{
+			},
+			{
 			groups = {
-				{group = "tiertwo", chance = 10000000},
+				{group = "artifact", chance = 10000000}			
 			},
 			lootChance = 10000000
-		},
-		{
+			},
+			{
 			groups = {
-				{group = "tierthree", chance = 10000000},
+				{group = "tierone", chance = 10000000}
 			},
 			lootChance = 10000000
-		},
-		{
+			},
+			{
 			groups = {
-				{group = "tierdiamond", chance = 10000000},
+				{group = "tiertwo", chance = 10000000}
 			},
 			lootChance = 10000000
-		},
-		{
+			},
+			{
+			groups = {
+				{group = "tierthree", chance = 10000000}
+			},
+			lootChance = 10000000
+			},
+			{
 			groups = {
 				{group = "halloween", chance = 10000000},
-			},
+				},
 			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "power_crystals", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "nightsister1", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "nightsister2", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "nightsister3", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "nightsister4", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "krayt_tissue_rare", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "krayt_pearls", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "clothing_attachments", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "armor_attachments", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
+			}
 	},
 	weapons = {},
 	conversationTemplate = "",

@@ -18,7 +18,7 @@ malkloc_plainswalker = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 1000,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,7 +26,6 @@ malkloc_plainswalker = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/malkloc_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.2,
 	lootGroups = {},
 	weapons = {},

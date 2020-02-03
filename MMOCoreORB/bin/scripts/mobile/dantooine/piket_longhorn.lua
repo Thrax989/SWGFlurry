@@ -18,7 +18,7 @@ piket_longhorn = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 210,
 	milk = 0,
-	tamingChance = 0.2,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,7 +26,6 @@ piket_longhorn = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/piket_longhorn.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	controlDeviceTemplate = "object/intangible/pet/piket_hue.iff",
 	scale = 1.1,
 	lootGroups = {},

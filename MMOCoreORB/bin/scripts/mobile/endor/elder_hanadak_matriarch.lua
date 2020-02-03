@@ -18,7 +18,7 @@ elder_hanadak_matriarch = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 35,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + HERD + KILLER,
@@ -26,7 +26,6 @@ elder_hanadak_matriarch = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/elder_hanadak_matriarch.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 1.1,
 	lootGroups = {},
 	weapons = {},

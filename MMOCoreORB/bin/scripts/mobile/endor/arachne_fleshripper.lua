@@ -18,7 +18,7 @@ arachne_fleshripper = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.05,
+	tamingChance = 0.25,
 	ferocity = 10,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -26,7 +26,6 @@ arachne_fleshripper = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/angler_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	controlDeviceTemplate = "object/intangible/pet/angler_hue.iff",
 	scale = 1.05,
 	lootGroups = {},

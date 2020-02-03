@@ -18,41 +18,25 @@ nightsister_rancor = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 776,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 10,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/rancor_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	templates = {"object/mobile/rancor.iff"},
 	scale = 1.05,
 	lootGroups = {
 		{
 			groups = {
-				{group = "rancor_common", chance = 10000000},
+				{group = "rancor_common", chance = 4000000},
+				{group = "armor_all", chance = 2000000},
+				{group = "weapons_all", chance = 2500000},
+				{group = "wearables_all", chance = 1500000}
 			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "armor_all", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "weapons_all", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
+			lootChance = 2100000
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",

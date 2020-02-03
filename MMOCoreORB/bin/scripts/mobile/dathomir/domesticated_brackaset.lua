@@ -19,7 +19,7 @@ domesticated_brackaset = Creature:new {
 	boneAmount = 80,
 	milkType = "milk_domesticated",
 	milk = 50,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = NONE,
@@ -27,7 +27,6 @@ domesticated_brackaset = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/brackaset_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	lootGroups = {
 		{
 			groups = {

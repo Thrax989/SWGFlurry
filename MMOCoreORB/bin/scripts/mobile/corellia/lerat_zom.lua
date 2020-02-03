@@ -18,7 +18,7 @@ lerat_zom = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = NONE,
@@ -33,7 +33,8 @@ lerat_zom = Creature:new {
 				{group = "wearables_common", chance = 3000000},
 				{group = "loot_kit_parts", chance = 2000000},
 				{group = "tailor_components", chance = 1000000},
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {},

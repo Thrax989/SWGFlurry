@@ -25,8 +25,7 @@ kima = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/kima_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	templates = {"object/mobile/kima.iff"},
 	controlDeviceTemplate = "object/intangible/pet/kima_hue.iff",
 	lootGroups = {},
 	weapons = {},

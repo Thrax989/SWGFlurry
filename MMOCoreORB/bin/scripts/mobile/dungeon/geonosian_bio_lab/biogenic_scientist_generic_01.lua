@@ -22,7 +22,7 @@ biogenic_scientist_generic_01 = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = AIENABLED + INVULNERABLE + INTERESTING + CONVERSABLE,
+	optionsBitmask = AIENABLED + INVULNERABLE + CONVERSABLE,
 	diet = HERBIVORE,
 
 	templates = {

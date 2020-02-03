@@ -1,0 +1,38 @@
+gr_krayt_dragon_ancient = Creature:new {
+	objectName = "@mob/creature_names:krayt_dragon_ancient",
+	socialGroup = "krayt",
+	faction = "",
+	level = 336,
+	chanceHit = 30.0,
+	damageMin = 2270,
+	damageMax = 4250,
+	baseXp = 28549,
+	baseHAM = 410000,
+	baseHAMmax = 501000,
+	armor = 3,
+	resists = {195,195,195,195,165,195,195,195,-1},
+	meatType = "meat_carnivore",
+	meatAmount = 1000,
+	hideType = "hide_bristley",
+	hideAmount = 950,
+	boneType = "bone_mammal",
+	boneAmount = 905,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 30,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + STALKER,
+	optionsBitmask = AIENABLED,
+	diet = CARNIVORE,
+
+	templates = {"object/mobile/krayt_dragon.iff"},
+	lootGroups = {},
+	weapons = {},
+	conversationTemplate = "",
+	attacks = {
+		{"creatureareacombo",""},
+		{"creatureareaknockdown",""}
+	}
+}
+
+CreatureTemplates:addCreatureTemplate(gr_krayt_dragon_ancient, "gr_krayt_dragon_ancient")

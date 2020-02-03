@@ -18,7 +18,7 @@ malkloc_bull = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 1000,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,7 +26,6 @@ malkloc_bull = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/malkloc_bull.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	scale = 1.05,
 	lootGroups = {},
 	weapons = {},

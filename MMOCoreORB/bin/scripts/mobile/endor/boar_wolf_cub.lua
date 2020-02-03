@@ -18,7 +18,7 @@ boar_wolf_cub = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 1,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -26,7 +26,6 @@ boar_wolf_cub = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/boar_wolf_cub.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 0.75,
 	lootGroups = {},
 	weapons = {},

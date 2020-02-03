@@ -2,15 +2,15 @@ droid_8t88 = Creature:new {
 	customName = "8T-88",
 	socialGroup = "townsperson",
 	faction = "",
-	level = 70,
-	chanceHit = 0.27,
-	damageMin = 550,
-	damageMax = 800,
-	baseXp = 235,
-	baseHAM = 16000,
-	baseHAMmax = 19000,
-	armor = 0,
-	resists = {0,0,0,0,0,0,0,-1,-1},
+	level = 300,
+	chanceHit = .90,
+	damageMin = 1245,
+	damageMax = 2400,
+	baseXp = 16884,
+	baseHAM = 485000,
+	baseHAMmax = 685000,
+	armor = 1,
+	resists = {80,80,80,80,80,80,80,80,80},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -20,21 +20,16 @@ droid_8t88 = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = ATTACKABLE,
-	creatureBitmask = PACK + STALKER,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/som/8t88.iff"},
-	lootGroups = {
-		{
-			groups = {},
-			lootChance = 2100000
-		}
-	},
-	weapons = {"pirate_weapons_light"},
+	lootGroups = {},
+	weapons = {},
 	conversationTemplate = "",
-	attacks = merge(marksmannovice,brawlernovice)
+	attacks = merge(marksmanmaster,pistoleermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(droid_8t88, "droid_8t88")

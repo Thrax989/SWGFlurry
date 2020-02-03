@@ -1,0 +1,35 @@
+ghom_tusken_avenger = Creature:new {
+	objectName = "@mob/creature_names:tusken_avenger",
+	socialGroup = "tusken_raider",
+	faction = "tusken_raider",
+	level = 48,
+	chanceHit = 0.49,
+	damageMin = 385,
+	damageMax = 480,
+	baseXp = 4734,
+	baseHAM = 10000,
+	baseHAMmax = 12200,
+	armor = 0,
+	resists = {40,10,0,50,-1,30,-1,-1,-1},
+	meatType = "",
+	meatAmount = 0,
+	hideType = "",
+	hideAmount = 0,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 0,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + STALKER,
+	optionsBitmask = AIENABLED,
+	diet = HERBIVORE,
+
+	templates = {"object/mobile/tusken_raider.iff"},
+	lootGroups = {},
+	weapons = {"tusken_weapons"},
+	conversationTemplate = "",
+	attacks = merge(marksmanmaster,brawlermaster,fencermaster,riflemanmaster)
+}
+
+CreatureTemplates:addCreatureTemplate(ghom_tusken_avenger, "ghom_tusken_avenger")

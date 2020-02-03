@@ -1,17 +1,17 @@
 exar_kun = Creature:new {
-	customName = "exar_kun",
+	customName = "Spirit of Exar Kun",
 	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",
-	level = 131,
-	chanceHit = 4.75,
-	damageMin = 770,
-	damageMax = 1250,
-	baseXp = 12424,
-	baseHAM = 50000,
-	baseHAMmax = 61000,
-	armor = 2,
-	resists = {15,200,15,200,200,200,200,200,-1},
+	level = 300,
+	chanceHit = 32.25,
+	damageMin = 1520,
+	damageMax = 2750,
+	baseXp = 26654,
+	baseHAM = 321000,
+	baseHAMmax = 392000,
+	armor = 3,
+	resists = {200,25,25,200,200,200,200,200,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,16 +21,16 @@ exar_kun = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = ATTACKABLE + ENEMY,
-	creatureBitmask = HERD,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/exar_kun.iff"},
-	lootGroups = {},
+	lootGroups = {},	
 	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
-	attacks = merge(fencermid,forcepowermaster,tkamid,lightsabermaster,brawlermaster,forcewielder)
+	attacks = merge(forcepowermaster,tkamaster,lightsabermaster,brawlermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(exar_kun, "exar_kun")

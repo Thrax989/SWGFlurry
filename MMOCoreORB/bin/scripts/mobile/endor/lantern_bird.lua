@@ -26,7 +26,6 @@ lantern_bird = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/lantern_bird_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	controlDeviceTemplate = "object/intangible/pet/lantern_bird_hue.iff",
 	scale = 0.9,
 	lootGroups = {},

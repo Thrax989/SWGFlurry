@@ -18,7 +18,7 @@ gleaming_lantern_bird = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 46,
 	milk = 0,
-	tamingChance = 0.2,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,7 +26,6 @@ gleaming_lantern_bird = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/lantern_bird_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	controlDeviceTemplate = "object/intangible/pet/lantern_bird_hue.iff",
 	scale = 1.1,
 	lootGroups = {},

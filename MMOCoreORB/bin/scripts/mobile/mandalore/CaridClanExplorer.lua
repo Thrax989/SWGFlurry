@@ -20,7 +20,7 @@ carid_clan_explorer = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + STALKER,
@@ -28,7 +28,17 @@ carid_clan_explorer = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/boba_fett.iff"},
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "death_watch_bunker_commoners",   chance = 6300000},
+				{group = "death_watch_bunker_lieutenants", chance = 3500000},
+				{group = "death_watch_bunker_ingredient_protective",  chance = 100000},
+				{group = "death_watch_bunker_ingredient_binary",  chance = 100000}
+			},
+			lootChance = 1500000
+		}
+	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	attacks = {

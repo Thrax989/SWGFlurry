@@ -18,7 +18,7 @@ young_reptilian_flier = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 70,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -26,7 +26,6 @@ young_reptilian_flier = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/young_reptilian_flier.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 0.8,
 	lootGroups = {},
 	weapons = {},

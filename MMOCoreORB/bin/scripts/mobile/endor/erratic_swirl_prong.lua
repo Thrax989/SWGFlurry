@@ -18,7 +18,7 @@ erratic_swirl_prong = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 95,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,7 +26,6 @@ erratic_swirl_prong = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/swirl_prong_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.05,
 	lootGroups = {},
 	weapons = {},

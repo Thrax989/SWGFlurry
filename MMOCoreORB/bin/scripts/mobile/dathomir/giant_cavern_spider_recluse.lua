@@ -18,7 +18,7 @@ giant_cavern_spider_recluse = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -26,7 +26,6 @@ giant_cavern_spider_recluse = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/gaping_spider_recluse.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	scale = 2.0,
 	lootGroups = {},
 	weapons = {},

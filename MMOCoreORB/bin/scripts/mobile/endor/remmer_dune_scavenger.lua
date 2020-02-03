@@ -18,7 +18,7 @@ remmer_dune_scavenger = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 5,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -26,7 +26,6 @@ remmer_dune_scavenger = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/remmer_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 0.9,
 	lootGroups = {},
 	weapons = {"creature_spit_small_red"},

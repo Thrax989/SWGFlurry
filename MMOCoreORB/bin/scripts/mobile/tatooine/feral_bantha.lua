@@ -26,7 +26,6 @@ feral_bantha = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/bantha_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	controlDeviceTemplate = "object/intangible/pet/bantha_hue.iff",
 	scale = 1.05,
 	lootGroups = {},

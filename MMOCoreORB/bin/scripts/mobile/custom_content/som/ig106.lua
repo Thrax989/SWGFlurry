@@ -2,15 +2,15 @@ ig106 = Creature:new {
 	customName = "IG-106",
 	socialGroup = "townsperson",
 	faction = "",
-	level = 70,
-	chanceHit = 0.27,
+	level = 300,
+	chanceHit = 25.00,
 	damageMin = 550,
-	damageMax = 800,
-	baseXp = 235,
-	baseHAM = 16000,
-	baseHAMmax = 19000,
-	armor = 0,
-	resists = {0,0,0,0,0,0,0,-1,-1},
+	damageMax = 1200,
+	baseXp = 10000,
+	baseHAM = 250000,
+	baseHAMmax = 300000,
+	armor = 3,
+	resists = {55,55,70,45,75,80,55,45,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -20,21 +20,17 @@ ig106 = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = ATTACKABLE,
-	creatureBitmask = PACK + STALKER,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+	scale = 1.3,
 
 	templates = {"object/mobile/som/ig106.iff"},
-	lootGroups = {
-		{
-			groups = {},
-			lootChance = 2100000
-		}
-	},
-	weapons = {"pirate_weapons_light"},
-	conversationTemplate = "",
-	attacks = merge(marksmannovice,brawlernovice)
+	lootGroups = {},
+	weapons = {"ig106_weapons"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(commandomaster,marksmanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(ig106, "ig106")

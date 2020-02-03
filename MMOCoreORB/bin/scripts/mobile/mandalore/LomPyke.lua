@@ -20,7 +20,7 @@ lom_pyke = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = KILLER,
@@ -29,7 +29,39 @@ lom_pyke = Creature:new {
 
 	templates = {"object/mobile/dressed_black_sun_henchman.iff"},
 	scale = 2.5,
-	lootGroups = {},
+	lootGroups = {
+  		{
+  			      groups = {
+  				            {group = "armor_attachments", chance = 1000000},
+  				            {group = "clothing_attachments", chance = 1000000},
+  				            {group = "power_crystals", chance = 8000000},
+  				            
+},
+                      lootChance = 10000000
+},
+{
+            groups = {
+                    {group = "armor_attachments", chance = 5000000},
+                    {group = "clothing_attachments", chance = 5000000}
+},
+                    lootChance = 10000000
+},
+{
+            groups = {
+                    {group = "armor_attachments", chance = 5000000},
+                    {group = "clothing_attachments", chance = 5000000}
+},
+                    lootChance = 10000000
+},    
+{
+            groups = {
+                    {group = "g_banner_rebel", chance = 10000000}
+},
+                    lootChance = 10000000
+},
+
+
+},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster,commandomaster)

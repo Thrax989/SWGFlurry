@@ -1,17 +1,17 @@
 exar_kun_cultist = Creature:new {
-	customName = "exar_kun_cultist",
+	customName = "Exar Kun Cultist",
 	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",
-	level = 88,
-	chanceHit = 0.8,
-	damageMin = 545,
-	damageMax = 800,
-	baseXp = 8408,
-	baseHAM = 21000,
-	baseHAMmax = 26000,
+	level = 60,
+	chanceHit = 0.5,
+	damageMin = 445,
+	damageMax = 600,
+	baseXp = 5830,
+	baseHAM = 11000,
+	baseHAMmax = 14000,
 	armor = 1,
-	resists = {45,45,45,100,100,100,100,100,-1},
+	resists = {10,10,10,100,100,100,100,100,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,8 +21,8 @@ exar_kun_cultist = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = ATTACKABLE + ENEMY,
-	creatureBitmask = HERD,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
@@ -30,7 +30,7 @@ exar_kun_cultist = Creature:new {
 	lootGroups = {},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
-	attacks = merge(fencermid,swordsmanmid,tkamid,pikemanmaster,brawlermaster,forcewielder)
+	attacks = merge(tkamid,fencermid,swordsmanmid,pikemanmid,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(exar_kun_cultist, "exar_kun_cultist")

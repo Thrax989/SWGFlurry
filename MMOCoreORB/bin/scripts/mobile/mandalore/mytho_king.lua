@@ -19,7 +19,7 @@ mytho_king = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 20,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -28,7 +28,65 @@ mytho_king = Creature:new {
 
 	templates = {"object/mobile/giant_dune_kimogila.iff"},
 	scale = 3.0;
-	lootGroups = {},
+lootGroups = {
+		 {
+			groups = {
+        			{group = "power_crystals", chance = 5000000},
+        			{group = "armor_attachments", chance = 2500000},
+        			{group = "clothing_attachments", chance = 2500000}
+   	},
+      			lootChance = 10000000
+   	},
+		 {
+			groups = {
+        			{group = "power_crystals", chance = 5000000},
+        			{group = "armor_attachments", chance = 2500000},
+        			{group = "clothing_attachments", chance = 2500000}
+   	},
+      			lootChance = 10000000
+   	},
+		 {
+			groups = {
+        			{group = "power_crystals", chance = 5000000},
+        			{group = "armor_attachments", chance = 2500000},
+        			{group = "clothing_attachments", chance = 2500000}
+   	},
+      			lootChance = 10000000
+   	},
+   	 {
+			groups = {
+        			{group = "power_crystals", chance = 5000000},
+        			{group = "armor_attachments", chance = 2500000},
+        			{group = "clothing_attachments", chance = 2500000}
+   	},
+      			lootChance = 10000000
+   	},
+		 {
+			groups = {
+				{group = "krayt_tissue_rare", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		 {
+			groups = {
+				{group = "krayt_tissue_rare", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		 {
+			groups = {
+				{group = "krayt_tissue_rare", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		 {
+			groups = {
+				{group = "krayt_tissue_rare", chance = 10000000}
+			},
+			lootChance = 10000000
+		},
+		 		
+		},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

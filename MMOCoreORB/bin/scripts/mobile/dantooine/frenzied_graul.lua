@@ -18,7 +18,7 @@ frenzied_graul = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 855,
 	milk = 0,
-	tamingChance = 0.01,
+	tamingChance = 0.25,
 	ferocity = 15,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -26,7 +26,6 @@ frenzied_graul = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/frenzied_graul.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	controlDeviceTemplate = "object/intangible/pet/graul_hue.iff",
 	scale = 1.2,
 	lootGroups = {},

@@ -1,17 +1,17 @@
 exar_kun_warrior = Creature:new {
-	customName = "exar_kun_warrior",
+	customName = "Exar Kun Warrior",
 	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",
-	level = 88,
-	chanceHit = 0.8,
-	damageMin = 545,
-	damageMax = 800,
-	baseXp = 8408,
-	baseHAM = 21000,
-	baseHAMmax = 26000,
+	level = 96,
+	chanceHit = 0.85,
+	damageMin = 595,
+	damageMax = 900,
+	baseXp = 9150,
+	baseHAM = 20000,
+	baseHAMmax = 25000,
 	armor = 1,
-	resists = {45,45,45,100,100,100,100,100,-1},
+	resists = {40,200,40,200,200,200,200,200,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,8 +21,8 @@ exar_kun_warrior = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = ATTACKABLE + ENEMY,
-	creatureBitmask = HERD,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
@@ -30,7 +30,7 @@ exar_kun_warrior = Creature:new {
 	lootGroups = {},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
-	attacks = merge(fencermid,swordsmanmid,tkamid,pikemanmaster,brawlermaster,forcewielder)
+	attacks = merge(fencermaster,swordsmanmid,tkamid,pikemanmaster,brawlermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(exar_kun_warrior, "exar_kun_warrior")

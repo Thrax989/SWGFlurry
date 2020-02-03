@@ -1,5 +1,7 @@
 trainer_mechanic = Creature:new {
 	customName = "Mechanic Trainer",
+	randomNameType = NAME_GENERIC,
+	randomNameTag = true,
 	planetMapCategory = "trainer_mechanic",
 	faction = "",
 	level = 100,

@@ -26,8 +26,7 @@ desert_eopie = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/eopie_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	templates = {"object/mobile/eopie.iff"},
 	controlDeviceTemplate = "object/intangible/pet/eopie_hue.iff",
 	scale = 1.2,
 	lootGroups = {},

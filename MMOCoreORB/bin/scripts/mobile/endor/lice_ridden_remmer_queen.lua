@@ -18,7 +18,7 @@ lice_ridden_remmer_queen = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK,
@@ -26,7 +26,6 @@ lice_ridden_remmer_queen = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/lice_ridden_remmer_queen.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	scale = 1.2,
 	lootGroups = {},
 	weapons = {"creature_spit_small_yellow"},

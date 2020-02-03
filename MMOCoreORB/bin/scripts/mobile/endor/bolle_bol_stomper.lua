@@ -18,7 +18,7 @@ bolle_bol_stomper = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 180,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,7 +26,6 @@ bolle_bol_stomper = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/bolle_bol_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 0.95,
 	lootGroups = {},
 	weapons = {},

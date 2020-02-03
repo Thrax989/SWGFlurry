@@ -25,8 +25,7 @@ reclusive_shear_mite = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/shear_mite_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	templates = {"object/mobile/shear_mite.iff"},
 	controlDeviceTemplate = "object/intangible/pet/shear_mite_hue.iff",
 	scale = 1.1,
 	lootGroups = {},

@@ -18,7 +18,7 @@ fierce_piket_protector = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 110,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -26,7 +26,6 @@ fierce_piket_protector = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/piket_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.15,
 	lootGroups = {},
 	weapons = {},

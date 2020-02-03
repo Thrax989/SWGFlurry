@@ -18,7 +18,7 @@ purbole_youth = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 8,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + STALKER,
@@ -26,7 +26,6 @@ purbole_youth = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/purbole_youth.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 0.8,
 	lootGroups = {},
 	weapons = {},

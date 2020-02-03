@@ -18,7 +18,7 @@ rhoa_kwi = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 76,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 6,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -26,7 +26,6 @@ rhoa_kwi = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/kwi_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.15,
 	lootGroups = {},
 	weapons = {"creature_spit_small_red"},

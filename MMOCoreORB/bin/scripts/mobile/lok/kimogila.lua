@@ -25,8 +25,7 @@ kimogila = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/kimogila_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	templates = {"object/mobile/kimogila.iff"},
 	scale = 0.85,
 	lootGroups = {
 	 {

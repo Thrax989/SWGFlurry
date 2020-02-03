@@ -20,7 +20,7 @@ ragtag_maniac = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.000000,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
@@ -43,7 +43,8 @@ ragtag_maniac = Creature:new {
 				{group = "loot_kit_parts", chance = 1500000},
 				{group = "power_crystals", chance = 500000},
 				{group = "tailor_components", chance = 1000000}
-			}
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"pirate_weapons_medium"},

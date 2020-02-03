@@ -201,6 +201,8 @@ includeFile("lair/npc_theater/rori_rorgungan_warcamp_neutral_large_theater.lua")
 includeFile("lair/npc_theater/rori_spice_collective_miner_base_neutral_large_theater.lua")
 includeFile("lair/npc_theater/rori_trade_federation_camp_neutral_large_theater.lua")
 
+includeFile("lair/npc_theater/taanab_norulac_raider_camp.lua")
+
 includeFile("lair/npc_theater/talus_aakuan_champion_camp_neutral_large_theater.lua")
 includeFile("lair/npc_theater/talus_aakuan_steward_camp_neutral_small_theater.lua")
 includeFile("lair/npc_theater/talus_beldonna_base_neutral_large_theater.lua")
@@ -260,7 +262,3 @@ includeFile("lair/npc_theater/yavin4_stranded_imperial_patrol_imperial_medium_th
 includeFile("lair/npc_theater/yavin4_stranded_rebel_base_rebel_medium_theater.lua")
 includeFile("lair/npc_theater/yavin4_stranded_rebel_patrol_rebel_medium_theater.lua")
 
---custom planets
-includeFile("lair/npc_theater/taanab_norulac_raider_camp.lua")
-includeFile("lair/npc_theater/hoth_snowtrooper_camp.lua")
-includeFile("lair/npc_theater/hoth_rebel_camp.lua")

@@ -18,7 +18,7 @@ infant_brackaset = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 60,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = HERD,
@@ -26,7 +26,6 @@ infant_brackaset = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/infant_brackaset.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 0.6,
 	lootGroups = {},
 	weapons = {},

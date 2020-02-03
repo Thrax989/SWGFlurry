@@ -20,7 +20,7 @@ mandalore_the_resurrector = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = KILLER,
@@ -28,7 +28,69 @@ mandalore_the_resurrector = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_death_watch_red.iff"},
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+        			{group = "power_crystals", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
+		},
+			lootChance = 10000000
+		},
+   		{
+			groups = {
+        			{group = "power_crystals", chance = 5000000},
+        			{group = "armor_attachments", chance = 2500000},
+        			{group = "clothing_attachments", chance = 2500000}
+      		},
+      			lootChance = 10000000
+    		},
+    		{
+      			groups = {
+        			{group = "power_crystals", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
+      		},
+      			lootChance = 10000000
+    		},
+   		{
+      			groups = {
+        			{group = "power_crystals", chance = 5000000},
+       	 			{group = "armor_attachments", chance = 2500000},
+        			{group = "clothing_attachments", chance = 2500000}
+      		},
+      			lootChance = 10000000
+    		},
+    		{
+      			groups = {
+        			{group = "armor_attachments", chance = 5000000},
+        			{group = "clothing_attachments", chance = 5000000}
+      		},
+      			lootChance = 10000000
+    		},
+    		{
+     	 		groups = {
+        			{group = "armor_attachments", chance = 5000000},
+        			{group = "clothing_attachments", chance = 5000000}
+      		},
+      			lootChance = 10000000
+    		},
+    		{
+      			groups = {
+        			{group = "armor_attachments", chance = 5000000},
+       	 			{group = "clothing_attachments", chance = 5000000}
+      		},
+     			 lootChance = 10000000
+    		},
+    		{
+     			groups = {
+        			{group = "armor_attachments", chance = 5000000},
+        			{group = "clothing_attachments", chance = 5000000}
+      		},
+      			lootChance = 10000000
+    		},
+		
+		},
 	weapons = {"creature_spit_heavy_flame"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = {

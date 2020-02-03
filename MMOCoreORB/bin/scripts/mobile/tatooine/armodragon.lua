@@ -25,8 +25,7 @@ armodragon = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/dune_lizard_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	templates = {"object/mobile/dune_lizard.iff"},
 	controlDeviceTemplate = "object/intangible/pet/dune_lizard_hue.iff",
 	scale = 1.3,
 	lootGroups = {},

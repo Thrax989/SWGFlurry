@@ -20,7 +20,7 @@ shadow_collective_criminal = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = KILLER,
@@ -28,7 +28,20 @@ shadow_collective_criminal = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_black_sun_thug.iff"},
-	lootGroups = {},
+	lootGroups = {
+         {
+			groups = {
+				{group = "junk", chance = 6500000},
+				{group = "pistols", chance = 750000},
+				{group = "rifles", chance = 750000},
+				{group = "carbines", chance = 750000},
+				{group = "clothing_attachments", chance = 500000},				
+				{group = "junk", chance = 700000},
+				{group = "armor_attachments", chance = 50000},
+			},
+			lootChance = 3500000
+		}	
+	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
 	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster)

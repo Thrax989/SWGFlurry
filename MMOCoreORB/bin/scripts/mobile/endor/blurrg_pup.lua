@@ -18,7 +18,7 @@ blurrg_pup = Creature:new {
 	boneType = "bone_avian",
 	boneAmount = 20,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,7 +26,6 @@ blurrg_pup = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/blurrg_pup.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 0.7,
 	lootGroups = {},
 	weapons = {},

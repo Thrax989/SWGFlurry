@@ -26,7 +26,6 @@ noxious_vrelt_scavenger = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/noxious_vrelt_scavenger.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	controlDeviceTemplate = "object/intangible/pet/stintaril_hue.iff",
 	scale = 1.15,
 	lootGroups = {},

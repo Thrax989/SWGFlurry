@@ -18,7 +18,7 @@ young_malkloc = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 850,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,7 +26,6 @@ young_malkloc = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/young_malkloc.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 0.75,
 	lootGroups = {},
 	weapons = {},

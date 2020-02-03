@@ -27,45 +27,10 @@ dark_jedi_sentinel = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = { "dark_jedi" },
-	lootGroups = {
-		{
-			groups = {
-				{group = "holocron_dark", chance = 600000},
-				{group = "holocron_light", chance = 600000},
-				{group = "power_crystals", chance = 600000},
-				{group = "rifles", chance = 1300000},
-				{group = "pistols", chance = 1300000},
-				{group = "melee_weapons", chance = 1300000},
-				{group = "armor_attachments", chance = 1100000},
-				{group = "clothing_attachments", chance = 1100000},
-				{group = "carbines", chance = 1300000},
-				{group = "dark_jedi_common", chance = 800000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
-			},
-			lootChance = 100000
-		},
-		{
-			groups = {
-				{group = "nge_all", chance = 10000000},
-			},
-			lootChance = 10000000
-		}
-	},
+	templates = {
+		"object/mobile/dressed_dark_jedi_human_male_01.iff",
+		"object/mobile/dressed_dark_jedi_human_female_01.iff"},
+	lootGroups = {},
 	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
 	attacks = merge(lightsabermaster,forcepowermaster)

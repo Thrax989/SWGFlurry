@@ -18,7 +18,7 @@ rhoa_kwi_pack_leader = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 76,
 	milk = 0,
-	tamingChance = 0.1,
+	tamingChance = 0.25,
 	ferocity = 6,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -26,7 +26,6 @@ rhoa_kwi_pack_leader = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/kwi_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	controlDeviceTemplate = "object/intangible/pet/kwi_hue.iff",
 	scale = 1.3,
 	lootGroups = {},

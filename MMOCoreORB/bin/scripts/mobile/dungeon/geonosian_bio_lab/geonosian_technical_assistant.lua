@@ -20,18 +20,25 @@ geonosian_technical_assistant = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = NONE,
-	creatureBitmask = NONE,
-	optionsBitmask = AIENABLED + INVULNERABLE + CONVERSABLE,
+	pvpBitmask = ATTACKABLE + AGGRESSIVE + ENEMY,
+	creatureBitmask = PACK,
+	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = {
 		"object/mobile/dressed_geonosian_noble_01.iff",
 		"object/mobile/dressed_geonosian_noble_02.iff"},
-	lootGroups = {},
-	weapons = {},
-	conversationTemplate = "biogenicRandomConvoTemplate",
-	attacks = {}
+	lootGroups = {
+		{
+			groups = {
+				{group = "geonosian_common", chance = 5000000},
+				{group = "geonosian_relic", chance = 5000000}
+			}
+		}
+	},
+	weapons = {"geonosian_weapons"},
+	conversationTemplate = "",
+	attacks = merge(brawlermaster,marksmanmaster,pistoleermaster,riflemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(geonosian_technical_assistant, "geonosian_technical_assistant")

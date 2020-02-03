@@ -25,8 +25,7 @@ squall = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/squall_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	templates = {"object/mobile/squall.iff"},
 	controlDeviceTemplate = "object/intangible/pet/squall_hue.iff",
 	lootGroups = {},
 	weapons = {},

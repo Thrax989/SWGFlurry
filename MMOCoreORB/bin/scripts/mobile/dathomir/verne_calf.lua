@@ -18,7 +18,7 @@ verne_calf = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 12,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
@@ -26,7 +26,6 @@ verne_calf = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/verne_calf.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 0.85,
 	lootGroups = {},
 	weapons = {},

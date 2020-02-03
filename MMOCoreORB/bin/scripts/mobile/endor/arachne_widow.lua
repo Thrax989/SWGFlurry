@@ -18,7 +18,7 @@ arachne_widow = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.01,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + HERD + KILLER,
@@ -26,7 +26,6 @@ arachne_widow = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/angler_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	controlDeviceTemplate = "object/intangible/pet/angler_hue.iff",
 	scale = 1.25,
 	lootGroups = {},

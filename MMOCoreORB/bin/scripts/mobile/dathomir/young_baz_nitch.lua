@@ -18,7 +18,7 @@ young_baz_nitch = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 3,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -26,7 +26,6 @@ young_baz_nitch = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/young_baz_nitch.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 0.8,
 	lootGroups = {},
 	weapons = {},

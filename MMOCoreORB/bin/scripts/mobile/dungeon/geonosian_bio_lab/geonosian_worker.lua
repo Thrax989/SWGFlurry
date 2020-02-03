@@ -31,22 +31,10 @@ geonosian_worker = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "geonosian_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "nge_all", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "geonosian_relic", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
+				{group = "geonosian_common", chance = 5000000},
+				{group = "geonosian_relic", chance = 5000000}
+			}
+		}
 	},
 	weapons = {"geonosian_weapons"},
 	conversationTemplate = "",
