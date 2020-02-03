@@ -1,4 +1,4 @@
-force_sensitive_crypt_crawler = Creature:new {
+vforce_sensitive_crypt_crawler = Creature:new {
 	objectName = "@mob/creature_names:force_sensitive_crypt_crawler",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
@@ -20,7 +20,7 @@ force_sensitive_crypt_crawler = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER,
