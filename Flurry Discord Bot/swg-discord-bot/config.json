@@ -1,0 +1,22 @@
+{
+    "SWG": {
+        "LoginAddress": "",
+        "LoginPort": 44453,
+        "Username": "",
+        "Password": "",
+        "Character": "",
+        "ChatRoom": ""
+    },
+    "Discord": {
+        "BotName": "",
+        "BotToken": "",
+        "ServerName": "",
+        "ChatChannel": ""
+        "NotificationChannel": "",
+        "NotificationMentionRole": ""
+    },
+    "resourceAutomation": {
+	"ChatChannel": "",
+	"NotificationChannel": ""
+    }
+}
