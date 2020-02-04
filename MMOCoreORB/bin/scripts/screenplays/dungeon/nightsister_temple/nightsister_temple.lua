@@ -32,7 +32,7 @@ spawnMobile("dungeon2", "rancor", 1800, -5.34595, 0.230444, -90.253, 354, 142008
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pBoss = spawnMobile("dungeon2", "nightsisterqueen", 1, -79.1685, 17.8173, 23.93, 100, 14201105)--3 hour respawn to start the boss
+local pBoss = spawnMobile("dungeon2", "nightsisterqueen", 10800, -79.1685, 17.8173, 23.93, 100, 14201105)--3 hour respawn to start the boss
 	print("Spawning nightsister temple queen")
 if (pBoss ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "nightsister_temple", "notifyTriggerDead", pBoss)
@@ -44,7 +44,7 @@ end
 --  Notify trigger is dead to spawn Boss
 -----------------------------------------
 function nightsister_temple:notifyTriggerDead(pBoss, pPlayer)
-local pBoss = spawnMobile("dungeon2", "nightsisterqueenboss", 1, -79.1685, 17.8173, 23.93, 100, 14201105)
+local pBoss = spawnMobile("dungeon2", "nightsisterqueenboss", -1, -79.1685, 17.8173, 23.93, 100, 14201105)
     print("Spawning nightsister temple boss")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
@@ -129,10 +129,10 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
       spatialChat(pBoss, "Boss Current Health = 90%")
       spatialChat(pBoss, "You fools..")
       writeData("nightsister_temple:spawnState",2)
-      local onespawn = spawnMobile("dungeon2", "queens_rancor", 1, -68.1774, 14.0589, 33.5873, 132, 14201105)
-      local onespawn = spawnMobile("dungeon2", "queens_rancor", 1, -78.0045, 17.8249, 31.511, 110, 14201105)
-      local onespawn = spawnMobile("dungeon2", "queens_rancor", 1, -82.2817, 17.8345, 16.3667, 106, 14201105)
-      local onespawn = spawnMobile("dungeon2", "queens_rancor", 1, -67.8579, 12.9848, 6.15438, 78, 14201105)
+      local onespawn = spawnMobile("dungeon2", "queens_rancor", 0, -68.1774, 14.0589, 33.5873, 132, 14201105)
+      local onespawn = spawnMobile("dungeon2", "queens_rancor", 0, -78.0045, 17.8249, 31.511, 110, 14201105)
+      local onespawn = spawnMobile("dungeon2", "queens_rancor", 0, -82.2817, 17.8345, 16.3667, 106, 14201105)
+      local onespawn = spawnMobile("dungeon2", "queens_rancor", 0, -67.8579, 12.9848, 6.15438, 78, 14201105)
       ObjectManager.withCreatureObject(onespawn, function(ofirstTime)
       writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -152,10 +152,10 @@ if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 80%")
       writeData("nightsister_temple:spawnState",3)
-      local twospawn = spawnMobile("dungeon2", "queens_rancor", 1, -68.1774, 14.0589, 33.5873, 132, 14201105)
-      local twospawn = spawnMobile("dungeon2", "queens_rancor", 1, -78.0045, 17.8249, 31.511, 110, 14201105)
-      local twospawn = spawnMobile("dungeon2", "queens_rancor", 1, -82.2817, 17.8345, 16.3667, 106, 14201105)
-      local twospawn = spawnMobile("dungeon2", "queens_rancor", 1, -67.8579, 12.9848, 6.15438, 78, 14201105)
+      local twospawn = spawnMobile("dungeon2", "queens_rancor", 0, -68.1774, 14.0589, 33.5873, 132, 14201105)
+      local twospawn = spawnMobile("dungeon2", "queens_rancor", 0, -78.0045, 17.8249, 31.511, 110, 14201105)
+      local twospawn = spawnMobile("dungeon2", "queens_rancor", 0, -82.2817, 17.8345, 16.3667, 106, 14201105)
+      local twospawn = spawnMobile("dungeon2", "queens_rancor", 0, -67.8579, 12.9848, 6.15438, 78, 14201105)
       ObjectManager.withCreatureObject(twospawn, function(ofirstTime)
       writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -175,7 +175,7 @@ if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 70%")
       writeData("nightsister_temple:spawnState",4)
-      local threespawn = spawnMobile("dungeon2", "queen_mutation1", 1, -52.9481, 9.92795, 16.3974, 284, 14201105)
+      local threespawn = spawnMobile("dungeon2", "queen_mutation1", 0, -52.9481, 9.92795, 16.3974, 284, 14201105)
       ObjectManager.withCreatureObject(threespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -195,7 +195,7 @@ if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 60%")
       writeData("nightsister_temple:spawnState",5)
-      local fourspawn = spawnMobile("dungeon2", "queen_mutation2", 1, -52.9481, 9.92795, 16.3974, 284, 14201105)
+      local fourspawn = spawnMobile("dungeon2", "queen_mutation2", 0, -52.9481, 9.92795, 16.3974, 284, 14201105)
       ObjectManager.withCreatureObject(fourspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -215,7 +215,7 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 50%")
       writeData("nightsister_temple:spawnState",6)
-      local fivespawn = spawnMobile("dungeon2", "queen_mutation3", 1, -52.9481, 9.92795, 16.3974, 284, 14201105)
+      local fivespawn = spawnMobile("dungeon2", "queen_mutation3", 0, -52.9481, 9.92795, 16.3974, 284, 14201105)
       ObjectManager.withCreatureObject(fivespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -235,7 +235,7 @@ if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 40%")
       writeData("nightsister_temple:spawnState",7)
-      local sixspawn = spawnMobile("dungeon2", "queen_mutation4", 1, -52.9481, 9.92795, 16.3974, 284, 14201105)
+      local sixspawn = spawnMobile("dungeon2", "queen_mutation4", 0, -52.9481, 9.92795, 16.3974, 284, 14201105)
       ObjectManager.withCreatureObject(sixspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -275,7 +275,7 @@ if (((bossHealth <= (bossMaxHealth * 0.2)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 20%")
       writeData("nightsister_temple:spawnState",9)  
-      local eightspawn = spawnMobile("dungeon2", "queen_mutation6", 1, -52.9481, 9.92795, 16.3974, 284, 14201105)
+      local eightspawn = spawnMobile("dungeon2", "queen_mutation6", 0, -52.9481, 9.92795, 16.3974, 284, 14201105)
       ObjectManager.withCreatureObject(eightspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -295,7 +295,7 @@ if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 10%")
       writeData("nightsister_temple:spawnState",10)
-      local ninespawn = spawnMobile("dungeon2", "queen_mutation7", 1, -52.9481, 9.92795, 16.3974, 284, 14201105)
+      local ninespawn = spawnMobile("dungeon2", "queen_mutation7", 0, -52.9481, 9.92795, 16.3974, 284, 14201105)
       ObjectManager.withCreatureObject(ninespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -347,7 +347,7 @@ end
 function nightsister_temple:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
-    	print("nightsister temple Is Respawning")
+    	print("nightsister temple boss Is Respawning")
 end
 -----------------------------------------------------------------------------
 --The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot

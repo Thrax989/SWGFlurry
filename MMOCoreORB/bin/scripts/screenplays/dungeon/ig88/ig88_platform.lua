@@ -29,14 +29,14 @@ end
 --------------------------------------------------
 function ig88_platform:spawnMobiles()
 --Main Spawn Room
-spawnMobile("dungeon2", "test", 1, 34.452, 173.835, 36.0281, 265, 14201198)
+spawnMobile("dungeon2", "test", 300, 34.452, 173.835, 36.0281, 265, 14201198)
 
 
 
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pBoss = spawnMobile("dungeon2", "test", 1, 0.0534111, 173.835, 9.2723, 357, 14201198)--3 hour respawn to start the boss
+local pBoss = spawnMobile("dungeon2", "test", 10800, 0.0534111, 173.835, 9.2723, 357, 14201198)--3 hour respawn to start the boss
 	print("Spawning ig88 platform Clone")
 if (pBoss ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "ig88_platform", "notifyTriggerDead", pBoss)
@@ -48,7 +48,7 @@ end
 --  Notify trigger is dead to spawn Boss
 -----------------------------------------
 function ig88_platform:notifyTriggerDead(pBoss, pPlayer)
-local pBoss = spawnMobile("dungeon2", "test", 1, 0.0534111, 173.835, 9.2723, 357, 14201198)
+local pBoss = spawnMobile("dungeon2", "test", -1, 0.0534111, 173.835, 9.2723, 357, 14201198)
     print("Spawning ig88 platform")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
@@ -69,7 +69,7 @@ function ig88_platform:Restart(pPlayer, pBoss)
     print("Starting Boss Broadcast Scripts")
 	createEvent(1 * 1000, "ig88_platform", "Restartstates", pPlayer, "")--Restart ig88 platform States
 	createEvent(1 * 1000, "ig88_platform", "BroadcastRespawn", pPlayer, "")--Broadcast 3 Hour Respawn
-	createEvent(60 * 1000, "ig88_platform", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
+	createEvent(300 * 1000, "ig88_platform", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
 	createEvent(10795 * 1000, "ig88_platform", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
 	createEvent(10798 * 1000, "ig88_platform", "KillSpawnCast1", pPlayer, "")--Broadcast Respawn 3
 	createEvent(10799 * 1000, "ig88_platform", "KillSpawnCast2", pPlayer, "")--Broadcast Respawn 2
@@ -304,7 +304,7 @@ if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------------------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.001))) and readData("ig88_platform:spawnState") == 10) then
       spatialChat(pBoss, "We shall meet again uggggh!.")
-      spatialChat(pBoss, "You have 60 seconds to loot my body befor it disappears.")
+      spatialChat(pBoss, "You have 5 minuets to loot my body befor it disappears.")
             writeData("ig88_platform:spawnState",11)
         end
       end
