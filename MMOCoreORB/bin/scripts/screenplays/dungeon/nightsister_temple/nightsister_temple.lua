@@ -91,13 +91,13 @@ local bossMaxHealth = boss:getMaxHAM(0)
 local bossMaxAction = boss:getMaxHAM(3)
 local bossMaxMind = boss:getMaxHAM(6)
 
-local x1 = 15.4963
-local y1 = 106.287
+local x1 = -79.1685
+local y1 = 23.93
 local x2 = boss:getPositionX()
 local y2 = boss:getPositionY()
 
 local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-local maxDistance = 50 --Max distance you can fight the boss is 20 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
+local maxDistance = 50 --Max distance you can fight the boss is 50 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
 if distance > (maxDistance * maxDistance) then
       forcePeace(pBoss)
       forcePeace(pBoss)
