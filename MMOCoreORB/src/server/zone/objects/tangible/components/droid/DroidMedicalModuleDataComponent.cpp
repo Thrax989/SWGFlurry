@@ -3,6 +3,7 @@
 		See file COPYING for copying conditions. */
 
 #include "DroidMedicalModuleDataComponent.h"
+#include "server/zone/ZoneServer.h"
 #include "server/zone/objects/tangible/component/droid/DroidComponent.h"
 
 DroidMedicalModuleDataComponent::DroidMedicalModuleDataComponent() {
@@ -32,21 +33,21 @@ int DroidMedicalModuleDataComponent::getMedicalRating() {
 	switch(rating) {
 		case 1:
 		case 2:
-			return 55;
+			return 65;
 		case 3:
 		case 4:
-			return 65;
+			return 75;
 		case 5:
 		case 6:
-			return 75;
+			return 85;
 		case 7:
 		case 8:
-			return 85;
+			return 95;
 		case 9:
 		case 10:
-			return 100;
+			return 105;
 	}
-	return 110;
+	return 125;
 }
 void DroidMedicalModuleDataComponent::fillAttributeList(AttributeListMessage* alm, CreatureObject* droid) {
 	// convert module rating to actual rating
@@ -89,4 +90,3 @@ void DroidMedicalModuleDataComponent::unloadSkillMods(CreatureObject* player) {
 	player->removeAllSkillModsOfType(SkillModManager::DROID,true);
 	//player->removeSkillMod(SkillModManager::DROID,"private_medical_rating",true);
 }
-
