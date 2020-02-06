@@ -28,11 +28,6 @@ end
 --   spawn mobiles for dungeon
 --------------------------------------------------
 function ig88_platform:spawnMobiles()
---Main Spawn Room
-spawnMobile("dungeon2", "janta_warrior", 1, -0.0831865, 0.031546, 10.1614, 6, 14200863)
-
-
-
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
@@ -95,7 +90,7 @@ local bossMaxHealth = boss:getMaxHAM(0)
 local bossMaxAction = boss:getMaxHAM(3)
 local bossMaxMind = boss:getMaxHAM(6)
 
-local x1 = -0.0831865,
+local x1 = -0.0831865
 local y1 = 10.1614
 local x2 = boss:getPositionX()
 local y2 = boss:getPositionY()
