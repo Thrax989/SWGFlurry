@@ -1,5 +1,5 @@
 janta_cave_boss = Creature:new {
-	  customName = "<<< Janta King >>>",
+	  customName = "\\#00ff00<<< Janta King >>> \\#ff0000[lvl 300]",
 	  socialGroup = "janta_tribe",
 	  faction = "janta_tribe",
 	  level = 300,
