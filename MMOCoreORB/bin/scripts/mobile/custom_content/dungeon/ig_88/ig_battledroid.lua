@@ -26,9 +26,8 @@ ig_battledroid = Creature:new {
 	diet = NONE,
 	scale = 1.40,
 
-	templates = {"object/mobile/death_watch_battle_droid_02.iff",
-	lootGroups = {
-	},
+	templates = {"object/mobile/death_watch_battle_droid_02.iff"},
+	lootGroups = {},
 	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",
 	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster)
