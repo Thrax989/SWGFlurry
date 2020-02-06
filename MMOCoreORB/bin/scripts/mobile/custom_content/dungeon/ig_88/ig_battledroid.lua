@@ -1,5 +1,5 @@
-igsuperbattledroid = Creature:new {
-	customName = "Ig Supper Battle Droid",
+ig_battledroid = Creature:new {
+	customName = "Ig Battle Droid",
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
@@ -26,11 +26,12 @@ igsuperbattledroid = Creature:new {
 	diet = NONE,
 	scale = 1.40,
 
-	templates = {"object/mobile/ep3/ep3_rryatt_abandoned_super_battle_droid_01.iff"},
+	templates = {"object/mobile/death_watch_battle_droid_02.iff",
 	lootGroups = {
 	},
 	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",
 	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster)
 }
-CreatureTemplates:addCreatureTemplate(igsuperbattledroid, "igsuperbattledroid")
+
+CreatureTemplates:addCreatureTemplate(ig_battledroid, "ig_battledroid")
