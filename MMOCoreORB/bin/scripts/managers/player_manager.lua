@@ -76,7 +76,6 @@ veteranRewardAdditionalMilestones = 365 --frequency, in days, of additional mile
 veteranRewards = {
 
 		-- 1 Day Rewards
-		{templateFile = "object/tangible/item/loot_crates/heroic_crate.iff", milestone=0, oneTime=false, description="Heroic Crate"},
 		{templateFile = "object/tangible/item/loot_crates/base_crate_01.iff", milestone=0, oneTime=true, description="New Player Crate"},
 		{templateFile = "object/tangible/item/loot_crates/diamond_crate.iff", milestone=0, oneTime=false, description="Diamond Crate"},
 		{templateFile = "object/tangible/item/loot_crates/plat_crate.iff", milestone=0, oneTime=false, description="Platinum Crate"},
