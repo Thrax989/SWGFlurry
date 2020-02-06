@@ -28,15 +28,10 @@ end
 --   spawn mobiles for dungeon
 --------------------------------------------------
 function ig88_platform:spawnMobiles()
---Main Spawn Room
-spawnMobile("dungeon2", "test", 300, 34.452, 173.835, 36.0281, 265, 14201198)
-
-
-
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pBoss = spawnMobile("dungeon2", "test", 10800, 0.0534111, 173.835, 9.2723, 357, 14201198)--3 hour respawn to start the boss
+local pBoss = spawnMobile("dungeon2", "ig_battledroid", 10800, -0.0831865, 0.031546, 10.1614, 6, 14200863)--3 hour respawn to start the boss
 	print("Spawning ig88 platform Clone")
 if (pBoss ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "ig88_platform", "notifyTriggerDead", pBoss)
@@ -48,7 +43,7 @@ end
 --  Notify trigger is dead to spawn Boss
 -----------------------------------------
 function ig88_platform:notifyTriggerDead(pBoss, pPlayer)
-local pBoss = spawnMobile("dungeon2", "test", -1, 0.0534111, 173.835, 9.2723, 357, 14201198)
+local pBoss = spawnMobile("dungeon2", "ig_88_boss", -1, -0.0831865, 0.031546, 10.1614, 6, 14200863)
     print("Spawning ig88 platform")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
@@ -95,13 +90,13 @@ local bossMaxHealth = boss:getMaxHAM(0)
 local bossMaxAction = boss:getMaxHAM(3)
 local bossMaxMind = boss:getMaxHAM(6)
 
-local x1 = 0.0534111
-local y1 = 9.2723
+local x1 = -0.0831865
+local y1 = 10.1614
 local x2 = boss:getPositionX()
 local y2 = boss:getPositionY()
 
 local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-local maxDistance = 100 --Max distance you can fight the boss is 100 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
+local maxDistance = 75 --Max distance you can fight the boss is 75 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
 if distance > (maxDistance * maxDistance) then
       forcePeace(pBoss)
       forcePeace(pBoss)
@@ -133,7 +128,7 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
       spatialChat(pBoss, "Boss Current Health = 90%")
       spatialChat(pBoss, "You fools..")
       writeData("ig88_platform:spawnState",2)
-      local onespawn = spawnMobile("dungeon2", "test", 1, 10.0493, 173.835, 9.19901, 356, 14201198)
+      local onespawn = spawnMobile("dungeon2", "igbattleforeman", 0, 0.0297941, 0.031546, 9.97488, 353, 14200863)
       ObjectManager.withCreatureObject(onespawn, function(ofirstTime)
       writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -153,7 +148,7 @@ if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 80%")
       writeData("ig88_platform:spawnState",3)
-      local twospawn = spawnMobile("dungeon2", "test", 1, -9.91647, 173.835, 9.28364, 353, 14201198)
+      local twospawn = spawnMobile("dungeon2", "igbattleforeman", 0, 0.0297941, 0.031546, 9.97488, 353, 14200863)
       ObjectManager.withCreatureObject(twospawn, function(ofirstTime)
       writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -173,7 +168,7 @@ if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 70%")
       writeData("ig88_platform:spawnState",4)
-      local twospawn = spawnMobile("dungeon2", "test", 1, -9.91647, 173.835, 9.28364, 353, 14201198)
+      local threespawn = spawnMobile("dungeon2", "igbattleforeman", 0, 0.0297941, 0.031546, 9.97488, 353, 14200863)
       ObjectManager.withCreatureObject(threespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -193,7 +188,7 @@ if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 60%")
       writeData("ig88_platform:spawnState",5)
-      local twospawn = spawnMobile("dungeon2", "test", 1, -9.91647, 173.835, 9.28364, 353, 14201198)
+      local fourspawn = spawnMobile("dungeon2", "igbattleforeman", 0, 0.0297941, 0.031546, 9.97488, 353, 14200863)
       ObjectManager.withCreatureObject(fourspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -213,7 +208,7 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 50%")
       writeData("ig88_platform:spawnState",6)
-      local twospawn = spawnMobile("dungeon2", "test", 1, -9.91647, 173.835, 9.28364, 353, 14201198)
+      local fivespawn = spawnMobile("dungeon2", "igbattleforeman", 0, 0.0297941, 0.031546, 9.97488, 353, 14200863)
       ObjectManager.withCreatureObject(fivespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -233,7 +228,7 @@ if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 40%")
       writeData("ig88_platform:spawnState",7)
-      local twospawn = spawnMobile("dungeon2", "test", 1, -9.91647, 173.835, 9.28364, 353, 14201198)
+      local sixspawn = spawnMobile("dungeon2", "igbattleforeman", 0, 0.0297941, 0.031546, 9.97488, 353, 14200863)
       ObjectManager.withCreatureObject(sixspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -253,7 +248,7 @@ if (((bossHealth <= (bossMaxHealth * 0.3)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 30%")
       writeData("ig88_platform:spawnState",8)
-      local sevenspawn = spawnMobile("dungeon2", "test", 0, 6.70729, -0.027031, 97.9255, 169, 14200878)
+      local sevenspawn = spawnMobile("dungeon2", "igbattleforeman", 0, 0.0297941, 0.031546, 9.97488, 353, 14200863)
       ObjectManager.withCreatureObject(sevenspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -273,7 +268,15 @@ if (((bossHealth <= (bossMaxHealth * 0.2)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 20%")
       writeData("ig88_platform:spawnState",9)  
-      local twospawn = spawnMobile("dungeon2", "test", 1, -9.91647, 173.835, 9.28364, 353, 14201198)
+	  local eightspawn = spawnMobile("dungeon2", "ancientigguardian", 0, -0.010618, 0.0315461, 16.8371, 358, 14200863)
+	  local eightspawn = spawnMobile("dungeon2", "ancientigguardian", 0, -6.36817, 0.031546, 16.9577, 267, 14200863)
+	  local eightspawn = spawnMobile("dungeon2", "ancientigguardian", 0, -6.48728, 0.031546, 9.58395, 179, 14200863)
+	  local eightspawn = spawnMobile("dungeon2", "ancientigguardian", 0, -6.4223, 0.031546, 3.01317, 179, 14200863)
+	  local eightspawn = spawnMobile("dungeon2", "ancientigguardian", 0, 0.134145, 0.031546, 2.92523, 287, 14200863)
+	  local eightspawn = spawnMobile("dungeon2", "ancientigguardian", 0, 6.52767, 0.0315459, 2.97562, 86, 14200863)
+	  local eightspawn = spawnMobile("dungeon2", "ancientigguardian", 0, 6.54659, 0.031546, 9.76501, 356, 14200863)
+	  local eightspawn = spawnMobile("dungeon2", "ancientigguardian", 0, 6.56235, 0.0315461, 17.2639, 356, 14200863)
+	  local eightspawn = spawnMobile("dungeon2", "ancientigguardian", 0, 0.0297941, 0.031546, 9.97488, 353, 14200863)
       ObjectManager.withCreatureObject(eightspawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
@@ -293,7 +296,15 @@ if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.
       CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
       spatialChat(pBoss, "Boss Current Health = 10%")
       writeData("ig88_platform:spawnState",10)
-      local twospawn = spawnMobile("dungeon2", "test", 1, -9.91647, 173.835, 9.28364, 353, 14201198)
+	  local ninespawn = spawnMobile("dungeon2", "igsuperbattledroid", 1, -0.010618, 0.0315461, 16.8371, 358, 14200863)
+	  local ninespawn = spawnMobile("dungeon2", "igsuperbattledroid", 1, -6.36817, 0.031546, 16.9577, 267, 14200863)
+	  local ninespawn = spawnMobile("dungeon2", "igsuperbattledroid", 1, -6.48728, 0.031546, 9.58395, 179, 14200863)
+	  local ninespawn = spawnMobile("dungeon2", "igsuperbattledroid", 1, -6.4223, 0.031546, 3.01317, 179, 14200863)
+	  local ninespawn = spawnMobile("dungeon2", "igsuperbattledroid", 1, 0.134145, 0.031546, 2.92523, 287, 14200863)
+	  local ninespawn = spawnMobile("dungeon2", "igsuperbattledroid", 1, 6.52767, 0.0315459, 2.97562, 86, 14200863)
+	  local ninespawn = spawnMobile("dungeon2", "igsuperbattledroid", 1, 6.54659, 0.031546, 9.76501, 356, 14200863)
+	  local ninespawn = spawnMobile("dungeon2", "igsuperbattledroid", 1, 6.56235, 0.0315461, 17.2639, 356, 14200863)
+	  local ninespawn = spawnMobile("dungeon2", "igsuperbattledroid", 1, 0.0297941, 0.031546, 9.97488, 353, 14200863)
       ObjectManager.withCreatureObject(ninespawn, function(ofirstTime)
       writeData("countadd", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
