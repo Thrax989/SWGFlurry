@@ -1,5 +1,5 @@
 ep3_lord_cyssc = Creature:new {
-	customName = "Lord Cyssc",
+	customName = "\\#00ff00<<< Lord Cyssc >>> \\#ff0000[lvl 300]",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "trandoshan",
 	faction = "",
