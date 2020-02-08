@@ -1,5 +1,5 @@
 sherkar = Creature:new {
-	customName = "Sherkar",
+	customName = "\\#00ff00<<< Sher Kar >>> \\#ff0000[lvl 300]",
 	socialGroup = "sherkar",
 	faction = "",
 	level = 300,
