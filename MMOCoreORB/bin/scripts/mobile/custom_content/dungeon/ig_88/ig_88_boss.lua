@@ -1,5 +1,5 @@
 ig_88_boss = Creature:new {
-	objectName = "@mob/creature_names:ig_88",
+	customName = "\\#00ff00<<< IG-88 >>> \\#ff0000[lvl 300]",
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
