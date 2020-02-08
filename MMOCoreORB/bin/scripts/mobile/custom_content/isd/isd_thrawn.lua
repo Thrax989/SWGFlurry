@@ -1,6 +1,6 @@
 isd_thrawn = Creature:new {
 	--objectName = "",
-	customName = "General Thrawn",
+	customName = "\\#00ff00<<< General ThrawnLord Cyssc >>> \\#ff0000[lvl 300]",
 	socialGroup = "",
 	pvpFaction = "",
 	faction = "",
