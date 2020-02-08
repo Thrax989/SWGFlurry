@@ -1,7 +1,6 @@
 isd_thrawn = Creature:new {
 	--objectName = "",
 	customName = "\\#00ff00<<< General Thrawn >>> \\#ff0000[lvl 300]",
-
 	socialGroup = "",
 	pvpFaction = "",
 	faction = "",
@@ -38,6 +37,24 @@ isd_thrawn = Creature:new {
 				{group = "g_named_crystals", chance = 10000000},
 			},
 			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "g_named_crystals", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "g_cloak_of_hate", chance = 10000000},
+			},
+			lootChance = 500000
+		},
+		{
+			groups = {
+				{group = "capes", chance = 10000000},
+			},
+			lootChance = 1500000
 		},
 		{
 			groups = {

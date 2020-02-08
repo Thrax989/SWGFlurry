@@ -1,5 +1,5 @@
 sherkar = Creature:new {
-	customName = "Sherkar",
+	customName = "\\#00ff00<<< Sher Kar >>> \\#ff0000[lvl 300]",
 	socialGroup = "sherkar",
 	faction = "",
 	level = 300,
@@ -28,6 +28,24 @@ sherkar = Creature:new {
 	templates = {"object/mobile/som/sher_kar.iff"},
 	scale = 1.1;
 	lootGroups = {
+		{
+			groups = {
+				{group = "g_named_crystals", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "g_cloak_of_hate", chance = 10000000},
+			},
+			lootChance = 500000
+		},
+		{
+			groups = {
+				{group = "capes", chance = 10000000},
+			},
+			lootChance = 1500000
+		},
 		{
 			groups = {
 				{group = "goggles_all", chance = 10000000},
