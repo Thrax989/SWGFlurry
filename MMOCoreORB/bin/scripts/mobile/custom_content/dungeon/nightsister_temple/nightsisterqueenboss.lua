@@ -1,5 +1,5 @@
 nightsisterqueenboss = Creature:new {
-	customName = "Nightsister Queen Boss",
+	customName = "\\#00ff00<<< Nightsister Queen Boss >>> \\#ff0000[lvl 300]",
 	socialGroup = "nightsister",
 	faction = "nightsister",
 	level = 300,
