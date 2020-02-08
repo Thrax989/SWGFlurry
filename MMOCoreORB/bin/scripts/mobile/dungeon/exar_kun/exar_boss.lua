@@ -1,5 +1,5 @@
 exar_boss = Creature:new {
-	customName = "Exar Kun",
+	customName = "\\#00ff00<<< Exar Kun >>> \\#ff0000[lvl 300]",
 	socialGroup = "exar",
 	faction = "exar",
 	level = 300,
