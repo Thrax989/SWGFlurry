@@ -3,7 +3,7 @@ acklay = Creature:new {
 	customName = "Acklay",
 	socialGroup = "geonosian_creature",
 	faction = "",
-	level = 157,
+	level = 300,
 	chanceHit = 92.5,
 	damageMin = 935,
 	damageMax = 1580,
@@ -36,7 +36,67 @@ acklay = Creature:new {
 		},
 		{
 			groups = {
+				{group = "acklay", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "acklay", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "acklay", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
 				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 2500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 2500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
 			},
 			lootChance = 5000000
 		},
