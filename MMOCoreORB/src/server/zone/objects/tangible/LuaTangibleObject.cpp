@@ -11,6 +11,7 @@
 #include "templates/customization/AssetCustomizationManagerTemplate.h"
 #include "templates/appearance/PaletteTemplate.h"
 #include "server/zone/objects/player/FactionStatus.h"
+#include "server/zone/objects/tangible/wearables/WearableObject.h"
 
 const char LuaTangibleObject::className[] = "LuaTangibleObject";
 
@@ -50,6 +51,7 @@ Luna<LuaTangibleObject>::RegType LuaTangibleObject::Register[] = {
 		{ "isBroken", &LuaTangibleObject::isBroken},
 		{ "isSliced", &LuaTangibleObject::isSliced},
 		{ "isNoTrade", &LuaTangibleObject::isNoTrade},
+		{ "setSocketCount", &LuaTangibleObject::setSocketCount},
 		{ 0, 0 }
 };
 
