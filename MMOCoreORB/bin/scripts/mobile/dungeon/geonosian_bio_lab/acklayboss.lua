@@ -1,9 +1,8 @@
-acklay = Creature:new {
-	objectName = "@mob/creature_names:geonosian_acklay_bunker_boss",
-	customName = "Acklay",
+acklayboss = Creature:new {
+	customName = "\\#00ff00<<<Acklay Boss \\#ff0000[lvl 300]",
 	socialGroup = "geonosian_creature",
 	faction = "",
-	level = 75,
+	level = 300,
 	chanceHit = 92.5,
 	damageMin = 935,
 	damageMax = 1580,
@@ -130,4 +129,4 @@ acklay = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(acklay, "acklay")
+CreatureTemplates:addCreatureTemplate(acklayboss, "acklayboss")
