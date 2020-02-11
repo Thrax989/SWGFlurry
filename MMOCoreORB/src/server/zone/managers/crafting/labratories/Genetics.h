@@ -1,12 +1,11 @@
 #ifndef GENETICS_H_
 #define GENETICS_H_
 
-#include "SharedLabratory.h"
-#include "engine/engine.h"
 #include "server/zone/managers/creature/DnaManager.h"
 #include "server/zone/objects/tangible/component/dna/DnaComponent.h"
 #include "server/zone/objects/tangible/component/genetic/GeneticComponent.h"
 #include "templates/params/creature/CreatureFlag.h"
+
 namespace server {
 namespace zone {
 namespace managers {
@@ -367,7 +366,7 @@ public:
 			level = baseLevel;
 		int eff = armorBase/50;
 		if (armorBase > 500)
-			eff = 0;
+			eff = (armorBase-500)/50;
 		if (armorBase == 500)
 			eff = 0;
 		int resistanceLevel = 0;
@@ -412,11 +411,11 @@ public:
 		int regenerationLevel =  generateRegenLevel(regen);
 		int armorLevel = generteArmorLevel(armor,effective);
 		int armorBase = DnaManager::instance()->valueForLevel(DnaManager::ARM_LEVEL,armorLevel);
-		int baseLevel = (((statLevel) + (damageLevel) + (regenerationLevel) + (hitLevel)) / 10.0) + 0.5;
+		int baseLevel = (((statLevel) + (damageLevel) + (regenerationLevel) + (hitLevel)) / 19.0) + 0.5;
 		int armorLevel2 = calcArmorLevelByStats(armor,armorLevel,baseLevel,armorBase, kin,eng, bla,heat,cold,elec,acid,stun) * 2;
 		if (defenseLevel < baseLevel)
 			defenseLevel = baseLevel;
-		int level = floor(((float)(statLevel + (damageLevel * 2.2) + (hitLevel / 3.5) + defenseLevel + armorLevel + regenerationLevel ))/6.0);
+		int level = round(((float)(statLevel + damageLevel + (hitLevel / 3.0) + defenseLevel + armorLevel + regenerationLevel ))/8.0);
 		return level;
 	}
 	// Calculate the creatures overall level as a pet.
@@ -430,11 +429,11 @@ public:
 		int regenerationLevel =  (DnaManager::instance()->levelForScore(DnaManager::REG_LEVEL, avgHam / 10) + 1)* 2;
 		int armorLevel = DnaManager::instance()->levelForScore(DnaManager::ARM_LEVEL, (pet->getArmor() * 500) + (( pet->getEffectiveArmor()) * 10.0)  );
 		int armorBase = DnaManager::instance()->valueForLevel(DnaManager::ARM_LEVEL, armorLevel);
-		int baseLevel = (((statLevel) + (damageLevel) + (regenerationLevel) + (hitLevel)) / 10.0) + 0.5;
+		int baseLevel = (((statLevel) + (damageLevel) + (regenerationLevel) + (hitLevel)) / 19.0) + 0.5;
 		int armorLevel2 = calculateArmorValue(pet, armorLevel, baseLevel, armorBase) * 2;
 		if (defenseLevel < baseLevel)
 			defenseLevel = baseLevel;
-		int level = floor(((float)(statLevel + (damageLevel * 2.2) + (hitLevel / 3.5) + defenseLevel + armorLevel + regenerationLevel ))/6.0);
+		int level = round(((float)(statLevel + damageLevel + (hitLevel / 3.0) + defenseLevel + armorLevel + regenerationLevel ))/8.0);
 		return level;
 	}
 
@@ -451,4 +450,5 @@ public:
 }
 
 using namespace server::zone::managers::crafting::labratories;
+
 #endif /* GENETICS_H_ */
