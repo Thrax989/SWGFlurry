@@ -183,52 +183,52 @@ void GeneticLabratory::setInitialCraftingValues(TangibleObject* prototype, Manuf
 	// Calculate resists
 	// 1 percent: (1000 - 0) / 100.0f;
 	float blastMax, energyMax, kineticMax,heatMax,coldMax,electricMax,acidMax,stunMax,saberMax;
-	blastMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::BLAST,100.0f);
-	kineticMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::KINETIC,100.0f);
-	energyMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ENERGY,100.0f);
-	heatMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::HEAT,100.0f);
-	coldMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::COLD,100.0f);
-	electricMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ELECTRICITY,100.0f);
-	acidMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ACID,100.0f);
-	stunMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::STUN,100.0f);
-	saberMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::LIGHTSABER,100.0f);
+	blastMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::BLAST,80.0f);
+	kineticMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::KINETIC,80.0f);
+	energyMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ENERGY,80.0f);
+	heatMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::HEAT,80.0f);
+	coldMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::COLD,80.0f);
+	electricMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ELECTRICITY,80.0f);
+	acidMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ACID,80.0f);
+	stunMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::STUN,80.0f);
+	saberMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::LIGHTSABER,80.0f);
 
 	// lets clear the special bit if it moved to effective range.
 	if (saberMax == 0) {
 		spSaber = false;
-		saberMax = 100;
+		saberMax = 80;
 	}
 	if (blastMax == 0) {
 		spBlast = false;
-		blastMax = 100;
+		blastMax = 80;
 	}
 	if (kineticMax == 0) {
 		spKinetic = false;
-		kineticMax = 100;
+		kineticMax = 80;
 	}
 	if (energyMax == 0) {
 		spEnergy = false;
-		energyMax = 100;
+		energyMax = 80;
 	}
 	if (heatMax == 0) {
 		spHeat = false;
-		heatMax = 100;
+		heatMax = 80;
 	}
 	if (coldMax == 0) {
 		spCold = false;
-		coldMax = 100;
+		coldMax = 80;
 	}
 	if (electricMax == 0) {
 		spElectric = false;
-		electricMax = 100;
+		electricMax = 80;
 	}
 	if (acidMax == 0) {
 		spAcid = false;
-		acidMax = 100;
+		acidMax = 80;
 	}
 	if (stunMax == 0) {
 		spStun = false;
-		stunMax = 100;
+		stunMax = 800;
 	}
 
 	// Step 2. At this point we know the max values for all stats and we have calculated any armor specials needed
@@ -261,7 +261,7 @@ void GeneticLabratory::setInitialCraftingValues(TangibleObject* prototype, Manuf
 
 		// determine max percentage
 		craftingValues->setMaxPercentage(title, maxValue/1000.0f);
-		craftingValues->setMaxValue(title,2000);
+		craftingValues->setMaxValue(title,1000);
 
 		// using assembly to accoutn for a 1 +% increase
 		currentPercentage = getAssemblyPercentage(initialValue) * modifier;
@@ -312,7 +312,7 @@ void GeneticLabratory::setInitialCraftingValues(TangibleObject* prototype, Manuf
 			ranged = true;
 	}
 
-	odds = quality * 200;
+	odds = quality * 100;
 	// check for specials here, then we have base assemble work completed.
 	// update crafting values, and/or experimentRow should handle resist calc changes. update crafting values should determine armor setup
 	String sp1 = pickSpecialAttack(agr->getSpecialAttackOne(),psy->getSpecialAttackOne(),phy->getSpecialAttackOne(),men->getSpecialAttackOne(),pro->getSpecialAttackOne(),odds,"defaultattack");
