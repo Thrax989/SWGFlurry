@@ -20,7 +20,6 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/objects/creature/ai/Creature.h"
-#include "templates/creature/SharedCreatureObjectTemplate.h"
 #include "server/zone/objects/tangible/component/genetic/GeneticComponent.h"
 #include "server/zone/managers/creature/CreatureManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -30,7 +29,6 @@
 #include "server/zone/managers/creature/DnaManager.h"
 #include "server/zone/objects/creature/events/SampleDeedTask.h"
 #include "server/zone/managers/crafting/labratories/Genetics.h"
-
 
 void PetDeedImplementation::loadTemplateData(SharedObjectTemplate* templateData) {
 	DeedImplementation::loadTemplateData(templateData);
@@ -185,6 +183,7 @@ void PetDeedImplementation::setupAttacks() {
 		}
 	}
 }
+
 const CreatureAttackMap* PetDeedImplementation::getAttacks() const {
 	return &attacks;
 }
@@ -203,7 +202,7 @@ int PetDeedImplementation::calculatePetLevel() {
 	// Regenerate the LEvel
 	int effective = (int)(((fortitude - (armor * 500)) / 50) * 5);
 	int dps = ((damageMax + damageMin) / 2.0f) / attackSpeed;
-	int avgHam = (health + action + mind) / 3;
+	int avgHam = (health + action + mind) / 10;
 	if (regen == 0) {
 		regen = avgHam / 10;
 	}
@@ -547,28 +546,19 @@ bool PetDeedImplementation::adjustPetStats(CreatureObject* player, CreatureObjec
 	}
 
 	int ham = DnaManager::instance()->valueForLevel(DnaManager::HAM_LEVEL,oldLevel);
-	if (ham > 120000) {
-		ham = 120000;
-	}
 	health = ham;
 	action = ham;
 	mind = ham;
 	regen = DnaManager::instance()->valueForLevel(DnaManager::REG_LEVEL,oldLevel);
-	if (regen > 12000) {
-		regen = 12000;
-	}
 	float dps = DnaManager::instance()->valueForLevel(DnaManager::DPS_LEVEL,oldLevel);
-	if (dps > 1000) {
-		dps = 1000;
-	}
-	damageMin = round(dps * 2.75);
-	attackSpeed = 2.0;
-	damageMax = round(dps * 3.0);
+	damageMin = round((dps * 2.25) * 1.50);
+	attackSpeed = 1.25;
+	damageMax = round((dps * 2.25) * 1.75);
 	chanceHit = DnaManager::instance()->valueForLevel(DnaManager::HIT_LEVEL,oldLevel);
 
 	// Adjust Armor Now
 	fortitude = DnaManager::instance()->valueForLevel(DnaManager::ARM_LEVEL,oldLevel);
-	armor = 0;
+	armor = fortitude/500;
 	float effectiveness = (int)(((fortitude - (armor * 500)) / 50) * 5);
 	if (!isSpecialResist(SharedWeaponObjectTemplate::KINETIC) && kinResist > 0)
 		kinResist = effectiveness;

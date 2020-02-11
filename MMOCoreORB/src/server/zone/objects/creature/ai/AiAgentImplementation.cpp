@@ -98,7 +98,7 @@ void AiAgentImplementation::loadTemplateData(SharedObjectTemplate* templateData)
 }
 
 int AiAgentImplementation::calculateAttackMinDamage(int level) {
-	int minDmg = Math::max(getDamageMin(), 55 + (level * 13));
+	int minDmg = Math::max(getDamageMin(), 20 + (level * 5));
 	if (petDeed != nullptr) {
 		minDmg = petDeed->getMinDamage();
 		if (level < petDeed->getLevel()) {
@@ -128,7 +128,7 @@ int AiAgentImplementation::calculateAttackMaxDamage(int level) {
 	return dmg;
 }
 float AiAgentImplementation::calculateAttackSpeed(int level) {
-	float speed = 2.5f - ((float)level / 100.f);
+	float speed = 3.5f - ((float)level / 100.f);
 	return speed;
 }
 

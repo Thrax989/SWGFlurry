@@ -41,6 +41,7 @@ String DnaSampleRange::toString() {
 bool DnaSampleRange::inRange(int amount) const {
 	return amount >= vlqMin && amount <= vhqMax;
 }
+
 int DnaSampleRange::generateValue(int quality) const {
 	uint32 max,min;
 	switch(quality) {
@@ -83,7 +84,9 @@ int DnaSampleRange::generateValue(int quality) const {
 			return 0;
 		}
 	}
+
 	if (max > 1250)
 		max = 1250;
+
 	return (int)(System::random(max-min) + min);
 }
