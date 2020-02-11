@@ -1,15 +1,10 @@
 #ifndef SAMPLEDEEDTASK_H_
 #define SAMPLEDEEDTASK_H_
 
-#include "server/zone/managers/resource/ResourceManager.h"
-#include "server/zone/managers/combat/CombatManager.h"
-#include "server/zone/managers/creature/CreatureManager.h"
 #include "server/zone/managers/creature/DnaManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/tangible/deed/pet/PetDeed.h"
 #include "templates/params/creature/CreatureAttribute.h"
-#include "server/zone/objects/creature/ai/CreatureTemplate.h"
-#include "server/zone/objects/tangible/component/genetic/GeneticComponent.h"
 #include "engine/engine.h"
 
 class SampleDeedTask : public Task {
@@ -48,7 +43,7 @@ public:
 		int skillMod = player->getSkillMod("dna_harvesting");
 		int cl = deed->getLevel();
 
-		if (skillMod < 1 || cl > skillMod + 50){
+		if (skillMod < 1 || cl > skillMod + 15){
 			player->sendSystemMessage("@bio_engineer:harvest_dna_skill_too_low");
 			return;
 		}
@@ -66,7 +61,7 @@ public:
 				}
 				break;
 			case SAMPLING:
-				if (waitCount == 5) {
+				if (waitCount == 9) {
 					currentPhase = END;
 				}else {
 					waitCount++;
@@ -80,10 +75,10 @@ public:
 				float rollMod = (((skillMod-level)/level))  + (skillMod-level);
 				int sampleRoll = System::random(100);
 				sampleRoll += System::random(player->getSkillMod("luck") + player->getSkillMod("force_luck"));
-				// max samples 3/4 of real creatures, (4 samples total with master BE and +25 tapes)
-				int maxSamples = (int) ceil((float)skillMod/25.0*0.75);
+				// max samples 1/2 of real creatures
+				int maxSamples = (int) ceil((float)skillMod/25.f)/2.f;
 				deed->incrementSampleCount();
-				if ((70 + rollMod) < sampleRoll || cl > 85) {
+				if ((30 + rollMod) < sampleRoll || cl > 75) {
 					// failure but we increment the count
 					player->sendSystemMessage("@bio_engineer:harvest_dna_failed");
 				} else {
