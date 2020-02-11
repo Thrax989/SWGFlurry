@@ -827,7 +827,6 @@ void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 
 	armor->setEffectivenessSlice(percent / 100.f);
 	armor->setMaxSockets(sockets);
-	armor->setMaxCondition(conDmg);
 	armor->setSliced(true);
 	StringIdChatParameter params;
 	params.setDI(percent);
