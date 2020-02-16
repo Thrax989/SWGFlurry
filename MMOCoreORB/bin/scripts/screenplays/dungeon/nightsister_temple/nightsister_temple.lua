@@ -27,8 +27,6 @@ end
 --   spawn mobiles for dungeon
 --------------------------------------------------
 function nightsister_temple:spawnMobiles()
-spawnMobile("dungeon2", "rancor", 1800, -18.336, 0.230914, -90.2677, 353, 14200873)
-spawnMobile("dungeon2", "rancor", 1800, -5.34595, 0.230444, -90.253, 354, 14200873)
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
