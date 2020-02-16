@@ -120,4 +120,4 @@ public:
 };
 
 
-#endif /* PETTRICKCOMMAND_H_ *
+#endif /* PETTRICKCOMMAND_H_ */
