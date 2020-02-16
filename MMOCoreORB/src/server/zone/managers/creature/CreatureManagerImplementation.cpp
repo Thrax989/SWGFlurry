@@ -1,4 +1,4 @@
-/*
+ /*
  * CreatureManagerImplementation.cpp
  *
  *  Created on: 24/02/2010
@@ -62,16 +62,6 @@ CreatureObject* CreatureManagerImplementation::spawnCreature(uint32 templateCRC,
 	placeCreature(creature, x, z, y, parentID);
 
 	return creature;
-}
-
-void CreatureManagerImplementation::spawnRandomCreaturesAround(SceneObject* creature) {
-	if (spawnedRandomCreatures > 1000)
-		return;
-
-	float newX = creature->getPositionX() + (-80.f + (float)System::random(160));
-	float newY = creature->getPositionY() + (-80.f + (float)System::random(160));
-
-	spawnRandomCreature(1, newX, zone->getHeight(newX, newY), newY);
 }
 
 SceneObject* CreatureManagerImplementation::spawn(unsigned int lairTemplate, int difficultyLevel, int difficulty, float x, float z, float y, float size) {
@@ -233,52 +223,6 @@ SceneObject* CreatureManagerImplementation::spawnDynamicSpawn(unsigned int lairT
 	dynamicObserver->spawnInitialMobiles(theater);
 
 	return theater;
-}
-
-void CreatureManagerImplementation::spawnRandomCreature(int number, float x, float z, float y, uint64 parentID) {
-	Locker locker(_this.getReferenceUnsafeStaticCast());
-
-	if (reservePool.size() != 0) {
-		int id = System::random(reservePool.size() - 1);
-		ManagedReference<AiAgent*> aiAgent = reservePool.get(id);
-		reservePool.remove(id);
-
-		locker.release();
-
-		placeCreature(aiAgent, x, z, y, parentID);
-
-		//aiAgent->info("respawning from reserve Pool", true);
-
-		++spawnedRandomCreatures;
-
-		return;
-	}
-
-	locker.release();
-
-	if (creatureTemplateManager->size() == 0)
-		return;
-
-	int max = creatureTemplateManager->size() - 1;
-
-	uint32 randomCreature = System::random(max);
-	uint32 randomTemplate = 0;
-	Reference<CreatureTemplate*> creoTempl = NULL;
-
-	HashTableIterator<uint32, Reference<CreatureTemplate*> > iterator = creatureTemplateManager->iterator();
-
-	for (int i = 0; i < randomCreature; ++i) {
-		iterator.getNextKeyAndValue(randomTemplate, creoTempl);
-		//randomTemplate = iterator.getNextKey();
-	}
-
-	if (creoTempl == NULL || creoTempl->getLevel() > 100)
-		return;
-
-	for (int i = 0; i < number; ++i) {
-		if (spawnCreature(randomTemplate, 0, x, z, y, parentID) != NULL)
-			++spawnedRandomCreatures;
-	}
 }
 
 CreatureObject* CreatureManagerImplementation::spawnCreatureWithLevel(unsigned int mobileTemplateCRC, int level, float x, float z, float y, uint64 parentID ) {
