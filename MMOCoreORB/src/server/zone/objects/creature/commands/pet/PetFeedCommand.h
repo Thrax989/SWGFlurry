@@ -172,4 +172,4 @@ public:
 };
 
 
-#endif /* PETFEEDCOMMAND_H_ *
+#endif /* PETFEEDCOMMAND_H_ */
