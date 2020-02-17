@@ -14,10 +14,10 @@
 --Corellia
 
 --Coruscant
-includeFile("custom_screenplays/coruscant/coruscant.lua")
+--includeFile("custom_screenplays/coruscant/coruscant.lua")
 
 --Dagobah
-includeFile("custom_screenplays/dagobah/dagobah_yoda_house.lua")
+--includeFile("custom_screenplays/dagobah/dagobah_yoda_house.lua")
 
 --Dantooine
 
@@ -28,19 +28,19 @@ includeFile("custom_screenplays/dagobah/dagobah_yoda_house.lua")
 --Dromund Kaas
 
 --Dungeon
-includeFile("custom_screenplays/dungeon/imperialstardestroyer.lua")
-includeFile("custom_screenplays/dungeon/hothechobase.lua")
-includeFile("custom_screenplays/dungeon/hothechobaseelevators.lua")
+--includeFile("custom_screenplays/dungeon/imperialstardestroyer.lua")
+--includeFile("custom_screenplays/dungeon/hothechobase.lua")
+--includeFile("custom_screenplays/dungeon/hothechobaseelevators.lua")
 --Endor
 
 --Factional
 
 --Hoth
-includeFile("custom_screenplays/hoth/hoth_echo_base.lua")
-includeFile("custom_screenplays/hoth/hoth_imp_base.lua")
-includeFile("custom_screenplays/hoth/hoth_starport.lua")
-includeFile("custom_screenplays/hoth/hoth_wampa_cave.lua")
-includeFile("custom_screenplays/hoth/hoth_echoturrets.lua")
+--includeFile("custom_screenplays/hoth/hoth_echo_base.lua")
+--includeFile("custom_screenplays/hoth/hoth_imp_base.lua")
+--includeFile("custom_screenplays/hoth/hoth_starport.lua")
+--includeFile("custom_screenplays/hoth/hoth_wampa_cave.lua")
+--includeFile("custom_screenplays/hoth/hoth_echoturrets.lua")
 
 --Instances
 
@@ -65,18 +65,18 @@ includeFile("custom_screenplays/kashyyyk/kashyyykthreeleveltwoteleporter.lua")
 --Mandalore
 
 --Mustafar
-includeFile("custom_screenplays/mustafar/hk_army_teleport.lua")
-includeFile("custom_screenplays/mustafar/hk_army_return.lua")
-includeFile("custom_screenplays/mustafar/hk_army.lua")
-includeFile("custom_screenplays/mustafar/sherkar_teleport.lua")
-includeFile("custom_screenplays/mustafar/sherkar_return.lua")
-includeFile("custom_screenplays/mustafar/sherkar_cave.lua")
+--includeFile("custom_screenplays/mustafar/hk_army_teleport.lua")
+--includeFile("custom_screenplays/mustafar/hk_army_return.lua")
+--includeFile("custom_screenplays/mustafar/hk_army.lua")
+--includeFile("custom_screenplays/mustafar/sherkar_teleport.lua")
+--includeFile("custom_screenplays/mustafar/sherkar_return.lua")
+--includeFile("custom_screenplays/mustafar/sherkar_cave.lua")
 
 --Naboo
 
 --NalHutta
-includeFile("custom_screenplays/nalhutta/nalhutta_huttcity.lua")
-includeFile("custom_screenplays/nalhutta/nalhutta_volcano.lua")
+--includeFile("custom_screenplays/nalhutta/nalhutta_huttcity.lua")
+--includeFile("custom_screenplays/nalhutta/nalhutta_volcano.lua")
 
 --POI
 
@@ -85,20 +85,20 @@ includeFile("custom_screenplays/nalhutta/nalhutta_volcano.lua")
 --Rori
 
 --Space Stations
-includeFile("custom_screenplays/spacestations/novaorion.lua")
+--includeFile("custom_screenplays/spacestations/novaorion.lua")
 --includeFile("custom_screenplays/spacestations/novaorion_travel_eis.lua")
 --includeFile("custom_screenplays/spacestations/novaorion_travel_coro.lua")
 --includeFile("custom_screenplays/spacestations/novaorion_travel_theed.lua")
 
 --Taanab
-includeFile("custom_screenplays/taanab/taanab_cave.lua")
-includeFile("custom_screenplays/taanab/taanab_downed_ship.lua")
-includeFile("custom_screenplays/taanab/taanab_great_herd.lua")
-includeFile("custom_screenplays/taanab/taanab_hex_farms.lua")
-includeFile("custom_screenplays/taanab/taanab_mine.lua")
-includeFile("custom_screenplays/taanab/taanab_pandath.lua")
-includeFile("custom_screenplays/taanab/taanab_starhunterstation.lua")
-includeFile("custom_screenplays/taanab/taanab_static_spawns.lua")
+--includeFile("custom_screenplays/taanab/taanab_cave.lua")
+--includeFile("custom_screenplays/taanab/taanab_downed_ship.lua")
+--includeFile("custom_screenplays/taanab/taanab_great_herd.lua")
+--includeFile("custom_screenplays/taanab/taanab_hex_farms.lua")
+--includeFile("custom_screenplays/taanab/taanab_mine.lua")
+--includeFile("custom_screenplays/taanab/taanab_pandath.lua")
+--includeFile("custom_screenplays/taanab/taanab_starhunterstation.lua")
+--includeFile("custom_screenplays/taanab/taanab_static_spawns.lua")
 
 --Talus
 
