@@ -55,8 +55,8 @@ object_tangible_medicine_crafted_medpack_enhance_quickness_d = object_tangible_m
 	experimentalWeights = {1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1},
 	experimentalGroupTitles = {"null", "null", "exp_effectiveness", "exp_charges", "exp_effectiveness", "expEaseOfUse", "null"},
 	experimentalSubGroupTitles = {"null", "null", "power", "charges", "duration", "skillmodmin", "hitpoints"},
-	experimentalMin = {0, 0, 40, 5, 1200, 100, 1000},
-	experimentalMax = {0, 0, 800, 25, 14200, 70, 1000},
+	experimentalMin = {0, 0, 40, 5, 5600, 100, 1000},
+	experimentalMax = {0, 0, 800, 25, 11200, 70, 1000},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 4},
 }
