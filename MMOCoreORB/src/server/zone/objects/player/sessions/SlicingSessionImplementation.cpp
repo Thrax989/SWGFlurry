@@ -793,7 +793,7 @@ void SlicingSessionImplementation::handleArmorSlice() {
 void SlicingSessionImplementation::handleSliceEncumbrance(uint8 percent) {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
- 	int sockets = System::random(4);
+ 	int sockets = 4;
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
 		return;
@@ -816,7 +816,7 @@ void SlicingSessionImplementation::handleSliceEncumbrance(uint8 percent) {
 void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
- 	int sockets = System::random(4);
+ 	int sockets = 4;
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
 		return;
@@ -840,7 +840,7 @@ void SlicingSessionImplementation::handleSliceArmorAp() {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
  	int apslice = System::random(3);
- 	int sockets = System::random(4);
+ 	int sockets = 4;
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
 		return;
