@@ -8,7 +8,8 @@ janta_blood = {
 	craftingValues = {
 		{"power",100,250,0},
 		{"charges",10,25,0},
-		{"useCount",1,4,0},
+		{"duration",1500,1800,0},
+		{"useCount",3,9,0},
 	},
 	customizationStringNames = {},
 	customizationValues = {}

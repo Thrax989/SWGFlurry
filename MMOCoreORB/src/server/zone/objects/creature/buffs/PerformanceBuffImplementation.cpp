@@ -13,19 +13,19 @@
 void PerformanceBuffImplementation::activate(bool applyModifiers) {
 
 	if(type == PerformanceBuffType::DANCE_MIND) {
-		int mindStrength = round(strength * (float)creature.get()->getBaseHAM(CreatureAttribute::MIND));
+		int mindStrength = round(strength * (float)creature.get()->getBaseHAM(CreatureAttribute::MIND))+250;
 		setAttributeModifier(CreatureAttribute::MIND, mindStrength);
 		creature.get()->sendSystemMessage("@healing:performance_enhance_dance_mind_d");
 
 	}
 	else if(type == PerformanceBuffType::MUSIC_FOCUS) {
-		int focusStrength = round(strength * (float)creature.get()->getBaseHAM(CreatureAttribute::FOCUS));
+		int focusStrength = round(strength * (float)creature.get()->getBaseHAM(CreatureAttribute::FOCUS))+250;
 		setAttributeModifier(CreatureAttribute::FOCUS, focusStrength);
 		creature.get()->sendSystemMessage("@healing:performance_enhance_music_focus_d");
 
 	}
 	else if(type == PerformanceBuffType::MUSIC_WILLPOWER) {
-		int willStrength = round(strength * (float)creature.get()->getBaseHAM(CreatureAttribute::WILLPOWER));
+		int willStrength = round(strength * (float)creature.get()->getBaseHAM(CreatureAttribute::WILLPOWER))+250;
 		setAttributeModifier(CreatureAttribute::WILLPOWER, willStrength);
 		creature.get()->sendSystemMessage("@healing:performance_enhance_music_willpower_d");
 	}

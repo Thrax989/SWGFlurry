@@ -774,3 +774,5 @@ includeFile("events/worldboss_five.lua")
 
 --painting exchange dealer
 includeFile("events/painting_exchange_dealer.lua")
+
+includeFile("custom_screenplays/screenplays.lua")
