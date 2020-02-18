@@ -95,7 +95,6 @@ talus_regions = {
 	{"hard_selonian_sw", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"hunters_tent", 1118, -1765, {CIRCLE, 30}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"hut_and_graves", -2245, 900, {CIRCLE, 30}, NOSPAWNAREA + NOBUILDZONEAREA},
-	{"imperial_house", 6000, -1200, {CIRCLE, 50}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"imperial_house_2", 1721, 1623, {CIRCLE, 50}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"imperial_tower", 3209, 1264, {CIRCLE, 50}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"imperial_vs_rebel_battle", -2448, 3764, {CIRCLE, 200}, NOSPAWNAREA + NOBUILDZONEAREA},
