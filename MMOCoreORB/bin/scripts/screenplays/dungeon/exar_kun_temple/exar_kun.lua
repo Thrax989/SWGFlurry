@@ -180,7 +180,7 @@ end
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.9)) or (bossMind <= (bossMaxMind * 0.9))) and readData("exar_kun:spawnState") == 1) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
+      local trapDmg = getRandomNumber(2000, 2500)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
       CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
@@ -202,7 +202,7 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.8)) or (bossMind <= (bossMaxMind * 0.8))) and readData("exar_kun:spawnState") == 2) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
+      local trapDmg = getRandomNumber(2000, 2500)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
       CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
@@ -223,7 +223,7 @@ if (((bossHealth <= (bossMaxHealth * 0.8)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.7)) or (bossMind <= (bossMaxMind * 0.7))) and readData("exar_kun:spawnState") == 3) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
+      local trapDmg = getRandomNumber(2000, 2500)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
       CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
@@ -244,7 +244,7 @@ if (((bossHealth <= (bossMaxHealth * 0.7)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.6)) or (bossMind <= (bossMaxMind * 0.6))) and readData("exar_kun:spawnState") == 4) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
+      local trapDmg = getRandomNumber(2000, 2500)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
       CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
@@ -265,7 +265,7 @@ if (((bossHealth <= (bossMaxHealth * 0.6)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind * 0.5))) and readData("exar_kun:spawnState") == 5) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
+      local trapDmg = getRandomNumber(2000, 2500)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
       CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
@@ -286,7 +286,7 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.4)) or (bossMind <= (bossMaxMind * 0.4))) and readData("exar_kun:spawnState") == 6) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
+      local trapDmg = getRandomNumber(2000, 2500)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
       CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
@@ -307,7 +307,7 @@ if (((bossHealth <= (bossMaxHealth * 0.4)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.3)) or (bossAction <= (bossMaxAction * 0.3)) or (bossMind <= (bossMaxMind * 0.3))) and readData("exar_kun:spawnState") == 7) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
+      local trapDmg = getRandomNumber(2000, 2500)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
       CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
@@ -328,7 +328,7 @@ if (((bossHealth <= (bossMaxHealth * 0.3)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.2)) or (bossAction <= (bossMaxAction * 0.2)) or (bossMind <= (bossMaxMind * 0.2))) and readData("exar_kun:spawnState") == 8) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
+      local trapDmg = getRandomNumber(2000, 2500)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
       CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
@@ -349,7 +349,7 @@ if (((bossHealth <= (bossMaxHealth * 0.2)) or (bossAction <= (bossMaxAction * 0.
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind * 0.1))) and readData("exar_kun:spawnState") == 9) then
       CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
+      local trapDmg = getRandomNumber(2000, 2500)
       CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
       CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
