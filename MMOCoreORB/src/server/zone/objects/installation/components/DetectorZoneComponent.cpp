@@ -55,8 +55,8 @@ void DetectorZoneComponent::notifyPositionUpdate(SceneObject* sceneObject, QuadT
 
 		if(tano->getFaction() != player->getFaction() && player->getFaction() != 0 ){
 
-			if (playerObject->getFactionStatus() == FactionStatus::COVERT)
-			 	 playerObject->setFactionStatus(FactionStatus::OVERT);
+			if (tano->getFactionStatus() == FactionStatus::COVERT)
+			 	 tano->setFactionStatus(FactionStatus::OVERT);
 
 			scannerData->updateCooldown();
 			PlayClientEffectLoc* explodeLoc = new PlayClientEffectLoc("clienteffect/survey_effect.cef", tano->getZone()->getZoneName(), tano->getPositionX(), tano->getPositionZ(), tano->getPositionY());
