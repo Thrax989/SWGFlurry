@@ -48,7 +48,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Keren Shuttleport (5,000 Credits)", "keren_shuttleport_travel",
 			"Keren Shuttleport South (5,000 Credits)", "karen_shuttleport_south_travel",
 			"Keren Starport (5,000 Credits)", "keren_starport_travel",
-			"Moenia Starport (5,000 Credits)", "moemia_starport_travel",
+    			"Moenia Starport (5,000 Credits)", "moemia_starport_travel"
+			"Moenia Shuttleport (5,000 Credits)", "moemia_shuttleport_travel",
 			"The Lake Retreat Shuttleport (5,000 Credits)", "the_lake_retreat_shuttleport_travel",
 			"Theed Shuttleport A (5,000 Credits)", "theed_shuttleport_a_travel",
 			"Theed Shuttleport B (5,000 Credits)", "theed_shuttleport_b_travel",
@@ -67,6 +68,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Talus Dearic Shuttleport (5,000 Credits)", "talus_dearic_shuttleport_travel",
 			"Talus Dearic Starport (5,000 Credits)", "talus_dearic_starport_travel",
+ 			"Talus Nashal Starport (5,000 Credits)", "talus_nashal_starport_travel",     
 			"Talus Nashal Shuttleport (5,000 Credits)", "talus_nashal_shuttleport_travel",
 			"Talus Imperial Outpost (5,000 Credits)", "talus_imperial_outpost_travel",
 
@@ -76,6 +78,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Anchorhead Shuttleport (5,000 Credits)", "anchorhead_shuttle_travel",
 			"Bestine Shuttleport (5,000 Credits)", "bestine_shuttle_travel",
 			"Bestine Starport (5,000 Credits)", "bestine_starport_travel",
+ 			"Mos Eisley Starport (5,000 Credits)", "mos_eisley_starport_travel",     
 			"Mos Eisley Shuttleport (5,000 Credits)", "mos_eisley_shuttleport_travel",
 			"Mos Entha Shuttle A (5,000 Credits)", "mos_entha_shuttle_a_travel",
 			"Mos Entha Shuttle B (5,000 Credits)", "mos_entha_shuttle_b_travel",
@@ -88,6 +91,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		 	"Yavin4",
 		   {
 			"Yavin IV Imperial Outpost (5,000 Credits)", "yavin_iv_imperial_outpost_travel",
+   			"Yavin IV Mining Outpost (5,000 Credits)", "yavin_iv_mining_outpost_travel",
 			"Yavin IV Labor Outpost (5,000 Credits)", "yavin_iv_labor_outpost_travel",
 		   },
 		 	"Endor",
