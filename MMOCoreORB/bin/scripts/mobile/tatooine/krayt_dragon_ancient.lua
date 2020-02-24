@@ -2,7 +2,7 @@ krayt_dragon_ancient = Creature:new {
 	objectName = "@mob/creature_names:krayt_dragon_ancient",
 	socialGroup = "krayt",
 	faction = "",
-	level = 336,
+	level = 75,
 	chanceHit = 30.0,
 	damageMin = 2270,
 	damageMax = 4250,
@@ -18,7 +18,7 @@ krayt_dragon_ancient = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 905,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -34,6 +34,12 @@ krayt_dragon_ancient = Creature:new {
 				{group = "krayt_tissue_rare", chance = 10000000},
 			},
 			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "vehicledeedsrare", chance = 10000000},
+			},
+			lootChance = 1000000
 		},
 		{
 			groups = {
@@ -64,7 +70,7 @@ krayt_dragon_ancient = Creature:new {
 				{group = "tierdiamond", chance = 2500000},
 			},
 			lootChance = 5000000
-		},
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",

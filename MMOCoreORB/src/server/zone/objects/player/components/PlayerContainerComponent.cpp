@@ -54,6 +54,11 @@ int PlayerContainerComponent::canAddObject(SceneObject* sceneObject, SceneObject
 			}
 		}
 
+		if ((wearable->getMaxCondition() - wearable->getConditionDamage()) <= 0) {
+			errorDescription = "It would be a waste of time to try to use this.";
+				return TransferErrorCode::PLAYERUSEMASKERROR;
+		}
+
 		if (object->isArmorObject()) {
 			PlayerManager* playerManager = sceneObject->getZoneServer()->getPlayerManager();
 
@@ -84,10 +89,6 @@ int PlayerContainerComponent::canAddObject(SceneObject* sceneObject, SceneObject
 						errorDescription = "@error_message:insufficient_skill"; // You lack the skill to use this item.
 
 						return TransferErrorCode::PLAYERUSEMASKERROR;
-					}
-					if ((wearable->getMaxCondition() - wearable->getConditionDamage()) <= 0) {
-						errorDescription = "This object has been damaged to the point of uselessness.";
-							return TransferErrorCode::PLAYERUSEMASKERROR;
 					}
 				}
 			}

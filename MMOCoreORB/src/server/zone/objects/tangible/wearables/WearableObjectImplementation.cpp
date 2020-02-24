@@ -112,17 +112,19 @@ void WearableObjectImplementation::generateSockets(CraftingValues* craftingValue
 			ManagedReference<CreatureObject*> player = manuSchematic->getCrafter().get();
 
 			if (player != nullptr && draftSchematic != nullptr) {
-				String assemblySkill = draftSchematic->getAssemblySkill();
-				skill = player->getSkillMod(assemblySkill) * 3.2; // 0 to 400 max
-				luck = System::random(player->getSkillMod("luck")
-						+ player->getSkillMod("force_luck"));
+				String requiredAssemblySkill = draftSchematic->getAssemblySkill();
+				int assemblySkillMod = player->getSkillMod(requiredAssemblySkill);
+				assemblySkillMod += player->getSkillMod("force_assembly");
+				skill = assemblySkillMod * 3.45;  // 0 to 400 (345 max for master w/o tapes or force assembly
+
+				if (skill > 450) skill = 450;
 			}
 		}
 	}
 
-	int random = (System::random(600)) - 200; // -200 to 400
+	int random = (System::random(500)) - 100; // -100 to 400  100% chance of 4 sockets w/master & +25 tapes & +20 force assembly, 69% chance w/master only, 13.8% chance w/novice only
 
-	float roll = skill + luck + random;
+	float roll = skill + random;
 
 	int generatedCount = int(float(MAXSOCKETS * roll) / float(MAXSOCKETS * 100));
 

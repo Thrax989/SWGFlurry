@@ -8,10 +8,10 @@ nightsisterqueenrancor = Creature:new {
 	damageMax = 3000,
 	specialDamageMult = 7.5,
 	baseXp = 28549,
-	baseHAM = 385000,
-	baseHAMmax = 471000,
-	armor = 3,
-	resists = {60,60,60,60,60,60,60,60,60},
+	baseHAM = 185000,
+	baseHAMmax = 271000,
+	armor = 0,
+	resists = {15,15,15,15,15,15,15,15,15},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -30,22 +30,39 @@ nightsisterqueenrancor = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "power_crystals", chance = 900000},
-				{group = "nightsister_common", chance = 2600000},
-				{group = "pistols", chance = 1000000},
-				{group = "rifles", chance = 1000000},
-				{group = "carbines", chance = 1000000},
-				{group = "melee_weapons", chance = 2000000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "wearables_rare", chance = 500000}
-			}
+				{group = "clothing_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
+				{group = "armor_attachments", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "weapons_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 2000000
 		}
 	},
 	weapons = {},

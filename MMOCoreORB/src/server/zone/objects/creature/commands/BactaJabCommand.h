@@ -10,14 +10,12 @@
 #include "server/zone/managers/player/PlayerManager.h"
 
 class BactaJabCommand : public QueueCommand {
-	int actionCost;
-	int actionWoundCost;
 	int mindCost;
 	int mindWoundCost;
+
 	int healthHealed;
 	int actionHealed;
 	int mindHealed;
-
 
 	float speed;
 	float range;
@@ -30,25 +28,22 @@ public:
 		actionHealed = 0;
 		mindHealed = 0;
 
-		mindCost = 5;
-		mindWoundCost = 5;
-
-		actionCost = 5;
-		actionWoundCost = 5;
-
+		mindCost = 1000;
+		mindWoundCost = 10;
 
 		speed = 1;
 		range = 6;
 	}
 
 	void doAnimations(CreatureObject* creature, CreatureObject* creatureTarget) const {
+		creatureTarget->playEffect("clienteffect/bacta_jab.cef", "");
 
 		if (creature == creatureTarget)
 			creature->playEffect("clienteffect/bacta_jab.cef", "");
 		else
 			creatureTarget->playEffect("clienteffect/bacta_jab.cef", "");
 	}
-	
+
 	void sendHealMessage(CreatureObject* creature, CreatureObject* creatureTarget, int healthDamage, int actionDamage) const {
 		if (!creature->isPlayerCreature())
 			return;
@@ -86,19 +81,18 @@ public:
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
 
-
-		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
-
 		int result = doCommonMedicalCommandChecks(creature);
 
 		if (result != SUCCESS)
 			return result;
 
-		if (object != NULL) {
+		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
+
+		if (object != nullptr) {
 			if (!object->isCreatureObject()) {
 				TangibleObject* tangibleObject = dynamic_cast<TangibleObject*>(object.get());
 
-				if (tangibleObject != NULL && tangibleObject->isAttackableBy(creature)) {
+				if (tangibleObject != nullptr && tangibleObject->isAttackableBy(creature)) {
 					object = creature;
 				} else {
 					creature->sendSystemMessage("@healing_response:healing_response_99"); //Target must be a player or a creature pet in order to quick heal.
@@ -119,31 +113,20 @@ public:
 		if ((creatureTarget->isAiAgent() && !creatureTarget->isPet()) || creatureTarget->isDroidObject() || creatureTarget->isDead() || creatureTarget->isRidingMount() || creatureTarget->isAttackableBy(creature))
 			creatureTarget = creature;
 
+		if (creature != creatureTarget && checkForArenaDuel(creatureTarget)) {
+			creature->sendSystemMessage("@jedi_spam:no_help_target"); // You are not permitted to help that target.
+			return GENERALERROR;
+		}
+
 		if (!creatureTarget->isHealableBy(creature)) {
 			creature->sendSystemMessage("@healing:pvp_no_help");  //It would be unwise to help such a patient.
 			return GENERALERROR;
 		}
-		CreatureObject* player = cast<CreatureObject*>(creature);
 
-		if (!creature->checkCooldownRecovery("bacta_jab")) {
-   			StringIdChatParameter stringId;
+		int mindCostNew = creature->calculateCostAdjustment(CreatureAttribute::FOCUS, mindCost);
 
-   			Time* cdTime = creature->getCooldownTime("bacta_jab");
-
-   			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
-
-   			stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
-   			stringId.setDI(timeLeft);
-   			creature->sendSystemMessage(stringId);
-   			        return GENERALERROR;
-   		       }
-
- 		player->addCooldown("bacta_jab", 15 * 1000); // 15 second cooldown
-		
-		int actionCostNew = creature->calculateCostAdjustment(CreatureAttribute::ACTION, actionCost);
-
-		if (creature->getHAM(CreatureAttribute::ACTION) < abs(actionCostNew)) {
-			creature->sendSystemMessage("Not enough action"); //You do not have enough mind to do that.
+		if (creature->getHAM(CreatureAttribute::MIND) < abs(mindCostNew)) {
+			creature->sendSystemMessage("@healing_response:not_enough_mind"); //You do not have enough mind to do that.
 			return GENERALERROR;
 		}
 
@@ -163,10 +146,10 @@ public:
 			return GENERALERROR;
 		}
 
-		int healPower = (int) round(1000 + System::random(1000));
+		int healPower = (int) round(150 + System::random(600));
+
 		int healedHealth = creatureTarget->healDamage(creature, CreatureAttribute::HEALTH, healPower);
 		int healedAction = creatureTarget->healDamage(creature, CreatureAttribute::ACTION, healPower);
-		int healedMind = creatureTarget->healDamage(creature, CreatureAttribute::MIND, healPower);
 
 		if (creature->isPlayerCreature()) {
 			PlayerManager* playerManager = server->getZoneServer()->getPlayerManager();
@@ -175,8 +158,10 @@ public:
 
 		sendHealMessage(creature, creatureTarget, healedHealth, healedAction);
 
-		creature->inflictDamage(creature, CreatureAttribute::ACTION, actionCostNew, false);
-		creature->clearDots();
+		creature->inflictDamage(creature, CreatureAttribute::MIND, mindCostNew, false);
+		creature->addWounds(CreatureAttribute::FOCUS, mindWoundCost, true);
+		creature->addWounds(CreatureAttribute::WILLPOWER, mindWoundCost, true);
+
 		doAnimations(creature, creatureTarget);
 
 		checkForTef(creature, creatureTarget);
@@ -186,4 +171,4 @@ public:
 
 };
 
-#endif //BACTAJABCOMMAND_H_
+#endif //BactaJabCommand_H_

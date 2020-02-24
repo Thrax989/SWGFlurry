@@ -113,4 +113,9 @@ class WearableObject extends TangibleObject {
 		socketCount = maxSockets;
 		socketsGenerated = true;
 	}
+
+	public void setSockets(int count)
+	{
+		socketCount = count;
+	}
 }

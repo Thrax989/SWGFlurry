@@ -42,8 +42,6 @@
 
 
 object_tangible_wearables_robe_robe_jedi_light_s03 = object_tangible_wearables_robe_shared_robe_jedi_light_s03:new {
-objectMenuComponent = "ArmorObjectMenuComponent",
-
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
@@ -227,14 +225,15 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 
 				
 				skillMods = {
-				    {"jedi_force_power_max", 200},
-				    {"jedi_force_power_regen", 5}
+				    {"jedi_force_power_max", 250},
+				    {"jedi_force_power_regen", 10}
 				},
 
 				noTrade = 0,
 
 				objectMenuComponent = "RobeObjectMenuComponent",
-				certificationsRequired = {"force_rank_light_rank_05"},
+				certificationsRequired = { "combat_jedi_novice",
+							"force_title_jedi_rank_02" },
 				attributeListComponent = "JediRobeAttributeListComponent",
 }
 

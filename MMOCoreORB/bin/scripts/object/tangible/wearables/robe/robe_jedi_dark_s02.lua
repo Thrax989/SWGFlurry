@@ -226,14 +226,15 @@ object_tangible_wearables_robe_robe_jedi_dark_s02 = object_tangible_wearables_ro
 
 				
 				skillMods = {
-				    {"jedi_force_power_max", 150},
-				    {"jedi_force_power_regen", 5}
+				    {"jedi_force_power_max", 250},
+				    {"jedi_force_power_regen", 10}
 				},
 
 				noTrade = 0,
 
 				objectMenuComponent = "RobeObjectMenuComponent",
-				certificationsRequired = {"force_rank_dark_rank_01"},
+				certificationsRequired = { "combat_jedi_novice",
+							"force_title_jedi_rank_02" },
 				attributeListComponent = "JediRobeAttributeListComponent",
 }
 

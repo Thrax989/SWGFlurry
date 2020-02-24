@@ -27,6 +27,42 @@ igtusken = Creature:new {
 	templates = {"object/mobile/tusken_raider.iff"},
 
 	lootGroups = {
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "weapons_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 2000000
+		}
 	},
 	weapons = {"tusken_weapons"},
 	reactionStf = "@npc_reaction/slang",

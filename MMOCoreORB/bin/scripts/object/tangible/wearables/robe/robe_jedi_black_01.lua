@@ -42,7 +42,6 @@
 
 
 object_tangible_wearables_robe_robe_jedi_black_01 = object_tangible_wearables_robe_shared_robe_jedi_black_01:new {
-objectMenuComponent = "ArmorObjectMenuComponent",
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
@@ -236,16 +235,18 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 	experimentalCombineType = {0, 0, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 
 
-	skillMods = {
-		{"jedi_force_power_max", 300},
-		{"jedi_force_power_regen", 7}
-		},
+				skillMods = {
+				    {"jedi_force_power_max", 250},
+				    {"jedi_force_power_regen", 10}
+				},
 
 
 	objectMenuComponent = "RobeObjectMenuComponent",
-	certificationsRequired = {"force_title_jedi_rank_02"},
+				certificationsRequired = { "combat_jedi_novice",
+							"force_title_jedi_rank_02" },
 	attributeListComponent = "JediRobeAttributeListComponent",
 
 }
+
 
 ObjectTemplates: addTemplate(object_tangible_wearables_robe_robe_jedi_black_01, "object/tangible/wearables/robe/robe_jedi_black_01.iff")

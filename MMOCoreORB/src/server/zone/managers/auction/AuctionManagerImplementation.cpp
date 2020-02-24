@@ -34,6 +34,8 @@
 #include "server/zone/objects/player/sessions/TradeSession.h"
 #include "AuctionSearchTask.h"
 #include "server/zone/objects/factorycrate/FactoryCrate.h"
+#include "server/zone/objects/tangible/powerup/PowerupObject.h"
+#include "server/zone/objects/tangible/weapon/WeaponObject.h"
 
 void AuctionManagerImplementation::initialize() {
 	Locker locker(_this.getReferenceUnsafeStaticCast());
@@ -366,6 +368,24 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 
 	ManagedReference<AuctionItem*> oldItem = auctionMap->getItem(objectid);
 	ManagedReference<SceneObject*> objectToSell = zoneServer->getObject(objectid);
+	if (objectToSell->isWeaponObject()) {
+		ManagedReference<WeaponObject*> weapon = cast<WeaponObject*>(objectToSell.get());
+		if (weapon->hasPowerup()) {
+			if (!isRelist) {
+				player->sendSystemMessage("Weapons cannot be placed for sale with a powerup equipped");
+				return;
+			} else {
+				Locker wlocker(weapon);
+				ManagedReference<PowerupObject*> pup = weapon->removePowerup();
+				if (pup != NULL) {
+					Locker puplocker(pup);
+					pup->destroyObjectFromWorld(true);
+					pup->destroyObjectFromDatabase(true);
+				}
+			}
+		}
+	}
+
 	String vendorUID = getVendorUID(vendor);
 	bool stockroomSale = false;
 

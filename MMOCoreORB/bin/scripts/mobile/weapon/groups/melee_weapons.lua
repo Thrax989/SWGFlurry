@@ -2,8 +2,14 @@ melee_weapons = {
 	"object/weapon/melee/axe/axe_heavy_duty.iff",
 	"object/weapon/melee/polearm/polearm_vibro_axe.iff",
 	"object/weapon/melee/polearm/lance_staff_wood_s1.iff",
-	"object/weapon/melee/knife/knife_dagger.iff"
-	
+	"object/weapon/melee/knife/knife_dagger.iff",
+	"object/weapon/melee/sword/sword_nyax.iff",
+	"object/weapon/melee/polearm/polearm_vibro_axe.iff",
+	"object/weapon/melee/baton/baton_gaderiffi.iff",
+	"object/weapon/melee/axe/axe_vibroaxe.iff",
+	"object/weapon/melee/2h_sword/2h_sword_maul.iff",
+	"object/weapon/melee/2h_sword/2h_sword_scythe.iff",
+	"object/weapon/melee/special/vibroknuckler.iff"
 }
 
 addWeapon("melee_weapons", melee_weapons)

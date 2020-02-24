@@ -1,17 +1,17 @@
 janta_cave_boss = Creature:new {
-	  customName = "<<< Janta King >>>",
+	  customName = "\\#00ff00<<< Janta King >>> \\#ff0000[lvl 300]",
 	  socialGroup = "janta_tribe",
 	  faction = "janta_tribe",
 	  level = 300,
-	  chanceHit = 60.00,
-	  damageMin = 1500,
-	  damageMax = 2500,
-	  specialDamageMult = 2.0,
-	  baseXp = 0,
-	  baseHAM = 1000000,
-	  baseHAMmax = 1000000,
-	  armor = 3,
-	  resists = {90,90,90,90,90,90,90,90,-1},
+	  chanceHit = 25.00,
+	  damageMin = 1245,
+	  damageMax = 2600,
+	  specialDamageMult = 7.5,
+	  baseXp = 28549,
+	  baseHAM = 800000,
+	  baseHAMmax = 850000,
+	  armor = 2,
+	  resists = {50,50,50,50,50,50,50,50,50},
 	  meatType = "",
 	  meatAmount = 0,
 	  hideType = "",
@@ -19,88 +19,105 @@ janta_cave_boss = Creature:new {
 	  boneType = "",
 	  boneAmount = 0,
 	  milk = 0,
-	  tamingChance = 0.25,
+	tamingChance = 0.25,
 	  ferocity = 0,
 	  pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	  creatureBitmask = KILLER + STALKER,
-	  optionsBitmask = AIENABLED,
+	  creatureBitmask = PACK + KILLER + HEALER,
+	  optionsBitmask = AIENABLED + INTERESTING,
 	  diet = HERBIVORE,
 	  Scale = 2.0,	
 
-	templates = {"object/mobile/tusken_raider.iff"},
-
+	templates = {"object/mobile/dantari_male.iff"},
 --Mini Boss Template
 	lootGroups = {
 		{
 			groups = {
 				{group = "junk", chance = 10000000}				
 		},
-			lootChance = 100000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "artifact", chance = 10000000}			
+				{group = "g_named_crystals", chance = 10000000},
+			},
+			lootChance = 5000000
 		},
-			lootChance = 1000000
+		{
+			groups = {
+				{group = "g_cloak_of_hate", chance = 10000000},
+			},
+			lootChance = 500000
+		},
+		{
+			groups = {
+				{group = "capes", chance = 10000000},
+			},
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000}			
+		},
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "tierone", chance = 10000000}
 		},
-			lootChance = 7500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 		},
-			lootChance = 3500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "tierthree", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 		},
-			lootChance = 3500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "tierthree", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 {
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 		},
-			lootChance = 3500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "tierthree", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 {
 			groups = {
 				{group = "tiertwo", chance = 10000000}
 		},
-			lootChance = 3500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "janta_common", chance = 10000000}
 		},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 },
-weapons = {"dark_jedi_weapons_gen4"},
+weapons = {"melee_weapons"},
 reactionStf = "@npc_reaction/fancy",
-attacks = merge(lightsabermaster,forcewielder,forcepowermaster)
+	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(janta_cave_boss, "janta_cave_boss")

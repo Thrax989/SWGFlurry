@@ -223,7 +223,6 @@ object_tangible_wearables_backpack_back_love_day_10_blue_wings = object_tangible
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-
 	numberExperimentalProperties = {1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX"},
 	experimentalWeights = {1, 1, 1, 1},

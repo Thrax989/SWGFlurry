@@ -41,8 +41,8 @@ public:
 		if (res == SUCCESS) {
 			Locker clocker(targetCreature, creature);
 
-			targetCreature->getThreatMap()->addAggro(creature, creature->getSkillMod("taunt") * 10, 0);
-			targetCreature->getThreatMap()->setThreatState(creature, ThreatStates::TAUNTED,(uint64)creature->getSkillMod("taunt") / 10, (uint64)creature->getSkillMod("taunt") / 10);
+			targetCreature->getThreatMap()->addAggro(creature, creature->getSkillMod("taunt") * 100, 0);
+			targetCreature->getThreatMap()->setThreatState(creature, ThreatStates::TAUNTED,(uint64)creature->getSkillMod("taunt")*200, (uint64)0);;
 			//creature->doCombatAnimation(creature,STRING_HASHCODE("taunt"),0,0xFF);
 			creature->doAnimation("taunt");
 

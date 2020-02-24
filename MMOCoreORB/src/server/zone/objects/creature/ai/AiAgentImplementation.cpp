@@ -1271,7 +1271,7 @@ void AiAgentImplementation::setDefender(SceneObject* defender) {
 }
 
 void AiAgentImplementation::queueDizzyFallEvent() {
-	if (isNonPlayerCreatureObject())
+       if (System::random(1) == 1)
 		CreatureObjectImplementation::queueDizzyFallEvent();
 }
 
@@ -1369,7 +1369,7 @@ void AiAgentImplementation::respawn(Zone* zone, int level) {
 	CreatureManager* creatureManager = zone->getCreatureManager();
 
 	if (npcTemplate != nullptr && creatureManager != nullptr && isCreature()) {
-		int chance = 2000;
+		int chance = 500;
 		int babiesSpawned = 0;
 
 		ManagedReference<SceneObject*> home = homeObject.get();
@@ -2302,6 +2302,7 @@ bool AiAgentImplementation::isScentMasked(CreatureObject* target) {
 	// Step 1. Check for break
 	bool success = false;
 	int camoSkill = effectiveTarget->getSkillMod("mask_scent");
+	camoSkill += 25;
 	int creatureLevel = getLevel();
 
 	int mod = 100;
@@ -2313,6 +2314,7 @@ bool AiAgentImplementation::isScentMasked(CreatureObject* target) {
 		mod -= 35;
 
 	success = System::random(100) <= mod - (float)creatureLevel / ((float)camoSkill / 100.0f) / 20.f;
+	effectiveTarget->sendSystemMessage("Your maskScent skill is: " + String::valueOf(camoSkill) + " and you rolled a: " + String::valueOf(success));
 
 	if (success)
 		camouflagedObjects.put(effectiveTargetID); // add to award

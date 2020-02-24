@@ -2,7 +2,7 @@ giant_canyon_krayt_dragon = Creature:new {
 	objectName = "@mob/creature_names:giant_canyon_krayt_dragon",
 	socialGroup = "krayt",
 	faction = "",
-	level = 300,
+	level = 75,
 	chanceHit = 30.0,
 	damageMin = 1645,
 	damageMax = 3000,
@@ -18,7 +18,7 @@ giant_canyon_krayt_dragon = Creature:new {
 	boneType = "bone_mammal",
 	boneAmount = 805,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 20,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -39,7 +39,7 @@ giant_canyon_krayt_dragon = Creature:new {
 				{group = "weapons_all", chance = 2000000},
 			},
 			lootChance = 10000000
-		}
+		},
 		{
 			groups = {
 				{group = "tierone", chance = 5000000},
@@ -57,7 +57,7 @@ giant_canyon_krayt_dragon = Creature:new {
 				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 3000000
-		},
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",

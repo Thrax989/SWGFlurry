@@ -110,6 +110,7 @@
 #include "server/zone/managers/visibility/VisibilityManager.h"
 #include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
+#include "server/zone/managers/object/ObjectManager.h"
 
 PlayerManagerImplementation::PlayerManagerImplementation(ZoneServer* zoneServer, ZoneProcessServer* impl,
 							bool trackOnlineUsers) :

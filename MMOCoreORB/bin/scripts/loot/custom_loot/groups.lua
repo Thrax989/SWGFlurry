@@ -1,4 +1,4 @@
---includeFile("custom_loot/groups/backpacks/g_ep3_chiss_poacher_backpack.lua")
+includeFile("custom_loot/groups/backpacks/g_ep3_chiss_poacher_backpack.lua")
 includeFile("custom_loot/groups/backpacks/backpacks_b01.lua")
 includeFile("custom_loot/groups/backpacks/backpacks_b02.lua")
 includeFile("custom_loot/groups/weapons/melee/stun_weapons.lua")
@@ -305,7 +305,8 @@ includeFile("custom_loot/groups/weapons/melee/g_baton_stun_legendary.lua")
 includeFile("custom_loot/groups/weapons/melee/g_ep3_loot_blackbane.lua")
 includeFile("custom_loot/groups/weapons/melee/g_ep3_loot_eventide.lua")
 includeFile("custom_loot/groups/weapons/melee/g_ep3_loot_lifeblood")
-includeFile("custom_loot/groups/wearables/g_cloak_of_hate")
+]]
+includeFile("custom_loot/groups/wearables/g_cloak_of_hate.lua")
 includeFile("custom_loot/groups/wearables/jewelry/g_necklaces.lua")
 includeFile("custom_loot/groups/wearables/jewelry/jedi_rings.lua")
 includeFile("custom_loot/groups/wearables/jewelry/jedi_neck.lua")
@@ -316,7 +317,7 @@ includeFile("custom_loot/groups/wearables/jewelry/non_jedi_rings_ranged.lua")
 includeFile("custom_loot/groups/wearables/jewelry/non_jedi_ring_crafter.lua")
 includeFile("custom_loot/groups/wearables/jewelry/non_jedi_ring_crafter_second.lua")
 includeFile("custom_loot/groups/wearables/jewelry/neck_crafter.lua")
-]]
+
 includeFile("custom_loot/groups/wearables/goggles_all.lua")
 
 --Weapons

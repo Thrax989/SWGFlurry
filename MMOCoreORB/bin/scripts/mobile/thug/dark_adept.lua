@@ -42,7 +42,29 @@ dark_adept = Creature:new {
 				{group = "clothing_attachments", chance = 900000},
 				{group = "carbines", chance = 1300000},
 				{group = "wearables_rare", chance = 800000}
-			}
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "vehicledeedsrare", chance = 10000000},
+			},
+			lootChance = 500000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 10000000
 		}
 	},
 	weapons = {"dark_jedi_weapons_gen2"},

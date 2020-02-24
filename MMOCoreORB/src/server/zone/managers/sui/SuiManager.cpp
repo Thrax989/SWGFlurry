@@ -37,6 +37,13 @@
 #include "server/zone/ZoneServer.h"
 #include "server/chat/ChatManager.h"
 
+#include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
+#include "server/zone/managers/stringid/StringIdManager.h"
+#include "server/zone/managers/auction/AuctionManager.h"
+#include "server/zone/managers/auction/AuctionsMap.h"
+#include "server/zone/managers/statistics/StatisticsManager.h"
+#include "server/zone/objects/mission/MissionTypes.h"
+
 SuiManager::SuiManager() : Logger("SuiManager") {
 	server = nullptr;
 	setGlobalLogging(true);
@@ -583,6 +590,58 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						SkillManager::instance()->awardSkill("combat_jedi_novice", player, true, true, true);
 						box->setForceCloseDistance(5.f);
 			        }
+//Player Stats
+			} else if (templatePath == "player_stats") {
+
+						PlayerObject* ghost = player->getPlayerObject();
+
+						StringBuffer msg;
+
+						msg << "---PvP Statistics---\n"
+							<< "PvP Rating: " << ghost->getPvpRating() << "\n"
+							<< "Total PvP Kills: " << ghost->getPvpKills() << "\n"
+							<< "Total PvP Deaths: " << ghost->getPvpDeaths() << "\n"
+							<< "Total Bounty Kills: " << ghost->getBountyKills() << "\n\n"
+							<< "---PvE Statistics---\n"
+							<< "Total PvE Kills: " << ghost->getPveKills() << "\n"
+							<< "Total PvE Deaths: " << ghost->getPveDeaths() << "\n"
+							<< "Total Boss Kills: " << ghost->getworldbossKills() << "\n\n"
+							<< "---Mission Statistics---\n"
+							<< "Total Missions Completed: " << ghost->getMissionsCompleted() << "\n\n"
+							<< "---Misc Statistics---\n"
+							<< "Event Attendance: " << ghost->geteventplayerCrate();
+
+						ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+						box->setPromptTitle(player->getFirstName() + "'s" + " Character Statistics");
+						box->setPromptText(msg.toString());
+						ghost->addSuiBox(box);
+						player->sendMessage(box->generateMessage());
+//Community Online Status
+			} else if (templatePath == "community_status") {
+
+						ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
+						PlayerManager* playerManager = server->getZoneServer()->getPlayerManager();
+	
+						StringBuffer body;
+						Time timestamp;
+						timestamp.updateToCurrentTime();
+
+						body << "-- Flurry Server --" << endl << endl;
+						body << "Connections Online: " << String::valueOf(player->getZoneServer()->getConnectionCount()) << endl;
+						body << "Most Concurrent (since last reset): " << String::valueOf(player->getZoneServer()->getMaxPlayers()) << endl;
+						body << "Server Cap: " << String::valueOf(player->getZoneServer()->getServerCap()) << endl << endl << endl;
+						body << "Deleted Characters (since last reset): " << String::valueOf(player->getZoneServer()->getDeletedPlayers()) << endl;
+						body << "Total Connections (since last reset): " << String::valueOf(player->getZoneServer()->getTotalPlayers()) << endl;
+						body << endl;endl;
+
+						body << "Missions info (since last reset): " << endl;
+						body << StatisticsManager::instance()->getStatistics() << endl;
+
+						ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
+						box->setPromptTitle("Flurry Community Status");
+						box->setPromptText(body.toString());
+						ghost->addSuiBox(box);
+						player->sendMessage(box->generateMessage());
 //JediQuest Remove Screen Play Tester
 			} else if (templatePath == "jedi_quest_remove") {
 				if (!player->isInCombat() && player->getBankCredits() < 999) {
@@ -610,6 +669,29 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					    player->sendMessage(box->generateMessage());
 						player->subtractBankCredits(1000);
 						box->setForceCloseDistance(5.f);
+			        }
+//BOSS TELEPORT ROOM
+			} else if (templatePath == "teleportroom") {
+				if (!player->isInCombat() && player->getBankCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Boss Instance Teleport Room");
+		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getBankCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
+ 				        	player->switchZone("dungeon2", -33.6957, 0.77033, 24.5291, 14200816);
+						player->subtractBankCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
 			        }
 //GALACTIC TRAVEL SYSTEM City Politician Skill
 			} else if (templatePath == "citypolitician") {

@@ -316,3 +316,6 @@ includeFile("conversations/events/rori_poi_waypoints.lua")
 includeFile("conversations/events/talus_poi_waypoints.lua")
 includeFile("conversations/events/tatooine_poi_waypoints.lua")
 includeFile("conversations/events/yavin4_poi_waypoints.lua")
+
+--custom painting exchange
+includeFile("conversations/events/painting_exchange.lua")

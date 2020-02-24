@@ -11,6 +11,7 @@
 #include "templates/customization/AssetCustomizationManagerTemplate.h"
 #include "templates/appearance/PaletteTemplate.h"
 #include "server/zone/objects/player/FactionStatus.h"
+#include "server/zone/objects/tangible/wearables/WearableObject.h"
 
 const char LuaTangibleObject::className[] = "LuaTangibleObject";
 
@@ -50,6 +51,7 @@ Luna<LuaTangibleObject>::RegType LuaTangibleObject::Register[] = {
 		{ "isBroken", &LuaTangibleObject::isBroken},
 		{ "isSliced", &LuaTangibleObject::isSliced},
 		{ "isNoTrade", &LuaTangibleObject::isNoTrade},
+		{ "setSocketCount", &LuaTangibleObject::setSocketCount},
 		{ 0, 0 }
 };
 
@@ -381,4 +383,27 @@ int LuaTangibleObject::isNoTrade(lua_State* L){
 	lua_pushboolean(L, noTrade);
 
 	return 1;
+}
+
+int LuaTangibleObject::setSocketCount(lua_State* L){
+
+    int count = lua_tointeger(L, -1);
+    
+    if (realObject->isWearableObject() && realObject != nullptr)
+    {
+        Locker locker(realObject);
+        
+        WearableObject* wo = cast<WearableObject*>(realObject);
+        
+        // Prevent over 4 sockets
+        if (count > 4)
+        { count = 4; }
+        // Prevent trying to set negative sockets
+        if (count < 0)
+        { count = 0; }
+        
+        wo->setSockets(count);
+    }
+    
+    return 0;
 }

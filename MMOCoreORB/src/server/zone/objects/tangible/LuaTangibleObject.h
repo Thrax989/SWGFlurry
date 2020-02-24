@@ -60,7 +60,7 @@ namespace tangible {
 		int isBroken(lua_State* L);
 		int isSliced(lua_State* L);
 		int isNoTrade(lua_State* L);
-
+		int setSocketCount(lua_State* L);
 	protected:
 		TangibleObject* realObject;
 	};

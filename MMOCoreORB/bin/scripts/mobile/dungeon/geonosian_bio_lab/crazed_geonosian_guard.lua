@@ -40,6 +40,12 @@ crazed_geonosian_guard = Creature:new {
 		},
 		{
 			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
 				{group = "geonosian_relic", chance = 10000000},
 			},
 			lootChance = 5000000

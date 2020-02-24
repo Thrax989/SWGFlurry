@@ -42,7 +42,6 @@
 
 
 object_tangible_wearables_robe_robe_jedi_dark_s04 = object_tangible_wearables_robe_shared_robe_jedi_dark_s04:new {
-objectMenuComponent = "ArmorObjectMenuComponent",
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
@@ -232,7 +231,8 @@ objectMenuComponent = "ArmorObjectMenuComponent",
 				noTrade = 0,
 
 				objectMenuComponent = "RobeObjectMenuComponent",
-				certificationsRequired = {"force_rank_dark_rank_08"},
+				certificationsRequired = { "combat_jedi_novice",
+							"force_title_jedi_rank_02" },
 				attributeListComponent = "JediRobeAttributeListComponent",
 }
 

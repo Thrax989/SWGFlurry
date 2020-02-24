@@ -116,6 +116,18 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Recalculate's Players Skills (24 hour cool down)", "recalculateskills",
 		   },
+		 	"Character Stats",
+		   {
+			"Character stats", "player_stats",
+		   },
+		 	"Community Statistics",
+		   {
+			"Community Statistics", "community_status",
+		   },
+		 	"Boss Instance Teleport Room",
+		   {
+			"Teleort To Boss Instance Teleport Room (5,000 Credits)", "teleportroom",
+		   },
 		 	"Player Cities",
 		   {
 			"Korrivan Player City (5,000 Credits)", "pc_korrivan_travel",

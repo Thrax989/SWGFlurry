@@ -22,10 +22,10 @@ old_man = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = NONE,
-	optionsBitmask = INVULNERABLE + CONVERSABLE,
+	optionsBitmask = INVULNERABLE + CONVERSABLE + INTERESTING,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/dressed_fs_village_oldman.iff"},
+	templates = {"object/mobile/som/obi_wan_ghost.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "oldManIntroConvoTemplate",

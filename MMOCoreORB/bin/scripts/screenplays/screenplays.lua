@@ -163,8 +163,18 @@ includeFile("dungeon/corellian_corvette/ticket_givers/corvette_yondalla_neutral_
 includeFile("dungeon/corellian_corvette/ticket_takers/ds_297.lua")
 includeFile("dungeon/corellian_corvette/ticket_takers/klaatu.lua")
 includeFile("dungeon/corellian_corvette/ticket_takers/lt_lance.lua")
-
-
+--Custom exar kun dungeon
+includeFile("dungeon/exar_kun_temple/exar_kun.lua")
+--Custom janta cave
+includeFile("dungeon/janta_cave/janta_cave.lua")
+--Custom avatar dungeon
+includeFile("dungeon/avatar_platform/avatar_platform.lua")
+--custom rogue star destoryer
+includeFile("dungeon/isd/isd_platform.lua")
+--custom nightsister temple
+includeFile("dungeon/nightsister_temple/nightsister_temple.lua")
+--custom ig88 platform
+includeFile("dungeon/ig88/ig88_platform.lua")
 -- Village
 includeFile("village/village_community_crafting.lua")
 includeFile("village/village_gm_sui.lua")
@@ -280,7 +290,7 @@ includeFile("jedi/padawan/convos/padawan_spice_mom_02_conv_handler.lua")
 includeFile("jedi/padawan/convos/padawan_surveyor_01_conv_handler.lua")
 includeFile("jedi/padawan/convos/padawan_the_ring_01_conv_handler.lua")
 includeFile("jedi/padawan/convos/padawan_the_ring_02_conv_handler.lua")
---includeFile("jedi/gray/jedi1.lua")
+includeFile("jedi/gray/jedi1.lua")
 --includeFile("jedi/gray/jedi2.lua")
 --includeFile("jedi/gray/jedi3.lua")
 --includeFile("jedi/gray/jedi4.lua")
@@ -365,6 +375,7 @@ includeFile("events/buffTerminalMenuComponent.lua")
 includeFile("events/race_droid.lua")
 includeFile("events/jediQuest.lua")
 includeFile("events/jediLives.lua")
+--includeFile("events/black_sun.lua")
 includeFile("events/deathBounty.lua")
 --includeFile("events/halloween_moenia.lua")
 
@@ -745,11 +756,11 @@ includeFile("events/ServerEventAutomation.lua")
 includeFile("../custom_scripts/screenplays/screenplays.lua")
 
 -- World Boss Systems
---includeFile("events/worldboss_one.lua")
---includeFile("events/worldboss_two.lua")
---includeFile("events/worldboss_three.lua")
---includeFile("events/worldboss_four.lua")
---includeFile("events/worldboss_five.lua")
+includeFile("events/worldboss_one.lua")
+includeFile("events/worldboss_two.lua")
+includeFile("events/worldboss_three.lua")
+includeFile("events/worldboss_four.lua")
+includeFile("events/worldboss_five.lua")
 --includeFile("events/worldboss_six.lua")
 --includeFile("events/worldboss_seven.lua")
 --includeFile("events/worldboss_eight.lua")
@@ -760,3 +771,8 @@ includeFile("../custom_scripts/screenplays/screenplays.lua")
 --includeFile("events/worldboss_thirteen.lua")
 --includeFile("events/worldboss_fourteen.lua")
 --includeFile("events/worldboss_fifteen.lua")
+
+--painting exchange dealer
+includeFile("events/painting_exchange_dealer.lua")
+
+includeFile("custom_screenplays/screenplays.lua")

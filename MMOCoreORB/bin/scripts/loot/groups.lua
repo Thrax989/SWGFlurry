@@ -436,3 +436,19 @@ includeFile("groups/saberhand28.lua")
 --Faction /point /loot
 includeFile("groups/imppoints.lua")
 includeFile("groups/rebpoints.lua")
+
+--World Boss Crate
+includeFile("groups/worldbosscrate.lua")
+
+--Event Player Crate
+includeFile("groups/eventplayercrate.lua")
+
+--Vehicle Deeds
+includeFile("groups/vehicledeedsnormal.lua")
+includeFile("groups/vehicledeedsrare.lua")
+
+--Custom Capes
+includeFile("groups/wearables/capes.lua")
+
+--CU/NGE Weapons
+includeFile("groups/weapon/nge_all.lua")

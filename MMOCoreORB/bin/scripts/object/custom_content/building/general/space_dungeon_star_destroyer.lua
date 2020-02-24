@@ -43,15 +43,6 @@
 
 object_building_general_space_dungeon_star_destroyer = object_building_general_shared_space_dungeon_star_destroyer:new {
 	customObjectName = "ISD",
-	--spawningPoints = {
-	----		{ x = -12.8, z = 0.6, y = -48.4, ow = 0.806, ox = 0, oz = 0, oy = -0.592, cellid = 14 },
-	--		{ x = -18.1, z = 0.6, y = -46.7, ow = 0.597, ox = 0, oz = 0, oy = 0.802, cellid = 14 },
-	--		{ x = -16.3, z = 0.6, y = -50.0, ow = 0.986, ox = 0, oz = 0, oy = 0.167, cellid = 14 },
-	--		},
-	templateType = CLONINGBUILDING,
-
-	childObjects = {
-	}
 }
 
 ObjectTemplates:addTemplate(object_building_general_space_dungeon_star_destroyer, "object/building/general/space_dungeon_star_destroyer.iff")

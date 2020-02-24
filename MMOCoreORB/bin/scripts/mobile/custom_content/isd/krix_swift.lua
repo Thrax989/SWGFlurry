@@ -33,18 +33,39 @@ krix_swift = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 100000},
-				{group = "junk", chance = 6200000},
-				{group = "rifles", chance = 550000},
-				{group = "pistols", chance = 550000},
-				{group = "melee_weapons", chance = 550000},
-				{group = "carbines", chance = 550000},
-				{group = "clothing_attachments", chance = 25000},
-				{group = "armor_attachments", chance = 25000},
-				{group = "imperial_officer_common", chance = 450000},
-				{group = "wearables_common", chance = 1000000}
+				{group = "clothing_attachments", chance = 10000000},
 			},
-			lootChance = 2800000
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "weapons_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 2000000
 		}
 	},
 	weapons = {"imperial_weapons_heavy"},

@@ -39,8 +39,8 @@ public:
 			return;
 		}
 
-		if (vehicle->isDisabled() && !player->getPlayerObject()->isPrivileged())
-			return;
+		//if (vehicle->isDisabled() && !player->getPlayerObject()->isPrivileged())
+			//return;
 
 		int repairCost = vehicle->calculateRepairCost(player);
 		int bank = player->getBankCredits();

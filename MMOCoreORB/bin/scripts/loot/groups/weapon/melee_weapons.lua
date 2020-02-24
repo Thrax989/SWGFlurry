@@ -26,7 +26,8 @@ melee_weapons = {
 		{itemTemplate = "two_handed_sword_battleaxe", weight = 500000},
 		{itemTemplate = "two_handed_sword_cleaver", weight = 500000},
 		{itemTemplate = "two_handed_sword_maul", weight = 400000},
-		{itemTemplate = "two_handed_sword_katana", weight = 400000},
+		{itemTemplate = "two_handed_sword_katana", weight = 200000},
+		{groupTemplate = "nge_all", weight = 200000},
 	}
 }
 

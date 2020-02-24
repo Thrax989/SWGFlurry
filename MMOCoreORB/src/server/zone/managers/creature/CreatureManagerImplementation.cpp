@@ -1,4 +1,4 @@
-/*
+ /*
  * CreatureManagerImplementation.cpp
  *
  *  Created on: 24/02/2010
@@ -37,6 +37,11 @@
 #include "server/zone/objects/tangible/LairObject.h"
 #include "server/zone/objects/building/PoiBuilding.h"
 #include "server/zone/objects/intangible/TheaterObject.h"
+#include "server/zone/managers/skill/SkillManager.h"
+#include "server/zone/managers/planet/PlanetManager.h"
+#include "server/zone/objects/region/Region.h"
+#include "server/db/ServerDatabase.h"
+#include "server/zone/packets/object/SpatialChat.h"
 
 Mutex CreatureManagerImplementation::loadMutex;
 
@@ -531,6 +536,7 @@ int CreatureManagerImplementation::notifyDestruction(TangibleObject* destructor,
 	ThreatMap copyThreatMap(*threatMap);
 
 	threatMap->removeObservers();
+	threatMap->removeAll(); // we can clear the original one
 
 	if (destructedObject != destructor)
 		destructor->unlock();
@@ -1108,7 +1114,7 @@ void CreatureManagerImplementation::milk(Creature* creature, CreatureObject* pla
 
 	Reference<MilkCreatureTask*> task = new MilkCreatureTask(creature, player);
 
-	task->schedule(10000);
+	task->schedule(2000);
 }
 
 void CreatureManagerImplementation::sample(Creature* creature, CreatureObject* player) {
