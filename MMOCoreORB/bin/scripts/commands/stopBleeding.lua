@@ -44,8 +44,8 @@
 StopBleedingCommand = {
 	name = "stopbleeding",
 	healBleedingCost = 25,
-	forceCost = 50,
-	defaultTime = 2,
+	forceCost = 25,
+	defaultTime = 1,
 	allowedTarget = FORCE_HEAL_TARGET_SELF + FORCE_HEAL_TARGET_OTHER,
 	range = 32,
 }
