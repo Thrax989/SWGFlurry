@@ -47,7 +47,7 @@ ForceLightningCone1Command = {
 	minDamage = 300,
 	maxDamage = 600,
 	speed = 4.0,
-	forceCost = 125,
+	forceCost = 75,
 	accuracySkillMod = "forcelightning_accuracy",
 	coneAngle = 40,
 	coneAction = true,
@@ -61,7 +61,7 @@ ForceLightningCone1Command = {
 	poolsToDamage = RANDOM_ATTRIBUTE,
 
 	forceAttack = true,
-	damageType = ELECTRICITY_DAMAGE,
+	damageType = LIGHTSABER_DAMAGE,
 
 	frsLightMinDamageModifier = 2,
 	frsLightMaxDamageModifier = 4,
