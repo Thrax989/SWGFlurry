@@ -37,6 +37,12 @@ rageon_vart = Creature:new {
 		},
 		{
 			groups = {
+				{group = "rageon_vart_drop", chance = 10000000}
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
 				{group = "wearables_common", chance = 10000000}
 			},
 			lootChance = 5000000
