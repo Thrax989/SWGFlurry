@@ -37,6 +37,12 @@ fenri_dalso = Creature:new {
 		},
 		{
 			groups = {
+				{group = "fenri_dalso_drop", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
 				{group = "wearables_common", chance = 10000000}
 			},
 			lootChance = 5000000
