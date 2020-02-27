@@ -202,7 +202,7 @@ int PetDeedImplementation::calculatePetLevel() {
 	// Regenerate the LEvel
 	int effective = (int)(((fortitude - (armor * 500)) / 50) * 5);
 	int dps = ((damageMax + damageMin) / 2.0f) / attackSpeed;
-	int avgHam = (health + action + mind) / 10;
+	int avgHam = (health + action + mind) / 3;
 	if (regen == 0) {
 		regen = avgHam / 10;
 	}
@@ -292,8 +292,8 @@ void PetDeedImplementation::updateCraftingValues(CraftingValues* values, bool fi
 	if (petTemplate != nullptr) {
 		// get min CL from the template
 		int skinFactor = petTemplate->getLevel();
-		if (level > 85) {
-			level = 85;
+		if (level > 75) {
+			level = 75;
 		}
 		if (level < skinFactor) {
 			level = skinFactor;
@@ -525,7 +525,7 @@ void PetDeedImplementation::setSpecialResist(int type) {
 void PetDeedImplementation::adjustPetLevel(CreatureObject* player, CreatureObject* pet) {
 	int newLevel = calculatePetLevel();
 
-	if (newLevel < 1 || newLevel > 85) {
+	if (newLevel < 1 || newLevel > 75) {
 		player->sendSystemMessage("@bio_engineer:pet_sui_fix_error");
 		return;
 	}
@@ -541,8 +541,8 @@ bool PetDeedImplementation::adjustPetStats(CreatureObject* player, CreatureObjec
 		return false;
 	}
 
-	if (oldLevel > 85) {
-		oldLevel = 85;
+	if (oldLevel > 75) {
+		oldLevel = 75;
 	}
 
 	int ham = DnaManager::instance()->valueForLevel(DnaManager::HAM_LEVEL,oldLevel);
@@ -551,9 +551,9 @@ bool PetDeedImplementation::adjustPetStats(CreatureObject* player, CreatureObjec
 	mind = ham;
 	regen = DnaManager::instance()->valueForLevel(DnaManager::REG_LEVEL,oldLevel);
 	float dps = DnaManager::instance()->valueForLevel(DnaManager::DPS_LEVEL,oldLevel);
-	damageMin = round((dps * 2.25) * 1.50);
-	attackSpeed = 1.25;
-	damageMax = round((dps * 2.25) * 1.75);
+	damageMin = round((dps * 2.0) * 0.5);
+	attackSpeed = 2.0;
+	damageMax = round((dps * 2.0) * 1.5);
 	chanceHit = DnaManager::instance()->valueForLevel(DnaManager::HIT_LEVEL,oldLevel);
 
 	// Adjust Armor Now
