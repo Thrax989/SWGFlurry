@@ -1,7 +1,7 @@
 krix_swift = Creature:new {
 	--objectName = "",
 	customName = "Krix SwiftShadow",
-	socialGroup = "",
+	socialGroup = "isd_stormtrooper",
 	pvpFaction = "",
 	faction = "",
 	level = 300,
