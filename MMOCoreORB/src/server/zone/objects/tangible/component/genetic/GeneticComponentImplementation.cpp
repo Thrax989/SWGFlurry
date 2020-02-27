@@ -97,15 +97,15 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	if (values->getCurrentValue("lightsabereffectiveness") > 0)
 		setSpecialResist(SharedWeaponObjectTemplate::LIGHTSABER);
 
-	if (fortitude < 500) {
+	if (fortitude < 250) {
 		armorRating = 1;
 	}
 
-	if (fortitude > 500) {
+	if (fortitude >= 250) {
 		armorRating = 2;
 	}
 
-	if (fortitude == 1000) {
+	if (fortitude >= 500) {
 		armorRating = 3;
 	}
 
@@ -220,7 +220,7 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	} else {
 		damMod = round(((pow(power,((1.0f/0.57f)*-1.0f)))*1000.0f)*power);
 	}
-	maxDam = round(((float)dps * 2.5) * 1.5)+damMod;
+	maxDam = round(((float)dps * 10.0) * 6.0)+damMod;
 	//minDam = round(((float)dps * speed) * 0.5);
   	// round maxDam down to the closest multiple of 5
 	maxDam = maxDam - (maxDam % 5);

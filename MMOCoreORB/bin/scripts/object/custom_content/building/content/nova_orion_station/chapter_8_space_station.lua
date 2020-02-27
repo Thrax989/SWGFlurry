@@ -1,12 +1,11 @@
 object_building_content_nova_orion_station_chapter_8_space_station = object_building_content_nova_orion_station_shared_chapter_8_space_station:new {
 	customName = "Nova Station",
 	spawningPoints = {
-            { x = -15.5, z = 0.6, y = -47.3, ow = 0, ox = 0, oz = 0, oy = 0, cellid = 14 },
+            { x = 90.598, z = 0.8, y = -46.243, ow = 0.891006, ox = 0, oz = 0, oy = -0.45399, cellid = 8 },
 	},
 	templateType = CLONINGBUILDING,
 	planetMapCategory = "cloningfacility",
 	facilityType = CLONER_STANDARD,
-
 
 	gameObjectType = 521,
 	childObjects = {
