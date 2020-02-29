@@ -851,13 +851,4 @@ void CommandConfigManager::registerCommands() {
 	commandFactory.registerCommand<PetClearPatrolPointsCommand>(String("petClearPatrolPoints").toLowerCase());
 	commandFactory.registerCommand<PetGetPatrolPointCommand>(String("petGetPatrolPoint").toLowerCase());
 	
-	/* Flurry Custom Commands */
-	commandFactory.registerCommand<ForceChokeCommand>(String("forceChoke_npc").toLowerCase());
-	commandFactory.registerCommand<ForceLightningCone1Command>(String("forceLightningCone1_npc").toLowerCase());
-	commandFactory.registerCommand<ForceLightningCone2Command>(String("forceLightningCone2_npc").toLowerCase());
-	commandFactory.registerCommand<ForceLightningSingle1Command>(String("forceLightningSingle1_npc").toLowerCase());
-	commandFactory.registerCommand<ForceLightningSingle2Command>(String("forceLightningSingle2_npc").toLowerCase());
-	commandFactory.registerCommand<ForceThrow2Command>(String("forceThrow2_npc").toLowerCase());
-	commandFactory.registerCommand<MindBlast1Command>(String("mindBlast1_npc").toLowerCase());
-	commandFactory.registerCommand<MindBlast2Command>(String("mindBlast2_npc").toLowerCase());
-}
+	}
