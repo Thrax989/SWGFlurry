@@ -103,7 +103,7 @@ villageDageerinPhase3ConvoTemplate:addScreen(intro_reward);
 
 intro_max_tasks_for_day = ConvoScreen:new {
 	id = "intro_max_tasks_for_day",
-	leftDialog = "@conversation/fs_quests_sad2_conv:s_45e3060a", -- Unfortunately, the Shadow has managed to evade our patrols.  We can't find them.  It's only a matter of time before we catch up with them, though - check back tommorrow.
+	leftDialog = "@conversation/fs_quests_sad2_conv:s_45e3060a", -- Unfortunately, the Shadow has managed to evade our patrols.  We can't find them.  It's only a matter of time before we catch up with them, though - check back in one hour.
 	stopConversation = "true",
 	options = {}
 }
