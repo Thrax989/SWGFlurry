@@ -64,7 +64,7 @@ object_draft_schematic_community_crafting_component_refined_endrine = object_dra
 	ingredientTitleNames = {"raw_materials"},
 	ingredientSlotType = {2},
 	resourceTypes = {"object/tangible/loot/quest/shared_endrine.iff"},
-	resourceQuantities = {20},
+	resourceQuantities = {2},
 	contribution = {100},
 
 

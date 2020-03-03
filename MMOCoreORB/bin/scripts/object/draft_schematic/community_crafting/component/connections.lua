@@ -64,7 +64,7 @@ object_draft_schematic_community_crafting_component_connections = object_draft_s
 	ingredientTitleNames = {"raw_materials"},
 	ingredientSlotType = {2},
 	resourceTypes = {"object/tangible/loot/quest/shared_ostrine.iff"},
-	resourceQuantities = {10},
+	resourceQuantities = {2},
 	contribution = {100},
 
 
