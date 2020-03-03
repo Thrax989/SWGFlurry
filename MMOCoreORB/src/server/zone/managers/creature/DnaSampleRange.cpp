@@ -85,8 +85,8 @@ int DnaSampleRange::generateValue(int quality) const {
 		}
 	}
 
-	if (max > 1250)
-		max = 1250;
+	if (max > 1000)
+		max = 1000;
 
 	return (int)(System::random(max-min) + min);
 }

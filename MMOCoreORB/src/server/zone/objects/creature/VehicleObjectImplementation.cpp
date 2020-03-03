@@ -26,7 +26,7 @@ void VehicleObjectImplementation::fillObjectMenuResponse(ObjectMenuResponse* men
 	menuResponse->addRadialMenuItem(205, 1, "@pet/pet_menu:menu_enter_exit");
 	menuResponse->addRadialMenuItem(61, 3, "");
 
-+	if (player->getPlayerObject()->isPrivileged() || (checkInRangeGarage()))
+	if (player->getPlayerObject()->isPrivileged() || (checkInRangeGarage()))
 		menuResponse->addRadialMenuItem(62, 3, "@pet/pet_menu:menu_repair_vehicle"); //Repair Vehicle
 }
 

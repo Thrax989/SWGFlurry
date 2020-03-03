@@ -52,7 +52,7 @@ String GeneticLabratory::pickSpecialAttack(String a, String b, String c, String 
 		effectiveSpecial = "defaultattack";
 	}
 	if (effectiveSpecial == otherSpecial && effectiveSpecial != "defaultattack")
-		effectiveSpecial = pickSpecialAttack(effectiveSpecial,b,c,d,e,odds+200,otherSpecial);// pick another default mantis #5598 max loop count is 8 (i.e. odds starting at 100, at 8 calls it picks defaultattack
+		effectiveSpecial = pickSpecialAttack(effectiveSpecial,b,c,d,e,odds+100,otherSpecial);// pick another default mantis #5598 max loop count is 8 (i.e. odds starting at 100, at 8 calls it picks defaultattack
 	return effectiveSpecial;
 }
 void GeneticLabratory::recalculateResist(CraftingValues* craftingValues) {
@@ -182,52 +182,52 @@ void GeneticLabratory::setInitialCraftingValues(TangibleObject* prototype, Manuf
 	// Calculate resists
 	// 1 percent: (1000 - 0) / 100.0f;
 	float blastMax, energyMax, kineticMax,heatMax,coldMax,electricMax,acidMax,stunMax,saberMax;
-	blastMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::BLAST,80.0f);
-	kineticMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::KINETIC,80.0f);
-	energyMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ENERGY,80.0f);
-	heatMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::HEAT,80.0f);
-	coldMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::COLD,80.0f);
-	electricMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ELECTRICITY,80.0f);
-	acidMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ACID,80.0f);
-	stunMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::STUN,80.0f);
-	saberMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::LIGHTSABER,80.0f);
+	blastMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::BLAST,100.0f);
+	kineticMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::KINETIC,60.0f);
+	energyMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ENERGY,60.0f);
+	heatMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::HEAT,100.0f);
+	coldMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::COLD,100.0f);
+	electricMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ELECTRICITY,100.0f);
+	acidMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::ACID,100.0f);
+	stunMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::STUN,100.0f);
+	saberMax = Genetics::resistanceFormula(phy,pro,men,psy,agr,SharedWeaponObjectTemplate::LIGHTSABER,100.0f);
 
 	// lets clear the special bit if it moved to effective range.
 	if (saberMax == 0) {
 		spSaber = false;
-		saberMax = 80;
+		saberMax = 100;
 	}
 	if (blastMax == 0) {
 		spBlast = false;
-		blastMax = 80;
+		blastMax = 100;
 	}
 	if (kineticMax == 0) {
 		spKinetic = false;
-		kineticMax = 80;
+		kineticMax = 60;
 	}
 	if (energyMax == 0) {
 		spEnergy = false;
-		energyMax = 80;
+		energyMax = 60;
 	}
 	if (heatMax == 0) {
 		spHeat = false;
-		heatMax = 80;
+		heatMax = 100;
 	}
 	if (coldMax == 0) {
 		spCold = false;
-		coldMax = 80;
+		coldMax = 100;
 	}
 	if (electricMax == 0) {
 		spElectric = false;
-		electricMax = 80;
+		electricMax = 100;
 	}
 	if (acidMax == 0) {
 		spAcid = false;
-		acidMax = 80;
+		acidMax = 100;
 	}
 	if (stunMax == 0) {
 		spStun = false;
-		stunMax = 80;
+		stunMax = 100;
 	}
 
 	// Step 2. At this point we know the max values for all stats and we have calculated any armor specials needed
@@ -352,23 +352,23 @@ void GeneticLabratory::experimentRow(CraftingValues* craftingValues,int rowEffec
 		if (subtitlesTitle == title) {
 			subtitle = craftingValues->getExperimentalPropertySubtitle(i);
 			if (experimentationResult == CraftingManager::AMAZINGSUCCESS)
-				modifier = 0.35f * (float)pointsAttempted; //
+				modifier = 0.15f * (float)pointsAttempted; //
 			if (experimentationResult == CraftingManager::GREATSUCCESS)
-				modifier = 0.30 * (float)pointsAttempted; //
+				modifier = 0.10 * (float)pointsAttempted; //
 			if (experimentationResult == CraftingManager::GOODSUCCESS)
-				modifier = 0.25 * (float)pointsAttempted;
+				modifier = 0.05 * (float)pointsAttempted;
 			if (experimentationResult == CraftingManager::MODERATESUCCESS)
-				modifier = 0.20 * (float)pointsAttempted;
+				modifier = 0.025 * (float)pointsAttempted;
 			if (experimentationResult == CraftingManager::SUCCESS)
-				modifier = 0.15 * (float)pointsAttempted;
+				modifier = 0.015 * (float)pointsAttempted;
 			if (experimentationResult == CraftingManager::MARGINALSUCCESS)
-				modifier = 0.10;
+				modifier = 0.0;
 			if (experimentationResult == CraftingManager::OK)
-				modifier = -0.01 * (float)pointsAttempted;
+				modifier = -0.05 * (float)pointsAttempted;
 			if (experimentationResult == CraftingManager::BARELYSUCCESSFUL)
-				modifier = -0.2 * (float)pointsAttempted;
+				modifier = -0.1 * (float)pointsAttempted;
 			if (experimentationResult == CraftingManager::CRITICALFAILURE) {
-				modifier = -0.3 * (float)pointsAttempted;
+				modifier = -0.1 * (float)pointsAttempted;
 				// pick a random attribute
 				int which = System::random(10);
 				while(which != i) {

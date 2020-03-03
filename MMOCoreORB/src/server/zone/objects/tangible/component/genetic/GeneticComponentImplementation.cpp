@@ -97,13 +97,23 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	if (values->getCurrentValue("lightsabereffectiveness") > 0)
 		setSpecialResist(SharedWeaponObjectTemplate::LIGHTSABER);
 
-	if (fortitude > 500) {
-		armorRating = 0;
+	if (fortitude < 250) {
+		armorRating = 1;
 	}
+
+	if (fortitude >= 250) {
+		armorRating = 2;
+	}
+
+	if (fortitude >= 500) {
+		armorRating = 3;
+	}
+
 	// min - max values
 	if (fortitude > 1000) {
 		fortitude = 1000;
 	}
+
 	if (fortitude < 0)
 		fortitude = 1;
 
@@ -137,8 +147,8 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	if (dexterity < 0)
 		dexterity = 1;
 
-	if (fierceness > 1250){
-		fierceness = 1250;
+	if (fierceness > 1000){
+		fierceness = 1000;
 	}
 	if (fierceness < 0)
 		fierceness = 1;
@@ -159,24 +169,24 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	if (power < 0)
 		power = 1;
 	// max on resists
-	if (kinResist > 80)
-		kinResist = 80;
-	if (energyResist > 80)
-		energyResist = 80;
-	if (blastResist > 80)
-		blastResist = 80;
-	if (heatResist > 80)
-		heatResist = 80;
-	if (coldResist > 80)
-		coldResist = 80;
-	if (elecResist > 80)
-		elecResist = 80;
-	if (acidResist > 80)
-		acidResist = 80;
-	if (stunResist > 80)
-		stunResist = 80;
-	if (saberResist > 80)
-		saberResist = 80;
+	if (kinResist > 60)
+		kinResist = 60;
+	if (energyResist > 60)
+		energyResist = 60;
+	if (blastResist > 100)
+		blastResist = 100;
+	if (heatResist > 100)
+		heatResist = 100;
+	if (coldResist > 100)
+		coldResist = 100;
+	if (elecResist > 100)
+		elecResist = 100;
+	if (acidResist > 100)
+		acidResist = 100;
+	if (stunResist > 100)
+		stunResist = 100;
+	if (saberResist > 100)
+		saberResist = 100;
 	// Determine other factors
 	// HAM, attack speed, min/max damage toHit
 	// Health: har,dex
@@ -189,25 +199,33 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	// Strength: har,dep
 	// Quickness: dex,dep
 
-	health = (hardiness * 275)    + (dexterity * 75);
-	action = (dexterity * 275)    + (intelligence * 75);
-	mind   = (intelligence * 275) + (hardiness * 75);
-	stamina = (dexterity * 20)     + (endurance * 15);
-	willPower = (intelligence * 20) + (cleverness * 15);
-	constitution = (hardiness * 20)    + (fortitude * 15);
-	focus = (intelligence * 20) + (dependency * 15);
-	strength = (hardiness * 20)    + (dependency * 15);
-	quickness = (dexterity * 20)    + (dependency * 15);
-	hit = 15.00 + (10.00 * ((float)cleverness/300.0));
+	health = (hardiness * 15)    + (dexterity * 3);
+	action = (dexterity * 15)    + (intelligence * 3);
+	mind   = (intelligence * 15) + (hardiness * 3);
+	stamina = (dexterity*15)     + (endurance * 3);
+	willPower = (intelligence * 15) + (cleverness * 3);
+	constitution = (hardiness * 15)    + (fortitude * 3);
+	focus = (intelligence * 15) + (dependency * 3);
+	strength = (hardiness * 15)    + (dependency * 3);
+	quickness = (dexterity * 15)    + (dependency * 3);
+	hit = 0.40 + (0.55 * ((float)cleverness/1000.0));
 	// dps of pet use to determien min and max value.
-	int dps = ceil((ceil(15.0 + (1425.0 * ( ((float)power)/675.0))))/2.5);
-	speed = 2.5-((ceil(((float)courage)/10)*10)/1000);
-	maxDam = round(((float)dps * speed) * 3.5);
+	int dps = ceil((ceil(15.0 + (775.0 * ( ((float)power)/1000.0))))/3.5);
+	speed = 2.0-((ceil(((float)courage)/10)*10)/1000);
+	float damMod;
+	if (power < 3) {
+		damMod = 5;
+	} else if (power >= 3 && power < 25) {
+		damMod = round(pow(power,(1.0f/0.61f)));
+	} else {
+		damMod = round(((pow(power,((1.0f/0.57f)*-1.0f)))*1000.0f)*power);
+	}
+	maxDam = round(((float)dps * 10.0) * 6.0)+damMod;
 	//minDam = round(((float)dps * speed) * 0.5);
   	// round maxDam down to the closest multiple of 5
 	maxDam = maxDam - (maxDam % 5);
   	// subtract either 5 or 10 from maxDam to get the minDam
-	minDam = maxDam - ((System::random(1) + 1) * 5);
+	minDam = maxDam - 5;
 }
 
 String GeneticComponentImplementation::convertSpecialAttack(String &attackName) {
