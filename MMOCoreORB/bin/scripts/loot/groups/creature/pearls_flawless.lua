@@ -2,8 +2,8 @@
 
 pearls_flawless = {
 	description = "",
-	minimumLevel = 0,
-	maximumLevel = 0,
+	minimumLevel = 300,
+	maximumLevel = -1,
 	lootItems = {
 		{itemTemplate = "krayt_dragon_pearl_flawless", weight = 10000000}
 	}
