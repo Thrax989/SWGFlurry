@@ -64,7 +64,7 @@ object_draft_schematic_community_crafting_component_power_supply = object_draft_
 	ingredientTitleNames = {"electronics", "housing", "energy", "refactor"},
 	ingredientSlotType = {2, 2, 2, 3},
 	resourceTypes = {"object/tangible/loot/quest/shared_endrine.iff", "object/tangible/loot/quest/shared_ostrine.iff", "object/tangible/loot/quest/shared_wind_crystal.iff", "object/tangible/component/structure/shared_power_supply.iff"},
-	resourceQuantities = {2, 3, 5, 1},
+	resourceQuantities = {1, 1, 1, 1},
 	contribution = {100, 100, 100, 20},
 
 
