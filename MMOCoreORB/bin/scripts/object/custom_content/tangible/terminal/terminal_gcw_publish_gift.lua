@@ -132,7 +132,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Hill Top Player City (5,000 Credits)", "pc_hilltop_travel",
 			"Shadow Falls Player City (5,000 Credits)", "pc_shadowfalls_travel",
 			"Sundari Player City (5,000 Credits)", "pc_sundari_travel",
-			--"Beast Player City (5,000 Credits)", "pc_beast_travel",
+			"Janta Town Player City (5,000 Credits)", "pc_jantatwon_travel",
 		   },
 	}
 }
