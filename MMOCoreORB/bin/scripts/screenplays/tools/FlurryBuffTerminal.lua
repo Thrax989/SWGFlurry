@@ -5,10 +5,10 @@ FlurryBuffTerminal = ScreenPlay:new {
 	buffPetSecondaryStats = 0, -- 0 = No, 1 = Yes. Will also buff the pet's secondary stats.
 	buffs = {
 		-- Legend: {name, price, duration in hours, health, strength, constitution, action, quickness, stamina, mind, focus, willpower},
-		{"Starter Buff", 0, 2, 450, 450, 450, 450, 450, 450, 450, 450, 450},
-		{"Basic Buff", 5000, 2, 650, 500, 500, 650, 500, 500, 650, 500, 500},
-		{"Advanced Buff", 10000, 3, 800, 600, 600, 800, 600, 600, 800, 600, 600},
-		{"Apply Uber Buff", 25000, 4, 1200, 750, 750, 1200, 750, 750, 1200, 750, 750},
+		{"Starter Buff", 0, 2, 650, 650, 650, 650, 650, 650, 650, 650, 650},
+		{"Basic Buff", 5000, 2, 800, 800, 800, 850, 800, 800, 800, 800, 800},
+		{"Advanced Buff", 10000, 3, 1200, 800, 800, 1200, 800, 800, 1000, 800, 800},
+		{"Apply Uber Buff", 25000, 4, 2200, 2000, 2000, 2200, 2000, 2000, 1300, 1000, 1000},
 	},
 	termModel = "object/tangible/beta/beta_terminal_wound.iff",
 	termName = "Medical Services Terminal",
