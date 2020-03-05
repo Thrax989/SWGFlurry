@@ -21,9 +21,9 @@ void ForageManagerImplementation::startForaging(CreatureObject* player, int fora
 
 	Locker playerLocker(player);
 
-	int actionCostForage = 50;
-	int mindCostShellfish = 50;
-	int actionCostShellfish =  50;
+	int actionCostForage = 25;
+	int mindCostShellfish = 25;
+	int actionCostShellfish =  25;
 
 	//Check if already foraging.
 	Reference<Task*> pendingForage = player->getPendingTask("foraging");
@@ -173,15 +173,15 @@ void ForageManagerImplementation::finishForaging(CreatureObject* player, int for
 	case ForageManager::SCOUT:
 	case ForageManager::LAIR:
 		skillMod = player->getSkillMod("foraging");
-		chance = (int)(15 + (skillMod * 0.8));
+		chance = (int)(15 + (skillMod * 0.95));
 		break;
 	case ForageManager::MEDICAL:
 		skillMod = player->getSkillMod("medical_foraging");
-		chance = (int)(15 + (skillMod * 0.6));
+		chance = (int)(15 + (skillMod * 0.10));
 		break;
-	default:
-		skillMod = 20;
-		chance = (int)(15 + (skillMod * 0.6));
+	default:    // Shellfish harvesting
+		skillMod = player->getSkillMod("foraging");
+		chance = 100;   // 100%
 		break;
 	}
 
@@ -248,8 +248,12 @@ bool ForageManagerImplementation::forageGiveItems(CreatureObject* player, int fo
 	if (forageType == ForageManager::SCOUT) {
 		if (player->hasSkill("outdoors_scout_camp_03") && System::random(5) == 1)
 			itemCount += 1;
-		if (player->hasSkill("outdoors_scout_master") && System::random(5) == 1)
-			itemCount += 1;
+		if (player->hasSkill("outdoors_scout_master") && System::random(6) == 1)
+			itemCount += 2;
+		if (player->hasSkill("outdoors_ranger_harvest_02") && System::random(8) == 1)
+			itemCount += 3;
+		if (player->hasSkill("outdoors_ranger_master") && System::random(10) == 1)
+			itemCount += 4;
 	}
 
 	//Discard items if player's inventory does not have enough space.
@@ -412,7 +416,9 @@ bool ForageManagerImplementation::forageGiveResource(CreatureObject* player, flo
 		}
 	}
 
-	int quantity = System::random(50) + 50;
+	int quantity = System::random(50) + 50 + player->getSkillMod("foraging");
 	resourceManager->harvestResourceToPlayer(player, resource, quantity);
+	String harvestMsg = "You managed to locate " + String::valueOf(quantity) + " units of " + resource->getFinalClass() + ".";
+	player->sendSystemMessage(harvestMsg);
 	return true;
 }
