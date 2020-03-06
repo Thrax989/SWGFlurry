@@ -1177,6 +1177,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		player->executeObjectControllerAction(STRING_HASHCODE("dismount"));
 	}
 
+	attacker->notifyObservers(ObserverEventType::KILLEDCREATURE, player);
 	player->clearDots();
 
 	player->setPosture(CreaturePosture::DEAD, !isCombatAction, !isCombatAction);
