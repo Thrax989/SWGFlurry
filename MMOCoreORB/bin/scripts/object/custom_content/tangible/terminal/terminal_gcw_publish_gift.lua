@@ -128,7 +128,11 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Korrivan Player City (5,000 Credits)", "pc_korrivan_travel",
 			"Intas Minor Player City (5,000 Credits)", "pc_intas_travel",
-			--"Beast Player City (5,000 Credits)", "pc_beast_travel",
+			"Caladan Player City (5,000 Credits)", "pc_caladan_travel",
+			"Hill Top Player City (5,000 Credits)", "pc_hilltop_travel",
+			"Shadow Falls Player City (5,000 Credits)", "pc_shadowfalls_travel",
+			"Sundari Player City (5,000 Credits)", "pc_sundari_travel",
+			"Janta Town Player City (5,000 Credits)", "pc_jantatwon_travel",
 		   },
 	}
 }

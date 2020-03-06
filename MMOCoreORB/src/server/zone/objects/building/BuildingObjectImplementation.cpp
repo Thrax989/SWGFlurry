@@ -936,6 +936,64 @@ int BuildingObjectImplementation::notifyObjectInsertedToChild(SceneObject* objec
 				CellObject* cell = static_cast<CellObject*>(child);
 
 				if (cell != nullptr) {
+					if (child->getCloseObjects() != nullptr)
+					{
+						if (!child->getCloseObjects()->contains(object))
+						{
+							child->addInRangeObject(object, false);
+							object->sendTo(child, true, false);
+							//info("In Range",true);
+						}
+					}
+					else
+						{
+							child->notifyInsert(object);
+							//info("Notify Insert",true);
+						}
+					if (object->getCloseObjects() != nullptr)
+					{
+						if (!object->getCloseObjects()->contains(child))
+						{
+							object->addInRangeObject(child, false);
+							child->sendTo(object, true, false);
+							//info("In Range",true);
+						}
+					}
+					else
+						{
+							object->notifyInsert(child);
+							//info("Notify Insert",true);
+						}
+					SceneObject* building = static_cast<SceneObject*>(asBuildingObject());
+
+					if (building->getCloseObjects() != nullptr)
+					{
+						if (!building->getCloseObjects()->contains(object))
+						{
+							building->addInRangeObject(object, false);
+							object->sendTo(building, true, false);
+							//info("In Range",true);
+						}
+					}
+					else
+						{
+							building->notifyInsert(object);
+							//info("Notify Insert",true);
+						}
+					if (object->getCloseObjects() != nullptr)
+					{
+						if (!object->getCloseObjects()->contains(building))
+						{
+							object->addInRangeObject(building, false);
+							building->sendTo(object, true, false);
+							//info("In Range",true);
+						}
+					}
+					else
+						{
+							object->notifyInsert(building);
+							//info("Notify Insert",true);
+						}
 					for (int j = 0; j < cell->getContainerObjectsSize(); ++j) {
 						ManagedReference<SceneObject*> cobj = cell->getContainerObject(j);
 
