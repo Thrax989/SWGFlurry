@@ -99,6 +99,7 @@ void FactoryObjectImplementation::fillAttributeList(AttributeListMessage* alm, C
 			alm->insertAttribute("manufacture_object", prototype->getDisplayedName());
 		}
 
+		alm->insertAttribute("complexity", (int)schematic->getComplexity());
 		alm->insertAttribute("manufacture_time", timer);
 
 		ManagedReference<SceneObject*> outputHopper = getSlottedObject("output_hopper");
