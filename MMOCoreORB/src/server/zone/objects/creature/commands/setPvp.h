@@ -7,7 +7,19 @@
 #include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 #include "server/zone/packets/player/PlayMusicMessage.h"
-
+#include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
+#include "server/zone/objects/building/BuildingObject.h"
+#include "server/zone/objects/region/CityRegion.h"
+#include "server/zone/objects/installation/harvester/HarvesterObject.h"
+#include "server/zone/objects/installation/factory/FactoryObject.h"
+#include "server/zone/managers/stringid/StringIdManager.h"
+#include "server/zone/managers/mission/MissionManager.h"
+#include "server/zone/managers/collision/CollisionManager.h"
+#include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/managers/visibility/tasks/VisibilityDecayTask.h"
+#include "server/zone/Zone.h"
+#include "templates/faction/Factions.h"
+#include "server/zone/objects/player/FactionStatus.h"
 class setPvpCommand : public QueueCommand {
 public:
 
