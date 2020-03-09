@@ -5,6 +5,9 @@
 #ifndef REVOKESKILLCOMMAND_H_
 #define REVOKESKILLCOMMAND_H_
 
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/managers/skill/SkillManager.h"
+
 class RevokeSkillCommand : public QueueCommand {
 public:
 
@@ -20,6 +23,20 @@ public:
 
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
+			
+		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
+
+		if (object == nullptr || !object->isCreatureObject())
+			return INVALIDTARGET;
+
+		CreatureObject* targetCreature = cast<CreatureObject*>( object.get());
+
+		Locker clocker(targetCreature, creature);
+
+		SkillManager* skillManager = SkillManager::instance();
+		skillManager->surrenderSkill(arguments.toString(), targetCreature, true);
+		
+		creature->sendSystemMessage("Revoked skill " + arguments.toString() + "to " + targetCreature->getFirstName());
 
 		return SUCCESS;
 	}
