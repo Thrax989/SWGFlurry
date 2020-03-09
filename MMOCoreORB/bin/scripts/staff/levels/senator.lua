@@ -1,5 +1,5 @@
 senator = {
-	level = 14,
+	level = 18,
 	name = "senator",
 	tag = "Senator",
 	skills = {
