@@ -246,14 +246,14 @@ bool ForageManagerImplementation::forageGiveItems(CreatureObject* player, int fo
 	int itemCount = 1;
 	//Determine how many items the player finds.
 	if (forageType == ForageManager::SCOUT) {
-		if (player->hasSkill("outdoors_scout_camp_03") && System::random(5) == 1)
+		if (player->hasSkill("outdoors_scout_camp_03") && System::random(5) == 1) //20%
 			itemCount += 1;
-		if (player->hasSkill("outdoors_scout_master") && System::random(6) == 1)
-			itemCount += 2;
-		if (player->hasSkill("outdoors_ranger_harvest_02") && System::random(8) == 1)
-			itemCount += 3;
-		if (player->hasSkill("outdoors_ranger_master") && System::random(10) == 1)
-			itemCount += 4;
+		if (player->hasSkill("outdoors_scout_master") && System::random(5) == 1) //20%
+			itemCount += 1;
+		if (player->hasSkill("outdoors_ranger_novice") && System::random(5) < 3) //40%
+			itemCount += 1;
+		if (player->hasSkill("outdoors_ranger_master") && System::random(5) < 4) //60%
+			itemCount += 1;
 	}
 
 	//Discard items if player's inventory does not have enough space.
@@ -298,6 +298,7 @@ bool ForageManagerImplementation::forageGiveItems(CreatureObject* player, int fo
 		for (int i = 0; i < itemCount; i++) {
 			dice = System::random(200);
 			level = 1;
+			dice += System::random(player->getSkillMod("force_luck")*2);
 
 			if (dice >= 0 && dice < 160) {
 				lootGroup = "forage_food";
@@ -313,6 +314,7 @@ bool ForageManagerImplementation::forageGiveItems(CreatureObject* player, int fo
 	} else if (forageType == ForageManager::MEDICAL) { //Medical Forage
 		dice = System::random(200);
 		level = 1;
+		dice += System::random(player->getSkillMod("force_luck")*2);
 
 		if (dice >= 0 && dice < 40) { //Forage food.
 			lootGroup = "forage_food";
@@ -381,6 +383,7 @@ bool ForageManagerImplementation::forageGiveResource(CreatureObject* player, flo
 		return false;
 
 	ManagedReference<ResourceSpawn*> resource = nullptr;
+	int quantity = System::random(30) + 100;
 
 	if(resType.isEmpty()) {
 		//Get a list of the flora on the planet.
@@ -398,6 +401,7 @@ bool ForageManagerImplementation::forageGiveResource(CreatureObject* player, flo
 
 			} else { //If there is only one left, we give them that one even if density is 0.
 				resource = resources.get(key);
+				quantity += (density * (player->getSkillMod("medical_foraging")*.01));
 				break;
 			}
 		}
@@ -416,7 +420,18 @@ bool ForageManagerImplementation::forageGiveResource(CreatureObject* player, flo
 		}
 	}
 
-	int quantity = System::random(50) + 50 + player->getSkillMod("foraging");
+	if (player->hasSkill("outdoors_ranger_novice")){
+		quantity += System::random(20);
+		int skillMod = player->getSkillMod("foraging");
+		if (skillMod > 150)
+			skillMod = 150;
+		quantity += (skillMod * .4);
+		if (player->hasSkill("outdoors_ranger_master")){
+			quantity += 30;
+			quantity += System::random(50);
+		}
+	}
+
 	resourceManager->harvestResourceToPlayer(player, resource, quantity);
 	String harvestMsg = "You managed to locate " + String::valueOf(quantity) + " units of " + resource->getFinalClass() + ".";
 	player->sendSystemMessage(harvestMsg);
