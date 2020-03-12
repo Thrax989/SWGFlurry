@@ -56,13 +56,13 @@ void DroidArmorModuleDataComponent::initialize(DroidObject* droid) {
 
 	// Set damage resistance
 	if (level == 1 || level == 4) {
-		resist = 15;
+		resist = 20;
 	}
 	else if (level == 2 || level == 5) {
-		resist = 25;
+		resist = 40;
 	}
 	else if (level == 3 || level == 6) {
-		resist = 40;
+		resist = 60;
 	} else {
 		resist = 0;
 	}

@@ -31,7 +31,7 @@ public:
 	void deactivateWoundTreatment(CreatureObject* creature) const {
 		float modSkill = (float)creature->getSkillMod("healing_wound_speed");
 
-		int delay = (int)round((modSkill * -(2.0f / 25.0f)) + 20.0f);
+		int delay = (int)round((modSkill * -(2.0f / 25.0f)) + 13.0f);   // 5 seconds for master doc, 3 seconds with +25 Wound treatment speed or Havla (3 second minimum)
 
 		if (creature->hasBuff(BuffCRC::FOOD_HEAL_RECOVERY)) {
 			DelayedBuff* buff = cast<DelayedBuff*>( creature->getBuff(BuffCRC::FOOD_HEAL_RECOVERY));

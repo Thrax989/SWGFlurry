@@ -21,7 +21,7 @@ admin_intern_01 = {
 	jediStateRequired = 0,
 	skillAbility = {},
 	commands = {
-		"teleport",
+		"showFactionInformation",
 	},
 	skillModifiers = {},
 	schematicsGranted = {},
