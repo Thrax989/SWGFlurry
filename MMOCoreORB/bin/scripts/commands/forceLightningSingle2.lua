@@ -91,9 +91,24 @@ ForceLightningSingle2Command = {
 
 	animation = "force_lightning_1_particle_level_3",
 	animType = GENERATE_INTENSITY,
-
 	combatSpam = "forcelightningsingle2",
 
+		dotEffects = {
+	  DotEffect( 
+		ONFIRE, 
+		{"resistance_fire", "fire_resist"},
+		HEALTH,
+		true,
+		0,
+		100,
+		100, 
+		60,
+		10,
+		2
+	  )
+	},
+	
+	
 	poolsToDamage = RANDOM_ATTRIBUTE,
 
 	forceAttack = true,
