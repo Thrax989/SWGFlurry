@@ -1,0 +1,5 @@
+object_tangible_saga_system_rewards_pgc_robe_statue = object_tangible_saga_system_rewards_shared_pgc_robe_statue:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_saga_system_rewards_pgc_robe_statue, "object/tangible/saga_system/rewards/pgc_robe_statue.iff")

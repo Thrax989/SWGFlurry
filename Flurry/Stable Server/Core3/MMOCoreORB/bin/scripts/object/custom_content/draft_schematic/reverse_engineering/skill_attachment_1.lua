@@ -1,0 +1,5 @@
+object_draft_schematic_reverse_engineering_skill_attachment_1 = object_draft_schematic_reverse_engineering_shared_skill_attachment_1:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_reverse_engineering_skill_attachment_1, "object/draft_schematic/reverse_engineering/skill_attachment_1.iff")

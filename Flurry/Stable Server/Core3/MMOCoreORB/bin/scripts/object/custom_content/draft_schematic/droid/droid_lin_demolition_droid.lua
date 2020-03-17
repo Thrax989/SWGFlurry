@@ -1,0 +1,5 @@
+object_draft_schematic_droid_droid_lin_demolition_droid = object_draft_schematic_droid_shared_droid_lin_demolition_droid:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_droid_droid_lin_demolition_droid, "object/draft_schematic/droid/droid_lin_demolition_droid.iff")

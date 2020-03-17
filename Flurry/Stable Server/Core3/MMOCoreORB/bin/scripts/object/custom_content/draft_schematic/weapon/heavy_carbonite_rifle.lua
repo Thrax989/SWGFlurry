@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_heavy_carbonite_rifle = object_draft_schematic_weapon_shared_heavy_carbonite_rifle:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_heavy_carbonite_rifle, "object/draft_schematic/weapon/heavy_carbonite_rifle.iff")

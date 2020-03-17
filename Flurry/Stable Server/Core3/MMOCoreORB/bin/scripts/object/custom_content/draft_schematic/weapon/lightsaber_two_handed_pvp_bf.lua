@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_lightsaber_two_handed_pvp_bf = object_draft_schematic_weapon_shared_lightsaber_two_handed_pvp_bf:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_lightsaber_two_handed_pvp_bf, "object/draft_schematic/weapon/lightsaber_two_handed_pvp_bf.iff")

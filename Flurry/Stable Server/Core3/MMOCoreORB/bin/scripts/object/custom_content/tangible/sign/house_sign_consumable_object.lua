@@ -1,0 +1,3 @@
+object_tangible_sign_house_sign_consumable_object = object_tangible_sign_shared_house_sign_consumable_object:new {
+}
+ObjectTemplates:addTemplate(object_tangible_sign_house_sign_consumable_object, "object/tangible/sign/house_sign_consumable_object.iff")

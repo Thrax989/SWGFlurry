@@ -1,0 +1,5 @@
+object_tangible_container_general_house_container_lock = object_tangible_container_general_shared_house_container_lock:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_container_general_house_container_lock, "object/tangible/container/general/house_container_lock.iff")

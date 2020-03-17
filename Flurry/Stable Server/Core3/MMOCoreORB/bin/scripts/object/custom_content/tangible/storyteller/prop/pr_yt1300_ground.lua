@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_yt1300_ground = object_tangible_storyteller_prop_shared_pr_yt1300_ground:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_yt1300_ground, "object/tangible/storyteller/prop/pr_yt1300_ground.iff")

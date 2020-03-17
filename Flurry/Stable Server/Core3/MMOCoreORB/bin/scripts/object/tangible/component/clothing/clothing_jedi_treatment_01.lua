@@ -1,0 +1,4 @@
+object_tangible_component_clothing_clothing_jedi_treatment_01 = object_tangible_component_clothing_shared_clothing_jedi_treatment_01:new {
+
+}
+ObjectTemplates: addTemplate(object_tangible_component_clothing_clothing_jedi_treatment_01, "object/tangible/component/clothing/clothing_jedi_treatment_01.iff")

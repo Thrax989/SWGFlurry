@@ -1,0 +1,5 @@
+object_tangible_food_generic_mtp_meatlump_lump_food = object_tangible_food_generic_shared_mtp_meatlump_lump_food:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_food_generic_mtp_meatlump_lump_food, "object/tangible/food/generic/mtp_meatlump_lump_food.iff")

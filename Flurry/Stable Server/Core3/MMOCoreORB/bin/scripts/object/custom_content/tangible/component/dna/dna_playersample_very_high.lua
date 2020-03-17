@@ -1,0 +1,5 @@
+object_tangible_component_dna_dna_playersample_very_high = object_tangible_component_dna_shared_dna_playersample_very_high:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_dna_dna_playersample_very_high, "object/tangible/component/dna/dna_playersample_very_high.iff")

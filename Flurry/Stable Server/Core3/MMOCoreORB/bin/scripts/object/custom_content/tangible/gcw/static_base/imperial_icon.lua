@@ -1,0 +1,5 @@
+object_tangible_gcw_static_base_imperial_icon = object_tangible_gcw_static_base_shared_imperial_icon:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_static_base_imperial_icon, "object/tangible/gcw/static_base/imperial_icon.iff")

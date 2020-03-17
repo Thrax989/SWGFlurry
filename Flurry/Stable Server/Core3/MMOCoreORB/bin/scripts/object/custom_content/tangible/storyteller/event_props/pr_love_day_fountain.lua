@@ -1,0 +1,5 @@
+object_tangible_storyteller_event_props_pr_love_day_fountain = object_tangible_storyteller_event_props_shared_pr_love_day_fountain:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_event_props_pr_love_day_fountain, "object/tangible/storyteller/event_props/pr_love_day_fountain.iff")

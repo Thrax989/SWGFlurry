@@ -1,0 +1,5 @@
+object_tangible_powerup_weapon_melee_hilt_reinforcement_kit = object_tangible_powerup_weapon_shared_melee_hilt_reinforcement_kit:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_powerup_weapon_melee_hilt_reinforcement_kit, "object/tangible/powerup/weapon/melee_hilt_reinforcement_kit.iff")

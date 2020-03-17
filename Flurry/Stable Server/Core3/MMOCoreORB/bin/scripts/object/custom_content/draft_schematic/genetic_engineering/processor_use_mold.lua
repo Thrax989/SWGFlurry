@@ -1,0 +1,5 @@
+object_draft_schematic_genetic_engineering_processor_use_mold = object_draft_schematic_genetic_engineering_shared_processor_use_mold:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_processor_use_mold, "object/draft_schematic/genetic_engineering/processor_use_mold.iff")

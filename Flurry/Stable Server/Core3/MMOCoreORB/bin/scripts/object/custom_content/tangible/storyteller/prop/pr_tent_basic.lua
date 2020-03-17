@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_tent_basic = object_tangible_storyteller_prop_shared_pr_tent_basic:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_tent_basic, "object/tangible/storyteller/prop/pr_tent_basic.iff")

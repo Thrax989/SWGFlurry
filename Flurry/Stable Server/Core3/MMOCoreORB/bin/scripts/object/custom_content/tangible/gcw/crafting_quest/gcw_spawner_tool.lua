@@ -1,0 +1,5 @@
+object_tangible_gcw_crafting_quest_gcw_spawner_tool = object_tangible_gcw_crafting_quest_shared_gcw_spawner_tool:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_crafting_quest_gcw_spawner_tool, "object/tangible/gcw/crafting_quest/gcw_spawner_tool.iff")

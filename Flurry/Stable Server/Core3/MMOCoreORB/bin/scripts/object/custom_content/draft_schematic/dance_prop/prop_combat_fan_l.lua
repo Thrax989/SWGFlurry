@@ -1,0 +1,5 @@
+object_draft_schematic_dance_prop_prop_combat_fan_l = object_draft_schematic_dance_prop_shared_prop_combat_fan_l:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_dance_prop_prop_combat_fan_l, "object/draft_schematic/dance_prop/prop_combat_fan_l.iff")

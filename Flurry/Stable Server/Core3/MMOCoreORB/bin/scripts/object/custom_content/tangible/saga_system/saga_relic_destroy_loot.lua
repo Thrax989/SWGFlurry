@@ -1,0 +1,5 @@
+object_tangible_saga_system_saga_relic_destroy_loot = object_tangible_saga_system_shared_saga_relic_destroy_loot:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_saga_system_saga_relic_destroy_loot, "object/tangible/saga_system/saga_relic_destroy_loot.iff")

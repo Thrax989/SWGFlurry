@@ -1,0 +1,5 @@
+object_tangible_gcw_base_rewards_rally_banner = object_tangible_gcw_base_rewards_shared_rally_banner:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_base_rewards_rally_banner, "object/tangible/gcw/base_rewards/rally_banner.iff")

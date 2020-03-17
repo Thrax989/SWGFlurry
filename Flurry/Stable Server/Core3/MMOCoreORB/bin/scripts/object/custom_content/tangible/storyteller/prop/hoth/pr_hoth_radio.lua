@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_hoth_pr_hoth_radio = object_tangible_storyteller_prop_hoth_shared_pr_hoth_radio:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_hoth_pr_hoth_radio, "object/tangible/storyteller/prop/hoth/pr_hoth_radio.iff")

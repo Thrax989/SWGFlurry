@@ -1,0 +1,5 @@
+object_tangible_component_droid_combat_module_droideka_shield = object_tangible_component_droid_shared_combat_module_droideka_shield:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_droid_combat_module_droideka_shield, "object/tangible/component/droid/combat_module_droideka_shield.iff")

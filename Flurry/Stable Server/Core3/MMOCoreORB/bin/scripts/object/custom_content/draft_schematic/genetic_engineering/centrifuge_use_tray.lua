@@ -1,0 +1,5 @@
+object_draft_schematic_genetic_engineering_centrifuge_use_tray = object_draft_schematic_genetic_engineering_shared_centrifuge_use_tray:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_centrifuge_use_tray, "object/draft_schematic/genetic_engineering/centrifuge_use_tray.iff")

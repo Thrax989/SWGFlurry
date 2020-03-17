@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_gcw_build_resource = object_tangible_terminal_shared_terminal_gcw_build_resource:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_gcw_build_resource, "object/tangible/terminal/terminal_gcw_build_resource.iff")

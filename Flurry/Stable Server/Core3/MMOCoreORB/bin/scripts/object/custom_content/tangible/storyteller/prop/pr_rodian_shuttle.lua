@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_rodian_shuttle = object_tangible_storyteller_prop_shared_pr_rodian_shuttle:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_rodian_shuttle, "object/tangible/storyteller/prop/pr_rodian_shuttle.iff")

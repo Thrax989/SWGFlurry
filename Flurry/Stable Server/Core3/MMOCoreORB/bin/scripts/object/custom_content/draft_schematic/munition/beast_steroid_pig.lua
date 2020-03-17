@@ -1,0 +1,5 @@
+object_draft_schematic_munition_beast_steroid_pig = object_draft_schematic_munition_shared_beast_steroid_pig:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_munition_beast_steroid_pig, "object/draft_schematic/munition/beast_steroid_pig.iff")

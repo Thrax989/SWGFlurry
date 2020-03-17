@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_tie_fighter = object_tangible_storyteller_prop_shared_pr_tie_fighter:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_tie_fighter, "object/tangible/storyteller/prop/pr_tie_fighter.iff")

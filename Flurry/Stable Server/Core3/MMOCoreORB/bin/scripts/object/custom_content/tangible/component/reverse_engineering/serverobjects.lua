@@ -1,0 +1,8 @@
+includeFile("custom_content/tangible/component/reverse_engineering/base_power_bit.lua")
+includeFile("custom_content/tangible/component/reverse_engineering/enhancement_module.lua")
+includeFile("custom_content/tangible/component/reverse_engineering/modifier_bit.lua")
+includeFile("custom_content/tangible/component/reverse_engineering/power_bit.lua")
+includeFile("custom_content/tangible/component/reverse_engineering/power_bit_0.lua")
+includeFile("custom_content/tangible/component/reverse_engineering/power_bit_1.lua")
+includeFile("custom_content/tangible/component/reverse_engineering/power_bit_2.lua")
+includeFile("custom_content/tangible/component/reverse_engineering/power_bit_3.lua")

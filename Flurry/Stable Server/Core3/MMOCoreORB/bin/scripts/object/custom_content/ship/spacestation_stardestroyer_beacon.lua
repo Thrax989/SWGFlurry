@@ -1,0 +1,5 @@
+object_ship_spacestation_stardestroyer_beacon = object_ship_shared_spacestation_stardestroyer_beacon:new {
+
+}
+
+ObjectTemplates:addTemplate(object_ship_spacestation_stardestroyer_beacon, "object/ship/spacestation_stardestroyer_beacon.iff")

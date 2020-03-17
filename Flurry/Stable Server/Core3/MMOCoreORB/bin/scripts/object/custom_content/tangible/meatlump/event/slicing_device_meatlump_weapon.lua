@@ -1,0 +1,5 @@
+object_tangible_meatlump_event_slicing_device_meatlump_weapon = object_tangible_meatlump_event_shared_slicing_device_meatlump_weapon:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_meatlump_event_slicing_device_meatlump_weapon, "object/tangible/meatlump/event/slicing_device_meatlump_weapon.iff")

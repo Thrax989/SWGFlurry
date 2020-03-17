@@ -1,0 +1,5 @@
+object_tangible_component_droid_data_storage_module_7 = object_tangible_component_droid_shared_data_storage_module_7:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_droid_data_storage_module_7, "object/tangible/component/droid/data_storage_module_7.iff")

@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_tie_bomber = object_tangible_storyteller_prop_shared_pr_tie_bomber:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_tie_bomber, "object/tangible/storyteller/prop/pr_tie_bomber.iff")

@@ -1,0 +1,5 @@
+object_tangible_component_weapon_projectile_feed_mechanism_enhancement_bounty = object_tangible_component_weapon_shared_projectile_feed_mechanism_enhancement_bounty:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_projectile_feed_mechanism_enhancement_bounty, "object/tangible/component/weapon/projectile_feed_mechanism_enhancement_bounty.iff")
