@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_appearance_weapon_appearance_rifle_blaster_dlt20a = object_draft_schematic_weapon_appearance_shared_weapon_appearance_rifle_blaster_dlt20a:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_appearance_weapon_appearance_rifle_blaster_dlt20a, "object/draft_schematic/weapon/appearance/weapon_appearance_rifle_blaster_dlt20a.iff")

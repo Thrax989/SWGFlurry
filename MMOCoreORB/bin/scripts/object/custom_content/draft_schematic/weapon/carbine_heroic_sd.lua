@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_carbine_heroic_sd = object_draft_schematic_weapon_shared_carbine_heroic_sd:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_carbine_heroic_sd, "object/draft_schematic/weapon/carbine_heroic_sd.iff")

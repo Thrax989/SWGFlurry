@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_rifle_bowcaster_master = object_draft_schematic_weapon_shared_rifle_bowcaster_master:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_rifle_bowcaster_master, "object/draft_schematic/weapon/rifle_bowcaster_master.iff")

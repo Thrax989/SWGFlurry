@@ -1,5 +1,0 @@
-object_tangible_storyteller_story_token_vet_reward = object_tangible_storyteller_shared_story_token_vet_reward:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_story_token_vet_reward, "object/tangible/storyteller/story_token_vet_reward.iff")

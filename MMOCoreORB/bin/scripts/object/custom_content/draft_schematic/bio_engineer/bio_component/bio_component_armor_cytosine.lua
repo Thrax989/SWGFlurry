@@ -1,5 +1,0 @@
-object_draft_schematic_bio_engineer_bio_component_bio_component_armor_cytosine = object_draft_schematic_bio_engineer_bio_component_shared_bio_component_armor_cytosine:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_bio_engineer_bio_component_bio_component_armor_cytosine, "object/draft_schematic/bio_engineer/bio_component/bio_component_armor_cytosine.iff")

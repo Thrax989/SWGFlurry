@@ -1,5 +1,0 @@
-object_draft_schematic_vehicle_civilian_speeder_stap = object_draft_schematic_vehicle_civilian_shared_speeder_stap:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_vehicle_civilian_speeder_stap, "object/draft_schematic/vehicle/civilian/speeder_stap.iff")

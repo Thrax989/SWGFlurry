@@ -1,5 +1,0 @@
-object_draft_schematic_space_capacitor_collection_reward_capacitor_01_mk4 = object_draft_schematic_space_capacitor_shared_collection_reward_capacitor_01_mk4:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_space_capacitor_collection_reward_capacitor_01_mk4, "object/draft_schematic/space/capacitor/collection_reward_capacitor_01_mk4.iff")

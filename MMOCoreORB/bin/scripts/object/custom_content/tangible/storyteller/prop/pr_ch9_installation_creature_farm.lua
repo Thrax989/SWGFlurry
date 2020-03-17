@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_ch9_installation_creature_farm = object_tangible_storyteller_prop_shared_pr_ch9_installation_creature_farm:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_installation_creature_farm, "object/tangible/storyteller/prop/pr_ch9_installation_creature_farm.iff")

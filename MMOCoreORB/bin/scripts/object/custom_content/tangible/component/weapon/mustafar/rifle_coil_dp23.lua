@@ -1,5 +1,0 @@
-object_tangible_component_weapon_mustafar_rifle_coil_dp23 = object_tangible_component_weapon_mustafar_shared_rifle_coil_dp23:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_weapon_mustafar_rifle_coil_dp23, "object/tangible/component/weapon/mustafar/rifle_coil_dp23.iff")

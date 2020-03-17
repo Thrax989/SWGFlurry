@@ -1,5 +1,0 @@
-object_draft_schematic_clothing_clothing_backpack_field_08 = object_draft_schematic_clothing_shared_clothing_backpack_field_08:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_backpack_field_08, "object/draft_schematic/clothing/clothing_backpack_field_08.iff")

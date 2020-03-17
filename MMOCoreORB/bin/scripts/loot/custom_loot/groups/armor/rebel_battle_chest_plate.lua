@@ -1,1 +1,0 @@
-rebel_battle_chest_plate = {	description = "",	minimumLevel = 0,	maximumLevel = 0,	lootItems = {		{itemTemplate = "armor_rebel_battle_chest_plate", weight = 10000000}	}}addLootGroupTemplate("rebel_battle_chest_plate", rebel_battle_chest_plate)

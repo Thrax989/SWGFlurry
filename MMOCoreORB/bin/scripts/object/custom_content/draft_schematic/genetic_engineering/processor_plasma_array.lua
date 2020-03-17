@@ -1,5 +1,0 @@
-object_draft_schematic_genetic_engineering_processor_plasma_array = object_draft_schematic_genetic_engineering_shared_processor_plasma_array:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_processor_plasma_array, "object/draft_schematic/genetic_engineering/processor_plasma_array.iff")

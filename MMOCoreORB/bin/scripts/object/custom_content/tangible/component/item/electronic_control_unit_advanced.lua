@@ -1,5 +1,0 @@
-object_tangible_component_item_electronic_control_unit_advanced = object_tangible_component_item_shared_electronic_control_unit_advanced:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_item_electronic_control_unit_advanced, "object/tangible/component/item/electronic_control_unit_advanced.iff")

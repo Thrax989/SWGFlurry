@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_appearance_weapon_appearance_sword_ryyk_blade = object_draft_schematic_weapon_appearance_shared_weapon_appearance_sword_ryyk_blade:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_appearance_weapon_appearance_sword_ryyk_blade, "object/draft_schematic/weapon/appearance/weapon_appearance_sword_ryyk_blade.iff")

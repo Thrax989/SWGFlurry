@@ -1,1 +1,0 @@
-object_soundobject_soundobject_nova_orion_band = object_soundobject_shared_soundobject_nova_orion_band:new {}ObjectTemplates:addTemplate(object_soundobject_soundobject_nova_orion_band, "object/soundobject/soundobject_nova_orion_band.iff")

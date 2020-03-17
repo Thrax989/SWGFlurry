@@ -1,5 +1,0 @@
-object_tangible_storyteller_theater_flat_layer_large = object_tangible_storyteller_theater_shared_flat_layer_large:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_theater_flat_layer_large, "object/tangible/storyteller/theater/flat_layer_large.iff")

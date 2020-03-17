@@ -1,1 +1,0 @@
-object_mobile_skeleton_vr_mouse_droid = object_mobile_skeleton_shared_vr_mouse_droid:new {}ObjectTemplates:addTemplate(object_mobile_skeleton_vr_mouse_droid, "object/mobile/skeleton/vr_mouse_droid.iff")

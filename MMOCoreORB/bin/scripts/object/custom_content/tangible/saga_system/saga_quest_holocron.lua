@@ -1,5 +1,0 @@
-object_tangible_saga_system_saga_quest_holocron = object_tangible_saga_system_shared_saga_quest_holocron:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_saga_system_saga_quest_holocron, "object/tangible/saga_system/saga_quest_holocron.iff")
