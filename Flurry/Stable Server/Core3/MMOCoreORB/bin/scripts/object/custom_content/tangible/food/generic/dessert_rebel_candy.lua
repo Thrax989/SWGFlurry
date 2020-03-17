@@ -1,0 +1,5 @@
+object_tangible_food_generic_dessert_rebel_candy = object_tangible_food_generic_shared_dessert_rebel_candy:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_food_generic_dessert_rebel_candy, "object/tangible/food/generic/dessert_rebel_candy.iff")

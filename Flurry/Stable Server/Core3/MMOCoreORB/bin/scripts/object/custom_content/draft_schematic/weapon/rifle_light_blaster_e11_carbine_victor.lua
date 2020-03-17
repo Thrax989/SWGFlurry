@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_rifle_light_blaster_e11_carbine_victor = object_draft_schematic_weapon_shared_rifle_light_blaster_e11_carbine_victor:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_rifle_light_blaster_e11_carbine_victor, "object/draft_schematic/weapon/rifle_light_blaster_e11_carbine_victor.iff")

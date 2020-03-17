@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_eqp_rebel_kiosk = object_tangible_storyteller_prop_shared_pr_eqp_rebel_kiosk:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_eqp_rebel_kiosk, "object/tangible/storyteller/prop/pr_eqp_rebel_kiosk.iff")

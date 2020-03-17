@@ -1,0 +1,5 @@
+object_draft_schematic_droid_droid_droideka = object_draft_schematic_droid_shared_droid_droideka:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_droid_droid_droideka, "object/draft_schematic/droid/droid_droideka.iff")

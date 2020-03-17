@@ -1,0 +1,3 @@
+object_tangible_terminal_npe_generator = object_tangible_terminal_shared_npe_generator:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_npe_generator, "object/tangible/terminal/npe_generator.iff")

@@ -1,0 +1,5 @@
+object_tangible_component_vehicle_panning_droid = object_tangible_component_vehicle_shared_panning_droid:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_vehicle_panning_droid, "object/tangible/component/vehicle/panning_droid.iff")

@@ -1,0 +1,5 @@
+object_tangible_meatlump_hideout_mtp_hideout_rock_chair = object_tangible_meatlump_hideout_shared_mtp_hideout_rock_chair:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_meatlump_hideout_mtp_hideout_rock_chair, "object/tangible/meatlump/hideout/mtp_hideout_rock_chair.iff")

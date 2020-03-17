@@ -1,0 +1,5 @@
+object_draft_schematic_food_bantha_surprise = object_draft_schematic_food_shared_bantha_surprise:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_food_bantha_surprise, "object/draft_schematic/food/bantha_surprise.iff")

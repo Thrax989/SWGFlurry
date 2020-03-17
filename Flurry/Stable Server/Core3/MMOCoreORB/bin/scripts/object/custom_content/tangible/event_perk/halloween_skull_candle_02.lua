@@ -1,0 +1,3 @@
+object_tangible_event_perk_halloween_skull_candle_02 = object_tangible_event_perk_shared_halloween_skull_candle_02:new {
+}
+ObjectTemplates:addTemplate(object_tangible_event_perk_halloween_skull_candle_02, "object/tangible/event_perk/halloween_skull_candle_02.iff")

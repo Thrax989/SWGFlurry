@@ -1,0 +1,5 @@
+object_tangible_component_reverse_engineering_power_bit_0 = object_tangible_component_reverse_engineering_shared_power_bit_0:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_reverse_engineering_power_bit_0, "object/tangible/component/reverse_engineering/power_bit_0.iff")

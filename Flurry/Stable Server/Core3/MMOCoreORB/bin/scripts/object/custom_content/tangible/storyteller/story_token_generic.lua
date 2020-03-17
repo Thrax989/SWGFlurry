@@ -1,0 +1,5 @@
+object_tangible_storyteller_story_token_generic = object_tangible_storyteller_shared_story_token_generic:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_story_token_generic, "object/tangible/storyteller/story_token_generic.iff")

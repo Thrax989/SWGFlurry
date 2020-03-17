@@ -1,0 +1,5 @@
+object_draft_schematic_clothing_clothing_backpack_efol_wings = object_draft_schematic_clothing_shared_clothing_backpack_efol_wings:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_backpack_efol_wings, "object/draft_schematic/clothing/clothing_backpack_efol_wings.iff")

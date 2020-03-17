@@ -1,0 +1,5 @@
+object_draft_schematic_armor_armor_appearance_mandalorian_imperial_chest_plate = object_draft_schematic_armor_shared_armor_appearance_mandalorian_imperial_chest_plate:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_armor_armor_appearance_mandalorian_imperial_chest_plate, "object/draft_schematic/armor/armor_appearance_mandalorian_imperial_chest_plate.iff")

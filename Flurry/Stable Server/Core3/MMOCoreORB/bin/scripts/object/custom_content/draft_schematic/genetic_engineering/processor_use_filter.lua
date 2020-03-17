@@ -1,0 +1,5 @@
+object_draft_schematic_genetic_engineering_processor_use_filter = object_draft_schematic_genetic_engineering_shared_processor_use_filter:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_processor_use_filter, "object/draft_schematic/genetic_engineering/processor_use_filter.iff")

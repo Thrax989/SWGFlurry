@@ -1,0 +1,5 @@
+object_tangible_gcw_base_rewards_military_cooldown_reducer = object_tangible_gcw_base_rewards_shared_military_cooldown_reducer:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_base_rewards_military_cooldown_reducer, "object/tangible/gcw/base_rewards/military_cooldown_reducer.iff")

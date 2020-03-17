@@ -1,0 +1,5 @@
+object_draft_schematic_ranger_item_trap_flashbang = object_draft_schematic_ranger_shared_item_trap_flashbang:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_ranger_item_trap_flashbang, "object/draft_schematic/ranger/item_trap_flashbang.iff")

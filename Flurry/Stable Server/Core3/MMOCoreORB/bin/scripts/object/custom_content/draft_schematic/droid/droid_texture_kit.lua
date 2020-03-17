@@ -1,0 +1,5 @@
+object_draft_schematic_droid_droid_texture_kit = object_draft_schematic_droid_shared_droid_texture_kit:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_droid_droid_texture_kit, "object/draft_schematic/droid/droid_texture_kit.iff")

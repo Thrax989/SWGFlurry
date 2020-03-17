@@ -1,0 +1,5 @@
+object_tangible_gcw_pvp_rank_rewards_rebel_battle_banner = object_tangible_gcw_pvp_rank_rewards_shared_rebel_battle_banner:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_pvp_rank_rewards_rebel_battle_banner, "object/tangible/gcw/pvp_rank_rewards/rebel_battle_banner.iff")

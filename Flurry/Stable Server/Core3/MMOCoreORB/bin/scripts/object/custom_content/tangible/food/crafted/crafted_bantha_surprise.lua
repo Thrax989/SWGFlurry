@@ -1,0 +1,5 @@
+object_tangible_food_crafted_crafted_bantha_surprise = object_tangible_food_crafted_shared_crafted_bantha_surprise:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_food_crafted_crafted_bantha_surprise, "object/tangible/food/crafted/crafted_bantha_surprise.iff")

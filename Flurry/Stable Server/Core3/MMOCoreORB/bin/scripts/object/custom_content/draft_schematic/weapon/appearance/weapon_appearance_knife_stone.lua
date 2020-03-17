@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_appearance_weapon_appearance_knife_stone = object_draft_schematic_weapon_appearance_shared_weapon_appearance_knife_stone:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_appearance_weapon_appearance_knife_stone, "object/draft_schematic/weapon/appearance/weapon_appearance_knife_stone.iff")

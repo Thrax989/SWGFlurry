@@ -1,0 +1,5 @@
+object_intangible_pet_beast_master_bm_monkey_lizard = object_intangible_pet_beast_master_shared_bm_monkey_lizard:new {
+
+}
+
+ObjectTemplates:addTemplate(object_intangible_pet_beast_master_bm_monkey_lizard, "object/intangible/pet/beast_master/bm_monkey_lizard.iff")

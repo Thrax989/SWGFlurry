@@ -1,0 +1,5 @@
+object_tangible_storyteller_story_token_flavor_npc = object_tangible_storyteller_shared_story_token_flavor_npc:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_story_token_flavor_npc, "object/tangible/storyteller/story_token_flavor_npc.iff")

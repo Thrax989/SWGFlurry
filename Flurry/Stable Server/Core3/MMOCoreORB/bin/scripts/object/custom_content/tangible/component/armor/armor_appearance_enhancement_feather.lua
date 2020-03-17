@@ -1,0 +1,5 @@
+object_tangible_component_armor_armor_appearance_enhancement_feather = object_tangible_component_armor_shared_armor_appearance_enhancement_feather:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_armor_armor_appearance_enhancement_feather, "object/tangible/component/armor/armor_appearance_enhancement_feather.iff")

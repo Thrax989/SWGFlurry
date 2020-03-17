@@ -1,0 +1,5 @@
+object_tangible_gcw_crafting_quest_gcw_signal_amplifier = object_tangible_gcw_crafting_quest_shared_gcw_signal_amplifier:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_crafting_quest_gcw_signal_amplifier, "object/tangible/gcw/crafting_quest/gcw_signal_amplifier.iff")

@@ -1,0 +1,5 @@
+object_tangible_quest_wave_event_aaa_wave_event_test_object = object_tangible_quest_wave_event_shared_aaa_wave_event_test_object:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_quest_wave_event_aaa_wave_event_test_object, "object/tangible/quest/wave_event/aaa_wave_event_test_object.iff")

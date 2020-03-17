@@ -1,0 +1,5 @@
+object_tangible_saga_system_pgc_relic_fragment = object_tangible_saga_system_shared_pgc_relic_fragment:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_saga_system_pgc_relic_fragment, "object/tangible/saga_system/pgc_relic_fragment.iff")

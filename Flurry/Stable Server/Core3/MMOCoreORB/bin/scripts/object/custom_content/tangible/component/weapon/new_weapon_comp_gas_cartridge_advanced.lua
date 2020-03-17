@@ -1,0 +1,5 @@
+object_tangible_component_weapon_new_weapon_comp_gas_cartridge_advanced = object_tangible_component_weapon_shared_new_weapon_comp_gas_cartridge_advanced:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_new_weapon_comp_gas_cartridge_advanced, "object/tangible/component/weapon/new_weapon_comp_gas_cartridge_advanced.iff")

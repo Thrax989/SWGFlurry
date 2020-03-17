@@ -1,0 +1,5 @@
+object_tangible_component_droid_combat_module_electric_shocker = object_tangible_component_droid_shared_combat_module_electric_shocker:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_droid_combat_module_electric_shocker, "object/tangible/component/droid/combat_module_electric_shocker.iff")

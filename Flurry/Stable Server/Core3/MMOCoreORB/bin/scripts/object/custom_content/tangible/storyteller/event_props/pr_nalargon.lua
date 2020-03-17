@@ -1,0 +1,5 @@
+object_tangible_storyteller_event_props_pr_nalargon = object_tangible_storyteller_event_props_shared_pr_nalargon:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_event_props_pr_nalargon, "object/tangible/storyteller/event_props/pr_nalargon.iff")

@@ -1,0 +1,1 @@
+object_mobile_skeleton_bm_rancor = object_mobile_skeleton_shared_bm_rancor:new {}ObjectTemplates:addTemplate(object_mobile_skeleton_bm_rancor, "object/mobile/skeleton/bm_rancor.iff")

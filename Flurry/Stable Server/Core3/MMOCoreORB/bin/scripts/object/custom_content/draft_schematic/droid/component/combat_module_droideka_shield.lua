@@ -1,0 +1,5 @@
+object_draft_schematic_droid_component_combat_module_droideka_shield = object_draft_schematic_droid_component_shared_combat_module_droideka_shield:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_droid_component_combat_module_droideka_shield, "object/draft_schematic/droid/component/combat_module_droideka_shield.iff")

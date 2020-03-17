@@ -1,0 +1,1 @@
+includeFile("custom_content/tangible/lair/base/serverobjects.lua")

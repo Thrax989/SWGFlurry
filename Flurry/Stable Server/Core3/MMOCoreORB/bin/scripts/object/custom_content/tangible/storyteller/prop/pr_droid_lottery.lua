@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_droid_lottery = object_tangible_storyteller_prop_shared_pr_droid_lottery:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_droid_lottery, "object/tangible/storyteller/prop/pr_droid_lottery.iff")

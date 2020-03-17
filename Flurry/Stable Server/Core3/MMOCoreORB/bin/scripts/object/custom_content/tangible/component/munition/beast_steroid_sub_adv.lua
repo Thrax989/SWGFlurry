@@ -1,0 +1,5 @@
+object_tangible_component_munition_beast_steroid_sub_adv = object_tangible_component_munition_shared_beast_steroid_sub_adv:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_munition_beast_steroid_sub_adv, "object/tangible/component/munition/beast_steroid_sub_adv.iff")

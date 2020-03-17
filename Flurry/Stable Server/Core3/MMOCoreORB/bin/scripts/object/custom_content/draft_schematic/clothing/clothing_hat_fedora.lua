@@ -1,0 +1,5 @@
+object_draft_schematic_clothing_clothing_hat_fedora = object_draft_schematic_clothing_shared_clothing_hat_fedora:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_hat_fedora, "object/draft_schematic/clothing/clothing_hat_fedora.iff")

@@ -1,0 +1,1 @@
+object_mobile_skeleton_bm_insect_moth = object_mobile_skeleton_shared_del:new {}ObjectTemplates:addTemplate(object_mobile_skeleton_del, "object/mobile/skeleton/del.iff")

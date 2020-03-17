@@ -1,0 +1,5 @@
+object_tangible_storyteller_event_props_pr_emperors_day_yoda = object_tangible_storyteller_event_props_shared_pr_emperors_day_yoda:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_event_props_pr_emperors_day_yoda, "object/tangible/storyteller/event_props/pr_emperors_day_yoda.iff")

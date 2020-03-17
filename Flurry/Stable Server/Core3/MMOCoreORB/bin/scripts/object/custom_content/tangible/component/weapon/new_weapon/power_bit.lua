@@ -1,0 +1,5 @@
+object_tangible_component_weapon_new_weapon_power_bit = object_tangible_component_weapon_new_weapon_shared_power_bit:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_new_weapon_power_bit, "object/tangible/component/weapon/new_weapon/power_bit.iff")

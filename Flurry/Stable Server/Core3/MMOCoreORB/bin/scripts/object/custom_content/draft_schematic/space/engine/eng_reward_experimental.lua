@@ -1,0 +1,5 @@
+object_draft_schematic_space_engine_eng_reward_experimental = object_draft_schematic_space_engine_shared_eng_reward_experimental:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_space_engine_eng_reward_experimental, "object/draft_schematic/space/engine/eng_reward_experimental.iff")

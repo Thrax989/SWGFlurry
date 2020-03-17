@@ -1,0 +1,5 @@
+object_intangible_buy_back_buy_back_control_device = object_intangible_buy_back_shared_buy_back_control_device:new {
+
+}
+
+ObjectTemplates:addTemplate(object_intangible_buy_back_buy_back_control_device, "object/intangible/buy_back/buy_back_control_device.iff")
