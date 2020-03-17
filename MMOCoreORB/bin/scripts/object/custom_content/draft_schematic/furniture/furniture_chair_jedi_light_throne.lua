@@ -1,5 +1,0 @@
-object_draft_schematic_furniture_furniture_chair_jedi_light_throne = object_draft_schematic_furniture_shared_furniture_chair_jedi_light_throne:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_furniture_furniture_chair_jedi_light_throne, "object/draft_schematic/furniture/furniture_chair_jedi_light_throne.iff")

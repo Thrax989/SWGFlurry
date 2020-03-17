@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_streetlamp_small_01 = object_tangible_storyteller_prop_shared_pr_streetlamp_small_01:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_streetlamp_small_01, "object/tangible/storyteller/prop/pr_streetlamp_small_01.iff")

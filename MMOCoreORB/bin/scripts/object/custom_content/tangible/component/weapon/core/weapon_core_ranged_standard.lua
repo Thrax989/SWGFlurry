@@ -1,5 +1,0 @@
-object_tangible_component_weapon_core_weapon_core_ranged_standard = object_tangible_component_weapon_core_shared_weapon_core_ranged_standard:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_weapon_core_weapon_core_ranged_standard, "object/tangible/component/weapon/core/weapon_core_ranged_standard.iff")

@@ -1,3 +1,0 @@
-object_tangible_terminal_terminal_borvo_ai_controller = object_tangible_terminal_shared_terminal_borvo_ai_controller:new {
-}
-ObjectTemplates:addTemplate(object_tangible_terminal_terminal_borvo_ai_controller, "object/tangible/terminal/terminal_borvo_ai_controller.iff")

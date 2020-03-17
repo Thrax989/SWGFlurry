@@ -1,5 +1,0 @@
-
-object_tangible_wearables_bandolier_npe_bandolier = object_tangible_wearables_bandolier_shared_npe_bandolier:new {
-
-}
-ObjectTemplates:addTemplate(object_tangible_wearables_bandolier_npe_bandolier, "object/tangible/wearables/bandolier/npe_bandolier.iff")

@@ -1,1 +1,0 @@
-g_nightsister_bicep = {	description = "",	minimumLevel = 0,	maximumLevel = 0,	lootItems = {		{itemTemplate = "armor_nightsister_bicep_r", weight = 10000000}	}}addLootGroupTemplate("g_nightsister_bicep", g_nightsister_bicep)

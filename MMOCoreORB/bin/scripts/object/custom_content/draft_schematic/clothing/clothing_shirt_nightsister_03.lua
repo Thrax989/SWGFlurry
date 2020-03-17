@@ -1,5 +1,0 @@
-object_draft_schematic_clothing_clothing_shirt_nightsister_03 = object_draft_schematic_clothing_shared_clothing_shirt_nightsister_03:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_shirt_nightsister_03, "object/draft_schematic/clothing/clothing_shirt_nightsister_03.iff")

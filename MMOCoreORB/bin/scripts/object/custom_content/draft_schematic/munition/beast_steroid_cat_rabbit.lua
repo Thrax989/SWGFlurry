@@ -1,5 +1,0 @@
-object_draft_schematic_munition_beast_steroid_cat_rabbit = object_draft_schematic_munition_shared_beast_steroid_cat_rabbit:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_munition_beast_steroid_cat_rabbit, "object/draft_schematic/munition/beast_steroid_cat_rabbit.iff")

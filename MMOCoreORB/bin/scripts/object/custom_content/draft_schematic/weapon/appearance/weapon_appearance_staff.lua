@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_appearance_weapon_appearance_staff = object_draft_schematic_weapon_appearance_shared_weapon_appearance_staff:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_appearance_weapon_appearance_staff, "object/draft_schematic/weapon/appearance/weapon_appearance_staff.iff")

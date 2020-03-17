@@ -1,5 +1,0 @@
-
-object_weapon_ranged_creature_creature_spit_hoth_tauntaun = object_weapon_ranged_creature_shared_creature_spit_hoth_tauntaun:new {
-
-}
-ObjectTemplates:addTemplate(object_weapon_ranged_creature_creature_spit_hoth_tauntaun, "object/weapon/ranged/creature/creature_spit_hoth_tauntaun.iff")

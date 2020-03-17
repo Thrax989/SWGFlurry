@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_pistol_avatar_trando_special = object_draft_schematic_weapon_shared_pistol_avatar_trando_special:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_pistol_avatar_trando_special, "object/draft_schematic/weapon/pistol_avatar_trando_special.iff")

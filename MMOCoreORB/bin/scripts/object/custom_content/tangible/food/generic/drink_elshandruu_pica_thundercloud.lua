@@ -1,5 +1,0 @@
-object_tangible_food_generic_drink_elshandruu_pica_thundercloud = object_tangible_food_generic_shared_drink_elshandruu_pica_thundercloud:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_food_generic_drink_elshandruu_pica_thundercloud, "object/tangible/food/generic/drink_elshandruu_pica_thundercloud.iff")

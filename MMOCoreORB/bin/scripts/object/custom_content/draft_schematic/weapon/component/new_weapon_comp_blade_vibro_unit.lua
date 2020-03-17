@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_component_new_weapon_comp_blade_vibro_unit = object_draft_schematic_weapon_component_shared_new_weapon_comp_blade_vibro_unit:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_component_new_weapon_comp_blade_vibro_unit, "object/draft_schematic/weapon/component/new_weapon_comp_blade_vibro_unit.iff")

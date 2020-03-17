@@ -1,5 +1,0 @@
-object_draft_schematic_ranger_item_trap_caltrop = object_draft_schematic_ranger_shared_item_trap_caltrop:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_ranger_item_trap_caltrop, "object/draft_schematic/ranger/item_trap_caltrop.iff")

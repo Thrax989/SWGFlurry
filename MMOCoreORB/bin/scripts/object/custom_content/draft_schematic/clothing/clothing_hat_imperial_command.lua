@@ -1,5 +1,0 @@
-object_draft_schematic_clothing_clothing_hat_imperial_command = object_draft_schematic_clothing_shared_clothing_hat_imperial_command:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_hat_imperial_command, "object/draft_schematic/clothing/clothing_hat_imperial_command.iff")

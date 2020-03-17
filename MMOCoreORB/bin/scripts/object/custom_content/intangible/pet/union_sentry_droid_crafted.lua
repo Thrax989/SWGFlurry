@@ -1,5 +1,0 @@
-object_intangible_pet_union_sentry_droid_crafted = object_intangible_pet_shared_union_sentry_droid_crafted:new {
-
-}
-
-ObjectTemplates:addTemplate(object_intangible_pet_union_sentry_droid_crafted, "object/intangible/pet/union_sentry_droid_crafted.iff")

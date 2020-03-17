@@ -1,5 +1,0 @@
-object_draft_schematic_space_weapon_wpn_nova_ioncannon = object_draft_schematic_space_weapon_shared_wpn_nova_ioncannon:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_space_weapon_wpn_nova_ioncannon, "object/draft_schematic/space/weapon/wpn_nova_ioncannon.iff")

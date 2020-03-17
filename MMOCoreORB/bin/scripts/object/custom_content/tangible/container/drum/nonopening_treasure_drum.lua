@@ -1,5 +1,0 @@
-object_tangible_container_drum_nonopening_treasure_drum = object_tangible_container_drum_shared_nonopening_treasure_drum:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_container_drum_nonopening_treasure_drum, "object/tangible/container/drum/nonopening_treasure_drum.iff")

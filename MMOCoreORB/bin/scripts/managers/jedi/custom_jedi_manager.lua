@@ -1,2 +1,0 @@
-jediManagerName = "CustomJediManager"
-

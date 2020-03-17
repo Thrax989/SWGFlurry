@@ -1,5 +1,0 @@
-object_draft_schematic_reverse_engineering_enhancement_module = object_draft_schematic_reverse_engineering_shared_enhancement_module:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_reverse_engineering_enhancement_module, "object/draft_schematic/reverse_engineering/enhancement_module.iff")
