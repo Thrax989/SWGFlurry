@@ -161,7 +161,16 @@ public:
 				break;
 				
 		case 34: trainerTemplatePath = "trainer_meleebountyhunter";
-
+				break;
+				
+		case 35: trainerTemplatePath = "faction_recruiter_imperial";
+				break;
+				
+		case 36: trainerTemplatePath = "faction_recruiter_rebel";
+				break;
+				
+		case 37: trainerTemplatePath = "junk_dealer";
+				break;
 		}
 
 		if (trainerTemplatePath != "") {
