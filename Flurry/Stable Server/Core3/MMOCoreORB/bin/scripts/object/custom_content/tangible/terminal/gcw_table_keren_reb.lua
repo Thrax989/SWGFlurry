@@ -1,0 +1,3 @@
+object_tangible_terminal_gcw_table_keren_reb = object_tangible_terminal_shared_gcw_table_keren_reb:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_gcw_table_keren_reb, "object/tangible/terminal/gcw_table_keren_reb.iff")

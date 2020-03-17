@@ -1,0 +1,5 @@
+object_tangible_saga_system_pgc_chronicles_token_02 = object_tangible_saga_system_shared_pgc_chronicles_token_02:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_saga_system_pgc_chronicles_token_02, "object/tangible/saga_system/pgc_chronicles_token_02.iff")

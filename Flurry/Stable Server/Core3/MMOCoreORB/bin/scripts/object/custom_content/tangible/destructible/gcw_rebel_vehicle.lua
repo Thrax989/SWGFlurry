@@ -1,0 +1,3 @@
+object_tangible_destructible_gcw_rebel_vehicle = object_tangible_destructible_shared_gcw_rebel_vehicle:new {
+}
+ObjectTemplates:addTemplate(object_tangible_destructible_gcw_rebel_vehicle, "object/tangible/destructible/gcw_rebel_vehicle.iff")

@@ -1,0 +1,5 @@
+object_draft_schematic_space_chassis_blacksun_heavy_vaksai = object_draft_schematic_space_chassis_shared_blacksun_heavy_vaksai:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_space_chassis_blacksun_heavy_vaksai, "object/draft_schematic/space/chassis/blacksun_heavy_vaksai.iff")

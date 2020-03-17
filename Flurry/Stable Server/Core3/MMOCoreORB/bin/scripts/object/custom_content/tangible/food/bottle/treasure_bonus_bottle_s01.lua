@@ -1,0 +1,5 @@
+object_tangible_food_bottle_treasure_bonus_bottle_s01 = object_tangible_food_bottle_shared_treasure_bonus_bottle_s01:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_food_bottle_treasure_bonus_bottle_s01, "object/tangible/food/bottle/treasure_bonus_bottle_s01.iff")

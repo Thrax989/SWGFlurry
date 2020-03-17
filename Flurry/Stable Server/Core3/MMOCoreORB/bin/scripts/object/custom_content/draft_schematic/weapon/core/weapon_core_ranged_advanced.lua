@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_core_weapon_core_ranged_advanced = object_draft_schematic_weapon_core_shared_weapon_core_ranged_advanced:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_core_weapon_core_ranged_advanced, "object/draft_schematic/weapon/core/weapon_core_ranged_advanced.iff")

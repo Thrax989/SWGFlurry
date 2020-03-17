@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_player_vehicle_garage = object_tangible_terminal_shared_terminal_player_vehicle_garage:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_player_vehicle_garage, "object/tangible/terminal/terminal_player_vehicle_garage.iff")

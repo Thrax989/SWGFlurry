@@ -1,0 +1,5 @@
+object_tangible_component_droid_asn_21_droid_chassis = object_tangible_component_droid_shared_asn_21_droid_chassis:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_droid_asn_21_droid_chassis, "object/tangible/component/droid/asn_21_droid_chassis.iff")

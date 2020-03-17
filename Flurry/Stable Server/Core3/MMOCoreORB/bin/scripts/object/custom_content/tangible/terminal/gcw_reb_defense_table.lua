@@ -1,0 +1,3 @@
+object_tangible_terminal_gcw_reb_defense_table = object_tangible_terminal_shared_gcw_reb_defense_table:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_gcw_reb_defense_table, "object/tangible/terminal/gcw_reb_defense_table.iff")

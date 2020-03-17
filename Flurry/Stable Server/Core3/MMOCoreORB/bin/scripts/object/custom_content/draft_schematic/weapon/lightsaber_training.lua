@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_lightsaber_training = object_draft_schematic_weapon_shared_lightsaber_training:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_lightsaber_training, "object/draft_schematic/weapon/lightsaber_training.iff")

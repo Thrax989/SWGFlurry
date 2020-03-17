@@ -1,0 +1,5 @@
+object_tangible_gcw_base_rewards_military_actionpack = object_tangible_gcw_base_rewards_shared_military_actionpack:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_base_rewards_military_actionpack, "object/tangible/gcw/base_rewards/military_actionpack.iff")

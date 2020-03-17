@@ -1,0 +1,5 @@
+
+object_tangible_wearables_vest_appearance_invisible_s01 = object_tangible_wearables_vest_shared_appearance_invisible_s01:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_vest_appearance_invisible_s01, "object/tangible/wearables/vest/appearance_invisible_s01.iff")

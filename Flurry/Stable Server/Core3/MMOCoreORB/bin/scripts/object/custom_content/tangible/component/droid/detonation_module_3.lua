@@ -1,0 +1,5 @@
+object_tangible_component_droid_detonation_module_3 = object_tangible_component_droid_shared_detonation_module_3:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_droid_detonation_module_3, "object/tangible/component/droid/detonation_module_3.iff")

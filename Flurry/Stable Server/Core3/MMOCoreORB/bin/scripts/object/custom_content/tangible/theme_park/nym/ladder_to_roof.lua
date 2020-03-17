@@ -1,0 +1,3 @@
+object_tangible_theme_park_nym_ladder_to_roof = object_tangible_theme_park_nym_shared_ladder_to_roof:new {
+}
+ObjectTemplates:addTemplate(object_tangible_theme_park_nym_ladder_to_roof, "object/tangible/theme_park/nym/ladder_to_roof.iff")

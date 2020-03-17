@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_lifeday_banner_01 = object_tangible_storyteller_prop_shared_pr_lifeday_banner_01:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_lifeday_banner_01, "object/tangible/storyteller/prop/pr_lifeday_banner_01.iff")

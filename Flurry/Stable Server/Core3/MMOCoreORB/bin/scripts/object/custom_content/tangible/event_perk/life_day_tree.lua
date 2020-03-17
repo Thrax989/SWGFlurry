@@ -1,0 +1,3 @@
+object_tangible_event_perk_life_day_tree = object_tangible_event_perk_shared_life_day_tree:new {
+}
+ObjectTemplates:addTemplate(object_tangible_event_perk_life_day_tree, "object/tangible/event_perk/life_day_tree.iff")

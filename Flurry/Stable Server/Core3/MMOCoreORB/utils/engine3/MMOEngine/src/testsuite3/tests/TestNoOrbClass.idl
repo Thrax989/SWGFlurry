@@ -1,0 +1,14 @@
+/*
+** Copyright (C) 2007-2019 SWGEmu
+** See file COPYING for copying conditions.
+*/
+package testsuite3.tests;
+
+include system.util.Vector;
+include engine.core.ManagedObject;
+
+include engine.lua.LuaCallbackException;
+
+class TestNoOrbClass extends ManagedObject {
+
+}

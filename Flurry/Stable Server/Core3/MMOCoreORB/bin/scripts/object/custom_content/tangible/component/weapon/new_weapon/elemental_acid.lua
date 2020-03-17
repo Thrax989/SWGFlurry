@@ -1,0 +1,5 @@
+object_tangible_component_weapon_new_weapon_elemental_acid = object_tangible_component_weapon_new_weapon_shared_elemental_acid:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_new_weapon_elemental_acid, "object/tangible/component/weapon/new_weapon/elemental_acid.iff")

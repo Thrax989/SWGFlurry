@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_appearance_weapon_appearance_loot_ripper = object_draft_schematic_weapon_appearance_shared_weapon_appearance_loot_ripper:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_appearance_weapon_appearance_loot_ripper, "object/draft_schematic/weapon/appearance/weapon_appearance_loot_ripper.iff")

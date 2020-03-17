@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_tiki_torch = object_tangible_storyteller_prop_shared_pr_tiki_torch:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_tiki_torch, "object/tangible/storyteller/prop/pr_tiki_torch.iff")

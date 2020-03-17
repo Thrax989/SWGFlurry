@@ -1,0 +1,5 @@
+object_draft_schematic_clothing_clothing_hat_nightsister_s02 = object_draft_schematic_clothing_shared_clothing_hat_nightsister_s02:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_hat_nightsister_s02, "object/draft_schematic/clothing/clothing_hat_nightsister_s02.iff")

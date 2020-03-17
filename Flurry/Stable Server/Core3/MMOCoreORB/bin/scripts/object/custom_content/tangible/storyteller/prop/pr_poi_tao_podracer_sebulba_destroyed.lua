@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_poi_tao_podracer_sebulba_destroyed = object_tangible_storyteller_prop_shared_pr_poi_tao_podracer_sebulba_destroyed:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_poi_tao_podracer_sebulba_destroyed, "object/tangible/storyteller/prop/pr_poi_tao_podracer_sebulba_destroyed.iff")

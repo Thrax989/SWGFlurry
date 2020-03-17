@@ -1,0 +1,5 @@
+object_draft_schematic_camp_modules_entertainment_area_module = object_draft_schematic_camp_modules_shared_entertainment_area_module:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_camp_modules_entertainment_area_module, "object/draft_schematic/camp/modules/entertainment_area_module.iff")

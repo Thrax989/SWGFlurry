@@ -1,0 +1,5 @@
+object_tangible_component_clothing_trim_outbreak_prison_guard_jacket = object_tangible_component_clothing_shared_trim_outbreak_prison_guard_jacket:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_clothing_trim_outbreak_prison_guard_jacket, "object/tangible/component/clothing/trim_outbreak_prison_guard_jacket.iff")

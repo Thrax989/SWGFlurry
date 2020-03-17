@@ -1,0 +1,5 @@
+object_tangible_component_camp_camp_module_imperial_recruiter = object_tangible_component_camp_shared_camp_module_imperial_recruiter:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_camp_camp_module_imperial_recruiter, "object/tangible/component/camp/camp_module_imperial_recruiter.iff")

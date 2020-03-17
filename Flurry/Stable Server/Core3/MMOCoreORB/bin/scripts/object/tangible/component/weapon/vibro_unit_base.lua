@@ -1,0 +1,5 @@
+object_tangible_component_weapon_vibro_unit_base = object_tangible_component_weapon_shared_vibro_unit_base:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_vibro_unit_base, "object/tangible/component/weapon/vibro_unit_base.iff")

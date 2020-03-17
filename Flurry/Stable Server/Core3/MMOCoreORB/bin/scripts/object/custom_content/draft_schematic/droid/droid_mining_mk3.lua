@@ -1,0 +1,5 @@
+object_draft_schematic_droid_droid_mining_mk3 = object_draft_schematic_droid_shared_droid_mining_mk3:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_droid_droid_mining_mk3, "object/draft_schematic/droid/droid_mining_mk3.iff")

@@ -1,0 +1,3 @@
+object_tangible_terminal_gcw_imp_offense_table = object_tangible_terminal_shared_gcw_imp_offense_table:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_gcw_imp_offense_table, "object/tangible/terminal/gcw_imp_offense_table.iff")
