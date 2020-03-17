@@ -124,6 +124,12 @@ npcNode:addChildNode(sullustanNode)
 --Weequay
 npcNode:addChildNode(VendorSelectionNode("@player_structure:race_weequay", "weequay_male.iff", "", 60))
 
+--Jawa
+npcNode:addChildNode(VendorSelectionNode("@player_structure:race_jawa", "jawa_male.iff", "", 60))
+
+--Toydaroan
+npcNode:addChildNode(VendorSelectionNode("@player_structure:race_toydarian", "toydarian_male.iff", "", 60))
+
 -- Add the inital types to the root menu
 rootNode:addChildNode(terminalNode)
 rootNode:addChildNode(droidNode)

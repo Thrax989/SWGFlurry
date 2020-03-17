@@ -122,7 +122,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   },
 		 	"Boss Instance Teleport Room",
 		   {
-			"Teleort To Boss Instance Teleport Room (5,000 Credits)", "teleportroom",
+			"Teleport To Boss Instance Teleport Room (5,000 Credits)", "teleportroom",
 		   },
 		 	"Player Cities",
 		   {
