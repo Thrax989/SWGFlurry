@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_component_new_weapon_comp_elemental_cold = object_draft_schematic_weapon_component_shared_new_weapon_comp_elemental_cold:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_component_new_weapon_comp_elemental_cold, "object/draft_schematic/weapon/component/new_weapon_comp_elemental_cold.iff")

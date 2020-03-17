@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_sandcrawler = object_tangible_storyteller_prop_shared_pr_sandcrawler:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_sandcrawler, "object/tangible/storyteller/prop/pr_sandcrawler.iff")

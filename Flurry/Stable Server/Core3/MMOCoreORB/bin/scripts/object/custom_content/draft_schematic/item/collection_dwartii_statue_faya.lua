@@ -1,5 +1,0 @@
-object_draft_schematic_item_collection_dwartii_statue_faya = object_draft_schematic_item_shared_collection_dwartii_statue_faya:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_item_collection_dwartii_statue_faya, "object/draft_schematic/item/collection_dwartii_statue_faya.iff")

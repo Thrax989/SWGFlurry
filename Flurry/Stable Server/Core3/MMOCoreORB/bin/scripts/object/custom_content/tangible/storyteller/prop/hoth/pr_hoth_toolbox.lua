@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_hoth_pr_hoth_toolbox = object_tangible_storyteller_prop_hoth_shared_pr_hoth_toolbox:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_hoth_pr_hoth_toolbox, "object/tangible/storyteller/prop/hoth/pr_hoth_toolbox.iff")

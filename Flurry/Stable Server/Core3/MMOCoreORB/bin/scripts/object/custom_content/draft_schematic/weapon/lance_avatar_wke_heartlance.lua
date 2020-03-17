@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_lance_avatar_wke_heartlance = object_draft_schematic_weapon_shared_lance_avatar_wke_heartlance:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_lance_avatar_wke_heartlance, "object/draft_schematic/weapon/lance_avatar_wke_heartlance.iff")

@@ -1,4 +1,0 @@
-object_building_mustafar_dungeon_monster_lair_must_monster_lair = object_building_mustafar_dungeon_monster_lair_shared_must_monster_lair:new {
-	customObjectName = "Sher Kar Lair",
-}
-ObjectTemplates:addTemplate(object_building_mustafar_dungeon_monster_lair_must_monster_lair, "object/building/mustafar/dungeon/monster_lair/must_monster_lair.iff")

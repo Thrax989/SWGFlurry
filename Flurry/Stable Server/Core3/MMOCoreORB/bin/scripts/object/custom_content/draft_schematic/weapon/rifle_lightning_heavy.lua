@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_rifle_lightning_heavy = object_draft_schematic_weapon_shared_rifle_lightning_heavy:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_rifle_lightning_heavy, "object/draft_schematic/weapon/rifle_lightning_heavy.iff")

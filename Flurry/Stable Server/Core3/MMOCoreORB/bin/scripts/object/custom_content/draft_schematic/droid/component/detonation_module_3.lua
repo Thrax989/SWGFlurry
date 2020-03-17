@@ -1,5 +1,0 @@
-object_draft_schematic_droid_component_detonation_module_3 = object_draft_schematic_droid_component_shared_detonation_module_3:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_droid_component_detonation_module_3, "object/draft_schematic/droid/component/detonation_module_3.iff")

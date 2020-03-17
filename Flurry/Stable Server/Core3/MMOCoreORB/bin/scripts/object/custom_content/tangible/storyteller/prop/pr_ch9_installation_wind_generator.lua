@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_ch9_installation_wind_generator = object_tangible_storyteller_prop_shared_pr_ch9_installation_wind_generator:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_installation_wind_generator, "object/tangible/storyteller/prop/pr_ch9_installation_wind_generator.iff")

@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_kashyyyk_cave_plant = object_tangible_storyteller_prop_shared_pr_kashyyyk_cave_plant:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_kashyyyk_cave_plant, "object/tangible/storyteller/prop/pr_kashyyyk_cave_plant.iff")

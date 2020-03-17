@@ -1,5 +1,0 @@
-object_tangible_saga_system_rewards_jabba_windchime = object_tangible_saga_system_rewards_shared_jabba_windchime:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_saga_system_rewards_jabba_windchime, "object/tangible/saga_system/rewards/jabba_windchime.iff")

@@ -1,5 +1,0 @@
-object_draft_schematic_item_item_event_empire_day_rank = object_draft_schematic_item_shared_item_event_empire_day_rank:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_item_item_event_empire_day_rank, "object/draft_schematic/item/item_event_empire_day_rank.iff")

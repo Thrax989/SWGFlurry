@@ -1,5 +1,0 @@
-object_draft_schematic_space_reactor_mustafar_fusion_reactor = object_draft_schematic_space_reactor_shared_mustafar_fusion_reactor:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_space_reactor_mustafar_fusion_reactor, "object/draft_schematic/space/reactor/mustafar_fusion_reactor.iff")

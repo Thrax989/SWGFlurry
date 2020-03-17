@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_atf_sith_altar = object_tangible_storyteller_prop_shared_pr_atf_sith_altar:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_atf_sith_altar, "object/tangible/storyteller/prop/pr_atf_sith_altar.iff")

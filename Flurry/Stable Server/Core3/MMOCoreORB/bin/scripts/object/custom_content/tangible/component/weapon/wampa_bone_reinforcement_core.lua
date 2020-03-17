@@ -1,5 +1,0 @@
-object_tangible_component_weapon_wampa_bone_reinforcement_core = object_tangible_component_weapon_shared_wampa_bone_reinforcement_core:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_weapon_wampa_bone_reinforcement_core, "object/tangible/component/weapon/wampa_bone_reinforcement_core.iff")

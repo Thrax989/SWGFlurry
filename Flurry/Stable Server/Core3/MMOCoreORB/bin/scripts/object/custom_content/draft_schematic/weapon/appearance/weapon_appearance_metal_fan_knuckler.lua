@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_appearance_weapon_appearance_metal_fan_knuckler = object_draft_schematic_weapon_appearance_shared_weapon_appearance_metal_fan_knuckler:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_appearance_weapon_appearance_metal_fan_knuckler, "object/draft_schematic/weapon/appearance/weapon_appearance_metal_fan_knuckler.iff")

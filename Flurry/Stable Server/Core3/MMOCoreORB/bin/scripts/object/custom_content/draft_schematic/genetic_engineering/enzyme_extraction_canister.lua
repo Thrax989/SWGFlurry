@@ -1,5 +1,0 @@
-object_draft_schematic_genetic_engineering_enzyme_extraction_canister = object_draft_schematic_genetic_engineering_shared_enzyme_extraction_canister:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_enzyme_extraction_canister, "object/draft_schematic/genetic_engineering/enzyme_extraction_canister.iff")
