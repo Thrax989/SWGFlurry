@@ -1160,17 +1160,13 @@ int CombatManager::getArmorVehicleReduction(VehicleObject* defender, int damageT
 int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, float damage, int hitLocation, const CreatureAttackData& data) {
 	int damageType = 0, armorPiercing = 1;
 	bool lightningAttack =  false;
-    	bool flamethrowerAttack = false;
-
+	
 	float petArmorBuff = defender->getSkillMod("pet_defensive");
 	if (petArmorBuff > 0.0f)	
 		damage *= ((100.0f - petArmorBuff) / 100.0f);
 
 	if (isLightningAttack(data))
 		lightningAttack = true;
-
-    	if (isFlameThrowerAttack(data))
-		flamethrowerAttack = true;
 
 	if (!data.isForceAttack()) {
 		damageType = weapon->getDamageType();
@@ -1275,9 +1271,6 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		float preArmorDamage = damage;
 
 		if (lightningAttack == true && attacker->isPlayerCreature())
-			armorPiercing = 2;
-
-		if (flamethrowerAttack == true && attacker->isPlayerCreature())
 			armorPiercing = 2;	
 
 		if (defender->isPlayerCreature())
@@ -1307,9 +1300,6 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		float dmgAbsorbed = damage;
 
 		if (lightningAttack == true && attacker->isPlayerCreature()) //Ap2
-			armorPiercing = 2;
-
-		if (flamethrowerAttack == true && attacker->isPlayerCreature()) //Ap2
 			armorPiercing = 2;
 
 		// use only the damage applied to the armor for piercing (after the PSG takes some off)
@@ -1518,13 +1508,6 @@ float CombatManager::doDroidDetonation(CreatureObject* droid, CreatureObject* de
 bool CombatManager::isLightningAttack(const CreatureAttackData& data) {
 	if (data.getCombatSpam() == "forcelightningsingle1" || data.getCombatSpam() == "forcelightningsingle2" ||
 		data.getCombatSpam() == "forcelightningcone1" || data.getCombatSpam() == "forcelightningcone2")
-		return true;
-	else
-		return false;
-}
-
-bool CombatManager::isFlameThrowerAttack(const CreatureAttackData& data) {
-	if(data.getCombatSpam() == "flamesingle1" || data.getCombatSpam() == "flamesingle2" || data.getCombatSpam() =="flamecone1" || data.getCombatSpam() == "flamecone2")
 		return true;
 	else
 		return false;
