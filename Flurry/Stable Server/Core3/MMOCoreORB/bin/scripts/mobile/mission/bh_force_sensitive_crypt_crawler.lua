@@ -4,13 +4,13 @@ bh_force_sensitive_crypt_crawler = Creature:new {
 	randomNameTag = true,
 	socialGroup = "kun",
 	faction = "",
-	level = 95,
+	level = 250,
 	chanceHit = 0.9,
 	damageMin = 685,
 	damageMax = 1080,
-	baseXp = 9057,
-	baseHAM = 16000,
-	baseHAMmax = 19000,
+	baseXp = 19057,
+	baseHAM = 116000,
+	baseHAMmax = 119000,
 	armor = 2,
 	resists = {75,75,40,40,40,40,40,40,-1},
 	meatType = "",
@@ -31,9 +31,9 @@ bh_force_sensitive_crypt_crawler = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 500000},
+				{group = "tierthree", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "power_crystals", chance = 1000000},
 				{group = "wearables_all", chance = 1000000},
@@ -46,9 +46,9 @@ bh_force_sensitive_crypt_crawler = Creature:new {
 		},
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 500000},
+				{group = "tierthree", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "power_crystals", chance = 1000000},
 				{group = "wearables_all", chance = 1000000},
@@ -61,9 +61,9 @@ bh_force_sensitive_crypt_crawler = Creature:new {
 		},
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 500000},
+				{group = "tierthree", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "power_crystals", chance = 500000},
 				{group = "power_crystals", chance = 500000},
