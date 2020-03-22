@@ -52,7 +52,7 @@ String GeneticLabratory::pickSpecialAttack(String a, String b, String c, String 
 		effectiveSpecial = "defaultattack";
 	}
 	if (effectiveSpecial == otherSpecial && effectiveSpecial != "defaultattack")
-		effectiveSpecial = pickSpecialAttack(effectiveSpecial,b,c,d,e,odds+100,otherSpecial);// pick another default mantis #5598 max loop count is 8 (i.e. odds starting at 100, at 8 calls it picks defaultattack
+		effectiveSpecial = pickSpecialAttack(effectiveSpecial,b,c,d,e,odds+200,otherSpecial);// pick another default mantis #5598 max loop count is 8 (i.e. odds starting at 100, at 8 calls it picks defaultattack
 	return effectiveSpecial;
 }
 void GeneticLabratory::recalculateResist(CraftingValues* craftingValues) {
