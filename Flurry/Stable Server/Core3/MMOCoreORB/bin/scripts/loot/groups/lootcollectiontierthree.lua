@@ -6,24 +6,29 @@ lootcollectiontierthree  = {
 	maximumLevel = 0,
 	lootItems = {
 		--Fill to 25%
-		{groupTemplate = "junk", weight = 625000},
-		{groupTemplate = "goggles_all", weight = 625000},
-		{groupTemplate = "death_watch_bunker_ingredient_binary", weight = 625000},
-		{groupTemplate = "death_watch_bunker_ingredient_protective", weight = 625000},
-		{groupTemplate = "acklay", weight = 625000},
+		{groupTemplate = "junk", weight = 500000},
+		{groupTemplate = "goggles_all", weight = 500000},
+		{groupTemplate = "death_watch_bunker_ingredient_binary", weight = 500000},
+		{groupTemplate = "death_watch_bunker_ingredient_protective", weight = 500000},
+		{groupTemplate = "acklay", weight = 500000},
+		{groupTemplate = "imppoints", weight = 500000},
+		{groupTemplate = "g_named_crystals", weight = 500000},	
+		{groupTemplate = "rebpoints", weight = 500000},
+		
 		--Fill to 25%
-		{groupTemplate = "junk", weight = 625000},
-		{groupTemplate = "axkva_min", weight = 625000},
-		{groupTemplate = "force_hunter_rare", weight = 625000},
-		{groupTemplate = "blacksun_rare", weight = 625000},
-		{groupTemplate = "giant_dune_kimo_common", weight = 625000},
-		{groupTemplate = "gurk_king_common", weight = 625000},
+		{groupTemplate = "backpacks_b01", weight = 500000},
+		{groupTemplate = "backpacks_b02", weight = 500000},
+		{groupTemplate = "axkva_min", weight = 500000},
+		{groupTemplate = "force_hunter_rare", weight = 500000},
+		{groupTemplate = "blacksun_rare", weight = 500000},
+		{groupTemplate = "giant_dune_kimo_common", weight = 500000},
+		{groupTemplate = "gurk_king_common", weight = 500000},
 		--Fill to 25%
-		{groupTemplate = "junk", weight = 625000},
-		{groupTemplate = "ref_crate", weight = 625000},
-		{groupTemplate = "rare_vehicles", weight = 625000},
-		{groupTemplate = "krayt_pearls", weight = 625000},
-		{groupTemplate = "krayt_tissue_rare", weight = 625000},
+		{groupTemplate = "junk", weight = 500000},
+		{groupTemplate = "ref_crate", weight = 500000},
+		{groupTemplate = "rare_vehicles", weight = 500000},
+		{groupTemplate = "krayt_pearls", weight = 500000},
+		{groupTemplate = "krayt_tissue_rare", weight = 500000},
 	}
 }
 
