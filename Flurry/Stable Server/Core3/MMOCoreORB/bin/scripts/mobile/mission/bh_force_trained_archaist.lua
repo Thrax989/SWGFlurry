@@ -8,9 +8,9 @@ bh_force_trained_archaist = Creature:new {
 	chanceHit = 0.9,
 	damageMin = 640,
 	damageMax = 990,
-	baseXp = 8593,
-	baseHAM = 13000,
-	baseHAMmax = 16000,
+	baseXp = 18593,
+	baseHAM = 113000,
+	baseHAMmax = 116000,
 	armor = 2,
 	resists = {75,75,40,40,40,40,40,40,-1},
 	meatType = "",
@@ -31,9 +31,9 @@ bh_force_trained_archaist = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 500000},
+				{group = "tierthree", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "power_crystals", chance = 1000000},
 				{group = "wearables_all", chance = 1000000},
@@ -46,9 +46,9 @@ bh_force_trained_archaist = Creature:new {
 		},
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 500000},
+				{group = "tierthree", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "power_crystals", chance = 1000000},
 				{group = "wearables_all", chance = 1000000},
@@ -61,9 +61,9 @@ bh_force_trained_archaist = Creature:new {
 		},
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 500000},
+				{group = "tierthree", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "power_crystals", chance = 500000},
 				{group = "power_crystals", chance = 500000},
