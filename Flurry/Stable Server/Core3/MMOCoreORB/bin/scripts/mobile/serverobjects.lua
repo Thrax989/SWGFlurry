@@ -51,3 +51,5 @@ includeFile("mission/serverobjects.lua")
 includeFile("lair/serverobjects.lua")
 -- Outfits
 includeFile("outfits/serverobjects.lua")
+-- Custom Event Bosses
+includeFile("events/serverobjects.lua")
