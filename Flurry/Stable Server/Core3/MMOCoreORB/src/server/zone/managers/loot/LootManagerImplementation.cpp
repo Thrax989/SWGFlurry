@@ -785,7 +785,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 }
 
 bool LootManagerImplementation::createNamedLoot(SceneObject* container, const String& lootGroup, const String& name, int level, bool maxCondition) {
-	Reference<LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
+	Reference<const LootGroupTemplate*> group = lootGroupMap->getLootGroupTemplate(lootGroup);
 
 	if (group == nullptr) {
 		warning("Loot group template requested does not exist: " + lootGroup);
@@ -802,7 +802,7 @@ bool LootManagerImplementation::createNamedLoot(SceneObject* container, const St
 		return createLoot(container, selection, level, maxCondition);
 
 	//Entry wasn't another group, it should be a loot item
-	Reference<LootItemTemplate*> itemTemplate = lootGroupMap->getLootItemTemplate(selection);
+	Reference<const LootItemTemplate*> itemTemplate = lootGroupMap->getLootItemTemplate(selection);
 
 	if (itemTemplate == nullptr) {
 		warning("Loot item template requested does not exist: " + group->getLootGroupEntryForRoll(roll) + " for templateName: " + group->getTemplateName());
