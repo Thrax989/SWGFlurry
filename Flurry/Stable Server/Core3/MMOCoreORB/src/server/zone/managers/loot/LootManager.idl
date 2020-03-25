@@ -169,6 +169,7 @@ class LootManager extends ManagedService implements Logger {
 	public native int calculateLootCredits(int level);
 
 	public native boolean createLoot(SceneObject container, AiAgent creature);
+	public native boolean createNamedLoot(SceneObject container, final string lootGroup, final string name, int level = -1, boolean maxCondition = false);
 
 	@local
 	public native boolean createLootFromCollection(SceneObject container, final LootGroupCollection collection, int level);
