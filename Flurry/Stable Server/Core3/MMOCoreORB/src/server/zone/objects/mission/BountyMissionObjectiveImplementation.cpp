@@ -626,7 +626,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 						lootManager->createNamedLoot(inventory, "holocron_dark", victimName, 300);//, victimName);
 						}
 
-						if (target->hasSkill("force_rank_light_novice") || target->hasSkill("force_rank_dark_novice"))
+						if (target->hasSkill("force_title_jedi_novice") || target->hasSkill("combat_jedi_novice") || target->hasSkill("force_rank_light_novice") || target->hasSkill("force_rank_dark_novice"))
 						{
 							owner->getZoneServer()->getPlayerManager()->awardExperience(target, "force_rank_xp", -5000, true);
 							StringIdChatParameter message("base_player","prose_revoke_xp");
@@ -646,14 +646,22 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			fail();
 			//Player killed by target, fail mission.
 			StringBuffer zBroadcast;
-			if (killer->hasSkill("force_rank_light_novice") || killer->hasSkill("force_rank_dark_novice")) {
+			if (killer->hasSkill("force_title_jedi_novice") || killer->hasSkill("combat_jedi_novice") || killer->hasSkill("force_rank_light_novice") || killer->hasSkill("force_rank_dark_novice")) {
 				if (killer->hasSkill("force_rank_light_novice")){
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#00e604 Light Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 				}
-				else{
+
+				if (killer->hasSkill("force_rank_dark__novice")){
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Dark Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 				}
 
+				if (killer->hasSkill("force_title_jedi_novice")){
+					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+				}
+
+				if (killer->hasSkill("combat_jedi_novice")){
+					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Gray Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+				}
 				killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 				PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
 				killer->sendMessage(pmm);
