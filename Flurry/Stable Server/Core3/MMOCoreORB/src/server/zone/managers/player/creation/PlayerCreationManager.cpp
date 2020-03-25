@@ -680,7 +680,7 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	//Broadcast new player has joined the server forward to discord channel. created by :TOXIC
 	StringBuffer zGeneral;
-	zGeneral << "\\#00ace6" << playerName << " \\#ffb90f Has Joined The Flurry Server!";	
+	zGeneral << "Has Joined The Flurry Server!";	
 	chatManager->handleGeneralChat(playerCreature, zGeneral.toString());
 
 	return true;
