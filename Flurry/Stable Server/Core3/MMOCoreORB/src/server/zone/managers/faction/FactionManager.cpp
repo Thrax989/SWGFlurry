@@ -200,9 +200,9 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
  			killer->sendMessage(pmm);
 			lootManager->createLoot(inventory, "rebpoints", 300);
 			if(ghost->getJediState() >= 2){
-				//lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
+				lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
 			}else{
-				//lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);//, playerName);
+				lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);//, playerName);
 			}
 			ghost->decreaseFactionStanding("imperial", 45);
 			killedGhost->decreaseFactionStanding("imperial", 45);
@@ -224,9 +224,9 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
  			killer->sendMessage(pmm);
 			lootManager->createLoot(inventory, "imppoints", 300);
 			if(ghost->getJediState() >= 2){
-				//lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
+				lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
 			}else{
-				//lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);//, playerName);
+				lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);//, playerName);
 			}
 			ghost->decreaseFactionStanding("rebel", 45);
 			killedGhost->decreaseFactionStanding("rebel", 45);
