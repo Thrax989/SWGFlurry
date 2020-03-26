@@ -10,7 +10,7 @@ event_milliana = Creature:new {
 	damageMax = 6000,
 	baseXp = 28549,
 	baseHAM = 9500000,
-	baseHAMmax = 10000000,
+	baseHAMmax = 9900000,
 	armor = 3,
 	resists = {195,195,195,195,195,195,195,195,195},
 	meatType = "",
@@ -26,7 +26,8 @@ event_milliana = Creature:new {
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED + INTERESTING,
 	diet = HERBIVORE,
-
+	scale = 3.0,
+	
 	templates = {
 		"object/mobile/dressed_aakuan_keeper_zabrak_female_01.iff",
 		"object/mobile/dressed_aakuan_warder_zabrak_female_01.iff"},

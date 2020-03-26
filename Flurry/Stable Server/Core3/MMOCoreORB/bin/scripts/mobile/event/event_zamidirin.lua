@@ -9,7 +9,7 @@ event_zamidirin = Creature:new {
 	damageMax = 6000,
 	baseXp = 28549,
 	baseHAM = 9500000,
-	baseHAMmax = 10000000,
+	baseHAMmax = 9900000,
 	armor = 3,
 	resists = {195,195,195,195,195,195,195,195,195},
 	meatType = "",
@@ -25,7 +25,7 @@ event_zamidirin = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-  scale = 3.0,
+  	scale = 3.0,
   
 	templates = {"object/mobile/dressed_dark_force_crystal_hunter.iff"},
 	lootGroups = {
