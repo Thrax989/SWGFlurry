@@ -515,8 +515,6 @@ bool BountyMissionObjectiveImplementation::isPlayerTarget() {
 void BountyMissionObjectiveImplementation::handleNpcTargetKilled(Observable* observable) {
 	CreatureObject* target =  cast<CreatureObject*>(observable);
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
-	ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
-	ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
 
 	if (owner == nullptr || target == nullptr)
 		return;
@@ -581,6 +579,8 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 
 	ManagedReference<MissionObject* > mission = this->mission.get();
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
+	ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
+	ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
 
 	if(mission == nullptr)
 		return;
