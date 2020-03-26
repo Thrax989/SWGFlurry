@@ -1,11 +1,11 @@
-qa_basilisk = {
+vip = {
 	level = 2,
-	name = "qa_basilisk",
-	tag = "SWGEmu-QA",
+	name = "vip",
+	tag = "VIP",
 	skills = {
 		"admin_base",
-		"admin_qa_basilisk",
+		"admin_intern_01",
 	}
 }
 
-addLevel(qa_basilisk)
+addLevel(vip)
