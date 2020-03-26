@@ -656,7 +656,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#00e604 Light Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
-					zGeneral << "A Light Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
+					zGeneral << "A Light Jedi Was Defeated By " << bhName << " a" << " Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 
@@ -664,7 +664,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Dark Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
-					zGeneral << "A Dark Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
+					zGeneral << "A Dark Jedi Was Defeated By " << bhName << " a" << " Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 
@@ -672,7 +672,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
-					zGeneral << "A Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
+					zGeneral << "A Jedi Was Defeated By " << bhName << " a" << " Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 
@@ -680,7 +680,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Gray Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
-					zGeneral << "A Gray Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
+					zGeneral << "A Gray Jedi Was Defeated By " << bhName << " a" << " Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 				killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());

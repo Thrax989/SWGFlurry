@@ -218,7 +218,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				zBroadcast << "\\#00e604" << "Light Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#e60000 Dark Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
 				//Broadcast player has died forward to discord channel. created by :TOXIC
 				StringBuffer zGeneral;
-				zGeneral << "Light Jedi Has Killed" << playerName << "Dark Jedi In The FRS";	
+				zGeneral << "A Light Jedi Has Killed " << playerName << " A Dark Jedi In The FRS";	
 				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
 			}
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
@@ -245,7 +245,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				zBroadcast << "\\#e60000" << "Dark Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#00e604 Light Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
 				//Broadcast player has died forward to discord channel. created by :TOXIC
 				StringBuffer zGeneral;
-				zGeneral << "Dark Jedi Has Killed" << playerName << "Light Jedi In The FRS";	
+				zGeneral << "A Dark Jedi Has Killed " << playerName << " A Light Jedi In The FRS";	
 				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
 			}
 				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
