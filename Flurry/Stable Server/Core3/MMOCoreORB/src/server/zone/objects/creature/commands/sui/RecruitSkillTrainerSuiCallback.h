@@ -161,7 +161,7 @@ public:
 				break;
 				
 		case 34: trainerTemplatePath = "trainer_meleebountyhunter";
-
+	
 		}
 
 		if (trainerTemplatePath != "") {

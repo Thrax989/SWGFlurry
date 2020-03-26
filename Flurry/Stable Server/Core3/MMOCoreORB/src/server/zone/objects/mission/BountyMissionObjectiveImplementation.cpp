@@ -22,6 +22,11 @@
 #include "server/zone/objects/mission/bountyhunter/BountyHunterDroid.h"
 #include "server/zone/objects/mission/bountyhunter/events/BountyHunterTargetTask.h"
 #include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
+#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
+#include "server/zone/packets/player/PlayMusicMessage.h"
+#include "server/zone/managers/loot/LootManager.h"
+#include "server/zone/managers/object/ObjectManager.h"
 
 void BountyMissionObjectiveImplementation::setNpcTemplateToSpawn(SharedObjectTemplate* sp) {
 	npcTemplateToSpawn = sp;
@@ -574,11 +579,15 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 
 	ManagedReference<MissionObject* > mission = this->mission.get();
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
+	ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
+	ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
 
 	if(mission == nullptr)
 		return;
 
 	if (owner != nullptr && killer != nullptr && !completedMission) {
+		String playerName = killer->getFirstName();
+		String bhName = owner->getFirstName();
 		if (owner->getObjectID() == killer->getObjectID()) {
 			//Target killed by player, complete mission.
 			ZoneServer* zoneServer = owner->getZoneServer();
@@ -589,24 +598,42 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					int maxXpLoss = -500000;
 
 					VisibilityManager::instance()->clearVisibility(target);
-					int xpLoss = mission->getRewardCredits() * -2;
+					StringBuffer bBroadcast;
+						int xpLoss = mission->getRewardCredits() * -2;
 
-					if (xpLoss > minXpLoss)
-						xpLoss = minXpLoss;
-					else if (xpLoss < maxXpLoss)
-						xpLoss = maxXpLoss;
+						if (xpLoss > minXpLoss)
+							xpLoss = minXpLoss;
+						else if (xpLoss < maxXpLoss)
+							xpLoss = maxXpLoss;
 
-			       	 	PlayerObject* attackerGhost = owner->getPlayerObject();
-					owner->getZoneServer()->getPlayerManager()->awardExperience(target, "jedi_general", xpLoss, true);
-					StringIdChatParameter message("base_player","prose_revoke_xp");
-					message.setDI(xpLoss * -1);
-					message.setTO("exp_n", "jedi_general");
-					target->sendSystemMessage(message);
-					String victimName = target->getFirstName();
-					String bhName = owner->getFirstName();
-					StringBuffer zBroadcast;
-					zBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
-					owner->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());	
+						owner->getZoneServer()->getPlayerManager()->awardExperience(target, "jedi_general", xpLoss, true);
+						StringIdChatParameter message("base_player","prose_revoke_xp");
+						message.setDI(xpLoss * -1);
+						message.setTO("exp_n", "jedi_general");
+						target->sendSystemMessage(message);
+						String victimName = target->getFirstName();
+						bBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
+						owner->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, bBroadcast.toString());
+						lootManager->createNamedLoot(inventory, "saberhand28", victimName, 300);//, victimName);
+
+						if (target->hasSkill("force_rank_light_novice"))
+						{
+						lootManager->createNamedLoot(inventory, "holocron_light", victimName, 300);//, victimName);
+						}
+
+						if (target->hasSkill("force_rank_dark_novice"))
+						{
+						lootManager->createNamedLoot(inventory, "holocron_dark", victimName, 300);//, victimName);
+						}
+
+						if (target->hasSkill("force_title_jedi_novice") || target->hasSkill("combat_jedi_novice") || target->hasSkill("force_rank_light_novice") || target->hasSkill("force_rank_dark_novice"))
+						{
+							owner->getZoneServer()->getPlayerManager()->awardExperience(target, "force_rank_xp", -5000, true);
+							StringIdChatParameter message("base_player","prose_revoke_xp");
+							message.setDI(5000);
+							message.setTO("exp_n", "force_rank_xp");
+							target->sendSystemMessage(message);
+					}
 				}
 			}
 
@@ -618,15 +645,28 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			killer->sendSystemMessage("You have defeated a bounty hunter, ruining his mission against you!");
 			fail();
 			//Player killed by target, fail mission.
-	                String playerName = killer->getFirstName();
-		        String bhName = owner->getFirstName();
 			StringBuffer zBroadcast;
-			if (killer->hasSkill("force_title_jedi_novice")) {
-			zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#00e604 Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+			if (killer->hasSkill("force_title_jedi_novice") || killer->hasSkill("combat_jedi_novice") || killer->hasSkill("force_rank_light_novice") || killer->hasSkill("force_rank_dark_novice")) {
+				if (killer->hasSkill("force_rank_light_novice")){
+					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#00e604 Light Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+				}
+
+				if (killer->hasSkill("force_rank_dark__novice")){
+					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Dark Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+				}
+
+				if (killer->hasSkill("force_title_jedi_novice")){
+					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+				}
+
+				if (killer->hasSkill("combat_jedi_novice")){
+					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Gray Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+				}
+				killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
+				killer->sendMessage(pmm);
+				killer->getZoneServer()->getPlayerManager()->awardExperience(killer, "force_rank_xp", 5000, true);
 			}
-			killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
-			killer->sendMessage(pmm);
 		}
 	}
 }
