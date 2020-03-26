@@ -614,6 +614,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 						target->sendSystemMessage(message);
 						String victimName = target->getFirstName();
 						bBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
+						//Broadcast player has died forward to discord channel. created by :TOXIC
 						StringBuffer zGeneral;
 						zGeneral << "Bounty Hunter Has Collected The Bounty On" << playerName;	
 						chatManager->handleGeneralChat(owner, zGeneral.toString());
@@ -653,6 +654,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			if (killer->hasSkill("force_title_jedi_novice") || killer->hasSkill("combat_jedi_novice") || killer->hasSkill("force_rank_light_novice") || killer->hasSkill("force_rank_dark_novice")) {
 				if (killer->hasSkill("force_rank_light_novice")){
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#00e604 Light Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
 					zGeneral << "A Light Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
@@ -660,6 +662,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 
 				if (killer->hasSkill("force_rank_dark__novice")){
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Dark Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
 					zGeneral << "A Dark Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
@@ -667,6 +670,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 
 				if (killer->hasSkill("force_title_jedi_novice")){
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
 					zGeneral << "A Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
@@ -674,6 +678,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 
 				if (killer->hasSkill("combat_jedi_novice")){
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Gray Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
 					zGeneral << "A Gray Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
