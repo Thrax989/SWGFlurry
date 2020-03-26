@@ -581,6 +581,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
 	ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
 	ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
+	ChatManager* chatManager = owner->getZoneServer()->getChatManager();
 
 	if(mission == nullptr)
 		return;
@@ -613,6 +614,9 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 						target->sendSystemMessage(message);
 						String victimName = target->getFirstName();
 						bBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
+						StringBuffer zGeneral;
+						zGeneral << "Bounty Hunter Has Collected The Bounty On" << playerName;	
+						chatManager->handleGeneralChat(owner, zGeneral.toString());
 						owner->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, bBroadcast.toString());
 						lootManager->createNamedLoot(inventory, "saberhand28", victimName, 300);//, victimName);
 
@@ -649,18 +653,30 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			if (killer->hasSkill("force_title_jedi_novice") || killer->hasSkill("combat_jedi_novice") || killer->hasSkill("force_rank_light_novice") || killer->hasSkill("force_rank_dark_novice")) {
 				if (killer->hasSkill("force_rank_light_novice")){
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#00e604 Light Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+					StringBuffer zGeneral;
+					zGeneral << "A Light Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
+					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 
 				if (killer->hasSkill("force_rank_dark__novice")){
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Dark Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+					StringBuffer zGeneral;
+					zGeneral << "A Dark Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
+					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 
 				if (killer->hasSkill("force_title_jedi_novice")){
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+					StringBuffer zGeneral;
+					zGeneral << "A Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
+					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 
 				if (killer->hasSkill("combat_jedi_novice")){
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Gray Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+					StringBuffer zGeneral;
+					zGeneral << "A Gray Jedi Was Defeated By" << bhName << "a" << "Bounty Hunter";	
+					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 				killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 				PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
