@@ -1,6 +1,6 @@
-semnate = {
+senator = {
 	level = 1,
-	name = "senate",
+	name = "senator",
 	tag = "Senator",
 	skills = {
 		"admin_base",
@@ -8,4 +8,4 @@ semnate = {
 	}
 }
 
-addLevel(senate)
+addLevel(senator)
