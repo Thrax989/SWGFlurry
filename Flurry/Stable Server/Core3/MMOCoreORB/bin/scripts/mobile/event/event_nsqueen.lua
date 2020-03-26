@@ -8,7 +8,7 @@ event_nsqueen = Creature:new {
 	damageMax = 6000,
 	baseXp = 28549,
 	baseHAM = 9500000,
-	baseHAMmax = 10000000,
+	baseHAMmax = 9900000,
 	armor = 3,
 	resists = {195,195,195,195,195,195,195,195,195},
 	meatType = "",
@@ -24,7 +24,7 @@ event_nsqueen = Creature:new {
 	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
-  scale = 3.0,
+ 	scale = 3.0,
   
 	templates = {"object/mobile/charal.iff"},
 	lootGroups = {
