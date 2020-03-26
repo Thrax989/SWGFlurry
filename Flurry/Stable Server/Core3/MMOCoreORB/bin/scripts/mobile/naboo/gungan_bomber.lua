@@ -27,7 +27,7 @@ gungan_bomber = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_male.iff"},
+	templates = {"object/mobile/shared_gungan_m_hood_greeter.iff"},
 	lootGroups = {
 		{
 			groups = {
