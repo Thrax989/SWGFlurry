@@ -1,14 +1,13 @@
 event_exar = Creature:new {
-	customName = "Spirit of Exar Kun",
-	socialGroup = "exar",
-	faction = "event",
+	socialGroup = "mercenary",
+	faction = "",
 	level = 300,
 	chanceHit = 50.0,
 	damageMin = 3000,
 	damageMax = 6000,
-	baseXp = 28549,
-	baseHAM = 9500000,
-	baseHAMmax = 9900000,
+	baseXp = 128549,
+	baseHAM = 3900000,
+	baseHAMmax = 4000000,
 	armor = 3,
 	resists = {195,195,195,195,195,195,195,195,195},
 	meatType = "",
@@ -32,6 +31,24 @@ event_exar = Creature:new {
 				{group = "g_named_crystals", chance = 10000000},
 			},
 			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "g_named_crystals", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "g_cloak_of_hate", chance = 10000000},
+			},
+			lootChance = 500000
+		},
+		{
+			groups = {
+				{group = "capes", chance = 10000000},
+			},
+			lootChance = 1500000
 		},
 		{
 			groups = {
