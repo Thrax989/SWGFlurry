@@ -651,8 +651,8 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			fail();
 			//Player killed by target, fail mission.
 			StringBuffer zBroadcast;
-
-				if (killer->getJediState() == 4) {
+			ManagedReference<PlayerObject*> ghost = killer->getPlayerObject();
+				if (ghost->getJediState() == 4) {
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " A" << "\\#00e604 Light Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
@@ -660,7 +660,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 
-				if (killer->getJediState() == 8) {
+				if (ghost->getJediState() == 8) {
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " A" << "\\#e60000 Dark Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
@@ -668,7 +668,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 
-				if (killer->getJediState() <= 2) {
+				if (ghost->getJediState() <= 2) {
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
