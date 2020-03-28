@@ -1335,6 +1335,34 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			}
 
 			if (attackerCreature->isPlayerCreature()) {
+				String playerName = player->getFirstName();
+				String killerName = attackerCreature->getFirstName();
+				StringBuffer zBroadcast;
+				String killerFaction, playerFaction;
+				if (attacker->isRebel())
+					killerFaction = "\\#FF9933 Rebel";
+				else if (attacker->isImperial())
+					killerFaction = "\\#7133FF Imperial";
+				else
+					killerFaction = "\\#c1be13 Civilian";
+
+				if (player->isRebel())
+					playerFaction = "\\#FF9933 Rebel";
+				else if (player->isImperial())
+					playerFaction = "\\#7133FF Imperial";
+				else
+					playerFaction = "\\#c1be13 Civilian";
+				if (!CombatManager::instance()->areInDuel(attackerCreature, player))
+					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName;
+				else
+					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a duel by" << killerFaction << "\\#00cc99 " << killerName;
+
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				}
+
+			}
+
+			if (attackerCreature->isPlayerCreature()) {
 				PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
 					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
