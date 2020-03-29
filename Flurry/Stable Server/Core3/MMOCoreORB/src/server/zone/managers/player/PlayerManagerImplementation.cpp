@@ -1360,9 +1360,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		}
 
-	}
-
-	if (attacker->getFaction() != 0) {
+		if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
 			CreatureObject* attackerCreature = attacker->asCreatureObject();
 
@@ -1371,11 +1369,12 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 				if (owner != nullptr && owner->isPlayerCreature()) {
 					attackerCreature = owner;
+					}
 				}
-
 			}
+		}
 
-			if (attackerCreature->isPlayerCreature()) {
+		if (attackerCreature->isPlayerCreature()) {
 				PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
 					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
