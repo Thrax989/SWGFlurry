@@ -1357,7 +1357,20 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				else
 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a duel by" << killerFaction << "\\#00cc99 " << killerName;
 
-					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		}
+
+	}
+
+	if (attacker->getFaction() != 0) {
+		if (attacker->isPlayerCreature() || attacker->isPet()) {
+			CreatureObject* attackerCreature = attacker->asCreatureObject();
+
+			if (attackerCreature->isPet()) {
+				CreatureObject* owner = attackerCreature->getLinkedCreature().get();
+
+				if (owner != nullptr && owner->isPlayerCreature()) {
+					attackerCreature = owner;
 				}
 
 			}
