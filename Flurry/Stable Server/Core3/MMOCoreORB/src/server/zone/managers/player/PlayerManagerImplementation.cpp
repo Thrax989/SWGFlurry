@@ -1332,7 +1332,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 					attackerCreature = owner;
 				}
 			}
-
+			//Added Discord Broadcast System : Created By TOXIC
 			if (attackerCreature->isPlayerCreature()) {
 				String playerName = player->getFirstName();
 				String killerName = attackerCreature->getFirstName();
