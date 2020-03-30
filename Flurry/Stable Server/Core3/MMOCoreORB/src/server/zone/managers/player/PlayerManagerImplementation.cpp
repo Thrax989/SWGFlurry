@@ -1190,7 +1190,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	player->updateTimeOfDeath();
 	// player->clearBuffs(true, false);
-
+ 	ChatManager* chatManager = player->getZoneServer()->getChatManager();
 	PlayerObject* ghost = player->getPlayerObject();
 
 	if (ghost != nullptr) {
@@ -1322,11 +1322,10 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	if (!attacker->isPlayerCreature()) {
 		ghost->updatePveDeaths();
 	}
-	if (attacker->getFaction() != 0) {
-		if (attacker->isPlayerCreature() || attacker->isPet()) {
-			CreatureObject* attackerCreature = attacker->asCreatureObject();
 
-			if (attackerCreature->isPet()) {
+	if (attacker->isPlayerCreature() || attacker->isPet()){
+		CreatureObject* attackerCreature = attacker->asCreatureObject();
+		if (attackerCreature->isPet()) {
 				CreatureObject* owner = attackerCreature->getLinkedCreature().get();
 
 				if (owner != nullptr && owner->isPlayerCreature()) {
@@ -1338,29 +1337,37 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				String playerName = player->getFirstName();
 				String killerName = attackerCreature->getFirstName();
 				StringBuffer zBroadcast;
+				StringBuffer zGeneral;
 				String killerFaction, playerFaction;
 				if (attacker->isRebel())
-					killerFaction = "\\#FF9933 Rebel";
+					killerFaction = " [Rebel] ";
 				else if (attacker->isImperial())
-					killerFaction = "\\#7133FF Imperial";
+					killerFaction = " [Imperial] ";
 				else
-					killerFaction = "\\#c1be13 Civilian";
+					killerFaction = " [Civilian] ";
 
 				if (player->isRebel())
-					playerFaction = "\\#FF9933 Rebel";
+					playerFaction = " [Rebel] ";
 				else if (player->isImperial())
-					playerFaction = "\\#7133FF Imperial";
+					playerFaction = " [Imperial] ";
 				else
-					playerFaction = "\\#c1be13 Civilian";
-				if (!CombatManager::instance()->areInDuel(attackerCreature, player))
-					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName;
-				else
-					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a duel by" << killerFaction << "\\#00cc99 " << killerName;
+					playerFaction = " [Civilian] ";
 
-				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-		}
+				if (CombatManager::instance()->areInDuel(attackerCreature, player)) {
+					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a Duel by" << killerFaction << "\\#00cc99 " << killerName;
+					zGeneral << playerFaction << "was slain in a Duel by" << killerFaction << killerName;	
+				 }
+				//Added Discord Broadcast System : Created By TOXIC
+				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
+ 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName;
+					zGeneral << playerFaction << "was slain in PVP by" << killerFaction << killerName;	
 
-		if (attacker->getFaction() != 0) {
+				}
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+					chatManager->handleGeneralChat(player, zGeneral.toString());
+			}
+
+	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
 			CreatureObject* attackerCreature = attacker->asCreatureObject();
 
@@ -1369,10 +1376,8 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 				if (owner != nullptr && owner->isPlayerCreature()) {
 					attackerCreature = owner;
-					}
 				}
 			}
-		}
 
 		if (attackerCreature->isPlayerCreature()) {
 				PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
@@ -1444,6 +1449,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->setTargetID(0, true);
 
 	player->notifyObjectKillObservers(attacker);
+		}
 	}
 }
 
