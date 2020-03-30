@@ -91,7 +91,7 @@ ep3_lord_cyssc = Creature:new {
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "worldbosscrate", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
