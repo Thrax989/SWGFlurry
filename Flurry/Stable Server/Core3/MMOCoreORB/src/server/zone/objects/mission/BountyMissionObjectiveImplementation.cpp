@@ -616,7 +616,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 						bBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
 						//Broadcast player has died forward to discord channel. created by :TOXIC
 						StringBuffer zGeneral;
-						zGeneral << "Bounty Hunter Has Collected The Bounty On" << playerName;	
+						zGeneral << "A Bounty Hunter Has Collected The Bounty On " << playerName;	
 						chatManager->handleGeneralChat(owner, zGeneral.toString());
 						owner->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, bBroadcast.toString());
 						lootManager->createNamedLoot(inventory, "saberhand28", victimName, 300);//, victimName);
@@ -651,28 +651,28 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			fail();
 			//Player killed by target, fail mission.
 			StringBuffer zBroadcast;
-			if (killer->hasSkill("force_title_jedi_novice") || killer->hasSkill("combat_jedi_novice") || killer->hasSkill("force_rank_light_novice") || killer->hasSkill("force_rank_dark_novice")) {
-				if (killer->hasSkill("force_rank_light_novice")){
-					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#00e604 Light Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+			ManagedReference<PlayerObject*> ghost = killer->getPlayerObject();
+				if (ghost->getJediState() == 4) {
+					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " A" << "\\#00e604 Light Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
-					zGeneral << "A Light Jedi Was Defeated By " << bhName << " a" << " Bounty Hunter";	
+					zGeneral << "A Light Jedi Has Defeated " << bhName << " A" << " Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 
-				if (killer->hasSkill("force_rank_dark__novice")){
-					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Dark Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+				if (ghost->getJediState() == 8) {
+					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " A" << "\\#e60000 Dark Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
-					zGeneral << "A Dark Jedi Was Defeated By " << bhName << " a" << " Bounty Hunter";	
+					zGeneral << "A Dark Jedi Has Defeated " << bhName << " A" << " Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 
-				if (killer->hasSkill("force_title_jedi_novice")){
+				if (ghost->getJediState() <= 2) {
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
-					zGeneral << "A Jedi Was Defeated By " << bhName << " a" << " Bounty Hunter";	
+					zGeneral << "A Jedi Has Defeated " << bhName << " A" << " Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 
@@ -680,14 +680,13 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#e60000 Gray Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 					//Broadcast player has died forward to discord channel. created by :TOXIC
 					StringBuffer zGeneral;
-					zGeneral << "A Gray Jedi Was Defeated By " << bhName << " a" << " Bounty Hunter";	
+					zGeneral << "A Gray Jedi Has Defeated " << bhName << " A" << " Bounty Hunter";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
 				}
 				killer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 				PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
 				killer->sendMessage(pmm);
 				killer->getZoneServer()->getPlayerManager()->awardExperience(killer, "force_rank_xp", 5000, true);
-			}
 		}
 	}
 }

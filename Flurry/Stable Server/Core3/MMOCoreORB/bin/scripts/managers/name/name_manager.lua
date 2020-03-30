@@ -33,6 +33,7 @@ reservedNames = {
 	{ "biatch", DECLINED_PROFANE },
 	{ "bitch", DECLINED_PROFANE },
 	{ "boob", DECLINED_PROFANE },
+	{ "butt", DECLINED_PROFANE },
 	{ "christ", DECLINED_PROFANE },
 	{ "clit", DECLINED_PROFANE },
 	{ "cock", DECLINED_PROFANE },
