@@ -1354,12 +1354,6 @@ void PlayerObjectImplementation::notifyOnline() {
 	luaOnPlayerLoggedIn->callFunction();
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
-	//Broadcast To Discord Server
-	ChatManager* chatManager = playerCreature->getZoneServer()->getChatManager();	
-	StringBuffer zGeneral;
-	String playerName = playerCreature->getFirstName();
-	zGeneral << " Has logged in.";	
-	chatManager->handleGeneralChat(playerCreature, zGeneral.toString());
 
 	if (getForcePowerMax() > 0 && getForcePower() < getForcePowerMax())
 		activateForcePowerRegen();
