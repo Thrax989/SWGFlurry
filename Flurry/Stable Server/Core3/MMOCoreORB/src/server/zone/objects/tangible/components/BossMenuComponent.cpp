@@ -52,9 +52,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (!creature->isInCombat()) {
 					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					//Broadcast to Server
+					ChatManager* chatManager = creature->getZoneServer()->getChatManager();
 					String playerName = creature->getFirstName();
 					StringBuffer zBroadcast;
 					zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Looking To Join A Raid Group, They Are located At The Nova Orion Space Station.";
+					//Broadcast player has died forward to discord channel. created by :TOXIC
+					StringBuffer zGeneral;
+					zGeneral << "Is Looking To Join A Raid Group, They Are located At The Nova Orion Space Station.";	
+					chatManager->handleGeneralChat(creature, zGeneral.toString());
 					creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 					creature->playEffect("clienteffect/death_trooper_infection_01.cef", "");
 					creature->addCooldown("server_broadcast_group", 60 * 1000);// 60 second cooldown

@@ -151,7 +151,6 @@ void FactionManager::awardFactionStanding(CreatureObject* player, const String& 
 
 		if (!enemyFaction.isPlayerAllowed())
 			continue;
-
 		if (enemy == "rebel" || enemy == "imperial") {
 
 			if (player->isGrouped()) {
@@ -187,27 +186,57 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 		ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
 		ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
 		ManagedReference<PlayerManager*> playerManager = killerCreature->getZoneServer()->getPlayerManager();
-
 		//Player name on player datapad
+		//Broadcast to Server
 		String playerName = destructedObject->getFirstName();
-		
+		String killerName = killerCreature->getFirstName();
+		StringBuffer zBroadcast;
+		ChatManager* chatManager = ghost->getZoneServer()->getChatManager();
+
 
 		if (killer->isRebel() && destructedObject->isImperial()) {
 			ghost->increaseFactionStanding("rebel", 30);
 			killer->playEffect("clienteffect/holoemote_rebel.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
-			//lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
+			lootManager->createLoot(inventory, "rebpoints", 300);
+			if(ghost->getJediState() >= 2){
+				lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
+			}else{
+				lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);//, playerName);
+			}
 			ghost->decreaseFactionStanding("imperial", 45);
 			killedGhost->decreaseFactionStanding("imperial", 45);
+			
+			if (killerCreature->hasSkill("force_rank_light_novice") && destructedObject->hasSkill("force_rank_dark_novice")) {
+				zBroadcast << "\\#00e604" << "Light Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#e60000 Dark Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
+				//Broadcast player has died forward to discord channel. created by :TOXIC
+				StringBuffer zGeneral;
+				zGeneral << "A Light Jedi Has Killed " << playerName << " A Dark Jedi In The FRS";	
+				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
+			}
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		} else if (killer->isImperial() && destructedObject->isRebel()) {
 			ghost->increaseFactionStanding("imperial", 30);
 			killer->playEffect("clienteffect/holoemote_imperial.cef", "head");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
-			//lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);
+			lootManager->createLoot(inventory, "imppoints", 300);
+			if(ghost->getJediState() >= 2){
+				lootManager->createNamedLoot(inventory, "task_loot_padawan_braid", playerName, 300);//, playerName);
+			}else{
+				lootManager->createNamedLoot(inventory, "playerDatapad", playerName, 300);//, playerName);
+			}
 			ghost->decreaseFactionStanding("rebel", 45);
 			killedGhost->decreaseFactionStanding("rebel", 45);
+			if (killerCreature->hasSkill("force_rank_dark_novice") && destructedObject->hasSkill("force_rank_light_novice")) {
+				zBroadcast << "\\#e60000" << "Dark Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#00e604 Light Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
+				//Broadcast player has died forward to discord channel. created by :TOXIC
+				StringBuffer zGeneral;
+				zGeneral << "A Dark Jedi Has Killed " << playerName << " A Light Jedi In The FRS";	
+				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
+			}
+				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		}
 	}
 }

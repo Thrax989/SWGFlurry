@@ -1190,7 +1190,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	player->updateTimeOfDeath();
 	// player->clearBuffs(true, false);
-
+ 	ChatManager* chatManager = player->getZoneServer()->getChatManager();
 	PlayerObject* ghost = player->getPlayerObject();
 
 	if (ghost != nullptr) {
@@ -1322,6 +1322,49 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	if (!attacker->isPlayerCreature()) {
 		ghost->updatePveDeaths();
 	}
+
+	if (attacker->isPlayerCreature() || attacker->isPet()){
+		CreatureObject* attackerCreature = attacker->asCreatureObject();
+		if (attackerCreature->isPet()) {
+				CreatureObject* owner = attackerCreature->getLinkedCreature().get();
+
+				if (owner != nullptr && owner->isPlayerCreature()) {
+					attackerCreature = owner;
+				}
+			}
+			//Added Discord Broadcast System : Created By TOXIC
+			if (attackerCreature->isPlayerCreature()) {
+				String playerName = player->getFirstName();
+				String killerName = attackerCreature->getFirstName();
+				StringBuffer zBroadcast;
+				StringBuffer zGeneral;
+				String killerFaction, playerFaction;
+				if (attacker->isRebel())
+					killerFaction = " [Rebel] ";
+				else if (attacker->isImperial())
+					killerFaction = " [Imperial] ";
+				else
+					killerFaction = " [Civilian] ";
+				if (player->isRebel())
+					playerFaction = " [Rebel] ";
+				else if (player->isImperial())
+					playerFaction = " [Imperial] ";
+				else
+					playerFaction = " [Civilian] ";
+				if (CombatManager::instance()->areInDuel(attackerCreature, player)) {
+					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a Duel by" << killerFaction << "\\#00cc99 " << killerName;
+					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName;	
+				 }
+
+				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
+ 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName;
+					zGeneral << playerFaction << "was slain in [PvP] by" << killerFaction << killerName;	
+
+				}
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+					chatManager->handleGeneralChat(player, zGeneral.toString());
+			}
+
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
 			CreatureObject* attackerCreature = attacker->asCreatureObject();
@@ -1334,7 +1377,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				}
 			}
 
-			if (attackerCreature->isPlayerCreature()) {
+		if (attackerCreature->isPlayerCreature()) {
 				PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
 					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
@@ -1404,6 +1447,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->setTargetID(0, true);
 
 	player->notifyObjectKillObservers(attacker);
+		}
 	}
 }
 
@@ -1625,6 +1669,11 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::ACTION, 100, true, false);
 		player->addWounds(CreatureAttribute::MIND, 100, true, false);
 		player->addShockWounds(100, true);
+		ChatManager* chatManager = player->getZoneServer()->getChatManager();
+		//Broadcast player has died forward to discord channel. created by :TOXIC
+		StringBuffer zGeneral;
+		zGeneral << "Has Died!";	
+		chatManager->handleGeneralChat(player, zGeneral.toString());
 	}
 
 	//PermaDeath : Gray Jedi with 0 lives cannot login
