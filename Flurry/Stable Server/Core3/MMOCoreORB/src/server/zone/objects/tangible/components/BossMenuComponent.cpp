@@ -183,7 +183,7 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 					locker.release();
 				}
 			}
-			creature->switchZone("dungeon2", 6193, 250, -5978, 0);
+			creature->switchZone("dungeon2", 6204.45, 249.9, -5980.19, 0);
 		}
 	}
 	if (selectedID == 223) {
