@@ -1966,7 +1966,7 @@ class PlayerObject extends IntangibleObject {
 		lastPvpRatingUpdate.updateToCurrentTime();
 	}
 
-	public boolean hasOnVictimList(unsigned int playerID) {
+	public synchronized boolean hasOnVictimList(unsigned int playerID) {
 		if (lastPvpRatingUpdate.miliDifference() >= PVP_RESET_TIME && victimList.size() > 0) {
 			victimList.removeAll();
 			return false;
