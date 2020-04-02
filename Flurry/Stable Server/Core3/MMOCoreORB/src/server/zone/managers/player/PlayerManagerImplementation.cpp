@@ -1198,7 +1198,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		ghost->setFoodFilling(0);//Remove Food Filling After Death
 		ghost->setDrinkFilling(0);//Remove Drink Filling After Death
 		if (ghost->hasPvpTef()) {
-			ghost->schedulePvpTefRemovalTask(true, true);
+			ghost->schedulePvpTefRemovalTask(true, true, true);
 		}
 	}
 
@@ -6011,6 +6011,9 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 		CreatureObject* attacker = threatMap->elementAt(i).getKey();
 
 		if (entry == nullptr || attacker == nullptr || attacker == player || !attacker->isPlayerCreature())
+			continue;
+
+		if (player->getGroupID() != 0 && player->getGroupID() == attacker->getGroupID())
 			continue;
 
 		PlayerObject* attackerGhost = attacker->getPlayerObject();

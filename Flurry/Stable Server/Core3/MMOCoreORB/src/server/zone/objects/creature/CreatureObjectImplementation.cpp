@@ -3008,6 +3008,13 @@ bool CreatureObjectImplementation::isAggressiveTo(CreatureObject* object) {
 		return true;
 	}
 
+	if (ghost->hasJediTef())
+		return true;
+
+	if (object->getPvpStatusBitmask() & CreatureFlag::TEF && getFaction() != object-> getFaction()){
+		return true;
+	}
+
 	ManagedReference<GuildObject*> guildObject = guild.get();
 	if (guildObject != nullptr && guildObject->isInWaringGuild(object))
 		return true;
@@ -3045,12 +3052,8 @@ bool CreatureObjectImplementation::isAttackableBy(TangibleObject* object, bool b
 	if(object->getFaction() == getFaction())
 		return false;
 
-	// if player is on leave, then faction object cannot attack it
-	if (getFactionStatus() == FactionStatus::ONLEAVE || getFaction() == 0)
-		return false;
-
 	// if tano is overt, creature must be overt
-	if((object->getPvpStatusBitmask() & CreatureFlag::OVERT) && !(getPvpStatusBitmask() & CreatureFlag::OVERT))
+	if((getFactionStatus() == FactionStatus::COVERT && !(getPvpStatusBitmask() & CreatureFlag::TEF)) && object->getFaction() != 0)
 		return false;
 
 	// the other options are overt creature / overt tano  and covert/covert, covert tano, overt creature..  all are attackable
@@ -3132,6 +3135,18 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 	if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
 		return true;
 
+	if ((pvpStatusBitmask & CreatureFlag::TEF) && (object->getFaction() != getFaction()) && (object->getFaction() != 0) && object->getPvpStatusBitmask() & CreatureFlag::OVERT) {
+		return true;
+	}
+
+	if ((pvpStatusBitmask & CreatureFlag::OVERT && ghost->hasPvpTef()) && (object->getFaction() != getFaction()) && (object->getFaction() !=0) && targetGhost->hasPvpTef()){
+		return true;
+	}
+
+	if (ghost->hasJediTef() || (ghost->isJedi() && getWeapon()->isJediWeapon()) || (ghost->isJediAttackable())){
+		return true;
+	}
+
 	ManagedReference<GuildObject*> guildObject = guild.get();
 	if (guildObject != nullptr && guildObject->isInWaringGuild(object))
 		return true;
@@ -3154,8 +3169,9 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 	if (ghost == nullptr)
 		return false;
 
-	if (ghost->hasBhTef())
-		return false;
+	//bh heal tef disabled
+	//if (ghost->hasBhTef())
+		//return false;
 
 	//if ((pvpStatusBitmask & CreatureFlag::OVERT) && (object->getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFaction() != getFaction())
 
@@ -3163,6 +3179,8 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 	if (isPet()) {
 		auto linkedCreature = getLinkedCreature().get();
+		if (object == linkedCreature)
+			return true;
 
 		if (linkedCreature != nullptr) {
 			targetCreo = linkedCreature.get();
@@ -3171,20 +3189,18 @@ bool CreatureObjectImplementation::isHealableBy(CreatureObject* object) {
 
 	uint32 targetFactionStatus = targetCreo->getFactionStatus();
 	uint32 currentFactionStatus = object->getFactionStatus();
+	PlayerObject* playerGhost = getPlayerObject();
 
-	if (getFaction() != object->getFaction() && !(targetFactionStatus == FactionStatus::ONLEAVE))
+
+	if (playerGhost != nullptr){
+	if (getFaction() != object->getFaction() && ((ghost->hasPvpTef() || playerGhost->hasPvpTef() )))
 		return false;
 
-	if ((targetFactionStatus == FactionStatus::OVERT) && !(currentFactionStatus == FactionStatus::OVERT))
+	if (currentFactionStatus == FactionStatus::OVERT && (object->getFaction() == 0 || object->getFaction() != getFaction()))
 		return false;
 
-	if (!(targetFactionStatus == FactionStatus::ONLEAVE) && (currentFactionStatus == FactionStatus::ONLEAVE))
+	if (playerGhost->hasPvpTef() && (object->getFaction() == 0 || object->getFaction() != getFaction()))
 		return false;
-
-	if(targetCreo->isPlayerCreature()) {
-		PlayerObject* targetGhost = targetCreo->getPlayerObject();
-		if(targetGhost != nullptr && targetGhost->hasBhTef())
-			return false;
 	}
 
 	return true;

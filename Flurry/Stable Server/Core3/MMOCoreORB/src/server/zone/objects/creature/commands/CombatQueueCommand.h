@@ -25,6 +25,7 @@
 #include "server/zone/packets/object/CombatSpam.h"
 #include "QueueCommand.h"
 #include "server/zone/objects/player/FactionStatus.h"
+#include "server/zone/managers/visibility/VisibilityManager.h"
 
 class CombatQueueCommand : public QueueCommand {
 protected:
@@ -181,34 +182,6 @@ public:
 
 				if (ghost->isAFK())
 					return GENERALERROR;
-
-				ManagedReference<TangibleObject*> targetTano = targetObject.castTo<TangibleObject*>();
-
-				if (targetTano != nullptr && creature->getFaction() != 0 && targetTano->getFaction() != 0 && targetTano->getFaction() != creature->getFaction() && creature->getFactionStatus() != FactionStatus::OVERT) {
-					if (targetTano->isCreatureObject()) {
-						ManagedReference<CreatureObject*> targetCreature = targetObject.castTo<CreatureObject*>();
-
-						if (targetCreature != nullptr) {
-							if (targetCreature->isPlayerCreature()) {
-								if (!CombatManager::instance()->areInDuel(creature, targetCreature) && !targetCreature->hasBountyMissionFor(creature) && !creature->hasBountyMissionFor(targetCreature) && targetCreature->getFactionStatus() == FactionStatus::OVERT)
-									ghost->doFieldFactionChange(FactionStatus::OVERT);
-							} else if (targetCreature->isPet()) {
-								ManagedReference<CreatureObject*> targetOwner = targetCreature->getLinkedCreature().get();
-
-								if (targetOwner != nullptr && !creature->hasBountyMissionFor(targetOwner) && !targetOwner->hasBountyMissionFor(creature) && !CombatManager::instance()->areInDuel(creature, targetOwner) && targetOwner->getFactionStatus() == FactionStatus::OVERT) {
-										ghost->doFieldFactionChange(FactionStatus::OVERT);
-								}
-							} else {
-								if (creature->getFactionStatus() == FactionStatus::ONLEAVE)
-									ghost->doFieldFactionChange(FactionStatus::COVERT);
-							}
-						}
-					} else {
-						if (creature->getFactionStatus() == FactionStatus::ONLEAVE && !(targetTano->getPvpStatusBitmask() & CreatureFlag::OVERT))
-							ghost->doFieldFactionChange(FactionStatus::COVERT);
-						else if ((targetTano->getPvpStatusBitmask() & CreatureFlag::OVERT))
-							ghost->doFieldFactionChange(FactionStatus::OVERT);
-					}
 				}
 			}
 		}
@@ -281,6 +254,20 @@ public:
 		// only clear aiming states if command was successful
 		creature->removeStateBuff(CreatureState::AIMING);
 		creature->removeBuff(STRING_HASHCODE("steadyaim"));
+
+		//Give visibility
+		if (creature->isPlayerCreature()){
+			PlayerObject* visGhost = creature->getPlayerObject().get();
+			if (visGhost->isJedi()){
+				WeaponObject* visWeap = creature->getWeapon();
+				if (visWeap->isJediWeapon()){
+					VisibilityManager::instance()->increaseVisibility(creature, 25);
+					//Jedi Attackable
+					visGhost->updateLastJediAttackableTimestamp();
+				}
+
+			}
+		}
 
 		return SUCCESS;
 	}
