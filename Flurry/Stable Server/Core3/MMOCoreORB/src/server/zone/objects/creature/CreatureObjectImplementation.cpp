@@ -3053,8 +3053,8 @@ bool CreatureObjectImplementation::isAttackableBy(TangibleObject* object, bool b
 		return false;
 
 	// if tano is overt, creature must be overt
-	if((getFactionStatus() == FactionStatus::COVERT && !(getPvpStatusBitmask() & CreatureFlag::TEF)) && object->getFaction() != 0)
-		return false;
+	//if((getFactionStatus() == FactionStatus::COVERT && !(getPvpStatusBitmask() & CreatureFlag::TEF)) && object->getFaction() != 0)
+		//return false;
 
 	// the other options are overt creature / overt tano  and covert/covert, covert tano, overt creature..  all are attackable
 	return true;
