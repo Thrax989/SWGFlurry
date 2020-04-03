@@ -34,6 +34,7 @@
 #include "server/zone/managers/gcw/GCWManager.h"
 #include "templates/faction/Factions.h"
 #include "server/zone/objects/player/FactionStatus.h"
+#include "server/zone/managers/objectcontroller/ObjectController.h"
 
 void TangibleObjectImplementation::initializeTransientMembers() {
 	SceneObjectImplementation::initializeTransientMembers();
@@ -652,41 +653,6 @@ int TangibleObjectImplementation::inflictDamage(TangibleObject* attacker, int da
 		notifyObjectDestructionObservers(attacker, newConditionDamage, isCombatAction);
 		notifyObservers(ObserverEventType::OBJECTDISABLED, attacker);
 		setDisabled(true);
-
-		// Crawl back up the object's associated chain to get player's object
-		ManagedReference<CreatureObject*> player = dynamic_cast<CreatureObject*>(attacker->getParent().get().get());
-
-		// will be null if the item isn't actually equipped!
-		if (player == nullptr){
-			return 0;
-		}
-
-		ZoneServer* zoneServer = server->getZoneServer();
-		ObjectController* objectController = zoneServer->getObjectController();
-		SceneObject* inventory = player->getSlottedObject("inventory");
-
-		// Check for item that need to be unequipped from the player's inventory due to breaking!
-		for(int i = 0; i < player->getSlottedObjectsSize(); ++i) {
-			// Get the equipped object
-			ManagedReference<TangibleObject*> object = player->getSlottedObject(i).castTo<TangibleObject*>();
-
-			// If object is bad skip
-			if (object == nullptr)
-				continue;
-
-			// Skip this item if it's a container!
-			if (object->isContainerObject())
-				continue;
-
-			if (inventory != nullptr){
-				if (object->getObjectID() == attacker->getObjectID()){
-					// Unequip item that has become broken
-					objectController->transferObject(object, inventory, -1, true, true); // -1 is the containmentType to unequip items
-					player->sendSystemMessage("Your " + attacker->getDisplayedName() + " has been unequipped!!!");
-					break;
-				}
-			}
-		}
 	}
 
 	return 0;
