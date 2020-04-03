@@ -2402,10 +2402,10 @@ bool PlayerObjectImplementation::hasBhTef() const {
 	return !lastBhPvpCombatActionTimestamp.isPast();
 }
 
-bool PlayerObjectImplementation::hasJediTef() {
+bool PlayerObjectImplementation::hasJediTef() const {
 	return !lastJediPvpCombatActionTimestamp.isPast();
 }
-bool PlayerObjectImplementation::isJediAttackable() {
+bool PlayerObjectImplementation::isJediAttackable() const {
 	return !lastJediAttackableTimestamp.isPast();
 }
 
