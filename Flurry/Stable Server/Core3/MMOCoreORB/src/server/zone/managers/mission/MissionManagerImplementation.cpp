@@ -1097,6 +1097,7 @@ void MissionManagerImplementation::randomizeGenericBountyMission(CreatureObject*
 				mission->setMissionTitle(stfFile, "m" + String::valueOf(randTexts) + "t");
 				mission->setMissionDescription(stfFile, "m" + String::valueOf(randTexts) + "d");
 			}
+		}
 	} else {
 		mission->setMissionTargetName(nm->makeCreatureName());
 
@@ -2128,10 +2129,9 @@ void MissionManagerImplementation::failPlayerBountyMission(uint64 bountyHunter) 
 
 		if (mission != nullptr) {
 			ManagedReference<BountyMissionObjective*> objective = cast<BountyMissionObjective*>(mission->getMissionObjective());
-			ManagedReference<CreatureObject*> target = server->getObject(mission->getTargetObjectId()).castTo<CreatureObject*>();
-
 			if (objective != nullptr) {
 				ManagedReference<CreatureObject*> player = objective->getPlayerOwner();
+				ManagedReference<CreatureObject*> target = server->getObject(mission->getTargetObjectId()).castTo<CreatureObject*>();
 
 				if (player != nullptr) {
 					player->sendSystemMessage("@mission/mission_generic:failed");
