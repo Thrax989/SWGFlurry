@@ -2932,8 +2932,32 @@ void PlayerObjectImplementation::doFieldFactionChange(int newStatus) {
 	parent->sendMessage(inputbox->generateMessage());
 }
 
+
+
 bool PlayerObjectImplementation::isIgnoring(const String& name) const {
 	return !name.isEmpty() && ignoreList.contains(name);
+}
+
+void PlayerObjectImplementation::refundPlayerBountyCredits() {
+	ZoneServer* zoneServer = server->getZoneServer();
+	ManagedReference<CreatureObject*> creature = getParent().get().castTo<CreatureObject*>();
+	ManagedReference<CreatureObject*> bountyPlacer = zoneServer->getObject(getBountyPlacerId()).castTo<CreatureObject*>();
+
+	if (creature != nullptr && bountyPlacer != nullptr) {
+		ManagedReference<ChatManager*> chatManager = zoneServer->getChatManager();
+
+		String sender = "Bounty Hunters Guild";
+		UnicodeString subject("Player Bounty Failure");
+		String body = creature->getFirstName() + " has eluded even our best Bounty Hunters. Given this shameful failure, we have refunded the credits you placed on their head back into your bank account.";
+
+		chatManager->sendMail(sender, subject, body, bountyPlacer->getFirstName());
+
+		Locker locker(bountyPlacer);
+		bountyPlacer->addBankCredits(getBountyReward());
+	}
+
+	setBountyPlacerId(0);
+	setBountyReward(0);
 }
 
 void PlayerObjectImplementation::checkAndShowTOS() {
