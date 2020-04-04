@@ -13,11 +13,11 @@ class DetectorDataComponent : public DataObjectComponent, public Logger {
 protected:
 	int maxrange;
 	uint64 nextScanTime;
-	constexpr static uint64 scanCooldown = 60;
+	constexpr static uint64 scanCooldown = 20;
 
 public:
 	DetectorDataComponent()  {
-		maxrange = 32;
+		maxrange = 65;
 		nextScanTime = time(0);
 		this->setLoggingName("DetectorData");
 

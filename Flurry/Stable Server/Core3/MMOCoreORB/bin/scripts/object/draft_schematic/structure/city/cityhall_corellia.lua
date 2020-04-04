@@ -72,8 +72,6 @@ object_draft_schematic_structure_city_cityhall_corellia = object_draft_schematic
 
 	targetTemplate = "object/tangible/deed/city_deed/cityhall_corellia_deed.iff",
 
-	additionalTemplates = {"object/tangible/deed/city_deed/cityhall_corellia_01_deed.iff",
-	"object/tangible/deed/city_deed/cityhall_corellia_02_deed.iff",
-	"object/tangible/deed/city_deed/cityhall_corellia_03_deed.iff",}
+	additionalTemplates = {}
 }
 ObjectTemplates:addTemplate(object_draft_schematic_structure_city_cityhall_corellia, "object/draft_schematic/structure/city/cityhall_corellia.iff")
