@@ -1086,10 +1086,17 @@ void MissionManagerImplementation::randomizeGenericBountyMission(CreatureObject*
 				creatorName = nm->makeCreatureName();
 			}
 
-			mission->setCreatorName(creatorName);
-			mission->setMissionTitle(stfFile, "m" + String::valueOf(randTexts) + "t");
-			mission->setMissionDescription(stfFile, "m" + String::valueOf(randTexts) + "d");
-		}
+			PlayerObject* ghost = creature->getPlayerObject();
+
+			if (ghost != nullptr && ghost->hasPlayerBounty()) {
+				mission->setCreatorName("Anonymous");
+				mission->setMissionTitle(stfFile, "m7t");
+				mission->setMissionDescription(stfFile, "m7d");
+			} else {
+				mission->setCreatorName(creatorName);
+				mission->setMissionTitle(stfFile, "m" + String::valueOf(randTexts) + "t");
+				mission->setMissionDescription(stfFile, "m" + String::valueOf(randTexts) + "d");
+			}
 	} else {
 		mission->setMissionTargetName(nm->makeCreatureName());
 
@@ -2027,9 +2034,13 @@ bool MissionManagerImplementation::isBountyValidForPlayer(CreatureObject* player
 		return false;
 
 	auto targetGhost = creature->getPlayerObject();
+
+	if (targetGhost == nullptr)
+		return false;
+
 	float terminalVisibilityThreshold = VisibilityManager::instance()->getTerminalVisThreshold();
 
-	if (targetGhost == nullptr || targetGhost->getVisibility() < terminalVisibilityThreshold)
+	if (targetGhost->getVisibility() < terminalVisibilityThreshold && !targetGhost->hasPlayerBounty())
 		return false;
 
 	auto playerGhost = player->getPlayerObject();
@@ -2091,6 +2102,19 @@ void MissionManagerImplementation::completePlayerBounty(uint64 targetId, uint64 
 					ghost->schedulePvpTefRemovalTask(false, true, false);
 			}
 		}
+		ManagedReference<CreatureObject*> targetCreo = server->getObject(targetId).castTo<CreatureObject*>();
+
+		if (targetCreo == nullptr)
+			return;
+
+		PlayerObject* targetGhost = targetCreo->getPlayerObject();
+
+		if (targetGhost != nullptr && targetGhost->hasPlayerBounty()) {
+			targetGhost->updatePlayerBountyTimestamp(0);
+			targetGhost->setBountyPlacerId(0);
+			targetGhost->setBountyReward(0);
+			removePlayerFromBountyList(targetId);
+		}
 	}
 }
 
@@ -2104,6 +2128,7 @@ void MissionManagerImplementation::failPlayerBountyMission(uint64 bountyHunter) 
 
 		if (mission != nullptr) {
 			ManagedReference<BountyMissionObjective*> objective = cast<BountyMissionObjective*>(mission->getMissionObjective());
+			ManagedReference<CreatureObject*> target = server->getObject(mission->getTargetObjectId()).castTo<CreatureObject*>();
 
 			if (objective != nullptr) {
 				ManagedReference<CreatureObject*> player = objective->getPlayerOwner();
@@ -2114,6 +2139,12 @@ void MissionManagerImplementation::failPlayerBountyMission(uint64 bountyHunter) 
 					auto ghost = player->getPlayerObject();
 					if (ghost != nullptr)
 						ghost->schedulePvpTefRemovalTask(false, true, false);
+				}
+
+				if (target != nullptr) {
+					auto targetGhost = target->getPlayerObject();
+					if (targetGhost != nullptr)
+						targetGhost->schedulePvpTefRemovalTask(false, true, false);
 				}
 
 				objective->fail();
