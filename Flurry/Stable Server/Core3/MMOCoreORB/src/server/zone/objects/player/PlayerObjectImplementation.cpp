@@ -1372,14 +1372,26 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	MissionManager* missionManager = zoneServer->getMissionManager();
 
-	if (missionManager != nullptr && playerCreature->hasSkill("force_title_jedi_rank_02")) {
+	if (missionManager != nullptr) {
 		uint64 id = playerCreature->getObjectID();
+		bool isJedi = playerCreature->hasSkill("force_title_jedi_rank_02");
+		int reward = 0;
 
-		if (!missionManager->hasPlayerBountyTargetInList(id))
-			missionManager->addPlayerToBountyList(id, calculateBhReward());
-		else {
-			missionManager->updatePlayerBountyReward(id, calculateBhReward());
-			missionManager->updatePlayerBountyOnlineStatus(id, true);
+		if (isJedi)
+			reward = calculateBhReward();
+		else if (hasPlayerBounty())
+			reward = getBountyReward();
+
+		if (isJedi || hasPlayerBounty()) {
+			if (!missionManager->hasPlayerBountyTargetInList(id)) {
+				missionManager->addPlayerToBountyList(id, reward);
+			} else {
+				missionManager->updatePlayerBountyReward(id, reward);
+				missionManager->updatePlayerBountyOnlineStatus(id, true);
+			}
+		} else if (!isJedi && !hasPlayerBounty() && missionManager->hasPlayerBountyTargetInList(id)) {
+			missionManager->removePlayerFromBountyList(id);
+			refundPlayerBountyCredits();
 		}
 	}
 
@@ -1438,9 +1450,19 @@ void PlayerObjectImplementation::notifyOffline() {
 
 	MissionManager* missionManager = getZoneServer()->getMissionManager();
 
-	if (missionManager != nullptr && playerCreature->hasSkill("force_title_jedi_rank_02")) {
-		missionManager->updatePlayerBountyOnlineStatus(playerCreature->getObjectID(), false);
-	}
+	if (missionManager != nullptr) {
+		bool isJedi = playerCreature->hasSkill("force_title_jedi_rank_02");
+		uint64 id = playerCreature->getObjectID();
+		if (isJedi || hasPlayerBounty()) {
+			missionManager->updatePlayerBountyOnlineStatus(playerCreature->getObjectID(), false);
+		} else if (!hasPlayerBounty() && missionManager->hasPlayerBountyTargetInList(id)) {
+			missionManager->removePlayerFromBountyList(id);
+			refundPlayerBountyCredits();
+		}
+
+	//if (missionManager != nullptr && playerCreature->hasSkill("force_title_jedi_rank_02")) {
+		//missionManager->updatePlayerBountyOnlineStatus(playerCreature->getObjectID(), false);
+	//}
 
 	logSessionStats(true);
 }
