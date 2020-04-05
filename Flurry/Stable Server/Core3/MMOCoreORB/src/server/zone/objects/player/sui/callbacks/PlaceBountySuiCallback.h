@@ -49,9 +49,13 @@ public:
 		missionManager->addPlayerToBountyList(killerPlayer->getObjectID(), reward);
 
 		if (killerGhost->isOnline())
-			missionManager->updatePlayerBountyOnlineStatus(killerPlayer->getObjectID(), true);
-
+		missionManager->updatePlayerBountyOnlineStatus(killerPlayer->getObjectID(), true);
 		player->sendSystemMessage("You have successfully placed a bounty on " + killerPlayer->getFirstName() + ".");
+		//Broadcast to Server
+		StringBuffer zBroadcast;
+		zBroadcast << "\\#ffb90f" << killerPlayer << " is now on the bounty hunter \\#e51b1bTerminal!";
+		killerPlayer->playEffect("clienteffect/ui_missile_aquiring.cef", "");
+		killerPlayer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 	}
 };
 
