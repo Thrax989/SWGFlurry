@@ -305,6 +305,11 @@ class PlayerObject extends IntangibleObject {
 	protected unsigned long worldbossKills;
 	protected unsigned long eventplayerCrate;
 	
+	//Player Bounty
+	@dereferenced
+	protected Time playerBountyTimestamp;
+	protected unsigned long bountyPlacerId;
+	protected int bountyReward;
 
 	public static final int LFG = 1;
 	public static final int NEWBIEHELPER = 2;
@@ -424,6 +429,10 @@ class PlayerObject extends IntangibleObject {
 		pveKills = 0;
 		pveDeaths = 0;
 		missionsCompleted = 0;
+		//Player Bounty
+		playerBountyTimestamp.updateToCurrentTime();
+		bountyPlacerId = 0;
+		bountyReward = 0;
 
 		Logger.setLoggingName("PlayerObjectBase");
 	}
@@ -2054,6 +2063,29 @@ class PlayerObject extends IntangibleObject {
 	}
 	
 	public native void updateWebStats(final string stat, int newValue);
+
+	//Player Bounty
+	public void updatePlayerBountyTimestamp(int duration) {
+		playerBountyTimestamp.updateToCurrentTime();
+		playerBountyTimestamp.addMiliTime(duration);
+	}
+	public void setBountyReward(int reward) {
+		bountyReward = reward;
+	}
+	public unsigned long getBountyReward() {
+		return bountyReward;
+	}
+
+	public void setBountyPlacerId(unsigned long placerId) {
+		bountyPlacerId = placerId;
+	}
+	public unsigned long getBountyPlacerId() {
+		return bountyPlacerId;
+	}
+	public boolean hasPlayerBounty() {
+		return !playerBountyTimestamp.isPast();
+	}
+	public native void refundPlayerBountyCredits();
 
 	@read
 	public boolean isCloning() {
