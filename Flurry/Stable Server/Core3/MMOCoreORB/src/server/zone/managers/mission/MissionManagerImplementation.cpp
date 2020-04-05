@@ -1089,9 +1089,9 @@ void MissionManagerImplementation::randomizeGenericBountyMission(CreatureObject*
 			PlayerObject* ghost = creature->getPlayerObject();
 
 			if (ghost != nullptr && ghost->hasPlayerBounty()) {
-				mission->setCreatorName("Anonymous");
-				mission->setMissionTitle(stfFile, "m7t");
-				mission->setMissionDescription(stfFile, "m7d");
+				mission->setCreatorName(creatorName);
+				mission->setMissionTitle(stfFile, "m" + String::valueOf(randTexts) + "t");
+				mission->setMissionDescription(stfFile, "m" + String::valueOf(randTexts) + "d");
 			} else {
 				mission->setCreatorName(creatorName);
 				mission->setMissionTitle(stfFile, "m" + String::valueOf(randTexts) + "t");
