@@ -1459,6 +1459,7 @@ void PlayerObjectImplementation::notifyOffline() {
 			missionManager->removePlayerFromBountyList(id);
 			refundPlayerBountyCredits();
 		}
+	}
 
 	//if (missionManager != nullptr && playerCreature->hasSkill("force_title_jedi_rank_02")) {
 		//missionManager->updatePlayerBountyOnlineStatus(playerCreature->getObjectID(), false);
