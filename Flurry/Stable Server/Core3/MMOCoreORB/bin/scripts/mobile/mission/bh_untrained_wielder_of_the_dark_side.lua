@@ -4,7 +4,7 @@ bh_untrained_wielder_of_the_dark_side = Creature:new {
 	randomNameTag = true,
 	socialGroup = "kun",
 	faction = "",
-	level = 150,
+	level = 250,
 	chanceHit = 0.6,
 	damageMin = 545,
 	damageMax = 800,
@@ -12,7 +12,7 @@ bh_untrained_wielder_of_the_dark_side = Creature:new {
 	baseHAM = 11000,
 	baseHAMmax = 14000,
 	armor = 1,
-	resists = {95,95,60,60,60,60,60,60,-1},
+	resists = {80,80,60,60,60,60,60,60,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -42,7 +42,7 @@ bh_untrained_wielder_of_the_dark_side = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4300000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -57,7 +57,7 @@ bh_untrained_wielder_of_the_dark_side = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4300000
+			lootChance = 8000000
 		},
 		{
 			groups = {
@@ -73,7 +73,7 @@ bh_untrained_wielder_of_the_dark_side = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4300000
+			lootChance = 5000000
 		}
 	},
 	weapons = {"mixed_force_weapons"},

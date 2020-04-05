@@ -40,7 +40,7 @@ bh_ig_assassin_droid = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 3900000
+			lootChance = 10000000
 		},
 		{
 			groups = {
