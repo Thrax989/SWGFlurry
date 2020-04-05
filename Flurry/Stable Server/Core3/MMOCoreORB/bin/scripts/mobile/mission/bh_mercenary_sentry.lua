@@ -43,7 +43,7 @@ bh_mercenary_sentry = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4320000
+			lootChance = 10000000
 		},
 		{
 			groups = {
