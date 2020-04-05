@@ -4,7 +4,7 @@ bh_force_trained_archaist = Creature:new {
 	randomNameTag = true,
 	socialGroup = "force",
 	faction = "",
-	level = 90,
+	level = 250,
 	chanceHit = 0.9,
 	damageMin = 640,
 	damageMax = 990,
@@ -42,7 +42,7 @@ bh_force_trained_archaist = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4800000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -57,7 +57,7 @@ bh_force_trained_archaist = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4800000
+			lootChance = 8000000
 		},
 		{
 			groups = {
@@ -73,7 +73,7 @@ bh_force_trained_archaist = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4800000
+			lootChance = 7500000
 		}
 	},
 	weapons = {"mixed_force_weapons"},
