@@ -1285,6 +1285,7 @@ void PlayerObjectImplementation::setTitle(const String& characterTitle, bool not
 	}
 }
 
+void PlayerObjectImplementation::notifyOnline() {
 	ManagedReference<SceneObject*> parent = getParent().get();
 
 	if (parent == nullptr)
@@ -1295,6 +1296,8 @@ void PlayerObjectImplementation::setTitle(const String& characterTitle, bool not
 		return;
 
 	miliSecsSession = 0;
+
+	resetSessionStats(true);
 
 	ChatManager* chatManager = server->getChatManager();
 	ZoneServer* zoneServer = server->getZoneServer();
@@ -1333,6 +1336,8 @@ void PlayerObjectImplementation::setTitle(const String& characterTitle, bool not
 
 	//Login to jedi manager
 	JediManager::instance()->onPlayerLoggedIn(playerCreature);
+	//Reset Players Skill Mods
+	SkillModManager::instance()->verifySkillBoxSkillMods(playerCreature);
 
 	if (getFrsData()->getRank() >= 0) {
 		FrsManager* frsManager = zoneServer->getFrsManager();
@@ -1342,10 +1347,26 @@ void PlayerObjectImplementation::setTitle(const String& characterTitle, bool not
 		}
 	}
 
+	// Screenplay login triggers
+	Lua* lua = DirectorManager::instance()->getLuaInstance();
+	Reference<LuaFunction*> luaOnPlayerLoggedIn = lua->createFunction("PlayerTriggers", "playerLoggedIn", 0);
+	*luaOnPlayerLoggedIn << playerCreature;
+	luaOnPlayerLoggedIn->callFunction();
+
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
 
 	if (getForcePowerMax() > 0 && getForcePower() < getForcePowerMax())
 		activateForcePowerRegen();
+
+	PlayerObject* ghost = playerCreature->getPlayerObject();
+
+	//PermaDeath : Gray Jedi with 0 lives cannont login
+	if (playerCreature->getScreenPlayState("jediLives") == 0) {
+		if (playerCreature->hasSkill("combat_jedi_novice")) {
+			ghost->setLinkDead(true);
+			ghost->disconnect(true, true);
+			}
+		}
 
 	schedulePvpTefRemovalTask();
 
@@ -1373,6 +1394,7 @@ void PlayerObjectImplementation::setTitle(const String& characterTitle, bool not
 			refundPlayerBountyCredits();
 		}
 	}
+
 	playerCreature->schedulePersonalEnemyFlagTasks();
 }
 
