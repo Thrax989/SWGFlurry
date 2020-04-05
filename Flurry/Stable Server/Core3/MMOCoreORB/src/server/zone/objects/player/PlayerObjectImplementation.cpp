@@ -316,19 +316,20 @@ void PlayerObjectImplementation::unload() {
 	creature->printReferenceHolders();*/
 }
 
+
 int PlayerObjectImplementation::calculateBhReward() {
-	int minReward = 25000; // Minimum reward for a player bounty
+	int minReward = 50000; // Minimum reward for a player bounty
+	int reward = 0;
 
-	if (getJediState() >= 4) // Minimum if player is knight
-		minReward = 50000;
+	ManagedReference<CreatureObject*> player = getParent().get().castTo<CreatureObject*>();
 
-	int skillPoints = getSpentJediSkillPoints();
-	int reward = skillPoints * 1000;
+	if (player != nullptr) {
+		if (player->hasSkill("force_title_jedi_rank_02")) {
+			reward = getSpentJediSkillPoints() * 1000;
 
-	int frsRank = getFrsData()->getRank();
-
-	if (frsRank > 0)
-		reward += frsRank * 100000; // +100k per frs rank
+			if (player->hasSkill("force_title_jedi_rank_03"))
+				reward += getFrsData()->getRank() * 100000;
+	}
 
 	if (reward < minReward)
 		reward = minReward;
