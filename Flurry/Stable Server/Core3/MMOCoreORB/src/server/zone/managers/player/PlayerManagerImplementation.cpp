@@ -6217,7 +6217,7 @@ void PlayerManagerImplementation::offerPlayerBounty(CreatureObject* attacker, Cr
 		return;
 
 	//Player already has a bounty on their head or they are a jedi
-	if (attackerGhost->hasPlayerBounty() || attacker->hasSkill("force_title_jedi_rank_02"))
+	if (attackerGhost->hasPlayerBounty() || attacker->hasSkill("combat_jedi_novice") || attacker->hasSkill("force_title_jedi_novice"))
 		return;
 
 	//50% chance to offer a bounty and the killer has to have at least 50 kills.
