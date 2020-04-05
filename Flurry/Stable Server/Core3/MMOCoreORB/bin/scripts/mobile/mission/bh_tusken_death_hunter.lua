@@ -40,7 +40,7 @@ bh_tusken_death_hunter = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4000000
+			lootChance = 100000000
 		},
 		{
 			groups = {
@@ -55,7 +55,7 @@ bh_tusken_death_hunter = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4000000
+			lootChance = 5000000
 		}
 	},
 	weapons = {"tusken_weapons"},
