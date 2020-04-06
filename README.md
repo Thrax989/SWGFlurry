@@ -231,3 +231,17 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 For more information, see https://review.swgemu.com.
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/thrax989/SWGFlurry-README-Template.svg?style=flat-square
+[contributors-url]: https://github.com/Thrax989/SWGFlurry-README-Template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Thrax989/SWGFlurry-README-Template.svg?style=flat-square
+[forks-url]: https://github.com/Thrax989/SWGFlurry-README-Template/network/members
+[stars-shield]: https://img.shields.io/github/stars/Thrax989/SWGFlurry-README-Template.svg?style=flat-square
+[stars-url]: https://github.com/Thrax989/SWGFlurry-README-Template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Thrax989/SWGFlurry-README-Template.svg?style=flat-square
+[issues-url]: https://github.com/Thrax989/SWGFlurry-README-Template/issues
+[license-shield]: https://img.shields.io/github/license/Thrax989/SWGFlurry-README-Template.svg?style=flat-square
+[license-url]: https://github.com/Thrax989/SWGFlurry-README-Template/blob/master/LICENSE.txt
