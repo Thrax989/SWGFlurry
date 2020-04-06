@@ -6220,11 +6220,6 @@ void PlayerManagerImplementation::offerPlayerBounty(CreatureObject* attacker, Cr
 	if (attackerGhost->hasPlayerBounty() || attacker->hasSkill("combat_jedi_novice") || attacker->hasSkill("force_title_jedi_novice"))
 		return;
 
-	//50% chance to offer a bounty and the killer has to have at least 50 kills.
-	bool offer = (System::random(100)) < 50;
-	if (!offer || attackerGhost->getPvpKills() < 50)
-		return;
-
 	int reward = attackerGhost->calculateBhReward();
 
 	ManagedReference<SuiMessageBox*> suibox = new SuiMessageBox(defender, SuiWindowType::PLAYER_BOUNTY_OFFER);
