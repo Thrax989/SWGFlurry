@@ -7,6 +7,7 @@
 
 #include "server/zone/managers/mission/MissionManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/chat/ChatManager.h"
 
 class PlaceBountySuiCallback: public SuiCallback {
 private:
@@ -34,6 +35,8 @@ public:
 		if (killerGhost == nullptr)
 			return;
 
+		ChatManager* chatManager = player->getZoneServer()->getChatManager();
+
 		int bank = player->getBankCredits();
 
 		if (reward > bank) {
@@ -53,9 +56,13 @@ public:
 		player->sendSystemMessage("You have successfully placed a bounty on " + killerPlayer->getFirstName() + ".");
 		//Broadcast to Server
 		StringBuffer zBroadcast;
-		zBroadcast << "\\#ffb90f" << killerPlayer << " is now on the bounty hunter \\#e51b1bTerminal!";
+		zBroadcast << "\\#ffb90f" << killerPlayer->getFirstName() << " is now on the bounty hunter \\#e51b1bTerminal!";
 		killerPlayer->playEffect("clienteffect/ui_missile_aquiring.cef", "");
 		killerPlayer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		//Broadcast player has died forward to discord channel. created by :TOXIC
+		StringBuffer zGeneral;
+		zGeneral << " Has Placed " << killerPlayer->getFirstName() << " On The Bounty Terminal For " << reward << " Credits";	
+		chatManager->handleGeneralChat(player, zGeneral.toString());
 	}
 };
 

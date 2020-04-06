@@ -264,7 +264,7 @@ void QueueCommand::checkForTef(CreatureObject* creature, CreatureObject* target)
 			if ((targetGhost->hasPvpTef() || target->getFactionStatus() == FactionStatus::OVERT) && target->getFaction() != 0 && target->getFaction() != creature->getFaction())
 				ghost->updateLastGcwPvpCombatActionTimestamp();
 			if (targetGhost->isJediAttackable() || (targetGhost->isJedi() && target->getWeapon()->isJediWeapon()) )
-				ghost->updateLastJediAttackableTimestamp();
+				//ghost->updateLastJediAttackableTimestamp();
 			if (targetGhost->hasJediTef()){
 				ghost->updateLastJediPvpCombatActionTimestamp();
 				targetGhost->updateLastJediPvpCombatActionTimestamp();
@@ -299,8 +299,8 @@ void QueueCommand::checkCmTef(CreatureObject* creature, CreatureObject* target) 
 			if ((targetGhost->hasPvpTef() || target->getFactionStatus() == FactionStatus::OVERT) && target->getFaction() != 0 && target->getFaction() != creature->getFaction())
 				ghost->updateLastGcwPvpCombatActionTimestamp();
 			if (targetGhost->isJediAttackable() || (targetGhost->isJedi() && target->getWeapon()->isJediWeapon())){
-				ghost->updateLastJediAttackableTimestamp();
-				targetGhost->updateLastJediPvpCombatActionTimestamp();
+				//ghost->updateLastJediAttackableTimestamp();
+				//targetGhost->updateLastJediPvpCombatActionTimestamp();
 			}
 			if (targetGhost->hasJediTef()){
 				ghost->updateLastJediAttackableTimestamp();

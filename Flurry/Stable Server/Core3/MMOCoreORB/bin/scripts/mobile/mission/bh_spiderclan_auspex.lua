@@ -12,7 +12,7 @@ bh_spiderclan_auspex = Creature:new {
 	baseHAM = 124000,
 	baseHAMmax = 30000,
 	armor = 2,
-	resists = {90,100,100,90,100,100,90,90,-1},
+	resists = {80,100,100,80,100,100,80,80,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -43,7 +43,7 @@ bh_spiderclan_auspex = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -59,7 +59,7 @@ bh_spiderclan_auspex = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -75,7 +75,7 @@ bh_spiderclan_auspex = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		}
 	},
 	weapons = {"mixed_force_weapons"},

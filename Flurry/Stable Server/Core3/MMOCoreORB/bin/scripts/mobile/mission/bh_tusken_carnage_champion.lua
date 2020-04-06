@@ -10,7 +10,7 @@ bh_tusken_carnage_champion = Creature:new {
 	baseHAM = 143000,
 	baseHAMmax = 153000,
 	armor = 3,
-	resists = {85,85,85,100,85,100,85,85,85},
+	resists = {80,80,80,100,80,100,80,80,80},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -41,7 +41,7 @@ bh_tusken_carnage_champion = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -57,7 +57,7 @@ bh_tusken_carnage_champion = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -73,7 +73,7 @@ bh_tusken_carnage_champion = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		},
 	},
 	weapons = {"tusken_weapons"},
