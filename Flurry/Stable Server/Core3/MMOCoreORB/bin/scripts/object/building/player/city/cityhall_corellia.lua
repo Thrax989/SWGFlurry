@@ -44,8 +44,7 @@
 object_building_player_city_cityhall_corellia = object_building_player_city_shared_cityhall_corellia:new {
 	lotSize = 0,
 	baseMaintenanceRate = 0,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor", "kashyyyk", "hoth", "mandalore", "taanab", "kaas", "moraban", "coruscant", "hutta", "chandrila", "jakku"},	zoneComponent = "CityHallZoneComponent",
-	cityRankRequired = 0,
+	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor", "kashyyyk", "hoth", "mandalore", "taanab", "kaas", "moraban", "coruscant", "hutta", "chandrila", "jakku"},	cityRankRequired = 0,
 	uniqueStructure = true,
 	cityMaintenanceBase = 35000,
 	cityMaintenanceRate = 25000,
