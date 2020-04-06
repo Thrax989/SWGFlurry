@@ -1,5 +1,3 @@
-## Repository EST Dec 29, 2016 
-
 <!--
 *** Thanks for checking out this README Template. If you have a suggestion that would
 *** make this better, please fork the repo and create a pull request or simply open
@@ -25,6 +23,8 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+
+## Repository EST Dec 29, 2016 
 
 
 ## Flurry Server Index  ##
