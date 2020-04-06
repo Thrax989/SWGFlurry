@@ -236,7 +236,7 @@ For more information, see https://review.swgemu.com.
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/Thrax989/SWGFlurry.svg?style=flat-square
 [contributors-url]: https://github.com/Thrax989/SWGFlurry.svg/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forksThrax989/SWGFlurry.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/Thrax989/SWGFlurry.svg?style=flat-square
 [forks-url]: https://github.com/Thrax989/SWGFlurry.svg/network/members
 [stars-shield]: https://img.shields.io/github/stars/Thrax989/SWGFlurry.svg?style=flat-square
 [stars-url]: https://github.com/Thrax989/SWGFlurry.svg/stargazers
