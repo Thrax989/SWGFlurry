@@ -1,8 +1,34 @@
 ## Repository EST Dec 29, 2016 
 
-## Flurry Server Index  ##
-  * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/RVx66Sw) [![GitHub last commit](https://img.shields.io/github/last-commit/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/commits/master) [![License](https://img.shields.io/github/license/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/blob/master/COPYING)
+## Server Development Legend
+<!--
+*** Thanks for checking out this README Template. If you have a suggestion that would
+*** make this better, please fork the repo and create a pull request or simply open
+*** an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
+
+
+
+
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![GitHub last commit](https://img.shields.io/github/last-commit/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/commits/master)
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
+## Flurry Server Index  ##
+  * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/RVx66Sw) 
   * [![Server RoadMap ](https://img.shields.io/badge/Server%20Roadmap-Click%20Here-005f71.svg?style=plastic)](https://trello.com/b/fawSAKWE/swg-flurry-classic-server)
   * [![Server Client ](https://img.shields.io/badge/Server%20Client-Click%20Here-005f71.svg?style=plastic)](http://www.swgflurry.com/Launcher/SWGFlurry_Launcher_0.0.3.7.exe) 
   * [![Server Tre's ](https://img.shields.io/badge/Server%20Tre's-Click%20Here-005f71.svg?style=plastic)](https://mega.nz/#F!fw0EzZ4I!RfRwyqE859Ad3kGlQv7T4Q) 
@@ -204,3 +230,17 @@ At SWGEmu, Emulator refers to the software the SWGEmu team is building. This Emu
     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 For more information, see https://review.swgemu.com.
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/Thrax989/SWGFlurry.svg?style=flat-square
+[contributors-url]: https://github.com/Thrax989/SWGFlurry/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Thrax989/SWGFlurry.svg?style=flat-square
+[forks-url]: https://github.com/Thrax989/SWGFlurry/network/members
+[stars-shield]: https://img.shields.io/github/stars/Thrax989/SWGFlurry.svg?style=flat-square
+[stars-url]: https://github.com/Thrax989/SWGFlurry/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Thrax989/SWGFlurry.svg?style=flat-square
+[issues-url]: https://github.com/Thrax989/SWGFlurry/issues
+[license-shield]: https://img.shields.io/github/license/Thrax989/SWGFlurry.svg?style=flat-square
+[license-url]: https://github.com/Thrax989/SWGFlurry/blob/TestServer/COPYING
