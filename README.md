@@ -1,3 +1,5 @@
+## Repository EST Dec 29, 2016 
+
 ## Server Development Legend
 <!--
 *** Thanks for checking out this README Template. If you have a suggestion that would
@@ -23,9 +25,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-
-## Repository EST Dec 29, 2016 
-
 
 ## Flurry Server Index  ##
   * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/RVx66Sw) [![GitHub last commit](https://img.shields.io/github/last-commit/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/commits/master) [![License](https://img.shields.io/github/license/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/blob/master/COPYING)
