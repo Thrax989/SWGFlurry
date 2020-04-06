@@ -94,7 +94,7 @@ public:
 
 		VisibilityManager::instance()->increaseVisibility(creature, visMod);
 		//Jedi Attackable
-		playerGhost->updateLastJediAttackableTimestamp();
+		//playerGhost->updateLastJediAttackableTimestamp();
 
 		return SUCCESS;
 	}
