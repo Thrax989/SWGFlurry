@@ -236,12 +236,12 @@ For more information, see https://review.swgemu.com.
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/Thrax989/SWGFlurry.svg?style=flat-square
-[contributors-url]: https://github.com/Thrax989/SWGFlurry.svg/graphs/contributors
+[contributors-url]: https://github.com/Thrax989/SWGFlurry/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Thrax989/SWGFlurry.svg?style=flat-square
-[forks-url]: https://github.com/Thrax989/SWGFlurry.svg/network/members
+[forks-url]: https://github.com/Thrax989/SWGFlurry/network/members
 [stars-shield]: https://img.shields.io/github/stars/Thrax989/SWGFlurry.svg?style=flat-square
-[stars-url]: https://github.com/Thrax989/SWGFlurry.svg/stargazers
+[stars-url]: https://github.com/Thrax989/SWGFlurry/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Thrax989/SWGFlurry.svg?style=flat-square
-[issues-url]: https://github.com/Thrax989/SWGFlurry.svg/issues
+[issues-url]: https://github.com/Thrax989/SWGFlurry/issues
 [license-shield]: https://img.shields.io/github/license/Thrax989/SWGFlurry.svg?style=flat-square
-[license-url]: https://github.com/Thrax989/Thrax989/SWGFlurry.svg/blob/master/LICENSE.txt
+[license-url]: https://github.com/Thrax989/Thrax989/SWGFlurry/blob/master/LICENSE.txt
