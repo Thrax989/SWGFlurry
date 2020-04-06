@@ -1,4 +1,4 @@
-[![GitHub contributors](https://img.shields.io/github/contributors/Thrax989/SWGFlurry.js.svg)](https://GitHub.com/Thrax989/SWGFlurry.js/graphs/contributors/)
+[![GitHub contributors](https://img.shields.io/github/contributors/Thrax989/SWGFlurry.svg)](https://GitHub.com/Thrax989/SWGFlurry/graphs/contributors/)
 
 
 ## Repository EST Dec 29, 2016 
