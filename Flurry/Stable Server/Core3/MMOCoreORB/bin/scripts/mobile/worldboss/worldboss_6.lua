@@ -159,15 +159,21 @@ worldboss_6 = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"posturedownattack",""},
-                {"creatureareacombo","stateAccuracyBonus=100"},
-		{"creatureareaknockdown","stateAccuracyBonus=100"},
-		{"posturedownattack","stateAccuracyBonus=100"},
-		{"creatureareacombo","stateAccuracyBonus=100"},
-                {"creatureareadisease",""},
-		{"creatureareapoison",""},
-		{"creatureareableeding",""},
-		{"blindattack",""}
+		{"creatureareacombo","StateAccuracyBonus=100"},
+		{"creatureareaknockdown","StateAccuracyBonus=100"},
+		{"knockdownattack","KnockdownChance=100"},
+		{"creatureareaknockdown","KnockdownChance=100"},
+		{"dizzyattack","DizzyChance=100"},
+		{"stunattack","StunChance=100"},
+		{"mildpoison","PoisonChance=100"},
+		{"intimidationattack","IntimidationChance=100"},
+		{"mediumpoison","PoisonChance=100"},
+    		{"mediumdisease","DiseaseChance=100"},
+		{"creatureareapoison","PoisonChance=100"},
+		{"strongpoison","PoisonChance=100"},
+		{"creatureareaattack","StateAccuracyBonus=100"},
+    		{"creatureareadisease","DiseaseChance=100"},
+    		{"creatureareableeding","BleedChance=100"}
 	}
 }
 
