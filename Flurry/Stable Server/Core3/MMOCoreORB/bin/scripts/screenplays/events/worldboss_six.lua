@@ -25,7 +25,7 @@ end
 -----------------------
 --The Boss Has Spawned
 -----------------------
-function worldboss_twoScreenplay:spawnMobiles()
+function worldboss_sixScreenplay:spawnMobiles()
 		local pBoss = spawnMobile("lok", "worldboss_6", -1, 3324, 0, 1727, 196, 0)--Spawn World Boss
 		local creature = CreatureObject(pBoss)
 		print("World Boss Six Spawned")
