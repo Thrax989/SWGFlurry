@@ -36,9 +36,9 @@ coa2_drall_guard = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 4000000},
-				{group = "weapons_all", chance = 2000000},
-				{group = "armor_all", chance = 2000000},
-				{group = "wearables_all", chance = 2000000}
+				{group = "weapons_all", chance = 500000},
+				{group = "armor_all", chance = 2500000},
+				{group = "wearables_all", chance = 3000000}
 			}
 		}
 	},
