@@ -3147,7 +3147,7 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 		return true;
 	}
 
-	if (ghost->hasJediTef() || (ghost->isJedi() && getWeapon()->isJediWeapon()) || (ghost->isJediAttackable())){
+	if (ghost->hasJediTef() || (ghost->isJediAttackable())){
 		return true;
 	}
 

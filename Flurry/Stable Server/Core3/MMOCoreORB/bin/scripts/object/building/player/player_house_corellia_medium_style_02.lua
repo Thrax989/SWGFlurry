@@ -44,7 +44,7 @@
 object_building_player_player_house_corellia_medium_style_02 = object_building_player_shared_player_house_corellia_medium_style_02:new {
 	lotSize = 2,
 	baseMaintenanceRate = 34,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
+	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor", "kashyyyk", "hoth", "mandalore", "taanab", "kaas", "moraban", "coruscant", "hutta", "chandrila", "jakku"},
 	publicStructure = 0,
 	constructionMarker = "object/building/player/construction/construction_player_house_corellia_medium_style_02.iff",
 	length = 3,

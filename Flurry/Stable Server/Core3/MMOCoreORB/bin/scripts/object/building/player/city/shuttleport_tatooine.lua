@@ -45,7 +45,8 @@ object_building_player_city_shuttleport_tatooine = object_building_player_city_s
 	planetMapCategory = "shuttleport",
 	lotSize = 0,
 	baseMaintenanceRate = 0,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
+	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor", "kashyyyk", "hoth", "mandalore", "taanab", "kaas", "moraban", "coruscant", "hutta", "chandrila", "jakku"},
+
 	length = 5,
 	width = 5,
 	cityRankRequired = 4,
