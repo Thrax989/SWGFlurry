@@ -316,19 +316,21 @@ void PlayerObjectImplementation::unload() {
 	creature->printReferenceHolders();*/
 }
 
+
 int PlayerObjectImplementation::calculateBhReward() {
-	int minReward = 25000; // Minimum reward for a player bounty
+	int minReward = 50000; // Minimum reward for a player bounty
+	int reward = 0;
 
-	if (getJediState() >= 4) // Minimum if player is knight
-		minReward = 50000;
+	ManagedReference<CreatureObject*> player = getParent().get().castTo<CreatureObject*>();
 
-	int skillPoints = getSpentJediSkillPoints();
-	int reward = skillPoints * 1000;
+	if (player != nullptr) {
+		if (player->hasSkill("force_title_jedi_rank_02")) {
+			reward = getSpentJediSkillPoints() * 1000;
 
-	int frsRank = getFrsData()->getRank();
-
-	if (frsRank > 0)
-		reward += frsRank * 100000; // +100k per frs rank
+			if (player->hasSkill("force_title_jedi_rank_03"))
+				reward += getFrsData()->getRank() * 100000;
+		}
+	}
 
 	if (reward < minReward)
 		reward = minReward;
@@ -1372,14 +1374,26 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	MissionManager* missionManager = zoneServer->getMissionManager();
 
-	if (missionManager != nullptr && playerCreature->hasSkill("force_title_jedi_rank_02")) {
+	if (missionManager != nullptr) {
 		uint64 id = playerCreature->getObjectID();
+		bool isJedi = playerCreature->hasSkill("force_title_jedi_rank_02");
+		int reward = 0;
 
-		if (!missionManager->hasPlayerBountyTargetInList(id))
-			missionManager->addPlayerToBountyList(id, calculateBhReward());
-		else {
-			missionManager->updatePlayerBountyReward(id, calculateBhReward());
-			missionManager->updatePlayerBountyOnlineStatus(id, true);
+		if (isJedi)
+			reward = calculateBhReward();
+		else if (hasPlayerBounty())
+			reward = getBountyReward();
+
+		if (isJedi || hasPlayerBounty()) {
+			if (!missionManager->hasPlayerBountyTargetInList(id)) {
+				missionManager->addPlayerToBountyList(id, reward);
+			} else {
+				missionManager->updatePlayerBountyReward(id, reward);
+				missionManager->updatePlayerBountyOnlineStatus(id, true);
+			}
+		} else if (!isJedi && !hasPlayerBounty() && missionManager->hasPlayerBountyTargetInList(id)) {
+			missionManager->removePlayerFromBountyList(id);
+			refundPlayerBountyCredits();
 		}
 	}
 
@@ -1438,9 +1452,20 @@ void PlayerObjectImplementation::notifyOffline() {
 
 	MissionManager* missionManager = getZoneServer()->getMissionManager();
 
-	if (missionManager != nullptr && playerCreature->hasSkill("force_title_jedi_rank_02")) {
-		missionManager->updatePlayerBountyOnlineStatus(playerCreature->getObjectID(), false);
+	if (missionManager != nullptr) {
+		bool isJedi = playerCreature->hasSkill("force_title_jedi_rank_02");
+		uint64 id = playerCreature->getObjectID();
+		if (isJedi || hasPlayerBounty()) {
+			missionManager->updatePlayerBountyOnlineStatus(playerCreature->getObjectID(), false);
+		} else if (!hasPlayerBounty() && missionManager->hasPlayerBountyTargetInList(id)) {
+			missionManager->removePlayerFromBountyList(id);
+			refundPlayerBountyCredits();
+		}
 	}
+
+	//if (missionManager != nullptr && playerCreature->hasSkill("force_title_jedi_rank_02")) {
+		//missionManager->updatePlayerBountyOnlineStatus(playerCreature->getObjectID(), false);
+	//}
 
 	logSessionStats(true);
 }
@@ -2910,8 +2935,32 @@ void PlayerObjectImplementation::doFieldFactionChange(int newStatus) {
 	parent->sendMessage(inputbox->generateMessage());
 }
 
+
+
 bool PlayerObjectImplementation::isIgnoring(const String& name) const {
 	return !name.isEmpty() && ignoreList.contains(name);
+}
+
+void PlayerObjectImplementation::refundPlayerBountyCredits() {
+	ZoneServer* zoneServer = server->getZoneServer();
+	ManagedReference<CreatureObject*> creature = getParent().get().castTo<CreatureObject*>();
+	ManagedReference<CreatureObject*> bountyPlacer = zoneServer->getObject(getBountyPlacerId()).castTo<CreatureObject*>();
+
+	if (creature != nullptr && bountyPlacer != nullptr) {
+		ManagedReference<ChatManager*> chatManager = zoneServer->getChatManager();
+
+		String sender = "Bounty Hunters Guild";
+		UnicodeString subject("Player Bounty Failure");
+		String body = creature->getFirstName() + " has eluded even our best Bounty Hunters. Given this shameful failure, we have refunded the credits you placed on their head back into your bank account.";
+
+		chatManager->sendMail(sender, subject, body, bountyPlacer->getFirstName());
+
+		Locker locker(bountyPlacer);
+		bountyPlacer->addBankCredits(getBountyReward());
+	}
+
+	setBountyPlacerId(0);
+	setBountyReward(0);
 }
 
 void PlayerObjectImplementation::checkAndShowTOS() {

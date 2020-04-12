@@ -3006,9 +3006,6 @@ void CombatManager::checkForTefs(CreatureObject* attacker, CreatureObject* defen
 
 	if (attackingCreature != nullptr && targetCreature != nullptr && attackingCreature->isPlayerCreature() && targetCreature->isPlayerCreature() && !areInDuel(attackingCreature, targetCreature)) {
 
-		if (!(*shouldJediTef) && (targetCreature->getPlayerObject()->isJedi() && targetCreature->getWeapon()->isJediWeapon()))
-			*shouldJediTef = true;
-
 		if (!(*shouldJediTef) && (attackingCreature->isPlayerCreature() && attackingCreature->getPlayerObject()->isJedi()))
 			*shouldJediTef = true;
 
@@ -3020,6 +3017,7 @@ void CombatManager::checkForTefs(CreatureObject* attacker, CreatureObject* defen
 
 		if (!(*shouldBhTef) && (attackingCreature->hasBountyMissionFor(targetCreature) || targetCreature->hasBountyMissionFor(attackingCreature)))
 			*shouldBhTef = true;
+
 		} else if (attackingCreature != NULL && targetCreature != NULL && attackingCreature->isPlayerCreature() && targetCreature->getFaction() != 0 && targetCreature->getFaction() != attackingCreature->getFaction()){
 			*shouldGcwTef = true;
 	}

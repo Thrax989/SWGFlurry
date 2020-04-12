@@ -108,7 +108,7 @@
 #include "server/zone/objects/player/events/OnlinePlayerLogTask.h"
 #include <sys/stat.h>
 #include "server/zone/managers/visibility/VisibilityManager.h"
-#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
+#include "server/zone/objects/player/sui/callbacks/PlaceBountySuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 #include "server/zone/managers/object/ObjectManager.h"
 
@@ -1279,21 +1279,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		player->sendMessage(box->generateMessage());
 		}
 	}
-	//CUSTOM BH SYSTEM
-	if (attacker->isPlayerCreature() && attacker != player){
-		ManagedReference<SuiInputBox*> box = new SuiInputBox(player, SuiWindowType::OBJECT_NAME);
-		box->setPromptTitle("You have died.");
-		box->setPromptText("Place a bounty on your killer! Enter an amount between 1k and 2.5m credits. The Bounty Hunter Guild will take 20% for their fees and your target will be added to our boards immediately.");
-		box->setMaxInputSize(128);
-		box->setCancelButton(true, "@no");
-		box->setOkButton(true, "@yes");
-		box->setUsingObject(attacker);
-		box->setForceCloseDistance(2048.f);
-		box->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
-		player->getPlayerObject()->addSuiBox(box);
-		player->sendMessage(box->generateMessage());
-		}
-
 	//Custom Perma Death Broadcasting When you reach 0 lives
 	//Rebel gray jedi check
 	if (player->getScreenPlayState("jediLives") == 0) {
@@ -1393,6 +1378,9 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				if (attackerGhost != nullptr && ghost != nullptr && attackerCreature->hasBountyMissionFor(player) &&
 						attackerGhost->getIpAddress() != ghost->getIpAddress() && attackerGhost->getAccountID() != ghost->getAccountID())
 					attackerGhost->updateBountyKills();
+
+				if (!attackerCreature->hasBountyMissionFor(player) && !player->hasBountyMissionFor(attackerCreature))
+					offerPlayerBounty(attackerCreature, player);
 				}
 			}
 
@@ -6212,6 +6200,45 @@ void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
 	if (ghost != nullptr) {
 		ghost->updatePvpKills();
 	}
+}
+
+void PlayerManagerImplementation::offerPlayerBounty(CreatureObject* attacker, CreatureObject* defender) {
+	PlayerObject* attackerGhost = attacker->getPlayerObject();
+	PlayerObject* defenderGhost = defender->getPlayerObject();
+
+	if (attackerGhost == nullptr || defenderGhost == nullptr)
+		return;
+
+	//Check if they already have the bounty offer window open.
+	if (defenderGhost->hasSuiBoxWindowType(SuiWindowType::PLAYER_BOUNTY_OFFER))
+		return;
+
+	if (attackerGhost->isPrivileged())
+		return;
+
+	//Player already has a bounty on their head or they are a jedi
+	if (attackerGhost->hasPlayerBounty() || attacker->hasSkill("combat_jedi_novice") || attacker->hasSkill("force_title_jedi_novice"))
+		return;
+
+	int reward = attackerGhost->calculateBhReward();
+
+	ManagedReference<SuiMessageBox*> suibox = new SuiMessageBox(defender, SuiWindowType::PLAYER_BOUNTY_OFFER);
+
+	suibox->setPromptTitle("Bounty Hunters Guild");
+	suibox->setCallback(new PlaceBountySuiCallback(server, attacker, reward));
+	suibox->setOkButton(true, "@yes");
+	suibox->setCancelButton(true, "@no");
+
+	StringBuffer prompt;
+
+	prompt << "You have been killed in combat by " + attacker->getFirstName() + ".\n\n"
+           << "The Bounty Hunters Guild has taken notice and you can place a bounty on their head for " + String::valueOf(reward) + " credits.\n\n"
+           << "Do you want to place a bounty on " + attacker->getFirstName() + " for " + String::valueOf(reward) + " credits?";
+
+	suibox->setPromptText(prompt.toString());
+
+	defenderGhost->addSuiBox(suibox);
+	defender->sendMessage(suibox->generateMessage());
 }
 
 void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, int councilType) {

@@ -3052,10 +3052,14 @@ bool CreatureObjectImplementation::isAttackableBy(TangibleObject* object, bool b
 	if(object->getFaction() == getFaction())
 		return false;
 
-	// if tano is overt, creature must be overt
-	//if((getFactionStatus() == FactionStatus::COVERT && !(getPvpStatusBitmask() & CreatureFlag::TEF)) && object->getFaction() != 0)
-		//return false;
+	// if player is on leave, then faction object cannot attack it
+	if (getFactionStatus() == FactionStatus::ONLEAVE || getFaction() == 0)
+		return false;
 
+	// if tano is overt, creature must be overt
+	if((object->getPvpStatusBitmask() & CreatureFlag::OVERT) && !(getPvpStatusBitmask() & CreatureFlag::OVERT))
+		return false;
+	
 	// the other options are overt creature / overt tano  and covert/covert, covert tano, overt creature..  all are attackable
 	return true;
 
@@ -3143,7 +3147,7 @@ bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object, bool b
 		return true;
 	}
 
-	if (ghost->hasJediTef() || (ghost->isJedi() && getWeapon()->isJediWeapon()) || (ghost->isJediAttackable())){
+	if (ghost->hasJediTef() || (ghost->isJediAttackable())){
 		return true;
 	}
 

@@ -612,6 +612,11 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 	                		String playerName = target->getFirstName();
 					zGeneral << "A Bounty Hunter Has Collected A Bounty On " << playerName << " [Bounty Complete]";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
+
+					if (!killer->hasSkill("combat_jedi_novice") && !killer->hasSkill("force_title_jedi_novice")) {
+					owner->addBankCredits(50000);
+					owner->sendSystemMessage("You have earned 50,000 Credits! This will be forwarded to your bank");
+					}
 				}
 			}
 
@@ -628,10 +633,10 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			zGeneral << "Has Defeated "  << playerName << " A Bounty Hunter " " [Bounty Still Active]";	
 			chatManager->handleGeneralChat(killer, zGeneral.toString());
 			//Player killed by target, fail mission.
-		        String bhName = owner->getFirstName();
+		        String missionName = killer->getFirstName();
 			StringBuffer zBroadcast;
 			if (killer->hasSkill("force_title_jedi_novice")) {
-			zBroadcast << "\\#00bfff" << playerName << "\\#ffd700" << " a" << "\\#00e604 Jedi" << "\\#ffd700 has defeated\\#00bfff " << bhName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
+			zBroadcast << "\\#00bfff" << missionName << "\\#ffd700" << " a" << "\\#00e604 Jedi" << "\\#ffd700 has defeated\\#00bfff " << playerName << "\\#ffd700 a" << "\\#ff7f00 Bounty Hunter";
 			}
 			killer->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");

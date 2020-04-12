@@ -290,7 +290,7 @@ public:
 				if (visWeap->isJediWeapon()){
 					VisibilityManager::instance()->increaseVisibility(creature, 25);
 					//Jedi Attackable
-					visGhost->updateLastJediAttackableTimestamp();
+					//visGhost->updateLastJediAttackableTimestamp();
 				}
 
 			}
