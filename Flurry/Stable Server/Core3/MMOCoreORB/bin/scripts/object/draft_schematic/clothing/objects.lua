@@ -25227,13 +25227,3 @@ object_draft_schematic_clothing_shared_clothing_armor_spy_leggings = SharedDraft
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_spy_leggings, "object/draft_schematic/clothing/shared_clothing_armor_spy_leggings.iff")
 
-
-
-
-
---TEST--
-object_draft_schematic_clothing_shared_clothing_armor_composite_chest1 = SharedDraftSchematicObjectTemplate:new {
-	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_armor_composite_chest1.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_armor_composite_chest1, "object/draft_schematic/clothing/shared_clothing_armor_composite_chest1.iff")
