@@ -3,6 +3,15 @@ worldboss_sevenScreenplay = ScreenPlay:new {
   	planet = "corellia",
 }
 registerScreenPlay("worldboss_sevenScreenplay", true)
+-----------------------------
+--Start World Boss ScreenPlay
+-----------------------------
+function worldboss_sevenScreenplay:start()
+	if (isZoneEnabled(self.planet)) then
+		self:spawnMobiles()
+		print("World Boss Seven Loaded")
+	end
+end
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
