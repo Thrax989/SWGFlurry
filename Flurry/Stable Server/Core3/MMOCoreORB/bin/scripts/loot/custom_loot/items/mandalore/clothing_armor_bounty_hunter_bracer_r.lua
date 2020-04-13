@@ -4,7 +4,7 @@ clothing_armor_bounty_hunter_bracer_r = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "",
-	directObjectTemplate = "object/draft_schematic/clothing/clothing_armor_bounty_hunter_bracer_r.iff",
+	directObjectTemplate = "object/draft_schematic/clothing/shared_clothing_armor_bounty_hunter_bracer_r.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},

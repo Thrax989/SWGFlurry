@@ -4,7 +4,7 @@ clothing_armor_mandalorian_boots = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "",
-	directObjectTemplate = "object/draft_schematic/clothing/clothing_armor_mandalorian_boots.iff",
+	directObjectTemplate = "object/draft_schematic/clothing/shared_clothing_armor_mandalorian_boots.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
