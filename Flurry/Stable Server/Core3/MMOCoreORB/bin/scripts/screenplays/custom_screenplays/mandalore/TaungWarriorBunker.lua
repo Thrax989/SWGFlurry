@@ -1,6 +1,5 @@
 TaungWarriorBunker = ScreenPlay:new {
 	numberOfActs = 1,
-    	planet = "mandalore",
 	screenplayName = "TaungWarriorBunker"
 }
 
@@ -146,105 +145,8 @@ function TaungWarriorBunker:spawnMobiles()
 	spawnMobile("mandalore", "taung_warrior", 1800, -54.1, -50.0, 0.1, -89, 8566235)
 	spawnMobile("mandalore", "taung_warrior", 1800, -41.8, -50.0, 5.0, -136, 8566237)
 	spawnMobile("mandalore", "taung_warrior", 1800, -41.3, -50.0, -4.1, -50, 8566237)
-	spawnMobile("mandalore", "dw_at", 300, -112.0, -50.0, 53.9, 87, 8566234)
+--	spawnMobile("mandalore", "dw_at", 300, -112.0, -50.0, 53.9, 87, 8566234)
 	spawnMobile("mandalore", "taung_warrior", 1800, -53.6, -50.0, 116.4, -86, 8566238)
 --	spawnMobile("mandalore", "mandalore_the_resurrector", 10800, -22.8, -50.0, 0.4, -93, 8566237)
 	
-end
-
-
---/////////////////////////////////////////////////////////
---//		  World Boss Spawn System					//
---//			Created By TOXIC:11/20/2019				//
---////////////////////////////////////////////////////////
---//		Change your world boss under WORLDBOSS		//
---//Spawn Points Will Determain The Boss Spawn location //
---////////////////////////////////////////////////////////
---//		Current World Boss Planet Mandalore			//
---//		Current World Boss Type NPC			//
---///////////////////////////////////////////////////////
-
------------------------------
---Start World Boss ScreenPlay
------------------------------
-function TaungWarriorBunker:start()
-	if (isZoneEnabled(self.planet)) then
-		self:spawnMobiles()
-		print("Mandalore the Resurrector has Loaded")
-	end
-end
------------------------
---The Boss Has Spawned
------------------------
-function TaungWarriorBunker:spawnMobiles()
-		local pBoss = spawnMobile("mandalore", "mandalore_the_resurrector", -1, -22.8, -50.0, 0.4, -93, 8566237)--Spawn World Boss
-		local creature = CreatureObject(pBoss)
-		print("Mandalore the Resurrector has Spawned")
-		createObserver(OBJECTDESTRUCTION, "TaungWarriorBunker", "bossDead", pBoss)--World Boss Has Died Trigger Respawn Function
-end
----------------------------------------------------------------
---The Boss Has Died Respawn WorldBoss With A New Dynamic Spawn
----------------------------------------------------------------
-function TaungWarriorBunker:bossDead(pBoss, pPlayer)
-	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 Mandalore the Resurrector Has Died!")
-	player:broadcastToServer("\\#63C8F9 Mandalore the Resurrector Will Respawn In 3 Hours")
-	print("Mandalore the Resurrector Has Died")
-	local creature = CreatureObject(pBoss)
-	createEvent(120 * 1000, "TaungWarriorBunker", "KillBoss", pBoss, "")--Despawn Corpse
-	createEvent(10800 * 1000, "TaungWarriorBunker", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
-	createEvent(10797 * 1000, "TaungWarriorBunker", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "TaungWarriorBunker", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "TaungWarriorBunker", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "TaungWarriorBunker", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
-	return 0
-end
------------------------
---Respawn World Boss
------------------------
-function TaungWarriorBunker:KillSpawn()
-		local pBoss = spawnMobile("mandalore", "mandalore_the_resurrector", -1, -22.8, -50.0, 0.4, -93, 8566237)--Spawn WorldBoss After Death 3 Hour Timer
-		local creature = CreatureObject(pBoss)
-		print("Mandalore the Resurrector has Spawned")
-		createObserver(OBJECTDESTRUCTION, "TaungWarriorBunker", "bossDead", pBoss)
-end
------------------------
---Broadcast Respawn
------------------------
-function TaungWarriorBunker:KillSpawnCast(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Mandalore the Resurrector is Respawning In ..")
-end
------------------------
---Broadcast Respawn 3
------------------------
-function TaungWarriorBunker:KillSpawnCast1(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
-end
------------------------
---Broadcast Respawn 2
------------------------
-function TaungWarriorBunker:KillSpawnCast2(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
-end
------------------------
---Broadcast Respawn 1
------------------------
-function TaungWarriorBunker:KillSpawnCast3(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
-end
------------------------------------------------------------------------------
---The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
------------------------------------------------------------------------------
-function TaungWarriorBunker:KillBoss(pBoss)
-	dropObserver(pBoss, OBJECTDESTRUCTION)
-	if SceneObject(pBoss) then
-		print("Unlooted Mandalore the Resurrector Destroyed")
-		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
-	end
-	return 0
 end

@@ -4,7 +4,7 @@ clothing_armor_bounty_hunter_chest_plate = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "",
-	directObjectTemplate = "object/draft_schematic/clothing/clothing_armor_bounty_hunter_chest_plate.iff",
+	directObjectTemplate = "object/draft_schematic/clothing/shared_clothing_armor_bounty_hunter_chest_plate.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
