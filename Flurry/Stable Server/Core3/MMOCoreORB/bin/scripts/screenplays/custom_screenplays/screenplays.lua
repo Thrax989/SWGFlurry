@@ -63,6 +63,11 @@ includeFile("custom_screenplays/kashyyyk/kashyyykthreeleveltwoteleporter.lua")
 --Lok
 
 --Mandalore
+includeFile("custom_screenplays/mandalore/DarthCaedusCave.lua")
+includeFile("custom_screenplays/mandalore/MandalMotors.lua")
+includeFile("custom_screenplays/mandalore/TaungWarriorBunker.lua")
+includeFile("custom_screenplays/mandalore/ShadowCollectiveCave.lua")
+includeFile("custom_screenplays/mandalore/VizslaHideout.lua")
 
 --Mustafar
 --includeFile("custom_screenplays/mustafar/hk_army_teleport.lua")
