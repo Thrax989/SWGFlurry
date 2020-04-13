@@ -38,7 +38,7 @@ pyke_syndicate_criminal = Creature:new {
 		},
 		{
 			groups = {
-				{group = "mandalorian_armor", chance = 10000000},
+				{group = "mandalore_armor", chance = 10000000},
 			},
 			lootChance = 500000
 		},
