@@ -1,5 +1,5 @@
 mandalore_destroy_missions = {
-
+	minLevelCeiling = 45,
 	lairSpawns = {
 		{
 			lairTemplateName = "corellia_crimson_sand_panther_pride_neutral_medium",
