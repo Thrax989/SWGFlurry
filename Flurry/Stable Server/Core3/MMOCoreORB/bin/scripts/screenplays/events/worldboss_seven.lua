@@ -1,11 +1,8 @@
---------------------------------------
-worldboss_seven = ScreenPlay:new {
-  numberOfActs = 1,
-  questString = "worldboss_seven",
-  questdata = Object:new {
-  activePlayerName = "initial",
-  }
+worldboss_sevenScreenplay = ScreenPlay:new {
+	numberOfActs = 1,
+  	planet = "corellia",
 }
+registerScreenPlay("worldboss_sevenScreenplay", true)
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
