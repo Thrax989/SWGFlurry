@@ -6,12 +6,12 @@ bh_dark_adept = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 4.75,
-	damageMin = 1945,
-	damageMax = 2600,
-	baseXp = 131780,
-	baseHAM = 150000,
-	baseHAMmax = 161000,
-	armor = 3,
+	damageMin = 945,
+	damageMax = 1200,
+	baseXp = 13178,
+	baseHAM = 50000,
+	baseHAMmax = 61000,
+	armor = 2,
 	resists = {80,80,80,80,80,80,80,80,-1},
 	meatType = "",
 	meatAmount = 0,
@@ -43,7 +43,7 @@ bh_dark_adept = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -59,7 +59,7 @@ bh_dark_adept = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -75,7 +75,7 @@ bh_dark_adept = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		},
 	},
 	weapons = {"dark_jedi_weapons_gen2"},

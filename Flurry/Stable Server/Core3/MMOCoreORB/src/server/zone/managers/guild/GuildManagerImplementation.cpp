@@ -567,8 +567,8 @@ void GuildManagerImplementation::sendGuildCreateAbbrevTo(CreatureObject* player,
 	ManagedReference<SuiInputBox*> inputBox = new SuiInputBox(player, SuiWindowType::GUILD_CREATE_ABBREV);
 	inputBox->setCallback(new GuildCreateAbbrevResponseSuiCallback(server));
 	inputBox->setPromptTitle("@guild:create_abbrev_title"); // Guild Abbreviation
-	inputBox->setPromptText("@guild:create_abbrev_prompt"); // Enter an abbreviation for your guild. Guild abbreviations must be 1-5 characters in length.
-	inputBox->setMaxInputSize(4);
+	inputBox->setPromptText("@guild:create_abbrev_prompt"); // Enter an abbreviation for your guild. Guild abbreviations must be 1-10 characters in length.
+	inputBox->setMaxInputSize(9);
 	inputBox->setUsingObject(terminal);
 	inputBox->setForceCloseDistance(32);
 
@@ -582,8 +582,8 @@ void GuildManagerImplementation::sendGuildChangeAbbrevTo(CreatureObject* player,
 	ManagedReference<SuiInputBox*> inputBox = new SuiInputBox(player, SuiWindowType::GUILD_CHANGE_ABBREV);
 	inputBox->setCallback(new GuildChangeAbbrevResponseSuiCallback(server, guild));
 	inputBox->setPromptTitle("@guild:namechange_abbrev_title"); // Change Guild Abbreviation
-	inputBox->setPromptText("@guild:namechange_abbrev_prompt"); // Enter the abbreviation for your guild's new name. Guild abbreviations must be between 1 and 5 characters in length.
-	inputBox->setMaxInputSize(4);
+	inputBox->setPromptText("@guild:namechange_abbrev_prompt"); // Enter the abbreviation for your guild's new name. Guild abbreviations must be between 1 and 10 characters in length.
+	inputBox->setMaxInputSize(9);
 
 	player->getPlayerObject()->addSuiBox(inputBox);
 	player->sendMessage(inputBox->generateMessage());
@@ -596,7 +596,7 @@ bool GuildManagerImplementation::validateGuildAbbrev(CreatureObject* player, con
 
 	if (validate != NameManagerResult::ACCEPTED) {
 		if (validate == NameManagerResult::DECLINED_GUILD_LENGTH)
-			player->sendSystemMessage("@guild:create_fail_abbrev_bad_length"); // Guild abbreviations must be 1-5 characters in length.
+			player->sendSystemMessage("@guild:create_fail_abbrev_bad_length"); // Guild abbreviations must be 1-10 characters in length.
 		else
 			player->sendSystemMessage("@guild:create_fail_abbrev_not_allowed"); // That guild abbreviation is not allowed.
 

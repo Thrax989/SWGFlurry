@@ -52,9 +52,14 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 		if (!creature->isInCombat()) {
 					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					//Broadcast to Server
+					ChatManager* chatManager = creature->getZoneServer()->getChatManager();
 					String playerName = creature->getFirstName();
 					StringBuffer zBroadcast;
 					zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Looking To Join A Raid Group, They Are located At The Nova Orion Space Station.";
+					//Broadcast player has died forward to discord channel. created by :TOXIC
+					StringBuffer zGeneral;
+					zGeneral << "Is Looking To Join A Raid Group, They Are located At The Nova Orion Space Station.";	
+					chatManager->handleGeneralChat(creature, zGeneral.toString());
 					creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 					creature->playEffect("clienteffect/death_trooper_infection_01.cef", "");
 					creature->addCooldown("server_broadcast_group", 60 * 1000);// 60 second cooldown
@@ -174,11 +179,11 @@ int BossMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creature
 					ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 					if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature) {
 					Locker locker(groupedCreature);
-					groupedCreature->switchZone("dungeon2", 6193, 250, -5978, 0);
+					groupedCreature->switchZone("dungeon2", 103.839, 0.05, 21.5224, 14201223);
 					locker.release();
 				}
 			}
-			creature->switchZone("dungeon2", 6193, 250, -5978, 0);
+			creature->switchZone("dungeon2", 103.839, 0.05, 21.5224, 14201223);
 		}
 	}
 	if (selectedID == 223) {

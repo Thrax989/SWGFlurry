@@ -1,5 +1,5 @@
 vip = {
-	level = 1,
+	level = 2,
 	name = "vip",
 	tag = "VIP",
 	skills = {

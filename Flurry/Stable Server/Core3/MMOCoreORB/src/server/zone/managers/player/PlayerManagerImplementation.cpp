@@ -108,7 +108,7 @@
 #include "server/zone/objects/player/events/OnlinePlayerLogTask.h"
 #include <sys/stat.h>
 #include "server/zone/managers/visibility/VisibilityManager.h"
-#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
+#include "server/zone/objects/player/sui/callbacks/PlaceBountySuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 #include "server/zone/managers/object/ObjectManager.h"
 
@@ -1190,7 +1190,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 
 	player->updateTimeOfDeath();
 	// player->clearBuffs(true, false);
-
+ 	ChatManager* chatManager = player->getZoneServer()->getChatManager();
 	PlayerObject* ghost = player->getPlayerObject();
 
 	if (ghost != nullptr) {
@@ -1198,7 +1198,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		ghost->setFoodFilling(0);//Remove Food Filling After Death
 		ghost->setDrinkFilling(0);//Remove Drink Filling After Death
 		if (ghost->hasPvpTef()) {
-			ghost->schedulePvpTefRemovalTask(true, true);
+			ghost->schedulePvpTefRemovalTask(true, true, true);
 		}
 	}
 
@@ -1279,21 +1279,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		player->sendMessage(box->generateMessage());
 		}
 	}
-	//CUSTOM BH SYSTEM
-	if (attacker->isPlayerCreature() && attacker != player){
-		ManagedReference<SuiInputBox*> box = new SuiInputBox(player, SuiWindowType::OBJECT_NAME);
-		box->setPromptTitle("You have died.");
-		box->setPromptText("Place a bounty on your killer! Enter an amount between 1k and 2.5m credits. The Bounty Hunter Guild will take 20% for their fees and your target will be added to our boards immediately.");
-		box->setMaxInputSize(128);
-		box->setCancelButton(true, "@no");
-		box->setOkButton(true, "@yes");
-		box->setUsingObject(attacker);
-		box->setForceCloseDistance(2048.f);
-		box->setCallback(new BountyHuntSuiCallback(player->getZoneServer()));
-		player->getPlayerObject()->addSuiBox(box);
-		player->sendMessage(box->generateMessage());
-		}
-
 	//Custom Perma Death Broadcasting When you reach 0 lives
 	//Rebel gray jedi check
 	if (player->getScreenPlayState("jediLives") == 0) {
@@ -1322,6 +1307,49 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	if (!attacker->isPlayerCreature()) {
 		ghost->updatePveDeaths();
 	}
+
+	if (attacker->isPlayerCreature() || attacker->isPet()){
+		CreatureObject* attackerCreature = attacker->asCreatureObject();
+		if (attackerCreature->isPet()) {
+				CreatureObject* owner = attackerCreature->getLinkedCreature().get();
+
+				if (owner != nullptr && owner->isPlayerCreature()) {
+					attackerCreature = owner;
+				}
+			}
+			//Added Discord Broadcast System : Created By TOXIC
+			if (attackerCreature->isPlayerCreature()) {
+				String playerName = player->getFirstName();
+				String killerName = attackerCreature->getFirstName();
+				StringBuffer zBroadcast;
+				StringBuffer zGeneral;
+				String killerFaction, playerFaction;
+				if (attacker->isRebel())
+					killerFaction = " [Rebel] ";
+				else if (attacker->isImperial())
+					killerFaction = " [Imperial] ";
+				else
+					killerFaction = " [Civilian] ";
+				if (player->isRebel())
+					playerFaction = " [Rebel] ";
+				else if (player->isImperial())
+					playerFaction = " [Imperial] ";
+				else
+					playerFaction = " [Civilian] ";
+				if (CombatManager::instance()->areInDuel(attackerCreature, player)) {
+					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a Duel by" << killerFaction << "\\#00cc99 " << killerName;
+					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName;	
+				 }
+
+				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
+ 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName;
+					zGeneral << playerFaction << "was slain in [PvP] by" << killerFaction << killerName;	
+
+				}
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+					chatManager->handleGeneralChat(player, zGeneral.toString());
+			}
+
 	if (attacker->getFaction() != 0) {
 		if (attacker->isPlayerCreature() || attacker->isPet()) {
 			CreatureObject* attackerCreature = attacker->asCreatureObject();
@@ -1334,7 +1362,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				}
 			}
 
-			if (attackerCreature->isPlayerCreature()) {
+		if (attackerCreature->isPlayerCreature()) {
 				PlayerObject* attackerGhost = attackerCreature->getPlayerObject();
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
 					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
@@ -1350,6 +1378,9 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				if (attackerGhost != nullptr && ghost != nullptr && attackerCreature->hasBountyMissionFor(player) &&
 						attackerGhost->getIpAddress() != ghost->getIpAddress() && attackerGhost->getAccountID() != ghost->getAccountID())
 					attackerGhost->updateBountyKills();
+
+				if (!attackerCreature->hasBountyMissionFor(player) && !player->hasBountyMissionFor(attackerCreature))
+					offerPlayerBounty(attackerCreature, player);
 				}
 			}
 
@@ -1404,6 +1435,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->setTargetID(0, true);
 
 	player->notifyObjectKillObservers(attacker);
+		}
 	}
 }
 
@@ -5969,6 +6001,9 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 		if (entry == nullptr || attacker == nullptr || attacker == player || !attacker->isPlayerCreature())
 			continue;
 
+		if (player->getGroupID() != 0 && player->getGroupID() == attacker->getGroupID())
+			continue;
+
 		PlayerObject* attackerGhost = attacker->getPlayerObject();
 
 		if (attackerGhost == nullptr)
@@ -6165,6 +6200,45 @@ void PlayerManagerImplementation::updatePvPKillCount(CreatureObject* player) {
 	if (ghost != nullptr) {
 		ghost->updatePvpKills();
 	}
+}
+
+void PlayerManagerImplementation::offerPlayerBounty(CreatureObject* attacker, CreatureObject* defender) {
+	PlayerObject* attackerGhost = attacker->getPlayerObject();
+	PlayerObject* defenderGhost = defender->getPlayerObject();
+
+	if (attackerGhost == nullptr || defenderGhost == nullptr)
+		return;
+
+	//Check if they already have the bounty offer window open.
+	if (defenderGhost->hasSuiBoxWindowType(SuiWindowType::PLAYER_BOUNTY_OFFER))
+		return;
+
+	if (attackerGhost->isPrivileged())
+		return;
+
+	//Player already has a bounty on their head or they are a jedi
+	if (attackerGhost->hasPlayerBounty() || attacker->hasSkill("combat_jedi_novice") || attacker->hasSkill("force_title_jedi_novice"))
+		return;
+
+	int reward = attackerGhost->calculateBhReward();
+
+	ManagedReference<SuiMessageBox*> suibox = new SuiMessageBox(defender, SuiWindowType::PLAYER_BOUNTY_OFFER);
+
+	suibox->setPromptTitle("Bounty Hunters Guild");
+	suibox->setCallback(new PlaceBountySuiCallback(server, attacker, reward));
+	suibox->setOkButton(true, "@yes");
+	suibox->setCancelButton(true, "@no");
+
+	StringBuffer prompt;
+
+	prompt << "You have been killed in combat by " + attacker->getFirstName() + ".\n\n"
+           << "The Bounty Hunters Guild has taken notice and you can place a bounty on their head for " + String::valueOf(reward) + " credits.\n\n"
+           << "Do you want to place a bounty on " + attacker->getFirstName() + " for " + String::valueOf(reward) + " credits?";
+
+	suibox->setPromptText(prompt.toString());
+
+	defenderGhost->addSuiBox(suibox);
+	defender->sendMessage(suibox->generateMessage());
 }
 
 void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, int councilType) {

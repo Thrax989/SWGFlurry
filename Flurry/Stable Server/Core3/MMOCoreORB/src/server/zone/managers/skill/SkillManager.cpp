@@ -355,8 +355,16 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 		MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
 
 		if (skill->getSkillName() == "force_title_jedi_rank_02") {
-			if (missionManager != nullptr)
+			if (missionManager != nullptr) {
+				if (ghost->hasPlayerBounty()) {
+					missionManager->removePlayerFromBountyList(creature->getObjectID());
+					ghost->refundPlayerBountyCredits();
+
+				}
 				missionManager->addPlayerToBountyList(creature->getObjectID(), ghost->calculateBhReward());
+				if (ghost->isOnline())
+					missionManager->updatePlayerBountyOnlineStatus(creature->getObjectID(), true);
+			}
 		} else if (skill->getSkillName().contains("force_discipline")) {
 			if (missionManager != nullptr)
 				missionManager->updatePlayerBountyReward(creature->getObjectID(), ghost->calculateBhReward());

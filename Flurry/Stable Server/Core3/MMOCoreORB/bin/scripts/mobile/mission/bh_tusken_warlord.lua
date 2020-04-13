@@ -10,7 +10,7 @@ bh_tusken_warlord = Creature:new {
 	baseHAM = 111000,
 	baseHAMmax = 114000,
 	armor = 1,
-	resists = {60,60,60,80,60,60,60,60,-1},
+	resists = {50,50,50,60,50,50,50,50,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -40,7 +40,7 @@ bh_tusken_warlord = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4220000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -55,7 +55,7 @@ bh_tusken_warlord = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4220000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -70,7 +70,7 @@ bh_tusken_warlord = Creature:new {
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4220000
+			lootChance = 2500000
 		}
 	},
 	weapons = {"tusken_weapons"},

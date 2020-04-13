@@ -196,37 +196,6 @@ void TangibleObjectImplementation::setFactionStatus(int status) {
 		task->execute();
 
 		ghost->updateInRangeBuildingPermissions();
-		// Unequip faction gear when on leave
-		if (factionStatus == FactionStatus::ONLEAVE){
-			bool forcedUnequip = false;
-
-			for(int x = 0; x < 5; ++x) {
-				for(int i = 0; i < creature->getSlottedObjectsSize(); ++i) {
-					ManagedReference<TangibleObject*> object = creature->getSlottedObject(i).castTo<TangibleObject*>();
-
-					if (object == nullptr)
-						continue;
-
-					if (object->isContainerObject())
-						continue;
-
-					if (object->isImperial() || object->isRebel()){
-						SceneObject* inventory = creature->getSlottedObject("inventory");
-
-						if (inventory != nullptr){
-							ZoneServer* zoneServer = server->getZoneServer();
-							ObjectController* objectController = zoneServer->getObjectController();
-							objectController->transferObject(object, inventory, -1, true, true);
-
-							forcedUnequip = true;
-						}
-					}
-				}
-			}
-
-			if (forcedUnequip)
-				creature->sendSystemMessage("Faction gear unequipped. You must be covert or overt status to wear faction gear.");
-		}
 	}
 
 	notifyObservers(ObserverEventType::FACTIONCHANGED);
@@ -684,41 +653,6 @@ int TangibleObjectImplementation::inflictDamage(TangibleObject* attacker, int da
 		notifyObjectDestructionObservers(attacker, newConditionDamage, isCombatAction);
 		notifyObservers(ObserverEventType::OBJECTDISABLED, attacker);
 		setDisabled(true);
-
-		// Crawl back up the object's associated chain to get player's object
-		ManagedReference<CreatureObject*> player = dynamic_cast<CreatureObject*>(attacker->getParent().get().get());
-
-		// will be null if the item isn't actually equipped!
-		if (player == nullptr){
-			return 0;
-		}
-
-		ZoneServer* zoneServer = server->getZoneServer();
-		ObjectController* objectController = zoneServer->getObjectController();
-		SceneObject* inventory = player->getSlottedObject("inventory");
-
-		// Check for item that need to be unequipped from the player's inventory due to breaking!
-		for(int i = 0; i < player->getSlottedObjectsSize(); ++i) {
-			// Get the equipped object
-			ManagedReference<TangibleObject*> object = player->getSlottedObject(i).castTo<TangibleObject*>();
-
-			// If object is bad skip
-			if (object == nullptr)
-				continue;
-
-			// Skip this item if it's a container!
-			if (object->isContainerObject())
-				continue;
-
-			if (inventory != nullptr){
-				if (object->getObjectID() == attacker->getObjectID()){
-					// Unequip item that has become broken
-					objectController->transferObject(object, inventory, -1, true, true); // -1 is the containmentType to unequip items
-					player->sendSystemMessage("Your " + attacker->getDisplayedName() + " has been unequipped!!!");
-					break;
-				}
-			}
-		}
 	}
 
 	return 0;
