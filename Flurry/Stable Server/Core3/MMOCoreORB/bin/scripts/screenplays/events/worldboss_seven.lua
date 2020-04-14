@@ -1,12 +1,12 @@
-worldboss_sevenScreenplay = ScreenPlay:new {
+worldboss_seven = ScreenPlay:new {
 	numberOfActs = 1,
   	planet = "corellia",
 }
-registerScreenPlay("worldboss_sevenScreenplay", true)
+registerScreenPlay("worldboss_seven", true)
 -----------------------------
 --Start World Boss ScreenPlay
 -----------------------------
-function worldboss_sevenScreenplay:start()
+function worldboss_seven:start()
 	if (isZoneEnabled(self.planet)) then
 		self:spawnMobiles()
 		print("World Boss Seven Loaded")
