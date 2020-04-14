@@ -15,6 +15,7 @@ end
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
+function worldboss_seven:spawnMobiles()
 local pBoss = spawnMobile("corellia", "meatlump_lookout", 10800, -2157, 26, -4369, 0, 0)--3 hour respawn to start the boss
 	print("Spawning Meatlump Lookout")
 if (pBoss ~= nil ) then
