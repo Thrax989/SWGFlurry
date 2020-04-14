@@ -1537,7 +1537,7 @@ includeFile("items/wearables/cape/cape9.lua")
 includeFile("items/wearables/cape/cape10.lua")
 
 
-includeFile("custom_loot/items/weapons/mandalorian_saber.lua")
+-- includeFile("custom_loot/items/weapons/mandalorian_saber.lua") -- Disabled, crashing server on creation
 
 -- Mando/BH Armor schematics  (Disabled till can be fixed)
 --includeFile("custom_loot/items/mandalore/clothing_armor_bounty_hunter_belt.lua")

@@ -4,7 +4,7 @@ mandalorian_saber = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Darksaber",
-	directObjectTemplate = "object/weapon/melee/sword/crafted_saber/sword_lightsaber_mandalorian.iff",
+	directObjectTemplate = "object/weapon/melee/sword/crafted_saber/shared_sword_lightsaber_mandalorian.iff",
 	craftingValues = {
 		{"mindamage",330,425,0},
 		{"maxdamage",445,550,0},
