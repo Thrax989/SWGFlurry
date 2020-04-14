@@ -26,7 +26,7 @@ end
 --The Boss Has Spawned
 -----------------------
 function MandaloreBossScreenplay:spawnMobiles()
-		local pBoss = spawnMobile("mandalore", "mandalore_the_resurrector", -1, -22.8, -50.0, 0.4, -93, 8566237)--Spawn World Boss
+		local pBoss = spawnMobile("mandalore", "mandalore_the_resurrector", -1, -72.8, -50.0, 59.8, 0, 8566237)--Spawn World Boss
 		local creature = CreatureObject(pBoss)
 		print("Mandalore The Resurrector has Spawned")
 		createObserver(OBJECTDESTRUCTION, "MandaloreBossScreenplay", "bossDead", pBoss)--World Boss Has Died Trigger Respawn Function
@@ -52,7 +52,7 @@ end
 --Respawn World Boss
 -----------------------
 function MandaloreBossScreenplay:KillSpawn()
-		local pBoss = spawnMobile("mandalore", "mandalore_the_resurrector", -1, -22.8, -50.0, 0.4, -93, 8566237)--Spawn WorldBoss After Death 3 Hour Timer
+		local pBoss = spawnMobile("mandalore", "mandalore_the_resurrector", -1, -72.8, -50.0, 59.8, 0, 8566237)--Spawn WorldBoss After Death 3 Hour Timer
 		local creature = CreatureObject(pBoss)
 		print("Mandalore The Resurrector")
 		createObserver(OBJECTDESTRUCTION, "MandaloreBossScreenplay", "bossDead", pBoss)
