@@ -157,6 +157,6 @@ function TaungWarriorBunker:spawnMobiles()
 	spawnMobile("mandalore", "taung_warrior", 1800, -41.3, -50.0, -4.1, -50, 8566237)
 --	spawnMobile("mandalore", "dw_at", 300, -112.0, -50.0, 53.9, 87, 8566234)
 	spawnMobile("mandalore", "taung_warrior", 1800, -53.6, -50.0, 116.4, -86, 8566238)
---	spawnMobile("mandalore", "mandalore_the_resurrector", 10800, -22.8, -50.0, 0.4, -93, 8566237)
+	spawnMobile("mandalore", "mandalore_the_resurrector", 10800, -22.8, -50.0, 0.4, -93, 8566237)
 	
 end
