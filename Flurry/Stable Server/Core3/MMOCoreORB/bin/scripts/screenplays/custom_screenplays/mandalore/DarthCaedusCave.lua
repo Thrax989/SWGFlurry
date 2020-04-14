@@ -12,7 +12,7 @@ function DarthCaedusCave:start()
 end
 
 function DarthCaedusCave:spawnMobiles()
-	--Cave of Darth Caedus 
+	--Cave of Darth Caedus  
 	
 	spawnMobile("mandalore", "darth_caedus_follower", 1800, 9.6, -15.6, -8.5, -47, 8566152)
 	spawnMobile("mandalore", "darth_caedus_follower", 1800, 9.9, -23.8, -27.6, 0, 8566153)

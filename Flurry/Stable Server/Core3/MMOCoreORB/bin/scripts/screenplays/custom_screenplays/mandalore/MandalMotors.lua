@@ -12,7 +12,7 @@ function MandalMotors:start()
 end
 
 function MandalMotors:spawnMobiles()
-	--MandalMotors 
+	--MandalMotors  
 	
 	spawnMobile("mandalore", "pyke_syndicate_criminal", 1800, 0.0, 0.3, 3.6, 1, 8565760)
 	spawnMobile("mandalore", "pyke_syndicate_criminal", 1800, -3.6, 0.3, -3.2, -1, 8565760)
