@@ -1,8 +1,8 @@
 worldboss_7 = Creature:new {
-	customName = "\\#00ff00<<< Meatlump King >>> \\#0000ff[lvl 200]",
+	customName = "\\#00ff00<<< Meatlump King >>> \\#0000ff[lvl 275]",
 	socialGroup = "townsperson",
 	faction = "",
-	level = 200,
+	level = 275,
 	chanceHit = 50.0,
 	damageMin = 2500,
 	damageMax = 5500,
@@ -30,22 +30,22 @@ worldboss_7 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "tierone", chance = 2500000},
-				{group = "tiertwo", chance = 5000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 2500000},
-				{group = "tiertwo", chance = 5000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 10000000},
 				{group = "tiertwo", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tiertwo", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
