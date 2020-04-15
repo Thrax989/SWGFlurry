@@ -377,7 +377,7 @@ function GeonosianLab:spawnMobiles()
 	-- operatingroom2 (1627815)
 	spawnMobile("yavin4", "biogenic_scientist_generic_02", 1, -127.2, -34, -189.0, -93, 1627815)
 	spawnMobile("yavin4", "geonosian_scientist",180,-124.3,-34.0,-199.5,-60,1627815)
-	spawnMobile("yavin4", "geonosian_acklay_bunker_boss",3600,-139.8,-34,-194.3,57,1627815)
+	spawnMobile("yavin4", "acklayboss",3600,-139.8,-34,-194.3,57,1627815)
 
 	-- transition9 (1627816)
 	spawnMobile("yavin4", "alert_droideka",180,-129.8,-34.0,-267.9,87,1627816)
