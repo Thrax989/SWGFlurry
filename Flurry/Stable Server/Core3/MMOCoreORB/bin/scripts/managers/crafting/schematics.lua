@@ -1836,4 +1836,5 @@ schematics = {
 	{path="object/draft_schematic/structure/vipbunker_house_schem.iff"},
 	{path="object/draft_schematic/structure/yoda_house_schem.iff"},
 	{path="object/draft_schematic/structure/yt1300_house_schem.iff"},
+	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_chest_plate.iff"},
 };
