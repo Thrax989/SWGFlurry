@@ -44,7 +44,7 @@
 object_building_player_city_theater_naboo = object_building_player_city_shared_theater_naboo:new {
 	lotSize = 3,
 	baseMaintenanceRate = 50,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
+	allowedZones = {"chandrila", "corellia", "coruscant", "dantooine", "dathomir", "endor", "geonosis", "hoth", "hutta", "jakku", "kaas", "kashyyyk", "korriban", "lok", "mandalore", "mustafar", "naboo", "rori", "taanab", "talus", "tatooine", "yavin4"},
 	length = 5,
 	width = 6,
 	gameObjectType = 524,

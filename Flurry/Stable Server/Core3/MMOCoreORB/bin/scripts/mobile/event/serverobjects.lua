@@ -21,7 +21,7 @@ includeFile("event/event_mutant_acklay.lua")
 includeFile("event/event_nsqueen.lua")
 includeFile("event/event_outbreak.lua")
 includeFile("event/event_outbreak_two.lua")
-includeFile("event/event_event_tomb_wraith.lua")
+includeFile("event/event_tomb_wraith.lua")
 includeFile("event/event_zamidirin.lua")
 
 

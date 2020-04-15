@@ -1,7 +1,7 @@
 object_building_player_generic_small_window_s01 = object_building_player_shared_generic_small_window_s01:new {
 	lotSize = 2,
 	baseMaintenanceRate = 16,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
+	allowedZones = {"chandrila", "corellia", "coruscant", "dantooine", "dathomir", "endor", "geonosis", "hoth", "hutta", "jakku", "kaas", "kashyyyk", "korriban", "lok", "mandalore", "mustafar", "naboo", "rori", "taanab", "talus", "tatooine", "yavin4"},
 	constructionMarker = "object/building/player/construction/construction_player_house_corellia_small_style_01.iff",
 	length = 1,
 	width = 1,

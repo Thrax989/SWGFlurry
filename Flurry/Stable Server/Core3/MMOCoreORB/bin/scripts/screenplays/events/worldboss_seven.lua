@@ -27,9 +27,23 @@ spawnMobile("corellia", "meatlump_guard", 0, -2156, 26, -4365, 0, 0)
 spawnMobile("corellia", "meatlump_guard", 0, -2155, 27, -4375, 0, 0)
 spawnMobile("corellia", "meatlump_guard", 0, -2158, 26, -4370, 0, 0)
 spawnMobile("corellia", "meatlump_guard", 0, -2149, 27, -4368, 0, 0)
+	numberOfActs = 1,
+  	planet = "corellia",
+}
+registerScreenPlay("worldboss_seven", true)
+-----------------------------
+--Start World Boss ScreenPlay
+-----------------------------
+function worldboss_seven:start()
+	if (isZoneEnabled(self.planet)) then
+		self:spawnMobiles()
+		print("World Boss Seven Loaded")
+	end
+end
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
+function worldboss_seven:spawnMobiles()
 local pBoss = spawnMobile("corellia", "meatlump_lookout", 10800, -2157, 26, -4369, 0, 0)--3 hour respawn to start the boss
 	print("Spawning Meatlump Lookout")
 if (pBoss ~= nil ) then

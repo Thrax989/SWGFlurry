@@ -19,9 +19,9 @@ JindaRitualistCaveScreenPlay = ScreenPlay:new {
 			groups = {
 				{group = "color_crystals", chance = 160000},
 				{group = "junk", chance = 7240000},
-				{group = "weapons_all", chance = 2000000},
-				{group = "clothing_attachments", chance = 300000},
-				{group = "armor_attachments", chance = 300000}
+				{group = "weapons_all", chance = 800000},
+				{group = "clothing_attachments", chance = 900000},
+				{group = "armor_attachments", chance = 900000}
 			},
 		lootChance = 8000000
 		}

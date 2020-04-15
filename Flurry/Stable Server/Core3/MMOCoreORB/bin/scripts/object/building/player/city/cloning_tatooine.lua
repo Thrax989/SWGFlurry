@@ -44,8 +44,7 @@
 object_building_player_city_cloning_tatooine = object_building_player_city_shared_cloning_tatooine:new {
 	lotSize = 0,
 	baseMaintenanceRate = 0,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
-	length = 5,
+	allowedZones = {"chandrila", "corellia", "coruscant", "dantooine", "dathomir", "endor", "geonosis", "hoth", "hutta", "jakku", "kaas", "kashyyyk", "korriban", "lok", "mandalore", "mustafar", "naboo", "rori", "taanab", "talus", "tatooine", "yavin4"},
 	width = 5,
 	planetMapCategory = "cloningfacility",
 	facilityType = CLONER_PLAYER_CITY,

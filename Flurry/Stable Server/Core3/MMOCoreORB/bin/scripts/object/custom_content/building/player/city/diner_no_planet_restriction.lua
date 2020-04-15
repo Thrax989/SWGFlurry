@@ -1,7 +1,7 @@
 object_building_player_city_diner_no_planet_restriction = object_building_player_city_shared_diner_no_planet_restriction:new {
 	lotSize = 2,
 	baseMaintenanceRate = 50,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine"},
+	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor", "kashyyyk", "hoth", "mandalore", "taanab", "kaas", "moraban", "coruscant", "hutta", "chandrila", "jakku"},
 	publicStructure = 0,
 	skillMods = {
 		{"private_medical_rating", 100},
