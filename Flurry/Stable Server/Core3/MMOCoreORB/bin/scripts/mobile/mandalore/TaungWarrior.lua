@@ -38,7 +38,7 @@ taung_warrior = Creature:new {
 		},
 		{
 			groups = {
-				{group = "mandalore_armor", chance = 10000000},
+				{group = "bounty_hunter_armor", chance = 10000000},
 			},
 			lootChance = 500000
 		},

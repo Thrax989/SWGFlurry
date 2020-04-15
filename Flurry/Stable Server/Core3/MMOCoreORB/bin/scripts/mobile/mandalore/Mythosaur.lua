@@ -28,7 +28,50 @@ mythosaur = Creature:new {
 	diet = CARNIVORE,
     scale = 1.5,
 	templates = {"object/mobile/giant_dune_kimogila.iff"},
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "krayt_tissue_rare", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "vehicledeedsrare", chance = 10000000},
+			},
+			lootChance = 100000
+		},
+		{
+			groups = {
+				{group = "krayt_dragon_common", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "krayt_pearls", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 2000000},
+				{group = "tiertwo", chance = 4000000},
+				{group = "tierthree", chance = 2000000},
+				{group = "tierdiamond", chance = 2000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 2000000},
+				{group = "tiertwo", chance = 4000000},
+				{group = "tierthree", chance = 2000000},
+				{group = "tierdiamond", chance = 2000000},
+			},
+			lootChance = 4000000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

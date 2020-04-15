@@ -31,7 +31,7 @@ mandalore_the_resurrector = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "mandalore_armor", chance = 10000000},
+				{group = "bounty_hunter_armor", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
@@ -43,7 +43,7 @@ mandalore_the_resurrector = Creature:new {
 		},
 		{
 			groups = {
-				{group = "neck_crafter", chance = 10000000},
+				{group = "heavy_weapons", chance = 10000000},
 			},
 			lootChance = 1000000
 		},

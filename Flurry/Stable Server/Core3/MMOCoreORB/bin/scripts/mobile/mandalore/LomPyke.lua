@@ -32,7 +32,7 @@ lom_pyke = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "mandalore_armor", chance = 10000000},
+				{group = "bounty_hunter_armor", chance = 10000000},
 			},
 			lootChance = 1000000
 		},

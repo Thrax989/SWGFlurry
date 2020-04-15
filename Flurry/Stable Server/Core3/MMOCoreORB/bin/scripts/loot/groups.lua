@@ -454,4 +454,5 @@ includeFile("groups/wearables/capes.lua")
 includeFile("groups/weapon/nge_all.lua")
 
 -- Mandalore BH/Mando Armor
-includeFile("custom_loot/groups/mandalore/mandalore_armor.lua")
+--includeFile("custom_loot/groups/mandalore/mandalore_armor.lua")
+-- includeFile("custom_loot/groups/weapons/melee/mandalorian_saber.lua") -- Disabled, crashing server on creation
