@@ -26,7 +26,7 @@ end
 --The Boss Has Spawned
 -----------------------
 function MandaloreBossScreenplay:spawnMobiles()
-		local pBoss = spawnMobile("mandalore", "mandalore_the_resurrector", -1, -72.8, -50.0, 59.8, 0, 8566237)--Spawn World Boss
+		local pBoss = spawnMobile("mandalore", "mandalore_the_resurrector", -1, -20.40, -50.0, 0.25, 0.71, 8566237)--Spawn World Boss
 		local creature = CreatureObject(pBoss)
 		print("Mandalore The Resurrector has Spawned")
 		createObserver(OBJECTDESTRUCTION, "MandaloreBossScreenplay", "bossDead", pBoss)--World Boss Has Died Trigger Respawn Function
@@ -38,7 +38,7 @@ function MandaloreBossScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
 	player:broadcastToServer("\\#63C8F9 Mandalore The Resurrector Has Died!")
 	player:broadcastToServer("\\#63C8F9 Mandalore The Resurrector Will Respawn In 3 Hours")
-	print("Darth Caedus Has Died")
+	print("Mandalore The Resurrector Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "MandaloreBossScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "MandaloreBossScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
@@ -52,7 +52,7 @@ end
 --Respawn World Boss
 -----------------------
 function MandaloreBossScreenplay:KillSpawn()
-		local pBoss = spawnMobile("mandalore", "mandalore_the_resurrector", -1, -72.8, -50.0, 59.8, 0, 8566237)--Spawn WorldBoss After Death 3 Hour Timer
+		local pBoss = spawnMobile("mandalore", "mandalore_the_resurrector", -1, -20.40, -50.0, 0.25, 0.71, 8566237)--Spawn WorldBoss After Death 3 Hour Timer
 		local creature = CreatureObject(pBoss)
 		print("Mandalore The Resurrector")
 		createObserver(OBJECTDESTRUCTION, "MandaloreBossScreenplay", "bossDead", pBoss)

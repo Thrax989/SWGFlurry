@@ -70,7 +70,7 @@ includeFile("custom_screenplays/mandalore/DarthCaedus.lua")
 --includeFile("custom_screenplays/mandalore/ToborroTheHutt.lua")
 --includeFile("custom_screenplays/mandalore/LomPyke.lua")
 includeFile("custom_screenplays/mandalore/TaungWarriorBunker.lua")
-includeFile("custom_screenplays/mandalore/Mandalore.lua")  -- changed location spawn, will need to be tested.
+includeFile("custom_screenplays/mandalore/Mandalore.lua")  
 includeFile("custom_screenplays/mandalore/ShadowCollectiveCave.lua")
 includeFile("custom_screenplays/mandalore/SC87.lua")
 includeFile("custom_screenplays/mandalore/VizslaHideout.lua")
