@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_mandalorian_imperial_chest_plate =
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/armor/composite/armor_composite_chest_plate.iff",
+   targetTemplate = "object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_imperial_chest_plate.iff",
 
    additionalTemplates = {
               }

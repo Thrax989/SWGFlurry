@@ -1837,4 +1837,13 @@ schematics = {
 	{path="object/draft_schematic/structure/yoda_house_schem.iff"},
 	{path="object/draft_schematic/structure/yt1300_house_schem.iff"},
 	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_chest_plate.iff"},
+	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_belt.iff"},
+	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_bicep_l.iff"},
+	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_bicep_r.iff"},
+	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_boots.iff"},
+	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_bracer_l.iff"},
+	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_bracer_r.iff"},
+	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_gloves.iff"},
+	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_helmet.iff"},
+	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_leggings.iff"},
 };
