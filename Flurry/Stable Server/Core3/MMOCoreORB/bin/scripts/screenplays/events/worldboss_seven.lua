@@ -33,7 +33,7 @@ spawnMobile("corellia", "meatlump_guard", 0, -2149, 27, -4368, 0, 0)
 local pBoss = spawnMobile("corellia", "meatlump_lookout", 10800, -2157, 26, -4369, 0, 0)--3 hour respawn to start the boss
 	print("Spawning Meatlump Lookout")
 if (pBoss ~= nil ) then
-    createObserver(OBJECTDESTRUCTION, "worldboss_seven", "notifyTriggerDead", pBoss)
+    createObserver(OBJECTDESTRUCTION, "meatlump_lookout", "notifyTriggerDead", pBoss)
 end
     writeData("worldboss_seven:spawnState",0)
     return 0
