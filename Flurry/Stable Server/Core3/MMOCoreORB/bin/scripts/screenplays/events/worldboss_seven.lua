@@ -42,7 +42,7 @@ end
 --  Notify trigger is dead to spawn Boss
 -----------------------------------------
 function worldboss_seven:notifyTriggerDead(pBoss, pPlayer)
-local pBoss = spawnMobile("corellia", "worldboss_seven", -1, -2157, 26, -4369, 0, 0)
+local pBoss = spawnMobile("corellia", "worldboss_7", -1, -2157, 26, -4369, 0, 0)
     print("Spawning Meatlump King")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
