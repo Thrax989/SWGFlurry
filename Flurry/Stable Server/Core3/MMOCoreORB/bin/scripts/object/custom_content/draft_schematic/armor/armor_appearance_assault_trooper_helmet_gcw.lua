@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_assault_trooper_helmet_gcw = objec
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_helmet_gcw.iff",
 
    additionalTemplates = {
               }

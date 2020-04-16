@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_assault_trooper_bicep_r_gcw = obje
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_bicep_r_gcw.iff",
 
    additionalTemplates = {
               }
