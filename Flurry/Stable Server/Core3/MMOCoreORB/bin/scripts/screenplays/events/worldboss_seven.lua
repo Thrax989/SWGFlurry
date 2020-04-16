@@ -1,8 +1,32 @@
-worldboss_sevenScreenplay = ScreenPlay:new {
-	numberOfActs = 1,
-  	planet = "corellia",
+worldboss_seven = ScreenPlay:new {
+  numberOfActs = 1,
+  questString = "worldboss_seven",
+  questdata = Object:new {
+  activePlayerName = "initial",
+  }
 }
-registerScreenPlay("worldboss_sevenScreenplay", true)
+-------------------------------------------------------------
+--   Register Screenplay to planet corellia
+-------------------------------------------------------------
+spHelper = require("screenplayHelper")
+registerScreenPlay("worldboss_seven", true)
+local ObjectManager = require("managers.object.object_manager")  --print("Object manager loaded for Meatlump King")
+--------------------------------------
+--   Initialize screenplay
+--------------------------------------
+function worldboss_seven:start()
+if (isZoneEnabled("corellia")) then
+	self:spawnMobiles()
+  end
+end
+--------------------------------------------------
+--   spawn mobiles for Meatlump King corellia guards
+--------------------------------------------------
+function worldboss_seven:spawnMobiles()
+spawnMobile("corellia", "meatlump_guard", 0, -2156, 26, -4365, 0, 0)
+spawnMobile("corellia", "meatlump_guard", 0, -2155, 27, -4375, 0, 0)
+spawnMobile("corellia", "meatlump_guard", 0, -2158, 26, -4370, 0, 0)
+spawnMobile("corellia", "meatlump_guard", 0, -2149, 27, -4368, 0, 0)
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
