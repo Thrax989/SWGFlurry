@@ -44,8 +44,6 @@
 object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_bicep_r_gcw = object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_bicep_r_gcw:new {
 	templateType = ARMOROBJECT,
 
-	objectMenuComponent = "ArmorObjectMenuComponent",
-
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
