@@ -26,7 +26,7 @@ end
 --The Boss Has Spawned
 -----------------------
 function LomPykeScreenplay:spawnMobiles()
-		local pBoss = spawnMobile("mandalore", "lom_pyke", -1, 43.4, -23.0, 280.6, 178, 8565775)--Spawn World Boss
+		local pBoss = spawnMobile("mandalore", "lom_pyke", -1, -85.8, -50.0, 59.8, 0.7, 8565775)--Spawn World Boss
 		local creature = CreatureObject(pBoss)
 		print("Lom Pyke has Spawned")
 		createObserver(OBJECTDESTRUCTION, "LomPykeScreenplay", "bossDead", pBoss)--World Boss Has Died Trigger Respawn Function
@@ -52,7 +52,7 @@ end
 --Respawn World Boss
 -----------------------
 function LomPykeScreenplay:KillSpawn()
-		local pBoss = spawnMobile("mandalore", "lom_pyke", -1, 43.4, -23.0, 280.6, 178, 8565775)--Spawn WorldBoss After Death 3 Hour Timer
+		local pBoss = spawnMobile("mandalore", "lom_pyke", -1, -85.8, -50.0, 59.8, 0.7, 8565775)--Spawn WorldBoss After Death 3 Hour Timer
 		local creature = CreatureObject(pBoss)
 		print("Lom Pyke has Spawned")
 		createObserver(OBJECTDESTRUCTION, "LomPykeScreenplay", "bossDead", pBoss)
