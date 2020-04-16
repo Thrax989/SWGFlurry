@@ -45,8 +45,6 @@ object_tangible_wearables_armor_mandalorian_imperial_armor_mandalorian_imperial_
 
 	templateType = ARMOROBJECT,
 
-	objectMenuComponent = "ArmorObjectMenuComponent",
-
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
