@@ -30,7 +30,12 @@ worldboss_7 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "tiertwo", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
 				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
@@ -38,14 +43,6 @@ worldboss_7 = Creature:new {
 		{
 			groups = {
 				{group = "tiertwo", chance = 10000000},
-				{group = "tierthree", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000},
-				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -64,7 +61,7 @@ worldboss_7 = Creature:new {
         },
 	weapons = {"blood_razer_weapons"},
 	conversationTemplate = "",
-	attacks = merge(tkamaster,riflemanmaster,pistoleermaster)
+	attacks = merge(pikemanmaster,riflemanmaster,pistoleermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(worldboss_7, "worldboss_7")
