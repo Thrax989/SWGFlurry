@@ -1856,4 +1856,5 @@ schematics = {
 	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_helmet_gcw.iff"},
 	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_leggings_gcw.iff"},
 	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_utility_belt_gcw.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_chest_plate.iff"},
 };
