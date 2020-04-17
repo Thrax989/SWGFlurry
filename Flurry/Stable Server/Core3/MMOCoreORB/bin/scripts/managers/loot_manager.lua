@@ -41,9 +41,9 @@
 --which carries forward this exception.
 
 --Determines how often exceptional and legendary items can drop.
-yellowChance = 500 -- 1 in 100
-exceptionalChance = 2500 --1 in 500
-legendaryChance = 5000 --1 in 1,000
+yellowChance = 100 -- 1 in 100
+exceptionalChance = 500 --1 in 500
+legendaryChance = 1000 --1 in 1,000
 
 --Determines how much of an increase in the base stats will be applied to the object.
 yellowModifier = 1.5

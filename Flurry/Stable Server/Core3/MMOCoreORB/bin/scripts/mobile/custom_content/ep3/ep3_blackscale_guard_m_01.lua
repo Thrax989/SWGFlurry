@@ -32,19 +32,19 @@ ep3_blackscale_guard_m_01 = Creature:new {
 			groups = {
 				{group = "clothing_attachments", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 3000000
 		},
 		{
 			groups = {
 				{group = "armor_attachments", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
 				{group = "weapons_all", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 500000
 		},
 		{
 			groups = {
