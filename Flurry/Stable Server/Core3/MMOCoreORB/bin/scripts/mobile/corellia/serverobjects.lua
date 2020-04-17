@@ -210,5 +210,5 @@ includeFile("corellia/wooded_paralope.lua")
 includeFile("corellia/wrix.lua")
 includeFile("corellia/zealot_of_lord_nyax.lua")
 includeFile("corellia/zo_ssa.lua")
-includeFile("corellia/meatlump_lookout.lua")
-includeFile("corellia/meatlump_guard.lua")
+
+

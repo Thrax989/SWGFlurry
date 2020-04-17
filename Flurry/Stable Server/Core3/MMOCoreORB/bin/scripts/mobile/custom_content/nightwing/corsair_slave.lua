@@ -30,8 +30,8 @@ corsair_slave = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 4500000},
-				{group = "weapons_all", chance = 500000}
+				{group = "armor_all", chance = 2500000},
+				{group = "weapons_all", chance = 2500000}
 			},
 			lootChance = 10000000
 		},

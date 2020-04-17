@@ -32,19 +32,19 @@ ep3_blackscale_trooper_m_02 = Creature:new {
 			groups = {
 				{group = "clothing_attachments", chance = 10000000},
 			},
-			lootChance = 3000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
 				{group = "armor_attachments", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 2000000
 		},
 		{
 			groups = {
 				{group = "weapons_all", chance = 10000000},
 			},
-			lootChance = 500000
+			lootChance = 2000000
 		},
 		{
 			groups = {

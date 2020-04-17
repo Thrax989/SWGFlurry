@@ -44,7 +44,7 @@
 object_building_player_player_house_naboo_small_style_01 = object_building_player_shared_player_house_naboo_small_style_01:new {
 	lotSize = 1,
 	baseMaintenanceRate = 16,
-	allowedZones = {"chandrila", "corellia", "coruscant", "dantooine", "dathomir", "endor", "geonosis", "hoth", "hutta", "jakku", "kaas", "kashyyyk", "korriban", "lok", "mandalore", "mustafar", "naboo", "rori", "taanab", "talus", "tatooine", "yavin4"},
+	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor", "kashyyyk", "hoth", "mandalore", "taanab", "kaas", "moraban", "coruscant", "hutta", "chandrila", "jakku"},
 	publicStructure = 0,
 	constructionMarker = "object/building/player/construction/construction_player_house_naboo_small_style_01.iff",
 	length = 4,

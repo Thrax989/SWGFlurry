@@ -46,8 +46,8 @@ quest_1 = Creature:new {
 				{group = "power_crystals", chance = 500000},--5%
 				{group = "power_crystals", chance = 500000},--5%
 				{group = "wearables_all", chance = 1000000},--10%
-				{group = "weapons_all", chance = 500000},--10%
-				{group = "armor_all", chance = 1500000},--10%
+				{group = "weapons_all", chance = 1000000},--10%
+				{group = "armor_all", chance = 1000000},--10%
 				{group = "clothing_attachments", chance = 1000000},--10%
 				{group = "armor_attachments", chance = 1000000}--10%
 			},
