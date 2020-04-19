@@ -31,7 +31,7 @@ mandalore_the_resurrector = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "bounty_hunter_armor", chance = 10000000},
+				{group = "death_watch_bunker_lootbox", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
@@ -43,15 +43,15 @@ mandalore_the_resurrector = Creature:new {
 		},
 		{
 			groups = {
-				{group = "heavy_weapons", chance = 10000000},
+				{group = "death_watch_bunker_ingredient_binary", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter_second", chance = 10000000},
+				{group = "death_watch_bunker_ingredient_protective", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
@@ -73,25 +73,25 @@ mandalore_the_resurrector = Creature:new {
 		},
 		{
 			groups = {
-				{group = "jedi_earings", chance = 10000000},
+				{group = "death_watch_bunker_lootbox", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "jedi_bracelets", chance = 10000000},
+				{group = "death_watch_bunker_lootbox", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "jedi_neck", chance = 10000000},
+				{group = "blacksun_rare", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "jedi_rings", chance = 10000000},
+				{group = "heavy_weapons", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
