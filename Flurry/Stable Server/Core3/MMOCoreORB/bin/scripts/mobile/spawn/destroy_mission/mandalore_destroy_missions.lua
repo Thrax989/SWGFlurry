@@ -92,6 +92,12 @@ mandalore_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "talus_rot_mite_lair_neutral_boss_04",
+			minDifficulty = 18,
+			maxDifficulty = 23,
+			size = 25,
+		},
+		{
 			lairTemplateName = "talus_rot_mite_lair_neutral_small_01",
 			minDifficulty = 19,
 			maxDifficulty = 25,
@@ -152,6 +158,12 @@ mandalore_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "global_dark_jedi_camp_dark_jedi_theater",
+			minDifficulty = 8,
+			maxDifficulty = 13,
+			size = 25,
+		},
+		{
 			lairTemplateName = "global_pirate_camp_neutral_small_theater",
 			minDifficulty = 8,
 			maxDifficulty = 13,
@@ -170,6 +182,12 @@ mandalore_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "naboo_swamp_rat_lair_neutral_small",
+			minDifficulty = 8,
+			maxDifficulty = 13,
+			size = 25,
+		},
+		{
 			lairTemplateName = "tatooine_trandosian_slaver_neutral_medium_theater",
 			minDifficulty = 8,
 			maxDifficulty = 13,
@@ -182,12 +200,18 @@ mandalore_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "tatooine_outcast_camp_neutral_small_theater",
+			minDifficulty = 8,
+			maxDifficulty = 13,
+			size = 25,
+		},
+		{
 			lairTemplateName = "yavin4_gackle_bat_giant_neutral_medium_boss_01",
 			minDifficulty = 6,
 			maxDifficulty = 10,
 			size = 25,
 		},
-		
+
 	}
 }
 

@@ -46,7 +46,7 @@ object_building_player_city_cloning_corellia = object_building_player_city_share
 	baseMaintenanceRate = 0,
 	planetMapCategory = "cloningfacility",
 	facilityType = CLONER_PLAYER_CITY,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor", "kashyyyk", "hoth", "mandalore", "taanab", "kaas", "moraban", "coruscant", "hutta", "chandrila", "jakku"},	length = 5,
+	allowedZones = {"chandrila", "corellia", "coruscant", "dantooine", "dathomir", "endor", "geonosis", "hoth", "hutta", "jakku", "kaas", "kashyyyk", "korriban", "lok", "mandalore", "mustafar", "naboo", "rori", "taanab", "talus", "tatooine", "yavin4"},
 	width = 5,
 	cityRankRequired = 3,
 	uniqueStructure = true,
