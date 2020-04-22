@@ -287,8 +287,8 @@ object_weapon_ranged_pistol_pistol_scout_blaster = object_weapon_ranged_pistol_s
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "exp_durability", "expRange", "null", "null", "expRange", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "roundsused", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 25, 56, 4, 5, 10, 750, 14, -90, 19, 0, 13, 26, 13},
-	experimentalMax = {0, 0, 46, 104, 2.8, 9, 50, 1500, 26, -90, 19, 0, 7, 14, 7},
+	experimentalMin = {0, 0, 125, 156, 4, 5, 10, 750, 14, -90, 19, 0, 13, 26, 13},
+	experimentalMax = {0, 0, 146, 204, 2.8, 9, 50, 1500, 26, -90, 19, 0, 7, 14, 7},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }

@@ -287,8 +287,8 @@ object_weapon_ranged_carbine_carbine_dh17 = object_weapon_ranged_carbine_shared_
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "exp_durability", "null", "null", "null", "expRange", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "roundsused", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 28, 81, 4.5, 6, 30, 750, -20, -60, 35, 11, 25, 35, 16},
-	experimentalMax = {0, 0, 52, 150, 3.1, 12, 65, 1500, -20, -60, 35, 21, 13, 19, 8},
+	experimentalMin = {0, 0, 128, 181, 4.5, 6, 30, 750, -20, -60, 35, 11, 25, 35, 16},
+	experimentalMax = {0, 0, 152, 250, 3.1, 12, 65, 1500, -20, -60, 35, 21, 13, 19, 8},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }

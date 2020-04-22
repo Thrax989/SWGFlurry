@@ -288,8 +288,8 @@ object_weapon_melee_2h_sword_2h_sword_scythe = object_weapon_melee_2h_sword_shar
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "exp_durability", "expRange", "expRange", "null", "expRange", "null", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "maxrange", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 65, 165, 4.2, 5, 750, -15, -15, 6, -15, 6, 48, 76, 40},
-	experimentalMax = {0, 0, 155, 287, 3, 15, 1500, 10, 10, 6, 10, 6, 22, 40, 18},
+	experimentalMin = {0, 0, 165, 265, 4.2, 5, 750, -15, -15, 6, -15, 6, 48, 76, 40},
+	experimentalMax = {0, 0, 255, 387, 3, 15, 1500, 10, 10, 6, 10, 6, 22, 40, 18},
 	experimentalPrecision = {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
