@@ -108,7 +108,6 @@ type "bt" to do a back trace to find your error<br>
 
 ## Custom Professions
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Spy`
-- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Mechanic`
 - ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Melee Bounty Hunter`
 - ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray force sensative`
 - ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray Initiate`
