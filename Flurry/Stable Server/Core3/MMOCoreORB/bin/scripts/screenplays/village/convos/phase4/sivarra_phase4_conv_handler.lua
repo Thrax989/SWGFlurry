@@ -20,7 +20,7 @@ function villageSivarraPhase4ConvoHandler:getInitialScreen(pPlayer, pNpc, pConvT
 		return convoTemplate:getScreen("intro_give_second_set_reward")
 	elseif (QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_COMBAT_HEALING_1) and healCount >= 50) then
 		return convoTemplate:getScreen("intro_give_first_set_reward")
-	elseif (not CreatureObject(pPlayer):hasSkill("science_medic_novice")) then
+	elseif (not CreatureObject(pPlayer):hasSkill("science_medic_novice") or CreatureObject(pPlayer):hasSkill("combat_jedi_novice")) then
 		return convoTemplate:getScreen("intro_has_no_medic")
 	elseif (QuestManager.hasCompletedQuest(pPlayer, QuestManager.quests.FS_COMBAT_HEALING_1)) then
 		return convoTemplate:getScreen("intro_start_second_set")

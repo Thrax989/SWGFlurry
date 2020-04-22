@@ -28,7 +28,7 @@ function villageQuharekPhase2ConvoHandler:runScreenHandlers(pConvTemplate, pPlay
 			if (VillageCommunityCrafting:getCurrentActiveCrafters() >= VillageCommunityCrafting:getMaxCraftersPerPhase()) then
 				clonedConversation:addOption("@conversation/quharek_phase_2:s_955b2ddb", "max_crafters") -- I hear you're looking for crafters.
 			else
-				if (not CreatureObject(pPlayer):hasSkill("crafting_artisan_novice")) then
+				if (not CreatureObject(pPlayer):hasSkill("crafting_artisan_novice") or CreatureObject(pPlayer):hasSkill("combat_jedi_novice")) then
 					clonedConversation:addOption("@conversation/quharek_phase_2:s_955b2ddb", "not_skilled") -- I hear you're looking for crafters.
 				else
 					clonedConversation:addOption("@conversation/quharek_phase_2:s_955b2ddb", "need_people_to_help") -- I hear you're looking for crafters.
