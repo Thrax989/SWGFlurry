@@ -51,4 +51,7 @@ includeFile("mission/serverobjects.lua")
 includeFile("lair/serverobjects.lua")
 -- Outfits
 includeFile("outfits/serverobjects.lua")
+--Fallen Friends
+includeFile("ghost/serverobjects.lua")
+
 
