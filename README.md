@@ -118,7 +118,6 @@ type "bt" to do a back trace to find your error<br>
 - ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Order`
 - ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Grand Master`
 
-
 ## Armorsmith [Available Craftable Armors]
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Assault Trooper`
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Bone`
