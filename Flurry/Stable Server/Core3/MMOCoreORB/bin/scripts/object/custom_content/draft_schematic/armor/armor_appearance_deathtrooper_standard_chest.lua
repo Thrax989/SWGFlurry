@@ -2,7 +2,7 @@ object_draft_schematic_armor_armor_appearance_deathtrooper_standard_chest = obje
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Composite Armor Chest Plate",
+   customObjectName = "Armor Chest Plate",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45, 
@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_deathtrooper_standard_chest = obje
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/armor/composite/armor_composite_chest_plate.iff",
+   targetTemplate = "object/tangible/wearables/armor/deathtrooper/armor_deathtrooper_standard_chest_plate.iff",
 
    additionalTemplates = {
               }

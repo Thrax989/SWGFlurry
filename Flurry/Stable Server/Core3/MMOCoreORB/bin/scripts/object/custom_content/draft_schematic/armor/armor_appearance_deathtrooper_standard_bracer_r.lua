@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_deathtrooper_standard_bracer_r = o
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "0",
+   targetTemplate = "object/tangible/wearables/armor/deathtrooper/armor_deathtrooper_standard_bracer_r.iff",
 
    additionalTemplates = {
               }
