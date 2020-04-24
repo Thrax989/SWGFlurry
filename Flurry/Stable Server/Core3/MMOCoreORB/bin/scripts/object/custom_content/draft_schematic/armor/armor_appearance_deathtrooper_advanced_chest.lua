@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_deathtrooper_advanced_chest = obje
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/deathtrooper/armor_deathtrooper_advanced_chest_plate.iff",
 
    additionalTemplates = {
               }
