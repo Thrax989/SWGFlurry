@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_deathtrooper_bicep_r = object_draf
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/deathtrooper/armor_deathtrooper_bicep_r.iff",
 
    additionalTemplates = {
               }
