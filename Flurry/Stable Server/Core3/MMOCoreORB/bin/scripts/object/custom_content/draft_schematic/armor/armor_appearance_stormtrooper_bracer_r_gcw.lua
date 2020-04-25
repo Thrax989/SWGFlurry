@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_stormtrooper_bracer_r_gcw = object
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_bracer_r_gcw.iff",
 
    additionalTemplates = {
               }

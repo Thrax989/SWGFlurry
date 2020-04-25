@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_stormtrooper_chest = object_draft_
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_chest_plate_camo.iff",
 
    additionalTemplates = {
               }

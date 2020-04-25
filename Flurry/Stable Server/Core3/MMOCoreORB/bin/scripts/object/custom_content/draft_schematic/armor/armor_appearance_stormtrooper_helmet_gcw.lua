@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_stormtrooper_helmet_gcw = object_d
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_helmet_gcw.iff",
 
    additionalTemplates = {
               }
