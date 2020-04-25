@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_galactic_marine_gloves = object_dr
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/armor/composite/armor_composite_gloves.iff",
+   targetTemplate = "object/tangible/wearables/armor/galactic_marine/armor_galactic_marine_gloves.iff",
 
    additionalTemplates = {
               }

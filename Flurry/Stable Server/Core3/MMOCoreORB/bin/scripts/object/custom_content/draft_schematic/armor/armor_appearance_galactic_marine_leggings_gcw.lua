@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_galactic_marine_leggings_gcw = obj
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/armor/composite/armor_composite_leggings.iff",
+   targetTemplate = "object/tangible/wearables/armor/galactic_marine/armor_galactic_marine_leggings.iff",
 
    additionalTemplates = {
               }
