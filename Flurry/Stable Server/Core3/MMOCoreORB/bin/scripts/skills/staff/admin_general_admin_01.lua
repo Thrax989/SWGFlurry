@@ -24,7 +24,7 @@ admin_general_admin_01 = {
 		"teleport",
 		"teleportto",
 		"invulnerable",
-		"kill",
+--		"kill", (Moved to general_admin02)
 		"setSpeed",
 	},
 	skillModifiers = {},
