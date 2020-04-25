@@ -27,7 +27,7 @@ object_draft_schematic_armor_cybernetic_appearance_s02_arm_l = object_draft_sche
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/cybernetic/cybernetic_crafted_s02_arm_r.iff",
 
    additionalTemplates = {
               }

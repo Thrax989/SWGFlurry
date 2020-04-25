@@ -27,7 +27,7 @@ object_draft_schematic_armor_cybernetic_appearance_hand_r = object_draft_schemat
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/cyborg/hand_r_s01.iff",
 
    additionalTemplates = {
               }
