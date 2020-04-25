@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_mandalorian_rebel_boots = object_d
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/mandalorian_rebel/armor_mandalorian_rebel_boots.iff",
 
    additionalTemplates = {
               }
