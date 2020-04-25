@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_rebel_marine_leggings_gcw = object
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/rebel_battle/armor_rebel_battle_leggings.iff",
 
    additionalTemplates = {
               }
