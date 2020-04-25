@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_rebel_snow_bracer_l = object_draft
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/rebel_snow/armor_rebel_snow_bracer_l.iff",
 
    additionalTemplates = {
               }
