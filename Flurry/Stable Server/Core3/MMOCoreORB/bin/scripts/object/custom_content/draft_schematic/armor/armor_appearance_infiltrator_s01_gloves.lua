@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_infiltrator_s01_gloves = object_dr
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/infiltrator/armor_infiltrator_s01_gloves.iff",
 
    additionalTemplates = {
               }

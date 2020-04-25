@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_infiltrator_s02_bicep_l = object_d
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/infiltrator/armor_infiltrator_s02_bicep_l.iff",
 
    additionalTemplates = {
               }
