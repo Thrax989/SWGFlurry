@@ -2,7 +2,7 @@ object_draft_schematic_armor_armor_appearance_rebel_specforce_bracer_l_gcw = obj
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Bracer Left",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 40, 
@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_rebel_specforce_bracer_l_gcw = obj
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/rebel_spec_force/armor_rebel_spec_force_bracer_l_gcw.iff",
 
    additionalTemplates = {
              }

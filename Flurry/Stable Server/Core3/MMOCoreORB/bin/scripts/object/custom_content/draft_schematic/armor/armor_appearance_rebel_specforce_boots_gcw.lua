@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_rebel_specforce_boots_gcw = object
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/rebel_spec_force/armor_rebel_spec_force_boots_gcw.iff",
 
    additionalTemplates = {
               }

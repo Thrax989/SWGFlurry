@@ -2,7 +2,7 @@ object_draft_schematic_armor_armor_appearance_rebel_specforce_helmet = object_dr
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Composite Armor Helmet",
+   customObjectName = "Armor Helmet",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45, 
@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_rebel_specforce_helmet = object_dr
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/armor/composite/armor_composite_helmet.iff",
+   targetTemplate = "object/tangible/wearables/armor/rebel_spec_force/armor_rebel_spec_force_helmet.iff",
 
    additionalTemplates = {
               }
