@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_rebel_assault_bicep_l_gcw = object
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/rebel_assault/armor_rebel_assault_bicep_l_gcw.iff",
 
    additionalTemplates = {
               }
