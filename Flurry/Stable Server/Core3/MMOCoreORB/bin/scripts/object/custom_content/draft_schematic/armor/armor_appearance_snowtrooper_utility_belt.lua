@@ -26,7 +26,7 @@ object_draft_schematic_armor_armor_appearance_snowtrooper_utility_belt = object_
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/snowtrooper/armor_snowtrooper_belt.iff",
 
    additionalTemplates = {
              }

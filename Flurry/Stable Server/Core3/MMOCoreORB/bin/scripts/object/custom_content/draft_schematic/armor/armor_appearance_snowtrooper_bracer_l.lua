@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_snowtrooper_bracer_l = object_draf
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/armor/snowtrooper/armor_snowtrooper_bracer_l.iff",
 
    additionalTemplates = {
               }
