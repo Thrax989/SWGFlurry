@@ -14,7 +14,6 @@ object_draft_schematic_armor_armor_appearance_galactic_marine_utility_belt = obj
    assemblySkill = "armor_assembly", 
    experimentingSkill = "armor_experimentation", 
    customizationSkill = "armor_customization", 
-   disableFactoryRun = true,
 
    customizationOptions = {},
    customizationStringNames = {},
