@@ -2,7 +2,7 @@ object_draft_schematic_armor_armor_appearance_galactic_marine_leggings_gcw = obj
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Composite Armor Pants",
+   customObjectName = "Armor Pants",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45, 
