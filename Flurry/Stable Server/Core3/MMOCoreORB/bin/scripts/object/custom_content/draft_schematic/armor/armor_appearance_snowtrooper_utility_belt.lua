@@ -1,5 +1,7 @@
 object_draft_schematic_armor_armor_appearance_snowtrooper_utility_belt = object_draft_schematic_armor_shared_armor_appearance_snowtrooper_utility_belt:new {
 
+   templateType = DRAFTSCHEMATIC,
+
    customObjectName = " Armor Belt",
 
    craftingToolTab = 2, -- (See DraftSchemticImplementation.h)
@@ -12,7 +14,6 @@ object_draft_schematic_armor_armor_appearance_snowtrooper_utility_belt = object_
    assemblySkill = "armor_assembly", 
    experimentingSkill = "armor_experimentation", 
    customizationSkill = "armor_customization", 
-   disableFactoryRun = true,
 
    customizationOptions = {},
    customizationStringNames = {},
