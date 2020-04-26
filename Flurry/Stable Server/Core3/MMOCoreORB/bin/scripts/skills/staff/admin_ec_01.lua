@@ -1,5 +1,5 @@
-admin_general_admin_02 = {
-	skillName = "admin_general_admin_02",
+admin_ec_01 = {
+	skillName = "admin_ec_01",
 	parentName = "",
 	graphType = 4,
 	godOnly = 1,
@@ -21,16 +21,12 @@ admin_general_admin_02 = {
 	jediStateRequired = 0,
 	skillAbility = {},
 	commands = {
-		"findObject",
-		"goto",
-		"harmful",
-		"harmless",
-		"killPlayer",
-		"teleportTarget",
-		"planetWarp",
-		"planetWarpTarget",
-		"freezePlayer",
-		"unfreezePlayer"
+		"createCreature",
+    "createNPC",
+    "teleport",
+    "teleportto",
+    "setSpeed",
+    "aiIgnore",
 	},
 	skillModifiers = {},
 	schematicsGranted = {},
@@ -38,4 +34,4 @@ admin_general_admin_02 = {
 	searchable = 0
 }
 
-addSkill(admin_general_admin_02)
+addSkill(admin_ec_01)
