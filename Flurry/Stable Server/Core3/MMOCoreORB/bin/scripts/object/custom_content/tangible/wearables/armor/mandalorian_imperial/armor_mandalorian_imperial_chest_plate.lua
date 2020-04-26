@@ -261,4 +261,5 @@ object_tangible_wearables_armor_mandalorian_imperial_armor_mandalorian_imperial_
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
+
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_mandalorian_imperial_armor_mandalorian_imperial_chest_plate, "object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_imperial_chest_plate.iff")
