@@ -1,5 +1,7 @@
 object_draft_schematic_armor_armor_appearance_mandalorian_rebel_belt = object_draft_schematic_armor_shared_armor_appearance_mandalorian_rebel_belt:new {
 
+   templateType = DRAFTSCHEMATIC,
+
    customObjectName = "Armor Belt",
 
    craftingToolTab = 2, -- (See DraftSchemticImplementation.h)
