@@ -262,5 +262,4 @@ object_tangible_wearables_armor_mandalorian_imperial_armor_mandalorian_imperial_
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
-
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_mandalorian_imperial_armor_mandalorian_imperial_gloves, "object/tangible/wearables/armor/mandalorian_imperial/armor_mandalorian_imperial_gloves.iff")
