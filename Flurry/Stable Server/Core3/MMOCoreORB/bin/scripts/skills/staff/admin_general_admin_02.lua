@@ -25,7 +25,7 @@ admin_general_admin_02 = {
 		"goto",
 		"harmful",
 		"harmless",
-    "kill"
+    "kill",
 		"killPlayer",
 		"teleportTarget",
 		"planetWarp",
