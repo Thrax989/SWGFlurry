@@ -72,9 +72,6 @@ object_draft_schematic_structure_naboo_house_guild_hall = object_draft_schematic
 
 	targetTemplate = "object/tangible/deed/guild_deed/naboo_guild_deed.iff",
 
-	additionalTemplates = {"object/tangible/deed/guild_deed/naboo_guild_02_deed.iff",
-	"object/tangible/deed/guild_deed/naboo_guild_03_deed.iff",
-	"object/tangible/deed/guild_deed/naboo_guild_04_deed.iff",
-	"object/tangible/deed/guild_deed/naboo_guild_05_deed.iff",}
+	additionalTemplates = {}
 }
 ObjectTemplates:addTemplate(object_draft_schematic_structure_naboo_house_guild_hall, "object/draft_schematic/structure/naboo_house_guild_hall.iff")
