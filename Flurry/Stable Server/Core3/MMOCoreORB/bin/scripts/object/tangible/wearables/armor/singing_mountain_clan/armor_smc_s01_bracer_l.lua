@@ -63,26 +63,6 @@ object_tangible_wearables_armor_singing_mountain_clan_armor_smc_s01_bracer_l = o
 				"object/mobile/vendor/twilek_female.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 	
-	-- Damage types in WeaponObject
-	vulnerability = HEAT + ACID + STUN + LIGHTSABER,
-
-	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
-
-	-- LIGHT, MEDIUM, HEAVY
-	rating = LIGHT,
-
-	kinetic = 15,
-	energy = 15,
-	electricity = 15,
-	stun = 15,
-	blast = 15,
-	heat = 15,
-	cold = 15,
-	acid = 15,
-	lightSaber = 0
-}
+object/tangible/wearables/armor/composite/armor_composite_bracer_l.iff
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_singing_mountain_clan_armor_smc_s01_bracer_l, "object/tangible/wearables/armor/singing_mountain_clan/armor_smc_s01_bracer_l.iff")

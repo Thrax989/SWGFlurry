@@ -192,7 +192,7 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_bicep_l_camo = o
 
 	specialResists = ELECTRICITY,
 
-	-- Copied from Comp
+	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
 	actionEncumbrance = 80,
 	mindEncumbrance = 80,
