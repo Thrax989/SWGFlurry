@@ -135,10 +135,10 @@ object_tangible_wearables_armor_marine_armor_marine_helmet = object_tangible_wea
 
 	specialResists = ELECTRICITY,
 
-	-- Copied from Comp
+	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
 	actionEncumbrance = 80,
-	mindEncumbrance = 80,
+	mindEncumbrance = 350,
 
 	maxCondition = 30000,
 
@@ -163,7 +163,8 @@ object_tangible_wearables_armor_marine_armor_marine_helmet = object_tangible_wea
 	experimentalMin = {0, 0, 0, 1000, 1, 30000, 25, 22, 300, 1, 0, 0, 0},
 	experimentalMax = {0, 0, 0, 1000, 40, 50000, 15, 13, 180, 1, 0, 0, 0},
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
-	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1}
+	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
+
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_marine_armor_marine_helmet, "object/tangible/wearables/armor/marine/armor_marine_helmet.iff")

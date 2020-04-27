@@ -31,12 +31,12 @@ lootcollectiontierdiamond  = {
 		{groupTemplate = "weapon_component_advanced", weight = 312500},
 		{groupTemplate = "theme_park_reward_imperial_kaja", weight = 312500},
 		{groupTemplate = "projectile_rifle_barrel_quest", weight = 312500},
-		{groupTemplate = "krayt_tissue_uncommon", weight = 312500},
+		{groupTemplate = "kimogila_common", weight = 312500},
 		{groupTemplate = "geonosian_cubes", weight = 312500},
 		{groupTemplate = "fire_breathing_spider", weight = 312500},
 		{groupTemplate = "acklay", weight = 312500},
 		{groupTemplate = "nightsister_common", weight = 312500},
-		{groupTemplate = "gorax_common", weight = 312500},
+		{groupTemplate = "mythosaur_common", weight = 312500},
 	}
 }
 

@@ -84,5 +84,4 @@ object_tangible_wearables_armor_ithorian_sentinel_ith_armor_s03_bracer_r = objec
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
-
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_ithorian_sentinel_ith_armor_s03_bracer_r, "object/tangible/wearables/armor/ithorian_sentinel/ith_armor_s03_bracer_r.iff")

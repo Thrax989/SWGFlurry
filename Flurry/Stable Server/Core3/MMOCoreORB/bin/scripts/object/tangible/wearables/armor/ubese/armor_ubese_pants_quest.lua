@@ -226,27 +226,39 @@ object_tangible_wearables_armor_ubese_armor_ubese_pants_quest = object_tangible_
 				"object/mobile/vendor/zabrak_female.iff" },
 	
 	-- Damage types in WeaponObject
-	vulnerability = HEAT + COLD + STUN + LIGHTSABER,
+	vulnerability = STUN + LIGHTSABER,
+
+	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 26,
-	actionEncumbrance = 90,
-	mindEncumbrance = 15,
+	healthEncumbrance = 130,
+	actionEncumbrance = 230,
+	mindEncumbrance = 85,
+
+	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	maxCondition = 20000,
+	kinetic = 65,
+	energy = 65,
+	electricity = 80,
+	stun = 25,
+	blast = 65,
+	heat = 65,
+	cold = 65,
+	acid = 65,
+	lightSaber = 0,
 
-	kinetic = 20,
-	energy = 15,
-	electricity = 15,
-	stun = 0,
-	blast = 15,
-	heat = 0,
-	cold = 0,
-	acid = 15,
-	lightSaber = 0
+	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
+	experimentalProperties = {"XX", "XX", "XX", "OQ", "SR", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
+	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_resistance", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
+	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
+	experimentalMin = {0, 0, 0, 1000, 1, 30000, 75, 175, 25, 1, 0, 0, 0},
+	experimentalMax = {0, 0, 0, 1000, 40, 50000, 45, 105, 15, 1, 0, 0, 0},
+	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
+	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_ubese_armor_ubese_pants_quest, "object/tangible/wearables/armor/ubese/armor_ubese_pants_quest.iff")

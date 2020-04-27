@@ -72,9 +72,6 @@ object_draft_schematic_structure_house_guild_hall = object_draft_schematic_struc
 
 	targetTemplate = "object/tangible/deed/guild_deed/tatooine_guild_style_02_deed.iff",
 
-	additionalTemplates = {"object/tangible/deed/guild_deed/tatooine_guild_06_deed.iff",
-	"object/tangible/deed/guild_deed/tatooine_guild_03_deed.iff",
-	"object/tangible/deed/guild_deed/tatooine_guild_04_deed.iff",
-	"object/tangible/deed/guild_deed/tatooine_guild_05_deed.iff",}
+	additionalTemplates = {}
 }
 ObjectTemplates:addTemplate(object_draft_schematic_structure_house_guild_hall, "object/draft_schematic/structure/house_guild_hall.iff")

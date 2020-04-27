@@ -42,1838 +42,1927 @@
 
 
 schematics = {
-	{path="object/draft_schematic/community_crafting/component/connections.iff"},
-	{path="object/draft_schematic/community_crafting/component/endrost.iff"},
-	{path="object/draft_schematic/community_crafting/component/power_supply.iff"},
-	{path="object/draft_schematic/community_crafting/component/primary_computer.iff"},
-	{path="object/draft_schematic/community_crafting/component/regulator.iff"},
-	{path="object/draft_schematic/community_crafting/component/shield_housing.iff"},
-	{path="object/draft_schematic/community_crafting/component/unit_computer.iff"},
-	{path="object/draft_schematic/community_crafting/component/refined_ardanium_ii.iff"},
-	{path="object/draft_schematic/community_crafting/component/refined_rudic.iff"},
-	{path="object/draft_schematic/community_crafting/component/refined_endrine.iff"},
-	{path="object/draft_schematic/community_crafting/component/reinforced_wall_module.iff"},
-	{path="object/draft_schematic/community_crafting/component/lightweight_turret_electronics.iff"},
-	{path="object/draft_schematic/community_crafting/component/lightweight_turret_hardware.iff"},
-	{path="object/draft_schematic/community_crafting/component/lightweight_turret.iff"},
-	{path="object/draft_schematic/slicing/slicing_armor_upgrade_kit.iff"},
-	{path="object/draft_schematic/armor/armor_segment_zam.iff"},
-	{path="object/draft_schematic/clothing/clothing_apron_field_01_quest_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_apron_field_01_quest_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_apron_field_01_quest_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_apron_field_01_quest_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_field_05_quest.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_08_quest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_zam_belt.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_zam_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_zam_chest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_zam_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_zam_helmet.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_zam_pants.iff"},
-	{path="object/draft_schematic/armor/armor_segment.iff"},
-	{path="object/draft_schematic/armor/armor_segment_chitin.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_chitin_bicep_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_chitin_bicep_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_chitin_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_chitin_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_chitin_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_chitin_chest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_chitin_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_chitin_helmet.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_chitin_leggings.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_guardian_bicep_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_guardian_bicep_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_guardian_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_guardian_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_guardian_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_guardian_chest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_guardian_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_guardian_helmet.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_guardian_leggings.iff"},
-	{path="object/draft_schematic/armor/armor_segment_kashyyykian_ceremonial.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_ceremonial_chest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_ceremonial_leggings.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_ceremonial_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_ceremonial_bracer_r.iff"},
-	{path="object/draft_schematic/armor/armor_segment_padded.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_tantel_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_tantel_chest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_tantel_helmet.iff"},
-	{path="object/draft_schematic/armor/armor_segment_bone_advanced.iff"},
-	{path="object/draft_schematic/armor/armor_segment_zam_advanced.iff"},
-	{path="object/draft_schematic/armor/armor_segment_kashyyykian_black_mtn.iff"},
-	{path="object/draft_schematic/armor/armor_segment_ubese.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ubese_bandolier.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ubese_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ubese_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ubese_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ubese_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ubese_helmet.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ubese_jacket.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ubese_pants.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ubese_shirt.iff"},
-	{path="object/draft_schematic/armor/armor_segment_chitin_advanced.iff"},
-	{path="object/draft_schematic/armor/armor_segment_kashyyykian_ceremonial_advanced.iff"},
-	{path="object/draft_schematic/armor/armor_segment_padded_advanced.iff"},
-	{path="object/draft_schematic/armor/armor_segment_kashyyykian_black_mtn_advanced.iff"},
-	{path="object/draft_schematic/armor/armor_segment_composite.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_padded_belt.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_padded_bicep_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_padded_bicep_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_padded_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_padded_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_padded_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_padded_chest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_padded_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_padded_helmet.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_padded_leggings.iff"},
-	{path="object/draft_schematic/armor/armor_segment_ubese_advanced.iff"},
-	{path="object/draft_schematic/armor/armor_segment_kashyyykian_hunting.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_black_mtn_chest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_black_mtn_leggings.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_black_mtn_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_black_mtn_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_defender_bicep_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_defender_bicep_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_defender_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_defender_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_defender_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_defender_chest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_defender_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_defender_helmet.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_defender_leggings.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_composite_bicep_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_composite_bicep_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_composite_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_composite_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_composite_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_composite_chest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_composite_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_composite_helmet.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_composite_leggings.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_bicep_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_bicep_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_chest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_helmet.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_leggings.iff"},
-	{path="object/draft_schematic/armor/armor_segment_composite_advanced.iff"},
-	{path="object/draft_schematic/armor/armor_segment_kashyyykian_hunting_advanced.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_hunting_chest.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_hunting_leggings.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_hunting_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_kashyyykian_hunting_bracer_r.iff"},
-	{path="object/draft_schematic/armor/component/armor_layer_kinetic.iff"},
-	{path="object/draft_schematic/armor/component/armor_layer_energy.iff"},
-	{path="object/draft_schematic/armor/component/armor_layer_blast.iff"},
-	{path="object/draft_schematic/armor/component/armor_layer_heat.iff"},
-	{path="object/draft_schematic/armor/component/armor_layer_cold.iff"},
-	{path="object/draft_schematic/armor/component/armor_layer_electrical.iff"},
-	{path="object/draft_schematic/armor/component/armor_layer_acid.iff"},
-	{path="object/draft_schematic/armor/component/armor_layer_stun.iff"},
-	{path="object/draft_schematic/armor/component/deflector_shield_generator_particle.iff"},
-	{path="object/draft_schematic/armor/component/deflector_shield_generator_energy_ray.iff"},
-	{path="object/draft_schematic/armor/component/deflector_shield_emitter_assembly.iff"},
-	{path="object/draft_schematic/armor/component/deflector_shield_projector_plate.iff"},
-	{path="object/draft_schematic/armor/shield_generator_personal.iff"},
-	{path="object/draft_schematic/armor/shield_generator_personal_b.iff"},
-	{path="object/draft_schematic/armor/shield_generator_personal_c.iff"},
-	{path="object/draft_schematic/item/item_survey_tool_gas.iff"},
-	{path="object/draft_schematic/item/item_survey_tool_liquid.iff"},
-	{path="object/draft_schematic/item/item_survey_tool_mineral.iff"},
-	{path="object/draft_schematic/item/item_survey_tool_moisture.iff"},
-	{path="object/draft_schematic/item/item_survey_tool_flora.iff"},
-	{path="object/draft_schematic/item/item_survey_tool_solar.iff"},
-	{path="object/draft_schematic/item/item_survey_tool_wind.iff"},
-	{path="object/draft_schematic/item/item_food_tool.iff"},
-	{path="object/draft_schematic/item/item_clothing_tool.iff"},
-	{path="object/draft_schematic/item/item_structure_tool.iff"},
-	{path="object/draft_schematic/item/item_weapon_tool.iff"},
-	{path="object/draft_schematic/item/item_space_tool.iff"},
-	{path="object/draft_schematic/weapon/knife_survival.iff"},
-	{path="object/draft_schematic/item/item_chance_cube.iff"},
-	{path="object/draft_schematic/item/item_six_sided_dice.iff"},
-	{path="object/draft_schematic/item/item_ten_sided_dice.iff"},
-	{path="object/draft_schematic/weapon/pistol_blaster_cdef.iff"},
-	{path="object/draft_schematic/weapon/carbine_blaster_cdef.iff"},
-	{path="object/draft_schematic/weapon/rifle_blaster_cdef.iff"},
-	{path="object/draft_schematic/item/item_generic_tool.iff"},
-	{path="object/draft_schematic/item/item_fishing_pole.iff"},
-	{path="object/draft_schematic/item/item_firework_one.iff"},
-	{path="object/draft_schematic/item/item_firework_two.iff"},
-	{path="object/draft_schematic/item/item_firework_three.iff"},
-	{path="object/draft_schematic/item/item_powerup_weapon_ranged_one.iff"},
-	{path="object/draft_schematic/item/item_powerup_weapon_ranged_two.iff"},
-	{path="object/draft_schematic/item/item_powerup_weapon_melee_generic.iff"},
-	{path="object/draft_schematic/item/item_twelve_sided_dice.iff"},
-	{path="object/draft_schematic/item/item_twenty_sided_dice.iff"},
-	{path="object/draft_schematic/item/item_hundred_sided_dice.iff"},
-	{path="object/draft_schematic/weapon/staff.iff"},
-	{path="object/draft_schematic/item/item_battery_droid.iff"},
-	{path="object/draft_schematic/item/item_powerup_weapon_ranged_three.iff"},
-	{path="object/draft_schematic/item/item_powerup_weapon_ranged_four.iff"},
-	{path="object/draft_schematic/item/item_firework_four.iff"},
-	{path="object/draft_schematic/item/item_firework_five.iff"},
-	{path="object/draft_schematic/item/craftable_bug_habitat.iff"},
-	{path="object/draft_schematic/item/item_repairkit_weapon.iff"},
-	{path="object/draft_schematic/item/item_repairkit_armor.iff"},
-	{path="object/draft_schematic/item/item_configurable_sided_dice.iff"},
-	{path="object/draft_schematic/weapon/staff_reinforced.iff"},
-	{path="object/draft_schematic/armor/armor_segment_bone.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bone_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bone_boots.iff"},
-	{path="object/draft_schematic/item/item_powerup_weapon_thrown_wiring.iff"},
-	{path="object/draft_schematic/item/item_firework_ten.iff"},
-	{path="object/draft_schematic/item/item_powerup_weapon_ranged_five.iff"},
-	{path="object/draft_schematic/weapon/knife_twilek_dagger.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bone_bicep_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bone_bicep_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bone_leggings.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bone_helmet.iff"},
-	{path="object/draft_schematic/structure/installation_generator_wind.iff"},
-	{path="object/draft_schematic/structure/installation_mining_ore_light.iff"},
-	{path="object/draft_schematic/structure/installation_mining_organic_flora_light.iff"},
-	{path="object/draft_schematic/item/item_firework_eleven.iff"},
-	{path="object/draft_schematic/item/item_powerup_weapon_mine_explosive.iff"},
-	{path="object/draft_schematic/item/item_firework_show.iff"},
-	{path="object/draft_schematic/weapon/axe.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bone_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bone_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bone_chest.iff"},
-	{path="object/draft_schematic/structure/installation_mining_gas_light.iff"},
-	{path="object/draft_schematic/structure/installation_mining_liquid_light.iff"},
-	{path="object/draft_schematic/structure/installation_mining_liquid_vapor_light.iff"},
-	{path="object/draft_schematic/item/item_powerup_weapon_ranged_six.iff"},
-	{path="object/draft_schematic/item/item_powerup_weapon_thrown_explosive.iff"},
-	{path="object/draft_schematic/item/item_firework_eighteen.iff"},
-	{path="object/draft_schematic/food/dessert_bofa_treat.iff"},
-	{path="object/draft_schematic/food/dish_travel_biscuits.iff"},
-	{path="object/draft_schematic/food/drink_spiced_tea.iff"},
-	{path="object/draft_schematic/food/component/container_small_glass.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_casual_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_shoes_casual_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_25.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_shirt_s01.iff"},
-	{path="object/draft_schematic/food/component/ingredient_carbosyrup.iff"},
-	{path="object/draft_schematic/food/dessert_blob_candy.iff"},
-	{path="object/draft_schematic/food/dish_exo_protein_wafers.iff"},
-	{path="object/draft_schematic/food/drink_aitha.iff"},
-	{path="object/draft_schematic/clothing/component/clothing_fiberplast_panel.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_17.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_casual_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_casual_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_casual_10.iff"},
-	{path="object/draft_schematic/item/item_repairkit_clothing.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_gloves_s02.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_skirt_s04.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_casual_01.iff"},
-	{path="object/draft_schematic/food/component/ingredient_ball_of_dough.iff"},
-	{path="object/draft_schematic/food/dish_rations.iff"},
-	{path="object/draft_schematic/food/dish_crispic.iff"},
-	{path="object/draft_schematic/food/drink_caf.iff"},
-	{path="object/draft_schematic/clothing/component/clothing_metal_fasteners.iff"},
-	{path="object/draft_schematic/clothing/clothing_boots_casual_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_casual_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_hood_s01.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_casual_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_skirt_casual_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_casual_27.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_vest_field_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_casual_06.iff"},
-	{path="object/draft_schematic/food/dessert_pkneb.iff"},
-	{path="object/draft_schematic/food/dish_kanali_wafers.iff"},
-	{path="object/draft_schematic/food/drink_ruby_bliel.iff"},
-	{path="object/draft_schematic/food/drink_jawa_beer.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_field_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_field_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_casual_17.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_field_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_field_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_field_11.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_casual_34.iff"},
-	{path="object/draft_schematic/clothing/clothing_gloves_field_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_casual_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_shirt_s02.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_casual_07.iff"},
-	{path="object/draft_schematic/food/additive/additive_light.iff"},
-	{path="object/draft_schematic/food/component/container_large_glass.iff"},
-	{path="object/draft_schematic/food/drink_jaar.iff"},
-	{path="object/draft_schematic/food/drink_starshine_surprise.iff"},
-	{path="object/draft_schematic/food/dish_dustcrepe.iff"},
-	{path="object/draft_schematic/food/dish_teltier_noodles.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_18.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_26.iff"},
-	{path="object/draft_schematic/clothing/clothing_boots_field_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_field_15.iff"},
-	{path="object/draft_schematic/clothing/clothing_bandolier_field_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_bandolier_field_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_casual_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_backpack_field_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_hood_s03.iff"},
-	{path="object/draft_schematic/item/item_parrot_cage.iff"},
-	{path="object/draft_schematic/item/component/item_micro_sensor_suite.iff"},
-	{path="object/draft_schematic/item/component/item_electronics_memory_module.iff"},
-	{path="object/draft_schematic/item/component/item_electronics_gp_module.iff"},
-	{path="object/draft_schematic/item/component/item_electronic_power_conditioner.iff"},
-	{path="object/draft_schematic/item/component/item_electronic_energy_distributor.iff"},
-	{path="object/draft_schematic/item/component/item_electronic_control_unit.iff"},
-	{path="object/draft_schematic/space/repair/generic_repair_kit.iff"},
-	{path="object/draft_schematic/clothing/clothing_backpack_field_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_backpack_field_03_quest.iff"},
-	{path="object/draft_schematic/clothing/component/clothing_synthetic_cloth.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_field_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_casual_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_casual_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_casual_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_casual_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_field_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_gloves_field_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_gloves_field_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_field_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_field_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_skirt_s03.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_hat_s01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_casual_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_casual_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_23.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_29.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_bracelet_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_bracelet_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_formal_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_formal_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_11.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_11.iff"},
-	{path="object/draft_schematic/clothing/component/clothing_shoe_sole.iff"},
-	{path="object/draft_schematic/clothing/clothing_boots_casual_15.iff"},
-	{path="object/draft_schematic/clothing/clothing_boots_casual_21.iff"},
-	{path="object/draft_schematic/clothing/clothing_gloves_casual_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_gloves_casual_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_gloves_s04.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_casual_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_skirt_casual_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_skirt_casual_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_shoes_casual_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_shoes_casual_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_shoes_casual_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_hat_casual_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_casual_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_casual_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_casual_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_casual_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_casual_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_casual_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_casual_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_casual_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_casual_16.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_casual_42.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_casual_38.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_casual_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_casual_17.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_casual_19.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_11.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_26.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_vest_casual_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_vest_casual_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_vest_casual_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_shoulder_pad_s01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_casual_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_casual_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_casual_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_casual_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_boots_casual_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_boots_casual_19.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_casual_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_casual_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_robe_casual_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_robe_casual_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_robe_casual_05b.iff"},
-	{path="object/draft_schematic/clothing/clothing_robe_casual_18.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_casual_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_casual_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_casual_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_bustier_casual_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_bustier_casual_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_bustier_casual_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_bodysuit_casual_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_gloves_s03.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_hat_casual_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_casual_16.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_casual_18.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_casual_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_casual_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_casual_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_casual_11.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_casual_24.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_casual_30.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_casual_18.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_casual_24.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_casual_36.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_18.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_24.iff"},
-	{path="object/draft_schematic/clothing/clothing_vest_casual_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_vest_casual_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_vest_casual_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_vest_casual_11.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_twilek_casual_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_twilek_casual_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_bodysuit_casual_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_bodysuit_casual_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_bodysuit_casual_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_casual_21.iff"},
-	{path="object/draft_schematic/clothing/component/clothing_cargo_pocket.iff"},
-	{path="object/draft_schematic/clothing/clothing_backpack_field_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_boots_field_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_boots_field_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_boots_field_34.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_field_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_field_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_gloves_field_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_field_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_field_16.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_gloves_s01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_field_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_field_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_field_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_vest_field_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_vest_field_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_field_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_field_11.iff"},
-	{path="object/draft_schematic/clothing/component/clothing_reinforced_fiber_panels.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_field_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_field_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_field_26.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_field_27.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_field_29.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_field_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_field_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_gloves_field_11.iff"},
-	{path="object/draft_schematic/clothing/clothing_gloves_field_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_bandolier_field_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_bandolier_field_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_backpack_field_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_shirt_s03.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_field_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_field_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_field_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_field_07.iff"},
-	{path="object/draft_schematic/clothing/component/clothing_padding_segment.iff"},
-	{path="object/draft_schematic/clothing/clothing_backpack_field_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_backpack_field_06_quest.iff"},
-	{path="object/draft_schematic/clothing/clothing_bandolier_field_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_bandolier_field_02_quest.iff"},
-	{path="object/draft_schematic/clothing/clothing_bandolier_field_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_bandolier_field_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_bandolier_field_04_quest.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_field_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_field_21.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_field_35.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_field_28.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_field_30.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_field_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_field_15.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_field_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_shoulder_pad_s02.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_field_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_field_21.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_field_22.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_field_19.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_field_20.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_field_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_field_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_gloves_field_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_gloves_field_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_bodysuit_field_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_bodysuit_field_16.iff"},
-	{path="object/draft_schematic/clothing/clothing_robe_field_27.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_shirt_s04.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_bodysuit_field_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_field_11.iff"},
-	{path="object/draft_schematic/clothing/component/clothing_trim.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_formal_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_formal_28.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_formal_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_formal_15.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_formal_16.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_formal_18.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_shoes_formal_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_shoes_formal_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_skirt_formal_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_skirt_formal_07.iff"},
-	{path="object/draft_schematic/clothing/clothing_skirt_formal_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_skirt_s02.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_dress_formal_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_formal_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_skirt_formal_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_skirt_formal_02.iff"},
-	{path="object/draft_schematic/clothing/component/clothing_jewelry_setting.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_11.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_16.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_32.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_formal_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_formal_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_formal_19.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_bracelet_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_bracelet_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_bracelet_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_formal_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_formal_11.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_formal_26.iff"},
-	{path="object/draft_schematic/clothing/clothing_vest_formal_15.iff"},
-	{path="object/draft_schematic/clothing/clothing_skirt_formal_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_hood_s02.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_chef_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_hat_chef_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_formal_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_dress_formal_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_formal_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_skirt_formal_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_formal_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_formal_15.iff"},
-	{path="object/draft_schematic/clothing/clothing_shirt_formal_32.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_19.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_27.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_30.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_31.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_09.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_ring_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_ring_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_formal_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_formal_31.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_formal_33.iff"},
-	{path="object/draft_schematic/clothing/clothing_wke_skirt_s01.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_chef_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_hat_chef_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_hat_formal_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_formal_11.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_formal_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_33.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_34.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_formal_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_formal_17.iff"},
-	{path="object/draft_schematic/clothing/clothing_belt_formal_20.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_formal_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_formal_22.iff"},
-	{path="object/draft_schematic/clothing/clothing_jacket_formal_25.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_skirt_formal_11.iff"},
-	{path="object/draft_schematic/clothing/clothing_skirt_formal_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_skirt_formal_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_formal_13.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_formal_15.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_formal_32.iff"},
-	{path="object/draft_schematic/clothing/clothing_apron_chef_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_apron_chef_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_hat_formal_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_robe_formal_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_pants_formal_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jacket_formal_15.iff"},
-	{path="object/draft_schematic/clothing/clothing_bikini_casual_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_bikini_casual_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_bikini_casual_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_bikini_casual_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_bikini_leggings_casual_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_bodysuit_casual_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_bodysuit_casual_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_bodysuit_field_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_bodysuit_field_14.iff"},
-	{path="object/draft_schematic/clothing/clothing_bodysuit_field_15.iff"},
-	{path="object/draft_schematic/clothing/clothing_bodysuit_formal_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_bodysuit_formal_06.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_shirt_formal_10.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_08.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_15.iff"},
-	{path="object/draft_schematic/clothing/clothing_dress_formal_35.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_casual_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_robe_formal_01.iff"},
-	{path="object/draft_schematic/clothing/clothing_robe_formal_12.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_robe_formal_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_twilek_formal_03.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_twilek_formal_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_hat_twilek_formal_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_04.iff"},
-	{path="object/draft_schematic/clothing/clothing_jewelry_necklace_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_ith_jewelry_necklace_05.iff"},
-	{path="object/draft_schematic/clothing/clothing_skirt_casual_03.iff"},
-	{path="object/draft_schematic/food/additive/additive_medium.iff"},
-	{path="object/draft_schematic/food/dish_soypro.iff"},
-	{path="object/draft_schematic/food/dessert_air_cake.iff"},
-	{path="object/draft_schematic/food/dessert_almond_kwevvu_crisp_munchies.iff"},
-	{path="object/draft_schematic/food/dessert_blap_biscuit.iff"},
-	{path="object/draft_schematic/food/drink_alcohol.iff"},
-	{path="object/draft_schematic/food/dish_protato.iff"},
-	{path="object/draft_schematic/food/dish_synthsteak.iff"},
-	{path="object/draft_schematic/food/dish_cho_nor_hoola.iff"},
-	{path="object/draft_schematic/food/dish_blood_chowder.iff"},
-	{path="object/draft_schematic/food/dish_karkan_ribenes.iff"},
-	{path="object/draft_schematic/food/dish_trimpian.iff"},
-	{path="object/draft_schematic/food/dish_veghash.iff"},
-	{path="object/draft_schematic/food/dish_ormachek.iff"},
-	{path="object/draft_schematic/food/dish_gruuvan_shaal.iff"},
-	{path="object/draft_schematic/food/dish_havla.iff"},
-	{path="object/draft_schematic/food/dish_scrimpi.iff"},
-	{path="object/draft_schematic/food/dish_ahrisa.iff"},
-	{path="object/draft_schematic/food/dish_vegeparsine.iff"},
-	{path="object/draft_schematic/food/dish_bivoli_tempari.iff"},
-	{path="object/draft_schematic/food/dish_terratta.iff"},
-	{path="object/draft_schematic/food/dish_rakririan_burnout_sauce.iff"},
-	{path="object/draft_schematic/food/dessert_bantha_butter.iff"},
-	{path="object/draft_schematic/food/dessert_pastebread.iff"},
-	{path="object/draft_schematic/food/dessert_won_won.iff"},
-	{path="object/draft_schematic/food/dessert_chandad.iff"},
-	{path="object/draft_schematic/food/dessert_sweet_cake_mix.iff"},
-	{path="object/draft_schematic/food/dessert_parwan_nutricake.iff"},
-	{path="object/draft_schematic/food/dessert_pyollian_cake.iff"},
-	{path="object/draft_schematic/food/dessert_dweezel.iff"},
-	{path="object/draft_schematic/food/dessert_felbar.iff"},
-	{path="object/draft_schematic/food/dessert_citros_snow_cake.iff"},
-	{path="object/draft_schematic/food/dessert_pikatta_pie.iff"},
-	{path="object/draft_schematic/food/dessert_gorrnar.iff"},
-	{path="object/draft_schematic/food/dessert_kiwik_clusjo_swirl.iff"},
-	{path="object/draft_schematic/food/dessert_cavaellin_creams.iff"},
-	{path="object/draft_schematic/food/dessert_vagnerian_canape.iff"},
-	{path="object/draft_schematic/food/dessert_sweesonberry_rolls.iff"},
-	{path="object/draft_schematic/food/dessert_smugglers_delight.iff"},
-	{path="object/draft_schematic/food/drink_deuterium_pyro.iff"},
-	{path="object/draft_schematic/food/drink_gralinyn_juice.iff"},
-	{path="object/draft_schematic/food/drink_corellian_ale.iff"},
-	{path="object/draft_schematic/food/drink_blue_milk.iff"},
-	{path="object/draft_schematic/food/component/container_cask.iff"},
-	{path="object/draft_schematic/food/drink_veronian_berry_wine.iff"},
-	{path="object/draft_schematic/food/drink_durindfire.iff"},
-	{path="object/draft_schematic/food/drink_ithorian_mist.iff"},
-	{path="object/draft_schematic/food/drink_corellian_brandy.iff"},
-	{path="object/draft_schematic/food/drink_tssolok.iff"},
-	{path="object/draft_schematic/food/drink_vasarian_brandy.iff"},
-	{path="object/draft_schematic/food/drink_accarragm.iff"},
-	{path="object/draft_schematic/food/drink_garrmorl.iff"},
-	{path="object/draft_schematic/food/drink_bespin_port.iff"},
-	{path="object/draft_schematic/food/drink_elshandruu_pica_thundercloud.iff"},
-	{path="object/draft_schematic/food/drink_tilla_tiil.iff"},
-	{path="object/draft_schematic/food/drink_vayerbok.iff"},
-	{path="object/draft_schematic/food/additive/additive_heavy.iff"},
-	{path="object/draft_schematic/food/component/container_barrel.iff"},
-	{path="object/draft_schematic/food/drink_breath_of_heaven.iff"},
-	{path="object/draft_schematic/food/drink_flameout.iff"},
-	{path="object/draft_schematic/food/dish_thakitillo.iff"},
-	{path="object/draft_schematic/food/dish_vercupti_of_agazza_boleruuee.iff"},
-	{path="object/draft_schematic/food/dessert_deneelian_fizz_pudding.iff"},
-	{path="object/draft_schematic/droid/droid_mse.iff"},
-	{path="object/draft_schematic/droid/component/manipulator_arm.iff"},
-	{path="object/draft_schematic/droid/component/droid_motive_system.iff"},
-	{path="object/draft_schematic/droid/component/droid_storage_compartment.iff"},
-	{path="object/draft_schematic/droid/droid_customization_kit.iff"},
-	{path="object/draft_schematic/droid/navicomputer_1.iff"},
-	{path="object/draft_schematic/droid/component/medic_module_1.iff"},
-	{path="object/draft_schematic/droid/component/data_storage_module_1.iff"},
-	{path="object/draft_schematic/droid/component/item_storage_module_1.iff"},
-	{path="object/draft_schematic/droid/component/personality_module_stupid.iff"},
-	{path="object/draft_schematic/droid/component/playback_module.iff"},
-	{path="object/draft_schematic/droid/component/performer_effects_a.iff"},
-	{path="object/draft_schematic/droid/component/performer_effects_aa.iff"},
-	{path="object/draft_schematic/droid/component/droid_space_memory_module_1.iff"},
-	{path="object/draft_schematic/droid/component/armor_module_1.iff"},
-	{path="object/draft_schematic/droid/droid_treadwell.iff"},
-	{path="object/draft_schematic/droid/droid_dz70.iff"},
-	{path="object/draft_schematic/droid/droid_r5.iff"},
-	{path="object/draft_schematic/droid/bounty_seeker_transmitter.iff"},
-	{path="object/draft_schematic/droid/component/sensor_package_droid.iff"},
-	{path="object/draft_schematic/droid/droid_mse_advanced.iff"},
-	{path="object/draft_schematic/droid/component/manipulator_arm_package_set.iff"},
-	{path="object/draft_schematic/droid/navicomputer_2.iff"},
-	{path="object/draft_schematic/droid/component/medic_module_2.iff"},
-	{path="object/draft_schematic/droid/component/data_storage_module_2.iff"},
-	{path="object/draft_schematic/droid/component/item_storage_module_2.iff"},
-	{path="object/draft_schematic/droid/component/harvest_module.iff"},
-	{path="object/draft_schematic/droid/component/crafting_module_weapon.iff"},
-	{path="object/draft_schematic/droid/component/merchant_barker.iff"},
-	{path="object/draft_schematic/droid/component/performer_effects_b.iff"},
-	{path="object/draft_schematic/droid/component/armor_module_2.iff"},
-	{path="object/draft_schematic/droid/component/droid_motive_system_advanced.iff"},
-	{path="object/draft_schematic/droid/droid_power.iff"},
-	{path="object/draft_schematic/droid/droid_r4.iff"},
-	{path="object/draft_schematic/droid/component/droid_brain.iff"},
-	{path="object/draft_schematic/droid/component/advanced_droid_frame.iff"},
-	{path="object/draft_schematic/droid/droid_treadwell_advanced.iff"},
-	{path="object/draft_schematic/droid/droid_dz70_advanced.iff"},
-	{path="object/draft_schematic/droid/droid_r5_advanced.iff"},
-	{path="object/draft_schematic/droid/component/chassis_droid_r4.iff"},
-	{path="object/draft_schematic/droid/navicomputer_3.iff"},
-	{path="object/draft_schematic/droid/component/medic_module_3.iff"},
-	{path="object/draft_schematic/droid/component/trap_module.iff"},
-	{path="object/draft_schematic/droid/component/item_storage_module_3.iff"},
-	{path="object/draft_schematic/droid/component/personality_module_prissy.iff"},
-	{path="object/draft_schematic/droid/component/stimpack_dispensor.iff"},
-	{path="object/draft_schematic/droid/component/performer_effects_c.iff"},
-	{path="object/draft_schematic/droid/component/armor_module_3.iff"},
-	{path="object/draft_schematic/droid/component/repair_module.iff"},
-	{path="object/draft_schematic/droid/component/crafting_module_food.iff"},
-	{path="object/draft_schematic/droid/component/combat_module.iff"},
-	{path="object/draft_schematic/droid/component/combat_socket_bank.iff"},
-	{path="object/draft_schematic/droid/droid_le_repair.iff"},
-	{path="object/draft_schematic/droid/droid_surgical.iff"},
-	{path="object/draft_schematic/droid/droid_r2.iff"},
-	{path="object/draft_schematic/droid/droid_probot.iff"},
-	{path="object/draft_schematic/droid/bounty_probot_transmitter.iff"},
-	{path="object/draft_schematic/droid/component/droid_brain_advanced.iff"},
-	{path="object/draft_schematic/droid/droid_power_advanced.iff"},
-	{path="object/draft_schematic/droid/droid_r4_advanced.iff"},
-	{path="object/draft_schematic/droid/component/chassis_droid_r2.iff"},
-	{path="object/draft_schematic/droid/component/chassis_droid_probot.iff"},
-	{path="object/draft_schematic/droid/component/chassis_droid_le_repair.iff"},
-	{path="object/draft_schematic/droid/component/chassis_droid_surgical.iff"},
-	{path="object/draft_schematic/droid/navicomputer_4.iff"},
-	{path="object/draft_schematic/droid/component/medic_module_4.iff"},
-	{path="object/draft_schematic/droid/component/data_storage_module_4.iff"},
-	{path="object/draft_schematic/droid/component/item_storage_module_4.iff"},
-	{path="object/draft_schematic/droid/component/personality_module_worshipful.iff"},
-	{path="object/draft_schematic/droid/component/struct_maint_module_2.iff"},
-	{path="object/draft_schematic/droid/component/auto_repair_module.iff"},
-	{path="object/draft_schematic/droid/component/performer_effects_d.iff"},
-	{path="object/draft_schematic/droid/component/armor_module_4.iff"},
-	{path="object/draft_schematic/droid/component/crafting_module_clothing.iff"},
-	{path="object/draft_schematic/droid/droid_r3.iff"},
-	{path="object/draft_schematic/droid/droid_binary_load_lifter.iff"},
-	{path="object/draft_schematic/droid/droid_3p0.iff"},
-	{path="object/draft_schematic/droid/droid_r2_advanced.iff"},
-	{path="object/draft_schematic/droid/droid_probot_advanced.iff"},
-	{path="object/draft_schematic/droid/droid_le_repair_advanced.iff"},
-	{path="object/draft_schematic/droid/droid_surgical_advanced.iff"},
-	{path="object/draft_schematic/droid/component/chassis_droid_r3.iff"},
-	{path="object/draft_schematic/droid/component/chassis_droid_binary_load_lifter.iff"},
-	{path="object/draft_schematic/droid/component/chassis_droid_3p0.iff"},
-	{path="object/draft_schematic/droid/navicomputer_5.iff"},
-	{path="object/draft_schematic/droid/component/medic_module_5.iff"},
-	{path="object/draft_schematic/droid/component/data_storage_module_5.iff"},
-	{path="object/draft_schematic/droid/component/item_storage_module_5.iff"},
-	{path="object/draft_schematic/droid/component/personality_module_slang.iff"},
-	{path="object/draft_schematic/droid/component/crafting_module_structure.iff"},
-	{path="object/draft_schematic/droid/component/performer_effects_e.iff"},
-	{path="object/draft_schematic/droid/component/armor_module_5.iff"},
-	{path="object/draft_schematic/droid/droid_r3_advanced.iff"},
-	{path="object/draft_schematic/droid/droid_binary_load_lifter_advanced.iff"},
-	{path="object/draft_schematic/droid/droid_3p0_advanced.iff"},
-	{path="object/draft_schematic/droid/droid_interplanetary_survey.iff"},
-	{path="object/draft_schematic/droid/navicomputer_6.iff"},
-	{path="object/draft_schematic/droid/component/medic_module_6.iff"},
-	{path="object/draft_schematic/droid/component/data_storage_module_6.iff"},
-	{path="object/draft_schematic/droid/component/item_storage_module_6.iff"},
-	{path="object/draft_schematic/droid/component/struct_maint_module_3.iff"},
-	{path="object/draft_schematic/droid/component/detonation_module.iff"},
-	{path="object/draft_schematic/droid/component/crafting_module_space.iff"},
-	{path="object/draft_schematic/droid/component/armor_module_6.iff"},
-	{path="object/draft_schematic/droid/component/unit_delivery_cartridge.iff"},
-	{path="object/draft_schematic/droid/component/repair_unit_casing.iff"},
-	{path="object/draft_schematic/droid/component/power_supply_redundant.iff"},
-	{path="object/draft_schematic/droid/component/diagnostic_circuit.iff"},
-	{path="object/draft_schematic/droid/component/capacitor_low_discharge.iff"},
-	{path="object/draft_schematic/droid/component/unit_delivery_cartridge_advanced.iff"},
-	{path="object/draft_schematic/droid/component/repair_unit_casing_advanced.iff"},
-	{path="object/draft_schematic/droid/component/power_supply_redundant_advanced.iff"},
-	{path="object/draft_schematic/droid/component/diagnostic_circuit_advanced.iff"},
-	{path="object/draft_schematic/droid/component/capacitor_high_discharge.iff"},
-	{path="object/draft_schematic/droid/droid_wound_repair_kit_a.iff"},
-	{path="object/draft_schematic/droid/droid_wound_repair_kit_b.iff"},
-	{path="object/draft_schematic/droid/droid_wound_repair_kit_c.iff"},
-	{path="object/draft_schematic/droid/droid_wound_repair_kit_d.iff"},
-	{path="object/draft_schematic/droid/droid_damage_repair_kit_a.iff"},
-	{path="object/draft_schematic/droid/droid_damage_repair_kit_b.iff"},
-	{path="object/draft_schematic/droid/droid_damage_repair_kit_c.iff"},
-	{path="object/draft_schematic/droid/droid_damage_repair_kit_d.iff"},
-	{path="object/draft_schematic/furniture/furniture_tree_potted.iff"},
-	{path="object/draft_schematic/furniture/furniture_tiki_torch.iff"},
-	{path="object/draft_schematic/furniture/furniture_plants_potted_large.iff"},
-	{path="object/draft_schematic/furniture/furniture_plants_potted_small.iff"},
-	{path="object/draft_schematic/furniture/furniture_armoire_cheap.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_loveseat_cheap.iff"},
-	{path="object/draft_schematic/furniture/furniture_bookcase_cheap.iff"},
-	{path="object/draft_schematic/furniture/furniture_chest_cheap.iff"},
-	{path="object/draft_schematic/furniture/furniture_couch_cheap.iff"},
-	{path="object/draft_schematic/item/item_weapon_station.iff"},
-	{path="object/draft_schematic/item/item_structure_station.iff"},
-	{path="object/draft_schematic/item/item_food_station.iff"},
-	{path="object/draft_schematic/item/item_clothing_station.iff"},
-	{path="object/draft_schematic/item/item_space_station.iff"},
-	{path="object/draft_schematic/furniture/furniture_toolchest_medium.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_coffee_cheap.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_cheap.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_endtable_cheap.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_divan.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_futon.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_kitchen.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_love_seat.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_small_tatooine.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_tatooine_cafe.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_metal.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_metal_wheeled.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_ottoman.iff"},
-	{path="object/draft_schematic/furniture/furniture_bed_small.iff"},
-	{path="object/draft_schematic/furniture/furniture_toolchest_large.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_recliner.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_tatooine_cafe.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_upholstered.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_wooden.iff"},
-	{path="object/draft_schematic/furniture/furniture_couch_blue.iff"},
-	{path="object/draft_schematic/furniture/furniture_couch_large.iff"},
-	{path="object/draft_schematic/furniture/furniture_couch_small.iff"},
-	{path="object/draft_schematic/furniture/furniture_droid_detector.iff"},
-	{path="object/draft_schematic/furniture/furniture_candle_free_s01_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_candle_free_s02_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_candle_table_s01_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_candle_table_s02_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_candle_table_s03_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_desk.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_desk_s01_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_desk_s02_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_freestanding.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_free_s01_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_free_s02_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_free_s03_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_free_s04_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_tatt_s01_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_table.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_table_s01_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_table_s02_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_table_s03_on.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_table_cantina.iff"},
-	{path="object/draft_schematic/furniture/furniture_armoire_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_bookcase_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_cabinet_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_loveseat_modern.iff"},
-	{path="object/draft_schematic/item/item_ballot_box_terminal.iff"},
-	{path="object/draft_schematic/furniture/furniture_bed_large.iff"},
-	{path="object/draft_schematic/furniture/furniture_couch_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_chest_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_terminal_freestanding.iff"},
-	{path="object/draft_schematic/furniture/furniture_terminal_wall.iff"},
-	{path="object/draft_schematic/furniture/furniture_sofachair_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_endtable_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_endtable_small_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_coffee_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_dining_modern.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_coffee_elegant.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_endtable_elegant.iff"},
-	{path="object/draft_schematic/furniture/furniture_couch_elegant.iff"},
-	{path="object/draft_schematic/furniture/furniture_armoire_elegant.iff"},
-	{path="object/draft_schematic/furniture/furniture_bookcase_elegant.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_elegant.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_loveseat_elegant.iff"},
-	{path="object/draft_schematic/furniture/furniture_chest_elegant.iff"},
-	{path="object/draft_schematic/furniture/furniture_cabinet_elegant.iff"},
-	{path="object/draft_schematic/furniture/furniture_technical_console_s01.iff"},
-	{path="object/draft_schematic/furniture/furniture_technical_console_s02.iff"},
-	{path="object/draft_schematic/instrument/instrument_slitherhorn.iff"},
-	{path="object/draft_schematic/instrument/instrument_fizz.iff"},
-	{path="object/draft_schematic/instrument/instrument_fanfar.iff"},
-	{path="object/draft_schematic/instrument/instrument_kloo_horn.iff"},
-	{path="object/draft_schematic/instrument/component/dual_wave_synthesizer.iff"},
-	{path="object/draft_schematic/instrument/instrument_mandoviol.iff"},
-	{path="object/draft_schematic/instrument/instrument_traz.iff"},
-	{path="object/draft_schematic/instrument/instrument_bandfill.iff"},
-	{path="object/draft_schematic/instrument/instrument_flute_droopy.iff"},
-	{path="object/draft_schematic/instrument/instrument_omni_box.iff"},
-	{path="object/draft_schematic/instrument/instrument_nalargon.iff"},
-	{path="object/draft_schematic/chemistry/component/biologic_effect_controller.iff"},
-	{path="object/draft_schematic/chemistry/component/liquid_delivery_suspension.iff"},
-	{path="object/draft_schematic/item/item_food_tool.iff"},
-	{path="object/draft_schematic/chemistry/component/release_mechanism_duration.iff"},
-	{path="object/draft_schematic/chemistry/component/solid_delivery_shell.iff"},
-	{path="object/draft_schematic/chemistry/component/dispersal_mechanism.iff"},
-	{path="object/draft_schematic/chemistry/component/infection_amplifier.iff"},
-	{path="object/draft_schematic/chemistry/component/resilience_compound.iff"},
-	{path="object/draft_schematic/chemistry/component/biologic_effect_controller_advanced.iff"},
-	{path="object/draft_schematic/chemistry/component/liquid_delivery_suspension_advanced.iff"},
-	{path="object/draft_schematic/chemistry/component/release_mechanism_duration_advanced.iff"},
-	{path="object/draft_schematic/chemistry/component/solid_delivery_shell_advanced.iff"},
-	{path="object/draft_schematic/chemistry/component/dispersal_mechanism_advanced.iff"},
-	{path="object/draft_schematic/chemistry/component/infection_amplifier_advanced.iff"},
-	{path="object/draft_schematic/chemistry/component/resilience_compound_advanced.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_a.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_b.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_c.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_d.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_e.iff"},
-	{path="object/draft_schematic/chemistry/quest_stimpack_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_action_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_health_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_action_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_health_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_action_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_health_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_action_d.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_health_d.iff"},
-	{path="object/draft_schematic/chemistry/medpack_revive.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_action_e.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_health_e.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_quickness_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_stamina_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_strength_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_constitution_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_quickness_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_stamina_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_strength_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_constitution_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_quickness_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_stamina_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_strength_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_constitution_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_quickness_d.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_stamina_d.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_strength_d.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_constitution_d.iff"},
-	{path="object/draft_schematic/chemistry/med_fire_blanket.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_quickness_e.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_stamina_e.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_strength_e.iff"},
-	{path="object/draft_schematic/chemistry/medpack_wound_constitution_e.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_action_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_health_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_action_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_health_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_action_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_health_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_action_d.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_health_d.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_constitution_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_quickness_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_stamina_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_strength_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_poison_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_disease_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_constitution_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_quickness_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_stamina_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_strength_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_constitution_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_quickness_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_stamina_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_strength_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_poison_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_disease_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_constitution_d.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_quickness_d.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_stamina_d.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_strength_d.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_poison_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_enhance_disease_c.iff"},
-	{path="object/draft_schematic/munition/component/warhead_fusing_mechanism.iff"},
-	{path="object/draft_schematic/munition/component/warhead_light.iff"},
-	{path="object/draft_schematic/munition/grenade_fragmentation_c_12.iff"},
-	{path="object/draft_schematic/munition/component/warhead_chemical.iff"},
-	{path="object/draft_schematic/munition/component/warhead_medium.iff"},
-	{path="object/draft_schematic/munition/grenade_fragmentation_c_22.iff"},
-	{path="object/draft_schematic/munition/mine_dxr55.iff"},
-	{path="object/draft_schematic/munition/grenade_glop.iff"},
-	{path="object/draft_schematic/munition/grenade_cryoban_ww_41.iff"},
-	{path="object/draft_schematic/munition/component/warhead_stabilizer.iff"},
-	{path="object/draft_schematic/munition/component/warhead_heavy.iff"},
-	{path="object/draft_schematic/munition/detonator_thermal_class_a.iff"},
-	{path="object/draft_schematic/munition/mine_xg.iff"},
-	{path="object/draft_schematic/munition/grenade_proton.iff"},
-	{path="object/draft_schematic/munition/mine_anti_vehicle.iff"},
-	{path="object/draft_schematic/weapon/heavy_rocket_launcher.iff"},
-	{path="object/draft_schematic/munition/detonator_thermal_imperial_issue.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_range_a.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_range_b.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_range_c.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_area_a.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_range_d.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_area_b.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_range_e.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_area_c.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_state_blinded_a.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_state_dizzy_a.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_state_intimidated_a.iff"},
-	{path="object/draft_schematic/chemistry/med_stimpack_state_stunned_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_poison_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_poison_area_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_poison_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_poison_area_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_poison_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_poison_area_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_disease_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_disease_area_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_disease_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_disease_area_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_disease_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_cure_disease_area_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_health_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_action_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_mind_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_health_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_action_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_mind_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_health_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_action_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_mind_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_area_health_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_area_action_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_area_mind_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_area_health_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_area_action_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_area_mind_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_area_health_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_area_action_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_poison_area_mind_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_action_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_constitution_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_focus_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_health_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_mind_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_quickness_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_stamina_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_strength_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_willpower_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_action_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_constitution_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_focus_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_health_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_mind_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_quickness_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_stamina_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_strength_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_willpower_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_action_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_constitution_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_focus_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_health_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_mind_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_quickness_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_stamina_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_strength_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_willpower_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_action_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_constitution_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_focus_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_health_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_mind_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_quickness_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_stamina_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_strength_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_willpower_a.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_action_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_constitution_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_focus_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_health_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_mind_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_quickness_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_stamina_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_strength_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_willpower_b.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_action_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_constitution_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_focus_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_health_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_mind_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_quickness_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_stamina_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_strength_c.iff"},
-	{path="object/draft_schematic/chemistry/medpack_disease_area_willpower_c.iff"},
-	{path="object/draft_schematic/structure/component/structural_module.iff"},
-	{path="object/draft_schematic/structure/component/structure_light_power_core_unit.iff"},
-	{path="object/draft_schematic/structure/component/structure_small_storage_section.iff"},
-	{path="object/draft_schematic/structure/house_player_small.iff"},
-	{path="object/draft_schematic/structure/corellia_house_player_small.iff"},
-	{path="object/draft_schematic/structure/corellia_house_player_small_floorplan_02.iff"},
-	{path="object/draft_schematic/structure/naboo_house_player_small.iff"},
-	{path="object/draft_schematic/structure/component/structure_generator_turbine.iff"},
-	{path="object/draft_schematic/structure/component/wall_module.iff"},
-	{path="object/draft_schematic/structure/component/structure_power_core_unit.iff"},
-	{path="object/draft_schematic/structure/component/structure_storage_section.iff"},
-	{path="object/draft_schematic/structure/corellia_house_player_small_style_02_floorplan_02.iff"},
-	{path="object/draft_schematic/structure/corellia_house_player_small_style_02.iff"},
-	{path="object/draft_schematic/structure/naboo_house_player_small_style_02.iff"},
-	{path="object/draft_schematic/structure/house_player_small_style_02.iff"},
-	{path="object/draft_schematic/structure/generic_house_player_small_floorplan_02.iff"},
-	{path="object/draft_schematic/structure/generic_house_player_small.iff"},
-	{path="object/draft_schematic/structure/corellia_house_player_medium.iff"},
-	{path="object/draft_schematic/structure/naboo_house_player_medium.iff"},
-	{path="object/draft_schematic/structure/house_player_medium.iff"},
-	{path="object/draft_schematic/structure/generic_house_player_small_style_02.iff"},
-	{path="object/draft_schematic/structure/generic_house_player_small_style_02_floorplan_02.iff"},
-	{path="object/draft_schematic/structure/corellia_house_player_large.iff"},
-	{path="object/draft_schematic/structure/naboo_house_player_large.iff"},
-	{path="object/draft_schematic/structure/house_player_large.iff"},
-	{path="object/draft_schematic/structure/generic_house_player_medium.iff"},
-	{path="object/draft_schematic/structure/generic_house_player_medium_style_02.iff"},
-	{path="object/draft_schematic/structure/corellia_house_player_large_style_02.iff"},
-	{path="object/draft_schematic/structure/generic_house_player_large.iff"},
-	{path="object/draft_schematic/structure/generic_house_player_large_style_02.iff"},
-	{path="object/draft_schematic/structure/corellia_house_guild_hall.iff"},
-	{path="object/draft_schematic/structure/generic_house_guild_hall.iff"},
-	{path="object/draft_schematic/structure/house_guild_hall.iff"},
-	{path="object/draft_schematic/structure/naboo_house_guild_hall.iff"},
-	{path="object/draft_schematic/structure/installation_factory_weapon.iff"},
-	{path="object/draft_schematic/structure/installation_mining_liquid_vapor.iff"},
-	{path="object/draft_schematic/structure/component/structure_fluidic_drilling_pumping_unit.iff"},
-	{path="object/draft_schematic/structure/component/structure_harvesting_mechanism.iff"},
-	{path="object/draft_schematic/structure/component/structure_ore_mining_unit.iff"},
-	{path="object/draft_schematic/structure/component/structure_manufacturing_mechanism.iff"},
-	{path="object/draft_schematic/structure/component/structure_light_ore_mining_unit.iff"},
-	{path="object/draft_schematic/structure/installation_factory_clothing.iff"},
-	{path="object/draft_schematic/structure/installation_factory_food.iff"},
-	{path="object/draft_schematic/structure/installation_factory_structure.iff"},
-	{path="object/draft_schematic/structure/installation_mining_ore.iff"},
-	{path="object/draft_schematic/structure/installation_generator_solar.iff"},
-	{path="object/draft_schematic/structure/installation_mining_gas.iff"},
-	{path="object/draft_schematic/structure/installation_mining_liquid.iff"},
-	{path="object/draft_schematic/structure/component/structure_heavy_harvesting_mechanism.iff"},
-	{path="object/draft_schematic/structure/component/structure_turbo_fluidic_drilling_pumping_unit.iff"},
-	{path="object/draft_schematic/structure/installation_mining_liquid_heavy.iff"},
-	{path="object/draft_schematic/structure/installation_mining_organic_flora.iff"},
-	{path="object/draft_schematic/structure/installation_mining_liquid_vapor_heavy.iff"},
-	{path="object/draft_schematic/structure/installation_mining_organic_flora_heavy.iff"},
-	{path="object/draft_schematic/structure/installation_mining_gas_heavy.iff"},
-	{path="object/draft_schematic/structure/installation_mining_ore_heavy.iff"},
-	{path="object/draft_schematic/structure/installation_generator_fusion.iff"},
-	{path="object/draft_schematic/weapon/component/blade_vibro_unit.iff"},
-	{path="object/draft_schematic/weapon/component/sword_core.iff"},
-	{path="object/draft_schematic/weapon/component/reinforcement_core.iff"},
-	{path="object/draft_schematic/weapon/sword.iff"},
-	{path="object/draft_schematic/weapon/staff_metal.iff"},
-	{path="object/draft_schematic/weapon/lance_vibro_controller_fp.iff"},
-	{path="object/draft_schematic/weapon/baton_gaderiffi.iff"},
-	{path="object/draft_schematic/weapon/battleaxe.iff"},
-	{path="object/draft_schematic/weapon/knuckler_vibro.iff"},
-	{path="object/draft_schematic/weapon/sword_curved.iff"},
-	{path="object/draft_schematic/weapon/component/sword_core_advanced.iff"},
-	{path="object/draft_schematic/weapon/component/reinforcement_core_advanced.iff"},
-	{path="object/draft_schematic/weapon/knife_vibroblade.iff"},
-	{path="object/draft_schematic/weapon/sword_ryyk_blade.iff"},
-	{path="object/draft_schematic/weapon/katana.iff"},
-	{path="object/draft_schematic/weapon/component/blade_vibro_unit_advanced.iff"},
-	{path="object/draft_schematic/weapon/baton_stun.iff"},
-	{path="object/draft_schematic/weapon/axe_vibro.iff"},
-	{path="object/draft_schematic/weapon/lance_vibro.iff"},
-	{path="object/draft_schematic/weapon/cleaver.iff"},
-	{path="object/draft_schematic/weapon/poleaxe_vibro.iff"},
-	{path="object/draft_schematic/weapon/maul.iff"},
-	{path="object/draft_schematic/slicing/slicing_weapon_upgrade_kit.iff"},
-	{path="object/draft_schematic/weapon/component/blaster_pistol_barrel.iff"},
-	{path="object/draft_schematic/weapon/component/blaster_power_handler.iff"},
-	{path="object/draft_schematic/weapon/component/projectile_feed_mechanism.iff"},
-	{path="object/draft_schematic/weapon/component/projectile_pistol_barrel.iff"},
-	{path="object/draft_schematic/weapon/component/scope_weapon.iff"},
-	{path="object/draft_schematic/weapon/component/stock.iff"},
-	{path="object/draft_schematic/weapon/pistol_blaster_d18.iff"},
-	{path="object/draft_schematic/weapon/rifle_blaster_dlt20.iff"},
-	{path="object/draft_schematic/weapon/component/blaster_rifle_barrel.iff"},
-	{path="object/draft_schematic/weapon/component/projectile_rifle_barrel.iff"},
-	{path="object/draft_schematic/weapon/component/chemical_dispersion_mechanism.iff"},
-	{path="object/draft_schematic/weapon/rifle_light_blaster_dh17_carbine.iff"},
-	{path="object/draft_schematic/weapon/pistol_blaster_dl44.iff"},
-	{path="object/draft_schematic/weapon/pistol_blaster_scout_trooper.iff"},
-	{path="object/draft_schematic/weapon/rifle_blaster_dlt20a.iff"},
-	{path="object/draft_schematic/weapon/pistol_flechette_fwg5.iff"},
-	{path="object/draft_schematic/weapon/pistol_projectile_striker.iff"},
-	{path="object/draft_schematic/weapon/pistol_blaster_dl44_metal.iff"},
-	{path="object/draft_schematic/weapon/rifle_light_blaster_dh17_carbine_snubnose.iff"},
-	{path="object/draft_schematic/weapon/rifle_projectile_tusken.iff"},
-	{path="object/draft_schematic/weapon/pistol_blaster_dh17.iff"},
-	{path="object/draft_schematic/weapon/pistol_blaster_power5.iff"},
-	{path="object/draft_schematic/weapon/rifle_light_blaster_e11_carbine.iff"},
-	{path="object/draft_schematic/weapon/rifle_blaster_e11.iff"},
-	{path="object/draft_schematic/weapon/rifle_sonic_sg82.iff"},
-	{path="object/draft_schematic/weapon/component/blaster_pistol_barrel_advanced.iff"},
-	{path="object/draft_schematic/weapon/component/blaster_power_handler_advanced.iff"},
-	{path="object/draft_schematic/weapon/component/projectile_feed_mechanism_advanced.iff"},
-	{path="object/draft_schematic/weapon/component/projectile_pistol_barrel_advanced.iff"},
-	{path="object/draft_schematic/weapon/component/scope_weapon_advanced.iff"},
-	{path="object/draft_schematic/weapon/component/stock_advanced.iff"},
-	{path="object/draft_schematic/weapon/pistol_launcher.iff"},
-	{path="object/draft_schematic/weapon/pistol_scatter.iff"},
-	{path="object/draft_schematic/weapon/pistol_blaster_short_range_combat.iff"},
-	{path="object/draft_schematic/weapon/rifle_light_blaster_laser_carbine.iff"},
-	{path="object/draft_schematic/weapon/rifle_blaster_laser_rifle.iff"},
-	{path="object/draft_schematic/weapon/rifle_light_blaster_ee3.iff"},
-	{path="object/draft_schematic/weapon/rifle_spray_stick_stohli.iff"},
-	{path="object/draft_schematic/weapon/component/blaster_rifle_barrel_advanced.iff"},
-	{path="object/draft_schematic/weapon/component/projectile_rifle_barrel_advanced.iff"},
-	{path="object/draft_schematic/weapon/heavy_particle_beam.iff"},
-	{path="object/draft_schematic/weapon/heavy_lightning_beam.iff"},
-	{path="object/draft_schematic/weapon/razor_knuckler.iff"},
-	{path="object/draft_schematic/weapon/rifle_lightning.iff"},
-	{path="object/draft_schematic/weapon/rifle_beam.iff"},
-	{path="object/draft_schematic/weapon/rifle_tangle_gun7.iff"},
-	{path="object/draft_schematic/weapon/pistol_disrupter_dx2.iff"},
-	{path="object/draft_schematic/weapon/rifle_light_blaster_imperial_scout_carbine.iff"},
-	{path="object/draft_schematic/weapon/rifle_disrupter_dxr6.iff"},
-	{path="object/draft_schematic/weapon/rifle_blaster_ionization_jawa.iff"},
-	{path="object/draft_schematic/weapon/rifle_t21.iff"},
-	{path="object/draft_schematic/weapon/heavy_acid_beam.iff"},
-	{path="object/draft_schematic/weapon/pistol_republic_blaster.iff"},
-	{path="object/draft_schematic/weapon/rifle_acid_beam.iff"},
-	{path="object/draft_schematic/weapon/rifle_flame_thrower.iff"},
-	{path="object/draft_schematic/scout/item_camp_basic.iff"},
-	{path="object/draft_schematic/scout/item_camp_multi.iff"},
-	{path="object/draft_schematic/scout/item_camp_improved.iff"},
-	{path="object/draft_schematic/scout/item_camp_quality.iff"},
-	{path="object/draft_schematic/scout/item_camp_elite.iff"},
-	{path="object/draft_schematic/scout/item_camp_luxury.iff"},
-	{path="object/draft_schematic/scout/item_trap_drowsy_dart.iff"},
-	{path="object/draft_schematic/scout/item_trap_melee_def_1.iff"},
-	{path="object/draft_schematic/scout/item_trap_enraging_spur.iff"},
-	{path="object/draft_schematic/scout/item_trap_ranged_def_1.iff"},
-	{path="object/draft_schematic/scout/item_trap_noise_maker.iff"},
-	{path="object/draft_schematic/scout/item_trap_state_def_1.iff"},
-	{path="object/draft_schematic/scout/item_trap_tranq_dart.iff"},
-	{path="object/draft_schematic/scout/item_trap_melee_ranged_def_1.iff"},
-	{path="object/draft_schematic/scout/item_trap_webber.iff"},
-	{path="object/draft_schematic/scout/item_trap_flash_bomb.iff"},
-	{path="object/draft_schematic/scout/item_trap_sonic_pulse.iff"},
-	{path="object/draft_schematic/scout/item_camokit_corellia.iff"},
-	{path="object/draft_schematic/scout/item_camokit_naboo.iff"},
-	{path="object/draft_schematic/scout/item_camokit_tatooine.iff"},
-	{path="object/draft_schematic/scout/item_camokit_rori.iff"},
-	{path="object/draft_schematic/scout/item_camokit_talus.iff"},
-	{path="object/draft_schematic/scout/item_camokit_yavin.iff"},
-	{path="object/draft_schematic/scout/item_camokit_dantooine.iff"},
-	{path="object/draft_schematic/scout/item_camokit_lok.iff"},
-	{path="object/draft_schematic/scout/item_camokit_endor.iff"},
-	{path="object/draft_schematic/scout/item_camokit_dathomir.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_bleeding.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_light_flavor.iff"},
-	{path="object/draft_schematic/bio_engineer/utilities/pet_stimpack_a.iff"},
-	{path="object/draft_schematic/bio_engineer/dna_template/dna_template_generic.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_bearded_jax.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_eopie.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_kaadu.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_gnort.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_durni.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_vir_vur.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_squall.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_ikopi.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_swirl_prong.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_dewback.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_gualama.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_kahmurra.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_krahbu.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_tybis.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_kwi.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_mott.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_verne.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_cu_pa.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_roba.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_huurton.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_bageraset.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_gurnaset.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_choku.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_carrion_spat.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_pugoriss.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_kusak.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_gurrcat.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_zucca_boar.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_langlatch.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_kima.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_dune_lizard.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_bocatt.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_boar_wolf.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_vesp.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_blurrg.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_bantha.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_bol.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_bolle_bol.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_bolma.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_brackaset.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_falumpaset.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_ronto.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_snorbal.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_bordok.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_gronda.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_piket.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_thune.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_angler.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_dalyrake.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_guf_drolg.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_gurreck.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_narglatch.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_sand_panther.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_slice_hound.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_kliknik.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_mawgax.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_merek.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_hermit_spider.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_shear_mite.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_entertainer.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_intimidate.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_light_nutrition.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_light_quantity.iff"},
-	{path="object/draft_schematic/bio_engineer/utilities/pet_vitapack_a.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_medic.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_taming.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_camo.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_cover.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_light_filling.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_medium_quantity.iff"},
-	{path="object/draft_schematic/bio_engineer/utilities/pet_stimpack_b.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_defense.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_entertainer_2.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_bleeding_2.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_medium_flavor.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_medium_nutrition.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_medium_filling.iff"},
-	{path="object/draft_schematic/bio_engineer/utilities/pet_vitapack_b.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_medic_2.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_taming_2.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_camo_2.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_cover_2.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_heavy_flavor.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_heavy_quantity.iff"},
-	{path="object/draft_schematic/bio_engineer/utilities/pet_stimpack_c.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_torton.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_kimogila.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_rancor.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_fambaa.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_veermok.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_graul.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_huf_dun.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_malkloc.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_sharnaff.iff"},
-	{path="object/draft_schematic/bio_engineer/creature/creature_woolamander.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_defense_2.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_intimidate_2.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_heavy_filling.iff"},
-	{path="object/draft_schematic/bio_engineer/bio_component/bio_component_food_heavy_nutrition.iff"},
-	{path="object/draft_schematic/bio_engineer/utilities/pet_vitapack_c.iff"},
-	{path="object/draft_schematic/bio_engineer/utilities/pet_stimpack_d.iff"},
-	{path="object/draft_schematic/spices/spice_grey_gabaki.iff"},
-	{path="object/draft_schematic/spices/spice_scramjet.iff"},
-	{path="object/draft_schematic/spices/spice_shadowpaw.iff"},
-	{path="object/draft_schematic/spices/spice_yarrock.iff"},
-	{path="object/draft_schematic/spices/spice_giggledust.iff"},
-	{path="object/draft_schematic/spices/spice_sweetblossom.iff"},
+object/draft_schematic/community_crafting/component/connections.iff
+object/draft_schematic/community_crafting/component/endrost.iff
+object/draft_schematic/community_crafting/component/power_supply.iff
+object/draft_schematic/community_crafting/component/primary_computer.iff
+object/draft_schematic/community_crafting/component/regulator.iff
+object/draft_schematic/community_crafting/component/shield_housing.iff
+object/draft_schematic/community_crafting/component/unit_computer.iff
+object/draft_schematic/community_crafting/component/refined_ardanium_ii.iff
+object/draft_schematic/community_crafting/component/refined_rudic.iff
+object/draft_schematic/community_crafting/component/refined_endrine.iff
+object/draft_schematic/community_crafting/component/reinforced_wall_module.iff
+object/draft_schematic/community_crafting/component/lightweight_turret_electronics.iff
+object/draft_schematic/community_crafting/component/lightweight_turret_hardware.iff
+object/draft_schematic/community_crafting/component/lightweight_turret.iff
+object/draft_schematic/slicing/slicing_armor_upgrade_kit.iff
+object/draft_schematic/armor/armor_segment_zam.iff
+object/draft_schematic/clothing/clothing_apron_field_01_quest_01.iff
+object/draft_schematic/clothing/clothing_apron_field_01_quest_02.iff
+object/draft_schematic/clothing/clothing_apron_field_01_quest_03.iff
+object/draft_schematic/clothing/clothing_apron_field_01_quest_04.iff
+object/draft_schematic/clothing/clothing_belt_field_05_quest.iff
+object/draft_schematic/clothing/clothing_dress_formal_08_quest.iff
+object/draft_schematic/clothing/clothing_armor_zam_belt.iff
+object/draft_schematic/clothing/clothing_armor_zam_boots.iff
+object/draft_schematic/clothing/clothing_armor_zam_chest.iff
+object/draft_schematic/clothing/clothing_armor_zam_gloves.iff
+object/draft_schematic/clothing/clothing_armor_zam_helmet.iff
+object/draft_schematic/clothing/clothing_armor_zam_pants.iff
+object/draft_schematic/armor/armor_segment.iff
+object/draft_schematic/armor/armor_segment_chitin.iff
+object/draft_schematic/clothing/clothing_armor_chitin_bicep_l.iff
+object/draft_schematic/clothing/clothing_armor_chitin_bicep_r.iff
+object/draft_schematic/clothing/clothing_armor_chitin_boots.iff
+object/draft_schematic/clothing/clothing_armor_chitin_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_chitin_bracer_r.iff
+object/draft_schematic/clothing/clothing_armor_chitin_chest.iff
+object/draft_schematic/clothing/clothing_armor_chitin_gloves.iff
+object/draft_schematic/clothing/clothing_armor_chitin_helmet.iff
+object/draft_schematic/clothing/clothing_armor_chitin_leggings.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_guardian_bicep_l.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_guardian_bicep_r.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_guardian_boots.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_guardian_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_guardian_bracer_r.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_guardian_chest.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_guardian_gloves.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_guardian_helmet.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_guardian_leggings.iff
+object/draft_schematic/armor/armor_segment_kashyyykian_ceremonial.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_ceremonial_chest.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_ceremonial_leggings.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_ceremonial_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_ceremonial_bracer_r.iff
+object/draft_schematic/armor/armor_segment_padded.iff
+object/draft_schematic/clothing/clothing_armor_tantel_boots.iff
+object/draft_schematic/clothing/clothing_armor_tantel_chest.iff
+object/draft_schematic/clothing/clothing_armor_tantel_helmet.iff
+object/draft_schematic/armor/armor_segment_bone_advanced.iff
+object/draft_schematic/armor/armor_segment_zam_advanced.iff
+object/draft_schematic/armor/armor_segment_kashyyykian_black_mtn.iff
+object/draft_schematic/armor/armor_segment_ubese.iff
+object/draft_schematic/clothing/clothing_armor_ubese_bandolier.iff
+object/draft_schematic/clothing/clothing_armor_ubese_boots.iff
+object/draft_schematic/clothing/clothing_armor_ubese_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_ubese_bracer_r.iff
+object/draft_schematic/clothing/clothing_armor_ubese_gloves.iff
+object/draft_schematic/clothing/clothing_armor_ubese_helmet.iff
+object/draft_schematic/clothing/clothing_armor_ubese_jacket.iff
+object/draft_schematic/clothing/clothing_armor_ubese_pants.iff
+object/draft_schematic/clothing/clothing_armor_ubese_shirt.iff
+object/draft_schematic/armor/armor_segment_chitin_advanced.iff
+object/draft_schematic/armor/armor_segment_kashyyykian_ceremonial_advanced.iff
+object/draft_schematic/armor/armor_segment_padded_advanced.iff
+object/draft_schematic/armor/armor_segment_kashyyykian_black_mtn_advanced.iff
+object/draft_schematic/armor/armor_segment_composite.iff
+object/draft_schematic/clothing/clothing_armor_padded_belt.iff
+object/draft_schematic/clothing/clothing_armor_padded_bicep_l.iff
+object/draft_schematic/clothing/clothing_armor_padded_bicep_r.iff
+object/draft_schematic/clothing/clothing_armor_padded_boots.iff
+object/draft_schematic/clothing/clothing_armor_padded_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_padded_bracer_r.iff
+object/draft_schematic/clothing/clothing_armor_padded_chest.iff
+object/draft_schematic/clothing/clothing_armor_padded_gloves.iff
+object/draft_schematic/clothing/clothing_armor_padded_helmet.iff
+object/draft_schematic/clothing/clothing_armor_padded_leggings.iff
+object/draft_schematic/armor/armor_segment_ubese_advanced.iff
+object/draft_schematic/armor/armor_segment_kashyyykian_hunting.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_black_mtn_chest.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_black_mtn_leggings.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_black_mtn_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_black_mtn_bracer_r.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_defender_bicep_l.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_defender_bicep_r.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_defender_boots.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_defender_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_defender_bracer_r.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_defender_chest.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_defender_gloves.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_defender_helmet.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_defender_leggings.iff
+object/draft_schematic/clothing/clothing_armor_composite_bicep_l.iff
+object/draft_schematic/clothing/clothing_armor_composite_bicep_r.iff
+object/draft_schematic/clothing/clothing_armor_composite_boots.iff
+object/draft_schematic/clothing/clothing_armor_composite_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_composite_bracer_r.iff
+object/draft_schematic/clothing/clothing_armor_composite_chest.iff
+object/draft_schematic/clothing/clothing_armor_composite_gloves.iff
+object/draft_schematic/clothing/clothing_armor_composite_helmet.iff
+object/draft_schematic/clothing/clothing_armor_composite_leggings.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_bicep_l.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_bicep_r.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_boots.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_bracer_r.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_chest.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_gloves.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_helmet.iff
+object/draft_schematic/clothing/clothing_armor_ithorian_sentinel_leggings.iff
+object/draft_schematic/armor/armor_segment_composite_advanced.iff
+object/draft_schematic/armor/armor_segment_kashyyykian_hunting_advanced.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_hunting_chest.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_hunting_leggings.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_hunting_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_kashyyykian_hunting_bracer_r.iff
+object/draft_schematic/armor/component/armor_layer_kinetic.iff
+object/draft_schematic/armor/component/armor_layer_energy.iff
+object/draft_schematic/armor/component/armor_layer_blast.iff
+object/draft_schematic/armor/component/armor_layer_heat.iff
+object/draft_schematic/armor/component/armor_layer_cold.iff
+object/draft_schematic/armor/component/armor_layer_electrical.iff
+object/draft_schematic/armor/component/armor_layer_acid.iff
+object/draft_schematic/armor/component/armor_layer_stun.iff
+object/draft_schematic/armor/component/deflector_shield_generator_particle.iff
+object/draft_schematic/armor/component/deflector_shield_generator_energy_ray.iff
+object/draft_schematic/armor/component/deflector_shield_emitter_assembly.iff
+object/draft_schematic/armor/component/deflector_shield_projector_plate.iff
+object/draft_schematic/armor/shield_generator_personal.iff
+object/draft_schematic/armor/shield_generator_personal_b.iff
+object/draft_schematic/armor/shield_generator_personal_c.iff
+object/draft_schematic/item/item_survey_tool_gas.iff
+object/draft_schematic/item/item_survey_tool_liquid.iff
+object/draft_schematic/item/item_survey_tool_mineral.iff
+object/draft_schematic/item/item_survey_tool_moisture.iff
+object/draft_schematic/item/item_survey_tool_flora.iff
+object/draft_schematic/item/item_survey_tool_solar.iff
+object/draft_schematic/item/item_survey_tool_wind.iff
+object/draft_schematic/item/item_food_tool.iff
+object/draft_schematic/item/item_clothing_tool.iff
+object/draft_schematic/item/item_structure_tool.iff
+object/draft_schematic/item/item_weapon_tool.iff
+object/draft_schematic/item/item_space_tool.iff
+object/draft_schematic/weapon/knife_survival.iff
+object/draft_schematic/item/item_chance_cube.iff
+object/draft_schematic/item/item_six_sided_dice.iff
+object/draft_schematic/item/item_ten_sided_dice.iff
+object/draft_schematic/weapon/pistol_blaster_cdef.iff
+object/draft_schematic/weapon/carbine_blaster_cdef.iff
+object/draft_schematic/weapon/rifle_blaster_cdef.iff
+object/draft_schematic/item/item_generic_tool.iff
+object/draft_schematic/item/item_fishing_pole.iff
+object/draft_schematic/item/item_firework_one.iff
+object/draft_schematic/item/item_firework_two.iff
+object/draft_schematic/item/item_firework_three.iff
+object/draft_schematic/item/item_powerup_weapon_ranged_one.iff
+object/draft_schematic/item/item_powerup_weapon_ranged_two.iff
+object/draft_schematic/item/item_powerup_weapon_melee_generic.iff
+object/draft_schematic/item/item_twelve_sided_dice.iff
+object/draft_schematic/item/item_twenty_sided_dice.iff
+object/draft_schematic/item/item_hundred_sided_dice.iff
+object/draft_schematic/weapon/staff.iff
+object/draft_schematic/item/item_battery_droid.iff
+object/draft_schematic/item/item_powerup_weapon_ranged_three.iff
+object/draft_schematic/item/item_powerup_weapon_ranged_four.iff
+object/draft_schematic/item/item_firework_four.iff
+object/draft_schematic/item/item_firework_five.iff
+object/draft_schematic/item/craftable_bug_habitat.iff
+object/draft_schematic/item/item_repairkit_weapon.iff
+object/draft_schematic/item/item_repairkit_armor.iff
+object/draft_schematic/item/item_configurable_sided_dice.iff
+object/draft_schematic/weapon/staff_reinforced.iff
+object/draft_schematic/armor/armor_segment_bone.iff
+object/draft_schematic/clothing/clothing_armor_bone_gloves.iff
+object/draft_schematic/clothing/clothing_armor_bone_boots.iff
+object/draft_schematic/item/item_powerup_weapon_thrown_wiring.iff
+object/draft_schematic/item/item_firework_ten.iff
+object/draft_schematic/item/item_powerup_weapon_ranged_five.iff
+object/draft_schematic/weapon/knife_twilek_dagger.iff
+object/draft_schematic/clothing/clothing_armor_bone_bicep_l.iff
+object/draft_schematic/clothing/clothing_armor_bone_bicep_r.iff
+object/draft_schematic/clothing/clothing_armor_bone_leggings.iff
+object/draft_schematic/clothing/clothing_armor_bone_helmet.iff
+object/draft_schematic/structure/installation_generator_wind.iff
+object/draft_schematic/structure/installation_mining_ore_light.iff
+object/draft_schematic/structure/installation_mining_organic_flora_light.iff
+object/draft_schematic/item/item_firework_eleven.iff
+object/draft_schematic/item/item_powerup_weapon_mine_explosive.iff
+object/draft_schematic/item/item_firework_show.iff
+object/draft_schematic/weapon/axe.iff
+object/draft_schematic/clothing/clothing_armor_bone_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_bone_bracer_r.iff
+object/draft_schematic/clothing/clothing_armor_bone_chest.iff
+object/draft_schematic/structure/installation_mining_gas_light.iff
+object/draft_schematic/structure/installation_mining_liquid_light.iff
+object/draft_schematic/structure/installation_mining_liquid_vapor_light.iff
+object/draft_schematic/item/item_powerup_weapon_ranged_six.iff
+object/draft_schematic/item/item_powerup_weapon_thrown_explosive.iff
+object/draft_schematic/item/item_firework_eighteen.iff
+object/draft_schematic/food/dessert_bofa_treat.iff
+object/draft_schematic/food/dish_travel_biscuits.iff
+object/draft_schematic/food/drink_spiced_tea.iff
+object/draft_schematic/food/component/container_small_glass.iff
+object/draft_schematic/clothing/clothing_shirt_casual_04.iff
+object/draft_schematic/clothing/clothing_shoes_casual_02.iff
+object/draft_schematic/clothing/clothing_pants_casual_25.iff
+object/draft_schematic/clothing/clothing_wke_shirt_s01.iff
+object/draft_schematic/food/component/ingredient_carbosyrup.iff
+object/draft_schematic/food/dessert_blob_candy.iff
+object/draft_schematic/food/dish_exo_protein_wafers.iff
+object/draft_schematic/food/drink_aitha.iff
+object/draft_schematic/clothing/component/clothing_fiberplast_panel.iff
+object/draft_schematic/clothing/clothing_pants_casual_17.iff
+object/draft_schematic/clothing/clothing_pants_casual_10.iff
+object/draft_schematic/clothing/clothing_ith_pants_casual_01.iff
+object/draft_schematic/clothing/clothing_hat_casual_14.iff
+object/draft_schematic/clothing/clothing_dress_casual_10.iff
+object/draft_schematic/item/item_repairkit_clothing.iff
+object/draft_schematic/clothing/clothing_wke_gloves_s02.iff
+object/draft_schematic/clothing/clothing_wke_skirt_s04.iff
+object/draft_schematic/clothing/clothing_ith_shirt_casual_01.iff
+object/draft_schematic/food/component/ingredient_ball_of_dough.iff
+object/draft_schematic/food/dish_rations.iff
+object/draft_schematic/food/dish_crispic.iff
+object/draft_schematic/food/drink_caf.iff
+object/draft_schematic/clothing/component/clothing_metal_fasteners.iff
+object/draft_schematic/clothing/clothing_boots_casual_04.iff
+object/draft_schematic/clothing/clothing_dress_casual_12.iff
+object/draft_schematic/clothing/clothing_wke_hood_s01.iff
+object/draft_schematic/clothing/clothing_jacket_casual_02.iff
+object/draft_schematic/clothing/clothing_skirt_casual_10.iff
+object/draft_schematic/clothing/clothing_shirt_casual_27.iff
+object/draft_schematic/clothing/clothing_ith_vest_field_01.iff
+object/draft_schematic/clothing/clothing_ith_shirt_casual_06.iff
+object/draft_schematic/food/dessert_pkneb.iff
+object/draft_schematic/food/dish_kanali_wafers.iff
+object/draft_schematic/food/drink_ruby_bliel.iff
+object/draft_schematic/food/drink_jawa_beer.iff
+object/draft_schematic/clothing/clothing_pants_field_04.iff
+object/draft_schematic/clothing/clothing_pants_field_12.iff
+object/draft_schematic/clothing/clothing_ith_pants_casual_17.iff
+object/draft_schematic/clothing/clothing_ith_pants_field_04.iff
+object/draft_schematic/clothing/clothing_belt_field_07.iff
+object/draft_schematic/clothing/clothing_belt_field_11.iff
+object/draft_schematic/clothing/clothing_shirt_casual_34.iff
+object/draft_schematic/clothing/clothing_gloves_field_12.iff
+object/draft_schematic/clothing/clothing_jacket_casual_12.iff
+object/draft_schematic/clothing/clothing_wke_shirt_s02.iff
+object/draft_schematic/clothing/clothing_ith_shirt_casual_07.iff
+object/draft_schematic/food/additive/additive_light.iff
+object/draft_schematic/food/component/container_large_glass.iff
+object/draft_schematic/food/drink_jaar.iff
+object/draft_schematic/food/drink_starshine_surprise.iff
+object/draft_schematic/food/dish_dustcrepe.iff
+object/draft_schematic/food/dish_teltier_noodles.iff
+object/draft_schematic/clothing/clothing_dress_formal_18.iff
+object/draft_schematic/clothing/clothing_dress_formal_26.iff
+object/draft_schematic/clothing/clothing_boots_field_03.iff
+object/draft_schematic/clothing/clothing_jacket_field_15.iff
+object/draft_schematic/clothing/clothing_bandolier_field_07.iff
+object/draft_schematic/clothing/clothing_bandolier_field_08.iff
+object/draft_schematic/clothing/clothing_dress_casual_06.iff
+object/draft_schematic/clothing/clothing_backpack_field_01.iff
+object/draft_schematic/clothing/clothing_wke_hood_s03.iff
+object/draft_schematic/item/item_parrot_cage.iff
+object/draft_schematic/item/component/item_micro_sensor_suite.iff
+object/draft_schematic/item/component/item_electronics_memory_module.iff
+object/draft_schematic/item/component/item_electronics_gp_module.iff
+object/draft_schematic/item/component/item_electronic_power_conditioner.iff
+object/draft_schematic/item/component/item_electronic_energy_distributor.iff
+object/draft_schematic/item/component/item_electronic_control_unit.iff
+object/draft_schematic/space/repair/generic_repair_kit.iff
+object/draft_schematic/clothing/clothing_backpack_field_03.iff
+object/draft_schematic/clothing/clothing_backpack_field_03_quest.iff
+object/draft_schematic/clothing/component/clothing_synthetic_cloth.iff
+object/draft_schematic/clothing/clothing_jacket_field_08.iff
+object/draft_schematic/clothing/clothing_shirt_casual_03.iff
+object/draft_schematic/clothing/clothing_shirt_casual_07.iff
+object/draft_schematic/clothing/clothing_pants_casual_01.iff
+object/draft_schematic/clothing/clothing_pants_casual_05.iff
+object/draft_schematic/clothing/clothing_pants_casual_06.iff
+object/draft_schematic/clothing/clothing_jacket_casual_05.iff
+object/draft_schematic/clothing/clothing_jacket_casual_14.iff
+object/draft_schematic/clothing/clothing_belt_field_04.iff
+object/draft_schematic/clothing/clothing_gloves_field_02.iff
+object/draft_schematic/clothing/clothing_ith_gloves_field_02.iff
+object/draft_schematic/clothing/clothing_pants_field_14.iff
+object/draft_schematic/clothing/clothing_shirt_field_09.iff
+object/draft_schematic/clothing/clothing_wke_skirt_s03.iff
+object/draft_schematic/clothing/clothing_wke_hat_s01.iff
+object/draft_schematic/clothing/clothing_ith_shirt_casual_08.iff
+object/draft_schematic/clothing/clothing_ith_shirt_casual_12.iff
+object/draft_schematic/clothing/clothing_dress_formal_13.iff
+object/draft_schematic/clothing/clothing_dress_formal_23.iff
+object/draft_schematic/clothing/clothing_dress_formal_29.iff
+object/draft_schematic/clothing/clothing_jewelry_bracelet_05.iff
+object/draft_schematic/clothing/clothing_jewelry_bracelet_06.iff
+object/draft_schematic/clothing/clothing_shirt_formal_13.iff
+object/draft_schematic/clothing/clothing_shirt_formal_05.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_06.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_06.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_08.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_08.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_11.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_11.iff
+object/draft_schematic/clothing/component/clothing_shoe_sole.iff
+object/draft_schematic/clothing/clothing_boots_casual_15.iff
+object/draft_schematic/clothing/clothing_boots_casual_21.iff
+object/draft_schematic/clothing/clothing_gloves_casual_03.iff
+object/draft_schematic/clothing/clothing_gloves_casual_06.iff
+object/draft_schematic/clothing/clothing_wke_gloves_s04.iff
+object/draft_schematic/clothing/clothing_dress_casual_09.iff
+object/draft_schematic/clothing/clothing_skirt_casual_04.iff
+object/draft_schematic/clothing/clothing_skirt_casual_05.iff
+object/draft_schematic/clothing/clothing_shoes_casual_03.iff
+object/draft_schematic/clothing/clothing_shoes_casual_07.iff
+object/draft_schematic/clothing/clothing_shoes_casual_08.iff
+object/draft_schematic/clothing/clothing_ith_hat_casual_01.iff
+object/draft_schematic/clothing/clothing_ith_pants_casual_02.iff
+object/draft_schematic/clothing/clothing_ith_pants_casual_03.iff
+object/draft_schematic/clothing/clothing_ith_jacket_casual_01.iff
+object/draft_schematic/clothing/clothing_ith_jacket_casual_03.iff
+object/draft_schematic/clothing/clothing_ith_shirt_casual_04.iff
+object/draft_schematic/clothing/clothing_ith_shirt_casual_03.iff
+object/draft_schematic/clothing/clothing_ith_shirt_casual_13.iff
+object/draft_schematic/clothing/clothing_ith_shirt_casual_14.iff
+object/draft_schematic/clothing/clothing_shirt_casual_16.iff
+object/draft_schematic/clothing/clothing_shirt_casual_42.iff
+object/draft_schematic/clothing/clothing_shirt_casual_38.iff
+object/draft_schematic/clothing/clothing_jacket_casual_07.iff
+object/draft_schematic/clothing/clothing_jacket_casual_17.iff
+object/draft_schematic/clothing/clothing_jacket_casual_19.iff
+object/draft_schematic/clothing/clothing_pants_casual_08.iff
+object/draft_schematic/clothing/clothing_pants_casual_11.iff
+object/draft_schematic/clothing/clothing_pants_casual_26.iff
+object/draft_schematic/clothing/clothing_pants_casual_09.iff
+object/draft_schematic/clothing/clothing_vest_casual_04.iff
+object/draft_schematic/clothing/clothing_vest_casual_05.iff
+object/draft_schematic/clothing/clothing_vest_casual_10.iff
+object/draft_schematic/clothing/clothing_wke_shoulder_pad_s01.iff
+object/draft_schematic/clothing/clothing_ith_pants_casual_08.iff
+object/draft_schematic/clothing/clothing_ith_pants_casual_09.iff
+object/draft_schematic/clothing/clothing_ith_jacket_casual_06.iff
+object/draft_schematic/clothing/clothing_ith_jacket_casual_09.iff
+object/draft_schematic/clothing/clothing_boots_casual_12.iff
+object/draft_schematic/clothing/clothing_boots_casual_19.iff
+object/draft_schematic/clothing/clothing_dress_casual_05.iff
+object/draft_schematic/clothing/clothing_dress_casual_07.iff
+object/draft_schematic/clothing/clothing_robe_casual_04.iff
+object/draft_schematic/clothing/clothing_robe_casual_05.iff
+object/draft_schematic/clothing/clothing_robe_casual_05b.iff
+object/draft_schematic/clothing/clothing_robe_casual_18.iff
+object/draft_schematic/clothing/clothing_hat_casual_02.iff
+object/draft_schematic/clothing/clothing_hat_casual_10.iff
+object/draft_schematic/clothing/clothing_hat_casual_12.iff
+object/draft_schematic/clothing/clothing_bustier_casual_01.iff
+object/draft_schematic/clothing/clothing_bustier_casual_02.iff
+object/draft_schematic/clothing/clothing_bustier_casual_03.iff
+object/draft_schematic/clothing/clothing_ith_bodysuit_casual_04.iff
+object/draft_schematic/clothing/clothing_wke_gloves_s03.iff
+object/draft_schematic/clothing/clothing_ith_hat_casual_03.iff
+object/draft_schematic/clothing/clothing_ith_pants_casual_16.iff
+object/draft_schematic/clothing/clothing_ith_pants_casual_18.iff
+object/draft_schematic/clothing/clothing_ith_jacket_casual_12.iff
+object/draft_schematic/clothing/clothing_ith_jacket_casual_14.iff
+object/draft_schematic/clothing/clothing_ith_shirt_casual_09.iff
+object/draft_schematic/clothing/clothing_shirt_casual_11.iff
+object/draft_schematic/clothing/clothing_shirt_casual_24.iff
+object/draft_schematic/clothing/clothing_shirt_casual_30.iff
+object/draft_schematic/clothing/clothing_jacket_casual_18.iff
+object/draft_schematic/clothing/clothing_jacket_casual_24.iff
+object/draft_schematic/clothing/clothing_jacket_casual_36.iff
+object/draft_schematic/clothing/clothing_pants_casual_18.iff
+object/draft_schematic/clothing/clothing_pants_casual_24.iff
+object/draft_schematic/clothing/clothing_vest_casual_01.iff
+object/draft_schematic/clothing/clothing_vest_casual_02.iff
+object/draft_schematic/clothing/clothing_vest_casual_03.iff
+object/draft_schematic/clothing/clothing_vest_casual_11.iff
+object/draft_schematic/clothing/clothing_hat_twilek_casual_01.iff
+object/draft_schematic/clothing/clothing_hat_twilek_casual_02.iff
+object/draft_schematic/clothing/clothing_ith_bodysuit_casual_01.iff
+object/draft_schematic/clothing/clothing_ith_bodysuit_casual_03.iff
+object/draft_schematic/clothing/clothing_ith_bodysuit_casual_05.iff
+object/draft_schematic/clothing/clothing_ith_pants_casual_21.iff
+object/draft_schematic/clothing/component/clothing_cargo_pocket.iff
+object/draft_schematic/clothing/clothing_backpack_field_04.iff
+object/draft_schematic/clothing/clothing_boots_field_05.iff
+object/draft_schematic/clothing/clothing_boots_field_14.iff
+object/draft_schematic/clothing/clothing_boots_field_34.iff
+object/draft_schematic/clothing/clothing_hat_field_04.iff
+object/draft_schematic/clothing/clothing_belt_field_09.iff
+object/draft_schematic/clothing/clothing_gloves_field_07.iff
+object/draft_schematic/clothing/clothing_jacket_field_13.iff
+object/draft_schematic/clothing/clothing_jacket_field_16.iff
+object/draft_schematic/clothing/clothing_wke_gloves_s01.iff
+object/draft_schematic/clothing/clothing_ith_pants_field_05.iff
+object/draft_schematic/clothing/clothing_ith_pants_field_06.iff
+object/draft_schematic/clothing/clothing_ith_jacket_field_02.iff
+object/draft_schematic/clothing/clothing_vest_field_06.iff
+object/draft_schematic/clothing/clothing_vest_field_09.iff
+object/draft_schematic/clothing/clothing_ith_shirt_field_05.iff
+object/draft_schematic/clothing/clothing_ith_shirt_field_11.iff
+object/draft_schematic/clothing/component/clothing_reinforced_fiber_panels.iff
+object/draft_schematic/clothing/clothing_shirt_field_10.iff
+object/draft_schematic/clothing/clothing_shirt_field_14.iff
+object/draft_schematic/clothing/clothing_shirt_field_26.iff
+object/draft_schematic/clothing/clothing_pants_field_27.iff
+object/draft_schematic/clothing/clothing_pants_field_29.iff
+object/draft_schematic/clothing/clothing_pants_field_07.iff
+object/draft_schematic/clothing/clothing_belt_field_01.iff
+object/draft_schematic/clothing/clothing_gloves_field_11.iff
+object/draft_schematic/clothing/clothing_gloves_field_14.iff
+object/draft_schematic/clothing/clothing_bandolier_field_05.iff
+object/draft_schematic/clothing/clothing_bandolier_field_06.iff
+object/draft_schematic/clothing/clothing_backpack_field_05.iff
+object/draft_schematic/clothing/clothing_wke_shirt_s03.iff
+object/draft_schematic/clothing/clothing_ith_pants_field_07.iff
+object/draft_schematic/clothing/clothing_ith_pants_field_12.iff
+object/draft_schematic/clothing/clothing_ith_jacket_field_05.iff
+object/draft_schematic/clothing/clothing_ith_jacket_field_07.iff
+object/draft_schematic/clothing/component/clothing_padding_segment.iff
+object/draft_schematic/clothing/clothing_backpack_field_06.iff
+object/draft_schematic/clothing/clothing_backpack_field_06_quest.iff
+object/draft_schematic/clothing/clothing_bandolier_field_02.iff
+object/draft_schematic/clothing/clothing_bandolier_field_02_quest.iff
+object/draft_schematic/clothing/clothing_bandolier_field_03.iff
+object/draft_schematic/clothing/clothing_bandolier_field_04.iff
+object/draft_schematic/clothing/clothing_bandolier_field_04_quest.iff
+object/draft_schematic/clothing/clothing_jacket_field_10.iff
+object/draft_schematic/clothing/clothing_jacket_field_21.iff
+object/draft_schematic/clothing/clothing_jacket_field_35.iff
+object/draft_schematic/clothing/clothing_pants_field_28.iff
+object/draft_schematic/clothing/clothing_pants_field_30.iff
+object/draft_schematic/clothing/clothing_ith_pants_field_13.iff
+object/draft_schematic/clothing/clothing_ith_pants_field_15.iff
+object/draft_schematic/clothing/clothing_belt_field_02.iff
+object/draft_schematic/clothing/clothing_wke_shoulder_pad_s02.iff
+object/draft_schematic/clothing/clothing_ith_jacket_field_13.iff
+object/draft_schematic/clothing/clothing_pants_field_21.iff
+object/draft_schematic/clothing/clothing_pants_field_22.iff
+object/draft_schematic/clothing/clothing_ith_pants_field_19.iff
+object/draft_schematic/clothing/clothing_ith_pants_field_20.iff
+object/draft_schematic/clothing/clothing_belt_field_03.iff
+object/draft_schematic/clothing/clothing_belt_field_05.iff
+object/draft_schematic/clothing/clothing_gloves_field_10.iff
+object/draft_schematic/clothing/clothing_gloves_field_13.iff
+object/draft_schematic/clothing/clothing_bodysuit_field_13.iff
+object/draft_schematic/clothing/clothing_bodysuit_field_16.iff
+object/draft_schematic/clothing/clothing_robe_field_27.iff
+object/draft_schematic/clothing/clothing_wke_shirt_s04.iff
+object/draft_schematic/clothing/clothing_ith_bodysuit_field_02.iff
+object/draft_schematic/clothing/clothing_ith_jacket_field_11.iff
+object/draft_schematic/clothing/component/clothing_trim.iff
+object/draft_schematic/clothing/clothing_shirt_formal_08.iff
+object/draft_schematic/clothing/clothing_shirt_formal_28.iff
+object/draft_schematic/clothing/clothing_ith_shirt_formal_02.iff
+object/draft_schematic/clothing/clothing_belt_formal_15.iff
+object/draft_schematic/clothing/clothing_belt_formal_16.iff
+object/draft_schematic/clothing/clothing_belt_formal_18.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_01.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_01.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_03.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_03.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_07.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_07.iff
+object/draft_schematic/clothing/clothing_shoes_formal_01.iff
+object/draft_schematic/clothing/clothing_shoes_formal_09.iff
+object/draft_schematic/clothing/clothing_skirt_formal_06.iff
+object/draft_schematic/clothing/clothing_skirt_formal_07.iff
+object/draft_schematic/clothing/clothing_skirt_formal_14.iff
+object/draft_schematic/clothing/clothing_wke_skirt_s02.iff
+object/draft_schematic/clothing/clothing_ith_dress_formal_03.iff
+object/draft_schematic/clothing/clothing_ith_jacket_formal_08.iff
+object/draft_schematic/clothing/clothing_ith_skirt_formal_01.iff
+object/draft_schematic/clothing/clothing_ith_skirt_formal_02.iff
+object/draft_schematic/clothing/component/clothing_jewelry_setting.iff
+object/draft_schematic/clothing/clothing_dress_formal_11.iff
+object/draft_schematic/clothing/clothing_dress_formal_16.iff
+object/draft_schematic/clothing/clothing_dress_formal_32.iff
+object/draft_schematic/clothing/clothing_belt_formal_12.iff
+object/draft_schematic/clothing/clothing_belt_formal_14.iff
+object/draft_schematic/clothing/clothing_belt_formal_19.iff
+object/draft_schematic/clothing/clothing_jewelry_bracelet_02.iff
+object/draft_schematic/clothing/clothing_jewelry_bracelet_03.iff
+object/draft_schematic/clothing/clothing_jewelry_bracelet_04.iff
+object/draft_schematic/clothing/clothing_jacket_formal_06.iff
+object/draft_schematic/clothing/clothing_jacket_formal_11.iff
+object/draft_schematic/clothing/clothing_jacket_formal_26.iff
+object/draft_schematic/clothing/clothing_vest_formal_15.iff
+object/draft_schematic/clothing/clothing_skirt_formal_09.iff
+object/draft_schematic/clothing/clothing_wke_hood_s02.iff
+object/draft_schematic/clothing/clothing_hat_chef_02.iff
+object/draft_schematic/clothing/clothing_ith_hat_chef_02.iff
+object/draft_schematic/clothing/clothing_ith_pants_formal_10.iff
+object/draft_schematic/clothing/clothing_ith_dress_formal_04.iff
+object/draft_schematic/clothing/clothing_ith_jacket_formal_04.iff
+object/draft_schematic/clothing/clothing_ith_skirt_formal_03.iff
+object/draft_schematic/clothing/clothing_shirt_formal_12.iff
+object/draft_schematic/clothing/clothing_shirt_formal_15.iff
+object/draft_schematic/clothing/clothing_shirt_formal_32.iff
+object/draft_schematic/clothing/clothing_dress_formal_19.iff
+object/draft_schematic/clothing/clothing_dress_formal_27.iff
+object/draft_schematic/clothing/clothing_dress_formal_30.iff
+object/draft_schematic/clothing/clothing_dress_formal_31.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_09.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_09.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_10.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_10.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_12.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_12.iff
+object/draft_schematic/clothing/clothing_jewelry_ring_01.iff
+object/draft_schematic/clothing/clothing_jewelry_ring_02.iff
+object/draft_schematic/clothing/clothing_hat_formal_13.iff
+object/draft_schematic/clothing/clothing_pants_formal_31.iff
+object/draft_schematic/clothing/clothing_pants_formal_33.iff
+object/draft_schematic/clothing/clothing_wke_skirt_s01.iff
+object/draft_schematic/clothing/clothing_hat_chef_01.iff
+object/draft_schematic/clothing/clothing_ith_hat_chef_01.iff
+object/draft_schematic/clothing/clothing_ith_hat_formal_02.iff
+object/draft_schematic/clothing/clothing_ith_pants_formal_11.iff
+object/draft_schematic/clothing/clothing_ith_jacket_formal_10.iff
+object/draft_schematic/clothing/clothing_dress_formal_14.iff
+object/draft_schematic/clothing/clothing_dress_formal_33.iff
+object/draft_schematic/clothing/clothing_dress_formal_34.iff
+object/draft_schematic/clothing/clothing_belt_formal_13.iff
+object/draft_schematic/clothing/clothing_belt_formal_17.iff
+object/draft_schematic/clothing/clothing_belt_formal_20.iff
+object/draft_schematic/clothing/clothing_jacket_formal_03.iff
+object/draft_schematic/clothing/clothing_jacket_formal_22.iff
+object/draft_schematic/clothing/clothing_jacket_formal_25.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_02.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_02.iff
+object/draft_schematic/clothing/clothing_skirt_formal_11.iff
+object/draft_schematic/clothing/clothing_skirt_formal_12.iff
+object/draft_schematic/clothing/clothing_skirt_formal_13.iff
+object/draft_schematic/clothing/clothing_pants_formal_13.iff
+object/draft_schematic/clothing/clothing_pants_formal_15.iff
+object/draft_schematic/clothing/clothing_pants_formal_32.iff
+object/draft_schematic/clothing/clothing_apron_chef_01.iff
+object/draft_schematic/clothing/clothing_ith_apron_chef_01.iff
+object/draft_schematic/clothing/clothing_ith_hat_formal_04.iff
+object/draft_schematic/clothing/clothing_ith_robe_formal_01.iff
+object/draft_schematic/clothing/clothing_ith_pants_formal_14.iff
+object/draft_schematic/clothing/clothing_ith_jacket_formal_15.iff
+object/draft_schematic/clothing/clothing_bikini_casual_01.iff
+object/draft_schematic/clothing/clothing_bikini_casual_02.iff
+object/draft_schematic/clothing/clothing_bikini_casual_03.iff
+object/draft_schematic/clothing/clothing_bikini_casual_04.iff
+object/draft_schematic/clothing/clothing_bikini_leggings_casual_01.iff
+object/draft_schematic/clothing/clothing_bodysuit_casual_08.iff
+object/draft_schematic/clothing/clothing_bodysuit_casual_12.iff
+object/draft_schematic/clothing/clothing_bodysuit_field_01.iff
+object/draft_schematic/clothing/clothing_bodysuit_field_14.iff
+object/draft_schematic/clothing/clothing_bodysuit_field_15.iff
+object/draft_schematic/clothing/clothing_bodysuit_formal_06.iff
+object/draft_schematic/clothing/clothing_ith_bodysuit_formal_06.iff
+object/draft_schematic/clothing/clothing_ith_shirt_formal_10.iff
+object/draft_schematic/clothing/clothing_dress_formal_08.iff
+object/draft_schematic/clothing/clothing_dress_formal_15.iff
+object/draft_schematic/clothing/clothing_dress_formal_35.iff
+object/draft_schematic/clothing/clothing_pants_casual_02.iff
+object/draft_schematic/clothing/clothing_robe_formal_01.iff
+object/draft_schematic/clothing/clothing_robe_formal_12.iff
+object/draft_schematic/clothing/clothing_ith_robe_formal_02.iff
+object/draft_schematic/clothing/clothing_hat_twilek_formal_03.iff
+object/draft_schematic/clothing/clothing_hat_twilek_formal_04.iff
+object/draft_schematic/clothing/clothing_hat_twilek_formal_05.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_04.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_04.iff
+object/draft_schematic/clothing/clothing_jewelry_necklace_05.iff
+object/draft_schematic/clothing/clothing_ith_jewelry_necklace_05.iff
+object/draft_schematic/clothing/clothing_skirt_casual_03.iff
+object/draft_schematic/food/additive/additive_medium.iff
+object/draft_schematic/food/dish_soypro.iff
+object/draft_schematic/food/dessert_air_cake.iff
+object/draft_schematic/food/dessert_almond_kwevvu_crisp_munchies.iff
+object/draft_schematic/food/dessert_blap_biscuit.iff
+object/draft_schematic/food/drink_alcohol.iff
+object/draft_schematic/food/dish_protato.iff
+object/draft_schematic/food/dish_synthsteak.iff
+object/draft_schematic/food/dish_cho_nor_hoola.iff
+object/draft_schematic/food/dish_blood_chowder.iff
+object/draft_schematic/food/dish_karkan_ribenes.iff
+object/draft_schematic/food/dish_trimpian.iff
+object/draft_schematic/food/dish_veghash.iff
+object/draft_schematic/food/dish_ormachek.iff
+object/draft_schematic/food/dish_gruuvan_shaal.iff
+object/draft_schematic/food/dish_havla.iff
+object/draft_schematic/food/dish_scrimpi.iff
+object/draft_schematic/food/dish_ahrisa.iff
+object/draft_schematic/food/dish_vegeparsine.iff
+object/draft_schematic/food/dish_bivoli_tempari.iff
+object/draft_schematic/food/dish_terratta.iff
+object/draft_schematic/food/dish_rakririan_burnout_sauce.iff
+object/draft_schematic/food/dessert_bantha_butter.iff
+object/draft_schematic/food/dessert_pastebread.iff
+object/draft_schematic/food/dessert_won_won.iff
+object/draft_schematic/food/dessert_chandad.iff
+object/draft_schematic/food/dessert_sweet_cake_mix.iff
+object/draft_schematic/food/dessert_parwan_nutricake.iff
+object/draft_schematic/food/dessert_pyollian_cake.iff
+object/draft_schematic/food/dessert_dweezel.iff
+object/draft_schematic/food/dessert_felbar.iff
+object/draft_schematic/food/dessert_citros_snow_cake.iff
+object/draft_schematic/food/dessert_pikatta_pie.iff
+object/draft_schematic/food/dessert_gorrnar.iff
+object/draft_schematic/food/dessert_kiwik_clusjo_swirl.iff
+object/draft_schematic/food/dessert_cavaellin_creams.iff
+object/draft_schematic/food/dessert_vagnerian_canape.iff
+object/draft_schematic/food/dessert_sweesonberry_rolls.iff
+object/draft_schematic/food/dessert_smugglers_delight.iff
+object/draft_schematic/food/drink_deuterium_pyro.iff
+object/draft_schematic/food/drink_gralinyn_juice.iff
+object/draft_schematic/food/drink_corellian_ale.iff
+object/draft_schematic/food/drink_blue_milk.iff
+object/draft_schematic/food/component/container_cask.iff
+object/draft_schematic/food/drink_veronian_berry_wine.iff
+object/draft_schematic/food/drink_durindfire.iff
+object/draft_schematic/food/drink_ithorian_mist.iff
+object/draft_schematic/food/drink_corellian_brandy.iff
+object/draft_schematic/food/drink_tssolok.iff
+object/draft_schematic/food/drink_vasarian_brandy.iff
+object/draft_schematic/food/drink_accarragm.iff
+object/draft_schematic/food/drink_garrmorl.iff
+object/draft_schematic/food/drink_bespin_port.iff
+object/draft_schematic/food/drink_elshandruu_pica_thundercloud.iff
+object/draft_schematic/food/drink_tilla_tiil.iff
+object/draft_schematic/food/drink_vayerbok.iff
+object/draft_schematic/food/additive/additive_heavy.iff
+object/draft_schematic/food/component/container_barrel.iff
+object/draft_schematic/food/drink_breath_of_heaven.iff
+object/draft_schematic/food/drink_flameout.iff
+object/draft_schematic/food/dish_thakitillo.iff
+object/draft_schematic/food/dish_vercupti_of_agazza_boleruuee.iff
+object/draft_schematic/food/dessert_deneelian_fizz_pudding.iff
+object/draft_schematic/droid/droid_mse.iff
+object/draft_schematic/droid/component/manipulator_arm.iff
+object/draft_schematic/droid/component/droid_motive_system.iff
+object/draft_schematic/droid/component/droid_storage_compartment.iff
+object/draft_schematic/droid/droid_customization_kit.iff
+object/draft_schematic/droid/navicomputer_1.iff
+object/draft_schematic/droid/component/medic_module_1.iff
+object/draft_schematic/droid/component/data_storage_module_1.iff
+object/draft_schematic/droid/component/item_storage_module_1.iff
+object/draft_schematic/droid/component/personality_module_stupid.iff
+object/draft_schematic/droid/component/playback_module.iff
+object/draft_schematic/droid/component/performer_effects_a.iff
+object/draft_schematic/droid/component/performer_effects_aa.iff
+object/draft_schematic/droid/component/droid_space_memory_module_1.iff
+object/draft_schematic/droid/component/armor_module_1.iff
+object/draft_schematic/droid/droid_treadwell.iff
+object/draft_schematic/droid/droid_dz70.iff
+object/draft_schematic/droid/droid_r5.iff
+object/draft_schematic/droid/bounty_seeker_transmitter.iff
+object/draft_schematic/droid/component/sensor_package_droid.iff
+object/draft_schematic/droid/droid_mse_advanced.iff
+object/draft_schematic/droid/component/manipulator_arm_package_set.iff
+object/draft_schematic/droid/navicomputer_2.iff
+object/draft_schematic/droid/component/medic_module_2.iff
+object/draft_schematic/droid/component/data_storage_module_2.iff
+object/draft_schematic/droid/component/item_storage_module_2.iff
+object/draft_schematic/droid/component/harvest_module.iff
+object/draft_schematic/droid/component/crafting_module_weapon.iff
+object/draft_schematic/droid/component/merchant_barker.iff
+object/draft_schematic/droid/component/performer_effects_b.iff
+object/draft_schematic/droid/component/armor_module_2.iff
+object/draft_schematic/droid/component/droid_motive_system_advanced.iff
+object/draft_schematic/droid/droid_power.iff
+object/draft_schematic/droid/droid_r4.iff
+object/draft_schematic/droid/component/droid_brain.iff
+object/draft_schematic/droid/component/advanced_droid_frame.iff
+object/draft_schematic/droid/droid_treadwell_advanced.iff
+object/draft_schematic/droid/droid_dz70_advanced.iff
+object/draft_schematic/droid/droid_r5_advanced.iff
+object/draft_schematic/droid/component/chassis_droid_r4.iff
+object/draft_schematic/droid/navicomputer_3.iff
+object/draft_schematic/droid/component/medic_module_3.iff
+object/draft_schematic/droid/component/trap_module.iff
+object/draft_schematic/droid/component/item_storage_module_3.iff
+object/draft_schematic/droid/component/personality_module_prissy.iff
+object/draft_schematic/droid/component/stimpack_dispensor.iff
+object/draft_schematic/droid/component/performer_effects_c.iff
+object/draft_schematic/droid/component/armor_module_3.iff
+object/draft_schematic/droid/component/repair_module.iff
+object/draft_schematic/droid/component/crafting_module_food.iff
+object/draft_schematic/droid/component/combat_module.iff
+object/draft_schematic/droid/component/combat_socket_bank.iff
+object/draft_schematic/droid/droid_le_repair.iff
+object/draft_schematic/droid/droid_surgical.iff
+object/draft_schematic/droid/droid_r2.iff
+object/draft_schematic/droid/droid_probot.iff
+object/draft_schematic/droid/bounty_probot_transmitter.iff
+object/draft_schematic/droid/component/droid_brain_advanced.iff
+object/draft_schematic/droid/droid_power_advanced.iff
+object/draft_schematic/droid/droid_r4_advanced.iff
+object/draft_schematic/droid/component/chassis_droid_r2.iff
+object/draft_schematic/droid/component/chassis_droid_probot.iff
+object/draft_schematic/droid/component/chassis_droid_le_repair.iff
+object/draft_schematic/droid/component/chassis_droid_surgical.iff
+object/draft_schematic/droid/navicomputer_4.iff
+object/draft_schematic/droid/component/medic_module_4.iff
+object/draft_schematic/droid/component/data_storage_module_4.iff
+object/draft_schematic/droid/component/item_storage_module_4.iff
+object/draft_schematic/droid/component/personality_module_worshipful.iff
+object/draft_schematic/droid/component/struct_maint_module_2.iff
+object/draft_schematic/droid/component/auto_repair_module.iff
+object/draft_schematic/droid/component/performer_effects_d.iff
+object/draft_schematic/droid/component/armor_module_4.iff
+object/draft_schematic/droid/component/crafting_module_clothing.iff
+object/draft_schematic/droid/droid_r3.iff
+object/draft_schematic/droid/droid_binary_load_lifter.iff
+object/draft_schematic/droid/droid_3p0.iff
+object/draft_schematic/droid/droid_r2_advanced.iff
+object/draft_schematic/droid/droid_probot_advanced.iff
+object/draft_schematic/droid/droid_le_repair_advanced.iff
+object/draft_schematic/droid/droid_surgical_advanced.iff
+object/draft_schematic/droid/component/chassis_droid_r3.iff
+object/draft_schematic/droid/component/chassis_droid_binary_load_lifter.iff
+object/draft_schematic/droid/component/chassis_droid_3p0.iff
+object/draft_schematic/droid/navicomputer_5.iff
+object/draft_schematic/droid/component/medic_module_5.iff
+object/draft_schematic/droid/component/data_storage_module_5.iff
+object/draft_schematic/droid/component/item_storage_module_5.iff
+object/draft_schematic/droid/component/personality_module_slang.iff
+object/draft_schematic/droid/component/crafting_module_structure.iff
+object/draft_schematic/droid/component/performer_effects_e.iff
+object/draft_schematic/droid/component/armor_module_5.iff
+object/draft_schematic/droid/droid_r3_advanced.iff
+object/draft_schematic/droid/droid_binary_load_lifter_advanced.iff
+object/draft_schematic/droid/droid_3p0_advanced.iff
+object/draft_schematic/droid/droid_interplanetary_survey.iff
+object/draft_schematic/droid/navicomputer_6.iff
+object/draft_schematic/droid/component/medic_module_6.iff
+object/draft_schematic/droid/component/data_storage_module_6.iff
+object/draft_schematic/droid/component/item_storage_module_6.iff
+object/draft_schematic/droid/component/struct_maint_module_3.iff
+object/draft_schematic/droid/component/detonation_module.iff
+object/draft_schematic/droid/component/crafting_module_space.iff
+object/draft_schematic/droid/component/armor_module_6.iff
+object/draft_schematic/droid/component/unit_delivery_cartridge.iff
+object/draft_schematic/droid/component/repair_unit_casing.iff
+object/draft_schematic/droid/component/power_supply_redundant.iff
+object/draft_schematic/droid/component/diagnostic_circuit.iff
+object/draft_schematic/droid/component/capacitor_low_discharge.iff
+object/draft_schematic/droid/component/unit_delivery_cartridge_advanced.iff
+object/draft_schematic/droid/component/repair_unit_casing_advanced.iff
+object/draft_schematic/droid/component/power_supply_redundant_advanced.iff
+object/draft_schematic/droid/component/diagnostic_circuit_advanced.iff
+object/draft_schematic/droid/component/capacitor_high_discharge.iff
+object/draft_schematic/droid/droid_wound_repair_kit_a.iff
+object/draft_schematic/droid/droid_wound_repair_kit_b.iff
+object/draft_schematic/droid/droid_wound_repair_kit_c.iff
+object/draft_schematic/droid/droid_wound_repair_kit_d.iff
+object/draft_schematic/droid/droid_damage_repair_kit_a.iff
+object/draft_schematic/droid/droid_damage_repair_kit_b.iff
+object/draft_schematic/droid/droid_damage_repair_kit_c.iff
+object/draft_schematic/droid/droid_damage_repair_kit_d.iff
+object/draft_schematic/furniture/furniture_tree_potted.iff
+object/draft_schematic/furniture/furniture_tiki_torch.iff
+object/draft_schematic/furniture/furniture_plants_potted_large.iff
+object/draft_schematic/furniture/furniture_plants_potted_small.iff
+object/draft_schematic/furniture/furniture_armoire_cheap.iff
+object/draft_schematic/furniture/furniture_chair_loveseat_cheap.iff
+object/draft_schematic/furniture/furniture_bookcase_cheap.iff
+object/draft_schematic/furniture/furniture_chest_cheap.iff
+object/draft_schematic/furniture/furniture_couch_cheap.iff
+object/draft_schematic/item/item_weapon_station.iff
+object/draft_schematic/item/item_structure_station.iff
+object/draft_schematic/item/item_food_station.iff
+object/draft_schematic/item/item_clothing_station.iff
+object/draft_schematic/item/item_space_station.iff
+object/draft_schematic/furniture/furniture_toolchest_medium.iff
+object/draft_schematic/furniture/furniture_table_coffee_cheap.iff
+object/draft_schematic/furniture/furniture_chair_cheap.iff
+object/draft_schematic/furniture/furniture_table_endtable_cheap.iff
+object/draft_schematic/furniture/furniture_chair_divan.iff
+object/draft_schematic/furniture/furniture_chair_futon.iff
+object/draft_schematic/furniture/furniture_chair_kitchen.iff
+object/draft_schematic/furniture/furniture_chair_love_seat.iff
+object/draft_schematic/furniture/furniture_table_small_tatooine.iff
+object/draft_schematic/furniture/furniture_table_tatooine_cafe.iff
+object/draft_schematic/furniture/furniture_chair_metal.iff
+object/draft_schematic/furniture/furniture_chair_metal_wheeled.iff
+object/draft_schematic/furniture/furniture_chair_ottoman.iff
+object/draft_schematic/furniture/furniture_bed_small.iff
+object/draft_schematic/furniture/furniture_toolchest_large.iff
+object/draft_schematic/furniture/furniture_chair_recliner.iff
+object/draft_schematic/furniture/furniture_chair_tatooine_cafe.iff
+object/draft_schematic/furniture/furniture_chair_upholstered.iff
+object/draft_schematic/furniture/furniture_chair_wooden.iff
+object/draft_schematic/furniture/furniture_couch_blue.iff
+object/draft_schematic/furniture/furniture_couch_large.iff
+object/draft_schematic/furniture/furniture_couch_small.iff
+object/draft_schematic/furniture/furniture_droid_detector.iff
+object/draft_schematic/furniture/furniture_candle_free_s01_on.iff
+object/draft_schematic/furniture/furniture_candle_free_s02_on.iff
+object/draft_schematic/furniture/furniture_candle_table_s01_on.iff
+object/draft_schematic/furniture/furniture_candle_table_s02_on.iff
+object/draft_schematic/furniture/furniture_candle_table_s03_on.iff
+object/draft_schematic/furniture/furniture_lamp_desk.iff
+object/draft_schematic/furniture/furniture_lamp_desk_s01_on.iff
+object/draft_schematic/furniture/furniture_lamp_desk_s02_on.iff
+object/draft_schematic/furniture/furniture_lamp_freestanding.iff
+object/draft_schematic/furniture/furniture_lamp_free_s01_on.iff
+object/draft_schematic/furniture/furniture_lamp_free_s02_on.iff
+object/draft_schematic/furniture/furniture_lamp_free_s03_on.iff
+object/draft_schematic/furniture/furniture_lamp_free_s04_on.iff
+object/draft_schematic/furniture/furniture_lamp_tatt_s01_on.iff
+object/draft_schematic/furniture/furniture_lamp_table.iff
+object/draft_schematic/furniture/furniture_lamp_table_s01_on.iff
+object/draft_schematic/furniture/furniture_lamp_table_s02_on.iff
+object/draft_schematic/furniture/furniture_lamp_table_s03_on.iff
+object/draft_schematic/furniture/furniture_lamp_table_cantina.iff
+object/draft_schematic/furniture/furniture_armoire_modern.iff
+object/draft_schematic/furniture/furniture_bookcase_modern.iff
+object/draft_schematic/furniture/furniture_cabinet_modern.iff
+object/draft_schematic/furniture/furniture_chair_loveseat_modern.iff
+object/draft_schematic/item/item_ballot_box_terminal.iff
+object/draft_schematic/furniture/furniture_bed_large.iff
+object/draft_schematic/furniture/furniture_couch_modern.iff
+object/draft_schematic/furniture/furniture_chest_modern.iff
+object/draft_schematic/furniture/furniture_chair_modern.iff
+object/draft_schematic/furniture/furniture_terminal_freestanding.iff
+object/draft_schematic/furniture/furniture_terminal_wall.iff
+object/draft_schematic/furniture/furniture_sofachair_modern.iff
+object/draft_schematic/furniture/furniture_table_endtable_modern.iff
+object/draft_schematic/furniture/furniture_table_endtable_small_modern.iff
+object/draft_schematic/furniture/furniture_table_modern.iff
+object/draft_schematic/furniture/furniture_table_coffee_modern.iff
+object/draft_schematic/furniture/furniture_table_dining_modern.iff
+object/draft_schematic/furniture/furniture_table_coffee_elegant.iff
+object/draft_schematic/furniture/furniture_table_endtable_elegant.iff
+object/draft_schematic/furniture/furniture_couch_elegant.iff
+object/draft_schematic/furniture/furniture_armoire_elegant.iff
+object/draft_schematic/furniture/furniture_bookcase_elegant.iff
+object/draft_schematic/furniture/furniture_chair_elegant.iff
+object/draft_schematic/furniture/furniture_chair_loveseat_elegant.iff
+object/draft_schematic/furniture/furniture_chest_elegant.iff
+object/draft_schematic/furniture/furniture_cabinet_elegant.iff
+object/draft_schematic/furniture/furniture_technical_console_s01.iff
+object/draft_schematic/furniture/furniture_technical_console_s02.iff
+object/draft_schematic/instrument/instrument_slitherhorn.iff
+object/draft_schematic/instrument/instrument_fizz.iff
+object/draft_schematic/instrument/instrument_fanfar.iff
+object/draft_schematic/instrument/instrument_kloo_horn.iff
+object/draft_schematic/instrument/component/dual_wave_synthesizer.iff
+object/draft_schematic/instrument/instrument_mandoviol.iff
+object/draft_schematic/instrument/instrument_traz.iff
+object/draft_schematic/instrument/instrument_bandfill.iff
+object/draft_schematic/instrument/instrument_flute_droopy.iff
+object/draft_schematic/instrument/instrument_omni_box.iff
+object/draft_schematic/instrument/instrument_nalargon.iff
+object/draft_schematic/chemistry/component/biologic_effect_controller.iff
+object/draft_schematic/chemistry/component/liquid_delivery_suspension.iff
+object/draft_schematic/item/item_food_tool.iff
+object/draft_schematic/chemistry/component/release_mechanism_duration.iff
+object/draft_schematic/chemistry/component/solid_delivery_shell.iff
+object/draft_schematic/chemistry/component/dispersal_mechanism.iff
+object/draft_schematic/chemistry/component/infection_amplifier.iff
+object/draft_schematic/chemistry/component/resilience_compound.iff
+object/draft_schematic/chemistry/component/biologic_effect_controller_advanced.iff
+object/draft_schematic/chemistry/component/liquid_delivery_suspension_advanced.iff
+object/draft_schematic/chemistry/component/release_mechanism_duration_advanced.iff
+object/draft_schematic/chemistry/component/solid_delivery_shell_advanced.iff
+object/draft_schematic/chemistry/component/dispersal_mechanism_advanced.iff
+object/draft_schematic/chemistry/component/infection_amplifier_advanced.iff
+object/draft_schematic/chemistry/component/resilience_compound_advanced.iff
+object/draft_schematic/chemistry/med_stimpack_a.iff
+object/draft_schematic/chemistry/med_stimpack_b.iff
+object/draft_schematic/chemistry/med_stimpack_c.iff
+object/draft_schematic/chemistry/med_stimpack_d.iff
+object/draft_schematic/chemistry/med_stimpack_e.iff
+object/draft_schematic/chemistry/quest_stimpack_a.iff
+object/draft_schematic/chemistry/medpack_wound_action_a.iff
+object/draft_schematic/chemistry/medpack_wound_health_a.iff
+object/draft_schematic/chemistry/medpack_wound_action_b.iff
+object/draft_schematic/chemistry/medpack_wound_health_b.iff
+object/draft_schematic/chemistry/medpack_wound_action_c.iff
+object/draft_schematic/chemistry/medpack_wound_health_c.iff
+object/draft_schematic/chemistry/medpack_wound_action_d.iff
+object/draft_schematic/chemistry/medpack_wound_health_d.iff
+object/draft_schematic/chemistry/medpack_revive.iff
+object/draft_schematic/chemistry/medpack_wound_action_e.iff
+object/draft_schematic/chemistry/medpack_wound_health_e.iff
+object/draft_schematic/chemistry/medpack_wound_quickness_a.iff
+object/draft_schematic/chemistry/medpack_wound_stamina_a.iff
+object/draft_schematic/chemistry/medpack_wound_strength_a.iff
+object/draft_schematic/chemistry/medpack_wound_constitution_a.iff
+object/draft_schematic/chemistry/medpack_wound_quickness_b.iff
+object/draft_schematic/chemistry/medpack_wound_stamina_b.iff
+object/draft_schematic/chemistry/medpack_wound_strength_b.iff
+object/draft_schematic/chemistry/medpack_wound_constitution_b.iff
+object/draft_schematic/chemistry/medpack_wound_quickness_c.iff
+object/draft_schematic/chemistry/medpack_wound_stamina_c.iff
+object/draft_schematic/chemistry/medpack_wound_strength_c.iff
+object/draft_schematic/chemistry/medpack_wound_constitution_c.iff
+object/draft_schematic/chemistry/medpack_wound_quickness_d.iff
+object/draft_schematic/chemistry/medpack_wound_stamina_d.iff
+object/draft_schematic/chemistry/medpack_wound_strength_d.iff
+object/draft_schematic/chemistry/medpack_wound_constitution_d.iff
+object/draft_schematic/chemistry/med_fire_blanket.iff
+object/draft_schematic/chemistry/medpack_wound_quickness_e.iff
+object/draft_schematic/chemistry/medpack_wound_stamina_e.iff
+object/draft_schematic/chemistry/medpack_wound_strength_e.iff
+object/draft_schematic/chemistry/medpack_wound_constitution_e.iff
+object/draft_schematic/chemistry/medpack_enhance_action_a.iff
+object/draft_schematic/chemistry/medpack_enhance_health_a.iff
+object/draft_schematic/chemistry/medpack_enhance_action_b.iff
+object/draft_schematic/chemistry/medpack_enhance_health_b.iff
+object/draft_schematic/chemistry/medpack_enhance_action_c.iff
+object/draft_schematic/chemistry/medpack_enhance_health_c.iff
+object/draft_schematic/chemistry/medpack_enhance_action_d.iff
+object/draft_schematic/chemistry/medpack_enhance_health_d.iff
+object/draft_schematic/chemistry/medpack_enhance_constitution_a.iff
+object/draft_schematic/chemistry/medpack_enhance_quickness_a.iff
+object/draft_schematic/chemistry/medpack_enhance_stamina_a.iff
+object/draft_schematic/chemistry/medpack_enhance_strength_a.iff
+object/draft_schematic/chemistry/medpack_enhance_poison_a.iff
+object/draft_schematic/chemistry/medpack_enhance_disease_a.iff
+object/draft_schematic/chemistry/medpack_enhance_constitution_b.iff
+object/draft_schematic/chemistry/medpack_enhance_quickness_b.iff
+object/draft_schematic/chemistry/medpack_enhance_stamina_b.iff
+object/draft_schematic/chemistry/medpack_enhance_strength_b.iff
+object/draft_schematic/chemistry/medpack_enhance_constitution_c.iff
+object/draft_schematic/chemistry/medpack_enhance_quickness_c.iff
+object/draft_schematic/chemistry/medpack_enhance_stamina_c.iff
+object/draft_schematic/chemistry/medpack_enhance_strength_c.iff
+object/draft_schematic/chemistry/medpack_enhance_poison_b.iff
+object/draft_schematic/chemistry/medpack_enhance_disease_b.iff
+object/draft_schematic/chemistry/medpack_enhance_constitution_d.iff
+object/draft_schematic/chemistry/medpack_enhance_quickness_d.iff
+object/draft_schematic/chemistry/medpack_enhance_stamina_d.iff
+object/draft_schematic/chemistry/medpack_enhance_strength_d.iff
+object/draft_schematic/chemistry/medpack_enhance_poison_c.iff
+object/draft_schematic/chemistry/medpack_enhance_disease_c.iff
+object/draft_schematic/munition/component/warhead_fusing_mechanism.iff
+object/draft_schematic/munition/component/warhead_light.iff
+object/draft_schematic/munition/grenade_fragmentation_c_12.iff
+object/draft_schematic/munition/component/warhead_chemical.iff
+object/draft_schematic/munition/component/warhead_medium.iff
+object/draft_schematic/munition/grenade_fragmentation_c_22.iff
+object/draft_schematic/munition/mine_dxr55.iff
+object/draft_schematic/munition/grenade_glop.iff
+object/draft_schematic/munition/grenade_cryoban_ww_41.iff
+object/draft_schematic/munition/component/warhead_stabilizer.iff
+object/draft_schematic/munition/component/warhead_heavy.iff
+object/draft_schematic/munition/detonator_thermal_class_a.iff
+object/draft_schematic/munition/mine_xg.iff
+object/draft_schematic/munition/grenade_proton.iff
+object/draft_schematic/munition/mine_anti_vehicle.iff
+object/draft_schematic/weapon/heavy_rocket_launcher.iff
+object/draft_schematic/munition/detonator_thermal_imperial_issue.iff
+object/draft_schematic/chemistry/med_stimpack_range_a.iff
+object/draft_schematic/chemistry/med_stimpack_range_b.iff
+object/draft_schematic/chemistry/med_stimpack_range_c.iff
+object/draft_schematic/chemistry/med_stimpack_area_a.iff
+object/draft_schematic/chemistry/med_stimpack_range_d.iff
+object/draft_schematic/chemistry/med_stimpack_area_b.iff
+object/draft_schematic/chemistry/med_stimpack_range_e.iff
+object/draft_schematic/chemistry/med_stimpack_area_c.iff
+object/draft_schematic/chemistry/med_stimpack_state_blinded_a.iff
+object/draft_schematic/chemistry/med_stimpack_state_dizzy_a.iff
+object/draft_schematic/chemistry/med_stimpack_state_intimidated_a.iff
+object/draft_schematic/chemistry/med_stimpack_state_stunned_a.iff
+object/draft_schematic/chemistry/medpack_cure_poison_a.iff
+object/draft_schematic/chemistry/medpack_cure_poison_area_a.iff
+object/draft_schematic/chemistry/medpack_cure_poison_b.iff
+object/draft_schematic/chemistry/medpack_cure_poison_area_b.iff
+object/draft_schematic/chemistry/medpack_cure_poison_c.iff
+object/draft_schematic/chemistry/medpack_cure_poison_area_c.iff
+object/draft_schematic/chemistry/medpack_cure_disease_a.iff
+object/draft_schematic/chemistry/medpack_cure_disease_area_a.iff
+object/draft_schematic/chemistry/medpack_cure_disease_b.iff
+object/draft_schematic/chemistry/medpack_cure_disease_area_b.iff
+object/draft_schematic/chemistry/medpack_cure_disease_c.iff
+object/draft_schematic/chemistry/medpack_cure_disease_area_c.iff
+object/draft_schematic/chemistry/medpack_poison_health_a.iff
+object/draft_schematic/chemistry/medpack_poison_action_a.iff
+object/draft_schematic/chemistry/medpack_poison_mind_a.iff
+object/draft_schematic/chemistry/medpack_poison_health_b.iff
+object/draft_schematic/chemistry/medpack_poison_action_b.iff
+object/draft_schematic/chemistry/medpack_poison_mind_b.iff
+object/draft_schematic/chemistry/medpack_poison_health_c.iff
+object/draft_schematic/chemistry/medpack_poison_action_c.iff
+object/draft_schematic/chemistry/medpack_poison_mind_c.iff
+object/draft_schematic/chemistry/medpack_poison_area_health_a.iff
+object/draft_schematic/chemistry/medpack_poison_area_action_a.iff
+object/draft_schematic/chemistry/medpack_poison_area_mind_a.iff
+object/draft_schematic/chemistry/medpack_poison_area_health_b.iff
+object/draft_schematic/chemistry/medpack_poison_area_action_b.iff
+object/draft_schematic/chemistry/medpack_poison_area_mind_b.iff
+object/draft_schematic/chemistry/medpack_poison_area_health_c.iff
+object/draft_schematic/chemistry/medpack_poison_area_action_c.iff
+object/draft_schematic/chemistry/medpack_poison_area_mind_c.iff
+object/draft_schematic/chemistry/medpack_disease_action_a.iff
+object/draft_schematic/chemistry/medpack_disease_constitution_a.iff
+object/draft_schematic/chemistry/medpack_disease_focus_a.iff
+object/draft_schematic/chemistry/medpack_disease_health_a.iff
+object/draft_schematic/chemistry/medpack_disease_mind_a.iff
+object/draft_schematic/chemistry/medpack_disease_quickness_a.iff
+object/draft_schematic/chemistry/medpack_disease_stamina_a.iff
+object/draft_schematic/chemistry/medpack_disease_strength_a.iff
+object/draft_schematic/chemistry/medpack_disease_willpower_a.iff
+object/draft_schematic/chemistry/medpack_disease_action_b.iff
+object/draft_schematic/chemistry/medpack_disease_constitution_b.iff
+object/draft_schematic/chemistry/medpack_disease_focus_b.iff
+object/draft_schematic/chemistry/medpack_disease_health_b.iff
+object/draft_schematic/chemistry/medpack_disease_mind_b.iff
+object/draft_schematic/chemistry/medpack_disease_quickness_b.iff
+object/draft_schematic/chemistry/medpack_disease_stamina_b.iff
+object/draft_schematic/chemistry/medpack_disease_strength_b.iff
+object/draft_schematic/chemistry/medpack_disease_willpower_b.iff
+object/draft_schematic/chemistry/medpack_disease_action_c.iff
+object/draft_schematic/chemistry/medpack_disease_constitution_c.iff
+object/draft_schematic/chemistry/medpack_disease_focus_c.iff
+object/draft_schematic/chemistry/medpack_disease_health_c.iff
+object/draft_schematic/chemistry/medpack_disease_mind_c.iff
+object/draft_schematic/chemistry/medpack_disease_quickness_c.iff
+object/draft_schematic/chemistry/medpack_disease_stamina_c.iff
+object/draft_schematic/chemistry/medpack_disease_strength_c.iff
+object/draft_schematic/chemistry/medpack_disease_willpower_c.iff
+object/draft_schematic/chemistry/medpack_disease_area_action_a.iff
+object/draft_schematic/chemistry/medpack_disease_area_constitution_a.iff
+object/draft_schematic/chemistry/medpack_disease_area_focus_a.iff
+object/draft_schematic/chemistry/medpack_disease_area_health_a.iff
+object/draft_schematic/chemistry/medpack_disease_area_mind_a.iff
+object/draft_schematic/chemistry/medpack_disease_area_quickness_a.iff
+object/draft_schematic/chemistry/medpack_disease_area_stamina_a.iff
+object/draft_schematic/chemistry/medpack_disease_area_strength_a.iff
+object/draft_schematic/chemistry/medpack_disease_area_willpower_a.iff
+object/draft_schematic/chemistry/medpack_disease_area_action_b.iff
+object/draft_schematic/chemistry/medpack_disease_area_constitution_b.iff
+object/draft_schematic/chemistry/medpack_disease_area_focus_b.iff
+object/draft_schematic/chemistry/medpack_disease_area_health_b.iff
+object/draft_schematic/chemistry/medpack_disease_area_mind_b.iff
+object/draft_schematic/chemistry/medpack_disease_area_quickness_b.iff
+object/draft_schematic/chemistry/medpack_disease_area_stamina_b.iff
+object/draft_schematic/chemistry/medpack_disease_area_strength_b.iff
+object/draft_schematic/chemistry/medpack_disease_area_willpower_b.iff
+object/draft_schematic/chemistry/medpack_disease_area_action_c.iff
+object/draft_schematic/chemistry/medpack_disease_area_constitution_c.iff
+object/draft_schematic/chemistry/medpack_disease_area_focus_c.iff
+object/draft_schematic/chemistry/medpack_disease_area_health_c.iff
+object/draft_schematic/chemistry/medpack_disease_area_mind_c.iff
+object/draft_schematic/chemistry/medpack_disease_area_quickness_c.iff
+object/draft_schematic/chemistry/medpack_disease_area_stamina_c.iff
+object/draft_schematic/chemistry/medpack_disease_area_strength_c.iff
+object/draft_schematic/chemistry/medpack_disease_area_willpower_c.iff
+object/draft_schematic/structure/component/structural_module.iff
+object/draft_schematic/structure/component/structure_light_power_core_unit.iff
+object/draft_schematic/structure/component/structure_small_storage_section.iff
+object/draft_schematic/structure/house_player_small.iff
+object/draft_schematic/structure/corellia_house_player_small.iff
+object/draft_schematic/structure/corellia_house_player_small_floorplan_02.iff
+object/draft_schematic/structure/naboo_house_player_small.iff
+object/draft_schematic/structure/component/structure_generator_turbine.iff
+object/draft_schematic/structure/component/wall_module.iff
+object/draft_schematic/structure/component/structure_power_core_unit.iff
+object/draft_schematic/structure/component/structure_storage_section.iff
+object/draft_schematic/structure/corellia_house_player_small_style_02_floorplan_02.iff
+object/draft_schematic/structure/corellia_house_player_small_style_02.iff
+object/draft_schematic/structure/naboo_house_player_small_style_02.iff
+object/draft_schematic/structure/house_player_small_style_02.iff
+object/draft_schematic/structure/generic_house_player_small_floorplan_02.iff
+object/draft_schematic/structure/generic_house_player_small.iff
+object/draft_schematic/structure/corellia_house_player_medium.iff
+object/draft_schematic/structure/naboo_house_player_medium.iff
+object/draft_schematic/structure/house_player_medium.iff
+object/draft_schematic/structure/generic_house_player_small_style_02.iff
+object/draft_schematic/structure/generic_house_player_small_style_02_floorplan_02.iff
+object/draft_schematic/structure/corellia_house_player_large.iff
+object/draft_schematic/structure/naboo_house_player_large.iff
+object/draft_schematic/structure/house_player_large.iff
+object/draft_schematic/structure/generic_house_player_medium.iff
+object/draft_schematic/structure/generic_house_player_medium_style_02.iff
+object/draft_schematic/structure/corellia_house_player_large_style_02.iff
+object/draft_schematic/structure/generic_house_player_large.iff
+object/draft_schematic/structure/generic_house_player_large_style_02.iff
+object/draft_schematic/structure/corellia_house_guild_hall.iff
+object/draft_schematic/structure/generic_house_guild_hall.iff
+object/draft_schematic/structure/house_guild_hall.iff
+object/draft_schematic/structure/naboo_house_guild_hall.iff
+object/draft_schematic/structure/installation_factory_weapon.iff
+object/draft_schematic/structure/installation_mining_liquid_vapor.iff
+object/draft_schematic/structure/component/structure_fluidic_drilling_pumping_unit.iff
+object/draft_schematic/structure/component/structure_harvesting_mechanism.iff
+object/draft_schematic/structure/component/structure_ore_mining_unit.iff
+object/draft_schematic/structure/component/structure_manufacturing_mechanism.iff
+object/draft_schematic/structure/component/structure_light_ore_mining_unit.iff
+object/draft_schematic/structure/installation_factory_clothing.iff
+object/draft_schematic/structure/installation_factory_food.iff
+object/draft_schematic/structure/installation_factory_structure.iff
+object/draft_schematic/structure/installation_mining_ore.iff
+object/draft_schematic/structure/installation_generator_solar.iff
+object/draft_schematic/structure/installation_mining_gas.iff
+object/draft_schematic/structure/installation_mining_liquid.iff
+object/draft_schematic/structure/component/structure_heavy_harvesting_mechanism.iff
+object/draft_schematic/structure/component/structure_turbo_fluidic_drilling_pumping_unit.iff
+object/draft_schematic/structure/installation_mining_liquid_heavy.iff
+object/draft_schematic/structure/installation_mining_organic_flora.iff
+object/draft_schematic/structure/installation_mining_liquid_vapor_heavy.iff
+object/draft_schematic/structure/installation_mining_organic_flora_heavy.iff
+object/draft_schematic/structure/installation_mining_gas_heavy.iff
+object/draft_schematic/structure/installation_mining_ore_heavy.iff
+object/draft_schematic/structure/installation_generator_fusion.iff
+object/draft_schematic/weapon/component/blade_vibro_unit.iff
+object/draft_schematic/weapon/component/sword_core.iff
+object/draft_schematic/weapon/component/reinforcement_core.iff
+object/draft_schematic/weapon/sword.iff
+object/draft_schematic/weapon/staff_metal.iff
+object/draft_schematic/weapon/lance_vibro_controller_fp.iff
+object/draft_schematic/weapon/baton_gaderiffi.iff
+object/draft_schematic/weapon/battleaxe.iff
+object/draft_schematic/weapon/knuckler_vibro.iff
+object/draft_schematic/weapon/sword_curved.iff
+object/draft_schematic/weapon/component/sword_core_advanced.iff
+object/draft_schematic/weapon/component/reinforcement_core_advanced.iff
+object/draft_schematic/weapon/knife_vibroblade.iff
+object/draft_schematic/weapon/sword_ryyk_blade.iff
+object/draft_schematic/weapon/katana.iff
+object/draft_schematic/weapon/component/blade_vibro_unit_advanced.iff
+object/draft_schematic/weapon/baton_stun.iff
+object/draft_schematic/weapon/axe_vibro.iff
+object/draft_schematic/weapon/lance_vibro.iff
+object/draft_schematic/weapon/cleaver.iff
+object/draft_schematic/weapon/poleaxe_vibro.iff
+object/draft_schematic/weapon/maul.iff
+object/draft_schematic/slicing/slicing_weapon_upgrade_kit.iff
+object/draft_schematic/weapon/component/blaster_pistol_barrel.iff
+object/draft_schematic/weapon/component/blaster_power_handler.iff
+object/draft_schematic/weapon/component/projectile_feed_mechanism.iff
+object/draft_schematic/weapon/component/projectile_pistol_barrel.iff
+object/draft_schematic/weapon/component/scope_weapon.iff
+object/draft_schematic/weapon/component/stock.iff
+object/draft_schematic/weapon/pistol_blaster_d18.iff
+object/draft_schematic/weapon/rifle_blaster_dlt20.iff
+object/draft_schematic/weapon/component/blaster_rifle_barrel.iff
+object/draft_schematic/weapon/component/projectile_rifle_barrel.iff
+object/draft_schematic/weapon/component/chemical_dispersion_mechanism.iff
+object/draft_schematic/weapon/rifle_light_blaster_dh17_carbine.iff
+object/draft_schematic/weapon/pistol_blaster_dl44.iff
+object/draft_schematic/weapon/pistol_blaster_scout_trooper.iff
+object/draft_schematic/weapon/rifle_blaster_dlt20a.iff
+object/draft_schematic/weapon/pistol_flechette_fwg5.iff
+object/draft_schematic/weapon/pistol_projectile_striker.iff
+object/draft_schematic/weapon/pistol_blaster_dl44_metal.iff
+object/draft_schematic/weapon/rifle_light_blaster_dh17_carbine_snubnose.iff
+object/draft_schematic/weapon/rifle_projectile_tusken.iff
+object/draft_schematic/weapon/pistol_blaster_dh17.iff
+object/draft_schematic/weapon/pistol_blaster_power5.iff
+object/draft_schematic/weapon/rifle_light_blaster_e11_carbine.iff
+object/draft_schematic/weapon/rifle_blaster_e11.iff
+object/draft_schematic/weapon/rifle_sonic_sg82.iff
+object/draft_schematic/weapon/component/blaster_pistol_barrel_advanced.iff
+object/draft_schematic/weapon/component/blaster_power_handler_advanced.iff
+object/draft_schematic/weapon/component/projectile_feed_mechanism_advanced.iff
+object/draft_schematic/weapon/component/projectile_pistol_barrel_advanced.iff
+object/draft_schematic/weapon/component/scope_weapon_advanced.iff
+object/draft_schematic/weapon/component/stock_advanced.iff
+object/draft_schematic/weapon/pistol_launcher.iff
+object/draft_schematic/weapon/pistol_scatter.iff
+object/draft_schematic/weapon/pistol_blaster_short_range_combat.iff
+object/draft_schematic/weapon/rifle_light_blaster_laser_carbine.iff
+object/draft_schematic/weapon/rifle_blaster_laser_rifle.iff
+object/draft_schematic/weapon/rifle_light_blaster_ee3.iff
+object/draft_schematic/weapon/rifle_spray_stick_stohli.iff
+object/draft_schematic/weapon/component/blaster_rifle_barrel_advanced.iff
+object/draft_schematic/weapon/component/projectile_rifle_barrel_advanced.iff
+object/draft_schematic/weapon/heavy_particle_beam.iff
+object/draft_schematic/weapon/heavy_lightning_beam.iff
+object/draft_schematic/weapon/razor_knuckler.iff
+object/draft_schematic/weapon/rifle_lightning.iff
+object/draft_schematic/weapon/rifle_beam.iff
+object/draft_schematic/weapon/rifle_tangle_gun7.iff
+object/draft_schematic/weapon/pistol_disrupter_dx2.iff
+object/draft_schematic/weapon/rifle_light_blaster_imperial_scout_carbine.iff
+object/draft_schematic/weapon/rifle_disrupter_dxr6.iff
+object/draft_schematic/weapon/rifle_blaster_ionization_jawa.iff
+object/draft_schematic/weapon/rifle_t21.iff
+object/draft_schematic/weapon/heavy_acid_beam.iff
+object/draft_schematic/weapon/pistol_republic_blaster.iff
+object/draft_schematic/weapon/rifle_acid_beam.iff
+object/draft_schematic/weapon/rifle_flame_thrower.iff
+object/draft_schematic/scout/item_camp_basic.iff
+object/draft_schematic/scout/item_camp_multi.iff
+object/draft_schematic/scout/item_camp_improved.iff
+object/draft_schematic/scout/item_camp_quality.iff
+object/draft_schematic/scout/item_camp_elite.iff
+object/draft_schematic/scout/item_camp_luxury.iff
+object/draft_schematic/scout/item_trap_drowsy_dart.iff
+object/draft_schematic/scout/item_trap_melee_def_1.iff
+object/draft_schematic/scout/item_trap_enraging_spur.iff
+object/draft_schematic/scout/item_trap_ranged_def_1.iff
+object/draft_schematic/scout/item_trap_noise_maker.iff
+object/draft_schematic/scout/item_trap_state_def_1.iff
+object/draft_schematic/scout/item_trap_tranq_dart.iff
+object/draft_schematic/scout/item_trap_melee_ranged_def_1.iff
+object/draft_schematic/scout/item_trap_webber.iff
+object/draft_schematic/scout/item_trap_flash_bomb.iff
+object/draft_schematic/scout/item_trap_sonic_pulse.iff
+object/draft_schematic/scout/item_camokit_corellia.iff
+object/draft_schematic/scout/item_camokit_naboo.iff
+object/draft_schematic/scout/item_camokit_tatooine.iff
+object/draft_schematic/scout/item_camokit_rori.iff
+object/draft_schematic/scout/item_camokit_talus.iff
+object/draft_schematic/scout/item_camokit_yavin.iff
+object/draft_schematic/scout/item_camokit_dantooine.iff
+object/draft_schematic/scout/item_camokit_lok.iff
+object/draft_schematic/scout/item_camokit_endor.iff
+object/draft_schematic/scout/item_camokit_dathomir.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_bleeding.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_light_flavor.iff
+object/draft_schematic/bio_engineer/utilities/pet_stimpack_a.iff
+object/draft_schematic/bio_engineer/dna_template/dna_template_generic.iff
+object/draft_schematic/bio_engineer/creature/creature_bearded_jax.iff
+object/draft_schematic/bio_engineer/creature/creature_eopie.iff
+object/draft_schematic/bio_engineer/creature/creature_kaadu.iff
+object/draft_schematic/bio_engineer/creature/creature_gnort.iff
+object/draft_schematic/bio_engineer/creature/creature_durni.iff
+object/draft_schematic/bio_engineer/creature/creature_vir_vur.iff
+object/draft_schematic/bio_engineer/creature/creature_squall.iff
+object/draft_schematic/bio_engineer/creature/creature_ikopi.iff
+object/draft_schematic/bio_engineer/creature/creature_swirl_prong.iff
+object/draft_schematic/bio_engineer/creature/creature_dewback.iff
+object/draft_schematic/bio_engineer/creature/creature_gualama.iff
+object/draft_schematic/bio_engineer/creature/creature_kahmurra.iff
+object/draft_schematic/bio_engineer/creature/creature_krahbu.iff
+object/draft_schematic/bio_engineer/creature/creature_tybis.iff
+object/draft_schematic/bio_engineer/creature/creature_kwi.iff
+object/draft_schematic/bio_engineer/creature/creature_mott.iff
+object/draft_schematic/bio_engineer/creature/creature_verne.iff
+object/draft_schematic/bio_engineer/creature/creature_cu_pa.iff
+object/draft_schematic/bio_engineer/creature/creature_roba.iff
+object/draft_schematic/bio_engineer/creature/creature_huurton.iff
+object/draft_schematic/bio_engineer/creature/creature_bageraset.iff
+object/draft_schematic/bio_engineer/creature/creature_gurnaset.iff
+object/draft_schematic/bio_engineer/creature/creature_choku.iff
+object/draft_schematic/bio_engineer/creature/creature_carrion_spat.iff
+object/draft_schematic/bio_engineer/creature/creature_pugoriss.iff
+object/draft_schematic/bio_engineer/creature/creature_kusak.iff
+object/draft_schematic/bio_engineer/creature/creature_gurrcat.iff
+object/draft_schematic/bio_engineer/creature/creature_zucca_boar.iff
+object/draft_schematic/bio_engineer/creature/creature_langlatch.iff
+object/draft_schematic/bio_engineer/creature/creature_kima.iff
+object/draft_schematic/bio_engineer/creature/creature_dune_lizard.iff
+object/draft_schematic/bio_engineer/creature/creature_bocatt.iff
+object/draft_schematic/bio_engineer/creature/creature_boar_wolf.iff
+object/draft_schematic/bio_engineer/creature/creature_vesp.iff
+object/draft_schematic/bio_engineer/creature/creature_blurrg.iff
+object/draft_schematic/bio_engineer/creature/creature_bantha.iff
+object/draft_schematic/bio_engineer/creature/creature_bol.iff
+object/draft_schematic/bio_engineer/creature/creature_bolle_bol.iff
+object/draft_schematic/bio_engineer/creature/creature_bolma.iff
+object/draft_schematic/bio_engineer/creature/creature_brackaset.iff
+object/draft_schematic/bio_engineer/creature/creature_falumpaset.iff
+object/draft_schematic/bio_engineer/creature/creature_ronto.iff
+object/draft_schematic/bio_engineer/creature/creature_snorbal.iff
+object/draft_schematic/bio_engineer/creature/creature_bordok.iff
+object/draft_schematic/bio_engineer/creature/creature_gronda.iff
+object/draft_schematic/bio_engineer/creature/creature_piket.iff
+object/draft_schematic/bio_engineer/creature/creature_thune.iff
+object/draft_schematic/bio_engineer/creature/creature_angler.iff
+object/draft_schematic/bio_engineer/creature/creature_dalyrake.iff
+object/draft_schematic/bio_engineer/creature/creature_guf_drolg.iff
+object/draft_schematic/bio_engineer/creature/creature_gurreck.iff
+object/draft_schematic/bio_engineer/creature/creature_narglatch.iff
+object/draft_schematic/bio_engineer/creature/creature_sand_panther.iff
+object/draft_schematic/bio_engineer/creature/creature_slice_hound.iff
+object/draft_schematic/bio_engineer/creature/creature_kliknik.iff
+object/draft_schematic/bio_engineer/creature/creature_mawgax.iff
+object/draft_schematic/bio_engineer/creature/creature_merek.iff
+object/draft_schematic/bio_engineer/creature/creature_hermit_spider.iff
+object/draft_schematic/bio_engineer/creature/creature_shear_mite.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_entertainer.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_intimidate.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_light_nutrition.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_light_quantity.iff
+object/draft_schematic/bio_engineer/utilities/pet_vitapack_a.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_medic.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_taming.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_camo.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_cover.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_light_filling.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_medium_quantity.iff
+object/draft_schematic/bio_engineer/utilities/pet_stimpack_b.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_defense.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_entertainer_2.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_bleeding_2.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_medium_flavor.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_medium_nutrition.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_medium_filling.iff
+object/draft_schematic/bio_engineer/utilities/pet_vitapack_b.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_medic_2.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_casual_taming_2.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_camo_2.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_cover_2.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_heavy_flavor.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_heavy_quantity.iff
+object/draft_schematic/bio_engineer/utilities/pet_stimpack_c.iff
+object/draft_schematic/bio_engineer/creature/creature_torton.iff
+object/draft_schematic/bio_engineer/creature/creature_kimogila.iff
+object/draft_schematic/bio_engineer/creature/creature_rancor.iff
+object/draft_schematic/bio_engineer/creature/creature_fambaa.iff
+object/draft_schematic/bio_engineer/creature/creature_veermok.iff
+object/draft_schematic/bio_engineer/creature/creature_graul.iff
+object/draft_schematic/bio_engineer/creature/creature_huf_dun.iff
+object/draft_schematic/bio_engineer/creature/creature_malkloc.iff
+object/draft_schematic/bio_engineer/creature/creature_sharnaff.iff
+object/draft_schematic/bio_engineer/creature/creature_woolamander.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_defense_2.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_clothing_field_intimidate_2.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_heavy_filling.iff
+object/draft_schematic/bio_engineer/bio_component/bio_component_food_heavy_nutrition.iff
+object/draft_schematic/bio_engineer/utilities/pet_vitapack_c.iff
+object/draft_schematic/bio_engineer/utilities/pet_stimpack_d.iff
+object/draft_schematic/spices/spice_grey_gabaki.iff
+object/draft_schematic/spices/spice_scramjet.iff
+object/draft_schematic/spices/spice_shadowpaw.iff
+object/draft_schematic/spices/spice_yarrock.iff
+object/draft_schematic/spices/spice_giggledust.iff
+object/draft_schematic/spices/spice_sweetblossom.iff
 
 
-	{path="object/draft_schematic/spices/spice_droid_lube.iff"},
-	{path="object/draft_schematic/spices/spice_pyrepenol.iff"},
-	{path="object/draft_schematic/spices/spice_sedative_h4b.iff"},
-	{path="object/draft_schematic/spices/spice_crash_n_burn.iff"},
-	{path="object/draft_schematic/spices/spice_gunjack.iff"},
-	{path="object/draft_schematic/spices/spice_thruster_head.iff"},
-	{path="object/draft_schematic/spices/spice_booster_blue.iff"},
-	{path="object/draft_schematic/spices/spice_muon_gold.iff"},
-	{path="object/draft_schematic/spices/spice_neutron_pixey.iff"},
-	{path="object/draft_schematic/slicing/slicing_laser_knife.iff"},
-	{path="object/draft_schematic/slicing/slicing_flow_analyzer.iff"},
-	{path="object/draft_schematic/slicing/slicing_molecular_clamp.iff"},
-	{path="object/draft_schematic/weapon/rifle_bowcaster.iff"},
-	{path="object/draft_schematic/item/item_jedi_tool.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_refined_crystal_pack.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_training.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen1.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen1.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen1.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen2.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen3.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen2.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen3.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen2.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen3.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen4.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen4.iff"},
-	{path="object/draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen4.iff"},
-	{path="object/draft_schematic/structure/city/bank_corellia.iff"},
-	{path="object/draft_schematic/structure/city/bank_naboo.iff"},
-	{path="object/draft_schematic/structure/city/bank_tatooine.iff"},
-	{path="object/draft_schematic/furniture/city/furniture_streetlamp.iff"},
-	{path="object/draft_schematic/furniture/city/furniture_statue.iff"},
-	{path="object/draft_schematic/structure/merchant_tent.iff"},
-	{path="object/draft_schematic/structure/city/cloning_corellia.iff"},
-	{path="object/draft_schematic/structure/city/cloning_naboo.iff"},
-	{path="object/draft_schematic/structure/city/cloning_tatooine.iff"},
-	{path="object/draft_schematic/structure/city/shuttleport_corellia.iff"},
-	{path="object/draft_schematic/structure/city/shuttleport_naboo.iff"},
-	{path="object/draft_schematic/structure/city/shuttleport_tatooine.iff"},
-	{path="object/draft_schematic/furniture/city/furniture_fountain.iff"},
-	{path="object/draft_schematic/structure/city/garden_small.iff"},
-	{path="object/draft_schematic/structure/city/cantina_corellia.iff"},
-	{path="object/draft_schematic/structure/city/cantina_naboo.iff"},
-	{path="object/draft_schematic/structure/city/cantina_tatooine.iff"},
-	{path="object/draft_schematic/structure/city/hospital_corellia.iff"},
-	{path="object/draft_schematic/structure/city/hospital_naboo.iff"},
-	{path="object/draft_schematic/structure/city/hospital_tatooine.iff"},
-	{path="object/draft_schematic/structure/city/theater_corellia.iff"},
-	{path="object/draft_schematic/structure/city/theater_naboo.iff"},
-	{path="object/draft_schematic/structure/city/theater_tatooine.iff"},
-	{path="object/draft_schematic/structure/city/garden_medium.iff"},
-	{path="object/draft_schematic/structure/city/garage_corellia.iff"},
-	{path="object/draft_schematic/structure/city/garage_naboo.iff"},
-	{path="object/draft_schematic/structure/city/garage_tatooine.iff"},
-	{path="object/draft_schematic/structure/city/cityhall_corellia.iff"},
-	{path="object/draft_schematic/structure/city/cityhall_naboo.iff"},
-	{path="object/draft_schematic/structure/city/cityhall_tatooine.iff"},
-	{path="object/draft_schematic/structure/city/garden_large.iff"},
-	{path="object/draft_schematic/structure/city/garden_exotic_dantooine.iff"},
-	{path="object/draft_schematic/structure/city/garden_exotic_dathomir.iff"},
-	{path="object/draft_schematic/structure/city/garden_exotic_endor.iff"},
-	{path="object/draft_schematic/vehicle/civilian/landspeeder_x34.iff"},
-	{path="object/draft_schematic/vehicle/civilian/speeder_bike_swoop.iff"},
-	{path="object/draft_schematic/vehicle/civilian/speeder_bike.iff"},
-	{path="object/draft_schematic/vehicle/vehicle_customization_kit.iff"},
-	{path="object/draft_schematic/space/chassis/z95.iff"},
-	{path="object/draft_schematic/space/chassis/tie_light_duty.iff"},
-	{path="object/draft_schematic/space/chassis/hutt_light_s01.iff"},
-	{path="object/draft_schematic/space/chassis/hutt_light_s02.iff"},
-	{path="object/draft_schematic/space/armor/light_durasteel_plating.iff"},
-	{path="object/draft_schematic/space/capacitor/capacitor_mk1.iff"},
-	{path="object/draft_schematic/space/engine/eng_mk1.iff"},
-	{path="object/draft_schematic/space/reactor/fusion_reactor_mk1.iff"},
-	{path="object/draft_schematic/space/shields/light_deflector_shields.iff"},
-	{path="object/draft_schematic/space/reverse_engineering/analysis_tool.iff"},
-	{path="object/draft_schematic/space/repair/armor_repair_kit.iff"},
-	{path="object/draft_schematic/space/repair/engine_repair_kit.iff"},
-	{path="object/draft_schematic/space/repair/chassis_repair_kit.iff"},
-	{path="object/draft_schematic/space/repair/reactor_repair_kit.iff"},
-	{path="object/draft_schematic/space/repair/booster_repair_kit.iff"},
-	{path="object/draft_schematic/space/repair/capacitor_repair_kit.iff"},
-	{path="object/draft_schematic/space/repair/droid_interface_repair_kit.iff"},
-	{path="object/draft_schematic/space/repair/plasma_conduit_repair_kit.iff"},
-	{path="object/draft_schematic/space/repair/shield_repair_kit.iff"},
-	{path="object/draft_schematic/space/repair/weapon_repair_kit.iff"},
-	{path="object/draft_schematic/space/booster/booster_mk1.iff"},
-	{path="object/draft_schematic/space/droid_interface/ddi_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_light_blaster.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_light_blaster_green.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_light_disruptor.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_light_ioncannon.iff"},
-	{path="object/draft_schematic/space/weapon/missile/countermeasure_chaff_launcher.iff"},
-	{path="object/draft_schematic/space/weapon/missile/countermeasure_chaff_pack.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_proton_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_proton_missile_mk1.iff"},
-	{path="object/draft_schematic/space/chassis/texture_kit_s01.iff"},
-	{path="object/draft_schematic/space/chassis/texture_kit_s02.iff"},
-	{path="object/draft_schematic/space/chassis/tiefighter.iff"},
-	{path="object/draft_schematic/space/armor/armor_reinforcement_panel_mk1.iff"},
-	{path="object/draft_schematic/space/armor/mass_reduction_kit_mk1.iff"},
-	{path="object/draft_schematic/space/chassis/ywing.iff"},
-	{path="object/draft_schematic/space/chassis/xwing_customization_kit.iff"},
-	{path="object/draft_schematic/space/chassis/hutt_medium_s01.iff"},
-	{path="object/draft_schematic/space/chassis/hutt_medium_s02.iff"},
-	{path="object/draft_schematic/space/chassis/texture_kit_s03.iff"},
-	{path="object/draft_schematic/space/armor/durasteel_plating.iff"},
-	{path="object/draft_schematic/space/chassis/ywing_longprobe.iff"},
-	{path="object/draft_schematic/space/chassis/tie_in.iff"},
-	{path="object/draft_schematic/space/chassis/hutt_heavy_s01.iff"},
-	{path="object/draft_schematic/space/chassis/hutt_heavy_s02.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_light_s01.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_light_s02.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_light_s03.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_light_s04.iff"},
-	{path="object/draft_schematic/space/chassis/texture_kit_s04.iff"},
-	{path="object/draft_schematic/space/armor/armor_reinforcement_panel_mk2.iff"},
-	{path="object/draft_schematic/space/armor/mass_reduction_kit_mk2.iff"},
-	{path="object/draft_schematic/space/armor/heavy_durasteel_plating.iff"},
-	{path="object/draft_schematic/space/chassis/xwing.iff"},
-	{path="object/draft_schematic/space/chassis/tieinterceptor.iff"},
-	{path="object/draft_schematic/space/chassis/tiebomber.iff"},
-	{path="object/draft_schematic/space/chassis/texture_kit_s05.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_medium_s01.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_medium_s02.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_medium_s03.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_medium_s04.iff"},
-	{path="object/draft_schematic/space/armor/adv_durasteel_plating.iff"},
-	{path="object/draft_schematic/space/armor/armor_reinforcement_panel_mk3.iff"},
-	{path="object/draft_schematic/space/armor/mass_reduction_kit_mk3.iff"},
-	{path="object/draft_schematic/space/chassis/tieadvanced.iff"},
-	{path="object/draft_schematic/space/chassis/tieaggressor.iff"},
-	{path="object/draft_schematic/space/chassis/awing.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_heavy_s01.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_heavy_s02.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_heavy_s03.iff"},
-	{path="object/draft_schematic/space/chassis/blacksun_heavy_s04.iff"},
-	{path="object/draft_schematic/space/chassis/texture_kit_s06.iff"},
-	{path="object/draft_schematic/space/armor/exp_durasteel_plating.iff"},
-	{path="object/draft_schematic/space/armor/armor_reinforcement_panel_mk4.iff"},
-	{path="object/draft_schematic/space/armor/mass_reduction_kit_mk4.iff"},
-	{path="object/draft_schematic/space/engine/engine_overdriver_mk1.iff"},
-	{path="object/draft_schematic/space/engine/engine_limiter_mk1.iff"},
-	{path="object/draft_schematic/space/booster/booster_overdriver_mk1.iff"},
-	{path="object/draft_schematic/space/booster/extended_life_fuel_cell_mk1.iff"},
-	{path="object/draft_schematic/space/booster/fast_charge_fuel_cell_mk1.iff"},
-	{path="object/draft_schematic/space/booster/heavy_fuel_cell_mk1.iff"},
-	{path="object/draft_schematic/space/engine/eng_mk2.iff"},
-	{path="object/draft_schematic/space/booster/booster_mk2.iff"},
-	{path="object/draft_schematic/space/engine/engine_overdriver_mk2.iff"},
-	{path="object/draft_schematic/space/engine/engine_limiter_mk2.iff"},
-	{path="object/draft_schematic/space/booster/booster_overdriver_mk2.iff"},
-	{path="object/draft_schematic/space/booster/extended_life_fuel_cell_mk2.iff"},
-	{path="object/draft_schematic/space/booster/fast_charge_fuel_cell_mk2.iff"},
-	{path="object/draft_schematic/space/booster/heavy_fuel_cell_mk2.iff"},
-	{path="object/draft_schematic/space/engine/eng_mk3.iff"},
-	{path="object/draft_schematic/space/booster/booster_mk3.iff"},
-	{path="object/draft_schematic/space/booster/booster_overdriver_mk3.iff"},
-	{path="object/draft_schematic/space/booster/extended_life_fuel_cell_mk3.iff"},
-	{path="object/draft_schematic/space/booster/fast_charge_fuel_cell_mk3.iff"},
-	{path="object/draft_schematic/space/booster/heavy_fuel_cell_mk3.iff"},
-	{path="object/draft_schematic/space/engine/engine_overdriver_mk3.iff"},
-	{path="object/draft_schematic/space/engine/engine_limiter_mk3.iff"},
-	{path="object/draft_schematic/space/booster/booster_mk4.iff"},
-	{path="object/draft_schematic/space/engine/eng_mk4.iff"},
-	{path="object/draft_schematic/space/booster/booster_overdriver_mk4.iff"},
-	{path="object/draft_schematic/space/booster/extended_life_fuel_cell_mk4.iff"},
-	{path="object/draft_schematic/space/booster/fast_charge_fuel_cell_mk4.iff"},
-	{path="object/draft_schematic/space/booster/heavy_fuel_cell_mk4.iff"},
-	{path="object/draft_schematic/space/booster/booster_mk5.iff"},
-	{path="object/draft_schematic/space/engine/engine_overdriver_mk4.iff"},
-	{path="object/draft_schematic/space/engine/engine_limiter_mk4.iff"},
-	{path="object/draft_schematic/space/engine/eng_mk5.iff"},
-	{path="object/draft_schematic/space/droid_interface/droid_brain_upgrade_mk1.iff"},
-	{path="object/draft_schematic/space/droid_interface/maintenance_reduction_kit_mk1.iff"},
-	{path="object/draft_schematic/space/capacitor/energy_saver_battery_mk1.iff"},
-	{path="object/draft_schematic/space/capacitor/extended_life_battery_mk1.iff"},
-	{path="object/draft_schematic/space/capacitor/heavy_battery_mk1.iff"},
-	{path="object/draft_schematic/space/capacitor/quick_recharge_battery_mk1.iff"},
-	{path="object/draft_schematic/space/droid_interface/ddi_mk2.iff"},
-	{path="object/draft_schematic/space/capacitor/capacitor_mk2.iff"},
-	{path="object/draft_schematic/space/reactor/fusion_reactor_mk2.iff"},
-	{path="object/draft_schematic/space/reactor/reactor_limiter_mk1.iff"},
-	{path="object/draft_schematic/space/reactor/reactor_overcharger_mk1.iff"},
-	{path="object/draft_schematic/space/capacitor/capacitor_mk3.iff"},
-	{path="object/draft_schematic/space/droid_interface/ddi_mk3.iff"},
-	{path="object/draft_schematic/space/droid_interface/droid_brain_upgrade_mk2.iff"},
-	{path="object/draft_schematic/space/droid_interface/maintenance_reduction_kit_mk2.iff"},
-	{path="object/draft_schematic/space/capacitor/energy_saver_battery_mk2.iff"},
-	{path="object/draft_schematic/space/capacitor/extended_life_battery_mk2.iff"},
-	{path="object/draft_schematic/space/capacitor/heavy_battery_mk2.iff"},
-	{path="object/draft_schematic/space/capacitor/quick_recharge_battery_mk2.iff"},
-	{path="object/draft_schematic/space/reactor/reactor_limiter_mk2.iff"},
-	{path="object/draft_schematic/space/reactor/reactor_overcharger_mk2.iff"},
-	{path="object/draft_schematic/space/reactor/fusion_reactor_mk3.iff"},
-	{path="object/draft_schematic/space/capacitor/energy_saver_battery_mk3.iff"},
-	{path="object/draft_schematic/space/capacitor/extended_life_battery_mk3.iff"},
-	{path="object/draft_schematic/space/capacitor/heavy_battery_mk3.iff"},
-	{path="object/draft_schematic/space/capacitor/quick_recharge_battery_mk3.iff"},
-	{path="object/draft_schematic/space/droid_interface/droid_brain_upgrade_mk3.iff"},
-	{path="object/draft_schematic/space/droid_interface/maintenance_reduction_kit_mk3.iff"},
-	{path="object/draft_schematic/space/reactor/reactor_limiter_mk3.iff"},
-	{path="object/draft_schematic/space/reactor/reactor_overcharger_mk3.iff"},
-	{path="object/draft_schematic/space/droid_interface/ddi_mk4.iff"},
-	{path="object/draft_schematic/space/reactor/fusion_reactor_mk4.iff"},
-	{path="object/draft_schematic/space/capacitor/capacitor_mk4.iff"},
-	{path="object/draft_schematic/space/droid_interface/droid_brain_upgrade_mk4.iff"},
-	{path="object/draft_schematic/space/droid_interface/maintenance_reduction_kit_mk4.iff"},
-	{path="object/draft_schematic/space/capacitor/energy_saver_battery_mk4.iff"},
-	{path="object/draft_schematic/space/capacitor/extended_life_battery_mk4.iff"},
-	{path="object/draft_schematic/space/capacitor/heavy_battery_mk4.iff"},
-	{path="object/draft_schematic/space/capacitor/quick_recharge_battery_mk4.iff"},
-	{path="object/draft_schematic/space/reactor/reactor_limiter_mk4.iff"},
-	{path="object/draft_schematic/space/reactor/reactor_overcharger_mk4.iff"},
-	{path="object/draft_schematic/space/reactor/fusion_reactor_mk5.iff"},
-	{path="object/draft_schematic/space/droid_interface/ddi_mk5.iff"},
-	{path="object/draft_schematic/space/capacitor/capacitor_mk5.iff"},
-	{path="object/draft_schematic/space/weapon/missile/countermeasure_decoy_launcher.iff"},
-	{path="object/draft_schematic/space/weapon/missile/countermeasure_decoy_pack.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_concussion_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_concussion_missile_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/armor_effectiveness_intensifier_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/max_damage_intensifier_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/min_damage_intensifier_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/quick_shot_upgrade_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/shield_effectiveness_intensifier_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/speed_limiter_upgrade_mk1.iff"},
-	{path="object/draft_schematic/space/shields/shield_energy_saver_kit_mk1.iff"},
-	{path="object/draft_schematic/space/shields/shield_intensifier_mk1.iff"},
-	{path="object/draft_schematic/space/shields/shield_limiter_mk1.iff"},
-	{path="object/draft_schematic/space/shields/shield_overcharger_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_medium_blaster.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_medium_blaster_green.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_medium_ioncannon.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_medium_disruptor.iff"},
-	{path="object/draft_schematic/space/shields/deflector_shields.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_seismic_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_seismic_missile_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_proton_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_proton_missile_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/missile/countermeasure_microchaff_launcher.iff"},
-	{path="object/draft_schematic/space/weapon/missile/countermeasure_microchaff_pack.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_imagerec_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_imagerec_missile_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/armor_effectiveness_intensifier_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/max_damage_intensifier_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/min_damage_intensifier_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/quick_shot_upgrade_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/shield_effectiveness_intensifier_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/speed_limiter_upgrade_mk2.iff"},
-	{path="object/draft_schematic/space/shields/shield_energy_saver_kit_mk2.iff"},
-	{path="object/draft_schematic/space/shields/shield_intensifier_mk2.iff"},
-	{path="object/draft_schematic/space/shields/shield_limiter_mk2.iff"},
-	{path="object/draft_schematic/space/shields/shield_overcharger_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_heavy_blaster.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_heavy_blaster_green.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_heavy_ioncannon.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_heavy_disruptor.iff"},
-	{path="object/draft_schematic/space/shields/heavy_deflector_shields.iff"},
-	{path="object/draft_schematic/space/weapon/missile/countermeasure_confuser_launcher.iff"},
-	{path="object/draft_schematic/space/weapon/missile/countermeasure_confuser_pack.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_spacebomb_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_spacebomb_missile_mk1.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_concussion_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_concussion_missile_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_advanced_blaster.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_advanced_blaster_green.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_advanced_ioncannon.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_advanced_disruptor.iff"},
-	{path="object/draft_schematic/space/shields/adv_deflector_shields.iff"},
-	{path="object/draft_schematic/space/weapon/armor_effectiveness_intensifier_mk3.iff"},
-	{path="object/draft_schematic/space/weapon/max_damage_intensifier_mk3.iff"},
-	{path="object/draft_schematic/space/weapon/min_damage_intensifier_mk3.iff"},
-	{path="object/draft_schematic/space/weapon/quick_shot_upgrade_mk3.iff"},
-	{path="object/draft_schematic/space/weapon/shield_effectiveness_intensifier_mk3.iff"},
-	{path="object/draft_schematic/space/weapon/speed_limiter_upgrade_mk3.iff"},
-	{path="object/draft_schematic/space/shields/shield_energy_saver_kit_mk3.iff"},
-	{path="object/draft_schematic/space/shields/shield_intensifier_mk3.iff"},
-	{path="object/draft_schematic/space/shields/shield_limiter_mk3.iff"},
-	{path="object/draft_schematic/space/shields/shield_overcharger_mk3.iff"},
-	{path="object/draft_schematic/space/weapon/missile/countermeasure_em_launcher.iff"},
-	{path="object/draft_schematic/space/weapon/missile/countermeasure_em_pack.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_seismic_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_seismic_missile_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_proton_mk3.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_proton_missile_mk3.iff"},
-	{path="object/draft_schematic/space/shields/shield_energy_saver_kit_mk4.iff"},
-	{path="object/draft_schematic/space/shields/shield_intensifier_mk4.iff"},
-	{path="object/draft_schematic/space/shields/shield_limiter_mk4.iff"},
-	{path="object/draft_schematic/space/shields/shield_overcharger_mk4.iff"},
-	{path="object/draft_schematic/space/weapon/armor_effectiveness_intensifier_mk4.iff"},
-	{path="object/draft_schematic/space/weapon/max_damage_intensifier_mk4.iff"},
-	{path="object/draft_schematic/space/weapon/min_damage_intensifier_mk4.iff"},
-	{path="object/draft_schematic/space/weapon/quick_shot_upgrade_mk4.iff"},
-	{path="object/draft_schematic/space/weapon/shield_effectiveness_intensifier_mk4.iff"},
-	{path="object/draft_schematic/space/weapon/speed_limiter_upgrade_mk4.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_experimental_blaster.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_experimental_blaster_green.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_experimental_ioncannon.iff"},
-	{path="object/draft_schematic/space/weapon/wpn_experimental_disruptor.iff"},
-	{path="object/draft_schematic/space/shields/exp_deflector_shields.iff"},
-	{path="object/draft_schematic/space/booster/booster_overdriver_mk5.iff"},
-	{path="object/draft_schematic/space/booster/extended_life_fuel_cell_mk5.iff"},
-	{path="object/draft_schematic/space/booster/fast_charge_fuel_cell_mk5.iff"},
-	{path="object/draft_schematic/space/booster/heavy_fuel_cell_mk5.iff"},
-	{path="object/draft_schematic/space/engine/engine_overdriver_mk5.iff"},
-	{path="object/draft_schematic/space/engine/engine_limiter_mk5.iff"},
-	{path="object/draft_schematic/space/armor/armor_reinforcement_panel_mk5.iff"},
-	{path="object/draft_schematic/space/armor/mass_reduction_kit_mk5.iff"},
-	{path="object/draft_schematic/space/weapon/quick_shot_upgrade_mk5.iff"},
-	{path="object/draft_schematic/space/weapon/shield_effectiveness_intensifier_mk5.iff"},
-	{path="object/draft_schematic/space/weapon/speed_limiter_upgrade_mk5.iff"},
-	{path="object/draft_schematic/space/weapon/armor_effectiveness_intensifier_mk5.iff"},
-	{path="object/draft_schematic/space/weapon/max_damage_intensifier_mk5.iff"},
-	{path="object/draft_schematic/space/weapon/min_damage_intensifier_mk5.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_proton_mk4.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_proton_missile_mk4.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_seismic_mk3.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_seismic_missile_mk3.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_concussion_mk3.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_concussion_missile_mk3.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_imagerec_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_imagerec_missile_mk2.iff"},
-	{path="object/draft_schematic/space/shields/shield_energy_saver_kit_mk5.iff"},
-	{path="object/draft_schematic/space/shields/shield_intensifier_mk5.iff"},
-	{path="object/draft_schematic/space/chassis/bwing.iff"},
-	{path="object/draft_schematic/space/chassis/hutt_turret_ship.iff"},
-	{path="object/draft_schematic/space/chassis/yt1300.iff"},
-	{path="object/draft_schematic/space/chassis/tieoppressor.iff"},
-	{path="object/draft_schematic/space/chassis/decimator.iff"},
-	{path="object/draft_schematic/space/chassis/ykl37r.iff"},
-	{path="object/draft_schematic/space/droid_interface/droid_brain_upgrade_mk5.iff"},
-	{path="object/draft_schematic/space/capacitor/energy_saver_battery_mk5.iff"},
-	{path="object/draft_schematic/space/capacitor/extended_life_battery_mk5.iff"},
-	{path="object/draft_schematic/space/reactor/reactor_limiter_mk5.iff"},
-	{path="object/draft_schematic/space/shields/shield_limiter_mk5.iff"},
-	{path="object/draft_schematic/space/shields/shield_overcharger_mk5.iff"},
-	{path="object/draft_schematic/space/reactor/reactor_overcharger_mk5.iff"},
-	{path="object/draft_schematic/space/capacitor/heavy_battery_mk5.iff"},
-	{path="object/draft_schematic/space/capacitor/quick_recharge_battery_mk5.iff"},
-	{path="object/draft_schematic/space/droid_interface/maintenance_reduction_kit_mk5.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_launcher_spacebomb_mk2.iff"},
-	{path="object/draft_schematic/space/weapon/missile/wpn_spacebomb_missile_mk2.iff"},
-	{path="object/draft_schematic/armor/armor_segment_ris.iff"},
-	{path="object/draft_schematic/armor/armor_segment_ris_acklay.iff"},
-	{path="object/draft_schematic/armor/armor_segment_bone_acklay.iff"},
-	{path="object/draft_schematic/armor/component/armor_layer_ris.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ris_bicep_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ris_bicep_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ris_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ris_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ris_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ris_chest_plate.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ris_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ris_helmet.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_ris_leggings.iff"},
-	{path="object/draft_schematic/food/drink_mandalorian_wine.iff"},
-	{path="object/draft_schematic/furniture/furniture_basket_closed.iff"},
-	{path="object/draft_schematic/furniture/furniture_bottle_fat.iff"},
-	{path="object/draft_schematic/furniture/furniture_bottle_pear.iff"},
-	{path="object/draft_schematic/furniture/furniture_bottle_tall.iff"},
-	{path="object/draft_schematic/furniture/furniture_bowl_carved.iff"},
-	{path="object/draft_schematic/furniture/furniture_bowl_plain.iff"},
-	{path="object/draft_schematic/furniture/furniture_bubble_tank.iff"},
-	{path="object/draft_schematic/furniture/furniture_cabinet_elegant.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_cafe.iff"},
-	{path="object/draft_schematic/furniture/furniture_chair_cantina.iff"},
-	{path="object/draft_schematic/furniture/furniture_droid_body.iff"},
-	{path="object/draft_schematic/furniture/furniture_droid_head.iff"},
-	{path="object/draft_schematic/furniture/furniture_lamp_street.iff"},
-	{path="object/draft_schematic/furniture/furniture_radar_table.iff"},
-	{path="object/draft_schematic/furniture/furniture_radio.iff"},
-	{path="object/draft_schematic/furniture/furniture_slave_brazier.iff"},
-	{path="object/draft_schematic/furniture/furniture_spear_stand.iff"},
-	{path="object/draft_schematic/furniture/furniture_stove.iff"},
-	{path="object/draft_schematic/furniture/furniture_table_gambling.iff"},
-	{path="object/draft_schematic/furniture/furniture_tatooine_tapestry.iff"},
-	{path="object/draft_schematic/furniture/furniture_throwpillow.iff"},
-	{path="object/draft_schematic/furniture/furniture_utensils.iff"},
-	{path="object/draft_schematic/furniture/tanning_hide.iff"},
-	{path="object/draft_schematic/furniture/tanning_hide_2.iff"},
-	{path="object/draft_schematic/instrument/instrument_organ_figrin_dan.iff"},
-	{path="object/draft_schematic/instrument/instrument_organ_max_rebo.iff"},
-	{path="object/draft_schematic/item/item_agitator_motor.iff"},
-	{path="object/draft_schematic/item/item_recycler_chemical.iff"},
-	{path="object/draft_schematic/item/item_recycler_creature.iff"},
-	{path="object/draft_schematic/item/item_recycler_flora.iff"},
-	{path="object/draft_schematic/item/item_recycler_metal.iff"},
-	{path="object/draft_schematic/item/item_recycler_ore.iff"},
-	{path="object/draft_schematic/item/item_tumble_blender.iff"},
-	{path="object/draft_schematic/item/item_shellfish_harvester.iff"},
-	{path="object/draft_schematic/item/quest_item/attunement_grid.iff"},
-	{path="object/draft_schematic/item/quest_item/current_alternator.iff"},
-	{path="object/draft_schematic/item/quest_item/feedback_controller.iff"},
-	{path="object/draft_schematic/item/quest_item/fs_craft_puzzle_config_processor.iff"},
-	{path="object/draft_schematic/item/quest_item/fs_craft_puzzle_gyro_receiver.iff"},
-	{path="object/draft_schematic/item/quest_item/fs_craft_puzzle_signal_amp.iff"},
-	{path="object/draft_schematic/item/quest_item/fs_craft_puzzle_solid_state_array.iff"},
-	{path="object/draft_schematic/item/quest_item/output_governor.iff"},
-	{path="object/draft_schematic/item/quest_item/power_regulator.iff"},
-	{path="object/draft_schematic/vehicle/civilian/landspeeder_av21.iff"},
-	{path="object/draft_schematic/weapon/2h_sword_scythe.iff"},
-	{path="object/draft_schematic/weapon/executioners_hack.iff"},
-	{path="object/draft_schematic/weapon/lance_nightsister.iff"},
-	{path="object/draft_schematic/weapon/pistol_de_10.iff"},
-	{path="object/draft_schematic/weapon/pistol_flechette_fwg5_quest.iff"},
-	{path="object/draft_schematic/weapon/pistol_geo_sonic_blaster.iff"},
-	{path="object/draft_schematic/weapon/pistol_republic_blaster_quest.iff"},
-	{path="object/draft_schematic/weapon/rifle_berserker.iff"},
-	{path="object/draft_schematic/weapon/rifle_light_blaster_e11_carbine_quest.iff"},
-	{path="object/draft_schematic/weapon/rifle_tenloss_disrupter.iff"},
-	{path="object/draft_schematic/weapon/component/reinforcement_core_geo.iff"},
-	{path="object/draft_schematic/weapon/component/sword_core_geo.iff"},
-	{path="object/draft_schematic/armor/shield_generator_personal_imperial_test.iff"},
-	{path="object/draft_schematic/weapon/component/chemical_dispersion_mechanism_advanced.iff"},
-	{path="object/draft_schematic/droid/component/personality_module_geek.iff"},
-	{path="object/draft_schematic/droid/component/personality_module_sarcastic.iff"},
-	{path="object/draft_schematic/droid/component/struct_maint_module_1.iff"},
-	{path="object/draft_schematic/droid/component/module_socket_bank.iff"},
-	{path="object/draft_schematic/droid/component/data_storage_module_3.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_blueleaf_temple.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_blumbush.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_boffa.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_golden_flower_01.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_golden_flower_02.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_golden_flower_03.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_house.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_krayt_skeleton.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_lucky_despot.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_mattberry.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_moncal_eye_01.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_moncal_eye_02.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_rainbow_berry_bush.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_raventhorn.iff"},
-	{path="object/draft_schematic/furniture/bestine/painting_bestine_ronka.iff"},
-	{path="object/draft_schematic/item/theme_park/alderaan/act2/dead_eye_decoder.iff"},
-	{path="object/draft_schematic/item/quest_item/fs_medic_puzzle_heal_pack.iff"},
+object/draft_schematic/spices/spice_droid_lube.iff
+object/draft_schematic/spices/spice_pyrepenol.iff
+object/draft_schematic/spices/spice_sedative_h4b.iff
+object/draft_schematic/spices/spice_crash_n_burn.iff
+object/draft_schematic/spices/spice_gunjack.iff
+object/draft_schematic/spices/spice_thruster_head.iff
+object/draft_schematic/spices/spice_booster_blue.iff
+object/draft_schematic/spices/spice_muon_gold.iff
+object/draft_schematic/spices/spice_neutron_pixey.iff
+object/draft_schematic/slicing/slicing_laser_knife.iff
+object/draft_schematic/slicing/slicing_flow_analyzer.iff
+object/draft_schematic/slicing/slicing_molecular_clamp.iff
+object/draft_schematic/weapon/rifle_bowcaster.iff
+object/draft_schematic/item/item_jedi_tool.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_refined_crystal_pack.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_training.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen1.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen1.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen1.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen2.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen3.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen2.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen3.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen2.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen3.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen4.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_one_hand_gen4.iff
+object/draft_schematic/weapon/lightsaber/lightsaber_two_hand_gen4.iff
+object/draft_schematic/structure/city/bank_corellia.iff
+object/draft_schematic/structure/city/bank_naboo.iff
+object/draft_schematic/structure/city/bank_tatooine.iff
+object/draft_schematic/furniture/city/furniture_streetlamp.iff
+object/draft_schematic/furniture/city/furniture_statue.iff
+object/draft_schematic/structure/merchant_tent.iff
+object/draft_schematic/structure/city/cloning_corellia.iff
+object/draft_schematic/structure/city/cloning_naboo.iff
+object/draft_schematic/structure/city/cloning_tatooine.iff
+object/draft_schematic/structure/city/shuttleport_corellia.iff
+object/draft_schematic/structure/city/shuttleport_naboo.iff
+object/draft_schematic/structure/city/shuttleport_tatooine.iff
+object/draft_schematic/furniture/city/furniture_fountain.iff
+object/draft_schematic/structure/city/garden_small.iff
+object/draft_schematic/structure/city/cantina_corellia.iff
+object/draft_schematic/structure/city/cantina_naboo.iff
+object/draft_schematic/structure/city/cantina_tatooine.iff
+object/draft_schematic/structure/city/hospital_corellia.iff
+object/draft_schematic/structure/city/hospital_naboo.iff
+object/draft_schematic/structure/city/hospital_tatooine.iff
+object/draft_schematic/structure/city/theater_corellia.iff
+object/draft_schematic/structure/city/theater_naboo.iff
+object/draft_schematic/structure/city/theater_tatooine.iff
+object/draft_schematic/structure/city/garden_medium.iff
+object/draft_schematic/structure/city/garage_corellia.iff
+object/draft_schematic/structure/city/garage_naboo.iff
+object/draft_schematic/structure/city/garage_tatooine.iff
+object/draft_schematic/structure/city/cityhall_corellia.iff
+object/draft_schematic/structure/city/cityhall_naboo.iff
+object/draft_schematic/structure/city/cityhall_tatooine.iff
+object/draft_schematic/structure/city/garden_large.iff
+object/draft_schematic/structure/city/garden_exotic_dantooine.iff
+object/draft_schematic/structure/city/garden_exotic_dathomir.iff
+object/draft_schematic/structure/city/garden_exotic_endor.iff
+object/draft_schematic/vehicle/civilian/landspeeder_x34.iff
+object/draft_schematic/vehicle/civilian/speeder_bike_swoop.iff
+object/draft_schematic/vehicle/civilian/speeder_bike.iff
+object/draft_schematic/vehicle/vehicle_customization_kit.iff
+object/draft_schematic/space/chassis/z95.iff
+object/draft_schematic/space/chassis/tie_light_duty.iff
+object/draft_schematic/space/chassis/hutt_light_s01.iff
+object/draft_schematic/space/chassis/hutt_light_s02.iff
+object/draft_schematic/space/armor/light_durasteel_plating.iff
+object/draft_schematic/space/capacitor/capacitor_mk1.iff
+object/draft_schematic/space/engine/eng_mk1.iff
+object/draft_schematic/space/reactor/fusion_reactor_mk1.iff
+object/draft_schematic/space/shields/light_deflector_shields.iff
+object/draft_schematic/space/reverse_engineering/analysis_tool.iff
+object/draft_schematic/space/repair/armor_repair_kit.iff
+object/draft_schematic/space/repair/engine_repair_kit.iff
+object/draft_schematic/space/repair/chassis_repair_kit.iff
+object/draft_schematic/space/repair/reactor_repair_kit.iff
+object/draft_schematic/space/repair/booster_repair_kit.iff
+object/draft_schematic/space/repair/capacitor_repair_kit.iff
+object/draft_schematic/space/repair/droid_interface_repair_kit.iff
+object/draft_schematic/space/repair/plasma_conduit_repair_kit.iff
+object/draft_schematic/space/repair/shield_repair_kit.iff
+object/draft_schematic/space/repair/weapon_repair_kit.iff
+object/draft_schematic/space/booster/booster_mk1.iff
+object/draft_schematic/space/droid_interface/ddi_mk1.iff
+object/draft_schematic/space/weapon/wpn_light_blaster.iff
+object/draft_schematic/space/weapon/wpn_light_blaster_green.iff
+object/draft_schematic/space/weapon/wpn_light_disruptor.iff
+object/draft_schematic/space/weapon/wpn_light_ioncannon.iff
+object/draft_schematic/space/weapon/missile/countermeasure_chaff_launcher.iff
+object/draft_schematic/space/weapon/missile/countermeasure_chaff_pack.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_proton_mk1.iff
+object/draft_schematic/space/weapon/missile/wpn_proton_missile_mk1.iff
+object/draft_schematic/space/chassis/texture_kit_s01.iff
+object/draft_schematic/space/chassis/texture_kit_s02.iff
+object/draft_schematic/space/chassis/tiefighter.iff
+object/draft_schematic/space/armor/armor_reinforcement_panel_mk1.iff
+object/draft_schematic/space/armor/mass_reduction_kit_mk1.iff
+object/draft_schematic/space/chassis/ywing.iff
+object/draft_schematic/space/chassis/xwing_customization_kit.iff
+object/draft_schematic/space/chassis/hutt_medium_s01.iff
+object/draft_schematic/space/chassis/hutt_medium_s02.iff
+object/draft_schematic/space/chassis/texture_kit_s03.iff
+object/draft_schematic/space/armor/durasteel_plating.iff
+object/draft_schematic/space/chassis/ywing_longprobe.iff
+object/draft_schematic/space/chassis/tie_in.iff
+object/draft_schematic/space/chassis/hutt_heavy_s01.iff
+object/draft_schematic/space/chassis/hutt_heavy_s02.iff
+object/draft_schematic/space/chassis/blacksun_light_s01.iff
+object/draft_schematic/space/chassis/blacksun_light_s02.iff
+object/draft_schematic/space/chassis/blacksun_light_s03.iff
+object/draft_schematic/space/chassis/blacksun_light_s04.iff
+object/draft_schematic/space/chassis/texture_kit_s04.iff
+object/draft_schematic/space/armor/armor_reinforcement_panel_mk2.iff
+object/draft_schematic/space/armor/mass_reduction_kit_mk2.iff
+object/draft_schematic/space/armor/heavy_durasteel_plating.iff
+object/draft_schematic/space/chassis/xwing.iff
+object/draft_schematic/space/chassis/tieinterceptor.iff
+object/draft_schematic/space/chassis/tiebomber.iff
+object/draft_schematic/space/chassis/texture_kit_s05.iff
+object/draft_schematic/space/chassis/blacksun_medium_s01.iff
+object/draft_schematic/space/chassis/blacksun_medium_s02.iff
+object/draft_schematic/space/chassis/blacksun_medium_s03.iff
+object/draft_schematic/space/chassis/blacksun_medium_s04.iff
+object/draft_schematic/space/armor/adv_durasteel_plating.iff
+object/draft_schematic/space/armor/armor_reinforcement_panel_mk3.iff
+object/draft_schematic/space/armor/mass_reduction_kit_mk3.iff
+object/draft_schematic/space/chassis/tieadvanced.iff
+object/draft_schematic/space/chassis/tieaggressor.iff
+object/draft_schematic/space/chassis/awing.iff
+object/draft_schematic/space/chassis/blacksun_heavy_s01.iff
+object/draft_schematic/space/chassis/blacksun_heavy_s02.iff
+object/draft_schematic/space/chassis/blacksun_heavy_s03.iff
+object/draft_schematic/space/chassis/blacksun_heavy_s04.iff
+object/draft_schematic/space/chassis/texture_kit_s06.iff
+object/draft_schematic/space/armor/exp_durasteel_plating.iff
+object/draft_schematic/space/armor/armor_reinforcement_panel_mk4.iff
+object/draft_schematic/space/armor/mass_reduction_kit_mk4.iff
+object/draft_schematic/space/engine/engine_overdriver_mk1.iff
+object/draft_schematic/space/engine/engine_limiter_mk1.iff
+object/draft_schematic/space/booster/booster_overdriver_mk1.iff
+object/draft_schematic/space/booster/extended_life_fuel_cell_mk1.iff
+object/draft_schematic/space/booster/fast_charge_fuel_cell_mk1.iff
+object/draft_schematic/space/booster/heavy_fuel_cell_mk1.iff
+object/draft_schematic/space/engine/eng_mk2.iff
+object/draft_schematic/space/booster/booster_mk2.iff
+object/draft_schematic/space/engine/engine_overdriver_mk2.iff
+object/draft_schematic/space/engine/engine_limiter_mk2.iff
+object/draft_schematic/space/booster/booster_overdriver_mk2.iff
+object/draft_schematic/space/booster/extended_life_fuel_cell_mk2.iff
+object/draft_schematic/space/booster/fast_charge_fuel_cell_mk2.iff
+object/draft_schematic/space/booster/heavy_fuel_cell_mk2.iff
+object/draft_schematic/space/engine/eng_mk3.iff
+object/draft_schematic/space/booster/booster_mk3.iff
+object/draft_schematic/space/booster/booster_overdriver_mk3.iff
+object/draft_schematic/space/booster/extended_life_fuel_cell_mk3.iff
+object/draft_schematic/space/booster/fast_charge_fuel_cell_mk3.iff
+object/draft_schematic/space/booster/heavy_fuel_cell_mk3.iff
+object/draft_schematic/space/engine/engine_overdriver_mk3.iff
+object/draft_schematic/space/engine/engine_limiter_mk3.iff
+object/draft_schematic/space/booster/booster_mk4.iff
+object/draft_schematic/space/engine/eng_mk4.iff
+object/draft_schematic/space/booster/booster_overdriver_mk4.iff
+object/draft_schematic/space/booster/extended_life_fuel_cell_mk4.iff
+object/draft_schematic/space/booster/fast_charge_fuel_cell_mk4.iff
+object/draft_schematic/space/booster/heavy_fuel_cell_mk4.iff
+object/draft_schematic/space/booster/booster_mk5.iff
+object/draft_schematic/space/engine/engine_overdriver_mk4.iff
+object/draft_schematic/space/engine/engine_limiter_mk4.iff
+object/draft_schematic/space/engine/eng_mk5.iff
+object/draft_schematic/space/droid_interface/droid_brain_upgrade_mk1.iff
+object/draft_schematic/space/droid_interface/maintenance_reduction_kit_mk1.iff
+object/draft_schematic/space/capacitor/energy_saver_battery_mk1.iff
+object/draft_schematic/space/capacitor/extended_life_battery_mk1.iff
+object/draft_schematic/space/capacitor/heavy_battery_mk1.iff
+object/draft_schematic/space/capacitor/quick_recharge_battery_mk1.iff
+object/draft_schematic/space/droid_interface/ddi_mk2.iff
+object/draft_schematic/space/capacitor/capacitor_mk2.iff
+object/draft_schematic/space/reactor/fusion_reactor_mk2.iff
+object/draft_schematic/space/reactor/reactor_limiter_mk1.iff
+object/draft_schematic/space/reactor/reactor_overcharger_mk1.iff
+object/draft_schematic/space/capacitor/capacitor_mk3.iff
+object/draft_schematic/space/droid_interface/ddi_mk3.iff
+object/draft_schematic/space/droid_interface/droid_brain_upgrade_mk2.iff
+object/draft_schematic/space/droid_interface/maintenance_reduction_kit_mk2.iff
+object/draft_schematic/space/capacitor/energy_saver_battery_mk2.iff
+object/draft_schematic/space/capacitor/extended_life_battery_mk2.iff
+object/draft_schematic/space/capacitor/heavy_battery_mk2.iff
+object/draft_schematic/space/capacitor/quick_recharge_battery_mk2.iff
+object/draft_schematic/space/reactor/reactor_limiter_mk2.iff
+object/draft_schematic/space/reactor/reactor_overcharger_mk2.iff
+object/draft_schematic/space/reactor/fusion_reactor_mk3.iff
+object/draft_schematic/space/capacitor/energy_saver_battery_mk3.iff
+object/draft_schematic/space/capacitor/extended_life_battery_mk3.iff
+object/draft_schematic/space/capacitor/heavy_battery_mk3.iff
+object/draft_schematic/space/capacitor/quick_recharge_battery_mk3.iff
+object/draft_schematic/space/droid_interface/droid_brain_upgrade_mk3.iff
+object/draft_schematic/space/droid_interface/maintenance_reduction_kit_mk3.iff
+object/draft_schematic/space/reactor/reactor_limiter_mk3.iff
+object/draft_schematic/space/reactor/reactor_overcharger_mk3.iff
+object/draft_schematic/space/droid_interface/ddi_mk4.iff
+object/draft_schematic/space/reactor/fusion_reactor_mk4.iff
+object/draft_schematic/space/capacitor/capacitor_mk4.iff
+object/draft_schematic/space/droid_interface/droid_brain_upgrade_mk4.iff
+object/draft_schematic/space/droid_interface/maintenance_reduction_kit_mk4.iff
+object/draft_schematic/space/capacitor/energy_saver_battery_mk4.iff
+object/draft_schematic/space/capacitor/extended_life_battery_mk4.iff
+object/draft_schematic/space/capacitor/heavy_battery_mk4.iff
+object/draft_schematic/space/capacitor/quick_recharge_battery_mk4.iff
+object/draft_schematic/space/reactor/reactor_limiter_mk4.iff
+object/draft_schematic/space/reactor/reactor_overcharger_mk4.iff
+object/draft_schematic/space/reactor/fusion_reactor_mk5.iff
+object/draft_schematic/space/droid_interface/ddi_mk5.iff
+object/draft_schematic/space/capacitor/capacitor_mk5.iff
+object/draft_schematic/space/weapon/missile/countermeasure_decoy_launcher.iff
+object/draft_schematic/space/weapon/missile/countermeasure_decoy_pack.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_concussion_mk1.iff
+object/draft_schematic/space/weapon/missile/wpn_concussion_missile_mk1.iff
+object/draft_schematic/space/weapon/armor_effectiveness_intensifier_mk1.iff
+object/draft_schematic/space/weapon/max_damage_intensifier_mk1.iff
+object/draft_schematic/space/weapon/min_damage_intensifier_mk1.iff
+object/draft_schematic/space/weapon/quick_shot_upgrade_mk1.iff
+object/draft_schematic/space/weapon/shield_effectiveness_intensifier_mk1.iff
+object/draft_schematic/space/weapon/speed_limiter_upgrade_mk1.iff
+object/draft_schematic/space/shields/shield_energy_saver_kit_mk1.iff
+object/draft_schematic/space/shields/shield_intensifier_mk1.iff
+object/draft_schematic/space/shields/shield_limiter_mk1.iff
+object/draft_schematic/space/shields/shield_overcharger_mk1.iff
+object/draft_schematic/space/weapon/wpn_medium_blaster.iff
+object/draft_schematic/space/weapon/wpn_medium_blaster_green.iff
+object/draft_schematic/space/weapon/wpn_medium_ioncannon.iff
+object/draft_schematic/space/weapon/wpn_medium_disruptor.iff
+object/draft_schematic/space/shields/deflector_shields.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_seismic_mk1.iff
+object/draft_schematic/space/weapon/missile/wpn_seismic_missile_mk1.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_proton_mk2.iff
+object/draft_schematic/space/weapon/missile/wpn_proton_missile_mk2.iff
+object/draft_schematic/space/weapon/missile/countermeasure_microchaff_launcher.iff
+object/draft_schematic/space/weapon/missile/countermeasure_microchaff_pack.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_imagerec_mk1.iff
+object/draft_schematic/space/weapon/missile/wpn_imagerec_missile_mk1.iff
+object/draft_schematic/space/weapon/armor_effectiveness_intensifier_mk2.iff
+object/draft_schematic/space/weapon/max_damage_intensifier_mk2.iff
+object/draft_schematic/space/weapon/min_damage_intensifier_mk2.iff
+object/draft_schematic/space/weapon/quick_shot_upgrade_mk2.iff
+object/draft_schematic/space/weapon/shield_effectiveness_intensifier_mk2.iff
+object/draft_schematic/space/weapon/speed_limiter_upgrade_mk2.iff
+object/draft_schematic/space/shields/shield_energy_saver_kit_mk2.iff
+object/draft_schematic/space/shields/shield_intensifier_mk2.iff
+object/draft_schematic/space/shields/shield_limiter_mk2.iff
+object/draft_schematic/space/shields/shield_overcharger_mk2.iff
+object/draft_schematic/space/weapon/wpn_heavy_blaster.iff
+object/draft_schematic/space/weapon/wpn_heavy_blaster_green.iff
+object/draft_schematic/space/weapon/wpn_heavy_ioncannon.iff
+object/draft_schematic/space/weapon/wpn_heavy_disruptor.iff
+object/draft_schematic/space/shields/heavy_deflector_shields.iff
+object/draft_schematic/space/weapon/missile/countermeasure_confuser_launcher.iff
+object/draft_schematic/space/weapon/missile/countermeasure_confuser_pack.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_spacebomb_mk1.iff
+object/draft_schematic/space/weapon/missile/wpn_spacebomb_missile_mk1.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_concussion_mk2.iff
+object/draft_schematic/space/weapon/missile/wpn_concussion_missile_mk2.iff
+object/draft_schematic/space/weapon/wpn_advanced_blaster.iff
+object/draft_schematic/space/weapon/wpn_advanced_blaster_green.iff
+object/draft_schematic/space/weapon/wpn_advanced_ioncannon.iff
+object/draft_schematic/space/weapon/wpn_advanced_disruptor.iff
+object/draft_schematic/space/shields/adv_deflector_shields.iff
+object/draft_schematic/space/weapon/armor_effectiveness_intensifier_mk3.iff
+object/draft_schematic/space/weapon/max_damage_intensifier_mk3.iff
+object/draft_schematic/space/weapon/min_damage_intensifier_mk3.iff
+object/draft_schematic/space/weapon/quick_shot_upgrade_mk3.iff
+object/draft_schematic/space/weapon/shield_effectiveness_intensifier_mk3.iff
+object/draft_schematic/space/weapon/speed_limiter_upgrade_mk3.iff
+object/draft_schematic/space/shields/shield_energy_saver_kit_mk3.iff
+object/draft_schematic/space/shields/shield_intensifier_mk3.iff
+object/draft_schematic/space/shields/shield_limiter_mk3.iff
+object/draft_schematic/space/shields/shield_overcharger_mk3.iff
+object/draft_schematic/space/weapon/missile/countermeasure_em_launcher.iff
+object/draft_schematic/space/weapon/missile/countermeasure_em_pack.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_seismic_mk2.iff
+object/draft_schematic/space/weapon/missile/wpn_seismic_missile_mk2.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_proton_mk3.iff
+object/draft_schematic/space/weapon/missile/wpn_proton_missile_mk3.iff
+object/draft_schematic/space/shields/shield_energy_saver_kit_mk4.iff
+object/draft_schematic/space/shields/shield_intensifier_mk4.iff
+object/draft_schematic/space/shields/shield_limiter_mk4.iff
+object/draft_schematic/space/shields/shield_overcharger_mk4.iff
+object/draft_schematic/space/weapon/armor_effectiveness_intensifier_mk4.iff
+object/draft_schematic/space/weapon/max_damage_intensifier_mk4.iff
+object/draft_schematic/space/weapon/min_damage_intensifier_mk4.iff
+object/draft_schematic/space/weapon/quick_shot_upgrade_mk4.iff
+object/draft_schematic/space/weapon/shield_effectiveness_intensifier_mk4.iff
+object/draft_schematic/space/weapon/speed_limiter_upgrade_mk4.iff
+object/draft_schematic/space/weapon/wpn_experimental_blaster.iff
+object/draft_schematic/space/weapon/wpn_experimental_blaster_green.iff
+object/draft_schematic/space/weapon/wpn_experimental_ioncannon.iff
+object/draft_schematic/space/weapon/wpn_experimental_disruptor.iff
+object/draft_schematic/space/shields/exp_deflector_shields.iff
+object/draft_schematic/space/booster/booster_overdriver_mk5.iff
+object/draft_schematic/space/booster/extended_life_fuel_cell_mk5.iff
+object/draft_schematic/space/booster/fast_charge_fuel_cell_mk5.iff
+object/draft_schematic/space/booster/heavy_fuel_cell_mk5.iff
+object/draft_schematic/space/engine/engine_overdriver_mk5.iff
+object/draft_schematic/space/engine/engine_limiter_mk5.iff
+object/draft_schematic/space/armor/armor_reinforcement_panel_mk5.iff
+object/draft_schematic/space/armor/mass_reduction_kit_mk5.iff
+object/draft_schematic/space/weapon/quick_shot_upgrade_mk5.iff
+object/draft_schematic/space/weapon/shield_effectiveness_intensifier_mk5.iff
+object/draft_schematic/space/weapon/speed_limiter_upgrade_mk5.iff
+object/draft_schematic/space/weapon/armor_effectiveness_intensifier_mk5.iff
+object/draft_schematic/space/weapon/max_damage_intensifier_mk5.iff
+object/draft_schematic/space/weapon/min_damage_intensifier_mk5.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_proton_mk4.iff
+object/draft_schematic/space/weapon/missile/wpn_proton_missile_mk4.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_seismic_mk3.iff
+object/draft_schematic/space/weapon/missile/wpn_seismic_missile_mk3.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_concussion_mk3.iff
+object/draft_schematic/space/weapon/missile/wpn_concussion_missile_mk3.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_imagerec_mk2.iff
+object/draft_schematic/space/weapon/missile/wpn_imagerec_missile_mk2.iff
+object/draft_schematic/space/shields/shield_energy_saver_kit_mk5.iff
+object/draft_schematic/space/shields/shield_intensifier_mk5.iff
+object/draft_schematic/space/chassis/bwing.iff
+object/draft_schematic/space/chassis/hutt_turret_ship.iff
+object/draft_schematic/space/chassis/yt1300.iff
+object/draft_schematic/space/chassis/tieoppressor.iff
+object/draft_schematic/space/chassis/decimator.iff
+object/draft_schematic/space/chassis/ykl37r.iff
+object/draft_schematic/space/droid_interface/droid_brain_upgrade_mk5.iff
+object/draft_schematic/space/capacitor/energy_saver_battery_mk5.iff
+object/draft_schematic/space/capacitor/extended_life_battery_mk5.iff
+object/draft_schematic/space/reactor/reactor_limiter_mk5.iff
+object/draft_schematic/space/shields/shield_limiter_mk5.iff
+object/draft_schematic/space/shields/shield_overcharger_mk5.iff
+object/draft_schematic/space/reactor/reactor_overcharger_mk5.iff
+object/draft_schematic/space/capacitor/heavy_battery_mk5.iff
+object/draft_schematic/space/capacitor/quick_recharge_battery_mk5.iff
+object/draft_schematic/space/droid_interface/maintenance_reduction_kit_mk5.iff
+object/draft_schematic/space/weapon/missile/wpn_launcher_spacebomb_mk2.iff
+object/draft_schematic/space/weapon/missile/wpn_spacebomb_missile_mk2.iff
+object/draft_schematic/armor/armor_segment_ris.iff
+object/draft_schematic/armor/armor_segment_ris_acklay.iff
+object/draft_schematic/armor/armor_segment_bone_acklay.iff
+object/draft_schematic/armor/component/armor_layer_ris.iff
+object/draft_schematic/clothing/clothing_armor_ris_bicep_l.iff
+object/draft_schematic/clothing/clothing_armor_ris_bicep_r.iff
+object/draft_schematic/clothing/clothing_armor_ris_boots.iff
+object/draft_schematic/clothing/clothing_armor_ris_bracer_l.iff
+object/draft_schematic/clothing/clothing_armor_ris_bracer_r.iff
+object/draft_schematic/clothing/clothing_armor_ris_chest_plate.iff
+object/draft_schematic/clothing/clothing_armor_ris_gloves.iff
+object/draft_schematic/clothing/clothing_armor_ris_helmet.iff
+object/draft_schematic/clothing/clothing_armor_ris_leggings.iff
+object/draft_schematic/food/drink_mandalorian_wine.iff
+object/draft_schematic/furniture/furniture_basket_closed.iff
+object/draft_schematic/furniture/furniture_bottle_fat.iff
+object/draft_schematic/furniture/furniture_bottle_pear.iff
+object/draft_schematic/furniture/furniture_bottle_tall.iff
+object/draft_schematic/furniture/furniture_bowl_carved.iff
+object/draft_schematic/furniture/furniture_bowl_plain.iff
+object/draft_schematic/furniture/furniture_bubble_tank.iff
+object/draft_schematic/furniture/furniture_cabinet_elegant.iff
+object/draft_schematic/furniture/furniture_chair_cafe.iff
+object/draft_schematic/furniture/furniture_chair_cantina.iff
+object/draft_schematic/furniture/furniture_droid_body.iff
+object/draft_schematic/furniture/furniture_droid_head.iff
+object/draft_schematic/furniture/furniture_lamp_street.iff
+object/draft_schematic/furniture/furniture_radar_table.iff
+object/draft_schematic/furniture/furniture_radio.iff
+object/draft_schematic/furniture/furniture_slave_brazier.iff
+object/draft_schematic/furniture/furniture_spear_stand.iff
+object/draft_schematic/furniture/furniture_stove.iff
+object/draft_schematic/furniture/furniture_table_gambling.iff
+object/draft_schematic/furniture/furniture_tatooine_tapestry.iff
+object/draft_schematic/furniture/furniture_throwpillow.iff
+object/draft_schematic/furniture/furniture_utensils.iff
+object/draft_schematic/furniture/tanning_hide.iff
+object/draft_schematic/furniture/tanning_hide_2.iff
+object/draft_schematic/instrument/instrument_organ_figrin_dan.iff
+object/draft_schematic/instrument/instrument_organ_max_rebo.iff
+object/draft_schematic/item/item_agitator_motor.iff
+object/draft_schematic/item/item_recycler_chemical.iff
+object/draft_schematic/item/item_recycler_creature.iff
+object/draft_schematic/item/item_recycler_flora.iff
+object/draft_schematic/item/item_recycler_metal.iff
+object/draft_schematic/item/item_recycler_ore.iff
+object/draft_schematic/item/item_tumble_blender.iff
+object/draft_schematic/item/item_shellfish_harvester.iff
+object/draft_schematic/item/quest_item/attunement_grid.iff
+object/draft_schematic/item/quest_item/current_alternator.iff
+object/draft_schematic/item/quest_item/feedback_controller.iff
+object/draft_schematic/item/quest_item/fs_craft_puzzle_config_processor.iff
+object/draft_schematic/item/quest_item/fs_craft_puzzle_gyro_receiver.iff
+object/draft_schematic/item/quest_item/fs_craft_puzzle_signal_amp.iff
+object/draft_schematic/item/quest_item/fs_craft_puzzle_solid_state_array.iff
+object/draft_schematic/item/quest_item/output_governor.iff
+object/draft_schematic/item/quest_item/power_regulator.iff
+object/draft_schematic/vehicle/civilian/landspeeder_av21.iff
+object/draft_schematic/weapon/2h_sword_scythe.iff
+object/draft_schematic/weapon/executioners_hack.iff
+object/draft_schematic/weapon/lance_nightsister.iff
+object/draft_schematic/weapon/pistol_de_10.iff
+object/draft_schematic/weapon/pistol_flechette_fwg5_quest.iff
+object/draft_schematic/weapon/pistol_geo_sonic_blaster.iff
+object/draft_schematic/weapon/pistol_republic_blaster_quest.iff
+object/draft_schematic/weapon/rifle_berserker.iff
+object/draft_schematic/weapon/rifle_light_blaster_e11_carbine_quest.iff
+object/draft_schematic/weapon/rifle_tenloss_disrupter.iff
+object/draft_schematic/weapon/component/reinforcement_core_geo.iff
+object/draft_schematic/weapon/component/sword_core_geo.iff
+object/draft_schematic/armor/shield_generator_personal_imperial_test.iff
+object/draft_schematic/weapon/component/chemical_dispersion_mechanism_advanced.iff
+object/draft_schematic/droid/component/personality_module_geek.iff
+object/draft_schematic/droid/component/personality_module_sarcastic.iff
+object/draft_schematic/droid/component/struct_maint_module_1.iff
+object/draft_schematic/droid/component/module_socket_bank.iff
+object/draft_schematic/droid/component/data_storage_module_3.iff
+object/draft_schematic/furniture/bestine/painting_bestine_blueleaf_temple.iff
+object/draft_schematic/furniture/bestine/painting_bestine_blumbush.iff
+object/draft_schematic/furniture/bestine/painting_bestine_boffa.iff
+object/draft_schematic/furniture/bestine/painting_bestine_golden_flower_01.iff
+object/draft_schematic/furniture/bestine/painting_bestine_golden_flower_02.iff
+object/draft_schematic/furniture/bestine/painting_bestine_golden_flower_03.iff
+object/draft_schematic/furniture/bestine/painting_bestine_house.iff
+object/draft_schematic/furniture/bestine/painting_bestine_krayt_skeleton.iff
+object/draft_schematic/furniture/bestine/painting_bestine_lucky_despot.iff
+object/draft_schematic/furniture/bestine/painting_bestine_mattberry.iff
+object/draft_schematic/furniture/bestine/painting_bestine_moncal_eye_01.iff
+object/draft_schematic/furniture/bestine/painting_bestine_moncal_eye_02.iff
+object/draft_schematic/furniture/bestine/painting_bestine_rainbow_berry_bush.iff
+object/draft_schematic/furniture/bestine/painting_bestine_raventhorn.iff
+object/draft_schematic/furniture/bestine/painting_bestine_ronka.iff
+object/draft_schematic/item/theme_park/alderaan/act2/dead_eye_decoder.iff
+object/draft_schematic/item/quest_item/fs_medic_puzzle_heal_pack.iff
 	--NGE Houses *****************************************************
-	{path="object/draft_schematic/structure/atat_house_schem.iff"},
-	{path="object/draft_schematic/structure/bespin_house_schem.iff"},
-	{path="object/draft_schematic/structure/commando_house_schem.iff"},
-	{path="object/draft_schematic/structure/emperors_house_schem.iff"},
-	{path="object/draft_schematic/structure/gen_lg_win_01_schem.iff"},
-	{path="object/draft_schematic/structure/gen_lg_win_02_schem.iff"},
-	{path="object/draft_schematic/structure/gen_md_win_01_schem.iff"},
-	{path="object/draft_schematic/structure/gen_md_win_02_schem.iff"},
-	{path="object/draft_schematic/structure/gen_sm_win_01_schem.iff"},
-	{path="object/draft_schematic/structure/gen_sm_win_02_schem.iff"},
-	{path="object/draft_schematic/structure/hangar_house_schem.iff"},
-	{path="object/draft_schematic/structure/jabbas_house_schem.iff"},
-	{path="object/draft_schematic/structure/jedi_house_schem.iff"},
-	{path="object/draft_schematic/structure/musty_house_schem.iff"},
-	{path="object/draft_schematic/structure/nab_sm_win_01_schem.iff"},
-	{path="object/draft_schematic/structure/rebel_house_schem.iff"},
-	{path="object/draft_schematic/structure/relaxation_house_schem.iff"},
-	{path="object/draft_schematic/structure/sandcrawler_house_schem.iff"},
-	{path="object/draft_schematic/structure/sith_house_schem.iff"},
-	{path="object/draft_schematic/structure/tat_sm_win_01_schem.iff"},
-	{path="object/draft_schematic/structure/tree_house_schem.iff"},
-	{path="object/draft_schematic/structure/vehicle_house_schem.iff"},
-	{path="object/draft_schematic/structure/vipbunker_house_schem.iff"},
-	{path="object/draft_schematic/structure/yoda_house_schem.iff"},
-	{path="object/draft_schematic/structure/yt1300_house_schem.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_chest_plate.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_belt.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_bicep_l.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_bicep_r.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_boots.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_bracer_l.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_bracer_r.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_gloves.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_helmet.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_mandalorian_imperial_leggings.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_bicep_l_gcw.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_bicep_r_gcw.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_boots_gcw.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_bracer_l_gcw.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_bracer_r_gcw.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_chest_gcw.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_gloves_gcw.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_helmet_gcw.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_leggings_gcw.iff"},
-	{path="object/draft_schematic/armor/armor_appearance_assault_trooper_utility_belt_gcw.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_belt.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_bicep_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_bicep_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_chest_plate.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_helmet.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_bounty_hunter_leggings.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_mandalorian_belt.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_mandalorian_bicep_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_mandalorian_bicep_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_mandalorian_boots.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_mandalorian_bracer_l.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_mandalorian_bracer_r.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_mandalorian_chest_plate.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_mandalorian_gloves.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_mandalorian_helmet.iff"},
-	{path="object/draft_schematic/clothing/clothing_armor_mandalorian_leggings.iff"},
-};
+object/draft_schematic/structure/atat_house_schem.iff
+object/draft_schematic/structure/bespin_house_schem.iff
+object/draft_schematic/structure/commando_house_schem.iff
+object/draft_schematic/structure/emperors_house_schem.iff
+object/draft_schematic/structure/gen_lg_win_01_schem.iff
+object/draft_schematic/structure/gen_lg_win_02_schem.iff
+object/draft_schematic/structure/gen_md_win_01_schem.iff
+object/draft_schematic/structure/gen_md_win_02_schem.iff
+object/draft_schematic/structure/gen_sm_win_01_schem.iff
+object/draft_schematic/structure/gen_sm_win_02_schem.iff
+object/draft_schematic/structure/hangar_house_schem.iff
+object/draft_schematic/structure/jabbas_house_schem.iff
+object/draft_schematic/structure/jedi_house_schem.iff
+object/draft_schematic/structure/musty_house_schem.iff
+object/draft_schematic/structure/nab_sm_win_01_schem.iff
+object/draft_schematic/structure/rebel_house_schem.iff
+object/draft_schematic/structure/relaxation_house_schem.iff
+object/draft_schematic/structure/sandcrawler_house_schem.iff
+object/draft_schematic/structure/sith_house_schem.iff
+object/draft_schematic/structure/tat_sm_win_01_schem.iff
+object/draft_schematic/structure/tree_house_schem.iff
+object/draft_schematic/structure/vehicle_house_schem.iff
+object/draft_schematic/structure/vipbunker_house_schem.iff
+object/draft_schematic/structure/yoda_house_schem.iff
+object/draft_schematic/structure/yt1300_house_schem.iff
+
+
+
+
+
+
+
+
+
+
+
+
+
+object/draft_schematic/armor/armor_appearance_kashyyykian_black_mtn_bicep_l.iff
+object/draft_schematic/armor/armor_appearance_kashyyykian_black_mtn_bicep_r.iff
+object/draft_schematic/armor/armor_appearance_kashyyykian_black_mtn_chestplate.iff
+object/draft_schematic/armor/armor_appearance_kashyyykian_ceremonial_bicep_l.iff
+object/draft_schematic/armor/armor_appearance_kashyyykian_ceremonial_bicep_r.iff
+object/draft_schematic/armor/armor_appearance_kashyyykian_ceremonial_chestplate.iff
+object/draft_schematic/armor/armor_appearance_kashyyykian_hunting_bicep_l.iff
+object/draft_schematic/armor/armor_appearance_kashyyykian_hunting_bicep_r.iff
+object/draft_schematic/armor/armor_appearance_kashyyykian_hunting_chestplate.iff
+
+
+
+
+
+
+
+
+
+object/draft_schematic/armor/armor_appearance_rebel_assau0lt_bicep_l_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_assault_bicep_r_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_assault_boots_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_assault_bracer_l_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_assault_bracer_r_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_assault_chest_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_assault_gloves_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_assault_helmet_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_assault_leggings_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_assault_utility_belt_gcw.iff
+
+
+
+
+object/draft_schematic/armor/armor_appearance_rebel_battle_bicep_l_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_battle_bicep_r_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_battle_boots_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_battle_bracer_l_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_battle_bracer_r_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_battle_chest_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_battle_gloves_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_battle_helmet_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_battle_leggings_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_battle_utility_belt_gcw.iff
+
+
+
+
+object/draft_schematic/armor/armor_appearance_rebel_marine_bicep_l_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_marine_bicep_r_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_marine_boots_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_marine_bracer_l_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_marine_bracer_r_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_marine_chest_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_marine_gloves_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_marine_helmet_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_marine_leggings_gcw.iff
+object/draft_schematic/armor/armor_appearance_rebel_marine_utility_belt_gcw.iff
+
+
+
+
+
+
+
+
+object/draft_schematic/armor/armor_appearance_rebel_snow_belt.iff
+object/draft_schematic/armor/armor_appearance_rebel_snow_bicep_l.iff
+object/draft_schematic/armor/armor_appearance_rebel_snow_bicep_r.iff
+object/draft_schematic/armor/armor_appearance_rebel_snow_boots.iff
+object/draft_schematic/armor/armor_appearance_rebel_snow_bracer_l.iff
+object/draft_schematic/armor/armor_appearance_rebel_snow_bracer_r.iff
+object/draft_schematic/armor/armor_appearance_rebel_snow_chest.iff
+object/draft_schematic/armor/armor_appearance_rebel_snow_gloves.iff
+object/draft_schematic/armor/armor_appearance_rebel_snow_helmet.iff
+object/draft_schematic/armor/armor_appearance_rebel_snow_leggings.iff
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
