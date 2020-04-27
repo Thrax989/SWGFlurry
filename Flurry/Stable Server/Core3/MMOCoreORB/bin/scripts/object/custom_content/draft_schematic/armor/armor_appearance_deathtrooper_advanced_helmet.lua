@@ -27,7 +27,7 @@ object_draft_schematic_armor_armor_appearance_deathtrooper_advanced_helmet = obj
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/armor/deathtrooper/armor_deathtrooper_advanced_helmet.iff",
+   targetTemplate = "object/tangible/wearables/helmet/helmet_fighter_imperial_ace.iff",
 
    additionalTemplates = {
               }
