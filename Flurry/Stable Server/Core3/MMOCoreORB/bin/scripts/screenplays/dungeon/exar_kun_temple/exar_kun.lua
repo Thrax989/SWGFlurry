@@ -37,6 +37,8 @@ spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff"
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 0.1, 0.0315461, 42.2, 14200863, 1, 0, 0, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 6193, 249.9, -5978, 0, 1, 0, 0, 0)
 spawnSceneObject("mustafar", "object/tangible/terminal/terminal_quad_screen.iff", -4.9798, -0.528749, 4.48454, 12116005, 0.48481, 0, 0.87462, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 88.3474, 0.799999, -41.7449, 14200887, 1, 0, 0, 0)
+
 end
 --------------------------------------------------
 --   spawn mobiles for dungeon
