@@ -31,7 +31,7 @@ mytho_king = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "krayt_tissue_rare", chance = 10000000},
+				{group = "mythosaur_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
@@ -43,13 +43,13 @@ mytho_king = Creature:new {
 		},
 		{
 			groups = {
-				{group = "krayt_dragon_common", chance = 10000000},
+				{group = "mythosaur_common", chance = 10000000},
 			},
 			lootChance = 2500000
 		},
 		{
 			groups = {
-				{group = "krayt_pearls", chance = 10000000},
+				{group = "mythosaur_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
