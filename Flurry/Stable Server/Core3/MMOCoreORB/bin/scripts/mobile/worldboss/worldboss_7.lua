@@ -30,6 +30,18 @@ worldboss_7 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "vehicledeedsnormal", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "vehicledeedsrare", chance = 10000000},
+			},
+			lootChance = 2500000
+		},		
+		{
+			groups = {
 				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
