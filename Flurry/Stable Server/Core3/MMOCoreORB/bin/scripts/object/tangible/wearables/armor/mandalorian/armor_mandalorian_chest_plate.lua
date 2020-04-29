@@ -110,7 +110,7 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_chest_plate = obje
 	heat = 15,
 	cold = 15,
 	acid = 15,
-	lightSaber = 15,
+	lightSaber = 10,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
