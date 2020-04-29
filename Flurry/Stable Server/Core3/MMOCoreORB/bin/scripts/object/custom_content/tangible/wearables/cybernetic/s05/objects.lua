@@ -3,7 +3,6 @@ object_tangible_wearables_cybernetic_s05_shared_cybernetic_s05_arm_l = SharedTan
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_cybernetic_s05_shared_cybernetic_s05_arm_l, "object/tangible/wearables/cybernetic/s05/shared_cybernetic_s05_arm_l.iff")
-------------------------------------------------------------------------------------------------------------------------------------
 
 
 object_tangible_wearables_cybernetic_s05_shared_cybernetic_s05_arm_r = SharedTangibleObjectTemplate:new {
@@ -11,7 +10,6 @@ object_tangible_wearables_cybernetic_s05_shared_cybernetic_s05_arm_r = SharedTan
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_cybernetic_s05_shared_cybernetic_s05_arm_r, "object/tangible/wearables/cybernetic/s05/shared_cybernetic_s05_arm_r.iff")
-------------------------------------------------------------------------------------------------------------------------------------
 
 
 object_tangible_wearables_cybernetic_s05_shared_cybernetic_s05_legs = SharedTangibleObjectTemplate:new {
@@ -19,7 +17,6 @@ object_tangible_wearables_cybernetic_s05_shared_cybernetic_s05_legs = SharedTang
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_cybernetic_s05_shared_cybernetic_s05_legs, "object/tangible/wearables/cybernetic/s05/shared_cybernetic_s05_legs.iff")
-------------------------------------------------------------------------------------------------------------------------------------
 
 
 object_tangible_wearables_cybernetic_s05_shared_cybernetic_s05_torso = SharedTangibleObjectTemplate:new {
@@ -27,6 +24,5 @@ object_tangible_wearables_cybernetic_s05_shared_cybernetic_s05_torso = SharedTan
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_cybernetic_s05_shared_cybernetic_s05_torso, "object/tangible/wearables/cybernetic/s05/shared_cybernetic_s05_torso.iff")
-------------------------------------------------------------------------------------------------------------------------------------
 
 
