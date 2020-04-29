@@ -44,8 +44,6 @@
 object_tangible_wearables_armor_mandalorian_rebel_armor_mandalorian_rebel_chest_plate = object_tangible_wearables_armor_mandalorian_rebel_shared_armor_mandalorian_rebel_chest_plate:new {
 
 	templateType = ARMOROBJECT,
-	
-	objectMenuComponent = "ArmorObjectMenuComponent",
 
 	faction = "Rebel",
 

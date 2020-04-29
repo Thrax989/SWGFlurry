@@ -44,8 +44,6 @@
 object_tangible_wearables_armor_mandalorian_rebel_armor_mandalorian_rebel_leggings = object_tangible_wearables_armor_mandalorian_rebel_shared_armor_mandalorian_rebel_leggings:new {
 
 	templateType = ARMOROBJECT,
-	
-	objectMenuComponent = "ArmorObjectMenuComponent",
 
 	faction = "Rebel",
 
