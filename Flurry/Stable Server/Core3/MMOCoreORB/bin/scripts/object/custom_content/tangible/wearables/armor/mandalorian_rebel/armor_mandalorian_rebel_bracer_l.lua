@@ -44,8 +44,6 @@
 object_tangible_wearables_armor_mandalorian_rebel_armor_mandalorian_rebel_bracer_l = object_tangible_wearables_armor_mandalorian_rebel_shared_armor_mandalorian_rebel_bracer_l:new {
 
 	templateType = ARMOROBJECT,
-	
-	objectMenuComponent = "ArmorObjectMenuComponent",
 
 	faction = "Rebel",
 
