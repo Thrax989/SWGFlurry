@@ -8,8 +8,8 @@ includeFile("dressgroup/serverobjects.lua")
 includeFile("custom_content/serverobjects.lua")
 includeFile("custom_vendors/serverobjects.lua")
 --New Content Mob Template Files
-includeFile("hoth/serverobjects.lua")
-includeFile("kashyyyk/serverobjects.lua")
+--includeFile("hoth/serverobjects.lua")
+--includeFile("kashyyyk/serverobjects.lua")
 includeFile("nalhutta/serverobjects.lua")
 includeFile("taanab/serverobjects.lua")
 includeFile("mustafar/serverobjects.lua")
@@ -51,4 +51,7 @@ includeFile("mission/serverobjects.lua")
 includeFile("lair/serverobjects.lua")
 -- Outfits
 includeFile("outfits/serverobjects.lua")
+--Fallen Friends
+includeFile("ghost/serverobjects.lua")
+
 

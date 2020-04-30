@@ -236,10 +236,10 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_chest_plate = ob
 
 	specialResists = ELECTRICITY,
 
-	-- Copied from Comp
-	healthEncumbrance = 80,
-	actionEncumbrance = 80,
-	mindEncumbrance = 80,
+	-- These are default Blue Frog stats
+	healthEncumbrance = 300,
+	actionEncumbrance = 120,
+	mindEncumbrance = 85,
 
 	maxCondition = 30000,
 
@@ -266,6 +266,5 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_chest_plate = ob
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
-
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_chest_plate, "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_chest_plate.iff")

@@ -236,9 +236,9 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_boots = object_t
 
 	specialResists = ELECTRICITY,
 
-	-- Copied from Comp
+	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
-	actionEncumbrance = 80,
+	actionEncumbrance = 100,
 	mindEncumbrance = 80,
 
 	maxCondition = 30000,

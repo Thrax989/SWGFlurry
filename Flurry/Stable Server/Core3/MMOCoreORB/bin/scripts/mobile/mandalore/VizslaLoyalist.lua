@@ -32,13 +32,13 @@ vizsla_loyalist = Creature:new {
 		lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 10000000},
+				{group = "death_watch_bunker_lootbox", chance = 10000000},
 			},
 			lootChance = 2500000
 		},
 		{
 			groups = {
-				{group = "bounty_hunter_armor", chance = 10000000},
+				{group = "death_watch_bunker_ingredient_binary", chance = 10000000},
 			},
 			lootChance = 500000
 		},

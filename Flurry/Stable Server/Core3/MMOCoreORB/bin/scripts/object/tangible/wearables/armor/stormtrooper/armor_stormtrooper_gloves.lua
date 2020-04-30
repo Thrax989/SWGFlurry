@@ -235,7 +235,7 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_gloves = object_
 
 	specialResists = ELECTRICITY,
 
-	-- Copied from Comp
+	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
 	actionEncumbrance = 80,
 	mindEncumbrance = 80,
@@ -265,6 +265,5 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_gloves = object_
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
-
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_gloves, "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_gloves.iff")

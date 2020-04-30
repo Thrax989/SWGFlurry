@@ -236,17 +236,23 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_leggings_quest =
 	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 80,
-	actionEncumbrance = 80,
-	mindEncumbrance = 80,
+	healthEncumbrance = 130,
+	actionEncumbrance = 230,
+	mindEncumbrance = 85,
 
 	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
+	kinetic = 65,
+	energy = 65,
 	electricity = 80,
-	stun = 0,
+	stun = 25,
+	blast = 65,
+	heat = 65,
+	cold = 65,
+	acid = 65,
 	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},

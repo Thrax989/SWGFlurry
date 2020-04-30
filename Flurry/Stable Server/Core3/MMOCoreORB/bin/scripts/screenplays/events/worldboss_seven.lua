@@ -23,27 +23,13 @@ end
 --   spawn mobiles for Meatlump King corellia guards
 --------------------------------------------------
 function worldboss_seven:spawnMobiles()
-spawnMobile("corellia", "meatlump_guard", 0, -2156, 26, -4365, 0, 0)
-spawnMobile("corellia", "meatlump_guard", 0, -2155, 27, -4375, 0, 0)
-spawnMobile("corellia", "meatlump_guard", 0, -2158, 26, -4370, 0, 0)
-spawnMobile("corellia", "meatlump_guard", 0, -2149, 27, -4368, 0, 0)
-	numberOfActs = 1,
-  	planet = "corellia",
-}
-registerScreenPlay("worldboss_seven", true)
------------------------------
---Start World Boss ScreenPlay
------------------------------
-function worldboss_seven:start()
-	if (isZoneEnabled(self.planet)) then
-		self:spawnMobiles()
-		print("World Boss Seven Loaded")
-	end
-end
+spawnMobile("corellia", "meatlump_guard", 10800, -2156, 26, -4365, 0, 0)
+spawnMobile("corellia", "meatlump_guard", 10800, -2155, 27, -4375, 0, 0)
+spawnMobile("corellia", "meatlump_guard", 10800, -2158, 26, -4370, 0, 0)
+spawnMobile("corellia", "meatlump_guard", 10800, -2149, 27, -4368, 0, 0)
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-function worldboss_seven:spawnMobiles()
 local pBoss = spawnMobile("corellia", "meatlump_lookout", 10800, -2157, 26, -4369, 0, 0)--3 hour respawn to start the boss
 	print("Spawning Meatlump Lookout")
 if (pBoss ~= nil ) then
@@ -56,7 +42,7 @@ end
 --  Notify trigger is dead to spawn Boss
 -----------------------------------------
 function worldboss_seven:notifyTriggerDead(pBoss, pPlayer)
-local pBoss = spawnMobile("corellia", "worldboss_seven", -1, -2157, 26, -4369, 0, 0)
+local pBoss = spawnMobile("corellia", "worldboss_7", -1, -2157, 26, -4369, 0, 0)
     print("Spawning Meatlump King")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")

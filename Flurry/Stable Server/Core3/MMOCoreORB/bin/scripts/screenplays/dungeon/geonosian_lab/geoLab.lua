@@ -377,7 +377,7 @@ function GeonosianLab:spawnMobiles()
 	-- operatingroom2 (1627815)
 	spawnMobile("yavin4", "biogenic_scientist_generic_02", 1, -127.2, -34, -189.0, -93, 1627815)
 	spawnMobile("yavin4", "geonosian_scientist",180,-124.3,-34.0,-199.5,-60,1627815)
-	spawnMobile("yavin4", "geonosian_acklay_bunker_boss",3600,-139.8,-34,-194.3,57,1627815)
+	spawnMobile("yavin4", "acklayboss",3600,-139.8,-34,-194.3,57,1627815)
 
 	-- transition9 (1627816)
 	spawnMobile("yavin4", "alert_droideka",180,-129.8,-34.0,-267.9,87,1627816)
@@ -420,7 +420,7 @@ function GeonosianLab:spawnMobiles()
 	spawnMobile("yavin4", "cavern_spider",180,13.4,-22.0,-337.3,-179,1627822)
 
 	-- largeendcave (1627823)
-	spawnMobile("yavin4", "acklayboss",3600,101.1,-34.3,-321.6,-136,1627823, true) --Randomized respawn
+	spawnMobile("yavin4", "acklay",3600,101.1,-34.3,-321.6,-136,1627823, true) --Randomized respawn
 	spawnMobile("yavin4", "enhanced_kwi",180,48.0,-34.0,-334.4,0,1627823)
 	spawnMobile("yavin4", "cavern_spider",180,91.2,-33.9,-347.9,5,1627823)
 	spawnMobile("yavin4", "enhanced_kliknik",180,98.0,-34.1,-334.4,-53,1627823)

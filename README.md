@@ -108,16 +108,51 @@ type "bt" to do a back trace to find your error<br>
 
 ## Custom Professions
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Spy`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mechanic`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Melee Bounty Hunter`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray force sensative`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Initiate`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Novice` 
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Master`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Elder Gray Jedi`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Elder Gray Jedi Master`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Order`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Grand Master`
+- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Melee Bounty Hunter`
+- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray force sensative`
+- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray Initiate`
+- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Novice` 
+- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Master`
+- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Elder Gray Jedi`
+- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Elder Gray Jedi Master`
+- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Order`
+- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Grand Master`
+
+## Armorsmith [Available Craftable Armors]
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Assault Trooper`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Bone`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Bounty Hunter`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Chitin`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Clone Trooper`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Composite` 
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Death Trooper`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Galactic Marine`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Infilitrator`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Ithroian Defender`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Ithorian Guardian`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Ithorian Sentinel`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Kashyyykian Black Moutain`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Kashyyykian Ceremonial`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Kashyyykian Hunting`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalorian`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Mandalorian Rebel`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalorian Imperial`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Marauder`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Marine`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Nightsister`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Padded`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Rebel Assault`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Rebel Battle`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Rebel Snow`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Rebel Spec Force`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `RIS`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Scout Trooper`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Singing Moutain clan`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Snowtrooper`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Stormtrooper`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Tantel`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Ubues`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Zam`
 
 ## Pre-Pub 9 Jedi Additions
 - ![#008000](https://placehold.it/15/008000/000000?text=+) Jedi Perma Death (3 Lives Additional lives gained from holocrons) - This system can be turn - ![#008000](https://placehold.it/15/008000/000000?text=+) `On` or - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Off` depending on the server operators choice

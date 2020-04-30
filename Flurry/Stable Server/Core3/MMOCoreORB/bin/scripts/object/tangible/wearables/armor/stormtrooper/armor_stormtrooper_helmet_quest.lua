@@ -239,15 +239,21 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_helmet_quest = o
 	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
 	actionEncumbrance = 80,
-	mindEncumbrance = 80,
+	mindEncumbrance = 350,
 
 	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
+	kinetic = 65,
+	energy = 65,
 	electricity = 80,
-	stun = 0,
+	stun = 25,
+	blast = 65,
+	heat = 65,
+	cold = 65,
+	acid = 65,
 	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
@@ -260,5 +266,6 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_helmet_quest = o
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }
+
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_helmet_quest, "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_helmet_quest.iff")

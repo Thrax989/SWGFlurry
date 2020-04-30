@@ -139,6 +139,7 @@ Core3 = {
 
 	-- Each tre file (order is important!)
 	TreFiles = {
+	"flurry3.tre",
 	"flurry2.tre",
 	"flurry1.tre",
 	"mtg_patch_022.tre",

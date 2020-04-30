@@ -193,7 +193,7 @@ public:
 		ValidatedPosition pos;
 		pos.update(object);
 
-		if (!ghost->getAdminLevel() == 15) {
+		if (ghost->getAdminLevel() != 15) {
 			SceneObject* inventory = object->getSlottedObject("inventory");
 
 			if (inventory != nullptr && inventory->getCountableObjectsRecursive() > inventory->getContainerVolumeLimit() + 1) {
