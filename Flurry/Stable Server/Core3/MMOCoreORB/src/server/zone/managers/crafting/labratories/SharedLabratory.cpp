@@ -22,6 +22,9 @@ float SharedLabratory::calculateExperimentationValueModifier(int experimentation
 	// Make it so failure detract
 	float results;
 	switch (experimentationResult) {
+	case CraftingManager::EXCEPTIONALSUCCESS:
+		results = 0.16f;
+		break;
 	case CraftingManager::AMAZINGSUCCESS:
 		results = 0.09f;
 		break;
@@ -170,7 +173,7 @@ int SharedLabratory::calculateAssemblySuccess(CreatureObject* player,DraftSchema
 		}
 	}
 
-	int luckRoll = System::random(100) + cityBonus;
+	int luckRoll = System::random(100) + cityBonus + player->getSkillMod("luck") + player->getSkillMod("force_luck");
 
 	if(luckRoll > (95 - craftbonus))
 		return CraftingManager::AMAZINGSUCCESS;
@@ -180,8 +183,6 @@ int SharedLabratory::calculateAssemblySuccess(CreatureObject* player,DraftSchema
 
 	//if(luckRoll < 5)
 	//	return CRITICALFAILURE;
-
-	luckRoll += System::random(player->getSkillMod("luck") + player->getSkillMod("force_luck"));
 
 	int assemblyRoll = (toolModifier * (luckRoll + (assemblyPoints * 5)));
 

@@ -927,10 +927,19 @@ void CraftingSessionImplementation::experiment(int rowsAttempted, const String& 
 		manufactureSchematic->increaseComplexity();
 		prototype->setComplexity(manufactureSchematic->getComplexity());
 
-		// Do the experimenting - sets new percentages
-		craftingManager->experimentRow(manufactureSchematic, craftingValues, rowEffected,
-				pointsAttempted, failure, experimentationResult);
+		// Calculate chance for legendary bonus to amazing success roll
+		short modExpResult = experimentationResult;
+		if (experimentationResult == CraftingManager::AMAZINGSUCCESS)
+		{
+			if ((System::random(100) + crafter->getSkillMod("force_experimentation") + crafter->getSkillMod("luck") + crafter->getSkillMod("force_luck")) >= 90) // Legendary roll
+			{
+				modExpResult = CraftingManager::EXCEPTIONALSUCCESS;
+				crafter->sendSystemMessage("Your amazing success had exceptional results!");
+			}
+		}
 
+		// Do the experimenting - sets new percentages
+		craftingManager->experimentRow(manufactureSchematic, craftingValues, rowEffected, pointsAttempted, failure, modExpResult);
 	}
 
 	manufactureSchematic->setExperimentingCounter(
