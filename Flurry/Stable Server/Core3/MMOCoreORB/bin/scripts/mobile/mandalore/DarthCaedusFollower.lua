@@ -4,13 +4,14 @@ darth_caedus_follower = Creature:new {
 	pvpFaction = "",
 	faction = "",
 	level = 300,
-	chanceHit = 40,
-	damageMin = 750,
-	damageMax = 1250,
+	chanceHit = 75.00,
+	damageMin = 1750,
+	damageMax = 3750,
+	specialDamageMult = 7.5,  
 	baseXp = 15000,
 	baseHAM = 115000,
 	baseHAMmax = 125000,
-	armor = 1,
+	armor = 3,
 	resists = {70,70,70,70,70,70,70,70,35},
 	meatType = "",
 	meatAmount = 0,
@@ -35,19 +36,19 @@ darth_caedus_follower = Creature:new {
 			groups = {
 				{group = "clothing_attachments", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "armor_attachments", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "weapons_all", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -56,7 +57,7 @@ darth_caedus_follower = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
@@ -65,12 +66,12 @@ darth_caedus_follower = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2000000
+			lootChance = 3000000
      }
    },
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
-	attacks = merge(lightsabermaster)
+	attacks = merge(lightsabermaster,forcepowermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(darth_caedus_follower, "darth_caedus_follower")
