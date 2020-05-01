@@ -1,5 +1,5 @@
 ec = {
-	level = 10,
+	level = 2,
 	name = "ec",
 	tag = "Event Coordinator",
 	skills = {
