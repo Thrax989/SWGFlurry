@@ -1,7 +1,7 @@
 ec2 = {
 	level = 11,
 	name = "ec2",
-	tag = "Event Coordinator",
+	tag = "Senior Event Coordinator",
 	skills = {
 		"admin_base",
 		"admin_debug_01",
