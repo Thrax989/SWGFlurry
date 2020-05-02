@@ -726,7 +726,7 @@ ResourceSpawn* ResourceSpawner::createResourceSpawn(const String& type,
 		newSpawn->addStfClass(resClass);
 	}
 
-	bool isPerfect = (System::random(100) >= 90);
+	bool isPerfect = (System::random(100) >= 1);
 
 	for (int i = 0; i < resourceEntry->getAttributeCount(); ++i) {
 		auto attrib = resourceEntry->getAttribute(i);
@@ -770,9 +770,12 @@ ResourceSpawn* ResourceSpawner::createResourceSpawn(const String& type,
 	if (isPerfect)
 	{
 		StringBuffer msg;
-		msg << "\\#ffffffA new \\#00e600PERFECT\\#ffffff resource, " + name + ", has spawned.";
+		StringBuffer resources;
+		msg << "\\#ffffffA New \\#00e600Perfect\\#ffffff Resource, " + name + ", Has Spawned." ;
+		resources << "A New Perfect Resource " "[" + name + "] " + "[" + type + "] " + "Has Spawned.";
 		ChatManager* chatManager = processor->getZoneServer()->getChatManager();
 		chatManager->broadcastGalaxy(NULL, msg.toString());
+		chatManager->handleGeneralResourceChat(NULL, resources.toString());
 	}
 
 	//resourceEntry->toString();
