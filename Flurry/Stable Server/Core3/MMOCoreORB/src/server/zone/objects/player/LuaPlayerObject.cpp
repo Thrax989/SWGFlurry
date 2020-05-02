@@ -84,7 +84,6 @@ Luna<LuaPlayerObject>::RegType LuaPlayerObject::Register[] = {
 		{ "setVisibility", &LuaPlayerObject::setVisibility },
 		{ "getPlayedTimeString", &LuaPlayerObject::getPlayedTimeString },
 		{ "broadcastToServer", &LuaPlayerObject::broadcastToServer },
-		{ "broadcastToDiscord", &LuaPlayerObject::broadcastToDiscord },
 		{ 0, 0 }
 };
 
@@ -758,12 +757,5 @@ int LuaPlayerObject::broadcastToServer(lua_State* L) {
 	String message = lua_tostring(L, -1);
 	ZoneServer* zServ = realObject->getZoneServer();
 	zServ->getChatManager()->broadcastGalaxy(nullptr, message);
-	return 1;
-}
-
-int LuaPlayerObject::broadcastToDiscord(lua_State* L) {
-	String message = lua_tostring(L, -1);
-	ZoneServer* zServ = realObject->getZoneServer();
-	zServ->getChatManager()->handleGeneralDiscordChat(nullptr, message);
 	return 1;
 } 

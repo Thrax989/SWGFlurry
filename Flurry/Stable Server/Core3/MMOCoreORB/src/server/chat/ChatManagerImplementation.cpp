@@ -1687,20 +1687,6 @@ void ChatManagerImplementation::handleGeneralResourceChat(CreatureObject* sender
 
 }
 
-void ChatManagerImplementation::handleGeneralDiscordChat(CreatureObject* sender, const UnicodeString& message) {
-
-	String name = "Worldboss";
-	String fullName = "Worldboss";
-
-	UnicodeString formattedMessage(formatMessage(message));
-
-	if (generalRoom != nullptr) {
-		BaseMessage* msg = new ChatRoomMessage(fullName, server->getGalaxyName(), formattedMessage, generalRoom->getRoomID());
-		generalRoom->broadcastMessageCheckIgnore(msg, name);
-	}
-
-}
-
 void ChatManagerImplementation::sendMail(const String& sendername, const UnicodeString& header, const UnicodeString& body, const String& name) {
 	uint64 receiverObjectID = playerManager->getObjectID(name);
 	Time expireTime;
