@@ -1675,33 +1675,8 @@ void ChatManagerImplementation::handleGeneralChat(CreatureObject* sender, const 
 
 void ChatManagerImplementation::handleGeneralResourceChat(CreatureObject* sender, const UnicodeString& message) {
 
-	String fullName = "Resource Spawned";
-
-	if (sender->isPlayerCreature()) {
-		ManagedReference<PlayerObject*> senderGhost = sender->getPlayerObject();
-
-		if (senderGhost == nullptr)
-			return;
-
-		if (senderGhost->isMuted()) {
-			String reason = senderGhost->getMutedReason();
-
-			if (reason != "")
-				sender->sendSystemMessage("Your chat abilities are currently disabled by Customer Support for '" + reason + "'.");
-			else
-				sender->sendSystemMessage("Your chat abilities are currently disabled by Customer Support.");
-
-			return;
-		}
-
-		fullName = getTaggedName(senderGhost, name);
-	}
-
-	StringTokenizer args(message.toString());
-	if (!args.hasMoreTokens()) {
-		sender->sendSystemMessage("@ui:im_no_message"); // You need to include a message!
-		return;
-	}
+	String name = "Resource";
+	String fullName = "Resource";
 
 	UnicodeString formattedMessage(formatMessage(message));
 
