@@ -204,6 +204,7 @@ Thank you to the following server that provided custom content / alterations to 
   * Infinity
   * Project Carbonite
   * Reckoning
+  * Renegades
   * Sentinels Republic
   * Stardust
   * SWG-Europa

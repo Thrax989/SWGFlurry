@@ -12,6 +12,7 @@
 #include "server/zone/packets/resource/ResourceListForSurveyMessage.h"
 #include "server/zone/packets/resource/SurveyMessage.h"
 #include "server/zone/packets/chat/ChatSystemMessage.h"
+#include "server/chat/ChatManager.h"
 #include "server/zone/objects/waypoint/WaypointObject.h"
 #include "templates/params/ObserverEventType.h"
 #include "server/zone/packets/scene/PlayClientEffectLocMessage.h"
@@ -725,10 +726,21 @@ ResourceSpawn* ResourceSpawner::createResourceSpawn(const String& type,
 		newSpawn->addStfClass(resClass);
 	}
 
+	bool isPerfect = (System::random(100) >= 90);
+
 	for (int i = 0; i < resourceEntry->getAttributeCount(); ++i) {
 		auto attrib = resourceEntry->getAttribute(i);
-		int randomValue = randomizeValue(attrib->getMinimum(),
-				attrib->getMaximum());
+		int randomValue = 0;
+
+		if (isPerfect) // Perfect spawn
+		{
+			randomValue = attrib->getMaximum(); // All stats maximum
+		}
+		else // Normal random spawn
+		{
+			randomValue = randomizeValue((attrib->getMaximum() > 0 ? (attrib->getMaximum() - (attrib->getMaximum() * 0.2)) : (attrib->getMaximum())), attrib->getMaximum());
+		}
+
 		String attribName = attrib->getName();
 		int index = attrib->getIndex();
 		newSpawn->addAttribute(attribName, randomValue);
@@ -754,6 +766,17 @@ ResourceSpawn* ResourceSpawner::createResourceSpawn(const String& type,
 		newSpawn->setIsEnergy(true);
 
 	resourceMap->add(name, newSpawn);
+
+	if (isPerfect)
+	{
+		StringBuffer msg;
+		StringBuffer resources;
+		msg << "\\#ffffffA New \\#00e600Perfect\\#ffffff Resource, " + name + ", Has Spawned." ;
+		resources << "A New Perfect Resource " "[" + name + "] " + "[" + type + "] " + "Has Spawned.";
+		ChatManager* chatManager = processor->getZoneServer()->getChatManager();
+		chatManager->broadcastGalaxy(NULL, msg.toString());
+		chatManager->handleGeneralResourceChat(NULL, resources.toString());
+	}
 
 	//resourceEntry->toString();
 	//newSpawn->print();

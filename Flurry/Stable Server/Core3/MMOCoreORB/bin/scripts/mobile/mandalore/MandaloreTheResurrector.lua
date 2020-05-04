@@ -12,7 +12,7 @@ mandalore_the_resurrector = Creature:new {
 	baseHAM = 1250000,
 	baseHAMmax = 1500000,
 	armor = 3,
-	resists = {80,80,80,80,80,80,80,80,65},
+	resists = {180,180,180,180,180,180,180,180,165},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -79,7 +79,7 @@ mandalore_the_resurrector = Creature:new {
 		},
 		{
 			groups = {
-				{group = "death_watch_bunker_lootbox", chance = 10000000},
+				{group = "death_watch_bunker_commoners", chance = 10000000},
 			},
 			lootChance = 1000000
 		},

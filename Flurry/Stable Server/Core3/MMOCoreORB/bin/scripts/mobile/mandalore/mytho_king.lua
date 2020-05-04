@@ -1,12 +1,13 @@
 mytho_king = Creature:new {
 	--objectName = "@mob/creature_names:",
-	customName = "Mythosaur King",
+	customName = "\\#00ff00<<< Mythosaur King >>> \\#ff0000[lvl 300]",
 	socialGroup = "kimogila",
 	faction = "",
 	level = 300,
-	chanceHit = 50,
-	damageMin = 2250,
-	damageMax = 3550,
+	chanceHit = 75.00,
+	damageMin = 1750,
+	damageMax = 3750,
+  	specialDamageMult = 7.5,
 	baseXp = 385000,
 	baseHAM = 900000,
 	baseHAMmax = 1000000,
@@ -28,16 +29,23 @@ mytho_king = Creature:new {
 
 	templates = {"object/mobile/giant_dune_kimogila.iff"},
 	scale = 3.0;
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	lootGroups = {
 		{
 			groups = {
-				{group = "mythosaur_common", chance = 10000000},
+				{group = "goggles_all", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "mythosaur_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
@@ -45,13 +53,43 @@ mytho_king = Creature:new {
 			groups = {
 				{group = "mythosaur_common", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "mythosaur_common", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "weapons_all", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "worldbosscrate", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "vehicledeedsnormal", chance = 10000000},
 			},
 			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "vehicledeedsrare", chance = 10000000},
+			},
+			lootChance = 2500000
 		},
 		{
 			groups = {
@@ -69,7 +107,7 @@ mytho_king = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},
