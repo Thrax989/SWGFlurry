@@ -8,6 +8,7 @@ darth_caedus = Creature:new {
 	chanceHit = 95.00,
 	damageMin = 1750,
 	damageMax = 3750,
+  specialDamageMult = 2.5,  
 	baseXp = 13273,
 	baseHAM = 1000000,
 	baseHAMmax = 1500000,

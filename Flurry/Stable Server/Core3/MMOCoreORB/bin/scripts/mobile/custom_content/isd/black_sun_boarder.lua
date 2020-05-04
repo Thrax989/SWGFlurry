@@ -35,7 +35,7 @@ black_sun_boarder = Creature:new {
 				{group = "pistols", chance = 750000},
 				{group = "rifles", chance = 750000},
 				{group = "carbines", chance = 750000},
-				{group = "bounty_hunter_armor", chance = 200000},
+				{group = "death_watch_bunker_commoners", chance = 200000},
 				{group = "jetpack_base", chance = 50000},
 				{group = "wearables_common", chance = 500000},
 				{group = "wearables_uncommon", chance = 500000}

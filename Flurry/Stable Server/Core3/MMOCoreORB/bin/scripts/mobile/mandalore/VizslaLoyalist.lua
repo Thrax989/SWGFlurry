@@ -9,11 +9,12 @@ vizsla_loyalist = Creature:new {
 	chanceHit = 40,
 	damageMin = 750,
 	damageMax = 1250,
+  specialDamageMult = 7.5,  
 	baseXp = 15000,
 	baseHAM = 115000,
 	baseHAMmax = 125000,
 	armor = 1,
-	resists = {70,70,70,70,70,70,70,70,35},
+	resists = {170,170,170,170,170,170,170,170,155},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -32,19 +33,24 @@ vizsla_loyalist = Creature:new {
 		lootGroups = {
 		{
 			groups = {
-				{group = "death_watch_bunker_lootbox", chance = 10000000},
-			},
+				{group = "death_watch_bunker_lootbox", chance = 2000000},
+				{group = "death_watch_bunker_commoners", chance = 5000000},
+				{group = "clothing_attachments", chance = 1000000},
+				{group = "armor_attachments", chance = 1000000},      
+      },
 			lootChance = 2500000
 		},
 		{
 			groups = {
-				{group = "death_watch_bunker_ingredient_binary", chance = 10000000},
+				{group = "death_watch_bunker_ingredient_protective", chance = 5000000},
+ 				{group = "death_watch_bunker_ingredient_binary", chance = 5000000},
 			},
 			lootChance = 500000
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "weapons_all", chance = 5000000},
+ 				{group = "nge_all", chance = 5000000},       
 			},
 			lootChance = 500000
 		},

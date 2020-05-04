@@ -50,7 +50,7 @@ black_sun_henchman = Creature:new {
 		},
 		{
 			groups = {
-				{group = "bounty_hunter_armor", chance = 10000000}
+				{group = "death_watch_bunker_commoners", chance = 10000000}
 			},
 			lootChance = 5000000
 		},

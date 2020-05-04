@@ -51,7 +51,7 @@ death_watch_s_battle_droid = Creature:new {
 		},
 		{
 			groups = {
-				{group = "bounty_hunter_armor", chance = 10000000}
+				{group = "death_watch_bunker_commoners", chance = 10000000}
 			},
 			lootChance = 5000000
 		},
