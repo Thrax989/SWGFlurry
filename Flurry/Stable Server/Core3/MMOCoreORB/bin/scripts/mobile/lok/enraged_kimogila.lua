@@ -3,14 +3,14 @@ enraged_kimogila = Creature:new {
 	socialGroup = "kimogila",
 	faction = "",
 	level = 300,
-	chanceHit = 4.75,
-	damageMin = 920,
-	damageMax = 1550,
-	baseXp = 12801,
-	baseHAM = 50000,
-	baseHAMmax = 61000,
+	chanceHit = 30.0,
+	damageMin = 2200,
+	damageMax = 4200,
+	baseXp = 25000,
+	baseHAM = 300000,
+	baseHAMmax = 400000,
 	armor = 2,
-	resists = {145,170,145,170,145,140,200,145,-1},
+	resists = {145,170,145,170,145,140,200,145,125},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
 	hideType = "hide_leathery",
@@ -19,7 +19,7 @@ enraged_kimogila = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0.25,
-	ferocity = 0,
+	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
@@ -33,7 +33,7 @@ enraged_kimogila = Creature:new {
 	        groups = {
 				{group = "kimogila_common", chance = 10000000}
 			},
-			lootChance = 3700000
+			lootChance = 4000000
 		}
 	},
 	weapons = {},
