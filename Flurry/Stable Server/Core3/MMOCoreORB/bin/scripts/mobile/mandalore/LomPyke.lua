@@ -12,7 +12,7 @@ lom_pyke = Creature:new {
 	baseHAM = 1000000,
 	baseHAMmax = 1300000,
 	armor = 3,
-	resists = {75,75,75,75,75,75,75,75,50},
+	resists = {175,175,175,175,175,175,175,175,150},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -80,7 +80,7 @@ lom_pyke = Creature:new {
 		},
 		{
 			groups = {
-				{group = "death_watch_bunker_lootbox", chance = 10000000},
+				{group = "death_watch_bunker_commoners", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
