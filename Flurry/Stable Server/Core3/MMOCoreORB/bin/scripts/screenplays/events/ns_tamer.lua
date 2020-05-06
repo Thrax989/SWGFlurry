@@ -127,12 +127,12 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
       spatialChat(pBoss, "Boss Current Health = 90%")
       spatialChat(pBoss, "Get them! Attack!")
       writeData("ns_tamer:spawnState",2)
-      local ninespawn = spawnMobile("mandalore", "baz_nitch_terror", 0, -1134, 26, 2608, 0, 0)
-      local ninespawn = spawnMobile("mandalore", "baz_nitch_terror", 0, -1134, 26, 2608, 0, 0)
-      local ninespawn = spawnMobile("mandalore", "baz_nitch_terror", 0, -1143, 26, 2604, 0, 0)
-      local ninespawn = spawnMobile("mandalore", "baz_nitch_terror", 0, -1143, 26, 2604, 0, 0)
+      local onespawn = spawnMobile("mandalore", "baz_nitch_terror", 0, -1134, 26, 2608, 0, 0)
+      local onespawn = spawnMobile("mandalore", "baz_nitch_terror", 0, -1134, 26, 2608, 0, 0)
+      local onespawn = spawnMobile("mandalore", "baz_nitch_terror", 0, -1143, 26, 2604, 0, 0)
+      local onespawn = spawnMobile("mandalore", "baz_nitch_terror", 0, -1143, 26, 2604, 0, 0)
       ObjectManager.withCreatureObject(onespawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
+      writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
 		end
 --------------------------------------
@@ -164,10 +164,10 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
       spatialChat(pBoss, "Boss Current Health = 50%")
       spatialChat(pBoss, "Kitty's Attack!")
       writeData("ns_tamer:spawnState",6)
-      local ninespawn = spawnMobile("mandalore", "narglatch_bruiser", 0, -1134, 26, 2608, 0, 0)
-      local ninespawn = spawnMobile("mandalore", "narglatch_bruiser", 0, -1143, 26, 2604, 0, 0)
+      local fivespawn = spawnMobile("mandalore", "narglatch_bruiser", 0, -1134, 26, 2608, 0, 0)
+      local fivespawn = spawnMobile("mandalore", "narglatch_bruiser", 0, -1143, 26, 2604, 0, 0)
       ObjectManager.withCreatureObject(fivespawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
+      writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
 		end
 --------------------------------------
@@ -200,7 +200,7 @@ if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.
       writeData("ns_tamer:spawnState",10)
       local ninespawn = spawnMobile("mandalore", "graul_brute", 0, -1137, 26, 2607, 0, 0)
       ObjectManager.withCreatureObject(ninespawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
+      writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
 			end)
 		end
