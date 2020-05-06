@@ -158,40 +158,30 @@ type "bt" to do a back trace to find your error<br>
 - ![#008000](https://placehold.it/15/008000/000000?text=+) Jedi Perma Death (3 Lives Additional lives gained from holocrons) - This system can be turn - ![#008000](https://placehold.it/15/008000/000000?text=+) `On` or - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Off` depending on the server operators choice
 
 ## Custom Planets
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `corellia`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `dantooine`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `dathomir`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `endor`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `lok`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `naboo`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `rori`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `talus`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `tatooine`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `yavin4`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalore`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Taanab`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Chandrila`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Corellia`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Coruscant`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dantooine`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dathomir`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dungeon1`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dungeon2`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Endor`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Geonosis`
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Hoth`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Hutta`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Jakku`
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Kaas`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `coruscant`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `chandrila`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `nal hutta`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `moraband`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyyk`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mustafar`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `jakku`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `bespin`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `dagobah`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `dungeon1`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `dungeon2`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `ghomrassen`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `kessel`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `kuat`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `moncal`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `myrkr`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `nalhutta`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `ordmantell`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `tralus`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `wayland`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Kashyyyk`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `korriban`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Lok`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalore`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Mustafar`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Naboo`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Rori`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Taanab`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Talus`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Tatooine`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Yavin4'
 
 ## Extended thanks to the following servers / contributors
 Thank you to the following server that provided custom content / alterations to the base core3 experience. Over the course of a few years each individual has added some portion to the frame work or code that is currently in this repository.
