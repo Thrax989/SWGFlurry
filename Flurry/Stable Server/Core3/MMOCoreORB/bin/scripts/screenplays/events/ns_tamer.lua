@@ -134,6 +134,7 @@ if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.
       ObjectManager.withCreatureObject(onespawn, function(ofirstTime)
       writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
+			end)
 		end
 --------------------------------------
 --  80% health check
@@ -169,6 +170,7 @@ if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.
       ObjectManager.withCreatureObject(fivespawn, function(ofirstTime)
       writeData("countspawn", ofirstTime:getObjectID())
       ofirstTime:engageCombat(pPlayer)
+			end)
 		end
 --------------------------------------
 --  40% health check
