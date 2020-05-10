@@ -31,7 +31,7 @@ function baxter_stockman:spawnMobiles()
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
 local pBoss = spawnMobile("lok", "baxter_stockman", 10800, 2944.65, 290, -4688, 100, 0)--3 hour respawn to start the boss
-	print("Spawning Baxter Stockman")
+	print("Baxter Stockman has mutated")
 if (pBoss ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "baxter_stockman", "notifyTriggerDead", pBoss)
 end
@@ -42,7 +42,7 @@ end
 --  Notify trigger is dead to spawn Boss
 -----------------------------------------
 function baxter_stockman:notifyTriggerDead(pBoss, pPlayer)
-local pBoss = spawnMobile("lok", "baxter_stockman", -1, -79.1685, 17.8173, 23.93, 100, 14201105)
+local pBoss = spawnMobile("lok", "mutated_baxter_stockman", -1, 2944.65, 290, -4688, 100, 0)
     print("Spawning Baxter Stockman")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
@@ -50,7 +50,7 @@ local pBoss = spawnMobile("lok", "baxter_stockman", -1, -79.1685, 17.8173, 23.93
     ObjectManager.withCreatureObject(pBoss, function(oBoss)
     writeData("baxter_stockman:spawnState", 1)
     writeData("baxter_stockman", oBoss:getObjectID())
-    spatialChat(pBoss, "Intruder Alert Activating Defense Systems")
+    spatialChat(pBoss, "Baxter Stockmen injects himself with something, she'd his human skin turing into..")
     createObserver(DAMAGERECEIVED,"baxter_stockman","boss_damage", pBoss)
     createObserver(OBJECTDESTRUCTION, "baxter_stockman", "Restart", pBoss)
 end)
