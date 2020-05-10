@@ -31,7 +31,7 @@ function baxter_stockman:spawnMobiles()
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
 local pBoss = spawnMobile("lok", "baxter_stockman", 10800, 2944.65, 290, -4688, 100, 0)--3 hour respawn to start the boss
-	print("Baxter Stockman has mutated")
+	print("Baxter Stockman has loaded.")
 if (pBoss ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "baxter_stockman", "notifyTriggerDead", pBoss)
 end
@@ -43,7 +43,7 @@ end
 -----------------------------------------
 function baxter_stockman:notifyTriggerDead(pBoss, pPlayer)
 local pBoss = spawnMobile("lok", "mutated_baxter_stockman", -1, 2944.65, 290, -4688, 100, 0)
-    print("Spawning Baxter Stockman")
+    print("Baxter Stockman has mutated")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
     CreatureObject(pPlayer):playMusicMessage("sound/nightsister_temple.snd")
