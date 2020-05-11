@@ -21,7 +21,7 @@ mutated_razor_angler = Creature:new {
 	diet = CARNIVORE,
 	scale = 2.0,
 
-	templates = {"object/mobile/beast_master/shared_razor_angler.iff"},
+	templates = {"object/mobile/shared_angler_king.iff"},
 
 	lootGroups = {
 		{

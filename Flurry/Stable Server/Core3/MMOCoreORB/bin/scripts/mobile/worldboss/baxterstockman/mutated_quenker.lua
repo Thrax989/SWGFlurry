@@ -21,7 +21,7 @@ mutated_quenker = Creature:new {
 	diet = CARNIVORE,
 	scale = 2.0,
 
-	templates = {"mobile/beast_master/shared_bm_mutated_quenker.iff"},
+	templates = {"object/mobile/shared_barbed_quenker.iff"},
 
 	lootGroups = {
 		{

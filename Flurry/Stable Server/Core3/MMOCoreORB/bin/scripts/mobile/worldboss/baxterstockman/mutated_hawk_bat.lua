@@ -1,5 +1,5 @@
-mutated_chuba_fly = Creature:new {
-	customName = "Mutated Chuba Fly",
+mutated_hawk_bat = Creature:new {
+	customName = "Mutated Hawk Bat",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "mercenary",
@@ -19,9 +19,9 @@ mutated_chuba_fly = Creature:new {
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-	scale = 2.0,
+	scale = 1.0,
 
-	templates = {"mobile/beast_master/bm_mutated_chuba_fly.iff"},
+	templates = {"object/mobile/shared_hawk_bat.iff"},
 
 	lootGroups = {
 		{
@@ -105,7 +105,7 @@ mutated_chuba_fly = Creature:new {
 			lootChance = 10000000
 		},
 		},
-	weapons = {"creature_spit_small_yellow"},
+	weapons = {"creature_spit_heavy_flame"},
 	conversationTemplate = "",
 	attacks = {
 		{"creatureareacombo","StateAccuracyBonus=100"},
@@ -122,4 +122,4 @@ mutated_chuba_fly = Creature:new {
 		{"creatureareaattack","StateAccuracyBonus=100"}
 	}
 }
-CreatureTemplates:addCreatureTemplate(mutated_chuba_fly, "mutated_chuba_fly")
+CreatureTemplates:addCreatureTemplate(mutated_hawk_bat, "mutated_hawk_bat")

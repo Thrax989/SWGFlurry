@@ -1,5 +1,5 @@
 mutated_varasquactyl = Creature:new {
-	customName = "Mutated Varasquactyl",
+	customName = "Mutated Varactyl",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "mercenary",
@@ -21,7 +21,7 @@ mutated_varasquactyl = Creature:new {
 	diet = CARNIVORE,
 	scale = 2.0,
 
-	templates = {"object/mobile/beast_master/shared_bm_mutated_varasquactyl.iff"},
+	templates = {"object/mobile/shared_tcg_armored_varactyl.iff"},
 
 	lootGroups = {
 		{

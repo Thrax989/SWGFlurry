@@ -1,5 +1,5 @@
 mutated_umsortis = Creature:new {
-	customName = "Mutated Umsortis",
+	customName = "Mutated Urnsoris",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "mercenary",
@@ -21,7 +21,7 @@ mutated_umsortis = Creature:new {
 	diet = CARNIVORE,
 	scale = 2.0,
 
-	templates = {"object/mobile/beast_master/shared_bm_umsortis.iff"},
+	templates = {"object/mobile/shared_urnsoris.iff"},
 
 	lootGroups = {
 		{

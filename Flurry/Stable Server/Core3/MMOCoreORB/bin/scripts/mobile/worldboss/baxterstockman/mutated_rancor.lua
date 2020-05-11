@@ -21,7 +21,7 @@ mutated_rancor = Creature:new {
 	diet = CARNIVORE,
 	scale = 2.0,
 
-	templates = {"object/mobile/shared_bm_mutated_rancor.iff"},
+	templates = {"object/mobile/shared_mutant_rancor_static.iff"},
   hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
   
 	lootGroups = {

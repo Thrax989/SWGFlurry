@@ -21,7 +21,7 @@ mutated_bane_back = Creature:new {
 	diet = CARNIVORE,
 	scale = 2.0,
 
-	templates = {"object/mobile/beast_master/shared_bm_bane_back.iff"},
+	templates = {"object/mobile/shared_bane_back_spider.iff"},
 
 	lootGroups = {
 		{

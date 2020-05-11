@@ -1,5 +1,5 @@
-mutated_kimogila = Creature:new {
-	customName = "Mutated Kimogila",
+mutated_massif = Creature:new {
+	customName = "Mutated Massif",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "mercenary",
@@ -19,9 +19,9 @@ mutated_kimogila = Creature:new {
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
-	scale = 1.0,
+	scale = 2.0,
 
-	templates = {"object/mobile/beast_master/shared_bm_mutated_kimogila.iff"},
+	templates = {"object/mobile/shared_tusken_massif.iff"},
 
 	lootGroups = {
 		{
@@ -105,7 +105,7 @@ mutated_kimogila = Creature:new {
 			lootChance = 10000000
 		},
 		},
-	weapons = {"creature_spit_heavy_flame"},
+	weapons = {"creature_spit_small_yellow"},
 	conversationTemplate = "",
 	attacks = {
 		{"creatureareacombo","StateAccuracyBonus=100"},
@@ -122,4 +122,4 @@ mutated_kimogila = Creature:new {
 		{"creatureareaattack","StateAccuracyBonus=100"}
 	}
 }
-CreatureTemplates:addCreatureTemplate(mutated_kimogila, "mutated_kimogila")
+CreatureTemplates:addCreatureTemplate(mutated_massif, "mutated_massif")
