@@ -1,0 +1,4 @@
+object_intangible_pet_beast_master_shared_bm_blackwing_rancor = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/pet/beast_master/shared_bm_blackwing_rancor.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_beast_master_shared_bm_blackwing_rancor, "object/intangible/pet/beast_master/shared_bm_blackwing_rancor.iff")
