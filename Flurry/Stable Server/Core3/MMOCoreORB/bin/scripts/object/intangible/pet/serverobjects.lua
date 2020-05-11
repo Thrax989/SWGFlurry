@@ -43,7 +43,6 @@
 
 
 --Children folder includes
-includeFile("iintangible/pet/beast_master/serverobjects.lua")
 
 -- Server Objects
 includeFile("intangible/pet/21b_surgical_droid.lua")
