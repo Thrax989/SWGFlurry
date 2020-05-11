@@ -21,7 +21,7 @@ mutated_spiderclan_consort = Creature:new {
 	diet = CARNIVORE,
 	scale = 2.0,
 
-	templates = {"object/mobile/shared_spider_queen_consort.iff"},
+	templates = {"object/mobile/spider_queen_consort.iff"},
 
 	lootGroups = {
 		{

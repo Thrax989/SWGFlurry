@@ -1,5 +1,5 @@
-mutated_varasquactyl = Creature:new {
-	customName = "Mutated Varactyl",
+mutated_pug_jumper = Creature:new {
+	customName = "Mutated Pug Jumper",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "mercenary",
@@ -21,7 +21,7 @@ mutated_varasquactyl = Creature:new {
 	diet = CARNIVORE,
 	scale = 2.0,
 
-	templates = {"object/mobile/shared_tcg_armored_varactyl.iff"},
+	templates = {"object/mobile/ep3_pug_jumper.iff"},
 
 	lootGroups = {
 		{
@@ -122,4 +122,4 @@ mutated_varasquactyl = Creature:new {
 		{"creatureareaattack","StateAccuracyBonus=100"}
 	}
 }
-CreatureTemplates:addCreatureTemplate(mutated_varasquactyl, "mutated_varasquactyl")
+CreatureTemplates:addCreatureTemplate(mutated_pug_jumper, "mutated_pug_jumper")

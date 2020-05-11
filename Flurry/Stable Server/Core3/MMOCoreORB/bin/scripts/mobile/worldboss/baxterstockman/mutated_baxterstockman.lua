@@ -27,14 +27,14 @@ mutated_baxter_stockman = Creature:new {
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 5000000},
-        {group = "armor_attachments", chance = 5000000},
-			},
+				{group = "armor_attachments", chance = 5000000},
+				},
 			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 5000000},
-        {group = "armor_attachments", chance = 5000000},
+       				{group = "armor_attachments", chance = 5000000},
 			},
 			lootChance = 5000000
 		},    
@@ -145,8 +145,8 @@ mutated_baxter_stockman = Creature:new {
 				{group = "tierdiamond", chance = 2500000},
 			},
 			lootChance = 10000000
-		}	
-  },
+		},	
+ 		},
   
 	weapons = {"imperial_weapons_heavy"},
 	reactionStf = "@npc_reaction/slang",

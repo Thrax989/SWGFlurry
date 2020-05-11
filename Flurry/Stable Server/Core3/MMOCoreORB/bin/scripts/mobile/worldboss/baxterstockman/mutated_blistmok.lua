@@ -1,5 +1,5 @@
-mutated_hawk_bat = Creature:new {
-	customName = "Mutated Hawk Bat",
+mutated_blistmok = Creature:new {
+	customName = "Mutated Blistmok",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "mercenary",
@@ -21,7 +21,7 @@ mutated_hawk_bat = Creature:new {
 	diet = CARNIVORE,
 	scale = 1.0,
 
-	templates = {"object/mobile/shared_hawk_bat.iff"},
+	templates = {"object/mobile/som/som_kenobi_blistmok.iff"},
 
 	lootGroups = {
 		{
@@ -122,4 +122,4 @@ mutated_hawk_bat = Creature:new {
 		{"creatureareaattack","StateAccuracyBonus=100"}
 	}
 }
-CreatureTemplates:addCreatureTemplate(mutated_hawk_bat, "mutated_hawk_bat")
+CreatureTemplates:addCreatureTemplate(mutated_blistmok, "mutated_blistmok")

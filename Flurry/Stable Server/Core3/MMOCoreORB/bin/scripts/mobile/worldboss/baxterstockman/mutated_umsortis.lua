@@ -21,7 +21,7 @@ mutated_umsortis = Creature:new {
 	diet = CARNIVORE,
 	scale = 2.0,
 
-	templates = {"object/mobile/shared_urnsoris.iff"},
+	templates = {"object/mobile/urnsoris.iff"},
 
 	lootGroups = {
 		{

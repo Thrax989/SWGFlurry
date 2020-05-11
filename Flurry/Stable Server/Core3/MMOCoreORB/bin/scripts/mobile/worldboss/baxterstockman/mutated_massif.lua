@@ -21,7 +21,7 @@ mutated_massif = Creature:new {
 	diet = CARNIVORE,
 	scale = 2.0,
 
-	templates = {"object/mobile/shared_tusken_massif.iff"},
+	templates = {"object/mobile/tusken_massif.iff"},
 
 	lootGroups = {
 		{
