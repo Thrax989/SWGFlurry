@@ -54,7 +54,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "weapon_component", chance = 1000000},
 				{group = "weapon_component_advanced", chance = 1000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -72,7 +72,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "kimogila_common", chance = 1000000},
 				{group = "krayt_tissue_rare", chance = 1000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -81,7 +81,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "weapon_component", chance = 1000000},
 				{group = "weapon_component_advanced", chance = 1000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -90,7 +90,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "weapon_component", chance = 1000000},
 				{group = "weapon_component_advanced", chance = 1000000},
 			},
-			lootChance = 10000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
@@ -99,7 +99,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "weapon_component", chance = 1000000},
 				{group = "weapon_component_advanced", chance = 1000000},
 			},
-			lootChance = 10000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
@@ -108,7 +108,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "kimogila_common", chance = 1000000},
 				{group = "krayt_tissue_rare", chance = 1000000},
 			},
-			lootChance = 10000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
@@ -117,7 +117,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "kimogila_common", chance = 1000000},
 				{group = "krayt_tissue_rare", chance = 1000000},
 			},
-			lootChance = 10000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
@@ -126,7 +126,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "weapon_component", chance = 1000000},
 				{group = "weapon_component_advanced", chance = 1000000},
 			},
-			lootChance = 10000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
