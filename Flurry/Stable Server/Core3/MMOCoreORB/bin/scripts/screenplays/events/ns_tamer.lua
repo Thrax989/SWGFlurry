@@ -26,7 +26,7 @@ if (isZoneEnabled("mandalore")) then
 end
 
 function ns_tamer:spawnSceneObjects()
-spawnSceneObject("mandalore", "object/tangible/camp/camp_tent_s4.iff", -1133, 26, 2597, 0, 1, 0, 0, 0)
+spawnSceneObject("mandalore", "object/tangible/camp/camp_tent_s4.iff", -1133, 27, 2597, 0, 1, 0, 0, 0)
 end
 --------------------------------------------------
 --   spawn mobiles for dungeon        ADD MOBS HERE!!!!!!!!!!!!!!!!!
