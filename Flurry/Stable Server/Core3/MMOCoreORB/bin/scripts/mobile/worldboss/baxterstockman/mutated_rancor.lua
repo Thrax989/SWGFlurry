@@ -1,7 +1,5 @@
 mutated_rancor = Creature:new {
 	customName = "Mutated Rancor",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
@@ -98,25 +96,28 @@ mutated_rancor = Creature:new {
 		},
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
+				{group = "tierone", chance = 3500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 1500000},
+				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
+				{group = "tierone", chance = 3500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 1500000},
+				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
+				{group = "tierone", chance = 3500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 1500000},
+				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 10000000
 		},

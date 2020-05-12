@@ -1,7 +1,5 @@
 mutated_spiderclan_consort = Creature:new {
 	customName = "Mutated Consort",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
@@ -9,10 +7,10 @@ mutated_spiderclan_consort = Creature:new {
 	damageMin = 1250,
 	damageMax = 2800,
 	baseXp = 2500000,
-	baseHAM = 400000,
-	baseHAMmax = 600000,
-	armor = 3,
-	resists = {95,95,95,95,95,95,95,95,95},
+	baseHAM = 350000,
+	baseHAMmax = 350000,
+	armor = 2,
+	resists = {75,75,75,75,75,75,75,75,75},
 	tamingChance = 0,
 	ferocity = 10,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
@@ -82,25 +80,28 @@ mutated_spiderclan_consort = Creature:new {
 		},
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
+				{group = "tierone", chance = 3500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 1500000},
+				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
+				{group = "tierone", chance = 3500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 1500000},
+				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
+				{group = "tierone", chance = 3500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 1500000},
+				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 10000000
 		},

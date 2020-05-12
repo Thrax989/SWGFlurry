@@ -20,9 +20,8 @@ mutated_baxter_stockman = Creature:new {
 	diet = HERBIVORE,
 	scale = 1.5,
   
-	templates = {
-		"object/mobile/dressed_geonosian_scientist_01.iff",
-  
+	templates = {"object/mobile/dressed_geonosian_scientist_01.iff"},
+  {
 	lootGroups = {
 		{
 			groups = {
@@ -38,7 +37,7 @@ mutated_baxter_stockman = Creature:new {
 			},
 			lootChance = 5000000
 		},    
-  		{
+  	{
 			groups = {
 				{group = "chemistry_component", chance = 3500000},
 				{group = "chemistry_component_advanced", chance = 4500000},
@@ -145,9 +144,8 @@ mutated_baxter_stockman = Creature:new {
 				{group = "tierdiamond", chance = 2500000},
 			},
 			lootChance = 10000000
-		},	
- 		},
-  
+		}
+	},
 	weapons = {"imperial_weapons_heavy"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge (bountyhuntermaster,marksmanmaster,brawlermaster,pikemanmaster,fencermaster,swordsmanmaster,tkamaster,pistoleermaster,commandomaster)

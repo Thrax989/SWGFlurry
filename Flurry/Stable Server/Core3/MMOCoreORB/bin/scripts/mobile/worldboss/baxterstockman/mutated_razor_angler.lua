@@ -1,7 +1,5 @@
 mutated_razor_angler = Creature:new {
 	customName = "Mutated Razor Angler",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
@@ -9,10 +7,10 @@ mutated_razor_angler = Creature:new {
 	damageMin = 1250,
 	damageMax = 2800,
 	baseXp = 2500000,
-	baseHAM = 400000,
-	baseHAMmax = 600000,
-	armor = 3,
-	resists = {95,95,95,95,95,95,95,95,95},
+	baseHAM = 150000,
+	baseHAMmax = 150000,
+	armor = 1,
+	resists = {55,55,55,55,55,55,55,55,55},
 	tamingChance = 0,
 	ferocity = 10,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
@@ -82,25 +80,28 @@ mutated_razor_angler = Creature:new {
 		},
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
+				{group = "tierone", chance = 3500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 1500000},
+				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "junk", chance = 5000000},
-				{group = "armor_all", chance = 2500000},
-				{group = "weapons_all", chance = 2500000}
+				{group = "tierone", chance = 3500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 1500000},
+				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "wearables_all", chance = 5000000},
-				{group = "loot_kit_parts", chance = 2500000},
-				{group = "tailor_components", chance = 2500000}
+				{group = "tierone", chance = 3500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 1500000},
+				{group = "tierdiamond", chance = 1500000},
 			},
 			lootChance = 10000000
 		},
