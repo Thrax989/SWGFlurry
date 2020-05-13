@@ -38,7 +38,8 @@ function worldboss_twoScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
 	player:broadcastToServer("\\#63C8F9 Naboo World Boss Has Died!")
 	player:broadcastToServer("\\#63C8F9 Naboo World Boss Will Respawn In 3 Hours")
-
+	player:broadcastToDiscord("Naboo World Boss Has Died!")
+	player:broadcastToDiscord("Naboo World Boss Will Respawn In 3 Hours")
 	print("World Boss One Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "worldboss_twoScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
