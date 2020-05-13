@@ -771,6 +771,7 @@ includeFile("events/ns_tamer.lua")
 --includeFile("events/worldboss_thirteen.lua")
 --includeFile("events/worldboss_fourteen.lua")
 --includeFile("events/worldboss_fifteen.lua")
+includeFile("events/baxterstockman.lua")
 
 --painting exchange dealer
 includeFile("events/painting_exchange_dealer.lua")
