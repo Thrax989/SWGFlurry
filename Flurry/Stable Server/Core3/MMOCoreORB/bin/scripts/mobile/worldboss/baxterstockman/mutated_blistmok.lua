@@ -105,6 +105,7 @@ mutated_blistmok = Creature:new {
 			},
 			lootChance = 10000000
 		},
+    },
 	weapons = {"creature_spit_heavy_flame"},
 	conversationTemplate = "",
 	attacks = {
