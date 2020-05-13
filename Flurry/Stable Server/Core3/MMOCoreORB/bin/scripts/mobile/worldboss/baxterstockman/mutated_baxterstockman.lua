@@ -21,7 +21,7 @@ mutated_baxter_stockman = Creature:new {
 	scale = 1.5,
   
 	templates = {"object/mobile/dressed_geonosian_scientist_01.iff"},
-  {
+
 	lootGroups = {
 		{
 			groups = {
@@ -53,7 +53,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "weapon_component", chance = 1000000},
 				{group = "weapon_component_advanced", chance = 1000000},
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -71,7 +71,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "kimogila_common", chance = 1000000},
 				{group = "krayt_tissue_rare", chance = 1000000},
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -80,7 +80,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "weapon_component", chance = 1000000},
 				{group = "weapon_component_advanced", chance = 1000000},
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -89,7 +89,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "weapon_component", chance = 1000000},
 				{group = "weapon_component_advanced", chance = 1000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -98,7 +98,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "weapon_component", chance = 1000000},
 				{group = "weapon_component_advanced", chance = 1000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -107,7 +107,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "kimogila_common", chance = 1000000},
 				{group = "krayt_tissue_rare", chance = 1000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -116,7 +116,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "kimogila_common", chance = 1000000},
 				{group = "krayt_tissue_rare", chance = 1000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -125,7 +125,7 @@ mutated_baxter_stockman = Creature:new {
 				{group = "weapon_component", chance = 1000000},
 				{group = "weapon_component_advanced", chance = 1000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -148,7 +148,7 @@ mutated_baxter_stockman = Creature:new {
 	},
 	weapons = {"imperial_weapons_heavy"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge (bountyhuntermaster,marksmanmaster,brawlermaster,pikemanmaster,fencermaster,swordsmanmaster,tkamaster,pistoleermaster,commandomaster)
+	attacks = {merge (bountyhuntermaster,marksmanmaster,brawlermaster,pikemanmaster,fencermaster,swordsmanmaster,tkamaster,pistoleermaster,commandomaster)
     }
  }
 
