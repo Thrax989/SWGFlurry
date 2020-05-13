@@ -60,11 +60,15 @@ end
 --  Notify trigger broadcast respawning
 -----------------------------------------
 function worldboss_seven:Restart(pPlayer, pBoss)
+	local player = LuaCreatureObject(pPlayer)
+	player:broadcastToServer("\\#63C8F9 MeatLump King World Boss Has Died!")
+	player:broadcastToServer("\\#63C8F9 MeatLump King World Boss Will Respawn In 3 Hours")
+	player:broadcastToDiscord("MeatLump King World Boss Has Died!")
+	player:broadcastToDiscord("MeatLump King World Boss Will Respawn In 3 Hours")
     print("Starting Boss Broadcast Scripts")
-	createEvent(1 * 1000, "worldboss_seven", "Restartstates", pPlayer, "")--Restart Meatlump King States
-	createEvent(1 * 1000, "worldboss_seven", "BroadcastRespawn", pPlayer, "")--Broadcast 3 Hour Respawn
-	createEvent(300 * 1000, "worldboss_seven", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
-	createEvent(10795 * 1000, "worldboss_seven", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
+	createEvent(120 * 1000, "worldboss_seven", "Restartstates", pPlayer, "")--Restart Meatlump King States
+	createEvent(120 * 1000, "worldboss_seven", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
+	createEvent(10797 * 1000, "worldboss_seven", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
 	createEvent(10798 * 1000, "worldboss_seven", "KillSpawnCast1", pPlayer, "")--Broadcast Respawn 3
 	createEvent(10799 * 1000, "worldboss_seven", "KillSpawnCast2", pPlayer, "")--Broadcast Respawn 2
 	createEvent(10800 * 1000, "worldboss_seven", "KillSpawnCast3", pPlayer, "")--Broadcast Respawn 1
@@ -205,6 +209,7 @@ end
 function worldboss_seven:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Meatlump King Respawning In ...")
+		player:broadcastToDiscord("Meatlump King World Boss Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -212,6 +217,7 @@ end
 function worldboss_seven:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -219,6 +225,7 @@ end
 function worldboss_seven:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -226,6 +233,7 @@ end
 function worldboss_seven:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("Meatlump King Is Respawning")
 end
 -----------------------------------------------------------------------------
