@@ -150,6 +150,7 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "getGender", &LuaCreatureObject::getGender },
 		{ "getSkillMod", &LuaCreatureObject::getSkillMod},
 		{ "broadcastToServer", &LuaCreatureObject::broadcastToServer },
+		{ "broadcastToDiscord", &LuaCreatureObject::broadcastToDiscord },
 		{ 0, 0 }
 };
 
@@ -1100,13 +1101,6 @@ int LuaCreatureObject::getGender(lua_State* L) {
 	return 1;
 }
 
-int LuaCreatureObject::broadcastToServer(lua_State* L) {
-	String message = lua_tostring(L, -1);
-	ZoneServer* zServ = realObject->getZoneServer();
-	zServ->getChatManager()->broadcastGalaxy(nullptr, message);
-	return 1;
-}
-
 int LuaCreatureObject::subtractBankCredits(lua_State* L) {
 	Locker locker(realObject);
 
@@ -1201,4 +1195,18 @@ int LuaCreatureObject::getActivePet(lua_State* L) {
 	lua_pushlightuserdata(L, pet);
 
 	return 1;	
+}
+
+int LuaCreatureObject::broadcastToServer(lua_State* L) {
+	String message = lua_tostring(L, -1);
+	ZoneServer* zServ = realObject->getZoneServer();
+	zServ->getChatManager()->broadcastGalaxy(nullptr, message);
+	return 1;
+}
+
+int LuaCreatureObject::broadcastToDiscord(lua_State* L) {
+	String message = lua_tostring(L, -1);
+	ZoneServer* zServ = realObject->getZoneServer();
+	zServ->getChatManager()->handleGeneralDiscordChat(nullptr, message);
+	return 1;
 }

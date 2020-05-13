@@ -726,7 +726,7 @@ ResourceSpawn* ResourceSpawner::createResourceSpawn(const String& type,
 		newSpawn->addStfClass(resClass);
 	}
 
-	bool isPerfect = (System::random(100) >= 1);
+	bool isPerfect = (System::random(100) >= 90);
 
 	for (int i = 0; i < resourceEntry->getAttributeCount(); ++i) {
 		auto attrib = resourceEntry->getAttribute(i);

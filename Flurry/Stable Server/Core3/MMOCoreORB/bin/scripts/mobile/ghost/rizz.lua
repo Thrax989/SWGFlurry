@@ -1,5 +1,5 @@
 rizz_ghost = Creature:new {
-	customName = "Rizz (The Fallen)",
+	customName = "Ryder (The Fallen)",
 	socialGroup = "townsperson",
 	pvpFaction = "",
 	faction = "",
