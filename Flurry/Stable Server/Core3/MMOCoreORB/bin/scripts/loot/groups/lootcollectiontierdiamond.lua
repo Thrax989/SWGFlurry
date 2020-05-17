@@ -34,7 +34,7 @@ lootcollectiontierdiamond  = {
 		{groupTemplate = "kimogila_common", weight = 312500},
 		{groupTemplate = "geonosian_cubes", weight = 312500},
 		{groupTemplate = "fire_breathing_spider", weight = 312500},
-		{groupTemplate = "acklay", weight = 312500},
+		{groupTemplate = "recycler_component", weight = 312500},
 		{groupTemplate = "nightsister_common", weight = 312500},
 		{groupTemplate = "mythosaur_common", weight = 312500},
 	}

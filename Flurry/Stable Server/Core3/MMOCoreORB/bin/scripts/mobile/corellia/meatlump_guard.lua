@@ -43,14 +43,15 @@ meatlump_guard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "tiertwo", chance = 10000000},
+				{group = "tiertwo", chance = 2000000},
 				{group = "loot_kit_parts", chance = 2000000},
-				{group = "color_crystals", chance = 1500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "meatlump_common", chance = 5000000}
-			}
+				{group = "color_crystals", chance = 2000000},
+				{group = "tailor_components", chance = 2000000},
+				{group = "meatlump_common", chance = 2000000}
+			},
+			lootChance = 8000000
 		}
-	},
+},
 	weapons = {"pirate_weapons_light"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(brawlernovice,marksmannovice)

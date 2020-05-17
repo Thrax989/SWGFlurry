@@ -3,14 +3,14 @@ enraged_dune_kimogila = Creature:new {
 	socialGroup = "kimogila",
 	faction = "",
 	level = 300,
-	chanceHit = 6.25,
-	damageMin = 940,
-	damageMax = 1590,
-	baseXp = 14030,
-	baseHAM = 62000,
-	baseHAMmax = 75000,
+	chanceHit = 30.0,
+	damageMin = 2200,
+	damageMax = 4200,
+	baseXp = 25000,
+	baseHAM = 310000,
+	baseHAMmax = 410000,
 	armor = 2,
-	resists = {180,190,180,200,180,180,200,180,-1},
+	resists = {180,190,180,200,180,180,200,180,135},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
 	hideType = "hide_leathery",
@@ -19,7 +19,7 @@ enraged_dune_kimogila = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0.25,
-	ferocity = 0,
+	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
@@ -33,7 +33,7 @@ enraged_dune_kimogila = Creature:new {
 	        groups = {
 				{group = "kimogila_common", chance = 10000000}
 			},
-			lootChance = 3960000
+			lootChance = 5000000
 		}
 	},
 	weapons = {},
