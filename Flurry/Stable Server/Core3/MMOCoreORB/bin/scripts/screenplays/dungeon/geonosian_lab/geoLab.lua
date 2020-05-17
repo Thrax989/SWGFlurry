@@ -382,7 +382,7 @@ function GeonosianLab:spawnMobiles(pBoss, pPlayer)
 	spawnMobile("yavin4", "acklayboss",3600,-139.8,-34,-194.3,57,1627815)
 
 	local pBoss = spawnMobile("yavin4", "acklayboss",3600,-139.8,-34,-194.3,57,1627815)
-	if (pBoss == nil ) then
+	if (pBoss ~= nil ) then
 	player:broadcastToDiscord("The Geonosian Lab Acklay Has Died!!")
 	end
 
