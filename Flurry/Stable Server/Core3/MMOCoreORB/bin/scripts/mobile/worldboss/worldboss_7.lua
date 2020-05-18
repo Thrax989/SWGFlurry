@@ -1,6 +1,6 @@
 worldboss_7 = Creature:new {
 	customName = "\\#00ff00<<< Meatlump King >>> \\#0000ff[lvl 275]",
-	socialGroup = "townsperson",
+	socialGroup = "meatlump",
 	faction = "",
 	level = 275,
 	chanceHit = 50.0,
