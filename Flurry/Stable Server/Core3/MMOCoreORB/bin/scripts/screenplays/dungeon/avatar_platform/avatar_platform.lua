@@ -398,6 +398,7 @@ end
 function avatar_platform:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Avatar Boss Respawning In 3 Hours")
+		player:broadcastToDiscord("Avatar Boss Respawning In 3 Hours")
     	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
@@ -405,7 +406,9 @@ end
 -----------------------
 function avatar_platform:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Avatar Boss Respawning In ...")
+		player:broadcastToServer("\\#63C8F9 Avatar Boss Respawning In ..")
+		player:broadcastToDiscord("Avatar Boss Respawning In ..")
+
 end
 -----------------------
 --Broadcast Respawn 3
@@ -413,6 +416,7 @@ end
 function avatar_platform:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -420,6 +424,7 @@ end
 function avatar_platform:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -427,6 +432,7 @@ end
 function avatar_platform:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("Avatar Boss Is Respawning")
 end
 -----------------------------------------------------------------------------

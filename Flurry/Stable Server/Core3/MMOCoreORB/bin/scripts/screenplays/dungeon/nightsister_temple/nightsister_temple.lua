@@ -316,6 +316,7 @@ end
 function nightsister_temple:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Nightsister Temple Boss Respawning In 3 Hours")
+		player:broadcastToDiscord("Nightsister Temple Boss Respawning In 3 Hours")
     	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
@@ -323,7 +324,8 @@ end
 -----------------------
 function nightsister_temple:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Nightsister Temple Boss Respawning In ...")
+		player:broadcastToServer("\\#63C8F9 Nightsister Temple Boss Respawning In ..")
+		player:broadcastToDiscord("Nightsister Temple Boss Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -331,6 +333,7 @@ end
 function nightsister_temple:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -338,6 +341,7 @@ end
 function nightsister_temple:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -345,6 +349,7 @@ end
 function nightsister_temple:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("nightsister temple boss Is Respawning")
 end
 -----------------------------------------------------------------------------

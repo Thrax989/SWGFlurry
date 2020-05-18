@@ -38,6 +38,8 @@ function LomPykeScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
 	player:broadcastToServer("\\#63C8F9 Lom Pyke Has Died!")
 	player:broadcastToServer("\\#63C8F9 Lom Pyke Will Respawn In 3 Hours")
+	player:broadcastToDiscord("Lom Pyke Has Died!")
+	player:broadcastToDiscord("Lom Pyke Will Respawn In 3 Hours")
 	print("Lom Pyke Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "LomPykeScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
@@ -63,6 +65,7 @@ end
 function LomPykeScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Lom Pyke Respawning In ..")
+		player:broadcastToDiscord("Lom Pyke Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -70,6 +73,7 @@ end
 function LomPykeScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -77,6 +81,7 @@ end
 function LomPykeScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -84,6 +89,7 @@ end
 function LomPykeScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
 --The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot

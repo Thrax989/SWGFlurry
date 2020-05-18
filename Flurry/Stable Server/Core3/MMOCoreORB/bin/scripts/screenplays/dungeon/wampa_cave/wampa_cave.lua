@@ -324,6 +324,7 @@ end
 function wampa_cave:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Wampa Boss Respawning In 3 Hours")
+		player:broadcastToDiscord("Wampa Boss Respawning In 3 Hours")
     	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
@@ -331,7 +332,8 @@ end
 -----------------------
 function wampa_cave:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Wampa Boss Respawning In ...")
+		player:broadcastToServer("\\#63C8F9 Wampa Boss Respawning In ..")
+		player:broadcastToDiscord("Janta Boss Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -339,6 +341,7 @@ end
 function wampa_cave:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -346,6 +349,7 @@ end
 function wampa_cave:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -353,6 +357,7 @@ end
 function wampa_cave:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("Wampa Is Respawning")
 end
 -----------------------------------------------------------------------------
