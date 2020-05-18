@@ -350,7 +350,6 @@ function wampa_cave:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
-		player:broadcastToDiscord("1")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -358,6 +357,7 @@ end
 function wampa_cave:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("Wampa Is Respawning")
 end
 -----------------------------------------------------------------------------
