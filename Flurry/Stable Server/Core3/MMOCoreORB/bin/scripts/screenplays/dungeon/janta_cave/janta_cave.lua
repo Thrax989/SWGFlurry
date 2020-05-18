@@ -204,6 +204,7 @@ end
 function janta_cave:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Janta Boss Respawning In 3 Hours")
+		player:broadcastToDiscord("Nightsister Temple Boss Respawning In 3 Hours")
     	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
@@ -211,7 +212,8 @@ end
 -----------------------
 function janta_cave:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Janta Boss Respawning In ...")
+		player:broadcastToServer("\\#63C8F9 Janta Boss Respawning In ..")
+		player:broadcastToDiscord("Janta Boss Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -219,6 +221,7 @@ end
 function janta_cave:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -226,6 +229,7 @@ end
 function janta_cave:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -233,6 +237,7 @@ end
 function janta_cave:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("Janta Boss Is Respawning")
 end
 -----------------------------------------------------------------------------
