@@ -5,7 +5,7 @@
 --//		Change your world boss under WORLDBOSS	//
 --//Spawn Points Will Determain The Boss Spawn location //
 --////////////////////////////////////////////////////////
---//		Current World Boss Planet naboo		//
+--//		Current World Boss Planet Lok		//
 --//		Current World Boss Type CREATURE 	//
 --///////////////////////////////////////////////////////
 worldboss_sixScreenplay = ScreenPlay:new {
@@ -40,7 +40,7 @@ function worldboss_sixScreenplay:bossDead(pBoss, pPlayer)
 	player:broadcastToServer("\\#63C8F9 Lok World Boss Will Respawn In 3 Hours")
 	player:broadcastToDiscord("Lok World Boss Has Died!")
 	player:broadcastToDiscord("Lok World Boss Will Respawn In 3 Hours")
-	print("World Boss Six Has Died")
+	print("World Boss six Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "worldboss_sixScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "worldboss_sixScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
