@@ -65,13 +65,14 @@ function worldboss_seven:Restart(pPlayer, pBoss)
 	player:broadcastToServer("\\#63C8F9 MeatLump King World Boss Will Respawn In 3 Hours")
 	player:broadcastToDiscord("MeatLump King World Boss Has Died!")
 	player:broadcastToDiscord("MeatLump King World Boss Will Respawn In 3 Hours")
-    print("Starting Boss Broadcast Scripts")
+    	print("Starting Boss Broadcast Scripts")
+	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "worldboss_seven", "Restartstates", pPlayer, "")--Restart Meatlump King States
-	createEvent(120 * 1000, "worldboss_seven", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
-	createEvent(10797 * 1000, "worldboss_seven", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "worldboss_seven", "KillSpawnCast1", pPlayer, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "worldboss_seven", "KillSpawnCast2", pPlayer, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "worldboss_seven", "KillSpawnCast3", pPlayer, "")--Broadcast Respawn 1
+	createEvent(120 * 1000, "worldboss_seven", "KillBoss", pBoss, "")--Clean Up Dead Corpse
+	createEvent(10797 * 1000, "worldboss_seven", "KillSpawnCast", pBoss, "")--Broadcast Respawn
+	createEvent(10798 * 1000, "worldboss_seven", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
+	createEvent(10799 * 1000, "worldboss_seven", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
+	createEvent(10800 * 1000, "worldboss_seven", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
     return 0
 end
 --------------------------------------
@@ -194,14 +195,6 @@ if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 
         end
       end
    return 0
-end
-----------------------------
---Broadcast Initial Respawn
-----------------------------
-function worldboss_seven:BroadcastRespawn(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Meatlump King Respawning In 3 Hours")
-    	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
 --Broadcast Respawn
