@@ -27,6 +27,9 @@ end
 
 function ns_tamer:spawnSceneObjects()
 spawnSceneObject("mandalore", "object/tangible/camp/camp_tent_s4.iff", -1133, 27, 2597, 0, 1, 0, 0, 0)
+spawnSceneObject("mandalore", "object/tangible/camp/campfire_logs_smoldering.iff", -1139, 27, 2596, 0, 1, 0, 0, 0)
+spawnSceneObject("mandalore", "object/tangible/camp/camp_lawn_chair.iff", -1138, 27, 2592, 0, 1, 0, 0, 0)
+spawnSceneObject("mandalore", "object/tangible/camp/camp_lawn_chair.iff", -1142, 27, 2597, 0, 1, 0, 0, 0)	
 end
 --------------------------------------------------
 --   spawn mobiles for dungeon        ADD MOBS HERE!!!!!!!!!!!!!!!!!
@@ -36,6 +39,11 @@ spawnMobile("mandalore", "nightsister_rancor", 1800, -1146, 26, 2603, 0, 0)
 spawnMobile("mandalore", "nightsister_rancor", 1800, -1122, 26, 2614, 0, 0)
 spawnMobile("mandalore", "nightsister_rancor", 1800, -1122, 26, 2599, 0, 0)
 spawnMobile("mandalore", "nightsister_rancor", 1800, -1124, 26, 2578, 0, 0)
+spawnMobile("mandalore", "nightsister_slave", 300, -1139, 26, 2587, 0, 0)
+spawnMobile("mandalore", "nightsister_slave", 300, -1131, 26, 2586, 0, 0)
+spawnMobile("mandalore", "nightsister_slave", 300, -1129, 26, 2620, 0, 0)
+spawnMobile("mandalore", "nightsister_slave", 300, -1155, 26, 2602, 0, 0)
+spawnMobile("mandalore", "nightsister_slave", 300, -1137, 26, 2597, 0, 0)	
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
@@ -223,6 +231,7 @@ end
 function ns_tamer:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Nightsister Tamer Respawning In 3 Hours")
+		player:broadcastToDiscord("Nightsister Temple Boss Respawning In 3 Hours")
     	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
@@ -230,7 +239,8 @@ end
 -----------------------
 function ns_tamer:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Nightsister Tamer Respawning In ...")
+		player:broadcastToServer("\\#63C8F9 Nightsister Tamer Respawning In ..")
+		player:broadcastToDiscord("Nightsister Tamer Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -238,6 +248,7 @@ end
 function ns_tamer:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -245,6 +256,7 @@ end
 function ns_tamer:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -252,6 +264,7 @@ end
 function ns_tamer:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("Nightsister Tamer Is Respawning")
 end
 -----------------------------------------------------------------------------

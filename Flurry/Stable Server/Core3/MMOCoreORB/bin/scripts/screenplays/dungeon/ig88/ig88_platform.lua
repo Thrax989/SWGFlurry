@@ -326,8 +326,11 @@ end
 ----------------------------
 function ig88_platform:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 Ig88 Platform Has Died!")
 		player:broadcastToServer("\\#63C8F9 Ig88 Platform Boss Respawning In 3 Hours")
-    	print("Starting Boss Respawn Broadcast Message")
+		player:broadcastToDiscord("Ig88 Platform Has Died!")
+		player:broadcastToDiscord("Ig88 Platform Will Respawn In 3 Hours")
+    		print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
 --Broadcast Respawn
@@ -335,6 +338,7 @@ end
 function ig88_platform:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Ig88 Platform Boss Respawning In ...")
+		player:broadcastToDiscord("Ig88 Platform Boss Respawning In ...")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -342,6 +346,7 @@ end
 function ig88_platform:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -349,6 +354,7 @@ end
 function ig88_platform:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -356,6 +362,7 @@ end
 function ig88_platform:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("Ig88 Platform Is Respawning")
 end
 -----------------------------------------------------------------------------

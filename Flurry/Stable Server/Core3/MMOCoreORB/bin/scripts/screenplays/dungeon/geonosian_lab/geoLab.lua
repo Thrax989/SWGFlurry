@@ -252,9 +252,7 @@ function GeonosianLab:spawnSceneObjects()
 	end
 end
 
-function GeonosianLab:spawnMobiles(pBoss, pPlayer)
-	local player = LuaCreatureObject(pPlayer)
-	local creature = CreatureObject(pBoss)
+function GeonosianLab:spawnMobiles()
 	-- cave_entrance (1627781)
 	spawnMobile("yavin4", "biogenic_crazyguy", 1, -2.8, 10.8, 10.2, 69, 1627781)
 
@@ -380,11 +378,6 @@ function GeonosianLab:spawnMobiles(pBoss, pPlayer)
 	spawnMobile("yavin4", "biogenic_scientist_generic_02", 1, -127.2, -34, -189.0, -93, 1627815)
 	spawnMobile("yavin4", "geonosian_scientist",180,-124.3,-34.0,-199.5,-60,1627815)
 	spawnMobile("yavin4", "acklayboss",3600,-139.8,-34,-194.3,57,1627815)
-
-	local pBoss = spawnMobile("yavin4", "acklayboss",3600,-139.8,-34,-194.3,57,1627815)
-	if (pBoss == nil ) then
-	player:broadcastToDiscord("The Geonosian Lab Acklay Has Died!!")
-	end
 
 	-- transition9 (1627816)
 	spawnMobile("yavin4", "alert_droideka",180,-129.8,-34.0,-267.9,87,1627816)

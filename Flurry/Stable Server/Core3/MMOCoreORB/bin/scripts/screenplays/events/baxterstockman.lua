@@ -344,9 +344,8 @@ end
 function baxter_stockman:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Baxter Stockman has been killed and will be respawning in 3 Hours")
-    player:broadcastToDiscord("Baxter Stockman has been killed and will be respawning in 3 Hours")
-
-    	print("Starting Boss Respawn Broadcast Message")
+    		player:broadcastToDiscord("Baxter Stockman has been killed and will be respawning in 3 Hours")
+    		print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
 --Broadcast Respawn
@@ -354,7 +353,7 @@ end
 function baxter_stockman:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Baxter Stockman will be respawning in ...")
-    player:broadcastToDiscord("Baxter Stockman will be respawning in ...")
+    		player:broadcastToDiscord("Baxter Stockman will be respawning in ...")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -362,7 +361,7 @@ end
 function baxter_stockman:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
-    player:broadcastToDiscord("3")
+    		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -370,7 +369,7 @@ end
 function baxter_stockman:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
-    player:broadcastToDiscord("2")
+    		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -378,7 +377,7 @@ end
 function baxter_stockman:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
-    player:broadcastToDiscord("1")
+    		player:broadcastToDiscord("1")
     	print("Baxter Stockman Is Respawning")
 end
 -----------------------------------------------------------------------------
