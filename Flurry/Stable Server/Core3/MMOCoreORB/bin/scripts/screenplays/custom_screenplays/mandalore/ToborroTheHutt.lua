@@ -99,7 +99,6 @@ function ToborroTheHuttScreenplay:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted Toborro The Hutt Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 	end
 	return 0
 end

@@ -99,7 +99,6 @@ function DarthCaedusScreenplay:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted Darth Caedus Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 	end
 	return 0
 end

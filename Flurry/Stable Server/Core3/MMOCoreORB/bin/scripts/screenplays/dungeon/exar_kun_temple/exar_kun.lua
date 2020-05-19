@@ -428,7 +428,6 @@ function exar_kun:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted Exar Kun Boss Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		return 0
 	end
 end
@@ -439,7 +438,6 @@ function exar_kun:Remove(pBoss)
 	if SceneObject(pBoss) then
 		print("Exar Kun Boss Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		dropObserver(pBoss, OBJECTDESTRUCTION)
 		dropObserver(pBoss, DAMAGERECEIVED)
 		forcePeace(pBoss)

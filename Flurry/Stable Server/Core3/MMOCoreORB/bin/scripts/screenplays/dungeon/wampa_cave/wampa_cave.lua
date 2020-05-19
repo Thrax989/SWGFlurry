@@ -368,7 +368,6 @@ function wampa_cave:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted Wampa Boss Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		return 0
 	end
 end
@@ -379,7 +378,6 @@ function wampa_cave:Remove(pBoss)
 	if SceneObject(pBoss) then
 		print("Wampa Boss Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		dropObserver(pBoss, OBJECTDESTRUCTION)
 		dropObserver(pBoss, DAMAGERECEIVED)
 		forcePeace(pBoss)
