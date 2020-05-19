@@ -46,7 +46,6 @@ local pBoss = spawnMobile("corellia", "worldboss_7", -1, -2157, 26, -4369, 0, 0)
     print("Spawning Meatlump King")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
-    CreatureObject(pPlayer):playMusicMessage("sound/exar_kun.snd")
     ObjectManager.withCreatureObject(pBoss, function(oBoss)
     writeData("worldboss_seven:spawnState", 1)
     writeData("worldboss_seven", oBoss:getObjectID())
@@ -191,7 +190,7 @@ if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.
 if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.001))) and readData("worldboss_seven:spawnState") == 4) then
       spatialChat(pBoss, "Live by the sword, Die by the sword.")
       spatialChat(pBoss, "You have 5 minutes to loot my body before it disappears.")
-            writeData("exar_kun:spawnState",5)
+            writeData("worldboss_seven:spawnState",5)
         end
       end
    return 0
@@ -233,14 +232,15 @@ end
 --The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
 -----------------------------------------------------------------------------
 function worldboss_seven:KillBoss(pBoss)
+	local creature = CreatureObject(pBoss)
 	dropObserver(pBoss, OBJECTDESTRUCTION)
 	if SceneObject(pBoss) then
 		print("Unlooted Meatlump King Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		end
 	return 0
 end
+
 ----------------------------
 --Remove Boss After 3 hours
 ----------------------------
@@ -248,7 +248,6 @@ function worldboss_seven:Remove(pBoss)
 	if SceneObject(pBoss) then
 		print("Meatlump King Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		dropObserver(pBoss, OBJECTDESTRUCTION)
 		dropObserver(pBoss, DAMAGERECEIVED)
 		forcePeace(pBoss)
