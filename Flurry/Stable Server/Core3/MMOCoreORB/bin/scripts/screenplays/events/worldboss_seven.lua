@@ -30,7 +30,7 @@ spawnMobile("corellia", "meatlump_guard", 10800, -2149, 27, -4368, 0, 0)
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pBoss = spawnMobile("corellia", "meatlump_lookout", 10800, -2157, 26, -4369, 0, 0)--3 hour respawn to start the boss
+local pBoss = spawnMobile("corellia", "meatlump_lookout", 10, -2157, 26, -4369, 0, 0)--3 hour respawn to start the boss
 	print("Spawning Meatlump Lookout")
 if (pBoss ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "worldboss_seven", "notifyTriggerDead", pBoss)
@@ -69,10 +69,10 @@ function worldboss_seven:Restart(pPlayer, pBoss)
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "worldboss_seven", "Restartstates", pPlayer, "")--Restart Meatlump King States
 	createEvent(120 * 1000, "worldboss_seven", "KillBoss", pBoss, "")--Clean Up Dead Corpse
-	createEvent(10797 * 1000, "worldboss_seven", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "worldboss_seven", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "worldboss_seven", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "worldboss_seven", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
+	createEvent(7 * 1000, "worldboss_seven", "KillSpawnCast", pBoss, "")--Broadcast Respawn
+	createEvent(8 * 1000, "worldboss_seven", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
+	createEvent(9 * 1000, "worldboss_seven", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
+	createEvent(10 * 1000, "worldboss_seven", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
     return 0
 end
 --------------------------------------
@@ -81,7 +81,7 @@ end
 function worldboss_seven:boss_damage(pBoss, pPlayer, onespawn, twospawn, threespawn, fourspawn, fivespawn, player, pMember)
 local player = LuaCreatureObject(pPlayer)
 local boss = LuaCreatureObject(pBoss)
-createEvent(10800 * 1000, "worldboss_seven", "Remove", pBoss, "")
+createEvent(10 * 1000, "worldboss_seven", "Remove", pBoss, "")
 --------------------------------------
 --   Range and health checks for boss
 --------------------------------------
@@ -238,8 +238,8 @@ function worldboss_seven:KillBoss(pBoss)
 		print("Unlooted Meatlump King Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
 		SceneObject(pBoss):destroyObjectFromDatabase()
-		return 0
-	end
+		end
+	return 0
 end
 ----------------------------
 --Remove Boss After 3 hours
