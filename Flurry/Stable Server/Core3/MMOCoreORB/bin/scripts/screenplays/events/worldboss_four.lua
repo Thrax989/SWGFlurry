@@ -99,7 +99,6 @@ function worldboss_fourScreenplay:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted World Boss One Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 	end
 	return 0
 end
