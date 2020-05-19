@@ -445,7 +445,6 @@ function isd_platform:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted ISD Platform Boss Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		return 0
 	end
 end
@@ -456,7 +455,6 @@ function isd_platform:Remove(pBoss)
 	if SceneObject(pBoss) then
 		print("ISD Platform Boss Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		dropObserver(pBoss, OBJECTDESTRUCTION)
 		dropObserver(pBoss, DAMAGERECEIVED)
 		forcePeace(pBoss)
