@@ -1,7 +1,7 @@
 narglatch_bruiser = Creature:new {
 	customName = "\\#00ff00<<< Narglatch Bruiser >>> \\#ff0000[lvl 200]",
-	socialGroup = "narglatch",
-	faction = "",
+	socialGroup = "nightsister",
+	faction = "nightsister",
 	level = 200,
 	chanceHit = 50.0,
 	damageMin = 4000,

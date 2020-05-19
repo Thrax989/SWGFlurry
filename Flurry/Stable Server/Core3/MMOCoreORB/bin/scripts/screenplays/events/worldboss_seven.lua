@@ -68,10 +68,10 @@ function worldboss_seven:Restart(pPlayer, pBoss)
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "worldboss_seven", "Restartstates", pPlayer, "")--Restart Meatlump King States
 	createEvent(120 * 1000, "worldboss_seven", "KillBoss", pBoss, "")--Clean Up Dead Corpse
-	createEvent(7 * 1000, "worldboss_seven", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(8 * 1000, "worldboss_seven", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(9 * 1000, "worldboss_seven", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(10 * 1000, "worldboss_seven", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
+	createEvent(10797 * 1000, "worldboss_seven", "KillSpawnCast", pBoss, "")--Broadcast Respawn
+	createEvent(10798 * 1000, "worldboss_seven", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
+	createEvent(10799 * 1000, "worldboss_seven", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
+	createEvent(10800 * 1000, "worldboss_seven", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
     return 0
 end
 --------------------------------------
