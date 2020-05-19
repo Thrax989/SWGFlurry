@@ -1,7 +1,7 @@
 graul_brute = Creature:new {
 	customName = "\\#00ff00<<< Graul Brute >>> \\#ff0000[lvl 250]",
-	socialGroup = "graul",
-	faction = "",
+	socialGroup = "nightsister",
+	faction = "nightsister",
 	level = 250,
 	chanceHit = 50.0,
 	damageMin = 3000,
