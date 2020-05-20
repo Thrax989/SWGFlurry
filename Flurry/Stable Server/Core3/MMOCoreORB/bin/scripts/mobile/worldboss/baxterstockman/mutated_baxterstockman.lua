@@ -39,64 +39,15 @@ mutated_baxter_stockman = Creature:new {
 		},    
   	{
 			groups = {
-				{group = "chemistry_component", chance = 3500000},
-				{group = "chemistry_component_advanced", chance = 4500000},
-				{group = "weapon_component", chance = 1000000},
-				{group = "weapon_component_advanced", chance = 1000000},
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "chemistry_component", chance = 3500000},
-				{group = "chemistry_component_advanced", chance = 4500000},
-				{group = "weapon_component", chance = 1000000},
-				{group = "weapon_component_advanced", chance = 1000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "fire_breathing_spider", chance = 3500000},
-				{group = "geonosian_cubes", chance = 4500000},
-				{group = "kimogila_common", chance = 1000000},
-				{group = "krayt_tissue_rare", chance = 1000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "fire_breathing_spider", chance = 3500000},
-				{group = "geonosian_cubes", chance = 4500000},
-				{group = "kimogila_common", chance = 1000000},
-				{group = "krayt_tissue_rare", chance = 1000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "chemistry_component", chance = 3500000},
-				{group = "chemistry_component_advanced", chance = 4500000},
-				{group = "weapon_component", chance = 1000000},
-				{group = "weapon_component_advanced", chance = 1000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "chemistry_component", chance = 3500000},
-				{group = "chemistry_component_advanced", chance = 4500000},
-				{group = "weapon_component", chance = 1000000},
-				{group = "weapon_component_advanced", chance = 1000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "chemistry_component", chance = 3500000},
-				{group = "chemistry_component_advanced", chance = 4500000},
-				{group = "weapon_component", chance = 1000000},
-				{group = "weapon_component_advanced", chance = 1000000},
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
 			},
 			lootChance = 10000000
 		},
@@ -120,10 +71,46 @@ mutated_baxter_stockman = Creature:new {
 		},
 		{
 			groups = {
-				{group = "chemistry_component", chance = 3500000},
-				{group = "chemistry_component_advanced", chance = 4500000},
-				{group = "weapon_component", chance = 1000000},
-				{group = "weapon_component_advanced", chance = 1000000},
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "fire_breathing_spider", chance = 3500000},
+				{group = "geonosian_cubes", chance = 4500000},
+				{group = "kimogila_common", chance = 1000000},
+				{group = "krayt_tissue_rare", chance = 1000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "fire_breathing_spider", chance = 3500000},
+				{group = "geonosian_cubes", chance = 4500000},
+				{group = "kimogila_common", chance = 1000000},
+				{group = "krayt_tissue_rare", chance = 1000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+        {group = "worldbosscrate", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
