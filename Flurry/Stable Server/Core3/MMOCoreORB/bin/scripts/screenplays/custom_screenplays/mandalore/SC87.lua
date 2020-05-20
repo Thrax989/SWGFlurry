@@ -99,7 +99,6 @@ function SC87Screenplay:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted SC87 Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 	end
 	return 0
 end

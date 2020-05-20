@@ -1,7 +1,7 @@
 baz_nitch_terror = Creature:new {
 	customName = "\\#00ff00<<< Baz Nitch Terror >>> \\#ff0000[lvl 100]",
-	socialGroup = "baz_nitch",
-	faction = "",
+	socialGroup = "nightsister",
+	faction = "nightsister",
 	level = 100,
 	chanceHit = 50.0,
 	damageMin = 500,

@@ -99,7 +99,6 @@ function MandaloreBossScreenplay:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted Mandalore The Resurrector Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 	end
 	return 0
 end

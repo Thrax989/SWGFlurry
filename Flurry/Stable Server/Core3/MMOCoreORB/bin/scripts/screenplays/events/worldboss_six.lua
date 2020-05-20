@@ -5,7 +5,7 @@
 --//		Change your world boss under WORLDBOSS	//
 --//Spawn Points Will Determain The Boss Spawn location //
 --////////////////////////////////////////////////////////
---//		Current World Boss Planet naboo		//
+--//		Current World Boss Planet Lok		//
 --//		Current World Boss Type CREATURE 	//
 --///////////////////////////////////////////////////////
 worldboss_sixScreenplay = ScreenPlay:new {
@@ -99,7 +99,6 @@ function worldboss_sixScreenplay:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted World Boss Six Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 	end
 	return 0
 end

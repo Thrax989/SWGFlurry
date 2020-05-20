@@ -360,7 +360,6 @@ function nightsister_temple:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted nightsister temple Boss Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		return 0
 	end
 end
@@ -371,7 +370,6 @@ function nightsister_temple:Remove(pBoss)
 	if SceneObject(pBoss) then
 		print("nightsister temple Boss Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		dropObserver(pBoss, OBJECTDESTRUCTION)
 		dropObserver(pBoss, DAMAGERECEIVED)
 		forcePeace(pBoss)

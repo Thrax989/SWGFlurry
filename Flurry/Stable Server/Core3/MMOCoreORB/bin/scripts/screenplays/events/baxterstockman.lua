@@ -388,7 +388,6 @@ function baxter_stockman:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted Baxter Stockman corpse has been destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		return 0
 	end
 end
@@ -399,7 +398,6 @@ function baxter_stockman:Remove(pBoss)
 	if SceneObject(pBoss) then
 		print("Baxter Stockman has been Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		dropObserver(pBoss, OBJECTDESTRUCTION)
 		dropObserver(pBoss, DAMAGERECEIVED)
 		forcePeace(pBoss)
