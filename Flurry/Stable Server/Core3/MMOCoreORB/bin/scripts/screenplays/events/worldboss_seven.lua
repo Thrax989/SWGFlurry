@@ -30,7 +30,7 @@ spawnMobile("corellia", "meatlump_guard", 10800, -2149, 27, -4368, 0, 0)
 -------------------------------------------------------------------------
 --  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
 -------------------------------------------------------------------------
-local pBoss = spawnMobile("corellia", "meatlump_lookout", 10, -2157, 26, -4369, 0, 0)--3 hour respawn to start the boss
+local pBoss = spawnMobile("corellia", "meatlump_lookout", 10800, -2157, 26, -4369, 0, 0)--3 hour respawn to start the boss
 	print("Spawning Meatlump Lookout")
 if (pBoss ~= nil ) then
     createObserver(OBJECTDESTRUCTION, "worldboss_seven", "notifyTriggerDead", pBoss)
