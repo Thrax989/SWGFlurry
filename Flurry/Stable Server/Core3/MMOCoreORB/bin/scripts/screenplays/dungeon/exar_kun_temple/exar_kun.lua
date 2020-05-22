@@ -384,7 +384,7 @@ end
 function exar_kun:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Exar Kun Boss Respawning In 3 Hours")
-		player:broadcastToDiscord("Nightsister Temple Boss Respawning In 3 Hours")
+		player:broadcastToDiscord("Exar Kun Boss Respawning In 3 Hours")
     	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
