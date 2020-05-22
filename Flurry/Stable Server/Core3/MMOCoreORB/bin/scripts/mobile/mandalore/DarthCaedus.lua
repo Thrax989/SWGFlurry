@@ -141,7 +141,7 @@ darth_caedus = Creature:new {
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "nge_house_loot_deed_01", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
