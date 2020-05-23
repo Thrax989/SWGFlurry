@@ -373,7 +373,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 	//max range checks
 	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getMaxRange() >= 75) {
   		Locker locker(weapon);
- 		weapon->setForceCost(70);
+ 		weapon->setMaxRange(70);
 	}
 
 	if (defender->isEntertaining())
