@@ -612,7 +612,8 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 	                		String playerName = target->getFirstName();
 					zGeneral << "A Bounty Hunter Has Collected A Bounty On " << playerName << " [Bounty Complete]";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
-
+					owner->updateBountyKills();
+					complete();
 					if (!killer->hasSkill("combat_jedi_novice") && !killer->hasSkill("force_title_jedi_novice")) {
 					owner->addBankCredits(50000);
 					owner->updateBountyKills();
