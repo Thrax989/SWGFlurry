@@ -104,30 +104,6 @@ local bossMind = boss:getHAM(6)
 local bossMaxHealth = boss:getMaxHAM(0)
 local bossMaxAction = boss:getMaxHAM(3)
 local bossMaxMind = boss:getMaxHAM(6)
-
-local x1 = -1137
-local y1 = 2607
-local x2 = boss:getPositionX()
-local y2 = boss:getPositionY()
-
-local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-local maxDistance = 50 --Max distance you can fight the boss is 50 meters, you must be within range to fight the boss. Resets to full health if you fail the check.
-if distance > (maxDistance * maxDistance) then
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      CreatureObject(pBoss):healDamage(heal, 0)
-      CreatureObject(pBoss):healDamage(heal, 3)
-      CreatureObject(pBoss):healDamage(heal, 6)
-      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/bacta_grenade.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_shocked_01_noshake.cef", "")
-      spatialChat(pBoss, "Boss Resetting. You are out of combat range")
-      CreatureObject(pPlayer):sendSystemMessage("You must be within 50m of the boss to fight, boss is now resetting")
-end
 --------------------------------------
 --  90% health check
 --------------------------------------
@@ -230,8 +206,10 @@ end
 ----------------------------
 function ns_tamer:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Nightsister Tamer Respawning In 3 Hours")
-		player:broadcastToDiscord("Nightsister Temple Boss Respawning In 3 Hours")
+		player:broadcastToDiscord("Nightsister Tamer Boss Has Died!")
+		player:broadcastToServer("\\#63C8F9 Nightsister Tamer Boss Has Died!")
+		player:broadcastToServer("\\#63C8F9 Nightsister Tamer Boss Respawning In 3 Hours")
+		player:broadcastToDiscord("Nightsister Tamer Boss Respawning In 3 Hours")
     	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------

@@ -315,6 +315,8 @@ end
 ----------------------------
 function nightsister_temple:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 Nightsister Temple Boss Has Died!")
+		player:broadcastToDiscord("Nightsister Temple Boss Has Died!")
 		player:broadcastToServer("\\#63C8F9 Nightsister Temple Boss Respawning In 3 Hours")
 		player:broadcastToDiscord("Nightsister Temple Boss Respawning In 3 Hours")
     	print("Starting Boss Respawn Broadcast Message")
