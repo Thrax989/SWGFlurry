@@ -1367,7 +1367,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
 				//If not in duel
 				ghost->updatePvpDeaths();
-				attackerGhost->updatePvPKillCount();
+				updatePvPKillCount(attackerCreature);
 				//Award Faction Points
 				FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
 				if (!attackerCreature->hasBountyMissionFor(player) && !player->hasBountyMissionFor(attackerCreature))
