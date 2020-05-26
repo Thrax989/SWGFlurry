@@ -67,9 +67,8 @@ http://www.swgflurry.com/Launcher/SWGFlurry_Launcher_0.0.3.7.exe
 
 ## Build Core3 with 8 threads
 
-        cd MMOCoreORB
-        git checkout origin/unstable
-        make build-cmake -j8
+        cd ~/flurry/core3/MMOCoreORBD/
+        make -j8
 
 ## Start Server Normal
   * Open Termianl
