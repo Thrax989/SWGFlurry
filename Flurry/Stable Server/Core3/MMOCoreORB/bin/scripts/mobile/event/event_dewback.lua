@@ -32,9 +32,9 @@ event_dewback = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "artifact", chance = 10000000}			
+				{group = "tierdiamond", chance = 10000000}			
 		},
-			lootChance = 100000
+			lootChance = 10000
 		},
 		{
 			groups = {
