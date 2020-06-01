@@ -104,30 +104,6 @@ local bossMind = boss:getHAM(6)
 local bossMaxHealth = boss:getMaxHAM(0)
 local bossMaxAction = boss:getMaxHAM(3)
 local bossMaxMind = boss:getMaxHAM(6)
-
-local x1 = -1137
-local y1 = 2607
-local x2 = boss:getPositionX()
-local y2 = boss:getPositionY()
-
-local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-local maxDistance = 50 --Max distance you can fight the boss is 50 meters, you must be within range to fight the boss. Resets to full health if you fail the check.
-if distance > (maxDistance * maxDistance) then
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      CreatureObject(pBoss):healDamage(heal, 0)
-      CreatureObject(pBoss):healDamage(heal, 3)
-      CreatureObject(pBoss):healDamage(heal, 6)
-      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/bacta_grenade.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_shocked_01_noshake.cef", "")
-      spatialChat(pBoss, "Boss Resetting. You are out of combat range")
-      CreatureObject(pPlayer):sendSystemMessage("You must be within 50m of the boss to fight, boss is now resetting")
-end
 --------------------------------------
 --  90% health check
 --------------------------------------
@@ -230,7 +206,10 @@ end
 ----------------------------
 function ns_tamer:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Nightsister Tamer Respawning In 3 Hours")
+		player:broadcastToDiscord("Nightsister Tamer Boss Has Died!")
+		player:broadcastToServer("\\#63C8F9 Nightsister Tamer Boss Has Died!")
+		player:broadcastToServer("\\#63C8F9 Nightsister Tamer Boss Respawning In 3 Hours")
+		player:broadcastToDiscord("Nightsister Tamer Boss Respawning In 3 Hours")
     	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
@@ -238,7 +217,8 @@ end
 -----------------------
 function ns_tamer:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Nightsister Tamer Respawning In ...")
+		player:broadcastToServer("\\#63C8F9 Nightsister Tamer Respawning In ..")
+		player:broadcastToDiscord("Nightsister Tamer Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -246,6 +226,7 @@ end
 function ns_tamer:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -253,6 +234,7 @@ end
 function ns_tamer:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -260,6 +242,7 @@ end
 function ns_tamer:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("Nightsister Tamer Is Respawning")
 end
 -----------------------------------------------------------------------------
@@ -270,7 +253,6 @@ function ns_tamer:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted Nightsister Tamer Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		return 0
 	end
 end
@@ -286,7 +268,6 @@ function ns_tamer:Remove(pBoss)
 	if SceneObject(pBoss) then
 		print("Nightsister Tamer Boss Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		dropObserver(pBoss, OBJECTDESTRUCTION)
 		dropObserver(pBoss, DAMAGERECEIVED)
 		forcePeace(pBoss)

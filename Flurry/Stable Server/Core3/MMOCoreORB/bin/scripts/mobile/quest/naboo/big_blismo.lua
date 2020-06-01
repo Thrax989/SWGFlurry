@@ -26,7 +26,7 @@ big_blismo = Creature:new {
 	optionsBitmask = AIENABLED + CONVERSABLE,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_male.iff"},
+	templates = {"object/mobile/gungan_s02_male.iff"},
 	lootGroups = {
 		{
 			groups = {

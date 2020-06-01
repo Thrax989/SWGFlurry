@@ -38,6 +38,8 @@ function MandaloreBossScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
 	player:broadcastToServer("\\#63C8F9 Mandalore The Resurrector Has Died!")
 	player:broadcastToServer("\\#63C8F9 Mandalore The Resurrector Will Respawn In 3 Hours")
+	player:broadcastToDiscord("Mandalore The Resurrector Has Died!")
+	player:broadcastToDiscord("Mandalore The Resurrector Will Respawn In 3 Hours")
 	print("Mandalore The Resurrector Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "MandaloreBossScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
@@ -63,6 +65,7 @@ end
 function MandaloreBossScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Mandalore The Resurrector Respawning In ..")
+		player:broadcastToDiscord("Mandalore The Resurrector Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -70,6 +73,7 @@ end
 function MandaloreBossScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -77,6 +81,7 @@ end
 function MandaloreBossScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -84,6 +89,7 @@ end
 function MandaloreBossScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
 --The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
@@ -93,7 +99,6 @@ function MandaloreBossScreenplay:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted Mandalore The Resurrector Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 	end
 	return 0
 end

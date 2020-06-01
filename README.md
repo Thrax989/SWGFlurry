@@ -53,23 +53,36 @@ www.swgflurry.com/TRE/
 http://www.swgflurry.com/Launcher/SWGFlurry_Launcher_0.0.3.7.exe
 
 ## Build Server
+  * Downlaod The Flury Master Repo, Extract The Following Into A folder Called Flurry
+  * In This Folder You Only Need Core3 and PublicEngine/MMOEngine Folders
   * Open Terminal
-  * cd ~/workspace/Core3/MMOCoreORBD
-  * Make -j8
+  * cd ~/flurry/PublicEngine/MMOEngine
+  * Run The Following Command On The Enigne "make"
+  * Once Built Successful Symlink The Engine With The Core
+  * cd ~/flurry/PublicEngine/MMOEngine/MMOEngine
+  * Symlink MMOEngine in Core3 where MMOCoreORB resides
+
+        cd ../../Core3
+        ln -s ../PublicEngine/MMOEngine MMOEngine
+
+## Build Core3 with 8 threads
+
+        cd ~/flurry/core3/MMOCoreORBD/
+        make -j8
 
 ## Start Server Normal
   * Open Termianl
-  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * cd ~/flurry/core3/MMOCoreORBD/bin
   * ./core3
 
 ## Start Server Crash/Restart Script
   * Open Terminal
-  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * cd ~/flurry/core3/MMOCoreORBD/bin
   * ./startcore3.sh
 
 ## Run Server in gdb debug mode
   * Open Terminal 
-  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * cd ~/flurry/core3/MMOCoreORBD/bin
   * gdb ./core3
 This will promt a Black Blank Screen. Type "r" to Run the GDB<br>
 If your server segfaults it will promt you "segmentation fault"<br>
@@ -77,7 +90,7 @@ type "bt" to do a back trace to find your error<br>
 
 ## Run Unit Integrity Test
   * Open Terminal
-  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * cd ~/flurry/core3/MMOCoreORBD/bin
   * swgemu runUnitTests
 
 ## Server Admin Commands
@@ -120,78 +133,68 @@ type "bt" to do a back trace to find your error<br>
 
 ## Armorsmith [Available Craftable Armors]
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Assault Trooper`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Bone`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Bone`
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Bounty Hunter`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Chitin`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Clone Trooper`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Chitin`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Clone Trooper`
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Composite` 
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Death Trooper`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Galactic Marine`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Infilitrator`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Ithroian Defender`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Ithorian Guardian`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Ithorian Sentinel`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Kashyyykian Black Moutain`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Kashyyykian Ceremonial`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Kashyyykian Hunting`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Death Trooper`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Galactic Marine`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Infilitrator`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Ithroian Defender`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Ithorian Guardian`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Ithorian Sentinel`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyykian Black Moutain`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyykian Ceremonial`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyykian Hunting`
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalorian`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Mandalorian Rebel`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalorian Rebel`
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalorian Imperial`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Marauder`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Marine`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Nightsister`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Padded`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Rebel Assault`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Rebel Battle`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Rebel Snow`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Rebel Spec Force`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `RIS`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Scout Trooper`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Singing Moutain clan`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Snowtrooper`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Stormtrooper`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Tantel`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Ubues`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Zam`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Marauder`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Marine`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Nightsister`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Padded`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Rebel Assault`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Rebel Battle`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Rebel Snow`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Rebel Spec Force`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `RIS`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Scout Trooper`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Singing Moutain clan`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Snowtrooper`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Stormtrooper`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Tantel`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Ubues`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Zam`
 
 ## Pre-Pub 9 Jedi Additions
 - ![#008000](https://placehold.it/15/008000/000000?text=+) Jedi Perma Death (3 Lives Additional lives gained from holocrons) - This system can be turn - ![#008000](https://placehold.it/15/008000/000000?text=+) `On` or - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Off` depending on the server operators choice
 
 ## Custom Planets
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `corellia`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `dantooine`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `dathomir`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `endor`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `lok`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `naboo`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `rori`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `talus`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `tatooine`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `yavin4`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalore`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Taanab`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Chandrila`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Corellia`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Coruscant`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dantooine`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dathomir`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dungeon1`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dungeon2`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Endor`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Geonosis`
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Hoth`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Hutta`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Jakku`
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Kaas`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `coruscant`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `chandrila`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `nal hutta`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `moraband`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyyk`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mustafar`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `jakku`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `bespin`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `dagobah`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `dungeon1`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `dungeon2`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `ghomrassen`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `kessel`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `kuat`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `moncal`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `myrkr`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `nalhutta`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `ordmantell`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `tralus`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `wayland`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Kashyyyk`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `korriban`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Lok`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalore`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Mustafar`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Naboo`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Rori`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Taanab`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Talus`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Tatooine`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `Yavin4'
 
 ## Extended thanks to the following servers / contributors
 Thank you to the following server that provided custom content / alterations to the base core3 experience. Over the course of a few years each individual has added some portion to the frame work or code that is currently in this repository.

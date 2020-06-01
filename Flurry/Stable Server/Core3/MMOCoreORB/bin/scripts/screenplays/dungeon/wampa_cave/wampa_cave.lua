@@ -93,30 +93,6 @@ local bossMind = boss:getHAM(6)
 local bossMaxHealth = boss:getMaxHAM(0)
 local bossMaxAction = boss:getMaxHAM(3)
 local bossMaxMind = boss:getMaxHAM(6)
-
-local x1 = 15.1374
-local y1 = 85.2292
-local x2 = boss:getPositionX()
-local y2 = boss:getPositionY()
-
-local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-local maxDistance = 50 --Max distance you can fight the boss is 20 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
-if distance > (maxDistance * maxDistance) then
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      CreatureObject(pBoss):healDamage(heal, 0)
-      CreatureObject(pBoss):healDamage(heal, 3)
-      CreatureObject(pBoss):healDamage(heal, 6)
-      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/bacta_grenade.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_shocked_01_noshake.cef", "")
-      spatialChat(pBoss, "Systems powering down you are out of combat range")
-      CreatureObject(pPlayer):sendSystemMessage("You must be within 50m of the boss to fight, boss is now resetting")
-end
 --------------------------------------
 --  90% health check
 --------------------------------------
@@ -323,7 +299,10 @@ end
 ----------------------------
 function wampa_cave:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 Wampa Boss Has Died!")
+		player:broadcastToDiscord("Wampa Boss Has Died!")
 		player:broadcastToServer("\\#63C8F9 Wampa Boss Respawning In 3 Hours")
+		player:broadcastToDiscord("Wampa Boss Respawning In 3 Hours")
     	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
@@ -331,7 +310,8 @@ end
 -----------------------
 function wampa_cave:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Wampa Boss Respawning In ...")
+		player:broadcastToServer("\\#63C8F9 Wampa Boss Respawning In ..")
+		player:broadcastToDiscord("Janta Boss Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -339,6 +319,7 @@ end
 function wampa_cave:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -346,6 +327,7 @@ end
 function wampa_cave:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -353,6 +335,7 @@ end
 function wampa_cave:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("Wampa Is Respawning")
 end
 -----------------------------------------------------------------------------
@@ -363,7 +346,6 @@ function wampa_cave:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted Wampa Boss Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		return 0
 	end
 end
@@ -374,7 +356,6 @@ function wampa_cave:Remove(pBoss)
 	if SceneObject(pBoss) then
 		print("Wampa Boss Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		dropObserver(pBoss, OBJECTDESTRUCTION)
 		dropObserver(pBoss, DAMAGERECEIVED)
 		forcePeace(pBoss)

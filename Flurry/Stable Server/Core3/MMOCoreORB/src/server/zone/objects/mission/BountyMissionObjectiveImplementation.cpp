@@ -612,14 +612,16 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 	                		String playerName = target->getFirstName();
 					zGeneral << "A Bounty Hunter Has Collected A Bounty On " << playerName << " [Bounty Complete]";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
-
+					attackerGhost->updateBountyKills();
+					complete();
 					if (!killer->hasSkill("combat_jedi_novice") && !killer->hasSkill("force_title_jedi_novice")) {
 					owner->addBankCredits(50000);
+					attackerGhost->updateBountyKills();
+					complete();
 					owner->sendSystemMessage("You have earned 50,000 Credits! This will be forwarded to your bank");
 					}
 				}
 			}
-
 			complete();
 		} else if (mission->getTargetObjectId() == killer->getObjectID() ||
 				(npcTarget != nullptr && npcTarget->getObjectID() == killer->getObjectID())) {

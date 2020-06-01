@@ -153,30 +153,6 @@ local bossMind = boss:getHAM(6)
 local bossMaxHealth = boss:getMaxHAM(0)
 local bossMaxAction = boss:getMaxHAM(3)
 local bossMaxMind = boss:getMaxHAM(6)
-
-local x1 = 15.1374
-local y1 = 85.2292
-local x2 = boss:getPositionX()
-local y2 = boss:getPositionY()
-
-local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-local maxDistance = 50 --Max distance you can fight the boss is 20 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
-if distance > (maxDistance * maxDistance) then
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      CreatureObject(pBoss):healDamage(heal, 0)
-      CreatureObject(pBoss):healDamage(heal, 3)
-      CreatureObject(pBoss):healDamage(heal, 6)
-      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/bacta_grenade.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_shocked_01_noshake.cef", "")
-      spatialChat(pBoss, "Systems powering down you are out of combat range")
-      CreatureObject(pPlayer):sendSystemMessage("You must be within 50m of the boss to fight, boss is now resetting")
-end
 --------------------------------------
 --  90% health check
 --------------------------------------
@@ -383,7 +359,10 @@ end
 ----------------------------
 function exar_kun:BroadcastRespawn(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
+		player:broadcastToServer("\\#63C8F9 Exar Kun Boss Has Died!")
+		player:broadcastToDiscord("Exar Kun Boss Has Died!")
 		player:broadcastToServer("\\#63C8F9 Exar Kun Boss Respawning In 3 Hours")
+		player:broadcastToDiscord("Exar Kun Boss Respawning In 3 Hours")
     	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
@@ -391,7 +370,8 @@ end
 -----------------------
 function exar_kun:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Exar Kun Boss Respawning In ...")
+		player:broadcastToServer("\\#63C8F9 Exar Kun Boss Respawning In ..")
+		player:broadcastToDiscord("Exar Kun Boss Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -399,6 +379,7 @@ end
 function exar_kun:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -406,6 +387,7 @@ end
 function exar_kun:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -413,6 +395,7 @@ end
 function exar_kun:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("Exar Kun Is Respawning")
 end
 -----------------------------------------------------------------------------
@@ -423,7 +406,6 @@ function exar_kun:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted Exar Kun Boss Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		return 0
 	end
 end
@@ -434,7 +416,6 @@ function exar_kun:Remove(pBoss)
 	if SceneObject(pBoss) then
 		print("Exar Kun Boss Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		dropObserver(pBoss, OBJECTDESTRUCTION)
 		dropObserver(pBoss, DAMAGERECEIVED)
 		forcePeace(pBoss)

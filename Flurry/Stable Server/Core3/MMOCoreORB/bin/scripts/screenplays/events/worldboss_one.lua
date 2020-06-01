@@ -38,6 +38,8 @@ function worldboss_oneScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
 	player:broadcastToServer("\\#63C8F9 Tatooine World Boss Has Died!")
 	player:broadcastToServer("\\#63C8F9 Tatooine World Boss Will Respawn In 3 Hours")
+	player:broadcastToDiscord("Tatooine World Boss Has Died!")
+	player:broadcastToDiscord("Tatooine World Boss Will Respawn In 3 Hours")
 	print("World Boss One Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "worldboss_oneScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
@@ -63,6 +65,7 @@ end
 function worldboss_oneScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Tatooine World Boss Respawning In ..")
+		player:broadcastToDiscord("Tatooine World Boss Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -70,6 +73,7 @@ end
 function worldboss_oneScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -77,6 +81,7 @@ end
 function worldboss_oneScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -84,6 +89,7 @@ end
 function worldboss_oneScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
 --The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
@@ -93,7 +99,6 @@ function worldboss_oneScreenplay:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted World Boss One Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 	end
 	return 0
 end

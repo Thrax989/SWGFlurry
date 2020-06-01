@@ -46,7 +46,6 @@ local pBoss = spawnMobile("corellia", "worldboss_7", -1, -2157, 26, -4369, 0, 0)
     print("Spawning Meatlump King")
 	local creature = CreatureObject(pBoss)
     CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
-    CreatureObject(pPlayer):playMusicMessage("sound/exar_kun.snd")
     ObjectManager.withCreatureObject(pBoss, function(oBoss)
     writeData("worldboss_seven:spawnState", 1)
     writeData("worldboss_seven", oBoss:getObjectID())
@@ -60,14 +59,19 @@ end
 --  Notify trigger broadcast respawning
 -----------------------------------------
 function worldboss_seven:Restart(pPlayer, pBoss)
-    print("Starting Boss Broadcast Scripts")
-	createEvent(1 * 1000, "worldboss_seven", "Restartstates", pPlayer, "")--Restart Meatlump King States
-	createEvent(1 * 1000, "worldboss_seven", "BroadcastRespawn", pPlayer, "")--Broadcast 3 Hour Respawn
-	createEvent(300 * 1000, "worldboss_seven", "KillBoss", pPlayer, "")--Clean Up Dead Corpse
-	createEvent(10795 * 1000, "worldboss_seven", "KillSpawnCast", pPlayer, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "worldboss_seven", "KillSpawnCast1", pPlayer, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "worldboss_seven", "KillSpawnCast2", pPlayer, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "worldboss_seven", "KillSpawnCast3", pPlayer, "")--Broadcast Respawn 1
+	local player = LuaCreatureObject(pPlayer)
+	player:broadcastToServer("\\#63C8F9 MeatLump King World Boss Has Died!")
+	player:broadcastToServer("\\#63C8F9 MeatLump King World Boss Will Respawn In 3 Hours")
+	player:broadcastToDiscord("MeatLump King World Boss Has Died!")
+	player:broadcastToDiscord("MeatLump King World Boss Will Respawn In 3 Hours")
+    	print("Starting Boss Broadcast Scripts")
+	local creature = CreatureObject(pBoss)
+	createEvent(120 * 1000, "worldboss_seven", "Restartstates", pPlayer, "")--Restart Meatlump King States
+	createEvent(120 * 1000, "worldboss_seven", "KillBoss", pBoss, "")--Clean Up Dead Corpse
+	createEvent(10797 * 1000, "worldboss_seven", "KillSpawnCast", pBoss, "")--Broadcast Respawn
+	createEvent(10798 * 1000, "worldboss_seven", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
+	createEvent(10799 * 1000, "worldboss_seven", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
+	createEvent(10800 * 1000, "worldboss_seven", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
     return 0
 end
 --------------------------------------
@@ -88,30 +92,6 @@ local bossMind = boss:getHAM(6)
 local bossMaxHealth = boss:getMaxHAM(0)
 local bossMaxAction = boss:getMaxHAM(3)
 local bossMaxMind = boss:getMaxHAM(6)
-
-local x1 = -2157
-local y1 = -4369
-local x2 = boss:getPositionX()
-local y2 = boss:getPositionY()
-
-local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-local maxDistance = 75 --Max distance you can fight the boss is 75 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
-if distance > (maxDistance * maxDistance) then
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      CreatureObject(pBoss):healDamage(heal, 0)
-      CreatureObject(pBoss):healDamage(heal, 3)
-      CreatureObject(pBoss):healDamage(heal, 6)
-      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/bacta_grenade.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_shocked_01_noshake.cef", "")
-      spatialChat(pBoss, "I dont have to take this. Im going home!")
-      CreatureObject(pPlayer):sendSystemMessage("You must be within 75m of the boss to fight, boss is now resetting")
-end
 --------------------------------------
 --  90% health check
 --------------------------------------
@@ -186,18 +166,10 @@ if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.
 if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.001))) and readData("worldboss_seven:spawnState") == 4) then
       spatialChat(pBoss, "Live by the sword, Die by the sword.")
       spatialChat(pBoss, "You have 5 minutes to loot my body before it disappears.")
-            writeData("exar_kun:spawnState",5)
+            writeData("worldboss_seven:spawnState",5)
         end
       end
    return 0
-end
-----------------------------
---Broadcast Initial Respawn
-----------------------------
-function worldboss_seven:BroadcastRespawn(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Meatlump King Respawning In 3 Hours")
-    	print("Starting Boss Respawn Broadcast Message")
 end
 -----------------------
 --Broadcast Respawn
@@ -205,6 +177,7 @@ end
 function worldboss_seven:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 Meatlump King Respawning In ...")
+		player:broadcastToDiscord("Meatlump King World Boss Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -212,6 +185,7 @@ end
 function worldboss_seven:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -219,6 +193,7 @@ end
 function worldboss_seven:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -226,20 +201,22 @@ end
 function worldboss_seven:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
     	print("Meatlump King Is Respawning")
 end
 -----------------------------------------------------------------------------
 --The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
 -----------------------------------------------------------------------------
 function worldboss_seven:KillBoss(pBoss)
+	local creature = CreatureObject(pBoss)
 	dropObserver(pBoss, OBJECTDESTRUCTION)
 	if SceneObject(pBoss) then
 		print("Unlooted Meatlump King Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
-		return 0
-	end
+		end
+	return 0
 end
+
 ----------------------------
 --Remove Boss After 3 hours
 ----------------------------
@@ -247,7 +224,6 @@ function worldboss_seven:Remove(pBoss)
 	if SceneObject(pBoss) then
 		print("Meatlump King Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		dropObserver(pBoss, OBJECTDESTRUCTION)
 		dropObserver(pBoss, DAMAGERECEIVED)
 		forcePeace(pBoss)

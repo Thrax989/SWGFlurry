@@ -38,6 +38,8 @@ function SC87Screenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
 	player:broadcastToServer("\\#63C8F9 SC87 Has Died!")
 	player:broadcastToServer("\\#63C8F9 SC87 Will Respawn In 3 Hours")
+	player:broadcastToDiscord("SC87 Has Died!")
+	player:broadcastToDiscord("SC87 Will Respawn In 3 Hours")
 	print("SC87 Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "SC87Screenplay", "KillBoss", pBoss, "")--Despawn Corpse
@@ -63,6 +65,7 @@ end
 function SC87Screenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 SC87 Respawning In ..")
+		player:broadcastToDiscord("SC87 Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -70,6 +73,7 @@ end
 function SC87Screenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 3")
+		player:broadcastToDiscord("3")
 end
 -----------------------
 --Broadcast Respawn 2
@@ -77,6 +81,7 @@ end
 function SC87Screenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 2")
+		player:broadcastToDiscord("2")
 end
 -----------------------
 --Broadcast Respawn 1
@@ -84,6 +89,7 @@ end
 function SC87Screenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
+		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
 --The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
@@ -93,7 +99,6 @@ function SC87Screenplay:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted SC87 Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 	end
 	return 0
 end
