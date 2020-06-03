@@ -80,7 +80,7 @@ object_building_poi_scout_camp_s5 = object_building_poi_shared_scout_camp_s5:new
 			cellid = -1,
 			containmentType = -1},
 
-		{templateFile = "object/tangible/crafting/station/public_clothing_station.iff",
+		{templateFile = "object/tangible/terminal/terminal_bazaar.iff",
 			x = -15.5352, z = 0, y = 4.45075,
 			ox = 0, oy = 1.04652, oz = 0, ow = 0.0268329,
 			cellid = -1,
