@@ -42,7 +42,8 @@
 
 
 object_tangible_beta_beta_terminal_wound = object_tangible_beta_shared_beta_terminal_wound:new {
-
+	customName = "Medical Services Terminal",
+	objectMenuComponent = "FlurryBuffTerminalMenuComponent"
 }
 
 ObjectTemplates:addTemplate(object_tangible_beta_beta_terminal_wound, "object/tangible/beta/beta_terminal_wound.iff")
