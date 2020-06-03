@@ -47,6 +47,8 @@ object_building_poi_scout_camp_s3 = object_building_poi_shared_scout_camp_s3:new
 	lotSize = 0,
 	baseMaintenanceRate = 0,
 	basePowerRate = 0,
+	
+	zoneComponent = "StructureZoneComponent",	
 
 	skillMods = {
 		{"private_safe_logout", 1},
@@ -54,26 +56,72 @@ object_building_poi_scout_camp_s3 = object_building_poi_shared_scout_camp_s3:new
 		{"private_med_wound_health", 60},
 		{"private_med_wound_action", 60},
 		{"private_aggro_mod", 50},
-		{"private_buff_mind", 100}
+		{"private_buff_mind", 100},
+		{"private_spec_samplesize", 20},
+		{"private_spec_samplerate", 10},
+		{"private_spec_missions", 15}	
 	},
 
 	aggroMod = 50,
 
-	duration = 3600,
+	duration = 10800,
 	radius = 20,
 	experience = 1000,
-	skillRequired = 50,
+	skillRequired = 0,
 
 	childObjects = {
-		{templateFile = "object/tangible/camp/camp_control_panel.iff", x = -2.58, z = 0, y = -1.96, ox = 0, oy = 0.585, oz = 0, ow = 0.811, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s1.iff", x = 7.19, z = 0, y = -3.23, ox = 0, oy = 0.435, oz = 0, ow = 0.900, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s1.iff", x = 7.29, z = 0, y = -4.25, ox = 0, oy = 0.849, oz = 0, ow = 0.528, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s2.iff", x = .52, z = 0, y = -1.9, ox = 0, oy = -0.015, oz = 0, ow = 1.000, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s2.iff", x = .79, z = 0, y = 2.2, ox = 0, oy = -0.996, oz = 0, ow = 0.084, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s2.iff", x = -.81, z = 0, y = 1.9, ox = 0, oy = 0.959, oz = 0, ow = 0.282, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s2.iff", x = 1.88, z = 0, y = -1.1, ox = 0, oy = -0.484, oz = 0, ow = 0.875, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s2.iff", x = 2.07, z = 0, y = 1.43, ox = 0, oy = -0.919, oz = 0, ow = 0.393,	cellid = -1, containmentType = -1},
-	}
+		{templateFile = "object/tangible/camp/camp_control_panel.iff",
+			x = -2.5, z = 0, y = -2,
+			ox = 0, oy = .59, oz = 0, ow = 0.81,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = .66, z = 0, y = -2.9,
+			ox = 0, oy = 0, oz = 0, ow = 0,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = 2.2829, z = 0, y = -2.4205,
+			ox = 0, oy = -0.2722, oz = 0, ow = 0.9627,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = -.5, z = 0, y = 2.6,
+			ox = 0, oy = .95, oz = 0, ow = .314,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = 1.5, z = 0, y = 2.8,
+			ox = 0, oy = 1, oz = 0, ow = -.1,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = 3.5, z = 0, y = 2,
+			ox = 0, oy = .96, oz = 0, ow = -.3,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s1.iff",
+			x = 7.5, z = 0, y = -3,
+			ox = 0, oy = -.530213, oz = 0, ow = .836585,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/terminal/terminal_mission_bounty.iff",
+			x = -3.12765, z = 0, y = 2.24038,
+			ox = 0, oy = -0.701996, oz = 0, ow = -0.698715,
+			cellid = -1,
+			containmentType = -1},
+	},
+
+	childCreatureObjects = {
+		{mobile = "informant_npc_lvl_3", x = -1.83167, z = 0, y = 5.84309, cellid = -1, respawn = 1, containmentType = -1, heading = 3.14},
+	},	
 }
 
 ObjectTemplates:addTemplate(object_building_poi_scout_camp_s3, "object/building/poi/scout_camp_s3.iff")
