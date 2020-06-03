@@ -91,12 +91,6 @@ object_building_poi_scout_camp_s5 = object_building_poi_shared_scout_camp_s5:new
 			cellid = -1,
 			containmentType = -1},
 
-		{templateFile = "object/tangible/crafting/station/public_structure_station.iff",
-			x = -4.87234, z = 0, y = -7.79973,
-			ox = 0, oy = -0.0644796, oz = 0, ow = -1.04488,
-			cellid = -1,
-			containmentType = -1},
-
 		{templateFile = "object/tangible/crafting/station/public_weapon_station.iff",
 			x = 19.1861, z = 0, y = 4.05845,
 			ox = 0, oy = 0.789706, oz = 0, ow = -0.687238,
@@ -161,7 +155,11 @@ object_building_poi_scout_camp_s5 = object_building_poi_shared_scout_camp_s5:new
 			ox = 0, oy = 0.985105, oz = 0, ow = -0.171954,
 			cellid = -1,
 			containmentType = -1},	
-	}
+	},
+	
+	childCreatureObjects = {
+		{mobile = "junk_dealer", x = -4.87234, z = 0, y = -7.79973, cellid = -1, respawn = 1, containmentType = -1, heading = 0},
+	},	
 }
 
 ObjectTemplates:addTemplate(object_building_poi_scout_camp_s5, "object/building/poi/scout_camp_s5.iff")
