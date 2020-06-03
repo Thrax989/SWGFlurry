@@ -52,47 +52,61 @@ object_building_poi_scout_camp_s5 = object_building_poi_shared_scout_camp_s5:new
 		{"private_med_wound_health", 100},
 		{"private_med_wound_action", 100},
 		{"private_aggro_mod", 100},
-		{"private_buff_mind", 100}
+		{"private_buff_mind", 100},
+		{"private_spec_missions", 15},		
+		{"private_spec_samplesize", 20},
+		{"private_spec_samplerate", 10}		
 	},
+	
+	healthWoundRegenRate = 80,
+	actionWoundRegenRate = 80,
+	mindWoundRegenRate = 0,
+	
 	aggroMod = 100,
-	duration = 3600,
+	duration = 10800,
 	radius = 20,
 	experience = 1250,
-	skillRequired = 85,
+	skillRequired = 0,
 	childObjects = {
 		{templateFile = "object/tangible/camp/camp_control_panel.iff",
-			x = -4.5, z = 0, y = 12.3,
-			ox = 0, oy = .35, oz = 0, ow = 0.1,
+			x = 7, z = 0, y = 11,
+			ox = 0, oy = 0.998538, oz = 0, ow = -0.289519, 
 			cellid = -1,
 			containmentType = -1},
-
-		{templateFile = "object/tangible/camp/campfire_logs_fresh.iff",
-			x = 1, z = 0, y = 0,
-			ox = 0, oy = 0, oz = 0, ow = 0,
-			cellid = -1,
-			containmentType = -1},
-
-		{templateFile = "object/static/particle/particle_campfire_style_1.iff",
-			x = 1, z = 0, y = 0,
-			ox = 0, oy = 0, oz = 0, ow = 0,
-			cellid = -1,
-			containmentType = -1},
-
+		
 		{templateFile = "object/tangible/crafting/station/public_food_station.iff",
-			x = 6.65, z = 0, y = -3.35,
-			ox = 0, oy = .5465, oz = 0, ow = -.8929,
+			x = 12.9988, z = 0, y = -4.87008,
+			ox = 0, oy = 0.383147, oz = 0, ow = -0.974234,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/crafting/station/public_clothing_station.iff",
+			x = -15.5352, z = 0, y = 4.45075,
+			ox = 0, oy = 1.04652, oz = 0, ow = 0.0268329,
+			cellid = -1,
+			containmentType = -1},
+		{templateFile = "object/tangible/terminal/terminal_mission.iff",
+			x = -12.5974, z = 0, y = -2.53936,
+			ox = 0, oy = 0.375697, oz = 0, ow = 0.977131,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/crafting/station/public_structure_station.iff",
+			x = -4.87234, z = 0, y = -7.79973,
+			ox = 0, oy = -0.0644796, oz = 0, ow = -1.04488,
 			cellid = -1,
 			containmentType = -1},
 
 		{templateFile = "object/tangible/crafting/station/public_weapon_station.iff",
-			x = 4.5, z = 0, y = 13.5,
-			ox = 0, oy = .72, oz = 0, ow = -.75,
+			x = 19.1861, z = 0, y = 4.05845,
+			ox = 0, oy = 0.789706, oz = 0, ow = -0.687238,
 			cellid = -1,
 			containmentType = -1},
 
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff",
-			x = -1.7, z = 0, y = -7.06, ox = 0, oy = -0.898,
-			oz = 0, ow = 0.440, cellid = -1,
+		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", 
+			x = 8.87127, z = 0, y = 10.3187, 
+			ox = 0, oy = 0.998538, oz = 0, ow = -0.289519, 
+			cellid = -1, 
 			containmentType = -1},
 
 		{templateFile = "object/tangible/camp/camp_chair_s3.iff",
@@ -142,12 +156,11 @@ object_building_poi_scout_camp_s5 = object_building_poi_shared_scout_camp_s5:new
 			ox = 0, oy = 1, oz = 0, ow = 0,
 			cellid = -1,
 			containmentType = -1},
-
-		{templateFile = "object/tangible/terminal/terminal_mission.iff",
-			x = 0, z = 0, y = 12.2,
-			ox = 0, oy = 0.0, oz = 0, ow = 0,
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff",
+			x = 4.68453, z = 0, y = 12.7435,
+			ox = 0, oy = 0.985105, oz = 0, ow = -0.171954,
 			cellid = -1,
-			containmentType = -1},
+			containmentType = -1},	
 	}
 }
 
