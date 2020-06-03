@@ -44,29 +44,72 @@
 object_building_poi_scout_camp_s1 = object_building_poi_shared_scout_camp_s1:new {
 	-- Multiperson
 	templateType = CAMPSTRUCTURE,
+	gameObjectType = 4102,	
 	lotSize = 0,
 	baseMaintenanceRate = 0,
 	basePowerRate = 0,
+	
+	zoneComponent = "GarageZoneComponent",
+	dataObjectComponent = "GarageDataComponent",	
 
 	skillMods = {
 		{"private_safe_logout", 1},
 		{"private_medical_rating", 65},
 		{"private_med_wound_health", 20},
 		{"private_med_wound_action", 20},
-		{"private_buff_mind", 100}
+		{"private_buff_mind", 100},
+		{"private_spec_samplesize", 20},
+		{"private_spec_samplerate", 10},		
 	},
 
 	aggroMod = 0,
-	duration = 3600,
+	duration = 10800,
 	radius = 15,
 	experience = 640,
-	skillRequired = 10,
+	skillRequired = 0,
 
 	childObjects = {
-		{templateFile = "object/tangible/camp/camp_control_panel.iff", x = 1.12, z = 0, y = -2.61, ox = 0, oy = -0.291, oz = 0, ow =  0.957, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s1.iff", x = 1.84, z = 0, y = -0.682, ox = 0, oy = -.44, oz = 0, ow = 0.732, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s1.iff", x = -1.13, z = 0, y = 1.62, ox = 0, oy = 0.941, oz = .0, ow = 0.337, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s1.iff", x = -1.58, z = 0, y = -1.41, ox = 0, oy = 0.448, oz = 0, ow = 0.894, cellid = -1, containmentType = -1},
+		{templateFile = "object/tangible/camp/camp_control_panel.iff",
+			x = 2.6, z = 0, y = -1.3,
+			ox = 0, oy = -.5, oz = 0, ow = .87,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s1.iff",
+			x = -0.7, z = 0, y = 1.5,
+			ox = 0, oy = .997055, oz = .0, ow = .0766933,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s1.iff",
+			x = .6, z = 0, y = -1.3,
+			ox = 0, oy = -.44, oz = 0, ow = .89,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/furniture/all/frn_all_toolchest_lg_s01.iff", 
+			x = -0.320135, z = 0, y = -3.51694, 
+			ox = 0, oy = 0.085476, oz = 0, ow = 0.999797, 
+			cellid = -1, 
+			containmentType = -1},
+
+		{templateFile = "object/tangible/crafting/station/space_tool.iff", 
+			x = -0.297916, z = 1.83, y = -3.4422, 
+			ox = 0, oy = -.5, oz = 0, ow = .87, 
+			cellid = -1, 
+			containmentType = -1},
+
+		{templateFile = "object/tangible/storyteller/prop/pr_ch9_worklamp.iff", 
+			x = -3, z = 0, y = -1, 
+			ox = 0, oy = -0.87, oz = 0, ow = 0.5, 
+			cellid = -1, 
+			containmentType = -1},
+
+		{templateFile = "object/static/worldbuilding/vehicles/landspeeder_static_destroyed.iff", 
+			x = 5.33695, z = 0, y = 2.07255, 
+			ox = 0, oy = -.25779, oz = 0, ow = 0.969765, 
+			cellid = -1, 
+			containmentType = -1},
 	}
 }
 
