@@ -62,12 +62,12 @@ object_draft_schematic_scout_item_camp_luxury = object_draft_schematic_scout_sha
    customizationStringNames = {},
    customizationDefaults = {},
 
-   ingredientTemplateNames = {"craft_item_ingredients_n", "craft_item_ingredients_n", "craft_item_ingredients_n"},
-   ingredientTitleNames = {"shelter_canvas", "shelter_structure", "shelter_reinforcement"},
-   ingredientSlotType = {0, 0, 0},
-   resourceTypes = {"hide", "bone", "metal"},
-   resourceQuantities = {50, 35, 30},
-   contribution = {100, 100, 100},
+   ingredientTemplateNames = {"craft_item_ingredients_n", "craft_item_ingredients_n", "craft_item_ingredients_n", "craft_item_ingredients_n"},
+   ingredientTitleNames = {"shelter_canvas", "shelter_structure", "shelter_reinforcement", "shelter_support"},
+   ingredientSlotType = {0, 0, 0, 0},
+   resourceTypes = {"hide", "bone", "metal", "object/tangible/component/clothing/leather_heavy_duty.iff"},
+   resourceQuantities = {50, 35, 30, 1},
+   contribution = {100, 100, 100, 100},
 
 
    targetTemplate = "object/tangible/scout/camp/camp_luxury.iff",
