@@ -53,23 +53,36 @@ www.swgflurry.com/TRE/
 http://www.swgflurry.com/Launcher/SWGFlurry_Launcher_0.0.3.7.exe
 
 ## Build Server
+  * Downlaod The Flury Master Repo, Extract The Following Into A folder Called Flurry
+  * In This Folder You Only Need Core3 and PublicEngine/MMOEngine Folders
   * Open Terminal
-  * cd ~/workspace/Core3/MMOCoreORBD
-  * Make -j8
+  * cd ~/flurry/PublicEngine/MMOEngine
+  * Run The Following Command On The Enigne "make"
+  * Once Built Successful Symlink The Engine With The Core
+  * cd ~/flurry/PublicEngine/MMOEngine/MMOEngine
+  * Symlink MMOEngine in Core3 where MMOCoreORB resides
+
+        cd ../../Core3
+        ln -s ../PublicEngine/MMOEngine MMOEngine
+
+## Build Core3 with 8 threads
+
+        cd ~/flurry/core3/MMOCoreORBD/
+        make -j8
 
 ## Start Server Normal
   * Open Termianl
-  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * cd ~/flurry/core3/MMOCoreORBD/bin
   * ./core3
 
 ## Start Server Crash/Restart Script
   * Open Terminal
-  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * cd ~/flurry/core3/MMOCoreORBD/bin
   * ./startcore3.sh
 
 ## Run Server in gdb debug mode
   * Open Terminal 
-  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * cd ~/flurry/core3/MMOCoreORBD/bin
   * gdb ./core3
 This will promt a Black Blank Screen. Type "r" to Run the GDB<br>
 If your server segfaults it will promt you "segmentation fault"<br>
@@ -77,7 +90,7 @@ type "bt" to do a back trace to find your error<br>
 
 ## Run Unit Integrity Test
   * Open Terminal
-  * cd ~/workspace/Core3/MMOCoreORBD/bin
+  * cd ~/flurry/core3/MMOCoreORBD/bin
   * swgemu runUnitTests
 
 ## Server Admin Commands
