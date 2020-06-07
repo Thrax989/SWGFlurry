@@ -616,7 +616,6 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					complete();
 					if (!killer->hasSkill("combat_jedi_novice") && !killer->hasSkill("force_title_jedi_novice")) {
 					owner->addBankCredits(50000);
-					attackerGhost->updateBountyKills();
 					complete();
 					owner->sendSystemMessage("You have earned 50,000 Credits! This will be forwarded to your bank");
 					}

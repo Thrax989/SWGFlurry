@@ -46,9 +46,7 @@ object_building_poi_scout_camp_s5 = object_building_poi_shared_scout_camp_s5:new
 	lotSize = 0,
 	baseMaintenanceRate = 0,
 	basePowerRate = 0,
-	
-	zoneComponent = "StructureZoneComponent",
-	
+		
 	skillMods = {
 		{"private_safe_logout", 1},
 		{"private_medical_rating", 100},
@@ -158,11 +156,7 @@ object_building_poi_scout_camp_s5 = object_building_poi_shared_scout_camp_s5:new
 			ox = 0, oy = 0.985105, oz = 0, ow = -0.171954,
 			cellid = -1,
 			containmentType = -1},	
-	},
-	
-	childCreatureObjects = {
-		{mobile = "junk_dealer", x = -4.87234, z = 0, y = -7.79973, cellid = -1, respawn = 1, containmentType = -1, heading = 0},
-	},	
+	}
 }
 
 ObjectTemplates:addTemplate(object_building_poi_scout_camp_s5, "object/building/poi/scout_camp_s5.iff")
