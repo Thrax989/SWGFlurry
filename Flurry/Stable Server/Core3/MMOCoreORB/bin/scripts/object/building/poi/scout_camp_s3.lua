@@ -47,8 +47,6 @@ object_building_poi_scout_camp_s3 = object_building_poi_shared_scout_camp_s3:new
 	lotSize = 0,
 	baseMaintenanceRate = 0,
 	basePowerRate = 0,
-	
-	zoneComponent = "StructureZoneComponent",	
 
 	skillMods = {
 		{"private_safe_logout", 1},
@@ -117,11 +115,7 @@ object_building_poi_scout_camp_s3 = object_building_poi_shared_scout_camp_s3:new
 			ox = 0, oy = -0.701996, oz = 0, ow = -0.698715,
 			cellid = -1,
 			containmentType = -1},
-	},
-
-	childCreatureObjects = {
-		{mobile = "informant_npc_lvl_3", x = -1.83167, z = 0, y = 5.84309, cellid = -1, respawn = 1, containmentType = -1, heading = 3.14},
-	},	
+	}
 }
 
 ObjectTemplates:addTemplate(object_building_poi_scout_camp_s3, "object/building/poi/scout_camp_s3.iff")
