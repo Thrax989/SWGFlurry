@@ -77,7 +77,17 @@ function baxter_stockman:boss_damage(pBoss, pPlayer, onespawn, twospawn, threesp
 local player = LuaCreatureObject(pPlayer)
 local boss = LuaCreatureObject(pBoss)
 createEvent(10800 * 1000, "baxter_stockman", "Remove", pBoss, "")
-
+--------------------------------------
+--   Range and health checks for boss
+--------------------------------------
+if (boss ~= nil) then
+local heal = 999999
+local bossHealth = boss:getHAM(0)
+local bossAction = boss:getHAM(3)
+local bossMind = boss:getHAM(6)
+local bossMaxHealth = boss:getMaxHAM(0)
+local bossMaxAction = boss:getMaxHAM(3)
+local bossMaxMind = boss:getMaxHAM(6)
 --------------------------------------
 --  90% health check
 --------------------------------------
