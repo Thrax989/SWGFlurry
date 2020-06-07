@@ -54,21 +54,53 @@ object_building_poi_scout_camp_s2 = object_building_poi_shared_scout_camp_s2:new
 		{"private_med_wound_health", 40},
 		{"private_med_wound_action", 40},
 		{"private_aggro_mod", 20},
-		{"private_buff_mind", 100}
+		{"private_buff_mind", 100},
+		{"private_spec_samplesize", 20},
+		{"private_spec_samplerate", 10}		
 	},
 
 	aggroMod = 20,
-	duration = 3600,
+	duration = 10800,
 	radius = 18,
 	experience = 800,
-	skillRequired = 30,
+	skillRequired = 0,
 
 	childObjects = {
-		{templateFile = "object/tangible/camp/camp_control_panel.iff", x = 1.35, z = 0, y = 3.33, ox = 0, oy = -0.992, oz = 0, ow = 0.126, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s2.iff", x = 1.9, z = 0, y = -2.43, ox = 0, oy = -0.376, oz = 0, ow = 0.927, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s2.iff", x = -2.2, z = 0, y = -.42, ox = 0, oy = 0.661, oz = .0, ow = 0.751, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s2.iff", x = 0.66, z = 0, y = -2.91, ox = 0, oy = -0.130, oz = 0, ow = 0.992, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s2.iff", x = 2.58, z = 0, y = -1.3, ox = 0, oy = -0.581, oz = 0, ow = 0.814, cellid = -1, containmentType = -1},
+		{templateFile = "object/tangible/camp/camp_control_panel.iff",
+			x = -1, z = 0, y = 3.73,
+			ox = 0, oy = 1, oz = 0, ow = 0,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = -2.2, z = 0, y = -.41,
+			ox = 0, oy = .66, oz = .0, ow = .75,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = 2.59, z = 0, y = -1.3,
+			ox = 0, oy = .575, oz = 0, ow = -.82,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s2.iff",
+			x = 1.91, z = 0, y = -2.43,
+			ox = 0, oy = -.38, oz = 0, ow = .92,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/terminal/terminal_bank.iff", 
+			x = -3.12704, z = 0, y = -3.50334, 
+			ox = 0, oy = 0.21644, oz = 0, ow = 0.974758, 
+			cellid = -1, 
+			containmentType = -1},
+
+		{templateFile = "object/tangible/terminal/terminal_insurance.iff", 
+			x = -1.15587, z = 0, y = -3.95594, 
+			ox = 0, oy = -0.0432211, oz = 0, ow = 0.997563, 
+			cellid = -1, 
+			containmentType = -1},
 	}
 }
 
