@@ -47,8 +47,6 @@ object_building_poi_scout_camp_s3 = object_building_poi_shared_scout_camp_s3:new
 	lotSize = 0,
 	baseMaintenanceRate = 0,
 	basePowerRate = 0,
-	
-	zoneComponent = "StructureZoneComponent",	
 
 	skillMods = {
 		{"private_safe_logout", 1},
