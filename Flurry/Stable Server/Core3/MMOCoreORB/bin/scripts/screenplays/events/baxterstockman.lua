@@ -77,41 +77,7 @@ function baxter_stockman:boss_damage(pBoss, pPlayer, onespawn, twospawn, threesp
 local player = LuaCreatureObject(pPlayer)
 local boss = LuaCreatureObject(pBoss)
 createEvent(10800 * 1000, "baxter_stockman", "Remove", pBoss, "")
---------------------------------------
---   Range and health checks for boss
---------------------------------------
-if (boss ~= nil) then
-local heal = 999999
-local bossHealth = boss:getHAM(0)
-local bossAction = boss:getHAM(3)
-local bossMind = boss:getHAM(6)
-local bossMaxHealth = boss:getMaxHAM(0)
-local bossMaxAction = boss:getMaxHAM(3)
-local bossMaxMind = boss:getMaxHAM(6)
 
-local x1 = 2944.65
-local y1 = -4688
-local x2 = boss:getPositionX()
-local y2 = boss:getPositionY()
-
-local distance = ((x2 - x1)*(x2 - x1)) + ((y2 - y1)*(y2 - y1))
-local maxDistance = 25 --Max distance you can fight the boss is 25 meeters, you must be within range to fight the boss. Resets to full health if you fail the check.
-if distance > (maxDistance * maxDistance) then
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      forcePeace(pBoss)
-      CreatureObject(pBoss):healDamage(heal, 0)
-      CreatureObject(pBoss):healDamage(heal, 3)
-      CreatureObject(pBoss):healDamage(heal, 6)
-      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/bacta_grenade.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_shocked_01_noshake.cef", "")
-      spatialChat(pBoss, "Systems powering down you are out of combat range")
-      CreatureObject(pPlayer):sendSystemMessage("You must be within 25m of the boss to fight, boss is now resetting")
-end
 --------------------------------------
 --  90% health check
 --------------------------------------
