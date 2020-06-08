@@ -43,9 +43,9 @@ mauler_master = Creature:new {
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "weapon_component", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
