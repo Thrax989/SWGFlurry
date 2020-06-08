@@ -9,17 +9,16 @@ MaulerStrongholdScreenPlay = ScreenPlay:new {
 		8825382
 	},
 	
-	lootLevel = 26,	
+	lootLevel = 300,	
 
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 100000},
-				{group = "junk", chance = 8600000},
-				{group = "rifles", chance = 500000},
-				{group = "pistols", chance = 500000},
-				{group = "clothing_attachments", chance = 100000},
-				{group = "armor_attachments", chance = 200000}
+				{group = "vehicledeedsnormal", chance = 1000000},
+				{group = "non_jedi_rings_ranged", chance = 2000000},
+				{group = "tierthree", chance = 2000000},
+				{group = "clothing_attachments", chance = 2500000},
+				{group = "armor_attachments", chance = 2500000}
 			},
 			lootChance = 8000000
 		}					
