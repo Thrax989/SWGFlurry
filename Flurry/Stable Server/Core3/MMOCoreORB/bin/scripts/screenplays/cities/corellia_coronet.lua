@@ -465,4 +465,5 @@ function CorelliaCoronetScreenPlay:spawnMobiles()
   -- Fallen Players
   spawnMobile(self.planet, "geistvater_ghost", 0, -159, 28, -4723, 0, 0)
   spawnMobile(self.planet, "rizz_ghost", 0, -159, 28, -4725.91, 0, 0)
+  spawnMobile(self.planet, "heat_ghost", 0, -159, 28, -4719.91, 0, 0)
 end
