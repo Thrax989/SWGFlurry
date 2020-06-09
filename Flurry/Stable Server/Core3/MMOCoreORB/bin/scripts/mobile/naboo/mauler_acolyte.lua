@@ -66,7 +66,7 @@ mauler_acolyte = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"dark_jedi_weapons_gen1"},
+	weapons = {"dark_jedi_weapons_gen2"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/fancy",
 	attacks = merge(lightsabermaster,forcepowermaster)
