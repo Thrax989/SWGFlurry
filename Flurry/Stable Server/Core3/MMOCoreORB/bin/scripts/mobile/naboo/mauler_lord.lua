@@ -4,15 +4,15 @@ mauler_lord = Creature:new {
 	randomNameTag = true,
 	socialGroup = "mauler",
 	faction = "",
-	level = 27,
-	chanceHit = 0.360000,
-	damageMin = 250,
-	damageMax = 260,
-	baseXp = 2822,
-	baseHAM = 6800,
-	baseHAMmax = 8300,
-	armor = 0,
-	resists = {20,40,0,0,0,0,-1,-1,-1},
+	level = 300,
+	chanceHit = 80.00,
+	damageMin = 1800,
+	damageMax = 3800,
+	baseXp = 30000,
+	baseHAM = 300000,
+	baseHAMmax = 500000,
+	armor = 2,
+	resists = {150,150,150,150,150,150,150,150,150},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -30,17 +30,146 @@ mauler_lord = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 4000000},
-				{group = "tailor_components", chance = 1000000},
-				{group = "loot_kit_parts", chance = 2000000},
-				{group = "carbines", chance = 1000000},
-				{group = "mauler_common", chance = 2000000}
-			}
+				{group = "g_named_crystals", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "capes", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 2500000},
+ 				{group = "weapon_all", chance = 2500000}, 
+                                {group = "armor_all", chance = 5000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "weapon_component_advanced", chance = 2500000},
+				{group = "fire_breathing_spider", chance = 2500000},
+				{group = "geonosian_cubes", chance = 2500000},
+				{group = "krayt_tissue_rare", chance = 2500000}, 
+        
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "neck_crafter", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "non_jedi_ring_crafter_second", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "non_jedi_ring_crafter", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "non_jedi_rings_ranged", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "non_jedi_rings", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "jedi_earings", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "jedi_bracelets", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "jedi_neck", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "jedi_rings", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "g_necklaces", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "nge_house_loot_deed_01", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "vehicledeedsnormal", chance = 10000000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "vehicledeedsrare", chance = 10000000},
+			},
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 4500000},
+				{group = "tiertwo", chance = 2500000},
+				{group = "tierthree", chance = 1500000},
+				{group = "tierdiamond", chance = 1500000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 4500000},
+				{group = "tiertwo", chance = 2500000},
+				{group = "tierthree", chance = 1500000},
+				{group = "tierdiamond", chance = 1500000},
+			},
+			lootChance = 10000000
 		}
 	},
-	weapons = {"pirate_weapons_heavy"},
+	weapons = {"dark_jedi_weapons_gen3"},
 	reactionStf = "@npc_reaction/fancy",
-	attacks = merge(brawlermaster,marksmanmaster,bountyhuntermaster)
+	attacks = merge(lightsabermaster,forcepowermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(mauler_lord, "mauler_lord")
