@@ -24,6 +24,7 @@ geistvater_ghost = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
 	diet = HERBIVORE,
+  scale = 2.5,
 
 	templates = {"object/mobile/som/obi_wan_ghost.iff"},
 	lootGroups = {},	
