@@ -20,7 +20,7 @@ wasteland_marauder = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0.0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -28,7 +28,7 @@ wasteland_marauder = Creature:new {
 	diet = HERBIVORE,
 	scale = 1.35,
 
-	templates = {"object/mobile/dressed_	tamingChance = 0.25,.iff"},
+	templates = {"object/mobile/dressed_	tamingChance = 0.0,.iff"},
 	lootGroups = {
 		{
 			groups = {
