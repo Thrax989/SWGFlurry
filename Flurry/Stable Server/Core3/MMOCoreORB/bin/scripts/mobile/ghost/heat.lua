@@ -24,6 +24,7 @@ heat_ghost = Creature:new {
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
 	diet = HERBIVORE,
+  scale = 2.5,
 
 	templates = {"object/mobile/ep3/palpatine_hologram.iff"},
 	lootGroups = {},	
