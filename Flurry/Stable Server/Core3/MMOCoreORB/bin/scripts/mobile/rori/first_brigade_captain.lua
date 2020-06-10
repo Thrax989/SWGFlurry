@@ -1,4 +1,4 @@
-first_brigade_captain = Creature:new {
+tfirst_brigade_captain = Creature:new {
 	objectName = "@mob/creature_names:brigade_captain",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
