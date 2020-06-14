@@ -210,6 +210,13 @@ trainerSkills = {
 		"crafting_armorsmith_complexity_02",
 		"crafting_armorsmith_complexity_03",
 		"crafting_armorsmith_complexity_04"
+    -- Grand Master
+    --"crafting_elite_master_armorsmith_novice",
+		--"crafting_grand_master_armorsmith",
+    --"crafting_elite_master_armorsmith_01",
+    --"crafting_elite_master_armorsmith_02",
+    --"crafting_elite_master_armorsmith_03",
+    --"crafting_elite_master_armorsmith_04"
 	},
 
 	trainer_bioengineer = {
