@@ -30,7 +30,7 @@ admin_player_management_01 = {
 		"setRank",
 		"setTEF",
 		"showFactionInformation"
-    "gmPlayClientEffect"
+--    "gmPlayClientEffect"
 	},
 	skillModifiers = {},
 	schematicsGranted = {},
