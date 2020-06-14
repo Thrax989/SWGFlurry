@@ -30,8 +30,8 @@ varactyl = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-				{"stunattack",""}
-        {"intimidationattack",""}
+				{"stunattack",""},
+        {"intimidationattack",""},
         {"blindattack",""},
 	}
 }
