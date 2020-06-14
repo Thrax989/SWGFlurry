@@ -42,6 +42,7 @@
 
 
 object_tangible_wearables_cape_cape_kubaz = object_tangible_wearables_cape_shared_cape_kubaz:new {
+  objectMenuComponent = "ArmorObjectMenuComponent",
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
