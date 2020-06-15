@@ -1,4 +1,4 @@
-tfirst_brigade_captain = Creature:new {
+first_brigade_captain = Creature:new {
 	objectName = "@mob/creature_names:brigade_captain",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
@@ -20,7 +20,7 @@ tfirst_brigade_captain = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,

@@ -10,15 +10,15 @@ varactyl = Creature:new {
 	baseHAM = 12500,
 	baseHAMmax = 18500,
 	armor = 0,
-	resists = {0,0,0,0,0,0,0,-1,-1},
-	meatType = "",
-	meatAmount = 0,
-	hideType = "",
-	hideAmount = 0,
-	boneType = "",
-	boneAmount = 0,
+	resists = {50,40,5,40,40,15,20,15,-1},
+  meatType = "meat_herbivore",
+	meatAmount = 45,
+	hideType = "hide_leathery",
+	hideAmount = 50,
+	boneType = "bone_mammal",
+	boneAmount = 55,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = NONE,
@@ -30,7 +30,9 @@ varactyl = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-				{"stunattack",""}
+				{"stunattack",""},
+        {"intimidationattack",""},
+        {"blindattack",""},
 	}
 }
 
