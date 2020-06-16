@@ -1,183 +1,74 @@
+--/////////////////////////////////////////////////////////
+--//		    Boss Spawn System					//
+--//			Created By TOXIC:6/11/2020				//
+--////////////////////////////////////////////////////////
+
+--////////////////////////////////////////////////////////
+--//		Current Boss Planet Dungeon2			//
+--//		Current Boss Type NPC			//
+--///////////////////////////////////////////////////////
 worldboss_seven = ScreenPlay:new {
-  numberOfActs = 1,
-  questString = "worldboss_seven",
-  questdata = Object:new {
-  activePlayerName = "initial",
-  }
+	numberOfActs = 1,
+  	planet = "hoth",
 }
--------------------------------------------------------------
---   Register Screenplay to planet corellia
--------------------------------------------------------------
-spHelper = require("screenplayHelper")
 registerScreenPlay("worldboss_seven", true)
-local ObjectManager = require("managers.object.object_manager")  --print("Object manager loaded for Meatlump King")
---------------------------------------
---   Initialize screenplay
---------------------------------------
+-----------------------------
+--Start MeatLumpKing ScreenPlay
+-----------------------------
 function worldboss_seven:start()
-if (isZoneEnabled("corellia")) then
-	self:spawnMobiles()
-  end
+	if (isZoneEnabled(self.planet)) then
+		self:spawnMobiles()
+		print("MeatLumpKing Loaded")
+	end
 end
---------------------------------------------------
---   spawn mobiles for Meatlump King corellia guards
---------------------------------------------------
+-----------------------
+--MeatLumpKing Has Spawned
+-----------------------
 function worldboss_seven:spawnMobiles()
-spawnMobile("corellia", "meatlump_guard", 10800, -2156, 26, -4365, 0, 0)
-spawnMobile("corellia", "meatlump_guard", 10800, -2155, 27, -4375, 0, 0)
-spawnMobile("corellia", "meatlump_guard", 10800, -2158, 26, -4370, 0, 0)
-spawnMobile("corellia", "meatlump_guard", 10800, -2149, 27, -4368, 0, 0)
--------------------------------------------------------------------------
---  Spawn a NPC as a swtich once killed, triggers boss observer to spawn
--------------------------------------------------------------------------
-local pBoss = spawnMobile("corellia", "meatlump_lookout", 10800, -2157, 26, -4369, 0, 0)--3 hour respawn to start the boss
-	print("Spawning Meatlump Lookout")
-if (pBoss ~= nil ) then
-    createObserver(OBJECTDESTRUCTION, "worldboss_seven", "notifyTriggerDead", pBoss)
+		spawnMobile("corellia", "meatlump_guard", 10800, -2156, 26, -4365, 0, 0)
+		spawnMobile("corellia", "meatlump_guard", 10800, -2155, 27, -4375, 0, 0)
+		spawnMobile("corellia", "meatlump_guard", 10800, -2158, 26, -4370, 0, 0)
+		spawnMobile("corellia", "meatlump_guard", 10800, -2149, 27, -4368, 0, 0)
+		local pBoss = spawnMobile("corellia", "meatlump_lookout", 10800, -2157, 26, -4369, 0, 0)--Spawn MeatLumpKing
+		local creature = CreatureObject(pBoss)
+		print("MeatLumpKing Spawned")
+		createObserver(OBJECTDESTRUCTION, "worldboss_seven", "bossDead", pBoss)--MeatLumpKing Has Died Trigger Respawn Function
 end
-    writeData("worldboss_seven:spawnState",0)
-    return 0
-end
------------------------------------------
---  Notify trigger is dead to spawn Boss
------------------------------------------
-function worldboss_seven:notifyTriggerDead(pBoss, pPlayer)
-local pBoss = spawnMobile("corellia", "worldboss_7", -1, -2157, 26, -4369, 0, 0)
-    print("Spawning Meatlump King")
-	local creature = CreatureObject(pBoss)
-    CreatureObject(pPlayer):playEffect("clienteffect/sm_end_of_the_line.cef", "")
-    ObjectManager.withCreatureObject(pBoss, function(oBoss)
-    writeData("worldboss_seven:spawnState", 1)
-    writeData("worldboss_seven", oBoss:getObjectID())
-    spatialChat(pBoss, "What the ....")
-    createObserver(DAMAGERECEIVED,"worldboss_seven","boss_damage", pBoss)
-    createObserver(OBJECTDESTRUCTION, "worldboss_seven", "Restart", pBoss)
-end)
-    return 0
-end
------------------------------------------
---  Notify trigger broadcast respawning
------------------------------------------
-function worldboss_seven:Restart(pPlayer, pBoss)
+---------------------------------------------------------------
+--MeatLumpKing Has Died Respawn MeatLumpKing With A New Dynamic Spawn
+---------------------------------------------------------------
+function worldboss_seven:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 MeatLump King World Boss Has Died!")
-	player:broadcastToServer("\\#63C8F9 MeatLump King World Boss Will Respawn In 3 Hours")
-	player:broadcastToDiscord("MeatLump King World Boss Has Died!")
-	player:broadcastToDiscord("MeatLump King World Boss Will Respawn In 3 Hours")
-    	print("Starting Boss Broadcast Scripts")
+	player:broadcastToServer("\\#63C8F9 MeatLumpKing Has Died!")
+	player:broadcastToServer("\\#63C8F9 MeatLumpKing Will Respawn In 3 Hours")
+	player:broadcastToDiscord("MeatLumpKing Has Died!")
+	player:broadcastToDiscord("MeatLumpKing Will Respawn In 3 Hours")
+	print("MeatLumpKing Has Died")
 	local creature = CreatureObject(pBoss)
-	createEvent(120 * 1000, "worldboss_seven", "Restartstates", pPlayer, "")--Restart Meatlump King States
-	createEvent(120 * 1000, "worldboss_seven", "KillBoss", pBoss, "")--Clean Up Dead Corpse
+	createEvent(120 * 1000, "worldboss_seven", "KillBoss", pBoss, "")--Despawn Corpse
+	createEvent(10800 * 1000, "worldboss_seven", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
 	createEvent(10797 * 1000, "worldboss_seven", "KillSpawnCast", pBoss, "")--Broadcast Respawn
 	createEvent(10798 * 1000, "worldboss_seven", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
 	createEvent(10799 * 1000, "worldboss_seven", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
 	createEvent(10800 * 1000, "worldboss_seven", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
-    return 0
+	return 0
 end
---------------------------------------
---   Player, Boss Functions
---------------------------------------
-function worldboss_seven:boss_damage(pBoss, pPlayer, onespawn, twospawn, threespawn, fourspawn, fivespawn, player, pMember)
-local player = LuaCreatureObject(pPlayer)
-local boss = LuaCreatureObject(pBoss)
-createEvent(10800 * 1000, "worldboss_seven", "Remove", pBoss, "")
---------------------------------------
---   Range and health checks for boss
---------------------------------------
-if (boss ~= nil) then
-local heal = 999999
-local bossHealth = boss:getHAM(0)
-local bossAction = boss:getHAM(3)
-local bossMind = boss:getHAM(6)
-local bossMaxHealth = boss:getMaxHAM(0)
-local bossMaxAction = boss:getMaxHAM(3)
-local bossMaxMind = boss:getMaxHAM(6)
---------------------------------------
---  90% health check
---------------------------------------
-if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.9)) or (bossMind <= (bossMaxMind * 0.9))) and readData("worldboss_seven:spawnState") == 1) then
-      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
-      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
-      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
-      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
-      CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
-      spatialChat(pBoss, "Boss Current Health = 90%")
-      spatialChat(pBoss, "You dont want none of this smoke!")
-      writeData("worldboss_seven:spawnState",2)
-      local onespawn = spawnMobile("corellia", "meatlump_guard", 0, -2156, 26, -4365, 0, 0)
-      local onespawn = spawnMobile("corellia", "meatlump_guard", 0, -2155, 27, -4375, 0, 0)
-      ObjectManager.withCreatureObject(onespawn, function(ofirstTime)
-      writeData("countspawn", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
-		end
-
---------------------------------------
---  50% health check
---------------------------------------
-if (((bossHealth <= (bossMaxHealth * 0.5)) or (bossAction <= (bossMaxAction * 0.5)) or (bossMind <= (bossMaxMind * 0.5))) and readData("worldboss_seven:spawnState") == 2) then
-      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
-      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
-      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
-      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
-      CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
-      spatialChat(pBoss, "Boss Current Health = 50%")
-      writeData("worldboss_seven:spawnState",3)
-      local twospawn = spawnMobile("corellia", "meatlump_guard", 0, -2156, 26, -4365, 0, 0)
-      local twospawn = spawnMobile("corellia", "meatlump_guard", 0, -2155, 27, -4375, 0, 0)
-      local twospawn = spawnMobile("corellia", "meatlump_guard", 0, -2158, 26, -4370, 0, 0)
-      local twospawn = spawnMobile("corellia", "meatlump_guard", 0, -2149, 27, -4368, 0, 0)
-      ObjectManager.withCreatureObject(twospawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
-		end
-
---------------------------------------
---  10% health check
---------------------------------------
-if (((bossHealth <= (bossMaxHealth * 0.1)) or (bossAction <= (bossMaxAction * 0.1)) or (bossMind <= (bossMaxMind * 0.1))) and readData("worldboss_seven:spawnState") == 3) then
-      CreatureObject(pPlayer):sendSystemMessage("You take damage from the fire")
-      local trapDmg = getRandomNumber(500, 1000)
-      CreatureObject(pPlayer):inflictDamage(pPlayer, 0, trapDmg, 1)
-      CreatureObject(pPlayer):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
-      CreatureObject(pPlayer):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/incubator_mutation.cef", "")
-      CreatureObject(pBoss):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
-      CreatureObject(pPlayer):sendSystemMessage("Enemy Wave Starting!")
-      spatialChat(pBoss, "Boss Current Health = 10%")
-      writeData("worldboss_seven:spawnState",4)
-      local threespawn = spawnMobile("corellia", "meatlump_guard", 0, -2158, 26, -4370, 0, 0)
-      local threespawn = spawnMobile("corellia", "meatlump_guard", 0, -2149, 27, -4368, 0, 0)
-      ObjectManager.withCreatureObject(threespawn, function(ofirstTime)
-      writeData("countadd", ofirstTime:getObjectID())
-      ofirstTime:engageCombat(pPlayer)
-			end)
-		end
---------------------------------------------------------------------------------
---   Check that the boss has died, Broadcast server wide, set state for players
---------------------------------------------------------------------------------
-if (((bossHealth <= (bossMaxHealth * 0.001)) or (bossAction <= (bossMaxAction * 0.001)) or (bossMind <= (bossMaxMind * 0.001))) and readData("worldboss_seven:spawnState") == 4) then
-      spatialChat(pBoss, "Live by the sword, Die by the sword.")
-      spatialChat(pBoss, "You have 5 minutes to loot my body before it disappears.")
-            writeData("worldboss_seven:spawnState",5)
-        end
-      end
-   return 0
+-----------------------
+--Respawn MeatLumpKing Boss
+-----------------------
+function worldboss_seven:KillSpawn()
+		local pBoss = spawnMobile("corellia", "meatlump_lookout", 10800, -2157, 26, -4369, 0, 0)--Spawn MeatLumpKing After Death 3 Hour Timer
+		local creature = CreatureObject(pBoss)
+		print("MeatLumpKing Respawned")
+		createObserver(OBJECTDESTRUCTION, "worldboss_seven", "bossDead", pBoss)
 end
 -----------------------
 --Broadcast Respawn
 -----------------------
 function worldboss_seven:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Meatlump King Respawning In ...")
-		player:broadcastToDiscord("Meatlump King World Boss Respawning In ..")
+		player:broadcastToServer("\\#63C8F9 MeatLumpKing Respawning In ..")
+		player:broadcastToDiscord("MeatLumpKing Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -202,42 +93,15 @@ function worldboss_seven:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
-    	print("Meatlump King Is Respawning")
 end
 -----------------------------------------------------------------------------
---The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
+--MeatLumpKing Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
 -----------------------------------------------------------------------------
 function worldboss_seven:KillBoss(pBoss)
-	local creature = CreatureObject(pBoss)
 	dropObserver(pBoss, OBJECTDESTRUCTION)
 	if SceneObject(pBoss) then
-		print("Unlooted Meatlump King Destroyed")
+		print("MeatLumpKing Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		end
+	end
 	return 0
-end
-
-----------------------------
---Remove Boss After 3 hours
-----------------------------
-function worldboss_seven:Remove(pBoss)
-	if SceneObject(pBoss) then
-		print("Meatlump King Removed")
-		SceneObject(pBoss):destroyObjectFromWorld()
-		dropObserver(pBoss, OBJECTDESTRUCTION)
-		dropObserver(pBoss, DAMAGERECEIVED)
-		forcePeace(pBoss)
-		forcePeace(pBoss)
-		forcePeace(pBoss)
-		forcePeace(pBoss)
-		forcePeace(pBoss)
-		forcePeace(pBoss)
-		end
-		return 0
-end
-----------------------------
---Reset Player Boss States
-----------------------------
-function worldboss_seven:Restartstates(pPlayer)
-   writeData("worldboss_seven:spawnState", 0)
 end
