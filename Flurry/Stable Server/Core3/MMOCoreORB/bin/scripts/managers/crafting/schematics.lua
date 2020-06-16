@@ -2084,4 +2084,5 @@ schematics = {
 	{path="object/draft_schematic/armor/cybernetic_appearance_s05_hand_r.iff"},
 	{path="object/draft_schematic/armor/cybernetic_appearance_s05_legs.iff"},
 	{path="object/draft_schematic/armor/cybernetic_appearance_s05_torso.iff"},
+	{path="object/draft_schematic/weapon/maul.iff"},
 };
