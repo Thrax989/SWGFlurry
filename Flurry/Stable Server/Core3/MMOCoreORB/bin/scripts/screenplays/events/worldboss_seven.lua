@@ -29,7 +29,7 @@ function worldboss_seven:spawnMobiles()
 		spawnMobile("corellia", "meatlump_guard", 10800, -2155, 27, -4375, 0, 0)
 		spawnMobile("corellia", "meatlump_guard", 10800, -2158, 26, -4370, 0, 0)
 		spawnMobile("corellia", "meatlump_guard", 10800, -2149, 27, -4368, 0, 0)
-		local pBoss = spawnMobile("corellia", "meatlump_lookout", 10800, -2157, 26, -4369, 0, 0)--Spawn MeatLumpKing
+		local pBoss = spawnMobile("corellia", "worldboss_7", -1, -2157, 26, -4369, 0, 0)--Spawn MeatLumpKing
 		local creature = CreatureObject(pBoss)
 		print("MeatLumpKing Spawned")
 		createObserver(OBJECTDESTRUCTION, "worldboss_seven", "bossDead", pBoss)--MeatLumpKing Has Died Trigger Respawn Function
@@ -57,7 +57,7 @@ end
 --Respawn MeatLumpKing Boss
 -----------------------
 function worldboss_seven:KillSpawn()
-		local pBoss = spawnMobile("corellia", "meatlump_lookout", 10800, -2157, 26, -4369, 0, 0)--Spawn MeatLumpKing After Death 3 Hour Timer
+		local pBoss = spawnMobile("corellia", "worldboss_7", -1, -2157, 26, -4369, 0, 0)--Spawn MeatLumpKing After Death 3 Hour Timer
 		local creature = CreatureObject(pBoss)
 		print("MeatLumpKing Respawned")
 		createObserver(OBJECTDESTRUCTION, "worldboss_seven", "bossDead", pBoss)
