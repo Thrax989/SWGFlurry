@@ -25,7 +25,7 @@ end
 --------------------------------------------------
 --   Terminal
 --------------------------------------------------
-function nightsister_temple:spawnSceneObjects()
+function nightsister_templeScreenplay:spawnSceneObjects()
 spawnSceneObject("dantooine", "object/tangible/terminal/terminal_quad_screen.iff", -40.4491, 0.61331, 29.3437, 14200816, 1, 0, 0, 0)
 end
 -----------------------

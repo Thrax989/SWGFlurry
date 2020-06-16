@@ -25,7 +25,7 @@ end
 --------------------------------------------------
 --   spawn elevator pads for dungeon
 --------------------------------------------------
-function isd_platform:spawnSceneObjects()
+function isd_platformScreenplay:spawnSceneObjects()
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 20.058, 170.585, 430.548, 14201210, 0, 0, -1, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 19.8045, 453.359, 430.494, 14201210, 0, 0, -1, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", -54, 173.835, 20.3058, 14201200, -0.707107, 0, -0.707107, 0)
