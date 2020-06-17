@@ -1,6 +1,6 @@
 general_grievous = Creature:new {
 	--objectName = "@mob/creature_names:ep3_general_grievous",
-	customName = "General Grievous",
+	customName = "\\#00ff00<<< N-K Necrosis >>> \\#ff0000[lvl 300]",
 	socialGroup = "droids",
 	pvpFaction = "",
 	faction = "",
@@ -26,7 +26,7 @@ general_grievous = Creature:new {
 	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED + INTERESTING,
 	diet = HERBIVORE,
-	scale = 1.5,
+	scale = 1.3,
 
 	templates = {"object/mobile/ep3/general_grievous.iff"},
 	lootGroups = {},
