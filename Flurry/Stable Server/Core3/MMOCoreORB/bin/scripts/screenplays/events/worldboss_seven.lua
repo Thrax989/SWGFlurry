@@ -9,7 +9,7 @@
 --///////////////////////////////////////////////////////
 worldboss_seven = ScreenPlay:new {
 	numberOfActs = 1,
-  	planet = "hoth",
+  	planet = "corellia",
 }
 registerScreenPlay("worldboss_seven", true)
 -----------------------------
