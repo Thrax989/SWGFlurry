@@ -1,6 +1,7 @@
 wampa = Creature:new {
-	customName = "Wampa",
-	socialGroup = "townsperson",
+--	customName = "Wampa",
+	objectName = "@mob/creature_names:wampa",
+  socialGroup = "townsperson",
 	faction = "townsperson",
 	level = 178,
 	chanceHit = 12.25,

@@ -1,6 +1,6 @@
 bane_back_spider_hue = Creature:new {
-	customName = "bane_back_spider_hue",
-	--objectName = "",
+--	customName = "bane_back_spider_hue",
+  objectName = "@mob/creature_names:bane_back_spider_hue",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",

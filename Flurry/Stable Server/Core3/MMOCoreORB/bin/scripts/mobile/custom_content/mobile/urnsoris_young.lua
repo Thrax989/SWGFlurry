@@ -1,7 +1,8 @@
 urnsoris_young = Creature:new {
 	customName = "urnsoris_young",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
+  objectName = "@mob/creature_names:urnsoris_young",	
+--  randomNameType = NAME_GENERIC,
+--	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",
 

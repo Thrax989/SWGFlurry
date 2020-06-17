@@ -1,5 +1,6 @@
 varactyl = Creature:new {
-	customName = "Varactyl",
+--	customName = "Varactyl",
+  objectName = "@mob/creature_names:varactyl",
 	socialGroup = "townsperson",
 	faction = "townsperson",
 	level = 50,
