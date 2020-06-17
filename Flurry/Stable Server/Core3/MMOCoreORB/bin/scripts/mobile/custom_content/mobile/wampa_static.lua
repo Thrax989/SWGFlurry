@@ -1,7 +1,8 @@
 wampa_static = Creature:new {
-	customName = "wampa_static",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
+--	customName = "wampa_static",
+  objectName = "@mob/creature_names:wampa",  
+--	randomNameType = NAME_GENERIC,
+--	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",
 	level = 4,

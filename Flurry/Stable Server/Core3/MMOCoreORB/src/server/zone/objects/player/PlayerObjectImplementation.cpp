@@ -1356,6 +1356,16 @@ void PlayerObjectImplementation::notifyOnline() {
 	luaOnPlayerLoggedIn->callFunction();
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
+	//Broadcast to Server
+	//Zone* zone = playerCreature->getZone();
+	//String playerName = playerCreature->getFirstName();
+	//StringBuffer zBroadcast;
+	//zBroadcast << "\\#00E604" << playerName << "Has Logged In";
+	//playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+	//Broadcast player has logged in forward to discord channel. created by :TOXIC
+	StringBuffer zGeneral;
+	zGeneral << "Has Logged In!";	
+	chatManager->handleGeneralChat(playerCreature, zGeneral.toString());
 
 	if (getForcePowerMax() > 0 && getForcePower() < getForcePowerMax())
 		activateForcePowerRegen();
@@ -1440,6 +1450,16 @@ void PlayerObjectImplementation::notifyOffline() {
 	VisibilityManager::instance()->removeFromVisibilityList(playerCreature);
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDOUT);
+	//Broadcast to Server
+	//Zone* zone = playerCreature->getZone();
+	//String playerName = playerCreature->getFirstName();
+	//StringBuffer zBroadcast;
+	//zBroadcast << "\\#00E604" << playerName << "Has Logged Out";
+	//playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+	//Broadcast player has logged in forward to discord channel. created by :TOXIC
+	StringBuffer zGeneral;
+	zGeneral << "Has Logged Out!";	
+	chatManager->handleGeneralChat(playerCreature, zGeneral.toString());
 
 	//Logout from jedi manager
 	JediManager::instance()->onPlayerLoggedOut(playerCreature);
@@ -2104,7 +2124,7 @@ void PlayerObjectImplementation::setLinkDead(bool isSafeLogout) {
 	logoutTimeStamp.updateToCurrentTime();
 	if(!isSafeLogout) {
 		info("went link dead");
-		logoutTimeStamp.addMiliTime(ConfigManager::instance()->getInt("Core3.Tweaks.PlayerObject.LinkDeadDelay", 3 * 60) * 1000); // 3 minutes if unsafe
+		logoutTimeStamp.addMiliTime(ConfigManager::instance()->getInt("Core3.Tweaks.PlayerObject.LinkDeadDelay", 30 * 1) * 1000); // 3 minutes if unsafe
 	}
 
 	setCharacterBit(PlayerObjectImplementation::LD, true);
