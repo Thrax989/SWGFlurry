@@ -13,33 +13,33 @@ generalgrievous_platformScreenplay = ScreenPlay:new {
 }
 registerScreenPlay("generalgrievous_platformScreenplay", true)
 -----------------------------
---Start generalgrievous ScreenPlay
+--Start NKNecrosis ScreenPlay
 -----------------------------
 function generalgrievous_platformScreenplay:start()
 	if (isZoneEnabled(self.planet)) then
 		self:spawnMobiles()
-		print("generalgrievous Loaded")
+		print("NKNecrosis Loaded")
 	end
 end
 -----------------------
---generalgrievous Has Spawned
+--NKNecrosis Has Spawned
 -----------------------
 function generalgrievous_platformScreenplay:spawnMobiles()
-		local pBoss = spawnMobile("kashyyyk", "general_grievous", 1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn generalgrievous
+		local pBoss = spawnMobile("kashyyyk", "general_grievous", 1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn NKNecrosis
 		local creature = CreatureObject(pBoss)
-		print("generalgrievous Spawned")
-		createObserver(OBJECTDESTRUCTION, "generalgrievous_platformScreenplay", "bossDead", pBoss)--generalgrievous Has Died Trigger Respawn Function
+		print("NKNecrosis Spawned")
+		createObserver(OBJECTDESTRUCTION, "generalgrievous_platformScreenplay", "bossDead", pBoss)--NKNecrosis Has Died Trigger Respawn Function
 end
 ---------------------------------------------------------------
 --generalgrievous Has Died Respawn generalgrievous With A New Dynamic Spawn
 ---------------------------------------------------------------
 function generalgrievous_platformScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 generalgrievous Has Died!")
-	player:broadcastToServer("\\#63C8F9 generalgrievous Will Respawn In 3 Hours")
-	player:broadcastToDiscord("generalgrievous Has Died!")
-	player:broadcastToDiscord("generalgrievous Will Respawn In 3 Hours")
-	print("generalgrievous Has Died")
+	player:broadcastToServer("\\#63C8F9 NKNecrosis Has Died!")
+	player:broadcastToServer("\\#63C8F9 NKNecrosis Will Respawn In 3 Hours")
+	player:broadcastToDiscord("NKNecrosis Has Died!")
+	player:broadcastToDiscord("NKNecrosis Will Respawn In 3 Hours")
+	print("NKNecrosis Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "generalgrievous_platformScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "generalgrievous_platformScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
@@ -53,9 +53,9 @@ end
 --Respawn generalgrievous Boss
 -----------------------
 function generalgrievous_platformScreenplay:KillSpawn()
-		local pBoss = spawnMobilespawnMobile("kashyyyk", "general_grievous", 1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn generalgrievous After Death 3 Hour Timer
+		local pBoss = spawnMobilespawnMobile("kashyyyk", "general_grievous", 1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn NKNecrosis After Death 3 Hour Timer
 		local creature = CreatureObject(pBoss)
-		print("generalgrievous Respawned")
+		print("NKNecrosis Respawned")
 		createObserver(OBJECTDESTRUCTION, "generalgrievous_platformScreenplay", "bossDead", pBoss)
 end
 -----------------------
@@ -63,8 +63,8 @@ end
 -----------------------
 function generalgrievous_platformScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 generalgrievous Respawning In ..")
-		player:broadcastToDiscord("generalgrievous Respawning In ..")
+		player:broadcastToServer("\\#63C8F9 NKNecrosis Respawning In ..")
+		player:broadcastToDiscord("NKNecrosis Respawning In ..")
 end
 -----------------------
 --Broadcast Respawn 3
@@ -91,12 +91,12 @@ function generalgrievous_platformScreenplay:KillSpawnCast3(pPlayer)
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
---generalgrievous Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
+--NKNecrosis Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
 -----------------------------------------------------------------------------
 function generalgrievous_platformScreenplay:KillBoss(pBoss)
 	dropObserver(pBoss, OBJECTDESTRUCTION)
 	if SceneObject(pBoss) then
-		print("generalgrievous Destroyed")
+		print("NKNecrosis Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
 	end
 	return 0
