@@ -1,7 +1,8 @@
 urnsoris_nurse = Creature:new {
-	customName = "urnsoris_nurse",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
+--	customName = "urnsoris_nurse",
+  objectName = "@mob/creature_names:urnsoris_nurse", 
+--	randomNameType = NAME_GENERIC,
+--	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",
 	level = 70,

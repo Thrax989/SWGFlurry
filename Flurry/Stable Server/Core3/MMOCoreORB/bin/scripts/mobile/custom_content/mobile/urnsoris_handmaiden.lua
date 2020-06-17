@@ -1,10 +1,10 @@
 urnsoris_handmaiden = Creature:new {
-	customName = "urnsoris_handmaiden",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
+--	customName = "urnsoris_handmaiden",
+  objectName = "@mob/creature_names:urnsoris_handmaiden",  
+--	randomNameType = NAME_GENERIC,
+--	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",
-
 	level = 76,
 	chanceHit = 1,
 	damageMin = 490,

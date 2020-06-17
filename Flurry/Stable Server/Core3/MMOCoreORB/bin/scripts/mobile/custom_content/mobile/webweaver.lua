@@ -1,5 +1,6 @@
 webweaver = Creature:new {
-	customName = "Webweaver",
+--	customName = "Webweaver",
+  objectName = "@mob/creature_names:webweaver",
 	socialGroup = "townsperson",
 	faction = "townsperson",
 	level = 4,

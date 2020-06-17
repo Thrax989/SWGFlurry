@@ -1,6 +1,7 @@
 scorpion_kliknik = Creature:new {
-	customName = "scorpion_kliknik",
-	randomNameType = NAME_GENERIC,
+	--customName = "scorpion_kliknik",
+  objectName = "@mob/creature_names:scorpion_kliknik",
+--	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "townsperson",
 	faction = "townsperson",
