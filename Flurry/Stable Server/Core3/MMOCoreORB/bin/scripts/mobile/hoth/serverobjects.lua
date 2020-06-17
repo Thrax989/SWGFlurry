@@ -10,7 +10,7 @@ includeFile("hoth/wampa_baby.lua")
 includeFile("hoth/hoth_mynock.lua")
 includeFile("hoth/wampa_christmas.lua")
 includeFile("hoth/wampa_christmas_babys.lua")
-
+includeFile("hoth/wampa_boss.lua")
 
 
 
