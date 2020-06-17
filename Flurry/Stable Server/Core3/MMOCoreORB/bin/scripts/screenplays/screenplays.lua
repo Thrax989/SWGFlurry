@@ -165,6 +165,8 @@ includeFile("dungeon/corellian_corvette/ticket_takers/klaatu.lua")
 includeFile("dungeon/corellian_corvette/ticket_takers/lt_lance.lua")
 --Custom exar kun dungeon
 includeFile("dungeon/exar_kun_temple/exar_kun.lua")
+--Custom sher kar dungeon
+includeFile("dungeon/sher_kar/sher_kar.lua")
 --Custom janta cave
 includeFile("dungeon/janta_cave/janta_cave.lua")
 --Custom avatar dungeon
