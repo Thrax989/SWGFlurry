@@ -46,7 +46,7 @@ HealHealthWoundOther2Command = {
 	healWoundAmount = 350,
 	forceCost = 40,
 	forceCostMultiplier = 0.1,
-	defaultTime = 3,
+	defaultTime = 1,
 	woundAttributesToHeal = HEALTH_ATTRIBUTE,
 	range = 32,
 }

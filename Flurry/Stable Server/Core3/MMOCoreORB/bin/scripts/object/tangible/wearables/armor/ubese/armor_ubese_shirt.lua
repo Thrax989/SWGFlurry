@@ -42,7 +42,7 @@
 
 
 object_tangible_wearables_armor_ubese_armor_ubese_shirt = object_tangible_wearables_armor_ubese_shared_armor_ubese_shirt:new {
-	templateType = ARMOROBJECT,
+	templateType = CLOTHINGOBJECT,
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
