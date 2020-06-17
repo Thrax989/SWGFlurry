@@ -25,7 +25,7 @@ end
 --------------------------------------------------
 --   Terminal
 --------------------------------------------------
-function wampa_cave:spawnSceneObjects()
+function wampa_caveScreenplay:spawnSceneObjects()
 --spawnSceneObject("hoth", "object/tangible/terminal/terminal_quad_screen.iff", -40.4491, 0.61331, 29.3437, 14200816, 1, 0, 0, 0)
 end
 -----------------------
@@ -48,7 +48,6 @@ function wampa_caveScreenplay:spawnMobiles()
 		spawnMobile("hoth", "wampa", 300, -91.6, -102, -141.4, 49, 6452970)
 		spawnMobile("hoth", "wampa", 300, -64.9, -69.9, -170.8, 129, 6452970)
 		spawnMobile("hoth", "wampa", 300, -66.1, -70, -195.8, 50, 6452970)
-		spawnMobile("hoth", "giant_wampa", 3600, -93.1, -100.9, -99.6, 168, 6452973)
 		spawnMobile("hoth", "wampa", 300, 9.7, -40.5, -77, -20, 6452989)
 		spawnMobile("hoth", "wampa", 300, -8.5, -40.4, -75.8, 32, 6452989)
 		spawnMobile("hoth", "wampa", 300, 47.3, -47, -56.8, -116, 6452990)

@@ -1,15 +1,15 @@
-wampa = Creature:new {
-	customName = "Wampa",
+wampa_boss = Creature:new {
+	customName = "\\#00ff00<<< Wampa Boss >>> \\#ff0000[lvl 300]",
 	socialGroup = "wampa",
 	faction = "",
-	level = 80,
+	level = 300,
 	chanceHit = 0.75,
 	damageMin = 570,
 	damageMax = 850,
 	baseXp = 7668,
 	baseHAM = 12000,
 	baseHAMmax = 15000,
-	armor = 1,
+	armor = 3,
 	resists = {30,160,30,200,200,200,30,30,-1},
 	meatType = "",
 	meatAmount = 0,
@@ -21,12 +21,12 @@ wampa = Creature:new {
 	tamingChance = 0.25,
 	ferocity = 12,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + KILLER,
-	optionsBitmask = AIENABLED,
+	creatureBitmask = PACK + KILLER + HEALER,
+	optionsBitmask = AIENABLED + INTERESTING,
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/wampa.iff"},
-	scale = 0.8,
+	scale = 1.8,
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
@@ -36,4 +36,4 @@ wampa = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(wampa, "wampa")
+CreatureTemplates:addCreatureTemplate(wampa_boss, "wampa_boss")

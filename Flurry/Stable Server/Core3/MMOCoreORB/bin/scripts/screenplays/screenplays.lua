@@ -182,6 +182,8 @@ includeFile("dungeon/isd/isd_platform.lua")
 includeFile("dungeon/nightsister_temple/nightsister_temple.lua")
 --custom ig88 platform
 includeFile("dungeon/ig88/ig88_platform.lua")
+--custom general grievous platform
+includeFile("dungeon/general_grievous/generalgrievous_platform.lua")
 -- Village
 includeFile("village/village_community_crafting.lua")
 includeFile("village/village_gm_sui.lua")
