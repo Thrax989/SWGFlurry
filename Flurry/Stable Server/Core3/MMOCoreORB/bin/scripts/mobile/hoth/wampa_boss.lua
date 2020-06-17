@@ -1,4 +1,4 @@
-wampa = Creature:new {
+wampa_boss = Creature:new {
 	customName = "\\#00ff00<<< Wampa Boss >>> \\#ff0000[lvl 300]",
 	socialGroup = "wampa",
 	faction = "",
@@ -36,4 +36,4 @@ wampa = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(wampa, "wampa")
+CreatureTemplates:addCreatureTemplate(wampa_boss, "wampa_boss")

@@ -8,7 +8,7 @@ includeFile("dressgroup/serverobjects.lua")
 includeFile("custom_content/serverobjects.lua")
 includeFile("custom_vendors/serverobjects.lua")
 --New Content Mob Template Files
---includeFile("hoth/serverobjects.lua")
+includeFile("hoth/serverobjects.lua")
 --includeFile("kashyyyk/serverobjects.lua")
 includeFile("nalhutta/serverobjects.lua")
 includeFile("taanab/serverobjects.lua")
