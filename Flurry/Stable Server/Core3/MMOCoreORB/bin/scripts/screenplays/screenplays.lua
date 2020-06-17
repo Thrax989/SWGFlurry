@@ -172,6 +172,8 @@ includeFile("dungeon/geo_acklay/geo_acklay.lua")
 includeFile("dungeon/geo_acklay/geo_acklayboss.lua")
 --Custom janta cave
 includeFile("dungeon/janta_cave/janta_cave.lua")
+--Custom Wampa Boss
+includeFile("dungeon/wampa_cave/wampa_cave.lua")
 --Custom avatar dungeon
 includeFile("dungeon/avatar_platform/avatar_platform.lua")
 --custom rogue star destoryer
