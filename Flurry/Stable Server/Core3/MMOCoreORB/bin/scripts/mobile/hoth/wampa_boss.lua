@@ -26,7 +26,7 @@ wampa_boss = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/wampa.iff"},
-	scale = 5,
+	scale = 1.8,
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
