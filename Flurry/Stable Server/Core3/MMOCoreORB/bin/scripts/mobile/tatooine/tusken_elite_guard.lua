@@ -2,15 +2,15 @@ tusken_elite_guard = Creature:new {
 	objectName = "@mob/creature_names:tusken_elite_guard",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
-	level = 44,
-	chanceHit = 0.46,
-	damageMin = 365,
-	damageMax = 440,
-	baseXp = 4370,
-	baseHAM = 9600,
-	baseHAMmax = 11800,
-	armor = 0,
-	resists = {30,30,30,30,30,30,30,30,-1},
+	level = 300,
+	chanceHit = 25.0,
+	damageMin = 1425,
+	damageMax = 1825,
+	baseXp = 25000,
+	baseHAM = 95000,
+	baseHAMmax = 105000,
+	armor = 1,
+	resists = {115,115,115,115,115,115,115,115,115},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -18,7 +18,7 @@ tusken_elite_guard = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
@@ -29,17 +29,39 @@ tusken_elite_guard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 1500000},
-				{group = "tusken_common", chance = 3500000},
-				{group = "wearables_common", chance = 1000000},
-				{group = "wearables_uncommon", chance = 500000},
-				{group = "bone_armor", chance = 750000},
-				{group = "chitin_armor", chance = 750000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "color_crystals", chance = 500000},
-				{group = "power_crystals", chance = 500000}
-			}
+				{group = "clothing_attachments", chance = 10000000},
+			},
+			lootChance = 8000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 8000000
+		},
+		{
+			groups = {
+				{group = "tusken_common", chance = 10000000},
+			},
+			lootChance = 8000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 3000000
 		}
 	},
 	weapons = {"tusken_weapons"},
