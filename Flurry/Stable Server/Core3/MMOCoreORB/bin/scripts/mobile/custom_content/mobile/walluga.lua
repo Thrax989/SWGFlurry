@@ -1,7 +1,8 @@
 walluga = Creature:new {
-	customName = "Walluga",
+--	customName = "Walluga",
+  objectName = "@mob/creature_names:walluga",
 	socialGroup = "townsperson",
-	faction = "townsperson",
+	-- faction = "townsperson",
 	level = 70,
 	chanceHit = 0.97,
 	damageMin = 481,

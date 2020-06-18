@@ -4,7 +4,7 @@ urnsoris_young = Creature:new {
 --  randomNameType = NAME_GENERIC,
 --	randomNameTag = true,
 	socialGroup = "townsperson",
-	faction = "townsperson",
+	-- faction = "townsperson",
 
 	level = 35,
 	chanceHit = 0.39,
