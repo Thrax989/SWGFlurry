@@ -35,8 +35,8 @@ end
 ---------------------------------------------------------------
 function DarthCaedus:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 DarthCaedus Has Died!")
-	player:broadcastToServer("\\#63C8F9 DarthCaedus Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 DarthCaedus Has Died!")
+	--player:broadcastToServer("\\#63C8F9 DarthCaedus Will Respawn In 3 Hours")
 	player:broadcastToDiscord("DarthCaedus Has Died!")
 	player:broadcastToDiscord("DarthCaedus Will Respawn In 3 Hours")
 	print("DarthCaedus Has Died")
@@ -63,7 +63,7 @@ end
 -----------------------
 function DarthCaedus:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 DarthCaedus Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 DarthCaedus Respawning In ..")
 		player:broadcastToDiscord("DarthCaedus Respawning In ..")
 end
 -----------------------
@@ -71,7 +71,7 @@ end
 -----------------------
 function DarthCaedus:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -79,7 +79,7 @@ end
 -----------------------
 function DarthCaedus:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -87,7 +87,7 @@ end
 -----------------------
 function DarthCaedus:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------

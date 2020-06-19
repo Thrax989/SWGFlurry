@@ -54,8 +54,8 @@ end
 ---------------------------------------------------------------
 function ns_tamer:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 NsTamer Has Died!")
-	player:broadcastToServer("\\#63C8F9 NsTamer Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 NsTamer Has Died!")
+	--player:broadcastToServer("\\#63C8F9 NsTamer Will Respawn In 3 Hours")
 	player:broadcastToDiscord("NsTamer Has Died!")
 	player:broadcastToDiscord("NsTamer Will Respawn In 3 Hours")
 	print("NsTamer Has Died")
@@ -82,7 +82,7 @@ end
 -----------------------
 function ns_tamer:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 NsTamer Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 NsTamer Respawning In ..")
 		player:broadcastToDiscord("NsTamer Respawning In ..")
 end
 -----------------------
@@ -90,7 +90,7 @@ end
 -----------------------
 function ns_tamer:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -98,7 +98,7 @@ end
 -----------------------
 function ns_tamer:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -106,7 +106,7 @@ end
 -----------------------
 function ns_tamer:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------

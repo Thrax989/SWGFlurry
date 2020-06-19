@@ -35,8 +35,8 @@ end
 ---------------------------------------------------------------
 function sher_karScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 SherKar Has Died!")
-	player:broadcastToServer("\\#63C8F9 SherKar Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 SherKar Has Died!")
+	--player:broadcastToServer("\\#63C8F9 SherKar Will Respawn In 3 Hours")
 	player:broadcastToDiscord("SherKar Has Died!")
 	player:broadcastToDiscord("SherKar Will Respawn In 3 Hours")
 	print("SherKar Has Died")
@@ -63,7 +63,7 @@ end
 -----------------------
 function sher_karScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 SherKar Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 SherKar Respawning In ..")
 		player:broadcastToDiscord("SherKar Respawning In ..")
 end
 -----------------------
@@ -71,7 +71,7 @@ end
 -----------------------
 function sher_karScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -79,7 +79,7 @@ end
 -----------------------
 function sher_karScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -87,7 +87,7 @@ end
 -----------------------
 function sher_karScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------

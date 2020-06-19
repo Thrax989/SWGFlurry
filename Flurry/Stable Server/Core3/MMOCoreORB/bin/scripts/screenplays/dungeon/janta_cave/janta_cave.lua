@@ -45,8 +45,8 @@ end
 ---------------------------------------------------------------
 function janta_caveScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 JantaKing Has Died!")
-	player:broadcastToServer("\\#63C8F9 JantaKing Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 JantaKing Has Died!")
+	--player:broadcastToServer("\\#63C8F9 JantaKing Will Respawn In 3 Hours")
 	player:broadcastToDiscord("JantaKing Has Died!")
 	player:broadcastToDiscord("JantaKing Will Respawn In 3 Hours")
 	print("JantaKing Has Died")
@@ -73,7 +73,7 @@ end
 -----------------------
 function janta_caveScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 JantaKing Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 JantaKing Respawning In ..")
 		player:broadcastToDiscord("JantaKing Respawning In ..")
 end
 -----------------------
@@ -81,7 +81,7 @@ end
 -----------------------
 function janta_caveScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -89,7 +89,7 @@ end
 -----------------------
 function janta_caveScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -97,7 +97,7 @@ end
 -----------------------
 function janta_caveScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
