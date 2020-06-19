@@ -100,20 +100,11 @@ end
 ---------------------------------------------------------------
 --WampaKing Has Died Respawn WampaKing With A New Dynamic Spawn
 ---------------------------------------------------------------
-function wampa_caveScreenplay:bossDead(pBoss, pPlayer)
-	local player = LuaCreatureObject(pPlayer)
-	--player:broadcastToServer("\\#63C8F9 WampaKing Has Died!")
-	--player:broadcastToServer("\\#63C8F9 WampaKing Will Respawn In 3 Hours")
-	player:broadcastToDiscord("WampaKing Has Died!")
-	player:broadcastToDiscord("WampaKing Will Respawn In 3 Hours")
+function wampa_caveScreenplay:bossDead(pBoss)
 	print("WampaKing Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "wampa_caveScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "wampa_caveScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
-	createEvent(10797 * 1000, "wampa_caveScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "wampa_caveScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "wampa_caveScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "wampa_caveScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
@@ -124,40 +115,7 @@ function wampa_caveScreenplay:KillSpawn()
 		local creature = CreatureObject(pBoss)
 		print("WampaKing Respawned")
 		createObserver(OBJECTDESTRUCTION, "wampa_caveScreenplay", "bossDead", pBoss)
-end
------------------------
---Broadcast Respawn
------------------------
-function wampa_caveScreenplay:KillSpawnCast(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 WampaKing Respawning In ..")
-		player:broadcastToDiscord("WampaKing Respawning In ..")
-end
------------------------
---Broadcast Respawn 3
------------------------
-function wampa_caveScreenplay:KillSpawnCast1(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 3")
-		player:broadcastToDiscord("3")
-end
------------------------
---Broadcast Respawn 2
------------------------
-function wampa_caveScreenplay:KillSpawnCast2(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 2")
-		player:broadcastToDiscord("2")
-end
------------------------
---Broadcast Respawn 1
------------------------
-function wampa_caveScreenplay:KillSpawnCast3(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 1")
-		player:broadcastToDiscord("1")
-end
------------------------------------------------------------------------------
+end-----------------------------------------------------------------------
 --WampaKing Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
 -----------------------------------------------------------------------------
 function wampa_caveScreenplay:KillBoss(pBoss)

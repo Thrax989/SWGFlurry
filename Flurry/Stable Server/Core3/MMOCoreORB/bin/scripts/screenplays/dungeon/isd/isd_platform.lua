@@ -109,20 +109,11 @@ end
 ---------------------------------------------------------------
 --Thrawn Has Died Respawn Thrawn With A New Dynamic Spawn
 ---------------------------------------------------------------
-function isd_platformScreenplay:bossDead(pBoss, pPlayer)
-	local player = LuaCreatureObject(pPlayer)
-	--player:broadcastToServer("\\#63C8F9 Thrawn Has Died!")
-	--player:broadcastToServer("\\#63C8F9 Thrawn Will Respawn In 3 Hours")
-	player:broadcastToDiscord("Thrawn Has Died!")
-	player:broadcastToDiscord("Thrawn Will Respawn In 3 Hours")
+function isd_platformScreenplay:bossDead(pBoss)
 	print("Thrawn Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "isd_platformScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "isd_platformScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
-	createEvent(10797 * 1000, "isd_platformScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "isd_platformScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "isd_platformScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "isd_platformScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
@@ -133,38 +124,6 @@ function isd_platformScreenplay:KillSpawn()
 		local creature = CreatureObject(pBoss)
 		print("Thrawn Respawned")
 		createObserver(OBJECTDESTRUCTION, "isd_platformScreenplay", "bossDead", pBoss)
-end
------------------------
---Broadcast Respawn
------------------------
-function isd_platformScreenplay:KillSpawnCast(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 Thrawn Respawning In ..")
-		player:broadcastToDiscord("Thrawn Respawning In ..")
-end
------------------------
---Broadcast Respawn 3
------------------------
-function isd_platformScreenplay:KillSpawnCast1(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 3")
-		player:broadcastToDiscord("3")
-end
------------------------
---Broadcast Respawn 2
------------------------
-function isd_platformScreenplay:KillSpawnCast2(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 2")
-		player:broadcastToDiscord("2")
-end
------------------------
---Broadcast Respawn 1
------------------------
-function isd_platformScreenplay:KillSpawnCast3(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 1")
-		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
 --Thrawn Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
