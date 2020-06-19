@@ -1223,6 +1223,9 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		StringBuffer zBroadcast;
 		zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#00ff00jedi";
 		ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		StringBuffer zGeneral;
+		zGeneral << "Has Permanently Died On Their Jedi!";	
+		chatManager->handleGeneralChat(player, zGeneral.toString());
 		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 0 Lives"); // You have Lost 1 Jedi Life, you now have a total of 0 Lives
 		player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
 		}
@@ -1289,6 +1292,9 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
+			StringBuffer zGeneral;
+			zGeneral << "Has Permanently Died On Their Jedi!";	
+			chatManager->handleGeneralChat(player, zGeneral.toString());
 			}
 		}
 	//Imperial gray jedi check
@@ -1300,6 +1306,9 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on your jedi
+			StringBuffer zGeneral;
+			zGeneral << "Has Permanently Died On Their Jedi!";	
+			chatManager->handleGeneralChat(player, zGeneral.toString());
 			}
 		}
 	}

@@ -12,7 +12,7 @@ lootcollectiontierheroic  = {
 		{groupTemplate = "loot_kit_parts", weight = 1000000},
 		{groupTemplate = "tailor_components", weight = 1000000},
 		{groupTemplate = "color_crystals", weight = 1000000},
-		{groupTemplate = "custom_vehicle_common", weight = 1000000},
+		{groupTemplate = "vehicledeedsnormal", weight = 1000000},
 		{groupTemplate = "collectiontiertwo", weight = 1000000},
 		{groupTemplate = "junk", weight = 1000000},
 		{groupTemplate = "janta_common", weight = 1000000},

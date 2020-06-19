@@ -1198,15 +1198,27 @@ int LuaCreatureObject::getActivePet(lua_State* L) {
 }
 
 int LuaCreatureObject::broadcastToServer(lua_State* L) {
+	ManagedReference<CreatureObject*> creature = dynamic_cast<CreatureObject*>(realObject->getParent().get().get());
+	if (creature != nullptr){
+		Logger::console.error("Broadcast Galaxy Message 1 Creature");
+		return 1;
+	}
 	String message = lua_tostring(L, -1);
 	ZoneServer* zServ = realObject->getZoneServer();
 	zServ->getChatManager()->broadcastGalaxy(nullptr, message);
+	Logger::console.info("Server Broadcast" + message, true);
 	return 1;
 }
 
 int LuaCreatureObject::broadcastToDiscord(lua_State* L) {
+	ManagedReference<CreatureObject*> creature = dynamic_cast<CreatureObject*>(realObject->getParent().get().get());
+	if (creature != nullptr){
+		Logger::console.error("Broadcast Galaxy Message 2 Creature");
+		return 1;
+	}
 	String message = lua_tostring(L, -1);
 	ZoneServer* zServ = realObject->getZoneServer();
 	zServ->getChatManager()->handleGeneralDiscordChat(nullptr, message);
+	Logger::console.info("Server Broadcast" + message, true);
 	return 1;
 }

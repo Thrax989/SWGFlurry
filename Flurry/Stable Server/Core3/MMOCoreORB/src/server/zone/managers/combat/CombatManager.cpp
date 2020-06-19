@@ -371,9 +371,9 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 
 int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef, bool* shouldJediTef) {
 	//max range checks
-	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getMaxRange() >= 75) {
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getMaxRange() >= 65) {
   		Locker locker(weapon);
- 		weapon->setMaxRange(70);
+ 		weapon->setMaxRange(64);
 	}
 
 	if (defender->isEntertaining())

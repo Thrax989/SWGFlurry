@@ -134,7 +134,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Sundari, Endor Player City (5,000 Credits)", "pc_sundari_travel",
 			"Janta Town, Dantooine Player City (5,000 Credits)", "pc_jantatown_travel",
 			"Bastion, Dantooine Player City (5,000 Credits)", "pc_bastion_travel",	
---			"Varth Player City (5,000 Credits)", "pc_varth_travel",			
+			"Riverside Player City (5,000 Credits)", "pc_riverside_travel",			
 		   },
 	}
 }

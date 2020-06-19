@@ -1,5 +1,6 @@
 webweaver = Creature:new {
-	customName = "Webweaver",
+--	customName = "Webweaver",
+  objectName = "@mob/creature_names:webweaver",
 	socialGroup = "townsperson",
 	faction = "townsperson",
 	level = 4,
@@ -20,7 +21,7 @@ webweaver = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = NONE,
+	pvpBitmask = ATTACKABLE,
 	creatureBitmask = NONE,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,

@@ -324,7 +324,7 @@ int GeneticComponentImplementation::getEffectiveArmor() {
 		return fortitude/50;
 	if (fortitude > 500)
 		return (fortitude-500)/50;
-	if (fortitude == 500)
+	if (fortitude == 1000)
 		return 0;
 	return fortitude/50;
 }

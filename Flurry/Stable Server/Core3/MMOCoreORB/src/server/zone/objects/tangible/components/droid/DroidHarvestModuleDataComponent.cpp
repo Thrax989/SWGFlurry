@@ -11,18 +11,19 @@
 #include "server/zone/objects/creature/sui/SelectHarvestTypeSuiCallback.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/managers/creature/PetManager.h"
+#include "server/zone/objects/intangible/PetControlDevice.h"
 
 DroidHarvestModuleDataComponent::DroidHarvestModuleDataComponent() {
 	harvestBonus = 0;
 	interest = 0; // random
-	active = true;
+	active = false;
 	setLoggingName("DroidHarvestModule");
 	harvestTargets.removeAll(0,10);
 }
 DroidHarvestModuleDataComponent::~DroidHarvestModuleDataComponent() {
 
 }
-String DroidHarvestModuleDataComponent::getModuleName() {
+String DroidHarvestModuleDataComponent::getModuleName() const {
 	return String("harvest_module");
 }
 void DroidHarvestModuleDataComponent::initializeTransientMembers() {
@@ -206,7 +207,7 @@ void DroidHarvestModuleDataComponent::deactivate() {
 	harvestTargets.removeAll(0,10);
 }
 
-String DroidHarvestModuleDataComponent::toString(){
+String DroidHarvestModuleDataComponent::toString() const {
 	return BaseDroidModuleComponent::toString();
 }
 
@@ -226,11 +227,6 @@ void DroidHarvestModuleDataComponent::onCall(){
 	//droid->registerObserver(ObserverEventType::DESTINATIONREACHED, observer);
 	Reference<Task*> task = new DroidHarvestTask( this );
 	droid->addPendingTask("droid_harvest", task, 1000); // 1 sec
-	ManagedReference<CreatureObject*> player = droid->getLinkedCreature().get();
-	player->sendSystemMessage("@pet/droid_modules:auto_harvest_on");  // You turn on auto-repair
-	Locker plock(player);
-	player->registerObserver(ObserverEventType::KILLEDCREATURE, observer);
-	active = true;
 }
 
 void DroidHarvestModuleDataComponent::onStore(){
