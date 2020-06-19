@@ -20,7 +20,11 @@ darth_vader_pve = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
+<<<<<<< HEAD
 	tamingChance = 0.0,
+=======
+	tamingChance = 0.00,
+>>>>>>> 49dba15ebfe4217b8d3cb3ced3b2bd5d52e08bf9
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = KILLER + STALKER,
