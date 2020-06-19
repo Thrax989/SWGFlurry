@@ -40,20 +40,11 @@ end
 ---------------------------------------------------------------
 --NightsisterQueen Has Died Respawn NightsisterQueen With A New Dynamic Spawn
 ---------------------------------------------------------------
-function nightsister_templeScreenplay:bossDead(pBoss, pPlayer)
-	local player = LuaCreatureObject(pPlayer)
-	--player:broadcastToServer("\\#63C8F9 NightsisterQueen Has Died!")
-	--player:broadcastToServer("\\#63C8F9 NightsisterQueen Will Respawn In 3 Hours")
-	player:broadcastToDiscord("NightsisterQueen Has Died!")
-	player:broadcastToDiscord("NightsisterQueen Will Respawn In 3 Hours")
+function nightsister_templeScreenplay:bossDead(pBoss)
 	print("NightsisterQueen Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "nightsister_templeScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "nightsister_templeScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
-	createEvent(10797 * 1000, "nightsister_templeScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "nightsister_templeScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "nightsister_templeScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "nightsister_templeScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
@@ -64,38 +55,6 @@ function nightsister_templeScreenplay:KillSpawn()
 		local creature = CreatureObject(pBoss)
 		print("NightsisterQueen Respawned")
 		createObserver(OBJECTDESTRUCTION, "nightsister_templeScreenplay", "bossDead", pBoss)
-end
------------------------
---Broadcast Respawn
------------------------
-function nightsister_templeScreenplay:KillSpawnCast(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 NightsisterQueen Respawning In ..")
-		player:broadcastToDiscord("NightsisterQueen Respawning In ..")
-end
------------------------
---Broadcast Respawn 3
------------------------
-function nightsister_templeScreenplay:KillSpawnCast1(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 3")
-		player:broadcastToDiscord("3")
-end
------------------------
---Broadcast Respawn 2
------------------------
-function nightsister_templeScreenplay:KillSpawnCast2(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 2")
-		player:broadcastToDiscord("2")
-end
------------------------
---Broadcast Respawn 1
------------------------
-function nightsister_templeScreenplay:KillSpawnCast3(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 1")
-		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
 --NightsisterQueen Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
