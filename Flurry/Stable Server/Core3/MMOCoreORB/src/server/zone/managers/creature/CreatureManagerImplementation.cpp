@@ -730,34 +730,6 @@ void CreatureManagerImplementation::droidHarvest(Creature* creature, CreatureObj
 	if (creature->getParent().get() != nullptr)
 		quantityExtracted = 1;
 
-	//-------------------- 'Added for Droid Harvest Bonus' --------------------
-	int profBonus = 0;
-	if (owner->hasSkill("outdoors_scout_master")){
-		profBonus += 10; // + 10% harvest bonus
-		if (owner->hasSkill("outdoors_ranger_novice")){
-			profBonus += 15; // + 25% harvest bonus
-			if (owner->hasSkill("outdoors_ranger_master")){
-				profBonus += 25; // + 50% harvest bonus
-				quantityExtracted++; // increase creature resource by 1
-			}
-		}
-	}
-
-	int luckBonus = owner->getSkillMod("force_luck")*5; //0-20% harvest bonus for luck
-
-	int droidBonus = DroidMechanics::determineDroidSkillBonus(ownerSkill,harvestBonus + profBonus + luckBonus,quantityExtracted);
-
-	if (owner->hasSkill("force_sensitive_enhanced_reflexes_survival_02")){
-		quantityExtracted++; // increase creature resource by 1
-		if (owner->hasSkill("force_sensitive_enhanced_reflexes_survival_04")){
-			quantityExtracted++; // increase creature resource by 1
-			if (owner->hasSkill("force_sensitive_enhanced_reflexes_master")){
-				quantityExtracted++; // increase creature resource by 1
-			}
-		}
-	}
-	//-------------------- END Droid Harvest Bonus' --------------------
-
 	quantityExtracted += droidBonus;
 	// add to droid inventory if there is space available, otherwise to player
 	DroidObject* pet = cast<DroidObject*>(droid);

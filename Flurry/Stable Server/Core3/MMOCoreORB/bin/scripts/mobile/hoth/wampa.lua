@@ -1,5 +1,5 @@
 wampa = Creature:new {
-	customName = "Wampa",
+	objectName = "@mob/creature_names:wampa",
 	socialGroup = "wampa",
 	faction = "",
 	level = 80,
