@@ -11,17 +11,17 @@ FortTuskenScreenPlay = ScreenPlay:new {
 		7875789
 	},
 
-	lootLevel = 26,
+	lootLevel = 300,
 
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 3500000},
-				{group = "junk", chance = 3500000},
-				{group = "rifles", chance = 1000000},
-				{group = "pistols", chance = 1000000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "armor_attachments", chance = 500000}
+				{group = "g_named_crystals", chance = 2000000},
+				{group = "vehicledeedsnormal", chance = 1000000},
+				{group = "g_cloak_of_hate", chance = 1000000},
+				{group = "power_crystals", chance = 2000000},
+				{group = "weapon_component_advanced", chance = 2000000},
+				{group = "nge_all", chance = 2000000}
 			},
 			lootChance = 8000000
 		}
@@ -48,7 +48,7 @@ function FortTuskenScreenPlay:spawnMobiles()
 	spawnMobile("tatooine", "tusken_avenger",300,-3979.6,60,6261.4,-2,0)
 	spawnMobile("tatooine", "tusken_blood_champion",300,-3.8,37.9,-34.1,43,1189186)
 	spawnMobile("tatooine", "tusken_guard",300,-2.8,37.9,-20.7,71,1189187)
-	spawnMobile("tatooine", "tusken_commoner",300,31,37.9,-30.6,-124,1189189)
+	spawnMobile("tatooine", "tusken_executioner",300,31,37.9,-30.6,-124,1189189)
 	spawnMobile("tatooine", "tusken_elite_guard",300,27,44,-22.4,47,1189192)
 	spawnMobile("tatooine", "tusken_flesh_hunter",300,29.6,44,-16.3,175,1189192)
 	spawnMobile("tatooine", "tusken_raid_leader",300,22.16,37.9,-18.4,-19,1189191)
@@ -57,7 +57,7 @@ function FortTuskenScreenPlay:spawnMobiles()
 	spawnMobile("tatooine", "tusken_raid_leader",300,32.4,37.9,-16.2,-178,1189190)
 	spawnMobile("tatooine", "tusken_blood_champion",300,33.1,37.9,-2.0,-5,1189196)
 	spawnMobile("tatooine", "tusken_raider",300,32.9,37.9,5.5,179,1189196)
-	spawnMobile("tatooine", "tusken_commoner",300,26.4,37.0,-0.2,-32,1189194)
+	spawnMobile("tatooine", "tusken_executioner",300,26.4,37.0,-0.2,-32,1189194)
 	spawnMobile("tatooine", "tusken_blood_champion",300,21.6,37.0,1.4,84,1189194)
 	spawnMobile("tatooine", "tusken_avenger",300,27.2,37.0,2.6,-146,1189194)
 	spawnMobile("tatooine", "tusken_guard",300,16.5,37.9,-2.8,-5,1189195)
@@ -65,7 +65,7 @@ function FortTuskenScreenPlay:spawnMobiles()
 	spawnMobile("tatooine", "tusken_berserker",300,-1.0,43.7,-3.3,-92,1189188)
 	spawnMobile("tatooine", "tusken_elite_guard",300,-6.1,42.3,-6.4,83,1189188)
 	spawnMobile("tatooine", "tusken_berserker",300,-6.2,43.3,-0.4,83,1189188)
-	spawnMobile("tatooine", "tusken_commoner",300,-3952.1,68.5,6284.3,-115,0)
+	spawnMobile("tatooine", "tusken_witch_doctor",300,-3952.1,68.5,6284.3,-115,0)
 	spawnMobile("tatooine", "tusken_avenger",300,-3982.0,67.7,6293.8,-5,0)
 	spawnMobile("tatooine", "tusken_gore_chief",300,-4006.6,60,6249.2,89,0)
 	spawnMobile("tatooine", "tusken_commoner",300,-3951.7,60,6243.1,-162,0)
@@ -77,12 +77,12 @@ function FortTuskenScreenPlay:spawnMobiles()
 	spawnMobile("tatooine", "tusken_avenger",300,-3991.6,60,6246.4,-4,0)
 	spawnMobile("tatooine", "tusken_commoner",300,-3967.8,60,6231.1,-43,0)
 	spawnMobile("tatooine", "tusken_flesh_hunter",300,-3997.1,60,6288.4,112,0)
-	spawnMobile("tatooine", "tusken_raider",300,-3969,60,6288.3,-101,0)
+	spawnMobile("tatooine", "tusken_witch_doctor",300,-3969,60,6288.3,-101,0)
 	spawnMobile("tatooine", "tusken_brute",300,-3983.4,60,6266.1,6,0)
 	spawnMobile("tatooine", "tusken_chief",300,-1.9,37.9,-29.2,100,1189186)
 	spawnMobile("tatooine", "tusken_raider",300,2.9,37.9,-15.5,-126,1189187)
 	spawnMobile("tatooine", "tusken_elite_guard",300,24.2,37.9,-31.6,71,1189189)
-	spawnMobile("tatooine", "tusken_raider",300,27.6,37.9,-26,177,1189189)
+	spawnMobile("tatooine", "tusken_executioner",300,27.6,37.9,-26,177,1189189)
 	spawnMobile("tatooine", "tusken_warlord",300,-4.6,37.9,-30.1,118,1189186)
 	spawnMobile("tatooine", "tusken_avenger",300,-3.2,37.9,-16.2,109,1189187)
 	spawnMobile("tatooine", "tusken_warlord",300,28.9,44,-29.2,0,1189193)
@@ -136,7 +136,7 @@ function FortTuskenScreenPlay:spawnMobiles()
 	spawnMobile("tatooine", "tusken_chief",300,14.0,22.6,5.2,58,1189182)
 	spawnMobile("tatooine", "tusken_warlord",300,25.3,22,11.4,91,1189182)
 	spawnMobile("tatooine", "tusken_brute",300,29.1,21.9,10.1,-88,1189182)
-	spawnMobile("tatooine", "tusken_warlord",300,37.2,22.9,19.7,165,1189182)
+	spawnMobile("tatooine", "tusken_king",300,37.2,22.9,19.7,165,1189182)
 	spawnMobile("tatooine", "tusken_death_hunter",300,38.0,20.8,-3.6,-51,1189182)
 	spawnMobile("tatooine", "tusken_chief",300,31,21.5,-9.4,167,1189182)
 	spawnMobile("tatooine", "tusken_death_hunter",300,32.0,22.1,2.6,90,1189182)
