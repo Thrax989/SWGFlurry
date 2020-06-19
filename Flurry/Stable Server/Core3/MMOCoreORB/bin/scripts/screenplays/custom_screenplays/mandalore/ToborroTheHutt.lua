@@ -36,8 +36,8 @@ end
 ---------------------------------------------------------------
 function ToborroTheHuttScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 Toborro The Hutt Has Died!")
-	player:broadcastToServer("\\#63C8F9 Toborro The Hutt Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 Toborro The Hutt Has Died!")
+	--player:broadcastToServer("\\#63C8F9 Toborro The Hutt Will Respawn In 3 Hours")
 	player:broadcastToDiscord("Toborro The Hutt Has Died!")
 	player:broadcastToDiscord("Toborro The Hutt Will Respawn In 3 Hours")
 	print("Toborro The Hutt Has Died")
@@ -64,7 +64,7 @@ end
 -----------------------
 function ToborroTheHuttScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Toborro The Hutt Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 Toborro The Hutt Respawning In ..")
 		player:broadcastToDiscord("Toborro The Hutt Respawning In ..")
 end
 -----------------------
@@ -72,7 +72,7 @@ end
 -----------------------
 function ToborroTheHuttScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -80,7 +80,7 @@ end
 -----------------------
 function ToborroTheHuttScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -88,7 +88,7 @@ end
 -----------------------
 function ToborroTheHuttScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------

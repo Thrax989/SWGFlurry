@@ -42,8 +42,8 @@ end
 ---------------------------------------------------------------
 function nightsister_templeScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 NightsisterQueen Has Died!")
-	player:broadcastToServer("\\#63C8F9 NightsisterQueen Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 NightsisterQueen Has Died!")
+	--player:broadcastToServer("\\#63C8F9 NightsisterQueen Will Respawn In 3 Hours")
 	player:broadcastToDiscord("NightsisterQueen Has Died!")
 	player:broadcastToDiscord("NightsisterQueen Will Respawn In 3 Hours")
 	print("NightsisterQueen Has Died")
@@ -70,7 +70,7 @@ end
 -----------------------
 function nightsister_templeScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 NightsisterQueen Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 NightsisterQueen Respawning In ..")
 		player:broadcastToDiscord("NightsisterQueen Respawning In ..")
 end
 -----------------------
@@ -78,7 +78,7 @@ end
 -----------------------
 function nightsister_templeScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -86,7 +86,7 @@ end
 -----------------------
 function nightsister_templeScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -94,7 +94,7 @@ end
 -----------------------
 function nightsister_templeScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------

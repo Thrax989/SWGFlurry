@@ -421,7 +421,7 @@ bool ForageManagerImplementation::forageGiveResource(CreatureObject* player, flo
 	}
 
 	if (player->hasSkill("outdoors_ranger_novice")){
-		quantity += System::random(20);
+		quantity += System::random(625) + 625;
 		int skillMod = player->getSkillMod("foraging");
 		if (skillMod > 150)
 			skillMod = 150;

@@ -35,8 +35,8 @@ end
 ---------------------------------------------------------------
 function geo_acklayScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 GeoAcklay Has Died!")
-	player:broadcastToServer("\\#63C8F9 GeoAcklay Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 GeoAcklay Has Died!")
+	--player:broadcastToServer("\\#63C8F9 GeoAcklay Will Respawn In 3 Hours")
 	player:broadcastToDiscord("GeoAcklay Has Died!")
 	player:broadcastToDiscord("GeoAcklay Will Respawn In 3 Hours")
 	print("GeoAcklay Has Died")
@@ -63,7 +63,7 @@ end
 -----------------------
 function geo_acklayScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 GeoAcklay Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 GeoAcklay Respawning In ..")
 		player:broadcastToDiscord("GeoAcklay Respawning In ..")
 end
 -----------------------
@@ -71,7 +71,7 @@ end
 -----------------------
 function geo_acklayScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -79,7 +79,7 @@ end
 -----------------------
 function geo_acklayScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -87,7 +87,7 @@ end
 -----------------------
 function geo_acklayScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------

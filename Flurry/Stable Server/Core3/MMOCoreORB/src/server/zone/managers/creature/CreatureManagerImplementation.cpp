@@ -730,6 +730,8 @@ void CreatureManagerImplementation::droidHarvest(Creature* creature, CreatureObj
 	if (creature->getParent().get() != nullptr)
 		quantityExtracted = 1;
 
+	int droidBonus = DroidMechanics::determineDroidSkillBonus(ownerSkill,harvestBonus,quantityExtracted);
+
 	quantityExtracted += droidBonus;
 	// add to droid inventory if there is space available, otherwise to player
 	DroidObject* pet = cast<DroidObject*>(droid);

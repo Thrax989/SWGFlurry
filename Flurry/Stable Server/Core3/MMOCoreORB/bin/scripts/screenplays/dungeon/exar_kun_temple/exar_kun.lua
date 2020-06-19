@@ -100,8 +100,8 @@ end
 ---------------------------------------------------------------
 function exar_kunScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 Exar Has Died!")
-	player:broadcastToServer("\\#63C8F9 Exar Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 Exar Has Died!")
+	--player:broadcastToServer("\\#63C8F9 Exar Will Respawn In 3 Hours")
 	player:broadcastToDiscord("Exar Has Died!")
 	player:broadcastToDiscord("Exar Will Respawn In 3 Hours")
 	print("Exar Has Died")
@@ -128,7 +128,7 @@ end
 -----------------------
 function exar_kunScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Exar Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 Exar Respawning In ..")
 		player:broadcastToDiscord("Exar Respawning In ..")
 end
 -----------------------
@@ -136,7 +136,7 @@ end
 -----------------------
 function exar_kunScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -144,7 +144,7 @@ end
 -----------------------
 function exar_kunScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -152,7 +152,7 @@ end
 -----------------------
 function exar_kunScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
