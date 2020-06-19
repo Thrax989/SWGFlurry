@@ -141,7 +141,7 @@ wampa_boss = Creature:new {
 	conversationTemplate = "",
 	attacks = {
 		{"knockdownattack",""},
-		{"creatureareaattack",""}
+		{"creatureareaattack",""},
 		{"creatureareacombo","StateAccuracyBonus=100"},
 		{"creatureareaknockdown","StateAccuracyBonus=100"},
 		{"knockdownattack","KnockdownChance=100"},
