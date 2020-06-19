@@ -155,8 +155,8 @@ end
 ---------------------------------------------------------------
 function avatar_platformScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 Avatar Has Died!")
-	player:broadcastToServer("\\#63C8F9 Avatar Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 Avatar Has Died!")
+	--player:broadcastToServer("\\#63C8F9 Avatar Will Respawn In 3 Hours")
 	player:broadcastToDiscord("Avatar Has Died!")
 	player:broadcastToDiscord("Avatar Will Respawn In 3 Hours")
 	print("Avatar Has Died")
@@ -183,7 +183,7 @@ end
 -----------------------
 function avatar_platformScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Avatar Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 Avatar Respawning In ..")
 		player:broadcastToDiscord("Avatar Respawning In ..")
 end
 -----------------------
@@ -191,7 +191,7 @@ end
 -----------------------
 function avatar_platformScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -199,7 +199,7 @@ end
 -----------------------
 function avatar_platformScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -207,7 +207,7 @@ end
 -----------------------
 function avatar_platformScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------

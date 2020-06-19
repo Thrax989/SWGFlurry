@@ -35,8 +35,8 @@ end
 ---------------------------------------------------------------
 function generalgrievous_platformScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 NKNecrosis Has Died!")
-	player:broadcastToServer("\\#63C8F9 NKNecrosis Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 NKNecrosis Has Died!")
+	--player:broadcastToServer("\\#63C8F9 NKNecrosis Will Respawn In 3 Hours")
 	player:broadcastToDiscord("NKNecrosis Has Died!")
 	player:broadcastToDiscord("NKNecrosis Will Respawn In 3 Hours")
 	print("NKNecrosis Has Died")
@@ -63,7 +63,7 @@ end
 -----------------------
 function generalgrievous_platformScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 NKNecrosis Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 NKNecrosis Respawning In ..")
 		player:broadcastToDiscord("NKNecrosis Respawning In ..")
 end
 -----------------------
@@ -71,7 +71,7 @@ end
 -----------------------
 function generalgrievous_platformScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -79,7 +79,7 @@ end
 -----------------------
 function generalgrievous_platformScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -87,7 +87,7 @@ end
 -----------------------
 function generalgrievous_platformScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------

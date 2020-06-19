@@ -2,15 +2,15 @@ tusken_carnage_champion = Creature:new {
 	objectName = "@mob/creature_names:tusken_fort_tusken_champion",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
-	level = 116,
-	chanceHit = 3.85,
-	damageMin = 750,
-	damageMax = 1210,
-	baseXp = 11015,
-	baseHAM = 43000,
-	baseHAMmax = 53000,
+	level = 300,
+	chanceHit = 30.0,
+	damageMin = 1600,
+	damageMax = 2000,
+	baseXp = 25000,
+	baseHAM = 100000,
+	baseHAMmax = 120000,
 	armor = 2,
-	resists = {65,40,10,30,-1,30,-1,-1,-1},
+	resists = {125,125,125,125,125,125,125,125,125},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -18,7 +18,7 @@ tusken_carnage_champion = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.0,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + HERD + KILLER,
@@ -29,58 +29,40 @@ tusken_carnage_champion = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tusken_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "wearables_all", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "bone_armor", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "chitin_armor", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "armor_attachments", chance = 10000000},
-			},
-			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "clothing_attachments", chance = 10000000},
-			},
-			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "color_crystals", chance = 10000000},
-			},
-			lootChance = 500000
-		},
-		{
-			groups = {
 				{group = "power_crystals", chance = 10000000},
 			},
-			lootChance = 500000
+			lootChance = 7000000
 		},
+		{
+			groups = {
+				{group = "g_named_crystals", chance = 10000000},
+			},
+			lootChance = 7000000
+		},
+		{
+			groups = {
+				{group = "weapon_component_advanced", chance = 10000000},
+			},
+			lootChance = 7000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 3000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 3000000
+		}
 	},
 	weapons = {"tusken_weapons"},
 	conversationTemplate = "",

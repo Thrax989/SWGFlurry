@@ -102,8 +102,8 @@ end
 ---------------------------------------------------------------
 function wampa_caveScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 WampaKing Has Died!")
-	player:broadcastToServer("\\#63C8F9 WampaKing Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 WampaKing Has Died!")
+	--player:broadcastToServer("\\#63C8F9 WampaKing Will Respawn In 3 Hours")
 	player:broadcastToDiscord("WampaKing Has Died!")
 	player:broadcastToDiscord("WampaKing Will Respawn In 3 Hours")
 	print("WampaKing Has Died")
@@ -130,7 +130,7 @@ end
 -----------------------
 function wampa_caveScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 WampaKing Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 WampaKing Respawning In ..")
 		player:broadcastToDiscord("WampaKing Respawning In ..")
 end
 -----------------------
@@ -138,7 +138,7 @@ end
 -----------------------
 function wampa_caveScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -146,7 +146,7 @@ end
 -----------------------
 function wampa_caveScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -154,7 +154,7 @@ end
 -----------------------
 function wampa_caveScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------

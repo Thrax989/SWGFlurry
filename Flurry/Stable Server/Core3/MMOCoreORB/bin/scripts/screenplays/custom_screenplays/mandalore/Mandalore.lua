@@ -36,8 +36,8 @@ end
 ---------------------------------------------------------------
 function MandaloreBossScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 Mandalore The Resurrector Has Died!")
-	player:broadcastToServer("\\#63C8F9 Mandalore The Resurrector Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 Mandalore The Resurrector Has Died!")
+	--player:broadcastToServer("\\#63C8F9 Mandalore The Resurrector Will Respawn In 3 Hours")
 	player:broadcastToDiscord("Mandalore The Resurrector Has Died!")
 	player:broadcastToDiscord("Mandalore The Resurrector Will Respawn In 3 Hours")
 	print("Mandalore The Resurrector Has Died")
@@ -64,7 +64,7 @@ end
 -----------------------
 function MandaloreBossScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Mandalore The Resurrector Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 Mandalore The Resurrector Respawning In ..")
 		player:broadcastToDiscord("Mandalore The Resurrector Respawning In ..")
 end
 -----------------------
@@ -72,7 +72,7 @@ end
 -----------------------
 function MandaloreBossScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -80,7 +80,7 @@ end
 -----------------------
 function MandaloreBossScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -88,7 +88,7 @@ end
 -----------------------
 function MandaloreBossScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------

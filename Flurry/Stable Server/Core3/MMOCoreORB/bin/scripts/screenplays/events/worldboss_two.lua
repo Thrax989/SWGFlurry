@@ -36,8 +36,8 @@ end
 ---------------------------------------------------------------
 function worldboss_twoScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 Naboo World Boss Has Died!")
-	player:broadcastToServer("\\#63C8F9 Naboo World Boss Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 Naboo World Boss Has Died!")
+	--player:broadcastToServer("\\#63C8F9 Naboo World Boss Will Respawn In 3 Hours")
 	player:broadcastToDiscord("Naboo World Boss Has Died!")
 	player:broadcastToDiscord("Naboo World Boss Will Respawn In 3 Hours")
 	print("World Boss One Has Died")
@@ -64,7 +64,7 @@ end
 -----------------------
 function worldboss_twoScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Naboo World Boss Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 Naboo World Boss Respawning In ..")
 		player:broadcastToDiscord("Naboo World Boss Respawning In ..")
 end
 -----------------------
@@ -72,7 +72,7 @@ end
 -----------------------
 function worldboss_twoScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -80,7 +80,7 @@ end
 -----------------------
 function worldboss_twoScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -88,7 +88,7 @@ end
 -----------------------
 function worldboss_twoScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------

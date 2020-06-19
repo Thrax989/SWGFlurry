@@ -36,8 +36,8 @@ end
 ---------------------------------------------------------------
 function BoorkaTheHuttScreenplay:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 Boorka The Hutt Has Died!")
-	player:broadcastToServer("\\#63C8F9 Boorka The Hutt Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 Boorka The Hutt Has Died!")
+	--player:broadcastToServer("\\#63C8F9 Boorka The Hutt Will Respawn In 3 Hours")
 	player:broadcastToDiscord("Boorka The Hutt Has Died!")
 	player:broadcastToDiscord("Boorka The Hutt Will Respawn In 3 Hours")
 	print("Boorka The Hutt Has Died")
@@ -64,7 +64,7 @@ end
 -----------------------
 function BoorkaTheHuttScreenplay:KillSpawnCast(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 Boorka The Hutt Respawning In ..")
+		--player:broadcastToServer("\\#63C8F9 Boorka The Hutt Respawning In ..")
 		player:broadcastToDiscord("Boorka The Hutt Respawning In ..")
 end
 -----------------------
@@ -72,7 +72,7 @@ end
 -----------------------
 function BoorkaTheHuttScreenplay:KillSpawnCast1(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
+		--player:broadcastToServer("\\#63C8F9 3")
 		player:broadcastToDiscord("3")
 end
 -----------------------
@@ -80,7 +80,7 @@ end
 -----------------------
 function BoorkaTheHuttScreenplay:KillSpawnCast2(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
+		--player:broadcastToServer("\\#63C8F9 2")
 		player:broadcastToDiscord("2")
 end
 -----------------------
@@ -88,7 +88,7 @@ end
 -----------------------
 function BoorkaTheHuttScreenplay:KillSpawnCast3(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
+		--player:broadcastToServer("\\#63C8F9 1")
 		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
