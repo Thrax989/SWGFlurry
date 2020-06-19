@@ -34,20 +34,11 @@ end
 ---------------------------------------------------------------
 --The Boss Has Died Respawn WorldBoss With A New Dynamic Spawn
 ---------------------------------------------------------------
-function TorVizslaScreenplay:bossDead(pBoss, pPlayer)
-	local player = LuaCreatureObject(pPlayer)
-	--player:broadcastToServer("\\#63C8F9 Tor Vizsla II Has Died!")
-	--player:broadcastToServer("\\#63C8F9 Tor Vizsla II Will Respawn In 3 Hours")
-	player:broadcastToDiscord("Tor Vizsla II Has Died!")
-	player:broadcastToDiscord("Tor Vizsla II Will Respawn In 3 Hours")
+function TorVizslaScreenplay:bossDead(pBoss)
 	print("Tor Vizsla II Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "TorVizslaScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "TorVizslaScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
-	createEvent(10797 * 1000, "TorVizslaScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "TorVizslaScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "TorVizslaScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "TorVizslaScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
@@ -58,38 +49,6 @@ function TorVizslaScreenplay:KillSpawn()
 		local creature = CreatureObject(pBoss)
 		print("Tor Vizsla II has Spawned")
 		createObserver(OBJECTDESTRUCTION, "TorVizslaScreenplay", "bossDead", pBoss)
-end
------------------------
---Broadcast Respawn
------------------------
-function TorVizslaScreenplay:KillSpawnCast(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 Tor Vizsla II Respawning In ..")
-		player:broadcastToDiscord("Tor Vizsla II Respawning In ..")
-end
------------------------
---Broadcast Respawn 3
------------------------
-function TorVizslaScreenplay:KillSpawnCast1(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 3")
-		player:broadcastToDiscord("3")
-end
------------------------
---Broadcast Respawn 2
------------------------
-function TorVizslaScreenplay:KillSpawnCast2(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 2")
-		player:broadcastToDiscord("2")
-end
------------------------
---Broadcast Respawn 1
------------------------
-function TorVizslaScreenplay:KillSpawnCast3(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		--player:broadcastToServer("\\#63C8F9 1")
-		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
 --The Boss Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
