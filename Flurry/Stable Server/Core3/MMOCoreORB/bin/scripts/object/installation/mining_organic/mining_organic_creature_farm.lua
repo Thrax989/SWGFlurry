@@ -43,7 +43,7 @@
 
 object_installation_mining_organic_mining_organic_creature_farm = object_installation_mining_organic_shared_mining_organic_creature_farm:new {
 	lotSize = 1,
-	allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"},
+	allowedZones = {"chandrila", "corellia", "coruscant", "dantooine", "dathomir", "endor", "geonosis", "hoth", "hutta", "jakku", "kaas", "kashyyyk", "korriban", "lok", "mandalore", "mustafar", "naboo", "rori", "taanab", "talus", "tatooine", "yavin4"},
 	baseMaintenanceRate = 30,
 	basePowerRate = 25,
 	width = 3,
