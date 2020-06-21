@@ -1,6 +1,6 @@
 uwari_beetle_aggro_2 = Creature:new {
-	customName = "uwari_beetle_aggro_2",
-	--objectName = "",
+--	customName = "uwari_beetle_aggro_2",
+	objectName = "uwari_beetle",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
@@ -20,7 +20,7 @@ uwari_beetle_aggro_2 = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,

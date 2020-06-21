@@ -1,6 +1,6 @@
 bantha_saddle_armored = Creature:new {
-	customName = "bantha_saddle_armored",
-	--objectName = "",
+--	customName = "bantha_saddle_armored",
+	objectName = "bantha_saddle_armored",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
@@ -20,7 +20,7 @@ bantha_saddle_armored = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
