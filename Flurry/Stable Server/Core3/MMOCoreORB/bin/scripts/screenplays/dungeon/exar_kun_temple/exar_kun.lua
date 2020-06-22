@@ -91,9 +91,80 @@ function exar_kunScreenplay:spawnMobiles()
 		spawnMobile("dungeon2", "exar_guard", 1800, 1.52829, -0.0157904, 69.9522, 137, 14200878)
 		spawnMobile("dungeon2", "exar_guard", 1800, -8.53399, -4.81847e-08, 80.7342, 98, 14200878)
 		local pBoss = spawnMobile("dungeon2", "exar_boss", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--Spawn Exar
-		local creature = CreatureObject(pBoss)
 		print("Exar Spawned")
+		createObserver(DAMAGERECEIVED, "exar_kunScreenplay", "npcDamageObserver", pBoss)
 		createObserver(OBJECTDESTRUCTION, "exar_kunScreenplay", "bossDead", pBoss)--Exar Has Died Trigger Respawn Function
+		createObserver(OBJECTDESTRUCTION, "exar_kunScreenplay", "npcKilled", pJedi)
+end
+function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
+
+	local player = LuaCreatureObject(playerObject)
+	local boss = LuaCreatureObject(bossObject)
+	
+	health = boss:getHAM(0)
+	action = boss:getHAM(3)
+	mind = boss:getHAM(6)
+	
+	maxHealth = boss:getMaxHAM(0)
+	maxAction = boss:getMaxHAM(3)
+	maxMind = boss:getMaxHAM(6)
+
+
+	if (health <= (maxHealth * 0.6) and readData("exar:helperAlive") == 0) then
+		writeData("exar:helperAlive",1)
+		spatialChat(bossObject, "is it to late???")
+		self:spawnSupport(playerObject)
+	end
+
+	return 0
+
+end
+
+function exar_kunScreenplay:spawnSupport(playerObject)
+	local pGuard = spawnMobile("dungeon2", "exar_boss", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)
+	spatialChat(pGuard, "What in the blazes is going on?!")
+	CreatureObject(pGuard):engageCombat(playerObject)
+end
+
+function exar_kunScreenplay:npcKilled(pMobile, playerObject)
+	local player = LuaCreatureObject(playerObject)
+	local hasState = player:hasScreenPlayState(0, "exar_kunScreenplay")
+	writeData("exar:helperAlive",0)
+	ObjectManager.withCreatureObject(playerObject, function(creature)
+		-- screenplaystates for login/logout
+		if (creature:isGrouped()) then
+			local groupSize = creature:getGroupSize()
+
+			for i = 0, groupSize - 1, 1 do
+				local pMember = creature:getGroupMember(i)
+				if pMember ~= nil then
+					
+					local groupMember = LuaCreatureObject(pMember)
+					local hasState = groupMember:hasScreenPlayState(0, "exar_kunScreenplay")
+					local wasInRange = false
+
+						if (CreatureObject(playerObject):isInRangeWithObject(pMember, 30)) then
+							wasInRange = true
+						end
+
+						if(hasState == true and wasInRange == true) then
+							groupMember:playMusicMessage("sound/ui_button_random.snd")
+							groupMember:sendSystemMessage("Mission Complete")
+							groupMember:setScreenPlayState(4, exar_kunScreenplay.questString)
+						end
+					end
+				end
+			else
+				local hasState = player:hasScreenPlayState(0, "exar_kunScreenplay")
+					
+					if(hasState == true) then 
+						player:playMusicMessage("sound/ui_button_random.snd")
+						player:sendSystemMessage("Mission Complete")
+						player:setScreenPlayState(4, exar_kunScreenplay.questString)
+				end
+			end
+		end)
+	return 0
 end
 ---------------------------------------------------------------
 --Exar Has Died Respawn Exar With A New Dynamic Spawn
