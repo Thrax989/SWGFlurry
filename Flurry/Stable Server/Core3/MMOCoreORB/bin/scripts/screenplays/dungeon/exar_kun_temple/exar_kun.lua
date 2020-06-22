@@ -109,61 +109,162 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 	maxHealth = boss:getMaxHAM(0)
 	maxAction = boss:getMaxHAM(3)
 	maxMind = boss:getMaxHAM(6)
-
+-----------------------
+--Exar Boss 90% health
+-----------------------
 	if (((health <= (maxHealth * 0.9)) or (action <= (maxAction * 0.9)) or (mind <= (maxMind * 0.9))) and readData("exar_kun:spawnState") == 0) then
       		writeData("exar_kun:spawnState",1)
 		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
 		self:spawnSupport(playerObject)
+		CreatureObject(playerObject):sendSystemMessage("You take damage from the fire")
+      		local trapDmg = getRandomNumber(2000, 2500)
+      			CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+      			CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      			CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 90%")
 	end
-
+-----------------------
+--Exar Boss 80% health
+-----------------------
 	if (((health <= (maxHealth * 0.8)) or (action <= (maxAction * 0.8)) or (mind <= (maxMind * 0.8))) and readData("exar_kun:spawnState") == 1) then
       		writeData("exar_kun:spawnState",2)
 		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
 		self:spawnSupport(playerObject)
+		CreatureObject(playerObject):sendSystemMessage("You take damage from the fire")
+      		local trapDmg = getRandomNumber(2000, 2500)
+      			CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+      			CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      			CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 80%")
 	end
-
+-----------------------
+--Exar Boss 70% health
+-----------------------
 	if (((health <= (maxHealth * 0.7)) or (action <= (maxAction * 0.7)) or (mind <= (maxMind * 0.7))) and readData("exar_kun:spawnState") == 2) then
       		writeData("exar_kun:spawnState",3)
 		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
 		self:spawnSupport(playerObject)
+		CreatureObject(playerObject):sendSystemMessage("You take damage from the fire")
+      		local trapDmg = getRandomNumber(2000, 2500)
+      			CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+      			CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      			CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 70%")
 	end
-
+-----------------------
+--Exar Boss 60% health
+-----------------------
 	if (((health <= (maxHealth * 0.6)) or (action <= (maxAction * 0.6)) or (mind <= (maxMind * 0.6))) and readData("exar_kun:spawnState") == 3) then
       		writeData("exar_kun:spawnState",4)
 		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
 		self:spawnSupport(playerObject)
+		CreatureObject(playerObject):sendSystemMessage("You take damage from the fire")
+      		local trapDmg = getRandomNumber(2000, 2500)
+      			CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+      			CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      			CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 60%")
 	end
-
+-----------------------
+--Exar Boss 50% health
+-----------------------
 	if (((health <= (maxHealth * 0.5)) or (action <= (maxAction * 0.5)) or (mind <= (maxMind * 0.5))) and readData("exar_kun:spawnState") == 4) then
       		writeData("exar_kun:spawnState",5)
 		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
 		self:spawnSupport(playerObject)
+		CreatureObject(playerObject):sendSystemMessage("You take damage from the fire")
+      		local trapDmg = getRandomNumber(2000, 2500)
+      			CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+      			CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      			CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 50%")
 	end
-
+-----------------------
+--Exar Boss 40% health
+-----------------------
 	if (((health <= (maxHealth * 0.4)) or (action <= (maxAction * 0.4)) or (mind <= (maxMind * 0.4))) and readData("exar_kun:spawnState") == 5) then
       		writeData("exar_kun:spawnState",6)
 		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
 		self:spawnSupport(playerObject)
+		CreatureObject(playerObject):sendSystemMessage("You take damage from the fire")
+      		local trapDmg = getRandomNumber(2000, 2500)
+      			CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+      			CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      			CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 40%")
 	end
-
+-----------------------
+--Exar Boss 30% health
+-----------------------
 	if (((health <= (maxHealth * 03)) or (action <= (maxAction * 0.3)) or (mind <= (maxMind * 0.3))) and readData("exar_kun:spawnState") == 6) then
       		writeData("exar_kun:spawnState",7)
 		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
 		self:spawnSupport(playerObject)
+		CreatureObject(playerObject):sendSystemMessage("You take damage from the fire")
+      		local trapDmg = getRandomNumber(2000, 2500)
+      			CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+      			CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      			CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 30%")
 	end
-
+-----------------------
+--Exar Boss 20% health
+-----------------------
 	if (((health <= (maxHealth * 0.2)) or (action <= (maxAction * 0.2)) or (mind <= (maxMind * 0.2))) and readData("exar_kun:spawnState") == 7) then
       		writeData("exar_kun:spawnState",8)
 		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
 		self:spawnSupport(playerObject)
+		CreatureObject(playerObject):sendSystemMessage("You take damage from the fire")
+      		local trapDmg = getRandomNumber(2000, 2500)
+      			CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+      			CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      			CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 20%")
 	end
-
+-----------------------
+--Exar Boss 10% health
+-----------------------
 	if (((health <= (maxHealth * 0.1)) or (action <= (maxAction * 0.1)) or (mind <= (maxMind * 0.1))) and readData("exar_kun:spawnState") == 8) then
       		writeData("exar_kun:spawnState",9)
 		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
 		self:spawnSupport(playerObject)
+		CreatureObject(playerObject):sendSystemMessage("You take damage from the fire")
+      		local trapDmg = getRandomNumber(2000, 2500)
+      			CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+      			CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
+      			CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 10%")
 	end
-
+-----------------------
+--Exar Boss 1% health
+-----------------------
 	if (((health <= (maxHealth * 0.001)) or (action <= (maxAction * 0.001)) or (mind <= (maxMind * 0.001))) and readData("exar_kun:spawnState") == 9) then
       		writeData("exar_kun:spawnState",10)
 		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
@@ -173,7 +274,9 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 	return 0
 
 end
-
+-----------------------
+--Exar Boss Support
+-----------------------
 function exar_kunScreenplay:spawnSupport(playerObject)
 	local pGuard = spawnMobile("dungeon2", "exar_guard", -1, 14.8637, -1.05173e-08, 76.4611, 44, 14200878)
 	createObserver(DAMAGERECEIVED, "exar_kunScreenplay", "npcDamageObserver", pBoss)
