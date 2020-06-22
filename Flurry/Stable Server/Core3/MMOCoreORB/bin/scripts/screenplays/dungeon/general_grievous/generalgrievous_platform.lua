@@ -25,7 +25,7 @@ end
 --NKNecrosis Has Spawned
 -----------------------
 function generalgrievous_platformScreenplay:spawnMobiles()
-		local pBoss = spawnMobile("kashyyyk", "general_grievous", 1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn NKNecrosis
+		local pBoss = spawnMobile("kashyyyk", "general_grievous", -1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn NKNecrosis
 		local creature = CreatureObject(pBoss)
 		print("NKNecrosis Spawned")
 		createObserver(OBJECTDESTRUCTION, "generalgrievous_platformScreenplay", "bossDead", pBoss)--NKNecrosis Has Died Trigger Respawn Function
@@ -43,7 +43,7 @@ end
 --Respawn generalgrievous Boss
 -----------------------
 function generalgrievous_platformScreenplay:KillSpawn()
-		local pBoss = spawnMobilespawnMobile("kashyyyk", "general_grievous", 1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn NKNecrosis After Death 3 Hour Timer
+		local pBoss = spawnMobilespawnMobile("kashyyyk", "general_grievous", -1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn NKNecrosis After Death 3 Hour Timer
 		local creature = CreatureObject(pBoss)
 		print("NKNecrosis Respawned")
 		createObserver(OBJECTDESTRUCTION, "generalgrievous_platformScreenplay", "bossDead", pBoss)
