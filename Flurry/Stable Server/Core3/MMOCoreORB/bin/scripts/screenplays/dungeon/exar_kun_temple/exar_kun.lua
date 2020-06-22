@@ -1,10 +1,10 @@
 --/////////////////////////////////////////////////////////
---//		    Boss Spawn System					//
---//			Created By TOXIC:6/11/2020				//
+--//		    Boss Spawn System			//
+--//			Created By TOXIC:6/11/2020	//
 --////////////////////////////////////////////////////////
 
 --////////////////////////////////////////////////////////
---//		Current Boss Planet Dungeon2			//
+--//		Current Boss Planet Dungeon2		//
 --//		Current Boss Type NPC			//
 --///////////////////////////////////////////////////////
 exar_kunScreenplay = ScreenPlay:new {
@@ -87,15 +87,16 @@ function exar_kunScreenplay:spawnMobiles()
 		spawnMobile("dungeon2", "exar_guard", 1800, -21.529, -0.234192, 39.1009, 52, 14200876)
 		spawnMobile("dungeon2", "exar_guard", 1800, 27.9179, -0.0967803, 66.9628, 214, 14200878)
 		spawnMobile("dungeon2", "exar_guard", 1800, 42.7979, 9.68168e-09, 80.7347, 251, 14200878)
-		spawnMobile("dungeon2", "exar_guard", 1800, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)
 		spawnMobile("dungeon2", "exar_guard", 1800, 1.52829, -0.0157904, 69.9522, 137, 14200878)
 		spawnMobile("dungeon2", "exar_guard", 1800, -8.53399, -4.81847e-08, 80.7342, 98, 14200878)
-		local pBoss = spawnMobile("dungeon2", "exar_boss", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--Spawn Exar
+		local pBoss = spawnMobile("dungeon2", "exar_guard", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--Spawn Exar
 		print("Exar Spawned")
 		createObserver(DAMAGERECEIVED, "exar_kunScreenplay", "npcDamageObserver", pBoss)
 		createObserver(OBJECTDESTRUCTION, "exar_kunScreenplay", "bossDead", pBoss)--Exar Has Died Trigger Respawn Function
-		createObserver(OBJECTDESTRUCTION, "exar_kunScreenplay", "npcKilled", pJedi)
 end
+-----------------------------
+--Exar Damage Observers
+-----------------------------
 function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 
 	local player = LuaCreatureObject(playerObject)
@@ -109,10 +110,63 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 	maxAction = boss:getMaxHAM(3)
 	maxMind = boss:getMaxHAM(6)
 
+	if (((health <= (maxHealth * 0.9)) or (action <= (maxAction * 0.9)) or (mind <= (maxMind * 0.9))) and readData("exar_kun:spawnState") == 0) then
+      		writeData("exar_kun:spawnState",1)
+		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
+		self:spawnSupport(playerObject)
+	end
 
-	if (health <= (maxHealth * 0.6) and readData("exar:helperAlive") == 0) then
-		writeData("exar:helperAlive",1)
-		spatialChat(bossObject, "is it to late???")
+	if (((health <= (maxHealth * 0.8)) or (action <= (maxAction * 0.8)) or (mind <= (maxMind * 0.8))) and readData("exar_kun:spawnState") == 1) then
+      		writeData("exar_kun:spawnState",2)
+		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
+		self:spawnSupport(playerObject)
+	end
+
+	if (((health <= (maxHealth * 0.7)) or (action <= (maxAction * 0.7)) or (mind <= (maxMind * 0.7))) and readData("exar_kun:spawnState") == 2) then
+      		writeData("exar_kun:spawnState",3)
+		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
+		self:spawnSupport(playerObject)
+	end
+
+	if (((health <= (maxHealth * 0.6)) or (action <= (maxAction * 0.6)) or (mind <= (maxMind * 0.6))) and readData("exar_kun:spawnState") == 3) then
+      		writeData("exar_kun:spawnState",4)
+		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
+		self:spawnSupport(playerObject)
+	end
+
+	if (((health <= (maxHealth * 0.5)) or (action <= (maxAction * 0.5)) or (mind <= (maxMind * 0.5))) and readData("exar_kun:spawnState") == 4) then
+      		writeData("exar_kun:spawnState",5)
+		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
+		self:spawnSupport(playerObject)
+	end
+
+	if (((health <= (maxHealth * 0.4)) or (action <= (maxAction * 0.4)) or (mind <= (maxMind * 0.4))) and readData("exar_kun:spawnState") == 5) then
+      		writeData("exar_kun:spawnState",6)
+		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
+		self:spawnSupport(playerObject)
+	end
+
+	if (((health <= (maxHealth * 03)) or (action <= (maxAction * 0.3)) or (mind <= (maxMind * 0.3))) and readData("exar_kun:spawnState") == 6) then
+      		writeData("exar_kun:spawnState",7)
+		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
+		self:spawnSupport(playerObject)
+	end
+
+	if (((health <= (maxHealth * 0.2)) or (action <= (maxAction * 0.2)) or (mind <= (maxMind * 0.2))) and readData("exar_kun:spawnState") == 7) then
+      		writeData("exar_kun:spawnState",8)
+		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
+		self:spawnSupport(playerObject)
+	end
+
+	if (((health <= (maxHealth * 0.1)) or (action <= (maxAction * 0.1)) or (mind <= (maxMind * 0.1))) and readData("exar_kun:spawnState") == 8) then
+      		writeData("exar_kun:spawnState",9)
+		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
+		self:spawnSupport(playerObject)
+	end
+
+	if (((health <= (maxHealth * 0.001)) or (action <= (maxAction * 0.001)) or (mind <= (maxMind * 0.001))) and readData("exar_kun:spawnState") == 9) then
+      		writeData("exar_kun:spawnState",10)
+		spatialChat(bossObject, "I need Help Wherr Are You!!!!!!")
 		self:spawnSupport(playerObject)
 	end
 
@@ -121,50 +175,10 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 end
 
 function exar_kunScreenplay:spawnSupport(playerObject)
-	local pGuard = spawnMobile("dungeon2", "exar_boss", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)
-	spatialChat(pGuard, "What in the blazes is going on?!")
+	local pGuard = spawnMobile("dungeon2", "exar_guard", -1, 14.8637, -1.05173e-08, 76.4611, 44, 14200878)
+	createObserver(DAMAGERECEIVED, "exar_kunScreenplay", "npcDamageObserver", pBoss)
+	spatialChat(pGuard, "What in the blazes is going on?! Im Here! Im Here!!!!!!!!")
 	CreatureObject(pGuard):engageCombat(playerObject)
-end
-
-function exar_kunScreenplay:npcKilled(pMobile, playerObject)
-	local player = LuaCreatureObject(playerObject)
-	local hasState = player:hasScreenPlayState(0, "exar_kunScreenplay")
-	writeData("exar:helperAlive",0)
-	ObjectManager.withCreatureObject(playerObject, function(creature)
-		-- screenplaystates for login/logout
-		if (creature:isGrouped()) then
-			local groupSize = creature:getGroupSize()
-
-			for i = 0, groupSize - 1, 1 do
-				local pMember = creature:getGroupMember(i)
-				if pMember ~= nil then
-					
-					local groupMember = LuaCreatureObject(pMember)
-					local hasState = groupMember:hasScreenPlayState(0, "exar_kunScreenplay")
-					local wasInRange = false
-
-						if (CreatureObject(playerObject):isInRangeWithObject(pMember, 30)) then
-							wasInRange = true
-						end
-
-						if(hasState == true and wasInRange == true) then
-							groupMember:playMusicMessage("sound/ui_button_random.snd")
-							groupMember:sendSystemMessage("Mission Complete")
-							groupMember:setScreenPlayState(4, exar_kunScreenplay.questString)
-						end
-					end
-				end
-			else
-				local hasState = player:hasScreenPlayState(0, "exar_kunScreenplay")
-					
-					if(hasState == true) then 
-						player:playMusicMessage("sound/ui_button_random.snd")
-						player:sendSystemMessage("Mission Complete")
-						player:setScreenPlayState(4, exar_kunScreenplay.questString)
-				end
-			end
-		end)
-	return 0
 end
 ---------------------------------------------------------------
 --Exar Has Died Respawn Exar With A New Dynamic Spawn
@@ -181,14 +195,15 @@ end
 -----------------------
 function exar_kunScreenplay:KillSpawn()
 		local pBoss = spawnMobile("dungeon2", "exar_boss", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--Spawn Exar After Death 3 Hour Timer
-		local creature = CreatureObject(pBoss)
 		print("Exar Respawned")
+		createObserver(DAMAGERECEIVED, "exar_kunScreenplay", "npcDamageObserver", pBoss)
 		createObserver(OBJECTDESTRUCTION, "exar_kunScreenplay", "bossDead", pBoss)
 end
 -----------------------------------------------------------------------------
 --Exar Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
 -----------------------------------------------------------------------------
 function exar_kunScreenplay:KillBoss(pBoss)
+      	writeData("exar_kun:spawnState",0)
 	dropObserver(pBoss, OBJECTDESTRUCTION)
 	if SceneObject(pBoss) then
 		print("Exar Destroyed")
