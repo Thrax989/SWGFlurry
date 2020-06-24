@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_axe_vibro = object_dr
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "2h Scythe Sword",
+   customObjectName = "Vibro Axe",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 

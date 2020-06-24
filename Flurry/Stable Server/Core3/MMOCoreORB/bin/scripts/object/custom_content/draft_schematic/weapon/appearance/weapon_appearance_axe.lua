@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_axe = object_draft_sc
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "2h Scythe Sword",
+   customObjectName = "Axe",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 

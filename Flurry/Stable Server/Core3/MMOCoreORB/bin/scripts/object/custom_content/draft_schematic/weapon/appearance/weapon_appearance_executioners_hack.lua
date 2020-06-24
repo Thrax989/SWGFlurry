@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_executioners_hack = o
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "2h Scythe Sword",
+   customObjectName = "Executioners Hack",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
