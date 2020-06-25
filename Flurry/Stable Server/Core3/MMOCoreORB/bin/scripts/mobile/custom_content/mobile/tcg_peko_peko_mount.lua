@@ -1,6 +1,6 @@
 tcg_peko_peko_mount = Creature:new {
-	customName = "tcg_peko_peko_mount",
-	--objectName = "",
+--	customName = "tcg_peko_peko_mount",
+	objectName = "peko_peko_mount",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
@@ -20,7 +20,7 @@ tcg_peko_peko_mount = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,

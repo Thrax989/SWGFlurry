@@ -67,7 +67,7 @@ object_draft_schematic_structure_component_structural_module = object_draft_sche
 	ingredientTitleNames = {"reinforcement_rods", "body_material", "insulation"},
 	ingredientSlotType = {0, 0, 0},
 	resourceTypes = {"metal", "ore", "ore"},
-	resourceQuantities = {50, 100, 100},
+	resourceQuantities = {10, 10, 10},
 	contribution = {100, 100, 100},
 
 	targetTemplate = "object/tangible/component/structure/structural_module.iff",

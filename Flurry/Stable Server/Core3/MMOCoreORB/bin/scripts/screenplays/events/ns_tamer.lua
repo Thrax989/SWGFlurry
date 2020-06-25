@@ -1,10 +1,10 @@
 --/////////////////////////////////////////////////////////
---//		    Boss Spawn System					//
---//			Created By TOXIC:6/11/2020				//
+--//		    Boss Spawn System			//
+--//			Created By TOXIC:6/11/2020	//
 --////////////////////////////////////////////////////////
 
 --////////////////////////////////////////////////////////
---//		Current Boss Planet Dungeon2			//
+--//		Current Boss Planet Dungeon2		//
 --//		Current Boss Type NPC			//
 --///////////////////////////////////////////////////////
 ns_tamer = ScreenPlay:new {
@@ -54,18 +54,14 @@ end
 ---------------------------------------------------------------
 function ns_tamer:bossDead(pBoss, pPlayer)
 	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 NsTamer Has Died!")
-	player:broadcastToServer("\\#63C8F9 NsTamer Will Respawn In 3 Hours")
-	player:broadcastToDiscord("NsTamer Has Died!")
-	player:broadcastToDiscord("NsTamer Will Respawn In 3 Hours")
+	--player:broadcastToServer("\\#63C8F9 NsTamer Has Died!")
+	--player:broadcastToServer("\\#63C8F9 NsTamer Will Respawn In 3 Hours")
+	--player:broadcastToDiscord("NsTamer Has Died!")
+	--player:broadcastToDiscord("NsTamer Will Respawn In 3 Hours")
 	print("NsTamer Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "ns_tamer", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "ns_tamer", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
-	createEvent(10797 * 1000, "ns_tamer", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "ns_tamer", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "ns_tamer", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "ns_tamer", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
@@ -76,38 +72,6 @@ function ns_tamer:KillSpawn()
 		local creature = CreatureObject(pBoss)
 		print("NsTamer Respawned")
 		createObserver(OBJECTDESTRUCTION, "ns_tamer", "bossDead", pBoss)
-end
------------------------
---Broadcast Respawn
------------------------
-function ns_tamer:KillSpawnCast(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 NsTamer Respawning In ..")
-		player:broadcastToDiscord("NsTamer Respawning In ..")
-end
------------------------
---Broadcast Respawn 3
------------------------
-function ns_tamer:KillSpawnCast1(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
-		player:broadcastToDiscord("3")
-end
------------------------
---Broadcast Respawn 2
------------------------
-function ns_tamer:KillSpawnCast2(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
-		player:broadcastToDiscord("2")
-end
------------------------
---Broadcast Respawn 1
------------------------
-function ns_tamer:KillSpawnCast3(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
-		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
 --NsTamer Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot

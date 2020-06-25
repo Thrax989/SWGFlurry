@@ -1,6 +1,6 @@
 tcg_tauntaun_ride = Creature:new {
-	customName = "tcg_tauntaun_ride",
-	--objectName = "",
+	--customName = "tcg_tauntaun_ride",
+	objectName = "tauntaun_ride",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
@@ -20,7 +20,7 @@ tcg_tauntaun_ride = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,

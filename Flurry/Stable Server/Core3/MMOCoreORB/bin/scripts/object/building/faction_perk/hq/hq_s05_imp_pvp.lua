@@ -42,6 +42,10 @@
 
 
 object_building_faction_perk_hq_hq_s05_imp_pvp = object_building_faction_perk_hq_shared_hq_s05_imp_pvp:new {
+		lotSize = 1,
+		maintenanceCost = 1337,
+    allowedZones = {"chandrila", "corellia", "coruscant", "dantooine", "dathomir", "endor", "geonosis", "hoth", "hutta", "jakku", "kaas", "kashyyyk", "korriban", "lok", "mandalore", "mustafar", "naboo", "rori", "taanab", "talus", "tatooine", "yavin4"},
+
 
 }
 

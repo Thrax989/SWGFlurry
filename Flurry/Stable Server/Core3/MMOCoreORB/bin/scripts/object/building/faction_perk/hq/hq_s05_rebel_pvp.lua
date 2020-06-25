@@ -44,7 +44,7 @@
 object_building_faction_perk_hq_hq_s05_rebel_pvp = object_building_faction_perk_hq_shared_hq_s05_rebel_pvp:new {
 		lotSize = 1,
 		maintenanceCost = 1337,
-		allowedZones = {"corellia", "dantooine", "lok", "naboo", "rori", "talus", "tatooine", "yavin4", "dathomir", "endor"}
+    allowedZones = {"chandrila", "corellia", "coruscant", "dantooine", "dathomir", "endor", "geonosis", "hoth", "hutta", "jakku", "kaas", "kashyyyk", "korriban", "lok", "mandalore", "mustafar", "naboo", "rori", "taanab", "talus", "tatooine", "yavin4"},
 
 
 }

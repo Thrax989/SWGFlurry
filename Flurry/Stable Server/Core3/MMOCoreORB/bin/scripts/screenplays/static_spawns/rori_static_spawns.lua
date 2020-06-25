@@ -98,7 +98,8 @@ function RoriStaticSpawnsScreenPlay:spawnMobiles()
 	self:setMoodString(pNpc, "sad")
 
 	--Ruins (-4706,3580)
-	spawnMobile("rori", "sickle_rasp", 300, -4705.8, 74.2, 3579.3, -101, 0)
+	spawnMobile("rori", "sickle_rasp", 300, getRandomNumber(5) + -4705.8, 74.2, getRandomNumber(5) + 3579.3, getRandomNumber(360), 0)
+  spawnMobile("rori", "sickle_rasp", 604800, getRandomNumber(5) + -4705.8, 74.2, getRandomNumber(5) + 3579.3, getRandomNumber(360), 0)
 
 	--Statue (-2902,2588)
 	spawnMobile("rori", "male_squall", 300, -2901.5, 76.2, 2591.1, 147, 0)

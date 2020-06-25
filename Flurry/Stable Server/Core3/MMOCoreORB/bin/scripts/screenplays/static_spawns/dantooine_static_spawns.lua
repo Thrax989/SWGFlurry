@@ -29,9 +29,10 @@ function DantooineStaticSpawnsScreenPlay:spawnMobiles()
 	self:setMoodString(pNpc, "angry")
 
 	-- Vexed Voritor Lizard Spawn (-5500 -1800)
-	spawnMobile("dantooine", "vexed_voritor_lizard", 300, -5500, 15, -1780, getRandomNumber(360), 0)
-	spawnMobile("dantooine", "vexed_voritor_lizard", 300, -5502, 15, -1790, getRandomNumber(360), 0)
-	spawnMobile("dantooine", "vexed_voritor_lizard", 300, -5483, 15, -1777, getRandomNumber(360), 0)
+	spawnMobile("dantooine", "vexed_voritor_lizard", 300, getRandomNumber(5) + -5486, 15,getRandomNumber(5) + -1770, getRandomNumber(360), 0)
+	spawnMobile("dantooine", "vexed_voritor_lizard", 300, getRandomNumber(5) + -5486, 15,getRandomNumber(5) + -1770, getRandomNumber(360), 0)
+	spawnMobile("dantooine", "vexed_voritor_lizard", 300, getRandomNumber(5) + -5486, 15,getRandomNumber(5) + -1770, getRandomNumber(360), 0)
+  spawnMobile("dantooine", "vvl", 604800, getRandomNumber(5) + -5486, 15,getRandomNumber(5) + -1770, getRandomNumber(360), 0)
 
 
 	spawnMobile("dantooine", "dark_jedi_master", 3600, -738.2, 1.7, 2103.9, 55, 0)

@@ -107,7 +107,7 @@ public:
 		String restype = creature->getMilkType();
 		int quantity = creature->getMilk();
 
-		int quantityExtracted = Math::max(quantity, 100)*4;
+		int quantityExtracted = Math::max(quantity, 1250)*2;
 
 		ManagedReference<ResourceSpawn*> resourceSpawn = resourceManager->getCurrentSpawn(restype, player->getZone()->getZoneName());
 

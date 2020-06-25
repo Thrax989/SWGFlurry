@@ -25,7 +25,7 @@ end
 --NKNecrosis Has Spawned
 -----------------------
 function generalgrievous_platformScreenplay:spawnMobiles()
-		local pBoss = spawnMobile("kashyyyk", "general_grievous", 1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn NKNecrosis
+		local pBoss = spawnMobile("kashyyyk", "general_grievous", -1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn NKNecrosis
 		local creature = CreatureObject(pBoss)
 		print("NKNecrosis Spawned")
 		createObserver(OBJECTDESTRUCTION, "generalgrievous_platformScreenplay", "bossDead", pBoss)--NKNecrosis Has Died Trigger Respawn Function
@@ -33,62 +33,20 @@ end
 ---------------------------------------------------------------
 --generalgrievous Has Died Respawn generalgrievous With A New Dynamic Spawn
 ---------------------------------------------------------------
-function generalgrievous_platformScreenplay:bossDead(pBoss, pPlayer)
-	local player = LuaCreatureObject(pPlayer)
-	player:broadcastToServer("\\#63C8F9 NKNecrosis Has Died!")
-	player:broadcastToServer("\\#63C8F9 NKNecrosis Will Respawn In 3 Hours")
-	player:broadcastToDiscord("NKNecrosis Has Died!")
-	player:broadcastToDiscord("NKNecrosis Will Respawn In 3 Hours")
-	print("NKNecrosis Has Died")
+function generalgrievous_platformScreenplay:bossDead(pBoss)
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "generalgrievous_platformScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "generalgrievous_platformScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
-	createEvent(10797 * 1000, "generalgrievous_platformScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "generalgrievous_platformScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "generalgrievous_platformScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "generalgrievous_platformScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
 --Respawn generalgrievous Boss
 -----------------------
 function generalgrievous_platformScreenplay:KillSpawn()
-		local pBoss = spawnMobilespawnMobile("kashyyyk", "general_grievous", 1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn NKNecrosis After Death 3 Hour Timer
+		local pBoss = spawnMobilespawnMobile("kashyyyk", "general_grievous", -1, -1935.09, 111.439, 1910.85, 307, 0)--Spawn NKNecrosis After Death 3 Hour Timer
 		local creature = CreatureObject(pBoss)
 		print("NKNecrosis Respawned")
 		createObserver(OBJECTDESTRUCTION, "generalgrievous_platformScreenplay", "bossDead", pBoss)
-end
------------------------
---Broadcast Respawn
------------------------
-function generalgrievous_platformScreenplay:KillSpawnCast(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 NKNecrosis Respawning In ..")
-		player:broadcastToDiscord("NKNecrosis Respawning In ..")
-end
------------------------
---Broadcast Respawn 3
------------------------
-function generalgrievous_platformScreenplay:KillSpawnCast1(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 3")
-		player:broadcastToDiscord("3")
-end
------------------------
---Broadcast Respawn 2
------------------------
-function generalgrievous_platformScreenplay:KillSpawnCast2(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 2")
-		player:broadcastToDiscord("2")
-end
------------------------
---Broadcast Respawn 1
------------------------
-function generalgrievous_platformScreenplay:KillSpawnCast3(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		player:broadcastToServer("\\#63C8F9 1")
-		player:broadcastToDiscord("1")
 end
 -----------------------------------------------------------------------------
 --NKNecrosis Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot

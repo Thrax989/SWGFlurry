@@ -1,6 +1,6 @@
 vr_gackle_bat = Creature:new {
-	customName = "vr_gackle_bat",
-	--objectName = "",
+--	customName = "vr_gackle_bat",
+	objectName = "vr_gackle_bat",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
@@ -20,7 +20,7 @@ vr_gackle_bat = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
