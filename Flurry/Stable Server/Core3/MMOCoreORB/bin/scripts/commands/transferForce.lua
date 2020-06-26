@@ -43,13 +43,12 @@
 
 TransferForceCommand = {
 	name = "transferforce",
-	
+  defaultTime = 1,
 	animation = "force_transfer_1",
-
-	combatSpam = "forcetransfer_hit",
-	
-	minDamage = 200, --Force transferred
-	
+  combatSpam = "forcetransfer_hit",
+  forceCost = 200, 
+	minDamage = 250, --Force transferred
+  visMod = 25,
 	range = 32
 }
 
