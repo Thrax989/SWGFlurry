@@ -14,7 +14,7 @@ lootcollectiontiertwo  = {
 		{groupTemplate = "armor_attachments", weight = 1000000},
 		{groupTemplate = "nge_house_loot_deed_01", weight = 1000000},
 		{groupTemplate = "nge_house_loot_deed_windowed", weight = 1000000},
-		{groupTemplate = "junk", weight = 1000000},
+		{groupTemplate = "schematics_themeparks.lua", weight = 1000000},
 	}
 }
 
