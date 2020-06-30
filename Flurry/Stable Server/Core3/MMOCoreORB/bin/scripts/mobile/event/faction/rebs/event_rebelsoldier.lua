@@ -1,8 +1,9 @@
 event_rebelsoldier = Creature:new {
-	objectName = "@mob/creature_names:fbase_rebel_soldier_extreme",
+	objectName = "@mob/creature_names:rebel_soldier",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "rebel",
+	pvpFaction = "rebel",
 	faction = "rebel",
 	level = 300,
 	chanceHit = 100,

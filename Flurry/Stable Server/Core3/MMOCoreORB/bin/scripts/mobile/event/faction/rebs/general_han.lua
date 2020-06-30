@@ -9,8 +9,8 @@ general_han = Creature:new {
 	damageMin = 2800,
 	damageMax = 3800,
 	baseXp = 27849,
-	baseHAM = 3900000,
-	baseHAMmax = 4000000,
+	baseHAM = 2900000,
+	baseHAMmax = 3000000,
 	armor = 3,
 	resists = {190,190,190,190,190,190,190,190,190},
 	meatType = "",
@@ -37,7 +37,7 @@ general_han = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/naboo_npc/veers.iff"},
-lootGroups = {
+  lootGroups = {
 		{
 			groups = {
 				{group = "g_named_crystals", chance = 10000000},
@@ -185,6 +185,101 @@ lootGroups = {
 		{
 			groups = {
 				{group = "vehicledeedsrare", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+    },
+    {
+			groups = {
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "fire_breathing_spider", chance = 3500000},
+				{group = "geonosian_cubes", chance = 4500000},
+				{group = "kimogila_common", chance = 1000000},
+				{group = "krayt_tissue_rare", chance = 1000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "fire_breathing_spider", chance = 3500000},
+				{group = "geonosian_cubes", chance = 4500000},
+				{group = "kimogila_common", chance = 1000000},
+				{group = "krayt_tissue_rare", chance = 1000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "fire_breathing_spider", chance = 3500000},
+				{group = "geonosian_cubes", chance = 4500000},
+				{group = "kimogila_common", chance = 1000000},
+				{group = "krayt_tissue_rare", chance = 1000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "fire_breathing_spider", chance = 3500000},
+				{group = "geonosian_cubes", chance = 4500000},
+				{group = "kimogila_common", chance = 1000000},
+				{group = "krayt_tissue_rare", chance = 1000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+        {group = "worldbosscrate", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
