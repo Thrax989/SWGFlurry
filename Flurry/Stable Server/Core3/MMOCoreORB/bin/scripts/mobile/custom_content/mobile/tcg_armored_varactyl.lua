@@ -1,6 +1,6 @@
 tcg_armored_varactyl = Creature:new {
-	customName = "tcg_armored_varactyl",
-	--objectName = "",
+--	customName = "tcg_armored_varactyl",
+	objectName = "armored_varactyl",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
@@ -20,7 +20,7 @@ tcg_armored_varactyl = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,

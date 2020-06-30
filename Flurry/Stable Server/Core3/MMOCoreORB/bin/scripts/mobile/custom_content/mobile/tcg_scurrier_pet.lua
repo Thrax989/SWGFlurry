@@ -1,6 +1,6 @@
 tcg_scurrier_pet = Creature:new {
-	customName = "tcg_scurrier_pet",
-	--objectName = "",
+--	customName = "tcg_scurrier_pet",
+	objectName = "scurrier_pet",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
@@ -20,7 +20,7 @@ tcg_scurrier_pet = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,

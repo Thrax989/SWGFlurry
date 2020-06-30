@@ -69,5 +69,6 @@ function LokStaticSpawnsScreenPlay:spawnMobiles()
 	spawnMobile("lok", "langlatch_giant", 900, getRandomNumber(10) + -4448.2, 11.9, getRandomNumber(10) + -5769.9, getRandomNumber(360), 0)
 	spawnMobile("lok", "langlatch_giant", 900, getRandomNumber(10) + -4448.2, 11.9, getRandomNumber(10) + -5769.9, getRandomNumber(360), 0)
 	spawnMobile("lok", "langlatch_giant", 900, getRandomNumber(10) + -4448.2, 11.9, getRandomNumber(10) + -5769.9, getRandomNumber(360), 0)
+  spawnMobile("lok", "lg", 604800, getRandomNumber(10) + -4448.2, 11.9, getRandomNumber(10) + -5769.9, getRandomNumber(360), 0)
 
 end

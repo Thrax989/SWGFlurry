@@ -2633,25 +2633,60 @@ void PlayerObjectImplementation::deleteAllWaypoints() {
 		}
 	}
 }
-
+// Thank you SWG Renegade for the Lots are now tied to the account code
 int PlayerObjectImplementation::getLotsRemaining() {
-	Locker locker(_this.getReferenceUnsafeStaticCast());
+ 	ManagedReference<CreatureObject*> creature = getParent().get().castTo<CreatureObject*>();
 
-	int lotsRemaining = maximumLots;
+	if (creature == nullptr)
+		return 0;
 
-	for (int i = 0; i < ownedStructures.size(); ++i) {
-		unsigned long oid = ownedStructures.get(i);
+	auto owner = creature->getClient();
 
-		Reference<StructureObject*> structure = getZoneServer()->getObject(oid).castTo<StructureObject*>();
+		if (owner != nullptr)
+		accountID = owner->getAccountID();
 
-		if (structure != nullptr) {
-			lotsRemaining = lotsRemaining - structure->getLotSize();
+	//StringBuffer msg;
+	//msg << "Account: " << owner->getAccountID() <<  endl;
+
+	Locker locker(asPlayerObject());
+
+		int lotsRemaining = maximumLots;
+	if(lotsRemaining != 100) {
+		//msg << "incorrect max lots found: " << lotsRemaining << " expected: 100, max lots updated" << endl;
+		setMaximumLots(100);
+		lotsRemaining = 100;
+	}
+
+	Reference<CharacterList*> characterList = account->getCharacterList();
+	auto playerManager = server->getPlayerManager();
+	Reference<CreatureObject*> altChar;
+
+	for(int i = 0; i < characterList->size(); ++i) {
+		auto entry = &characterList->get(i);
+		if(entry->getGalaxyID() == server->getZoneServer()->getGalaxyID()) {
+			altChar = playerManager->getPlayer(entry->getFirstName());
+			if(altChar != nullptr && altChar->isPlayerCreature()) {
+				auto ghost = altChar->getPlayerObject();
+				//msg << altChar->getFirstName() << " has " << ghost->getTotalOwnedStructureCount() << " structures with ";
+				int debugCount = 0;
+				for (int j = 0; j < ghost->getTotalOwnedStructureCount(); ++j) {
+					auto oid = ghost->getOwnedStructure(j);
+
+					Reference<StructureObject*> structure = getZoneServer()->getObject(oid).castTo<StructureObject*>();
+
+					if (structure != nullptr) {
+						lotsRemaining = lotsRemaining - structure->getLotSize();
+						debugCount += structure->getLotSize();
+					}
+				}
+				//msg << debugCount << " lots used" << endl;
+			}
 		}
 	}
 
 	return lotsRemaining;
 }
-
+// end of swgrenegade's lots code
 int PlayerObjectImplementation::getOwnedChatRoomCount() {
 	ManagedReference<ChatManager*> chatManager = getZoneServer()->getChatManager();
 	if (chatManager == nullptr)

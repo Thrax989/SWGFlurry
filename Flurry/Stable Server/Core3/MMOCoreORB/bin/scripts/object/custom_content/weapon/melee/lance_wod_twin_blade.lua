@@ -224,11 +224,12 @@ object_weapon_melee_polearm_lance_wod_twin_blade = object_weapon_melee_polearm_s
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
+
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = MELEEATTACK,
 
-	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
+	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
 	damageType = KINETIC,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
@@ -291,5 +292,4 @@ object_weapon_melee_polearm_lance_wod_twin_blade = object_weapon_melee_polearm_s
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
-
 ObjectTemplates:addTemplate(object_weapon_melee_polearm_lance_wod_twin_blade, "object/weapon/melee/polearm/lance_wod_twin_blade.iff")

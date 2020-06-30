@@ -223,11 +223,13 @@ object_weapon_melee_polearm_lance_kaminoan = object_weapon_melee_polearm_shared_
 				"object/creature/player/zabrak_female.iff" ,
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
+
+
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = MELEEATTACK,
 
-	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
+	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
 	damageType = KINETIC,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY

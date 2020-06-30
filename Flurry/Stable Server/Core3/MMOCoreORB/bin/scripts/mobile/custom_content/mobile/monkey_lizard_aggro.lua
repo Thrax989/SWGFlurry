@@ -1,6 +1,6 @@
 monkey_lizard_aggro = Creature:new {
-	customName = "monkey_lizard_aggro",
-	--objectName = "",
+--	customName = "monkey_lizard_aggro",
+	objectName = "monkey_lizard",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",
@@ -20,7 +20,7 @@ monkey_lizard_aggro = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.25,
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
