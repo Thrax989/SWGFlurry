@@ -188,7 +188,7 @@ object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_bicep_r = obje
 	
 	-- Damage types in WeaponObject
 	vulnerability = STUN,
-	specialResists = LIGHTSABER,
+--	specialResists = LIGHTSABER,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 80,

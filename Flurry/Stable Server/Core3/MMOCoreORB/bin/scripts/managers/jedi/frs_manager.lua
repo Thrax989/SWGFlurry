@@ -7,7 +7,7 @@ darkEnclaveID = 3435626
 petitionInterval = 86400000 -- 1 day
 votingInterval = 86400000 -- 1 day
 acceptanceInterval = 86400000 -- 1 day
-maintenanceInterval = 86400000 -- 1 day
+maintenanceInterval = 604800000 -- 7 day
 
 requestDemotionDuration = 604800000 -- 7 days
 voteChallengeDuration = 604800000 -- 7 days
@@ -18,7 +18,7 @@ arenaChallengeDuration = 3600000 -- 60 mins
 arenaChallengeCooldown = 90000000 -- 25 hours
 
 -- Costs are in FRS experience
-baseMaintCost = 100
+baseMaintCost = 10 -- Suspect this is being influenced by x20 multiplier, original base 100. 
 requestDemotionCost = 2000
 voteChallengeCost = 1000
 
@@ -97,7 +97,7 @@ enclaveRoomRequirements = {
 -- Key references the player's target
 -- Ex: Rank 5 loses to BH, see "bh_lose" key and 6th integer value in same row
 frsExperienceValues = {
-	{ "nonjedi_win", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	{ "nonjedi_win", 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 },
 	{ "nonjedi_lose", 1000, 1250, 1759, 2250, 3000, 3750, 4750, 5500, 6750, 7750, 8750, 10000 },
 	{ "bh_win", 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500 },
 	{ "bh_lose", 1000, 1250, 1759, 2250, 3000, 3750, 4750, 5500, 6750, 7750, 8750, 10000 },

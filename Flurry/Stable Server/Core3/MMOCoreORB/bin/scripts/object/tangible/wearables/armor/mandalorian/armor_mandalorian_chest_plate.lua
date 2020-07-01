@@ -189,7 +189,7 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_chest_plate = obje
 
 	-- Damage types in WeaponObject
 	vulnerability = STUN,
-	specialResists = LIGHTSABER,
+--	specialResists = LIGHTSABER,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 300,
