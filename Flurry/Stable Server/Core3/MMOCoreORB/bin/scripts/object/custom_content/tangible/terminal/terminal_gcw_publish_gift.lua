@@ -136,6 +136,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Bastion, Dantooine Player City (5,000 Credits)", "pc_bastion_travel",	
 			"Riverside, Kashyyyk Player City (5,000 Credits)", "pc_riverside_travel",
 			"Make America Krayt Again, Tatooine Player City (5,000 Credits)", "pc_maka_travel",
+      "Darkness Falls, Dathomir Player City (5,000 Credits)", "pc_darkness_travel",
 		   },
 	}
 }
