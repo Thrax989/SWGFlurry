@@ -4,8 +4,8 @@ includeFile("event/life_day/kkatamk.lua")
 includeFile("event/life_day/oraalarri.lua")
 includeFile("event/life_day/radrrl.lua")
 includeFile("event/life_day/tebeurra.lua")
---custom event bosses
-includeFile("event/event_carax.lua")
+--custom event bosses--
+--includeFile("event/event_carax.lua")
 includeFile("event/event_draco.lua")
 includeFile("event/event_elliot.lua")
 includeFile("event/event_exar.lua")
