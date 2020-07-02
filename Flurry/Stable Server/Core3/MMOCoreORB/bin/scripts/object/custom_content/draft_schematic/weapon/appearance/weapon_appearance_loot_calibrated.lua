@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_calibrated = obj
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Republic Blaster Pistol",
+   customObjectName = "Calibrated Pistol",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 32, 
@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_calibrated = obj
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/ranged/pistol/pistol_de_10.iff",
+   targetTemplate = "object/weapon/ranged/pistol/ep3_loot_calibrated.iff",
 
    additionalTemplates = {
              }

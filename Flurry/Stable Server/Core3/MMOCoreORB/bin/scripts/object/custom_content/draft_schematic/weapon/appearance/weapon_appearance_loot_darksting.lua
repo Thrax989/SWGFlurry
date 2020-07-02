@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_darksting = obje
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Tenloss Distrupter Rifle",
+   customObjectName = "Darkstring Rifle",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -28,7 +28,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_darksting = obje
    ingredientAppearance = {"", "", "", "", "", "", "muzzle", "stock"},
 
 
-   targetTemplate = "object/weapon/ranged/rifle/rifle_t21.iff",
+   targetTemplate = "object/weapon/ranged/rifle/ep3_loot_darksting.iff",
 
    additionalTemplates = {
              }

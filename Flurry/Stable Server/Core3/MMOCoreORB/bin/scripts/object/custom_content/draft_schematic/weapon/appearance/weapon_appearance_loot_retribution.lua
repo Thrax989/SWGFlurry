@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_retribution = ob
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "SD Heroic Carbine",
+   customObjectName = "Retribution Carbine",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 25, 
@@ -28,7 +28,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_retribution = ob
    ingredientAppearance = {"", "", "", "", "", "scope", "stock"},
 
 
-   targetTemplate = "object/weapon/ranged/carbine/carbine_dxr6.iff",
+   targetTemplate = "object/weapon/ranged/carbine/ep3_loot_retribution.iff",
 
    additionalTemplates = {
              }

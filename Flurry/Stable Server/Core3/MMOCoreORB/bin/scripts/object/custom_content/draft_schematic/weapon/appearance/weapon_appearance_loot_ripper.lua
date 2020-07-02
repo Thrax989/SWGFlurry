@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_ripper = object_
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Avatar Spirit Blade",
+   customObjectName = "Ripper Blade",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 20, 
@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_ripper = object_
    contribution = {100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/sword/sword_blade_ryyk.iff",
+   targetTemplate = "object/weapon/melee/sword/ep3_loot_ripper.iff",
 
    additionalTemplates = {
              }

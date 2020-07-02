@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_strike = object_
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "ISD Heroic Polearm",
+   customObjectName = "Strike Polearm",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_strike = object_
    contribution = {100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/polearm/polearm_vibro_axe.iff",
+   targetTemplate = "object/weapon/melee/polearm/ep3_loot_strike.iff",
 
    additionalTemplates = {
              }

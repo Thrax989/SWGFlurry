@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_void = object_dr
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Heavy Mandalorian",
+   customObjectName = "Void",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 50, 
@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_void = object_dr
    contribution = {100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/ranged/heavy/heavy_rocket_launcher.iff",
+   targetTemplate = "object/weapon/ranged/heavy/ep3_loot_void.iff",
 
    additionalTemplates = {
              }

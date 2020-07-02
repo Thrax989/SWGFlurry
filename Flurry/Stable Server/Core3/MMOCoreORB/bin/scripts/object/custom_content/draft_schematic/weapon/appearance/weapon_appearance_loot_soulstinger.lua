@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_soulstinger = ob
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Pvp Knuckler",
+   customObjectName = "Soulstinger Knuckler",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 25, 
@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_soulstinger = ob
    contribution = {100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/special/vibroknuckler.iff",
+   targetTemplate = "object/weapon/melee/special/ep3_loot_soulstinger.iff",
 
    additionalTemplates = {
              }
