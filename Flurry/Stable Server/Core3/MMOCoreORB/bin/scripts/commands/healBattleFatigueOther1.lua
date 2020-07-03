@@ -44,7 +44,7 @@
 HealBattleFatigueOther1Command = {
 	name = "healbattlefatigueother1",
 	healBattleFatigue = 60,
-	forceCost = 90,
+	forceCost = 20,
 	forceCostMultiplier = 1,
 	defaultTime = 1,
 	range = 32,
