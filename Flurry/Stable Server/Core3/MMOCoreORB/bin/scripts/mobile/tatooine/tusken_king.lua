@@ -1,5 +1,5 @@
 tusken_king = Creature:new {
-	objectName = "@mob/creature_names:tusken_king",
+	customName = "\\#00ff00<<< Tusken King >>> \\#0000ff[lvl 300]",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
 	level = 300,
