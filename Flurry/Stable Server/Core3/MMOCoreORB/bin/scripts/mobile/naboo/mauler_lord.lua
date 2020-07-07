@@ -1,5 +1,5 @@
 mauler_lord = Creature:new {
-	objectName = "@mob/creature_names:mauler_lord",
+	customName = "\\#00ff00<<< Mauler Lord >>> \\#0000ff[lvl 300]",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "mauler",
