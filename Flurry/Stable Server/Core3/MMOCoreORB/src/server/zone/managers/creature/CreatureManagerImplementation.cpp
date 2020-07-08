@@ -856,10 +856,9 @@ void CreatureManagerImplementation::harvest(Creature* creature, CreatureObject* 
 		player->sendSystemMessage("Tried to harvest something this creature didn't have, please report this error");
 		return;
 	}
-	// Make the worst possible amount 10
-	quantity = Math::max(quantity, 10.0f); // Over-ride really low template values
 
-	int quantityExtracted = int(quantity * 4 * float(player->getSkillMod("creature_harvesting") / 100.0f + 1.0f)); // Always give a bonus based on skill level
+	int quantityExtracted = int(quantity * float(player->getSkillMod("creature_harvesting") / 100.0f));
+	quantityExtracted = Math::max(quantityExtracted, 3);
 
 	ManagedReference<ResourceSpawn*> resourceSpawn = resourceManager->getCurrentSpawn(restype, player->getZone()->getZoneName());
 
