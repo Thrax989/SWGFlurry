@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_grievance = obje
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Bothan Specops Carbine",
+   customObjectName = "Grievance Carbine",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 25, 
@@ -28,7 +28,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_grievance = obje
    ingredientAppearance = {"", "", "", "", "", "scope", "stock"},
 
 
-   targetTemplate = "object/weapon/ranged/carbine/carbine_dxr6.iff",
+   targetTemplate = "object/weapon/ranged/carbine/ep3_loot_grievance.iff",
 
    additionalTemplates = {
              }

@@ -224,15 +224,16 @@ object_weapon_ranged_rifle_rifle_proton = object_weapon_ranged_rifle_shared_rifl
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
+
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = RANGEDATTACK,
 
-	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
+	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
 	damageType = ENERGY,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
-	armorPiercing = NONE,
+	armorPiercing = HEAVY,
 
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
@@ -240,7 +241,7 @@ object_weapon_ranged_rifle_rifle_proton = object_weapon_ranged_rifle_shared_rifl
 	xpType = "combat_rangedspecialize_rifle",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_rifle_cdef" },
+	certificationsRequired = { "cert_rifle_t21" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "rifle_accuracy" },
 
@@ -260,34 +261,34 @@ object_weapon_ranged_rifle_rifle_proton = object_weapon_ranged_rifle_shared_rifl
 
 
 	-- The values below are the default values.  To be used for blue frog objects primarily
-	healthAttackCost = 0,
-	actionAttackCost = 0,
-	mindAttackCost = 0,
+	healthAttackCost = 35,
+	actionAttackCost = 30,
+	mindAttackCost = 64,
 	forceCost = 0,
 
 	pointBlankRange = 0,
-	pointBlankAccuracy = 100,
+	pointBlankAccuracy = -90,
 
-	idealRange = 50,
-	idealAccuracy = 100,
+	idealRange = 60,
+	idealAccuracy = -25,
 
-	maxRange = 150,
-	maxRangeAccuracy = 100,
+	maxRange = 64,
+	maxRangeAccuracy = -10,
 
-	minDamage = 9999998,
-	maxDamage = 9999999,
+	minDamage = 125,
+	maxDamage = 400,
 
-	attackSpeed = 1,
+	attackSpeed = 7.5,
 
-	woundsRatio = 95,
+	woundsRatio = 22,
 
-	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2},
-	experimentalProperties = {"XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "XX", "XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ"},
+	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 1, 1, 2, 2, 2},
+	experimentalProperties = {"XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "XX", "CD", "OQ", "XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ"},
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "exp_durability", "null", "null", "null", "expRange", "expEffeciency", "expEffeciency", "expEffeciency"},
-	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "roundsused", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 17, 35, 4.6, 4, 5, 750, 0, -80, 35, 35, 10, 22, 10},
-	experimentalMax = {0, 0, 32, 65, 3.2, 5, 20, 1500, 0, -80, 35, 65, 7, 15, 7},
+	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "exp_durability", "null", "expRange", "null", "null", "expEffeciency", "expEffeciency", "expEffeciency"},
+	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "roundsused", "hitpoints", "zerorangemod", "midrangemod", "midrange", "maxrangemod", "attackhealthcost", "attackactioncost", "attackmindcost"},
+	experimentalMin = {0, 0, 80, 200, 10.5, 15, 30, 750, -70, -10, 50, 10, 46, 39, 83},
+	experimentalMax = {0, 0, 115, 375, 6.5, 29, 65, 1500, -70, 15, 50, 10, 25, 21, 45},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }

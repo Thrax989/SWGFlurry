@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_heartstriker = o
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Pvp Knuckler",
+   customObjectName = "Heartstriker Knuckler",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 25, 
@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_heartstriker = o
    contribution = {100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/special/vibroknuckler.iff",
+   targetTemplate = "object/weapon/melee/special/ep3_loot_heartstriker.iff",
 
    additionalTemplates = {
              }

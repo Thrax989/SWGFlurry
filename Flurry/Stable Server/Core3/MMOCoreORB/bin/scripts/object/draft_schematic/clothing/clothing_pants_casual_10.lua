@@ -62,12 +62,12 @@ object_draft_schematic_clothing_clothing_pants_casual_10 = object_draft_schemati
    customizationStringNames = {"/private/index_color_1"},
    customizationDefaults = {15},
 
-   ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
-   ingredientTitleNames = {"binding_and_hardware", "colorizable_cloth_panel"},
+   ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
+   ingredientTitleNames = {"binding_and_hardware", "colorizable_cloth_panel", "colorizable_cloth_panel"},
    ingredientSlotType = {0, 1},
-   resourceTypes = {"petrochem_inert", "object/tangible/component/clothing/shared_fiberplast_panel.iff"},
-   resourceQuantities = {13, 1},
-   contribution = {100, 100},
+   resourceTypes = {"petrochem_inert", "object/tangible/component/clothing/shared_fiberplast_panel.iff", "object/tangible/component/clothing/shared_fiberplast_panel.iff"},
+   resourceQuantities = {13, 1, 1},
+   contribution = {100, 100, 100},
 
 
    targetTemplate = "object/tangible/wearables/pants/pants_s10.iff",

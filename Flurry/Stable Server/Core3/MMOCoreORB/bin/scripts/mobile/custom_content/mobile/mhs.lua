@@ -29,8 +29,54 @@ mhs = Creature:new {
 
 	templates = {"object/mobile/hermit_spider_hue.iff"},
 	scale = 1.5;
-lootGroups = {
-		 {
+	lootGroups = {
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 5000000},
+				{group = "armor_attachments", chance = 5000000},
+				},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 5000000},
+       				{group = "armor_attachments", chance = 5000000},
+			},
+			lootChance = 5000000
+		},    
+  	{
+			groups = {
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "fire_breathing_spider", chance = 3500000},
+				{group = "geonosian_cubes", chance = 4500000},
+				{group = "kimogila_common", chance = 1000000},
+				{group = "krayt_tissue_rare", chance = 1000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "fire_breathing_spider", chance = 3500000},
+				{group = "geonosian_cubes", chance = 4500000},
+				{group = "kimogila_common", chance = 1000000},
+				{group = "krayt_tissue_rare", chance = 1000000},
+			},
+			lootChance = 10000000
+ 		},
+		{     
 			groups = {
 				{group = "tierone", chance = 5000000},
 				{group = "tiertwo", chance = 2500000},

@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_mark = object_dr
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Bothan Specops Carbine",
+   customObjectName = "Mark Carbine",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 25, 
@@ -28,7 +28,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_mark = object_dr
    ingredientAppearance = {"", "", "", "", "", "scope", "stock"},
 
 
-   targetTemplate = "object/weapon/ranged/carbine/carbine_dxr6.iff",
+   targetTemplate = "object/weapon/ranged/carbine/ep3_loot_mark.iff",
 
    additionalTemplates = {
              }

@@ -55,7 +55,7 @@ CreatureAreaPoisonCommand = {
 		0,
 		50,
 		50, 
-		120
+		300
 	  )
 	},
 

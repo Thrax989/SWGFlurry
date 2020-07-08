@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_corestrike = obj
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Bothan Specops Carbine",
+   customObjectName = "Corestrike Carbine",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 25, 
@@ -28,7 +28,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_corestrike = obj
    ingredientAppearance = {"", "", "", "", "", "scope", "stock"},
 
 
-   targetTemplate = "object/weapon/ranged/carbine/carbine_dxr6.iff",
+   targetTemplate = "object/weapon/ranged/carbine/ep3_loot_corestrike.iff",
 
    additionalTemplates = {
              }

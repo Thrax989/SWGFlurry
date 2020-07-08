@@ -29,8 +29,54 @@ vvl = Creature:new {
 	templates = {"object/mobile/vexed_voritor_lizard.iff"},
 	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 1.15;
-lootGroups = {
-		 {
+	lootGroups = {
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 5000000},
+				{group = "armor_attachments", chance = 5000000},
+				},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 5000000},
+       				{group = "armor_attachments", chance = 5000000},
+			},
+			lootChance = 5000000
+		},    
+  	{
+			groups = {
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "chemistry_component_advanced", chance = 5000000},
+				{group = "weapon_component_advanced", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "fire_breathing_spider", chance = 3500000},
+				{group = "geonosian_cubes", chance = 4500000},
+				{group = "kimogila_common", chance = 1000000},
+				{group = "krayt_tissue_rare", chance = 1000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "fire_breathing_spider", chance = 3500000},
+				{group = "geonosian_cubes", chance = 4500000},
+				{group = "kimogila_common", chance = 1000000},
+				{group = "krayt_tissue_rare", chance = 1000000},
+			},
+			lootChance = 10000000
+ 		},
+		{     
 			groups = {
 				{group = "tierone", chance = 5000000},
 				{group = "tiertwo", chance = 2500000},

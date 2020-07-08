@@ -24,8 +24,7 @@ event_carax = Creature:new {
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED + INTERESTING,
 	diet = CARNIVORE,
-	scale = 1.75
-
+	scale = 1.75,
 	templates = {"object/mobile/carax.iff"},
 	lootGroups = {
 		{

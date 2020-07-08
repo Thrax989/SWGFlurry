@@ -2,7 +2,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_sickle = object_
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "2h Sith Sword",
+   customObjectName = "Sickle Sword",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_loot_sickle = object_
    contribution = {100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/2h_sword/2h_sword_sith.iff",
+   targetTemplate = "object/weapon/melee/2h_sword/ep3_loot_sickle.iff",
 
    additionalTemplates = {
              }
