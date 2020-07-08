@@ -62,12 +62,13 @@ object_draft_schematic_clothing_clothing_hat_casual_12 = object_draft_schematic_
    customizationStringNames = {"/private/index_color_1"},
    customizationDefaults = {16},
 
-   ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
-   ingredientTitleNames = {"shell", "binding_and_weatherproofing", "liner"},
-   ingredientSlotType = {1, 0, 1},
-   resourceTypes = {"object/tangible/component/clothing/shared_synthetic_cloth.iff", "petrochem_inert", "object/tangible/component/clothing/shared_synthetic_cloth.iff"},
-   resourceQuantities = {1, 25, 2},
-   contribution = {100, 100, 100},
+   ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
+   ingredientTitleNames = {"shell", "binding_and_weatherproofing", "trim", "trim"},
+   ingredientSlotType = {0, 0, 1, 1},
+   resourceTypes = {"steel", "petrochem_inert", "object/tangible/component/clothing/shared_synthetic_cloth.iff", "object/tangible/component/clothing/shared_synthetic_cloth.iff"},
+   resourceQuantities = {25, 20, 1, 1},
+   contribution = {100, 100, 100, 100},
+
 
 
    targetTemplate = "object/tangible/wearables/hat/hat_s12.iff",
