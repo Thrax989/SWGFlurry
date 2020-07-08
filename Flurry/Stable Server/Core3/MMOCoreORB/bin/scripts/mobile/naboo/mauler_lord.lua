@@ -1,5 +1,5 @@
 mauler_lord = Creature:new {
-	objectName = "@mob/creature_names:mauler_lord",
+	customName = "\\#00ff00<<< Mauler Lord >>> \\#0000ff[lvl 300]",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "mauler",
@@ -25,6 +25,7 @@ mauler_lord = Creature:new {
 	pvpBitmask = ATTACKABLE + AGGRESSIVE + ENEMY,
 	creatureBitmask = PACK + KILLER,
 	diet = HERBIVORE,
+	scale = 1.5,	
 
 	templates = {"object/mobile/dressed_mauler_lord.iff"},
 	lootGroups = {
