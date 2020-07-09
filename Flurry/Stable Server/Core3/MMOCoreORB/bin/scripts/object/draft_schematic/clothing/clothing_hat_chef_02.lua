@@ -62,12 +62,12 @@ object_draft_schematic_clothing_clothing_hat_chef_02 = object_draft_schematic_cl
    customizationStringNames = {"/private/index_color_1"},
    customizationDefaults = {0},
 
-   ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
-   ingredientTitleNames = {"shell", "binding_and_weatherproofing", "liner", "liner"},
-   ingredientSlotType = {1, 0, 1, 1},
-   resourceTypes = {"object/tangible/component/clothing/shared_fiberplast_panel.iff", "petrochem_inert", "object/tangible/component/clothing/shared_synthetic_cloth.iff","object/tangible/component/clothing/shared_synthetic_cloth.iff"},
-   resourceQuantities = {3, 20, 1, 1},
-   contribution = {100, 100, 100, 100},
+   ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
+   ingredientTitleNames = {"shell", "binding_and_weatherproofing", "liner"},
+   ingredientSlotType = {1, 0, 1},
+   resourceTypes = {"object/tangible/component/clothing/shared_fiberplast_panel.iff", "petrochem_inert", "object/tangible/component/clothing/shared_synthetic_cloth.iff"},
+   resourceQuantities = {3, 20, 1},
+   contribution = {100, 100, 100},
 
 
    targetTemplate = "object/tangible/wearables/hat/hat_chef_s02.iff",

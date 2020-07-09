@@ -1657,11 +1657,11 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::ACTION, 100, true, false);
 		player->addWounds(CreatureAttribute::MIND, 100, true, false);
 		player->addShockWounds(100, true);
-		ChatManager* chatManager = player->getZoneServer()->getChatManager();
+		//ChatManager* chatManager = player->getZoneServer()->getChatManager();
 		//Broadcast player has died forward to discord channel. created by :TOXIC
-		StringBuffer zGeneral;
-		zGeneral << "Has Died!";	
-		chatManager->handleGeneralChat(player, zGeneral.toString());
+		//StringBuffer zGeneral;
+		//zGeneral << "Has Died!";	
+		//chatManager->handleGeneralChat(player, zGeneral.toString());
 	}
 
 	//PermaDeath : Gray Jedi with 0 lives cannot login
