@@ -72,9 +72,9 @@ object_draft_schematic_clothing_clothing_bandolier_field_02_quest = object_draft
    targetTemplate = "object/tangible/wearables/bandolier/bandolier_s02_quest.iff",
 				
 	skillMods = {
-	    {"droid_assembly", 5},
-	    {"droid_customization", 5},
-	    {"droid_experimentation", 3}
+	    {"droid_assembly", 25},
+	    {"droid_customization", 25},
+	    {"droid_experimentation", 25}
 	},
 
    additionalTemplates = {
