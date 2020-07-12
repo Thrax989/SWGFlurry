@@ -12,8 +12,12 @@
 #include "server/zone/objects/player/sessions/DestroyStructureSession.h"
 
 class DestroyStructureRequestSuiCallback : public SuiCallback {
+private:
+    bool request_code = true;
+
 public:
-	DestroyStructureRequestSuiCallback(ZoneServer* serv) : SuiCallback(serv) {
+	DestroyStructureRequestSuiCallback(ZoneServer* serv, bool request_code=true) : SuiCallback(serv) {
+	    this->request_code = request_code;
 	}
 
 	void run(CreatureObject* player, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args) {
@@ -21,7 +25,7 @@ public:
 
 		ManagedReference<DestroyStructureSession*> session = player->getActiveSession(SessionFacadeType::DESTROYSTRUCTURE).castTo<DestroyStructureSession*>();
 
-		if (session == nullptr)
+		if (session == NULL)
 			return;
 
 		if (cancelPressed) {
@@ -29,7 +33,10 @@ public:
 			return;
 		}
 
-		session->sendDestroyCode();
+		if(this->request_code)
+            session->sendDestroyCode();
+		else
+            session->destroyStructure();
 	}
 };
 
