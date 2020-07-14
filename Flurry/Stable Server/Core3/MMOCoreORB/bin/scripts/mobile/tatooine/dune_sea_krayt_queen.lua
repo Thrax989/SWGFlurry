@@ -1,6 +1,6 @@
 worldboss_1 = Creature:new {
-	customName = "Dracona 'Queen of the Dune Sea'",
-  objectName = "@mob/creature_names:",
+--	customName = "Dracona 'Queen of the Dune Sea'",
+  objectName = "@mob/creature_names:dune_sea_krayt_queen",
 	socialGroup = "krayt",
 	faction = "",
 	level = 85,
@@ -32,13 +32,13 @@ worldboss_1 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "krayt_pearls", chance = 10000000},
+				{group = "krayt_pearls_flawless", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "krayt_pearls", chance = 10000000},
+				{group = "krayt_pearls_flawless", chance = 10000000},
 			},
 			lootChance = 2500000
 		},
