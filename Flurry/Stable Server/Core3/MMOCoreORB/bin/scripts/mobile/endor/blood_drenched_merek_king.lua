@@ -2,19 +2,19 @@ blood_drenched_merek_king = Creature:new {
 	objectName = "@mob/creature_names:blood_drenched_merek_king",
 	socialGroup = "merek",
 	faction = "",
-	level = 56,
+	level = 60,
 	chanceHit = 0.55,
-	damageMin = 420,
-	damageMax = 550,
-	baseXp = 5464,
+	damageMin = 470,
+	damageMax = 650,
+	baseXp = 5830,
 	baseHAM = 11000,
-	baseHAMmax = 13000,
-	armor = 1,
-	resists = {10,135,10,10,10,10,10,10,-1},
+	baseHAMmax = 14000,
+  armor = 3,
+	resists = {160,165,150,140,170,150,180,150,140},
 	meatType = "meat_wild",
-	meatAmount = 55,
+	meatAmount = 110,
 	hideType = "hide_leathery",
-	hideAmount = 55,
+	hideAmount = 110,
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
@@ -27,13 +27,14 @@ blood_drenched_merek_king = Creature:new {
 
 	templates = {"object/mobile/blood_drenched_merek_king.iff"},
 	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	controlDeviceTemplate = "object/intangible/pet/merek_hue.iff",
 	scale = 1.25,
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"stunattack",""},
-		{"blindattack",""}
+		{"creatureareableeding","stateAccuracyBonus=100"},
+		{"blindattack","stateAccuracyBonus=100"}
 	}
 }
 
