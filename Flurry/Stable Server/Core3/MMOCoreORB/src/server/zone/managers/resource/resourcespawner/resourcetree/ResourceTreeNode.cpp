@@ -276,6 +276,26 @@ void ResourceTreeNode::addToSuiListBox(SuiListBox* suil) const {
 	}
 }
 
+void ResourceTreeNode::addToSuiListBoxCR(SuiListBox* suil) const {
+	suil->setPromptTitle("Resource List"); //Resources
+
+	for(int i = 0; i < nodes.size(); ++i) {
+		if (parentNode != nullptr)
+			suil->setPromptText("Select a type:"); //Chose resource class from
+		else
+			suil->setPromptText("Select a class:"); //Choose resource class
+		ResourceTreeNode* node = nodes.get(i);
+		suil->addMenuItem(node->getName(), 0);
+	}
+
+	for(int i = 0; i < entries.size(); ++i) {
+		suil->setPromptText("Select a type:"); //Choose resource type from
+		ResourceTreeEntry* ent = entries.get(i);
+		if(!ent->hasChildren() && !ent->isRecycled())
+			suil->addMenuItem(ent->getFinalClass());
+	}
+}
+
 void ResourceTreeNode::toString() const {
 	System::out << "--- Node " << depth << " : " << name << "---" << stfName << endl;
 
