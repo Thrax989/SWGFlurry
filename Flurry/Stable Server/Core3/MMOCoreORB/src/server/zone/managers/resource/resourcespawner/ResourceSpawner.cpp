@@ -768,6 +768,7 @@ ResourceSpawn* ResourceSpawner::createResourceSpawn(const String& type,
 	}
 
 	for (int i = 0; i < resourceEntry->getAttributeCount(); ++i) {
+		auto attrib = resourceEntry->getAttribute(i);
 		int randomValue = 0;
 
 		if (isPerfect) // Perfect spawn
@@ -817,14 +818,24 @@ ResourceSpawn* ResourceSpawner::createResourceSpawn(const String& type,
 		StringBuffer resources;
 
 		if (newSpawn->getZoneRestriction().length() > 1)
-			msg << "\\#ffffffA new \\#00e600PERFECT\\#ffffff spawn of " + newSpawn->getFamilyName() + ", " + name + ", has spawned on " + newSpawn->getZoneRestriction() + ".";
-			resources << "A New Perfect Resource " + newSpawn->getFamilyName() + ", " + name + ", has spawned on " + newSpawn->getZoneRestriction() + ".";
+			msg << "\\#ffffffA new \\#00e600PERFECT\\#ffffff Spawn Of " + newSpawn->getFamilyName() + ", " + name + ", Has Spawned On " + newSpawn->getZoneRestriction() + ".";
 		else
-			msg << "\\#ffffffA new \\#00e600PERFECT\\#ffffff spawn of " + newSpawn->getFamilyName() + ", " + name + ", has spawned.";
-			resources << "A New Perfect Resource " + newSpawn->getFamilyName() + ", " + name + ", has spawned.";
-
+			msg << "\\#ffffffA new \\#00e600PERFECT\\#ffffff  Spawn Of " + newSpawn->getFamilyName() + ", " + name + ", Has Spawned.";
 		ChatManager* chatManager = processor->getZoneServer()->getChatManager();
 		chatManager->broadcastGalaxy(NULL, msg.toString());
+	}
+
+	if (isPerfect)
+	{
+		StringBuffer resources;
+
+		if (newSpawn->getZoneRestriction().length() > 1)
+
+			resources << "A New Perfect  Spawn Of " + newSpawn->getFamilyName() + ", " + name + ", Has Spawned On " + newSpawn->getZoneRestriction() + ".";
+		else
+			resources << "A New Perfect  Spawn Of " + newSpawn->getFamilyName() + ", " + name + ", Has Spawned.";
+
+		ChatManager* chatManager = processor->getZoneServer()->getChatManager();
 		chatManager->handleGeneralResourceChat(NULL, resources.toString());
 	}
 
