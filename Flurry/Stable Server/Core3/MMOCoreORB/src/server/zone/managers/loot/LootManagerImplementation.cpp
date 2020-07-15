@@ -285,6 +285,25 @@ TangibleObject* LootManagerImplementation::createLootObject(const LootItemTempla
 		prototype->setSerialNumber(serial);
 	}
 
+	//Min/Max loot item levels - By: Tyclo
+	int minLevel = templateObject->getMinimumLevel();
+	int maxLevel = templateObject->getMaximumLevel();
+
+	if(level < 1)
+		level = 1;
+
+	//Lightsaber crystals can exceed level 300, only item as of 01/2020
+	if (!prototype->isLightsaberCrystalObject())
+		if(level > 300)
+			level = 300;
+
+	if (minLevel > 0 && level < minLevel)
+		level = minLevel;
+
+	if (maxLevel > 1 && level > maxLevel)
+		level = maxLevel;
+
+
 	prototype->setJunkDealerNeeded(templateObject->getJunkDealerTypeNeeded());
 	float junkMinValue = templateObject->getJunkMinValue() * junkValueModifier;
 	float junkMaxValue = templateObject->getJunkMaxValue() * junkValueModifier;
@@ -329,7 +348,7 @@ TangibleObject* LootManagerImplementation::createLootObject(const LootItemTempla
 		LightsaberCrystalComponent* crystal = cast<LightsaberCrystalComponent*> (prototype.get());
 
 		if (crystal != nullptr)
-			crystal->setItemLevel(uncappedLevel);
+			crystal->setItemLevel(level);
 	}
 
 	String subtitle;
