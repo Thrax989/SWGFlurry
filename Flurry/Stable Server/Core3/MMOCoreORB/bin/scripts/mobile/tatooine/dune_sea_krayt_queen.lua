@@ -1,4 +1,4 @@
-worldboss_1 = Creature:new {
+dune_sea_queen = Creature:new {
 --	customName = "Dracona 'Queen of the Dune Sea'",
   objectName = "@mob/creature_names:dune_sea_krayt_queen",
 	socialGroup = "krayt",
@@ -108,4 +108,4 @@ worldboss_1 = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(worldboss_1, "worldboss_1")
+CreatureTemplates:addCreatureTemplate(dune_sea_queen, "dune_sea_queen")
