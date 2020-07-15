@@ -8,10 +8,11 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 	templateType = CHARACTERBUILDERTERMINAL,
 
 	itemList = {
-		  	--"chandrila",
-		   --{
-			--" Starport (5,000 Credits)", "_starport_travel",
-		   --},
+		  	"chandrila",
+		   {
+			" Starport (5,000 Credits)", "nayli_starport_travel",
+			" Starport (5,000 Credits)", "hanna_starport_travel",
+		   },
 		        "Corellia",
 		   {
 			"Bela Vistal Shuttleport A (5,000 Credits)", "corellia_bela_vistal_a_shuttleport_travel",
@@ -52,10 +53,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		  -- {
 			--" Starport (5,000 Credits)", "_starport_travel",
 		   --},
-		  	--"hutta",
-		   --{
-			--" Starport (5,000 Credits)", "_starport_travel",
-		   --},
+		  	"hutta",
+		   {
+			"Bilbousa Starport (5,000 Credits)", "bilbousa_starport_travel",
+		   },
 		  	--"jakku",
 		   --{
 			--" Starport (5,000 Credits)", "_starport_travel",
