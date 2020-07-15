@@ -45,10 +45,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Dathomir Science Outpost Starport (5,000 Credits)", "dathomir_science_outpost_starport_travel",
 			"Dathomir Village Shuttleport (5,000 Credits)", "dathomir_village_shuttleport_travel",
 		   },
-		  	--"geonosis",
-		   --{
-			--" Starport (5,000 Credits)", "_starport_travel",
-		   --},
+		  	"geonosis",
+		   {
+			" Starport (5,000 Credits)", "geonosis_starport_travel",
+		   },
 		  	--"Hoth",
 		  -- {
 			--" Starport (5,000 Credits)", "_starport_travel",
