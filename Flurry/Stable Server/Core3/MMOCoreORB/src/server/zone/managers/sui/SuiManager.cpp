@@ -695,20 +695,20 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			        }
 //GALACTIC TRAVEL SYSTEM City Politician Skill
 			} else if (templatePath == "citypolitician") {
-				if (!player->isInCombat() && player->getBankCredits() < 9999999) {
+				if (!player->isInCombat() && player->getBankCredits() < 999999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Master Politician");
-		                box->setPromptText("Master Politician Requires 10,000,000 credits. (Bank)");
+		                box->setPromptText("Master Politician Requires 1,000,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
 		                player->sendMessage(box->generateMessage());
 			        }
-				if (!player->isInCombat() && player->getBankCredits() > 9999999) {
+				if (!player->isInCombat() && player->getBankCredits() > 999999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 						player->sendSystemMessage("Thank you for your credits.");
  				        	SkillManager::instance()->awardSkill("social_politician_master", player, true, true, true);
-						player->subtractBankCredits(10000000);
+						player->subtractBankCredits(1000000);
 						box->setForceCloseDistance(5.f);
 			        }
 //GALACTIC TRAVEL SYSTEM Recalculate's Jedi's Force Pool
