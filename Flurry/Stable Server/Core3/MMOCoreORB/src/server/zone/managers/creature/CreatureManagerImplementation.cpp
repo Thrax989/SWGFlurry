@@ -765,7 +765,7 @@ void CreatureManagerImplementation::droidHarvest(Creature* creature, CreatureObj
 		owner->sendSystemMessage("@skl_use:group_harvest_bonus_ranger");
 	else if (modifier == 1.4f)
 		owner->sendSystemMessage("@skl_use:group_harvest_bonus_masterranger");
-
+/*
 	/// Send group spam
 	if (owner->isGrouped()) {
 		StringIdChatParameter bonusMessage("group", "notify_harvest_corpse");
@@ -778,7 +778,7 @@ void CreatureManagerImplementation::droidHarvest(Creature* creature, CreatureObj
 		ChatSystemMessage* sysMessage = new ChatSystemMessage(bonusMessage);
 		owner->getGroup()->broadcastMessage(owner, sysMessage, false);
 	}
-
+*/
 	ManagedReference<PlayerManager*> playerManager = zoneServer->getPlayerManager();
 
 	int xp = creature->getLevel() * 5 + 19;
@@ -928,7 +928,7 @@ void CreatureManagerImplementation::harvest(Creature* creature, CreatureObject* 
 		player->sendSystemMessage("@skl_use:group_harvest_bonus_ranger");
 	else if (modifier == 1.4f)
 		player->sendSystemMessage("@skl_use:group_harvest_bonus_masterranger");
-
+/*
 	/// Send group spam
 	if (player->isGrouped()) {
 		StringIdChatParameter bonusMessage("group", "notify_harvest_corpse");
@@ -941,7 +941,7 @@ void CreatureManagerImplementation::harvest(Creature* creature, CreatureObject* 
 		ChatSystemMessage* sysMessage = new ChatSystemMessage(bonusMessage);
 		player->getGroup()->broadcastMessage(player, sysMessage, false);
 	}
-
+*/
 	ManagedReference<PlayerManager*> playerManager = zoneServer->getPlayerManager();
 
 	int xp = creature->getLevel() * 5 + 19;

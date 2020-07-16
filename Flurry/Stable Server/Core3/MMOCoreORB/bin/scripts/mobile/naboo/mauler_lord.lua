@@ -1,7 +1,5 @@
 mauler_lord = Creature:new {
 	customName = "\\#00ff00<<< Mauler Lord >>> \\#0000ff[lvl 300]",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
 	socialGroup = "mauler",
 	faction = "",
 	level = 300,

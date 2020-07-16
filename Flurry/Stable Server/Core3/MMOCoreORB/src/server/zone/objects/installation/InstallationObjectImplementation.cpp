@@ -266,6 +266,23 @@ ResourceContainer* InstallationObjectImplementation::getContainerFromHopper(Reso
 	return nullptr;
 }
 
+int InstallationObjectImplementation::getResourceContainerCountFromHopper()
+{
+	return resourceHopper.size();
+}
+
+ResourceContainer* InstallationObjectImplementation::getContainerFromHopperByIndex(int index)
+{
+	if (index < resourceHopper.size())
+	{
+		return resourceHopper.get(index);
+	}
+	else
+	{
+		return nullptr;
+	}
+}
+
 void InstallationObjectImplementation::updateInstallationWork() {
 
 	Time timeToWorkTill;

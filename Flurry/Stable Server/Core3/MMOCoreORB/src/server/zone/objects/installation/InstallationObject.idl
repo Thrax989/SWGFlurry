@@ -156,6 +156,12 @@ class InstallationObject extends StructureObject {
 	public native ResourceContainer getContainerFromHopper(ResourceSpawn spawn);
 
 	@dirty
+	public native int getResourceContainerCountFromHopper();
+
+	@dirty
+	public native ResourceContainer getContainerFromHopperByIndex(int index);
+
+	@dirty
 	public native unsigned long getActiveResourceSpawnID();
 
 	@dirty

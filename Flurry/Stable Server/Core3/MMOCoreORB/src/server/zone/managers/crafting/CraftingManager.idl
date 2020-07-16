@@ -42,6 +42,7 @@ class CraftingManager extends ZoneManager {
 	public static final short OK = 6;
 	public static final short BARELYSUCCESSFUL = 7;
 	public static final short CRITICALFAILURE = 8;
+	public static final short EXCEPTIONALSUCCESS = 9;
 	
 	@dereferenced
 	private transient HashTable<int, Reference<SharedLabratory> > labs;

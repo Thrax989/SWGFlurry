@@ -66,8 +66,13 @@ int CraftingManagerImplementation::calculateExperimentationSuccess(CreatureObjec
 	float cityBonus = player->getSkillMod("private_spec_experimentation");
 
 	int experimentationSkill = player->getSkillMod(draftSchematic->getExperimentationSkill());
-	int forceSkill = player->getSkillMod("force_experimentation");
-	experimentationSkill += forceSkill;
+	int forceSkill = 0;
+
+	if (player->hasSkill("force_title_jedi_novice"))
+	{
+		forceSkill = player->getSkillMod("force_experimentation");
+		experimentationSkill += forceSkill;
+	}
 
 	float experimentingPoints = ((float)experimentationSkill + forceSkill) / 10.0f;
 
@@ -94,7 +99,12 @@ int CraftingManagerImplementation::calculateExperimentationSuccess(CreatureObjec
 	}
 
 	/// Range 0-100
-	int luckRoll = System::random(100) + cityBonus;
+	int luckRoll = System::random(100) + cityBonus + player->getSkillMod("luck");
+
+	if (player->hasSkill("force_title_jedi_novice"))
+	{
+		luckRoll += ((player->getSkillMod("force_luck")  / 4) * 25);
+	}
 
 	if(luckRoll > ((95 - expbonus) - forceSkill))
 		return AMAZINGSUCCESS;
@@ -105,7 +115,6 @@ int CraftingManagerImplementation::calculateExperimentationSuccess(CreatureObjec
 	//if(luckRoll < 5)
 	//	return CRITICALFAILURE;
 
-	luckRoll += System::random(player->getSkillMod("luck") + player->getSkillMod("force_luck"));
 
 	///
 	int experimentRoll = (toolModifier * (luckRoll + (experimentingPoints * 4)));

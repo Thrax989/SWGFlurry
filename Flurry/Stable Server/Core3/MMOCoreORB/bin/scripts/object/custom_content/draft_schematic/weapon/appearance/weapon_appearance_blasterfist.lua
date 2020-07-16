@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_blasterfist = object_
    contribution = {100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/special/vibroknuckler.iff",
+   targetTemplate = "object/weapon/melee/special/blasterfist.iff",
 
    additionalTemplates = {
              }
