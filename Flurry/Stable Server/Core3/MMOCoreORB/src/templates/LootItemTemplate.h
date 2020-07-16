@@ -253,10 +253,10 @@ public:
 		return junkMaxValue;
 	}
 	// Added by Tyclo
-	int getMinimumLevel() {
+	int getMinimumLevel() const {
 		return minimumLevel;
 	}
-	int getMaximumLevel() {
+	int getMaximumLevel() const {
 		return maximumLevel;
 	}
 	const VectorMap<String, SortedVector<int> >* getStaticDotValues() const {
