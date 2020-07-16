@@ -1,33 +1,36 @@
 DuneSeaKraytsScreenPlay = ScreenPlay:new {
-	numberOfActs = 1,
-
+    planet = "tatooine",
+    bossMobile = "dune_sea_queen",
+    bossRespawn = 10800,
+    xCoord = -5409,
+    yCoord = 6113,
+    kraytMobile = "dune_sea_krayt_dragon",
+    kraytRespawn = 1800,
+    offset = 500,
+    maxSpawns = 20,
 }
 
 registerScreenPlay("DuneSeaKraytsScreenPlay", true)
 
 function DuneSeaKraytsScreenPlay:start()
-	if (isZoneEnabled("tatooine")) then
-		self:spawnMobiles()
-	end
+    if (isZoneEnabled(self.planet)) then
+        self:spawnMobiles()
+    end
 end
 
 function DuneSeaKraytsScreenPlay:spawnMobiles()
+    local pAnchor = spawnMobile(self.planet, self.bossMobile, self.bossRespawn, self.xCoord, 37, self.yCoord, getRandomNumber(360), 0)
+    self:spawnKraytMobiles(pAnchor)
+end
 
-  local pAnchor = spawnMobile("tatooine", "dune_sea_queen", 10800, -5409, 37, 6113, getRandomNumber(360), 0)
-  
-  local xCoord = getRandomNumber(500) + -5409
-  local yCoord = getRandomNumber(500) + 6113
-  local zCoord = getTerrainHeight(pAnchor, xCoord, yCoord)
-
-	spawnMobile("tatooine", "dune_sea_krayt", 1800, xCoord, zCoord, yCoord, getRandomNumber(360), 0)
-	spawnMobile("tatooine", "dune_sea_krayt", 1800, xCoord, zCoord, yCoord, getRandomNumber(360), 0)
-	spawnMobile("tatooine", "dune_sea_krayt", 1800, xCoord, zCoord, yCoord, getRandomNumber(360), 0)
-	spawnMobile("tatooine", "dune_sea_krayt", 1800, xCoord, zCoord, yCoord, getRandomNumber(360), 0)
-	spawnMobile("tatooine", "dune_sea_krayt", 1800, xCoord, zCoord, yCoord, getRandomNumber(360), 0)
-	spawnMobile("tatooine", "dune_sea_krayt", 1800, xCoord, zCoord, yCoord, getRandomNumber(360), 0)
-	spawnMobile("tatooine", "dune_sea_krayt", 1800, xCoord, zCoord, yCoord, getRandomNumber(360), 0)
-  spawnMobile("tatooine", "dune_sea_krayt", 1800, xCoord, zCoord, yCoord, getRandomNumber(360), 0)
-  spawnMobile("tatooine", "dune_sea_krayt", 1800, xCoord, zCoord, yCoord, getRandomNumber(360), 0)
-  spawnMobile("tatooine", "dune_sea_krayt", 1800, xCoord, zCoord, yCoord, getRandomNumber(360), 0)
-
+function DuneSeaKraytsScreenPlay:spawnKraytMobiles(pAnchor)
+    local count = 0
+    local halfoffset = self.offset/2
+    while (count <= self.maxSpawns) do
+        x = getRandomNumber(halfoffset*-1, halfoffset) + self.xCoord
+        y = getRandomNumber(halfoffset*-1, halfoffset) + self.yCoord
+        z = getTerrainHeight(pAnchor, x, y)
+        spawnMobile(self.planet, self.kraytMobile, self.kraytRespawn, x, zCoord, y, getRandomNumber(360), 0)
+        count = count + 1
+    end
 end

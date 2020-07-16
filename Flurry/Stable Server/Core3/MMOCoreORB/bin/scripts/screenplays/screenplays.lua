@@ -687,7 +687,7 @@ includeFile("poi/tatooine_imperial_detachment_hq.lua")
 includeFile("poi/tatooine_imperial_oasis_base.lua")
 includeFile("poi/tatooine_jabbas_palace_mobs.lua")
 includeFile("poi/tatooine_jawa_traders.lua")
-includeFile("poi/tatooine_dune_sea_krayts.lua") -- Added Dune Sea Krayts
+includeFile("poi/tatooine_dune_sea_krayt_dragons.lua") -- Added Dune Sea Krayts
 includeFile("poi/tatooine_krayt_graveyard.lua")
 includeFile("poi/tatooine_sandcrawler_ne.lua")
 includeFile("poi/tatooine_village_ruins.lua")
