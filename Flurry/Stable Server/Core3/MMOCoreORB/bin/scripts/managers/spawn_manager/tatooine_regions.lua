@@ -136,6 +136,7 @@ tatooine_regions = {
 	{"krayt_skeleton", -4646, -1913, {CIRCLE, 30}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"krayt_skeleton_1", -6206, 5054, {CIRCLE, 40}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"krayt_skeleton_on_hill", -6744, 3568, {CIRCLE, 30}, NOSPAWNAREA + NOBUILDZONEAREA},
+  {"krayt_dune_sea", -5409, 6113, {CIRCLE, 500}, NOSPAWNAREA + NOBUILDZONEAREA}, --added dune sea krayt area as no build
 	{"large_rock_with_camp", -818, -964, {CIRCLE, 150}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"lars_homestead", -2578, -5500, {CIRCLE, 250}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"life_pod_and_debris", -854, -1226, {CIRCLE, 50}, NOSPAWNAREA + NOBUILDZONEAREA},
