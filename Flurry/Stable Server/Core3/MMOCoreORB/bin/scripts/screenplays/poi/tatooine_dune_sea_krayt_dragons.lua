@@ -1,7 +1,7 @@
 DuneSeaKraytsScreenPlay = ScreenPlay:new {
     planet = "tatooine",
     bossMobile = "dune_sea_queen",
-    bossRespawn = 10800,
+    bossRespawn = getRandomNumber(7200) + 7200,
     xCoord = -5409,
     yCoord = 6113,
     kraytMobile = "dune_sea_krayt_dragon",
@@ -30,7 +30,7 @@ function DuneSeaKraytsScreenPlay:spawnKraytMobiles(pAnchor)
         x = getRandomNumber(halfoffset*-1, halfoffset) + self.xCoord
         y = getRandomNumber(halfoffset*-1, halfoffset) + self.yCoord
         z = getTerrainHeight(pAnchor, x, y)
-        spawnMobile(self.planet, self.kraytMobile, self.kraytRespawn, x, zCoord, y, getRandomNumber(360), 0)
+        spawnMobile(self.planet, self.kraytMobile, self.kraytRespawn, x, z, y, getRandomNumber(360), 0)
         count = count + 1
     end
 end

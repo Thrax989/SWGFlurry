@@ -32,12 +32,12 @@ dune_sea_krayt_dragon = Creature:new {
 	lootGroups = {
 		{
 	        	groups = {
-				{group = "krayt_tissue_common", chance = 2500000},
-				{group = "krayt_dragon_common", chance = 3500000},
-				{group = "armor_all", chance = 2000000},
-				{group = "weapons_all", chance = 2000000},
+				{group = "krayt_tissue_rare", chance = 2500000},
+				{group = "krayt_dragon_common", chance = 400000},
+				{group = "krayt_pearls_flawless", chance = 2500000},
+				{group = "weapons_all", chance = 1000000},
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
