@@ -104,7 +104,7 @@ function wampa_caveScreenplay:bossDead(pBoss)
 	print("WampaKing Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "wampa_caveScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
-	createEvent(10800 * 1000, "wampa_caveScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
+	createEvent(getRandomNumber(7200000) + 7200000, "wampa_caveScreenplay", "KillSpawn", pBoss, "")--Random Boss Respawn In 2-4 Hours
 	return 0
 end
 -----------------------

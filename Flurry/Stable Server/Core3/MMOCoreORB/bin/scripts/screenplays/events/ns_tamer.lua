@@ -61,7 +61,7 @@ function ns_tamer:bossDead(pBoss, pPlayer)
 	print("NsTamer Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "ns_tamer", "KillBoss", pBoss, "")--Despawn Corpse
-	createEvent(10800 * 1000, "ns_tamer", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
+	createEvent(getRandomNumber(7200000) + 7200000, "ns_tamer", "KillSpawn", pBoss, "")--Random Boss Respawn In 2-4 Hours
 	return 0
 end
 -----------------------

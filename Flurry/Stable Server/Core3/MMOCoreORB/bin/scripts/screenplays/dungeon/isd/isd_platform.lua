@@ -113,7 +113,7 @@ function isd_platformScreenplay:bossDead(pBoss)
 	print("Thrawn Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "isd_platformScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
-	createEvent(10800 * 1000, "isd_platformScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
+	createEvent(getRandomNumber(7200000) + 7200000, "isd_platformScreenplay", "KillSpawn", pBoss, "")--Random Boss Respawn In 2-4 Hours
 	return 0
 end
 -----------------------

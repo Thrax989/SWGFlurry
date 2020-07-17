@@ -157,14 +157,14 @@ function avatar_platformScreenplay:bossDead(pBoss)
 	print("Avatar Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "avatar_platformScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
-	createEvent(10800 * 1000, "avatar_platformScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
+	createEvent(getRandomNumber(7200000) + 7200000, "avatar_platformScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
 	return 0
 end
 -----------------------
 --Respawn Avatar Boss
 -----------------------
 function avatar_platformScreenplay:KillSpawn()
-		local pBoss = spawnMobile("dungeon2", "ep3_lord_cyssc", -1, -234, -1, -25.07, 90, 14201271)--Spawn Avatar After Death 3 Hour Timer
+		local pBoss = spawnMobile("dungeon2", "ep3_lord_cyssc", -1, -234, -1, -25.07, 90, 14201271)--Random Boss Respawn In 2-4 Hours
 		local creature = CreatureObject(pBoss)
 		print("Avatar Respawned")
 		createObserver(OBJECTDESTRUCTION, "avatar_platformScreenplay", "bossDead", pBoss)
