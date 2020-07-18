@@ -186,7 +186,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Riverside, Kashyyyk Player City (5,000 Credits)", "pc_riverside_travel",
 			"Make America Krayt Again, Tatooine Player City (5,000 Credits)", "pc_maka_travel",
       "Darkness Falls, Dathomir Player City (5,000 Credits)", "pc_darkness_travel",
-      "Bad Mutta Hutta, Hutta Player City (5,000 Credits)", "pc_bmh_travel",      
+      "Bad Mutta Hutta, Hutta Player City (5,000 Credits)", "pc_bmh_travel",
+      "Indestine, Hoth Player City (5,000 Credits)", "pc_indestine_travel",        
 		   },
 	}
 }
