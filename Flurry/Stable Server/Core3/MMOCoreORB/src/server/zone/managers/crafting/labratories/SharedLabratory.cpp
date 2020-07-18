@@ -22,9 +22,6 @@ float SharedLabratory::calculateExperimentationValueModifier(int experimentation
 	// Make it so failure detract
 	float results;
 	switch (experimentationResult) {
-	case CraftingManager::EXCEPTIONALSUCCESS:
-		results = 0.16f;
-		break;
 	case CraftingManager::AMAZINGSUCCESS:
 		results = 0.09f;
 		break;
@@ -148,19 +145,11 @@ int SharedLabratory::calculateAssemblySuccess(CreatureObject* player,DraftSchema
 	float cityBonus = player->getSkillMod("private_spec_assembly");
 
 	int assemblySkill = player->getSkillMod(draftSchematic->getAssemblySkill());
-
-	if (player->hasSkill("force_title_jedi_novice"))
-	{
-		assemblySkill += player->getSkillMod("force_assembly");
-	}
+	assemblySkill += player->getSkillMod("force_assembly");
 
 	float assemblyPoints = ((float)assemblySkill) / 10.0f;
 	int failMitigate = (player->getSkillMod(draftSchematic->getAssemblySkill()) - 100 + cityBonus) / 7;
-
-	if (player->hasSkill("force_title_jedi_novice"))
-	{
-		failMitigate += player->getSkillMod("force_failure_reduction");
-	}
+	failMitigate += player->getSkillMod("force_failure_reduction");
 
 	if(failMitigate < 0)
 		failMitigate = 0;
@@ -181,7 +170,7 @@ int SharedLabratory::calculateAssemblySuccess(CreatureObject* player,DraftSchema
 		}
 	}
 
-	int luckRoll = System::random(100) + cityBonus + player->getSkillMod("luck") + (player->hasSkill("force_title_jedi_novice") ? player->getSkillMod("force_luck") : 0);
+	int luckRoll = System::random(100) + cityBonus;
 
 	if(luckRoll > (95 - craftbonus))
 		return CraftingManager::AMAZINGSUCCESS;
@@ -191,6 +180,8 @@ int SharedLabratory::calculateAssemblySuccess(CreatureObject* player,DraftSchema
 
 	//if(luckRoll < 5)
 	//	return CRITICALFAILURE;
+
+	luckRoll += System::random(player->getSkillMod("luck") + player->getSkillMod("force_luck"));
 
 	int assemblyRoll = (toolModifier * (luckRoll + (assemblyPoints * 5)));
 
