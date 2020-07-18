@@ -74,9 +74,9 @@ int CraftingManagerImplementation::calculateExperimentationSuccess(CreatureObjec
 		experimentationSkill += forceSkill;
 	}
 
-	float experimentingPoints = ((float)experimentationSkill) / 10.0f;
+	float experimentingPoints = ((float)experimentationSkill + forceSkill) / 10.0f;
 
-	int failMitigate = (player->getSkillMod(draftSchematic->getAssemblySkill()) - 100 + cityBonus) / 7;
+	int failMitigate = (player->getSkillMod(draftSchematic->getAssemblySkill() + forceSkill) - 100 + cityBonus) / 7;
 	failMitigate += player->getSkillMod("force_failure_reduction");
 
 	if(failMitigate < 0)
@@ -115,25 +115,26 @@ int CraftingManagerImplementation::calculateExperimentationSuccess(CreatureObjec
 	//if(luckRoll < 5)
 	//	return CRITICALFAILURE;
 
+
 	///
 	int experimentRoll = (toolModifier * (luckRoll + (experimentingPoints * 4)));
 
-	if (experimentRoll > 70)
+	if (experimentRoll > 50)
 		return GREATSUCCESS;
 
-	if (experimentRoll > 60)
+	if (experimentRoll > 45)
 		return GOODSUCCESS;
 
-	if (experimentRoll > 50)
+	if (experimentRoll > 40)
 		return MODERATESUCCESS;
 
-	if (experimentRoll > 40)
+	if (experimentRoll > 30)
 		return SUCCESS;
 
-	if (experimentRoll > 30)
+	if (experimentRoll > 20)
 		return MARGINALSUCCESS;
 
-	if (experimentRoll > 20)
+	if (experimentRoll > 10)
 		return OK;
 
 	return BARELYSUCCESSFUL;
@@ -175,7 +176,7 @@ void CraftingManagerImplementation::experimentRow(ManufactureSchematic* schemati
 void CraftingManagerImplementation::configureLabratories() {
 	ResourceLabratory* resLab = new ResourceLabratory();
 	resLab->initialize(zoneServer.get());
-
+	
 	labs.put(static_cast<int>(DraftSchematicObjectTemplate::RESOURCE_LAB),resLab); //RESOURCE_LAB
 
 	GeneticLabratory* genLab = new GeneticLabratory();
