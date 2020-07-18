@@ -38,7 +38,7 @@ function worldboss_oneScreenplay:bossDead(pBoss)
 	print("World Boss One Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "worldboss_oneScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
-	createEvent(getRandomNumber(7200000) + 7200000, "worldboss_oneScreenplay", "KillSpawn", pBoss, "")--Random Boss Respawn In 2-4 Hours
+	createEvent(10800 * 1000, "worldboss_oneScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
 	return 0
 end
 -----------------------

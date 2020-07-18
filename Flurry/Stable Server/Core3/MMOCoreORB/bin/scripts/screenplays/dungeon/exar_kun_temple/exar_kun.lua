@@ -346,7 +346,7 @@ function exar_kunScreenplay:bossDead(pBoss)
 	print("Exar Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "exar_kunScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
-	createEvent(getRandomNumber(7200000) + 7200000, "exar_kunScreenplay", "KillSpawn", pBoss, "")--Random Boss Respawn In 2-4 Hours
+	createEvent(10800 * 1000, "exar_kunScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
 	return 0
 end
 -----------------------

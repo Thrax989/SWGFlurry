@@ -62,5 +62,6 @@ function DarthCaedusCave:spawnMobiles()
 	spawnMobile("mandalore", "darth_caedus_follower", 1800, -48.4, -87.2, -146.7, 80, 8566161)
 	spawnMobile("mandalore", "darth_caedus_follower", 1800, -76.3, -99.3, -156.4, 34, 8566159)
 	spawnMobile("mandalore", "darth_caedus_follower", 1800, -79.2, -100.6, -136.5, 116, 8566159)
-	spawnMobile("mandalore", "darth_caedus", getRandomNumber(7200) + 7200, -91.1, -100.7, -95.8, 170, 8566162)  --Random Boss Respawn In 2-4 Hours
+	spawnMobile("mandalore", "darth_caedus", 10800, -91.1, -100.7, -95.8, 170, 8566162)
+		
 end

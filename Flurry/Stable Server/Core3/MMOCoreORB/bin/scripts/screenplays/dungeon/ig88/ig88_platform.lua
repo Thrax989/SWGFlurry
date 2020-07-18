@@ -37,7 +37,7 @@ function ig88_platformScreenplay:bossDead(pBoss)
 	print("Ig88 Has Died")
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "ig88_platformScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
-	createEvent(getRandomNumber(7200000) + 7200000, "ig88_platformScreenplay", "KillSpawn", pBoss, "")--Random Boss Respawn In 2-4 Hours
+	createEvent(10800 * 1000, "ig88_platformScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
 	return 0
 end
 -----------------------

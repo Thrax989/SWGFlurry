@@ -68,7 +68,6 @@ function VizslaHideout:spawnMobiles()
 	spawnMobile("mandalore", "vizsla_loyalist", 1800, -67.2, -96.2, -146.0, 91, 8566172)
 	spawnMobile("mandalore", "vizsla_loyalist", 1800, -77.6, -99.5, -159.1, -4, 8566172)
 	spawnMobile("mandalore", "vizsla_loyalist", 1800, -98.4, -102.0, -137.3, 97, 8566172)
-	spawnMobile("mandalore", "tor_vizsla", getRandomNumber(7200) + 7200, -90.7, -101.1, -102.6, -176, 8566175) --Random Boss Respawn In 2-4 Hours
-		
+	spawnMobile("mandalore", "tor_vizsla", 10800, -90.7, -101.1, -102.6, -176, 8566175)
 		
 end
