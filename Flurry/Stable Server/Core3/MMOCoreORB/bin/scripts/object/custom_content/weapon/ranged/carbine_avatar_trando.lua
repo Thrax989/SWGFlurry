@@ -292,5 +292,4 @@ object_weapon_ranged_carbine_carbine_avatar_trando = object_weapon_ranged_carbin
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
-
 ObjectTemplates:addTemplate(object_weapon_ranged_carbine_carbine_avatar_trando, "object/weapon/ranged/carbine/carbine_avatar_trando.iff")

@@ -224,15 +224,16 @@ object_weapon_ranged_rifle_ep3_loot_retaliation = object_weapon_ranged_rifle_sha
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
+
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = RANGEDATTACK,
 
-	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
-	damageType = KINETIC,
+	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
+	damageType = ENERGY,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
-	armorPiercing = MEDIUM,
+	armorPiercing = HEAVY,
 
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
@@ -240,7 +241,7 @@ object_weapon_ranged_rifle_ep3_loot_retaliation = object_weapon_ranged_rifle_sha
 	xpType = "combat_rangedspecialize_rifle",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_rifle_cdef" },
+	certificationsRequired = { "cert_rifle_t21" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "rifle_accuracy" },
 
@@ -269,15 +270,15 @@ object_weapon_ranged_rifle_ep3_loot_retaliation = object_weapon_ranged_rifle_sha
 	pointBlankAccuracy = -90,
 
 	idealRange = 60,
-	idealAccuracy = 45,
+	idealAccuracy = -25,
 
-	maxRange = 80,
-	maxRangeAccuracy = 10,
+	maxRange = 64,
+	maxRangeAccuracy = -10,
 
-	minDamage = 900,
-	maxDamage = 1900,
+	minDamage = 125,
+	maxDamage = 400,
 
-	attackSpeed = 5.2,
+	attackSpeed = 7.5,
 
 	woundsRatio = 22,
 
@@ -291,5 +292,4 @@ object_weapon_ranged_rifle_ep3_loot_retaliation = object_weapon_ranged_rifle_sha
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
-
 ObjectTemplates:addTemplate(object_weapon_ranged_rifle_ep3_loot_retaliation, "object/weapon/ranged/rifle/ep3_loot_retaliation.iff")

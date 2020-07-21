@@ -292,5 +292,4 @@ object_weapon_ranged_carbine_ep3_carbine_wookiee_bowcaster = object_weapon_range
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
-
 ObjectTemplates:addTemplate(object_weapon_ranged_carbine_ep3_carbine_wookiee_bowcaster, "object/weapon/ranged/carbine/ep3/carbine_wookiee_bowcaster.iff")

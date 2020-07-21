@@ -292,5 +292,4 @@ object_weapon_ranged_rifle_ep3_loot_darksting = object_weapon_ranged_rifle_share
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
-
 ObjectTemplates:addTemplate(object_weapon_ranged_rifle_ep3_loot_darksting, "object/weapon/ranged/rifle/ep3_loot_darksting.iff")

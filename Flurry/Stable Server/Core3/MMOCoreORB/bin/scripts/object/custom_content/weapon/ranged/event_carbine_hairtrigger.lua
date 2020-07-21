@@ -292,4 +292,5 @@ object_weapon_ranged_carbine_event_carbine_hairtrigger = object_weapon_ranged_ca
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
+
 ObjectTemplates:addTemplate(object_weapon_ranged_carbine_event_carbine_hairtrigger, "object/weapon/ranged/carbine/event_carbine_hairtrigger.iff")
