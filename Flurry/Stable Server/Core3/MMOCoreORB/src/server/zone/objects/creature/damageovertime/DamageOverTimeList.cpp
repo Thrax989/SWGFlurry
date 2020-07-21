@@ -155,12 +155,12 @@ uint32 DamageOverTimeList::addDot(CreatureObject* victim,
 	//only 1 disease per bar allowed
 	if(dotType == CreatureState::DISEASED) {
 		objectID = Long::hashCode(CreatureState::DISEASED);
-	} else if (dotType == CreatureState::POISONED) {
+/*	} else if (dotType == CreatureState::POISONED) {      
 		objectID = Long::hashCode(CreatureState::POISONED);
 	} else if (dotType == CreatureState::ONFIRE) {
 		objectID = Long::hashCode(CreatureState::ONFIRE);
 	}else if (dotType == CreatureState::BLEEDING) {
-		objectID = Long::hashCode(CreatureState::BLEEDING);
+		objectID = Long::hashCode(CreatureState::BLEEDING); */
 	} else if (dotType == CommandEffect::FORCECHOKE) {
 		objectID = 0;
 	}
