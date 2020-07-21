@@ -566,9 +566,6 @@ void CombatManager::applyDots(CreatureObject* attacker, CreatureObject* defender
 	if (defender->isPlayerCreature() && defender->getPvpStatusBitmask() == CreatureFlag::NONE)
 		return;
 
-	if (attacker->getWeapon()->isHeavyAcidRifle())
-		return;
-
 	for (int i = 0; i < dotEffects->size(); i++) {
 		const DotEffect& effect = dotEffects->get(i);
 
@@ -626,25 +623,18 @@ void CombatManager::applyWeaponDots(CreatureObject* attacker, CreatureObject* de
 
 		int type = 0;
 		int resist = 0;
-		int baseResist = 0;
 		// utilizing this switch-block for easier *functionality* , present & future
 		// SOE strings only provide this ONE specific type of mod (combat_bleeding_defense) and
 		// there's no evidence (yet) of other 3 WEAPON dot versions also being resistable.
 		switch (weapon->getDotType(i)) {
 		case 1: //POISON
 			type = CreatureState::POISONED;
-			resist = defender->getSkillMod("resistance_poison");
-			baseResist = 10;
 			break;
 		case 2: //DISEASE
 			type = CreatureState::DISEASED;
-			resist = defender->getSkillMod("resistance_disease");
-			baseResist = 25;
 			break;
 		case 3: //FIRE
 			type = CreatureState::ONFIRE;
-			resist = defender->getSkillMod("resistance_fire");
-			baseResist = 5;
 			break;
 		case 4: //BLEED
 			type = CreatureState::BLEEDING;
