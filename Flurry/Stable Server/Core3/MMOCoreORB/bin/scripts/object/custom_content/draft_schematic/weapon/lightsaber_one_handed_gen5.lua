@@ -28,18 +28,18 @@ object_draft_schematic_weapon_lightsaber_one_handed_gen5 = object_draft_schemati
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gen4.iff",
+   targetTemplate = "object/weapon/melee/sword/sword_lightsaber_umakk.iff",
 
    additionalTemplates = {
-              "object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_pvp_bf_gen5.iff",
-              "object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gcw_s01_gen4.iff",
-              "object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gcw_s01_gen5.iff",
-              "object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gen1_s02.iff",
-              "object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gen4_must.iff",
-              "object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_pvp_bf.iff",
-              "object/weapon/melee/sword/crafted_saber/sword_lightsaber_mandalorian.iff",
-              "object/weapon/melee/sword/sword_lightsaber_adeen.iff",
-              "object/weapon/melee/sword/sword_lightsaber_umakk.iff",
+              --"object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_pvp_bf_gen5.iff",
+              --"object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gcw_s01_gen4.iff",
+              --"object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gcw_s01_gen5.iff",
+              --"object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gen1_s02.iff",
+              --"object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_gen4_must.iff",
+              --"object/weapon/melee/sword/crafted_saber/sword_lightsaber_one_handed_pvp_bf.iff",
+              --"object/weapon/melee/sword/crafted_saber/sword_lightsaber_mandalorian.iff",
+              --"object/weapon/melee/sword/sword_lightsaber_adeen.iff",
+              --"object/weapon/melee/sword/sword_lightsaber_umakk.iff",
              }
 
 }
