@@ -2,7 +2,7 @@ object_draft_schematic_weapon_lightsaber_two_handed_gen4_must = object_draft_sch
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Two-Handed Fourth Generation Lightsaber",
+   customObjectName = "Two-Handed Fifth Generation Lightsaber",
 
    craftingToolTab = 2048, -- (See DraftSchematicObjectTemplate.h)
    complexity = 19, 
