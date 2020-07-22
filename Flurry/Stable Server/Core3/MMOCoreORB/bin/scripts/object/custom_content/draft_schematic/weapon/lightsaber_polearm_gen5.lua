@@ -28,14 +28,14 @@ object_draft_schematic_weapon_lightsaber_polearm_gen5 = object_draft_schematic_w
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen4.iff",
+   targetTemplate = "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen5.iff",
 
    additionalTemplates = {
-              "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen4_heroic.iff",
-              "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen4_heroic_s02.iff",
-              "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_pvp_bf.iff",
-              "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen5.iff",
-              "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_pvp_bf_gen5.iff",
+              --"object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen4_heroic.iff",
+              --"object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen4_heroic_s02.iff",
+              --"object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_pvp_bf.iff",
+              --"object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen5.iff",
+              --"object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_pvp_bf_gen5.iff",
              }
 
 }
