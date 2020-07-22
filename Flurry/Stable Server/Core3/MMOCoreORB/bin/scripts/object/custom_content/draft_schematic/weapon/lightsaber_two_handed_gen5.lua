@@ -28,17 +28,17 @@ object_draft_schematic_weapon_lightsaber_two_handed_gen5 = object_draft_schemati
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gen4.iff",
+   targetTemplate = "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gen6_must.iff",
 
    additionalTemplates = {
-          "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gen4_must.iff",
-          "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gen5_eow.iff",
-          "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gcw_s01_gen4.iff",
-          "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gen5_sith.iff",
-          "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gen6_must.iff",
-          "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_pvp_bf_gen5.iff",
-          "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_pvp_bf.iff",
-          "object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gcw_s01_gen5.iff",
+          --"object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gen4_must.iff",
+          --"object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gen5_eow.iff",
+          --"object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gcw_s01_gen4.iff",
+          --"object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gen5_sith.iff",
+          --"object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gen6_must.iff",
+          --"object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_pvp_bf_gen5.iff",
+          --"object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_pvp_bf.iff",
+          --"object/weapon/melee/2h_sword/crafted_saber/sword_lightsaber_two_handed_gcw_s01_gen5.iff",
         }
 
 }
