@@ -2,7 +2,7 @@ object_draft_schematic_weapon_lightsaber_polearm_pvp_bf = object_draft_schematic
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Double-Bladed Fourth Generation Lightsaber",
+   customObjectName = "Double-Bladed Fifth Generation Lightsaber",
 
    craftingToolTab = 2048, -- (See DraftSchematicObjectTemplate.h)
    complexity = 19, 
