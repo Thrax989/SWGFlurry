@@ -2,7 +2,7 @@ object_draft_schematic_weapon_lightsaber_one_handed_gcw_s01_gen5 = object_draft_
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Fourth Generation Lightsaber",
+   customObjectName = "Fifth Generation Lightsaber",
 
    craftingToolTab = 2048, -- (See DraftSchematicObjectTemplate.h)
    complexity = 19, 
