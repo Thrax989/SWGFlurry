@@ -11,6 +11,7 @@
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/Zone.h"
 #include "server/zone/managers/creature/CreatureManager.h"
+#include "server/zone/managers/city/CityManager.h"
 
 class RecruitSkillTrainerSuiCallback : public SuiCallback {
 public:
@@ -153,7 +154,7 @@ public:
 
 		case 31: trainerTemplatePath = "trainer_unarmed";
 				break;
-				
+
 		case 32: trainerTemplatePath = "trainer_weaponsmith";
 				break;
 				
@@ -161,7 +162,7 @@ public:
 				break;
 				
 		case 34: trainerTemplatePath = "trainer_meleebountyhunter";
-	
+
 		}
 
 		if (trainerTemplatePath != "") {
