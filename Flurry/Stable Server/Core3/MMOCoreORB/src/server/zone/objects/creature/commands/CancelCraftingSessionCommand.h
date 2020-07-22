@@ -33,7 +33,7 @@ public:
 		}
 
 		Locker locker(session);
-		session->cancelSessionCommand();
+		session->cancelSession();
 
 		return SUCCESS;
 	}
