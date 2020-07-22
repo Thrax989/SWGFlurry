@@ -188,7 +188,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
       "Darkness Falls, Dathomir Player City (5,000 Credits)", "pc_darkness_travel",
       "Bad Mutta Hutta, Hutta Player City (5,000 Credits)", "pc_bmh_travel",
       "Indestine, Hoth Player City (5,000 Credits)", "pc_indestine_travel",   
-      "Cyberdyne, Dathomir Player City (5,000 Credits)", "pc_cyberdyne_travel",      
+      "Cyberdyne, Dathomir Player City (5,000 Credits)", "pc_cyberdyne_travel",   
+      "Lafayette, Naboo Player City (5,000 Credits)", "pc_cyberdyne_travel",        
 		   },
 	}
 }
