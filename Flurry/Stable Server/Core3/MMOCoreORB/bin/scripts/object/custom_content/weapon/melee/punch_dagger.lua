@@ -231,7 +231,7 @@ object_weapon_melee_special_punch_dagger = object_weapon_melee_special_shared_pu
 	weaponType = UNARMEDWEAPON,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = KINETIC,
+	damageType = COLD,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = LIGHT,
