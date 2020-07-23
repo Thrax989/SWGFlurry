@@ -48,14 +48,14 @@ CreatureAreaPoisonCommand = {
 	animType = GENERATE_INTENSITY,
 	dotEffects = {
 	  DotEffect( 
-		POISONED, 
+		POISONED_EFFECT, 
 		{ "resistance_poison", "poison_disease_resist" },
 		ATTACK_POOL,
 		true,
 		0,
 		50,
 		50, 
-		300
+		120
 	  )
 	},
 
