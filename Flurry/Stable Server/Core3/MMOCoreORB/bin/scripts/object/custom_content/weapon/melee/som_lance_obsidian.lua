@@ -230,7 +230,7 @@ object_weapon_melee_polearm_som_lance_obsidian = object_weapon_melee_polearm_sha
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = KINETIC,
+	damageType = STUN,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = HEAVY,

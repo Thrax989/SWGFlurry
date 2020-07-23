@@ -9,9 +9,6 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/creature/events/SpiceDownerAnimationTask.h"
 #include "server/zone/objects/creature/buffs/SpiceDownerBuff.h"
-#include "server/zone/managers/visibility/VisibilityManager.h"
-
-
 
 void SpiceBuffImplementation::deactivate(bool removeModifiers) {
 	BuffImplementation::deactivate(true);
@@ -52,14 +49,5 @@ void SpiceBuffImplementation::setDownerAttributes(CreatureObject* creature, Buff
 			value += projvalue - 1;
 
 		buff->setAttributeModifier(attribute, -value);
-    
-    MissionManager* missionManager = player->getZoneServer()->getMissionManager();
-		int reward = 100000;
-		missionManager->addPlayerToBountyList(player->getObjectID(), reward);	
-		
-    VisibilityManager::instance()->increaseVisibility(player, 500);
-		VisibilityManager::instance()->addToVisibilityList(player);
-
-    
 	}
 }

@@ -187,7 +187,7 @@ object_weapon_melee_2h_sword_2h_sword_kashyyk_wod = object_weapon_melee_2h_sword
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = BLAST,
+	damageType = HEAT,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = MEDIUM,

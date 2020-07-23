@@ -187,7 +187,7 @@ object_weapon_melee_2h_sword_ep3_loot_sickle = object_weapon_melee_2h_sword_shar
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = BLAST,
+	damageType = COLD,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = MEDIUM,

@@ -231,7 +231,7 @@ object_weapon_melee_special_pvp_bf_knuckler = object_weapon_melee_special_shared
 	weaponType = UNARMEDWEAPON,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = KINETIC,
+	damageType = STUN,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = LIGHT,

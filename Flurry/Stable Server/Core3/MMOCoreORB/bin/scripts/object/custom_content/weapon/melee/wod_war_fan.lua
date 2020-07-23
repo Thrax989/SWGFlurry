@@ -231,7 +231,7 @@ object_weapon_melee_special_wod_war_fan = object_weapon_melee_special_shared_wod
 	weaponType = UNARMEDWEAPON,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = KINETIC,
+	damageType = BLAST,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = LIGHT,

@@ -187,7 +187,7 @@ object_weapon_melee_2h_sword_2h_sword_kun_massassi = object_weapon_melee_2h_swor
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = BLAST,
+	damageType = ACID,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = MEDIUM,

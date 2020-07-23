@@ -230,7 +230,7 @@ object_weapon_melee_polearm_polearm_heroic_sd = object_weapon_melee_polearm_shar
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = KINETIC,
+	damageType = ACID,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = HEAVY,

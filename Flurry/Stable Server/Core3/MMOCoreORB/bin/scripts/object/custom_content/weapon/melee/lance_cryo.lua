@@ -230,7 +230,7 @@ object_weapon_melee_polearm_lance_cryo = object_weapon_melee_polearm_shared_lanc
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = KINETIC,
+	damageType = COLD,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = HEAVY,
