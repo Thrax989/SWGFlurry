@@ -18,7 +18,7 @@ public:
 		visMod = 25;
 	}
 
-	virtual bool isJediCombatCommand() const override {
+	virtual bool isJediCombatCommand() {
 		return true;
 	}
 };

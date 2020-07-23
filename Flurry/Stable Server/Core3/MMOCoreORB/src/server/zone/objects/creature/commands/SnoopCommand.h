@@ -244,7 +244,7 @@ public:
 
 			AtomicTime nextExecutionTime;
 			Core::getTaskManager()->getNextExecutionTime(task, nextExecutionTime);
-			int64 miliDiff = nextExecutionTime.miliDifference();
+			uint64 miliDiff = nextExecutionTime.miliDifference();
 
 			buffer += ", Execution (server time): " + nextExecutionTime.getFormattedTime() + " (" + getTimeString(-miliDiff) + " from now)";
 
@@ -385,7 +385,7 @@ public:
 		body << "Total # of items:\t" << auctionsMap->getPlayerItemCount(target) << endl << endl;
 		body << "Vendors:" << endl;
 
-		const SortedVector<unsigned long long>* ownedVendors = targetGhost->getOwnedVendors();
+		SortedVector<unsigned long long>* ownedVendors = targetGhost->getOwnedVendors();
 		for (int i = 0; i < ownedVendors->size(); i++) {
 			ManagedReference<SceneObject*> vendor = creature->getZoneServer()->getObject(ownedVendors->elementAt(i));
 
@@ -558,7 +558,7 @@ public:
 			return GENERALERROR;
 		}
 
-		const BuffList* bList = target->getBuffList();
+		BuffList* bList = target->getBuffList();
 		if (bList == nullptr || bList->getBuffListSize() == 0) {
 			creature->sendSystemMessage("No Buffs to Display.");
 			return SUCCESS;
@@ -571,7 +571,7 @@ public:
 			buffText << buff->getBuffName() << ":" <<endl;
 			buffText << "\tCRC: 0x" << hex << buff->getBuffCRC() << endl;
 
-			const Vector<uint64>* secondaryCRCs = buff->getSecondaryBuffCRCs();
+			Vector<uint64>* secondaryCRCs = buff->getSecondaryBuffCRCs();
 			if (secondaryCRCs != nullptr && secondaryCRCs->size() > 0) {
 				buffText << "\tSecondary CRCs: "<< endl;
 				for (int j = 0; j < secondaryCRCs->size(); j++) {

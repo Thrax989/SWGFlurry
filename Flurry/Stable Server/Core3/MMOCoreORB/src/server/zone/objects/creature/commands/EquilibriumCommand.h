@@ -36,7 +36,7 @@ public:
 		if (!player->checkCooldownRecovery("innate_equilibrium")) {
 			StringIdChatParameter stringId;
 
-			const Time* cdTime = player->getCooldownTime("innate_equilibrium");
+			Time* cdTime = player->getCooldownTime("innate_equilibrium");
 
 			// Returns -time. Multiple by -1 to return positive.
 			int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;

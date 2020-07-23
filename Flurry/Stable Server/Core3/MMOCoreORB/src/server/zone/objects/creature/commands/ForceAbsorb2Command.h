@@ -15,11 +15,11 @@ public:
 		skillMods.put("force_absorb", 1);
 	}
 
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const override {
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
 		return doJediSelfBuffCommand(creature);
 	}
 
-	void handleBuff(SceneObject* creature, ManagedObject* object, int64 param) const override {
+	void handleBuff(SceneObject* creature, ManagedObject* object, int64 param) {
 		ManagedReference<CreatureObject*> player = creature->asCreatureObject();
 
 		if (player == nullptr)
