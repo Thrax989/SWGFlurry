@@ -230,7 +230,7 @@ object_weapon_melee_polearm_lance_kaminoan = object_weapon_melee_polearm_shared_
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = KINETIC,
+	damageType = BLAST,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = HEAVY,
