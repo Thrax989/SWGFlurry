@@ -730,7 +730,10 @@ void CreatureManagerImplementation::droidHarvest(Creature* creature, CreatureObj
 	if (creature->getParent().get() != nullptr)
 		quantityExtracted = 1;
 
-	int droidBonus = DroidMechanics::determineDroidSkillBonus(ownerSkill,harvestBonus,quantityExtracted);
+	int luckBonus = owner->getSkillMod("luck")*5; //0-20% harvest bonus for luck
+	int fsluckBonus = owner->getSkillMod("force_luck")*5; //0-20% harvest bonus for fsluck
+
+	int droidBonus = DroidMechanics::determineDroidSkillBonus(ownerSkill,harvestBonus + luckBonus + fsluckBonus,quantityExtracted);
 
 	quantityExtracted += droidBonus;
 	// add to droid inventory if there is space available, otherwise to player
