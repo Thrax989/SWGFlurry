@@ -104,7 +104,6 @@ void WearableObjectImplementation::generateSockets(CraftingValues* craftingValue
 
 	int skill = 0;
 	int luck = 0;
-	int force_luck = 0;
 
 	if (craftingValues != nullptr) {
 		ManagedReference<ManufactureSchematic*> manuSchematic = craftingValues->getManufactureSchematic();
@@ -112,30 +111,34 @@ void WearableObjectImplementation::generateSockets(CraftingValues* craftingValue
 			ManagedReference<DraftSchematic*> draftSchematic = manuSchematic->getDraftSchematic();
 			ManagedReference<CreatureObject*> player = manuSchematic->getCrafter().get();
 
-			if (player != nullptr && draftSchematic != nullptr)
-			{
-				force_luck = player->getSkillMod("force_luck");
-				String assemblySkill = draftSchematic->getAssemblySkill();
-				skill = player->getSkillMod(assemblySkill) * 2.5; // 0 to 250 max
-				luck = System::random(player->getSkillMod("luck"));
+			if (player != nullptr && draftSchematic != nullptr) {
+				String requiredAssemblySkill = draftSchematic->getAssemblySkill();
+				int assemblySkillMod = player->getSkillMod(requiredAssemblySkill);
+				assemblySkillMod += player->getSkillMod("force_assembly");
+				skill = assemblySkillMod * 3.45;  // 0 to 400 (345 max for master w/o tapes or force assembly
+
+				if (skill > 450) skill = 450;
 			}
 		}
 	}
-	int random = (System::random(750)) - 250; // -250 to 500
-	float roll = System::random(skill + luck + random);
+
+	int random = (System::random(500)) - 100; // -100 to 400  100% chance of 4 sockets w/master & +25 tapes & +20 force assembly, 69% chance w/master only, 13.8% chance w/novice only
+
+	float roll = skill + random;
 
 	int generatedCount = int(float(MAXSOCKETS * roll) / float(MAXSOCKETS * 100));
-
-	generatedCount += (force_luck / 4) * 2; // Force Luck grants up to 2 sockets guaranteed
 
 	if (generatedCount > MAXSOCKETS)
 		generatedCount = MAXSOCKETS;
 	if (generatedCount < 0)
 		generatedCount = 0;
+
 	// TODO: remove this backwards compatibility fix at next wipe. Only usedSocketCount variable should be used.
 	objectCreatedPreUsedSocketCountFix = false;
 	usedSocketCount = 0;
+
 	socketCount = generatedCount;
+
 	socketsGenerated = true;
 }
 

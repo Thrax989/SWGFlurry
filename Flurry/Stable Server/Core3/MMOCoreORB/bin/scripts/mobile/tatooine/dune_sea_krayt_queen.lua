@@ -34,25 +34,25 @@ dune_sea_queen = Creature:new {
 			groups = {
 				{group = "krayt_pearls_flawless", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "krayt_pearls_flawless", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 7500000
 		},
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "armor_attachments", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -76,7 +76,7 @@ dune_sea_queen = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 5000000
+			lootChance = 7500000
 		},
 		{
 			groups = {
@@ -94,7 +94,7 @@ dune_sea_queen = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 5000000
+			lootChance = 2500000
 		}
 	},
 	weapons = {},

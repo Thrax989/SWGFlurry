@@ -2363,4 +2363,7 @@ schematics = {
 	{path="object/draft_schematic/weapon/appearance/weapon_appearance_wod_polearm.iff"},
 	{path="object/draft_schematic/weapon/appearance/weapon_appearance_wod_war_fan.iff"},
 	{path="object/draft_schematic/weapon/appearance/weapon_appearance_wookiee_knuckler.iff"},
+	{path="object/draft_schematic/weapon/lightsaber_one_handed_gen5.iff"},
+	{path="object/draft_schematic/weapon/lightsaber_polearm_gen5.iff"},
+	{path="object/draft_schematic/weapon/lightsaber_two_handed_gen5.iff"},
 };

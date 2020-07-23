@@ -8,7 +8,7 @@ geo_power_cube_yellow = {
 	craftingValues = {
 		{"mindamage",10,20,0},
 		{"maxdamage",10,20,0},
-		{"armor_effectiveness",3,8,10},
+		{"attackspeed",-0.4,-0.7,1},
 		{"useCount",1,10,0},
 	},
 	customizationStringNames = {},

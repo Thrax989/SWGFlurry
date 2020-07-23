@@ -631,14 +631,7 @@ void CraftingSessionImplementation::initialAssembly(int clientCounter) {
 	manufactureSchematic->setCrafter(crafter);
 
 	String expskill = draftSchematic->getExperimentationSkill();
-	int expSkillMod = crafter->getSkillMod(expskill);
-
-	if (crafter->hasSkill("force_title_jedi_novice"))
-	{
-		expSkillMod += crafter->getSkillMod("force_experimentation");
-	}
-
-	experimentationPointsTotal = int(expSkillMod / 10);
+	experimentationPointsTotal = int((crafter->getSkillMod(expskill) + crafter->getSkillMod("force_experimentation")) / 10);
 	experimentationPointsUsed = 0;
 
 	// Calculate exp failure for red bars
@@ -934,25 +927,10 @@ void CraftingSessionImplementation::experiment(int rowsAttempted, const String& 
 		manufactureSchematic->increaseComplexity();
 		prototype->setComplexity(manufactureSchematic->getComplexity());
 
-		// Calculate chance for legendary bonus to amazing success roll
-		short modExpResult = experimentationResult;
-		if (experimentationResult == CraftingManager::AMAZINGSUCCESS)
-		{
-			int roll = System::random(100) + crafter->getSkillMod("luck");
-			if (crafter->hasSkill("force_title_jedi_novice"))
-			{
-				roll += crafter->getSkillMod("force_experimentation") + ((crafter->getSkillMod("force_luck")  / 4) * 25);
-			}
-
-			if (roll >= 90)
-			{
-				modExpResult = CraftingManager::EXCEPTIONALSUCCESS;
-				crafter->sendSystemMessage("Your amazing success had exceptional results!");
-			}
-		}
-
 		// Do the experimenting - sets new percentages
-		craftingManager->experimentRow(manufactureSchematic, craftingValues, rowEffected, pointsAttempted, failure, modExpResult);
+		craftingManager->experimentRow(manufactureSchematic, craftingValues, rowEffected,
+				pointsAttempted, failure, experimentationResult);
+
 	}
 
 	manufactureSchematic->setExperimentingCounter(

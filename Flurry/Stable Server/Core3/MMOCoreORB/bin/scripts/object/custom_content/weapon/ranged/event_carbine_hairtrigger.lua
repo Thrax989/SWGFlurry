@@ -233,7 +233,7 @@ object_weapon_ranged_carbine_event_carbine_hairtrigger = object_weapon_ranged_ca
 	damageType = ACID,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
-	armorPiercing = LIGHT,
+	armorPiercing = MEDIUM,
 
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
@@ -292,4 +292,5 @@ object_weapon_ranged_carbine_event_carbine_hairtrigger = object_weapon_ranged_ca
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
+
 ObjectTemplates:addTemplate(object_weapon_ranged_carbine_event_carbine_hairtrigger, "object/weapon/ranged/carbine/event_carbine_hairtrigger.iff")

@@ -453,6 +453,9 @@ includeFile("groups/vehicledeedsrare.lua")
 --Custom Capes
 includeFile("groups/wearables/capes.lua")
 
+--Custom Black Suns
+includeFile("groups/wearables/black_suns.lua")
+
 --CU/NGE Weapons
 includeFile("groups/weapon/nge_all.lua")
 
