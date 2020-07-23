@@ -231,7 +231,7 @@ object_weapon_melee_special_blasterfist = object_weapon_melee_special_shared_bla
 	weaponType = UNARMEDWEAPON,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = KINETIC,
+	damageType = BLAST,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = LIGHT,

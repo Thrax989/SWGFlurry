@@ -187,7 +187,7 @@ object_weapon_melee_2h_sword_2h_sword_pvp_bf_01 = object_weapon_melee_2h_sword_s
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = BLAST,
+	damageType = ELECTRICITY,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = MEDIUM,
