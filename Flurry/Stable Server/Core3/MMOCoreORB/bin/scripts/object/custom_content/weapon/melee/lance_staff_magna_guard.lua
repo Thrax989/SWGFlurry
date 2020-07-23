@@ -230,7 +230,7 @@ object_weapon_melee_polearm_lance_staff_magna_guard = object_weapon_melee_polear
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = KINETIC,
+	damageType = ELECTRICITY,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = HEAVY,
