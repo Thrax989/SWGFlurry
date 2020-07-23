@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_pistol_kyd21 = object
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/ranged/pistol/pistol_de_10.iff",
+   targetTemplate = "object/weapon/ranged/pistol/ep3/pistol_kyd21.iff",
 
    additionalTemplates = {
              }

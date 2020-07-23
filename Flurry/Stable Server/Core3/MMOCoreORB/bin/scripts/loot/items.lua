@@ -248,6 +248,8 @@ includeFile("items/creature/kliknik_chitin_armor_segment.lua")
 includeFile("items/creature/kliknik_gland.lua")
 includeFile("items/creature/krayt_composite_segment.lua")
 includeFile("items/creature/krayt_dragon_pearl.lua")
+includeFile("items/creature/krayt_dragon_pearl_premium.lua")
+includeFile("items/creature/krayt_dragon_pearl_flawless.lua")
 includeFile("items/creature/krayt_dragon_scales.lua")
 includeFile("items/creature/krayt_dragon_tissue_common.lua")
 includeFile("items/creature/krayt_dragon_tissue_rare.lua")
@@ -1542,7 +1544,7 @@ includeFile("items/wearables/cape/cape8.lua")
 includeFile("items/wearables/cape/cape9.lua")
 includeFile("items/wearables/cape/cape10.lua")
 
-
+includeFile("items/wearables/helmet/ace.lua")
 -- includeFile("custom_loot/items/weapons/mandalorian_saber.lua") -- Disabled, crashing server on creation
 
 -- Mando/BH Armor schematics  (Disabled till can be fixed)

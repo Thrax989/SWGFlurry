@@ -8,6 +8,11 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 	templateType = CHARACTERBUILDERTERMINAL,
 
 	itemList = {
+		  	"chandrila",
+		   {
+			" Starport (5,000 Credits)", "nayli_starport_travel",
+			" Starport (5,000 Credits)", "hanna_starport_travel",
+		   },
 		        "Corellia",
 		   {
 			"Bela Vistal Shuttleport A (5,000 Credits)", "corellia_bela_vistal_a_shuttleport_travel",
@@ -24,6 +29,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Tyrena Starport (5,000 Credits)", "tyrena_starport_travel",
 			"Vreni Island Shuttle (5,000 Credits)", "vreni_island_shuttle_travel",
 		   },
+		  	--"coruscant",
+		   --{
+			--" Starport (5,000 Credits)", "_starport_travel",
+		   --},
 			"Dantooine",
 		   {
 			"Dantooine Agro Outpost Starport (5,000 Credits)", "dantooine_agro_outpost_starport_travel",
@@ -36,10 +45,46 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Dathomir Science Outpost Starport (5,000 Credits)", "dathomir_science_outpost_starport_travel",
 			"Dathomir Village Shuttleport (5,000 Credits)", "dathomir_village_shuttleport_travel",
 		   },
+		  	"geonosis",
+		   {
+			" Starport (5,000 Credits)", "geonosis_starport_travel",
+		   },
+		  	--"Hoth",
+		  -- {
+			--" Starport (5,000 Credits)", "_starport_travel",
+		   --},
+		  	"hutta",
+		   {
+			"Bilbousa Starport (5,000 Credits)", "bilbousa_starport_travel",
+		   },
+		  	--"jakku",
+		   --{
+			--" Starport (5,000 Credits)", "_starport_travel",
+		   --},
+		  	--"kaas",
+		   --{
+			--" Starport (5,000 Credits)", "_starport_travel",
+		   --},
+		  	--"kashyyyk",
+		   --{
+			--" Starport (5,000 Credits)", "_starport_travel",
+		   --},
+		  	--"korriban",
+		   --{
+			--" Starport (5,000 Credits)", "_starport_travel",
+		   --},
 		  	"Lok",
 		   {
 			"Nym's Stronghold Starport (5,000 Credits)", "nyms_stronghold_starport_travel",
 		   },
+		  	--"mandalore",
+		   --{
+			--" Starport (5,000 Credits)", "_starport_travel",
+		   --},
+		  	--"mustafar",
+		   --{
+			--" Starport (5,000 Credits)", "_starport_travel",
+		   --},
 			"Naboo",
 		   {
 			"Dee'ja Peak Shuttleport (5,000 Credits)", "deeja_peak_shuttleport_travel",
@@ -63,6 +108,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Restuss Shuttleport (5,000 Credits)", "restuss_shuttleport_travel",
 			"Restuss Starport (5,000 Credits)", "restuss_starport_travel",
 		   },
+		  	--"taanab",
+		   --{
+			--" Starport (5,000 Credits)", "_starport_travel",
+		   --},
 		 	"Talus",
 		   {
 			"Talus Dearic Shuttleport (5,000 Credits)", "talus_dearic_shuttleport_travel",
@@ -134,7 +183,13 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Sundari, Endor Player City (5,000 Credits)", "pc_sundari_travel",
 			"Janta Town, Dantooine Player City (5,000 Credits)", "pc_jantatown_travel",
 			"Bastion, Dantooine Player City (5,000 Credits)", "pc_bastion_travel",	
-			"Riverside, Kashyyyk Player City (5,000 Credits)", "pc_riverside_travel",			
+			"Riverside, Kashyyyk Player City (5,000 Credits)", "pc_riverside_travel",
+			"Make America Krayt Again, Tatooine Player City (5,000 Credits)", "pc_maka_travel",
+      "Darkness Falls, Dathomir Player City (5,000 Credits)", "pc_darkness_travel",
+      "Bad Mutta Hutta, Hutta Player City (5,000 Credits)", "pc_bmh_travel",
+      "Indestine, Hoth Player City (5,000 Credits)", "pc_indestine_travel",   
+      "Cyberdyne, Dathomir Player City (5,000 Credits)", "pc_cyberdyne_travel",   
+      "Lafayette, Naboo Player City (5,000 Credits)", "pc_cyberdyne_travel",        
 		   },
 	}
 }

@@ -120,7 +120,7 @@ function CorelliaStaticSpawnsScreenPlay:spawnMobiles()
 	spawnMobile("corellia", "vicious_slice_hound", 300, getRandomNumber(10) + 755, 393.6, getRandomNumber(10) + 2509, getRandomNumber(360), 0)
 	spawnMobile("corellia", "vicious_slice_hound", 300, getRandomNumber(10) + 755, 393.6, getRandomNumber(10) + 2509, getRandomNumber(360), 0)
 	spawnMobile("corellia", "vicious_slice_hound", 300, getRandomNumber(10) + 755, 393.6, getRandomNumber(10) + 2509, getRandomNumber(360), 0)
-  spawnMobile("corellia", "vsh", 604800, getRandomNumber(10) + 755, 393.6, getRandomNumber(10) + 2509, getRandomNumber(360), 0)
+  spawnMobile("corellia", "vsh", getRandomNumber(10) * 60000, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
 
 	--Mysterious Shrine (-6900, 4500)
 	spawnMobile("corellia", "vicious_slice_hound", 300, getRandomNumber(5) + -6919, 449.7, getRandomNumber(5) + 4506, getRandomNumber(360), 0)

@@ -92,7 +92,7 @@ function wampa_caveScreenplay:spawnMobiles()
 		spawnMobile("hoth", "wampa", 300, 192.5, -66.7, -99.4, -90, 6452983)	
 		spawnMobile("hoth", "wampa", 300, 52.2, -67.9, -41.0, 77, 6452976)
 		spawnMobile("hoth", "wampa", 300, 129.5, -66.3, -114.0, 55, 6452982)
-		local pBoss = spawnMobile("hoth", "wampa_boss", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--Spawn WampaKing
+		local pBoss = spawnMobile("hoth", "wampa_boss", -1, 147.202, -67.2832, -121.275, 287, 6452982)--Spawn WampaKing
 		local creature = CreatureObject(pBoss)
 		print("WampaKing Spawned")
 		createObserver(OBJECTDESTRUCTION, "wampa_caveScreenplay", "bossDead", pBoss)--WampaKing Has Died Trigger Respawn Function
@@ -111,7 +111,7 @@ end
 --Respawn WampaKing Boss
 -----------------------
 function wampa_caveScreenplay:KillSpawn()
-		local pBoss = spawnMobile("hoth", "wampa_boss", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--Spawn WampaKing After Death 3 Hour Timer
+		local pBoss = spawnMobile("hoth", "wampa_boss", -1, 147.202, -67.2832, -121.275, 287, 6452982)--Spawn WampaKing After Death 3 Hour Timer
 		local creature = CreatureObject(pBoss)
 		print("WampaKing Respawned")
 		createObserver(OBJECTDESTRUCTION, "wampa_caveScreenplay", "bossDead", pBoss)

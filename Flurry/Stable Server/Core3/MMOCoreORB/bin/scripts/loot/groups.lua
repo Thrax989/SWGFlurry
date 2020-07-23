@@ -78,6 +78,7 @@ includeFile("groups/creature/krayt_tissue_common.lua")
 includeFile("groups/creature/krayt_tissue_rare.lua")
 includeFile("groups/creature/krayt_tissue_uncommon.lua")
 includeFile("groups/creature/krayt_pearls.lua")
+includeFile("groups/creature/krayt_pearls_flawless.lua")
 includeFile("groups/creature/mythosaur_common.lua")
 includeFile("groups/creature/peko_albatross.lua")
 includeFile("groups/creature/rancor_common.lua")
@@ -451,6 +452,9 @@ includeFile("groups/vehicledeedsrare.lua")
 
 --Custom Capes
 includeFile("groups/wearables/capes.lua")
+
+--Custom Black Suns
+includeFile("groups/wearables/black_suns.lua")
 
 --CU/NGE Weapons
 includeFile("groups/weapon/nge_all.lua")

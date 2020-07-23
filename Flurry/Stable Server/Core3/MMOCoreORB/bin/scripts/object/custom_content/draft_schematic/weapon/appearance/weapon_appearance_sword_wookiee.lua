@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_sword_wookiee = objec
    contribution = {100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/sword/sword_blade_ryyk.iff",
+   targetTemplate = "object/weapon/melee/sword/sword_wookiee.iff",
 
    additionalTemplates = {
              }

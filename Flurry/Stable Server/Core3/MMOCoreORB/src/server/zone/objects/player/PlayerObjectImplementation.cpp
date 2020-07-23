@@ -2324,7 +2324,7 @@ void PlayerObjectImplementation::doForceRegen() {
 		Reference<ForceMeditateTask*> medTask = creature->getPendingTask("forcemeditate").castTo<ForceMeditateTask*>();
 
 		if (medTask != nullptr)
-			modifier = 3;
+			modifier = 8;
 	}
 
 	int enhSkills = numSpecificSkills(creature, "force_discipline_enhancements_");

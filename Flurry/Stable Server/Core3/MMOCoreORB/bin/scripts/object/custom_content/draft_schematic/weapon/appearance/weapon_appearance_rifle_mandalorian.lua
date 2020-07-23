@@ -28,7 +28,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_rifle_mandalorian = o
    ingredientAppearance = {"", "", "", "", "", "", "muzzle", "stock"},
 
 
-   targetTemplate = "object/weapon/ranged/rifle/rifle_t21.iff",
+   targetTemplate = "object/weapon/ranged/rifle/rifle_mandalorian.iff",
 
    additionalTemplates = {
              }

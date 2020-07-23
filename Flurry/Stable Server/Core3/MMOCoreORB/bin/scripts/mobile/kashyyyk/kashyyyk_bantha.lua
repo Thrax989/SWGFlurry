@@ -1,5 +1,6 @@
 kashyyyk_bantha = Creature:new {
-	customName = "a Kashyyyk bantha",
+--	customName = "a Kashyyyk bantha",
+	objectName = "@mob/creature_names:kashyyyk_bantha",  
 	socialGroup = "",
 	faction = "",
 	level = 12,

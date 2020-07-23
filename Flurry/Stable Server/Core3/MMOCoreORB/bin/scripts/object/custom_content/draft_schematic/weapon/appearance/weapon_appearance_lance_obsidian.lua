@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_lance_obsidian = obje
    contribution = {100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/polearm/polearm_vibro_axe.iff",
+   targetTemplate = "object/weapon/melee/polearm/som_lance_obsidian.iff",
 
    additionalTemplates = {
              }

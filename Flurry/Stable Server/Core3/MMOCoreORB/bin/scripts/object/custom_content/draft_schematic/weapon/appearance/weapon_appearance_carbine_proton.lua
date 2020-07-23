@@ -28,7 +28,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_carbine_proton = obje
    ingredientAppearance = {"", "", "", "", "", "scope", "stock"},
 
 
-   targetTemplate = "object/weapon/ranged/carbine/carbine_dxr6.iff",
+   targetTemplate = "object/weapon/ranged/carbine/carbine_proton.iff",
 
    additionalTemplates = {
              }

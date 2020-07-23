@@ -225,12 +225,15 @@ object_weapon_melee_baton_baton_avatar_trando_stun_stick = object_weapon_melee_b
 				"object/creature/player/zabrak_female.iff" ,
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
+
+
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = MELEEATTACK,
+	weaponType = ONEHANDMELEEWEAPON,
 
-	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
-	damageType = KINETIC,
+	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
+	damageType = STUN,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = NONE,
@@ -241,7 +244,7 @@ object_weapon_melee_baton_baton_avatar_trando_stun_stick = object_weapon_melee_b
 	xpType = "combat_meleespecialize_onehand",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_baton_gaderiffi" },
+	certificationsRequired = { "cert_baton_stun" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "onehandmelee_accuracy" },
 
@@ -260,35 +263,35 @@ object_weapon_melee_baton_baton_avatar_trando_stun_stick = object_weapon_melee_b
 	damageModifiers = { },
 
 
-	-- The values below are the default values.  To be used for blue frog objects primarily
-	healthAttackCost = 47,
-	actionAttackCost = 26,
-	mindAttackCost = 10,
+	-- The values below are the default values.  To be used for blue frog objects primarily"Stun Baton":"1H Melee":"0":"stun"
+	healthAttackCost = 10,
+	actionAttackCost = 38,
+	mindAttackCost = 32,
 	forceCost = 0,
 
 	pointBlankRange = 0,
-	pointBlankAccuracy = -10,
+	pointBlankAccuracy = 0,
 
-	idealRange = 3,
-	idealAccuracy = -10,
+	idealRange = 2,
+	idealAccuracy = 0,
 
-	maxRange = 5,
-	maxRangeAccuracy = -10,
+	maxRange = 4,
+	maxRangeAccuracy = 0,
 
-	minDamage = 90,
-	maxDamage = 185,
+	minDamage = 50,
+	maxDamage = 110,
 
-	attackSpeed = 4,
+	attackSpeed = 3,
 
-	woundsRatio = 16,
+	woundsRatio = 2,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "SR", "SR", "SR", "SR", "SR", "SR", "SR", "XX", "SR", "XX", "SR", "SR", "SR"},
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "exp_durability", "expRange", "expRange", "null", "expRange", "null", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "maxrange", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 49, 98, 5.9, 11, 750, -15, -15, 3, -15, 4, 58, 31, 10},
-	experimentalMax = {0, 0, 91, 182, 4, 21, 1500, -5, -5, 3, -5, 4, 30, 15, 4},
+	experimentalMin = {0, 0, 28, 53, 4.2, 1, 750, -5, -5, 2, -5, 4, 10, 45, 39},
+	experimentalMax = {0, 0, 52, 98, 2.9, 3, 1500, 5, 5, 2, 5, 4, 4, 24, 19},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }

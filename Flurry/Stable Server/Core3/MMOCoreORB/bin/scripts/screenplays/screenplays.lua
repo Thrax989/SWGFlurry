@@ -564,7 +564,7 @@ includeFile("caves/corellia_afarathu_cave.lua")
 includeFile("caves/corellia_drall_cave.lua")
 includeFile("caves/corellia_lord_nyax_cult.lua")
 includeFile("caves/dantooine_force_crystal_hunter_cave.lua")
---includeFile("caves/dantooine_janta_cave.lua") --old janta king screenplay
+includeFile("caves/dantooine_janta_cave.lua") --old janta king screenplay
 includeFile("caves/dantooine_kunga_stronghold.lua")
 includeFile("caves/dantooine_lizard_cave.lua")
 includeFile("caves/dathomir_rancor_cave.lua")
@@ -687,6 +687,7 @@ includeFile("poi/tatooine_imperial_detachment_hq.lua")
 includeFile("poi/tatooine_imperial_oasis_base.lua")
 includeFile("poi/tatooine_jabbas_palace_mobs.lua")
 includeFile("poi/tatooine_jawa_traders.lua")
+includeFile("poi/tatooine_dune_sea_krayt_dragons.lua") -- Added Dune Sea Krayts
 includeFile("poi/tatooine_krayt_graveyard.lua")
 includeFile("poi/tatooine_sandcrawler_ne.lua")
 includeFile("poi/tatooine_village_ruins.lua")
