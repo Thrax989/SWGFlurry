@@ -89,7 +89,7 @@ function exar_kunScreenplay:spawnMobiles()
 		spawnMobile("dungeon2", "exar_guard", 1800, 42.7979, 9.68168e-09, 80.7347, 251, 14200878)
 		spawnMobile("dungeon2", "exar_guard", 1800, 1.52829, -0.0157904, 69.9522, 137, 14200878)
 		spawnMobile("dungeon2", "exar_guard", 1800, -8.53399, -4.81847e-08, 80.7342, 98, 14200878)
-		local pBoss = spawnMobile("dungeon2", "exar_guard", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--Spawn Exar
+		local pBoss = spawnMobile("dungeon2", "exar_boss", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--Spawn Exar
 		print("Exar Spawned")
 		createObserver(DAMAGERECEIVED, "exar_kunScreenplay", "npcDamageObserver", pBoss)
 		createObserver(OBJECTDESTRUCTION, "exar_kunScreenplay", "bossDead", pBoss)--Exar Has Died Trigger Respawn Function
@@ -271,7 +271,7 @@ if (CreatureObject(playerObject):isGrouped()) then
 	local groupSize = CreatureObject(playerObject):getGroupSize()
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
-		if pMember ~= nil then
+		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
 		local trapDmg = getRandomNumber(1000, 1500)
 		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
@@ -294,7 +294,7 @@ if (CreatureObject(playerObject):isGrouped()) then
 
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
-		if pMember ~= nil then
+		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
 		local trapDmg = getRandomNumber(1000, 2000)
 		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/commando_position_secured.cef", "")
