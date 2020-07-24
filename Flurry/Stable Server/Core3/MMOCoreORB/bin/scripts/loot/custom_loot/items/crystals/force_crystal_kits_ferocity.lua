@@ -1,4 +1,4 @@
-dmg_force_crystal_kits_ferocity = {
+force_crystal_kits_ferocity = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Kit's Ferocity",
@@ -12,7 +12,7 @@ dmg_force_crystal_kits_ferocity = {
 		{"attackhealthcost",0,5,0},
 		{"attackactioncost",0,5,0},
 		{"attackmindcost",0,5,0},
---		{"forcecost",0,4,0},
+		{"forcecost",0,4,0},
 		{"color",30,30,0},
 		{"quality",7,7,0},
 	},
@@ -20,4 +20,4 @@ dmg_force_crystal_kits_ferocity = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("dmg_force_crystal_kits_ferocity", dmg_force_crystal_kits_ferocity)
+addLootItemTemplate("force_crystal_kits_ferocity", force_crystal_kits_ferocity)

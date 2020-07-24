@@ -1,4 +1,4 @@
-dmg_crystal_quintessence_of_the_force = {
+crystal_quintessence_of_the_force = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -7,4 +7,4 @@ dmg_crystal_quintessence_of_the_force = {
 	}
 }
 
-addLootGroupTemplate("dmg_crystal_quintessence_of_the_force", dmg_crystal_quintessence_of_the_force)
+addLootGroupTemplate("crystal_quintessence_of_the_force", crystal_quintessence_of_the_force)

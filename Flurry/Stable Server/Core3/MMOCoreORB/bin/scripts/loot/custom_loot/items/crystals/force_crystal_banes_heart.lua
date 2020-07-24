@@ -1,4 +1,4 @@
-dmg_force_crystal_banes_heart = {
+force_crystal_banes_heart = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Banes's Heart",
@@ -12,7 +12,7 @@ dmg_force_crystal_banes_heart = {
 		{"attackhealthcost",0,5,0},
 		{"attackactioncost",0,5,0},
 		{"attackmindcost",0,5,0},
---		{"forcecost",0,4,0},
+		{"forcecost",0,4,0},
 		{"color",16,16,0},
 		{"quality",7,7,0},
 	},
@@ -20,4 +20,4 @@ dmg_force_crystal_banes_heart = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("dmg_force_crystal_banes_heart", dmg_force_crystal_banes_heart)
+addLootItemTemplate("force_crystal_banes_heart", force_crystal_banes_heart)

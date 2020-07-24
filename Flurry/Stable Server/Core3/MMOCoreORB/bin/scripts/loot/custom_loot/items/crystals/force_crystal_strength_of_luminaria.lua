@@ -1,4 +1,4 @@
-dmg_force_crystal_strength_of_luminaria = {
+force_crystal_strength_of_luminaria = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Strength of Luminaria",
@@ -12,7 +12,7 @@ dmg_force_crystal_strength_of_luminaria = {
 		{"attackhealthcost",0,5,0},
 		{"attackactioncost",0,5,0},
 		{"attackmindcost",0,5,0},
---		{"forcecost",0,4,0},
+		{"forcecost",0,4,0},
 		{"color",22,22,0},
 		{"quality",7,7,0},
 	},
@@ -20,4 +20,4 @@ dmg_force_crystal_strength_of_luminaria = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("dmg_force_crystal_strength_of_luminaria", dmg_force_crystal_strength_of_luminaria)
+addLootItemTemplate("force_crystal_strength_of_luminaria", force_crystal_strength_of_luminaria)

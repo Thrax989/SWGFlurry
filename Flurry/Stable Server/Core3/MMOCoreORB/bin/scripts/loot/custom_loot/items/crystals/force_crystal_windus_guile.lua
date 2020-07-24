@@ -1,4 +1,4 @@
-dmg_force_crystal_windus_guile = {
+force_crystal_windus_guile = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Windu's Guile",
@@ -12,7 +12,7 @@ dmg_force_crystal_windus_guile = {
 		{"attackhealthcost",0,5,0},
 		{"attackactioncost",0,5,0},
 		{"attackmindcost",0,5,0},
---		{"forcecost",0,4,0},
+		{"forcecost",0,4,0},
 		{"color",20,20,0},
 		{"quality",7,7,0},
 	},
@@ -20,4 +20,4 @@ dmg_force_crystal_windus_guile = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("dmg_force_crystal_windus_guile", dmg_force_crystal_windus_guile)
+addLootItemTemplate("force_crystal_windus_guile", force_crystal_windus_guile)

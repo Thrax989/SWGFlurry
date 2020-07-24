@@ -1,4 +1,4 @@
-dmg_force_crystal_quintessence_of_the_force = {
+force_crystal_quintessence_of_the_force = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Quintessence of the Force",
@@ -12,7 +12,7 @@ dmg_force_crystal_quintessence_of_the_force = {
 		{"attackhealthcost",0,5,0},
 		{"attackactioncost",0,5,0},
 		{"attackmindcost",0,5,0},
---		{"forcecost",0,4,0},
+		{"forcecost",0,4,0},
 		{"color",24,24,0},
 		{"quality",7,7,0},
 	},
@@ -20,4 +20,4 @@ dmg_force_crystal_quintessence_of_the_force = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("dmg_force_crystal_quintessence_of_the_force", dmg_force_crystal_quintessence_of_the_force)
+addLootItemTemplate("force_crystal_quintessence_of_the_force", force_crystal_quintessence_of_the_force)

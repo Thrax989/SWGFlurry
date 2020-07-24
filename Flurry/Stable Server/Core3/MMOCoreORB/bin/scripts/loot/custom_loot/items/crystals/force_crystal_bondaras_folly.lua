@@ -1,4 +1,4 @@
-dmg_force_crystal_bondaras_folly = {
+force_crystal_bondaras_folly = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Bondara's Folly",
@@ -12,7 +12,7 @@ dmg_force_crystal_bondaras_folly = {
 		{"attackhealthcost",0,5,0},
 		{"attackactioncost",0,5,0},
 		{"attackmindcost",0,5,0},
---		{"forcecost",0,4,0},
+		{"forcecost",0,4,0},
 		{"color",14,14,0},
 		{"quality",7,7,0},
 	},
@@ -20,4 +20,4 @@ dmg_force_crystal_bondaras_folly = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("dmg_force_crystal_bondaras_folly", dmg_force_crystal_bondaras_folly)
+addLootItemTemplate("force_crystal_bondaras_folly", force_crystal_bondaras_folly)
