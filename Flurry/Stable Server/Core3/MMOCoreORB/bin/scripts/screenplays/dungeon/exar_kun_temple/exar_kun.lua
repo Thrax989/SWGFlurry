@@ -271,7 +271,7 @@ if (CreatureObject(playerObject):isGrouped()) then
 	local groupSize = CreatureObject(playerObject):getGroupSize()
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
-		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 100) then
+		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
 		local trapDmg = getRandomNumber(1000, 1500)
 		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
@@ -294,7 +294,7 @@ if (CreatureObject(playerObject):isGrouped()) then
 
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
-		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 100) then
+		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
 		local trapDmg = getRandomNumber(1000, 2000)
 		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/commando_position_secured.cef", "")
