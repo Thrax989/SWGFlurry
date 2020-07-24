@@ -34,9 +34,9 @@ mauler = Creature:new {
 		},
 		{
 			groups = {
-				{group = "armor_attachments", chance = 10000000},
+				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 200000
 		},
 		{
 			groups = {
