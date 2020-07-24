@@ -230,7 +230,7 @@ object_weapon_ranged_carbine_ep3_loot_firestar = object_weapon_ranged_carbine_sh
 	attackType = RANGEDATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = ACID,
+	damageType = HEAT,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = MEDIUM,
