@@ -33,11 +33,17 @@ taung_warrior = Creature:new {
 		lootGroups = {
 		{
 			groups = {
+				{group = "death_watch_bunker_lieutenants", chance = 10000000},
+			},
+			lootChance = 3000000
+		},		
+		{
+			groups = {
 				{group = "death_watch_bunker_lootbox", chance = 2000000},
 				{group = "death_watch_bunker_commoners", chance = 5000000},
 				{group = "clothing_attachments", chance = 1500000},
 				{group = "armor_attachments", chance = 1500000},      
-      },
+                        },
 			lootChance = 2500000
 		},
 		{
