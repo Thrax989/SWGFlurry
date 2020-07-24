@@ -31,6 +31,12 @@ mauler_acolyte = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 200000
+		},	
+		{
+			groups = {
 				{group = "g_named_crystals", chance = 10000000},
 			},
 			lootChance = 8000000
