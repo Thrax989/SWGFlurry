@@ -34,6 +34,12 @@ isd_thrawn = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 1000000
+		},	
+		{
+			groups = {
 				{group = "g_named_crystals", chance = 10000000},
 			},
 			lootChance = 5000000
