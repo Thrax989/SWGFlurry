@@ -217,7 +217,7 @@ void EntertainingSessionImplementation::addHealingXpGroup(int xp) {
 			if (groupMember != nullptr && groupMember->isPlayerCreature()) {
 				Locker clocker(groupMember, entertainer);
 
-				if (groupMember->isEntertaining() && groupMember->isInRange(entertainer, 40.0f)
+				if (groupMember->isEntertaining() && groupMember->isInRange(entertainer, 60.0f)
 					&& groupMember->hasSkill("social_entertainer_novice")) {
 					String healxptype("entertainer_healing");
 
@@ -1084,7 +1084,7 @@ void EntertainingSessionImplementation::awardEntertainerExperience() {
 							Locker clocker(groupMember, player);
 
 							if (groupMember != player && groupMember->isEntertaining() &&
-								groupMember->isInRange(player, 40.0f) &&
+								groupMember->isInRange(player, 60.0f) &&
 								groupMember->hasSkill("social_entertainer_novice")) {
 								++groupBonusCount;
 							}
@@ -1171,7 +1171,7 @@ int EntertainingSessionImplementation::getBandAudienceSize() {
 				Locker clocker(groupMember, player);
 
 				if (groupMember != player && groupMember->isEntertaining() &&
-					groupMember->isInRange(player, 40.0f) &&
+					groupMember->isInRange(player, 60.0f) &&
 					groupMember->hasSkill("social_entertainer_novice")) {
 					ManagedReference<EntertainingSession *> session = groupMember->getActiveSession(
 							SessionFacadeType::ENTERTAINING).castTo<EntertainingSession *>();
