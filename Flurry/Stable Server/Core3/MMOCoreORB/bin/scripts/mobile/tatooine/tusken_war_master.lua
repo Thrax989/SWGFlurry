@@ -29,6 +29,12 @@ tusken_war_master = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 200000
+		},		
+		{
+			groups = {
 				{group = "clothing_attachments", chance = 10000000},
 			},
 			lootChance = 8000000

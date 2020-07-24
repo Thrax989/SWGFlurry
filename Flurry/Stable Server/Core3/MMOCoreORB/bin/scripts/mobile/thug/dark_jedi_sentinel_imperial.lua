@@ -33,6 +33,12 @@ dark_jedi_sentinel_imperial = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 200000
+		},	
+		{
+			groups = {
 				{group = "holocron_dark", chance = 600000},
 				{group = "holocron_light", chance = 600000},
 				{group = "power_crystals", chance = 600000},

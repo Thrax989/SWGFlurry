@@ -32,6 +32,12 @@ dune_sea_queen = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 1000000
+		},		
+		{
+			groups = {
 				{group = "krayt_pearls_flawless", chance = 10000000},
 			},
 			lootChance = 10000000

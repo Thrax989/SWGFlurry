@@ -230,7 +230,7 @@ object_weapon_ranged_rifle_som_rifle_dp23 = object_weapon_ranged_rifle_shared_so
 	attackType = RANGEDATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = ENERGY,
+	damageType = ELECTRICITY,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = HEAVY,

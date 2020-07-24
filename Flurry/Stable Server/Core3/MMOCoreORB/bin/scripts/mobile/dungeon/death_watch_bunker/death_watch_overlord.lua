@@ -31,6 +31,12 @@ death_watch_overlord = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 1000000
+		},		
+		{
+			groups = {
 				{group = "wearables_uncommon", chance = 10000000}
 			},
 			lootChance = 5000000

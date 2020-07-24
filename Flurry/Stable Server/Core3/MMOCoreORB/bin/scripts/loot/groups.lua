@@ -56,6 +56,12 @@ includeFile("groups/component_loot/chemistry_component_advanced.lua")
 includeFile("groups/component_loot/weapon_component_advanced.lua")
 includeFile("groups/component_loot/chemistry_component.lua")
 includeFile("groups/component_loot/weapon_component.lua")
+includeFile("groups/component_loot/jedi_comp_group.lua")
+
+includeFile("groups/component_loot/ancient_jedaii_holocron_dode.lua")
+includeFile("groups/component_loot/ancient_jedaii_holocron_cube.lua")
+includeFile("groups/component_loot/ancient_jedaii_holocron_triangle.lua")
+includeFile("groups/component_loot/legendary_comp_group.lua")
 
 -- corellian_corvette sub-folder
 includeFile("groups/corellian_corvette/imperial_corvette_loot.lua")

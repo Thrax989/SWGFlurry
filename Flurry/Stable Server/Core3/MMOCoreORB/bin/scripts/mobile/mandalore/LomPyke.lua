@@ -32,6 +32,12 @@ lom_pyke = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 1000000
+		},		
+		{
+			groups = {
 				{group = "death_watch_bunker_lootbox", chance = 10000000},
 			},
 			lootChance = 1000000
