@@ -230,7 +230,7 @@ object_weapon_ranged_carbine_som_carbine_republic_sfor = object_weapon_ranged_ca
 	attackType = RANGEDATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = ACID,
+	damageType = BLAST,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = MEDIUM,
