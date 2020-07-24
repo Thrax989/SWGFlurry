@@ -69,9 +69,9 @@ death_watch_s_battle_droid = Creature:new {
 		},
 		{
 			groups = {
-				{group = "junk", chance = 10000000}
+				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 200000
 		},
 		{
 			groups = {
