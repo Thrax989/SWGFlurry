@@ -32,6 +32,12 @@ shadow_collective_criminal = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "death_watch_bunker_lieutenants", chance = 10000000},
+			},
+			lootChance = 3000000
+		},		
+		{
+			groups = {
 				{group = "clothing_attachments", chance = 5000000},
  				{group = "armor_attachments", chance = 5000000},
 			},
