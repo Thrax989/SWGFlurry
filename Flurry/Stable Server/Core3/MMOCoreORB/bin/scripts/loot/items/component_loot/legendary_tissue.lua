@@ -7,8 +7,8 @@ legendary_tissue = {
 	directObjectTemplate = "object/tangible/component/weapon/blaster_power_handler_enhancement_krayt.iff",
 	craftingValues = {
 		{"maxdamage",225,350,0},
-    {"mindamage",175,225,0},		
-		{"attackspeed",0,-2.2,-0.5},
+    		{"mindamage",175,225,0},		
+		{"attackspeed",0,-2.2,1},
 		{"useCount",5,13,0},
 	},
 	customizationStringNames = {},
