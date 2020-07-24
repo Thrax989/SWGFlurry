@@ -3,7 +3,7 @@ legendary_bones = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "legendary_tooth", weight = 10000000}
+		{itemTemplate = "legendary_bones", weight = 10000000}
 	}
 }
 
