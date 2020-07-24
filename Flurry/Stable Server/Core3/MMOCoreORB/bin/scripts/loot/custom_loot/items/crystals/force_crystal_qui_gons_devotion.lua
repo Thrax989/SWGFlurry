@@ -1,4 +1,4 @@
-force_crystal_qui_gons_devotion = {
+dmg_force_crystal_qui_gons_devotion = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Qui-Gon's Devotion",
@@ -12,7 +12,7 @@ force_crystal_qui_gons_devotion = {
 		{"attackhealthcost",0,5,0},
 		{"attackactioncost",0,5,0},
 		{"attackmindcost",0,5,0},
-		{"forcecost",0,4,0},
+--		{"forcecost",0,4,0},
 		{"color",27,27,0},
 		{"quality",7,7,0},
 	},
@@ -20,4 +20,4 @@ force_crystal_qui_gons_devotion = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("force_crystal_qui_gons_devotion", force_crystal_qui_gons_devotion)
+addLootItemTemplate("dmg_force_crystal_qui_gons_devotion", dmg_force_crystal_qui_gons_devotion)

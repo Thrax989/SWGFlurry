@@ -1,4 +1,4 @@
-crystal_mundis_response = {
+dmg_crystal_mundis_response = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -7,4 +7,4 @@ crystal_mundis_response = {
 	}
 }
 
-addLootGroupTemplate("crystal_mundis_response", crystal_mundis_response)
+addLootGroupTemplate("dmg_crystal_mundis_response", dmg_crystal_mundis_response)

@@ -1,4 +1,4 @@
-crystal_prowess_of_plo_koon = {
+dmg_crystal_prowess_of_plo_koon = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -7,4 +7,4 @@ crystal_prowess_of_plo_koon = {
 	}
 }
 
-addLootGroupTemplate("crystal_prowess_of_plo_koon", crystal_prowess_of_plo_koon)
+addLootGroupTemplate("dmg_crystal_prowess_of_plo_koon", dmg_crystal_prowess_of_plo_koon)

@@ -1,4 +1,4 @@
-crystal_mauls_vengence = {
+dmg_crystal_mauls_vengence = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -7,4 +7,4 @@ crystal_mauls_vengence = {
 	}
 }
 
-addLootGroupTemplate("crystal_mauls_vengence", crystal_mauls_vengence)
+addLootGroupTemplate("dmg_crystal_mauls_vengence", dmg_crystal_mauls_vengence)

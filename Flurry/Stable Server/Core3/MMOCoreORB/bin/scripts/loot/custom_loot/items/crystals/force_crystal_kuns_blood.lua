@@ -1,4 +1,4 @@
-force_crystal_kuns_blood = {
+dmg_force_crystal_kuns_blood = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Kun's Blood",
@@ -12,7 +12,7 @@ force_crystal_kuns_blood = {
 		{"attackhealthcost",0,5,0},
 		{"attackactioncost",0,5,0},
 		{"attackmindcost",0,5,0},
-		{"forcecost",0,4,0},
+--		{"forcecost",0,4,0},
 		{"color",0,0,0},
 		{"quality",7,7,0},
 	},
@@ -20,4 +20,4 @@ force_crystal_kuns_blood = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("force_crystal_kuns_blood", force_crystal_kuns_blood)
+addLootItemTemplate("dmg_force_crystal_kuns_blood", dmg_force_crystal_kuns_blood)

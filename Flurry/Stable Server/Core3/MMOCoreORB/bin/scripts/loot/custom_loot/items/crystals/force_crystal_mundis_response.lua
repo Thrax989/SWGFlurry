@@ -1,4 +1,4 @@
-force_crystal_mundis_response = {
+dmg_force_crystal_mundis_response = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Mundi's Response",
@@ -12,7 +12,7 @@ force_crystal_mundis_response = {
 		{"attackhealthcost",0,5,0},
 		{"attackactioncost",0,5,0},
 		{"attackmindcost",0,5,0},
-		{"forcecost",0,4,0},
+--		{"forcecost",0,4,0},
 		{"color",21,21,0},
 		{"quality",7,7,0},
 	},
@@ -20,4 +20,4 @@ force_crystal_mundis_response = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("force_crystal_mundis_response", force_crystal_mundis_response)
+addLootItemTemplate("dmg_force_crystal_mundis_response", dmg_force_crystal_mundis_response)

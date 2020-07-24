@@ -1,4 +1,4 @@
-force_crystal_sunriders_destiny = {
+dmg_force_crystal_sunriders_destiny = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	customObjectName = "Sunrider's Destiny",
@@ -12,7 +12,7 @@ force_crystal_sunriders_destiny = {
 		{"attackhealthcost",0,5,0},
 		{"attackactioncost",0,5,0},
 		{"attackmindcost",0,5,0},
-		{"forcecost",0,4,0},
+--		{"forcecost",0,4,0},
 		{"color",29,29,0},
 		{"quality",7,7,0},
 	},
@@ -20,4 +20,4 @@ force_crystal_sunriders_destiny = {
 	customizationValues = {}
 }
 
-addLootItemTemplate("force_crystal_sunriders_destiny", force_crystal_sunriders_destiny)
+addLootItemTemplate("dmg_force_crystal_sunriders_destiny", dmg_force_crystal_sunriders_destiny)
