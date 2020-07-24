@@ -230,7 +230,7 @@ object_weapon_ranged_carbine_carbine_mandalorian = object_weapon_ranged_carbine_
 	attackType = RANGEDATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = ACID,
+	damageType = COLD,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = MEDIUM,
