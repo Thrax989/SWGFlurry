@@ -89,7 +89,7 @@ function exar_kunScreenplay:spawnMobiles()
 		spawnMobile("dungeon2", "exar_guard", 1800, 42.7979, 9.68168e-09, 80.7347, 251, 14200878)
 		spawnMobile("dungeon2", "exar_guard", 1800, 1.52829, -0.0157904, 69.9522, 137, 14200878)
 		spawnMobile("dungeon2", "exar_guard", 1800, -8.53399, -4.81847e-08, 80.7342, 98, 14200878)
-		local pBoss = spawnMobile("dungeon2", "exar_guard", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--Spawn Exar
+		local pBoss = spawnMobile("dungeon2", "exar_boss", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--Spawn Exar
 		print("Exar Spawned")
 		createObserver(DAMAGERECEIVED, "exar_kunScreenplay", "npcDamageObserver", pBoss)
 		createObserver(OBJECTDESTRUCTION, "exar_kunScreenplay", "bossDead", pBoss)--Exar Has Died Trigger Respawn Function
