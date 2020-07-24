@@ -200,7 +200,7 @@ includeFile("items/component_loot/infection_amplifier_advanced.lua")
 includeFile("items/component_loot/infection_amplifier.lua")
 includeFile("items/component_loot/liquid_delivery_suspension_advanced.lua")
 includeFile("items/component_loot/liquid_delivery_suspension.lua")
-includeFile("items/component_loot/orbalisk_shell.lua")
+--includeFile("items/component_loot/orbalisk_shell.lua") // not in use atm.
 includeFile("items/component_loot/projectile_feed_mechanism_advanced.lua")
 includeFile("items/component_loot/projectile_feed_mechanism.lua")
 includeFile("items/component_loot/projectile_pistol_barrel_advanced.lua")
