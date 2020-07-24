@@ -49,10 +49,9 @@ taung_warrior = Creature:new {
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 5000000},
- 				{group = "nge_all", chance = 5000000},       
+				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 500000
+			lootChance = 200000
 		},
 		{
 			groups = {
