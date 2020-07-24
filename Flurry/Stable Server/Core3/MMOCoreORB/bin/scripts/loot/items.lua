@@ -185,7 +185,7 @@ includeFile("items/coa/coa_rebel_message.lua")
 -- component loot sub-folder
 includeFile("items/component_loot/ancient_jedaii_holocron_dode.lua")
 includeFile("items/component_loot/ancient_jedaii_holocron_cube.lua")
-includeFile("items/component_loot/ancient_jedaii_holocron__triangle.lua")
+includeFile("items/component_loot/ancient_jedaii_holocron_triangle.lua")
 includeFile("items/component_loot/biologic_effect_controller_advanced.lua")
 includeFile("items/component_loot/biologic_effect_controller.lua")
 includeFile("items/component_loot/blaster_pistol_barrel_advanced.lua")
