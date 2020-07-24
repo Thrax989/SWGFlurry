@@ -25,6 +25,12 @@ mutated_baxter_stockman = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 1000000
+		},		
+		{
+			groups = {
 				{group = "clothing_attachments", chance = 5000000},
 				{group = "armor_attachments", chance = 5000000},
 				},
