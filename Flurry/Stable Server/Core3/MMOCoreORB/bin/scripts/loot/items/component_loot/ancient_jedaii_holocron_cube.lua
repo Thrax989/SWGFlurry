@@ -5,9 +5,7 @@ ancient_jedaii_holocron_cube = {
 	maximumLevel = -1,
 	customObjectName = "An Ancient Je'daii Holocron Cube",
 	directObjectTemplate = "object/tangible/furniture/all/frn_all_holocron_cube.iff",
-	craftingValues = {
-		{"restraineffectiveness",1,2,0},
-	},
+	craftingValues = {},
 	customizationStringNames = {},
 	customizationValues = {}
 }
