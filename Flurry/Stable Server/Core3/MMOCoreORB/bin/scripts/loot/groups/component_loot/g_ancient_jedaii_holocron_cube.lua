@@ -7,4 +7,4 @@ g_ancient_jedaii_holocron_cube = {
 	}
 }
 
-addLootGroupTemplate("ancient_jedaii_holocron_cube", ancient_jedaii_holocron_cube)
+addLootGroupTemplate("g_ancient_jedaii_holocron_cube", g_ancient_jedaii_holocron_cube)
