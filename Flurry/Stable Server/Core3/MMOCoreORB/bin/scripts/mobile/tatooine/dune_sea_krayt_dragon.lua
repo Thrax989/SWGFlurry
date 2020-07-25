@@ -3,14 +3,14 @@ dune_sea_krayt_dragon = Creature:new {
 	socialGroup = "krayt",
 	faction = "",
 	level = 75,
-	chanceHit = 4.0,
-	damageMin = 745,
-	damageMax = 1200,
+	chanceHit = 40.0,
+	damageMin = 2270,
+	damageMax = 4250,
 	baseXp = 11577,
-	baseHAM = 54000,
-	baseHAMmax = 64000,
+	baseHAM = 540000,
+	baseHAMmax = 640000,
 	armor = 2,
-	resists = {170,170,170,170,170,170,170,170,-1},
+	resists = {170,170,170,170,170,170,170,170,150},
 	meatType = "meat_carnivore",
 	meatAmount = 750,
 	hideType = "hide_bristley",
@@ -27,7 +27,7 @@ dune_sea_krayt_dragon = Creature:new {
 
 	templates = {"object/mobile/krayt_dragon_hue.iff"},
 	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
-	scale = 0.55;
+	scale = 1.0;
 
 	lootGroups = {
 		{
