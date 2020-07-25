@@ -1,4 +1,4 @@
-legendary_vibro_unit = {
+g_legendary_vibro_unit = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -7,4 +7,4 @@ legendary_vibro_unit = {
 	}
 }
 
-addLootGroupTemplate("legendary_vibro_unit", legendary_vibro_unit)
+addLootGroupTemplate("g_legendary_vibro_unit", g_legendary_vibro_unit)

@@ -7,8 +7,7 @@ legendary_comp_group = {
 		{itemTemplate = "legendary_tooth", weight = 2000000},
 		{itemTemplate = "legendary_bones", weight = 2000000},
 		{itemTemplate = "legendary_bone_shards", weight = 2000000},
-		{itemTemplate = "legendary_vibro_unit", weight = 2000000},   
-		
+		{itemTemplate = "legendary_vibro_unit", weight = 2000000}
 	}
 }
 

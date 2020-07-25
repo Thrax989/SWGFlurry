@@ -223,6 +223,11 @@ includeFile("items/component_loot/sword_core_advanced.lua")
 includeFile("items/component_loot/sword_core.lua")
 includeFile("items/component_loot/vibro_unit_advanced.lua")
 includeFile("items/component_loot/vibro_unit.lua")
+includeFile("items/component_loot/legendary_bone_shards.lua")
+includeFile("items/component_loot/legendary_bones.lua")
+includeFile("items/component_loot/legendary_tissue.lua")
+includeFile("items/component_loot/legendary_tooth.lua")
+includeFile("items/component_loot/legendary_vibro_unit.lua")
 
 --corellian_corvette sub-folder
 includeFile("items/corellian_corvette/shirt_s03_rebel.lua")

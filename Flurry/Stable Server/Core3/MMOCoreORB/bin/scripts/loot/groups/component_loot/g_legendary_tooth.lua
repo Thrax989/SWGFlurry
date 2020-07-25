@@ -1,4 +1,4 @@
-legendary_tooth = {
+g_legendary_tooth = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -7,4 +7,4 @@ legendary_tooth = {
 	}
 }
 
-addLootGroupTemplate("legendary_tooth", legendary_tooth)
+addLootGroupTemplate("g_legendary_tooth", g_legendary_tooth)
