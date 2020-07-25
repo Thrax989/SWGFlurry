@@ -1,4 +1,4 @@
-ancient_jedaii_holocron_dode = {
+g_ancient_jedaii_holocron_dode = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -7,4 +7,4 @@ ancient_jedaii_holocron_dode = {
 	}
 }
 
-addLootGroupTemplate("ancient_jedaii_holocron_dode", ancient_jedaii_holocron_dode)
+addLootGroupTemplate("g_ancient_jedaii_holocron_dode", g_ancient_jedaii_holocron_dode)

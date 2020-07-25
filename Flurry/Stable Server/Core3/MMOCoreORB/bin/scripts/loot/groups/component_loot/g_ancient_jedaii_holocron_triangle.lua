@@ -1,4 +1,4 @@
-ancient_jedaii_holocron_triangle = {
+g_ancient_jedaii_holocron_triangle = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -7,4 +7,4 @@ ancient_jedaii_holocron_triangle = {
 	}
 }
 
-addLootGroupTemplate("ancient_jedaii_holocron_triangle", ancient_jedaii_holocron_triangle)
+addLootGroupTemplate("g_ancient_jedaii_holocron_triangle", g_ancient_jedaii_holocron_triangle)

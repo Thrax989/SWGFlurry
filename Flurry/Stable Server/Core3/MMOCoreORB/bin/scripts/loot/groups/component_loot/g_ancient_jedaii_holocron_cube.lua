@@ -1,4 +1,4 @@
-ancient_jedaii_holocron_cube = {
+g_ancient_jedaii_holocron_cube = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
