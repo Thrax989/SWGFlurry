@@ -3,7 +3,7 @@
 ancient_jedaii_holocron_triangle = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "An Ancient Je'daii Holocron Triangle",
+	customObjectName = "An Ancient Jedaii Holocron Triangle",
 	directObjectTemplate = "object/tangible/furniture/all/frn_all_holocron_triangle.iff",
 	craftingValues = {},
 	customizationStringNames = {},

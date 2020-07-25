@@ -3,7 +3,7 @@
 ancient_jedaii_holocron_dode = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "An Ancient Je'daii Holocron Dode",
+	customObjectName = "An Ancient Jedaii Holocron Dode",
 	directObjectTemplate = "object/tangible/furniture/all/frn_all_holocron_dode.iff",
 	craftingValues = {},
 	customizationStringNames = {},
