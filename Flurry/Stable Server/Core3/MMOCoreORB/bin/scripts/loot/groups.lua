@@ -464,6 +464,10 @@ includeFile("groups/wearables/black_suns.lua")
 --CU/NGE Weapons
 includeFile("groups/weapon/nge_all.lua")
 
--- Mandalore BH/Mando Armor
---includeFile("custom_loot/groups/mandalore/mandalore_armor.lua")
--- includeFile("custom_loot/groups/weapons/melee/mandalorian_saber.lua") -- Disabled, crashing server on creation
+--Boss and Trash Loot table
+includeFile("groups/dungeon_boss/boss_common.lua")
+includeFile("groups/dungeon_boss/boss_rare.lua")
+includeFile("groups/dungeon_boss/trash_common.lua")
+includeFile("groups/dungeon_boss/trash_rare.lua")
+includeFile("groups/nonjedi_jewelry.lua")
+includeFile("groups/jedijewelry.lua")
