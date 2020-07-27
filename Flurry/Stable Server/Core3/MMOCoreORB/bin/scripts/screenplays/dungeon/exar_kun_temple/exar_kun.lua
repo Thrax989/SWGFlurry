@@ -119,7 +119,8 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
   	  	createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
 		self:spawnSupport(playerObject)
       		CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
-      		CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
+      		CreatureObject(bossObject):playEffect("clienteffect//mustafar/som_force_crystal_buff.cef", "")
+      		CreatureObject(bossObject):playEffect("clienteffect/mustafar/som_force_crystal_drain.cef", "")
       		CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
       		spatialChat(bossObject, "Boss Current Health = 90%")
 	end
@@ -257,6 +258,7 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
       		CreatureObject(bossObject):playEffect("clienteffect/mustafar/som_force_crystal_drain.cef", "")
       		CreatureObject(bossObject):playEffect("clienteffect/droid_effect_dry_ice.cef", "")
       		CreatureObject(bossObject):playEffect("clienteffect/death_trooper_infection_03.cef", "")
+      		CreatureObject(bossObject):playEffect("clienteffect/combat_pt_electricalfield.cef", "")
 		self:spawnSupport(playerObject)
 	end
 
@@ -325,7 +327,7 @@ function exar_kunScreenplay:npchealingmessage(bossObject)
 	local boss = LuaCreatureObject(bossObject)
       		CreatureObject(bossObject):playEffect("clienteffect/droid_effect_mind_bloom.cef", "")
       		CreatureObject(bossObject):playEffect("clienteffect/combat_trap_melee_ranged_def_1.cef", "")
-      		CreatureObject(bossObject):playEffect("clienteffect/mustafar/som_force_crystal_buff.cef", "")
+      		CreatureObject(bossObject):playEffect("clienteffect/bacta_jab.cef", "")
       		spatialChat(bossObject, "Health Illuminates Within Me!")
 	end
 -----------------------
@@ -335,9 +337,11 @@ function exar_kunScreenplay:spawnSupport(playerObject)
 	local pGuard1 = spawnMobile("dungeon2", "exar_guard", -1, 24.3953, -0.0114183, 97.9868, 176, 14200878)
 	spatialChat(pGuard1, "What in the blazes is going on?! Im Here! Im Here!!!!!!!!")
 	CreatureObject(pGuard1):engageCombat(playerObject)
+      	CreatureObject(pGuard1):playEffect("clienteffect/hh_15_torpedo_warhead.cef", "")
 	local pGuard2 = spawnMobile("dungeon2", "exar_guard", -1, 6.5411, -0.027719, 98.041, 173, 14200878)
 	spatialChat(pGuard2, "What in the blazes is going on?! Im Here! Im Here!!!!!!!!")
 	CreatureObject(pGuard2):engageCombat(playerObject)
+      	CreatureObject(pGuard2):playEffect("clienteffect/hh_15_torpedo_warhead.cef", "")
 end
 ---------------------------------------------------------------
 --Exar Has Died Respawn Exar With A New Dynamic Spawn
