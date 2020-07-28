@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_skirt_singing_mtn_02 = object_draft_sch
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Singing Mountain Clan Skirt",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_skirt_singing_mtn_02 = object_draft_sch
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/skirt/singing_mountain_clan_skirt_s02.iff",
 
    additionalTemplates = {
              },

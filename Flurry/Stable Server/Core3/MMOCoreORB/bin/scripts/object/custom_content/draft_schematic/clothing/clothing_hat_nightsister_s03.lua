@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_hat_nightsister_s03 = object_draft_sche
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Nightsister Hat",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_hat_nightsister_s03 = object_draft_sche
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/hat/nightsister_hat_s03.iff",
 
    additionalTemplates = {
              },

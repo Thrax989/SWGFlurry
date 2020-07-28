@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_hat_loveday_halo_02 = object_draft_sche
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Love Day Halo Hat",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_hat_loveday_halo_02 = object_draft_sche
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/hat/hat_loveday_halo_02.iff",
 
    additionalTemplates = {
              },

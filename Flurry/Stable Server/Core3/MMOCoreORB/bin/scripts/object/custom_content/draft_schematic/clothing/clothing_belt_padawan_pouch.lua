@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_belt_padawan_pouch = object_draft_schem
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Padawan Puch",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_belt_padawan_pouch = object_draft_schem
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/backpack/padawan_pouch.iff",
 
    additionalTemplates = {
              },

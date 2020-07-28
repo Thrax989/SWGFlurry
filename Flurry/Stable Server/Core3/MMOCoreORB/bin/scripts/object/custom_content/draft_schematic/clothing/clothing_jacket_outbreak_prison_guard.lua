@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_jacket_outbreak_prison_guard = object_d
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Outbreak Prison Guard Jacket",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_jacket_outbreak_prison_guard = object_d
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/jacket/jacket_outbreak_prison_guard.iff",
 
    additionalTemplates = {
              },

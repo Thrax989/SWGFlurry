@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_outbreak_prisoner_bodysuit = object_dra
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Outbreak Prisoner Bodysuit",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_outbreak_prisoner_bodysuit = object_dra
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/bodysuit/bodysuit_outbreak_prisoner.iff",
 
    additionalTemplates = {
              },

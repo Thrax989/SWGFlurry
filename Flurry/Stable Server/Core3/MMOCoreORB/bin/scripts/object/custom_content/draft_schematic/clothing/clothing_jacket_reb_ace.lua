@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_jacket_reb_ace = object_draft_schematic
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Rebel Ace Jacket",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_jacket_reb_ace = object_draft_schematic
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/jacket/jacket_ace_rebel_craft.iff",
 
    additionalTemplates = {
              },

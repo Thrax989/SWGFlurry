@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_hat_rebel_trooper = object_draft_schema
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Rebel Trooper Hat",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_hat_rebel_trooper = object_draft_schema
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/hat/hat_rebel_trooper_01.iff",
 
    additionalTemplates = {
              },

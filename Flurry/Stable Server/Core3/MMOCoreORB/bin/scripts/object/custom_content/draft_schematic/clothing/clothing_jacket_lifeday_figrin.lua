@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_jacket_lifeday_figrin = object_draft_sc
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Lifeday Jacket Firgrin Dan",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_jacket_lifeday_figrin = object_draft_sc
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/jacket/jacket_lifeday_figrin_dan.iff",
 
    additionalTemplates = {
              },

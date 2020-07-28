@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_hat_fedora = object_draft_schematic_clo
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Fedora Hat",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_hat_fedora = object_draft_schematic_clo
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/hat/hat_fedora__s01.iff",
 
    additionalTemplates = {
              },
