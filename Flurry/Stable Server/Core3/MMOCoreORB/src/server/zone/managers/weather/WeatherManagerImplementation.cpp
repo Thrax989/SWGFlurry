@@ -172,6 +172,9 @@ void WeatherManagerImplementation::applySandstormDamage(CreatureObject* player) 
 	if (player == nullptr)
 		return;
 
+	if (player->isDead() || player->isIncapacitated())
+		return;
+
 	PlayerObject* ghost = player->getPlayerObject();
 
 	//Check player's online status.
