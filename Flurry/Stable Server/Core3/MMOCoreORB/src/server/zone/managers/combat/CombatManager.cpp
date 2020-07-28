@@ -376,6 +376,13 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
  		weapon->setMaxRange(64);
 	}
 
+	//weapon ap check
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() <= 0) {
+  		Locker locker(weapon);
+ 		weapon->setArmorPiercing(1);
+  		info(attacker->getFirstName() + " Weapon Set From 0 AP To 1 AP", true);
+	}
+
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
 
