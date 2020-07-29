@@ -3735,10 +3735,14 @@ void PlayerManagerImplementation::lootAll(CreatureObject* player, CreatureObject
 
 	if (cashCredits > 0) {
 		int luck = player->getSkillMod("force_luck");
-		luck += player->getSkillMod("luck");
 
 		if (luck > 0)
 			cashCredits += (cashCredits * luck) / 20;
+
+		int bonusluck = player->getSkillMod("luck");
+
+		if (bonusluck > 0)
+			lootCredits += (lootCredits * bonusluck) / 20;
 
 		player->addCashCredits(cashCredits, true);
 		ai->setCashCredits(0);
