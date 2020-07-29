@@ -375,7 +375,7 @@ end
 --Exar Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
 -----------------------------------------------------------------------------
 function exar_kunScreenplay:KillBoss(pBoss)
-      	writeData("exar_kun:spawnState",0)
+      	writeData("exar_kunScreenplay:spawnState",0)
 	dropObserver(pBoss, OBJECTDESTRUCTION)
 	if SceneObject(pBoss) then
 		print("Exar Destroyed")
