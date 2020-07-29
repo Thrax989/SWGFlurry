@@ -19,12 +19,12 @@ function pvp:start()
 end
 
 function pvp:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("rori", "object/active_area.iff", 5214.2, 80.5986, 5808.41, 0, 0, 0, 0, 0)
+	local pSpawnArea = spawnSceneObject("rori", "object/active_area.iff", 5297.32, 78.565, 6115.49, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(20)
+	        activeArea:setRadius(30)
 	        createObserver(ENTEREDAREA, "pvp", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "pvp", "notifySpawnAreaLeave", pSpawnArea)
 	    end
