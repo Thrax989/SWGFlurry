@@ -173,6 +173,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Teleport To Boss Instance Teleport Room (5,000 Credits)", "teleportroom",
 		   },
+		 	"PvP Zone Rori Restuss",
+		   {
+			"Teleport To PvP Zone Rori Restuss (5,000 Credits)", "restuss_pvp_travel",
+		   },
 		 	"Player Cities",
 		   {
 			"Korrivan, Tatooine Player City (5,000 Credits)", "pc_korrivan_travel",
@@ -185,11 +189,11 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Bastion, Dantooine Player City (5,000 Credits)", "pc_bastion_travel",	
 			"Riverside, Kashyyyk Player City (5,000 Credits)", "pc_riverside_travel",
 			"Make America Krayt Again, Tatooine Player City (5,000 Credits)", "pc_maka_travel",
-      "Darkness Falls, Dathomir Player City (5,000 Credits)", "pc_darkness_travel",
-      "Bad Mutta Hutta, Hutta Player City (5,000 Credits)", "pc_bmh_travel",
-      "Indestine, Hoth Player City (5,000 Credits)", "pc_indestine_travel",   
-      "Cyberdyne, Dathomir Player City (5,000 Credits)", "pc_cyberdyne_travel",   
-      "Lafayette, Naboo Player City (5,000 Credits)", "pc_lafayette_travel",        
+			"Darkness Falls, Dathomir Player City (5,000 Credits)", "pc_darkness_travel",
+			"Bad Mutta Hutta, Hutta Player City (5,000 Credits)", "pc_bmh_travel",
+			"Indestine, Hoth Player City (5,000 Credits)", "pc_indestine_travel",   
+			"Cyberdyne, Dathomir Player City (5,000 Credits)", "pc_cyberdyne_travel",   
+			"Lafayette, Naboo Player City (5,000 Credits)", "pc_lafayette_travel",        
 		   },
 	}
 }
