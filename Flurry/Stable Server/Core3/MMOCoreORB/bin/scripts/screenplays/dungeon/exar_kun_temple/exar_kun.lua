@@ -94,6 +94,15 @@ function exar_kunScreenplay:spawnMobiles()
 		createObserver(DAMAGERECEIVED, "exar_kunScreenplay", "npcDamageObserver", pBoss)
 		createObserver(OBJECTDESTRUCTION, "exar_kunScreenplay", "bossDead", pBoss)--Exar Has Died Trigger Respawn Function
 end
+-----------------------
+--Respawn Exar Boss
+-----------------------
+function exar_kunScreenplay:KillSpawn()
+		local pBoss = spawnMobile("dungeon2", "exar_boss", -1, 15.1374, -3.58883e-09, 85.2292, 184, 14200878)--Spawn Exar After Death 3 Hour Timer
+		print("Exar Respawned")
+		createObserver(DAMAGERECEIVED, "exar_kunScreenplay", "npcDamageObserver", pBoss)
+		createObserver(OBJECTDESTRUCTION, "exar_kunScreenplay", "bossDead", pBoss)
+end
 -----------------------------
 --Exar Damage Observers
 -----------------------------
@@ -366,7 +375,7 @@ end
 --Exar Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
 -----------------------------------------------------------------------------
 function exar_kunScreenplay:KillBoss(pBoss)
-      	writeData("exar_kun:spawnState",0)
+      	writeData("exar_kunScreenplay:spawnState",0)
 	dropObserver(pBoss, OBJECTDESTRUCTION)
 	if SceneObject(pBoss) then
 		print("Exar Destroyed")

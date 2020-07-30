@@ -376,6 +376,37 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
  		weapon->setMaxRange(64);
 	}
 
+	//weapon ap checks
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() != 0 && weapon->getArmorPiercing() != 1 && weapon->getArmorPiercing() != 2 && weapon->getArmorPiercing() != 3) {
+  		Locker locker(weapon);
+ 		weapon->setArmorPiercing(0);
+  		//info(attacker->getFirstName() + " Weapon Set To 0 AP", true);
+	}
+/*
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() == 0) {
+  		Locker locker(weapon);
+ 		weapon->setArmorPiercing(0);
+  		//info(attacker->getFirstName() + " Weapon Set To 0 AP", true);
+	}
+
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() == 1) {
+  		Locker locker(weapon);
+ 		weapon->setArmorPiercing(1);
+  		//info(attacker->getFirstName() + " Weapon Set To 1 AP", true);
+	}
+
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() == 2) {
+  		Locker locker(weapon);
+ 		weapon->setArmorPiercing(2);
+  		//info(attacker->getFirstName() + " Weapon Set To 2 AP", true);
+	}
+
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() == 3) {
+  		Locker locker(weapon);
+ 		weapon->setArmorPiercing(3);
+  		//info(attacker->getFirstName() + " Weapon Set To 3 AP", true);
+	}
+*/
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
 

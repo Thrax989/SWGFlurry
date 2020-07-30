@@ -2379,5 +2379,7 @@ schematics = {
 	{path="object/draft_schematic/weapon/lightsaber_two_handed_gen4_must.iff"},
 	{path="object/draft_schematic/weapon/lightsaber_two_handed_gen5.iff"},
 	{path="object/draft_schematic/weapon/lightsaber_two_handed_pvp_bf.iff"},
-	{path="object/object/draft_schematic/weapon/lightsaber_two_handed_pvp_bf_gen5.iff"},
+	{path="object/draft_schematic/weapon/lightsaber_two_handed_pvp_bf_gen5.iff"},
+	{path="object/draft_schematic/weapon/lightsaber/lightsaber_onehanded_gen5_exar_kun.iff"},
+	{path="object/draft_schematic/weapon/lightsaber/lightsaber_polearm_gen5_exar_kun.iff"},
 };

@@ -78,7 +78,8 @@ includeFile("gcw/newsnet.lua")
 includeFile("gcw/recruiters/recruiterConvoHandler.lua")
 includeFile("gcw/recruiters/recruiterScreenplay.lua")
 includeFile("crackdown/cantina.lua")
-
+includeFile("gcw/pvp.lua")
+includeFile("gcw/restuss_cloner.lua")
 -- Quest Tasks
 includeFile("quest_tasks/task.lua")
 includeFile("quest_tasks/persistent_event.lua")
