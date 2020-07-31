@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_scout_trooper_armor_scout_trooper_boots_camo = object_tangible_wearables_armor_scout_trooper_shared_armor_scout_trooper_boots_camo:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Imperial",
+
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",

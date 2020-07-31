@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_rebel_snow_armor_rebel_snow_chest_plate = object_tangible_wearables_armor_rebel_snow_shared_armor_rebel_snow_chest_plate:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Imperial",
+
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",

@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_bicep_l_gcw = object_tangible_wearables_armor_galactic_marine_shared_armor_galactic_marine_bicep_l_gcw:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Imperial",
+
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",
