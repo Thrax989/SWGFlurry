@@ -46,7 +46,7 @@ object_tangible_wearables_armor_clone_trooper_armor_clone_trooper_rebel_s01_legg
 
 	--objectMenuComponent = {"cpp", "ArmorObjectMenuComponent"},
 
-	faction = "Rebel",
+
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",

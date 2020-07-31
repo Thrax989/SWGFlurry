@@ -47,7 +47,7 @@ object_tangible_wearables_armor_mandalorian_rebel_armor_mandalorian_rebel_leggin
 	
 	objectMenuComponent = "ArmorObjectMenuComponent",
 
-	faction = "Rebel",
+
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",

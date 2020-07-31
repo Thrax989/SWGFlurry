@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_gloves = object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_gloves:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Imperial",
+
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",

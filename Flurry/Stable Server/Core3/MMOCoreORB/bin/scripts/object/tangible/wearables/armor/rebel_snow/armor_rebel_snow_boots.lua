@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_rebel_snow_armor_rebel_snow_boots = object_tangible_wearables_armor_rebel_snow_shared_armor_rebel_snow_boots:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Imperial",
+
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
