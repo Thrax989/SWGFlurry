@@ -47,7 +47,7 @@ object_tangible_wearables_armor_marine_armor_marine_chest_plate_rebel = object_t
 
 	objectMenuComponent = "ArmorObjectMenuComponent", 
 
-	faction = "Rebel",
+
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",

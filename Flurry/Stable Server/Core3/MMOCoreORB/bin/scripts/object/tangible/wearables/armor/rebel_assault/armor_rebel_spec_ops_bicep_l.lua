@@ -44,8 +44,6 @@
 object_tangible_wearables_armor_rebel_assault_armor_rebel_spec_ops_bicep_l = object_tangible_wearables_armor_rebel_assault_shared_armor_rebel_spec_ops_bicep_l:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Rebel",
-
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",

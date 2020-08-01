@@ -44,7 +44,6 @@
 object_tangible_wearables_armor_galactic_marine_armor_galactic_marine_bicep_l = object_tangible_wearables_armor_galactic_marine_shared_armor_galactic_marine_bicep_l:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Imperial",
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",

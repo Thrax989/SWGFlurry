@@ -45,7 +45,7 @@ object_tangible_wearables_armor_mandalorian_rebel_armor_mandalorian_rebel_helmet
 
 	templateType = ARMOROBJECT,
 
-	faction = "Rebel",
+
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",

@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_rebel_assault_armor_rebel_spec_ops_gloves = object_tangible_wearables_armor_rebel_assault_shared_armor_rebel_spec_ops_gloves:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Rebel",
+
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",

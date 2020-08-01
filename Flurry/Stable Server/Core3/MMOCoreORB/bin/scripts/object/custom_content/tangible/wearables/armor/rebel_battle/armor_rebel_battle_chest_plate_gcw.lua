@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_rebel_battle_armor_rebel_battle_chest_plate_gcw = object_tangible_wearables_armor_rebel_battle_shared_armor_rebel_battle_chest_plate_gcw:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Rebel",
+
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",

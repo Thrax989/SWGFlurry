@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_assault_trooper_armor_assault_trooper_boots = object_tangible_wearables_armor_assault_trooper_shared_armor_assault_trooper_boots:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Imperial",
+
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",

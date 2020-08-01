@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_pvp_officer_chest_plate = object_tangible_wearables_armor_stormtrooper_shared_armor_stormtrooper_pvp_officer_chest_plate:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Imperial",
+
 
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/smc_female.iff",

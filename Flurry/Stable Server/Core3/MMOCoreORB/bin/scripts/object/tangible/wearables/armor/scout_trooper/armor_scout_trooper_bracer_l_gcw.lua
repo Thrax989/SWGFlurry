@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_scout_trooper_armor_scout_trooper_bracer_l_gcw = object_tangible_wearables_armor_scout_trooper_shared_armor_scout_trooper_bracer_l_gcw:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Imperial",
+
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
