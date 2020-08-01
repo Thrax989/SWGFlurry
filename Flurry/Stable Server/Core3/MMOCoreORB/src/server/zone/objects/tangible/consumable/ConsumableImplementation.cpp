@@ -150,18 +150,20 @@ int ConsumableImplementation::handleObjectMenuSelect(CreatureObject* player, byt
 	if (isFood())
 		availfill = ghost->getFoodFillingMax() - ghost->getFoodFilling();
 
+
 	if (isDrink())
 		availfill = ghost->getDrinkFillingMax() - ghost->getDrinkFilling();
 
-	if (filling > availfill) {
-		if (isFood())
-			player->sendSystemMessage("You are too full to eat that. You have " + String::valueOf(availfill) + " fill remaining."); //You are too full to eat that.
-		}
 
-		if (isDrink())
+	if (filling > availfill) {
+		if (isFood()){
+			player->sendSystemMessage("You are too full to eat that. You have " + String::valueOf(availfill) + " fill remaining."); //You are too full to eat that.
+			}
+
+		if (isDrink()){
 			String msg = ", available filling: " + String::valueOf(availfill);
 			player->sendSystemMessage("You are too full to drink that. You have " + String::valueOf(availfill) + " fill remaining."); //You are too full to eat that.
-		}
+			}
 
 		return 1;
 	}
