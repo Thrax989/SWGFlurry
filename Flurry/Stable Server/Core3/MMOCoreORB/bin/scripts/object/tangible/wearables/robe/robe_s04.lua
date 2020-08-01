@@ -224,6 +224,7 @@ object_tangible_wearables_robe_robe_s04 = object_tangible_wearables_robe_shared_
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
+
 	numberExperimentalProperties = {1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX"},
 	experimentalWeights = {1, 1, 1, 1},
@@ -245,5 +246,6 @@ object_tangible_wearables_robe_robe_s04 = object_tangible_wearables_robe_shared_
 	attributeListComponent = "JediRobeAttributeListComponent",
 
 }
+
 
 ObjectTemplates:addTemplate(object_tangible_wearables_robe_robe_s04, "object/tangible/wearables/robe/robe_s04.iff")
