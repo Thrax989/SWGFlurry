@@ -160,12 +160,12 @@ class FindTargetTask : public Task, public Logger {
 		successChance -= ((getTargetLevel(player, objective)) / 3);
 
 		if (successChance < 5) {
-			successChance = 5;
-		} else if (successChance > 95) {
+			successChance = 45;
+		} else if (successChance > 50) {
 			successChance = 95;
 		}
 
-		int randomValue = System::random(80); /* reduced from 100, reduced bh droid chance of failing. */
+		int randomValue = System::random(100);
 
 		return randomValue < successChance;
 	}
