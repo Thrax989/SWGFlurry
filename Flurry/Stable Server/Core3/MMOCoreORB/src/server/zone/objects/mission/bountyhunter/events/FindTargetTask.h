@@ -160,8 +160,8 @@ class FindTargetTask : public Task, public Logger {
 		successChance -= ((getTargetLevel(player, objective)) / 3);
 
 		if (successChance < 5) {
-			successChance = 45;
-		} else if (successChance > 50) {
+			successChance = 5;
+		} else if (successChance > 95) {
 			successChance = 95;
 		}
 
