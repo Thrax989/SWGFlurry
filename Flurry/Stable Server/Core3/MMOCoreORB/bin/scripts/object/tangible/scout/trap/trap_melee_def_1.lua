@@ -62,7 +62,7 @@ object_tangible_scout_trap_trap_melee_def_1 = object_tangible_scout_trap_shared_
 	maxDamage = 60,
 
 	duration = 10,
-	state = IMMOBILIZED,
+	state = FROZEN,
 	defenseMod = "",
 
 	successMessage = "trap_melee_def_1_effect",
