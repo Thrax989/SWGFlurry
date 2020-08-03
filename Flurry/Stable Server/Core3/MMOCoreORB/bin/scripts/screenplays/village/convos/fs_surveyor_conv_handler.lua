@@ -9,9 +9,11 @@ function villageSurveyorConvoHandler:getInitialScreen(pPlayer, pNpc, pConvTempla
 
 	if (phase ~= 2 and phase ~= 3) then
 		return convoTemplate:getScreen("intro_wrong_phase")
-	elseif (phase == 2) then
+	elseif (not CreatureObject(pPlayer):hasSkill("crafting_artisan_novice")) then
+		return convoTemplate:getScreen("intro_no_skill")
+	elseif (phase == 2 and VillageJediManagerCommon.hasUnlockedBranch(pPlayer, "force_sensitive_heightened_senses_surveying")) then
 		return convoTemplate:getScreen("intro_completed_current_phase")
-	elseif (phase == 3) then
+	elseif (phase == 3 and VillageJediManagerCommon.hasUnlockedBranch(pPlayer, "force_sensitive_heightened_senses_luck")) then
 		return convoTemplate:getScreen("intro_completed_current_phase")
 	end
 
