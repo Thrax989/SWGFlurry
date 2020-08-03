@@ -29,13 +29,13 @@ mauler_lord = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "legendary_comp_group", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
 			lootChance = 1000000
 		},		
 		{
 			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
 			lootChance = 1000000
 		},	
@@ -47,7 +47,7 @@ mauler_lord = Creature:new {
 		},
 		{
 			groups = {
-				{group = "capes", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2500000
 		},
@@ -71,93 +71,93 @@ mauler_lord = Creature:new {
 		},
 		{
 			groups = {
-				{group = "neck_crafter", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2500000
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter_second", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2500000
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2500000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings_ranged", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2500000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2500000
 		},
 		{
 			groups = {
-				{group = "jedi_earings", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "jedi_bracelets", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "jedi_neck", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "jedi_rings", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "g_necklaces", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "armor_attachments", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "nge_house_loot_deed_01", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "vehicledeedsnormal", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 3000000
 		},
 		{
 			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1500000
+			lootChance = 1000000
 		},
 		{
 			groups = {

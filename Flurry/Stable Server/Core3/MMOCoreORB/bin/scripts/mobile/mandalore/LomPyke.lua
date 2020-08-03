@@ -32,7 +32,7 @@ lom_pyke = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
 			lootChance = 1000000
 		},		
@@ -62,19 +62,19 @@ lom_pyke = Creature:new {
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings_ranged", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
@@ -104,19 +104,19 @@ lom_pyke = Creature:new {
 		},
 		{
 			groups = {
-				{group = "g_necklaces", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "armor_attachments", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -134,15 +134,15 @@ lom_pyke = Creature:new {
 		},
 		{
 			groups = {
-				{group = "vehicledeedsnormal", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 1000000
 		},
 		{
 			groups = {

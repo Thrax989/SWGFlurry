@@ -38,8 +38,8 @@ shadow_collective_criminal = Creature:new {
 		},		
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 5000000},
- 				{group = "armor_attachments", chance = 5000000},
+				{group = "trash_common", chance = 5000000},
+ 				{group = "trash_rare", chance = 5000000},
 			},
 			lootChance = 10000000
 		},
@@ -54,7 +54,7 @@ shadow_collective_criminal = Creature:new {
 		},
 		{
 			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
+				{group = "trash_rare", chance = 10000000},
 			},
 			lootChance = 200000
 		},
