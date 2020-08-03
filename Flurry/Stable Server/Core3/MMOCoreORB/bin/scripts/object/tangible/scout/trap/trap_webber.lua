@@ -47,7 +47,7 @@ object_tangible_scout_trap_trap_webber = object_tangible_scout_trap_shared_trap_
 	objectMenuComponent = "TrapMenuComponent",
 
 	useCount = 5,
-	skillRequired = 30,
+	skillRequired = 25,
 
 	skillMods = {},
 
