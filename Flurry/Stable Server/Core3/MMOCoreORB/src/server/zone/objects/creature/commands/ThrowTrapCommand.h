@@ -25,11 +25,6 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		int skillLevel = creature->getSkillMod("trapping");
-		if (skillLevel < 1 ) {
-			creature->sendSystemMessage("@trap/trap:trap_no_skill");
-			return GENERALERROR;
-		}
 
 		StringTokenizer tokenizer(arguments.toString());
 
@@ -54,7 +49,7 @@ public:
 			ManagedReference<CreatureObject*> targetCreature =
 					server->getZoneServer()->getObject(target).castTo<CreatureObject*>();
 
-			if (targetCreature == nullptr ) {
+			if (targetCreature == nullptr) {
 				creature->sendSystemMessage("@trap/trap:sys_creatures_only");
 				return GENERALERROR;
 			}
@@ -90,21 +85,8 @@ public:
 
 			int effectType = 0;
 
-			// No skill Check
-			int trappingSkill = creature->getSkillMod("trapping");
-			if(trappingSkill < 1) {
-				creature->sendSystemMessage("@trap/trap:trap_no_skill");
-				return GENERALERROR;
-			}
-
-			/// Skill too low check
-			if(trappingSkill < trapData->getSkillRequired()) {
-				creature->sendSystemMessage("@trap/trap:trap_no_skill_this");
-				return GENERALERROR;
-			}
-
 			int targetDefense = targetCreature->getSkillMod(trapData->getDefenseMod());
-			Time* cooldown = creature->getCooldownTime("throwtrap");
+			const Time* cooldown = creature->getCooldownTime("throwtrap");
 			if((cooldown != nullptr && !cooldown->isPast()) ||
 					creature->getPendingTask("throwtrap") != nullptr) {
 				creature->sendSystemMessage("@trap/trap:sys_not_ready");
@@ -144,10 +126,10 @@ public:
 
 				Locker locker(buff);
 
-				if(state != 0 && state != CreatureState::FROZEN )
+				if(state != 0)
 					buff->addState(state);
 
-				const VectorMap<String, int>* skillMods = trapData->getSkillMods();
+				const auto skillMods = trapData->getSkillMods();
 				for(int i = 0; i < skillMods->size(); ++i) {
 					buff->setSkillModifier(skillMods->elementAt(i).getKey(), skillMods->get(i));
 				}
