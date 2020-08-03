@@ -85,6 +85,13 @@ public:
 
 			int effectType = 0;
 
+			// No skill Check
+			int trappingSkill = creature->getSkillMod("trapping");
+			if(trappingSkill < 1) {
+				creature->sendSystemMessage("@trap/trap:trap_no_skill");
+				return GENERALERROR;
+			}
+
 			int targetDefense = targetCreature->getSkillMod(trapData->getDefenseMod());
 			const Time* cooldown = creature->getCooldownTime("throwtrap");
 			if((cooldown != nullptr && !cooldown->isPast()) ||
