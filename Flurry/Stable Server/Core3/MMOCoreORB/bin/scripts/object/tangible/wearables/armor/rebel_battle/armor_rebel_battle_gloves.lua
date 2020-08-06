@@ -1,4 +1,4 @@
-object_tangible_wearables_armor_rebel_battle_armor_rebel_battle_gloves = object_tangible_wearables_armor_rebel_battle_shared_armor_rebel_battle_gloves:new {	templateType = ARMOROBJECT,	faction = "Rebel",	playerRaces = { "object/creature/player/abyssin_male.iff",
+object_tangible_wearables_armor_rebel_battle_armor_rebel_battle_gloves = object_tangible_wearables_armor_rebel_battle_shared_armor_rebel_battle_gloves:new {	templateType = ARMOROBJECT,	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
 				"object/mobile/vendor/abyssin_female.iff",

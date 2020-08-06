@@ -29,15 +29,15 @@ acklayboss = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "legendary_comp_group", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},		
 		{
 			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},		
 		{
 			groups = {
@@ -65,40 +65,31 @@ acklayboss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 2500000},
-				{group = "tiertwo", chance = 2500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
@@ -122,7 +113,16 @@ acklayboss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 2500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
 			},
 			lootChance = 5000000
 		},

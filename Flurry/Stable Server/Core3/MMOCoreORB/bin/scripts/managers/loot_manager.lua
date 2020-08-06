@@ -171,7 +171,8 @@ lootableArmorAttachmentStatMods = {
 	"unarmed_speed",
 	"volley",
 	"warcry",
-	"luck"
+	"luck",
+	"trapping"
 }
 
 lootableClothingAttachmentStatMods = {
@@ -325,7 +326,8 @@ lootableClothingAttachmentStatMods = {
 	"weapon_assembly",
 	"weapon_experimentation",
 	"weapon_repair",
-	"luck"
+	"luck",
+	"trapping"
 }
 
 lootableArmorStatMods = {

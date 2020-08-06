@@ -7,14 +7,14 @@ vizsla_loyalist = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 40,
-	damageMin = 750,
-	damageMax = 1250,
+	damageMin = 3750,
+	damageMax = 4250,
   specialDamageMult = 7.5,  
 	baseXp = 15000,
 	baseHAM = 115000,
 	baseHAMmax = 125000,
-	armor = 3,
-	resists = {170,170,170,170,170,170,170,170,170},
+	armor = 2,
+	resists = {170,170,170,170,170,170,170,170,145},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -49,7 +49,7 @@ vizsla_loyalist = Creature:new {
 		},
 		{
 			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
+				{group = "trash_rare", chance = 10000000},
 			},
 			lootChance = 200000
 		},

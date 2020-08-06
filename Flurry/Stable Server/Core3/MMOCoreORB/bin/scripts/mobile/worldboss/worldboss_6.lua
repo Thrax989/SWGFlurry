@@ -28,82 +28,82 @@ worldboss_6 = Creature:new {
 	templates = {"object/mobile/recluse_gurk_king.iff"},
 	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 2.0,
-	lootGroups = {
+		lootGroups = {
 		{
 			groups = {
-				{group = "legendary_comp_group", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},	
 		{
 			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "neck_crafter", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter_second", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings_ranged", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "jedi_earings", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "jedi_bracelets", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "jedi_neck", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "jedi_rings", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "g_necklaces", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
@@ -133,13 +133,13 @@ worldboss_6 = Creature:new {
 		},
 		{
 			groups = {
-				{group = "vehicledeedsnormal", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
 			lootChance = 2500000
 		},

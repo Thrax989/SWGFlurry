@@ -29,13 +29,13 @@ tusken_raid_leader = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 10000000},
+				{group = "trash_common", chance = 10000000},
 			},
 			lootChance = 8000000
 		},
 		{
 			groups = {
-				{group = "armor_attachments", chance = 10000000},
+				{group = "trash_common", chance = 10000000},
 			},
 			lootChance = 8000000
 		},

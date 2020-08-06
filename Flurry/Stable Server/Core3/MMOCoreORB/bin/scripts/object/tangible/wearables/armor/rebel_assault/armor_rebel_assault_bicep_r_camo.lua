@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_rebel_assault_armor_rebel_assault_bicep_r_camo = object_tangible_wearables_armor_rebel_assault_shared_armor_rebel_assault_bicep_r_camo:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Rebel",
+
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",

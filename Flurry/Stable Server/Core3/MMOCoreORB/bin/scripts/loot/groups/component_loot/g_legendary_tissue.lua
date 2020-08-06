@@ -1,4 +1,4 @@
-legendary_tissue = {
+g_legendary_tissue = {
 	description = "",
 	minimumLevel = 0,
 	maximumLevel = 0,
@@ -7,4 +7,4 @@ legendary_tissue = {
 	}
 }
 
-addLootGroupTemplate("legendary_tissue", legendary_tissue)
+addLootGroupTemplate("g_legendary_tissue", g_legendary_tissue)

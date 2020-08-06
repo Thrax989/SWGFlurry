@@ -57,10 +57,9 @@ includeFile("groups/component_loot/weapon_component_advanced.lua")
 includeFile("groups/component_loot/chemistry_component.lua")
 includeFile("groups/component_loot/weapon_component.lua")
 includeFile("groups/component_loot/jedi_comp_group.lua")
-
-includeFile("groups/component_loot/ancient_jedaii_holocron_dode.lua")
-includeFile("groups/component_loot/ancient_jedaii_holocron_cube.lua")
-includeFile("groups/component_loot/ancient_jedaii_holocron_triangle.lua")
+includeFile("groups/component_loot/g_ancient_jedaii_holocron_dode.lua")
+includeFile("groups/component_loot/g_ancient_jedaii_holocron_cube.lua")
+includeFile("groups/component_loot/g_ancient_jedaii_holocron_triangle.lua")
 includeFile("groups/component_loot/legendary_comp_group.lua")
 
 -- corellian_corvette sub-folder
@@ -465,6 +464,10 @@ includeFile("groups/wearables/black_suns.lua")
 --CU/NGE Weapons
 includeFile("groups/weapon/nge_all.lua")
 
--- Mandalore BH/Mando Armor
---includeFile("custom_loot/groups/mandalore/mandalore_armor.lua")
--- includeFile("custom_loot/groups/weapons/melee/mandalorian_saber.lua") -- Disabled, crashing server on creation
+--Boss and Trash Loot table
+includeFile("groups/boss_dungeon/boss_common.lua")
+includeFile("groups/boss_dungeon/boss_rare.lua")
+includeFile("groups/boss_dungeon/trash_common.lua")
+includeFile("groups/boss_dungeon/trash_rare.lua")
+includeFile("groups/nonjedi_jewelry.lua")
+includeFile("groups/jedi_jewelry.lua")

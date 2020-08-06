@@ -4,7 +4,7 @@ object_tangible_wearables_armor_marine_armor_marine_bracer_r = object_tangible_w
 
 	objectMenuComponent = "ArmorObjectMenuComponent",
 
-	faction = "Rebel",
+
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",

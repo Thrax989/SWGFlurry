@@ -1,4 +1,4 @@
-object_tangible_deed_vehicle_deed_walker_at_xt = object_tangible_deed_vehicle_deed_shared_walker_at_xt:new {
+aobject_tangible_deed_vehicle_deed_walker_at_xt = object_tangible_deed_vehicle_deed_shared_walker_at_xt:new {
 
 }
 

@@ -44,7 +44,7 @@
 TransferForceCommand = {
 	name = "transferforce",
 	defaultTime = 1.0,
-	forceCost = 200,
+--	forceCost = 200,
 	minDamage = 150,
 	visMod = 25,
 	animation = "force_transfer_1",

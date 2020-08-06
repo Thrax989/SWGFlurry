@@ -4,7 +4,7 @@ object_tangible_wearables_armor_rebel_assault_armor_appearance_rebel_assault_hel
 
 	objectMenuComponent = "ArmorObjectMenuComponent", 
 
-	faction = "rebel",
+
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",

@@ -6,14 +6,14 @@ shadow_collective_criminal = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 30,
-	damageMin = 500,
-	damageMax = 1000,
+	damageMin = 3750,
+	damageMax = 4250,
   specialDamageMult = 7.5,  
 	baseXp = 10000,
 	baseHAM = 115000,
 	baseHAMmax = 125000,
-	armor = 3,
-	resists = {170,170,170,170,170,170,170,170,170},
+	armor = 2,
+	resists = {170,170,170,170,170,170,170,170,145},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -38,8 +38,8 @@ shadow_collective_criminal = Creature:new {
 		},		
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 5000000},
- 				{group = "armor_attachments", chance = 5000000},
+				{group = "trash_common", chance = 5000000},
+ 				{group = "trash_rare", chance = 5000000},
 			},
 			lootChance = 10000000
 		},
@@ -54,7 +54,7 @@ shadow_collective_criminal = Creature:new {
 		},
 		{
 			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
+				{group = "trash_rare", chance = 10000000},
 			},
 			lootChance = 200000
 		},

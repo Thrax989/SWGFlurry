@@ -44,7 +44,7 @@
 object_tangible_wearables_armor_rebel_spec_force_armor_rebel_spec_force_gloves_gcw = object_tangible_wearables_armor_rebel_spec_force_shared_armor_rebel_spec_force_gloves_gcw:new {
 	templateType = ARMOROBJECT,
 
-	faction = "Rebel",
+
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",

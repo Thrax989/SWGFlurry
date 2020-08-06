@@ -28,7 +28,7 @@ object_draft_schematic_weapon_lightsaber_polearm_pvp_bf = object_draft_schematic
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_pvp_bf.iff",
+   targetTemplate = "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen4_heroic_s02.iff",
 
    additionalTemplates = {
               --"object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen4_heroic.iff",
