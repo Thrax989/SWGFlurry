@@ -47,7 +47,8 @@ object_tangible_scout_trap_trap_webber = object_tangible_scout_trap_shared_trap_
 	objectMenuComponent = "TrapMenuComponent",
 
 	useCount = 5,
-	skillRequired = 25,
+
+	skillRequired = 0,
 
 	skillMods = {},
 
@@ -57,11 +58,11 @@ object_tangible_scout_trap_trap_webber = object_tangible_scout_trap_shared_trap_
 
 	maxRange = 32,
 
-	poolToDamage = ACTION,
-	minDamage = 120,
-	maxDamage = 200,
+	poolToDamage = HEALTH,
+	minDamage = 250,
+	maxDamage = 500,
 
-	duration = 10,
+	duration = 12,
 	state = FROZEN,
 	defenseMod = "",
 
