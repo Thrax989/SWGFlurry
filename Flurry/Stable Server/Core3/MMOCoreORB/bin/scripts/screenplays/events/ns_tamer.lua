@@ -174,7 +174,6 @@ function ns_tamer:KillBoss(pBoss)
 	if SceneObject(pBoss) then
 		print("Unlooted Nightsister Tamer Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		return 0
 	end
 end
@@ -190,7 +189,6 @@ function ns_tamer:Remove(pBoss)
 	if SceneObject(pBoss) then
 		print("Nightsister Tamer Boss Removed")
 		SceneObject(pBoss):destroyObjectFromWorld()
-		SceneObject(pBoss):destroyObjectFromDatabase()
 		dropObserver(pBoss, OBJECTDESTRUCTION)
 		dropObserver(pBoss, DAMAGERECEIVED)
 		forcePeace(pBoss)
