@@ -61,7 +61,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 	if (selectedID == 214) {
 	if (!creature->isInCombat()) {
 		creature->setFactionStatus(FactionStatus::ONLEAVE);
-		creature->switchZone("tatooine", 3443, 5, -5117);
+		creature->switchZone("tatooine", 3371, 10, -5130);
 		//Broadcast to Server
  		String playerName = creature->getFirstName();
  		StringBuffer zBroadcast;
