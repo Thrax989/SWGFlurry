@@ -35,7 +35,7 @@ acklayboss = Creature:new {
 		},		
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "geonosian_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},		
@@ -89,7 +89,7 @@ acklayboss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "geonosian_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
