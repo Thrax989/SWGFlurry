@@ -55,6 +55,9 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 			creature->playEffect("clienteffect/death_trooper_infection_01.cef", "");
 			creature->addCooldown("server_broadcast_group", 600 * 1000);// 10 min cooldown
 			creature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+			StringBuffer zLooking;
+ 			zLooking << "\\#00E604" << playerName << " \\#63C8F9 Is Looking To Join A PvP Group, They Are located At The PvP Arena On Tatooine.";
+			chatManager->handleGeneralChat(creature, zLooking.toString());
 		}
 	}
 	
@@ -129,6 +132,9 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				StringBuffer zBroadcast;
 				zBroadcast << "\\#00E604" << playerName << " And " << "\\#00E604" << groupplayerName << " \\#63C8F9 Team 1 (Imperial) Has Entered The Pvp Arena.";
 				creature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+				StringBuffer zImperial;
+				zImperial << "\\#00E604" << playerName << " And " << "\\#00E604" << groupplayerName << " \\#63C8F9 Team 1 (Imperial) Has Entered The Pvp Arena.";
+				chatManager->handleGeneralChat(creature, zImperial.toString());
 				}
 			}
 		}
@@ -191,6 +197,9 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				StringBuffer zBroadcast;
 				zBroadcast << "\\#00E604" << playerName << " And " << "\\#00E604" << groupplayerName << " \\#63C8F9 Team 2 (Rebel) Has Entered The Pvp Arena.";
 				creature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+				StringBuffer zRebel;
+				zRebel << "\\#00E604" << playerName << " And " << "\\#00E604" << groupplayerName << " \\#63C8F9 Team 2 (Rebel) Has Entered The Pvp Arena.";
+				chatManager->handleGeneralChat(creature, zRebel.toString());
 				}
 			}
 		}
