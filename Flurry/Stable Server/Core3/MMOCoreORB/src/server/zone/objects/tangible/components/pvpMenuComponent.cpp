@@ -54,19 +54,19 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 			creature->playEffect("clienteffect/mus_relay_activate.cef", "");
 			creature->playEffect("clienteffect/death_trooper_infection_01.cef", "");
 			creature->addCooldown("server_broadcast_group", 600 * 1000);// 10 min cooldown
-			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			creature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		}
 	}
 	
 	if (selectedID == 214) {
 	if (!creature->isInCombat()) {
 		creature->setFactionStatus(FactionStatus::ONLEAVE);
-		creature->switchZone("tatooine", 3372, 10, -5129);
+		creature->switchZone("tatooine", 3443, 5, -5117);
 		//Broadcast to Server
  		String playerName = creature->getFirstName();
  		StringBuffer zBroadcast;
  		zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Exiting The PvP Arena.";
-		creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		creature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		//info("Teleporting " + creature->getFirstName(), true);
 		}
 	}
@@ -87,7 +87,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 			return 0;
 		}
 				
-		if (group == NULL) {
+		if (group == nullptr) {
 			ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 			box->setPromptTitle("PvP Teleport Rules");
 			box->setPromptText("1.)You must be in a group of 2 to use this option.\n\n2.)Your group Member must be within 15 meeters of this terminal when teleporting or they risk being left behind.");
@@ -99,7 +99,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 			return 0;
 		}
 
-		if (group != NULL) {
+		if (group != nullptr) {
 				if (creature->getFaction() != 3679112276) {//Not Imperial Return Error Message
 					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					box->setPromptTitle("Faction Requirment");
@@ -115,23 +115,20 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				if (creature->getFaction() == 3679112276) {//Imperial
 				for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature && groupedCreature->getFaction() == 3679112276) {
+				if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature && groupedCreature->getFaction() == 3679112276) {
 				Locker locker(groupedCreature);
-		        	groupedCreature->switchZone("tatooine", 3360, 5, -5099);
+		        	groupedCreature->switchZone("tatooine", 3414, 5, -5142);
 				groupedCreature->setFactionStatus(FactionStatus::OVERT);
-				//Broadcast to Server Imperial Team Has Entered Arena
-				String playerName = creature->getFirstName();
-				StringBuffer zBroadcast;
-				zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Team 1 (Imperial) Has Entered The Pvp Arena.";
-				groupedCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 				//info("Teleporting " + groupedCreature->getFirstName(), true);
 				locker.release();
 				creature->switchZone("tatooine", 3382, 5, -5074);
 				//info("Teleporting " + creature->getFirstName(), true);
 				creature->setFactionStatus(FactionStatus::OVERT);
-				//Broadcast to Server Imperial Team Has Entered Arena
-				zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Team 1 (Imperial) Has Entered The Pvp Arena.";
-				creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				String playerName = creature->getFirstName();
+				String groupplayerName = groupedCreature->getFirstName();
+				StringBuffer zBroadcast;
+				zBroadcast << "\\#00E604" << playerName << " And " << "\\#00E604" << groupplayername << " \\#63C8F9 Team 1 (Imperial) Has Entered The Pvp Arena.";
+				creature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 				}
 			}
 		}
@@ -153,7 +150,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 			return 0;
 		}
 				
-		if (group == NULL) {
+		if (group == nullptr) {
 				ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		            	box->setPromptTitle("PvP Teleport Rules");
 				box->setPromptText("1.)You must be in a group of 2 to use this option.\n\n2.)Your group Member must be within 15 meeters of this terminal when teleporting or they risk being left behind.");
@@ -165,7 +162,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				return 0;
 				}
 
-		if (group != NULL) {
+		if (group != nullptr) {
 				if (creature->getFaction() != 370444368) {//Not Rebel Return Error Message
 					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 					box->setPromptTitle("Faction Requirment");
@@ -181,23 +178,19 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				if (creature->getFaction() == 370444368) {//Rebel
 				for (int i = 0; i < group->getGroupSize(); i++) {
 				ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
-				if (groupedCreature != NULL && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature && groupedCreature->getFaction() == 370444368) {
+				if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 15.0f) && groupedCreature != creature && groupedCreature->getFaction() == 370444368) {
 				Locker locker(groupedCreature);
 				groupedCreature->switchZone("tatooine", 3360, 5, -5099);
 				groupedCreature->setFactionStatus(FactionStatus::OVERT);
-				//Broadcast to Server Rebel Team Has Entered Arena
-				String playerName = creature->getFirstName();
-				StringBuffer zBroadcast;
-				zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Team 2 (Rebel) Has Entered The Pvp Arena.";
-				groupedCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 				//info("Teleporting " + groupedCreature->getFirstName(), true);
 				locker.release();
 				creature->switchZone("tatooine", 3382, 5, -5074);
 				creature->setFactionStatus(FactionStatus::OVERT);
-				//info("Teleporting " + creature->getFirstName(), true);
-				//Broadcast to Server Rebel Team Has Entered Arena
-				zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Team 2 (Rebel) Has Entered The Pvp Arena.";
-				creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				String playerName = creature->getFirstName();
+				String groupplayerName = groupedCreature->getFirstName();
+				StringBuffer zBroadcast;
+				zBroadcast << "\\#00E604" << playerName << " And " << "\\#00E604" << groupplayername << " \\#63C8F9 Team 2 (Rebel) Has Entered The Pvp Arena.";
+				creature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 				}
 			}
 		}
