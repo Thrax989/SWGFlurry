@@ -127,7 +127,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				String playerName = creature->getFirstName();
 				String groupplayerName = groupedCreature->getFirstName();
 				StringBuffer zBroadcast;
-				zBroadcast << "\\#00E604" << playerName << " And " << "\\#00E604" << groupplayername << " \\#63C8F9 Team 1 (Imperial) Has Entered The Pvp Arena.";
+				zBroadcast << "\\#00E604" << playerName << " And " << "\\#00E604" << groupplayerName << " \\#63C8F9 Team 1 (Imperial) Has Entered The Pvp Arena.";
 				creature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 				}
 			}
@@ -189,7 +189,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				String playerName = creature->getFirstName();
 				String groupplayerName = groupedCreature->getFirstName();
 				StringBuffer zBroadcast;
-				zBroadcast << "\\#00E604" << playerName << " And " << "\\#00E604" << groupplayername << " \\#63C8F9 Team 2 (Rebel) Has Entered The Pvp Arena.";
+				zBroadcast << "\\#00E604" << playerName << " And " << "\\#00E604" << groupplayerName << " \\#63C8F9 Team 2 (Rebel) Has Entered The Pvp Arena.";
 				creature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 				}
 			}
