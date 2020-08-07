@@ -5,8 +5,8 @@ acklay = Creature:new {
 	faction = "",
 	level = 75,
 	chanceHit = 92.5,
-	damageMin = 935,
-	damageMax = 1580,
+	damageMin = 1700,
+	damageMax = 2500,
 	baseXp = 14884,
 	baseHAM = 96000,
 	baseHAMmax = 118000,
@@ -78,7 +78,7 @@ acklay = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "geonosian_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
