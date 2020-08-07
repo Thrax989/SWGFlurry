@@ -151,7 +151,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   },
 		 	"Master Politician",
 		   {
-			"Master Politician Requires (10,000,000 Credits)", "citypolitician",
+			"Master Politician Requires (1,000,000 Credits)", "citypolitician",
 		   },
 		 	"Recalculate Force",
 		   {
