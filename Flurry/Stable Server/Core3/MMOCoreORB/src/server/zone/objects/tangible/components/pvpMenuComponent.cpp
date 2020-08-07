@@ -121,7 +121,7 @@ int pvpMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureO
 				groupedCreature->setFactionStatus(FactionStatus::OVERT);
 				//info("Teleporting " + groupedCreature->getFirstName(), true);
 				locker.release();
-				creature->switchZone("tatooine", 3382, 5, -5074);
+				creature->switchZone("tatooine", 3434, 5, -5117);
 				//info("Teleporting " + creature->getFirstName(), true);
 				creature->setFactionStatus(FactionStatus::OVERT);
 				String playerName = creature->getFirstName();
