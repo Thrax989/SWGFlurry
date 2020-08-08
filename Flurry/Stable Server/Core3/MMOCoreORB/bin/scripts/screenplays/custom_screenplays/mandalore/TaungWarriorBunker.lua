@@ -18,7 +18,7 @@ spawnSceneObject("mandalore", "object/tangible/terminal/terminal_elevator_down.i
 spawnSceneObject("mandalore", "object/tangible/terminal/terminal_elevator_up.iff", -8,-20,58.9,8566200,-0.707107,0,-0.707107,0)
 spawnSceneObject("mandalore", "object/tangible/terminal/terminal_elevator_down.iff", 75,-20,58.9,8566225,0.707107,0,-0.707107,0)
 spawnSceneObject("mandalore", "object/tangible/terminal/terminal_elevator_up.iff", 75,-50,58.9,8566225,0.707107,0,-0.707107,0)
-
+spawnSceneObject("mandalore", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -140,-50,54,8566234,1,0,0,0)
 end
 
 function TaungWarriorBunker:spawnMobiles()
