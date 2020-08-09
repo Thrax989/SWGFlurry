@@ -61,7 +61,7 @@ object_tangible_scout_trap_trap_state_def_1 = object_tangible_scout_trap_shared_
 	minDamage = 110,
 	maxDamage = 170,
 
-	duration = 10,
+	duration = 15,
 	state = DIZZY,
 	defenseMod = "dizzy_defense",
 
