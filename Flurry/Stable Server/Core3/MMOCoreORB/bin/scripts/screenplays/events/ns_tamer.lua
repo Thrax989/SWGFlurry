@@ -17,10 +17,10 @@ end
 --NsTamer Objects
 -----------------------
 function ns_tamer:spawnSceneObjects()
-spawnSceneObject("mandalore", "object/tangible/camp/camp_tent_s4.iff", -1133, 29, 2597, 0, 1, 0, 0, 0)
-spawnSceneObject("mandalore", "object/tangible/camp/campfire_logs_smoldering.iff", -1139, 28, 2596, 0, 1, 0, 0, 0)
-spawnSceneObject("mandalore", "object/tangible/camp/camp_lawn_chair.iff", -1138, 28, 2592, 0, 1, 0, 0, 0)
-spawnSceneObject("mandalore", "object/tangible/camp/camp_lawn_chair.iff", -1142, 28, 2597, 0, 1, 0, 0, 0)	
+spawnSceneObject("mandalore", "object/tangible/camp/camp_tent_s4.iff", -1133, 28, 2597, 0, 1, 0, 0, 0)
+spawnSceneObject("mandalore", "object/tangible/camp/campfire_logs_smoldering.iff", -1139, 27, 2596, 0, 1, 0, 0, 0)
+spawnSceneObject("mandalore", "object/tangible/camp/camp_lawn_chair.iff", -1138, 27, 2592, 0, 1, 0, 0, 0)
+spawnSceneObject("mandalore", "object/tangible/camp/camp_lawn_chair.iff", -1142, 27, 2597, 0, 1, 0, 0, 0)	
 end
 -----------------------
 --NsTamer Has Spawned
