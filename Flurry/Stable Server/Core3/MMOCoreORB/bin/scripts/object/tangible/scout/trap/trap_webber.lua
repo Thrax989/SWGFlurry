@@ -62,7 +62,7 @@ object_tangible_scout_trap_trap_webber = object_tangible_scout_trap_shared_trap_
 	minDamage = 200,
 	maxDamage = 300,
 
-	duration = 12,
+	duration = 15,
 	state = FROZEN,
 	defenseMod = "",
 
