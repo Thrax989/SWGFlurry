@@ -73,6 +73,17 @@ local player = LuaCreatureObject(pPlayer)
 local boss = LuaCreatureObject(pBoss)
 createEvent(10800 * 1000, "ns_tamer", "Remove", pBoss, "")
 --------------------------------------
+--   Range and health checks for boss
+--------------------------------------
+if (boss ~= nil) then
+local heal = 999999
+local bossHealth = boss:getHAM(0)
+local bossAction = boss:getHAM(3)
+local bossMind = boss:getHAM(6)
+local bossMaxHealth = boss:getMaxHAM(0)
+local bossMaxAction = boss:getMaxHAM(3)
+local bossMaxMind = boss:getMaxHAM(6)	
+--------------------------------------
 --  90% health check
 --------------------------------------
 if (((bossHealth <= (bossMaxHealth * 0.9)) or (bossAction <= (bossMaxAction * 0.9)) or (bossMind <= (bossMaxMind * 0.9))) and readData("ns_tamer:spawnState") == 1) then
