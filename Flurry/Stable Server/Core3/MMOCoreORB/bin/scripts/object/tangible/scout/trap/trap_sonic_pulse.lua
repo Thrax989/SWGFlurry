@@ -59,9 +59,9 @@ object_tangible_scout_trap_trap_sonic_pulse = object_tangible_scout_trap_shared_
 
 	poolToDamage = HEALTH,
 	minDamage = 200,
-	maxDamage = 450,
+	maxDamage = 400,
 
-	duration = 10,
+	duration = 15,
 	state = STUNNED + DIZZY,
 	defenseMod = "dizzy_defense",
 
