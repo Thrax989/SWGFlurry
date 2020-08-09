@@ -48,9 +48,9 @@ object_tangible_scout_trap_trap_webber = object_tangible_scout_trap_shared_trap_
 
 	useCount = 5,
 
-	skillRequired = 0,
+	skillRequired = 25,
 
-	skillMods = {},
+	skillMods = {{"ranged_defense", -60}, {"melee_defense", -60}},
 
 	healthCost = 17,
 	actionCost = 30, 
