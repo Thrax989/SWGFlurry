@@ -218,3 +218,4 @@ function ns_tamer:Restartstates(pPlayer)
    writeData("ns_tamer:spawnState", 0)
 end
 end
+end
