@@ -165,7 +165,7 @@ class FindTargetTask : public Task, public Logger {
 			successChance = 95;
 		}
 
-		int randomValue = System::random(80); /* reduced from 100, reduced bh droid chance of failing. */
+		int randomValue = System::random(100);
 
 		return randomValue < successChance;
 	}

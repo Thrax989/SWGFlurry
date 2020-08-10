@@ -753,17 +753,3 @@ int LuaPlayerObject::getPlayedTimeString(lua_State* L) {
 
 	return 1;
 }
-
-int LuaPlayerObject::broadcastToServer(lua_State* L) {
-	String message = lua_tostring(L, -1);
-	ZoneServer* zServ = realObject->getZoneServer();
-	zServ->getChatManager()->broadcastGalaxy(nullptr, message);
-	return 1;
-}
-
-int LuaPlayerObject::broadcastToDiscord(lua_State* L) {
-	String message = lua_tostring(L, -1);
-	ZoneServer* zServ = realObject->getZoneServer();
-	zServ->getChatManager()->handleGeneralDiscordChat(nullptr, message);
-	return 1;
-}

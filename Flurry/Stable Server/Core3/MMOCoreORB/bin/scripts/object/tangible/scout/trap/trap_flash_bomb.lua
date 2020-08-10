@@ -61,7 +61,7 @@ object_tangible_scout_trap_trap_flash_bomb = object_tangible_scout_trap_shared_t
 	minDamage = 200,
 	maxDamage = 300,
 
-	duration = 10,
+	duration = 15,
 	state = BLINDED,
 	defenseMod = "blind_defense",
 

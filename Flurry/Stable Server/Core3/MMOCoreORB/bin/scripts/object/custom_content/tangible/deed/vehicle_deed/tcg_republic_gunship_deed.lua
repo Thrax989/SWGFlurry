@@ -10,8 +10,8 @@ object_tangible_deed_vehicle_deed_tcg_republic_gunship_deed = object_tangible_de
 	experimentalWeights = {1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "exp_durability"},
 	experimentalSubGroupTitles = {"null", "null", "hit_points"},
-	experimentalMin = {0, 0, 2000},
-	experimentalMax = {0, 0, 9500},
+	experimentalMin = {0, 0, 5000},
+	experimentalMax = {0, 0, 10000},
 	experimentalPrecision = {0, 0, 0},
 	experimentalCombineType = {0, 0, 1},
 }
