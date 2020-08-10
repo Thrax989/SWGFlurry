@@ -83,8 +83,6 @@ Luna<LuaPlayerObject>::RegType LuaPlayerObject::Register[] = {
 		{ "startSlicingSession", &LuaPlayerObject::startSlicingSession },
 		{ "setVisibility", &LuaPlayerObject::setVisibility },
 		{ "getPlayedTimeString", &LuaPlayerObject::getPlayedTimeString },
-		{ "broadcastToServer", &LuaPlayerObject::broadcastToServer },
-		{ "broadcastToDiscord", &LuaPlayerObject::broadcastToDiscord },
 		{ 0, 0 }
 };
 
