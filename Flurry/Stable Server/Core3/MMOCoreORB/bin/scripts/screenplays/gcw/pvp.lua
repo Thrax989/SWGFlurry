@@ -62,7 +62,7 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-		if (player:isImperial() or player:isneutral() or player:isRebel()) then
+		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
 			player:sendSystemMessage("You entered the pvp zone!")
 			player:setFactionStatus(2)
 			player:playEffect("clienteffect/sm_end_of_the_line.cef", "")

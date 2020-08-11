@@ -151,7 +151,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   },
 		 	"Master Politician",
 		   {
-			"Master Politician Requires (10,000,000 Credits)", "citypolitician",
+			"Master Politician Requires (1,000,000 Credits)", "citypolitician",
 		   },
 		 	"Recalculate Force",
 		   {
@@ -194,7 +194,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Indestine, Hoth Player City (5,000 Credits)", "pc_indestine_travel",   
 			"Cyberdyne, Dathomir Player City (5,000 Credits)", "pc_cyberdyne_travel",   
 			"Lafayette, Naboo Player City (5,000 Credits)", "pc_lafayette_travel",
-			"Skynet, Tatooine Player City (5,000 Credits)", "pc_skynet_travel",      
+			"Skynet, Tatooine Player City (5,000 Credits)", "pc_skynet_travel",   
+			"Crimson Thorn, Lok Player City (5,000 Credits)", "pc_crimson_travel",          
 		   },
 	}
 }

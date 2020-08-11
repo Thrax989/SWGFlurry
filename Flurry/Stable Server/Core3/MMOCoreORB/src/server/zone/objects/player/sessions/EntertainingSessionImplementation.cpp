@@ -930,7 +930,9 @@ void EntertainingSessionImplementation::activateEntertainerBuff(CreatureObject* 
 		uint32 mindBuffCRC = STRING_HASHCODE("performance_enhance_dance_mind");
 		uint32 focusBuffCRC = STRING_HASHCODE("performance_enhance_music_focus");
 		uint32 willBuffCRC = STRING_HASHCODE("performance_enhance_music_willpower");
-			
+		uint32 rangedCRC = 0x33329A7B;
+		uint32 meleeCRC = 0x548DE45B;
+	
 		oldBuff = cast<PerformanceBuff*>(creature->getBuff(mindBuffCRC));
 
 
@@ -943,6 +945,8 @@ void EntertainingSessionImplementation::activateEntertainerBuff(CreatureObject* 
 		ManagedReference<PerformanceBuff*> mindBuff = new PerformanceBuff(creature, mindBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::DANCE_MIND);							
 		ManagedReference<PerformanceBuff*> focusBuff = new PerformanceBuff(creature, focusBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::MUSIC_FOCUS);
 		ManagedReference<PerformanceBuff*> willBuff = new PerformanceBuff(creature, willBuffCRC, buffStrength, buffDuration * 60, PerformanceBuffType::MUSIC_WILLPOWER);
+		ManagedReference<PerformanceBuff*> meleeAccBuff = new PerformanceBuff(creature, meleeCRC, buffStrength, buffDuration * 60, PerformanceBuffType::STAT_MELEE_ACC);
+		ManagedReference<PerformanceBuff*> rangedAccBuff = new PerformanceBuff(creature, rangedCRC, buffStrength, buffDuration * 60, PerformanceBuffType::STAT_RANGED_ACC);
 	
 		Locker locker(mindBuff);
 		creature->addBuff(mindBuff);
@@ -954,6 +958,13 @@ void EntertainingSessionImplementation::activateEntertainerBuff(CreatureObject* 
 
 		Locker locker3(willBuff);
 		creature->addBuff(willBuff);
+
+		Locker locker4(meleeAccBuff);
+		creature->addBuff(meleeAccBuff);
+		locker.release();
+
+		Locker locker5(rangedAccBuff);
+		creature->addBuff(rangedAccBuff);
 		
 	} catch(Exception& e) {
 
