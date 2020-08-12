@@ -29,47 +29,28 @@ darth_caedus = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_fs_village_enemy_mellichae.iff"},
-		lootGroups = {
+	lootGroups = {
 		{
 			groups = {
-				{group = "boss_rare", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
-		},		
+		},	
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "nge_all", chance = 2500000},
- 				{group = "weapon_all", chance = 2500000}, 
-        {group = "armor_all", chance = 5000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "chemistry_component_advanced", chance = 2000000},
-				{group = "weapon_component_advanced", chance = 2000000},
-				{group = "fire_breathing_spider", chance = 2000000},
-				{group = "geonosian_cubes", chance = 2000000},
-				{group = "krayt_tissue_rare", chance = 2000000}, 
-        
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
@@ -77,77 +58,71 @@ darth_caedus = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 2000000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "armor_attachments", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "weapons_all", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -159,49 +134,31 @@ darth_caedus = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "tierone", chance = 4500000},
-				{group = "tiertwo", chance = 2500000},
-				{group = "tierthree", chance = 1500000},
-				{group = "tierdiamond", chance = 1500000},
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "tierone", chance = 4500000},
-				{group = "tiertwo", chance = 2500000},
-				{group = "tierthree", chance = 1500000},
-				{group = "tierdiamond", chance = 1500000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 4500000},
-				{group = "tiertwo", chance = 2500000},
-				{group = "tierthree", chance = 1500000},
-				{group = "tierdiamond", chance = 1500000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 4500000},
-				{group = "tiertwo", chance = 2500000},
-				{group = "tierthree", chance = 1500000},
-				{group = "tierdiamond", chance = 1500000},
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
 			},
 			lootChance = 10000000
 		}

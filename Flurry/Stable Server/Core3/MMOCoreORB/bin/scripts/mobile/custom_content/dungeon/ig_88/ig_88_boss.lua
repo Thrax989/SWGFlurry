@@ -38,7 +38,7 @@ ig_88_boss = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -50,61 +50,61 @@ ig_88_boss = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -134,13 +134,13 @@ ig_88_boss = Creature:new {
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
