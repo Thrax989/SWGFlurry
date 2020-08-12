@@ -46,10 +46,10 @@ object_tangible_medicine_crafted_medic_fire_blanket = object_tangible_medicine_c
 	templateType = CUREPACK,
 	useCount = 8,
 	medicineUse = 5,
-	effectiveness = 100,
+	effectiveness = 600,
 	state = ONFIRE,
 	commandToExecute = "extinguishfire",
-	area = 0,
+	area = 5,
 
 	numberExperimentalProperties = {1, 1, 2, 2, 2, 1},
 	experimentalProperties = {"XX", "XX", "OQ", "PE", "OQ", "UT", "OQ", "PE", "XX"},
