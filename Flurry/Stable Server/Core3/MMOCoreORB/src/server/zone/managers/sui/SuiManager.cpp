@@ -2716,7 +2716,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
 						player->sendSystemMessage("Thank you for your travels.");
- 				        player->switchZone("mandalore", 5819, 2, 835);
+ 				        player->switchZone("mandalore", 5733, 0, 876);
 						player->subtractBankCredits(5000);
 						box->setForceCloseDistance(5.f);
 						if(currentCity != nullptr && !currentCity->isClientRegion()) {
