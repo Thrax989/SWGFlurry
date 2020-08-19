@@ -28,7 +28,7 @@ public:
 		actionHealed = 0;
 		mindHealed = 0;
 
-		mindCost = 1000;
+		mindCost = 100;
 		mindWoundCost = 10;
 
 		speed = 1;
@@ -146,10 +146,11 @@ public:
 			return GENERALERROR;
 		}
 
-		int healPower = (int) round(150 + System::random(600));
+		int healPower = (int) round(800 + System::random(1000));
 
 		int healedHealth = creatureTarget->healDamage(creature, CreatureAttribute::HEALTH, healPower);
 		int healedAction = creatureTarget->healDamage(creature, CreatureAttribute::ACTION, healPower);
+    int healedAction = creatureTarget->healDamage(creature, CreatureAttribute::MIND, healPower);
 
 		if (creature->isPlayerCreature()) {
 			PlayerManager* playerManager = server->getZoneServer()->getPlayerManager();
