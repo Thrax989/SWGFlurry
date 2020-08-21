@@ -6,15 +6,11 @@
  */
 
 #include "server/zone/objects/creature/CreatureObject.h"
-#include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/tangible/powerup/PowerupObject.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 #include "WeaponObjectMenuComponent.h"
-#include "server/zone/objects/scene/components/ObjectMenuComponent.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/objects/player/sessions/SlicingSession.h"
-#include "server/zone/objects/player/sui/callbacks/AddWeaponDotCallback.h"
-#include "server/zone/objects/player/sui/addweapondot/AddWeaponDot.h"
 
 void WeaponObjectMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
@@ -33,12 +29,6 @@ void WeaponObjectMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject,
 
 		if(weapon->getConditionDamage() > 0 && weapon->canRepair(player)) {
 			menuResponse->addRadialMenuItem(70, 3, "@sui:repair"); // Slice
-		}
-
-		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-
-		if(player->hasSkill("combat_smuggler_master") && ghost->getExperience("exotic_slice") > 0){
-			menuResponse->addRadialMenuItem(250, 3, "Apply Dot");
 		}
 	}
 
@@ -98,35 +88,6 @@ int WeaponObjectMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, 
 			StringIdChatParameter message("powerup", "prose_remove_powerup"); //You detach your powerup from %TT.
 			message.setTT(weapon->getDisplayedName()); 
 			player->sendSystemMessage(message);
-
-			return 1;
-		}
-
-		if(selectedID == 250) {
-
-			 if(weapon->getNumberOfDots() == 0){
-
-
-			 	 ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-			 	ZoneServer* server = player->getZoneServer();
-
-				ManagedReference<AddWeaponDot*> dotBox = new AddWeaponDot(player, SuiWindowType::ADD_DOT);
-				dotBox->setCallback(new AddWeaponDotCallback(server, ghost, weapon));
-				dotBox->setPromptTitle("Add Exotic Damage Over Time");
-
-				StringBuffer promptText;
-				promptText << "Apply Damage Over Time Too:\t\t " << weapon->getDisplayedName() << "\n"
-							<< "Current Experience Avalible: " << String::valueOf(ghost->getExperience("exotic_slice")) << "\n";
-
-				dotBox->setPromptText(promptText.toString());
-				dotBox->addExperience(ghost->getExperience("exotic_slice"));
-
-				ghost->addSuiBox(dotBox);
-				player->sendMessage(dotBox->generateMessage());
-
-			 }else {
-				 player->sendSystemMessage("This weapon already has a Dot");
-			 }
 
 			return 1;
 		}
