@@ -28,19 +28,19 @@ isd_mouse_droid = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 10000000},
+				{group = "trash_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "armor_attachments", chance = 10000000},
+				{group = "trash_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "trash_rare", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -51,7 +51,7 @@ isd_mouse_droid = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -60,7 +60,7 @@ isd_mouse_droid = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2000000
+			lootChance = 10000000
 		}
 	},
 	weapons = {"creature_spit_heavy_flame"},

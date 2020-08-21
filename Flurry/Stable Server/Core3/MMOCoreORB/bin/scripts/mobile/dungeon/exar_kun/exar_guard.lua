@@ -43,7 +43,7 @@ exar_guard = Creature:new {
 			groups = {
 				{group = "trash_rare", chance = 10000000},
 			},
-			lootChance = 200000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -52,7 +52,7 @@ exar_guard = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -61,7 +61,7 @@ exar_guard = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2000000
+			lootChance = 10000000
 		}
 	},
 	weapons = {"mixed_force_weapons"},

@@ -31,11 +31,11 @@ void PerformanceBuffImplementation::activate(bool applyModifiers) {
 	} // credits to: aotc for musician buffs to give accuracy 
 	else if(type == PerformanceBuffType::STAT_RANGED_ACC) {
 		setSkillModifier("ranged_accuracy", strength);
-		creature.get()->sendSystemMessage("Applying Ranged Accuracy + " + String::valueOf(strength));10;
+		creature.get()->sendSystemMessage("Applying Ranged Accuracy + " + String::valueOf(strength));+10;
 	}
 	else if(type == PerformanceBuffType::STAT_MELEE_ACC) {
 		setSkillModifier("melee_accuracy", strength);
-		creature.get()->sendSystemMessage("Applying Melee Accuracy + " + String::valueOf(strength));10;
+		creature.get()->sendSystemMessage("Applying Melee Accuracy + " + String::valueOf(strength));+10;
 	}
 	BuffImplementation::activate(true);
 

@@ -195,7 +195,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Cyberdyne, Dathomir Player City (5,000 Credits)", "pc_cyberdyne_travel",   
 			"Lafayette, Naboo Player City (5,000 Credits)", "pc_lafayette_travel",
 			"Skynet, Tatooine Player City (5,000 Credits)", "pc_skynet_travel",   
-			"Crimson Thorn, Lok Player City (5,000 Credits)", "pc_crimson_travel",          
+			"Crimson Thorn, Lok Player City (5,000 Credits)", "pc_crimson_travel",  
+ 			"New Freedom, Mandalore Player City (5,000 Credits)", "pc_freedom_travel",       
 		   },
 	}
 }

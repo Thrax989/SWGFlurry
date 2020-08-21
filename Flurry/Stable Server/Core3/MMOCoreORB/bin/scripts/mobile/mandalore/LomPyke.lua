@@ -44,7 +44,7 @@ lom_pyke = Creature:new {
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},

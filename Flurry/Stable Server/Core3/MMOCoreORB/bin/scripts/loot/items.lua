@@ -1541,7 +1541,7 @@ includeFile("items/ngeweapons/nge201.lua")
 includeFile("items/ngeweapons/nge202.lua")
 includeFile("items/ngeweapons/nge203.lua")
 includeFile("items/ngeweapons/nge204.lua")
---Custom Capes
+--Custom Capes and Wings
 includeFile("items/wearables/cape/cape1.lua")
 includeFile("items/wearables/cape/cape2.lua")
 includeFile("items/wearables/cape/cape3.lua")
@@ -1552,6 +1552,11 @@ includeFile("items/wearables/cape/cape7.lua")
 includeFile("items/wearables/cape/cape8.lua")
 includeFile("items/wearables/cape/cape9.lua")
 includeFile("items/wearables/cape/cape10.lua")
+includeFile("items/wearables/cape/wings_angel.lua")
+includeFile("items/wearables/cape/wings_bat.lua")
+includeFile("items/wearables/cape/wings_blue.lua")
+includeFile("items/wearables/cape/wings_golden.lua")
+includeFile("items/wearables/cape/wings_pink.lua")
 
 includeFile("items/wearables/helmet/ace.lua")
 -- includeFile("custom_loot/items/weapons/mandalorian_saber.lua") -- Disabled, crashing server on creation

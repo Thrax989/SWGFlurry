@@ -31,6 +31,7 @@ isd_thrawn = Creature:new {
 
 
 	templates = {"object/mobile/naboo_npc/thrawn.iff"},
+
 	lootGroups = {
 		{
 			groups = {
