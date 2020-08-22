@@ -3,7 +3,7 @@
 cape4 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Jedi Cape",
 	directObjectTemplate = "object/tangible/tcg/series8/wearable_light_jedi_cape.iff",
 	craftingValues = {
 	},

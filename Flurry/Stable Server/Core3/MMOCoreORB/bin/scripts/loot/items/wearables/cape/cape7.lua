@@ -3,7 +3,7 @@
 cape7 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Revan Cape",
 	directObjectTemplate = "object/tangible/tcg/series8/wearable_revan_cape.iff",
 	craftingValues = {
 	},

@@ -3,7 +3,7 @@
 cape2 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Sith Cape",
 	directObjectTemplate = "object/tangible/tcg/series8/wearable_sith_cape.iff",
 	craftingValues = {
 	},
