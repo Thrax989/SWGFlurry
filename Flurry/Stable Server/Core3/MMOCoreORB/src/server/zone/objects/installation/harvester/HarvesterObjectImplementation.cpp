@@ -68,6 +68,7 @@ int HarvesterObjectImplementation::handleObjectMenuSelect(CreatureObject* player
 	case 81: { // add 10k power
 		float energy = 10000.0;
 		quickAddPower(player, energy);
+    break;
 	}
 	case 80: { // 10k maint
 		quickAddMaint(player, 10000.0);
