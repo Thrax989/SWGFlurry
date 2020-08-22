@@ -207,14 +207,14 @@ void InstallationObjectImplementation::setActiveResource(ResourceContainer* cont
 // Stack - implementing quick maint/power and also adding in retrieve all
 void InstallationObjectImplementation::quickAddMaint(CreatureObject* player, float amount)
 {
-	int cash = player->getCashCredits();
-	if(cash < amount)
+	int bank = player->getBankCredits();
+	if(bank < amount)
 	{
 		player->sendSystemMessage("Not enough funds");
 	}
 	else
 	{
-		player->subtractCashCredits(amount);
+		player->subtractBankCredits(amount);
 		addMaintenance(amount);
 		player->sendSystemMessage("Quick Add Maintenance Successful");
 	}
