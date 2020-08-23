@@ -26,6 +26,7 @@ class AddWeaponDot extends SuiBox {
 	
 	public native void addExperience( int exp );
 
+	@local
 	public native BaseMessage generateMessage();
 	
 	public boolean isAddWeaponDot() {
