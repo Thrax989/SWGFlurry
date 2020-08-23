@@ -14,7 +14,7 @@
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/objects/player/sessions/SlicingSession.h"
 #include "server/zone/objects/player/sui/callbacks/AddWeaponDotCallback.h"
-#include "server/zone/objects/player/sui/addweapondot/AddWeaponDot.h"
+#include "server/zone/objects/player/sui/Addweapondot/AddWeaponDot.h"
 
 void WeaponObjectMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
