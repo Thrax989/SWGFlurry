@@ -186,6 +186,8 @@ public:
 		// Reaction Fines
 		REACTION_FINE                      = 331,
 
+		ADD_DOT							   = 333,
+
 		// Growable Plant
 		GROWABLE_PLANT					   = 341,
 
