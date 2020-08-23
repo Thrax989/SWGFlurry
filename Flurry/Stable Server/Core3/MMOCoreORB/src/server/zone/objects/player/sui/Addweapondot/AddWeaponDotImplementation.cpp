@@ -1,4 +1,4 @@
-#include "server/zone/objects/player/sui/addweapondot/AddWeaponDot.h"
+#include "server/zone/objects/player/sui/Addweapondot/AddWeaponDot.h"
 #include "server/zone/packets/ui/SuiCreatePageMessage.h"
 
 BaseMessage* AddWeaponDotImplementation::generateMessage() {
