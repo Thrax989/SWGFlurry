@@ -163,6 +163,7 @@ Thank you to the following server that provided custom content / alterations to 
   * Stardust
   * SWG-Europa
   * SWG-Rehab
+  * SWG Restoration 2 
   * Sunrunner II
   * Tarkins Revenge
 
