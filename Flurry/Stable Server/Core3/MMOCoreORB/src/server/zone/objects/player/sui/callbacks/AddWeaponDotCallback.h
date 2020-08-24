@@ -89,7 +89,7 @@ public:
 		weaponObj->addDotDuration((value / 2));
 		weaponObj->addDotPotency((value / 5));
 		weaponObj->addDotUses((value * 100));
-		playerObj->addExperience("slicing", (expUsed * -1), true);
+		playerObj->addExperience("recycle_contraband", (expUsed * -1), true);
 
 		const String sysMsg = "Dot Applied";
 		player->sendSystemMessage(sysMsg);
