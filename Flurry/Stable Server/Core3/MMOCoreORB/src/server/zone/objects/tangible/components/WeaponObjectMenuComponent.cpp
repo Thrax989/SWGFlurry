@@ -37,7 +37,7 @@ void WeaponObjectMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject,
 
 		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
-		if(player->hasSkill("combat_smuggler_master") && ghost->getExperience("exotic_slice") > 0){
+		if(player->hasSkill("crafting_weaponsmith_master") && ghost->getExperience("recycle_contraband") > 0){
 			menuResponse->addRadialMenuItem(250, 3, "Apply Dot");
 		}
 	}
@@ -112,14 +112,14 @@ int WeaponObjectMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, 
 
 				ManagedReference<AddWeaponDot*> dotBox = new AddWeaponDot(player, SuiWindowType::ADD_DOT);
 				dotBox->setCallback(new AddWeaponDotCallback(server, ghost, weapon));
-				dotBox->setPromptTitle("Add Exotic Damage Over Time");
+				dotBox->setPromptTitle("Add Damage Over Time");
 
 				StringBuffer promptText;
 				promptText << "Apply Damage Over Time Too:\t\t " << weapon->getDisplayedName() << "\n"
-							<< "Current Experience Avalible: " << String::valueOf(ghost->getExperience("exotic_slice")) << "\n";
+							<< "Current Experience Avalible: " << String::valueOf(ghost->getExperience("recycle_contraband")) << "\n";
 
 				dotBox->setPromptText(promptText.toString());
-				dotBox->addExperience(ghost->getExperience("exotic_slice"));
+				dotBox->addExperience(ghost->getExperience("recycle_contraband"));
 
 				ghost->addSuiBox(dotBox);
 				player->sendMessage(dotBox->generateMessage());
