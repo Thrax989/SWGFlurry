@@ -43,7 +43,7 @@ int ContrabandMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cr
 
 	PlayerManager* playerManager = creature->getZoneServer()->getPlayerManager();
 	creature->playEffect("clienteffect/level_granted.cef", "");
-	playerManager->awardExperience(creature, "slicing", 1, true); // Award Recycle Contraband XP
+	playerManager->awardExperience(creature, "recycle_contraband", 1, true); // Award Recycle Contraband XP
 	sceneObject->destroyObjectFromWorld(true);
 	}
 	return 0;
