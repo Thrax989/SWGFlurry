@@ -9,6 +9,7 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
+#include "server/chat/ChatManager.h"
 
 class AddWeaponDotCallback : public SuiCallback {
 	PlayerObject* playerObj;
@@ -88,10 +89,14 @@ public:
 		weaponObj->addDotDuration((value / 2));
 		weaponObj->addDotPotency((value / 5));
 		weaponObj->addDotUses((value * 100));
-		playerObj->addExperience("exotic_slice", (expUsed * -1), true);
+		playerObj->addExperience("slicing", (expUsed * -1), true);
 
-		const String sysMsg = "Dot Applied too ";
+		const String sysMsg = "Dot Applied";
 		player->sendSystemMessage(sysMsg);
+		ChatManager* chatManager = player->getZoneServer()->getChatManager();
+		StringBuffer exotic;
+ 		exotic << " Altered A Crafted Weapon With A Unique Dot.";
+		chatManager->handleGeneralChat(player, exotic.toString());
 	}
 };
 #endif /* PLACEBOUNTYSUICALLBACK_H_ */
