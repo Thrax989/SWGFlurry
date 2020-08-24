@@ -315,9 +315,9 @@ end
 -----------------------------
 function exar_kunScreenplay:starthealing(bossObject)
 	local boss = LuaCreatureObject(bossObject)
-		boss:healDamage(35000, 0)
-		boss:healDamage(35000, 3)
-		boss:healDamage(35000, 6)
+		boss:healDamage(100000, 0)
+		boss:healDamage(100000, 3)
+		boss:healDamage(100000, 6)
 	return 0
 end
 -----------------------------

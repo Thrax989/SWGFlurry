@@ -3,15 +3,15 @@ exar_boss = Creature:new {
 	socialGroup = "exar",
 	faction = "exar",
 	level = 300,
-	chanceHit = 25.00,
-	damageMin = 1245,
-	damageMax = 2600,
-	specialDamageMult = 7.5,
-	baseXp = 28549,
-	baseHAM = 385000,
-	baseHAMmax = 471000,
-	armor = 0,
-	resists = {50,50,50,50,50,50,50,50,50},
+	chanceHit = 35.00,
+	damageMin = 1500,
+	damageMax = 3000,
+	specialDamageMult = 10.0,
+	baseXp = 100000,
+	baseHAM = 485000,
+	baseHAMmax = 500000,
+	armor = 3,
+	resists = {95,95,95,95,95,95,95,95,95},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -25,7 +25,7 @@ exar_boss = Creature:new {
 	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED + INTERESTING,
 	diet = HERBIVORE,
-	scale = 1.5;
+	scale = 1.7;
 	templates = {"object/mobile/costume_exar_kun_cultist.iff"},
 	lootGroups = {
 		{
@@ -159,11 +159,38 @@ exar_boss = Creature:new {
 				{group = "tierdiamond", chance = 2500000},
 			},
 			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
 		}
 	},
-	weapons = {"dark_jedi_weapons_gen4"},
+	weapons = {"dark_jedi_weapons_gen4", "unarmed_weapons", "ranged_weapons", "melee_weapons", "carbine_weapons", "rebel_weapons_heavy"},
 	conversationTemplate = "",
-	attacks = merge(lightsabermaster,forcepowermaster)
+	attacks = merge(lightsabermaster,forcepowermaster,tkamaster,pikemanmaster,swordsmanmaster,fencermaster,riflemanmaster,pistoleermaster,carbineermaster,commandomaster,bountyhuntermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(exar_boss, "exar_boss")
