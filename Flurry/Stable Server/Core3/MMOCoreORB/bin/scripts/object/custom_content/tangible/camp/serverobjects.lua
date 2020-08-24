@@ -1,5 +1,0 @@
-includeFile("custom_content/tangible/camp/camp_cloning_tube.lua")
-includeFile("custom_content/tangible/camp/camp_junk_dealer.lua")
-includeFile("custom_content/tangible/camp/camp_recruiter_imperial.lua")
-includeFile("custom_content/tangible/camp/camp_recruiter_rebel.lua")
-includeFile("custom_content/tangible/camp/camp_shuttle_beacon.lua")

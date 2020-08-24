@@ -1,5 +1,0 @@
-object_draft_schematic_clothing_clothing_collection_jeweled_necklace = object_draft_schematic_clothing_shared_clothing_collection_jeweled_necklace:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_collection_jeweled_necklace, "object/draft_schematic/clothing/clothing_collection_jeweled_necklace.iff")

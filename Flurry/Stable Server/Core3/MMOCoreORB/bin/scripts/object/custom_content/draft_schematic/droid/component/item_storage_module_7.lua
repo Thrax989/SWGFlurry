@@ -1,5 +1,0 @@
-object_draft_schematic_droid_component_item_storage_module_7 = object_draft_schematic_droid_component_shared_item_storage_module_7:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_droid_component_item_storage_module_7, "object/draft_schematic/droid/component/item_storage_module_7.iff")

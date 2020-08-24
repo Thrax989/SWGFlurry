@@ -1,5 +1,0 @@
-object_draft_schematic_food_beastfood_tender_meat_substitute = object_draft_schematic_food_shared_beastfood_tender_meat_substitute:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_food_beastfood_tender_meat_substitute, "object/draft_schematic/food/beastfood_tender_meat_substitute.iff")

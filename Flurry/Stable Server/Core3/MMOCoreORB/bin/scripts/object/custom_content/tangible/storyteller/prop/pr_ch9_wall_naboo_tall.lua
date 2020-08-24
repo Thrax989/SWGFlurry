@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_ch9_wall_naboo_tall = object_tangible_storyteller_prop_shared_pr_ch9_wall_naboo_tall:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_wall_naboo_tall, "object/tangible/storyteller/prop/pr_ch9_wall_naboo_tall.iff")

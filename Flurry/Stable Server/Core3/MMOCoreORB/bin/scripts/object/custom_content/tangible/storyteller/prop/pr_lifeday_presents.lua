@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_lifeday_presents = object_tangible_storyteller_prop_shared_pr_lifeday_presents:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_lifeday_presents, "object/tangible/storyteller/prop/pr_lifeday_presents.iff")

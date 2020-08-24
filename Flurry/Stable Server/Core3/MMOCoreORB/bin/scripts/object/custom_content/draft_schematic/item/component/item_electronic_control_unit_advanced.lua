@@ -1,5 +1,0 @@
-object_draft_schematic_item_component_item_electronic_control_unit_advanced = object_draft_schematic_item_component_shared_item_electronic_control_unit_advanced:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_item_component_item_electronic_control_unit_advanced, "object/draft_schematic/item/component/item_electronic_control_unit_advanced.iff")

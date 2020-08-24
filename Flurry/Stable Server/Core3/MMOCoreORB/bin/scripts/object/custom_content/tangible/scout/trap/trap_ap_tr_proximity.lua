@@ -1,5 +1,0 @@
-object_tangible_scout_trap_trap_ap_tr_proximity = object_tangible_scout_trap_shared_trap_ap_tr_proximity:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_scout_trap_trap_ap_tr_proximity, "object/tangible/scout/trap/trap_ap_tr_proximity.iff")

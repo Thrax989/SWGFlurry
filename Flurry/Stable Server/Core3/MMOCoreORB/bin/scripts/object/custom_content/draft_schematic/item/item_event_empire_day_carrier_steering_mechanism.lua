@@ -1,5 +1,0 @@
-object_draft_schematic_item_item_event_empire_day_carrier_steering_mechanism = object_draft_schematic_item_shared_item_event_empire_day_carrier_steering_mechanism:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_item_item_event_empire_day_carrier_steering_mechanism, "object/draft_schematic/item/item_event_empire_day_carrier_steering_mechanism.iff")

@@ -1,5 +1,0 @@
-
-object_tangible_wearables_belt_appearance_invisible_s01 = object_tangible_wearables_belt_shared_appearance_invisible_s01:new {
-
-}
-ObjectTemplates:addTemplate(object_tangible_wearables_belt_appearance_invisible_s01, "object/tangible/wearables/belt/appearance_invisible_s01.iff")

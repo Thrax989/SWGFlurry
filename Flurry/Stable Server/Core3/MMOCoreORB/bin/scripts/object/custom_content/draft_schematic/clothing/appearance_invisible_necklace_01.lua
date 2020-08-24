@@ -1,5 +1,0 @@
-object_draft_schematic_clothing_appearance_invisible_necklace_01 = object_draft_schematic_clothing_shared_appearance_invisible_necklace_01:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_appearance_invisible_necklace_01, "object/draft_schematic/clothing/appearance_invisible_necklace_01.iff")

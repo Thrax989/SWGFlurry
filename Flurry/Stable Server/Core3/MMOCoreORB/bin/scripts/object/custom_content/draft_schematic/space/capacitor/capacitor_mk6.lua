@@ -1,5 +1,0 @@
-object_draft_schematic_space_capacitor_capacitor_mk6 = object_draft_schematic_space_capacitor_shared_capacitor_mk6:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_space_capacitor_capacitor_mk6, "object/draft_schematic/space/capacitor/capacitor_mk6.iff")

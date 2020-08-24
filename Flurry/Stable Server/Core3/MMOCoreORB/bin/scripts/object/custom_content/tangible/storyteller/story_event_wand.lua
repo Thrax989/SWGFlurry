@@ -1,5 +1,0 @@
-object_tangible_storyteller_story_event_wand = object_tangible_storyteller_shared_story_event_wand:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_story_event_wand, "object/tangible/storyteller/story_event_wand.iff")

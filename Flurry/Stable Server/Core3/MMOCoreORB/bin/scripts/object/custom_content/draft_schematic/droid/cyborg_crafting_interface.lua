@@ -1,5 +1,0 @@
-object_draft_schematic_droid_cyborg_crafting_interface = object_draft_schematic_droid_shared_cyborg_crafting_interface:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_droid_cyborg_crafting_interface, "object/draft_schematic/droid/cyborg_crafting_interface.iff")

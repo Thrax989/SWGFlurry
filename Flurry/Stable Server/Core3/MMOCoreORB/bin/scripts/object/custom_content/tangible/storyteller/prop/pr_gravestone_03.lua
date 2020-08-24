@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_gravestone_03 = object_tangible_storyteller_prop_shared_pr_gravestone_03:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_gravestone_03, "object/tangible/storyteller/prop/pr_gravestone_03.iff")

@@ -1,5 +1,0 @@
-object_tangible_storyteller_story_token_prop = object_tangible_storyteller_shared_story_token_prop:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_story_token_prop, "object/tangible/storyteller/story_token_prop.iff")

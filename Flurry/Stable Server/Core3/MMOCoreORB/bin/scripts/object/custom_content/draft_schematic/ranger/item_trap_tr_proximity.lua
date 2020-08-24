@@ -1,5 +1,0 @@
-object_draft_schematic_ranger_item_trap_tr_proximity = object_draft_schematic_ranger_shared_item_trap_tr_proximity:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_ranger_item_trap_tr_proximity, "object/draft_schematic/ranger/item_trap_tr_proximity.iff")

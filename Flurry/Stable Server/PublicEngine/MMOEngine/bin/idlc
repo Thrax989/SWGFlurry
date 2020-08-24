@@ -1,1 +1,0 @@
-java -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -client -Xmx128M -cp /home/toxic/git/PublicEngine/MMOEngine/bin/idlc.jar org.sr.idlc.compiler.Compiler $@

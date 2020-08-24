@@ -1,5 +1,0 @@
-
-object_tangible_wearables_bodysuit_bodysuit_trando_slaver = object_tangible_wearables_bodysuit_shared_bodysuit_trando_slaver:new {
-
-}
-ObjectTemplates:addTemplate(object_tangible_wearables_bodysuit_bodysuit_trando_slaver, "object/tangible/wearables/bodysuit/bodysuit_trando_slaver.iff")

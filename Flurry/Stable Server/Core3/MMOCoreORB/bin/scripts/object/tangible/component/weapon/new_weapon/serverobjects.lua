@@ -1,7 +1,0 @@
-includeFile("tangible/component/weapon/new_weapon/elemental_base.lua")
-includeFile("tangible/component/weapon/new_weapon/enhancement_melee_base.lua")
-includeFile("tangible/component/weapon/new_weapon/enhancement_melee_slot_one_base.lua")
-includeFile("tangible/component/weapon/new_weapon/enhancement_melee_slot_two_base.lua")
-includeFile("tangible/component/weapon/new_weapon/enhancement_ranged_base.lua")
-includeFile("tangible/component/weapon/new_weapon/enhancement_ranged_slot_one_base.lua")
-includeFile("tangible/component/weapon/new_weapon/enhancement_ranged_slot_two_base.lua")

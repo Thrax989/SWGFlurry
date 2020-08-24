@@ -1,5 +1,0 @@
-object_draft_schematic_space_engine_nova_eng_01 = object_draft_schematic_space_engine_shared_nova_eng_01:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_space_engine_nova_eng_01, "object/draft_schematic/space/engine/nova_eng_01.iff")
