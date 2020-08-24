@@ -18,6 +18,7 @@
 #include "server/zone/packets/chat/ChatSystemMessage.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
 #include "server/zone/objects/player/sui/transferbox/SuiTransferBox.h"
+#include "server/zone/ZoneProcessServer.h"
 
 #include "server/zone/objects/resource/ResourceSpawn.h"
 #include "server/zone/objects/resource/ResourceContainer.h"
@@ -155,6 +156,14 @@ void InstallationObjectImplementation::setOperating(bool value, bool notifyClien
 	broadcastToOperators(inso7);
 }
 
+String InstallationObjectImplementation::getCurrentSpawnName(){
+	if(currentSpawn != nullptr)
+	{
+		return currentSpawn->getType() + " - " + currentSpawn->getName();
+	}
+	else return "";
+}
+
 void InstallationObjectImplementation::setActiveResource(ResourceContainer* container) {
 
 	Time timeToWorkTill;
@@ -202,19 +211,37 @@ void InstallationObjectImplementation::setActiveResource(ResourceContainer* cont
 		}
 	}
 }
-
 // Credit - Quick harvester options mod from AotC.
 // Stack - implementing quick maint/power and also adding in retrieve all
+
 void InstallationObjectImplementation::quickAddMaint(CreatureObject* player, float amount)
 {
 	int bank = player->getBankCredits();
-	if(bank < amount)
+	int cash = player->getCashCredits();
+	int availableCredits = bank + cash;
+
+	if(availableCredits < amount)
 	{
 		player->sendSystemMessage("Not enough funds");
 	}
 	else
 	{
-		player->subtractBankCredits(amount);
+		if (cash < amount)
+		{
+			int diff = amount - cash;
+
+			if (diff > bank)
+			{
+				player->sendSystemMessage("@player_structure:insufficient_funds"); //You have insufficient funds to make this deposit.
+				return;
+			}
+			player->subtractCashCredits(cash); //Take all from cash, since they didn't have enough to cover.
+			player->subtractBankCredits(diff); //Take the rest from the bank.
+
+		} else {
+			player->subtractCashCredits(amount); //Take all of the payment from cash.
+		}
+
 		addMaintenance(amount);
 		player->sendSystemMessage("Quick Add Maintenance Successful");
 	}
@@ -407,7 +434,26 @@ bool InstallationObjectImplementation::updateMaintenance(Time& workingTime) {
 		Time workTill(lastMaintenanceTime.getTime() + (int) workTimePermitted);
 		workingTime = workTill;
 
-		shutdownWork = true;
+		// Stack get a ref to owning player. if they have the funds, do NOT shut it down because its going to be withdrawn from bank
+		CreatureObject* player = getOwnerCreatureObject();
+		if(player != nullptr)
+		{
+			if(player->getBankCredits() > payAmount)
+			{
+				shutdownWork = false;
+			}
+			else
+			{
+				shutdownWork = true;
+			}
+
+		}
+		else
+		{
+			shutdownWork = true;
+		}
+
+
 	}
 
 	if (workTimePermitted > 0) {

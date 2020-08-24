@@ -453,6 +453,8 @@ String ResourceManagerImplementation::despawnResource(String& resourceName) {
 		return "Spawn not Found";
 	}
 
+	Locker locker(spawn);
+
 	spawn->setDespawned(time(0) - 1);
 	resourceSpawner->shiftResources();
 

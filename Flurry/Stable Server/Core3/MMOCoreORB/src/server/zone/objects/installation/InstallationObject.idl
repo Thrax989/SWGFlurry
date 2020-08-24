@@ -80,6 +80,8 @@ class InstallationObject extends StructureObject {
 		}*/
 	}
 
+	public native string getCurrentSpawnName();
+
 	/**
 	 * Destroys this object from database
 	 * @pre { this is locked }
@@ -270,5 +272,3 @@ class InstallationObject extends StructureObject {
 	@read
 	public native float getHitChance();
 }
-
-
