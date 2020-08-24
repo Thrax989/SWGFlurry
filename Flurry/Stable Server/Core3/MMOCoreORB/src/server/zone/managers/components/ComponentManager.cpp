@@ -54,6 +54,7 @@
 #include "server/zone/objects/tangible/components/BossMenuComponent.h"
 #include "server/zone/objects/tangible/components/pvpMenuComponent.h"
 #include "server/zone/objects/tangible/components/DiamondMenuComponent.h"
+#include "server/zone/objects/tangible/components/ContrabandMenuComponent.h"
 #include "server/zone/objects/tangible/components/WorldMenuComponent.h"
 #include "server/zone/objects/tangible/components/EventMenuComponent.h"
 #include "server/zone/objects/tangible/components/HeroicMenuComponent.h"
@@ -218,6 +219,7 @@ ComponentManager::ComponentManager() {
 	components.put("ArtifactMenuComponent", new ArtifactMenuComponent());
 	components.put("BossMenuComponent", new BossMenuComponent());
 	components.put("pvpMenuComponent", new pvpMenuComponent());
+	components.put("ContrabandMenuComponent", new ContrabandMenuComponent());
 	components.put("DiamondMenuComponent", new DiamondMenuComponent());
 	components.put("WorldMenuComponent", new WorldMenuComponent());
 	components.put("EventMenuComponent", new EventMenuComponent());
