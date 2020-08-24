@@ -1,0 +1,1 @@
+object_mobile_skeleton_bm_mynock = object_mobile_skeleton_shared_bm_mynock:new {}ObjectTemplates:addTemplate(object_mobile_skeleton_bm_mynock, "object/mobile/skeleton/bm_mynock.iff")

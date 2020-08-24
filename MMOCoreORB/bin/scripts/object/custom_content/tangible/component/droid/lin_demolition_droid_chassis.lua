@@ -1,0 +1,5 @@
+object_tangible_component_droid_lin_demolition_droid_chassis = object_tangible_component_droid_shared_lin_demolition_droid_chassis:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_droid_lin_demolition_droid_chassis, "object/tangible/component/droid/lin_demolition_droid_chassis.iff")

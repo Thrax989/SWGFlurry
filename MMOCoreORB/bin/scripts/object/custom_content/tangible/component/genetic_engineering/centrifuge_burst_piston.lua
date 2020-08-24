@@ -1,0 +1,5 @@
+object_tangible_component_genetic_engineering_centrifuge_burst_piston = object_tangible_component_genetic_engineering_shared_centrifuge_burst_piston:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_genetic_engineering_centrifuge_burst_piston, "object/tangible/component/genetic_engineering/centrifuge_burst_piston.iff")

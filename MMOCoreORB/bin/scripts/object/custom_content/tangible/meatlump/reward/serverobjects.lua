@@ -1,0 +1,10 @@
+-- Server Objects
+includeFile("custom_content/tangible/meatlump/reward/mtp_king_cutout.lua")
+includeFile("custom_content/tangible/meatlump/reward/mtp_king_painting.lua")
+includeFile("custom_content/tangible/meatlump/reward/mtp_meatlump_graffiti_01.lua")
+includeFile("custom_content/tangible/meatlump/reward/mtp_meatlump_graffiti_02.lua")
+includeFile("custom_content/tangible/meatlump/reward/mtp_meatlump_graffiti_03.lua")
+includeFile("custom_content/tangible/meatlump/reward/mtp_meatlump_graffiti_04.lua")
+includeFile("custom_content/tangible/meatlump/reward/mtp_meatlump_graffiti_05.lua")
+includeFile("custom_content/tangible/meatlump/reward/mtp_meatlump_graffiti_06.lua")
+includeFile("custom_content/tangible/meatlump/reward/mtp_meatlump_graffiti_07.lua")

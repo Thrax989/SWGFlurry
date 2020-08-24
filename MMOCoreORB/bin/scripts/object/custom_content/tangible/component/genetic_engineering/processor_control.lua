@@ -1,0 +1,5 @@
+object_tangible_component_genetic_engineering_processor_control = object_tangible_component_genetic_engineering_shared_processor_control:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_genetic_engineering_processor_control, "object/tangible/component/genetic_engineering/processor_control.iff")

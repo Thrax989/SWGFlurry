@@ -1,0 +1,5 @@
+object_draft_schematic_genetic_engineering_beast_steroid_sub = object_draft_schematic_genetic_engineering_shared_beast_steroid_sub:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_beast_steroid_sub, "object/draft_schematic/genetic_engineering/beast_steroid_sub.iff")

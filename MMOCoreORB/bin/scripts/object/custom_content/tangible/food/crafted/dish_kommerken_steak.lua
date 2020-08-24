@@ -1,0 +1,5 @@
+object_tangible_food_crafted_dish_kommerken_steak = object_tangible_food_crafted_shared_dish_kommerken_steak:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_food_crafted_dish_kommerken_steak, "object/tangible/food/crafted/dish_kommerken_steak.iff")

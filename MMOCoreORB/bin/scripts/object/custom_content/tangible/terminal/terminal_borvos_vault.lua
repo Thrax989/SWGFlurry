@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_borvos_vault = object_tangible_terminal_shared_terminal_borvos_vault:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_borvos_vault, "object/tangible/terminal/terminal_borvos_vault.iff")

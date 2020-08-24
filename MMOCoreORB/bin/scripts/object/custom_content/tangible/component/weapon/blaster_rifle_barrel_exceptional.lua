@@ -1,0 +1,5 @@
+object_tangible_component_weapon_blaster_rifle_barrel_exceptional = object_tangible_component_weapon_shared_blaster_rifle_barrel_exceptional:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_blaster_rifle_barrel_exceptional, "object/tangible/component/weapon/blaster_rifle_barrel_exceptional.iff")

@@ -1,0 +1,5 @@
+object_tangible_gcw_static_base_invisible_cloner_rebel = object_tangible_gcw_static_base_shared_invisible_cloner_rebel:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_static_base_invisible_cloner_rebel, "object/tangible/gcw/static_base/invisible_cloner_rebel.iff")

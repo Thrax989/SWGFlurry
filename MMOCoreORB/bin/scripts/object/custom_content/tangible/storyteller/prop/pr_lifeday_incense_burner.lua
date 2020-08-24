@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_lifeday_incense_burner = object_tangible_storyteller_prop_shared_pr_lifeday_incense_burner:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_lifeday_incense_burner, "object/tangible/storyteller/prop/pr_lifeday_incense_burner.iff")

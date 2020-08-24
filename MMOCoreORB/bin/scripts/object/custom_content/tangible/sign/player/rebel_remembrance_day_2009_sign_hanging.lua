@@ -1,0 +1,3 @@
+object_tangible_sign_player_rebel_remembrance_day_2009_sign_hanging = object_tangible_sign_player_shared_rebel_remembrance_day_2009_sign_hanging:new {
+}
+ObjectTemplates:addTemplate(object_tangible_sign_player_rebel_remembrance_day_2009_sign_hanging, "object/tangible/sign/player/rebel_remembrance_day_2009_sign_hanging.iff")

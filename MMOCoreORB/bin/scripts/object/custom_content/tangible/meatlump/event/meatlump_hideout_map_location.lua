@@ -1,0 +1,5 @@
+object_tangible_meatlump_event_meatlump_hideout_map_location = object_tangible_meatlump_event_shared_meatlump_hideout_map_location:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_meatlump_event_meatlump_hideout_map_location, "object/tangible/meatlump/event/meatlump_hideout_map_location.iff")

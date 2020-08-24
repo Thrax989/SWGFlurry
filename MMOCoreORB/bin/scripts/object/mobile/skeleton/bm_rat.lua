@@ -1,0 +1,1 @@
+object_mobile_skeleton_bm_rat = object_mobile_skeleton_shared_bm_rat:new {}ObjectTemplates:addTemplate(object_mobile_skeleton_bm_rat, "object/mobile/skeleton/bm_rat.iff")

@@ -1,0 +1,5 @@
+object_tangible_storyteller_event_props_pr_anniversary_nyms_main = object_tangible_storyteller_event_props_shared_pr_anniversary_nyms_main:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_event_props_pr_anniversary_nyms_main, "object/tangible/storyteller/event_props/pr_anniversary_nyms_main.iff")

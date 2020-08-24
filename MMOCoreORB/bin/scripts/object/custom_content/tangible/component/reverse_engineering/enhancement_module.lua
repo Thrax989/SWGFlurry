@@ -1,0 +1,5 @@
+object_tangible_component_reverse_engineering_enhancement_module = object_tangible_component_reverse_engineering_shared_enhancement_module:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_reverse_engineering_enhancement_module, "object/tangible/component/reverse_engineering/enhancement_module.iff")

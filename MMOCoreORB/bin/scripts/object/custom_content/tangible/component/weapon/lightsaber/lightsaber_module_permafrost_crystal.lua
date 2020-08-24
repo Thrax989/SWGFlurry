@@ -1,0 +1,5 @@
+object_tangible_component_weapon_lightsaber_lightsaber_module_permafrost_crystal = object_tangible_component_weapon_lightsaber_shared_lightsaber_module_permafrost_crystal:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_lightsaber_lightsaber_module_permafrost_crystal, "object/tangible/component/weapon/lightsaber/lightsaber_module_permafrost_crystal.iff")

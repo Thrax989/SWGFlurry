@@ -1,0 +1,1 @@
+rebel_assault_bicep_l = {	description = "",	minimumLevel = 0,	maximumLevel = 0,	lootItems = {		{itemTemplate = "armor_rebel_assault_bicep_l", weight = 10000000}	}}addLootGroupTemplate("rebel_assault_bicep_l", rebel_assault_bicep_l)

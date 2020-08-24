@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_borvo_security_scanner = object_tangible_terminal_shared_terminal_borvo_security_scanner:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_borvo_security_scanner, "object/tangible/terminal/terminal_borvo_security_scanner.iff")

@@ -1,0 +1,65 @@
+enhanced_force_kliknik = Creature:new {
+	objectName = "",
+	customName = "Force Kliknik",
+	socialGroup = "geonosian_creature",
+	faction = "",
+	level = 94,
+	chanceHit = 0.95,
+	damageMin = 1000,
+	damageMax = 1800,
+	baseXp = 8964,
+	baseHAM = 22000,
+	baseHAMmax = 27000,
+	armor = 2,
+	resists = {35,35,0,95,-1,0,0,0,-1},
+	meatType = "meat_carnivore",
+	meatAmount = 45,
+	hideType = "hide_scaley",
+	hideAmount = 40,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 15,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER,
+	optionsBitmask = AIENABLED,
+	diet = CARNIVORE,
+
+	templates = {"object/mobile/kliknik_hue.iff"},
+	scale = 1.45,
+	lootGroups = {
+		{
+			groups = {
+				{group = "geo_kliknik", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "geonosian_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},		
+		{
+			groups = {
+				{group = "geonosian_relic", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+	},
+	weapons = {"creature_spit_heavy_flame"},
+	conversationTemplate = "",
+	attacks = {
+		{"stunattack",""},
+		{"creatureareaattack",""}
+	}
+}
+
+CreatureTemplates:addCreatureTemplate(enhanced_force_kliknik, "enhanced_force_kliknik")

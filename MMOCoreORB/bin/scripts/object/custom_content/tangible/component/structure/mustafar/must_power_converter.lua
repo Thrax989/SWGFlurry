@@ -1,0 +1,5 @@
+object_tangible_component_structure_mustafar_must_power_converter = object_tangible_component_structure_mustafar_shared_must_power_converter:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_structure_mustafar_must_power_converter, "object/tangible/component/structure/mustafar/must_power_converter.iff")

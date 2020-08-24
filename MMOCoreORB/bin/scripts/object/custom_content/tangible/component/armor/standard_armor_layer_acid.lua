@@ -1,0 +1,5 @@
+object_tangible_component_armor_standard_armor_layer_acid = object_tangible_component_armor_shared_standard_armor_layer_acid:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_armor_standard_armor_layer_acid, "object/tangible/component/armor/standard_armor_layer_acid.iff")

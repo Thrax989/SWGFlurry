@@ -1,0 +1,1 @@
+object_mobile_skeleton_bm_bird_finch = object_mobile_skeleton_shared_bm_bird_finch:new {}ObjectTemplates:addTemplate(object_mobile_skeleton_bm_bird_finch, "object/mobile/skeleton/bm_bird_finch.iff")

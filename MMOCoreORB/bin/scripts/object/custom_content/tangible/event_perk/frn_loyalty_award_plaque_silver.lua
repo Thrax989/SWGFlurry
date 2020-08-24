@@ -1,0 +1,1 @@
+object_tangible_event_perk_frn_loyalty_award_plaque_silver = object_tangible_event_perk_shared_frn_loyalty_award_plaque_silver:new {}ObjectTemplates:addTemplate(object_tangible_event_perk_frn_loyalty_award_plaque_silver, "object/tangible/event_perk/frn_loyalty_award_plaque_silver.iff")

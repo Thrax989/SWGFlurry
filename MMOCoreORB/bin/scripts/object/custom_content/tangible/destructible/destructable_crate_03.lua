@@ -1,0 +1,3 @@
+object_tangible_destructible_destructable_crate_03 = object_tangible_destructible_shared_destructable_crate_03:new {
+}
+ObjectTemplates:addTemplate(object_tangible_destructible_destructable_crate_03, "object/tangible/destructible/destructable_crate_03.iff")

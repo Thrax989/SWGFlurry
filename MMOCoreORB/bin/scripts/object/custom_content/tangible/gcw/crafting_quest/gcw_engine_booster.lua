@@ -1,0 +1,5 @@
+object_tangible_gcw_crafting_quest_gcw_engine_booster = object_tangible_gcw_crafting_quest_shared_gcw_engine_booster:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_crafting_quest_gcw_engine_booster, "object/tangible/gcw/crafting_quest/gcw_engine_booster.iff")

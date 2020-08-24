@@ -1,0 +1,3 @@
+object_tangible_theme_park_nym_hatch_to_roof = object_tangible_theme_park_nym_shared_hatch_to_roof:new {
+}
+ObjectTemplates:addTemplate(object_tangible_theme_park_nym_hatch_to_roof, "object/tangible/theme_park/nym/hatch_to_roof.iff")

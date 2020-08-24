@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_sennex_huff_computer = object_tangible_terminal_shared_terminal_sennex_huff_computer:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_sennex_huff_computer, "object/tangible/terminal/terminal_sennex_huff_computer.iff")

@@ -1,0 +1,5 @@
+object_tangible_gcw_crafting_quest_gcw_bacta_injectors = object_tangible_gcw_crafting_quest_shared_gcw_bacta_injectors:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_crafting_quest_gcw_bacta_injectors, "object/tangible/gcw/crafting_quest/gcw_bacta_injectors.iff")

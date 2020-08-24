@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_elevator_noscript = object_tangible_terminal_shared_terminal_elevator_noscript:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_elevator_noscript, "object/tangible/terminal/terminal_elevator_noscript.iff")
