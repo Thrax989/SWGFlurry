@@ -42,10 +42,15 @@ public:
                 if (faction != Factions::FACTIONIMPERIAL && faction != Factions::FACTIONREBEL)
                         return GENERALERROR;
 
+				if(creature->hasSkill("force_rank_dark_novice") || creature->hasSkill("force_rank_light_novice") || creature->hasSkill("combat_jedi_novice")){
+					creature->sendSystemMessage("You may not use this command.");
+					return GENERALERROR;
+				}
+
                 if (creature->hasSkill("force_title_jedi_rank_03")) {
                     creature->sendSystemMessage("You must leave the FRS first.");
                         return GENERALERROR;
-		}
+				}
 		
                 if (creature->getFutureFactionStatus() != -1)
                         return GENERALERROR;	
