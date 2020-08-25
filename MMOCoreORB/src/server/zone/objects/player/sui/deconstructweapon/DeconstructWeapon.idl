@@ -14,6 +14,7 @@ class DeconstructWeapon extends SuiBox {
 		super(player, windowType, super.DECONSTRUCTWEAPON);
 	}
 
+	@local
 	public native BaseMessage generateMessage();
 	
 	public boolean isDeconstructWeapon() {
