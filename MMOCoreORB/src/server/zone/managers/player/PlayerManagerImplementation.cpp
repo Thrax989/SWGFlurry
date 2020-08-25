@@ -1297,6 +1297,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 					attackerCreature = owner;
 				}
 			}
+
 			//Added Discord Broadcast System : Created By TOXIC
 			if (attackerCreature->isPlayerCreature()) {
 				String playerName = player->getFirstName();
@@ -1304,6 +1305,11 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				StringBuffer zBroadcast;
 				StringBuffer zGeneral;
 				String killerFaction, playerFaction;
+				// Stack - stop the printouts for self kills - and stop updating the table
+				if(killerName == playerName)
+					{
+						return;
+					}
 				if (attacker->isRebel())
 					killerFaction = " [Rebel] ";
 				else if (attacker->isImperial())
@@ -1316,12 +1322,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 					playerFaction = " [Imperial] ";
 				else
 					playerFaction = " [Civilian] ";
-
-					// Stack - stop the printouts for self kills - and stop updating the table
-					if(killerName == playerName)
-					{
-						return;
-					}
 
 
 				if (CombatManager::instance()->areInDuel(attackerCreature, player)) {
