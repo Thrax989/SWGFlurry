@@ -73,6 +73,7 @@ class SuiBox extends ManagedObject implements Logger {
 
 	public static final int QUESTPOPUP = 30;
 	public static final int ADDWEAPONDOT = 40;
+	public static final int DECONSTRUCTWEAPON = 41;
 
 	public SuiBox(CreatureObject play, unsigned int windowtype, unsigned int boxtype) {
 		player = play;
@@ -268,6 +269,18 @@ class SuiBox extends ManagedObject implements Logger {
 	}
 
 	public abstract boolean isColorPicker() {
+		return false;
+	}
+
+	public abstract boolean isDeconstructWeapon() {
+		return false;
+	}
+
+	public abstract boolean isDeconstructWeapon() {
+		return false;
+	}
+
+	public abstract boolean isAddWeaponDot() {
 		return false;
 	}
 

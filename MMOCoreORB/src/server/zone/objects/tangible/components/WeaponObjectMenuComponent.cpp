@@ -15,6 +15,8 @@
 #include "server/zone/objects/player/sessions/SlicingSession.h"
 #include "server/zone/objects/player/sui/callbacks/AddWeaponDotCallback.h"
 #include "server/zone/objects/player/sui/Addweapondot/AddWeaponDot.h"
+#include "server/zone/objects/player/sui/callbacks/DeconstructWeaponCallback.h"
+#include "server/zone/objects/player/sui/deconstructweapon/DeconstructWeapon.h"
 
 void WeaponObjectMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
@@ -39,6 +41,10 @@ void WeaponObjectMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject,
 
 		if(player->hasSkill("crafting_weaponsmith_master") && ghost->getExperience("recycle_contraband") > 0){
 			menuResponse->addRadialMenuItem(250, 3, "Apply Dot");
+		}
+
+		if(player->hasSkill("crafting_weaponsmith_master")){
+			menuResponse->addRadialMenuItem(251, 3, "Deconstruct Weapon");
 		}
 	}
 
@@ -126,6 +132,39 @@ int WeaponObjectMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, 
 
 			 }else {
 				 player->sendSystemMessage("This weapon already has a Dot");
+			 }
+
+			return 1;
+		}
+		if(selectedID == 251) {
+			 if(!weapon->getDeconstructionTemplate().isEmpty()){
+				 String deconChance;
+				 int chance = 0;
+				 if (weapon->getConditionDamage() < 1){
+					 player->sendSystemMessage("This Weapon can be Deconstructed");
+				 	 deconChance = "Zero";
+				 }else if (weapon->getConditionDamage() <= 200){
+					 deconChance = "Mild";
+					 chance = 5;
+				 }else {
+					 deconChance = "High";
+					 chance = 10;
+				 }
+			 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
+			 	ZoneServer* server = player->getZoneServer();
+				ManagedReference<DeconstructWeapon*> deconstructBox = new DeconstructWeapon(player, SuiWindowType::DECONSTRUCT_WEAPON);
+				deconstructBox->setCallback(new DeconstructWeaponCallback(server, ghost, weapon, chance));
+				deconstructBox->setUsingObject(player);
+				deconstructBox->setPromptTitle("Deconstruct Weapon");
+				deconstructBox->setPromptText("Are you sure you wish to Deconstruct this weapon? Failure Probability: " + deconChance);
+				deconstructBox->setOkButton(true, "@yes");
+				deconstructBox->setCancelButton(true, "@no");
+
+				player->getPlayerObject()->addSuiBox(deconstructBox);
+				player->sendMessage(deconstructBox->generateMessage());
+
+			 }else {
+				 player->sendSystemMessage("No Deconstruction Avalible" + weapon->getDeconstructionTemplate());
 			 }
 
 			return 1;

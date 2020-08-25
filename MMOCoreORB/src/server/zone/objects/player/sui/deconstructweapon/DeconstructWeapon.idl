@@ -1,0 +1,22 @@
+
+package server.zone.objects.player.sui.deconstructweapon;
+
+import server.zone.objects.scene.SceneObject;
+import server.zone.objects.creature.CreatureObject;
+import engine.service.proto.BaseMessage;
+import server.zone.objects.player.sui.SuiBox;
+import system.lang.String;
+
+class DeconstructWeapon extends SuiBox {
+
+
+	public DeconstructWeapon(CreatureObject player, unsigned int windowType) {
+		super(player, windowType, super.DECONSTRUCTWEAPON);
+	}
+
+	public native BaseMessage generateMessage();
+	
+	public boolean isDeconstructWeapon() {
+		return true;
+	}
+}

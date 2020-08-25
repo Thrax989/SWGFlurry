@@ -186,7 +186,10 @@ public:
 		// Reaction Fines
 		REACTION_FINE                      = 331,
 
+		//Add Dot
 		ADD_DOT							   = 333,
+		//Deconstruct Weapon
+		DECONSTRUCT_WEAPON				   = 334,
 
 		// Growable Plant
 		GROWABLE_PLANT					   = 341,
