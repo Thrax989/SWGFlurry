@@ -19,6 +19,9 @@
 #include "templates/faction/Factions.h"
 #include "server/zone/objects/player/FactionStatus.h"
 #include "server/zone/managers/player/PlayerMap.h"
+#include "server/zone/packets/MessageCallback.h"
+#include "server/zone/ZoneServer.h"
+#include "server/zone/Zone.h"
 
 void FrsManagerImplementation::initialize() {
 	auto zoneServer = this->zoneServer.get();
@@ -1034,7 +1037,7 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 	}
 
 	if (!isVictim){
-		Zone* zone = player->getZone();
+		Zone* zone = attacker->getZone();
 		String planetName = zone->getZoneName();
 		String attackerName = attacker->getFirstName();
 		String victimName = victim->getFirstName();
@@ -4117,4 +4120,3 @@ void FrsManagerImplementation::handleSuddenDeathLoss(CreatureObject* player, Thr
 ZoneServer* FrsManagerImplementation::getZoneServer() {
 	return zoneServer.get();
 }
-
