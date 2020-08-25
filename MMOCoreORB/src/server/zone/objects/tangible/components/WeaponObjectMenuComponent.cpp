@@ -42,10 +42,11 @@ void WeaponObjectMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject,
 		if(player->hasSkill("crafting_weaponsmith_master") && ghost->getExperience("recycle_contraband") > 0){
 			menuResponse->addRadialMenuItem(250, 3, "Apply Dot");
 		}
-
+		/*
 		if(player->hasSkill("crafting_weaponsmith_master")){
 			menuResponse->addRadialMenuItem(251, 3, "Deconstruct Weapon");
 		}
+		*/
 	}
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
