@@ -161,6 +161,10 @@ public:
 
 	void parseFileData(IffStream* iffStream);
 
+	inline String getDeconstructionTemplate() const {
+		return deconstructionTemplate;
+	}
+
 	inline String getXpType() const {
 		return xpType;
 	}
