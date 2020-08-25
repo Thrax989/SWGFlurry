@@ -1034,14 +1034,16 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 	}
 
 	if (!isVictim){
+		Zone* zone = player->getZone();
+		String planetName = zone->getZoneName();
 		String attackerName = attacker->getFirstName();
 		String victimName = victim->getFirstName();
 		StringBuffer frsKillQuery, zBroadcast;
-		zBroadcast << "\\#00cc99 " << attackerName << " Has Gained FRS From Killing " << "\\#00e604" << victimName; 
+		zBroadcast << "\\#00cc99 " << attackerName << " Has Gained FRS From Killing " << "\\#00e604" << victimName << "\\#e60000 on Planet " << planetName; 
 		playerGhost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		ChatManager* chatManager = attacker->getZoneServer()->getChatManager();	
 		StringBuffer zGeneral;
-		zGeneral << " Has Gained FRS From Killing " << victimName;
+		zGeneral << " Has Gained FRS From Killing " << victimName << "\\#e60000 on Planet " << planetName;
 		chatManager->handleGeneralChat(attacker, zGeneral.toString());
 	}
 	return xpChange;
