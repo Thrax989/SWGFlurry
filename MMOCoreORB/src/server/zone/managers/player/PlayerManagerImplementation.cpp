@@ -1282,36 +1282,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		player->sendMessage(box->generateMessage());
 		}
 	}
-	//Custom Perma Death Broadcasting When you reach 0 lives
-	//Rebel gray jedi check
-	if (player->getScreenPlayState("jediLives") == 0) {
-		if (player->getFaction() == 370444368) {//rebel
-		if (player->hasSkill("combat_jedi_novice")) {
-			String playerName = player->getFirstName();
-			StringBuffer zBroadcast;
-			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
-			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
-			StringBuffer zGeneral;
-			zGeneral << "Has Permanently Died On Their Jedi!";	
-			chatManager->handleGeneralChat(player, zGeneral.toString());
-			}
-		}
-	//Imperial gray jedi check
-	if (player->getScreenPlayState("jediLives") == 0) {
-		if (player->getFaction() == 3679112276) {//imperial
-		if (player->hasSkill("combat_jedi_novice")) {
-			String playerName = player->getFirstName();
-			StringBuffer zBroadcast;
-			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
-			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
-			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on your jedi
-			StringBuffer zGeneral;
-			zGeneral << "Has Permanently Died On Their Jedi!";	
-			chatManager->handleGeneralChat(player, zGeneral.toString());
-			}
-		}
-	}
+
 
 	if (!attacker->isPlayerCreature()) {
 		ghost->updatePveDeaths();
@@ -1437,7 +1408,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->notifyObjectKillObservers(attacker);
 		}
 	}
-}
 
 void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* player, int typeofdeath) {
 	Zone* zone = player->getZone();
