@@ -28,6 +28,9 @@
 #include "templates/customization/CustomizationIdManager.h"
 #include "server/zone/managers/skill/imagedesign/ImageDesignManager.h"
 #include "server/zone/managers/jedi/JediManager.h"
+#include "server/zone/packets/MessageCallback.h"
+#include "server/zone/ZoneServer.h"
+#include "server/zone/Zone.h"
 
 PlayerCreationManager::PlayerCreationManager() :
 		Logger("PlayerCreationManager") {
@@ -676,11 +679,13 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	//Broadcast Server wide message, new player has joined the server
 	StringBuffer zBroadcast;
 	zBroadcast << "\\#00ace6" << playerName << " \\#ffb90f Has Joined The Flurry Server!";
-	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 
 	//Broadcast new player has joined the server forward to discord channel. created by :TOXIC
+	Zone* zone = playerCreature->getZone();
+	String planetName = zone->getZoneName();
 	StringBuffer zGeneral;
-	zGeneral << "Has Joined The Flurry Server!";	
+	zGeneral << " Has Joined The Flurry Server, They Are Currently On" << " Planet " << planetName << " In The city Of Korrivan.";	
 	chatManager->handleGeneralChat(playerCreature, zGeneral.toString());
 
 	return true;
