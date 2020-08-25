@@ -1323,14 +1323,19 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 						return;
 					}
 
+
 				if (CombatManager::instance()->areInDuel(attackerCreature, player)) {
-					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a Duel by" << killerFaction << "\\#00cc99 " << killerName;
-					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName;	
+					Zone* zone = player->getZone();
+					String planetName = zone->getZoneName();
+					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a Duel by" << killerFaction << "\\#00cc99 " << killerName << " \\#e60000 on Planet " << planetName;
+					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName << " \\#e60000 on Planet " << planetName;	
 				 }
 
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
- 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName;
-					zGeneral << playerFaction << "was slain in [PvP] by" << killerFaction << killerName;	
+					Zone* zone = player->getZone();
+					String planetName = zone->getZoneName();
+ 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName << " \\#e60000 on Planet " << planetName;
+					zGeneral << playerFaction << "was slain in [PvP] by" << killerFaction << killerName << " \\#e60000 on Planet " << planetName;	
 
 				}
 					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
