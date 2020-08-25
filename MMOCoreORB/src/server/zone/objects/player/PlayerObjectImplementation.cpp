@@ -1457,6 +1457,26 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	schedulePvpTefRemovalTask();
 
+ 	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
+	if (playerCreature->getScreenPlayState("TEST") == 0) {
+		String lootGroup = "TEST";
+
+		int level = 1;
+
+		ManagedReference<SceneObject*> inventory = playerCreature->getSlottedObject("inventory");
+
+		if (inventory != nullptr && !inventory->isContainerFullRecursive()) {
+
+			ManagedReference<LootManager*> lootManager = playerCreature->getZoneServer()->getLootManager();
+
+			if (lootManager != nullptr){
+				lootManager->createLoot(inventory, lootGroup, level);
+				playerCreature->setScreenPlayState("TEST", 1);
+				playerCreature->sendSystemMessage("TEST Gift has been placed in your Inventory");
+			}
+		}
+	}
+
 	MissionManager* missionManager = zoneServer->getMissionManager();
 
 	if (missionManager != nullptr) {
