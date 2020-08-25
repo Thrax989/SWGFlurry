@@ -53,7 +53,7 @@ protected:
 	Vector<String> defenderDefenseModifiers;
 	Vector<String> defenderSecondaryDefenseModifiers;
 	Vector<String> defenderToughnessModifiers;
-
+	String deconstructionTemplate;
 	String xpType;
 
 	uint32 weaponType;
