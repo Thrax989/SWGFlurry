@@ -1459,7 +1459,7 @@ void PlayerObjectImplementation::notifyOnline() {
 	schedulePvpTefRemovalTask();
 
  	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
-	if (playerCreature->getScreenPlayState("TEST") == 0) {
+	if (playerCreature->getScreenPlayState("TEST") == 1) {
 		String lootGroup = "TEST";
 
 		int level = 1;
