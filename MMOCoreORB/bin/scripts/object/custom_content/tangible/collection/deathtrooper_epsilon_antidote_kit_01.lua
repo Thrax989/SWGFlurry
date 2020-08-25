@@ -1,7 +1,7 @@
 
 object_tangible_collection_deathtrooper_epsilon_antidote_kit_01 = object_tangible_collection_shared_deathtrooper_epsilon_antidote_kit_01:new {
 
-		objectMenuComponent = "ContrabandMenuComponent",
+		objectMenuComponent = "DotpackMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_collection_deathtrooper_epsilon_antidote_kit_01, "object/tangible/collection/deathtrooper_epsilon_antidote_kit_01.iff")
