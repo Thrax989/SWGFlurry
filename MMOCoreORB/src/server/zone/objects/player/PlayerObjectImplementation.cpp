@@ -1472,8 +1472,12 @@ void PlayerObjectImplementation::notifyOnline() {
 
 			if (lootManager != nullptr){
 				lootManager->createLoot(inventory, lootGroup, level);
+				StringBuffer zReward;
+				ChatManager* chatManager = playerCreature->getZoneServer()->getChatManager();	
 				playerCreature->setScreenPlayState("TEST", 1);
 				playerCreature->sendSystemMessage("TEST Gift has been placed in your Inventory");
+				zReward << " Has Received A Server Reward";
+				chatManager->handleGeneralChat(playerCreature, zReward.toString());
 			}
 		}
 	}
