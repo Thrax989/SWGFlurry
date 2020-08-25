@@ -21,6 +21,7 @@
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/objects/building/BuildingObject.h"
+#include "server/zone/objects/group/GroupObject.h"
 
 void DotpackMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
