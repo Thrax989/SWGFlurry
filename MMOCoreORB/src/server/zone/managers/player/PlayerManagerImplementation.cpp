@@ -1316,6 +1316,13 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 					playerFaction = " [Imperial] ";
 				else
 					playerFaction = " [Civilian] ";
+
+					// Stack - stop the printouts for self kills - and stop updating the table
+					if(killerName == playerName)
+					{
+						return;
+					}
+
 				if (CombatManager::instance()->areInDuel(attackerCreature, player)) {
 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a Duel by" << killerFaction << "\\#00cc99 " << killerName;
 					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName;	
