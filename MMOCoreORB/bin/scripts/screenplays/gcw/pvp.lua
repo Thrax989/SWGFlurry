@@ -45,7 +45,6 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 			player:sendSystemMessage("You have entered the pvp safe zone.")
 			player:playEffect("clienteffect/sm_end_of_the_line.cef", "")
 			player:playEffect("clienteffect/player_clone_compile.cef", "")
-			player:setFactionStatus(0)
 			end
 		return 0
 	end)
@@ -61,7 +60,13 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		if (player:isAiAgent()) then
 			return 0
 		end
-		
+
+		if (player:hasSkill("combat_jedi_novice") or player:hasSkill("combat_jedi_master")) then
+			player:sendSystemMessage("Gray Jedi Cannot PvP Here!")
+			player:teleport(5293, 78, 6115, 0)
+			return 0
+		end
+
 		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
 			player:sendSystemMessage("You entered the pvp zone!")
 			player:setFactionStatus(2)
