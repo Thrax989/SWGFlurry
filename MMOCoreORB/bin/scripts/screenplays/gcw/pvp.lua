@@ -45,6 +45,7 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 			player:sendSystemMessage("You have entered the pvp safe zone.")
 			player:playEffect("clienteffect/sm_end_of_the_line.cef", "")
 			player:playEffect("clienteffect/player_clone_compile.cef", "")
+			player:setFactionStatus(0)
 			end
 		return 0
 	end)
