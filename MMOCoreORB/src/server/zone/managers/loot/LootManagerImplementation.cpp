@@ -748,7 +748,7 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	//Rare Loot System
 	if (creatureLevel >= 75){
 		if (System::random(100) < 2) { //2% Rare Loot System
-			createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
+			createLoot(container, "rarelootsystem", creatureLevel, false);
 			creature->playEffect("clienteffect/rare_loot.cef", "");
 			creature->showFlyText("Rare", "Loot", 0, 255, 0);
 		}
