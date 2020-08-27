@@ -1224,6 +1224,9 @@ includeFile("items/collection/collectiontiertwo.lua")
 includeFile("items/collection/collectiontierthree.lua")
 includeFile("items/collection/collectiondiamond.lua")
 includeFile("items/collection/collectionheroic.lua")
+includeFile("items/collection/rareloot1.lua")
+includeFile("items/collection/rareloot2.lua")
+includeFile("items/collection/rareloot3.lua")
 
 --Halloween
 includeFile("items/halloween/halloweenitems.lua")
