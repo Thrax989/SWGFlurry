@@ -749,17 +749,8 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	if (creatureLevel >= 75){
 		if (System::random(100) < 2) { //2% Rare Loot System
 			createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
-			creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
+			creature->playEffect("clienteffect/rare_loot.cef", "");
 			creature->showFlyText("Rare", "Loot", 0, 255, 0);
-		}
-	}
-
-	//Rare Loot NGE Weapon System
-	if (creatureLevel >= 75){
-		if (System::random(100) < 2) { //2% NGE Weapon System
-			createLoot(container, "nge_all", creatureLevel, false);
-			creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
-			creature->showFlyText("NGE", "Weapon", 0, 255, 0);
 		}
 	}
 
