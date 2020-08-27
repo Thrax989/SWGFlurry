@@ -42,8 +42,6 @@
 
 
 object_tangible_loot_collectible_collectible_rewards_collectible_sculpture_s01 = object_tangible_loot_collectible_collectible_rewards_shared_collectible_sculpture_s01:new {
-	junkDealerNeeded = 1,
-	junkValue = 1000
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
