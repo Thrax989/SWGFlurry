@@ -43,7 +43,9 @@
 
 object_tangible_loot_misc_mt_soup = object_tangible_loot_misc_shared_mt_soup:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
+
+
+
 
 	objectMenuComponent = "ScrapMenuComponent",
 

@@ -43,7 +43,9 @@
 
 object_tangible_loot_misc_ticket_collectors_item_s01 = object_tangible_loot_misc_shared_ticket_collectors_item_s01:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
+
+
+
 
 	objectMenuComponent = "ScrapMenuComponent",
 

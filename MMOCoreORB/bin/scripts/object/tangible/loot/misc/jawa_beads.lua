@@ -43,7 +43,9 @@
 
 object_tangible_loot_misc_jawa_beads = object_tangible_loot_misc_shared_jawa_beads:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
+
+
+
 
 	objectMenuComponent = "ScrapMenuComponent",
 

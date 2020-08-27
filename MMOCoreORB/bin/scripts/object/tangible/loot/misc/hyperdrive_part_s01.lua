@@ -43,7 +43,9 @@
 
 object_tangible_loot_misc_hyperdrive_part_s01 = object_tangible_loot_misc_shared_hyperdrive_part_s01:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
+
+
+
 
 	objectMenuComponent = "ScrapMenuComponent",
 

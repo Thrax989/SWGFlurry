@@ -43,7 +43,9 @@
 
 object_tangible_loot_misc_ornamental_sconce = object_tangible_loot_misc_shared_ornamental_sconce:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
+
+
+
 
 	objectMenuComponent = "ScrapMenuComponent",
 

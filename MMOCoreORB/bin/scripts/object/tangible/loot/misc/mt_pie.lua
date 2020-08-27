@@ -43,7 +43,9 @@
 
 object_tangible_loot_misc_mt_pie = object_tangible_loot_misc_shared_mt_pie:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
+
+
+
 
 	objectMenuComponent = "ScrapMenuComponent",
 

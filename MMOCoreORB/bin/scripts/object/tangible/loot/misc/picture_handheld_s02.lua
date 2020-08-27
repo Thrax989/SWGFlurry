@@ -43,7 +43,9 @@
 
 object_tangible_loot_misc_picture_handheld_s02 = object_tangible_loot_misc_shared_picture_handheld_s02:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
+
+
+
 
 	objectMenuComponent = "ScrapMenuComponent",
 

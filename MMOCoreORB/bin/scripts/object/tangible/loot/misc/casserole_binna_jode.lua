@@ -43,7 +43,9 @@
 
 object_tangible_loot_misc_casserole_binna_jode = object_tangible_loot_misc_shared_casserole_binna_jode:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
+
+
+
 
 	objectMenuComponent = "ScrapMenuComponent",
 

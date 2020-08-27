@@ -43,7 +43,9 @@
 
 object_tangible_loot_misc_spectrum_recorder = object_tangible_loot_misc_shared_spectrum_recorder:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
+
+
+
 
 	objectMenuComponent = "ScrapMenuComponent",
 
