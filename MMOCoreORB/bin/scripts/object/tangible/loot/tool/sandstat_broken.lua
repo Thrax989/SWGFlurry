@@ -43,6 +43,8 @@
 
 object_tangible_loot_tool_sandstat_broken = object_tangible_loot_tool_shared_sandstat_broken:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_tool_sandstat_broken, "object/tangible/loot/tool/sandstat_broken.iff")

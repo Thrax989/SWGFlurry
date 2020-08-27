@@ -43,6 +43,8 @@
 
 object_tangible_loot_simple_kit_pulverizer = object_tangible_loot_simple_kit_shared_pulverizer:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_pulverizer, "object/tangible/loot/simple_kit/pulverizer.iff")

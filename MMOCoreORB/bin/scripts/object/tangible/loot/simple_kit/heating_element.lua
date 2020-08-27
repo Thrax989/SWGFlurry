@@ -43,6 +43,8 @@
 
 object_tangible_loot_simple_kit_heating_element = object_tangible_loot_simple_kit_shared_heating_element:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_heating_element, "object/tangible/loot/simple_kit/heating_element.iff")

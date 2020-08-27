@@ -43,6 +43,10 @@
 
 object_tangible_loot_misc_shisa_decorative_s01 = object_tangible_loot_misc_shared_shisa_decorative_s01:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_shisa_decorative_s01, "object/tangible/loot/misc/shisa_decorative_s01.iff")

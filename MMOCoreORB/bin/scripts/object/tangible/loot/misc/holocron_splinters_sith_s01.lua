@@ -43,6 +43,10 @@
 
 object_tangible_loot_misc_holocron_splinters_sith_s01 = object_tangible_loot_misc_shared_holocron_splinters_sith_s01:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_holocron_splinters_sith_s01, "object/tangible/loot/misc/holocron_splinters_sith_s01.iff")

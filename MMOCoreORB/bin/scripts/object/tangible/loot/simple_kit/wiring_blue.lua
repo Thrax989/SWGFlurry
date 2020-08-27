@@ -43,6 +43,8 @@
 
 object_tangible_loot_simple_kit_wiring_blue = object_tangible_loot_simple_kit_shared_wiring_blue:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_wiring_blue, "object/tangible/loot/simple_kit/wiring_blue.iff")

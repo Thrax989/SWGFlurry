@@ -43,6 +43,8 @@
 
 object_tangible_loot_collectible_collectible_parts_orange_rug_thread_03 = object_tangible_loot_collectible_collectible_parts_shared_orange_rug_thread_03:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_collectible_collectible_parts_orange_rug_thread_03, "object/tangible/loot/collectible/collectible_parts/orange_rug_thread_03.iff")

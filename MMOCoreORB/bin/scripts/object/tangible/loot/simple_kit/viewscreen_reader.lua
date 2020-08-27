@@ -43,6 +43,8 @@
 
 object_tangible_loot_simple_kit_viewscreen_reader = object_tangible_loot_simple_kit_shared_viewscreen_reader:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_viewscreen_reader, "object/tangible/loot/simple_kit/viewscreen_reader.iff")

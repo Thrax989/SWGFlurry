@@ -44,6 +44,8 @@
 object_tangible_loot_collectible_collectible_rewards_gong = object_tangible_loot_collectible_collectible_rewards_shared_gong:new {
 	junkDealerNeeded = 1,
 	junkValue = 1000
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_collectible_collectible_rewards_gong, "object/tangible/loot/collectible/collectible_rewards/gong.iff")

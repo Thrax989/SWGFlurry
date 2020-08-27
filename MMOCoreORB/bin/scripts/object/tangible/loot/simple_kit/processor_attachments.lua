@@ -43,6 +43,8 @@
 
 object_tangible_loot_simple_kit_processor_attachments = object_tangible_loot_simple_kit_shared_processor_attachments:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_processor_attachments, "object/tangible/loot/simple_kit/processor_attachments.iff")

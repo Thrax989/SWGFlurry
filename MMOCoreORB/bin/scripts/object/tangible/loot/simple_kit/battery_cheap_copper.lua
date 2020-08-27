@@ -43,6 +43,8 @@
 
 object_tangible_loot_simple_kit_battery_cheap_copper = object_tangible_loot_simple_kit_shared_battery_cheap_copper:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_battery_cheap_copper, "object/tangible/loot/simple_kit/battery_cheap_copper.iff")

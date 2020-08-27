@@ -43,6 +43,8 @@
 
 object_tangible_loot_collectible_collectible_parts_fs_tracking_device_case_02 = object_tangible_loot_collectible_collectible_parts_shared_fs_tracking_device_case_02:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_collectible_collectible_parts_fs_tracking_device_case_02, "object/tangible/loot/collectible/collectible_parts/fs_tracking_device_case_02.iff")

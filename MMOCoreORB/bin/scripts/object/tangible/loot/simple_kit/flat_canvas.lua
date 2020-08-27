@@ -43,6 +43,8 @@
 
 object_tangible_loot_simple_kit_flat_canvas = object_tangible_loot_simple_kit_shared_flat_canvas:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_flat_canvas, "object/tangible/loot/simple_kit/flat_canvas.iff")

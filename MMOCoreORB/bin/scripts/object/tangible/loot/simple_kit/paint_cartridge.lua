@@ -43,6 +43,8 @@
 
 object_tangible_loot_simple_kit_paint_cartridge = object_tangible_loot_simple_kit_shared_paint_cartridge:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_paint_cartridge, "object/tangible/loot/simple_kit/paint_cartridge.iff")

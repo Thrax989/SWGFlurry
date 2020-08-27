@@ -43,6 +43,8 @@
 
 object_tangible_loot_collectible_collectible_parts_light_table_structure_03 = object_tangible_loot_collectible_collectible_parts_shared_light_table_structure_03:new {
 
+	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_collectible_collectible_parts_light_table_structure_03, "object/tangible/loot/collectible/collectible_parts/light_table_structure_03.iff")
