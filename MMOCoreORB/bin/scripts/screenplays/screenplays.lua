@@ -389,6 +389,9 @@ includeFile("events/jediLives.lua")
 includeFile("events/deathBounty.lua")
 --includeFile("events/halloween_moenia.lua")
 
+--Holo exchange
+includeFile("events/holo_exchange_dealer.lua")
+
 --Pvp Arena
 includeFile("events/pvp/pvp.lua")
 
