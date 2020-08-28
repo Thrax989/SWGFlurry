@@ -568,6 +568,7 @@ includeFile("caves/corellia_afarathu_cave.lua")
 includeFile("caves/corellia_drall_cave.lua")
 includeFile("caves/corellia_lord_nyax_cult.lua")
 includeFile("caves/dantooine_force_crystal_hunter_cave.lua")
+includeFile("caves/dantooine_force_cave.lua")
 includeFile("caves/dantooine_janta_cave.lua") --old janta king screenplay
 includeFile("caves/dantooine_kunga_stronghold.lua")
 includeFile("caves/dantooine_lizard_cave.lua")
