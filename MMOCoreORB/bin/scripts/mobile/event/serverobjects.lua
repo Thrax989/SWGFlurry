@@ -38,5 +38,6 @@ includeFile("event/event_peko_peko.lua")
 includeFile("event/event_shear_mite.lua")
 includeFile("event/event_torton.lua")
 includeFile("event/event_tybis.lua")
-
-
+includeFile("event/student_force.lua")
+includeFile("event/student_force1.lua")
+includeFile("event/student_force2.lua")
