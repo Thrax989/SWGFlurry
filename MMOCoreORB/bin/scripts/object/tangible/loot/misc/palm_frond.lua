@@ -43,9 +43,7 @@
 
 object_tangible_loot_misc_palm_frond = object_tangible_loot_misc_shared_palm_frond:new {
 
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 

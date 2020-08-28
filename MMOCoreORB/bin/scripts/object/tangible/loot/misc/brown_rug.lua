@@ -43,9 +43,7 @@
 
 object_tangible_loot_misc_brown_rug = object_tangible_loot_misc_shared_brown_rug:new {
 
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 

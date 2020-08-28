@@ -43,9 +43,7 @@
 
 object_tangible_loot_misc_petrified_avian_egg = object_tangible_loot_misc_shared_petrified_avian_egg:new {
 
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 

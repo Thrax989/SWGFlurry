@@ -1,8 +1,6 @@
 object_tangible_loot_misc_rebel_credit = object_tangible_loot_misc_shared_rebel_credit:new {
 
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 

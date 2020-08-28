@@ -43,9 +43,7 @@
 
 object_tangible_loot_misc_toxic_rations = object_tangible_loot_misc_shared_toxic_rations:new {
 
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 

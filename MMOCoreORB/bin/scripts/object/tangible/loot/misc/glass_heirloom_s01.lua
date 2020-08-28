@@ -43,9 +43,7 @@
 
 object_tangible_loot_misc_glass_heirloom_s01 = object_tangible_loot_misc_shared_glass_heirloom_s01:new {
 
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 

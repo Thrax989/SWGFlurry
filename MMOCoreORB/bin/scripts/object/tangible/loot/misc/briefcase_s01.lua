@@ -43,9 +43,7 @@
 
 object_tangible_loot_misc_briefcase_s01 = object_tangible_loot_misc_shared_briefcase_s01:new {
 
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 

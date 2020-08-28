@@ -42,7 +42,8 @@
 
 
 object_tangible_loot_misc_ticket_expired = object_tangible_loot_misc_shared_ticket_expired:new {
-
+	objectMenuComponent = "ScrapMenuComponent",
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 

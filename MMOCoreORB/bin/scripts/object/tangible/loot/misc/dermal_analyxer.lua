@@ -43,9 +43,7 @@
 
 object_tangible_loot_misc_dermal_analyxer = object_tangible_loot_misc_shared_dermal_analyxer:new {
 
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 

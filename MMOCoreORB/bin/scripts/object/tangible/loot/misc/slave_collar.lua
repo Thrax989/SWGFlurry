@@ -43,9 +43,7 @@
 
 object_tangible_loot_misc_slave_collar = object_tangible_loot_misc_shared_slave_collar:new {
 
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 

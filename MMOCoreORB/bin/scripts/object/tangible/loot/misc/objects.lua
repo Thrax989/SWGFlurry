@@ -48,9 +48,7 @@ object_tangible_loot_misc_shared_artifact_rare_s01 = SharedTangibleObjectTemplat
 	appearanceFilename = "appearance/thm_prp_ancient_artifact_s02.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -66,9 +64,7 @@ object_tangible_loot_misc_shared_artifact_rare_s01 = SharedTangibleObjectTemplat
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -86,18 +82,14 @@ object_tangible_loot_misc_shared_artifact_rare_s01 = SharedTangibleObjectTemplat
 	objectName = "@item_n:artifact_rare_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -108,9 +100,7 @@ object_tangible_loot_misc_shared_artifact_rare_s01 = SharedTangibleObjectTemplat
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -124,17 +114,13 @@ object_tangible_loot_misc_shared_artifact_rare_s01 = SharedTangibleObjectTemplat
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 865298765,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -149,9 +135,7 @@ object_tangible_loot_misc_shared_basket_expensive_s01 = SharedTangibleObjectTemp
 	appearanceFilename = "appearance/edb_con_tato_basket_s01.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -167,9 +151,7 @@ object_tangible_loot_misc_shared_basket_expensive_s01 = SharedTangibleObjectTemp
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -187,18 +169,14 @@ object_tangible_loot_misc_shared_basket_expensive_s01 = SharedTangibleObjectTemp
 	objectName = "@item_n:basket_expensive_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -209,9 +187,7 @@ object_tangible_loot_misc_shared_basket_expensive_s01 = SharedTangibleObjectTemp
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -225,17 +201,13 @@ object_tangible_loot_misc_shared_basket_expensive_s01 = SharedTangibleObjectTemp
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 4077046979,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -250,9 +222,7 @@ object_tangible_loot_misc_shared_bowl_s01 = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/edb_con_tato_bowl_empty_s03.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -268,9 +238,7 @@ object_tangible_loot_misc_shared_bowl_s01 = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -288,18 +256,14 @@ object_tangible_loot_misc_shared_bowl_s01 = SharedTangibleObjectTemplate:new {
 	objectName = "@item_n:bowl_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -310,9 +274,7 @@ object_tangible_loot_misc_shared_bowl_s01 = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -326,17 +288,13 @@ object_tangible_loot_misc_shared_bowl_s01 = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 2848209064,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -351,9 +309,7 @@ object_tangible_loot_misc_shared_briefcase_s01 = SharedTangibleObjectTemplate:ne
 	appearanceFilename = "appearance/thm_prp_briefcase.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -369,9 +325,7 @@ object_tangible_loot_misc_shared_briefcase_s01 = SharedTangibleObjectTemplate:ne
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -389,18 +343,14 @@ object_tangible_loot_misc_shared_briefcase_s01 = SharedTangibleObjectTemplate:ne
 	objectName = "@item_n:briefcase_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -411,9 +361,7 @@ object_tangible_loot_misc_shared_briefcase_s01 = SharedTangibleObjectTemplate:ne
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -427,17 +375,13 @@ object_tangible_loot_misc_shared_briefcase_s01 = SharedTangibleObjectTemplate:ne
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1815409445,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -452,9 +396,7 @@ object_tangible_loot_misc_shared_brown_rug = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/frn_all_rug_rectangle_sm_s04.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -470,9 +412,7 @@ object_tangible_loot_misc_shared_brown_rug = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -490,18 +430,14 @@ object_tangible_loot_misc_shared_brown_rug = SharedTangibleObjectTemplate:new {
 	objectName = "@collectible_loot_items_n:brown_rug",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -512,9 +448,7 @@ object_tangible_loot_misc_shared_brown_rug = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -528,17 +462,13 @@ object_tangible_loot_misc_shared_brown_rug = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3249408869,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -553,9 +483,7 @@ object_tangible_loot_misc_shared_cage_s01 = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/thm_endr_cage_bamboo.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -571,9 +499,7 @@ object_tangible_loot_misc_shared_cage_s01 = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -591,18 +517,14 @@ object_tangible_loot_misc_shared_cage_s01 = SharedTangibleObjectTemplate:new {
 	objectName = "@item_n:cage_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -613,9 +535,7 @@ object_tangible_loot_misc_shared_cage_s01 = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -629,17 +549,13 @@ object_tangible_loot_misc_shared_cage_s01 = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 842587466,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -654,9 +570,7 @@ object_tangible_loot_misc_shared_camera_s01 = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/thm_prp_camera.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -672,9 +586,7 @@ object_tangible_loot_misc_shared_camera_s01 = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -692,18 +604,14 @@ object_tangible_loot_misc_shared_camera_s01 = SharedTangibleObjectTemplate:new {
 	objectName = "@item_n:camera_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -714,9 +622,7 @@ object_tangible_loot_misc_shared_camera_s01 = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -730,17 +636,13 @@ object_tangible_loot_misc_shared_camera_s01 = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 327865364,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -755,9 +657,7 @@ object_tangible_loot_misc_shared_casserole_binna_jode = SharedTangibleObjectTemp
 	appearanceFilename = "appearance/edb_con_dish_casserole_full.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -773,9 +673,7 @@ object_tangible_loot_misc_shared_casserole_binna_jode = SharedTangibleObjectTemp
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -793,18 +691,14 @@ object_tangible_loot_misc_shared_casserole_binna_jode = SharedTangibleObjectTemp
 	objectName = "@item_n:casserole_binna_jode",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -815,9 +709,7 @@ object_tangible_loot_misc_shared_casserole_binna_jode = SharedTangibleObjectTemp
 	sendToClient = 1,
 	slotDescriptorFilename = "abstract/slot/descriptor/tangible.iff",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -831,17 +723,13 @@ object_tangible_loot_misc_shared_casserole_binna_jode = SharedTangibleObjectTemp
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3603005332,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/food/base/shared_base_food.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/food/base/shared_base_food.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -856,9 +744,7 @@ object_tangible_loot_misc_shared_casual_rug = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/frn_all_rug_rectangle_sm_s02.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -874,9 +760,7 @@ object_tangible_loot_misc_shared_casual_rug = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -894,18 +778,14 @@ object_tangible_loot_misc_shared_casual_rug = SharedTangibleObjectTemplate:new {
 	objectName = "@collectible_loot_items_n:casual_rug",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -916,9 +796,7 @@ object_tangible_loot_misc_shared_casual_rug = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -932,17 +810,13 @@ object_tangible_loot_misc_shared_casual_rug = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 759121721,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -957,9 +831,7 @@ object_tangible_loot_misc_shared_corsec_id_badge = SharedTangibleObjectTemplate:
 	appearanceFilename = "appearance/eqp_ticket.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -975,9 +847,7 @@ object_tangible_loot_misc_shared_corsec_id_badge = SharedTangibleObjectTemplate:
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -995,18 +865,14 @@ object_tangible_loot_misc_shared_corsec_id_badge = SharedTangibleObjectTemplate:
 	objectName = "@item_n:corsec_id_badge",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1017,9 +883,7 @@ object_tangible_loot_misc_shared_corsec_id_badge = SharedTangibleObjectTemplate:
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1033,17 +897,13 @@ object_tangible_loot_misc_shared_corsec_id_badge = SharedTangibleObjectTemplate:
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3380245587,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1058,9 +918,7 @@ object_tangible_loot_misc_shared_damaged_datapad = SharedTangibleObjectTemplate:
 	appearanceFilename = "appearance/eqp_datapad_s2.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1076,9 +934,7 @@ object_tangible_loot_misc_shared_damaged_datapad = SharedTangibleObjectTemplate:
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1096,18 +952,14 @@ object_tangible_loot_misc_shared_damaged_datapad = SharedTangibleObjectTemplate:
 	objectName = "@item_n:damaged_datapad",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1118,9 +970,7 @@ object_tangible_loot_misc_shared_damaged_datapad = SharedTangibleObjectTemplate:
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1134,17 +984,13 @@ object_tangible_loot_misc_shared_damaged_datapad = SharedTangibleObjectTemplate:
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 2077895809,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1159,9 +1005,7 @@ object_tangible_loot_misc_shared_datadisk_corrupt = SharedTangibleObjectTemplate
 	appearanceFilename = "appearance/eqp_data_disk.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1177,9 +1021,7 @@ object_tangible_loot_misc_shared_datadisk_corrupt = SharedTangibleObjectTemplate
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1197,18 +1039,14 @@ object_tangible_loot_misc_shared_datadisk_corrupt = SharedTangibleObjectTemplate
 	objectName = "@item_n:datadisk_corrupt",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1219,9 +1057,7 @@ object_tangible_loot_misc_shared_datadisk_corrupt = SharedTangibleObjectTemplate
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1235,17 +1071,13 @@ object_tangible_loot_misc_shared_datadisk_corrupt = SharedTangibleObjectTemplate
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1598786934,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1260,9 +1092,7 @@ object_tangible_loot_misc_shared_decryptor_broken_s01 = SharedTangibleObjectTemp
 	appearanceFilename = "appearance/thm_prp_decryptor_imperial.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1278,9 +1108,7 @@ object_tangible_loot_misc_shared_decryptor_broken_s01 = SharedTangibleObjectTemp
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1298,18 +1126,14 @@ object_tangible_loot_misc_shared_decryptor_broken_s01 = SharedTangibleObjectTemp
 	objectName = "@item_n:decryptor_broken_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1320,9 +1144,7 @@ object_tangible_loot_misc_shared_decryptor_broken_s01 = SharedTangibleObjectTemp
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1336,17 +1158,13 @@ object_tangible_loot_misc_shared_decryptor_broken_s01 = SharedTangibleObjectTemp
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 4256936356,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1361,9 +1179,7 @@ object_tangible_loot_misc_shared_dermal_analyxer = SharedTangibleObjectTemplate:
 	appearanceFilename = "appearance/eqp_tool_worklight.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1379,9 +1195,7 @@ object_tangible_loot_misc_shared_dermal_analyxer = SharedTangibleObjectTemplate:
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1399,18 +1213,14 @@ object_tangible_loot_misc_shared_dermal_analyxer = SharedTangibleObjectTemplate:
 	objectName = "@item_n:dermal_analyzer",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1421,9 +1231,7 @@ object_tangible_loot_misc_shared_dermal_analyxer = SharedTangibleObjectTemplate:
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1437,17 +1245,13 @@ object_tangible_loot_misc_shared_dermal_analyxer = SharedTangibleObjectTemplate:
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1425405589,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1462,9 +1266,7 @@ object_tangible_loot_misc_shared_firework_dud_s1 = SharedTangibleObjectTemplate:
 	appearanceFilename = "appearance/eqp_firework_s1.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1480,9 +1282,7 @@ object_tangible_loot_misc_shared_firework_dud_s1 = SharedTangibleObjectTemplate:
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1500,18 +1300,14 @@ object_tangible_loot_misc_shared_firework_dud_s1 = SharedTangibleObjectTemplate:
 	objectName = "@item_n:firework_dud",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1522,9 +1318,7 @@ object_tangible_loot_misc_shared_firework_dud_s1 = SharedTangibleObjectTemplate:
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1538,17 +1332,13 @@ object_tangible_loot_misc_shared_firework_dud_s1 = SharedTangibleObjectTemplate:
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 706975394,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1563,9 +1353,7 @@ object_tangible_loot_misc_shared_firework_dud_s2 = SharedTangibleObjectTemplate:
 	appearanceFilename = "appearance/eqp_firework.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1581,9 +1369,7 @@ object_tangible_loot_misc_shared_firework_dud_s2 = SharedTangibleObjectTemplate:
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1601,18 +1387,14 @@ object_tangible_loot_misc_shared_firework_dud_s2 = SharedTangibleObjectTemplate:
 	objectName = "@item_n:firework_dud",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1623,9 +1405,7 @@ object_tangible_loot_misc_shared_firework_dud_s2 = SharedTangibleObjectTemplate:
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1639,17 +1419,13 @@ object_tangible_loot_misc_shared_firework_dud_s2 = SharedTangibleObjectTemplate:
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 4046732853,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1664,9 +1440,7 @@ object_tangible_loot_misc_shared_force_crystal = SharedTangibleObjectTemplate:ne
 	appearanceFilename = "appearance/force_amplification_crystal.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1682,9 +1456,7 @@ object_tangible_loot_misc_shared_force_crystal = SharedTangibleObjectTemplate:ne
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1702,18 +1474,14 @@ object_tangible_loot_misc_shared_force_crystal = SharedTangibleObjectTemplate:ne
 	objectName = "@item_n:force_crystal",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1724,9 +1492,7 @@ object_tangible_loot_misc_shared_force_crystal = SharedTangibleObjectTemplate:ne
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1740,17 +1506,13 @@ object_tangible_loot_misc_shared_force_crystal = SharedTangibleObjectTemplate:ne
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 2901988249,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1765,9 +1527,7 @@ object_tangible_loot_misc_shared_glass_heirloom_s01 = SharedTangibleObjectTempla
 	appearanceFilename = "appearance/edb_con_glass_s1_empty.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1783,9 +1543,7 @@ object_tangible_loot_misc_shared_glass_heirloom_s01 = SharedTangibleObjectTempla
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1803,18 +1561,14 @@ object_tangible_loot_misc_shared_glass_heirloom_s01 = SharedTangibleObjectTempla
 	objectName = "@item_n:glass_heirloom_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1825,9 +1579,7 @@ object_tangible_loot_misc_shared_glass_heirloom_s01 = SharedTangibleObjectTempla
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1841,17 +1593,13 @@ object_tangible_loot_misc_shared_glass_heirloom_s01 = SharedTangibleObjectTempla
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3730613962,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1866,9 +1614,7 @@ object_tangible_loot_misc_shared_green_rug = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/frn_all_rug_rectangle_m_s02.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1884,9 +1630,7 @@ object_tangible_loot_misc_shared_green_rug = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1904,18 +1648,14 @@ object_tangible_loot_misc_shared_green_rug = SharedTangibleObjectTemplate:new {
 	objectName = "@collectible_loot_items_n:green_rug",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1926,9 +1666,7 @@ object_tangible_loot_misc_shared_green_rug = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1942,17 +1680,13 @@ object_tangible_loot_misc_shared_green_rug = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 2290214914,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1967,9 +1701,7 @@ object_tangible_loot_misc_shared_gungan_lance = SharedTangibleObjectTemplate:new
 	appearanceFilename = "appearance/wp_mle_lance_electric_polearm.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -1985,9 +1717,7 @@ object_tangible_loot_misc_shared_gungan_lance = SharedTangibleObjectTemplate:new
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2005,18 +1735,14 @@ object_tangible_loot_misc_shared_gungan_lance = SharedTangibleObjectTemplate:new
 	objectName = "@item_n:gungan_lance",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2027,9 +1753,7 @@ object_tangible_loot_misc_shared_gungan_lance = SharedTangibleObjectTemplate:new
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2043,17 +1767,13 @@ object_tangible_loot_misc_shared_gungan_lance = SharedTangibleObjectTemplate:new
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 2604517877,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2068,9 +1788,7 @@ object_tangible_loot_misc_shared_gungan_signet = SharedTangibleObjectTemplate:ne
 	appearanceFilename = "appearance/earring_s14_m.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2086,9 +1804,7 @@ object_tangible_loot_misc_shared_gungan_signet = SharedTangibleObjectTemplate:ne
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2106,18 +1822,14 @@ object_tangible_loot_misc_shared_gungan_signet = SharedTangibleObjectTemplate:ne
 	objectName = "@item_n:gungan_signet",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2128,9 +1840,7 @@ object_tangible_loot_misc_shared_gungan_signet = SharedTangibleObjectTemplate:ne
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2144,17 +1854,13 @@ object_tangible_loot_misc_shared_gungan_signet = SharedTangibleObjectTemplate:ne
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 374420297,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2169,9 +1875,7 @@ object_tangible_loot_misc_shared_holocron_splinters_sith_s01 = SharedTangibleObj
 	appearanceFilename = "appearance/thm_prp_holocron_splinters.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2187,9 +1891,7 @@ object_tangible_loot_misc_shared_holocron_splinters_sith_s01 = SharedTangibleObj
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2207,18 +1909,14 @@ object_tangible_loot_misc_shared_holocron_splinters_sith_s01 = SharedTangibleObj
 	objectName = "@item_n:holocron_splinters_sith_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2229,9 +1927,7 @@ object_tangible_loot_misc_shared_holocron_splinters_sith_s01 = SharedTangibleObj
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2245,17 +1941,13 @@ object_tangible_loot_misc_shared_holocron_splinters_sith_s01 = SharedTangibleObj
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1021999255,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2270,9 +1962,7 @@ object_tangible_loot_misc_shared_hyperdrive_part_s01 = SharedTangibleObjectTempl
 	appearanceFilename = "appearance/thm_prp_engine_component.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2288,9 +1978,7 @@ object_tangible_loot_misc_shared_hyperdrive_part_s01 = SharedTangibleObjectTempl
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2308,18 +1996,14 @@ object_tangible_loot_misc_shared_hyperdrive_part_s01 = SharedTangibleObjectTempl
 	objectName = "@item_n:hyperdrive_part_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2330,9 +2014,7 @@ object_tangible_loot_misc_shared_hyperdrive_part_s01 = SharedTangibleObjectTempl
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2346,17 +2028,13 @@ object_tangible_loot_misc_shared_hyperdrive_part_s01 = SharedTangibleObjectTempl
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1159518109,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2371,9 +2049,7 @@ object_tangible_loot_misc_shared_inkpen_engraved_s01 = SharedTangibleObjectTempl
 	appearanceFilename = "appearance/eqp_writing_utensils.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2389,9 +2065,7 @@ object_tangible_loot_misc_shared_inkpen_engraved_s01 = SharedTangibleObjectTempl
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2409,18 +2083,14 @@ object_tangible_loot_misc_shared_inkpen_engraved_s01 = SharedTangibleObjectTempl
 	objectName = "@item_n:inkpen_engraved_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2431,9 +2101,7 @@ object_tangible_loot_misc_shared_inkpen_engraved_s01 = SharedTangibleObjectTempl
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2447,17 +2115,13 @@ object_tangible_loot_misc_shared_inkpen_engraved_s01 = SharedTangibleObjectTempl
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 239625063,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2472,9 +2136,7 @@ object_tangible_loot_misc_shared_insects_rare_s01 = SharedTangibleObjectTemplate
 	appearanceFilename = "appearance/edb_con_tato_jar_bugs_s01.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2490,9 +2152,7 @@ object_tangible_loot_misc_shared_insects_rare_s01 = SharedTangibleObjectTemplate
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2510,18 +2170,14 @@ object_tangible_loot_misc_shared_insects_rare_s01 = SharedTangibleObjectTemplate
 	objectName = "@item_n:insects_rare_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2532,9 +2188,7 @@ object_tangible_loot_misc_shared_insects_rare_s01 = SharedTangibleObjectTemplate
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2548,17 +2202,13 @@ object_tangible_loot_misc_shared_insects_rare_s01 = SharedTangibleObjectTemplate
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1419164698,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2573,9 +2223,7 @@ object_tangible_loot_misc_shared_jawa_beads = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/necklace_s02_m.sat",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2591,9 +2239,7 @@ object_tangible_loot_misc_shared_jawa_beads = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2611,18 +2257,14 @@ object_tangible_loot_misc_shared_jawa_beads = SharedTangibleObjectTemplate:new {
 	objectName = "@item_n:jawa_beads",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2633,9 +2275,7 @@ object_tangible_loot_misc_shared_jawa_beads = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2649,17 +2289,13 @@ object_tangible_loot_misc_shared_jawa_beads = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1637830141,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2674,9 +2310,7 @@ object_tangible_loot_misc_shared_keepsakes = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/eqp_tool_vehicle_toolkit.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2692,9 +2326,7 @@ object_tangible_loot_misc_shared_keepsakes = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2712,18 +2344,14 @@ object_tangible_loot_misc_shared_keepsakes = SharedTangibleObjectTemplate:new {
 	objectName = "@item_n:keepsakes",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2734,9 +2362,7 @@ object_tangible_loot_misc_shared_keepsakes = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2750,17 +2376,13 @@ object_tangible_loot_misc_shared_keepsakes = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 634814302,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2775,9 +2397,7 @@ object_tangible_loot_misc_shared_key_electronic_s01 = SharedTangibleObjectTempla
 	appearanceFilename = "appearance/thm_prp_key_electronic.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2793,9 +2413,7 @@ object_tangible_loot_misc_shared_key_electronic_s01 = SharedTangibleObjectTempla
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2813,18 +2431,14 @@ object_tangible_loot_misc_shared_key_electronic_s01 = SharedTangibleObjectTempla
 	objectName = "@item_n:key_electronic_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2835,9 +2449,7 @@ object_tangible_loot_misc_shared_key_electronic_s01 = SharedTangibleObjectTempla
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2851,17 +2463,13 @@ object_tangible_loot_misc_shared_key_electronic_s01 = SharedTangibleObjectTempla
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1312940379,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2876,9 +2484,7 @@ object_tangible_loot_misc_shared_ledger_s01 = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/thm_prp_ledger.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2894,9 +2500,7 @@ object_tangible_loot_misc_shared_ledger_s01 = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2914,18 +2518,14 @@ object_tangible_loot_misc_shared_ledger_s01 = SharedTangibleObjectTemplate:new {
 	objectName = "@item_n:ledger_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2936,9 +2536,7 @@ object_tangible_loot_misc_shared_ledger_s01 = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2952,17 +2550,13 @@ object_tangible_loot_misc_shared_ledger_s01 = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1032597494,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2977,9 +2571,7 @@ object_tangible_loot_misc_shared_loot_krayt_arm1 = SharedTangibleObjectTemplate:
 	appearanceFilename = "appearance/poi_tato_skel_krayt_arm_s01.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -2995,9 +2587,7 @@ object_tangible_loot_misc_shared_loot_krayt_arm1 = SharedTangibleObjectTemplate:
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3015,18 +2605,14 @@ object_tangible_loot_misc_shared_loot_krayt_arm1 = SharedTangibleObjectTemplate:
 	objectName = "@item_n:large_bones",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3037,9 +2623,7 @@ object_tangible_loot_misc_shared_loot_krayt_arm1 = SharedTangibleObjectTemplate:
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3053,17 +2637,13 @@ object_tangible_loot_misc_shared_loot_krayt_arm1 = SharedTangibleObjectTemplate:
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3424112691,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3078,9 +2658,7 @@ object_tangible_loot_misc_shared_loot_krayt_arm2 = SharedTangibleObjectTemplate:
 	appearanceFilename = "appearance/poi_tato_skel_krayt_arm_s02.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3096,9 +2674,7 @@ object_tangible_loot_misc_shared_loot_krayt_arm2 = SharedTangibleObjectTemplate:
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3116,18 +2692,14 @@ object_tangible_loot_misc_shared_loot_krayt_arm2 = SharedTangibleObjectTemplate:
 	objectName = "@item_n:large_bones",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3138,9 +2710,7 @@ object_tangible_loot_misc_shared_loot_krayt_arm2 = SharedTangibleObjectTemplate:
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3154,17 +2724,13 @@ object_tangible_loot_misc_shared_loot_krayt_arm2 = SharedTangibleObjectTemplate:
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 385906852,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3179,9 +2745,7 @@ object_tangible_loot_misc_shared_loot_krayt_foot = SharedTangibleObjectTemplate:
 	appearanceFilename = "appearance/poi_tato_skel_krayt_foot.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3197,9 +2761,7 @@ object_tangible_loot_misc_shared_loot_krayt_foot = SharedTangibleObjectTemplate:
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3217,18 +2779,14 @@ object_tangible_loot_misc_shared_loot_krayt_foot = SharedTangibleObjectTemplate:
 	objectName = "@item_n:claw_bones",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3239,9 +2797,7 @@ object_tangible_loot_misc_shared_loot_krayt_foot = SharedTangibleObjectTemplate:
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3255,17 +2811,13 @@ object_tangible_loot_misc_shared_loot_krayt_foot = SharedTangibleObjectTemplate:
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 4031807386,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3280,9 +2832,7 @@ object_tangible_loot_misc_shared_loot_krayt_leg1 = SharedTangibleObjectTemplate:
 	appearanceFilename = "appearance/poi_tato_skel_krayt_leg_s01.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3298,9 +2848,7 @@ object_tangible_loot_misc_shared_loot_krayt_leg1 = SharedTangibleObjectTemplate:
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3318,18 +2866,14 @@ object_tangible_loot_misc_shared_loot_krayt_leg1 = SharedTangibleObjectTemplate:
 	objectName = "@item_n:large_bones",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3340,9 +2884,7 @@ object_tangible_loot_misc_shared_loot_krayt_leg1 = SharedTangibleObjectTemplate:
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3356,17 +2898,13 @@ object_tangible_loot_misc_shared_loot_krayt_leg1 = SharedTangibleObjectTemplate:
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3363519588,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3381,9 +2919,7 @@ object_tangible_loot_misc_shared_loot_krayt_leg2 = SharedTangibleObjectTemplate:
 	appearanceFilename = "appearance/poi_tato_skel_krayt_leg_s02.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3399,9 +2935,7 @@ object_tangible_loot_misc_shared_loot_krayt_leg2 = SharedTangibleObjectTemplate:
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3419,18 +2953,14 @@ object_tangible_loot_misc_shared_loot_krayt_leg2 = SharedTangibleObjectTemplate:
 	objectName = "@item_n:large_bones",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3441,9 +2971,7 @@ object_tangible_loot_misc_shared_loot_krayt_leg2 = SharedTangibleObjectTemplate:
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3457,17 +2985,13 @@ object_tangible_loot_misc_shared_loot_krayt_leg2 = SharedTangibleObjectTemplate:
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 325883123,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3482,9 +3006,7 @@ object_tangible_loot_misc_shared_loot_krayt_spine1 = SharedTangibleObjectTemplat
 	appearanceFilename = "appearance/poi_tato_skel_grtr_krayt_spine_s01.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3500,9 +3022,7 @@ object_tangible_loot_misc_shared_loot_krayt_spine1 = SharedTangibleObjectTemplat
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3520,18 +3040,14 @@ object_tangible_loot_misc_shared_loot_krayt_spine1 = SharedTangibleObjectTemplat
 	objectName = "@item_n:large_bones",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3542,9 +3058,7 @@ object_tangible_loot_misc_shared_loot_krayt_spine1 = SharedTangibleObjectTemplat
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3558,17 +3072,13 @@ object_tangible_loot_misc_shared_loot_krayt_spine1 = SharedTangibleObjectTemplat
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3374450491,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3583,9 +3093,7 @@ object_tangible_loot_misc_shared_loot_krayt_spine2 = SharedTangibleObjectTemplat
 	appearanceFilename = "appearance/poi_tato_skel_grtr_krayt_spine_s02.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3601,9 +3109,7 @@ object_tangible_loot_misc_shared_loot_krayt_spine2 = SharedTangibleObjectTemplat
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3621,18 +3127,14 @@ object_tangible_loot_misc_shared_loot_krayt_spine2 = SharedTangibleObjectTemplat
 	objectName = "@item_n:large_bones",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3643,9 +3145,7 @@ object_tangible_loot_misc_shared_loot_krayt_spine2 = SharedTangibleObjectTemplat
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3659,17 +3159,13 @@ object_tangible_loot_misc_shared_loot_krayt_spine2 = SharedTangibleObjectTemplat
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 305508268,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3684,9 +3180,7 @@ object_tangible_loot_misc_shared_loot_krayt_spine3 = SharedTangibleObjectTemplat
 	appearanceFilename = "appearance/poi_tato_skel_grtr_krayt_spine_s03.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3702,9 +3196,7 @@ object_tangible_loot_misc_shared_loot_krayt_spine3 = SharedTangibleObjectTemplat
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3722,18 +3214,14 @@ object_tangible_loot_misc_shared_loot_krayt_spine3 = SharedTangibleObjectTemplat
 	objectName = "@item_n:large_bones",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3744,9 +3232,7 @@ object_tangible_loot_misc_shared_loot_krayt_spine3 = SharedTangibleObjectTemplat
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3760,17 +3246,13 @@ object_tangible_loot_misc_shared_loot_krayt_spine3 = SharedTangibleObjectTemplat
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1530447905,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3785,9 +3267,7 @@ object_tangible_loot_misc_shared_loot_skull_bith = SharedTangibleObjectTemplate:
 	appearanceFilename = "appearance/poi_all_skeleton_bith_head.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3803,9 +3283,7 @@ object_tangible_loot_misc_shared_loot_skull_bith = SharedTangibleObjectTemplate:
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3823,18 +3301,14 @@ object_tangible_loot_misc_shared_loot_skull_bith = SharedTangibleObjectTemplate:
 	objectName = "@item_n:bith_skull",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3845,9 +3319,7 @@ object_tangible_loot_misc_shared_loot_skull_bith = SharedTangibleObjectTemplate:
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3861,17 +3333,13 @@ object_tangible_loot_misc_shared_loot_skull_bith = SharedTangibleObjectTemplate:
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 707837564,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3886,9 +3354,7 @@ object_tangible_loot_misc_shared_loot_skull_bol = SharedTangibleObjectTemplate:n
 	appearanceFilename = "appearance/thm_dant_bol_skull.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3904,9 +3370,7 @@ object_tangible_loot_misc_shared_loot_skull_bol = SharedTangibleObjectTemplate:n
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3924,18 +3388,14 @@ object_tangible_loot_misc_shared_loot_skull_bol = SharedTangibleObjectTemplate:n
 	objectName = "@item_n:bol_skull",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3946,9 +3406,7 @@ object_tangible_loot_misc_shared_loot_skull_bol = SharedTangibleObjectTemplate:n
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3962,17 +3420,13 @@ object_tangible_loot_misc_shared_loot_skull_bol = SharedTangibleObjectTemplate:n
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 2725183958,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -3987,9 +3441,7 @@ object_tangible_loot_misc_shared_loot_skull_human = SharedTangibleObjectTemplate
 	appearanceFilename = "appearance/poi_all_skeleton_human_head.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4005,9 +3457,7 @@ object_tangible_loot_misc_shared_loot_skull_human = SharedTangibleObjectTemplate
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4025,18 +3475,14 @@ object_tangible_loot_misc_shared_loot_skull_human = SharedTangibleObjectTemplate
 	objectName = "@item_n:human_skull",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4047,9 +3493,7 @@ object_tangible_loot_misc_shared_loot_skull_human = SharedTangibleObjectTemplate
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4063,17 +3507,13 @@ object_tangible_loot_misc_shared_loot_skull_human = SharedTangibleObjectTemplate
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 632440114,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4088,9 +3528,7 @@ object_tangible_loot_misc_shared_loot_skull_ithorian = SharedTangibleObjectTempl
 	appearanceFilename = "appearance/poi_all_skeleton_ithorian_head.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4106,9 +3544,7 @@ object_tangible_loot_misc_shared_loot_skull_ithorian = SharedTangibleObjectTempl
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4126,18 +3562,14 @@ object_tangible_loot_misc_shared_loot_skull_ithorian = SharedTangibleObjectTempl
 	objectName = "@item_n:ithorian_skull",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4148,9 +3580,7 @@ object_tangible_loot_misc_shared_loot_skull_ithorian = SharedTangibleObjectTempl
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4164,17 +3594,13 @@ object_tangible_loot_misc_shared_loot_skull_ithorian = SharedTangibleObjectTempl
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 128900324,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4189,9 +3615,7 @@ object_tangible_loot_misc_shared_loot_skull_krayt1 = SharedTangibleObjectTemplat
 	appearanceFilename = "appearance/poi_tato_skel_krayt_head_s01.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4207,9 +3631,7 @@ object_tangible_loot_misc_shared_loot_skull_krayt1 = SharedTangibleObjectTemplat
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4227,18 +3649,14 @@ object_tangible_loot_misc_shared_loot_skull_krayt1 = SharedTangibleObjectTemplat
 	objectName = "@item_n:krayt_skull",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4249,9 +3667,7 @@ object_tangible_loot_misc_shared_loot_skull_krayt1 = SharedTangibleObjectTemplat
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4265,17 +3681,13 @@ object_tangible_loot_misc_shared_loot_skull_krayt1 = SharedTangibleObjectTemplat
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3855703718,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4290,9 +3702,7 @@ object_tangible_loot_misc_shared_loot_skull_krayt2 = SharedTangibleObjectTemplat
 	appearanceFilename = "appearance/poi_tato_skel_krayt_head_s02.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4308,9 +3718,7 @@ object_tangible_loot_misc_shared_loot_skull_krayt2 = SharedTangibleObjectTemplat
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4328,18 +3736,14 @@ object_tangible_loot_misc_shared_loot_skull_krayt2 = SharedTangibleObjectTemplat
 	objectName = "@item_n:krayt_skull",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4350,9 +3754,7 @@ object_tangible_loot_misc_shared_loot_skull_krayt2 = SharedTangibleObjectTemplat
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4366,17 +3768,13 @@ object_tangible_loot_misc_shared_loot_skull_krayt2 = SharedTangibleObjectTemplat
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1053226545,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4391,9 +3789,7 @@ object_tangible_loot_misc_shared_loot_skull_thune = SharedTangibleObjectTemplate
 	appearanceFilename = "appearance/thm_dant_thune_skull.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4409,9 +3805,7 @@ object_tangible_loot_misc_shared_loot_skull_thune = SharedTangibleObjectTemplate
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4429,18 +3823,14 @@ object_tangible_loot_misc_shared_loot_skull_thune = SharedTangibleObjectTemplate
 	objectName = "@item_n:thune_skull",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4451,9 +3841,7 @@ object_tangible_loot_misc_shared_loot_skull_thune = SharedTangibleObjectTemplate
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4467,17 +3855,13 @@ object_tangible_loot_misc_shared_loot_skull_thune = SharedTangibleObjectTemplate
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 2842325032,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4492,9 +3876,7 @@ object_tangible_loot_misc_shared_loot_skull_voritor = SharedTangibleObjectTempla
 	appearanceFilename = "appearance/thm_dant_lizard_skull.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4510,9 +3892,7 @@ object_tangible_loot_misc_shared_loot_skull_voritor = SharedTangibleObjectTempla
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4530,18 +3910,14 @@ object_tangible_loot_misc_shared_loot_skull_voritor = SharedTangibleObjectTempla
 	objectName = "@item_n:voritor_skull",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4552,9 +3928,7 @@ object_tangible_loot_misc_shared_loot_skull_voritor = SharedTangibleObjectTempla
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4568,17 +3942,13 @@ object_tangible_loot_misc_shared_loot_skull_voritor = SharedTangibleObjectTempla
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3032461432,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4593,9 +3963,7 @@ object_tangible_loot_misc_shared_majestic_rug = SharedTangibleObjectTemplate:new
 	appearanceFilename = "appearance/frn_all_rug_rectangle_sm_s03.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4611,9 +3979,7 @@ object_tangible_loot_misc_shared_majestic_rug = SharedTangibleObjectTemplate:new
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4631,18 +3997,14 @@ object_tangible_loot_misc_shared_majestic_rug = SharedTangibleObjectTemplate:new
 	objectName = "@collectible_loot_items_n:majestic_rug",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4653,9 +4015,7 @@ object_tangible_loot_misc_shared_majestic_rug = SharedTangibleObjectTemplate:new
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4669,17 +4029,13 @@ object_tangible_loot_misc_shared_majestic_rug = SharedTangibleObjectTemplate:new
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 317779620,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4694,9 +4050,7 @@ object_tangible_loot_misc_shared_medallion_black_sun_s01 = SharedTangibleObjectT
 	appearanceFilename = "appearance/thm_prp_medallion_black_sun.apt",
 	arrangementDescriptorFilename = "abstract/slot/arrangement/wearables/neck.iff",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4712,9 +4066,7 @@ object_tangible_loot_misc_shared_medallion_black_sun_s01 = SharedTangibleObjectT
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4732,18 +4084,14 @@ object_tangible_loot_misc_shared_medallion_black_sun_s01 = SharedTangibleObjectT
 	objectName = "@item_n:medallion_black_sun_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4754,9 +4102,7 @@ object_tangible_loot_misc_shared_medallion_black_sun_s01 = SharedTangibleObjectT
 	sendToClient = 1,
 	slotDescriptorFilename = "abstract/slot/descriptor/tangible.iff",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4770,17 +4116,13 @@ object_tangible_loot_misc_shared_medallion_black_sun_s01 = SharedTangibleObjectT
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 706045997,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/wearables/base/shared_wearables_base.iff", "object/tangible/wearables/base/shared_base_neck.iff", "object/tangible/wearables/necklace/shared_necklace_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/wearables/base/shared_wearables_base.iff", "object/tangible/wearables/base/shared_base_neck.iff", "object/tangible/wearables/necklace/shared_necklace_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4795,9 +4137,7 @@ object_tangible_loot_misc_shared_medallion_dark_jedi_s01 = SharedTangibleObjectT
 	appearanceFilename = "appearance/atf_jedi_dark_side_amulet.apt",
 	arrangementDescriptorFilename = "abstract/slot/arrangement/wearables/neck.iff",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4813,9 +4153,7 @@ object_tangible_loot_misc_shared_medallion_dark_jedi_s01 = SharedTangibleObjectT
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4833,18 +4171,14 @@ object_tangible_loot_misc_shared_medallion_dark_jedi_s01 = SharedTangibleObjectT
 	objectName = "@item_n:medallion_dark_jedi_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4855,9 +4189,7 @@ object_tangible_loot_misc_shared_medallion_dark_jedi_s01 = SharedTangibleObjectT
 	sendToClient = 1,
 	slotDescriptorFilename = "abstract/slot/descriptor/tangible.iff",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4871,17 +4203,13 @@ object_tangible_loot_misc_shared_medallion_dark_jedi_s01 = SharedTangibleObjectT
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 689527148,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/wearables/base/shared_wearables_base.iff", "object/tangible/wearables/base/shared_base_neck.iff", "object/tangible/wearables/necklace/shared_necklace_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/wearables/base/shared_wearables_base.iff", "object/tangible/wearables/base/shared_base_neck.iff", "object/tangible/wearables/necklace/shared_necklace_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4896,9 +4224,7 @@ object_tangible_loot_misc_shared_mt_casserole = SharedTangibleObjectTemplate:new
 	appearanceFilename = "appearance/edb_con_dish_casserole_full.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4914,9 +4240,7 @@ object_tangible_loot_misc_shared_mt_casserole = SharedTangibleObjectTemplate:new
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4934,18 +4258,14 @@ object_tangible_loot_misc_shared_mt_casserole = SharedTangibleObjectTemplate:new
 	objectName = "@item_n:mt_casserole",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4956,9 +4276,7 @@ object_tangible_loot_misc_shared_mt_casserole = SharedTangibleObjectTemplate:new
 	sendToClient = 1,
 	slotDescriptorFilename = "abstract/slot/descriptor/tangible.iff",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4972,17 +4290,13 @@ object_tangible_loot_misc_shared_mt_casserole = SharedTangibleObjectTemplate:new
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 4152880530,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/food/base/shared_base_food.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/food/base/shared_base_food.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -4997,9 +4311,7 @@ object_tangible_loot_misc_shared_mt_flatbread = SharedTangibleObjectTemplate:new
 	appearanceFilename = "appearance/edb_food_bread_loaf_full_s1.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5015,9 +4327,7 @@ object_tangible_loot_misc_shared_mt_flatbread = SharedTangibleObjectTemplate:new
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5035,18 +4345,14 @@ object_tangible_loot_misc_shared_mt_flatbread = SharedTangibleObjectTemplate:new
 	objectName = "@item_n:mt_flatbread",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5057,9 +4363,7 @@ object_tangible_loot_misc_shared_mt_flatbread = SharedTangibleObjectTemplate:new
 	sendToClient = 1,
 	slotDescriptorFilename = "abstract/slot/descriptor/tangible.iff",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5073,17 +4377,13 @@ object_tangible_loot_misc_shared_mt_flatbread = SharedTangibleObjectTemplate:new
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 2434258915,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/food/base/shared_base_food.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/food/base/shared_base_food.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5098,9 +4398,7 @@ object_tangible_loot_misc_shared_mt_pie = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/edb_food_pie_full_s1.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5116,9 +4414,7 @@ object_tangible_loot_misc_shared_mt_pie = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5136,18 +4432,14 @@ object_tangible_loot_misc_shared_mt_pie = SharedTangibleObjectTemplate:new {
 	objectName = "@item_n:mt_pie",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5158,9 +4450,7 @@ object_tangible_loot_misc_shared_mt_pie = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "abstract/slot/descriptor/tangible.iff",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5174,17 +4464,13 @@ object_tangible_loot_misc_shared_mt_pie = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 468840680,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/food/base/shared_base_food.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/food/base/shared_base_food.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5199,9 +4485,7 @@ object_tangible_loot_misc_shared_mt_soup = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/edb_con_tato_bowl_full_s01.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5217,9 +4501,7 @@ object_tangible_loot_misc_shared_mt_soup = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5237,18 +4519,14 @@ object_tangible_loot_misc_shared_mt_soup = SharedTangibleObjectTemplate:new {
 	objectName = "@item_n:mt_soup",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5259,9 +4537,7 @@ object_tangible_loot_misc_shared_mt_soup = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "abstract/slot/descriptor/tangible.iff",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5275,17 +4551,13 @@ object_tangible_loot_misc_shared_mt_soup = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3702520473,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/food/base/shared_base_food.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/food/base/shared_base_food.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5300,9 +4572,7 @@ object_tangible_loot_misc_shared_mystical_orb = SharedTangibleObjectTemplate:new
 	appearanceFilename = "appearance/force_amplification_crystal.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5318,9 +4588,7 @@ object_tangible_loot_misc_shared_mystical_orb = SharedTangibleObjectTemplate:new
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5338,18 +4606,14 @@ object_tangible_loot_misc_shared_mystical_orb = SharedTangibleObjectTemplate:new
 	objectName = "@item_n:mystical_orb",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5360,9 +4624,7 @@ object_tangible_loot_misc_shared_mystical_orb = SharedTangibleObjectTemplate:new
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5376,17 +4638,13 @@ object_tangible_loot_misc_shared_mystical_orb = SharedTangibleObjectTemplate:new
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3480466055,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5401,9 +4659,7 @@ object_tangible_loot_misc_shared_mystical_powered_orb = SharedTangibleObjectTemp
 	appearanceFilename = "appearance/force_amplification_crystal.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5419,9 +4675,7 @@ object_tangible_loot_misc_shared_mystical_powered_orb = SharedTangibleObjectTemp
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5439,18 +4693,14 @@ object_tangible_loot_misc_shared_mystical_powered_orb = SharedTangibleObjectTemp
 	objectName = "@item_n:mystical_powered_orb",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5461,9 +4711,7 @@ object_tangible_loot_misc_shared_mystical_powered_orb = SharedTangibleObjectTemp
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5477,17 +4725,13 @@ object_tangible_loot_misc_shared_mystical_powered_orb = SharedTangibleObjectTemp
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1931809434,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5502,9 +4746,7 @@ object_tangible_loot_misc_shared_ornamental_sconce = SharedTangibleObjectTemplat
 	appearanceFilename = "appearance/eqp_weapon_auto_laser_trap.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5520,9 +4762,7 @@ object_tangible_loot_misc_shared_ornamental_sconce = SharedTangibleObjectTemplat
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5540,18 +4780,14 @@ object_tangible_loot_misc_shared_ornamental_sconce = SharedTangibleObjectTemplat
 	objectName = "@item_n:ornamental_sconce",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5562,9 +4798,7 @@ object_tangible_loot_misc_shared_ornamental_sconce = SharedTangibleObjectTemplat
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5578,17 +4812,13 @@ object_tangible_loot_misc_shared_ornamental_sconce = SharedTangibleObjectTemplat
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3678039981,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5603,9 +4833,7 @@ object_tangible_loot_misc_shared_palm_frond = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/eqp_palm_frond.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5621,9 +4849,7 @@ object_tangible_loot_misc_shared_palm_frond = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5641,26 +4867,20 @@ object_tangible_loot_misc_shared_palm_frond = SharedTangibleObjectTemplate:new {
 	objectName = "@item_n:palm_frond",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 
-	scale = {0.8, 1.2
-
-
+	scale = {0.8, 1.2	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5669,9 +4889,7 @@ object_tangible_loot_misc_shared_palm_frond = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5685,17 +4903,13 @@ object_tangible_loot_misc_shared_palm_frond = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1764965839,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5710,9 +4924,7 @@ object_tangible_loot_misc_shared_personal_effects = SharedTangibleObjectTemplate
 	appearanceFilename = "appearance/eqp_tool_vehicle_toolkit.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5728,9 +4940,7 @@ object_tangible_loot_misc_shared_personal_effects = SharedTangibleObjectTemplate
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5748,18 +4958,14 @@ object_tangible_loot_misc_shared_personal_effects = SharedTangibleObjectTemplate
 	objectName = "@item_n:personal_effects",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5770,9 +4976,7 @@ object_tangible_loot_misc_shared_personal_effects = SharedTangibleObjectTemplate
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5786,17 +4990,13 @@ object_tangible_loot_misc_shared_personal_effects = SharedTangibleObjectTemplate
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 2137101597,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5811,9 +5011,7 @@ object_tangible_loot_misc_shared_petrified_avian_egg = SharedTangibleObjectTempl
 	appearanceFilename = "appearance/force_amplification_crystal.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5829,9 +5027,7 @@ object_tangible_loot_misc_shared_petrified_avian_egg = SharedTangibleObjectTempl
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5849,18 +5045,14 @@ object_tangible_loot_misc_shared_petrified_avian_egg = SharedTangibleObjectTempl
 	objectName = "@item_n:petrified_egg",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5871,9 +5063,7 @@ object_tangible_loot_misc_shared_petrified_avian_egg = SharedTangibleObjectTempl
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5887,17 +5077,13 @@ object_tangible_loot_misc_shared_petrified_avian_egg = SharedTangibleObjectTempl
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3152449908,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5912,9 +5098,7 @@ object_tangible_loot_misc_shared_picture_handheld_s01 = SharedTangibleObjectTemp
 	appearanceFilename = "appearance/eqp_tool_handheld_viewscreen_s1.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5930,9 +5114,7 @@ object_tangible_loot_misc_shared_picture_handheld_s01 = SharedTangibleObjectTemp
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5950,18 +5132,14 @@ object_tangible_loot_misc_shared_picture_handheld_s01 = SharedTangibleObjectTemp
 	objectName = "@item_n:picture_handheld_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5972,9 +5150,7 @@ object_tangible_loot_misc_shared_picture_handheld_s01 = SharedTangibleObjectTemp
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -5988,17 +5164,13 @@ object_tangible_loot_misc_shared_picture_handheld_s01 = SharedTangibleObjectTemp
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1021103631,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6013,9 +5185,7 @@ object_tangible_loot_misc_shared_picture_handheld_s02 = SharedTangibleObjectTemp
 	appearanceFilename = "appearance/eqp_tool_handheld_viewscreen_s2.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6031,9 +5201,7 @@ object_tangible_loot_misc_shared_picture_handheld_s02 = SharedTangibleObjectTemp
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6051,18 +5219,14 @@ object_tangible_loot_misc_shared_picture_handheld_s02 = SharedTangibleObjectTemp
 	objectName = "@item_n:picture_handheld_s02",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6073,9 +5237,7 @@ object_tangible_loot_misc_shared_picture_handheld_s02 = SharedTangibleObjectTemp
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6089,17 +5251,13 @@ object_tangible_loot_misc_shared_picture_handheld_s02 = SharedTangibleObjectTemp
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3888866968,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6114,9 +5272,7 @@ object_tangible_loot_misc_shared_proclamation_s01 = SharedTangibleObjectTemplate
 	appearanceFilename = "appearance/thm_prp_document_s01.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6132,9 +5288,7 @@ object_tangible_loot_misc_shared_proclamation_s01 = SharedTangibleObjectTemplate
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6152,18 +5306,14 @@ object_tangible_loot_misc_shared_proclamation_s01 = SharedTangibleObjectTemplate
 	objectName = "@item_n:proclamation_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6174,9 +5324,7 @@ object_tangible_loot_misc_shared_proclamation_s01 = SharedTangibleObjectTemplate
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6190,17 +5338,13 @@ object_tangible_loot_misc_shared_proclamation_s01 = SharedTangibleObjectTemplate
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 720417432,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6215,9 +5359,7 @@ object_tangible_loot_misc_shared_recording_rod_s01 = SharedTangibleObjectTemplat
 	appearanceFilename = "appearance/eqp_tool_recording_rod.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6233,9 +5375,7 @@ object_tangible_loot_misc_shared_recording_rod_s01 = SharedTangibleObjectTemplat
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6253,18 +5393,14 @@ object_tangible_loot_misc_shared_recording_rod_s01 = SharedTangibleObjectTemplat
 	objectName = "@item_n:recording_rod_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6275,9 +5411,7 @@ object_tangible_loot_misc_shared_recording_rod_s01 = SharedTangibleObjectTemplat
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6291,17 +5425,13 @@ object_tangible_loot_misc_shared_recording_rod_s01 = SharedTangibleObjectTemplat
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3573709036,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6316,9 +5446,7 @@ object_tangible_loot_misc_shared_shisa_decorative_s01 = SharedTangibleObjectTemp
 	appearanceFilename = "appearance/eqp_shisha.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6334,9 +5462,7 @@ object_tangible_loot_misc_shared_shisa_decorative_s01 = SharedTangibleObjectTemp
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6354,18 +5480,14 @@ object_tangible_loot_misc_shared_shisa_decorative_s01 = SharedTangibleObjectTemp
 	objectName = "@item_n:shisa_decorative_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6376,9 +5498,7 @@ object_tangible_loot_misc_shared_shisa_decorative_s01 = SharedTangibleObjectTemp
 	sendToClient = 1,
 	slotDescriptorFilename = "abstract/slot/descriptor/tangible.iff",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6392,17 +5512,13 @@ object_tangible_loot_misc_shared_shisa_decorative_s01 = SharedTangibleObjectTemp
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1359996863,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/furniture/base/shared_furniture_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/tangible/base/shared_tangible_craftable.iff", "object/tangible/furniture/base/shared_furniture_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6417,9 +5533,7 @@ object_tangible_loot_misc_shared_slave_collar = SharedTangibleObjectTemplate:new
 	appearanceFilename = "appearance/eqp_acc_slaving_collar.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6435,9 +5549,7 @@ object_tangible_loot_misc_shared_slave_collar = SharedTangibleObjectTemplate:new
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6455,18 +5567,14 @@ object_tangible_loot_misc_shared_slave_collar = SharedTangibleObjectTemplate:new
 	objectName = "@item_n:slave_collar",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6477,9 +5585,7 @@ object_tangible_loot_misc_shared_slave_collar = SharedTangibleObjectTemplate:new
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6493,17 +5599,13 @@ object_tangible_loot_misc_shared_slave_collar = SharedTangibleObjectTemplate:new
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3986073325,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6518,9 +5620,7 @@ object_tangible_loot_misc_shared_speaker_s01 = SharedTangibleObjectTemplate:new 
 	appearanceFilename = "appearance/eqp_speaker.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6536,9 +5636,7 @@ object_tangible_loot_misc_shared_speaker_s01 = SharedTangibleObjectTemplate:new 
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6556,18 +5654,14 @@ object_tangible_loot_misc_shared_speaker_s01 = SharedTangibleObjectTemplate:new 
 	objectName = "@item_n:speaker_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6578,9 +5672,7 @@ object_tangible_loot_misc_shared_speaker_s01 = SharedTangibleObjectTemplate:new 
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6594,17 +5686,13 @@ object_tangible_loot_misc_shared_speaker_s01 = SharedTangibleObjectTemplate:new 
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 141936959,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6619,9 +5707,7 @@ object_tangible_loot_misc_shared_spectrum_recorder = SharedTangibleObjectTemplat
 	appearanceFilename = "appearance/eqp_tool_worklight.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6637,9 +5723,7 @@ object_tangible_loot_misc_shared_spectrum_recorder = SharedTangibleObjectTemplat
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6657,18 +5741,14 @@ object_tangible_loot_misc_shared_spectrum_recorder = SharedTangibleObjectTemplat
 	objectName = "@item_n:spectrum_recorder",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6679,9 +5759,7 @@ object_tangible_loot_misc_shared_spectrum_recorder = SharedTangibleObjectTemplat
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6695,17 +5773,13 @@ object_tangible_loot_misc_shared_spectrum_recorder = SharedTangibleObjectTemplat
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 2986929439,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6720,9 +5794,7 @@ object_tangible_loot_misc_shared_sports_award_s01 = SharedTangibleObjectTemplate
 	appearanceFilename = "appearance/msc_toy_ball_sm.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6738,9 +5810,7 @@ object_tangible_loot_misc_shared_sports_award_s01 = SharedTangibleObjectTemplate
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6758,18 +5828,14 @@ object_tangible_loot_misc_shared_sports_award_s01 = SharedTangibleObjectTemplate
 	objectName = "@item_n:sports_award_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6780,9 +5846,7 @@ object_tangible_loot_misc_shared_sports_award_s01 = SharedTangibleObjectTemplate
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6796,17 +5860,13 @@ object_tangible_loot_misc_shared_sports_award_s01 = SharedTangibleObjectTemplate
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 3850821437,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6821,9 +5881,7 @@ object_tangible_loot_misc_shared_ticket_collectors_item_s01 = SharedTangibleObje
 	appearanceFilename = "appearance/eqp_ticket.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6839,9 +5897,7 @@ object_tangible_loot_misc_shared_ticket_collectors_item_s01 = SharedTangibleObje
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6859,18 +5915,14 @@ object_tangible_loot_misc_shared_ticket_collectors_item_s01 = SharedTangibleObje
 	objectName = "@item_n:ticket_collectors_item_s01",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6881,9 +5933,7 @@ object_tangible_loot_misc_shared_ticket_collectors_item_s01 = SharedTangibleObje
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6897,17 +5947,13 @@ object_tangible_loot_misc_shared_ticket_collectors_item_s01 = SharedTangibleObje
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 1896550802,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6922,9 +5968,7 @@ object_tangible_loot_misc_shared_ticket_expired = SharedTangibleObjectTemplate:n
 	appearanceFilename = "appearance/eqp_ticket_inventory.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6940,9 +5984,7 @@ object_tangible_loot_misc_shared_ticket_expired = SharedTangibleObjectTemplate:n
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6960,18 +6002,14 @@ object_tangible_loot_misc_shared_ticket_expired = SharedTangibleObjectTemplate:n
 	objectName = "@item_n:ticket_expired",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6982,9 +6020,7 @@ object_tangible_loot_misc_shared_ticket_expired = SharedTangibleObjectTemplate:n
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -6998,17 +6034,13 @@ object_tangible_loot_misc_shared_ticket_expired = SharedTangibleObjectTemplate:n
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 2280007490,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -7023,9 +6055,7 @@ object_tangible_loot_misc_shared_toxic_rations = SharedTangibleObjectTemplate:ne
 	appearanceFilename = "appearance/eqp_tool_vehicle_toolkit.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -7041,9 +6071,7 @@ object_tangible_loot_misc_shared_toxic_rations = SharedTangibleObjectTemplate:ne
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -7061,18 +6089,14 @@ object_tangible_loot_misc_shared_toxic_rations = SharedTangibleObjectTemplate:ne
 	objectName = "@item_n:toxic_rations",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -7083,9 +6107,7 @@ object_tangible_loot_misc_shared_toxic_rations = SharedTangibleObjectTemplate:ne
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -7099,17 +6121,13 @@ object_tangible_loot_misc_shared_toxic_rations = SharedTangibleObjectTemplate:ne
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 381474584,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -7124,9 +6142,7 @@ object_tangible_loot_misc_shared_worklight = SharedTangibleObjectTemplate:new {
 	appearanceFilename = "appearance/eqp_tool_worklight.apt",
 	arrangementDescriptorFilename = "",
 
-	certificationsRequired = {
-
-
+	certificationsRequired = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -7142,9 +6158,7 @@ object_tangible_loot_misc_shared_worklight = SharedTangibleObjectTemplate:new {
 	collisionMaterialPassFlags = 0,
 	containerType = 0,
 	containerVolumeLimit = 1,
-	customizationVariableMapping = {
-
-
+	customizationVariableMapping = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -7162,18 +6176,14 @@ object_tangible_loot_misc_shared_worklight = SharedTangibleObjectTemplate:new {
 	objectName = "@item_n:work_light",
 	onlyVisibleInTools = 0,
 
-	paletteColorCustomizationVariables = {
-
-
+	paletteColorCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 },
 	portalLayoutFilename = "",
 
-	rangedIntCustomizationVariables = {
-
-
+	rangedIntCustomizationVariables = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -7184,9 +6194,7 @@ object_tangible_loot_misc_shared_worklight = SharedTangibleObjectTemplate:new {
 	sendToClient = 1,
 	slotDescriptorFilename = "",
 	snapToTerrain = 1,
-	socketDestinations = {
-
-
+	socketDestinations = {	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
@@ -7200,17 +6208,13 @@ object_tangible_loot_misc_shared_worklight = SharedTangibleObjectTemplate:new {
 	useStructureFootprintOutline = 0,
 
 	clientObjectCRC = 667280512,
-	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"
-
-
+	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff"	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
 }
 ]]
-
-
-
+	objectMenuComponent = "ScrapMenuComponent",
 
 	objectMenuComponent = "ScrapMenuComponent",
 
