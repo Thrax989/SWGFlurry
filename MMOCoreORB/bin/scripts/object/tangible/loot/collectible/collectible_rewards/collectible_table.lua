@@ -42,6 +42,8 @@
 
 
 object_tangible_loot_collectible_collectible_rewards_collectible_table = object_tangible_loot_collectible_collectible_rewards_shared_collectible_table:new {
+	junkDealerNeeded = 1,
+	junkValue = 1000
 	objectMenuComponent = "ScrapMenuComponent",
 
 }

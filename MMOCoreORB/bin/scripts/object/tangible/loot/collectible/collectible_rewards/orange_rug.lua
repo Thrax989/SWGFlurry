@@ -42,6 +42,8 @@
 
 
 object_tangible_loot_collectible_collectible_rewards_orange_rug = object_tangible_loot_collectible_collectible_rewards_shared_orange_rug:new {
+	junkDealerNeeded = 1,
+	junkValue = 1000
 	objectMenuComponent = "ScrapMenuComponent",
 
 }

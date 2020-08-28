@@ -44,6 +44,7 @@
 object_tangible_loot_collectible_collectible_rewards_fs_tracking_device = object_tangible_loot_collectible_collectible_rewards_shared_fs_tracking_device:new {
 	noTrade = 1,
 	objectMenuComponent = "FsCrafting4TrackingDeviceMenuComponent",
+	objectMenuComponent = "ScrapMenuComponent",
 
 }
 
