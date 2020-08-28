@@ -43,8 +43,6 @@
 
 object_tangible_loot_collectible_collectible_parts_gong_skin_back = object_tangible_loot_collectible_collectible_parts_shared_gong_skin_back:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_collectible_collectible_parts_gong_skin_back, "object/tangible/loot/collectible/collectible_parts/gong_skin_back.iff")

@@ -43,8 +43,6 @@
 
 object_tangible_loot_tool_calibrator_broken = object_tangible_loot_tool_shared_calibrator_broken:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_tool_calibrator_broken, "object/tangible/loot/tool/calibrator_broken.iff")

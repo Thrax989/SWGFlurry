@@ -43,8 +43,6 @@
 
 object_tangible_loot_simple_kit_recovery_software = object_tangible_loot_simple_kit_shared_recovery_software:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_recovery_software, "object/tangible/loot/simple_kit/recovery_software.iff")

@@ -43,10 +43,6 @@
 
 object_tangible_loot_misc_artifact_rare_s01 = object_tangible_loot_misc_shared_artifact_rare_s01:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_artifact_rare_s01, "object/tangible/loot/misc/artifact_rare_s01.iff")

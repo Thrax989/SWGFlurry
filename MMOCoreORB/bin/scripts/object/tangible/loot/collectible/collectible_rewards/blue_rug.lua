@@ -44,8 +44,6 @@
 object_tangible_loot_collectible_collectible_rewards_blue_rug = object_tangible_loot_collectible_collectible_rewards_shared_blue_rug:new {
 	junkDealerNeeded = 1,
 	junkValue = 1000
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_collectible_collectible_rewards_blue_rug, "object/tangible/loot/collectible/collectible_rewards/blue_rug.iff")

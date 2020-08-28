@@ -43,8 +43,6 @@
 
 object_tangible_loot_simple_kit_powder_pack = object_tangible_loot_simple_kit_shared_powder_pack:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_powder_pack, "object/tangible/loot/simple_kit/powder_pack.iff")

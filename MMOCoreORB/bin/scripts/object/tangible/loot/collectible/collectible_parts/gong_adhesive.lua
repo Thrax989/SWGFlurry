@@ -43,8 +43,6 @@
 
 object_tangible_loot_collectible_collectible_parts_gong_adhesive = object_tangible_loot_collectible_collectible_parts_shared_gong_adhesive:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_collectible_collectible_parts_gong_adhesive, "object/tangible/loot/collectible/collectible_parts/gong_adhesive.iff")

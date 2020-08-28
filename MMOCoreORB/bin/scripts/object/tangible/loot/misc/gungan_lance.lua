@@ -43,10 +43,6 @@
 
 object_tangible_loot_misc_gungan_lance = object_tangible_loot_misc_shared_gungan_lance:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_gungan_lance, "object/tangible/loot/misc/gungan_lance.iff")

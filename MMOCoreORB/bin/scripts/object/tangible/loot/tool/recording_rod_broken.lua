@@ -43,8 +43,6 @@
 
 object_tangible_loot_tool_recording_rod_broken = object_tangible_loot_tool_shared_recording_rod_broken:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_tool_recording_rod_broken, "object/tangible/loot/tool/recording_rod_broken.iff")

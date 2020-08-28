@@ -43,8 +43,6 @@
 
 object_tangible_loot_simple_kit_paint_disperser = object_tangible_loot_simple_kit_shared_paint_disperser:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_paint_disperser, "object/tangible/loot/simple_kit/paint_disperser.iff")

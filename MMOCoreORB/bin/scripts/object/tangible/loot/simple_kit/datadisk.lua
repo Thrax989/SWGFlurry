@@ -43,8 +43,6 @@
 
 object_tangible_loot_simple_kit_datadisk = object_tangible_loot_simple_kit_shared_datadisk:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_datadisk, "object/tangible/loot/simple_kit/datadisk.iff")

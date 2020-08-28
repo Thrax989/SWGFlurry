@@ -43,8 +43,6 @@
 
 object_tangible_loot_simple_kit_firework_casing = object_tangible_loot_simple_kit_shared_firework_casing:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_firework_casing, "object/tangible/loot/simple_kit/firework_casing.iff")

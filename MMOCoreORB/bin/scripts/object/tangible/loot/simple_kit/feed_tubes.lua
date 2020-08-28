@@ -43,8 +43,6 @@
 
 object_tangible_loot_simple_kit_feed_tubes = object_tangible_loot_simple_kit_shared_feed_tubes:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_feed_tubes, "object/tangible/loot/simple_kit/feed_tubes.iff")

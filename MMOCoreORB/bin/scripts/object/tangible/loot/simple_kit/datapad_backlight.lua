@@ -43,8 +43,6 @@
 
 object_tangible_loot_simple_kit_datapad_backlight = object_tangible_loot_simple_kit_shared_datapad_backlight:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_datapad_backlight, "object/tangible/loot/simple_kit/datapad_backlight.iff")

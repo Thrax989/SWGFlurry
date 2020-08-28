@@ -43,10 +43,6 @@
 
 object_tangible_loot_misc_loot_skull_thune = object_tangible_loot_misc_shared_loot_skull_thune:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_loot_skull_thune, "object/tangible/loot/misc/loot_skull_thune.iff")

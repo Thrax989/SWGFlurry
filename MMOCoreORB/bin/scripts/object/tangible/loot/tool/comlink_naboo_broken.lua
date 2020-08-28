@@ -43,8 +43,6 @@
 
 object_tangible_loot_tool_comlink_naboo_broken = object_tangible_loot_tool_shared_comlink_naboo_broken:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_tool_comlink_naboo_broken, "object/tangible/loot/tool/comlink_naboo_broken.iff")

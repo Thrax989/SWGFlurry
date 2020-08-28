@@ -43,8 +43,6 @@
 
 object_tangible_loot_tool_taloscope_broken = object_tangible_loot_tool_shared_taloscope_broken:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_tool_taloscope_broken, "object/tangible/loot/tool/taloscope_broken.iff")

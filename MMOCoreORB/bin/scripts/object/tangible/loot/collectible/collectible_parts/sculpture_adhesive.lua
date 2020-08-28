@@ -43,8 +43,6 @@
 
 object_tangible_loot_collectible_collectible_parts_sculpture_adhesive = object_tangible_loot_collectible_collectible_parts_shared_sculpture_adhesive:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_collectible_collectible_parts_sculpture_adhesive, "object/tangible/loot/collectible/collectible_parts/sculpture_adhesive.iff")

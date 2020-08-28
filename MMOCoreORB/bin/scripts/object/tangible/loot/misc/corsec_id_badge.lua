@@ -43,10 +43,6 @@
 
 object_tangible_loot_misc_corsec_id_badge = object_tangible_loot_misc_shared_corsec_id_badge:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_corsec_id_badge, "object/tangible/loot/misc/corsec_id_badge.iff")

@@ -43,10 +43,6 @@
 
 object_tangible_loot_misc_loot_krayt_arm2 = object_tangible_loot_misc_shared_loot_krayt_arm2:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_loot_krayt_arm2, "object/tangible/loot/misc/loot_krayt_arm2.iff")

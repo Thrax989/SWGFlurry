@@ -43,8 +43,6 @@
 
 object_tangible_loot_simple_kit_datapad_battery = object_tangible_loot_simple_kit_shared_datapad_battery:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_datapad_battery, "object/tangible/loot/simple_kit/datapad_battery.iff")

@@ -43,8 +43,6 @@
 
 object_tangible_loot_tool_impulse_detector_broken_s1 = object_tangible_loot_tool_shared_impulse_detector_broken_s1:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_tool_impulse_detector_broken_s1, "object/tangible/loot/tool/impulse_detector_broken_s1.iff")

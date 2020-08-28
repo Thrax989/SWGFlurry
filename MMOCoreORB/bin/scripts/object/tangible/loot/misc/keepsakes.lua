@@ -43,10 +43,6 @@
 
 object_tangible_loot_misc_keepsakes = object_tangible_loot_misc_shared_keepsakes:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_keepsakes, "object/tangible/loot/misc/keepsakes.iff")

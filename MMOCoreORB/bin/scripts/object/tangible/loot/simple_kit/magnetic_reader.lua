@@ -43,8 +43,6 @@
 
 object_tangible_loot_simple_kit_magnetic_reader = object_tangible_loot_simple_kit_shared_magnetic_reader:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_magnetic_reader, "object/tangible/loot/simple_kit/magnetic_reader.iff")

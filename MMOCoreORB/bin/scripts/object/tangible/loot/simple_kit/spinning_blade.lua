@@ -43,8 +43,6 @@
 
 object_tangible_loot_simple_kit_spinning_blade = object_tangible_loot_simple_kit_shared_spinning_blade:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_spinning_blade, "object/tangible/loot/simple_kit/spinning_blade.iff")

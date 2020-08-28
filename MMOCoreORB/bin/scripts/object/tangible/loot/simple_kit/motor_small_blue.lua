@@ -43,8 +43,6 @@
 
 object_tangible_loot_simple_kit_motor_small_blue = object_tangible_loot_simple_kit_shared_motor_small_blue:new {
 
-	objectMenuComponent = "ScrapMenuComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_motor_small_blue, "object/tangible/loot/simple_kit/motor_small_blue.iff")
