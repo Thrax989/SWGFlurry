@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_petrified_avian_egg = object_tangible_loot_misc_shared_petrified_avian_egg:new {
-
+	objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_petrified_avian_egg, "object/tangible/loot/misc/petrified_avian_egg.iff")

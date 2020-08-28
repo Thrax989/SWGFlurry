@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_damaged_datapad = object_tangible_loot_misc_shared_damaged_datapad:new {
-
+	objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_damaged_datapad, "object/tangible/loot/misc/damaged_datapad.iff")

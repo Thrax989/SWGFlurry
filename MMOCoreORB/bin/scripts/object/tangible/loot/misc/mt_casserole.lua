@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_mt_casserole = object_tangible_loot_misc_shared_mt_casserole:new {
-
+	objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_mt_casserole, "object/tangible/loot/misc/mt_casserole.iff")
