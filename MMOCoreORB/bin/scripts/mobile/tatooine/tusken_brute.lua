@@ -47,7 +47,7 @@ tusken_brute = Creature:new {
 		},
 		{
 			groups = {
-				{group = "tusken_common", chance = 10000000},
+				{group = "weapon_component_advanced", chance = 10000000},
 			},
 			lootChance = 8000000
 		},
