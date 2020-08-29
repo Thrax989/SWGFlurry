@@ -47,7 +47,7 @@ tusken_death_hunter = Creature:new {
 		},
 		{
 			groups = {
-				{group = "weapon_component", chance = 10000000},
+				{group = "weapon_component_advanced", chance = 10000000},
 			},
 			lootChance = 8000000
 		},
