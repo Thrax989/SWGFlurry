@@ -203,6 +203,100 @@ void InstallationObjectImplementation::setActiveResource(ResourceContainer* cont
 	}
 }
 
+// Credit - Quick harvester options mod from AotC.
+// Stack - implementing quick maint/power and also adding in retrieve all
+void InstallationObjectImplementation::quickAddMaint(CreatureObject* player, float amount)
+{
+	int cash = player->getCashCredits();
+	if(cash < amount)
+	{
+		player->sendSystemMessage("Not enough funds");
+	}
+	else
+	{
+		player->subtractCashCredits(amount);
+		addMaintenance(amount);
+		player->sendSystemMessage("Quick Add Maintenance Successful");
+	}
+}
+
+void InstallationObjectImplementation::quickAddPower(CreatureObject* player, float amount)
+{
+	float energy = amount;
+	ManagedReference<ResourceManager*> resourceManager = player->getZoneServer()->getResourceManager();
+	//TODO: This should be handled in StructureManager
+
+	uint32 energyFromPlayer = resourceManager->getAvailablePowerFromPlayer(player);
+
+	if (energy > energyFromPlayer)
+	{
+		player->sendSystemMessage("Not enough energy in your inventory");
+		return;
+	}
+
+
+	addPower(energy);
+	resourceManager->removePowerFromPlayer(player, energy);
+
+	StringIdChatParameter stringId("player_structure", "deposit_successful");
+	stringId.setDI(energy);
+
+	player->sendSystemMessage(stringId);
+
+	stringId.setStringId("player_structure", "reserve_report");
+	stringId.setDI(getSurplusPower());
+
+	player->sendSystemMessage(stringId);
+
+	updateToDatabase();
+
+}
+
+
+
+void InstallationObjectImplementation::quickRetrieveAllResources(CreatureObject* player)
+{
+	int totalResources = 0;
+	SceneObject* inventory = player->getSlottedObject("inventory");
+
+	updateInstallationWork();
+
+	for (int i = 0; i < resourceHopper.size(); ++i) {
+		ResourceContainer* container = resourceHopper.get(i);
+
+		if (!inventory->isContainerFullRecursive())
+		{
+			Reference<ResourceSpawn*> resSpawn = container->getSpawnObject();
+			int quantity = container->getQuantity();
+			if(quantity <= 0)
+			{
+				continue;
+			}
+			String name = container->getSpawnName();
+			totalResources += quantity;
+			Locker locker(resSpawn);
+
+			ManagedReference<ResourceContainer*> newContainer = resSpawn->createResource(quantity);
+			if (inventory->transferObject(newContainer, -1, false))
+			{
+				inventory->broadcastObject(newContainer, true);
+
+				player->sendSystemMessage("Retrieved " + String::valueOf(quantity) + " of " + name);
+				updateResourceContainerQuantity(container, container->getQuantity() - quantity, true);
+			} else {
+				newContainer->destroyObjectFromDatabase(true);
+			}
+		}
+		else {
+			StringIdChatParameter stringId("error_message", "inv_full");
+			player->sendSystemMessage(stringId);
+			return;
+		}
+
+	}
+	player->sendSystemMessage("All Resources Retrieved Totaling: " + String::valueOf(totalResources));
+}
+
 void InstallationObjectImplementation::handleStructureAddEnergy(CreatureObject* player) {
 	try {
 		StringBuffer sstext, ssTotalEnergy;

@@ -98,6 +98,12 @@ rebelRewardData = {
 		specforce_technician = { type=factionRewardType.hireling, display="@mob/creature_names:specforce_technician", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="specforce_technician", cost=375},
 		specforce_wilderness_operative = { type=factionRewardType.hireling, display="@mob/creature_names:specforce_wilderness_operative", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="specforce_wilderness_operative", cost=375},
 		rebel_specforce_guerrilla = { type=factionRewardType.hireling, display="@mob/creature_names:rebel_specforce_guerrilla", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="rebel_specforce_urban_guerrilla", cost=375},
+		acklay = { type=factionRewardType.hireling, display="@mob/creature_names:geonosian_acklay_bunker_boss", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="acklay", cost=19450},
+		death_watch_black_sun_assassin = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_blksun_assassin", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_black_sun_assassin", cost=40450},
+		droideka = { type=factionRewardType.hireling, display="@mob/creature_names:droideka", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="droideka", cost=19450},
+		death_watch_s_battle_droid = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_super_battle_droid", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_s_battle_droid", cost=90450},
+		rebel_singing_mountain_clan_arch_witch = { type=factionRewardType.hireling, display="@mob/creature_names:rebel_singing_mountain_clan_arch_witch", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="rebel_singing_mountain_clan_arch_witch", cost=90450},
+		death_watch_ghost = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_dthwatch_grey", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_ghost", cost=90450},
 	}
 }
 
@@ -213,6 +219,13 @@ imperialRewardData = {
 		stormtrooper_rifleman = { type=factionRewardType.hireling, display="@mob/creature_names:stormtrooper_rifleman", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="stormtrooper_rifleman", cost=420},
 		stormtrooper_sniper = { type=factionRewardType.hireling, display="@mob/creature_names:stormtrooper_sniper", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="stormtrooper_sniper", cost=420},
 		swamp_trooper = { type=factionRewardType.hireling, display="@mob/creature_names:swamp_trooper", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="swamp_trooper", cost=420},
+		at_at = { type=factionRewardType.hireling, display="@mob/creature_names:at_at", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="at_at", cost=99420},
 		at_st = { type=factionRewardType.hireling, display="@mob/creature_names:at_st", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="at_st", cost=9450},
+		acklay = { type=factionRewardType.hireling, display="@mob/creature_names:geonosian_acklay_bunker_boss", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="acklay", cost=19450},
+		death_watch_black_sun_assassin = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_blksun_assassin", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_black_sun_assassin", cost=40450},
+		droideka = { type=factionRewardType.hireling, display="@mob/creature_names:droideka", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="droideka", cost=19450},
+		imperial_nightsister_elder = { type=factionRewardType.hireling, display="@mob/creature_names:imperial_nightsister_elder", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="imperial_nightsister_elder", cost=90450},
+		death_watch_s_battle_droid = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_super_battle_droid", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_s_battle_droid", cost=90450},
+		death_watch_ghost = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_dthwatch_grey", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_ghost", cost=90450},
 	},
 }

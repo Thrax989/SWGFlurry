@@ -1,4 +1,4 @@
-black_sun_assassin = Creature:new {
+death_watch_black_sun_assassin = Creature:new {
 	objectName = "@mob/creature_names:mand_bunker_blksun_assassin",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
@@ -9,8 +9,8 @@ black_sun_assassin = Creature:new {
 	damageMin = 670,
 	damageMax = 1050,
 	baseXp = 10081,
-	baseHAM = 29000,
-	baseHAMmax = 36000,
+	baseHAM = 40000,
+	baseHAMmax = 40000,
 	armor = 2,
 	resists = {55,55,70,45,75,80,55,45,-1},
 	meatType = "",

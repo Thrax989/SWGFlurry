@@ -28,7 +28,7 @@ worldboss_6 = Creature:new {
 	templates = {"object/mobile/recluse_gurk_king.iff"},
 	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 2.0,
-		lootGroups = {
+	lootGroups = {
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
@@ -39,7 +39,7 @@ worldboss_6 = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -51,61 +51,61 @@ worldboss_6 = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -135,13 +135,13 @@ worldboss_6 = Creature:new {
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
