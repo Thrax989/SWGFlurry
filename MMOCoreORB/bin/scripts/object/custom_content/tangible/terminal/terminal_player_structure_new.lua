@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_player_structure_new = object_tangible_terminal_shared_terminal_player_structure_new:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_player_structure_new, "object/tangible/terminal/terminal_player_structure_new.iff")

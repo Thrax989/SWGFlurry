@@ -1,0 +1,5 @@
+object_tangible_gcw_crafting_quest_gcw_landing_beacon = object_tangible_gcw_crafting_quest_shared_gcw_landing_beacon:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_gcw_crafting_quest_gcw_landing_beacon, "object/tangible/gcw/crafting_quest/gcw_landing_beacon.iff")

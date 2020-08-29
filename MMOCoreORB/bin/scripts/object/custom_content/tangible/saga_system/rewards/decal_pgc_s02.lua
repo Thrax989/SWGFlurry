@@ -1,0 +1,5 @@
+object_tangible_saga_system_rewards_decal_pgc_s02 = object_tangible_saga_system_rewards_shared_decal_pgc_s02:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_saga_system_rewards_decal_pgc_s02, "object/tangible/saga_system/rewards/decal_pgc_s02.iff")

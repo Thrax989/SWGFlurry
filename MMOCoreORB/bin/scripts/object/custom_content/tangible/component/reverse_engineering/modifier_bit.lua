@@ -1,0 +1,5 @@
+object_tangible_component_reverse_engineering_modifier_bit = object_tangible_component_reverse_engineering_shared_modifier_bit:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_reverse_engineering_modifier_bit, "object/tangible/component/reverse_engineering/modifier_bit.iff")

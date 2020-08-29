@@ -1,0 +1,5 @@
+object_tangible_component_droid_combat_module_rapid_discharge_batteries = object_tangible_component_droid_shared_combat_module_rapid_discharge_batteries:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_droid_combat_module_rapid_discharge_batteries, "object/tangible/component/droid/combat_module_rapid_discharge_batteries.iff")

@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_ch9_installation_flora_farm = object_tangible_storyteller_prop_shared_pr_ch9_installation_flora_farm:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_installation_flora_farm, "object/tangible/storyteller/prop/pr_ch9_installation_flora_farm.iff")

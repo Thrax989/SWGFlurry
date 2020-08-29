@@ -1,0 +1,5 @@
+object_draft_schematic_genetic_engineering_centrifuge_unit = object_draft_schematic_genetic_engineering_shared_centrifuge_unit:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_centrifuge_unit, "object/draft_schematic/genetic_engineering/centrifuge_unit.iff")

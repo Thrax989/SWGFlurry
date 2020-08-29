@@ -1,0 +1,5 @@
+object_ship_star_destroyer_bridge_exterior = object_ship_shared_star_destroyer_bridge_exterior:new {
+
+}
+
+ObjectTemplates:addTemplate(object_ship_star_destroyer_bridge_exterior, "object/ship/star_destroyer_bridge_exterior.iff")

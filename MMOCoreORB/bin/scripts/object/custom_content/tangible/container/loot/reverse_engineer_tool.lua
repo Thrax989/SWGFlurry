@@ -1,0 +1,5 @@
+object_tangible_container_loot_reverse_engineer_tool = object_tangible_container_loot_shared_reverse_engineer_tool:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_container_loot_reverse_engineer_tool, "object/tangible/container/loot/reverse_engineer_tool.iff")

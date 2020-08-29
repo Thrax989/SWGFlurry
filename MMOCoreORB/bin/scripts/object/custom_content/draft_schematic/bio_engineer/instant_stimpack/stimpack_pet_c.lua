@@ -1,0 +1,5 @@
+object_draft_schematic_bio_engineer_instant_stimpack_stimpack_pet_c = object_draft_schematic_bio_engineer_instant_stimpack_shared_stimpack_pet_c:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_bio_engineer_instant_stimpack_stimpack_pet_c, "object/draft_schematic/bio_engineer/instant_stimpack/stimpack_pet_c.iff")

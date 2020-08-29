@@ -1,0 +1,5 @@
+object_draft_schematic_weapon_pistol_launcher_medium = object_draft_schematic_weapon_shared_pistol_launcher_medium:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_pistol_launcher_medium, "object/draft_schematic/weapon/pistol_launcher_medium.iff")

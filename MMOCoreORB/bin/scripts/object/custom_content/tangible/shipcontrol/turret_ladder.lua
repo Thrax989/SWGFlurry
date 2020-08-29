@@ -1,0 +1,3 @@
+object_tangible_shipcontrol_turret_ladder = object_tangible_shipcontrol_shared_turret_ladder:new {
+}
+ObjectTemplates:addTemplate(object_tangible_shipcontrol_turret_ladder, "object/tangible/shipcontrol/turret_ladder.iff")

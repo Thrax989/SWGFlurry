@@ -1,0 +1,3 @@
+object_tangible_destructible_fusion_generator = object_tangible_destructible_shared_fusion_generator:new {
+}
+ObjectTemplates:addTemplate(object_tangible_destructible_fusion_generator, "object/tangible/destructible/fusion_generator.iff")

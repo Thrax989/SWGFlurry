@@ -1,0 +1,3 @@
+object_tangible_theme_park_wod_wod_witch_banner_s03 = object_tangible_theme_park_wod_shared_wod_witch_banner_s03:new {
+}
+ObjectTemplates:addTemplate(object_tangible_theme_park_wod_wod_witch_banner_s03, "object/tangible/theme_park/wod/wod_witch_banner_s03.iff")

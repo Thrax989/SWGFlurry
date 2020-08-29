@@ -1,0 +1,5 @@
+object_draft_schematic_space_weapon_wpn_mining_laser_elite = object_draft_schematic_space_weapon_shared_wpn_mining_laser_elite:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_space_weapon_wpn_mining_laser_elite, "object/draft_schematic/space/weapon/wpn_mining_laser_elite.iff")

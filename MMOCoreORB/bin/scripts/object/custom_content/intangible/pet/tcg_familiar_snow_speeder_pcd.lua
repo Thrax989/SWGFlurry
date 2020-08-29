@@ -1,0 +1,5 @@
+object_intangible_pet_tcg_familiar_snow_speeder_pcd = object_intangible_pet_shared_tcg_familiar_snow_speeder_pcd:new {
+
+}
+
+ObjectTemplates:addTemplate(object_intangible_pet_tcg_familiar_snow_speeder_pcd, "object/intangible/pet/tcg_familiar_snow_speeder_pcd.iff")

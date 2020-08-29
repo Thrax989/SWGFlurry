@@ -1,0 +1,5 @@
+object_draft_schematic_genetic_engineering_processor_housing = object_draft_schematic_genetic_engineering_shared_processor_housing:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_genetic_engineering_processor_housing, "object/draft_schematic/genetic_engineering/processor_housing.iff")

@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_syren5_shield_generator_rebel = object_tangible_terminal_shared_terminal_syren5_shield_generator_rebel:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_syren5_shield_generator_rebel, "object/tangible/terminal/terminal_syren5_shield_generator_rebel.iff")

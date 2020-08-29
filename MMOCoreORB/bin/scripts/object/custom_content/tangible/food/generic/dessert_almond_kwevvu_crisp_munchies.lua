@@ -1,0 +1,5 @@
+object_tangible_food_generic_dessert_almond_kwevvu_crisp_munchies = object_tangible_food_generic_shared_dessert_almond_kwevvu_crisp_munchies:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_food_generic_dessert_almond_kwevvu_crisp_munchies, "object/tangible/food/generic/dessert_almond_kwevvu_crisp_munchies.iff")

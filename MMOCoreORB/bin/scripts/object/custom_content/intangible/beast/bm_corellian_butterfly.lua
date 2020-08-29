@@ -1,0 +1,5 @@
+object_intangible_beast_bm_corellian_butterfly = object_intangible_beast_shared_bm_corellian_butterfly:new {
+
+}
+
+ObjectTemplates:addTemplate(object_intangible_beast_bm_corellian_butterfly, "object/intangible/beast/bm_corellian_butterfly.iff")

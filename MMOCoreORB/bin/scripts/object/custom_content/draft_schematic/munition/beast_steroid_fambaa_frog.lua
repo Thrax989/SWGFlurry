@@ -1,0 +1,5 @@
+object_draft_schematic_munition_beast_steroid_fambaa_frog = object_draft_schematic_munition_shared_beast_steroid_fambaa_frog:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_munition_beast_steroid_fambaa_frog, "object/draft_schematic/munition/beast_steroid_fambaa_frog.iff")

@@ -1,0 +1,5 @@
+object_tangible_component_droid_combat_only_socket_bank = object_tangible_component_droid_shared_combat_only_socket_bank:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_droid_combat_only_socket_bank, "object/tangible/component/droid/combat_only_socket_bank.iff")

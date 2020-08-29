@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_ch9_lava_skiff = object_tangible_storyteller_prop_shared_pr_ch9_lava_skiff:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_ch9_lava_skiff, "object/tangible/storyteller/prop/pr_ch9_lava_skiff.iff")

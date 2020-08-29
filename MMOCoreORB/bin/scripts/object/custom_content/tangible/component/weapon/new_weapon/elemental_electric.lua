@@ -1,0 +1,5 @@
+object_tangible_component_weapon_new_weapon_elemental_electric = object_tangible_component_weapon_new_weapon_shared_elemental_electric:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_new_weapon_elemental_electric, "object/tangible/component/weapon/new_weapon/elemental_electric.iff")

@@ -1,0 +1,3 @@
+object_tangible_terminal_portable_bazaar_terminal = object_tangible_terminal_shared_portable_bazaar_terminal:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_portable_bazaar_terminal, "object/tangible/terminal/portable_bazaar_terminal.iff")

@@ -1,0 +1,5 @@
+object_tangible_food_generic_dessert_smugglers_delight = object_tangible_food_generic_shared_dessert_smugglers_delight:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_food_generic_dessert_smugglers_delight, "object/tangible/food/generic/dessert_smugglers_delight.iff")

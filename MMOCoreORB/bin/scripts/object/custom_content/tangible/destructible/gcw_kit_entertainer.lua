@@ -1,0 +1,3 @@
+object_tangible_destructible_gcw_kit_entertainer = object_tangible_destructible_shared_gcw_kit_entertainer:new {
+}
+ObjectTemplates:addTemplate(object_tangible_destructible_gcw_kit_entertainer, "object/tangible/destructible/gcw_kit_entertainer.iff")

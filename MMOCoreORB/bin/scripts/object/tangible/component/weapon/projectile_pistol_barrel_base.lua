@@ -1,0 +1,5 @@
+object_tangible_component_weapon_projectile_pistol_barrel_base = object_tangible_component_weapon_shared_projectile_pistol_barrel_base:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_projectile_pistol_barrel_base, "object/tangible/component/weapon/projectile_pistol_barrel_base.iff")

@@ -1,0 +1,5 @@
+object_tangible_food_foraged_edible_jar_bugs_generic = object_tangible_food_foraged_shared_edible_jar_bugs_generic:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_food_foraged_edible_jar_bugs_generic, "object/tangible/food/foraged/edible_jar_bugs_generic.iff")

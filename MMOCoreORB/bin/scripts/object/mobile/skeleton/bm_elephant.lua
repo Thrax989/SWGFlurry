@@ -1,0 +1,1 @@
+object_mobile_skeleton_bm_elephant = object_mobile_skeleton_shared_bm_elephant:new {}ObjectTemplates:addTemplate(object_mobile_skeleton_bm_elephant, "object/mobile/skeleton/bm_elephant.iff")

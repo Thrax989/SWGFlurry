@@ -1,0 +1,5 @@
+object_intangible_pet_beast_master_bm_whisper_bird_mount = object_intangible_pet_beast_master_shared_bm_whisper_bird_mount:new {
+
+}
+
+ObjectTemplates:addTemplate(object_intangible_pet_beast_master_bm_whisper_bird_mount, "object/intangible/pet/beast_master/bm_whisper_bird_mount.iff")

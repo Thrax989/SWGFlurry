@@ -1,0 +1,5 @@
+object_tangible_storyteller_prop_pr_eqp_camping_chair_s1 = object_tangible_storyteller_prop_shared_pr_eqp_camping_chair_s1:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_eqp_camping_chair_s1, "object/tangible/storyteller/prop/pr_eqp_camping_chair_s1.iff")

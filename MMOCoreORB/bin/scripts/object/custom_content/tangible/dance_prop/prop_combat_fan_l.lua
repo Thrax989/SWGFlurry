@@ -1,0 +1,5 @@
+object_tangible_dance_prop_prop_combat_fan_l = object_tangible_dance_prop_shared_prop_combat_fan_l:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_dance_prop_prop_combat_fan_l, "object/tangible/dance_prop/prop_combat_fan_l.iff")

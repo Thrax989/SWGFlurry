@@ -1,0 +1,3 @@
+object_tangible_theme_park_nym_hatch_to_stronghold = object_tangible_theme_park_nym_shared_hatch_to_stronghold:new {
+}
+ObjectTemplates:addTemplate(object_tangible_theme_park_nym_hatch_to_stronghold, "object/tangible/theme_park/nym/hatch_to_stronghold.iff")

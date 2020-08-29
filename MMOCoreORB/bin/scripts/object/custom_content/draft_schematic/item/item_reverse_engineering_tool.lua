@@ -1,0 +1,5 @@
+object_draft_schematic_item_item_reverse_engineering_tool = object_draft_schematic_item_shared_item_reverse_engineering_tool:new {
+
+}
+
+ObjectTemplates:addTemplate(object_draft_schematic_item_item_reverse_engineering_tool, "object/draft_schematic/item/item_reverse_engineering_tool.iff")

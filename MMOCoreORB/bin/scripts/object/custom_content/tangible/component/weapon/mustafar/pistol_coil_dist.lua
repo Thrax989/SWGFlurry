@@ -1,0 +1,5 @@
+object_tangible_component_weapon_mustafar_pistol_coil_dist = object_tangible_component_weapon_mustafar_shared_pistol_coil_dist:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_component_weapon_mustafar_pistol_coil_dist, "object/tangible/component/weapon/mustafar/pistol_coil_dist.iff")

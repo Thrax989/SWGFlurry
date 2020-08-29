@@ -1,0 +1,5 @@
+object_intangible_beast_bm_blackwing_rancor = object_intangible_beast_shared_bm_blackwing_rancor:new {
+
+}
+
+ObjectTemplates:addTemplate(object_intangible_beast_bm_blackwing_rancor, "object/intangible/beast/bm_blackwing_rancor.iff")

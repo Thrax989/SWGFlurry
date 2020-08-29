@@ -1,0 +1,5 @@
+object_intangible_beast_bm_corellian_sand_panther = object_intangible_beast_shared_bm_corellian_sand_panther:new {
+
+}
+
+ObjectTemplates:addTemplate(object_intangible_beast_bm_corellian_sand_panther, "object/intangible/beast/bm_corellian_sand_panther.iff")
