@@ -35,9 +35,9 @@ tusken_executioner = Creature:new {
 		},		
 		{
 			groups = {
-				{group = "power_crystals", chance = 10000000},
+				{group = "trash_common", chance = 10000000},
 			},
-			lootChance = 9000000
+			lootChance = 7000000
 		},
 		{
 			groups = {
