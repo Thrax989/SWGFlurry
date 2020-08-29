@@ -60,7 +60,7 @@ tusken_king = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "weapon_component_advanced", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -102,7 +102,7 @@ tusken_king = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "weapon_component_advanced", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
