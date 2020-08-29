@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_sword_acid = object_d
    contribution = {100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/sword/sword_acid.iff",
+   targetTemplate = "object/weapon/melee/sword/sword_blade_ryyk.iff",
 
    additionalTemplates = {
              }

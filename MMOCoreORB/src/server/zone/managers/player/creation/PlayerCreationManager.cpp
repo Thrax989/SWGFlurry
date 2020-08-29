@@ -511,8 +511,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 							Time timeVal(sec);
 
-							if (timeVal.miliDifference() < 60000) {
-								ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per hour. Repeat attempts will reset the timer.", 0x0);
+							if (timeVal.miliDifference() < 300000) {
+								ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per hour. Repeat attempts prior to 5 minutes elapsing will reset the timer.", 0x0);
 								client->sendMessage(errMsg);
 
 								playerCreature->destroyPlayerCreatureFromDatabase(true);
@@ -529,8 +529,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 					if (lastCreatedCharacter.containsKey(accID)) {
 						Time lastCreatedTime = lastCreatedCharacter.get(accID);
 
-						if (lastCreatedTime.miliDifference() < 60000) {
-							ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per minuet. Repeat attempts will reset the timer.", 0x0);
+						if (lastCreatedTime.miliDifference() < 300000) {
+							ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are only permitted to create one character per hour. Repeat attempts prior to 5 minutes elapsing will reset the timer.", 0x0);
 							client->sendMessage(errMsg);
 
 							playerCreature->destroyPlayerCreatureFromDatabase(true);
@@ -676,11 +676,11 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 	//Broadcast Server wide message, new player has joined the server
 	StringBuffer zBroadcast;
 	zBroadcast << "\\#00ace6" << playerName << " \\#ffb90f Has Joined The Flurry Server!";
-	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 
 	//Broadcast new player has joined the server forward to discord channel. created by :TOXIC
 	StringBuffer zGeneral;
-	zGeneral << " Has Joined The Flurry Server, They Are Currently On The Planet Of Tatooine In The City Of Korrivan.";	
+	zGeneral << "Has Joined The Flurry Server!";	
 	chatManager->handleGeneralChat(playerCreature, zGeneral.toString());
 
 	return true;

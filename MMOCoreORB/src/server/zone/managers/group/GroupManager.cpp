@@ -70,18 +70,12 @@ void GroupManager::inviteToGroup(CreatureObject* leader, CreatureObject* target)
 	}
 
 	if (target->isGrouped()) {
-		if ((!leader->isGrouped()) && ((target->hasSkill("social_dancer_novice")) || (target->hasSkill("social_musician_novice"))))
-		{
-			inviteToGroup(target, leader);
-		}
-		else
-		{
-			StringIdChatParameter stringId;
-			stringId.setStringId("group", "already_grouped");
-			stringId.setTT(target->getObjectID());
-			leader->sendSystemMessage(stringId);
-			//leader->sendSystemMessage("group", "already_grouped", player->getObjectID());
-		}
+		StringIdChatParameter stringId;
+		stringId.setStringId("group", "already_grouped");
+		stringId.setTT(target->getObjectID());
+		leader->sendSystemMessage(stringId);
+		//leader->sendSystemMessage("group", "already_grouped", player->getObjectID());
+
 		return;
 	}
 

@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_inkpen_engraved_s01 = object_tangible_loot_misc_shared_inkpen_engraved_s01:new {
-	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_inkpen_engraved_s01, "object/tangible/loot/misc/inkpen_engraved_s01.iff")

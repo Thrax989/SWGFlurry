@@ -181,13 +181,12 @@ object_weapon_melee_axe_axe_heavy_duty_npe = object_weapon_melee_axe_shared_axe_
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = MELEEATTACK,
 
-	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = BLAST,
+	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
+	damageType = KINETIC,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = MEDIUM,
@@ -198,7 +197,7 @@ object_weapon_melee_axe_axe_heavy_duty_npe = object_weapon_melee_axe_shared_axe_
 	xpType = "combat_meleespecialize_twohand",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_sword_2h_maul" },
+	certificationsRequired = { "cert_axe_heavy_duty" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "twohandmelee_accuracy" },
 
@@ -218,24 +217,24 @@ object_weapon_melee_axe_axe_heavy_duty_npe = object_weapon_melee_axe_shared_axe_
 
 
 	-- The values below are the default values.  To be used for blue frog objects primarily
-	healthAttackCost = 95,
+	healthAttackCost = 35,
 	actionAttackCost = 25,
 	mindAttackCost = 10,
 	forceCost = 0,
 
 	pointBlankRange = 0,
-	pointBlankAccuracy = -35,
+	pointBlankAccuracy = 0,
 
 	idealRange = 3,
-	idealAccuracy = -35,
+	idealAccuracy = 0,
 
 	maxRange = 5,
-	maxRangeAccuracy = -35,
+	maxRangeAccuracy = 0,
 
-	minDamage = 100,
-	maxDamage = 450,
+	minDamage = 35,
+	maxDamage = 140,
 
-	attackSpeed = 6,
+	attackSpeed = 5,
 
 	woundsRatio = 15,
 
@@ -244,8 +243,8 @@ object_weapon_melee_axe_axe_heavy_duty_npe = object_weapon_melee_axe_shared_axe_
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "exp_durability", "expRange", "expRange", "null", "expRange", "null", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "maxrange", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 53, 235, 8.5, 11, 750, -46, -46, 3, -46, 4, 120, 30, 16},
-	experimentalMax = {0, 0, 98, 436, 5.8, 20, 1500, -25, -25, 3, -25, 4, 63, 15, 7},
+	experimentalMin = {0, 0, 25, 98, 6.5, 11, 750, -5, -5, 3, -5, 4, 78, 40, 13},
+	experimentalMax = {0, 0, 46, 182, 4.5, 20, 1500, 5, 5, 3, 5, 4, 42, 22, 7},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }

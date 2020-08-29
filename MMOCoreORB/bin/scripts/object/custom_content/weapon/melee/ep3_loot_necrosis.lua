@@ -229,7 +229,7 @@ object_weapon_melee_special_ep3_loot_necrosis = object_weapon_melee_special_shar
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
-	damageType = ACID,
+	damageType = KINETIC,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = LIGHT,

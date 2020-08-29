@@ -2,17 +2,17 @@ deranged_ravisher = Creature:new {
 	objectName = "@mob/creature_names:squill_deranged_ravisher",
 	socialGroup = "squill",
 	faction = "",
-	level = 60,
-	chanceHit = 0.55,
-	damageMin = 470,
-	damageMax = 650,
-	baseXp = 5830,
-	baseHAM = 11000,
-	baseHAMmax = 14000,
-  armor = 3,
-	resists = {160,165,145,145,145,175,195,165,140},
+	level = 35,
+	chanceHit = 0.39,
+	damageMin = 330,
+	damageMax = 370,
+	baseXp = 3460,
+	baseHAM = 8100,
+	baseHAMmax = 9900,
+	armor = 0,
+	resists = {140,140,15,-1,15,15,15,15,-1},
 	meatType = "meat_carnivore",
-	meatAmount = 130,
+	meatAmount = 65,
 	hideType = "",
 	hideAmount = 0,
 	boneType = "",
@@ -32,8 +32,8 @@ deranged_ravisher = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"knockdownattack","stateAccuracyBonus=100"},
-		{"strongdisease","stateAccuracyBonus=100"}
+		{"knockdownattack",""},
+		{"mediumdisease",""}
 	}
 }
 

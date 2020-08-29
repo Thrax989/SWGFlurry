@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_2h_sword_scythe = obj
    contribution = {100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/2h_sword/2h_sword_scythe.iff",
+   targetTemplate = "object/weapon/melee/2h_sword/2h_sword_wod_scyth.iff",
 
    additionalTemplates = {
              }

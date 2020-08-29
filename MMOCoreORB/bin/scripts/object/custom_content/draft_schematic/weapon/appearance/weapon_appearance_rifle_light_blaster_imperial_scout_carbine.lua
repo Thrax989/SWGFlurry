@@ -28,7 +28,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_rifle_light_blaster_i
    ingredientAppearance = {"", "", "", "", "", "", "muzzle", "stock"},
 
 
-   targetTemplate = "object/weapon/ranged/rifle/rifle_laser_light.iff",
+   targetTemplate = "object/weapon/ranged/rifle/rifle_t21.iff",
 
    additionalTemplates = {
              }

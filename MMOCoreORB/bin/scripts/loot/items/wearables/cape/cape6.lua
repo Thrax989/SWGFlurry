@@ -3,7 +3,7 @@
 cape6 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Lando's Cape",
+	customObjectName = "",
 	directObjectTemplate = "object/tangible/tcg/series8/wearable_lando_cape.iff",
 	craftingValues = {
 	},

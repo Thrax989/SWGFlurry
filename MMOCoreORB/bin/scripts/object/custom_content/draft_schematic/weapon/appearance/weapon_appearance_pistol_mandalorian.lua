@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_pistol_mandalorian = 
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/ranged/pistol/pistol_mandalorian.iff",
+   targetTemplate = "object/weapon/ranged/pistol/pistol_de_10.iff",
 
    additionalTemplates = {
              }

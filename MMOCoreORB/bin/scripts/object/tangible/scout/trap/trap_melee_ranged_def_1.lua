@@ -58,11 +58,11 @@ object_tangible_scout_trap_trap_melee_ranged_def_1 = object_tangible_scout_trap_
 	maxRange = 32,
 
 	poolToDamage = HEALTH,
-	minDamage = 120,
-	maxDamage = 200,
+	minDamage = 90,
+	maxDamage = 170,
 
-	duration = 15,
-	state = STUNNED,
+	duration = 10,
+	state = IMMOBILIZED,
 	defenseMod = "",
 
 	successMessage = "trap_melee_ranged_def_1_effect",

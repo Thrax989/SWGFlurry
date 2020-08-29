@@ -730,10 +730,7 @@ void CreatureManagerImplementation::droidHarvest(Creature* creature, CreatureObj
 	if (creature->getParent().get() != nullptr)
 		quantityExtracted = 1;
 
-	int luckBonus = owner->getSkillMod("luck")*5; //0-20% harvest bonus for luck
-	int fsluckBonus = owner->getSkillMod("force_luck")*5; //0-20% harvest bonus for fsluck
-
-	int droidBonus = DroidMechanics::determineDroidSkillBonus(ownerSkill,harvestBonus + luckBonus + fsluckBonus,quantityExtracted);
+	int droidBonus = DroidMechanics::determineDroidSkillBonus(ownerSkill,harvestBonus,quantityExtracted);
 
 	quantityExtracted += droidBonus;
 	// add to droid inventory if there is space available, otherwise to player
@@ -768,7 +765,7 @@ void CreatureManagerImplementation::droidHarvest(Creature* creature, CreatureObj
 		owner->sendSystemMessage("@skl_use:group_harvest_bonus_ranger");
 	else if (modifier == 1.4f)
 		owner->sendSystemMessage("@skl_use:group_harvest_bonus_masterranger");
-/*
+
 	/// Send group spam
 	if (owner->isGrouped()) {
 		StringIdChatParameter bonusMessage("group", "notify_harvest_corpse");
@@ -781,7 +778,7 @@ void CreatureManagerImplementation::droidHarvest(Creature* creature, CreatureObj
 		ChatSystemMessage* sysMessage = new ChatSystemMessage(bonusMessage);
 		owner->getGroup()->broadcastMessage(owner, sysMessage, false);
 	}
-*/
+
 	ManagedReference<PlayerManager*> playerManager = zoneServer->getPlayerManager();
 
 	int xp = creature->getLevel() * 5 + 19;
@@ -859,9 +856,10 @@ void CreatureManagerImplementation::harvest(Creature* creature, CreatureObject* 
 		player->sendSystemMessage("Tried to harvest something this creature didn't have, please report this error");
 		return;
 	}
+	// Make the worst possible amount 10
+	quantity = Math::max(quantity, 10.0f); // Over-ride really low template values
 
-	int quantityExtracted = int(quantity * 4 * float(player->getSkillMod("creature_harvesting") / 100.0f));
-	quantityExtracted = Math::max(quantityExtracted, 3);
+	int quantityExtracted = int(quantity * 4 * float(player->getSkillMod("creature_harvesting") / 100.0f + 1.0f)); // Always give a bonus based on skill level
 
 	ManagedReference<ResourceSpawn*> resourceSpawn = resourceManager->getCurrentSpawn(restype, player->getZone()->getZoneName());
 
@@ -931,7 +929,7 @@ void CreatureManagerImplementation::harvest(Creature* creature, CreatureObject* 
 		player->sendSystemMessage("@skl_use:group_harvest_bonus_ranger");
 	else if (modifier == 1.4f)
 		player->sendSystemMessage("@skl_use:group_harvest_bonus_masterranger");
-/*
+
 	/// Send group spam
 	if (player->isGrouped()) {
 		StringIdChatParameter bonusMessage("group", "notify_harvest_corpse");
@@ -944,7 +942,7 @@ void CreatureManagerImplementation::harvest(Creature* creature, CreatureObject* 
 		ChatSystemMessage* sysMessage = new ChatSystemMessage(bonusMessage);
 		player->getGroup()->broadcastMessage(player, sysMessage, false);
 	}
-*/
+
 	ManagedReference<PlayerManager*> playerManager = zoneServer->getPlayerManager();
 
 	int xp = creature->getLevel() * 5 + 19;

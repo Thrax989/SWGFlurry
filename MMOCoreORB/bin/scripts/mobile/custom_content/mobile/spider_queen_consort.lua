@@ -1,8 +1,7 @@
 spider_queen_consort = Creature:new {
---	customName = "spider_queen_consort",
-  objectName = "@mob/creature_names:spider_queen_consort",
---	randomNameType = NAME_GENERIC,
---	randomNameTag = true,
+	customName = "spider_queen_consort",
+	randomNameType = NAME_GENERIC,
+	randomNameTag = true,
 	socialGroup = "townsperson",
 --	faction = "townsperson",
 	level = 4,

@@ -194,13 +194,13 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_onehanded_gen5_exar_kun
 
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
-	-- jedi_general, combat_meleespecialize_polearmlightsaber, combat_meleespecialize_onehandlightsaber
+	-- combat_meleespecialize_twohandlightsaber, combat_meleespecialize_polearmlightsaber, jedi_general
 	xpType = "jedi_general",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_twohandlightsaber_gen4" },
+	certificationsRequired = { "cert_onehandlightsaber_gen4" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
-	creatureAccuracyModifiers = { "twohandlightsaber_accuracy" },
+	creatureAccuracyModifiers = { "onehandlightsaber_accuracy" },
 
 	-- See http://www.ocdsoft.com/files/defense.xls
 	defenderDefenseModifiers = { "melee_defense" },
@@ -209,17 +209,17 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_onehanded_gen5_exar_kun
 	defenderSecondaryDefenseModifiers = { "saber_block" },
 
 	-- See http://www.ocdsoft.com/files/speed.xls
-	speedModifiers = { "twohandlightsaber_speed" },
+	speedModifiers = { "onehandlightsaber_speed" },
 
 	-- Leave blank for now
 	damageModifiers = { },
 
 
 	-- The values below are the default values.  To be used for blue frog objects primarily
-	healthAttackCost = 95,
-	actionAttackCost = 50,
-	mindAttackCost = 45,
-	forceCost = 47,
+	healthAttackCost = 20,
+	actionAttackCost = 35,
+	mindAttackCost = 40,
+	forceCost = 40,
 
 	pointBlankRange = 0,
 	pointBlankAccuracy = 20,
@@ -229,16 +229,13 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_onehanded_gen5_exar_kun
 
 	maxRange = 5,
 	maxRangeAccuracy = 5,
-	
-	minDamage = 185,
-	maxDamage = 265,
 
-	attackSpeed = 4.8,
+	attackSpeed = 4.5,	
 
 	woundsRatio = 37,
 
 	defenderToughnessModifiers = { "lightsaber_toughness" },
-			
+	
 	noTrade = 1,
 	
 	childObjects = {
@@ -250,10 +247,10 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_onehanded_gen5_exar_kun
 	experimentalWeights = {1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "forcecost", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 325, 405, 5.1, 25, 64, 60, 95, 45},
-	experimentalMax = {0, 0, 335, 425, 4.8, 50, 59, 45, 65, 40},
+	experimentalMin = {0, 0, 140, 230, 4.5, 25, 55, 45, 60, 95},
+	experimentalMax = {0, 0, 160, 270, 4.2, 50, 48, 40, 45, 65},
 	experimentalPrecision = {0, 0, 0, 0, 1, 0, 1, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
-}
 
+}
 ObjectTemplates: addTemplate(object_weapon_melee_sword_crafted_saber_sword_lightsaber_onehanded_gen5_exar_kun, "object/weapon/melee/sword/crafted_saber/sword_lightsaber_onehanded_gen5_exar_kun.iff")

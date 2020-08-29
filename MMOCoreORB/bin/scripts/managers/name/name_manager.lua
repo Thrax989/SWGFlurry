@@ -632,8 +632,5 @@ reservedNames = {
 	{ "guild", DECLINED_RESERVED },
 	{ "tip", DECLINED_RESERVED },
 	{ "citizens", DECLINED_RESERVED },
-	{ "self", DECLINED_RESERVED },
-	{ "tox", DECLINED_RESERVED }, --admin name  
-	{ "syg", DECLINED_RESERVED },  --admin name
-	{ "sig", DECLINED_RESERVED } --admin name  
+	{ "self", DECLINED_RESERVED }
 }

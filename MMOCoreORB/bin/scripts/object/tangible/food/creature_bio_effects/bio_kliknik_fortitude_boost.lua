@@ -45,7 +45,7 @@
 object_tangible_food_creature_bio_effects_bio_kliknik_fortitude_boost = object_tangible_food_creature_bio_effects_shared_bio_kliknik_fortitude_boost:new  {
 	templateType = CONSUMABLE,
 
-	duration = 1800,
+	duration = 240,
 	filling = 0,
 	nutrition = 0,
 
@@ -60,7 +60,7 @@ object_tangible_food_creature_bio_effects_bio_kliknik_fortitude_boost = object_t
 	quantityMin = 0,
 	quantityMax = 0,
 
-	modifiers = { "strength" , 500, "action" , 500, "quickness", 500, "stamina", 500, "focus", 500},
+	modifiers = { "strength" , 500, "action" , 100, "quickness", 700, "stamina", 100, "focus", 500},
 
 	buffName = "kliknik_boost",
 	buffCRC = 0,

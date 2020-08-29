@@ -135,12 +135,7 @@ public:
 		int luck = player->getSkillMod("force_luck");
 
 		if (luck > 0)
-			lootCredits += (lootCredits * luck) / 10;
-
-		int bonusluck = player->getSkillMod("luck");
-
-		if (bonusluck > 0)
-			lootCredits += (lootCredits * bonusluck) / 10;
+			lootCredits += (lootCredits * luck) / 20;
 
 		Locker clocker(group, corpse);
 

@@ -188,7 +188,7 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_shoes = object_tan
 	
 	-- Damage types in WeaponObject
 	vulnerability = STUN,
---	specialResists = LIGHTSABER,
+	specialResists = LIGHTSABER,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
@@ -216,7 +216,7 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_shoes = object_tan
 	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_resistance", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
 	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
 	experimentalMin = {0, 0, 0, 1000, 5, 30000, 22, 44, 16, 1, 16, 5, 0},
-	experimentalMax = {0, 0, 0, 1000, 50, 50000, 13, 26, 9, 1, 16, 75, 0},
+	experimentalMax = {0, 0, 0, 1000, 50, 50000, 13, 26, 9, 1, 16, 50, 0},
 	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 10, 0},
 	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
 }

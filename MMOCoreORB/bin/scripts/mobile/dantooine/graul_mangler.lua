@@ -2,21 +2,21 @@ graul_mangler = Creature:new {
 	objectName = "@mob/creature_names:graul_mangler",
 	socialGroup = "graul",
 	faction = "",
-	level = 40,
-	chanceHit = 1.25,
-	damageMin = 400,
-	damageMax = 490,
-	baseXp = 8000,
-	baseHAM = 10000,
-	baseHAMmax = 12500,
-	armor = 1,
-	resists = {160,165,160,160,160,145,150,145,-1},
+	level = 39,
+	chanceHit = 0.43,
+	damageMin = 340,
+	damageMax = 390,
+	baseXp = 3915,
+	baseHAM = 8800,
+	baseHAMmax = 10800,
+	armor = 0,
+	resists = {140,115,160,160,160,25,-1,25,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 950,
 	hideType = "hide_leathery",
-	hideAmount = 975,
+	hideAmount = 875,
 	boneType = "bone_mammal",
-	boneAmount = 975,
+	boneAmount = 775,
 	milk = 0,
 	tamingChance = 0.25,
 	ferocity = 10,
@@ -33,8 +33,8 @@ graul_mangler = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareableeding","stateAccuracyBonus=75"},
-		{"blindattack","stateAccuracyBonus=100"}
+		{"posturedownattack",""},
+		{"blindattack",""}
 	}
 }
 

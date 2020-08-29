@@ -865,6 +865,11 @@ void SlicingSessionImplementation::handleContainerSlice() {
 
 	if (tangibleObject->getGameObjectType() == SceneObjectType::PLAYERLOOTCRATE) {
 		Reference<SceneObject*> containerSceno = player->getZoneServer()->createObject(STRING_HASHCODE("object/tangible/container/loot/loot_crate.iff"), 1);
+		
+		if (tangibleObject->getClientObjectCRC() == 0x6C34F325) {
+			containerSceno->destroyObjectFromDatabase(true);
+			containerSceno = player->getZoneServer()->createObject(STRING_HASHCODE("object/tangible/container/loot/loot_briefcase.iff"), 1);
+		}
 
 		if (containerSceno == nullptr)
 			return;

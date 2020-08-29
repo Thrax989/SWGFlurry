@@ -3,7 +3,7 @@
 cape8 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Golden Cape",
+	customObjectName = "",
 	directObjectTemplate = "object/tangible/tcg/series7/wearable_gold_cape.iff",
 	craftingValues = {
 	},

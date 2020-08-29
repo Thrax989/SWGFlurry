@@ -29,28 +29,19 @@ exar_guard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "trash_common", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "trash_common", chance = 10000000},
+				{group = "armor_attachments", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "trash_rare", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
+				{group = "weapons_all", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -61,7 +52,16 @@ exar_guard = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 10000000
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 2000000
 		}
 	},
 	weapons = {"mixed_force_weapons"},

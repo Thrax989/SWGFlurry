@@ -32,7 +32,7 @@ bh_dark_adept = Creature:new {
 		{
 			groups = {
 				{group = "tierone", chance = 2500000},
-				{group = "tiertwo", chance = 1000000},
+				{group = "tierrwo", chance = 1000000},
 				{group = "tierthree", chance = 1000000},
 				{group = "tierdiamond", chance = 1000000},
 				{group = "non_jedi_rings_ranged", chance = 500000},

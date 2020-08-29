@@ -2514,9 +2514,7 @@ int AiAgentImplementation::inflictDamage(TangibleObject* attacker, int damageTyp
 		CreatureObject* creature = attacker->asCreatureObject();
 
 		if (damage > 0) {
-			// This damage is DOT or other types of non direct combat damage, it should not count towards loot and thus not be added to the threat map damage.
-			// Adding aggro should still be done.
-			getThreatMap()->addAggro(creature, 1);
+			getThreatMap()->addDamage(creature, damage);
 		}
 	}
 	activateInterrupt(attacker, ObserverEventType::DAMAGERECEIVED);

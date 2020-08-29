@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_pistol_blaster_d18 = 
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/ranged/pistol/pistol_d18_npe.iff",
+   targetTemplate = "object/weapon/ranged/pistol/pistol_de_10.iff",
 
    additionalTemplates = {
              }

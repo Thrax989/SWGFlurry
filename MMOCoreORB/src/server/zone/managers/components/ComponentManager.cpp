@@ -54,11 +54,6 @@
 #include "server/zone/objects/tangible/components/BossMenuComponent.h"
 #include "server/zone/objects/tangible/components/pvpMenuComponent.h"
 #include "server/zone/objects/tangible/components/DiamondMenuComponent.h"
-#include "server/zone/objects/tangible/components/Rarelootcrate1MenuComponent.h"
-#include "server/zone/objects/tangible/components/Rarelootcrate2MenuComponent.h"
-#include "server/zone/objects/tangible/components/Rarelootcrate3MenuComponent.h"
-#include "server/zone/objects/tangible/components/DotpackMenuComponent.h"
-#include "server/zone/objects/tangible/components/ContrabandMenuComponent.h"
 #include "server/zone/objects/tangible/components/WorldMenuComponent.h"
 #include "server/zone/objects/tangible/components/EventMenuComponent.h"
 #include "server/zone/objects/tangible/components/HeroicMenuComponent.h"
@@ -223,12 +218,7 @@ ComponentManager::ComponentManager() {
 	components.put("ArtifactMenuComponent", new ArtifactMenuComponent());
 	components.put("BossMenuComponent", new BossMenuComponent());
 	components.put("pvpMenuComponent", new pvpMenuComponent());
-	components.put("ContrabandMenuComponent", new ContrabandMenuComponent());
 	components.put("DiamondMenuComponent", new DiamondMenuComponent());
-	components.put("Rarelootcrate1MenuComponent", new Rarelootcrate1MenuComponent());
-	components.put("Rarelootcrate2MenuComponent", new Rarelootcrate2MenuComponent());
-	components.put("Rarelootcrate3MenuComponent", new Rarelootcrate3MenuComponent());
-	components.put("DotpackMenuComponent", new DotpackMenuComponent());
 	components.put("WorldMenuComponent", new WorldMenuComponent());
 	components.put("EventMenuComponent", new EventMenuComponent());
 	components.put("HeroicMenuComponent", new HeroicMenuComponent());

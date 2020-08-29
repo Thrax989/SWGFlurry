@@ -170,9 +170,7 @@ lootableArmorAttachmentStatMods = {
 	"unarmed_damage",
 	"unarmed_speed",
 	"volley",
-	"warcry",
-	"luck",
-	"trapping"
+	"warcry"
 }
 
 lootableClothingAttachmentStatMods = {
@@ -325,9 +323,7 @@ lootableClothingAttachmentStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"weapon_repair",
-	"luck",
-	"trapping"
+	"weapon_repair"
 }
 
 lootableArmorStatMods = {
@@ -470,8 +466,7 @@ lootableArmorStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"weapon_repair",
-	"luck"
+	"weapon_repair"
 }
 
 lootableClothingStatMods = {
@@ -614,8 +609,7 @@ lootableClothingStatMods = {
 	"warcry",
 	"weapon_assembly",
 	"weapon_experimentation",
-	"weapon_repair",
-	"luck"
+	"weapon_repair"
 }
 
 lootableOneHandedMeleeStatMods = {
@@ -686,8 +680,7 @@ lootableOneHandedMeleeStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"warcry",
-	"luck"
+	"warcry"
 }
 
 lootableTwoHandedMeleeStatMods = {
@@ -758,8 +751,7 @@ lootableTwoHandedMeleeStatMods = {
 	"twohandmelee_accuracy",
 	"twohandmelee_damage",
 	"twohandmelee_speed",
-	"warcry",
-	"luck"
+	"warcry"
 }
 
 lootableUnarmedStatMods = {
@@ -830,8 +822,7 @@ lootableUnarmedStatMods = {
 	"unarmed_accuracy",
 	"unarmed_damage",
 	"unarmed_speed",
-	"warcry",
-	"luck"
+	"warcry"
 }
 
 lootablePistolStatMods = {
@@ -905,8 +896,7 @@ lootablePistolStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"volley",
-	"luck"
+	"volley"
 }
 
 lootableRifleStatMods = {
@@ -983,8 +973,7 @@ lootableRifleStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"volley",
-	"luck"
+	"volley"
 }
 
 lootableCarbineStatMods = {
@@ -1057,8 +1046,7 @@ lootableCarbineStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"volley",
-	"luck"
+	"volley"
 }
 
 lootablePolearmStatMods = {
@@ -1128,8 +1116,7 @@ lootablePolearmStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"warcry",
-	"luck"
+	"warcry"
 }
 
 lootableHeavyWeaponStatMods = {
@@ -1202,8 +1189,7 @@ lootableHeavyWeaponStatMods = {
 	"tame_non_aggro",
 	"thrown_accuracy",
 	"thrown_speed",
-	"volley",
-	"luck"
+	"volley"
 }
 
 -- Values used to generate lightsaber crystal stats

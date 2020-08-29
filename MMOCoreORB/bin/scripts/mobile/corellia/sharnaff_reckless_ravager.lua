@@ -2,21 +2,21 @@ sharnaff_reckless_ravager = Creature:new {
 	objectName = "@mob/creature_names:sharnaff_reckless_ravager",
 	socialGroup = "sharnaff",
 	faction = "",
-	level = 60,
-	chanceHit = 0.55,
-	damageMin = 470,
-	damageMax = 650,
-	baseXp = 5830,
-	baseHAM = 11000,
-	baseHAMmax = 14000,
-  armor = 3,
-	resists = {160,160,160,140,150,160,150,145,140},
+	level = 34,
+	chanceHit = 0.41,
+	damageMin = 315,
+	damageMax = 340,
+	baseXp = 3460,
+	baseHAM = 8800,
+	baseHAMmax = 10800,
+	armor = 0,
+	resists = {115,115,20,120,120,120,120,120,-1},
 	meatType = "meat_carnivore",
-	meatAmount = 900,
+	meatAmount = 450,
 	hideType = "hide_scaley",
-	hideAmount = 600,
+	hideAmount = 300,
 	boneType = "bone_mammal",
-	boneAmount = 360,
+	boneAmount = 180,
 	milk = 0,
 	tamingChance = 0.25,
 	ferocity = 8,
@@ -33,14 +33,14 @@ sharnaff_reckless_ravager = Creature:new {
 			groups = {
 				{group = "sharnaff_common", chance = 10000000}
 			},
-			lootChance = 5680000
+			lootChance = 1680000
 		}
 	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"dizzyattack","stateAccuracyBonus=100"},
-		{"knockdownattack","stateAccuracyBonus=75"}
+		{"dizzyattack",""},
+		{"knockdownattack",""}
 	}
 }
 

@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_wookiee_knuckler = ob
    contribution = {100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/special/ep3/wookiee_knuckler.iff",
+   targetTemplate = "object/weapon/melee/special/vibroknuckler.iff",
 
    additionalTemplates = {
              }

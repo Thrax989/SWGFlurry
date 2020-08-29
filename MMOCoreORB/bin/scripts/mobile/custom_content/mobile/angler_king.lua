@@ -1,6 +1,6 @@
 angler_king = Creature:new {
---	customName = "angler_king",
-	objectName = "@mob/creature_names:angler_king",
+	customName = "angler_king",
+	--objectName = "",
 	--randomNameType = NAME_GENERIC_TAG,
 	socialGroup = "townsperson",
 	faction = "",

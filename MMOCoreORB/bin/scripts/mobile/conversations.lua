@@ -319,5 +319,3 @@ includeFile("conversations/events/yavin4_poi_waypoints.lua")
 
 --custom painting exchange
 includeFile("conversations/events/painting_exchange.lua")
---Holo exchnage
-includeFile("conversations/events/holo_exchange.lua")

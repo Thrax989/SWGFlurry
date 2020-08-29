@@ -223,74 +223,63 @@ object_weapon_melee_knife_ep3_knife_trando_skinner = object_weapon_melee_knife_e
 				"object/creature/player/zabrak_female.iff" ,
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
-
-
+	
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = MELEEATTACK,
-
-	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
+	
+	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
 	damageType = KINETIC,
-
+	
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = NONE,
-
+	
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
 	-- combat_meleespecialize_twohandlightsaber, combat_meleespecialize_polearmlightsaber, combat_meleespecialize_onehandlightsaber
 	xpType = "combat_meleespecialize_onehand",
-
+	       
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_sword_blade_ryyk" },
+	certificationsRequired = { "cert_knife_stone" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "onehandmelee_accuracy" },
-
+	
 	-- See http://www.ocdsoft.com/files/defense.xls
 	defenderDefenseModifiers = { "melee_defense" },
-
+	
 	-- Leave as "dodge" for now, may have additions later
 	defenderSecondaryDefenseModifiers = { "dodge" },
 
 	defenderToughnessModifiers = { "onehandmelee_toughness" },
-
+	
 	-- See http://www.ocdsoft.com/files/speed.xls
 	speedModifiers = { "onehandmelee_speed" },
-
+	
 	-- Leave blank for now
 	damageModifiers = { },
-
-
+	       
+	
 	-- The values below are the default values.  To be used for blue frog objects primarily
-	healthAttackCost = 39,
-	actionAttackCost = 30,
-	mindAttackCost = 25,
+	healthAttackCost = 5,
+	actionAttackCost = 12,
+	mindAttackCost = 5,
 	forceCost = 0,
 
 	pointBlankRange = 0,
-	pointBlankAccuracy = -15,
+	pointBlankAccuracy = 5,
 
 	idealRange = 3,
-	idealAccuracy = -15,
+	idealAccuracy = 5,
 
 	maxRange = 4,
-	maxRangeAccuracy = -15,
+	maxRangeAccuracy = 5,
 
-	minDamage = 25,
-	maxDamage = 140,
+	minDamage = 20,
+	maxDamage = 30,
 
-	attackSpeed = 3.3,
+	attackSpeed = 3,5,
 
-	woundsRatio = 22,
-
-	numberExperimentalProperties = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	experimentalProperties = {"XX", "XX", "SR", "SR", "SR", "SR", "SR", "SR", "SR", "XX", "SR", "XX", "SR", "SR", "SR"},
-	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "exp_durability", "expRange", "expRange", "null", "expRange", "null", "expEffeciency", "expEffeciency", "expEffeciency"},
-	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "maxrange", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 18, 98, 4.3, 15, 750, -20, -20, 3, -20, 4, 51, 39, 33},
-	experimentalMax = {0, 0, 33, 132, 3, 29, 1500, -10, -10, 3, -10, 4, 27, 21, 18},
-	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+	woundsRatio = 6
 }
 
 ObjectTemplates:addTemplate(object_weapon_melee_knife_ep3_knife_trando_skinner, "object/weapon/melee/knife/ep3/knife_trando_skinner.iff")

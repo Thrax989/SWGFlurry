@@ -81,6 +81,8 @@ namespace player {
 		int addSuiBox(lua_State* L);
 		int removeSuiBox(lua_State* L);
 		int isJediTrainer(lua_State* L);
+		int broadcastToServer(lua_State* L);
+		int broadcastToDiscord(lua_State* L);
 		int getVisibility(lua_State* L);
 		int setFrsCouncil(lua_State* L);
 		int setFrsRank(lua_State* L);

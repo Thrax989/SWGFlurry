@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_pistol_ion_relic = ob
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/ranged/pistol/som_ion_relic_pistol.iff",
+   targetTemplate = "object/weapon/ranged/pistol/pistol_de_10.iff",
 
    additionalTemplates = {
              }

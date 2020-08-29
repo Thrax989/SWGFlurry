@@ -70,7 +70,7 @@ public:
 		    bool canGetDistance = player->hasSkill("outdoors_ranger_harvest_03");
 
 			SortedVector<ManagedReference<QuadTreeEntry*> > objects(2048, 2048);
-			zone->getInRangeObjects(player->getPositionX(), player->getPositionY(), type == 2 ? 512 : 8192, &objects, true);
+			zone->getInRangeObjects(player->getPositionX(), player->getPositionY(), 2048, &objects, true);
 
 			for (int i = 0; i < objects.size(); ++i) {
 				SceneObject* object = static_cast<SceneObject*>(objects.get(i).get());

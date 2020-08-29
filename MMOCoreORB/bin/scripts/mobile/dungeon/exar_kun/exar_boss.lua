@@ -3,15 +3,15 @@ exar_boss = Creature:new {
 	socialGroup = "exar",
 	faction = "exar",
 	level = 300,
-	chanceHit = 35.00,
-	damageMin = 1500,
-	damageMax = 3000,
-	specialDamageMult = 10.0,
-	baseXp = 100000,
-	baseHAM = 485000,
-	baseHAMmax = 500000,
-	armor = 3,
-	resists = {95,95,95,95,95,95,95,95,95},
+	chanceHit = 25.00,
+	damageMin = 1245,
+	damageMax = 2600,
+	specialDamageMult = 7.5,
+	baseXp = 28549,
+	baseHAM = 385000,
+	baseHAMmax = 471000,
+	armor = 0,
+	resists = {50,50,50,50,50,50,50,50,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -25,86 +25,98 @@ exar_boss = Creature:new {
 	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED + INTERESTING,
 	diet = HERBIVORE,
-	scale = 1.7;
+	scale = 1.5;
 	templates = {"object/mobile/costume_exar_kun_cultist.iff"},
 	lootGroups = {
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "g_named_crystals", chance = 10000000},
 			},
-			lootChance = 1000000
-		},	
+			lootChance = 5000000
+		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "g_cloak_of_hate", chance = 10000000},
+			},
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "capes", chance = 10000000},
+			},
+			lootChance = 1500000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "goggles_all", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "neck_crafter", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "non_jedi_ring_crafter_second", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "non_jedi_ring_crafter", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "non_jedi_rings_ranged", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "non_jedi_rings", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_earings", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_bracelets", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_neck", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_rings", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "g_necklaces", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
@@ -132,42 +144,15 @@ exar_boss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_rare", chance = 10000000},
+				{group = "vehicledeedsnormal", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_rare", chance = 10000000},
+				{group = "vehicledeedsrare", chance = 10000000},
 			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 10000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
@@ -188,9 +173,9 @@ exar_boss = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"dark_jedi_weapons_gen4", "unarmed_weapons", "ranged_weapons", "melee_weapons", "carbine_weapons", "rebel_weapons_heavy"},
+	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
-	attacks = merge(lightsabermaster,forcepowermaster,tkamaster,pikemanmaster,swordsmanmaster,fencermaster,riflemanmaster,pistoleermaster,carbineermaster,commandomaster,bountyhuntermaster)
+	attacks = merge(lightsabermaster,forcepowermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(exar_boss, "exar_boss")

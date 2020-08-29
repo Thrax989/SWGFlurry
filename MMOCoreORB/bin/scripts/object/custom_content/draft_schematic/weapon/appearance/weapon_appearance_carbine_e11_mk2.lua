@@ -28,7 +28,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_carbine_e11_mk2 = obj
    ingredientAppearance = {"", "", "", "", "", "scope", "stock"},
 
 
-   targetTemplate = "object/weapon/ranged/carbine/carbine_e11_mark2.iff",
+   targetTemplate = "object/weapon/ranged/carbine/carbine_dxr6.iff",
 
    additionalTemplates = {
              }

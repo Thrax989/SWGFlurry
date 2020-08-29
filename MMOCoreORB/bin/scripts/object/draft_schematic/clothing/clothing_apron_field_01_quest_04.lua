@@ -76,8 +76,8 @@ object_draft_schematic_clothing_clothing_apron_field_01_quest_04 = object_draft_
              },
       
         skillMods = {
-	    {"structure_assembly", 25},
-	    {"structure_experimentation", 25},
+	    {"structure_assembly", 5},
+	    {"structure_experimentation", 5},
 	},
 
 }

@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_ornamental_sconce = object_tangible_loot_misc_shared_ornamental_sconce:new {
-	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_ornamental_sconce, "object/tangible/loot/misc/ornamental_sconce.iff")

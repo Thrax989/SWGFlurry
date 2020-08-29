@@ -14,11 +14,11 @@ MaulerStrongholdScreenPlay = ScreenPlay:new {
 	lootGroups = {
 		{
 			groups = {
- 				{group = "vehicledeedsnormal", chance = 1000000}, 
- 				{group = "non_jedi_rings_ranged", chance = 2000000}, 
- 				{group = "tierthree", chance = 2000000}, 
+				{group = "vehicledeedsnormal", chance = 1000000},
+				{group = "non_jedi_rings_ranged", chance = 2000000},
+				{group = "tierthree", chance = 2000000},
 				{group = "clothing_attachments", chance = 2500000},
-				{group = "armor_attachments", chance = 200000}
+				{group = "armor_attachments", chance = 2500000}
 			},
 			lootChance = 8000000
 		}					

@@ -31,19 +31,13 @@ mandalore_the_resurrector = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "boss_rare", chance = 10000000},
-			},
-			lootChance = 1000000
-		},		
-		{
-			groups = {
 				{group = "death_watch_bunker_lootbox", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "nge_all", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -61,19 +55,19 @@ mandalore_the_resurrector = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "non_jedi_ring_crafter", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "non_jedi_rings_ranged", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "non_jedi_rings", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
@@ -103,19 +97,19 @@ mandalore_the_resurrector = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "g_necklaces", chance = 10000000},
 			},
 			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "armor_attachments", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -133,15 +127,15 @@ mandalore_the_resurrector = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "vehicledeedsnormal", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_rare", chance = 10000000},
+				{group = "vehicledeedsrare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2500000
 		},
 		{
 			groups = {

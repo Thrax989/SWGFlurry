@@ -28,7 +28,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_carbine_kun_massassi 
    ingredientAppearance = {"", "", "", "", "", "scope", "stock"},
 
 
-   targetTemplate = "object/weapon/ranged/carbine/carbine_kun_massassi.iff",
+   targetTemplate = "object/weapon/ranged/carbine/carbine_dxr6.iff",
 
    additionalTemplates = {
              }

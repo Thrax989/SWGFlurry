@@ -53,8 +53,8 @@ object_tangible_deed_vehicle_deed_landspeeder_organa_deed = object_tangible_deed
 	experimentalWeights = {1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "exp_durability"},
 	experimentalSubGroupTitles = {"null", "null", "hit_points"},
-	experimentalMin = {0, 0, 5000},
-	experimentalMax = {0, 0, 10000},
+	experimentalMin = {0, 0, 1000},
+	experimentalMax = {0, 0, 2500},
 	experimentalPrecision = {0, 0, 0},
 	experimentalCombineType = {0, 0, 1},
 }

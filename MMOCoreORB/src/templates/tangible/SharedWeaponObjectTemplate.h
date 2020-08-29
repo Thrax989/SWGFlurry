@@ -53,7 +53,7 @@ protected:
 	Vector<String> defenderDefenseModifiers;
 	Vector<String> defenderSecondaryDefenseModifiers;
 	Vector<String> defenderToughnessModifiers;
-	String deconstructionTemplate;
+
 	String xpType;
 
 	uint32 weaponType;
@@ -160,10 +160,6 @@ public:
 	void parseVariableData(const String& varName, LuaObject* templateData);
 
 	void parseFileData(IffStream* iffStream);
-
-	inline String getDeconstructionTemplate() const {
-		return deconstructionTemplate;
-	}
 
 	inline String getXpType() const {
 		return xpType;

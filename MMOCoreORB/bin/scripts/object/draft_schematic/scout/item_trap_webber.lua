@@ -64,9 +64,9 @@ object_draft_schematic_scout_item_trap_webber = object_draft_schematic_scout_sha
 
    ingredientTemplateNames = {"craft_item_ingredients_n", "craft_item_ingredients_n", "craft_item_ingredients_n"},
    ingredientTitleNames = {"device_housing", "device_systems", "webbing_fluid"},
-   ingredientSlotType = {0, 1, 0},
-   resourceTypes = {"bone", "object/tangible/component/clothing/shared_clasp_heavy_duty.iff", "petrochem_inert_polymer"},
-   resourceQuantities = {15, 1, 13},
+   ingredientSlotType = {0, 0, 0},
+   resourceTypes = {"bone", "metal", "petrochem_inert_polymer"},
+   resourceQuantities = {15, 7, 13},
    contribution = {100, 100, 100},
 
 

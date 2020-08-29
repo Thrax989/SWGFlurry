@@ -59,10 +59,10 @@ object_tangible_scout_trap_trap_ranged_def_1 = object_tangible_scout_trap_shared
 	maxRange = 32,
 
 	poolToDamage = HEALTH,
-	minDamage = 75,
-	maxDamage = 125,
+	minDamage = 40,
+	maxDamage = 75,
 
-	duration = 15,
+	duration = 10,
 	state = 0,
 	defenseMod = "",
 

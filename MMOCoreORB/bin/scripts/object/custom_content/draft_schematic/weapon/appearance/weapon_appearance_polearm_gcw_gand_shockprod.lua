@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_polearm_gcw_gand_shoc
    contribution = {100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/polearm/lance_gcw_gand_shockprod.iff",
+   targetTemplate = "object/weapon/melee/polearm/polearm_vibro_axe.iff",
 
    additionalTemplates = {
              }

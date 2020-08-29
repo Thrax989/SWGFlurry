@@ -38,23 +38,17 @@ public:
 
 		GroupManager* groupManager = GroupManager::instance();
 
-		ManagedReference<SceneObject*> object = NULL;
-		if (target != 0 && target != creature->getObjectID() && arguments.isEmpty())
-		{
+		ManagedReference<SceneObject*> object = nullptr;
+		if (target != 0 && target != creature->getObjectID())
 			object = server->getZoneServer()->getObject(target);
-		}
-		else if (!arguments.isEmpty())
-		{
+		else if (!arguments.isEmpty()) {
 			StringTokenizer tokenizer(arguments.toString());
-			if (tokenizer.hasMoreTokens())
-			{
+			if (tokenizer.hasMoreTokens()) {
 				String name;
 				tokenizer.getStringToken(name);
 				name = name.toLowerCase();
-				if (name != "self" && name != "this")
-				{
-					try
-					{
+				if (name != "self" && name != "this") {
+					try {
 						object = server->getPlayerManager()->getPlayer(name);
 					} catch (ArrayIndexOutOfBoundsException& ex) {
 						// this happens if the player wasn't found
@@ -63,12 +57,14 @@ public:
 			}
 		}
 
+
 		if (object == nullptr)
 			return GENERALERROR;
 
 
 		if (object->isPlayerCreature()) {
 			CreatureObject* player = cast<CreatureObject*>( object.get());
+      		        creature->playEffect("clienteffect/death_trooper_anti_virus.cef", "");
 
 			if (!player->getPlayerObject()->isIgnoring(creature->getFirstName().toLowerCase()) || godMode)
 				groupManager->inviteToGroup(creature, player);

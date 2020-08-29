@@ -19,9 +19,6 @@
 #include "templates/faction/Factions.h"
 #include "server/zone/objects/player/FactionStatus.h"
 #include "server/zone/managers/player/PlayerMap.h"
-#include "server/zone/packets/MessageCallback.h"
-#include "server/zone/ZoneServer.h"
-#include "server/zone/Zone.h"
 
 void FrsManagerImplementation::initialize() {
 	auto zoneServer = this->zoneServer.get();
@@ -1037,16 +1034,14 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 	}
 
 	if (!isVictim){
-		Zone* zone = attacker->getZone();
-		String planetName = zone->getZoneName();
 		String attackerName = attacker->getFirstName();
 		String victimName = victim->getFirstName();
 		StringBuffer frsKillQuery, zBroadcast;
-		zBroadcast << "\\#00cc99 " << attackerName << " Has Gained FRS From Killing " << "\\#00e604" << victimName << "\\#e60000 on Planet " << planetName; 
-		playerGhost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+		zBroadcast << "\\#00cc99 " << attackerName << " Gained FRS From Killing " << "\\#00e604" << victimName; 
+		playerGhost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		ChatManager* chatManager = attacker->getZoneServer()->getChatManager();	
 		StringBuffer zGeneral;
-		zGeneral << " Has Gained FRS From Killing " << victimName << "\\#e60000 on Planet " << planetName;
+		zGeneral << " gained FRS from killing " << victimName;
 		chatManager->handleGeneralChat(attacker, zGeneral.toString());
 	}
 	return xpChange;
@@ -4120,3 +4115,4 @@ void FrsManagerImplementation::handleSuddenDeathLoss(CreatureObject* player, Thr
 ZoneServer* FrsManagerImplementation::getZoneServer() {
 	return zoneServer.get();
 }
+

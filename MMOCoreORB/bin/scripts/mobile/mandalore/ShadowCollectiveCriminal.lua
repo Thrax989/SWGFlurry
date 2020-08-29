@@ -4,16 +4,16 @@ shadow_collective_criminal = Creature:new {
 	socialGroup = "death_watch",
 	pvpFaction = "death_watch",
 	faction = "",
-	level = 300,
+	level = 150,
 	chanceHit = 30,
-	damageMin = 3750,
-	damageMax = 4250,
- -- specialDamageMult = 7.5,  
+	damageMin = 500,
+	damageMax = 1000,
+  specialDamageMult = 7.5,  
 	baseXp = 10000,
 	baseHAM = 115000,
 	baseHAMmax = 125000,
-	armor = 2,
-	resists = {170,170,170,170,170,170,170,170,145},
+	armor = 3,
+	resists = {165,165,175,165,150,140,195,150,175},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -32,14 +32,8 @@ shadow_collective_criminal = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "death_watch_bunker_lieutenants", chance = 10000000},
-			},
-			lootChance = 3000000
-		},		
-		{
-			groups = {
-				{group = "trash_common", chance = 5000000},
- 				{group = "trash_rare", chance = 5000000},
+				{group = "clothing_attachments", chance = 5000000},
+ 				{group = "armor_attachments", chance = 5000000},
 			},
 			lootChance = 10000000
 		},
@@ -54,9 +48,10 @@ shadow_collective_criminal = Creature:new {
 		},
 		{
 			groups = {
-				{group = "trash_rare", chance = 10000000},
+				{group = "weapons_all", chance = 5000000},
+ 				{group = "nge_all", chance = 5000000}, 
 			},
-			lootChance = 200000
+			lootChance = 500000
 		},
 		{
 			groups = {

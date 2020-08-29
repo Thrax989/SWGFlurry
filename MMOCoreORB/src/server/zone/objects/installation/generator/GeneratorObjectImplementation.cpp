@@ -16,8 +16,6 @@ void GeneratorObjectImplementation::fillObjectMenuResponse(ObjectMenuResponse* m
 
 	InstallationObjectImplementation::fillObjectMenuResponse(menuResponse, player);
 
-	menuResponse->addRadialMenuItemToRadialID(118, 79, 3, "Retreive all resources"); //Empty Harvester
-	menuResponse->addRadialMenuItemToRadialID(118, 80, 3, "+ 10k Maintenance"); //10k maint
 	menuResponse->addRadialMenuItemToRadialID(118, 78, 3, "@harvester:manage"); //Operate Machinery
 }
 
@@ -47,15 +45,7 @@ int GeneratorObjectImplementation::handleObjectMenuSelect(CreatureObject* player
 		return 1;
 
 	switch (selectedID) {
-		// Stack adding in harvester empty/power/maint quick addd
-	case 80: { // 10k maint
-		quickAddMaint(player, 10000.0);
-		break;
-	}
-	case 79: { // Retrieve all from Harvester
-		quickRetrieveAllResources(player);
-		break;
-	}
+
 	case 78: {
 		ResourceHarvesterActivatePageMessage* rhapm = new ResourceHarvesterActivatePageMessage(getObjectID());
 		player->sendMessage(rhapm);

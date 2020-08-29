@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_force_crystal = object_tangible_loot_misc_shared_force_crystal:new {
-	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_force_crystal, "object/tangible/loot/misc/force_crystal.iff")

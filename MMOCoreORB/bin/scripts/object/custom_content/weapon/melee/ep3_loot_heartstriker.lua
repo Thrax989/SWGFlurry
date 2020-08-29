@@ -229,7 +229,7 @@ object_weapon_melee_special_ep3_loot_heartstriker = object_weapon_melee_special_
 	attackType = MELEEATTACK,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
-	damageType = STUN,
+	damageType = KINETIC,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
 	armorPiercing = LIGHT,

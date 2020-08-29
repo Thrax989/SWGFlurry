@@ -4,8 +4,8 @@ worldboss_8 = Creature:new {
 	faction = "nightsister",
 	level = 300,
 	chanceHit = 50.0,
-	damageMin = 4500,
-	damageMax = 6500,
+	damageMin = 3500,
+	damageMax = 5500,
 	baseXp = 20000,
 	baseHAM = 400000,
 	baseHAMmax = 500000,
@@ -30,15 +30,9 @@ worldboss_8 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 1000000
-		},		
-		{
-			groups = {
-				{group = "boss_rare", chance = 10000000},
-			},
-			lootChance = 1000000
+				{group = "junk", chance = 10000000}				
+		},
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -48,25 +42,25 @@ worldboss_8 = Creature:new {
 		},		
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "g_named_crystals", chance = 10000000},
 		},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "g_cloak_of_hate", chance = 10000000},
 		},
 			lootChance = 500000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "capes", chance = 10000000},
 		},
 			lootChance = 1500000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000}			
+				{group = "nge_all", chance = 10000000}			
 		},
 			lootChance = 10000000
 		},

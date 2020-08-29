@@ -7,7 +7,7 @@ darkEnclaveID = 3435626
 petitionInterval = 86400000 -- 1 day
 votingInterval = 86400000 -- 1 day
 acceptanceInterval = 86400000 -- 1 day
-maintenanceInterval = 604800000 -- 7 day
+maintenanceInterval = 86400000 -- 1 day
 
 requestDemotionDuration = 604800000 -- 7 days
 voteChallengeDuration = 604800000 -- 7 days
@@ -18,7 +18,7 @@ arenaChallengeDuration = 3600000 -- 60 mins
 arenaChallengeCooldown = 90000000 -- 25 hours
 
 -- Costs are in FRS experience
-baseMaintCost = 10 -- Suspect this is being influenced by x20 multiplier, original base 100. 
+baseMaintCost = 100
 requestDemotionCost = 2000
 voteChallengeCost = 1000
 
@@ -97,14 +97,14 @@ enclaveRoomRequirements = {
 -- Key references the player's target
 -- Ex: Rank 5 loses to BH, see "bh_lose" key and 6th integer value in same row
 frsExperienceValues = {
-	{ "nonjedi_win", 1000, 1250, 1759, 2250, 3000, 3750, 4750, 5500, 6750, 7750, 8750, 10000 },
-	{ "nonjedi_lose", 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500 },
-	{ "bh_win", 1000, 1250, 1759, 2250, 3000, 3750, 4750, 5500, 6750, 7750, 8750, 10000 },
-	{ "bh_lose", 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500 },
-	{ "padawan_win", 500, 650, 1000, 1250, 1750, 2250, 2750, 2350, 4000, 4500, 5000, 6000 },
-	{ "padawan_lose", 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500 },
-	{ "rank0_win", 500, 650, 750, 1000, 1500, 2000, 2500, 3000, 3750, 4250, 5000, 5750 },
-	{ "rank0_lose", 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500 },
+	{ "nonjedi_win", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	{ "nonjedi_lose", 1000, 1250, 1759, 2250, 3000, 3750, 4750, 5500, 6750, 7750, 8750, 10000 },
+	{ "bh_win", 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500 },
+	{ "bh_lose", 1000, 1250, 1759, 2250, 3000, 3750, 4750, 5500, 6750, 7750, 8750, 10000 },
+	{ "padawan_win", 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200 },
+	{ "padawan_lose", 500, 650, 1000, 1250, 1750, 2250, 2750, 2350, 4000, 4500, 5000, 6000 },
+	{ "rank0_win", 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750 },
+	{ "rank0_lose", 250, 500, 750, 1000, 1500, 2000, 2500, 3000, 3750, 4250, 5000, 5750 },
 	{ "rank1_win", 900, 900, 900, 900, 900, 900, 900, 900, 900, 900, 900, 900 },
 	{ "rank1_lose", 100, 250, 500, 900, 1300, 1750, 2250, 2750, 3500, 4150, 4750, 5500 },
 	{ "rank2_win", 1250, 1250, 1250, 1250, 1250, 1250, 1250, 1250, 1250, 1250, 1250, 1250 },

@@ -5,16 +5,16 @@ vizsla_loyalist = Creature:new {
 	socialGroup = "death_watch",
 	pvpFaction = "death_watch",
 	faction = "",
-	level = 300,
+	level = 250,
 	chanceHit = 40,
-	damageMin = 3750,
-	damageMax = 4250,
+	damageMin = 750,
+	damageMax = 1250,
   specialDamageMult = 7.5,  
 	baseXp = 15000,
 	baseHAM = 115000,
 	baseHAMmax = 125000,
-	armor = 2,
-	resists = {170,170,170,170,170,170,170,170,145},
+	armor = 1,
+	resists = {170,170,170,170,170,170,170,170,155},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -49,9 +49,10 @@ vizsla_loyalist = Creature:new {
 		},
 		{
 			groups = {
-				{group = "trash_rare", chance = 10000000},
+				{group = "weapons_all", chance = 5000000},
+ 				{group = "nge_all", chance = 5000000},       
 			},
-			lootChance = 200000
+			lootChance = 500000
 		},
 		{
 			groups = {

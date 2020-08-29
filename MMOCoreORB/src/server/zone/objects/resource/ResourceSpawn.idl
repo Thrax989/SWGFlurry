@@ -52,7 +52,6 @@ class ResourceSpawn extends SceneObject {
 	protected int containerReferenceCount;
 	protected boolean dbDestroyed;
 	protected boolean energy;
-	protected boolean perfect;
 
 	public ResourceSpawn() {
 		spawnType = "";
@@ -71,7 +70,6 @@ class ResourceSpawn extends SceneObject {
 		spawnPool = 0;
 		dbDestroyed = false;
 		energy = false;
-		perfect = false;
 
 		setLoggingName("ResourceSpawn");
 	}
@@ -174,11 +172,6 @@ class ResourceSpawn extends SceneObject {
 		energy = val;
 	}
 
-	@preLocked
-	public void setIsPerfectSpawn(boolean val) {
-		perfect = val;
-	}
-
 	// getters
 	@read
 	public string getName() {
@@ -263,11 +256,6 @@ class ResourceSpawn extends SceneObject {
 	}
 
 	@read
-	public boolean isPerfectSpawn() {
-		return perfect;
-	}
-
-	@read
 	public string getZoneRestriction() {
 		return zoneRestriction;
 	}
@@ -331,8 +319,6 @@ class ResourceSpawn extends SceneObject {
 	public native int getValueOf(final string attribute);
 
 	public native void addStatsToDeedListBox(SuiListBox suil);
-
-	public native void addStatsToDeedListBoxCR(SuiListBox suil);
 
 	@read
 	public native void print();

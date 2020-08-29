@@ -181,16 +181,15 @@ object_weapon_melee_2h_sword_ep3_loot_sickle_wod = object_weapon_melee_2h_sword_
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = MELEEATTACK,
 
-	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = BLAST,
+	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
+	damageType = KINETIC,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
-	armorPiercing = MEDIUM,
+	armorPiercing = NONE,
 
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
@@ -198,7 +197,7 @@ object_weapon_melee_2h_sword_ep3_loot_sickle_wod = object_weapon_melee_2h_sword_
 	xpType = "combat_meleespecialize_twohand",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_sword_2h_maul" },
+	certificationsRequired = { "cert_sword_2h_axe" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "twohandmelee_accuracy" },
 
@@ -218,34 +217,34 @@ object_weapon_melee_2h_sword_ep3_loot_sickle_wod = object_weapon_melee_2h_sword_
 
 
 	-- The values below are the default values.  To be used for blue frog objects primarily
-	healthAttackCost = 95,
-	actionAttackCost = 25,
+	healthAttackCost = 42,
+	actionAttackCost = 15,
 	mindAttackCost = 10,
 	forceCost = 0,
 
 	pointBlankRange = 0,
-	pointBlankAccuracy = -35,
+	pointBlankAccuracy = 5,
 
-	idealRange = 3,
-	idealAccuracy = -35,
+	idealRange = 5,
+	idealAccuracy = 5,
 
 	maxRange = 5,
-	maxRangeAccuracy = -35,
+	maxRangeAccuracy = 5,
 
-	minDamage = 100,
-	maxDamage = 450,
+	minDamage = 75,
+	maxDamage = 125,
 
-	attackSpeed = 6,
+	attackSpeed = 4.5,
 
-	woundsRatio = 15,
+	woundsRatio = 17,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "SR", "SR", "SR", "SR", "SR", "SR", "SR", "XX", "SR", "XX", "SR", "SR", "SR"},
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "exp_durability", "expRange", "expRange", "null", "expRange", "null", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "maxrange", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 53, 235, 8.5, 11, 750, -46, -46, 3, -46, 4, 120, 30, 16},
-	experimentalMax = {0, 0, 98, 436, 5.8, 20, 1500, -25, -25, 3, -25, 4, 63, 15, 7},
+	experimentalMin = {0, 0, 53, 88, 5.6, 12, 750, 0, 0, 3, 0, 4, 52, 17, 10},
+	experimentalMax = {0, 0, 98, 163, 4.1, 22, 1500, 10, 10, 3, 10, 4, 26, 8, 4},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }

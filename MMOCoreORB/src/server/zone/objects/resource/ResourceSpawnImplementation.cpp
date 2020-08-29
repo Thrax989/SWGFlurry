@@ -276,22 +276,6 @@ void ResourceSpawnImplementation::addStatsToDeedListBox(SuiListBox* suil) {
 	}
 }
 
-void ResourceSpawnImplementation::addStatsToDeedListBoxCR(SuiListBox* suil) {
-	suil->setPromptTitle("Resource List");
-	suil->setPromptText("Here are the stats:");
-
-	String tempname = "Name = " + spawnName;
-	suil->addMenuItem(tempname);
-
-	for (int i = 0; i < spawnAttributes.size(); ++i) {
-		String attrib;
-		int value = getAttributeAndValue(attrib, i);
-
-		String tempstat = "@obj_attr_n:" + attrib + " = " + value;
-		suil->addMenuItem(tempstat);
-	}
-}
-
 void ResourceSpawnImplementation::print() const {
 	info("**** Resource Data ****\n", true);
 	info("Class: " + getFinalClass(), true);

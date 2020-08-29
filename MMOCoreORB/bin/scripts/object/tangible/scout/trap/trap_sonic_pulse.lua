@@ -47,7 +47,7 @@ object_tangible_scout_trap_trap_sonic_pulse = object_tangible_scout_trap_shared_
 	objectMenuComponent = "TrapMenuComponent",
 
 	useCount = 5,
-	skillRequired = 25,
+	skillRequired = 80,
 
 	skillMods = {},
 
@@ -59,9 +59,9 @@ object_tangible_scout_trap_trap_sonic_pulse = object_tangible_scout_trap_shared_
 
 	poolToDamage = HEALTH,
 	minDamage = 200,
-	maxDamage = 400,
+	maxDamage = 450,
 
-	duration = 15,
+	duration = 10,
 	state = STUNNED + DIZZY,
 	defenseMod = "dizzy_defense",
 

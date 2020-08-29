@@ -32,12 +32,6 @@ boorka_the_hutt = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
-			},
-			lootChance = 1000000
-		},	
-		{
-			groups = {
 				{group = "bounty_hunter_armor", chance = 10000000},
 			},
 			lootChance = 1000000

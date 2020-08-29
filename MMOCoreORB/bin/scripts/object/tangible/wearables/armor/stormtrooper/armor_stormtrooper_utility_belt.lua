@@ -46,7 +46,7 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_utility_belt = o
 
 	objectMenuComponent = "ArmorObjectMenuComponent",
 
-
+	faction = "imperial",
 
 
 	playerRaces = { "object/creature/player/abyssin_male.iff",

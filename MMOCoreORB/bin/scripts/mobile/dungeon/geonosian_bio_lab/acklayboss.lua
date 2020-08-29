@@ -4,11 +4,11 @@ acklayboss = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 92.5,
-	damageMin = 3000,
-	damageMax = 5000,
+	damageMin = 935,
+	damageMax = 1580,
 	baseXp = 14884,
-	baseHAM = 110000,
-	baseHAMmax = 175000,
+	baseHAM = 96000,
+	baseHAMmax = 118000,
 	armor = 2,
 	resists = {130,145,155,155,145,30,30,30,-1},
 	meatType = "",
@@ -29,18 +29,6 @@ acklayboss = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},		
-		{
-			groups = {
-				{group = "geonosian_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},		
-		{
-			groups = {
 				{group = "acklay", chance = 10000000},
 			},
 			lootChance = 5000000
@@ -65,31 +53,31 @@ acklayboss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "nge_all", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "nge_all", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "nge_all", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "nge_all", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "geonosian_common", chance = 10000000},
+				{group = "nge_all", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
@@ -122,7 +110,7 @@ acklayboss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_rare", chance = 10000000},
+				{group = "vehicledeedsrare", chance = 10000000},
 			},
 			lootChance = 5000000
 		},

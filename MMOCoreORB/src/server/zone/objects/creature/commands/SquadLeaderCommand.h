@@ -80,7 +80,7 @@ public:
 			targetCreo = target->getLinkedCreature().get();
 
 		PlayerObject* ghost = targetCreo->getPlayerObject();
-		if (ghost == nullptr)
+		if (ghost == nullptr || ghost->hasBhTef())
 			return false;
 
 		uint32 leaderFaction = leader->getFaction();
@@ -88,15 +88,14 @@ public:
 		int targetStatus = targetCreo->getFactionStatus();
 
 		if (leaderFaction == 0) {
-			if (targetFaction != 0 && (targetStatus = FactionStatus::OVERT || ghost->hasPvpTef()))
+			if (targetFaction != 0 && targetStatus > FactionStatus::ONLEAVE)
 				return false;
 		} else if (targetFaction != 0) {
-			if (leaderFaction != targetFaction && (targetStatus = FactionStatus::OVERT || ghost->hasPvpTef()))
+			if (leaderFaction != targetFaction && targetStatus > FactionStatus::ONLEAVE)
 				return false;
 
-			//Comment out for the time being to allow SLs buff and get tefed
-			//if (leaderFaction == targetFaction && targetStatus > leader->getFactionStatus())
-			//	return false;
+			if (leaderFaction == targetFaction && targetStatus > leader->getFactionStatus())
+				return false;
 		}
 
 		if (target->getParentRecursively(SceneObjectType::BUILDING) != leader->getParentRecursively(SceneObjectType::BUILDING))

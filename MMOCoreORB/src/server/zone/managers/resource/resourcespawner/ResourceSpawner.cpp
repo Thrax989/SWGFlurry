@@ -312,20 +312,9 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 
 		writer->writeLine("resources = {");
 
-		uint64 currTime = System::getTime();
-		uint64 despawned = 0;
-
 		for(int i = 0; i < resourceMap->size(); ++i) {
 
 			ManagedReference<ResourceSpawn*> spawn = resourceMap->get(i);
-
-			despawned = spawn->getDespawned();
-
-			String inSpawn = "0";
-			if(despawned > currTime)
-			{
-				inSpawn = "1";
-			}
 
 			writer->writeLine("	{");
 
@@ -353,7 +342,6 @@ bool ResourceSpawner::writeAllSpawnsToScript() {
 
 			writer->writeLine("		},");
 
-			writer->writeLine("		inSpawn = \"" + inSpawn + "\",");
 			writer->writeLine("		zoneRestriction = \"" + spawn->getZoneRestriction() + "\",");
 			writer->writeLine("		surveyToolType = " + String::valueOf(spawn->getSurveyToolType()) + ",");
 			writer->writeLine("		containerCRC = " + String::valueOf(spawn->getContainerCRC()) + ",");
@@ -738,34 +726,7 @@ ResourceSpawn* ResourceSpawner::createResourceSpawn(const String& type,
 		newSpawn->addStfClass(resClass);
 	}
 
-	int rndSuccess = 9800; // 2% base chance
-	int rndRoll = 10000;
-
-	// Reduce organic chance
-	if (type.contains("bone_") ||
-			type.contains("corn_") ||
-			type.contains("fruit_") ||
-			type.contains("hide_") ||
-			type.contains("meat_") ||
-			type.contains("milk_") ||
-			type.contains("oats_") ||
-			type.contains("rice_") ||
-			type.contains("seafood_") ||
-			type.contains("softwood_") ||
-			type.contains("vegetable_") ||
-			type.contains("water_") ||
-			type.contains("wheat_") ||
-			type.contains("wood_"))
-	{
-		rndSuccess = 9950; // 0.5% chance
-	}
-
-	bool isPerfect = (System::random(rndRoll) >= rndSuccess);
-
-	if (isPerfect)
-	{
-		newSpawn->setIsPerfectSpawn(true);
-	}
+	bool isPerfect = (System::random(100) >= 97);
 
 	for (int i = 0; i < resourceEntry->getAttributeCount(); ++i) {
 		auto attrib = resourceEntry->getAttribute(i);
@@ -777,13 +738,7 @@ ResourceSpawn* ResourceSpawner::createResourceSpawn(const String& type,
 		}
 		else // Normal random spawn
 		{
-			int rMin = (attrib->getMaximum() > 0 ? (attrib->getMaximum() - (attrib->getMaximum() * 0.3)) : (attrib->getMaximum())); // min = 70% of possible max
-			if (rMin < attrib->getMinimum()) // Sometimes 70% of max is lower than min -- Thanks Fizlander :)
-			{
-				rMin = attrib->getMinimum();
-			}
-
-			randomValue = randomizeValue(rMin, attrib->getMaximum());
+			randomValue = randomizeValue((attrib->getMaximum() > 0 ? (attrib->getMaximum() - (attrib->getMaximum() * 0.2)) : (attrib->getMaximum())), attrib->getMaximum());
 		}
 
 		String attribName = attrib->getName();
@@ -811,31 +766,15 @@ ResourceSpawn* ResourceSpawner::createResourceSpawn(const String& type,
 		newSpawn->setIsEnergy(true);
 
 	resourceMap->add(name, newSpawn);
-	
+
 	if (isPerfect)
 	{
 		StringBuffer msg;
 		StringBuffer resources;
-
-		if (newSpawn->getZoneRestriction().length() > 1)
-			msg << "\\#ffffffA new \\#00e600PERFECT\\#ffffff Spawn Of " + newSpawn->getFamilyName() + ", " + name + ", Has Spawned On " + newSpawn->getZoneRestriction() + ".";
-		else
-			msg << "\\#ffffffA new \\#00e600PERFECT\\#ffffff  Spawn Of " + newSpawn->getFamilyName() + ", " + name + ", Has Spawned.";
+		msg << "\\#ffffffA New \\#00e600Perfect\\#ffffff Resource, " + name + ", Has Spawned." ;
+		resources << "A New Perfect Resource " "[" + name + "] " + "[" + type + "] " + "Has Spawned.";
 		ChatManager* chatManager = processor->getZoneServer()->getChatManager();
 		chatManager->broadcastGalaxy(NULL, msg.toString());
-	}
-
-	if (isPerfect)
-	{
-		StringBuffer resources;
-
-		if (newSpawn->getZoneRestriction().length() > 1)
-
-			resources << "A New Perfect  Spawn Of " + newSpawn->getFamilyName() + ", " + name + ", Has Spawned On " + newSpawn->getZoneRestriction() + ".";
-		else
-			resources << "A New Perfect  Spawn Of " + newSpawn->getFamilyName() + ", " + name + ", Has Spawned.";
-
-		ChatManager* chatManager = processor->getZoneServer()->getChatManager();
 		chatManager->handleGeneralResourceChat(NULL, resources.toString());
 	}
 
@@ -1131,10 +1070,8 @@ void ResourceSpawner::sendSurvey(CreatureObject* player, const String& resname) 
 	int toolRange = surveyTool->getRange(player);
 	int points = surveyTool->getPoints();
 
-	if (toolRange > 4098)
-		toolRange = 4098;
-	else if (toolRange < 0)
-		toolRange = 64;
+	if (toolRange > 1024 || toolRange < 0)
+		toolRange = 320;
 
 	if (points <= 0 || points > 6)
 		points =  3;
@@ -1498,25 +1435,6 @@ void ResourceSpawner::addNodeToListBox(SuiListBox* sui, const String& nodeName) 
 	node->addToSuiListBox(sui);
 }
 
-void ResourceSpawner::addNodeToListBoxCR(SuiListBox* sui, const String& nodeName) const {
-	ResourceTreeNode* baseNode = resourceTree->getBaseNode();
-
-	ResourceTreeNode* node = baseNode->findNode(nodeName);
-
-	//If we couldn't find a node
-	if (node == nullptr) {
-
-		if (resourceMap->containsType(nodeName)) {
-			resourceMap->addToSuiListBoxCR(sui, nodeName);
-			return;
-		}
-
-		node = baseNode;
-	}
-
-	node->addToSuiListBoxCR(sui);
-}
-
 void ResourceSpawner::addPlanetsToListBox(SuiListBox* sui) const {
 	Reference<StringIdManager* > stringIdManager = StringIdManager::instance();
 	for(int i=0;i<activeResourceZones.size();i++) {
@@ -1568,48 +1486,6 @@ String ResourceSpawner::addParentNodeToListBox(SuiListBox* sui, const String& cu
 		node = parentNode;
 
 	node->addToSuiListBox(sui);
-
-	return node->getName();
-}
-
-String ResourceSpawner::addParentNodeToListBoxCR(SuiListBox* sui, const String& currentNode) const {
-	//currentNode can be the resource name itself, the ResourceTreeEntry (finalClass), or a ResourceTreeNode...
-	auto baseNode = resourceTree->getBaseNode();
-
-	//If is resource name
-	if (resourceMap->contains(currentNode.toLowerCase())) {
-		ManagedReference<ResourceSpawn*> spawn = resourceMap->get(currentNode.toLowerCase());
-		auto entry = baseNode->find(spawn->getFinalClass());
-
-		if (entry != nullptr) {
-			resourceMap->addToSuiListBoxCR(sui, entry->getFinalClass());
-			return entry->getFinalClass();
-		}
-	}
-
-	//If is finalClass
-	auto entry = baseNode->find(currentNode);
-
-	if (entry != nullptr) {
-		ResourceTreeNode* node = entry->getMyNode();
-
-		if (node != nullptr) {
-			node->addToSuiListBoxCR(sui);
-			return node->getName();
-		}
-	}
-
-	auto node = baseNode->findNode(currentNode);
-
-	if (node == nullptr)
-		node = baseNode;
-
-	auto parentNode = node->getParentNode();
-
-	if (parentNode != nullptr)
-		node = parentNode;
-
-	node->addToSuiListBoxCR(sui);
 
 	return node->getName();
 }

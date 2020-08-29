@@ -8,8 +8,8 @@ event_elliot = Creature:new {
 	damageMin = 3000,
 	damageMax = 6000,
 	baseXp = 128549,
-	baseHAM = 3900000,
-	baseHAMmax = 4000000,
+	baseHAM = 5900000,
+	baseHAMmax = 6000000,
 	armor = 3,
 	resists = {195,195,195,195,195,195,195,195,200},
 	meatType = "",
@@ -25,7 +25,7 @@ event_elliot = Creature:new {
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED + INTERESTING,
 	diet = HERBIVORE,
-	scale = 1.75,
+	scale = 3.0,
   
 	templates = {
 		"object/mobile/dressed_geonosian_scientist_01.iff",

@@ -197,7 +197,6 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 		if (killer->isRebel() && destructedObject->isImperial()) {
 			ghost->increaseFactionStanding("rebel", 30);
 			killer->playEffect("clienteffect/holoemote_rebel.cef", "head");
-			killer->playEffect("clienteffect/aurabuff_rebel_caster.cef", "");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
 			lootManager->createLoot(inventory, "rebpoints", 300);
@@ -210,23 +209,16 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			killedGhost->decreaseFactionStanding("imperial", 45);
 			
 			if (killerCreature->hasSkill("force_rank_light_novice") && destructedObject->hasSkill("force_rank_dark_novice")) {
-				playerManager->awardExperience(killerCreature, "force_rank_xp", 5000);
-				playerManager->awardExperience(destructedObject, "force_rank_xp", -5000);
-				StringIdChatParameter message("base_player","prose_revoke_xp");
-				message.setDI(-5000);
-				message.setTO("exp_n", "force_rank_xp");
-				destructedObject->sendSystemMessage(message);
 				zBroadcast << "\\#00e604" << "Light Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#e60000 Dark Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
 				//Broadcast player has died forward to discord channel. created by :TOXIC
 				StringBuffer zGeneral;
-				zGeneral << "A [Light Jedi] Has Killed " << playerName << " A [Dark Jedi] In The [FRS]";	
+				zGeneral << "A Light Jedi Has Killed " << playerName << " A Dark Jedi In The FRS";	
 				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
 			}
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		} else if (killer->isImperial() && destructedObject->isRebel()) {
 			ghost->increaseFactionStanding("imperial", 30);
 			killer->playEffect("clienteffect/holoemote_imperial.cef", "head");
-			killer->playEffect("clienteffect/aurabuff_imperial_caster.cef", "");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_themequest_victory_imperial.snd");
  			killer->sendMessage(pmm);
 			lootManager->createLoot(inventory, "imppoints", 300);
@@ -238,16 +230,10 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			ghost->decreaseFactionStanding("rebel", 45);
 			killedGhost->decreaseFactionStanding("rebel", 45);
 			if (killerCreature->hasSkill("force_rank_dark_novice") && destructedObject->hasSkill("force_rank_light_novice")) {
-				playerManager->awardExperience(killerCreature, "force_rank_xp", 5000);
-				playerManager->awardExperience(destructedObject, "force_rank_xp", -5000);
-				StringIdChatParameter message("base_player","prose_revoke_xp");
-				message.setDI(-5000);
-				message.setTO("exp_n", "force_rank_xp");
-				destructedObject->sendSystemMessage(message);
 				zBroadcast << "\\#e60000" << "Dark Jedi " << "\\#00bfff" << killerName << "\\#ffd700 has defeated" << "\\#00e604 Light Jedi " << "\\#00bfff" << playerName << "\\#ffd700 in the FRS";
 				//Broadcast player has died forward to discord channel. created by :TOXIC
 				StringBuffer zGeneral;
-				zGeneral << "A [Dark Jedi] Has Killed " << playerName << " A [Light Jedi] In The [FRS]";	
+				zGeneral << "A Dark Jedi Has Killed " << playerName << " A Light Jedi In The FRS";	
 				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
 			}
 				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());

@@ -29,19 +29,13 @@ tusken_brute = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "trash_rare", chance = 10000000},
-			},
-			lootChance = 200000
-		},		
-		{
-			groups = {
-				{group = "trash_common", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
 			lootChance = 8000000
 		},
 		{
 			groups = {
-				{group = "trash_common", chance = 10000000},
+				{group = "wearables_uncommon", chance = 10000000},
 			},
 			lootChance = 5000000
 		},

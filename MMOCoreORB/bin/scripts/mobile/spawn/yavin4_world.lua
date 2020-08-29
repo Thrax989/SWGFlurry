@@ -795,7 +795,7 @@ yavin4_world = {
 		},
 		{
 			lairTemplateName = "yavin4_stintaril_prowler_neutral_none",
-			spawnLimit = -1,
+			spawnLimit = 5,
 			minDifficulty = 83,
 			maxDifficulty = 87,
 			numberToSpawn = 0,

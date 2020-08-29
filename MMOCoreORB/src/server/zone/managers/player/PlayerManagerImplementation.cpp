@@ -952,15 +952,9 @@ String PlayerManagerImplementation::setLastName(CreatureObject* creature, const 
 }
 
 void PlayerManagerImplementation::createTutorialBuilding(CreatureObject* player) {
-	Zone* zone = server->getZone("tatooine");
+	Zone* zone = server->getZone("tutorial");
 
-	player->initializePosition(-1644, 0, -5277);
-	zone->transferObject(player, -1, true);
-
-	PlayerObject* ghost = player->getPlayerObject();
-	ghost->setSavedTerrainName(zone->getZoneName());
-
-	/*if (zone == nullptr) {
+	if (zone == nullptr) {
 		error("Character creation failed, tutorial zone disabled.");
 		return;
 	}
@@ -994,19 +988,13 @@ void PlayerManagerImplementation::createTutorialBuilding(CreatureObject* player)
 	ghost->setSavedTerrainName(zone->getZoneName());
 	ghost->setSavedParentID(cellTutPlayer->getObjectID());
 
-	tutorial->updateToDatabase();*/
+	tutorial->updateToDatabase();
 }
 
 void PlayerManagerImplementation::createSkippedTutorialBuilding(CreatureObject* player) {
-	Zone* zone = server->getZone("tatooine");
+	Zone* zone = server->getZone("tutorial");
 
-	player->initializePosition(-1644, 0, -5277);
-	zone->transferObject(player, -1, true);
-
-	PlayerObject* ghost = player->getPlayerObject();
-	ghost->setSavedTerrainName(zone->getZoneName());
-
-	/*if (zone == nullptr) {
+	if (zone == nullptr) {
 		error("Character creation failed, tutorial zone disabled.");
 		return;
 	}
@@ -1038,7 +1026,7 @@ void PlayerManagerImplementation::createSkippedTutorialBuilding(CreatureObject* 
 	ghost->setSavedTerrainName(zone->getZoneName());
 	ghost->setSavedParentID(cellTut->getObjectID());
 
-	tutorial->updateToDatabase();*/
+	tutorial->updateToDatabase();
 }
 
 uint8 PlayerManagerImplementation::calculateIncapacitationTimer(CreatureObject* playerCreature, int condition) {
@@ -1294,7 +1282,36 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		player->sendMessage(box->generateMessage());
 		}
 	}
-
+	//Custom Perma Death Broadcasting When you reach 0 lives
+	//Rebel gray jedi check
+	if (player->getScreenPlayState("jediLives") == 0) {
+		if (player->getFaction() == 370444368) {//rebel
+		if (player->hasSkill("combat_jedi_novice")) {
+			String playerName = player->getFirstName();
+			StringBuffer zBroadcast;
+			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
+			StringBuffer zGeneral;
+			zGeneral << "Has Permanently Died On Their Jedi!";	
+			chatManager->handleGeneralChat(player, zGeneral.toString());
+			}
+		}
+	//Imperial gray jedi check
+	if (player->getScreenPlayState("jediLives") == 0) {
+		if (player->getFaction() == 3679112276) {//imperial
+		if (player->hasSkill("combat_jedi_novice")) {
+			String playerName = player->getFirstName();
+			StringBuffer zBroadcast;
+			zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#e51b1bJedi";
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on your jedi
+			StringBuffer zGeneral;
+			zGeneral << "Has Permanently Died On Their Jedi!";	
+			chatManager->handleGeneralChat(player, zGeneral.toString());
+			}
+		}
+	}
 
 	if (!attacker->isPlayerCreature()) {
 		ghost->updatePveDeaths();
@@ -1309,7 +1326,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 					attackerCreature = owner;
 				}
 			}
-
 			//Added Discord Broadcast System : Created By TOXIC
 			if (attackerCreature->isPlayerCreature()) {
 				String playerName = player->getFirstName();
@@ -1317,11 +1333,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				StringBuffer zBroadcast;
 				StringBuffer zGeneral;
 				String killerFaction, playerFaction;
-				// Stack - stop the printouts for self kills - and stop updating the table
-				if(killerName == playerName)
-					{
-						return;
-					}
 				if (attacker->isRebel())
 					killerFaction = " [Rebel] ";
 				else if (attacker->isImperial())
@@ -1334,20 +1345,14 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 					playerFaction = " [Imperial] ";
 				else
 					playerFaction = " [Civilian] ";
-
-
 				if (CombatManager::instance()->areInDuel(attackerCreature, player)) {
-					Zone* zone = player->getZone();
-					String planetName = zone->getZoneName();
-					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a Duel by" << killerFaction << "\\#00cc99 " << killerName << " \\#e60000 on Planet " << planetName;
-					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName << " \\#e60000 on Planet " << planetName;	
+					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a Duel by" << killerFaction << "\\#00cc99 " << killerName;
+					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName;	
 				 }
 
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
-					Zone* zone = player->getZone();
-					String planetName = zone->getZoneName();
- 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName << " \\#e60000 on Planet " << planetName;
-					zGeneral << playerFaction << "was slain in [PvP] by" << killerFaction << killerName << " \\#e60000 on Planet " << planetName;	
+ 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName;
+					zGeneral << playerFaction << "was slain in [PvP] by" << killerFaction << killerName;	
 
 				}
 					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
@@ -1432,6 +1437,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->notifyObjectKillObservers(attacker);
 		}
 	}
+}
 
 void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* player, int typeofdeath) {
 	Zone* zone = player->getZone();
@@ -1651,11 +1657,11 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::ACTION, 100, true, false);
 		player->addWounds(CreatureAttribute::MIND, 100, true, false);
 		player->addShockWounds(100, true);
-		//ChatManager* chatManager = player->getZoneServer()->getChatManager();
+		ChatManager* chatManager = player->getZoneServer()->getChatManager();
 		//Broadcast player has died forward to discord channel. created by :TOXIC
-		//StringBuffer zGeneral;
-		//zGeneral << "Has Died!";	
-		//chatManager->handleGeneralChat(player, zGeneral.toString());
+		StringBuffer zGeneral;
+		zGeneral << "Has Died!";	
+		chatManager->handleGeneralChat(player, zGeneral.toString());
 	}
 
 	//PermaDeath : Gray Jedi with 0 lives cannot login
@@ -3759,12 +3765,7 @@ void PlayerManagerImplementation::lootAll(CreatureObject* player, CreatureObject
 		int luck = player->getSkillMod("force_luck");
 
 		if (luck > 0)
-			cashCredits += (cashCredits * luck) / 10;
-
-		int bonusluck = player->getSkillMod("luck");
-
-		if (bonusluck > 0)
-			cashCredits += (cashCredits * bonusluck) / 10;
+			cashCredits += (cashCredits * luck) / 20;
 
 		player->addCashCredits(cashCredits, true);
 		ai->setCashCredits(0);
@@ -6216,7 +6217,7 @@ void PlayerManagerImplementation::offerPlayerBounty(CreatureObject* attacker, Cr
 		return;
 
 	//Player already has a bounty on their head or they are a jedi
-	if (attackerGhost->hasPlayerBounty() || attacker->hasSkill("force_title_jedi_novice"))
+	if (attackerGhost->hasPlayerBounty() || attacker->hasSkill("combat_jedi_novice") || attacker->hasSkill("force_title_jedi_novice"))
 		return;
 
 	int reward = attackerGhost->calculateBhReward();

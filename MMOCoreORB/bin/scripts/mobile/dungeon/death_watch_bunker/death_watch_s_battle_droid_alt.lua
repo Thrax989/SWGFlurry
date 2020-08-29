@@ -39,7 +39,7 @@ death_watch_s_battle_droid_alt = Creature:new {
 		},
 		{
 			groups = {
-				{group = "death_watch_bunker_lieutenants", chance = 10000000}
+				{group = "wearables_common", chance = 10000000}
 			},
 			lootChance = 5000000
 		},
@@ -69,9 +69,9 @@ death_watch_s_battle_droid_alt = Creature:new {
 		},
 		{
 			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
+				{group = "junk", chance = 10000000}
 			},
-			lootChance = 200000
+			lootChance = 5000000
 		},
 		{
 			groups = {

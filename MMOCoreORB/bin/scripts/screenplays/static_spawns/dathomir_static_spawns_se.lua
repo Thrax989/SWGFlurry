@@ -51,7 +51,7 @@ function DathomirStaticSpawnsSeScreenPlay:spawnMobiles()
 	spawnMobile("dathomir", "injured_verne", 300, getRandomNumber(5) + 28.5, 127.3, getRandomNumber(5) + -184.8, getRandomNumber(360), 0)
 	spawnMobile("dathomir", "injured_verne", 300, getRandomNumber(5) + 28.5, 127.3, getRandomNumber(5) + -184.8, getRandomNumber(360), 0)
 	spawnMobile("dathomir", "injured_verne", 300, getRandomNumber(5) + 28.5, 127.3, getRandomNumber(5) + -184.8, getRandomNumber(360), 0)
-	spawnMobile("dathomir", "iv", getRandomNumber(10) * 60000, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
+	spawnMobile("dathomir", "iv", 604800, getRandomNumber(5) + 28.5, 127.3, getRandomNumber(5) + -184.8, getRandomNumber(360), 0)
 
 	--singing mountain clan arch (1125,-1022)
 	spawnMobile("dathomir", "singing_mountain_clan_rancor_tamer", 360, 1128.4, 140.3, -1045.7, 0, 0)

@@ -15,7 +15,7 @@ bolotaur = Creature:new {--	customName = "Bolotaur",	--randomNameType = NAME_G
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.25,
+	tamingChance = 25,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = KILLER + STALKER,	optionsBitmask = AIENABLED,	diet = HERBIVORE,	templates = {"object/mobile/bolotaur.iff"},	lootGroups = {},	weapons = {},	conversationTemplate = "",	attacks = {	}}CreatureTemplates:addCreatureTemplate(bolotaur, "bolotaur")

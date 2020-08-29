@@ -29,12 +29,6 @@ tusken_observer = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "trash_common", chance = 10000000},
-			},
-			lootChance = 200000
-		},		
-		{
-			groups = {
 				{group = "power_crystals", chance = 10000000},
 			},
 			lootChance = 7000000

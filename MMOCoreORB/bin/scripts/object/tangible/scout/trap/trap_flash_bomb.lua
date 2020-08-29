@@ -47,7 +47,7 @@ object_tangible_scout_trap_trap_flash_bomb = object_tangible_scout_trap_shared_t
 	objectMenuComponent = "TrapMenuComponent",
 
 	useCount = 5,
-	skillRequired = 25,
+	skillRequired = 70,
 
 	skillMods = {},
 
@@ -61,7 +61,7 @@ object_tangible_scout_trap_trap_flash_bomb = object_tangible_scout_trap_shared_t
 	minDamage = 200,
 	maxDamage = 300,
 
-	duration = 15,
+	duration = 10,
 	state = BLINDED,
 	defenseMod = "blind_defense",
 

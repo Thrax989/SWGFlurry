@@ -28,21 +28,21 @@ igbattleforeman = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "trash_common", chance = 10000000},
+				{group = "clothing_attachments", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "trash_common", chance = 10000000},
+				{group = "armor_attachments", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "trash_rare", chance = 10000000},
+				{group = "weapons_all", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		{
 			groups = {

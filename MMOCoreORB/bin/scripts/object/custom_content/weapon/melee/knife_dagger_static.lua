@@ -224,12 +224,11 @@ object_weapon_melee_knife_knife_dagger_static = object_weapon_melee_knife_shared
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = MELEEATTACK,
 
-	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
+	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
 	damageType = KINETIC,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
@@ -241,7 +240,7 @@ object_weapon_melee_knife_knife_dagger_static = object_weapon_melee_knife_shared
 	xpType = "combat_meleespecialize_onehand",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_sword_blade_ryyk" },
+	certificationsRequired = { "cert_knife_dagger" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "onehandmelee_accuracy" },
 
@@ -261,34 +260,34 @@ object_weapon_melee_knife_knife_dagger_static = object_weapon_melee_knife_shared
 
 
 	-- The values below are the default values.  To be used for blue frog objects primarily
-	healthAttackCost = 39,
-	actionAttackCost = 30,
-	mindAttackCost = 25,
+	healthAttackCost = 6,
+	actionAttackCost = 29,
+	mindAttackCost = 6,
 	forceCost = 0,
 
 	pointBlankRange = 0,
-	pointBlankAccuracy = -15,
+	pointBlankAccuracy = 25,
 
 	idealRange = 3,
-	idealAccuracy = -15,
+	idealAccuracy = 25,
 
 	maxRange = 4,
-	maxRangeAccuracy = -15,
+	maxRangeAccuracy = 25,
 
-	minDamage = 25,
-	maxDamage = 140,
+	minDamage = 20,
+	maxDamage = 45,
 
-	attackSpeed = 3.3,
+	attackSpeed = 3,
 
-	woundsRatio = 22,
+	woundsRatio = 9,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "SR", "SR", "SR", "SR", "SR", "SR", "SR", "XX", "SR", "XX", "SR", "SR", "SR"},
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "exp_durability", "expRange", "expRange", "null", "expRange", "null", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "hitpoints", "zerorangemod", "maxrangemod", "midrange", "midrangemod", "maxrange", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 18, 98, 4.3, 15, 750, -20, -20, 3, -20, 4, 51, 39, 33},
-	experimentalMax = {0, 0, 33, 132, 3, 29, 1500, -10, -10, 3, -10, 4, 27, 21, 18},
+	experimentalMin = {0, 0, 14, 32, 3.9, 6, 750, 17, 17, 3, 17, 4, 8, 38, 8},
+	experimentalMax = {0, 0, 26, 59, 2.7, 12, 1500, 33, 33, 3, 33, 4, 4, 20, 4},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }

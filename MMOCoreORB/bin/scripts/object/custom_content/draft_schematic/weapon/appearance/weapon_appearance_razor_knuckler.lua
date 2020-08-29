@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_razor_knuckler = obje
    contribution = {100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/special/blacksun_razor_generic.iff",
+   targetTemplate = "object/weapon/melee/special/vibroknuckler.iff",
 
    additionalTemplates = {
              }

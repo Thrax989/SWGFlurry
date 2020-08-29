@@ -18,7 +18,6 @@ necklace_crafter = {
     {"weapon_repair", 25},
     {"grenade_assembly", 25},
     {"grenade_experimentation", 25},
-    {"luck", 25},
 	}
 }
 

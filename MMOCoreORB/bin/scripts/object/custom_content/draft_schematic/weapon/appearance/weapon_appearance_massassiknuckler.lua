@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_massassiknuckler = ob
    contribution = {100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/special/massassiknuckler.iff",
+   targetTemplate = "object/weapon/melee/special/vibroknuckler.iff",
 
    additionalTemplates = {
              }

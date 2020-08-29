@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_casual_rug = object_tangible_loot_misc_shared_casual_rug:new {
-	objectMenuComponent = "ScrapMenuComponent",
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_casual_rug, "object/tangible/loot/misc/casual_rug.iff")

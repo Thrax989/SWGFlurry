@@ -45,7 +45,7 @@ TauntCommand = {
         name = "taunt",
         combatSpam = "taunt",
 	effectString = "clienteffect/combat_special_attacker_taunt.cef",
-	range = 32
+	range = 15
 }
 
 AddCommand(TauntCommand)
