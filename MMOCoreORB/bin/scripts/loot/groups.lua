@@ -473,5 +473,8 @@ includeFile("groups/boss_dungeon/trash_rare.lua")
 includeFile("groups/nonjedi_jewelry.lua")
 includeFile("groups/jedi_jewelry.lua")
 
---dotsystem Item Contraband
+--Dot System / Item Contraband
 includeFile("groups/dotsystem.lua")
+
+--Ancient Force Bread
+includeFile("groups/ancient_force_bread.lua")
