@@ -21,6 +21,7 @@ includeFile("groups/sith_shadow_intro_theater_datapad.lua")
 includeFile("groups/skill_buffs.lua")
 includeFile("groups/tailor_components.lua")
 includeFile("groups/treasure_map_group.lua")
+includeFile("groups/schematics_themeparks.lua")
 
 -- armor sub-folder
 includeFile("groups/armor/armor_all.lua")
@@ -55,6 +56,11 @@ includeFile("groups/component_loot/chemistry_component_advanced.lua")
 includeFile("groups/component_loot/weapon_component_advanced.lua")
 includeFile("groups/component_loot/chemistry_component.lua")
 includeFile("groups/component_loot/weapon_component.lua")
+includeFile("groups/component_loot/jedi_comp_group.lua")
+includeFile("groups/component_loot/g_ancient_jedaii_holocron_dode.lua")
+includeFile("groups/component_loot/g_ancient_jedaii_holocron_cube.lua")
+includeFile("groups/component_loot/g_ancient_jedaii_holocron_triangle.lua")
+includeFile("groups/component_loot/legendary_comp_group.lua")
 
 -- corellian_corvette sub-folder
 includeFile("groups/corellian_corvette/imperial_corvette_loot.lua")
@@ -77,6 +83,7 @@ includeFile("groups/creature/krayt_tissue_common.lua")
 includeFile("groups/creature/krayt_tissue_rare.lua")
 includeFile("groups/creature/krayt_tissue_uncommon.lua")
 includeFile("groups/creature/krayt_pearls.lua")
+includeFile("groups/creature/krayt_pearls_flawless.lua")
 includeFile("groups/creature/mythosaur_common.lua")
 includeFile("groups/creature/peko_albatross.lua")
 includeFile("groups/creature/rancor_common.lua")
@@ -378,6 +385,7 @@ includeFile("groups/tierone.lua")
 includeFile("groups/tiertwo.lua")
 includeFile("groups/tierthree.lua")
 includeFile("groups/tierdiamond.lua")
+includeFile("groups/rarelootsystem.lua")
 includeFile("groups/lootcollectiontierone.lua")
 includeFile("groups/lootcollectiontiertwo.lua")
 includeFile("groups/lootcollectiontierthree.lua")
@@ -451,9 +459,22 @@ includeFile("groups/vehicledeedsrare.lua")
 --Custom Capes
 includeFile("groups/wearables/capes.lua")
 
+--Custom Black Suns
+includeFile("groups/wearables/black_suns.lua")
+
 --CU/NGE Weapons
 includeFile("groups/weapon/nge_all.lua")
 
--- Mandalore BH/Mando Armor
---includeFile("custom_loot/groups/mandalore/mandalore_armor.lua")
--- includeFile("custom_loot/groups/weapons/melee/mandalorian_saber.lua") -- Disabled, crashing server on creation
+--Boss and Trash Loot table
+includeFile("groups/boss_dungeon/boss_common.lua")
+includeFile("groups/boss_dungeon/boss_rare.lua")
+includeFile("groups/boss_dungeon/trash_common.lua")
+includeFile("groups/boss_dungeon/trash_rare.lua")
+includeFile("groups/nonjedi_jewelry.lua")
+includeFile("groups/jedi_jewelry.lua")
+
+--Dot System / Item Contraband
+includeFile("groups/dotsystem.lua")
+
+--Ancient Force Bread
+includeFile("groups/ancient_force_bread.lua")

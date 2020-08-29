@@ -32,10 +32,29 @@ public:
 		if(surveyTool == nullptr)
 			return;
 
-		int range = 64 * Integer::valueOf(args->get(0).toString()) + 64;
-		
-		if (range > 512)
- 			range = 1024;
+		int option = Integer::valueOf(args->get(0).toString());
+		int range = 0;
+		switch (option)
+		{
+			default:
+				range = 64;
+				break;
+			case 1:
+				range = 256;
+				break;
+			case 2:
+				range = 512;
+				break;
+			case 3:
+				range = 1024;
+				break;
+			case 4:
+				range = 2048;
+				break;
+			case 5:
+				range = 4096;
+				break;
+		}
  
 		Locker _lock(surveyTool);
 		surveyTool->setRange(range);

@@ -411,9 +411,18 @@ void ResourceManagerImplementation::addNodeToListBox(SuiListBox* sui, const Stri
 	resourceSpawner->addNodeToListBox(sui, nodeName);
 }
 
+void ResourceManagerImplementation::addNodeToListBoxCR(SuiListBox* sui, const String& nodeName) {
+	resourceSpawner->addNodeToListBoxCR(sui, nodeName);
+}
+
 void ResourceManagerImplementation::addPlanetsToListBox(SuiListBox* sui) {
 	resourceSpawner->addPlanetsToListBox(sui);
 }
+
+String ResourceManagerImplementation::addParentNodeToListBoxCR(SuiListBox* sui, const String& currentNode) {
+	return resourceSpawner->addParentNodeToListBoxCR(sui, currentNode);
+}
+
 String ResourceManagerImplementation::getPlanetByIndex(int idx) {
 	return resourceSpawner->getPlanetByIndex(idx);
 }
@@ -443,6 +452,8 @@ String ResourceManagerImplementation::despawnResource(String& resourceName) {
 	if(spawn == nullptr) {
 		return "Spawn not Found";
 	}
+
+	Locker locker(spawn);
 
 	spawn->setDespawned(time(0) - 1);
 	resourceSpawner->shiftResources();

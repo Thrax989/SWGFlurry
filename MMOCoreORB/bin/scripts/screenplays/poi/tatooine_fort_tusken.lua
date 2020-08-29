@@ -17,8 +17,8 @@ FortTuskenScreenPlay = ScreenPlay:new {
 		{
 			groups = {
 				{group = "g_named_crystals", chance = 2000000},
-				{group = "vehicledeedsnormal", chance = 1000000},
-				{group = "g_cloak_of_hate", chance = 1000000},
+				{group = "vehicledeedsnormal", chance = 1800000},
+				{group = "g_cloak_of_hate", chance = 200000},
 				{group = "power_crystals", chance = 2000000},
 				{group = "weapon_component_advanced", chance = 2000000},
 				{group = "nge_all", chance = 2000000}

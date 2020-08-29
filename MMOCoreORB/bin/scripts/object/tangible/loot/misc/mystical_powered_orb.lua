@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_mystical_powered_orb = object_tangible_loot_misc_shared_mystical_powered_orb:new {
-
+	objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_mystical_powered_orb, "object/tangible/loot/misc/mystical_powered_orb.iff")

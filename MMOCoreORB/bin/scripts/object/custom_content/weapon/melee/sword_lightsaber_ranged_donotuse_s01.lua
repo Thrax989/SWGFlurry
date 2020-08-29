@@ -181,11 +181,12 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_ranged_donotuse_s01 = o
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
+
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = MELEEATTACK,
 
-	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, FORCE, LIGHTSABER
+	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
 	damageType = LIGHTSABER,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
@@ -197,7 +198,7 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_ranged_donotuse_s01 = o
 	xpType = "jedi_general",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_onehandlightsaber_gen1" },
+	certificationsRequired = { "cert_onehandlightsaber_gen4" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "onehandlightsaber_accuracy" },
 
@@ -218,7 +219,7 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_ranged_donotuse_s01 = o
 	healthAttackCost = 20,
 	actionAttackCost = 35,
 	mindAttackCost = 40,
-	forceCost = 12,
+	forceCost = 40,
 
 	pointBlankRange = 0,
 	pointBlankAccuracy = 20,
@@ -229,12 +230,9 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_ranged_donotuse_s01 = o
 	maxRange = 5,
 	maxRangeAccuracy = 5,
 
-	minDamage = 70,
-	maxDamage = 160,
+	attackSpeed = 4.5,	
 
-	attackSpeed = 4.5,
-
-	woundsRatio = 15,
+	woundsRatio = 37,
 
 	defenderToughnessModifiers = { "lightsaber_toughness" },
 	
@@ -244,15 +242,14 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_ranged_donotuse_s01 = o
 		{templateFile = "object/tangible/inventory/lightsaber_inventory_5.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4}
 	},
 
-
 	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 2, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "SR", "UT", "CD", "OQ", "OQ", "OQ", "OQ"},
 	experimentalWeights = {1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "forcecost", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 70, 160, 4.5, 10, 15, 20, 35, 40},
-	experimentalMax = {0, 0, 90, 200, 4.2, 20, 12, 15, 25, 25},
-	experimentalPrecision = {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+	experimentalMin = {0, 0, 325, 405, 5.1, 25, 64, 60, 95, 45},
+	experimentalMax = {0, 0, 335, 425, 4.8, 50, 59, 45, 65, 40},
+	experimentalPrecision = {0, 0, 0, 0, 1, 0, 1, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
 }
 

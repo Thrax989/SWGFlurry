@@ -3,7 +3,7 @@
 cape9 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Bounty Hunters Guild Cape",
 	directObjectTemplate = "object/tangible/tcg/series8/wearable_bh_cape.iff",
 	craftingValues = {
 	},

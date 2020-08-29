@@ -129,9 +129,13 @@ public:
 	ResourceSpawn* getFromRandomPool(const String& type);
 
 	void addNodeToListBox(SuiListBox* sui, const String& nodeName) const;
+	void addNodeToListBoxCR(SuiListBox* sui, const String& nodeName) const;
+
 	void addPlanetsToListBox(SuiListBox* sui) const;
 
 	String addParentNodeToListBox(SuiListBox* sui, const String& currentNode) const;
+
+	String addParentNodeToListBoxCR(SuiListBox* sui, const String& currentNode) const;
 
 	inline ResourceMap* getResourceMap() {
 		return resourceMap;

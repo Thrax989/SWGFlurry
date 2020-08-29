@@ -7,8 +7,8 @@ event_carax = Creature:new {
 	damageMin = 3000,
 	damageMax = 6000,
 	baseXp = 128549,
-	baseHAM = 5900000,
-	baseHAMmax = 6000000,
+	baseHAM = 3900000,
+	baseHAMmax = 4000000,
 	armor = 3,
 	resists = {195,195,195,195,195,195,195,195,200},
 	meatType = "meat_carnivore",
@@ -24,8 +24,7 @@ event_carax = Creature:new {
 	creatureBitmask = PACK + KILLER + STALKER,
 	optionsBitmask = AIENABLED + INTERESTING,
 	diet = CARNIVORE,
-	scale = 3.0,
-
+	scale = 1.75,
 	templates = {"object/mobile/carax.iff"},
 	lootGroups = {
 		{

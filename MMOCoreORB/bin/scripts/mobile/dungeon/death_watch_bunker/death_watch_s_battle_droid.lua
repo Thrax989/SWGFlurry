@@ -2,15 +2,15 @@ death_watch_s_battle_droid = Creature:new {
 	objectName = "@mob/creature_names:mand_bunker_super_battle_droid",
 	socialGroup = "death_watch",
 	faction = "",
-	level = 200,
-	chanceHit = 18,
-	damageMin = 1200,
-	damageMax = 2300,
+	level = 300,
+	chanceHit = 60,
+	damageMin = 4000,
+	damageMax = 4100,
 	baseXp = 19000,
-	baseHAM = 230000,
-	baseHAMmax = 230000,
-	armor = 2,
-	resists = {85,95,100,60,100,25,40,85,-1},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
+	baseHAM = 400000,
+	baseHAMmax = 410000,
+	armor = 3,
+	resists = {90,90,90,90,90,90,90,90,50},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -39,7 +39,7 @@ death_watch_s_battle_droid = Creature:new {
 		},
 		{
 			groups = {
-				{group = "wearables_common", chance = 10000000}
+				{group = "death_watch_bunker_lieutenants", chance = 10000000}
 			},
 			lootChance = 5000000
 		},
@@ -69,9 +69,9 @@ death_watch_s_battle_droid = Creature:new {
 		},
 		{
 			groups = {
-				{group = "junk", chance = 10000000}
+				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 200000
 		},
 		{
 			groups = {

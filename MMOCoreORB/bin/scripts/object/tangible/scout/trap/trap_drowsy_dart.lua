@@ -58,10 +58,10 @@ object_tangible_scout_trap_trap_drowsy_dart = object_tangible_scout_trap_shared_
 	maxRange = 32,
 
 	poolToDamage = ACTION,
-	minDamage = 20,
-	maxDamage = 50,
+	minDamage = 50,
+	maxDamage = 100,
 
-	duration = 10,
+	duration = 15,
 	state = DIZZY,
 	defenseMod = "dizzy_defense",
 

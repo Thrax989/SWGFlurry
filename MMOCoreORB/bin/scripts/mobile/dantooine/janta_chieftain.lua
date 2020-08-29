@@ -33,9 +33,9 @@ janta_chieftain = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000}				
-		},
-			lootChance = 5000000
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 500000
 		},
 		{
 			groups = {

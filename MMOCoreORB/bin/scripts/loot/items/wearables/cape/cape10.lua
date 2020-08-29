@@ -3,7 +3,7 @@
 cape10 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Rebel Cape",
 	directObjectTemplate = "object/tangible/wearables/cape/cape_rebel_01.iff",
 	craftingValues = {
 	},

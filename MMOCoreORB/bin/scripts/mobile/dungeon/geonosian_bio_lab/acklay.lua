@@ -3,14 +3,14 @@ acklay = Creature:new {
 	customName = "Acklay",
 	socialGroup = "geonosian_creature",
 	faction = "",
-	level = 75,
+	level = 85,
 	chanceHit = 92.5,
 	damageMin = 935,
-	damageMax = 1580,
-	baseXp = 14884,
+	damageMax = 2180,
+	baseXp = 148840,
 	baseHAM = 96000,
-	baseHAMmax = 118000,
-	armor = 2,
+	baseHAMmax = 218000,
+	armor = 3,
 	resists = {130,145,155,155,145,30,30,30,-1},
 	meatType = "",
 	meatAmount = 0,
@@ -26,7 +26,7 @@ acklay = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = CARNIVORE,
 
-	templates = {"object/mobile/acklay_hue.iff"},	
+	templates = {"object/mobile/acklay_hue.iff"},
 	lootGroups = {
 		{
 			groups = {
@@ -54,40 +54,31 @@ acklay = Creature:new {
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 2500000},
-				{group = "tiertwo", chance = 2500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
+				{group = "geonosian_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
@@ -111,7 +102,16 @@ acklay = Creature:new {
 		},
 		{
 			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 2500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},

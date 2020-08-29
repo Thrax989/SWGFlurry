@@ -76,9 +76,9 @@ object_draft_schematic_clothing_clothing_dress_formal_08_quest = object_draft_sc
              },
       
         skillMods = {
-	    {"healing_dance_mind", 5},
-	    {"healing_dance_shock", 5},
-	    {"healing_dance_wound", 5},
+	    {"healing_dance_mind", 25},
+	    {"healing_dance_shock", 25},
+	    {"healing_dance_wound", 25},
 	},
 }
 

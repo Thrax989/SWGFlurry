@@ -1,6 +1,6 @@
 --------------------------------------
 --   Creator : TOXIC
---   Date : 03/10/2018
+--   Date : 07/29/2020
 --------------------------------------
 restussClonerScreenPlay = ScreenPlay:new {
 	numberOfActs = 1,
@@ -17,8 +17,6 @@ function restussClonerScreenPlay:start()
 end
 
 function restussClonerScreenPlay:spawnSceneObjects()
-spawnSceneObject("rori", "object/building/military/outpost_cloning_facility.iff", 5276.94, 79.4459, 6093.22, -0.999848, 0, 0, 0.0174522, 0)
-spawnSceneObject("rori", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 5286.06, 79.0008, 6101.61, 0, 0.999644, 0, -0.0266684, 0)
-spawnSceneObject("rori", "object/tangible/terminal/terminal_bank.iff", 5185.61, 80, 5584.07, 0, math.rad(90))
-spawnSceneObject("rori", "object/tangible/terminal/terminal_bazaar.iff", 5203, 80, 5584.36, 0, math.rad(-90))
+spawnSceneObject("rori", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 5270.27, 79.9068, 6107.8, 0, 0, 0, 0, 0)
+spawnSceneObject("rori", "object/tangible/terminal/greeter_terminal.iff", 5269.84, 79.9311, 6105.63, 0, 0.743145, 0, 0.669131, 0)
 end

@@ -10,6 +10,7 @@
 #include "server/zone/objects/waypoint/WaypointObject.h"
 #include "server/zone/Zone.h"
 #include "server/zone/ZoneServer.h"
+#include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/mission/MissionManager.h"
 #include "server/zone/managers/creature/CreatureManager.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -602,15 +603,17 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					message.setDI(xpLoss * -1);
 					message.setTO("exp_n", "jedi_general");
 					target->sendSystemMessage(message);
+					Zone* zone = owner->getZone();
+					String planetName = zone->getZoneName();
 					String victimName = target->getFirstName();
 					String bhName = owner->getFirstName();
 					StringBuffer zBroadcast;
-					zBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName;
+					zBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName << " On Planet " << planetName;
 					owner->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 					ChatManager* chatManager = owner->getZoneServer()->getChatManager();	
 					StringBuffer zGeneral;
 	                		String playerName = target->getFirstName();
-					zGeneral << "A Bounty Hunter Has Collected A Bounty On " << playerName << " [Bounty Complete]";	
+					zGeneral << "A Bounty Hunter Has Collected A Bounty On " << playerName << " On Planet " << planetName << " [Bounty Complete]";	
 					chatManager->handleGeneralChat(owner, zGeneral.toString());
 					attackerGhost->updateBountyKills();
 					complete();

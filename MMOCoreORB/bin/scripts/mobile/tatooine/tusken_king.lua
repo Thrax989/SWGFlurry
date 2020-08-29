@@ -1,5 +1,5 @@
 tusken_king = Creature:new {
-	objectName = "@mob/creature_names:tusken_king",
+	customName = "\\#00ff00<<< Tusken King >>> \\#0000ff[lvl 300]",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
 	level = 300,
@@ -24,9 +24,22 @@ tusken_king = Creature:new {
 	creatureBitmask = PACK + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
+	scale = 1.5,	
 
 	templates = {"object/mobile/tusken_raider.iff"},
 	lootGroups = {
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 1000000
+		},	
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 1000000
+		},	
 		{
 			groups = {
 				{group = "g_named_crystals", chance = 10000000},
@@ -35,7 +48,7 @@ tusken_king = Creature:new {
 		},
 		{
 			groups = {
-				{group = "g_cloak_of_hate", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1500000
 		},
@@ -47,85 +60,85 @@ tusken_king = Creature:new {
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "goggles_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "neck_crafter", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter_second", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings_ranged", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "jedi_earings", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "jedi_bracelets", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "jedi_neck", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "jedi_rings", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "g_necklaces", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "armor_attachments", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -143,13 +156,13 @@ tusken_king = Creature:new {
 		},
 		{
 			groups = {
-				{group = "vehicledeedsnormal", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
 			lootChance = 2500000
 		},

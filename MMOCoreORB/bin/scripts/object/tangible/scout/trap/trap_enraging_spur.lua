@@ -58,10 +58,10 @@ object_tangible_scout_trap_trap_enraging_spur = object_tangible_scout_trap_share
 	maxRange = 32,
 
 	poolToDamage = MIND,
-	minDamage = 40,
-	maxDamage = 60,
+	minDamage = 75,
+	maxDamage = 125,
 
-	duration = 10,
+	duration = 15,
 	state = BLINDED,
 	defenseMod = "blind_defense",
 

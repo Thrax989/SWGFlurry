@@ -239,7 +239,7 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_one_handed_gen4_must = 
 	noTrade = 1,
 	
 	childObjects = {
-		{templateFile = "object/tangible/inventory/lightsaber_inventory_4.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4}
+		{templateFile = "object/tangible/inventory/lightsaber_inventory_5.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4}
 	},
 
 	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 2, 1, 1, 1},
@@ -247,8 +247,8 @@ object_weapon_melee_sword_crafted_saber_sword_lightsaber_one_handed_gen4_must = 
 	experimentalWeights = {1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "forcecost", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 140, 230, 4.5, 25, 55, 45, 60, 95},
-	experimentalMax = {0, 0, 160, 270, 4.2, 50, 48, 40, 45, 65},
+	experimentalMin = {0, 0, 325, 405, 5.1, 25, 64, 60, 95, 45},
+	experimentalMax = {0, 0, 335, 425, 4.8, 50, 59, 45, 65, 40},
 	experimentalPrecision = {0, 0, 0, 0, 1, 0, 1, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
 }

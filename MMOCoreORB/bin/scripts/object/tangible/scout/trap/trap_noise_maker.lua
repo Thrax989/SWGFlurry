@@ -58,10 +58,10 @@ object_tangible_scout_trap_trap_noise_maker = object_tangible_scout_trap_shared_
 	maxRange = 32,
 
 	poolToDamage = MIND,
-	minDamage = 80,
-	maxDamage = 120,
+	minDamage = 100,
+	maxDamage = 150,
 
-	duration = 10,
+	duration = 15,
 	state = STUNNED,
 	defenseMod = "stun_defense",
 

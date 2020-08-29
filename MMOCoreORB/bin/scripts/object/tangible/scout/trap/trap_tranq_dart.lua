@@ -61,8 +61,8 @@ object_tangible_scout_trap_trap_tranq_dart = object_tangible_scout_trap_shared_t
 	minDamage = 150,
 	maxDamage = 200,
 
-	duration = 10,
-	state = IMMOBILIZED,
+	duration = 15,
+	state = DIZZY,
 	defenseMod = "",
 
 	successMessage = "trap_tranq_dart_effect",

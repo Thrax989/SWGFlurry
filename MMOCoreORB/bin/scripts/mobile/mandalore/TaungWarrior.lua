@@ -7,14 +7,14 @@ taung_warrior = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 40,
-	damageMin = 750,
-	damageMax = 1250,
+	damageMin = 3750,
+	damageMax = 4250,
   specialDamageMult = 7.5,  
 	baseXp = 15000,
 	baseHAM = 115000,
 	baseHAMmax = 125000,
-	armor = 3,
-	resists = {170,170,170,170,170,170,170,170,155},
+	armor = 2,
+	resists = {170,170,170,170,170,170,170,170,145},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -33,11 +33,17 @@ taung_warrior = Creature:new {
 		lootGroups = {
 		{
 			groups = {
+				{group = "death_watch_bunker_lieutenants", chance = 10000000},
+			},
+			lootChance = 3000000
+		},		
+		{
+			groups = {
 				{group = "death_watch_bunker_lootbox", chance = 2000000},
 				{group = "death_watch_bunker_commoners", chance = 5000000},
 				{group = "clothing_attachments", chance = 1500000},
 				{group = "armor_attachments", chance = 1500000},      
-      },
+                        },
 			lootChance = 2500000
 		},
 		{
@@ -49,10 +55,9 @@ taung_warrior = Creature:new {
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 5000000},
- 				{group = "nge_all", chance = 5000000},       
+				{group = "trash_rare", chance = 10000000},
 			},
-			lootChance = 500000
+			lootChance = 200000
 		},
 		{
 			groups = {

@@ -376,6 +376,37 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
  		weapon->setMaxRange(64);
 	}
 
+	//weapon ap checks
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() != 0 && weapon->getArmorPiercing() != 1 && weapon->getArmorPiercing() != 2 && weapon->getArmorPiercing() != 3) {
+  		Locker locker(weapon);
+ 		weapon->setArmorPiercing(0);
+  		//info(attacker->getFirstName() + " Weapon Set To 0 AP", true);
+	}
+/*
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() == 0) {
+  		Locker locker(weapon);
+ 		weapon->setArmorPiercing(0);
+  		//info(attacker->getFirstName() + " Weapon Set To 0 AP", true);
+	}
+
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() == 1) {
+  		Locker locker(weapon);
+ 		weapon->setArmorPiercing(1);
+  		//info(attacker->getFirstName() + " Weapon Set To 1 AP", true);
+	}
+
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() == 2) {
+  		Locker locker(weapon);
+ 		weapon->setArmorPiercing(2);
+  		//info(attacker->getFirstName() + " Weapon Set To 2 AP", true);
+	}
+
+	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() == 3) {
+  		Locker locker(weapon);
+ 		weapon->setArmorPiercing(3);
+  		//info(attacker->getFirstName() + " Weapon Set To 3 AP", true);
+	}
+*/
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
 
@@ -566,9 +597,6 @@ void CombatManager::applyDots(CreatureObject* attacker, CreatureObject* defender
 	if (defender->isPlayerCreature() && defender->getPvpStatusBitmask() == CreatureFlag::NONE)
 		return;
 
-	if (attacker->getWeapon()->isHeavyAcidRifle())
-		return;
-
 	for (int i = 0; i < dotEffects->size(); i++) {
 		const DotEffect& effect = dotEffects->get(i);
 
@@ -626,25 +654,18 @@ void CombatManager::applyWeaponDots(CreatureObject* attacker, CreatureObject* de
 
 		int type = 0;
 		int resist = 0;
-		int baseResist = 0;
 		// utilizing this switch-block for easier *functionality* , present & future
 		// SOE strings only provide this ONE specific type of mod (combat_bleeding_defense) and
 		// there's no evidence (yet) of other 3 WEAPON dot versions also being resistable.
 		switch (weapon->getDotType(i)) {
 		case 1: //POISON
 			type = CreatureState::POISONED;
-			resist = defender->getSkillMod("resistance_poison");
-			baseResist = 10;
 			break;
 		case 2: //DISEASE
 			type = CreatureState::DISEASED;
-			resist = defender->getSkillMod("resistance_disease");
-			baseResist = 25;
 			break;
 		case 3: //FIRE
 			type = CreatureState::ONFIRE;
-			resist = defender->getSkillMod("resistance_fire");
-			baseResist = 5;
 			break;
 		case 4: //BLEED
 			type = CreatureState::BLEEDING;
@@ -1329,10 +1350,13 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 			sendMitigationCombatSpam(defender, armor, (int)dmgAbsorbed, ARMOR);
 		}
 
-		// inflict condition damage
-		Locker alocker(armor);
-
-		armor->inflictDamage(armor, 0, damage * 0.01, true, true);
+ 		// inflict condition damage
+  		Locker alocker(armor);
+  		if (getArmorObjectReduction(armor, 16) > 0 && damageType == 16) {
+  			armor->inflictDamage(armor, 0, damage * 0.2, true, true);
+  		} else {
+  			armor->inflictDamage(armor, 0, damage * 0.1, true, true);
+  		}
 	}
 
 	return damage;

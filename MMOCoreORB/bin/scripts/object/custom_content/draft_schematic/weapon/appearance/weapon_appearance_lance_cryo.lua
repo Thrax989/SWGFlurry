@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_lance_cryo = object_d
    contribution = {100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/polearm/polearm_vibro_axe.iff",
+   targetTemplate = "object/weapon/melee/polearm/lance_cryo.iff",
 
    additionalTemplates = {
              }

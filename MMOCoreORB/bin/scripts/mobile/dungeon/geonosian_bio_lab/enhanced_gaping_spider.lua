@@ -5,11 +5,11 @@ enhanced_gaping_spider = Creature:new {
 	faction = "",
 	level = 108,
 	chanceHit = 2.5,
-	damageMin = 715,
-	damageMax = 1140,
+	damageMin = 1500,
+	damageMax = 2500,
 	baseXp = 10267,
 	baseHAM = 32000,
-	baseHAMmax = 39000,
+	baseHAMmax = 50000,
 	armor = 2,
 	resists = {150,10,-1,195,-1,10,10,10,-1},
 	meatType = "meat_insect",
@@ -41,6 +41,12 @@ enhanced_gaping_spider = Creature:new {
 			},
 			lootChance = 5000000
 		},
+		{
+			groups = {
+				{group = "geonosian_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},		
 		{
 			groups = {
 				{group = "fire_breathing_spider", chance = 10000000},

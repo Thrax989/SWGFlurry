@@ -360,6 +360,11 @@ class WeaponObject extends TangibleObject {
 	}
 
 	@read
+	public string getDeconstructionTemplate() {
+		return weaponTemplate.getDeconstructionTemplate();
+	}
+
+	@read
 	public int getNumberOfDots() {
 		return dotType.size();
 	}

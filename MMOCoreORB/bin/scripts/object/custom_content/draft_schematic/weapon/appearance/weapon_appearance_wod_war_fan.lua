@@ -27,7 +27,7 @@ object_draft_schematic_weapon_appearance_weapon_appearance_wod_war_fan = object_
    contribution = {100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/special/vibroknuckler.iff",
+   targetTemplate = "object/weapon/melee/special/wod_war_fan.iff",
 
    additionalTemplates = {
              }

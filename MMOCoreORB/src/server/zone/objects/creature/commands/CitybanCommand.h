@@ -52,6 +52,18 @@ public:
 
 		ManagedReference<PlayerObject*> ghost = targetCreature->getPlayerObject();
 
+		if (ghost != nullptr && ghost->hasGodMode()) {
+			//Can't ban a CSR
+			creature->sendSystemMessage("@city/city:not_csr_ban"); //You cannot ban a Customer Service Representative from the city!
+
+			StringIdChatParameter params("city/city", "csr_ban_attempt_msg");
+			params.setTT(creature->getDisplayedName());
+			params.setTO(city->getRegionName());
+
+			targetCreature->sendSystemMessage(params); //%TT tried to /cityBan you from %TO!
+			return GENERALERROR;
+		}
+
 		if (city->isCitizen(targetCreature->getObjectID())) {
 			creature->sendSystemMessage("@city/city:not_citizen_ban"); //You can't city ban a citizen of the city!
 			return GENERALERROR;

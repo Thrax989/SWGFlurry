@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_spectrum_recorder = object_tangible_loot_misc_shared_spectrum_recorder:new {
-
+	objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_spectrum_recorder, "object/tangible/loot/misc/spectrum_recorder.iff")

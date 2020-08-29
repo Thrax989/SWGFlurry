@@ -63,6 +63,7 @@
 #include "server/zone/managers/jedi/JediManager.h"
 #include "server/zone/objects/player/events/ForceRegenerationEvent.h"
 #include "server/login/account/AccountManager.h"
+#include "server/zone/managers/loot/LootManager.h"
 
 #include "server/zone/objects/tangible/deed/eventperk/EventPerkDeed.h"
 #include "server/zone/managers/player/QuestInfo.h"
@@ -74,6 +75,10 @@
 #include "server/zone/managers/director/DirectorManager.h"
 #include "server/db/ServerDatabase.h"
 #include "server/ServerCore.h"
+#include "server/zone/managers/stringid/StringIdManager.h"
+#include "server/zone/objects/installation/InstallationObject.h"
+#include "server/zone/objects/player/sui/listbox/SuiListBox.h"
+#include "server/zone/objects/player/sui/SuiWindowType.h"
 
 void PlayerObjectImplementation::initializeTransientMembers() {
 	playerLogLevel = ConfigManager::instance()->getPlayerLogLevel();
@@ -354,6 +359,87 @@ void PlayerObjectImplementation::sendBaselinesTo(SceneObject* player) {
 		BaseMessage* play9 = new PlayerObjectMessage9(this);
 		player->sendMessage(play9);
 	}
+}
+
+void PlayerObjectImplementation::showInstallationInfo(CreatureObject* player)
+{
+	if(player == nullptr)
+	{
+		return;
+		
+	}
+	ManagedReference<SuiListBox*> listBox = new SuiListBox(player, SuiWindowType::ADMIN_LIST);
+	listBox->setPromptTitle("Installation Info");
+	listBox->setPromptText("Here are all of your installations");
+	listBox->setCancelButton(true, "@cancel");
+
+	ZoneServer* zoneServer = getZoneServer();
+	ResourceManager* resourceManager = zoneServer->getResourceManager();
+
+	for (int i = 0; i < ownedStructures.size(); ++i) {
+	  uint64 oid = ownedStructures.get(i);
+
+	  StructureObject* structure = getZoneServer()->getObject(oid).castTo<StructureObject*>();
+
+	  if (structure != nullptr) {
+	    Zone* zone = structure->getZone();
+			//stack
+
+	    if (zone != nullptr) {
+				// \\#e60000 RED, \\#00e604 GREEN
+				String colorAdjustment = "\\#00e604";
+				String zoneName = zone->getZoneName();
+				int remainingMaint = structure->getSurplusMaintenance();
+				int remainingPower = structure->getSurplusPower();
+
+				String extractionMessage = "";
+
+				InstallationObject* installation = cast<InstallationObject*> (structure);
+				if(installation != nullptr)
+				{
+					bool isOperational = installation->isOperating();
+					long resourceId = installation->getActiveResourceSpawnID();
+					String currentSpawn = installation->getCurrentSpawnName();
+
+					if(isOperational)
+					{
+						extractionMessage =  " ON Pulling: " + currentSpawn + " ";
+							// Color should stay green
+					}
+					else
+					{
+						extractionMessage = " OFF ";
+						colorAdjustment = "\\#e60000";
+					}
+
+				}
+				else
+				{
+					if(remainingMaint <= 0)
+					{
+						colorAdjustment = "\\#e60000";
+					}
+				}
+
+				float xPos = structure->getWorldPositionX();
+				float yPos = structure->getWorldPositionY();
+
+				String posString = "(" + String::valueOf(xPos) + ", " + String::valueOf(yPos) +") ";
+				String structureName = StringIdManager::instance()->getStringId(structure->getObjectName()->getFullPath().hashCode()).toString();
+
+				String strucName = colorAdjustment + structureName + " (" + zoneName + " " + posString + ")" + " Power: " + remainingPower + " Maint: " + remainingMaint + extractionMessage;
+
+
+
+				listBox->addMenuItem(strucName);
+			}
+
+		}
+
+	}
+
+	player->sendMessage(listBox->generateMessage());
+
 }
 
 void PlayerObjectImplementation::notifySceneReady() {
@@ -1372,6 +1458,30 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	schedulePvpTefRemovalTask();
 
+ 	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
+	if (playerCreature->getScreenPlayState("TEST") == 1) {
+		String lootGroup = "TEST";
+
+		int level = 1;
+
+		ManagedReference<SceneObject*> inventory = playerCreature->getSlottedObject("inventory");
+
+		if (inventory != nullptr && !inventory->isContainerFullRecursive()) {
+
+			ManagedReference<LootManager*> lootManager = playerCreature->getZoneServer()->getLootManager();
+
+			if (lootManager != nullptr){
+				lootManager->createLoot(inventory, lootGroup, level);
+				StringBuffer zReward;
+				ChatManager* chatManager = playerCreature->getZoneServer()->getChatManager();	
+				playerCreature->setScreenPlayState("TEST", 1);
+				playerCreature->sendSystemMessage("TEST Gift has been placed in your Inventory");
+				zReward << " Has Received A Server Reward";
+				chatManager->handleGeneralChat(playerCreature, zReward.toString());
+			}
+		}
+	}
+
 	MissionManager* missionManager = zoneServer->getMissionManager();
 
 	if (missionManager != nullptr) {
@@ -2324,7 +2434,7 @@ void PlayerObjectImplementation::doForceRegen() {
 		Reference<ForceMeditateTask*> medTask = creature->getPendingTask("forcemeditate").castTo<ForceMeditateTask*>();
 
 		if (medTask != nullptr)
-			modifier = 3;
+			modifier = 8;
 	}
 
 	int enhSkills = numSpecificSkills(creature, "force_discipline_enhancements_");

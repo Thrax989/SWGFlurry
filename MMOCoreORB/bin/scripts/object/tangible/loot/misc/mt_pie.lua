@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_mt_pie = object_tangible_loot_misc_shared_mt_pie:new {
-
+	objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_mt_pie, "object/tangible/loot/misc/mt_pie.iff")

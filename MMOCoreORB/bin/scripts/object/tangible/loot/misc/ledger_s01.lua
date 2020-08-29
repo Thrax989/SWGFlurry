@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_ledger_s01 = object_tangible_loot_misc_shared_ledger_s01:new {
-
+	objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_ledger_s01, "object/tangible/loot/misc/ledger_s01.iff")

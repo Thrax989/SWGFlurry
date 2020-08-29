@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_misc_firework_dud_s1 = object_tangible_loot_misc_shared_firework_dud_s1:new {
-
+	objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_misc_firework_dud_s1, "object/tangible/loot/misc/firework_dud_s1.iff")

@@ -29,13 +29,19 @@ tusken_carnage_champion = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "power_crystals", chance = 10000000},
+				{group = "trash_rare", chance = 10000000},
+			},
+			lootChance = 200000
+		},		
+		{
+			groups = {
+				{group = "trash_common", chance = 10000000},
 			},
 			lootChance = 7000000
 		},
 		{
 			groups = {
-				{group = "g_named_crystals", chance = 10000000},
+				{group = "trash_common", chance = 10000000},
 			},
 			lootChance = 7000000
 		},
