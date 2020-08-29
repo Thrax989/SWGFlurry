@@ -1,5 +1,0 @@
-
-object_tangible_wearables_bodysuit_bodysuit_outbreak_prisoner = object_tangible_wearables_bodysuit_shared_bodysuit_outbreak_prisoner:new {
-
-}
-ObjectTemplates:addTemplate(object_tangible_wearables_bodysuit_bodysuit_outbreak_prisoner, "object/tangible/wearables/bodysuit/bodysuit_outbreak_prisoner.iff")

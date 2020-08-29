@@ -1,5 +1,0 @@
-object_intangible_pet_super_battle_droid_crafted = object_intangible_pet_shared_super_battle_droid_crafted:new {
-
-}
-
-ObjectTemplates:addTemplate(object_intangible_pet_super_battle_droid_crafted, "object/intangible/pet/super_battle_droid_crafted.iff")

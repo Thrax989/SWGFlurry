@@ -1,5 +1,0 @@
-object_draft_schematic_ranger_item_camo_hep = object_draft_schematic_ranger_shared_item_camo_hep:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_ranger_item_camo_hep, "object/draft_schematic/ranger/item_camo_hep.iff")

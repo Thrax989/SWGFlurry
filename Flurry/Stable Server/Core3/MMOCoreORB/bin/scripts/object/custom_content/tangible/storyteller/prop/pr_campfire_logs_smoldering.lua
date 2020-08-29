@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_campfire_logs_smoldering = object_tangible_storyteller_prop_shared_pr_campfire_logs_smoldering:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_campfire_logs_smoldering, "object/tangible/storyteller/prop/pr_campfire_logs_smoldering.iff")

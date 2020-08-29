@@ -1,5 +1,0 @@
-object_tangible_saga_system_rewards_structure_deed_player_house_sandcrawler = object_tangible_saga_system_rewards_shared_structure_deed_player_house_sandcrawler:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_saga_system_rewards_structure_deed_player_house_sandcrawler, "object/tangible/saga_system/rewards/structure_deed_player_house_sandcrawler.iff")

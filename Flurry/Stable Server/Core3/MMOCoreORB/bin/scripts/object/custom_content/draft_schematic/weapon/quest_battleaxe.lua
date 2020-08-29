@@ -1,5 +1,0 @@
-object_draft_schematic_weapon_quest_battleaxe = object_draft_schematic_weapon_shared_quest_battleaxe:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_weapon_quest_battleaxe, "object/draft_schematic/weapon/quest_battleaxe.iff")

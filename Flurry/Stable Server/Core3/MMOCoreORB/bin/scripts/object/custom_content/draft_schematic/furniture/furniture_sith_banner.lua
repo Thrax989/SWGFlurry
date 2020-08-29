@@ -1,5 +1,0 @@
-object_draft_schematic_furniture_furniture_sith_banner = object_draft_schematic_furniture_shared_furniture_sith_banner:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_furniture_furniture_sith_banner, "object/draft_schematic/furniture/furniture_sith_banner.iff")

@@ -1,5 +1,0 @@
-object_draft_schematic_instrument_instrument_flanged_jessoon = object_draft_schematic_instrument_shared_instrument_flanged_jessoon:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_instrument_instrument_flanged_jessoon, "object/draft_schematic/instrument/instrument_flanged_jessoon.iff")

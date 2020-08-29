@@ -1,5 +1,0 @@
-object_tangible_component_armor_shield_generator_personal_old_republic = object_tangible_component_armor_shared_shield_generator_personal_old_republic:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_armor_shield_generator_personal_old_republic, "object/tangible/component/armor/shield_generator_personal_old_republic.iff")

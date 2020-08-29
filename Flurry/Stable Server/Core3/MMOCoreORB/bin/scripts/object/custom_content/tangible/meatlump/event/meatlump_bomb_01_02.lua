@@ -1,5 +1,0 @@
-object_tangible_meatlump_event_meatlump_bomb_01_02 = object_tangible_meatlump_event_shared_meatlump_bomb_01_02:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_meatlump_event_meatlump_bomb_01_02, "object/tangible/meatlump/event/meatlump_bomb_01_02.iff")

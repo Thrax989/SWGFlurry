@@ -1,5 +1,0 @@
-object_draft_schematic_ranger_item_trap_hx2mine = object_draft_schematic_ranger_shared_item_trap_hx2mine:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_ranger_item_trap_hx2mine, "object/draft_schematic/ranger/item_trap_hx2mine.iff")

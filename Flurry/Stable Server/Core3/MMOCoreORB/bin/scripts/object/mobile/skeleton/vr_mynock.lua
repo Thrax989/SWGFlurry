@@ -1,1 +1,0 @@
-object_mobile_skeleton_vr_mynock = object_mobile_skeleton_shared_vr_mynock:new {}ObjectTemplates:addTemplate(object_mobile_skeleton_vr_mynock, "object/mobile/skeleton/vr_mynock.iff")

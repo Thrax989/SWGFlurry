@@ -1,5 +1,0 @@
-object_tangible_storyteller_prop_pr_poi_all_ithorian_head = object_tangible_storyteller_prop_shared_pr_poi_all_ithorian_head:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_storyteller_prop_pr_poi_all_ithorian_head, "object/tangible/storyteller/prop/pr_poi_all_ithorian_head.iff")

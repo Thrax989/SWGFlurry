@@ -1,5 +1,0 @@
-object_draft_schematic_armor_component_armor_segment_assault = object_draft_schematic_armor_component_shared_armor_segment_assault:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_armor_component_armor_segment_assault, "object/draft_schematic/armor/component/armor_segment_assault.iff")

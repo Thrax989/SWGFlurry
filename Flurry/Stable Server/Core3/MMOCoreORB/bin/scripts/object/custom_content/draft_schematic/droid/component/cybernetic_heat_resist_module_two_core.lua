@@ -1,5 +1,0 @@
-object_draft_schematic_droid_component_cybernetic_heat_resist_module_two_core = object_draft_schematic_droid_component_shared_cybernetic_heat_resist_module_two_core:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_droid_component_cybernetic_heat_resist_module_two_core, "object/draft_schematic/droid/component/cybernetic_heat_resist_module_two_core.iff")

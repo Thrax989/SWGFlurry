@@ -1,5 +1,0 @@
-object_tangible_component_structure_ore_mining_unit_advanced = object_tangible_component_structure_shared_ore_mining_unit_advanced:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_structure_ore_mining_unit_advanced, "object/tangible/component/structure/ore_mining_unit_advanced.iff")

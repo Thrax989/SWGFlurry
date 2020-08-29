@@ -1,5 +1,0 @@
-object_draft_schematic_chemistry_enhancer_enhancer_bactajab = object_draft_schematic_chemistry_enhancer_shared_enhancer_bactajab:new {
-
-}
-
-ObjectTemplates:addTemplate(object_draft_schematic_chemistry_enhancer_enhancer_bactajab, "object/draft_schematic/chemistry/enhancer/enhancer_bactajab.iff")

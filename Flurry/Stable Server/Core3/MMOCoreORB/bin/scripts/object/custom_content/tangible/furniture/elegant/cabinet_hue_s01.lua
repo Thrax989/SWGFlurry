@@ -1,5 +1,0 @@
-object_tangible_furniture_elegant_cabinet_hue_s01 = object_tangible_furniture_elegant_shared_cabinet_hue_s01:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_furniture_elegant_cabinet_hue_s01, "object/tangible/furniture/elegant/cabinet_hue_s01.iff")

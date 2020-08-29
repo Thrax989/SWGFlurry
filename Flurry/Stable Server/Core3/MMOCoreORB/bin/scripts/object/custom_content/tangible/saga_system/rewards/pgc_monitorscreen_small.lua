@@ -1,5 +1,0 @@
-object_tangible_saga_system_rewards_pgc_monitorscreen_small = object_tangible_saga_system_rewards_shared_pgc_monitorscreen_small:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_saga_system_rewards_pgc_monitorscreen_small, "object/tangible/saga_system/rewards/pgc_monitorscreen_small.iff")
