@@ -472,3 +472,6 @@ includeFile("groups/boss_dungeon/trash_common.lua")
 includeFile("groups/boss_dungeon/trash_rare.lua")
 includeFile("groups/nonjedi_jewelry.lua")
 includeFile("groups/jedi_jewelry.lua")
+
+--dotsystem Item Contraband
+includeFile("groups/dotsystem.lua")
