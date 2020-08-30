@@ -3,12 +3,12 @@ nonjedi_jewelry = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "neck_crafter", weight = 3333333},
-		{itemTemplate = "non_jedi_ring_crafter_second", weight = 3333333},
-		{itemTemplate = "non_jedi_ring_crafter", weight = 3333333},      
-		{itemTemplate = "non_jedi_rings_ranged", weight = 3333333},
-		{itemTemplate = "non_jedi_rings", weight = 3333333},
-		{itemTemplate = "g_necklaces", weight = 3333333}
+		{groupTemplate = "neck_crafter", weight = 3333333},
+		{groupTemplate = "non_jedi_ring_crafter_second", weight = 3333333},
+		{groupTemplate = "non_jedi_ring_crafter", weight = 3333333},      
+		{groupTemplate = "non_jedi_rings_ranged", weight = 3333333},
+		{groupTemplate = "non_jedi_rings", weight = 3333333},
+		{groupTemplate = "g_necklaces", weight = 3333333}
 	}
 }
 

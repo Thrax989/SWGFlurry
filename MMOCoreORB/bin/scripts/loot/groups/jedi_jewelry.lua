@@ -3,10 +3,10 @@ jedi_jewelry = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "jedi_earings", weight = 3333333},
-		{itemTemplate = "jedi_bracelets", weight = 3333333},
-		{itemTemplate = "jedi_neck", weight = 3333333},      
-		{itemTemplate = "jedi_rings", weight = 3333333}
+		{groupTemplate = "jedi_earings", weight = 3333333},
+		{groupTemplate = "jedi_bracelets", weight = 3333333},
+		{groupTemplate = "jedi_neck", weight = 3333333},      
+		{groupTemplate = "jedi_rings", weight = 3333333}
 		}
 }
 
