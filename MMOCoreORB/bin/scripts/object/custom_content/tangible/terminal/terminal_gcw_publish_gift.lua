@@ -188,7 +188,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Naboo",
           {
            	"Intas Minor (5,000 Credits)", "pc_intas_travel", 
-            "Lafayette (5,000 Credits)", "pc_lafayette_travel"
+            "Lafayette (5,000 Credits)", "pc_lafayette_travel",
+            "Avian Prime (5,000 Credits)", "pc_avalon_travel"
           },
             "Dantooine",
           {
@@ -200,7 +201,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
             "Hill Top (5,000 Credits)", "pc_hilltop_travel",
             "Cyberdyne (5,000 Credits)", "pc_cyberdyne_travel",
-            "Darkness Falls (5,000 Credits)", "pc_darkness_travel"
+            "Darkness Falls (5,000 Credits)", "pc_darkness_travel",
+            "Sactus (5,000 Credits)", "pc_sactus_travel"
           },
             "Corellia",
           {  
@@ -219,8 +221,9 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Crimson Thorn (5,000 Credits)", "pc_crimson_travel" 
           },
             "Yavin4",
-            "Annamnesis (5,000 Credits)", "pc_annamnesis_travel"           
-          {,  
+          {
+          "Annamnesis (5,000 Credits)", "pc_annamnesis_travel"           
+          },
             "Kashyyyk",
           {
             "Riverside (5,000 Credits)", "pc_riverside_travel"
