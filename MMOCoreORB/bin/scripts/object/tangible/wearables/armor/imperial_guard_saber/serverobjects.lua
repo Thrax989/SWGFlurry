@@ -1,5 +1,5 @@
 includeFile("tangible/wearables/armor/imperial_guard_saber/armor_imperial_guard_saber_helmet.lua")
-includeFile("tangible/wearables/armor/imperial_guard_saber/armor_imperial_guard_saber_plate.lua")
+includeFile("tangible/wearables/armor/imperial_guard_saber/armor_imperial_guard_saber_chest_plate.lua")
 includeFile("tangible/wearables/armor/imperial_guard_saber/armor_imperial_guard_saber_gloves.lua")
 includeFile("tangible/wearables/armor/imperial_guard_saber/armor_imperial_guard_saber_boots.lua")
 includeFile("tangible/wearables/armor/imperial_guard_saber/armor_imperial_guard_saber_leggings.lua")
