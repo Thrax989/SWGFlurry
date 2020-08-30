@@ -14,10 +14,6 @@ function RecruiterConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, s
 
 	local pConvScreen = screen:cloneScreen()
 	local clonedConversation = LuaConversationScreen(pConvScreen)
-	if (CreatureObject(pPlayer):hasSkill("combat_jedi_novice") or CreatureObject(pPlayer):hasSkill("combat_jedi_master")) then
-		CreatureObject(pPlayer):sendSystemMessage("I Do Not Talk To Gray Jedi Scum!")
-		return
-	end
 	if (screenID == "greet_member_start_covert" or screenID == "stay_covert" or screenID == "dont_resign_covert") then
 		self:updateScreenWithPromotions(pPlayer, pConvTemplate, pConvScreen, recruiterScreenplay:getRecruiterFaction(pNpc))
 		if (recruiterScreenplay:getFactionFromHashCode(CreatureObject(pPlayer):getFaction()) == "rebel") then
@@ -39,6 +35,10 @@ function RecruiterConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, s
 		CreatureObject(pPlayer):setFactionStatus(1)
 
 	elseif (screenID == "accepted_go_overt") then
+	if (CreatureObject(pPlayer):hasSkill("combat_jedi_novice") or CreatureObject(pPlayer):hasSkill("combat_jedi_master")) then
+		CreatureObject(pPlayer):sendSystemMessage("I Do Not Talk To Gray Jedi Scum!")
+		return
+		end
 		CreatureObject(pPlayer):setFutureFactionStatus(2)
 		writeData(CreatureObject(pPlayer):getObjectID() .. ":changingFactionStatus", 1)
 		createEvent(30000, "recruiterScreenplay", "handleGoOvert", pPlayer, "")
