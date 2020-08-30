@@ -179,26 +179,65 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   },
 		 	"Player Cities",
 		   {
-			"Korrivan, Tatooine Player City (5,000 Credits)", "pc_korrivan_travel",
-			"Intas Minor, Naboo Player City (5,000 Credits)", "pc_intas_travel",
-			"Caladan, Talus Player City (5,000 Credits)", "pc_caladan_travel",
-			"Hill Top, Dathomir Player City (5,000 Credits)", "pc_hilltop_travel",
-			"Shadow Falls, Corellia Player City (5,000 Credits)", "pc_shadowfalls_travel",
-			"Sundari, Endor Player City (5,000 Credits)", "pc_sundari_travel",
-			"Janta Town, Dantooine Player City (5,000 Credits)", "pc_jantatown_travel",
-			"Bastion, Dantooine Player City (5,000 Credits)", "pc_bastion_travel",	
-			"Riverside, Kashyyyk Player City (5,000 Credits)", "pc_riverside_travel",
-			"Make America Krayt Again, Tatooine Player City (5,000 Credits)", "pc_maka_travel",
-			"Darkness Falls, Dathomir Player City (5,000 Credits)", "pc_darkness_travel",
-			"Bad Mutta Hutta, Hutta Player City (5,000 Credits)", "pc_bmh_travel",
-			"Indestine, Hoth Player City (5,000 Credits)", "pc_indestine_travel",   
-			"Cyberdyne, Dathomir Player City (5,000 Credits)", "pc_cyberdyne_travel",   
-			"Lafayette, Naboo Player City (5,000 Credits)", "pc_lafayette_travel",
-			"Skynet, Tatooine Player City (5,000 Credits)", "pc_skynet_travel",   
-			"Crimson Thorn, Lok Player City (5,000 Credits)", "pc_crimson_travel",  
- 			"New Freedom, Mandalore Player City (5,000 Credits)", "pc_freedom_travel",   
-      "Malice, Dantooine Player City (5,000 Credits)", "pc_malice_travel",
-		   },
+            "Tatooine",
+					{
+						"Korrivan (5,000 Credits)", "pc_korrivan_travel",
+						"Skynet (5,000 Credits)", "pc_skynet_travel",
+						"Make America Krayt Again (5,000 Credits)", "pc_maka_travel"
+					},         
+            "Naboo",
+          {
+           	"Intas Minor (5,000 Credits)", "pc_intas_travel", 
+            "Lafayette (5,000 Credits)", "pc_lafayette_travel"
+          },
+            "Dantooine",
+          {
+            "Janta Town (5,000 Credits)", "pc_jantatown_travel",
+            "Bastion (5,000 Credits)", "pc_bastion_travel",	
+            "Malice (5,000 Credits)", "pc_malice_travel"
+          },
+            "Dathomir",
+          {
+            "Hill Top (5,000 Credits)", "pc_hilltop_travel",
+            "Cyberdyne (5,000 Credits)", "pc_cyberdyne_travel",
+            "Darkness Falls (5,000 Credits)", "pc_darkness_travel"
+          },
+            "Corellia",
+          {  
+            "Shadow Falls (5,000 Credits)", "pc_shadowfalls_travel"
+          },
+            "Endor",
+          {
+            "Sundari (5,000 Credits)", "pc_sundari_travel"
+          },
+            "Talus",
+          {
+            "Caladan (5,000 Credits)", "pc_caladan_travel"
+          },  
+            "Lok",
+          {
+            "Crimson Thorn (5,000 Credits)", "pc_crimson_travel" 
+          },
+            "Yavin4",
+            "Annamnesis (5,000 Credits)", "pc_annamnesis_travel"           
+          {,  
+            "Kashyyyk",
+          {
+            "Riverside (5,000 Credits)", "pc_riverside_travel"
+          },
+            "Hutta",
+          {  
+            "Bad Mutta Hutta (5,000 Credits)", "pc_bmh_travel"
+          },
+            "Hoth",
+          {
+            "Indestine (5,000 Credits)", "pc_indestine_travel"
+          },
+            "Mandalore",
+          {  
+            "New Freedom (5,000 Credits)", "pc_freedom_travel" 
+          },
+    }      
 	}
 }
 ObjectTemplates:addTemplate(object_tangible_terminal_terminal_gcw_publish_gift, "object/tangible/terminal/terminal_gcw_publish_gift.iff")
