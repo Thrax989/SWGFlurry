@@ -249,11 +249,6 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 
 	return 0
 
-      		spatialChat(bossObject, "Boss Current Health = 10%")
-	end
-
-	return 0
-
 end
 --------------------------------
 --Deploy Boss Trigger Trap Bomb
