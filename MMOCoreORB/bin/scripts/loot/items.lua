@@ -1229,6 +1229,8 @@ includeFile("items/collection/rareloot2.lua")
 includeFile("items/collection/rareloot3.lua")
 includeFile("items/collection/contraband.lua")
 includeFile("items/collection/force_bread.lua")
+includeFile("items/collection/resource_crate.lua")
+includeFile("items/collection/resource_deed.lua")
 
 --Halloween
 includeFile("items/halloween/halloweenitems.lua")
