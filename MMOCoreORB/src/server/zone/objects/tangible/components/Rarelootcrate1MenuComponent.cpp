@@ -42,7 +42,13 @@ int Rarelootcrate1MenuComponent::handleObjectMenuSelect(SceneObject* sceneObject
 
  	ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
  	ManagedReference<LootManager*> lootManager = creature->getZoneServer()->getLootManager();
-	lootManager->createLoot(inventory, "", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
+	lootManager->createLoot(inventory, "lootcollectiontierthree", 300);
 	creature->playEffect("clienteffect/rare_loot.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
 	}
