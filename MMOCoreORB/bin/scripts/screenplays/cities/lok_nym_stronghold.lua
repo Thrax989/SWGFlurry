@@ -17,6 +17,7 @@ function LokNymStrongholdScreenPlay:spawnSceneObjects()
 
 	--outside starport in tent when evidence is found to confirm
 	--spawnSceneObject("lok", "object/tangible/crafting/station/public_space_station.iff", 456.6, 3.0, 5451.8, 0, math.rad(145) )
+  spawnSceneObject("lok", "object/tangible/terminal/terminal_gcw_publish_gift.iff", -1843.82,12,-3063.99,0.845,0,0,0,0)
 end
 
 function LokNymStrongholdScreenPlay:spawnMobiles()

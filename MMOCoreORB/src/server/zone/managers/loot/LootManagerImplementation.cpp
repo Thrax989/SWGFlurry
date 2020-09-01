@@ -746,11 +746,20 @@ bool LootManagerImplementation::createLoot(SceneObject* container, AiAgent* crea
 	//Creature Loot System based on creature level
 	int creatureLevel = Math::min(300, creature->getLevel());
 	//Rare Loot System
-	if (creatureLevel >= 75){
+	if (creatureLevel >= 200){
 		if (System::random(100) < 2) { //2% Rare Loot System
 			createLoot(container, "rarelootsystem", creatureLevel, false);
 			creature->playEffect("clienteffect/rare_loot.cef", "");
 			creature->showFlyText("Rare", "Loot", 0, 255, 0);
+		}
+	}
+
+	//Diamond Loot System
+	if (creatureLevel >= 75){
+		if (System::random(100) < 2) { //2% Diamond Loot System
+			createLoot(container, "lootcollectiontierdiamonds", creatureLevel, false);
+			creature->playEffect("clienteffect/level_granted_chronicles.cef", "");
+			creature->showFlyText("Diamond", "Crate", 0, 255, 0);
 		}
 	}
 

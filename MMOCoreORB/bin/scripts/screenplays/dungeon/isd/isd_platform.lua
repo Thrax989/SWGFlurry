@@ -114,6 +114,12 @@ function isd_platformScreenplay:bossDead(pBoss)
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "isd_platformScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "isd_platformScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
+	createEvent(1 * 1000, "isd_platformScreenplay", "BroadcastDead", pBoss, "")--Broadcast Dead
+	createEvent(1 * 1000, "isd_platformScreenplay", "BroadcastRespawn", pBoss, "")--Broadcast 3 Hour Respawn
+	createEvent(10795 * 1000, "isd_platformScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
+	createEvent(10798 * 1000, "isd_platformScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
+	createEvent(10799 * 1000, "isd_platformScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
+	createEvent(10800 * 1000, "isd_platformScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
@@ -135,4 +141,53 @@ function isd_platformScreenplay:KillBoss(pBoss)
 		SceneObject(pBoss):destroyObjectFromWorld()
 	end
 	return 0
+end
+
+----------------------------
+--Broadcast Dead
+----------------------------
+function isd_platformScreenplay:BroadcastDead(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 ISD Thrawn Boss Has Died!")
+		CreatureObject(bossObject):broadcastToDiscord("ISD Thrawn Boss Has Died!")
+end
+----------------------------
+--Broadcast Initial Respawn
+----------------------------
+function isd_platformScreenplay:BroadcastRespawn(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 ISD Thrawn Boss Respawning In 3 Hours")
+		CreatureObject(bossObject):broadcastToDiscord("ISD Thrawn Boss Respawning In 3 Hours")
+end
+-----------------------
+--Broadcast Respawn
+-----------------------
+function isd_platformScreenplay:KillSpawnCast(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 ISD Thrawn Boss Respawning In ..")
+		CreatureObject(bossObject):broadcastToDiscord("ISD Thrawn Boss Respawning In ..")
+end
+-----------------------
+--Broadcast Respawn 3
+-----------------------
+function isd_platformScreenplay:KillSpawnCast1(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 3")
+		CreatureObject(bossObject):broadcastToDiscord("3")
+end
+-----------------------
+--Broadcast Respawn 2
+-----------------------
+function isd_platformScreenplay:KillSpawnCast2(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 2")
+		CreatureObject(bossObject):broadcastToDiscord("2")
+end
+-----------------------
+--Broadcast Respawn 1
+-----------------------
+function isd_platformScreenplay:KillSpawnCast3(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 1")
+		CreatureObject(bossObject):broadcastToDiscord("1")
 end
