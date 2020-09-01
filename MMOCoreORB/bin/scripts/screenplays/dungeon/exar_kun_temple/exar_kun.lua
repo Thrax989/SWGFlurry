@@ -231,14 +231,20 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 	if (((health <= (maxHealth * 0.1)) or (action <= (maxAction * 0.1)) or (mind <= (maxMind * 0.1))) and readData("exar_kunScreenplay:spawnState") == 8) then
       		writeData("exar_kunScreenplay:spawnState",9)
-			createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
 			createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
 			createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
-			createEvent(5 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+			createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
+			createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
+			createEvent(2 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+			createEvent(2 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
+			createEvent(4 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+			createEvent(4 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
+			createEvent(6 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+			createEvent(6 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
+			createEvent(8 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+			createEvent(8 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
 			createEvent(10 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
-			createEvent(15 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
-			createEvent(20 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
-			createEvent(20 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
+			createEvent(10 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
 			spatialChat(bossObject, "HEAL ME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
       			CreatureObject(bossObject):playEffect("clienteffect/mustafar/som_force_crystal_drain.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/droid_effect_dry_ice.cef", "")
@@ -246,6 +252,18 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
       			CreatureObject(bossObject):playEffect("clienteffect/combat_pt_electricalfield.cef", "")
 			self:spawnSupport(playerObject)
 	end
+-----------------------
+--Exar Boss 1% health
+-----------------------
+	if (((health <= (maxHealth * 0.001)) or (action <= (maxAction * 0.001)) or (mind <= (maxMind * 0.001))) and readData("exar_kunScreenplay:spawnState") == 9) then
+      		writeData("exar_kunScreenplay:spawnState",10)
+			spatialChat(bossObject, "We Shall Meet Again!!!!!!!!")
+      			CreatureObject(bossObject):playEffect("clienteffect/mustafar/som_force_crystal_drain.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/droid_effect_dry_ice.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/death_trooper_infection_03.cef", "")
+      			CreatureObject(bossObject):playEffect("clienteffect/combat_pt_electricalfield.cef", "")
+			self:spawnSupport(playerObject)
+		end
 
 	return 0
 
@@ -281,15 +299,15 @@ if (CreatureObject(playerObject):isGrouped()) then
 
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
-		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
-		local trapDmg = getRandomNumber(1000, 2000)
+		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 250) then
+		local trapDmg = getRandomNumber(1500, 2000)
 		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/commando_position_secured.cef", "")
       		CreatureObject(pMember):playEffect("clienteffect/combat_grenade_fragmentation.cef", "")
 		end
 	end
 else
-	local trapDmg = getRandomNumber(1000, 2000)
+	local trapDmg = getRandomNumber(1500, 2000)
 	CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
       	CreatureObject(playerObject):playEffect("clienteffect/commando_position_secured.cef", "")
       	CreatureObject(playerObject):playEffect("clienteffect/combat_grenade_fragmentation.cef", "")
