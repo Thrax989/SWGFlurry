@@ -156,7 +156,7 @@ function ns_tamer:spawnSupport(playerObject)
       	CreatureObject(pGuard2):playEffect("clienteffect/hh_15_torpedo_warhead.cef", "")
 end
 ---------------------------------------------------------------
---NSTamer Has Died Respawn Exar With A New Dynamic Spawn
+--NSTamer Has Died Respawn NSTamer With A New Dynamic Spawn
 ---------------------------------------------------------------
 function ns_tamer:bossDead(pBoss)
 	print("NSTamer Has Died")
