@@ -2,7 +2,7 @@ object_draft_schematic_armor_cybernetic_appearance_s02_legs = object_draft_schem
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Armor Pants",
+   customObjectName = "Armor Pants Legs 02",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45, 

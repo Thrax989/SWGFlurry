@@ -2,7 +2,7 @@ object_draft_schematic_armor_cybernetic_appearance_s05_hand_r = object_draft_sch
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Armor Hand",
+   customObjectName = "Armor Hand Righ 05",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45, 

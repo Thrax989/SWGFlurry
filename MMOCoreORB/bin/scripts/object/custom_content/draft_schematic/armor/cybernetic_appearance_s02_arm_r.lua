@@ -2,7 +2,7 @@ object_draft_schematic_armor_cybernetic_appearance_s02_arm_r = object_draft_sche
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Armor Right Arm",
+   customObjectName = "Armor Right Arm 02",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45, 

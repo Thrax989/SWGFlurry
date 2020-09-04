@@ -2,7 +2,7 @@ object_draft_schematic_armor_cybernetic_appearance_aotc_forearm_r = object_draft
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Armor Right Arm",
+   customObjectName = "Armor Right ForeArm Anakin",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45, 

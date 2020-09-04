@@ -2,7 +2,7 @@ object_draft_schematic_armor_cybernetic_appearance_hand_l = object_draft_schemat
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Armor Gloves",
+   customObjectName = "Armor Gloves 01",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45, 

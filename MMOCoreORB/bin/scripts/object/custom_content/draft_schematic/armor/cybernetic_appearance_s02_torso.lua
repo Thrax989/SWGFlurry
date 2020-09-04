@@ -2,7 +2,7 @@ object_draft_schematic_armor_cybernetic_appearance_s02_torso = object_draft_sche
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Armor Chest Plate",
+   customObjectName = "Armor Chest Plate Torso 02",
 
    craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    complexity = 45, 
