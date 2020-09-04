@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_jacket_neut_ace = object_draft_schemati
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = Neutral Jacket"",
+   customObjectName = "Neutral Jacket",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
