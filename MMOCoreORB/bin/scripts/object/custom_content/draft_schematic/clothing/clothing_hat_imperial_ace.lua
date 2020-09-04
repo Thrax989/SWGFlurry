@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_hat_imperial_ace = object_draft_schemat
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Imperial Ace Hat",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
