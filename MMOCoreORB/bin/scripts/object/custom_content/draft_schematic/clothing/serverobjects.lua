@@ -55,4 +55,4 @@ includeFile("custom_content/draft_schematic/clothing/clothing_skirt_singing_mtn_
 includeFile("custom_content/draft_schematic/clothing/clothing_skirt_singing_mtn_03.lua")
 includeFile("custom_content/draft_schematic/clothing/clothing_wke_shirt_s05.lua")
 --Custom Robes
-includeFile("custom_content/draft_schematic/clothing/robe_1.lua")
+includeFile("custom_content/draft_schematic/clothing/clothing_robe_1.lua")
