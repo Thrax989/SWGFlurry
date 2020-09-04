@@ -446,3 +446,12 @@ ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothin
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_clothing_shared_clothing_robe_1 = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_robe_1.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_1, "object/draft_schematic/clothing/shared_clothing_robe_1.iff")
+------------------------------------------------------------------------------------------------------------------------------------
