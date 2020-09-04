@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_hat_reb_ace = object_draft_schematic_cl
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Rebel Hat",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
