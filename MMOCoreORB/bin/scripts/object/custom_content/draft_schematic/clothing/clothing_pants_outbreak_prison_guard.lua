@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_pants_outbreak_prison_guard = object_dr
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Prison Guard Pants",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
