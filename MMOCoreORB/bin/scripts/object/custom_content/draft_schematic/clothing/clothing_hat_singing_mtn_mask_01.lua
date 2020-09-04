@@ -2,7 +2,7 @@ object_draft_schematic_clothing_clothing_hat_singing_mtn_mask_01 = object_draft_
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "",
+   customObjectName = "Singing Mountain Clan Mask",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
