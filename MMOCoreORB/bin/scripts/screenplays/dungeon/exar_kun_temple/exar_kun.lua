@@ -114,10 +114,11 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 	if (((health <= (maxHealth * 0.9)) or (action <= (maxAction * 0.9)) or (mind <= (maxMind * 0.9))) and readData("exar_kunScreenplay:spawnState") == 0) then
       			writeData("exar_kunScreenplay:spawnState",1)
-			createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
-			createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
-			createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
-			self:spawnSupport(playerObject)
+				createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
+				self:spawnSupport(playerObject)
       			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
       			CreatureObject(bossObject):playEffect("clienteffect//mustafar/som_force_crystal_buff.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/mustafar/som_force_crystal_drain.cef", "")
@@ -129,10 +130,11 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 	if (((health <= (maxHealth * 0.8)) or (action <= (maxAction * 0.8)) or (mind <= (maxMind * 0.8))) and readData("exar_kunScreenplay:spawnState") == 1) then
       			writeData("exar_kunScreenplay:spawnState",2)
-			createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
-			createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
-			createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
-			self:spawnSupport(playerObject)
+				createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
+				self:spawnSupport(playerObject)
       			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
       			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
@@ -143,10 +145,11 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 	if (((health <= (maxHealth * 0.7)) or (action <= (maxAction * 0.7)) or (mind <= (maxMind * 0.7))) and readData("exar_kunScreenplay:spawnState") == 2) then
       			writeData("exar_kunScreenplay:spawnState",3)
-			createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
-			createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
-			createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
-			self:spawnSupport(playerObject)
+				createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
+				self:spawnSupport(playerObject)
       			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
       			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
@@ -157,10 +160,11 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 	if (((health <= (maxHealth * 0.6)) or (action <= (maxAction * 0.6)) or (mind <= (maxMind * 0.6))) and readData("exar_kunScreenplay:spawnState") == 3) then
       			writeData("exar_kunScreenplay:spawnState",4)
-			createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
-			createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
-			createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
-			self:spawnSupport(playerObject)
+				createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
+				self:spawnSupport(playerObject)
       			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
       			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
@@ -171,10 +175,11 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 	if (((health <= (maxHealth * 0.5)) or (action <= (maxAction * 0.5)) or (mind <= (maxMind * 0.5))) and readData("exar_kunScreenplay:spawnState") == 4) then
       			writeData("exar_kunScreenplay:spawnState",5)
-			createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
-			createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
-			createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
-			self:spawnSupport(playerObject)
+				createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
+				self:spawnSupport(playerObject)
       			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
       			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
@@ -185,8 +190,11 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 	if (((health <= (maxHealth * 0.4)) or (action <= (maxAction * 0.4)) or (mind <= (maxMind * 0.4))) and readData("exar_kunScreenplay:spawnState") == 5) then
       			writeData("exar_kunScreenplay:spawnState",6)
-			createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
-			self:spawnSupport(playerObject)
+				createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
+				self:spawnSupport(playerObject)
       			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
       			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
@@ -197,8 +205,11 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 	if (((health <= (maxHealth * 03)) or (action <= (maxAction * 0.3)) or (mind <= (maxMind * 0.3))) and readData("exar_kunScreenplay:spawnState") == 6) then
       			writeData("exar_kunScreenplay:spawnState",7)
-			createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
-			self:spawnSupport(playerObject)
+				createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
+				self:spawnSupport(playerObject)
       			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
       			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
@@ -209,8 +220,11 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 	if (((health <= (maxHealth * 0.2)) or (action <= (maxAction * 0.2)) or (mind <= (maxMind * 0.2))) and readData("exar_kunScreenplay:spawnState") == 7) then
       			writeData("exar_kunScreenplay:spawnState",8)
-			createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
-			self:spawnSupport(playerObject)
+				createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
+				self:spawnSupport(playerObject)
       			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
       			CreatureObject(bossObject):playEffect("clienteffect/incubator_mutation.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_astromech_effects_04.cef", "")
@@ -221,8 +235,10 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 	if (((health <= (maxHealth * 0.1)) or (action <= (maxAction * 0.1)) or (mind <= (maxMind * 0.1))) and readData("exar_kunScreenplay:spawnState") == 8) then
       			writeData("exar_kunScreenplay:spawnState",9)
-			createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
-			self:spawnSupport(playerObject)
+				createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", bossObject, "")				createEvent(0 * 1000, "exar_kunScreenplay", "starthealing", bossObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "npchealingmessage", bossObject, "")
+				self:spawnSupport(playerObject)
       			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
       			CreatureObject(bossObject):playEffect("clienteffect/mustafar/som_force_crystal_drain.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/droid_effect_dry_ice.cef", "")
@@ -235,14 +251,15 @@ function exar_kunScreenplay:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 	if (((health <= (maxHealth * 0.001)) or (action <= (maxAction * 0.001)) or (mind <= (maxMind * 0.001))) and readData("exar_kunScreenplay:spawnState") == 9) then
       			writeData("exar_kunScreenplay:spawnState",10)
-			createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", playerObject, "")
-			spatialChat(bossObject, "We Shall Meet Again!!!!!!!!")
+				createEvent(0 * 1000, "exar_kunScreenplay", "bomb", playerObject, "")
+				createEvent(0 * 1000, "exar_kunScreenplay", "grenadebomb", bossObject, "")
+				spatialChat(bossObject, "We Shall Meet Again!!!!!!!!")
       			CreatureObject(bossObject):playEffect("clienteffect/mustafar/som_force_crystal_drain.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/droid_effect_dry_ice.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/death_trooper_infection_03.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/combat_pt_electricalfield.cef", "")
-			self:spawnSupport(playerObject)
-		end
+				self:spawnSupport(playerObject)
+			end
 	return 0
 
 end
@@ -256,14 +273,14 @@ if (CreatureObject(playerObject):isGrouped()) then
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
 		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
 		local trapDmg = getRandomNumber(2000, 2500)
-		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
+			CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       		CreatureObject(pMember):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
 		end
 	end
 else
 	local trapDmg = getRandomNumber(2000, 2500)
-	CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+		CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
       	CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       	CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
 	end
@@ -278,15 +295,15 @@ if (CreatureObject(playerObject):isGrouped()) then
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
 		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 250) then
-		local trapDmg = getRandomNumber(3000, 3500)
-		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
+		local trapDmg = getRandomNumber(2500, 3000)
+			CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/commando_position_secured.cef", "")
       		CreatureObject(pMember):playEffect("clienteffect/combat_grenade_fragmentation.cef", "")
 		end
 	end
 else
-	local trapDmg = getRandomNumber(3000, 3500)
-	CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+	local trapDmg = getRandomNumber(2500, 2500)
+		CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
       	CreatureObject(playerObject):playEffect("clienteffect/commando_position_secured.cef", "")
       	CreatureObject(playerObject):playEffect("clienteffect/combat_grenade_fragmentation.cef", "")
 	end
@@ -296,9 +313,9 @@ end
 -----------------------------
 function exar_kunScreenplay:starthealing(bossObject)
 	local boss = LuaCreatureObject(bossObject)
-		boss:healDamage(350000, 0)
-		boss:healDamage(350000, 3)
-		boss:healDamage(350000, 6)
+		boss:healDamage(500000, 0)
+		boss:healDamage(500000, 3)
+		boss:healDamage(500000, 6)
 	return 0
 end
 -----------------------------
@@ -332,12 +349,12 @@ function exar_kunScreenplay:bossDead(pBoss)
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "exar_kunScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "exar_kunScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
-	createEvent(1 * 1000, "exar_kunScreenplay", "BroadcastDead", pBoss, "")--Broadcast Dead
-	createEvent(1 * 1000, "exar_kunScreenplay", "BroadcastRespawn", pBoss, "")--Broadcast 3 Hour Respawn
-	createEvent(10795 * 1000, "exar_kunScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "exar_kunScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "exar_kunScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "exar_kunScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
+	--createEvent(1 * 1000, "exar_kunScreenplay", "BroadcastDead", pBoss, "")--Broadcast Dead
+	--createEvent(1 * 1000, "exar_kunScreenplay", "BroadcastRespawn", pBoss, "")--Broadcast 3 Hour Respawn
+	--createEvent(10795 * 1000, "exar_kunScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
+	--createEvent(10798 * 1000, "exar_kunScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
+	--createEvent(10799 * 1000, "exar_kunScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
+	--createEvent(10800 * 1000, "exar_kunScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
@@ -354,7 +371,7 @@ end
 -----------------------------------------------------------------------------
 function exar_kunScreenplay:KillBoss(pBoss)
       	writeData("exar_kunScreenplay:spawnState",0)
-	dropObserver(pBoss, OBJECTDESTRUCTION)
+		dropObserver(pBoss, OBJECTDESTRUCTION)
 	if SceneObject(pBoss) then
 		print("Exar Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
