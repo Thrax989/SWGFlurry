@@ -2421,7 +2421,6 @@ schematics = {
 	{path="object/draft_schematic/clothing/clothing_outbreak_prisoner_bodysuit.iff"},
 	{path="object/draft_schematic/clothing/clothing_pants_nightsister_01.iff"},
 	{path="object/draft_schematic/clothing/clothing_pants_nightsister_02.iff"},
-	{path="object/draft_schematic/clothing/clothing_pants_outbreak_prison_guard.iff"},
 	{path="object/draft_schematic/clothing/clothing_shirt_nightsister_01.iff"},
 	{path="object/draft_schematic/clothing/clothing_shirt_nightsister_02.iff"},
 	{path="object/draft_schematic/clothing/clothing_shirt_nightsister_03.iff"},
