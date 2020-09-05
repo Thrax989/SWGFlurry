@@ -171,7 +171,12 @@ String DraftSchematicImplementation::getCustomizationSkill() {
 }
 
 String DraftSchematicImplementation::getCustomName() {
+if (schematicTemplate == nullptr) {		
+	error("ERROR Illegal Argument Exception");
+	return nullptr;
+	}
 	return schematicTemplate->getCustomObjectName();
+	error("Safe Argument Exception");
 }
 
 uint32 DraftSchematicImplementation::getTanoCRC() {
