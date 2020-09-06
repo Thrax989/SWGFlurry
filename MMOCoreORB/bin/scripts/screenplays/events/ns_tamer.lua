@@ -131,15 +131,15 @@ if (CreatureObject(playerObject):isGrouped()) then
 		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
 		local trapDmg = getRandomNumber(2000, 2500)
 		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
-      		CreatureObject(pMember):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
-      		CreatureObject(pMember):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      		CreatureObject(pMember):playEffect("clienteffect/incubator_mutation.cef", "")
+      		CreatureObject(pMember):playEffect("clienteffect/cbt_hit_shield_lightning_cannon.cef", "")
 		end
 	end
 else
 	local trapDmg = getRandomNumber(2000, 2500)
 	CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
-      	CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
-      	CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
+      	CreatureObject(playerObject):playEffect("clienteffect/incubator_mutation.cef", "")
+      	CreatureObject(playerObject):playEffect("clienteffect/cbt_hit_shield_lightning_cannon.cef", "")
 	end
 end
 -----------------------
