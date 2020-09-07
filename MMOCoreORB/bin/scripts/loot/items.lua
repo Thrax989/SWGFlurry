@@ -528,6 +528,8 @@ includeFile("items/npc/tusken_raider_helmet_1.lua")
 includeFile("items/npc/tusken_raider_helmet_2.lua")
 includeFile("items/npc/tusken_raider_robe_1.lua")
 includeFile("items/npc/tusken_raider_robe_2.lua")
+includeFile("items/npc/mokk_hide.lua")
+includeFile("items/npc/mokk_blood.lua")
 
 --painting sub-folder
 includeFile("items/painting/be_poster.lua")

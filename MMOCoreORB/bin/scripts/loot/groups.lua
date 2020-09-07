@@ -174,6 +174,7 @@ includeFile("groups/npc/tusken_common.lua")
 includeFile("groups/npc/tutorial_pirate.lua")
 includeFile("groups/npc/valarian_common.lua")
 includeFile("groups/npc/weequay_common.lua")
+includeFile("groups/npc/mokk_elites.lua")
 
 -- task_loot sub-folder
 includeFile("groups/task_loot/hedon_istee_treasure.lua")
