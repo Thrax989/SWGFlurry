@@ -64,7 +64,7 @@ function mokk_worldboss_sp:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 --mokk_worldboss Boss 50% health
 -----------------------
-	if (((health <= (maxHealth * 0.5)) or (action <= (maxAction * 0.5)) or (mind <= (maxMind * 0.5))) and readData("ns_tamer:spawnState") == 2) then
+	if (((health <= (maxHealth * 0.5)) or (action <= (maxAction * 0.5)) or (mind <= (maxMind * 0.5))) and readData("mokk_worldboss_sp:spawnState") == 2) then
       			writeData("mokk_worldboss_sp:spawnState",3)
 			createEvent(0 * 1000, "mokk_worldboss_sp", "bomb", playerObject, "")
 			self:spawnSupport(playerObject)
@@ -76,7 +76,7 @@ function mokk_worldboss_sp:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 --mokk_worldboss Boss 30% health
 -----------------------
-	if (((health <= (maxHealth * 0.3)) or (action <= (maxAction * 0.3)) or (mind <= (maxMind * 0.3))) and readData("ns_tamer:spawnState") == 3) then
+	if (((health <= (maxHealth * 0.3)) or (action <= (maxAction * 0.3)) or (mind <= (maxMind * 0.3))) and readData("mokk_worldboss_sp:spawnState") == 3) then
       			writeData("mokk_worldboss_sp:spawnState",4)
 			createEvent(0 * 1000, "mokk_worldboss_sp", "bomb", playerObject, "")
 			self:spawnSupport(playerObject)
@@ -88,7 +88,7 @@ function mokk_worldboss_sp:npcDamageObserver(bossObject, playerObject, damage)
 -----------------------
 --mokk_worldboss Boss 10% health
 -----------------------
-	if (((health <= (maxHealth * 0.1)) or (action <= (maxAction * 0.1)) or (mind <= (maxMind * 0.1))) and readData("ns_tamer:spawnState") == 4) then
+	if (((health <= (maxHealth * 0.1)) or (action <= (maxAction * 0.1)) or (mind <= (maxMind * 0.1))) and readData("mokk_worldboss_sp:spawnState") == 4) then
       			writeData("mokk_worldboss_sp:spawnState",5)
 			createEvent(0 * 1000, "mokk_worldboss_sp", "bomb", playerObject, "")
 			self:spawnSupport(playerObject)
@@ -130,7 +130,7 @@ function mokk_worldboss_sp:spawnSupport(playerObject)
 	spatialChat(pGuard1, "!!!!!!!!")
 	CreatureObject(pGuard1):engageCombat(playerObject)
       	CreatureObject(pGuard1):playEffect("clienteffect/attacker_berserk.cef", "")
-	local pGuard2 = spawnMobile("mandalore", "mokk_guard", -1, -7049, 2.5, -3339, -165, 0) 
+	local pGuard2 = spawnMobile("dantooine", "mokk_guard", -1, -7049, 2.5, -3339, -165, 0) 
 	spatialChat(pGuard2, "Im coming Boss! Attack you useless mutt!")
 	CreatureObject(pGuard2):engageCombat(playerObject)
       	CreatureObject(pGuard2):playEffect("clienteffect/attacker_berserk.cef", "")
