@@ -8,7 +8,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 	templateType = CHARACTERBUILDERTERMINAL,
 
 	itemList = {
-		  	"chandrila",
+		  	"Chandrila",
 		   {
 			" Starport (5,000 Credits)", "nayli_starport_travel",
 			" Starport (5,000 Credits)", "hanna_starport_travel",
@@ -45,7 +45,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Dathomir Science Outpost Starport (5,000 Credits)", "dathomir_science_outpost_starport_travel",
 			"Dathomir Village Shuttleport (5,000 Credits)", "dathomir_village_shuttleport_travel",
 		   },
-		  	"geonosis",
+		  	"Geonosis",
 		   {
 			" Starport (5,000 Credits)", "geonosis_starport_travel",
 		   },
@@ -53,7 +53,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		  -- {
 			--" Starport (5,000 Credits)", "_starport_travel",
 		   --},
-		  	"hutta",
+		  	"Hutta",
 		   {
 			"Bilbousa Starport (5,000 Credits)", "bilbousa_starport_travel",
 		   },
@@ -77,10 +77,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Nym's Stronghold Starport (5,000 Credits)", "nyms_stronghold_starport_travel",
 		   },
-		  	--"mandalore",
-		   --{
-			--" Starport (5,000 Credits)", "_starport_travel",
-		   --},
+		  	"Mandalore",
+		   {
+			" Keldabe Starport (5,000 Credits)", "keldabe_starport_travel",
+		   },
 		  	--"mustafar",
 		   --{
 			--" Starport (5,000 Credits)", "_starport_travel",
