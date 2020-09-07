@@ -32,11 +32,16 @@ student_force = Creature:new {
 			groups = {
 				{group = "junk", chance = 10000000}
 			},
-			lootChance = 100000
+			lootChance = 1000000
 		},
 		{
 			groups = {
 				{group = "junk", chance = 10000000}
+			},
+			lootChance = 1000000
+		},
+			groups = {
+				{group = "ancient_force_bread", chance = 10000000}
 			},
 			lootChance = 1000000
 		},
