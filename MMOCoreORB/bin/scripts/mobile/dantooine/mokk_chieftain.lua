@@ -27,7 +27,7 @@ mokk_chieftain = Creature:new {
   scale = 1.5, 
 
 	templates = {
-		"object/mobile/dantari_male.iff",
+		"object/mobile/dantari_male.iff"},
 	lootGroups = {
 		{
 			groups = {
