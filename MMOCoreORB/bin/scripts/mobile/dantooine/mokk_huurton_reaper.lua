@@ -54,7 +54,7 @@ mokk_huurton_reaper = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 10000000
+			lootChance = 8000000
 		},
 		{
 			groups = {
