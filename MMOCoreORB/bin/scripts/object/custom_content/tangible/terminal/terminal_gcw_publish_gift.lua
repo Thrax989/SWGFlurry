@@ -10,8 +10,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 	itemList = {
 		  	"Chandrila",
 		   {
-			" Starport (5,000 Credits)", "nayli_starport_travel",
-			" Starport (5,000 Credits)", "hanna_starport_travel",
+			"Nayli Starport (5,000 Credits)", "nayli_starport_travel",
+			"Hanna Starport (5,000 Credits)", "hanna_starport_travel",
 		   },
 		        "Corellia",
 		   {
@@ -47,7 +47,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   },
 		  	"Geonosis",
 		   {
-			" Starport (5,000 Credits)", "geonosis_starport_travel",
+			"Geonosis Starport (5,000 Credits)", "geonosis_starport_travel",
 		   },
 		  	--"Hoth",
 		  -- {
