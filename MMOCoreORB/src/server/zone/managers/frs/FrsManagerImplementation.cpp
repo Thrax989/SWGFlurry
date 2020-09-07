@@ -1048,7 +1048,7 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 		StringBuffer zGeneral;
 		zGeneral << " Has Gained FRS From Killing " << victimName << " on Planet " << planetName;
 		chatManager->handleGeneralChat(attacker, zGeneral.toString());
-		PlayerManager* playerManager = creature->getZoneServer()->getPlayerManager();
+		PlayerManager* playerManager = attacker->getZoneServer()->getPlayerManager();
 		attacker->playEffect("clienteffect/level_granted.cef", "");
 		playerManager->awardExperience(attacker, "force_rank_xp", 5000, true); // Award FRS XP
 	}
