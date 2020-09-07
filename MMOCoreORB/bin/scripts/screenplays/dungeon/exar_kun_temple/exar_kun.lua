@@ -257,14 +257,14 @@ if (CreatureObject(playerObject):isGrouped()) then
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
 		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
-		local trapDmg = getRandomNumber(2000, 2500)
+		local trapDmg = getRandomNumber(1500, 2000)
 			CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       		CreatureObject(pMember):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
 		end
 	end
 else
-	local trapDmg = getRandomNumber(2000, 2500)
+	local trapDmg = getRandomNumber(1500, 2000)
 		CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
       	CreatureObject(playerObject):playEffect("clienteffect/restuss_event_artillery_ground.cef", "")
       	CreatureObject(playerObject):playEffect("clienteffect/combat_turret_0_miss_terrain_01.cef", "")
@@ -280,14 +280,14 @@ if (CreatureObject(playerObject):isGrouped()) then
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
 		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 250) then
-		local trapDmg = getRandomNumber(2500, 3000)
+		local trapDmg = getRandomNumber(2000, 2500)
 			CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/commando_position_secured.cef", "")
       		CreatureObject(pMember):playEffect("clienteffect/combat_grenade_fragmentation.cef", "")
 		end
 	end
 else
-	local trapDmg = getRandomNumber(2500, 2500)
+	local trapDmg = getRandomNumber(2000, 2500)
 		CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
       	CreatureObject(playerObject):playEffect("clienteffect/commando_position_secured.cef", "")
       	CreatureObject(playerObject):playEffect("clienteffect/combat_grenade_fragmentation.cef", "")
