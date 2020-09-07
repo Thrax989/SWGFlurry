@@ -16,7 +16,7 @@ end
 --mokk_worldboss Has Spawned
 -----------------------
 function mokk_worldboss_sp:spawnMobiles()
-		local pBoss = spawnMobile("dantooine", "mokk_chieftain", -1,-7046.9, 2.2, -3329.2, -165,0)--Spawn Mokk Chieftain
+		local pBoss = spawnMobile("dantooine", "mokk_chieftain", -1, -7046.9, 2.2, -3329.2, -165,0)--Spawn Mokk Chieftain
 		local creature = CreatureObject(pBoss)
 		print("Mokk Chieftain Spawned")
 		createObserver(DAMAGERECEIVED, "mokk_worldboss_sp", "npcDamageObserver", pBoss)
@@ -155,7 +155,7 @@ end
 -- mokk Boss
 -----------------------
 function mokk_worldboss_sp:KillSpawn()
-		local pBoss = spawnMobile("dantooine", "mokk_chieftain", -1,-7046.9, 2.2, -3329.2, -165,0)--Spawn mokk_worldboss After Death 3 Hour Timer
+		local pBoss = spawnMobile("dantooine", "mokk_chieftain", -1, -7046.9, 2.2, -3329.2, -165,0)--Spawn mokk_worldboss After Death 3 Hour Timer
 		print("Mokk Chieftain Respawned")
 		createObserver(DAMAGERECEIVED, "mokk_worldboss_sp", "npcDamageObserver", pBoss)
 		createObserver(OBJECTDESTRUCTION, "mokk_worldboss_sp", "bossDead", pBoss)

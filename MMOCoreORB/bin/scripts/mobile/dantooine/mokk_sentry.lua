@@ -1,5 +1,5 @@
 mokk_sentry = Creature:new {
-	customName = "Mokk_Sentry",
+	customName = "Mokk Sentry",
 	socialGroup = "mokk_tribe",
 	faction = "mokk_tribe",
 	level = 300,
