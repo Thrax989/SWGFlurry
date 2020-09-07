@@ -483,7 +483,7 @@ mandalore = {
 
 	planetTravelPoints = {
 		{name = "Bralsin", x = -5689, z = 0, y = -5034, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-		{name = "Keldabe Starport", x = 1575, z = 4, y = -6408, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+		{name = "Keldabe Starport", x = 1568, z = 4, y = -6415, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Keldabe Shuttleport", x = 1432, z = 1.9, y = -6163, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Sundari", x = 6275, z = 1, y = -6211, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
 		{name = "Norg Bral", x = -6648, z = 30, y = 5583, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
@@ -495,7 +495,7 @@ mandalore = {
 	},
 
 	planetObjects = {
-		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 1582, z = 4, y = -6410, parentid = 0}
 	}
 }
 
