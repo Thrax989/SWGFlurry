@@ -72,6 +72,7 @@ object_tangible_scout_trap_trap_drowsy_dart = object_tangible_scout_trap_shared_
 	stopSpam = "",
 
 	animation = "throw_trap_drowsy_dart",
+	clientEffect = "clienteffect/razor_net.cef",
 
 	numberExperimentalProperties = {1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX"},
