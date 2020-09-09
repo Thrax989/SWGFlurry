@@ -27,7 +27,7 @@ object_draft_schematic_armor_cybernetic_appearance_rots_forearm_r = object_draft
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/cybernetic/cybernetic_crafted_forearm_r_01.iff",
+   targetTemplate = "object/tangible/tcg/series5/cybernetic_rots_forearm_r.iff",
 
    additionalTemplates = {
               }
