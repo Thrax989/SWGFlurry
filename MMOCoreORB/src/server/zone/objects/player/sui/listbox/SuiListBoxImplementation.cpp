@@ -92,7 +92,7 @@ BaseMessage* SuiListBoxImplementation::generateMessage() {
 	}
 
 	generateHeader(message);
-	generateBody(message);
+	generateBodySorted(message);
 	generateFooter(message);
 	hasGenerated = true;
 
