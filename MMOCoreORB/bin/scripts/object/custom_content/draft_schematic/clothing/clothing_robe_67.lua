@@ -1,8 +1,8 @@
-object_draft_schematic_clothing_clothing_robe_3 = object_draft_schematic_clothing_shared_clothing_robe_3:new {
+object_draft_schematic_clothing_clothing_robe_67 = object_draft_schematic_clothing_shared_clothing_robe_67:new {
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "New Robe 3",
+   customObjectName = "New Robe 67",
 
    craftingToolTab = 8, -- (See DraftSchematicObjectTemplate.h)
    complexity = 30, 
@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_robe_3 = object_draft_schematic_clothin
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/robe/robe_inquisitor.iff",
+   targetTemplate = "object/tangible/wearables/robe/robe_swtor.iff",
 
    additionalTemplates = {
              },
@@ -40,4 +40,4 @@ object_draft_schematic_clothing_clothing_robe_3 = object_draft_schematic_clothin
 	}
 }
 
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_robe_3, "object/draft_schematic/clothing/clothing_robe_3.iff")
+ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_robe_67, "object/draft_schematic/clothing/clothing_robe_67.iff")

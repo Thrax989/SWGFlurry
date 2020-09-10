@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_robe_1 = object_draft_schematic_clothin
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/robe/robe_swtor.iff",
+   targetTemplate = "object/tangible/wearables/robe/aakuan_robe.iff",
 
    additionalTemplates = {
              },

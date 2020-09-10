@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_robe_2 = object_draft_schematic_clothin
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/robe/robe_atris.iff",
 
    additionalTemplates = {
              },
