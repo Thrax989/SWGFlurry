@@ -147,6 +147,8 @@ class SuiBox extends ManagedObject implements Logger {
 	 */
 	@local
 	public native void generateBody(SuiCreatePageMessage message);
+	@local
+	public native void generateBodySorted(SuiCreatePageMessage message);
 
 
 	/**
