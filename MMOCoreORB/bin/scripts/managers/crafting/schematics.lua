@@ -2496,4 +2496,6 @@ schematics = {
 	{path="object/draft_schematic/clothing/clothing_robe_63.iff"},
 	{path="object/draft_schematic/clothing/clothing_robe_64.iff"},
 	{path="object/draft_schematic/clothing/clothing_robe_65.iff"},
+	{path="object/draft_schematic/clothing/clothing_robe_66.iff"},
+	{path="object/draft_schematic/clothing/clothing_robe_67.iff"},
 };
