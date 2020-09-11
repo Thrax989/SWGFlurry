@@ -115,7 +115,8 @@ void SuiBoxImplementation::generateBodySorted(SuiCreatePageMessage* message) {
 			bdyTok.getStringToken(bdyValue);
 			std::string value(bdyValue.toCharArray());
 			if (std::regex_search (value,m,p)) {
-				std::string s = values_vector[y];
+				std::string stdstring = values_vector[y];
+				const char* s = stdstring.c_str();
 				String bdyValueNew(s);
 				bdyValue = bdyValueNew;
 				y++;
