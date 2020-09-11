@@ -18,8 +18,8 @@ end
 -----------------------
 function worldboss_sixScreenplay:spawnSceneObjects()
 spawnSceneObject("lok", "object/tangible/gravestone/gravestone05.iff", 3317, 0, 1725, 0, 1, 0, 0, 0)-- ADD SOMETHING
-spawnSceneObject("lok", "object/tangible/container/corpse/player_corpse.iff", 3329, 0.4, 1724, 0, 1, 0, 0, 0)
-spawnSceneObject("lok", "object/tangible/container/corpse/player_corpse.iff", 3321, 0.1, 1730, 0, 1, 0, 0, 0)
+spawnSceneObject("lok", "object/tangible/gravestone/gravestone04.iff", 3329, 0.4, 1724, 0, 1, 0, 0, 0)
+spawnSceneObject("lok", "object/tangible/gravestone/gravestone03.iff", 3321, 0.1, 1730, 0, 1, 0, 0, 0)
 spawnSceneObject("lok", "object/tangible/gravestone/gravestone02.iff", 3320, 0.1, 1722, 0, 1, 0, 0, 0)
 spawnSceneObject("lok", "object/tangible/gravestone/gravestone01.iff", 3329, 1, 1738, 0, 1, 0, 0, 0)
 end
