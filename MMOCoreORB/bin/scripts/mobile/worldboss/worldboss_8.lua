@@ -6,6 +6,7 @@ worldboss_8 = Creature:new {
 	chanceHit = 80.0,
 	damageMin = 4500,
 	damageMax = 6500,
+	specialDamageMult = 10.0,    
 	baseXp = 20000,
 	baseHAM = 400000,
 	baseHAMmax = 500000,
