@@ -114,7 +114,7 @@ rori_regions = {
 	{"rorgungan_ruins_5", -75, 5230, {CIRCLE, 50}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"rorgungan_ruins_6", 6689, 6879, {CIRCLE, 50}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"rori_imperial_encampment", -5565, -5661, {CIRCLE, 200}, NOSPAWNAREA + NOBUILDZONEAREA},
-	{"rori_rebel_encampment", -5320, 5000, {CIRCLE, 150}, NOSPAWNAREA + NOBUILDZONEAREA},
+	{"rori_rebel_encampment", -5320, 5000, {CIRCLE, 1500}, NOBUILDZONEAREA}, --Boss Area
 	{"sdungeon_rebel_outpost", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"shield_generator", -5500, 2100, {CIRCLE, 50}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"southeast_jungle_peak", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
