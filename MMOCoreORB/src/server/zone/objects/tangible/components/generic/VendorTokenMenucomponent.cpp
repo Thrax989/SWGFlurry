@@ -18,9 +18,9 @@ void VendorTokenMenucomponent::fillObjectMenuResponse(SceneObject* sceneObject, 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	String fullTemplate = sceneObject->getObjectTemplate()->getFullTemplateString();
 
-	if (fullTemplate.contains("col_dust_durni")) {
-		menuResponse->addRadialMenuItem(115,3,"Combine Dust");
-		menuResponse->addRadialMenuItem(116,3,"Split Dust");
+	if (fullTemplate.contains("mt_flatbread")) {
+		menuResponse->addRadialMenuItem(115,3,"Combine Force Bread");
+		menuResponse->addRadialMenuItem(116,3,"Split Force Bread");
 	} else if (fullTemplate.contains("coin") || fullTemplate.contains("currency")) {
 		menuResponse->addRadialMenuItem(115,3,"Combine Tokens");
 		menuResponse->addRadialMenuItem(116,3,"Split Tokens");
