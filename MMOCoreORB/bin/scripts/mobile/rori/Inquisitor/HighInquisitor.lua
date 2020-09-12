@@ -24,8 +24,8 @@ high_inquisitor = Creature:new {
 	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED + INTERESTING,
 	diet = HERBIVORE,
-	scale = 1.3;
-	templates = {"object/mobile/space_imperial_tier4_corellia_nin_gursawe.iff"},
+	scale = 1.4;
+	templates = {"object/mobile/som/som_kenobi_reunite_inquisitorium_hunter.iff"},
 	lootGroups = {
 		{
 			groups = {
