@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_weapon_ranged_rifle_som_rifle_mustafar_disruptor = object_weapon_ranged_rifle_shared_som_rifle_mustafar_disruptor:new {
+object_weapon_ranged_rifle_rifle_particle_beam = object_weapon_ranged_rifle_shared_rifle_particle_beam:new {
 	
 	playerRaces = { 	"object/creature/player/abyssin_male.iff",
 		"object/creature/player/aqualish_female.iff", 
@@ -95,24 +95,23 @@ object_weapon_ranged_rifle_som_rifle_mustafar_disruptor = object_weapon_ranged_r
 	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = RANGEDATTACK,
+	weaponType = SPECIALHEAVYWEAPON,
 
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
-	damageType = HEAT,
+	damageType = ENERGY,
 
 	-- NONE, LIGHT, MEDIUM, HEAVY
-	armorPiercing = HEAVY,
+	armorPiercing = MEDIUM,
 
 	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
 	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
 	-- combat_meleespecialize_twohandlightsaber, combat_meleespecialize_polearmlightsaber, combat_meleespecialize_onehandlightsaber
-	xpType = "combat_rangedspecialize_rifle",
+	xpType = "combat_rangedspecialize_heavy",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_rifle_t21" },
+	certificationsRequired = { "cert_rifle_flame_thrower" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
-	creatureAccuracyModifiers = { "rifle_accuracy" },
-
-	creatureAimModifiers = { "rifle_aim", "aim" },
+	creatureAccuracyModifiers = { "heavy_flame_thrower_accuracy" },
 
 	-- See http://www.ocdsoft.com/files/defense.xls
 	defenderDefenseModifiers = { "ranged_defense" },
@@ -121,43 +120,47 @@ object_weapon_ranged_rifle_som_rifle_mustafar_disruptor = object_weapon_ranged_r
 	defenderSecondaryDefenseModifiers = { "block" },
 
 	-- See http://www.ocdsoft.com/files/speed.xls
-	speedModifiers = { "rifle_speed" },
+	speedModifiers = { "heavy_flame_thrower_speed" },
 
 	-- Leave blank for now
-	damageModifiers = { },
+	damageModifiers = {  },
 
+	skillMods = {
+			{"heavy_flame_thrower_accuracy", 20},
+			{"heavy_flame_thrower_speed", 20}
+				},
 
 	-- The values below are the default values.  To be used for blue frog objects primarily
-	healthAttackCost = 35,
-	actionAttackCost = 30,
-	mindAttackCost = 64,
+	healthAttackCost = 84,
+	actionAttackCost = 20,
+	mindAttackCost = 20,
 	forceCost = 0,
 
+	pointBlankAccuracy = 15,
 	pointBlankRange = 0,
-	pointBlankAccuracy = -90,
 
-	idealRange = 60,
-	idealAccuracy = -25,
+	idealRange = 50,
+	idealAccuracy = -50,
 
 	maxRange = 64,
-	maxRangeAccuracy = -10,
+	maxRangeAccuracy = 0,
 
-	minDamage = 125,
-	maxDamage = 400,
+	minDamage = 480,
+	maxDamage = 830,
 
-	attackSpeed = 7.5,
+	attackSpeed = 6,
 
-	woundsRatio = 22,
+	woundsRatio = 12,
 
-	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 1, 1, 2, 2, 2},
-	experimentalProperties = {"XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "XX", "CD", "OQ", "XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ"},
+	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2},
+	experimentalProperties = {"XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ"},
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "exp_durability", "null", "expRange", "null", "null", "expEffeciency", "expEffeciency", "expEffeciency"},
-	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "roundsused", "hitpoints", "zerorangemod", "midrangemod", "midrange", "maxrangemod", "attackhealthcost", "attackactioncost", "attackmindcost"},
-	experimentalMin = {0, 0, 148, 250, 10.0, 18, 30, 750, -70, -10, 50, 10, 46, 39, 83},
-	experimentalMax = {0, 0, 248, 425, 6.0, 32, 65, 1500, -70, 15, 50, 10, 25, 21, 45},
-	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "exp_durability", "expRange", "null", "expRange", "expEffeciency", "expEffeciency", "expEffeciency"},
+	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "roundsused", "hitpoints", "zerorangemod", "midrange", "midrangemod", "attackhealthcost", "attackactioncost", "attackmindcost"},
+	experimentalMin = {0, 0, 240, 690, 7.2, 8, 30, 750, 10, 50, -65, 84, 20, 20},
+	experimentalMax = {0, 0, 676, 980, 3.9, 16, 65, 1500, 20, 50, -35, 45, 10, 10},
+	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
 
-ObjectTemplates:addTemplate(object_weapon_ranged_rifle_som_rifle_mustafar_disruptor, "object/weapon/ranged/rifle/som_rifle_mustafar_disruptor.iff")
+ObjectTemplates:addTemplate(object_weapon_ranged_rifle_rifle_particle_beam, "object/weapon/ranged/rifle/rifle_particle_beam.iff")

@@ -215,5 +215,14 @@ includeFile("custom_content/weapon/ranged/som_rifle_mustafar_disruptor_generic.l
 
 
 -- Post 14 Heavy
---includeFile("custom_content/weapon/ranged/ep3_loot_corellian.lua")
---includeFile("custom_content/weapon/ranged/ep3_loot_void.lua")
+--Commando Weapons
+includeFile("weapon/ranged/rifle_carbonite_cold_rifle.lua")
+includeFile("weapon/ranged/rifle_som_lava_cannon.lua")
+includeFile("weapon/ranged/rifle_ep3_loot_corellian.lua")
+includeFile("weapon/ranged/rifle_ep3_loot_void.lua")
+includeFile("weapon/ranged/rifle_cr1_blast_cannon.lua")
+includeFile("weapon/ranged/rifle_mandalorian.lua")
+includeFile("weapon/ranged/rifle_particle_beam.lua")
+includeFile("weapon/ranged/rifle_pulse_cannon.lua")
+includeFile("weapon/ranged/rifle_pvp_imperial.lua")
+includeFile("weapon/ranged/rifle_pvp_rebel.lua")
