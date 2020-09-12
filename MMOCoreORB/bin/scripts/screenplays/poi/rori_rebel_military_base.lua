@@ -1,4 +1,4 @@
-RoriRebelMilitaryBaseScreenPlay = ScreenPlay:new {
+--[[ RoriRebelMilitaryBaseScreenPlay = ScreenPlay:new {
         numberOfActs = 1,
 
         screenplayName = "RoriRebelMilitaryBaseScreenPlay",
@@ -147,3 +147,4 @@ function RoriRebelMilitaryBaseScreenPlay:spawnImperials()
 	spawnMobile("rori", "stormtrooper_sniper", 360, -5249.920, 89.554, 4968.660, 137.738, 0)
 	spawnMobile("rori", "stormtrooper_sniper", 360, -5253.200, 89.623, 4966.770, -168.074, 0)
 end
+]]--
