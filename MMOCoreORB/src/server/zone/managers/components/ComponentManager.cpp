@@ -175,6 +175,8 @@
 #include "server/zone/objects/tangible/components/droid/DroidTrapModuleDataComponent.h"
 #include "server/zone/objects/tangible/components/droid/DroidHarvestModuleDataComponent.h"
 #include "server/zone/objects/tangible/components/droid/DroidPersonalityModuleDataComponent.h"
+#include "server/zone/objects/tangible/components/generic/SarlaccTrashCanMenuComponent.h"
+#include "server/zone/objects/tangible/components/generic/VendorTokenMenucomponent.h"
 
 ComponentManager::ComponentManager() {
 	components.put("ContainerComponent", new ContainerComponent());
@@ -225,6 +227,9 @@ ComponentManager::ComponentManager() {
 	components.put("pvpMenuComponent", new pvpMenuComponent());
 	components.put("ContrabandMenuComponent", new ContrabandMenuComponent());
 	components.put("DiamondMenuComponent", new DiamondMenuComponent());
+	components.put("SarlaccTrashCanMenuComponent", new SarlaccTrashCanMenuComponent());	
+	components.put("VendorTokenMenucomponent", new VendorTokenMenucomponent());	
+
 	components.put("Rarelootcrate1MenuComponent", new Rarelootcrate1MenuComponent());
 	components.put("Rarelootcrate2MenuComponent", new Rarelootcrate2MenuComponent());
 	components.put("Rarelootcrate3MenuComponent", new Rarelootcrate3MenuComponent());
