@@ -27,9 +27,7 @@ inquisitor_sancor = Creature:new {
 	optionsBitmask = 128,
 	diet = HERBIVORE,
 
-	templates = {
-		"object/mobile/dressed_dark_jedi_human_male_01.iff",
-		"object/mobile/dressed_dark_jedi_human_female_01.iff"}, -- Change Me
+	templates = {"object/mobile/dressed_dathomir_nightsister_elder.iff"},
   
 	lootGroups = {
 		{
