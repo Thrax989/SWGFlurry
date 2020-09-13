@@ -14,7 +14,6 @@ registerScreenPlay("inquisitor_boss", true)
 function inquisitor_boss:start()
 	if (isZoneEnabled("rori")) then
 		self:spawnMobiles()
-		self:spawnSceneObjects()
 		print("High Inquisitor Jerec Loaded")
 	end
 end
