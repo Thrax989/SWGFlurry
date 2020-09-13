@@ -32,11 +32,7 @@ object_draft_schematic_clothing_clothing_robe_45 = object_draft_schematic_clothi
    additionalTemplates = {
              },
 		
-	skillMods = {	    
-		{"resistance_bleeding", 25},
-	    {"slope_move", 25},
-	    {"melee_defense", 25},
-	    {"ranged_defense", 25}
+	skillMods = {
 	}
 }
 
