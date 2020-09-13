@@ -27,7 +27,7 @@ public:
 		if (!creature->isPlayerCreature())
 			return GENERALERROR;
 
-		if (!weapon->isPistolWeapon || !weapon->isRifleWeapo()) {
+		if (weapon->isCarbineWeapon()) {
 			return INVALIDWEAPON;
 		}
 
