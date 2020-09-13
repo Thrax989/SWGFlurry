@@ -34,7 +34,103 @@ worldboss_8 = Creature:new {
 				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
-		},		
+		},	
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "nightsister_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "axkva_min", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierdiamond", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "worldbosscrate", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
 		{
 			groups = {
 				{group = "boss_rare", chance = 10000000},
@@ -43,88 +139,28 @@ worldboss_8 = Creature:new {
 		},
 		{
 			groups = {
-				{group = "worldbosscrate", chance = 10000000},
-		},
-			lootChance = 10000000
-		},		
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000},
-		},
-			lootChance = 5000000
-		},
-		{
-			groups = {
 				{group = "boss_rare", chance = 10000000},
-		},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "boss_rare", chance = 10000000},
-		},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000}			
-		},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "nightsister_common", chance = 10000000}
-		},
+			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000}
-		},
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
 			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "boss_rare", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-                {
-			groups = {
-				{group = "tierdiamond", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-                {
-			groups = {
-				{group = "tierdiamond", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "axkva_min", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
+		}
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",

@@ -160,5 +160,6 @@ lok_regions = {
 	{"western_mountains", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"western_plains", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"wind_farm", -2883, -236, {CIRCLE, 75}, NOSPAWNAREA + NOBUILDZONEAREA},
+  {"wbsix_boss", 3324, 1727, {CIRCLE, 100}, NOBUILDZONEAREA},
 	{"world_spawner", 0, 0, {CIRCLE, -1}, SPAWNAREA + WORLDSPAWNAREA, {"lok_world", "global_hard"}, 2048}
 }
