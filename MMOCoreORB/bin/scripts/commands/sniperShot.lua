@@ -57,13 +57,15 @@ SniperShotCommand = {
 	animation = "fire_1_special_single_medium_face", 
 
 	combatSpam = "snipershot",
+if (player->hasSkill("combat_spy_master")) then 
 
-if (player->hasSkill("combat_spy_master") then {
 	weaponType = PISTOLWEAPON,
-	} else {
-	weaponType = RIFLEWEAPON, }
+	
+else
+	
+	weaponType = RIFLEWEAPON,
+			
 end
-
 	range = -1
 }
 
