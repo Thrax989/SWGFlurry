@@ -58,7 +58,11 @@ SniperShotCommand = {
 
 	combatSpam = "snipershot",
 
-	weaponType = RIFLEWEAPON,
+if (player->hasSkill("combat_spy_master") then {
+	weaponType = PISTOLWEAPON,
+	} else {
+	weaponType = RIFLEWEAPON, }
+end
 
 	range = -1
 }
