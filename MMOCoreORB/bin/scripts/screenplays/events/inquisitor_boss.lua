@@ -224,7 +224,7 @@ end
 --Respawn High Inquisitor Jerec Boss
 -----------------------
 function inquisitor_boss:KillSpawn()
-		local pBoss = spawnMobile("rori", "high_inquisitor", 10800, -5349, 76, 5042, 170, 8566162))--Spawn High Inquisitor Jerec After Death 3 Hour Timer *Change Location*
+		local pBoss = spawnMobile("rori", "high_inquisitor", 10800, -5349, 76, 5042, 170, 8566162)--Spawn High Inquisitor Jerec After Death 3 Hour Timer *Change Location*
 		print("High Inquisitor Jerec Respawned")
 		createObserver(DAMAGERECEIVED, "inquisitor_boss", "npcDamageObserver", pBoss)
 		createObserver(OBJECTDESTRUCTION, "inquisitor_boss", "bossDead", pBoss)
