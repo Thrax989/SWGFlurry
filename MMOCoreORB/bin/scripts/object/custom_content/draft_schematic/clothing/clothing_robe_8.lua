@@ -36,4 +36,4 @@ object_draft_schematic_clothing_clothing_robe_8 = object_draft_schematic_clothin
 	}
 }
 
-ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_robe_8, "object/draft_schematic/clothing/clothing_robe_.iff")
+ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_robe_8, "object/draft_schematic/clothing/clothing_robe_8.iff")
