@@ -8,23 +8,23 @@ object_draft_schematic_armor_cybernetic_appearance_s05_hand_r = object_draft_sch
    complexity = 45, 
    size = 4, 
 
-   xpType = "crafting_clothing_armor", 
-   xp = 250, 
+	xpType = "crafting_droid_general",
+	xp = 100,
 
-   assemblySkill = "armor_assembly", 
-   experimentingSkill = "armor_experimentation", 
-   customizationSkill = "armor_customization", 
+	assemblySkill = "droid_assembly",
+	experimentingSkill = "droid_experimentation",
+	customizationSkill = "droid_customization",
 
-   customizationOptions = {2},
-   customizationStringNames = {"/private/index_color_1"},
-   customizationDefaults = {0},
+	customizationOptions = {},
+	customizationStringNames = {},
+	customizationDefaults = {},
 
-   ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
-   ingredientTitleNames = {"auxilary_coverage", "body", "liner", "hardware_and_attachments", "binding_and_reinforcement", "padding", "armor", "load_bearing_harness", "reinforcement"},
-   ingredientSlotType = {0, 0, 0, 0, 0, 0, 1, 1, 1},
-   resourceTypes = {"ore_intrusive", "fuel_petrochem_solid_known", "fiberplast_naboo", "aluminum", "copper_beyrllius", "hide_wooly", "object/tangible/component/armor/shared_armor_segment_composite.iff", "object/tangible/component/clothing/shared_synthetic_cloth.iff", "object/tangible/component/clothing/shared_reinforced_fiber_panels.iff"},
-   resourceQuantities = {25, 25, 15, 10, 10, 10, 1, 2, 1},
-   contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
+	ingredientTemplateNames = {"craft_droid_ingredients_n", "craft_droid_ingredients_n", "craft_droid_ingredients_n", "craft_droid_ingredients_n", "craft_droid_ingredients_n", "craft_droid_ingredients_n", "craft_droid_ingredients_n", "craft_droid_ingredients_n", "craft_droid_ingredients_n"},
+	ingredientTitleNames = {"primary_frame", "reinforcement", "droid_brain", "manipulator_arm", "motivator", "sensor_suite", "general_droid_module", "general_droid_module2", "droid_defensive_module"},
+	ingredientSlotType = {0, 1, 1, 1, 1, 1, 3, 3, 3},
+	resourceTypes = {"metal", "object/tangible/loot/misc/shared_artifact_rare_s01.iff", "object/tangible/component/droid/shared_droid_brain_advanced.iff", "object/tangible/component/droid/shared_manipulator_arm_package_set.iff", "object/tangible/component/droid/shared_droid_motive_system_advanced.iff", "object/tangible/component/droid/shared_sensor_package_droid.iff", "object/tangible/component/droid/shared_droid_service_module_base.iff", "object/tangible/component/droid/shared_droid_service_module_base.iff", ...(line truncated)...
+	resourceQuantities = {300, 1, 1, 1, 1, 1, 1, 1, 1},
+	contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
    targetTemplate = "object/tangible/wearables/cybernetic/cybernetic_crafted_hand_r_05.iff",
