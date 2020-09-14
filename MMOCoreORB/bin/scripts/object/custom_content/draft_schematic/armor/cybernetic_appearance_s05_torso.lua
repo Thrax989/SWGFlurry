@@ -34,4 +34,4 @@
 
 }
 
-ObjectTemplates:addTemplate(, "object/draft_schematic/armor/cybernetic_appearance_s05_torso.iff")
+ObjectTemplates:addTemplate(object_draft_schematic_armor_cybernetic_appearance_s05_torso, "object/draft_schematic/armor/cybernetic_appearance_s05_torso.iff")
