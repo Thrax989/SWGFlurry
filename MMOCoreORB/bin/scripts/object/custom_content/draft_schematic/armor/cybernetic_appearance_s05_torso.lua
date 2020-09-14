@@ -1,4 +1,4 @@
- = object_draft_schematic_armor_shared_cybernetic_appearance_s05_torso:new {
+object_draft_schematic_armor_cybernetic_appearance_s05_torso = object_draft_schematic_armor_shared_cybernetic_appearance_s05_torso:new {
 
    templateType = DRAFTSCHEMATIC,
 
