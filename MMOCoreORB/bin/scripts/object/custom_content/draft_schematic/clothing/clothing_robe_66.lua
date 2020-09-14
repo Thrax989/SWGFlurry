@@ -26,6 +26,7 @@ object_draft_schematic_clothing_clothing_robe_66 = object_draft_schematic_clothi
    resourceQuantities = {2000, 1, 1, 1, 1, 1},
    contribution = {100, 100, 100, 100, 100, 100},
 
+
    targetTemplate = "object/tangible/wearables/robe/robe_starforge.iff",
 
    additionalTemplates = {
