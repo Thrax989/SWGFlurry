@@ -1,4 +1,4 @@
-object_draft_schematic_armor_cybernetic_appearance_s05_torso = object_draft_schematic_armor_shared_cybernetic_appearance_s05_torso:new {
+ = object_draft_schematic_armor_shared_cybernetic_appearance_s05_torso:new {
 
    templateType = DRAFTSCHEMATIC,
 
@@ -34,4 +34,4 @@ object_draft_schematic_armor_cybernetic_appearance_s05_torso = object_draft_sche
 
 }
 
-ObjectTemplates:addTemplate(object_draft_schematic_armor_cybernetic_appearance_s05_torso, "object/draft_schematic/armor/cybernetic_appearance_s05_torso.iff")
+ObjectTemplates:addTemplate(, "object/draft_schematic/armor/cybernetic_appearance_s05_torso.iff")
