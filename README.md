@@ -159,10 +159,10 @@ Thank you to the following server that provided custom content / alterations to 
   * Project Carbonite - Food/Filling Counter Display
   * Reckoning - Stat Tracking
   * Renegades - Global Account Lots
-  * Sentinels Republic
+  * Sentinels Republic - Token Splitting/Stacking
   * Stardust - Extra Custom Planets
   * SWG-Europa - Misc Changes
-  * SWG-Rehab 13 NGE Heavy Weapons
+  * SWG-Rehab - 13 NGE Heavy Weapons
   * SWG Restoration 2 - Cutom Weapon Dot System
   * Sunrunner II - Extra Custom Planets
   * Tarkins Revenge - Creature Mounts
