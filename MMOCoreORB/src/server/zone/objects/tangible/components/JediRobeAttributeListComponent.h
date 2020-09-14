@@ -72,12 +72,6 @@ public:
 			int mod = skills->get("combat_equillibrium");
 			alm->insertAttribute("combat_equillibrium", "+" + String::valueOf(mod));
 		}
-
-		String rankRequired = robe->getSkillRequired();
-
-		if (!rankRequired.isEmpty() && rankRequired != "force_title_jedi_rank_02") {
-			alm->insertAttribute("jedi_rank_required", "@skl_n:" + rankRequired);
-		}
 	}
 
 };
