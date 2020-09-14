@@ -152,20 +152,20 @@ Thank you to the following server that provided custom content / alterations to 
 
   * http://www.swgflurry.com/<br>
   * https://github.com/TheAnswer/Core3/graphs/contributors
-  * Aftermath 
-  * Awakening 
-  * Empire in Flames
-  * Infinity
-  * Project Carbonite
-  * Reckoning
-  * Renegades
+  * Aftermath - 13.1 Tef System
+  * Awakening - Repair Disabled Vehicles
+  * Empire in Flames - Multi Vehicles
+  * Infinity - Regrant Skill Command
+  * Project Carbonite - Food/Filling Counter Display
+  * Reckoning - Stat Tracking
+  * Renegades - Global Account Lots
   * Sentinels Republic
-  * Stardust
-  * SWG-Europa
-  * SWG-Rehab
-  * SWG Restoration 2 
-  * Sunrunner II
-  * Tarkins Revenge
+  * Stardust - Extra Custom Planets
+  * SWG-Europa - Misc Changes
+  * SWG-Rehab 13 NGE Heavy Weapons
+  * SWG Restoration 2 - Cutom Weapon Dot System
+  * Sunrunner II - Extra Custom Planets
+  * Tarkins Revenge - Creature Mounts
 
 # SWGEmu Core3 #
 
