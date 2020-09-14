@@ -143,20 +143,20 @@ end
 --------------------------------------------------------------------------------------
 --Mind Assault Attack (Just the lightning attack, but attacking the mind pool instead)
 --------------------------------------------------------------------------------------
-function inquisitor_boss:lightningAttack(playerObject)
+function inquisitor_boss:mindAssault(playerObject)
 if (CreatureObject(playerObject):isGrouped()) then
 	local groupSize = CreatureObject(playerObject):getGroupSize()
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
 		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
-		local lightningAtk = getRandomNumber(2500, 3000)
-			CreatureObject(pMember):inflictDamage(pMember, 0, lightningAtk, 6)
+		local mindAssault = getRandomNumber(2500, 3000)
+			CreatureObject(pMember):inflictDamage(pMember, 0, mindAssault, 6)
       		CreatureObject(pMember):playEffect("clienteffect/frs_dark_suffering.cef", "")
 		end
 	end
 else
-	local lightningAtk = getRandomNumber(2500, 3000)
-		CreatureObject(playerObject):inflictDamage(playerObject, 0, lightningAtk, 6)
+	local mindAssault = getRandomNumber(2500, 3000)
+		CreatureObject(playerObject):inflictDamage(playerObject, 0, mindAssault, 6)
       	CreatureObject(playerObject):playEffect("clienteffect/frs_dark_suffering.cef", "")
 	end
 end
