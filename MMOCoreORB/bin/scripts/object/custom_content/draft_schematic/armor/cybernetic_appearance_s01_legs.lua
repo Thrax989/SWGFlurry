@@ -8,22 +8,22 @@ object_draft_schematic_armor_cybernetic_appearance_s01_legs = object_draft_schem
    complexity = 45, 
    size = 4, 
 
-   xpType = "crafting_clothing_armor", 
-   xp = 550, 
+   xpType = "crafting_droid_general", 
+   xp = 250, 
 
-   assemblySkill = "armor_assembly", 
-   experimentingSkill = "armor_experimentation", 
-   customizationSkill = "armor_customization", 
+   assemblySkill = "droid_assembly",
+   experimentingSkill = "droid_experimentation",
+   customizationSkill = "droid_customization",
 
    customizationOptions = {2},
    customizationStringNames = {"/private/index_color_1"},
    customizationDefaults = {0},
 
-   ingredientTemplateNames = {"craft_droid_ingredients_n", "craft_droid_ingredients_n", "craft_droid_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
-   ingredientTitleNames = {"primary_frame", "body_shell", "frame", "hardware_and_attachments", "binding_and_reinforcement", "padding", "armor", "load_bearing_harness", "reinforcement"},
-   ingredientSlotType = {0, 0, 1, 0, 0, 0, 1, 1, 1},
-   resourceTypes = {"steel", "fiberplast", "object/tangible/component/droid/shared_advanced_droid_frame.iff", "aluminum", "copper_beyrllius", "hide_wooly", "object/tangible/component/armor/shared_armor_segment_composite.iff", "object/tangible/component/clothing/shared_synthetic_cloth.iff", "object/tangible/component/clothing/shared_reinforced_fiber_panels.iff"},
-   resourceQuantities = {100, 100, 1, 60, 50, 40, 4, 1, 1},
+   ingredientTemplateNames = {"craft_droid_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
+   ingredientTitleNames = {"sensor_suite", "body", "liner", "hardware_and_attachments", "binding_and_reinforcement", "padding", "armor", "load_bearing_harness", "reinforcement"},
+   ingredientSlotType = {1, 0, 0, 0, 0, 0, 1, 1, 1},
+   resourceTypes = {"object/tangible/component/droid/shared_sensor_package_droid.iff", "fuel_petrochem_solid_known", "fiberplast_naboo", "aluminum", "copper_beyrllius", "hide_wooly", "object/tangible/component/armor/shared_armor_segment_composite.iff", "object/tangible/component/clothing/shared_synthetic_cloth.iff", "object/tangible/component/clothing/shared_reinforced_fiber_panels.iff"},
+   resourceQuantities = {25, 25, 15, 10, 10, 10, 1, 2, 1},
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
