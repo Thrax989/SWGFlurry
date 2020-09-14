@@ -58,7 +58,7 @@ function inquisitor_boss:npcDamageObserver(bossObject, playerObject, damage)
 	maxAction = boss:getMaxHAM(3)
 	maxMind = boss:getMaxHAM(6)
 	
-	Force = player:getForcePower()
+	--Force = player:getForcePower() * Disabled until further notice.
   -----------------------------------------------------------------------
 --High Inquisitor Jerec Boss 90% health - Drain Force & Lightning Attack
 -------------------------------------------------------------------------
@@ -66,7 +66,7 @@ function inquisitor_boss:npcDamageObserver(bossObject, playerObject, damage)
       			writeData("inquisitor_boss:spawnState",1)
 				--createEvent(0 * 1000, "inquisitor_boss", "cureDiseases", bossObject, "")
 				createEvent(0 * 1000, "inquisitor_boss", "lightningAttack", playerObject, "")
-				createEvent(0 * 1000, "inquisitor_boss", "drain", playerObject, "")
+				--createEvent(0 * 1000, "inquisitor_boss", "drain", playerObject, "") * Disabled until further notice.
       			CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_shocked_01_noshake.cef", "")
       			spatialChat(bossObject, "Do you think you are a match for me? I am a High Inquisitor of the Sith.")
 	end
@@ -88,7 +88,7 @@ function inquisitor_boss:npcDamageObserver(bossObject, playerObject, damage)
       			writeData("inquisitor_boss:spawnState",3)
 				--createEvent(0 * 1000, "inquisitor_boss", "cureDiseases", bossObject, "")
 				createEvent(0 * 1000, "inquisitor_boss", "lightningAttack", playerObject, "")
-				createEvent(0 * 1000, "inquisitor_boss", "drain", playerObject, "")
+				--createEvent(0 * 1000, "inquisitor_boss", "drain", playerObject, "") * Disabled until further notice.
 				CreatureObject(bossObject):playEffect("clienteffect/space_command/shp_shocked_01_noshake.cef", "")
       			spatialChat(bossObject, "You're tough .. but I am Sith")
 	end
@@ -99,7 +99,7 @@ function inquisitor_boss:npcDamageObserver(bossObject, playerObject, damage)
       			writeData("inquisitor_boss:spawnState",4)
 				--createEvent(0 * 1000, "inquisitor_boss", "cureDiseases", bossObject, "")
 				createEvent(0 * 1000, "inquisitor_boss", "mindAssault", playerObject, "")
-				createEvent(0 * 1000, "inquisitor_boss", "drain", playerObject, "")
+				--createEvent(0 * 1000, "inquisitor_boss", "drain", playerObject, "") * Disabled until further notice.
       			CreatureObject(bossObject):playEffect("clienteffect/mus_cym_poison.cef", "")
       			CreatureObject(bossObject):playEffect("clienteffect/frs_dark_suffering.cef", "")
       			spatialChat(bossObject, "Argh! Now it's time to see what you're truly made of. Is your mind ready?")
@@ -162,9 +162,9 @@ else
 end
 
 -----------------------------------------------------
--- Drain Force Test Function * Removed to see if Screenplay loads. *
+-- Drain Force Test Function * Disabled until further notice.
 -----------------------------------------------------
-function inquisitor_boss:drain(playerObject)
+--[[function inquisitor_boss:drain(playerObject)
 if (CreatureObject(playerObject):isGrouped()) then
 	local groupSize = CreatureObject(playerObject):getGroupSize()
 	for i = 0, groupSize - 1, 1 do
@@ -180,7 +180,7 @@ else
 		CreatureObject(playerObject):setForcePower(Force - forceDrain)
       	CreatureObject(playerObject):playEffect("clienteffect/frs_dark_envy.cef", "")
 	end
-end
+end ]]--
 
 -----------------------
 --High Inquisitor Jerec Boss Support
