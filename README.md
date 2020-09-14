@@ -54,9 +54,9 @@ http://www.swgflurry.com/Launcher/SWGFlurry_Launcher_0.0.3.7.exe
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Testing`
 
 ## All Custom Additions
-- ![#008000](https://placehold.it/15/FF0000/000000?text=+) `All standard Pre-CU assets`
-- ![#008000](https://placehold.it/15/FF0000/000000?text=+) `All post 14.1 Weapons`
-- ![#008000](https://placehold.it/15/FF0000/000000?text=+) `CU Armor - Katarn, Rebel Assault/Battle, Imperial Assualt & Scout Troopers`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All standard Pre-CU assets`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `All post 14.1 Weapons`
+- ![#008000](https://placehold.it/15/008000/000000?text=+) `CU Armor - Katarn, Rebel Assault/Battle, Imperial Assualt & Scout Troopers`
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Mustafar Mobs & NPC's`
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyyk Mobs and worldbuilding assets`
 - ![#008000](https://placehold.it/15/008000/000000?text=+) `Many NGE Mobs`
