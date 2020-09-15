@@ -52,6 +52,26 @@ starportLandingTime = 14
 shuttleportLandedTime = 240
 starportLandedTime = 240
 
+bespin = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+	planetTravelPoints = {
+		{name = "Cloud City", x = 0, z = 500, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 27, z = 500, y = 45, parentid = 0},
+	}
+}
 
 corellia = {
 	weatherEnabled = 1,
@@ -135,6 +155,27 @@ chandrila = {
 
 	planetObjects = {
 		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
+dagobah = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+	planetTravelPoints = {
+		{name = "Ship Graveyard", x = 3000, z = 3, y = 3000, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 3024, z = 3, y = 2991, parentid = 0},
 	}
 }
 
@@ -329,6 +370,28 @@ geonosis = {
 	}
 }
 
+ghomrassen = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+
+	planetTravelPoints = {
+			{name = "Ghomrassen City", x = 0, z = 5, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+
+	}
+}
+
 hoth = {
 	weatherEnabled = 1,
 	gcwEnabled = 1,
@@ -379,6 +442,28 @@ jakku = {
 
 	planetObjects = {
 		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
+kessel = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+
+	planetTravelPoints = {
+			{name = "Kessel City", x = 0, z = 90, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+
 	}
 }
 
@@ -433,6 +518,28 @@ korriban = {
 
 	planetObjects = {
 		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = 0, z = 0, y = 0, parentid = 0}
+	}
+}
+
+kuat = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+
+	planetTravelPoints = {
+			{name = "Kuat City", x = 2600, z = 25, y = -3100, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+
 	}
 }
 
@@ -499,6 +606,28 @@ mandalore = {
 	}
 }
 
+moncal = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+
+	planetTravelPoints = {
+			{name = "Mon Calamari City", x = 125, z = 25, y = -100, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+
+	}
+}
+
 mustafar = {
 	weatherEnabled = 1,
 	gcwEnabled = 0,
@@ -518,6 +647,28 @@ mustafar = {
 
 	planetObjects = {
 		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = 0, oz = 0, ow = 0, x = -2532, z = 225, y = 1650, parentid = 0},
+	}
+}
+
+myrkr = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+
+	planetTravelPoints = {
+			{name = "Hyllyard City", x = 1000, z = 90, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+
 	}
 }
 
@@ -579,6 +730,28 @@ naboo = {
 		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.0116238, oz = 0, ow = 0.999932, x = 5193.14, z = -192, y = 6680.25, parentid = 0},
 		{templateFile = "object/tangible/terminal/terminal_gcw_publish_gift.iff", ox = 0, oy = -0.0116238, oz = 0, ow = -0.686427, x = 1445.8, z = 13, y = 2771.98, parentid = 0}
 		
+	}
+}
+
+ordmantell = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+
+	planetTravelPoints = {
+			{name = "Ord Mantell City", x = 0, z = 85, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+
 	}
 }
 
@@ -833,11 +1006,54 @@ tatooine = {
 	}
 }
 
+tralus = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+
+	planetTravelPoints = {
+			{name = "Tralus City", x = 0, z = 4, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+
+	}
+}
+
 tutorial = {
 	weatherEnabled = 0,
 	gcwEnabled = 0,
 }
 
+wayland = {
+	weatherEnabled = 1,
+	gcwEnabled = 0,
+
+	outpostRegionNames = { },
+
+
+	planetTravelPoints = {
+			{name = "Wayland City", x = 0, z = 125, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
+	},
+
+	badgeAreas = {
+	},
+
+	navAreas = {
+	},
+
+	planetObjects = {
+
+	}
+}
 
 yavin4 = {
 	weatherEnabled = 1,
