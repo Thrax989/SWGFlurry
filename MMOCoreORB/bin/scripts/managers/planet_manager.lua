@@ -1006,28 +1006,6 @@ tatooine = {
 	}
 }
 
-tralus = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
-
-	outpostRegionNames = { },
-
-
-	planetTravelPoints = {
-			{name = "Tralus City", x = 0, z = 4, y = 0, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1},
-	},
-
-	badgeAreas = {
-	},
-
-	navAreas = {
-	},
-
-	planetObjects = {
-
-	}
-}
-
 tutorial = {
 	weatherEnabled = 0,
 	gcwEnabled = 0,
