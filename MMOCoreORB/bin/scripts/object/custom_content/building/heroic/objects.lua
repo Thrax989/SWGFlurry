@@ -206,7 +206,7 @@ object_building_heroic_shared_exar_kun_tomb = SharedBuildingObjectTemplate:new {
 }
 ObjectTemplates:addClientTemplate(object_building_heroic_shared_exar_kun_tomb, "object/building/heroic/shared_exar_kun_tomb.iff")
 --**********************************************************************************************************************************
-object_building_heroic_shared_hoth_generator = SharedStaticObjectTemplate:new {
+object_building_heroic_shared_hoth_generator = SharedBuildingObjectTemplate:new :new {
 	clientTemplateFileName = "object/building/heroic/shared_hoth_generator.iff"
 }
 ObjectTemplates:addClientTemplate(object_building_heroic_shared_hoth_generator, "object/building/heroic/shared_hoth_generator.iff")
