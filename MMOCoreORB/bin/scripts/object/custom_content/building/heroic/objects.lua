@@ -72,6 +72,43 @@ object_building_heroic_shared_bespin_tower_c = SharedStaticObjectTemplate:new {
 ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_tower_c, "object/building/heroic/shared_bespin_tower_c.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
 
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_bespin_tower_d = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_bespin_tower_d.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_tower_d, "object/building/heroic/shared_bespin_tower_d.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_bespin_tower_e = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_bespin_tower_e.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_tower_e, "object/building/heroic/shared_bespin_tower_e.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_bespin_tower_f = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_bespin_tower_f.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_tower_f, "object/building/heroic/shared_bespin_tower_f.iff")
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_building_heroic_shared_bespin_tower_g = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/heroic/shared_bespin_tower_g.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_heroic_shared_bespin_tower_g, "object/building/heroic/shared_bespin_tower_g.iff")
+------------------------------------------------------------------------------------------------------------------------------------
 
 object_building_heroic_shared_cloud_city = SharedStaticObjectTemplate:new {
 	clientTemplateFileName = "object/building/heroic/shared_cloud_city.iff"
@@ -169,7 +206,7 @@ object_building_heroic_shared_exar_kun_tomb = SharedBuildingObjectTemplate:new {
 }
 ObjectTemplates:addClientTemplate(object_building_heroic_shared_exar_kun_tomb, "object/building/heroic/shared_exar_kun_tomb.iff")
 --**********************************************************************************************************************************
-object_building_heroic_shared_hoth_generator = SharedBuildingObjectTemplate:new {
+object_building_heroic_shared_hoth_generator = SharedStaticObjectTemplate:new {
 	clientTemplateFileName = "object/building/heroic/shared_hoth_generator.iff"
 }
 ObjectTemplates:addClientTemplate(object_building_heroic_shared_hoth_generator, "object/building/heroic/shared_hoth_generator.iff")
