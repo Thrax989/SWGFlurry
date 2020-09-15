@@ -21,7 +21,7 @@
 #include "server/zone/objects/tangible/terminal/mission/MissionTerminal.h"
 #include "server/zone/objects/tangible/tool/smuggler/PrecisionLaserKnife.h"
 #include "server/zone/objects/tangible/powerup/PowerupObject.h"
-
+#include "server/zone/managers/visibility/VisibilityManager.h"
 #include "server/zone/objects/player/sessions/sui/SlicingSessionSuiCallback.h"
 
 #include "server/zone/ZoneServer.h"
@@ -530,19 +530,29 @@ void SlicingSessionImplementation::handleSlice(SuiListBox* suiBox) {
 	if (tangibleObject->isContainerObject() || tangibleObject->getGameObjectType() == SceneObjectType::PLAYERLOOTCRATE) {
 		handleContainerSlice();
 		playerManager->awardExperience(player, "slicing", 500, true); // Container Slice XP
+		VisibilityManager::instance()->increaseVisibility(player, 500);
+		VisibilityManager::instance()->addToVisibilityList(player);
 	} else if (tangibleObject->isMissionTerminal()) {
 		MissionTerminal* term = cast<MissionTerminal*>( tangibleObject.get());
 		playerManager->awardExperience(player, "slicing", 200, true); // Terminal Slice XP
 		term->addSlicer(player);
 		player->sendSystemMessage("@slicing/slicing:terminal_success");
+		VisibilityManager::instance()->increaseVisibility(player, 200);
+		VisibilityManager::instance()->addToVisibilityList(player);
 	} else if (tangibleObject->isWeaponObject()) {
 		handleWeaponSlice();
 		playerManager->awardExperience(player, "slicing", 500, true); // Weapon Slice XP
+		VisibilityManager::instance()->increaseVisibility(player, 500);
+		VisibilityManager::instance()->addToVisibilityList(player);
 	} else if (tangibleObject->isArmorObject()) {
 		handleArmorSlice();
 		playerManager->awardExperience(player, "slicing", 500, true); // Armor Slice XP
+		VisibilityManager::instance()->increaseVisibility(player, 500);
+		VisibilityManager::instance()->addToVisibilityList(player);
 	} else if ( isBaseSlice()){
 		playerManager->awardExperience(player,"slicing", 2000, true); // Base slicing
+		VisibilityManager::instance()->increaseVisibility(player, 2000);
+		VisibilityManager::instance()->addToVisibilityList(player);
 
 		Zone* zone = player->getZone();
 
