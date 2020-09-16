@@ -1,0 +1,3 @@
+object_tangible_component_weapon_wampa_jaw = object_tangible_component_weapon_shared_wampa_jaw:new {
+}
+ObjectTemplates:addTemplate(object_tangible_component_weapon_wampa_jaw, "object/tangible/component/weapon/wampa_jaw.iff")

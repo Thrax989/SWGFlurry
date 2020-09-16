@@ -1,0 +1,3 @@
+object_tangible_wearables_necklace_ith_necklace_ace_pilot_empire_m = object_tangible_wearables_necklace_shared_ith_necklace_ace_pilot_empire_m:new {
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_necklace_ith_necklace_ace_pilot_empire_m, "object/tangible/wearables/necklace/ith_necklace_ace_pilot_empire_m.iff")

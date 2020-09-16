@@ -1,0 +1,3 @@
+object_tangible_deed_pet_deed_super_battle_droid_deed = object_tangible_deed_pet_deed_shared_super_battle_droid_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_pet_deed_super_battle_droid_deed, "object/tangible/deed/pet_deed/super_battle_droid_deed.iff")

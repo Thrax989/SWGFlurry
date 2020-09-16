@@ -1,0 +1,3 @@
+object_tangible_dance_prop_prop_glowstick_r_s03 = object_tangible_dance_prop_shared_prop_glowstick_r_s03:new {
+}
+ObjectTemplates:addTemplate(object_tangible_dance_prop_prop_glowstick_r_s03, "object/tangible/dance_prop/prop_glowstick_r_s03.iff")

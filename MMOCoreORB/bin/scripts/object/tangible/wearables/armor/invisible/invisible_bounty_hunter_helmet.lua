@@ -1,0 +1,3 @@
+object_tangible_wearables_armor_invisible_invisible_bounty_hunter_helmet = object_tangible_wearables_armor_invisible_shared_invisible_bounty_hunter_helmet:new {
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_invisible_invisible_bounty_hunter_helmet, "object/tangible/wearables/armor/invisible/invisible_bounty_hunter_helmet.iff")

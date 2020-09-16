@@ -1,0 +1,3 @@
+object_tangible_deed_pet_deed_kashyyyk_bantha_deed = object_tangible_deed_pet_deed_shared_kashyyyk_bantha_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_pet_deed_kashyyyk_bantha_deed, "object/tangible/deed/pet_deed/kashyyyk_bantha_deed.iff")

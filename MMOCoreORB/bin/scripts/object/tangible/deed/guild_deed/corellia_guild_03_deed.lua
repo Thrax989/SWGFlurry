@@ -1,0 +1,3 @@
+object_tangible_deed_guild_deed_corellia_guild_03_deed = object_tangible_deed_guild_deed_shared_corellia_guild_03_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_guild_deed_corellia_guild_03_deed, "object/tangible/deed/guild_deed/corellia_guild_03_deed.iff")

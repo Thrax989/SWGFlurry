@@ -1,0 +1,3 @@
+object_tangible_component_armor_armor_segment_infiltrator = object_tangible_component_armor_shared_armor_segment_infiltrator:new {
+}
+ObjectTemplates:addTemplate(object_tangible_component_armor_armor_segment_infiltrator, "object/tangible/component/armor/armor_segment_infiltrator.iff")

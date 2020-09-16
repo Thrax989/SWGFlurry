@@ -1,0 +1,3 @@
+object_tangible_wearables_necklace_necklace_agent_of_order_wke_f = object_tangible_wearables_necklace_shared_necklace_agent_of_order_wke_f:new {
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_necklace_necklace_agent_of_order_wke_f, "object/tangible/wearables/necklace/necklace_agent_of_order_wke_f.iff")

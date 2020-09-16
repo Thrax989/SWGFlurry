@@ -1,0 +1,3 @@
+object_tangible_deed_pet_deed_ins_444_deed = object_tangible_deed_pet_deed_shared_ins_444_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_pet_deed_ins_444_deed, "object/tangible/deed/pet_deed/ins_444_deed.iff")

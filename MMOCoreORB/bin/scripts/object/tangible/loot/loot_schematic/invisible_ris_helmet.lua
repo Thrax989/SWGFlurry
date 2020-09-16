@@ -1,0 +1,3 @@
+object_tangible_loot_loot_schematic_invisible_ris_helmet = object_tangible_loot_loot_schematic_shared_invisible_ris_helmet:new {
+}
+ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_invisible_ris_helmet, "object/tangible/loot/loot_schematic/invisible_ris_helmet.iff")

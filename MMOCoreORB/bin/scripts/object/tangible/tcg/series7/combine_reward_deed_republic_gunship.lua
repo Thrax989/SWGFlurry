@@ -1,0 +1,3 @@
+object_tangible_tcg_series7_combine_reward_deed_republic_gunship = object_tangible_tcg_series7_shared_combine_reward_deed_republic_gunship:new {
+}
+ObjectTemplates:addTemplate(object_tangible_tcg_series7_combine_reward_deed_republic_gunship, "object/tangible/tcg/series7/combine_reward_deed_republic_gunship.iff")

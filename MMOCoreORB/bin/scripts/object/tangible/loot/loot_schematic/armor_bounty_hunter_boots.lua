@@ -1,0 +1,3 @@
+object_tangible_loot_loot_schematic_armor_bounty_hunter_boots = object_tangible_loot_loot_schematic_shared_armor_bounty_hunter_boots:new {
+}
+ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_armor_bounty_hunter_boots, "object/tangible/loot/loot_schematic/armor_bounty_hunter_boots.iff")

@@ -1,0 +1,3 @@
+object_tangible_component_vehicle_veh_power_plant_lava_skiff = object_tangible_component_vehicle_shared_veh_power_plant_lava_skiff:new {
+}
+ObjectTemplates:addTemplate(object_tangible_component_vehicle_veh_power_plant_lava_skiff, "object/tangible/component/vehicle/veh_power_plant_lava_skiff.iff")

@@ -1,0 +1,3 @@
+object_tangible_deed_guild_deed_naboo_guild_02_deed = object_tangible_deed_guild_deed_shared_naboo_guild_02_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_guild_deed_naboo_guild_02_deed, "object/tangible/deed/guild_deed/naboo_guild_02_deed.iff")

@@ -1,0 +1,3 @@
+object_tangible_deed_pet_deed_reptilian_flier_deed = object_tangible_deed_pet_deed_shared_reptilian_flier_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_pet_deed_reptilian_flier_deed, "object/tangible/deed/pet_deed/reptilian_flier_deed.iff")

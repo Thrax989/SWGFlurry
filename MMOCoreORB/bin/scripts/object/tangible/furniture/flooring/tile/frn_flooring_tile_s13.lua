@@ -1,0 +1,3 @@
+object_tangible_furniture_flooring_tile_frn_flooring_tile_s13 = object_tangible_furniture_flooring_tile_shared_frn_flooring_tile_s13:new {
+}
+ObjectTemplates:addTemplate(object_tangible_furniture_flooring_tile_frn_flooring_tile_s13, "object/tangible/furniture/flooring/tile/frn_flooring_tile_s13.iff")

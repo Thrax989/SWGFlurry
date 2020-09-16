@@ -1,0 +1,3 @@
+object_tangible_wearables_necklace_necklace_wookiee_freedom_wke_ = object_tangible_wearables_necklace_shared_necklace_wookiee_freedom_wke_:new {
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_necklace_necklace_wookiee_freedom_wke_, "object/tangible/wearables/necklace/necklace_wookiee_freedom_wke_.iff")

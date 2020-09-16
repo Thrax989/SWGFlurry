@@ -1,0 +1,3 @@
+object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_shared_terminal_gcw_publish_gift:new {
+}
+ObjectTemplates:addTemplate(object_tangible_terminal_terminal_gcw_publish_gift, "object/tangible/terminal/terminal_gcw_publish_gift.iff")

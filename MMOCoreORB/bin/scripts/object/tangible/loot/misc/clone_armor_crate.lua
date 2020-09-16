@@ -1,0 +1,3 @@
+object_tangible_loot_misc_clone_armor_crate = object_tangible_loot_misc_shared_clone_armor_crate:new {
+}
+ObjectTemplates:addTemplate(object_tangible_loot_misc_clone_armor_crate, "object/tangible/loot/misc/clone_armor_crate.iff")
