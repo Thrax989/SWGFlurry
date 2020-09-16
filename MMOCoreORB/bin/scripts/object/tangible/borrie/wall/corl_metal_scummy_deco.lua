@@ -1,0 +1,3 @@
+object_tangible_borrie_wall_corl_metal_scummy_deco = object_tangible_borrie_wall_shared_corl_metal_scummy_deco:new {
+}
+ObjectTemplates:addTemplate(object_tangible_borrie_wall_corl_metal_scummy_deco, "object/tangible/borrie/wall/corl_metal_scummy_deco.iff")

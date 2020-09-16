@@ -1,0 +1,3 @@
+object_tangible_borrie_wall_ply_nboo_marblewalltrim = object_tangible_borrie_wall_shared_ply_nboo_marblewalltrim:new {
+}
+ObjectTemplates:addTemplate(object_tangible_borrie_wall_ply_nboo_marblewalltrim, "object/tangible/borrie/wall/ply_nboo_marblewalltrim.iff")
