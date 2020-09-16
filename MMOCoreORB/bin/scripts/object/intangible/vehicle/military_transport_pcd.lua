@@ -1,0 +1,3 @@
+object_intangible_vehicle_military_transport_pcd = object_intangible_vehicle_shared_military_transport_pcd:new {
+}
+ObjectTemplates:addTemplate(object_intangible_vehicle_military_transport_pcd, "object/intangible/vehicle/military_transport_pcd.iff")

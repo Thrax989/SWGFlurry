@@ -1,0 +1,3 @@
+object_intangible_vehicle_speeder_stap_pcd = object_intangible_vehicle_shared_speeder_stap_pcd:new {
+}
+ObjectTemplates:addTemplate(object_intangible_vehicle_speeder_stap_pcd, "object/intangible/vehicle/speeder_stap_pcd.iff")
