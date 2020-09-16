@@ -1,0 +1,3 @@
+object_building_player_bespin_space_house = object_building_player_shared_bespin_space_house:new {
+}
+ObjectTemplates:addTemplate(object_building_player_bespin_space_house, "object/building/player/bespin_space_house.iff")

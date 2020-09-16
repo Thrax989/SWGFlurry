@@ -1,0 +1,3 @@
+object_building_player_player_guildhall_corellia_style_03 = object_building_player_shared_player_guildhall_corellia_style_03:new {
+}
+ObjectTemplates:addTemplate(object_building_player_player_guildhall_corellia_style_03, "object/building/player/player_guildhall_corellia_style_03.iff")

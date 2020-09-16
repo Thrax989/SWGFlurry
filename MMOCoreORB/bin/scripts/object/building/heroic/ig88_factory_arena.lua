@@ -1,0 +1,3 @@
+object_building_heroic_ig88_factory_arena = object_building_heroic_shared_ig88_factory_arena:new {
+}
+ObjectTemplates:addTemplate(object_building_heroic_ig88_factory_arena, "object/building/heroic/ig88_factory_arena.iff")

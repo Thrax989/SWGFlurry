@@ -1,0 +1,3 @@
+object_building_poi_player_camp_mustafar = object_building_poi_shared_player_camp_mustafar:new {
+}
+ObjectTemplates:addTemplate(object_building_poi_player_camp_mustafar, "object/building/poi/player_camp_mustafar.iff")

@@ -1,0 +1,3 @@
+object_building_player_sandcrawler_house = object_building_player_shared_sandcrawler_house:new {
+}
+ObjectTemplates:addTemplate(object_building_player_sandcrawler_house, "object/building/player/sandcrawler_house.iff")

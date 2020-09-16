@@ -1,0 +1,3 @@
+object_building_general_mobile_rebel_starport = object_building_general_shared_mobile_rebel_starport:new {
+}
+ObjectTemplates:addTemplate(object_building_general_mobile_rebel_starport, "object/building/general/mobile_rebel_starport.iff")

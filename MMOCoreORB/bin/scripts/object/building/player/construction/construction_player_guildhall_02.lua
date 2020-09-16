@@ -1,0 +1,3 @@
+object_building_player_construction_construction_player_guildhall_02 = object_building_player_construction_shared_construction_player_guildhall_02:new {
+}
+ObjectTemplates:addTemplate(object_building_player_construction_construction_player_guildhall_02, "object/building/player/construction/construction_player_guildhall_02.iff")

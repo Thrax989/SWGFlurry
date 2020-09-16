@@ -1,0 +1,3 @@
+object_building_player_relaxation_house = object_building_player_shared_relaxation_house:new {
+}
+ObjectTemplates:addTemplate(object_building_player_relaxation_house, "object/building/player/relaxation_house.iff")
