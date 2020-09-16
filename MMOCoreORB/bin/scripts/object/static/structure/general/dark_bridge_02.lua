@@ -1,0 +1,3 @@
+object_static_structure_general_dark_bridge_02 = object_static_structure_general_shared_dark_bridge_02:new {
+}
+ObjectTemplates:addTemplate(object_static_structure_general_dark_bridge_02, "object/static/structure/general/dark_bridge_02.iff")

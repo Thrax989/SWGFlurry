@@ -1,0 +1,3 @@
+object_static_structure_general_monc_tube = object_static_structure_general_shared_monc_tube:new {
+}
+ObjectTemplates:addTemplate(object_static_structure_general_monc_tube, "object/static/structure/general/monc_tube.iff")
