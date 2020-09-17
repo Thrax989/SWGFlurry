@@ -7684,3 +7684,104 @@ object_intangible_pet_shared_zucca_boar_hue = SharedIntangibleObjectTemplate:new
 }
 
 ObjectTemplates:addClientTemplate(object_intangible_pet_shared_zucca_boar_hue, "object/intangible/pet/shared_zucca_boar_hue.iff")
+
+object_intangible_pet_shared_mouf = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_mouf.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_mouf, "object/intangible/pet/shared_mouf.iff")
+
+object_intangible_pet_shared_kashyyyk_bantha = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_kashyyyk_bantha.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_kashyyyk_bantha, "object/intangible/pet/shared_kashyyyk_bantha.iff")
+
+object_intangible_pet_shared_katarn = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_katarn.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_katarn, "object/intangible/pet/shared_katarn.iff")
+
+object_intangible_pet_shared_krayt_dragon = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_krayt_dragon.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_krayt_dragon, "object/intangible/pet/shared_krayt_dragon.iff")
+
+object_intangible_pet_shared_uller = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_uller.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_uller, "object/intangible/pet/shared_uller.iff")
+
+object_intangible_pet_shared_lava_flea = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_lava_flea.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_lava_flea, "object/intangible/pet/shared_lava_flea.iff")
+
+object_intangible_pet_shared_nerf_hue = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_nerf_hue.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_nerf_hue, "object/intangible/pet/shared_nerf_hue.iff")
+
+object_intangible_pet_shared_sherkar = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_sherkar.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_sherkar, "object/intangible/pet/shared_sherkar.iff")
+
+object_intangible_pet_shared_minstyngar = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_minstyngar.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_minstyngar, "object/intangible/pet/shared_minstyngar.iff")
+
+object_intangible_pet_shared_bolotaur = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_bolotaur.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_bolotaur, "object/intangible/pet/shared_bolotaur.iff")
+
+object_intangible_pet_shared_varactyl = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_varactyl.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_varactyl, "object/intangible/pet/shared_varactyl.iff")
+
+object_intangible_pet_shared_zucca_boar_hue = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_zucca_boar_hue.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_zucca_boar_hue, "object/intangible/pet/shared_zucca_boar_hue.iff")
+
+object_intangible_pet_shared_urnsoris = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_urnsoris.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_urnsoris, "object/intangible/pet/shared_urnsoris.iff")
+
+object_intangible_pet_shared_hoth_hog = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_hoth_hog.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_hoth_hog, "object/intangible/pet/shared_hoth_hog.iff")
+
+object_intangible_pet_shared_walluga = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_walluga.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_walluga, "object/intangible/pet/shared_walluga.iff")
+
+object_intangible_pet_shared_reptilian_flier_hue = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_reptilian_flier_hue.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_reptilian_flier_hue, "object/intangible/pet/shared_reptilian_flier_hue.iff")
+
+object_intangible_pet_shared_webweaver = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_webweaver.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_webweaver, "object/intangible/pet/shared_webweaver.iff")
+
+object_intangible_pet_shared_massiff = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_massiff.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_massiff, "object/intangible/pet/shared_massiff.iff")
+
+object_intangible_pet_shared_tauntaun_hue = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_tauntaun_hue.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_tauntaun_hue, "object/intangible/pet/shared_tauntaun_hue.iff")
+
+object_intangible_pet_shared_horned_platile = SharedIntangibleObjectTemplate:new {
+    clientTemplateFileName = "object/intangible/pet/shared_horned_platile.iff"
+}
+ObjectTemplates:addClientTemplate(object_intangible_pet_shared_horned_platile, "object/intangible/pet/shared_horned_platile.iff")
+
