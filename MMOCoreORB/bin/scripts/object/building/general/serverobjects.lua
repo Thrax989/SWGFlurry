@@ -1,50 +1,3 @@
---Copyright (C) 2010 <SWGEmu>
-
-
---This File is part of Core3.
-
---This program is free software; you can redistribute 
---it and/or modify it under the terms of the GNU Lesser 
---General Public License as published by the Free Software
---Foundation; either version 2 of the License, 
---or (at your option) any later version.
-
---This program is distributed in the hope that it will be useful, 
---but WITHOUT ANY WARRANTY; without even the implied warranty of 
---MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
---See the GNU Lesser General Public License for
---more details.
-
---You should have received a copy of the GNU Lesser General 
---Public License along with this program; if not, write to
---the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
-
---Linking Engine3 statically or dynamically with other modules 
---is making a combined work based on Engine3. 
---Thus, the terms and conditions of the GNU Lesser General Public License 
---cover the whole combination.
-
---In addition, as a special exception, the copyright holders of Engine3 
---give you permission to combine Engine3 program with free software 
---programs or libraries that are released under the GNU LGPL and with 
---code included in the standard release of Core3 under the GNU LGPL 
---license (or modified versions of such code, with unchanged license). 
---You may copy and distribute such a system following the terms of the 
---GNU LGPL for Engine3 and the licenses of the other code concerned, 
---provided that you include the source code of that other code when 
---and as the GNU LGPL requires distribution of source code.
-
---Note that people who make modified versions of Engine3 are not obligated 
---to grant this special exception for their modified versions; 
---it is their choice whether to do so. The GNU Lesser General Public License 
---gives permission to release a modified version without this exception; 
---this exception also makes it possible to release a modified version 
-
-
-
---Children folder includes
-
--- Server Objects
 includeFile("building/general/aircar_general.lua")
 includeFile("building/general/arena_general.lua")
 includeFile("building/general/arena_large_general.lua")
@@ -64,7 +17,122 @@ includeFile("building/general/bunker_imperial_prison_01.lua")
 includeFile("building/general/bunker_imperial_weapons_research_facility_01.lua")
 includeFile("building/general/bunker_mad_bio.lua")
 includeFile("building/general/bunker_rebel_01.lua")
+includeFile("building/general/coru_skyscraper_26.lua")
+includeFile("building/general/valley_root_03.lua")
+includeFile("building/general/ord_filler_j.lua")
 includeFile("building/general/bunker_rebel_deep_chasm.lua")
+includeFile("building/general/monc_skyscraper_05.lua")
+includeFile("building/general/starport_ord.lua")
+includeFile("building/general/coru_skyscraper_06.lua")
+includeFile("building/general/lair_cave_small.lua")
+includeFile("building/general/ord_hospital.lua")
+includeFile("building/general/temple.lua")
+includeFile("building/general/ord_filler_g.lua")
+includeFile("building/general/senate.lua")
+includeFile("building/general/coru_skyscraper_16.lua")
+includeFile("building/general/coru_monuments.lua")
+includeFile("building/general/srii_skyscraper_03.lua")
+includeFile("building/general/clone_cave.lua")
+includeFile("building/general/bunker_imperial_kashyyyk_01.lua")
+includeFile("building/general/monc_skyscraper_08.lua")
+includeFile("building/general/ord_guild_commerce.lua")
+includeFile("building/general/invis_wall_1500.lua")
+includeFile("building/general/ord_filler_m.lua")
+includeFile("building/general/coru_skyscraper_21.lua")
+includeFile("building/general/valley_root_04.lua")
+includeFile("building/general/dark_wall_16.lua")
+includeFile("building/general/monc_skyscraper_02.lua")
+includeFile("building/general/coru_skyscraper_01.lua")
+includeFile("building/general/srii_skyscraper_04.lua")
+includeFile("building/general/valley_canopy_01.lua")
+includeFile("building/general/coru_skyscraper_11.lua")
+includeFile("building/general/coru_hangar.lua")
+includeFile("building/general/coru_skyscraper_31.lua")
+includeFile("building/general/ord_filler_h.lua")
+includeFile("building/general/dark_stair.lua")
+includeFile("building/general/coru_skyscraper_19.lua")
+includeFile("building/general/coru_skyscraper_24.lua")
+includeFile("building/general/valley_root_01.lua")
+includeFile("building/general/coru_senate_office_starport_01.lua")
+includeFile("building/general/monc_skyscraper_07.lua")
+includeFile("building/general/ord_cantina.lua")
+includeFile("building/general/menagerie_dome.lua")
+includeFile("building/general/coru_skyscraper_04.lua")
+includeFile("building/general/mobile_starport.lua")
+includeFile("building/general/coru_skyscraper_09.lua")
+includeFile("building/general/coru_corner_02.lua")
+includeFile("building/general/mobile_rebel_starport.lua")
+includeFile("building/general/ord_filler_e.lua")
+includeFile("building/general/srii_skyscraper_01.lua")
+includeFile("building/general/coru_block_02.lua")
+includeFile("building/general/coru_skyscraper_14.lua")
+includeFile("building/general/coru_skyscraper_29.lua")
+includeFile("building/general/mobile_smuggler_starport.lua")
+includeFile("building/general/coru_skyscraper_23.lua")
+includeFile("building/general/coru_skyscraper_03.lua")
+includeFile("building/general/shiparm.lua")
+includeFile("building/general/invis_wall_1000.lua")
+includeFile("building/general/ord_filler_b.lua")
+includeFile("building/general/srii_skyscraper_06.lua")
+includeFile("building/general/coru_skyscraper_13.lua")
+includeFile("building/general/coru_skyscraper_07.lua")
+includeFile("building/general/coru_senate_office_starport_02.lua")
+includeFile("building/general/monc_skyscraper_04.lua")
+includeFile("building/general/coru_skyscraper_27.lua")
+includeFile("building/general/valley_root_02.lua")
+includeFile("building/general/coru_landing.lua")
+includeFile("building/general/ord_filler_k.lua")
+includeFile("building/general/ord_filler_f.lua")
+includeFile("building/general/coru_block_01.lua")
+includeFile("building/general/srii_skyscraper_02.lua")
+includeFile("building/general/coru_skyscraper_17.lua")
+includeFile("building/general/coru_corner_01.lua")
+includeFile("building/general/space_dungeon_star_destroyer.lua")
+includeFile("building/general/ord_filler_a.lua")
+includeFile("building/general/yt1300.lua")
+includeFile("building/general/srii_skyscraper_05.lua")
+includeFile("building/general/coru_skyscraper_10.lua")
+includeFile("building/general/ord_garage.lua")
+includeFile("building/general/mobile_imperial_starport.lua")
+includeFile("building/general/dark_slab.lua")
+includeFile("building/general/coru_skyscraper_30.lua")
+includeFile("building/general/coru_skyscraper_20.lua")
+includeFile("building/general/srii_skyscraper_08.lua")
+includeFile("building/general/valley_root_05.lua")
+includeFile("building/general/ord_filler_l.lua")
+includeFile("building/general/ep3_trando_slave_camp_bunker.lua")
+includeFile("building/general/monc_skyscraper_03.lua")
+includeFile("building/general/cave_morag.lua")
+includeFile("building/general/dark_wall_32.lua")
+includeFile("building/general/ord_filler_i.lua")
+includeFile("building/general/centerpoint_interior.lua")
+includeFile("building/general/coru_skyscraper_18.lua")
+includeFile("building/general/coru_skyscraper_25.lua")
+includeFile("building/general/monc_skyscraper_06.lua")
+includeFile("building/general/star_destroyer_construction.lua")
+includeFile("building/general/ord_hotel.lua")
+includeFile("building/general/coru_skyscraper_05.lua")
+includeFile("building/general/coru_skyscraper_15.lua")
+includeFile("building/general/coru_skyscraper_28.lua")
+includeFile("building/general/coru_block_03.lua")
+includeFile("building/general/ord_filler_d.lua")
+includeFile("building/general/sorosub.lua")
+includeFile("building/general/coru_skyscraper_08.lua")
+includeFile("building/general/coru_corner_03.lua")
+includeFile("building/general/dungeon_avatar_platform.lua")
+includeFile("building/general/ord_cloner.lua")
+includeFile("building/general/ord_filler_c.lua")
+includeFile("building/general/srii_skyscraper_07.lua")
+includeFile("building/general/coru_block_04.lua")
+includeFile("building/general/coru_skyscraper_12.lua")
+includeFile("building/general/coru_corner_04.lua")
+includeFile("building/general/coru_senate_office_starport.lua")
+includeFile("building/general/space_dungeon_hutt_asteroid.lua")
+includeFile("building/general/monc_skyscraper_01.lua")
+includeFile("building/general/ord_guild_combat.lua")
+includeFile("building/general/coru_skyscraper_02.lua")
+includeFile("building/general/valley_tangle.lua")
+includeFile("building/general/coru_skyscraper_22.lua")
 includeFile("building/general/bunker_rebel_spynet.lua")
 includeFile("building/general/bunker_rebel_weapons_depot.lua")
 includeFile("building/general/bunker_research_facility_01.lua")
