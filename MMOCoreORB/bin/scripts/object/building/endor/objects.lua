@@ -1101,6 +1101,11 @@ object_building_endor_shared_endr_lake_rail8m = SharedStaticObjectTemplate:new {
 	clientObjectCRC = 4189742469,
 	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/static/base/shared_static_base.iff", "object/static/structure/base/shared_static_structure_base.iff"}
 ]]
-}
 
 ObjectTemplates:addClientTemplate(object_building_endor_shared_endr_lake_rail8m, "object/building/endor/shared_endr_lake_rail8m.iff")
+
+object_building_endor_shared_endor_tiki_torch_no_light = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/building/endor/shared_endor_tiki_torch_no_light.iff"
+}
+ObjectTemplates:addClientTemplate(object_building_endor_shared_endor_tiki_torch_no_light, "object/building/endor/shared_endor_tiki_torch_no_light.iff")
+

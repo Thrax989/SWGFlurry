@@ -1,39 +1,39 @@
-object_static_worldbuilding_furniture_shared_frn_vet_couch_section_lg = :new {
+object_static_worldbuilding_furniture_shared_frn_vet_couch_section_lg = SharedStaticObjectTemplate:new {
     clientTemplateFileName = "object/static/worldbuilding/furniture/shared_frn_vet_couch_section_lg.iff"
 }
 ObjectTemplates:addClientTemplate(object_static_worldbuilding_furniture_shared_frn_vet_couch_section_lg, "object/static/worldbuilding/furniture/shared_frn_vet_couch_section_lg.iff")
 
-object_static_worldbuilding_furniture_shared_frn_all_painting_schematic_comlink = :new {
+object_static_worldbuilding_furniture_shared_frn_all_painting_schematic_comlink = SharedStaticObjectTemplate:new {
     clientTemplateFileName = "object/static/worldbuilding/furniture/shared_frn_all_painting_schematic_comlink.iff"
 }
 ObjectTemplates:addClientTemplate(object_static_worldbuilding_furniture_shared_frn_all_painting_schematic_comlink, "object/static/worldbuilding/furniture/shared_frn_all_painting_schematic_comlink.iff")
 
-object_static_worldbuilding_furniture_shared_frn_all_painting_schematic_star_destroyer = :new {
+object_static_worldbuilding_furniture_shared_frn_all_painting_schematic_star_destroyer = SharedStaticObjectTemplate:new {
     clientTemplateFileName = "object/static/worldbuilding/furniture/shared_frn_all_painting_schematic_star_destroyer.iff"
 }
 ObjectTemplates:addClientTemplate(object_static_worldbuilding_furniture_shared_frn_all_painting_schematic_star_destroyer, "object/static/worldbuilding/furniture/shared_frn_all_painting_schematic_star_destroyer.iff")
 
-object_static_worldbuilding_furniture_shared_starship_pilot_chair = :new {
+object_static_worldbuilding_furniture_shared_starship_pilot_chair = SharedStaticObjectTemplate:new {
     clientTemplateFileName = "object/static/worldbuilding/furniture/shared_starship_pilot_chair.iff"
 }
 ObjectTemplates:addClientTemplate(object_static_worldbuilding_furniture_shared_starship_pilot_chair, "object/static/worldbuilding/furniture/shared_starship_pilot_chair.iff")
 
-object_static_worldbuilding_furniture_shared_frn_all_painting_schematic_datapad = :new {
+object_static_worldbuilding_furniture_shared_frn_all_painting_schematic_datapad = SharedStaticObjectTemplate:new {
     clientTemplateFileName = "object/static/worldbuilding/furniture/shared_frn_all_painting_schematic_datapad.iff"
 }
 ObjectTemplates:addClientTemplate(object_static_worldbuilding_furniture_shared_frn_all_painting_schematic_datapad, "object/static/worldbuilding/furniture/shared_frn_all_painting_schematic_datapad.iff")
 
-object_static_worldbuilding_furniture_shared_cantina_table_3 = :new {
+object_static_worldbuilding_furniture_shared_cantina_table_3 = SharedStaticObjectTemplate:new {
     clientTemplateFileName = "object/static/worldbuilding/furniture/shared_cantina_table_3.iff"
 }
 ObjectTemplates:addClientTemplate(object_static_worldbuilding_furniture_shared_cantina_table_3, "object/static/worldbuilding/furniture/shared_cantina_table_3.iff")
 
-object_static_worldbuilding_furniture_shared_col_dejarik_table_board_s02 = :new {
+object_static_worldbuilding_furniture_shared_col_dejarik_table_board_s02 = SharedStaticObjectTemplate:new {
     clientTemplateFileName = "object/static/worldbuilding/furniture/shared_col_dejarik_table_board_s02.iff"
 }
 ObjectTemplates:addClientTemplate(object_static_worldbuilding_furniture_shared_col_dejarik_table_board_s02, "object/static/worldbuilding/furniture/shared_col_dejarik_table_board_s02.iff")
 
-object_static_worldbuilding_furniture_shared_frn_vet_couch_section_sm = :new {
+object_static_worldbuilding_furniture_shared_frn_vet_couch_section_sm = SharedStaticObjectTemplate:new {
     clientTemplateFileName = "object/static/worldbuilding/furniture/shared_frn_vet_couch_section_sm.iff"
 }
 ObjectTemplates:addClientTemplate(object_static_worldbuilding_furniture_shared_frn_vet_couch_section_sm, "object/static/worldbuilding/furniture/shared_frn_vet_couch_section_sm.iff")
