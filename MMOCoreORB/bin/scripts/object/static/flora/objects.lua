@@ -1902,3 +1902,19 @@ object_static_flora_shared_potted_plant_leaves_small = SharedStaticObjectTemplat
 }
 
 ObjectTemplates:addClientTemplate(object_static_flora_shared_potted_plant_leaves_small, "object/static/flora/shared_potted_plant_leaves_small.iff")
+
+object_static_flora_shared_flora_bush_yavin_blueleaf = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/flora/shared_flora_bush_yavin_blueleaf.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_flora_shared_flora_bush_yavin_blueleaf, "object/static/flora/shared_flora_bush_yavin_blueleaf.iff")
+
+object_static_flora_shared_flora_tree_lok_mkpud = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/flora/shared_flora_tree_lok_mkpud.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_flora_shared_flora_tree_lok_mkpud, "object/static/flora/shared_flora_tree_lok_mkpud.iff")
+
+object_static_flora_shared_flora_flower_all_bauhin = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/flora/shared_flora_flower_all_bauhin.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_flora_shared_flora_flower_all_bauhin, "object/static/flora/shared_flora_flower_all_bauhin.iff")
+

@@ -17680,3 +17680,45 @@ object_static_structure_general_shared_xwing = SharedStaticObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_static_structure_general_shared_xwing, "object/static/structure/general/shared_xwing.iff")
+
+
+object_static_structure_general_shared_old_safe = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/structure/general/shared_old_safe.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_structure_general_shared_old_safe, "object/static/structure/general/shared_old_safe.iff")
+
+object_static_structure_general_shared_monc_tube_02 = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/structure/general/shared_monc_tube_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_structure_general_shared_monc_tube_02, "object/static/structure/general/shared_monc_tube_02.iff")
+
+object_static_structure_general_shared_dark_bridge_02 = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/structure/general/shared_dark_bridge_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_structure_general_shared_dark_bridge_02, "object/static/structure/general/shared_dark_bridge_02.iff")
+
+object_static_structure_general_shared_dark_bridge_01 = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/structure/general/shared_dark_bridge_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_structure_general_shared_dark_bridge_01, "object/static/structure/general/shared_dark_bridge_01.iff")
+
+object_static_structure_general_shared_decontamination_chamber = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/structure/general/shared_decontamination_chamber.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_structure_general_shared_decontamination_chamber, "object/static/structure/general/shared_decontamination_chamber.iff")
+
+object_static_structure_general_shared_skyway = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/structure/general/shared_skyway.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_structure_general_shared_skyway, "object/static/structure/general/shared_skyway.iff")
+
+object_static_structure_general_shared_dark_bridge_03 = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/structure/general/shared_dark_bridge_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_structure_general_shared_dark_bridge_03, "object/static/structure/general/shared_dark_bridge_03.iff")
+
+object_static_structure_general_shared_monc_tube = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/structure/general/shared_monc_tube.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_structure_general_shared_monc_tube, "object/static/structure/general/shared_monc_tube.iff")
+
