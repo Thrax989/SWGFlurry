@@ -1,6 +1,7 @@
 object_tangible_dance_prop_shared_prop_base = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/dance_prop/shared_prop_base.iff"
 }
+ObjectTemplates:addClientTemplate(object_tangible_dance_prop_shared_prop_base, "object/tangible/dance_prop/shared_prop_base.iff")
 
 object_tangible_dance_prop_shared_prop_glowstick_r_s04 = SharedTangibleObjectTemplate:new {
     clientTemplateFileName = "object/tangible/dance_prop/shared_prop_glowstick_r_s04.iff"
@@ -51,6 +52,3 @@ object_tangible_dance_prop_shared_prop_glowstick_l_s02 = SharedTangibleObjectTem
     clientTemplateFileName = "object/tangible/dance_prop/shared_prop_glowstick_l_s02.iff"
 }
 ObjectTemplates:addClientTemplate(object_tangible_dance_prop_shared_prop_glowstick_l_s02, "object/tangible/dance_prop/shared_prop_glowstick_l_s02.iff")
-
-
-ObjectTemplates:addClientTemplate(object_tangible_dance_prop_shared_prop_base, "object/tangible/dance_prop/shared_prop_base.iff")
