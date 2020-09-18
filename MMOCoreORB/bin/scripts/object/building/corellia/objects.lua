@@ -2765,10 +2765,11 @@ object_building_corellia_shared_starport_corellia = SharedBuildingObjectTemplate
 	clientObjectCRC = 1449497657,
 	derivedFromTemplates = {"object/object/base/shared_base_object.iff", "object/tangible/base/shared_tangible_base.iff", "object/building/base/shared_base_building.iff", "object/building/base/shared_base_starport.iff"}
 ]]
+}
+
 ObjectTemplates:addClientTemplate(object_building_corellia_shared_starport_corellia, "object/building/corellia/shared_starport_corellia.iff")
 
 object_building_corellia_shared_filler_block_corellia_32x16_s01_pob = SharedBuildingObjectTemplate:new {
     clientTemplateFileName = "object/building/corellia/shared_filler_block_corellia_32x16_s01_pob.iff"
 }
 ObjectTemplates:addClientTemplate(object_building_corellia_shared_filler_block_corellia_32x16_s01_pob, "object/building/corellia/shared_filler_block_corellia_32x16_s01_pob.iff")
-
