@@ -1279,3 +1279,44 @@ object_tangible_veteran_reward_shared_resource = SharedTangibleObjectTemplate:ne
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_resource, "object/tangible/veteran_reward/shared_resource.iff")
+
+object_tangible_veteran_reward_shared_frn_vet_painting_april_07 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_painting_april_07.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_painting_april_07, "object/tangible/veteran_reward/shared_frn_vet_painting_april_07.iff")
+
+object_tangible_veteran_reward_shared_frn_vet_painting_anniversary_s30 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_painting_anniversary_s30.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_painting_anniversary_s30, "object/tangible/veteran_reward/shared_frn_vet_painting_anniversary_s30.iff")
+
+object_tangible_veteran_reward_shared_frn_vet_6_year_painting = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_6_year_painting.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_6_year_painting, "object/tangible/veteran_reward/shared_frn_vet_6_year_painting.iff")
+
+object_tangible_veteran_reward_shared_frn_galactic_gathering_2008_painting = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_galactic_gathering_2008_painting.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_galactic_gathering_2008_painting, "object/tangible/veteran_reward/shared_frn_galactic_gathering_2008_painting.iff")
+
+object_tangible_veteran_reward_shared_frn_vet_painting_community_summit_s02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_painting_community_summit_s02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_painting_community_summit_s02, "object/tangible/veteran_reward/shared_frn_vet_painting_community_summit_s02.iff")
+
+object_tangible_veteran_reward_shared_yr7_painting_2010 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/veteran_reward/shared_yr7_painting_2010.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_yr7_painting_2010, "object/tangible/veteran_reward/shared_yr7_painting_2010.iff")
+
+object_tangible_veteran_reward_shared_frn_vet_painting_s011 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_painting_s011.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_painting_s011, "object/tangible/veteran_reward/shared_frn_vet_painting_s011.iff")
+
+object_tangible_veteran_reward_shared_frn_vet_5_year_painting = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_5_year_painting.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_5_year_painting, "object/tangible/veteran_reward/shared_frn_vet_5_year_painting.iff")
+
