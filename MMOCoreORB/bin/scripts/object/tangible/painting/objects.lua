@@ -4760,3 +4760,519 @@ object_tangible_painting_shared_painting_zabrak_m = SharedTangibleObjectTemplate
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_zabrak_m, "object/tangible/painting/shared_painting_zabrak_m.iff")
+
+object_tangible_painting_shared_painting_wod_outcast = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_wod_outcast.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_wod_outcast, "object/tangible/painting/shared_painting_wod_outcast.iff")
+
+object_tangible_painting_shared_painting_schematic_transport_ship = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_schematic_transport_ship.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_schematic_transport_ship, "object/tangible/painting/shared_painting_schematic_transport_ship.iff")
+
+object_tangible_painting_shared_bestine_quest_painting = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_bestine_quest_painting.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_bestine_quest_painting, "object/tangible/painting/shared_bestine_quest_painting.iff")
+
+object_tangible_painting_shared_painting_tato_s04 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_tato_s04.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_tato_s04, "object/tangible/painting/shared_painting_tato_s04.iff")
+
+object_tangible_painting_shared_painting_bw_stormtrooper = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bw_stormtrooper.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bw_stormtrooper, "object/tangible/painting/shared_painting_bw_stormtrooper.iff")
+
+object_tangible_painting_shared_painting_valley_view = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_valley_view.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_valley_view, "object/tangible/painting/shared_painting_valley_view.iff")
+
+object_tangible_painting_shared_painting_palowick_ad_s02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_palowick_ad_s02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_palowick_ad_s02, "object/tangible/painting/shared_painting_palowick_ad_s02.iff")
+
+object_tangible_painting_shared_painting_schematic_droid = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_schematic_droid.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_schematic_droid, "object/tangible/painting/shared_painting_schematic_droid.iff")
+
+object_tangible_painting_shared_painting_teras_kasi_2 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_teras_kasi_2.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_teras_kasi_2, "object/tangible/painting/shared_painting_teras_kasi_2.iff")
+
+object_tangible_painting_shared_painting_twilek_f_lg_s03 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_twilek_f_lg_s03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_twilek_f_lg_s03, "object/tangible/painting/shared_painting_twilek_f_lg_s03.iff")
+
+object_tangible_painting_shared_painting_wod_scene_03 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_wod_scene_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_wod_scene_03, "object/tangible/painting/shared_painting_wod_scene_03.iff")
+
+object_tangible_painting_shared_painting_leia_wanted = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_leia_wanted.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_leia_wanted, "object/tangible/painting/shared_painting_leia_wanted.iff")
+
+object_tangible_painting_shared_painting_rodian_f_ad_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_rodian_f_ad_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_rodian_f_ad_01, "object/tangible/painting/shared_painting_rodian_f_ad_01.iff")
+
+object_tangible_painting_shared_painting_food_baking_s01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_food_baking_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_food_baking_s01, "object/tangible/painting/shared_painting_food_baking_s01.iff")
+
+object_tangible_painting_shared_painting_bioengineer_orange = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bioengineer_orange.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bioengineer_orange, "object/tangible/painting/shared_painting_bioengineer_orange.iff")
+
+object_tangible_painting_shared_painting_armor_blueprint = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_armor_blueprint.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_armor_blueprint, "object/tangible/painting/shared_painting_armor_blueprint.iff")
+
+object_tangible_painting_shared_painting_han_wanted = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_han_wanted.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_han_wanted, "object/tangible/painting/shared_painting_han_wanted.iff")
+
+object_tangible_painting_shared_painting_outbreak_biohazard_03 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_outbreak_biohazard_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_outbreak_biohazard_03, "object/tangible/painting/shared_painting_outbreak_biohazard_03.iff")
+
+object_tangible_painting_shared_painting_tato_s03 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_tato_s03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_tato_s03, "object/tangible/painting/shared_painting_tato_s03.iff")
+
+object_tangible_painting_shared_painting_trandoshan_wanted = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_trandoshan_wanted.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_trandoshan_wanted, "object/tangible/painting/shared_painting_trandoshan_wanted.iff")
+
+object_tangible_painting_shared_painting_dance_party = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_dance_party.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_dance_party, "object/tangible/painting/shared_painting_dance_party.iff")
+
+object_tangible_painting_shared_painting_rodian_m = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_rodian_m.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_rodian_m, "object/tangible/painting/shared_painting_rodian_m.iff")
+
+object_tangible_painting_shared_painting_wod_scene_04 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_wod_scene_04.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_wod_scene_04, "object/tangible/painting/shared_painting_wod_scene_04.iff")
+
+object_tangible_painting_shared_painting_wod_sm_02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_wod_sm_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_wod_sm_02, "object/tangible/painting/shared_painting_wod_sm_02.iff")
+
+object_tangible_painting_shared_painting_twilek_f_lg_s04 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_twilek_f_lg_s04.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_twilek_f_lg_s04, "object/tangible/painting/shared_painting_twilek_f_lg_s04.iff")
+
+object_tangible_painting_shared_painting_twilek_f_sm_s01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_twilek_f_sm_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_twilek_f_sm_s01, "object/tangible/painting/shared_painting_twilek_f_sm_s01.iff")
+
+object_tangible_painting_shared_painting_double_helix = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_double_helix.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_double_helix, "object/tangible/painting/shared_painting_double_helix.iff")
+
+object_tangible_painting_shared_painting_bestine_golden_flower_03 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_golden_flower_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_golden_flower_03, "object/tangible/painting/shared_painting_bestine_golden_flower_03.iff")
+
+object_tangible_painting_shared_painting_corl_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_corl_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_corl_01, "object/tangible/painting/shared_painting_corl_01.iff")
+
+object_tangible_painting_shared_painting_nebula_flower = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_nebula_flower.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_nebula_flower, "object/tangible/painting/shared_painting_nebula_flower.iff")
+
+object_tangible_painting_shared_painting_wod_ns_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_wod_ns_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_wod_ns_01, "object/tangible/painting/shared_painting_wod_ns_01.iff")
+
+object_tangible_painting_shared_painting_waterfall = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_waterfall.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_waterfall, "object/tangible/painting/shared_painting_waterfall.iff")
+
+object_tangible_painting_shared_painting_bothan_m = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bothan_m.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bothan_m, "object/tangible/painting/shared_painting_bothan_m.iff")
+
+object_tangible_painting_shared_painting_chp5 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_chp5.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_chp5, "object/tangible/painting/shared_painting_chp5.iff")
+
+object_tangible_painting_shared_painting_smoking_ad = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_smoking_ad.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_smoking_ad, "object/tangible/painting/shared_painting_smoking_ad.iff")
+
+object_tangible_painting_shared_painting_twilek_f = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_twilek_f.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_twilek_f, "object/tangible/painting/shared_painting_twilek_f.iff")
+
+object_tangible_painting_shared_painting_twilek_f_sm_s04 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_twilek_f_sm_s04.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_twilek_f_sm_s04, "object/tangible/painting/shared_painting_twilek_f_sm_s04.iff")
+
+object_tangible_painting_shared_painting_twilek_f_lg_s01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_twilek_f_lg_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_twilek_f_lg_s01, "object/tangible/painting/shared_painting_twilek_f_lg_s01.iff")
+
+object_tangible_painting_shared_painting_starmap = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_starmap.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_starmap, "object/tangible/painting/shared_painting_starmap.iff")
+
+object_tangible_painting_shared_painting_grievous_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_grievous_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_grievous_01, "object/tangible/painting/shared_painting_grievous_01.iff")
+
+object_tangible_painting_shared_painting_wod_scene_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_wod_scene_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_wod_scene_01, "object/tangible/painting/shared_painting_wod_scene_01.iff")
+
+object_tangible_painting_shared_painting_trees_s01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_trees_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_trees_s01, "object/tangible/painting/shared_painting_trees_s01.iff")
+
+object_tangible_painting_shared_painting_droid_bright = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_droid_bright.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_droid_bright, "object/tangible/painting/shared_painting_droid_bright.iff")
+
+object_tangible_painting_shared_painting_bestine_boffa = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_boffa.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_boffa, "object/tangible/painting/shared_painting_bestine_boffa.iff")
+
+object_tangible_painting_shared_bestine_history_quest_painting = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_bestine_history_quest_painting.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_bestine_history_quest_painting, "object/tangible/painting/shared_bestine_history_quest_painting.iff")
+
+object_tangible_painting_shared_painting_outbreak_biohazard_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_outbreak_biohazard_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_outbreak_biohazard_01, "object/tangible/painting/shared_painting_outbreak_biohazard_01.iff")
+
+object_tangible_painting_shared_painting_wookiee_f = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_wookiee_f.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_wookiee_f, "object/tangible/painting/shared_painting_wookiee_f.iff")
+
+object_tangible_painting_shared_painting_vader_victory = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_vader_victory.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_vader_victory, "object/tangible/painting/shared_painting_vader_victory.iff")
+
+object_tangible_painting_shared_painting_bestine_golden_flower_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_golden_flower_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_golden_flower_01, "object/tangible/painting/shared_painting_bestine_golden_flower_01.iff")
+
+object_tangible_painting_shared_painting_twilek_f_sm_s03 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_twilek_f_sm_s03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_twilek_f_sm_s03, "object/tangible/painting/shared_painting_twilek_f_sm_s03.iff")
+
+object_tangible_painting_shared_painting_trandoshan_m = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_trandoshan_m.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_trandoshan_m, "object/tangible/painting/shared_painting_trandoshan_m.iff")
+
+object_tangible_painting_shared_painting_bestine_mattberry = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_mattberry.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_mattberry, "object/tangible/painting/shared_painting_bestine_mattberry.iff")
+
+object_tangible_painting_shared_painting_loot_heroic_exar_kun = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_loot_heroic_exar_kun.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_loot_heroic_exar_kun, "object/tangible/painting/shared_painting_loot_heroic_exar_kun.iff")
+
+object_tangible_painting_shared_painting_bestine_moncal_eye_02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_moncal_eye_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_moncal_eye_02, "object/tangible/painting/shared_painting_bestine_moncal_eye_02.iff")
+
+object_tangible_painting_shared_painting_zabrak_f = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_zabrak_f.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_zabrak_f, "object/tangible/painting/shared_painting_zabrak_f.iff")
+
+object_tangible_painting_shared_painting_palowick_ad_s03 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_palowick_ad_s03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_palowick_ad_s03, "object/tangible/painting/shared_painting_palowick_ad_s03.iff")
+
+object_tangible_painting_shared_painting_fighter_pilot_human_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_fighter_pilot_human_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_fighter_pilot_human_01, "object/tangible/painting/shared_painting_fighter_pilot_human_01.iff")
+
+object_tangible_painting_shared_painting_bestine_lucky_despot = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_lucky_despot.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_lucky_despot, "object/tangible/painting/shared_painting_bestine_lucky_despot.iff")
+
+object_tangible_painting_shared_painting_planet_s01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_planet_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_planet_s01, "object/tangible/painting/shared_painting_planet_s01.iff")
+
+object_tangible_painting_shared_painting_bestine_ronka = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_ronka.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_ronka, "object/tangible/painting/shared_painting_bestine_ronka.iff")
+
+object_tangible_painting_shared_painting_wod_ns_02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_wod_ns_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_wod_ns_02, "object/tangible/painting/shared_painting_wod_ns_02.iff")
+
+object_tangible_painting_shared_painting_twilek_f_lg_s02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_twilek_f_lg_s02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_twilek_f_lg_s02, "object/tangible/painting/shared_painting_twilek_f_lg_s02.iff")
+
+object_tangible_painting_shared_painting_skyscraper = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_skyscraper.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_skyscraper, "object/tangible/painting/shared_painting_skyscraper.iff")
+
+object_tangible_painting_shared_painting_wod_scene_02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_wod_scene_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_wod_scene_02, "object/tangible/painting/shared_painting_wod_scene_02.iff")
+
+object_tangible_painting_shared_painting_tree = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_tree.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_tree, "object/tangible/painting/shared_painting_tree.iff")
+
+object_tangible_painting_shared_painting_rodian_f = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_rodian_f.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_rodian_f, "object/tangible/painting/shared_painting_rodian_f.iff")
+
+object_tangible_painting_shared_painting_bestine_raventhorn = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_raventhorn.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_raventhorn, "object/tangible/painting/shared_painting_bestine_raventhorn.iff")
+
+object_tangible_painting_shared_painting_pvp_reward_imperial = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_pvp_reward_imperial.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_pvp_reward_imperial, "object/tangible/painting/shared_painting_pvp_reward_imperial.iff")
+
+object_tangible_painting_shared_painting_bestine_moncal_eye_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_moncal_eye_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_moncal_eye_01, "object/tangible/painting/shared_painting_bestine_moncal_eye_01.iff")
+
+object_tangible_painting_shared_painting_human_f = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_human_f.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_human_f, "object/tangible/painting/shared_painting_human_f.iff")
+
+object_tangible_painting_shared_painting_bestine_golden_flower_02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_golden_flower_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_golden_flower_02, "object/tangible/painting/shared_painting_bestine_golden_flower_02.iff")
+
+object_tangible_painting_shared_painting_luke_wanted = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_luke_wanted.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_luke_wanted, "object/tangible/painting/shared_painting_luke_wanted.iff")
+
+object_tangible_painting_shared_painting_outbreak_biohazard_02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_outbreak_biohazard_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_outbreak_biohazard_02, "object/tangible/painting/shared_painting_outbreak_biohazard_02.iff")
+
+object_tangible_painting_shared_painting_agrilat_s01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_agrilat_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_agrilat_s01, "object/tangible/painting/shared_painting_agrilat_s01.iff")
+
+object_tangible_painting_shared_painting_heroic_exar_kun_ultra_rare = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_heroic_exar_kun_ultra_rare.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_heroic_exar_kun_ultra_rare, "object/tangible/painting/shared_painting_heroic_exar_kun_ultra_rare.iff")
+
+object_tangible_painting_shared_painting_kite_plant = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_kite_plant.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_kite_plant, "object/tangible/painting/shared_painting_kite_plant.iff")
+
+object_tangible_painting_shared_painting_schematic_weapon_s03 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_schematic_weapon_s03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_schematic_weapon_s03, "object/tangible/painting/shared_painting_schematic_weapon_s03.iff")
+
+object_tangible_painting_shared_painting_palowick_ad_s04 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_palowick_ad_s04.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_palowick_ad_s04, "object/tangible/painting/shared_painting_palowick_ad_s04.iff")
+
+object_tangible_painting_shared_painting_teras_kasi = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_teras_kasi.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_teras_kasi, "object/tangible/painting/shared_painting_teras_kasi.iff")
+
+object_tangible_painting_shared_painting_clone_trooper_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_clone_trooper_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_clone_trooper_01, "object/tangible/painting/shared_painting_clone_trooper_01.iff")
+
+object_tangible_painting_shared_painting_zabrak_m = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_zabrak_m.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_zabrak_m, "object/tangible/painting/shared_painting_zabrak_m.iff")
+
+object_tangible_painting_shared_painting_bestine_rainbow_berry_bush = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_rainbow_berry_bush.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_rainbow_berry_bush, "object/tangible/painting/shared_painting_bestine_rainbow_berry_bush.iff")
+
+object_tangible_painting_shared_painting_trandoshan_m_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_trandoshan_m_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_trandoshan_m_01, "object/tangible/painting/shared_painting_trandoshan_m_01.iff")
+
+object_tangible_painting_shared_painting_palowick_ad_s01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_palowick_ad_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_palowick_ad_s01, "object/tangible/painting/shared_painting_palowick_ad_s01.iff")
+
+object_tangible_painting_shared_painting_bestine_blumbush = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_blumbush.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_blumbush, "object/tangible/painting/shared_painting_bestine_blumbush.iff")
+
+object_tangible_painting_shared_painting_bestine_krayt_skeleton = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_krayt_skeleton.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_krayt_skeleton, "object/tangible/painting/shared_painting_bestine_krayt_skeleton.iff")
+
+object_tangible_painting_shared_painting_food_baking_s02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_food_baking_s02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_food_baking_s02, "object/tangible/painting/shared_painting_food_baking_s02.iff")
+
+object_tangible_painting_shared_painting_wookiee_m = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_wookiee_m.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_wookiee_m, "object/tangible/painting/shared_painting_wookiee_m.iff")
+
+object_tangible_painting_shared_painting_house_cleanup_rebel = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_house_cleanup_rebel.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_house_cleanup_rebel, "object/tangible/painting/shared_painting_house_cleanup_rebel.iff")
+
+object_tangible_painting_shared_painting_twilek_f_sm_s02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_twilek_f_sm_s02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_twilek_f_sm_s02, "object/tangible/painting/shared_painting_twilek_f_sm_s02.iff")
+
+object_tangible_painting_shared_painting_cargoport = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_cargoport.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_cargoport, "object/tangible/painting/shared_painting_cargoport.iff")
+
+object_tangible_painting_shared_painting_wod_sm_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_wod_sm_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_wod_sm_01, "object/tangible/painting/shared_painting_wod_sm_01.iff")
+
+object_tangible_painting_shared_painting_house_cleanup_imperial = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_house_cleanup_imperial.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_house_cleanup_imperial, "object/tangible/painting/shared_painting_house_cleanup_imperial.iff")
+
+object_tangible_painting_shared_painting_victorious_reign = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_victorious_reign.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_victorious_reign, "object/tangible/painting/shared_painting_victorious_reign.iff")
+
+object_tangible_painting_shared_painting_bothan_f = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bothan_f.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bothan_f, "object/tangible/painting/shared_painting_bothan_f.iff")
+
+object_tangible_painting_shared_painting_corl_02 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_corl_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_corl_02, "object/tangible/painting/shared_painting_corl_02.iff")
+
+object_tangible_painting_shared_painting_schematic_weapon = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_schematic_weapon.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_schematic_weapon, "object/tangible/painting/shared_painting_schematic_weapon.iff")
+
+object_tangible_painting_shared_painting_endor_style_01 = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_endor_style_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_endor_style_01, "object/tangible/painting/shared_painting_endor_style_01.iff")
+
+object_tangible_painting_shared_painting_twilek_m = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_twilek_m.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_twilek_m, "object/tangible/painting/shared_painting_twilek_m.iff")
+
+object_tangible_painting_shared_painting_bestine_house = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_house.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_house, "object/tangible/painting/shared_painting_bestine_house.iff")
+
+object_tangible_painting_shared_painting_pvp_reward_rebel = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_pvp_reward_rebel.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_pvp_reward_rebel, "object/tangible/painting/shared_painting_pvp_reward_rebel.iff")
+
+object_tangible_painting_shared_painting_bestine_blueleaf_temple = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_bestine_blueleaf_temple.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_bestine_blueleaf_temple, "object/tangible/painting/shared_painting_bestine_blueleaf_temple.iff")
+
+object_tangible_painting_shared_painting_freedom = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/painting/shared_painting_freedom.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_painting_shared_painting_freedom, "object/tangible/painting/shared_painting_freedom.iff")
+
