@@ -571,3 +571,9 @@ object_tangible_ui_shared_ui_planet_tatooine = SharedTangibleObjectTemplate:new 
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_ui_shared_ui_planet_tatooine, "object/tangible/ui/shared_ui_planet_tatooine.iff")
+
+object_tangible_ui_shared_ui_planet_tansarii = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/ui/shared_ui_planet_tansarii.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_ui_shared_ui_planet_tansarii, "object/tangible/ui/shared_ui_planet_tansarii.iff")
+
