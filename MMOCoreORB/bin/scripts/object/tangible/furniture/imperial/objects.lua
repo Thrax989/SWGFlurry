@@ -807,9 +807,3 @@ object_tangible_furniture_imperial_shared_warren_warning_sign = SharedTangibleOb
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_furniture_imperial_shared_warren_warning_sign, "object/tangible/furniture/imperial/shared_warren_warning_sign.iff")
-
-object_tangible_furniture_imperial_shared_table_s1 = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/furniture/imperial/shared_table_s1.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_furniture_imperial_shared_table_s1, "object/tangible/furniture/imperial/shared_table_s1.iff")
-

@@ -217,9 +217,3 @@ object_tangible_gem_shared_default = SharedTangibleObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_gem_shared_default, "object/tangible/gem/shared_default.iff")
-
-object_tangible_gem_shared_clothing = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/gem/shared_clothing.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_gem_shared_clothing, "object/tangible/gem/shared_clothing.iff")
-

@@ -2954,34 +2954,3 @@ object_building_military_shared_small_imperial_cloning_facility_s02 = SharedBuil
 }
 
 ObjectTemplates:addClientTemplate(object_building_military_shared_small_imperial_cloning_facility_s02, "object/building/military/shared_small_imperial_cloning_facility_s02.iff")
-
-object_building_military_shared_military_rebel_clone_tent_small = SharedBuildingObjectTemplate:new {
-    clientTemplateFileName = "object/building/military/shared_military_rebel_clone_tent_small.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_military_shared_military_rebel_clone_tent_small, "object/building/military/shared_military_rebel_clone_tent_small.iff")
-
-object_building_military_shared_military_outpost_guard_tower_1_pvp = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/building/military/shared_military_outpost_guard_tower_1_pvp.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_military_shared_military_outpost_guard_tower_1_pvp, "object/building/military/shared_military_outpost_guard_tower_1_pvp.iff")
-
-object_building_military_shared_military_base_shed_imperial_style_cloning_facility_s01 = SharedBuildingObjectTemplate:new {
-    clientTemplateFileName = "object/building/military/shared_military_base_shed_imperial_style_cloning_facility_s01.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_military_shared_military_base_shed_imperial_style_cloning_facility_s01, "object/building/military/shared_military_base_shed_imperial_style_cloning_facility_s01.iff")
-
-object_building_military_shared_military_imperial_clone_tent_small = SharedBuildingObjectTemplate:new {
-    clientTemplateFileName = "object/building/military/shared_military_imperial_clone_tent_small.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_military_shared_military_imperial_clone_tent_small, "object/building/military/shared_military_imperial_clone_tent_small.iff")
-
-object_building_military_shared_mun_all_military_tower_impl_guard_s01_pvp = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/building/military/shared_mun_all_military_tower_impl_guard_s01_pvp.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_military_shared_mun_all_military_tower_impl_guard_s01_pvp, "object/building/military/shared_mun_all_military_tower_impl_guard_s01_pvp.iff")
-
-object_building_military_shared_military_base_shed_rebel_style_cloning_facility_s01 = SharedBuildingObjectTemplate:new {
-    clientTemplateFileName = "object/building/military/shared_military_base_shed_rebel_style_cloning_facility_s01.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_military_shared_military_base_shed_rebel_style_cloning_facility_s01, "object/building/military/shared_military_base_shed_rebel_style_cloning_facility_s01.iff")
-

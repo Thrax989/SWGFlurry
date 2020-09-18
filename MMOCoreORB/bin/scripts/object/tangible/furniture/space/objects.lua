@@ -276,9 +276,3 @@ object_tangible_furniture_space_shared_frn_couch_falcon_section_s01 = SharedTang
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_furniture_space_shared_frn_couch_falcon_section_s01, "object/tangible/furniture/space/shared_frn_couch_falcon_section_s01.iff")
-
-object_tangible_furniture_space_shared_frn_chair_falcon_passenger_s01 = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/furniture/space/shared_frn_chair_falcon_passenger_s01.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_furniture_space_shared_frn_chair_falcon_passenger_s01, "object/tangible/furniture/space/shared_frn_chair_falcon_passenger_s01.iff")
-

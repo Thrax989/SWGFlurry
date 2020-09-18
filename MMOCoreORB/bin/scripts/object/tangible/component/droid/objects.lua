@@ -5114,9 +5114,3 @@ object_tangible_component_droid_shared_trap_module_base = SharedTangibleObjectTe
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_component_droid_shared_trap_module_base, "object/tangible/component/droid/shared_trap_module_base.iff")
-
-object_tangible_component_droid_shared_ig_assassin_droid_chassis = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/component/droid/shared_ig_assassin_droid_chassis.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_component_droid_shared_ig_assassin_droid_chassis, "object/tangible/component/droid/shared_ig_assassin_droid_chassis.iff")
-

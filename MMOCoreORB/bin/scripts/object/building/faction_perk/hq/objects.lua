@@ -1900,14 +1900,3 @@ object_building_faction_perk_hq_shared_hq_s05_rebel_pvp = SharedBuildingObjectTe
 }
 
 ObjectTemplates:addClientTemplate(object_building_faction_perk_hq_shared_hq_s05_rebel_pvp, "object/building/faction_perk/hq/shared_hq_s05_rebel_pvp.iff")
-
-object_building_faction_perk_hq_shared_hq_s05_imp_pvp = SharedBuildingObjectTemplate:new {
-    clientTemplateFileName = "object/building/faction_perk/hq/shared_hq_s05_imp_pvp.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_faction_perk_hq_shared_hq_s05_imp_pvp, "object/building/faction_perk/hq/shared_hq_s05_imp_pvp.iff")
-
-object_building_faction_perk_hq_shared_hq_s05 = SharedBuildingObjectTemplate:new {
-    clientTemplateFileName = "object/building/faction_perk/hq/shared_hq_s05.iff"
-}
-ObjectTemplates:addClientTemplate(object_building_faction_perk_hq_shared_hq_s05, "object/building/faction_perk/hq/shared_hq_s05.iff")
-

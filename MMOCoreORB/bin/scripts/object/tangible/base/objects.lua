@@ -229,9 +229,3 @@ object_tangible_base_shared_tangible_default = SharedTangibleObjectTemplate:new 
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_base_shared_tangible_default, "object/tangible/base/shared_tangible_default.iff")
-
-object_tangible_base_shared_retrieve_quest_base = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/base/shared_retrieve_quest_base.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_base_shared_retrieve_quest_base, "object/tangible/base/shared_retrieve_quest_base.iff")
-

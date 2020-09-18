@@ -1,125 +1,42 @@
-object_tangible_quest_shared_survey_data = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_survey_data.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_survey_data, "object/tangible/quest/shared_survey_data.iff")
+--Copyright (C) 2009 <SWGEmu>
 
-object_tangible_quest_shared_survey_data_05 = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_survey_data_05.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_survey_data_05, "object/tangible/quest/shared_survey_data_05.iff")
+--This File is part of Core3.
 
-object_tangible_quest_shared_as_inf02_bcep = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_as_inf02_bcep.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_as_inf02_bcep, "object/tangible/quest/shared_as_inf02_bcep.iff")
+--This program is free software; you can redistribute
+--it and/or modify it under the terms of the GNU Lesser
+--General Public License as published by the Free Software
+--Foundation; either version 2 of the License,
+--or (at your option) any later version.
 
-object_tangible_quest_shared_kachirho_varactyl_egg = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_kachirho_varactyl_egg.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_kachirho_varactyl_egg, "object/tangible/quest/shared_kachirho_varactyl_egg.iff")
+--This program is distributed in the hope that it will be useful,
+--but WITHOUT ANY WARRANTY; without even the implied warranty of
+--MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+--See the GNU Lesser General Public License for
+--more details.
 
-object_tangible_quest_shared_database_terminal = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_database_terminal.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_database_terminal, "object/tangible/quest/shared_database_terminal.iff")
+--You should have received a copy of the GNU Lesser General
+--Public License along with this program; if not, write to
+--the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-object_tangible_quest_shared_survey_data_02 = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_survey_data_02.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_survey_data_02, "object/tangible/quest/shared_survey_data_02.iff")
+--Linking Engine3 statically or dynamically with other modules
+--is making a combined work based on Engine3.
+--Thus, the terms and conditions of the GNU Lesser General Public License
+--cover the whole combination.
 
-object_tangible_quest_shared_etyyy_brody_campsite_corpse = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_etyyy_brody_campsite_corpse.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_etyyy_brody_campsite_corpse, "object/tangible/quest/shared_etyyy_brody_campsite_corpse.iff")
+--In addition, as a special exception, the copyright holders of Engine3
+--give you permission to combine Engine3 program with free software
+--programs or libraries that are released under the GNU LGPL and with
+--code included in the standard release of Core3 under the GNU LGPL
+--license (or modified versions of such code, with unchanged license).
+--You may copy and distribute such a system following the terms of the
+--GNU LGPL for Engine3 and the licenses of the other code concerned,
+--provided that you include the source code of that other code when
+--and as the GNU LGPL requires distribution of source code.
 
-object_tangible_quest_shared_frn_all_security_terminal_wall_02 = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_frn_all_security_terminal_wall_02.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_frn_all_security_terminal_wall_02, "object/tangible/quest/shared_frn_all_security_terminal_wall_02.iff")
-
-object_tangible_quest_shared_data_term = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_data_term.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_data_term, "object/tangible/quest/shared_data_term.iff")
-
-object_tangible_quest_shared_kachirho_destroyed_camp = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_kachirho_destroyed_camp.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_kachirho_destroyed_camp, "object/tangible/quest/shared_kachirho_destroyed_camp.iff")
-
-object_tangible_quest_shared_gtour_01_painting_01 = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_gtour_01_painting_01.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_gtour_01_painting_01, "object/tangible/quest/shared_gtour_01_painting_01.iff")
-
-object_tangible_quest_shared_as_inf02_boot = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_as_inf02_boot.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_as_inf02_boot, "object/tangible/quest/shared_as_inf02_boot.iff")
-
-object_tangible_quest_shared_survey_data_04 = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_survey_data_04.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_survey_data_04, "object/tangible/quest/shared_survey_data_04.iff")
-
-object_tangible_quest_shared_frn_all_security_terminal_wall_04 = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_frn_all_security_terminal_wall_04.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_frn_all_security_terminal_wall_04, "object/tangible/quest/shared_frn_all_security_terminal_wall_04.iff")
-
-object_tangible_quest_shared_rrwii_root = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_rrwii_root.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_rrwii_root, "object/tangible/quest/shared_rrwii_root.iff")
-
-object_tangible_quest_shared_frn_all_security_terminal_wall_03 = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_frn_all_security_terminal_wall_03.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_frn_all_security_terminal_wall_03, "object/tangible/quest/shared_frn_all_security_terminal_wall_03.iff")
-
-object_tangible_quest_shared_survey_data_03 = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_survey_data_03.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_survey_data_03, "object/tangible/quest/shared_survey_data_03.iff")
-
-object_tangible_quest_shared_etyyy_ryoos_salt = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_etyyy_ryoos_salt.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_etyyy_ryoos_salt, "object/tangible/quest/shared_etyyy_ryoos_salt.iff")
-
-object_tangible_quest_shared_as_inf02_helm = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_as_inf02_helm.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_as_inf02_helm, "object/tangible/quest/shared_as_inf02_helm.iff")
-
-object_tangible_quest_shared_as_inf02_brcr = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_as_inf02_brcr.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_as_inf02_brcr, "object/tangible/quest/shared_as_inf02_brcr.iff")
-
-object_tangible_quest_shared_medical_desk = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_medical_desk.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_medical_desk, "object/tangible/quest/shared_medical_desk.iff")
-
-object_tangible_quest_shared_etyyy_chiss_poached_goods = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_etyyy_chiss_poached_goods.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_etyyy_chiss_poached_goods, "object/tangible/quest/shared_etyyy_chiss_poached_goods.iff")
-
-object_tangible_quest_shared_as_inf02_chst = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_as_inf02_chst.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_as_inf02_chst, "object/tangible/quest/shared_as_inf02_chst.iff")
-
-object_tangible_quest_shared_frn_all_security_terminal_wall_01 = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_frn_all_security_terminal_wall_01.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_frn_all_security_terminal_wall_01, "object/tangible/quest/shared_frn_all_security_terminal_wall_01.iff")
-
-object_tangible_quest_shared_as_inf02_legs = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/quest/shared_as_inf02_legs.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_quest_shared_as_inf02_legs, "object/tangible/quest/shared_as_inf02_legs.iff")
+--Note that people who make modified versions of Engine3 are not obligated
+--to grant this special exception for their modified versions;
+--it is their choice whether to do so. The GNU Lesser General Public License
+--gives permission to release a modified version without this exception;
+--this exception also makes it possible to release a modified version
+--which carries forward this exception.
 

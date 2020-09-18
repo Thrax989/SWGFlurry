@@ -3344,29 +3344,3 @@ object_tangible_terminal_shared_test = SharedTangibleObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_terminal_shared_test, "object/tangible/terminal/shared_test.iff")
-
-object_tangible_terminal_shared_terminal_clone_droid = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/terminal/shared_terminal_clone_droid.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_terminal_shared_terminal_clone_droid, "object/tangible/terminal/shared_terminal_clone_droid.iff")
-
-object_tangible_terminal_shared_crafting_assembly_terminal = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/terminal/shared_crafting_assembly_terminal.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_terminal_shared_crafting_assembly_terminal, "object/tangible/terminal/shared_crafting_assembly_terminal.iff")
-
-object_tangible_terminal_shared_terminal_working_droid_factory_exit_door = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/terminal/shared_terminal_working_droid_factory_exit_door.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_terminal_shared_terminal_working_droid_factory_exit_door, "object/tangible/terminal/shared_terminal_working_droid_factory_exit_door.iff")
-
-object_tangible_terminal_shared_terminal_myyydril_door = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/terminal/shared_terminal_myyydril_door.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_terminal_shared_terminal_myyydril_door, "object/tangible/terminal/shared_terminal_myyydril_door.iff")
-
-object_tangible_terminal_shared_terminal_gcw_publish_gift = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/terminal/shared_terminal_gcw_publish_gift.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_terminal_shared_terminal_gcw_publish_gift, "object/tangible/terminal/shared_terminal_gcw_publish_gift.iff")
-

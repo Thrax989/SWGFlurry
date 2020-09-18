@@ -1,3 +1,48 @@
+--Copyright (C) 2010 <SWGEmu>
+
+
+--This File is part of Core3.
+
+--This program is free software; you can redistribute 
+--it and/or modify it under the terms of the GNU Lesser 
+--General Public License as published by the Free Software
+--Foundation; either version 2 of the License, 
+--or (at your option) any later version.
+
+--This program is distributed in the hope that it will be useful, 
+--but WITHOUT ANY WARRANTY; without even the implied warranty of 
+--MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+--See the GNU Lesser General Public License for
+--more details.
+
+--You should have received a copy of the GNU Lesser General 
+--Public License along with this program; if not, write to
+--the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+
+--Linking Engine3 statically or dynamically with other modules 
+--is making a combined work based on Engine3. 
+--Thus, the terms and conditions of the GNU Lesser General Public License 
+--cover the whole combination.
+
+--In addition, as a special exception, the copyright holders of Engine3 
+--give you permission to combine Engine3 program with free software 
+--programs or libraries that are released under the GNU LGPL and with 
+--code included in the standard release of Core3 under the GNU LGPL 
+--license (or modified versions of such code, with unchanged license). 
+--You may copy and distribute such a system following the terms of the 
+--GNU LGPL for Engine3 and the licenses of the other code concerned, 
+--provided that you include the source code of that other code when 
+--and as the GNU LGPL requires distribution of source code.
+
+--Note that people who make modified versions of Engine3 are not obligated 
+--to grant this special exception for their modified versions; 
+--it is their choice whether to do so. The GNU Lesser General Public License 
+--gives permission to release a modified version without this exception; 
+--this exception also makes it possible to release a modified version 
+
+
+
+--Children folder includes
 includeFile("static/particle/base/serverobjects.lua")
 
 -- Server Objects
@@ -30,6 +75,7 @@ includeFile("static/particle/particle_newbie_arrow.lua")
 includeFile("static/particle/particle_newbie_bomb_debris.lua")
 includeFile("static/particle/particle_newbie_bombed_spot.lua")
 includeFile("static/particle/particle_newbie_hanging_smoke.lua")
+includeFile("static/particle/particle_newbie_refrigerator_steam.lua")
 includeFile("static/particle/particle_newbie_siren.lua")
 includeFile("static/particle/particle_newbie_spotlight.lua")
 includeFile("static/particle/particle_newbie_steam.lua")
@@ -139,6 +185,7 @@ includeFile("static/particle/particle_test_96.lua")
 includeFile("static/particle/particle_test_97.lua")
 includeFile("static/particle/particle_test_98.lua")
 includeFile("static/particle/particle_test_99.lua")
+includeFile("static/particle/particle_volcano_glow_1.lua")
 includeFile("static/particle/particle_waterfall_whitewater_s02_l0.lua")
 includeFile("static/particle/particle_waterfall_whitewater_s02_l1.lua")
 includeFile("static/particle/pt_airport_race_light.lua")
@@ -203,6 +250,7 @@ includeFile("static/particle/pt_miasma_of_fog_greenish.lua")
 includeFile("static/particle/pt_miasma_of_fog_mustard.lua")
 includeFile("static/particle/pt_miasma_of_fog_orange.lua")
 includeFile("static/particle/pt_miasma_of_fog_red.lua")
+includeFile("static/particle/pt_poi_broken_electronics.lua")
 includeFile("static/particle/pt_poi_droid_weld_sparks.lua")
 includeFile("static/particle/pt_poi_electricity_2x2.lua")
 includeFile("static/particle/pt_sm_explosion.lua")
@@ -242,47 +290,3 @@ includeFile("static/particle/pt_waterfall_whitewater_s02_l1.lua")
 includeFile("static/particle/pt_waterfalling_200m.lua")
 includeFile("static/particle/pt_waterfalling_slow.lua")
 includeFile("static/particle/pt_webber.lua")
-includeFile("static/particle/pt_smoke_optimized.lua")
-includeFile("static/particle/pt_steam_small_optimized_2.lua")
-includeFile("static/particle/pt_waterfall_kashyyyk_10x4.lua")
-includeFile("static/particle/pt_water_drop_nosound.lua")
-includeFile("static/particle/pt_fog_kashyyyk_deadforest.lua")
-includeFile("static/particle/pt_water_drop_sound.lua")
-includeFile("static/particle/holo_planet_hoth.lua")
-includeFile("static/particle/pt_flocking_dragonfly_03_large.lua")
-includeFile("static/particle/pt_ground_fog_optimized.lua")
-includeFile("static/particle/particle_newbie_refrigerator_steam.lua")
-includeFile("static/particle/pt_poi_electricity_2x2.lua")
-includeFile("static/particle/particle_volcano_glow_1.lua")
-includeFile("static/particle/pt_waterfall_kashyyyk_20x43.lua")
-includeFile("static/particle/pt_flocking_willowisp_single.lua")
-includeFile("static/particle/pt_slime_drop_nosound.lua")
-includeFile("static/particle/pt_waterfall_kashyyyk_20x33.lua")
-includeFile("static/particle/pt_poi_broken_electronics.lua")
-includeFile("static/particle/pt_smoke_small_optimized.lua")
-includeFile("static/particle/pt_flocking_willowisp.lua")
-includeFile("static/particle/pt_water_drop_base.lua")
-includeFile("static/particle/pt_leaf_water.lua")
-includeFile("static/particle/pt_fog_kashyyyk_hracca.lua")
-includeFile("static/particle/pt_flocking_dragonfly_02_large.lua")
-includeFile("static/particle/pt_lok_lava_spirt.lua")
-includeFile("static/particle/pt_slime_drop_sound.lua")
-includeFile("static/particle/pt_fog_kashyyyk_hracca_chiss_fog.lua")
-includeFile("static/particle/pt_sparks_fountain.lua")
-includeFile("static/particle/pt_steam_rise_large_optimized.lua")
-includeFile("static/particle/pt_newbie_steam_optimized.lua")
-includeFile("static/particle/pt_large_fog_red.lua")
-includeFile("static/particle/pt_geyser_1_optimized.lua")
-includeFile("static/particle/pt_waterfall_kashyyyk_all_s01.lua")
-includeFile("static/particle/pt_waterfall_kashyyyk_5x50.lua")
-includeFile("static/particle/pt_waterfall_kashyyyk_5x30.lua")
-includeFile("static/particle/particle_distant_ships_cloud_city.lua")
-includeFile("static/particle/pt_large_fog_gray.lua")
-includeFile("static/particle/pt_steam_small_optimized.lua")
-includeFile("static/particle/pt_water_drop_multi.lua")
-includeFile("static/particle/pt_light_blink_blue.lua")
-includeFile("static/particle/pt_kash_birds_flock_rryatt.lua")
-includeFile("static/particle/pt_waterfall_kashyyyk_20x50.lua")
-includeFile("static/particle/pt_flocking_dragonfly_01_large.lua")
-includeFile("static/particle/pt_waterfall_kashyyyk_20x20.lua")
-includeFile("static/particle/particle_snow_light.lua")

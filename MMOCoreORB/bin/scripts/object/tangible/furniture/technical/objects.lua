@@ -512,9 +512,3 @@ object_tangible_furniture_technical_shared_end_table_s01 = SharedTangibleObjectT
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_furniture_technical_shared_end_table_s01, "object/tangible/furniture/technical/shared_end_table_s01.iff")
-
-object_tangible_furniture_technical_shared_cyborg_repair_table = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/furniture/technical/shared_cyborg_repair_table.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_furniture_technical_shared_cyborg_repair_table, "object/tangible/furniture/technical/shared_cyborg_repair_table.iff")
-

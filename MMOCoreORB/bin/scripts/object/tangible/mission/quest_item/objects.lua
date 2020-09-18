@@ -16855,24 +16855,3 @@ object_tangible_mission_quest_item_shared_zogor_sturm_q3_needed = SharedTangible
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_mission_quest_item_shared_zogor_sturm_q3_needed, "object/tangible/mission/quest_item/shared_zogor_sturm_q3_needed.iff")
-
-object_tangible_mission_quest_item_shared_brari_keohi_q2_needed = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/mission/quest_item/shared_brari_keohi_q2_needed.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_mission_quest_item_shared_brari_keohi_q2_needed, "object/tangible/mission/quest_item/shared_brari_keohi_q2_needed.iff")
-
-object_tangible_mission_quest_item_shared_brari_keohi_q4_needed = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/mission/quest_item/shared_brari_keohi_q4_needed.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_mission_quest_item_shared_brari_keohi_q4_needed, "object/tangible/mission/quest_item/shared_brari_keohi_q4_needed.iff")
-
-object_tangible_mission_quest_item_shared_brari_keohi_q1_needed = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/mission/quest_item/shared_brari_keohi_q1_needed.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_mission_quest_item_shared_brari_keohi_q1_needed, "object/tangible/mission/quest_item/shared_brari_keohi_q1_needed.iff")
-
-object_tangible_mission_quest_item_shared_brari_keohi_q3_needed = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/mission/quest_item/shared_brari_keohi_q3_needed.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_mission_quest_item_shared_brari_keohi_q3_needed, "object/tangible/mission/quest_item/shared_brari_keohi_q3_needed.iff")
-

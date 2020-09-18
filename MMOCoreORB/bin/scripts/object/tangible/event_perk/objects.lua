@@ -1692,14 +1692,3 @@ object_tangible_event_perk_shared_yavn_imprv_flagpole_s01 = SharedTangibleObject
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_yavn_imprv_flagpole_s01, "object/tangible/event_perk/shared_yavn_imprv_flagpole_s01.iff")
-
-object_tangible_event_perk_shared_lifeday_painting = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/event_perk/shared_lifeday_painting.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_lifeday_painting, "object/tangible/event_perk/shared_lifeday_painting.iff")
-
-object_tangible_event_perk_shared_halloween_painting = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/tangible/event_perk/shared_halloween_painting.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_halloween_painting, "object/tangible/event_perk/shared_halloween_painting.iff")
-
