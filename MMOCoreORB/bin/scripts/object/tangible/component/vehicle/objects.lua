@@ -3724,3 +3724,8 @@ object_tangible_component_vehicle_shared_weapon_link = SharedTangibleObjectTempl
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_component_vehicle_shared_weapon_link, "object/tangible/component/vehicle/shared_weapon_link.iff")
+
+object_tangible_component_vehicle_base_shared_base_vehicle = SharedTangibleObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/component/vehicle/base/shared_base_vehicle.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_component_vehicle_base_shared_base_vehicle, "object/tangible/component/vehicle/base/shared_base_vehicle.iff")
