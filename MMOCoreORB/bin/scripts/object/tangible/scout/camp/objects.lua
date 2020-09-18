@@ -417,3 +417,5 @@ object_tangible_scout_camp_shared_camp_swamp = SharedTangibleObjectTemplate:new 
 }
 ObjectTemplates:addClientTemplate(object_tangible_scout_camp_shared_camp_swamp, "object/tangible/scout/camp/shared_camp_swamp.iff")
 
+
+
