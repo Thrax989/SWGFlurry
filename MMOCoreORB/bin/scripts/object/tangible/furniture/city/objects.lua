@@ -1810,3 +1810,129 @@ object_tangible_furniture_city_shared_streetlamp_med_red_02 = SharedTangibleObje
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_streetlamp_med_red_02, "object/tangible/furniture/city/shared_streetlamp_med_red_02.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x32_01 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x32_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x32_01, "object/tangible/furniture/city/shared_road_torch_6x32_01.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x16_01 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x16_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x16_01, "object/tangible/furniture/city/shared_road_torch_12x16_01.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x64_01 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x64_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x64_01, "object/tangible/furniture/city/shared_road_torch_12x64_01.iff")
+
+object_tangible_furniture_city_shared_road_torch = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch, "object/tangible/furniture/city/shared_road_torch.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x128_01 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x128_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x128_01, "object/tangible/furniture/city/shared_road_torch_12x128_01.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x32_01 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x32_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x32_01, "object/tangible/furniture/city/shared_road_torch_12x32_01.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x16_01 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x16_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x16_01, "object/tangible/furniture/city/shared_road_torch_6x16_01.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x64_01 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x64_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x64_01, "object/tangible/furniture/city/shared_road_torch_6x64_01.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x16_03 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x16_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x16_03, "object/tangible/furniture/city/shared_road_torch_12x16_03.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x32_03 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x32_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x32_03, "object/tangible/furniture/city/shared_road_torch_6x32_03.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x128_02 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x128_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x128_02, "object/tangible/furniture/city/shared_road_torch_6x128_02.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x64_03 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x64_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x64_03, "object/tangible/furniture/city/shared_road_torch_12x64_03.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x128_03 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x128_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x128_03, "object/tangible/furniture/city/shared_road_torch_12x128_03.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x16_03 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x16_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x16_03, "object/tangible/furniture/city/shared_road_torch_6x16_03.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x32_03 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x32_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x32_03, "object/tangible/furniture/city/shared_road_torch_12x32_03.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x64_03 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x64_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x64_03, "object/tangible/furniture/city/shared_road_torch_6x64_03.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x128_01 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x128_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x128_01, "object/tangible/furniture/city/shared_road_torch_6x128_01.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x16_02 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x16_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x16_02, "object/tangible/furniture/city/shared_road_torch_12x16_02.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x32_02 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x32_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x32_02, "object/tangible/furniture/city/shared_road_torch_6x32_02.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x128_03 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x128_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x128_03, "object/tangible/furniture/city/shared_road_torch_6x128_03.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x64_02 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x64_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x64_02, "object/tangible/furniture/city/shared_road_torch_12x64_02.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x64_02 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x64_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x64_02, "object/tangible/furniture/city/shared_road_torch_6x64_02.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x32_02 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x32_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x32_02, "object/tangible/furniture/city/shared_road_torch_12x32_02.iff")
+
+object_tangible_furniture_city_shared_road_torch_6x16_02 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_6x16_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_6x16_02, "object/tangible/furniture/city/shared_road_torch_6x16_02.iff")
+
+object_tangible_furniture_city_shared_road_torch_12x128_02 = SharedBuildingObjectTemplate:new {
+    clientTemplateFileName = "object/tangible/furniture/city/shared_road_torch_12x128_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_furniture_city_shared_road_torch_12x128_02, "object/tangible/furniture/city/shared_road_torch_12x128_02.iff")
+
