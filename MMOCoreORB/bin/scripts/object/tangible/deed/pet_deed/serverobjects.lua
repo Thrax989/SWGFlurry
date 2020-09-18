@@ -1,50 +1,3 @@
---Copyright (C) 2010 <SWGEmu>
-
-
---This File is part of Core3.
-
---This program is free software; you can redistribute 
---it and/or modify it under the terms of the GNU Lesser 
---General Public License as published by the Free Software
---Foundation; either version 2 of the License, 
---or (at your option) any later version.
-
---This program is distributed in the hope that it will be useful, 
---but WITHOUT ANY WARRANTY; without even the implied warranty of 
---MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
---See the GNU Lesser General Public License for
---more details.
-
---You should have received a copy of the GNU Lesser General 
---Public License along with this program; if not, write to
---the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
-
---Linking Engine3 statically or dynamically with other modules 
---is making a combined work based on Engine3. 
---Thus, the terms and conditions of the GNU Lesser General Public License 
---cover the whole combination.
-
---In addition, as a special exception, the copyright holders of Engine3 
---give you permission to combine Engine3 program with free software 
---programs or libraries that are released under the GNU LGPL and with 
---code included in the standard release of Core3 under the GNU LGPL 
---license (or modified versions of such code, with unchanged license). 
---You may copy and distribute such a system following the terms of the 
---GNU LGPL for Engine3 and the licenses of the other code concerned, 
---provided that you include the source code of that other code when 
---and as the GNU LGPL requires distribution of source code.
-
---Note that people who make modified versions of Engine3 are not obligated 
---to grant this special exception for their modified versions; 
---it is their choice whether to do so. The GNU Lesser General Public License 
---gives permission to release a modified version without this exception; 
---this exception also makes it possible to release a modified version 
-
-
-
---Children folder includes
-
--- Server Objects
 includeFile("tangible/deed/pet_deed/acklay_deed.lua")
 includeFile("tangible/deed/pet_deed/angler_deed.lua")
 includeFile("tangible/deed/pet_deed/bageraset_deed.lua")
@@ -144,3 +97,36 @@ includeFile("tangible/deed/pet_deed/vesp_deed.lua")
 includeFile("tangible/deed/pet_deed/vir_vur_deed.lua")
 includeFile("tangible/deed/pet_deed/woolamander_deed.lua")
 includeFile("tangible/deed/pet_deed/zucca_boar_deed.lua")
+includeFile("tangible/deed/pet_deed/8d8_deed.lua")
+includeFile("tangible/deed/pet_deed/blistmok_deed.lua")
+includeFile("tangible/deed/pet_deed/lava_flea_deed.lua")
+includeFile("tangible/deed/pet_deed/mark_iv_sentry_deed.lua")
+includeFile("tangible/deed/pet_deed/gackle_bat_deed.lua")
+includeFile("tangible/deed/pet_deed/spined_snake_deed.lua")
+includeFile("tangible/deed/pet_deed/bolotaur_deed.lua")
+includeFile("tangible/deed/pet_deed/ig_droid_deed.lua")
+includeFile("tangible/deed/pet_deed/pharple_deed.lua")
+includeFile("tangible/deed/pet_deed/horned_platile_deed.lua")
+includeFile("tangible/deed/pet_deed/tauntaun_deed.lua")
+includeFile("tangible/deed/pet_deed/urnsoris_deed.lua")
+includeFile("tangible/deed/pet_deed/varactyl_deed.lua")
+includeFile("tangible/deed/pet_deed/reptilian_flier_deed.lua")
+includeFile("tangible/deed/pet_deed/mining_mk3_deed.lua")
+includeFile("tangible/deed/pet_deed/dwarf_spider_droid_deed.lua")
+includeFile("tangible/deed/pet_deed/magnaguard_deed.lua")
+includeFile("tangible/deed/pet_deed/kashyyyk_bantha_deed.lua")
+includeFile("tangible/deed/pet_deed/battle_droid_deed.lua")
+includeFile("tangible/deed/pet_deed/capper_spineflap_deed.lua")
+includeFile("tangible/deed/pet_deed/sherkar_deed.lua")
+includeFile("tangible/deed/pet_deed/walluga_deed.lua")
+includeFile("tangible/deed/pet_deed/pit_droid_deed.lua")
+includeFile("tangible/deed/pet_deed/guardian_mark_ii_droid_deed.lua")
+includeFile("tangible/deed/pet_deed/nerf_deed.lua")
+includeFile("tangible/deed/pet_deed/hawk_bat_deed.lua")
+includeFile("tangible/deed/pet_deed/peko_peko_deed.lua")
+includeFile("tangible/deed/pet_deed/lin_demolition_deed.lua")
+includeFile("tangible/deed/pet_deed/ins_444_deed.lua")
+includeFile("tangible/deed/pet_deed/droideka_deed.lua")
+includeFile("tangible/deed/pet_deed/super_battle_droid_deed.lua")
+includeFile("tangible/deed/pet_deed/asn_121_deed.lua")
+includeFile("tangible/deed/pet_deed/ito_interrogator_deed.lua")

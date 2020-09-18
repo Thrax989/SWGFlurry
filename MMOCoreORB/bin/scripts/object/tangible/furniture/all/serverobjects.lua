@@ -1,50 +1,4 @@
---Copyright (C) 2010 <SWGEmu>
-
-
---This File is part of Core3.
-
---This program is free software; you can redistribute 
---it and/or modify it under the terms of the GNU Lesser 
---General Public License as published by the Free Software
---Foundation; either version 2 of the License, 
---or (at your option) any later version.
-
---This program is distributed in the hope that it will be useful, 
---but WITHOUT ANY WARRANTY; without even the implied warranty of 
---MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
---See the GNU Lesser General Public License for
---more details.
-
---You should have received a copy of the GNU Lesser General 
---Public License along with this program; if not, write to
---the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
-
---Linking Engine3 statically or dynamically with other modules 
---is making a combined work based on Engine3. 
---Thus, the terms and conditions of the GNU Lesser General Public License 
---cover the whole combination.
-
---In addition, as a special exception, the copyright holders of Engine3 
---give you permission to combine Engine3 program with free software 
---programs or libraries that are released under the GNU LGPL and with 
---code included in the standard release of Core3 under the GNU LGPL 
---license (or modified versions of such code, with unchanged license). 
---You may copy and distribute such a system following the terms of the 
---GNU LGPL for Engine3 and the licenses of the other code concerned, 
---provided that you include the source code of that other code when 
---and as the GNU LGPL requires distribution of source code.
-
---Note that people who make modified versions of Engine3 are not obligated 
---to grant this special exception for their modified versions; 
---it is their choice whether to do so. The GNU Lesser General Public License 
---gives permission to release a modified version without this exception; 
---this exception also makes it possible to release a modified version 
-
-
-
---Children folder includes
-
--- Server Objects
+includeFile("tangible/furniture/all/frn_all_desk_radar_topology_screen.lua")
 includeFile("tangible/furniture/all/bestine_quest_imp_banner.lua")
 includeFile("tangible/furniture/all/bestine_quest_statue.lua")
 includeFile("tangible/furniture/all/event_flag_game_imp_banner.lua")
@@ -85,7 +39,6 @@ includeFile("tangible/furniture/all/frn_all_decorative_sm_s3.lua")
 includeFile("tangible/furniture/all/frn_all_decorative_sm_s4.lua")
 includeFile("tangible/furniture/all/frn_all_desk_map_table.lua")
 includeFile("tangible/furniture/all/frn_all_desk_map_table_insert.lua")
-includeFile("tangible/furniture/all/frn_all_desk_radar_topology_screen.lua")
 includeFile("tangible/furniture/all/frn_all_gaming_kiosk_s01.lua")
 includeFile("tangible/furniture/all/frn_all_jedi_council_seat.lua")
 includeFile("tangible/furniture/all/frn_all_lamp_candlestick_free_s01.lua")
@@ -164,3 +117,42 @@ includeFile("tangible/furniture/all/frn_all_toolchest_med_s01.lua")
 includeFile("tangible/furniture/all/frn_all_tree_potted_s1.lua")
 includeFile("tangible/furniture/all/frn_all_tree_potted_s2.lua")
 includeFile("tangible/furniture/all/frn_bench_generic.lua")
+
+includeFile("tangible/furniture/all/frn_all_trophy_greater_krayt.lua")
+includeFile("tangible/furniture/all/frn_amidala_chest_01.lua")
+includeFile("tangible/furniture/all/frn_amidala_table_sm_03.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_lava_flea.lua")
+includeFile("tangible/furniture/all/frn_amidala_armoire.lua")
+includeFile("tangible/furniture/all/frn_all_fan_faire_11_painting_01.lua")
+includeFile("tangible/furniture/all/frn_amidala_desk.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_ewok.lua")
+includeFile("tangible/furniture/all/gmf_painting_2010.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_krayt.lua")
+includeFile("tangible/furniture/all/frn_amidala_bookcase.lua")
+includeFile("tangible/furniture/all/frn_amidala_table_sm_01.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_verne.lua")
+includeFile("tangible/furniture/all/frn_amidala_table_lg.lua")
+includeFile("tangible/furniture/all/frn_all_desk_radar_topology_screen.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_peko_peko.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_corellian_sand_panther.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_tauntaun.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_zucca_boar.lua")
+includeFile("tangible/furniture/all/frn_all_fan_faire_dt_painting.lua")
+includeFile("tangible/furniture/all/frn_amidala_table_sm_02.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_slice_hound.lua")
+includeFile("tangible/furniture/all/frn_painting_galatic_gathering_2010.lua")
+includeFile("tangible/furniture/all/frn_all_fan_faire_09_painting.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_lava_beetle.lua")
+includeFile("tangible/furniture/all/frn_amidala_couch.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_xandank.lua")
+includeFile("tangible/furniture/all/frn_amidala_chair.lua")
+includeFile("tangible/furniture/all/frn_amidala_chest_02.lua")
+includeFile("tangible/furniture/all/frn_all_death_troopers_painting.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_swirlprong.lua")
+includeFile("tangible/furniture/all/frn_all_fan_faire_11_painting_02.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_condor_dragon.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_rancor.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_bocatt.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_choku.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_kliknik.lua")
+includeFile("tangible/furniture/all/frn_all_trophy_gurreck.lua")
