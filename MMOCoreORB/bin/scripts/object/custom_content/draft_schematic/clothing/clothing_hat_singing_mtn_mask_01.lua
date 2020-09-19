@@ -32,11 +32,7 @@ object_draft_schematic_clothing_clothing_hat_singing_mtn_mask_01 = object_draft_
    additionalTemplates = {
              },
 		
-	skillMods = {	    
-		{"resistance_bleeding", 25},
-	    {"slope_move", 25},
-	    {"melee_defense", 25},
-	    {"ranged_defense", 25}
+	skillMods = {
 	}
 }
 
