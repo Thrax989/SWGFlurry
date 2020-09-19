@@ -1223,8 +1223,12 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		StringBuffer zBroadcast;
 		zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#00ff00jedi";
 		ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		Zone* zone = player->getZone();
+		String planetName = zone->getZoneName();
+		Vector3 worldPosition = player->getWorldPosition();
 		StringBuffer zGeneral;
-		zGeneral << "Has Permanently Died On Their Jedi!";	
+		String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
+		zGeneral << "Has Permanently Died On Their Jedi!" << " on Planet " << planetName << name;	
 		chatManager->handleGeneralChat(player, zGeneral.toString());
 		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 0 Lives"); // You have Lost 1 Jedi Life, you now have a total of 0 Lives
 		player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
