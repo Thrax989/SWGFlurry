@@ -1327,20 +1327,20 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				if (CombatManager::instance()->areInDuel(attackerCreature, player)) {
 					Zone* zone = player->getZone();
 					String planetName = zone->getZoneName();
-                        		Vector3 worldPosition = object->getWorldPosition();
-                        
-                        		zGeneral << worldPosition.getX() << ", " << worldPosition.getZ() << ", " << worldPosition.getY() << ", " << angle << ", " << "0" << ")\n";
+                        		Vector3 worldPosition = player->getWorldPosition();
+					String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a Duel by" << killerFaction << "\\#00cc99 " << killerName << " \\#e60000 on Planet " << planetName;
-					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName << " on Planet " << planetName << " Location " << worldPosition.getX() << ", " << worldPosition.getZ() << ", " << worldPosition.getY();
+					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName << " on Planet " << planetName << name;
 				 }
 
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
 					Zone* zone = player->getZone();
 					String planetName = zone->getZoneName();
-                        		Vector3 worldPosition = object->getWorldPosition();
-
+                        		Vector3 worldPosition = player->getWorldPosition();
+					String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
  					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName << " \\#e60000 on Planet " << planetName;
-					zGeneral << playerFaction << "was slain in [PvP] by" << killerFaction << killerName << " on Planet " << planetName << " Location " << worldPosition.getX() << ", " << worldPosition.getZ() << ", " << worldPosition.getY();	
+					zGeneral << playerFaction << "was slain in [PvP] by" << killerFaction << killerName << " on Planet " << planetName << name;
+	
 
 				}
 					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
