@@ -1,0 +1,3 @@
+object_tangible_deed_vehicle_deed_twin_pod_cloud_car = object_tangible_deed_vehicle_deed_shared_twin_pod_cloud_car:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_vehicle_deed_twin_pod_cloud_car, "object/tangible/deed/vehicle_deed/twin_pod_cloud_car.iff")

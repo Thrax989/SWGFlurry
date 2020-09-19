@@ -198,9 +198,9 @@ object_weapon_melee_polearm_crafted_saber_sword_lightsaber_polearm_gen5_exar_kun
 	xpType = "jedi_general",
 
 	-- See http://www.ocdsoft.com/files/certifications.xls
-	certificationsRequired = { "cert_twohandlightsaber_gen4" },
+	certificationsRequired = { "cert_polearmlightsaber_gen4" },
 	-- See http://www.ocdsoft.com/files/accuracy.xls
-	creatureAccuracyModifiers = { "twohandlightsaber_accuracy" },
+	creatureAccuracyModifiers = { "polearmlightsaber_accuracy" },
 
 	-- See http://www.ocdsoft.com/files/defense.xls
 	defenderDefenseModifiers = { "melee_defense" },
@@ -209,7 +209,7 @@ object_weapon_melee_polearm_crafted_saber_sword_lightsaber_polearm_gen5_exar_kun
 	defenderSecondaryDefenseModifiers = { "saber_block" },
 
 	-- See http://www.ocdsoft.com/files/speed.xls
-	speedModifiers = { "twohandlightsaber_speed" },
+	speedModifiers = { "polearmlightsaber_speed" },
 
 	-- Leave blank for now
 	damageModifiers = { },

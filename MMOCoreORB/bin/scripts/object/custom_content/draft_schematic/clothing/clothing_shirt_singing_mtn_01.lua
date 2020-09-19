@@ -23,7 +23,7 @@ object_draft_schematic_clothing_clothing_shirt_singing_mtn_01 = object_draft_sch
    ingredientTitleNames = {"primary_pocket", "secondary_pocket", "strap_pad", "strap_adjustment", "lightweight_frame", "stabilizer_harness"},
    ingredientSlotType = {0, 0, 1, 0, 0, 0},
    resourceTypes = {"fiberplast", "hide", "object/tangible/component/clothing/shared_leather_heavy_duty.iff", "metal", "aluminum", "petrochem_inert_polymer"},
-   resourceQuantities = {20, 10, 1, 5, 15, 5},
+   resourceQuantities = {1000, 1000, 1, 500, 150, 500},
    contribution = {100, 100, 100, 100, 100, 100},
 
 

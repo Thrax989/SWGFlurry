@@ -1,0 +1,3 @@
+object_tangible_borrie_wall_bridge_revamped_star_destroyer_wall4 = object_tangible_borrie_wall_shared_bridge_revamped_star_destroyer_wall4:new {
+}
+ObjectTemplates:addTemplate(object_tangible_borrie_wall_bridge_revamped_star_destroyer_wall4, "object/tangible/borrie/wall/bridge_revamped_star_destroyer_wall4.iff")

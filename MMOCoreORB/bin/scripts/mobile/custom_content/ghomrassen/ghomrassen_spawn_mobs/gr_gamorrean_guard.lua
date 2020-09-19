@@ -1,0 +1,35 @@
+gr_gamorrean_guard = Creature:new {
+	objectName = "@mob/creature_names:gamorrean_guard",
+	socialGroup = "jabba",
+	faction = "jabba",
+	level = 80,
+	chanceHit = 0.98,
+	damageMin = 350,
+	damageMax = 450,
+	baseXp = 856,
+	baseHAM = 12000,
+	baseHAMmax = 16000,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,-1,-1},
+	meatType = "",
+	meatAmount = 0,
+	hideType = "",
+	hideAmount = 0,
+	boneType = "",
+	boneAmount = 0,
+	milk = 0,
+	tamingChance = 0,
+	ferocity = 0,
+	pvpBitmask = NONE,
+	creatureBitmask = PACK + KILLER,
+	optionsBitmask = AIENABLED,
+	diet = HERBIVORE,
+
+	templates = {"object/mobile/gamorrean.iff"},
+	lootGroups = {},
+	weapons = {"pirate_weapons_light"},
+	conversationTemplate = "",
+	attacks = merge(brawlernovice,marksmannovice)
+}
+
+CreatureTemplates:addCreatureTemplate(gr_gamorrean_guard, "gr_gamorrean_guard")

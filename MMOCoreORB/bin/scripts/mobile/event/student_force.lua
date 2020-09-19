@@ -4,7 +4,7 @@ student_force = Creature:new {
 	socialGroup = "dark_jedi",
 	faction = "",
 	level = 300,
-	chanceHit = 50.00,
+	chanceHit = 75.00,
 	damageMin = 1200,
 	damageMax = 1800,
 	baseXp = 27849,
@@ -20,9 +20,9 @@ student_force = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0,
-	ferocity = 0,
+	ferocity = 1,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = KILLER + STALKER,
+	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 	scale = 0.6,
@@ -32,13 +32,19 @@ student_force = Creature:new {
 			groups = {
 				{group = "junk", chance = 10000000}
 			},
-			lootChance = 100000
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "ancient_force_bread", chance = 10000000}
+			},
+			lootChance = 500000
 		},
 		{
 			groups = {
 				{group = "junk", chance = 10000000}
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 	},
 	weapons = {"dark_jedi_weapons_gen4"},

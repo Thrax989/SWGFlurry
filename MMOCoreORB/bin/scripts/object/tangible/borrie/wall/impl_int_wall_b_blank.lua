@@ -1,0 +1,3 @@
+object_tangible_borrie_wall_impl_int_wall_b_blank = object_tangible_borrie_wall_shared_impl_int_wall_b_blank:new {
+}
+ObjectTemplates:addTemplate(object_tangible_borrie_wall_impl_int_wall_b_blank, "object/tangible/borrie/wall/impl_int_wall_b_blank.iff")

@@ -1,0 +1,3 @@
+object_tangible_door_bespin_bunker_door = object_tangible_door_shared_bespin_bunker_door:new {
+}
+ObjectTemplates:addTemplate(object_tangible_door_bespin_bunker_door, "object/tangible/door/bespin_bunker_door.iff")

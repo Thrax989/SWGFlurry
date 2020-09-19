@@ -1,0 +1,8 @@
+includeFile("static/worldbuilding/furniture/frn_vet_couch_section_lg.lua")
+includeFile("static/worldbuilding/furniture/frn_all_painting_schematic_comlink.lua")
+includeFile("static/worldbuilding/furniture/frn_all_painting_schematic_star_destroyer.lua")
+includeFile("static/worldbuilding/furniture/starship_pilot_chair.lua")
+includeFile("static/worldbuilding/furniture/frn_all_painting_schematic_datapad.lua")
+includeFile("static/worldbuilding/furniture/cantina_table_3.lua")
+includeFile("static/worldbuilding/furniture/col_dejarik_table_board_s02.lua")
+includeFile("static/worldbuilding/furniture/frn_vet_couch_section_sm.lua")

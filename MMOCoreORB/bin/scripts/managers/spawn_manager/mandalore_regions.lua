@@ -53,6 +53,7 @@ mandalore_regions = {
 	{"taung_warrior_bunker",-6354,288,{1,500},NOSPAWNAREA + NOBUILDZONEAREA,1},
 	{"cave_of_darth_caedus",7374,256,{1,500},NOSPAWNAREA + NOBUILDZONEAREA,1},
 	{"vizsla_hideout",439,7492,{1,500},NOSPAWNAREA + NOBUILDZONEAREA,1},
+  {"wb8_boss", -1137, 2607, {1,100}, NOBUILDZONEAREA,1}, 
 	{"shaadow_collective",-6998,3118,{1,500},NOSPAWNAREA + NOBUILDZONEAREA,1},
 }
 

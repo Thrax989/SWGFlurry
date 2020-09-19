@@ -48,12 +48,12 @@ function janta_caveScreenplay:bossDead(pBoss)
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "janta_caveScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "janta_caveScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
-	createEvent(1 * 1000, "janta_caveScreenplay", "BroadcastDead", pBoss, "")--Broadcast Dead
-	createEvent(1 * 1000, "janta_caveScreenplay", "BroadcastRespawn", pBoss, "")--Broadcast 3 Hour Respawn
-	createEvent(10795 * 1000, "janta_caveScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "janta_caveScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "janta_caveScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	createEvent(10800 * 1000, "janta_caveScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
+	--createEvent(1 * 1000, "janta_caveScreenplay", "BroadcastDead", pBoss, "")--Broadcast Dead
+	--createEvent(1 * 1000, "janta_caveScreenplay", "BroadcastRespawn", pBoss, "")--Broadcast 3 Hour Respawn
+	--createEvent(10795 * 1000, "janta_caveScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
+	--createEvent(10798 * 1000, "janta_caveScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
+	--createEvent(10799 * 1000, "janta_caveScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
+	--createEvent(10800 * 1000, "janta_caveScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------

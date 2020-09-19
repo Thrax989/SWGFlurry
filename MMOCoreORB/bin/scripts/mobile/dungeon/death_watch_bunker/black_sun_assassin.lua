@@ -1,4 +1,4 @@
-death_watch_black_sun_assassin = Creature:new {
+black_sun_assassin = Creature:new {
 	objectName = "@mob/creature_names:mand_bunker_blksun_assassin",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,

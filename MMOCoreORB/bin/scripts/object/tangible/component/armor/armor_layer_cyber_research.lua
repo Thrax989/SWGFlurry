@@ -1,0 +1,3 @@
+object_tangible_component_armor_armor_layer_cyber_research = object_tangible_component_armor_shared_armor_layer_cyber_research:new {
+}
+ObjectTemplates:addTemplate(object_tangible_component_armor_armor_layer_cyber_research, "object/tangible/component/armor/armor_layer_cyber_research.iff")

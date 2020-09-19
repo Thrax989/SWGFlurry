@@ -1,0 +1,5 @@
+object_static_worldbuilding_furniture_cheap_shared_frn_all_chep_end_table_s01 = SharedStaticObjectTemplate:new {
+    clientTemplateFileName = "object/static/worldbuilding/furniture/cheap/shared_frn_all_chep_end_table_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_worldbuilding_furniture_cheap_shared_frn_all_chep_end_table_s01, "object/static/worldbuilding/furniture/cheap/shared_frn_all_chep_end_table_s01.iff")
+

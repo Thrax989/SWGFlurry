@@ -1,0 +1,3 @@
+object_tangible_borrie_wall_tatt_stco_player_wall1 = object_tangible_borrie_wall_shared_tatt_stco_player_wall1:new {
+}
+ObjectTemplates:addTemplate(object_tangible_borrie_wall_tatt_stco_player_wall1, "object/tangible/borrie/wall/tatt_stco_player_wall1.iff")

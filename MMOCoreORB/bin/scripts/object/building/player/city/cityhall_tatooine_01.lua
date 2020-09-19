@@ -1,0 +1,3 @@
+object_building_player_city_cityhall_tatooine_01 = object_building_player_city_shared_cityhall_tatooine_01:new {
+}
+ObjectTemplates:addTemplate(object_building_player_city_cityhall_tatooine_01, "object/building/player/city/cityhall_tatooine_01.iff")

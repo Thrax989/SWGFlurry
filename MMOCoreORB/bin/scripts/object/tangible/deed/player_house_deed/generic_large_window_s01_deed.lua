@@ -1,0 +1,3 @@
+object_tangible_deed_player_house_deed_generic_large_window_s01_deed = object_tangible_deed_player_house_deed_shared_generic_large_window_s01_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_player_house_deed_generic_large_window_s01_deed, "object/tangible/deed/player_house_deed/generic_large_window_s01_deed.iff")

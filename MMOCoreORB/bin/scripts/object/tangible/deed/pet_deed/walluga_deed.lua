@@ -1,0 +1,3 @@
+object_tangible_deed_pet_deed_walluga_deed = object_tangible_deed_pet_deed_shared_walluga_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_pet_deed_walluga_deed, "object/tangible/deed/pet_deed/walluga_deed.iff")

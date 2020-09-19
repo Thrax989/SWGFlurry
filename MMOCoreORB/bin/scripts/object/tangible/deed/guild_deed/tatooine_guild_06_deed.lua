@@ -1,0 +1,3 @@
+object_tangible_deed_guild_deed_tatooine_guild_06_deed = object_tangible_deed_guild_deed_shared_tatooine_guild_06_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_guild_deed_tatooine_guild_06_deed, "object/tangible/deed/guild_deed/tatooine_guild_06_deed.iff")

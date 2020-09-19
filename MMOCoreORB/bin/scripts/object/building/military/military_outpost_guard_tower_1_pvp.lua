@@ -1,0 +1,3 @@
+object_building_military_military_outpost_guard_tower_1_pvp = object_building_military_shared_military_outpost_guard_tower_1_pvp:new {
+}
+ObjectTemplates:addTemplate(object_building_military_military_outpost_guard_tower_1_pvp, "object/building/military/military_outpost_guard_tower_1_pvp.iff")

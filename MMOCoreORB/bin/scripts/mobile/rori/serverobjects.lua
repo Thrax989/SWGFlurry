@@ -145,3 +145,9 @@ includeFile("rori/wood_mite_royal_guard.lua")
 includeFile("rori/wormed_vrobal.lua")
 includeFile("rori/young_borgle_gruntling.lua")
 includeFile("rori/young_borgle.lua")
+--Bosses
+includeFile("rori/high_inquisitor.lua")
+includeFile("rori/inquisitor_sancor.lua")
+includeFile("rori/inquisitor_vrke.lua")
+includeFile("rori/inquisitor_trooper.lua")
+

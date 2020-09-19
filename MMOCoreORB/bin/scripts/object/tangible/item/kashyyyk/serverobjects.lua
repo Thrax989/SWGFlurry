@@ -1,0 +1,8 @@
+includeFile("tangible/item/kashyyyk/eqp_wookiee_totem_crafters.lua")
+includeFile("tangible/item/kashyyyk/eqp_wookiee_tome_s01.lua")
+includeFile("tangible/item/kashyyyk/eqp_wookiee_totem_runners.lua")
+includeFile("tangible/item/kashyyyk/eqp_wookiee_scroll_s01.lua")
+includeFile("tangible/item/kashyyyk/eqp_kash_hunting_license.lua")
+includeFile("tangible/item/kashyyyk/eqp_tool_cyborg_rez_kit.lua")
+includeFile("tangible/item/kashyyyk/eqp_kash_mystic_tree_cure.lua")
+includeFile("tangible/item/kashyyyk/eqp_broken_force_pike.lua")

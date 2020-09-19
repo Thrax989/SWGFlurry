@@ -1,0 +1,8 @@
+includeFile("tangible/collection/reward/buddy_painting_02.lua")
+includeFile("tangible/collection/reward/col_reward_tatooine_vistas_painting.lua")
+includeFile("tangible/collection/reward/buddy_painting_01.lua")
+includeFile("tangible/collection/reward/datapad_painting_reward.lua")
+includeFile("tangible/collection/reward/com_link_painting_reward.lua")
+includeFile("tangible/collection/reward/buddy_painting_03.lua")
+includeFile("tangible/collection/reward/cyborg_headband.lua")
+includeFile("tangible/collection/reward/gem_collection_reward_01.lua")

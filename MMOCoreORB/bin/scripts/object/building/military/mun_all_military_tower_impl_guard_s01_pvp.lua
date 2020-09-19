@@ -1,0 +1,3 @@
+object_building_military_mun_all_military_tower_impl_guard_s01_pvp = object_building_military_shared_mun_all_military_tower_impl_guard_s01_pvp:new {
+}
+ObjectTemplates:addTemplate(object_building_military_mun_all_military_tower_impl_guard_s01_pvp, "object/building/military/mun_all_military_tower_impl_guard_s01_pvp.iff")

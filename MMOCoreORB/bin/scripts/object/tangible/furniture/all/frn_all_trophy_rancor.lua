@@ -1,0 +1,3 @@
+object_tangible_furniture_all_frn_all_trophy_rancor = object_tangible_furniture_all_shared_frn_all_trophy_rancor:new {
+}
+ObjectTemplates:addTemplate(object_tangible_furniture_all_frn_all_trophy_rancor, "object/tangible/furniture/all/frn_all_trophy_rancor.iff")

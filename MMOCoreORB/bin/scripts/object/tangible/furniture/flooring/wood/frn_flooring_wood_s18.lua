@@ -1,0 +1,3 @@
+object_tangible_furniture_flooring_wood_frn_flooring_wood_s18 = object_tangible_furniture_flooring_wood_shared_frn_flooring_wood_s18:new {
+}
+ObjectTemplates:addTemplate(object_tangible_furniture_flooring_wood_frn_flooring_wood_s18, "object/tangible/furniture/flooring/wood/frn_flooring_wood_s18.iff")

@@ -1,0 +1,3 @@
+object_tangible_borrie_wall_thm_tatt_jabba_floorplate = object_tangible_borrie_wall_shared_thm_tatt_jabba_floorplate:new {
+}
+ObjectTemplates:addTemplate(object_tangible_borrie_wall_thm_tatt_jabba_floorplate, "object/tangible/borrie/wall/thm_tatt_jabba_floorplate.iff")

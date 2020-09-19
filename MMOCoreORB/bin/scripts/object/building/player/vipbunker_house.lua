@@ -1,0 +1,3 @@
+object_building_player_vipbunker_house = object_building_player_shared_vipbunker_house:new {
+}
+ObjectTemplates:addTemplate(object_building_player_vipbunker_house, "object/building/player/vipbunker_house.iff")

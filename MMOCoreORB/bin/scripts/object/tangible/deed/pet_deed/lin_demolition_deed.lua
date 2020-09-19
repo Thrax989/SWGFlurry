@@ -1,0 +1,3 @@
+object_tangible_deed_pet_deed_lin_demolition_deed = object_tangible_deed_pet_deed_shared_lin_demolition_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_pet_deed_lin_demolition_deed, "object/tangible/deed/pet_deed/lin_demolition_deed.iff")

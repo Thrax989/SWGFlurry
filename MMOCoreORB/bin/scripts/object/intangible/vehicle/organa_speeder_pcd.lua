@@ -1,0 +1,3 @@
+object_intangible_vehicle_organa_speeder_pcd = object_intangible_vehicle_shared_organa_speeder_pcd:new {
+}
+ObjectTemplates:addTemplate(object_intangible_vehicle_organa_speeder_pcd, "object/intangible/vehicle/organa_speeder_pcd.iff")

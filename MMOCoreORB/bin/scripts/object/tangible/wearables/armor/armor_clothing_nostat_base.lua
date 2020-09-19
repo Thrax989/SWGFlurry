@@ -1,0 +1,3 @@
+object_tangible_wearables_armor_armor_clothing_nostat_base = object_tangible_wearables_armor_shared_armor_clothing_nostat_base:new {
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_armor_clothing_nostat_base, "object/tangible/wearables/armor/armor_clothing_nostat_base.iff")

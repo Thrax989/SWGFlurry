@@ -1,0 +1,3 @@
+object_tangible_scout_camokit_camokit_mustafar = object_tangible_scout_camokit_shared_camokit_mustafar:new {
+}
+ObjectTemplates:addTemplate(object_tangible_scout_camokit_camokit_mustafar, "object/tangible/scout/camokit/camokit_mustafar.iff")
