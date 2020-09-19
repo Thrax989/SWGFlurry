@@ -13,6 +13,7 @@
 #include "server/zone/ZoneServer.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/objects/group/GroupObject.h"
+#include "server/zone/managers/player/PlayerManager.h"
 
 void ContrabandMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
@@ -34,7 +35,7 @@ int ContrabandMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cr
 		creature->playEffect("clienteffect/level_granted.cef", "");
 		playerManager->awardExperience(creature, "recycle_contraband", 1, true); // Award Recycle Contraband XP
 		sceneObject->destroyObjectFromWorld(true);
-		}
+		return 0;
 	}
 	return TangibleObjectMenuComponent::handleObjectMenuSelect(sceneObject, creature, selectedID);
 }
