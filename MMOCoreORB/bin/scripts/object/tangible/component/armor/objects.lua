@@ -40,6 +40,7 @@
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
 
+
 object_tangible_component_armor_shared_armor_layer = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/component/armor/shared_armor_layer.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups
