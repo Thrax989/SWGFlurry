@@ -91,7 +91,6 @@ Core3 = {
 	--To save on RAM and CPU usage, you should only enable the zones you need.
 	--In order to disable a zone, all you have to do is comment it out.
 	ZonesEnabled = {
-	"bespin",
 	"chandrila",
 	"corellia",
 	"coruscant",
