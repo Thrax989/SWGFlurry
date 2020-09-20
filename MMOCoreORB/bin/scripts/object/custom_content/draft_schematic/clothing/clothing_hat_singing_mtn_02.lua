@@ -27,7 +27,7 @@ object_draft_schematic_clothing_clothing_hat_singing_mtn_02 = object_draft_schem
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/hat/singing_mountain_clan_mask_s02.iff",
+   targetTemplate = "object/tangible/wearables/hat/singing_mountain_clan_hat_s02.iff",
 
    additionalTemplates = {
              },
