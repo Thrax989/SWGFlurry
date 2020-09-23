@@ -9,6 +9,9 @@
 #include "server/zone/packets/ui/SuiCreatePageMessage.h"
 #include "server/zone/packets/ui/SuiForceClosePage.h"
 #include "server/zone/objects/scene/SceneObject.h"
+#include <regex>
+#include <vector>
+#include <algorithm>
 
 void SuiBoxImplementation::generateHeader(SuiCreatePageMessage* message) {
 	//[UI DECLARATION HEADER]
@@ -61,6 +64,68 @@ void SuiBoxImplementation::generateBody(SuiCreatePageMessage* message) {
 
 		message->insertOption(bdyType, bdyValue, bdyVar, bdySetting);
 	}
+}
+
+void SuiBoxImplementation::generateBodySorted(SuiCreatePageMessage* message) {
+        //[UI BODY]
+	String bdyTypeStr = "";
+	int bdyType = 0;
+	String bdyVar = "";
+	String bdySetting = "";
+	String bdyValue = "";
+	std::vector<std::string> values_vector;
+	std::smatch m;
+	std::regex p (".* (.* .*[0-9]m)");
+	int y = 0;
+
+
+	for(int k = 0; k < optionSets.size(); ++k) {
+		StringTokenizer bdyTok(optionSets.get(k)); //ex. 3~Prompt.lblTitle~Text~LOL
+		bdyTok.setDelimeter("~"); //Split & parse
+		bdyTok.getStringToken(bdyTypeStr);
+
+		bdyType = Integer::valueOf(bdyTypeStr);
+
+		bdyTok.getStringToken(bdyVar);
+
+		if((bdyType == 3) || (bdyType == 4)) {
+			bdyTok.getStringToken(bdySetting);
+			bdyTok.getStringToken(bdyValue);
+			std::string value(bdyValue.toCharArray());
+			if (std::regex_search (value,m,p)) {
+				values_vector.push_back(value);
+			}
+		}
+	}
+	sort(values_vector.begin(), values_vector.end());
+
+
+	for(int k = 0; k < optionSets.size(); ++k) {
+		StringTokenizer bdyTok(optionSets.get(k)); //ex. 3~Prompt.lblTitle~Text~LOL
+
+		bdyTok.setDelimeter("~"); //Split & parse
+		bdyTok.getStringToken(bdyTypeStr);
+
+		bdyType = Integer::valueOf(bdyTypeStr);
+
+		bdyTok.getStringToken(bdyVar);
+
+		if((bdyType == 3) || (bdyType == 4)) {
+			bdyTok.getStringToken(bdySetting);
+			bdyTok.getStringToken(bdyValue);
+			std::string value(bdyValue.toCharArray());
+			if (std::regex_search (value,m,p)) {
+				std::string stdstring = values_vector[y];
+				const char* s = stdstring.c_str();
+				String bdyValueNew(s);
+				bdyValue = bdyValueNew;
+				y++;
+			}
+		}
+		 
+		message->insertOption(bdyType, bdyValue, bdyVar, bdySetting);
+	}
+
 }
 
 BaseMessage* SuiBoxImplementation::generateCloseMessage() {
