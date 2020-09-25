@@ -1,6 +1,7 @@
 inquisitor_trooper = Creature:new {
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
+	socialGroup = "Dark Jedi",
 	level = 300,
 	chanceHit = 45.00,
 	damageMin = 1400,
