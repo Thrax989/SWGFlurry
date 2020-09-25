@@ -27,16 +27,12 @@ object_draft_schematic_clothing_clothing_hat_singing_mtn_01 = object_draft_schem
    contribution = {100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/tangible/wearables/hat/singing_mountain_clan_mask_s01.iff",
+   targetTemplate = "object/tangible/wearables/hat/singing_mountain_clan_hat_s01.iff",
 
    additionalTemplates = {
              },
 		
-	skillMods = {	    
-		{"resistance_bleeding", 25},
-	    {"slope_move", 25},
-	    {"melee_defense", 25},
-	    {"ranged_defense", 25}
+	skillMods = {
 	}
 }
 

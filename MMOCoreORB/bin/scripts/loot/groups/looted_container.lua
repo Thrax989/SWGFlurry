@@ -32,8 +32,6 @@ looted_container = {
 		{itemTemplate = "worklight", weight = 100000},
 		{itemTemplate = "force_color_crystal", weight = 1000000},
 		{itemTemplate = "force_power_crystal", weight = 100000},
-		{itemTemplate = "jedi_holocron_dark", weight = 100000},
-		{itemTemplate = "jedi_holocron_light", weight = 100000},
 		{itemTemplate = "attachment_clothing", weight = 100000},
 		{itemTemplate = "attachment_armor", weight = 100000},
 		-- Weapons (25% chance)
@@ -47,6 +45,8 @@ looted_container = {
 		{groupTemplate = "wearables_all", weight = 1000000},
 		-- Dot System (1% chance)
 		{groupTemplate = "dotsystem", weight = 100000},
+		-- Dot System (2% chance)
+		{groupTemplate = "dot_cleanse", weight = 200000},
 	}
 }
 

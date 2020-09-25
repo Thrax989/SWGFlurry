@@ -1300,6 +1300,9 @@ includeFile("items/rebpointsitem.lua")
 --World Boss Crate
 includeFile("items/world.lua")
 
+--Clease Dot Pack
+includeFile("items/dot_cleanse.lua")
+
 --Event Player Crate
 includeFile("items/eventplayer.lua")
 
