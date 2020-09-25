@@ -1,6 +1,7 @@
 inquisitor_trooper = Creature:new {
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
+	socialGroup = "Dark Jedi",
 	level = 300,
 	chanceHit = 45.00,
 	damageMin = 1400,
@@ -9,7 +10,7 @@ inquisitor_trooper = Creature:new {
 	baseHAM = 195000,
 	baseHAMmax = 225000,
 	armor = 2,
-	resists = {45,65,55,85,15,45,75,25,75},
+	resists = {45,55,55,55,15,45,55,25,55},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
