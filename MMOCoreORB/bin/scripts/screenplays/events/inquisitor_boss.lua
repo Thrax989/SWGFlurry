@@ -242,7 +242,7 @@ function inquisitor_boss:KillBoss(pBoss)
 	end
 	return 0
 end
-----------------------------
+--[[--------------------------
 --Broadcast Dead
 ----------------------------
 function inquisitor_boss:BroadcastDead(bossObject)
@@ -290,3 +290,4 @@ function inquisitor_boss:KillSpawnCast3(bossObject)
 		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 1")
 		CreatureObject(bossObject):broadcastToDiscord("1")
 end
+]]--
