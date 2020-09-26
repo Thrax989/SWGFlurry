@@ -2,8 +2,9 @@ inquisitor_trooper = Creature:new {
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
 	socialGroup = "Dark Jedi",
+	specialDamageMult = 4.0,
 	level = 300,
-	chanceHit = 45.00,
+	chanceHit = 65.00,
 	damageMin = 1400,
 	damageMax = 1850,
 	baseXp = 26654,
@@ -64,9 +65,9 @@ inquisitor_trooper = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"mixed_force_weapons"},
+	weapons = {"mixed_force_weapons",  "imperial_weapons_heavy"},
 	conversationTemplate = "",
-	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster,forcepowermaster)
+	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster,forcepowermaster,riflemanmaster,pistoleermaster,carbineermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(inquisitor_trooper, "inquisitor_trooper")
