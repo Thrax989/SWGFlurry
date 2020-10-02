@@ -43,7 +43,7 @@
 
 object_tangible_wearables_ring_ring_s01 = object_tangible_wearables_ring_shared_ring_s01:new {
   templateType = ARMOROBJECT,
-	objectMenuComponent = "RingObjectMenuComponent",
+	objectMenuComponent = "ArmorObjectMenuComponent",
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
