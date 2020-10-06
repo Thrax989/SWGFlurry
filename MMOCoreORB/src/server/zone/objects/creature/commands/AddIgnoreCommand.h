@@ -43,8 +43,12 @@ public:
 		PlayerManager* playerManager = server->getPlayerManager();
 
 		bool validName = playerManager->existsName(nameLower);
-		validName = validName &&
-				(creature->getFirstName().toLowerCase().compareTo( nameLower ) != 0);
+
+		if (creature->getFirstName() == "Discord" || creature->getFirstName() == "Flurry" || creature->getFirstName() == "System" || creature->getFirstName() == "Flurrytest") {
+			validName = true;
+		} else {
+			validName = validName && (creature->getFirstName().toLowerCase().compareTo( nameLower ) != 0);
+		}
 
 		if (!validName) {
 			StringIdChatParameter param("cmnty", "ignore_not_found");
