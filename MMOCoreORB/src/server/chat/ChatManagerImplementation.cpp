@@ -748,6 +748,14 @@ void ChatManagerImplementation::handleChatRoomMessage(CreatureObject* sender, co
 		channel->broadcastMessageCheckIgnore(msg, name);
 	} else if (generalRoom != nullptr && generalRoom->getRoomID() == roomID) {
 		channel->broadcastMessageCheckIgnore(msg, name);
+	} else if (galaxyRoom != nullptr && galaxyRoom->getRoomID() == roomID) {
+		channel->broadcastMessageCheckIgnore(msg, name);
+	} else if (systemRoom != nullptr && systemRoom->getRoomID() == roomID) {
+		channel->broadcastMessageCheckIgnore(msg, name);
+	} else if (guildRoom != nullptr && guildRoom->getRoomID() == roomID) {
+		channel->broadcastMessageCheckIgnore(msg, name);
+	} else if (auctionRoom != nullptr && auctionRoom->getRoomID() == roomID) {
+		channel->broadcastMessageCheckIgnore(msg, name);
 	} else {
 		channel->broadcastMessage(msg);
 	}
