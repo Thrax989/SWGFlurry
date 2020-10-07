@@ -55,7 +55,7 @@ public:
 			ManagedReference<CreatureObject*> targetCreature =
 					server->getZoneServer()->getObject(target).castTo<CreatureObject*>();
 
-			if (targetCreature == nullptr ) {
+			if (targetCreature == nullptr) {
 				creature->sendSystemMessage("@trap/trap:sys_creatures_only");
 				return GENERALERROR;
 			}
@@ -100,12 +100,6 @@ public:
 			int trappingSkill = creature->getSkillMod("trapping");
 			if(trappingSkill < 1) {
 				creature->sendSystemMessage("@trap/trap:trap_no_skill");
-				return GENERALERROR;
-			}
-
-			/// Skill too low check
-			if(trappingSkill < trapData->getSkillRequired()) {
-				creature->sendSystemMessage("@trap/trap:trap_no_skill_this");
 				return GENERALERROR;
 			}
 
