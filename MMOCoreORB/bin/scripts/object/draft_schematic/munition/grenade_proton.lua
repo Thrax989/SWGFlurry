@@ -81,7 +81,7 @@ object_draft_schematic_munition_grenade_proton = object_draft_schematic_munition
 			{"strength", 200},
 			{"duration", 160},
 			{"potency", 100},
-			{"uses", 1}
+			{"uses", 5}
 		}
 	},          
 }
