@@ -22,8 +22,6 @@ public:
 	}
 
 	void run() {
-		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-		PlayerManager* playerManager = server->getZoneServer()->getPlayerManager();
 		--minutesRemaining;
 
 		String str = "Server will shutdown in " + String::valueOf(minutesRemaining) + " minutes";
@@ -35,7 +33,6 @@ public:
 
 		zoneServer->getChatManager()->broadcastGalaxy(nullptr, str);
 		zoneServer->getChatManager()->handleGeneralDiscordShutdownChat(nullptr, str);
-		str << "Connections Online: " << String::valueOf(player->getZoneServer()->getConnectionCount()) << endl;
 
 		if (minutesRemaining <= 0) {
 			ServerCore::getInstance()->signalShutdown();
