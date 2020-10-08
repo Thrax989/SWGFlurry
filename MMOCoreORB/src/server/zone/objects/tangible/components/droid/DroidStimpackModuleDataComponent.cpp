@@ -25,7 +25,7 @@ DroidStimpackModuleDataComponent::~DroidStimpackModuleDataComponent() {
 
 }
 
-String DroidStimpackModuleDataComponent::getModuleName() const {
+String DroidStimpackModuleDataComponent::getModuleName() {
 	return String("stimpack_module");
 }
 
@@ -72,7 +72,7 @@ void DroidStimpackModuleDataComponent::fillAttributeList(AttributeListMessage* a
 	alm->insertAttribute("stimpack_power", power);
 }
 
-String DroidStimpackModuleDataComponent::toString() const {
+String DroidStimpackModuleDataComponent::toString() {
 	return BaseDroidModuleComponent::toString();
 }
 
