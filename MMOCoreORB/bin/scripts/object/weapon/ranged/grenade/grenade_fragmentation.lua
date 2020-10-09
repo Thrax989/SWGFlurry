@@ -277,7 +277,7 @@ object_weapon_ranged_grenade_grenade_fragmentation = object_weapon_ranged_grenad
 	minDamage = 50,
 	maxDamage = 300,
 
-	attackSpeed = 4,
+	attackSpeed = 8,
 
 	woundsRatio = 10,
 	animationType = "fragmentation",

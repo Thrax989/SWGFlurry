@@ -278,7 +278,7 @@ object_weapon_ranged_grenade_grenade_thermal_detonator = object_weapon_ranged_gr
 	minDamage = 100,
 	maxDamage = 400,
 
-	attackSpeed = 5,
+	attackSpeed = 8,
 
 	woundsRatio = 10,
 
