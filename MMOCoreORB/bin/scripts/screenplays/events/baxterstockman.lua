@@ -38,6 +38,8 @@ function baxter_stockman:bossDead(pBoss)
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "baxter_stockman", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "baxter_stockman", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
+	createEvent(1 * 1000, "baxter_stockman", "BroadcastDead", pBoss, "")--Broadcast Dead
+	createEvent(10800 * 1000, "baxter_stockman", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
@@ -59,4 +61,20 @@ function baxter_stockman:KillBoss(pBoss)
 		SceneObject(pBoss):destroyObjectFromWorld()
 	end
 	return 0
+end
+----------------------------
+--Broadcast Dead
+----------------------------
+function baxter_stockman:BroadcastDead(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Baxter Stockman Boss Has Died.")
+		CreatureObject(bossObject):broadcastToDiscord("Baxter Stockman Boss Has Died.")
+end
+-----------------------
+--Broadcast Respawn 1
+-----------------------
+function baxter_stockman:KillSpawnCast3(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Baxter Stockman Boss Respawning.")
+		CreatureObject(bossObject):broadcastToDiscord("Baxter Stockman Boss Respawning.")
 end
