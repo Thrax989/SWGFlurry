@@ -214,10 +214,6 @@ function inquisitor_boss:bossDead(pBoss)
 	createEvent(120 * 1000, "inquisitor_boss", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "inquisitor_boss", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
 	createEvent(1 * 1000, "inquisitor_boss", "BroadcastDead", pBoss, "")--Broadcast Dead
-	createEvent(1 * 1000, "inquisitor_boss", "BroadcastRespawn", pBoss, "")--Broadcast 3 Hour Respawn
-	createEvent(10795 * 1000, "inquisitor_boss", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "inquisitor_boss", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "inquisitor_boss", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
 	createEvent(10800 * 1000, "inquisitor_boss", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
@@ -225,7 +221,7 @@ end
 --Respawn High Inquisitor Jerec Boss
 -----------------------
 function inquisitor_boss:KillSpawn()
-		local pBoss = spawnMobile("rori", "high_inquisitor", 10800, -5349, 76, 5042, 170, 18500002)--Spawn High Inquisitor Jerec After Death 3 Hour Timer *Change Location*
+		local pBoss = spawnMobile("rori", "high_inquisitor", -1, -5349, 76, 5042, 170, 18500002)--Spawn High Inquisitor Jerec After Death 3 Hour Timer *Change Location*
 		print("High Inquisitor Jerec Respawned")
 		createObserver(DAMAGERECEIVED, "inquisitor_boss", "npcDamageObserver", pBoss)
 		createObserver(OBJECTDESTRUCTION, "inquisitor_boss", "bossDead", pBoss)
@@ -242,51 +238,18 @@ function inquisitor_boss:KillBoss(pBoss)
 	end
 	return 0
 end
-----------------------------
 --Broadcast Dead
 ----------------------------
 function inquisitor_boss:BroadcastDead(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 High Inquisitor Jerec has been slain!")
-		CreatureObject(bossObject):broadcastToDiscord("High Inquisitor Jerec has been slain!")
-end
-----------------------------
---Broadcast Initial Respawn
-----------------------------
-function inquisitor_boss:BroadcastRespawn(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 High Inquisitor Jerec Respawning In 3 Hours")
-		CreatureObject(bossObject):broadcastToDiscord("High Inquisitor Jerec Respawning In 3 Hours")
-end
------------------------
---Broadcast Respawn
------------------------
-function inquisitor_boss:KillSpawnCast(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 High Inquisitor Jerec Respawning In ..")
-		CreatureObject(bossObject):broadcastToDiscord("High Inquisitor Jerec Respawning In ..")
-end
------------------------
---Broadcast Respawn 3
------------------------
-function inquisitor_boss:KillSpawnCast1(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 3")
-		CreatureObject(bossObject):broadcastToDiscord("3")
-end
------------------------
---Broadcast Respawn 2
------------------------
-function inquisitor_boss:KillSpawnCast2(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 2")
-		CreatureObject(bossObject):broadcastToDiscord("2")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 High Inquisitor Jerec has been slain.")
+		CreatureObject(bossObject):broadcastToDiscord("High Inquisitor Jerec has been slain.")
 end
 -----------------------
 --Broadcast Respawn 1
 -----------------------
 function inquisitor_boss:KillSpawnCast3(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 1")
-		CreatureObject(bossObject):broadcastToDiscord("1")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 High Inquisitor Jerec Respawning.")
+		CreatureObject(bossObject):broadcastToDiscord("High Inquisitor Jerec Respawning.")
 end

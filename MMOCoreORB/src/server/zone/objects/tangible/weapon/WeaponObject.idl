@@ -472,7 +472,7 @@ class WeaponObject extends TangibleObject {
 
 	@read
 	public boolean isFlameThrower() {
-		return weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_flame_thrower.iff");
+		return weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_flame_thrower.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/heavy/som_republic_flamer.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/heavy/som_lava_cannon.iff");
 	}
 
 	@read

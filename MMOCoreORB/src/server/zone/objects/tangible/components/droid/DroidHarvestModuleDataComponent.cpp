@@ -16,7 +16,7 @@
 DroidHarvestModuleDataComponent::DroidHarvestModuleDataComponent() {
 	harvestBonus = 0;
 	interest = 0; // random
-	active = false;
+	active = true;
 	setLoggingName("DroidHarvestModule");
 	harvestTargets.removeAll(0,10);
 }
@@ -227,6 +227,13 @@ void DroidHarvestModuleDataComponent::onCall(){
 	//droid->registerObserver(ObserverEventType::DESTINATIONREACHED, observer);
 	Reference<Task*> task = new DroidHarvestTask( this );
 	droid->addPendingTask("droid_harvest", task, 1000); // 1 sec
+
+	ManagedReference<CreatureObject*> player = droid->getLinkedCreature().get();
+	player->sendSystemMessage("@pet/droid_modules:auto_harvest_on");  // You turn on auto-repair
+	Locker plock(player);
+	player->registerObserver(ObserverEventType::KILLEDCREATURE, observer);
+	active = true;
+
 }
 
 void DroidHarvestModuleDataComponent::onStore(){

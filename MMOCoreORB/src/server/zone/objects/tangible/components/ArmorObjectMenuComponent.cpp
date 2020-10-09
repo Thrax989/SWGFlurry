@@ -39,31 +39,15 @@ void ArmorObjectMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, 
 			return;
 	}
 
-	String appearanceFilename = sceneObject->getObjectTemplate()->getAppearanceFilename();
-	VectorMap<String, Reference<CustomizationVariable*> > variables;
-	AssetCustomizationManagerTemplate::instance()->getCustomizationVariables(appearanceFilename.hashCode(), variables, false);
-	
-	String varkey = variables.elementAt(0).getKey();
-	
-	if (varkey.contains("color")) {
-		menuResponse->addRadialMenuItem(81, 3, "Change Colors");
-		
-		for(int i = 0; i< variables.size(); ++i){
-			varkey = variables.elementAt(i).getKey();
-			
-			if (varkey.contains("color")) {
-				String optionName = "Color " + String::valueOf(i + 1);
-				menuResponse->addRadialMenuItemToRadialID(81, (82 + i), 3, optionName); // sub-menu
-			}
-		}
-	}
+	String text = "Color Change";
+	menuResponse->addRadialMenuItem(81, 3, text);
 	
     WearableObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player); 	
 }
 
 int ArmorObjectMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const {
 
-	if (selectedID > 81) {
+	if (selectedID == 81) {
 		
 		ManagedReference<SceneObject*> parent = sceneObject->getParent().get();
 	
@@ -85,28 +69,40 @@ int ArmorObjectMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, C
 					return 0;
 			}
 		}
-
-		else {
+		else
+		{
 			if (!sceneObject->isASubChildOf(player))
 				return 0;
 		}
 
 		ZoneServer* server = player->getZoneServer();
-		if (server != nullptr) {
+
+		if (server != nullptr) {		
+
 			// The color index.
 			String appearanceFilename = sceneObject->getObjectTemplate()->getAppearanceFilename();
 			VectorMap<String, Reference<CustomizationVariable*> > variables;
 			AssetCustomizationManagerTemplate::instance()->getCustomizationVariables(appearanceFilename.hashCode(), variables, false);
-			// The Sui Box.
-			ManagedReference<SuiColorBox*> cbox = new SuiColorBox(player, SuiWindowType::COLOR_ARMOR);
-			cbox->setCallback(new ColorArmorSuiCallback(server));
-			cbox->setColorPalette(variables.elementAt(selectedID - 82).getKey()); // 0, 1, 2, 3...
-			cbox->setUsingObject(sceneObject);
-			// Add to player.
-			ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-			ghost->addSuiBox(cbox);
-			player->sendMessage(cbox->generateMessage());
+
+			//following code was a rewrite by Phoenix of MtG, expanding the original SWGEmu code to allow for more variables
+			for(int i = 0; i < variables.size(); i++)
+			{
+				String varkey = variables.elementAt(i).getKey();
+				if (varkey.contains("color")){
+				    // The Sui Box.
+				    ManagedReference<SuiColorBox*> cbox = new SuiColorBox(player, SuiWindowType::COLOR_ARMOR);
+				    cbox->setCallback(new ColorArmorSuiCallback(server));
+				    cbox->setColorPalette(variables.elementAt(i).getKey());
+				    cbox->setUsingObject(sceneObject);
+
+				    // Add to player.
+				    ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
+				    ghost->addSuiBox(cbox);
+				    player->sendMessage(cbox->generateMessage());
+				}
+			}
 		}
 	}
+
 	return WearableObjectMenuComponent::handleObjectMenuSelect(sceneObject, player, selectedID);
 }

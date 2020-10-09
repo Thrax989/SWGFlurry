@@ -55,8 +55,21 @@ FireAcidSingle2Command = {
 
 	animation = "fire_acid_rifle_single_2", 
 	animType = GENERATE_INTENSITY,
-
-	combatSpam = "fireacidsingle2",
+  combatSpam = "fireacidsingle2",
+	dotEffects = {
+	  DotEffect( 
+		ONFIRE, 
+		{"resistance_fire", "fire_resist"},
+		ACTION,
+		true,
+		0,
+		100,
+		100, 
+		60,
+		10,
+		2
+	  )
+	},  
 	
 	weaponType = SPECIALHEAVYWEAPON,
 	

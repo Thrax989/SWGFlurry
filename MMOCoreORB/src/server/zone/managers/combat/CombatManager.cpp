@@ -1325,7 +1325,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		Locker plocker(psg);
 
-		psg->inflictDamage(psg, 0, damage * 0.01, true, true);
+		psg->inflictDamage(psg, 0, damage * 0.001, true, true);
 
 	}
 
@@ -1492,7 +1492,7 @@ float CombatManager::doDroidDetonation(CreatureObject* droid, CreatureObject* de
 
 				Locker plocker(psgArmor);
 
-				psgArmor->inflictDamage(psgArmor, 0, damage * 0.1, true, true);
+				psgArmor->inflictDamage(psgArmor, 0, damage * 0.001, true, true);
 			}
 			// reduced by psg not check each spot for damage
 			healthDamage = damage;

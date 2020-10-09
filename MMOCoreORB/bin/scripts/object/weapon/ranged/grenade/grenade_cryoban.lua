@@ -277,7 +277,7 @@ object_weapon_ranged_grenade_grenade_cryoban = object_weapon_ranged_grenade_shar
 	minDamage = 20,
 	maxDamage = 250,
 
-	attackSpeed = 7,
+	attackSpeed = 8,
 
 	woundsRatio = 10,
 	animationType = "cryoban",
