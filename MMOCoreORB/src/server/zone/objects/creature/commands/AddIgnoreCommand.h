@@ -44,7 +44,7 @@ public:
 
 		bool validName = playerManager->existsName(nameLower);
 
-		if (creature->getFirstName() == "Discord" || creature->getFirstName() == "Flurry" || creature->getFirstName() == "System" || creature->getFirstName() == "Flurrytest") {
+		if (creature->getFirstName() == "Discord" || creature->getFirstName() == "Flurry" || creature->getFirstName() == "Status" || creature->getFirstName() == "Worldboss" || creature->getFirstName() == "System" || creature->getFirstName() == "Flurrytest") {
 			validName = true;
 		} else {
 			validName = validName && (creature->getFirstName().toLowerCase().compareTo( nameLower ) != 0);
