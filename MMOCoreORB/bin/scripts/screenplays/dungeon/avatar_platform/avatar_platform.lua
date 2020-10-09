@@ -188,7 +188,7 @@ end
 ----------------------------
 function avatar_platformScreenplay:BroadcastDead(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Avatar Boss Has Died")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Avatar Boss Has Died.")
 		CreatureObject(bossObject):broadcastToDiscord("Avatar Boss Has Died.")
 end
 -----------------------
@@ -196,6 +196,6 @@ end
 -----------------------
 function avatar_platformScreenplay:KillSpawnCast3(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Avatar Boss Respawning")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Avatar Boss Respawning.")
 		CreatureObject(bossObject):broadcastToDiscord("Avatar Boss Respawning.")
 end
