@@ -229,9 +229,9 @@ object_tangible_wearables_armor_ris_armor_ris_bracer_l = object_tangible_wearabl
 				"object/mobile/vendor/zabrak_female.iff" },
 	
 	-- Damage types in WeaponObject
-	vulnerability = STUN,
+	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = LIGHTSABER,
+	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
