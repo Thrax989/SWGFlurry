@@ -39,6 +39,8 @@ function worldboss_fourScreenplay:bossDead(pBoss)
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "worldboss_fourScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "worldboss_fourScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
+	createEvent(1 * 1000, "worldboss_fourScreenplay", "BroadcastDead", pBoss, "")--Broadcast Dead
+	createEvent(10800 * 1000, "worldboss_fourScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
@@ -60,4 +62,20 @@ function worldboss_fourScreenplay:KillBoss(pBoss)
 		SceneObject(pBoss):destroyObjectFromWorld()
 	end
 	return 0
+end
+----------------------------
+--Broadcast Dead
+----------------------------
+function worldboss_fourScreenplay:BroadcastDead(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 World Boss Four Has Died.")
+		CreatureObject(bossObject):broadcastToDiscord("World Boss Four Has Died.")
+end
+-----------------------
+--Broadcast Respawn 1
+-----------------------
+function worldboss_fourScreenplay:KillSpawnCast3(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 World Boss Four Respawning.")
+		CreatureObject(bossObject):broadcastToDiscord("World Boss Four Respawning.")
 end

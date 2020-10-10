@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_weapon_ranged_rifle_rifle_mandalorian = object_weapon_ranged_rifle_shared_rifle_mandalorian:new {
+object_weapon_ranged_rifle_rifle_particle_beam = object_weapon_ranged_rifle_shared_rifle_particle_beam:new {
 	
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
@@ -292,4 +292,4 @@ object_weapon_ranged_rifle_rifle_mandalorian = object_weapon_ranged_rifle_shared
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
 
-ObjectTemplates:addTemplate(object_weapon_ranged_rifle_rifle_mandalorian, "object/weapon/ranged/rifle/rifle_mandalorian.iff")
+ObjectTemplates:addTemplate(object_weapon_ranged_rifle_rifle_particle_beam, "object/weapon/ranged/rifle/rifle_particle_beam.iff")

@@ -38,12 +38,8 @@ function geo_acklaybossScreenplay:bossDead(pBoss)
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "geo_acklaybossScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "geo_acklaybossScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
-	--createEvent(1 * 1000, "geo_acklaybossScreenplay", "BroadcastDead", pBoss, "")--Broadcast Dead
-	--createEvent(1 * 1000, "geo_acklaybossScreenplay", "BroadcastRespawn", pBoss, "")--Broadcast 3 Hour Respawn
-	--createEvent(10795 * 1000, "geo_acklaybossScreenplay", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	--createEvent(10798 * 1000, "geo_acklaybossScreenplay", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	--createEvent(10799 * 1000, "geo_acklaybossScreenplay", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
-	--createEvent(10800 * 1000, "geo_acklaybossScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
+	createEvent(1 * 1000, "geo_acklaybossScreenplay", "BroadcastDead", pBoss, "")--Broadcast Dead
+	createEvent(10800 * 1000, "geo_acklaybossScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
@@ -72,46 +68,14 @@ end
 ----------------------------
 function geo_acklaybossScreenplay:BroadcastDead(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Large Acklay Boss Has Died!")
-		CreatureObject(bossObject):broadcastToDiscord("Large Acklay Boss Has Died!")
-end
-----------------------------
---Broadcast Initial Respawn
-----------------------------
-function geo_acklaybossScreenplay:BroadcastRespawn(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Large Acklay Boss Respawning In 3 Hours")
-		CreatureObject(bossObject):broadcastToDiscord("Large Acklay Boss Respawning In 3 Hours")
-end
------------------------
---Broadcast Respawn
------------------------
-function geo_acklaybossScreenplay:KillSpawnCast(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Large Acklay Boss Respawning In ..")
-		CreatureObject(bossObject):broadcastToDiscord("Large Acklay Boss Respawning In ..")
-end
------------------------
---Broadcast Respawn 3
------------------------
-function geo_acklaybossScreenplay:KillSpawnCast1(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 3")
-		CreatureObject(bossObject):broadcastToDiscord("3")
-end
------------------------
---Broadcast Respawn 2
------------------------
-function geo_acklaybossScreenplay:KillSpawnCast2(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 2")
-		CreatureObject(bossObject):broadcastToDiscord("2")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Large Acklay Boss Has Died.")
+		CreatureObject(bossObject):broadcastToDiscord("Large Acklay Boss Has Died.")
 end
 -----------------------
 --Broadcast Respawn 1
 -----------------------
 function geo_acklaybossScreenplay:KillSpawnCast3(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 1")
-		CreatureObject(bossObject):broadcastToDiscord("1")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Large Acklay Boss Respawning.")
+		CreatureObject(bossObject):broadcastToDiscord("Large Acklay Boss Respawning.")
 end

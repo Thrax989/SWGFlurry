@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_weapon_ranged_rifle_rifle_mandalorian = object_weapon_ranged_rifle_shared_rifle_mandalorian:new {
+object_weapon_ranged_rifle_rifle_ep3_loot_corellian = object_weapon_ranged_rifle_shared_rifle_ep3_loot_corellian:new {
 	
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
@@ -292,4 +292,4 @@ object_weapon_ranged_rifle_rifle_mandalorian = object_weapon_ranged_rifle_shared
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
 
-ObjectTemplates:addTemplate(object_weapon_ranged_rifle_rifle_mandalorian, "object/weapon/ranged/rifle/rifle_mandalorian.iff")
+ObjectTemplates:addTemplate(object_weapon_ranged_rifle_rifle_ep3_loot_corellian, "object/weapon/ranged/rifle/rifle_ep3_loot_corellian.iff")
