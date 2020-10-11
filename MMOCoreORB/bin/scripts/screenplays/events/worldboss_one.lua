@@ -68,14 +68,14 @@ end
 ----------------------------
 function worldboss_oneScreenplay:BroadcastDead(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Malevolent Gurk Boss Has Died.")
-		CreatureObject(bossObject):broadcastToDiscord("Malevolent Gurk Boss Has Died.")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 World Boss One Has Died.")
+		CreatureObject(bossObject):broadcastToDiscord("World Boss One Has Died.")
 end
 -----------------------
 --Broadcast Respawn 1
 -----------------------
 function worldboss_oneScreenplay:KillSpawnCast3(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Malevolent Gurk Boss Respawning.")
-		CreatureObject(bossObject):broadcastToDiscord("Malevolent Gurk Boss Respawning.")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 World Boss One Respawning.")
+		CreatureObject(bossObject):broadcastToDiscord("World Boss One Respawning.")
 end

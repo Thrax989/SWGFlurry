@@ -41,12 +41,8 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_tangible_wearables_armor_ris_armor_ris_bracer_r = object_tangible_wearables_armor_ris_shared_armor_ris_bracer_r:new {
-
-	templateType = ARMOROBJECT,
-
-	objectMenuComponent = "ArmorObjectMenuComponent", 
-
+object_weapon_ranged_rifle_rifle_ep3_loot_void = object_weapon_ranged_rifle_shared_rifle_ep3_loot_void:new {
+	
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
 				"object/mobile/vendor/abyssin_male.iff",
@@ -227,41 +223,74 @@ object_tangible_wearables_armor_ris_armor_ris_bracer_r = object_tangible_wearabl
 				"object/creature/player/zabrak_female.iff" ,
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
-	
-	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY,
 
-	-- These are default Blue Frog stats
-	healthEncumbrance = 80,
-	actionEncumbrance = 80,
-	mindEncumbrance = 80,
+	-- RANGEDATTACK, MELEEATTACK, FORCEATTACK, TRAPATTACK, GRENADEATTACK, HEAVYACIDBEAMATTACK,
+	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
+	attackType = RANGEDATTACK,
+	weaponType = SPECIALHEAVYWEAPON,
 
-	maxCondition = 30000,
+	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
+	damageType = HEAT,
 
-	-- LIGHT, MEDIUM, HEAVY
-	rating = LIGHT,
+	-- NONE, LIGHT, MEDIUM, HEAVY
+	armorPiercing = NONE,
 
-	kinetic = 65,
-	energy = 65,
-	electricity = 80,
-	stun = 25,
-	blast = 65,
-	heat = 65,
-	cold = 65,
-	acid = 65,
-	lightSaber = 0,
+	-- combat_rangedspecialize_bactarifle, combat_rangedspecialize_rifle, combat_rangedspecialize_pistol, combat_rangedspecialize_heavy, combat_rangedspecialize_carbine
+	-- combat_meleespecialize_unarmed, combat_meleespecialize_twohand, combat_meleespecialize_polearm, combat_meleespecialize_onehand, combat_general,
+	-- combat_meleespecialize_twohandlightsaber, combat_meleespecialize_polearmlightsaber, combat_meleespecialize_onehandlightsaber
+	xpType = "combat_rangedspecialize_heavy",
 
-	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
-	experimentalProperties = {"XX", "XX", "XX", "OQ", "SR", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
-	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	experimentalGroupTitles = {"null", "null", "null", "exp_durability", "exp_quality", "exp_resistance", "exp_durability", "exp_durability", "exp_durability", "null", "null", "exp_resistance", "null"},
-	experimentalSubGroupTitles = {"null", "null", "sockets", "hit_points", "armor_effectiveness", "armor_integrity", "armor_health_encumbrance", "armor_action_encumbrance", "armor_mind_encumbrance", "armor_rating", "armor_special_type", "armor_special_effectiveness", "armor_special_integrity"},
-	experimentalMin = {0, 0, 0, 1000, 1, 30000, 25, 22, 25, 1, 0, 5, 0},
-	experimentalMax = {0, 0, 0, 1000, 40, 50000, 15, 13, 15, 1, 0, 40, 0},
-	experimentalPrecision = {0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0},
-	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1},
+	-- See http://www.ocdsoft.com/files/certifications.xls
+	certificationsRequired = { "cert_rifle_flame_thrower" },
+	-- See http://www.ocdsoft.com/files/accuracy.xls
+	creatureAccuracyModifiers = { "heavy_flame_thrower_accuracy" },
+
+	-- See http://www.ocdsoft.com/files/defense.xls
+	defenderDefenseModifiers = { "ranged_defense" },
+
+	-- Leave as "dodge" for now, may have additions later
+	defenderSecondaryDefenseModifiers = { "block" },
+
+	-- See http://www.ocdsoft.com/files/speed.xls
+	speedModifiers = { "heavy_flame_thrower_speed" },
+
+	-- Leave blank for now
+	damageModifiers = {  },
+
+
+	-- The values below are the default values.  To be used for blue frog objects primarily
+	healthAttackCost = 84,
+	actionAttackCost = 20,
+	mindAttackCost = 20,
+	forceCost = 0,
+
+	pointBlankAccuracy = 15,
+	pointBlankRange = 0,
+
+	idealRange = 50,
+	idealAccuracy = -50,
+
+	maxRange = 64,
+	maxRangeAccuracy = 0,
+
+	minDamage = 480,
+	maxDamage = 830,
+
+	attackSpeed = 6,
+
+	woundsRatio = 12,
+
+	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2},
+	experimentalProperties = {"XX", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ", "XX", "CD", "OQ", "CD", "OQ", "CD", "OQ", "CD", "OQ"},
+	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "exp_durability", "expRange", "null", "expRange", "expEffeciency", "expEffeciency", "expEffeciency"},
+	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "roundsused", "hitpoints", "zerorangemod", "midrange", "midrangemod", "attackhealthcost", "attackactioncost", "attackmindcost"},
+	experimentalMin = {0, 0, 240, 690, 7.2, 8, 30, 750, 10, 50, -65, 84, 20, 20},
+	experimentalMax = {0, 0, 476, 826, 4.9, 16, 65, 1500, 20, 50, -35, 45, 10, 10},
+	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 }
 
-ObjectTemplates:addTemplate(object_tangible_wearables_armor_ris_armor_ris_bracer_r, "object/tangible/wearables/armor/ris/armor_ris_bracer_r.iff")
+
+ObjectTemplates:addTemplate(object_weapon_ranged_rifle_rifle_ep3_loot_void, "object/weapon/ranged/rifle/rifle_ep3_loot_void.iff")
