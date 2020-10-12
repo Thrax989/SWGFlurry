@@ -1459,8 +1459,8 @@ void PlayerObjectImplementation::notifyOnline() {
 	schedulePvpTefRemovalTask();
 
  	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
-	if (playerCreature->getScreenPlayState("TEST") == 1) {
-		String lootGroup = "TEST";
+	if (playerCreature->getScreenPlayState("twoyearreward") == 1) {
+		String lootGroup = "twoyear";
 
 		int level = 1;
 
@@ -1474,8 +1474,8 @@ void PlayerObjectImplementation::notifyOnline() {
 				lootManager->createLoot(inventory, lootGroup, level);
 				StringBuffer zReward;
 				ChatManager* chatManager = playerCreature->getZoneServer()->getChatManager();	
-				playerCreature->setScreenPlayState("TEST", 1);
-				playerCreature->sendSystemMessage("TEST Gift has been placed in your Inventory");
+				playerCreature->setScreenPlayState("twoyearreward", 1);
+				playerCreature->sendSystemMessage("2 Year Anniversary Gift has been placed in your Inventory");
 				zReward << " Has Received A Server Reward";
 				chatManager->handleGeneralChat(playerCreature, zReward.toString());
 			}
