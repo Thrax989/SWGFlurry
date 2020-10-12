@@ -3,10 +3,10 @@ exar_boss = Creature:new {
 	socialGroup = "exar",
 	faction = "exar",
 	level = 300,
-	chanceHit = 35.00,
-	damageMin = 1500,
-	damageMax = 3000,
-	specialDamageMult = 25.0,
+	chanceHit = 80.00,
+	damageMin = 7000,
+	damageMax = 9000,
+	specialDamageMult = 10.0,
 	baseXp = 100000,
 	baseHAM = 1100000,
 	baseHAMmax = 1000000,
@@ -120,12 +120,6 @@ exar_boss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
 				{group = "worldbosscrate", chance = 10000000},
 			},
 			lootChance = 10000000
@@ -188,7 +182,7 @@ exar_boss = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"dark_jedi_weapons_gen4", "unarmed_weapons", "ranged_weapons", "melee_weapons", "carbine_weapons", "rebel_weapons_heavy"},
+	weapons = {"dark_jedi_weapons_gen4", "ranged_weapons", "carbine_weapons", "rebel_weapons_heavy"},
 	conversationTemplate = "",
 	attacks = merge(lightsabermaster,forcepowermaster,tkamaster,pikemanmaster,swordsmanmaster,fencermaster,riflemanmaster,pistoleermaster,carbineermaster,commandomaster,bountyhuntermaster)
 }

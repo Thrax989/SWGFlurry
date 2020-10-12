@@ -3,14 +3,14 @@ sherkar = Creature:new {
 	socialGroup = "sherkar",
 	faction = "",
 	level = 300,
-	chanceHit = 50.0,
-	damageMin = 3000,
-	damageMax = 6000,
+	chanceHit = 80.0,
+	damageMin = 7000,
+	damageMax = 9000,
 	baseXp = 28549,
-	baseHAM = 1100000,
-	baseHAMmax = 1500000,
+	baseHAM = 900000,
+	baseHAMmax = 1000000,
 	armor = 3,
-	resists = {75,75,75,75,75,75,75,75,75},
+	resists = {175,175,175,175,150,175,175,175,160},
 	meatType = "meat_carnivore",
 	meatAmount = 1500,
 	hideType = "hide_bristley",
@@ -30,115 +30,97 @@ sherkar = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "legendary_comp_group", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},	
 		{
 			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
-		},		
+			lootChance = 10000000
+		},
 		{
 			groups = {
-				{group = "g_named_crystals", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "capes", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "goggles_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "neck_crafter", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter_second", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings_ranged", chance = 10000000},
+				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "jedi_earings", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "jedi_bracelets", chance = 10000000},
-			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "jedi_neck", chance = 10000000},
-			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "jedi_rings", chance = 10000000},
-			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "g_necklaces", chance = 10000000},
-			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "clothing_attachments", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "armor_attachments", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "tierdiamond", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -150,22 +132,13 @@ sherkar = Creature:new {
 		},
 		{
 			groups = {
-				{group = "vehicledeedsnormal", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
+				{group = "boss_rare", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -177,14 +150,24 @@ sherkar = Creature:new {
 				{group = "tierdiamond", chance = 2500000},
 			},
 			lootChance = 10000000
-		}
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+		},
 	},
-	weapons = {},
+	weapons = {"creature_spit_heavy_flame"},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareacombo","stateAccuracyBonus=100"},
 		{"creatureareaknockdown","stateAccuracyBonus=100"},
 		{"posturedownattack","stateAccuracyBonus=100"},
+    {"creatureareadisease","DiseaseChance=100"},
+    {"creatureareableeding","BleedChance=100"},    
 		{"creatureareacombo","stateAccuracyBonus=100"}
 	}
 }
