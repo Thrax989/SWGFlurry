@@ -48,12 +48,6 @@ sherkar = Creature:new {
 		},
 		{
 			groups = {
-				{group = "g_cloak_of_hate", chance = 10000000},
-			},
-			lootChance = 500000
-		},
-		{
-			groups = {
 				{group = "capes", chance = 10000000},
 			},
 			lootChance = 1500000
