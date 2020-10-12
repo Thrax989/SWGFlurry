@@ -68,14 +68,14 @@ end
 ----------------------------
 function worldboss_fourScreenplay:BroadcastDead(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 World Boss Four Has Died.")
-		CreatureObject(bossObject):broadcastToDiscord("World Boss Four Has Died.")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Carax Nightwraith World Boss Has Died.")
+		CreatureObject(bossObject):broadcastToDiscord("Carax Nightwraith World Boss Has Died.")
 end
 -----------------------
 --Broadcast Respawn 1
 -----------------------
 function worldboss_fourScreenplay:KillSpawnCast3(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 World Boss Four Respawning.")
-		CreatureObject(bossObject):broadcastToDiscord("World Boss Four Respawning.")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Carax Nightwraith World Boss Respawning.")
+		CreatureObject(bossObject):broadcastToDiscord("Carax Nightwraith World Boss Respawning.")
 end
