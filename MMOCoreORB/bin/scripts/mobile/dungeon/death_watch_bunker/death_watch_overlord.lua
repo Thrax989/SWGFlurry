@@ -67,28 +67,10 @@ death_watch_overlord = Creature:new {
 		},
 		{
 			groups = {
-				{group = "carbines", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "pistols", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
 				{group = "junk", chance = 10000000}
 			},
 			lootChance = 5000000
 		},
-		{
-			groups = {
-				{group = "rifles", chance = 10000000}
-			},
-			lootChance = 5000000
-		}
 	},
 	weapons = {"dark_trooper_weapons"},
 	conversationTemplate = "",

@@ -48,30 +48,6 @@ axkva_min = Creature:new {
 		},
 		{
 			groups = {
-				{group = "pistols", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "rifles", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "carbines", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "melee_weapons", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
 				{group = "armor_attachments", chance = 10000000},
 			},
 			lootChance = 5000000
@@ -98,7 +74,7 @@ axkva_min = Creature:new {
 			groups = {
 				{group = "axkva_min", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 8000000
 		}
 	},
 	weapons = {"mixed_force_weapons"},

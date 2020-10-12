@@ -67,37 +67,13 @@ nightsister_sentry = Creature:new {
 		},
 		{
 			groups = {
-				{group = "melee_weapons", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "rifles", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
 				{group = "wearables_common", chance = 10000000},
 			},
 			lootChance = 500000
 		},
 		{
 			groups = {
-				{group = "carbines", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
 				{group = "tailor_components", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "pistols", chance = 10000000},
 			},
 			lootChance = 5000000
 		},

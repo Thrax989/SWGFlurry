@@ -39,7 +39,7 @@ fenri_dalso = Creature:new {
 			groups = {
 				{group = "fenri_dalso_drop", chance = 10000000}
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -61,28 +61,10 @@ fenri_dalso = Creature:new {
 		},
 		{
 			groups = {
-				{group = "carbines", chance = 10000000}
+				{group = "jedi_comp_group", chance = 10000000}
 			},
-			lootChance = 5000000
+			lootChance = 100000
 		},
-		{
-			groups = {
-				{group = "pistols", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "junk", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "rifles", chance = 10000000}
-			},
-			lootChance = 5000000
-		}
 	},
 	weapons = {"death_watch_commander_weapons"},
 	conversationTemplate = "",

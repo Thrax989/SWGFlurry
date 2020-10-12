@@ -46,7 +46,7 @@ dune_sea_krayt_dragon = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 10000000
+			lootChance = 4000000
 		}
 	},
 	weapons = {},
