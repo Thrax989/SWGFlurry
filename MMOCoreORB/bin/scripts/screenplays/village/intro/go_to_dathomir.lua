@@ -51,7 +51,15 @@ function GoToDathomir:onSuccessfulSpawn(pPlayer)
 		end
 
 		awardSkill(pPlayer, "force_title_jedi_novice")
+		createEvent(1 * 1000, "GoToDathomir", "BroadcastUnlock", pPlayer, "")--Broadcast Unlocked
 	end
 end
-
+----------------------------
+--Broadcast Dead
+----------------------------
+function GoToDathomir:BroadcastUnlock(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		CreatureObject(pPlayer):broadcastToServer("\\#00ff00IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.")
+		CreatureObject(pPlayer):broadcastToDiscordUnlock("IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.")
+end
 return GoToDathomir
