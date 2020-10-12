@@ -1722,6 +1722,33 @@ void ChatManagerImplementation::handleGeneralDiscordChat(CreatureObject* sender,
 
 }
 
+void ChatManagerImplementation::handleGeneralDiscordGcw(CreatureObject* sender, const UnicodeString& message) {
+
+	String name = "GCW";
+	String fullName = "GCW";
+
+	UnicodeString formattedMessage(formatMessage(message));
+
+	if (generalRoom != nullptr) {
+		BaseMessage* msg = new ChatRoomMessage(fullName, server->getGalaxyName(), formattedMessage, generalRoom->getRoomID());
+		generalRoom->broadcastMessageCheckIgnore(msg, name);
+	}
+
+}
+void ChatManagerImplementation::handleGeneralDiscordUnlock(CreatureObject* sender, const UnicodeString& message) {
+
+	String name = "Unlock";
+	String fullName = "Unlock";
+
+	UnicodeString formattedMessage(formatMessage(message));
+
+	if (generalRoom != nullptr) {
+		BaseMessage* msg = new ChatRoomMessage(fullName, server->getGalaxyName(), formattedMessage, generalRoom->getRoomID());
+		generalRoom->broadcastMessageCheckIgnore(msg, name);
+	}
+
+}
+
 void ChatManagerImplementation::handleGeneralDiscordShutdownChat(CreatureObject* sender, const UnicodeString& message) {
 
 	String name = "Status";
