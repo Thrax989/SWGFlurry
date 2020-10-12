@@ -30,7 +30,6 @@ black_sun_thug = Creature:new {
 
 	templates = {"object/mobile/dressed_black_sun_thug.iff"},
 	lootGroups = {
-	lootGroups = {
 		{
 			groups = {
 				{group = "wearables_uncommon", chance = 10000000}
