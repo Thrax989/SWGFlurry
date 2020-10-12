@@ -989,17 +989,6 @@ void ChatManagerImplementation::broadcastGalaxy(CreatureObject* player, const St
 
 		playerObject->sendSystemMessage(stringMessage);
 	}
-
-	String name = "Status";
-	String fullName = "Status";
-
-	UnicodeString formattedMessage(formatMessage(message));
-
-	if (generalRoom != nullptr) {
-		BaseMessage* msg = new ChatRoomMessage(fullName, server->getGalaxyName(), formattedMessage, generalRoom->getRoomID());
-		generalRoom->broadcastMessageCheckIgnore(msg, name);
-	}
-
 }
 
 void ChatManagerImplementation::broadcastMessage(BaseMessage* message) {
