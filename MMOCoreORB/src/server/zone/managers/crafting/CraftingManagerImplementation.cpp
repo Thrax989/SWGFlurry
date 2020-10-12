@@ -66,17 +66,12 @@ int CraftingManagerImplementation::calculateExperimentationSuccess(CreatureObjec
 	float cityBonus = player->getSkillMod("private_spec_experimentation");
 
 	int experimentationSkill = player->getSkillMod(draftSchematic->getExperimentationSkill());
-	int forceSkill = 0;
+	int forceSkill = player->getSkillMod("force_experimentation");
+	experimentationSkill += forceSkill;
 
-	if (player->hasSkill("force_title_jedi_novice"))
-	{
-		forceSkill = player->getSkillMod("force_experimentation");
-		experimentationSkill += forceSkill;
-	}
+	float experimentingPoints = ((float)experimentationSkill + forceSkill) / 10.0f;
 
-	float experimentingPoints = ((float)experimentationSkill) / 10.0f;
-
-	int failMitigate = (player->getSkillMod(draftSchematic->getAssemblySkill()) - 100 + cityBonus) / 7;
+	int failMitigate = (player->getSkillMod(draftSchematic->getAssemblySkill() + forceSkill) - 100 + cityBonus) / 7;
 	failMitigate += player->getSkillMod("force_failure_reduction");
 
 	if(failMitigate < 0)
@@ -98,19 +93,16 @@ int CraftingManagerImplementation::calculateExperimentationSuccess(CreatureObjec
 		}
 	}
 
-	/// Range 0-100
-	int luckRoll = System::random(100) + cityBonus + player->getSkillMod("luck");
-
-	if (player->hasSkill("force_title_jedi_novice"))
-	{
-		luckRoll += ((player->getSkillMod("force_luck")  / 4) * 25);
-	}
+	/// Range 0-100 + city bonus
+	int luckRoll = System::random(100) + cityBonus;
 
 	if(luckRoll > ((85 - expbonus) - forceSkill))
 		return AMAZINGSUCCESS;
 
 	if(luckRoll < (5 - expbonus - failMitigate))
 		luckRoll -= System::random(100);
+
+	luckRoll += System::random(player->getSkillMod("luck") + player->getSkillMod("force_luck"));
 
 	int experimentRoll = (toolModifier * (luckRoll + (experimentingPoints * 4)));
 
@@ -171,7 +163,7 @@ void CraftingManagerImplementation::experimentRow(ManufactureSchematic* schemati
 void CraftingManagerImplementation::configureLabratories() {
 	ResourceLabratory* resLab = new ResourceLabratory();
 	resLab->initialize(zoneServer.get());
-
+	
 	labs.put(static_cast<int>(DraftSchematicObjectTemplate::RESOURCE_LAB),resLab); //RESOURCE_LAB
 
 	GeneticLabratory* genLab = new GeneticLabratory();
