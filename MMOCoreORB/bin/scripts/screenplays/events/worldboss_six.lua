@@ -130,13 +130,13 @@ if (CreatureObject(playerObject):isGrouped()) then
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
 		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
-		local trapDmg = getRandomNumber(1500, 1800)
+		local trapDmg = getRandomNumber(1800, 2000)
 		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/combat_bug_bomb.cef", "")
 		end
 	end
 else
-	local trapDmg = getRandomNumber(1500, 1800)
+	local trapDmg = getRandomNumber(1800, 2000)
 	CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
       	CreatureObject(playerObject):playEffect("clienteffect/combat_bug_bomb.cef", "")
 	end
@@ -150,13 +150,13 @@ if (CreatureObject(playerObject):isGrouped()) then
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
 		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
-		local trapDmg = getRandomNumber(200, 400)
+		local trapDmg = getRandomNumber(350, 450)
 		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/avatar_wke_gas_01.cef", "")
 		end
 	end
 else
-	local trapDmg = getRandomNumber(200, 400)
+	local trapDmg = getRandomNumber(350, 450)
 	CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
       	CreatureObject(playerObject):playEffect("clienteffect/avatar_wke_gas_01.cef", "")
 	end

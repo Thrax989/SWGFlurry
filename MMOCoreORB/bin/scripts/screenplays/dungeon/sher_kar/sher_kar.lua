@@ -128,14 +128,14 @@ if (CreatureObject(playerObject):isGrouped()) then
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
 		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
-		local trapDmg = getRandomNumber(1500, 2000)
+		local trapDmg = getRandomNumber(1800, 2000)
 		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/mine_drx55.cef", "")
       		CreatureObject(pMember):playEffect("clienteffect/screen_shake_light.cef", "")          
 		end
 	end
 else
-	local trapDmg = getRandomNumber(1500, 2000)
+	local trapDmg = getRandomNumber(1800, 2000)
 	CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
       	CreatureObject(playerObject):playEffect("clienteffect/mine_drx55.cef", "")
       	CreatureObject(playerObject):playEffect("clienteffect/screen_shake_light.cef", "")        
@@ -150,13 +150,13 @@ if (CreatureObject(playerObject):isGrouped()) then
 	for i = 0, groupSize - 1, 1 do
 		local pMember = CreatureObject(playerObject):getGroupMember(i)
 		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
-		local trapDmg = getRandomNumber(300, 400)
+		local trapDmg = getRandomNumber(350, 450)
 		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
       		CreatureObject(pMember):playEffect("clienteffect/lava_player_burning.cef", "")
 		end
 	end
 else
-	local trapDmg = getRandomNumber(300, 400)
+	local trapDmg = getRandomNumber(350, 450)
 	CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
       	CreatureObject(playerObject):playEffect("clienteffect/lava_player_burning.cef", "")
 	end
