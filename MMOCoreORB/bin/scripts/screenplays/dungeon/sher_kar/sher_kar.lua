@@ -165,11 +165,11 @@ end
 --SherKar Boss Support
 -----------------------
 function sher_karScreenplay:spawnSupport(playerObject)
-	local pGuard1 = spawnMobile("mustafar", "sherkarmini", -1, 3339, 1.5, 1720, -82, 0) 
+	local pGuard1 = spawnMobile("mustafar", "sherkarmini", -1, -116, -15, -138, 13, 12116005) 
 	spatialChat(pGuard1, "!!!!!!!!")
 	CreatureObject(pGuard1):engageCombat(playerObject)
       	CreatureObject(pGuard1):playEffect("clienteffect/ui_missile_aquiring.cef", "")
-	local pGuard2 = spawnMobile("mustafar", "sherkarmini", -1, 3309, 0.2, 1719, 89, 0) 
+	local pGuard2 = spawnMobile("mustafar", "sherkarmini", -1, -112, -17, -55, 171, 12116005) 
 	spatialChat(pGuard2, "!!!!!!!!")
 	CreatureObject(pGuard2):engageCombat(playerObject)
       	CreatureObject(pGuard2):playEffect("clienteffect/ui_missile_aquiring.cef", "")
