@@ -142,13 +142,13 @@ if (CreatureObject(playerObject):isGrouped()) then
 		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
 		local trapDmg = getRandomNumber(400, 500)
 		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
-      		CreatureObject(pMember):playEffect("clienteffect/avatar_wke_gas_01.cef", "")
+      		CreatureObject(pMember):playEffect("clienteffect/avatar_wke_sonic.cef", "")
 		end
 	end
 else
 	local trapDmg = getRandomNumber(400, 500)
 	CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
-      	CreatureObject(playerObject):playEffect("clienteffect/avatar_wke_gas_01.cef", "")
+      	CreatureObject(playerObject):playEffect("clienteffect/avatar_wke_sonic.cef", "")
 	end
 end
 -----------------------
