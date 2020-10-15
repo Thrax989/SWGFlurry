@@ -151,6 +151,7 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "getSkillMod", &LuaCreatureObject::getSkillMod},
 		{ "broadcastToServer", &LuaCreatureObject::broadcastToServer },
 		{ "broadcastToDiscord", &LuaCreatureObject::broadcastToDiscord },
+		{ "broadcastToDiscordGcw", &LuaCreatureObject::broadcastToDiscordGcw },
 		{ 0, 0 }
 };
 
@@ -1208,5 +1209,12 @@ int LuaCreatureObject::broadcastToDiscord(lua_State* L) {
 	String message = lua_tostring(L, -1);
 	ZoneServer* zServ = realObject->getZoneServer();
 	zServ->getChatManager()->handleGeneralDiscordChat(nullptr, message);
+	return 1;
+}
+
+int LuaCreatureObject::broadcastToDiscordGcw(lua_State* L) {
+	String message = lua_tostring(L, -1);
+	ZoneServer* zServ = realObject->getZoneServer();
+	zServ->getChatManager()->handleGeneralDiscordGcw(nullptr, message);
 	return 1;
 }
