@@ -1574,16 +1574,15 @@ void GCWManagerImplementation::scheduleBaseDestruction(BuildingObject* building,
 		StringBuffer zBroadcast;
 		zBroadcast << "Countdown: Estimated time to detonation: " << minutesRemaining << " minutes";
 		if (building->getFaction() == Factions::FACTIONREBEL){
-			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#FF9933 ATTENTION REBELS, YOUR BASE IS UNDER ATTACK");
+			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#FF9933 ATTENTION REBELS, YOUR BASE IS UNDER ATTACK @ " + zone->getZoneName() + " " + String::valueOf(building->getPositionX()) + " " + String::valueOf( building->getPositionZ()) + " " + String::valueOf( building->getPositionY()) + "."
 			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
-			building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, "ATTENTION REBELS, YOUR BASE IS UNDER ATTACK");
+			building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, "ATTENTION REBELS, YOUR BASE IS UNDER ATTACK @ " + zone->getZoneName() + " " + String::valueOf(building->getPositionX()) + " " + String::valueOf( building->getPositionZ()) + " " + String::valueOf( building->getPositionY()) + "."
 			building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, zBroadcast.toString());
 		} else if (building->getFaction() == Factions::FACTIONIMPERIAL){
-			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#7133FF ATTENTION IMPERIALS, YOUR BASE IS UNDER ATTACK");
+			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#7133FF ATTENTION IMPERIALS, YOUR BASE IS UNDER ATTACK @ " + zone->getZoneName() + " " + String::valueOf(building->getPositionX()) + " " + String::valueOf( building->getPositionZ()) + " " + String::valueOf( building->getPositionY()) + "."
 			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
-			building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, "ATTENTION IMPERIALS, YOUR BASE IS UNDER ATTACK");
+			building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, "ATTENTION IMPERIALS, YOUR BASE IS UNDER ATTACK @ " + zone->getZoneName() + " " + String::valueOf(building->getPositionX()) + " " + String::valueOf( building->getPositionZ()) + " " + String::valueOf( building->getPositionY()) + "."
 			building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, zBroadcast.toString());
-
 		}
 		baseData->setState(DestructibleBuildingDataComponent::SHUTDOWNSEQUENCE);
 		block.release();
