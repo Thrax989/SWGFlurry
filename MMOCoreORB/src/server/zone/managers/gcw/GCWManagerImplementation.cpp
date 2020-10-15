@@ -1080,9 +1080,7 @@ void GCWManagerImplementation::verifyUplinkBand(CreatureObject* creature, Buildi
 			//broadcast to galaxy base is under attack
 			if (building->getPvpStatusBitmask() & CreatureFlag::OVERT){
 				String str = "A PVP Base is Under Attack! @ " + zone->getZoneName() + " " + String::valueOf(building->getPositionX()) + " " + String::valueOf( building->getPositionZ()) + " " + String::valueOf( building->getPositionY()) + ".";
-				zone->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, str);
-				zone->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, str);
-
+				zone->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, str);
 			}
 			return;
 		} else {
@@ -1574,14 +1572,11 @@ void GCWManagerImplementation::scheduleBaseDestruction(BuildingObject* building,
 		StringBuffer zBroadcast;
 		zBroadcast << "Countdown: Estimated time to detonation: " << minutesRemaining << " minutes";
 		if (building->getFaction() == Factions::FACTIONREBEL){
-			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#FF9933 ATTENTION REBELS, YOUR BASE IS UNDER ATTACK");
-			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
-			building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, zBroadcast.toString());
+			building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, "\\#FF9933 ATTENTION REBELS, YOUR BASE IS UNDER ATTACK");
+			building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		} else if (building->getFaction() == Factions::FACTIONIMPERIAL){
-			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#7133FF ATTENTION IMPERIALS, YOUR BASE IS UNDER ATTACK");
-			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
-			building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, zBroadcast.toString());
-
+			building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, "\\#7133FF ATTENTION IMPERIALS, YOUR BASE IS UNDER ATTACK");
+			building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		}
 		baseData->setState(DestructibleBuildingDataComponent::SHUTDOWNSEQUENCE);
 		block.release();
@@ -1619,13 +1614,11 @@ void GCWManagerImplementation::doBaseDestruction(BuildingObject* building) {
 			StringBuffer zBroadcast;
 			zBroadcast << "Countdown: Estimated time to detonation: " << minutesRemaining << " minutes";
 			if (building->getFaction() == Factions::FACTIONREBEL){
-				building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#FF9933 ATTENTION REBELS, YOUR BASE IS UNDER ATTACK");
-				building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
-				building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, zBroadcast.toString());
+				building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, "\\#FF9933 ATTENTION REBELS, YOUR BASE IS UNDER ATTACK");
+				building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			} else if (building->getFaction() == Factions::FACTIONIMPERIAL){
-				building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#7133FF ATTENTION IMPERIALS, YOUR BASE IS UNDER ATTACK");
-				building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
-				building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, zBroadcast.toString());
+				building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, "\\#7133FF ATTENTION IMPERIALS, YOUR BASE IS UNDER ATTACK");
+				building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 			}
 			return;
 		}
@@ -1663,11 +1656,9 @@ void GCWManagerImplementation::doBaseDestruction(BuildingObject* building) {
 
 			owner->sendSystemMessage(message);
 			if (building->getFaction() == Factions::FACTIONREBEL){
-				building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#FF9933 ATTENTION REBELS, YOUR BASE HAS BEEN DESTROYED!!");
-				building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, " ATTENTION REBELS, YOUR BASE HAS BEEN DESTROYED!!");
+				building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, "\\#FF9933 ATTENTION REBELS, YOUR BASE HAS BEEN DESTROYED!!");
 			} else if (building->getFaction() == Factions::FACTIONIMPERIAL){
-				building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#7133FF ATTENTION IMPERIALS, YOUR BASE HAS BEEN DESTROYED!!");
-				building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, " ATTENTION IMPERIALS, YOUR BASE HAS BEEN DESTROYED!!");
+				building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, "\\#7133FF ATTENTION IMPERIALS, YOUR BASE HAS BEEN DESTROYED!!");
 			}
 		}
 	}
@@ -1750,13 +1741,11 @@ void GCWManagerImplementation::abortShutdownSequence(BuildingObject* building, C
 		StringBuffer zBroadcast;
 		zBroadcast << "COUNTDOWN ABORTED: FACILITY SHUTTING DOWN!!";
 		if (building->getFaction() == Factions::FACTIONREBEL){
-			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#FF9933 ATTENTION REBELS, YOUR BASE IS UNDER ATTACK");
-			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
-			building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, zBroadcast.toString());
+			building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, "\\#FF9933 ATTENTION REBELS, YOUR BASE IS UNDER ATTACK");
+			building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		} else if (building->getFaction() == Factions::FACTIONIMPERIAL){
-			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, "\\#7133FF ATTENTION IMPERIALS, YOUR BASE IS UNDER ATTACK");
-			building->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
-			building->getZoneServer()->getChatManager()->handleGeneralDiscordGcw(nullptr, zBroadcast.toString());
+			building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, "\\#7133FF ATTENTION IMPERIALS, YOUR BASE IS UNDER ATTACK");
+			building->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
 		}
 		Reference<Task*> newTask = new BaseRebootTask(_this.getReferenceUnsafeStaticCast(), building, baseData);
 		newTask->schedule(60000);
