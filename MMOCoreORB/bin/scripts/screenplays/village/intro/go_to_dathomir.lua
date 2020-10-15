@@ -30,7 +30,7 @@ end
 -- Event handler for the onSuccessfulSpawn.
 -- The event will activate the quest.
 -- @param pPlayer pointer to the creature object of the player.
-function GoToDathomir:onSuccessfulSpawn(pPlayer)
+function GoToDathomir:onSuccessfulSpawn(pPlayer, playerobject)
 	if (pPlayer == nil) then
 		return
 	end
@@ -61,5 +61,6 @@ function GoToDathomir:BroadcastUnlock(pPlayer)
 		local player = LuaCreatureObject(pPlayer)
 		CreatureObject(pPlayer):broadcastToServer("\\#00ff00IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.")
 		CreatureObject(pPlayer):broadcastToDiscordUnlock("IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.")
+
 end
 return GoToDathomir
