@@ -129,6 +129,7 @@ namespace creature {
 		int broadcastToServer(lua_State* L);
 		int broadcastToDiscord(lua_State* L);
 		int broadcastToDiscordGcw(lua_State* L);
+		int broadcastToDiscordUnlock(lua_State* L);
 	private:
 		// The pointer to the 'real object' defined in object.cc
 		CreatureObject* realObject;
