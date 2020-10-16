@@ -1,11 +1,11 @@
 isd_at_at = Creature:new {
 	customName = "\\#00ff00<<< AT-AT 1 >>> \\#ff0000[lvl 300]",
-	socialGroup = "imperial",
+	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
 	chanceHit = 80.0,
-	damageMin = 10000,
-	damageMax = 12500,
+	damageMin = 7000,
+	damageMax = 9000,
 	baseXp = 21728,
 	baseHAM = 100000,
 	baseHAMmax = 150000,
@@ -24,7 +24,7 @@ isd_at_at = Creature:new {
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = NONE,
-	scale = 0.6,  
+	scale = 0.5,  
 
 	templates = {"object/mobile/atat.iff"},
 	conversationTemplate = "",

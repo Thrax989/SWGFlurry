@@ -168,7 +168,7 @@ isd_thrawn = Creature:new {
 	},
 	weapons = {"imperial_weapons_heavy"},
 	conversationTemplate = "",
-	attacks = merge(riflemanmaster,carbineermaster,brawlermaster)
+	attacks = merge(riflemanmaster,carbineermaster,brawlermaster,pikemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(isd_thrawn, "isd_thrawn")
