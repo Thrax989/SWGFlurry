@@ -61,15 +61,15 @@ object_weapon_ranged_turret_turret_dish_large = object_weapon_ranged_turret_shar
 	damageModifiers = { },
 
 	pointBlankRange = 0,
-	pointBlankAccuracy = 0,
-	idealRange = 40,
-	idealAccuracy = 70,
-	maxRange = 80,
-	maxRangeAccuracy = 0,
-	minDamage = 1000,
-	maxDamage = 2700,
+	pointBlankAccuracy = 100,
+	idealRange = 80,
+	idealAccuracy = 100,
+	maxRange = 120,
+	maxRangeAccuracy = 100,
+	minDamage = 8000,
+	maxDamage = 10000,
 	attackSpeed = 1,
-	woundsRatio = 9,
+	woundsRatio = 20,
 }
 
 ObjectTemplates:addTemplate(object_weapon_ranged_turret_turret_dish_large, "object/weapon/ranged/turret/turret_dish_large.iff")
