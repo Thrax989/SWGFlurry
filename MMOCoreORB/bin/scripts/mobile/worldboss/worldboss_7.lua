@@ -111,7 +111,7 @@ worldboss_7 = Creature:new {
 			groups = {
 				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2000000
 		},
 		{
 			groups = {

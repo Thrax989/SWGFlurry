@@ -27,7 +27,35 @@ isd_dark_novatrooper = Creature:new {
 	scale = 1.3,
 
 	templates = {"object/mobile/dressed_stormtrooper_black_black.iff"},
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "trash_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "trash_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "trash_rare", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 3000000
+		}
+	},
 	weapons = {"dark_trooper_weapons"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/stormtrooper",

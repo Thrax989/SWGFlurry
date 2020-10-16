@@ -37,13 +37,13 @@ isd_thrawn = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},	
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -55,77 +55,78 @@ isd_thrawn = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "mokk_elites", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "death_watch_bunker_ingredient_protective", chance = 5000000},
+ 				{group = "death_watch_bunker_ingredient_binary", chance = 5000000},
 			},
-			lootChance = 1000000
+			lootChance = 9000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "armor_attachments", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "tierdiamond", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -139,13 +140,13 @@ isd_thrawn = Creature:new {
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {

@@ -3,7 +3,7 @@ mokk_chieftain = Creature:new {
 	socialGroup = "mokk_tribe",
 	faction = "mokk_tribe",
 	level = 300,
-	chanceHit = 80.0,
+	chanceHit = 90.0,
 	damageMin = 6000,
 	damageMax = 7500,
 	specialDamageMult = 10.0,  
@@ -112,7 +112,7 @@ mokk_chieftain = Creature:new {
 			groups = {
 				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
