@@ -104,8 +104,136 @@ spawnMobile("dungeon2", "isd_stormtrooper", 300, 52.9773, 173.835, 138.086, 157,
 		local pBoss = spawnMobile("dungeon2", "isd_thrawn", -1, 0.0534111, 173.835, 9.2723, 357, 14201198)--Spawn Thrawn
 		local creature = CreatureObject(pBoss)
 		print("Thrawn Spawned")
-		createObserver(OBJECTDESTRUCTION, "isd_platformScreenplay", "bossDead", pBoss)--Thrawn Has Died Trigger Respawn Function
+		createObserver(DAMAGERECEIVED, "isd_platformScreenplay", "npcDamageObserver", pBoss)
+		createObserver(OBJECTDESTRUCTION, "isd_platformScreenplay", "bossDead", pBoss)--SherKar Has Died Trigger Respawn
 end
+-----------------------------
+--Thrawn Damage Observers
+-----------------------------
+function isd_platformScreenplay:npcDamageObserver(bossObject, playerObject, damage)
+
+	local player = LuaCreatureObject(playerObject)
+	local boss = LuaCreatureObject(bossObject)
+	
+	health = boss:getHAM(0)
+	action = boss:getHAM(3)
+	mind = boss:getHAM(6)
+	
+	maxHealth = boss:getMaxHAM(0)
+	maxAction = boss:getMaxHAM(3)
+	maxMind = boss:getMaxHAM(6)
+  -----------------------
+--Thrawn  Boss 90% health
+-----------------------
+	if (((health <= (maxHealth * 0.9)) or (action <= (maxAction * 0.9)) or (mind <= (maxMind * 0.9))) and readData("isd_platformScreenplay:spawnState") == 0) then
+      			writeData("isd_platformScreenplay:spawnState",1)     
+			self:spawnSupport(playerObject)
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/attacker_berserk.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 90%")
+	end
+
+-----------------------
+--Thrawn  Boss 50% health
+-----------------------
+	if (((health <= (maxHealth * 0.5)) or (action <= (maxAction * 0.5)) or (mind <= (maxMind * 0.5))) and readData("isd_platformScreenplay:spawnState") == 1) then
+      			writeData("isd_platformScreenplay:spawnState",2)     
+			self:spawnSupport2(playerObject)
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/attacker_berserk.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 50%")
+	end
+-----------------------
+--Thrawn  Boss 30% health
+-----------------------
+	if (((health <= (maxHealth * 0.3)) or (action <= (maxAction * 0.3)) or (mind <= (maxMind * 0.3))) and readData("isd_platformScreenplay:spawnState") == 2) then
+      			writeData("isd_platformScreenplay:spawnState",3)
+			createEvent(0 * 1000, "isd_platformScreenplay", "orbitalanim", playerObject, "")
+ 			createEvent(4 * 1000, "isd_platformScreenplay", "orbitaldam", playerObject, "")     
+			self:spawnSupport2(playerObject)
+      			CreatureObject(playerObject):sendSystemMessage("Enemy Wave Starting!")
+      			CreatureObject(bossObject):playEffect("clienteffect/attacker_berserk.cef", "")
+      			spatialChat(bossObject, "Boss Current Health = 30%")
+	end
+-----------------------
+--Thrawn  Boss 10% health
+-----------------------
+	if (((health <= (maxHealth * 0.1)) or (action <= (maxAction * 0.1)) or (mind <= (maxMind * 0.1))) and readData("isd_platformScreenplay:spawnState") == 3) then
+      			writeData("isd_platformScreenplay:spawnState",4)
+			createEvent(0 * 1000, "isd_platformScreenplay", "orbitalanim", playerObject, "")
+ 			createEvent(4 * 1000, "isd_platformScreenplay", "orbitaldam", playerObject, "")      
+		end
+	return 0
+
+end
+--------------------------------
+--Deploy Boss orbital animation only
+--------------------------------
+function isd_platformScreenplay:orbitalanim(playerObject)
+if (CreatureObject(playerObject):isGrouped()) then
+	local groupSize = CreatureObject(playerObject):getGroupSize()
+	for i = 0, groupSize - 1, 1 do
+		local pMember = CreatureObject(playerObject):getGroupMember(i)
+		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
+		local trapDmg = getRandomNumber(1, 1)
+		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)
+      		CreatureObject(pMember):playEffect("clienteffect/combat_pt_orbitalstrike.cef", "")        
+		end
+	end
+else
+	local trapDmg = getRandomNumber(1, 1)
+	CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)
+      	CreatureObject(playerObject):playEffect("clienteffect/combat_pt_orbitalstrike.cef", "")      
+	end
+end
+--------------------------------
+--Deploy Boss orbital damage only DELAY
+--------------------------------
+function isd_platformScreenplay:orbitaldam(playerObject)
+if (CreatureObject(playerObject):isGrouped()) then
+	local groupSize = CreatureObject(playerObject):getGroupSize()
+	for i = 0, groupSize - 1, 1 do
+		local pMember = CreatureObject(playerObject):getGroupMember(i)
+		if pMember ~= nil and SceneObject(pMember):isInRangeWithObject(playerObject, 200) then
+		local trapDmg = getRandomNumber(1800, 2500)
+		CreatureObject(pMember):inflictDamage(pMember, 0, trapDmg, 1)        
+		end
+	end
+else
+	local trapDmg = getRandomNumber(1800, 2500)
+	CreatureObject(playerObject):inflictDamage(playerObject, 0, trapDmg, 1)      
+	end
+end
+-----------------------
+--Thrawn Boss Support
+-----------------------
+function isd_platformScreenplay:spawnSupport(playerObject)
+	local pGuard1 = spawnMobile("dungeon2", "isd_at_at", -1, 0.1, 173.8, 52.3, 174, 14201198) 
+	spatialChat(pGuard1, "!!!!!!!!")
+	CreatureObject(pGuard1):engageCombat(playerObject)
+      	CreatureObject(pGuard1):playEffect("clienteffect/ui_missile_aquiring.cef", "")
+end
+-----------------------
+--Thrawn Boss Support 2
+-----------------------
+function isd_platformScreenplay:spawnSupport2(playerObject)
+	local pGuard1 = spawnMobile("dungeon2", "isd_dark_novatrooper", -1, -14.9, 173.8, 54.1, 176, 14201198) 
+	spatialChat(pGuard1, "Intruder!")
+	CreatureObject(pGuard1):engageCombat(playerObject)
+      	CreatureObject(pGuard1):playEffect("clienteffect/ui_missile_aquiring.cef", "")
+	local pGuard2 = spawnMobile("dungeon2", "isd_dark_novatrooper", -1, -17.2, 173.8, 27.9, 29, 14201198) 
+	spatialChat(pGuard2, "Open fire!")
+	CreatureObject(pGuard2):engageCombat(playerObject)
+      	CreatureObject(pGuard2):playEffect("clienteffect/ui_missile_aquiring.cef", "")
+  	local pGuard3 = spawnMobile("dungeon2", "isd_dark_novatrooper", -1, 6.2, 173.8, 31.2, -66, 14201198) 
+	spatialChat(pGuard3, "Target in sight!")
+	CreatureObject(pGuard3):engageCombat(playerObject)
+      	CreatureObject(pGuard3):playEffect("clienteffect/ui_missile_aquiring.cef", "")
+	local pGuard4 = spawnMobile("dungeon2", "isd_dark_novatrooper", -1, 9.7, 173.8, 54.1, -146, 14201198) 
+	spatialChat(pGuard4, "Wait what?")
+	CreatureObject(pGuard4):engageCombat(playerObject)
+      	CreatureObject(pGuard4):playEffect("clienteffect/ui_missile_aquiring.cef", "")      
+end 
 ---------------------------------------------------------------
 --Thrawn Has Died Respawn Thrawn With A New Dynamic Spawn
 ---------------------------------------------------------------
@@ -123,15 +251,16 @@ end
 -----------------------
 function isd_platformScreenplay:KillSpawn()
 		local pBoss = spawnMobile("dungeon2", "isd_thrawn", -1, 0.0534111, 173.835, 9.2723, 357, 14201198)--Spawn Thrawn After Death 3 Hour Timer
-		local creature = CreatureObject(pBoss)
 		print("Thrawn Respawned")
+		createObserver(DAMAGERECEIVED, "isd_platformScreenplay", "npcDamageObserver", pBoss)
 		createObserver(OBJECTDESTRUCTION, "isd_platformScreenplay", "bossDead", pBoss)
 end
 -----------------------------------------------------------------------------
 --Thrawn Has Died Without Being Looted, "Abandon" Destroy NPC, Destroy Loot
 -----------------------------------------------------------------------------
 function isd_platformScreenplay:KillBoss(pBoss)
-	dropObserver(pBoss, OBJECTDESTRUCTION)
+  writeData("isd_platformScreenplay:spawnState",0)
+	dropObserver(pBoss, OBJECTDESTRUCTION)  
 	if SceneObject(pBoss) then
 		print("Thrawn Destroyed")
 		SceneObject(pBoss):destroyObjectFromWorld()
