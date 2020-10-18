@@ -42,65 +42,65 @@ end
 -----------------------
 function isd_platformScreenplay:spawnMobiles()
 --Main Spawn Room
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 34.452, 173.835, 36.0281, 265, 14201198)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 34.4445, 173.835, 27.0723, 272, 14201198)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 30.0845, 173.835, 9.40103, 299, 14201198)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 23.9617, 173.835, 3.32356, 17, 14201198)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, -0.0402867, 173.835, 0.294756, 73, 14201198)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, -23.5692, 173.835, 2.95916, 90, 14201198)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, -29.9028, 173.835, 9.24134, 110, 14201198)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, -34.4891, 173.835, 27.1564, 121, 14201198)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, -34.4541, 173.835, 36.1355, 136, 14201198)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 6.8299, 177.335, -57.0574, 325, 14201193)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, -6.83028, 177.335, -56.4635, 326, 14201193)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 8.93966, 175.335, -31.7196, 358, 14201191)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 69.1725, 173.835, 25.9111, 349, 14201187)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 64.5691, 173.835, 25.8934, 30, 14201187)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, -69.0112, 173.835, 34.0492, 151, 14201197)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, -15.2133, 175.335, -24.3627, 90, 14201194)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, -9.90025, 175.335, -31.5628, 76, 14201195)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 0.0159999, 175.335, -13.1841, 181, 14201192)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 34.452, 173.835, 36.0281, 265, 14201198)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 34.4445, 173.835, 27.0723, 272, 14201198)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 30.0845, 173.835, 9.40103, 299, 14201198)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 23.9617, 173.835, 3.32356, 17, 14201198)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, -0.0402867, 173.835, 0.294756, 73, 14201198)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, -23.5692, 173.835, 2.95916, 90, 14201198)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, -29.9028, 173.835, 9.24134, 110, 14201198)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, -34.4891, 173.835, 27.1564, 121, 14201198)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, -34.4541, 173.835, 36.1355, 136, 14201198)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 6.8299, 177.335, -57.0574, 325, 14201193)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, -6.83028, 177.335, -56.4635, 326, 14201193)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 8.93966, 175.335, -31.7196, 358, 14201191)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 69.1725, 173.835, 25.9111, 349, 14201187)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 64.5691, 173.835, 25.8934, 30, 14201187)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, -69.0112, 173.835, 34.0492, 151, 14201197)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, -15.2133, 175.335, -24.3627, 90, 14201194)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, -9.90025, 175.335, -31.5628, 76, 14201195)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 0.0159999, 175.335, -13.1841, 181, 14201192)
 
 --Mini Boss Room
-spawnMobile("dungeon2", "isd_stormtrooper", 300, -0.0410455, 177.335, -58.3967, 355, 14201193)--Save For Mini Boss
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, -0.0410455, 177.335, -58.3967, 355, 14201193)--Save For Mini Boss
 
 --Entrance to creature mutation room
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 59.344, 173.835, 70.5219, 121, 14201188)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 59.4756, 173.835, 73.7074, 89, 14201188)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 59.344, 173.835, 70.5219, 121, 14201188)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 59.4756, 173.835, 73.7074, 89, 14201188)
 
 
 --entrance to boss mutation room
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 81.8535, 173.835, 69.755, 358, 14201177)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 78.1821, 173.835, 69.906, 358, 14201177)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 81.8535, 173.835, 69.755, 358, 14201177)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 78.1821, 173.835, 69.906, 358, 14201177)
 --boss in for mutation room
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 80.178, 173.835, 63.479, 352, 14201181)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 80.178, 173.835, 63.479, 352, 14201181)
 
 
 --mutation room 1
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 89.7521, 173.835, 94.8365, 265, 14201180)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 89.7521, 173.835, 94.8365, 265, 14201180)
 --mutation room2
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 89.4285, 173.835, 114.51, 268, 14201179)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 89.4285, 173.835, 114.51, 268, 14201179)
 --mutation room 3
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 79.897, 173.835, 146.539, 179, 14201178)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 79.897, 173.835, 146.539, 179, 14201178)
 --mutation room 4
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 57.7598, 173.835, 100.133, 128, 14201184)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 57.7598, 173.835, 100.133, 128, 14201184)
 --guards for muation room 4
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 65.8852, 173.835, 83.8533, 265, 14201185)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 65.7755, 173.835, 81.6075, 268, 14201185)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 65.8852, 173.835, 83.8533, 265, 14201185)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 65.7755, 173.835, 81.6075, 268, 14201185)
 
 --exit mutation room 4 guards
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 69.5949, 173.835, 116.89, 267, 14201183)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 54.0397, 173.835, 113.848, 354, 14201183)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 51.8217, 173.835, 113.764, 354, 14201183)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 50.3441, 173.835, 115.545, 88, 14201183)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 50.5408, 173.835, 117.646, 80, 14201183)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 69.5949, 173.835, 116.89, 267, 14201183)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 54.0397, 173.835, 113.848, 354, 14201183)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 51.8217, 173.835, 113.764, 354, 14201183)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 50.3441, 173.835, 115.545, 88, 14201183)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 50.5408, 173.835, 117.646, 80, 14201183)
 
 
 --middle entance hallway gaurds
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 62.7065, 173.835, 168.518, 162, 14201175)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 67.3617, 173.835, 168.516, 186, 14201175)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 64.8666, 173.835, 133.389, 359, 14201175)
-spawnMobile("dungeon2", "isd_stormtrooper", 300, 52.9773, 173.835, 138.086, 157, 14201182)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 62.7065, 173.835, 168.518, 162, 14201175)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 67.3617, 173.835, 168.516, 186, 14201175)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 64.8666, 173.835, 133.389, 359, 14201175)
+spawnMobile("dungeon2", "isd_stormtrooper", 1800, 52.9773, 173.835, 138.086, 157, 14201182)
 		local pBoss = spawnMobile("dungeon2", "isd_thrawn", -1, 0.0534111, 173.835, 9.2723, 357, 14201198)--Spawn Thrawn
 		local creature = CreatureObject(pBoss)
 		print("Thrawn Spawned")
