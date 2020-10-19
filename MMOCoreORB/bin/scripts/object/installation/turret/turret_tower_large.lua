@@ -44,7 +44,7 @@
 object_installation_turret_turret_tower_large = object_installation_turret_shared_turret_tower_large:new {
 	pvpStatusBitmask = ATTACKABLE,
 	optionsBitmask = 0,
-	maxCondition = 1500000,
+	maxCondition = 750000,
 	zoneComponent = "TurretZoneComponent",
 	dataObjectComponent = "TurretDataComponent",
 	-- Damagetypes in WeaponObject
