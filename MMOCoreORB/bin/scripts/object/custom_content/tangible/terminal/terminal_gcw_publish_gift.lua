@@ -194,7 +194,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Dantooine",
           {
             "Janta Town (5,000 Credits)", "pc_jantatown_travel",
-            "Bastion (5,000 Credits)", "pc_bastion_travel",	
+            "Serendipity (5,000 Credits)", "pc_serendipity_travel",
             "Malice (5,000 Credits)", "pc_malice_travel"
           },
             "Dathomir",
@@ -238,8 +238,13 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Mandalore",
           {  
-            "New Freedom (5,000 Credits)", "pc_freedom_travel" 
-          },
+			"New Freedom (5,000 Credits)", "pc_freedom_travel",
+			"The Old West (5,000 Credits)", "pc_oldwest_travel"
+		  },
+		  "Rori",
+          {  
+            "Unrest (5,000 Credits)", "pc_unrest_travel" 
+          },		  
     }      
 	}
 }
