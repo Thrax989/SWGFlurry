@@ -208,7 +208,7 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	focus = (intelligence * 15) + (dependency * 3);
 	strength = (hardiness * 15)    + (dependency * 3);
 	quickness = (dexterity * 15)    + (dependency * 3);
-	hit = 0.40 + (0.55 * ((float)cleverness/1000.0));
+	hit = 1.40 + (0.55 * ((float)cleverness/1000.0));
 	// dps of pet use to determien min and max value.
 	int dps = ceil((ceil(15.0 + (775.0 * ( ((float)power)/1000.0))))/3.5);
 	speed = 2.0-((ceil(((float)courage)/10)*10)/1000);

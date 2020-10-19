@@ -277,6 +277,8 @@ uint32 DamageOverTime::doPoisonTick(CreatureObject* victim, CreatureObject* atta
 	int absorptionMod = Math::max(0, Math::min(50, victim->getSkillMod("absorption_poison")));
 
 	// absorption reduces the strength of a dot by the given %.
+        if (attacker->isPet() && strength > 1600){		
+		strength = 1600;
 	int damage = (int)(strength * (1.f - absorptionMod / 100.f));
 	if (attr < damage) {
 		//System::out << "setting strength to " << attr -1 << endl;
@@ -310,6 +312,9 @@ uint32 DamageOverTime::doDiseaseTick(CreatureObject* victim, CreatureObject* att
 	int absorptionMod = Math::max(0, Math::min(50, victim->getSkillMod("absorption_disease")));
 
 	// absorption reduces the strength of a dot by the given %.
+        if (attacker->isPet() && strength > 1600){
+		strength = 1600;
+	}
 	// make sure that the CM dots modify the strength
 	int damage = (int)(strength * (1.f - absorptionMod / 100.f) * (1.f + victim->getShockWounds() / 100.0f));
 	int maxDamage = victim->getBaseHAM(attribute) - 1 - victim->getWounds(attribute);
