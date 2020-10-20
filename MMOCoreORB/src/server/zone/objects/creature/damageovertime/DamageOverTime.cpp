@@ -279,6 +279,7 @@ uint32 DamageOverTime::doPoisonTick(CreatureObject* victim, CreatureObject* atta
 	// absorption reduces the strength of a dot by the given %.
         if (attacker->isPet() && strength > 1600){		
 		strength = 1600;
+	}
 	int damage = (int)(strength * (1.f - absorptionMod / 100.f));
 	if (attr < damage) {
 		//System::out << "setting strength to " << attr -1 << endl;
