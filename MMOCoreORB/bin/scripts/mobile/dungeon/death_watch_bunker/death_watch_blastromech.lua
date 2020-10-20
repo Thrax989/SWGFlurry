@@ -60,28 +60,10 @@ death_watch_blastromech = Creature:new {
 		},
 		{
 			groups = {
-				{group = "carbines", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "pistols", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
 				{group = "junk", chance = 10000000}
 			},
 			lootChance = 5000000
 		},
-		{
-			groups = {
-				{group = "rifles", chance = 10000000}
-			},
-			lootChance = 5000000
-		}
 	},
 	conversationTemplate = "",
 	defaultWeapon = "object/weapon/ranged/droid/droid_astromech_ranged.iff",

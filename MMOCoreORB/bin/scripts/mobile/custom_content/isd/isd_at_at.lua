@@ -1,16 +1,16 @@
-isd_stormtrooper = Creature:new {
-	objectName = "@mob/creature_names:stormtrooper",
-	randomNameType = NAME_STORMTROOPER,
+isd_at_at = Creature:new {
+	customName = "\\#00ff00<<< AT-AT 1 >>> \\#ff0000[lvl 300]",
 	socialGroup = "mercenary",
+	faction = "",
 	level = 300,
-	chanceHit = 50,
-	damageMin = 1000,
-	damageMax = 2000,
-	baseXp = 10081,
-	baseHAM = 80000,
-	baseHAMmax = 120000,
-	armor = 0,
-	resists = {120,135,135,145,135,135,155,135,130},
+	chanceHit = 80.0,
+	damageMin = 6000,
+	damageMax = 8000,
+	baseXp = 21728,
+	baseHAM = 100000,
+	baseHAMmax = 150000,
+	armor = 2,
+	resists = {150,175,175,175,175,175,175,175,160},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -19,15 +19,15 @@ isd_stormtrooper = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0,
-	ferocity = 0,
+	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = KILLER,
+	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
-	diet = HERBIVORE,
-	scale = 1.05,
+	diet = NONE,
+	scale = 0.5,  
 
-	templates = {"object/mobile/dressed_stormtrooper_m.iff"},
-	lootGroups = {
+	templates = {"object/mobile/atat.iff"},
+ 	lootGroups = {
 		{
 			groups = {
 				{group = "trash_common", chance = 10000000},
@@ -44,7 +44,7 @@ isd_stormtrooper = Creature:new {
 			groups = {
 				{group = "trash_rare", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -55,12 +55,10 @@ isd_stormtrooper = Creature:new {
 			},
 			lootChance = 3000000
 		}
-	},
-	weapons = {"stormtrooper_weapons"},
+	}, 
 	conversationTemplate = "",
-	reactionStf = "@npc_reaction/stormtrooper",
-	personalityStf = "@hireling/hireling_stormtrooper",		
-	attacks = merge(riflemanmaster,carbineermaster,brawlermaster,marksmanmaster)
+	defaultAttack = "defaultdroidattack",
+	defaultWeapon = "object/weapon/ranged/vehicle/vehicle_atst_ranged.iff",
 }
 
-CreatureTemplates:addCreatureTemplate(isd_stormtrooper, "isd_stormtrooper")
+CreatureTemplates:addCreatureTemplate(isd_at_at, "isd_at_at")

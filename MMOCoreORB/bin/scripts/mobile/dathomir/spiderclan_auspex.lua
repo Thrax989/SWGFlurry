@@ -61,39 +61,15 @@ spiderclan_auspex = Creature:new {
 		},
 		{
 			groups = {
-				{group = "melee_weapons", chance = 10000000},
-			},
-			lootChance = 2500000
-		},
-		{
-			groups = {
-				{group = "rifles", chance = 10000000},
-			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
 				{group = "wearables_common", chance = 10000000},
 			},
 			lootChance = 500000
 		},
 		{
 			groups = {
-				{group = "carbines", chance = 10000000},
-			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
 				{group = "tailor_components", chance = 10000000},
 			},
 			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "pistols", chance = 10000000},
-			},
-			lootChance = 1000000
 		},
 	},
 	weapons = {"mixed_force_weapons"},

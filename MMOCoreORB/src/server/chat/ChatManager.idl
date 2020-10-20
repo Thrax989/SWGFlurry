@@ -361,6 +361,8 @@ class ChatManager extends ManagedService implements Logger {
 	public native void handleGeneralChat(CreatureObject player, final unicode message);
 	public native void handleGeneralResourceChat(CreatureObject player, final unicode message);
 	public native void handleGeneralDiscordChat(CreatureObject player, final unicode message);
+	public native void handleGeneralDiscordUnlock(CreatureObject player, final unicode message);
+	public native void handleGeneralDiscordGcw(CreatureObject player, final unicode message);
 	public native void handleGeneralDiscordShutdownChat(CreatureObject player, final unicode message);
 	public native void handleChatRoomMessage(CreatureObject sender, final unicode message, unsigned int roomID, unsigned int counter);
 	public native void handleSocialInternalMessage(CreatureObject sender, final unicode arguments);

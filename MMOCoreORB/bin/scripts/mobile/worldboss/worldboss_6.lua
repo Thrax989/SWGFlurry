@@ -3,7 +3,7 @@ worldboss_6 = Creature:new {
 	socialGroup = "gurk",
 	faction = "",
 	level = 300,
-	chanceHit = 80.0,
+	chanceHit = 90.0,
 	damageMin = 8500,
 	damageMax = 10000,
 	specialDamageMult = 10.0,  
@@ -94,7 +94,7 @@ worldboss_6 = Creature:new {
 			groups = {
 				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
@@ -168,19 +168,11 @@ worldboss_6 = Creature:new {
 	attacks = {
 		{"creatureareacombo","StateAccuracyBonus=100"},
 		{"creatureareaknockdown","StateAccuracyBonus=100"},
-		{"knockdownattack","KnockdownChance=100"},
-		{"creatureareaknockdown","KnockdownChance=100"},
-		{"dizzyattack","DizzyChance=100"},
-		{"stunattack","StunChance=100"},
-		{"mildpoison","PoisonChance=100"},
 		{"intimidationattack","IntimidationChance=100"},
-		{"mediumpoison","PoisonChance=100"},
-    		{"mediumdisease","DiseaseChance=100"},
 		{"creatureareapoison","PoisonChance=100"},
-		{"strongpoison","PoisonChance=100"},
 		{"creatureareaattack","StateAccuracyBonus=100"},
-    		{"creatureareadisease","DiseaseChance=100"},
-    		{"creatureareableeding","BleedChance=100"}
+    {"creatureareadisease","DiseaseChance=100"},
+    {"creatureareableeding","BleedChance=100"}
 	}
 }
 

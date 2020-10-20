@@ -4,7 +4,7 @@ dark_jedi_sentinel_imperial = Creature:new {
 	randomNameTag = true,
 	socialGroup = "self",
 	faction = "imperial",
-	level = 1,
+	level =300,
 	chanceHit = 30,
 	damageMin = 2645,
 	damageMax = 5000,
@@ -35,20 +35,16 @@ dark_jedi_sentinel_imperial = Creature:new {
 			groups = {
 				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 200000
+			lootChance = 600000
 		},	
 		{
 			groups = {
-				{group = "holocron_dark", chance = 600000},
-				{group = "holocron_light", chance = 600000},
-				{group = "power_crystals", chance = 600000},
-				{group = "rifles", chance = 1300000},
-				{group = "pistols", chance = 1300000},
-				{group = "melee_weapons", chance = 1300000},
-				{group = "armor_attachments", chance = 1100000},
-				{group = "clothing_attachments", chance = 1100000},
-				{group = "carbines", chance = 1300000},
-				{group = "dark_jedi_common", chance = 800000}
+				{group = "holocron_dark", chance = 2000000},
+				{group = "holocron_light", chance = 2000000},
+				{group = "power_crystals", chance = 1000000},
+				{group = "armor_attachments", chance = 2000000},
+				{group = "clothing_attachments", chance = 2000000},
+				{group = "dark_jedi_common", chance = 1000000}
 			},
 			lootChance = 10000000
 		},

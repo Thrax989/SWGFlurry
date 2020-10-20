@@ -4,10 +4,10 @@ spiderclan_elder = Creature:new {
 	randomNameTag = true,
 	socialGroup = "spider_nightsister",
 	faction = "spider_nightsister",
-	level = 277,
+	level = 300,
 	chanceHit = 27.25,
 	damageMin = 1520,
-	damageMax = 2750,
+	damageMax = 3150,
 	baseXp = 26555,
 	baseHAM = 321000,
 	baseHAMmax = 392000,
@@ -28,72 +28,63 @@ spiderclan_elder = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_dathomir_spider_nightsister_elder.iff"},
-	lootGroups = {
+	lootGroups = {		
 		{
 			groups = {
 				{group = "power_crystals", chance = 10000000},
 			},
-			lootChance = 500000
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "nge_all", chance = 10000000},
+			},
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "color_crystals", chance = 10000000},
 			},
-			lootChance = 500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "nightsister_common", chance = 10000000},
 			},
-			lootChance = 2000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "armor_attachments", chance = 10000000},
 			},
-			lootChance = 250000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "clothing_attachments", chance = 10000000},
 			},
-			lootChance = 250000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "melee_weapons", chance = 10000000},
+				{group = "wearables_scarce", chance = 10000000},
 			},
-			lootChance = 2500000
-		},
+			lootChance = 5000000
+		},	
 		{
 			groups = {
-				{group = "rifles", chance = 10000000},
-			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "wearables_common", chance = 10000000},
+				{group = "jedi_comp_group", chance = 10000000},
 			},
 			lootChance = 500000
 		},
 		{
 			groups = {
-				{group = "carbines", chance = 10000000},
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "tailor_components", chance = 10000000},
-			},
-			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "pistols", chance = 10000000},
-			},
-			lootChance = 1000000
+			lootChance = 4000000
 		},
 	},
 	weapons = {"mixed_force_weapons"},

@@ -66,15 +66,6 @@ donkuwah_tribesman = Creature:new {
 			},
 			lootChance = 5000000
 		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 5000000
-		}
 	},
 	weapons = {"donkuwah_weapons"},
 	conversationTemplate = "",

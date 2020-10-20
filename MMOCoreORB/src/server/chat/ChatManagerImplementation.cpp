@@ -989,17 +989,6 @@ void ChatManagerImplementation::broadcastGalaxy(CreatureObject* player, const St
 
 		playerObject->sendSystemMessage(stringMessage);
 	}
-
-	String name = "Status";
-	String fullName = "Status";
-
-	UnicodeString formattedMessage(formatMessage(message));
-
-	if (generalRoom != nullptr) {
-		BaseMessage* msg = new ChatRoomMessage(fullName, server->getGalaxyName(), formattedMessage, generalRoom->getRoomID());
-		generalRoom->broadcastMessageCheckIgnore(msg, name);
-	}
-
 }
 
 void ChatManagerImplementation::broadcastMessage(BaseMessage* message) {
@@ -1712,6 +1701,33 @@ void ChatManagerImplementation::handleGeneralDiscordChat(CreatureObject* sender,
 
 	String name = "Worldboss";
 	String fullName = "Worldboss";
+
+	UnicodeString formattedMessage(formatMessage(message));
+
+	if (generalRoom != nullptr) {
+		BaseMessage* msg = new ChatRoomMessage(fullName, server->getGalaxyName(), formattedMessage, generalRoom->getRoomID());
+		generalRoom->broadcastMessageCheckIgnore(msg, name);
+	}
+
+}
+
+void ChatManagerImplementation::handleGeneralDiscordGcw(CreatureObject* sender, const UnicodeString& message) {
+
+	String name = "GCW";
+	String fullName = "GCW";
+
+	UnicodeString formattedMessage(formatMessage(message));
+
+	if (generalRoom != nullptr) {
+		BaseMessage* msg = new ChatRoomMessage(fullName, server->getGalaxyName(), formattedMessage, generalRoom->getRoomID());
+		generalRoom->broadcastMessageCheckIgnore(msg, name);
+	}
+
+}
+void ChatManagerImplementation::handleGeneralDiscordUnlock(CreatureObject* sender, const UnicodeString& message) {
+
+	String name = "Unlock";
+	String fullName = "Unlock";
 
 	UnicodeString formattedMessage(formatMessage(message));
 

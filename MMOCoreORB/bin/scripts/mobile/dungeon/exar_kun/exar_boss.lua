@@ -3,15 +3,15 @@ exar_boss = Creature:new {
 	socialGroup = "exar",
 	faction = "exar",
 	level = 300,
-	chanceHit = 35.00,
-	damageMin = 1500,
-	damageMax = 3000,
-	specialDamageMult = 15.0,
+	chanceHit = 90.00,
+	damageMin = 3500,
+	damageMax = 5000,
+	specialDamageMult = 3.0,
 	baseXp = 100000,
-	baseHAM = 495000,
-	baseHAMmax = 500000,
+	baseHAM = 1000000,
+	baseHAMmax = 1100000,
 	armor = 3,
-	resists = {195,195,195,195,195,195,195,195,195},
+	resists = {195,195,195,195,195,195,195,195,160},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -120,12 +120,6 @@ exar_boss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
 				{group = "worldbosscrate", chance = 10000000},
 			},
 			lootChance = 10000000
@@ -188,9 +182,9 @@ exar_boss = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"dark_jedi_weapons_gen4", "unarmed_weapons", "ranged_weapons", "melee_weapons", "carbine_weapons", "rebel_weapons_heavy"},
+	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
-	attacks = merge(lightsabermaster,forcepowermaster,tkamaster,pikemanmaster,swordsmanmaster,fencermaster,riflemanmaster,pistoleermaster,carbineermaster,commandomaster,bountyhuntermaster)
+	attacks = merge(lightsabermaster,forcepowermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(exar_boss, "exar_boss")

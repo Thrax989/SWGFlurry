@@ -57,28 +57,10 @@ death_watch_s_battle_droid_alt = Creature:new {
 		},
 		{
 			groups = {
-				{group = "carbines", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "pistols", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
 				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 200000
+			lootChance = 400000
 		},
-		{
-			groups = {
-				{group = "rifles", chance = 10000000}
-			},
-			lootChance = 5000000
-		}
 	},
 	conversationTemplate = "",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",

@@ -63,28 +63,10 @@ death_watch_battle_droid = Creature:new {
 		},
 		{
 			groups = {
-				{group = "carbines", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "pistols", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
 				{group = "jedi_comp_group", chance = 10000000},
 			},
 			lootChance = 200000
 		},
-		{
-			groups = {
-				{group = "rifles", chance = 10000000}
-			},
-			lootChance = 5000000
-		}
 	},
 	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",

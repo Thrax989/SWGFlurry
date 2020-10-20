@@ -31,13 +31,41 @@ donkuwah_laborer = Creature:new {
 	templates = {
 		"object/mobile/dulok_male.iff",
 		"object/mobile/dulok_female.iff"},
-	lootGroups = {
+		lootGroups = {
 		{
 			groups = {
-				{group = "donkuwah_common", chance = 10000000}
+				{group = "trash_common", chance = 8000000},
+ 				{group = "trash_rare", chance = 2000000},       
 			},
-			lootChance = 1260000
-		}
+			lootChance = 10000000
+		},		
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 10000000},
+			},
+			lootChance = 8000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 8000000
+		},
+		{
+			groups = {
+				{group = "donkuwah_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 5000000
+		},
 	},
 	weapons = {"donkuwah_weapons"},
 	conversationTemplate = "",

@@ -5,15 +5,15 @@ isd_thrawn = Creature:new {
 	pvpFaction = "",
 	faction = "",
 	level = 300,
-	chanceHit = 25.00,
-	damageMin = 1245,
-	damageMax = 3000,
-	specialDamageMult = 7.5,
+	chanceHit = 90.00,
+	damageMin = 6500,
+	damageMax = 8000,
+	specialDamageMult = 6.5,
 	baseXp = 28549,
-	baseHAM = 500000,
-	baseHAMmax = 600000,
-	armor = 2,
-	resists = {80,80,80,80,80,80,80,80,80},
+	baseHAM = 600000,
+	baseHAMmax = 800000,
+	armor = 3,
+	resists = {150,180,180,180,180,180,180,180,165},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -27,7 +27,7 @@ isd_thrawn = Creature:new {
 	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED + INTERESTING,
 	diet = HERBIVORE,
-	scale = 1.0,
+	scale = 1.3,
 
 
 	templates = {"object/mobile/naboo_npc/thrawn.iff"},
@@ -37,13 +37,13 @@ isd_thrawn = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},	
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -55,77 +55,78 @@ isd_thrawn = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "mokk_elites", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "death_watch_bunker_ingredient_protective", chance = 5000000},
+ 				{group = "death_watch_bunker_ingredient_binary", chance = 5000000},
 			},
-			lootChance = 1000000
+			lootChance = 9000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "clothing_attachments", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "armor_attachments", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "tierdiamond", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -139,13 +140,13 @@ isd_thrawn = Creature:new {
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -168,7 +169,7 @@ isd_thrawn = Creature:new {
 	},
 	weapons = {"imperial_weapons_heavy"},
 	conversationTemplate = "",
-	attacks = merge(riflemanmaster,carbineermaster,brawlermaster)
+	attacks = merge(riflemanmaster,carbineermaster,brawlermaster,pikemanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(isd_thrawn, "isd_thrawn")

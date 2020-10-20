@@ -1,16 +1,16 @@
-isd_stormtrooper = Creature:new {
-	objectName = "@mob/creature_names:stormtrooper",
-	randomNameType = NAME_STORMTROOPER,
+isd_dark_novatrooper = Creature:new {
+	customName = "\\#00ff00<<< Dark Novatrooper >>> \\#ff0000[lvl 300]",
 	socialGroup = "mercenary",
+	faction = "",
 	level = 300,
-	chanceHit = 50,
-	damageMin = 1000,
-	damageMax = 2000,
-	baseXp = 10081,
-	baseHAM = 80000,
-	baseHAMmax = 120000,
-	armor = 0,
-	resists = {120,135,135,145,135,135,155,135,130},
+	chanceHit = 80.0,
+	damageMin = 3000,
+	damageMax = 4500,
+	baseXp = 21700,
+	baseHAM = 50000,
+	baseHAMmax = 80000,
+	armor = 2,
+	resists = {140,160,160,160,160,160,160,160,150},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -19,14 +19,14 @@ isd_stormtrooper = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0,
-	ferocity = 0,
+	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = KILLER,
 	optionsBitmask = AIENABLED,
-	diet = HERBIVORE,
-	scale = 1.05,
+	diet = NONE,
+	scale = 1.3,
 
-	templates = {"object/mobile/dressed_stormtrooper_m.iff"},
+	templates = {"object/mobile/dressed_stormtrooper_black_black.iff"},
 	lootGroups = {
 		{
 			groups = {
@@ -56,11 +56,10 @@ isd_stormtrooper = Creature:new {
 			lootChance = 3000000
 		}
 	},
-	weapons = {"stormtrooper_weapons"},
+	weapons = {"dark_trooper_weapons"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/stormtrooper",
-	personalityStf = "@hireling/hireling_stormtrooper",		
-	attacks = merge(riflemanmaster,carbineermaster,brawlermaster,marksmanmaster)
+	attacks = merge(riflemanmaster,fencermaster)
 }
 
-CreatureTemplates:addCreatureTemplate(isd_stormtrooper, "isd_stormtrooper")
+CreatureTemplates:addCreatureTemplate(isd_dark_novatrooper, "isd_dark_novatrooper")
