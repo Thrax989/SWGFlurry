@@ -1189,7 +1189,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->sendSystemMessage(stringId);
 
 	player->updateTimeOfDeath();
-	player->clearBuffs(true, false);
+	// player->clearBuffs(true, false);
  	ChatManager* chatManager = player->getZoneServer()->getChatManager();
 	PlayerObject* ghost = player->getPlayerObject();
 
