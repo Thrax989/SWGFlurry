@@ -139,15 +139,15 @@ end
 --MeatLumpKing Boss Support
 -----------------------
 function worldboss_seven:spawnSupport(playerObject)
-	local pGuard1 = spawnMobile("corellia", "meatlump_guard", 10800, 1293, 19, 3988, 109, 0) 
+	local pGuard1 = spawnMobile("corellia", "meatlump_guard", -1, 1293, 19, 3988, 109, 0) 
 	spatialChat(pGuard1, "DIE!")
 	CreatureObject(pGuard1):engageCombat(playerObject)
       	CreatureObject(pGuard1):playEffect("clienteffect/attacker_berserk.cef", "")
-	local pGuard2 = spawnMobile("corellia", "meatlump_guard", 10800, 1287, 20, 4046, -45, 0) 
+	local pGuard2 = spawnMobile("corellia", "meatlump_guard", -1, 1287, 20, 4046, -45, 0) 
 	spatialChat(pGuard2, "Im coming Boss!")
 	CreatureObject(pGuard2):engageCombat(playerObject)
       	CreatureObject(pGuard2):playEffect("clienteffect/attacker_berserk.cef", "")
- 	local pGuard3 = spawnMobile("corellia", "meatlump_guard", 10800, 1312, 20, 3978, 86, 0) 
+ 	local pGuard3 = spawnMobile("corellia", "meatlump_guard", -1, 1312, 20, 3978, 86, 0) 
 	spatialChat(pGuard3, "Awwwwww man!")
 	CreatureObject(pGuard3):engageCombat(playerObject)
       	CreatureObject(pGuard3):playEffect("clienteffect/attacker_berserk.cef", "")       
