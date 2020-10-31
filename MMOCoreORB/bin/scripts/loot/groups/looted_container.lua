@@ -35,7 +35,7 @@ looted_container = {
 		{itemTemplate = "attachment_clothing", weight = 100000},
 		{itemTemplate = "attachment_armor", weight = 100000},
 		-- Weapons (25% chance)
-		{groupTemplate = "weapons_all", weight = 1000000},
+		{groupTemplate = "weapons_all", weight = 500000},
 		{groupTemplate = "lifeday", weight = 1000000},
 		-- Armors (25% chance)
 		{groupTemplate = "armor_all", weight = 1000000},
@@ -43,10 +43,10 @@ looted_container = {
 		{groupTemplate = "outbreak", weight = 1000000},
 		-- Clothing (25% chance)
 		{groupTemplate = "wearables_all", weight = 1000000},
-		-- Dot System (1% chance)
-		{groupTemplate = "dotsystem", weight = 100000},
-		-- Dot System (2% chance)
-		{groupTemplate = "dot_cleanse", weight = 200000},
+		-- Dot System (3.5% chance)
+		{groupTemplate = "dotsystem", weight = 350000},
+		-- Dot System (4.5% chance)
+		{groupTemplate = "dot_cleanse", weight = 450000},
 	}
 }
 
