@@ -61,7 +61,7 @@ object_installation_turret_turret_dish_large = object_installation_turret_shared
 	cold = 90,
 	acid = 90,
 	lightSaber = 90,
-	chanceHit = 75,,
+	chanceHit = 75,
 	weapon = "object/weapon/ranged/turret/turret_dish_large.iff",
 
 }

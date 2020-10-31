@@ -180,10 +180,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		 	"Player Cities",
 		   {
             "Tatooine",
-					{
-						"Korrivan (5,000 Credits)", "pc_korrivan_travel",
-						"Skynet (5,000 Credits)", "pc_skynet_travel",
-						"Make America Krayt Again (5,000 Credits)", "pc_maka_travel"
+		   {
+			"Korrivan (5,000 Credits)", "pc_korrivan_travel",
+			"Skynet (5,000 Credits)", "pc_skynet_travel",
+			"Make America Krayt Again (5,000 Credits)", "pc_maka_travel"
 					},         
             "Naboo",
           {
@@ -214,7 +214,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Talus",
           {
-            "Caladan (5,000 Credits)", "pc_caladan_travel"
+			"Caladan (5,000 Credits)", "pc_caladan_travel",
+			"Vir Domus (5,000 Credits)", "pc_virdomus_travel"
           },  
             "Lok",
           {
@@ -244,7 +245,11 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		  "Rori",
           {  
             "Unrest (5,000 Credits)", "pc_unrest_travel" 
-          },		  
+		  },		  
+		  "Tanaab",
+          {  
+            "Nerf Herder Central  (5,000 Credits)", "pc_nerfherder_travel" 
+		  },		  		  
     }      
 	}
 }

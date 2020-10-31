@@ -92,6 +92,8 @@ Core3 = {
 	--In order to disable a zone, all you have to do is comment it out.
 	ZonesEnabled = {
 	"chandrila",
+	--"concordia",
+	--"concorddawn",
 	"corellia",
 	"coruscant",
 	"dantooine",
@@ -139,6 +141,9 @@ Core3 = {
 
 	-- Each tre file (order is important!)
 	TreFiles = {
+	"flurry8.tre",
+	"flurry7.tre",
+	"flurry6.tre",
 	"flurry5.tre",
 	"flurry4.tre",
 	"flurry3.tre",
