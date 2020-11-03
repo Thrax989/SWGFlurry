@@ -8,7 +8,6 @@ shadow_collective_criminal = Creature:new {
 	chanceHit = 30,
 	damageMin = 3750,
 	damageMax = 4250,
- -- specialDamageMult = 7.5,  
 	baseXp = 10000,
 	baseHAM = 115000,
 	baseHAMmax = 125000,

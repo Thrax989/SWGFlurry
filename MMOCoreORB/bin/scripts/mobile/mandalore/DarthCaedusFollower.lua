@@ -7,7 +7,6 @@ darth_caedus_follower = Creature:new {
 	chanceHit = 75.00,
 	damageMin = 3750,
 	damageMax = 4250,
-	specialDamageMult = 7.5,  
 	baseXp = 15000,
 	baseHAM = 115000,
 	baseHAMmax = 125000,

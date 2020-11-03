@@ -183,7 +183,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Korrivan (5,000 Credits)", "pc_korrivan_travel",
 			"Skynet (5,000 Credits)", "pc_skynet_travel",
-			"Make America Krayt Again (5,000 Credits)", "pc_maka_travel"
+			"Make America Krayt Again (5,000 Credits)", "pc_maka_travel",
+			"Little China (5,000 Credits)", "pc_littlechina_travel"
 					},         
             "Naboo",
           {
@@ -246,7 +247,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {  
             "Unrest (5,000 Credits)", "pc_unrest_travel" 
 		  },		  
-		  "Tanaab",
+		  "Taanab",
           {  
             "Nerf Herder Central  (5,000 Credits)", "pc_nerfherder_travel" 
 		  },		  		  
