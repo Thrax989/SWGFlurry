@@ -1,5 +1,5 @@
 sbd2_droids = Creature:new {
-	customName = "Geonosis Battle Droid",
+	customName = "Super Battle Droid",
 	socialGroup = "",
 	faction = "",
 	level = 100,

@@ -1,5 +1,5 @@
 spider_droids_brown = Creature:new {
-	customName = "Geonosis Battle Droid",
+	customName = "Spider Droid Brown",
 	socialGroup = "",
 	faction = "",
 	level = 100,

@@ -1,5 +1,5 @@
 security1_droid = Creature:new {
-	customName = "Geonosis Battle Droid",
+	customName = "Security Droid",
 	socialGroup = "",
 	faction = "",
 	level = 100,

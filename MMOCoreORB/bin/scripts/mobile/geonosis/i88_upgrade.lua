@@ -1,5 +1,5 @@
 ig88_upgrade = Creature:new {
-	customName = "Geonosis Battle Droid",
+	customName = "Ig88 Upgrade",
 	socialGroup = "",
 	faction = "",
 	level = 100,

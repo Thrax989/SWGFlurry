@@ -1,5 +1,5 @@
 pit_droid = Creature:new {
-	customName = "Geonosis Battle Droid",
+	customName = "Pit Droid",
 	socialGroup = "",
 	faction = "",
 	level = 100,
