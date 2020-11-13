@@ -185,6 +185,8 @@ includeFile("dungeon/nightsister_temple/nightsister_temple.lua")
 includeFile("dungeon/ig88/ig88_platform.lua")
 --custom general grievous platform
 includeFile("dungeon/general_grievous/generalgrievous_platform.lua")
+--custom geonosis lab dungeon
+includeFile("dungeon/geonosis/geonosis_lab.lua")
 -- Village
 includeFile("village/village_community_crafting.lua")
 includeFile("village/village_gm_sui.lua")
