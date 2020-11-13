@@ -124,5 +124,31 @@ spawnMobile("geonosis", "geonosian_worker", 1, -126.847, -20, -38.7571, 308, 610
 
 --Boss Location
 spawnMobile("geonosis", "geonosian_worker", 1, -127.48, -20, -45.8093, 80, 610003228)
+
+--New Hall entrance
+spawnMobile("geonosis", "geonosian_worker", 1, -54.2882, -18.2365, -82.1277, 261, 610003229)
+spawnMobile("geonosis", "geonosian_worker", 1, -62.1113, -18.4307, -90.5273, 355, 610003230)
+spawnMobile("geonosis", "geonosian_worker", 1, -61.9965, -20.2919, -97.9719, 357, 610003230)
+spawnMobile("geonosis", "geonosian_worker", 1, -61.979, -21.7989, -105.464, 357, 610003230)
+spawnMobile("geonosis", "geonosian_worker", 1, -66.1405, -21.9051, -110.037, 86, 610003230)
+spawnMobile("geonosis", "geonosian_worker", 1, -58.073, -21.8965, -110.109, 265, 610003230)
+spawnMobile("geonosis", "geonosian_worker", 1, -41.8688, -21.9881, -109.627, 268, 610003233)
+spawnMobile("geonosis", "geonosian_worker", 1, -42.7966, -22.0929, -99.2015, 172, 610003233)
+spawnMobile("geonosis", "geonosian_worker", 1, -26.1979, -26.1219, -98.1367, 259, 610003234)
+spawnMobile("geonosis", "geonosian_worker", 1, 1.39317, -30.038, -96.4573, 222, 610003234)
+spawnMobile("geonosis", "geonosian_worker", 1, -5.03911, -30.1543, -92.6725, 151, 610003234)
+spawnMobile("geonosis", "geonosian_worker", 1, -2.63063, -30.066, -92.0149, 204, 610003234)
+spawnMobile("geonosis", "geonosian_worker", 1, -3.71194, -30.1926, -103.508, 351, 610003234)
+spawnMobile("geonosis", "geonosian_worker", 1, 25.0286, -30.018, -99.4815, 283, 610003235)
+spawnMobile("geonosis", "geonosian_worker", 1, 31.9733, -29.8356, -87.3085, 324, 610003236)
+spawnMobile("geonosis", "geonosian_worker", 1, 24.2226, -31.9506, -83.1827, 322, 610003236)
+spawnMobile("geonosis", "geonosian_worker", 1, 24.05, -31.593, -79.1449, 175, 610003236)
+spawnMobile("geonosis", "geonosian_worker", 1, 19.6736, -30.4459, -68.2703, 147, 610003236)
+
+--Two Bosses In Right Area
+spawnMobile("geonosis", "geonosian_worker", 1, 37.1204, -30.7299, -78.2677, 220, 610003236)
+spawnMobile("geonosis", "geonosian_worker", 1, -16.1985, -30.2413, -114.413, 352, 610003234)
+
+
 end
 
