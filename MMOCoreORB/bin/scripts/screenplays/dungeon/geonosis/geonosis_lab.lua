@@ -149,6 +149,151 @@ spawnMobile("geonosis", "geonosian_worker", 1, 19.6736, -30.4459, -68.2703, 147,
 spawnMobile("geonosis", "geonosian_worker", 1, 37.1204, -30.7299, -78.2677, 220, 610003236)
 spawnMobile("geonosis", "geonosian_worker", 1, -16.1985, -30.2413, -114.413, 352, 610003234)
 
+--Right Side Hall Boss Area
+spawnMobile("geonosis", "geonosian_worker", 1, -76.9659, -22.1928, -110.62, 84, 610003231)
+spawnMobile("geonosis", "geonosian_worker", 1, -88.013, -21.8741, -106.341, 116, 610003231)
+spawnMobile("geonosis", "geonosian_worker", 1, -99.0307, -21.8929, -104.764, 128, 610003231)
+spawnMobile("geonosis", "geonosian_worker", 1, -107.606, -22.1337, -94.6815, 168, 610003231)
+spawnMobile("geonosis", "geonosian_worker", 1, -109.615, -22.0641, -99.2083, 133, 610003231)
+spawnMobile("geonosis", "geonosian_worker", 1, -111.059, -21.7038, -101.292, 133, 610003231)
+spawnMobile("geonosis", "geonosian_worker", 1, -108.214, -22.1068, -124.915, 354, 610003231)
+spawnMobile("geonosis", "geonosian_worker", 1, -115.75, -21.5607, -104.122, 133, 610003231)
+spawnMobile("geonosis", "geonosian_worker", 1, -118.695, -21.7423, -114.547, 62, 610003231)
+spawnMobile("geonosis", "geonosian_worker", 1, -128.441, -21.7342, -114.832, 358, 610003231)
+spawnMobile("geonosis", "geonosian_worker", 1, -136.059, -21.2393, -110.389, 25, 610003231)
 
+--Main Boss In This Room
+spawnMobile("geonosis", "geonosian_worker", 1, -130.742, -22.0534, -84.9919, 173, 610003232)
+
+--Hall Leading TO Main Boss Rooms
+spawnMobile("geonosis", "geonosian_worker", 1, -62.008, -21.7989, -123.983, 352, 610003237)
+spawnMobile("geonosis", "geonosian_worker", 1, -54.685, -21.7989, -124.128, 268, 610003237)
+spawnMobile("geonosis", "geonosian_worker", 1, -47.2517, -21.7989, -123.871, 261, 610003237)
+spawnMobile("geonosis", "geonosian_worker", 1, -47.7487, -21.7989, -136.679, 9, 610003238)
+spawnMobile("geonosis", "geonosian_worker", 1, -47.8562, -21.7989, -151.005, 351, 610003238)
+spawnMobile("geonosis", "geonosian_worker", 1, -56.8782, -21.7989, -135.976, 87, 610003242)
+spawnMobile("geonosis", "geonosian_worker", 1, -65.2194, -22, -134.511, 91, 610003242)
+spawnMobile("geonosis", "geonosian_worker", 1, -62.8215, -22, -143.885, 335, 610003242)
+spawnMobile("geonosis", "geonosian_worker", 1, -65.1765, -22, -143.836, 6, 610003242)
+spawnMobile("geonosis", "geonosian_worker", 1, -68.051, -22, -139.827, 70, 610003242)
+spawnMobile("geonosis", "geonosian_worker", 1, -77.55, -22, -144.971, 356, 610003242)
+spawnMobile("geonosis", "geonosian_worker", 1, -32.739, -22, -136.59, 262, 610003239)
+spawnMobile("geonosis", "geonosian_worker", 1, -35.2067, -22, -128.028, 172, 610003239)
+spawnMobile("geonosis", "geonosian_worker", 1, -32.8058, -22, -128.065, 182, 610003239)
+spawnMobile("geonosis", "geonosian_worker", 1, -26.6399, -22, -131.93, 266, 610003239)
+spawnMobile("geonosis", "geonosian_worker", 1, -20.3618, -22, -128.166, 176, 610003239)
+
+--Boos In Boxed Room At The End Of Hall
+spawnMobile("geonosis", "geonosian_worker", 1, -19.8329, -22, -116.85, 127, 610003240)
+
+--Boss Left Hallway 
+spawnMobile("geonosis", "geonosian_worker", 1, -47.8239, -21.7989, -158.564, 6, 610003238)
+spawnMobile("geonosis", "geonosian_worker", 1, -35.8628, -22.5629, -150.208, 189, 610003241)
+spawnMobile("geonosis", "geonosian_worker", 1, -35.6795, -21.7989, -157.973, 241, 610003241)
+spawnMobile("geonosis", "geonosian_worker", 1, -36.5003, -21.8865, -163.063, 313, 610003241)
+spawnMobile("geonosis", "geonosian_worker", 1, -33.9834, -22.1818, -167.344, 298, 610003241)
+spawnMobile("geonosis", "geonosian_worker", 1, -24.5407, -23.6282, -158.02, 272, 610003241)
+
+--Main Boss In This Area
+spawnMobile("geonosis", "geonosian_worker", 1, -18.7123, -22.2658, -150.375, 217, 610003241)
+
+--Mini Boss
+spawnMobile("geonosis", "geonosian_worker", 1, -77.9765, -22, -159.354, 359, 610003243)
+
+--Hallway Leading Down To Spiders SMOKED OUT
+spawnMobile("geonosis", "geonosian_worker", 1, -78.946, -22, -167.844, 7, 610003243)
+spawnMobile("geonosis", "geonosian_worker", 1, -80.6856, -22, -176.973, 169, 610003244)
+spawnMobile("geonosis", "geonosian_worker", 1, -96.4476, -26, -177.918, 91, 610003244)
+
+--SPIDERS IN Hallway SMOKED OUT 
+spawnMobile("geonosis", "geonosian_worker", 1, -103.987, -32.5251, -201.05, 178, 610003245)
+spawnMobile("geonosis", "geonosian_worker", 1, -104.239, -29.9477, -195.895, 175, 610003245)
+spawnMobile("geonosis", "geonosian_worker", 1, -104.087, -27.3248, -190.65, 175, 610003245)
+spawnMobile("geonosis", "geonosian_worker", 1, -104.176, -26, -186.573, 152, 610003245)
+spawnMobile("geonosis", "geonosian_worker", 1, -103.983, -26, -181.992, 142, 610003245)
+spawnMobile("geonosis", "geonosian_worker", 1, -104.33, -26, -178.278, 270, 610003245)
+spawnMobile("geonosis", "geonosian_worker", 1, -101.736, -26, -177.932, 274, 610003245)
+spawnMobile("geonosis", "geonosian_worker", 1, -96.4476, -26, -177.918, 91, 610003244)
+
+--NPC Bottom Hallway Leading To 3 Boss Rooms
+spawnMobile("geonosis", "geonosian_worker", 1, -127.517, -33.7989, -227.731, 90, 610003251)
+spawnMobile("geonosis", "geonosian_worker", 1, -70.0202, -33.7989, -228.139, 269, 610003248)
+spawnMobile("geonosis", "geonosian_worker", 1, -99.1071, -33.7989, -220.97, 350, 610003246)
+spawnMobile("geonosis", "geonosian_worker", 1, -100.899, -33.7989, -220.819, 352, 610003246)
+spawnMobile("geonosis", "geonosian_worker", 1, -98.5, -34, -212.7, 96, 610003246)
+spawnMobile("geonosis", "geonosian_worker", 1, -108.031, -34, -215.197, 53, 610003246)
+spawnMobile("geonosis", "geonosian_worker", 1, -108.2, -34, -212.801, 108, 610003246)
+
+--Boss Room Boxed Room
+spawnMobile("geonosis", "geonosian_worker", 1, -71.4901, -34, -253.231, 7, 610003249)
+spawnMobile("geonosis", "geonosian_worker", 1, -61.5877, -34, -250.745, 231, 610003249)
+spawnMobile("geonosis", "geonosian_worker", 1, -61.5754, -34, -253.195, 274, 610003249)
+spawnMobile("geonosis", "geonosian_worker", 1, -66.9681, -34, -259.987, 43, 610003249)
+
+--Main Boss In Room
+spawnMobile("geonosis", "geonosian_worker", 1, -66.1661, -34, -273.786, 358, 610003250)
+
+-- Scientis Mutation room}
+spawnMobile("geonosis", "geonosian_worker", 1, -128.596, -34, -210.744, 192, 610003252)
+spawnMobile("geonosis", "geonosian_worker", 1, -138.365, -34, -213.247, 52, 610003252)
+spawnMobile("geonosis", "geonosian_worker", 1, -138.34, -34, -210.8, 93, 610003252)
+spawnMobile("geonosis", "geonosian_worker", 1, -133.009, -34, -204.056, 185, 610003252)
+spawnMobile("geonosis", "geonosian_worker", 1, -126.897, -34, -194.489, 264, 610003253)
+spawnMobile("geonosis", "geonosian_worker", 1, -126.428, -34, -188.965, 265, 610003253)
+spawnMobile("geonosis", "geonosian_worker", 1, -125.926, -34, -183.292, 260, 610003253)
+spawnMobile("geonosis", "geonosian_worker", 1, -137.665, -34, -197.196, 307, 610003253)
+spawnMobile("geonosis", "geonosian_worker", 1, -137.779, -34, -191.105, 201, 610003253)
+spawnMobile("geonosis", "geonosian_worker", 1, -137.697, -34, -185.955, 248, 610003253)
+spawnMobile("geonosis", "geonosian_worker", 1, -137.692, -34, -180.683, 232, 610003253)
+
+--Main Boss Mutation In This Room
+spawnMobile("geonosis", "geonosian_worker", 1, -132.534, -34, -179.164, 183, 610003253)
+
+--Hallway Leading to Mutation Chambers
+spawnMobile("geonosis", "geonosian_worker", 1, -130.324, -34, -251.245, 0, 610003251)
+spawnMobile("geonosis", "geonosian_worker", 1, -124.628, -34, -249.112, 221, 610003251)
+spawnMobile("geonosis", "geonosian_worker", 1, -124.568, -34, -251.192, 345, 610003251)
+spawnMobile("geonosis", "geonosian_worker", 1, -130.604, -34, -266.801, 84, 610003254)
+spawnMobile("geonosis", "geonosian_worker", 1, -130.619, -34, -269.293, 62, 610003254)
+spawnMobile("geonosis", "geonosian_worker", 1, -120.54, -34, -266.887, 257, 610003254)
+spawnMobile("geonosis", "geonosian_worker", 1, -122.142, -33.7989, -281.704, 0, 610003254)
+spawnMobile("geonosis", "geonosian_worker", 1, -135.459, -33.7989, -281.903, 90, 610003254)
+
+--Mutation Chamber Area
+spawnMobile("geonosis", "geonosian_worker", 1, -117.915, -34.0566, -350.885, 279, 610003256)
+spawnMobile("geonosis", "geonosian_worker", 1, -142.774, -33.8302, -368.149, 20, 610003256)
+spawnMobile("geonosis", "geonosian_worker", 1, -123.394, -33.5989, -388.88, 275, 610003256)
+spawnMobile("geonosis", "geonosian_worker", 1, -154.578, -34.5771, -389.208, 72, 610003256)
+spawnMobile("geonosis", "geonosian_worker", 1, -67.1776, -34.0585, -368.317, 253, 610003257)
+spawnMobile("geonosis", "geonosian_worker", 1, -84.4995, -33.5259, -348.224, 92, 610003257)
+spawnMobile("geonosis", "geonosian_worker", 1, -51.7504, -34.3358, -346.822, 244, 610003257)
+spawnMobile("geonosis", "geonosian_worker", 1, -91.6429, -33.7439, -386.132, 330, 610003257)
+
+--NPC Leading To Last Boss Chamber
+spawnMobile("geonosis", "geonosian_worker", 1, -26.1393, -33.8793, -420.797, 353, 610003259)
+spawnMobile("geonosis", "geonosian_worker", 1, -11.0825, -33.9954, -419.778, 266, 610003259)
+spawnMobile("geonosis", "geonosian_worker", 1, -13.1736, -33.9954, -412.108, 174, 610003259)
+spawnMobile("geonosis", "geonosian_worker", 1, -10.8175, -33.9954, -411.624, 195, 610003259)
+spawnMobile("geonosis", "geonosian_worker", 1, -4.21572, -33.9967, -416.993, 276, 610003259)
+
+--Lower Level Boss
+spawnMobile("geonosis", "geonosian_worker", 1, 18.0504, -34, -380.885, 182, 610003260)
+
+--Top Level Boss In Weapon Stock Room
+spawnMobile("geonosis", "geonosian_worker", 1, 13.4259, -22.0449, -335.883, 153, 610003260)
+
+--Spiders Guarding Main Boss Room
+spawnMobile("geonosis", "geonosian_worker", 1, 37.4869, -34, -333.112, 308, 610003260)
+spawnMobile("geonosis", "geonosian_worker", 1, 37.7062, -34, -335.1, 237, 610003260)
+spawnMobile("geonosis", "geonosian_worker", 1, 40.4216, -34, -335.006, 215, 610003261)
+spawnMobile("geonosis", "geonosian_worker", 1, 40.1, -34, -332.8, 356, 610003261)
+spawnMobile("geonosis", "geonosian_worker", 1, 43.0376, -34, -332.7, 343, 610003261)
+spawnMobile("geonosis", "geonosian_worker", 1, 44.4303, -34, -335.068, 208, 610003261)
+spawnMobile("geonosis", "geonosian_worker", 1, 46.806, -34, -338.362, 14, 610003261)
+spawnMobile("geonosis", "geonosian_worker", 1, 49.1715, -34, -337.73, 339, 610003261)
+spawnMobile("geonosis", "geonosian_worker", 1, 46.7663, -34, -328.556, 113, 610003261)
+spawnMobile("geonosis", "geonosian_worker", 1, 58.8023, -34.2097, -329.562, 263, 610003261)
+
+--Main Boss Room
+spawnMobile("geonosis", "geonosian_worker", 1, 95.8945, -34.2503, -329.149, 267, 610003261)
 end
-
