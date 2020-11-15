@@ -3,14 +3,14 @@ sentry_droid = Creature:new {
 	socialGroup = "",
 	faction = "",
 	level = 100,
-	chanceHit = 1.0,
+	chanceHit = 30.0,
 	damageMin = 500,
 	damageMax = 1500,
-	baseXp = 128549,
+	baseXp = 100000,
 	baseHAM = 100000,
 	baseHAMmax = 110000,
 	armor = 3,
-	resists = {90,90,90,90,90,90,90,90,50},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
+	resists = {90,90,90,90,90,90,90,90,90},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,21 +29,20 @@ sentry_droid = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "", chance = 10000000},
+				{group = "junk", chance = 10000000},
 			},
 			lootChance = 10000000
 		},	
 		{
 			groups = {
-				{group = "", chance = 10000000},
+				{group = "junk", chance = 10000000},
 			},
 			lootChance = 10000000
 		}
 	},
-	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
-	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)
+	defaultAttack = "defaultdroidattack",
+	defaultWeapon = "object/weapon/ranged/vehicle/vehicle_atst_ranged.iff",
 }
 
 CreatureTemplates:addCreatureTemplate(sentry_droid, "sentry_droid")
-
