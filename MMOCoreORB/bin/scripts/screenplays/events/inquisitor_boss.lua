@@ -36,7 +36,7 @@ function inquisitor_boss:spawnMobiles()
 	spawnMobile("rori", "inquisitor_trooper", 1800, -5309, 76, 5023, 170, 18500002)
 	spawnMobile("rori", "inquisitor_trooper", 1800, -5318, 76, 5024, 170, 18500002)
 	spawnMobile("rori", "inquisitor_trooper", 1800, -5320, 76, 5006, 170, 18500002)	
-	local pBoss = spawnMobile("rori", "high_inquisitor", 10800, -5349, 76, 5042, 330, 18500002)--Spawn High Inquisitor Jerec
+	local pBoss = spawnMobile("rori", "high_inquisitor", -1, -5349, 76, 5042, 330, 18500002)--Spawn High Inquisitor Jerec
 	local creature = CreatureObject(pBoss)
 	print("High Inquisitor Jerec Spawned")
 	createObserver(DAMAGERECEIVED, "inquisitor_boss", "npcDamageObserver", pBoss)
