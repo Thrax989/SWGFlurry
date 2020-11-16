@@ -3,10 +3,10 @@ hellfire_droid = Creature:new {
 	socialGroup = "",
 	faction = "",
 	level = 100,
-	chanceHit = 1.0,
+	chanceHit = 30.0,
 	damageMin = 500,
 	damageMax = 1500,
-	baseXp = 128549,
+	baseXp = 100000,
 	baseHAM = 100000,
 	baseHAMmax = 110000,
 	armor = 3,
@@ -29,20 +29,19 @@ hellfire_droid = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "", chance = 10000000},
+				{group = "junk", chance = 10000000},
 			},
 			lootChance = 10000000
 		},	
 		{
 			groups = {
-				{group = "", chance = 10000000},
+				{group = "junk", chance = 10000000},
 			},
 			lootChance = 10000000
 		}
 	},
-	weapons = {"pirate_weapons_heavy"},
-	conversationTemplate = "",
-	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)
+	defaultAttack = "defaultdroidattack",
+	defaultWeapon = "object/weapon/ranged/vehicle/vehicle_atst_ranged.iff",
 }
 
 CreatureTemplates:addCreatureTemplate(hellfire_droid, "hellfire_droid")
