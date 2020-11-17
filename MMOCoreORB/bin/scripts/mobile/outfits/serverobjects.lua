@@ -33,4 +33,6 @@ includeFile("outfits/student_of_the_force_outfit.lua")
 includeFile("outfits/clone_trooper_imperial_outfit.lua")
 includeFile("outfits/clone_trooper_rebel_outfit.lua")
 includeFile("outfits/clone_trooper_neutral_outfit.lua")
-
+includeFile("outfits/clone_trooper_imperial_general_outfit.lua")
+includeFile("outfits/clone_trooper_rebel_general_outfit.lua")
+includeFile("outfits/clone_trooper_neutral_general_outfit.lua")

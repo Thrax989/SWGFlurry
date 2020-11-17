@@ -591,3 +591,6 @@ includeFile("lair/creature_lair/taanab_nerf_grassland_lair.lua")
 includeFile("lair/creature_lair/taanab_ambrian_staga_lair.lua")
 includeFile("lair/creature_lair/hoth_wampa_lair.lua")
 includeFile("lair/creature_lair/hoth_taun_taun_lair.lua")
+
+
+includeFile("lair/creature_lair/geonosis_rebel_clone_neutral.lua")
