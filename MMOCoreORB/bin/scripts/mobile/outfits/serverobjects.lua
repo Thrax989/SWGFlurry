@@ -30,3 +30,7 @@ includeFile("outfits/vardias_tyne_outfit.lua")
 includeFile("outfits/custom_halloween1_outfit.lua")
 includeFile("outfits/custom_halloween_outfit.lua")
 includeFile("outfits/student_of_the_force_outfit.lua")
+includeFile("outfits/clone_trooper_imperial_outfit.lua")
+includeFile("outfits/clone_trooper_rebel_outfit.lua")
+includeFile("outfits/clone_trooper_neutral_outfit.lua")
+
