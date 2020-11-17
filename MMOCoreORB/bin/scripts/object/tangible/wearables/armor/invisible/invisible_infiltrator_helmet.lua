@@ -1,0 +1,3 @@
+object_tangible_wearables_armor_invisible_invisible_infiltrator_helmet = object_tangible_wearables_armor_invisible_shared_invisible_infiltrator_helmet:new {
+}
+ObjectTemplates:addTemplate(object_tangible_wearables_armor_invisible_invisible_infiltrator_helmet, "object/tangible/wearables/armor/invisible/invisible_infiltrator_helmet.iff")

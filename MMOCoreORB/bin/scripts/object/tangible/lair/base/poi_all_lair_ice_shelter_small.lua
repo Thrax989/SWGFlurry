@@ -1,0 +1,3 @@
+object_tangible_lair_base_poi_all_lair_ice_shelter_small = object_tangible_lair_base_shared_poi_all_lair_ice_shelter_small:new {
+}
+ObjectTemplates:addTemplate(object_tangible_lair_base_poi_all_lair_ice_shelter_small, "object/tangible/lair/base/poi_all_lair_ice_shelter_small.iff")

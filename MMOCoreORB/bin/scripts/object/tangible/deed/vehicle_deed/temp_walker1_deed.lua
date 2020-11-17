@@ -1,0 +1,3 @@
+object_tangible_deed_vehicle_deed_temp_walker1_deed = object_tangible_deed_vehicle_deed_shared_temp_walker1_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_vehicle_deed_temp_walker1_deed, "object/tangible/deed/vehicle_deed/temp_walker1_deed.iff")

@@ -1,0 +1,3 @@
+object_building_general_coru_senate_office_starport = object_building_general_shared_coru_senate_office_starport:new {
+}
+ObjectTemplates:addTemplate(object_building_general_coru_senate_office_starport, "object/building/general/coru_senate_office_starport.iff")

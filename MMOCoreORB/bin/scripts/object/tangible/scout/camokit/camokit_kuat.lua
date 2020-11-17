@@ -1,0 +1,3 @@
+object_tangible_scout_camokit_camokit_kuat = object_tangible_scout_camokit_shared_camokit_kuat:new {
+}
+ObjectTemplates:addTemplate(object_tangible_scout_camokit_camokit_kuat, "object/tangible/scout/camokit/camokit_kuat.iff")

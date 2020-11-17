@@ -3,15 +3,15 @@ nightsisterqueenboss = Creature:new {
 	socialGroup = "nightsister",
 	faction = "nightsister",
 	level = 300,
-	chanceHit = 30,
-	damageMin = 1645,
-	damageMax = 3000,
+	chanceHit = 90,
+	damageMin = 7000,
+	damageMax = 8000,
 	specialDamageMult = 7.5,
 	baseXp = 28549,
-	baseHAM = 385000,
-	baseHAMmax = 471000,
+	baseHAM = 600000,
+	baseHAMmax =800000,
 	armor = 3,
-	resists = {75,75,75,75,75,75,75,75,75},
+	resists = {175,175,175,175,175,175,175,150,160},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -32,7 +32,7 @@ nightsisterqueenboss = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},	
 		{
 			groups = {
@@ -90,37 +90,37 @@ nightsisterqueenboss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "clothing_attachments", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "armor_attachments", chance = 10000000},
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "tierdiamond", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -159,11 +159,17 @@ nightsisterqueenboss = Creature:new {
 				{group = "tierdiamond", chance = 2500000},
 			},
 			lootChance = 10000000
-		}
+		},
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
-	attacks = merge(fencermaster,swordsmanmaster,tkamaster,pikemanmaster,brawlermaster,forcepowermaster)
+	attacks = {
+		{"creatureareaknockdown","stateAccuracyBonus=100"},
+		{"posturedownattack","stateAccuracyBonus=100"},
+    {"creatureareadisease","DiseaseChance=100"},
+    {"creatureareableeding","BleedChance=100"},    
+		{"creatureareacombo","stateAccuracyBonus=100"}
+	}
 }
 
 CreatureTemplates:addCreatureTemplate(nightsisterqueenboss, "nightsisterqueenboss")

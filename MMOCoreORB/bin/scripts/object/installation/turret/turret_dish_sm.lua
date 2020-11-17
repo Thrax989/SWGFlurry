@@ -44,7 +44,7 @@
 object_installation_turret_turret_dish_sm = object_installation_turret_shared_turret_dish_sm:new {
 	pvpStatusBitmask = ATTACKABLE,
 	optionsBitmask = 0,
-	maxCondition = 75000,
+	maxCondition = 500000,
 	zoneComponent = "TurretZoneComponent",
 	dataObjectComponent = "TurretDataComponent",
 	-- Damagetypes in WeaponObject
@@ -52,16 +52,16 @@ object_installation_turret_turret_dish_sm = object_installation_turret_shared_tu
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 75,
-	energy = 95,
-	electricity = 75,
+	kinetic = 95,
+	energy = 90,
+	electricity = 90,
 	stun = 100,
-	blast = -1,
-	heat = 75,
-	cold = 75,
-	acid = 75,
-	lightSaber = -1,
-	chanceHit = 4,
+	blast = 90,
+	heat = 90,
+	cold = 90,
+	acid = 90,
+	lightSaber = 90,
+	chanceHit = 50,
 	weapon = "object/weapon/ranged/turret/turret_dish_large.iff",
 
 }

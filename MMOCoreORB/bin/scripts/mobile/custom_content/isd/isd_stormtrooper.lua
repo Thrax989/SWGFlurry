@@ -3,14 +3,14 @@ isd_stormtrooper = Creature:new {
 	randomNameType = NAME_STORMTROOPER,
 	socialGroup = "mercenary",
 	level = 300,
-	chanceHit = 20,
-	damageMin = 270,
-	damageMax = 350,
+	chanceHit = 50,
+	damageMin = 1000,
+	damageMax = 2000,
 	baseXp = 10081,
-	baseHAM = 129000,
-	baseHAMmax = 156000,
+	baseHAM = 80000,
+	baseHAMmax = 120000,
 	armor = 0,
-	resists = {35,35,35,45,35,35,55,35,50},
+	resists = {120,135,135,145,135,135,155,135,130},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -38,13 +38,13 @@ isd_stormtrooper = Creature:new {
 			groups = {
 				{group = "trash_common", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "trash_rare", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
@@ -53,16 +53,7 @@ isd_stormtrooper = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 10000000
+			lootChance = 3000000
 		}
 	},
 	weapons = {"stormtrooper_weapons"},

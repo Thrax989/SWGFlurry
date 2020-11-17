@@ -1,0 +1,3 @@
+object_intangible_vehicle_basilisk_war_droid_pcd = object_intangible_vehicle_shared_basilisk_war_droid_pcd:new {
+}
+ObjectTemplates:addTemplate(object_intangible_vehicle_basilisk_war_droid_pcd, "object/intangible/vehicle/basilisk_war_droid_pcd.iff")

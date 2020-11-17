@@ -60,15 +60,6 @@ krayt_dragon_adolescent = Creature:new {
 				{group = "tierthree", chance = 2000000},
 				{group = "tierdiamond", chance = 2000000},
 			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 2000000},
-				{group = "tiertwo", chance = 4000000},
-				{group = "tierthree", chance = 2000000},
-				{group = "tierdiamond", chance = 2000000},
-			},
 			lootChance = 4000000
 		}
 	},

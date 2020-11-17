@@ -1,0 +1,3 @@
+object_tangible_furniture_flooring_metal_frn_flooring_metal_s20 = object_tangible_furniture_flooring_metal_shared_frn_flooring_metal_s20:new {
+}
+ObjectTemplates:addTemplate(object_tangible_furniture_flooring_metal_frn_flooring_metal_s20, "object/tangible/furniture/flooring/metal/frn_flooring_metal_s20.iff")

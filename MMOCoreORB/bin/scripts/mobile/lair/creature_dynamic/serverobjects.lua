@@ -447,3 +447,8 @@ includeFile("lair/creature_dynamic/must_tanrays.lua")
 includeFile("lair/creature_dynamic/must_tulrus.lua")
 includeFile("lair/creature_dynamic/must_xandanks.lua")
 includeFile("lair/creature_dynamic/yavin4_acklay.lua")
+
+
+includeFile("lair/creature_dynamic/geonosis_hellfire_droid_none.lua")
+includeFile("lair/creature_dynamic/geonosis_sentry_droid_none.lua")
+includeFile("lair/creature_dynamic/geonosis_spider_droid_none.lua")

@@ -1,0 +1,5 @@
+includeFile("tangible/tcg/series1/decorative_painting_jedi_crest.lua")
+includeFile("tangible/tcg/series1/decorative_painting_imperial_propaganda.lua")
+includeFile("tangible/tcg/series1/decorative_painting_alliance_propaganda.lua")
+includeFile("tangible/tcg/series1/decorative_painting_trooper.lua")
+includeFile("tangible/tcg/series1/decorative_painting_darth_vader.lua")

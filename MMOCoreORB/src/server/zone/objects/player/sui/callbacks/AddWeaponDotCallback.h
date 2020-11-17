@@ -85,10 +85,10 @@ public:
 		int value = 100 * expUsed;
 		weaponObj->addDotType(finalType);
 		weaponObj->addDotAttribute(hamValue);
-		weaponObj->addDotStrength((value / 50));
-		weaponObj->addDotDuration((value / 50));
-		weaponObj->addDotPotency((value / 50));
-		weaponObj->addDotUses((value * 10));
+		weaponObj->addDotStrength((value / 2));
+		weaponObj->addDotDuration((value / 2));
+		weaponObj->addDotPotency((value / 5));
+		weaponObj->addDotUses((value * 5));
 		playerObj->addExperience("recycle_contraband", (expUsed * -1), true);
 
 		const String sysMsg = "Dot Applied";

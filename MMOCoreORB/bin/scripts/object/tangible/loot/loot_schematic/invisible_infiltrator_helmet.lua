@@ -1,0 +1,3 @@
+object_tangible_loot_loot_schematic_invisible_infiltrator_helmet = object_tangible_loot_loot_schematic_shared_invisible_infiltrator_helmet:new {
+}
+ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_invisible_infiltrator_helmet, "object/tangible/loot/loot_schematic/invisible_infiltrator_helmet.iff")

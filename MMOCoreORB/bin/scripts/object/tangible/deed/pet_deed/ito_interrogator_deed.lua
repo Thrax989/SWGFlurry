@@ -1,0 +1,3 @@
+object_tangible_deed_pet_deed_ito_interrogator_deed = object_tangible_deed_pet_deed_shared_ito_interrogator_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_pet_deed_ito_interrogator_deed, "object/tangible/deed/pet_deed/ito_interrogator_deed.iff")

@@ -235,7 +235,7 @@ object_tangible_wearables_robe_robe_swtor = object_tangible_wearables_robe_share
 	experimentalCombineType = {0, 0, 4, 4},
 				skillMods = {
 				    {"jedi_force_power_max", 250},
-				    {"jedi_force_power_regen", 10}
+				    {"jedi_force_power_regen", 10},
 				},
 
 

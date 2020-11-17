@@ -1,0 +1,3 @@
+object_tangible_component_vehicle_veh_power_plant_swamp = object_tangible_component_vehicle_shared_veh_power_plant_swamp:new {
+}
+ObjectTemplates:addTemplate(object_tangible_component_vehicle_veh_power_plant_swamp, "object/tangible/component/vehicle/veh_power_plant_swamp.iff")

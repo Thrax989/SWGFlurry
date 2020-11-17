@@ -1,0 +1,3 @@
+object_intangible_vehicle_mechno_chair_pcd = object_intangible_vehicle_shared_mechno_chair_pcd:new {
+}
+ObjectTemplates:addTemplate(object_intangible_vehicle_mechno_chair_pcd, "object/intangible/vehicle/mechno_chair_pcd.iff")

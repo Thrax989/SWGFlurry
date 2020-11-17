@@ -39,6 +39,8 @@ function worldboss_fiveScreenplay:bossDead(pBoss)
 	local creature = CreatureObject(pBoss)
 	createEvent(120 * 1000, "worldboss_fiveScreenplay", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "worldboss_fiveScreenplay", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
+	createEvent(1 * 1000, "worldboss_fiveScreenplay", "BroadcastDead", pBoss, "")--Broadcast Dead
+	createEvent(10800 * 1000, "worldboss_fiveScreenplay", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
 -----------------------
@@ -60,4 +62,20 @@ function worldboss_fiveScreenplay:KillBoss(pBoss)
 		SceneObject(pBoss):destroyObjectFromWorld()
 	end
 	return 0
+end
+----------------------------
+--Broadcast Dead
+----------------------------
+function worldboss_fiveScreenplay:BroadcastDead(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Grim Sage Soulserpent World Boss Has Died.")
+		CreatureObject(bossObject):broadcastToDiscord("Grim Sage Soulserpent World Boss Has Died.")
+end
+-----------------------
+--Broadcast Respawn 1
+-----------------------
+function worldboss_fiveScreenplay:KillSpawnCast3(bossObject)
+		local boss = LuaCreatureObject(bossObject)
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Grim Sage Soulserpent World Boss Respawning.")
+		CreatureObject(bossObject):broadcastToDiscord("Grim Sage Soulserpent World Boss Respawning.")
 end

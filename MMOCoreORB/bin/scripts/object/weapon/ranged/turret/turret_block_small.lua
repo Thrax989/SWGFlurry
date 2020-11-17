@@ -61,15 +61,15 @@ object_weapon_ranged_turret_turret_block_small = object_weapon_ranged_turret_sha
 	damageModifiers = { },
 
 	pointBlankRange = 0,
-	pointBlankAccuracy = 0,
+	pointBlankAccuracy = 50,
 	idealRange = 40,
-	idealAccuracy = 70,
-	maxRange = 80,
-	maxRangeAccuracy = 0,
-	minDamage = 300,
-	maxDamage = 800,
-	attackSpeed = 2,
-	woundsRatio = 9,
+	idealAccuracy = 80,
+	maxRange = 70,
+	maxRangeAccuracy = 100,
+	minDamage = 5000,
+	maxDamage = 8000,
+	attackSpeed = 1,
+	woundsRatio = 20,
 }
 
 ObjectTemplates:addTemplate(object_weapon_ranged_turret_turret_block_small, "object/weapon/ranged/turret/turret_block_small.iff")

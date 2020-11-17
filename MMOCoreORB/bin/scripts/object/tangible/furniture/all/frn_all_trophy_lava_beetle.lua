@@ -1,0 +1,3 @@
+object_tangible_furniture_all_frn_all_trophy_lava_beetle = object_tangible_furniture_all_shared_frn_all_trophy_lava_beetle:new {
+}
+ObjectTemplates:addTemplate(object_tangible_furniture_all_frn_all_trophy_lava_beetle, "object/tangible/furniture/all/frn_all_trophy_lava_beetle.iff")

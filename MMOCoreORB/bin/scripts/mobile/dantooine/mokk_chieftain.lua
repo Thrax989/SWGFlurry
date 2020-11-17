@@ -3,14 +3,15 @@ mokk_chieftain = Creature:new {
 	socialGroup = "mokk_tribe",
 	faction = "mokk_tribe",
 	level = 300,
-	chanceHit = 80.0,
-	damageMin = 4500,
-	damageMax = 6500,
+	chanceHit = 90.0,
+	damageMin = 6000,
+	damageMax = 7500,
+	specialDamageMult = 10.0,  
 	baseXp = 25000,
 	baseHAM = 400000,
 	baseHAMmax = 500000,
 	armor = 3,
-	resists = {55,55,55,55,55,55,55,35,50},
+	resists = {155,155,155,155,155,155,155,135,150},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -33,7 +34,7 @@ mokk_chieftain = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},	
 		{
 			groups = {
@@ -57,65 +58,65 @@ mokk_chieftain = Creature:new {
 			groups = {
 				{group = "mokk_elites", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "clothing_attachments", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "armor_attachments", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000},
 			},
 			lootChance = 10000000
 		},

@@ -11,6 +11,7 @@
 #include "server/zone/objects/creature/sui/LoadStimpackSuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/objects/intangible/PetControlDevice.h"
 
 DroidStimpackModuleDataComponent::DroidStimpackModuleDataComponent() {
 	setLoggingName("DroidStimpackModule");
@@ -219,14 +220,14 @@ void DroidStimpackModuleDataComponent::initialize(DroidObject* droid) {
 		info("droidComponent was null");
 		return;
 	}
-	
+
 	//This will instantiate the crafted_components slotted container and satchel if they do not exist
 	ManagedReference<SceneObject*> satchel = droidComponent->getCraftedComponentsSatchel();
 	if (satchel != nullptr) {
 		satchel->setContainerVolumeLimit(capacity);
 	}
 
-	
+
 }
 
 int DroidStimpackModuleDataComponent::handleObjectMenuSelect(CreatureObject* player, byte selectedID, PetControlDevice* controller) {
@@ -236,10 +237,10 @@ int DroidStimpackModuleDataComponent::handleObjectMenuSelect(CreatureObject* pla
 		player->sendSystemMessage("@pet/droid_modules:stimpack_error");
 		return 0;
 	}
-	
+
 	if (selectedID == LOAD_STIMPACK) {
 		Locker crossLoker(droid, player);
-		
+
 		ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
 		if (inventory == nullptr) {
 			player->sendSystemMessage("@pet/droid_modules:no_stimpacks");
@@ -384,6 +385,10 @@ void DroidStimpackModuleDataComponent::handleInsertStimpack(CreatureObject* play
 	if (player == nullptr)
 		return;
 
+//	if (!player->hasSkill("science_medic_ability_04")) {
+//		return;
+//	}
+
 	ManagedReference<DroidObject*> droid = getDroidObject();
 	if (droid == nullptr) {
 		return;
@@ -394,7 +399,7 @@ void DroidStimpackModuleDataComponent::handleInsertStimpack(CreatureObject* play
 		return;
 	}
 
-	if (!pack->isClassA() || !pack->isClassB() || !pack->isClassC() || !pack->isClassD() || !pack->isClassE()) {
+	if (!pack->isClassA() && !pack->isClassB() && !pack->isClassC() && !pack->isClassD() && !pack->isClassE()) {
 		player->sendSystemMessage("@pet/droid_modules:invalid_stimpack");
 		return;
 	}

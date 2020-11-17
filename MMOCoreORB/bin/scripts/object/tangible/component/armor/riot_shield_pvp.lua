@@ -1,0 +1,3 @@
+object_tangible_component_armor_riot_shield_pvp = object_tangible_component_armor_shared_riot_shield_pvp:new {
+}
+ObjectTemplates:addTemplate(object_tangible_component_armor_riot_shield_pvp, "object/tangible/component/armor/riot_shield_pvp.iff")

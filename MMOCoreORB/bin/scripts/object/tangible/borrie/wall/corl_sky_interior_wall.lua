@@ -1,0 +1,3 @@
+object_tangible_borrie_wall_corl_sky_interior_wall = object_tangible_borrie_wall_shared_corl_sky_interior_wall:new {
+}
+ObjectTemplates:addTemplate(object_tangible_borrie_wall_corl_sky_interior_wall, "object/tangible/borrie/wall/corl_sky_interior_wall.iff")

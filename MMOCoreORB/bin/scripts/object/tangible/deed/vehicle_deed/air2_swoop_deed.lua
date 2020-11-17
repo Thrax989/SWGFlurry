@@ -1,0 +1,3 @@
+object_tangible_deed_vehicle_deed_air2_swoop_deed = object_tangible_deed_vehicle_deed_shared_air2_swoop_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_vehicle_deed_air2_swoop_deed, "object/tangible/deed/vehicle_deed/air2_swoop_deed.iff")

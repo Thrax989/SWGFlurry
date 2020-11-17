@@ -278,7 +278,7 @@ object_weapon_ranged_grenade_grenade_imperial_detonator = object_weapon_ranged_g
 	minDamage = 100,
 	maxDamage = 550,
 
-	attackSpeed = 6,
+	attackSpeed = 8,
 
 	woundsRatio = 10,
 

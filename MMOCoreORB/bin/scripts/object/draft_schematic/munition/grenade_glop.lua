@@ -73,7 +73,16 @@ object_draft_schematic_munition_grenade_glop = object_draft_schematic_munition_s
    targetTemplate = "object/weapon/ranged/grenade/grenade_glop.iff",
 
    additionalTemplates = {
-             }
-
-}
+           },
+ 	weaponDots = {
+		{
+			{"type", 2}, -- 1 = Poison, 2 = Disease, 3 = Fire, 4 = Bleed
+			{"attribute", 0}, -- See CreatureAttributes.h in src for numbers.
+			{"strength", 150},
+			{"duration", 160},
+			{"potency", 100},
+			{"uses", 5}
+		}
+	},          
+}           
 ObjectTemplates:addTemplate(object_draft_schematic_munition_grenade_glop, "object/draft_schematic/munition/grenade_glop.iff")

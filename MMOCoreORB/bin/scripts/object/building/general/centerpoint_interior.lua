@@ -1,0 +1,3 @@
+object_building_general_centerpoint_interior = object_building_general_shared_centerpoint_interior:new {
+}
+ObjectTemplates:addTemplate(object_building_general_centerpoint_interior, "object/building/general/centerpoint_interior.iff")

@@ -1325,7 +1325,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		Locker plocker(psg);
 
-		psg->inflictDamage(psg, 0, damage * 0.01, true, true);
+		psg->inflictDamage(psg, 0, damage * 0.001, true, true);
 
 	}
 
@@ -1353,9 +1353,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
  		// inflict condition damage
   		Locker alocker(armor);
   		if (getArmorObjectReduction(armor, 16) > 0 && damageType == 16) {
-  			armor->inflictDamage(armor, 0, damage * 0.2, true, true);
+  			armor->inflictDamage(armor, 0, damage * 0.02, true, true);
   		} else {
-  			armor->inflictDamage(armor, 0, damage * 0.1, true, true);
+  			armor->inflictDamage(armor, 0, damage * 0.01, true, true);
   		}
 	}
 
@@ -1492,7 +1492,7 @@ float CombatManager::doDroidDetonation(CreatureObject* droid, CreatureObject* de
 
 				Locker plocker(psgArmor);
 
-				psgArmor->inflictDamage(psgArmor, 0, damage * 0.1, true, true);
+				psgArmor->inflictDamage(psgArmor, 0, damage * 0.001, true, true);
 			}
 			// reduced by psg not check each spot for damage
 			healthDamage = damage;

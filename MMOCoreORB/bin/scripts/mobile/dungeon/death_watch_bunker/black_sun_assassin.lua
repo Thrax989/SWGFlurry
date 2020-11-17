@@ -1,4 +1,4 @@
-death_watch_black_sun_assassin = Creature:new {
+black_sun_assassin = Creature:new {
 	objectName = "@mob/creature_names:mand_bunker_blksun_assassin",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
@@ -56,18 +56,6 @@ death_watch_black_sun_assassin = Creature:new {
 		},
 		{
 			groups = {
-				{group = "carbines", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "pistols", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
 				{group = "junk", chance = 10000000}
 			},
 			lootChance = 5000000
@@ -78,12 +66,6 @@ death_watch_black_sun_assassin = Creature:new {
 			},
 			lootChance = 100000
 		},
-		{
-			groups = {
-				{group = "rifles", chance = 10000000}
-			},
-			lootChance = 5000000
-		}
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",

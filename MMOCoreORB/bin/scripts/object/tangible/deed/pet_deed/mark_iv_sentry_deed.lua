@@ -1,0 +1,3 @@
+object_tangible_deed_pet_deed_mark_iv_sentry_deed = object_tangible_deed_pet_deed_shared_mark_iv_sentry_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_pet_deed_mark_iv_sentry_deed, "object/tangible/deed/pet_deed/mark_iv_sentry_deed.iff")

@@ -180,10 +180,11 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		 	"Player Cities",
 		   {
             "Tatooine",
-					{
-						"Korrivan (5,000 Credits)", "pc_korrivan_travel",
-						"Skynet (5,000 Credits)", "pc_skynet_travel",
-						"Make America Krayt Again (5,000 Credits)", "pc_maka_travel"
+		   {
+			"Korrivan (5,000 Credits)", "pc_korrivan_travel",
+			"Skynet (5,000 Credits)", "pc_skynet_travel",
+			"Make America Krayt Again (5,000 Credits)", "pc_maka_travel",
+			"Little China (5,000 Credits)", "pc_littlechina_travel"
 					},         
             "Naboo",
           {
@@ -194,7 +195,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Dantooine",
           {
             "Janta Town (5,000 Credits)", "pc_jantatown_travel",
-            "Bastion (5,000 Credits)", "pc_bastion_travel",	
+            "Serendipity (5,000 Credits)", "pc_serendipity_travel",
             "Malice (5,000 Credits)", "pc_malice_travel"
           },
             "Dathomir",
@@ -214,7 +215,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Talus",
           {
-            "Caladan (5,000 Credits)", "pc_caladan_travel"
+			"Caladan (5,000 Credits)", "pc_caladan_travel",
+			"Vir Domus (5,000 Credits)", "pc_virdomus_travel"
           },  
             "Lok",
           {
@@ -238,8 +240,17 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Mandalore",
           {  
-            "New Freedom (5,000 Credits)", "pc_freedom_travel" 
-          },
+			"New Freedom (5,000 Credits)", "pc_freedom_travel",
+			"The Old West (5,000 Credits)", "pc_oldwest_travel"
+		  },
+		  "Rori",
+          {  
+            "Unrest (5,000 Credits)", "pc_unrest_travel" 
+		  },		  
+		  "Taanab",
+          {  
+            "Nerf Herder Central  (5,000 Credits)", "pc_nerfherder_travel" 
+		  },		  		  
     }      
 	}
 }

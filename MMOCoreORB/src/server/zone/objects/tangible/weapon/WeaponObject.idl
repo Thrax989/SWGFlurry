@@ -472,7 +472,7 @@ class WeaponObject extends TangibleObject {
 
 	@read
 	public boolean isFlameThrower() {
-		return weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_flame_thrower.iff");
+		return weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_flame_thrower.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/heavy/som_republic_flamer.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/heavy/som_lava_cannon.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_pvp_rebel.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_pvp_imperial.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_pulse_cannon.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_particle_beam.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_mandalorian.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_cr1_blast_cannon.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_ep3_loot_void.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_ep3_loot_corellian.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_som_lava_cannon.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_carbonite_cold_rifle.iff");
 	}
 
 	@read

@@ -38,13 +38,13 @@ mokk_sentry = Creature:new {
 			groups = {
 				{group = "mokk_elites", chance = 10000000},
 			},
-			lootChance = 6500000
+			lootChance = 8000000
 		},
 		{
 			groups = {
 				{group = "trash_rare", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 3000000
 		},
 		{
 			groups = {
@@ -53,16 +53,7 @@ mokk_sentry = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 10000000
+			lootChance = 4000000
 		}
 	},
 	weapons = {"blood_razer_weapons"},

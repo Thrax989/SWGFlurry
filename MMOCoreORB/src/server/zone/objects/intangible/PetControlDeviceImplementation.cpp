@@ -376,6 +376,11 @@ void PetControlDeviceImplementation::spawnObject(CreatureObject* player) {
 	}
 
 	Zone* zone = player->getZone();
+//Added No Pets To Dungoen2 IF NEEDED
+	if (zone->getZoneName() == "dungeon2") {
+		//player->sendSystemMessage("@pet/pet_menu:cant_call"); // You cannot call this pet right now.
+		//return;
+	}
 
 	if (zone == nullptr)
 		return;

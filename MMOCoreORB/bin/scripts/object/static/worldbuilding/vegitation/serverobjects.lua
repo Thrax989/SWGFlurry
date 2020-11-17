@@ -1,0 +1,8 @@
+includeFile("static/worldbuilding/vegitation/ptch_kashyyk_fern_s02.lua")
+includeFile("static/worldbuilding/vegitation/myyydril_cave_luilrus_mushroom_lrg.lua")
+includeFile("static/worldbuilding/vegitation/fngi_mushroom_clump_a1.lua")
+includeFile("static/worldbuilding/vegitation/myyydril_cave_luilrus_mushroom_sml.lua")
+includeFile("static/worldbuilding/vegitation/ptch_kashyyk_fern_s01.lua")
+includeFile("static/worldbuilding/vegitation/myyydril_cave_luilrus_mushroom_cluster.lua")
+includeFile("static/worldbuilding/vegitation/fngi_mushroom_clump_a2.lua")
+includeFile("static/worldbuilding/vegitation/ptch_kashyyk_fern_s04.lua")

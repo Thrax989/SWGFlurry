@@ -29,30 +29,21 @@ tusken_raid_leader = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "trash_common", chance = 10000000},
+				{group = "trash_rare", chance = 10000000},
 			},
-			lootChance = 8000000
-		},
+			lootChance = 2000000
+		},		
 		{
 			groups = {
 				{group = "trash_common", chance = 10000000},
 			},
-			lootChance = 8000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
 				{group = "weapon_component_advanced", chance = 10000000},
 			},
-			lootChance = 8000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 3000000
+			lootChance = 7000000
 		},
 		{
 			groups = {

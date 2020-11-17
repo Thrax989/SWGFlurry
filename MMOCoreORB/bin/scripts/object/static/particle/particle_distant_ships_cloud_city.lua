@@ -1,0 +1,3 @@
+object_static_particle_particle_distant_ships_cloud_city = object_static_particle_shared_particle_distant_ships_cloud_city:new {
+}
+ObjectTemplates:addTemplate(object_static_particle_particle_distant_ships_cloud_city, "object/static/particle/particle_distant_ships_cloud_city.iff")

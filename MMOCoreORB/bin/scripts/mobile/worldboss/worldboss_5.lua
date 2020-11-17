@@ -3,14 +3,14 @@ worldboss_5 = Creature:new {
 	socialGroup = "",
 	faction = "",
 	level = 300,
-	chanceHit = 50.0,
-	damageMin = 3000,
-	damageMax = 6000,
+	chanceHit = 90.0,
+	damageMin = 6000,
+	damageMax = 8000,
 	baseXp = 28549,
 	baseHAM = 990000,
 	baseHAMmax = 1000000,
 	armor = 3,
-	resists = {75,75,75,75,75,75,75,75,75},
+	resists = {175,175,175,175,150,175,175,175,160},
 	meatType = "meat_carnivore",
 	meatAmount = 1500,
 	hideType = "hide_bristley",
@@ -120,12 +120,6 @@ worldboss_5 = Creature:new {
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
 				{group = "worldbosscrate", chance = 10000000},
 			},
 			lootChance = 10000000
@@ -165,7 +159,13 @@ worldboss_5 = Creature:new {
 	conversationTemplate = "",
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
-	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster,forcepowermaster)
+	attacks = {
+		{"creatureareaknockdown","stateAccuracyBonus=100"},
+		{"posturedownattack","stateAccuracyBonus=100"},
+    {"creatureareadisease","DiseaseChance=100"},
+    {"creatureareableeding","BleedChance=100"},    
+		{"creatureareacombo","stateAccuracyBonus=100"}
+	}
 }
 
 CreatureTemplates:addCreatureTemplate(worldboss_5, "worldboss_5")

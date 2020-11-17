@@ -1,0 +1,3 @@
+object_building_general_coru_skyscraper_29 = object_building_general_shared_coru_skyscraper_29:new {
+}
+ObjectTemplates:addTemplate(object_building_general_coru_skyscraper_29, "object/building/general/coru_skyscraper_29.iff")

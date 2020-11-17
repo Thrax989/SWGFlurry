@@ -1,0 +1,3 @@
+object_tangible_furniture_all_frn_all_trophy_peko_peko = object_tangible_furniture_all_shared_frn_all_trophy_peko_peko:new {
+}
+ObjectTemplates:addTemplate(object_tangible_furniture_all_frn_all_trophy_peko_peko, "object/tangible/furniture/all/frn_all_trophy_peko_peko.iff")

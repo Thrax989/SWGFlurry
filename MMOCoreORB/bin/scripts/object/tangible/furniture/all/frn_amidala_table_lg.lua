@@ -1,0 +1,3 @@
+object_tangible_furniture_all_frn_amidala_table_lg = object_tangible_furniture_all_shared_frn_amidala_table_lg:new {
+}
+ObjectTemplates:addTemplate(object_tangible_furniture_all_frn_amidala_table_lg, "object/tangible/furniture/all/frn_amidala_table_lg.iff")

@@ -1,0 +1,3 @@
+object_tangible_item_chassis_blacksun_fighter_light_cockpit = object_tangible_item_shared_chassis_blacksun_fighter_light_cockpit:new {
+}
+ObjectTemplates:addTemplate(object_tangible_item_chassis_blacksun_fighter_light_cockpit, "object/tangible/item/chassis_blacksun_fighter_light_cockpit.iff")

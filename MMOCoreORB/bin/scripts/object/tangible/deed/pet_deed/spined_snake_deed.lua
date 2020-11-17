@@ -1,0 +1,3 @@
+object_tangible_deed_pet_deed_spined_snake_deed = object_tangible_deed_pet_deed_shared_spined_snake_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_pet_deed_spined_snake_deed, "object/tangible/deed/pet_deed/spined_snake_deed.iff")

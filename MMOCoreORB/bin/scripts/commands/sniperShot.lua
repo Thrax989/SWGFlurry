@@ -57,15 +57,9 @@ SniperShotCommand = {
 	animation = "fire_1_special_single_medium_face", 
 
 	combatSpam = "snipershot",
-if (player->hasSkill("combat_spy_master")) then 
 
-	weaponType = PISTOLWEAPON,
-	
-else
-	
-	weaponType = RIFLEWEAPON,
-			
-end
+	weaponType = RANGEDWEAPON,
+
 	range = -1
 }
 

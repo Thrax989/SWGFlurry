@@ -32,21 +32,15 @@ pyke_syndicate_criminal = Creature:new {
 		lootGroups = {
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "trash_common", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "bounty_hunter_armor", chance = 10000000},
+				{group = "trash_rare", chance = 10000000},
 			},
-			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "weapons_all", chance = 10000000},
-			},
-			lootChance = 500000
+			lootChance = 2000000
 		},
 		{
 			groups = {
@@ -57,15 +51,6 @@ pyke_syndicate_criminal = Creature:new {
 			},
 			lootChance = 3500000
 		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 3450000
-		}
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",

@@ -2,15 +2,15 @@ meatlump_guard = Creature:new {
 	customName = "Meatlump Guard",
 	socialGroup = "meatlump",
 	faction = "meatlump",
-	level = 100,
+	level = 300,
 	chanceHit = 50,
-	damageMin = 200,
-	damageMax = 500,
+	damageMin = 2000,
+	damageMax = 4000,
 	baseXp = 5000,
 	baseHAM = 25000,
 	baseHAMmax = 50000,
-	armor = 0,
-	resists = {10,10,10,10,10,10,10,10,10},
+	armor = 1,
+	resists = {120,120,120,120,120,120,120,120,120},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -50,7 +50,23 @@ meatlump_guard = Creature:new {
 				{group = "meatlump_common", chance = 2000000}
 			},
 			lootChance = 8000000
-		}
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 5000000
+		}, 
+		{
+			groups = {
+				{group = "trash_common", chance = 8000000},
+ 				{group = "trash_rare", chance = 2000000},
+			},
+			lootChance = 10000000
+		},
 },
 	weapons = {"pirate_weapons_light"},
 	reactionStf = "@npc_reaction/slang",

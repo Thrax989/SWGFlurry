@@ -1,0 +1,3 @@
+object_tangible_holiday_life_day_the_child = object_tangible_holiday_life_day_shared_the_child:new {
+}
+ObjectTemplates:addTemplate(object_tangible_holiday_life_day_the_child, "object/tangible/holiday/life_day/the_child.iff")

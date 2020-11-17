@@ -1,0 +1,3 @@
+object_tangible_borrie_wall_nboo_intr_throne_marble_red = object_tangible_borrie_wall_shared_nboo_intr_throne_marble_red:new {
+}
+ObjectTemplates:addTemplate(object_tangible_borrie_wall_nboo_intr_throne_marble_red, "object/tangible/borrie/wall/nboo_intr_throne_marble_red.iff")

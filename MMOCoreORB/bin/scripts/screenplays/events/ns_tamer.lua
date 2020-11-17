@@ -164,10 +164,6 @@ function ns_tamer:bossDead(pBoss)
 	createEvent(120 * 1000, "ns_tamer", "KillBoss", pBoss, "")--Despawn Corpse
 	createEvent(10800 * 1000, "ns_tamer", "KillSpawn", pBoss, "")--Respawn Boss In 3 Hours
 	createEvent(1 * 1000, "ns_tamer", "BroadcastDead", pBoss, "")--Broadcast Dead
-	createEvent(1 * 1000, "ns_tamer", "BroadcastRespawn", pBoss, "")--Broadcast 3 Hour Respawn
-	createEvent(10795 * 1000, "ns_tamer", "KillSpawnCast", pBoss, "")--Broadcast Respawn
-	createEvent(10798 * 1000, "ns_tamer", "KillSpawnCast1", pBoss, "")--Broadcast Respawn 3
-	createEvent(10799 * 1000, "ns_tamer", "KillSpawnCast2", pBoss, "")--Broadcast Respawn 2
 	createEvent(10800 * 1000, "ns_tamer", "KillSpawnCast3", pBoss, "")--Broadcast Respawn 1
 	return 0
 end
@@ -197,46 +193,14 @@ end
 ----------------------------
 function ns_tamer:BroadcastDead(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Nightsister Tamer Boss Has Died!")
-		CreatureObject(bossObject):broadcastToDiscord("Nightsister Tamer Boss Has Died!")
-end
-----------------------------
---Broadcast Initial Respawn
-----------------------------
-function ns_tamer:BroadcastRespawn(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Nightsister Tamer Boss Respawning In 3 Hours")
-		CreatureObject(bossObject):broadcastToDiscord("Nightsister Tamer Boss Respawning In 3 Hours")
-end
------------------------
---Broadcast Respawn
------------------------
-function ns_tamer:KillSpawnCast(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Nightsister Tamer Boss Respawning In ..")
-		CreatureObject(bossObject):broadcastToDiscord("Nightsister Tamer Boss Respawning In ..")
-end
------------------------
---Broadcast Respawn 3
------------------------
-function ns_tamer:KillSpawnCast1(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 3")
-		CreatureObject(bossObject):broadcastToDiscord("3")
-end
------------------------
---Broadcast Respawn 2
------------------------
-function ns_tamer:KillSpawnCast2(bossObject)
-		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 2")
-		CreatureObject(bossObject):broadcastToDiscord("2")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Nightsister Tamer Boss Has Died.")
+		CreatureObject(bossObject):broadcastToDiscord("Nightsister Tamer Boss Has Died.")
 end
 -----------------------
 --Broadcast Respawn 1
 -----------------------
 function ns_tamer:KillSpawnCast3(bossObject)
 		local boss = LuaCreatureObject(bossObject)
-		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 1")
-		CreatureObject(bossObject):broadcastToDiscord("1")
+		CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Nightsister Tamer Boss Respawning.")
+		CreatureObject(bossObject):broadcastToDiscord("Nightsister Tamer Boss Respawning.")
 end

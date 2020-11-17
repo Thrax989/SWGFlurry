@@ -3,14 +3,15 @@ worldboss_8 = Creature:new {
 	socialGroup = "nightsister",
 	faction = "nightsister",
 	level = 300,
-	chanceHit = 80.0,
-	damageMin = 4500,
-	damageMax = 6500,
+	chanceHit = 90.0,
+	damageMin = 6000,
+	damageMax = 7500,
+	specialDamageMult = 10.0,    
 	baseXp = 20000,
 	baseHAM = 400000,
 	baseHAMmax = 500000,
 	armor = 3,
-	resists = {150,150,150,150,150,150,150,150,150},
+	resists = {150,150,150,150,130,150,150,150,150},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -32,98 +33,134 @@ worldboss_8 = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
-		},		
-		{
-			groups = {
-				{group = "boss_rare", chance = 10000000},
-			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "worldbosscrate", chance = 10000000},
-		},
 			lootChance = 10000000
-		},		
+		},	
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
 		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
 			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
-		},
-			lootChance = 500000
+			},
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
-		},
-			lootChance = 1500000
-		},
-		{
-			groups = {
-				{group = "boss_common", chance = 10000000}			
-		},
-			lootChance = 10000000
+			},
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "nightsister_common", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
-			lootChance = 10000000
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "tierthree", chance = 10000000}
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
 		},
+		{
+			groups = {
+				{group = "nightsister_common", chance = 10000000},
+			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
+				{group = "axkva_min", chance = 10000000},
+			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "tierthree", chance = 10000000}
+				{group = "jedi_comp_group", chance = 10000000},
+			},
+			lootChance = 2000000
 		},
-			lootChance = 10000000
-		},
-                {
+		{
 			groups = {
-				{group = "tiertwo", chance = 10000000}
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 5000000
 		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "tierthree", chance = 10000000},
+			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "tierthree", chance = 10000000}
-		},
-			lootChance = 10000000
-		},
-                {
-			groups = {
-				{group = "tiertwo", chance = 10000000}
-		},
+				{group = "tierthree", chance = 10000000},
+			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "axkva_min", chance = 10000000}
-		},
+				{group = "tierdiamond", chance = 10000000},
+			},
 			lootChance = 10000000
 		},
+		{
+			groups = {
+				{group = "worldbosscrate", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+		}
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",

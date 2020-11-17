@@ -7,11 +7,10 @@ darth_caedus_follower = Creature:new {
 	chanceHit = 75.00,
 	damageMin = 3750,
 	damageMax = 4250,
-	specialDamageMult = 7.5,  
 	baseXp = 15000,
 	baseHAM = 115000,
 	baseHAMmax = 125000,
-	armor = 2,
+	armor = 1,
 	resists = {170,170,170,170,170,170,170,170,145},
 	meatType = "",
 	meatAmount = 0,
@@ -36,7 +35,7 @@ darth_caedus_follower = Creature:new {
 			groups = {
 				{group = "trash_common", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
@@ -48,16 +47,7 @@ darth_caedus_follower = Creature:new {
 			groups = {
 				{group = "trash_rare", chance = 10000000},
 			},
-			lootChance = 200000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 2500000
+			lootChance = 2000000
 		},
 		{
 			groups = {

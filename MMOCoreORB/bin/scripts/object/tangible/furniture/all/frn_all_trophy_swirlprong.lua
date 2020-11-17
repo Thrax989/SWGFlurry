@@ -1,0 +1,3 @@
+object_tangible_furniture_all_frn_all_trophy_swirlprong = object_tangible_furniture_all_shared_frn_all_trophy_swirlprong:new {
+}
+ObjectTemplates:addTemplate(object_tangible_furniture_all_frn_all_trophy_swirlprong, "object/tangible/furniture/all/frn_all_trophy_swirlprong.iff")

@@ -19,24 +19,19 @@ object_draft_schematic_clothing_clothing_robe_21 = object_draft_schematic_clothi
    customizationStringNames = {},
    customizationDefaults = {},
 
-   ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
-   ingredientTitleNames = {"primary_pocket", "secondary_pocket", "strap_pad", "strap_adjustment", "lightweight_frame", "stabilizer_harness"},
-   ingredientSlotType = {0, 0, 1, 0, 0, 0},
-   resourceTypes = {"fiberplast", "hide", "object/tangible/component/clothing/shared_leather_heavy_duty.iff", "metal", "aluminum", "petrochem_inert_polymer"},
-   resourceQuantities = {20, 10, 1, 5, 15, 5},
+   ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n"},
+   ingredientTitleNames = {"primary_pocket", "reinforcement", "strap_pad", "power_cell_socket", "power_cell_brackets", "enhanced_cooling_mechanism"},
+   ingredientSlotType = {0, 1, 1, 1, 1, 1},
+   resourceTypes = {"fiberplast", "object/tangible/loot/misc/shared_artifact_rare_s01.iff", "object/tangible/component/clothing/shared_leather_heavy_duty.iff", "object/tangible/furniture/all/frn_all_holocron_cube.iff", "object/tangible/furniture/all/frn_all_holocron_triangle.iff", "object/tangible/furniture/all/frn_all_holocron_dode.iff"},
+   resourceQuantities = {2000, 1, 1, 1, 1, 1},
    contribution = {100, 100, 100, 100, 100, 100},
 
-
-   targetTemplate = "",
+   targetTemplate = "object/tangible/wearables/robe/robe_jedi_grey2_s04.iff",
 
    additionalTemplates = {
              },
 		
-	skillMods = {	    
-		{"resistance_bleeding", 25},
-	    {"slope_move", 25},
-	    {"melee_defense", 25},
-	    {"ranged_defense", 25}
+	skillMods = {
 	}
 }
 

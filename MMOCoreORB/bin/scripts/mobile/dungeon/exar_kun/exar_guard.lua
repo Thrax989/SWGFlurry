@@ -4,8 +4,8 @@ exar_guard = Creature:new {
 	faction = "exar",
 	level = 300,
 	chanceHit = 15.00,
-	damageMin = 1400,
-	damageMax = 1850,
+	damageMin = 2400,
+	damageMax = 3850,
 	baseXp = 26654,
 	baseHAM = 95000,
 	baseHAMmax = 125000,
@@ -37,13 +37,13 @@ exar_guard = Creature:new {
 			groups = {
 				{group = "trash_common", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "trash_rare", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 2000000
 		},
 		{
 			groups = {
@@ -52,16 +52,7 @@ exar_guard = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 10000000
+			lootChance = 3000000
 		}
 	},
 	weapons = {"mixed_force_weapons"},

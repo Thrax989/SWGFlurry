@@ -1,16 +1,16 @@
 sherkarmini = Creature:new {
-	objectName = "@mob/creature_names:sherkarmini",
+	customName = "Sherkar Spawn",
 	socialGroup = "sherkar",
 	faction = "",
-	level = 36,
-	chanceHit = 30,
-	damageMin = 227,
-	damageMax = 425,
-	baseXp = 285,
-	baseHAM = 4100,
-	baseHAMmax = 5010,
-	armor = 3,
-	resists = {65,65,65,65,65,65,65,65,-1},
+	level = 300,
+	chanceHit = 75.0,
+	damageMin = 1800,
+	damageMax = 3500,
+	baseXp = 2500,
+	baseHAM = 40000,
+	baseHAMmax = 60000,
+	armor = 2,
+	resists = {150,150,150,150,130,150,150,150,140},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -26,14 +26,42 @@ sherkarmini = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/som/sher_kar.iff"},
-	scale = 0.1;
-	lootGroups = {},
+	scale = 0.2;
+	lootGroups = {
+		{
+			groups = {
+				{group = "trash_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "trash_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "trash_rare", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 3000000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"",""},
-		{"mediumpoison",""}
+		{"posturedownattack","stateAccuracyBonus=100"},
+    {"creatureareableeding","BleedChance=100"},    
+		{"creatureareacombo","stateAccuracyBonus=100"}
 	}
 }
-
 CreatureTemplates:addCreatureTemplate(sherkarmini, "sherkarmini")

@@ -1,0 +1,3 @@
+object_tangible_deed_vehicle_deed_koro2_speeder_deed = object_tangible_deed_vehicle_deed_shared_koro2_speeder_deed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_deed_vehicle_deed_koro2_speeder_deed, "object/tangible/deed/vehicle_deed/koro2_speeder_deed.iff")

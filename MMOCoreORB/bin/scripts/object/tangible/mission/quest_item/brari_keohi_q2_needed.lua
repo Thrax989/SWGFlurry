@@ -1,0 +1,3 @@
+object_tangible_mission_quest_item_brari_keohi_q2_needed = object_tangible_mission_quest_item_shared_brari_keohi_q2_needed:new {
+}
+ObjectTemplates:addTemplate(object_tangible_mission_quest_item_brari_keohi_q2_needed, "object/tangible/mission/quest_item/brari_keohi_q2_needed.iff")

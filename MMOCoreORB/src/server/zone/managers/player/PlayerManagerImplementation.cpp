@@ -1223,8 +1223,12 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		StringBuffer zBroadcast;
 		zBroadcast << "\\#000000" << playerName << " \\#808080has Permanently died on their \\#00ff00jedi";
 		ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		Zone* zone = player->getZone();
+		String planetName = zone->getZoneName();
+		Vector3 worldPosition = player->getWorldPosition();
 		StringBuffer zGeneral;
-		zGeneral << "Has Permanently Died On Their Jedi!";	
+		String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
+		zGeneral << "Has Permanently Died On Their Jedi!" << " on Planet " << planetName << name;	
 		chatManager->handleGeneralChat(player, zGeneral.toString());
 		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 0 Lives"); // You have Lost 1 Jedi Life, you now have a total of 0 Lives
 		player->sendSystemMessage("You have Permanently died on your Jedi"); // You have Permanently died on you jedi
@@ -1327,15 +1331,20 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				if (CombatManager::instance()->areInDuel(attackerCreature, player)) {
 					Zone* zone = player->getZone();
 					String planetName = zone->getZoneName();
+                        		Vector3 worldPosition = player->getWorldPosition();
+					String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a Duel by" << killerFaction << "\\#00cc99 " << killerName << " \\#e60000 on Planet " << planetName;
-					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName << " \\#e60000 on Planet " << planetName;	
+					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName << " on Planet " << planetName << name;
 				 }
 
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
 					Zone* zone = player->getZone();
 					String planetName = zone->getZoneName();
+                        		Vector3 worldPosition = player->getWorldPosition();
+					String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
  					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName << " \\#e60000 on Planet " << planetName;
-					zGeneral << playerFaction << "was slain in [PvP] by" << killerFaction << killerName << " \\#e60000 on Planet " << planetName;	
+					zGeneral << playerFaction << "was slain in [PvP] by" << killerFaction << killerName << " on Planet " << planetName << name;
+	
 
 				}
 					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
@@ -1682,8 +1691,8 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 					uint32 bitmask = obj->getOptionsBitmask() - OptionBitmask::INSURED;
 					obj->setOptionsBitmask(bitmask);
 				} else {
-					//5% Decay for uninsured items
-					obj->inflictDamage(obj, 0, 0.05 * obj->getMaxCondition(), true, true);
+					//2% Decay for uninsured items
+					obj->inflictDamage(obj, 0, 0.02 * obj->getMaxCondition(), true, true);
 				}
 
 				// Calculate condition percentage for decay report
