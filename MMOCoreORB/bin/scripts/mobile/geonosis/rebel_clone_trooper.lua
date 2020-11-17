@@ -25,7 +25,8 @@ rebel_clone_trooper = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = NONE,
 	scale = 1.0,
-	templates = {"object/mobile/ep3/ep3_clone_trooper_basic_no_armor.iff"},
+	templates = {"object/mobile/halloween_skeleton_1.iff"},
+	outfit = "clone_trooper_rebel_outfit",
 	lootGroups = {
 		{
 			groups = {
@@ -67,7 +68,6 @@ rebel_clone_trooper = Creature:new {
 		}
 	},
 	weapons = {"pirate_weapons_heavy"},
-	outfit = "clone_trooper_rebel_outfit",
 	conversationTemplate = "",
 	attacks = merge(lightsabermaster,forcepowermaster)
 }
