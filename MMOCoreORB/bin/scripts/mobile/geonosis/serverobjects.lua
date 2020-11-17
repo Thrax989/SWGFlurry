@@ -2,7 +2,7 @@
 includeFile("geonosis/battle_droids.lua")
 includeFile("geonosis/hellfire_droid.lua")
 includeFile("geonosis/ig88_upgrade.lua")
-includeFile("geonosis/pit_droid.lua")
+includeFile("geonosis/geo_pit_droid.lua")
 includeFile("geonosis/sbd1_droids.lua")
 includeFile("geonosis/sbd2_droids.lua")
 includeFile("geonosis/sbd3_droids.lua")

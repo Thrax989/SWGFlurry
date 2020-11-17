@@ -46,4 +46,3 @@ ig88_upgrade = Creature:new {
 }
 
 CreatureTemplates:addCreatureTemplate(ig88_upgrade, "ig88_upgrade")
-

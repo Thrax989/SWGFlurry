@@ -1,4 +1,4 @@
-pit_droid = Creature:new {
+geo_pit_droid = Creature:new {
 	customName = "Pit Droid",
 	socialGroup = "",
 	faction = "",
@@ -45,5 +45,4 @@ pit_droid = Creature:new {
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)
 }
 
-CreatureTemplates:addCreatureTemplate(pit_droid, "pit_droid")
-
+CreatureTemplates:addCreatureTemplate(geo_pit_droid, "geo_pit_droid")
