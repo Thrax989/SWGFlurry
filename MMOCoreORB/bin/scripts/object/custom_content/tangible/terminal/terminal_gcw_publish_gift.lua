@@ -211,7 +211,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Endor",
           {
-            "Sundari (5,000 Credits)", "pc_sundari_travel"
+            "Sundari (5,000 Credits)", "pc_sundari_travel",
+		"Mos Potatoes (5,000 Credits)", "pc_mospotatoes_travel"
           },
             "Talus",
           {
