@@ -594,3 +594,5 @@ includeFile("lair/creature_lair/hoth_taun_taun_lair.lua")
 
 
 includeFile("lair/creature_lair/geonosis_rebel_clone_neutral.lua")
+includeFile("lair/creature_lair/geonosis_imperial_clone_neutral.lua")
+includeFile("lair/creature_lair/geonosis_neutral_clone_neutral.lua")
