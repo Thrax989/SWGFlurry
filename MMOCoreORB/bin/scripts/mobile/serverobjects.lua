@@ -16,6 +16,7 @@ includeFile("mustafar/serverobjects.lua")
 includeFile("geonosis/serverobjects.lua")
 includeFile("korriban/serverobjects.lua")
 includeFile("mandalore/serverobjects.lua")
+
 -- Creatures
 includeFile("corellia/serverobjects.lua")
 includeFile("dantooine/serverobjects.lua")

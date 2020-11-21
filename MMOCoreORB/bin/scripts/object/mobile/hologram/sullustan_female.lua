@@ -1,0 +1,3 @@
+object_mobile_hologram_sullustan_female = object_mobile_hologram_shared_sullustan_female:new {
+}
+ObjectTemplates:addTemplate(object_mobile_hologram_sullustan_female, "object/mobile/hologram/sullustan_female.iff")

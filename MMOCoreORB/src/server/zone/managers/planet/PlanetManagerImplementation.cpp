@@ -817,7 +817,7 @@ void PlanetManagerImplementation::loadClientRegions(LuaObject* outposts) {
 			}
 
 			Locker slocker(scenery, region);
-			scenery->initializePosition(x, zone->getHeight(x, y) + 100, y);
+			scenery->initializePosition(x, zone->getHeight(x, y) + 5, y);
 			region->attachScenery(scenery);
 		}
 

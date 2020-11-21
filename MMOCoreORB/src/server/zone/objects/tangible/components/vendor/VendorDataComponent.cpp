@@ -23,7 +23,7 @@ VendorDataComponent::VendorDataComponent() : AuctionTerminalDataComponent(), adB
 	auctionMan = nullptr;
 	initialized = false;
 	vendorSearchEnabled = false;
-	disabled = false;
+	disabled = true;
 	registered = false;
 	maintAmount = 0;
 	awardUsageXP = 0;

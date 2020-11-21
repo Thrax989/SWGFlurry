@@ -1,0 +1,3 @@
+object_mobile_hologram_trandoshan_male = object_mobile_hologram_shared_trandoshan_male:new {
+}
+ObjectTemplates:addTemplate(object_mobile_hologram_trandoshan_male, "object/mobile/hologram/trandoshan_male.iff")

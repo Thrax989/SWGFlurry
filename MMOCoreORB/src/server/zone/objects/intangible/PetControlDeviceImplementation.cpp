@@ -1213,7 +1213,7 @@ bool PetControlDeviceImplementation::isValidPet(AiAgent* pet) {
 		// time to calculate!
 		int calculatedLevel =  deed->calculatePetLevel();
 
-		if (pet->getTemplateLevel() >= (calculatedLevel * 0.85)) {
+		if (pet->getTemplateLevel() >= (calculatedLevel * 0.70)) {
 			return true;
 		} else {
 			return false;

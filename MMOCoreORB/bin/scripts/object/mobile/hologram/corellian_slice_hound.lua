@@ -1,0 +1,3 @@
+object_mobile_hologram_corellian_slice_hound = object_mobile_hologram_shared_corellian_slice_hound:new {
+}
+ObjectTemplates:addTemplate(object_mobile_hologram_corellian_slice_hound, "object/mobile/hologram/corellian_slice_hound.iff")
