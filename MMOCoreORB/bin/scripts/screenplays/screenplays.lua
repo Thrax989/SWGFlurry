@@ -389,7 +389,7 @@ includeFile("events/jediQuest.lua")
 includeFile("events/jediLives.lua")
 --includeFile("events/black_sun.lua")
 includeFile("events/deathBounty.lua")
-includeFile("events/halloween_moenia.lua")
+--includeFile("events/halloween_moenia.lua")
 
 --Holo exchange
 includeFile("events/holo_exchange_dealer.lua")
