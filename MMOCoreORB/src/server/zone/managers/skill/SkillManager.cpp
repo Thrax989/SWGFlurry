@@ -235,7 +235,7 @@ void SkillManager::removeAbilities(PlayerObject* ghost, const Vector<String>& ab
 	return true;
 }*/
 
-bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature, bool notifyClient, bool awardRequiredSkills, bool noXpRequired) {
+bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature, bool notifyClient, bool awardRequiredSkills, bool noXpRequired, bool ignoreRequirements) {
 	auto skill = skillMap.get(skillName.hashCode());
 
 	if (skill == nullptr)
@@ -244,10 +244,11 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 	Locker locker(creature);
 
 	//Check for required skills.
-	auto requiredSkills = skill->getSkillsRequired();
-	for (int i = 0; i < requiredSkills->size(); ++i) {
-		const String& requiredSkillName = requiredSkills->get(i);
-		auto requiredSkill = skillMap.get(requiredSkillName.hashCode());
+	if (!ignoreRequirements){
+		auto requiredSkills = skill->getSkillsRequired();
+		for (int i = 0; i < requiredSkills->size(); ++i) {
+			const String& requiredSkillName = requiredSkills->get(i);
+			auto requiredSkill = skillMap.get(requiredSkillName.hashCode());
 
 		if (requiredSkill == nullptr)
 			continue;
@@ -308,6 +309,7 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 		SchematicMap::instance()->addSchematics(ghost, *schematicsGranted, notifyClient);
 
 		//Update maximum experience.
+		if (!ignoreRequirements)
 		updateXpLimits(ghost);
 
 
@@ -349,12 +351,12 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 			creature->setLevel(playerManager->calculatePlayerLevel(creature));
 		}
 
-		if (skill->getSkillName().contains("force_sensitive") && skill->getSkillName().contains("_04"))
+		if (skill->getSkillName().contains("force_sensitive") && skill->getSkillName().contains("_04") && !ignoreRequirements)
 			JediManager::instance()->onFSTreeCompleted(creature, skill->getSkillName());
 
 		MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
 
-		if (skill->getSkillName() == "force_title_jedi_rank_02") {
+		if (skill->getSkillName() == "force_title_jedi_rank_02" && !ignoreRequirements) {
 			if (missionManager != nullptr) {
 				if (ghost->hasPlayerBounty()) {
 					missionManager->removePlayerFromBountyList(creature->getObjectID());
@@ -365,9 +367,10 @@ bool SkillManager::awardSkill(const String& skillName, CreatureObject* creature,
 				if (ghost->isOnline())
 					missionManager->updatePlayerBountyOnlineStatus(creature->getObjectID(), true);
 			}
-		} else if (skill->getSkillName().contains("force_discipline")) {
+		} else if (skill->getSkillName().contains("force_discipline") && !ignoreRequirements) {
 			if (missionManager != nullptr)
 				missionManager->updatePlayerBountyReward(creature->getObjectID(), ghost->calculateBhReward());
+			}
 		} else if (skill->getSkillName().contains("squadleader")) {
 			Reference<GroupObject*> group = creature->getGroup();
 
@@ -507,7 +510,7 @@ void SkillManager::removeSkillRelatedMissions(CreatureObject* creature, Skill* s
 	}
 }
 
-bool SkillManager::surrenderSkill(const String& skillName, CreatureObject* creature, bool notifyClient, bool checkFrs) {
+bool SkillManager::surrenderSkill(const String& skillName, CreatureObject* creature, bool notifyClient, bool ignoreRequirements) {
 	Skill* skill = skillMap.get(skillName.hashCode());
 
 	if (skill == nullptr)
@@ -521,11 +524,20 @@ bool SkillManager::surrenderSkill(const String& skillName, CreatureObject* creat
 
 	const SkillList* skillList = creature->getSkillList();
 
-	for (int i = 0; i < skillList->size(); ++i) {
-		Skill* checkSkill = skillList->get(i);
+	if (!ignoreRequirements){
+		for (int i = 0; i < skillList->size(); ++i) {
+			Skill* checkSkill = skillList->get(i);
+
+			if (checkSkill->isRequiredSkillOf(skill))
+				return false;
 
 		if (checkSkill->isRequiredSkillOf(skill))
+		//Check if they have FRS
+		if((skillName == "force_title_jedi_rank_03" && creature->hasSkill("force_rank_light_novice") && creature->getScreenPlayState("jedi_FRS") == 4) || (skillName == "force_title_jedi_rank_03" && creature->hasSkill("force_rank_dark_novice") && creature->getScreenPlayState("jedi_FRS") == 8)) {
+			creature->sendSystemMessage("You must leave the FRS before you are able to drop Knight Title");
 			return false;
+			}
+		}
 	}
 
 	if (skillName.beginsWith("force_") && !(JediManager::instance()->canSurrenderSkill(creature, skillName)))
@@ -581,6 +593,7 @@ bool SkillManager::surrenderSkill(const String& skillName, CreatureObject* creat
 		SchematicMap::instance()->removeSchematics(ghost, *schematicsGranted, notifyClient);
 
 		//Update maximum experience.
+		if (!ignoreRequirements)
 		updateXpLimits(ghost);
 
 		FrsManager* frsManager = creature->getZoneServer()->getFrsManager();
@@ -614,12 +627,13 @@ bool SkillManager::surrenderSkill(const String& skillName, CreatureObject* creat
 
 		MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
 
-		if (skill->getSkillName() == "force_title_jedi_rank_02") {
+		if (skill->getSkillName() == "force_title_jedi_rank_02" && !ignoreRequirements) {
 			if (missionManager != nullptr)
 				missionManager->removePlayerFromBountyList(creature->getObjectID());
-		} else if (skill->getSkillName().contains("force_discipline")) {
-			if (missionManager != nullptr)
+		} else if (skill->getSkillName().contains("force_discipline") && !ignoreRequirements) {
+			if (missionManager != nullptr){
 				missionManager->updatePlayerBountyReward(creature->getObjectID(), ghost->calculateBhReward());
+			}
 		} else if (skill->getSkillName().contains("squadleader")) {
 			Reference<GroupObject*> group = creature->getGroup();
 
@@ -666,10 +680,10 @@ void SkillManager::surrenderAllSkills(CreatureObject* creature, bool notifyClien
 
 	for (int i = 0; i < copyOfList.size(); i++) {
 		Skill* skill = copyOfList.get(i);
+		
+		String skillName = skill->getSkillName();
 
-		if (skill->getSkillPointsRequired() > 0) {
-			if (!removeForceProgression and skill->getSkillName().contains("force_"))
-				continue;
+		if (!(skillName.beginsWith("admin") || skillName.beginsWith("species"))) {
 
 			removeSkillRelatedMissions(creature, skill);
 
@@ -893,6 +907,21 @@ bool SkillManager::fulfillsSkillPrerequisites(const String& skillName, CreatureO
 
 	if (ghost->isPrivileged())
 		return true;
+
+	if (skillName.beginsWith("force_rank") && !creature->hasSkill("force_title_jedi_rank_03")) {
+		creature->sendSystemMessage("You must become a Knight prior to joining the FRS");
+		return false;
+	}
+
+	if ((skillName == "force_rank_dark_novice" && creature->hasSkill("force_rank_light_novice")) || (skillName == "force_rank_light_novice" && creature->hasSkill("force_rank_dark_novice"))) {
+		creature->sendSystemMessage("You Maynot Join The Oposing FRS");
+		return false;
+	}
+
+	if (skillName == "combat_brawler_novice" && ghost->getJediState() > 2) {
+		creature->sendSystemMessage("You must leave the FRS prior learning novice brawler");
+		return false;
+	}
 
 	if (skillName.beginsWith("force_")) {
 		return JediManager::instance()->canLearnSkill(creature, skillName);

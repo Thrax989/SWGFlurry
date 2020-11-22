@@ -73,10 +73,16 @@ public:
 	void awardResetSkills(CreatureObject* creature);
 	void awardForceFromSkills(CreatureObject* creature);
 	int getSpecificSkillCount(CreatureObject* creature, const String& skill);
-	bool awardSkill(const String& skillName, CreatureObject* creature, bool notifyClient = true, bool awardRequiredSkills = false, bool noXpRequired = false);
+
+	void awardForceFromSkills(CreatureObject* creature);
+
+	int getSpecificSkillCount(CreatureObject* creature, const String& skill);
+
+	bool awardSkill(const String& skillName, CreatureObject* creature, bool notifyClient = true, bool awardRequiredSkills = false, bool noXpRequired = false, bool ignoreRequirements = false);
+
 	void awardDraftSchematics(Skill* skill, PlayerObject* ghost, bool notifyClient = true);
 
-	bool surrenderSkill(const String& skillName, CreatureObject* creature, bool notifyClient = true, bool verifyFrs = true);
+	bool surrenderSkill(const String& skillName, CreatureObject* creature, bool notifyClient = true, bool ignoreRequirements = false);
 	void surrenderAllSkills(CreatureObject* creature, bool notifyClient = true, bool removeForceProgression = true);
 
 	/**
