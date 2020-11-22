@@ -5,6 +5,7 @@
 #include "server/zone/managers/frs/VoteStatusTask.h"
 #include "server/zone/managers/frs/FrsRankingData.h"
 #include "server/zone/managers/frs/FrsManagerData.h"
+#include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/player/variables/FrsData.h"
@@ -803,14 +804,17 @@ void FrsManagerImplementation::adjustFrsExperience(CreatureObject* player, int a
 	if (ghost == nullptr)
 		return;
 
+	Locker locker(player);
+        PlayerManager* playerManager = zoneServer->getPlayerManager();
+
 	if (amount > 0) {
-		ghost->addExperience("force_rank_xp", amount, true);
+		playerManager->awardExperience(player, "force_rank_xp", amount);
 
 		if (sendSystemMessage) {
-			StringIdChatParameter param("@force_rank:experience_granted"); // You have gained %DI Force Rank experience.
-			param.setDI(amount);
+			///StringIdChatParameter param("@force_rank:experience_granted"); // You have gained %DI Force Rank experience.
+			///param.setDI(amount);
 
-			player->sendSystemMessage(param);
+			///player->sendSystemMessage(param);
 		}
 	} else {
 		FrsData* playerData = ghost->getFrsData();
@@ -819,11 +823,13 @@ void FrsManagerImplementation::adjustFrsExperience(CreatureObject* player, int a
 
 		int curExperience = ghost->getExperience("force_rank_xp");
 
+		amount *= .65; //35% reduction in loss
+
 		// Ensure we dont go into the negatives
 		if ((amount * -1) > curExperience)
-			amount = curExperience * -1;
+			amount = (curExperience) * -1;
 
-		ghost->addExperience("force_rank_xp", amount, true);
+		playerManager->awardExperience(player, "force_rank_xp", amount);
 
 		if (sendSystemMessage) {
 			StringIdChatParameter param("@force_rank:experience_lost"); // You have lost %DI Force Rank experience.
@@ -992,6 +998,8 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 	PlayerObject* attackerGhost = attacker->getPlayerObject();
 	PlayerObject* victimGhost = victim->getPlayerObject();
 
+	error("Entered FRS XP calculations for attacker: " + attacker->getFirstName() + " Defender: " +  victim->getFirstName() + "Contribution values is:" + String::valueOf(contribution));
+
 	if (attackerGhost == nullptr || victimGhost == nullptr)
 		return 0;
 
@@ -1018,22 +1026,24 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 	int ratingDiff = abs(targetRating - opponentRating);
 
 	if (ratingDiff > 2000)
-		ratingDiff = 2000;
+		ratingDiff = 500;
 
-	float xpAdjustment = ((float)ratingDiff / 2000.f) * 0.5f;
+	//float xpAdjustment = ((float)ratingDiff / 2000.f) * 0.5f;
 	int xpChange = getBaseExperienceGain(playerGhost, opponentGhost, !isVictim);
+	
+	error ("ratingDiff calulated to:" + String::valueOf(ratingDiff) + " XpChange Calulated to:" + String::valueOf(xpChange));
 
 	if (xpChange != 0) {
-		xpChange = (int)((float)xpChange * contribution);
+		xpChange = (int)((float)xpChange / contribution);
 
-		// Adjust xp value depending on pvp rating
+		/*// Adjust xp value depending on pvp rating
 		// A lower rated victim will lose less experience, a higher rated victim will lose more experience
 		// A lower rated victor will gain more experience, a higher rated victor will gain less experience
 		if ((targetRating < opponentRating && isVictim) || (targetRating > opponentRating && !isVictim)) {
 			xpChange -= (int)((float)xpChange * xpAdjustment);
 		} else {
 			xpChange += (int)((float)xpChange * xpAdjustment);
-		}
+		}*/
 	}
 
 	if (!isVictim){
@@ -1059,6 +1069,7 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 
 int FrsManagerImplementation::getBaseExperienceGain(PlayerObject* playerGhost, PlayerObject* opponentGhost, bool playerWon) {
 	ManagedReference<CreatureObject*> opponent = opponentGhost->getParentRecursively(SceneObjectType::PLAYERCREATURE).castTo<CreatureObject*>();
+	ManagedReference<CreatureObject*> creo  = playerGhost->getParentRecursively(SceneObjectType::PLAYERCREATURE).castTo<CreatureObject*>();
 
 	if (opponent == nullptr)
 		return 0;
@@ -1071,9 +1082,11 @@ int FrsManagerImplementation::getBaseExperienceGain(PlayerObject* playerGhost, P
 	int opponentRank = opponentData->getRank();
 
 	// Make sure player is part of a council before we grab any value to award
-	if (playerCouncil == 0)
+	if (!creo->hasSkill("force_title_jedi_rank_03")){
+		error("attempting to award frs to a character that isnt a knight");
 		return 0;
 
+	}
 	String key = "";
 	if (opponent->hasSkill("combat_bountyhunter_investigation_03") || opponent->hasSkill("combat_meleebountyhunter_investigation_03")) { // Opponent is Bounty Investigation 3 
 		key = "bh_";
@@ -1091,6 +1104,7 @@ int FrsManagerImplementation::getBaseExperienceGain(PlayerObject* playerGhost, P
 		key = key + "lose";
 	}
 
+	error("FRS XP Key = " + key);
 	uint64 keyHash = key.hashCode();
 
 	if (!experienceValues.contains(keyHash))

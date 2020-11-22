@@ -20,6 +20,7 @@ include server.zone.managers.frs.FrsRank;
 include server.zone.managers.frs.FrsManagerData;
 include server.zone.managers.frs.ChallengeVoteData;
 include system.lang.ref.Reference;
+include system.lang.Time;
 include server.chat.StringIdChatParameter;
 import server.zone.objects.player.sui.SuiBox;
 include server.zone.objects.tangible.threat.ThreatMap;
