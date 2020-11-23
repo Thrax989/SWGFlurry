@@ -173,14 +173,6 @@ bool LootManagerImplementation::loadConfigData() {
 	crystalTable.pop();
 	luaObject.pop();
 
-	crystalTable = luaObject.getObjectField("crystal_dawn_of_dagobah");
-	crystal = new CrystalData();
-	crystal->readObject(&crystalTable);
-	crystalData.put("crystal_dawn_of_dagobah", crystal);
-	crystalTable.pop();
-	luaObject.pop();
-
-
 	delete lua;
 
 	return true;
