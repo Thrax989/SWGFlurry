@@ -397,6 +397,20 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 			alm->insertAttribute("crystal_owner", ownerName);
 		}
 
+		if (getColor() == 25) {
+			StringBuffer str3;
+			str3 << "@jedi_spam:saber_color_" << getColor();
+			alm->insertAttribute("color", str3);
+			alm->insertAttribute("mindamage", damage);
+			alm->insertAttribute("maxdamage", damage);
+			alm->insertAttribute("wpn_attack_speed", attackSpeed);
+			alm->insertAttribute("wpn_wound_chance", woundChance);
+			alm->insertAttribute("wpn_attack_cost_health", sacHealth);
+			alm->insertAttribute("wpn_attack_cost_action", sacAction);
+			alm->insertAttribute("wpn_attack_cost_mind", sacMind);
+			alm->insertAttribute("forcecost", (float)getForceCost());
+			}
+
 		if (getColor() != 31) {
 			StringBuffer str3;
 			str3 << "@jedi_spam:saber_color_" << getColor();
@@ -570,7 +584,7 @@ int LightsaberCrystalComponentImplementation::inflictDamage(TangibleObject* atta
 				weapon->setForceCost(weapon->getForceCost() - getForceCost());
 			}
 
-			if (getColor() != 31) {
+			if (getColor() == 25) {
 				weapon->setAttackSpeed(weapon->getAttackSpeed() - getAttackSpeed());
 				weapon->setMinDamage(weapon->getMinDamage() - getDamage());
 				weapon->setMaxDamage(weapon->getMaxDamage() - getDamage());
