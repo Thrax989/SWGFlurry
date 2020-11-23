@@ -56,9 +56,6 @@ void LightsaberCrystalComponentImplementation::notifyLoadFromDatabase() {
 		generateCrystalStats();
 	}
 
-	TangibleObjectImplementation::notifyLoadFromDatabase();
-}
-
 	if (color == 25 && (minimumDamage != maximumDamage || itemLevel == 0)) {
 		if (quality == POOR)
 			itemLevel = 1 + System::random(38); // 1-39
@@ -145,8 +142,6 @@ void LightsaberCrystalComponentImplementation::generateCrystalStats() {
 
 		attackSpeed = Math::getPrecision(getRandomizedStat(minFloatStat, maxFloatStat, itemLevel), 2);
 	}
-
-	quality = getCrystalQuality();
 
 	if (color == 25) {
 		int minStat = crystalData->getMinDamage();
@@ -415,10 +410,9 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 			alm->insertAttribute("wpn_attack_cost_mind", sacMind);
 			alm->insertAttribute("forcecost", (float)getForceCost());
 			} else {
-				StringBuffer str;
-				str << "@jedi_spam:crystal_quality_" << getQuality();
-				alm->insertAttribute("crystal_quality", str);
-			}
+			StringBuffer str;
+			str << "@jedi_spam:crystal_quality_" << getQuality();
+			alm->insertAttribute("crystal_quality", str);
 		}
 	}
 }
