@@ -291,6 +291,14 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 			StringBuffer str3;
 			str3 << "@jedi_spam:saber_color_" << getColor();
 			alm->insertAttribute("color", str3);
+			alm->insertAttribute("mindamage", damage);
+			alm->insertAttribute("maxdamage", damage);
+			alm->insertAttribute("wpn_attack_speed", attackSpeed);
+			alm->insertAttribute("wpn_wound_chance", woundChance);
+			alm->insertAttribute("wpn_attack_cost_health", sacHealth);
+			alm->insertAttribute("wpn_attack_cost_action", sacAction);
+			alm->insertAttribute("wpn_attack_cost_mind", sacMind);
+			alm->insertAttribute("forcecost", (float)getForceCost());
 		} else {
 			if (ownerID != 0 || player->isPrivileged()) {
 				alm->insertAttribute("mindamage", damage);
@@ -474,6 +482,14 @@ int LightsaberCrystalComponentImplementation::inflictDamage(TangibleObject* atta
 			if (getColor() != 31) {
 				weapon->setBladeColor(31);
 				weapon->setCustomizationVariable("/private/index_color_blade", 31, true);
+				weapon->setAttackSpeed(weapon->getAttackSpeed() - getAttackSpeed());
+				weapon->setMinDamage(weapon->getMinDamage() - getDamage());
+				weapon->setMaxDamage(weapon->getMaxDamage() - getDamage());
+				weapon->setHealthAttackCost(weapon->getHealthAttackCost() - getSacHealth());
+				weapon->setActionAttackCost(weapon->getActionAttackCost() - getSacAction());
+				weapon->setMindAttackCost(weapon->getMindAttackCost() - getSacMind());
+				weapon->setWoundsRatio(weapon->getWoundsRatio() - getWoundChance());
+				weapon->setForceCost(weapon->getForceCost() - getForceCost());
 
 				if (weapon->isEquipped()) {
 					ManagedReference<CreatureObject*> parent = cast<CreatureObject*>(weapon->getParent().get().get());
