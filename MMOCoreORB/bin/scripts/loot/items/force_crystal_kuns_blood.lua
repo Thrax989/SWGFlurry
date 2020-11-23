@@ -4,10 +4,6 @@ force_crystal_kuns_blood = {
 	customObjectName = "Kun's Blood",
 	directObjectTemplate = "object/tangible/component/weapon/lightsaber/lightsaber_module_force_crystal.iff",
 	craftingValues = {
-		{"mindamage",54,55,0},
-		{"maxdamage",84,85,0},
-		{"attackspeed",1,-1,5},
-		{"woundchance",4,8,5},
 		{"color",13,13,0},
 	},
 	customizationStringNames = {},
