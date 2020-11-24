@@ -55,4 +55,5 @@ includeFile("outfits/serverobjects.lua")
 --Fallen Friends
 includeFile("ghost/serverobjects.lua")
 
-
+--New Beast Master BE Pets
+includeFile("be/serverobjects.lua")
