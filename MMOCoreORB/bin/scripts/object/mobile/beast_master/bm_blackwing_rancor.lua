@@ -1,0 +1,3 @@
+object_mobile_beast_master_bm_blackwing_rancor = object_mobile_beast_master_shared_bm_blackwing_rancor:new {
+}
+ObjectTemplates:addTemplate(object_mobile_beast_master_bm_blackwing_rancor, "object/mobile/beast_master/bm_blackwing_rancor.iff")

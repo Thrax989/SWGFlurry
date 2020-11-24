@@ -1,0 +1,3 @@
+object_mobile_beast_master_bm_mutated_borgax = object_mobile_beast_master_shared_bm_mutated_borgax:new {
+}
+ObjectTemplates:addTemplate(object_mobile_beast_master_bm_mutated_borgax, "object/mobile/beast_master/bm_mutated_borgax.iff")
