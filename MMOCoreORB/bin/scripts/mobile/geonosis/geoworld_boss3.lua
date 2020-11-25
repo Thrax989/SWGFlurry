@@ -1,5 +1,5 @@
-spider_droids_brown = Creature:new {
-	customName = "Spider Droid Brown",
+geoworld_boss3 = Creature:new {
+	customName = "Geonosis World Boss",
 	socialGroup = "",
 	faction = "",
 	level = 100,
@@ -24,8 +24,9 @@ spider_droids_brown = Creature:new {
 	creatureBitmask = KILLER,
 	optionsBitmask = AIENABLED,
 	diet = NONE,
-	scale = 1.0,
-	templates = {"object/mobile/npe/npe_droid_widow.iff"},
+	scale = 3.0,
+	templates = {
+		"object/mobile/beast_master/bm_mooc.iff"},
 	lootGroups = {
 		{
 			groups = {
@@ -45,5 +46,5 @@ spider_droids_brown = Creature:new {
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)
 }
 
-CreatureTemplates:addCreatureTemplate(spider_droids_brown, "spider_droids_brown")
+CreatureTemplates:addCreatureTemplate(geoworld_boss3, "geoworld_boss3")
 
