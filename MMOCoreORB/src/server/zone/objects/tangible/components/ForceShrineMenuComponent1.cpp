@@ -1,7 +1,7 @@
 /*
 * ForceShrineMenuComponent1.cpp
 *
-* Created on: 02/28/2018
+* Created on: 11/25/2020
 *	 Author: TOXIC
 *  
 */
@@ -26,8 +26,7 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
 	if (ghost->getJediState() >=2) {
-			menuResponse->addRadialMenuItem(213, 3, "Unlock Jedi"); // Unlock Jedi
-			menuResponse->addRadialMenuItemToRadialID(213, 214, 3, "Visibility"); // Visibility
+			menuResponse->addRadialMenuItem(213, 3, "Jedi Visibility"); // Visibility
 			menuResponse->addRadialMenuItem(215, 3, "Force Ranking");
 			menuResponse->addRadialMenuItemToRadialID(215, 216, 3, "Join Sith Order"); // Join Sith
 			menuResponse->addRadialMenuItemToRadialID(215, 217, 3, "Join Jedi Order"); // Join Jedi
@@ -42,49 +41,15 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 
-	if (ghost == NULL)
+	if (ghost == nullptr)
 		return 0;
 
 	ZoneServer* zserv = creature->getZoneServer();
 
-	if (zserv == NULL)
+	if (zserv == nullptr)
 		return 0;
-	
-	if (selectedID == 213) {
- 		if (!creature->hasSkill("force_title_jedi_novice") && (ghost->getJediState() == 2)) {
- 			if (ghost->getJediState() == 2) {
- 				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, "\\#00ff00IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.");
- 				ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
- 				box->setPromptTitle("@jedi_trials:padawan_trials_title"); // Jedi Trials
- 				box->setPromptText("@jedi_trials:padawan_trials_completed");
- 				ghost->addSuiBox(box);
- 				creature->sendMessage(box->generateMessage());
- 				SkillManager::instance()->awardSkill("force_title_jedi_rank_02", creature, true, true, true);
- 				creature->playEffect("clienteffect/trap_electric_01.cef", "");
- 				PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_jedi.snd");
- 				creature->sendMessage(pmm);
- 				ghost->setJediState(2);
 
- 				ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");
- 				//Check if inventory is full.
- 				if (inventory->isContainerFullRecursive()) {
- 					creature->sendSystemMessage("@jedi_spam:inventory_full_jedi_robe"); // You have too many items in your inventory. In order to get your Padawan Robe you must clear out at least one free slot.
- 					return 0;
- 				}
- 				ZoneServer* zserv = creature->getZoneServer();
-
- 				String PadawanRobe = "object/tangible/wearables/robe/robe_jedi_padawan.iff";
- 				ManagedReference<SceneObject*> padawanRobe = zserv->createObject(PadawanRobe.hashCode(), 1);
- 				if (inventory->transferObject(padawanRobe, -1)) {
- 					inventory->broadcastObject(padawanRobe, true);
- 					} else {
- 					padawanRobe->destroyObjectFromDatabase(true);
- 				}
- 			}
- 		}
- 	}
-
-	if (selectedID == 214 && (ghost->getJediState() >= 2)) {
+	if (selectedID == 213 && (ghost->getJediState() >= 2)) {
 		int jediVis1 = ghost->getVisibility();
 		StringBuffer messageVis;
 		messageVis << "\\#00CC00 Your Visibility is at: " << jediVis1;
@@ -113,7 +78,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			String playerName = creature->getFirstName();
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#ffb90f" << playerName << " has joined the \\#e51b1bSith Order!";
-			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 			//Set Jedi State
 			ghost->setJediState(8);
 			creature->setFactionStatus(2);
@@ -148,7 +113,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			String playerName = creature->getFirstName();
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#ffb90f" << playerName << " has joined the \\#22b7f6Jedi Order!";
-			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 			//Set Jedi State
 			ghost->setJediState(4);
 			creature->setFactionStatus(2);
@@ -190,7 +155,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			String playerName = creature->getFirstName();
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#ffb90f" << playerName << " has left the \\#e51b1bSith Order!";
-			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		}
 		if (creature->getScreenPlayState("jedi_FRS") == 8) {
 			creature->setScreenPlayState("jedi_FRS", 16);
@@ -228,7 +193,7 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			String playerName = creature->getFirstName();
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#ffb90f" << playerName << " has left the \\#22b7f6Jedi Order!";
-			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		}
 		if (creature->getScreenPlayState("jedi_FRS") == 4) {
 			creature->setScreenPlayState("jedi_FRS", 16);
