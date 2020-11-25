@@ -1,4 +1,4 @@
-spider_droids_brown = Creature:new {
+spider_droid_brown = Creature:new {
 	customName = "Spider Droid Brown",
 	socialGroup = "",
 	faction = "",
@@ -45,5 +45,5 @@ spider_droids_brown = Creature:new {
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)
 }
 
-CreatureTemplates:addCreatureTemplate(spider_droids_brown, "spider_droids_brown")
+CreatureTemplates:addCreatureTemplate(spider_droid_brown, "spider_droid_brown")
 
