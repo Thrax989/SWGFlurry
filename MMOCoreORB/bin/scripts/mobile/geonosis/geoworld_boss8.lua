@@ -24,7 +24,7 @@ geoworld_boss8 = Creature:new {
 	creatureBitmask = KILLER,
 	optionsBitmask = AIENABLED,
 	diet = NONE,
-	scale = 1.0,
+	scale = 3.0,
 	templates = {
 		"bject/mobile/beast_master/bm_mutated_vesp.iff"},
 	lootGroups = {

@@ -24,7 +24,7 @@ geoworld_boss2 = Creature:new {
 	creatureBitmask = KILLER,
 	optionsBitmask = AIENABLED,
 	diet = NONE,
-	scale = 1.0,
+	scale = 3.0,
 	templates = {
 		"object/mobile/beast_master/shared_bm_blackwing_rancor.iff"},
 	lootGroups = {
