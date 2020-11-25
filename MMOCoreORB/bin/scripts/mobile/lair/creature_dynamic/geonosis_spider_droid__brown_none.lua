@@ -1,4 +1,4 @@
-geonosis_spider_droid__brown_none = Lair:new {
+geonosis_spider_droid_brown_none = Lair:new {
 	mobiles = {{"spider_droid_brown",6}},
 	spawnLimit = 15,
 	buildingsVeryEasy = {},
@@ -9,4 +9,4 @@ geonosis_spider_droid__brown_none = Lair:new {
 	buildingType = "none"
 }
 
-addLairTemplate("geonosis_spider_droid__brown_none", geonosis_spider_droid__brown_none)
+addLairTemplate("geonosis_spider_droid_brown_none", geonosis_spider_droid_brown_none)
