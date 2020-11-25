@@ -79,6 +79,10 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#ffb90f" << playerName << " has joined the \\#e51b1bSith Order!";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+			ChatManager* chatManager = creature->getZoneServer()->getChatManager();
+			StringBuffer zGeneral;
+			zGeneral << "Has Joined The Sith Order!.";
+			chatManager->handleGeneralChat(creature, zGeneral.toString());
 			//Set Jedi State
 			ghost->setJediState(8);
 			creature->setFactionStatus(2);
@@ -114,6 +118,10 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#ffb90f" << playerName << " has joined the \\#22b7f6Jedi Order!";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+			ChatManager* chatManager = creature->getZoneServer()->getChatManager();
+			StringBuffer zGeneral;
+			zGeneral << "Has Joined The Jedi Order!.";
+			chatManager->handleGeneralChat(creature, zGeneral.toString());
 			//Set Jedi State
 			ghost->setJediState(4);
 			creature->setFactionStatus(2);
@@ -156,6 +164,10 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#ffb90f" << playerName << " has left the \\#e51b1bSith Order!";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+			ChatManager* chatManager = creature->getZoneServer()->getChatManager();
+			StringBuffer zGeneral;
+			zGeneral << "Has Left The Sith Order!.";
+			chatManager->handleGeneralChat(creature, zGeneral.toString());
 		}
 		if (creature->getScreenPlayState("jedi_FRS") == 8) {
 			creature->setScreenPlayState("jedi_FRS", 16);
@@ -194,6 +206,10 @@ int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, 
 			StringBuffer zBroadcast;
 			zBroadcast << "\\#ffb90f" << playerName << " has left the \\#22b7f6Jedi Order!";
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+			ChatManager* chatManager = creature->getZoneServer()->getChatManager();
+			StringBuffer zGeneral;
+			zGeneral << "Has Left The Jedi Order!.";
+			chatManager->handleGeneralChat(creature, zGeneral.toString());
 		}
 		if (creature->getScreenPlayState("jedi_FRS") == 4) {
 			creature->setScreenPlayState("jedi_FRS", 16);
