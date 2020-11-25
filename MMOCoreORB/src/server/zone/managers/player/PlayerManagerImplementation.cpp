@@ -1649,7 +1649,7 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::MIND, 100, true, false);
 		player->addShockWounds(100, true);
 		ChatManager* chatManager = player->getZoneServer()->getChatManager();
-		Broadcast player has died forward to discord channel. created by :TOXIC
+		//Broadcast player has died forward to discord channel. created by :TOXIC
 		StringBuffer zGeneral;
 		Zone* zone = player->getZone();
 		String planetName = zone->getZoneName();
