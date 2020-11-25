@@ -2294,6 +2294,95 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 		}
 	}
 
+	if (xpType == "force_rank_xp") {
+		if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
+			PlayerObject* ghost = player->getPlayerObject();
+			SkillList* skillList = player->getSkillList();
+			int curExp = ghost->getExperience("force_rank_xp");
+			if (curExp < -15000) {
+				if (player->hasSkill("force_rank_light_novice")) {
+					while (player->hasSkill("force_rank_light_novice")) {
+						for (int i = 0; i < skillList->size(); ++i) {
+							Skill* skill = skillList->get(i);
+							if (skill->getSkillName().indexOf("force_rank_") != -1 && skill->getSkillName().indexOf("force_rank_light_novice") == -1) {
+								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
+							}
+						}
+					}
+					if (player->getScreenPlayState("jedi_FRS") == 4) {
+						player->setScreenPlayState("jedi_FRS", 16);
+					}
+					if (ghost->getJediState() > 2) {
+						ghost->setJediState(2);
+					}
+					String playerName = player->getFirstName();
+					StringBuffer zBroadcast;
+					zBroadcast << "\\#ffb90f" << playerName << " has left the \\#22b7f6Jedi Order!";
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				} else if (player->hasSkill("force_rank_dark_novice")) {
+					while (player->hasSkill("force_rank_dark_novice")) {
+						for (int i = 0; i < skillList->size(); ++i) {
+							Skill* skill = skillList->get(i);
+							if (skill->getSkillName().indexOf("force_rank_") != -1 && skill->getSkillName().indexOf("force_rank_light_novice") == -1)  {
+								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
+							}
+						}
+					}
+					if (player->getScreenPlayState("jedi_FRS") == 8) {
+						player->setScreenPlayState("jedi_FRS", 16);
+					}
+					if (ghost->getJediState() > 2) {
+						ghost->setJediState(2);
+					}
+					String playerName = player->getFirstName();
+					StringBuffer zBroadcast;
+					zBroadcast << "\\#ffb90f" << playerName << " has left the \\#e51b1bSith Order!";
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+				}
+			}
+			error("frsSkillCheck Current FRSXP = " + String::valueOf(curExp));
+			if (curExp < 10000) {
+				frsSkillCheck(player, "novice", "rank_01");
+			}
+			if (curExp >= 10000 && curExp < 20000) {
+				frsSkillCheck(player, "rank_01", "rank_02");
+			}
+			if (curExp >= 20000 && curExp < 30000) {
+				frsSkillCheck(player, "rank_02", "rank_03");
+			}
+			if (curExp >= 30000 && curExp < 40000) {
+				frsSkillCheck(player, "rank_03", "rank_04");
+			}
+			if (curExp >= 40000 && curExp < 60000) {
+				frsSkillCheck(player, "rank_04", "rank_05");
+			}
+			if (curExp >= 60000 && curExp < 80000) {
+				frsSkillCheck(player, "rank_05", "rank_06");
+			}
+			if (curExp >= 80000 && curExp < 100000) {
+				frsSkillCheck(player, "rank_06", "rank_07");
+			}
+			if (curExp >= 100000 && curExp < 150000) {
+				frsSkillCheck(player, "rank_07", "rank_08");
+			}
+			if (curExp >= 150000 && curExp < 200000) {
+				frsSkillCheck(player, "rank_08", "rank_09");
+				SkillManager::instance()->awardSkill("force_title_jedi_rank_04", player, true, true, true);
+			}
+			if (curExp >= 200000 && curExp < 300000) {
+				frsSkillCheck(player, "rank_09", "rank_10");
+			}
+			if (curExp >= 300000 && curExp < 500000) {
+				frsSkillCheck(player, "rank_10", "master");
+				SkillManager::instance()->awardSkill("force_title_jedi_master", player, true, true, true);
+			}
+			if (curExp >= 500000) {
+				frsSkillCheck(player, "master", "master");
+				SkillManager::instance()->awardSkill("force_title_jedi_master", player, true, true, true);
+			}
+		}
+	}
+
 	return xp;
 }
 
