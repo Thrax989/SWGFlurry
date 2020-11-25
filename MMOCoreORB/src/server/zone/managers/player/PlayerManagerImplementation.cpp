@@ -2297,7 +2297,7 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 	if (xpType == "force_rank_xp") {
 		if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
 			PlayerObject* ghost = player->getPlayerObject();
-			SkillList* skillList = player->getSkillList();
+			const SkillList* skillList = player->getSkillList();
 			int curExp = ghost->getExperience("force_rank_xp");
 			if (curExp < -15000) {
 				if (player->hasSkill("force_rank_light_novice")) {
@@ -2384,6 +2384,32 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 	}
 
 	return xp;
+}
+
+void PlayerManagerImplementation::frsSkillCheck(CreatureObject* player, const String& skill, const String& skillParent) {
+	SkillManager* skillManager = server->getSkillManager();
+	String skillStarter;
+
+	error("frsskillcheckEntered for player: " + player->getFirstName() + " Skill: " + skill + " Skill Parent: " + skillParent);
+	if (player->hasSkill("force_rank_light_novice")) {
+		skillStarter = "force_rank_light_";
+	} else {
+		skillStarter = "force_rank_dark_";
+	}
+	player->sendSystemMessage("You have been granted: " + skillStarter + skill);
+	skillManager->awardSkill(skillStarter + skill, player, true, true, true);
+	if (player->hasSkill(skillStarter + skillParent) && (skill != skillParent)) {
+		player->sendSystemMessage("You no longer meet the requirements for: " + skillStarter + skill);
+		const SkillList* skillList = player->getSkillList();
+		while (player->hasSkill(skillStarter + skillParent)) {
+			for (int i = 0; i < skillList->size(); ++i) {
+				Skill* skill = skillList->get(i);
+				if (skill->getSkillName().indexOf(skillStarter) != -1){
+					SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
+				}
+			}
+		}
+	}
 }
 
 void PlayerManagerImplementation::sendLoginMessage(CreatureObject* creature) {
