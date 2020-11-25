@@ -462,8 +462,9 @@ function CorelliaCoronetScreenPlay:spawnMobiles()
 	-- Chassis dealer.
 	spawnMobile(self.planet, "chassis_dealer", 0, 0.1, 0.6, 72.9, -4, 1855672)
   
-  -- Fallen Players
-  spawnMobile(self.planet, "geistvater_ghost", 0, -159.986, 28, -4724.06, 90, 0)
-  spawnMobile(self.planet, "rizz_ghost", 0, -159.986, 28, -4727.92, 90, 0)
-  spawnMobile(self.planet, "heat_ghost", 0, -159.986, 28, -4719.8, 90, 0)
+	  -- Fallen Players
+	  spawnMobile(self.planet, "geistvater_ghost", 0, -159.986, 28, -4724.06, 90, 0)
+	  spawnMobile(self.planet, "rizz_ghost", 0, -159.986, 28, -4727.92, 90, 0)
+	  spawnMobile(self.planet, "heat_ghost", 0, -159.986, 28, -4719.8, 90, 0)
+	  spawnMobile(self.planet, "thornes", 1, -159.902, 28, -4715.79, 73, 0) 
 end
