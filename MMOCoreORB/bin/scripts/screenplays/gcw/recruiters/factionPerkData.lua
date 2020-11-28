@@ -78,7 +78,7 @@ rebelRewardData = {
 	hirelingList = {
 		"rebel_trooper", "senior_specforce_heavy_weapons_specialist", "senior_specforce_infiltrator", "senior_specforce_marine", "senior_specforce_pathfinder", "senior_specforce_technician",
 		"senior_specforce_urban_guerrilla", "senior_specforce_wilderness_fighter", "specforce_heavy_weapons_specialist", "specforce_infiltrator", "specforce_interrogator", "specforce_marine",
-		"specforce_procurement_specialist", "specforce_technician",	"specforce_wilderness_operative", "rebel_specforce_guerrilla",
+		"specforce_procurement_specialist", "specforce_technician",	"specforce_wilderness_operative", "rebel_specforce_guerrilla", "atxt",
 	},
 
 	hirelings = {
@@ -104,6 +104,7 @@ rebelRewardData = {
 		death_watch_s_battle_droid = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_super_battle_droid", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_s_battle_droid", cost=90450},
 		rebel_singing_mountain_clan_arch_witch = { type=factionRewardType.hireling, display="@mob/creature_names:rebel_singing_mountain_clan_arch_witch", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="rebel_singing_mountain_clan_arch_witch", cost=90450},
 		death_watch_ghost = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_dthwatch_grey", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_ghost", cost=90450},
+		atxt = { type=factionRewardType.hireling, display="@mob/creature_names:at_st", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="atxt", cost=9450},
 	}
 }
 
