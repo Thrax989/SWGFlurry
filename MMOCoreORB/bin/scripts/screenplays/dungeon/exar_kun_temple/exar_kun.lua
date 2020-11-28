@@ -38,6 +38,14 @@ spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff"
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 6193, 249.9, -5978, 0, 1, 0, 0, 0)
 spawnSceneObject("mustafar", "object/tangible/terminal/terminal_quad_screen.iff", -4.9798, -0.528749, 4.48454, 12116005, 0.48481, 0, 0.87462, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_gcw_publish_gift.iff", 88.3474, 0.799999, -41.7449, 14200887, 1, 0, 0, 0)
+
+spawnSceneObject("dungeon2", "object/tangible/quest/township/axkva_dark_jedi_statue.iff", -15.0555, 29.507, 0.114941, 14200833, 0.707107, 0, -0.707107, 0)
+spawnSceneObject("dungeon2", "object/tangible/quest/township/axkva_dark_jedi_statue.iff", -8.82052, 29.507, 0.122692, 14200833, -0.707107, 0, -0.707107, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 40.7997, 29.0075, -0.825626, 14200832, -0.707107, 0, 0.707107, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_down.iff", 40.7724, -0.992546, 0.9119, 14200832, 0.694658, 0, -0.71934, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 40.7967, -30.9925, 1.1636, 14200832, 0.71934, 0, -0.694658, 0)
+spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_elevator_up.iff", 40.7668, -0.992546, -1.00176, 14200832, -0.688354, 0, 0.725374, 0)
+        
 end
 -----------------------
 --Exar Has Spawned
