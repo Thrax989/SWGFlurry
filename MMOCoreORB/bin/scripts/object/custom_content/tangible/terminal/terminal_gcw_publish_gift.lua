@@ -173,6 +173,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Teleport To Boss Instance Teleport Room (5,000 Credits)", "teleportroom",
 		   },
+		 	"FRS Selection Room",
+		   {
+			"Teleport To FRS Selection Room (5,000 Credits)", "frs_floor",
+		   },
 		 	"PvP Zone Rori Restuss",
 		   {
 			"Teleport To PvP Zone Rori Restuss (5,000 Credits)", "restuss_pvp_travel",
@@ -240,7 +244,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Mandalore",
           {  
-			"New Freedom (5,000 Credits)", "pc_freedom_travel",
+			"Nevarro (5,000 Credits)", "pc_freedom_travel",
 			"The Old West (5,000 Credits)", "pc_oldwest_travel"
 		  },
 		  "Rori",
@@ -249,7 +253,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		  },		  
 		  "Taanab",
           {  
-            "Nerf Herder Central  (5,000 Credits)", "pc_nerfherder_travel" 
+            --"Nerf Herder Central  (5,000 Credits)", "pc_nerfherder_travel" 
 		  },		  		  
     }      
 	}

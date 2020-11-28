@@ -1287,6 +1287,11 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		}
 	}
 
+		//CUSTOM BH SYSTEM
+	CreatureObject* attackerCreature = attacker->asCreatureObject();
+	if (attacker->isPlayerCreature() && attacker != player){
+		offerPlayerBounty(attackerCreature, player);
+		}
 
 	if (!attacker->isPlayerCreature()) {
 		ghost->updatePveDeaths();
@@ -1371,8 +1376,6 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				updatePvPKillCount(attackerCreature);
 				//Award Faction Points
 				FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
-				if (!attackerCreature->hasBountyMissionFor(player) && !player->hasBountyMissionFor(attackerCreature))
-					offerPlayerBounty(attackerCreature, player);
 				}
 			}
 
@@ -2397,6 +2400,10 @@ void PlayerManagerImplementation::frsSkillCheck(CreatureObject* player, const St
 		skillStarter = "force_rank_dark_";
 	}
 	player->sendSystemMessage("You have been granted: " + skillStarter + skill);
+	ChatManager* chatManager = player->getZoneServer()->getChatManager();
+	StringBuffer zGeneral;
+	zGeneral << "[FRS] Rank Has Changed " << "[" << skillStarter << skill << "]";
+	chatManager->handleGeneralChat(player, zGeneral.toString());
 	skillManager->awardSkill(skillStarter + skill, player, true, true, true);
 	if (player->hasSkill(skillStarter + skillParent) && (skill != skillParent)) {
 		player->sendSystemMessage("You no longer meet the requirements for: " + skillStarter + skill);
@@ -6328,11 +6335,8 @@ void PlayerManagerImplementation::offerPlayerBounty(CreatureObject* attacker, Cr
 	if (defenderGhost->hasSuiBoxWindowType(SuiWindowType::PLAYER_BOUNTY_OFFER))
 		return;
 
-	if (attackerGhost->isPrivileged())
-		return;
-
 	//Player already has a bounty on their head or they are a jedi
-	if (attackerGhost->hasPlayerBounty() || attacker->hasSkill("force_title_jedi_novice"))
+	if (attackerGhost->hasPlayerBounty())
 		return;
 
 	int reward = attackerGhost->calculateBhReward();
