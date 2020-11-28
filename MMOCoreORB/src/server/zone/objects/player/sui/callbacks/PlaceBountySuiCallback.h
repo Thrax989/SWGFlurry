@@ -55,13 +55,18 @@ public:
 		missionManager->updatePlayerBountyOnlineStatus(killerPlayer->getObjectID(), true);
 		player->sendSystemMessage("You have successfully placed a bounty on " + killerPlayer->getFirstName() + ".");
 		//Broadcast to Server
+		Zone* zone = player->getZone();
+		String planetName = zone->getZoneName();
+                Vector3 worldPosition = player->getWorldPosition();
+		String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
 		StringBuffer zBroadcast;
 		zBroadcast << "\\#ffb90f" << killerPlayer->getFirstName() << " is now on the bounty hunter \\#e51b1bTerminal!";
 		killerPlayer->playEffect("clienteffect/ui_missile_aquiring.cef", "");
-		killerPlayer->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+		killerPlayer->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		//Broadcast player has died forward to discord channel. created by :TOXIC
 		StringBuffer zGeneral;
-		zGeneral << " Has Placed " << killerPlayer->getFirstName() << " On The Bounty Terminal For " << reward << " Credits";	
+		zGeneral << " Has Placed " << killerPlayer->getFirstName() << " On The Bounty Terminal For " << reward << " Credits";
+		zGeneral << " Target Last Seen " << " On Planet " << planetName << name;	
 		chatManager->handleGeneralChat(player, zGeneral.toString());
 	}
 };
