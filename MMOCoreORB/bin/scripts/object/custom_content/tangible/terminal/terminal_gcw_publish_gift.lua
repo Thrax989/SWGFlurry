@@ -253,7 +253,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		  },		  
 		  "Taanab",
           {  
-            "Nerf Herder Central  (5,000 Credits)", "pc_nerfherder_travel" 
+            --"Nerf Herder Central  (5,000 Credits)", "pc_nerfherder_travel" 
 		  },		  		  
     }      
 	}
