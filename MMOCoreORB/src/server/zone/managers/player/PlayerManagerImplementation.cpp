@@ -1288,6 +1288,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	}
 
 		//CUSTOM BH SYSTEM
+	CreatureObject* attackerCreature = attacker->asCreatureObject();
 	if (attacker->isPlayerCreature() && attacker != player){
 		offerPlayerBounty(attackerCreature, player);
 		}
