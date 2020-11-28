@@ -65,8 +65,7 @@ public:
 		killerPlayer->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		//Broadcast player has died forward to discord channel. created by :TOXIC
 		StringBuffer zGeneral;
-		zGeneral << " Has Placed " << killerPlayer->getFirstName() << " On The Bounty Terminal For " << reward << " Credits";
-		zGeneral << " Target Last Seen " << " On Planet " << planetName << name;	
+		zGeneral << " Has Placed " << killerPlayer->getFirstName() << " On The Bounty Terminal For " << reward << " Credits. " << " Target Last Seen " << " On Planet " << planetName << name;	
 		chatManager->handleGeneralChat(player, zGeneral.toString());
 	}
 };
