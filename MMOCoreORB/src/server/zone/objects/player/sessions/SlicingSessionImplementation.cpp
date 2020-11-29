@@ -773,7 +773,13 @@ void SlicingSessionImplementation::handleArmorSlice() {
 				handleSliceEncumbrance(percent);
 				break;
 			case 2:
-				handleSliceArmorAp();
+				handleSliceArmorAplight();
+				break;
+			case 3:
+				handleSliceArmorApmedium();
+				break;
+			case 4:
+				handleSliceArmorApheavy();
 				break;
 		}
 	}else{
@@ -785,7 +791,13 @@ void SlicingSessionImplementation::handleArmorSlice() {
 				handleSliceEncumbrance(percent);
 				break;
 			case 3:
-				handleSliceArmorAp();
+				handleSliceArmorAplight();
+				break;
+			case 4:
+				handleSliceArmorApmedium();
+				break;
+			case 5:
+				handleSliceArmorApheavy();
 				break;
 		}
 	}
@@ -837,10 +849,50 @@ void SlicingSessionImplementation::handleSliceEffectiveness(uint8 percent) {
 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Socket Roll Is: \\#ff0000" + String::valueOf(sockets));
 }
 
-void SlicingSessionImplementation::handleSliceArmorAp() {
+void SlicingSessionImplementation::handleSliceArmorAplight() {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
- 	int apslice = System::random(3);
+ 	int apslice = 1;
+ 	int sockets = 4;
+
+	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
+		return;
+
+	ArmorObject* armor = cast<ArmorObject*>(tangibleObject.get());
+
+	Locker locker(armor);
+	
+	armor->setRating(apslice);
+	armor->setMaxSockets(sockets);
+	armor->setSliced(true);
+ 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Roll Is: \\#ff0000" + String::valueOf(apslice));
+ 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Socket Roll Is: \\#ff0000" + String::valueOf(sockets));
+}
+
+void SlicingSessionImplementation::handleSliceArmorApmedium() {
+	ManagedReference<CreatureObject*> player = this->player.get();
+	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
+ 	int apslice = 2;
+ 	int sockets = 4;
+
+	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
+		return;
+
+	ArmorObject* armor = cast<ArmorObject*>(tangibleObject.get());
+
+	Locker locker(armor);
+	
+	armor->setRating(apslice);
+	armor->setMaxSockets(sockets);
+	armor->setSliced(true);
+ 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Roll Is: \\#ff0000" + String::valueOf(apslice));
+ 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Socket Roll Is: \\#ff0000" + String::valueOf(sockets));
+}
+
+void SlicingSessionImplementation::handleSliceArmorApheavy() {
+	ManagedReference<CreatureObject*> player = this->player.get();
+	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
+ 	int apslice = 3;
  	int sockets = 4;
 
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isArmorObject())
