@@ -615,13 +615,7 @@ void SlicingSessionImplementation::handleWeaponSlice() {
 				handleSliceSpeed(percentage);
 				break;
 			case 2:
-				handleSliceAplight();
-				break;
-			case 3:
-				handleSliceApmedium();
-				break;
-			case 4:
-				handleSliceApheavy();
+				handleSliceAp();
 				break;
 		}
 	}else{
@@ -633,13 +627,7 @@ void SlicingSessionImplementation::handleWeaponSlice() {
 				handleSliceSpeed(percentage);
 				break;
 			case 3:
-				handleSliceAplight();
-				break;
-			case 4:
-				handleSliceApmedium();
-				break;
-			case 5:
-				handleSliceApheavy();
+				handleSliceAp();
 				break;
 		}
 	}
@@ -687,10 +675,10 @@ void SlicingSessionImplementation::handleSliceDamage(uint8 percent) {
 	player->sendSystemMessage(params);
 }
 
-void SlicingSessionImplementation::handleSliceAplight() {
+void SlicingSessionImplementation::handleSliceAp() {
 	ManagedReference<CreatureObject*> player = this->player.get();
 	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
- 	int apslice = 1;
+ 	int apslice = System::random(3);
 	
 	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isWeaponObject())
 		return;
@@ -705,50 +693,7 @@ void SlicingSessionImplementation::handleSliceAplight() {
 	weap->setArmorPiercing(apslice);
 	weap->setSliced(true);
  	player->sendSystemMessage(" \\#C7DB00\\Your Weapon Armor Piercing Roll Is: \\#ff0000" + String::valueOf(apslice));
- 	player->sendSystemMessage(" \\#C7DB00\\Your Weapon Armor Piercing Is Now Light");
 
-}
-
-void SlicingSessionImplementation::handleSliceApmedium() {
-	ManagedReference<CreatureObject*> player = this->player.get();
-	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
- 	int apslice = 2;
-	
-	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isWeaponObject())
-		return;
-
-	WeaponObject* weap = cast<WeaponObject*>(tangibleObject.get());
-
-	Locker locker(weap);
-
-	if (weap->hasPowerup())
-		this->detachPowerUp(player, weap);
-
-	weap->setArmorPiercing(apslice);
-	weap->setSliced(true);
- 	player->sendSystemMessage(" \\#C7DB00\\Your Weapon Armor Piercing Roll Is: \\#ff0000" + String::valueOf(apslice));
- 	player->sendSystemMessage(" \\#C7DB00\\Your Weapon Armor Piercing Is Now Medium");
-}
-
-void SlicingSessionImplementation::handleSliceApheavy() {
-	ManagedReference<CreatureObject*> player = this->player.get();
-	ManagedReference<TangibleObject*> tangibleObject = this->tangibleObject.get();
- 	int apslice = 3;
-	
-	if (tangibleObject == nullptr || player == nullptr || !tangibleObject->isWeaponObject())
-		return;
-
-	WeaponObject* weap = cast<WeaponObject*>(tangibleObject.get());
-
-	Locker locker(weap);
-
-	if (weap->hasPowerup())
-		this->detachPowerUp(player, weap);
-
-	weap->setArmorPiercing(apslice);
-	weap->setSliced(true);
- 	player->sendSystemMessage(" \\#C7DB00\\Your Weapon Armor Piercing Roll Is: \\#ff0000" + String::valueOf(apslice));
- 	player->sendSystemMessage(" \\#C7DB00\\Your Weapon Armor Piercing Is Now Heavy");
 }
 
 void SlicingSessionImplementation::handleSliceSpeed(uint8 percent) {
@@ -922,7 +867,6 @@ void SlicingSessionImplementation::handleSliceArmorAplight() {
 	armor->setSliced(true);
  	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Roll Is: \\#ff0000" + String::valueOf(apslice));
  	player->sendSystemMessage(" \\#C7DB00\\Your Armor Socket Roll Is: \\#ff0000" + String::valueOf(sockets));
- 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is Now Light");
 }
 
 void SlicingSessionImplementation::handleSliceArmorApmedium() {
@@ -943,7 +887,6 @@ void SlicingSessionImplementation::handleSliceArmorApmedium() {
 	armor->setSliced(true);
  	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Roll Is: \\#ff0000" + String::valueOf(apslice));
  	player->sendSystemMessage(" \\#C7DB00\\Your Armor Socket Roll Is: \\#ff0000" + String::valueOf(sockets));
- 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is Now Medium");
 }
 
 void SlicingSessionImplementation::handleSliceArmorApheavy() {
@@ -964,7 +907,6 @@ void SlicingSessionImplementation::handleSliceArmorApheavy() {
 	armor->setSliced(true);
  	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Roll Is: \\#ff0000" + String::valueOf(apslice));
  	player->sendSystemMessage(" \\#C7DB00\\Your Armor Socket Roll Is: \\#ff0000" + String::valueOf(sockets));
- 	player->sendSystemMessage(" \\#C7DB00\\Your Armor Piercing Is Now Heavy");
 }
 
 void SlicingSessionImplementation::handleContainerSlice() {
