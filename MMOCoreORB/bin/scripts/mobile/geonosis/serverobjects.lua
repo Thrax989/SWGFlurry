@@ -1,6 +1,6 @@
 --System objects
-includeFile("geonosis/yodababy.lua")
-includeFile("geonosis/yoda.lua")
+includeFile("geonosis/geo_yodababy.lua")
+includeFile("geonosis/geo_yoda.lua")
 includeFile("geonosis/battle_droids.lua")
 includeFile("geonosis/hellfire_droid.lua")
 includeFile("geonosis/ig88_upgrade.lua")
