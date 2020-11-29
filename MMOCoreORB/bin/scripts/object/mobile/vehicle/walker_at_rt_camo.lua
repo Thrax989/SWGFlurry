@@ -1,0 +1,3 @@
+object_mobile_vehicle_walker_at_rt_camo = object_mobile_vehicle_shared_walker_at_rt_camo:new {
+}
+ObjectTemplates:addTemplate(object_mobile_vehicle_walker_at_rt_camo, "object/mobile/vehicle/walker_at_rt_camo.iff")

@@ -1,0 +1,3 @@
+object_mobile_passenger_koro2_exodrive_airspeeder = object_mobile_shared_passenger_koro2_exodrive_airspeeder:new {
+}
+ObjectTemplates:addTemplate(object_mobile_passenger_koro2_exodrive_airspeeder, "object/mobile/passenger_koro2_exodrive_airspeeder.iff")

@@ -953,3 +953,38 @@ object_mobile_vehicle_shared_vehicle_base = SharedCreatureObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_vehicle_base, "object/mobile/vehicle/shared_vehicle_base.iff")
+
+object_mobile_vehicle_shared_tcg_at_pt_walker = SharedCreatureObjectTemplate:new {
+    clientTemplateFileName = "object/mobile/vehicle/shared_tcg_at_pt_walker.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_tcg_at_pt_walker, "object/mobile/vehicle/shared_tcg_at_pt_walker.iff")
+
+object_mobile_vehicle_shared_walker_at_rt_camo = SharedCreatureObjectTemplate:new {
+    clientTemplateFileName = "object/mobile/vehicle/shared_walker_at_rt_camo.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_walker_at_rt_camo, "object/mobile/vehicle/shared_walker_at_rt_camo.iff")
+
+object_mobile_vehicle_shared_tcg_republic_gunship = SharedCreatureObjectTemplate:new {
+    clientTemplateFileName = "object/mobile/vehicle/shared_tcg_republic_gunship.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_tcg_republic_gunship, "object/mobile/vehicle/shared_tcg_republic_gunship.iff")
+
+object_mobile_vehicle_shared_walker_at_rt_reg = SharedCreatureObjectTemplate:new {
+    clientTemplateFileName = "object/mobile/vehicle/shared_walker_at_rt_reg.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_walker_at_rt_reg, "object/mobile/vehicle/shared_walker_at_rt_reg.iff")
+
+object_mobile_vehicle_shared_tcg_hk47_jetpack = SharedCreatureObjectTemplate:new {
+    clientTemplateFileName = "object/mobile/vehicle/shared_tcg_hk47_jetpack.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_tcg_hk47_jetpack, "object/mobile/vehicle/shared_tcg_hk47_jetpack.iff")
+
+object_mobile_vehicle_shared_tcg_merr_sonn_jt12_jetpack = SharedCreatureObjectTemplate:new {
+    clientTemplateFileName = "object/mobile/vehicle/shared_tcg_merr_sonn_jt12_jetpack.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_tcg_merr_sonn_jt12_jetpack, "object/mobile/vehicle/shared_tcg_merr_sonn_jt12_jetpack.iff")
+
+object_mobile_vehicle_shared_vehicle_atpt = SharedCreatureObjectTemplate:new {
+    clientTemplateFileName = "object/mobile/vehicle/shared_vehicle_atpt.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_vehicle_atpt, "object/mobile/vehicle/shared_vehicle_atpt.iff")
