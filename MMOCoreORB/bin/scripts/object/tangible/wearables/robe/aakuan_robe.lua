@@ -233,7 +233,6 @@ object_tangible_wearables_robe_aakuan_robe = object_tangible_wearables_robe_shar
 	experimentalMax = {0, 0, 0, 1000},
 	experimentalPrecision = {0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 4, 4},
-
 }
 
 

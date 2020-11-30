@@ -191,19 +191,6 @@ object_tangible_wearables_robe_robe_chronicle_master = object_tangible_wearables
 	experimentalMax = {0, 0, 0, 1000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-
-
-				skillMods = {
-				    {"jedi_force_power_max", 250},
-				    {"jedi_force_power_regen", 10}
-				},
-
-
-	objectMenuComponent = "RobeObjectMenuComponent",
-				certificationsRequired = { "combat_jedi_novice",
-							"force_title_jedi_rank_02" },
-	attributeListComponent = "JediRobeAttributeListComponent",
-
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_robe_robe_chronicle_master, "object/tangible/wearables/robe/robe_chronicle_master.iff")
