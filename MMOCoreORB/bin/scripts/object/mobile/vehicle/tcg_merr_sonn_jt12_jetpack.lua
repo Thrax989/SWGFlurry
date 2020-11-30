@@ -1,3 +1,0 @@
-object_mobile_vehicle_tcg_merr_sonn_jt12_jetpack = object_mobile_vehicle_shared_tcg_merr_sonn_jt12_jetpack:new {
-}
-ObjectTemplates:addTemplate(object_mobile_vehicle_tcg_merr_sonn_jt12_jetpack, "object/mobile/vehicle/tcg_merr_sonn_jt12_jetpack.iff")

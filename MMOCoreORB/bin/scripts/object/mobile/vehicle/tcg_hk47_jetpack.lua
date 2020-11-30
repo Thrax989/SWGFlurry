@@ -1,3 +1,0 @@
-object_mobile_vehicle_tcg_hk47_jetpack = object_mobile_vehicle_shared_tcg_hk47_jetpack:new {
-}
-ObjectTemplates:addTemplate(object_mobile_vehicle_tcg_hk47_jetpack, "object/mobile/vehicle/tcg_hk47_jetpack.iff")

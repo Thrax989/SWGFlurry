@@ -1,3 +1,0 @@
-object_mobile_passenger_landspeeder_v35_2 = object_mobile_shared_passenger_landspeeder_v35_2:new {
-}
-ObjectTemplates:addTemplate(object_mobile_passenger_landspeeder_v35_2, "object/mobile/passenger_landspeeder_v35_2.iff")

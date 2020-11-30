@@ -1,3 +1,0 @@
-object_mobile_vehicle_tcg_at_pt_walker = object_mobile_vehicle_shared_tcg_at_pt_walker:new {
-}
-ObjectTemplates:addTemplate(object_mobile_vehicle_tcg_at_pt_walker, "object/mobile/vehicle/tcg_at_pt_walker.iff")
