@@ -19,8 +19,6 @@
 #include "server/zone/managers/skill/SkillModManager.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
 #include "server/chat/ChatManager.h"
-#include "server/zone/objects/creature/VehicleObject.h"
-#include "server/zone/objects/creature/ai/Creature.h"
 
 const char LuaCreatureObject::className[] = "LuaCreatureObject";
 
@@ -155,9 +153,6 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "broadcastToDiscord", &LuaCreatureObject::broadcastToDiscord },
 		{ "broadcastToDiscordGcw", &LuaCreatureObject::broadcastToDiscordGcw },
 		{ "broadcastToDiscordUnlock", &LuaCreatureObject::broadcastToDiscordUnlock },
-		{ "slotPassenger", &LuaCreatureObject::slotPassenger },
-		{ "isRidingMount", &LuaCreatureObject::isRidingMount },
-		{ "dismount", &LuaCreatureObject::dismount },
 		{ 0, 0 }
 };
 
@@ -1204,19 +1199,6 @@ int LuaCreatureObject::getActivePet(lua_State* L) {
 	return 1;	
 }
 
-int LuaCreatureObject::isRidingMount(lua_State* L) {
-	bool isMounted = realObject->isRidingMount();
-
-	lua_pushboolean(L, isMounted);
-
-	return 1;
-}
-
-int LuaCreatureObject::dismount(lua_State* L) {
-	realObject->dismount();
-	return 0;
-}
-
 int LuaCreatureObject::broadcastToServer(lua_State* L) {
 	String message = lua_tostring(L, -1);
 	ZoneServer* zServ = realObject->getZoneServer();
@@ -1244,38 +1226,3 @@ int LuaCreatureObject::broadcastToDiscordUnlock(lua_State* L) {
 	zServ->getChatManager()->handleGeneralDiscordUnlock(nullptr, message);
 	return 1;
 }
-
-int LuaCreatureObject::slotPassenger(lua_State* L) {
-	CreatureObject* passenger = (CreatureObject*) lua_touserdata(L, -1);
-
-	SceneObject* vehicle = realObject->getParent().get().get();
-	if (!vehicle->isCreatureObject()) {
-		lua_pushboolean(L, false);
-		return 1;
-	}
-
-
-	if (vehicle->isVehicleObject()) {
-		VehicleObject* speeder = static_cast<VehicleObject*>(vehicle);
-		if (!speeder->hasOpenSeat()) {
-			lua_pushboolean(L, false);
-			return 1;
-		} else {
-			speeder->slotPassenger(passenger);
-			lua_pushboolean(L, true);
-			return 1;
-		}
-	} else {
-		Creature* mount = static_cast<Creature*>(vehicle);
-		if (!mount->hasOpenSeat()) {
-			lua_pushboolean(L, false);
-			return 1;
-		} else {
-			mount->slotPassenger(passenger);
-			lua_pushboolean(L, true);
-			return 1;
-		}
-
-	}
-}
-

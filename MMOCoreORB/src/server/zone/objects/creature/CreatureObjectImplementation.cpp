@@ -2122,49 +2122,16 @@ void CreatureObjectImplementation::notifyLoadFromDatabase() {
 void CreatureObjectImplementation::notifyInsert(QuadTreeEntry* obj) {
 	auto linkedCreature = getLinkedCreature().get();
 
-	float x = 0, y = 0, z = 0;
-
 	if (linkedCreature != nullptr && linkedCreature->getParent() == asCreatureObject()) {
 #if DEBUG_COV
 		linkedCreature->info("proxy notifyInsert(" + String::valueOf(obj->getObjectID()) + ")");
 #endif // DEBUG_COV
-		float x = linkedCreature->getWorldPositionX();
-		float y = linkedCreature->getWorldPositionY();
-		float z = linkedCreature->getWorldPositionZ();
-		if (!isInRange(linkedCreature, 16.0f) && hasRidingCreature())
-			teleport(x, z, y, 0);
 
 		if (linkedCreature->getCloseObjects() != nullptr)
 			linkedCreature->addInRangeObject(obj);
 
 		if (obj->getCloseObjects() != nullptr)
 			obj->addInRangeObject(linkedCreature);
-		for (int i = 1; i < 8; ++i) {
-			String text = "rider";
-			text += String::valueOf(i);
-			CreatureObject* seat = getSlottedObject(text).castTo<CreatureObject*>();
-			if (seat != nullptr) {
-				seat->setPosition(x, z, y);
-				CreatureObject* rider = seat->getSlottedObject("rider").castTo<CreatureObject*>();
-				if (rider != nullptr) {
-					rider->setPosition(x, z, y);
-					if (rider->getCloseObjects() != nullptr)
-						rider->addInRangeObject(obj);
-					if (obj->getCloseObjects() != nullptr)
-						obj->addInRangeObject(rider);
-				}
-			}
-		}
-
-	}
-
-	if (hasRidingCreature()) {
-		CreatureObject* rider = getSlottedObject("rider").castTo<CreatureObject*>();
-		if (rider != nullptr){
-			rider->addInRangeObject(obj);
-			if (obj->getCloseObjects() != nullptr)
-				obj->addInRangeObject(rider);
-		}
 	}
 
 	TangibleObjectImplementation::notifyInsert(obj);
@@ -2177,44 +2144,11 @@ void CreatureObjectImplementation::notifyDissapear(QuadTreeEntry* obj) {
 #if DEBUG_COV
 		linkedCreature->info("proxy notifyDissapear(" + String::valueOf(obj->getObjectID()) + ")");
 #endif // DEBUG_COV
-		float x = linkedCreature->getWorldPositionX();
-		float y = linkedCreature->getWorldPositionY();
-		float z = linkedCreature->getWorldPositionZ();
-
-		if (!isInRange(linkedCreature, 16.0f) && hasRidingCreature())
-			teleport(x, z, y, 0);
-
 		if (linkedCreature->getCloseObjects() != nullptr)
 			linkedCreature->removeInRangeObject(obj);
 
 		if (obj->getCloseObjects() != nullptr)
 			obj->removeInRangeObject(linkedCreature);
-		for (int i = 1; i < 8; ++i) {
-			String text = "rider";
-			text += String::valueOf(i);
-			CreatureObject* seat = getSlottedObject(text).castTo<CreatureObject*>();
-			if (seat != nullptr) {
-				seat->setPosition(x, z, y);
-				CreatureObject* rider = seat->getSlottedObject("rider").castTo<CreatureObject*>();
-				if (rider != nullptr) {
-					rider->setPosition(x, z, y);
-					if (rider->getCloseObjects() != nullptr)
-						rider->removeInRangeObject(obj);
-					if (obj->getCloseObjects() != nullptr)
-						obj->removeInRangeObject(rider);
-				}
-
-			}
-		}
-	}
-
-	if (hasRidingCreature()) {
-		CreatureObject* rider = getSlottedObject("rider").castTo<CreatureObject*>();
-		if (rider != nullptr) {
-			rider->removeInRangeObject(obj);
-			if (obj->getCloseObjects() != nullptr)
-				obj->removeInRangeObject(rider);
-		}
 	}
 
 	TangibleObjectImplementation::notifyDissapear(obj);
@@ -2227,44 +2161,11 @@ void CreatureObjectImplementation::notifyPositionUpdate(QuadTreeEntry* entry) {
 #if DEBUG_COV
 		linkedCreature->info("proxy notifyPositionUpdate(" + String::valueOf(entry->getObjectID()) + ")");
 #endif // DEBUG_COV
-		float x = linkedCreature->getWorldPositionX();
-		float y = linkedCreature->getWorldPositionY();
-		float z = linkedCreature->getWorldPositionZ();
-		if (!isInRange(linkedCreature, 16.0f) && hasRidingCreature())
-			teleport(x, z, y, 0);
-
 		if (linkedCreature->getCloseObjects() != nullptr)
 			linkedCreature->addInRangeObject(entry);
 
 		if (entry->getCloseObjects() != nullptr)
 			entry->addInRangeObject(linkedCreature);
-		for (int i = 1; i < 8; ++i) {
-			String text = "rider";
-			text += String::valueOf(i);
-			CreatureObject* seat = getSlottedObject(text).castTo<CreatureObject*>();
-			if (seat != nullptr) {
-				seat->setPosition(x, z, y);
-				CreatureObject* rider = seat->getSlottedObject("rider").castTo<CreatureObject*>();
-				if (rider != nullptr) {
-					rider->setPosition(x, z, y);
-					if (rider->getCloseObjects() != nullptr)
-						rider->addInRangeObject(entry);
-					if (entry->getCloseObjects() != nullptr)
-						entry->addInRangeObject(rider);
-				}
-			}
-		}
-
-	}
-
-	if (hasRidingCreature()) {
-		CreatureObject* rider = getSlottedObject("rider").castTo<CreatureObject*>();
-		if (rider != nullptr) {
-			rider->addInRangeObject(entry);
-
-			if (entry->getCloseObjects() != nullptr)
-				entry->addInRangeObject(rider);
-		}
 	}
 
 	TangibleObjectImplementation::notifyPositionUpdate(entry);
@@ -4016,13 +3917,4 @@ void CreatureObjectImplementation::setHue(int hueIndex) {
 	}
 
 	hueValue = hueIndex;
-}
-
-int CreatureObjectImplementation::getPassengerCapacity() {
-	SharedCreatureObjectTemplate* tmpl = cast<SharedCreatureObjectTemplate*>(getObjectTemplate());
-
-	if(tmpl == NULL)
-		return 1;
-
-	return tmpl->getPassengerCapacity();
 }

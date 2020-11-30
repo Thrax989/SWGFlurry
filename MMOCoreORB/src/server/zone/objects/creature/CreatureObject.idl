@@ -2324,8 +2324,5 @@ class CreatureObject extends TangibleObject {
 	@dirty
 	public void setAuctionSearchTask(AuctionSearchTask task) {
 		auctionSearch = task;
-
-	@dirty
-	public native int getPassengerCapacity();
 	}
 }

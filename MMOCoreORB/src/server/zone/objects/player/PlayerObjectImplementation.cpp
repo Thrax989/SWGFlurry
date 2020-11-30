@@ -258,7 +258,9 @@ void PlayerObjectImplementation::unload() {
 
 	notifyOffline();
 
-	creature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
+	if (creature->isRidingMount()) {
+		creature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
+	}
 
 	unloadSpawnedChildren();
 
