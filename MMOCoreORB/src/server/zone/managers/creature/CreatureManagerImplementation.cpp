@@ -727,8 +727,10 @@ void CreatureManagerImplementation::droidHarvest(Creature* creature, CreatureObj
 		quantityExtracted = (int)(quantityExtracted * modifier);
 	}
 
-	if (creature->getParent().get() != nullptr)
-		quantityExtracted = 1;
+	/*
+ 	if (creature->getParent().get() != nullptr)
+ 		quantityExtracted = 1;
+	*/
 
 	int luckBonus = owner->getSkillMod("luck")*5; //0-20% harvest bonus for luck
 	int fsluckBonus = owner->getSkillMod("force_luck")*5; //0-20% harvest bonus for fsluck
@@ -911,8 +913,10 @@ void CreatureManagerImplementation::harvest(Creature* creature, CreatureObject* 
 		quantityExtracted = (int)(quantityExtracted * modifier);
 	}
 
-	if (creature->getParent().get() != nullptr)
-		quantityExtracted = 1;
+	/*
+ 	if (creature->getParent().get() != nullptr)
+ 		quantityExtracted = 1;
+	*/
 
 	resourceManager->harvestResourceToPlayer(player, resourceSpawn, quantityExtracted);
 
