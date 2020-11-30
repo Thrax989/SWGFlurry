@@ -1,5 +1,5 @@
 atxt = Creature:new {
-	objectName = "@mob/creature_names:at_xt",
+	objectName = "@mob/creature_names:at_st",
 	socialGroup = "rebel",
 	faction = "rebel",
 	level = 125,
