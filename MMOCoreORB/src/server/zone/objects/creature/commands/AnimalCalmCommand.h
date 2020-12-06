@@ -35,20 +35,25 @@ public:
 
 		Creature* targetCreature = cast<Creature*>(targetObject.get());
 
-		if (targetCreature == nullptr || !targetCreature->isCreature()) {
-			creature->sendSystemMessage("@error_message:target_not_creature");
-			return GENERALERROR;
-		}
+		if (targetCreature == nullptr)
+			return INVALIDTARGET;
 
+		if (!targetCreature->isCreature()) {
+			creature->sendSystemMessage("@error_message:target_not_creature");
+			return false;
+		}
+		if (targetCreature->getDistanceTo(creature) > 32.f){
+			creature->sendSystemMessage("@error_message:target_out_of_range");
+			return false;
+		}
 		if (targetCreature->getMainDefender() != creature) {
-			creature->sendSystemMessage("@jedi_spam:power_already_active");
-			return GENERALERROR;
+			creature->sendSystemMessage("@error_message:not_your_target");
+			return false;
 		}
 
 		int res = doCombatAction(creature, target);
 
 		if (res == SUCCESS) {
-
 			ManagedReference<Creature*> creatureTarget = targetObject.castTo<Creature*>();
 
 			Locker clocker(creatureTarget, creature);
@@ -60,17 +65,14 @@ public:
 			creature->doCombatAnimation(creatureTarget, STRING_HASHCODE("mind_trick_1"), 1, 0);
 			creature->sendSystemMessage("@jedi_spam:calm_target");
 
-			CombatManager::instance()->broadcastCombatSpam(creature, targetCreature, nullptr, 0, "cbt_spam", combatSpam + "_hit", 1);
-
 			return SUCCESS;
-
 		} else {
 			creature->sendSystemMessage("@jedi_spam:fail_calm_target");
-			CombatManager::instance()->broadcastCombatSpam(creature, targetCreature, nullptr, 0, "cbt_spam", combatSpam + "_miss", 1);
 		}
 
 		return res;
 	}
+
 };
 
 #endif //ANIMALCALMCOMMAND_H_
