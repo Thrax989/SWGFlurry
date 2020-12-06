@@ -26,7 +26,7 @@ geoworld_boss2 = Creature:new {
 	diet = NONE,
 	scale = 3.0,
 	templates = {
-		"object/mobile/beast_master/shared_bm_blackwing_rancor.iff"},
+		"object/mobile/beast_master/bm_blackwing_rancor.iff"},
 	lootGroups = {
 		{
 			groups = {

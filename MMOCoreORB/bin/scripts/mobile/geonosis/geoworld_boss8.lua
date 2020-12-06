@@ -26,7 +26,7 @@ geoworld_boss8 = Creature:new {
 	diet = NONE,
 	scale = 3.0,
 	templates = {
-		"bject/mobile/beast_master/bm_mutated_vesp.iff"},
+		"object/mobile/beast_master/bm_mutated_vesp.iff"},
 	lootGroups = {
 		{
 			groups = {
