@@ -2007,8 +2007,8 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 			targetDefense /= 1.5;
 			targetDefense += playerLevel;
 
-			if (targetDefense > 90)
-				targetDefense = 90.f;
+			if (targetDefense > 95)
+				targetDefense = 95.f;
 
 			if (System::random(100) > accuracyMod - targetDefense)
 				failed = true;
@@ -2024,8 +2024,8 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 					targetDefense /= 1.5;
 					targetDefense += playerLevel;
 
-					if (targetDefense > 90)
-						targetDefense = 90.f;
+					if (targetDefense > 95)
+						targetDefense = 95.f;
 
 					if (System::random(100) > accuracyMod - targetDefense) {
 						failed = true;
