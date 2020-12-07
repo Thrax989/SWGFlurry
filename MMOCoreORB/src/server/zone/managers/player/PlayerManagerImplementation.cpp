@@ -1227,7 +1227,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 		String planetName = zone->getZoneName();
 		Vector3 worldPosition = player->getWorldPosition();
 		StringBuffer zGeneral;
-		String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
+		String name = " (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
 		zGeneral << "Has Permanently Died On Their Jedi!" << " on Planet " << planetName << name;	
 		chatManager->handleGeneralChat(player, zGeneral.toString());
 		player->sendSystemMessage("You have Lost 1 Jedi Life, you now have a total of 0 Lives"); // You have Lost 1 Jedi Life, you now have a total of 0 Lives
@@ -1337,7 +1337,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 					Zone* zone = player->getZone();
 					String planetName = zone->getZoneName();
                         		Vector3 worldPosition = player->getWorldPosition();
-					String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
+					String name = " (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
 					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in a Duel by" << killerFaction << "\\#00cc99 " << killerName << " \\#e60000 on Planet " << planetName;
 					zGeneral << playerFaction << "was slain in a [Duel] by" << killerFaction << killerName << " on Planet " << planetName << name;
 				 }
@@ -1346,7 +1346,7 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 					Zone* zone = player->getZone();
 					String planetName = zone->getZoneName();
                         		Vector3 worldPosition = player->getWorldPosition();
-					String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
+					String name = " (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
  					zBroadcast << playerFaction <<"\\#00e604 " << playerName << "\\#e60000 was slain in PVP by" << killerFaction << "\\#00cc99 " << killerName << " \\#e60000 on Planet " << planetName;
 					zGeneral << playerFaction << "was slain in [PvP] by" << killerFaction << killerName << " on Planet " << planetName << name;
 	
