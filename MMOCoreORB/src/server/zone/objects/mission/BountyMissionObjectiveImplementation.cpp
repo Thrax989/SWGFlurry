@@ -609,7 +609,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					String bhName = owner->getFirstName();
 					StringBuffer zBroadcast;
                         		Vector3 worldPosition = owner->getWorldPosition();
-					String name = " Location (" + String::valueOf((int)owner->getWorldPositionX()) + ", " + String::valueOf((int)owner->getWorldPositionZ()) + ", " + String::valueOf((int)owner->getWorldPositionY()) + ")";
+					String name = " (" + String::valueOf((int)owner->getWorldPositionX()) + ", " + String::valueOf((int)owner->getWorldPositionZ()) + ", " + String::valueOf((int)owner->getWorldPositionY()) + ")";
 					zBroadcast << "\\#00bfff" << bhName << "\\#ffd700" << " a" << "\\#ff7f00 Bounty Hunter" << "\\#ffd700 has collected the bounty on\\#00bfff " << victimName << " On Planet " << planetName;
 					owner->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 					ChatManager* chatManager = owner->getZoneServer()->getChatManager();	
@@ -639,7 +639,7 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 			Zone* zone = owner->getZone();
 			String planetName = zone->getZoneName();
                         Vector3 worldPosition = owner->getWorldPosition();
-			String name = " Location (" + String::valueOf((int)owner->getWorldPositionX()) + ", " + String::valueOf((int)owner->getWorldPositionZ()) + ", " + String::valueOf((int)owner->getWorldPositionY()) + ")";
+			String name = " (" + String::valueOf((int)owner->getWorldPositionX()) + ", " + String::valueOf((int)owner->getWorldPositionZ()) + ", " + String::valueOf((int)owner->getWorldPositionY()) + ")";
 			zGeneral << "Has Defeated "  << playerName << " A Bounty Hunter " << " on Planet " << planetName << name << " [Bounty Still Active]";	
 			chatManager->handleGeneralChat(killer, zGeneral.toString());
 			//Player killed by target, fail mission.
