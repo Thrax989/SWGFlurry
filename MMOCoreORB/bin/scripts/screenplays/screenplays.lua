@@ -186,7 +186,7 @@ includeFile("dungeon/ig88/ig88_platform.lua")
 --custom general grievous platform
 includeFile("dungeon/general_grievous/generalgrievous_platform.lua")
 --custom geonosis lab dungeon
-includeFile("dungeon/geonosis/geonosis_lab.lua")
+--includeFile("dungeon/geonosis/geonosis_lab.lua")
 -- Village
 includeFile("village/village_community_crafting.lua")
 includeFile("village/village_gm_sui.lua")
@@ -275,6 +275,7 @@ includeFile("village/convos/phase4/sivarra_phase4_conv_handler.lua")
 
 -- Jedi Trials
 includeFile("jedi/trialData.lua")
+includeFile("jedi/frs.lua")
 includeFile("jedi/jedi_trials.lua")
 includeFile("jedi/knight/knight_trials.lua")
 includeFile("jedi/padawan/padawan_trials.lua")

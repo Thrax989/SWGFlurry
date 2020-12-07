@@ -29,39 +29,13 @@ rare_force7 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
+				{group = "junk", chance = 10000000},
 			},
-			lootChance = 500000
+			lootChance = 10000000
 		},	
 		{
 			groups = {
-				{group = "holocron_dark", chance = 2000000},
-				{group = "holocron_light", chance = 2000000},
-				{group = "power_crystals", chance = 1000000},
-				{group = "armor_attachments", chance = 2000000},
-				{group = "clothing_attachments", chance = 2000000},
-				{group = "dark_jedi_common", chance = 1000000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
-			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "junk", chance = 10000000},
 			},
 			lootChance = 10000000
 		}

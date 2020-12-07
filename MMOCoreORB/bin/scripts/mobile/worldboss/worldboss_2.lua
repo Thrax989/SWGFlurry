@@ -158,11 +158,11 @@ worldboss_2 = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareaknockdown","stateAccuracyBonus=100"},
-		{"posturedownattack","stateAccuracyBonus=100"},
-    {"creatureareadisease","DiseaseChance=100"},
-    {"creatureareableeding","BleedChance=100"},    
-		{"creatureareacombo","stateAccuracyBonus=100"}
+		{"creatureareaknockdown","stateAccuracyBonus=90"},
+		{"posturedownattack","stateAccuracyBonus=90"},
+    {"creatureareadisease","DiseaseChance=80"},
+    {"creatureareableeding","BleedChance=80"},    
+		{"creatureareacombo","stateAccuracyBonus=90"}
 	}
 }
 
