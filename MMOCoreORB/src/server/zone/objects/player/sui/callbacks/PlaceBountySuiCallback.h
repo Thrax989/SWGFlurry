@@ -58,7 +58,7 @@ public:
 		Zone* zone = player->getZone();
 		String planetName = zone->getZoneName();
                 Vector3 worldPosition = player->getWorldPosition();
-		String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
+		String name = " (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
 		StringBuffer zBroadcast;
 		zBroadcast << "\\#ffb90f" << killerPlayer->getFirstName() << " is now on the bounty hunter \\#e51b1bTerminal!";
 		killerPlayer->playEffect("clienteffect/ui_missile_aquiring.cef", "");
