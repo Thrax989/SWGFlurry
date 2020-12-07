@@ -3,14 +3,14 @@ wampa_boss = Creature:new {
 	socialGroup = "wampa",
 	faction = "",
 	level = 300,
-	chanceHit = 20.00,
-	damageMin = 1250,
-	damageMax = 950,
+	chanceHit = 80.00,
+	damageMin = 1650,
+	damageMax = 4000,
 	baseXp = 760680,
 	baseHAM = 175000,
-	baseHAMmax = 250000,
+	baseHAMmax = 350000,
 	armor = 3,
-	resists = {60,70,40,60,80,20,90,90,70},
+	resists = {160,170,140,160,180,200,190,190,120},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
 	hideType = "hide_leathery",
@@ -30,57 +30,81 @@ wampa_boss = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "capes", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 1000000
+		},	
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "goggles_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "neck_crafter", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter_second", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_ring_crafter", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings_ranged", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "non_jedi_rings", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "g_necklaces", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -96,27 +120,21 @@ wampa_boss = Creature:new {
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "worldbosscrate", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "worldbosscrate", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "vehicledeedsnormal", chance = 10000000},
+				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "vehicledeedsrare", chance = 10000000},
-			},
-			lootChance = 200000
+			lootChance = 10000000
 		},
 		{
 			groups = {
