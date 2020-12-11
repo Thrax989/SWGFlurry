@@ -207,7 +207,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Hill Top (5,000 Credits)", "pc_hilltop_travel",
             "Cyberdyne (5,000 Credits)", "pc_cyberdyne_travel",
             "Darkness Falls (5,000 Credits)", "pc_darkness_travel",
-            "Sanctus (5,000 Credits)", "pc_sanctus_travel"
+            "Sanctus (5,000 Credits)", "pc_sanctus_travel",
+			"Sparta (5,000 Credits)", "pc_sparta_travel"
           },
             "Corellia",
           {  
@@ -225,7 +226,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },  
             "Lok",
           {
-            "Crimson Thorn (5,000 Credits)", "pc_crimson_travel" 
+            "Crimson Thorn (5,000 Credits)", "pc_crimson_travel",
+			"Binary (5,000 Credits)", "pc_binary_travel"
           },
             "Yavin4",
           {
