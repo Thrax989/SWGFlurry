@@ -175,7 +175,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   },
 		 	"FRS Selection Room",
 		   {
-			"Teleport To FRS Selection Room (5,000 Credits)", "frs_floor",
+			"Teleport To FRS Selection Room (5,000 Credits)", "teleportroom",
 		   },
 		 	"PvP Zone Rori Restuss",
 		   {
