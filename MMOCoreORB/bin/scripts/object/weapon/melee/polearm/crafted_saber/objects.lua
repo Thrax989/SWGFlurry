@@ -991,3 +991,13 @@ clientTemplateFileName = "object/weapon/melee/polearm/crafted_saber/shared_sword
 }
 
 ObjectTemplates: addClientTemplate(object_weapon_melee_polearm_crafted_saber_shared_sword_lightsaber_polearm_gen5_exar_kun, "object/weapon/melee/polearm/crafted_saber/shared_sword_lightsaber_polearm_gen5_exar_kun.iff")
+
+
+
+
+
+object_weapon_melee_polearm_crafted_saber_shared_sword_lightsaber_pike_s1 = SharedWeaponObjectTemplate:new {
+clientTemplateFileName = "object/weapon/melee/polearm/crafted_saber/shared_sword_lightsaber_pike_s1.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_weapon_melee_polearm_crafted_saber_shared_sword_lightsaber_pike_s1, "object/weapon/melee/polearm/crafted_saber/shared_sword_lightsaber_pike_s1.iff")
