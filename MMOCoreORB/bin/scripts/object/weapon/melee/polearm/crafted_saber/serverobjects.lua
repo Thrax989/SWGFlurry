@@ -61,4 +61,3 @@ includeFile("weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_s2_gen2
 includeFile("weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_s2_gen3.lua")
 includeFile("weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_s2_gen4.lua")
 includeFile("weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen5_exar_kun.lua")
-includeFile("weapon/melee/polearm/crafted_saber/sword_lightsaber_pike_s1.lua")
