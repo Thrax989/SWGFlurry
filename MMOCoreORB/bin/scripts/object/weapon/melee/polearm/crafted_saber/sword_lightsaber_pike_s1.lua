@@ -41,7 +41,7 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_weapon_melee_polearm_crafted_saber_sword_lightsaber_lance_s1 = object_weapon_melee_polearm_crafted_saber_shared_sword_lightsaber_lance_s1:new {
+object_weapon_melee_polearm_crafted_saber_sword_lightsaber_pike_s1 = object_weapon_melee_polearm_crafted_saber_shared_sword_lightsaber_pike_s1:new {
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
@@ -123,7 +123,7 @@ object_weapon_melee_polearm_crafted_saber_sword_lightsaber_lance_s1 = object_wea
 	noTrade = 1,
 
 	childObjects = {
-		{templateFile = "object/tangible/inventory/lightsaber_inventory_5.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4}
+		{templateFile = "object/tangible/inventory/lightsaber_inventory_1.iff", x = 0, z = 0, y = 0, ox = 0, oy = 0, oz = 0, ow = 0, cellid = -1, containmentType = 4}
 	},
 
 	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 2, 1, 1, 1},
@@ -137,4 +137,4 @@ object_weapon_melee_polearm_crafted_saber_sword_lightsaber_lance_s1 = object_wea
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
 }
 
-ObjectTemplates:addTemplate(object_weapon_melee_polearm_crafted_saber_sword_lightsaber_lance_s1, "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_lance_s1.iff")
+ObjectTemplates:addTemplate(object_weapon_melee_polearm_crafted_saber_sword_lightsaber_pike_s1, "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_pike_s1.iff")
