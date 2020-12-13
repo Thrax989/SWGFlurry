@@ -28,9 +28,9 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 	if (player->hasSkill("force_title_jedi_rank_02")) {
 			menuResponse->addRadialMenuItem(213, 3, "Jedi Visibility"); // Visibility
 		}
-	if ((ghost->getJediState() >= 2 && ghost->getSpentJediSkillPoints() > 235) || ghost->getJediState() >=4) {
+	if ((ghost->getJediState() >= 2 && ghost->getSpentJediSkillPoints() > 235) {
 		menuResponse->addRadialMenuItem(215, 3, "Force Ranking");
-		if (ghost->getJediState() == 2 && ghost->getSpentJediSkillPoints() > 235) {
+		if (ghost->getJediState() == 2 && ghost->getSpentJediSkillPoints() > 235) || !player->hasSkill("combat_jedi_novice")) {
 			menuResponse->addRadialMenuItemToRadialID(215, 216, 3, "Join Sith Order"); // Join Sith
 			menuResponse->addRadialMenuItemToRadialID(215, 217, 3, "Join Jedi Order"); // Join Jedi
 		}
