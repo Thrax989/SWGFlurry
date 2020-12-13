@@ -25,14 +25,17 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
-	if (player->hasSkill("force_title_jedi_rank_02")) {
+
+	if (player->hasSkill("force_title_jedi_rank_02") && !player->hasSkill("combat_jedi_novice")) {
 			menuResponse->addRadialMenuItem(213, 3, "Jedi Visibility"); // Visibility
 		}
-	if ((ghost->getJediState() >= 2 && ghost->getSpentJediSkillPoints() > 235) {
+	if (player->hasSkill("force_title_jedi_rank_02") && !player->hasSkill("combat_jedi_novice")) {
+	if ((ghost->getJediState() >= 2 && ghost->getSpentJediSkillPoints() > 235)) {
 		menuResponse->addRadialMenuItem(215, 3, "Force Ranking");
-		if (ghost->getJediState() == 2 && ghost->getSpentJediSkillPoints() > 235) || !player->hasSkill("combat_jedi_novice")) {
+		if (ghost->getJediState() == 2 && ghost->getSpentJediSkillPoints() > 235) {
 			menuResponse->addRadialMenuItemToRadialID(215, 216, 3, "Join Sith Order"); // Join Sith
 			menuResponse->addRadialMenuItemToRadialID(215, 217, 3, "Join Jedi Order"); // Join Jedi
+			}
 		}
 		if (ghost->getJediState() == 8) {
 			menuResponse->addRadialMenuItemToRadialID(215, 218, 3, "Leave Sith Order"); // Leave Sith
@@ -41,6 +44,7 @@ void ForceShrineMenuComponent1::fillObjectMenuResponse(SceneObject* sceneObject,
 			menuResponse->addRadialMenuItemToRadialID(215, 219, 3, "Leave Jedi Order"); // Leave Jedi
 		}
 	}
+}
 int ForceShrineMenuComponent1::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 
