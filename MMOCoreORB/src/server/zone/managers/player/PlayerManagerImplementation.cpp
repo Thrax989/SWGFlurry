@@ -1651,15 +1651,15 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::ACTION, 100, true, false);
 		player->addWounds(CreatureAttribute::MIND, 100, true, false);
 		player->addShockWounds(100, true);
-		ChatManager* chatManager = player->getZoneServer()->getChatManager();
+		//ChatManager* chatManager = player->getZoneServer()->getChatManager();
 		//Broadcast player has died forward to discord channel. created by :TOXIC
-		StringBuffer zGeneral;
-		Zone* zone = player->getZone();
-		String planetName = zone->getZoneName();
-                Vector3 worldPosition = player->getWorldPosition();
-		String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
-		zGeneral << "Has Cloned" << " on Planet " << planetName << name;
-		chatManager->handleGeneralChat(player, zGeneral.toString());
+		//StringBuffer zGeneral;
+		//Zone* zone = player->getZone();
+		//String planetName = zone->getZoneName();
+                //Vector3 worldPosition = player->getWorldPosition();
+		//String name = " Location (" + String::valueOf((int)player->getWorldPositionX()) + ", " + String::valueOf((int)player->getWorldPositionZ()) + ", " + String::valueOf((int)player->getWorldPositionY()) + ")";
+		//zGeneral << "Has Cloned" << " on Planet " << planetName << name;
+		//chatManager->handleGeneralChat(player, zGeneral.toString());
 	}
 
 	//PermaDeath : Gray Jedi with 0 lives cannot login
