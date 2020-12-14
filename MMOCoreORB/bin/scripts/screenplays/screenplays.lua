@@ -795,5 +795,7 @@ includeFile("events/inquisitor_boss.lua")
 
 --painting exchange dealer
 includeFile("events/painting_exchange_dealer.lua")
+--Event Vendor
+includeFile("events/event_exchange_dealer.lua")
 
 includeFile("custom_screenplays/screenplays.lua")
