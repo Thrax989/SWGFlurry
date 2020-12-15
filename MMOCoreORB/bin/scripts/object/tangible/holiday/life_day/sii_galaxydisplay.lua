@@ -1,3 +1,0 @@
-object_tangible_holiday_life_day_sii_galaxydisplay = object_tangible_holiday_life_day_shared_sii_galaxydisplay:new {
-}
-ObjectTemplates:addTemplate(object_tangible_holiday_life_day_sii_galaxydisplay, "object/tangible/holiday/life_day/sii_galaxydisplay.iff")
