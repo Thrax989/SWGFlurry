@@ -1422,6 +1422,11 @@ void PlayerObjectImplementation::notifyOnline() {
 	//Add player to visibility list
 	VisibilityManager::instance()->addToVisibilityList(playerCreature);
 
+	if (playerCreature->hasSkill("combat_jedi_novice")) {
+		SkillManager::instance()->surrenderSkill("force_rank_light_novice", playerCreature, true);
+		SkillManager::instance()->surrenderSkill("force_rank_dark_novice", playerCreature, true);
+	}
+
 	//Login to jedi manager
 	JediManager::instance()->onPlayerLoggedIn(playerCreature);
 	//Reset Players Skill Mods
