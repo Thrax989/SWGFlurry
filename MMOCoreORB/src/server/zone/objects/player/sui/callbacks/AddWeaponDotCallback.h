@@ -41,6 +41,9 @@ public:
 			return;
 		}
 
+		if (expUsed >= 10){
+			return;
+		}
 		switch(hamSelect){
 
 			case 0:
