@@ -58,7 +58,7 @@ geo_pit_droid = Creature:new {
 	},
 	weapons = {"canyon_corsair_weapons"},
 	conversationTemplate = "",
-	attacks = merge(carbineermaster ,swordsmanmaster ,brawlermaster)
+	attacks = merge(carbineermaster,swordsmanmaster,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(geo_pit_droid, "geo_pit_droid")

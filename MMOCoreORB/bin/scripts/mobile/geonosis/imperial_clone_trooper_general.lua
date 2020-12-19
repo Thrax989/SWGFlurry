@@ -66,7 +66,7 @@ imperial_clone_trooper_general = Creature:new {
 	},
 	weapons = {"geonosian_mercenary_weapons"},
 	conversationTemplate = "",
-	attacks = merge(riflemanmaster ,pistoleermaster, fencermaster)
+	attacks = merge(riflemanmaster,pistoleermaster,fencermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(imperial_clone_trooper_general, "imperial_clone_trooper_general")

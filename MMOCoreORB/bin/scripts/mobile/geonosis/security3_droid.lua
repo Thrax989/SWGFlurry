@@ -58,7 +58,7 @@ security3_droid = Creature:new {
 	},
 	weapons = {"canyon_corsair_weapons"},
 	conversationTemplate = "",
-	attacks = merge(carbineermaster ,swordsmanmaster ,brawlermaster)
+	attacks = merge(carbineermaster,swordsmanmaster,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(security3_droid, "security3_droid")

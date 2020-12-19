@@ -59,7 +59,7 @@ neutral_clone_trooper = Creature:new {
 	},
 	weapons = {"geonosian_mercenary_weapons"},
 	conversationTemplate = "",
-	attacks = merge(riflemanmaster ,pistoleermaster, fencermaster)
+	attacks = merge(riflemanmaster,pistoleermaster,fencermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(neutral_clone_trooper, "neutral_clone_trooper")
