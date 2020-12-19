@@ -2,15 +2,15 @@ neutral_clone_trooper_general = Creature:new {
 	customName = "Clone Trooper General \\#ff0000[Neutral]",
 	socialGroup = "",
 	faction = "",
-	level = 100,
-	chanceHit = 1.0,
-	damageMin = 500,
-	damageMax = 1500,
-	baseXp = 128549,
+	level = 300,
+	chanceHit = 50.0,
+	damageMin = 3000,
+	damageMax = 4200,
+	baseXp = 10000,
 	baseHAM = 100000,
-	baseHAMmax = 110000,
-	armor = 3,
-	resists = {90,90,90,90,90,90,90,90,50},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
+	baseHAMmax = 120000,
+	armor = 1,
+	resists = {170,170,170,170,170,170,170,140,150},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -24,26 +24,49 @@ neutral_clone_trooper_general = Creature:new {
 	creatureBitmask = KILLER,
 	optionsBitmask = AIENABLED,
 	diet = NONE,
-	scale = 1.0,
+	scale = 1.1,
 	templates = {"object/mobile/halloween_skeleton_1.iff"},
 	outfit = "clone_trooper_neutral_general_outfit",
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
+				{group = "death_watch_bunker_lieutenants", chance = 10000000},
 			},
-			lootChance = 10000000
-		},	
+			lootChance = 3000000
+		},		
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
+				{group = "trash_common", chance = 7000000},
+ 				{group = "trash_rare", chance = 3000000},
 			},
 			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "geonosian_common", chance = 2000000},   
+			},
+			lootChance = 10000000
+		},
+ 		{
+			groups = {
+				{group = "death_watch_bunker_ingredient_protective", chance = 5000000},
+ 				{group = "death_watch_bunker_ingredient_binary", chance = 5000000},
+			},
+			lootChance = 500000
+		},    
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 4000000
 		}
 	},
-	weapons = {"pirate_weapons_heavy"},
+	weapons = {"geonosian_mercenary_weapons"},
 	conversationTemplate = "",
-	attacks = merge(lightsabermaster,forcepowermaster)
+	attacks = merge(riflemanmaster ,pistoleermaster, fencermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(neutral_clone_trooper_general, "neutral_clone_trooper_general")
