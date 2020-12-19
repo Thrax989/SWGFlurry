@@ -1,7 +1,7 @@
 rebel_clone_trooper = Creature:new {
 	customName = "Clone Trooper \\#ff0000[Rebel]",
-	socialGroup = "",
-	faction = "",
+	socialGroup = "rebel",
+	faction = "rebel",
 	level = 300,
 	chanceHit = 50.0,
 	damageMin = 2700,

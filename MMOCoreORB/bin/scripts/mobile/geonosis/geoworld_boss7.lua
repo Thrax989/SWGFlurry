@@ -156,7 +156,7 @@ geoworld_boss7 = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {},
+	weapons = {"creature_spit_spray_yellow"},
 	conversationTemplate = "",
 	attacks = {
 		{"creatureareaknockdown","stateAccuracyBonus=90"},

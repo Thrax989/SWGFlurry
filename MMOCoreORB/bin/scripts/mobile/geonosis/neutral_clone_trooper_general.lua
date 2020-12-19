@@ -1,7 +1,7 @@
 neutral_clone_trooper_general = Creature:new {
 	customName = "Clone Trooper General \\#ff0000[Neutral]",
-	socialGroup = "",
-	faction = "",
+	socialGroup = "lok_mercenaries",
+	faction = "lok_mercenaries",
 	level = 300,
 	chanceHit = 50.0,
 	damageMin = 3000,

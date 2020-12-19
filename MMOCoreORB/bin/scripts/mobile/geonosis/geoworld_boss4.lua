@@ -156,7 +156,7 @@ geoworld_boss4 = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {},
+	weapons = {"creature_spit_particle_beam"},
 	conversationTemplate = "",
 	attacks = {
 		{"creatureareaknockdown","stateAccuracyBonus=90"},

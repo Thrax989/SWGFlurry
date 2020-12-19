@@ -1,7 +1,7 @@
 imperial_clone_trooper = Creature:new {
 	customName = "Clone Trooper \\#ff0000[Imperial]",
-	socialGroup = "",
-	faction = "",
+	socialGroup = "imperial",
+	faction = "imperial",
 	level = 300,
 	chanceHit = 50.0,
 	damageMin = 2700,
