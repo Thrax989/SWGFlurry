@@ -86,7 +86,7 @@ public:
 		}
 
 		//int dotType = 1;
-		int value = 100 * expUsed;
+		int value = 80 * expUsed;
 		weaponObj->addDotType(finalType);
 		weaponObj->addDotAttribute(hamValue);
 		weaponObj->addDotStrength((value / 2));
