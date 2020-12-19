@@ -55,7 +55,7 @@ sentry_droid = Creature:new {
 			},
 			lootChance = 3500000
 		}
-	},,
+	},
 	conversationTemplate = "",
 	defaultAttack = "defaultdroidattack",
 	defaultWeapon = "object/weapon/ranged/vehicle/vehicle_atst_ranged.iff",
