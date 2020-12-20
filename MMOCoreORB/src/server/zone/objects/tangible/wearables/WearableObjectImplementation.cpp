@@ -165,7 +165,7 @@ void WearableObjectImplementation::applyAttachment(CreatureObject* player,
 			removeSkillModsFrom(player);
 		}
 
-		if (wearableSkillMods.size() < 6) {
+		if (wearableSkillMods.size() < 8) {
 			HashTable<String, int>* mods = attachment->getSkillMods();
 			HashTableIterator<String, int> iterator = mods->iterator();
 
