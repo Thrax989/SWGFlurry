@@ -2242,7 +2242,7 @@ void CreatureObjectImplementation::dismount() {
 }
 
 float CreatureObjectImplementation::calculateBFRatio() {
-	if (shockWounds <= 250)
+	if (shockWounds <= 500)
 		return 1.f;
 
 	float bfRatio = (1250.f - (float)shockWounds) / 1000.f;
