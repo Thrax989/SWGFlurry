@@ -1182,3 +1182,14 @@ ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_shared_victor_ba
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+object_draft_schematic_weapon_shared_lightsaber_polearm_gen5_single = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/weapon/shared_lightsaber_polearm_gen5_single.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_shared_lightsaber_polearm_gen5_single, "object/draft_schematic/weapon/shared_lightsaber_polearm_gen5_single.iff")
+------------------------------------------------------------------------------------------------------------------------------------
