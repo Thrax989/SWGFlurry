@@ -28,7 +28,7 @@ object_draft_schematic_weapon_lightsaber_polearm_gen5_single = object_draft_sche
    contribution = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_pike_s1.iff",
+   targetTemplate = "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen5_single_blade.iff",
 
    additionalTemplates = {
              }
