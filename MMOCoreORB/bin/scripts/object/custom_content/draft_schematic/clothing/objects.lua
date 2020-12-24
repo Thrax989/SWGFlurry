@@ -1115,15 +1115,3 @@ object_draft_schematic_clothing_shared_clothing_robe_67 = SharedDraftSchematicOb
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_robe_67, "object/draft_schematic/clothing/shared_clothing_robe_67.iff")
 ------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-------------------------------------------------------------------------------------------------------------------------------------
-
-
-object_draft_schematic_clothing_shared_clothing_belt_1 = SharedDraftSchematicObjectTemplate:new {
-	clientTemplateFileName = "object/draft_schematic/clothing/shared_clothing_belt_1.iff"
-}
-
-ObjectTemplates:addClientTemplate(object_draft_schematic_clothing_shared_clothing_belt_1, "object/draft_schematic/clothing/shared_belt_1.iff")
-------------------------------------------------------------------------------------------------------------------------------------
