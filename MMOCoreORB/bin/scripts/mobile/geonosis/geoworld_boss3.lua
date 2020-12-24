@@ -2,15 +2,16 @@ geoworld_boss3 = Creature:new {
 	customName = "Geonosis World Boss",
 	socialGroup = "",
 	faction = "",
-	level = 100,
-	chanceHit = 1.0,
-	damageMin = 500,
-	damageMax = 1500,
-	baseXp = 128549,
-	baseHAM = 100000,
-	baseHAMmax = 110000,
+	level = 300,
+	chanceHit = 90.0,
+	damageMin = 6500,
+	damageMax = 8500,
+	specialDamageMult = 2.0,  
+	baseXp = 30000,
+	baseHAM = 900000,
+	baseHAMmax = 1000000,
 	armor = 3,
-	resists = {90,90,90,90,90,90,90,90,50},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
+	resists = {180,180,180,180,180,140,180,180,160},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -30,20 +31,141 @@ geoworld_boss3 = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},	
 		{
 			groups = {
-				{group = "junk", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "donkuwah_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "mokk_elites", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "nonjedi_jewelry", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "armor_attachments", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "worldbosscrate", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
 			},
 			lootChance = 10000000
 		}
 	},
-	weapons = {"pirate_weapons_heavy"},
+	weapons = {"creature_spit_spray_red"},
 	conversationTemplate = "",
-	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)
+	attacks = {
+		{"creatureareaknockdown","stateAccuracyBonus=90"},
+		{"posturedownattack","stateAccuracyBonus=90"},
+    {"creatureareadisease","DiseaseChance=80"},
+    {"creatureareapoison","PoisonChance=80"},    
+    {"creatureareableeding","BleedChance=80"},    
+		{"creatureareacombo","stateAccuracyBonus=90"}
+	}
 }
 
 CreatureTemplates:addCreatureTemplate(geoworld_boss3, "geoworld_boss3")

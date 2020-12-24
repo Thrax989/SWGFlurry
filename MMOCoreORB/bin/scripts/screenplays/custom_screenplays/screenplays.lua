@@ -35,6 +35,9 @@
 
 --Factional
 
+--Geonosis
+includeFile("custom_screenplays/geonosis/geonosis_static_spawns.lua")
+
 --Hoth
 --includeFile("custom_screenplays/hoth/hoth_echo_base.lua")
 --includeFile("custom_screenplays/hoth/hoth_imp_base.lua")
@@ -65,7 +68,7 @@ includeFile("custom_screenplays/kashyyyk/kashyyykthreeleveltwoteleporter.lua")
 --Mandalore
 includeFile("custom_screenplays/mandalore/DarthCaedusCave.lua")
 --includeFile("custom_screenplays/mandalore/DarthCaedus.lua")
---includeFile("custom_screenplays/mandalore/MandalMotors.lua")
+includeFile("custom_screenplays/mandalore/MandalMotors.lua")
 --includeFile("custom_screenplays/mandalore/BoorkaTheHutt.lua")
 --includeFile("custom_screenplays/mandalore/ToborroTheHutt.lua")
 --includeFile("custom_screenplays/mandalore/LomPyke.lua") -- moved into TaungWarriorBunker 

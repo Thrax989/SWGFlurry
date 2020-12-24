@@ -172,7 +172,7 @@ public:
 			if (ghost->getAdminLevel() >= 15) {
 				customName << prototype->getDisplayedName() << " \\#00CC00(" << player->getFirstName() << ")\\#FFFFFF";
 			} else {
-				customName << prototype->getDisplayedName() <<  " (System Generated)";
+				customName << prototype->getDisplayedName() <<  " (Flurry)";
 			}
 			prototype->setCustomObjectName(customName.toString(), false);
 

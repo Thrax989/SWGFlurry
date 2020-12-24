@@ -73,7 +73,7 @@ public:
 				object->setCraftersName(name);
 
 				StringBuffer customName;
-				customName << object->getDisplayedName() <<  " (System Generated)";
+				customName << object->getDisplayedName() <<  " (Flurry)";
 
 				object->setCustomObjectName(customName.toString(), false);
 

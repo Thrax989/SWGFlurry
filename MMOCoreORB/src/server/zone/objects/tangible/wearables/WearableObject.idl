@@ -98,7 +98,7 @@ class WearableObject extends TangibleObject {
 	}
 
 	public abstract void addSkillMod(final int skillType, final string skillMod, int value, boolean notifyClient = true) {
-		if (wearableSkillMods.size() <= 6) {
+		if (wearableSkillMods.size() <= 8) {
 			wearableSkillMods.put(skillMod, value);
 			modsNotInSockets++;
 		}

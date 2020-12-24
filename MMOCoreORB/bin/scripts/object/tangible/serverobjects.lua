@@ -122,5 +122,6 @@ includeFile("tangible/vendor/serverobjects.lua")
 includeFile("tangible/veteran_reward/serverobjects.lua")
 includeFile("tangible/wearables/serverobjects.lua")
 includeFile("tangible/weather_object/serverobjects.lua")
+includeFile("tangible/holiday/life_day/serverobjects.lua")
 
 -- Server Objects
