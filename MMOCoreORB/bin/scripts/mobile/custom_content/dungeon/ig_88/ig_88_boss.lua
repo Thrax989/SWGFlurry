@@ -3,14 +3,14 @@ ig_88_boss = Creature:new {
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
-	chanceHit = 50.00,
-	damageMin = 250,
-	damageMax = 300,
-	baseXp = 9429,
+	chanceHit = 80.00,
+	damageMin = 3000,
+	damageMax = 4500,
+	baseXp = 20000,
 	baseHAM = 1000000,
 	baseHAMmax = 1250000,
 	armor = 3,
-	resists = {95,95,95,95,95,95,95,95,95},
+	resists = {40,95,95,95,95,95,95,95,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -26,7 +26,7 @@ ig_88_boss = Creature:new {
 	diet = HERBIVORE,
 	scale = 1.3,
 
-	templates = {"object/mobile/ig_88_rocket.iff"},
+	templates = {"object/mobile/ig88_upgrade.iff"},
 	lootGroups = {
 		{
 			groups = {
@@ -161,9 +161,15 @@ ig_88_boss = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"tusken_weapons"},
+	weapons = {"som_lava_cannon"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(commandomaster,marksmanmaster,tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,riflemanmaster,pistoleermaster)
+	attacks = {
+            {"intimidationattack","intimidationChance=100"},
+            {"flamecone1",""},
+            {"flamesingle1",""},
+            {"overchargeshot2",""}, 
+            {"pointblankarea1",""}
+     }       
 }
 
 CreatureTemplates:addCreatureTemplate(ig_88_boss, "ig_88_boss")
