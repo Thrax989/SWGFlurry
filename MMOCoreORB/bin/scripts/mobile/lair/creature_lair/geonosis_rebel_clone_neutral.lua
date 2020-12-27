@@ -3,11 +3,15 @@ geonosis_rebel_clone_neutral = Lair:new {
 	mobiles = {{"rebel_clone_trooper",1}},
 	bossMobiles = {{"rebel_clone_trooper_general",1}},
 	spawnLimit = 15,
-	buildingsVeryEasy = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
-	buildingsEasy = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
-	buildingsMedium = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
-	buildingsHard = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
-	buildingsVeryHard = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
+	buildingsVeryEasy = {"object/building/poi/anywhere_rebel_base_large_1.iff"},
+	buildingsEasy = {"object/building/poi/anywhere_rebel_base_large_1.iff"},
+	buildingsMedium = {"object/building/poi/anywhere_rebel_base_large_1.iff"},
+	buildingsHard = {"object/building/poi/anywhere_rebel_base_large_1.iff"},
+	buildingsVeryHard = {"object/building/poi/anywhere_rebel_base_large_1.iff"},
+	missionBuilding = "object/tangible/lair/base/objective_banner_rebel.iff",
+	mobType = "npc",
+	buildingType = "theater",
+	faction = "rebel"
 }
 
 addLairTemplate("geonosis_rebel_clone_neutral", geonosis_rebel_clone_neutral)
