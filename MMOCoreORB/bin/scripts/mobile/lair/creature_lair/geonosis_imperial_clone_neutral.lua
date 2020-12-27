@@ -3,11 +3,15 @@ geonosis_imperial_clone_neutral = Lair:new {
 	mobiles = {{"imperial_clone_trooper",1}},
 	bossMobiles = {{"imperial_clone_trooper_general",1}},
 	spawnLimit = 15,
-	buildingsVeryEasy = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
-	buildingsEasy = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
-	buildingsMedium = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
-	buildingsHard = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
-	buildingsVeryHard = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
+	buildingsVeryEasy = {"object/building/poi/lok_imperial_large2.iff","object/building/poi/anywhere_imperial_base_large_1.iff"},
+	buildingsEasy = {"object/building/poi/lok_imperial_large2.iff","object/building/poi/anywhere_imperial_base_large_1.iff"},
+	buildingsMedium = {"object/building/poi/lok_imperial_large2.iff","object/building/poi/anywhere_imperial_base_large_1.iff"},
+	buildingsHard = {"object/building/poi/lok_imperial_large2.iff","object/building/poi/anywhere_imperial_base_large_1.iff"},
+	buildingsVeryHard = {"object/building/poi/lok_imperial_large2.iff","object/building/poi/anywhere_imperial_base_large_1.iff"},
+	missionBuilding = "object/tangible/lair/base/objective_banner_imperial.iff",
+	mobType = "npc",
+	buildingType = "theater",
+	faction = "imperial"
 }
 
 addLairTemplate("geonosis_imperial_clone_neutral", geonosis_imperial_clone_neutral)
