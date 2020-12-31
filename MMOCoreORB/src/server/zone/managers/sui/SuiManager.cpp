@@ -2989,6 +2989,28 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						currentCity->addToCityTreasury(1000);
 						}
 			        }
+			} else if (templatePath == "asgard") {
+				if (!player->isInCombat() && player->getBankCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Asgard" );
+		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getBankCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
+ 				        	player->switchZone("geonosis", -28, 7, 1937);
+						player->subtractBankCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
+			        }
 //GRAY JEDI HOLOCRON QUEST END CHAPTER
 			} else if (templatePath == "switch_normal_loadout") {
 				if (!player->isInCombat() && player->getBankCredits() < 99) {
