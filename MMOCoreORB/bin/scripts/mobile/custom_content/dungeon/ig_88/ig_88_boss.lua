@@ -26,7 +26,7 @@ ig_88_boss = Creature:new {
 	diet = HERBIVORE,
 	scale = 1.3,
 
-	templates = {"object/mobile/ig88_upgrade.iff"},
+	templates = {"object/mobile/ep3/ep3_clone_relics_durge_droid_01.iff"},
 	lootGroups = {
 		{
 			groups = {

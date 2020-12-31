@@ -219,6 +219,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Mos Potatoes (5,000 Credits)", "mos_potatoes",
             "Sundari (5,000 Credits)", "pc_sundari_travel"
           },
+            "Geonosis",
+          {
+            "Asgard (5,000 Credits)", "asgard"
+          },
             "Talus",
           {
 			"Caladan (5,000 Credits)", "pc_caladan_travel",
