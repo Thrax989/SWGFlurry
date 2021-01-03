@@ -129,7 +129,6 @@ includeFile("tangible/loot/loot_schematic/throwpillow_schematic.lua")
 includeFile("tangible/loot/loot_schematic/tumble_blender_schematic.lua")
 includeFile("tangible/loot/loot_schematic/utensils_schematic.lua")
 -- testing pouch
-includeFile("tangible/loot/loot_schematic/schem_padawan_pouch.lua")
 includeFile("tangible/loot/loot_schematic/armor_jedi_belt_01_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_jedi_belt_02_schematic.lua")
 includeFile("tangible/loot/loot_schematic/armor_jedi_belt_03_schematic.lua") 
