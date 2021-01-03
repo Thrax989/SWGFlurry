@@ -72,7 +72,7 @@ object_draft_schematic_clothing_clothing_armor_jedi_belt_03 = object_draft_schem
    contribution = {100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   	targetTemplate = "object/tangible/wearables/armor/armor_jedi_belt_03.iff",
+   	targetTemplate = "object/tangible/wearables/backpack/padawan_pouch.iff",
 
 	skillMods = {},
 
