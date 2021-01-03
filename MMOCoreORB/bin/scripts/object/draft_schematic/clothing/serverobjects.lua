@@ -561,3 +561,6 @@ includeFile("draft_schematic/clothing/clothing_wke_skirt_s01.lua")
 includeFile("draft_schematic/clothing/clothing_wke_skirt_s02.lua")
 includeFile("draft_schematic/clothing/clothing_wke_skirt_s03.lua")
 includeFile("draft_schematic/clothing/clothing_wke_skirt_s04.lua")
+
+--testing pouch
+includeFile("draft_schematic/clothing/clothing_padawan_pouch.lua")

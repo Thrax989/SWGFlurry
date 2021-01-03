@@ -1306,6 +1306,9 @@ includeFile("items/dot_cleanse.lua")
 --Event Player Crate
 includeFile("items/eventplayer.lua")
 
+--Test padawan pouch
+includeFile("items/schematic_padawan_pouch.lua")
+
 
 --Normal Vehicle Deeds
 includeFile("items/vehicle/vehicle1.lua")
