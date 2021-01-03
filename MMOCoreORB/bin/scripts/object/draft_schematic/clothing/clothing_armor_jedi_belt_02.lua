@@ -74,8 +74,12 @@ object_draft_schematic_clothing_clothing_armor_jedi_belt_02 = object_draft_schem
 
    	targetTemplate = "object/tangible/wearables/backpack/padawan_pouch.iff",
 
-	skillMods = {},
-
+	skillMods = {
+        {"resistance_bleeding", 25},
+        {"slope_move", 25},
+        {"melee_defense", 25},
+        {"ranged_defense", 25},
+		},
    	additionalTemplates = {},
 
 }
