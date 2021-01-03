@@ -563,4 +563,8 @@ includeFile("draft_schematic/clothing/clothing_wke_skirt_s03.lua")
 includeFile("draft_schematic/clothing/clothing_wke_skirt_s04.lua")
 
 --testing pouch
-includeFile("draft_schematic/clothing/clothing_padawan_pouch.lua")
+--includeFile("draft_schematic/clothing/clothing_padawan_pouch.lua")
+--Jedi Belt
+includeFile("draft_schematic/clothing/clothing_armor_jedi_belt_01.lua")
+includeFile("draft_schematic/clothing/clothing_armor_jedi_belt_02.lua")
+includeFile("draft_schematic/clothing/clothing_armor_jedi_belt_03.lua")
