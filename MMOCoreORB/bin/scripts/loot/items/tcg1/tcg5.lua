@@ -1,8 +1,8 @@
 tcg5 = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Nuna Ball Adertisment",
-	directObjectTemplate = "object/tangible/tcg/series1/consumable_nuna_ball_advertisement.iff",
+	customObjectName = "Bas Relief",
+	directObjectTemplate = "object/tangible/tcg/series1/decorative_bas_relief.iff",
 	craftingValues = {
 	},
 	customizationStringNames = {},
