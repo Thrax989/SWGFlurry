@@ -2499,4 +2499,8 @@ schematics = {
 	{path="object/draft_schematic/clothing/clothing_robe_66.iff"},
 	{path="object/draft_schematic/clothing/clothing_robe_67.iff"},
 	{path="object/draft_schematic/weapon/lightsaber_polearm_gen5_single.iff"},
+	--Jedi Belt
+	{path="object/draft_schematic/clothing/clothing_armor_jedi_belt_01.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_jedi_belt_02.iff"},
+	{path="object/draft_schematic/clothing/clothing_armor_jedi_belt_03.iff"},
 };
