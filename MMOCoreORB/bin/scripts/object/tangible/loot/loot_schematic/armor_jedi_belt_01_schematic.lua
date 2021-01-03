@@ -45,7 +45,7 @@ templateType = LOOTSCHEMATIC,
 	objectMenuComponent = "LootSchematicMenuComponent",
 	attributeListComponent = "LootSchematicAttributeListComponent",
 	requiredSkill = "crafting_armorsmith_master",
-	targetDraftSchematic = "object/draft_schematic/clothing/clothing_padawan_pouch.iff",
+	targetDraftSchematic = "object/draft_schematic/clothing/clothing_armor_jedi_belt_01.iff",
 	targetUseCount = 1
 }
 
