@@ -45,7 +45,7 @@ object_draft_schematic_clothing_clothing_armor_jedi_belt_03 = object_draft_schem
 
    	templateType = DRAFTSCHEMATIC,
 
-   	customObjectName = "Relic Jedi Belt : Soresu",
+   	customObjectName = "Relic Gathering Belt : Harvest",
 
    	craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    	complexity = 20, 
@@ -75,10 +75,12 @@ object_draft_schematic_clothing_clothing_armor_jedi_belt_03 = object_draft_schem
    	targetTemplate = "object/tangible/wearables/backpack/padawan_pouch.iff",
 
 	skillMods = {
-        {"resistance_bleeding", 25},
+        {"creature_harvesting", 25},
         {"slope_move", 25},
-        {"melee_defense", 25},
-        {"ranged_defense", 25},
+        {"dna_harvesting", 25},
+        {"surveying", 25},
+        {"luck", 25},
+        {"foraging", 25},        
 		},
    	additionalTemplates = {},
 }

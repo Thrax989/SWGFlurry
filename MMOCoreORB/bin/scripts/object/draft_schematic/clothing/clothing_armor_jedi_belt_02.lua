@@ -45,7 +45,7 @@ object_draft_schematic_clothing_clothing_armor_jedi_belt_02 = object_draft_schem
 
    	templateType = DRAFTSCHEMATIC,
 
-   	customObjectName = "Relic Jedi Belt : Makasi",
+   	customObjectName = "Relic Combat Belt : Resist",
 
    	craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    	complexity = 20, 
@@ -76,9 +76,11 @@ object_draft_schematic_clothing_clothing_armor_jedi_belt_02 = object_draft_schem
 
 	skillMods = {
         {"resistance_bleeding", 25},
-        {"slope_move", 25},
-        {"melee_defense", 25},
-        {"ranged_defense", 25},
+        {"resistance_disease", 25},
+        {"resistance_fire", 25},
+        {"resistance_poison", 25},
+        {"combat_bleeding_defense", 25},
+        {"luck", 25},        
 		},
    	additionalTemplates = {},
 
