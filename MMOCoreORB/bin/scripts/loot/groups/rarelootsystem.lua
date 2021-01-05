@@ -5,10 +5,9 @@ rarelootsystem  = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "rareloot1", weight = 2500000},
-		{itemTemplate = "rareloot2", weight = 2500000},
-		{itemTemplate = "rareloot3", weight = 2500000},
-		{itemTemplate = "rareloot4", weight = 2500000},
+		{itemTemplate = "rareloot1", weight = 6000000},
+		{itemTemplate = "rareloot2", weight = 3000000},
+		{itemTemplate = "rareloot3", weight = 1000000},
 	}
 }
 
