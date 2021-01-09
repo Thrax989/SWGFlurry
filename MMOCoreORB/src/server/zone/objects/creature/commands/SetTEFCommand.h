@@ -4,6 +4,14 @@
 
 #ifndef SETTEFCOMMAND_H_
 #define SETTEFCOMMAND_H_
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/building/BuildingObject.h"
+#include "server/zone/packets/object/DataTransform.h"
+#include "server/zone/packets/object/DataTransformWithParent.h"
+#include "templates/appearance/PortalLayout.h"
+#include "templates/appearance/FloorMesh.h"
+#include "templates/appearance/MeshAppearanceTemplate.h"
+#include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
 
 class SetTEFCommand : public QueueCommand {
 public:
@@ -26,93 +34,36 @@ public:
 		if (ghost == NULL)
 			return GENERALERROR;
 
-		String dir;
-		int degrees = 0;
-
-		// Alternate Rotation Style: Yaw, Pitch, Roll and Reset the rotation. Does not have radial menu options.
-		// Note: The SWG 14.1 style rotation can still be used, with the commands and radial menu.
-		try {
-			UnicodeTokenizer tokenizer(arguments.toString());
-			tokenizer.getStringToken(dir);
-			degrees = tokenizer.getIntToken();
-
-			dir = dir.toLowerCase();
-
-			if (dir != "left" && dir != "right" && dir != "yaw" && dir != "roll" && dir != "pitch" && dir != "reset")
-				throw Exception();
-
-		} catch (Exception& e) {
-			//creature->sendSystemMessage("@player_structure:formet_rotratefurniture_degrees"); //Format: /rotateFurniture <LEFT/RIGHT> <degrees>
-			creature->sendSystemMessage("Standard Format: /rotateFurniture <LEFT/RIGHT> <degrees>. Degrees can be 1 to 180 when using this format.");
-			creature->sendSystemMessage("Enhanced Format: /rotateFurniture <YAW/PITCH/ROLL> <degrees>. Degrees can be -360 to 360 when using this format.");
-			creature->sendSystemMessage("Reset Rotation to Defaults: /rotateFurniture reset 1");
-			return INVALIDPARAMETERS;
-		}
-
-		if ((dir == "left" || dir == "right") && (degrees < 1 || degrees > 180)) {
-		        creature->sendSystemMessage("Using Standard Format: The amount to rotate must be between 1 and 180.");
-			return INVALIDPARAMETERS;
-		}
-
-		if ((dir == "roll" || dir == "pitch" || dir == "yaw" ) && (degrees < -360 || degrees > 360)) {
-			creature->sendSystemMessage("Using Enhanced Format: The amount to rotate must be between -360 and 360.");
-			return INVALIDPARAMETERS;
-		}
-
-		ZoneServer* zoneServer = creature->getZoneServer();
-		ManagedReference<SceneObject*> obj = zoneServer->getObject(target);
+		ManagedReference<SceneObject*> obj = server->getZoneServer()->getObject(target);
 
 		if (obj == NULL || !obj->isTangibleObject() || obj->isPlayerCreature() || obj->isPet()) {
-			if (ghost->getAdminLevel() >= 15) {
-				creature->sendSystemMessage("Ingoring Movement Check - Trusted Players Only"); //What do you want to move?
+			if (ghost->getAdminLevel() >= 15 && obj != NULL) {
+				creature->sendSystemMessage("Ingoring Movement Check - God"); //What do you want to move?
 			} else {
-				creature->sendSystemMessage("@player_structure:rotate_what"); //What do you want to rotate?
+				creature->sendSystemMessage("@player_structure:move_what"); //What do you want to move?
 				return GENERALERROR;
 			}
 		}
 
-		ManagedReference<SceneObject*> rootParent = creature->getRootParent();
+		ManagedReference<SceneObject*> rootParent = obj->getRootParent();
+		ManagedReference<SceneObject*> creatureParent = creature->getRootParent();
 
-		BuildingObject* buildingObject = rootParent != NULL ? (rootParent->isBuildingObject() ? cast<BuildingObject*>( rootParent.get()) : NULL) : NULL;
-		EventPerkDataComponent* data = cast<EventPerkDataComponent*>(obj->getDataObjectComponent()->get());
-
-		if (ghost->getAdminLevel() >= 15 && buildingObject == NULL) {
-			creature->sendSystemMessage("World Edit - God Mode"); //World Edit God Mode
-		} else {
-			if (data != NULL) {
-				EventPerkDeed* deed = data->getDeed();
-
-				if (deed == NULL) {
-					return GENERALERROR;
-				}
-
-				ManagedReference<CreatureObject*> owner = deed->getOwner().get();
-
-				if (owner != creature) {
-					return GENERALERROR;
-				}
-
-			} else if (buildingObject == NULL) {
+		if (creatureParent == NULL || !creatureParent->isBuildingObject()) {
+			if (ghost->getAdminLevel() >= 15) {
+				creature->sendSystemMessage("Ingoring Building Check - God"); //What do you want to move?
+			} else {
 				creature->sendSystemMessage("@player_structure:must_be_in_building"); //You must be in a building to do that.
 				return GENERALERROR;
+				BuildingObject* buildingObject = cast<BuildingObject*>( creatureParent.get());
 
-			} else {
-				if (obj->isVendor() && !obj->checkContainerPermission(creature, ContainerPermissions::MOVEVENDOR)) {
-					return GENERALERROR;
-				}
-
-				if (!obj->isVendor() && !buildingObject->isOnAdminList(creature)) {
-					creature->sendSystemMessage("@player_structure:must_be_admin"); //You must be a building admin to do that.
-					return GENERALERROR;
-				}
-
-				if (obj->getRootParent() != buildingObject || buildingObject->containsChildObject(obj)) {
-					if (ghost->getAdminLevel() >= 15) {
-						creature->sendSystemMessage("Ingoring Movement Check - Trusted Players Only"); //What do you want to move?
-					} else {
-						creature->sendSystemMessage("@player_structure:rotate_what"); //What do you want to rotate?
+				if (buildingObject == NULL || obj->getRootParent() != buildingObject || buildingObject->containsChildObject(obj)) {
+						creature->sendSystemMessage("@player_structure:move_what"); //What do you want to move?
 						return GENERALERROR;
-					}
+				}
+
+				if (buildingObject != rootParent || !buildingObject->isOnAdminList(creature)) {
+						creature->sendSystemMessage("@player_structure:must_be_admin"); //You must be a building admin to do that.
+						return GENERALERROR;
 				}
 
 				if (buildingObject->isGCWBase()) {
@@ -122,30 +73,101 @@ public:
 			}
 		}
 
-		if (dir == "right")
-			obj->rotate(-degrees);
-		else if (dir == "left"){
-		  obj->rotate(degrees);
+		if (obj->isVendor()) {
+			creature->sendSystemMessage("@player_structure:cant_move_vendor"); // To move a vendor, pick it up and drop it again at the new location.
+			return GENERALERROR;
 		}
-		else if (dir == "yaw"){
-		  obj->rotate(degrees);
+
+		
+
+		String dir;
+		float dist = 0.f;
+
+		try {
+			UnicodeTokenizer tokenizer(arguments);
+			tokenizer.getStringToken(dir);
+			dir = dir.toLowerCase();
+
+			if (Character::isDigit(dir.charAt(0)))
+				throw Exception("Please specify the name of the object before the direction and distance.");
+
+			if (ghost->getAdminLevel() >= 15) {
+				if (dir != "up" && dir != "down" && dir != "forward" && dir != "back" && dir != "x" && dir != "z" && dir != "y")
+				throw Exception("@player_structure:format_movefurniture_distance"); //Format: /moveFurniture <FORWARD/BACK/UP/DOWN> <distance>
+			} else {
+				if (dir != "up" && dir != "down" && dir != "forward" && dir != "back")
+				throw Exception("@player_structure:format_movefurniture_distance"); //Format: /moveFurniture <FORWARD/BACK/UP/DOWN> <distance>
+			}
+
+			dist = tokenizer.getIntToken();
+
+			if (dist < 1.f || dist > 500.f) {
+				if (ghost->getAdminLevel() >=15) {
+					creature->sendSystemMessage("Ingoring Limitation - GOD"); // God Mode - Ignoring Limitation.
+				} else {
+					throw Exception("@player_structure:movefurniture_params"); //The amount to move must be between 1 and 500.
+				}
+			}
+
+		} catch (ArrayIndexOutOfBoundsException& e) {
+			throw Exception("@player_structure:format_movefurniture_distance"); //Format: /moveFurniture <FORWARD/BACK/UP/DOWN> <distance>
+			return INVALIDPARAMETERS;
+
+		} catch (Exception& e) {
+			creature->sendSystemMessage(e.getMessage());
+			return INVALIDPARAMETERS;
 		}
-		else if (dir == "pitch"){
-		  obj->rotateYaxis(degrees);
+
+		float degrees = creature->getDirectionAngle();
+		float radians = Math::deg2rad(degrees);
+
+		if (dir != "x" && dir != "z" && dir != "y") {
+			dist /= 100.0f;
 		}
-		else if (dir == "roll"){
-		  obj->rotateXaxis(degrees);
+
+		float offsetX = dist * sin(radians);
+		float offsetY = dist * cos(radians);
+
+		float x = obj->getPositionX();
+		float y = obj->getPositionY();
+		float z = obj->getPositionZ();
+
+		if (dir == "forward") {
+			x += (offsetX);
+			y += (offsetY);
+		} else if (dir == "back") {
+			x -= (offsetX);
+			y -= (offsetY);
+		} else if (dir == "up") {
+			z += dist;
+		} else if (dir == "down") {
+			z -= dist;
+		} else if (dir == "x") {
+			x = dist;
+		} else if (dir == "z") {
+			z = dist;
+		} else if (dir == "y") {
+			y = dist;
 		}
-		else if (dir == "reset"){
-		  obj->setDirection(1, 0, 0, 0);
+
+		Vector3 endPoint(x, y, z);
+
+		if (!checkCollision(obj, endPoint)) {
+			if (ghost->getAdminLevel() >= 15) {
+				creature->sendSystemMessage("Ingoring Collision Check - Trusted Players Only"); //That is not a valid location.
+			} else {
+				creature->sendSystemMessage("@player_structure:not_valid_location"); //That is not a valid location.
+				return GENERALERROR;
+			}
 		}
 
 		obj->incrementMovementCounter();
 
 		if (obj->getParent() != NULL)
-			obj->teleport(obj->getPositionX(), obj->getPositionZ(), obj->getPositionY(), obj->getParent().get()->getObjectID());
+			obj->teleport(x, z, y, obj->getParent().get()->getObjectID());
 		else
-			obj->teleport(obj->getPositionX(), obj->getPositionZ(), obj->getPositionY());
+			obj->teleport(x, z, y);
+
 
 		return SUCCESS;
 	}
