@@ -27,6 +27,8 @@
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/packets/object/ShowFlyText.h"
 #include "server/zone/managers/frs/FrsManager.h"
+#include "server/zone/objects/tangible/powerup/PowerupObject.h"
+#include "server/zone/objects/tangible/weapon/WeaponObject.h"
 
 #define COMBAT_SPAM_RANGE 85
 
@@ -374,6 +376,16 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getMaxRange() >= 65) {
   		Locker locker(weapon);
  		weapon->setMaxRange(64);
+	}
+
+	if (attacker->isPlayerCreature() && weapon->isFlameThrower()) {
+  		Locker locker(weapon);
+		ManagedReference<PowerupObject*> pup = weapon->removePowerup();
+		if (pup != nullptr) {
+			Locker puplocker(pup);
+			pup->destroyObjectFromWorld(true);
+			pup->destroyObjectFromDatabase(true);
+		}
 	}
 
 /*	//weapon ap checks
