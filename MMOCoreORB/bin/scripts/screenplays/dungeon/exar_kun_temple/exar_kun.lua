@@ -51,6 +51,10 @@ end
 --Exar Has Spawned
 -----------------------
 function exar_kunScreenplay:spawnMobiles()
+		spawnMobile("dungeon2", "trainer_combatjedigrayelderrankcouncil", 0, -46.5157, 0.8, -37.9568, 44, 14200818)
+		spawnMobile("dungeon2", "trainer_combatjedigrayelderrank", 0, -47.4761, 0.8, -36.6414, 45, 14200818)
+		spawnMobile("dungeon2", "trainer_combatjedigrayelder", 0, -48.4883, 0.8, -35.2388, 50, 14200818)
+		spawnMobile("dungeon2", "trainer_combatjedigray", 0, -49.8667, 0.8, -33.3286, 52, 14200818)
 		spawnMobile("dungeon2", "exar_guard", 1800, -18.336, 0.230914, -90.2677, 353, 14200873)
 		spawnMobile("dungeon2", "exar_guard", 1800, -5.34595, 0.230444, -90.253, 354, 14200873)
 		spawnMobile("dungeon2", "exar_guard", 1800, 8.63837, -0.0594431, -78.3088, 279, 14200873)
