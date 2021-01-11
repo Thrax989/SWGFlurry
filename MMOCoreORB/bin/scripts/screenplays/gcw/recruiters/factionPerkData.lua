@@ -79,7 +79,7 @@ rebelRewardData = {
 	hirelingList = {
 		"rebel_trooper", "senior_specforce_heavy_weapons_specialist", "senior_specforce_infiltrator", "senior_specforce_marine", "senior_specforce_pathfinder", "senior_specforce_technician",
 		"senior_specforce_urban_guerrilla", "senior_specforce_wilderness_fighter", "specforce_heavy_weapons_specialist", "specforce_infiltrator", "specforce_interrogator", "specforce_marine",
-		"specforce_procurement_specialist", "specforce_technician", "specforce_wilderness_operative", "rebel_specforce_guerrilla", "acklay", "death_watch_black_sun_assassin", "droideka", "death_watch_s_battle_droid", "nightsister_elder", "death_watch_ghost", "atxt"
+		"specforce_procurement_specialist", "specforce_technician", "specforce_wilderness_operative", "rebel_specforce_guerrilla", "acklay", "death_watch_black_sun_assassin", "droideka", "death_watch_s_battle_droid", "nightsister_elder", "death_watch_ghost", "atxt", "dark_adept"
 	},
 
 	hirelings = {
@@ -106,6 +106,7 @@ rebelRewardData = {
 		nightsister_elder = { type=factionRewardType.hireling, display="@mob/creature_names:nightsister_elder", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="nightsister_elder", cost=90450},
 		death_watch_ghost = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_dthwatch_grey", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_ghost", cost=90450},
 		atxt = { type=factionRewardType.hireling, display="@mob/creature_names:at_st", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="atxt", cost=9450},
+		dark_adept = { type=factionRewardType.hireling, display="@mob/creature_names:dark_adept", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="dark_adept", cost=10000000},
 	}
 }
 
@@ -201,7 +202,7 @@ imperialRewardData = {
 
 	hirelingList = {
 		"assault_trooper", "bombardier", "command_security_guard", "compforce_trooper", "dark_trooper", "gunner", "imperial_private", "imperial_trooper", "sand_trooper", "scout_trooper",
-		"storm_commando", "stormtrooper", "stormtrooper_bombardier", "stormtrooper_medic", "stormtrooper_rifleman", "stormtrooper_sniper", "swamp_trooper", "at_st", "acklay", "death_watch_black_sun_assassin", "droideka", "nightsister_elder", "death_watch_s_battle_droid", "death_watch_ghost"
+		"storm_commando", "stormtrooper", "stormtrooper_bombardier", "stormtrooper_medic", "stormtrooper_rifleman", "stormtrooper_sniper", "swamp_trooper", "at_st", "acklay", "death_watch_black_sun_assassin", "droideka", "nightsister_elder", "death_watch_s_battle_droid", "death_watch_ghost", "dark_adept"
 	},
 
 	hirelings = {
@@ -229,5 +230,6 @@ imperialRewardData = {
 		nightsister_elder = { type=factionRewardType.hireling, display="@mob/creature_names:nightsister_elder", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="nightsister_elder", cost=90450},
 		death_watch_s_battle_droid = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_super_battle_droid", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_s_battle_droid", cost=90450},
 		death_watch_ghost = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_dthwatch_grey", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_ghost", cost=90450},
+		dark_adept = { type=factionRewardType.hireling, display="@mob/creature_names:dark_adept", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_ghost", cost=10000000},
 	},
 }
