@@ -34,11 +34,11 @@ public:
 			ManagedReference<SceneObject* > targetObject =
 					server->getZoneServer()->getObject(target);
 
-			ManagedReference<CreatureObject*> player = NULL;
+			ManagedReference<CreatureObject*> player = nullptr;
 
 			StringTokenizer args(arguments.toString());
 
-			if(targetObject == NULL || !targetObject->isPlayerCreature()) {
+			if(targetObject == nullptr || !targetObject->isPlayerCreature()) {
 
 				String firstName;
 				if(args.hasMoreTokens()) {
@@ -50,7 +50,7 @@ public:
 				player = cast<CreatureObject*>( targetObject.get());
 			}
 
-			if (player == NULL) {
+			if (player == nullptr) {
 				creature->sendSystemMessage("invalid arguments for command:  /findmytrainer <firstname> <reset>");
 				return GENERALERROR;
 			}
@@ -59,8 +59,8 @@ public:
 			args.getStringToken(action);
 			if (action == "reset") {
 				PlayerObject* playerObject = player->getPlayerObject();
-				if (playerObject->getJediState() < 2 || !player->hasSkill("force_title_jedi_rank_02"))
-						return GENERALERROR;
+				if (playerObject->getJediState() < 1)
+				return GENERALERROR;
 				setJediTrainer(playerObject);
 				creature->sendSystemMessage("Target player jedi skill trainer has been updated");
 				player->sendSystemMessage("Your jedi skill trainer has been updated.  Use /findmytrainer for the new location.");
