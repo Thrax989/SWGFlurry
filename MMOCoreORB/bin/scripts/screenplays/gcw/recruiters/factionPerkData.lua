@@ -99,7 +99,6 @@ rebelRewardData = {
 		specforce_technician = { type=factionRewardType.hireling, display="@mob/creature_names:specforce_technician", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="specforce_technician", cost=375},
 		specforce_wilderness_operative = { type=factionRewardType.hireling, display="@mob/creature_names:specforce_wilderness_operative", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="specforce_wilderness_operative", cost=375},
 		rebel_specforce_guerrilla = { type=factionRewardType.hireling, display="@mob/creature_names:rebel_specforce_guerrilla", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="rebel_specforce_urban_guerrilla", cost=375},
-		atxt = { type=factionRewardType.hireling, display="@mob/creature_names:at_st", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="atxt", cost=9450},
 		acklay = { type=factionRewardType.hireling, display="@mob/creature_names:geonosian_acklay_bunker_boss", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="acklay", cost=19450},
 		death_watch_black_sun_assassin = { type=factionRewardType.hireling, display="@mob/creature_names:mand_bunker_blksun_assassin", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="death_watch_black_sun_assassin", cost=40450},
 		droideka = { type=factionRewardType.hireling, display="@mob/creature_names:droideka", item="object/intangible/pet/pet_control.iff", controlledObjectTemplate="droideka", cost=19450},
@@ -202,7 +201,7 @@ imperialRewardData = {
 
 	hirelingList = {
 		"assault_trooper", "bombardier", "command_security_guard", "compforce_trooper", "dark_trooper", "gunner", "imperial_private", "imperial_trooper", "sand_trooper", "scout_trooper",
-		"storm_commando", "stormtrooper", "stormtrooper_bombardier", "stormtrooper_medic", "stormtrooper_rifleman", "stormtrooper_sniper", "swamp_trooper", "at_st", "at_at", "acklay", "death_watch_black_sun_assassin", "droideka", "nightsister_elder", "death_watch_s_battle_droid", "death_watch_ghost"
+		"storm_commando", "stormtrooper", "stormtrooper_bombardier", "stormtrooper_medic", "stormtrooper_rifleman", "stormtrooper_sniper", "swamp_trooper", "at_st", "acklay", "death_watch_black_sun_assassin", "droideka", "nightsister_elder", "death_watch_s_battle_droid", "death_watch_ghost"
 	},
 
 	hirelings = {
