@@ -85,7 +85,7 @@ public:
 		int intCurrentFaction = targetPlayer->getFactionStanding(faction);
 		int factionDif = intCurrentFaction - factionValue;
 
-		if ( factionValue >= -5000 && factionValue <= 100000 && factionDif != 0) {
+		if ( factionValue >= -5000 && factionValue <= 20000000 && factionDif != 0) {
 			if ( factionValue > intCurrentFaction)
 				targetPlayer->increaseFactionStanding(faction,factionValue-intCurrentFaction);
 			else
