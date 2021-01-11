@@ -93,7 +93,7 @@ public:
 			Locker locker(targetObj);
 
 			SkillManager* skillManager = SkillManager::instance();
-			SkillList* skillList = targetObj->getSkillList();
+			const SkillList* skillList = targetObj->getSkillList();
                         StringBuffer body;
 
 			if (skillList == nullptr){
