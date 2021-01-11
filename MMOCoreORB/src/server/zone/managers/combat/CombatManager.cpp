@@ -1807,7 +1807,10 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 			return HIT; // no secondary defenses
 
 		// add in a random roll
-		targetDefense += System::random(199) + 1;
+		if (def == "block")
+			targetDefense += Math::max((System::random(199) + 1), (System::random(199) + 1));
+		else
+			targetDefense += System::random(199) + 1;
 
 		//TODO: posture defense (or a simplified version thereof: +10 standing, -20 prone, 0 crouching) might be added in to this calculation, research this
 		//TODO: dodge and counterattack might get a  +25 bonus (even when triggered via DA), research this
