@@ -43,6 +43,12 @@ rare_force4 = Creature:new {
 		},
 		{
 			groups = {
+				{group = "jedi_belt_group", chance = 10000000},
+			},
+			lootChance = 300000
+		},    
+		{
+			groups = {
 				{group = "trash_common", chance = 7000000},
  				{group = "trash_rare", chance = 3000000},
 			},

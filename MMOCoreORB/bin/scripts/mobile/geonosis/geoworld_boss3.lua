@@ -6,7 +6,7 @@ geoworld_boss3 = Creature:new {
 	chanceHit = 90.0,
 	damageMin = 6500,
 	damageMax = 8500,
-	specialDamageMult = 2.0,  
+	specialDamageMult = 3.0,  
 	baseXp = 30000,
 	baseHAM = 900000,
 	baseHAMmax = 1000000,
@@ -34,7 +34,13 @@ geoworld_boss3 = Creature:new {
 				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
-		},	
+		},
+		{
+			groups = {
+				{group = "jedi_belt_group", chance = 10000000},
+			},
+			lootChance = 300000
+		},    
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
