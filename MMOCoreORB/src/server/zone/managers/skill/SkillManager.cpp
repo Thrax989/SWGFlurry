@@ -697,6 +697,45 @@ void SkillManager::surrenderAllSkills(CreatureObject* creature, bool notifyClien
 				JediManager::instance()->onSkillRevoked(creature, skill);
 			}
 		}
+		if (skill->getSkillPointsRequired() == 0) {
+			if (skill->getSkillName().contains("species_"))
+				continue;
+
+			if (skill->getSkillName().contains("_language_"))
+				continue;
+
+			if (skill->getSkillName().contains("admin_"))
+				continue;
+
+			if (skill->getSkillName().contains("special_"))
+				continue;
+
+			removeSkillRelatedMissions(creature, skill);
+
+			creature->removeSkill(skill, notifyClient);
+
+			//Remove skill modifiers
+			auto skillModifiers = skill->getSkillModifiers();
+
+			for (int i = 0; i < skillModifiers->size(); ++i) {
+				auto entry = &skillModifiers->elementAt(i);
+				creature->removeSkillMod(SkillModManager::SKILLBOX, entry->getKey(), entry->getValue(), notifyClient);
+			}
+
+			if (ghost != nullptr) {
+				//Give the player the used skill points back.
+				ghost->addSkillPoints(skill->getSkillPointsRequired());
+
+				//Remove abilities
+				auto abilityNames = skill->getAbilities();
+				removeAbilities(ghost, *abilityNames, notifyClient);
+
+				//Remove draft schematic groups
+				auto schematicsGranted = skill->getSchematicsGranted();
+				SchematicMap::instance()->removeSchematics(ghost, *schematicsGranted, notifyClient);
+				JediManager::instance()->onSkillRevoked(creature, skill);
+			}
+		}
 	}
 
 	SkillModManager::instance()->verifySkillBoxSkillMods(creature);
