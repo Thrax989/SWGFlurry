@@ -451,7 +451,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		break;
 	case BLOCK:
 		doBlock(attacker, weapon, defender, damage);
-		damageMultiplier = 0.5f;
+		damageMultiplier = 0.25f;
 		break;
 	case DODGE:
 		doDodge(attacker, weapon, defender, damage);
@@ -461,15 +461,10 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		doCounterAttack(attacker, weapon, defender, damage);
 		if (!defender->hasState(CreatureState::PEACE))
 			defender->executeObjectControllerAction(STRING_HASHCODE("attack"), attacker->getObjectID(), "");
-		damageMultiplier = 0.75f;
+		damageMultiplier = 0.0f;
 		break;}
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defender, damage);
-		if (System::random(100) < 10 && !defender->hasState(CreatureState::PEACE) && !attacker->isPlayerCreature()){
-			defender->showFlyText("combat_effects", "reflect", 0, 255, 0);
-			int poolsToDamageReflect = calculatePoolsToDamage(data.getPoolsToDamage());
-			damage = applyDamage(defender, weapon, attacker, damage * .3, damageMultiplier, poolsToDamageReflect, hitLocation, data);
-		}
 		damageMultiplier = 0.0f;
 		break;
 	default:
@@ -558,7 +553,7 @@ int CombatManager::doTargetCombatAction(TangibleObject* attacker, WeaponObject* 
 		break;
 	case BLOCK:
 		doBlock(attacker, weapon, defenderObject, damage);
-		damageMultiplier = 0.5f;
+		damageMultiplier = 0.25f;
 		break;
 	case DODGE:
 		doDodge(attacker, weapon, defenderObject, damage);
@@ -568,7 +563,7 @@ int CombatManager::doTargetCombatAction(TangibleObject* attacker, WeaponObject* 
 		doCounterAttack(attacker, weapon, defenderObject, damage);
 		if (!defenderObject->hasState(CreatureState::PEACE))
 			defenderObject->executeObjectControllerAction(STRING_HASHCODE("attack"), attacker->getObjectID(), "");
-		damageMultiplier = 0.75f;
+		damageMultiplier = 0.0f;
 		break;
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defenderObject, damage);
@@ -1446,7 +1441,7 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	damage = applyDamageModifiers(attacker, weapon, damage, data);
 
 	if (attacker->isPlayerCreature())
-		damage *= 1.5;
+		damage *= 1.0;
 
 	if (!data.isForceAttack() && weapon->getAttackType() == SharedWeaponObjectTemplate::MELEEATTACK)
 		damage *= 1.25;
@@ -2017,13 +2012,18 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 			const Vector<String>& defenseMods = effect.getDefenderStateDefenseModifiers();
 			// add up all defenses against the state the target has
 			for (int j = 0; j < defenseMods.size(); j++)
-				targetDefense += targetCreature->getSkillMod(defenseMods.get(j));
+			{
+				const String& mod = defenseMods.get(j);
+				targetDefense += targetCreature->getSkillMod(mod);
+				targetDefense += targetCreature->getSkillMod("private_" + mod);
+			}
 
 			targetDefense /= 1.5;
-			targetDefense += playerLevel;
+			if(!creature->isPlayerCreature())
+				targetDefense += playerLevel;
 
-			if (targetDefense > 95)
-				targetDefense = 95.f;
+			if (targetDefense > 90)
+				targetDefense = 90.f;
 
 			if (System::random(100) > accuracyMod - targetDefense)
 				failed = true;
@@ -2037,16 +2037,23 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 					targetDefense = targetCreature->getSkillMod(jediMods.get(j));
 
 					targetDefense /= 1.5;
-					targetDefense += playerLevel;
+					if(!creature->isPlayerCreature())
+						targetDefense += playerLevel;
 
-					if (targetDefense > 95)
-						targetDefense = 95.f;
+					if (targetDefense > 90)
+						targetDefense = 90.f;
 
 					if (System::random(100) > accuracyMod - targetDefense) {
 						failed = true;
 						break;
 					}
 				}
+			}
+		}
+
+		if ( effectType == CommandEffect::POSTUREDOWN ){
+			if (targetCreature->getPosture() == CreaturePosture::PRONE ){
+				failed = true;
 			}
 		}
 
@@ -2117,7 +2124,7 @@ int CombatManager::calculatePoolsToDamage(int poolsToDamage) {
 	if (poolsToDamage & RANDOM) {
 		int rand = System::random(100);
 
-		if (rand < 50) {
+		if (rand < 75) {
 			poolsToDamage = HEALTH;
 		} else if (rand < 85) {
 			poolsToDamage = ACTION;
@@ -2209,6 +2216,8 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 		int spilledDamage = (int)(actionDamage*spillMultPerPool);
 		actionDamage -= spilledDamage;
 		totalSpillOver += spilledDamage;
+		if (defender->isPlayerCreature())
+			actionDamage *= 5;
 
 		defender->inflictDamage(attacker, CreatureAttribute::ACTION, (int)actionDamage, true, xpType, true, true);
 
