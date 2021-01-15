@@ -2012,15 +2012,12 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 			const Vector<String>& defenseMods = effect.getDefenderStateDefenseModifiers();
 			// add up all defenses against the state the target has
 			for (int j = 0; j < defenseMods.size(); j++)
-			{
-				const String& mod = defenseMods.get(j);
-				targetDefense += targetCreature->getSkillMod(mod);
-				targetDefense += targetCreature->getSkillMod("private_" + mod);
-			}
+				targetDefense += targetCreature->getSkillMod(defenseMods.get(j));
+
 
 			targetDefense /= 1.5;
-			if(!creature->isPlayerCreature())
-				targetDefense += playerLevel;
+			targetDefense += playerLevel;
+
 
 			if (targetDefense > 90)
 				targetDefense = 90.f;
@@ -2037,8 +2034,8 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 					targetDefense = targetCreature->getSkillMod(jediMods.get(j));
 
 					targetDefense /= 1.5;
-					if(!creature->isPlayerCreature())
-						targetDefense += playerLevel;
+					targetDefense += playerLevel;
+
 
 					if (targetDefense > 90)
 						targetDefense = 90.f;
@@ -2124,7 +2121,7 @@ int CombatManager::calculatePoolsToDamage(int poolsToDamage) {
 	if (poolsToDamage & RANDOM) {
 		int rand = System::random(100);
 
-		if (rand < 75) {
+		if (rand < 50) {
 			poolsToDamage = HEALTH;
 		} else if (rand < 85) {
 			poolsToDamage = ACTION;
@@ -2216,8 +2213,6 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 		int spilledDamage = (int)(actionDamage*spillMultPerPool);
 		actionDamage -= spilledDamage;
 		totalSpillOver += spilledDamage;
-		if (defender->isPlayerCreature())
-			actionDamage *= 5;
 
 		defender->inflictDamage(attacker, CreatureAttribute::ACTION, (int)actionDamage, true, xpType, true, true);
 
