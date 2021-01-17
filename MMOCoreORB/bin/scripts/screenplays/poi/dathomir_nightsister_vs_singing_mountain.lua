@@ -57,7 +57,7 @@ function NightSisterVsSingingMountainClanScreenPlay:spawnMobiles()
 
 	spawnMobile("dathomir", "nightsister_spell_weaver",900,-2538.0,128.8,1488.5,0,0)
 	spawnMobile("dathomir", "nightsister_spell_weaver",900,-2500.6,128.8,1488.6,0,0)
-	spawnMobile("dathomir", "nightsister_elder",3600,-2519.9,130.6,1470,0,0)	
+	spawnMobile("dathomir", "nightsister_elder_npc",3600,-2519.9,130.6,1470,0,0)	
 	spawnMobile("dathomir", "nightsister_protector",1800,-2521.2,130.2,1482.2,0,0)		
 	spawnMobile("dathomir", "nightsister_stalker",900,-2519.9,128.4,1502.1,0,0)	
 	spawnMobile("dathomir", "nightsister_sentinel",900,-2539.1,125.1,1527.8,0,0)	
