@@ -49,8 +49,8 @@ object_tangible_component_bio_bio_component_clothing_casual_entertainer_2 = obje
 	experimentalWeights = {1, 1, 1, 1, 1, 2, 5, 3, 1, 2, 5, 3},
 	experimentalGroupTitles = {"null", "null", "null", "null", "null", "exp_effectiveness", "null", "exp_effectiveness"},
 	experimentalSubGroupTitles = {"null", "null", "decayrate", "hitpoints", "@obj_attr_n:bio_comp_healing_dance_wound", "cat_skill_mod_bonus.@stat_n:healing_dance_wound", "@obj_attr_n:bio_comp_healing_music_wound", "cat_skill_mod_bonus.@stat_n:healing_music_wound"},
-	experimentalMin = {0, 0, 30, 1000, 108, 3, 109, 3},
-	experimentalMax = {0, 0, 50, 1000, 108, 20, 109, 20},
+	experimentalMin = {0, 0, 30, 1000, 108, 23, 109, 23},
+	experimentalMax = {0, 0, 50, 1000, 108, 26, 109, 26},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 4, 1, 1, 1, 1},
 }

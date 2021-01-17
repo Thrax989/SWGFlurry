@@ -128,6 +128,10 @@ includeFile("tangible/loot/loot_schematic/technical_console_s02_schematic.lua")
 includeFile("tangible/loot/loot_schematic/throwpillow_schematic.lua")
 includeFile("tangible/loot/loot_schematic/tumble_blender_schematic.lua")
 includeFile("tangible/loot/loot_schematic/utensils_schematic.lua")
+-- testing pouch
+includeFile("tangible/loot/loot_schematic/armor_jedi_belt_01_schematic.lua")
+includeFile("tangible/loot/loot_schematic/armor_jedi_belt_02_schematic.lua")
+includeFile("tangible/loot/loot_schematic/armor_jedi_belt_03_schematic.lua") 
 --NGE Houses
 includeFile("tangible/loot/loot_schematic/gen_lg_win_01_house_loot_schem.lua")
 includeFile("tangible/loot/loot_schematic/gen_lg_win_02_house_loot_schem.lua")

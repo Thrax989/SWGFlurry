@@ -49,8 +49,8 @@ object_tangible_component_bio_bio_component_clothing_field_camo_2 = object_tangi
 	experimentalWeights = {1, 1, 1, 1, 1, 2, 5, 3, 1, 2, 5, 3},
 	experimentalGroupTitles = {"null", "null", "null", "null", "null", "exp_effectiveness", "null", "exp_effectiveness"},
 	experimentalSubGroupTitles = {"null", "null", "decayrate", "hitpoints", "@obj_attr_n:bio_comp_camouflage", "cat_skill_mod_bonus.@stat_n:camouflage", "@obj_attr_n:bio_comp_mask_scent", "cat_skill_mod_bonus.@stat_n:mask_scent"},
-	experimentalMin = {0, 0, 30, 1000, 111, 3, 119, 3},
-	experimentalMax = {0, 0, 50, 1000, 111, 20, 119, 20},
+	experimentalMin = {0, 0, 30, 1000, 111, 23, 119, 23},
+	experimentalMax = {0, 0, 50, 1000, 111, 26, 119, 26},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 4, 1, 1, 1, 1},
 }

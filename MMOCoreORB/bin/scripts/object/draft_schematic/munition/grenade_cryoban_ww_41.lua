@@ -79,8 +79,8 @@ object_draft_schematic_munition_grenade_cryoban_ww_41 = object_draft_schematic_m
 			{"type", 1}, -- 1 = Poison, 2 = Disease, 3 = Fire, 4 = Bleed
 			{"attribute", 0}, -- See CreatureAttributes.h in src for numbers.
 			{"strength", 150},
-			{"duration", 160},
-			{"potency", 100},
+			{"duration", 240},
+			{"potency", 150},
 			{"uses", 5}
 		}
 	},          

@@ -2,17 +2,17 @@ dark_adept = Creature:new {
 	objectName = "@mob/creature_names:dark_adept",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
-	socialGroup = "dark_jedi",
+	socialGroup = "",
 	faction = "",
-	level = 140,
-	chanceHit = 4.75,
-	damageMin = 945,
-	damageMax = 1600,
+	level = 375,
+	chanceHit = 50.0,
+	damageMin = 2500,
+	damageMax = 4000,
 	baseXp = 13178,
-	baseHAM = 50000,
-	baseHAMmax = 61000,
-	armor = 2,
-	resists = {80,80,80,80,80,80,80,80,-1},
+	baseHAM = 175000,
+	baseHAMmax = 200000,
+	armor = 3,
+	resists = {80,80,80,80,80,80,80,80,50},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -62,9 +62,9 @@ dark_adept = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"dark_jedi_weapons_gen2"},
+	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
-	attacks = merge(lightsabermaster,forcewielder)
+	attacks = merge(lightsabermaster,forcewielder,forcepowermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(dark_adept, "dark_adept")

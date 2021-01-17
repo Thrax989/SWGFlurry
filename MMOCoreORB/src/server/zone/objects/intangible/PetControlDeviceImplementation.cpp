@@ -167,7 +167,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		}
 
 	} else if (petType == PetManager::FACTIONPET){
-		maxPets = 3;
+		maxPets = 2;
 	}
 
 	for (int i = 0; i < ghost->getActivePetsSize(); ++i) {

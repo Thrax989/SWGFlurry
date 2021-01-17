@@ -5114,3 +5114,21 @@ object_tangible_loot_loot_schematic_shared_tat_sm_win_01_loot_schem = SharedTang
 }
 ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_tat_sm_win_01_loot_schem, "object/tangible/loot/loot_schematic/shared_tat_sm_win_01_loot_schem.iff")
 --**************************************************************************************************************************************************
+
+object_tangible_loot_loot_schematic_shared_armor_jedi_belt_01_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_armor_jedi_belt_01_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_armor_jedi_belt_01_schematic, "object/tangible/loot/loot_schematic/shared_armor_jedi_belt_01_schematic.iff")
+
+object_tangible_loot_loot_schematic_shared_armor_jedi_belt_02_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_armor_jedi_belt_02_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_armor_jedi_belt_02_schematic, "object/tangible/loot/loot_schematic/shared_armor_jedi_belt_02_schematic.iff")
+
+object_tangible_loot_loot_schematic_shared_armor_jedi_belt_03_schematic = SharedTangibleObjectTemplate:new {
+clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_armor_jedi_belt_03_schematic.iff"
+}
+
+ObjectTemplates: addClientTemplate(object_tangible_loot_loot_schematic_shared_armor_jedi_belt_03_schematic, "object/tangible/loot/loot_schematic/shared_armor_jedi_belt_03_schematic.iff")

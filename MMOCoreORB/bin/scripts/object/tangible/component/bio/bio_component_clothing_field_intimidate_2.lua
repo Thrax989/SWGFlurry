@@ -49,8 +49,8 @@ object_tangible_component_bio_bio_component_clothing_field_intimidate_2 = object
 	experimentalWeights = {1, 1, 1, 1, 1, 2, 5, 3, 1, 2, 5, 3},
 	experimentalGroupTitles = {"null", "null", "null", "null", "null", "exp_effectiveness", "null", "exp_effectiveness"},
 	experimentalSubGroupTitles = {"null", "null", "decayrate", "hitpoints", "@obj_attr_n:bio_comp_warcry", "cat_skill_mod_bonus.@stat_n:warcry", "@obj_attr_n:bio_comp_intimidate", "cat_skill_mod_bonus.@stat_n:intimidate"},
-	experimentalMin = {0, 0, 30, 1000, 117, 3, 118, 3},
-	experimentalMax = {0, 0, 50, 1000, 117, 20, 118, 20},
+	experimentalMin = {0, 0, 30, 1000, 117, 23, 118, 23},
+	experimentalMax = {0, 0, 50, 1000, 117, 26, 118, 26},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 4, 1, 1, 1, 1},
 }

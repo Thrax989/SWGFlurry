@@ -200,7 +200,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
             "Janta Town (5,000 Credits)", "pc_jantatown_travel",
             "Serendipity (5,000 Credits)", "pc_serendipity_travel",
-            "Malice (5,000 Credits)", "pc_malice_travel"
+            "Malice (5,000 Credits)", "pc_malice_travel",
+            "Banir (5,000 Credits)", "pc_banir_travel"
           },
             "Dathomir",
           {
@@ -217,7 +218,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Endor",
           {
             "Mos Potatoes (5,000 Credits)", "mos_potatoes",
-            "Sundari (5,000 Credits)", "pc_sundari_travel"
+            "Sundari (5,000 Credits)", "pc_sundari_travel",
+            "Purgatory (5,000 Credits)", "pc_purgatory_travel"
           },
             "Geonosis",
           {
@@ -231,7 +233,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Lok",
           {
             "Crimson Thorn (5,000 Credits)", "pc_crimson_travel",
-			"Binary (5,000 Credits)", "pc_binary_travel"
+			"Binary (5,000 Credits)", "pc_binary_travel",
+			"Serenity (5,000 Credits)", "pc_serenity_travel"
           },
             "Yavin4",
           {
@@ -256,11 +259,12 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		  },
 		  "Rori",
           {  
-            "Unrest (5,000 Credits)", "pc_unrest_travel" 
+            "Unrest (5,000 Credits)", "pc_unrest_travel",
+            "No Fate (5,000 Credits)", "pc_nofate_travel"  
 		  },		  
 		  "Taanab",
           {  
-            --"Nerf Herder Central  (5,000 Credits)", "pc_nerfherder_travel" 
+            "Sin city (5,000 Credits)", "pc_sincity_travel" 
 		  },		  		  
     }      
 	}

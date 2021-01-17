@@ -1177,8 +1177,9 @@ void CreatureObjectImplementation::setWounds(int type, int value,
 	if (value < 0)
 		value = 0;
 
-	if (value >= baseHAM.get(type))
-		value = baseHAM.get(type) - 1;
+	if (value >= (baseHAM.get(type) * 0.250)) {
+		value = (baseHAM.get(type) * 0.250) - 1;
+	}
 
 	if (wounds.get(type) == value)
 		return;

@@ -49,8 +49,8 @@ object_tangible_component_bio_bio_component_clothing_field_bleeding_2 = object_t
 	experimentalWeights = {1, 1, 1, 1, 1, 2, 5, 3},
 	experimentalGroupTitles = {"null", "null", "null", "null", "null", "exp_effectiveness"},
 	experimentalSubGroupTitles = {"null", "null", "decayrate", "hitpoints", "@obj_attr_n:bio_comp_combat_bleeding_defense", "cat_skill_mod_bonus.@stat_n:combat_bleeding_defense"},
-	experimentalMin = {0, 0, 30, 1000, 114, 3},
-	experimentalMax = {0, 0, 50, 1000, 114, 20},
+	experimentalMin = {0, 0, 30, 1000, 114, 23},
+	experimentalMax = {0, 0, 50, 1000, 114, 26},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 4, 1, 1},
 }

@@ -19,7 +19,7 @@ function jedi1:start()
 end
   
 function jedi1:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("dathomir", "object/active_area.iff", 5297, 78, -4129, 0, 0, 0, 0, 0)
+	local pSpawnArea = spawnSceneObject("dungeon2", "object/active_area.iff", 5952, 10, -34, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
@@ -45,7 +45,7 @@ function jedi1:notifySpawnArea(pActiveArea, pMovingObject)
 			player:sendSystemMessage("You have entered the training area!")
 		else
 			player:sendSystemMessage("You must be a gray jedi to enter the training area!")
-			player:teleport(5285, 78, -4171, 0)
+			player:teleport(-33.6957, 0.77033, 24.5291, 14200816)
 		end
 		return 0
 	end)

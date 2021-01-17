@@ -79,8 +79,8 @@ object_draft_schematic_munition_grenade_fragmentation_c_22 = object_draft_schema
 			{"type", 4}, -- 1 = Poison, 2 = Disease, 3 = Fire, 4 = Bleed
 			{"attribute", 0}, -- See CreatureAttributes.h in src for numbers.
 			{"strength", 150},
-			{"duration", 160},
-			{"potency", 100},
+			{"duration", 240},
+			{"potency", 150},
 			{"uses", 5}
 		}
 	},          

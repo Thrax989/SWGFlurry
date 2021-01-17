@@ -27,6 +27,8 @@
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/packets/object/ShowFlyText.h"
 #include "server/zone/managers/frs/FrsManager.h"
+#include "server/zone/objects/tangible/powerup/PowerupObject.h"
+#include "server/zone/objects/tangible/weapon/WeaponObject.h"
 
 #define COMBAT_SPAM_RANGE 85
 
@@ -376,6 +378,16 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
  		weapon->setMaxRange(64);
 	}
 
+	if (attacker->isPlayerCreature() && weapon->isFlameThrower()) {
+  		Locker locker(weapon);
+		ManagedReference<PowerupObject*> pup = weapon->removePowerup();
+		if (pup != nullptr) {
+			Locker puplocker(pup);
+			pup->destroyObjectFromWorld(true);
+			pup->destroyObjectFromDatabase(true);
+		}
+	}
+
 /*	//weapon ap checks
 	if (attacker->isPlayerCreature() && weapon->isRangedWeapon() && weapon->getArmorPiercing() != 0 && weapon->getArmorPiercing() != 1 && weapon->getArmorPiercing() != 2 && weapon->getArmorPiercing() != 3) {
   		Locker locker(weapon);
@@ -439,7 +451,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		break;
 	case BLOCK:
 		doBlock(attacker, weapon, defender, damage);
-		damageMultiplier = 0.5f;
+		damageMultiplier = 0.25f;
 		break;
 	case DODGE:
 		doDodge(attacker, weapon, defender, damage);
@@ -449,15 +461,10 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		doCounterAttack(attacker, weapon, defender, damage);
 		if (!defender->hasState(CreatureState::PEACE))
 			defender->executeObjectControllerAction(STRING_HASHCODE("attack"), attacker->getObjectID(), "");
-		damageMultiplier = 0.75f;
+		damageMultiplier = 0.0f;
 		break;}
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defender, damage);
-		if (System::random(100) < 10 && !defender->hasState(CreatureState::PEACE) && !attacker->isPlayerCreature()){
-			defender->showFlyText("combat_effects", "reflect", 0, 255, 0);
-			int poolsToDamageReflect = calculatePoolsToDamage(data.getPoolsToDamage());
-			damage = applyDamage(defender, weapon, attacker, damage * .3, damageMultiplier, poolsToDamageReflect, hitLocation, data);
-		}
 		damageMultiplier = 0.0f;
 		break;
 	default:
@@ -546,7 +553,7 @@ int CombatManager::doTargetCombatAction(TangibleObject* attacker, WeaponObject* 
 		break;
 	case BLOCK:
 		doBlock(attacker, weapon, defenderObject, damage);
-		damageMultiplier = 0.5f;
+		damageMultiplier = 0.25f;
 		break;
 	case DODGE:
 		doDodge(attacker, weapon, defenderObject, damage);
@@ -556,7 +563,7 @@ int CombatManager::doTargetCombatAction(TangibleObject* attacker, WeaponObject* 
 		doCounterAttack(attacker, weapon, defenderObject, damage);
 		if (!defenderObject->hasState(CreatureState::PEACE))
 			defenderObject->executeObjectControllerAction(STRING_HASHCODE("attack"), attacker->getObjectID(), "");
-		damageMultiplier = 0.75f;
+		damageMultiplier = 0.0f;
 		break;
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defenderObject, damage);
@@ -1434,7 +1441,7 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	damage = applyDamageModifiers(attacker, weapon, damage, data);
 
 	if (attacker->isPlayerCreature())
-		damage *= 1.5;
+		damage *= 1.0;
 
 	if (!data.isForceAttack() && weapon->getAttackType() == SharedWeaponObjectTemplate::MELEEATTACK)
 		damage *= 1.25;
@@ -1660,7 +1667,7 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 
 	// PvP Damage Reduction.
 	if (attacker->isPlayerCreature() && defender->isPlayerCreature() && !data.isForceAttack())
-		damage *= 0.25;
+		damage *= 0.10;
 
 	if (damage < 1) damage = 1;
 
@@ -1795,7 +1802,10 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 			return HIT; // no secondary defenses
 
 		// add in a random roll
-		targetDefense += System::random(199) + 1;
+		if (def == "block")
+			targetDefense += Math::max((System::random(199) + 1), (System::random(199) + 1));
+		else
+			targetDefense += System::random(199) + 1;
 
 		//TODO: posture defense (or a simplified version thereof: +10 standing, -20 prone, 0 crouching) might be added in to this calculation, research this
 		//TODO: dodge and counterattack might get a  +25 bonus (even when triggered via DA), research this
@@ -2004,11 +2014,13 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 			for (int j = 0; j < defenseMods.size(); j++)
 				targetDefense += targetCreature->getSkillMod(defenseMods.get(j));
 
+
 			targetDefense /= 1.5;
 			targetDefense += playerLevel;
 
-			if (targetDefense > 95)
-				targetDefense = 95.f;
+
+			if (targetDefense > 90)
+				targetDefense = 90.f;
 
 			if (System::random(100) > accuracyMod - targetDefense)
 				failed = true;
@@ -2024,14 +2036,21 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 					targetDefense /= 1.5;
 					targetDefense += playerLevel;
 
-					if (targetDefense > 95)
-						targetDefense = 95.f;
+
+					if (targetDefense > 90)
+						targetDefense = 90.f;
 
 					if (System::random(100) > accuracyMod - targetDefense) {
 						failed = true;
 						break;
 					}
 				}
+			}
+		}
+
+		if ( effectType == CommandEffect::POSTUREDOWN ){
+			if (targetCreature->getPosture() == CreaturePosture::PRONE ){
+				failed = true;
 			}
 		}
 

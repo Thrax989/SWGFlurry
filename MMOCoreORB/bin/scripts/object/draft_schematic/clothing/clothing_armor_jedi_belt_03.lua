@@ -45,7 +45,7 @@ object_draft_schematic_clothing_clothing_armor_jedi_belt_03 = object_draft_schem
 
    	templateType = DRAFTSCHEMATIC,
 
-   	customObjectName = "Relic Jedi Belt : Soresu",
+   	customObjectName = "Relic Gathering Belt : Harvest",
 
    	craftingToolTab = 2, -- (See DraftSchematicObjectTemplate.h)
    	complexity = 20, 
@@ -64,21 +64,24 @@ object_draft_schematic_clothing_clothing_armor_jedi_belt_03 = object_draft_schem
    	customizationStringNames = {"/private/index_color_2"},
    	customizationDefaults = {82},
 
-   	ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_item_ingredients_n", "craft_item_ingredients_n"},
-   	ingredientTitleNames = {"auxilary_coverage", "body", "liner", "mando_iron", "orbalisk_shell"},
-   	ingredientSlotType = {0, 0, 1, 1, 1},
-   	resourceTypes = {"metal", "hide", "object/tangible/component/clothing/shared_fiberplast_panel.iff", "object/tangible/component/armor/shared_mando_iron.iff", "object/tangible/component/armor/shared_orbalisk_shell.iff"},
-   	resourceQuantities = {15, 4, 1, 1, 1},
-   	contribution = {100, 100, 100, 100, 100},
+   ingredientTemplateNames = {"craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_clothing_ingredients_n", "craft_clothing_ingredients_n"},
+   ingredientTitleNames = {"primary_pocket", "reinforcement", "strap_pad", "power_cell_socket", "power_cell_brackets", "enhanced_cooling_mechanism", "binding_and_reinforcement", "binding_and_hardware"},
+   ingredientSlotType = {0, 1, 1, 1, 1, 1, 3, 3},
+   resourceTypes = {"fiberplast", "object/tangible/loot/misc/shared_artifact_rare_s01.iff", "object/tangible/component/clothing/shared_clothing_treatment_crystalline.iff", "object/tangible/furniture/all/frn_all_holocron_cube.iff", "object/tangible/furniture/all/frn_all_holocron_triangle.iff", "object/tangible/furniture/all/frn_all_holocron_dode.iff", "object/tangible/component/clothing/shared_synthetic_cloth.iff", "object/tangible/component/clothing/shared_reinforced_fiber_panels.iff"},
+   resourceQuantities = {2000, 1, 1, 1, 1, 1, 1, 1},
+   contribution = {100, 100, 100, 100, 100, 100, 100, 100},
 
 
-   	targetTemplate = "object/tangible/wearables/armor/armor_jedi_belt_03.iff",
+   	targetTemplate = "object/tangible/wearables/backpack/padawan_pouch.iff",
 
 	skillMods = {
-			{"lightsaber_toughness", 10},
-			{"jedi_toughness", 10},
-},
-
+        {"creature_harvesting", 25},
+        {"slope_move", 25},
+        {"dna_harvesting", 25},
+        {"surveying", 25},
+        {"luck", 25},
+        {"foraging", 25},        
+		},
    	additionalTemplates = {},
 }
 

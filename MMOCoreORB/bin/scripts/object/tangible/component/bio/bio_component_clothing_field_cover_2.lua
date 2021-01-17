@@ -49,8 +49,8 @@ object_tangible_component_bio_bio_component_clothing_field_cover_2 = object_tang
 	experimentalWeights = {1, 1, 1, 1, 1, 2, 5, 3},
 	experimentalGroupTitles = {"null", "null", "null", "null", "null", "exp_effectiveness"},
 	experimentalSubGroupTitles = {"null", "null", "decayrate", "hitpoints", "@obj_attr_n:bio_comp_take_cover", "cat_skill_mod_bonus.@stat_n:take_cover"},
-	experimentalMin = {0, 0, 30, 1000, 113, 3},
-	experimentalMax = {0, 0, 50, 1000, 113, 20},
+	experimentalMin = {0, 0, 30, 1000, 113, 23},
+	experimentalMax = {0, 0, 50, 1000, 113, 26},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 4, 1, 1},
 }
