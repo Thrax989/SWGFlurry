@@ -200,7 +200,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
             "Janta Town (5,000 Credits)", "pc_jantatown_travel",
             "Serendipity (5,000 Credits)", "pc_serendipity_travel",
-            "Malice (5,000 Credits)", "pc_malice_travel"
+            "Malice (5,000 Credits)", "pc_malice_travel",
+            "Banir (5,000 Credits)", "pc_banir_travel"
           },
             "Dathomir",
           {
