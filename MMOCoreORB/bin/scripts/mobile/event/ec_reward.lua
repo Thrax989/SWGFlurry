@@ -51,6 +51,18 @@ ec_reward = Creature:new {
 		},
 		{
 			groups = {
+				{group = "jedi_belt_group", chance = 10000000},
+			},
+			lootChance = 10000000
+		}, 
+		{
+			groups = {
+				{group = "vehicledeedsrare", chance = 10000000},
+			},
+			lootChance = 10000000
+		},     
+		{
+			groups = {
 				{group = "death_watch_bunker_lieutenants", chance = 10000000},
 			},
 			lootChance = 10000000
