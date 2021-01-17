@@ -257,11 +257,12 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		  },
 		  "Rori",
           {  
-            "Unrest (5,000 Credits)", "pc_unrest_travel" 
+            "Unrest (5,000 Credits)", "pc_unrest_travel",
+            "No Fate (5,000 Credits)", "pc_nofate_travel"  
 		  },		  
 		  "Taanab",
           {  
-            --"Nerf Herder Central  (5,000 Credits)", "pc_nerfherder_travel" 
+            "Sin city (5,000 Credits)", "pc_sincity_travel" 
 		  },		  		  
     }      
 	}
