@@ -215,9 +215,9 @@ knightTrialQuests = {
 		huntGoal = 1
 	},
 	{
-		trialName = "nightsister_elder",
+		trialName = "nightsister_protector",
 		trialType = TRIAL_HUNT,
-		huntTarget = "nightsister_elder",
+		huntTarget = "nightsister_protector",
 		huntGoal = 1
 	},
 	{
