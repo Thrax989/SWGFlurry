@@ -1,7 +1,7 @@
-nightsister_elder = Creature:new {
-	objectName = "@mob/creature_names:nightsister_elder",
-	socialGroup = "",
-	faction = "",
+nightsister_elder_npc = Creature:new {
+	customName = "Nightsister Elder",
+	socialGroup = "nightsister",
+	faction = "nightsister",
 	level = 300,
 	chanceHit = 35.00,
 	damageMin = 1800,
@@ -18,12 +18,12 @@ nightsister_elder = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.0,
 	ferocity = 0,
-	pvpBitmask = ATTACKABLE + OVERT,
-	creatureBitmask = PACK + KILLER,
+	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
+	creatureBitmask = PACK + KILLER + HEALER,
 	optionsBitmask = AIENABLED,
-	diet = NONE,
+	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_dathomir_nightsister_elder.iff"},
 	lootGroups = {		
@@ -90,4 +90,4 @@ nightsister_elder = Creature:new {
 	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster,forcepowermaster)
 }
 
-CreatureTemplates:addCreatureTemplate(nightsister_elder, "nightsister_elder")
+CreatureTemplates:addCreatureTemplate(nightsister_elder_npc, "nightsister_elder_npc")
