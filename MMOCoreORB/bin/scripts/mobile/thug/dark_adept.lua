@@ -62,7 +62,7 @@ dark_adept = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"dark_jedi_weapons_gen2"},
+	weapons = {"dark_jedi_weapons_gen4"},
 	conversationTemplate = "",
 	attacks = merge(lightsabermaster,forcewielder)
 }
