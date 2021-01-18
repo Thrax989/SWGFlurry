@@ -484,3 +484,7 @@ includeFile("groups/ancient_force_bread.lua")
 --Legendary Rare Loot Crate
 includeFile("groups/resource_deed_loot.lua")
 includeFile("groups/resource_crate_loot.lua")
+
+--Dark/Light FRS Items
+includeFile("groups/darkjedifrs.lua")
+includeFile("groups/lightjedifrs.lua")
