@@ -26,6 +26,8 @@ end
 --Exar Spawn Scene Objects
 ---------------------------
 function exar_kunScreenplay:spawnSceneObjects()
+spawnSceneObject("dungeon2", "object/tangible/quest/township/axkva_dark_jedi_statue.iff", -50.6893, 0.796959, 31.8267, 14200816, 0.707107, 0, 0.707107, 0)
+spawnSceneObject("dungeon2", "object/tangible/quest/township/axkva_dark_jedi_statue.iff", -45.9135, 0.796806, 38.3853, 14200816, 0.258819, 0, 0.965926, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", -40.4491, 0.61331, 29.3437, 14200816, 1, 0, 0, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", 15.5419, 4.71103, 106.975, 14200878, 1, 0, 0, 0)
 spawnSceneObject("dungeon2", "object/tangible/terminal/terminal_quad_screen.iff", -40.4448, 0.61331, 29.3521, 14200890, 1, 0, 0, 0)
