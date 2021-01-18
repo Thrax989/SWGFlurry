@@ -33,7 +33,7 @@ int LightJediMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 	if (selectedID == 20) {
 		PlayerManager* playerManager = creature->getZoneServer()->getPlayerManager();
 		creature->playEffect("clienteffect/level_granted.cef", "");
-		playerManager->awardExperience(creature, "force_rank_xp", 500, true); // Award Light Jedi FRS XP
+		playerManager->awardExperience(creature, "force_rank_xp", 5000, true); // Award Light Jedi FRS XP
 		sceneObject->destroyObjectFromWorld(true);
 		return 0;
 	}
