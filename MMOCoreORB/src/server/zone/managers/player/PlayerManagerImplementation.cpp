@@ -2400,10 +2400,10 @@ void PlayerManagerImplementation::frsSkillCheck(CreatureObject* player, const St
 		skillStarter = "force_rank_dark_";
 	}
 	player->sendSystemMessage("You have been granted: " + skillStarter + skill);
-	ChatManager* chatManager = player->getZoneServer()->getChatManager();
-	StringBuffer zGeneral;
-	zGeneral << "[FRS] Rank Has Changed " << "[" << skillStarter << skill << "]";
-	chatManager->handleGeneralChat(player, zGeneral.toString());
+	//ChatManager* chatManager = player->getZoneServer()->getChatManager();
+	//StringBuffer zGeneral;
+	//zGeneral << "[FRS] Rank Has Changed " << "[" << skillStarter << skill << "]";
+	//chatManager->handleGeneralChat(player, zGeneral.toString());
 	skillManager->awardSkill(skillStarter + skill, player, true, true, true);
 	if (player->hasSkill(skillStarter + skillParent) && (skill != skillParent)) {
 		player->sendSystemMessage("You no longer meet the requirements for: " + skillStarter + skill);

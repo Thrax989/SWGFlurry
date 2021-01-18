@@ -1233,6 +1233,8 @@ includeFile("items/collection/contraband.lua")
 includeFile("items/collection/force_bread.lua")
 includeFile("items/collection/resource_crate.lua")
 includeFile("items/collection/resource_deed.lua")
+includeFile("items/collection/darkfrs.lua")
+includeFile("items/collection/lightfrs.lua")
 
 --Halloween
 includeFile("items/halloween/halloweenitems.lua")
