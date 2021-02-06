@@ -543,12 +543,33 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "clear_dots") {
 				player->clearDots();
 			} else if (templatePath == "frs_light_side") {
+				if (ghost->getJediState() < 4) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("FRS Light Jedi");
+		                box->setPromptText("FRS Light Jedi Requires (Light Jedi Rank");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (ghost->getJediState() == 4) {
 				PlayerManager* pman = zserv->getPlayerManager();
 				pman->unlockFRSForTesting(player, 1);
+				}
 			} else if (templatePath == "frs_dark_side") {
+				if (ghost->getJediState() < 8) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("FRS Dark Jedi");
+		                box->setPromptText("FRS Dark Jedi Requires (Dark Jedi Rank");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (ghost->getJediState() == 8) {
 				PlayerManager* pman = zserv->getPlayerManager();
 				pman->unlockFRSForTesting(player, 2);
-
+				}
 			} else if (templatePath == "color_crystals" || templatePath == "krayt_pearls") {
 				ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
 
