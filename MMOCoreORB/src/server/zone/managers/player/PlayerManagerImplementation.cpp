@@ -6366,10 +6366,10 @@ void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, in
 	if (ghost == nullptr)
 		return;
 
-	if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
-		player->sendSystemMessage("You already have FRS skills. You must drop them before using this feature again.");
-		return;
-	}
+	//if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
+		//player->sendSystemMessage("You already have FRS skills. You must drop them before using this feature again.");
+		//return;
+	//}
 
 	SkillManager* skillManager = SkillManager::instance();
 
@@ -6379,7 +6379,7 @@ void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, in
 		ghost->awardBadge(glowyBadgeIds[i]);
 	}
 
-	SkillManager::instance()->surrenderAllSkills(player, true, false);
+	//SkillManager::instance()->surrenderAllSkills(player, true, false);
 
 	Lua* lua = DirectorManager::instance()->getLuaInstance();
 
