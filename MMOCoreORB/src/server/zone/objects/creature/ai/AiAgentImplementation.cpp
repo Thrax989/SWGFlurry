@@ -193,6 +193,7 @@ void AiAgentImplementation::loadTemplateData(CreatureTemplate* templateData) {
 			} else if (petDeed != nullptr) {
 				weao->setAttackSpeed(petDeed->getAttackSpeed());
 			}
+			readyWeapon = weao;
 			Locker locker(weao);
 			if (weao->isJediWeapon()) {
 			int color = System::random(30);
