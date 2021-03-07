@@ -193,8 +193,13 @@ void AiAgentImplementation::loadTemplateData(CreatureTemplate* templateData) {
 			} else if (petDeed != nullptr) {
 				weao->setAttackSpeed(petDeed->getAttackSpeed());
 			}
-
 			readyWeapon = weao;
+			Locker locker(weao);
+			if (weao->isJediWeapon()) {
+			int color = System::random(30);
+			weao->setBladeColor(color);
+			weao->setCustomizationVariable("/private/index_color_blade", color, true);
+			}
 		} else {
 			readyWeapon = nullptr;
 			error("could not create weapon " + weaponToUse);

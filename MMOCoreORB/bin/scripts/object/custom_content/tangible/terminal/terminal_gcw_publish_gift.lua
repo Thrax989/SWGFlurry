@@ -214,11 +214,13 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Cyberdyne (5,000 Credits)", "pc_cyberdyne_travel",
             "Darkness Falls (5,000 Credits)", "pc_darkness_travel",
             "Sanctus (5,000 Credits)", "pc_sanctus_travel",
-			"Sparta (5,000 Credits)", "pc_sparta_travel"
+			"Sparta (5,000 Credits)", "pc_sparta_travel",
+			"Limes Inferior (5,000 Credits)", "pc_limes inferior_travel"
           },
             "Corellia",
           {  
-            "Shadow Falls (5,000 Credits)", "pc_shadowfalls_travel"
+            "Shadow Falls (5,000 Credits)", "pc_shadowfalls_travel",
+            "Lowca Island (5,000 Credits)", "pc_lowca island_travel"
           },
             "Endor",
           {
@@ -260,7 +262,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Mandalore",
           {  
 			"Nevarro (5,000 Credits)", "pc_freedom_travel",
-			"The Old West (5,000 Credits)", "pc_oldwest_travel"
+			"The Old West (5,000 Credits)", "pc_oldwest_travel",
+			"Setec Astronomy (5,000 Credits)", "pc_setec_astronomy_travel"
 		  },
 		  "Rori",
           {  
