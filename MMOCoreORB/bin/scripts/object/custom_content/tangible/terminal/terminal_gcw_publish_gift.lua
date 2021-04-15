@@ -235,7 +235,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Talus",
           {
 			"Caladan (5,000 Credits)", "pc_caladan_travel",
-			"Vir Domus (5,000 Credits)", "pc_virdomus_travel"
+			"Vir Domus (5,000 Credits)", "pc_virdomus_travel",
+			"Solace (5,000 Credits)", "pc_solace"
           },  
             "Lok",
           {
@@ -268,11 +269,13 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		  "Rori",
           {  
             "Unrest (5,000 Credits)", "pc_unrest_travel",
-            "No Fate (5,000 Credits)", "pc_nofate_travel"  
+            "No Fate (5,000 Credits)", "pc_nofate_travel",
+            "Stewjon (5,000 Credits)", "pc_stewjon"   
 		  },		  
 		  "Taanab",
           {  
-            "Sin city (5,000 Credits)", "pc_sincity_travel" 
+            "Sin city (5,000 Credits)", "pc_sincity_travel",
+            "Valinor city (5,000 Credits)", "pc_valinor" 
 		  },		  		  
     }      
 	}
