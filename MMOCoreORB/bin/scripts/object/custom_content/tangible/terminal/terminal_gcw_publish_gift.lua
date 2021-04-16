@@ -231,7 +231,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Geonosis",
           {
-            "Asgard (5,000 Credits)", "asgard"
+            "Asgard (5,000 Credits)", "pc_asgard_travel",
+	    "Lost City (5,000 Credits)", "pc_lost city_travel"		
           },
             "Talus",
           {
