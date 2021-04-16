@@ -199,7 +199,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
            	"Intas Minor (5,000 Credits)", "pc_intas_travel", 
             "Lafayette (5,000 Credits)", "pc_lafayette_travel",
-            "Avalon Prime (5,000 Credits)", "pc_avalon_travel"
+            "Avalon Prime (5,000 Credits)", "pc_avalon_travel",
+	    "Flurrys Haven (5,000 Credits)", "pc_flurrys haven_travel"		
           },
             "Dantooine",
           {
