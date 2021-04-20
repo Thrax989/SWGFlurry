@@ -3,14 +3,14 @@ igsuperbattledroid = Creature:new {
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
-	chanceHit = 25.00,
+	chanceHit = 75.00,
 	damageMin = 250,
 	damageMax = 350,
 	baseXp = 400000,
-	baseHAM = 430000,
-	baseHAMmax = 430000,
-	armor = 0,
-	resists = {70,70,70,70,70,70,70,70,70},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
+	baseHAM = 200000,
+	baseHAMmax = 300000,
+	armor = 2,
+	resists = {145,160,160,160,160,160,160,160,140},--kinetic,energy,blast,heat,cold,electric,acid,stun,ls
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -32,19 +32,13 @@ igsuperbattledroid = Creature:new {
 			groups = {
 				{group = "trash_common", chance = 10000000},
 			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "trash_common", chance = 10000000},
-			},
-			lootChance = 10000000
+			lootChance = 800000
 		},
 		{
 			groups = {
 				{group = "trash_rare", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 600000
 		},
 		{
 			groups = {
@@ -53,16 +47,7 @@ igsuperbattledroid = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 2000000
+			lootChance = 500000
 		}
 	},
 	weapons = {"battle_droid_weapons"},

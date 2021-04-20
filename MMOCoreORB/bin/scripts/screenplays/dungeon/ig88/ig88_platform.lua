@@ -25,6 +25,11 @@ end
 --Ig88 Has Spawned
 -----------------------
 function ig88_platformScreenplay:spawnMobiles()
+spawnMobile("dungeon2", "igbattleforeman", 60, 10.7, 0, 21.5, 82, 14200863)
+spawnMobile("dungeon2", "igbattleforeman", 70, -9.3, 0, 20.8, 103, 14200863)
+spawnMobile("dungeon2", "ig_battledroid", 80, -10.5, 0, -0.9, 81, 14200863)
+spawnMobile("dungeon2", "ig_battledroid", 90, 10.1, 0, -1.1, -40, 14200863)
+spawnMobile("dungeon2", "igsuperbattledroid", 120, -0.2, 0, -20.3, -3, 14200863)  
 		local pBoss = spawnMobile("dungeon2", "ig_88_boss", -1, -0.0831865, 0.031546, 10.1614, 6, 14200863)--Spawn Ig88
 		local creature = CreatureObject(pBoss)
 		print("Ig88 Spawned")
