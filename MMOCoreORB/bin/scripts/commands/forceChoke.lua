@@ -52,14 +52,13 @@ ForceChokeCommand = {
 	forceAttack = true,
 	accuracyBonus = 95,
 
+
+
 	animation = "force_choke_1_particle_level_1",
 	animType = GENERATE_INTENSITY,
-
 	combatSpam = "forcechoke",
-
 	poolsToDamage = HEALTH_ATTRIBUTE,
 	damageType = LIGHTSABER_DAMAGE,
-
 	range = 32,
 
   dotEffects = {
@@ -102,6 +101,38 @@ ForceChokeCommand = {
     0.33
     )
   },
+  
+  	stateEffects = {
+	  StateEffect(
+		POSTUREDOWN_EFFECT,
+		{ "postureDownRecovery" },
+		{ "posture_change_down_defense" },
+		{},
+		100,
+		0,
+		0
+	  ),
+	  StateEffect( 
+		DIZZY_EFFECT, 
+		{}, 
+		{ "dizzy_defense" }, 
+		{ "jedi_state_defense", "resistance_states" }, 
+		85, 
+		0, 
+		30 
+	  ),
+	  StateEffect( 
+		STUN_EFFECT, 
+		{}, 
+		{ "stun_defense" }, 
+		{ "jedi_state_defense", "resistance_states" }, 
+		85, 
+		0, 
+		60
+	  )
+	},
+
+
 
 	frsLightMinDamageModifier = 1,
 	frsLightMaxDamageModifier = 4,

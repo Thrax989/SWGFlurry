@@ -60,7 +60,15 @@ ForceThrow2Command = {
 			65,
 			0,
 			10
-		)
+		),	  StateEffect(
+		KNOCKDOWN_EFFECT,
+		{ "knockdownRecovery", "lastKnockdown" },
+		{},
+		{},
+		65,
+		0,
+		0
+    )
 	},
 
 	animation = "force_throw_1_particle_level_1",
