@@ -60,6 +60,37 @@ ForceChokeCommand = {
   poolsToDamage = HEALTH_ATTRIBUTE,
   damageType = LIGHTSABER_DAMAGE,
 
+
+  	stateEffects = {
+	  StateEffect(
+		POSTUREDOWN_EFFECT,
+		{ "postureDownRecovery" },
+		{ "posture_change_down_defense" },
+		{},
+		100,
+		0,
+		0
+	  ),
+	  StateEffect( 
+		DIZZY_EFFECT, 
+		{}, 
+		{ "dizzy_defense" }, 
+		{ "jedi_state_defense", "resistance_states" }, 
+		85, 
+		0, 
+		30 
+	  ),
+	  StateEffect( 
+		STUN_EFFECT, 
+		{}, 
+		{ "stun_defense" }, 
+		{ "jedi_state_defense", "resistance_states" }, 
+		85, 
+		0, 
+		60
+	  )
+	},
+
   range = 32,
 
   dotEffects = {
