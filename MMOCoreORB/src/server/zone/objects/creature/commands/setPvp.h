@@ -74,7 +74,7 @@ public:
 					
                 if (curStatus == FactionStatus::OVERT)
                 {
-                        creature->sendSystemMessage("You will be flagged as Combatant in 5 minutes.");
+                        creature->sendSystemMessage("You will be flagged as Combatant in 15 seconds.");
                         creature->setFutureFactionStatus(FactionStatus::COVERT);
 
                         ManagedReference<CreatureObject*> creo = creature->asCreatureObject();
@@ -92,13 +92,13 @@ public:
                                     creo->setFactionStatus(FactionStatus::COVERT);
                                 }
 							}	
-                        }, "UpdateFactionStatusTask", 300000);
-						creature->updateCooldownTimer("setpvp", 30000); // 30s cooldown
+                        }, "UpdateFactionStatusTask", 15000);
+						creature->updateCooldownTimer("setpvp", 15000); // 15s cooldown
                 }
                 else
                 {
 
-                        creature->sendSystemMessage("You will be flagged as Special Forces in 30 seconds.");
+                        creature->sendSystemMessage("You will be flagged as Special Forces in 15 seconds.");
                         creature->setFutureFactionStatus(FactionStatus::OVERT);
 
                         ManagedReference<CreatureObject*> creo = creature->asCreatureObject();
@@ -109,8 +109,8 @@ public:
 
                                         creo->setFactionStatus(FactionStatus::OVERT);
                                 }
-                        }, "UpdateFactionStatusTask", 30000);
-						creature->updateCooldownTimer("setpvp", 30000); // 30s cooldown
+                        }, "UpdateFactionStatusTask", 15000);
+						creature->updateCooldownTimer("setpvp", 15000); // 15s cooldown
 				}
 
                 return SUCCESS;
