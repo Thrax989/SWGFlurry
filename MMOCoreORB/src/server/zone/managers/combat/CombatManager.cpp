@@ -451,7 +451,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		break;
 	case BLOCK:
 		doBlock(attacker, weapon, defender, damage);
-		damageMultiplier = 0.25f;
+		damageMultiplier = 0.5f;
 		break;
 	case DODGE:
 		doDodge(attacker, weapon, defender, damage);
@@ -553,7 +553,7 @@ int CombatManager::doTargetCombatAction(TangibleObject* attacker, WeaponObject* 
 		break;
 	case BLOCK:
 		doBlock(attacker, weapon, defenderObject, damage);
-		damageMultiplier = 0.25f;
+		damageMultiplier = 0.5f;
 		break;
 	case DODGE:
 		doDodge(attacker, weapon, defenderObject, damage);
@@ -661,30 +661,25 @@ void CombatManager::applyWeaponDots(CreatureObject* attacker, CreatureObject* de
 
 		int type = 0;
 		int resist = 0;
-		int baseResist = 0;
 		// utilizing this switch-block for easier *functionality* , present & future
 		// SOE strings only provide this ONE specific type of mod (combat_bleeding_defense) and
 		// there's no evidence (yet) of other 3 WEAPON dot versions also being resistable.
 		switch (weapon->getDotType(i)) {
 		case 1: //POISON
 			type = CreatureState::POISONED;
-			resist = defender->getSkillMod("resistance_poison");
-			baseResist = 25;
+			//resist = defender->getSkillMod("resistance_poison");
 			break;
 		case 2: //DISEASE
 			type = CreatureState::DISEASED;
-			resist = defender->getSkillMod("resistance_disease");
-			baseResist = 25;
+			//resist = defender->getSkillMod("resistance_disease");
 			break;
 		case 3: //FIRE
 			type = CreatureState::ONFIRE;
-			resist = defender->getSkillMod("resistance_fire");
-			baseResist = 25;
+			//resist = defender->getSkillMod("resistance_fire");
 			break;
 		case 4: //BLEED
 			type = CreatureState::BLEEDING;
 			resist = defender->getSkillMod("combat_bleeding_defense");
-			baseResist = 25;
 			break;
 		default:
 			break;
@@ -895,12 +890,6 @@ int CombatManager::getDefenderDefenseModifier(CreatureObject* defender, WeaponOb
 	targetDefense += defender->getSkillMod("dodge_attack");
 	targetDefense += defender->getSkillMod("private_dodge_attack");
 
-	if (weapon->getAttackType() == SharedWeaponObjectTemplate::MELEEATTACK) {
-		targetDefense += defender->getSkillMod("melee_defence");
-	} else if (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) {
-		targetDefense += defender->getSkillMod("ranged_defence");
-	}
-
 	//info("Target defense after state affects and cap is " +  String::valueOf(targetDefense), true);
 
 	return targetDefense;
@@ -920,15 +909,8 @@ int CombatManager::getDefenderSecondaryDefenseModifier(CreatureObject* defender)
 		targetDefense += defender->getSkillMod("private_" + mod);
 	}
 
-	if ( defender->isIntimidated() || defender->isBerserked())
-		targetDefense /= 2;
-
 	if (targetDefense > 125)
 		targetDefense = 125;
-
-	if ( defender->isDizzied() ){
-		targetDefense -= targetDefense * .20;
-	}
 
 	return targetDefense;
 }
@@ -944,11 +926,6 @@ float CombatManager::getDefenderToughnessModifier(CreatureObject* defender, int 
 			if (toughMod > 0) damage *= 1.f - (toughMod / 100.f);
 		}
 	}
-
-	 // Take Cover
-	 if ( attackType == SharedWeaponObjectTemplate::RANGEDATTACK && defender->isInCover()){
-		 damage *= 1.f - ( 30.f / 100.f);
-	 }
 
 	int jediToughness = defender->getSkillMod("jedi_toughness");
 	if (damType != SharedWeaponObjectTemplate::LIGHTSABER && jediToughness > 0)
@@ -1325,7 +1302,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		float preArmorDamage = damage;
 
 		if (lightningAttack == true && attacker->isPlayerCreature())
-			armorPiercing = 2;	
+			armorPiercing = 3;	
 
 		if (defender->isPlayerCreature())
 			armorPiercing++;
@@ -1354,7 +1331,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		float dmgAbsorbed = damage;
 
 		if (lightningAttack == true && attacker->isPlayerCreature()) //Ap2
-			armorPiercing = 2;
+			armorPiercing = 3;
 
 		// use only the damage applied to the armor for piercing (after the PSG takes some off)
 		damage *= getArmorPiercing(armor, armorPiercing);
@@ -1441,7 +1418,7 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	damage = applyDamageModifiers(attacker, weapon, damage, data);
 
 	if (attacker->isPlayerCreature())
-		damage *= 1.0;
+		damage *= 1.5;
 
 	if (!data.isForceAttack() && weapon->getAttackType() == SharedWeaponObjectTemplate::MELEEATTACK)
 		damage *= 1.25;
@@ -1458,7 +1435,7 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	}
 
 	if (lairObserver && data.isForceAttack())
-		damage *= 3.5;
+		damage *= 1.5;
 
 	if (lairObserver && lairObserver->getSpawnNumber() > 2)
 		damage *= 3.5;
@@ -1667,7 +1644,10 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 
 	// PvP Damage Reduction.
 	if (attacker->isPlayerCreature() && defender->isPlayerCreature() && !data.isForceAttack())
-		damage *= 0.25;
+		damage *= 0.50;
+
+	if (attacker->isPlayerCreature() && defender->isPlayerCreature() && data.isForceAttack())
+		damage *= 0.50;
 
 	if (damage < 1) damage = 1;
 
@@ -1734,10 +1714,6 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 	//info("Attacker weapon accuracy is " + String::valueOf(weaponAccuracy), true);
 
 	int attackerAccuracy = getAttackerAccuracyModifier(attacker, targetCreature, weapon);
-	if (creoAttacker != nullptr)
-		if ( creoAttacker->isDizzied()){
-			attackerAccuracy -= attackerAccuracy * .20;
-		}
 	//info("Base attacker accuracy is " + String::valueOf(attackerAccuracy), true);
 
 	// need to also add in general attack accuracy (mostly gotten from posture and states)
@@ -1802,10 +1778,7 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 			return HIT; // no secondary defenses
 
 		// add in a random roll
-		if (def == "block")
-			targetDefense += Math::max((System::random(199) + 1), (System::random(199) + 1));
-		else
-			targetDefense += System::random(199) + 1;
+		targetDefense += System::random(199) + 1;
 
 		//TODO: posture defense (or a simplified version thereof: +10 standing, -20 prone, 0 crouching) might be added in to this calculation, research this
 		//TODO: dodge and counterattack might get a  +25 bonus (even when triggered via DA), research this
@@ -2048,12 +2021,6 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 			}
 		}
 
-		if ( effectType == CommandEffect::POSTUREDOWN ){
-			if (targetCreature->getPosture() == CreaturePosture::PRONE ){
-				failed = true;
-			}
-		}
-
 		if (!failed) {
 			if (effectType == CommandEffect::NEXTATTACKDELAY) {
 				StringIdChatParameter stringId("combat_effects", "delay_applied_other");
@@ -2070,12 +2037,12 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 			switch (effectType) {
 			case CommandEffect::KNOCKDOWN:
 				if (!targetCreature->checkKnockdownRecovery() && targetCreature->getPosture() != CreaturePosture::UPRIGHT)
-					//targetCreature->setPosture(CreaturePosture::UPRIGHT);
+					targetCreature->setPosture(CreaturePosture::UPRIGHT);
 				creature->sendSystemMessage("@cbt_spam:knockdown_fail");
 				break;
 			case CommandEffect::POSTUREDOWN:
 				if (!targetCreature->checkPostureDownRecovery() && targetCreature->getPosture() != CreaturePosture::UPRIGHT)
-					//targetCreature->setPosture(CreaturePosture::UPRIGHT);
+					targetCreature->setPosture(CreaturePosture::UPRIGHT);
 				creature->sendSystemMessage("@cbt_spam:posture_change_fail");
 				break;
 			case CommandEffect::POSTUREUP:
