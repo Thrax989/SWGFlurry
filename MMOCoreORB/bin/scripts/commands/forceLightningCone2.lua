@@ -63,7 +63,7 @@ ForceLightningCone2Command = {
 
 		{ "jedi_state_defense", "resistance_states" },
 
-		75, 
+		85, 
 
 		0, 
 
@@ -81,7 +81,7 @@ ForceLightningCone2Command = {
 
 		{ "jedi_state_defense", "resistance_states" }, 
 
-		75, 
+		85, 
 
 		0, 
 
@@ -99,7 +99,7 @@ ForceLightningCone2Command = {
 
 		{ "jedi_state_defense", "resistance_states" }, 
 
-		76, 
+		85, 
 
 		0, 
 
@@ -133,8 +133,8 @@ ForceLightningCone2Command = {
 
 	frsLightMinDamageModifier = 4,
 	frsLightMaxDamageModifier = 8,
-	frsDarkMinDamageModifier = 4,
-	frsDarkMaxDamageModifier = 8,
+	frsDarkMinDamageModifier = 8,
+	frsDarkMaxDamageModifier = 16,
 
 	range = 32
 }

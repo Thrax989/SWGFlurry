@@ -68,8 +68,8 @@ ForceChokeCommand = {
     HEALTH,
     true,
     -1,
-    100,
-    350,
+    200,
+    400,
     35,
     33.0,
     0.33
@@ -81,8 +81,8 @@ ForceChokeCommand = {
     ACTION,
     true,
     -1,
-    100,
-    350,
+    200,
+    400,
     35,
     33.0,
     0.33
@@ -94,8 +94,8 @@ ForceChokeCommand = {
     MIND,
     true,
     -1,
-    100,
-    350,
+    200,
+    400,
     35,
     33.0,
     0.33
@@ -136,8 +136,8 @@ ForceChokeCommand = {
 
 	frsLightMinDamageModifier = 1,
 	frsLightMaxDamageModifier = 4,
-	frsDarkMinDamageModifier = 1,
-	frsDarkMaxDamageModifier = 4,
+	frsDarkMinDamageModifier = 4,
+	frsDarkMaxDamageModifier = 8,
 }
 
 AddCommand(ForceChokeCommand)
