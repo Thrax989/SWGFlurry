@@ -50,7 +50,7 @@ wampa = Creature:new {
 	attacks = {
 		{"knockdownattack",""},
 		{"creatureareacombo",""},
-		{"creatureareadisease",""}    
+		{"creatureareadisease",""},    
 		{"creatureareaattack",""}
 	}
 }
