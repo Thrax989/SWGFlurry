@@ -2,15 +2,15 @@ wampa = Creature:new {
 	objectName = "@mob/creature_names:wampa",
 	socialGroup = "wampa",
 	faction = "",
-	level = 80,
-	chanceHit = 50.0,
-	damageMin = 1250,
-	damageMax = 2200,
-	baseXp = 8000,
-	baseHAM = 75000,
-	baseHAMmax = 100000,
+	level = 89,
+	chanceHit = 0.85,
+	damageMin = 600,
+	damageMax = 850,
+	baseXp = 8500,
+	baseHAM = 13000,
+	baseHAMmax = 16000,
 	armor = 1,
-	resists = {130,160,130,200,200,200,130,130,110},
+	resists = {40,170,40,200,200,200,40,40,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -19,7 +19,7 @@ wampa = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0.25,
-	ferocity = 12,
+	ferocity = 15,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
@@ -33,24 +33,14 @@ wampa = Creature:new {
 				{group = "trash_common", chance = 9000000},
  				{group = "trash_rare", chance = 1000000},
 			},
-			lootChance = 10000000
-		}, 
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 1000000
+			lootChance = 1500000
 		}
 	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
 		{"knockdownattack",""},
-		{"creatureareacombo",""},
-		{"creatureareadisease",""},    
+		{"creatureareacombo",""},    
 		{"creatureareaattack",""}
 	}
 }
