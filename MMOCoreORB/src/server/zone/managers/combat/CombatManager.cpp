@@ -1339,9 +1339,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
  		// inflict condition damage
   		Locker alocker(armor);
   		if (getArmorObjectReduction(armor, 16) > 0 && damageType == 16) {
-  			armor->inflictDamage(armor, 0, damage * 0.002, true, true);
+  			armor->inflictDamage(armor, 0, damage * 0.02, true, true);
   		} else {
-  			armor->inflictDamage(armor, 0, damage * 0.001, true, true);
+  			armor->inflictDamage(armor, 0, damage * 0.01, true, true);
   		}
 	}
 
