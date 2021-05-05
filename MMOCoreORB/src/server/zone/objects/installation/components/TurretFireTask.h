@@ -45,6 +45,8 @@ public:
 
 		ManagedReference<CreatureObject*> target = nullptr;
 
+		turret->removeDefenders();
+
 		if (isManual) {
 			target = turretData->getManualTarget();
 
@@ -70,10 +72,15 @@ public:
 
 		ManagedReference<ObjectController*> objectController = turret->getZoneServer()->getObjectController();
 
-		CombatQueueCommand* command = cast<CombatQueueCommand*>(objectController->getQueueCommand(STRING_HASHCODE("turretfire")));
+		const CombatQueueCommand* command = cast<const CombatQueueCommand*>(objectController->getQueueCommand(STRING_HASHCODE("turretfire")));
 		ManagedReference<WeaponObject*> weapon = turret->getSlottedObject("hold_r").castTo<WeaponObject*>();
 
 		if (command != nullptr && weapon != nullptr) {
+			Locker clocker(target, turret);
+
+			target->setCombatState();
+			turret->setDefender(target);
+
 			CombatManager::instance()->doCombatAction(turret, weapon, target, command);
 
 			if (isManual) {
