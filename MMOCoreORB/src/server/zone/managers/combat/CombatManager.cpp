@@ -454,7 +454,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defender, damage);
 		damageMultiplier = 0.0f;
-		break;
+		return 0;
 	default:
 		break;
 	}
