@@ -952,9 +952,15 @@ String PlayerManagerImplementation::setLastName(CreatureObject* creature, const 
 }
 
 void PlayerManagerImplementation::createTutorialBuilding(CreatureObject* player) {
-	Zone* zone = server->getZone("tutorial");
+	Zone* zone = server->getZone("naboo");
 
-	if (zone == nullptr) {
+	player->initializePosition(1995, -197, 6198);
+	zone->transferObject(player, -1, true);
+
+	PlayerObject* ghost = player->getPlayerObject();
+	ghost->setSavedTerrainName(zone->getZoneName());
+
+	/*if (zone == nullptr) {
 		error("Character creation failed, tutorial zone disabled.");
 		return;
 	}
@@ -988,13 +994,19 @@ void PlayerManagerImplementation::createTutorialBuilding(CreatureObject* player)
 	ghost->setSavedTerrainName(zone->getZoneName());
 	ghost->setSavedParentID(cellTutPlayer->getObjectID());
 
-	tutorial->updateToDatabase();
+	tutorial->updateToDatabase();*/
 }
 
 void PlayerManagerImplementation::createSkippedTutorialBuilding(CreatureObject* player) {
-	Zone* zone = server->getZone("tutorial");
+	Zone* zone = server->getZone("naboo");
 
-	if (zone == nullptr) {
+	player->initializePosition(1995, -197, 6198);
+	zone->transferObject(player, -1, true);
+
+	PlayerObject* ghost = player->getPlayerObject();
+	ghost->setSavedTerrainName(zone->getZoneName());
+
+	/*if (zone == nullptr) {
 		error("Character creation failed, tutorial zone disabled.");
 		return;
 	}
@@ -1026,7 +1038,7 @@ void PlayerManagerImplementation::createSkippedTutorialBuilding(CreatureObject* 
 	ghost->setSavedTerrainName(zone->getZoneName());
 	ghost->setSavedParentID(cellTut->getObjectID());
 
-	tutorial->updateToDatabase();
+	tutorial->updateToDatabase();*/
 }
 
 uint8 PlayerManagerImplementation::calculateIncapacitationTimer(CreatureObject* playerCreature, int condition) {
