@@ -467,18 +467,6 @@ public:
 			dotPack->decreaseUseCount();
 		}
 
-		if (creature->isPlayerCreature()) {
-			bool shouldGcwCrackdownTef = false, shouldGcwTef = false, shouldBhTef = false;
-
-			CombatManager::instance()->checkForTefs(creature, creatureTarget, &shouldGcwCrackdownTef, &shouldGcwTef, &shouldBhTef);
-
-			PlayerObject* ghost = creature->getPlayerObject().get();
-
-			if (ghost != nullptr) {
-				ghost->updateLastCombatActionTimestamp(shouldGcwCrackdownTef, shouldGcwTef, shouldBhTef);
-			}
-		}
-
 		doAnimationsRange(creature, creatureTarget, dotPack->getObjectID(), creature->getWorldPosition().distanceTo(creatureTarget->getWorldPosition()), dotPack->isArea());
 
 		creature->notifyObservers(ObserverEventType::MEDPACKUSED);
