@@ -257,8 +257,6 @@ void PlayerObjectImplementation::unload() {
 	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
 	missionManager->deactivateMissions(creature);
 
-	notifyOffline();
-
 	if (creature->isRidingMount()) {
 		creature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
 	}
@@ -2263,6 +2261,8 @@ void PlayerObjectImplementation::setLinkDead(bool isSafeLogout) {
 	setCharacterBit(PlayerObjectImplementation::LD, true);
 
 	activateRecovery();
+
+	notifyOffline();
 
 	creature->clearQueueActions(false);
 }
