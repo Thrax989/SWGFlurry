@@ -218,7 +218,10 @@ void WearableObjectImplementation::applySkillModsTo(CreatureObject* creature) co
 		int value = wearableSkillMods.get(name);
 
 		if (!SkillModManager::instance()->isWearableModDisabled(name))
+		{
 			creature->addSkillMod(SkillModManager::WEARABLE, name, value, true);
+			creature->updateTerrainNegotiation();
+		}
 	}
 
 	SkillModManager::instance()->verifyWearableSkillMods(creature);
@@ -234,7 +237,10 @@ void WearableObjectImplementation::removeSkillModsFrom(CreatureObject* creature)
 		int value = wearableSkillMods.get(name);
 
 		if (!SkillModManager::instance()->isWearableModDisabled(name))
-			creature->removeSkillMod(SkillModManager::WEARABLE, name, value, true);
+		{
+			creature->addSkillMod(SkillModManager::WEARABLE, name, value, true);
+			creature->updateTerrainNegotiation();
+		}
 	}
 
 	SkillModManager::instance()->verifyWearableSkillMods(creature);
