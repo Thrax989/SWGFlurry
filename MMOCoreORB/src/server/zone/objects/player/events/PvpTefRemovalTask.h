@@ -36,12 +36,7 @@ public:
 		if (ghost->hasPvpTef()) {
 			auto gcwTefMs = ghost->getLastGcwPvpCombatActionTimestamp().miliDifference();
 			auto bhTefMs = ghost->getLastBhPvpCombatActionTimestamp().miliDifference();
-			auto jediTefMs = ghost->getLastJediPvpCombatActionTimestamp().miliDifference();
-			if (jediTefMs < 0){
-				this->reschedule(llabs(jediTefMs));
-			}else{
-				this->reschedule(llabs(jediTefMs < gcwTefMs ? (jediTefMs < bhTefMs ? jediTefMs : bhTefMs) : (gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs )));
-			}
+			this->reschedule(llabs(gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs));
 		} else {
 			ghost->updateInRangeBuildingPermissions();
 			player->clearPvpStatusBit(CreatureFlag::TEF);
