@@ -167,15 +167,9 @@ ig_88_boss = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"som_lava_cannon"},
+	weapons = {"bosstest_weapons"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = {
-            {"intimidationattack","intimidationChance=100"},
-            {"flamecone1",""},
-            {"flamesingle1",""},
-            {"overchargeshot2",""}, 
-            {"pointblankarea1",""}
-     }       
+	attacks = merge(marksmanmaster,brawlermaster,fencermaster,riflemanmaster,pistoleermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(ig_88_boss, "ig_88_boss")
