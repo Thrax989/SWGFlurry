@@ -1448,10 +1448,14 @@ void PlayerObjectImplementation::notifyOnline() {
 		SkillManager::instance()->surrenderSkill("force_rank_dark_novice", playerCreature, true);
 	}
 
+	if (playerCreature->hasSkill("combat_jedi_novice")) {
+		playerCreature->setFaction(neutral);
+	}
+
 	//Login to jedi manager
 	JediManager::instance()->onPlayerLoggedIn(playerCreature);
 	//Reset Players Skill Mods
-	SkillModManager::instance()->verifySkillBoxSkillMods(playerCreature);
+	//SkillModManager::instance()->verifySkillBoxSkillMods(playerCreature);
 
 	if (getFrsData()->getRank() >= 0) {
 		FrsManager* frsManager = zoneServer->getFrsManager();
