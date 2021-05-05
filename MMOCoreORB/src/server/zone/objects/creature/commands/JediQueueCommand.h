@@ -290,8 +290,6 @@ public:
 		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
 		playerObject->setForcePower(playerObject->getForcePower() - getFrsModifiedForceCost(creature));
 		VisibilityManager::instance()->increaseVisibility(creature, visMod);
-		//Jedi tef
-		//playerObject->updateLastJediAttackableTimestamp();
 	}
 
 	void setForceCost(int fc) {
