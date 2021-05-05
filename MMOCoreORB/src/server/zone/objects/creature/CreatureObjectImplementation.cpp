@@ -1991,6 +1991,14 @@ void CreatureObjectImplementation::activateQueueAction() {
 	if (time > 0)
 		nextAction.addMiliTime((uint32)(time * 1000));
 
+	for (int i = 0; i < commandQueue->size(); i++) {
+		Reference<CommandQueueAction*> actionToDelete = commandQueue->get(i);
+		if (action->getCommand() == actionToDelete->getCommand() && action->getActionCounter() == actionToDelete->getActionCounter() && action->getCompareToCounter() == actionToDelete->getCompareToCounter()) {
+			commandQueue->remove(i);
+			break;
+		}
+	}	
+
 	if (commandQueue->size() != 0) {
 		Reference<CommandQueueActionEvent*> e = new CommandQueueActionEvent(
 				asCreatureObject());
