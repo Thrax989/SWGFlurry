@@ -2533,10 +2533,6 @@ void PlayerObjectImplementation::updateLastGcwPvpCombatActionTimestamp() {
 	updateLastPvpCombatActionTimestamp(true, false);
 }
 
-void PlayerObjectImplementation::updateLastJediPvpCombatActionTimestamp() {
-	updateLastPvpCombatActionTimestamp(false, false);
-}
-
 bool PlayerObjectImplementation::hasPvpTef() const {
 	return !lastGcwPvpCombatActionTimestamp.isPast() || hasBhTef();
 }
