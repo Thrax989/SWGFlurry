@@ -1449,7 +1449,7 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 
 	if (playerCreature->hasSkill("combat_jedi_novice")) {
-		playerCreature->setFaction(neutral);
+		playerCreature->setFaction(1);
 	}
 
 	//Login to jedi manager
