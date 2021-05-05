@@ -225,8 +225,8 @@ int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon
 	//info("past special attack cost", true);
 
 	int damage = 0;
-	bool shouldGcwTef = false, shouldBhTef = false, shouldJediTef = false;
-	damage = doTargetCombatAction(attacker, weapon, defenderObject, data, &shouldGcwTef, &shouldBhTef, &shouldJediTef);
+	bool shouldGcwTef = false, shouldBhTef = false;
+	damage = doTargetCombatAction(attacker, weapon, defenderObject, data, &shouldGcwTef, &shouldBhTef);
 
 	if (data.getCommand()->isAreaAction() || data.getCommand()->isConeAction()) {
 		Reference<SortedVector<ManagedReference<TangibleObject*> >* > areaDefenders = getAreaTargets(attacker, weapon, defenderObject, data);
@@ -243,7 +243,8 @@ int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon
 					continue;
 				}
 
-				damage += doTargetCombatAction(attacker, weapon, areaDefenders->get(i), data, &shouldGcwTef, &shouldBhTef, &shouldJediTef);
+				damage += doTargetCombatAction(attacker, weapon, areaDefenders->get(i), data, &shouldGcwTef,
+											   &shouldBhTef);
 				areaDefenders->remove(i);
 
 				tano->unlock();
@@ -266,7 +267,7 @@ int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon
 	}
 
 	// Update PvP TEF Duration
-	if (shouldGcwTef || shouldBhTef || shouldJediTef) {
+	if (shouldGcwTef || shouldBhTef) {
 		ManagedReference<CreatureObject*> attackingCreature = attacker->isPet() ? attacker->getLinkedCreature() : attacker;
 
 		if (attackingCreature != nullptr) {
@@ -274,15 +275,7 @@ int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon
 
 			if (ghost != nullptr) {
 				Locker olocker(attackingCreature, attacker);
-				ghost->updateLastPvpCombatActionTimestamp(shouldGcwTef, shouldBhTef, shouldJediTef);
-				ManagedReference<CreatureObject*> defenderCreature = cast<CreatureObject*>(defenderObject);
-				if (defenderCreature != NULL){
-					olocker.release();
-					Locker olocker(defenderCreature, attacker);
-					ManagedReference<PlayerObject*> defenderPlayer = defenderCreature->getPlayerObject(); 
-					if (defenderPlayer != NULL && shouldJediTef)
-						defenderPlayer->updateLastPvpCombatActionTimestamp(false, false, true);
-				}
+				ghost->updateLastPvpCombatActionTimestamp(shouldGcwTef, shouldBhTef);
 			}
 		}
 	}
@@ -313,7 +306,7 @@ int CombatManager::doCombatAction(TangibleObject* attacker, WeaponObject* weapon
 	return damage;
 }
 
-int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* tano, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef, bool* shouldJediTef) {
+int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, TangibleObject* tano, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef) {
 	int damage = 0;
 
 	Locker clocker(tano, attacker);
@@ -330,14 +323,9 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		if (defender->getWeapon() == nullptr)
 			return 0;
 
-		damage = doTargetCombatAction(attacker, weapon, defender, data, shouldGcwTef, shouldBhTef, shouldJediTef);
+		damage = doTargetCombatAction(attacker, weapon, defender, data, shouldGcwTef, shouldBhTef);
 	} else {
 		int poolsToDamage = calculatePoolsToDamage(data.getPoolsToDamage());
-		if (tano != NULL && attacker != NULL && attacker->isPlayerCreature() && tano->getFaction() != 0 && attacker->getFaction() != tano->getFaction()){
-			PlayerObject* ghost = attacker->getPlayerObject();
-			if (ghost != NULL)
-				ghost->updateLastPvpCombatActionTimestamp(true, false, false);
-		}
 
 		damage = applyDamage(attacker, weapon, tano, poolsToDamage, data);
 
@@ -446,7 +434,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 	case MISS:
 		doMiss(attacker, weapon, defender, damage);
 		broadcastCombatAction(attacker, defender, weapon, data, 0, hitVal, 0);
-		checkForTefs(attacker, defender, shouldGcwTef, shouldBhTef, shouldJediTef);
+		checkForTefs(attacker, defender, shouldGcwTef, shouldBhTef);
 		return 0;
 		break;
 	case BLOCK:
@@ -461,7 +449,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		doCounterAttack(attacker, weapon, defender, damage);
 		if (!defender->hasState(CreatureState::PEACE))
 			defender->executeObjectControllerAction(STRING_HASHCODE("attack"), attacker->getObjectID(), "");
-		damageMultiplier = 0.0f;
+		damageMultiplier = 0.75f;
 		break;}
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defender, damage);
@@ -494,7 +482,7 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 
 	broadcastCombatAction(attacker, defender, weapon, data, damage, hitVal, hitLocation);
 
-	checkForTefs(attacker, defender, shouldGcwTef, shouldBhTef, shouldJediTef);
+	checkForTefs(attacker, defender, shouldGcwTef, shouldBhTef);
 
 	return damage;
 }
@@ -563,7 +551,7 @@ int CombatManager::doTargetCombatAction(TangibleObject* attacker, WeaponObject* 
 		doCounterAttack(attacker, weapon, defenderObject, damage);
 		if (!defenderObject->hasState(CreatureState::PEACE))
 			defenderObject->executeObjectControllerAction(STRING_HASHCODE("attack"), attacker->getObjectID(), "");
-		damageMultiplier = 0.0f;
+		damageMultiplier = 0.75f;
 		break;
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defenderObject, damage);
@@ -889,6 +877,12 @@ int CombatManager::getDefenderDefenseModifier(CreatureObject* defender, WeaponOb
 	// food bonus goes on top as well
 	targetDefense += defender->getSkillMod("dodge_attack");
 	targetDefense += defender->getSkillMod("private_dodge_attack");
+
+	if (weapon->getAttackType() == SharedWeaponObjectTemplate::MELEEATTACK) {
+		targetDefense += defender->getSkillMod("melee_defence");
+	} else if (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) {
+		targetDefense += defender->getSkillMod("ranged_defence");
+	}
 
 	//info("Target defense after state affects and cap is " +  String::valueOf(targetDefense), true);
 
@@ -1345,9 +1339,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
  		// inflict condition damage
   		Locker alocker(armor);
   		if (getArmorObjectReduction(armor, 16) > 0 && damageType == 16) {
-  			armor->inflictDamage(armor, 0, damage * 0.02, true, true);
+  			armor->inflictDamage(armor, 0, damage * 0.002, true, true);
   		} else {
-  			armor->inflictDamage(armor, 0, damage * 0.01, true, true);
+  			armor->inflictDamage(armor, 0, damage * 0.001, true, true);
   		}
 	}
 
@@ -1435,7 +1429,7 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	}
 
 	if (lairObserver && data.isForceAttack())
-		damage *= 1.5;
+		damage *= 3.5;
 
 	if (lairObserver && lairObserver->getSpawnNumber() > 2)
 		damage *= 3.5;
@@ -1987,10 +1981,8 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 			for (int j = 0; j < defenseMods.size(); j++)
 				targetDefense += targetCreature->getSkillMod(defenseMods.get(j));
 
-
 			targetDefense /= 1.5;
 			targetDefense += playerLevel;
-
 
 			if (targetDefense > 90)
 				targetDefense = 90.f;
@@ -2008,7 +2000,6 @@ void CombatManager::applyStates(CreatureObject* creature, CreatureObject* target
 
 					targetDefense /= 1.5;
 					targetDefense += playerLevel;
-
 
 					if (targetDefense > 90)
 						targetDefense = 90.f;
@@ -3021,7 +3012,7 @@ void CombatManager::initializeDefaultAttacks() {
 	defaultMeleeAttacks.add(STRING_HASHCODE("attack_low_center_medium_3"));
 }
 
-void CombatManager::checkForTefs(CreatureObject* attacker, CreatureObject* defender, bool* shouldGcwTef, bool* shouldBhTef, bool* shouldJediTef) {
+void CombatManager::checkForTefs(CreatureObject* attacker, CreatureObject* defender, bool* shouldGcwTef, bool* shouldBhTef) {
 	if (*shouldGcwTef && *shouldBhTef)
 		return;
 
@@ -3030,19 +3021,10 @@ void CombatManager::checkForTefs(CreatureObject* attacker, CreatureObject* defen
 
 	if (attackingCreature != nullptr && targetCreature != nullptr && attackingCreature->isPlayerCreature() && targetCreature->isPlayerCreature() && !areInDuel(attackingCreature, targetCreature)) {
 
-		if (!(*shouldJediTef) && (attackingCreature->isPlayerCreature() && attackingCreature->getPlayerObject()->isJedi()))
-			*shouldJediTef = true;
-
-		if (!(*shouldJediTef) && (targetCreature->getPlayerObject()->isJediAttackable() || targetCreature->getPlayerObject()->hasJediTef()))
-			*shouldJediTef = true;
-
-		if (!(*shouldGcwTef) && (attackingCreature->getFaction() != targetCreature->getFaction()) && attackingCreature->getFaction() != 0 && targetCreature->getFaction() != 0)
+		if (!(*shouldGcwTef) && (attackingCreature->getFaction() != targetCreature->getFaction()) && (attackingCreature->getFactionStatus() == FactionStatus::OVERT) && (targetCreature->getFactionStatus() == FactionStatus::OVERT))
 			*shouldGcwTef = true;
 
 		if (!(*shouldBhTef) && (attackingCreature->hasBountyMissionFor(targetCreature) || targetCreature->hasBountyMissionFor(attackingCreature)))
 			*shouldBhTef = true;
-
-		} else if (attackingCreature != NULL && targetCreature != NULL && attackingCreature->isPlayerCreature() && targetCreature->getFaction() != 0 && targetCreature->getFaction() != attackingCreature->getFaction()){
-			*shouldGcwTef = true;
 	}
 }
