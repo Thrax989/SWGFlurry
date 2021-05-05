@@ -67,4 +67,3 @@ MultiTargetPistolShotCommand = {
 }
 
 AddCommand(MultiTargetPistolShotCommand)
-
