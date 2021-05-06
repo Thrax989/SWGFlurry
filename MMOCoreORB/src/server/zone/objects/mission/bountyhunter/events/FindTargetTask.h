@@ -180,7 +180,6 @@ class FindTargetTask : public Task, public Logger {
 
 		long long skillMod = player->getSkillMod(skillToUse) + player->getSkillModFromBuffs(skillToUse);
 		int checkedSkillMod = skillMod + 25;
-		int checkedSkillMod = skillMod;
 		if (checkedSkillMod < 0) {
 			checkedSkillMod = 0;
 		} else if (checkedSkillMod > maximumSkillMod) {
