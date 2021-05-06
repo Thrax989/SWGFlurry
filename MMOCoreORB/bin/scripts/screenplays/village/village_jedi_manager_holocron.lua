@@ -46,6 +46,8 @@ function VillageJediManagerHolocron.useTheHolocron(pSceneObject, pPlayer)
 	PlayerObject(pGhost):setForcePower(PlayerObject(pGhost):getForcePowerMax());
 	CreatureObject(pPlayer):addCooldown(USEDHOLOCRON, HOLOCRONCOOLDOWNTIME)
 
+	CreatureObject(pPlayer):playEffect("clienteffect/pl_force_channel_self.cef", "")
+
 	SceneObject(pSceneObject):destroyObjectFromWorld()
 	SceneObject(pSceneObject):destroyObjectFromDatabase()
 end
