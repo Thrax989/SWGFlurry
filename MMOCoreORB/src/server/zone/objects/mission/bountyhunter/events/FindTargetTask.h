@@ -187,9 +187,9 @@ class FindTargetTask : public Task, public Logger {
 			checkedSkillMod = maximumSkillMod;
 		}
 
-		int time = 150 - checkedSkillMod;
-
-		return time + System::random(time / 2);
+		int time = 125 - checkedSkillMod;
+		time += System::random(time / 2); 
+		return time;
 	}
 
 	int getTargetLevel(CreatureObject* player, BountyMissionObjective* objective) {
