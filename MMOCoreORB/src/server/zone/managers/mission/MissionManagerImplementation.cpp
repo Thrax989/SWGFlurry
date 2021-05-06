@@ -34,6 +34,7 @@
 #include "server/zone/managers/stringid/StringIdManager.h"
 #include "server/zone/objects/player/FactionStatus.h"
 #include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/objects/building/BuildingObject.h"
 
 void MissionManagerImplementation::loadLuaSettings() {
 	try {
@@ -2031,8 +2032,21 @@ bool MissionManagerImplementation::isBountyValidForPlayer(CreatureObject* player
 
 	ManagedReference<CreatureObject*> creature = server->getObject(targetId).castTo<CreatureObject*>();
 
-	if (creature == nullptr)
+	if (creature == nullptr) {
 		return false;
+	}
+
+	ManagedReference<SceneObject*> parent = creature->getParent().get();
+	if (parent != nullptr && parent->isCellObject()){
+		ManagedReference<CellObject*> cell = cast<CellObject*>(parent.get());
+		if (cell != nullptr){
+			ManagedReference<BuildingObject*> building = cell->getParent().get().castTo<BuildingObject*>();
+			if (building != nullptr){
+				if (building->isPrivateStructure())
+					return false;
+			}
+		}
+	}
 
 	auto targetGhost = creature->getPlayerObject();
 
