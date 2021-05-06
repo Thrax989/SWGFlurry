@@ -162,6 +162,15 @@ public:
 				break;
 				
 		case 34: trainerTemplatePath = "trainer_meleebountyhunter";
+				break;
+
+		case 35: trainerTemplatePath = "informant_npc_lvl_1";
+				break;
+
+		case 36: trainerTemplatePath = "informant_npc_lvl_2";
+				break;
+
+		case 37: trainerTemplatePath = "informant_npc_lvl_3";
 
 		}
 
