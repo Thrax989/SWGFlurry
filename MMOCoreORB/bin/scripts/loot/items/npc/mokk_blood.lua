@@ -6,7 +6,7 @@ mokk_blood = {
 	customObjectName = "Mokk Blood",
 	directObjectTemplate = "object/tangible/component/chemistry/janta_blood.iff",
 	craftingValues = {
-		{"power",125,260,0},
+		{"power",125,160,0},
 		{"charges",10,25,0},
 		{"duration",1600,2000,0},
 		{"useCount",6,18,0},

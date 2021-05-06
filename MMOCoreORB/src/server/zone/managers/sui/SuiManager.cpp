@@ -3211,7 +3211,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "pc_limes inferior_travel") {
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		                box->setPromptTitle("Limes Inferior" );
+		                box->setPromptTitle("Limes Inferior");
 		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
@@ -3233,7 +3233,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "pc_lowca island_travel") {
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-		                box->setPromptTitle("Lowca Island" );
+		                box->setPromptTitle("Lowca Island");
 		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
@@ -3252,6 +3252,116 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						currentCity->addToCityTreasury(1000);
 						}
 			        }
+			} else if (templatePath == "pc_solace_travel") {
+				if (!player->isInCombat() && player->getBankCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Solace");
+		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getBankCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
+ 				        	player->switchZone("talus", -5499, 40, -4139);
+						player->subtractBankCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
+			        }
+			} else if (templatePath == "pc_stewjon_travel") {
+				if (!player->isInCombat() && player->getBankCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Stewjon");
+		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getBankCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
+ 				        	player->switchZone("rori", 4241, 79, 5983);
+						player->subtractBankCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
+			        }
+			} else if (templatePath == "pc_valinor_travel") {
+				if (!player->isInCombat() && player->getBankCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Valinor");
+		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getBankCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
+ 				        	player->switchZone("taanab", 6028, 10, 3724);
+						player->subtractBankCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
+			        }
+			} else if (templatePath == "pc_flurrys haven_travel") {
+				if (!player->isInCombat() && player->getBankCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Flurrys Haven");
+		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getBankCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
+ 				        	player->switchZone("naboo", 1995, -197, 6198);
+						player->subtractBankCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
+			        }
+			} else if (templatePath == "pc_lost city_travel") {
+				if (!player->isInCombat() && player->getBankCredits() < 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Lost City");
+		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getBankCredits() > 4999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
+						player->sendSystemMessage("Thank you for your travels.");
+ 				        	player->switchZone("geonosis", -3476, 7, 1948);
+						player->subtractBankCredits(5000);
+						box->setForceCloseDistance(5.f);
+						if(currentCity != nullptr && !currentCity->isClientRegion()) {
+						Locker clocker(currentCity, player);
+						currentCity->addToCityTreasury(1000);
+						}
+			        }				
 //GRAY JEDI HOLOCRON QUEST END CHAPTER
 			} else if (templatePath == "switch_normal_loadout") {
 				if (!player->isInCombat() && player->getBankCredits() < 99) {

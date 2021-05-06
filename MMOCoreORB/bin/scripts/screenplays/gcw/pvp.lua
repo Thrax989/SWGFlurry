@@ -41,11 +41,10 @@ function pvp:notifySpawnArea(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
-			player:sendSystemMessage("You have entered the pvp safe zone.")
+		if (player:isImperial() or player:isRebel()) then
+			player:sendSystemMessage("You have left the pvp zone.")
 			player:playEffect("clienteffect/sm_end_of_the_line.cef", "")
 			player:playEffect("clienteffect/player_clone_compile.cef", "")
-			player:setFactionStatus(0)
 			end
 		return 0
 	end)
@@ -68,7 +67,7 @@ function pvp:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 			return 0
 		end
 
-		if (player:isImperial() or player:isNeutral() or player:isRebel()) then
+		if (player:isImperial() or player:isRebel()) then
 			player:sendSystemMessage("You entered the pvp zone!")
 			player:setFactionStatus(2)
 			player:playEffect("clienteffect/sm_end_of_the_line.cef", "")

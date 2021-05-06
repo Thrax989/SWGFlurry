@@ -26,6 +26,7 @@
 #include "server/zone/packets/player/PlayerObjectDeltaMessage3.h"
 #include "server/zone/packets/player/PlayerObjectDeltaMessage8.h"
 #include "server/zone/packets/player/PlayerObjectDeltaMessage9.h"
+#include "server/zone/packets/creature/CreatureObjectDeltaMessage6.h"
 #include "server/zone/packets/chat/ChatOnGetFriendsList.h"
 #include "server/zone/packets/chat/ChatOnGetIgnoreList.h"
 #include "server/zone/packets/chat/ChatOnAddFriend.h"
@@ -256,8 +257,6 @@ void PlayerObjectImplementation::unload() {
 	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
 	missionManager->deactivateMissions(creature);
 
-	notifyOffline();
-
 	if (creature->isRidingMount()) {
 		creature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
 	}
@@ -394,16 +393,33 @@ void PlayerObjectImplementation::showInstallationInfo(CreatureObject* player)
 
 				String extractionMessage = "";
 
-				InstallationObject* installation = cast<InstallationObject*> (structure);
-				if(installation != nullptr)
+				String capacityMessage = "";
+				
+				if(structure->isInstallationObject())
+
 				{
+					InstallationObject* installation = cast<InstallationObject*> (structure);
+					installation->updateStructureStatus();
 					bool isOperational = installation->isOperating();
 					long resourceId = installation->getActiveResourceSpawnID();
 					String currentSpawn = installation->getCurrentSpawnName();
+					float hopperCapacityMax = installation->getHopperSizeMax();
+					float hopperCapacity = installation->getHopperSize();
+					float hopperFilledPercent = 0.0f;
+					
+					if (hopperCapacity > 0.0f) {
+						hopperFilledPercent = Math::getPrecision((hopperCapacity / hopperCapacityMax) * 100.0f, 2);  // round % to two decimal places
+					}
+					
+					if (!structure->isGeneratorObject()) {
+						capacityMessage += " Power: " + String::valueOf(remainingPower);
+					}
+					
+					capacityMessage += " Capacity: " + String::valueOf(hopperFilledPercent) + "% ";
 
 					if(isOperational)
 					{
-						extractionMessage =  " ON Pulling: " + currentSpawn + " ";
+						extractionMessage = " ON Pulling: " + currentSpawn + " ";
 							// Color should stay green
 					}
 					else
@@ -413,12 +429,17 @@ void PlayerObjectImplementation::showInstallationInfo(CreatureObject* player)
 					}
 
 				}
-				else
+				else if (structure->isBuildingObject()) {
+					BuildingObject* building = cast<BuildingObject*>(structure);
+					uint32 playerItems = building->getCurrentNumberOfPlayerItems();
+					uint32 maxPlayerItems = building->getMaximumNumberOfPlayerItems();
+					capacityMessage = " Items: " + String::valueOf(playerItems) + "/" + String::valueOf(maxPlayerItems) + " ";
+				}
+				
+				if(remainingMaint <= 0 && !structure->isCityHall())
+
 				{
-					if(remainingMaint <= 0)
-					{
-						colorAdjustment = "\\#e60000";
-					}
+					colorAdjustment = "\\#e60000";
 				}
 
 				float xPos = structure->getWorldPositionX();
@@ -427,9 +448,8 @@ void PlayerObjectImplementation::showInstallationInfo(CreatureObject* player)
 				String posString = "(" + String::valueOf(xPos) + ", " + String::valueOf(yPos) +") ";
 				String structureName = StringIdManager::instance()->getStringId(structure->getObjectName()->getFullPath().hashCode()).toString();
 
-				String strucName = colorAdjustment + structureName + " (" + zoneName + " " + posString + ")" + " Power: " + remainingPower + " Maint: " + remainingMaint + extractionMessage;
-
-
+				String strucName = colorAdjustment + structureName + " (" + zoneName + " " + posString + ")" 
+					" Maint: " + remainingMaint + capacityMessage + extractionMessage;
 
 				listBox->addMenuItem(strucName);
 			}
@@ -1448,6 +1468,22 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
 
+	if (playerCreature->isInGuild()) {
+		ManagedReference<GuildObject*> guild = playerCreature->getGuildObject().get();
+		uint64 playerId = playerCreature->getObjectID();
+
+		if (guild != nullptr && !guild->hasMember(playerId)) {
+			playerCreature->setGuildObject(nullptr);
+
+			CreatureObjectDeltaMessage6* creod6 = new CreatureObjectDeltaMessage6(playerCreature);
+			creod6->updateGuildID();
+			creod6->close();
+			playerCreature->broadcastMessage(creod6, true);
+
+			updateInRangeBuildingPermissions();
+		}
+	}	
+
 	if (getForcePowerMax() > 0 && getForcePower() < getForcePowerMax())
 		activateForcePowerRegen();
 
@@ -2226,6 +2262,8 @@ void PlayerObjectImplementation::setLinkDead(bool isSafeLogout) {
 
 	activateRecovery();
 
+	notifyOffline();
+
 	creature->clearQueueActions(false);
 }
 
@@ -2474,19 +2512,7 @@ Time PlayerObjectImplementation::getLastGcwPvpCombatActionTimestamp() const {
 	return lastGcwPvpCombatActionTimestamp;
 }
 
-Time PlayerObjectImplementation::getLastJediPvpCombatActionTimestamp() {
-	return lastJediPvpCombatActionTimestamp;
-}
-Time PlayerObjectImplementation::getLastJediAttackableTimestamp() {
-	return lastJediAttackableTimestamp;
-}
-
-void PlayerObjectImplementation::updateLastJediAttackableTimestamp() {
-	lastJediAttackableTimestamp.updateToCurrentTime();
-	lastJediAttackableTimestamp.addMiliTime(60000);
-}
-
-void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateGcwAction, bool updateBhAction, bool updateJediAction) {
+void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateGcwAction, bool updateBhAction) {
 	ManagedReference<CreatureObject*> parent = getParent().get().castTo<CreatureObject*>();
 
 	if (parent == nullptr)
@@ -2508,12 +2534,6 @@ void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateG
 		lastGcwPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
 	}
 
-	if (updateJediAction){
-		lastJediPvpCombatActionTimestamp.updateToCurrentTime();
-		lastJediPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
-		info("Updating Jedi TEF");
-	}
-
 	schedulePvpTefRemovalTask();
 
 	if (!alreadyHasTef) {
@@ -2523,33 +2543,22 @@ void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateG
 }
 
 void PlayerObjectImplementation::updateLastBhPvpCombatActionTimestamp() {
-	updateLastPvpCombatActionTimestamp(false, true, false);
+	updateLastPvpCombatActionTimestamp(false, true);
 }
 
 void PlayerObjectImplementation::updateLastGcwPvpCombatActionTimestamp() {
-	updateLastPvpCombatActionTimestamp(true, false, false);
-}
-
-void PlayerObjectImplementation::updateLastJediPvpCombatActionTimestamp() {
-	updateLastPvpCombatActionTimestamp(false, false, true);
+	updateLastPvpCombatActionTimestamp(true, false);
 }
 
 bool PlayerObjectImplementation::hasPvpTef() const {
-	return !lastGcwPvpCombatActionTimestamp.isPast() || hasBhTef() || hasJediTef();
+	return !lastGcwPvpCombatActionTimestamp.isPast() || hasBhTef();
 }
 
 bool PlayerObjectImplementation::hasBhTef() const {
 	return !lastBhPvpCombatActionTimestamp.isPast();
 }
 
-bool PlayerObjectImplementation::hasJediTef() const {
-	return !lastJediPvpCombatActionTimestamp.isPast();
-}
-bool PlayerObjectImplementation::isJediAttackable() const {
-	return !lastJediAttackableTimestamp.isPast();
-}
-
-void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow, bool removeBhTefNow, bool removeJediTefNow) {
+void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow, bool removeBhTefNow) {
 	ManagedReference<CreatureObject*> parent = getParent().get().castTo<CreatureObject*>();
 
 	if (parent == nullptr)
@@ -2559,18 +2568,13 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 		pvpTefTask = new PvpTefRemovalTask(parent);
 	}
 
-	if (removeGcwTefNow || removeBhTefNow || removeJediTefNow) {
+	if (removeGcwTefNow || removeBhTefNow) {
 		if (removeGcwTefNow)
 			lastGcwPvpCombatActionTimestamp.updateToCurrentTime();
 
 		if (removeBhTefNow) {
 			lastBhPvpCombatActionTimestamp.updateToCurrentTime();
 			parent->notifyObservers(ObserverEventType::BHTEFCHANGED);
-		}
-
-		if (removeJediTefNow){
-			lastJediPvpCombatActionTimestamp.updateToCurrentTime();
-			lastJediAttackableTimestamp.updateToCurrentTime();
 		}
 
 		if (pvpTefTask->isScheduled()) {
@@ -2583,8 +2587,7 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 		if (hasPvpTef()) {
 			auto gcwTefMs = getLastGcwPvpCombatActionTimestamp().miliDifference();
 			auto bhTefMs = getLastBhPvpCombatActionTimestamp().miliDifference();
-			auto jediTefMs = getLastJediPvpCombatActionTimestamp().miliDifference();
-			pvpTefTask->schedule(llabs(jediTefMs < gcwTefMs ? (jediTefMs < bhTefMs ? jediTefMs : bhTefMs) : (gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs)));
+			pvpTefTask->schedule(llabs(gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs));
 		} else {
 			pvpTefTask->execute();
 		}
@@ -2592,7 +2595,7 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 }
 
 void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeNow) {
-	schedulePvpTefRemovalTask(removeNow, removeNow, removeNow);
+	schedulePvpTefRemovalTask(removeNow, removeNow);
 }
 
 Vector3 PlayerObjectImplementation::getTrainerCoordinates() {

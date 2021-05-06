@@ -52,16 +52,25 @@ ForceThrow2Command = {
 	accuracySkillMod = "forcethrow_accuracy",
 
 	stateEffects = {
+		StateEffect(
+			STUN_EFFECT,
+			{},
+			{},
+			{ "jedi_state_defense" },
+			65,
+			0,
+			10
+		),
 	  StateEffect(
-		STUN_EFFECT,
+		KNOCKDOWN_EFFECT,
+		{ "knockdownRecovery", "lastKnockdown" },
 		{},
-		{ "jedi_state_defense" },
 		{},
 		65,
 		0,
-		10
-	  )
-	},
+		0
+    )
+	}
 
 	animation = "force_throw_1_particle_level_1",
 	animType = GENERATE_INTENSITY,

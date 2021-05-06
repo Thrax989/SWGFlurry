@@ -4,13 +4,13 @@ igbattleforeman = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 25.00,
-	damageMin = 200,
-	damageMax = 300,
+	damageMin = 500,
+	damageMax = 1000,
 	baseXp = 300000,
-	baseHAM = 300000,
-	baseHAMmax = 310000,
+	baseHAM = 175000,
+	baseHAMmax = 200000,
 	armor = 0,
-	resists = {60,60,60,60,60,60,60,60,60},
+	resists = {130,140,140,140,140,140,140,140,120},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -30,19 +30,13 @@ igbattleforeman = Creature:new {
 			groups = {
 				{group = "trash_common", chance = 10000000},
 			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "trash_common", chance = 10000000},
-			},
-			lootChance = 10000000
+			lootChance = 800000
 		},
 		{
 			groups = {
 				{group = "trash_rare", chance = 10000000},
 			},
-			lootChance = 5000000
+			lootChance = 600000
 		},
 		{
 			groups = {
@@ -51,16 +45,7 @@ igbattleforeman = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 2000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 2000000
+			lootChance = 500000
 		}
 	},
 	weapons = {"tusken_weapons"},

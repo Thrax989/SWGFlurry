@@ -58,7 +58,7 @@ public:
 		PlayerObject* targetGhost = creature->getPlayerObject();
 		Zone* zone = creature->getZone();
 		
-		if (targetGhost == NULL)
+		if (targetGhost == nullptr)
 			return GENERALERROR;
 
 		if(creature->getFactionStatus() == FactionStatus::ONLEAVE || creature->getFactionStatus() == FactionStatus::COVERT){
@@ -70,13 +70,13 @@ public:
  			String playerName = creature->getFirstName();
  			StringBuffer zBroadcast;
  			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Is Now ";
-		        creature->addCooldown("setpvp", 30 * 1000);
+		        creature->addCooldown("setpvp", 15 * 1000);
 			if(creature->getFactionStatus() == FactionStatus::ONLEAVE){
 				zBroadcast << "Onleave";
 			}else{
 				zBroadcast << "Overt";
 			}
-			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			creature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		
 		return SUCCESS;
 	}

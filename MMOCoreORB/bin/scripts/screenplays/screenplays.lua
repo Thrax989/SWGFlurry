@@ -799,3 +799,6 @@ includeFile("events/painting_exchange_dealer.lua")
 includeFile("events/event_exchange_dealer.lua")
 
 includeFile("custom_screenplays/screenplays.lua")
+
+--Battlefields
+includeFile("battlefields/battlefield_spawner.lua")

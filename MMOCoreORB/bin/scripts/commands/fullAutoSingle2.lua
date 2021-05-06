@@ -62,7 +62,7 @@ FullAutoSingle2Command = {
 		{}, 
 		{ "dizzy_defense" }, 
 		{ "jedi_state_defense", "resistance_states" },
-		30, 
+		60, 
 		0, 
 		30 
 	  ),
@@ -71,7 +71,7 @@ FullAutoSingle2Command = {
 		{}, 
 		{ "blind_defense" }, 
 		{ "jedi_state_defense", "resistance_states" },
-		30, 
+		60, 
 		0, 
 		40 
 	  ),
@@ -80,7 +80,7 @@ FullAutoSingle2Command = {
 		{}, 
 		{ "stun_defense" }, 
 		{ "jedi_state_defense", "resistance_states" },
-		30, 
+		60, 
 		0, 
 		30 
 	  )

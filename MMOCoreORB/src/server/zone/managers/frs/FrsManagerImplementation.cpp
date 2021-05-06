@@ -602,13 +602,13 @@ void FrsManagerImplementation::removeFromFrs(CreatureObject* player) {
 	}
 
 	playerData->setRank(-1);
-	playerData->setCouncilType(0);
 
 	Locker clocker(managerData, player);
 	managerData->removeChallengeTime(playerID);
 	clocker.release();
 
 	updatePlayerSkills(player);
+	playerData->setCouncilType(0);
 
 	StringIdChatParameter param("@force_rank:council_left"); // You have left the %TO.
 
@@ -804,6 +804,15 @@ void FrsManagerImplementation::adjustFrsExperience(CreatureObject* player, int a
 		return;
 
 	if (amount > 0) {
+
+          	if (ghost->hasCappedExperience("force_rank_xp"))
+                {
+                	StringIdChatParameter message("base_player", "prose_hit_xp_cap"); //You have achieved your current limit for %TO experience.
+                	message.setTO("exp_n", "force_rank_xp");
+                	player->sendSystemMessage(message);
+                	return;
+                }
+
 		ghost->addExperience("force_rank_xp", amount, true);
 
 		if (sendSystemMessage) {

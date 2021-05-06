@@ -32,7 +32,7 @@ lootcollectiontierdiamond  = {
 		{groupTemplate = "theme_park_reward_imperial_kaja", weight = 312500},
 		{groupTemplate = "theme_park_reward_imperial_kaja", weight = 312500},
 		{groupTemplate = "kimogila_common", weight = 312500},
-		{groupTemplate = "geonosian_cubes", weight = 312500},
+		{groupTemplate = "geonosian_common", weight = 312500},
 		{groupTemplate = "fire_breathing_spider", weight = 312500},
 		{groupTemplate = "junk", weight = 312500},
 		{groupTemplate = "nightsister_common", weight = 312500},

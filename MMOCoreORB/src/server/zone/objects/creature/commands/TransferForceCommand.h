@@ -93,8 +93,6 @@ public:
 		CombatManager::instance()->broadcastCombatSpam(creature, targetCreature, nullptr, forceTransfer, "cbt_spam", combatSpam, 0);
 
 		VisibilityManager::instance()->increaseVisibility(creature, visMod);
-		//Jedi Attackable
-		//playerGhost->updateLastJediAttackableTimestamp();
 
 		return SUCCESS;
 	}

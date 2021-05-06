@@ -199,7 +199,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
            	"Intas Minor (5,000 Credits)", "pc_intas_travel", 
             "Lafayette (5,000 Credits)", "pc_lafayette_travel",
-            "Avalon Prime (5,000 Credits)", "pc_avalon_travel"
+            "Avalon Prime (5,000 Credits)", "pc_avalon_travel",
+	    "Flurrys Haven (5,000 Credits)", "pc_flurrys haven_travel"		
           },
             "Dantooine",
           {
@@ -230,12 +231,14 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Geonosis",
           {
-            "Asgard (5,000 Credits)", "asgard"
+            "Asgard (5,000 Credits)", "pc_asgard_travel",
+	    "Lost City (5,000 Credits)", "pc_lost city_travel"		
           },
             "Talus",
           {
 			"Caladan (5,000 Credits)", "pc_caladan_travel",
-			"Vir Domus (5,000 Credits)", "pc_virdomus_travel"
+			"Vir Domus (5,000 Credits)", "pc_virdomus_travel",
+			"Solace (5,000 Credits)", "pc_solace_travel"
           },  
             "Lok",
           {
@@ -268,11 +271,13 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		  "Rori",
           {  
             "Unrest (5,000 Credits)", "pc_unrest_travel",
-            "No Fate (5,000 Credits)", "pc_nofate_travel"  
+            "No Fate (5,000 Credits)", "pc_nofate_travel",
+            "Stewjon (5,000 Credits)", "pc_stewjon_travel"   
 		  },		  
 		  "Taanab",
           {  
-            "Sin city (5,000 Credits)", "pc_sincity_travel" 
+            "Sin city (5,000 Credits)", "pc_sincity_travel",
+            "Valinor city (5,000 Credits)", "pc_valinor_travel" 
 		  },		  		  
     }      
 	}

@@ -2,15 +2,15 @@ wampa = Creature:new {
 	objectName = "@mob/creature_names:wampa",
 	socialGroup = "wampa",
 	faction = "",
-	level = 80,
-	chanceHit = 0.75,
-	damageMin = 570,
+	level = 89,
+	chanceHit = 0.85,
+	damageMin = 600,
 	damageMax = 850,
-	baseXp = 7668,
-	baseHAM = 12000,
-	baseHAMmax = 15000,
+	baseXp = 8500,
+	baseHAM = 13000,
+	baseHAMmax = 16000,
 	armor = 1,
-	resists = {30,160,30,200,200,200,30,30,-1},
+	resists = {40,170,40,200,200,200,40,40,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -19,7 +19,7 @@ wampa = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0.25,
-	ferocity = 12,
+	ferocity = 15,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
@@ -27,11 +27,20 @@ wampa = Creature:new {
 
 	templates = {"object/mobile/wampa.iff"},
 	scale = 0.8,
-	lootGroups = {},
+	lootGroups = {		
+		{
+			groups = {
+				{group = "trash_common", chance = 9000000},
+ 				{group = "trash_rare", chance = 1000000},
+			},
+			lootChance = 1500000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
 		{"knockdownattack",""},
+		{"creatureareacombo",""},    
 		{"creatureareaattack",""}
 	}
 }

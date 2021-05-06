@@ -30,9 +30,9 @@ public:
 		uint64 playerid = creature->getObjectID();
 		ManagedReference<SceneObject*> obj = playerManager->getInRangeStructureWithAdminRights(creature, targetid);
 
-		if(targetid == playerid)
-		{
-			// If we are here, its a SELF TARGET
+		// default to showing all deployed structures if not near any.  Targeting self is not very intuitive.
+		if (obj == nullptr || !obj->isStructureObject() || obj->getZone() == nullptr) {
+
 			if(creature->isPlayerCreature())
 			{
 				PlayerObject* player = creature->getPlayerObject();
@@ -42,12 +42,6 @@ public:
 					return SUCCESS;
 				}
 			}
-
-		}
-
-		if (obj == nullptr || !obj->isStructureObject() || obj->getZone() == nullptr) {
-			creature->sendSystemMessage("@player_structure:no_building"); //you must be in a building, be near an installation, or have one targeted to do that.
-			return INVALIDTARGET;
 		}
 
 		StructureObject* structure = cast<StructureObject*>( obj.get());

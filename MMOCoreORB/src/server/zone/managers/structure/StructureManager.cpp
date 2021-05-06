@@ -955,8 +955,18 @@ void StructureManager::reportStructureStatus(CreatureObject* creature,
 	if (structure->isInstallationObject() && !structure->isGeneratorObject() && !structure->isCivicStructure()) {
 		InstallationObject* installation = cast<InstallationObject*>(structure);
 
+		installation->updateStructureStatus();  // update the hopper to get a current value, instead of from the last maintenance update
+		
 		float secsRemainingPower = 0.f;
 		float basePowerRate = installation->getBasePowerRate();
+		float hopperCapacityMax = installation->getHopperSizeMax();
+		float hopperCapacity = installation->getHopperSize();
+		float hopperFilledPercent = 0.0f;
+
+		if (hopperCapacity > 0.0f) {
+			hopperFilledPercent = Math::getPrecision((hopperCapacity / hopperCapacityMax) * 100.0f, 2);  // round % to two decimal places
+		}
+
 		if((installation->getSurplusPower() > 0) && (basePowerRate != 0)){
 			secsRemainingPower = ((float)installation->getSurplusPower() / (float)basePowerRate)*3600;
 		}
@@ -972,6 +982,25 @@ void StructureManager::reportStructureStatus(CreatureObject* creature,
 						+ String::valueOf(
 								(int) installation->getBasePowerRate())
 						+ " @player_structure:units_per_hour");
+		status->addMenuItem(
+				"Capacity: " + String::valueOf(hopperFilledPercent) + "%");
+	}
+
+	if (structure->isGeneratorObject()) {
+		
+		InstallationObject* generator = cast<InstallationObject*>(structure);
+		generator->updateStructureStatus();
+		
+		float hopperCapacityMax = generator->getHopperSizeMax();
+		float hopperCapacity = generator->getHopperSize();
+		float hopperFilledPercent = 0.0f;
+
+		if (hopperCapacity > 0.0f) {
+				hopperFilledPercent = Math::getPrecision((hopperCapacity / hopperCapacityMax) * 100.0f, 2);
+		}
+		
+		status->addMenuItem(
+				"Capacity: " + String::valueOf(hopperFilledPercent) + "%");
 	}
 
 	if (ghost->isPrivileged())
@@ -979,6 +1008,9 @@ void StructureManager::reportStructureStatus(CreatureObject* creature,
 
 	if (structure->isBuildingObject()) {
 		BuildingObject* building = cast<BuildingObject*>(structure);
+
+		uint32 playerItems = building->getCurrentNumberOfPlayerItems();
+		uint32 maxPlayerItems = building->getMaximumNumberOfPlayerItems();
 
 		if (building->isGCWBase()) {
 			Zone* zone = creature->getZone();
@@ -993,10 +1025,7 @@ void StructureManager::reportStructureStatus(CreatureObject* creature,
 
 		status->addMenuItem(
 				"@player_structure:items_in_building_prompt "
-				//Number of Items in Building. Max item limit Added. [1/1000]:
-				+ String::valueOf(building->getCurrentNumberOfPlayerItems())
-				+ "/"
-				+ String::valueOf(building->getMaximumNumberOfPlayerItems()));
+						+ String::valueOf(playerItems) + "/" + String::valueOf(maxPlayerItems)); //Number of Items in Building:
 
 #if ENABLE_STRUCTURE_JSON_EXPORT
 		if (creature->hasSkill("admin_base")) {

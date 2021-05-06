@@ -241,17 +241,17 @@ object_tangible_wearables_armor_composite_armor_composite_gloves = object_tangib
 	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
-	rating = LIGHT,
+	rating = HEAVY,
 
-	kinetic = 65,
-	energy = 65,
+	kinetic = 80,
+	energy = 80,
 	electricity = 80,
-	stun = 25,
-	blast = 65,
-	heat = 65,
-	cold = 65,
-	acid = 65,
-	lightSaber = 0,
+	stun = 50,
+	blast = 80,
+	heat = 80,
+	cold = 80,
+	acid = 80,
+	lightSaber = 67,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},

@@ -124,8 +124,8 @@ naboo_destroy_missions = {
 		},
 		{
 			lairTemplateName = "naboo_mauler_sect_neutral_medium_theater",
-			minDifficulty = 10,
-			maxDifficulty = 14,
+			minDifficulty = 60,
+			maxDifficulty = 75,
 			size = 25,
 		},
 		{

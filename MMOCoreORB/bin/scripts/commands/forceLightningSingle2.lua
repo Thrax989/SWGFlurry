@@ -61,7 +61,7 @@ ForceLightningSingle2Command = {
 
 		{ "jedi_state_defense", "resistance_states" },
 
-		75, 
+		85, 
 
 		0, 
 
@@ -74,7 +74,7 @@ ForceLightningSingle2Command = {
 		{}, 
 		{ "dizzy_defense" }, 
 		{ "jedi_state_defense", "resistance_states" }, 
-		75, 
+		85, 
 		0, 
 		30 
 	  ),
@@ -83,7 +83,7 @@ ForceLightningSingle2Command = {
 	{}, 
 		{ "stun_defense" }, 
 		{ "jedi_state_defense", "resistance_states" }, 
-		76, 
+		85, 
 		0, 
 		60
 	)
@@ -116,8 +116,8 @@ ForceLightningSingle2Command = {
 
 	frsLightMinDamageModifier = 5,
 	frsLightMaxDamageModifier = 10,
-	frsDarkMinDamageModifier = 5,
-	frsDarkMaxDamageModifier = 10,
+	frsDarkMinDamageModifier = 10,
+	frsDarkMaxDamageModifier = 20,
 
 	range = 32
 }

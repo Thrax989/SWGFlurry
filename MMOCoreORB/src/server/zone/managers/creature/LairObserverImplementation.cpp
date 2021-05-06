@@ -167,26 +167,25 @@ void LairObserverImplementation::healLair(TangibleObject* lair, TangibleObject* 
 	for (int i = 0; i < spawnedCreatures.size() ; ++i) {
 		CreatureObject* creo = spawnedCreatures.get(i);
 
-		if (creo->isDead() || creo->getZone() == nullptr)
+		if (creo->isDead() || creo->getZone() == nullptr) {
 			continue;
+		}
 
-		if (creo->isInRange(lair, 32.f))
-			damageToHeal += lairMaxCondition / 100;
+		if (lair->getDistanceTo(creo) > 20.0f) {
+			continue;
+		}
 
+		//  TODO: Range check
+		damageToHeal += lairMaxCondition / 100;
 	}
-
 	if (damageToHeal == 0)
 		return;
-
 	if (lair->getZone() == nullptr)
 		return;
-
 	lair->healDamage(lair, 0, damageToHeal, true);
-
 	PlayClientEffectObjectMessage* heal =
 			new PlayClientEffectObjectMessage(lair, "clienteffect/healing_healdamage.cef", "");
 	lair->broadcastMessage(heal, false);
-
 	PlayClientEffectLoc* healLoc = new PlayClientEffectLoc("clienteffect/healing_healdamage.cef",
 			lair->getZone()->getZoneName(), lair->getPositionX(),
 			lair->getPositionZ(), lair->getPositionY());

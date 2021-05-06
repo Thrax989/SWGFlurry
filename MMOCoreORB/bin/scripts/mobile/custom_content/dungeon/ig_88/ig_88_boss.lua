@@ -4,8 +4,8 @@ ig_88_boss = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 80.00,
-	damageMin = 3000,
-	damageMax = 4500,
+	damageMin = 1200,
+	damageMax = 2500,
 	baseXp = 20000,
 	baseHAM = 1000000,
 	baseHAMmax = 1250000,
@@ -167,15 +167,9 @@ ig_88_boss = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"som_lava_cannon"},
+	weapons = {"bosstest_weapons"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = {
-            {"intimidationattack","intimidationChance=100"},
-            {"flamecone1",""},
-            {"flamesingle1",""},
-            {"overchargeshot2",""}, 
-            {"pointblankarea1",""}
-     }       
+	attacks = merge(marksmanmaster,brawlermaster,fencermaster,riflemanmaster,pistoleermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(ig_88_boss, "ig_88_boss")

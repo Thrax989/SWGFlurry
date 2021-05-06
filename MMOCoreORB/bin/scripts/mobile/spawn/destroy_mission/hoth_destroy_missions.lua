@@ -10,8 +10,8 @@ hoth_destroy_missions = {
 		},
 		{
 			lairTemplateName = "hoth_wampa_lair",
-			minDifficulty = 28,
-			maxDifficulty = 38,
+			minDifficulty = 85,
+			maxDifficulty = 90,
 			size = 25,
 		},
 	}
