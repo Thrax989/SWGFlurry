@@ -55,15 +55,10 @@ public:
                 if (creature->getFutureFactionStatus() != -1)
                         return GENERALERROR;
 
-		if (creature->getFaction() != 370444368){
+		if (creature->getFaction() == 0){
 			creature->sendSystemMessage("You may not use this command if you are not a Rebel Or Imperial, You must be apart of the GCW.");
 			return GENERALERROR;
 		}
-
-		if (creature->getFaction() != 3679112276){
-			creature->sendSystemMessage("You may not use this command if you are not a Rebel Or Imperial, You must be apart of the GCW.");
-			return GENERALERROR;
-		}	
 
 				if (!creature->checkCooldownRecovery("setpvp")){
 					creature->sendSystemMessage("You have already used this command recently.");
