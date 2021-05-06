@@ -31,12 +31,7 @@ public:
 			return GENERALERROR;
 		}
 
-		if (creature->getFaction() != 370444368){
-			creature->sendSystemMessage("You may not use this command if you are not a Rebel Or Imperial, You must be apart of the GCW.");
-			return GENERALERROR;
-		}
-
-		if (creature->getFaction() != 3679112276){
+		if (creature->getFaction() == 0){
 			creature->sendSystemMessage("You may not use this command if you are not a Rebel Or Imperial, You must be apart of the GCW.");
 			return GENERALERROR;
 		}
