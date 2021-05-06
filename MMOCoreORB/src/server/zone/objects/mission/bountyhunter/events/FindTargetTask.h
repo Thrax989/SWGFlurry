@@ -159,10 +159,10 @@ class FindTargetTask : public Task, public Logger {
 
 		successChance -= ((getTargetLevel(player, objective)) / 3);
 
-		if (successChance < 5) {
-			successChance = 5;
-		} else if (successChance > 95) {
-			successChance = 95;
+		if (successChance < 50) {
+			successChance = 50;
+		} else if (successChance > 90) {
+			successChance = 100;
 		}
 
 		int randomValue = System::random(100);
@@ -179,7 +179,7 @@ class FindTargetTask : public Task, public Logger {
 		}
 
 		long long skillMod = player->getSkillMod(skillToUse) + player->getSkillModFromBuffs(skillToUse);
-
+		int checkedSkillMod = skillMod + 25;
 		int checkedSkillMod = skillMod;
 		if (checkedSkillMod < 0) {
 			checkedSkillMod = 0;
