@@ -1637,11 +1637,13 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	}
 
 	// PvP Damage Reduction.
-	if (attacker->isPlayerCreature() && defender->isPlayerCreature() && !data.isForceAttack())
+	if (attacker->isPlayerCreature() && defender->isPlayerCreature() && !data.isForceAttack()){
+		if (defender->asCreatureObject()->hasSkill("force_title_jedi_novice") && !attacker->asCreatureObject()->hasSkill("force_title_jedi_novice")){
 		damage *= 0.50;
-
-	if (attacker->isPlayerCreature() && defender->isPlayerCreature() && data.isForceAttack())
-		damage *= 0.50;
+		} else {
+		damage *= 0.40;
+		}
+	}
 
 	if (damage < 1) damage = 1;
 
