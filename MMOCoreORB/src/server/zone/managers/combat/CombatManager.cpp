@@ -842,7 +842,7 @@ int CombatManager::getAttackerAccuracyBonus(CreatureObject* attacker, WeaponObje
 	if (weapon->getAttackType() == SharedWeaponObjectTemplate::MELEEATTACK)
 		bonus += attacker->getSkillMod("private_melee_accuracy_bonus");
 	if (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)
-
+		bonus += attacker->getSkillMod("private_ranged_accuracy_bonus");
 	if (weapon->getWeaponType() == "heavyweapon") {
 		bonus += attacker->getSkillMod("heavyweapon_accuracy");
 	}		bonus += attacker->getSkillMod("private_ranged_accuracy_bonus");
