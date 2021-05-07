@@ -44,8 +44,9 @@
 ForceKnockdown3Command = {
 	name = "forceknockdown3",
 
-    damageMultiplier = 0,
-	speed = 4.0,
+	minDamage = 1200,
+	maxDamage = 2000,
+	speed = 2.0,
 	forceCost = 200,
 	visMod = 25,
 	accuracySkillMod = "forceknockdown_accuracy",
@@ -58,7 +59,7 @@ ForceKnockdown3Command = {
 		{ "knockdownRecovery", "lastKnockdown" },
 		{},
 		{},
-		65,
+		95,
 		0,
 		0
 	  )
@@ -67,10 +68,17 @@ ForceKnockdown3Command = {
 	animation = "force_knockdown_1_arc_particle_level_1",
 
 	combatSpam = "forceknockdown3",
-
-	poolsToDamage = NO_ATTRIBUTE,
+  
+  poolsToDamage = RANDOM_ATTRIBUTE,
 
 	forceAttack = true,
+	damageType = LIGHTSABER_DAMAGE,
+
+	frsLightMinDamageModifier = 2,
+	frsLightMaxDamageModifier = 4,
+	frsDarkMinDamageModifier = 2,
+	frsDarkMaxDamageModifier = 4,
+
 
 	range = 32
 }
