@@ -1645,14 +1645,14 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 
 	// PvP Damage Reduction.
 	if (attacker->isPlayerCreature() && defender->isPlayerCreature()) {
-		damage *= 0.25;//Non Jedi Do 25% Damage
-	} else 	if (attacker->asCreatureObject()->hasSkill("force_title_jedi_novice") && !defender->asCreatureObject()->hasSkill("force_title_jedi_novice"))  
+		damage *= 0.50;//Non Jedi Do 50% Damage
+	} else if (attacker->asCreatureObject()->hasSkill("force_title_jedi_novice") && !defender->asCreatureObject()->hasSkill("force_title_jedi_novice")) {  
 		damage *= 0.75;//Jedi Do 75% Damage To non Jedi
 	}
 
 	if (damage < 1) damage = 1;
 
-	info("damage to be dealt is " + String::valueOf(damage), true);
+	//info("damage to be dealt is " + String::valueOf(damage), true);
 
 	return damage;
 }
