@@ -552,8 +552,8 @@ public:
 		return &(const_cast<CombatQueueCommand*>(this)->stateEffects);
 	}
 
-	inline const Vector<DotEffect>* getDotEffects() const {
-		return &dotEffects;
+	inline Vector<DotEffect>* getDotEffects() const {
+		return &(const_cast<CombatQueueCommand*>(this)->dotEffects);
 	}
 
 	void setAnimationString(const String& anim) {
