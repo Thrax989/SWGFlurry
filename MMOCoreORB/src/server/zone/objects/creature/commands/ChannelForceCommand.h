@@ -72,6 +72,9 @@ public:
 		// Give Force, and subtract HAM.
 		playerObject->setForcePower(playerObject->getForcePower() + forceBonus);
 
+		String clientEffect = "clienteffect/frs_light_wisdom.cef";
+		creature->playEffect(clientEffect, "");
+
 		// Setup buffs.
 		uint32 buffCRC = STRING_HASHCODE("channelforcebuff");
 		Reference<Buff*> buff = creature->getBuff(buffCRC);

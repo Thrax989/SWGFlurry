@@ -313,6 +313,18 @@ void WeaponObjectImplementation::fillAttributeList(AttributeListMessage* alm, Cr
 
 	alm->insertAttribute("damage.wpn_wound_chance", woundsratio);
 
+	if (speedSlice < 1.00f) {
+		StringBuffer sliceBuffer;
+		float spdSlice = ((1.00f - speedSlice) * 100);
+		sliceBuffer << spdSlice << "%";
+		alm->insertAttribute("damage.wpn_speed_slice", sliceBuffer);
+	} else if (damageSlice > 1.00f) {
+		StringBuffer sliceBuffer;
+		float dmgSlice = ((damageSlice-1) * 100);
+		sliceBuffer << dmgSlice << "%";
+		alm->insertAttribute("damage.wpn_damage_slice", sliceBuffer);
+	}
+
 	//Accuracy Modifiers
 	StringBuffer pblank;
 	if (getPointBlankAccuracy() >= 0)

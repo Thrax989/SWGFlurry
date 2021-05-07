@@ -843,6 +843,9 @@ int CombatManager::getAttackerAccuracyBonus(CreatureObject* attacker, WeaponObje
 		bonus += attacker->getSkillMod("private_melee_accuracy_bonus");
 	if (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)
 		bonus += attacker->getSkillMod("private_ranged_accuracy_bonus");
+	if (weapon->getWeaponType() == "heavyweapon") {
+		bonus += attacker->getSkillMod("heavyweapon_accuracy");
+	}		bonus += attacker->getSkillMod("private_ranged_accuracy_bonus");
 
 	return bonus;
 }
@@ -1048,6 +1051,10 @@ int CombatManager::getSpeedModifier(CreatureObject* attacker, WeaponObject* weap
 	} else if (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK) {
 		speedMods += attacker->getSkillMod("private_ranged_speed_bonus");
 		speedMods += attacker->getSkillMod("ranged_speed");
+	}
+
+	if (weapon->getWeaponType() == "heavyweapon") {
+		speedMods += attacker->getSkillMod("heavyweapon_speed");
 	}
 
 	return speedMods;
@@ -1637,12 +1644,10 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	}
 
 	// PvP Damage Reduction.
-	if (attacker->isPlayerCreature() && defender->isPlayerCreature() && !data.isForceAttack()){
-		if (defender->asCreatureObject()->hasSkill("force_title_jedi_novice") && !attacker->asCreatureObject()->hasSkill("force_title_jedi_novice")){
-		damage *= 0.50;
-		} else {
-		damage *= 0.40;
-		}
+	if (attacker->isPlayerCreature() && defender->isPlayerCreature()) {
+		damage *= 0.50;//Non Jedi Do 50% Damage
+	} else if (attacker->asCreatureObject()->hasSkill("force_title_jedi_novice") && !defender->asCreatureObject()->hasSkill("force_title_jedi_novice")) {  
+		damage *= 0.75;//Jedi Do 75% Damage To non Jedi
 	}
 
 	if (damage < 1) damage = 1;
