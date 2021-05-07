@@ -548,8 +548,8 @@ public:
 		return poolsToDamage;
 	}
 
-	inline const VectorMap<uint8, StateEffect>* getStateEffects() const {
-		return &stateEffects;
+	inline VectorMap<uint8, StateEffect>* getStateEffects() const {
+		return &(const_cast<CombatQueueCommand*>(this)->stateEffects);
 	}
 
 	inline const Vector<DotEffect>* getDotEffects() const {
