@@ -624,11 +624,11 @@ public:
 		this->accuracySkillMod = acc;
 	}
 
-	bool hasCombatSpam() const {
+	bool hasCombatSpam() {
 		return !combatSpam.isEmpty();
 	}
 
-	bool isCombatCommand() const {
+	bool isCombatCommand() {
 		return true;
 	}
 
