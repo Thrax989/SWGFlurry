@@ -55,8 +55,8 @@ MindBlast2Command = {
   
   dotEffects = {
   DotEffect(
-    FORCECHOKE,
-    { "", "" },
+		BLEEDING, 
+		{ "resistance_bleeding", "bleed_resist" },
     MIND,
     true,
     -1,
