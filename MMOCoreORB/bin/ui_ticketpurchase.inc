@@ -29,21 +29,8 @@
 				buttonCancel='buttonExit'
 				buttonclose='bg.mmc.close'
 				buttonCorellia='map.GalaxyMap.buttonCorellia'
-				buttonChandrila='map.GalaxyMap.buttonChandrila'
-				buttonCoruscant='map.GalaxyMap.buttonCoruscant'
 				buttonDantooine='map.GalaxyMap.buttonDantooine'
 				buttonDathomir='map.GalaxyMap.buttonDathomir'
-				buttonHoth='map.GalaxyMap.buttonHoth'
-				buttonDungeon2='map.GalaxyMap.buttonDungeon2'
-				buttonHutta='map.GalaxyMap.buttonHutta'
-				buttonKashyyyk='map.GalaxyMap.buttonKashyyyk'
-				buttonGeonosis='map.GalaxyMap.buttonGeonosis'
-				buttonJakku='map.GalaxyMap.buttonJakku'
-				buttonKaas='map.galaxyMap.buttonKaas'
-				buttonMandalore='map.GalaxyMap.buttonMandalore'
-				buttonKorriban='map.GalaxyMap.buttonKorriban'
-				buttonMustafar='map.GalaxyMap.buttonMustafar'
-				buttonTaanab='map.GalaxyMap.buttonTaanab'
 				buttonDepartGalactic='old.target.from.buttonDepartGalactic'
 				buttonDepartPlanet='old.target.from.buttonDepartPlanet'
 				buttonEndor='map.GalaxyMap.buttonEndor'
@@ -209,27 +196,17 @@
 				GetsInput='false'
 				Location='7,24'
 				Name='loading'
-				OnHide='parent.map.visible=true
-
-parent.bottom.visible=true
-
-parent.buttonShowGalaxy.visible=true
-
+				OnHide='parent.map.visible=true
+parent.bottom.visible=true
+parent.buttonShowGalaxy.visible=true
 '
-				OnShow='parent.map.visible=false
-
-parent.bottom.visible=false
-
-parent.buttonShowPlanet.visible=false
-
-parent.buttonShowGalaxy.visible=false
-
-parent.buttonPurchase.visible=false
-
-parent.buttonTravel.visible=false
-
-
-
+				OnShow='parent.map.visible=false
+parent.bottom.visible=false
+parent.buttonShowPlanet.visible=false
+parent.buttonShowGalaxy.visible=false
+parent.buttonPurchase.visible=false
+parent.buttonTravel.visible=false
+
 '
 				PackSize='a,a'
 				ScrollExtent='501,623'
@@ -865,101 +842,6 @@ parent.buttonTravel.visible=false
 						ColorCarat='#FFFFFF'
 						ColorSelection='#FFFFFF'
 						Font='bold_13'
-						LocalText='Hoth'
-						Location='258,314'
-						MinimumSize='0,19'
-						Name='Hoth'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Hoth</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Geonosis'
-						Location='150,193'
-						MinimumSize='0,19'
-						Name='Geonosis'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Geonosis</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Jakku'
-						Location='110,155'
-						MinimumSize='0,19'
-						Name='Jakku'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Jakku</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Mustafar'
-						Location='307,380'
-						MinimumSize='0,19'
-						Name='Mustafar'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,f'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Mustafar</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Dungeon2'
-						Location='150,380'
-						MinimumSize='0,19'
-						Name='dungeon2'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,f'
-						PalText='contrast1'
-						ScrollExtent='75,39'
-						Size='75,39'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Dungeon2</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
 						LocalText='Lok'
 						Location='345,429'
 						MinimumSize='0,19'
@@ -1017,44 +899,6 @@ parent.buttonTravel.visible=false
 						ColorCarat='#FFFFFF'
 						ColorSelection='#FFFFFF'
 						Font='bold_13'
-						LocalText='Taanab'
-						Location='435,164'
-						MinimumSize='0,19'
-						Name='Taanab'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Taanab</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Mandalore'
-						Location='63,95'
-						MinimumSize='0,19'
-						Name='Mandalore'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Mandalore</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
 						LocalText='Talus'
 						Location='216,102'
 						MinimumSize='0,19'
@@ -1107,121 +951,7 @@ parent.buttonTravel.visible=false
 						TextAlignmentVertical='Center'
 						TextColor='#62FF15'
 					>Yavin IV</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Chandrila'
-						Location='385,270'
-						MinimumSize='0,19'
-						Name='Chandrila'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,f'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Chandrila</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Kaas'
-						Location='200,20'
-						MinimumSize='0,19'
-						Name='Kaas'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,f'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Dromund Kaas</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Coruscant'
-						Location='131,140'
-						MinimumSize='0,19'
-						Name='Coruscant'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,f'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Coruscant</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Korriban'
-						Location='260,60'
-						MinimumSize='0,19'
-						Name='korriban'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,f'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Korriban</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Hutta'
-						Location='350,155'
-						MinimumSize='0,19'
-						Name='Hutta'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,f'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Hutta</Text>
-					<Text
-						BackgroundColor='#FFFFFF'
-						ColorCarat='#FFFFFF'
-						ColorSelection='#FFFFFF'
-						Font='bold_13'
-						LocalText='Kashyyyk'
-						Location='320,125'
-						MinimumSize='0,19'
-						Name='Kashyyyk'
-						OpacityRelativeMin='0.70'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						PalText='contrast1'
-						ScrollExtent='75,19'
-						Size='75,19'
-						TextAlignment='Center'
-						TextAlignmentVertical='Center'
-						TextColor='#62FF15'
-					>Kashyyyk</Text>
-					</Page>
+				</Page>
 				<Page
 					BackgroundColor='#FFFFFF'
 					BackgroundOpacity='1.00'
@@ -1239,10 +969,8 @@ parent.buttonTravel.visible=false
 					Location='2,2'
 					Name='Planets'
 					OnHide='parent.parent.buttonArriveGalactic.visible=visible'
-					OnShow='parent.GalaxyMap.visible=false
-
-
-
+					OnShow='parent.GalaxyMap.visible=false
+
 parent.parent.buttonArriveGalactic.visible=visible'
 					PackSize='a,a'
 					ScrollExtent='498,482'
@@ -1265,7 +993,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,4096,4096'
+							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_corellia'
 						/>
 					</Page>
@@ -1287,7 +1015,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PalColor='highlight'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,4096,4096'
+							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_dantooine'
 						/>
 					</Page>
@@ -1307,7 +1035,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,4096,4096'
+							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_dathomir'
 						/>
 					</Page>
@@ -1327,92 +1055,10 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,4096,4096'
+							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_endor'
 						/>
 					</Page>
-					<Page
-						BackgroundOpacity='1.00'
-						Name='Hoth'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='482,482'
-						Size='482,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='482,482'
-							Size='482,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_hoth'
-						/>
-					</Page>
-					<Page
-						BackgroundOpacity='1.00'
-						Name='Jakku'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='482,482'
-						Size='482,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='482,482'
-							Size='482,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_jakku'
-						/>
-					</Page>
-					<Page
-						BackgroundOpacity='1.00'
-						Name='dungeon2'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='482,482'
-						Size='482,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='482,482'
-							Size='482,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_dungeon2'
-						/>
-					</Page>
-					<Page
-						BackgroundOpacity='0.00'
-						Name='Mustafar'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='482,482'
-						Size='482,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='482,482'
-							Size='482,482'
-							SourceRect='0,0,2048,2048'
-							SourceResource='ui_map_mustafar'
-						/>
-
-					</Page>
-
 					<Page
 						BackgroundOpacity='1.00'
 						Name='Lok'
@@ -1429,7 +1075,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,4096,4096'
+							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_lok'
 						/>
 					</Page>
@@ -1449,7 +1095,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,4096,4096'
+							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_naboo'
 						/>
 					</Page>
@@ -1469,50 +1115,8 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,4096,4096'
+							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_rori'
-						/>
-					</Page>
-					<Page
-						BackgroundOpacity='1.00'
-						Name='Taanab'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='482,482'
-						Size='482,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='482,482'
-							Size='482,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_taanab'
-						/>
-					</Page>
-					<Page
-						BackgroundOpacity='1.00'
-						Name='Mandalore'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='498,482'
-						Size='498,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Color='#00FFFF'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							PalColor='highlight'
-							ScrollExtent='498,482'
-							Size='498,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_mandalore'
 						/>
 					</Page>
 					<Page
@@ -1531,7 +1135,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,4096,4096'
+							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_talus'
 						/>
 					</Page>
@@ -1551,7 +1155,7 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,4096,4096'
+							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_tatooine'
 						/>
 					</Page>
@@ -1571,159 +1175,17 @@ parent.parent.buttonArriveGalactic.visible=visible'
 							PackSize='a,a'
 							ScrollExtent='498,482'
 							Size='498,482'
-							SourceRect='0,0,4096,4096'
+							SourceRect='0,0,1024,1024'
 							SourceResource='ui_map_yavin4'
 						/>
 					</Page>
-			<Page
-						BackgroundOpacity='1.00'
-						Name='Kaas'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='498,482'
-						Size='498,482'
-					>
-            <Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='498,482'
-							Size='498,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_kaas'
-						/>
-          </Page>
-          <Page
-						BackgroundOpacity='1.00'
-						Name='Chandrila'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='498,482'
-						Size='498,482'
-					>
-            <Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='498,482'
-							Size='498,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_chandrila'
-						/>
-          </Page>
-		  <Page
-						BackgroundOpacity='1.00'
-						Name='Hutta'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='498,482'
-						Size='498,482'
-					>
-            <Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='498,482'
-							Size='498,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_hutta'
-						/>
-          </Page>
-					<Page
-						BackgroundOpacity='1.00'
-						Name='Kashyyyk'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='482,482'
-						Size='482,482'
-					>
-						<Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='482,482'
-							Size='482,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_kashyyyk'
-						/>
-					</Page>
-		  <Page
-						BackgroundOpacity='1.00'
-						Name='Korriban'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='498,482'
-						Size='498,482'
-					>
-            <Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='498,482'
-							Size='498,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_korriban'
-						/>
-          </Page>
-		  <Page
-						BackgroundOpacity='1.00'
-						Name='Coruscant'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='498,482'
-						Size='498,482'
-					>
-            <Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='498,482'
-							Size='498,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_coruscant'
-						/>
-          </Page>
-		  <Page
-						BackgroundOpacity='1.00'
-						Name='Geonosis'
-						PackLocation='nfn,nfn'
-						PackSize='a,a'
-						RStyleDefault='rs_default'
-						ScrollExtent='498,482'
-						Size='498,482'
-					>
-            <Image
-							BackgroundOpacity='1.00'
-							Name='New Image'
-							PackLocation='nfn,nfn'
-							PackSize='a,a'
-							ScrollExtent='498,482'
-							Size='498,482'
-							SourceRect='0,0,1024,1024'
-							SourceResource='ui_map_geonosis'
-						/>
-          </Page>
-		</Page>
+				</Page>
 				<Page
 					Location='2,2'
 					Name='GalaxyMap'
 					OnHide='parent.planetnames.visible=visible'
-					OnShow='parent.Planets.visible=false
-
-
-
+					OnShow='parent.Planets.visible=false
+
 parent.planetnames.visible=visible'
 					PackSize='a,a'
 					RStyleDefault='rs_default'
@@ -1927,161 +1389,6 @@ parent.planetnames.visible=visible'
 						GetsInput='false'
 						lightambientcolor='#222222'
 						lightcolor='#ffffff'
-						Location='268,324.5'
-						Name='vHoth'
-						objectdatasource='data.Hoth'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='32,30'
-						Size='32,30'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='264,319'
-						MaximumSize='800,600'
-						Name='buttonHoth'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='41,39'
-						Size='41,39'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='154,202.5'
-						Name='vGeonosis'
-						objectdatasource='data.Geonosis'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='40,41'
-						Size='40,41'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='150,197.5'
-						MaximumSize='800,600'
-						Name='buttonGeonosis'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='49,50'
-						Size='49,50'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='110,155'
-						Name='vJakku'
-						objectdatasource='data.Jakku'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='40,41'
-						Size='40,41'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='105,150'
-						MaximumSize='800,600'
-						Name='buttonJakku'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='49,50'
-						Size='49,50'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='320,392'
-						Name='vMustafar'
-						objectdatasource='data.Mustafar'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='32,30'
-						Size='32,30'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='315,388'
-						MaximumSize='800,600'
-						Name='buttonMustafar'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='41,39'
-						Size='41,39'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='115,345'
-						Name='vdungeon2'
-						objectdatasource='data.Dungeon2'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='63,62'
-						Size='110,110'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='150,380'
-						MaximumSize='800,600'
-						Name='buttondungeon2'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='63,62'
-						Size='43,42'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
 						Location='232,108'
 						Name='vTalus'
 						objectdatasource='data.Talus'
@@ -2144,99 +1451,6 @@ parent.planetnames.visible=visible'
 						GetsInput='false'
 						lightambientcolor='#222222'
 						lightcolor='#ffffff'
-						Location='385,270'
-						Name='vDantooine'
-						objectdatasource='data.Dantooine'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.5'
-						RStyleDefault='rs_default'
-						ScrollExtent='63,62'
-						Size='63,62'
-					/>
-					<Button
-						BackgroundColor='#000000'
-						Location='385,270'
-						MaximumSize='800,600'
-						Name='buttonChandrila'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='63,62'
-						Size='63,62'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#3cb44b'
-						lightcolor='#3cb44b'
-						Location='450,176.5'
-						Name='vTaanab'
-						objectdatasource='data.Taanab'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='53,52'
-						Size='53,52'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='450,175'
-						MaximumSize='800,600'
-						Name='buttonTaanab'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='53,52'
-						Size='53,52'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='84,100'
-						Name='vMandalore'
-						objectdatasource='data.Mandalore'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='52,51'
-						Size='52,51'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='84,100'
-						MaximumSize='800,600'
-						Name='buttonMandalore'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='52,51'
-						Size='52,51'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
 						Location='341,46'
 						Name='vDathomir'
 						objectdatasource='data.Dathomir'
@@ -2256,68 +1470,6 @@ parent.planetnames.visible=visible'
 						PackSize='p,p'
 						ScrollExtent='58,55'
 						Size='58,55'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='218,38'
-						Name='vDantooine'
-						objectdatasource='data.Dantooine'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='32,30'
-						Size='32,30'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='214,34'
-						MaximumSize='800,600'
-						Name='buttonKaas'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='41,39'
-						Size='41,39'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='263,73'
-						Name='vRori'
-						objectdatasource='data.Rori'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='23,23'
-						Size='23,23'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='260,70'
-						MaximumSize='800,600'
-						Name='buttonKorriban'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='31,31'
-						Size='31,31'
 						Style='/Styles.New.buttons.planetLrg.style'
 					></Button>
 					<CuiWidget3dObjectListViewer
@@ -2351,123 +1503,10 @@ parent.planetnames.visible=visible'
 						Size='41,39'
 						Style='/Styles.New.buttons.planetLrg.style'
 					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='154,148'
-						Name='vCorellia'
-						objectdatasource='data.Corellia'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='32,30'
-						Size='32,30'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='150,144'
-						MaximumSize='800,600'
-						Name='buttonCoruscant'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='41,39'
-						Size='41,39'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='354,164'
-						Name='vEndor'
-						objectdatasource='data.Endor'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='52,50'
-						Size='52,50'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='350,160'
-						MaximumSize='800,600'
-						Name='buttonHutta'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='61,59'
-						Size='61,59'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='554,202.5'
-						Name='vKashyyyk'
-						objectdatasource='data.Kashyyyk'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='40,41'
-						Size='40,41'
-					/>
-					<Button
-						BackgroundColor='#FFFFFF'
-						Location='320,130'
-						MaximumSize='800,600'
-						Name='buttonKashyyyk'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						ScrollExtent='49,50'
-						Size='49,50'
-						Style='/Styles.New.buttons.planetLrg.style'
-					></Button>
-					<CuiWidget3dObjectListViewer
-						AutoZoomOutOnly='true'
-						CameraForceTarget='true'
-						camerayaw='90'
-						dragyawok='false'
-						fieldofview='60'
-						FitDistanceFactor='1'
-						GetsInput='false'
-						lightambientcolor='#222222'
-						lightcolor='#ffffff'
-						Location='320,130'
-						Name='vKashyyyk'
-						objectdatasource='data.Kashyyyk'
-						PackLocation='cpc,cpc'
-						PackSize='p,p'
-						RotateSpeed='0.3'
-						RStyleDefault='rs_default'
-						ScrollExtent='50,51'
-						Size='50,51'
-					/>
 					<Runner
 						BackgroundColor='#FFFFFF'
 						Color='#80FF00'
-						Location='320,130'
+						Location='321,83'
 						Name='default'
 						PackLocation='cpc,cpc'
 						PackSize='f,f'
@@ -3437,7 +2476,6 @@ parent.planetnames.visible=visible'
 							Size='2,17'
 						/>
 					</Runner>
-
 					<Runner
 						BackgroundColor='#FFFFFF'
 						Color='#80FF00'
@@ -4466,54 +3504,6 @@ parent.planetnames.visible=visible'
 							/>
 						</DataSource>
 						<DataSource
-							Name='Jakku'
-						>
-						<Data
-								appearanceTemplate='appearance/ui_planet_sel_tato.apt'
-								Name='Jakku'
-							/>
-						</DataSource>
-						<DataSource
-							Name='Mustafar'
-						>
-						<Data
-								appearanceTemplate='appearance/ui_planet_sel_must.apt'
-								Name='Mustafar'
-							/>
-						</DataSource>
-						<DataSource
-							Name='Dungeon2'
-						>
-						<Data
-								appearanceTemplate='appearance/spacestation_outpost_rebel_s01.apt'
-								Name='Dungeon2'
-							/>
-						</DataSource>
-						<DataSource
-							Name='Taanab'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_taanab.apt'
-								Name='Taanab'
-							/>
-						</DataSource>
-						<DataSource
-							Name='Mandalore'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_corl.apt'
-								Name='Mandalore'
-							/>
-						</DataSource>
-						<DataSource
-							Name='Hoth'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_hoth.apt'
-								Name='Hoth'
-							/>
-						</DataSource>
-						<DataSource
 							Name='Corellia'
 						>
 							<Data
@@ -4521,62 +3511,6 @@ parent.planetnames.visible=visible'
 								Name='Corellia'
 							/>
 						</DataSource>
-						<DataSource
-							Name='Hutta'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_corl.apt'
-								Name='Hutta'
-							/>
-						</DataSource>
-						<DataSource
-							Name='Kashyyyk'
-						>
-						<Data
-								appearanceTemplate='appearance/ui_planet_sel_kash.apt'
-								Name='Kashyyyk'
-							/>
-						</DataSource>						
-						<DataSource
-							Name='Korriban'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_dath.apt'
-								Name='Korriban'
-							/>
-						</DataSource>
-						<DataSource
-							Name='Geonosis'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_dath.apt'
-								Name='Geonosis'
-							/>
-						</DataSource>						
-						<DataSource
-							Name='Chandrila'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_corl.apt'
-								Name='Chandrila'
-							/>
-						</DataSource>						
-						<DataSource
-							Name='Coruscant'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_corl.apt'
-								Name='Coruscant'
-							/>
-						</DataSource>								
-						<DataSource
-							Name='Kaas'
-						>
-							<Data
-								appearanceTemplate='appearance/ui_planet_sel_kaas.apt'
-								Name='Kaas'
-							/>
-						</DataSource>								
 					</Namespace>
 				</Page>
 			</Page>
