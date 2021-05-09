@@ -232,10 +232,8 @@ uint32 DamageOverTime::doFireTick(CreatureObject* victim, CreatureObject* attack
 		damage = attr - 1;
 	}
 
-	float totalHAMWoundPossible = 0.5f;
-	int baseHAM = victim->getBaseHAM(attribute);
 	int woundsToApply = (int)(secondaryStrength * (1.f + victim->getShockWounds() / 100.0f));
-	int maxWoundsToApply = (baseHAM * totalHAMWoundPossible) - 1 - victim->getWounds(attribute);
+	int maxWoundsToApply = victim->getBaseHAM(attribute) - 1 - victim->getWounds(attribute);
 
 	woundsToApply = Math::min(woundsToApply, maxWoundsToApply);
 
@@ -319,10 +317,8 @@ uint32 DamageOverTime::doDiseaseTick(CreatureObject* victim, CreatureObject* att
 		strength = 1600;
 	}
 	// make sure that the CM dots modify the strength
-	float totalHAMWoundPossible = 0.5f;
-	int baseHAM = victim->getBaseHAM(attribute);
 	int damage = (int)(strength * (1.f - absorptionMod / 100.f) * (1.f + victim->getShockWounds() / 100.0f));
-	int maxDamage = (baseHAM * totalHAMWoundPossible)  - 1 - victim->getWounds(attribute);
+	int maxDamage = victim->getBaseHAM(attribute) - 1 - victim->getWounds(attribute);
 
 	damage = Math::min(damage, maxDamage);
 

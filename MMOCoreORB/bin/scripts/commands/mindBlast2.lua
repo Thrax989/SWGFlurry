@@ -44,14 +44,29 @@
 MindBlast2Command = {
 	name = "mindblast2",
 
-	minDamage = 250,
-	maxDamage = 500,
-	speed = 4.0,
+	minDamage = 500,
+	maxDamage = 800,
+	speed = 2.0,
 	forceCost = 160,
 	visMod = 25,
 	accuracySkillMod = "mindblast_accuracy";
 	coneAngle = 40,
 	coneAction = true,
+  
+  dotEffects = {
+  DotEffect(
+		BLEEDING, 
+		{ "resistance_bleeding", "bleed_resist" },
+    MIND,
+    true,
+    -1,
+    200,
+    300,
+    35,
+    33.0,
+    0.33
+    )
+  },  
 
 	stateEffects = {
 		StateEffect(
