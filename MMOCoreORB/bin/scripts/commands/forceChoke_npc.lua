@@ -44,8 +44,8 @@
 ForceChokeCommand = {
   name = "forcechoke_npc",
 
-  minDamage = 175,
-  maxDamage = 375,
+  minDamage = 300,
+  maxDamage = 600,
   speed = 6.0,
   forceCost = 100,
   visMod = 25,
@@ -101,7 +101,7 @@ ForceChokeCommand = {
     true,
     -1,
     100,
-    350,
+    200,
     35,
     33.0,
     0.33
@@ -114,7 +114,7 @@ ForceChokeCommand = {
     true,
     -1,
     100,
-    350,
+    200,
     35,
     33.0,
     0.33
@@ -127,7 +127,7 @@ ForceChokeCommand = {
     true,
     -1,
     100,
-    350,
+    200,
     35,
     33.0,
     0.33

@@ -44,8 +44,8 @@
 ForceThrow2Command = {
 	name = "forcethrow2_npc",
 
-	minDamage = 750,
-	maxDamage = 1000,
+	minDamage = 250,
+	maxDamage = 500,
 	speed = 4.0,
 	forceCost = 56,
 	visMod = 25,
@@ -80,7 +80,7 @@ ForceThrow2Command = {
 	poolsToDamage = RANDOM_ATTRIBUTE,
 
 	forceAttack = true,
-	damageType = KINETIC_DAMAGE,
+	damageType = LIGHTSABER_DAMAGE,
 
 	range = 32
 }
