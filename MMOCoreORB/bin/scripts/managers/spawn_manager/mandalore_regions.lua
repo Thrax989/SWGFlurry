@@ -1,6 +1,8 @@
+require("scripts.managers.spawn_manager.regions")
+
 mandalore_regions = {
 	{"world_spawner",0,0,{CIRCLE,-1},SPAWNAREA + WORLDSPAWNAREA,{"mandalore_world"},2048},
-    	{"keldabe",1589,-6385,{1,1000},NOSPAWNAREA + NOBUILDZONEAREA,1},
+    {"keldabe",1589,-6385,{1,1000},NOSPAWNAREA + NOBUILDZONEAREA,1},
 	{"an_imperial_outpost",6498,-4719,{1,200},NOSPAWNAREA + NOBUILDZONEAREA,1},
 	{"sundari",6306,-6231,{1,1000},NOSPAWNAREA + NOBUILDZONEAREA,1},
 	{"mandal_motors",6621,-6300,{1,200},NOSPAWNAREA + NOBUILDZONEAREA,1},
