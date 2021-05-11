@@ -39,7 +39,7 @@ void WeaponObjectMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject,
 
 		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
-		if(player->hasSkill("crafting_weaponsmith_master") && ghost->getExperience("recycle_contraband") > 0){
+		if(ghost->getExperience("recycle_contraband") > 0){
 			menuResponse->addRadialMenuItem(250, 3, "Apply Dot");
 		}
 		/*
