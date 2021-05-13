@@ -1,4 +1,5 @@
 mandalore_destroy_missions = {
+	minLevelCeiling = 25,
 
 	lairSpawns = {
 		{

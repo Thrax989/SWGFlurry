@@ -53,20 +53,18 @@ MindBlast2Command = {
 	coneAngle = 40,
 	coneAction = true,
   
-  dotEffects = {
-  DotEffect(
+	dotEffects = {
+	  DotEffect( 
 		BLEEDING, 
 		{ "resistance_bleeding", "bleed_resist" },
-    MIND,
-    true,
-    -1,
-    200,
-    300,
-    35,
-    33.0,
-    0.33
-    )
-  },  
+		MIND,
+		true,
+		0,
+		100,
+		60, 
+		60
+	  )
+	},  
 
 	stateEffects = {
 		StateEffect(
