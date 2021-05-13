@@ -118,7 +118,7 @@ ForceLightningCone2Command = {
 		HEALTH,
 		true,
 		0,
-		200,
+		125,
 		200, 
 		60,
 		10,
