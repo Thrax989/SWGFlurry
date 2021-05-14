@@ -798,6 +798,10 @@ includeFile("events/painting_exchange_dealer.lua")
 --Event Vendor
 includeFile("events/event_exchange_dealer.lua")
 
+--BE and Bosses SP
+includeFile("events/FlurryWorldBossScreenPlay.lua")
+includeFile("events/spawn_points_table.lua")
+
 includeFile("custom_screenplays/screenplays.lua")
 
 --Battlefields
