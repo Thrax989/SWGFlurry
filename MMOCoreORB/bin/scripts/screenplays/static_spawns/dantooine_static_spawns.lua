@@ -32,7 +32,7 @@ function DantooineStaticSpawnsScreenPlay:spawnMobiles()
 	spawnMobile("dantooine", "vexed_voritor_lizard", 300, getRandomNumber(5) + -5486, 15,getRandomNumber(5) + -1770, getRandomNumber(360), 0)
 	spawnMobile("dantooine", "vexed_voritor_lizard", 300, getRandomNumber(5) + -5486, 15,getRandomNumber(5) + -1770, getRandomNumber(360), 0)
 	spawnMobile("dantooine", "vexed_voritor_lizard", 300, getRandomNumber(5) + -5486, 15,getRandomNumber(5) + -1770, getRandomNumber(360), 0)
-  spawnMobile("dantooine", "vvl", getRandomNumber(10) * 60000, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
+  --spawnMobile("dantooine", "vvl", getRandomNumber(10) * 60000, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
 
 
 	spawnMobile("dantooine", "dark_jedi_master", 3600, -738.2, 1.7, 2103.9, 55, 0)

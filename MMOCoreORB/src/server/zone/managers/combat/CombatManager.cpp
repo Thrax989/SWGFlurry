@@ -474,7 +474,10 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 
 			if (!defender->isDead()) {
 				applyDots(attacker, defender, data, damage, unmitDamage, poolsToDamage);
-				applyWeaponDots(attacker, defender, weapon);
+                               // Prevents weapon dots from applying with offensive Force powers
+                               if (!data.isForceAttack()) {
+                                       applyWeaponDots(attacker, defender, weapon);
+				}			
 			}
 
 		}
