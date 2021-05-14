@@ -96,6 +96,6 @@ function NabooStaticSpawnsSouthScreenPlay:spawnMobiles()
 	spawnMobile("naboo", "mutant_hermit_spider", 900, getRandomNumber(5) + -7330, 10.8, getRandomNumber(5) + -4164, getRandomNumber(360), 0)
 	spawnMobile("naboo", "mutant_hermit_spider", 900, getRandomNumber(5) + -7330, 10.8, getRandomNumber(5) + -4164, getRandomNumber(360), 0)
 	spawnMobile("naboo", "mutant_hermit_spider", 900, getRandomNumber(5) + -7330, 10.8, getRandomNumber(5) + -4164, getRandomNumber(360), 0)
-  spawnMobile("naboo", "mhs", getRandomNumber(10) * 60000, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
+  --spawnMobile("naboo", "mhs", getRandomNumber(10) * 60000, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
 
 end
