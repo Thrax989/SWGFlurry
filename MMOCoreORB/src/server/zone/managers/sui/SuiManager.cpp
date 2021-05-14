@@ -3032,7 +3032,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						currentCity->addToCityTreasury(1000);
 						}
 			        }
-			} else if (templatePath == "asgard") {
+			} else if (templatePath == "pc_asgard_travel") {
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Asgard" );
