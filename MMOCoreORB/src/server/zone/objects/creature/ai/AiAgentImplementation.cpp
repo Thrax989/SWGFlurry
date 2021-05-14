@@ -1720,11 +1720,10 @@ void AiAgentImplementation::updatePetSwimmingState() {
                 // Pet is in the water.
                 setState(CreatureState::SWIMMING, true);
                 return;
-         }
+        }
 
         // Terrain is above water level.
         clearState(CreatureState::SWIMMING, true);
-	}
 }
 
 void AiAgentImplementation::checkNewAngle() {
