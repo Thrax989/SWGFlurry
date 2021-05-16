@@ -24,7 +24,7 @@ rebel_clone_trooper_general = Creature:new {
 	creatureBitmask = KILLER,
 	optionsBitmask = AIENABLED,
 	diet = NONE,
-	scale = 1.1,
+	scale = 1.2,
 	templates = {"object/mobile/halloween_skeleton_1.iff"},
 	outfit = "clone_trooper_rebel_general_outfit",
 	lootGroups = {
@@ -43,9 +43,15 @@ rebel_clone_trooper_general = Creature:new {
 		},
 		{
 			groups = {
-				{group = "geonosian_common", chance = 2000000},   
+				{group = "geonosian_common", chance = 10000000},   
 			},
-			lootChance = 10000000
+			lootChance = 5000000
+		},
+ 		{
+			groups = {
+				{group = "imppoints", chance = 10000000},   
+			},
+			lootChance = 5000000
 		},
  		{
 			groups = {
