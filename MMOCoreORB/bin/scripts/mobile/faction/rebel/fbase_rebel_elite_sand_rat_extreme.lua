@@ -42,7 +42,7 @@ fbase_rebel_elite_sand_rat_extreme = Creature:new {
 				{group = "junk", chance = 6500000},
 				{group = "holocron_dark", chance = 150000},
 				{group = "holocron_light", chance = 150000},
-				{group = "weapons_all", chance = 550000},
+				{group = "imppoints", chance = 550000},
 				{group = "armor_all", chance = 1050000},
 				{group = "clothing_attachments", chance = 150000},
 				{group = "armor_attachments", chance = 150000},
