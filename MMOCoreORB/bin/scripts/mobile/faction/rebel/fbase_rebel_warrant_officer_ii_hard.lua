@@ -39,7 +39,7 @@ fbase_rebel_warrant_officer_ii_hard = Creature:new {
 			groups = {
 				{group = "color_crystals", chance = 100000},
 				{group = "junk", chance = 6600000},
-				{group = "weapons_all", chance = 500000},
+				{group = "imppoints", chance = 500000},
 				{group = "armor_all", chance = 1100000},
 				{group = "clothing_attachments", chance = 150000},
 				{group = "armor_attachments", chance = 150000},
