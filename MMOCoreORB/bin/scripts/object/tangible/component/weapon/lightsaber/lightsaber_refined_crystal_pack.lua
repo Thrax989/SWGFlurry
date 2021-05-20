@@ -45,7 +45,7 @@ object_tangible_component_weapon_lightsaber_lightsaber_refined_crystal_pack = ob
 
 
 	numberExperimentalProperties = {1, 1, 1},
-	experimentalProperties = {"OQ", "OQ", "OQ"},
+	experimentalProperties = {"XX", "XX", "XX"},
 	experimentalWeights = {1, 1, 1},
 	experimentalGroupTitles = {"expDamage", "expDamage", "expEffeciency"},
 	experimentalSubGroupTitles = {"mindamage", "maxdamage", "forcecost"},
