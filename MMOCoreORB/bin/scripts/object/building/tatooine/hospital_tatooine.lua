@@ -42,9 +42,9 @@
 
 object_building_tatooine_hospital_tatooine = object_building_tatooine_shared_hospital_tatooine:new {
 	skillMods = {
-		{"private_medical_rating", 100},
-		{"private_med_wound_health", 100},
-		{"private_med_wound_action", 100},
+		{"private_buff_mind", 125},
+		{"private_medical_rating", 125},
+		{"private_med_battle_fatigue", 125},
 		{"private_safe_logout", 1}
 	},
 
