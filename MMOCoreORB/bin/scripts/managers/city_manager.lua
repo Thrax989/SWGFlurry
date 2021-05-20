@@ -80,9 +80,9 @@ CitizensPerRank = {2, 4, 6, 8, 10}
 RadiusPerRank = {150, 200, 300, 400, 450}
 
 -- Maximum for each rank.  ex. rank 1 = DecorationsPerRank * 1, rank 5 = DecorationsPerRank * 5
-DecorationsPerRank = 10
-TrainersPerRank = 7
-MissionTerminalsPerRank = 3
+DecorationsPerRank = 15
+TrainersPerRank = 15
+MissionTerminalsPerRank = 5
 
 -- Amount to discount city maintenance  float.  1 = 100%, .75 =75%, .5=50% etc
 maintenanceDiscount = 1.0
@@ -138,7 +138,7 @@ CitiesAllowed = {
 --]]
 CityTaxes = {
 	{--Income Tax
-		min = 0, max = 2000,
+		min = 0, max = 200,
 		menuText = "@city/city:income_tax",
 		inputTitle = "@city/city:set_tax_t_income",
 		inputText = "@city/city:set_tax_d_income",
@@ -168,7 +168,7 @@ CityTaxes = {
 		emailBody = "@city/city:tax_sales_body"
 	},
 	{--Travel Tax
-		min = 0, max = 500,
+		min = 0, max = 50,
 		menuText = "@city/city:travel_tax",
 		inputTitle = "@city/city:set_tax_t_travel",
 		inputText = "@city/city:set_tax_d_travel",
@@ -196,7 +196,7 @@ CityTaxes = {
 CitySpecializations = {
 	{--Sample Rich
 		name = "@city/city:city_spec_sample_rich",
-		cost = 5000,
+		cost = 1000,
 		skillMods = {
 			{"private_spec_samplesize", 20},
 			{"private_spec_samplerate", 10}
@@ -204,60 +204,61 @@ CitySpecializations = {
 	},
 	{--Manufacturing Center
 		name = "@city/city:city_spec_industry",
-		cost = 5000,
+		cost = 1000,
 		skillMods = {
 			{"private_spec_assembly", 10}
 		}
 	},
 	{--Medical Center
 		name = "@city/city:city_spec_doctor",
-		cost = 5000,
+		cost = 1000,
 		skillMods = {
 			{"private_medical_rating", 10}
 		}
 	},
 	{--Clone Lab
 		name = "@city/city:city_spec_cloning",
-		cost = 5000,
+		cost = 1000,
 		skillMods = {
 			{"private_spec_cloning", 20}
 		}
 	},
 	{--Research Center
 		name = "@city/city:city_spec_research",
-		cost = 5000,
+		cost = 1000,
 		skillMods = {
 			{"private_spec_experimentation", 15}
 		}
 	},
 	{--Improved Job Market
 		name = "@city/city:city_spec_missions",
-		cost = 5000,
+		cost = 1000,
 		skillMods = {
 			{"private_spec_missions", 15}
 		}
 	},
 	{--Entertainment District
 		name = "@city/city:city_spec_entertainer",
-		cost = 5000,
+		cost = 1000,
 		skillMods = {
 			{"private_spec_entertainer", 10}
 		}
 	},
 	{--Stronghold
 		name = "@city/city:city_spec_stronghold",
-		cost = 150000,
+		cost = 15000,
 		skillMods = {
 			{"private_defense", 90},
 			{"private_spec_samplesize", 30},
 			{"private_spec_samplerate", 20},
 			{"private_spec_assembly", 10},
+			{"private_buff_mind", 10},
 			{"private_medical_rating", 10},
+			{"private_med_battle_fatigue", 100},
 			{"private_spec_cloning", 20},
 			{"private_spec_experimentation", 15},
 			{"private_spec_missions", 15},
 			{"private_spec_entertainer", 10}
-
 		}
 	},
 }
