@@ -50,7 +50,7 @@ object_tangible_component_weapon_lightsaber_lightsaber_refined_crystal_pack = ob
 	experimentalGroupTitles = {"expDamage", "expDamage", "expEffeciency"},
 	experimentalSubGroupTitles = {"mindamage", "maxdamage", "forcecost"},
 	experimentalMin = {25, 25, 0},
-	experimentalMax = {220, 225, -3},
+	experimentalMax = {70, 75, -3},
 	experimentalPrecision = {0, 0, 0},
 	experimentalCombineType = {1, 1, 1},
 }
