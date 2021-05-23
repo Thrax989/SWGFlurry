@@ -42,6 +42,20 @@ int doQueueCommand(CreatureObject* creature, const uint64& target, const Unicode
 	 return true;
 	}
 
+	if (!creature->checkCooldownRecovery("mindtrick")) {
+		StringIdChatParameter stringId;
+
+		Time* cdTime = creature->getCooldownTime("mindtrick");
+
+		// Returns -time. Multiple by -1 to return positive.
+		int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
+
+		stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last equilization. Command available in %DI seconds.
+		stringId.setDI(timeLeft);
+		creature->sendSystemMessage(stringId);
+		return GENERALERROR;
+	}
+
 	int res = doCombatAction(creature, target);
 
 	if (res == SUCCESS) {
@@ -63,11 +77,11 @@ if (creatureTarget != nullptr) {
 		if (creatureTarget != nullptr && creatureTarget->isPlayerCreature()) {
 			creatureTarget->clearQueueActions();
 			CombatManager::instance()->attemptPeace(creatureTarget);
+			creature->addCooldown("mindtrick", 120 * 1000);
 		}
-
 		creature->clearQueueActions();
 		CombatManager::instance()->attemptPeace(creature);
-
+		creature->addCooldown("mindtrick", 120 * 1000);
  return SUCCESS;
 
     } else {
