@@ -1065,15 +1065,6 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 
 	//Database::escapeString(name);
 
-	//Remove color codes
-	String newName = name;
-	while (newName.contains("\\#")) {
-		int index = newName.indexOf("\\#");
-		String sub = "\\" + newName.subString(index, index + 2);
-		newName = newName.replaceFirst(sub,"");
-	}
-
-	UnicodeString customName(newName);
 	prototype->setCustomObjectName(customName, false);
 
 	auto newObjectName = server::zone::objects::scene::variables::StringId(
@@ -1084,7 +1075,7 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 	manufactureSchematic->setObjectName(newObjectName, false);
 
 	/// Set Manufacture Schematic Custom name
-	if (!newName.isEmpty())
+	if (!name.isEmpty())
 		manufactureSchematic->setCustomObjectName(customName, false);
 
 	while (tokenizer.hasMoreTokens()) {
@@ -1101,7 +1092,7 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 
 	TangibleObjectDeltaMessage3* dtano3 =
 			new TangibleObjectDeltaMessage3(prototype);
-	dtano3->updateCustomName(newName);
+	dtano3->updateCustomName(name);
 	dtano3->updateCustomizationString();
 	dtano3->close();
 
@@ -1110,7 +1101,7 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 	ManufactureSchematicObjectDeltaMessage3 * dMsco3 =
 			new ManufactureSchematicObjectDeltaMessage3(
 					manufactureSchematic);
-	dMsco3->updateName(newName);
+	dMsco3->updateName(name);
 	dMsco3->updateCondition(schematicCount);
 	dMsco3->close();
 
