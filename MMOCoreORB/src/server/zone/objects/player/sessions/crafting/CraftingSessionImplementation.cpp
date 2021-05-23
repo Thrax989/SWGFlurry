@@ -1065,7 +1065,7 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 
 	//Database::escapeString(name);
 
-	prototype->setCustomObjectName(customName, false);
+	prototype->setCustomObjectName(name, false);
 
 	auto newObjectName = server::zone::objects::scene::variables::StringId(
 			prototype->getObjectNameStringIdFile(),
@@ -1076,7 +1076,7 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 
 	/// Set Manufacture Schematic Custom name
 	if (!name.isEmpty())
-		manufactureSchematic->setCustomObjectName(customName, false);
+		manufactureSchematic->setCustomObjectName(name, false);
 
 	while (tokenizer.hasMoreTokens()) {
 
