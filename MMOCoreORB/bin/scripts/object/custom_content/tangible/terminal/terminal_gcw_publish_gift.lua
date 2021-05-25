@@ -242,7 +242,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },  
             "Lok",
           {
-            "Crimson Thorn (5,000 Credits)", "pc_crimson_travel",
+      "Crimson Thorn (5,000 Credits)", "pc_crimson_travel",
 			"Binary (5,000 Credits)", "pc_binary_travel",
 			"Serenity (5,000 Credits)", "pc_serenity_travel"
           },
@@ -260,8 +260,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Hoth",
           {
-            "Indestine (5,000 Credits)", "pc_indestine_travel"
+            "Indestine (5,000 Credits)", "pc_indestine_travel",
+            "REBS of HOTH (5,000 Credits)", "pc_rebs_travel"
           },
+
             "Mandalore",
           {  
 			"Nevarro (5,000 Credits)", "pc_freedom_travel",
