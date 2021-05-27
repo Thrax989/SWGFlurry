@@ -287,6 +287,18 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 			alm->insertAttribute("crystal_owner", ownerName);
 		}
 
+	if ((player->getJediState() > 1 || player->isPrivileged()) && getColor() == 31) {
+		if (ownerID != 0) {
+			alm->insertAttribute("mindamage", minimumDamage);
+			alm->insertAttribute("maxdamage", maximumDamage);
+			alm->insertAttribute("wpn_attack_speed", attackSpeed);
+			alm->insertAttribute("wpn_wound_chance", woundChance);
+			alm->insertAttribute("wpn_attack_cost_health", sacHealth);
+			alm->insertAttribute("wpn_attack_cost_action", sacAction);
+			alm->insertAttribute("wpn_attack_cost_mind", sacMind);
+			alm->insertAttribute("forcecost", (int)getForceCost());
+		}
+
 		if (getColor() != 31) {
 			StringBuffer str3;
 			str3 << "@jedi_spam:saber_color_" << getColor();
@@ -434,6 +446,7 @@ void LightsaberCrystalComponentImplementation::updateCrystal(int value){
 void LightsaberCrystalComponentImplementation::updateCraftingValues(CraftingValues* values, bool firstUpdate) {
 	int colorMax = values->getMaxValue("color");
 	int color = values->getCurrentValue("color");
+	String preName = getCustomObjectName().toString();
 
 	if (colorMax != 31) {
 		int finalColor = Math::min(color, 31);
@@ -447,6 +460,33 @@ void LightsaberCrystalComponentImplementation::updateCraftingValues(CraftingValu
 	generateCrystalStats();
 
 	ComponentImplementation::updateCraftingValues(values, firstUpdate);
+
+	if (color == 31) {
+		setQuality(values->getCurrentValue("quality"));
+		setAttackSpeed(Math::getPrecision(values->getCurrentValue("attackspeed"), 2));
+
+		if (preTuneName == "Sunrider's Destiny")
+		{
+			setMinimumDamage(MIN(values->getCurrentValue("mindamage"), 55));
+			setMaximumDamage(MIN(values->getCurrentValue("maxdamage"), 55));
+		}
+		else
+		if (preTuneName == "Banes's Heart")
+		{
+			setMinimumDamage(MIN(values->getCurrentValue("mindamage"), 60));
+			setMaximumDamage(MIN(values->getCurrentValue("maxdamage"), 65));
+		}
+		else
+		{
+			setMinimumDamage(MIN(values->getCurrentValue("mindamage"), 50));
+			setMaximumDamage(MIN(values->getCurrentValue("maxdamage"), 50));
+		}
+		setWoundChance(values->getCurrentValue("woundchance"));
+		setSacHealth(MIN(values->getCurrentValue("attackhealthcost"), 9) * -1);
+		setSacAction(MIN(values->getCurrentValue("attackactioncost"), 9) * -1);
+		setSacMind(MIN(values->getCurrentValue("attackmindcost"), 9) * -1);
+		//setForceCost(Math::getPrecision(values->getCurrentValue("forcecost"), 1) * -1);
+	}
 }
 
 int LightsaberCrystalComponentImplementation::inflictDamage(TangibleObject* attacker, int damageType, float damage, bool destroy, bool notifyClient) {
