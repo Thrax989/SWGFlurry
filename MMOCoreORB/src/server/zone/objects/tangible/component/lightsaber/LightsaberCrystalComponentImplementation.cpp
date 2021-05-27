@@ -288,7 +288,7 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 		}
 
 	if ((player->getJediState() > 1 || player->isPrivileged()) && getColor() == 31) {
-		if (ownerID != 0) {
+		if (Player) {
 			alm->insertAttribute("mindamage", minimumDamage);
 			alm->insertAttribute("maxdamage", maximumDamage);
 			alm->insertAttribute("wpn_attack_speed", attackSpeed);
@@ -297,6 +297,7 @@ void LightsaberCrystalComponentImplementation::fillAttributeList(AttributeListMe
 			alm->insertAttribute("wpn_attack_cost_action", sacAction);
 			alm->insertAttribute("wpn_attack_cost_mind", sacMind);
 			alm->insertAttribute("forcecost", (int)getForceCost());
+			}
 		}
 
 		if (getColor() != 31) {
