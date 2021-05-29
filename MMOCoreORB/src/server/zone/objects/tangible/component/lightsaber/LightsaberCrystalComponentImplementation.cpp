@@ -468,19 +468,19 @@ void LightsaberCrystalComponentImplementation::updateCraftingValues(CraftingValu
 
 		if (preTuneName == "Sunrider's Destiny")
 		{
-			//setMinimumDamage(minStat(values->getCurrentValue("mindamage"), 55));
-			//setMaximumDamage(minStat(values->getCurrentValue("maxdamage"), 55));
+			setMinimumDamage(Math::min(values->getCurrentValue("mindamage"), 50.f));
+			setMaximumDamage(Math::min(values->getCurrentValue("maxdamage"), 55.f));
 		}
 		else
 		if (preTuneName == "Banes's Heart")
 		{
-			//setMinimumDamage(minStat(values->getCurrentValue("mindamage"), 60));
-			//setMaximumDamage(minStat(values->getCurrentValue("maxdamage"), 65));
+			setMinimumDamage(Math::min(values->getCurrentValue("mindamage"), 60.f));
+			setMaximumDamage(Math::min(values->getCurrentValue("maxdamage"), 65.f));
 		}
 		else
 		{
-			//setMinimumDamage(minStat(values->getCurrentValue("mindamage"), 50));
-			//setMaximumDamage(minStat(values->getCurrentValue("maxdamage"), 50));
+			setMinimumDamage(Math::min(values->getCurrentValue("mindamage"), 40.f));
+			setMaximumDamage(Math::min(values->getCurrentValue("maxdamage"), 40.f));
 		}
 	}
 }
