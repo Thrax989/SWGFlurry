@@ -1500,6 +1500,30 @@ void PlayerObjectImplementation::notifyOnline() {
 	schedulePvpTefRemovalTask();
 
  	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
+	if (playerCreature->getScreenPlayState("oneyearreward") == 1) {
+		String lootGroup = "oneyear";
+
+		int level = 1;
+
+		ManagedReference<SceneObject*> inventory = playerCreature->getSlottedObject("inventory");
+
+		if (inventory != nullptr && !inventory->isContainerFullRecursive()) {
+
+			ManagedReference<LootManager*> lootManager = playerCreature->getZoneServer()->getLootManager();
+
+			if (lootManager != nullptr){
+				lootManager->createLoot(inventory, lootGroup, level);
+				StringBuffer zReward;
+				ChatManager* chatManager = playerCreature->getZoneServer()->getChatManager();	
+				playerCreature->setScreenPlayState("oneyearreward", 1);
+				playerCreature->sendSystemMessage("1 Year Anniversary Gift has been placed in your Inventory");
+				zReward << " Has Received A 1 Year Anniversary Gift Server Reward";
+				chatManager->handleGeneralChat(playerCreature, zReward.toString());
+			}
+		}
+	}
+
+ 	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
 	if (playerCreature->getScreenPlayState("twoyearreward") == 1) {
 		String lootGroup = "twoyear";
 
@@ -1517,7 +1541,31 @@ void PlayerObjectImplementation::notifyOnline() {
 				ChatManager* chatManager = playerCreature->getZoneServer()->getChatManager();	
 				playerCreature->setScreenPlayState("twoyearreward", 1);
 				playerCreature->sendSystemMessage("2 Year Anniversary Gift has been placed in your Inventory");
-				zReward << " Has Received A Server Reward";
+				zReward << " Has Received A 2 Year Anniversary Gift Server Reward";
+				chatManager->handleGeneralChat(playerCreature, zReward.toString());
+			}
+		}
+	}
+
+ 	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
+	if (playerCreature->getScreenPlayState("threeyearreward") == 1) {
+		String lootGroup = "threeyear";
+
+		int level = 1;
+
+		ManagedReference<SceneObject*> inventory = playerCreature->getSlottedObject("inventory");
+
+		if (inventory != nullptr && !inventory->isContainerFullRecursive()) {
+
+			ManagedReference<LootManager*> lootManager = playerCreature->getZoneServer()->getLootManager();
+
+			if (lootManager != nullptr){
+				lootManager->createLoot(inventory, lootGroup, level);
+				StringBuffer zReward;
+				ChatManager* chatManager = playerCreature->getZoneServer()->getChatManager();	
+				playerCreature->setScreenPlayState("threeyearreward", 1);
+				playerCreature->sendSystemMessage("3 Year Anniversary Gift has been placed in your Inventory");
+				zReward << " Has Received A 3 Year Anniversary Gift Server Reward";
 				chatManager->handleGeneralChat(playerCreature, zReward.toString());
 			}
 		}
