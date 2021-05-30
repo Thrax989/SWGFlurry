@@ -1523,7 +1523,6 @@ void PlayerObjectImplementation::notifyOnline() {
 		}
 	}
 
- 	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
 	if (playerCreature->getScreenPlayState("twoyearreward") == 1) {
 		String lootGroup = "twoyear";
 
@@ -1547,7 +1546,6 @@ void PlayerObjectImplementation::notifyOnline() {
 		}
 	}
 
- 	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
 	if (playerCreature->getScreenPlayState("threeyearreward") == 1) {
 		String lootGroup = "threeyear";
 
