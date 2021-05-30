@@ -112,7 +112,7 @@ class StructureObject extends TangibleObject {
 		super.createChildObjects();
 	}
 
-	@read
+	@dirty
 	public abstract int getReceiverFlags() {
 		return CloseObjectsVector.STRUCTURETYPE | super.getReceiverFlags();
 	}
