@@ -5,7 +5,6 @@
 package server.zone.managers.auction;
 
 import engine.core.ManagedObject;
-import system.util.Vector;
 import system.util.VectorMap;
 import server.zone.objects.auction.AuctionItem;
 import server.zone.objects.creature.CreatureObject;
@@ -49,8 +48,7 @@ class AuctionsMap extends ManagedObject {
 	private native int addVendorItem(CreatureObject player, final string planet, final string region, SceneObject vendor, AuctionItem item);
 	private native int addBazaarItem(CreatureObject player, final string planet, final string region, SceneObject vendor, AuctionItem item);
 
-	public native void deleteItem(SceneObject vendor, AuctionItem item, boolean deleteAuctionedObject = false);
-	public native void removeItem(SceneObject vendor, AuctionItem item);
+	public native void deleteItem(SceneObject vendor, AuctionItem item);
 	private native void removeVendorItem(SceneObject vendor, AuctionItem item);
 	private native void removeBazaarItem(SceneObject vendor, AuctionItem item);
 
@@ -101,8 +99,4 @@ class AuctionsMap extends ManagedObject {
 	public int getTotalItemCount() {
 		return allItems.size();
 	}
-
-	@local
-	@dereferenced
-	public native Vector<unsigned long> getExpiredItemList(SceneObject vendor, CreatureObject player);
 }
