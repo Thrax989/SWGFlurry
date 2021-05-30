@@ -1837,7 +1837,7 @@ String BuildingObjectImplementation::getCellName(uint64 cellID) const {
 	return cellProperty->getName();
 }
 
-String BuildingObjectImplementation::getPackupMessage() const {
+String BuildingObjectImplementation::getPackupMessage() {
 	if (!ConfigManager::instance()->getStructurePackupEnabled())
 		return "packup_not_eligible_01";
 
