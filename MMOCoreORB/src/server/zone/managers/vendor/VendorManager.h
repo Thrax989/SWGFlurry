@@ -9,9 +9,7 @@
 #define VENDORMANAGER_H_
 
 #include "VendorSelectionNode.h"
-#include "server/zone/objects/intangible/VendorControlDevice.h"
 #include "server/zone/objects/creature/CreatureObject.h"
-#include "server/zone/objects/waypoint/WaypointObject.h"
 #include "server/zone/managers/name/NameManager.h"
 #include "VendorOutfitManager.h"
 
@@ -66,13 +64,6 @@ public:
 	inline VendorSelectionNode* getRootNode() {
 		return rootNode;
 	}
-
-	void handlePackupVendor(CreatureObject* player, TangibleObject* vendor, bool sendMail = false);
-	void handleUnpackVendor(CreatureObject* player, TangibleObject* vendor);
-	void promptPackupVendor(CreatureObject* player, TangibleObject* vendor);
-
-	void promptRelistItems(CreatureObject* player, TangibleObject* vendor);
-	void handleRelistItems(CreatureObject* player, TangibleObject* vendor);
 };
 
 }
