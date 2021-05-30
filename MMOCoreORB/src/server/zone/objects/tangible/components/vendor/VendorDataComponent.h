@@ -101,7 +101,7 @@ public:
 			return;
 
 		originalDirection = strongParent->getDirectionAngle();
-		setVendorSearchEnabled(false);
+		setVendorSearchEnabled(true);
 	}
 
 	void setVendorSearchEnabled(bool enabled);
