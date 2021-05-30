@@ -3,9 +3,9 @@
 		See file COPYING for copying conditions.*/
 
 package server.zone.objects.structure;
+include server.zone.objects.intangible.ControlDevice;
 
 import server.zone.Zone;
-include server.zone.objects.intangible.ControlDevice;
 import server.zone.objects.tangible.TangibleObject;
 import server.zone.objects.structure.events.StructureMaintenanceTask;
 import server.zone.objects.scene.SceneObject;
@@ -71,8 +71,8 @@ class StructureObject extends TangibleObject {
 		permissionsFixed = false;
 
 		navArea = null;
-
 		controlDevice = null;
+
 	}
 
 	public native void initializeTransientMembers();
@@ -157,6 +157,7 @@ class StructureObject extends TangibleObject {
 
 	@prelocked
 	@dirty
+	@read
 	public native string getDebugStructureStatus();
 
 	/**
@@ -501,7 +502,7 @@ class StructureObject extends TangibleObject {
 
 	@read
 	public boolean hasNavmesh() {
-		return navArea;
+		return navArea != null;
 	}
 
 	@preLocked
