@@ -151,9 +151,8 @@ void ServerCore::registerConsoleCommmands() {
 	});
 
 	consoleCommands.put("save", [this](const String& arguments) -> CommandResult {
-		bool forceFull = !arguments.contains("delta");
-
-		ObjectManager::instance()->createBackup(forceFull);
+		ObjectManager::instance()->createBackup();
+		//ObjectDatabaseManager::instance()->checkpoint();
 
 		return SUCCESS;
 	});
@@ -319,7 +318,7 @@ void ServerCore::registerConsoleCommmands() {
 		if (arguments == "name") {
 			ZoneServer* server = zoneServerRef.get();
 
-			if (server != nullptr)
+			if(server != nullptr)
 				server->getNameManager()->loadConfigData(true);
 		} else {
 			System::out << "Invalid manager. Reloadable managers: name" << endl;
@@ -433,7 +432,7 @@ void ServerCore::registerConsoleCommmands() {
 	consoleCommands.put("setpvp", setPvpModeLambda);
 
 	const auto dumpConfigLambda = [this](const String& arguments) -> CommandResult {
-		ConfigManager::instance()->dumpConfig(arguments == "all");
+		ConfigManager::instance()->dumpConfig(arguments == "all" ? true : false);
 
 		return SUCCESS;
 	};
@@ -583,7 +582,8 @@ void ServerCore::initialize() {
 				if (zonePort == 0) {
 					const String query = "SELECT port FROM galaxy WHERE galaxy_id = "
 								   + String::valueOf(galaxyID);
-					UniqueReference<ResultSet*> result(database->instance()->executeQuery(query));
+					Reference < ResultSet * > result =
+							database->instance()->executeQuery(query);
 
 					if (result != nullptr && result->next()) {
 						zonePort = result->getInt(0);
@@ -593,7 +593,7 @@ void ServerCore::initialize() {
 				database->instance()->executeStatement(
 						"DELETE FROM characters_dirty WHERE galaxy_id = "
 						+ String::valueOf(galaxyID));
-			} catch (const DatabaseException &e) {
+			} catch (DatabaseException &e) {
 				fatal(e.getMessage());
 			}
 
@@ -681,7 +681,7 @@ void ServerCore::shutdown() {
 
 	ObjectManager* objectManager = ObjectManager::instance();
 
-	while (objectManager->isObjectUpdateInProgress())
+	while (objectManager->isObjectUpdateInProcess())
 		Thread::sleep(500);
 
 	objectManager->cancelDeleteCharactersTask();
@@ -740,9 +740,9 @@ void ServerCore::shutdown() {
 
 	Thread::sleep(5000);
 
-	objectManager->createBackup(true);
+	objectManager->createBackup();
 
-	while (objectManager->isObjectUpdateInProgress())
+	while (objectManager->isObjectUpdateInProcess())
 		Thread::sleep(500);
 
 	info("database backup done", true);
@@ -770,12 +770,12 @@ void ServerCore::shutdown() {
 	typedef std::remove_reference<decltype(*objects)>::type ObjectsMapType;
 
 	while (objectsIterator.hasNext()) {
-		ObjectsMapType::key_type* key;
-		ObjectsMapType::value_type* value;
+		ObjectsMapType::key_type key;
+		ObjectsMapType::value_type value;
 
 		objectsIterator.getNextKeyAndValue(key, value);
 
-		tbl.put(*key, *value);
+		tbl.put(key, value);
 	}
 
 	objectManager->finalizeInstance();
@@ -817,6 +817,8 @@ void ServerCore::handleCommands() {
 #endif
 
 		try {
+			String fullCommand;
+
 			Thread::sleep(500);
 
 			System::out << "> " << flush;
@@ -827,7 +829,8 @@ void ServerCore::handleCommands() {
 			if (!res)
 				continue;
 
-			String fullCommand = String(line).trim();
+			fullCommand = line;
+			fullCommand = fullCommand.trim();
 
 			StringTokenizer tokenizer(fullCommand);
 
@@ -844,13 +847,17 @@ void ServerCore::handleCommands() {
 			if (it != consoleCommands.npos) {
 				int result = consoleCommands.get(it)(arguments);
 
-				if (result == CommandResult::SHUTDOWN)
+				if (result == SHUTDOWN)
 					return;
 			} else {
-				warning() << "unknown command (" << command << ")";
+				System::out << "unknown command (" << command << ")\n";
 			}
+		} catch (const SocketException& e) {
+			error() << e.getMessage();
+		} catch (const ArrayIndexOutOfBoundsException& e) {
+			error() << e.getMessage();
 		} catch (const Exception& e) {
-			error(e.getMessage());
+			error() << "unreported Exception caught";
 		}
 
 		System::flushStreams();
@@ -862,11 +869,13 @@ void ServerCore::handleCommands() {
 #endif
 
 	}
+
+	Thread::sleep(10000);
 }
 
 void ServerCore::processConfig() {
 	if (!configManager->loadConfigData())
-		warning("missing config file.. loading default values");
+		info("missing config file.. loading default values\n");
 
 	//if (!features->loadFeatures())
 	//info("Problem occurred trying to load features.lua");
