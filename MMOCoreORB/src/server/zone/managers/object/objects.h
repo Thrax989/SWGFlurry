@@ -18,6 +18,7 @@
 #include "server/zone/objects/intangible/PetControlDevice.h"
 #include "server/zone/objects/intangible/ShipControlDevice.h"
 #include "server/zone/objects/intangible/StructureControlDevice.h"
+#include "server/zone/objects/intangible/VendorControlDevice.h"
 #include "server/zone/objects/intangible/TheaterObject.h"
 #include "server/zone/objects/ship/FighterShipObject.h"
 #include "server/zone/objects/ship/SpaceStationObject.h"
@@ -131,5 +132,4 @@
 #include "server/zone/objects/area/MissionReconActiveArea.h"
 #include "server/zone/objects/area/SpawnArea.h"
 #include "server/zone/objects/tangible/misc/ContractCrate.h"
-
 #endif /* OBJECTS_H_ */
