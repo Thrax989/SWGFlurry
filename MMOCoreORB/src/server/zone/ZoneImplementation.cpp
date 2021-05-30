@@ -99,7 +99,7 @@ void ZoneImplementation::stopManagers() {
 	}
 
 	if (planetManager != nullptr) {
-		planetManager->finalize();
+		//planetManager->finalize();
 		planetManager = nullptr;
 	}
 
@@ -119,7 +119,7 @@ void ZoneImplementation::clearZone() {
 	creatureManager->unloadSpawnAreas();
 
 	HashTable<uint64, ManagedReference<SceneObject*> > tbl;
-	tbl.copyFrom(objectMap->getMap());
+	tbl.copyFrom(*objectMap->getMap());
 
 	zonelocker.release();
 
@@ -353,6 +353,28 @@ int ZoneImplementation::getInRangeObjects(float x, float y, float range, InRange
 	}
 
 	return objects->size();
+}
+
+int ZoneImplementation::getInRangePlayers(float x, float y, float range, SortedVector<ManagedReference<QuadTreeEntry*> >* players) {
+	Reference<SortedVector<ManagedReference<QuadTreeEntry*> >*> closeObjects = new SortedVector<ManagedReference<QuadTreeEntry*> >();
+
+	getInRangeObjects(x, y, range, closeObjects, true);
+
+	for (int i = 0; i < closeObjects->size(); ++i) {
+		SceneObject* object = cast<SceneObject*>(closeObjects->get(i).get());
+
+		if (object == nullptr || !object->isPlayerCreature())
+			continue;
+
+		CreatureObject* player = object->asCreatureObject();
+
+		if (player == nullptr || player->isInvisible())
+			continue;
+
+		players->emplace(object);
+	}
+
+	return players->size();
 }
 
 int ZoneImplementation::getInRangeActiveAreas(float x, float y, SortedVector<ManagedReference<ActiveArea*> >* objects, bool readLockZone) {

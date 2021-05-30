@@ -31,6 +31,7 @@
 #include "server/zone/managers/city/CityManager.h"
 #include "server/zone/managers/structure/StructureManager.h"
 #include "server/zone/managers/frs/FrsManager.h"
+#include "server/zone/managers/log/FlurryLogManager.h"
 
 #include "server/chat/ChatManager.h"
 
@@ -85,7 +86,7 @@ ZoneServerImplementation::ZoneServerImplementation(ConfigManager* config) :
 	serverState = OFFLINE;
 	deleteNavAreas = false;
 
-	setLogging(true);
+	setLogLevel(Logger::INFO);
 }
 
 void ZoneServerImplementation::initializeTransientMembers() {
@@ -100,15 +101,15 @@ void ZoneServerImplementation::initializeTransientMembers() {
 
 void ZoneServerImplementation::loadGalaxyName() {
 	try {
-		String query = "SELECT name FROM galaxy WHERE galaxy_id = " + String::valueOf(galaxyID);
+		const String query = "SELECT name FROM galaxy WHERE galaxy_id = " + String::valueOf(galaxyID);
 
-		Reference<ResultSet*> result = ServerDatabase::instance()->executeQuery(query);
+		UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(query));
 
 		if (result->next())
 			galaxyName = result->getString(0);
 
-	} catch (DatabaseException& e) {
-		info(e.getMessage());
+	} catch (const DatabaseException& e) {
+		fatal(e.getMessage());
 	}
 
 	setLoggingName("ZoneServer " + galaxyName);
@@ -268,6 +269,10 @@ void ZoneServerImplementation::startManagers() {
 
 	frsManager = new FrsManager(_this.getReferenceUnsafeStaticCast());
 	frsManager->initialize();
+
+	//Flurry Log Manager
+	flurryLogManager = new FlurryLogManager();
+	FlurryLogManager->initialize();
 }
 
 void ZoneServerImplementation::start(int p, int mconn) {
@@ -296,7 +301,7 @@ void ZoneServerImplementation::timedShutdown(int minutes) {
 	} else {
 		task->schedule(60 * 1000);
 
-		String str = "Server will shutdown in " + String::valueOf(minutes) + " minutes";
+		String str = "The server will shutdown in " + String::valueOf(minutes) + " minutes. Please move your character to a safe place.";
 		Logger::console.info(str, true);
 
 		getChatManager()->broadcastGalaxy(nullptr, str);
@@ -315,7 +320,8 @@ void ZoneServerImplementation::shutdown() {
 
 		if (zone != nullptr) {
 			zone->stopManagers();
-			//info("zone references " + String::valueOf(zone->getReferenceCount()), true);
+
+			debug() << "zone references " << zone->getReferenceCount();
 		}
 	}
 
@@ -442,9 +448,9 @@ ZoneClientSession* ZoneServerImplementation::createConnection(Socket* sock, Sock
 	//client->deploy("ZoneClientSession " + addr.getFullIPAddress());
 	//client->deploy();
 
-	String address = session->getAddress();
+	const auto& address = session->getAddress();
 
-	//info("client connected from \'" + address + "\'");
+	debug() << "client connected from \'" << address << "\'";
 
 	return client;
 }
@@ -519,7 +525,7 @@ Reference<SceneObject*> ZoneServerImplementation::getObject(uint64 oid, bool doL
 		}
 
 		//unlock(doLock);
-	} catch (Exception& e) {
+	} catch (const Exception& e) {
 		//unlock(doLock);
 		error(e.getMessage());
 		e.printStackTrace();
@@ -764,7 +770,7 @@ void ZoneServerImplementation::setServerStateShuttingDown() {
 	info(msg, true);
 }
 
-String ZoneServerImplementation::getLoginMessage() {
+String ZoneServerImplementation::getLoginMessage() const {
 	return loginMessage;
 }
 
@@ -775,7 +781,12 @@ void ZoneServerImplementation::loadLoginMessage() {
 	FileReader* reader;
 
 	try {
-		file = new File("conf/motd.txt");
+		file = new File("custom_scripts/conf/motd.txt");
+		FileInputStream fileStream(file);
+
+		if (!file->exists())
+			file = new File("conf/motd.txt");
+
 		reader = new FileReader(file);
 
 		String line;
@@ -788,9 +799,6 @@ void ZoneServerImplementation::loadLoginMessage() {
 		file = nullptr;
 		reader = nullptr;
 	}
-
-	//loginMessage += "\nLatest Commits:\n";
-	//loginMessage += ConfigManager::instance()->getRevision();
 
 	delete reader;
 	delete file;
@@ -805,7 +813,12 @@ void ZoneServerImplementation::changeLoginMessage(const String& motd) {
 	String finalMOTD = "";
 
 	try {
-		file = new File("conf/motd.txt");
+		file = new File("custom_scripts/conf/motd.txt");
+		FileInputStream fileStream(file);
+
+		if (!file->exists())
+			file = new File("conf/motd.txt");
+
 		writer = new FileWriter(file);
 
 		for(int i = 0; i < motd.length(); i++) {
