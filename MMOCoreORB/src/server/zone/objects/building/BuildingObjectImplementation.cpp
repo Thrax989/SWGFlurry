@@ -1836,3 +1836,16 @@ String BuildingObjectImplementation::getCellName(uint64 cellID) const {
 
 	return cellProperty->getName();
 }
+
+String BuildingObjectImplementation::getPackupMessage() const {
+	if (!ConfigManager::instance()->getStructurePackupEnabled())
+		return "packup_not_eligible_01";
+
+	if (isCivicStructure() || isGCWBase())
+		return "packup_not_eligible_02";
+
+	if (getCurrentNumberOfPlayerItems() <= 0)
+		return "packup_not_eligible_03";
+
+	return "";
+}
