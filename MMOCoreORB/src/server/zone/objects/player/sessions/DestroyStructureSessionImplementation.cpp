@@ -6,7 +6,6 @@
  */
 
 #include "server/zone/objects/player/sessions/DestroyStructureSession.h"
-#include "server/zone/objects/player/sessions/PackupStructureSession.h"
 #include "server/zone/managers/structure/StructureManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -22,10 +21,6 @@
 int DestroyStructureSessionImplementation::initializeSession() {
 	//TODO: Temporary until CreatureObject* dependency removed.
 	if (!creatureObject->isPlayerCreature())
-		return cancelSession();
-
-	ManagedReference<PackupStructureSession*> packupSession = creatureObject->getActiveSession(SessionFacadeType::PACKUPSTRUCTURE).castTo<PackupStructureSession*>();
-	if (packupSession != nullptr)
 		return cancelSession();
 
 	creatureObject->addActiveSession(SessionFacadeType::DESTROYSTRUCTURE, _this.getReferenceUnsafeStaticCast());

@@ -3,7 +3,7 @@
  */
 
 #ifndef PACKUPSTRUCTURECODESUICALLBACK_H_
-#define PackupSTRUCTURECODESUICALLBACK_H_
+#define PACKUPSTRUCTURECODESUICALLBACK_H_
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/PackupStructureSession.h"
