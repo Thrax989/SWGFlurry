@@ -257,10 +257,10 @@ class BuildingObject extends StructureObject {
 	public native int notifyObjectInsertedToChild(SceneObject object, SceneObject child, SceneObject oldParent);
 	public native int notifyObjectRemovedFromChild(SceneObject object, SceneObject child);
 
-	@read
+	@dirty
 	public native int getCurrentNumberOfPlayerItems();
 
-	@read
+	@dirty
 	public native int getCurrentNumberOfPlayerVendors();
 
 	/**
@@ -352,7 +352,7 @@ class BuildingObject extends StructureObject {
 		return "";
 	}
 
-	@read
+	@dirty
 	public native string getPackupMessage();
 
 	@read
