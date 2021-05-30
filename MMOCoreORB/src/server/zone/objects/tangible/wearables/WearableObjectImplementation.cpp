@@ -238,7 +238,7 @@ void WearableObjectImplementation::removeSkillModsFrom(CreatureObject* creature)
 
 		if (!SkillModManager::instance()->isWearableModDisabled(name))
 		{
-			creature->addSkillMod(SkillModManager::WEARABLE, name, value, true);
+			creature->removeSkillMod(SkillModManager::WEARABLE, name, value, true);
 			creature->updateTerrainNegotiation();
 		}
 	}
