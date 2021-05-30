@@ -6,16 +6,23 @@
  */
 
 #include "VendorManager.h"
+#include "server/chat/ChatManager.h"
 #include "server/zone/managers/vendor/sui/DestroyVendorSuiCallback.h"
+#include "server/zone/objects/intangible/VendorControlDevice.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/auction/AuctionItem.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
+#include "server/zone/objects/structure/StructureObject.h"
+#include "server/zone/objects/waypoint/WaypointObject.h"
+#include "server/zone/managers/vendor/sui/PackupVendorSuiCallback.h"
+#include "server/zone/managers/vendor/sui/RelistItemsSuiCallback.h"
 #include "server/zone/managers/vendor/sui/RenameVendorSuiCallback.h"
 #include "server/zone/managers/vendor/sui/RegisterVendorSuiCallback.h"
 #include "server/zone/managers/auction/AuctionManager.h"
 #include "server/zone/managers/auction/AuctionsMap.h"
 #include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
+#include "server/zone/ZoneServer.h"
 #include "server/zone/ZoneProcessServer.h"
 
 VendorManager::VendorManager() {
@@ -37,7 +44,10 @@ void VendorManager::loadLuaVendors() {
 	Lua* lua = new Lua();
 	lua->init();
 
-	lua->runFile("scripts/managers/vendor_manager.lua");
+	bool res = lua->runFile("custom_scripts/managers/vendor_manager.lua");
+
+	if (!res)
+		res = lua->runFile("scripts/managers/vendor_manager.lua");
 
 	LuaObject menu = lua->getGlobalObject("VendorMenu");
 
@@ -65,28 +75,31 @@ bool VendorManager::isValidVendorName(const String& name) {
 }
 
 void VendorManager::handleDisplayStatus(CreatureObject* player, TangibleObject* vendor) {
-
-	if(vendor->getZone() == nullptr) {
-		error("nullptr zone in VendorManager::handleDisplayStatus");
-		return;
-	}
-
 	DataObjectComponentReference* data = vendor->getDataObjectComponent();
-	if(data == nullptr || data->get() == nullptr || !data->get()->isVendorData()) {
+	if (data == nullptr || data->get() == nullptr || !data->get()->isVendorData()) {
 		error("Vendor has no data component");
 		return;
 	}
 
 	VendorDataComponent* vendorData = cast<VendorDataComponent*>(data->get());
-	if(vendorData == nullptr) {
+	if (vendorData == nullptr) {
 		error("Vendor has wrong data component");
 		return;
 	}
 
+	if (vendor->getZone() == nullptr && !vendorData->isPackedUp()) {
+		error("nullptr zone in VendorManager::handleDisplayStatus and vendor is not packed up");
+		return;
+	}
+
 	ManagedReference<SuiListBox*> statusBox = new SuiListBox(player, SuiWindowType::STRUCTURE_VENDOR_STATUS);
-	statusBox->setUsingObject(vendor);
 	statusBox->setPromptTitle("@player_structure:vendor_status");
 	statusBox->setPromptText("Vendor Status");
+
+	if (vendorData->isPackedUp())
+		statusBox->setUsingObject(vendor->getControlDevice().get());
+	else
+		statusBox->setUsingObject(vendor);
 
 	ManagedReference<CreatureObject*> owner = server->getZoneServer()->getObject(vendorData->getOwnerId()).castTo<CreatureObject*>();
 	String ownerName;
@@ -102,7 +115,7 @@ void VendorManager::handleDisplayStatus(CreatureObject* player, TangibleObject* 
 	statusBox->addMenuItem("Condition: " + String::valueOf(condition) + "%");
 
 	float secsRemaining = 0.f;
-	if( vendorData->getMaint() > 0 ){
+	if (vendorData->getMaint() > 0){
 		secsRemaining = (vendorData->getMaint() / vendorData->getMaintenanceRate())*3600;
 	}
 
@@ -112,53 +125,17 @@ void VendorManager::handleDisplayStatus(CreatureObject* player, TangibleObject* 
 	statusBox->addMenuItem("Maintenance Rate: " + String::valueOf((int)vendorData->getMaintenanceRate()) + " cr/hr");
 
 	ManagedReference<AuctionManager*> auctionManager = server->getZoneServer()->getAuctionManager();
-	if(auctionManager == nullptr) {
+	if (auctionManager == nullptr) {
 		error("null auction manager");
 		return;
 	}
 	ManagedReference<AuctionsMap*> auctionsMap = auctionManager->getAuctionMap();
-	if(auctionsMap == nullptr) {
+	if (auctionsMap == nullptr) {
 		error("null auctionsMap");
 		return;
 	}
 
-	String planet = vendor->getZone()->getZoneName();
-	String region = "@planet_n:" + vendor->getZone()->getZoneName();
-
-
-	ManagedReference<CityRegion*> regionObject = vendor->getCityRegion().get();
-	if(regionObject != nullptr)
-		region = regionObject->getRegionName();
-
-	TerminalListVector vendorList = auctionsMap->getVendorTerminalData(planet, region, vendor);
-
-	uint32 itemsForSaleCount = 0;
-
-	if(vendorList.size() > 0) {
-
-		Reference<TerminalItemList*> list = vendorList.get(0);
-		if (list != nullptr) {
-			ReadLocker rlocker(list);
-
-			for (int j = 0; j < list->size(); ++j) {
-				ManagedReference<AuctionItem*> item = list->get(j);
-				if (item == nullptr)
-					continue;
-
-				int itemSize = item->getSize();
-
-				if (itemSize > 50)
-					itemsForSaleCount += 50;
-				else if (itemSize > 0)
-					itemsForSaleCount += itemSize;
-				else
-					itemsForSaleCount++;
-			}
-		}
-	}
-
-
-	statusBox->addMenuItem("Number of Items For Sale: " + String::valueOf(itemsForSaleCount));
+	statusBox->addMenuItem("Number of Items on vendor: " + String::valueOf(auctionsMap->getVendorItemCount(vendor, false)));
 
 	if (vendorData->isVendorSearchEnabled())
 		statusBox->addMenuItem("@player_structure:vendor_search_enabled");
@@ -271,6 +248,15 @@ void VendorManager::destroyVendor(TangibleObject* vendor) {
 
 	if (vendorData->isRegistered() && vendor->getZone() != nullptr) {
 		vendor->getZone()->unregisterObjectWithPlanetaryMap(vendor);
+	}
+
+	if (vendorData->isPackedUp()) {
+		ManagedReference<VendorControlDevice*> controlDevice = vendor->getControlDevice().get().castTo<VendorControlDevice*>();
+
+		if (controlDevice != nullptr) {
+			controlDevice->destroyObjectFromWorld(true);
+			controlDevice->destroyObjectFromDatabase(true);
+		}
 	}
 
 	Locker locker(vendor);
@@ -425,5 +411,252 @@ void VendorManager::handleRenameVendor(CreatureObject* player, TangibleObject* v
 		player->sendSystemMessage("@player_structure:vendor_rename_unreg");
 	} else
 		player->sendSystemMessage("@player_structure:vendor_rename");
+}
 
+void VendorManager::promptPackupVendor(CreatureObject* player, TangibleObject* vendor) {
+	if (!ConfigManager::instance()->getVendorPackupEnabled())
+		return;
+
+	DataObjectComponentReference* data = vendor->getDataObjectComponent();
+
+	if (data == nullptr || data->get() == nullptr || !data->get()->isVendorData()) {
+		error("Vendor has no data component");
+		return;
+	}
+
+	VendorDataComponent* vendorData = cast<VendorDataComponent*>(data->get());
+
+	if (vendorData == nullptr) {
+		error("Vendor has wrong data component");
+		return;
+	}
+
+	if (vendorData->getOwnerId() != player->getObjectID())
+		return;
+
+	SuiMessageBox* packupBox = new SuiMessageBox(player, SuiWindowType::STRUCTURE_PACKUP_VENDOR_CONFIRM);
+	packupBox->setCallback(new PackupVendorSuiCallback(player->getZoneServer()));
+	packupBox->setUsingObject(vendor);
+	packupBox->setPromptTitle("@player_structure:packup_vendor_t");
+	packupBox->setPromptText("@player_structure:packup_vendor_d");
+	packupBox->setOkButton(true, "@yes");
+	packupBox->setCancelButton(true, "@no");
+
+	player->getPlayerObject()->addSuiBox(packupBox);
+	player->sendMessage(packupBox->generateMessage());
+}
+
+void VendorManager::handlePackupVendor(CreatureObject* player, TangibleObject* vendor, bool sendMail) {
+	if (!ConfigManager::instance()->getVendorPackupEnabled())
+		return;
+
+	if (player == nullptr || vendor == nullptr)
+		return;
+
+	Zone* zone = vendor->getZone();
+
+	if (zone == nullptr)
+		return;
+
+	DataObjectComponentReference* data = vendor->getDataObjectComponent();
+
+	if (data == nullptr || data->get() == nullptr || !data->get()->isVendorData()) {
+		error("Vendor has no data component");
+		return;
+	}
+
+	VendorDataComponent* vendorData = cast<VendorDataComponent*>(data->get());
+
+	if (vendorData == nullptr) {
+		error("Vendor has wrong data component");
+		return;
+	}
+
+	ManagedReference<SceneObject*> datapad = player->getSlottedObject("datapad");
+
+	if (datapad == nullptr || datapad->isContainerFullRecursive()) {
+		player->sendSystemMessage("Vendor Pack Up failed! Your datapad is full.");
+		return;
+	} else {
+		ManagedReference<VendorControlDevice*> controlDevice = server->getZoneServer()->createObject(STRING_HASHCODE("object/intangible/vendor/generic_vendor_control_device.iff"), 1).castTo<VendorControlDevice*>();
+
+		if (controlDevice == nullptr) {
+			error("controlDevice is null in handlePackupVendor");
+			return;
+		}
+
+		controlDevice->setCustomObjectName(vendor->getCustomObjectName(), true);
+		controlDevice->setControlledObject(vendor);
+		controlDevice->updateStatus(1);
+
+		if (datapad->transferObject(controlDevice, -1)) {
+			datapad->broadcastObject(controlDevice, true);
+
+			vendorData->setInitialized(false);
+			vendorData->setRegistered(false);
+			vendorData->setPackedUp(true);
+			zone->unregisterObjectWithPlanetaryMap(vendor);
+
+			vendor->setControlDevice(controlDevice);
+			vendor->destroyObjectFromWorld(false);
+
+			if (sendMail) {
+				ManagedReference<ChatManager*> chatManager = server->getZoneServer()->getChatManager();
+
+				if (chatManager != nullptr) {
+					UnicodeString subject("@auction:vendor_status_subject");
+					StringBuffer msg;
+
+					msg << "Your vendor " << "(" << vendor->getCustomObjectName().toString() << ")"
+							<< " has been packed up due to player structure packup."
+							<< " It has been placed in your datapad as a Vendor Control Device.";
+
+					chatManager->sendMail("System", subject, msg.toString(), player->getFirstName());
+				}
+			} else {
+				player->sendSystemMessage("Vendor Pack Up Successful! A vendor control device has been placed in your datapad.");
+			}
+
+		} else {
+			controlDevice->destroyObjectFromDatabase(true);
+			error("Could not transfer Control Device in handlePackupVendor");
+			return;
+		}
+	}
+}
+
+void VendorManager::handleUnpackVendor(CreatureObject* player, TangibleObject* vendor) {
+	if (player == nullptr || vendor == nullptr)
+		return;
+
+	if (!player->hasSkill("crafting_artisan_business_03")) {
+		player->sendSystemMessage("You no longer have the skill required to place this vendor.");
+		return;
+	}
+
+	ManagedReference<CellObject*> cell = player->getParent().get().castTo<CellObject*>();
+
+	if (cell == nullptr) {
+		player->sendSystemMessage("@player_structure:must_be_in_building");
+		return;
+	}
+
+	ManagedReference<SceneObject*> parent = cell->getParent().get();
+
+	if (parent == nullptr || !parent->isBuildingObject()) {
+		player->sendSystemMessage("@player_structure:must_be_in_building");
+		return;
+	}
+
+	Zone* zone = parent->getZone();
+
+	if (zone == nullptr)
+		return;
+
+	ManagedReference<BuildingObject*> building = cast<BuildingObject*>(parent.get());
+
+	if (building == nullptr)
+		return;
+
+	if (!building->isOnAdminList(player) && !building->isOnPermissionList("VENDOR", player)) {
+		player->sendSystemMessage("@player_structure:drop_npc_vendor_perm"); // You don't have vendor permissions
+		return;
+	}
+
+	if (!building->isPublicStructure()) {
+		player->sendSystemMessage("@player_structure:vendor_public_only");
+		return;
+	}
+
+	vendor->initializePosition(player->getPositionX(), player->getPositionZ(), player->getPositionY());
+	vendor->setDirection(0);
+	vendor->rotate(player->getDirectionAngle());
+
+	if (cell->transferObject(vendor, -1, true, true)) {
+		ManagedReference<VendorControlDevice*> controlDevice = vendor->getControlDevice().get().castTo<VendorControlDevice*>();
+
+		if (controlDevice != nullptr) {
+			controlDevice->destroyObjectFromWorld(true);
+			controlDevice->destroyObjectFromDatabase(true);
+		}
+
+		vendor->setControlDevice(nullptr);
+	}
+}
+
+void VendorManager::promptRelistItems(CreatureObject* player, TangibleObject* vendor) {
+	if (!ConfigManager::instance()->getItemRelistEnabled())
+		return;
+
+	ManagedReference<AuctionManager*> auctionManager = server->getZoneServer()->getAuctionManager();
+	if (auctionManager == nullptr)
+		return;
+
+	ManagedReference<AuctionsMap*> auctionsMap = auctionManager->getAuctionMap();
+	if (auctionsMap == nullptr)
+		return;
+
+	int expiredItemsCount = auctionsMap->getExpiredItemList(vendor, player).size();
+
+	if (expiredItemsCount > 0){
+		SuiMessageBox* confirmationWindow = new SuiMessageBox(player, SuiWindowType::NONE);
+		confirmationWindow->setCallback(new RelistItemsSuiCallback(player->getZoneServer()));
+		confirmationWindow->setUsingObject(vendor);
+		confirmationWindow->setPromptTitle("Restock Items");
+		confirmationWindow->setPromptText("The service fee for re-listing the " + String::valueOf(expiredItemsCount)  + " items in the stockroom is "
+				+ String::valueOf(expiredItemsCount * ConfigManager::instance()->getItemRelistFee()) + " credits.\n\nContinue?");
+		confirmationWindow->setOkButton(true, "@yes");
+		confirmationWindow->setCancelButton(true, "@no");
+
+		player->getPlayerObject()->addSuiBox(confirmationWindow);
+		player->sendMessage(confirmationWindow->generateMessage());
+	} else {
+		player->sendSystemMessage("There are no items in the stockroom");
+	}
+}
+
+void VendorManager::handleRelistItems(CreatureObject* player, TangibleObject* vendor) {
+	ManagedReference<AuctionManager*> auctionManager = server->getZoneServer()->getAuctionManager();
+	if (auctionManager == nullptr)
+		return;
+
+	ManagedReference<AuctionsMap*> auctionsMap = auctionManager->getAuctionMap();
+	if (auctionsMap == nullptr)
+		return;
+
+	Vector<uint64> expiredItems = auctionsMap->getExpiredItemList(vendor, player);
+
+	int availableCredits = player->getBankCredits();
+	int expiredItemsCount = expiredItems.size();
+	int totalFees = expiredItemsCount * ConfigManager::instance()->getItemRelistFee();
+
+	if (totalFees > availableCredits) {
+		player->sendSystemMessage("You do not have enough credits for the relisting fee.");
+		return;
+	}
+
+	for (int i = 0; i < expiredItemsCount; i++) {
+		ManagedReference<AuctionItem*> item = Core::getObjectBroker()->lookUp(expiredItems.get(i)).castTo<AuctionItem*>();
+
+		if (item != nullptr) {
+			Locker locker(item);
+			int salePrice = item->getPrice() > 99999990 ? 99999990 : item->getPrice();
+
+			if (item->getStatus() == AuctionItem::EXPIRED && item->getOwnerID() == player->getObjectID()) {
+				auctionManager->addSaleItem(player, item->getAuctionedItemObjectID(), vendor, item->getItemDescription(), salePrice, AuctionManager::VENDOREXPIREPERIOD, false, false, true);
+			}
+		}
+	}
+
+	// charge the fees after the entire transaction is complete
+	player->subtractBankCredits(totalFees);
+
+	// if in a player city add a percentage to the treasury
+	ManagedReference<CityRegion*> city = vendor->getCityRegion().get();
+	if (city != nullptr) {
+		Locker clocker(city);
+		city->addToCityTreasury((double)(totalFees * 0.25));
+	}
+
+	player->sendSystemMessage("Stockroom items have been relisted");
 }
