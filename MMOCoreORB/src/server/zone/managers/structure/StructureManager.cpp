@@ -1483,6 +1483,11 @@ int StructureManager::packupStructure(CreatureObject* creature) {
 	if (structureObject == nullptr)
 		return 0;
 
+	ManagedReference<StructureDeed*> deed = server->getObject(structureObject->getDeedObjectID()).castTo<StructureDeed*>();
+
+	if (deed == nullptr)
+		return 0;
+
 	Locker _locker(structureObject);
 
 	int maint = structureObject->getSurplusMaintenance();
