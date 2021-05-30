@@ -142,7 +142,7 @@ void StructureMaintenanceTask::run() {
 		}
 	}
 
-	if (ConfigManager::instance()->getInactivePackupEnabled() && !strongRef->isPackedUp()) {
+	if (ConfigManager::instance()->getInactiveStructurePackupEnabled() && !strongRef->isPackedUp()) {
 		ManagedReference<CreatureObject*> owner = zoneServer->getObject(oid).castTo<CreatureObject*>();
 
 		if (owner != nullptr) {
@@ -152,7 +152,7 @@ void StructureMaintenanceTask::run() {
 				Account* ownerAccount = ownerGhost->getAccount();
 
 				if (ownerAccount != nullptr) {
-					int inactiveDays = ConfigManager::instance()->getInactivePackupDays();
+					int inactiveDays = ConfigManager::instance()->getInactiveStructurePackupDays();
 					uint64 lastLogin = ownerAccount->getLastLoginInDays();
 
 					if (lastLogin >= inactiveDays)
