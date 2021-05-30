@@ -28,6 +28,7 @@ function DotEffect(t, dm, pl, h, p, c, s, d, pp, sp)
 end
 
 -- run command scripts
+-- run command scripts
 RunSlashCommandsFile("actionShot1.lua")
 RunSlashCommandsFile("actionShot2.lua")
 RunSlashCommandsFile("activateClone.lua")
@@ -495,6 +496,7 @@ RunSlashCommandsFile("overChargeShot1.lua")
 RunSlashCommandsFile("overChargeShot2.lua")
 RunSlashCommandsFile("overrideActiveMonths.lua")
 RunSlashCommandsFile("overridePadawanTrialsEligibility.lua")
+RunSlashCommandsFile("packupStructure.lua")
 RunSlashCommandsFile("paWithdraw.lua")
 RunSlashCommandsFile("panicShot.lua")
 RunSlashCommandsFile("pauseDance.lua")

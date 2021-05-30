@@ -1500,6 +1500,29 @@ void PlayerObjectImplementation::notifyOnline() {
 	schedulePvpTefRemovalTask();
 
  	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
+	if (playerCreature->getScreenPlayState("oneyearreward") == 1) {
+		String lootGroup = "oneyear";
+
+		int level = 1;
+
+		ManagedReference<SceneObject*> inventory = playerCreature->getSlottedObject("inventory");
+
+		if (inventory != nullptr && !inventory->isContainerFullRecursive()) {
+
+			ManagedReference<LootManager*> lootManager = playerCreature->getZoneServer()->getLootManager();
+
+			if (lootManager != nullptr){
+				lootManager->createLoot(inventory, lootGroup, level);
+				StringBuffer zReward;
+				ChatManager* chatManager = playerCreature->getZoneServer()->getChatManager();	
+				playerCreature->setScreenPlayState("oneyearreward", 1);
+				playerCreature->sendSystemMessage("1 Year Anniversary Gift has been placed in your Inventory");
+				zReward << " Has Received A 1 Year Anniversary Gift Server Reward";
+				chatManager->handleGeneralChat(playerCreature, zReward.toString());
+			}
+		}
+	}
+
 	if (playerCreature->getScreenPlayState("twoyearreward") == 1) {
 		String lootGroup = "twoyear";
 
@@ -1517,10 +1540,37 @@ void PlayerObjectImplementation::notifyOnline() {
 				ChatManager* chatManager = playerCreature->getZoneServer()->getChatManager();	
 				playerCreature->setScreenPlayState("twoyearreward", 1);
 				playerCreature->sendSystemMessage("2 Year Anniversary Gift has been placed in your Inventory");
-				zReward << " Has Received A Server Reward";
+				zReward << " Has Received A 2 Year Anniversary Gift Server Reward";
 				chatManager->handleGeneralChat(playerCreature, zReward.toString());
 			}
 		}
+	}
+
+	if (playerCreature->getScreenPlayState("threeyearreward") == 1) {
+		String lootGroup = "threeyear";
+
+		int level = 1;
+
+		ManagedReference<SceneObject*> inventory = playerCreature->getSlottedObject("inventory");
+
+		if (inventory != nullptr && !inventory->isContainerFullRecursive()) {
+
+			ManagedReference<LootManager*> lootManager = playerCreature->getZoneServer()->getLootManager();
+
+			if (lootManager != nullptr){
+				lootManager->createLoot(inventory, lootGroup, level);
+				StringBuffer zReward;
+				ChatManager* chatManager = playerCreature->getZoneServer()->getChatManager();	
+				playerCreature->setScreenPlayState("threeyearreward", 1);
+				playerCreature->sendSystemMessage("3 Year Anniversary Gift has been placed in your Inventory");
+				zReward << " Has Received A 3 Year Anniversary Gift Server Reward";
+				chatManager->handleGeneralChat(playerCreature, zReward.toString());
+			}
+		}
+	}
+
+	if (playerCreature->hasSkill("combat_jedi_novice") || playerCreature->hasSkill("force_rank_gray_novice")) {
+		playerCreature->setFactionStatus(0);
 	}
 
 	MissionManager* missionManager = zoneServer->getMissionManager();
@@ -2684,6 +2734,14 @@ void PlayerObjectImplementation::destroyObjectFromDatabase(bool destroyContained
 		ManagedReference<StructureObject*> structure = getZoneServer()->getObject(oid).castTo<StructureObject*>();
 
 		if (structure != nullptr) {
+			//This shouldn't happen but it did. Lets make sure it doesn't ever again.
+			ManagedReference<CreatureObject*> player = getParent().get().castTo<CreatureObject*>();
+
+			if (player != nullptr && player->getObjectID() != structure->getOwnerObjectID()) {
+				error("Tried deleting a structure that does not belong to the player in PlayerObjectImplementation::destroyObjectFromDatabase. Skipping structure.");
+				continue;
+			}
+
 			Zone* zone = structure->getZone();
 
 			if (zone != nullptr) {
@@ -2706,7 +2764,7 @@ void PlayerObjectImplementation::destroyObjectFromDatabase(bool destroyContained
 					continue;
 				}
 
-				StructureManager::instance()->destroyStructure(structure);
+				StructureManager::instance()->destroyStructure(structure, false, "the owners character was deleted.");
 			} else {
 				structure->destroyObjectFromDatabase(true);
 			}

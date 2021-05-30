@@ -43,9 +43,9 @@
 
 object_building_corellia_hospital_corellia = object_building_corellia_shared_hospital_corellia:new {
 	skillMods = {
-		{"private_medical_rating", 100},
-		{"private_med_wound_health", 100},
-		{"private_med_wound_action", 100},
+		{"private_buff_mind", 125},
+		{"private_medical_rating", 125},
+		{"private_med_battle_fatigue", 125},
 		{"private_safe_logout", 1}
 	},
 

@@ -46,7 +46,9 @@ object_building_corellia_cloning_corellia = object_building_corellia_shared_clon
 	facilityType = CLONER_STANDARD,
 
 	skillMods = {
-		{"private_medical_rating", 100},
+		{"private_buff_mind", 125},
+		{"private_medical_rating", 125},
+		{"private_med_battle_fatigue", 125},
 		{"private_safe_logout", 1}
 	},
 

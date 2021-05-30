@@ -43,10 +43,16 @@ imperial_clone_trooper = Creature:new {
 		},
 		{
 			groups = {
-				{group = "geonosian_common", chance = 2000000},   
+				{group = "geonosian_common", chance = 10000000},   
 			},
-			lootChance = 10000000
-		},  
+			lootChance = 2000000
+		},
+ 		{
+			groups = {
+				{group = "rebpoints", chance = 10000000},   
+			},
+			lootChance = 2500000
+		},    
 		{
 			groups = {
 				{group = "tierone", chance = 1500000},

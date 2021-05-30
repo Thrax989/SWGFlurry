@@ -115,7 +115,6 @@ void VehicleObjectImplementation::notifyInsertToZone(Zone* zone) {
 		}
 		--paintCount;
 	}
-
 }
 
 bool VehicleObjectImplementation::checkInRangeGarage() {

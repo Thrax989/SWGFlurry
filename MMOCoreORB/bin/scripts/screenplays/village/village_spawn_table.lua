@@ -8,10 +8,10 @@ villageMobileSpawns = {
 		{ "noldan", 5243, 78, -4224, 0, "", "" },
 		{ "fs_villager_farmer", 5291.31, 78.5, -4037.8, 164, "", "" },
 		{ "eozlin", 5200.15, 78.5, -4141.37, 164, "", "villageSurveyorConvoTemplate" },
-		--{ "trainer_combatjedigrayelderrankcouncil", 5303.26, 78.5, -4135.07, 294, "", "" },
-		--{ "trainer_combatjedigrayelderrank", 5304.53, 78.5, -4125.42, 244, "", "" },
-		--{ "trainer_combatjedigrayelder", 5296.71, 78.5, -4121.27, 173, "", "" },
-		--{ "trainer_combatjedigray", 5293.58, 78.5, -4122.84, 151, "", "" },
+		{ "trainer_combatjedigrayelderrankcouncil", 5303.26, 78.5, -4135.07, 294, "", "" },
+		{ "trainer_combatjedigrayelderrank", 5304.53, 78.5, -4125.42, 244, "", "" },
+		{ "trainer_combatjedigrayelder", 5296.71, 78.5, -4121.27, 173, "", "" },
+		{ "trainer_combatjedigray", 5293.58, 78.5, -4122.84, 151, "", "" },
 	},
 
 	[1] = {

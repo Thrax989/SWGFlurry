@@ -109,6 +109,16 @@ class LightsaberCrystalComponent extends Component {
 		return damage;
 	}
 
+ 	@read
+	public int getMinimumDamage() {
+		return minimumDamage;
+	}
+
+	@read
+	public int getMaximumDamage() {
+		return maximumDamage;
+	}
+
 	@read
 	public float getForceCost() {
 		return floatForceCost;
@@ -137,6 +147,11 @@ class LightsaberCrystalComponent extends Component {
 	@read
 	public int getWoundChance() {
 		return woundChance;
+	}
+
+	@read
+	public int getItemLevel() {
+		return itemLevel;
 	}
 
 	@read

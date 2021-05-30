@@ -88,6 +88,7 @@
 #include "server/zone/objects/intangible/TheaterObject.h"
 #include "server/zone/objects/tangible/misc/ContractCrate.h"
 #include "server/zone/managers/crafting/schematicmap/SchematicMap.h"
+#include "server/zone/managers/structure/tasks/DestroyPackedupStructureTask.h"
 
 int DirectorManager::DEBUG_MODE = 0;
 int DirectorManager::ERROR_CODE = NO_ERROR;
@@ -2158,8 +2159,13 @@ int DirectorManager::destroyBuilding(lua_State* L) {
 	if (pendingTask != nullptr)
 		return 0;
 
-	Reference<DestroyStructureTask*> task = new DestroyStructureTask(building);
-	task->execute();
+	if (building->isPackedUp()) {
+		Reference<DestroyPackedupStructureTask*> task = new DestroyPackedupStructureTask(building);
+		task->execute();
+	} else {
+		Reference<DestroyStructureTask*> task = new DestroyStructureTask(building);
+		task->execute();
+	}
 	return 1;
 }
 

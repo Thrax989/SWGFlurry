@@ -55,6 +55,7 @@ public:
 				obj->destroyObjectFromWorld(false); //Don't need to send destroy to the player - they are being disconnected.
 				obj->destroyPlayerCreatureFromDatabase(true);
 			}
+			updateDeletedCharacters();
 		} catch (Exception& e) {
 			error(e.getMessage());
 		}

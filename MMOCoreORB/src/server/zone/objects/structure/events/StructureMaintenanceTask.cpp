@@ -18,6 +18,8 @@
 #include "server/zone/managers/credit/CreditManager.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
 
+#include "server/login/account/Account.h"
+
 void StructureMaintenanceTask::run() {
 	ManagedReference<StructureObject*> strongRef = structureObject.get();
 
@@ -135,7 +137,27 @@ void StructureMaintenanceTask::run() {
 			} else {
 				sendMailDestroy(name, strongRef);
 
-				destroyStructureWithReason(strongRef, "decayed, out of maintenance for " + String::valueOf(outOfMaintenanceHrs) + " hour(s).");
+				destroyStructureWithReason(strongRef, "it has decayed, out of maintenance for " + String::valueOf(outOfMaintenanceHrs) + " hour(s).");
+			}
+		}
+	}
+
+	if (ConfigManager::instance()->getInactiveStructurePackupEnabled() && !strongRef->isPackedUp()) {
+		ManagedReference<CreatureObject*> owner = zoneServer->getObject(oid).castTo<CreatureObject*>();
+
+		if (owner != nullptr) {
+			PlayerObject* ownerGhost = owner->getPlayerObject();
+
+			if (ownerGhost != nullptr) {
+				Account* ownerAccount = ownerGhost->getAccount();
+
+				if (ownerAccount != nullptr) {
+					int inactiveDays = ConfigManager::instance()->getInactiveStructurePackupDays();
+					uint64 lastLogin = ownerAccount->getLastLoginInDays();
+
+					if (lastLogin >= inactiveDays)
+						StructureManager::instance()->systemPackupStructure(strongRef, owner);
+				}
 			}
 		}
 	}
@@ -146,7 +168,8 @@ void StructureMaintenanceTask::destroyStructureWithReason(StructureObject* struc
 	structure->info("Will not be destroyed because DEBUG_STRUCTURE_TASK_NO_DESTROY is set, should destroy because " + reason, true);
 #else // DEBUG_STRUCTURE_TASK_NO_DESTROY
 	structure->info("Destroying because " + reason);
-	StructureManager::instance()->destroyStructure(structure);
+
+	StructureManager::instance()->destroyStructure(structure, false, reason);
 #endif // DEBUG_STRUCTURE_TASK_NO_DESTROY
 }
 
@@ -164,7 +187,12 @@ void StructureMaintenanceTask::sendMailMaintenanceWithdrawnFromBank(const String
 		//Your %TT %TO has an empty maintenance pool. It will start deducting from your bank account automatically.
 		StringIdChatParameter emailBody("@player_structure:structure_maintenance_empty_body");
 		emailBody.setTT(structure->getObjectName());
-		emailBody.setTO("(" + String::valueOf((int)structure->getPositionX()) + ", " + String::valueOf((int)structure->getPositionY()) + " on " + zoneName + ")");
+
+		if (structure->isPackedUp()) {
+			emailBody.setTO("which is currently packed up");
+		} else {
+			emailBody.setTO("(" + String::valueOf((int)structure->getPositionX()) + ", " + String::valueOf((int)structure->getPositionY()) + " on " + zoneName + ")");
+		}
 
 		chatManager->sendMail("@player_structure:your_structure_prefix", subject, emailBody, creoName);
 	}
@@ -191,6 +219,13 @@ void StructureMaintenanceTask::sendMailDecay(const String& creoName, StructureOb
 		StringIdChatParameter emailBody("@player_structure:" + bodyName);
 		emailBody.setTT(structure->getObjectName());
 		emailBody.setTO("(" + String::valueOf((int)structure->getPositionX()) + ", " + String::valueOf((int)structure->getPositionY()) + " on " + zoneName + ")");
+
+		if (structure->isPackedUp()) {
+			emailBody.setTO("which is currently packed up");
+		} else {
+			emailBody.setTO("(" + String::valueOf((int)structure->getPositionX()) + ", " + String::valueOf((int)structure->getPositionY()) + " on " + zoneName + ")");
+		}
+
 		emailBody.setDI(structure->getDecayPercentage());
 
 		chatManager->sendMail("@player_structure:your_structure_prefix", subject, emailBody, creoName);
@@ -212,7 +247,14 @@ void StructureMaintenanceTask::sendMailCondemned(const String& creoName, Structu
 		//Your %TT %TO has been condemned by the order of the Empire due to lack of maintenance. You must pay %DI credits to uncondemn this structure.
 		StringIdChatParameter emailBody("@player_structure:structure_condemned_body");
 		emailBody.setTT(structure->getObjectName());
-		emailBody.setTO("(" + String::valueOf((int)structure->getPositionX()) + ", " + String::valueOf((int)structure->getPositionY()) + " on " + zoneName + ")");
+
+		if (structure->isPackedUp()) {
+			emailBody.setTO("which is currently packed up");
+		} else {
+			emailBody.setTT(structure->getObjectName());
+			emailBody.setTO("(" + String::valueOf((int)structure->getPositionX()) + ", " + String::valueOf((int)structure->getPositionY()) + " on " + zoneName + ")");
+		}
+
 		emailBody.setDI(-structure->getSurplusMaintenance());
 		chatManager->sendMail("@player_structure:your_structure_prefix", subject, emailBody, creoName);
 	}
@@ -238,7 +280,13 @@ void StructureMaintenanceTask::sendMailDestroy(const String& creoName, Structure
 	StringBuffer body;
 
 	body << "Your " << structureName;
-	body << " (" + String::valueOf((int)structure->getPositionX()) + ", " + String::valueOf((int)structure->getPositionY()) + " on " + zoneName + ")";
+
+	if (structure->isPackedUp()) {
+		body << " which is currently packed up";
+	} else {
+		body << " (" + String::valueOf((int)structure->getPositionX()) + ", " + String::valueOf((int)structure->getPositionY()) + " on " + zoneName + ")";
+	}
+
 	body << " was destroyed after being out of maintenance for more than ";
 
 	if (outOfMaintenanceTime > 24) {

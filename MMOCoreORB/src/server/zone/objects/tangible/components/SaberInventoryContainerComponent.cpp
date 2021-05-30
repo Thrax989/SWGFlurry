@@ -60,6 +60,11 @@ int SaberInventoryContainerComponent::canAddObject(SceneObject* sceneObject, Sce
 		}
 	}
 
+	if (crystal->getColor() == 31 && (crystal->getMinimumDamage() != crystal->getMaximumDamage() || crystal->getItemLevel() == 0)) {
+		errorDescription = "You must retune this crystal before inserting it into a lightsaber.";
+		return TransferErrorCode::INVALIDTYPE;
+	}
+
 	return 0;
 }
 
@@ -76,8 +81,13 @@ int SaberInventoryContainerComponent::notifyObjectInserted(SceneObject* sceneObj
 		ManagedReference<LightsaberCrystalComponent*> crystal = cast<LightsaberCrystalComponent*>( object);
 		if (crystal->getColor() == 31){
 			weao->setAttackSpeed(weao->getAttackSpeed() + crystal->getAttackSpeed());
-			weao->setMinDamage(weao->getMinDamage() + crystal->getDamage());
-			weao->setMaxDamage(weao->getMaxDamage() + crystal->getDamage());
+			if (crystal->getMinimumDamage() != crystal->getMaximumDamage() || crystal->getItemLevel() == 0) {
+				weao->setMinDamage(weao->getMinDamage() + crystal->getMinimumDamage());
+				weao->setMaxDamage(weao->getMaxDamage() + crystal->getMaximumDamage());
+			} else {
+				weao->setMinDamage(weao->getMinDamage() + crystal->getDamage());
+				weao->setMaxDamage(weao->getMaxDamage() + crystal->getDamage());
+			}
 			weao->setHealthAttackCost(weao->getHealthAttackCost() + crystal->getSacHealth());
 			weao->setActionAttackCost(weao->getActionAttackCost() + crystal->getSacAction());
 			weao->setMindAttackCost(weao->getMindAttackCost() + crystal->getSacMind());
@@ -113,8 +123,13 @@ int SaberInventoryContainerComponent::notifyObjectRemoved(SceneObject* sceneObje
 
 			if (crystal->getColor() == 31){
 				weao->setAttackSpeed(weao->getAttackSpeed() - crystal->getAttackSpeed());
-				weao->setMinDamage(weao->getMinDamage() - crystal->getDamage());
-				weao->setMaxDamage(weao->getMaxDamage() - crystal->getDamage());
+				if (crystal->getMinimumDamage() != crystal->getMaximumDamage() || crystal->getItemLevel() == 0) {
+					weao->setMinDamage(weao->getMinDamage() - crystal->getMinimumDamage());
+					weao->setMaxDamage(weao->getMaxDamage() - crystal->getMaximumDamage());
+				} else {
+					weao->setMinDamage(weao->getMinDamage() - crystal->getDamage());
+					weao->setMaxDamage(weao->getMaxDamage() - crystal->getDamage());
+				}
 				weao->setHealthAttackCost(weao->getHealthAttackCost() - crystal->getSacHealth());
 				weao->setActionAttackCost(weao->getActionAttackCost() - crystal->getSacAction());
 				weao->setMindAttackCost(weao->getMindAttackCost() - crystal->getSacMind());

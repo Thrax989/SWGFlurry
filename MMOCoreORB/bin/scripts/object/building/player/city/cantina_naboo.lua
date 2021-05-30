@@ -52,8 +52,8 @@ object_building_player_city_cantina_naboo = object_building_player_city_shared_c
 	abilityRequired = "place_cantina",
 	skillMods = {
 		{"private_buff_mind", 125},
-		{"private_medical_rating", 110},
-		{"private_med_battle_fatigue", 15},
+		{"private_medical_rating", 125},
+		{"private_med_battle_fatigue", 125},
 		{"private_safe_logout", 1}
 	},
 	zoneComponent = "StructureZoneComponent",
