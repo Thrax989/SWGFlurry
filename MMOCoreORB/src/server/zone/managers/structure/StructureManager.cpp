@@ -583,7 +583,7 @@ StructureObject* StructureManager::placeStructure(CreatureObject* creature,
 	return structureObject;
 }
 
-+int StructureManager::destroyStructure(StructureObject* structureObject, bool playEffect, String reason) {
+int StructureManager::destroyStructure(StructureObject* structureObject, bool playEffect, String reason) {
 	ManagedReference<CreatureObject*> creature = server->getObject(structureObject->getOwnerObjectID()).castTo<CreatureObject*>();
 
 	if (creature != nullptr && !reason.isEmpty()) {
