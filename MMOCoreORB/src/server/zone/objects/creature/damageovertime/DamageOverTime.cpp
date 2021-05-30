@@ -6,10 +6,13 @@
 #include "templates/params/creature/CreatureAttribute.h"
 #include "templates/params/creature/CreatureState.h"
 #include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/creature/commands/effect/CommandEffect.h"
 #include "DamageOverTime.h"
 #include "server/zone/ZoneServer.h"
 #include "server/zone/managers/combat/CombatManager.h"
+
+#include "server/zone/managers/frs/FrsManager.h"
 
 DamageOverTime::DamageOverTime() {
 	setAttackerID(0);
@@ -275,9 +278,8 @@ uint32 DamageOverTime::doPoisonTick(CreatureObject* victim, CreatureObject* atta
 
 	uint32 attr = victim->getHAM(attribute);
 	int absorptionMod = Math::max(0, Math::min(50, victim->getSkillMod("absorption_poison")));
-
 	// absorption reduces the strength of a dot by the given %.
-        if (attacker->isPet() && strength > 1600){		
+        if (attacker->isPet() && strength > 1600){
 		strength = 1600;
 	}
 	int damage = (int)(strength * (1.f - absorptionMod / 100.f));
@@ -311,7 +313,6 @@ uint32 DamageOverTime::doDiseaseTick(CreatureObject* victim, CreatureObject* att
 		return 0;
 
 	int absorptionMod = Math::max(0, Math::min(50, victim->getSkillMod("absorption_disease")));
-
 	// absorption reduces the strength of a dot by the given %.
         if (attacker->isPet() && strength > 1600){
 		strength = 1600;
