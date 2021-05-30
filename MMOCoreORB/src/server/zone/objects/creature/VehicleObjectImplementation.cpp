@@ -115,7 +115,20 @@ void VehicleObjectImplementation::notifyInsertToZone(Zone* zone) {
 		}
 		--paintCount;
 	}
+	TemplateManager* templateManager = TemplateManager::instance();
+	uint32 vehicleCRC = getObjectTemplate()->getFullTemplateString().hashCode();
+	SharedCreatureObjectTemplate* vehicleTemplate = dynamic_cast<SharedCreatureObjectTemplate*>(templateManager->getTemplate(vehicleCRC));
 
+	if (vehicleTemplate != nullptr) {
+		float speed = vehicleTemplate->getSpeed().get(0);
+		float turn = vehicleTemplate->getTurnRate().get(0);
+
+		if (getRunSpeed() != speed)
+			setRunSpeed(speed, true);
+
+		if (getTurnScale() != turn)
+			setTurnScale(turn, true);
+	}
 }
 
 bool VehicleObjectImplementation::checkInRangeGarage() {
