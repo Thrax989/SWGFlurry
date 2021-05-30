@@ -54,7 +54,7 @@ public:
 				return;
 			}
 
-			if (creature->getFactionStatus() == FactionStatus::OVERT || player->hasGcwTef() || player->hasBhTef()) {
+			if (creature->getFactionStatus() == FactionStatus::OVERT || player->hasBhTef()) {
 				if (creature->isInCombat()) {
 					cancelLogout();
 					return;
