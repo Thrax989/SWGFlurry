@@ -85,7 +85,7 @@ public:
 	const static int STRUCTURECONTROLDEVICE = 0x80C;
 
 	/// Not in client **********
-	const static int THEATEROBJECT = 0x80D;
+	const static int THEATEROBJECT = 0x80E;
 	/// End not in client ************
 
 	const static int INSTALLATION = 0x1000;
@@ -335,9 +335,7 @@ public:
 	const static int CAMPAREA = 0x2000009;
 	const static int FSVILLAGEAREA = 0x200000A;
 	const static int SARLACCAREA = 0x200000B;
-
 	const static int NAVMESHAREA = 0x200000C;
-
 	const static int SHIP = 0x20000000;
 	const static int SHIPFIGHTER = 0x20000001;
 	const static int SHIPCAPITAL = 0x20000002;
