@@ -368,6 +368,30 @@ uint32 DamageOverTime::doForceChokeTick(CreatureObject* victim, CreatureObject* 
 
 		uint32 chokeDam = strength;
 
+		ManagedReference<PlayerObject*> ghost = nullptr;
+
+		if (attackerRef->isPlayerCreature())
+			ghost = attackerRef->getPlayerObject();
+
+		if (ghost != nullptr) {
+			FrsData* playerData = ghost->getFrsData();
+			int councilType = playerData->getCouncilType();
+			int powerModifier = 0;
+			int multiplier = 0;
+
+			if (councilType == FrsManager::COUNCIL_LIGHT) {
+				powerModifier = attackerRef->getSkillMod("force_power_light");
+				multiplier = 2;
+
+			} else if (councilType == FrsManager::COUNCIL_DARK) {
+				powerModifier = attackerRef->getSkillMod("force_power_dark");
+				multiplier = 4;
+			}
+
+			if (powerModifier > 0)
+				chokeDam += (int)((powerModifier / 2) * multiplier);
+		}
+
 		float jediBuffDamage = 0;
 		float rawDamage = chokeDam;
 
