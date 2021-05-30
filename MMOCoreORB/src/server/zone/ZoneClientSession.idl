@@ -11,10 +11,9 @@ import server.zone.objects.creature.CreatureObject;
 import system.lang.Time;
 import system.util.VectorMap;
 
-include engine.log.LoggerHelperStream;
 include system.util.SynchronizedVectorMap;
 
-@dirty
+//@nonTransactional
 class ZoneClientSession extends ManagedObject {
 	transient protected BaseClientProxy session;
 
@@ -29,7 +28,7 @@ class ZoneClientSession extends ManagedObject {
 	@weakReference
 	protected CreatureObject player;
 
-	protected string sessionID;
+	protected unsigned int sessionID;
 
 	protected unsigned int accountID;
 
@@ -59,37 +58,14 @@ class ZoneClientSession extends ManagedObject {
 	public native void debug(final string msg);
 	public native void error(final string msg);
 
-	@read
-	@dereferenced
-	@local
-	public LoggerHelperStream info(int forced = false) /*int instead of bool because of const char* implicit cast to bool*/  {
-		return session.info(forced);
-	}
-
-	@read
-	@dereferenced
-	@local
-	public LoggerHelperStream error()  {
-		return session.error();
-	}
-
-	@read
-	@dereferenced
-	@local
-	public LoggerHelperStream debug()  {
-		return session.debug();
-	}
-
-	@read
 	public native string getAddress();
 
-	@read
 	public native string getIPAddress();
 
 	// setters and getters
 	public native void setPlayer(CreatureObject playerCreature);
 
-	public void setSessionID(final string id) {
+	public void setSessionID(unsigned int id) {
 		sessionID = id;
 	}
 
@@ -97,7 +73,6 @@ class ZoneClientSession extends ManagedObject {
 		accountID = acc;
 	}
 
-	@read
 	public int getCommandCount() {
 		return commandCount;
 	}
@@ -108,12 +83,6 @@ class ZoneClientSession extends ManagedObject {
 
 	public void resetCommandCount() {
 		commandCount = 0;
-	}
-
-	@local
-	@read
-	public final Time getCommandSpamCooldown() {
-		return commandSpamCooldown;
 	}
 
 	@local
@@ -128,17 +97,14 @@ class ZoneClientSession extends ManagedObject {
 	@dirty
 	public native CreatureObject getPlayer();
 
-	@read
-	public string getSessionID() {
+	public unsigned int getSessionID() {
 		return sessionID;
 	}
 
-	@read
 	public unsigned int getAccountID() {
 		return accountID;
 	}
 
-	@read
 	public native boolean hasCharacter(unsigned long cid, unsigned int galaxyId);
 
 	public void addCharacter(unsigned long cid, unsigned int galaxyId) {
@@ -149,12 +115,10 @@ class ZoneClientSession extends ManagedObject {
 		bannedCharacters.put(galaxyId, cid);
 	}
 
-	@read
 	public int getCharacterCount() {
 		return characters.size() + bannedCharacters.size();
 	}
 
-	@read
 	public native int getCharacterCount(int galaxyId);
 
 	public void resetCharacters() {

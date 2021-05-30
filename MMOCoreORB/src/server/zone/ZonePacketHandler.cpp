@@ -97,27 +97,22 @@
 
 #include "packets/auction/IsVendorOwnerMessageCallback.h"
 
-ZonePacketHandler::ZonePacketHandler() : Logger() {
-	server = nullptr;
-}
-
 ZonePacketHandler::ZonePacketHandler(const String& s, ZoneProcessServer* serv) : Logger(s) {
 	processServer = serv;
 
 	server = processServer->getZoneServer();
 
 	setGlobalLogging(true);
-	setLogLevel(Logger::INFO);
+	setLogging(true);
 
 	registerMessages();
 	registerObjectControllerMessages();
-}
 
-ZonePacketHandler::~ZonePacketHandler() {
+	MessageCallbackFactory<MessageCallback* (ZoneClientSession*, ZoneProcessServer*), uint32> messageCallbackFactory2;
 }
 
 void ZonePacketHandler::registerMessages() {
-	debug("registering Messages");
+	info("registering Messages");
 
 	messageCallbackFactory.registerObject<ClientIDMessageCallback>(0xD5899226);
 	messageCallbackFactory.registerObject<ClientCreateCharacterCallback>(0xB97F3074);
@@ -181,10 +176,10 @@ void ZonePacketHandler::registerMessages() {
 }
 
 void ZonePacketHandler::registerObjectControllerMessages() {
-	debug("registering ObjectController Messages");
+	info("registering ObjectController Messages");
 
 	ObjectControllerMessageCallback::objectMessageControllerFactory = new MessageCallbackFactory<MessageCallback* (ObjectControllerMessageCallback*), uint32>();
-	auto objectMessageControllerFactory = ObjectControllerMessageCallback::objectMessageControllerFactory.get();
+	MessageCallbackFactory<MessageCallback* (ObjectControllerMessageCallback*), uint32>* objectMessageControllerFactory = ObjectControllerMessageCallback::objectMessageControllerFactory;
 
 	objectMessageControllerFactory->registerObject<DataTransformCallback>(0x71);
 	objectMessageControllerFactory->registerObject<DataTransformWithParentCallback>(0xF1);
@@ -207,10 +202,11 @@ void ZonePacketHandler::registerObjectControllerMessages() {
 	objectMessageControllerFactory->registerObject<InsertedAsPilotCallback>(0x3fa);
 	objectMessageControllerFactory->registerObject<JtlShipListRequestCallback>(0x41C);
 	objectMessageControllerFactory->registerObject<LotteryWindowCallback>(0x43f);
+
 }
 
-Task* ZonePacketHandler::generateMessageTask(ZoneClientSession* client, Message* pack) const {
-	debug() << "parsing " << *pack;
+Task* ZonePacketHandler::generateMessageTask(ZoneClientSession* client, Message* pack) {
+	//info("parsing " + pack->toStringData(), true);
 
 	if (client == nullptr)
 		return nullptr;
@@ -219,28 +215,33 @@ Task* ZonePacketHandler::generateMessageTask(ZoneClientSession* client, Message*
 		uint16 opcount = pack->parseShort();
 		uint32 opcode = pack->parseInt();
 
-		debug() << "handleMessage: opcount: " << opcount << " opcode: 0x" << hex << opcode;
+		/*
+		StringBuffer buffer;
+		buffer << "handleMessage: opcount: " << hex << opcount << dec << " opcode: " << hex << opcode << endl;
+		info(buffer);
+		*/
 
 		MessageCallback* messageCallback = messageCallbackFactory.createObject(opcode, client, processServer);
 
 		if (messageCallback == nullptr) {
-			warning() << "unknown opcode 0x" << hex << opcode;
+			StringBuffer msg;
+			msg << "unknown opcode 0x" << hex << opcode;
+			info(msg, true);
+
+			//System::out << pack->toStringData() << endl;
 
 			return nullptr;
 		}
 
-		//TODO: move this into the task itself eventually
 		if (!messageCallback->parseMessage(pack)) {
 			delete messageCallback;
 			return nullptr;
 		} else
 			return messageCallback;
 
-	} catch (const Exception& e) {
+	} catch (Exception& e) {
 		error("unreported exception caught creating message task");
-		e.printMessage();
 	}
 
 	return nullptr;
 }
-
