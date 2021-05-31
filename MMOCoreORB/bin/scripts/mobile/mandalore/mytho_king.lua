@@ -75,9 +75,9 @@ mytho_king = Creature:new {
 		},
 		{
 			groups = {
-				{group = "weapons_all", chance = 10000000},
+				{group = "krayt_pearls_flawless", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 9000000
 		},
 		{
 			groups = {

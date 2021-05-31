@@ -27,7 +27,7 @@ lootcollectiontierthree  = {
 		{groupTemplate = "junk", weight = 500000},
 		{groupTemplate = "vehicledeedsnormal", weight = 1000000},
 		{groupTemplate = "krayt_pearls", weight = 500000},
-		{groupTemplate = "krayt_tissue_rare", weight = 500000},
+		{groupTemplate = "krayt_tissue_uncommon", weight = 500000},
 	}
 }
 

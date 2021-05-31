@@ -31,9 +31,9 @@ mythosaur = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "mythosaur_common", chance = 10000000},
+				{group = "krayt_pearls_flawless", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 2000000
 		},
 		{
 			groups = {

@@ -28,11 +28,14 @@ dune_kimogila = Creature:new {
 	templates = {"object/mobile/kimogila_hue.iff"},
 	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	lootGroups = {
-	 {
-	        groups = {
-				{group = "kimogila_common", chance = 10000000}
+		{
+	        	groups = {
+				{group = "krayt_tissue_rare", chance = 2500000},
+				{group = "krayt_dragon_common", chance = 2000000},
+				{group = "krayt_pearls_flawless", chance = 500000},
+				{group = "kimogila_common", chance = 5000000},
 			},
-			lootChance = 8000000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},

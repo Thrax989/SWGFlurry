@@ -31,9 +31,12 @@ enraged_dune_kimogila = Creature:new {
 	lootGroups = {
 	 {
 	        groups = {
-				{group = "kimogila_common", chance = 10000000}
+        {group = "krayt_tissue_rare", chance = 2500000},
+				{group = "krayt_dragon_common", chance = 1500000},
+				{group = "krayt_pearls_flawless", chance = 1000000},            
+				{group = "kimogila_common", chance = 5000000}
 			},
-			lootChance = 9000000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},
