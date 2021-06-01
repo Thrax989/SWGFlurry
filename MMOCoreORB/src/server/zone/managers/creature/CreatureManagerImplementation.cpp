@@ -372,7 +372,7 @@ CreatureObject* CreatureManagerImplementation::spawnCreature(uint32 templateCRC,
 		error("could not spawn template " + templateToSpawn);
 	}
 
-	placeCreature(creature, x, z, y, parentID, direction)
+	placeCreature(creature, x, z, y, parentID, direction);
 
 	return creature;
 }
