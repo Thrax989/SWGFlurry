@@ -50,8 +50,6 @@ CreatureTemplateManager::CreatureTemplateManager() : Logger("CreatureTemplateMan
 	lua->setGlobalInt("ENEMY", CreatureFlag::ENEMY);
 	lua->setGlobalInt("WILLBEDECLARED", CreatureFlag::WILLBEDECLARED);
 	lua->setGlobalInt("WASDECLARED", CreatureFlag::WASDECLARED);
-	lua->setGlobalInt("COMBATVEHICLE", CreatureFlag::COMBATVEHICLE);
-	lua->setGlobalInt("TEMPVEHICLE", CreatureFlag::TEMPVEHICLE);
 
 	lua->setGlobalInt("CONVERSABLE", OptionBitmask::CONVERSE);
 	lua->setGlobalInt("AIENABLED", OptionBitmask::AIENABLED);
