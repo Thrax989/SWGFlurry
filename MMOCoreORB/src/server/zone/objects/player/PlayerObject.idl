@@ -1624,6 +1624,12 @@ class PlayerObject extends IntangibleObject {
 		return lastValidatedPosition;
 	}
 
+	@local
+	@read
+	public final ValidatedPosition getLastValidatedPosition() {
+		return lastValidatedPosition;
+	}
+
 	public void updateLastValidatedPosition() {
 		SceneObject par = super.getParent();
 		lastValidatedPosition.update(par);
