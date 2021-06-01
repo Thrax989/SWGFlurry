@@ -55,6 +55,7 @@ int ForceHealQueueCommand::runCommand(CreatureObject* creature, CreatureObject* 
 	int totalCost = forceCost;
 	bool healPerformed = false;
 	int forceHeal = 0;
+	int healAmountFinal = 0;
 	if(playerObject->getJediState() == 4) {
 		forceHeal = creature->getSkillMod("force_healing_light");
 	} else if (playerObject->getJediState() == 8) {
@@ -74,7 +75,7 @@ int ForceHealQueueCommand::runCommand(CreatureObject* creature, CreatureObject* 
 						woundAmount = healWoundAmount;
 
 					totalCost += woundAmount * forceCostMultiplier;
-						totalCost *= (100 - forceHeal) / 100;
+					totalCost *= (100 - forceHeal) / 100;
 
 					if (totalCost > currentForce) {
 						int forceDiff = totalCost - currentForce;
@@ -101,12 +102,24 @@ int ForceHealQueueCommand::runCommand(CreatureObject* creature, CreatureObject* 
 				int curHam = targetCreature->getHAM(attrib);
 				int maxHam = targetCreature->getMaxHAM(attrib) - targetCreature->getWounds(attrib);
 				int amtToHeal = maxHam - curHam;
+				info("Amount before FRS: " + String::valueOf(healAmount), true);
+				if (forceHeal > 0){
+					healAmountFinal = healAmount + (healAmount * ((forceHeal * .75) / 100.f));
+					info("Amount after FRS: " + String::valueOf(healAmountFinal), true);
+				}
+				else{
+					healAmountFinal = healAmount;
+				}
 
-				if (healAmount > 0 && amtToHeal > healAmount)
-					amtToHeal = healAmount;
+				if (healAmountFinal > 0 && amtToHeal > healAmountFinal){
+					amtToHeal = healAmountFinal;
+				}
 
 				totalCost += amtToHeal * forceCostMultiplier;
-					totalCost *= (100 - forceHeal) / 100;
+				info("Force cost Prior to frs: " + String::valueOf(totalCost), true);
+				float reduction = (forceHeal * .75) / 100.f;
+				totalCost = totalCost* (1 - reduction);
+				info("Force cost After to frs: " + String::valueOf(totalCost), true);
 
 				if (totalCost > currentForce) {
 					int forceDiff = totalCost - currentForce;
@@ -126,12 +139,13 @@ int ForceHealQueueCommand::runCommand(CreatureObject* creature, CreatureObject* 
 	// Battle fatigue
 	if (totalCost < currentForce && healBattleFatigue != 0) {
 		int battleFatigue = targetCreature->getShockWounds();
+		
 
 		if (healBattleFatigue > 0 && battleFatigue > healBattleFatigue)
 			battleFatigue = healBattleFatigue;
 
 		totalCost += battleFatigue * forceCostMultiplier;
-			totalCost *= (100 - forceHeal) / 100;
+		totalCost *= (100 - forceHeal) / 100;
 
 		if (totalCost > currentForce) {
 			int forceDiff = totalCost - currentForce;
