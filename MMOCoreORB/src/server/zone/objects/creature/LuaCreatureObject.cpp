@@ -20,7 +20,7 @@
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
 #include "server/chat/ChatManager.h"
 #include "server/zone/objects/creature/VehicleObject.h"
-#include "server/zone/objects/creature/ai/Creature.h
+#include "server/zone/objects/creature/ai/Creature.h"
 
 const char LuaCreatureObject::className[] = "LuaCreatureObject";
 
