@@ -62,13 +62,13 @@ public:
 		objectControllerMain = objectControllerCallback;
 
 		ManagedReference<CreatureObject*> player = client->getPlayer();
-		
+
 		if (player != nullptr) {
 			Zone* zone = player->getZone();
-			
+
 			if (zone != nullptr) {
 				String zoneName = zone->getZoneName();
-			
+
 				setCustomTaskQueue(zoneName);
 			}
 		}
@@ -91,7 +91,7 @@ public:
 
 		//client->info(message->toStringData(), true);
 
-		//info("datatransform", true);
+		debug("datatransform parsed");
 	}
 
 	void bounceBack(CreatureObject* object, ValidatedPosition& pos) {
@@ -103,23 +103,30 @@ public:
 
 	void run() {
 		ManagedReference<CreatureObject*> object = client->getPlayer();
-		
+
 		if (object == nullptr)
 			return;
 
 		if (object->getZone() == nullptr)
 			return;
 
+		PlayerObject* ghost = object->getPlayerObject();
+
+		if (ghost == nullptr) {
+			return;
+		}
+
 		int posture = object->getPosture();
 
 		//TODO: This should be derived from the locomotion table
-		if (!object->hasDizzyEvent() && (posture == CreaturePosture::UPRIGHT || posture == CreaturePosture::PRONE || posture == CreaturePosture::CROUCHED
-				|| posture == CreaturePosture::DRIVINGVEHICLE || posture == CreaturePosture::RIDINGCREATURE || posture == CreaturePosture::SKILLANIMATING) ) {
+		if (ghost->isForcedTransform() || (!object->hasDizzyEvent()
+				&& (posture == CreaturePosture::UPRIGHT || posture == CreaturePosture::PRONE || posture == CreaturePosture::CROUCHED || posture == CreaturePosture::DRIVINGVEHICLE || posture == CreaturePosture::RIDINGCREATURE
+				|| posture == CreaturePosture::SKILLANIMATING))) {
 
 			updatePosition(object);
 		} else {
-			object->setCurrentSpeed(0);
 
+			object->setCurrentSpeed(0);
 			object->updateLocomotion();
 
 			ValidatedPosition pos;
@@ -142,6 +149,10 @@ public:
 					object->updateZone(light);
 			}
 		}
+
+		if (ghost->isForcedTransform()) {
+			ghost->setForcedTransform(false);
+		}
 	}
 
 	void updatePosition(CreatureObject* object) {
@@ -150,14 +161,22 @@ public:
 		if (ghost == nullptr)
 			return;
 
-		if (std::isnan(positionX) || std::isnan(positionY) || std::isnan(positionZ))
-			return;
+#ifdef PLATFORM_WIN
+#undef isnan
+#undef isinf
+#endif
 
-		if (std::isinf(positionX) || std::isinf(positionY) || std::isinf(positionZ))
+		if (std::isnan(positionX) || std::isnan(positionY) || std::isnan(positionZ)) {
 			return;
+		}
 
-		if (ghost->isTeleporting())
+		if (std::isinf(positionX) || std::isinf(positionY) || std::isinf(positionZ)) {
 			return;
+		}
+
+		if (ghost->isTeleporting() && !ghost->isForcedTransform()) {
+			return;
+		}
 
 		/*if (!object->isInQuadTree())
 			return;*/
@@ -169,7 +188,7 @@ public:
 			object->error(msg.toString());
 			*/
 			return;
-		}	
+		}
 
 		/*float floorHeight = CollisionManager::instance()->getWorldFloorCollision(positionX, positionY, object->getZone(), true);
 
@@ -234,11 +253,13 @@ public:
 		if (playerManager == nullptr)
 			return;
 
-		if (playerManager->checkSpeedHackFirstTest(object, parsedSpeed, pos, 1.1f) != 0)
+		if (playerManager->checkSpeedHackFirstTest(object, parsedSpeed, pos, 1.1f) != 0) {
 			return;
+		}
 
-		if (playerManager->checkSpeedHackSecondTest(object, positionX, positionZ, positionY, movementStamp, nullptr) != 0)
+		if (playerManager->checkSpeedHackSecondTest(object, positionX, positionZ, positionY, movementStamp, nullptr) != 0) {
 			return;
+		}
 
 		playerManager->updateSwimmingState(object, positionZ, &intersections, (CloseObjectsVector*) object->getCloseObjects());
 
@@ -256,7 +277,7 @@ public:
 
 		ghost->setClientLastMovementStamp(movementStamp);
 
-		if (oldX == positionX && oldY == positionY && oldZ == positionZ && 
+		if (oldX == positionX && oldY == positionY && oldZ == positionZ &&
 			dirw == directionW && dirz == directionZ && dirx == directionX && diry == directionY) {
 
 			return;
@@ -279,10 +300,17 @@ public:
 		object->setCurrentSpeed(parsedSpeed);
 		object->updateLocomotion();
 
-		if (objectControllerMain->getPriority() == 0x23)
+		if (objectControllerMain->getPriority() == 0x23) {
 			object->updateZone(false);
-		else
+		} else {
 			object->updateZone(true);
+		}
+
+		if (ghost->isForcedTransform()) {
+			auto msg = object->info();
+			msg << "DataTransform - Player isForcedTransform == TRUE";
+			msg.flush();
+		}
 	}
 };
 
