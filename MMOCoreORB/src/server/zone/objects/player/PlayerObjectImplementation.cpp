@@ -80,6 +80,7 @@
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/sui/SuiWindowType.h"
+#include "templates/creature/SharedCreatureObjectTemplate.h"
 
 void PlayerObjectImplementation::initializeTransientMembers() {
 	playerLogLevel = ConfigManager::instance()->getPlayerLogLevel();
