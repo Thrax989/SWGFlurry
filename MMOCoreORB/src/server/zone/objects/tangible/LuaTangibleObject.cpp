@@ -429,3 +429,4 @@ int LuaTangibleObject::setCustomizationString(lua_State* L) {
 	realObject->setCustomizationString(customizationData);
 
 	return 0;
+}
