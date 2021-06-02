@@ -33,17 +33,6 @@ public:
 		updateCounter = ds.updateCounter;
 	}
 
-	AutoDeltaSet& operator=(const AutoDeltaSet& ds) {
-		if (this == &ds) {
-			return *this;
-		}
-
-		set = ds.set;
-		updateCounter = ds.updateCounter;
-
-		return *this;
-	}
-
 	bool toBinaryStream(ObjectOutputStream* stream) {
 		stream->writeInt(updateCounter);
 
