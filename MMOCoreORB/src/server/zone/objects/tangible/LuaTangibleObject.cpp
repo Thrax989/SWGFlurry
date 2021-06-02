@@ -52,6 +52,8 @@ Luna<LuaTangibleObject>::RegType LuaTangibleObject::Register[] = {
 		{ "isSliced", &LuaTangibleObject::isSliced},
 		{ "isNoTrade", &LuaTangibleObject::isNoTrade},
 		{ "setSocketCount", &LuaTangibleObject::setSocketCount},
+		{ "getCustomizationString", &LuaTangibleObject::getCustomizationString },
+		{ "setCustomizationString", &LuaTangibleObject::setCustomizationString },
 		{ 0, 0 }
 };
 
