@@ -258,9 +258,7 @@ void PlayerObjectImplementation::unload() {
 	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
 	missionManager->deactivateMissions(creature);
 
-	if (creature->isRidingMount()) {
-		creature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
-	}
+	creature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
 
 	unloadSpawnedChildren();
 
