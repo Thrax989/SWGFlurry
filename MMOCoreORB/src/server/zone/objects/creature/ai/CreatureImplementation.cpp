@@ -479,6 +479,12 @@ void CreatureImplementation::setPetLevel(int newLevel) {
 }
 
 bool CreatureImplementation::isMount() {
+
+	CreatureTemplate* creatureTemplate = npcTemplate.get();
+
+	if (creatureTemplate == NULL)
+		return false;
+
 	if (!isPet())
 		return false;
 
