@@ -410,20 +410,6 @@ int LuaTangibleObject::setSocketCount(lua_State* L){
     return 0;
 }
 
-int LuaTangibleObject::convertWeapon(lua_State* L) {
-	String weaponPath = lua_tostring(L, -2);
-	CreatureObject* player = (CreatureObject*) lua_touserdata(L, -1);
-
-	WeaponObject* obj = cast<WeaponObject*>(realObject);
-
-
-	Locker locker(obj);
-
-	obj->convertWeapon(player, weaponPath);
-
-	return 0;
-}
-
 int LuaTangibleObject::getCustomizationString(lua_State* L) {
 
 	String customizationData = "TEST";
