@@ -9,38 +9,50 @@
 
 #include "ObjectControllerMessageCallback.h"
 
-UniqueReference<MessageCallbackFactory<MessageCallback* (ObjectControllerMessageCallback*), uint32>*> ObjectControllerMessageCallback::objectMessageControllerFactory;
+MessageCallbackFactory<MessageCallback* (ObjectControllerMessageCallback*), uint32>* ObjectControllerMessageCallback::objectMessageControllerFactory = nullptr;
 
 void ObjectControllerMessageCallback::parse(Message* message) {
 	priority = message->parseInt();
 	type = message->parseInt();
 
-	client->debug() << "received objc with priority 0x" << hex << priority;
+	/*StringBuffer priorityMsg;
+	priorityMsg << "received objc with priority 0x" << hex << priority;
+	client->getPlayer()->info(priorityMsg.toString(), true);*/
 
 	objectID = message->parseLong();
 
 	if (client != nullptr) {
-		client->debug() << "parsing objc type 0x" << hex << type;
+		StringBuffer objectCtrl;
+		objectCtrl << "parsing objc type 0x" << hex << type;
+		client->debug(objectCtrl.toString());
 	}
 
 	objectControllerCallback = objectMessageControllerFactory->createObject(type, this);
 
 	if (objectControllerCallback == nullptr) {
-		client->error() << "unregistered 0x" << hex << type << " object controller message received";
+		StringBuffer msg;
+		msg << "unregistered 0x" << hex << type << " object controller message received";
 
+		//CreatureObject* player = client->getPlayer();
+		client->error(msg.toString());
 		return;
 	}
-
+	
 	const auto& newTaskQueue = objectControllerCallback->getCustomTaskQueue();
-
-	if (!newTaskQueue.isEmpty()) {
+	
+	if (newTaskQueue.length()) {
 		setCustomTaskQueue(newTaskQueue);
 	}
-
+	
 	try {
+
+		/*StringBuffer objectCtrl;
+		objectCtrl << "parsing objc type 0x" << hex << type;
+		client->getPlayer()->info(objectCtrl.toString(), true);*/
+
 		objectControllerCallback->parse(message);
 
-	} catch (const Exception& e) {
+	} catch (Exception& e) {
 		System::out << "exception parsing ObjectControllerMessage" << e.getMessage();
 		e.printStackTrace();
 
