@@ -89,7 +89,6 @@
 #include "server/zone/objects/tangible/misc/ContractCrate.h"
 #include "server/zone/managers/crafting/schematicmap/SchematicMap.h"
 #include "server/zone/managers/structure/tasks/DestroyPackedupStructureTask.h"
-#include "server/zone/objects/creature/CreatureObject.h"
 
 int DirectorManager::DEBUG_MODE = 0;
 int DirectorManager::ERROR_CODE = NO_ERROR;
@@ -484,8 +483,6 @@ void DirectorManager::initializeLuaEngine(Lua* luaEngine) {
 	luaEngine->setGlobalInt("TUNEDCRYSTAL", ObserverEventType::TUNEDCRYSTAL);
 	luaEngine->setGlobalInt("PROTOTYPECREATED", ObserverEventType::PROTOTYPECREATED);
 	luaEngine->setGlobalInt("SLICED", ObserverEventType::SLICED);
-	luaEngine->setGlobalInt("MOUNTED", ObserverEventType::MOUNTED);
-	luaEngine->setGlobalInt("DISMOUNTED", ObserverEventType::DISMOUNTED);
 
 	luaEngine->setGlobalInt("UPRIGHT", CreaturePosture::UPRIGHT);
 	luaEngine->setGlobalInt("PRONE", CreaturePosture::PRONE);
@@ -3003,7 +3000,7 @@ int DirectorManager::getGCWDiscount(lua_State* L){
 
 int DirectorManager::getTerrainHeight(lua_State* L){
 	if (checkArgumentCount(L, 3) == 1) {
-		String err = "incorrect number of arguments passed to DirectorManager::getTerrainHeight";
+		String err = "incorrect number of arguments passed to DirectorManager::getGCWDiscount";
 		printTraceError(L, err);
 		ERROR_CODE = INCORRECT_ARGUMENTS;
 		return 0;
