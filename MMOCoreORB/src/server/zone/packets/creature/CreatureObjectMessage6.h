@@ -23,8 +23,8 @@ public:
 		insertInt(creo->getGuildID());
 		insertLong(creo->getTargetID());
 		insertByte(creo->getMoodID());
-		insertInt(creo->getPerformanceStartTime()); // Doesn't appear to be used by the client
-		insertInt(creo->getPerformanceType());
+		insertInt(creo->getPerformanceCounter()); //might be switched
+		insertInt(creo->getInstrumentID()); //might be switched
 
 		const DeltaVector<int>* ham = creo->getHAM();
 		ham->insertToMessage(this);

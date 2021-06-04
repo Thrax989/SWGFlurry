@@ -62,13 +62,13 @@ public:
 		objectControllerMain = objectControllerCallback;
 
 		ManagedReference<CreatureObject*> player = client->getPlayer();
-
+		
 		if (player != nullptr) {
 			Zone* zone = player->getZone();
-
+			
 			if (zone != nullptr) {
 				String zoneName = zone->getZoneName();
-
+			
 				setCustomTaskQueue(zoneName);
 			}
 		}
@@ -91,7 +91,7 @@ public:
 
 		//client->info(message->toStringData(), true);
 
-		debug("datatransform parsed");
+		//info("datatransform", true);
 	}
 
 	void bounceBack(CreatureObject* object, ValidatedPosition& pos) {
@@ -103,68 +103,44 @@ public:
 
 	void run() {
 		ManagedReference<CreatureObject*> object = client->getPlayer();
-
+		
 		if (object == nullptr)
 			return;
 
 		if (object->getZone() == nullptr)
 			return;
 
-		PlayerObject* ghost = object->getPlayerObject();
-
-		if (ghost == nullptr) {
-			return;
-		}
-
 		int posture = object->getPosture();
 
-		auto parent = object->getParent().get();
+		//TODO: This should be derived from the locomotion table
+		if (!object->hasDizzyEvent() && (posture == CreaturePosture::UPRIGHT || posture == CreaturePosture::PRONE || posture == CreaturePosture::CROUCHED
+				|| posture == CreaturePosture::DRIVINGVEHICLE || posture == CreaturePosture::RIDINGCREATURE || posture == CreaturePosture::SKILLANIMATING) ) {
 
-		if (parent != nullptr && (parent->isVehicleObject() || parent->isMount())) {
-			parent->wlock(object);
-		}
+			updatePosition(object);
+		} else {
+			object->setCurrentSpeed(0);
 
-		try {
-			//TODO: This should be derived from the locomotion table
-			if (ghost->isForcedTransform() || (!object->hasDizzyEvent()
-					&& (posture == CreaturePosture::UPRIGHT || posture == CreaturePosture::PRONE || posture == CreaturePosture::CROUCHED || posture == CreaturePosture::DRIVINGVEHICLE || posture == CreaturePosture::RIDINGCREATURE
-					|| posture == CreaturePosture::SKILLANIMATING))) {
+			object->updateLocomotion();
 
-				updatePosition(object);
+			ValidatedPosition pos;
+			pos.update(object);
+
+			Vector3 currentPos = pos.getPosition();
+			Vector3 newPos(positionX, positionY, positionZ);
+
+			object->setDirection(directionW, directionX, directionY, directionZ);
+
+			if (currentPos.squaredDistanceTo(newPos) > 0.01) {
+				bounceBack(object, pos);
 			} else {
-				object->setCurrentSpeed(0);
+				ManagedReference<SceneObject*> currentParent = object->getParent().get();
+				bool light = objectControllerMain->getPriority() != 0x23;
 
-				object->updateLocomotion();
-
-				ValidatedPosition pos;
-				pos.update(object);
-
-				Vector3 currentPos = pos.getPosition();
-				Vector3 newPos(positionX, positionY, positionZ);
-
-				object->setDirection(directionW, directionX, directionY, directionZ);
-
-				if (currentPos.squaredDistanceTo(newPos) > 0.01) {
-					bounceBack(object, pos);
-				} else {
-					ManagedReference<SceneObject*> currentParent = object->getParent().get();
-					bool light = objectControllerMain->getPriority() != 0x23;
-
-					if (currentParent != nullptr)
-						object->updateZoneWithParent(currentParent, light);
-					else
-						object->updateZone(light);
-				}
+				if (currentParent != nullptr)
+					object->updateZoneWithParent(currentParent, light);
+				else
+					object->updateZone(light);
 			}
-		} catch (...) {
-		}
-
-		if (parent != nullptr && (parent->isVehicleObject() || parent->isMount())) {
-			parent->unlock();
-		}
-
-		if (ghost->isForcedTransform()) {
-			ghost->setForcedTransform(false);
 		}
 	}
 
@@ -174,22 +150,14 @@ public:
 		if (ghost == nullptr)
 			return;
 
-#ifdef PLATFORM_WIN
-#undef isnan
-#undef isinf
-#endif
-
-		if (std::isnan(positionX) || std::isnan(positionY) || std::isnan(positionZ)) {
+		if (std::isnan(positionX) || std::isnan(positionY) || std::isnan(positionZ))
 			return;
-		}
 
-		if (std::isinf(positionX) || std::isinf(positionY) || std::isinf(positionZ)) {
+		if (std::isinf(positionX) || std::isinf(positionY) || std::isinf(positionZ))
 			return;
-		}
 
-		if (ghost->isTeleporting() && !ghost->isForcedTransform()) {
+		if (ghost->isTeleporting())
 			return;
-		}
 
 		/*if (!object->isInQuadTree())
 			return;*/
@@ -201,7 +169,7 @@ public:
 			object->error(msg.toString());
 			*/
 			return;
-		}
+		}	
 
 		/*float floorHeight = CollisionManager::instance()->getWorldFloorCollision(positionX, positionY, object->getZone(), true);
 
@@ -266,13 +234,11 @@ public:
 		if (playerManager == nullptr)
 			return;
 
-		if (playerManager->checkSpeedHackFirstTest(object, parsedSpeed, pos, 1.1f) != 0) {
+		if (playerManager->checkSpeedHackFirstTest(object, parsedSpeed, pos, 1.1f) != 0)
 			return;
-		}
 
-		if (playerManager->checkSpeedHackSecondTest(object, positionX, positionZ, positionY, movementStamp, nullptr) != 0) {
+		if (playerManager->checkSpeedHackSecondTest(object, positionX, positionZ, positionY, movementStamp, nullptr) != 0)
 			return;
-		}
 
 		playerManager->updateSwimmingState(object, positionZ, &intersections, (CloseObjectsVector*) object->getCloseObjects());
 
@@ -290,7 +256,7 @@ public:
 
 		ghost->setClientLastMovementStamp(movementStamp);
 
-		if (oldX == positionX && oldY == positionY && oldZ == positionZ &&
+		if (oldX == positionX && oldY == positionY && oldZ == positionZ && 
 			dirw == directionW && dirz == directionZ && dirx == directionX && diry == directionY) {
 
 			return;
@@ -313,17 +279,10 @@ public:
 		object->setCurrentSpeed(parsedSpeed);
 		object->updateLocomotion();
 
-		if (objectControllerMain->getPriority() == 0x23) {
+		if (objectControllerMain->getPriority() == 0x23)
 			object->updateZone(false);
-		} else {
+		else
 			object->updateZone(true);
-		}
-
-		if (ghost->isForcedTransform()) {
-			auto msg = object->info();
-			msg << "DataTransform - Player isForcedTransform == TRUE";
-			msg.flush();
-		}
 	}
 };
 

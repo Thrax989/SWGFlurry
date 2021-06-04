@@ -20,7 +20,7 @@ public:
 
 		String serverName = ghost->getZoneServer()->getGalaxyName();
 
-		const DeltaVector<String>* friendList = ghost->getFriendList();
+		DeltaVector<String>* friendList = ghost->getFriendList();
 		insertInt(friendList->size());
 
 		for (int i = 0; i < friendList->size(); ++i) {

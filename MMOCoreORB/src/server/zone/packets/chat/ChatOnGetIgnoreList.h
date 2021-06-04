@@ -16,7 +16,7 @@ public:
 
 		insertLong(ghost->getParentID());
 
-		const DeltaVector<String>* ignoreList = ghost->getIgnoreList();
+		DeltaVector<String>* ignoreList = ghost->getIgnoreList();
 		insertInt(ignoreList->size());
 
 		for (int i = 0; i < ignoreList->size(); ++i) {

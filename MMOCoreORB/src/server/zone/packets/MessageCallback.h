@@ -22,7 +22,7 @@ namespace packets {
 		Reference<ZoneClientSession*> client;
 
 		ManagedReference<ZoneProcessServer*> server;
-
+		
 	public:
 		MessageCallback(ZoneClientSession* client, ZoneProcessServer* server) {
 			MessageCallback::client = client;
@@ -41,7 +41,7 @@ namespace packets {
 
 				parse(packet);
 
-			} catch (const Exception& e) {
+			} catch (Exception& e) {
 				error("exception while parsing message in ZonePacketHandler");
 				error(e.getMessage());
 				e.printStackTrace();
@@ -52,11 +52,11 @@ namespace packets {
 			return true;
 		}
 
-		inline ZoneClientSession* getClient() const {
+		inline ZoneClientSession* getClient() {
 			return client.get();
 		}
 
-		inline ZoneProcessServer* getServer() const {
+		inline ZoneProcessServer* getServer() {
 			return server;
 		}
 
