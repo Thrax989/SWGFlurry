@@ -85,7 +85,7 @@ ZoneServerImplementation::ZoneServerImplementation(ConfigManager* config) :
 	serverState = OFFLINE;
 	deleteNavAreas = false;
 
-	setLogging(true);
+	setLogLevel(Logger::INFO);
 }
 
 void ZoneServerImplementation::initializeTransientMembers() {
@@ -100,15 +100,15 @@ void ZoneServerImplementation::initializeTransientMembers() {
 
 void ZoneServerImplementation::loadGalaxyName() {
 	try {
-		String query = "SELECT name FROM galaxy WHERE galaxy_id = " + String::valueOf(galaxyID);
+		const String query = "SELECT name FROM galaxy WHERE galaxy_id = " + String::valueOf(galaxyID);
 
-		Reference<ResultSet*> result = ServerDatabase::instance()->executeQuery(query);
+		UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(query));
 
 		if (result->next())
 			galaxyName = result->getString(0);
 
-	} catch (DatabaseException& e) {
-		info(e.getMessage());
+	} catch (const DatabaseException& e) {
+		fatal(e.getMessage());
 	}
 
 	setLoggingName("ZoneServer " + galaxyName);
@@ -315,7 +315,8 @@ void ZoneServerImplementation::shutdown() {
 
 		if (zone != nullptr) {
 			zone->stopManagers();
-			//info("zone references " + String::valueOf(zone->getReferenceCount()), true);
+
+			debug() << "zone references " << zone->getReferenceCount();
 		}
 	}
 
@@ -442,9 +443,9 @@ ZoneClientSession* ZoneServerImplementation::createConnection(Socket* sock, Sock
 	//client->deploy("ZoneClientSession " + addr.getFullIPAddress());
 	//client->deploy();
 
-	String address = session->getAddress();
+	const auto& address = session->getAddress();
 
-	//info("client connected from \'" + address + "\'");
+	debug() << "client connected from \'" << address << "\'";
 
 	return client;
 }
@@ -519,7 +520,7 @@ Reference<SceneObject*> ZoneServerImplementation::getObject(uint64 oid, bool doL
 		}
 
 		//unlock(doLock);
-	} catch (Exception& e) {
+	} catch (const Exception& e) {
 		//unlock(doLock);
 		error(e.getMessage());
 		e.printStackTrace();
@@ -764,7 +765,7 @@ void ZoneServerImplementation::setServerStateShuttingDown() {
 	info(msg, true);
 }
 
-String ZoneServerImplementation::getLoginMessage() {
+String ZoneServerImplementation::getLoginMessage() const {
 	return loginMessage;
 }
 
@@ -789,8 +790,8 @@ void ZoneServerImplementation::loadLoginMessage() {
 		reader = nullptr;
 	}
 
-	//loginMessage += "\nLatest Commits:\n";
-	//loginMessage += ConfigManager::instance()->getRevision();
+	loginMessage += "\nLatest Commits:\n";
+	loginMessage += ConfigManager::instance()->getRevision();
 
 	delete reader;
 	delete file;

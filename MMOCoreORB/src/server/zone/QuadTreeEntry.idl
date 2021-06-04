@@ -145,7 +145,7 @@ class QuadTreeEntry extends Observable {
 	@dirty
 	public native QuadTreeEntry getRootParentUnsafe();
 
-	@dirty
+	@read
 	public abstract native boolean containsPoint(float x, float y);
 
 	@dirty
@@ -241,14 +241,14 @@ class QuadTreeEntry extends Observable {
 	    return receiverFlags;
 	}
 
-	@dirty
+	@read
 	public abstract int getReceiverFlags() {
 	    return receiverFlags;
 	}
 
 	@read
 	public boolean isInQuadTree() {
-		return node != null;
+		return node;
 	}
 
 	/*@read
@@ -278,7 +278,7 @@ class QuadTreeEntry extends Observable {
 	public abstract native unsigned long getObjectID();
 
 	@read
-	public float getRadius() {
+	public abstract float getRadius() {
 		return radius;
 	}
 
