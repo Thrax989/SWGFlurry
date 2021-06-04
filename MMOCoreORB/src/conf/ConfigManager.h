@@ -507,6 +507,21 @@ namespace conf {
 		inline int getOnlineLogSize() {
 			return cache_OnlineLogSize;
 		}
+
+		//Vendor Expired Item Relist
+		inline bool getItemRelistEnabled() {
+			return getBool("Core3.itemRelistEnabled", false);
+		}
+		
+		//Vendor Packup
+		inline bool getVendorPackupEnabled() {
+			return getBool("Core3.vendorPackupEnabled", false);
+		}
+
+		inline int getItemRelistFee() {
+			return getInt("Core3.itemRelistFee", 0);
+		}
+
 		//Structure Packup
 		inline bool getStructurePackupEnabled() {
 			return getBool("Core3.structurePackupEnabled", false);
