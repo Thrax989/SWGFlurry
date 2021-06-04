@@ -1,6 +1,0 @@
-
-object_tangible_component_weapon_lightsaber_lightsaber_refined_blackwing_pack = object_tangible_component_weapon_lightsaber_shared_lightsaber_refined_blackwing_pack:new {
-
-}
-
-ObjectTemplates:addTemplate(object_tangible_component_weapon_lightsaber_lightsaber_refined_blackwing_pack, "object/tangible/component/weapon/lightsaber/lightsaber_refined_blackwing_pack.iff")

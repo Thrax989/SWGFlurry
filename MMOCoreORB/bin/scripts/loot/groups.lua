@@ -61,7 +61,6 @@ includeFile("groups/component_loot/g_ancient_jedaii_holocron_dode.lua")
 includeFile("groups/component_loot/g_ancient_jedaii_holocron_cube.lua")
 includeFile("groups/component_loot/g_ancient_jedaii_holocron_triangle.lua")
 includeFile("groups/component_loot/legendary_comp_group.lua")
-includeFile("groups/component_loot/jedi_pack_group.lua")
 
 -- corellian_corvette sub-folder
 includeFile("groups/corellian_corvette/imperial_corvette_loot.lua")

@@ -183,7 +183,6 @@ includeFile("items/coa/coa_reb_4.lua")
 includeFile("items/coa/coa_rebel_message.lua")
 
 -- component loot sub-folder
-includeFile("items/component_loot/ancient_blackwing_pack.lua")
 includeFile("items/component_loot/ancient_jedaii_holocron_dode.lua")
 includeFile("items/component_loot/ancient_jedaii_holocron_cube.lua")
 includeFile("items/component_loot/ancient_jedaii_holocron_triangle.lua")
