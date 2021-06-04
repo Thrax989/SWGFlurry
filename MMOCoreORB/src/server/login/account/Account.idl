@@ -12,6 +12,7 @@ import system.lang.ref.Reference;
 
 @json
 class Account extends ManagedObject implements Logger {
+
 	protected transient boolean active;
 
 	protected transient string username;
@@ -37,6 +38,7 @@ class Account extends ManagedObject implements Logger {
 	protected transient string banReason;
 	protected transient unsigned int banAdmin;
 
+	protected transient unsigned int lastLogin;
 	public native Account();
 
 	@preLocked
@@ -99,7 +101,7 @@ class Account extends ManagedObject implements Logger {
 		return active == true;
 	}
 
-	@read
+	@dirty
 	public unsigned int getAccountID() {
 		return accountID;
 	}
@@ -113,27 +115,27 @@ class Account extends ManagedObject implements Logger {
 		return galaxyAccountInfo;
 	}
 
-	@read
+	@dirty
 	public unsigned int getStationID() {
 		return stationID;
 	}
 
-	@read
+	@dirty
 	public unsigned int getAdminLevel() {
 		return adminLevel;
 	}
 
-	@read
+	@dirty
 	public string getUsername() {
 		return username;
 	}
 
-	@read
+	@dirty
 	public string getSalt() {
 		return salt;
 	}
 
-	@read
+	@dirty
 	public unsigned int getTimeCreated() {
 		return created;
 	}
@@ -150,27 +152,24 @@ class Account extends ManagedObject implements Logger {
 	@preLocked
 	public native void updateGalaxyBans();
 
-	@read
+	@dirty
 	public unsigned int getBanExpires() {
 		return banExpires;
 	}
 
-	@read
+	@dirty
 	public string getBanReason() {
 		return banReason;
 	}
 
-	@read
+	@dirty
 	public native boolean isBanned();
 
 	@dirty
 	@local
 	public native CharacterList getCharacterList();
 
-	@read
-	@local
-	public native final GalaxyBanEntry getGalaxyBan(final unsigned int galaxy);
-
+	@dirty
 	@local
 	public native GalaxyBanEntry getGalaxyBan(final unsigned int galaxy);
 
@@ -183,17 +182,27 @@ class Account extends ManagedObject implements Logger {
 		galaxyBans.drop(galaxy);
 	}
 
-	@read
-	@local
-	public native final CharacterListEntry getCharacterBan(final unsigned int  galaxy, final string name);
-
+	@dirty
 	@local
 	public native CharacterListEntry getCharacterBan(final unsigned int  galaxy, final string name);
 
-	@read
+	@dirty
 	@local
 	public native unsigned int getAgeInDays();
 
-	@read
+	@dirty
 	public native boolean isSqlLoaded();
+	@dirty
+	@local
+	public native unsigned int getLastLoginInDays();
+
+	@preLocked
+	public void setLastLogin(unsigned int seconds) {
+		lastLogin = seconds;
+	}
+
+	@dirty
+	public unsigned int getLastLogin() {
+		return lastLogin;
+	}
 }

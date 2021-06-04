@@ -11,31 +11,29 @@
 
 class EnumerateCharacterID : public BaseMessage {
 public:
-	EnumerateCharacterID(Account* account) : BaseMessage(100) {
+	 EnumerateCharacterID(Account* account) : BaseMessage(100) {
 		insertShort(0x02);
 		insertInt(0x65EA4574);
 
-		Reference<const CharacterList*> characters = account->getCharacterList();
+		Reference<CharacterList*> characters = account->getCharacterList();
 
-		insertInt(characters->size()); //Character List Count
+	    insertInt(characters->size()); //Character List Count
+	    for (int i = 0; i < characters->size(); ++i) {
+	    	CharacterListEntry* entry = &characters->get(i);
+			GalaxyBanEntry* galaxyBan = account->getGalaxyBan(entry->getGalaxyID());
+	    	String name = entry->getFullName();
+	    	if(galaxyBan != nullptr)
+	    		name += " \\#FF0000(GALAXY BAN)";
+	    	else if(entry->isBanned())
+	    		name += " \\#FF0000(BANNED)";
+	    	insertUnicode(name);
 
-		for (int i = 0; i < characters->size(); ++i) {
-			const CharacterListEntry* entry = &characters->get(i);
-			const GalaxyBanEntry* galaxyBan = account->getGalaxyBan(entry->getGalaxyID());
-			String name = entry->getFullName();
+	    	insertInt(entry->getRace()); //Player Race CRC
+	    	insertLong(entry->getObjectID()); //Player ID
 
-			if(galaxyBan != nullptr)
-				name += " \\#FF0000(GALAXY BAN)";
-			else if(entry->isBanned())
-				name += " \\#FF0000(BANNED)";
-			insertUnicode(name);
-
-			insertInt(entry->getRace()); //Player Race CRC
-			insertLong(entry->getObjectID()); //Player ID
-
-			insertInt(entry->getGalaxyID()); //Server ID That Character Is On
-			insertInt(0x00000001); // server status?
-		}
+	    	insertInt(entry->getGalaxyID()); //Server ID That Character Is On
+	    	insertInt(0x00000001); // server status?
+	    }
 	}
 
 	static void parse(Packet* pack) {

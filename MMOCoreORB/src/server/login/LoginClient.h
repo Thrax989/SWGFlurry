@@ -6,7 +6,6 @@
 #define LOGINCLIENT_H_
 
 #include "engine/engine.h"
-#include "engine/service/proto/packets/DisconnectMessage.h"
 
 #include "packets/ErrorMessage.h"
 
@@ -15,88 +14,54 @@ namespace login {
 
 	class LoginClient : public Object {
 		Reference<BaseClientProxy*> session;
-		uint32 accountID = -1;
+		uint32 accountID;
 
 	public:
-		LoginClient(BaseClientProxy* session) : session(session) {
+		LoginClient(BaseClientProxy* session) {
+			LoginClient::session = session;
+			accountID = -1;
 		}
 
-		~LoginClient() {
+		virtual ~LoginClient() {
 		}
-
+		
 		void disconnect(bool doLock = true) {
 			if (session == nullptr)
 				return;
 
 			if (session->isDisconnected())
 				return;
-
+	
 			String time;
 			Logger::getTime(time);
-
-			Logger::console.log() << time << " [LoginServer] disconnecting client \'" << session->getIPAddress() << "\'\n";
+	
+			StringBuffer msg;
+			msg << time << " [LoginServer] disconnecting client \'" << session->getIPAddress() << "\'\n";
+			Logger::console.log(msg);
 
 			session->disconnect(doLock);
 			accountID = -1;
 		}
 
-		String getIPAddress() const {
-			if (session == nullptr)
-				return "null-session";
-
-			return session->getIPAddress();
+		void sendMessage(Message* msg) {
+			session->sendPacket(cast<BasePacket*>(msg));
 		}
-
-		void sendMessage(BasePacket* msg) {
-			session->sendPacket(msg);
-		}
-
-		void sendErrorMessage(const String& title, const String& text, bool fatal = false, bool sendDisconnect = true) {
+	
+		void sendErrorMessage(const String& title, const String& text, bool fatal = false) {
 			ErrorMessage* errorMessage = new ErrorMessage(title, text, fatal);
+
 			sendMessage(errorMessage);
-
-			constexpr auto disconnectDelay = 500;
-
-			if (sendDisconnect) {
-				Core::getTaskManager()->scheduleTask([session = WeakReference<BaseClientProxy*>(this->session)] {
-					auto strongRef = session.get();
-
-					if (strongRef) {
-						strongRef->disconnect();
-					}
-				}, "disconnectErrorTask", disconnectDelay);
-			}
 		}
 
-		void info(const String& msg, bool doLog = true) const {
+		void info(const String& msg, bool doLog = true) {
 			session->info(msg, doLog);
-		}
-
-		auto error() const {
-			return session->error();
-		}
-
-		auto info(bool val) const {
-			return session->info(val);
-		}
-
-		auto warning() const {
-			return session->warning();
-		}
-
-		auto debug() const {
-			return session->debug();
 		}
 
 		ServiceClient* getSession() {
 			return session;
 		}
 
-		const ServiceClient* getSession() const {
-			return session;
-		}
-
-		uint32 getAccountID() const {
+		uint32 getAccountID() {
 			return accountID;
 		}
 
@@ -104,7 +69,7 @@ namespace login {
 			LoginClient::accountID = account;
 		}
 
-		bool hasAccount() const {
+		bool hasAccount() {
 			return (accountID != -1);
 		}
 	};

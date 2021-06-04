@@ -17,15 +17,16 @@ protected:
 	SynchronizedVectorMap<uint32_t, String> chosenVeteranRewards; // milestone, templateFile
 
 public:
+
 	GalaxyAccountInfo();
 
 	void updateVetRewardsFromPlayer(const VectorMap<uint32, String> &newRewards);
 
-	String getChosenVeteranReward(uint32 milestone) const;
+	String getChosenVeteranReward(uint32 milestone);
 
 	void addChosenVeteranReward(uint32 milestone, const String& rewardTemplate);
 
-	bool hasChosenVeteranReward(const String& rewardTemplate) const;
+	bool hasChosenVeteranReward(const String& rewardTemplate);
 
 	void clearVeteranReward(uint32 milestone);
 

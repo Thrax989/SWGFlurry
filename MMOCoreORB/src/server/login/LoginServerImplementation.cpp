@@ -136,10 +136,11 @@ void LoginServerImplementation::handleMessage(LoginClient* client, Packet* messa
 }
 
 void LoginServerImplementation::processMessage(Message* message) {
-	debug() << "processing message " << *message;
+	//info("processing message " + message->toStringData());
 
 	Reference<Task*> task = new LoginMessageProcessorTask(message, processor->getPacketHandler());
-	task->execute();
+
+	Core::getTaskManager()->executeTask(task);
 }
 
 LoginClient* LoginServerImplementation::getLoginClient(ServiceClient* session) {
@@ -161,7 +162,9 @@ bool LoginServerImplementation::handleError(ServiceClient* client, Exception& e)
 void LoginServerImplementation::printInfo() {
 	lock();
 
-	info(true) << "MessageQueue - size = " << datagramService->getMessageQueue()->size();
+	StringBuffer msg;
+	msg << "MessageQueue - size = " << datagramService->getMessageQueue()->size();
+	info(msg, true);
 
 	unlock();
 }
